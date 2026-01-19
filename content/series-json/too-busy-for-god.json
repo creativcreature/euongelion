@@ -1,0 +1,330 @@
+{
+  "slug": "too-busy-for-god",
+  "title": "Too Busy for God",
+  "subtitle": "When Your Schedule Becomes Your Savior",
+  "pathway": "sleep",
+  "day_count": 5,
+  "ecclesiastes_connection": "strong",
+  "gospel_presentation": "moderate",
+  "core_theme": "Recognizing busyness as idolatry and finding rest in God",
+  "emotional_tones": ["overwhelmed", "anxious", "restless", "empty", "driven"],
+  "life_circumstances": ["career stress", "overcommitment", "burnout", "perpetual busyness"],
+  "target_audience": ["professionals", "entrepreneurs", "busy parents", "type-A personalities"],
+  "soul_audit_keywords": [
+    "too busy",
+    "no time",
+    "exhausted",
+    "overwhelmed",
+    "hustle",
+    "schedule",
+    "stressed",
+    "burned out",
+    "can't slow down",
+    "always running"
+  ],
+  "days": [
+    {
+      "day_number": 1,
+      "title": "The Vanity of Busyness",
+      "chiasm_position": "A",
+      "modules": [
+        {
+          "type": "scripture",
+          "data": {
+            "reference": "Ecclesiastes 1:2-3",
+            "translation": "NIV",
+            "text": "\"Meaningless! Meaningless!\" says the Teacher. \"Utterly meaningless! Everything is meaningless.\" What do people gain from all their labors at which they toil under the sun?",
+            "emphasis": ["Meaningless", "toil under the sun"]
+          }
+        },
+        {
+          "type": "vocab",
+          "data": {
+            "language": "hebrew",
+            "word": "הֶבֶל",
+            "transliteration": "hevel",
+            "pronunciation": "HEH-vel",
+            "strongs": "H1892",
+            "definition": "Vapor, breath, vanity",
+            "root_meaning": "Something that disappears quickly, like breath on a cold day",
+            "usage_note": "Used 38 times in Ecclesiastes alone"
+          }
+        },
+        {
+          "type": "teaching",
+          "data": {
+            "content": "Solomon had everything—wisdom beyond measure, wealth beyond counting, pleasures beyond imagining. And his verdict? *Hevel*. Vapor. Breath.\n\nNot \"meaningless\" in the sense of worthless, but *fleeting*. Like trying to grab smoke. You can see it, chase it, but the moment you close your fist—it's gone.\n\nOur busyness is the modern *hevel*. We fill our calendars the way Solomon filled his treasuries. We chase productivity like he chased pleasure. And we arrive at the same conclusion: *What do we gain from all this toil?*",
+            "pardes_layer": "derash"
+          }
+        },
+        {
+          "type": "bridge",
+          "data": {
+            "ancient": "Solomon tried wealth, wisdom, pleasure, and projects—all hevel",
+            "modern": "We try promotions, side hustles, experiences, and achievements—same result",
+            "connection": "3,000 years apart, same empty conclusion",
+            "question": "What have you been chasing that disappears the moment you grasp it?"
+          }
+        },
+        {
+          "type": "reflection",
+          "data": {
+            "question": "If you paused your schedule right now, what would you feel? Peace... or panic?",
+            "prompt_text": "Be honest. No one sees this but you.",
+            "allow_save": true
+          }
+        },
+        {
+          "type": "prayer",
+          "data": {
+            "title": "Closing Prayer",
+            "text": "Father, forgive us for filling our lives with vapor and calling it meaning. Open our eyes to see the hevel we've been chasing. Give us the courage to stop running and start resting. In Jesus' name. Amen.",
+            "scripture_echo": "Psalm 39:5"
+          }
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "title": "The Tyranny of the Urgent",
+      "chiasm_position": "B",
+      "modules": [
+        {
+          "type": "scripture",
+          "data": {
+            "reference": "Luke 10:38-42",
+            "translation": "NIV",
+            "text": "As Jesus and his disciples were on their way, he came to a village where a woman named Martha opened her home to him. She had a sister called Mary, who sat at the Lord's feet listening to what he said. But Martha was distracted by all the preparations that had to be made. She came to him and asked, \"Lord, don't you care that my sister has left me to do the work by myself? Tell her to help me!\" \"Martha, Martha,\" the Lord answered, \"you are worried and upset about many things, but few things are needed—or indeed only one. Mary has chosen what is better, and it will not be taken away from her.\"",
+            "emphasis": ["distracted", "worried and upset about many things", "only one"]
+          }
+        },
+        {
+          "type": "insight",
+          "data": {
+            "text": "Martha wasn't doing bad things. She was doing *urgent* things. But urgency is the enemy of importance."
+          }
+        },
+        {
+          "type": "teaching",
+          "data": {
+            "content": "Notice what Jesus doesn't say. He doesn't say Martha's work is sinful. He doesn't condemn hospitality. He says Mary chose *what is better*.\n\nBetter implies comparison. Martha's choice wasn't evil—it was inferior. She let the urgent steal the important.\n\nThis is the tyranny of busyness: it doesn't announce itself as idolatry. It disguises itself as responsibility. As good work. As providing for your family. As serving others.\n\nBut when our doing keeps us from being with Jesus, we've crowned the wrong king.",
+            "pardes_layer": "derash"
+          }
+        },
+        {
+          "type": "comprehension",
+          "data": {
+            "question": "What did Jesus say Mary chose?",
+            "options": [
+              { "text": "Laziness over work", "correct": false },
+              { "text": "What is better", "correct": true },
+              { "text": "To avoid responsibility", "correct": false }
+            ],
+            "explanation": "Jesus affirmed Mary's choice as 'better'—not because Martha's work was bad, but because presence with Jesus is the highest priority."
+          }
+        },
+        {
+          "type": "reflection",
+          "data": {
+            "question": "What 'good things' in your life might be stealing time from 'the better thing'?",
+            "prompt_text": "Think about your typical day. What fills it?",
+            "allow_save": true
+          }
+        },
+        {
+          "type": "prayer",
+          "data": {
+            "title": "Closing Prayer",
+            "text": "Lord Jesus, like Martha, we're distracted by many things. We're worried. We're upset. And we've been too busy to sit at Your feet. Today, we choose the better thing. Help us stay. Amen.",
+            "scripture_echo": "Psalm 27:4"
+          }
+        }
+      ]
+    },
+    {
+      "day_number": 3,
+      "title": "Sacred Rest",
+      "chiasm_position": "C",
+      "modules": [
+        {
+          "type": "scripture",
+          "data": {
+            "reference": "Matthew 11:28-30",
+            "translation": "NIV",
+            "text": "\"Come to me, all you who are weary and burdened, and I will give you rest. Take my yoke upon you and learn from me, for I am gentle and humble in heart, and you will find rest for your souls. For my yoke is easy and my burden is light.\"",
+            "emphasis": ["Come to me", "I will give you rest", "rest for your souls"]
+          }
+        },
+        {
+          "type": "vocab",
+          "data": {
+            "language": "greek",
+            "word": "ἀνάπαυσις",
+            "transliteration": "anapausis",
+            "pronunciation": "an-AP-ow-sis",
+            "strongs": "G372",
+            "definition": "Rest, relief, refreshment",
+            "root_meaning": "To cause to cease, to give intermission",
+            "usage_note": "Same word used for Sabbath rest"
+          }
+        },
+        {
+          "type": "insight",
+          "data": {
+            "text": "THE PIVOT: Sabbath isn't about what you STOP doing. It's about WHO you START trusting."
+          }
+        },
+        {
+          "type": "teaching",
+          "data": {
+            "content": "Here is the heart of everything:\n\n**Rest is not laziness. Rest is trust.**\n\nWhen you stop working, you're declaring something profound: *God can handle this without me.* The universe won't collapse if I take a breath. My worth isn't measured by my productivity.\n\nThis is why Sabbath was the first thing God made holy. Not a place. Not a person. A *pause*.\n\nWhen God rested on the seventh day, He wasn't tired. He was teaching. Modeling. Saying: *This is how life works. Work flows from rest, not the other way around.*\n\nJesus offers the same invitation: **Come. Rest. Learn from me.**\n\nNot 'do more.' Not 'try harder.' Come. Rest. Learn.\n\nThis is the Gospel applied to your calendar.",
+            "pardes_layer": "sod"
+          }
+        },
+        {
+          "type": "bridge",
+          "data": {
+            "ancient": "God rested on the seventh day—not from exhaustion, but as declaration",
+            "modern": "We resist rest because it feels like failure",
+            "connection": "In both cases, rest is about trust: Can God handle things without you?",
+            "question": "What would it take for you to truly rest—not collapse from exhaustion, but choose stillness?"
+          }
+        },
+        {
+          "type": "reflection",
+          "data": {
+            "question": "If rest is trust, what does your lack of rest say about what you actually believe?",
+            "prompt_text": "This isn't condemnation. It's diagnosis. Be honest with yourself.",
+            "allow_save": true
+          }
+        },
+        {
+          "type": "prayer",
+          "data": {
+            "title": "Closing Prayer",
+            "text": "Jesus, we come. Weary and burdened, we come. We lay down our need to be needed. We release our grip on control. We trust that You are God and we are not. Give us rest for our souls. Amen.",
+            "scripture_echo": "Psalm 62:1"
+          }
+        }
+      ]
+    },
+    {
+      "day_number": 4,
+      "title": "Reordering Priorities",
+      "chiasm_position": "B'",
+      "modules": [
+        {
+          "type": "scripture",
+          "data": {
+            "reference": "Matthew 6:33",
+            "translation": "NIV",
+            "text": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.",
+            "emphasis": ["seek first"]
+          }
+        },
+        {
+          "type": "teaching",
+          "data": {
+            "content": "Yesterday's truth was theological: Rest is trust.\n\nToday's question is practical: **How do we actually do this?**\n\nJesus gives us the principle: *Seek first the kingdom.* Not seek *only*—you still have responsibilities. But seek *first*.\n\nFirst isn't about time management. It's about hierarchy. What sits at the top?\n\nWhen your schedule is full, you reveal what you value. Every 'yes' is a 'no' to something else. When you say yes to that meeting, you say no to something. When you say yes to scrolling, you say no to something.\n\n**What are you saying yes to? What are you saying no to God for?**",
+            "pardes_layer": "derash"
+          }
+        },
+        {
+          "type": "interactive",
+          "data": {
+            "interaction_type": "slider",
+            "prompt": "In your typical week, where does time with God actually fall?",
+            "options": ["Dead last", "When I remember", "Middle priority", "High priority", "First priority"],
+            "follow_up": "Wherever you landed, there's no condemnation—only invitation to reorder."
+          }
+        },
+        {
+          "type": "takeaway",
+          "data": {
+            "title": "Practical Steps",
+            "text": "You can't add margin to a full calendar. You have to subtract first.",
+            "action": "This week: Look at your schedule. Find ONE thing to remove or reduce. Replace it with 15 minutes of stillness—no phone, no tasks, just being."
+          }
+        },
+        {
+          "type": "reflection",
+          "data": {
+            "question": "What one thing could you remove from your schedule this week to create space for God?",
+            "prompt_text": "Be specific. Write it down.",
+            "allow_save": true
+          }
+        },
+        {
+          "type": "prayer",
+          "data": {
+            "title": "Closing Prayer",
+            "text": "Father, reorder our priorities. Help us see what we've put before You. Give us courage to subtract before we add. May our calendars reflect what we say we believe. Amen.",
+            "scripture_echo": "Psalm 90:12"
+          }
+        }
+      ]
+    },
+    {
+      "day_number": 5,
+      "title": "Entering the Rest",
+      "chiasm_position": "A'",
+      "modules": [
+        {
+          "type": "scripture",
+          "data": {
+            "reference": "Hebrews 4:9-11",
+            "translation": "NIV",
+            "text": "There remains, then, a Sabbath-rest for the people of God; for anyone who enters God's rest also rests from their works, just as God did from his. Let us, therefore, make every effort to enter that rest, so that no one will perish by following their example of disobedience.",
+            "emphasis": ["Sabbath-rest remains", "make every effort to enter that rest"]
+          }
+        },
+        {
+          "type": "teaching",
+          "data": {
+            "content": "We end where we began—but everything has changed.\n\nDay 1: We named the *hevel*. The vapor. The emptiness of endless striving.\n\nDay 5: We name the solution. **Sabbath-rest remains.**\n\nNotice the paradox: *Make every effort to enter rest.* It takes effort to stop. It takes discipline to cease. Because rest doesn't come naturally to us. We're wired for striving. We've been taught that worth equals work.\n\nBut the Gospel inverts everything:\n\n*You don't work to earn rest. You rest because the work is finished.*\n\nJesus said it on the cross: *Tetelestai.* It is finished. The striving is over. The performance is complete. The debt is paid.\n\nAll that's left is to enter the rest He's already won.",
+            "pardes_layer": "sod"
+          }
+        },
+        {
+          "type": "bridge",
+          "data": {
+            "ancient": "The Israelites wandered 40 years, unable to enter rest because of unbelief",
+            "modern": "We wander through packed calendars, unable to rest because we don't trust",
+            "connection": "Both failures are the same: unbelief that God can handle it without our striving",
+            "question": "Will you enter the rest that remains... or keep wandering?"
+          }
+        },
+        {
+          "type": "insight",
+          "data": {
+            "text": "Day 1 said: 'Meaningless!' Day 5 says: 'Rest remains.' The journey is from vapor to victory."
+          }
+        },
+        {
+          "type": "takeaway",
+          "data": {
+            "title": "Your Commitment",
+            "text": "This week you learned:\n\n1. Busyness is the modern hevel—vapor, vanity, breath\n2. Urgency steals importance (Martha vs. Mary)\n3. Rest is trust, not laziness (THE PIVOT)\n4. Seek first—reorder your priorities\n5. Sabbath-rest remains—enter it",
+            "action": "Commit to one Sabbath practice this week. Block it on your calendar. Protect it. Enter the rest."
+          }
+        },
+        {
+          "type": "reflection",
+          "data": {
+            "question": "What will your one Sabbath commitment be this week?",
+            "prompt_text": "Write it as a promise to yourself and to God.",
+            "allow_save": true
+          }
+        },
+        {
+          "type": "prayer",
+          "data": {
+            "title": "Closing Prayer",
+            "text": "Father, we've chased vapor and called it meaning. We've crowned busyness and called it faithfulness. Forgive us.\n\nToday we choose rest. Not because we've earned it, but because Jesus finished the work.\n\nHelp us enter the Sabbath-rest that remains. Teach us to trust. Free us from the tyranny of the urgent.\n\nMay our calendars become acts of worship. May our pauses proclaim Your sufficiency. May our rest point others to the One who gives rest to weary souls.\n\nIn Jesus' finished name, Amen.",
+            "scripture_echo": "Psalm 46:10"
+          }
+        }
+      ]
+    }
+  ]
+}

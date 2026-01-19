@@ -1,0 +1,10 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+176520630,2025-10-23T11:54:03.262Z,csanton98@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+176520630,2025-10-23T12:25:19.429Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,NL,,,,,,Mozilla/5.0
+176520630,2025-10-23T23:07:09.947Z,c.parker3@me.com,newsletter,everyone,false,NL,,,,,,Mozilla/5.0
+176520630,2025-10-25T12:02:20.742Z,c.parker3@me.com,newsletter,everyone,false,NL,,,,,,Mozilla/5.0
+176520630,2025-10-25T12:31:13.086Z,redcapes38@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+176520630,2025-10-25T12:31:23.498Z,redcapes38@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+176520630,2025-10-25T12:32:21.912Z,redcapes38@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+176520630,2025-10-25T12:34:25.518Z,redcapes38@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+176520630,2025-10-27T16:33:21.573Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0

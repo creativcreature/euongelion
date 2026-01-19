@@ -1,0 +1,2 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+178122035,2025-11-11T12:10:36.379Z,c.parker3@me.com,newsletter,everyone,false,NL,,,,,,Mozilla/5.0

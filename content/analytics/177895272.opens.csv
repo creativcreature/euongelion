@@ -1,0 +1,2 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+177895272,2025-11-06T10:09:03.459Z,tburch0523@gmail.com,newsletter,everyone,true,NL,,,,,,Mozilla/5.0

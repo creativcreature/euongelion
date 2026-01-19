@@ -1,0 +1,5 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+176520624,2025-10-21T11:58:08.434Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0
+176520624,2025-10-21T11:59:45.682Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,NL,,,,,,Mozilla/5.0
+176520624,2025-10-25T12:43:03.498Z,c.parker3@me.com,newsletter,everyone,false,NL,,,,,,Mozilla/5.0
+176520624,2025-10-27T16:45:21.115Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0

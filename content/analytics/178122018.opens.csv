@@ -1,0 +1,3 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+178122018,2025-11-10T17:49:11.106Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+178122018,2025-11-11T08:52:36.780Z,c.parker3@me.com,newsletter,everyone,false,NL,,,,,,Mozilla/5.0

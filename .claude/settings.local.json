@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest euongelion --typescript --tailwind --app --eslint --src-dir --import-alias \"@/*\" --use-npm)",
+      "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(yes:*)",
+      "Bash(/bin/bash -c 'export PATH=\"\"/opt/homebrew/bin:$PATH\"\" && node --version && npm --version')",
+      "Bash(/bin/bash -c 'export PATH=\"\"/opt/homebrew/bin:$PATH\"\" && npx create-next-app@latest euongelion --typescript --tailwind --app --eslint --src-dir --import-alias \"\"@/*\"\" --use-npm --turbopack')",
+      "Bash(/bin/bash -c 'export PATH=\"\"/opt/homebrew/bin:$PATH\"\" && printf \"\"n\\\\n\"\" | npx create-next-app@latest euongelion --typescript --tailwind --app --eslint --src-dir --import-alias \"\"@/*\"\" --use-npm --turbopack')"
+    ]
+  }
+}

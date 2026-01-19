@@ -1,0 +1,10 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+175322724,2025-10-09T11:19:59.948Z,csanton98@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+175322724,2025-10-09T11:23:27.640Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0
+175322724,2025-10-09T12:03:25.812Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+175322724,2025-10-09T13:03:55.104Z,ray.steveray.steve@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+175322724,2025-10-09T13:35:40.512Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,NL,,,,,,Mozilla/5.0
+175322724,2025-10-10T18:15:21.663Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0
+175322724,2025-10-11T02:27:30.394Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+175322724,2025-10-25T11:10:13.494Z,c.parker3@me.com,newsletter,everyone,false,NL,,,,,,Mozilla/5.0
+175322724,2025-10-27T08:56:42.356Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0

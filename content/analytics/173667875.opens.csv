@@ -1,0 +1,9 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+173667875,2025-09-18T11:14:03.380Z,mikeparker029@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+173667875,2025-09-18T11:14:06.598Z,mikeparker029@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+173667875,2025-09-18T11:51:40.236Z,mikeparker029@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+173667875,2025-09-18T12:42:53.085Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0
+173667875,2025-09-18T22:58:05.805Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,NL,,,,,,Mozilla/5.0
+173667875,2025-09-19T21:07:42.973Z,tburch0523@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0
+173667875,2025-10-15T01:07:15.834Z,tburch0523@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0
+173667875,2025-10-16T17:26:30.657Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0

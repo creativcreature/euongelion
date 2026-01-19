@@ -1,0 +1,14 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+175815589,2025-10-15T11:15:50.844Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0
+175815589,2025-10-15T11:39:45.410Z,redcapes38@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+175815589,2025-10-15T16:29:47.815Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0
+175815589,2025-10-15T17:52:24.001Z,redcapes38@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+175815589,2025-10-15T18:54:03.903Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+175815589,2025-10-15T20:43:02.269Z,c.parker3@me.com,newsletter,everyone,false,NL,,,,,,Mozilla/5.0
+175815589,2025-10-15T23:37:01.502Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+175815589,2025-10-16T18:39:41.543Z,redcapes38@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+175815589,2025-10-16T18:40:08.135Z,redcapes38@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+175815589,2025-10-22T23:54:24.442Z,redcapes38@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+175815589,2025-10-23T01:41:43.004Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0
+175815589,2025-10-24T14:07:12.079Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0
+175815589,2025-10-25T14:10:23.184Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0

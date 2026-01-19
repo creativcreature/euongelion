@@ -1,0 +1,6 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+178207679,2025-11-16T12:19:11.539Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0
+178207679,2025-11-16T12:33:00.529Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0
+178207679,2025-11-17T05:42:41.308Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0
+178207679,2025-11-19T03:27:04.428Z,tburch0523@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+178207679,2025-12-10T15:27:31.515Z,tburch0523@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0
