@@ -184,7 +184,7 @@ function PanelComponent({ panel, index }: { panel: DevotionalPanel; index: numbe
       </div>
 
       {/* Panel Content */}
-      <div className={`md:col-span-${hasImage ? '6' : '8'}`}>
+      <div className={hasImage ? 'md:col-span-6' : 'md:col-span-8'}>
         <div className={`${isPrayer ? 'text-serif-italic' : ''} vw-body prose-lg`}>
           {panel.content.split('\n\n').map((paragraph, i) => (
             <p
