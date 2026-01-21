@@ -588,6 +588,37 @@ Next.js may warn about missing `width` and `height` on images using `fill` prop.
 
 ## Changelog
 
+### v1.0.3 (2026-01-21) - Deployment Fix: Public Wake Up Zine Launch
+
+**Git Tag:** `v1.0.3`
+**Commit:** `4deac04`
+
+**Deployment Fixes:**
+- Successfully deployed to Vercel production
+- Moved `/auth` pages to `_disabled/auth` (part of AI platform, not needed for public site)
+- Moved `/offline` page to `_disabled/offline` (PWA feature for AI platform)
+- Added `/series` to PUBLIC_ROUTES for Wake Up Zine series landing pages
+- Added `/auth` to HIDDEN_ROUTES in middleware
+- Configured git with proper author email for Vercel deployments
+
+**Status:**
+- ✅ Build: SUCCESS
+- ✅ TypeScript compilation: PASSING
+- ✅ Deployment: LIVE
+- ✅ Production URL: https://euongelion.vercel.app
+- ✅ Custom domain: https://www.wokegod.world (may take a few minutes to propagate)
+
+**Public Pages Available:**
+- `/` - Homepage with 7 questions
+- `/series/[slug]` - Series landing pages (identity, peace, community, kingdom, provision, truth, hope)
+- `/devotional/[slug]` - Individual devotional days (35 total)
+- `/admin/unlock` - Admin authentication
+
+**Rollback Command:**
+```bash
+git reset --hard v1.0.3
+```
+
 ### v1.0.2 (2026-01-21) - Bug Fix: Parsing Error & TypeScript Types
 
 **Git Tag:** `v1.0.2`
