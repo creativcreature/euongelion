@@ -52,7 +52,7 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
     }
 
     loadDevotional();
-  }, [params.slug]);
+  }, [slug]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
