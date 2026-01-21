@@ -1,0 +1,64 @@
+{
+  "day": 5,
+  "title": "Who will you be when the shaking stops?",
+  "teaser": "Everything unstable has been shaken. What remains is what's real. You are still here. You are still His.",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "AFTER THE SHAKING",
+      "type": "text",
+      "content": "You started this week asking: When everything that defined you is shaken, who are you?\n\nYour country is still fracturing. Political violence hasn't stopped. 47.9 million are still food insecure. The systems are still failing.\n\nThe ground is still shaking.\n\nBut something has changed: **You're not looking to the ground anymore.**\n\nYou've learned your worth isn't tied to your nation's stability, your job title, your productivity, your performance.\n\nYou are named. Loved. Known. By God.\n\nAnd when everything unstable is shaken away, **that's** what remains.",
+      "wordCount": 91
+    },
+    {
+      "number": 3,
+      "heading": "WHAT SURVIVES THE FIRE",
+      "type": "text",
+      "content": "There's an ancient image for this: refining fire.\n\nGold goes into the furnace mixed with dirt, ore, impurities. The fire burns hot. Everything unstable melts away.\n\nWhat's left? **Pure gold.**\n\nYour identity has been in the fire this week. The labels, the borrowed narratives, the performance-based worth—it's all been burned away.\n\nAnd what remains?\n\n**You. Known by God. That's what's real.**\n\nNot your résumé. Not your politics. Not your bank account.\n\nThe you that God has always seen.\n\nStripped. Refined. Unshakeable.",
+      "wordCount": 87
+    },
+    {
+      "number": 4,
+      "heading": "WHAT YOU CARRY FORWARD",
+      "type": "text-with-image",
+      "content": "So who will you be when the shaking stops?\n\nYou'll still have bills. You'll still have work. You'll still live in 2026 America with all its chaos and fracturing.\n\nBut you'll carry something different: **an identity that doesn't collapse.**\n\nWhen the news reports violence, you won't spiral—because your peace isn't tied to national stability.\n\nWhen your job feels unstable, you won't panic—because your worth isn't tied to productivity.\n\nWhen culture demands you pick a side and perform your allegiance, you'll remember: **you are God's first.**\n\nThat's the kingdom identity. It survives the shaking.\n\nAnd it changes how you move through the world.",
+      "illustration": {
+        "description": "Dithered image of tree with deep roots standing after storm, or refined gold emerging from fire",
+        "file": "identity-day-5-illustration.png"
+      },
+      "wordCount": 112
+    },
+    {
+      "number": 5,
+      "heading": "JESUS SENDS YOU OUT",
+      "type": "text",
+      "content": "At the end of his time on earth, Jesus gathered his followers—the same people who'd been asking \"who are we?\" for three years.\n\nHe'd shown them: You're not defined by political power. Not by religious performance. Not by cultural status.\n\nYou're mine. You're sent.\n\nAnd then he said:\n\n**\"Go and make disciples of all nations... And I am with you always, to the very end of the age.\"**\n\nYou are named. Loved. Known.\n\nNow go live from that identity.\n\nNot to prove yourself. But because you're already His.\n\nThat's the sending.",
+      "wordCount": 91
+    },
+    {
+      "number": 6,
+      "heading": "SEEK FIRST THE KINGDOM",
+      "type": "text",
+      "content": "You started this journey with shaking. You end it with grounding.\n\nJesus said: **\"Seek first the kingdom of God and his righteousness, and all these things will be added to you.\"**\n\nThe kingdom is where your identity is secure. Where you are named before you perform. Where you are loved before you achieve.\n\nWhen you seek that first—when you root yourself in **whose** you are instead of **what** you do—everything else finds its place.\n\nNot because circumstances stabilize. But because **you're standing on something that doesn't shake.**\n\nThat's the kingdom. That's your identity.\n\nAnd it's unshakeable.",
+      "wordCount": 98
+    },
+    {
+      "number": 7,
+      "heading": "THE SENDING",
+      "type": "prayer",
+      "content": "God,\n\nWhen everything that defined me was shaken, You remained.\n\nYou named me when labels failed. You loved me when performance collapsed. You knew me when I didn't know myself.\n\nI'm not the same as I was five days ago.\n\nThe ground is still shaking. But I'm not looking to the ground anymore.\n\nI'm looking to You.\n\nSend me out with this identity: Yours. Loved. Known.\n\nLet me live from that, not for that.\n\nAmen.",
+      "wordCount": 78
+    }
+  ],
+  "totalWords": 557,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Matthew 28:18-20, Matthew 6:33, Hebrews 12:27-28",
+  "chiastic_position": "A' - Resolution/Sending (Echoes Day 1)"
+}

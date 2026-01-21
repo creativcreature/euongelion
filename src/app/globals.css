@@ -1,125 +1,141 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-cream: #FAF9F6;
+  --color-gold: #B8860B;
+  --color-dark-gold: #9B7500;
+
+  --font-family-display: var(--font-impact), Impact, "Arial Black", sans-serif;
+  --font-family-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    background-color: var(--color-cream);
+    font-size: 16px;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    font-family: var(--font-inter), system-ui, sans-serif;
+    background-color: var(--color-cream);
+    color: #000;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-display);
+  }
+
+  * {
+    transition-timing-function: cubic-bezier(0.42, 0, 0.04, 1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
-}
+@layer utilities {
+  .text-display {
+    font-family: var(--font-family-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
 
-/* Typography utilities for reading comfort */
-.prose-reading {
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  letter-spacing: -0.01em;
-}
+  .text-label {
+    font-family: var(--font-inter), system-ui, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-weight: 500;
+  }
 
-.prose-reading p {
-  margin-bottom: 1.25em;
-}
+  .text-serif-italic {
+    font-family: var(--font-family-serif);
+    font-style: italic;
+    line-height: 1.6;
+  }
 
-.prose-reading h1,
-.prose-reading h2,
-.prose-reading h3,
-.prose-reading h4 {
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-}
+  .text-nav {
+    font-family: var(--font-family-serif);
+    font-style: italic;
+    font-size: 1.5rem;
+  }
 
-/* Scripture blockquote styling */
-blockquote {
-  font-style: italic;
-}
+  /* Viewport-based typography inspired by accordion.net.au */
+  .vw-heading-xl {
+    font-size: clamp(3rem, 8vw, 10rem);
+    line-height: 0.9;
+  }
 
-blockquote mark {
-  font-style: normal;
-}
+  .vw-heading-lg {
+    font-size: clamp(2rem, 5vw, 6rem);
+    line-height: 1;
+  }
 
-/* Hebrew and Greek text styling */
-[dir="rtl"] {
-  font-family: "SBL Hebrew", "Times New Roman", serif;
-}
+  .vw-heading-md {
+    font-size: clamp(1.5rem, 3vw, 3.5rem);
+    line-height: 1.1;
+  }
 
-.greek-text {
-  font-family: "SBL Greek", "Times New Roman", serif;
-}
+  .vw-body-lg {
+    font-size: clamp(1.25rem, 1.8vw, 2rem);
+    line-height: 1.6;
+  }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
+  .vw-body {
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    line-height: 1.7;
+  }
 
-/* Focus styles for accessibility */
-:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
+  .vw-small {
+    font-size: clamp(0.75rem, 0.9vw, 1rem);
+    line-height: 1.5;
+  }
 
-/* Link underline animation */
-a.animated-underline {
-  position: relative;
-  text-decoration: none;
-}
+  /* Motion utilities */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+  }
 
-a.animated-underline::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: currentColor;
-  transition: width 0.2s ease-out;
-}
+  .fade-in-delay-1 {
+    animation-delay: 0.1s;
+  }
 
-a.animated-underline:hover::after {
-  width: 100%;
-}
+  .fade-in-delay-2 {
+    animation-delay: 0.2s;
+  }
 
-/* Line clamp utilities */
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+  .fade-in-delay-3 {
+    animation-delay: 0.3s;
+  }
 
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+  .fade-in-delay-4 {
+    animation-delay: 0.4s;
+  }
 
-/* Selection color */
-::selection {
-  background-color: #fef3c7;
-  color: #78350f;
-}
+  .slide-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.6s ease forwards;
+  }
 
-@media (prefers-color-scheme: dark) {
-  ::selection {
-    background-color: #78350f;
-    color: #fef3c7;
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

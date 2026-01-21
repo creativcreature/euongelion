@@ -1,0 +1,64 @@
+{
+  "day": 2,
+  "title": "When you can't trust anything, you can't trust yourself",
+  "teaser": "The deeper cost: constant distrust corrodes your ability to know anything at all.",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE PARANOIA SPIRAL",
+      "type": "text",
+      "content": "You've trained yourself to distrust everything.\n\nEvery video could be a deepfake. Every statistic could be manipulated. Every news story could be propaganda. Every image could be AI-generated.\n\nYou fact-check compulsively. Question reflexively. Doubt automatically.\n\nBut here's what's happening beneath the surface:\n\n**You're not just distrusting information. You're distrusting your own ability to discern.**\n\nYou second-guess your judgments. You spiral into research rabbit holes. You feel paralyzed because you can't be certain of anything.\n\nThe misinformation epidemic isn't just poisoning the information stream. It's poisoning your confidence in your own mind.",
+      "wordCount": 94
+    },
+    {
+      "number": 3,
+      "heading": "THE COST OF HYPERVIGILANCE",
+      "type": "text",
+      "content": "This constant vigilance is exhausting you.\n\nYou spend hours verifying a single claim. You cross-reference sources. You check the credibility of the fact-checkers. You analyze the bias of the analysts.\n\nAnd even after all that work, you're still not sure.\n\nBecause the goalpost keeps moving. Just when you think you've found a reliable source, someone reveals its funding ties or hidden agenda.\n\nYou're running a race with no finish line.\n\nAnd the cost is this: **You're so busy trying to find truth that you've lost the ability to rest in it.**",
+      "wordCount": 98
+    },
+    {
+      "number": 4,
+      "heading": "WHEN NOTHING FEELS REAL",
+      "type": "text-with-image",
+      "content": "The deepest cost of the misinformation crisis isn't what you believe. It's that **you can't fully believe anything anymore.**\n\n73% of people say they encounter misinformation daily. But it's worse than that. The constant exposure to deception has made you numb.\n\nYou watch a video and think, \"That's probably fake.\" You read a headline and think, \"Someone's manipulating me.\" You see a photo and think, \"AI could have made that.\"\n\nNothing feels solid. Nothing feels certain. Nothing feels real.\n\nYou're living in a fog of doubt. And it's seeping into everything—your relationships, your beliefs, your sense of reality itself.\n\nThis is the cost of a world without truth. **You stop knowing how to know.**",
+      "illustration": {
+        "description": "Dithered image of person surrounded by fractured mirrors or reality glitching/pixelating",
+        "file": "truth-day-2-illustration.png"
+      },
+      "wordCount": 127
+    },
+    {
+      "number": 5,
+      "heading": "A DIFFERENT KIND OF KNOWING",
+      "type": "text",
+      "content": "There's an ancient story about a different kind of knowing.\n\nA teacher—the same one who claimed to be truth—was talking with his students. They were confused, anxious, uncertain about the future.\n\nHe said something that must have sounded absurd:\n\n**\"Do not let your hearts be troubled. Trust in God; trust also in me.\"**\n\nWait. Trust? In a world of deception and betrayal? How?\n\nBecause he was offering a different foundation.\n\nNot more information. Not better fact-checking. Not a foolproof system.\n\nA relationship. With someone who doesn't shift, doesn't deceive, doesn't manipulate.\n\nSomeone you can actually trust.",
+      "wordCount": 99
+    },
+    {
+      "number": 6,
+      "heading": "THE EXHAUSTION OF ENDLESS VERIFICATION",
+      "type": "text",
+      "content": "You're exhausted because you're trying to verify everything on your own.\n\nEvery fact. Every claim. Every piece of information. You're the sole arbiter of truth in your life, and the weight is crushing you.\n\nBut what if truth isn't something you achieve through endless research?\n\nWhat if it's someone you encounter?\n\nJesus didn't say, \"I have the truth.\" He said, **\"I am the truth.\"**\n\nNot a dataset you download. Not a narrative you verify. A person you know.\n\nAnd knowing a person is different from knowing facts.\n\nIt's trust. It's relationship. It's rest.\n\nMaybe that's what you've been missing.",
+      "wordCount": 103
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nI'm exhausted from trying to verify everything. I don't trust anything anymore—not the news, not the sources, not even my own judgment.\n\nI'm drowning in information and starving for something solid.\n\nIf truth is more than facts—if it's a person I can know and trust—then introduce me.\n\nBecause I'm tired of the fog. I need something real.\n\nAmen.",
+      "wordCount": 61
+    }
+  ],
+  "totalWords": 582,
+  "jesusIntroduced": 5,
+  "scriptureReference": "John 14:1, John 14:6",
+  "chiastic_position": "B - Building Tension"
+}

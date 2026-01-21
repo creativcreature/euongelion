@@ -1,0 +1,64 @@
+{
+  "day": 1,
+  "title": "What if provision isn't about having enough, but sharing what you have?",
+  "teaser": "Your pantry is full but you're still afraid. 47.9M food insecure while others stockpile. The scarcity mindset is killing us.",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE PANTRY IS FULL BUT YOU'RE STILL AFRAID",
+      "type": "text",
+      "content": "You have three months of rice in storage. Canned goods stacked to the ceiling. Emergency supplies hidden in the basement.\n\nBut you're still scrolling through prepper forums at midnight. Still calculating how long your stockpile will last. Still afraid it won't be enough.\n\n47.9 million Americans are food insecure. But that's not you. You have plenty.\n\nSo why do you feel like you're starving?\n\nBecause the scarcity mindset isn't about what you have. It's about the belief that there will never be enough.\n\nAnd that belief makes you hoard what you'll never use while others go without what they desperately need.",
+      "wordCount": 109
+    },
+    {
+      "number": 3,
+      "heading": "THE ANXIETY ECONOMY",
+      "type": "text",
+      "content": "The economy is teaching you to be afraid.\n\nInflation. Recession fears. Supply chain disruptions. Price gouging. Every headline screams: **Get yours before it's gone.**\n\nSo you stockpile. You buy in bulk. You prepare for the worst. You hold tight to what you have because releasing it feels like suicide.\n\nYour ancestors survived by sharing. Your grandparents lived through the Depression by pooling resources. Your great-grandparents knew mutual aid.\n\nBut you? You've been trained to compete for scraps.\n\nThe anxiety economy wins when you believe scarcity is inevitable.\n\nAnd you prove it true by hoarding what could save someone else.",
+      "wordCount": 102
+    },
+    {
+      "number": 4,
+      "heading": "THE COST OF NEVER ENOUGH",
+      "type": "text-with-image",
+      "content": "The cost of the scarcity mindset is this: **You have everything and experience nothing.**\n\nYour savings account grows but you can't enjoy it. Your pantry overflows but you panic at the thought of using it. You have resources but live like you're broke.\n\nBecause if there's never enough, then having more changes nothing.\n\nThe bar just moves. The goalpost shifts. The number that would make you feel secure keeps climbing.\n\n$10,000 becomes $50,000. $50,000 becomes $100,000. $100,000 becomes a million.\n\nAnd you're still afraid.\n\nBecause scarcity isn't an economic problem. It's a spiritual crisis.\n\nYou're trying to solve a trust issue with a bank account.",
+      "illustration": {
+        "description": "Dithered image of overflowing pantry with anxious figure, or graph with moving goalpost",
+        "file": "provision-day-1-illustration.png"
+      },
+      "wordCount": 118
+    },
+    {
+      "number": 5,
+      "heading": "THE ANCIENT PATTERN",
+      "type": "text",
+      "content": "There's an ancient story about this.\n\n3,500 years ago, enslaved people were freed from Egypt. They walked into the wilderness with nothing. No infrastructure. No supply chain. No reserves.\n\nAnd they panicked.\n\nSo God provided—bread from the sky every morning. Enough for the day. Fresh every 24 hours.\n\nBut the people didn't trust it. They hoarded. They stockpiled tomorrow's portion today.\n\nAnd it rotted.\n\nBecause the provision wasn't designed to be accumulated. It was designed to be **received daily and shared freely.**\n\nThe question then—and now—is the same:\n\n**What if provision isn't about having enough, but trusting the One who provides?**",
+      "wordCount": 106
+    },
+    {
+      "number": 6,
+      "heading": "THE INVITATION TO TRUST",
+      "type": "text",
+      "content": "You're being invited into a different economy.\n\nNot one where you hoard to survive. But one where you trust enough to share.\n\nNot one where scarcity is the baseline. But one where abundance flows through open hands.\n\nThe world tells you: **Accumulate. Protect. Never let go.**\n\nBut there's an older voice, a deeper wisdom that says:\n\n**\"Give us this day our daily bread.\"**\n\nNot this year's supply. Not next decade's security. Today's bread.\n\nBecause provision isn't about stockpiling for every possible future.\n\nIt's about trusting that you'll have what you need when you need it.\n\nAnd maybe—just maybe—having enough to share.",
+      "wordCount": 102
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nMy pantry is full but I'm still afraid. I have more than I need but it never feels like enough.\n\nI've been taught to hoard, to protect, to accumulate until I feel safe.\n\nBut the goalpost keeps moving. The number keeps climbing. And I'm exhausted.\n\nYou say provision isn't about stockpiling. It's about trust.\n\nI don't know how to do that. I don't know how to open my hands when the world says clench your fists.\n\nTeach me.\n\nWhat if provision isn't about having enough, but sharing what I have?\n\nShow me what that looks like.\n\nAmen.",
+      "wordCount": 96
+    }
+  ],
+  "totalWords": 633,
+  "jesusIntroduced": null,
+  "scriptureReference": "Matthew 6:11, Exodus 16:1-30",
+  "chiastic_position": "A - Introduction/Hook"
+}

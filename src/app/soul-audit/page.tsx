@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import {
@@ -11,6 +11,7 @@ import {
   type Pathway,
   type Category,
 } from '@/lib/soul-audit-questions'
+import { saveSoulAuditResult } from '@/lib/db/soul-audit'
 
 type Step = 'intro' | 'questions' | 'results'
 
@@ -26,7 +27,7 @@ export default function SoulAuditPage() {
     recommended: string[]
   } | null>(null)
 
-  const handleAnswer = useCallback((pathway: Pathway) => {
+  const handleAnswer = useCallback(async (pathway: Pathway) => {
     const question = questions[currentQuestion]
     const newResponses = { ...responses, [question.id]: pathway }
     setResponses(newResponses)
@@ -39,6 +40,9 @@ export default function SoulAuditPage() {
       const recommended = getRecommendedSeries(resultPathway)
       setResults({ pathway: resultPathway, scores, breakdown, recommended })
       setStep('results')
+
+      // Save results to database
+      await saveSoulAuditResult(resultPathway, scores, breakdown, newResponses)
     }
   }, [currentQuestion, responses])
 

@@ -1,0 +1,64 @@
+{
+  "day": 1,
+  "title": "Who are your people when systems fail?",
+  "teaser": "Institutions are collapsing. Networks are transactional. So when it all falls apart, who actually stays?",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE INSTITUTIONS ARE FAILING",
+      "type": "text",
+      "content": "Your government can't agree on basic governance. 71% of people are dissatisfied with how democracy is working. Political violence is rising. Trust in institutions is at historic lows.\n\nYour workplace is collapsing into itself. Mass layoffs, quiet firing, job insecurity. The company that promised career security just eliminated your department.\n\nYour community is fragmenting. Churches are declining. Civic organizations are dying. The places people used to gather—gone or empty.\n\nEverything that was supposed to hold you together is coming apart.\n\nSo when the systems fail, who do you turn to?",
+      "wordCount": 95
+    },
+    {
+      "number": 3,
+      "heading": "THE TRANSACTIONAL NETWORKS",
+      "type": "text",
+      "content": "You thought you had people.\n\nYour network is full. LinkedIn connections, social media followers, work friends, college acquaintances.\n\nBut here's the truth: **most of those relationships are transactional.**\n\nThey're there when you're useful. When you can help their career. When you're fun at parties. When you're winning.\n\nBut when you lose your job? Silence.\nWhen you're struggling? They're busy.\nWhen you need actual help? Suddenly unavailable.\n\nBecause networks aren't built for crisis. They're built for exchange.\n\nAnd when you have nothing left to trade, the network disappears.",
+      "wordCount": 93
+    },
+    {
+      "number": 4,
+      "heading": "THE COST OF SHALLOW CONNECTIONS",
+      "type": "text-with-image",
+      "content": "The cost of living in transactional networks is this: **you're surrounded by people but deeply alone.**\n\n29% of Americans report being frequently lonely. You have 500 friends online and no one to call at 2 a.m. You're in group chats that go silent when you share anything real.\n\nYou thought connection was about accumulation—more followers, more contacts, more reach.\n\nBut you're learning the hard way: **quantity isn't community.**\n\nWhen the crisis hits—when you lose your job, when your mental health collapses, when your family falls apart—your network scatters.\n\nBecause they were never your people. They were your contacts.\n\nAnd contacts don't stay when systems fail.",
+      "illustration": {
+        "description": "Dithered image of crowded room with isolated figure, or network graph with broken connections",
+        "file": "community-day-1-illustration.png"
+      },
+      "wordCount": 117
+    },
+    {
+      "number": 5,
+      "heading": "THE ANCIENT QUESTION",
+      "type": "text",
+      "content": "There's an ancient story about this.\n\n2,000 years ago, in the middle of imperial Rome's collapsing systems—political violence, economic exploitation, religious corruption—a question emerged:\n\n**Who are your people when empire fails?**\n\nThe answer wasn't the state. It wasn't the temple. It wasn't the marketplace.\n\nIt was something else. Something countercultural and subversive.\n\nA carpenter-turned-teacher named Jesus began forming small gatherings. Not networks. Not institutions. Something deeper.\n\nCommunities bound by covenant, not transaction.\n\nPeople who stayed when everything fell apart.\n\nAnd in a fracturing world, they became the answer to the question:\n\n**These are your people.**",
+      "wordCount": 104
+    },
+    {
+      "number": 6,
+      "heading": "THE DIFFERENT KIND OF BELONGING",
+      "type": "text",
+      "content": "Jesus didn't build a network. He built a family.\n\nNot biological. Not transactional. Covenantal.\n\nThe early followers of Jesus didn't just meet for services. They shared meals, resources, lives. When persecution came, they didn't scatter—they hid together. When poverty hit, they pooled funds. When empire crushed them, they carried each other.\n\n**They were bound by something stronger than utility.**\n\nThey belonged to each other because they first belonged to God.\n\nAnd that kind of belonging doesn't evaporate when you stop being useful.\n\nIt's the difference between a network and a covenant.\n\nOne scatters. The other remains.",
+      "wordCount": 100
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nI'm surrounded by people but I'm alone. My network is full but shallow. When I needed real help, everyone scattered.\n\nI'm tired of transactional connections. I'm tired of performing to stay valuable.\n\nYou say there's a different kind of belonging. Covenant, not contract. People who stay, not just when I'm useful.\n\nShow me what that looks like.\n\nWho are my people when systems fail?\n\nI need to know.\n\nAmen.",
+      "wordCount": 73
+    }
+  ],
+  "totalWords": 582,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Matthew 6:33",
+  "chiastic_position": "A - Introduction/Hook"
+}

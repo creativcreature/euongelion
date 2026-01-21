@@ -1,9 +1,14 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getSeriesBySlug, getDay, getAllDayPaths } from '@/lib/content';
+// import { getSeriesBySlug, getDay, getAllDayPaths } from '@/lib/content';
 import { PathwayBadge } from '@/components/ui/PathwayBadge';
 import { DayNavigation } from '@/components/ui/DayNavigation';
 import { ModuleRenderer } from '@/components/modules/ModuleRenderer';
+
+// Temporary stubs - page blocked by middleware anyway
+const getSeriesBySlug = (slug: string): any => null;
+const getDay = (slug: string, day: number): any => null;
+const getAllDayPaths = (): any[] => [];
 
 interface Props {
   params: Promise<{ slug: string; day: string }>;
@@ -87,7 +92,7 @@ export default async function DayPage({ params }: Props) {
 
         {/* Modules */}
         <article className="prose-reading">
-          {day.modules.map((module, index) => (
+          {day.modules?.map((module: any, index: number) => (
             <ModuleRenderer key={index} module={module} />
           ))}
         </article>

@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { AuthProvider } from '@/lib/auth-context'
+import { InstallPrompt } from '@/components/ui/InstallPrompt'
 
 function ServiceWorkerRegistration() {
   useEffect(() => {
@@ -19,6 +20,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <AuthProvider>
       <ServiceWorkerRegistration />
       {children}
+      <InstallPrompt />
     </AuthProvider>
   )
 }

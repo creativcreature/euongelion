@@ -12,78 +12,22 @@
   "categories": ["lifestyle", "education", "books"],
   "icons": [
     {
-      "src": "/icons/icon-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-128x128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-192x192.png",
+      "src": "/icons/icon-192.svg",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-512x512.png",
+      "src": "/icons/icon-512.svg",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-maskable-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/icons/icon-maskable-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/screenshots/home.png",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "form_factor": "narrow"
-    },
-    {
-      "src": "/screenshots/reader.png",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "form_factor": "narrow"
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ],
   "shortcuts": [
@@ -91,15 +35,19 @@
       "name": "Continue Reading",
       "short_name": "Continue",
       "description": "Pick up where you left off",
-      "url": "/continue",
-      "icons": [{ "src": "/icons/shortcut-continue.png", "sizes": "96x96" }]
+      "url": "/"
     },
     {
       "name": "Soul Audit",
       "short_name": "Audit",
       "description": "Take the Soul Audit",
-      "url": "/soul-audit",
-      "icons": [{ "src": "/icons/shortcut-audit.png", "sizes": "96x96" }]
+      "url": "/soul-audit"
+    },
+    {
+      "name": "Search",
+      "short_name": "Search",
+      "description": "Search devotionals",
+      "url": "/search"
     }
   ],
   "related_applications": [],

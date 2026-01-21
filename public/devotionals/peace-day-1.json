@@ -1,0 +1,64 @@
+{
+  "day": 1,
+  "title": "What if peace isn't found by controlling your circumstances?",
+  "teaser": "Your world is chaos. Your grip is tight. But control isn't bringing you peace.",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE ILLUSION OF CONTROL",
+      "type": "text",
+      "content": "You've been told that peace comes from managing your environment.\n\nControl the news cycle. Curate your timeline. Lock your doors. Stock your pantry. Plan for every contingency.\n\nStay informed so you're not caught off guard. Stay prepared so nothing can shake you. Stay vigilant so you can protect what's yours.\n\nBut here's what no one tells you: **The more you try to control, the less peace you have.**\n\nBecause 2026 won't be controlled. Political violence. Civil unrest. 43% more anxious than last year. The chaos isn't slowing down.\n\nAnd your grip is exhausting you.",
+      "wordCount": 99
+    },
+    {
+      "number": 3,
+      "heading": "THE TIGHTER YOU HOLD",
+      "type": "text",
+      "content": "You thought control would bring security.\n\nSo you doomscroll, refreshing the feed every fifteen minutes—if you know what's coming, you can brace for it.\n\nYou argue online, defending your position—if you win the debate, maybe the world will stabilize.\n\nYou micromanage your life, planning every detail—if you control the variables, nothing can fall apart.\n\nBut the tighter you hold, the more anxious you become.\n\nBecause deep down, you know: **you can't control any of this.**\n\nAnd the illusion is cracking.",
+      "wordCount": 85
+    },
+    {
+      "number": 4,
+      "heading": "THE COST OF CONSTANT VIGILANCE",
+      "type": "text-with-image",
+      "content": "The cost of believing peace comes from control is this: **you never rest.**\n\nYou can't turn off the news. What if you miss something critical?\n\nYou can't stop planning. What if you're unprepared?\n\nYou can't let go. What if everything collapses?\n\nThis is what chronic anxiety looks like. 43% of adults are more anxious than last year. You're part of that statistic.\n\nYou're scanning for threats. Calculating worst-case scenarios. White-knuckling your way through life.\n\nBut here's the question you're avoiding: **What if peace doesn't come from controlling your circumstances?**\n\nWhat if it comes from surrendering them?",
+      "illustration": {
+        "description": "Dithered image of clenched fists or person drowning in waves while trying to stay afloat",
+        "file": "peace-day-1-illustration.png"
+      },
+      "wordCount": 108
+    },
+    {
+      "number": 5,
+      "heading": "AN ANCIENT TENSION",
+      "type": "text",
+      "content": "2,000 years ago, people faced the same question.\n\nTheir world was violent. The Roman Empire ruled with brutality. Political executions were public spectacles. Economic exploitation crushed the poor.\n\nSound familiar?\n\nIn the middle of that chaos, a carpenter-turned-teacher stood before anxious crowds and said something jarring:\n\n**\"Do not worry about your life, what you will eat or drink; or about your body, what you will wear.\"**\n\nWait. Don't worry? When the empire is crushing us? When survival isn't guaranteed?\n\nHis response was clear: **Your anxiety comes from seeking control. But peace comes from seeking something else.**",
+      "wordCount": 99
+    },
+    {
+      "number": 6,
+      "heading": "THE ALTERNATIVE TO CONTROL",
+      "type": "text",
+      "content": "Jesus wasn't naive about suffering. He knew the world was broken.\n\nBut he offered a different path:\n\n**\"Seek first the kingdom of God and his righteousness, and all these things will be added to you.\"**\n\nIn other words: Stop trying to control everything. Start seeking the One who holds everything.\n\nPeace doesn't come from managing your circumstances. It comes from surrendering them to the One who is sovereign over them.\n\nYou can't control 2026. You can't stop political violence. You can't fix the chaos.\n\nBut you can release your grip.\n\nAnd when you do, something shifts.",
+      "wordCount": 98
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nI'm exhausted from trying to control everything.\n\nI've been holding tight, believing that if I just manage it all, I'll find peace.\n\nBut I'm more anxious than ever.\n\nTeach me to release my grip. To stop seeking control and start seeking You.\n\nShow me what it means to surrender my circumstances instead of managing them.\n\nI want peace. Real peace. The kind that doesn't depend on me holding it all together.\n\nAmen.",
+      "wordCount": 72
+    }
+  ],
+  "totalWords": 561,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Matthew 6:25-33",
+  "chiastic_position": "A - Introduction/Hook"
+}

@@ -1,0 +1,64 @@
+{
+  "day": 4,
+  "title": "What does covenant community actually look like?",
+  "teaser": "Not theory. Practice. The early church pooled resources, shared meals, and stayed when empire collapsed. Can we?",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE ACTS 2 COMMUNITY",
+      "type": "text",
+      "content": "After Jesus ascended, the early followers didn't scatter. They didn't go back to normal life. They did something radical:\n\n**They formed a covenant community.**\n\nHere's what it looked like:\n\n\"They devoted themselves to the apostles' teaching and to fellowship, to the breaking of bread and to prayer... All the believers were together and had everything in common. They sold property and possessions to give to anyone who had need.\"\n\nThis wasn't a Sunday service. This was **daily life together.**\n\nShared meals. Shared resources. Shared burdens.\n\nWhen one person struggled, the whole community mobilized.\n\nThat's covenant. Not network. Not transaction.\n\n**Mutual aid.**",
+      "wordCount": 108
+    },
+    {
+      "number": 3,
+      "heading": "MUTUAL AID VS. CHARITY",
+      "type": "text",
+      "content": "Here's the difference between charity and mutual aid:\n\nCharity is one-directional. The haves give to the have-nots. There's a power dynamic. A hierarchy. A giver and a receiver.\n\nMutual aid is reciprocal. **We take care of each other.**\n\nToday you have resources and I need help. Tomorrow I have resources and you need help. We're not clients and donors—we're **covenant family.**\n\nThe Acts 2 community wasn't charity. It was mutual aid.\n\nThey didn't create a program. They shared life.\n\nAnd when empire collapsed, when persecution came, when the economy crushed them—they survived.\n\nBecause they had each other.",
+      "wordCount": 101
+    },
+    {
+      "number": 4,
+      "heading": "WHAT IT COSTS TO BELONG",
+      "type": "text-with-image",
+      "content": "Covenant community isn't cheap. It costs something.\n\nIt costs privacy—people see your real life, not your curated version.\n\nIt costs control—you can't hoard resources when others are in need.\n\nIt costs convenience—showing up for people is inconvenient.\n\nBut here's what you gain:\n\n**You gain people who stay.**\n\nWhen you lose your job, they pool rent money. When you're in crisis, they show up at 2 a.m. When systems fail, they don't scatter.\n\nBecause covenant isn't conditional. It's not: *\"I'll stay if you're useful.\"* It's: **\"I'm staying. Period.\"**\n\nThat's the trade. You give up self-sufficiency. You get covenant.\n\nAnd in a collapsing world, covenant is what survives.",
+      "illustration": {
+        "description": "Dithered image of people carrying heavy object together, or circle of hands supporting weight",
+        "file": "community-day-4-illustration.png"
+      },
+      "wordCount": 130
+    },
+    {
+      "number": 5,
+      "heading": "JESUS MODELS MUTUAL AID",
+      "type": "text",
+      "content": "Jesus didn't just teach covenant community. He **lived it.**\n\nHe shared meals with his disciples. He washed their feet—a task reserved for servants. He let them carry his mission when he wasn't there.\n\nAnd when one of them betrayed him, when another denied him, when all of them fled—**he still called them his own.**\n\nThat's covenant.\n\nJesus didn't require perfection. He required presence.\n\nAnd after his resurrection, he didn't abandon them. He came back. He ate with them. He said: **\"You're still mine. We're still doing this together.\"**\n\nThat's the model. Imperfect people bound by unshakeable commitment.\n\nMutual aid isn't about having it all together. It's about staying together when things fall apart.",
+      "wordCount": 113
+    },
+    {
+      "number": 6,
+      "heading": "BUILDING COVENANT IN 2026",
+      "type": "text",
+      "content": "You live in 2026. Institutions are failing. Democracy feels broken. Loneliness is epidemic.\n\nBut here's the invitation: **you can build Acts 2 community right now.**\n\nNot a massive organization. Not a perfect system. Just a small circle of people committed to mutual aid.\n\nStart simple:\n- Share a meal weekly. Actual presence, not a Zoom call.\n- Pool resources when someone is in need. Rent, groceries, childcare.\n- Show up when it's inconvenient. 2 a.m. crisis calls. Hospital visits. Moving help.\n\nIt's not glamorous. It's covenant.\n\nAnd when systems collapse, **this** is what remains.\n\nNot your network. Not your institution. Your people.\n\nThe ones who stayed.",
+      "wordCount": 110
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nI've been living in networks, not covenant. Transactional relationships, not mutual aid.\n\nYou showed me the Acts 2 community—people who shared life, not just services. People who stayed when it cost them something.\n\nI want that. But I'm scared. It means giving up control. Letting people see me. Showing up when it's inconvenient.\n\nGive me the courage to build covenant.\n\nShow me who my people are. Or show me how to become someone else's people.\n\nI'm ready to stop networking and start belonging.\n\nAmen.",
+      "wordCount": 91
+    }
+  ],
+  "totalWords": 653,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Acts 2:42-47, John 13:1-17, John 21:1-14",
+  "chiastic_position": "B' - Application (Mirrors Day 2)"
+}

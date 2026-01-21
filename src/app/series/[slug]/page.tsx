@@ -1,193 +1,283 @@
-import { notFound } from 'next/navigation';
+'use client';
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { getSeriesBySlug, getAllSeriesSlugs } from '@/lib/content';
-import { PathwayBadge } from '@/components/ui/PathwayBadge';
+import Image from 'next/image';
 
-interface Props {
-  params: Promise<{ slug: string }>;
-}
+const SERIES_DATA: Record<string, {
+  title: string;
+  question: string;
+  introduction: string;
+  context: string;
+  framework: string;
+  days: Array<{ day: number; title: string; slug: string }>;
+}> = {
+  identity: {
+    title: 'Identity Crisis',
+    question: 'When everything that defined you is shaken, who are you?',
+    introduction: 'Your country, your job, your security—all unstable. So who are you, really? This 5-day journey explores what remains when the labels fall away.',
+    context: 'In 2026, political violence is at 1970s levels. Your job title doesn't guarantee security anymore. The definitions that once told you who you were are fracturing. This series asks the uncomfortable question: if you're not what you do, what you earn, or what country you belong to—then who are you?',
+    framework: 'Matthew 6:33 - Seek first the kingdom, and all these things will be added',
+    days: [
+      { day: 1, title: 'When everything shakes', slug: 'identity-crisis-day-1' },
+      { day: 2, title: 'The narrative breaks', slug: 'identity-crisis-day-2' },
+      { day: 3, title: 'You are whose you are', slug: 'identity-crisis-day-3' },
+      { day: 4, title: 'Living from identity', slug: 'identity-crisis-day-4' },
+      { day: 5, title: 'What remains', slug: 'identity-crisis-day-5' },
+    ],
+  },
+  peace: {
+    title: 'Peace',
+    question: "What if peace isn't found by controlling your circumstances?",
+    introduction: 'You've tried to control everything. And you're exhausted. This 5-day journey explores a different kind of peace—one that doesn't depend on your circumstances.',
+    context: '43% more anxious than last year. You refresh the news obsessively, doomscrolling to see if your world is still intact. You try to manage every variable, control every outcome. But the tighter you grip, the less peace you have.',
+    framework: 'John 14:27 - Peace I give you, not as the world gives',
+    days: [
+      { day: 1, title: 'The illusion of control', slug: 'peace-day-1' },
+      { day: 2, title: 'The exhaustion of managing', slug: 'peace-day-2' },
+      { day: 3, title: 'Peace the world can't give', slug: 'peace-day-3' },
+      { day: 4, title: 'Practicing surrender', slug: 'peace-day-4' },
+      { day: 5, title: 'Peace as gift', slug: 'peace-day-5' },
+    ],
+  },
+  community: {
+    title: 'Community',
+    question: 'Who are your people when systems fail?',
+    introduction: 'Institutions are failing. Networks are transactional. 29% are frequently lonely. This 5-day journey explores covenant community—the kind that remains when everything else collapses.',
+    context: '71% are dissatisfied with democracy. The systems you trusted are fracturing. Your professional network disappears when you lose your job. Your contacts ghost you in crisis. In a world of transactional relationships, who actually stays?',
+    framework: 'Matthew 18:20 - Where two or three gather in my name',
+    days: [
+      { day: 1, title: 'When systems fail', slug: 'community-day-1' },
+      { day: 2, title: 'The loneliness epidemic', slug: 'community-day-2' },
+      { day: 3, title: 'You're not meant to be alone', slug: 'community-day-3' },
+      { day: 4, title: 'Covenant in practice', slug: 'community-day-4' },
+      { day: 5, title: 'Who remains', slug: 'community-day-5' },
+    ],
+  },
+  kingdom: {
+    title: 'Kingdom',
+    question: "What if the kingdom you're looking for is already here?",
+    introduction: 'You've been searching for refuge in politics, economics, and curated spirituality. You're exhausted. This 5-day journey reveals the kingdom that's been here all along.',
+    context: 'You voted, donated, argued online. You optimized your finances, stockpiled savings. You sampled Buddhism, mindfulness, astrology. You've been looking for a kingdom that won't collapse. But you've been looking in empires.',
+    framework: 'Luke 17:21 + Matthew 6:33 - The kingdom is in your midst. Seek it first.',
+    days: [
+      { day: 1, title: 'Searching in wrong places', slug: 'kingdom-day-1' },
+      { day: 2, title: 'The exhaustion of empires', slug: 'kingdom-day-2' },
+      { day: 3, title: 'The kingdom is here', slug: 'kingdom-day-3' },
+      { day: 4, title: 'Seeking first', slug: 'kingdom-day-4' },
+      { day: 5, title: 'Everything else added', slug: 'kingdom-day-5' },
+    ],
+  },
+  provision: {
+    title: 'Provision',
+    question: "What if provision isn't about having enough, but sharing what you have?",
+    introduction: '47.9M are food insecure while others stockpile. This 5-day journey explores God's backwards economy: sharing creates abundance, hoarding creates scarcity.',
+    context: 'Inflation has eaten 25% of your purchasing power. You're stockpiling, building contingencies, trying to have enough. But the fear of scarcity is making you hoard. And the hoarding is making you emptier.',
+    framework: 'Matthew 6:33 - Seek first the kingdom, and all these things will be added',
+    days: [
+      { day: 1, title: 'The scarcity mindset', slug: 'provision-day-1' },
+      { day: 2, title: 'Fear drives hoarding', slug: 'provision-day-2' },
+      { day: 3, title: 'God's backwards economy', slug: 'provision-day-3' },
+      { day: 4, title: 'Mutual aid in practice', slug: 'provision-day-4' },
+      { day: 5, title: 'When you share, needs are met', slug: 'provision-day-5' },
+    ],
+  },
+  truth: {
+    title: 'Truth',
+    question: "How do you know what's real when misinformation is everywhere?",
+    introduction: 'Deepfakes. AI-generated content. Partisan bubbles. You can't trust anything. This 5-day journey moves from information overload to knowing the one who is true.',
+    context: 'You're drowning in 500M tweets per day. Deepfakes are indistinguishable from reality. 60-73% encounter misinformation daily. You don't know what's real anymore. And the hypervigilance is exhausting you.',
+    framework: 'John 14:6 - I am the way, the truth, and the life',
+    days: [
+      { day: 1, title: 'Drowning in information', slug: 'truth-day-1' },
+      { day: 2, title: 'Can't trust yourself', slug: 'truth-day-2' },
+      { day: 3, title: 'Truth is a person', slug: 'truth-day-3' },
+      { day: 4, title: 'From information to wisdom', slug: 'truth-day-4' },
+      { day: 5, title: 'Truth was searching for you', slug: 'truth-day-5' },
+    ],
+  },
+  hope: {
+    title: 'Hope',
+    question: "What if hope isn't optimism, but faithfulness in the dark?",
+    introduction: '57% are pessimistic about 2026. Optimism is dead. Toxic positivity fails. This 5-day journey explores resurrection hope—the kind that enters darkness instead of denying it.',
+    context: 'Climate crisis. Political violence. Economic collapse. Everything feels apocalyptic. Toxic positivity says "stay positive!" But that's not working. This series offers something different: hope that's honest about the dark.',
+    framework: 'Lamentations 3:22-23 - His mercies are new every morning',
+    days: [
+      { day: 1, title: 'Optimism is dead', slug: 'hope-day-1' },
+      { day: 2, title: 'Grief is holy', slug: 'hope-day-2' },
+      { day: 3, title: 'Hope enters darkness', slug: 'hope-day-3' },
+      { day: 4, title: 'Practicing faithfulness', slug: 'hope-day-4' },
+      { day: 5, title: 'Resurrection promise', slug: 'hope-day-5' },
+    ],
+  },
+};
 
-export async function generateStaticParams() {
-  try {
-    const slugs = getAllSeriesSlugs();
-    if (!slugs || slugs.length === 0) {
-      return [];
-    }
-    return slugs.map(slug => ({ slug }));
-  } catch (error) {
-    console.error('Error generating static params for series:', error);
-    return [];
-  }
-}
+export default function SeriesPage({ params }: { params: { slug: string } }) {
+  const router = useRouter();
+  const series = SERIES_DATA[params.slug];
 
-export default async function SeriesPage({ params }: Props) {
-  const { slug } = await params;
-  const series = getSeriesBySlug(slug);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll('.observe-fade');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   if (!series) {
-    notFound();
+    return (
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FAF9F6' }}>
+        <div className="text-center">
+          <h1 className="text-display vw-heading-lg mb-8">Series Not Found</h1>
+          <Link
+            href="/"
+            className="bg-black px-10 py-5 text-label vw-small hover:bg-gray-800 transition-all duration-300 inline-block"
+            style={{ color: '#FAF9F6' }}
+          >
+            ← Back Home
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black">
-      <div className="max-w-2xl mx-auto px-4 py-12">
-        {/* Breadcrumb */}
-        <nav className="mb-8">
-          <Link
-            href="/"
-            className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 transition-colors"
-          >
-            &larr; Back to all series
-          </Link>
-        </nav>
-
-        {/* Series Header */}
-        <header className="mb-8">
-          <div className="flex items-center gap-3 mb-3">
-            <PathwayBadge pathway={series.pathway} />
-            <span className="text-sm text-zinc-500 dark:text-zinc-400">
-              {series.day_count} days
-            </span>
+    <div className="min-h-screen" style={{ backgroundColor: '#FAF9F6' }}>
+      {/* Top Bar */}
+      <nav className="flex items-center justify-center px-6 md:px-12 lg:px-20 py-8 relative">
+        <Link href="/">
+          <div className="relative w-40 h-10 cursor-pointer">
+            <Image
+              src="/logos/Logo-19.png"
+              alt="wokeGod"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
+        </Link>
+        <Link
+          href="/admin/unlock"
+          className="absolute right-6 md:right-12 lg:right-20 text-gray-400 hover:text-black transition-colors duration-300 vw-small"
+        >
+          Sign In
+        </Link>
+      </nav>
 
-          <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
-            {series.title}
-          </h1>
+      {/* Series Introduction */}
+      <header className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-12 md:pt-20 pb-20 md:pb-32">
+        <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+          <div className="md:col-span-10 md:col-start-2">
+            {/* Back Link */}
+            <Link
+              href="/"
+              className="text-gray-400 hover:text-black transition-colors duration-300 vw-small mb-12 inline-block observe-fade"
+            >
+              ← All Questions
+            </Link>
 
-          {series.subtitle && (
-            <p className="text-lg text-zinc-600 dark:text-zinc-400">
-              {series.subtitle}
-            </p>
-          )}
-        </header>
+            {/* Series Title */}
+            <div className="mb-16 md:mb-24 observe-fade fade-in-delay-1">
+              <h1 className="text-display vw-heading-xl mb-8">
+                {series.question}
+              </h1>
+              <p className="text-label vw-small" style={{ color: '#B8860B' }}>
+                {series.framework}
+              </p>
+            </div>
 
-        {/* Core Theme */}
-        {series.core_theme && (
-          <div className="mb-8 p-4 bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-700">
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">
-              Core Theme
-            </h2>
-            <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-              {series.core_theme}
-            </p>
+            {/* Introduction Grid */}
+            <div className="grid md:grid-cols-12 gap-8 md:gap-12 mb-20 md:mb-32">
+              <div className="md:col-span-7">
+                <p className="text-serif-italic vw-body-lg mb-8 observe-fade fade-in-delay-2">
+                  {series.introduction}
+                </p>
+                <p className="vw-body text-gray-700 observe-fade fade-in-delay-3">
+                  {series.context}
+                </p>
+              </div>
+
+              <div className="md:col-span-5">
+                <div className="bg-gray-50 p-8 md:p-10 observe-fade fade-in-delay-4">
+                  <p className="text-label vw-small mb-4" style={{ color: '#B8860B' }}>
+                    5-DAY JOURNEY
+                  </p>
+                  <p className="vw-body text-gray-700 leading-relaxed">
+                    This series follows a chiastic structure (A-B-C-B'-A'). Days 1 and 5 mirror each other. Days 2 and 4 mirror each other. Day 3 is the pivot—the core revelation everything builds toward.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        )}
-
-        {/* Metadata */}
-        <div className="mb-8 grid grid-cols-2 gap-4 text-sm">
-          {series.gospel_presentation && (
-            <div className="p-3 bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-700">
-              <span className="text-zinc-500 dark:text-zinc-400">Gospel:</span>{' '}
-              <span className="font-medium text-zinc-900 dark:text-zinc-100 capitalize">
-                {series.gospel_presentation}
-              </span>
-            </div>
-          )}
-          {series.ecclesiastes_connection && (
-            <div className="p-3 bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-700">
-              <span className="text-zinc-500 dark:text-zinc-400">Ecclesiastes:</span>{' '}
-              <span className="font-medium text-zinc-900 dark:text-zinc-100 capitalize">
-                {series.ecclesiastes_connection}
-              </span>
-            </div>
-          )}
         </div>
+      </header>
 
-        {/* Day List */}
-        <section>
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
-            Days
-          </h2>
-
-          <div className="space-y-2">
-            {series.days.map(day => (
-              <Link
-                key={day.day_number}
-                href={`/series/${series.slug}/${day.day_number}`}
-                className="block p-4 bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-zinc-300 dark:hover:border-zinc-600 transition-colors group"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
-                        Day {day.day_number}
+      {/* 5 Days */}
+      <main className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pb-32 md:pb-48">
+        <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+          <div className="md:col-span-10 md:col-start-2">
+            <div className="space-y-1 md:space-y-2">
+              {series.days.map((day, index) => (
+                <Link
+                  key={day.slug}
+                  href={`/devotional/${day.slug}`}
+                  className={`block group observe-fade ${index > 0 ? `fade-in-delay-${Math.min(index, 4)}` : ''}`}
+                >
+                  <div className={`grid md:grid-cols-12 gap-6 md:gap-12 py-8 md:py-10 border-b border-gray-200 hover:border-gray-400 transition-all duration-300 ${day.day === 3 ? 'md:bg-gray-50 md:-mx-8 md:px-8' : ''}`}>
+                    <div className="md:col-span-1">
+                      <span className="text-label vw-small" style={{ color: day.day === 3 ? '#B8860B' : '#999' }}>
+                        DAY {day.day}
                       </span>
-                      {day.chiasm_position && (
-                        <span className="text-xs bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-500 dark:text-zinc-400">
-                          {day.chiasm_position}
-                        </span>
-                      )}
                     </div>
-                    <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                      {day.title}
-                    </h3>
-                    {day.subtitle && (
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-0.5">
-                        {day.subtitle}
+
+                    <div className="md:col-span-9">
+                      <p className="text-serif-italic vw-body-lg transition-all duration-300 group-hover:translate-x-2">
+                        <span className="group-hover:text-[#B8860B] transition-colors duration-300">
+                          {day.title}
+                        </span>
                       </p>
-                    )}
-                  </div>
-                  <span className="text-zinc-400 dark:text-zinc-500 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
+                    </div>
 
-        {/* Target Audience & Circumstances */}
-        {(series.target_audience || series.life_circumstances || series.emotional_tones) && (
-          <section className="mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-700">
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-4">
-              Series Metadata
-            </h2>
-
-            <div className="space-y-4 text-sm">
-              {series.target_audience && series.target_audience.length > 0 && (
-                <div>
-                  <span className="text-zinc-500 dark:text-zinc-400">Target Audience:</span>
-                  <div className="flex flex-wrap gap-1.5 mt-1">
-                    {series.target_audience.map((audience, i) => (
-                      <span key={i} className="px-2 py-1 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300 rounded text-xs">
-                        {audience}
+                    <div className="md:col-span-2 flex items-center justify-end">
+                      <span className="text-label vw-small text-gray-400 group-hover:text-black transition-colors duration-300">
+                        READ →
                       </span>
-                    ))}
+                    </div>
                   </div>
-                </div>
-              )}
-
-              {series.life_circumstances && series.life_circumstances.length > 0 && (
-                <div>
-                  <span className="text-zinc-500 dark:text-zinc-400">Life Circumstances:</span>
-                  <div className="flex flex-wrap gap-1.5 mt-1">
-                    {series.life_circumstances.map((circumstance, i) => (
-                      <span key={i} className="px-2 py-1 bg-green-50 dark:bg-green-950/30 text-green-700 dark:text-green-300 rounded text-xs">
-                        {circumstance}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {series.emotional_tones && series.emotional_tones.length > 0 && (
-                <div>
-                  <span className="text-zinc-500 dark:text-zinc-400">Emotional Tones:</span>
-                  <div className="flex flex-wrap gap-1.5 mt-1">
-                    {series.emotional_tones.map((tone, i) => (
-                      <span key={i} className="px-2 py-1 bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-300 rounded text-xs">
-                        {tone}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
+                </Link>
+              ))}
             </div>
-          </section>
-        )}
-      </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-200 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+          <div className="grid md:grid-cols-12 gap-8">
+            <div className="md:col-span-6 md:col-start-4">
+              <p className="text-label text-gray-400 vw-small leading-relaxed">
+                VENERATE THE MIRACLE.<br />
+                DISMANTLE THE HAVEL.
+              </p>
+              <p className="vw-small text-gray-400 mt-8">
+                © 2026 EUONGELION · A wokeGod project
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

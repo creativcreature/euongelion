@@ -1,0 +1,64 @@
+{
+  "day": 2,
+  "title": "What happens when all your refuges fail?",
+  "teaser": "The exhaustion of trying to find security in systems that are collapsing around you.",
+  "framework": "Matthew 6:33 - Seek first the kingdom of God and his righteousness, and all these things will be added to you",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "WHEN THE SYSTEMS FAIL",
+      "type": "text",
+      "content": "You built your life on systems that promised stability.\n\nThe political system promised order. But now it's fracturing—coups, violence, institutional collapse. Democracy isn't holding.\n\nThe economic system promised security. But now it's failing—inflation, layoffs, stagnant wages. Your paycheck doesn't cover what it used to. The American Dream feels like a lie.\n\nThe spiritual system promised peace. But now it feels empty—commercialized, commodified, curated for clicks. You're consuming content, not encountering God.\n\nYou did everything right. You played by the rules.\n\nAnd the systems are collapsing anyway.",
+      "wordCount": 95
+    },
+    {
+      "number": 3,
+      "heading": "THE WEIGHT OF FAILING EMPIRES",
+      "type": "text",
+      "content": "This is what it feels like when empires fail:\n\nYou check the news obsessively, terrified of what's next. Every headline confirms your fear: the center isn't holding.\n\nYou check your bank account constantly, calculating how long you can survive. Every bill is a reminder: you're not as secure as you thought.\n\nYou scroll through spiritual content, searching for something that sticks. Every post is polished. Every podcast is produced. But none of it reaches the ache inside you.\n\nYou're exhausted. Because you're trying to find refuge in things that can't save you.\n\nAnd deep down, you know it.",
+      "wordCount": 102
+    },
+    {
+      "number": 4,
+      "heading": "THE COLLAPSE YOU CAN'T ESCAPE",
+      "type": "text-with-image",
+      "content": "The cost of trusting empires is this: **when they collapse, you collapse with them.**\n\nBecause you tied your hope to them. Your identity. Your security.\n\nWhen politics fails, you panic. When the economy stumbles, you spiral. When your spiritual routine feels empty, you despair.\n\n52% of workers feel burned out. 43% of adults are more anxious than last year. You're not just tired—you're **running on fumes**, desperately trying to hold together systems that are falling apart.\n\nYou can't fix this. You can't vote your way out. You can't earn your way to safety. You can't curate your way to peace.\n\nThe empires are failing. And you're still inside them, searching for a way out.",
+      "illustration": {
+        "description": "Dithered image of collapsing pillars, person buried under rubble, or crumbling infrastructure",
+        "file": "kingdom-day-2-illustration.png"
+      },
+      "wordCount": 127
+    },
+    {
+      "number": 5,
+      "heading": "THE PATTERN OF EMPIRE COLLAPSE",
+      "type": "text",
+      "content": "This has happened before.\n\n2,000 years ago, Rome was the empire everyone trusted. The military superpower. The economic engine. The civilizing force.\n\nAnd into that empire, a teacher stood up and said:\n\n**\"Do not store up for yourselves treasures on earth, where moths and vermin destroy, and where thieves break in and steal.\"**\n\nHe wasn't being poetic. He was being prophetic.\n\nEmpires fall. Markets crash. Security evaporates.\n\nAnd if your hope is in them, you fall with them.\n\nBut Jesus didn't stop there. He offered an alternative:\n\n**\"Seek first the kingdom of God.\"**\n\nNot the empire. The kingdom.\n\nBecause empires collapse. But the kingdom endures.",
+      "wordCount": 111
+    },
+    {
+      "number": 6,
+      "heading": "THE INVITATION TO LET GO",
+      "type": "text",
+      "content": "What if the collapse isn't the end?\n\nWhat if it's the invitation?\n\nThe invitation to stop clinging to empires that can't save you.\nThe invitation to stop building on sand.\nThe invitation to stop searching for refuge in systems that are already failing.\n\nYou can't fix the political system. You can't stabilize the economy. You can't force spiritual depth from consumer content.\n\nBut you can let go.\n\nYou can stop trying to hold up what's already falling.\n\nAnd you can seek something that won't collapse.\n\nThe kingdom of God. Not later. Not somewhere else.\n\nHere. Now. In the midst of the rubble.",
+      "wordCount": 103
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nEverything I trusted is failing.\n\nThe political system. The economy. The spiritual routines. All of it is crumbling.\n\nI'm exhausted from trying to hold it together. From searching for refuge in things that can't save me.\n\nYou said not to store up treasures on earth. Because they fail.\n\nTeach me to let go. Teach me to seek Your kingdom instead.\n\nEven when the empires collapse. Especially then.\n\nAmen.",
+      "wordCount": 71
+    }
+  ],
+  "totalWords": 609,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Matthew 6:19-21, Matthew 6:33",
+  "chiastic_position": "B - Building: The exhaustion of trying to find refuge in failing systems"
+}
