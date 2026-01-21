@@ -19,7 +19,7 @@
 
 ## Version Control
 
-**Current Version:** v1.0.0
+**Current Version:** v1.0.4
 **Git Initialized:** Yes
 **Versioning Strategy:** Semantic Versioning (MAJOR.MINOR.PATCH)
 
@@ -588,6 +588,45 @@ Next.js may warn about missing `width` and `height` on images using `fill` prop.
 
 ## Changelog
 
+### v1.0.4 (2026-01-21) - Fix: Async Params in Next.js 15+ Dynamic Routes
+
+**Git Tag:** `v1.0.4`
+**Commit:** `2667c34`
+
+**Bug Fixes:**
+- Fixed series landing pages returning "Series Not Found" error
+- Updated dynamic route components to handle async params in Next.js 15+
+- Implemented React's `use()` hook to unwrap params Promise in client components
+- Fixed both `/series/[slug]` and `/devotional/[slug]` routes
+
+**Root Cause:**
+Next.js 15+ changed `params` to be asynchronous Promises. Client components must use React's `use()` hook to unwrap the Promise before accessing params values.
+
+**Files Modified:**
+- `src/app/series/[slug]/page.tsx` - Added `use()` hook to unwrap params
+- `src/app/devotional/[slug]/page.tsx` - Added `use()` hook and updated useEffect dependency
+
+**Status:**
+- ✅ Build: SUCCESS
+- ✅ TypeScript compilation: PASSING
+- ✅ Deployment: LIVE
+- ✅ All 7 series landing pages: WORKING
+- ✅ All 35 devotional pages: WORKING
+
+**Verified Working URLs:**
+- https://www.wokegod.world/series/identity
+- https://www.wokegod.world/series/peace
+- https://www.wokegod.world/series/kingdom
+- https://www.wokegod.world/series/community
+- https://www.wokegod.world/series/provision
+- https://www.wokegod.world/series/truth
+- https://www.wokegod.world/series/hope
+
+**Rollback Command:**
+```bash
+git reset --hard v1.0.4
+```
+
 ### v1.0.3 (2026-01-21) - Deployment Fix: Public Wake Up Zine Launch
 
 **Git Tag:** `v1.0.3`
@@ -679,5 +718,5 @@ git reset --hard v1.0.0
 ---
 
 **Last Updated:** 2026-01-21
-**Current Version:** v1.0.2
-**Current Status:** Build compiling successfully. Series landing pages functional with proper TypeScript types. Dark mode and contextual images pending.
+**Current Version:** v1.0.4
+**Current Status:** All systems operational. Wake Up Zine fully deployed. All 7 series landing pages and 35 devotional pages working correctly on production.
