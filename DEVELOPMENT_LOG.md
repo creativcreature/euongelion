@@ -17,6 +17,43 @@
 
 ---
 
+## Version Control
+
+**Current Version:** v1.0.0
+**Git Initialized:** Yes
+**Versioning Strategy:** Semantic Versioning (MAJOR.MINOR.PATCH)
+
+### Quick Rollback Commands
+
+```bash
+# See all versions
+git tag -l
+
+# Rollback to specific version (safe - keeps changes)
+git reset --soft v1.0.0
+
+# Rollback to specific version (destructive - discards changes)
+git reset --hard v1.0.0
+
+# View changes since version
+git log v1.0.0..HEAD --oneline
+```
+
+**For detailed versioning documentation, see:** [`VERSIONING.md`](./VERSIONING.md)
+
+### Commit Guidelines
+
+Every change should be committed with format:
+```
+<type>: <description>
+
+Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+```
+
+**Types:** `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `content:`, `chore:`
+
+---
+
 ## Design System
 
 ### Aesthetic References
@@ -551,14 +588,30 @@ Next.js may warn about missing `width` and `height` on images using `fill` prop.
 
 ## Changelog
 
-### 2026-01-21
+### v1.0.0 (2026-01-21) - Initial Wake Up Zine Release
+
+**Git Tag:** `v1.0.0`
+**Commit:** `a6df53f`
+
+**Features:**
 - Centered wokeGod logo in navigation
 - Created series landing pages (`/src/app/series/[slug]/page.tsx`)
 - Wrote introductions for all 7 series
 - Updated homepage links to point to series pages
-- Created this development log file
+- Created development log file (`DEVELOPMENT_LOG.md`)
+- Set up git versioning with semantic versioning strategy
+- Created versioning documentation (`VERSIONING.md`)
+- Tagged initial baseline commit as v1.0.0
+
+**Files Modified:** 104 files (8,200 insertions, 419 deletions)
+
+**Rollback Command:**
+```bash
+git reset --hard v1.0.0
+```
 
 ---
 
 **Last Updated:** 2026-01-21
-**Current Status:** Series landing pages complete and functional. Dark mode and contextual images pending.
+**Current Version:** v1.0.0
+**Current Status:** Series landing pages complete and functional. Versioning system established. Dark mode and contextual images pending.
