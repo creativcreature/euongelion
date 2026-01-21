@@ -4,6 +4,7 @@ import type { NextRequest } from 'next/server'
 // Routes that are ALWAYS public (Wake Up Zine devotional site)
 const PUBLIC_ROUTES = [
   '/',
+  '/series',      // Wake Up Zine series landing pages
   '/devotional',  // Allow access to all devotionals
   '/admin/unlock',  // Allow access to unlock page
   '/api/admin/unlock', // API for unlocking
@@ -11,6 +12,7 @@ const PUBLIC_ROUTES = [
 
 // Routes hidden from public - EUONGELION features (visible to admin only)
 const HIDDEN_ROUTES = [
+  '/auth',    // Authentication pages
   '/blog',
   '/courses',
   '/community',
@@ -19,7 +21,6 @@ const HIDDEN_ROUTES = [
   '/resources',
   '/archive',
   '/about',
-  '/series',  // Old EUONGELION series pages
   '/search',
   '/bookmarks',
   '/wake-up',  // Old wake-up page (replaced by homepage)
