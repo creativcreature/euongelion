@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -113,9 +113,10 @@ const SERIES_DATA: Record<string, {
   },
 };
 
-export default function SeriesPage({ params }: { params: { slug: string } }) {
+export default function SeriesPage({ params }: { params: Promise<{ slug: string }> }) {
   const router = useRouter();
-  const series = SERIES_DATA[params.slug];
+  const { slug } = use(params);
+  const series = SERIES_DATA[slug];
 
   useEffect(() => {
     const observer = new IntersectionObserver(

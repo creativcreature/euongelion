@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Navigation from '@/components/Navigation';
 
@@ -29,7 +29,8 @@ interface Devotional {
   chiastic_position?: string;
 }
 
-export default function DevotionalPage({ params }: { params: { slug: string } }) {
+export default function DevotionalPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = use(params);
   const [devotional, setDevotional] = useState<Devotional | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentPanel, setCurrentPanel] = useState(0);
@@ -39,7 +40,7 @@ export default function DevotionalPage({ params }: { params: { slug: string } })
   useEffect(() => {
     async function loadDevotional() {
       try {
-        const response = await fetch(`/devotionals/${params.slug}.json`);
+        const response = await fetch(`/devotionals/${slug}.json`);
         if (!response.ok) throw new Error('Devotional not found');
         const data = await response.json();
         setDevotional(data);
