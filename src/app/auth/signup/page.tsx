@@ -5,6 +5,9 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAuth } from '@/lib/auth-context'
 
+// Prevent static generation - this page requires runtime context
+export const dynamic = 'force-dynamic'
+
 export default function SignUpPage() {
   const router = useRouter()
   const { signUp } = useAuth()
