@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Navigation from '@/components/Navigation';
+import SeriesNavigation from '@/components/SeriesNavigation';
 
 interface DevotionalPanel {
   number: number;
@@ -145,7 +146,7 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
       </main>
 
       {/* Footer Navigation */}
-      <footer className="border-t border-gray-200 py-12 md:py-16">
+      <footer className="border-t border-gray-200 py-12 md:py-16 mb-24 md:mb-32">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid md:grid-cols-12 gap-8">
             <div className="md:col-span-6">
@@ -159,6 +160,9 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
           </div>
         </div>
       </footer>
+
+      {/* Series Navigation - Sticky Bottom Bar */}
+      <SeriesNavigation currentSlug={slug} />
     </div>
   );
 }
