@@ -92,11 +92,28 @@ export default function Navigation() {
             </button>
 
             {/* Menu Items */}
-            <nav className="mt-24 md:mt-32 space-y-10 md:space-y-12">
-              <MenuItem number="01" label="Daily Bread" href="/" onClick={() => setIsOpen(false)} delay={0} />
-              <MenuItem number="02" label="Havel Audit" href="/wake-up" onClick={() => setIsOpen(false)} delay={1} />
-              <MenuItem number="03" label="The Gospel" href="/about" disabled delay={2} />
-              <MenuItem number="04" label="The Archive" href="/archive" disabled delay={3} />
+            <nav className="mt-24 md:mt-32 space-y-8 md:space-y-10 max-h-[60vh] overflow-y-auto">
+              <div className="mb-6">
+                <p className="text-label vw-small text-gray-400 mb-4">DAILY DEVOTIONALS</p>
+                <div className="space-y-6">
+                  <MenuItem number="01" label="Identity Crisis" href="/series/identity" onClick={() => setIsOpen(false)} delay={0} />
+                  <MenuItem number="02" label="Peace" href="/series/peace" onClick={() => setIsOpen(false)} delay={1} />
+                  <MenuItem number="03" label="Community" href="/series/community" onClick={() => setIsOpen(false)} delay={2} />
+                  <MenuItem number="04" label="Kingdom" href="/series/kingdom" onClick={() => setIsOpen(false)} delay={3} isGold />
+                  <MenuItem number="05" label="Provision" href="/series/provision" onClick={() => setIsOpen(false)} delay={4} />
+                  <MenuItem number="06" label="Truth" href="/series/truth" onClick={() => setIsOpen(false)} delay={5} />
+                  <MenuItem number="07" label="Hope" href="/series/hope" onClick={() => setIsOpen(false)} delay={6} />
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-gray-200">
+                <p className="text-label vw-small text-gray-400 mb-4">EXPLORE</p>
+                <div className="space-y-6">
+                  <MenuItem number="—" label="All Devotionals" href="/all-devotionals" onClick={() => setIsOpen(false)} delay={7} />
+                  <MenuItem number="—" label="About Wake Up" href="/about" onClick={() => setIsOpen(false)} delay={8} />
+                  <MenuItem number="—" label="Coming Soon" href="/coming-soon" onClick={() => setIsOpen(false)} delay={9} />
+                </div>
+              </div>
             </nav>
 
             {/* Footer Mantra */}
@@ -120,6 +137,7 @@ function MenuItem({
   disabled = false,
   onClick,
   delay = 0,
+  isGold = false,
 }: {
   number: string;
   label: string;
@@ -127,23 +145,24 @@ function MenuItem({
   disabled?: boolean;
   onClick?: () => void;
   delay?: number;
+  isGold?: boolean;
 }) {
   const delayStyles = {
-    animationDelay: `${0.1 + delay * 0.1}s`,
+    animationDelay: `${0.1 + delay * 0.05}s`,
     animationFillMode: 'forwards' as const,
     opacity: 0
   };
 
   const content = (
     <div
-      className="flex items-start gap-8 md:gap-10 fade-in group"
+      className="flex items-start gap-6 md:gap-8 fade-in group"
       style={delayStyles}
     >
-      <span className={`vw-small font-sans mt-2 ${disabled ? 'text-gray-300' : 'text-gray-400'}`}>
+      <span className={`vw-small font-sans mt-1 ${disabled ? 'text-gray-300' : isGold ? 'text-[#B8860B]' : 'text-gray-400'}`}>
         {number}
       </span>
       <span
-        className={`text-nav vw-heading-md ${disabled ? 'text-gray-300' : 'text-black'} transition-all duration-300`}
+        className={`text-nav vw-body-lg ${disabled ? 'text-gray-300' : 'text-black'} transition-all duration-300`}
         style={{
           transitionProperty: 'color, transform'
         }}

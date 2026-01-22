@@ -6,6 +6,9 @@ const PUBLIC_ROUTES = [
   '/',
   '/series',      // Wake Up Zine series landing pages
   '/devotional',  // Allow access to all devotionals
+  '/all-devotionals',  // Browse all devotionals page
+  '/about',       // About Wake Up Zine
+  '/coming-soon', // Coming Soon page explaining full platform
   '/admin/unlock',  // Allow access to unlock page
   '/api/admin/unlock', // API for unlocking
 ]
