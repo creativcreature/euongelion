@@ -6,6 +6,7 @@ import Link from 'next/link';
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [showResetButton, setShowResetButton] = useState(false);
 
   useEffect(() => {
     // Initialize theme
@@ -16,11 +17,31 @@ export default function Navigation() {
     document.documentElement.classList.toggle('dark', initialTheme === 'dark');
   }, []);
 
+  useEffect(() => {
+    // Keyboard shortcut: Cmd/Ctrl + Shift + K to toggle reset button
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === 'K') {
+        e.preventDefault();
+        setShowResetButton(prev => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
     document.documentElement.classList.toggle('dark', newTheme === 'dark');
+  };
+
+  const handleReset = () => {
+    if (confirm('Clear all local data (bookmarks, progress, reflections, etc.) and reload?\n\nThis is a testing feature - use with caution!')) {
+      localStorage.clear();
+      window.location.reload();
+    }
   };
 
   useEffect(() => {
@@ -37,6 +58,25 @@ export default function Navigation() {
       <a href="#main-content" className="skip-to-content">
         Skip to main content
       </a>
+
+      {/* Debug Reset Button - Toggled with Cmd/Ctrl + Shift + K */}
+      {showResetButton && (
+        <div className="fixed bottom-4 left-4 z-50">
+          <button
+            onClick={handleReset}
+            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 text-sm font-medium rounded shadow-lg transition-all duration-300 flex items-center gap-2"
+            aria-label="Reset all local data (testing only)"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+            </svg>
+            Clear All Data
+          </button>
+          <p className="text-xs text-gray-500 mt-1 dark:text-gray-400">
+            Press Cmd+Shift+K to hide
+          </p>
+        </div>
+      )}
 
       {/* Top Nav Bar */}
       <nav className="flex items-center justify-between px-6 md:px-12 lg:px-20 py-8">
