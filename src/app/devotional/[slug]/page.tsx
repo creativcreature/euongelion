@@ -4,7 +4,12 @@ import { useEffect, useState, useRef, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Navigation from '@/components/Navigation';
 import SeriesNavigation from '@/components/SeriesNavigation';
+import HighlightToolbar from '@/components/HighlightToolbar';
+import ReflectionPrompt from '@/components/ReflectionPrompt';
+import DevotionalActions from '@/components/DevotionalActions';
 import { useProgress, useReadingTime } from '@/hooks/useProgress';
+import { useHighlights } from '@/hooks/useHighlights';
+import { addHighlight as saveHighlight } from '@/lib/highlights';
 
 interface DevotionalPanel {
   number: number;
@@ -45,6 +50,12 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
   const [showCompleteButton, setShowCompleteButton] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const readingCheck = canRead(slug);
+
+  // Highlighting
+  const { highlights } = useHighlights(slug);
+  const handleHighlight = (text: string, color: string) => {
+    saveHighlight(slug, text, color);
+  };
 
   useEffect(() => {
     setIsCompleted(isRead(slug));
@@ -133,21 +144,30 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
               {devotional.teaser}
             </p>
 
-            <div className="flex items-center gap-8 vw-small text-gray-400 observe-fade fade-in-delay-3">
-              <span>{devotional.totalWords} words</span>
-              <span>•</span>
-              <span>{devotional.scriptureReference}</span>
-              {isCompleted && (
-                <>
-                  <span>•</span>
-                  <span className="text-green-600 flex items-center gap-1">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Completed
-                  </span>
-                </>
-              )}
+            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 observe-fade fade-in-delay-3">
+              <div className="flex items-center gap-8 vw-small text-gray-400">
+                <span>{devotional.totalWords} words</span>
+                <span>•</span>
+                <span>{devotional.scriptureReference}</span>
+                {isCompleted && (
+                  <>
+                    <span>•</span>
+                    <span className="text-green-600 flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      Completed
+                    </span>
+                  </>
+                )}
+              </div>
+
+              {/* Bookmark & Share Actions */}
+              <DevotionalActions
+                slug={slug}
+                title={devotional.title}
+                seriesTitle={devotional.framework || 'Wake Up Zine'}
+              />
             </div>
           </div>
         </div>
@@ -155,18 +175,42 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
 
       {/* Devotional Panels */}
       <main className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pb-32 md:pb-48">
-        {devotional.panels.slice(1).map((panel, index) => (
-          <div
-            key={panel.number}
-            ref={(el) => {
-              panelRefs.current[index] = el;
-            }}
-            className="mb-24 md:mb-40 observe-fade"
-          >
-            <PanelComponent panel={panel} index={index} />
+        <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+          <div className="md:col-span-10 md:col-start-2">
+            {devotional.panels.slice(1).map((panel, index) => (
+              <div key={panel.number}>
+                <div
+                  ref={(el) => {
+                    panelRefs.current[index] = el;
+                  }}
+                  className="mb-24 md:mb-40 observe-fade"
+                >
+                  <PanelComponent panel={panel} index={index} />
+                </div>
+
+                {/* Add reflection prompts after key panels */}
+                {index === 1 && (
+                  <ReflectionPrompt
+                    question="What resonates with you most so far? Where do you see yourself in this narrative?"
+                    index={1}
+                    devotionalSlug={slug}
+                  />
+                )}
+                {index === devotional.panels.length - 3 && (
+                  <ReflectionPrompt
+                    question="How is God inviting you to respond? What might faithful obedience look like today?"
+                    index={2}
+                    devotionalSlug={slug}
+                  />
+                )}
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </main>
+
+      {/* Text Highlighting Toolbar */}
+      <HighlightToolbar devotionalSlug={slug} onHighlight={handleHighlight} />
 
       {/* Mark as Complete Section */}
       {!isCompleted && (
@@ -225,6 +269,7 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
 function PanelComponent({ panel, index }: { panel: DevotionalPanel; index: number }) {
   const isPrayer = panel.type === 'prayer';
   const hasImage = panel.type === 'text-with-image';
+  const isScripture = panel.type === 'scripture' || panel.content.includes('"') || /\d+:\d+/.test(panel.content);
 
   return (
     <div className="grid md:grid-cols-12 gap-8 md:gap-16">
@@ -239,32 +284,48 @@ function PanelComponent({ panel, index }: { panel: DevotionalPanel; index: numbe
               {panel.heading}
             </h2>
           )}
+          {isScripture && (
+            <div className="mt-2 flex items-center gap-1" style={{ color: '#B8860B' }}>
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+              </svg>
+              <span className="text-label vw-small">Scripture</span>
+            </div>
+          )}
         </div>
       </div>
 
       {/* Panel Content */}
       <div className={hasImage ? 'md:col-span-6' : 'md:col-span-8'}>
-        <div className={`${isPrayer ? 'text-serif-italic' : ''} vw-body prose-lg`}>
-          {panel.content.split('\n\n').map((paragraph, i) => (
-            <p
-              key={i}
-              className={`mb-6 ${isPrayer ? 'text-serif-italic' : ''}`}
-              style={{
-                whiteSpace: 'pre-line',
-                lineHeight: '1.7'
-              }}
-            >
-              {paragraph.split('**').map((part, j) =>
-                j % 2 === 1 ? (
-                  <strong key={j} style={{ fontWeight: 600 }}>
-                    {part}
-                  </strong>
-                ) : (
-                  part
-                )
-              )}
-            </p>
-          ))}
+        <div className={`${isPrayer ? 'text-serif-italic' : ''} ${isScripture ? 'text-serif-italic' : ''} vw-body prose-lg`}>
+          {panel.content.split('\n\n').map((paragraph, i) => {
+            const paragraphIsScripture = isScripture || paragraph.startsWith('"') || /\d+:\d+/.test(paragraph);
+
+            return (
+              <p
+                key={i}
+                className={`mb-6 ${isPrayer ? 'text-serif-italic' : ''} ${
+                  paragraphIsScripture ? 'border-l-4 pl-6 py-2 text-serif-italic' : ''
+                }`}
+                style={{
+                  whiteSpace: 'pre-line',
+                  lineHeight: paragraphIsScripture ? '1.8' : '1.7',
+                  borderColor: paragraphIsScripture ? '#B8860B' : 'transparent',
+                  fontSize: paragraphIsScripture ? 'clamp(1.125rem, 1.5vw, 1.75rem)' : undefined,
+                }}
+              >
+                {paragraph.split('**').map((part, j) =>
+                  j % 2 === 1 ? (
+                    <strong key={j} style={{ fontWeight: 600 }}>
+                      {part}
+                    </strong>
+                  ) : (
+                    part
+                  )
+                )}
+              </p>
+            );
+          })}
         </div>
       </div>
 
