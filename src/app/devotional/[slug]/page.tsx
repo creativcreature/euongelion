@@ -124,7 +124,7 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
   }
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a]">
       <ScrollProgress />
       <Navigation />
 
