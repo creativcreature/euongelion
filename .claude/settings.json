@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+      "Bash(npm run start)",
+      "Bash(npm run lint)",
+      "Bash(npm install:*)",
+      "Bash(npm install)",
+      "Bash(vercel --prod)",
+      "Bash(vercel --prod --force --yes)",
+      "Bash(git status)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git push*)",
+      "Bash(ls*)",
+      "Bash(pwd)",
+      "Bash(cat*)",
+      "Bash(grep*)",
+      "Bash(find*)",
+      "Bash(head*)",
+      "Bash(tail*)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf *)",
+      "Bash(rm -rf .)",
+      "Bash(rm -rf ~)",
+      "Bash(git push --force*)",
+      "Bash(git reset --hard*)",
+      "Bash(npm uninstall react*)",
+      "Bash(npm uninstall next*)"
+    ]
+  },
+  "readme": "Claude Code permissions for EUONGELION project. Allows standard development workflows while preventing destructive operations."
+}
