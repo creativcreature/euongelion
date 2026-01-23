@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import Image from 'next/image';
+import Navigation from '@/components/Navigation';
 
 const DEVOTIONAL_SERIES = [
   {
@@ -71,24 +72,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#FAF9F6' }}>
-      {/* Top Bar with wokeGod Logo */}
-      <nav className="flex items-center justify-center px-6 md:px-12 lg:px-20 py-8 relative">
-        <div className="relative w-40 h-10">
-          <Image
-            src="/logos/Logo-19.png"
-            alt="wokeGod"
-            fill
-            className="object-contain"
-            priority
-          />
-        </div>
-        <Link
-          href="/admin/unlock"
-          className="absolute right-6 md:right-12 lg:right-20 text-gray-400 hover:text-black transition-colors duration-300 vw-small"
-        >
-          Sign In
-        </Link>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <header className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-12 md:pt-20 pb-20 md:pb-32">

@@ -4,6 +4,7 @@ import { useEffect, use, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import Navigation from '@/components/Navigation';
 import { useProgress } from '@/hooks/useProgress';
 
 const SERIES_DATA: Record<string, {
@@ -159,26 +160,7 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#FAF9F6' }}>
-      {/* Top Bar */}
-      <nav className="flex items-center justify-center px-6 md:px-12 lg:px-20 py-8 relative">
-        <Link href="/">
-          <div className="relative w-40 h-10 cursor-pointer">
-            <Image
-              src="/logos/Logo-19.png"
-              alt="wokeGod"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-        </Link>
-        <Link
-          href="/admin/unlock"
-          className="absolute right-6 md:right-12 lg:right-20 text-gray-400 hover:text-black transition-colors duration-300 vw-small"
-        >
-          Sign In
-        </Link>
-      </nav>
+      <Navigation />
 
       {/* Series Introduction */}
       <header className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-12 md:pt-20 pb-20 md:pb-32">

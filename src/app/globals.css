@@ -69,32 +69,32 @@
 
   /* Viewport-based typography inspired by accordion.net.au */
   .vw-heading-xl {
-    font-size: clamp(3rem, 8vw, 10rem);
-    line-height: 0.9;
-  }
-
-  .vw-heading-lg {
-    font-size: clamp(2rem, 5vw, 6rem);
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
     line-height: 1;
   }
 
-  .vw-heading-md {
-    font-size: clamp(1.5rem, 3vw, 3.5rem);
+  .vw-heading-lg {
+    font-size: clamp(1.875rem, 4vw, 4rem);
     line-height: 1.1;
   }
 
+  .vw-heading-md {
+    font-size: clamp(1.5rem, 2.5vw, 2.75rem);
+    line-height: 1.2;
+  }
+
   .vw-body-lg {
-    font-size: clamp(1.25rem, 1.8vw, 2rem);
+    font-size: clamp(1.125rem, 1.5vw, 1.5rem);
     line-height: 1.6;
   }
 
   .vw-body {
-    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    font-size: clamp(1rem, 1.1vw, 1.125rem);
     line-height: 1.7;
   }
 
   .vw-small {
-    font-size: clamp(0.75rem, 0.9vw, 1rem);
+    font-size: clamp(0.75rem, 0.85vw, 0.9375rem);
     line-height: 1.5;
   }
 
