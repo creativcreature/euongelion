@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useProgress } from '@/hooks/useProgress';
 
 const ALL_SERIES = [
   {
@@ -92,6 +93,9 @@ const ALL_SERIES = [
 ];
 
 export default function AllDevotionalsPage() {
+  const { isRead, canRead } = useProgress();
+  const [lockMessage, setLockMessage] = useState<{ slug: string; message: string } | null>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -185,41 +189,121 @@ export default function AllDevotionalsPage() {
 
                 {/* Days */}
                 <div className="space-y-1 md:space-y-2">
-                  {series.days.map((day) => (
-                    <Link
-                      key={day.slug}
-                      href={`/devotional/${day.slug}`}
-                      className="block group"
-                    >
-                      <div className={`grid md:grid-cols-12 gap-6 md:gap-12 py-6 md:py-8 border-b border-gray-200 hover:border-gray-400 transition-all duration-300 ${day.day === 3 ? 'md:bg-gray-50 md:-mx-8 md:px-8' : ''}`}>
-                        <div className="md:col-span-1">
-                          <span className="text-label vw-small" style={{ color: day.day === 3 ? '#B8860B' : '#999' }}>
-                            DAY {day.day}
-                          </span>
-                        </div>
+                  {series.days.map((day) => {
+                    const readingCheck = canRead(day.slug);
+                    const isLocked = !readingCheck.canRead;
+                    const isCompleted = isRead(day.slug);
 
-                        <div className="md:col-span-9">
-                          <p className="text-serif-italic vw-body transition-all duration-300 group-hover:translate-x-2">
-                            <span className="group-hover:text-[#B8860B] transition-colors duration-300">
-                              {day.title}
-                            </span>
-                          </p>
-                        </div>
+                    return (
+                      <div key={day.slug}>
+                        {isLocked ? (
+                          <div
+                            onClick={() => setLockMessage({ slug: day.slug, message: readingCheck.reason || 'Complete previous devotionals first' })}
+                            className="block cursor-help opacity-50"
+                          >
+                            <div className={`grid md:grid-cols-12 gap-6 md:gap-12 py-6 md:py-8 border-b border-gray-200 ${day.day === 3 ? 'md:bg-gray-50 md:-mx-8 md:px-8' : ''}`}>
+                              <div className="md:col-span-1">
+                                <span className="text-label vw-small text-gray-300">
+                                  DAY {day.day}
+                                </span>
+                              </div>
 
-                        <div className="md:col-span-2 flex items-center justify-end">
-                          <span className="text-label vw-small text-gray-400 group-hover:text-black transition-colors duration-300">
-                            READ →
-                          </span>
-                        </div>
+                              <div className="md:col-span-9">
+                                <p className="text-serif-italic vw-body text-gray-300">
+                                  {day.title}
+                                </p>
+                              </div>
+
+                              <div className="md:col-span-2 flex items-center justify-end gap-2">
+                                <svg className="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                                </svg>
+                                <span className="text-label vw-small text-gray-300">
+                                  LOCKED
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          <Link
+                            href={`/devotional/${day.slug}`}
+                            className="block group"
+                          >
+                            <div className={`grid md:grid-cols-12 gap-6 md:gap-12 py-6 md:py-8 border-b border-gray-200 hover:border-gray-400 transition-all duration-300 ${day.day === 3 ? 'md:bg-gray-50 md:-mx-8 md:px-8' : ''}`}>
+                              <div className="md:col-span-1">
+                                <span className="text-label vw-small" style={{ color: day.day === 3 ? '#B8860B' : '#999' }}>
+                                  DAY {day.day}
+                                </span>
+                              </div>
+
+                              <div className="md:col-span-9">
+                                <p className="text-serif-italic vw-body transition-all duration-300 group-hover:translate-x-2">
+                                  <span className="group-hover:text-[#B8860B] transition-colors duration-300">
+                                    {day.title}
+                                  </span>
+                                </p>
+                              </div>
+
+                              <div className="md:col-span-2 flex items-center justify-end gap-3">
+                                {isCompleted && (
+                                  <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                  </svg>
+                                )}
+                                <span className="text-label vw-small text-gray-400 group-hover:text-black transition-colors duration-300">
+                                  {isCompleted ? 'READ AGAIN →' : 'READ →'}
+                                </span>
+                              </div>
+                            </div>
+                          </Link>
+                        )}
                       </div>
-                    </Link>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             ))}
           </div>
         </div>
       </main>
+
+      {/* Lock Message Modal */}
+      {lockMessage && (
+        <div
+          className="fixed inset-0 bg-black z-50 flex items-center justify-center px-6"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+          onClick={() => setLockMessage(null)}
+        >
+          <div
+            className="max-w-md w-full p-8 shadow-2xl"
+            style={{ backgroundColor: '#FAF9F6' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-start gap-4 mb-6">
+              <svg className="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+              </svg>
+              <div>
+                <h3 className="text-display vw-heading-md mb-4">Devotional Locked</h3>
+                <p className="vw-body text-gray-700 mb-4">
+                  {lockMessage.message}
+                </p>
+                <p className="vw-body text-gray-600">
+                  Wake Up Zine is designed to be read in order to build a cohesive spiritual journey.
+                  Each series follows a chiastic structure where Day 3 is the pivot.
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={() => setLockMessage(null)}
+              className="w-full bg-black px-6 py-4 text-label vw-small hover:bg-gray-800 transition-colors"
+              style={{ color: '#FAF9F6' }}
+            >
+              Got It
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="border-t border-gray-200 py-16 md:py-24">
