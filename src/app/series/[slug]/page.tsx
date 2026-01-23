@@ -189,7 +189,7 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
                 <p className="text-serif-italic vw-body-lg mb-8 observe-fade fade-in-delay-2">
                   {series.introduction}
                 </p>
-                <p className="vw-body text-gray-700 observe-fade fade-in-delay-3">
+                <p className="vw-body text-gray-700 dark:text-gray-300 observe-fade fade-in-delay-3">
                   {series.context}
                 </p>
               </div>
@@ -206,7 +206,7 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
                       </span>
                     )}
                   </div>
-                  <p className="vw-body text-gray-700 leading-relaxed mb-4">
+                  <p className="vw-body text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                     This series follows a chiastic structure (A-B-C-B'-A'). Days 1 and 5 mirror each other. Days 2 and 4 mirror each other. Day 3 is the pivot—the core revelation everything builds toward.
                   </p>
                   {seriesProgress.completed > 0 && (
@@ -292,7 +292,7 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
                                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                               </svg>
                             )}
-                            <span className="text-label vw-small text-gray-400 group-hover:text-black transition-colors duration-300">
+                            <span className="text-label vw-small text-gray-400 dark:text-gray-500 group-hover:text-black dark:group-hover:text-cream transition-colors duration-300">
                               {dayIsRead ? 'READ AGAIN →' : 'READ →'}
                             </span>
                           </div>
@@ -324,13 +324,13 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
               </svg>
               <div>
                 <h3 className="text-display vw-heading-md mb-4">Devotional Locked</h3>
-                <p className="vw-body text-gray-700 mb-4">
+                <p className="vw-body text-gray-700 dark:text-gray-300 mb-4">
                   This devotional is locked because it builds on previous days.
                 </p>
-                <p className="vw-body text-gray-700 mb-4">
+                <p className="vw-body text-gray-700 dark:text-gray-300 mb-4">
                   Each 5-day series is designed to be read in order, with Day 3 as the turning point.
                 </p>
-                <p className="vw-body text-gray-700">
+                <p className="vw-body text-gray-700 dark:text-gray-300">
                   {lockMessage.message}
                 </p>
               </div>

@@ -156,7 +156,7 @@ export default function AllDevotionalsPage() {
               7 series. 35 days. A journey through the questions that keep you up at night.
             </p>
 
-            <p className="vw-body text-gray-700 observe-fade fade-in-delay-3" style={{ maxWidth: '600px' }}>
+            <p className="vw-body text-gray-700 dark:text-gray-300 observe-fade fade-in-delay-3" style={{ maxWidth: '600px' }}>
               We recommend reading one devotional per day, following each series in order.
               Each series has a chiastic structure (A-B-C-B'-A') with Day 3 as the pivot point.
             </p>
@@ -284,13 +284,13 @@ export default function AllDevotionalsPage() {
               </svg>
               <div>
                 <h3 className="text-display vw-heading-md mb-4">Devotional Locked</h3>
-                <p className="vw-body text-gray-700 mb-4">
+                <p className="vw-body text-gray-700 dark:text-gray-300 mb-4">
                   This devotional is locked because it builds on previous days.
                 </p>
-                <p className="vw-body text-gray-700 mb-4">
+                <p className="vw-body text-gray-700 dark:text-gray-300 mb-4">
                   Each 5-day series is designed to be read in order, with Day 3 as the turning point.
                 </p>
-                <p className="vw-body text-gray-700">
+                <p className="vw-body text-gray-700 dark:text-gray-300">
                   {lockMessage.message}
                 </p>
               </div>

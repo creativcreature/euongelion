@@ -161,22 +161,22 @@ export default function SeriesNavigation({ currentSlug }: SeriesNavigationProps)
               {prevDay ? (
                 <Link
                   href={`/devotional/${prevDay.slug}`}
-                  className="text-label vw-small text-gray-400 hover:text-black transition-colors duration-300"
+                  className="text-label vw-small text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-cream transition-colors duration-300"
                 >
                   ← Prev
                 </Link>
               ) : (
-                <span className="text-label vw-small text-gray-200">← Prev</span>
+                <span className="text-label vw-small text-gray-200 dark:text-gray-700">← Prev</span>
               )}
               {nextDay ? (
                 <Link
                   href={`/devotional/${nextDay.slug}`}
-                  className="text-label vw-small text-gray-400 hover:text-black transition-colors duration-300"
+                  className="text-label vw-small text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-cream transition-colors duration-300"
                 >
                   Next →
                 </Link>
               ) : (
-                <span className="text-label vw-small text-gray-200">Next →</span>
+                <span className="text-label vw-small text-gray-200 dark:text-gray-700">Next →</span>
               )}
             </div>
           </div>

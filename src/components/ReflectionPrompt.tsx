@@ -103,7 +103,7 @@ export default function ReflectionPrompt({ question, index, devotionalSlug }: Re
             <p className="text-label vw-small mb-2" style={{ color: '#B8860B' }}>
               REFLECTION PROMPT
             </p>
-            <p className="text-serif-italic vw-body-lg mb-6" style={{ color: '#1a1a1a' }}>
+            <p className="text-serif-italic vw-body-lg mb-6 text-[#1a1a1a] dark:text-cream">
               {question}
             </p>
 

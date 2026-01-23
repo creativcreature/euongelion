@@ -78,15 +78,15 @@ export default function ComingSoonPage() {
           <div className="grid md:grid-cols-3 gap-8 md:gap-12 text-center">
             <div className="observe-fade scale-in">
               <p className="text-display vw-heading-md mb-2 text-gold">35 Days</p>
-              <p className="text-gray-600 vw-small text-label">Transformative Journey</p>
+              <p className="text-gray-600 dark:text-gray-400 vw-small text-label">Transformative Journey</p>
             </div>
             <div className="observe-fade scale-in fade-in-delay-1">
               <p className="text-display vw-heading-md mb-2 text-gold">Orthodox</p>
-              <p className="text-gray-600 vw-small text-label">Theologically Grounded</p>
+              <p className="text-gray-600 dark:text-gray-400 vw-small text-label">Theologically Grounded</p>
             </div>
             <div className="observe-fade scale-in fade-in-delay-2">
               <p className="text-display vw-heading-md mb-2 text-gold">7 Questions</p>
-              <p className="text-gray-600 vw-small text-label">Seven Series Available</p>
+              <p className="text-gray-600 dark:text-gray-400 vw-small text-label">Seven Series Available</p>
             </div>
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function ComingSoonPage() {
                     </svg>
                     <h3 className="text-label vw-small text-gold">AI SPIRITUAL DIRECTION</h3>
                   </div>
-                  <p className="vw-body text-gray-700 leading-relaxed">
+                  <p className="vw-body text-gray-700 dark:text-gray-300 leading-relaxed">
                     Personalized devotional pathways that adapt to your spiritual journey. Scripture-grounded AI that helps you discern God's voice and develop a rule of life.
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export default function ComingSoonPage() {
                     </svg>
                     <h3 className="text-label vw-small text-gold">SOUL AUDIT</h3>
                   </div>
-                  <p className="vw-body text-gray-700 leading-relaxed">
+                  <p className="vw-body text-gray-700 dark:text-gray-300 leading-relaxed">
                     In-depth assessment that identifies where you are spiritually, what you're hungry for, and creates a customized formation plan.
                   </p>
                 </div>
@@ -136,7 +136,7 @@ export default function ComingSoonPage() {
                     </svg>
                     <h3 className="text-label vw-small text-gold">COVENANT COMMUNITY</h3>
                   </div>
-                  <p className="vw-body text-gray-700 leading-relaxed">
+                  <p className="vw-body text-gray-700 dark:text-gray-300 leading-relaxed">
                     Find or start local groups practicing mutual aid and spiritual accountability. Share reflections, prayer requests, and wisdom.
                   </p>
                 </div>
@@ -149,7 +149,7 @@ export default function ComingSoonPage() {
                     </svg>
                     <h3 className="text-label vw-small text-gold">SHEPHERD TOOLS</h3>
                   </div>
-                  <p className="vw-body text-gray-700 leading-relaxed">
+                  <p className="vw-body text-gray-700 dark:text-gray-300 leading-relaxed">
                     Resources for pastors and leaders. Curriculum development, discussion guides, and AI-assisted sermon prep grounded in Matthew 6:33.
                   </p>
                 </div>
@@ -162,7 +162,7 @@ export default function ComingSoonPage() {
                     </svg>
                     <h3 className="text-label vw-small text-gold">THE ARCHIVE</h3>
                   </div>
-                  <p className="vw-body text-gray-700 leading-relaxed">
+                  <p className="vw-body text-gray-700 dark:text-gray-300 leading-relaxed">
                     Growing library of devotionals and theological reflections. Searchable by topic, Scripture, or spiritual season. Build your own library.
                   </p>
                 </div>
@@ -175,7 +175,7 @@ export default function ComingSoonPage() {
                     </svg>
                     <h3 className="text-label vw-small text-gold">FORMATION TRACKS</h3>
                   </div>
-                  <p className="vw-body text-gray-700 leading-relaxed">
+                  <p className="vw-body text-gray-700 dark:text-gray-300 leading-relaxed">
                     Multi-week intensive courses on spiritual disciplines, theology, and Christian living. Video teachings, readings, and community discussion.
                   </p>
                 </div>
@@ -191,7 +191,7 @@ export default function ComingSoonPage() {
           <div className="grid md:grid-cols-12 gap-8 md:gap-16">
             <div className="md:col-span-8 md:col-start-3">
               <h2 className="text-display vw-heading-md mb-8 observe-fade">Why AI?</h2>
-              <div className="space-y-6 vw-body text-gray-700">
+              <div className="space-y-6 vw-body text-gray-700 dark:text-gray-300">
                 <p className="observe-fade fade-in-delay-1">
                   The church has always used technology to spread the gospel: the printing press, radio, television. AI is this generation's tool.
                 </p>
@@ -272,7 +272,7 @@ export default function ComingSoonPage() {
           <div className="grid md:grid-cols-12 gap-8 md:gap-16">
             <div className="md:col-span-8 md:col-start-3">
               <h2 className="text-display vw-heading-md mb-8 observe-fade">When?</h2>
-              <div className="space-y-6 vw-body text-gray-700">
+              <div className="space-y-6 vw-body text-gray-700 dark:text-gray-300">
                 <p className="observe-fade fade-in-delay-1">
                   We're building in public. The full platform is in development now.
                 </p>

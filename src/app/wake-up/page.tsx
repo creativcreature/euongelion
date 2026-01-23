@@ -109,7 +109,7 @@ export default function WakeUpPage() {
                   <p className="text-label vw-small mb-4" style={{ color: '#B8860B' }}>
                     THE CONTEXT
                   </p>
-                  <p className="vw-body text-gray-700 leading-relaxed">
+                  <p className="vw-body text-gray-700 dark:text-gray-300 leading-relaxed">
                     2026. Political violence at 1970s levels. 47.9M food insecure.
                     71% dissatisfied with democracy. 43% more anxious than last year.
                     It feels apocalyptic. And in the chaos, these questions matter.

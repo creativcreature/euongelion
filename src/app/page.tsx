@@ -105,7 +105,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid md:grid-cols-12 gap-8 md:gap-16">
             <div className="md:col-span-8 md:col-start-3 text-center">
-              <p className="vw-body text-gray-700 mb-6 observe-fade">
+              <p className="vw-body text-gray-700 dark:text-gray-300 mb-6 observe-fade">
                 We live in apocalyptic times. Political violence. Economic collapse. 43% more anxious than last year. The ground beneath us is shaking.
               </p>
               <p className="text-serif-italic vw-body-lg observe-fade fade-in-delay-1">
@@ -127,18 +127,18 @@ export default function Home() {
               <div className="grid md:grid-cols-3 gap-8 md:gap-12 text-center">
                 <div className="observe-fade slide-in-left fade-in-delay-1">
                   <div className="text-display vw-heading-md mb-4 text-gold">01</div>
-                  <p className="vw-body text-gray-700">Pick a question that speaks to where you are.</p>
+                  <p className="vw-body text-gray-700 dark:text-gray-300">Pick a question that speaks to where you are.</p>
                 </div>
                 <div className="observe-fade scale-in fade-in-delay-2">
                   <div className="text-display vw-heading-md mb-4 text-gold">02</div>
-                  <p className="vw-body text-gray-700">Read one devotional per day for 5 days.</p>
+                  <p className="vw-body text-gray-700 dark:text-gray-300">Read one devotional per day for 5 days.</p>
                 </div>
                 <div className="observe-fade slide-in-right fade-in-delay-3">
                   <div className="text-display vw-heading-md mb-4 text-gold">03</div>
-                  <p className="vw-body text-gray-700">Reflect, journal, and let God reorder your heart.</p>
+                  <p className="vw-body text-gray-700 dark:text-gray-300">Reflect, journal, and let God reorder your heart.</p>
                 </div>
               </div>
-              <p className="text-center vw-body text-gray-600 mt-10 observe-fade fade-in-delay-4">
+              <p className="text-center vw-body text-gray-600 dark:text-gray-400 mt-10 observe-fade fade-in-delay-4">
                 Each series follows a chiastic arc—building toward a revelation, then reflecting back. Ancient structure. Modern questions.
               </p>
             </div>
@@ -176,7 +176,7 @@ export default function Home() {
                       </div>
 
                       <div className="md:col-span-2 flex items-center justify-end">
-                        <span className="text-label vw-small text-gray-400 group-hover:text-black transition-colors duration-300">
+                        <span className="text-label vw-small text-gray-400 dark:text-gray-500 group-hover:text-black dark:group-hover:text-cream transition-colors duration-300">
                           BEGIN →
                         </span>
                       </div>
