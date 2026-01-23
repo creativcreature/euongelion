@@ -16,13 +16,19 @@ export default function Navigation() {
 
   return (
     <>
+      {/* Skip to Content Link for Accessibility */}
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
+
       {/* Top Nav Bar */}
       <nav className="flex items-center justify-between px-6 md:px-12 lg:px-20 py-8">
         {/* Hamburger Menu */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-12 h-12 flex items-center justify-center hover:bg-gray-100 rounded-full transition-all duration-300"
-          aria-label="Menu"
+          className="w-12 h-12 flex items-center justify-center hover:bg-gray-100 rounded-full transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8860B]"
+          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isOpen}
         >
           <svg
             className="w-6 h-6 transition-transform duration-300"
@@ -30,6 +36,7 @@ export default function Navigation() {
             stroke="currentColor"
             viewBox="0 0 24 24"
             style={{ transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}
+            aria-hidden="true"
           >
             {isOpen ? (
               <path
@@ -50,16 +57,17 @@ export default function Navigation() {
         </button>
 
         {/* Center Logo */}
-        <div className="text-label text-gray-500 vw-small">
+        <div className="text-label text-gray-500 vw-small" aria-label="wokeGod">
           W O K E G O D
         </div>
 
         {/* Moon Icon (Theme Toggle Placeholder) */}
         <button
-          className="w-12 h-12 flex items-center justify-center hover:bg-gray-100 rounded-full transition-all duration-300"
-          aria-label="Toggle theme"
+          className="w-12 h-12 flex items-center justify-center hover:bg-gray-100 rounded-full transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8860B]"
+          aria-label="Toggle dark mode (coming soon)"
+          disabled
         >
-          <span className="text-2xl">🌙</span>
+          <span className="text-2xl" aria-hidden="true">🌙</span>
         </button>
       </nav>
 
@@ -84,9 +92,10 @@ export default function Navigation() {
             {/* Close Button */}
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-8 right-8 w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black transition-all duration-300 hover:rotate-90"
+              className="absolute top-8 right-8 w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black transition-all duration-300 hover:rotate-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8860B]"
+              aria-label="Close navigation menu"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>

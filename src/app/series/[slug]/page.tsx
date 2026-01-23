@@ -228,7 +228,7 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
       </header>
 
       {/* 5 Days */}
-      <main className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pb-32 md:pb-48">
+      <main id="main-content" className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pb-32 md:pb-48">
         <div className="grid md:grid-cols-12 gap-8 md:gap-16">
           <div className="md:col-span-10 md:col-start-2">
             <div className="space-y-1 md:space-y-2">
@@ -327,18 +327,21 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
               <div>
                 <h3 className="text-display vw-heading-md mb-4">Devotional Locked</h3>
                 <p className="vw-body text-gray-700 mb-4">
-                  {lockMessage.message}
+                  This devotional is locked because it builds on previous days.
                 </p>
-                <p className="vw-body text-gray-600">
-                  Wake Up Zine is designed to be read in order to build a cohesive spiritual journey.
-                  Each series follows a chiastic structure where Day 3 is the pivot.
+                <p className="vw-body text-gray-700 mb-4">
+                  Each 5-day series is designed to be read in order, with Day 3 as the turning point.
+                </p>
+                <p className="vw-body text-gray-700">
+                  {lockMessage.message}
                 </p>
               </div>
             </div>
             <button
               onClick={() => setLockMessage(null)}
-              className="w-full bg-black px-6 py-4 text-label vw-small hover:bg-gray-800 transition-colors"
+              className="w-full bg-black px-6 py-4 text-label vw-small hover:bg-gray-800 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8860B]"
               style={{ color: '#FAF9F6' }}
+              aria-label="Close lock message"
             >
               Got It
             </button>

@@ -8,18 +8,32 @@ interface ReflectionPromptProps {
   devotionalSlug: string;
 }
 
+interface SavedReflection {
+  text: string;
+  savedAt: string;
+}
+
 export default function ReflectionPrompt({ question, index, devotionalSlug }: ReflectionPromptProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [response, setResponse] = useState('');
-  const [isSaved, setIsSaved] = useState(false);
+  const [lastSavedAt, setLastSavedAt] = useState<string | null>(null);
+  const [showSavedConfirmation, setShowSavedConfirmation] = useState(false);
   const promptRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Load saved response if exists
-    const saved = localStorage.getItem(`reflection_${devotionalSlug}_${index}`);
-    if (saved) {
-      setResponse(saved);
-      setIsSaved(true);
+    const savedData = localStorage.getItem(`reflection_${devotionalSlug}_${index}`);
+    if (savedData) {
+      try {
+        // Try to parse as new format (with timestamp)
+        const parsed: SavedReflection = JSON.parse(savedData);
+        setResponse(parsed.text);
+        setLastSavedAt(parsed.savedAt);
+      } catch {
+        // Fallback for old format (just text string)
+        setResponse(savedData);
+        setLastSavedAt(new Date().toISOString());
+      }
     }
 
     // Intersection observer for fade-in animation
@@ -43,10 +57,34 @@ export default function ReflectionPrompt({ question, index, devotionalSlug }: Re
 
   const handleSave = () => {
     if (response.trim()) {
-      localStorage.setItem(`reflection_${devotionalSlug}_${index}`, response);
-      setIsSaved(true);
-      setTimeout(() => setIsSaved(false), 2000);
+      const now = new Date().toISOString();
+      const dataToSave: SavedReflection = {
+        text: response,
+        savedAt: now,
+      };
+      localStorage.setItem(`reflection_${devotionalSlug}_${index}`, JSON.stringify(dataToSave));
+      setLastSavedAt(now);
+      setShowSavedConfirmation(true);
+      setTimeout(() => setShowSavedConfirmation(false), 3000);
     }
+  };
+
+  const formatTimestamp = (timestamp: string | null) => {
+    if (!timestamp) return '';
+
+    const savedDate = new Date(timestamp);
+    const now = new Date();
+    const diffMs = now.getTime() - savedDate.getTime();
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMs / 3600000);
+    const diffDays = Math.floor(diffMs / 86400000);
+
+    if (diffMins < 1) return 'just now';
+    if (diffMins < 60) return `${diffMins} minute${diffMins === 1 ? '' : 's'} ago`;
+    if (diffHours < 24) return `${diffHours} hour${diffHours === 1 ? '' : 's'} ago`;
+    if (diffDays < 7) return `${diffDays} day${diffDays === 1 ? '' : 's'} ago`;
+
+    return savedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   };
 
   return (
@@ -72,29 +110,64 @@ export default function ReflectionPrompt({ question, index, devotionalSlug }: Re
             <div className="space-y-3">
               <textarea
                 value={response}
-                onChange={(e) => setResponse(e.target.value)}
+                onChange={(e) => {
+                  setResponse(e.target.value);
+                  setShowSavedConfirmation(false);
+                }}
                 placeholder="Write your thoughts here..."
-                className="w-full p-4 border-2 border-gray-200 focus:border-[#B8860B] outline-none resize-none vw-body font-serif"
+                className="w-full p-4 border-2 border-gray-200 focus:border-[#B8860B] outline-none resize-none vw-body font-serif transition-colors"
                 style={{ backgroundColor: '#FAF9F6', minHeight: '120px' }}
+                aria-label="Reflection response"
               />
 
-              <div className="flex items-center justify-between">
+              {/* Save Confirmation Banner */}
+              {showSavedConfirmation && (
+                <div
+                  className="flex items-center gap-2 p-3 bg-green-50 border-2 border-green-600 animate-fade-in"
+                  role="status"
+                  aria-live="polite"
+                >
+                  <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <div className="flex-1">
+                    <p className="text-green-800 vw-small font-semibold">Reflection Saved Successfully</p>
+                    <p className="text-green-700 vw-small">Your response has been saved to your device</p>
+                  </div>
+                </div>
+              )}
+
+              <div className="flex items-center justify-between gap-4 flex-wrap">
                 <button
                   onClick={handleSave}
                   disabled={!response.trim()}
-                  className={`px-6 py-2 text-label vw-small transition-all duration-300 ${
+                  className={`px-8 py-3 text-label vw-small transition-all duration-300 ${
                     response.trim()
-                      ? 'bg-black hover:bg-gray-800'
+                      ? 'bg-black hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8860B]'
                       : 'bg-gray-300 cursor-not-allowed'
                   }`}
                   style={{ color: '#FAF9F6' }}
+                  aria-label={lastSavedAt ? 'Update reflection response' : 'Save reflection response'}
                 >
-                  {isSaved ? 'Saved ✓' : 'Save Response'}
+                  {lastSavedAt ? 'Update Response' : 'Save Response'}
                 </button>
 
-                <span className="text-gray-400 vw-small">
-                  {response.length > 0 ? `${response.length} characters` : 'Start writing...'}
-                </span>
+                <div className="flex items-center gap-4 text-gray-400 vw-small">
+                  <span>
+                    {response.length > 0 ? `${response.length} characters` : 'Start writing...'}
+                  </span>
+                  {lastSavedAt && (
+                    <>
+                      <span>•</span>
+                      <span className="text-green-600 flex items-center gap-1">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        Saved {formatTimestamp(lastSavedAt)}
+                      </span>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
 

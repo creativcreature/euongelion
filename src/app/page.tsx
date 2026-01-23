@@ -123,7 +123,7 @@ export default function Home() {
       </header>
 
       {/* Seven Questions */}
-      <main className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pb-32 md:pb-48">
+      <main id="main-content" className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pb-32 md:pb-48">
         <div className="grid md:grid-cols-12 gap-8 md:gap-16 mb-12 md:mb-20">
           <div className="md:col-span-10 md:col-start-2">
             <h2 className="text-label vw-small mb-12 observe-fade" style={{ color: '#B8860B' }}>
