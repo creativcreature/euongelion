@@ -1,10 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #FAF9F6;
-  --color-gold: #B8860B;
-  --color-dark-gold: #9B7500;
+  /* HSL Color System for Dark Mode Support */
+  --color-cream-h: 60;
+  --color-cream-s: 20%;
+  --color-cream-l: 97%;
+  --color-cream: hsl(var(--color-cream-h), var(--color-cream-s), var(--color-cream-l));
 
+  --color-gold-h: 43;
+  --color-gold-s: 86%;
+  --color-gold-l: 38%;
+  --color-gold: hsl(var(--color-gold-h), var(--color-gold-s), var(--color-gold-l));
+
+  --color-dark-gold-h: 43;
+  --color-dark-gold-s: 100%;
+  --color-dark-gold-l: 30%;
+  --color-dark-gold: hsl(var(--color-dark-gold-h), var(--color-dark-gold-s), var(--color-dark-gold-l));
+
+  /* Semantic Color Tokens */
+  --bg-primary: var(--color-cream);
+  --bg-secondary: hsl(60, 15%, 95%);
+  --bg-accent: hsl(0, 0%, 0%);
+
+  --text-primary: hsl(0, 0%, 0%);
+  --text-secondary: hsl(0, 0%, 60%);
+  --text-accent: var(--color-gold);
+
+  --border-subtle: hsl(0, 0%, 88%);
+  --border-accent: var(--color-gold);
+
+  /* Typography */
   --font-family-display: var(--font-impact), Impact, "Arial Black", sans-serif;
   --font-family-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
 }
@@ -167,5 +192,56 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  /* Elite UX Color Utilities */
+  .text-gold {
+    color: var(--color-gold);
+  }
+
+  .text-dark-gold {
+    color: var(--color-dark-gold);
+  }
+
+  .text-cream {
+    color: var(--color-cream);
+  }
+
+  .bg-cream {
+    background-color: var(--color-cream);
+  }
+
+  .bg-cream-dark {
+    background-color: var(--bg-secondary);
+  }
+
+  .bg-gold {
+    background-color: var(--color-gold);
+  }
+
+  .bg-dark-gold {
+    background-color: var(--color-dark-gold);
+  }
+
+  .bg-accent {
+    background-color: var(--bg-accent);
+  }
+
+  .border-gold {
+    border-color: var(--color-gold);
+  }
+
+  .border-cream {
+    border-color: var(--color-cream);
+  }
+
+  .border-subtle {
+    border-color: var(--border-subtle);
+  }
+
+  /* Focus utilities */
+  .focus-gold {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
   }
 }
