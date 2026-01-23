@@ -75,7 +75,7 @@ export function getSeriesProgress(seriesSlug: string): {
   percentage: number;
 } {
   const progress = getProgress();
-  const seriesDevotionals = getSeries Devotionals(seriesSlug);
+  const seriesDevotionals = getSeriesDevotionals(seriesSlug);
 
   const completed = seriesDevotionals.filter((slug) =>
     progress.some((p) => p.slug === slug)
