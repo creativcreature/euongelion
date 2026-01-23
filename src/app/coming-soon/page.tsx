@@ -2,9 +2,13 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import Navigation from '@/components/Navigation';
+import { useEffect, useState } from 'react';
 
 export default function ComingSoonPage() {
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -23,151 +27,265 @@ export default function ComingSoonPage() {
     return () => observer.disconnect();
   }, []);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: Integrate with email service
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 5000);
+  };
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#FAF9F6' }}>
-      {/* Top Bar */}
-      <nav className="flex items-center justify-center px-6 md:px-12 lg:px-20 py-8 relative">
-        <Link href="/">
-          <div className="relative w-40 h-10 cursor-pointer">
-            <Image
-              src="/logos/Logo-19.png"
-              alt="wokeGod"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-        </Link>
-        <Link
-          href="/admin/unlock"
-          className="absolute right-6 md:right-12 lg:right-20 text-gray-400 hover:text-black transition-colors duration-300 vw-small"
-        >
-          Sign In
-        </Link>
-      </nav>
+      <Navigation />
 
-      {/* Content */}
-      <main className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-32">
+      {/* Hero Section */}
+      <header id="main-content" className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-12 md:pt-20 pb-20 md:pb-32">
         <div className="grid md:grid-cols-12 gap-8 md:gap-16">
-          <div className="md:col-span-8 md:col-start-3">
-            <Link
-              href="/"
-              className="text-gray-400 hover:text-black transition-colors duration-300 vw-small mb-12 inline-block observe-fade"
-            >
-              ← Home
-            </Link>
+          <div className="md:col-span-10 md:col-start-2 text-center">
+            <p className="text-label vw-small mb-6 observe-fade" style={{ color: '#B8860B' }}>
+              EUONGELION PLATFORM
+            </p>
 
-            <h1 className="text-display vw-heading-xl mb-12 observe-fade fade-in-delay-1">
-              Coming Soon
+            <h1 className="text-display vw-heading-xl mb-8 observe-fade fade-in-delay-1">
+              Spiritual Formation<br />for Apocalyptic Times
             </h1>
 
-            <div className="space-y-8 vw-body">
-              <p className="text-serif-italic vw-body-lg observe-fade fade-in-delay-2">
-                Wake Up Zine is just the beginning.
-              </p>
+            <p className="text-serif-italic vw-body-lg max-w-3xl mx-auto mb-12 observe-fade fade-in-delay-2" style={{ maxWidth: '40ch' }}>
+              Wake Up Zine is just the beginning. We're building a comprehensive AI-powered platform for discipleship, community, and spiritual direction.
+            </p>
 
-              <p className="observe-fade fade-in-delay-3">
-                What you're experiencing now is the public entry point to EUONGELION—a comprehensive platform
-                for spiritual formation in apocalyptic times.
-              </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center observe-fade fade-in-delay-3">
+              <Link
+                href="/"
+                className="bg-black px-10 py-5 text-label vw-small hover:bg-gray-800 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8860B]"
+                style={{ color: '#FAF9F6' }}
+              >
+                Start with Wake Up Zine
+              </Link>
+              <Link
+                href="/admin/unlock"
+                className="border-2 border-black px-10 py-5 text-label vw-small hover:bg-black hover:text-[#FAF9F6] transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8860B]"
+              >
+                Admin Preview
+              </Link>
+            </div>
+          </div>
+        </div>
+      </header>
 
-              <div className="pt-8 border-t border-gray-200 observe-fade fade-in-delay-4">
-                <h2 className="text-display vw-heading-md mb-6">The Full EUONGELION Platform</h2>
+      {/* What's Coming */}
+      <section className="border-t border-gray-200 py-20 md:py-32" style={{ backgroundColor: '#F5F4F0' }}>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+            <div className="md:col-span-10 md:col-start-2">
+              <h2 className="text-display vw-heading-lg mb-16 text-center observe-fade">
+                What's Coming
+              </h2>
 
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-label vw-small mb-2" style={{ color: '#B8860B' }}>AI-POWERED SPIRITUAL DIRECTION</h3>
-                    <p>
-                      Personalized devotional pathways that adapt to your spiritual journey. The AI acts as a spiritual companion,
-                      helping you navigate Scripture, discern God's voice, and develop a rule of life.
-                    </p>
+              <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+                {/* Feature 1 */}
+                <div className="bg-white p-8 md:p-10 border-l-4 observe-fade fade-in-delay-1" style={{ borderColor: '#B8860B' }}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <svg className="w-6 h-6" style={{ color: '#B8860B' }} fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+                    </svg>
+                    <h3 className="text-label vw-small" style={{ color: '#B8860B' }}>AI SPIRITUAL DIRECTION</h3>
                   </div>
+                  <p className="vw-body text-gray-700 leading-relaxed">
+                    Personalized devotional pathways that adapt to your spiritual journey. Scripture-grounded AI that helps you discern God's voice and develop a rule of life.
+                  </p>
+                </div>
 
-                  <div>
-                    <h3 className="text-label vw-small mb-2" style={{ color: '#B8860B' }}>SOUL AUDIT</h3>
-                    <p>
-                      An in-depth assessment that identifies where you are spiritually, what you're hungry for,
-                      and what barriers are preventing growth. Creates a customized devotional plan.
-                    </p>
+                {/* Feature 2 */}
+                <div className="bg-white p-8 md:p-10 border-l-4 observe-fade fade-in-delay-2" style={{ borderColor: '#B8860B' }}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <svg className="w-6 h-6" style={{ color: '#B8860B' }} fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <h3 className="text-label vw-small" style={{ color: '#B8860B' }}>SOUL AUDIT</h3>
                   </div>
+                  <p className="vw-body text-gray-700 leading-relaxed">
+                    In-depth assessment that identifies where you are spiritually, what you're hungry for, and creates a customized formation plan.
+                  </p>
+                </div>
 
-                  <div>
-                    <h3 className="text-label vw-small mb-2" style={{ color: '#B8860B' }}>COMMUNITY PRACTICES</h3>
-                    <p>
-                      Connect with others walking the same path. Share reflections, prayer requests, and insights.
-                      Find or start local covenant communities practicing mutual aid and spiritual accountability.
-                    </p>
+                {/* Feature 3 */}
+                <div className="bg-white p-8 md:p-10 border-l-4 observe-fade fade-in-delay-3" style={{ borderColor: '#B8860B' }}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <svg className="w-6 h-6" style={{ color: '#B8860B' }} fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                    </svg>
+                    <h3 className="text-label vw-small" style={{ color: '#B8860B' }}>COVENANT COMMUNITY</h3>
                   </div>
+                  <p className="vw-body text-gray-700 leading-relaxed">
+                    Find or start local groups practicing mutual aid and spiritual accountability. Share reflections, prayer requests, and wisdom.
+                  </p>
+                </div>
 
-                  <div>
-                    <h3 className="text-label vw-small mb-2" style={{ color: '#B8860B' }}>SHEPHERD TOOLS</h3>
-                    <p>
-                      Resources for pastors, small group leaders, and spiritual directors. Curriculum development,
-                      discussion guides, and AI-assisted sermon preparation grounded in the Matthew 6:33 framework.
-                    </p>
+                {/* Feature 4 */}
+                <div className="bg-white p-8 md:p-10 border-l-4 observe-fade fade-in-delay-4" style={{ borderColor: '#B8860B' }}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <svg className="w-6 h-6" style={{ color: '#B8860B' }} fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                    </svg>
+                    <h3 className="text-label vw-small" style={{ color: '#B8860B' }}>SHEPHERD TOOLS</h3>
                   </div>
+                  <p className="vw-body text-gray-700 leading-relaxed">
+                    Resources for pastors and leaders. Curriculum development, discussion guides, and AI-assisted sermon prep grounded in Matthew 6:33.
+                  </p>
+                </div>
 
-                  <div>
-                    <h3 className="text-label vw-small mb-2" style={{ color: '#B8860B' }}>THE ARCHIVE</h3>
-                    <p>
-                      A growing library of devotionals, theological reflections, and cultural analysis.
-                      Searchable by topic, Scripture, or spiritual season. Bookmark, annotate, and build your own library.
-                    </p>
+                {/* Feature 5 */}
+                <div className="bg-white p-8 md:p-10 border-l-4 observe-fade fade-in-delay-5" style={{ borderColor: '#B8860B' }}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <svg className="w-6 h-6" style={{ color: '#B8860B' }} fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clipRule="evenodd" />
+                    </svg>
+                    <h3 className="text-label vw-small" style={{ color: '#B8860B' }}>THE ARCHIVE</h3>
                   </div>
+                  <p className="vw-body text-gray-700 leading-relaxed">
+                    Growing library of devotionals and theological reflections. Searchable by topic, Scripture, or spiritual season. Build your own library.
+                  </p>
+                </div>
 
-                  <div>
-                    <h3 className="text-label vw-small mb-2" style={{ color: '#B8860B' }}>COURSES & FORMATION TRACKS</h3>
-                    <p>
-                      Multi-week intensive courses on spiritual disciplines, theology, and Christian living.
-                      Video teachings, reading assignments, reflection exercises, and community discussion.
-                    </p>
+                {/* Feature 6 */}
+                <div className="bg-white p-8 md:p-10 border-l-4 observe-fade fade-in-delay-6" style={{ borderColor: '#B8860B' }}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <svg className="w-6 h-6" style={{ color: '#B8860B' }} fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                    </svg>
+                    <h3 className="text-label vw-small" style={{ color: '#B8860B' }}>FORMATION TRACKS</h3>
                   </div>
+                  <p className="vw-body text-gray-700 leading-relaxed">
+                    Multi-week intensive courses on spiritual disciplines, theology, and Christian living. Video teachings, readings, and community discussion.
+                  </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div className="pt-8 border-t border-gray-200 observe-fade fade-in-delay-5">
-                <h2 className="text-display vw-heading-md mb-6">Why AI?</h2>
-                <p className="mb-4">
-                  The church has always used technology to spread the gospel: the printing press, radio, television.
-                  AI is this generation's tool. We're not replacing human spiritual direction—we're making it accessible
-                  to the millions who don't have access to a pastor, spiritual director, or mature Christian community.
+      {/* Why AI Section */}
+      <section className="border-t border-gray-200 py-20 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+            <div className="md:col-span-8 md:col-start-3">
+              <h2 className="text-display vw-heading-md mb-8 observe-fade">Why AI?</h2>
+              <div className="space-y-6 vw-body text-gray-700">
+                <p className="observe-fade fade-in-delay-1">
+                  The church has always used technology to spread the gospel: the printing press, radio, television. AI is this generation's tool.
                 </p>
-                <p>
-                  The AI is trained on Scripture, orthodox Christian theology, and the wisdom of church history.
-                  It doesn't replace the Holy Spirit. It creates space for the Holy Spirit to work by removing barriers
-                  to encounter God's Word.
+                <p className="observe-fade fade-in-delay-2">
+                  We're not replacing human spiritual direction—we're making it accessible to the <strong>millions who don't have access</strong> to a pastor, spiritual director, or mature Christian community.
                 </p>
-              </div>
-
-              <div className="pt-8 border-t border-gray-200 observe-fade fade-in-delay-6">
-                <h2 className="text-display vw-heading-md mb-6">When?</h2>
-                <p className="mb-4">
-                  We're building in public. The full platform is in development now.
-                </p>
-                <p className="mb-4">
-                  For now, focus on Wake Up Zine. Read one devotional per day. Let the 35-day journey form you.
-                  By the time you finish, the next layer will be ready.
-                </p>
-                <p className="text-serif-italic">
-                  The lost are waiting. We're shipping as fast as we can.
-                </p>
-              </div>
-
-              <div className="pt-8 observe-fade fade-in-delay-7">
-                <p className="text-label vw-small text-gray-400">
-                  Want early access? Enter the admin password to see what we're building.
+                <p className="observe-fade fade-in-delay-3">
+                  The AI is trained on Scripture, orthodox Christian theology, and the wisdom of church history. It doesn't replace the Holy Spirit. It <strong>creates space for the Holy Spirit to work</strong> by removing barriers to encountering God's Word.
                 </p>
               </div>
             </div>
           </div>
         </div>
-      </main>
+      </section>
+
+      {/* Email Signup CTA */}
+      <section className="border-t border-gray-200 py-20 md:py-32" style={{ backgroundColor: '#000' }}>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+            <div className="md:col-span-8 md:col-start-3 text-center">
+              <h2 className="text-display vw-heading-lg mb-6 observe-fade" style={{ color: '#FAF9F6' }}>
+                Be the First to Know
+              </h2>
+              <p className="text-serif-italic vw-body-lg mb-12 observe-fade fade-in-delay-1" style={{ color: '#B8860B' }}>
+                The full platform launches soon. Get early access and updates.
+              </p>
+
+              {submitted ? (
+                <div className="bg-green-600 p-6 mb-8 animate-fade-in" role="status">
+                  <p className="text-white vw-body font-semibold">
+                    ✓ You're on the list. We'll notify you when it's ready.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="max-w-md mx-auto observe-fade fade-in-delay-2">
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Your email"
+                      required
+                      className="flex-1 px-6 py-4 border-2 border-gray-600 bg-transparent text-white placeholder-gray-400 focus:border-[#B8860B] outline-none vw-body"
+                      aria-label="Email address"
+                    />
+                    <button
+                      type="submit"
+                      className="px-10 py-4 text-label vw-small transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8860B]"
+                      style={{ backgroundColor: '#B8860B', color: '#000' }}
+                    >
+                      Notify Me
+                    </button>
+                  </div>
+                  <p className="text-gray-400 vw-small mt-4">
+                    We'll email you once when we launch. No spam.
+                  </p>
+                </form>
+              )}
+
+              <div className="mt-12 observe-fade fade-in-delay-3">
+                <p className="text-gray-400 vw-small mb-4">
+                  Or unlock admin preview now:
+                </p>
+                <Link
+                  href="/admin/unlock"
+                  className="inline-block border-2 px-8 py-3 text-label vw-small transition-all duration-300 hover:bg-[#FAF9F6] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8860B]"
+                  style={{ borderColor: '#FAF9F6', color: '#FAF9F6' }}
+                >
+                  Admin Access
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="border-t border-gray-200 py-20 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+            <div className="md:col-span-8 md:col-start-3">
+              <h2 className="text-display vw-heading-md mb-8 observe-fade">When?</h2>
+              <div className="space-y-6 vw-body text-gray-700">
+                <p className="observe-fade fade-in-delay-1">
+                  We're building in public. The full platform is in development now.
+                </p>
+                <p className="observe-fade fade-in-delay-2">
+                  <strong>For now</strong>, focus on Wake Up Zine. Read one devotional per day. Let the 35-day journey form you. By the time you finish, the next layer will be ready.
+                </p>
+                <p className="text-serif-italic observe-fade fade-in-delay-3">
+                  The lost are waiting. We're shipping as fast as we can.
+                </p>
+              </div>
+
+              <div className="mt-12 pt-12 border-t border-gray-200 observe-fade fade-in-delay-4">
+                <Link
+                  href="/"
+                  className="inline-block bg-black px-10 py-5 text-label vw-small hover:bg-gray-800 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8860B]"
+                  style={{ color: '#FAF9F6' }}
+                >
+                  ← Back to Wake Up Zine
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="border-t border-gray-200 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid md:grid-cols-12 gap-8">
-            <div className="md:col-span-6 md:col-start-4">
+            <div className="md:col-span-6 md:col-start-4 text-center">
               <p className="text-label text-gray-400 vw-small leading-relaxed">
                 VENERATE THE MIRACLE.<br />
                 DISMANTLE THE HAVEL.

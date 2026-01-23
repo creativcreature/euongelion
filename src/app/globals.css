@@ -114,11 +114,13 @@
   .vw-body-lg {
     font-size: clamp(1.125rem, 1.5vw, 1.5rem);
     line-height: 1.6;
+    max-width: 65ch;
   }
 
   .vw-body {
     font-size: clamp(1rem, 1.1vw, 1.125rem);
     line-height: 1.7;
+    max-width: 75ch;
   }
 
   .vw-small {

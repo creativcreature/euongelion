@@ -297,21 +297,24 @@ function PanelComponent({ panel, index }: { panel: DevotionalPanel; index: numbe
 
       {/* Panel Content */}
       <div className={hasImage ? 'md:col-span-6' : 'md:col-span-8'}>
-        <div className={`${isPrayer ? 'text-serif-italic' : ''} ${isScripture ? 'text-serif-italic' : ''} vw-body prose-lg`}>
+        <div className={`${isPrayer ? 'text-serif-italic' : ''} vw-body prose-lg`}>
           {panel.content.split('\n\n').map((paragraph, i) => {
-            const paragraphIsScripture = isScripture || paragraph.startsWith('"') || /\d+:\d+/.test(paragraph);
+            // Only treat as scripture if it's actually a quoted passage (starts with quotes)
+            const paragraphIsScripture = paragraph.trim().startsWith('"') && paragraph.trim().endsWith('"');
+            const hasVerseReference = /\d+:\d+/.test(paragraph) && paragraph.trim().length < 100;
 
             return (
               <p
                 key={i}
                 className={`mb-6 ${isPrayer ? 'text-serif-italic' : ''} ${
-                  paragraphIsScripture ? 'border-l-4 pl-6 py-2 text-serif-italic' : ''
+                  (paragraphIsScripture || hasVerseReference) ? 'border-l-4 pl-6 py-3 text-serif-italic' : ''
                 }`}
                 style={{
                   whiteSpace: 'pre-line',
-                  lineHeight: paragraphIsScripture ? '1.8' : '1.7',
-                  borderColor: paragraphIsScripture ? '#B8860B' : 'transparent',
-                  fontSize: paragraphIsScripture ? 'clamp(1.125rem, 1.5vw, 1.75rem)' : undefined,
+                  lineHeight: (paragraphIsScripture || hasVerseReference) ? '1.75' : '1.7',
+                  borderColor: (paragraphIsScripture || hasVerseReference) ? '#B8860B' : 'transparent',
+                  fontSize: (paragraphIsScripture || hasVerseReference) ? 'clamp(1.0625rem, 1.2vw, 1.25rem)' : undefined,
+                  maxWidth: (paragraphIsScripture || hasVerseReference) ? '65ch' : '75ch',
                 }}
               >
                 {paragraph.split('**').map((part, j) =>
