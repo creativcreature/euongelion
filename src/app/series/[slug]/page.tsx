@@ -4,6 +4,7 @@ import { useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useProgress } from '@/hooks/useProgress';
 
 const SERIES_DATA: Record<string, {
   title: string;
@@ -117,6 +118,8 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
   const router = useRouter();
   const { slug } = use(params);
   const series = SERIES_DATA[slug];
+  const { isRead, getSeriesProgress } = useProgress();
+  const seriesProgress = series ? getSeriesProgress(slug) : { completed: 0, total: 5, percentage: 0 };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -211,12 +214,29 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
 
               <div className="md:col-span-5">
                 <div className="bg-gray-50 p-8 md:p-10 observe-fade fade-in-delay-4">
-                  <p className="text-label vw-small mb-4" style={{ color: '#B8860B' }}>
-                    5-DAY JOURNEY
-                  </p>
-                  <p className="vw-body text-gray-700 leading-relaxed">
+                  <div className="flex items-center justify-between mb-4">
+                    <p className="text-label vw-small" style={{ color: '#B8860B' }}>
+                      5-DAY JOURNEY
+                    </p>
+                    {seriesProgress.completed > 0 && (
+                      <span className="text-label vw-small text-green-600">
+                        {seriesProgress.completed}/{seriesProgress.total} Complete
+                      </span>
+                    )}
+                  </div>
+                  <p className="vw-body text-gray-700 leading-relaxed mb-4">
                     This series follows a chiastic structure (A-B-C-B'-A'). Days 1 and 5 mirror each other. Days 2 and 4 mirror each other. Day 3 is the pivot—the core revelation everything builds toward.
                   </p>
+                  {seriesProgress.completed > 0 && (
+                    <div className="mt-4">
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div
+                          className="bg-green-600 h-2 rounded-full transition-all duration-500"
+                          style={{ width: `${seriesProgress.percentage}%` }}
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -250,9 +270,14 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
                       </p>
                     </div>
 
-                    <div className="md:col-span-2 flex items-center justify-end">
+                    <div className="md:col-span-2 flex items-center justify-end gap-4">
+                      {isRead(day.slug) && (
+                        <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                      )}
                       <span className="text-label vw-small text-gray-400 group-hover:text-black transition-colors duration-300">
-                        READ →
+                        {isRead(day.slug) ? 'READ AGAIN →' : 'READ →'}
                       </span>
                     </div>
                   </div>

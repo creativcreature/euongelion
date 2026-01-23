@@ -4,6 +4,7 @@ import { useEffect, useState, useRef, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Navigation from '@/components/Navigation';
 import SeriesNavigation from '@/components/SeriesNavigation';
+import { useProgress, useReadingTime } from '@/hooks/useProgress';
 
 interface DevotionalPanel {
   number: number;
@@ -37,6 +38,17 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
   const [currentPanel, setCurrentPanel] = useState(0);
   const router = useRouter();
   const panelRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Progress tracking
+  const { isRead, markComplete, canRead } = useProgress();
+  const timeSpent = useReadingTime();
+  const [showCompleteButton, setShowCompleteButton] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
+  const readingCheck = canRead(slug);
+
+  useEffect(() => {
+    setIsCompleted(isRead(slug));
+  }, [slug, isRead]);
 
   useEffect(() => {
     async function loadDevotional() {
@@ -125,6 +137,17 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
               <span>{devotional.totalWords} words</span>
               <span>•</span>
               <span>{devotional.scriptureReference}</span>
+              {isCompleted && (
+                <>
+                  <span>•</span>
+                  <span className="text-green-600 flex items-center gap-1">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Completed
+                  </span>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -144,6 +167,38 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
           </div>
         ))}
       </main>
+
+      {/* Mark as Complete Section */}
+      {!isCompleted && (
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pb-16 md:pb-24">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+            <div className="md:col-span-8 md:col-start-3 text-center">
+              <div className="border-t border-gray-200 pt-12 md:pt-16">
+                <p className="text-serif-italic vw-body-lg mb-8 text-gray-700">
+                  Finished reading? Mark this devotional as complete to track your progress.
+                </p>
+                <button
+                  onClick={() => {
+                    markComplete(slug, timeSpent);
+                    setIsCompleted(true);
+                  }}
+                  className="bg-black px-12 py-5 text-label vw-small hover:bg-gray-800 transition-all duration-300 inline-flex items-center gap-2"
+                  style={{ color: '#FAF9F6' }}
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Mark as Complete
+                </button>
+                <p className="vw-small text-gray-400 mt-4">
+                  {Math.floor(timeSpent / 60) > 0 ? `${Math.floor(timeSpent / 60)} min ` : ''}
+                  {timeSpent % 60}s reading time
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer Navigation */}
       <footer className="border-t border-gray-200 py-12 md:py-16 mb-24 md:mb-32">
