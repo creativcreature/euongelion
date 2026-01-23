@@ -7,6 +7,7 @@ import SeriesNavigation from '@/components/SeriesNavigation';
 import HighlightToolbar from '@/components/HighlightToolbar';
 import ReflectionPrompt from '@/components/ReflectionPrompt';
 import DevotionalActions from '@/components/DevotionalActions';
+import ScrollProgress from '@/components/ScrollProgress';
 import { useProgress, useReadingTime } from '@/hooks/useProgress';
 import { useHighlights } from '@/hooks/useHighlights';
 import { addHighlight as saveHighlight } from '@/lib/highlights';
@@ -123,7 +124,8 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FAF9F6' }}>
+    <div className="min-h-screen bg-cream">
+      <ScrollProgress />
       <Navigation />
 
       {/* Hero Section */}

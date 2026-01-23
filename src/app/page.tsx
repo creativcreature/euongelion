@@ -125,15 +125,15 @@ export default function Home() {
                 HOW IT WORKS
               </h2>
               <div className="grid md:grid-cols-3 gap-8 md:gap-12 text-center">
-                <div className="observe-fade fade-in-delay-1">
+                <div className="observe-fade slide-in-left fade-in-delay-1">
                   <div className="text-display vw-heading-md mb-4 text-gold">01</div>
                   <p className="vw-body text-gray-700">Pick a question that speaks to where you are.</p>
                 </div>
-                <div className="observe-fade fade-in-delay-2">
+                <div className="observe-fade scale-in fade-in-delay-2">
                   <div className="text-display vw-heading-md mb-4 text-gold">02</div>
                   <p className="vw-body text-gray-700">Read one devotional per day for 5 days.</p>
                 </div>
-                <div className="observe-fade fade-in-delay-3">
+                <div className="observe-fade slide-in-right fade-in-delay-3">
                   <div className="text-display vw-heading-md mb-4 text-gold">03</div>
                   <p className="vw-body text-gray-700">Reflect, journal, and let God reorder your heart.</p>
                 </div>

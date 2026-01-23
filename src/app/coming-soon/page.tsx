@@ -76,15 +76,15 @@ export default function ComingSoonPage() {
       <section className="border-t border-subtle py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid md:grid-cols-3 gap-8 md:gap-12 text-center">
-            <div className="observe-fade">
+            <div className="observe-fade scale-in">
               <p className="text-display vw-heading-md mb-2 text-gold">35 Days</p>
               <p className="text-gray-600 vw-small text-label">Transformative Journey</p>
             </div>
-            <div className="observe-fade fade-in-delay-1">
+            <div className="observe-fade scale-in fade-in-delay-1">
               <p className="text-display vw-heading-md mb-2 text-gold">Orthodox</p>
               <p className="text-gray-600 vw-small text-label">Theologically Grounded</p>
             </div>
-            <div className="observe-fade fade-in-delay-2">
+            <div className="observe-fade scale-in fade-in-delay-2">
               <p className="text-display vw-heading-md mb-2 text-gold">7 Questions</p>
               <p className="text-gray-600 vw-small text-label">Seven Series Available</p>
             </div>

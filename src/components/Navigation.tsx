@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,14 +62,8 @@ export default function Navigation() {
           W O K E G O D
         </div>
 
-        {/* Moon Icon (Theme Toggle Placeholder) */}
-        <button
-          className="w-12 h-12 flex items-center justify-center hover:bg-gray-100 rounded-full transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B8860B]"
-          aria-label="Toggle dark mode (coming soon)"
-          disabled
-        >
-          <span className="text-2xl" aria-hidden="true">🌙</span>
-        </button>
+        {/* Theme Toggle */}
+        <ThemeToggle />
       </nav>
 
       {/* Slide-out Menu */}
