@@ -161,6 +161,14 @@
   .dark .hover\:border-gray-400:hover {
     border-color: hsl(0, 0%, 40%);
   }
+
+  /* Ensure logos don't get inverted or colorized */
+  img[src*="/logos/"],
+  img[alt*="logo"],
+  img[alt*="Logo"] {
+    filter: none !important;
+    mix-blend-mode: normal !important;
+  }
 }
 
 @layer utilities {
