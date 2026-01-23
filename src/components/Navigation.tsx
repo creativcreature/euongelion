@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [showResetButton, setShowResetButton] = useState(false);
+  const [showResetButton, setShowResetButton] = useState(true); // Visible by default during testing
 
   useEffect(() => {
     // Initialize theme
