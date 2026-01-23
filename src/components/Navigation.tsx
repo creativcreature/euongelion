@@ -31,10 +31,13 @@ export default function Navigation() {
   }, []);
 
   const toggleTheme = () => {
+    console.log('[Theme Toggle] Current theme:', theme);
     const newTheme = theme === 'dark' ? 'light' : 'dark';
+    console.log('[Theme Toggle] Switching to:', newTheme);
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
     document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    console.log('[Theme Toggle] HTML class after toggle:', document.documentElement.className);
   };
 
   const handleReset = () => {
