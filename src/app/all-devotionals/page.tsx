@@ -115,7 +115,7 @@ export default function AllDevotionalsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FAF9F6' }}>
+    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a]">
       {/* Top Bar */}
       <nav className="flex items-center justify-center px-6 md:px-12 lg:px-20 py-8 relative">
         <Link href="/">
@@ -275,8 +275,7 @@ export default function AllDevotionalsPage() {
           onClick={() => setLockMessage(null)}
         >
           <div
-            className="max-w-md w-full p-8 shadow-2xl"
-            style={{ backgroundColor: '#FAF9F6' }}
+            className="max-w-md w-full p-8 shadow-2xl bg-cream dark:bg-[#1a1a1a]"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start gap-4 mb-6">

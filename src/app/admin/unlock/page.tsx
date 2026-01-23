@@ -27,7 +27,7 @@ export default function UnlockPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6" style={{ backgroundColor: '#FAF9F6' }}>
+    <div className="min-h-screen flex items-center justify-center px-6 bg-cream dark:bg-[#1a1a1a]">
       <div className="max-w-md w-full">
         <div className="text-center mb-12">
           <h1 className="text-display text-5xl mb-4">EUONGELION</h1>
@@ -45,8 +45,7 @@ export default function UnlockPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
-              className="w-full p-4 mb-4 text-black border-2 border-gray-200 focus:border-[#B8860B] outline-none font-serif italic"
-              style={{ backgroundColor: '#FAF9F6' }}
+              className="w-full p-4 mb-4 text-black dark:text-cream bg-cream dark:bg-[#1a1a1a] border-2 border-gray-200 dark:border-gray-700 focus:border-[#B8860B] outline-none font-serif italic"
               autoFocus
             />
 

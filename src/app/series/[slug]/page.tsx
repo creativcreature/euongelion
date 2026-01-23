@@ -143,13 +143,12 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
 
   if (!series) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FAF9F6' }}>
+      <div className="min-h-screen flex items-center justify-center bg-cream dark:bg-[#1a1a1a]">
         <div className="text-center">
           <h1 className="text-display vw-heading-lg mb-8">Series Not Found</h1>
           <Link
             href="/"
-            className="bg-black px-10 py-5 text-label vw-small hover:bg-gray-800 transition-all duration-300 inline-block"
-            style={{ color: '#FAF9F6' }}
+            className="bg-black text-cream px-10 py-5 text-label vw-small hover:bg-gray-800 transition-all duration-300 inline-block"
           >
             ← Back Home
           </Link>
@@ -159,7 +158,7 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FAF9F6' }}>
+    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a]">
       <Navigation />
 
       {/* Series Introduction */}
@@ -316,8 +315,7 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
           onClick={() => setLockMessage(null)}
         >
           <div
-            className="max-w-md w-full p-8 shadow-2xl"
-            style={{ backgroundColor: '#FAF9F6' }}
+            className="max-w-md w-full p-8 shadow-2xl bg-cream dark:bg-[#1a1a1a]"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start gap-4 mb-6">

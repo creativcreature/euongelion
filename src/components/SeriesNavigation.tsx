@@ -116,7 +116,7 @@ export default function SeriesNavigation({ currentSlug }: SeriesNavigationProps)
   return (
     <>
       {/* Sticky Bottom Navigation Bar */}
-      <div className="fixed bottom-0 left-0 right-0 border-t border-gray-200 py-4 md:py-6 z-30" style={{ backgroundColor: '#FAF9F6' }}>
+      <div className="fixed bottom-0 left-0 right-0 border-t border-gray-200 dark:border-gray-700 py-4 md:py-6 z-30 bg-cream dark:bg-[#1a1a1a]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="flex items-center justify-between gap-4">
             {/* Left: Series Switcher */}
@@ -209,8 +209,7 @@ export default function SeriesNavigation({ currentSlug }: SeriesNavigationProps)
           onClick={() => setShowSeriesPicker(false)}
         >
           <div
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-8 shadow-2xl"
-            style={{ backgroundColor: '#FAF9F6' }}
+            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-8 shadow-2xl bg-cream dark:bg-[#1a1a1a]"
             onClick={(e) => e.stopPropagation()}
           >
             <button

@@ -24,7 +24,7 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FAF9F6' }}>
+    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a]">
       {/* Top Bar */}
       <nav className="flex items-center justify-center px-6 md:px-12 lg:px-20 py-8 relative">
         <Link href="/">

@@ -100,7 +100,7 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FAF9F6' }}>
+      <div className="min-h-screen flex items-center justify-center bg-cream dark:bg-[#1a1a1a]">
         <div className="vw-body text-gray-400">Loading...</div>
       </div>
     );
@@ -108,7 +108,7 @@ export default function DevotionalPage({ params }: { params: Promise<{ slug: str
 
   if (!devotional) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FAF9F6' }}>
+      <div className="min-h-screen flex items-center justify-center bg-cream dark:bg-[#1a1a1a]">
         <div className="text-center">
           <h1 className="text-display vw-heading-lg mb-8">Not Found</h1>
           <button

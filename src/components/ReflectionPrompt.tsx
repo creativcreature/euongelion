@@ -115,8 +115,7 @@ export default function ReflectionPrompt({ question, index, devotionalSlug }: Re
                   setShowSavedConfirmation(false);
                 }}
                 placeholder="Write your thoughts here..."
-                className="w-full p-4 border-2 border-gray-200 focus:border-[#B8860B] outline-none resize-none vw-body font-serif transition-colors"
-                style={{ backgroundColor: '#FAF9F6', minHeight: '120px' }}
+                className="w-full p-4 border-2 border-gray-200 dark:border-gray-700 focus:border-[#B8860B] outline-none resize-none vw-body font-serif transition-colors bg-cream dark:bg-[#1a1a1a] dark:text-cream min-h-[120px]"
                 aria-label="Reflection response"
               />
 

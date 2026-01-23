@@ -77,7 +77,7 @@ export default function WakeUpPage() {
   }, []);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FAF9F6' }}>
+    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a]">
       <Navigation />
 
       {/* Hero Section */}
