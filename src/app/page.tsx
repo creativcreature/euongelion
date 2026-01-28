@@ -71,7 +71,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a] text-black dark:text-cream">
+    <div className="min-h-screen bg-[#FAF9F6] dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100">
       <Navigation />
 
       {/* Hero Section */}
@@ -80,13 +80,13 @@ export default function Home() {
           <div className="md:col-span-10 md:col-start-2">
             {/* EUONGELION Heading */}
             <div className="mb-12 md:mb-16 text-center observe-fade">
-              <h1 className="text-display vw-heading-xl mb-6 text-black dark:text-cream">
+              <h1 className="text-display vw-heading-xl mb-6 text-gray-900 dark:text-gray-100">
                 EUONGELION
               </h1>
-              <p className="text-label vw-small mb-8 text-gold">
+              <p className="text-label vw-small mb-8 text-[#B8860B]">
                 EU·ON·GE·LION (yoo-on-GEL-ee-on) · GREEK: "GOOD NEWS"
               </p>
-              <p className="text-serif-italic vw-body-lg max-w-3xl mx-auto mb-10" style={{ maxWidth: '50ch' }}>
+              <p className="text-serif-italic vw-body-lg max-w-3xl mx-auto mb-10 text-gray-800 dark:text-gray-200" style={{ maxWidth: '50ch' }}>
                 Daily bread for the cluttered, hungry soul. In a world drowning in noise, EUONGELION offers something rare: clarity, rest, and truth.
               </p>
               <Link
@@ -108,7 +108,7 @@ export default function Home() {
               <p className="vw-body text-gray-700 dark:text-gray-300 mb-6 observe-fade">
                 We live in apocalyptic times. Political violence. Economic collapse. 43% more anxious than last year. The ground beneath us is shaking.
               </p>
-              <p className="text-serif-italic vw-body-lg observe-fade fade-in-delay-1">
+              <p className="text-serif-italic vw-body-lg observe-fade fade-in-delay-1 text-gray-800 dark:text-gray-200">
                 The seven questions below aren't easy. But they're honest. Each one invites you into a 5-day journey to seek first the kingdom—and discover that everything else gets added.
               </p>
             </div>
@@ -168,8 +168,8 @@ export default function Home() {
                       </div>
 
                       <div className="md:col-span-9">
-                        <p className="text-serif-italic vw-body-lg transition-all duration-300 group-hover:translate-x-2">
-                          <span className="group-hover:text-gold transition-colors duration-300">
+                        <p className="text-serif-italic vw-body-lg transition-all duration-300 group-hover:translate-x-2 text-gray-900 dark:text-gray-100">
+                          <span className="group-hover:text-[#B8860B] transition-colors duration-300">
                             {series.question}
                           </span>
                         </p>

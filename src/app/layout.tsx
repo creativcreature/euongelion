@@ -44,7 +44,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} antialiased bg-cream text-black dark:bg-[#1a1a1a] dark:text-cream`}
+        className={`${inter.variable} ${playfair.variable} antialiased bg-[#FAF9F6] text-gray-900 dark:bg-[#1a1a1a] dark:text-gray-100`}
       >
         {children}
       </body>
