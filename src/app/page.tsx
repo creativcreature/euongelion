@@ -71,7 +71,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a]">
+    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a] text-black dark:text-cream">
       <Navigation />
 
       {/* Hero Section */}
@@ -80,7 +80,7 @@ export default function Home() {
           <div className="md:col-span-10 md:col-start-2">
             {/* EUONGELION Heading */}
             <div className="mb-12 md:mb-16 text-center observe-fade">
-              <h1 className="text-display vw-heading-xl mb-6">
+              <h1 className="text-display vw-heading-xl mb-6 text-black dark:text-cream">
                 EUONGELION
               </h1>
               <p className="text-label vw-small mb-8 text-gold">

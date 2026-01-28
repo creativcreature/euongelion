@@ -77,7 +77,7 @@ export default function WakeUpPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a]">
+    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a] text-black dark:text-cream">
       <Navigation />
 
       {/* Hero Section */}

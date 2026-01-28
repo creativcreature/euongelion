@@ -276,13 +276,3 @@ Execute independent operations simultaneously (read multiple files, run searches
 **Last Updated:** 2026-01-22 | **v1.4.1** | **Status:** 🟢 Production Ready
 
 *"Daily bread for the cluttered, hungry soul."*
-
----
-
-## MANDATORY: TOKEN TRACKING
-
-See ~/Documents/Claude/CLAUDE.md for full instructions.
-
-**REQUIRED at session end:** Update ~/Documents/Claude/TOKEN_MASTER_LOG.md
-
-Billing: Tokens x $0.0000225 (Melt) | Personal = track only

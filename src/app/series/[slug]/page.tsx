@@ -158,7 +158,7 @@ export default function SeriesPage({ params }: { params: Promise<{ slug: string 
   }
 
   return (
-    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a]">
+    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a] text-black dark:text-cream">
       <Navigation />
 
       {/* Series Introduction */}
