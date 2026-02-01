@@ -124,7 +124,7 @@ export default function AllDevotionalsPage() {
               src="/logos/Logo-19.png"
               alt="wokeGod"
               fill
-              className="object-contain"
+              className="object-contain dark:invert"
               priority
             />
           </div>
