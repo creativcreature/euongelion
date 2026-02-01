@@ -2,46 +2,56 @@
 
 import Link from 'next/link';
 import { useEffect } from 'react';
+import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 
-const PLATFORM_FEATURES = [
+const DEVOTIONAL_SERIES = [
   {
-    icon: (
-      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
-      </svg>
-    ),
-    title: 'AI Spiritual Direction',
-    description: 'Personalized devotional pathways that adapt to your journey. Scripture-grounded guidance that helps you discern and grow.',
-    href: '/daily-bread',
-    cta: 'Start Your Journey',
+    number: '01',
+    question: 'When everything that defined you is shaken, who are you?',
+    slug: 'identity',
+    theme: 'Identity',
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-        <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-      </svg>
-    ),
-    title: 'Soul Audit',
-    description: 'Discover where you are spiritually. 24 questions that reveal your pathway and create a personalized formation plan.',
-    href: '/soul-audit',
-    cta: 'Take the Audit',
+    number: '02',
+    question: "What if peace isn't found by controlling your circumstances?",
+    slug: 'peace',
+    theme: 'Peace',
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
-      </svg>
-    ),
-    title: 'Wake Up Zine',
-    description: '35 devotionals across 7 series. The original content that started it all. Begin your journey through Matthew 6:33.',
-    href: '/zine',
-    cta: 'Read the Zine',
-    featured: true,
+    number: '03',
+    question: 'Who are your people when systems fail?',
+    slug: 'community',
+    theme: 'Community',
+  },
+  {
+    number: '04',
+    question: "What if the kingdom you're looking for is already here?",
+    slug: 'kingdom',
+    theme: 'Kingdom',
+    isCenter: true,
+  },
+  {
+    number: '05',
+    question: "What if provision isn't about having enough, but sharing what you have?",
+    slug: 'provision',
+    theme: 'Provision',
+  },
+  {
+    number: '06',
+    question: "How do you know what's real when misinformation is everywhere?",
+    slug: 'truth',
+    theme: 'Truth',
+  },
+  {
+    number: '07',
+    question: "What if hope isn't optimism, but faithfulness in the dark?",
+    slug: 'hope',
+    theme: 'Hope',
   },
 ];
 
-export default function PlatformHome() {
+export default function Home() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -61,200 +71,145 @@ export default function PlatformHome() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-[#f7f3ed]">
+    <div className="min-h-screen bg-[#FAF9F6] dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100">
       <Navigation />
 
       {/* Hero Section */}
-      <header className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-16 md:pt-24 pb-20 md:pb-32">
-        <div className="text-center max-w-4xl mx-auto">
-          <p className="text-[#c19a6b] text-sm uppercase tracking-widest mb-6 observe-fade">
-            SPIRITUAL FORMATION FOR APOCALYPTIC TIMES
-          </p>
-          
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 observe-fade fade-in-delay-1">
-            EUONGELION
-          </h1>
-          
-          <p className="text-sm text-gray-400 mb-8 observe-fade fade-in-delay-1">
-            EU·ON·GE·LION (yoo-on-GEL-ee-on) · GREEK: "GOOD NEWS"
-          </p>
-          
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 observe-fade fade-in-delay-2 leading-relaxed" style={{ maxWidth: '40ch', margin: '0 auto 3rem' }}>
-            Daily bread for the cluttered, hungry soul. AI-powered spiritual direction grounded in Scripture and orthodox theology.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center observe-fade fade-in-delay-3">
-            <Link
-              href="/soul-audit"
-              className="px-8 py-4 bg-[#c19a6b] text-[#0a0a0a] font-semibold rounded-lg hover:bg-[#d4ad7e] transition"
-            >
-              Discover Your Pathway
-            </Link>
-            <Link
-              href="/zine"
-              className="px-8 py-4 border-2 border-[#c19a6b] text-[#c19a6b] font-semibold rounded-lg hover:bg-[#c19a6b] hover:text-[#0a0a0a] transition"
-            >
-              Read Wake Up Zine
-            </Link>
+      <header className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-12 md:pt-20 pb-16 md:pb-24">
+        <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+          <div className="md:col-span-10 md:col-start-2">
+            {/* EUONGELION Heading */}
+            <div className="mb-12 md:mb-16 text-center observe-fade">
+              <h1 className="text-display vw-heading-xl mb-6 text-gray-900 dark:text-gray-100">
+                EUONGELION
+              </h1>
+              <p className="text-label vw-small mb-8 text-[#B8860B]">
+                EU·ON·GE·LION (yoo-on-GEL-ee-on) · GREEK: "GOOD NEWS"
+              </p>
+              <p className="text-serif-italic vw-body-lg max-w-3xl mx-auto mb-10 text-gray-800 dark:text-gray-200" style={{ maxWidth: '50ch' }}>
+                Daily bread for the cluttered, hungry soul. In a world drowning in noise, EUONGELION offers something rare: clarity, rest, and truth.
+              </p>
+              <Link
+                href="/series/identity"
+                className="inline-block bg-black text-cream px-10 py-5 text-label vw-small hover:bg-gray-800 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              >
+                Start with Question 01
+              </Link>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Stats Section */}
-      <section className="border-t border-gray-800 py-16">
+      {/* Problem Statement Section */}
+      <section className="border-t border-subtle py-16 md:py-24 bg-cream-dark">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="observe-fade">
-              <p className="text-4xl font-bold text-[#c19a6b] mb-2">35</p>
-              <p className="text-sm text-gray-400">Devotionals</p>
-            </div>
-            <div className="observe-fade fade-in-delay-1">
-              <p className="text-4xl font-bold text-[#c19a6b] mb-2">7</p>
-              <p className="text-sm text-gray-400">Life Questions</p>
-            </div>
-            <div className="observe-fade fade-in-delay-2">
-              <p className="text-4xl font-bold text-[#c19a6b] mb-2">3</p>
-              <p className="text-sm text-gray-400">Pathways</p>
-            </div>
-            <div className="observe-fade fade-in-delay-3">
-              <p className="text-4xl font-bold text-[#c19a6b] mb-2">∞</p>
-              <p className="text-sm text-gray-400">AI Guidance</p>
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+            <div className="md:col-span-8 md:col-start-3 text-center">
+              <p className="vw-body text-gray-700 dark:text-gray-300 mb-6 observe-fade">
+                We live in apocalyptic times. Political violence. Economic collapse. 43% more anxious than last year. The ground beneath us is shaking.
+              </p>
+              <p className="text-serif-italic vw-body-lg observe-fade fade-in-delay-1 text-gray-800 dark:text-gray-200">
+                The seven questions below aren't easy. But they're honest. Each one invites you into a 5-day journey to seek first the kingdom—and discover that everything else gets added.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Framework Section */}
-      <section className="border-t border-gray-800 py-20 md:py-32 bg-[#111]">
+      {/* How It Works Section */}
+      <section className="border-t border-subtle py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <blockquote className="text-2xl md:text-3xl font-serif italic text-[#c19a6b] mb-6 observe-fade">
-              "Seek first the kingdom of God and his righteousness, and all these things will be added to you."
-            </blockquote>
-            <p className="text-gray-400 observe-fade fade-in-delay-1">
-              — Matthew 6:33
-            </p>
-            <p className="mt-8 text-gray-300 leading-relaxed observe-fade fade-in-delay-2">
-              In apocalyptic times—political violence, economic collapse, epidemic loneliness—this ancient wisdom becomes urgent. 
-              Everything in EUONGELION flows from this verse. When your identity, security, and provision are anchored in God's kingdom, 
-              the collapse of earthly kingdoms becomes less terrifying.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="border-t border-gray-800 py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 observe-fade">
-            Your Spiritual Formation Journey
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {PLATFORM_FEATURES.map((feature, index) => (
-              <div
-                key={feature.title}
-                className={`p-8 rounded-2xl border observe-fade fade-in-delay-${index + 1} ${
-                  feature.featured
-                    ? 'bg-[#c19a6b]/10 border-[#c19a6b]'
-                    : 'bg-[#1a1a1a] border-gray-800 hover:border-gray-700'
-                } transition`}
-              >
-                <div className={`mb-4 ${feature.featured ? 'text-[#c19a6b]' : 'text-gray-400'}`}>
-                  {feature.icon}
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+            <div className="md:col-span-10 md:col-start-2">
+              <h2 className="text-label vw-small mb-10 text-center text-gold observe-fade">
+                HOW IT WORKS
+              </h2>
+              <div className="grid md:grid-cols-3 gap-8 md:gap-12 text-center">
+                <div className="observe-fade slide-in-left fade-in-delay-1">
+                  <div className="text-display vw-heading-md mb-4 text-gold">01</div>
+                  <p className="vw-body text-gray-700 dark:text-gray-300">Pick a question that speaks to where you are.</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">{feature.description}</p>
-                <Link
-                  href={feature.href}
-                  className={`inline-block font-medium transition ${
-                    feature.featured
-                      ? 'text-[#c19a6b] hover:text-[#d4ad7e]'
-                      : 'text-gray-300 hover:text-white'
-                  }`}
-                >
-                  {feature.cta} →
-                </Link>
+                <div className="observe-fade scale-in fade-in-delay-2">
+                  <div className="text-display vw-heading-md mb-4 text-gold">02</div>
+                  <p className="vw-body text-gray-700 dark:text-gray-300">Read one devotional per day for 5 days.</p>
+                </div>
+                <div className="observe-fade slide-in-right fade-in-delay-3">
+                  <div className="text-display vw-heading-md mb-4 text-gold">03</div>
+                  <p className="vw-body text-gray-700 dark:text-gray-300">Reflect, journal, and let God reorder your heart.</p>
+                </div>
               </div>
-            ))}
+              <p className="text-center vw-body text-gray-600 dark:text-gray-400 mt-10 observe-fade fade-in-delay-4">
+                Each series follows a chiastic arc—building toward a revelation, then reflecting back. Ancient structure. Modern questions.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Three Pathways Section */}
-      <section className="border-t border-gray-800 py-20 md:py-32 bg-[#111]">
+      {/* Seven Questions */}
+      <main id="main-content" className="border-t border-subtle py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 observe-fade">
-            Three Pathways
-          </h2>
-          <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto observe-fade fade-in-delay-1">
-            The Soul Audit discovers where you are. Your pathway determines how we guide you.
-          </p>
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+            <div className="md:col-span-10 md:col-start-2">
+              <h2 className="text-label vw-small mb-12 text-center md:text-left text-gold observe-fade">
+                SEVEN QUESTIONS FOR THE SEARCHING
+              </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-[#1a1a1a] border border-gray-800 observe-fade fade-in-delay-1">
-              <p className="text-sm text-[#c19a6b] uppercase tracking-wider mb-3">Pathway 1</p>
-              <h3 className="text-2xl font-bold mb-4">Seeker</h3>
-              <p className="text-gray-400 leading-relaxed">
-                For those exploring faith with fresh eyes. We'll guide you gently through foundational truths without assuming prior knowledge.
-              </p>
-            </div>
+              <div className="space-y-1 md:space-y-2">
+                {DEVOTIONAL_SERIES.map((series, index) => (
+                  <Link
+                    key={series.slug}
+                    href={`/series/${series.slug}`}
+                    className={`block group observe-fade ${index > 0 ? `fade-in-delay-${Math.min(index, 4)}` : ''}`}
+                  >
+                    <div className={`grid md:grid-cols-12 gap-6 md:gap-12 py-8 md:py-10 border-b border-subtle hover:border-gray-400 transition-all duration-300 ${series.isCenter ? 'md:bg-cream-dark md:-mx-8 md:px-8' : ''}`}>
+                      <div className="md:col-span-1">
+                        <span className="text-gray-400 vw-small font-sans">{series.number}</span>
+                      </div>
 
-            <div className="p-8 rounded-2xl bg-[#1a1a1a] border border-gray-800 observe-fade fade-in-delay-2">
-              <p className="text-sm text-[#c19a6b] uppercase tracking-wider mb-3">Pathway 2</p>
-              <h3 className="text-2xl font-bold mb-4">Growing</h3>
-              <p className="text-gray-400 leading-relaxed">
-                For believers seeking depth. Deeper content with practical application for your daily walk with God.
-              </p>
-            </div>
+                      <div className="md:col-span-9">
+                        <p className="text-serif-italic vw-body-lg transition-all duration-300 group-hover:translate-x-2 text-gray-900 dark:text-gray-100">
+                          <span className="group-hover:text-[#B8860B] transition-colors duration-300">
+                            {series.question}
+                          </span>
+                        </p>
+                      </div>
 
-            <div className="p-8 rounded-2xl bg-[#1a1a1a] border border-gray-800 observe-fade fade-in-delay-3">
-              <p className="text-sm text-[#c19a6b] uppercase tracking-wider mb-3">Pathway 3</p>
-              <h3 className="text-2xl font-bold mb-4">Mature</h3>
-              <p className="text-gray-400 leading-relaxed">
-                For those ready to go deeper. Rich theological content to equip you for teaching and leading others.
-              </p>
+                      <div className="md:col-span-2 flex items-center justify-end">
+                        <span className="text-label vw-small text-gray-400 dark:text-gray-500 group-hover:text-black dark:group-hover:text-cream transition-colors duration-300">
+                          BEGIN →
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="border-t border-gray-800 py-20 md:py-32 bg-[#c19a6b]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0a0a0a] mb-6 observe-fade">
-            Ready to Begin?
-          </h2>
-          <p className="text-[#0a0a0a]/80 mb-8 max-w-2xl mx-auto observe-fade fade-in-delay-1">
-            Take the Soul Audit to discover your pathway, or dive straight into Wake Up Zine's 35 devotionals.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center observe-fade fade-in-delay-2">
-            <Link
-              href="/soul-audit"
-              className="px-8 py-4 bg-[#0a0a0a] text-[#f7f3ed] font-semibold rounded-lg hover:bg-[#1a1a1a] transition"
-            >
-              Take the Soul Audit
-            </Link>
-            <Link
-              href="/zine"
-              className="px-8 py-4 border-2 border-[#0a0a0a] text-[#0a0a0a] font-semibold rounded-lg hover:bg-[#0a0a0a] hover:text-[#f7f3ed] transition"
-            >
-              Explore Wake Up Zine
-            </Link>
-          </div>
-        </div>
-      </section>
+      </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 py-16 bg-[#0a0a0a]">
+      <footer className="border-t border-subtle py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="text-center">
-            <p className="text-sm text-gray-500 mb-4">
-              VENERATE THE MIRACLE. DISMANTLE THE HAVEL.
-            </p>
-            <p className="text-sm text-gray-600">
-              © 2026 EUONGELION · A wokeGod project
-            </p>
+          <div className="grid md:grid-cols-12 gap-8">
+            <div className="md:col-span-6 md:col-start-4 text-center">
+              <p className="text-label text-gray-400 vw-small observe-fade leading-relaxed">
+                VENERATE THE MIRACLE.<br />
+                DISMANTLE THE HAVEL.
+              </p>
+              <p className="vw-small text-gray-400 mt-8">
+                © 2026 EUONGELION · A wokeGod project
+              </p>
+              <div className="mt-8">
+                <Link
+                  href="/coming-soon"
+                  className="text-gold hover:text-dark-gold transition-colors duration-300 text-label vw-small"
+                >
+                  Learn About the Full Platform →
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
