@@ -15,16 +15,17 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  try {
-    const paths = getAllDayPaths();
-    if (!paths || paths.length === 0) {
-      return [];
+  // All series and their days for static export
+  const series = ['identity', 'peace', 'community', 'kingdom', 'provision', 'truth', 'hope'];
+  const days = ['1', '2', '3', '4', '5'];
+  
+  const paths: { slug: string; day: string }[] = [];
+  for (const slug of series) {
+    for (const day of days) {
+      paths.push({ slug, day });
     }
-    return paths;
-  } catch (error) {
-    console.error('Error generating static params for days:', error);
-    return [];
   }
+  return paths;
 }
 
 export default async function DayPage({ params }: Props) {

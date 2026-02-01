@@ -1,6 +1,19 @@
 'use client';
 
 import { useEffect, use, useState } from 'react';
+
+// Required for static export
+export function generateStaticParams() {
+  return [
+    { slug: 'identity' },
+    { slug: 'peace' },
+    { slug: 'community' },
+    { slug: 'kingdom' },
+    { slug: 'provision' },
+    { slug: 'truth' },
+    { slug: 'hope' },
+  ];
+}
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
