@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import SpiritualChat from "@/components/SpiritualChat";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default function RootLayout({
         className={`${inter.variable} ${playfair.variable} antialiased bg-[#FAF9F6] text-gray-900 dark:bg-[#1a1a1a] dark:text-gray-100`}
       >
         {children}
+        <SpiritualChat />
       </body>
     </html>
   );
