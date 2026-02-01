@@ -104,6 +104,24 @@
     transform: translateX(-50%);
   }
 
+  /* Dark Mode - Switch CSS Variables */
+  html.dark {
+    --bg-primary: var(--dark-bg-primary);
+    --bg-secondary: var(--dark-bg-secondary);
+    --bg-accent: var(--dark-bg-accent);
+    --text-primary: var(--dark-text-primary);
+    --text-secondary: var(--dark-text-secondary);
+    --text-accent: var(--dark-text-accent);
+    --border-subtle: var(--dark-border-subtle);
+    --border-accent: var(--dark-border-accent);
+    --color-cream: var(--dark-bg-primary);
+  }
+
+  html.dark body {
+    background-color: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+  }
+
   /* Dark Mode Styles */
   .dark {
     background-color: var(--dark-bg-primary);
