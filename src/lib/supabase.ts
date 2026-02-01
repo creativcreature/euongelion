@@ -1,26 +1,28 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
 // Environment variables (set in .env.local)
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
 
-// Validate environment variables
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables')
-}
+// Flag to check if Supabase is configured
+export const isSupabaseConfigured = !!(supabaseUrl && supabaseAnonKey)
 
-// Browser client - for client components
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-  auth: {
-    persistSession: true,
-    autoRefreshToken: true,
-    detectSessionInUrl: true,
-  },
-})
+// Browser client - for client components (only create if configured)
+export const supabase: SupabaseClient | null = isSupabaseConfigured 
+  ? createClient(supabaseUrl, supabaseAnonKey, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+      },
+    })
+  : null
 
 // Server client factory - for server components and API routes
 // Use the service role key for admin operations
-export function createServerClient() {
+export function createServerClient(): SupabaseClient | null {
+  if (!isSupabaseConfigured) return null
+  
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
   if (!serviceRoleKey) {
