@@ -11,6 +11,15 @@ import { BridgeModule } from './BridgeModule';
 import { ComprehensionModule } from './ComprehensionModule';
 import { InteractiveModule } from './InteractiveModule';
 import { ResourceModule } from './ResourceModule';
+import ChronologyModule from './ChronologyModule';
+import GeographyModule from './GeographyModule';
+import ProfileModule from './ProfileModule';
+import VisualModule from './VisualModule';
+import ArtModule from './ArtModule';
+import VoiceModule from './VoiceModule';
+import MatchModule from './MatchModule';
+import OrderModule from './OrderModule';
+import RevealModule from './RevealModule';
 
 interface Props {
   module: Module;
@@ -42,6 +51,26 @@ export function ModuleRenderer({ module }: Props) {
       return <InteractiveModule data={module.data as InteractiveData} />;
     case 'resource':
       return <ResourceModule data={module.data as ResourceData} />;
+    // New modules
+    case 'chronology':
+      return <ChronologyModule data={module.data as any} />;
+    case 'geography':
+      return <GeographyModule data={module.data as any} />;
+    case 'profile':
+      return <ProfileModule data={module.data as any} />;
+    case 'visual':
+      return <VisualModule data={module.data as any} />;
+    case 'art':
+      return <ArtModule data={module.data as any} />;
+    case 'voice':
+      return <VoiceModule data={module.data as any} />;
+    // Game modules
+    case 'match':
+      return <MatchModule data={module.data as any} />;
+    case 'order':
+      return <OrderModule data={module.data as any} />;
+    case 'reveal':
+      return <RevealModule data={module.data as any} />;
     default:
       return (
         <div className="my-6 p-4 bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 rounded-lg">

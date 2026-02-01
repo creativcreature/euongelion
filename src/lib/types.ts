@@ -99,20 +99,31 @@ export type ModuleData =
   | InteractiveData
   | ResourceData;
 
-// Module types
+// Module types (21 total: 18 content + 3 game)
 export type ModuleType =
+  // Content modules (18)
   | 'scripture'
-  | 'vocab'
   | 'teaching'
-  | 'insight'
+  | 'vocab'
   | 'story'
-  | 'reflection'
-  | 'prayer'
-  | 'takeaway'
+  | 'insight'
+  | 'chronology'
+  | 'geography'
+  | 'profile'
   | 'bridge'
+  | 'visual'
+  | 'art'
+  | 'voice'
   | 'comprehension'
+  | 'reflection'
   | 'interactive'
-  | 'resource';
+  | 'takeaway'
+  | 'resource'
+  | 'prayer'
+  // Game modules (3)
+  | 'match'
+  | 'order'
+  | 'reveal';
 
 // Module with type and data
 export interface Module {
