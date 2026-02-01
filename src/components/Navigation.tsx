@@ -208,11 +208,19 @@ export default function Navigation() {
               </div>
 
               <div className="pt-6 border-t border-gray-200">
+                <p className="text-label vw-small text-gray-400 mb-4">YOUR JOURNEY</p>
+                <div className="space-y-6">
+                  <MenuItem number="✦" label="Soul Audit" href="/soul-audit" onClick={() => setIsOpen(false)} delay={7} isGold />
+                  <MenuItem number="✦" label="Daily Bread" href="/daily-bread" onClick={() => setIsOpen(false)} delay={8} />
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-gray-200">
                 <p className="text-label vw-small text-gray-400 mb-4">EXPLORE</p>
                 <div className="space-y-6">
-                  <MenuItem number="—" label="All Devotionals" href="/all-devotionals" onClick={() => setIsOpen(false)} delay={7} />
-                  <MenuItem number="—" label="About Wake Up" href="/about" onClick={() => setIsOpen(false)} delay={8} />
-                  <MenuItem number="—" label="Coming Soon" href="/coming-soon" onClick={() => setIsOpen(false)} delay={9} />
+                  <MenuItem number="—" label="All Devotionals" href="/all-devotionals" onClick={() => setIsOpen(false)} delay={9} />
+                  <MenuItem number="—" label="About Wake Up" href="/about" onClick={() => setIsOpen(false)} delay={10} />
+                  <MenuItem number="—" label="Coming Soon" href="/coming-soon" onClick={() => setIsOpen(false)} delay={11} />
                 </div>
               </div>
             </nav>
