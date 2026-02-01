@@ -1,148 +1,66 @@
 # Critical Fixes Needed
 
-**Date:** 2026-01-22
-**Status:** 🚨 In Progress
+**Date:** 2026-02-01
+**Status:** ✅ Most Issues Resolved
 
 ---
 
-## Issues Reported by User
+## Issues Resolved (2026-02-01)
 
-### 1. Dark Mode Not Working ❌
-**Problem:** Theme toggle not appearing on production site
-**Status:** Investigating
+### 1. Dark Mode ✅ FIXED
+**Problem:** Theme toggle was working but logos appeared as solid white
+**Solution:** Added `dark:invert` class to logo images
 
-**Possible Causes:**
-- Component not rendering in production
-- Hydration mismatch
-- Build caching issue
-- Missing dependency
-
-**Steps to Fix:**
-1. ✅ Verified code exists locally
-2. ✅ Forced clean rebuild
-3. ⏳ Debugging why component doesn't appear
-4. [ ] Fix and redeploy
-
----
-
-### 2. Logos Appearing as Solid White ❌
+### 2. Logos Appearing as Solid White ✅ FIXED
 **Problem:** Logo images (Logo-19.png, etc.) showing as solid white blocks
 **Location:** `/about` and `/all-devotionals` pages
+**Solution:** Added `dark:invert` Tailwind class for proper contrast
 
-**Steps to Fix:**
-1. [ ] Check logo PNG files
-2. [ ] Verify no CSS filters applied
-3. [ ] Ensure dark mode doesn't affect logos
-4. [ ] Add specific logo styling if needed
+### 3. AI Chat Added ✅ NEW FEATURE
+**Added:** `/api/chat` route with Claude 3.5 Sonnet integration
+**Added:** `SpiritualChat.tsx` floating chat component
+**Pending:** Needs `ANTHROPIC_API_KEY` on Vercel
 
----
+### 4. All 21 Module Types ✅ COMPLETE
+**Added:** 9 new module components (chronology, geography, profile, visual, art, voice, match, order, reveal)
+**Updated:** ModuleRenderer handles all 21 types
 
-### 3. Devotionals Need Revision ❌
-**Problem:** User requested devotionals be revised
-**Status:** Waiting for specifics
+### 5. Daily Bread Page ✅ NEW FEATURE
+**Added:** `/daily-bread` personalized feed based on Soul Audit
+**Feature:** Shows recommended series based on pathway (Seeker/Growing/Mature)
 
-**Questions for User:**
-- What aspect needs revision?
-  - Content/wording?
-  - Typography/formatting?
-  - Structure?
-  - Length?
+### 6. Navigation ✅ UPDATED
+**Added:** "Your Journey" section with Soul Audit and Daily Bread links
 
 ---
 
-### 4. Changes Not Visible on Production ❌
-**Problem:** User doesn't see deployed changes
-**Possible Causes:**
-- Browser cache on user's end
-- Deployment didn't include all changes
-- Build issue
+## Pending Actions (For James)
 
-**What IS Working:**
-- ✅ "Start with Question 01" button (from homepage redesign)
-- ✅ "How It Works" section (from homepage redesign)
+### 1. Supabase Needs Unpause ⏳
+**Problem:** Supabase project is paused (free tier 7-day inactivity)
+**Action:** Go to supabase.com/dashboard → Find paused project → Click "Restore"
 
-**What ISN'T Working:**
-- ❌ Dark mode toggle
-- ❌ (Need to verify other features)
+### 2. Add ANTHROPIC_API_KEY to Vercel ⏳
+**Problem:** Chat returns "Chat service not configured"
+**Action:** Vercel dashboard → Euongelion project → Settings → Environment Variables → Add `ANTHROPIC_API_KEY`
 
 ---
 
-## Action Plan
+## Future Enhancements
 
-### Phase 1: Debug & Fix (Immediate)
+### Context-Aware Chat
+**Goal:** Pass current devotional info to AI for more relevant responses
+**Status:** Requires architectural change (React context)
 
-1. **Fix Dark Mode Toggle**
-   - [ ] Check if it's a hydration issue
-   - [ ] Verify ThemeToggle component exports correctly
-   - [ ] Test in local dev server
-   - [ ] Simplify implementation if needed
-   - [ ] Redeploy
+### Day-Gating with Timezone
+**Goal:** Unlock days at 7 AM user's timezone
+**Status:** Logic exists in spec, needs implementation
 
-2. **Fix Logo Display**
-   - [ ] Check actual logo PNG files
-   - [ ] Add explicit styling to prevent white appearance
-   - [ ] Test in both light and dark modes
-
-3. **Verify All Features**
-   - [ ] ScrollProgress component
-   - [ ] Animations on scroll
-   - [ ] Typography improvements
-   - [ ] Color system
-
-### Phase 2: Complete Remaining Features
-
-4. **Polish Items**
-   - [ ] Color contrast audit
-   - [ ] Parallax effects
-   - [ ] Advanced animations
-   - [ ] Performance optimization
-
-5. **Content Revision**
-   - [ ] Get specifics from user on devotional changes
-   - [ ] Implement requested changes
-   - [ ] Test readability
-
-### Phase 3: Final Deployment
-
-6. **Deploy Everything**
-   - [ ] Force clean build
-   - [ ] Clear all caches
-   - [ ] Verify on production
-   - [ ] Test on multiple devices/browsers
+### Cloud Sync
+**Goal:** Sync progress/bookmarks across devices via Supabase
+**Status:** Supabase schema ready, needs unpause
 
 ---
 
-## Debugging Notes
-
-### Dark Mode Investigation:
-
-**Local Files:** ✅ Correct
-- ThemeToggle.tsx exists
-- Navigation.tsx imports it
-- use-theme.ts hook exists
-- Build succeeds locally
-
-**Production:** ❌ Not appearing
-- Homepage has some changes (restructuring)
-- But ThemeToggle missing from navigation
-- Need to check if it's a client-side rendering issue
-
-**Next Steps:**
-1. Test local dev server
-2. Check for console errors
-3. Verify component exports
-4. Simplify if needed
-
----
-
-## Timeline
-
-- **Now:** Fixing dark mode and logos
-- **Next:** Verify all features work
-- **Then:** Complete polish items
-- **Finally:** Deploy and test thoroughly
-
----
-
-**Last Updated:** 2026-01-22 23:45 UTC
-**Status:** Actively debugging and fixing
+**Last Updated:** 2026-02-01 05:05 UTC
+**Updated By:** Milos (overnight build session)
