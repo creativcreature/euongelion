@@ -1,0 +1,64 @@
+{
+  "day": 4,
+  "title": "What does mutual aid look like when the system fails?",
+  "teaser": "The early church didn't wait for institutions to solve poverty. They pooled resources. Shared meals. Made sure no one went without.",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "WHEN THE SYSTEM CAN'T HELP YOU",
+      "type": "text",
+      "content": "The government isn't coming to save you. You know this now.\n\nSocial safety nets are fraying. Unemployment benefits run out. Food assistance programs are underfunded. The institutions that promised security can't deliver.\n\n47.9 million Americans are food insecure. And the system isn't solving it.\n\nSo what do you do when the system fails? Do you hoard what you have and hope you survive?\n\nOr do you remember that **there's always been another way**?\n\nBefore there were government programs, there was mutual aid. Neighbors helping neighbors. Communities pooling resources. People sharing what they had so no one went without.\n\nThat's not nostalgia. That's the kingdom economy in action.",
+      "wordCount": 112
+    },
+    {
+      "number": 3,
+      "heading": "THE ACTS 2 COMMUNITY",
+      "type": "text",
+      "content": "The early church lived in a collapsing empire. Rome was violent, exploitative, indifferent to suffering.\n\nSo the followers of Jesus didn't wait for Rome to fix it. They created an alternative economy:\n\n**\"All the believers were together and had everything in common. They sold property and possessions to give to anyone who had need.\"**\n\nThis wasn't charity. This was **mutual aid**—a community covenant where everyone contributed what they could and received what they needed.\n\nNo one hoarded. No one went without. Because they understood: **In God's economy, your abundance covers my lack, and my abundance covers yours.**\n\nThat's not socialism. That's the kingdom.",
+      "wordCount": 106
+    },
+    {
+      "number": 4,
+      "heading": "WHAT MUTUAL AID LOOKS LIKE NOW",
+      "type": "text-with-image",
+      "content": "Mutual aid isn't ancient history. It's happening right now.\n\nYour neighbor lost their job. Your church pools rent money so they don't get evicted.\n\nA friend can't afford groceries. Your small group creates a shared pantry—everyone contributes, everyone takes what they need.\n\nA single parent's car breaks down. Your community chips in for the repair because their crisis is your crisis.\n\nThis isn't a program. It's not a nonprofit. It's **people choosing to share resources because they're bound by something deeper than transaction.**\n\nIt's covenant. It's the Acts 2 pattern alive in 2026.\n\nAnd it works. Not because the system fixed itself. But because **people stopped hoarding and started sharing.**",
+      "illustration": {
+        "description": "Dithered image of people passing food or resources hand to hand, or community table with shared meal",
+        "file": "provision-day-4-illustration.png"
+      },
+      "wordCount": 122
+    },
+    {
+      "number": 5,
+      "heading": "JESUS AND THE SHARED TABLE",
+      "type": "text",
+      "content": "Jesus didn't just teach about sharing. He embodied it.\n\nHe ate with tax collectors and sinners. He fed crowds on hillsides. He turned a wedding into a feast. He broke bread with his disciples and said, **\"This is my body, given for you.\"**\n\nEvery meal was a demonstration of the kingdom economy: **Everyone eats. No one is excluded. Abundance flows when we share the table.**\n\nAnd he sent his followers out with this instruction: **\"Freely you have received; freely give.\"**\n\nNot: Accumulate and protect.\n\nBut: **Receive generously. Share freely. Trust that there's enough when we stop hoarding.**\n\nThat's mutual aid. That's the kingdom.",
+      "wordCount": 105
+    },
+    {
+      "number": 6,
+      "heading": "YOUR ABUNDANCE IS NOT JUST FOR YOU",
+      "type": "text",
+      "content": "Here's the challenge: **Your abundance is not just for you.**\n\nIf you have more than you need while your neighbor goes without, that's not provision—it's hoarding.\n\nThe kingdom economy doesn't work when you stockpile blessings. It works when you **circulate** them.\n\nYour extra becomes someone else's enough. Their overflow becomes another's relief. And when you're in need, the community that you invested in invests back.\n\nThis isn't about giving until you're broke. It's about **trusting that sharing creates the abundance everyone needs.**\n\nPaul said it plainly: **\"Your plenty will supply what they need, so that in turn their plenty will supply what you need.\"**\n\nThat's mutual aid. That's how we survive the collapse.",
+      "wordCount": 116
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nThe system is failing. The safety nets are fraying. And I've been hoarding out of fear.\n\nBut You're showing me another way. The Acts 2 way. The mutual aid way.\n\nWhere people share what they have so no one goes without. Where my abundance covers their lack and their abundance covers mine.\n\nI want to live in that economy. Not the empire's economy of scarcity and competition. But Your kingdom economy of sharing and trust.\n\nShow me who needs what I have. Show me how to stop hoarding and start circulating.\n\nMy abundance is not just for me. Teach me to give it freely.\n\nAmen.",
+      "wordCount": 105
+    }
+  ],
+  "totalWords": 666,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Acts 2:44-45, Acts 4:32-35, 2 Corinthians 8:13-15, Matthew 10:8",
+  "chiastic_position": "B' - Application (Echoes Day 2)"
+}

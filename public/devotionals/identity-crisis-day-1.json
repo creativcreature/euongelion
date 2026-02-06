@@ -1,0 +1,64 @@
+{
+  "day": 1,
+  "title": "When everything that defined you is shaken, who are you?",
+  "teaser": "Your country, your job, your security—all unstable. So who are you, really?",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE GROUND IS SHIFTING",
+      "type": "text",
+      "content": "Your country is fracturing. Political violence is at levels not seen since the 1970s. Democracy feels like it's unraveling—71% of people are dissatisfied with how it's working.\n\nYour paycheck doesn't stretch anymore. Inflation has eaten 25% of your purchasing power since 2020. You're \"job hugging\"—staying in work you hate because the economy feels too unstable to risk a move.\n\nEverything that once told you who you were—American, successful, secure—is shaking.\n\nSo when the labels fall away, who remains?",
+      "wordCount": 88
+    },
+    {
+      "number": 3,
+      "heading": "THE BORROWED IDENTITIES",
+      "type": "text",
+      "content": "You thought you knew who you were.\n\nYour identity was built on what you achieved, what you earned, what country you belonged to. You were your résumé, your political affiliation, your net worth.\n\nBut those are costumes, not skin.\n\nWhen institutions fail, your national identity feels hollow. When your job barely pays bills, your professional identity rings false. When your savings can't keep up with rent, your financial identity crumbles.\n\nYou've been building on sand. And now the tide is coming in.",
+      "wordCount": 86
+    },
+    {
+      "number": 4,
+      "heading": "THE COST OF UNSTABLE GROUND",
+      "type": "text-with-image",
+      "content": "The cost of tying your identity to things that shift is this: **constant anxiety.**\n\n43% of adults are more anxious than they were last year. You're trying to hold onto definitions that keep slipping through your fingers.\n\nYou refresh the news obsessively, checking if your world is still intact. You check your bank account daily, calculating if you can survive another month. You argue politics online, desperate to prove your side is right—because if it's not, who are you?\n\nThis is what happens when your identity is borrowed, not given.\n\nWhen what you're standing on shakes, everything shakes.",
+      "illustration": {
+        "description": "Dithered image of cracked foundation or person's shadow fragmenting",
+        "file": "identity-day-1-illustration.png"
+      },
+      "wordCount": 105
+    },
+    {
+      "number": 5,
+      "heading": "AN ANCIENT QUESTION",
+      "type": "text",
+      "content": "There's an ancient text that speaks to this.\n\n2,000 years ago, a carpenter-turned-teacher asked his followers a question in a moment of chaos. The political regime was violent. The religious establishment was corrupt. The economy exploited the poor.\n\nSound familiar?\n\nIn the middle of that mess, Jesus asked them:\n\n**\"Who do people say I am?\"**\n\nThey gave him the labels—prophet, revolutionary, teacher.\n\nThen he asked the real question:\n\n**\"But who do YOU say I am?\"**\n\nNot the crowd. Not the culture. You.",
+      "wordCount": 89
+    },
+    {
+      "number": 6,
+      "heading": "THE UNSHAKEABLE ANSWER",
+      "type": "text",
+      "content": "One of his followers, Peter, answered:\n\n**\"You are the Christ, the Son of the living God.\"**\n\nAnd Jesus said something striking:\n\n**\"Blessed are you... for this was not revealed to you by flesh and blood, but by my Father in heaven.\"**\n\nIn other words: Your identity doesn't come from what the world tells you. It comes from what God reveals.\n\nWhen everything around you shakes, this remains:\n\n**You are known by God. You are loved by God.**\n\nThat's the identity that doesn't collapse.",
+      "wordCount": 85
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nWhen everything shakes—my country, my security, my sense of self—you remain.\n\nI've been clinging to labels that fail. Identities that fracture under pressure.\n\nTeach me who I am when the costumes are stripped away. Not my politics. Not my productivity. Not my net worth.\n\nReveal to me the identity that doesn't collapse.\n\nThe one you've known all along.\n\nAmen.",
+      "wordCount": 63
+    }
+  ],
+  "totalWords": 516,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Matthew 16:13-17",
+  "chiastic_position": "A - Introduction/Hook"
+}

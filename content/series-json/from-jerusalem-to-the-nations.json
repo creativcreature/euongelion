@@ -1,0 +1,264 @@
+{
+  "series": {
+    "id": "from-jerusalem-to-the-nations",
+    "title": "From Jerusalem to the Nations",
+    "subtitle": "Servants, Suffering, and a Surprising Conversion",
+    "pathway": "Shepherd",
+    "coreQuestion": "What if God uses our service, our suffering, and even our enemies to advance His mission?",
+    "booksOfFocus": ["Acts"],
+    "totalDays": 1,
+    "heroImage": "https://substack-post-media.s3.amazonaws.com/public/images/cdcdad4e-90d0-4b50-ad70-b729bdc50408_1530x857.jpeg"
+  },
+  "day": {
+    "number": 1,
+    "title": "Servants, Suffering, and a Surprising Conversion",
+    "anchorVerse": "Acts 7:54-60",
+    "theme": "God grows His church through service, suffering, and surprise"
+  },
+  "modules": [
+    {
+      "type": "scripture",
+      "order": 1,
+      "content": {
+        "reference": "Acts 7:54-60",
+        "translation": "NIV",
+        "text": "When the members of the Sanhedrin heard this, they were furious and gnashed their teeth at him. But Stephen, full of the Holy Spirit, looked up to heaven and saw the glory of God, and Jesus standing at the right hand of God. \"Look,\" he said, \"I see heaven open and the Son of Man standing at the right hand of God.\" At this they covered their ears and, yelling at the top of their voices, they all rushed at him, dragged him out of the city and began to stone him. Meanwhile, the witnesses laid their coats at the feet of a young man named Saul. While they were stoning him, Stephen prayed, \"Lord Jesus, receive my spirit.\" Then he fell on his knees and cried out, \"Lord, do not hold this sin against them.\" When he had said this, he fell asleep.",
+        "emphasis": [
+          "full of the Holy Spirit",
+          "Jesus standing at the right hand of God",
+          "Lord, do not hold this sin against them"
+        ],
+        "contextNote": "Stephen's martyrdom is the hinge of Acts 6-9 - where suffering births mission, violence meets grace, and a persecutor sees true faith for the first time."
+      }
+    },
+    {
+      "type": "vocab",
+      "order": 2,
+      "content": {
+        "language": "greek",
+        "word": "διάκονος",
+        "transliteration": "diakonos",
+        "pronunciation": "dee-AK-on-os",
+        "meaning": "servant, minister, deacon",
+        "rootMeaning": "A servant entrusted with sacred responsibility. This word becomes the root of 'deacon' - someone who reflects Jesus, who came 'not to be served, but to serve.'",
+        "usageNote": "In Acts 6, the seven chosen men embody this calling - practical ministry elevated to Spirit-filled service.",
+        "relatedWords": [
+          {
+            "word": "μάρτυς",
+            "transliteration": "martys",
+            "meaning": "Originally meant 'witness.' By Stephen's death, it becomes synonymous with 'one who bears witness through suffering.'"
+          },
+          {
+            "word": "διώκω",
+            "transliteration": "dioko",
+            "meaning": "To pursue, chase down, harass. Paul uses this same verb to later describe his pursuit of Christ - a transformation from violent pursuit to holy pursuit."
+          },
+          {
+            "word": "ἐκκλησία",
+            "transliteration": "ekklesia",
+            "meaning": "Called-out assembly. In Acts 8-9 it refers to a community no longer defined by geography but by mission."
+          },
+          {
+            "word": "μετανοέω",
+            "transliteration": "metanoeo",
+            "meaning": "Repentance is not just moral sorrow - it is a total change of allegiance, direction, and vision. Saul embodies this radically."
+          }
+        ]
+      }
+    },
+    {
+      "type": "teaching",
+      "order": 3,
+      "content": {
+        "title": "The Turning Point of Acts",
+        "body": "Week 3 is the turning point of the entire book of Acts. Week 1 showed us the foundation of the early church. Week 2 showed us what happens when the Spirit-filled church steps into public life. Now Week 3 shows us how God grows His church through service, suffering, and surprise.\n\nActs 6-9 is not a quiet chapter in church history. It is bursting with movement, tension, courage, tragedy, and redemption. The gospel begins to break out of its original boundaries. Leadership expands. Persecution erupts. A martyr dies with a vision of Jesus. A persecutor meets Jesus in glory. The church is scattered - and through that scattering, the mission of God accelerates.\n\nStephen becomes the first Christian to die for his witness - and the way he dies becomes the seed of a global movement. This moment stands at the center of Acts 6-9. It is the place where suffering births mission, violence meets grace, a persecutor sees true faith for the first time, and a dying man resembles his Savior.",
+        "keyInsight": "Stephen dies with his eyes fixed on Christ - and his final words echo Christ's own. His death becomes the spark that lights the global mission."
+      }
+    },
+    {
+      "type": "story",
+      "order": 4,
+      "content": {
+        "title": "The Servant Who Saw Heaven Open",
+        "body": "Stephen is not an apostle. He is not on a stage. He is not a priest or a trained scholar. He is a servant - and yet Acts describes him as full of faith, full of grace, full of power, and full of the Holy Spirit.\n\nHe performs signs and wonders. He speaks with wisdom that no one can refute. He becomes a living example that the Spirit can empower anyone, not just the original Twelve.\n\nAs the council condemns him, Stephen sees heaven open, the glory of God, and Jesus standing at the right hand of God. In Scripture, Jesus is usually seated - His work complete. Here, He stands. It is the posture of an advocate, a witness, an honor-bearer.\n\nStephen dies with his eyes fixed on Christ - and his final words echo Christ's own: 'Lord, receive my spirit.' 'Do not hold this sin against them.'",
+        "connectionToTheme": "Stephen shows that serving is spiritual - when we serve in the Spirit's power, we join him in world-changing ministry."
+      }
+    },
+    {
+      "type": "insight",
+      "order": 5,
+      "content": {
+        "title": "From Crisis to Expansion",
+        "body": "The early church included Hebraic Jews (native Aramaic-speaking Jews steeped in Judean culture) and Hellenistic Jews (Greek-speaking Jews shaped by broader Mediterranean culture). These groups had different languages, customs, and traditions - and tension was inevitable.\n\nWhen Greek-speaking widows felt neglected in the daily food distribution, the apostles responded with clarity and wisdom. They refused to neglect their calling to the ministry of the word and prayer, but elevated service to a Spirit-filled calling by insisting the church choose seven men full of the Spirit and wisdom. Practical ministry requires spiritual maturity. Serving tables is holy work when it is done in the name and power of the Spirit.\n\nAll seven appointed leaders have Greek names - meaning the marginalized group now has empowered leadership. The Spirit solves internal tension not by suppressing differences, but by redeeming them.",
+        "historicalContext": "Stephen challenged the Sanhedrin's stewardship of the Temple, their reading of Scripture, their resistance to God's messengers, and their role in rejecting the Righteous One. He reinterpreted Israel's story around Jesus - a move that threatened the entire religious system.",
+        "fascinatingFact": "The Ethiopian eunuch served Kandake, queen of the Nubian kingdom - a wealthy and powerful African empire. His conversion is the gospel entering a global trade network, becoming the first documented African Christian convert in Scripture."
+      }
+    },
+    {
+      "type": "bridge",
+      "order": 6,
+      "content": {
+        "ancientTruth": "The early church grew through service meeting practical needs, suffering becoming a witness, and unexpected conversions like Saul's transforming enemies into chosen instruments.",
+        "modernApplication": "God still grows His church through deacons and martyrs, administrators and evangelists. When we meet needs, we join Stephen and Philip in Spirit-filled ministry. Suffering may be the place where God shapes you most deeply.",
+        "connectionPoint": "The Spirit invites us beyond what is familiar. Your Samaria might be a neighbor, a coworker, or a cultural barrier you have avoided. The people you fear or dislike might become trophies of grace.",
+        "newTestamentEcho": "Jesus identified Himself with His people when He asked Saul, 'Why do you persecute Me?' To harm believers is to harm Christ. This same Jesus who confronted Saul stands ready to transform anyone who encounters Him."
+      }
+    },
+    {
+      "type": "reflection",
+      "order": 7,
+      "content": {
+        "prompt": "What obedience are you avoiding that God is calling you toward?",
+        "additionalQuestions": [
+          "Where is God stretching your mission field to include new people, new places, or new opportunities?",
+          "What comfort is limiting your courage that you need to release?",
+          "Who in your life seems far from God but might become a trophy of grace - like Saul?",
+          "How might God be using difficulty or opposition in your life to advance His mission through you?"
+        ],
+        "invitationType": "honest-examination"
+      }
+    },
+    {
+      "type": "prayer",
+      "order": 8,
+      "content": {
+        "text": "Lord Jesus, who stood for Stephen and called Saul by name, stand for me in my service and suffering. Fill me with Your Spirit as You filled those first deacons. Give me the courage to serve in hidden ways and to stay faithful in difficult places. Stretch my vision beyond my comfort zone to the Samaria You are calling me toward. Transform my fears into faith. And help me remember that no one - not even my fiercest opponent - is beyond the reach of Your grace. Make my life a spark for Your global mission. Amen.",
+        "type": "personal",
+        "posture": "surrender-and-petition"
+      }
+    },
+    {
+      "type": "takeaway",
+      "order": 9,
+      "content": {
+        "commitment": "This week I will serve one person in a hidden, practical way; stay faithful in one difficult area; release one comfort that is limiting my courage; look for where God is stretching my mission field; and pray for someone far from God.",
+        "leavingAtCross": [
+          "The belief that only 'platform' ministry matters",
+          "The fear that suffering means God has abandoned me",
+          "The assumption that some people are beyond God's reach",
+          "The comfort zones that limit my obedience"
+        ],
+        "receivingFromCross": [
+          "The truth that serving tables is holy work when done in the Spirit",
+          "The vision that suffering can birth mission",
+          "The hope that enemies can become instruments of grace",
+          "The courage to go where God is stretching my mission"
+        ]
+      }
+    },
+    {
+      "type": "comprehension",
+      "order": 10,
+      "content": {
+        "forReflection": [
+          "How did the early church's response to internal conflict (Acts 6:1-7) model healthy leadership and diversity?",
+          "Why did Stephen's speech enrage the Sanhedrin, and what does this teach us about prophetic truth-telling?",
+          "What is the significance of Jesus standing rather than sitting at God's right hand when Stephen saw Him?",
+          "How does Saul's conversion demonstrate that no one is beyond God's grace?"
+        ],
+        "forAccountabilityPartners": [
+          "Share one way you can serve someone this week in a hidden, practical way",
+          "Identify one difficult area where you need to stay faithful - what obedience are you avoiding?",
+          "Name one comfort you need to release that is limiting your courage",
+          "Pray together for someone who seems far from God, remembering Saul's transformation"
+        ]
+      }
+    },
+    {
+      "type": "resource",
+      "order": 11,
+      "content": {
+        "relatedScriptures": [
+          {
+            "reference": "Acts 6:1-7",
+            "summary": "The appointment of the seven deacons to serve the Hellenistic widows"
+          },
+          {
+            "reference": "Acts 8:1-25",
+            "summary": "Philip's ministry in Samaria and the encounter with Simon the Sorcerer"
+          },
+          {
+            "reference": "Acts 8:26-40",
+            "summary": "Philip and the Ethiopian eunuch - the gospel crosses ethnic and geographic boundaries"
+          },
+          {
+            "reference": "Acts 9:1-31",
+            "summary": "Saul's conversion on the Damascus road and his transformation from persecutor to preacher"
+          },
+          {
+            "reference": "Acts 1:8",
+            "summary": "Jesus' prophecy that the disciples would be His witnesses 'in Jerusalem, and in all Judea and Samaria, and to the ends of the earth'"
+          }
+        ],
+        "forDeeperStudy": [
+          {
+            "type": "video",
+            "title": "BibleProject: Acts 8-12 Overview",
+            "url": "https://www.youtube.com/watch?v=3E-aQAEEdPI",
+            "note": "Visual overview of this section of Acts showing how the gospel expands from Jerusalem to the nations"
+          },
+          {
+            "type": "book",
+            "title": "Acts 6-9",
+            "note": "Read the full text of these four chapters to see the complete narrative arc from deacons to Saul's conversion"
+          }
+        ]
+      }
+    },
+    {
+      "type": "profile",
+      "order": 12,
+      "content": {
+        "name": "Stephen",
+        "title": "The First Martyr",
+        "description": "Stephen was one of the seven men chosen to serve the Hellenistic widows in the early church. Though not an apostle, priest, or trained scholar, he was described as full of faith, full of grace, full of power, and full of the Holy Spirit. He performed signs and wonders and spoke with wisdom no one could refute. His retelling of Israel's history accused the religious leaders of resisting God's messengers throughout the ages, culminating in their rejection of Jesus.",
+        "keyQuote": "Lord Jesus, receive my spirit... Lord, do not hold this sin against them.",
+        "lessonForUs": "Stephen shows us that Spirit-filled service in any capacity - even serving tables - can become world-changing ministry. His death, witnessed by Saul, planted a seed that would eventually transform Christianity's greatest persecutor into its greatest missionary. Serving is spiritual. Suffering can birth mission. And the way we die can speak as loudly as the way we live.",
+        "additionalFigures": [
+          {
+            "name": "Philip",
+            "title": "The Evangelist",
+            "description": "Another of the seven chosen servants, Philip became an evangelist after the scattering. He preached in Samaria with signs, wonders, and great joy, then was led by the Spirit to a desert road where he explained Isaiah 53 to an Ethiopian official - the first documented African Christian convert.",
+            "lessonForUs": "Philip shows us that the Spirit may call us from thriving ministry to obscure assignments. Obedience to the Spirit's leading matters more than visible success."
+          },
+          {
+            "name": "Saul (later Paul)",
+            "title": "The Transformed Persecutor",
+            "description": "Saul was the church's fiercest opponent - intelligent, zealous, influential, feared. He trained under Gamaliel and was rising fast in the Pharisaic movement. He had legal authority to arrest believers and was 'breathing out murderous threats.' Yet Jesus interrupted his mission with a blinding light and the question, 'Why do you persecute Me?'",
+            "lessonForUs": "Saul's conversion is the template for hope: If God can transform Saul, He can transform anyone - including the people we've written off. Never underestimate the reach of Jesus."
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "estimatedReadTime": {
+      "quick": "3 minutes",
+      "medium": "10 minutes",
+      "deep": "20 minutes"
+    },
+    "moduleCount": 12,
+    "primaryEmotion": "conviction-with-hope",
+    "soulAuditKeywords": [
+      "service",
+      "suffering",
+      "persecution",
+      "mission",
+      "conversion",
+      "leadership",
+      "courage",
+      "witness",
+      "martyrdom",
+      "expansion"
+    ],
+    "weekNumber": 3,
+    "actsChapters": "6-9",
+    "crossFitnessChallenge": {
+      "day1": "Serve one person in a hidden, practical way. Let service be worship.",
+      "day2": "Stay faithful in one difficult area. Ask: 'What obedience am I avoiding?'",
+      "day3": "Release one comfort that is limiting your courage. Fear shrinks the mission. Surrender expands it.",
+      "day4": "Look for where God is stretching your mission field. New people. New places. New opportunities.",
+      "day5": "Pray for someone far from God. Remember Saul. No one is impossible."
+    }
+  }
+}

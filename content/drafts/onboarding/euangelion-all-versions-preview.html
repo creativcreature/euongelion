@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EUONGELION Onboarding — All Versions</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-tehom: #1A1612;
+      --color-scroll: #F7F3ED;
+      --color-gold: #C19A6B;
+      --color-text-secondary: rgba(26, 22, 18, 0.6);
+      --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
+      --font-masthead: 'Playfair Display', 'Didot', serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 17px; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--color-tehom);
+      background: #e8e4de;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Version Tabs */
+    .version-nav {
+      position: sticky;
+      top: 0;
+      background: var(--color-tehom);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      z-index: 100;
+    }
+
+    .version-nav a {
+      color: var(--color-scroll);
+      text-decoration: none;
+      padding: 0.5rem 1.25rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .version-nav a:hover {
+      border-color: var(--color-gold);
+      color: var(--color-gold);
+    }
+
+    /* Version Section */
+    .version-section {
+      max-width: 700px;
+      margin: 3rem auto;
+      background: var(--color-scroll);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+
+    .version-header {
+      background: var(--color-tehom);
+      color: var(--color-scroll);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .version-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .version-badge {
+      background: var(--color-gold);
+      color: var(--color-tehom);
+      padding: 0.25rem 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Day Card */
+    .day-card {
+      padding: 2.5rem 2rem;
+      border-bottom: 1px solid rgba(26,22,18,0.08);
+    }
+
+    .day-card:last-child {
+      border-bottom: none;
+    }
+
+    .day-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .day-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Content */
+    p { margin-bottom: 1.25em; }
+    em { font-style: italic; }
+    strong { font-weight: 600; }
+
+    .section-header {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--color-gold);
+    }
+
+    .pronunciation {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin: 1rem 0;
+    }
+
+    .greek {
+      font-style: normal;
+      color: var(--color-text-secondary);
+    }
+
+    blockquote {
+      margin: 1.5rem 0;
+      padding: 1.25rem 1.5rem;
+      background: rgba(193, 154, 107, 0.08);
+      border-left: 3px solid var(--color-gold);
+      font-size: 1rem;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      font-style: normal;
+      color: var(--color-text-secondary);
+    }
+
+    .key-statement {
+      font-weight: 600;
+      text-align: center;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: var(--color-tehom);
+      color: var(--color-scroll);
+      font-size: 1rem;
+    }
+
+    .three-lines p {
+      margin-bottom: 0.4em;
+    }
+
+    /* Hebrew */
+    .hebrew {
+      font-family: 'Times New Roman', serif;
+      font-size: 1.2em;
+      color: var(--color-gold);
+      direction: rtl;
+    }
+
+    /* Interactive */
+    .interactive {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--color-tehom);
+      color: var(--color-scroll);
+      border-radius: 3px;
+    }
+
+    .interactive-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .breath-line {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .breath-direction {
+      font-weight: 500;
+      color: var(--color-gold);
+      min-width: 55px;
+    }
+
+    .breath-text {
+      font-style: italic;
+      color: rgba(247, 243, 237, 0.85);
+    }
+
+    /* Reflection */
+    .reflection {
+      margin: 2rem 0;
+      padding: 1.25rem;
+      background: rgba(193, 154, 107, 0.06);
+      border-radius: 3px;
+    }
+
+    .reflection-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .reflection ol {
+      list-style: none;
+      counter-reset: q;
+      margin: 0;
+      padding: 0;
+    }
+
+    .reflection li {
+      counter-increment: q;
+      margin-bottom: 0.6rem;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .reflection li::before {
+      content: counter(q);
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      color: var(--color-gold);
+    }
+
+    /* Day Footer */
+    .day-footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(26,22,18,0.08);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+    }
+
+    .day-footer .next {
+      font-style: italic;
+      margin-top: 0.25rem;
+    }
+
+    /* Divider */
+    .divider {
+      text-align: center;
+      margin: 2rem 0;
+      color: var(--color-gold);
+      letter-spacing: 0.3em;
+      font-size: 0.9rem;
+    }
+
+    /* Print */
+    @media print {
+      body { background: white; }
+      .version-nav { display: none; }
+      .version-section { box-shadow: none; margin: 0; page-break-after: always; }
+      .interactive, .key-statement { background: #f0f0f0; color: #1A1612; }
+    }
+
+    @media (max-width: 600px) {
+      html { font-size: 15px; }
+      .day-card { padding: 2rem 1.5rem; }
+      .version-nav { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="version-nav">
+    <a href="#v1">1-Day Version</a>
+    <a href="#v2">2-Day Version</a>
+    <a href="#v3">3-Day Version</a>
+  </nav>
+
+  <!-- ========================================
+       1-DAY VERSION
+       ======================================== -->
+  <section class="version-section" id="v1">
+    <div class="version-header">
+      <span class="version-title">1-Day Onboarding</span>
+      <span class="version-badge">~500 words / 2 min</span>
+    </div>
+
+    <article class="day-card">
+      <p class="day-label">EUANGELION</p>
+      <h1 class="day-title">The Good News</h1>
+
+      <h3 class="section-header">The Word</h3>
+
+      <p class="pronunciation">Eu-an-GEL-ee-on <span class="greek">(εὐαγγέλιον)</span>.</p>
+
+      <p>It's Greek. And it doesn't mean what you think.</p>
+
+      <p>In the ancient world, <em>euangelion</em> wasn't a religious term. It was a military one. When a messenger ran from the battlefield to announce that the war was won—lungs burning, legs failing—that announcement was <em>euangelion</em>. Good news. The kind that changes everything.</p>
+
+      <p>The early Christians borrowed this word deliberately. They weren't offering advice, therapy, or a philosophy for better living. They were making an announcement:</p>
+
+      <div class="key-statement">The battle is over. The King has won. Everything is about to change.</div>
+
+      <h3 class="section-header">Why This Exists</h3>
+
+      <p>This platform was born from a single verse:</p>
+
+      <blockquote>
+        "Do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus."
+        <cite>— Philippians 4:6-7</cite>
+      </blockquote>
+
+      <p>For years, those words felt impossible. But then something shifted. Not because life got easier. Because those words became real.</p>
+
+      <div class="key-statement">EUONGELION exists because that kind of encounter shouldn't be rare.</div>
+
+      <h3 class="section-header">The Invitation</h3>
+
+      <p>Whatever you're carrying—anxiety, doubt, questions you can't answer—bring it.</p>
+
+      <p>The <em>euangelion</em> has been announced. The war is over.</p>
+
+      <p>Come home.</p>
+
+      <div class="interactive">
+        <p class="interactive-label">Breath Prayer</p>
+        <div class="breath-line">
+          <span class="breath-direction">Inhale:</span>
+          <span class="breath-text">"The battle is over."</span>
+        </div>
+        <div class="breath-line">
+          <span class="breath-direction">Exhale:</span>
+          <span class="breath-text">"Lead me home."</span>
+        </div>
+      </div>
+
+      <div class="reflection">
+        <h4 class="reflection-title">Reflection</h4>
+        <ol>
+          <li>What brought you here? What were you searching for?</li>
+          <li>What would it mean to believe the "war" in your life is already won?</li>
+        </ol>
+      </div>
+
+      <footer class="day-footer">
+        <p>Your journey begins now.</p>
+      </footer>
+    </article>
+  </section>
+
+  <!-- ========================================
+       2-DAY VERSION
+       ======================================== -->
+  <section class="version-section" id="v2">
+    <div class="version-header">
+      <span class="version-title">2-Day Onboarding</span>
+      <span class="version-badge">~900 words total</span>
+    </div>
+
+    <!-- Day 1 -->
+    <article class="day-card">
+      <p class="day-label">Day 1 of 2</p>
+      <h1 class="day-title">The Announcement</h1>
+
+      <h3 class="section-header">The Word</h3>
+
+      <p class="pronunciation">Eu-an-GEL-ee-on <span class="greek">(εὐαγγέλιον)</span>.</p>
+
+      <p>In the ancient world, <em>euangelion</em> wasn't a religious term. It was a military one. When a messenger ran from the battlefield to announce that the war was won—that announcement was <em>euangelion</em>. Good news. The kind that changes everything.</p>
+
+      <div class="key-statement">The battle is over. The King has won. Everything is about to change.</div>
+
+      <h3 class="section-header">A Story</h3>
+
+      <p>In 1972, a Japanese soldier named Hiroo Onoda emerged from the Philippine jungle. He had been hiding for <em>twenty-nine years</em>.</p>
+
+      <p>Sent to Lubang Island in 1944 with orders to never surrender, Onoda refused to believe the war had ended. Leaflets? Propaganda. Family members with loudspeakers? A trick.</p>
+
+      <p>It wasn't until his former commanding officer personally issued the order to stand down that Onoda finally surrendered.</p>
+
+      <p>He had been free for twenty-nine years. He just didn't know it.</p>
+
+      <p><strong>Some of you have been living in a war that's already over.</strong></p>
+
+      <p>But the <em>euangelion</em> has already been declared. "It is finished."</p>
+
+      <p>You just have to come out of the jungle.</p>
+
+      <h3 class="section-header">Why This Exists</h3>
+
+      <blockquote>
+        "Do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus."
+        <cite>— Philippians 4:6-7</cite>
+      </blockquote>
+
+      <div class="key-statement">EUONGELION exists because that kind of encounter shouldn't be rare.</div>
+
+      <div class="interactive">
+        <p class="interactive-label">Breath Prayer</p>
+        <div class="breath-line">
+          <span class="breath-direction">Inhale:</span>
+          <span class="breath-text">"The battle is over."</span>
+        </div>
+        <div class="breath-line">
+          <span class="breath-direction">Exhale:</span>
+          <span class="breath-text">"Lead me home."</span>
+        </div>
+      </div>
+
+      <div class="reflection">
+        <h4 class="reflection-title">Reflection</h4>
+        <ol>
+          <li>What brought you here? What were you searching for?</li>
+          <li>Is there a "war" in your life that might already be finished?</li>
+        </ol>
+      </div>
+
+      <footer class="day-footer">
+        <p>Day 1 of 2 — EUANGELION</p>
+        <p class="next">Tomorrow: What You'll Find Here</p>
+      </footer>
+    </article>
+
+    <!-- Day 2 -->
+    <article class="day-card">
+      <p class="day-label">Day 2 of 2</p>
+      <h1 class="day-title">What You'll Find Here</h1>
+
+      <h3 class="section-header">A Different Kind of Depth</h3>
+
+      <p>You've probably tried other things. Bible apps with guilt-inducing streaks. Devotionals that felt like greeting cards. Reading plans abandoned by January.</p>
+
+      <p>Here's what we're doing differently:</p>
+
+      <p><strong>We go deep, not wide.</strong> One passage. One truth. One word—unpacked until it changes you.</p>
+
+      <p><strong>We take the original languages seriously.</strong> Hebrew and Greek words carry meanings that English translations sometimes flatten.</p>
+
+      <p><strong>We tell stories.</strong> Narratives that make ancient truths tangible.</p>
+
+      <p><strong>Everything points to Jesus.</strong> This isn't self-help. Every theme finds its fulfillment in the carpenter who walked out of a tomb.</p>
+
+      <p><strong>We invite response.</strong> Breath prayers, reflection questions, space to journal.</p>
+
+      <h3 class="section-header">The Greek Word for "Messenger"</h3>
+
+      <p>The word <em>euangelion</em> shares its root with <em>angelos</em> <span class="greek">(ἄγγελος)</span>—the word we translate as "angel."</p>
+
+      <p>An <em>angelos</em> isn't a chubby baby with wings. It's a messenger. Someone sent with news.</p>
+
+      <p>So <em>euangelion</em> literally means "good message"—and the one who brings it is an <em>euangelistes</em>, a good-news-bringer.</p>
+
+      <h3 class="section-header">A Benediction</h3>
+
+      <p>May the <em>euangelion</em> sink deep. May you discover that the war you've been fighting is already won.</p>
+
+      <p>Welcome to EUONGELION. Welcome to the good news. Welcome home.</p>
+
+      <div class="interactive">
+        <p class="interactive-label">Breath Prayer</p>
+        <div class="breath-line">
+          <span class="breath-direction">Inhale:</span>
+          <span class="breath-text">"Here I am, Lord."</span>
+        </div>
+        <div class="breath-line">
+          <span class="breath-direction">Exhale:</span>
+          <span class="breath-text">"Send me."</span>
+        </div>
+      </div>
+
+      <div class="reflection">
+        <h4 class="reflection-title">Reflection</h4>
+        <ol>
+          <li>Which aspect—depth, languages, stories, Jesus-centeredness—are you most drawn to?</li>
+          <li>What would "showing up" look like for you in this season?</li>
+        </ol>
+      </div>
+
+      <footer class="day-footer">
+        <p>Day 2 of 2 — EUANGELION</p>
+        <p class="next">Your journey begins now.</p>
+      </footer>
+    </article>
+  </section>
+
+  <!-- ========================================
+       3-DAY VERSION
+       ======================================== -->
+  <section class="version-section" id="v3">
+    <div class="version-header">
+      <span class="version-title">3-Day Onboarding</span>
+      <span class="version-badge">~1200 words total</span>
+    </div>
+
+    <!-- Day 1 -->
+    <article class="day-card">
+      <p class="day-label">Day 1 of 3</p>
+      <h1 class="day-title">The Announcement</h1>
+
+      <h3 class="section-header">The Word</h3>
+
+      <p class="pronunciation">Eu-an-GEL-ee-on <span class="greek">(εὐαγγέλιον)</span>.</p>
+
+      <p>It's Greek. And it doesn't mean what you think.</p>
+
+      <p>In the ancient world, <em>euangelion</em> wasn't a religious term. It was a military one. When a messenger ran from the battlefield to announce that the war was won—lungs burning, legs failing—that announcement was <em>euangelion</em>. Good news. The kind that changes everything.</p>
+
+      <p>The early Christians borrowed this word deliberately. They weren't offering advice, therapy, or a philosophy for better living. They were making an announcement:</p>
+
+      <div class="key-statement">The battle is over. The King has won. Everything is about to change.</div>
+
+      <h3 class="section-header">Why This Exists</h3>
+
+      <blockquote>
+        "Do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus."
+        <cite>— Philippians 4:6-7</cite>
+      </blockquote>
+
+      <p>For years, those words felt impossible. <em>Don't be anxious?</em> Tell that to the 3 AM thoughts.</p>
+
+      <p>But then something shifted. Not because life got easier. Because those words became real.</p>
+
+      <div class="key-statement">EUONGELION exists because that kind of encounter shouldn't be rare.</div>
+
+      <p>Not for the spiritually elite. For the lost. The wandering. For you.</p>
+
+      <div class="interactive">
+        <p class="interactive-label">Breath Prayer</p>
+        <div class="breath-line">
+          <span class="breath-direction">Inhale:</span>
+          <span class="breath-text">"The battle is over."</span>
+        </div>
+        <div class="breath-line">
+          <span class="breath-direction">Exhale:</span>
+          <span class="breath-text">"I can come home."</span>
+        </div>
+      </div>
+
+      <div class="reflection">
+        <h4 class="reflection-title">Reflection</h4>
+        <ol>
+          <li>What brought you here? What were you searching for?</li>
+          <li>What would "peace that surpasses understanding" look like in your life?</li>
+        </ol>
+      </div>
+
+      <footer class="day-footer">
+        <p>Day 1 of 3 — EUANGELION</p>
+        <p class="next">Tomorrow: A Story</p>
+      </footer>
+    </article>
+
+    <!-- Day 2 -->
+    <article class="day-card">
+      <p class="day-label">Day 2 of 3</p>
+      <h1 class="day-title">The Long Way Home</h1>
+
+      <h3 class="section-header">A Story</h3>
+
+      <p>In 1972, a Japanese soldier named Hiroo Onoda emerged from the Philippine jungle. He had been hiding for <em>twenty-nine years</em>.</p>
+
+      <p>Sent to Lubang Island in 1944 with orders to never surrender, Onoda refused to believe the war had ended. Leaflets announcing Japan's surrender? Propaganda. Family members with loudspeakers? A trick.</p>
+
+      <p>It wasn't until his former commanding officer personally issued the order to stand down that Onoda finally surrendered.</p>
+
+      <p>He had been free for twenty-nine years. He just didn't know it.</p>
+
+      <h3 class="section-header">The Connection</h3>
+
+      <p><strong>Some of you have been living in a war that's already over.</strong></p>
+
+      <p>Fighting. Surviving. Convinced you have to earn God's favor. But the <em>euangelion</em> has already been declared.</p>
+
+      <p>"It is finished."</p>
+
+      <p>You don't have to keep fighting. You just have to come out of the jungle.</p>
+
+      <h3 class="section-header">The Hebrew Word for "Return"</h3>
+
+      <p>The Hebrew word <em>shuv</em> (<span class="hebrew">שׁוּב</span>) means to return, to come back, to go home.</p>
+
+      <blockquote>
+        "He restores my soul."
+        <cite>— Psalm 23:3</cite>
+      </blockquote>
+
+      <p>That's the word—<em>shuv</em>. He brings your soul back home.</p>
+
+      <p>The <em>euangelion</em> makes this possible. You can come home. The door is open. The Father is waiting.</p>
+
+      <div class="three-lines">
+        <p>If you've drifted, He's looking for you.</p>
+        <p>If you've doubted, He can handle your questions.</p>
+        <p>If you've never believed, the invitation stands.</p>
+      </div>
+
+      <div class="interactive">
+        <p class="interactive-label">Breath Prayer</p>
+        <div class="breath-line">
+          <span class="breath-direction">Inhale:</span>
+          <span class="breath-text">"Lord, I am here."</span>
+        </div>
+        <div class="breath-line">
+          <span class="breath-direction">Exhale:</span>
+          <span class="breath-text">"Lead me home."</span>
+        </div>
+      </div>
+
+      <div class="reflection">
+        <h4 class="reflection-title">Reflection</h4>
+        <ol>
+          <li>Is there a "war" in your life that might already be finished?</li>
+          <li>What does "home" mean to you spiritually?</li>
+        </ol>
+      </div>
+
+      <footer class="day-footer">
+        <p>Day 2 of 3 — EUANGELION</p>
+        <p class="next">Tomorrow: What You'll Find Here</p>
+      </footer>
+    </article>
+
+    <!-- Day 3 -->
+    <article class="day-card">
+      <p class="day-label">Day 3 of 3</p>
+      <h1 class="day-title">What You'll Find Here</h1>
+
+      <h3 class="section-header">A Different Kind of Depth</h3>
+
+      <p>You've probably tried other things. Bible apps with guilt-inducing streaks. Devotionals that felt like greeting cards. We're doing this differently:</p>
+
+      <p><strong>We go deep, not wide.</strong> One passage. One truth. One word—unpacked until it changes you.</p>
+
+      <p><strong>We take the original languages seriously.</strong></p>
+
+      <p>The word <em>euangelion</em> shares its root with <em>angelos</em> <span class="greek">(ἄγγελος)</span>—"angel," which really means "messenger."</p>
+
+      <p>So <em>euangelion</em> literally means "good message"—and the one who brings it is a good-news-bringer.</p>
+
+      <p><strong>We tell stories. We point to Jesus.</strong> Every passage finds its fulfillment in the carpenter who walked out of a tomb.</p>
+
+      <p><strong>We invite response.</strong> Breath prayers, reflection questions, space to journal. The goal isn't perfection. It's presence. Show up.</p>
+
+      <h3 class="section-header">A Benediction</h3>
+
+      <p>May the <em>euangelion</em> sink deep.</p>
+
+      <p>May you discover that the war you've been fighting is already won. May peace that surpasses understanding guard your heart and mind.</p>
+
+      <p>May you encounter not just words about God, but God Himself.</p>
+
+      <p>Welcome to EUONGELION. Welcome to the good news. Welcome home.</p>
+
+      <div class="interactive">
+        <p class="interactive-label">Breath Prayer</p>
+        <div class="breath-line">
+          <span class="breath-direction">Inhale:</span>
+          <span class="breath-text">"Here I am, Lord."</span>
+        </div>
+        <div class="breath-line">
+          <span class="breath-direction">Exhale:</span>
+          <span class="breath-text">"Send me."</span>
+        </div>
+      </div>
+
+      <div class="reflection">
+        <h4 class="reflection-title">Reflection</h4>
+        <ol>
+          <li>Which aspect—depth, languages, stories, Jesus-centeredness—are you most drawn to?</li>
+          <li>What would "showing up" look like for you in this season?</li>
+        </ol>
+      </div>
+
+      <footer class="day-footer">
+        <p>Day 3 of 3 — EUANGELION</p>
+        <p class="next">Your journey begins now.</p>
+      </footer>
+    </article>
+  </section>
+
+</body>
+</html>

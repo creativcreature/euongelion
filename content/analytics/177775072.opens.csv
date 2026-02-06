@@ -1,0 +1,7 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+177775072,2025-11-03T12:12:50.365Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+177775072,2025-11-03T13:08:37.303Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+177775072,2025-11-03T18:21:24.053Z,redcapes38@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+177775072,2025-11-03T21:13:39.271Z,redcapes38@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+177775072,2025-11-06T03:20:33.964Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0
+177775072,2025-11-22T10:03:16.174Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0

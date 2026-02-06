@@ -1,0 +1,64 @@
+{
+  "day": 2,
+  "title": "Why does having more make you feel less secure?",
+  "teaser": "The more you accumulate, the more you fear losing it. Fear is the engine of hoarding. And it's consuming you.",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE MORE YOU HAVE, THE MORE YOU FEAR",
+      "type": "text",
+      "content": "You thought accumulation would bring peace.\n\nIf you just had a bigger emergency fund. A fuller pantry. More savings. Better insurance. Then you'd finally feel secure.\n\nBut the opposite happened.\n\nThe more you accumulated, the more you had to protect. The more you had to protect, the more you feared losing it.\n\nNow you're paralyzed. Can't spend money without guilt. Can't share resources without anxiety. Can't give freely because what if you need it later?\n\nYou built a fortress to feel safe. Instead, you built a prison.\n\nAnd the walls are made of fear.",
+      "wordCount": 99
+    },
+    {
+      "number": 3,
+      "heading": "FEAR AS THE ENGINE OF HOARDING",
+      "type": "text",
+      "content": "Fear isn't just a symptom of scarcity. **Fear is the engine that drives it.**\n\nFear of not having enough. Fear of the collapse. Fear of being left behind. Fear of losing what you've worked so hard to build.\n\nSo you hoard. You stockpile. You protect. You isolate your resources because sharing feels like losing.\n\nAnd the economy feeds this fear. Every news cycle reinforces it. Every financial advisor warns you to prepare for the worst.\n\nBut here's the cost: **The more you hoard out of fear, the less you're able to trust.**\n\nAnd without trust, there's no amount of money or resources that will ever make you feel secure.",
+      "wordCount": 107
+    },
+    {
+      "number": 4,
+      "heading": "THE ILLUSION OF CONTROL",
+      "type": "text-with-image",
+      "content": "You think hoarding gives you control.\n\nIf you just have enough stored up, you can handle any crisis. Any collapse. Any disaster.\n\nBut it's an illusion.\n\nYou can't stockpile your way out of systemic failure. You can't accumulate enough to make yourself invincible. You can't hoard your way to safety.\n\nBecause the thing you fear most—loss, collapse, insecurity—isn't solved by having more.\n\nIt's solved by learning to trust when you have less.\n\nHoarding is a control strategy. And it's failing you.\n\nBecause you were never meant to control the future. You were meant to trust the One who holds it.",
+      "illustration": {
+        "description": "Dithered image of hands gripping tightly to scattered coins, or fortress with crumbling walls",
+        "file": "provision-day-2-illustration.png"
+      },
+      "wordCount": 112
+    },
+    {
+      "number": 5,
+      "heading": "THE FEAR THAT OWNS YOU",
+      "type": "text",
+      "content": "Here's the truth you need to face: **The things you hoard end up owning you.**\n\nYou thought you owned your stockpile. But now it owns you. You serve it. You protect it. You organize your life around maintaining it.\n\nYou can't move freely because you're tied to your possessions. You can't give generously because you're enslaved to your fear. You can't rest because you're constantly calculating whether you have enough.\n\nJesus said it centuries ago: **\"Where your treasure is, there your heart will be also.\"**\n\nYour treasure is in your stockpile. And your heart is trapped there with it.\n\nFear-driven accumulation doesn't free you. It enslaves you.",
+      "wordCount": 107
+    },
+    {
+      "number": 6,
+      "heading": "THE DIFFERENT FOUNDATION",
+      "type": "text",
+      "content": "Jesus asks a piercing question:\n\n**\"Can any one of you by worrying add a single hour to your life?\"**\n\nNo. You can't.\n\nYou can stockpile for decades and still die tomorrow. You can hoard a fortune and lose it in a crash. You can build the perfect fortress and watch it crumble.\n\nBecause security built on fear is no security at all.\n\nJesus offers a different foundation: **Trust.**\n\nNot blind optimism. Not reckless irresponsibility. But trust in a God who knows what you need before you ask.\n\nThat kind of trust doesn't hoard. It shares.\n\nBecause it knows: **Provision flows through open hands, not clenched fists.**",
+      "wordCount": 105
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nI'm afraid. The more I have, the more I fear losing it. I thought accumulation would bring peace, but it's brought anxiety.\n\nI've been hoarding out of fear. Protecting what I have. Refusing to share because what if I need it later?\n\nBut You're right—the things I hoard now own me. I'm enslaved to my own security strategy.\n\nYou say I can't worry my way into more life. I can't stockpile my way into safety.\n\nI need a different foundation. Not fear. Trust.\n\nTeach me to open my hands. To share what I have. To believe that provision flows through generosity, not hoarding.\n\nI'm ready to let go of the fear.\n\nAmen.",
+      "wordCount": 113
+    }
+  ],
+  "totalWords": 643,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Matthew 6:25-34, Matthew 6:21",
+  "chiastic_position": "B - Building/Tension"
+}

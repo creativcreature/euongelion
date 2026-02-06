@@ -1,0 +1,64 @@
+{
+  "day": 1,
+  "title": "How do you know what's real when misinformation is everywhere?",
+  "teaser": "Drowning in information but starving for truth. When nothing feels certain, where do you find solid ground?",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE INFORMATION FLOOD",
+      "type": "text",
+      "content": "You're drowning in information.\n\nEvery day, 500 million tweets. 95 million photos on Instagram. 720,000 hours of YouTube uploaded. More content created in a day than you could consume in a lifetime.\n\nBut here's the problem: **You can't tell what's real anymore.**\n\nDeepfakes of politicians saying things they never said. AI-generated images that look like photographs. News stories fabricated by bots. Your uncle sharing conspiracy theories. Your friend reposting propaganda.\n\nEveryone claims to have the truth. And you have no idea who to believe.",
+      "wordCount": 88
+    },
+    {
+      "number": 3,
+      "heading": "THE COLLAPSE OF TRUST",
+      "type": "text",
+      "content": "It's not just that misinformation exists. It's that **you don't trust anything anymore.**\n\nYou question every headline. Fact-check every claim. Reverse-image-search photos to see if they're real. But the more you dig, the more confused you become.\n\nBecause for every fact-checker, there's a counter fact-checker. For every expert, there's an expert saying the opposite. For every source, there's someone claiming it's compromised.\n\nYou're not just fighting misinformation. You're fighting the collapse of any shared reality.\n\nWhen nothing feels certain, how do you know what's true?",
+      "wordCount": 94
+    },
+    {
+      "number": 4,
+      "heading": "THE COST OF CONSTANT DOUBT",
+      "type": "text-with-image",
+      "content": "The cost of living in a post-truth world is this: **exhaustion and paralysis.**\n\n60% of Americans say it's difficult to know what's true. You spend hours verifying simple facts. You argue with strangers online, trying to prove what's real. You scroll endlessly, looking for confirmation.\n\nBut confirmation never comes. Because every source is suspect. Every narrative has an agenda. Every claim has a counter-claim.\n\nSo you give up. You retreat into your bubble, only trusting what feels right. Or you shut down entirely, believing nothing.\n\nThis is what happens when there's no anchor for truth.\n\nYou drift. And eventually, you sink.",
+      "illustration": {
+        "description": "Dithered image of person drowning in a sea of text/screens, or scattered puzzle pieces that don't fit",
+        "file": "truth-day-1-illustration.png"
+      },
+      "wordCount": 115
+    },
+    {
+      "number": 5,
+      "heading": "AN ANCIENT CRISIS",
+      "type": "text",
+      "content": "This isn't new.\n\n2,000 years ago, a Roman governor named Pilate stood face-to-face with a man on trial. The religious leaders accused him of claiming to be a king, which threatened the empire.\n\nThe man said something strange:\n\n**\"I came into the world to testify to the truth. Everyone on the side of truth listens to me.\"**\n\nPilate responded with the question of our age:\n\n**\"What is truth?\"**\n\nIt wasn't curiosity. It was cynicism. In a world of propaganda and power games, Pilate had given up on truth.\n\nSound familiar?",
+      "wordCount": 95
+    },
+    {
+      "number": 6,
+      "heading": "THE UNANSWERED QUESTION",
+      "type": "text",
+      "content": "Pilate asked the question. But he didn't wait for the answer.\n\nHe turned and walked away. Because in his world—like ours—truth was whatever the powerful said it was.\n\nBut here's what he missed:\n\n**The answer was standing right in front of him.**\n\nThe man on trial wasn't just teaching about truth. He claimed to BE the truth.\n\nNot a system. Not a dataset. Not a fact-checking algorithm.\n\nA person.\n\nAnd that changes everything.",
+      "wordCount": 74
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nI'm drowning in information and starving for truth.\n\nI don't know what's real anymore. Every source is suspect. Every claim is contested. I'm exhausted.\n\nI want something solid. Something that doesn't shift with the algorithm or the narrative or the partisan spin.\n\nIf truth exists—if it's more than just power games and manipulation—show me.\n\nI'm listening.\n\nAmen.",
+      "wordCount": 61
+    }
+  ],
+  "totalWords": 527,
+  "jesusIntroduced": 5,
+  "scriptureReference": "John 18:37-38",
+  "chiastic_position": "A - Introduction/Hook"
+}

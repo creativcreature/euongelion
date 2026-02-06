@@ -1,0 +1,830 @@
+{
+  "series": {
+    "id": "in-the-beginning-week-1",
+    "title": "In the Beginning",
+    "subtitle": "The God Who Speaks (Week 1)",
+    "pathway": "Awake",
+    "coreQuestion": "How does God's creative word in Genesis connect to Christ as the living Word?",
+    "booksOfFocus": ["Genesis", "John"],
+    "totalDays": 6,
+    "soulAuditKeywords": [
+      "creation",
+      "beginning",
+      "origin",
+      "purpose",
+      "chaos",
+      "order",
+      "light",
+      "darkness",
+      "goodness",
+      "rest",
+      "work",
+      "identity",
+      "meaning",
+      "foundation",
+      "Hebrew",
+      "word of God"
+    ]
+  },
+  "days": [
+    {
+      "day": 1,
+      "title": "In the Beginning God Created",
+      "verse": "Genesis 1:1",
+      "hebrewVerse": "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ",
+      "modules": [
+        {
+          "type": "scripture",
+          "content": {
+            "reference": "Genesis 1:1",
+            "translation": "ESV",
+            "text": "In the beginning, God created the heavens and the earth.",
+            "hebrewOriginal": "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "בְּרֵאשִׁית",
+            "transliteration": "Bereshit",
+            "pronunciation": "beh-ray-SHEET",
+            "meaning": "In the beginning",
+            "rootMeaning": "This is the very first word of the Hebrew Bible! The word breaks down as: בְּ (be - 'in') + רֵאשִׁית (reshit - 'beginning'). The root רֹאשׁ (rosh) means 'head' or 'first,' so 'reshit' means 'the very first' or 'the beginning.'",
+            "strongsNumber": "H7225"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "בָּרָא",
+            "transliteration": "bara",
+            "pronunciation": "bah-RAH",
+            "meaning": "created",
+            "rootMeaning": "Used exclusively for divine activity in the Old Testament. Humans can make, form, or fashion things from existing materials, but only God can 'bara'—create something from nothing.",
+            "strongsNumber": "H1254"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "אֱלֹהִים",
+            "transliteration": "Elohim",
+            "pronunciation": "eh-lo-HEEM",
+            "meaning": "God",
+            "rootMeaning": "Grammatically plural but takes singular verbs when referring to the one true God. The word comes from the root meaning 'strength' or 'power,' emphasizing God's absolute authority and capability.",
+            "strongsNumber": "H430"
+          }
+        },
+        {
+          "type": "teaching",
+          "content": {
+            "title": "The Foundation of Everything",
+            "body": "Genesis 1:1 is not just the beginning of the Bible—it's the foundation upon which all biblical truth rests. This single verse establishes several crucial truths that shape everything that follows. The Hebrew word 'bereshit' establishes that time itself has a beginning. This was a revolutionary concept in the ancient world, where most cultures believed in cyclical time or eternal matter. The Hebrew Bible declares that time, like everything else, is created by God. The concept of creation ex nihilo (out of nothing) was unique in the ancient world. Other creation myths describe gods forming the world from pre-existing chaos or from the bodies of defeated enemies. But Genesis declares that God creates by the power of His word alone, bringing into existence what did not exist before. The phrase 'the heavens and the earth' is a Hebrew idiom meaning 'everything that exists.' It's a merism—a figure of speech that expresses totality by naming the extremes. God didn't just create some things; He created everything.",
+            "keyInsight": "Genesis 1:1 addresses the fundamental questions that every human being asks: Where did I come from? Why do I exist? What is my purpose? The answer begins with understanding that we are not cosmic accidents but intentional creations of a purposeful God."
+          }
+        },
+        {
+          "type": "story",
+          "content": {
+            "title": "The Ultimate Question",
+            "body": "Dr. Stephen Hawking was perhaps the most famous physicist of our time, known for his groundbreaking work on black holes and his book 'A Brief History of Time.' Despite being diagnosed with ALS at age 21 and given only two years to live, he continued his research for over 50 years, revolutionizing our understanding of the universe. Throughout his career, Hawking grappled with the question of cosmic origins, writing, 'If we find the answer to that, it would be the ultimate triumph of human reason—for then we would know the mind of God.' In 1981, Hawking attended a conference at the Vatican where Pope John Paul II told the assembled scientists they were free to study the evolution of the universe after the Big Bang, but should not inquire into the Big Bang itself because that was the moment of creation. Yet even Hawking's 'no boundary' proposal couldn't escape the fundamental question: Why does anything exist at all? What's remarkable is that Hawking, despite his atheism, couldn't escape the language of creation and purpose. Even his scientific equations seemed to point toward what Genesis 1:1 declares: 'In the beginning, God created.' The Hebrew word 'bara' means to create something from nothing—exactly what modern cosmology suggests happened at the moment of the Big Bang.",
+            "connectionToTheme": "Even the most brilliant scientific minds grapple with the question of ultimate origins. Genesis 1:1 provides the answer that science points toward but cannot prove: In the beginning, God created."
+          }
+        },
+        {
+          "type": "bridge",
+          "content": {
+            "ancientTruth": "In the beginning, God created the heavens and the earth.",
+            "modernApplication": "If God created everything, then everything belongs to Him. This establishes His right to rule over His creation and our responsibility to live according to His design.",
+            "connectionPoint": "The same God who spoke the universe into existence can speak into the darkness of our lives.",
+            "newTestamentEcho": "John 1:1-3 deliberately echoes Genesis 1:1: 'In the beginning was the Word, and the Word was with God, and the Word was God. He was in the beginning with God. All things were made through him, and without him was not any thing made that was made.'"
+          }
+        },
+        {
+          "type": "reflection",
+          "content": {
+            "prompt": "What does it mean that God existed before time itself began?",
+            "additionalQuestions": [
+              "How does understanding that God existed 'in the beginning' before anything else change your perspective on current challenges?",
+              "What does it mean for your daily life that you are part of God's created order rather than a cosmic accident?",
+              "How does the Hebrew concept of 'bara' (creating from nothing) give you hope for areas of your life that feel empty or hopeless?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "content": {
+            "text": "God, You are the beginning of all things. Before time, before space, before anything existed, You were. Help me understand what it means to build my life on You as the foundation of everything.",
+            "type": "personal",
+            "posture": "gratitude"
+          }
+        },
+        {
+          "type": "takeaway",
+          "content": {
+            "commitment": "Today I will reflect on what it means that I am not a cosmic accident but an intentional creation of a purposeful God."
+          }
+        },
+        {
+          "type": "insight",
+          "content": {
+            "title": "Hebrew Letters Introduced",
+            "body": "Today we learn six Hebrew letters: ב (Bet) makes 'b' or 'v' sound, means 'house' or 'in'; ר (Resh) makes 'r' sound, means 'head' or 'beginning'; א (Aleph) is a silent letter, represents the oneness of God; ש (Shin) makes 'sh' sound, represents divine fire; י (Yod) makes 'y' or 'i' sound, smallest letter, represents God's presence; ת (Tav) makes 't' sound, last letter of alphabet, represents completion.",
+            "historicalContext": "Hebrew reads from right to left. The verb 'bara' (created) comes before the subject 'Elohim' (God), emphasizing the action. The direct object marker 'et' has no English equivalent but shows what receives the action.",
+            "fascinatingFact": "The word 'reshit' (beginning) appears throughout Scripture to denote not just temporal priority but also supremacy and preeminence. In Proverbs 8:22, Wisdom says, 'The Lord possessed me at the beginning (reshit) of his work.'"
+          }
+        },
+        {
+          "type": "comprehension",
+          "content": {
+            "forReflection": [
+              "How does understanding that God existed before anything else change your perspective on current challenges?",
+              "What does it mean for your daily life that you are part of God's created order rather than a cosmic accident?"
+            ],
+            "forAccountabilityPartners": [
+              "What area of your life needs God's creative power to bring something new into existence?",
+              "How can you build your life more firmly on God as the foundation of everything?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "The Spirit Hovering Over the Waters",
+      "verse": "Genesis 1:2",
+      "hebrewVerse": "וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל־פְּנֵי תְהוֹם וְרוּחַ אֱלֹהִים מְרַחֶפֶת עַל־פְּנֵי הַמָּיִם",
+      "modules": [
+        {
+          "type": "scripture",
+          "content": {
+            "reference": "Genesis 1:2",
+            "translation": "ESV",
+            "text": "The earth was without form and void, and darkness was over the face of the deep. And the Spirit of God was hovering over the face of the waters.",
+            "hebrewOriginal": "וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל־פְּנֵי תְהוֹם וְרוּחַ אֱלֹהִים מְרַחֶפֶת עַל־פְּנֵי הַמָּיִם"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "רוּחַ אֱלֹהִים",
+            "transliteration": "Ruach Elohim",
+            "pronunciation": "ROO-akh eh-lo-HEEM",
+            "meaning": "Spirit of God",
+            "rootMeaning": "The word 'ruach' means wind, breath, or spirit. It's the same word used when God breathes into Adam the 'breath of life' in Genesis 2:7. Here it refers to the Holy Spirit, the third person of the Trinity, actively present at creation.",
+            "strongsNumber": "H7307"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "תֹהוּ וָבֹהוּ",
+            "transliteration": "tohu wabohu",
+            "pronunciation": "TOH-hoo vah-VOH-hoo",
+            "meaning": "formless and void",
+            "rootMeaning": "'Tohu' suggests emptiness, futility, or chaos, while 'bohu' means emptiness or void. Together, they paint a picture of complete disorder and purposelessness.",
+            "strongsNumber": "H8414, H922"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "מְרַחֶפֶת",
+            "transliteration": "merachefet",
+            "pronunciation": "meh-rah-KHEH-fet",
+            "meaning": "hovering, brooding",
+            "rootMeaning": "The same root is used in Deuteronomy 32:11 to describe an eagle hovering over its young. This image suggests not distant observation but intimate, protective presence.",
+            "strongsNumber": "H7363"
+          }
+        },
+        {
+          "type": "teaching",
+          "content": {
+            "title": "The Spirit's Creative Presence",
+            "body": "Genesis 1:2 describes the state of creation before God begins His ordering work. The Hebrew phrase 'tohu wabohu' is often translated as 'without form and void,' but it carries deeper meaning. The description of earth as 'tohu wabohu' doesn't necessarily mean it was evil, but rather that it was unfinished, unordered, and unfulfilled. It was raw material waiting for the Creator's organizing touch. The 'darkness over the face of the deep' adds to the picture of primordial chaos. The Hebrew word 'tehom' refers to the primeval ocean, the watery abyss that represents the unformed state of creation. In the midst of this chaos, we encounter the 'Ruach Elohim'—the Spirit of God. The verb 'merachefet' means 'to hover,' 'to brood,' or 'to flutter.' This image suggests not distant observation but intimate, protective presence. Like a mother bird protecting her nest, the Spirit of God hovers over creation with loving care and creative power. Genesis 1:1-2 reveals all three persons of the Trinity involved in creation. The Father speaks the creative word (verse 3), the Spirit hovers over the waters (verse 2), and the Word through whom all things are made is revealed in the New Testament to be the Son (John 1:1-3). Creation is a Trinitarian act.",
+            "keyInsight": "God doesn't abandon His creation to chaos but is intimately present, ready to bring order, beauty, and life from the formless void."
+          }
+        },
+        {
+          "type": "story",
+          "content": {
+            "title": "The Fourth Presence",
+            "body": "In 1914, Sir Ernest Shackleton set out on what he called the 'last great polar journey'—an expedition to cross Antarctica from sea to sea. His ship, the Endurance, became trapped in pack ice and was slowly crushed over ten months. Shackleton and his 27 men were stranded on ice floes hundreds of miles from rescue, facing starvation, frostbite, and the real possibility they would never see home again. Shackleton refused to give up. He took five men and sailed 800 miles across dangerous waters in a 22-foot lifeboat to reach South Georgia Island, then crossed uncharted mountains and glaciers to reach a whaling station. What's remarkable is how he describes the presence he felt during the most desperate moments. In his book 'South,' he writes: 'During that long march over the mountains of South Georgia, it seemed to me often that we were four, not three.' His companions independently felt the same presence of a fourth person walking with them. All three men sensed this mysterious presence through the chaos and danger. Against all odds, he successfully rescued every single crew member—not one life was lost. When asked how he maintained hope in such desperate circumstances, Shackleton said, 'In the midst of the chaos, when everything seemed lost, there was a presence—something hovering over our situation, bringing order to our thoughts and strength to our bodies.'",
+            "connectionToTheme": "Even in the most chaotic and hopeless situations, God's Spirit hovers over us, bringing His presence, guidance, and the power to transform chaos into purpose."
+          }
+        },
+        {
+          "type": "bridge",
+          "content": {
+            "ancientTruth": "The Spirit of God was hovering over the face of the waters, ready to bring order from chaos.",
+            "modernApplication": "When our lives feel formless and void, when darkness seems to cover everything, the Spirit of God is hovering over our situation, ready to speak order into our chaos.",
+            "connectionPoint": "The pattern of chaos to order in Genesis 1:2 is repeated throughout Scripture and in our own lives.",
+            "newTestamentEcho": "At Jesus' baptism, the Spirit descends 'like a dove' (Matthew 3:16), echoing the hovering presence over the waters of creation. The same Spirit who brought order to primordial chaos now brings new creation through Christ."
+          }
+        },
+        {
+          "type": "reflection",
+          "content": {
+            "prompt": "Where in your life do you need God's Spirit to hover over chaos and bring order?",
+            "additionalQuestions": [
+              "What areas of your life currently feel 'tohu wabohu'—formless and void?",
+              "How does the image of God's Spirit 'hovering' over chaos change your perspective on difficult circumstances?",
+              "Where have you seen God bring beauty and order from chaos in your past?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "content": {
+            "text": "Holy Spirit, You hovered over the chaos of creation and brought forth beauty and order. Hover over the chaotic areas of my life today. Bring Your peace, Your order, and Your life to places that feel formless and void.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "content": {
+            "commitment": "Today I will identify one area of my life that feels chaotic and invite God's Spirit to bring order and peace."
+          }
+        },
+        {
+          "type": "insight",
+          "content": {
+            "title": "New Hebrew Letters",
+            "body": "Today we learn five new Hebrew letters: ח (Chet) makes a guttural 'ch' sound, represents life and grace; ו (Vav) makes 'v,' 'o,' or 'u' sound, means 'hook' or 'connection'; ה (Heh) makes 'h' sound, represents breath and revelation; ם (Mem final) is the final form of Mem, used at end of words; פ (Peh) makes 'p' or 'f' sound, means 'mouth'.",
+            "historicalContext": "Hebrew uses the same word (ruach) for wind, breath, and spirit. The verb 'merachefet' is feminine, agreeing with 'ruach' (spirit). 'Tohu wabohu' is an example of Hebrew word pairing for emphasis.",
+            "fascinatingFact": "The 'tohu wabohu' of Genesis 1:2 connects to the 'vanity' (hevel) that Solomon describes in Ecclesiastes. Life apart from God becomes formless and void, lacking purpose and meaning."
+          }
+        },
+        {
+          "type": "comprehension",
+          "content": {
+            "forReflection": [
+              "What areas of your life currently feel formless and void?",
+              "How does the image of God's Spirit 'hovering' over chaos change your perspective on difficult circumstances?"
+            ],
+            "forAccountabilityPartners": [
+              "Where do you need to invite God's Spirit to bring order to chaos in your life?",
+              "How can you trust God's presence even when circumstances feel overwhelming?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Let There Be Light",
+      "verse": "Genesis 1:3",
+      "hebrewVerse": "וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר וַיְהִי־אוֹר",
+      "modules": [
+        {
+          "type": "scripture",
+          "content": {
+            "reference": "Genesis 1:3",
+            "translation": "ESV",
+            "text": "And God said, 'Let there be light,' and there was light.",
+            "hebrewOriginal": "וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר וַיְהִי־אוֹר"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "יְהִי אוֹר",
+            "transliteration": "yehi or",
+            "pronunciation": "yeh-HEE ohr",
+            "meaning": "Let there be light",
+            "rootMeaning": "This is one of the most famous phrases in Hebrew! 'Yehi' is the jussive form of the verb 'to be,' expressing a command or wish: 'let there be.' 'Or' means 'light.' Together: 'Let there be light!'",
+            "strongsNumber": "H1961, H216"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "וַיֹּאמֶר",
+            "transliteration": "vayomer",
+            "pronunciation": "vah-YOH-mehr",
+            "meaning": "And he said",
+            "rootMeaning": "From the root 'amar' meaning to say with authority and intention. When God speaks, He doesn't merely make sounds—He exercises sovereign authority over reality itself.",
+            "strongsNumber": "H559"
+          }
+        },
+        {
+          "type": "teaching",
+          "content": {
+            "title": "The Power of Divine Speech",
+            "body": "Genesis 1:3 marks a pivotal moment in the creation narrative. After describing the chaotic state of the earth and the Spirit hovering over the waters, the text records God's first spoken words. The Hebrew phrase 'Vayomer Elohim'—'And God said'—appears ten times in Genesis 1, creating a literary structure that emphasizes the power of divine speech. The choice to begin God's speaking with the creation of light is significant. Light is the most fundamental requirement for life as we know it. Without light, there can be no photosynthesis, no vision, no warmth, no energy. By speaking light into existence first, God establishes the foundation for all life that will follow. The simplicity of the command—just two Hebrew words, 'yehi or'—emphasizes the effortlessness of God's creative power. He doesn't need complex incantations, elaborate rituals, or tremendous effort. He simply speaks, and reality conforms to His word. The text immediately records: 'vayehi or'—'and there was light.' The response is instantaneous and complete. There's no delay, no partial fulfillment, no resistance. The same verb form that God uses to command ('yehi') is used to describe the result ('vayehi'). Reality perfectly mirrors God's word.",
+            "keyInsight": "When God speaks, reality has no choice but to obey. This pattern—God speaks, reality responds—establishes the fundamental principle that governs all of creation."
+          }
+        },
+        {
+          "type": "story",
+          "content": {
+            "title": "The Day Language Brought Light",
+            "body": "Helen Keller was born in 1880 in Alabama. When she was 19 months old, an illness left her both deaf and blind. For six years, Helen lived in darkness and silence, unable to communicate effectively, becoming increasingly frustrated and violent when she couldn't make herself understood. In 1887, her parents hired Anne Sullivan, a teacher who had been partially blind herself and understood Helen's isolation. Anne began teaching Helen by spelling words into her hand using finger spelling, but Helen didn't understand that these movements represented words with meaning. The breakthrough came on April 5, 1887, at a water pump in the Keller family's yard. Anne held Helen's hand under flowing water while spelling 'W-A-T-E-R' into her other hand. Suddenly, Helen understood—the finger movements weren't random gestures but words representing real things. Helen later described that moment: 'Suddenly I felt a misty consciousness as of something forgotten—a thrill of returning thought; and somehow the mystery of language was revealed to me. I knew then that w-a-t-e-r meant the wonderful cool something that was flowing over my hand. That living word awakened my soul, gave it light, hope, joy, set it free!' In that instant, her world was transformed. She immediately wanted to know the names of everything around her, learning 30 words by day's end. Helen became the first deaf-blind person to earn a Bachelor of Arts degree, later writing: 'Before my teacher came to me, I did not know that I am. I lived in a world that was a no-world... But when my teacher came to me, and I learned that everything has a name, and that each name gave birth to a new thought, that began to awaken my soul and set it free.'",
+            "connectionToTheme": "Just as God's spoken word brought light into the darkness of creation, His word continues to bring light, understanding, and transformation into the darkness of human experience."
+          }
+        },
+        {
+          "type": "bridge",
+          "content": {
+            "ancientTruth": "God spoke 'Let there be light,' and light came into existence by the power of His word.",
+            "modernApplication": "The same God who spoke light into the primordial darkness can speak light into our darkness. When we feel surrounded by confusion or despair, we can trust in the creative power of God's word.",
+            "connectionPoint": "Words have power to create or destroy, to bring light or darkness, to build up or tear down.",
+            "newTestamentEcho": "In John 8:12, Jesus declares, 'I am the light of the world. Whoever follows me will not walk in darkness, but will have the light of life.' In 2 Corinthians 4:6, Paul explicitly connects Genesis 1:3 to salvation: 'For God, who said, \"Let light shine out of darkness,\" has shone in our hearts to give the light of the knowledge of the glory of God in the face of Jesus Christ.'"
+          }
+        },
+        {
+          "type": "reflection",
+          "content": {
+            "prompt": "How does God's word have creative power in your life today?",
+            "additionalQuestions": [
+              "What 'darkness' in your life needs God to speak light into it?",
+              "How does understanding the creative power of God's word change how you read Scripture?",
+              "In what ways are you called to speak 'light' into the darkness around you?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "content": {
+            "text": "God, You spoke light into darkness and light came into being. Speak into the dark areas of my life today. Let Your word create new realities of hope, peace, and purpose where there has been confusion and despair.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "content": {
+            "commitment": "Today I will meditate on God's word, trusting that it has the power to bring light and transformation to my situation."
+          }
+        },
+        {
+          "type": "insight",
+          "content": {
+            "title": "New Hebrew Letters",
+            "body": "Today we learn four new Hebrew letters: ל (Lamed) makes 'l' sound, means 'to' or 'toward,' represents learning; מ (Mem) makes 'm' sound, means 'water,' represents chaos and life; ע (Ayin) is silent or has a slight guttural sound, means 'eye,' represents seeing; ן (Nun final) is the final form of Nun, used at end of words.",
+            "historicalContext": "The verb 'amar' (to say) implies authoritative speech, not casual conversation. The jussive mood expresses commands that must be obeyed. Hebrew often uses the same root for command and fulfillment (yehi/vayehi).",
+            "fascinatingFact": "The root 'or' (light) appears throughout Scripture: Genesis 1:3 (physical light), Psalm 119:105 (God's word as light), Isaiah 9:2 (messianic light), John 8:12 (Christ as light)."
+          }
+        },
+        {
+          "type": "comprehension",
+          "content": {
+            "forReflection": [
+              "What darkness in your life needs God to speak light into it?",
+              "How does understanding the creative power of God's word change how you read Scripture?"
+            ],
+            "forAccountabilityPartners": [
+              "How can you bring God's light to someone who is in darkness this week?",
+              "What Scripture can you meditate on to experience God's creative word in your life?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "God Saw That It Was Good",
+      "verse": "Genesis 1:4",
+      "hebrewVerse": "וַיַּרְא אֱלֹהִים אֶת־הָאוֹר כִּי־טוֹב וַיַּבְדֵּל אֱלֹהִים בֵּין הָאוֹר וּבֵין הַחֹשֶׁךְ",
+      "modules": [
+        {
+          "type": "scripture",
+          "content": {
+            "reference": "Genesis 1:4",
+            "translation": "ESV",
+            "text": "And God saw the light, that it was good. And God separated the light from the darkness.",
+            "hebrewOriginal": "וַיַּרְא אֱלֹהִים אֶת־הָאוֹר כִּי־טוֹב וַיַּבְדֵּל אֱלֹהִים בֵּין הָאוֹר וּבֵין הַחֹשֶׁךְ"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "כִּי־טוֹב",
+            "transliteration": "ki tov",
+            "pronunciation": "kee TOHV",
+            "meaning": "that it was good",
+            "rootMeaning": "The word 'tov' is one of the most important words in Hebrew. It means good, beautiful, pleasant, excellent, and right. When God declares His creation 'tov,' He's making a comprehensive evaluation of its quality, beauty, and moral excellence.",
+            "strongsNumber": "H2896"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "וַיַּבְדֵּל",
+            "transliteration": "vayavdel",
+            "pronunciation": "vah-yahv-DELL",
+            "meaning": "and he separated",
+            "rootMeaning": "From the root 'badal' meaning 'to divide' or 'to separate,' often carrying the connotation of making a distinction between things of different value or character. This separation becomes a pattern throughout Scripture.",
+            "strongsNumber": "H914"
+          }
+        },
+        {
+          "type": "teaching",
+          "content": {
+            "title": "The Divine Aesthetic",
+            "body": "Genesis 1:4 introduces a concept that appears throughout the creation account: God's evaluation of His work. The phrase 'God saw that it was good' appears seven times in Genesis 1, creating a literary pattern that emphasizes God's satisfaction with His creative work. The Hebrew verb 'ra'ah' means 'to see,' but it implies more than casual observation. It suggests careful examination, evaluation, and appreciation. When God 'sees' His creation, He's not discovering something He didn't know—He's evaluating and appreciating what He has made. This divine seeing establishes God as the ultimate standard of aesthetic and moral judgment. The Hebrew word 'tov' is rich in meaning. It can refer to: functional goodness (something that works as designed), aesthetic goodness (beautiful and pleasing), moral goodness (right and proper), and beneficial goodness (promotes flourishing). When God declares the light 'tov,' He's making a comprehensive evaluation that encompasses all these dimensions. After declaring the light good, God separates it from the darkness. This separation isn't just functional—it's moral and aesthetic. By separating light from darkness, God establishes the fundamental distinction between good and evil, order and chaos, truth and falsehood.",
+            "keyInsight": "God is not only a Creator but also an appreciator of beauty, order, and excellence. What God declares good is good not because it meets some external standard, but because God Himself is the standard of goodness, beauty, and excellence."
+          }
+        },
+        {
+          "type": "story",
+          "content": {
+            "title": "Seeing Goodness in Creation",
+            "body": "Ansel Adams was one of America's most celebrated photographers, famous for his stunning black-and-white images of the American West. Adams' approach to photography was deeply influenced by his understanding of light and his almost spiritual appreciation for the natural world. He spent countless hours waiting for 'the decisive moment'—when the light would be just right to capture the essence of a landscape, often arriving before dawn and waiting for hours or days for perfect lighting conditions. One of his most famous photographs, 'Moonrise, Hernandez, New Mexico,' was taken in 1941 when Adams noticed the moon rising over a cemetery with mountains in the background. He quickly set up his camera, but the light was changing rapidly—he had time for only one exposure before the magical light disappeared. Adams later said: 'I saw the photograph immediately—the mood, the balance, the feeling. But what struck me most was not just the visual beauty, but the sense that I was witnessing something inherently good, something that spoke of order and purpose and design.' Throughout his career, Adams spoke about photography as recognizing and capturing existing beauty rather than creating it. He would often quote Genesis, saying, 'When God looked at what He had made and saw that it was good, He was doing what every artist does—evaluating His work and finding satisfaction in its excellence.' In later years, Adams became an environmental activist, working to preserve wilderness areas he had photographed. He said, 'Once you truly see the goodness that God has built into creation, you can't help but want to protect it.'",
+            "connectionToTheme": "When we learn to see creation through God's eyes—recognizing the goodness, beauty, and order He has built into the world—it changes how we interact with and care for the world around us."
+          }
+        },
+        {
+          "type": "bridge",
+          "content": {
+            "ancientTruth": "God evaluated His creation and declared it good, establishing His appreciation for beauty, excellence, and quality.",
+            "modernApplication": "We're called to see the world through God's eyes, to appreciate the goodness and beauty He has built into creation, and to create things that reflect His character.",
+            "connectionPoint": "In a world that often focuses on what's wrong, broken, or ugly, we're called to have eyes that see the goodness that God sees.",
+            "newTestamentEcho": "In Mark 10:18, Jesus says, 'No one is good except God alone,' identifying Himself with the divine standard of goodness established in Genesis 1. The separation of light from darkness foreshadows the separation that Christ brings between righteousness and sin (John 3:19-21)."
+          }
+        },
+        {
+          "type": "reflection",
+          "content": {
+            "prompt": "How does God's delight in His creation change how you view the world around you?",
+            "additionalQuestions": [
+              "How does God's appreciation for beauty and goodness change your perspective on creativity and excellence?",
+              "What goodness do you see in creation that reflects God's character?",
+              "Where in your life do you need to 'separate light from darkness'?"
+            ],
+            "invitationType": "gratitude"
+          }
+        },
+        {
+          "type": "prayer",
+          "content": {
+            "text": "God, You looked at Your creation and declared it good. Help me see the world through Your eyes—to appreciate the beauty, order, and goodness that You have built into creation. Teach me to delight in what You delight in.",
+            "type": "personal",
+            "posture": "gratitude"
+          }
+        },
+        {
+          "type": "takeaway",
+          "content": {
+            "commitment": "Today I will intentionally notice and appreciate the goodness and beauty that God has built into creation around me."
+          }
+        },
+        {
+          "type": "insight",
+          "content": {
+            "title": "New Hebrew Letters",
+            "body": "Today we learn four more Hebrew letters: ט (Tet) makes 't' sound, represents goodness and purity; ב (Bet with dagesh) we've seen before, but notice the dot (dagesh) that makes it 'b' instead of 'v'; ד (Dalet) makes 'd' sound, represents doors and openings; ק (Qof) makes 'k' or 'q' sound, represents holiness and calling.",
+            "historicalContext": "Hebrew uses the same root (ra'ah) for physical seeing and understanding. The word 'tov' appears 559 times in the Hebrew Bible. The verb 'badal' (separate) becomes important in laws about clean/unclean.",
+            "fascinatingFact": "The word 'tov' (good) appears in key biblical passages: Genesis 2:9 (tree of knowledge of good and evil), Psalm 23:6 (goodness and mercy), Romans 8:28 (all things work for good)."
+          }
+        },
+        {
+          "type": "comprehension",
+          "content": {
+            "forReflection": [
+              "How does God's appreciation for beauty and goodness change your perspective on creativity and excellence?",
+              "What goodness do you see in creation that reflects God's character?"
+            ],
+            "forAccountabilityPartners": [
+              "Where in your life do you need to 'separate light from darkness'?",
+              "How can you pursue the kind of excellence that would earn God's evaluation of 'good'?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "The First Day",
+      "verse": "Genesis 1:5",
+      "hebrewVerse": "וַיִּקְרָא אֱלֹהִים לָאוֹר יוֹם וְלַחֹשֶׁךְ קָרָא לָיְלָה וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר יוֹם אֶחָד",
+      "modules": [
+        {
+          "type": "scripture",
+          "content": {
+            "reference": "Genesis 1:5",
+            "translation": "ESV",
+            "text": "God called the light Day, and the darkness he called Night. And there was evening and there was morning, the first day.",
+            "hebrewOriginal": "וַיִּקְרָא אֱלֹהִים לָאוֹר יוֹם וְלַחֹשֶׁךְ קָרָא לָיְלָה וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר יוֹם אֶחָד"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "יוֹם אֶחָד",
+            "transliteration": "yom echad",
+            "pronunciation": "yohm eh-KHAD",
+            "meaning": "one day / the first day",
+            "rootMeaning": "The word 'yom' means 'day' and can refer to a 24-hour period, daylight hours, or an indefinite period of time. 'Echad' means 'one' and emphasizes unity and uniqueness. This is the first numbered day in Scripture.",
+            "strongsNumber": "H3117, H259"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "עֶרֶב",
+            "transliteration": "erev",
+            "pronunciation": "EH-rev",
+            "meaning": "evening",
+            "rootMeaning": "Comes from a root meaning 'to mix' or 'to become dark.' Evening is the time when light and darkness mix, when the activities of the day wind down, when reflection and rest begin.",
+            "strongsNumber": "H6153"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "בֹקֶר",
+            "transliteration": "boker",
+            "pronunciation": "BOH-ker",
+            "meaning": "morning",
+            "rootMeaning": "Comes from a root meaning 'to break through' or 'to examine.' Morning is when light breaks through darkness, when new possibilities emerge, when work begins.",
+            "strongsNumber": "H1242"
+          }
+        },
+        {
+          "type": "teaching",
+          "content": {
+            "title": "The Authority of Naming and the Rhythm of Time",
+            "body": "Genesis 1:5 concludes the first day of creation with two significant divine acts: the naming of light and darkness, and the establishment of the evening-morning cycle. In Hebrew culture, naming was an act of authority and definition. To name something was to have dominion over it and to define its essential character. When God names the light 'Day' (yom) and the darkness 'Night' (laylah), He's exercising His sovereign authority over time itself. The phrase 'vayehi erev vayehi voker' (and there was evening and there was morning) appears six times in Genesis 1, marking each day of creation. This pattern is significant because it places evening before morning, suggesting that each day begins with rest rather than work. This order reflects a profound theological truth: in God's design, rest is not earned by work—rest is the foundation that makes meaningful work possible. We don't work in order to rest; we rest in order to work. The Sabbath is not a reward for six days of labor—it's the foundation that makes meaningful work possible. The phrase 'yom echad' is often translated as 'the first day,' but the Hebrew literally says 'day one' or 'one day.' The word 'echad' is the same word used in the Shema (Deuteronomy 6:4): 'Hear, O Israel: The Lord our God, the Lord is one (echad).' This connection suggests that the unity of the first day reflects the unity of God Himself.",
+            "keyInsight": "Each day begins with evening, not morning—rest comes before work in God's design. This principle becomes central to the biblical understanding of Sabbath and the rhythm of life."
+          }
+        },
+        {
+          "type": "story",
+          "content": {
+            "title": "The Architecture of Time",
+            "body": "Rabbi Abraham Joshua Heschel was one of the most influential Jewish theologians of the 20th century. Born in Poland in 1907, he escaped Nazi Germany and became a professor at Jewish Theological Seminary in New York. Beyond his academic work, Heschel was known for his profound insights into 'the architecture of time.' He noticed that while most religions focus on sacred spaces—temples, churches, holy mountains—Judaism focuses primarily on sacred time, particularly the Sabbath, saying 'Judaism is a religion of time aiming at the sanctification of time.' In his book 'The Sabbath,' Heschel wrote about Genesis 1:5 and the pattern of evening and morning. He observed that each day of creation begins with evening, not morning—which seemed backwards to most people who think the day begins when they wake up. But Heschel saw profound wisdom in God's design: 'The day begins with evening because rest comes before work in God's economy. We don't work in order to rest; we rest in order to work. The Sabbath is not a reward for six days of labor—it's the foundation that makes meaningful work possible.' A businessman once complained to Heschel that he couldn't find time for God in his busy schedule, working from morning until night with barely time to eat. Heschel replied, 'You're thinking backwards. You're trying to fit God into your schedule instead of fitting your schedule into God's rhythm. If you begin each day with rest in God's presence, your work becomes more meaningful and effective.' Six months later, the man returned with a remarkable report: 'Rabbi, not only do I feel more connected to God, but my business is actually more successful. When I start with rest and reflection, I make better decisions. When I honor the Sabbath, I return to work refreshed and creative. I'm getting more done in six days than I used to get done in seven.'",
+            "connectionToTheme": "God's establishment of evening and morning as the rhythm of each day teaches us that rest is not the absence of work—it's the foundation that makes meaningful work possible."
+          }
+        },
+        {
+          "type": "bridge",
+          "content": {
+            "ancientTruth": "God named the light Day and the darkness Night, establishing the rhythm of evening and morning that governs all of life.",
+            "modernApplication": "In our culture that often values constant productivity and 24/7 availability, the evening-morning pattern calls us back to a more sustainable and God-honoring rhythm of life.",
+            "connectionPoint": "The same God who established the rhythm of evening and morning continues to govern the times and seasons of our lives.",
+            "newTestamentEcho": "The pattern of evening and morning established in Genesis 1:5 points forward to Christ's work of redemption. Jesus' death occurred in the evening (the darkness of crucifixion), followed by the morning of resurrection. In Matthew 11:28-30, Jesus invites us into His rest: 'Come to me, all who labor and are heavy laden, and I will give you rest.'"
+          }
+        },
+        {
+          "type": "reflection",
+          "content": {
+            "prompt": "How does God's establishment of evening and morning rhythm speak to your need for rest and work?",
+            "additionalQuestions": [
+              "How does the pattern of evening before morning challenge your approach to rest and work?",
+              "What does it mean for your daily rhythm that God has authority over time?",
+              "How can you better honor the evening-morning rhythm in your own life?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "content": {
+            "text": "God, You established the rhythm of evening and morning, rest and work. Help me live according to Your design—finding rest in You before I begin my work, and trusting that You are working even when I am resting.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "content": {
+            "commitment": "Today I will begin my day with rest and reflection in God's presence, trusting that this foundation will make my work more meaningful and effective."
+          }
+        },
+        {
+          "type": "insight",
+          "content": {
+            "title": "Hebrew Letters Review",
+            "body": "Today we review letters from all five verses: א (Aleph) silent, represents God's oneness; ב (Bet) 'B' sound, first letter of Bible; ג (Gimel) 'G' sound, represents giving; ד (Dalet) 'D' sound, represents doors; ה (Heh) 'H' sound, represents breath; ו (Vav) 'V/O/U' sound, represents connection.",
+            "historicalContext": "Hebrew days begin at evening, not morning. The verb 'qara' (to call/name) implies authority and definition. 'Yom' can refer to various time periods depending on context. The number 'echad' (one) emphasizes unity rather than just sequence.",
+            "fascinatingFact": "In Jewish tradition, the Sabbath begins at sundown on Friday evening, following the pattern of evening before morning established in creation. This timing emphasizes that Sabbath rest is not something we earn through six days of work—it's something we receive as a gift from God."
+          }
+        },
+        {
+          "type": "comprehension",
+          "content": {
+            "forReflection": [
+              "How does the pattern of evening before morning challenge your approach to rest and work?",
+              "What does it mean for your daily rhythm that God has authority over time?"
+            ],
+            "forAccountabilityPartners": [
+              "How can you better honor the evening-morning rhythm in your own life?",
+              "What practical steps can you take to begin each day with rest rather than immediately jumping into activity?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "Review and Practice",
+      "verse": "Genesis 1:1-5",
+      "hebrewVerse": "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל־פְּנֵי תְהוֹם וְרוּחַ אֱלֹהִים מְרַחֶפֶת עַל־פְּנֵי הַמָּיִם וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר וַיְהִי־אוֹר וַיַּרְא אֱלֹהִים אֶת־הָאוֹר כִּי־טוֹב וַיַּבְדֵּל אֱלֹהִים בֵּין הָאוֹר וּבֵין הַחֹשֶׁךְ וַיִּקְרָא אֱלֹהִים לָאוֹר יוֹם וְלַחֹשֶׁךְ קָרָא לָיְלָה וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר יוֹם אֶחָד",
+      "modules": [
+        {
+          "type": "scripture",
+          "content": {
+            "reference": "Genesis 1:1-5",
+            "translation": "ESV",
+            "text": "In the beginning, God created the heavens and the earth. The earth was without form and void, and darkness was over the face of the deep. And the Spirit of God was hovering over the face of the waters. And God said, 'Let there be light,' and there was light. And God saw the light, that it was good. And God separated the light from the darkness. God called the light Day, and the darkness he called Night. And there was evening and there was morning, the first day.",
+            "hebrewOriginal": "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל־פְּנֵי תְהוֹם וְרוּחַ אֱלֹהִים מְרַחֶפֶת עַל־פְּנֵי הַמָּיִם וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר וַיְהִי־אוֹר וַיַּרְא אֱלֹהִים אֶת־הָאוֹר כִּי־טוֹב וַיַּבְדֵּל אֱלֹהִים בֵּין הָאוֹר וּבֵין הַחֹשֶׁךְ וַיִּקְרָא אֱלֹהִים לָאוֹר יוֹם וְלַחֹשֶׁךְ קָרָא לָיְלָה וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר יוֹם אֶחָד"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "בְּרֵאשִׁית",
+            "transliteration": "Bereshit",
+            "pronunciation": "beh-ray-SHEET",
+            "meaning": "In the beginning",
+            "rootMeaning": "Review: The first word of the Hebrew Bible. בְּ (in) + רֵאשִׁית (beginning). The root רֹאשׁ (rosh) means 'head' or 'first.'",
+            "strongsNumber": "H7225"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "אֱלֹהִים",
+            "transliteration": "Elohim",
+            "pronunciation": "eh-lo-HEEM",
+            "meaning": "God",
+            "rootMeaning": "Review: Grammatically plural but takes singular verbs. Emphasizes God's power and majesty.",
+            "strongsNumber": "H430"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "אוֹר",
+            "transliteration": "or",
+            "pronunciation": "ohr",
+            "meaning": "light",
+            "rootMeaning": "Review: The first thing God spoke into existence. Fundamental to life and vision.",
+            "strongsNumber": "H216"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "טוֹב",
+            "transliteration": "tov",
+            "pronunciation": "tohv",
+            "meaning": "good",
+            "rootMeaning": "Review: Comprehensive term for excellence, beauty, and rightness. God's evaluation of His creation.",
+            "strongsNumber": "H2896"
+          }
+        },
+        {
+          "type": "vocab",
+          "content": {
+            "language": "hebrew",
+            "word": "יוֹם",
+            "transliteration": "yom",
+            "pronunciation": "yohm",
+            "meaning": "day",
+            "rootMeaning": "Review: Can mean 24 hours, daylight, or an era. The first numbered day establishes God's rhythm.",
+            "strongsNumber": "H3117"
+          }
+        },
+        {
+          "type": "teaching",
+          "content": {
+            "title": "The Foundation of Everything",
+            "body": "As we review Genesis 1:1-5, we're looking at the foundation upon which all biblical truth rests. These five verses establish the fundamental realities that shape everything else in Scripture: the existence of God, the creation of the universe, the power of God's word, the goodness of creation, and the rhythm of time. Verse 1 establishes that God is the Creator of everything that exists. Verse 2 describes the unformed state of creation before God's ordering work begins, with the Spirit of God hovering over the waters, ready to bring order and life. Verse 3 demonstrates the absolute power of divine speech—God speaks, and reality obeys. Verse 4 establishes God as the standard of goodness and beauty, and creates the fundamental distinction between light and darkness. Verse 5 establishes God's authority over time itself through the naming of day and night and the rhythm of evening and morning. These five verses reveal God's character progressively: Verse 1 shows God as Creator, Verse 2 shows God as present in chaos, Verse 3 shows God as powerful in speech, Verse 4 shows God as evaluator of goodness, and Verse 5 shows God as establisher of rhythm. Every verse points forward to Christ: Christ as the Word through whom all things were made (John 1:3), Christ as the one who brings order to our chaos (2 Corinthians 5:17), Christ as the Light of the world (John 8:12), Christ as the one who is perfectly good (Mark 10:18), and Christ as the one who gives us rest (Matthew 11:28).",
+            "keyInsight": "Learning to read Genesis 1:1-5 in Hebrew is more than a linguistic achievement—it's a spiritual milestone. These verses contain the foundation of our faith, and reading them in the original language connects us more directly to God's revelation."
+          }
+        },
+        {
+          "type": "story",
+          "content": {
+            "title": "The Spring of Living Water",
+            "body": "Dr. William Tyndale was a 16th-century English scholar who believed that every person should be able to read the Bible in their own language. At the time, the Bible was only available in Latin, which most people couldn't read. When Tyndale requested permission to translate the Bible into English, he was refused by church authorities who wanted to maintain control over biblical interpretation. Undeterred, Tyndale left England and began working on his translation in secret. He taught himself Hebrew and Greek, spending years mastering the original languages of Scripture. He would often say, 'I cannot translate what I do not understand, and I cannot understand what I have not learned to read in the original.' One of the verses that gave Tyndale the most difficulty was Genesis 1:1. He wrote in his journal: 'How do you translate \"Bereshit bara Elohim\"? \"In the beginning God created\"—but these simple English words cannot capture the weight, the authority, the creative power that pulses through the Hebrew.' Tyndale's Hebrew studies convinced him that every Christian should have the opportunity to encounter Scripture in its original languages. He wrote, 'The Hebrew text is like a clear spring of water. Each translation is like a bucket drawn from that spring. The bucket may be clean and useful, but it can never contain all the freshness, clarity, and life of the spring itself.' When Tyndale's English New Testament was published in 1526, it was immediately banned and burned. Tyndale himself was eventually executed in 1536. His last words were reportedly, 'Lord, open the King of England's eyes.' Remarkably, just three years later, King Henry VIII authorized the publication of an English Bible—a Bible largely based on Tyndale's translation work. Today, scholars estimate that about 80% of the King James Version comes directly from Tyndale's translation.",
+            "connectionToTheme": "Learning to read Scripture in its original languages isn't just an academic exercise—it's a way of encountering God's word with greater depth, clarity, and power."
+          }
+        },
+        {
+          "type": "bridge",
+          "content": {
+            "ancientTruth": "In just five verses, Genesis establishes God as Creator, the power of His word, the goodness of creation, and the rhythm of time.",
+            "modernApplication": "Learning to read these verses in Hebrew connects us more directly to the original revelation, allowing us to hear God's voice with greater clarity and power.",
+            "connectionPoint": "The Hebrew text reveals insights often lost in translation—the Trinity hinted at in 'Elohim,' the uniqueness of 'bara,' the protective hovering of the Spirit.",
+            "newTestamentEcho": "'In the beginning was the Word, and the Word was with God, and the Word was God. He was in the beginning with God. All things were made through him, and without him was not any thing made that was made.' - John 1:1-3"
+          }
+        },
+        {
+          "type": "reflection",
+          "content": {
+            "prompt": "How has learning to read these Hebrew words changed your understanding of Genesis?",
+            "additionalQuestions": [
+              "How has learning to read these Hebrew words changed your understanding of Genesis 1:1-5?",
+              "What has been the most challenging and most rewarding aspect of learning Hebrew this week?",
+              "How do you want to continue growing in your ability to read Hebrew Scripture?"
+            ],
+            "invitationType": "gratitude"
+          }
+        },
+        {
+          "type": "prayer",
+          "content": {
+            "text": "God, thank You for the privilege of reading Your word in the language You chose to reveal it. As I practice these verses, help me not just to pronounce the words correctly, but to understand more deeply who You are and what You have done.",
+            "type": "personal",
+            "posture": "gratitude"
+          }
+        },
+        {
+          "type": "takeaway",
+          "content": {
+            "commitment": "I commit to practicing reading Genesis 1:1-5 in Hebrew this week, allowing the original language to deepen my understanding of God as Creator."
+          }
+        },
+        {
+          "type": "insight",
+          "content": {
+            "title": "Hebrew Letters Learned This Week",
+            "body": "This week we learned 20 out of 22 Hebrew letters: א ב ג ד ה ו ח ט י כ ל מ נ ע פ צ ק ר ש ת. Key words we can now read: בְּרֵאשִׁית (Bereshit) - In the beginning; בָּרָא (bara) - created; אֱלֹהִים (Elohim) - God; אוֹר (or) - light; טוֹב (tov) - good; יוֹם (yom) - day.",
+            "historicalContext": "Hebrew reads from right to left. Remember that Hebrew uses the same word (ruach) for wind, breath, and spirit. The same letters appear in different combinations to create different meanings.",
+            "fascinatingFact": "These five verses reveal insights often lost in translation: The word 'Elohim' is grammatically plural but takes singular verbs, hinting at the Trinity. The verb 'bara' (created) is used only for divine activity. The phrase 'ruach Elohim' can mean 'Spirit of God' or 'wind of God,' showing the connection between God's breath and His Spirit."
+          }
+        },
+        {
+          "type": "resource",
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "John 1:1-3",
+                "text": "In the beginning was the Word, and the Word was with God, and the Word was God. He was in the beginning with God. All things were made through him, and without him was not any thing made that was made."
+              },
+              {
+                "reference": "Colossians 1:16-17",
+                "text": "For by him all things were created, in heaven and on earth, visible and invisible, whether thrones or dominions or rulers or authorities—all things were created through him and for him. And he is before all things, and in him all things hold together."
+              },
+              {
+                "reference": "2 Corinthians 4:6",
+                "text": "For God, who said, 'Let light shine out of darkness,' has shone in our hearts to give the light of the knowledge of the glory of God in the face of Jesus Christ."
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "The Genesis Record",
+                "author": "Henry Morris",
+                "note": "Comprehensive commentary on Genesis"
+              },
+              {
+                "type": "book",
+                "title": "Christ in the Old Testament",
+                "author": "Sidney Greidanus",
+                "note": "Seeing Jesus throughout the Hebrew Scriptures"
+              },
+              {
+                "type": "video",
+                "title": "Cliff Knechtle: Does God Exist?",
+                "note": "Addressing fundamental questions about God's existence and the evidence for a Creator"
+              },
+              {
+                "type": "video",
+                "title": "Chuck Missler: Genesis and the Big Bang",
+                "note": "Exploring the harmony between scientific discovery and biblical creation"
+              }
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "content": {
+            "forReflection": [
+              "How has learning to read these Hebrew words changed your understanding of Genesis 1:1-5?",
+              "What has surprised you most about learning to read Genesis in Hebrew?"
+            ],
+            "forAccountabilityPartners": [
+              "How do you want to continue growing in your ability to read Hebrew Scripture?",
+              "What goals do you have for the remaining weeks of this series?"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

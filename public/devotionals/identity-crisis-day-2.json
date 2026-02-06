@@ -1,0 +1,64 @@
+{
+  "day": 2,
+  "title": "What happens when the story you told yourself stops making sense?",
+  "teaser": "Your five-year plan is obsolete. Your career path is blocked. The narrative is breaking down.",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE SCRIPT IS BREAKING",
+      "type": "text",
+      "content": "You had a story. A plan. A trajectory.\n\nCollege, career, promotions, marriage, house, kids, retirement. The American Dream script. The one you were told would work if you just followed the steps.\n\nBut the script is breaking.\n\nYou got the degree—now you're drowning in debt with no job prospects. You climbed the ladder—now the company is restructuring and your role is \"redundant.\" You saved for a house—now prices are 47% higher than pre-pandemic and mortgages are out of reach.\n\nThe story you told yourself about who you'd become doesn't fit the world you're living in.",
+      "wordCount": 98
+    },
+    {
+      "number": 3,
+      "heading": "THE NARRATIVE WE INHERITED",
+      "type": "text",
+      "content": "You didn't write this story yourself. You inherited it.\n\nYour parents told you: work hard, play by the rules, you'll be fine. Your teachers said: education is the ticket. Your culture promised: success equals stability.\n\nSo you did the work. You played by the rules. You checked the boxes.\n\nBut the rules changed. The boxes moved. The ticket expired.\n\nAnd now you're standing in the wreckage of a narrative that doesn't work anymore, wondering: **If I'm not who I thought I'd be by now, who am I?**",
+      "wordCount": 92
+    },
+    {
+      "number": 4,
+      "heading": "THE COST OF A BROKEN NARRATIVE",
+      "type": "text-with-image",
+      "content": "The cost of a collapsing story is this: **you don't know what comes next.**\n\nYou wake up disoriented. The milestones you were working toward feel meaningless. The identity markers you pursued—job title, salary, status—aren't delivering what they promised.\n\nYou're grieving a future that's not coming. A version of yourself you'll never be.\n\nAnd the worst part? You're not sure if the story was ever true to begin with.\n\nMaybe it worked for your parents' generation. But in 2026—with civil unrest, political violence, 47.9 million food insecure—the old script feels like a lie.\n\nSo what story do you tell now?",
+      "illustration": {
+        "description": "Dithered image of shredded pages or a map with the path erased",
+        "file": "identity-day-2-illustration.png"
+      },
+      "wordCount": 108
+    },
+    {
+      "number": 5,
+      "heading": "WHEN JESUS REWRITES THE SCRIPT",
+      "type": "text",
+      "content": "In the Sermon on the Mount, Jesus addresses a crowd stuck in their own broken narratives.\n\nThey thought righteousness meant following religious rules perfectly. They thought blessing meant wealth and status. They thought identity came from being chosen people with the right ancestry.\n\nJesus flipped the script:\n\n**\"Blessed are the poor in spirit... Blessed are those who mourn... Blessed are the meek...\"**\n\nWait, what?\n\nThe broken. The grieving. The powerless. **These** are blessed?\n\nJesus was saying: the story you've been told about who matters and who doesn't—it's backwards.",
+      "wordCount": 92
+    },
+    {
+      "number": 6,
+      "heading": "A DIFFERENT KIND OF STORY",
+      "type": "text",
+      "content": "Then Jesus says this:\n\n**\"Seek first the kingdom of God and his righteousness, and all these things will be added to you.\"**\n\nNot: Follow the cultural script and you'll be fine.\n\nNot: Achieve these milestones and you'll know who you are.\n\n**Seek the kingdom first.**\n\nThe kingdom is a different story. Not about what you achieve, but about **whose** you are. Not about climbing ladders, but about being known.\n\nWhen the old narrative breaks, you're not left with nothing.\n\nYou're invited into a story that doesn't collapse when circumstances do.",
+      "wordCount": 93
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nThe story I told myself isn't working anymore.\n\nI followed the rules. I checked the boxes. And I still don't know who I am or where I'm going.\n\nI'm grieving a future that's not coming.\n\nTeach me the story that doesn't break. The one where I'm not defined by achievement or status, but by being known by You.\n\nRewrite my script. Show me the kingdom.\n\nAmen.",
+      "wordCount": 70
+    }
+  ],
+  "totalWords": 553,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Matthew 5:3-6, Matthew 6:33",
+  "chiastic_position": "B - Building/Context"
+}

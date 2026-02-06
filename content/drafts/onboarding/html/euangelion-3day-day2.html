@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EUANGELION — Day 2: The Long Way Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --tehom: #1A1612;
+      --scroll: #F7F3ED;
+      --gold: #C19A6B;
+      --secondary: rgba(26, 22, 18, 0.5);
+      --font-body: 'DM Sans', sans-serif;
+      --font-display: 'Playfair Display', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 17px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--tehom);
+      background: var(--scroll);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      position: relative;
+    }
+
+    .hero-left {
+      background: var(--tehom);
+      color: var(--scroll);
+      padding: 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .masthead-logo {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .masthead-meta {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .hero-center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .day-number {
+      font-family: var(--font-display);
+      font-size: 14rem;
+      font-weight: 400;
+      line-height: 0.85;
+      color: var(--gold);
+      opacity: 0.3;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--scroll);
+    }
+    .hero-title em { font-style: italic; }
+
+    .hero-footer-left {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.4;
+    }
+
+    .hero-right {
+      padding: 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .story-intro {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .story-text {
+      font-size: 1.2rem;
+      line-height: 1.85;
+    }
+    .story-text p { margin-bottom: 1.5em; }
+    .story-text em { font-style: italic; }
+    .story-text strong { font-weight: 700; }
+
+    /* Content */
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Connection Section - Offset layout */
+    .connection {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      padding: 5rem 0;
+      border-bottom: 1px solid rgba(26,22,18,0.08);
+    }
+
+    .connection-title {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1.2;
+      padding-top: 0.5rem;
+    }
+    .connection-title em { font-style: italic; }
+
+    .connection-content p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 1.5em;
+    }
+
+    .finished-quote {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-style: italic;
+      color: var(--gold);
+      margin: 2rem 0;
+    }
+
+    /* Hebrew Section */
+    .hebrew-section {
+      padding: 5rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      border-bottom: 1px solid rgba(26,22,18,0.08);
+    }
+
+    .hebrew-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hebrew-word {
+      font-family: 'Times New Roman', serif;
+      font-size: 6rem;
+      color: var(--gold);
+      direction: rtl;
+      margin-bottom: 1rem;
+    }
+    .hebrew-transliteration {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .hebrew-meaning {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--secondary);
+    }
+
+    .hebrew-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hebrew-content p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 1.5em;
+    }
+
+    /* Scripture */
+    .scripture-inline {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-style: italic;
+      padding: 1.5rem 2rem;
+      background: rgba(193, 154, 107, 0.08);
+      border-left: 3px solid var(--gold);
+      margin: 2rem 0;
+    }
+    .scripture-inline cite {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      font-style: normal;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--secondary);
+    }
+
+    /* Three Lines */
+    .three-lines {
+      padding: 4rem 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(26,22,18,0.08);
+    }
+    .three-lines p {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      line-height: 2.2;
+      font-style: italic;
+    }
+
+    /* Interactive */
+    .interactive-section {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      min-height: 50vh;
+    }
+    .interactive-left {
+      background: rgba(193, 154, 107, 0.08);
+      padding: 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .reflection-title {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .reflection ol { list-style: none; counter-reset: q; }
+    .reflection li {
+      counter-increment: q;
+      margin-bottom: 1.5rem;
+      padding-left: 2.5rem;
+      position: relative;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .reflection li::before {
+      content: counter(q);
+      position: absolute;
+      left: 0;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--gold);
+      top: -0.2rem;
+    }
+
+    .interactive-right {
+      background: var(--tehom);
+      color: var(--scroll);
+      padding: 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .interactive-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .interactive-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .breath-line {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
+    }
+    .breath-direction {
+      font-weight: 600;
+      color: var(--gold);
+      min-width: 65px;
+    }
+    .breath-text {
+      font-style: italic;
+      opacity: 0.85;
+    }
+
+    /* Footer */
+    .page-footer {
+      padding: 3rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(26,22,18,0.08);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-progress {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--secondary);
+    }
+    .footer-next {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 2rem; }
+      .day-number { font-size: 8rem; }
+      .hero-title { font-size: 2.5rem; }
+      .hero-right { padding: 2rem; }
+      .connection, .hebrew-section { grid-template-columns: 1fr; gap: 2rem; }
+      .hebrew-word { font-size: 4rem; }
+      .interactive-section { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-left">
+      <header class="masthead">
+        <span class="masthead-logo">EUONGELION</span>
+        <span class="masthead-meta">Day 2 of 3</span>
+      </header>
+      <div class="hero-center">
+        <div class="day-number">02</div>
+        <h1 class="hero-title">The Long<br>Way <em>Home</em></h1>
+      </div>
+      <footer class="hero-footer-left">A story about freedom</footer>
+    </div>
+
+    <div class="hero-right">
+      <p class="story-intro">A Story</p>
+      <div class="story-text">
+        <p>In 1972, a Japanese soldier named Hiroo Onoda emerged from the Philippine jungle. He had been hiding for <em>twenty-nine years</em>.</p>
+        <p>Sent to Lubang Island in 1944 with orders to never surrender, Onoda refused to believe the war had ended. Leaflets announcing Japan's surrender? Propaganda. Family members with loudspeakers? A trick.</p>
+        <p>It wasn't until his former commanding officer personally issued the order to stand down that Onoda finally surrendered.</p>
+        <p><strong>He had been free for twenty-nine years. He just didn't know it.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <main class="content">
+
+    <section class="connection">
+      <h2 class="connection-title">Some of you<br>have been living<br>in a war that's<br><em>already over.</em></h2>
+      <div class="connection-content">
+        <p>Fighting. Surviving. Convinced you have to earn God's favor, that you're not good enough, that the battle is still raging.</p>
+        <p>But the <em>euangelion</em> has already been declared.</p>
+        <p class="finished-quote">"It is finished."</p>
+        <p>You don't have to keep fighting. You just have to come out of the jungle.</p>
+      </div>
+    </section>
+
+    <section class="hebrew-section">
+      <div class="hebrew-left">
+        <div class="hebrew-word">שׁוּב</div>
+        <div class="hebrew-transliteration">shuv</div>
+        <div class="hebrew-meaning">Return • Come Back • Go Home</div>
+      </div>
+      <div class="hebrew-right">
+        <div class="hebrew-content">
+          <div class="scripture-inline">
+            "He restores my soul."
+            <cite>Psalm 23:3</cite>
+          </div>
+          <p>That's the word—<em>shuv</em>. He brings your soul back home.</p>
+          <p>The <em>euangelion</em> makes this possible. You can come home. The door is open. The Father is waiting.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="three-lines">
+      <p>If you've drifted, He's looking for you.</p>
+      <p>If you've doubted, He can handle your questions.</p>
+      <p>If you've never believed, the invitation stands.</p>
+    </section>
+
+  </main>
+
+  <section class="interactive-section">
+    <div class="interactive-left">
+      <p class="reflection-title">Reflection</p>
+      <div class="reflection">
+        <ol>
+          <li>Is there a "war" in your life—a battle you've been fighting—that might already be finished?</li>
+          <li>What does "home" mean to you spiritually? Have you ever felt at home with God?</li>
+        </ol>
+      </div>
+    </div>
+    <div class="interactive-right">
+      <p class="interactive-label">Breath Prayer</p>
+      <h3 class="interactive-title">Carry This With You</h3>
+      <div class="breath-line">
+        <span class="breath-direction">Inhale:</span>
+        <span class="breath-text">"Lord, I am here."</span>
+      </div>
+      <div class="breath-line">
+        <span class="breath-direction">Exhale:</span>
+        <span class="breath-text">"Lead me home."</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    <span class="footer-progress">Day 2 of 3 — EUONGELION</span>
+    <span class="footer-next">Tomorrow: What You'll Find Here</span>
+  </footer>
+
+</body>
+</html>

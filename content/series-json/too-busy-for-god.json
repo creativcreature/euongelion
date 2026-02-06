@@ -1,0 +1,1439 @@
+{
+  "series": {
+    "id": "too-busy-for-god",
+    "title": "Too Busy for God",
+    "subtitle": "When Your Schedule Becomes Your Savior",
+    "pathway": "Sleep",
+    "coreQuestion": "What are you so busy doing that you're missing the One who gave you life to live?",
+    "booksOfFocus": ["Ecclesiastes", "Proverbs"],
+    "totalDays": 6,
+    "heroImage": null,
+    "learningGoals": [
+      "Understand biblical perspective on time and priorities",
+      "Learn key Hebrew and Greek terms for wisdom and rest",
+      "Apply ancient wisdom to modern busyness",
+      "Develop sustainable rhythms of spiritual engagement"
+    ],
+    "weeklyArc": [
+      "Day 1: The Vanity of Busyness (Ecclesiastes 1:2)",
+      "Day 2: Wisdom vs. Activity (Proverbs 19:2)",
+      "Day 3: Time and Seasons (Ecclesiastes 3:1)",
+      "Day 4: The Fear of the Lord (Proverbs 9:10)",
+      "Day 5: Rest and Sabbath (Ecclesiastes 4:6)",
+      "Day 6: Integration and Commitment (Ecclesiastes 12:1)"
+    ],
+    "hebrewVocabularySummary": [
+      {
+        "word": "hevel",
+        "hebrew": "הֶבֶל",
+        "meaning": "vanity, meaninglessness, vapor"
+      },
+      {
+        "word": "da'at",
+        "hebrew": "דַּעַת",
+        "meaning": "knowledge, understanding, awareness"
+      },
+      {
+        "word": "et",
+        "hebrew": "עֵת",
+        "meaning": "time, season, appointed moment"
+      },
+      {
+        "word": "yir'at",
+        "hebrew": "יִרְאַת",
+        "meaning": "fear, reverence, awe"
+      },
+      {
+        "word": "nachat",
+        "hebrew": "נַחַת",
+        "meaning": "rest, quietness, peace"
+      },
+      {
+        "word": "zakhor",
+        "hebrew": "זְכֹר",
+        "meaning": "remember, be mindful, pay attention"
+      }
+    ]
+  },
+  "days": [
+    {
+      "number": 1,
+      "title": "The Vanity of Busyness",
+      "anchorVerse": "Ecclesiastes 1:2",
+      "theme": "Recognizing that busyness without God is meaningless vapor",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Ecclesiastes 1:2",
+            "translation": "ESV",
+            "text": "Vanity of vanities, says the Preacher, vanity of vanities! All is vanity.",
+            "emphasis": ["Vanity of vanities", "All is vanity"],
+            "hebrewOriginal": "הֲבֵל הֲבָלִים אָמַר קֹהֶלֶת הֲבֵל הֲבָלִים הַכֹּל הָבֶל"
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "hebrew",
+            "word": "הֶבֶל",
+            "transliteration": "hevel",
+            "pronunciation": "HEH-vel",
+            "meaning": "vanity, meaninglessness, vapor, breath",
+            "rootMeaning": "Literally means 'breath' or 'vapor' - something that appears substantial but disappears when you try to grasp it.",
+            "usageNote": "The repetition 'hevel havelim' (vanity of vanities) creates emphasis - the ultimate degree of meaninglessness, like 'song of songs' or 'king of kings'.",
+            "wordByWord": [
+              {
+                "word": "הֲבֵל",
+                "transliteration": "havel",
+                "meaning": "vapor, breath, meaninglessness"
+              },
+              {
+                "word": "הֲבָלִים",
+                "transliteration": "havalim",
+                "meaning": "plural intensive form 'vanities'"
+              },
+              {
+                "word": "אָמַר",
+                "transliteration": "amar",
+                "meaning": "he said, declared"
+              },
+              {
+                "word": "קֹהֶלֶת",
+                "transliteration": "qohelet",
+                "meaning": "the Preacher, Teacher, Gatherer"
+              },
+              {
+                "word": "הַכֹּל",
+                "transliteration": "hakol",
+                "meaning": "everything, all things"
+              }
+            ],
+            "relatedWords": [
+              {
+                "word": "הֶבֶל",
+                "reference": "Abel's name in Genesis - perhaps suggesting the brevity of his life"
+              }
+            ],
+            "strongsNumber": "H1892"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Ancient Preacher's Wisdom",
+            "body": "Three thousand years ago, the wisest man who ever lived asked the same question you're asking. King Solomon, with unlimited resources and endless opportunities, looked at his packed schedule and declared: 'Hevel! Meaningless! All is meaningless!'\n\nSolomon wasn't being pessimistic; he was being honest about the nature of human activity apart from God. He conducted the ultimate productivity experiment - trying achievement, pleasure, wisdom, work, and wealth. His conclusion? Without God at the center, it's all hevel - vapor that appears substantial but vanishes when examined closely.\n\nThis isn't a condemnation of work or achievement. It's an exposure of the futility of activity that lacks eternal purpose and divine connection.",
+            "keyInsight": "Solomon wasn't condemning work or achievement. He was exposing the futility of activity that lacks eternal purpose and divine connection."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Modern Preacher's Lament",
+            "body": "Sarah refreshed her email for the 23rd time that morning. Three urgent requests, two 'quick questions,' and one meeting that would definitely run over. Her calendar looked like a game of Tetris played by someone having an anxiety attack.\n\nShe paused at her desk, staring at the motivational poster: 'Success is the sum of small efforts repeated day in and day out.' But what if those efforts were leading nowhere?\n\nThe question hit her like cold water: What if I'm incredibly busy doing incredibly meaningless things?",
+            "connectionToTheme": "Sarah represents the modern version of Solomon's ancient crisis - activity without meaning."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "Motion vs. Progress",
+            "body": "Marcus worked 70-hour weeks for a nonprofit that fed hungry children. His busyness was literally about serving God's kingdom. How could that be hevel?\n\nBut late at night, when the emails finally stopped, Marcus felt the hollow ache Solomon described. He was successful, important, needed - and completely empty. He had become so busy serving God that he had forgotten how to be with God.\n\nThe revelation came during a 14-hour flight with no wifi: What if the most productive thing I could do today is nothing?",
+            "historicalContext": "Ecclesiastes belongs to the Wisdom Literature (Job, Psalms, Proverbs, Ecclesiastes, Song of Songs), which addresses life's practical and philosophical questions through observation and reflection rather than Law or Prophecy.",
+            "fascinatingFact": "The Hebrew word 'qohelet' (Preacher/Teacher) comes from the root 'qahal' meaning 'to gather' or 'assemble.' Solomon wasn't just teaching individuals - he was addressing the entire assembly of God's people about the danger of misplaced priorities."
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "Solomon declared that all human activity apart from God is 'hevel' - vapor that disappears.",
+            "modernApplication": "Your packed calendar, endless notifications, and constant productivity might feel substantial, but without God at the center, you're grasping at vapor.",
+            "connectionPoint": "The same restless pursuit of meaning that drove Solomon 3,000 years ago drives our hustle culture today. Different tools, same emptiness.",
+            "newTestamentEcho": "Jesus echoed Solomon's concern: 'What good is it for someone to gain the whole world, yet forfeit their soul?' (Mark 8:36)"
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "What activities fill your time but leave your soul empty?",
+            "additionalQuestions": [
+              "What would change if you believed that some of your 'urgent' activities were actually meaningless vapor?",
+              "When do you feel most tempted to equate busyness with faithfulness?",
+              "What are you afraid would happen if you slowed down?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "God, show me what in my life is hevel - meaningless vapor - and what has eternal weight. Help me distinguish between motion and progress. Give me the courage to stop running long enough to ask if I'm even running in the right direction. Amen.",
+            "type": "personal",
+            "posture": "honest-confession"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "I will identify one 'vapor' activity that consumes time but produces no eternal value, and I will replace it with five minutes of stillness with God.",
+            "leavingAtCross": [
+              "The illusion that my busyness equals my worth",
+              "The fear that slowing down means falling behind",
+              "The pride that makes me believe the world depends on my constant activity"
+            ],
+            "receivingFromCross": [
+              "The truth that my value comes from God's love, not my productivity",
+              "The freedom to rest without guilt",
+              "The wisdom to distinguish between meaningful work and meaningless motion"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "What activities in your life might be hevel - appearing important but lacking eternal significance?",
+              "When do you feel most tempted to equate busyness with faithfulness?",
+              "How might God be calling you to simplify your schedule to make room for what truly matters?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one area where you suspect you're confusing motion with progress",
+              "Commit to one specific change that will create space for God in your daily routine",
+              "Ask each other: 'What are you too busy for that might be the most important thing?'"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "Mark 8:36",
+                "text": "What good is it for someone to gain the whole world, yet forfeit their soul?"
+              },
+              {
+                "reference": "2 Timothy 3:7",
+                "text": "Always learning but never able to come to a knowledge of the truth."
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "Ecclesiastes",
+                "note": "Read chapters 1-2 for Solomon's full investigation of meaning"
+              }
+            ]
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "Solomon (Qohelet)",
+            "title": "The Teacher",
+            "description": "King of Israel, son of David, traditionally credited as the author of Ecclesiastes. Despite having unlimited wisdom, wealth, and opportunity, Solomon discovered that all human achievement apart from God is ultimately meaningless.",
+            "keyQuote": "Vanity of vanities! All is vanity.",
+            "lessonForUs": "If the wisest and most successful man in history found his achievements empty without God, what makes us think our busy schedules will satisfy?"
+          }
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Wisdom vs. Activity",
+      "anchorVerse": "Proverbs 19:2",
+      "theme": "Learning to seek wisdom before hasty action",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Proverbs 19:2",
+            "translation": "NIV",
+            "text": "Desire without knowledge is not good - how much more will hasty feet miss the way!",
+            "emphasis": ["Desire without knowledge", "hasty feet miss the way"],
+            "hebrewOriginal": "גַּם בְּלֹא־דַעַת נֶפֶשׁ לֹא־טוֹב וְאָץ בְּרַגְלַיִם חוֹטֵא"
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "hebrew",
+            "word": "דַּעַת",
+            "transliteration": "da'at",
+            "pronunciation": "DAH-aht",
+            "meaning": "knowledge, awareness, understanding",
+            "rootMeaning": "Biblical da'at combines experiential and theoretical knowledge: practical wisdom gained through relationship with God.",
+            "wordByWord": [
+              {
+                "word": "גַּם",
+                "transliteration": "gam",
+                "meaning": "also, even, indeed"
+              },
+              {
+                "word": "בְּלֹא",
+                "transliteration": "belo",
+                "meaning": "without, lacking"
+              },
+              {
+                "word": "דַעַת",
+                "transliteration": "da'at",
+                "meaning": "knowledge, understanding, awareness"
+              },
+              {
+                "word": "נֶפֶשׁ",
+                "transliteration": "nefesh",
+                "meaning": "soul, desire, appetite"
+              },
+              {
+                "word": "לֹא־טוֹב",
+                "transliteration": "lo-tov",
+                "meaning": "not good"
+              },
+              {
+                "word": "וְאָץ",
+                "transliteration": "ve'atz",
+                "meaning": "and hasty, rushing"
+              },
+              {
+                "word": "בְּרַגְלַיִם",
+                "transliteration": "beraglaim",
+                "meaning": "with feet"
+              },
+              {
+                "word": "חוֹטֵא",
+                "transliteration": "choteh",
+                "meaning": "misses the mark, sins"
+              }
+            ],
+            "usageNote": "The word choteh (missing the mark) is the same root used for 'sin' - suggesting that rushing without wisdom is a form of spiritual failure.",
+            "strongsNumber": "H1847"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Ancient Path of Wisdom",
+            "body": "Proverbs 19:2 presents a paradox: desire (motivation, drive, passion) without knowledge leads to missing the way entirely. The Hebrew suggests that hasty feet - rapid movement without wisdom - actually slows down progress toward the goal.\n\nThe wise person moves deliberately, not desperately. They pause to gain da'at (knowledge) before taking action. This isn't procrastination; it's precision.",
+            "keyInsight": "The structure shows progression: desire without knowledge leads to hasty movement leads to missing the target."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Hasty Feet Syndrome",
+            "body": "David prided himself on being a quick decision-maker. 'Strike while the iron is hot,' he'd say. 'You snooze, you lose.' His calendar was packed with rapid-fire meetings, instant responses, and immediate action items.\n\nBut his hasty feet kept missing the way. The rushed hire who didn't work out. The quick investment that lost money. The immediate response that damaged a relationship. The fast decision that required months to undo.\n\nHis mentor asked a simple question: 'What if wisdom moves slower than ambition?'",
+            "connectionToTheme": "David represents the danger of speed without wisdom - achieving motion but missing the destination."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "Information vs. Wisdom",
+            "body": "Rachel consumed productivity podcasts, speed-read business books, and attended efficiency seminars. She had more information than ever but felt less wise than before. Her rapid consumption of content led to rapid decision-making that often missed the mark.\n\nThe breakthrough came when she realized: Information moves at the speed of light; wisdom moves at the speed of relationship.",
+            "historicalContext": "In Solomon's time, wisdom was cultivated through patient observation, careful reflection, and mentoring relationships. Decisions were made in community, with time for consultation and consideration.",
+            "fascinatingFact": "The Hebrew word for 'hasty' (atz) is related to the word for 'pressed' or 'squeezed.' When we're under pressure, we tend to make rushed decisions that squeeze out wisdom. Ancient Hebrew culture built in waiting periods for major decisions to prevent this spiritual hazard.",
+            "greekParallel": {
+              "concepts": [
+                {
+                  "term": "gnosis",
+                  "greek": "γνῶσις",
+                  "meaning": "experiential knowledge"
+                },
+                {
+                  "term": "episteme",
+                  "greek": "ἐπιστήμη",
+                  "meaning": "theoretical knowledge"
+                },
+                {
+                  "term": "epignosis",
+                  "greek": "ἐπίγνωσις",
+                  "meaning": "full, complete knowledge of God (Ephesians 1:17)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "Proverbs warns that desire without knowledge leads to missing the way - hasty feet that sin by missing the target.",
+            "modernApplication": "Our instant-everything world rewards quick responses over thoughtful ones. The pressure to decide quickly often prevents us from gaining the da'at necessary for wise choices.",
+            "connectionPoint": "The wise and foolish builders Jesus described illustrate this principle perfectly - the hasty builder finished first but lost everything in the storm.",
+            "newTestamentEcho": "Jesus told of two builders: one who built quickly on sand, another who built slowly on rock (Matthew 7:24-27). The difference wasn't intelligence or resources - it was the willingness to slow down long enough to build wisely."
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "Where in your life is speed substituting for wisdom?",
+            "additionalQuestions": [
+              "What's the difference between godly urgency and anxious haste?",
+              "How can you build 'wisdom pauses' into your decision-making process?",
+              "What decision are you rushing that might benefit from more da'at?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "God, give me da'at - true knowledge and understanding. Help me move with wisdom rather than haste, with purpose rather than panic. Slow my feet to match Your pace. Amen.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "Before making any significant decision today, I will pause and ask: 'Do I have enough da'at (knowledge) to move forward wisely?'",
+            "leavingAtCross": [
+              "The pressure to make quick decisions without adequate wisdom",
+              "The fear that taking time to think means missing opportunities",
+              "The pride that equates speed with competence"
+            ],
+            "receivingFromCross": [
+              "The patience to seek da'at before acting",
+              "The confidence that God's timing is perfect",
+              "The wisdom to move deliberately rather than desperately"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "Where in your life do you tend to move too quickly without adequate knowledge?",
+              "What's the difference between godly urgency and anxious haste?",
+              "How can you build 'wisdom pauses' into your decision-making process?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one area where hasty decisions have caused problems",
+              "Commit to seeking counsel before making significant choices this week",
+              "Ask each other: 'What decision are you rushing that might benefit from more da'at?'"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "Matthew 7:24-27",
+                "text": "The wise and foolish builders - building on rock vs. sand"
+              },
+              {
+                "reference": "Ephesians 1:17",
+                "text": "Paul's prayer for epignosis - full, complete knowledge of God"
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "Proverbs",
+                "note": "Study the contrast between the wise and the fool throughout the book"
+              }
+            ]
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "David (the story character)",
+            "title": "The Quick Decision-Maker",
+            "description": "A modern professional who prided himself on rapid decisions but learned that his hasty feet kept missing the way through rushed hires, quick investments, and immediate responses that backfired.",
+            "keyQuote": "Move at the speed of wisdom, not the speed of anxiety.",
+            "lessonForUs": "True urgency requires immediate action; perceived urgency often requires patient wisdom. Learn to distinguish between them."
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Time and Seasons",
+      "anchorVerse": "Ecclesiastes 3:1",
+      "theme": "Aligning activities with God's timing rather than human pressure",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Ecclesiastes 3:1",
+            "translation": "KJV",
+            "text": "To every thing there is a season, and a time to every purpose under the heaven.",
+            "emphasis": ["a season", "a time to every purpose"],
+            "hebrewOriginal": "לַכֹּל זְמָן וְעֵת לְכָל־חֵפֶץ תַּחַת הַשָּׁמָיִם"
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "hebrew",
+            "word": "עֵת",
+            "transliteration": "et",
+            "pronunciation": "AYT",
+            "meaning": "time, season, appointed time",
+            "rootMeaning": "Et doesn't just mean chronological time (chronos) but appointed time - the right moment for specific purposes. God operates by et, and wisdom means learning to recognize and respect these divine seasons.",
+            "wordByWord": [
+              {
+                "word": "לַכֹּל",
+                "transliteration": "lakol",
+                "meaning": "to everything, for all"
+              },
+              {
+                "word": "זְמָן",
+                "transliteration": "zeman",
+                "meaning": "season, appointed time"
+              },
+              {
+                "word": "וְעֵת",
+                "transliteration": "ve'et",
+                "meaning": "and time, moment"
+              },
+              {
+                "word": "לְכָל",
+                "transliteration": "lechol",
+                "meaning": "to every, for each"
+              },
+              {
+                "word": "חֵפֶץ",
+                "transliteration": "chefetz",
+                "meaning": "purpose, matter, affair"
+              },
+              {
+                "word": "תַּחַת",
+                "transliteration": "tachat",
+                "meaning": "under, beneath"
+              },
+              {
+                "word": "הַשָּׁמָיִם",
+                "transliteration": "hashamayim",
+                "meaning": "the heavens"
+              }
+            ],
+            "usageNote": "Zeman refers to longer seasons or periods, while et refers to specific moments or opportunities. Together they suggest both macro-seasons (years, life stages) and micro-moments (daily opportunities, divine appointments).",
+            "strongsNumber": "H6256"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Ancient Rhythm of Seasons",
+            "body": "Ecclesiastes 3:1-8 presents one of Scripture's most famous passages about timing. Solomon observed that life has natural rhythms - seasons for different activities, emotions, and purposes. Fighting these seasons leads to frustration; flowing with them leads to fruitfulness.\n\nThe Hebrew word et doesn't just mean chronological time (chronos) but appointed time - the right moment for specific purposes. God operates by et, and wisdom means learning to recognize and respect these divine seasons.",
+            "keyInsight": "Doing the right thing at the wrong time leads to frustration, not fruitfulness."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Season-Blind Life",
+            "body": "Jennifer was a master of efficiency but a failure at timing. She had the right skills, right intentions, and right goals - but consistently wrong timing. She pushed for promotion during budget cuts, launched new initiatives during transitions, and tried to have serious conversations during stressful seasons.\n\nHer mentor observed: 'You're planting in winter and wondering why nothing grows.'\n\nThe insight was devastating and liberating: What if the problem isn't what I'm doing, but when I'm doing it?",
+            "connectionToTheme": "Jennifer represents the modern challenge of chronos-driven living - managing clock time while missing kairos moments."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "Chronos-Driven Living",
+            "body": "Michael lived by chronos - clock time, calendar time, deadline time. His life was scheduled in 15-minute increments, optimized for maximum efficiency. But he kept missing kairos moments - divine appointments, family needs, spiritual opportunities that couldn't be scheduled.\n\nThe wake-up call came when his daughter said: 'Daddy, you're always busy when I need you.' He realized he was so focused on managing time that he was missing the times that mattered most.",
+            "historicalContext": "Solomon's original audience understood seasons viscerally. You couldn't rush harvest or delay planting. Success required recognizing and respecting natural rhythms. Ecclesiastes applies this agricultural wisdom to all of life.",
+            "fascinatingFact": "The Hebrew calendar is lunar-based, meaning months begin with new moons and festivals align with agricultural seasons. This kept God's people constantly aware of natural rhythms and divine timing. Modern believers often lose this seasonal awareness by living entirely by solar calendars and artificial schedules.",
+            "greekParallel": {
+              "concepts": [
+                {
+                  "term": "chronos",
+                  "greek": "Χρόνος",
+                  "meaning": "chronological time, duration, sequence"
+                },
+                {
+                  "term": "kairos",
+                  "greek": "Καιρός",
+                  "meaning": "opportune time, the right moment, divine timing"
+                }
+              ],
+              "newTestamentUsage": "Jesus operated by kairos - 'My time (kairos) has not yet come' (John 7:6). Paul urged believers to 'redeem the time (kairos)' (Ephesians 5:16)."
+            }
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "Solomon observed that life has natural rhythms - seasons for different activities, emotions, and purposes.",
+            "modernApplication": "We live in climate-controlled, 24/7, always-on environments that disconnect us from natural rhythms. We've gained efficiency but lost the wisdom of seasons.",
+            "connectionPoint": "Jesus perfectly embodied seasonal living. He withdrew when crowds pressed, engaged when people were ready, and waited for the Father's timing even when others urged action.",
+            "newTestamentEcho": "Jesus was never in a hurry, but He was never late. He moved according to kairos (God's timing) rather than chronos (human pressure)."
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "What season are you in right now, and what activities belong to this season?",
+            "additionalQuestions": [
+              "Where are you trying to force something that belongs to a different season?",
+              "How can you better align your activities with God's timing rather than human pressure?",
+              "What does this season require of you that you might be avoiding?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "God, teach me Your et - Your perfect timing. Help me discern when to act and when to wait, when to speak and when to be silent. Align my schedule with Your seasons. Amen.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "I will identify one thing I'm trying to force in the wrong season and one thing that belongs to my current season that I've been neglecting.",
+            "leavingAtCross": [
+              "The pressure to force outcomes in the wrong season",
+              "The frustration with God's timing",
+              "The illusion that I can control when things happen"
+            ],
+            "receivingFromCross": [
+              "Trust in God's perfect timing",
+              "Wisdom to discern seasons and act accordingly",
+              "Peace with waiting when it's not yet time to act"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "What season are you in personally, relationally, professionally, and spiritually?",
+              "Where are you trying to force something that belongs to a different season?",
+              "How can you better align your activities with God's timing rather than human pressure?"
+            ],
+            "forAccountabilityPartners": [
+              "Share what season you sense you're in right now",
+              "Identify one thing you're forcing that might need to wait",
+              "Ask each other: 'What does this season require of you that you might be avoiding?'"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "Ecclesiastes 3:1-8",
+                "text": "The full passage on seasons - a time for every purpose"
+              },
+              {
+                "reference": "John 7:6",
+                "text": "Jesus said, 'My time has not yet come'"
+              },
+              {
+                "reference": "Ephesians 5:16",
+                "text": "Redeeming the time (kairos)"
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "Ecclesiastes 3",
+                "note": "Study the full list of seasons and their applications"
+              }
+            ]
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "Jennifer",
+            "title": "The Season-Blind Professional",
+            "description": "A modern professional who mastered efficiency but failed at timing, learning that the problem often isn't what we're doing but when we're doing it.",
+            "keyQuote": "You're planting in winter and wondering why nothing grows.",
+            "lessonForUs": "Learn to recognize personal seasons (growth, rest, transition, harvest), relational seasons (building, healing, celebrating, grieving), professional seasons (learning, leading, creating, evaluating), and spiritual seasons (seeking, serving, solitude, community)."
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "The Fear of the Lord",
+      "anchorVerse": "Proverbs 9:10",
+      "theme": "Establishing reverence for God as the foundation of all wisdom",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Proverbs 9:10",
+            "translation": "NIV",
+            "text": "The fear of the Lord is the beginning of wisdom, and knowledge of the Holy One is understanding.",
+            "emphasis": ["fear of the Lord", "beginning of wisdom"],
+            "hebrewOriginal": "יִרְאַת יְהוָה רֵאשִׁית חָכְמָה וְדַעַת קְדֹשִׁים בִּינָה"
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "hebrew",
+            "word": "יִרְאַת",
+            "transliteration": "yir'at",
+            "pronunciation": "yeer-AHT",
+            "meaning": "fear, reverence, awe",
+            "rootMeaning": "This isn't terror or anxiety, but profound reverence and awe. It's the recognition that God is God and we are not.",
+            "wordByWord": [
+              {
+                "word": "יִרְאַת",
+                "transliteration": "yir'at",
+                "meaning": "fear, reverence, awe"
+              },
+              {
+                "word": "יְהוָה",
+                "transliteration": "Adonai",
+                "meaning": "the Lord, Yahweh"
+              },
+              {
+                "word": "רֵאשִׁית",
+                "transliteration": "reshit",
+                "meaning": "beginning, first, chief"
+              },
+              {
+                "word": "חָכְמָה",
+                "transliteration": "chokhmah",
+                "meaning": "wisdom, skill"
+              },
+              {
+                "word": "וְדַעַת",
+                "transliteration": "veda'at",
+                "meaning": "and knowledge"
+              },
+              {
+                "word": "קְדֹשִׁים",
+                "transliteration": "qedoshim",
+                "meaning": "holy ones, the Holy One"
+              },
+              {
+                "word": "בִּינָה",
+                "transliteration": "binah",
+                "meaning": "understanding, discernment"
+              }
+            ],
+            "usageNote": "Reshit doesn't just mean chronologically first, but foundational - the essential starting point without which everything else collapses.",
+            "relatedWords": [
+              {
+                "word": "פַּחַד",
+                "transliteration": "pachad",
+                "meaning": "terror, dread, sudden fear"
+              },
+              {
+                "word": "יָרֵא",
+                "transliteration": "yarey",
+                "meaning": "afraid, fearful, anxious"
+              },
+              {
+                "word": "יִרְאָה",
+                "transliteration": "yir'ah",
+                "meaning": "reverence, awe, respect"
+              }
+            ],
+            "strongsNumber": "H3374"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Ancient Foundation of Wisdom",
+            "body": "Proverbs repeatedly declares that wisdom begins with yir'at Adonai - the fear of the Lord. This isn't terror or anxiety, but profound reverence and awe. It's the recognition that God is God and we are not.\n\nWithout this foundation, all human wisdom becomes foolishness. With it, even simple activities become meaningful because they're grounded in eternal reality.",
+            "keyInsight": "Reshit doesn't just mean 'first in sequence' but 'first in importance' - the foundational principle from which all other wisdom flows. Without yir'at, other knowledge lacks proper orientation."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Foundation Crisis",
+            "body": "Thomas was brilliant, driven, and incredibly busy. Advanced degrees, leadership positions, reputation for getting results. But his life felt increasingly chaotic and meaningless despite all his achievements.\n\nA wise friend asked: 'What if all your activity is built on the wrong foundation?'\n\nThomas had built his life on competence, achievement, and human approval. But he'd never considered building on yir'at Adonai - the fear of the Lord.",
+            "connectionToTheme": "Thomas represents the danger of building life on human foundations rather than divine reverence."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "Fearing the Wrong Things",
+            "body": "Sarah feared missing deadlines, disappointing clients, falling behind competitors, and losing opportunities. Her calendar was driven by these fears, leaving no room for the fear of the Lord.\n\nThe revelation came during a crisis: What if I'm so afraid of human consequences that I've forgotten to fear divine ones?\n\nShe realized that proper fear of God actually liberates us from the tyranny of human fears. When we fear the right thing (God's displeasure), we're freed from fearing the wrong things (human opinion, temporal setbacks, finite losses).",
+            "historicalContext": "Other cultures had wisdom traditions, but Hebrew wisdom was unique in grounding all practical knowledge in relationship with Yahweh. Egyptian and Mesopotamian wisdom focused on success and survival; Hebrew wisdom focused on righteousness and relationship with God.",
+            "fascinatingFact": "The phrase 'fear of the Lord' appears over 300 times in the Old Testament, making it one of the most frequently mentioned concepts in Scripture. This suggests that maintaining proper reverence for God is one of humanity's greatest challenges and most essential needs.",
+            "greekParallel": {
+              "concepts": [
+                {
+                  "term": "phobos",
+                  "greek": "Φόβος",
+                  "meaning": "fear, terror, alarm"
+                },
+                {
+                  "term": "eulabeia",
+                  "greek": "Εὐλάβεια",
+                  "meaning": "reverence, godly fear, caution"
+                }
+              ],
+              "newTestamentUsage": "Hebrews 12:28 speaks of serving God with eulabeia - reverent awe. This godly fear motivates obedience out of love and respect, not terror and compulsion."
+            }
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "Proverbs declares that all true wisdom begins with proper reverence for God - recognizing His authority and our dependence.",
+            "modernApplication": "Contemporary productivity and success literature often ignores the spiritual dimension entirely, leading to efficient godlessness - being very good at things that don't ultimately matter.",
+            "connectionPoint": "The centurion in Matthew 8:5-13 demonstrates proper fear - recognizing Jesus' authority and responding with humble faith. This leads to Jesus marveling at his wisdom.",
+            "newTestamentEcho": "Throughout the Gospels, people respond to Jesus with either proper fear (leading to worship and obedience) or improper fear (leading to rejection and hostility). The wise recognize His authority and adjust their lives accordingly."
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "What if the reason you're too busy for God is that you don't fear Him enough?",
+            "additionalQuestions": [
+              "What human fears currently drive your schedule and priorities?",
+              "How would your daily decisions change if you truly feared God more than human consequences?",
+              "Where do you need to apply the fear of the Lord to bring wisdom to your current situation?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "God, give me yir'at Adonai - holy fear and reverence for You. Help me understand that all true wisdom begins with recognizing who You are and who I am in relation to You. Let this awe be the foundation of all my decisions. Amen.",
+            "type": "personal",
+            "posture": "confession"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "I will begin each significant task today by acknowledging God's sovereignty and asking how this activity fits into His purposes rather than just my agenda.",
+            "leavingAtCross": [
+              "The fear of human opinion that drives my schedule",
+              "The anxiety about temporal consequences that makes me too busy for eternal priorities",
+              "The pride that makes me think I can manage life without divine wisdom"
+            ],
+            "receivingFromCross": [
+              "Holy fear that leads to wisdom",
+              "Reverence for God that puts all other concerns in proper perspective",
+              "The peace that comes from fearing the right thing"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "What human fears currently drive your schedule and priorities?",
+              "How would your daily decisions change if you truly feared God more than human consequences?",
+              "Where do you need to apply the fear of the Lord to bring wisdom to your current situation?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one area where human fear is making you too busy for God",
+              "Commit to one specific way you'll honor God's authority in your schedule this week",
+              "Ask each other: 'What would change in your life if you feared God more than you feared failure?'"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "Psalm 14:1",
+                "text": "The fool says in his heart, 'There is no God'"
+              },
+              {
+                "reference": "Matthew 8:5-13",
+                "text": "The centurion's faith - proper fear leading to wisdom"
+              },
+              {
+                "reference": "Hebrews 12:28",
+                "text": "Serving God with reverence and awe"
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "Proverbs",
+                "note": "Study the contrast between the wise (who fear God) and the fool (who lives as if God doesn't matter)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "Thomas",
+            "title": "The Brilliant Achiever",
+            "description": "A modern professional who built his life on competence, achievement, and human approval, but discovered that without the fear of the Lord as foundation, all his success felt meaningless.",
+            "keyQuote": "What if all your activity is built on the wrong foundation?",
+            "lessonForUs": "Learn to ask different questions: Instead of 'What will people think?' ask 'What does God think?' Instead of 'How can I succeed?' ask 'How can I honor God?'"
+          }
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Rest and Sabbath",
+      "anchorVerse": "Ecclesiastes 4:6",
+      "theme": "Choosing peaceful rest over anxious productivity",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Ecclesiastes 4:6",
+            "translation": "ESV",
+            "text": "Better is a handful with quietness than both hands full with toil and a striving after wind.",
+            "emphasis": ["handful with quietness", "both hands full with toil"],
+            "hebrewOriginal": "טוֹב מְלֹא כַף נַחַת מִמְּלֹא חָפְנַיִם עָמָל וּרְעוּת רוּחַ"
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "hebrew",
+            "word": "נַחַת",
+            "transliteration": "nachat",
+            "pronunciation": "NAH-khat",
+            "meaning": "rest, quietness, peace",
+            "rootMeaning": "Nachat implies not just physical rest but spiritual settledness - a deep peace that comes from contentment rather than accumulation.",
+            "wordByWord": [
+              {
+                "word": "טוֹב",
+                "transliteration": "tov",
+                "meaning": "good, better"
+              },
+              {
+                "word": "מְלֹא",
+                "transliteration": "melo",
+                "meaning": "fullness, handful"
+              },
+              {
+                "word": "כַף",
+                "transliteration": "khaf",
+                "meaning": "palm, handful"
+              },
+              {
+                "word": "נַחַת",
+                "transliteration": "nachat",
+                "meaning": "rest, quietness, peace"
+              },
+              {
+                "word": "מִמְּלֹא",
+                "transliteration": "mimelo",
+                "meaning": "than fullness"
+              },
+              {
+                "word": "חָפְנַיִם",
+                "transliteration": "chofnayim",
+                "meaning": "both hands, double handful"
+              },
+              {
+                "word": "עָמָל",
+                "transliteration": "amal",
+                "meaning": "toil, labor, trouble"
+              },
+              {
+                "word": "וּרְעוּת",
+                "transliteration": "ure'ut",
+                "meaning": "and striving, pursuing"
+              },
+              {
+                "word": "רוּחַ",
+                "transliteration": "ruach",
+                "meaning": "wind, spirit, breath"
+              }
+            ],
+            "usageNote": "The image is vivid - one relaxed hand holding something valuable versus two hands frantically grasping at wind.",
+            "relatedWords": [
+              {
+                "word": "מְנוּחָה",
+                "transliteration": "menucha",
+                "meaning": "rest, dwelling place, peace - emphasizes the place or state of rest"
+              }
+            ],
+            "strongsNumber": "H5183"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "Solomon's Radical Economics",
+            "body": "Ecclesiastes 4:6 presents a radical economic principle: better to have less with peace than more with anxiety. The Hebrew contrasts nachat (rest, quietness, contentment) with amal (toil, labor, trouble) and re'ut ruach (chasing after wind).\n\nSolomon observed that the pursuit of more often costs us the ability to enjoy what we have. The person with full hands but no rest is poorer than the person with less but peace.",
+            "keyInsight": "The image is vivid - one relaxed hand holding something valuable versus two hands frantically grasping at wind."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Full-Handed Poverty",
+            "body": "Kevin worked two jobs, managed three side projects, and maintained five investment portfolios. His hands were literally full - and so was his stress level. Every opportunity felt urgent, every invitation felt mandatory, every project felt essential.\n\nHis grandfather, a farmer, watched Kevin's frantic activity: 'Son, you're working so hard to get more that you're missing what you already have.'\n\nThe wisdom hit like lightning: What if I'm so busy filling my hands that I can't receive what God wants to give me?",
+            "connectionToTheme": "Kevin represents the trap of accumulation - having both hands full but no peace."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "The Paradox of Sabbath Economics",
+            "body": "Lisa believed the cultural lie: more opportunities = more success = more happiness. She said yes to everything, accumulated constantly, and worked relentlessly. But the more she gained, the more anxious she became.\n\nThe breakthrough came during a power outage that forced her to sit in silence for three hours. In that stillness, she realized: I have everything I thought I wanted and nothing I actually need.",
+            "historicalContext": "God commanded Israel to rest one day in seven, not because the work was finished but because trust was more important than productivity. The Sabbath declared that the world could function without their constant activity. Every seventh year, the land was to rest completely (Leviticus 25:4). God promised that the sixth year would produce enough for three years.",
+            "fascinatingFact": "The Hebrew word for 'work' (melakah) is the same word used for God's creative work in Genesis. When we rest on Sabbath, we're imitating God's pattern of creation and rest, acknowledging that we are creatures, not the Creator.",
+            "greekParallel": {
+              "concepts": [
+                {
+                  "term": "anapausis",
+                  "greek": "Ἀνάπαυσις",
+                  "meaning": "rest, refreshment, relief"
+                },
+                {
+                  "term": "katapausis",
+                  "greek": "Κατάπαυσις",
+                  "meaning": "rest, cessation, dwelling place"
+                }
+              ],
+              "newTestamentUsage": "Jesus promised, 'Come to me, all who labor and are heavy laden, and I will give you anapausis' (Matthew 11:28). Hebrews speaks of entering God's katapausis - a permanent state of rest through faith."
+            }
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "Solomon observed that having less with peace is better than having more with anxiety - a handful with quietness beats both hands full with toil.",
+            "modernApplication": "We've largely lost Sabbath wisdom, creating a culture of perpetual productivity. The result is exactly what Ecclesiastes predicted - both hands full of toil and chasing after wind.",
+            "connectionPoint": "The story of Mary and Martha (Luke 10:38-42) illustrates this principle. Martha had both hands full of service, while Mary had one handful - sitting at Jesus' feet. Jesus affirmed that Mary had chosen 'the better part.'",
+            "newTestamentEcho": "Jesus promised rest to the weary: 'Come to me, all who labor and are heavy laden, and I will give you rest' (Matthew 11:28)."
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "What if having less but resting more is actually having more?",
+            "additionalQuestions": [
+              "Where in your life are you choosing 'both hands full with toil' instead of 'a handful with quietness'?",
+              "What would change if you truly believed that God could handle things while you rest?",
+              "What fears drive your need to stay constantly busy?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "God, teach me the wisdom of nachat - true rest and quietness. Help me choose the handful with peace over the double handful with anxiety. Show me that rest is not laziness but trust. Amen.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "I will practice contentment by identifying one area where I can choose less activity and more peace, trusting that God's provision is sufficient.",
+            "leavingAtCross": [
+              "The lie that more activity equals more security",
+              "The fear that resting means falling behind",
+              "The pride that makes me believe everything depends on my constant effort"
+            ],
+            "receivingFromCross": [
+              "The peace of nachat - true rest that comes from trusting God's provision",
+              "The wisdom to choose quality over quantity",
+              "The faith to rest without guilt"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "Where in your life are you choosing 'both hands full with toil' instead of 'a handful with quietness'?",
+              "What would change if you truly believed that God could handle things while you rest?",
+              "How can you build more nachat (peaceful rest) into your daily and weekly rhythms?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one area where you're struggling to rest because of anxiety about outcomes",
+              "Commit to one specific practice of Sabbath rest this week",
+              "Ask each other: 'What are you afraid will happen if you slow down and rest?'"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "Matthew 11:28",
+                "text": "Come to me, all who labor and are heavy laden, and I will give you rest"
+              },
+              {
+                "reference": "Luke 10:38-42",
+                "text": "Mary and Martha - choosing the better part"
+              },
+              {
+                "reference": "Leviticus 25:4",
+                "text": "The Sabbath year - trusting God's provision"
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "Ecclesiastes 4",
+                "note": "Study the context of meaningless toil and the wisdom of contentment"
+              }
+            ]
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "Kevin",
+            "title": "The Full-Handed Man",
+            "description": "A modern professional who worked multiple jobs and projects, learning from his farmer grandfather that working so hard to get more can cause us to miss what we already have.",
+            "keyQuote": "Son, you're working so hard to get more that you're missing what you already have.",
+            "lessonForUs": "Learn to distinguish between productive rest (activities that restore and refresh), consumptive rest (activities that merely distract or numb), faithful work (labor that serves God's purposes), and anxious toil (work driven by fear and greed)."
+          }
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Integration and Commitment",
+      "anchorVerse": "Ecclesiastes 12:1",
+      "theme": "Actively remembering God throughout daily life",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Ecclesiastes 12:1",
+            "translation": "NIV",
+            "text": "Remember your Creator in the days of your youth, before the days of trouble come and the years approach when you will say, 'I find no pleasure in them.'",
+            "emphasis": ["Remember your Creator", "days of your youth"],
+            "hebrewOriginal": "וּזְכֹר אֶת־בּוֹרְאֶיךָ בִּימֵי בְּחוּרֹתֶיךָ"
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "hebrew",
+            "word": "זְכֹר",
+            "transliteration": "zakhor",
+            "pronunciation": "zah-KHOR",
+            "meaning": "remember, be mindful, pay attention",
+            "rootMeaning": "This isn't casual recollection but active, intentional mindfulness. The Hebrew word implies paying attention, being mindful, keeping something at the forefront of consciousness.",
+            "wordByWord": [
+              {
+                "word": "וּזְכֹר",
+                "transliteration": "uzekhor",
+                "meaning": "and remember, be mindful of"
+              },
+              {
+                "word": "אֶת",
+                "transliteration": "et",
+                "meaning": "direct object marker"
+              },
+              {
+                "word": "בּוֹרְאֶיךָ",
+                "transliteration": "bor'eikha",
+                "meaning": "your Creator (plural of majesty)"
+              },
+              {
+                "word": "בִּימֵי",
+                "transliteration": "bimei",
+                "meaning": "in the days of"
+              },
+              {
+                "word": "בְּחוּרֹתֶיךָ",
+                "transliteration": "bechuroteikha",
+                "meaning": "your youth, your prime"
+              }
+            ],
+            "usageNote": "Zakhor is active, not passive. It's not just mental recall but intentional focus that leads to action. The plural form of Creator (bore'eicha) emphasizes God's majesty and ongoing creative activity.",
+            "strongsNumber": "H2142"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Ancient Call to Remember",
+            "body": "Ecclesiastes ends with an urgent call: zakhor - remember your Creator. This isn't casual recollection but active, intentional mindfulness. The Hebrew word implies paying attention, being mindful, keeping something at the forefront of consciousness.\n\nSolomon warns that if we don't remember God in our youth (when we have energy and opportunity), we may find ourselves too busy, too tired, or too distracted to remember Him when we're older.",
+            "keyInsight": "The command is to remember your Creator, not just a generic deity. This implies remembering the One who formed you, knows you, and has a purpose for your life."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Forgetting That Leads to Frenzy",
+            "body": "Maria's grandmother had a saying: 'A busy life is often a forgetful life.' Maria didn't understand it then, but at 35, she felt the truth of it. The busier she became, the more she forgot what really mattered.\n\nShe forgot to call her parents. Forgot to nurture friendships. Forgot to enjoy simple pleasures. And most dangerously, she forgot God - not intellectually, but practically. Her schedule had no room for the One who gave her life.\n\nThe wake-up call came when she realized: I've become so busy managing my life that I've forgotten who my life belongs to.",
+            "connectionToTheme": "Maria represents the danger of practical atheism - living as if God doesn't exist, even when we intellectually believe He does."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "Digital Amnesia",
+            "body": "Robert lived in an age of infinite information but struggled with spiritual amnesia. His phone remembered everything - contacts, appointments, facts, directions. But this external memory made his internal memory lazy. He could recall data instantly but struggled to remember what mattered most.\n\nThe irony was stark: I have access to all knowledge but am forgetting the most important knowledge - who God is and who I am to Him.",
+            "historicalContext": "Before written records were common, memory was crucial for preserving truth. Hebrew culture developed elaborate systems for remembering God's works - festivals, songs, stories, rituals. These weren't just historical preservation but active spiritual formation.",
+            "fascinatingFact": "The Hebrew word zakhor appears over 200 times in the Old Testament, making remembrance one of the most frequently commanded spiritual disciplines. God knows that forgetting Him is the root of all spiritual problems, so He constantly calls His people back to active remembrance.",
+            "greekParallel": {
+              "concepts": [
+                {
+                  "term": "mnemoneuo",
+                  "greek": "Μνημονεύω",
+                  "meaning": "to remember, call to mind, mention"
+                },
+                {
+                  "term": "anamnesis",
+                  "greek": "Ἀνάμνησις",
+                  "meaning": "remembrance, memorial, recollection"
+                }
+              ],
+              "newTestamentUsage": "Jesus instituted the Lord's Supper as an act of anamnesis - 'Do this in remembrance of me' (Luke 22:19). The early church practiced active remembrance not as a mental exercise, but as a formative spiritual discipline."
+            }
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "Solomon urgently calls us to remember our Creator - not casual recollection but active, intentional mindfulness that shapes our priorities.",
+            "modernApplication": "We've outsourced memory to devices and systems, losing the spiritual discipline of active remembrance. This makes us vulnerable to practical atheism - living as if God doesn't exist, even when we intellectually believe He does.",
+            "connectionPoint": "Throughout the Old Testament, Israel's cycle was predictable: blessing to prosperity to busyness to forgetting God to crisis to remembering to repentance to blessing.",
+            "newTestamentEcho": "Psalm 103:2 - 'Praise the Lord, my soul, and forget not all his benefits.' The psalmist had to actively choose to remember God's goodness rather than letting busyness crowd it out."
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "What if remembering God is the antidote to being too busy for God?",
+            "additionalQuestions": [
+              "How has busyness caused you to forget God practically in your daily life?",
+              "What specific practices could help you zakhor (remember) God more consistently?",
+              "How would your priorities change if you actively remembered that God is your Creator and Sustainer every moment?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "God, help me zakhor - to actively remember and be mindful of You in every season of life. Don't let busyness make me forget who You are and who I am to You. Amen.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "I will create a specific practice of zakhor - actively remembering God throughout my day, not just in designated 'spiritual' times.",
+            "leavingAtCross": [
+              "The practical atheism that comes from being too busy to remember God",
+              "The forgetfulness that leads to anxiety and meaningless activity",
+              "The pride that makes me think I can manage life without constant awareness of my Creator"
+            ],
+            "receivingFromCross": [
+              "The discipline of zakhor - active remembrance of God throughout each day",
+              "The peace that comes from remembering who is really in control",
+              "The joy of living in conscious relationship with my Creator"
+            ],
+            "remembranceRhythms": {
+              "morning": "God, this day belongs to You",
+              "midday": "God, help me see this situation from Your perspective",
+              "evening": "God, thank You for sustaining me today",
+              "weekly": "Sabbath as extended remembrance time",
+              "monthly": "Review how God has been faithful",
+              "annually": "Celebrate God's goodness over the past year"
+            }
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "How has busyness caused you to forget God practically in your daily life?",
+              "What specific practices could help you zakhor (remember) God more consistently?",
+              "How would your priorities change if you actively remembered that God is your Creator and Sustainer every moment?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one way busyness has made you forget God practically",
+              "Commit to one specific 'remembrance rhythm' you'll practice this week",
+              "Ask each other: 'How can we help each other remember God in the midst of busy lives?'"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "Psalm 103:2",
+                "text": "Praise the Lord, my soul, and forget not all his benefits"
+              },
+              {
+                "reference": "Luke 22:19",
+                "text": "Do this in remembrance of me"
+              },
+              {
+                "reference": "Deuteronomy 8:18",
+                "text": "Remember the LORD your God, for it is he who gives you the ability to produce wealth"
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "Ecclesiastes 12",
+                "note": "Study the conclusion of Solomon's wisdom and the call to remember"
+              }
+            ],
+            "weeklyChallenge": {
+              "title": "The Remembrance Experiment",
+              "description": "Practice zakhor by setting three daily reminders on your phone",
+              "reminders": [
+                {
+                  "time": "Morning",
+                  "prompt": "Remember your Creator - start the day acknowledging God's sovereignty"
+                },
+                {
+                  "time": "Midday",
+                  "prompt": "God is with you - pause to recognize God's presence in current circumstances"
+                },
+                {
+                  "time": "Evening",
+                  "prompt": "Give thanks - end the day remembering God's faithfulness"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "Maria",
+            "title": "The Forgetful Professional",
+            "description": "A modern professional who realized that her busy life had become a forgetful life - forgetting what matters most while managing what matters least.",
+            "keyQuote": "A busy life is often a forgetful life.",
+            "lessonForUs": "Develop 'remembrance rhythms' - specific practices that help you zakhor throughout the day: morning acknowledgment, midday perspective check, evening gratitude, weekly Sabbath, monthly review, annual celebration."
+          }
+        }
+      ]
+    }
+  ],
+  "seriesConclusion": {
+    "weeklySummary": [
+      "Day 1: Recognized that busyness without God is hevel (meaningless vapor)",
+      "Day 2: Learned to seek da'at (wisdom) before hasty action",
+      "Day 3: Discovered the importance of et (divine timing and seasons)",
+      "Day 4: Established yir'at Adonai (fear of the Lord) as the foundation of wisdom",
+      "Day 5: Chose nachat (peaceful rest) over anxious productivity",
+      "Day 6: Committed to zakhor (actively remembering) God in daily life"
+    ],
+    "finalCommitments": [
+      "Evaluating my activities through the lens of eternal significance rather than just temporal urgency",
+      "Seeking wisdom before making hasty decisions",
+      "Aligning my schedule with God's seasons rather than just human pressure",
+      "Grounding all decisions in reverence for God rather than fear of human consequences",
+      "Choosing rest and contentment over anxious productivity",
+      "Actively remembering God throughout each day rather than relegating Him to designated 'spiritual' times"
+    ],
+    "finalPrayer": "God, You have shown me through Your wisdom literature that a life too busy for You is a life too busy for what matters most. Help me apply these ancient truths to my modern challenges. Give me the courage to slow down, the wisdom to prioritize well, and the faith to trust that Your timing is perfect. May my life reflect not the frantic pace of a world that has forgotten You, but the peaceful rhythm of one who remembers that You are Creator, Sustainer, and Lord of all. In Jesus' name, Amen."
+  },
+  "metadata": {
+    "estimatedReadTime": {
+      "quick": "1 minute",
+      "medium": "5 minutes",
+      "deep": "15 minutes"
+    },
+    "moduleCount": 12,
+    "totalModules": 72,
+    "primaryEmotion": "conviction-with-hope",
+    "soulAuditKeywords": [
+      "busy",
+      "overwhelmed",
+      "empty",
+      "meaningless",
+      "exhausted",
+      "running",
+      "hustle",
+      "no time",
+      "stressed",
+      "anxious",
+      "rushed",
+      "hurried",
+      "schedule",
+      "calendar",
+      "productivity",
+      "too much to do",
+      "never enough time",
+      "can't slow down",
+      "fear of missing out",
+      "always working"
+    ]
+  }
+}

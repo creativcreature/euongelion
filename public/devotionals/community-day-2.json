@@ -1,0 +1,64 @@
+{
+  "day": 2,
+  "title": "What happens when everyone is a stranger?",
+  "teaser": "We're more connected than ever and more isolated than ever. The loneliness is crushing. How did we get here?",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE LONELINESS EPIDEMIC",
+      "type": "text",
+      "content": "You're surrounded by people and you've never felt more alone.\n\n29% of Americans report being frequently lonely. That's not occasional isolation—that's chronic, soul-crushing loneliness.\n\nYou live in a crowded city. You work in an office full of people. You scroll through hundreds of faces every day.\n\nBut when you need someone, really need someone, the room is empty.\n\nYou thought technology would fix this. More ways to connect, more platforms to meet people, more opportunities to build community.\n\nInstead, you got more isolation.\n\nHow did we get here?",
+      "wordCount": 92
+    },
+    {
+      "number": 3,
+      "heading": "THE COMMODIFICATION OF CONNECTION",
+      "type": "text",
+      "content": "Here's what happened: **we turned relationships into transactions.**\n\nEvery friendship became networking. Every conversation became a potential opportunity. Every connection had a hidden question: *What can you do for me?*\n\nYou curate your online presence to attract the right people. You maintain relationships that benefit your career. You drop people who stop being useful.\n\nRelationships became a market. And you became a commodity.\n\nBut here's the cost: **when everything is transactional, nothing is intimate.**\n\nYou can't be vulnerable with people you're trying to impress. You can't be weak with people who might replace you. You can't rest with people who only value your productivity.\n\nSo you perform. And you're exhausted. And you're alone.",
+      "wordCount": 122
+    },
+    {
+      "number": 4,
+      "heading": "THE SEARCH FOR BELONGING",
+      "type": "text-with-image",
+      "content": "Deep down, you're not looking for more connections.\n\nYou're looking for **belonging.**\n\nYou want people who know your name, not just your job title. People who see you struggling and don't leave. People who stay when you're no longer useful.\n\nYou want a place where you can be fully known and still fully loved.\n\nBut you don't know where to find it.\n\nThe institutions that used to provide belonging are collapsing. Churches are empty. Civic groups are dying. Even family gatherings feel transactional.\n\nAnd the digital replacements—group chats, online communities, parasocial relationships—aren't cutting it.\n\nBecause you can't build covenant through a screen.\n\nYou need actual presence. Actual commitment. Actual people.\n\nBut where?",
+      "illustration": {
+        "description": "Dithered image of person reaching toward distant figures, or empty chairs in a circle",
+        "file": "community-day-2-illustration.png"
+      },
+      "wordCount": 124
+    },
+    {
+      "number": 5,
+      "heading": "THE ANCIENT LONGING",
+      "type": "text",
+      "content": "This longing isn't new.\n\nThousands of years ago, humans asked the same question: **Where do I belong when everything is falling apart?**\n\nIn exile, in wandering, in displacement—people searched for home.\n\nAnd the answer wasn't a place. It was a people.\n\nGod didn't promise isolated individuals. He promised **a community.** A family. A covenant people bound together by something deeper than blood or transaction.\n\nThe ancient Hebrews had a phrase for it: *hesed.* Steadfast love. Loyal, unshakeable commitment.\n\nNot based on performance. Not contingent on usefulness. Just: **You're mine. I'm staying.**\n\nThat's the kind of belonging you're searching for.\n\nAnd it still exists.",
+      "wordCount": 107
+    },
+    {
+      "number": 6,
+      "heading": "THE INVITATION TO SOMETHING DEEPER",
+      "type": "text",
+      "content": "The loneliness you feel isn't a personal failure. It's a systemic collapse.\n\nWe've built a world that commodifies connection and wonders why everyone is isolated.\n\nBut here's the good news: **you're not stuck in it.**\n\nThere's another way to be human. Another way to belong.\n\nIt's ancient. It's countercultural. It's what Jesus was building when empire was collapsing.\n\nNot a network. Not a platform. A covenant community.\n\nPeople who don't leave when you stop being useful. People who stay when systems fail. People bound by *hesed*—steadfast, loyal, unshakeable love.\n\nThat's the kind of community the kingdom offers.\n\nAnd you're invited into it.",
+      "wordCount": 107
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nI'm so tired of being alone in a crowded world.\n\nI've turned relationships into transactions and wondered why nothing feels real. I've performed for connection and ended up exhausted.\n\nYou say there's another way. A kind of belonging that isn't based on what I offer. A community that doesn't leave when I'm no longer useful.\n\nI want that. I need that.\n\nShow me where covenant people are. Or show me how to become one.\n\nI'm ready to stop performing and start belonging.\n\nAmen.",
+      "wordCount": 83
+    }
+  ],
+  "totalWords": 635,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Exodus 34:6-7, Ruth 1:16-17",
+  "chiastic_position": "B - Building (The Problem Deepens)"
+}

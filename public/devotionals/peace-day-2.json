@@ -1,0 +1,64 @@
+{
+  "day": 2,
+  "title": "The exhaustion of managing everything",
+  "teaser": "You're monitoring, planning, protecting. But the anxiety isn't easing—it's multiplying.",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE WEIGHT OF WATCHFULNESS",
+      "type": "text",
+      "content": "You wake up and reach for your phone.\n\nBefore your feet hit the floor, you're scrolling. Checking what happened overnight. Scanning for threats. Reading headlines that spike your cortisol.\n\nThis is how you start every day: **on high alert.**\n\nYou tell yourself it's responsible. Staying informed. Being prepared. Knowing what's happening so you can protect yourself and the people you love.\n\nBut really, you're trying to manage chaos.\n\nAnd the chaos is winning.\n\nBecause no matter how much you monitor, the world keeps spiraling. And your anxiety keeps growing.",
+      "wordCount": 95
+    },
+    {
+      "number": 3,
+      "heading": "THE DOOMSCROLL LOOP",
+      "type": "text",
+      "content": "You can't stop scrolling.\n\nOne article becomes ten. One thread becomes an hour. You're not even reading anymore—you're just consuming, feeding the need to know more.\n\nPolitical violence. Economic instability. Civil unrest. Every headline confirms your worst fears: **the world is out of control.**\n\nAnd if the world is out of control, you need to control something. Your environment. Your information. Your response.\n\nSo you keep scrolling. Planning. Arguing. Defending.\n\nBut here's the truth: **the more you try to manage the chaos, the more the chaos manages you.**",
+      "wordCount": 91
+    },
+    {
+      "number": 4,
+      "heading": "THE BURDEN OF CONTINGENCY PLANS",
+      "type": "text-with-image",
+      "content": "It's not just the news. It's everything.\n\nYou're running through scenarios in your head. What if the economy crashes? What if violence spreads to your city? What if you lose your job?\n\nYou stock supplies. You calculate budgets. You create backup plans for the backup plans.\n\nThis is what happens when you believe peace comes from preparedness: **you're always preparing, never at peace.**\n\nBecause there's always one more contingency you haven't planned for. One more threat you haven't mitigated. One more variable you can't control.\n\nThe anxiety doesn't ease. It multiplies.\n\nAnd you're carrying a weight you were never meant to bear.",
+      "illustration": {
+        "description": "Dithered image of person buried under stacks of papers/plans or shoulders weighed down by chains",
+        "file": "peace-day-2-illustration.png"
+      },
+      "wordCount": 110
+    },
+    {
+      "number": 5,
+      "heading": "WHAT JESUS SAID ABOUT WORRY",
+      "type": "text",
+      "content": "In the middle of Roman occupation—political violence, economic exploitation, constant instability—Jesus told anxious people:\n\n**\"Who of you by worrying can add a single hour to your life?\"**\n\nIt's almost offensive. Of course I'm worried. Look at the world.\n\nBut Jesus wasn't dismissing their fear. He was exposing the futility of their strategy.\n\nWorry doesn't protect you. Planning for every disaster doesn't bring peace. Controlling your environment doesn't stop chaos.\n\nAll it does is exhaust you.\n\nJesus wasn't saying, \"Don't care about your life.\" He was saying, **\"Stop trying to secure it through control. You can't.\"**",
+      "wordCount": 97
+    },
+    {
+      "number": 6,
+      "heading": "THE ALTERNATIVE TO ANXIETY",
+      "type": "text",
+      "content": "Jesus offered something radical to people drowning in worry:\n\n**\"Look at the birds of the air; they do not sow or reap or store away in barns, and yet your heavenly Father feeds them. Are you not much more valuable than they?\"**\n\nHe wasn't saying, \"Be passive. Don't work. Don't plan.\"\n\nHe was saying: **Your value isn't dependent on your ability to control outcomes.**\n\nGod cares for you. Not because you've managed everything perfectly. But because you're His.\n\nThe anxiety of control says: If I don't hold it together, everything falls apart.\n\nThe peace of the kingdom says: God holds it together. You can let go.",
+      "wordCount": 103
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nI'm exhausted from managing everything.\n\nI wake up anxious. I scroll compulsively. I plan obsessively. I'm trying to control what I can't control.\n\nAnd it's breaking me.\n\nYou say I can't add a single hour to my life by worrying. You're right. But I don't know how to stop.\n\nTeach me to release the weight. To trust that You hold what I can't.\n\nI'm tired of carrying this. Help me let go.\n\nAmen.",
+      "wordCount": 77
+    }
+  ],
+  "totalWords": 573,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Matthew 6:25-34",
+  "chiastic_position": "B - Building Tension"
+}

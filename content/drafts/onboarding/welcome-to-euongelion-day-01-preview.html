@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EUONGELION — Day 1: What Is This Place?</title>
+
+  <!-- Google Fonts (fallback approximations) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&family=Playfair+Display:wght@400;500&family=Caveat:wght@400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================================================
+       EUONGELION TYPOGRAPHY PREVIEW
+       Design System v1.0
+       ================================================ */
+
+    :root {
+      /* Bold Three Colors */
+      --color-tehom-black: #1A1612;
+      --color-scroll-white: #F7F3ED;
+      --color-god-is-gold: #C19A6B;
+
+      /* Semantic Colors */
+      --color-text-primary: var(--color-tehom-black);
+      --color-text-secondary: rgba(26, 22, 18, 0.7);
+      --color-background: var(--color-scroll-white);
+      --color-accent: var(--color-god-is-gold);
+      --color-border: rgba(26, 22, 18, 0.1);
+
+      /* Font Families */
+      /* Note: Using DM Sans as Monument Grotesk approximation */
+      /* Using Playfair Display as Editorial New approximation */
+      --font-display: 'DM Sans', 'Helvetica Neue', sans-serif;
+      --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
+      --font-masthead: 'Playfair Display', 'Didot', serif;
+      --font-handwritten: 'Caveat', cursive;
+
+      /* Font Sizes */
+      --text-masthead: 2.5rem;
+      --text-day-number: 8rem;
+      --text-hero: 3.5rem;
+      --text-h2: 1.75rem;
+      --text-h3: 1.25rem;
+      --text-body: 1.25rem;
+      --text-small: 0.875rem;
+      --text-hebrew: 2.25rem;
+
+      /* Line Heights */
+      --leading-tight: 1.1;
+      --leading-snug: 1.3;
+      --leading-relaxed: 1.7;
+
+      /* Letter Spacing */
+      --tracking-wide: 0.1em;
+      --tracking-wider: 0.15em;
+    }
+
+    /* ================================================
+       BASE STYLES
+       ================================================ */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      font-weight: 400;
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-primary);
+      background-color: var(--color-background);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ================================================
+       LAYOUT
+       ================================================ */
+
+    .page {
+      max-width: 100%;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .full-width {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    /* ================================================
+       HEADER / MASTHEAD
+       ================================================ */
+
+    .masthead {
+      padding: 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .masthead-logo {
+      font-family: var(--font-masthead);
+      font-size: var(--text-masthead);
+      font-weight: 400;
+      letter-spacing: var(--tracking-wider);
+      color: var(--color-text-primary);
+      text-transform: uppercase;
+    }
+
+    /* ================================================
+       HERO SECTION
+       ================================================ */
+
+    .hero {
+      padding: 6rem 0 4rem;
+      text-align: center;
+    }
+
+    .day-number {
+      font-family: var(--font-display);
+      font-size: var(--text-day-number);
+      font-weight: 100;
+      line-height: var(--leading-tight);
+      color: var(--color-accent);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .series-label {
+      font-family: var(--font-display);
+      font-size: var(--text-small);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: var(--text-hero);
+      font-weight: 700;
+      line-height: var(--leading-tight);
+      color: var(--color-text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: var(--leading-snug);
+      color: var(--color-text-secondary);
+    }
+
+    /* ================================================
+       CONTENT SECTIONS
+       ================================================ */
+
+    .content {
+      padding: 3rem 0;
+    }
+
+    .section {
+      margin-bottom: 4rem;
+    }
+
+    .section-header {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      font-weight: 500;
+      line-height: var(--leading-snug);
+      color: var(--color-text-primary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--color-accent);
+    }
+
+    .subsection-header {
+      font-family: var(--font-display);
+      font-size: var(--text-h3);
+      font-weight: 600;
+      line-height: var(--leading-snug);
+      color: var(--color-text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1.5em;
+    }
+
+    /* ================================================
+       TYPOGRAPHY ELEMENTS
+       ================================================ */
+
+    /* Emphasis */
+    em {
+      font-style: italic;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    /* Block Quote / Scripture */
+    blockquote {
+      margin: 2.5rem 0;
+      padding: 2rem 2.5rem;
+      background: rgba(193, 154, 107, 0.08);
+      border-left: 4px solid var(--color-accent);
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--color-text-primary);
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 1rem;
+      font-size: var(--text-small);
+      font-style: normal;
+      color: var(--color-text-secondary);
+    }
+
+    /* Pull Quote */
+    .pull-quote {
+      margin: 4rem -2rem;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .pull-quote-text {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: var(--leading-snug);
+      color: var(--color-text-primary);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .pull-quote-mark {
+      font-family: var(--font-masthead);
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--color-accent);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ================================================
+       HEBREW WORD STUDY
+       ================================================ */
+
+    .hebrew-study {
+      margin: 4rem 0;
+      padding: 3rem 2rem;
+      text-align: center;
+      background: linear-gradient(to bottom,
+        rgba(193, 154, 107, 0.05) 0%,
+        rgba(193, 154, 107, 0.02) 100%);
+      border-radius: 4px;
+    }
+
+    .hebrew-term {
+      font-family: 'Times New Roman', serif; /* SBL Hebrew fallback */
+      font-size: var(--text-hebrew);
+      font-weight: 400;
+      line-height: var(--leading-snug);
+      color: var(--color-accent);
+      margin-bottom: 0.75rem;
+      direction: rtl;
+    }
+
+    .hebrew-transliteration {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .hebrew-meaning {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--color-text-primary);
+      letter-spacing: 0.05em;
+    }
+
+    /* ================================================
+       INTERACTIVE ELEMENT
+       ================================================ */
+
+    .interactive {
+      margin: 4rem 0;
+      padding: 2.5rem;
+      background: var(--color-tehom-black);
+      color: var(--color-scroll-white);
+      border-radius: 4px;
+    }
+
+    .interactive-label {
+      font-family: var(--font-display);
+      font-size: var(--text-small);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+    }
+
+    .interactive-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--color-scroll-white);
+    }
+
+    .breath-prayer {
+      margin: 2rem 0;
+    }
+
+    .breath-line {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1.125rem;
+    }
+
+    .breath-direction {
+      font-weight: 500;
+      color: var(--color-accent);
+      min-width: 70px;
+    }
+
+    .breath-text {
+      font-style: italic;
+      color: rgba(247, 243, 237, 0.9);
+    }
+
+    .interactive p {
+      color: rgba(247, 243, 237, 0.8);
+      font-size: 1rem;
+    }
+
+    /* ================================================
+       REFLECTION QUESTIONS
+       ================================================ */
+
+    .reflection {
+      margin: 4rem 0;
+      padding: 2.5rem;
+      background: rgba(193, 154, 107, 0.06);
+      border-radius: 4px;
+    }
+
+    .reflection-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--color-text-primary);
+    }
+
+    .reflection ol {
+      list-style: none;
+      counter-reset: reflection;
+    }
+
+    .reflection li {
+      counter-increment: reflection;
+      margin-bottom: 1.5rem;
+      padding-left: 2.5rem;
+      position: relative;
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+
+    .reflection li::before {
+      content: counter(reflection);
+      position: absolute;
+      left: 0;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--color-accent);
+    }
+
+    /* ================================================
+       FOOTNOTES / CITATIONS
+       ================================================ */
+
+    .footnotes {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .footnotes-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .footnotes ol {
+      list-style: none;
+      counter-reset: footnote;
+    }
+
+    .footnotes li {
+      counter-increment: footnote;
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      position: relative;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+    }
+
+    .footnotes li::before {
+      content: counter(footnote) ".";
+      position: absolute;
+      left: 0;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+    }
+
+    /* Superscript references */
+    sup {
+      font-size: 0.7em;
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+
+    /* ================================================
+       FOOTER / NAVIGATION
+       ================================================ */
+
+    .day-footer {
+      margin-top: 4rem;
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .day-progress {
+      font-family: var(--font-display);
+      font-size: var(--text-small);
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .day-next {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--color-text-secondary);
+    }
+
+    /* ================================================
+       DIVIDERS
+       ================================================ */
+
+    hr {
+      border: none;
+      height: 1px;
+      background: var(--color-border);
+      margin: 3rem 0;
+    }
+
+    .divider-ornament {
+      text-align: center;
+      margin: 3rem 0;
+      color: var(--color-accent);
+      font-size: 1.5rem;
+      letter-spacing: 0.5em;
+    }
+
+    /* ================================================
+       PRINT STYLES
+       ================================================ */
+
+    @media print {
+      body {
+        font-size: 11pt;
+        background: white;
+      }
+
+      .container {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .interactive {
+        background: #f5f5f5;
+        color: #1A1612;
+        border: 1px solid #ccc;
+      }
+
+      .interactive-label,
+      .breath-direction {
+        color: #666;
+      }
+
+      .interactive p,
+      .breath-text {
+        color: #333;
+      }
+
+      .hebrew-study {
+        break-inside: avoid;
+      }
+
+      .pull-quote {
+        break-inside: avoid;
+      }
+    }
+
+    /* ================================================
+       RESPONSIVE
+       ================================================ */
+
+    @media (max-width: 767px) {
+      :root {
+        --text-day-number: 5rem;
+        --text-hero: 2.25rem;
+        --text-body: 1.125rem;
+      }
+
+      .container {
+        padding: 0 1.5rem;
+      }
+
+      .pull-quote-text {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Masthead -->
+    <header class="masthead">
+      <div class="container">
+        <h1 class="masthead-logo">EUONGELION</h1>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="day-number">01</div>
+        <p class="series-label">Welcome to EUONGELION</p>
+        <h2 class="hero-title">What Is This Place?</h2>
+        <p class="hero-subtitle">A path home for hungry souls</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="container">
+
+        <!-- Section 1 -->
+        <section class="section">
+          <h3 class="section-header">The Name You're Trying to Pronounce</h3>
+
+          <p>You're probably wondering how to say it.</p>
+
+          <p><em>Eu-on-GEL-ee-on.</em></p>
+
+          <p>It's Greek. And it means something you've heard a thousand times but maybe never really heard: <em>good news</em>.</p>
+
+          <p>Not "good advice." Not "good vibes." Not "good luck."</p>
+
+          <p><em>Good news.</em></p>
+
+          <p>The kind of news that changes everything. The kind that makes a messenger run across a battlefield, lungs burning, legs failing, because the outcome of the war has shifted and everyone needs to know. That's what <em>euongelion</em> meant in the ancient world—the announcement that the battle is over, the king has won, and everything is about to change.<sup>1</sup></p>
+
+          <p>This is where you've landed. Not an app. Not a program. Not another thing to add to your already overflowing life.</p>
+
+          <p>A path home.</p>
+        </section>
+
+        <div class="divider-ornament">• • •</div>
+
+        <!-- Section 2 -->
+        <section class="section">
+          <h3 class="section-header">Why You're Here</h3>
+
+          <p>We don't know exactly what brought you here. Maybe someone shared a link. Maybe you were searching for something at 2 AM when the house was quiet and your thoughts weren't. Maybe you used to believe and don't anymore. Maybe you still believe but it feels like going through the motions. Maybe you've never believed but something keeps pulling at you.</p>
+
+          <p>It doesn't matter which door you came through. You're here now.</p>
+
+          <p>And here's what we believe about you, even though we've never met:</p>
+
+          <p><strong>You were made for relationship with God.</strong></p>
+
+          <p>Not religion. Not ritual. Not rule-following.</p>
+
+          <p><em>Relationship.</em></p>
+
+          <p>The kind where you're known and loved. The kind where your questions are welcome. The kind where you don't have to pretend to have it together.</p>
+
+          <blockquote>
+            "The Lord your God is in your midst, a mighty one who will save; he will rejoice over you with gladness; he will quiet you by his love; he will exult over you with loud singing."
+            <cite>— Zephaniah 3:17 (ESV)</cite>
+          </blockquote>
+
+          <p>That's not the distant, angry God you might have been taught to fear. That's a Father who sings over His children.</p>
+
+          <p>And He's been waiting for you to come home.</p>
+        </section>
+
+        <!-- Pull Quote -->
+        <aside class="pull-quote">
+          <span class="pull-quote-mark">"</span>
+          <p class="pull-quote-text">This isn't content to consume. It's an invitation to encounter.</p>
+        </aside>
+
+        <!-- Section 3 -->
+        <section class="section">
+          <h3 class="section-header">What This Place Is</h3>
+
+          <p>EUONGELION is daily bread for hungry souls.</p>
+
+          <p>That phrase—<em>daily bread</em>—comes from the prayer Jesus taught His followers:</p>
+
+          <blockquote>
+            "Give us this day our daily bread."
+            <cite>— Matthew 6:11 (ESV)</cite>
+          </blockquote>
+
+          <p>In the ancient world, bread wasn't a side dish. It was survival. It was the thing you couldn't live without. And Jesus taught us to ask for it <em>daily</em>—not weekly, not monthly, not in bulk. Every single day, we come with open hands.</p>
+
+          <p>That's what this is. A daily practice of coming to God with open hands.</p>
+        </section>
+
+        <!-- Hebrew Word Study -->
+        <div class="hebrew-study">
+          <div class="hebrew-term">דָּבָר</div>
+          <div class="hebrew-transliteration">[davar]</div>
+          <div class="hebrew-meaning">Word • Thing • Event</div>
+        </div>
+
+        <section class="section">
+          <h3 class="section-header">The Hebrew Word for "Word"</h3>
+
+          <p>The Hebrew word for "word" is <em>davar</em> (דָּבָר).</p>
+
+          <p>Pronounced: dah-VAHR.</p>
+
+          <p>But here's what's fascinating: <em>davar</em> doesn't just mean "word" the way we think of it—sounds that convey meaning. In Hebrew, <em>davar</em> also means "thing" or "matter" or "event."<sup>4</sup></p>
+
+          <p>When God speaks, things happen.</p>
+
+          <p>"And God said, 'Let there be light,' and there was light."<sup>5</sup></p>
+
+          <p>The word and the reality are the same. God's speech isn't just information—it's creation. It's power. It's reality coming into being.</p>
+
+          <p>This matters for how you approach Scripture. The Bible isn't just words <em>about</em> God. It's God's <em>davar</em>—His speech that creates, shapes, transforms.</p>
+
+          <p>When you read these devotionals, you're not just learning information. You're encountering the living Word of a God who speaks things into existence.</p>
+
+          <p>Including new life in you.</p>
+        </section>
+
+        <div class="divider-ornament">• • •</div>
+
+        <!-- Section 4: Story -->
+        <section class="section">
+          <h3 class="section-header">A Story: The Long Way Home</h3>
+
+          <p>In 1972, a Japanese soldier named Hiroo Onoda finally emerged from the Philippine jungle.</p>
+
+          <p>He had been hiding for <em>twenty-nine years</em>.</p>
+
+          <p>Onoda was sent to Lubang Island in 1944 with orders to conduct guerrilla warfare and never surrender. When the war ended in 1945, he didn't believe it. Leaflets were dropped announcing Japan's surrender—he thought they were propaganda. Family members came to the jungle with loudspeakers, begging him to come out—he thought it was a trick. For nearly three decades, he lived in the mountains, convinced the war was still going on, waiting for orders that would never come.<sup>6</sup></p>
+
+          <p>It wasn't until his former commanding officer traveled to the Philippines and personally issued the order to stand down that Onoda finally surrendered his sword and rifle.</p>
+
+          <p>He had been free for twenty-nine years. He just didn't know it.</p>
+
+          <h4 class="subsection-header">Here's why that story matters:</h4>
+
+          <p>Some of you have been living in a war that's already over.</p>
+
+          <p>You've been hiding, fighting, surviving—convinced that you have to earn God's favor, that you're not good enough, that the battle is still raging. But the announcement has already been made. The <em>euongelion</em> has already been declared.</p>
+
+          <p>"It is finished."<sup>7</sup></p>
+
+          <p>Jesus said those words from the cross. It is finished. The debt is paid. The war is won. You don't have to keep fighting.</p>
+
+          <p>You just have to come out of the jungle.</p>
+        </section>
+
+        <!-- Second Hebrew Study -->
+        <div class="hebrew-study">
+          <div class="hebrew-term">שׁוּב</div>
+          <div class="hebrew-transliteration">[shuv]</div>
+          <div class="hebrew-meaning">Return • Come Back • Go Home</div>
+        </div>
+
+        <section class="section">
+          <h3 class="section-header">An Invitation</h3>
+
+          <p>Before we close this first day, let's do something together.</p>
+
+          <p>Find a quiet spot. If you can't find quiet, find stillness—even if the noise continues around you.</p>
+
+          <p>Take a breath. A real one. Feel your lungs expand. Feel them release.</p>
+
+          <p>Now read these words slowly, out loud if you can:</p>
+
+          <blockquote>
+            "The Lord is my shepherd; I shall not want.<br>
+            He makes me lie down in green pastures.<br>
+            He leads me beside still waters.<br>
+            He restores my soul."
+            <cite>— Psalm 23:1-3 (ESV)</cite>
+          </blockquote>
+
+          <p>That's what's being offered here. Not a productivity hack for your spiritual life. Not another thing to optimize.</p>
+
+          <p><em>Soul restoration.</em></p>
+
+          <p>The Hebrew word for "restore" is <em>shuv</em> (שׁוּב)—to return, to come back, to go home.<sup>11</sup></p>
+
+          <p>That's the invitation. Come home.</p>
+
+          <p>You don't have to have it all figured out. You don't have to clean up first. You don't have to perform or pretend.</p>
+
+          <p>Just come.</p>
+        </section>
+
+        <!-- Interactive Element -->
+        <div class="interactive">
+          <p class="interactive-label">Interactive Element</p>
+          <h4 class="interactive-title">Breath Prayer for Today</h4>
+
+          <p>A breath prayer is a short phrase you repeat with your breathing—inhale on the first part, exhale on the second.</p>
+
+          <div class="breath-prayer">
+            <div class="breath-line">
+              <span class="breath-direction">Inhale:</span>
+              <span class="breath-text">"Lord, I am here."</span>
+            </div>
+            <div class="breath-line">
+              <span class="breath-direction">Exhale:</span>
+              <span class="breath-text">"Lead me home."</span>
+            </div>
+          </div>
+
+          <p>Try it now. Three times. Slowly.</p>
+
+          <p>Carry this with you today. In the car. In line at the store. When your mind wanders. When anxiety rises.</p>
+
+          <p><em>Lord, I am here. Lead me home.</em></p>
+        </div>
+
+        <!-- Reflection Questions -->
+        <div class="reflection">
+          <h4 class="reflection-title">Reflection Questions</h4>
+          <ol>
+            <li>What door did you come through to get here? What were you searching for?</li>
+            <li>Hiroo Onoda lived in a war that was already over. Is there a "war" in your own life—a battle you've been fighting—that might already be finished?</li>
+            <li>The Hebrew word <em>shuv</em> means "to return" or "come home." What does "home" mean to you spiritually? Have you ever felt at home with God?</li>
+          </ol>
+        </div>
+
+        <!-- Footnotes -->
+        <div class="footnotes">
+          <h4 class="footnotes-title">Notes</h4>
+          <ol>
+            <li>The term <em>euangelion</em> (εὐαγγέλιον) was used in the Greco-Roman world to announce military victories or the birth of an emperor. See: Friedrich, Gerhard. "εὐαγγέλιον." In <em>Theological Dictionary of the New Testament</em>, edited by Gerhard Kittel, translated by Geoffrey W. Bromiley, vol. 2, 721-737. Grand Rapids: Eerdmans, 1964.</li>
+            <li>Zephaniah 3:17 (ESV).</li>
+            <li>Matthew 6:11 (ESV).</li>
+            <li>Brown, Francis, S.R. Driver, and Charles A. Briggs. <em>The Brown-Driver-Briggs Hebrew and English Lexicon</em>. Peabody, MA: Hendrickson Publishers, 1906. Entry H1697.</li>
+            <li>Genesis 1:3 (ESV).</li>
+            <li>Onoda, Hiroo. <em>No Surrender: My Thirty-Year War</em>. Translated by Charles S. Terry. New York: Kodansha International, 1974.</li>
+            <li>John 19:30 (ESV).</li>
+            <li>1 Corinthians 3:6-7.</li>
+            <li>Matthew 13:3-9, the Parable of the Sower.</li>
+            <li>Psalm 23:1-3 (ESV).</li>
+            <li>Harris, R. Laird, Gleason L. Archer Jr., and Bruce K. Waltke, eds. <em>Theological Wordbook of the Old Testament</em>. Chicago: Moody Press, 1980. Entry 2340.</li>
+          </ol>
+        </div>
+
+        <!-- Footer -->
+        <footer class="day-footer">
+          <p class="day-progress">Day 1 of 5 — Welcome to EUONGELION</p>
+          <p class="day-next">Tomorrow: How This Is Different</p>
+        </footer>
+
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>

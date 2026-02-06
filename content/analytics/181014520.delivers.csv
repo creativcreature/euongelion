@@ -1,0 +1,9 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription
+181014520,2025-12-09T12:01:25.456Z,ray.steveray.steve@gmail.com,newsletter,everyone,true
+181014520,2025-12-09T12:01:25.474Z,redcapes38@gmail.com,newsletter,everyone,true
+181014520,2025-12-09T12:01:25.931Z,csanton98@gmail.com,newsletter,everyone,true
+181014520,2025-12-09T12:01:26.301Z,jennifer.lowe97@gmail.com,newsletter,everyone,true
+181014520,2025-12-09T12:01:26.481Z,tburch0523@gmail.com,newsletter,everyone,true
+181014520,2025-12-09T12:01:27.079Z,mikeparker029@gmail.com,newsletter,everyone,true
+181014520,2025-12-09T12:01:30.332Z,momzdukes1000@yahoo.com,newsletter,everyone,true
+181014520,2025-12-09T12:01:32.949Z,c.parker3@me.com,newsletter,everyone,false

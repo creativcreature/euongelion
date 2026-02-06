@@ -1,0 +1,15 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+180296761,2025-12-02T16:09:30.848Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,NL,,,,,,Mozilla/5.0
+180296761,2025-12-02T17:02:19.197Z,mikeparker029@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+180296761,2025-12-02T17:15:50.320Z,mikeparker029@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+180296761,2025-12-02T20:34:10.798Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+180296761,2025-12-02T21:08:07.317Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+180296761,2025-12-02T21:55:01.101Z,mikeparker029@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+180296761,2025-12-02T22:14:02.796Z,mikeparker029@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+180296761,2025-12-02T22:15:11.625Z,mikeparker029@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+180296761,2025-12-02T22:15:44.774Z,mikeparker029@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+180296761,2025-12-02T23:25:23.155Z,mikeparker029@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+180296761,2025-12-03T08:24:52.218Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0
+180296761,2025-12-03T23:43:44.672Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+180296761,2025-12-05T00:31:42.901Z,tburch0523@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0
+180296761,2025-12-10T16:48:34.397Z,tburch0523@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0

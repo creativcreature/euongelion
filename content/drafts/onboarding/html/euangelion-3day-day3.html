@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EUANGELION — Day 3: What You'll Find Here</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --tehom: #1A1612;
+      --scroll: #F7F3ED;
+      --gold: #C19A6B;
+      --secondary: rgba(26, 22, 18, 0.5);
+      --font-body: 'DM Sans', sans-serif;
+      --font-display: 'Playfair Display', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 17px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--tehom);
+      background: var(--scroll);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Hero - Horizontal split */
+    .hero {
+      min-height: 60vh;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      border-bottom: 1px solid rgba(26,22,18,0.1);
+    }
+
+    .hero-left {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid rgba(26,22,18,0.1);
+    }
+
+    .masthead-logo {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .day-number {
+      font-family: var(--font-display);
+      font-size: 12rem;
+      font-weight: 400;
+      line-height: 0.85;
+      color: var(--gold);
+      margin: 2rem 0;
+    }
+
+    .hero-meta {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--secondary);
+    }
+
+    .hero-right {
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title em { font-style: italic; }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 500px;
+      color: var(--secondary);
+    }
+
+    /* Principles - Magazine layout */
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-bottom: 1px solid rgba(26,22,18,0.1);
+    }
+
+    .principle {
+      padding: 3rem 2rem;
+      border-right: 1px solid rgba(26,22,18,0.1);
+    }
+    .principle:last-child { border-right: none; }
+
+    .principle-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      opacity: 0.6;
+    }
+
+    .principle-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .principle-desc {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--secondary);
+    }
+
+    /* Greek Section */
+    .greek-section {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      min-height: 50vh;
+    }
+
+    .greek-left {
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .greek-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .greek-content p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 1.5em;
+      max-width: 520px;
+    }
+    .greek-content em { font-style: italic; }
+
+    .greek-word-inline {
+      font-style: normal;
+      color: var(--secondary);
+    }
+
+    .greek-right {
+      background: var(--tehom);
+      color: var(--scroll);
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .greek-word {
+      font-size: 4rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .greek-trans {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .greek-meaning {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
+    /* Benediction */
+    .benediction {
+      padding: 6rem 2rem;
+      text-align: center;
+      background: linear-gradient(to bottom, var(--scroll) 0%, rgba(193, 154, 107, 0.08) 100%);
+    }
+
+    .benediction-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .benediction-text {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-style: italic;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .benediction-welcome {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .benediction-welcome strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-top: 0.5rem;
+    }
+
+    /* Interactive */
+    .interactive-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .interactive-left {
+      background: var(--tehom);
+      color: var(--scroll);
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .interactive-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .interactive-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .breath-line {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
+    }
+    .breath-direction {
+      font-weight: 600;
+      color: var(--gold);
+      min-width: 65px;
+    }
+    .breath-text {
+      font-style: italic;
+      opacity: 0.85;
+    }
+
+    .interactive-right {
+      background: rgba(193, 154, 107, 0.08);
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .reflection-title {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .reflection ol { list-style: none; counter-reset: q; }
+    .reflection li {
+      counter-increment: q;
+      margin-bottom: 1.5rem;
+      padding-left: 2.5rem;
+      position: relative;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .reflection li::before {
+      content: counter(q);
+      position: absolute;
+      left: 0;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--gold);
+      top: -0.2rem;
+    }
+
+    /* Footer */
+    .page-footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(26,22,18,0.08);
+    }
+    .footer-progress {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+    .footer-next {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 1000px) {
+      .principles { grid-template-columns: repeat(3, 1fr); }
+      .principle:nth-child(4), .principle:nth-child(5) { border-top: 1px solid rgba(26,22,18,0.1); }
+    }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { border-right: none; border-bottom: 1px solid rgba(26,22,18,0.1); }
+      .day-number { font-size: 7rem; }
+      .hero-title { font-size: 2.5rem; }
+      .principles { grid-template-columns: 1fr; }
+      .principle { border-right: none; border-bottom: 1px solid rgba(26,22,18,0.1); }
+      .greek-section { grid-template-columns: 1fr; }
+      .interactive-section { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-left">
+      <span class="masthead-logo">EUONGELION</span>
+      <div class="day-number">03</div>
+      <span class="hero-meta">Day 3 of 3</span>
+    </div>
+    <div class="hero-right">
+      <p class="hero-label">A Different Kind of Depth</p>
+      <h1 class="hero-title">What You'll<br>Find <em>Here</em></h1>
+      <p class="hero-subtitle">You've probably tried other things. Bible apps with guilt-inducing streaks. Devotionals that felt like greeting cards. We're doing this differently.</p>
+    </div>
+  </section>
+
+  <section class="principles">
+    <div class="principle">
+      <div class="principle-number">01</div>
+      <h3 class="principle-title">Deep, Not Wide</h3>
+      <p class="principle-desc">One passage. One truth. One word—unpacked until it changes you.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-number">02</div>
+      <h3 class="principle-title">Original Languages</h3>
+      <p class="principle-desc">Hebrew and Greek carry meanings English sometimes flattens.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-number">03</div>
+      <h3 class="principle-title">Stories</h3>
+      <p class="principle-desc">Narratives that make ancient truths tangible and present.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-number">04</div>
+      <h3 class="principle-title">Jesus-Centered</h3>
+      <p class="principle-desc">Every passage finds its fulfillment in the carpenter who rose.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-number">05</div>
+      <h3 class="principle-title">Response</h3>
+      <p class="principle-desc">Breath prayers, reflection, journaling. Presence, not perfection.</p>
+    </div>
+  </section>
+
+  <section class="greek-section">
+    <div class="greek-left">
+      <p class="greek-label">The Greek Word for "Messenger"</p>
+      <div class="greek-content">
+        <p>The word <em>euangelion</em> shares its root with <em>angelos</em> <span class="greek-word-inline">(ἄγγελος)</span>—the word we translate as "angel."</p>
+        <p>An <em>angelos</em> isn't a chubby baby with wings. It's a messenger. Someone sent with news.</p>
+        <p>So <em>euangelion</em> literally means "good message"—and the one who brings it is an <em>euangelistes</em>, a good-news-bringer.</p>
+      </div>
+    </div>
+    <div class="greek-right">
+      <div class="greek-word">ἄγγελος</div>
+      <div class="greek-trans">angelos</div>
+      <div class="greek-meaning">Messenger • One Sent</div>
+    </div>
+  </section>
+
+  <section class="benediction">
+    <p class="benediction-label">A Benediction</p>
+    <p class="benediction-text">May the euangelion sink deep. May you discover that the war you've been fighting is already won. May peace that surpasses understanding guard your heart and mind.</p>
+    <p class="benediction-welcome">
+      Welcome to EUONGELION. Welcome to the good news.
+      <strong>Welcome home.</strong>
+    </p>
+  </section>
+
+  <section class="interactive-section">
+    <div class="interactive-left">
+      <p class="interactive-label">Breath Prayer</p>
+      <h3 class="interactive-title">Carry This With You</h3>
+      <div class="breath-line">
+        <span class="breath-direction">Inhale:</span>
+        <span class="breath-text">"Here I am, Lord."</span>
+      </div>
+      <div class="breath-line">
+        <span class="breath-direction">Exhale:</span>
+        <span class="breath-text">"Send me."</span>
+      </div>
+    </div>
+    <div class="interactive-right">
+      <p class="reflection-title">Reflection</p>
+      <div class="reflection">
+        <ol>
+          <li>Which aspect—depth, languages, stories, Jesus-centeredness—are you most drawn to?</li>
+          <li>What would "showing up" look like for you in this season?</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    <p class="footer-progress">Day 3 of 3 — EUONGELION</p>
+    <p class="footer-next">Your journey begins now.</p>
+  </footer>
+
+</body>
+</html>

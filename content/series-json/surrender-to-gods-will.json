@@ -1,0 +1,1081 @@
+{
+  "series": {
+    "id": "surrender-to-gods-will",
+    "title": "Surrender to God's Will",
+    "subtitle": "Obedience in Love",
+    "pathway": "Sleep",
+    "coreQuestion": "What does it truly mean to pray 'not my will, but yours be done'?",
+    "booksOfFocus": ["Luke", "Matthew", "John", "Philippians", "Jonah"],
+    "totalDays": 6,
+    "heroImage": null,
+    "soulAuditKeywords": [
+      "surrender",
+      "control",
+      "obedience",
+      "will",
+      "submission",
+      "letting go",
+      "trust",
+      "freedom",
+      "autonomy",
+      "independence",
+      "self-will",
+      "stubborn",
+      "resistant",
+      "yielding"
+    ]
+  },
+  "days": [
+    {
+      "number": 1,
+      "title": "The Agony of Surrender",
+      "anchorVerse": "Luke 22:42",
+      "theme": "True surrender isn't easy, but it's the pathway to God's greatest purposes",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Luke 22:42",
+            "translation": "NIV",
+            "text": "Father, if you are willing, take this cup from me; yet not my will, but yours be done.",
+            "emphasis": ["not my will", "but yours be done"],
+            "greekOriginal": null
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "θέλημα",
+            "transliteration": "thelema",
+            "pronunciation": "THEH-lay-mah",
+            "meaning": "will, desire, purpose",
+            "rootMeaning": "This isn't just a passive wish; it's an active intention. Jesus is contrasting His human desire to avoid suffering with the Father's active, redemptive purpose.",
+            "usageNote": "In Luke 22:42, Jesus is saying, 'My human desire (boulomai) is to avoid this, but I choose your divine purpose (thelema).'",
+            "relatedWords": [
+              {
+                "word": "βούλομαι (boulomai)",
+                "reference": "A more passive human desire or wish, what we might want to happen"
+              }
+            ],
+            "strongsNumber": "G2307"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Garden of Gethsemane",
+            "body": "The scene in the Garden of Gethsemane is one of the most profound in all of Scripture. It's a window into the raw humanity of Jesus and the cosmic significance of His surrender.\n\nJesus' prayer, 'take this cup from me,' is not a sign of weakness or doubt. It is a sign of his full humanity. He was not a divine robot, but a man who felt real, gut-wrenching anguish at the thought of the physical and spiritual suffering that awaited him. The 'cup' represented the full weight of God's wrath against sin, which He, the sinless one, was about to drink on our behalf. His sweat falling like drops of blood (a medical condition known as hematidrosis) underscores the extreme stress He was under.\n\nThe phrase 'not my will, but yours be done' is the hinge upon which human history turns. In the first garden, Adam chose his own will over God's, plunging humanity into sin and separation. In this garden, the second Adam, Jesus, chooses the Father's will over His own, paving the way for our redemption. This is the ultimate act of loving obedience.",
+            "keyInsight": "Jesus' struggle in the garden gives us permission to be honest with God about our own struggles. It shows us that surrender is not the absence of desire, but the choice to align our desires with God's."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "Jim Elliot: Surrender unto Death",
+            "body": "Jim Elliot, a young missionary to Ecuador in the 1950s, wrestled deeply with God's will for his life. He felt a strong call to reach the unreached Huaorani people, a tribe known for their violence. Leaving behind his family, his home, and the woman he loved, Olive, felt like a monumental sacrifice. His journals are filled with prayers of surrender, asking God to align his desires with the divine will, even if it led to hardship.\n\nIn 1956, Jim and four other missionaries made contact with the Huaorani. Initially, the encounters were friendly. But then, for reasons still debated, the tribesmen turned on them. All five men were speared to death on a sandy riverbank. From a human perspective, it was a tragic and senseless loss. Five promising lives cut short. A mission seemingly failed.\n\nBut that act of surrender in the face of death was not the end of the story. The widows of the slain missionaries, including Jim's wife Elisabeth Elliot, later returned to live with the Huaorani people, demonstrating a forgiveness that the tribe could not comprehend. This act of love, born from the ultimate surrender of their husbands, eventually led to the conversion of many in the tribe. The very man who speared Jim Elliot became a pastor. Jim's agonizing surrender, which cost him his life, ultimately fulfilled the will of God in a way he could never have imagined.",
+            "connectionToTheme": "Our surrender to God's will is not about understanding the outcome. It's about trusting the One who holds the outcome in His hands. The greatest agony can lead to the greatest glory when we yield our will to His."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "Echoes of Abraham and Isaac",
+            "body": "Jesus' prayer echoes the story of Abraham and Isaac on Mount Moriah. Abraham was willing to sacrifice his beloved son in obedience to God's command, trusting that God would provide. In Gethsemane, the Father is willing to sacrifice His beloved Son, and the Son willingly goes to the cross, trusting in the Father's plan. The difference is that this time, the ram in the thicket is not a substitute; the Son is the substitute for us.",
+            "historicalContext": "Ecclesiastes belongs to the Wisdom Literature (Job, Psalms, Proverbs, Ecclesiastes, Song of Songs), which addresses life's practical and philosophical questions through observation and reflection rather than Law or Prophecy.",
+            "fascinatingFact": "The Hebrew word 'chaphets' means 'to delight in' or 'to desire.' God's will (thelema) is not arbitrary or harsh; it is rooted in His good pleasure and what He delights in. Psalm 40:8, a messianic psalm, says, 'I delight to do your will, O my God; your law is within my heart.'"
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "In the Garden of Gethsemane, Jesus faced the ultimate test of surrender—choosing the Father's will over His own human desire to avoid suffering.",
+            "modernApplication": "We face our own Gethsemane moments—times when God's will conflicts with our desires. True surrender is choosing His purpose over our comfort.",
+            "connectionPoint": "The same struggle between human desire and divine purpose that Jesus experienced is the struggle we face daily in our own lives.",
+            "newTestamentEcho": "Hebrews 5:8 says, 'Son though he was, he learned obedience from what he suffered.'"
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "Why is true surrender so often accompanied by agony?",
+            "additionalQuestions": [
+              "What is the 'cup' in your life right now that you are asking God to take away?",
+              "In what specific area of your life are you resisting God's will? What are you afraid of?",
+              "What would it look like, in a practical sense, for you to pray 'not my will, but yours be done' in that situation today?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "Father, I confess that I often want my own will. Give me the strength to pray as Jesus did: not my will, but yours be done. Help me trust that your purpose is greater than my comfort.",
+            "type": "personal",
+            "posture": "confession"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "I will identify one area where I am resisting God's will and consciously surrender it to Him today, praying 'not my will, but yours be done.'",
+            "leavingAtCross": [
+              "My fear of what surrender might cost me",
+              "My insistence on understanding God's plan before obeying",
+              "My belief that my comfort is more important than God's purpose"
+            ],
+            "receivingFromCross": [
+              "The courage to surrender even when it's agonizing",
+              "Trust that God's purposes are greater than my pain",
+              "The example of Jesus who surrendered everything for me"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "What part of Jesus' agony in Gethsemane speaks most deeply to your current situation?",
+              "Have you ever experienced a moment where surrender felt like agony but led to breakthrough?",
+              "How does knowing that Jesus struggled with surrender help you in your own struggles?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one area where you are currently struggling to surrender to God's will",
+              "Ask each other: What are you afraid would happen if you fully surrendered?",
+              "Pray together the prayer of Jesus: 'Not my will, but yours be done'"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "Hebrews 5:7-8",
+                "text": "During the days of Jesus' life on earth, he offered up prayers and petitions with fervent cries and tears to the one who could save him from death."
+              },
+              {
+                "reference": "Psalm 40:8",
+                "text": "I delight to do your will, O my God; your law is within my heart."
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "Through Gates of Splendor",
+                "author": "Elisabeth Elliot",
+                "note": "The story of Jim Elliot and the five missionaries who gave their lives in Ecuador"
+              }
+            ]
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "Jesus Christ",
+            "title": "The Ultimate Surrenderer",
+            "description": "In the Garden of Gethsemane, Jesus demonstrated what perfect surrender looks like. Though fully God, He was also fully human, experiencing real anguish at the prospect of the cross. Yet He chose the Father's will over His own.",
+            "keyQuote": "Not my will, but yours be done.",
+            "lessonForUs": "If Jesus, the Son of God, had to wrestle with surrender, we should expect to struggle too. But His example shows us that surrender is possible and leads to resurrection."
+          }
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "The Love That Surrenders",
+      "anchorVerse": "Matthew 22:36-40",
+      "theme": "Obedience to God flows naturally from a heart overwhelmed by His love",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Matthew 22:36-40",
+            "translation": "NIV",
+            "text": "Teacher, which is the greatest commandment in the Law? Jesus replied: 'Love the Lord your God with all your heart and with all your soul and with all your mind.' This is the first and greatest commandment. And the second is like it: 'Love your neighbor as yourself.'",
+            "emphasis": [
+              "all your heart",
+              "all your soul",
+              "all your mind",
+              "Love your neighbor"
+            ],
+            "hebrewOriginal": null
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "hebrew",
+            "word": "לֵב",
+            "transliteration": "lev",
+            "pronunciation": "LEHV",
+            "meaning": "heart",
+            "rootMeaning": "In Hebrew thought, the heart is not just the seat of emotion, but the center of the entire person—intellect, will, and emotions. To love God with all your heart means to surrender your entire being to Him.",
+            "usageNote": "The Great Commandment is a call to total, all-encompassing love and surrender.",
+            "relatedWords": [
+              {
+                "word": "נֶפֶשׁ (nephesh)",
+                "reference": "Soul/Life - the animating principle of our being, the whole person"
+              }
+            ],
+            "strongsNumber": "H3820"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Heart of the Law",
+            "body": "When Jesus was asked for the greatest commandment, He didn't point to a rule or a regulation. He pointed to a relationship. His answer reveals that the entire law, all 613 commands in the Old Testament, can be summed up in one word: love. This reframes obedience from a legalistic duty to a relational response.\n\nJesus was quoting the Shema, from Deuteronomy 6:4-5: 'Hear, O Israel: The Lord our God, the Lord is one. Love the Lord your God with all your heart and with all your soul and with all your strength.' This was the central prayer of Judaism, recited every morning and evening. It was the bedrock of their covenant relationship with God.\n\nFirst John 4:19 says, 'We love because he first loved us.' Our love for God is a response to His overwhelming, unconditional love for us. This is the engine of obedience. When we are secure in His love, we are free to surrender our will to His, not out of fear of punishment, but out of a desire to please the One we love.",
+            "keyInsight": "You cannot claim to love God, whom you cannot see, if you do not love your neighbor, whom you can see. Our surrender to God's will is lived out in our relationships with others."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Ten Boom Family: Love-Driven Obedience",
+            "body": "Corrie ten Boom and her family were watchmakers in Haarlem, Holland, during World War II. As Christians, they believed that their love for God compelled them to love their neighbors, and they saw the Jewish people as their neighbors. When the Nazis began rounding up Jews, the ten Booms didn't hesitate. They built a secret room in their home to hide Jews and members of the Dutch resistance.\n\nThis was not a one-time act of bravery; it was a daily surrender. Every knock on the door, every German soldier on the street, was a test of their commitment. They knew that if they were caught, they would face imprisonment or death. Yet, for years, they chose to risk their lives for others, motivated by their love for God and His people.\n\nEventually, they were betrayed and arrested. Corrie and her sister Betsie were sent to the Ravensbruck concentration camp. There, in the midst of unimaginable suffering, their love-driven obedience continued. They held secret Bible studies, shared their meager rations, and forgave their captors. Betsie died in the camp, but Corrie survived. Her life after the war was a testimony to the power of a love that surrenders all.",
+            "connectionToTheme": "The ten Booms' story shows us that the greatest acts of surrender are not born from a sense of duty, but from a heart captivated by love. When we truly love God, obedience is no longer a chore; it is the natural expression of our relationship with Him."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "The Covenantal Context",
+            "body": "The Bible is the story of God making covenants with His people—a series of promises and commitments that bind them together. From Noah to Abraham to Moses to David, these covenants were all about relationship. The New Covenant, sealed in the blood of Jesus, is the ultimate expression of this. God doesn't just give us a set of rules; He gives us Himself. Our obedience is our side of the covenant, our faithful response to His faithfulness.",
+            "historicalContext": "The Shema (Deuteronomy 6:4-5) was the central prayer of Judaism, recited every morning and evening. It was the bedrock of their covenant relationship with God.",
+            "fascinatingFact": "Jesus immediately connects loving God to loving our neighbor. The two are inseparable. The law of love covers both vertical (God) and horizontal (neighbor) relationships."
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "The greatest commandment is not about rules but about relationship—loving God with our whole being and loving our neighbor as ourselves.",
+            "modernApplication": "In a world that often sees religion as a set of restrictions, we are called to demonstrate that Christianity is fundamentally about love—love received and love given.",
+            "connectionPoint": "The same love that motivated the ten Boom family to risk everything is available to us today when we understand that obedience flows from love.",
+            "newTestamentEcho": "1 John 4:19 - 'We love because he first loved us.'"
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "How does viewing obedience as an act of love, rather than a duty, change your perspective?",
+            "additionalQuestions": [
+              "Who is a 'neighbor' in your life that is difficult to love? How can you show them God's love this week?",
+              "In what ways have you been treating God's commands as a checklist rather than an invitation to a deeper relationship?",
+              "What is one practical way you can express your love for God today, outside of your regular spiritual disciplines?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "Lord, I confess that I often see your commands as burdens. Help me to see them as invitations to love you more deeply. Teach me to obey not out of obligation, but out of a heart overflowing with love for you.",
+            "type": "personal",
+            "posture": "confession"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "I will identify one person who is difficult for me to love and intentionally show them God's love this week.",
+            "leavingAtCross": [
+              "My view of God's commands as burdensome rules",
+              "My tendency to love selectively rather than sacrificially",
+              "My fear of what love might cost me"
+            ],
+            "receivingFromCross": [
+              "A heart that sees obedience as the natural response to being loved",
+              "The power to love even difficult people",
+              "The freedom that comes from loving without conditions"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "When have you seen someone's love for God expressed through costly obedience?",
+              "How has understanding the Great Commandment changed your perspective on following God's will?",
+              "What would change in your daily life if you truly believed that all of God's commands are invitations to love?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one way you have been treating obedience as duty rather than love",
+              "Identify one 'neighbor' you need to love better and commit to a specific action",
+              "Pray together for hearts that overflow with love for God and others"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "Deuteronomy 6:4-5",
+                "text": "Hear, O Israel: The Lord our God, the Lord is one. Love the Lord your God with all your heart and with all your soul and with all your strength."
+              },
+              {
+                "reference": "1 John 4:19-21",
+                "text": "We love because he first loved us. Whoever claims to love God yet hates a brother or sister is a liar."
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "The Hiding Place",
+                "author": "Corrie ten Boom",
+                "note": "The story of the ten Boom family's love-driven obedience during WWII"
+              }
+            ]
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "Corrie ten Boom",
+            "title": "The Watchmaker Who Hid Jews",
+            "description": "Corrie ten Boom and her family risked everything to hide Jewish refugees during World War II. Their love for God compelled them to love their neighbors, even at the cost of their freedom and lives.",
+            "keyQuote": "There is no pit so deep that God's love is not deeper still.",
+            "lessonForUs": "Love-driven obedience may be costly, but it is the most powerful witness to the reality of God's love in our lives."
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "The Freedom in Surrender",
+      "anchorVerse": "John 8:36",
+      "theme": "True freedom comes not from doing whatever we want, but from being liberated to become who we were created to be",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "John 8:36",
+            "translation": "NIV",
+            "text": "So if the Son sets you free, you will be free indeed.",
+            "emphasis": ["free indeed"],
+            "greekOriginal": null
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "ἐλεύθερος",
+            "transliteration": "eleutheros",
+            "pronunciation": "eh-LOO-theh-ros",
+            "meaning": "free, not a slave",
+            "rootMeaning": "This freedom isn't just political or social; it's a spiritual state of being liberated from the bondage of sin and self.",
+            "usageNote": "In the Roman world, a slave could be set free through a process called 'manumission.' Paul uses this imagery in 1 Corinthians 6:20, saying we were 'bought at a price.' Our 'slavery' to Christ is our perfect freedom.",
+            "relatedWords": [
+              {
+                "word": "δοῦλος (doulos)",
+                "reference": "Slave/servant - what we were before Christ set us free"
+              }
+            ],
+            "strongsNumber": "G1658"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Paradox of Freedom",
+            "body": "The modern world defines freedom as autonomy—the ability to choose your own path without external interference. But both ancient philosophy and modern psychology reveal the flaws in this understanding.\n\nPhilosopher Isaiah Berlin distinguished between two types of liberty: 'negative liberty' (freedom from interference) and 'positive liberty' (freedom for self-mastery and purpose). The world clamors for 'freedom from' rules and authority. But this often leads to what psychologists call 'the paradox of choice'—anxiety and paralysis in the face of too many options. Christianity offers 'freedom for'—the power to become the person you were created to be.\n\nThe Bible's diagnosis of the human condition is that we are slaves to sin (John 8:34). This isn't just a theological concept; it's a psychological reality. Addiction, compulsive behaviors, and self-destructive patterns are all evidence of a will that is not truly free.",
+            "keyInsight": "True freedom is not the absence of all constraints, but the presence of the right ones. By surrendering to the loving will of God, we are not losing our freedom; we are finding it for the first time."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "Augustine: From Slave to Free",
+            "body": "Augustine of Hippo, one of the most influential theologians in history, spent his youth and early adulthood as a slave to his own passions. He was brilliant, ambitious, and driven by a desire for worldly success and sensual pleasure. In his famous autobiography, Confessions, he describes his inner turmoil: 'I was in bondage to a chain of my own making.' He knew the truth and was drawn to it, but he felt powerless to change. His famous prayer from this time was, 'Lord, grant me chastity and continence, but not yet.'\n\nHe was trapped. The more he tried to free himself through his own willpower, the more entangled he became. He was a slave to his own 'freedom'—the freedom to do whatever he wanted, which had led him into a prison of addiction and despair.\n\nThe breakthrough came when he finally surrendered. Sitting in a garden in Milan, weeping over his spiritual impotence, he heard a child's voice chanting, 'Tolle, lege; tolle, lege' ('Take up and read'). He picked up a scroll of the apostle Paul's letters and his eyes fell on Romans 13:13-14. In that moment, Augustine stopped fighting and surrendered his will to Christ. He realized that true freedom wasn't the power to do anything he wanted, but the power to do what is right.",
+            "connectionToTheme": "We think freedom is the absence of constraints. But true freedom is being constrained by the right things. Surrendering to God's will frees us from the slavery of our own broken desires."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "The Train Track Analogy",
+            "body": "A train is only 'free' when it is on the tracks. If it 'frees' itself from the tracks, it is no longer a train; it is a wreck. The tracks don't limit the train's freedom; they make its freedom possible. In the same way, God's will and commands are not meant to restrict us, but to guide us into the life of purpose and flourishing for which we were designed.",
+            "historicalContext": "Ancient philosophers like Plato and Aristotle understood that freedom wasn't about indulging every desire, but about having a well-ordered will, where reason governs the passions.",
+            "fascinatingFact": "In some forms of Roman manumission, a third party would pay the price to a temple, and the slave would be 'sold' to the god of that temple. They were now the 'slave' of that god, which meant no human could ever enslave them again. This is a powerful picture of our relationship with Christ."
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "Jesus promised that the Son would set us free, and we would be 'free indeed'—a freedom that comes through surrender, not autonomy.",
+            "modernApplication": "In a culture that worships personal autonomy and self-determination, we are called to demonstrate the paradox that true freedom comes through submission to Christ.",
+            "connectionPoint": "Augustine's struggle with his own passions is the same struggle we face with our addictions, compulsions, and self-destructive patterns. The solution is the same: surrender.",
+            "newTestamentEcho": "Romans 6:18 - 'You have been set free from sin and have become slaves to righteousness.'"
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "How can surrendering your will to someone else possibly make you more free?",
+            "additionalQuestions": [
+              "In what areas of your life are you pursuing 'freedom from' constraints, and has it led to true fulfillment?",
+              "What 'tracks' (divine commands or principles) have you been resisting? How might they actually be the path to your freedom?",
+              "Describe what 'freedom for' a life of love and purpose would look like for you, in practical terms."
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "Lord Jesus, I want to be 'free indeed.' Break the chains of sin and self-will that entangle me. Teach me that true freedom is found not in doing what I want, but in becoming the person you created me to be.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "I will identify one area where I have been seeking 'freedom from' God's will and instead embrace 'freedom for' His purposes in that area.",
+            "leavingAtCross": [
+              "The illusion that autonomy equals freedom",
+              "The chains of my own making that bind me to destructive patterns",
+              "My resistance to the 'tracks' that God has designed for my flourishing"
+            ],
+            "receivingFromCross": [
+              "True freedom—the power to become who I was created to be",
+              "Liberation from the slavery of sin and self",
+              "The peace that comes from a well-ordered will under Christ's lordship"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "What areas of your life have you discovered that 'freedom from' constraints actually led to bondage?",
+              "How has surrendering to God's will brought unexpected freedom?",
+              "What does the train track analogy reveal about God's commands in your life?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one area where you are still a slave to your own 'freedom'",
+              "Discuss: What would it look like to embrace God's 'tracks' in that area?",
+              "Pray for each other to experience the freedom that comes through surrender"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "John 8:34",
+                "text": "Jesus replied, 'Very truly I tell you, everyone who sins is a slave to sin.'"
+              },
+              {
+                "reference": "Romans 7:15",
+                "text": "I do not do the good I want to do, but the evil I do not want to do—this I keep on doing."
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "Confessions",
+                "author": "Augustine of Hippo",
+                "note": "Augustine's spiritual autobiography detailing his journey from bondage to freedom"
+              }
+            ]
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "Augustine of Hippo",
+            "title": "The Former Slave to Passion",
+            "description": "Augustine was a brilliant young man enslaved to his own desires. His journey from bondage to freedom through surrender to Christ became one of the most influential testimonies in Christian history.",
+            "keyQuote": "Lord, grant me chastity and continence, but not yet.",
+            "lessonForUs": "The more we try to free ourselves through our own willpower, the more entangled we become. True freedom comes only through surrender to Christ."
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "The Surrendered Community",
+      "anchorVerse": "Philippians 2:3-4",
+      "theme": "Individual surrender to God's will transforms into community life that witnesses to the world",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Philippians 2:3-4",
+            "translation": "NIV",
+            "text": "Do nothing out of selfish ambition or vain conceit. Rather, in humility value others above yourselves, not looking to your own interests but each of you to the interests of the others.",
+            "emphasis": [
+              "in humility",
+              "value others above yourselves",
+              "interests of the others"
+            ],
+            "greekOriginal": null
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "ταπεινοφροσύνη",
+            "transliteration": "tapeinophrosune",
+            "pronunciation": "ta-pi-no-fro-SOO-nay",
+            "meaning": "humility, lowliness of mind",
+            "rootMeaning": "In the proud, honor-obsessed Roman world, this was a contemptible word, suggesting the groveling of a slave. The gospel turned this value system upside down, making humility the cornerstone of community.",
+            "usageNote": "Paul is calling the church to have the same 'mindset' (phroneo) as Christ. This mindset is defined by tapeinophrosune—humility.",
+            "relatedWords": [
+              {
+                "word": "φρονέω (phroneo)",
+                "reference": "To think, to have a mindset—the attitude Christ calls us to adopt"
+              }
+            ],
+            "strongsNumber": "G5012"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "Living the Surrendered Life Together",
+            "body": "Surrender is not a solo sport. While it begins with a personal decision to yield our will to God, it is designed to be lived out in the context of a loving, accountable community. The New Testament is filled with 'one another' commands that are impossible to obey in isolation.\n\nEphesians 5:21 calls us to 'submit to one another out of reverence for Christ.' This is a revolutionary idea. It means that in the body of Christ, there is no room for pulling rank or asserting our own rights. We are all called to adopt a posture of submission, seeking the good of others before our own.\n\nGalatians 6:2 commands us to 'carry each other's burdens, and in this way you will fulfill the law of Christ.' A surrendered community is a place where we don't have to pretend to have it all together. It's a safe place to confess our struggles, knowing that others will come alongside us not to judge, but to help carry the load.",
+            "keyInsight": "Jesus said, 'By this everyone will know that you are my disciples, if you love one another.' When a watching world sees a community of people who genuinely love and serve one another, it is a powerful witness to the reality of the gospel."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Early Church: Radical Generosity",
+            "body": "In the aftermath of the day of Pentecost, the early church in Jerusalem was born. This wasn't just a collection of individuals who believed the same things; it was a radical new kind of community. The book of Acts describes it this way: 'All the believers were together and had everything in common. They sold property and possessions to give to anyone who had need' (Acts 2:44-45).\n\nImagine that. In a world defined by social status, wealth, and personal property, these first Christians were voluntarily surrendering their individual rights and possessions for the good of the community. A wealthy landowner would sell a field and lay the money at the apostles' feet, not for personal recognition, but to ensure a poor widow in the fellowship had enough to eat. This wasn't communism; it was a spontaneous, love-driven outpouring of collective surrender.\n\nThis radical generosity was so counter-cultural that it had a profound impact on the surrounding city. Acts 2:47 says they were 'enjoying the favor of all the people. And the Lord added to their number daily those who were being saved.' The world saw a community so transformed by love and humility that they were drawn to the source of that transformation.",
+            "connectionToTheme": "Our individual surrender to God's will is incomplete until it is lived out in a community of mutual surrender. The true test of our humility is not how we act in our private prayer time, but how we treat the people around us."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "Speaking the Truth in Love",
+            "body": "Part of loving one another is being willing to speak hard truths when necessary (Ephesians 4:15). A surrendered community is not a place for superficial niceness, but for authentic relationships where we are committed to each other's spiritual growth. This requires the surrender of our fear of conflict and our desire to be liked, and the courage to have difficult conversations for the sake of a brother or sister.",
+            "historicalContext": "The early church's radical generosity was so counter-cultural in the Roman world that it became one of the primary drivers of the church's explosive growth.",
+            "fascinatingFact": "The word 'fellowship' (koinonia) in Greek means much more than casual friendship—it implies a deep sharing of life, resources, and purpose."
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "The early church demonstrated mutual surrender through radical generosity, bearing one another's burdens, and valuing others above themselves.",
+            "modernApplication": "In an individualistic culture, the church is called to be a counter-cultural community where surrender to God is lived out through surrender to one another.",
+            "connectionPoint": "The same Spirit that empowered the early church to live in radical community is available to us today.",
+            "newTestamentEcho": "Acts 4:32 - 'All the believers were one in heart and mind. No one claimed that any of their possessions was their own, but they shared everything they had.'"
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "When was the last time you intentionally put someone else's interests before your own, at a real cost to yourself?",
+            "additionalQuestions": [
+              "Who in your community (family, church, small group) is carrying a heavy burden right now? What is one specific, practical thing you can do to help carry it?",
+              "Is there a difficult conversation you need to have with a brother or sister in Christ?",
+              "How does your current involvement in a Christian community challenge your desire for personal autonomy and self-interest?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "Lord, forgive me for my selfish ambition. Crush the pride in my heart that seeks my own honor. Give me the mind of Christ, who humbled himself for my sake, so that I can truly value others above myself.",
+            "type": "personal",
+            "posture": "confession"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "I will identify one person in my community who is carrying a heavy burden and take a specific, practical action to help carry it this week.",
+            "leavingAtCross": [
+              "My selfish ambition and vain conceit",
+              "My tendency to prioritize my own interests over others",
+              "My resistance to authentic, vulnerable community"
+            ],
+            "receivingFromCross": [
+              "The mind of Christ—humility that values others above self",
+              "The power to bear one another's burdens",
+              "The joy of being part of a surrendered community"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "What examples of surrendered community have you witnessed that made you want to be part of it?",
+              "How can your Christian community better demonstrate mutual surrender?",
+              "What would change in your church if everyone practiced Philippians 2:3-4?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one way you can put the interests of others before your own this week",
+              "Identify someone in your community who needs help bearing a burden",
+              "Commit to having one difficult but necessary conversation in love"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "Acts 2:44-47",
+                "text": "All the believers were together and had everything in common. They sold property and possessions to give to anyone who had need."
+              },
+              {
+                "reference": "Galatians 6:2",
+                "text": "Carry each other's burdens, and in this way you will fulfill the law of Christ."
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "Life Together",
+                "author": "Dietrich Bonhoeffer",
+                "note": "A classic exploration of Christian community and mutual surrender"
+              }
+            ]
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "The Early Church in Acts",
+            "title": "The First Surrendered Community",
+            "description": "The early church in Jerusalem after Pentecost demonstrated what happens when individual surrender becomes communal—radical generosity, deep fellowship, and explosive growth.",
+            "keyQuote": "All the believers were one in heart and mind.",
+            "lessonForUs": "The surrendered life is not meant to be lived alone. Our love for one another is the most compelling evidence that our faith is real."
+          }
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "The Cost of Non-Surrender",
+      "anchorVerse": "Matthew 16:25",
+      "theme": "Running from God's will doesn't lead to safety; it leads to a storm",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Matthew 16:25",
+            "translation": "NIV",
+            "text": "For whoever wants to save their life will lose it, but whoever loses their life for me will find it.",
+            "emphasis": [
+              "save their life will lose it",
+              "loses their life for me will find it"
+            ],
+            "greekOriginal": null
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "ψυχή",
+            "transliteration": "psyche",
+            "pronunciation": "psoo-KHAY",
+            "meaning": "soul, life, self",
+            "rootMeaning": "This is the very essence of a person. Jesus is saying that the attempt to protect and preserve our 'self' at all costs is the very thing that will destroy it.",
+            "usageNote": "The paradox is striking: the path to finding your true self is through losing it for Christ's sake.",
+            "relatedWords": [
+              {
+                "word": "σῴζω (sozo)",
+                "reference": "To save—the very thing we try to do for ourselves that only Christ can do"
+              }
+            ],
+            "strongsNumber": "G5590"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Idol of the Self",
+            "body": "At its core, the refusal to surrender is an act of idolatry. We are placing something—our comfort, our plans, our reputation, our safety—on the throne of our lives, a place that belongs to God alone. In modern Western culture, the primary idol is the Self.\n\nContemporary culture tells us that the purpose of life is to find your true self and express it authentically. This philosophy, called 'expressive individualism,' elevates personal feelings and desires to the level of ultimate truth. Any external authority—be it tradition, community, or God—that seeks to constrain the self is seen as oppressive.\n\nThe gospel message is a direct assault on this idol. It says that your heart is deceitful (Jeremiah 17:9), that your old self must be crucified with Christ (Romans 6:6), and that you must deny yourself to follow Him (Luke 9:23). The call to surrender is a call to dethrone the self and enthrone Christ.",
+            "keyInsight": "A culture that worships the self will inevitably produce loneliness, anxiety, and division. The rising rates of mental illness and social fragmentation are the rotten fruit of the idol of self."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "Jonah: Running from God's Will",
+            "body": "The story of Jonah is a classic tale of non-surrender. God gave him a clear command: 'Go to the great city of Nineveh and preach against it, because its wickedness has come up before me' (Jonah 1:2). Nineveh was the capital of Assyria, a brutal and pagan empire that was Israel's sworn enemy. The command was distasteful and dangerous.\n\nJonah's response was immediate and decisive: he ran. He went down to Joppa, found a ship heading for Tarshish—the opposite direction of Nineveh—and paid the fare to get as far away from God's will as possible. He was trying to save his life, his comfort, and his nationalistic prejudice.\n\nBut the cost of his non-surrender was catastrophic. A violent storm threatened to tear the ship apart. The pagan sailors, terrified for their lives, were casting lots and praying to their gods while Jonah slept in the hold. His attempt to save his own life was now endangering the lives of everyone around him. When he was finally discovered and thrown overboard, the storm ceased, but Jonah was swallowed by a great fish.\n\nIt was only in that place of utter darkness and desperation that Jonah finally surrendered, praying, 'Salvation comes from the Lord' (Jonah 2:9).",
+            "connectionToTheme": "Running from God's will doesn't lead to safety; it leads to a storm. The cost of non-surrender is always higher than the cost of obedience."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "The Hebrew Meaning of Salvation",
+            "body": "The Hebrew word for 'to save,' yasha, is the root of the name Jesus (Yeshua). It doesn't just mean 'to rescue from danger'; it has a broader meaning of 'to bring into a wide, open space.' When we try to 'save' our own lives, we end up in a cramped, constricted place, like Jonah in the belly of the fish. When we allow Jesus (Yeshua) to save us, He brings us out into the wide-open spaces of His grace and purpose.",
+            "historicalContext": "Nineveh was the capital of Assyria, one of the most brutal empires of the ancient world. Jonah's reluctance to preach there was understandable, but his disobedience had far-reaching consequences.",
+            "fascinatingFact": "Jonah preached a reluctant, five-word sermon in Hebrew ('Forty more days and Nineveh will be overthrown'), and the entire city repented—the greatest revival in Old Testament history."
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "Jesus warned that whoever wants to save their life will lose it, but whoever loses their life for Him will find it.",
+            "modernApplication": "In a culture that worships self-preservation and self-actualization, we are called to demonstrate the counter-intuitive truth that losing our lives for Christ is the path to finding them.",
+            "connectionPoint": "Jonah's flight from God's will is the same flight we take when we prioritize our comfort, safety, or reputation over obedience.",
+            "newTestamentEcho": "Luke 9:23 - 'Whoever wants to be my disciple must deny themselves and take up their cross daily and follow me.'"
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "In what ways are you trying to 'save your life' right now, and could it be costing you true life?",
+            "additionalQuestions": [
+              "What are the primary ways you see the 'idol of the self' being worshiped in the culture around you?",
+              "In what subtle ways have you bought into the philosophy of expressive individualism?",
+              "How can your Christian community be a more effective 'counter-cultural demonstration' of the joy of a surrendered life?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "Lord, I confess my instinct for self-preservation. It feels so natural to protect myself, my reputation, and my comfort. Give me the faith to lose my life for your sake, trusting that in losing it, I will truly find it.",
+            "type": "personal",
+            "posture": "confession"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "I will identify one way I am running from God's will like Jonah, and I will take a specific step toward obedience today.",
+            "leavingAtCross": [
+              "My instinct to protect myself at all costs",
+              "The idol of self that sits on the throne of my heart",
+              "My fear of what obedience might cost me"
+            ],
+            "receivingFromCross": [
+              "The paradoxical truth that losing my life for Christ is finding it",
+              "Freedom from the tyranny of self-worship",
+              "The wide-open spaces of God's grace and purpose"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "When have you seen the cost of someone's refusal to surrender affect others?",
+              "How has our culture's worship of the self impacted the communities you're part of?",
+              "What 'storm' in your life might be the result of running from God's will?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one area where you might be 'running to Tarshish' instead of obeying God",
+              "Discuss: What are you afraid would happen if you fully surrendered in that area?",
+              "Pray for each other to have the courage to stop running and start obeying"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "Jonah 1:1-3",
+                "text": "The word of the Lord came to Jonah... But Jonah ran away from the Lord and headed for Tarshish."
+              },
+              {
+                "reference": "Jeremiah 17:9",
+                "text": "The heart is deceitful above all things and beyond cure. Who can understand it?"
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "The Prodigal God",
+                "author": "Timothy Keller",
+                "note": "Explores how both rebellion and religion can be forms of running from God"
+              }
+            ]
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "Jonah",
+            "title": "The Reluctant Prophet",
+            "description": "Jonah is the only prophet in Scripture who ran from God's direct command. His story is a sobering reminder that non-surrender has consequences—not just for us, but for everyone around us.",
+            "keyQuote": "Salvation comes from the Lord.",
+            "lessonForUs": "We can run from God's will, but we cannot outrun Him. The belly of the fish awaits those who flee from their calling."
+          }
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "The Surrendered Life as a Witness",
+      "anchorVerse": "John 13:35",
+      "theme": "Our surrendered life together is the most compelling evidence that our God is real and His love transforms everything",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "John 13:35",
+            "translation": "NIV",
+            "text": "By this everyone will know that you are my disciples, if you love one another.",
+            "emphasis": [
+              "everyone will know",
+              "you are my disciples",
+              "love one another"
+            ],
+            "greekOriginal": null
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "γινώσκω",
+            "transliteration": "ginosko",
+            "pronunciation": "ghi-NO-sko",
+            "meaning": "to know, to perceive, to understand",
+            "rootMeaning": "This isn't just intellectual knowledge; it's knowledge gained through experience and observation. The world will see and experience the reality of our discipleship through our love.",
+            "usageNote": "Jesus is saying that our love for one another is the visible, experiential proof of our faith.",
+            "relatedWords": [
+              {
+                "word": "μαθητής (mathetes)",
+                "reference": "Disciple—a learner and follower, identified by love"
+              }
+            ],
+            "strongsNumber": "G1097"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "A Call to Action: Living the Surrendered Life",
+            "body": "We have spent this week exploring the heart of surrender. We've seen that it is an act of loving obedience, a paradox of freedom, a communal experience, and the only path to true life. Now, the question is: what will we do with this truth?\n\nStart every day with a conscious act of surrender—the Daily Gethsemane. Before you check your phone, before you look at your to-do list, find a quiet place and pray the prayer of Jesus: 'Not my will, but yours be done.'\n\nBegin to see God's commands not as a list of rules, but as a relational roadmap. When you read the Bible, ask not just 'What does this say?' but 'How is this an invitation to love God and love others?'\n\nActively look for opportunities to put others first. Make it a daily practice to perform small acts of selfless service. Get deeply involved in a local church. And finally, count the cost and embrace it. A surrendered life is not an easy life, but the cost of non-surrender is infinitely higher.",
+            "keyInsight": "The world is watching. They are looking for something real, something authentic, something that has the power to change lives. The surrendered life, lived out in a community of love, is that something."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Early Christians and the Plague",
+            "body": "In the second century, a plague swept through the Roman Empire, killing up to a third of the population in some areas. The pagan response was driven by fear and self-preservation. People abandoned their sick family members, leaving them to die in the streets. Doctors refused to treat the afflicted. The social fabric of the empire began to unravel.\n\nBut the Christians responded differently. In a letter, Dionysius, a bishop from that time, described how the Christians, 'heedless of danger, took charge of the sick, attending to their every need and ministering to them in Christ.' They brought food and water to those who had been abandoned. They held the dying in their arms. Many of these Christian caregivers contracted the plague themselves and died, having made the ultimate sacrifice of love.\n\nThis extraordinary, self-sacrificial love had a profound effect on the pagan world. Sociologist Rodney Stark, in his book The Rise of Christianity, argues that the Christian response to this and other plagues was one of the primary drivers of the church's explosive growth. The pagans saw a community that cared for the weak, that did not fear death, and that loved one another with a supernatural love.",
+            "connectionToTheme": "Our love for one another is the ultimate apologetic. In a world that is starving for authentic community, the loving, surrendered life of the church is the most attractive and compelling evidence for the truth of the gospel."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "The Great Commission and the Great Commandment",
+            "body": "Jesus' final words to his disciples were the Great Commission: 'Go and make disciples of all nations...' (Matthew 28:19). But this commission is impossible to fulfill without the Great Commandment: 'Love one another.' Our love is the fuel and the foundation for our mission. The world will not listen to our message if they do not see it lived out in our relationships. The surrendered, loving community is the engine of the Great Commission.",
+            "historicalContext": "The Christian response to the plagues of the second and third centuries was so counter-cultural that it became one of the primary drivers of the church's explosive growth in the Roman Empire.",
+            "fascinatingFact": "Emperor Julian (called 'the Apostate' for trying to restore paganism) complained that Christians 'support not only their own poor but ours as well.' The love of the church was so powerful it frustrated the enemies of the faith."
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "Jesus said the world would know we are His disciples by our love for one another—a love that the early church demonstrated through self-sacrificial service.",
+            "modernApplication": "In a world torn apart by division, selfishness, and fear, the church is called to be a visible demonstration of a different way—a community marked by supernatural love.",
+            "connectionPoint": "The same Spirit that empowered early Christians to care for plague victims empowers us to love sacrificially in our own context.",
+            "newTestamentEcho": "1 John 3:16 - 'This is how we know what love is: Jesus Christ laid down his life for us. And we ought to lay down our lives for our brothers and sisters.'"
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "If someone were to observe your life for a week, would your love for other Christians be the most compelling evidence that you are a follower of Jesus?",
+            "additionalQuestions": [
+              "What is one specific, practical step you will take this week to begin living a more surrendered life?",
+              "Who is one person you can share this devotional series with?",
+              "How can you and your Christian community be a more compelling witness to the love of Christ in your neighborhood or city?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "Lord, let my life be a compelling witness to your love. May the way I love my brothers and sisters in Christ be so radically different from the world that people are forced to ask, 'What is the source of that love?' Make me a living, breathing advertisement for the gospel.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "I will begin each day with a conscious act of surrender, praying 'Not my will, but yours be done,' and I will look for one opportunity each day to demonstrate God's love through sacrificial service.",
+            "leavingAtCross": [
+              "The illusion that I can control my life better than God can",
+              "The fear that surrender means losing myself instead of finding who I was meant to be",
+              "My reluctance to let my life be a visible witness to God's transforming love"
+            ],
+            "receivingFromCross": [
+              "The peace that comes from trusting the One who holds my future",
+              "The joy of living in alignment with God's perfect will",
+              "The power to love others with a supernatural love that draws them to Christ"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "Which day of this series challenged you most? Why?",
+              "What is one specific area where you need to surrender to God's will this week?",
+              "How has your understanding of obedience as love changed through this series?"
+            ],
+            "forAccountabilityPartners": [
+              "Share the biggest insight you gained from this 6-day journey",
+              "Commit to one practical step you'll take to live more surrendered this week",
+              "Ask each other: 'What would change in your life if you truly believed that God's will is always better than your own?'"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "1 John 3:16-18",
+                "text": "This is how we know what love is: Jesus Christ laid down his life for us. And we ought to lay down our lives for our brothers and sisters."
+              },
+              {
+                "reference": "Galatians 2:20",
+                "text": "I have been crucified with Christ and I no longer live, but Christ lives in me."
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "The Cost of Discipleship",
+                "author": "Dietrich Bonhoeffer",
+                "note": "A classic exploration of what it means to follow Christ"
+              },
+              {
+                "type": "book",
+                "title": "The Rise of Christianity",
+                "author": "Rodney Stark",
+                "note": "How the early church's love-driven response to plagues fueled explosive growth"
+              }
+            ]
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "The Early Church Plague Responders",
+            "title": "Those Who Loved Unto Death",
+            "description": "During the plagues of the second and third centuries, Christians risked their lives to care for the sick and dying—including pagans who had been abandoned by their own families. Their sacrificial love became the most powerful witness to the gospel.",
+            "keyQuote": "See how these Christians love one another!",
+            "lessonForUs": "Our love for one another, especially in times of crisis, is the most compelling evidence that our faith is real and our God is alive."
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "estimatedReadTime": {
+      "quick": "1 minute",
+      "medium": "5 minutes",
+      "deep": "15 minutes"
+    },
+    "moduleCount": 12,
+    "primaryEmotion": "conviction-with-hope",
+    "soulAuditKeywords": [
+      "surrender",
+      "control",
+      "obedience",
+      "will",
+      "submission",
+      "letting go",
+      "trust",
+      "freedom",
+      "autonomy",
+      "independence",
+      "self-will",
+      "stubborn",
+      "resistant",
+      "yielding",
+      "God's plan",
+      "my way"
+    ]
+  }
+}

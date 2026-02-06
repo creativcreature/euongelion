@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to EUONGELION</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --tehom: #1A1612;
+      --scroll: #F7F3ED;
+      --gold: #C19A6B;
+      --secondary: rgba(26, 22, 18, 0.5);
+      --font-body: 'DM Sans', sans-serif;
+      --font-display: 'Playfair Display', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 17px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--tehom);
+      background: var(--scroll);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      border-bottom: 1px solid rgba(26,22,18,0.1);
+    }
+
+    .hero-logo {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 3rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 4.5rem;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title em { font-style: italic; }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: var(--secondary);
+      max-width: 500px;
+    }
+
+    .hero-pronunciation {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--secondary);
+    }
+    .hero-pronunciation span {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--tehom);
+    }
+
+    /* Section */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      border-bottom: 1px solid rgba(26,22,18,0.08);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      color: var(--gold);
+      opacity: 0.5;
+      line-height: 1;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 400;
+    }
+    .section-title em { font-style: italic; }
+
+    .section-content {
+      padding-left: 4.5rem;
+    }
+
+    .section-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.25em;
+      max-width: 600px;
+    }
+
+    /* Feature Grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature {
+      padding: 1.5rem;
+      background: rgba(193, 154, 107, 0.05);
+      border-left: 2px solid var(--gold);
+    }
+
+    .feature-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--secondary);
+    }
+
+    /* How It Works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .step {
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .step-title {
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--secondary);
+    }
+
+    /* What to Expect */
+    .expect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .expect-item h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .expect-item h4::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .expect-item p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--secondary);
+      padding-left: 1rem;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: var(--tehom);
+      color: var(--scroll);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+    .cta-title em { font-style: italic; }
+
+    .cta-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      opacity: 0.85;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--gold);
+      color: var(--tehom);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .cta-button:hover { opacity: 0.9; }
+
+    /* Footer */
+    .footer {
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--secondary);
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .hero-title { font-size: 3rem; }
+      .section-content { padding-left: 0; }
+      .section-header { flex-direction: column; gap: 0.5rem; }
+      .features, .steps { grid-template-columns: 1fr; }
+      .expect-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <p class="hero-logo">Welcome to</p>
+    <h1 class="hero-title">EUONGELION</h1>
+    <p class="hero-subtitle">Daily devotionals for people who want depth, not surface-level faith.</p>
+    <p class="hero-pronunciation">Pronounced: <span>eu-an-GEL-ee-on</span> — Greek for "good news"</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">What is <em>this?</em></h2>
+    </div>
+    <div class="section-content">
+      <p>EUONGELION is a daily devotional platform. Each day, you'll receive content designed to help you encounter God through Scripture—not just learn about Him.</p>
+      <p>We go deeper than most devotionals. We explore the original Hebrew and Greek. We tell stories that make ancient truths tangible. And everything points to Jesus.</p>
+
+      <div class="features">
+        <div class="feature">
+          <h4 class="feature-title">Deep, Not Wide</h4>
+          <p class="feature-desc">One passage unpacked thoroughly, not ten verses skimmed quickly.</p>
+        </div>
+        <div class="feature">
+          <h4 class="feature-title">Original Languages</h4>
+          <p class="feature-desc">Hebrew and Greek word studies that illuminate what translations flatten.</p>
+        </div>
+        <div class="feature">
+          <h4 class="feature-title">Response Invited</h4>
+          <p class="feature-desc">Breath prayers, reflection questions, and journaling prompts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">How it <em>works</em></h2>
+    </div>
+    <div class="section-content">
+      <p>Your journey is personalized based on where you are spiritually. Here's the flow:</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4 class="step-title">Soul Audit</h4>
+          <p class="step-desc">Tell us what you're wrestling with. We'll match you to the right series.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4 class="step-title">Get Matched</h4>
+          <p class="step-desc">Your series is selected based on your response—grief, doubt, growth, etc.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4 class="step-title">Daily Content</h4>
+          <p class="step-desc">One devotional unlocks each day at 7 AM your time.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h4 class="step-title">Engage & Grow</h4>
+          <p class="step-desc">Read, reflect, respond. At your own pace.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">What to <em>expect</em></h2>
+    </div>
+    <div class="section-content">
+      <p>Each devotional takes about 5-10 minutes to read. Here's what you'll find:</p>
+
+      <div class="expect-grid">
+        <div class="expect-item">
+          <h4>Scripture Passage</h4>
+          <p>The text we're exploring, included in full so you don't have to look it up.</p>
+        </div>
+        <div class="expect-item">
+          <h4>Teaching & Exploration</h4>
+          <p>We walk through the passage, illuminating what might be unclear.</p>
+        </div>
+        <div class="expect-item">
+          <h4>Word Studies</h4>
+          <p>Hebrew or Greek terms with pronunciation, meaning, and significance.</p>
+        </div>
+        <div class="expect-item">
+          <h4>Stories</h4>
+          <p>Historical or contemporary narratives that make truth tangible.</p>
+        </div>
+        <div class="expect-item">
+          <h4>Breath Prayer</h4>
+          <p>A short phrase to carry with you—inhale one part, exhale the other.</p>
+        </div>
+        <div class="expect-item">
+          <h4>Reflection Questions</h4>
+          <p>Not quizzes—invitations to honest self-examination.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2 class="section-title">A few <em>notes</em></h2>
+    </div>
+    <div class="section-content">
+      <p><strong>You don't have to finish everything.</strong> Some days you'll engage deeply. Some days you'll skim. Both are okay. The goal isn't perfection—it's presence.</p>
+      <p><strong>Day-gating is intentional.</strong> One day at a time. This isn't a binge. It's a rhythm. Trust the pace.</p>
+      <p><strong>This is a marathon, not a sprint.</strong> You won't transform overnight. But show up most days for a year? You'll be different.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2 class="cta-title">Ready to <em>begin?</em></h2>
+    <p class="cta-text">Your first devotional starts Monday. Until then, settle in. You're in the right place.</p>
+    <a href="#" class="cta-button">Start Soul Audit</a>
+  </section>
+
+  <footer class="footer">
+    <p>EUONGELION — Daily bread for hungry souls</p>
+  </footer>
+
+</body>
+</html>

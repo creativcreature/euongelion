@@ -1,0 +1,64 @@
+{
+  "day": 4,
+  "title": "What does it look like to seek first the kingdom?",
+  "teaser": "Application: The kingdom is here. Now what? How do you actually live in it?",
+  "framework": "Matthew 6:33 - Seek first the kingdom of God and his righteousness, and all these things will be added to you",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE QUESTION OF APPLICATION",
+      "type": "text",
+      "content": "You've heard it: **The kingdom of God is here. Now.**\n\nNot later. Not somewhere else. In the midst of you.\n\nBut you're standing in 2026, and it still feels like chaos. Politics are still fracturing. The economy is still unstable. Your anxiety is still real.\n\nSo the question becomes: **What does it actually look like to seek first the kingdom?**\n\nNot as a spiritual platitude. Not as a future hope. But as a **present practice.**\n\nHow do you live in the kingdom when you're surrounded by collapsing empires?\n\nHow do you seek first what's invisible when everything visible is screaming for your attention?",
+      "wordCount": 104
+    },
+    {
+      "number": 3,
+      "heading": "THE KINGDOM PRACTICE: PRESENCE OVER POWER",
+      "type": "text",
+      "content": "Here's what it looks like:\n\n**Seek first the kingdom** means choosing presence over power.\n\nThe empire says: Climb. Dominate. Control. Win.\n\nThe kingdom says: **Be present. Love your neighbor. Serve the least.**\n\nYou don't seek first the kingdom by accumulating influence. You seek it by washing feet. By showing up for the person everyone else ignores. By choosing the last place instead of fighting for the first.\n\nJesus didn't rule from a throne. He served from a towel.\n\nThat's the kingdom. Not later, in some celestial future. **Now, in the ordinary moments where love interrupts empire.**",
+      "wordCount": 102
+    },
+    {
+      "number": 4,
+      "heading": "THE KINGDOM PRACTICE: GENEROSITY OVER GREED",
+      "type": "text-with-image",
+      "content": "**Seek first the kingdom** means choosing generosity over greed.\n\nThe empire says: Accumulate. Hoard. Protect what's yours. Because security comes from what you own.\n\nThe kingdom says: **Give. Share. Trust that God provides.**\n\nJesus said: \"Do not worry about your life, what you will eat or drink... Seek first the kingdom, and all these things will be added to you.\"\n\nNot because money doesn't matter. But because **the kingdom operates on a different economy.**\n\nAn economy of abundance, not scarcity. Of trust, not anxiety. Of generosity, not greed.\n\nYou seek the kingdom by giving when it doesn't make financial sense. By sharing when the empire says to hoard. By trusting that the kingdom provides.",
+      "illustration": {
+        "description": "Dithered image of open hands releasing/giving, or bread being broken and shared",
+        "file": "kingdom-day-4-illustration.png"
+      },
+      "wordCount": 127
+    },
+    {
+      "number": 5,
+      "heading": "THE KINGDOM PRACTICE: FORGIVENESS OVER REVENGE",
+      "type": "text",
+      "content": "**Seek first the kingdom** means choosing forgiveness over revenge.\n\nThe empire says: Defend yourself. Fight back. Make them pay. Win the argument. Destroy your enemies.\n\nThe kingdom says: **Forgive. Love your enemies. Pray for those who persecute you.**\n\nJesus didn't defeat Rome by overthrowing it. He defeated it by dying for it. And then forgiving it.\n\nThat's the kingdom. Not a future utopia. **A present posture.**\n\nYou seek the kingdom by letting go of the grudge. By choosing reconciliation over retaliation. By forgiving the person the empire says deserves punishment.\n\nThis is what it looks like to seek first the kingdom: **living like Jesus is already Lord, even when empires pretend they are.**",
+      "wordCount": 119
+    },
+    {
+      "number": 6,
+      "heading": "THE DAILY CHOICE",
+      "type": "text",
+      "content": "Every day, you stand at a crossroads.\n\nWill you seek first the empire? Or the kingdom?\n\nWill you choose power or presence?\nWill you choose greed or generosity?\nWill you choose revenge or forgiveness?\n\nThe empire is loud. It's everywhere. It's screaming for your attention, your allegiance, your soul.\n\nThe kingdom is quiet. It's in the margins. It's whispering: **This is the way. Walk in it.**\n\nSeek first the kingdom. Not later. Not when it's easier. **Now.**\n\nIn the ordinary moments. In the difficult choices. In the places where love interrupts your anxious search for control.\n\nThe kingdom is here. And it's waiting for you to live in it.",
+      "wordCount": 114
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nI want to seek first Your kingdom. But I'm surrounded by empires screaming for my attention.\n\nTeach me to choose presence over power. Generosity over greed. Forgiveness over revenge.\n\nWhen the empire says climb, help me serve.\nWhen it says hoard, help me give.\nWhen it says fight, help me forgive.\n\nThe kingdom is here. Now. In the midst of me.\n\nHelp me live in it. Not later. Today.\n\nAmen.",
+      "wordCount": 73
+    }
+  ],
+  "totalWords": 639,
+  "jesusIntroduced": 3,
+  "scriptureReference": "Matthew 6:25-33, Matthew 5:43-48",
+  "chiastic_position": "B' - Application: What it looks like to seek first the kingdom"
+}

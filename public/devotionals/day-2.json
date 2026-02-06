@@ -1,0 +1,62 @@
+{
+  "day": 2,
+  "title": "What if peace isn't found by controlling your circumstances?",
+  "teaser": "43% of adults are more anxious than last year. The news is relentless. What if safety isn't the goal?",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE RELENTLESS SCROLL",
+      "type": "text",
+      "content": "You wake up and reach for your phone. Check the news. Check the markets. Check the weather, the traffic, the COVID numbers, the political headlines.\n\nBy 8 AM, you've consumed a day's worth of anxiety.\n\n43% of adults felt more anxious in 2024 than the year before. The number keeps climbing. 53% are anxious about "uncertainty about the next year." 49% about "current events."\n\nYou're not imagining it. The dread is real.\n\nAnd you've tried everything to make it stop.",
+      "wordCount": 92
+    },
+    {
+      "number": 3,
+      "heading": "THE MYTH OF CONTROL",
+      "type": "text",
+      "content": "You thought if you just stayed informed enough, planned enough, prepared enough—you'd feel safe.\n\nSo you optimize. Morning routines. Meditation apps. Therapy. Doomscrolling breaks. You stockpile canned goods, bookmark survival guides, rehearse worst-case scenarios in your head.\n\nYou're building walls against the chaos. Higher, thicker, stronger.\n\nBut the storms keep coming.\n\nBecause here's the truth you don't want to hear: **You can't control the world. You were never supposed to.**\n\nAnd the harder you try, the more exhausted you become.\n\nSafety isn't the goal. It's the prison.",
+      "wordCount": 98
+    },
+    {
+      "number": 4,
+      "heading": "THE COST OF THE FORTRESS",
+      "type": "text-with-image",
+      "content": "The cost of trying to control everything is this: **you stop living.**\n\nYou can't enjoy a meal without calculating calories. You can't watch the news without spiraling. You can't make plans without the caveat "if everything doesn't collapse."\n\nYour body keeps the score. Tight shoulders. Clenched jaw. Insomnia. Burnout.\n\nYou've made your life a fortress. But you're trapped inside.\n\nAnd the thing you're most afraid of—losing control—has already happened.\n\nYou never had it to begin with.\n\nThe question is: what do you do with that?",
+      "illustration": {
+        "description": "Dithered ink drawing of person building walls around themselves OR fortress crumbling",
+        "file": "day-2-illustration.png"
+      },
+      "wordCount": 105
+    },
+    {
+      "number": 5,
+      "heading": "AN ANCIENT LETTER TO THE ANXIOUS",
+      "type": "text",
+      "content": "2,000 years ago, a man named Paul wrote a letter to a community drowning in anxiety.\n\nThey were under Roman occupation. Political violence everywhere. Economic exploitation. Daily survival was uncertain.\n\nSound familiar?\n\nAnd Paul—who'd been beaten, shipwrecked, imprisoned for his beliefs—wrote this:\n\n**"Do not be anxious about anything."**\n\nNot "try not to worry." Not "think positive thoughts."\n\n**Do not be anxious.**\n\nImpossible, right?\n\nKeep reading.",
+      "wordCount": 87
+    },
+    {
+      "number": 6,
+      "heading": "THE DIFFERENT KIND OF ANCHOR",
+      "type": "text",
+      "content": "Paul continues:\n\n**"But in every situation, by prayer and petition, with thanksgiving, present your requests to God. And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus."**\n\nNotice what he doesn't say: "And God will fix your circumstances."\n\nHe says: **peace that transcends understanding will guard your heart.**\n\nNot the absence of storm.\n\nA different kind of anchor.\n\nPeace isn't found by controlling your circumstances.\n\nIt's found by surrendering control to the One who holds all things.",
+      "wordCount": 80
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nI've been building walls, trying to control what I can't.\n\nI'm exhausted. The news is relentless. My body is tight with fear.\n\nI don't know how to stop being anxious. But you do.\n\nTeach me the peace that doesn't make sense. The kind that exists even in the storm.\n\nGuard my heart when I can't guard myself.\n\nI'm ready to stop building fortresses.\n\nAmen.",
+      "wordCount": 65
+    }
+  ],
+  "totalWords": 527,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Philippians 4:6-7"
+}

@@ -1,0 +1,7 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+176923277,2025-10-27T11:13:16.270Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,NL,,,,,,Mozilla/5.0
+176923277,2025-10-27T11:13:45.944Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0
+176923277,2025-10-27T17:14:59.281Z,c.parker3@me.com,newsletter,everyone,false,US,,,,,,Mozilla/5.0
+176923277,2025-10-27T19:35:49.983Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+176923277,2025-10-27T22:33:20.876Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+176923277,2025-11-22T09:43:36.262Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0

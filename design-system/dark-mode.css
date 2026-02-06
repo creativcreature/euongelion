@@ -1,0 +1,307 @@
+/**
+ * EUONGELION Dark Mode Styles
+ * Version: 1.0
+ *
+ * Dark mode is the DEFAULT theme for EUONGELION (tehom background).
+ * This file provides light mode overrides and theme switching utilities.
+ *
+ * Usage:
+ *   - Default: Dark theme (no class needed)
+ *   - Light theme: Add [data-theme="light"] to <html> or <body>
+ *   - System preference: Uses prefers-color-scheme
+ *
+ * Philosophy:
+ *   - Dark mode evokes "the deep" (tehom), mystery, contemplation
+ *   - Light mode evokes "sabbath rest", parchment, clarity
+ */
+
+/* ============================================
+   BASE: Dark Mode (Default)
+   Applied via :root in tokens.css
+   ============================================ */
+
+/*
+ * Dark mode variables are already set in tokens.css as defaults:
+ *
+ * --color-background: var(--color-tehom);
+ * --color-foreground: var(--color-scroll);
+ * --color-text-primary: var(--color-scroll);
+ * --color-text-secondary: rgba(247, 243, 237, 0.7);
+ * --color-border: rgba(247, 243, 237, 0.1);
+ * etc.
+ */
+
+/* ============================================
+   LIGHT MODE OVERRIDES
+   ============================================ */
+
+[data-theme='light'] {
+  /* Primary colors */
+  --color-background: var(--color-scroll);
+  --color-foreground: var(--color-tehom);
+
+  /* Text hierarchy */
+  --color-text-primary: var(--color-tehom);
+  --color-text-secondary: rgba(var(--color-tehom-rgb), 0.7);
+  --color-text-tertiary: rgba(var(--color-tehom-rgb), 0.5);
+  --color-text-muted: rgba(var(--color-tehom-rgb), 0.4);
+
+  /* UI elements */
+  --color-border: rgba(var(--color-tehom-rgb), 0.1);
+  --color-border-strong: rgba(var(--color-tehom-rgb), 0.2);
+  --color-surface: rgba(var(--color-tehom-rgb), 0.03);
+  --color-surface-raised: rgba(var(--color-tehom-rgb), 0.05);
+  --color-overlay: rgba(var(--color-tehom-rgb), 0.7);
+
+  /* Interactive states */
+  --color-hover: rgba(var(--color-tehom-rgb), 0.05);
+  --color-active: rgba(var(--color-tehom-rgb), 0.1);
+
+  /* Rare colors stay the same (not lifted) in light mode */
+  --color-burgundy: #6b2c2c;
+  --color-olive: #6b6b4f;
+  --color-shalom-blue: #4a5f6b;
+
+  /* Shadows become lighter */
+  --shadow-xs: 0 1px 2px rgba(var(--color-tehom-rgb), 0.05);
+  --shadow-sm: 0 2px 4px rgba(var(--color-tehom-rgb), 0.06);
+  --shadow-md: 0 4px 8px rgba(var(--color-tehom-rgb), 0.08);
+  --shadow-lg: 0 8px 16px rgba(var(--color-tehom-rgb), 0.1);
+  --shadow-xl: 0 16px 32px rgba(var(--color-tehom-rgb), 0.12);
+  --shadow-2xl: 0 24px 48px rgba(var(--color-tehom-rgb), 0.15);
+}
+
+/* ============================================
+   SYSTEM PREFERENCE SUPPORT
+   ============================================ */
+
+/*
+ * Auto-switch based on system preference (optional).
+ * Only activates when [data-theme="auto"] is set.
+ * Otherwise, manual theme takes precedence.
+ */
+
+[data-theme='auto'] {
+  /* Default to dark */
+}
+
+@media (prefers-color-scheme: light) {
+  [data-theme='auto'] {
+    --color-background: var(--color-scroll);
+    --color-foreground: var(--color-tehom);
+    --color-text-primary: var(--color-tehom);
+    --color-text-secondary: rgba(var(--color-tehom-rgb), 0.7);
+    --color-text-tertiary: rgba(var(--color-tehom-rgb), 0.5);
+    --color-text-muted: rgba(var(--color-tehom-rgb), 0.4);
+    --color-border: rgba(var(--color-tehom-rgb), 0.1);
+    --color-border-strong: rgba(var(--color-tehom-rgb), 0.2);
+    --color-surface: rgba(var(--color-tehom-rgb), 0.03);
+    --color-surface-raised: rgba(var(--color-tehom-rgb), 0.05);
+    --color-overlay: rgba(var(--color-tehom-rgb), 0.7);
+    --color-hover: rgba(var(--color-tehom-rgb), 0.05);
+    --color-active: rgba(var(--color-tehom-rgb), 0.1);
+    --color-burgundy: #6b2c2c;
+    --color-olive: #6b6b4f;
+    --color-shalom-blue: #4a5f6b;
+  }
+}
+
+/* ============================================
+   DARK MODE WITH LIFTED ACCENT COLORS
+   ============================================ */
+
+/*
+ * In dark mode, the intentional three colors need to be "lifted"
+ * (brightened) for better contrast and visibility.
+ */
+
+:root,
+[data-theme='dark'] {
+  /* Lifted versions for dark backgrounds */
+  --color-burgundy-lifted: #b85555;
+  --color-olive-lifted: #9d9d7a;
+  --color-shalom-blue-lifted: #7a9aab;
+}
+
+/* Use lifted colors in dark mode for better visibility */
+:root .accent-burgundy,
+[data-theme='dark'] .accent-burgundy {
+  color: var(--color-burgundy-lifted);
+}
+
+:root .accent-olive,
+[data-theme='dark'] .accent-olive {
+  color: var(--color-olive-lifted);
+}
+
+:root .accent-shalom,
+[data-theme='dark'] .accent-shalom {
+  color: var(--color-shalom-blue-lifted);
+}
+
+/* Light mode uses original (non-lifted) colors */
+[data-theme='light'] .accent-burgundy {
+  color: var(--color-burgundy);
+}
+
+[data-theme='light'] .accent-olive {
+  color: var(--color-olive);
+}
+
+[data-theme='light'] .accent-shalom {
+  color: var(--color-shalom-blue);
+}
+
+/* ============================================
+   THEME TRANSITION
+   ============================================ */
+
+/*
+ * Smooth transition when switching themes.
+ * Applied to key properties that change between modes.
+ */
+
+html {
+  transition:
+    background-color var(--duration-slow) var(--ease-out),
+    color var(--duration-slow) var(--ease-out);
+}
+
+/* Disable transition on page load to prevent flash */
+html.no-transition,
+html.no-transition * {
+  transition: none !important;
+}
+
+/* ============================================
+   SIGNATURE COMBINATION UTILITIES
+   ============================================ */
+
+/*
+ * The signature EUONGELION look: Gold on Tehom.
+ * "Your Hermes orange, your Tiffany blue"
+ */
+
+.signature {
+  background-color: var(--color-tehom);
+  color: var(--color-gold);
+}
+
+.signature-inverse {
+  background-color: var(--color-gold);
+  color: var(--color-tehom);
+}
+
+/* Gold text on current background */
+.text-gold {
+  color: var(--color-gold);
+}
+
+/* Ensure gold is readable */
+.text-gold-safe {
+  /* Only use gold on dark backgrounds */
+  color: var(--color-gold);
+}
+
+[data-theme='light'] .text-gold-safe {
+  /* On light backgrounds, gold lacks contrast - use tehom instead */
+  color: var(--color-tehom);
+}
+
+/* ============================================
+   THEMATIC DEFAULTS BY CONTENT
+   ============================================ */
+
+/*
+ * Certain content themes work better with specific modes.
+ * These can be applied to sections.
+ */
+
+/* Hope, Resurrection, Gospel - Light mode feels right */
+[data-content-theme='hope'],
+[data-content-theme='resurrection'],
+[data-content-theme='gospel'] {
+  --color-background: var(--color-scroll);
+  --color-foreground: var(--color-tehom);
+  --color-text-primary: var(--color-tehom);
+  --color-text-secondary: rgba(var(--color-tehom-rgb), 0.7);
+  --color-border: rgba(var(--color-tehom-rgb), 0.1);
+}
+
+/* Lament, Wilderness, Ecclesiastes - Dark mode feels right */
+[data-content-theme='lament'],
+[data-content-theme='wilderness'],
+[data-content-theme='ecclesiastes'],
+[data-content-theme='wrestling'] {
+  --color-background: var(--color-tehom);
+  --color-foreground: var(--color-scroll);
+  --color-text-primary: var(--color-scroll);
+  --color-text-secondary: rgba(var(--color-scroll-rgb), 0.7);
+  --color-border: rgba(var(--color-scroll-rgb), 0.1);
+}
+
+/* ============================================
+   MEDIA QUERY: HIGH CONTRAST MODE
+   ============================================ */
+
+@media (prefers-contrast: high) {
+  :root,
+  [data-theme='dark'] {
+    --color-text-secondary: rgba(var(--color-scroll-rgb), 0.85);
+    --color-text-tertiary: rgba(var(--color-scroll-rgb), 0.75);
+    --color-border: rgba(var(--color-scroll-rgb), 0.3);
+    --color-border-strong: rgba(var(--color-scroll-rgb), 0.5);
+  }
+
+  [data-theme='light'] {
+    --color-text-secondary: rgba(var(--color-tehom-rgb), 0.85);
+    --color-text-tertiary: rgba(var(--color-tehom-rgb), 0.75);
+    --color-border: rgba(var(--color-tehom-rgb), 0.3);
+    --color-border-strong: rgba(var(--color-tehom-rgb), 0.5);
+  }
+}
+
+/* ============================================
+   FORCED COLORS MODE (Windows High Contrast)
+   ============================================ */
+
+@media (forced-colors: active) {
+  :root {
+    --color-background: Canvas;
+    --color-foreground: CanvasText;
+    --color-text-primary: CanvasText;
+    --color-accent: LinkText;
+    --color-border: CanvasText;
+    --color-focus: Highlight;
+  }
+}
+
+/* ============================================
+   JAVASCRIPT THEME TOGGLE HELPER
+   ============================================ */
+
+/*
+ * Add this script to handle theme toggling:
+ *
+ * function setTheme(theme) {
+ *   // Remove transition temporarily to prevent flash
+ *   document.documentElement.classList.add('no-transition');
+ *
+ *   // Set theme
+ *   document.documentElement.setAttribute('data-theme', theme);
+ *
+ *   // Store preference
+ *   localStorage.setItem('euongelion-theme', theme);
+ *
+ *   // Re-enable transitions after paint
+ *   requestAnimationFrame(() => {
+ *     requestAnimationFrame(() => {
+ *       document.documentElement.classList.remove('no-transition');
+ *     });
+ *   });
+ * }
+ *
+ * // Initialize theme from storage or default to dark
+ * const savedTheme = localStorage.getItem('euongelion-theme') || 'dark';
+ * document.documentElement.setAttribute('data-theme', savedTheme);
+ */

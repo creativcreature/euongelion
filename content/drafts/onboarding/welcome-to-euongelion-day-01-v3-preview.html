@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EUONGELION — Day 1: Why Are You Here?</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-tehom: #1A1612;
+      --color-scroll: #F7F3ED;
+      --color-gold: #C19A6B;
+      --color-text-secondary: rgba(26, 22, 18, 0.65);
+      --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
+      --font-masthead: 'Playfair Display', 'Didot', serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { font-size: 18px; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--color-tehom);
+      background: var(--color-scroll);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page { max-width: 100%; }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Masthead */
+    .masthead {
+      padding: 1.5rem 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(26,22,18,0.08);
+    }
+
+    .masthead-logo {
+      font-family: var(--font-masthead);
+      font-size: 1.75rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--color-tehom);
+      text-transform: uppercase;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+
+    .day-number {
+      font-family: var(--font-body);
+      font-size: 6rem;
+      font-weight: 100;
+      line-height: 1;
+      color: var(--color-gold);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .series-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--color-tehom);
+    }
+
+    /* Content */
+    .content { padding: 2rem 0 4rem; }
+
+    p { margin-bottom: 1.4em; }
+
+    em { font-style: italic; }
+
+    strong { font-weight: 600; }
+
+    /* Section Headers */
+    .section-header {
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--color-tehom);
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-gold);
+    }
+
+    /* Opener - larger, centered, impactful */
+    .opener {
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-align: center;
+      margin: 2rem 0;
+      color: var(--color-tehom);
+    }
+
+    .opener em {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 1.1rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* Big Question */
+    .big-question {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 2.5rem 0;
+      color: var(--color-tehom);
+    }
+
+    /* Blockquote / Scripture */
+    blockquote {
+      margin: 2rem 0;
+      padding: 1.5rem 1.75rem;
+      background: rgba(193, 154, 107, 0.08);
+      border-left: 3px solid var(--color-gold);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--color-tehom);
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      font-style: normal;
+      color: var(--color-text-secondary);
+    }
+
+    /* Divider */
+    .divider {
+      text-align: center;
+      margin: 2.5rem 0;
+      color: var(--color-gold);
+      font-size: 1rem;
+      letter-spacing: 0.3em;
+    }
+
+    /* List of maybes - poetic */
+    .maybe-list {
+      margin: 1.5rem 0;
+    }
+
+    .maybe-list p {
+      margin-bottom: 0.75em;
+    }
+
+    /* Key statement */
+    .key-statement {
+      font-size: 1.15rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--color-tehom);
+      color: var(--color-scroll);
+    }
+
+    /* Three lines */
+    .three-lines {
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    .three-lines p {
+      margin-bottom: 0.5em;
+    }
+
+    /* Interactive Element */
+    .interactive {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: var(--color-tehom);
+      color: var(--color-scroll);
+      border-radius: 3px;
+    }
+
+    .interactive-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .interactive-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .breath-line {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+    }
+
+    .breath-direction {
+      font-weight: 500;
+      color: var(--color-gold);
+      min-width: 60px;
+    }
+
+    .breath-text {
+      font-style: italic;
+      color: rgba(247, 243, 237, 0.85);
+    }
+
+    /* Reflection */
+    .reflection {
+      margin: 3rem 0;
+      padding: 1.75rem;
+      background: rgba(193, 154, 107, 0.06);
+      border-radius: 3px;
+    }
+
+    .reflection-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .reflection ol {
+      list-style: none;
+      counter-reset: q;
+    }
+
+    .reflection li {
+      counter-increment: q;
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      position: relative;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .reflection li::before {
+      content: counter(q);
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      color: var(--color-gold);
+    }
+
+    /* Footnotes */
+    .footnotes {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(26,22,18,0.1);
+    }
+
+    .footnotes-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .footnotes ol {
+      list-style: none;
+    }
+
+    .footnotes li {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--color-text-secondary);
+    }
+
+    /* Footer */
+    .day-footer {
+      margin-top: 3rem;
+      padding: 1.5rem 0;
+      text-align: center;
+      border-top: 1px solid rgba(26,22,18,0.08);
+    }
+
+    .day-progress {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+    }
+
+    .day-next {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--color-text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    /* Print */
+    @media print {
+      html { font-size: 11pt; }
+      body { background: white; }
+      .interactive { background: #f0f0f0; color: #1A1612; border: 1px solid #ccc; }
+      .interactive-label, .breath-direction { color: #666; }
+      .breath-text { color: #333; }
+      .key-statement { background: #f0f0f0; color: #1A1612; border: 1px solid #ccc; }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      html { font-size: 16px; }
+      .day-number { font-size: 4.5rem; }
+      .hero-title { font-size: 2rem; }
+      .container { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header class="masthead">
+      <div class="container">
+        <h1 class="masthead-logo">EUONGELION</h1>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="day-number">01</div>
+        <p class="series-label">Welcome to EUONGELION</p>
+        <h2 class="hero-title">Why Are You Here?</h2>
+      </div>
+    </section>
+
+    <main class="content">
+      <div class="container">
+
+        <p class="opener">That's not a rhetorical question.<em>Something brought you here.</em></p>
+
+        <p>A link someone shared. A search at 2 AM. A name you couldn't pronounce but clicked anyway.</p>
+
+        <p><em>Eu-on-GEL-ee-on.</em> It's Greek. It means <em>good news</em>.</p>
+
+        <p>But before we get to the news, let's sit with the question:</p>
+
+        <p class="big-question">Why are you here?</p>
+
+        <div class="divider">...</div>
+
+        <h3 class="section-header">Maybe You're Searching</h3>
+
+        <div class="maybe-list">
+          <p>Maybe faith used to make sense and now it doesn't.</p>
+          <p>Maybe you grew up in church and walked away.</p>
+          <p>Maybe you never believed but something keeps pulling at you—a question you can't dismiss, a longing you can't name.</p>
+        </div>
+
+        <p>Maybe you're exhausted. By the performance. By the noise. By trying to hold it all together while something inside is quietly falling apart.</p>
+
+        <p>If any of that resonates, you're in the right place.</p>
+
+        <div class="divider">...</div>
+
+        <h3 class="section-header">Why This Exists</h3>
+
+        <p>This platform was born from a single verse:</p>
+
+        <blockquote>
+          "Do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus."
+          <cite>— Philippians 4:6-7</cite>
+        </blockquote>
+
+        <p>For years, those words felt impossible. <em>Don't be anxious?</em> Tell that to the racing thoughts. Tell that to the weight on your chest when everything looks fine on the outside.</p>
+
+        <p>But then something shifted. Not because life got easier. Because those words became real. Peace that doesn't make sense. Peace that guards you when nothing else can.</p>
+
+        <div class="key-statement">
+          EUONGELION exists because that kind of encounter shouldn't be rare.
+        </div>
+
+        <p>Not just for the people who grew up knowing the right answers. Not just for the spiritually elite. For the lost. The wandering. The ones who sense there's more but don't know where to find it.</p>
+
+        <p>For you.</p>
+
+        <div class="divider">...</div>
+
+        <h3 class="section-header">What We Believe About You</h3>
+
+        <p>You were made for relationship with God.</p>
+
+        <p>Not religion. Not performance. Not rule-following.</p>
+
+        <p><em>Relationship.</em></p>
+
+        <p>The Scriptures tell one story from beginning to end: a God who relentlessly pursues the people He made. Not because they earned it. Because He is who He is.</p>
+
+        <div class="three-lines">
+          <p>If you've drifted, He's looking for you.</p>
+          <p>If you've doubted, He can handle your questions.</p>
+          <p>If you've never believed, the invitation stands.</p>
+        </div>
+
+        <p>We're not here to convince you. We're here to sow seeds. What grows is between you and God.</p>
+
+        <div class="divider">...</div>
+
+        <h3 class="section-header">What This Place Is</h3>
+
+        <p>EUONGELION is daily bread for people who want more than surface-level faith.</p>
+
+        <p>Each day, you'll receive a devotional. Not a quick verse with a chipper thought attached. Something with substance. Something that takes Scripture seriously—the beautiful parts and the hard parts.</p>
+
+        <p>We go deep into the original Hebrew and Greek. We tell stories that make ancient truths tangible. We connect everything to Jesus. And we invite response, not just consumption.</p>
+
+        <p>You can handle depth. We believe that about you.</p>
+
+        <div class="divider">...</div>
+
+        <h3 class="section-header">An Invitation</h3>
+
+        <p>Before we close this first day, try something.</p>
+
+        <p>Whatever you're carrying—the anxiety, the doubt, the question you can't answer—bring it.</p>
+
+        <blockquote>
+          "Do not be anxious about anything, but in everything... let your requests be made known to God."
+        </blockquote>
+
+        <p>Not to fix. Not to solve. Just to bring.</p>
+
+        <p>That's the invitation. Come as you are.</p>
+
+        <div class="interactive">
+          <p class="interactive-label">Breath Prayer</p>
+          <h4 class="interactive-title">Carry This With You</h4>
+          <div class="breath-line">
+            <span class="breath-direction">Inhale:</span>
+            <span class="breath-text">"I bring everything to You."</span>
+          </div>
+          <div class="breath-line">
+            <span class="breath-direction">Exhale:</span>
+            <span class="breath-text">"Guard my heart and mind."</span>
+          </div>
+        </div>
+
+        <div class="reflection">
+          <h4 class="reflection-title">Reflection</h4>
+          <ol>
+            <li>Why are you here—really? What were you searching for when you found this?</li>
+            <li>What would "peace that surpasses understanding" look like in your life right now?</li>
+          </ol>
+        </div>
+
+        <div class="footnotes">
+          <h4 class="footnotes-title">Notes</h4>
+          <ol>
+            <li>Philippians 4:6-7 (ESV).</li>
+          </ol>
+        </div>
+
+        <footer class="day-footer">
+          <p class="day-progress">Day 1 of 5 — Welcome to EUONGELION</p>
+          <p class="day-next">Tomorrow: How This Is Different</p>
+        </footer>
+
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>

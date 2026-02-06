@@ -1,0 +1,1006 @@
+{
+  "series": {
+    "id": "once-saved-always-saved",
+    "title": "Once Saved, Always Saved?",
+    "subtitle": "Eternal Security & Perseverance",
+    "pathway": "Awake",
+    "coreQuestion": "If salvation is by grace through faith, what role does ongoing faithfulness play in our eternal destiny?",
+    "booksOfFocus": ["John", "1 John", "Romans", "Philippians", "Hebrews"],
+    "totalDays": 6,
+    "heroImage": null,
+    "soulAuditKeywords": [
+      "security",
+      "salvation",
+      "perseverance",
+      "doubt",
+      "faith",
+      "assurance",
+      "eternal life"
+    ],
+    "learningObjectives": [
+      "Understand Jesus's promises about eternal security and what they mean",
+      "Examine the biblical balance between assurance and the call to perseverance",
+      "Explore how genuine faith expresses itself through ongoing faithfulness",
+      "Develop confidence in God's keeping power while taking personal responsibility seriously"
+    ],
+    "keyThemes": [
+      "The security of salvation rests in God's character and promises, not our performance",
+      "True faith naturally produces perseverance and good works as evidence, not cause, of salvation",
+      "The warnings in Scripture serve to keep genuine believers on the path of faithfulness",
+      "Assurance comes through understanding both God's sovereignty and our responsibility"
+    ]
+  },
+  "days": [
+    {
+      "day": {
+        "number": 1,
+        "title": "What's Happening (and Who's Involved)?",
+        "subtitle": "Jesus's Promise of Eternal Security",
+        "anchorVerse": "John 10:28",
+        "theme": "Understanding Jesus's absolute promise that no one can snatch his sheep from his hand"
+      },
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "John 10:27-30",
+            "translation": "NIV",
+            "text": "My sheep listen to my voice; I know them, and they follow me. I give them eternal life, and they shall never perish; no one will snatch them from my hand. My Father, who has given them to me, is greater than all; no one can snatch them from my Father's hand. I and the Father are one.",
+            "emphasis": [
+              "I give them eternal life",
+              "they shall never perish",
+              "no one will snatch them from my hand"
+            ],
+            "hebrewOriginal": null
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "ἁρπάζω",
+            "transliteration": "harpazo",
+            "pronunciation": "har-PAD-zo",
+            "meaning": "to snatch, to seize by force",
+            "rootMeaning": "This is the word used for violent robbery or kidnapping. Jesus is saying that no external force can violently tear his sheep away from him.",
+            "usageNote": "The same word is used in 1 Thessalonians 4:17 for the 'rapture' - being caught up to meet the Lord.",
+            "strongsNumber": "G726"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "Jesus's Promise of Eternal Security",
+            "body": "Jesus's statement about eternal security comes in response to a direct challenge from Jewish religious leaders who demanded that he tell them plainly whether he was the Messiah. His response reveals crucial truths about salvation and security.\n\nThe Nature of His Sheep: Jesus describes his followers as 'sheep' who 'listen to my voice' and 'follow me.' This isn't a passive relationship but an active, ongoing response to his leadership.\n\nThe Gift of Eternal Life: Jesus says 'I give them eternal life,' using the present tense. This isn't something he will give in the future but something he gives now to those who believe.\n\nThe Promise of Security: The phrase 'they shall never perish' uses a double negative in Greek, which is the strongest possible way to express negation. Jesus is making an absolute, unconditional promise.\n\nThe Double Protection: Jesus describes a double layer of protection - they are in his hand, and his hand is in the Father's hand. To reach Jesus's sheep, an enemy would have to overcome both the Son and the Father.",
+            "keyInsight": "Eternal security rests not on the believer's ability to hold onto God but on God's ability to hold onto the believer."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Pastor's Crisis",
+            "body": "Dr. Sarah Martinez had been a pediatric oncologist for fifteen years when she began to question everything she thought she knew about faith, doubt, and perseverance. It started with a patient - eight-year-old Emma, who had been battling leukemia for two years. Emma's parents were devout Christians who had prayed fervently for healing.\n\nWhen Emma's condition worsened, her father, Pastor David Chen, began to struggle with doubt. 'Dr. Martinez,' he said, 'I've preached for twenty years that God is faithful. But watching my daughter suffer... I'm starting to wonder if I ever really believed at all.'\n\nThe question haunted Sarah: 'If I was really saved, would I be having these doubts?' She began to wonder: What does it really mean to be 'saved'? Is it a one-time decision that guarantees eternal security regardless of subsequent doubts or failures? Or is it an ongoing relationship that requires constant maintenance?",
+            "connectionToTheme": "The relationship between faith, doubt, and eternal security is more complex than simple formulas suggest, and real-life crises often force us to examine what we actually believe about salvation."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "The Shepherd and the Sheep",
+            "body": "Jesus's imagery of sheep and shepherd connects directly to Old Testament passages like Psalm 23 and Ezekiel 34, where God promises to be the shepherd of his people and to rescue them from those who would harm them.",
+            "historicalContext": "In Ezekiel 34:11-16, God declares: 'I myself will search for my sheep and look after them... I will rescue them from all the places where they were scattered.' Jesus is claiming to fulfill these ancient promises, positioning himself as the divine shepherd who provides ultimate security for God's people.",
+            "fascinatingFact": "The phrase 'they shall never perish' uses the Greek construction 'ou me' with the aorist subjunctive - the strongest possible way to deny something will ever happen. It's emphatic denial that goes beyond simple negation."
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "Jesus promised that no one could snatch his sheep from his hand, using the strongest possible language of denial.",
+            "modernApplication": "When you doubt your salvation because of your failures, fears, or feelings, remember that your security depends on God's grip, not yours.",
+            "connectionPoint": "The same insecurities that plagued first-century believers plague us today - the fear that we're not good enough, haven't believed hard enough, or might somehow fall away.",
+            "newTestamentEcho": "Paul echoes this promise in Romans 8:38-39: 'Nothing can separate us from the love of God that is in Christ Jesus our Lord.'"
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "What does it mean that Jesus gives eternal life as a present reality, not just a future hope?",
+            "additionalQuestions": [
+              "What area of your life reveals that you're living as if your relationship with God depends on your performance rather than his promise?",
+              "How does Jesus's promise of security affect your understanding of your relationship with God?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "Help me understand the security I have in Christ while also taking seriously my responsibility to live faithfully as his follower. Free me from the anxiety of trying to earn what you have already given me by grace.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "Today I will identify one area where I've been living as if my relationship with God depends on my performance rather than his promise, and I will consciously rest in his security instead.",
+            "leavingAtCross": [
+              "The fear that my salvation depends on my performance",
+              "The anxiety of wondering if I've believed 'hard enough'",
+              "The pride that makes me think I can maintain my own security"
+            ],
+            "receivingFromCross": [
+              "The confidence that comes from God's unbreakable grip",
+              "The peace of knowing my security rests in his character, not mine",
+              "The freedom to serve God from gratitude rather than fear"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "How does Jesus's promise of eternal security affect your understanding of your relationship with God?",
+              "What does it mean practically to 'listen to Jesus's voice' and 'follow him' in your contemporary context?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one area where you struggle with assurance of salvation",
+              "Ask each other: 'How do you balance confidence in God's keeping power with personal responsibility for faithfulness?'"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "Psalm 23:1-4",
+                "text": "The Lord is my shepherd; I shall not want..."
+              },
+              {
+                "reference": "Ezekiel 34:11-16",
+                "text": "I myself will search for my sheep and look after them..."
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "The Gospel of John",
+                "note": "Read John 10:1-30 for the full Good Shepherd discourse"
+              }
+            ]
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "John the Apostle",
+            "title": "The Disciple Whom Jesus Loved",
+            "description": "John was one of Jesus's closest disciples, part of his inner circle along with Peter and James. He refers to himself as 'the disciple whom Jesus loved,' indicating a particularly close relationship with Jesus. His Gospel is written specifically to help people understand what it means to have eternal life through faith in Jesus.",
+            "keyQuote": "These are written that you may believe that Jesus is the Messiah, the Son of God, and that by believing you may have life in his name.",
+            "lessonForUs": "John's intimate knowledge of Jesus gives us confidence that his testimony about eternal security comes from someone who knew Jesus personally and understood his promises."
+          }
+        }
+      ]
+    },
+    {
+      "day": {
+        "number": 2,
+        "title": "What's the Connection?",
+        "subtitle": "The Vine, Branches, and Abiding",
+        "anchorVerse": "John 15:5",
+        "theme": "Understanding the connection between abiding in Christ and bearing fruit"
+      },
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "John 15:1-8",
+            "translation": "NIV",
+            "text": "I am the true vine, and my Father is the gardener. He cuts off every branch in me that bears no fruit, while every branch that does bear fruit he prunes so that it will be even more fruitful. You are already clean because of the word I have spoken to you. Remain in me, as I also remain in you. No branch can bear fruit by itself; it must remain in the vine. Neither can you bear fruit unless you remain in me. I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing. If you do not remain in me, you are like a branch that is thrown away and withers; such branches are picked up, thrown into the fire and burned. If you remain in me and my words remain in you, ask whatever you wish, and it will be done for you. This is to my Father's glory, that you bear much fruit, showing yourselves to be my disciples.",
+            "emphasis": [
+              "Remain in me",
+              "apart from me you can do nothing",
+              "bear much fruit"
+            ],
+            "hebrewOriginal": null
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "μένω",
+            "transliteration": "meno",
+            "pronunciation": "MEH-no",
+            "meaning": "to remain, to abide, to dwell",
+            "rootMeaning": "This isn't passive existence but active, intentional dwelling. It's the word used for staying in someone's house as a welcomed guest who belongs there.",
+            "usageNote": "This word appears eleven times in John 15:1-11, emphasizing its central importance to Jesus's teaching about spiritual life.",
+            "strongsNumber": "G3306"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Vine and Branches",
+            "body": "Jesus uses the familiar image of viticulture to explain spiritual realities. In first-century Palestine, vineyards were common, and everyone understood how vines and branches worked.\n\nThe Vine: Jesus identifies himself as 'the true vine,' distinguishing himself from false sources of spiritual life.\n\nThe Gardener: The Father tends the vine and manages the branches, suggesting that spiritual growth is under divine oversight.\n\nThe Branches: Believers derive their life entirely from their connection to the vine. They have no independent source of spiritual life.\n\nTwo Types of Branches: Fruitless branches are 'cut off' while fruitful branches are 'pruned' to increase fruitfulness. The Greek word for prune (kathairo) means 'to cleanse' - this isn't punishment but cultivation.\n\nThe Nature of Abiding: Abiding isn't a one-time decision but an ongoing relationship characterized by dependence, intimacy, obedience, and perseverance.",
+            "keyInsight": "True spiritual security comes not from perfect performance but from genuine connection to Christ, which naturally produces the fruit of faithfulness over time."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Chapel Conversation",
+            "body": "Three weeks after their initial conversation, Dr. Sarah Martinez found Pastor David Chen in the hospital chapel at 2 AM. 'I've been thinking about what you said,' David told Sarah. 'About the difference between questioning God and losing faith.'\n\nDavid shared his insight: 'I've been reading John 15 over and over. For years, I interpreted it as a warning: Stay connected to Jesus or you'll be cut off. But I think I was missing the point. Jesus isn't threatening his disciples; he's explaining how spiritual life actually works.'\n\nHe continued: 'The branches don't produce fruit by trying harder. They produce fruit by staying connected to the vine. And when a branch stops receiving from the vine, it naturally withers - not as punishment, but as the inevitable result of being disconnected from its life source.'\n\n'So you're saying that the warning isn't about losing salvation but about losing connection?' Sarah asked.\n\n'Exactly. The fruit isn't what keeps them connected; the connection is what produces the fruit.'",
+            "connectionToTheme": "Genuine faith naturally produces perseverance and good works as evidence, not cause, of salvation."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "Understanding 'Cut Off'",
+            "body": "How does Jesus's teaching about branches being cut off relate to his promise that no one can snatch his sheep from his hand?",
+            "historicalContext": "The Greek word for 'cuts off' (airo) can mean either 'to remove' or 'to lift up.' Some scholars argue that the gardener lifts up fruitless branches to give them better access to sunlight. The context suggests removal, but the purpose isn't punitive - it's practical.",
+            "fascinatingFact": "Several interpretations reconcile these passages: (1) The Genuine vs. Apparent Believer View - fruitless branches represent people who appeared to be believers but were never genuinely connected; (2) The Temporal vs. Eternal Consequences View - cutting off refers to temporal judgment rather than eternal condemnation; (3) The Corporate vs. Individual View - the passage describes the nation of Israel rather than personal salvation."
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "Jesus taught that spiritual fruitfulness comes from abiding in him, not from independent effort.",
+            "modernApplication": "In our performance-driven culture, we often try to produce spiritual fruit through our own efforts - more discipline, better habits, stronger willpower. Jesus calls us to a different approach: staying connected to him.",
+            "connectionPoint": "The same temptation to rely on self-effort that challenged first-century believers challenges us today. We want to earn our spiritual status rather than receive it.",
+            "newTestamentEcho": "Paul echoes this in Galatians 5:22-23: 'The fruit of the Spirit is love, joy, peace...' - fruit that comes from the Spirit's work, not our striving."
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "What does it mean to actively 'abide' in Christ rather than just believing facts about him?",
+            "additionalQuestions": [
+              "How do you distinguish between trying to produce spiritual fruit through your own effort versus allowing Christ to produce fruit through your connection to him?",
+              "What practices help you maintain connection with Christ in daily life?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "Teach me the difference between trying harder and trusting deeper, between religious effort and spiritual abiding. Help me stay connected to you as the source of all spiritual life and fruitfulness.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "Today I will identify one way I've been trying to live the Christian life 'apart from' Christ through my own effort, and I will consciously shift from striving to abiding.",
+            "leavingAtCross": [
+              "The exhaustion of trying to produce spiritual fruit on my own",
+              "The pride that makes me think I can manage my spiritual life independently",
+              "The fear that comes from thinking my connection to Christ depends on my performance"
+            ],
+            "receivingFromCross": [
+              "The rest that comes from depending on Christ as my source",
+              "The humility to acknowledge that apart from him I can do nothing",
+              "The confidence that genuine connection produces natural fruit"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "How do you understand the relationship between eternal security and the warning about fruitless branches?",
+              "What does 'abiding' in Christ look like practically in your daily life?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one area where you've been striving rather than abiding",
+              "Discuss: How do you maintain connection with Christ when life gets busy or difficult?"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "Galatians 5:22-23",
+                "text": "The fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control."
+              },
+              {
+                "reference": "Colossians 2:6-7",
+                "text": "So then, just as you received Christ Jesus as Lord, continue to live your lives in him, rooted and built up in him."
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "John 15-17",
+                "note": "Read Jesus's full Farewell Discourse to understand the context of the vine and branches teaching"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "day": {
+        "number": 3,
+        "title": "What's the Lesson for the Original Audience?",
+        "subtitle": "True vs. False Believers in the Early Church",
+        "anchorVerse": "1 John 2:19",
+        "theme": "Understanding how first-century Christians distinguished genuine faith from false profession"
+      },
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "1 John 2:18-27",
+            "translation": "NIV",
+            "text": "Dear children, this is the last hour; and as you have heard that the antichrist is coming, even now many antichrists have come. This is how we know it is the last hour. They went out from us, but they did not really belong to us. For if they had belonged to us, they would have remained with us; but their going showed that none of them belonged to us. But you have an anointing from the Holy One, and all of you know the truth. I do not write to you because you do not know the truth, but because you do know it and because no lie comes from the truth. Who is the liar? It is whoever denies that Jesus is the Christ. Such a person is the antichrist - denying the Father and the Son. No one who denies the Son has the Father; whoever acknowledges the Son has the Father also. As for you, see that what you have heard from the beginning remains in you. If it remains in you, you also will remain in the Son and in the Father. And this is what he promised us - eternal life.",
+            "emphasis": [
+              "They went out from us",
+              "they did not really belong to us",
+              "their going showed"
+            ],
+            "hebrewOriginal": null
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "ἐξῆλθαν",
+            "transliteration": "exelthan",
+            "pronunciation": "ex-EL-than",
+            "meaning": "they went out, they departed",
+            "rootMeaning": "This isn't a casual leaving but a deliberate departure, often implying rejection or abandonment of what they're leaving behind.",
+            "usageNote": "The aorist tense indicates a decisive, completed action - these people made a definitive break from the community.",
+            "strongsNumber": "G1831"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "Distinguishing True from False Believers",
+            "body": "John's first letter was written to Christian communities facing the challenge of false teachers who had emerged from within their own ranks. These weren't outside persecutors but people who had been part of the Christian community.\n\nThe Historical Context: The specific false teaching appears to have been an early form of Gnosticism, which claimed that Jesus wasn't truly human, salvation came through special knowledge, and moral behavior was irrelevant to spiritual status.\n\nThe Problem of Apparent Believers: How do you identify genuine believers when false teachers can appear spiritually mature and personally compelling? John's response is to point to the evidence of departure itself - their leaving revealed what had been true all along.\n\nThe Logic of Perseverance:\n- Premise 1: Genuine believers belong to the community of faith in a lasting way\n- Premise 2: Those who truly belong will persevere, even through difficulties\n- Conclusion: Those who permanently depart demonstrate they never genuinely belonged\n\nThis isn't about temporary struggles or periods of distance but about people who definitively reject the faith.",
+            "keyInsight": "Genuine faith is distinguished not by the absence of struggle but by perseverance through struggle, not by perfect understanding but by persistent relationship with God."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Associate Pastor's Departure",
+            "body": "Six weeks into Emma's treatment, Pastor David Chen shared something that surprised Dr. Sarah Martinez. 'I need to tell you about Marcus,' he said, referring to his associate pastor. 'Three months ago, when Emma was first diagnosed, Marcus came to me and said he was leaving the ministry. He said watching our family suffer had convinced him that either God doesn't exist or he doesn't care.'\n\nDavid continued: 'Marcus was brilliant. He had a seminary degree, could preach better than me, knew theology inside and out. Everyone thought he was the most spiritual person they knew. But when real suffering entered the picture, his faith just... evaporated.'\n\n'At first, I was devastated. But then I started thinking about the difference between his response and mine. Marcus walked away from God when faith became difficult. I'm wrestling with God, questioning him, even angry at him - but I can't walk away. Even in my darkest moments, I find myself praying, reading Scripture, seeking him.'\n\n'I think the difference isn't that I have stronger faith than Marcus had. The difference is that my faith, however weak and struggling, is real. Marcus's faith was ultimately intellectual rather than relational.'",
+            "connectionToTheme": "The marks of genuine faith are revealed not in comfort but in crisis - those who truly belong to Christ persevere through struggle, even imperfectly."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "Marks of Genuine Faith",
+            "body": "While John's teaching might seem to create anxiety, his purpose is actually to provide assurance to genuine believers.",
+            "historicalContext": "The early church faced persecution that made claiming to be a Christian costly. Yet some people still made false claims to faith, perhaps for social or economic reasons within the community. John's tests help distinguish authentic faith from mere profession.",
+            "fascinatingFact": "John identifies four marks of genuine faith throughout his letter: (1) Doctrinal Faithfulness - maintaining commitment to truth about Jesus Christ; (2) Moral Transformation - growing in righteousness and decreasing in sin; (3) Love for Others - demonstrating genuine love for fellow believers; (4) Perseverance - continuing in faith and community despite challenges."
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "John taught that those who permanently depart from faith demonstrate they never genuinely belonged to Christ.",
+            "modernApplication": "In our age of deconstruction and 'exvangelicals,' we see many who once professed faith walking away. This isn't new - it happened in John's day too.",
+            "connectionPoint": "The very fact that you're concerned about the authenticity of your faith may itself be evidence that your faith is genuine. Those who have truly departed typically don't worry about whether they belong to Christ.",
+            "newTestamentEcho": "Jesus himself predicted this in Matthew 7:22-23: 'Many will say to me on that day, Lord, Lord... Then I will tell them plainly, I never knew you.'"
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "What does it mean that perseverance in community is evidence of genuine faith rather than the cause of salvation?",
+            "additionalQuestions": [
+              "How do you distinguish between healthy spiritual struggle and the kind of departure from faith that John describes?",
+              "What role does Christian community play in helping you persevere in faith?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "Help me examine my own heart for the marks of genuine faith while extending grace to others who may be struggling in their journey. Give me the humility to recognize that my perseverance depends on your grace, not my strength.",
+            "type": "personal",
+            "posture": "honest-confession"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "Today I will focus not on judging who's 'really saved' but on demonstrating the marks of genuine faith through my own perseverance and love.",
+            "leavingAtCross": [
+              "The fear that my doubts prove I'm not really saved",
+              "The tendency to judge others' spiritual status based on external appearances",
+              "The pride that makes me think I persevere by my own strength"
+            ],
+            "receivingFromCross": [
+              "The comfort that struggling faith is still real faith",
+              "The humility to recognize that only God knows the heart",
+              "The confidence that God's grip holds me even when I doubt"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "What gives you confidence that your own struggles don't indicate false faith?",
+              "How do you balance honest struggle with remaining connected to other believers?"
+            ],
+            "forAccountabilityPartners": [
+              "Share a time when you wondered if your faith was genuine",
+              "Discuss: How can we support those who are struggling without enabling those who are drifting away?"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "Matthew 7:21-23",
+                "text": "Not everyone who says to me, 'Lord, Lord,' will enter the kingdom of heaven..."
+              },
+              {
+                "reference": "2 Timothy 2:19",
+                "text": "The Lord knows those who are his."
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "1 John",
+                "note": "Read the entire letter to understand John's tests of genuine faith"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "day": {
+        "number": 4,
+        "title": "What's the Lesson for Me Today?",
+        "subtitle": "God's Keeping Power",
+        "anchorVerse": "Romans 8:28-39",
+        "theme": "Understanding God's comprehensive work in keeping believers secure"
+      },
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Romans 8:28-39",
+            "translation": "NIV",
+            "text": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose. For those God foreknew he also predestined to be conformed to the image of his Son, that he might be the firstborn among many brothers and sisters. And those he predestined, he also called; those he called, he also justified; those he justified, he also glorified. What, then, shall we say in response to these things? If God is for us, who can be against us? He who did not spare his own Son, but gave him up for us all - how will he not also, along with him, graciously give us all things? Who will bring any charge against those whom God has chosen? It is God who justifies. Who then is the one who condemns? No one. Christ Jesus who died - more than that, who was raised to life - is at the right hand of God and is also interceding for us. Who shall separate us from the love of Christ? Shall trouble or hardship or persecution or famine or nakedness or danger or sword? No, in all these things we are more than conquerors through him who loved us. For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.",
+            "emphasis": [
+              "God works for the good",
+              "who can be against us",
+              "nothing can separate us"
+            ],
+            "hebrewOriginal": null
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "συνεργεῖ",
+            "transliteration": "synergei",
+            "pronunciation": "soon-er-GAY",
+            "meaning": "works together, cooperates",
+            "rootMeaning": "This is where we get our word 'synergy.' God doesn't just observe our circumstances - he actively works within them to accomplish his purposes.",
+            "usageNote": "The present tense indicates ongoing, continuous action. God is currently and constantly working in all circumstances.",
+            "strongsNumber": "G4903"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Golden Chain of Salvation",
+            "body": "Paul presents what theologians call the 'golden chain' of salvation - a sequence of divine actions that ensures eternal security.\n\nForeknowledge: God's eternal awareness of those who would be his people. This isn't just intellectual knowledge but intimate, relational knowledge involving choice and commitment.\n\nPredestination: God's eternal decision to conform his chosen people to the image of his Son. This is purposeful planning for ultimate transformation.\n\nCalling: God's effective summons that brings people to faith in Christ - the specific, powerful call that results in conversion.\n\nJustification: God's declaration that believers are righteous in his sight based on Christ's work.\n\nGlorification: The final transformation of believers into the perfect image of Christ - described in the past tense to emphasize its certainty.\n\nThe Comprehensive List of Threats: Paul lists everything that might threaten our security - trouble, hardship, persecution, famine, nakedness, danger, sword, death, life, angels, demons, present, future, powers, height, depth, and 'anything else in all creation.' His conclusion: NOTHING can separate us from God's love.",
+            "keyInsight": "Paul's teaching challenges our culture's emphasis on individual autonomy by describing salvation as fundamentally God's work from beginning to end."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Transformation",
+            "body": "Eight months after Emma's diagnosis, Dr. Sarah Martinez had an unexpected conversation with Pastor David Chen. Emma had responded well to treatment and was in remission.\n\n'Sarah, I need to tell you something that might sound strange coming from a pastor,' David said. 'This whole experience has convinced me that I understand much less about God than I thought I did, and somehow that's made my faith stronger, not weaker.'\n\n'For twenty years, I preached a version of Christianity that was essentially a spiritual insurance policy. If you believe the right things and live the right way, God will protect you from suffering. But that's not faith - that's a transaction. I was trying to control God rather than trust him.'\n\nDavid continued: 'Watching Emma fight for her life taught me that God's love isn't about protecting us from suffering - it's about being with us in suffering and working through it to accomplish purposes we can't see. Romans 8 has become my anchor - nothing can separate us from God's love, not because God prevents suffering, but because he works through it.'",
+            "connectionToTheme": "True security in God comes not from his promise to make our lives easy but from his promise to work through all circumstances for our ultimate good."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "More Than Conquerors",
+            "body": "The phrase 'more than conquerors' (hypernikao) suggests a victory that goes beyond mere survival.",
+            "historicalContext": "In typical conquest, the victor gains something valuable from the defeated enemy. In spiritual conquest, believers not only survive attacks against their faith but actually gain strength, character, and deeper relationship with God through the very trials meant to destroy them.",
+            "fascinatingFact": "Paul's list of potential threats in verses 38-39 is remarkably comprehensive, covering every dimension of existence: temporal (present/future), spatial (height/depth), personal (life/death), supernatural (angels/demons/powers), and circumstantial (trouble/hardship/persecution). He leaves no loopholes - 'anything else in all creation' covers whatever he might have missed."
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "Paul taught that salvation is God's work from beginning to end - foreknowledge, predestination, calling, justification, and glorification are all divine actions.",
+            "modernApplication": "Our culture values individual autonomy and self-determination. Paul's teaching challenges this by placing the security of salvation in God's hands, not ours.",
+            "connectionPoint": "The same questions about human responsibility and divine sovereignty that troubled Paul's readers trouble us today. The answer remains: God's character and commitment are more reliable than our performance.",
+            "newTestamentEcho": "Jesus taught the same in John 6:39: 'This is the will of him who sent me, that I shall lose none of all those he has given me.'"
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "How does knowing that God is actively working in all circumstances for your ultimate good affect your understanding of his commitment to your salvation?",
+            "additionalQuestions": [
+              "Which of the potential threats to security that Paul lists do you find most challenging to your faith?",
+              "How do you balance confidence in God's keeping power with taking personal responsibility for spiritual growth?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "Help me trust your sovereign work in my life, especially when I can't see how current circumstances could possibly work for good. Free me from the anxiety of trying to maintain my own security and let me rest in your unbreakable grip.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "Today I will stop trying to figure out how God will work everything together for good and simply trust that he's already working, even in circumstances that don't make sense.",
+            "leavingAtCross": [
+              "The anxiety of trying to understand God's purposes in every circumstance",
+              "The fear that some threat might separate me from his love",
+              "The pride that makes me think my security depends on my understanding"
+            ],
+            "receivingFromCross": [
+              "The peace that comes from trusting God's sovereign work",
+              "The confidence that nothing can separate me from his love",
+              "The freedom to rest in his keeping power"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "How does Paul's comprehensive list affect your sense of security?",
+              "What aspects of God's sovereign grace do you find most comforting or challenging?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one circumstance where you've struggled to believe God is working for your good",
+              "Discuss: How do we live faithfully while resting in God's keeping power?"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "John 6:39",
+                "text": "This is the will of him who sent me, that I shall lose none of all those he has given me."
+              },
+              {
+                "reference": "Philippians 1:6",
+                "text": "He who began a good work in you will carry it on to completion."
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "Romans 8",
+                "note": "Read the entire chapter to understand the context of Paul's teaching on security"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "day": {
+        "number": 5,
+        "title": "What Am I Going to Do About It?",
+        "subtitle": "Working Out Salvation",
+        "anchorVerse": "Philippians 2:12-13",
+        "theme": "Understanding how to cooperate with God's grace in faithful living"
+      },
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Philippians 2:12-18",
+            "translation": "NIV",
+            "text": "Therefore, my dear friends, as you have always obeyed - not only in my presence, but now much more in my absence - continue to work out your salvation with fear and trembling, for it is God who works in you to will and to act in order to fulfill his good purpose. Do everything without grumbling or arguing, so that you may become blameless and pure, 'children of God without fault in a warped and crooked generation.' In them you shine like stars in the sky as you hold firmly to the word of life. And then I will be able to boast on the day of Christ that I did not run or labor in vain. But even if I am being poured out like a drink offering on the sacrifice and service coming from your faith, I am glad and rejoice with all of you. So you too should be glad and rejoice with me.",
+            "emphasis": [
+              "work out your salvation",
+              "God who works in you",
+              "to will and to act"
+            ],
+            "hebrewOriginal": null
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "κατεργάζομαι",
+            "transliteration": "katergazomai",
+            "pronunciation": "kat-er-GAD-zo-my",
+            "meaning": "to work out, to accomplish fully",
+            "rootMeaning": "This isn't about earning salvation but about fully developing and expressing what God has already given you, like working out a muscle to develop its strength.",
+            "usageNote": "The word is used of working out a problem to its solution or developing a skill to its full potential.",
+            "strongsNumber": "G2716"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Paradox of Grace and Effort",
+            "body": "Paul's instruction creates an apparent paradox: we are to 'work out' our salvation while recognizing that 'it is God who works in you.' This isn't a contradiction but a description of how divine grace and human responsibility interact.\n\nWorking FOR vs. Working OUT: Working for salvation implies our efforts contribute to earning or maintaining our standing with God. Working out salvation means fully developing and expressing what God has already given us.\n\nFear and Trembling: This doesn't refer to terror about losing salvation but to appropriate reverence and seriousness about the magnitude of God's work in our lives.\n\nGod's Work in Us: God works in our willing - he creates the desire to obey. God works in our acting - he provides the power to act on those intentions. He has a purpose - our development isn't random but aimed at fulfilling his good purpose.\n\nThe Cooperative Nature: Sanctification is a cooperative effort. God provides both the desire and the power for spiritual growth, while believers respond by actively participating. This cooperation isn't 50/50 but 100/100 - God does everything necessary, and we respond with everything we have.",
+            "keyInsight": "Understanding God's grace doesn't lead to careless living but to grateful living - we work out our salvation not to earn it but to express it."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Decision",
+            "body": "One year after Emma's diagnosis, Dr. Sarah Martinez made a decision that surprised everyone, including herself. She had been offered a position as chief of pediatric oncology at a prestigious research hospital. Instead, she turned it down to accept a position at a smaller hospital serving primarily low-income families.\n\n'David, I need to tell you something,' Sarah said. 'Watching you and Emma this past year has changed how I think about faith. I've been a Christian for years, but I think I've been living like my relationship with God depends on my ability to be good enough, smart enough, and successful enough.'\n\nShe continued: 'I've been trying to earn God's approval through my achievements rather than trusting that he already loves me and has a purpose for my life. I took this job because I thought it would make me worthy of his blessing. But maybe the question isn't \"What do I need to do to earn God's favor?\" but \"How do I respond to the favor he's already shown me?\"'\n\n'So you're saying that working out your salvation isn't about trying to prove you're saved but about living like someone who is already saved?' David asked.\n\n'Exactly. It's not about working for salvation - it's about working from salvation.'",
+            "connectionToTheme": "Grace motivates faithfulness rather than excusing carelessness. Understanding our security frees us to take risks in serving God."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "The Motivation of Grace",
+            "body": "Understanding that our security rests in God's grace actually provides stronger motivation for faithful living than fear-based approaches.",
+            "historicalContext": "Paul writes to the Philippian church as a community, not just individuals. Working out our salvation happens in the context of relationships with other believers who encourage, challenge, and support us.",
+            "fascinatingFact": "The phrase 'work out' (katergazomai) is used elsewhere in the New Testament for completing a work of art or solving a complex problem. Our spiritual development is like a masterpiece that God is creating - we participate in the process, but he is the ultimate artist."
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "Paul taught that believers should work out their salvation with fear and trembling because God is working in them.",
+            "modernApplication": "In our results-oriented culture, we often measure spiritual progress by visible achievements. Paul redirects us to measure progress by our cooperation with God's work in our character.",
+            "connectionPoint": "The same temptation to earn spiritual status through performance that challenged first-century believers challenges us today. Grace remains the answer.",
+            "newTestamentEcho": "James echoes this balance: 'Faith without works is dead' (James 2:26) - not because works earn salvation, but because genuine faith naturally produces works."
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "How do I cooperate with God's work in my life without trying to earn what he has already given me by grace?",
+            "additionalQuestions": [
+              "What does 'fear and trembling' look like practically in your approach to spiritual growth?",
+              "How do you see God working in you 'to will and to act' according to his good purpose?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "Help me understand how to work with you rather than trying to work for you, how to respond to grace rather than trying to earn it. Give me the humility to recognize that both my desire to obey and my ability to act come from your work in me.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "Today I will stop living as if my salvation depends on my performance and start living as if my performance flows from my salvation.",
+            "leavingAtCross": [
+              "The exhaustion of trying to earn what God freely gives",
+              "The pride that takes credit for spiritual growth",
+              "The fear that my failures threaten my relationship with God"
+            ],
+            "receivingFromCross": [
+              "The freedom to serve from gratitude rather than anxiety",
+              "The humility to recognize God as the source of all spiritual progress",
+              "The confidence to take risks in serving God"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "How do you distinguish between working for salvation and working out salvation?",
+              "What areas of your life need to shift from earning-focused to gratitude-focused motivation?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one area where you've been striving to earn rather than responding in gratitude",
+              "Discuss: How do you balance reverence for God with confidence in his grace?"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "James 2:26",
+                "text": "Faith without works is dead."
+              },
+              {
+                "reference": "Ephesians 2:8-10",
+                "text": "For it is by grace you have been saved, through faith... created in Christ Jesus to do good works."
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "Philippians 2",
+                "note": "Read the entire chapter to understand the context of Paul's teaching on humility and obedience"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "day": {
+        "number": 6,
+        "title": "Put It to Use: Running the Race with Perseverance",
+        "subtitle": "Practical Endurance",
+        "anchorVerse": "Hebrews 12:1-2",
+        "theme": "Living with endurance when the race of faith is long and the challenges are real"
+      },
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Hebrews 12:1-3",
+            "translation": "NIV",
+            "text": "Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off everything that hinders and the sin that so easily entangles. And let us run with perseverance the race marked out for us, fixing our eyes on Jesus, the pioneer and perfecter of faith. For the joy set before him he endured the cross, scorning its shame, and sat down at the right hand of God. Consider him who endured such opposition from sinners, so that you will not grow weary and lose heart.",
+            "emphasis": [
+              "cloud of witnesses",
+              "run with perseverance",
+              "fixing our eyes on Jesus"
+            ],
+            "hebrewOriginal": null
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "ὑπομονή",
+            "transliteration": "hypomone",
+            "pronunciation": "hoo-po-mo-NAY",
+            "meaning": "perseverance, endurance, patience",
+            "rootMeaning": "This isn't passive waiting but active persistence - staying under the load without giving up, like a marathon runner who keeps going despite fatigue and obstacles.",
+            "usageNote": "The word comes from 'hypo' (under) and 'meno' (to remain). It means to remain under pressure without collapsing.",
+            "strongsNumber": "G5281"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "Running the Race with Endurance",
+            "body": "The author of Hebrews writes to believers experiencing persecution, discouragement, and the temptation to abandon their faith. The race metaphor assumes difficulty, fatigue, and sustained effort over time.\n\nThe Cloud of Witnesses: Chapter 11's 'hall of faith' provides examples demonstrating that faithful endurance is possible even in challenging circumstances. They ran their portion of the race and now encourage us.\n\nThrowing Off Hindrances: Athletes remove anything that slows them down. We must remove 'everything that hinders' (legitimate things that distract) and 'the sin that so easily entangles' (specific sins that trip us up).\n\nThe Race Marked Out: Each believer has a specific course to run. This isn't competition against others but personal calling.\n\nFixing Our Eyes on Jesus: The Greek word 'aphorao' means 'to look away from other things in order to fix attention on something specific.' Jesus is both Pioneer (blazing the trail before us) and Perfecter (completing the work of faith in us).\n\nJoy-Motivated Endurance: Jesus endured suffering not because he enjoyed it but because of 'the joy set before him.' We too can endure present difficulties with eyes on future reward.",
+            "keyInsight": "Perseverance in faith comes not from our own strength but from staying connected to Jesus and the community of believers who encourage us to keep running."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "Three Years Later",
+            "body": "Three years after Emma's initial diagnosis, Dr. Sarah Martinez reflected on the profound changes that had occurred. Emma was now in long-term remission. David had become a different kind of pastor - one who preached with the authority of someone who had wrestled with God and discovered that his love is stronger than our questions. Sarah had found purpose in her work she had never experienced before.\n\n'You know what I've learned?' Sarah said to David. 'The race of faith isn't about running faster or being stronger than other people. It's about endurance - about keeping going when you don't feel like it, when you can't see the finish line, when you're not sure you're even on the right track.'\n\nDavid nodded. 'I used to think that strong faith meant never having questions. But I think real faith is the decision to keep trusting God even when you can't understand what he's doing.'\n\n'Emma taught me something important,' David continued. 'One day when she was really sick from chemo, she said, \"Daddy, I don't understand why I have to be sick, but I know you love me and you're taking care of me.\" That's when I realized that faith isn't about understanding everything - it's about trusting the character of someone who loves you even when you can't figure out what they're doing.'",
+            "connectionToTheme": "The race of faith is run not in isolation but in community, not by looking at our own performance but by fixing our eyes on Jesus."
+          }
+        },
+        {
+          "type": "insight",
+          "order": 5,
+          "content": {
+            "title": "Pioneer and Perfecter",
+            "body": "Jesus is described with two titles that explain why he deserves our focused attention.",
+            "historicalContext": "The Greek word 'archegos' (pioneer) means 'one who goes first' or 'originator.' Jesus blazed the trail of faith, showing that it's possible to live faithfully even in the face of suffering. The word 'teleiotes' (perfecter) means 'one who brings to completion.' He doesn't just start the race with us - he ensures we finish.",
+            "fascinatingFact": "The author uses the athletic imagery because the original audience was familiar with the Greek games. Marathon runners didn't just start races - they trained rigorously, removed unnecessary weight, and focused completely on the finish line. The Christian life requires the same discipline and focus."
+          }
+        },
+        {
+          "type": "bridge",
+          "order": 6,
+          "content": {
+            "ancientTruth": "The author of Hebrews encouraged persecuted believers to run with endurance by fixing their eyes on Jesus.",
+            "modernApplication": "In our instant-gratification culture, we struggle with anything that requires long-term commitment and delayed reward. The race of faith is a marathon, not a sprint.",
+            "connectionPoint": "The same temptations to weariness and discouragement that challenged first-century believers challenge us today. The same solution applies: keep your eyes on Jesus.",
+            "newTestamentEcho": "Paul echoes this in 2 Timothy 4:7: 'I have fought the good fight, I have finished the race, I have kept the faith.'"
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 7,
+          "content": {
+            "prompt": "What does it mean to 'fix my eyes on Jesus' when circumstances tempt me to focus on my problems or my performance?",
+            "additionalQuestions": [
+              "What are the specific hindrances in your life that tend to slow you down or distract you?",
+              "Who are the 'witnesses' in your life whose examples of faith encourage you to persevere?"
+            ],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 8,
+          "content": {
+            "text": "Help me run with endurance by keeping my eyes fixed on you rather than on my circumstances, my failures, or my achievements. Surround me with fellow believers who encourage me to keep going when I want to quit.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 9,
+          "content": {
+            "commitment": "Today I will identify one area where I've been trying to run the race of faith by looking at my circumstances or performance instead of looking at Jesus, and I will consciously shift my focus.",
+            "leavingAtCross": [
+              "The distractions that slow me down in the race of faith",
+              "The sins that easily entangle me",
+              "The tendency to focus on my performance rather than on Jesus"
+            ],
+            "receivingFromCross": [
+              "The endurance that comes from fixing my eyes on Jesus",
+              "The encouragement of fellow believers who run alongside me",
+              "The joy that motivates perseverance through present difficulties"
+            ]
+          }
+        },
+        {
+          "type": "comprehension",
+          "order": 10,
+          "content": {
+            "forReflection": [
+              "How do you maintain focus on Jesus when circumstances, emotions, or other people demand your attention?",
+              "What practices help you develop endurance for the long race of faith?"
+            ],
+            "forAccountabilityPartners": [
+              "Share one hindrance or entangling sin you need to throw off",
+              "Discuss: How can we encourage each other to keep running when the race feels long and difficult?"
+            ]
+          }
+        },
+        {
+          "type": "resource",
+          "order": 11,
+          "content": {
+            "relatedScriptures": [
+              {
+                "reference": "2 Timothy 4:7",
+                "text": "I have fought the good fight, I have finished the race, I have kept the faith."
+              },
+              {
+                "reference": "1 Corinthians 9:24-27",
+                "text": "Run in such a way as to get the prize... I discipline my body and keep it under control."
+              }
+            ],
+            "forDeeperStudy": [
+              {
+                "type": "book",
+                "title": "Hebrews 11-12",
+                "note": "Read the hall of faith and its application to understand the full context"
+              }
+            ]
+          }
+        },
+        {
+          "type": "profile",
+          "order": 12,
+          "content": {
+            "name": "Jesus Christ",
+            "title": "Pioneer and Perfecter of Faith",
+            "description": "Jesus is the one who blazed the trail of faith before us and who brings our faith to completion. He endured the cross for the joy set before him, demonstrating how to persevere through suffering with eyes fixed on future reward.",
+            "keyQuote": "For the joy set before him he endured the cross, scorning its shame, and sat down at the right hand of God.",
+            "lessonForUs": "Jesus's example teaches us that faithful endurance is possible even through the most extreme suffering, when we keep our eyes on the joy that awaits us."
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "estimatedReadTime": {
+      "quick": "1 minute",
+      "medium": "5 minutes",
+      "deep": "15 minutes"
+    },
+    "moduleCount": 12,
+    "primaryEmotion": "assurance-with-responsibility",
+    "soulAuditKeywords": [
+      "security",
+      "salvation",
+      "perseverance",
+      "doubt",
+      "faith",
+      "assurance",
+      "eternal life",
+      "grace",
+      "endurance"
+    ],
+    "weekSummary": {
+      "title": "Once Saved, Always Saved?",
+      "keyTakeaways": [
+        "God's Security is Absolute: Nothing can separate us from his love or snatch us from his hand.",
+        "Genuine Faith Perseveres: True believers naturally continue in faith because they're connected to the source of spiritual life.",
+        "Grace Motivates Faithfulness: Understanding God's unconditional love motivates grateful obedience rather than careless living.",
+        "Community Supports Endurance: We run the race of faith not alone but surrounded by witnesses and fellow believers.",
+        "Jesus is Our Focus: Keeping our eyes fixed on him provides the strength and motivation needed for long-term perseverance."
+      ],
+      "conclusion": "The answer to 'Once saved, always saved?' is both yes and no: Yes, those who are genuinely saved are kept secure by God's power. No, not everyone who claims to be saved demonstrates the perseverance that marks authentic faith. The security is real, but it belongs to those whose faith is real - and real faith endures."
+    }
+  }
+}

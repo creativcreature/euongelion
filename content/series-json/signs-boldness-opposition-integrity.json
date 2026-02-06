@@ -1,0 +1,396 @@
+{
+  "series": {
+    "id": "signs-boldness-opposition-integrity",
+    "title": "Signs, Boldness, Opposition, and Integrity",
+    "subtitle": "Week 2: Acts 3-5",
+    "pathway": "Shepherd",
+    "coreQuestion": "What does it look like to follow the risen Christ publicly rather than privately?",
+    "booksOfFocus": ["Acts"],
+    "chaptersOfFocus": ["Acts 3", "Acts 4", "Acts 5"],
+    "totalDays": 5,
+    "heroImage": "https://substack-post-media.s3.amazonaws.com/public/images/cdcdad4e-90d0-4b50-ad70-b729bdc50408_1530x857.jpeg",
+    "soulAuditKeywords": [
+      "boldness",
+      "courage",
+      "integrity",
+      "honesty",
+      "persecution",
+      "opposition",
+      "public faith",
+      "witness",
+      "generosity",
+      "Spirit-filled"
+    ]
+  },
+  "overview": {
+    "introduction": "Week 1 showed us the foundation of the early church. Week 2 shows us what happens the moment that foundation meets the world. In Acts 3-5, the movement of Jesus' followers becomes public. A miraculous healing at the Temple gate draws astonished crowds. Bold preaching by the apostles challenges the authorities. Opposition quickly rises. The young community's unity and integrity are tested. And through all of it, the name of Jesus proves unstoppable.",
+    "keyDynamics": [
+      "Signs that point to Jesus",
+      "Courage in the face of pressure",
+      "Honesty when image-management is tempting",
+      "Joy even when obedience costs something"
+    ],
+    "narrativeArc": [
+      {
+        "movement": "Act of Power",
+        "description": "A public healing demonstrates Jesus' power (Acts 3)"
+      },
+      {
+        "movement": "Act of Proclamation",
+        "description": "The apostles openly preach Jesus' resurrection (Acts 3)"
+      },
+      {
+        "movement": "Act of Resistance",
+        "description": "The authorities push back and arrest the apostles (Acts 4)"
+      },
+      {
+        "movement": "Act of Purification",
+        "description": "The young community is refined through the judgment on hypocrisy (Acts 5:1-11)"
+      },
+      {
+        "movement": "Act of Perseverance",
+        "description": "The apostles continue witnessing boldly despite escalating threats (Acts 5:12-42)"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "type": "scripture",
+      "order": 1,
+      "content": {
+        "reference": "Acts 4:5-31",
+        "translation": "NIV",
+        "text": "The next day the rulers, the elders and the teachers of the law met in Jerusalem. Annas the high priest was there, and so were Caiaphas, John, Alexander and others of the high priest's family. They had Peter and John brought before them and began to question them: \"By what power or what name did you do this?\"\n\nThen Peter, filled with the Holy Spirit, said to them: \"Rulers and elders of the people! If we are being called to account today for an act of kindness shown to a man who was lame and are being asked how he was healed, then know this, you and all the people of Israel: It is by the name of Jesus Christ of Nazareth, whom you crucified but whom God raised from the dead, that this man stands before you healed. Jesus is 'the stone you builders rejected, which has become the cornerstone.'\n\nSalvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved.\"\n\nWhen they saw the courage of Peter and John and realized that they were unschooled, ordinary men, they were astonished and they took note that these men had been with Jesus. But since they could see the man who had been healed standing there with them, there was nothing they could say. So they ordered them to withdraw from the Sanhedrin and then conferred together. \"What are we going to do with these men?\" they asked. \"Everyone living in Jerusalem knows they have performed a notable sign, and we cannot deny it. But to stop this thing from spreading any further among the people, we must warn them to speak no longer to anyone in this name.\"\n\nThen they called them in again and commanded them not to speak or teach at all in the name of Jesus. But Peter and John replied, \"Which is right in God's eyes: to listen to you, or to him? You be the judges! As for us, we cannot help speaking about what we have seen and heard.\"\n\nAfter further threats they let them go. They could not decide how to punish them, because all the people were praising God for what had happened. For the man who was miraculously healed was over forty years old.\n\nOn their release, Peter and John went back to their own people and reported all that the chief priests and the elders had said to them. When they heard this, they raised their voices together in prayer to God. \"Sovereign Lord,\" they said, \"you made the heavens and the earth and the sea, and everything in them. You spoke by the Holy Spirit through the mouth of your servant, our father David: 'Why do the nations rage and the peoples plot in vain? The kings of the earth rise up and the rulers band together against the Lord and against his anointed one.'\n\nIndeed Herod and Pontius Pilate met together with the Gentiles and the people of Israel in this city to conspire against your holy servant Jesus, whom you anointed. They did what your power and will had decided beforehand should happen. Now, Lord, consider their threats and enable your servants to speak your word with great boldness. Stretch out your hand to heal and perform signs and wonders through the name of your holy servant Jesus.\"\n\nAfter they prayed, the place where they were meeting was shaken. And they were all filled with the Holy Spirit and spoke the word of God boldly.",
+        "emphasis": [
+          "Salvation is found in no one else",
+          "no other name under heaven",
+          "we cannot help speaking about what we have seen and heard",
+          "spoke the word of God boldly"
+        ],
+        "keyVerse": {
+          "reference": "Acts 4:12",
+          "text": "Salvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved."
+        }
+      }
+    },
+    {
+      "type": "vocab",
+      "order": 2,
+      "content": {
+        "language": "greek",
+        "words": [
+          {
+            "word": "παρρησία",
+            "transliteration": "parresia",
+            "pronunciation": "par-ray-SEE-ah",
+            "meaning": "boldness, courage, confidence, openness of speech",
+            "rootMeaning": "Literally means 'speaking openly.' It was often used in legal settings for someone who speaks freely and frankly because they know their identity and authority. In Acts, the believers' parresia is rooted in knowing they belong to Jesus."
+          },
+          {
+            "word": "ὄνομα",
+            "transliteration": "onoma",
+            "pronunciation": "ON-oh-mah",
+            "meaning": "name, authority, character, reputation",
+            "rootMeaning": "In the ancient world, a name carried the weight of a person's authority, character, and reputation. To do something 'in the name of Jesus' is not just invoking a label. It means acting under His authority and in alignment with His character."
+          },
+          {
+            "word": "κοινωνία",
+            "transliteration": "koinonia",
+            "pronunciation": "koy-noh-NEE-ah",
+            "meaning": "fellowship, community, partnership, sharing",
+            "rootMeaning": "This word often gets translated as fellowship or community, but it implies much more than just casual association. Koinonia is active participation in one another's lives, a shared life. In Acts 4, we see this deep fellowship as believers share everything and care for each other's needs."
+          },
+          {
+            "word": "ψευδολογία",
+            "transliteration": "pseudologia",
+            "pronunciation": "psyoo-doh-loh-GEE-ah",
+            "meaning": "falsehood, lie, false narrative",
+            "rootMeaning": "Ananias and Sapphira's sin was not stinginess but pseudologia - creating a false image of generosity, presenting a lie as if it were true. The early church had to learn that following Jesus means living in truth, both outwardly and inwardly."
+          }
+        ]
+      }
+    },
+    {
+      "type": "teaching",
+      "order": 3,
+      "content": {
+        "title": "Key Theological Themes of Acts 3-5",
+        "sections": [
+          {
+            "title": "The Name of Jesus at the Center",
+            "body": "The early church did not spread through strategy or force of personality. It spread through allegiance to the name and authority of Jesus. His name marked every aspect of their witness. Their preaching, healing, suffering, joy, and courage were all done under Jesus' banner. No other name had power to save, and no other name captivated their hearts like His."
+          },
+          {
+            "title": "Spirit-Filled Boldness",
+            "body": "Boldness was not a personality trait. It was the byproduct of being filled with the Holy Spirit. Whenever the Spirit fills believers in Acts, the result is fearless and clear proclamation. This boldness is not about arrogance or recklessness. It is about speaking truth in love without fear. The early Christians still felt human fear, but the Spirit empowered them to move through fear into faith-fueled courage."
+          },
+          {
+            "title": "Integrity Is Mission-Critical",
+            "body": "The shocking story of Ananias and Sapphira in Acts 5 teaches that God cares deeply about the integrity of His people. The Spirit will not allow the young church to be built on pretense or lies. Charisma, appearances, and hype cannot transform the world, but a community of genuine, honest faith can. For the mission of the church, authenticity is essential."
+          },
+          {
+            "title": "Suffering Forms Courage",
+            "body": "Instead of seeing suffering as a sign of God's abandonment, the early church came to see it as a place where God forged greater courage and faith. When the apostles suffered for Jesus' name, they rejoiced, not because pain is good, but because they knew they were walking in the footsteps of their Messiah. Trials and persecution actually shaped them to be bolder and more resilient, just as Jesus' own suffering led to glory."
+          }
+        ],
+        "keyInsight": "Luke is showing us that the Spirit does not build the church by avoiding conflict, but by leading it through conflict with integrity and courage."
+      }
+    },
+    {
+      "type": "story",
+      "order": 4,
+      "content": {
+        "title": "The Story Arc of Acts 3-5",
+        "sections": [
+          {
+            "title": "A Healing at the Temple Gate (Acts 3)",
+            "body": "Peter and John meet a man who has been lame since birth. He expects a few coins, but instead he receives a completely new life. Peter does not say, 'Look at what I can do.' He says, 'Look at what the risen Jesus is doing right now.'\n\nThe miracle produces: personal transformation, public astonishment, theological confrontation, and evangelistic opportunity.\n\nPeter's ensuing sermon reframes the event. This healing is not random; it is a continuation of Jesus' ministry - proof that He is alive and still acting through His people."
+          },
+          {
+            "title": "Arrest and Boldness (Acts 4)",
+            "body": "The religious leaders cannot deny the reality of the miracle, but they also cannot tolerate the message that accompanies it. Their pointed question, 'By what power or what name did you do this?', is not genuine curiosity. It is an accusation.\n\nPeter's answer puts Jesus at the center of everything: 'It is by the name of Jesus Christ of Nazareth, whom you crucified but whom God raised from the dead.' This is the moment Christianity stops being a quiet, private movement and becomes a public proclamation.\n\nWhen the council orders them to stay silent, Peter and John refuse: 'We cannot help speaking about what we have seen and heard.' The church's response to these threats is not fear, but prayer, and God answers. The building shakes as the Spirit fills them once again, giving them more boldness instead of less."
+          },
+          {
+            "title": "A Community Shaped by Generosity and Honesty (Acts 4:32-5:11)",
+            "body": "The description of the early church community is radical: No needy persons among them, possessions shared freely, unity in heart and mind.\n\nThis is what happens when the Spirit renews a community's imagination - God's grace makes people shockingly generous and deeply unified.\n\nBut Acts 5 also shows the danger of spiritual performance. Ananias and Sapphira want the reputation of generosity without the sacrifice of it. The Holy Spirit exposes the lie quickly and dramatically.\n\nWhy such severity? Because hypocrisy, if left unchecked, rots the foundation of the church. The Spirit zealously guards the community so that its witness genuinely reflects its message."
+          },
+          {
+            "title": "Signs, Growth, and Intensifying Opposition (Acts 5:12-42)",
+            "body": "The apostolic ministry explodes in impact during this time: miraculous healings, multitudes of new believers, crowds eager to hear the gospel, even angelic intervention to release apostles from jail.\n\nYet alongside this tremendous growth comes jealousy and violence from the authorities. When the apostles are hauled before the Sanhedrin again, they do not defend themselves - they defend the gospel: 'We must obey God rather than human beings.'\n\nAfter the council has them flogged, the apostles depart rejoicing. It is a joy that makes no sense unless one believes deeply in the worthiness of Jesus. Acts 5 concludes with this triumphant image: 'Day after day, in the temple courts and from house to house, they never stopped teaching and proclaiming the good news that Jesus is the Messiah.' In other words, pressure does not silence these disciples; it multiplies them."
+          }
+        ],
+        "connectionToTheme": "These chapters demonstrate that the Spirit who filled the believers in Acts 2 also sustained them through the challenges of Acts 3-5. At every turn, we see Jesus continuing His ministry, now through the hands and voices of His people."
+      }
+    },
+    {
+      "type": "insight",
+      "order": 5,
+      "content": {
+        "title": "Historical and Cultural Context",
+        "sections": [
+          {
+            "title": "The Temple as the Center of Public Life",
+            "body": "The Jewish Temple was not just a place of worship. It was the heart of Jewish identity and public life. A miracle at the Temple gate would be like a miraculous event on the steps of a modern capitol building. Everyone would see it, everyone would talk about it, and everyone would have an opinion about its meaning. By highlighting the Temple setting, Luke makes a theological point: Jesus is doing in and through the apostles what Israel's worship was always meant to do."
+          },
+          {
+            "title": "The Sanhedrin's Political Vulnerability",
+            "body": "The opposition of the religious leaders is not driven only by theology. It is also fueled by political concerns. Rome tolerated the Jewish authorities only as long as there were no riots, no messianic uprisings, and no hint of rebellion. The sudden growth of thousands of new Jesus-followers created serious tension. The Sanhedrin feared losing control and, even more, losing Roman approval. Thus, the opposition in Acts is political, theological, social, and institutional. Beneath it all, we can sense the currents of spiritual warfare."
+          },
+          {
+            "title": "Miracles as Signs, Not Spectacles",
+            "body": "The miracles in Acts are never treated as random displays of power. Each one is a sign pointing to something greater: Jesus's ongoing authority, the arrival of God's Kingdom, the promised renewal of Israel, and the compassionate heart of God. The apostles do not heal to impress. They heal to reveal. Every sign points back to Jesus."
+          }
+        ],
+        "fascinatingFact": "The book is often called 'The Acts of the Apostles,' but it is really the acts of Jesus through the apostles by the Holy Spirit. The risen Christ remained the protagonist, continuing His mission of redemption through the hands and voices of His followers."
+      }
+    },
+    {
+      "type": "bridge",
+      "order": 6,
+      "content": {
+        "ancientTruth": "The early believers understood that following Christ meant being willing to stand up in the public square and declare the truth about Him, no matter the cost. Jesus was still acting through His people - the miracles, sermons, and courageous stands were ultimately the work of the risen Christ continuing His mission.",
+        "modernApplication": "Following Jesus is personal, but it is not private. A public faith does not mean being obnoxious or showy. It means our commitment to Christ permeates our lives in such a way that others can see the difference. We are called to be a city on a hill and a lamp on a stand.",
+        "connectionPoints": [
+          {
+            "then": "Public Faith Required Public Courage",
+            "now": "Faith Is Meant to Be Visible - the early believers' public witness, even under pressure, is an invitation for us to live a faith that can be seen and felt by the people around us."
+          },
+          {
+            "then": "The Holy Spirit Brought Comfort and Conviction - He gave the believers peace and unity, but He also provoked opposition by challenging the falsehoods and injustices of the day.",
+            "now": "The same Spirit who comforts us also stirs us to speak truth and confront injustice in our world today."
+          },
+          {
+            "then": "Growth Brought Refinement - every time the early church grew in numbers or influence, it faced a new challenge that tested its character.",
+            "now": "Every season of growth in our lives and churches will bring new tests that refine our dependence on God."
+          }
+        ]
+      }
+    },
+    {
+      "type": "reflection",
+      "order": 7,
+      "content": {
+        "prompt": "Where do I need to speak clearly about Jesus?",
+        "additionalQuestions": [
+          "Where is God inviting me to pray bold prayers?",
+          "Where do I need to confess any dishonesty or half-truths?",
+          "Where can I give generously in a way that defies fear?",
+          "Where can I choose joy even when obedience costs me something?"
+        ],
+        "invitationType": "honest-examination"
+      }
+    },
+    {
+      "type": "prayer",
+      "order": 8,
+      "content": {
+        "text": "Sovereign Lord, you made the heavens and the earth and the sea, and everything in them. Consider the threats and pressures I face, and enable me to speak your word with great boldness. Stretch out your hand to heal and perform signs and wonders through the name of your holy servant Jesus. Fill me with your Spirit so that I may speak the word of God boldly, with integrity and courage. Amen.",
+        "type": "personal",
+        "posture": "petition",
+        "scriptureEcho": "Based on the early church's prayer in Acts 4:24-30"
+      }
+    },
+    {
+      "type": "takeaway",
+      "order": 9,
+      "content": {
+        "title": "Cross Fitness Challenge (Week 2): Practice Boldness and Integrity",
+        "commitment": "Identify one area where fear has been keeping you silent about your faith, and one area where managing your image has kept you from being honest. Then, ask the Holy Spirit to lead you into greater boldness and greater honesty in those specific areas.",
+        "dailyPrompts": [
+          {
+            "day": 1,
+            "prompt": "Where do I need to speak clearly about Jesus?"
+          },
+          {
+            "day": 2,
+            "prompt": "Where is God inviting me to pray bold prayers?"
+          },
+          {
+            "day": 3,
+            "prompt": "Where do I need to confess any dishonesty or half-truths?"
+          },
+          {
+            "day": 4,
+            "prompt": "Where can I give generously in a way that defies fear?"
+          },
+          {
+            "day": 5,
+            "prompt": "Where can I choose joy even when obedience costs me something?"
+          }
+        ],
+        "outcome": "By the end of Week 2, you will have exercised the core muscles of early Christian witness: boldness, honesty, generosity, and joy."
+      }
+    },
+    {
+      "type": "comprehension",
+      "order": 10,
+      "content": {
+        "forReflection": [
+          "Courage Grows Through Obedience - We often assume we need to feel bold before we step out in faith. But the early church shows us that boldness often follows obedience. When we simply do the right thing or speak the truth about Jesus despite our fears, the Holy Spirit meets us in that moment. Our courage muscles grow each time we obey God rather than our anxieties.",
+          "Integrity Is a Witness - In our world, authenticity is deeply attractive because it is so rare. Living with honesty and integrity, being the same person in public that we are in private, gives credibility to our message about Jesus.",
+          "Generosity Reveals What We Trust - Just as in Acts, radical generosity today is a thermometer for our faith. It shows what is going on in our hearts. When we give freely of our time, energy, and resources, it exposes fears and breaks the power of those fears.",
+          "Faith Is Meant to Be Visible - Following Jesus is personal, but it is not private. A public faith does not mean being obnoxious or showy. It means our commitment to Christ permeates our lives in such a way that others can see the difference."
+        ],
+        "forAccountabilityPartners": [
+          "Share one area where fear has been keeping you silent about your faith.",
+          "Discuss where you have been tempted toward image-management instead of honesty.",
+          "Commit to one specific way you will practice boldness this week.",
+          "Ask each other: 'Where is the Holy Spirit inviting you into greater courage?'"
+        ]
+      }
+    },
+    {
+      "type": "resource",
+      "order": 11,
+      "content": {
+        "relatedScriptures": [
+          {
+            "reference": "Acts 3:1-26",
+            "description": "The healing at the Temple gate and Peter's sermon"
+          },
+          {
+            "reference": "Acts 4:32-5:11",
+            "description": "The community's generosity and the story of Ananias and Sapphira"
+          },
+          {
+            "reference": "Acts 5:12-42",
+            "description": "Signs, growth, and intensifying opposition"
+          }
+        ],
+        "videos": [
+          {
+            "title": "Week 2 Overview",
+            "videoId": "Z-17KxpjL0Q",
+            "platform": "YouTube"
+          },
+          {
+            "title": "A Healing at the Temple Gate (Acts 3)",
+            "videoId": "Vul2TBheaZg",
+            "platform": "YouTube"
+          },
+          {
+            "title": "Arrest and Boldness (Acts 4)",
+            "videoId": "VDUQb_tj_yw",
+            "platform": "YouTube"
+          },
+          {
+            "title": "Signs, Growth, and Opposition (Acts 5)",
+            "videoId": "nYhJWSPPpYY",
+            "platform": "YouTube"
+          }
+        ],
+        "forDeeperStudy": [
+          {
+            "type": "scripture",
+            "title": "Acts 3-5",
+            "note": "Read the full narrative arc of these three chapters"
+          }
+        ]
+      }
+    },
+    {
+      "type": "profile",
+      "order": 12,
+      "content": {
+        "profiles": [
+          {
+            "name": "Peter",
+            "title": "The Bold Witness",
+            "description": "The same disciple who denied Jesus three times before the crucifixion now stands before the Sanhedrin and declares, 'Salvation is found in no one else.' Filled with the Holy Spirit, Peter demonstrates that boldness is not a personality trait but the fruit of divine empowerment.",
+            "keyQuote": "We cannot help speaking about what we have seen and heard.",
+            "lessonForUs": "Our past failures do not disqualify us from bold witness. The Spirit can transform cowardice into courage."
+          },
+          {
+            "name": "John",
+            "title": "The Faithful Companion",
+            "description": "Standing alongside Peter before the authorities, John demonstrates the power of Christian partnership in witness. The apostles did not stand alone - they stood together.",
+            "keyQuote": "Which is right in God's eyes: to listen to you, or to him?",
+            "lessonForUs": "Faithful witness is often strengthened through community and partnership."
+          },
+          {
+            "name": "Ananias and Sapphira",
+            "title": "The Cautionary Tale",
+            "description": "This couple wanted the reputation of radical generosity without the sacrifice. Their deception was not primarily against the apostles but against the Holy Spirit. Their story serves as a sobering reminder that God cares deeply about integrity.",
+            "keyQuote": "You have not lied just to human beings but to God.",
+            "lessonForUs": "Hypocrisy, if left unchecked, rots the foundation of the church. Authenticity is essential for the mission."
+          },
+          {
+            "name": "Gamaliel",
+            "title": "The Unexpected Voice of Wisdom",
+            "description": "A respected Pharisee and teacher who advised the Sanhedrin to exercise caution. His counsel, 'If their purpose or activity is of human origin, it will fail. But if it is from God, you will not be able to stop these men,' proved prophetic.",
+            "keyQuote": "If it is from God, you will not be able to stop these men; you will only find yourselves fighting against God.",
+            "lessonForUs": "Sometimes God uses unexpected voices to accomplish His purposes and protect His people."
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "estimatedReadTime": {
+      "quick": "5 minutes",
+      "medium": "15 minutes",
+      "deep": "30 minutes"
+    },
+    "moduleCount": 12,
+    "primaryEmotion": "conviction-with-courage",
+    "soulAuditKeywords": [
+      "boldness",
+      "courage",
+      "integrity",
+      "honesty",
+      "persecution",
+      "opposition",
+      "public faith",
+      "witness",
+      "generosity",
+      "Spirit-filled",
+      "authenticity"
+    ],
+    "weekNumber": 2,
+    "seriesContext": "Part of the Acts study series",
+    "nextWeekPreview": {
+      "title": "Week 3: Acts 6-9",
+      "description": "Stephen's witness, the scattering of the church, and the conversion of Saul"
+    }
+  }
+}

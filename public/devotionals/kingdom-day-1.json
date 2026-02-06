@@ -1,0 +1,64 @@
+{
+  "day": 1,
+  "title": "What if the kingdom you're looking for is already here?",
+  "teaser": "You're searching for refuge in empires, markets, and curated spirituality. But what if you're looking in the wrong places?",
+  "framework": "Matthew 6:33 - Seek first the kingdom of God and his righteousness, and all these things will be added to you",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE SEARCH FOR REFUGE",
+      "type": "text",
+      "content": "You're looking for something stable. Something that won't collapse.\n\nYour democracy feels fragile—71% of people are dissatisfied with how it's working. Political violence is escalating. You thought your country was your refuge, but the nation is fracturing.\n\nYour economy feels unstable—inflation ate 25% of your purchasing power. You're \"job hugging,\" too afraid to move because everything feels precarious. You thought the market was your security, but it's failing you.\n\nYour spirituality feels empty—you've tried the apps, the podcasts, the influencers. You thought you could curate your way to peace, but it's all surface.\n\nYou're searching. Desperately.\n\nBut you're searching in empires. And empires always fall.",
+      "wordCount": 113
+    },
+    {
+      "number": 3,
+      "heading": "THE EMPIRES WE BUILD",
+      "type": "text",
+      "content": "Here's what you've been told:\n\n**Vote for the right candidate, and we'll save the country.**\nBut politics can't bear the weight of salvation. It's an empire, not a kingdom.\n\n**Accumulate enough wealth, and you'll be secure.**\nBut markets crash. Currencies fail. Money is sand, not stone.\n\n**Find the right spiritual practice, and you'll find peace.**\nBut consumer spirituality is just another product. You're not transformed—you're distracted.\n\nYou've been building towers. Babel all over again.\n\nClimbing higher, reaching further, convinced that if you just get to the top, you'll finally be safe.\n\nBut empires don't save you. They consume you.",
+      "wordCount": 102
+    },
+    {
+      "number": 4,
+      "heading": "THE COST OF MISPLACED SEARCH",
+      "type": "text-with-image",
+      "content": "The cost of searching in empires is this: **exhaustion without arrival.**\n\n43% of adults are more anxious than last year. You're refreshing the news, checking your portfolio, scrolling spiritual content—desperately searching for something that will hold.\n\nBut nothing does.\n\nBecause empires promise refuge but deliver anxiety. They promise security but demand your soul. They promise peace but only give you a better distraction.\n\nYou're building on sand. And the tide is already coming in.\n\nWhat if the problem isn't that you haven't found the right empire?\n\nWhat if the problem is that **you're looking for a kingdom in all the wrong places?**",
+      "illustration": {
+        "description": "Dithered image of person searching through rubble/ruins, or tower of babel crumbling",
+        "file": "kingdom-day-1-illustration.png"
+      },
+      "wordCount": 115
+    },
+    {
+      "number": 5,
+      "heading": "AN ANCIENT PATTERN",
+      "type": "text",
+      "content": "This isn't new.\n\n2,000 years ago, people were doing the same thing. Searching for refuge in Rome's military might. In religious systems. In economic security. In curated righteousness.\n\nAnd into that search, a carpenter-turned-teacher said something that changed everything:\n\n**\"Seek first the kingdom of God and his righteousness, and all these things will be added to you.\"**\n\nNot Rome. Not the market. Not the self-help spirituality of the day.\n\nThe kingdom.\n\nBut here's the question nobody's asking:\n\nWhat if the kingdom you're looking for isn't something you find **out there**?\n\nWhat if it's already here?",
+      "wordCount": 101
+    },
+    {
+      "number": 6,
+      "heading": "THE INVITATION TO STOP SEARCHING",
+      "type": "text",
+      "content": "What if you stopped climbing empires and started looking for the kingdom?\n\nWhat if the refuge you're desperately searching for isn't in Washington, Wall Street, or your curated spiritual feed?\n\nWhat if it's closer than you think?\n\nThe invitation isn't to search harder. It's to **seek differently.**\n\nNot in empires. In the kingdom.\n\nNot later. Now.\n\nBecause the kingdom isn't coming. It's already here.\n\nThe question is: Are you looking?",
+      "wordCount": 73
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nI've been searching in all the wrong places.\n\nIn politics. In money. In curated spirituality. In empires that promise refuge but only deliver exhaustion.\n\nI'm tired of climbing towers that crumble. I'm tired of building on sand.\n\nYou said to seek first Your kingdom. Teach me what that means.\n\nShow me where to look. Because I'm ready to stop searching in empires.\n\nI'm ready to find the kingdom that's already here.\n\nAmen.",
+      "wordCount": 73
+    }
+  ],
+  "totalWords": 577,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Matthew 6:33",
+  "chiastic_position": "A - Introduction: Searching in wrong places (empires, markets, consumer spirituality)"
+}

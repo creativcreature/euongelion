@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EUONGELION - Morning Briefing (Expanded)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tehom-black: #1A1612;
+            --scroll-white: #F7F3ED;
+            --god-is-gold: #C19A6B;
+            --gold-muted: rgba(193, 154, 107, 0.15);
+            --gold-soft: rgba(193, 154, 107, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--scroll-white);
+            color: var(--tehom-black);
+            overflow: hidden;
+        }
+
+        .slides-container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            pointer-events: none;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .slide-content {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .display-font { font-family: 'Playfair Display', serif; }
+
+        .masthead {
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-weight: 400;
+            font-size: 0.75rem;
+            color: var(--god-is-gold);
+            margin-bottom: 1rem;
+        }
+
+        .headline-giant {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 7rem);
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .headline-large {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .headline-medium {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .subtext {
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 300;
+            color: rgba(26, 22, 18, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .gold-accent { color: var(--god-is-gold); }
+
+        /* Slide Themes */
+        .slide-dark {
+            background: linear-gradient(135deg, var(--tehom-black) 0%, #2a241e 100%);
+            color: var(--scroll-white);
+        }
+        .slide-dark .masthead { color: var(--god-is-gold); }
+        .slide-dark .subtext { color: rgba(247, 243, 237, 0.6); }
+
+        .slide-light {
+            background-color: var(--scroll-white);
+        }
+
+        .slide-gold {
+            background: linear-gradient(180deg, var(--scroll-white) 0%, #ebe5db 100%);
+        }
+
+        /* Proceed Button */
+        .proceed-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 1px solid var(--tehom-black);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .proceed-btn:hover {
+            background: var(--tehom-black);
+            color: var(--scroll-white);
+        }
+
+        .proceed-btn svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .proceed-btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 300;
+            color: var(--god-is-gold);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            margin-top: 0.5rem;
+            opacity: 0.7;
+        }
+
+        /* Docs Grid */
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .doc-tile {
+            background: rgba(247, 243, 237, 0.05);
+            border: 1px solid rgba(193, 154, 107, 0.2);
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .doc-tile:hover {
+            background: rgba(247, 243, 237, 0.1);
+            border-color: var(--god-is-gold);
+        }
+
+        .doc-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--god-is-gold);
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .doc-name {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .doc-ext {
+            font-size: 0.65rem;
+            opacity: 0.4;
+            margin-top: 0.15rem;
+        }
+
+        /* Decision Tiles */
+        .decision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .decision-tile {
+            background: rgba(193, 154, 107, 0.05);
+            border-left: 4px solid var(--god-is-gold);
+            padding: 1.5rem;
+        }
+
+        .decision-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .decision-count {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--god-is-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .decision-desc {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+
+        /* Category Cards */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .category-card {
+            background: rgba(247, 243, 237, 0.05);
+            border: 1px solid rgba(193, 154, 107, 0.2);
+            padding: 1.5rem;
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(193, 154, 107, 0.2);
+            padding-bottom: 0.75rem;
+        }
+
+        .category-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .category-count {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--god-is-gold);
+        }
+
+        .category-list {
+            font-size: 0.75rem;
+            line-height: 1.8;
+            opacity: 0.7;
+        }
+
+        /* Recommendation Box */
+        .recommendation-box {
+            background: var(--gold-muted);
+            border: 2px solid var(--god-is-gold);
+            padding: 2rem 3rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .recommendation-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--god-is-gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .recommendation-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .recommendation-sub {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            margin-top: 2rem;
+            position: relative;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            position: relative;
+            padding: 1rem 0;
+            width: 100%;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 12px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--gold-soft) 0%, var(--god-is-gold) 50%, var(--gold-soft) 100%);
+        }
+
+        .timeline-dot {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--scroll-white);
+            border: 2px solid var(--god-is-gold);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-dot.current {
+            background: var(--god-is-gold);
+        }
+
+        .timeline-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .timeline-phase {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+
+        .timeline-status {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--god-is-gold);
+        }
+
+        /* Key Decisions List */
+        .key-decisions {
+            max-width: 700px;
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .key-decision-item {
+            display: grid;
+            grid-template-columns: 3rem 1fr;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(26, 22, 18, 0.1);
+        }
+
+        .key-decision-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--god-is-gold);
+            line-height: 1;
+        }
+
+        .key-decision-text h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .key-decision-text p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Command Box */
+        .command-box {
+            background: rgba(247, 243, 237, 0.05);
+            border: 1px solid rgba(193, 154, 107, 0.3);
+            padding: 1.5rem 2.5rem;
+            margin: 2rem 0;
+            font-family: monospace;
+            font-size: 1.25rem;
+        }
+
+        .command-prompt { color: var(--god-is-gold); }
+
+        .wordmark {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--god-is-gold);
+            margin-top: 3rem;
+        }
+
+        /* Progress */
+        .progress-container {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+
+        .progress-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(26, 22, 18, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .progress-dot.active {
+            background: var(--god-is-gold);
+            transform: scale(1.2);
+        }
+
+        .progress-dot:hover { background: var(--god-is-gold); }
+
+        .nav-hint {
+            position: fixed;
+            bottom: 4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(26, 22, 18, 0.4);
+            z-index: 100;
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            z-index: 100;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .category-grid { grid-template-columns: 1fr; }
+            .decision-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            .slide { padding: 1.5rem; }
+            .stats-grid { gap: 1rem; }
+            .stat-number { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slides-container">
+
+        <!-- Slide 1: Welcome -->
+        <div class="slide slide-light active" data-slide="0">
+            <div class="slide-content">
+                <p class="masthead">EUONGELION</p>
+                <h1 class="headline-giant display-font">Good Morning</h1>
+                <p class="subtext">A lot happened while you slept. Here's everything.</p>
+                <button class="proceed-btn" onclick="nextSlide()">
+                    Begin Briefing (~15 min)
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Slide 2: Executive Summary -->
+        <div class="slide slide-dark" data-slide="1">
+            <div class="slide-content">
+                <p class="masthead">Overnight Summary</p>
+                <h2 class="headline-large display-font">What Was Accomplished</h2>
+                <p class="subtext">60+ documents created across 8 categories</p>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">49</div>
+                        <div class="stat-label">Documents Created</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">33+</div>
+                        <div class="stat-label">Decisions Ready</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1,070</div>
+                        <div class="stat-label">Days of Content Outlined</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">18K</div>
+                        <div class="stat-label">Words Written</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Decision Documents -->
+        <div class="slide slide-light" data-slide="2">
+            <div class="slide-content">
+                <p class="masthead">Founder Input Required</p>
+                <h2 class="headline-large display-font">Decision Documents</h2>
+                <p class="subtext">4 documents with options ready for your review</p>
+
+                <div class="decision-grid">
+                    <div class="decision-tile">
+                        <div class="decision-count">16</div>
+                        <div class="decision-title">Soul Audit Design</div>
+                        <div class="decision-desc">Question format, matching logic, edge cases, feedback mechanisms</div>
+                        <div style="font-size: 0.7rem; color: var(--god-is-gold); margin-top: 0.5rem;">/docs/decisions/SOUL-AUDIT-DESIGN.md</div>
+                    </div>
+                    <div class="decision-tile">
+                        <div class="decision-count">10</div>
+                        <div class="decision-title">Bible Reading Plan</div>
+                        <div class="decision-desc">Structure, pacing, starting points, canonical vs. chronological</div>
+                        <div style="font-size: 0.7rem; color: var(--god-is-gold); margin-top: 0.5rem;">/docs/decisions/BIBLE-READING-PLAN.md</div>
+                    </div>
+                    <div class="decision-tile">
+                        <div class="decision-count">7</div>
+                        <div class="decision-title">App vs Web App</div>
+                        <div class="decision-desc">Platform strategy, PWA vs native, audience accessibility</div>
+                        <div style="font-size: 0.7rem; color: var(--god-is-gold); margin-top: 0.5rem;">/docs/decisions/APP-VS-WEB-APP.md</div>
+                    </div>
+                    <div class="decision-tile">
+                        <div class="decision-count">4</div>
+                        <div class="decision-title">Pricing Strategy</div>
+                        <div class="decision-desc">Free, freemium, donations, or subscription models</div>
+                        <div style="font-size: 0.7rem; color: var(--god-is-gold); margin-top: 0.5rem;">/docs/research/PRICING-STRATEGY.md</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: App vs Web Recommendation -->
+        <div class="slide slide-gold" data-slide="3">
+            <div class="slide-content">
+                <p class="masthead">Key Recommendation</p>
+                <h2 class="headline-large display-font">App vs Web App</h2>
+
+                <div class="recommendation-box">
+                    <div class="recommendation-label">Recommended Approach</div>
+                    <div class="recommendation-text">Web-First PWA</div>
+                    <div class="recommendation-sub">Progressive Web App with "Add to Home Screen" — native apps later if justified by demand</div>
+                </div>
+
+                <p style="max-width: 600px; margin: 0 auto; font-size: 0.95rem; line-height: 1.7; text-align: left;">
+                    <strong>Why:</strong> Maximum accessibility (no app store friction), faster time-to-market, single codebase,
+                    works offline, supports push notifications. Your audience includes people hesitant to "commit" —
+                    a URL is lower friction than an app download.
+                </p>
+                <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.6;">
+                    Full analysis with 7 decision points in /docs/decisions/APP-VS-WEB-APP.md
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 5: Content Created -->
+        <div class="slide slide-dark" data-slide="4">
+            <div class="slide-content">
+                <p class="masthead">Content Production</p>
+                <h2 class="headline-large display-font">Content Created</h2>
+                <p class="subtext">Ready for founder review and iteration</p>
+
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-header">
+                            <span class="category-name">Deep Dive Essays</span>
+                            <span class="category-count">5</span>
+                        </div>
+                        <div class="category-list">
+                            Psalm 23 (3,113 words)<br>
+                            Matthew 11:28-30 (3,785 words)<br>
+                            Romans 8:28 (3,530 words)<br>
+                            Isaiah 43:1-3 (3,899 words)<br>
+                            John 15:1-5 (3,776 words)
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-header">
+                            <span class="category-name">Series Descriptions</span>
+                            <span class="category-count">47</span>
+                        </div>
+                        <div class="category-list">
+                            1,070 days of content<br>
+                            Marketing-ready copy<br>
+                            Audience targeting<br>
+                            All 5-day aligned
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-header">
+                            <span class="category-name">Series Outlines</span>
+                            <span class="category-count">210</span>
+                        </div>
+                        <div class="category-list">
+                            Apologetics: 100 days<br>
+                            Doctrinal: 40 days<br>
+                            Disciplines: 70 days
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-header">
+                            <span class="category-name">Content Banks</span>
+                            <span class="category-count">544</span>
+                        </div>
+                        <div class="category-list">
+                            185 breath prayers<br>
+                            54 word studies<br>
+                            250 reflection questions<br>
+                            55 story hooks
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-header">
+                            <span class="category-name">Onboarding</span>
+                            <span class="category-count">6</span>
+                        </div>
+                        <div class="category-list">
+                            1-day version<br>
+                            2-day version<br>
+                            3-day version<br>
+                            All with HTML previews
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-header">
+                            <span class="category-name">User Personas</span>
+                            <span class="category-count">4</span>
+                        </div>
+                        <div class="category-list">
+                            Sarah (Drifted Believer)<br>
+                            Marcus (Skeptical Seeker)<br>
+                            David & Linda (Stuck)<br>
+                            Pastor James (Weary)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Design & Technical -->
+        <div class="slide slide-light" data-slide="5">
+            <div class="slide-content">
+                <p class="masthead">Implementation Prep</p>
+                <h2 class="headline-large display-font">Design & Technical</h2>
+                <p class="subtext">Everything needed to start building</p>
+
+                <div class="category-grid">
+                    <div class="category-card" style="background: rgba(26,22,18,0.02);">
+                        <div class="category-header">
+                            <span class="category-name">Design System</span>
+                            <span class="category-count">4</span>
+                        </div>
+                        <div class="category-list">
+                            Dark Mode Specification<br>
+                            Design Tokens (CSS)<br>
+                            Icon Requirements (113)<br>
+                            Loading Patterns
+                        </div>
+                    </div>
+                    <div class="category-card" style="background: rgba(26,22,18,0.02);">
+                        <div class="category-header">
+                            <span class="category-name">Technical Docs</span>
+                            <span class="category-count">5</span>
+                        </div>
+                        <div class="category-list">
+                            Environment Variables<br>
+                            Analytics Taxonomy (40+ events)<br>
+                            SEO Strategy<br>
+                            Performance Budget<br>
+                            Security Checklist
+                        </div>
+                    </div>
+                    <div class="category-card" style="background: rgba(26,22,18,0.02);">
+                        <div class="category-header">
+                            <span class="category-name">Copy & Messaging</span>
+                            <span class="category-count">2</span>
+                        </div>
+                        <div class="category-list">
+                            Email Templates (20+)<br>
+                            UI Messaging (errors, empty states, tooltips, legal)
+                        </div>
+                    </div>
+                    <div class="category-card" style="background: rgba(26,22,18,0.02);">
+                        <div class="category-header">
+                            <span class="category-name">Process Docs</span>
+                            <span class="category-count">6</span>
+                        </div>
+                        <div class="category-list">
+                            Content Workflow<br>
+                            Founder Review Checklist<br>
+                            QA Checklist<br>
+                            Launch Checklist (50+ items)<br>
+                            Post-Launch Monitoring<br>
+                            Support Categories
+                        </div>
+                    </div>
+                    <div class="category-card" style="background: rgba(26,22,18,0.02);">
+                        <div class="category-header">
+                            <span class="category-name">Strategy Docs</span>
+                            <span class="category-count">8</span>
+                        </div>
+                        <div class="category-list">
+                            UX Flow Maps<br>
+                            Animation Principles<br>
+                            Image Strategy<br>
+                            Social Shareability<br>
+                            Component Inventory<br>
+                            Site Architecture<br>
+                            Branding Refinement<br>
+                            Content Structure
+                        </div>
+                    </div>
+                    <div class="category-card" style="background: rgba(26,22,18,0.02);">
+                        <div class="category-header">
+                            <span class="category-name">Research</span>
+                            <span class="category-count">4</span>
+                        </div>
+                        <div class="category-list">
+                            Competitor Teardown (5 apps)<br>
+                            Pricing Strategy (4 options)<br>
+                            User Personas (4 detailed)<br>
+                            Accessibility Audit (WCAG 2.1)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Marketing -->
+        <div class="slide slide-dark" data-slide="6">
+            <div class="slide-content">
+                <p class="masthead">Launch Preparation</p>
+                <h2 class="headline-large display-font">Marketing & Launch</h2>
+                <p class="subtext">Complete launch playbook ready</p>
+
+                <div class="docs-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+                    <div class="doc-tile">
+                        <div class="doc-number">01</div>
+                        <div class="doc-name">Launch Copy</div>
+                        <div class="doc-ext">All announcement variants + A/B tests</div>
+                    </div>
+                    <div class="doc-tile">
+                        <div class="doc-number">02</div>
+                        <div class="doc-name">Social Sequence</div>
+                        <div class="doc-ext">30-day content calendar</div>
+                    </div>
+                    <div class="doc-tile">
+                        <div class="doc-number">03</div>
+                        <div class="doc-name">Email Sequence</div>
+                        <div class="doc-ext">Pre-launch to post-launch</div>
+                    </div>
+                    <div class="doc-tile">
+                        <div class="doc-number">04</div>
+                        <div class="doc-name">Press Kit</div>
+                        <div class="doc-ext">For journalists & bloggers</div>
+                    </div>
+                    <div class="doc-tile">
+                        <div class="doc-number">05</div>
+                        <div class="doc-name">Partnership Templates</div>
+                        <div class="doc-ext">Churches, influencers, podcasts, authors</div>
+                    </div>
+                    <div class="doc-tile">
+                        <div class="doc-number">06</div>
+                        <div class="doc-name">Referral Program</div>
+                        <div class="doc-ext">Mechanics & copy</div>
+                    </div>
+                    <div class="doc-tile">
+                        <div class="doc-number">07</div>
+                        <div class="doc-name">First Month Calendar</div>
+                        <div class="doc-ext">Day-by-day execution plan</div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.6;">
+                    All files in /docs/marketing/
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Accessibility Finding -->
+        <div class="slide slide-gold" data-slide="7">
+            <div class="slide-content">
+                <p class="masthead">Important Finding</p>
+                <h2 class="headline-large display-font">Accessibility Audit</h2>
+
+                <div class="recommendation-box" style="border-color: #b44;">
+                    <div class="recommendation-label" style="color: #b44;">Critical Issue Found</div>
+                    <div class="recommendation-text">Gold on Scroll Fails Contrast</div>
+                    <div class="recommendation-sub">#C19A6B on #F7F3ED = 2.8:1 ratio (needs 4.5:1 for small text)</div>
+                </div>
+
+                <p style="max-width: 600px; margin: 0 auto; font-size: 0.95rem; line-height: 1.7; text-align: left;">
+                    <strong>Solution provided:</strong> Use <code style="background: rgba(26,22,18,0.1); padding: 0.1em 0.3em;">--gold-accessible: #8B6914</code> for text on light backgrounds.
+                    This darker gold achieves 5.1:1 contrast while maintaining brand feel.
+                </p>
+                <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.6;">
+                    Full audit with code fixes in /docs/research/ACCESSIBILITY-AUDIT.md
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 9: Roadmap -->
+        <div class="slide slide-light" data-slide="8">
+            <div class="slide-content">
+                <p class="masthead">Project Timeline</p>
+                <h2 class="headline-large display-font">The Road Ahead</h2>
+
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot current"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-phase">Pre-Implementation</div>
+                            <div class="timeline-status">Current Phase — Review & Decisions</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-phase">Foundation Week</div>
+                            <div class="timeline-status">Week 1 — Supabase, Auth, Routes</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-phase">Content Week</div>
+                            <div class="timeline-status">Week 2 — Components, Content Loading</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-phase">Integration Week</div>
+                            <div class="timeline-status">Week 3 — Soul Audit, Day-gating</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-phase">Launch</div>
+                            <div class="timeline-status">Week 4 — Testing, Deploy, Go Live</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Key Decisions -->
+        <div class="slide slide-dark" data-slide="9">
+            <div class="slide-content">
+                <p class="masthead">Your Input Needed</p>
+                <h2 class="headline-large display-font">Key Decisions</h2>
+                <p class="subtext">These require founder sign-off before building</p>
+
+                <div class="key-decisions">
+                    <div class="key-decision-item">
+                        <div class="key-decision-num">1</div>
+                        <div class="key-decision-text">
+                            <h3>Onboarding Length</h3>
+                            <p>1-day, 2-day, or 3-day? All three are drafted.</p>
+                        </div>
+                    </div>
+                    <div class="key-decision-item">
+                        <div class="key-decision-num">2</div>
+                        <div class="key-decision-text">
+                            <h3>Soul Audit Structure</h3>
+                            <p>16 decisions including question style, matching logic, edge cases</p>
+                        </div>
+                    </div>
+                    <div class="key-decision-item">
+                        <div class="key-decision-num">3</div>
+                        <div class="key-decision-text">
+                            <h3>Bible Reading Plan</h3>
+                            <p>Canonical vs chronological, pace, starting points</p>
+                        </div>
+                    </div>
+                    <div class="key-decision-item">
+                        <div class="key-decision-num">4</div>
+                        <div class="key-decision-text">
+                            <h3>Pricing Model</h3>
+                            <p>Free, freemium, donations, or subscription?</p>
+                        </div>
+                    </div>
+                    <div class="key-decision-item">
+                        <div class="key-decision-num">5</div>
+                        <div class="key-decision-text">
+                            <h3>Deep Dive Voice Review</h3>
+                            <p>5 sample essays ready — review tone, depth, theological accuracy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Ready -->
+        <div class="slide slide-dark" data-slide="10">
+            <div class="slide-content">
+                <p class="masthead">Let's Begin</p>
+                <h2 class="headline-large display-font" style="color: var(--scroll-white);">Ready to Review?</h2>
+
+                <div class="command-box">
+                    <span class="command-prompt">$</span> Type "ready" to start
+                </div>
+
+                <p style="color: rgba(247, 243, 237, 0.6); font-size: 0.95rem; max-width: 500px; margin: 0 auto; line-height: 1.7;">
+                    We'll walk through the decision documents together, starting with Soul Audit design.
+                    You review the options, I'll implement your choices.
+                </p>
+
+                <div class="wordmark">EUONGELION</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-container">
+        <div class="progress-dot active" data-goto="0"></div>
+        <div class="progress-dot" data-goto="1"></div>
+        <div class="progress-dot" data-goto="2"></div>
+        <div class="progress-dot" data-goto="3"></div>
+        <div class="progress-dot" data-goto="4"></div>
+        <div class="progress-dot" data-goto="5"></div>
+        <div class="progress-dot" data-goto="6"></div>
+        <div class="progress-dot" data-goto="7"></div>
+        <div class="progress-dot" data-goto="8"></div>
+        <div class="progress-dot" data-goto="9"></div>
+        <div class="progress-dot" data-goto="10"></div>
+    </div>
+
+    <div class="nav-hint">Use arrow keys or click to navigate</div>
+    <div class="slide-counter"><span id="current-num">1</span> / 11</div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 11;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.progress-dot');
+        const slideCounter = document.getElementById('current-num');
+
+        function goToSlide(index) {
+            if (index < 0 || index >= totalSlides) return;
+
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+
+            currentSlide = index;
+
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+            slideCounter.textContent = currentSlide + 1;
+
+            updateProgressColors();
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                goToSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                goToSlide(currentSlide - 1);
+            }
+        }
+
+        function updateProgressColors() {
+            const darkSlides = [1, 4, 6, 9, 10];
+            const isDark = darkSlides.includes(currentSlide);
+
+            dots.forEach((dot, i) => {
+                if (!dot.classList.contains('active')) {
+                    dot.style.background = isDark
+                        ? 'rgba(247, 243, 237, 0.3)'
+                        : 'rgba(26, 22, 18, 0.2)';
+                } else {
+                    dot.style.background = '#C19A6B';
+                }
+            });
+
+            const navHint = document.querySelector('.nav-hint');
+            const counter = document.querySelector('.slide-counter');
+            navHint.style.color = isDark ? 'rgba(247, 243, 237, 0.4)' : 'rgba(26, 22, 18, 0.4)';
+            counter.style.color = isDark ? 'rgba(247, 243, 237, 0.4)' : 'rgba(26, 22, 18, 0.4)';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.proceed-btn') || e.target.closest('.progress-dot')) {
+                return;
+            }
+            nextSlide();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
+                goToSlide(parseInt(dot.dataset.goto));
+            });
+        });
+
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
+        document.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) {
+                diff > 0 ? nextSlide() : prevSlide();
+            }
+        });
+
+        updateProgressColors();
+    </script>
+</body>
+</html>

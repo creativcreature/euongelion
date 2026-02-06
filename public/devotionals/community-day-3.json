@@ -1,0 +1,64 @@
+{
+  "day": 3,
+  "title": "What if you're not meant to be alone?",
+  "teaser": "The pivot: Jesus didn't build an empire. He built a table. Where two or three gather, He is there.",
+  "framework": "Matthew 6:33 - Seek first the kingdom... and all these things will be added",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "WAKE UP",
+      "image": "wU1.png"
+    },
+    {
+      "number": 2,
+      "heading": "THE MYTH OF SELF-SUFFICIENCY",
+      "type": "text",
+      "content": "You've been taught to make it on your own.\n\nBe independent. Self-reliant. Don't need anyone. Pull yourself up by your bootstraps.\n\nAsking for help is weakness. Needing people is failure. If you can't do it alone, you're not strong enough.\n\nSo you've learned to isolate. To carry everything yourself. To pretend you're fine when you're falling apart.\n\nBut here's the truth you're discovering the hard way:\n\n**You were never meant to be alone.**\n\nThe myth of self-sufficiency is killing you. And it's not even biblical.\n\nBecause from the very beginning, God said: **\"It is not good for man to be alone.\"**",
+      "wordCount": 102
+    },
+    {
+      "number": 3,
+      "heading": "THE DESIGN FOR COMMUNITY",
+      "type": "text",
+      "content": "You weren't made for isolation. You were made for communion.\n\nThe word \"communion\" means *with-union.* Being united with others. Not merged, not absorbed—but connected.\n\nGod himself exists in community—Father, Son, Spirit. Not alone. Not isolated. In relationship.\n\nAnd when God made humanity, the design was the same: **you need other people.**\n\nNot as a backup plan. Not as a nice addition. As core architecture.\n\nYou need people who see you struggle and don't run. People who carry you when you collapse. People who remind you who you are when you forget.\n\nThat's not weakness. That's how you were made.",
+      "wordCount": 106
+    },
+    {
+      "number": 4,
+      "heading": "THE BREAKING OF ISOLATION",
+      "type": "text-with-image",
+      "content": "The cost of trying to be self-sufficient is this: **you break.**\n\nYou carry burdens you were never meant to carry alone. You face crises without backup. You collapse under the weight and wonder why you're not strong enough.\n\nBut the problem isn't your strength. It's the lie that you should be doing this alone.\n\nGod never designed you to be a solo act.\n\nAnd when the isolation breaks you—when you can't hold it together anymore, when the facade collapses, when you finally admit you need people—**that's** the moment the pivot happens.\n\nBecause admitting you need community isn't failure.\n\nIt's the beginning of being human again.",
+      "illustration": {
+        "description": "Dithered image of person dropping heavy load, or hands reaching toward each other",
+        "file": "community-day-3-illustration.png"
+      },
+      "wordCount": 113
+    },
+    {
+      "number": 5,
+      "heading": "THE PIVOT — WHERE TWO OR THREE GATHER",
+      "type": "text",
+      "content": "Jesus had every opportunity to build an empire. He could have leveraged power, accumulated followers, created an institution.\n\nInstead, he built something smaller and more subversive: **a community.**\n\nTwelve people. Then seventy. Then small gatherings in homes, around tables, breaking bread together.\n\nAnd he said something radical:\n\n**\"Where two or three gather in my name, there am I with them.\"**\n\nNot in the temple. Not in the palace. Not in the crowd.\n\nIn the gathering. In the small circle. In the covenant community.\n\nJesus is present **where people come together** in his name.\n\nThat's the pivot: You're not meant to encounter God alone. You're meant to find him in communion.",
+      "wordCount": 117
+    },
+    {
+      "number": 6,
+      "heading": "THE KINGDOM TABLE",
+      "type": "text",
+      "content": "Jesus didn't just talk about community. He **embodied** it.\n\nHe ate with outcasts. He gathered sinners. He welcomed the broken, the rejected, the unqualified.\n\nAnd at the center of his ministry was a table.\n\nNot a stage. Not a podium. A table.\n\nWhere everyone had a seat. Where the meal was shared. Where presence mattered more than performance.\n\nThat's the kingdom community: **a table where you belong, not because you're useful, but because you're invited.**\n\nJesus says: **\"Seek first the kingdom.\"**\n\nThe kingdom isn't isolated individuals. It's covenant people gathered around the same table.\n\nYou don't have to make it alone anymore.\n\nThere's a seat for you.",
+      "wordCount": 108
+    },
+    {
+      "number": 7,
+      "heading": "THE INVITATION",
+      "type": "prayer",
+      "content": "God,\n\nI've been trying to do this alone. Carrying everything myself. Pretending I'm fine when I'm breaking.\n\nYou say I wasn't made for isolation. I was made for communion.\n\nTeach me how to need people. How to let them see me struggling. How to trust that they'll stay.\n\nYou promise that where two or three gather, You're there.\n\nI want to find You in community. Not alone. Together.\n\nShow me the table. I'm ready to sit down.\n\nAmen.",
+      "wordCount": 80
+    }
+  ],
+  "totalWords": 626,
+  "jesusIntroduced": 5,
+  "scriptureReference": "Matthew 18:20, Genesis 2:18, John 13:1-17",
+  "chiastic_position": "C - THE PIVOT (Core Revelation)"
+}

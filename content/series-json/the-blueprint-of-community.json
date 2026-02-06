@@ -1,0 +1,703 @@
+{
+  "series": {
+    "id": "the-blueprint-of-community",
+    "title": "The Blueprint of Community",
+    "subtitle": "Discovering the Original Design of the Church",
+    "pathway": "Shepherd",
+    "coreQuestion": "What does authentic Christian community look like, and how can we build it where we are?",
+    "booksOfFocus": ["Acts"],
+    "totalDays": 5,
+    "heroImage": null,
+    "soulAuditKeywords": [
+      "lonely",
+      "disconnected",
+      "isolated",
+      "community",
+      "church",
+      "fellowship",
+      "belonging",
+      "leadership",
+      "ministry"
+    ]
+  },
+  "days": [
+    {
+      "number": 1,
+      "title": "The Great Commission & the Upper Room",
+      "anchorVerse": "Acts 1:8",
+      "theme": "Jesus does not send His disciples out in their own strength - He promises real, Spirit-given power for a real mission",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Acts 1:8",
+            "translation": "NIV",
+            "text": "But you will receive power when the Holy Spirit comes on you; and you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth.",
+            "emphasis": ["receive power", "Holy Spirit", "witnesses"],
+            "context": "Jesus' final words before His ascension"
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "δύναμις",
+            "transliteration": "dynamis",
+            "pronunciation": "DOO-nah-mis",
+            "meaning": "power, active and effective power",
+            "rootMeaning": "Not just raw force, but the ability to actually do what God calls you to do. Jesus does not send the disciples out with inspirational vibes. He promises real, Spirit-given power for a real mission.",
+            "usageNote": "The English word 'dynamite' comes from this Greek word, though the biblical meaning emphasizes divine enablement rather than explosive force."
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Pattern: Wait, Receive, Witness",
+            "body": "After His resurrection, Jesus spends 40 days with His disciples, giving them 'many convincing proofs' that He is alive and teaching them about the kingdom of God (Acts 1:3). He commands them not to leave Jerusalem, but to wait for the promised Holy Spirit. Only then will they be ready to carry His message from their local city (Jerusalem), to their region (Judea and Samaria), and out into the wider world.\n\nThe 40 days between Jesus' resurrection and His ascension are crucial. This was an intensive training window where Jesus was proving the reality of His resurrection, reframing the disciples' expectations of what the Messiah would do, and reorienting them from political hopes to a global, Spirit-powered mission.\n\nThey wanted an immediate political revolution. Jesus gave them a spiritual commission. The kingdom would not spread by swords or votes, but by witnesses filled with the Spirit.",
+            "keyInsight": "It starts in an upper room before it ever reaches a public square. The pattern is: Wait, Receive power, Bear witness."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Moravians of Herrnhut (Part 1)",
+            "body": "In the early 1700s, a small village called Herrnhut in Saxony (in what is now eastern Germany) was anything but peaceful. It was filled with religious refugees from different traditions who had fled persecution and ended up living side by side on the estate of a young nobleman named Count Nicolaus von Zinzendorf. On paper, they were all Christians. In reality, the settlement was fracturing under arguments, suspicion, and quiet resentment.\n\nZinzendorf was deeply troubled. Instead of giving up, he began visiting homes one by one, listening to grievances, opening Scripture, and calling people to live as members of one body rather than rival factions. He urged them to take seriously Jesus' prayer 'that all of them may be one' in John 17.\n\nOn May 12, 1727, the community gathered and entered into a covenant they called their 'Brotherly Agreement' - a shared commitment to humility, mutual love, and obedience to Christ as the center of their common life. It was their way of going back to the 'upper room,' laying down their personal agendas and waiting together before God.\n\nA few months later, on August 13, 1727, during a communion service, many in the congregation experienced a deep sense of God's presence, conviction, and love all at once. Later accounts described it as their own Pentecost, a turning point when disunity gave way to a Spirit-given oneness.\n\nA small group committed to continuous prayer, each person taking an hour, so that someone from Herrnhut would be praying every hour of every day. That 'prayer watch' continued, in one form or another, for about 100 years. From this once-fractured village, hundreds of missionaries eventually went out across Europe, the Caribbean, North America, Africa, and beyond.",
+            "connectionToTheme": "Jesus does not ask you to be impressive. He asks you to be available. The pattern in Jerusalem and in Herrnhut is the same: wait, receive power, then witness."
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 5,
+          "content": {
+            "prompt": "Where am I trying to 'be a witness' in my own strength instead of waiting on and relying on the Holy Spirit's power?",
+            "additionalQuestions": [],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 6,
+          "content": {
+            "commitment": "Before you rush into tasks, conversations, or ministry today, take five quiet minutes and pray: 'Holy Spirit, I cannot do this without You. Fill me. Lead me. Use me.' Treat that pause like your personal 'upper room.'",
+            "leavingAtCross": [],
+            "receivingFromCross": []
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 7,
+          "content": {
+            "text": "Jesus, You did not send Your disciples without power, and You are not sending me without power either. Forgive me for trying to live this life in my own strength. Teach me to wait on Your Spirit, to depend on Your power, and to see my everyday life as a place to bear witness to You. Amen.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Pentecost & the Birth of the Church",
+      "anchorVerse": "Acts 2:4",
+      "theme": "The Holy Spirit descends to fill believers completely, enabling them to be witnesses to all nations",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Acts 2:4",
+            "translation": "NIV",
+            "text": "All of them were filled with the Holy Spirit and began to speak in other tongues as the Spirit enabled them.",
+            "emphasis": [
+              "filled with the Holy Spirit",
+              "speak in other tongues",
+              "Spirit enabled"
+            ],
+            "context": "The Holy Spirit descends on the disciples during Pentecost"
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "πληρόω",
+            "transliteration": "pleroo",
+            "pronunciation": "play-ROH-oh",
+            "meaning": "to fill completely, saturate, permeate",
+            "rootMeaning": "This is not a partial touch or a momentary feeling. It means to be completely filled, saturated, permeated. Pentecost is not about emotional hype. It is about God taking up residence in His people.",
+            "usageNote": "Used throughout Acts to describe the Spirit's empowering presence in believers"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Significance of Pentecost",
+            "body": "Pentecost is often remembered as the moment tongues of fire appeared, but its deeper significance runs even further.\n\n1. Pentecost as Firstfruits: Shavuot (Pentecost) celebrated the wheat harvest. By pouring out the Spirit on this day, God marked the church as the firstfruits of His new creation.\n\n2. Pentecost as New Covenant: On this same feast, Israel remembered the giving of the Law at Sinai. At Sinai, the law was written on stone. At Pentecost, the Spirit writes God's ways on human hearts (Jeremiah 31:33).\n\n3. Pentecost as the Reversal of Babel: In Genesis 11, human pride led to scattered languages and fractured cultures. In Acts 2, humility and the Spirit lead to mutual understanding among the nations gathered in Jerusalem. The gospel doesn't erase culture - it redeems it. God speaks through our diversity, not around it.\n\n4. Pentecost as the Launch of the Church's Mission: Everything Jesus promised in Acts 1 becomes possible in Acts 2. The church will not grow through talent, charisma, or organization. It grows because the Spirit empowers ordinary people to live in extraordinary ways.",
+            "keyInsight": "Pentecost is the moment the church becomes a living, Spirit-filled body - a sign that God's Kingdom has broken into history in a new way."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Moravians of Herrnhut (Part 2)",
+            "body": "The prayer that began in Herrnhut did not stay confined to the walls of their little community. As the villagers prayed night after night, a quiet but steady transformation began taking place. Old grievances lost their sting. People who had avoided each other at meals found themselves lingering in conversations. The Scriptures they read together seemed to come alive, not as doctrine to memorize but as a life to be lived.\n\nA few months into their prayer watch, something unexpected started happening. Travelers began arriving from other regions of Europe, curious about the unity and warmth they had heard whispers about. Some came skeptical. Others came weary and wounded from religious conflicts of their own. But many reported the same thing: when they entered Herrnhut, they sensed a peace they could not explain.\n\nIt wasn't theatrics. It was the quiet hum of a people shaped by prayer. One visitor wrote that it felt like 'walking into a village where God Himself had drawn near.' Others described the community as a place where differences did not disappear, but where fellowship ran deeper than opinions.\n\nLike Acts 2, Herrnhut became a sign of what happens when God fills a community rather than individuals living side by side. It was not perfect. They were not extraordinary people. But they were available people, and their shared life spoke a message long before they ever sent missionaries out. Their unity was its own language - one that every visitor could understand.",
+            "connectionToTheme": "When the Spirit fills a community, unity becomes a witness. God's presence creates a language that reaches people who would never understand our words alone."
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 5,
+          "content": {
+            "prompt": "Where do I need the Spirit to fill what I cannot fake, force, or manufacture?",
+            "additionalQuestions": [],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 6,
+          "content": {
+            "commitment": "Choose one fear, weakness, or limitation that keeps you from boldness. For five minutes today, pray: 'Holy Spirit, fill this place in me. Do what I cannot do on my own.'",
+            "leavingAtCross": [],
+            "receivingFromCross": []
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 7,
+          "content": {
+            "text": "Holy Spirit, thank You for coming close. Thank You for choosing to dwell in people like us. Fill me today with Your presence, Your courage, and Your clarity. Help me declare Your goodness in ways that speak to the people around me. Amen.",
+            "type": "personal",
+            "posture": "gratitude"
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Peter's Sermon and the First Response",
+      "anchorVerse": "Acts 2:38",
+      "theme": "The gospel confronts reality, requires a response, and creates community",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Acts 2:38",
+            "translation": "NIV",
+            "text": "Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins. And you will receive the gift of the Holy Spirit.",
+            "emphasis": [
+              "Repent",
+              "be baptized",
+              "forgiveness of your sins",
+              "gift of the Holy Spirit"
+            ],
+            "context": "Peter's response to the crowd asking 'What shall we do?'"
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "καρδίαν κατενύγησαν",
+            "transliteration": "kardian katenygēsan",
+            "pronunciation": "kar-DEE-an kah-teh-NOO-gay-san",
+            "meaning": "cut to the heart, pierced in the heart",
+            "rootMeaning": "This phrase describes deep spiritual conviction - not shame, not guilt for guilt's sake, but a piercing clarity that awakens a person to truth and draws them toward God.",
+            "usageNote": "Found in Acts 2:37 describing the crowd's response to Peter's sermon"
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Pattern of Gospel Proclamation",
+            "body": "Peter's sermon is the first Christian sermon in history, and it sets the pattern for gospel proclamation.\n\n1. The Gospel is rooted in Scripture: Peter quotes Joel and Psalms to show that Jesus fulfills God's long story. The gospel is not a new idea - it is the climax of God's plan.\n\n2. The Gospel confronts reality: Peter does not soften the truth: 'You crucified Him.' The gospel exposes sin so it can be healed, not hidden.\n\n3. The Gospel requires a response: The people ask, 'What shall we do?' The gospel is not just information. It is an invitation to transformation.\n\n4. The Gospel creates community: Repentance and baptism do not lead to isolation. They lead directly into the life of the church described in Acts 2:42-47.\n\n5. The Gospel opens the door for everyone: Peter ends with a promise: 'The promise is for you and your children and for all who are far off - for all whom the Lord our God will call' (Acts 2:39). This includes the nations, the outcasts, the outsiders, and the wanderers.",
+            "keyInsight": "The church begins not with a strategy meeting, but with surrendered hearts and a clear gospel."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Moravians of Herrnhut (Part 3)",
+            "body": "As news of Herrnhut's unity spread, visitors did not simply observe a peaceful community - many found themselves strangely moved by it. Some arrived ready to critique, but within hours felt something shift inside. Others came burdened by wounds from church conflicts or spiritual dryness, only to find their hearts stirred with unexpected clarity. It was not emotional manipulation. It was a calm conviction, the kind that comes when a community is so filled with prayer that people breathe in the atmosphere of God's presence without anyone trying to force it.\n\nOne traveler from Silesia wrote in his journal that he had planned to stay only a day. Instead, he stayed three weeks. What changed him was not a sermon or argument, but the way the people of Herrnhut loved one another with patience and humility. He said their unity 'laid open my heart' and exposed places he had ignored for years. Bitterness he had carried suddenly felt heavy. Habits he had justified felt hollow. He wrote, 'Their life was a sermon, and my heart was pierced.'\n\nAnother visitor, a young woman from Moravia, had grown numb to faith after years of exile and religious strife. When she arrived in Herrnhut, someone invited her to a simple evening prayer gathering. As she listened to men and women pray in their own words, she felt walls she had built begin to soften. She later described it as if 'the peace of God reached into the places I had locked away.' She wept quietly, not out of despair, but out of a conviction that she no longer needed to pretend.\n\nWhat touched them was not flawless people or perfect behavior. It was the unmistakable sense that God was at work among ordinary believers.",
+            "connectionToTheme": "When a community lives under the Spirit's presence, people are not pressured into change - they are invited into it. Conviction becomes a doorway to healing."
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 5,
+          "content": {
+            "prompt": "Where is God trying to 'cut through' my defenses so I can repent, receive, and walk in a new direction?",
+            "additionalQuestions": [],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 6,
+          "content": {
+            "commitment": "Think of one area in your life where you have been resisting conviction. Today, pray one honest sentence: 'Lord, make me willing to change.' The Spirit meets honesty faster than perfection.",
+            "leavingAtCross": [],
+            "receivingFromCross": []
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 7,
+          "content": {
+            "text": "Jesus, thank You for the truth that sets me free. When Your Word confronts me, help me not to run or hide. Cut through what is false in me so I can walk in what is true. Give me the courage to repent, the humility to be formed, and the joy of life in Your Spirit. Amen.",
+            "type": "personal",
+            "posture": "confession"
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "The Four Pillars of the New Community",
+      "anchorVerse": "Acts 2:42",
+      "theme": "The four load-bearing commitments of a healthy church: teaching, fellowship, breaking of bread, and prayer",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Acts 2:42",
+            "translation": "NIV",
+            "text": "They devoted themselves to the apostles' teaching and to fellowship, to the breaking of bread and to prayer.",
+            "emphasis": [
+              "devoted themselves",
+              "apostles' teaching",
+              "fellowship",
+              "breaking of bread",
+              "prayer"
+            ],
+            "context": "The first description of Christian community - the spiritual DNA of the Church"
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "κοινωνία",
+            "transliteration": "koinonia",
+            "pronunciation": "koy-noh-NEE-ah",
+            "meaning": "fellowship, shared life, partnership, communion",
+            "rootMeaning": "Not casual friendliness or 'hanging out.' It means shared life, shared resources, shared mission. A covenant-level partnership. In the ancient world it was used for business partnerships, where partners shared both profit and loss. In Acts 2, their common 'investment' is the gospel, and their economic sharing is the natural outflow of this shared life.",
+            "usageNote": "Biblical fellowship is not coffee after church. It is a costly, shared life in Christ - belonging to each other in Christ."
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Four Pillars of Acts 2:42",
+            "body": "The four pillars of Acts 2:42 are not optional extras. They are the load-bearing beams of a healthy church.\n\n1. The Apostles' Teaching - A Shared Truth: The early believers did not rely on vibes or inspiration. They anchored themselves in the apostles' teaching - the authoritative witness to Jesus' life, death, resurrection, ascension, and return. Today, this means devotion to Scripture, not as information but formation. A community built on opinions becomes unstable. A community built on the Word becomes unshakeable.\n\n2. Fellowship (Koinonia) - A Shared Life: This is an all-in, covenant partnership. Not casual friendliness. Not occasional attendance. But risking your life and heart with others because Christ has bound you together. Koinonia means we carry each other's burdens, meet each other's needs, and stand together in faith and suffering.\n\n3. Breaking of Bread - A Shared Table: This refers both to communal meals and to the Lord's Supper. In both cases, the table becomes a place of presence - remembering Jesus, extending hospitality, healing divisions, and celebrating grace. In Acts, meals are not filler. They are formation.\n\n4. Prayer - A Shared Dependence: The early church did not pray as ritual. They prayed as oxygen. Their prayer life was not minimal or perfunctory. It was continuous, communal, expectant, and bold. Prayer was not an add-on. It was the engine.",
+            "keyInsight": "When any of these pillars is sidelined, we drift. The Spirit forms a people before He sends a movement."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Moravians of Herrnhut (Part 4)",
+            "body": "After the 1727 outpouring in Herrnhut, something remarkable happened. The unity they prayed for began to take shape in the ordinary rhythms of daily life. Families started opening their homes to one another. People shared meals and read Scripture at their kitchen tables. Disputes that once lingered for months were resolved in days. Widows and orphans were cared for without needing to ask. When one family suffered loss, others brought food, money, or simply their presence.\n\nThe community began organizing daily gatherings where Scripture was taught, hymns were sung, and prayers were offered. These were not polished services. They were simple and sincere. What mattered was not performance but presence - God's presence, and the presence of brothers and sisters who saw one another as gifts, not inconveniences.\n\nOne resident wrote that before 1727, Herrnhut felt like 'neighbors surviving near one another.' After 1727, it felt like 'a family formed by God.' People who once avoided each other now greeted one another with warmth. Hospitality became spontaneous. Acts of generosity became common. Visitors often remarked that simply walking through the village made them feel strangely at peace, as if they had entered a place where heaven and earth were not as far apart as usual.\n\nThey were not trying to 'copy' the early church. They simply obeyed Christ, loved one another, and prayed continually - and the result was a shared life that looked suspiciously like Acts 2:42-47. They discovered that community is not built by charisma or programs. It is built by devotion, repentance, prayer, and shared life. A blueprint already existed, and the Spirit helped them walk into it.",
+            "connectionToTheme": "Spiritual community is not complicated. It is costly. But when people center their lives on Jesus and one another, the Spirit does the heavy lifting."
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 5,
+          "content": {
+            "prompt": "Which of the four pillars is strongest in my life, and which is weakest? What would it look like for the Spirit to bring balance?",
+            "additionalQuestions": [],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 6,
+          "content": {
+            "commitment": "Text or message one believer and simply say: 'If you ever need prayer, support, or help this week, I'm here.' This is the beginning of koinonia - choosing to carry someone's burden.",
+            "leavingAtCross": [],
+            "receivingFromCross": []
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 7,
+          "content": {
+            "text": "Lord, make me a person who lives the blueprint of Acts 2. Shape my life around Your Word, Your people, Your table, and prayer. Build these rhythms in me, not by striving but by Your Spirit. Make my life part of a community that shines with Your love. Amen.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Awe, Generosity, and Daily Rhythms",
+      "anchorVerse": "Acts 2:43",
+      "theme": "The fruits of a Spirit-formed community: awe, generosity, unity, joy, hospitality, worship, and daily faithfulness",
+      "modules": [
+        {
+          "type": "scripture",
+          "order": 1,
+          "content": {
+            "reference": "Acts 2:43-47",
+            "translation": "NIV",
+            "text": "Everyone was filled with awe at the many wonders and signs performed by the apostles. All the believers were together and had everything in common. They sold property and possessions to give to anyone who had need. Every day they continued to meet together in the temple courts. They broke bread in their homes and ate together with glad and sincere hearts, praising God and enjoying the favor of all the people. And the Lord added to their number daily those who were being saved.",
+            "emphasis": [
+              "filled with awe",
+              "everything in common",
+              "every day",
+              "glad and sincere hearts",
+              "the Lord added to their number daily"
+            ],
+            "context": "The fruits of a Spirit-formed community"
+          }
+        },
+        {
+          "type": "vocab",
+          "order": 2,
+          "content": {
+            "language": "greek",
+            "word": "φόβος",
+            "transliteration": "phobos",
+            "pronunciation": "FOH-boss",
+            "meaning": "awe, holy fear, reverent awareness",
+            "rootMeaning": "Not terror, but a reverent awareness that God is here and God is active. Awe is what happens when ordinary people realize they are living in the middle of God's story, not merely their own.",
+            "usageNote": "While English 'phobia' comes from this word suggesting fear, the biblical use emphasizes wonder and reverence in God's presence."
+          }
+        },
+        {
+          "type": "teaching",
+          "order": 3,
+          "content": {
+            "title": "The Marks of a Spirit-Filled Community",
+            "body": "1. Awe - A Heart Awake to God: Awe is not spiritual fireworks. It is awareness. It is what happens when prayer, Word, and community shift from duty to desire. The early church was not impressed with themselves. They were impressed with God.\n\n2. Wonders and Signs - God's Activity, Not Human Effort: Miracles in Acts serve a purpose: they validate the apostles' message, they confirm Jesus is alive and reigning, they demonstrate the nearness of the Kingdom. We don't control the miraculous, but we can create space for God to move.\n\n3. Generosity - The Economics of a Kingdom People: The early believers viewed what they owned as held in trust for God. This wasn't forced. It wasn't socialism. It was Spirit-led surrender. Generosity is not measured by amount, but by availability.\n\n4. Daily Faithfulness - Slow, Steady Formation: Notice the rhythm: daily gatherings, daily meals, daily worship, daily favor, daily additions. Faith grows through small, consistent habits more than rare mountaintop moments.\n\n5. Joy - The Emotional Shape of a Spirit-Filled Life: Gladness and simplicity of heart were not personality traits. They were the emotional fruit of a community grounded in grace, forgiveness, and shared life. Joy becomes possible when you stop living alone.",
+            "keyInsight": "When the four pillars are strong, awe increases, miracles happen, needs get met, joy becomes normal, worship flows naturally, favor with outsiders grows, and the Lord adds people daily."
+          }
+        },
+        {
+          "type": "story",
+          "order": 4,
+          "content": {
+            "title": "The Moravians of Herrnhut (Part 5)",
+            "body": "By the mid-1700s, the transformation in Herrnhut was visible even to outsiders. Travelers passing through the village often wrote in their journals that there was 'a strange warmth' in the air, as if the peace of the community itself testified. What had once been a fractured settlement now had a quiet, compelling beauty about it - a sense that God was tangibly present. It was, in its own way, a place of awe.\n\nTheir generosity became legendary. When fires broke out in neighboring villages, the Moravians arrived first with food, tools, and labor. When refugees from Poland and Bohemia fled oppression, Herrnhut opened its doors without hesitation. People gave freely, not because they were wealthy, but because they had learned that possessions were resources entrusted by God for the sake of others.\n\nHospitality marked their days. Doors were open. Meals were shared. Strangers were welcomed. The line between 'my home' and 'our home' blurred, not from pressure, but from joy. They believed that if Christ dwelled among them, so should His welcome.\n\nAnd joy - deep, steady, disarming joy - became their signature. Not shallow cheerfulness. Not denial of suffering. A rooted gladness that grew from prayer, repentance, shared life, and trust in God. Visitors often commented that Herrnhut's singing could be heard from miles away.\n\nWhat began as a divided settlement became a living portrait of Acts 2. Awe, generosity, unity, joy, and daily worship - not manufactured, but cultivated by the Spirit through ordinary people who chose to surrender. From this unlikely village came missionaries, prayer movements, worship traditions, and a global witness that rippled for centuries.",
+            "connectionToTheme": "Awe is not found by chasing experiences. It grows when a community lives simply, prays continually, gives freely, worships honestly, and stays devoted to the things that matter most."
+          }
+        },
+        {
+          "type": "reflection",
+          "order": 5,
+          "content": {
+            "prompt": "Where do I see genuine awe, generosity, and joy in my life with God? Where do I feel spiritually flat - and what might the Spirit be inviting me into?",
+            "additionalQuestions": [],
+            "invitationType": "honest-examination"
+          }
+        },
+        {
+          "type": "takeaway",
+          "order": 6,
+          "content": {
+            "commitment": "Do one act of hidden generosity today. No credit. No announcement. Just quiet obedience. A bag of groceries. A $20 bill slipped into someone's hand. A meal delivered. Let generosity become worship.",
+            "leavingAtCross": [],
+            "receivingFromCross": []
+          }
+        },
+        {
+          "type": "prayer",
+          "order": 7,
+          "content": {
+            "text": "Lord, fill me with awe at Your presence. Teach me to give freely, live simply, and worship gladly. Form in me the rhythms of a Spirit-filled life. Make my home, my table, and my heart places where Your joy is unmistakable. Amen.",
+            "type": "personal",
+            "posture": "petition"
+          }
+        }
+      ]
+    }
+  ],
+  "masterDocument": {
+    "title": "Week 1 Master Document: The Blueprint of Community (Acts 2:42-47)",
+    "primaryText": {
+      "reference": "Acts 2:42-47",
+      "translation": "NIV",
+      "text": "They devoted themselves to the apostles' teaching and to fellowship, to the breaking of bread and to prayer. Everyone was filled with awe at the many wonders and signs performed by the apostles. All the believers were together and had everything in common. They sold property and possessions to give to anyone who had need. Every day they continued to meet together in the temple courts. They broke bread in their homes and ate together with glad and sincere hearts, praising God and enjoying the favor of all the people. And the Lord added to their number daily those who were being saved."
+    },
+    "historicalContext": {
+      "romanShadow": {
+        "title": "The Roman Shadow",
+        "content": "First-century Judea lived under Roman occupation. Pompey had taken Jerusalem in 63 BC, and from then on real power ultimately belonged to Rome. For devout Jews, this was more than political frustration; it was a theological crisis: political humiliation (God's 'chosen people' were ruled by a pagan empire), economic pressure (multiple layers of taxes often pushed small farmers into debt), and cultural collision (Roman religion, emperor worship, and public practices clashed with Jewish holiness and covenant identity). All of this fed a fierce messianic hope, not for a gentle teacher, but for a Son of David who would overthrow Rome and restore Israel's political kingdom."
+      },
+      "religiousLandscape": {
+        "title": "A Fractured Religious Landscape",
+        "groups": [
+          {
+            "name": "Pharisees (Perushim)",
+            "description": "Lay experts in Torah and tradition. They believed meticulous obedience would prepare Israel for God's deliverance. They affirmed resurrection, angels, and final judgment. Paul came from this world."
+          },
+          {
+            "name": "Sadducees (Tzedukim)",
+            "description": "Priestly elites tied to the Temple, wealthy and influential. They accepted only the written Torah, denied resurrection and angels, and were politically pragmatic."
+          },
+          {
+            "name": "Essenes",
+            "description": "Separatist, often monastic communities who saw the Temple establishment as hopelessly corrupt. They pursued purity, communal living, and intense study."
+          },
+          {
+            "name": "Zealots",
+            "description": "Revolutionary nationalists who believed violent resistance to Rome was a holy duty. Their movement would eventually help trigger the Jewish-Roman War."
+          }
+        ]
+      },
+      "pentecost": {
+        "title": "Pentecost: The Reversal of Babel",
+        "content": "'Pentecost' comes from the Greek pentekostē ('fiftieth'). In Hebrew, the same festival is Shavuot ('Weeks'), celebrated seven weeks after Passover. By the first century, Shavuot held a dual meaning: Agricultural (marking the wheat harvest) and Covenantal (commemorating God giving the Torah to Moses at Sinai). The multilingual outpouring of praise in Acts 2 reads like a deliberate reversal of Babel (Genesis 11). At Babel, proud humanity was scattered by confused languages. At Pentecost, the Spirit gathers the nations through a miracle of mutual understanding."
+      }
+    },
+    "oldTestamentRoots": {
+      "covenantIdentity": {
+        "title": "Covenant Identity (Am Brit)",
+        "content": "The Old Testament's central idea is covenant (berit in Hebrew): a binding relational commitment that creates a new reality. At Sinai, God forms Israel as His 'treasured possession' (segullah), 'a kingdom of priests and a holy nation' (Exodus 19:5-6). In Acts 2, we see a called-out people (ekklesia = 'called out ones') whose unity is no longer based on ethnicity or status, but on a shared response to the gospel."
+      },
+      "blueprintForJustice": {
+        "title": "The Blueprint for Justice and Care",
+        "content": "The generous economics of Acts 2 grow out of Torah's social vision: Gleaning laws (Leviticus 19:9-10) commanded landowners to leave edges of fields for the poor. Sabbatical year and Jubilee (Deuteronomy 15; Leviticus 25) provided periodic cancellation of debts. The early church embodies the heart of these laws through voluntary, Spirit-led generosity - a kind of Jubilee culture."
+      },
+      "newHeartPromised": {
+        "title": "The New Heart the Prophets Promised",
+        "scriptures": [
+          {
+            "reference": "Ezekiel 36:26-27",
+            "text": "I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh. And I will put my Spirit in you and move you to follow my decrees."
+          },
+          {
+            "reference": "Jeremiah 31:33",
+            "text": "I will put my law in their minds and write it on their hearts. I will be their God, and they will be my people."
+          }
+        ]
+      }
+    },
+    "linguisticDeepDive": {
+      "proskarterountes": {
+        "word": "προσκαρτεροῦντες",
+        "transliteration": "proskarterountes",
+        "meaning": "They devoted themselves",
+        "explanation": "This verb combines pros ('toward') and kartereō ('to be strong, endure'). It describes persistent, focused devotion, like a soldier holding a position or a servant waiting attentively. The early church did not drift into community. They devoted themselves to it."
+      },
+      "koinonia": {
+        "word": "κοινωνία",
+        "transliteration": "koinonia",
+        "meaning": "Fellowship",
+        "explanation": "It means sharing in common, a deep partnership where lives, resources, and mission are intertwined. In the ancient world it was used for business partnerships, where partners shared both profit and loss."
+      },
+      "breakingOfBread": {
+        "word": "τῇ κλάσει τοῦ ἄρτου",
+        "transliteration": "tē klasei tou artou",
+        "meaning": "The breaking of the bread",
+        "explanation": "This phrase describes a specific, repeated act: taking, blessing, breaking, and sharing bread. For the early believers, that act echoes Jewish household meals, recalls the Last Supper, and becomes a regular reenactment of their communion with Jesus."
+      },
+      "sincereHearts": {
+        "word": "ἁπλότητι καρδίας",
+        "transliteration": "haplotēti kardias",
+        "meaning": "Sincere hearts",
+        "explanation": "Haplotēs speaks of singleness, sincerity, generosity - an absence of pretense or double motives. They eat their food with uncomplicated joy. No posing. No branding. No need to impress."
+      }
+    },
+    "applicationForToday": {
+      "fourPillarsNonNegotiable": {
+        "title": "The Four Pillars Are Non-Negotiable",
+        "content": "Verse 42 gives us the load-bearing structure of healthy church life. When any of these are sidelined, we drift: Doctrine without fellowship becomes a cold theology club. Fellowship without doctrine becomes a shallow social circle. Breaking bread without Word and fellowship becomes an empty ritual. Prayer without Word and fellowship becomes mystical individualism with no mission."
+      },
+      "authenticCommunityCosts": {
+        "title": "Authentic Community Will Cost You",
+        "content": "Acts 2 shows a daily, shared life, not a weekly event. It costs them time ('every day they continued to meet together'), possessions ('they sold property and possessions'), and personal autonomy ('had everything in common')."
+      },
+      "godHandlesGrowth": {
+        "title": "God Handles Growth. We Steward Health.",
+        "content": "'And the Lord added to their number daily those who were being saved.' They do not grow through a marketing funnel. They grow because they are deeply formed by the four pillars, their life together is visibly different, and God chooses to entrust more people to that kind of community."
+      },
+      "supernaturalIsNormal": {
+        "title": "The Supernatural Is Normal, Not Novelty",
+        "content": "For them, 'wonders and signs' and a sense of awe are normal. This means expecting God to act, praying with real faith, and leaving room for the Spirit to interrupt our scripts."
+      }
+    },
+    "crossFitnessChallenge": {
+      "title": "Cross Fitness Challenge for Week 1: Observe and Journal",
+      "description": "This study is not meant to stay in your head. Become a humble observer of your Christian community. Not a critic standing at a distance, but a participant asking: Where do I see the four pillars alive here? Where are the gaps? What is my part?",
+      "dailyPrompts": [
+        {
+          "day": 1,
+          "focus": "The Apostles' Teaching",
+          "questions": [
+            "Where did I encounter God's Word today?",
+            "Was it clear, Christ-centered, and honest?",
+            "What one truth stood out?"
+          ]
+        },
+        {
+          "day": 2,
+          "focus": "Fellowship (Koinonia)",
+          "questions": [
+            "Where did I see real sharing of life, not just small talk?",
+            "Who was intentionally included? Who seemed on the margins?",
+            "Did I let myself be known by anyone today?"
+          ]
+        },
+        {
+          "day": 3,
+          "focus": "Breaking of Bread",
+          "questions": [
+            "Who did I share a meal with this week?",
+            "Did we talk about faith, gratitude, or what God is doing?",
+            "Who could I invite to my table?"
+          ]
+        },
+        {
+          "day": 4,
+          "focus": "The Prayers",
+          "questions": [
+            "How central is prayer in my church rhythms?",
+            "Where did I see genuine dependence on God?",
+            "What is one concrete way I can give myself more continually to prayer?"
+          ]
+        },
+        {
+          "day": 5,
+          "focus": "The Fruit (Generosity and Joy)",
+          "questions": [
+            "Where did I see sacrificial generosity today?",
+            "Where did I see authentic, unforced joy?",
+            "Is my own life marked more by anxious accumulation or open-handed giving?"
+          ]
+        },
+        {
+          "day": 6,
+          "focus": "Synthesize",
+          "questions": [
+            "Read back through your journal. What patterns emerge?",
+            "What is the Spirit highlighting about your community? About you?"
+          ]
+        },
+        {
+          "day": 7,
+          "focus": "Act",
+          "questions": [
+            "Choose one specific action for this coming week to move from consumer to contributor.",
+            "Tell a trusted friend what you plan to do and ask them to check in with you."
+          ]
+        }
+      ]
+    }
+  },
+  "profiles": [
+    {
+      "type": "profile",
+      "content": {
+        "name": "Peter",
+        "title": "The Rock",
+        "description": "One of Jesus' original twelve disciples. The same Peter who denied Jesus three times became the bold preacher at Pentecost whose sermon led to 3,000 conversions. His transformation demonstrates the power of the Holy Spirit to turn failures into leaders.",
+        "keyQuote": "Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins.",
+        "lessonForUs": "Past failures do not disqualify us from bold service. The Spirit fills us with power we do not naturally possess."
+      }
+    },
+    {
+      "type": "profile",
+      "content": {
+        "name": "Count Nicolaus von Zinzendorf",
+        "title": "The Unifying Shepherd",
+        "description": "A young German nobleman who opened his estate to religious refugees in the 1720s. When the community fractured under disputes, he went house to house, listening, opening Scripture, and calling people to unity. His patient leadership helped birth the Moravian revival of 1727.",
+        "keyQuote": "That all of them may be one (John 17:21 - the prayer that guided Zinzendorf's ministry)",
+        "lessonForUs": "True spiritual leadership is not about charisma or control, but about patient, prayerful presence that calls people to unity in Christ."
+      }
+    }
+  ],
+  "resources": [
+    {
+      "type": "resource",
+      "content": {
+        "relatedScriptures": [
+          {
+            "reference": "Joel 2:28-32",
+            "text": "The prophecy Peter quotes about the Spirit being poured out on all people"
+          },
+          {
+            "reference": "Ezekiel 36:26-27",
+            "text": "The promise of a new heart and the Spirit within"
+          },
+          {
+            "reference": "Jeremiah 31:31-34",
+            "text": "The New Covenant prophecy"
+          },
+          {
+            "reference": "Genesis 11:1-9",
+            "text": "The Tower of Babel - which Pentecost reverses"
+          },
+          {
+            "reference": "Exodus 19:5-6",
+            "text": "Israel's calling as a kingdom of priests"
+          },
+          {
+            "reference": "John 17:20-23",
+            "text": "Jesus' prayer for unity among believers"
+          }
+        ],
+        "forDeeperStudy": [
+          {
+            "type": "video",
+            "title": "BibleProject: Acts 1-7 Overview",
+            "note": "A visual overview of the early church"
+          },
+          {
+            "type": "video",
+            "title": "BibleProject: Pentecost - Acts 1-7",
+            "note": "Deep dive on Pentecost's significance"
+          },
+          {
+            "type": "video",
+            "title": "BibleProject: Holy Spirit Theme",
+            "note": "Understanding the Spirit throughout Scripture"
+          },
+          {
+            "type": "article",
+            "title": "The Jewish Roots of the Feast of Pentecost",
+            "note": "Jews for Jesus - understanding Shavuot"
+          },
+          {
+            "type": "article",
+            "title": "Live Like This in Christ's Church (Acts 2:42-47)",
+            "note": "Core Christianity - practical application"
+          },
+          {
+            "type": "article",
+            "title": "Restoring Koinonia in Today's Church",
+            "note": "Christian Standard - on fellowship"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "estimatedReadTime": {
+      "quick": "1-3 minutes per day",
+      "medium": "5 minutes per day",
+      "deep": "15+ minutes (Master Document)"
+    },
+    "moduleCountPerDay": 7,
+    "totalModules": 35,
+    "primaryEmotion": "invitation-to-belonging",
+    "structure": "hub-and-spoke",
+    "structureNote": "Sunday = the hub (Master Document with depth and context). Monday-Friday = the spokes (daily engagement, reflection, simple application)."
+  }
+}

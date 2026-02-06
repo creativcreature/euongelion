@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EUONGELION — Day 1: What Is This Place?</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-tehom: #1A1612;
+      --color-scroll: #F7F3ED;
+      --color-gold: #C19A6B;
+      --color-text-secondary: rgba(26, 22, 18, 0.6);
+      --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
+      --font-masthead: 'Playfair Display', 'Didot', serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 18px; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--color-tehom);
+      background: var(--color-scroll);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Masthead */
+    .masthead {
+      padding: 1.5rem 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(26,22,18,0.08);
+    }
+
+    .masthead-logo {
+      font-family: var(--font-masthead);
+      font-size: 1.75rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+
+    .day-number {
+      font-size: 6rem;
+      font-weight: 100;
+      line-height: 1;
+      color: var(--color-gold);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .series-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    /* Content */
+    .content { padding: 2rem 0 4rem; }
+    p { margin-bottom: 1.4em; }
+    em { font-style: italic; }
+    strong { font-weight: 600; }
+
+    /* Section Headers */
+    .section-header {
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-gold);
+    }
+
+    /* Pronunciation */
+    .pronunciation {
+      font-size: 1.25rem;
+      font-style: italic;
+      text-align: center;
+      margin: 1.5rem 0;
+      color: var(--color-tehom);
+    }
+
+    /* Blockquote */
+    blockquote {
+      margin: 2rem 0;
+      padding: 1.5rem 1.75rem;
+      background: rgba(193, 154, 107, 0.08);
+      border-left: 3px solid var(--color-gold);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      font-style: normal;
+      color: var(--color-text-secondary);
+    }
+
+    /* Key statement */
+    .key-statement {
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 2rem 0;
+      padding: 1.25rem 1.5rem;
+      background: var(--color-tehom);
+      color: var(--color-scroll);
+    }
+
+    /* Bold paragraph */
+    .bold-para {
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+
+    /* Hebrew */
+    .hebrew-inline {
+      font-family: 'Times New Roman', serif;
+      font-size: 1.3em;
+      color: var(--color-gold);
+      direction: rtl;
+      display: inline;
+    }
+
+    /* Divider */
+    .divider {
+      text-align: center;
+      margin: 2.5rem 0;
+      color: var(--color-gold);
+      letter-spacing: 0.3em;
+    }
+
+    /* Interactive */
+    .interactive {
+      margin: 3rem 0;
+      padding: 1.75rem;
+      background: var(--color-tehom);
+      color: var(--color-scroll);
+      border-radius: 3px;
+    }
+
+    .interactive-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 1rem;
+    }
+
+    .breath-line {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .breath-direction {
+      font-weight: 500;
+      color: var(--color-gold);
+      min-width: 60px;
+    }
+
+    .breath-text {
+      font-style: italic;
+      color: rgba(247, 243, 237, 0.85);
+    }
+
+    /* Reflection */
+    .reflection {
+      margin: 3rem 0;
+      padding: 1.5rem;
+      background: rgba(193, 154, 107, 0.06);
+      border-radius: 3px;
+    }
+
+    .reflection-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .reflection ol {
+      list-style: none;
+      counter-reset: q;
+      margin: 0;
+      padding: 0;
+    }
+
+    .reflection li {
+      counter-increment: q;
+      margin-bottom: 0.75rem;
+      padding-left: 1.75rem;
+      position: relative;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .reflection li::before {
+      content: counter(q);
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      color: var(--color-gold);
+    }
+
+    /* Footnotes */
+    .footnotes {
+      margin-top: 3.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(26,22,18,0.1);
+    }
+
+    .footnotes-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .footnotes ol {
+      list-style: none;
+      counter-reset: fn;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes li {
+      counter-increment: fn;
+      margin-bottom: 0.5rem;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: var(--color-text-secondary);
+    }
+
+    .footnotes li::before {
+      content: counter(fn) ".";
+      position: absolute;
+      left: 0;
+    }
+
+    sup {
+      font-size: 0.65em;
+      color: var(--color-gold);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .day-footer {
+      margin-top: 2.5rem;
+      padding: 1.25rem 0;
+      text-align: center;
+      border-top: 1px solid rgba(26,22,18,0.08);
+    }
+
+    .day-progress {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+    }
+
+    .day-next {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--color-text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    /* Print */
+    @media print {
+      html { font-size: 11pt; }
+      body { background: white; }
+      .interactive, .key-statement {
+        background: #f0f0f0;
+        color: #1A1612;
+        border: 1px solid #ccc;
+      }
+      .interactive-label, .breath-direction { color: #555; }
+      .breath-text { color: #333; }
+    }
+
+    @media (max-width: 600px) {
+      html { font-size: 16px; }
+      .day-number { font-size: 4.5rem; }
+      .hero-title { font-size: 2rem; }
+      .container { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header class="masthead">
+      <div class="container">
+        <h1 class="masthead-logo">EUONGELION</h1>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="day-number">01</div>
+        <p class="series-label">Welcome to EUONGELION</p>
+        <h2 class="hero-title">What Is This Place?</h2>
+      </div>
+    </section>
+
+    <main class="content">
+      <div class="container">
+
+        <h3 class="section-header">The Name You're Trying to Pronounce</h3>
+
+        <p class="pronunciation">Eu-on-GEL-ee-on.</p>
+
+        <p>It's Greek. It means <em>good news</em>—the kind that makes a messenger run across a battlefield, lungs burning, because the outcome of the war has shifted and everyone needs to know.<sup>1</sup></p>
+
+        <p>This is where you've landed. Not an app. Not a program. Not another thing to add to your already overflowing life.</p>
+
+        <p>A place where the news gets announced: the battle is over.</p>
+
+        <div class="divider">...</div>
+
+        <h3 class="section-header">Why This Exists</h3>
+
+        <p>This platform was born from a single verse:</p>
+
+        <blockquote>
+          "Do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus."
+          <cite>— Philippians 4:6-7</cite>
+        </blockquote>
+
+        <p>For years, those words felt impossible. <em>Don't be anxious?</em> Tell that to the 3 AM thoughts. Tell that to the weight on your chest when everything looks fine on the outside.</p>
+
+        <p>But then something shifted. Not because life got easier. Because those words became real—peace that doesn't make sense, peace that guards you when nothing else can.</p>
+
+        <div class="key-statement">
+          EUONGELION exists because that kind of encounter shouldn't be rare.
+        </div>
+
+        <div class="divider">...</div>
+
+        <h3 class="section-header">A Story: The Long Way Home</h3>
+
+        <p>In 1972, a Japanese soldier named Hiroo Onoda emerged from the Philippine jungle. He had been hiding for <em>twenty-nine years</em>.</p>
+
+        <p>Sent to Lubang Island in 1944 with orders to never surrender, Onoda refused to believe the war had ended. Leaflets announcing Japan's surrender? Propaganda. Family members with loudspeakers? A trick. For nearly three decades, he lived in the mountains, convinced the battle was still raging.<sup>3</sup></p>
+
+        <p>It wasn't until his former commanding officer personally issued the order to stand down that Onoda finally surrendered.</p>
+
+        <p>He had been free for twenty-nine years. He just didn't know it.</p>
+
+        <p class="bold-para">Some of you have been living in a war that's already over.</p>
+
+        <p>Fighting. Surviving. Convinced you have to earn God's favor, that you're not good enough, that the battle is still raging.</p>
+
+        <p>But the announcement has already been made. The <em>euongelion</em> has already been declared.</p>
+
+        <p>"It is finished."<sup>4</sup></p>
+
+        <p>You don't have to keep fighting. You just have to come out of the jungle.</p>
+
+        <div class="divider">...</div>
+
+        <h3 class="section-header">The Hebrew Word for "Restore"</h3>
+
+        <p>The Hebrew word <em>shuv</em> (<span class="hebrew-inline">שׁוּב</span>) means to return, to come back, to go home.<sup>5</sup></p>
+
+        <blockquote>
+          "He restores my soul."
+          <cite>— Psalm 23:3</cite>
+        </blockquote>
+
+        <p>That's the word—<em>shuv</em>. He brings your soul back home.</p>
+
+        <p>That's the invitation here. Not a productivity hack for your spiritual life. Not another thing to optimize.</p>
+
+        <p><em>Soul restoration.</em> Coming home to the God who's been waiting.</p>
+
+        <div class="divider">...</div>
+
+        <h3 class="section-header">What This Place Is</h3>
+
+        <p>EUONGELION is daily bread for hungry souls.</p>
+
+        <p>Each day, you'll receive a devotional—not a quick verse with a chipper thought attached. Something deeper. Something that takes Scripture seriously, including the hard parts.</p>
+
+        <p>We go deep into the original Hebrew and Greek. We tell stories that make ancient truths tangible. We connect everything to Jesus. And we invite response, not just consumption.</p>
+
+        <p>You can handle depth. We believe that about you.</p>
+
+        <div class="divider">...</div>
+
+        <h3 class="section-header">An Invitation</h3>
+
+        <p>Whatever you're carrying—the anxiety, the doubt, the question you can't answer—bring it.</p>
+
+        <blockquote>
+          "Do not be anxious about anything, but in everything... let your requests be made known to God."
+        </blockquote>
+
+        <p>Not to fix. Not to solve. Just to bring.</p>
+
+        <p>The good news has been announced. The war is over.</p>
+
+        <p>Come home.</p>
+
+        <div class="interactive">
+          <p class="interactive-label">Breath Prayer</p>
+          <div class="breath-line">
+            <span class="breath-direction">Inhale:</span>
+            <span class="breath-text">"Lord, I am here."</span>
+          </div>
+          <div class="breath-line">
+            <span class="breath-direction">Exhale:</span>
+            <span class="breath-text">"Lead me home."</span>
+          </div>
+        </div>
+
+        <div class="reflection">
+          <h4 class="reflection-title">Reflection</h4>
+          <ol>
+            <li>What brought you here? What were you searching for?</li>
+            <li>Is there a "war" in your life that might already be finished?</li>
+            <li>What does "home" mean to you spiritually?</li>
+          </ol>
+        </div>
+
+        <div class="footnotes">
+          <h4 class="footnotes-title">Notes</h4>
+          <ol>
+            <li>Friedrich, Gerhard. "εὐαγγέλιον." <em>Theological Dictionary of the New Testament</em>, vol. 2, 721-737. Eerdmans, 1964.</li>
+            <li>Philippians 4:6-7 (ESV).</li>
+            <li>Onoda, Hiroo. <em>No Surrender: My Thirty-Year War</em>. Kodansha International, 1974.</li>
+            <li>John 19:30 (ESV).</li>
+            <li>Harris, R. Laird, et al. <em>Theological Wordbook of the Old Testament</em>. Moody Press, 1980. Entry 2340.</li>
+            <li>Psalm 23:3 (ESV).</li>
+          </ol>
+        </div>
+
+        <footer class="day-footer">
+          <p class="day-progress">Day 1 of 5 — Welcome to EUONGELION</p>
+          <p class="day-next">Tomorrow: How This Is Different</p>
+        </footer>
+
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>

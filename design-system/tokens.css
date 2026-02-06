@@ -1,0 +1,381 @@
+/**
+ * EUONGELION Design Tokens
+ * Version: 1.0
+ *
+ * A comprehensive design token system for the EUONGELION platform.
+ * These CSS custom properties define the visual language of the brand.
+ *
+ * Philosophy: Ownable. Restrained. Biblical.
+ * - Six colors total (3 bold foundation, 3 intentional accents)
+ * - Sans serif primary, generous white space
+ * - Dark mode as default (tehom background)
+ */
+
+:root {
+  /* ============================================
+     COLOR TOKENS - THE BOLD THREE (Foundation)
+     ============================================ */
+
+  /**
+   * Tehom Black - The deep, the void, the beginning
+   * Primary background in dark mode, text in light mode
+   * Character: Slightly warm (brown undertones), ancient leather feel
+   */
+  --color-tehom: #1a1612;
+  --color-tehom-rgb: 26, 22, 18;
+
+  /**
+   * Scroll White - Rest, parchment, breathing room
+   * Primary text in dark mode, background in light mode
+   * Character: Warm but not yellow, expensive paper stock
+   */
+  --color-scroll: #f7f3ed;
+  --color-scroll-rgb: 247, 243, 237;
+
+  /**
+   * God is Gold (Gilead Gold) - Glory, divine emphasis
+   * Highlights, Scripture emphasis, Hebrew terms, signature moments
+   * Character: Warm amber, illuminated manuscripts
+   */
+  --color-gold: #c19a6b;
+  --color-gold-rgb: 193, 154, 107;
+
+  /* ============================================
+     COLOR TOKENS - THE INTENTIONAL THREE (Rare)
+     ============================================ */
+
+  /**
+   * Covenant Burgundy - Blood, sacrifice, cross
+   * Use for: Sacrifice themes, crucifixion, Old Testament weight
+   * When: Content is literally about blood/sacrifice/cross
+   */
+  --color-burgundy: #6b2c2c;
+  --color-burgundy-rgb: 107, 44, 44;
+  --color-burgundy-light: #b85555; /* Dark mode lifted */
+
+  /**
+   * Gethsemane Olive - Garden, wrestling, earth
+   * Use for: Wilderness, creation, struggle, humility
+   * When: Content about wrestling with God, creation, dust
+   */
+  --color-olive: #6b6b4f;
+  --color-olive-rgb: 107, 107, 79;
+  --color-olive-light: #9d9d7a; /* Dark mode lifted */
+
+  /**
+   * Shalom Blue - Peace, Spirit, water
+   * Use for: Jesus' words, Holy Spirit, baptism, peace
+   * When: Content about peace, Spirit, water themes
+   */
+  --color-shalom-blue: #4a5f6b;
+  --color-shalom-blue-rgb: 74, 95, 107;
+  --color-shalom-blue-light: #7a9aab; /* Dark mode lifted */
+
+  /* ============================================
+     SEMANTIC COLOR TOKENS (Dark Mode Default)
+     ============================================ */
+
+  /* Primary semantic colors - dark mode is default */
+  --color-background: var(--color-tehom);
+  --color-foreground: var(--color-scroll);
+  --color-accent: var(--color-gold);
+
+  /* Text hierarchy */
+  --color-text-primary: var(--color-scroll);
+  --color-text-secondary: rgba(var(--color-scroll-rgb), 0.7);
+  --color-text-tertiary: rgba(var(--color-scroll-rgb), 0.5);
+  --color-text-muted: rgba(var(--color-scroll-rgb), 0.4);
+
+  /* UI elements */
+  --color-border: rgba(var(--color-scroll-rgb), 0.1);
+  --color-border-strong: rgba(var(--color-scroll-rgb), 0.2);
+  --color-surface: rgba(var(--color-scroll-rgb), 0.05);
+  --color-surface-raised: rgba(var(--color-scroll-rgb), 0.08);
+  --color-overlay: rgba(var(--color-tehom-rgb), 0.8);
+
+  /* Interactive states */
+  --color-focus: var(--color-gold);
+  --color-focus-ring: rgba(var(--color-gold-rgb), 0.4);
+  --color-hover: rgba(var(--color-scroll-rgb), 0.1);
+  --color-active: rgba(var(--color-scroll-rgb), 0.15);
+
+  /* Feedback colors */
+  --color-success: #4a6b4f;
+  --color-warning: #6b5a4a;
+  --color-error: #6b2c2c;
+  --color-info: var(--color-shalom-blue);
+
+  /* ============================================
+     TYPOGRAPHY TOKENS
+     ============================================ */
+
+  /* Font families */
+  --font-display: 'Monument Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Monument Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --font-masthead: 'Editorial New', 'Didot', 'Bodoni MT', 'Georgia', serif;
+  --font-hebrew: 'SBL Hebrew', 'Times New Roman', serif;
+  --font-handwritten: 'Caveat', 'Comic Sans MS', cursive;
+
+  /* System font fallback stack (EB Garamond for body alternative) */
+  --font-serif: 'EB Garamond', 'Georgia', 'Times New Roman', serif;
+  --font-system:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+
+  /* Font sizes - Desktop (base 16px) */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-md: 1.125rem; /* 18px */
+  --text-lg: 1.25rem; /* 20px - body default */
+  --text-xl: 1.375rem; /* 22px - body large */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 2rem; /* 32px */
+  --text-4xl: 2.5rem; /* 40px */
+  --text-5xl: 3rem; /* 48px - h1 */
+  --text-6xl: 3.5rem; /* 56px */
+  --text-7xl: 4rem; /* 64px */
+  --text-8xl: 5rem; /* 80px - hero */
+  --text-9xl: 7.5rem; /* 120px */
+  --text-10xl: 10rem; /* 160px - day number */
+
+  /* Font weights */
+  --font-thin: 100;
+  --font-extralight: 200;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+
+  /* Line heights */
+  --leading-none: 1;
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+  --leading-loose: 2;
+
+  /* Letter spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+  --tracking-widest: 0.2em;
+
+  /* ============================================
+     SPACING TOKENS (4px base, 8px grid)
+     ============================================ */
+
+  /* Base unit */
+  --space-unit: 4px;
+
+  /* Scale */
+  --space-0: 0;
+  --space-px: 1px;
+  --space-0-5: 2px; /* 0.5 units */
+  --space-1: 4px; /* 1 unit */
+  --space-1-5: 6px; /* 1.5 units */
+  --space-2: 8px; /* 2 units - xs */
+  --space-3: 12px; /* 3 units */
+  --space-4: 16px; /* 4 units - sm */
+  --space-5: 20px; /* 5 units */
+  --space-6: 24px; /* 6 units - md */
+  --space-7: 28px; /* 7 units */
+  --space-8: 32px; /* 8 units */
+  --space-9: 36px; /* 9 units */
+  --space-10: 40px; /* 10 units - lg */
+  --space-11: 44px; /* 11 units - touch target */
+  --space-12: 48px; /* 12 units */
+  --space-14: 56px; /* 14 units */
+  --space-15: 60px; /* 15 units - xl */
+  --space-16: 64px; /* 16 units */
+  --space-20: 80px; /* 20 units - 2xl */
+  --space-24: 96px; /* 24 units */
+  --space-28: 112px; /* 28 units */
+  --space-30: 120px; /* 30 units - 3xl */
+  --space-32: 128px; /* 32 units */
+  --space-36: 144px; /* 36 units */
+  --space-40: 160px; /* 40 units */
+  --space-48: 192px; /* 48 units */
+  --space-56: 224px; /* 56 units */
+  --space-64: 256px; /* 64 units */
+
+  /* Semantic spacing */
+  --space-xs: var(--space-2); /* 8px */
+  --space-sm: var(--space-4); /* 16px */
+  --space-md: var(--space-6); /* 24px */
+  --space-lg: var(--space-10); /* 40px */
+  --space-xl: var(--space-15); /* 60px */
+  --space-2xl: var(--space-20); /* 80px */
+  --space-3xl: var(--space-30); /* 120px */
+
+  /* Section spacing */
+  --section-padding-x-desktop: var(--space-15); /* 60px */
+  --section-padding-x-mobile: var(--space-6); /* 24px */
+  --section-padding-y-desktop: var(--space-20); /* 80-120px */
+  --section-padding-y-tablet: var(--space-15); /* 60px */
+  --section-padding-y-mobile: var(--space-10); /* 40px */
+
+  /* Content spacing */
+  --paragraph-spacing: 1.5em;
+  --section-break: var(--space-20);
+  --image-margin: var(--space-15);
+  --pull-quote-isolation: var(--space-30);
+
+  /* Max widths */
+  --max-width-reading: 680px;
+  --max-width-content: 800px;
+  --max-width-display: 1200px;
+  --max-width-full: 1440px;
+
+  /* ============================================
+     BORDER RADIUS TOKENS
+     ============================================ */
+
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
+
+  /* Semantic radius */
+  --radius-button: var(--radius-md);
+  --radius-input: var(--radius-md);
+  --radius-card: var(--radius-lg);
+  --radius-modal: var(--radius-xl);
+  --radius-badge: var(--radius-full);
+
+  /* ============================================
+     SHADOW TOKENS
+     ============================================ */
+
+  /* Elevation shadows (warm-tinted for brand) */
+  --shadow-xs: 0 1px 2px rgba(var(--color-tehom-rgb), 0.1);
+  --shadow-sm: 0 2px 4px rgba(var(--color-tehom-rgb), 0.1);
+  --shadow-md: 0 4px 8px rgba(var(--color-tehom-rgb), 0.12);
+  --shadow-lg: 0 8px 16px rgba(var(--color-tehom-rgb), 0.15);
+  --shadow-xl: 0 16px 32px rgba(var(--color-tehom-rgb), 0.2);
+  --shadow-2xl: 0 24px 48px rgba(var(--color-tehom-rgb), 0.25);
+
+  /* Inset shadows */
+  --shadow-inner: inset 0 2px 4px rgba(var(--color-tehom-rgb), 0.1);
+  --shadow-inner-lg: inset 0 4px 8px rgba(var(--color-tehom-rgb), 0.15);
+
+  /* Focus shadows */
+  --shadow-focus: 0 0 0 3px var(--color-focus-ring);
+  --shadow-focus-gold: 0 0 0 3px rgba(var(--color-gold-rgb), 0.4);
+
+  /* Special effects */
+  --shadow-glow: 0 0 20px rgba(var(--color-gold-rgb), 0.3);
+  --shadow-vignette: inset 0 0 100px rgba(var(--color-tehom-rgb), 0.5);
+
+  /* ============================================
+     TRANSITION TOKENS
+     ============================================ */
+
+  /* Durations */
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-moderate: 300ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+  --duration-slowest: 800ms;
+
+  /* Easing functions */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* Semantic transitions */
+  --transition-colors:
+    color var(--duration-base) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+  --transition-opacity: opacity var(--duration-base) var(--ease-out);
+  --transition-transform: transform var(--duration-base) var(--ease-out);
+  --transition-all: all var(--duration-base) var(--ease-out);
+  --transition-shadow: box-shadow var(--duration-base) var(--ease-out);
+
+  /* Animation transitions */
+  --transition-fade-in:
+    opacity var(--duration-slower) var(--ease-bounce),
+    transform var(--duration-slower) var(--ease-bounce);
+  --transition-expand: max-height var(--duration-slow) var(--ease-out);
+
+  /* ============================================
+     Z-INDEX TOKENS
+     ============================================ */
+
+  --z-negative: -1;
+  --z-base: 0;
+  --z-raised: 1;
+  --z-dropdown: 10;
+  --z-sticky: 100;
+  --z-fixed: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-popover: 500;
+  --z-tooltip: 600;
+  --z-toast: 700;
+  --z-max: 9999;
+
+  /* ============================================
+     BREAKPOINT REFERENCE (for documentation)
+     Use in media queries, not as CSS variables
+     ============================================ */
+
+  /*
+   * --breakpoint-xs: 320px   (mobile small)
+   * --breakpoint-sm: 480px   (mobile large)
+   * --breakpoint-md: 768px   (tablet)
+   * --breakpoint-lg: 1024px  (desktop)
+   * --breakpoint-xl: 1280px  (desktop large)
+   * --breakpoint-2xl: 1440px (desktop wide)
+   * --breakpoint-3xl: 1920px (desktop ultra)
+   */
+
+  /* ============================================
+     COMPONENT-SPECIFIC TOKENS
+     ============================================ */
+
+  /* Buttons */
+  --button-height: var(--space-12); /* 48px - touch friendly */
+  --button-height-sm: var(--space-9); /* 36px */
+  --button-height-lg: var(--space-14); /* 56px */
+  --button-padding-x: var(--space-6); /* 24px */
+  --button-font-size: var(--text-base);
+  --button-font-weight: var(--font-medium);
+  --button-radius: var(--radius-button);
+
+  /* Inputs */
+  --input-height: var(--space-12); /* 48px */
+  --input-padding-x: var(--space-4); /* 16px */
+  --input-font-size: var(--text-md); /* 18px */
+  --input-radius: var(--radius-input);
+  --input-border-width: 1px;
+  --input-focus-border-width: 2px;
+
+  /* Cards */
+  --card-padding: var(--space-6);
+  --card-radius: var(--radius-card);
+  --card-shadow: var(--shadow-md);
+
+  /* Navigation */
+  --nav-height: var(--space-16); /* 64px */
+  --nav-height-mobile: var(--space-14); /* 56px */
+
+  /* Touch targets */
+  --touch-target-min: var(--space-11); /* 44px - WCAG minimum */
+}

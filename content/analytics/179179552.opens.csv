@@ -1,0 +1,4 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+179179552,2025-11-26T20:24:35.849Z,jennifer.lowe97@gmail.com,newsletter,everyone,true,NL,,,,,,Mozilla/5.0
+179179552,2025-11-27T07:05:21.051Z,c.parker3@me.com,newsletter,everyone,false,NL,,,,,,Mozilla/5.0
+179179552,2025-12-10T15:27:32.654Z,tburch0523@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0

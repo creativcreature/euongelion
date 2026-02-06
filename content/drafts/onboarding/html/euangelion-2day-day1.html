@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EUONGELION — Day 1: The Announcement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --tehom: #1A1612;
+      --scroll: #F7F3ED;
+      --gold: #C19A6B;
+      --secondary: rgba(26, 22, 18, 0.5);
+      --font-body: 'DM Sans', sans-serif;
+      --font-display: 'Playfair Display', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 17px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--tehom);
+      background: var(--scroll);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-left {
+      background: var(--tehom);
+      color: var(--scroll);
+      padding: 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .masthead {
+      display: flex;
+      justify-content: space-between;
+    }
+    .masthead-logo {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .masthead-meta {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .hero-center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .day-number {
+      font-family: var(--font-display);
+      font-size: 14rem;
+      font-weight: 400;
+      line-height: 0.85;
+      color: var(--gold);
+      opacity: 0.25;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-top: -2rem;
+    }
+    .hero-title em { font-style: italic; }
+
+    .hero-footer-left {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.4;
+    }
+
+    .hero-right {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .word-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .pronunciation {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+    .greek { font-style: normal; color: var(--secondary); margin-left: 0.5rem; font-size: 0.6em; }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 1.5em;
+    }
+
+    /* Content */
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      padding: 5rem 2rem;
+      background: var(--tehom);
+      color: var(--scroll);
+      text-align: center;
+    }
+    .pull-quote-text {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      line-height: 1.3;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Story section */
+    .story-section {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      padding: 5rem 0;
+      border-bottom: 1px solid rgba(26,22,18,0.08);
+    }
+
+    .story-title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 400;
+      line-height: 1.2;
+      padding-top: 0.5rem;
+    }
+    .story-title em { font-style: italic; }
+
+    .story-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.3em;
+    }
+    .story-content em { font-style: italic; }
+    .story-content strong { font-weight: 700; }
+
+    /* Scripture */
+    .scripture-block {
+      padding: 4rem 0;
+      display: grid;
+      grid-template-columns: 60px 1fr 180px;
+      gap: 2rem;
+      align-items: start;
+      border-bottom: 1px solid rgba(26,22,18,0.08);
+    }
+    .scripture-mark {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--gold);
+      opacity: 0.5;
+    }
+    .scripture-text {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.7;
+      padding-top: 0.75rem;
+    }
+    .scripture-cite {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      padding-top: 1rem;
+      text-align: right;
+    }
+
+    /* Key statement */
+    .key-statement {
+      padding: 3rem 2rem;
+      text-align: center;
+      background: rgba(193, 154, 107, 0.1);
+    }
+    .key-statement-text {
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+
+    /* Interactive */
+    .interactive-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .interactive-left {
+      background: var(--tehom);
+      color: var(--scroll);
+      padding: 3.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .interactive-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .interactive-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .breath-line {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+    }
+    .breath-direction {
+      font-weight: 600;
+      color: var(--gold);
+      min-width: 60px;
+    }
+    .breath-text {
+      font-style: italic;
+      opacity: 0.85;
+    }
+
+    .interactive-right {
+      background: rgba(193, 154, 107, 0.08);
+      padding: 3.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .reflection-title {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .reflection ol { list-style: none; counter-reset: q; }
+    .reflection li {
+      counter-increment: q;
+      margin-bottom: 1.25rem;
+      padding-left: 2rem;
+      position: relative;
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+    .reflection li::before {
+      content: counter(q);
+      position: absolute;
+      left: 0;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--gold);
+      top: -0.15rem;
+    }
+
+    /* Footer */
+    .page-footer {
+      padding: 2.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(26,22,18,0.08);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-progress {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--secondary);
+    }
+    .footer-next {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 2rem; }
+      .day-number { font-size: 9rem; }
+      .hero-title { font-size: 2.5rem; margin-top: -1rem; }
+      .hero-right { padding: 2rem; }
+      .story-section { grid-template-columns: 1fr; gap: 2rem; }
+      .scripture-block { grid-template-columns: 40px 1fr; }
+      .scripture-cite { grid-column: 2; text-align: left; padding-top: 1rem; }
+      .interactive-section { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-left">
+      <header class="masthead">
+        <span class="masthead-logo">EUONGELION</span>
+        <span class="masthead-meta">Day 1 of 2</span>
+      </header>
+      <div class="hero-center">
+        <div class="day-number">01</div>
+        <h1 class="hero-title">The<br><em>Announcement</em></h1>
+      </div>
+      <footer class="hero-footer-left">2-Day Onboarding</footer>
+    </div>
+
+    <div class="hero-right">
+      <p class="word-label">The Word</p>
+      <p class="pronunciation">Eu-an-GEL-ee-on <span class="greek">(εὐαγγέλιον)</span></p>
+      <div class="hero-content">
+        <p>In the ancient world, <em>euangelion</em> wasn't a religious term. It was a military one. When a messenger ran from the battlefield to announce that the war was won—that announcement was <em>euangelion</em>. Good news. The kind that changes everything.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="pull-quote">
+    <p class="pull-quote-text">The battle is over. The King has won. Everything is about to change.</p>
+  </div>
+
+  <main class="content">
+
+    <section class="story-section">
+      <h2 class="story-title">A soldier<br>in the <em>jungle</em></h2>
+      <div class="story-content">
+        <p>In 1972, a Japanese soldier named Hiroo Onoda emerged from the Philippine jungle. He had been hiding for <em>twenty-nine years</em>.</p>
+        <p>Sent to Lubang Island in 1944 with orders to never surrender, Onoda refused to believe the war had ended. Leaflets? Propaganda. Family members with loudspeakers? A trick.</p>
+        <p>It wasn't until his former commanding officer personally issued the order to stand down that Onoda finally surrendered.</p>
+        <p><strong>He had been free for twenty-nine years. He just didn't know it.</strong></p>
+        <p>Some of you have been living in a war that's already over. But the <em>euangelion</em> has already been declared. "It is finished."</p>
+      </div>
+    </section>
+
+    <div class="scripture-block">
+      <span class="scripture-mark">"</span>
+      <p class="scripture-text">Do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.</p>
+      <cite class="scripture-cite">Philippians 4:6-7</cite>
+    </div>
+
+    <div class="key-statement">
+      <p class="key-statement-text">EUONGELION exists because that kind of encounter shouldn't be rare.</p>
+    </div>
+
+  </main>
+
+  <section class="interactive-section">
+    <div class="interactive-left">
+      <p class="interactive-label">Breath Prayer</p>
+      <h3 class="interactive-title">Carry This With You</h3>
+      <div class="breath-line">
+        <span class="breath-direction">Inhale:</span>
+        <span class="breath-text">"The battle is over."</span>
+      </div>
+      <div class="breath-line">
+        <span class="breath-direction">Exhale:</span>
+        <span class="breath-text">"Lead me home."</span>
+      </div>
+    </div>
+    <div class="interactive-right">
+      <p class="reflection-title">Reflection</p>
+      <div class="reflection">
+        <ol>
+          <li>What brought you here? What were you searching for?</li>
+          <li>Is there a "war" in your life that might already be finished?</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    <span class="footer-progress">Day 1 of 2 — EUONGELION</span>
+    <span class="footer-next">Tomorrow: What You'll Find Here</span>
+  </footer>
+
+</body>
+</html>
