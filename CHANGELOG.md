@@ -5,7 +5,42 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
-## Sprint 0 — Foundation
+## Current Status
+
+**Sprint 1 — Wake-Up Magazine** (IN PROGRESS)
+
+Goal: Working Wake-Up Magazine at `/wake-up` with all 35 devotionals.
+
+- [x] 1.1 Coming soon landing page — brand landing at `/` with CTA to `/wake-up`
+- [x] 1.2 Explore old code — read, understand, decide: copy/adapt/rewrite
+- [x] 1.3 Core infrastructure — Navigation, dark mode toggle, design system, fonts, types
+- [x] 1.4 Wake-Up Magazine page — 7 series cards at `/wake-up`
+- [x] 1.5 Devotional viewer — `/wake-up/devotional/[slug]`, panel renderer, ScrollProgress
+- [x] 1.6 Supporting utilities — progress.ts, bookmarks.ts, useProgress hook (all localStorage)
+- [ ] 1.7 Visual polish — dark mode, fonts, mobile responsive, touch targets (max 2 days)
+- [ ] 1.8 Testing — component renders, 35 JSON loads, nav flow, dark mode, mobile
+
+Done when: `/wake-up` shows 7 series, day pages render, dark mode works, mobile responsive, build + tests pass.
+
+---
+
+## Sprint 1 — Wake-Up Magazine (IN PROGRESS)
+
+### 2026-02-06
+
+- **Core infrastructure migrated** — Navigation component (hamburger menu, dark mode toggle, slide-out panel), ScrollProgress, design system (globals.css with HSL colors, dark mode, animations, typography utilities), type definitions, Playfair Display + Inter fonts
+- **Landing page** — Brand page at `/` with CTA to Wake-Up Magazine (dark, minimal, design-system typography)
+- **Wake-Up Magazine page** — `/wake-up` with hero, problem statement, how-it-works, 7 series question cards with IntersectionObserver animations
+- **Series detail page** — `/wake-up/series/[slug]` with introduction, context, chiastic structure info, 5-day list with locked/unlocked states, progress bar, lock modal
+- **Devotional viewer** — `/wake-up/devotional/[slug]` loading JSON panels from `/public/devotionals/`, scroll progress bar, panel renderer (text, text-with-image, prayer), scripture detection, bold text parsing, mark-as-complete with reading time
+- **Supporting utilities** — `progress.ts` (localStorage progress tracking with custom events), `bookmarks.ts` (localStorage bookmarks with toggle), `useProgress` hook (reactive state wrapper), `useReadingTime` hook
+- **Shared data module** — `src/data/series.ts` with all 7 series metadata (SERIES_DATA, DEVOTIONAL_SERIES, SERIES_ORDER)
+- **Routes:** `/`, `/wake-up`, `/wake-up/series/[slug]`, `/wake-up/devotional/[slug]`
+- **Build, lint, tests all pass**
+
+---
+
+## Sprint 0 — Foundation (COMPLETE)
 
 ### 2026-02-06
 

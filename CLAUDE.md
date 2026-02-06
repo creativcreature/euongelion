@@ -96,6 +96,14 @@ Mood board: https://creativcreature.github.io/EUONGELION-Project-HUB/project-hub
 | MVP scope     | `docs/MVP-SCOPE.md`, `docs/SPRINT-PLAN.md`                         |
 | Database      | `database/COMBINED_MIGRATION.sql`, `database/seed-data.sql`        |
 | Legal         | `content/legal/`, `docs/legal/`                                    |
+| Progress      | `CHANGELOG.md` — current sprint status + full history              |
+
+## Current Status
+
+See `CHANGELOG.md` for full history and current sprint checklist.
+
+**Now:** Sprint 1 — Wake-Up Magazine (`/wake-up` with 35 devotionals)
+**Done:** Sprint 0 — Foundation (fresh app, tooling, migrations, GitHub, Vercel)
 
 ## Rules
 
