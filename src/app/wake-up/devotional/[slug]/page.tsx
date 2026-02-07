@@ -48,7 +48,7 @@ export default function DevotionalPage({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in')
+            entry.target.classList.add('gentle-rise')
           }
         })
       },
@@ -64,20 +64,27 @@ export default function DevotionalPage({
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-cream dark:bg-[#1a1a1a]">
-        <div className="vw-body text-gray-400">Loading...</div>
+      <div className="flex min-h-screen items-center justify-center bg-page">
+        <div
+          className="vw-body text-muted"
+          style={{
+            animation: 'fadeIn 2s ease-in-out infinite alternate',
+          }}
+        >
+          Loading...
+        </div>
       </div>
     )
   }
 
   if (!devotional) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-cream dark:bg-[#1a1a1a]">
+      <div className="flex min-h-screen items-center justify-center bg-page">
         <div className="text-center">
           <h1 className="text-display vw-heading-lg mb-8">Not Found</h1>
           <button
             onClick={() => router.push('/wake-up')}
-            className="bg-black px-10 py-5 text-label vw-small text-cream transition-all duration-300 hover:bg-gray-800"
+            className="bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
           >
             Return to Wake Up
           </button>
@@ -87,12 +94,12 @@ export default function DevotionalPage({
   }
 
   return (
-    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a]">
+    <div className="min-h-screen bg-page">
       <ScrollProgress />
       <Navigation />
 
       {/* Hero Section */}
-      <header className="mx-auto max-w-7xl px-6 py-20 md:px-12 md:py-32 lg:px-20">
+      <header className="mx-auto max-w-7xl px-6 py-20 md:px-[60px] md:py-32 lg:px-20">
         <div className="grid gap-8 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-10 md:col-start-2">
             <h1 className="observe-fade text-display vw-heading-lg mb-8 md:mb-12">
@@ -105,19 +112,22 @@ export default function DevotionalPage({
               </p>
             )}
 
-            <p className="observe-fade text-serif-italic vw-body-lg mb-8 fade-in-delay-2">
+            <p className="observe-fade text-serif-italic vw-body-lg mb-8 text-secondary fade-in-delay-2">
               {devotional.teaser}
             </p>
 
             <div className="observe-fade flex flex-col gap-6 fade-in-delay-3 md:flex-row md:items-center md:gap-8">
-              <div className="vw-small flex items-center gap-8 text-gray-400">
+              <div className="vw-small flex items-center gap-8 text-muted">
                 <span>{devotional.totalWords} words</span>
-                <span>·</span>
+                <span>&middot;</span>
                 <span>{devotional.scriptureReference}</span>
                 {isCompleted && (
                   <>
-                    <span>·</span>
-                    <span className="flex items-center gap-1 text-green-600">
+                    <span>&middot;</span>
+                    <span
+                      className="flex items-center gap-1"
+                      style={{ color: 'var(--color-success)' }}
+                    >
                       <svg
                         className="h-4 w-4"
                         fill="currentColor"
@@ -142,7 +152,7 @@ export default function DevotionalPage({
       {/* Devotional Panels */}
       <main
         id="main-content"
-        className="mx-auto max-w-7xl px-6 pb-32 md:px-12 md:pb-48 lg:px-20"
+        className="mx-auto max-w-7xl px-6 pb-32 md:px-[60px] md:pb-48 lg:px-20"
       >
         <div className="grid gap-8 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-10 md:col-start-2">
@@ -163,11 +173,14 @@ export default function DevotionalPage({
 
       {/* Mark as Complete */}
       {!isCompleted && (
-        <div className="mx-auto max-w-7xl px-6 pb-16 md:px-12 md:pb-24 lg:px-20">
+        <div className="mx-auto max-w-7xl px-6 pb-16 md:px-[60px] md:pb-24 lg:px-20">
           <div className="grid gap-8 md:grid-cols-12 md:gap-16">
             <div className="text-center md:col-span-8 md:col-start-3">
-              <div className="border-t border-gray-200 pt-12 dark:border-gray-700 md:pt-16">
-                <p className="text-serif-italic vw-body-lg mb-8 text-gray-700 dark:text-gray-300">
+              <div
+                className="pt-12 md:pt-16"
+                style={{ borderTop: '1px solid var(--color-border)' }}
+              >
+                <p className="text-serif-italic vw-body-lg mb-8 text-secondary">
                   Finished reading? Mark this devotional as complete to track
                   your progress.
                 </p>
@@ -176,7 +189,7 @@ export default function DevotionalPage({
                     markComplete(slug, timeSpent)
                     setIsCompleted(true)
                   }}
-                  className="inline-flex items-center gap-2 bg-black px-12 py-5 text-label vw-small text-cream transition-all duration-300 hover:bg-gray-800"
+                  className="inline-flex items-center gap-2 bg-[var(--color-fg)] px-12 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
                 >
                   <svg
                     className="h-5 w-5"
@@ -193,7 +206,7 @@ export default function DevotionalPage({
                   </svg>
                   Mark as Complete
                 </button>
-                <p className="vw-small mt-4 text-gray-400">
+                <p className="vw-small mt-4 text-muted">
                   {Math.floor(timeSpent / 60) > 0
                     ? `${Math.floor(timeSpent / 60)} min `
                     : ''}
@@ -206,15 +219,18 @@ export default function DevotionalPage({
       )}
 
       {/* Footer */}
-      <footer className="mb-24 border-t border-gray-200 py-12 dark:border-gray-700 md:mb-32 md:py-16">
-        <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+      <footer
+        className="mb-24 py-12 md:mb-32 md:py-16"
+        style={{ borderTop: '1px solid var(--color-border)' }}
+      >
+        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="grid gap-8 md:grid-cols-12">
             <div className="md:col-span-6">
               <button
                 onClick={() => router.back()}
-                className="text-label vw-small text-gray-400 transition-colors duration-300 hover:text-black dark:hover:text-cream"
+                className="text-label vw-small text-muted transition-colors duration-300 hover:text-[var(--color-text-primary)]"
               >
-                ← Back
+                &larr; Back
               </button>
             </div>
           </div>
@@ -233,7 +249,7 @@ function PanelComponent({ panel }: { panel: Panel }) {
       {/* Panel Number & Heading */}
       <div className="md:col-span-2">
         <div className="sticky top-8">
-          <span className="vw-small mb-4 block font-sans text-gray-400">
+          <span className="vw-small mb-4 block font-sans text-muted">
             {String(panel.number).padStart(2, '0')}
           </span>
           {panel.heading && (
@@ -243,7 +259,10 @@ function PanelComponent({ panel }: { panel: Panel }) {
       </div>
 
       {/* Panel Content */}
-      <div className={hasImage ? 'md:col-span-6' : 'md:col-span-8'}>
+      <div
+        className={hasImage ? 'md:col-span-6' : 'md:col-span-8'}
+        style={{ maxWidth: '680px' }}
+      >
         <div className={`${isPrayer ? 'text-serif-italic' : ''} vw-body`}>
           {panel.content.split('\n\n').map((paragraph, i) => {
             const isScripture =
@@ -256,9 +275,7 @@ function PanelComponent({ panel }: { panel: Panel }) {
               <p
                 key={i}
                 className={`mb-6 ${isPrayer ? 'text-serif-italic' : ''} ${
-                  isScripture || hasVerseRef
-                    ? 'border-l-4 border-gold py-3 pl-6 text-serif-italic'
-                    : ''
+                  isScripture || hasVerseRef ? 'scripture-block' : ''
                 }`}
                 style={{
                   whiteSpace: 'pre-line',
@@ -267,7 +284,7 @@ function PanelComponent({ panel }: { panel: Panel }) {
                     isScripture || hasVerseRef
                       ? 'clamp(1.0625rem, 1.2vw, 1.25rem)'
                       : undefined,
-                  maxWidth: isScripture || hasVerseRef ? '65ch' : '75ch',
+                  maxWidth: '680px',
                 }}
               >
                 {paragraph.split('**').map((part, j) =>
@@ -289,11 +306,11 @@ function PanelComponent({ panel }: { panel: Panel }) {
       {hasImage && panel.illustration && (
         <div className="md:col-span-4">
           <div
-            className="flex aspect-square items-center justify-center bg-gray-100 dark:bg-[hsl(0,0%,15%)]"
+            className="flex aspect-square items-center justify-center bg-surface-raised"
             style={{ minHeight: '300px' }}
           >
             <div className="p-8 text-center">
-              <p className="vw-small italic text-gray-400">
+              <p className="vw-small italic text-muted">
                 {panel.illustration.description}
               </p>
             </div>

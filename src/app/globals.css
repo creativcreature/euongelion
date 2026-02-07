@@ -1,73 +1,166 @@
 @import 'tailwindcss';
 
 @theme {
-  /* HSL Color System for Dark Mode Support */
-  --color-cream-h: 60;
-  --color-cream-s: 20%;
-  --color-cream-l: 97%;
-  --color-cream: hsl(
-    var(--color-cream-h),
-    var(--color-cream-s),
-    var(--color-cream-l)
-  );
+  /* ============================================
+     COLOR TOKENS — The Bold Three (Foundation)
+     ============================================ */
+  --color-tehom: #1a1612;
+  --color-scroll: #f7f3ed;
+  --color-gold: #c19a6b;
 
-  --color-gold-h: 43;
-  --color-gold-s: 86%;
-  --color-gold-l: 38%;
-  --color-gold: hsl(
-    var(--color-gold-h),
-    var(--color-gold-s),
-    var(--color-gold-l)
-  );
+  /* Theological Accents (rare, intentional use) */
+  --color-burgundy: #6b2c2c;
+  --color-olive: #6b6b4f;
+  --color-shalom: #4a5f6b;
 
-  --color-dark-gold-h: 43;
-  --color-dark-gold-s: 100%;
-  --color-dark-gold-l: 30%;
-  --color-dark-gold: hsl(
-    var(--color-dark-gold-h),
-    var(--color-dark-gold-s),
-    var(--color-dark-gold-l)
-  );
+  /* RGB channels for rgba() usage */
+  --color-tehom-rgb: 26, 22, 18;
+  --color-scroll-rgb: 247, 243, 237;
+  --color-gold-rgb: 193, 154, 107;
 
-  /* Semantic Color Tokens */
-  --bg-primary: var(--color-cream);
-  --bg-secondary: hsl(60, 15%, 95%);
-  --bg-accent: hsl(0, 0%, 0%);
+  /* ============================================
+     SEMANTIC COLOR TOKENS (Dark mode default)
+     ============================================ */
+  --color-bg: var(--color-tehom);
+  --color-fg: var(--color-scroll);
+  --color-accent: var(--color-gold);
 
-  --text-primary: hsl(0, 0%, 0%);
-  --text-secondary: hsl(0, 0%, 60%);
-  --text-accent: var(--color-gold);
+  /* Text hierarchy */
+  --color-text-primary: var(--color-scroll);
+  --color-text-secondary: rgba(247, 243, 237, 0.7);
+  --color-text-tertiary: rgba(247, 243, 237, 0.5);
+  --color-text-muted: rgba(247, 243, 237, 0.4);
 
-  --border-subtle: hsl(0, 0%, 88%);
-  --border-accent: var(--color-gold);
+  /* UI elements */
+  --color-border: rgba(247, 243, 237, 0.1);
+  --color-border-strong: rgba(247, 243, 237, 0.2);
+  --color-surface: rgba(247, 243, 237, 0.05);
+  --color-surface-raised: rgba(247, 243, 237, 0.08);
+  --color-overlay: rgba(26, 22, 18, 0.8);
 
-  /* Typography */
-  --font-family-display: Impact, 'Arial Black', sans-serif;
-  --font-family-serif: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  /* Interactive states */
+  --color-hover: rgba(247, 243, 237, 0.1);
+  --color-active: rgba(247, 243, 237, 0.15);
+  --color-focus-ring: rgba(193, 154, 107, 0.4);
 
-  /* Dark Mode Colors */
-  --dark-bg-primary: hsl(0, 0%, 10%);
-  --dark-bg-secondary: hsl(0, 0%, 15%);
-  --dark-bg-accent: hsl(0, 0%, 5%);
+  /* Feedback colors */
+  --color-success: #4a6b4f;
+  --color-warning: #6b5a4a;
+  --color-error: #6b2c2c;
+  --color-info: #4a5f6b;
 
-  --dark-text-primary: hsl(60, 20%, 97%);
-  --dark-text-secondary: hsl(0, 0%, 70%);
-  --dark-text-accent: var(--color-gold);
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+  --font-family-display:
+    var(--font-geist-sans), 'Helvetica Neue', Arial, sans-serif;
+  --font-family-body:
+    var(--font-geist-sans), 'Helvetica Neue', Arial, sans-serif;
+  --font-family-serif:
+    var(--font-playfair), 'Playfair Display', 'Didot', Georgia, serif;
 
-  --dark-border-subtle: hsl(0, 0%, 25%);
-  --dark-border-accent: var(--color-gold);
+  /* Letter spacing tokens */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+  --tracking-widest: 0.2em;
+
+  /* ============================================
+     SPACING TOKENS (4px base)
+     ============================================ */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 60px;
+  --space-2xl: 80px;
+  --space-3xl: 120px;
+
+  /* Max widths */
+  --max-w-reading: 680px;
+  --max-w-content: 800px;
+  --max-w-display: 1200px;
+  --max-w-full: 1440px;
+
+  /* Touch targets */
+  --touch-min: 44px;
+
+  /* ============================================
+     BORDER RADIUS
+     ============================================ */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  /* ============================================
+     SHADOWS (warm-tinted from Tehom)
+     ============================================ */
+  --shadow-sm: 0 2px 4px rgba(26, 22, 18, 0.1);
+  --shadow-md: 0 4px 8px rgba(26, 22, 18, 0.12);
+  --shadow-lg: 0 8px 16px rgba(26, 22, 18, 0.15);
+  --shadow-xl: 0 16px 32px rgba(26, 22, 18, 0.2);
+  --shadow-focus: 0 0 0 3px rgba(193, 154, 107, 0.4);
+
+  /* ============================================
+     TRANSITION TOKENS
+     ============================================ */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-moderate: 300ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+
+  /* ============================================
+     Z-INDEX TOKENS
+     ============================================ */
+  --z-sticky: 100;
+  --z-fixed: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+}
+
+/* ============================================
+   LIGHT MODE OVERRIDES
+   ============================================ */
+:root:not(.dark) {
+  --color-bg: #f7f3ed;
+  --color-fg: #1a1612;
+  --color-text-primary: #1a1612;
+  --color-text-secondary: rgba(26, 22, 18, 0.7);
+  --color-text-tertiary: rgba(26, 22, 18, 0.5);
+  --color-text-muted: rgba(26, 22, 18, 0.4);
+  --color-border: rgba(26, 22, 18, 0.1);
+  --color-border-strong: rgba(26, 22, 18, 0.2);
+  --color-surface: rgba(26, 22, 18, 0.05);
+  --color-surface-raised: rgba(26, 22, 18, 0.08);
+  --color-overlay: rgba(247, 243, 237, 0.8);
+  --color-hover: rgba(26, 22, 18, 0.05);
+  --color-active: rgba(26, 22, 18, 0.1);
 }
 
 @layer base {
   html {
-    background-color: var(--color-cream);
-    font-size: 16px;
+    font-size: clamp(15px, 1vw + 14px, 17px);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    transition:
+      background-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 400ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   body {
-    font-family: var(--font-inter), system-ui, sans-serif;
-    background-color: var(--color-cream);
-    color: var(--text-primary);
+    font-family: var(--font-family-body);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1,
@@ -77,12 +170,10 @@
   h5,
   h6 {
     font-family: var(--font-family-display);
+    letter-spacing: var(--tracking-tight);
   }
 
-  * {
-    transition-timing-function: cubic-bezier(0.42, 0, 0.04, 1);
-  }
-
+  /* Reduced motion: simple fades or instant */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -93,7 +184,7 @@
     }
   }
 
-  /* Accessibility - Focus Visible States */
+  /* Focus states — gold ring with 3px shadow */
   button:focus-visible,
   a:focus-visible,
   input:focus-visible,
@@ -101,88 +192,44 @@
   [tabindex]:focus-visible {
     outline: 2px solid var(--color-gold);
     outline-offset: 2px;
+    box-shadow: var(--shadow-focus);
   }
 
-  /* Skip to content link */
+  /* Skip to content */
   .skip-to-content {
     position: absolute;
     left: -9999px;
-    z-index: 999;
+    z-index: 9999;
     padding: 1rem 2rem;
     background-color: var(--color-gold);
-    color: white;
+    color: var(--color-tehom);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
   }
-
   .skip-to-content:focus {
     left: 50%;
     top: 1rem;
     transform: translateX(-50%);
   }
 
-  /* Dark Mode Styles */
+  /* Dark mode class — theme transition */
   .dark {
-    background-color: var(--dark-bg-primary);
-    color: var(--dark-text-primary);
+    --color-bg: #1a1612;
+    --color-fg: #f7f3ed;
+    --color-text-primary: #f7f3ed;
+    --color-text-secondary: rgba(247, 243, 237, 0.7);
+    --color-text-tertiary: rgba(247, 243, 237, 0.5);
+    --color-text-muted: rgba(247, 243, 237, 0.4);
+    --color-border: rgba(247, 243, 237, 0.1);
+    --color-border-strong: rgba(247, 243, 237, 0.2);
+    --color-surface: rgba(247, 243, 237, 0.05);
+    --color-surface-raised: rgba(247, 243, 237, 0.08);
+    --color-overlay: rgba(26, 22, 18, 0.8);
+    --color-hover: rgba(247, 243, 237, 0.1);
+    --color-active: rgba(247, 243, 237, 0.15);
   }
 
-  .dark .bg-cream {
-    background-color: var(--dark-bg-primary);
-  }
-  .dark .bg-cream-dark {
-    background-color: var(--dark-bg-secondary);
-  }
-  .dark .bg-accent {
-    background-color: var(--dark-bg-accent);
-  }
-  .dark .text-cream {
-    color: var(--dark-text-primary);
-  }
-  .dark .border-subtle {
-    border-color: var(--dark-border-subtle);
-  }
-  .dark .text-gray-700 {
-    color: var(--dark-text-secondary);
-  }
-  .dark .text-gray-600 {
-    color: hsl(0, 0%, 65%);
-  }
-  .dark .text-gray-400 {
-    color: hsl(0, 0%, 50%);
-  }
-  .dark .hover\:bg-gray-800:hover {
-    background-color: hsl(0, 0%, 25%);
-  }
-  .dark .bg-gray-50 {
-    background-color: var(--dark-bg-secondary);
-  }
-  .dark .bg-white {
-    background-color: var(--dark-bg-secondary);
-  }
-  .dark .border-gray-200 {
-    border-color: var(--dark-border-subtle);
-  }
-  .dark .hover\:border-gray-400:hover {
-    border-color: hsl(0, 0%, 40%);
-  }
-  .dark .text-black {
-    color: var(--dark-text-primary);
-  }
-  .dark .text-gray-500 {
-    color: hsl(0, 0%, 60%);
-  }
-  .dark .text-gray-300 {
-    color: hsl(0, 0%, 75%);
-  }
-  .dark .text-gray-200 {
-    color: hsl(0, 0%, 80%);
-  }
-  .dark .hover\:text-black:hover {
-    color: var(--dark-text-primary);
-  }
-
-  /* Ensure logos don't get inverted or colorized */
+  /* Ensure logos don't get inverted */
   img[src*='/logos/'],
   img[alt*='logo'],
   img[alt*='Logo'] {
@@ -192,99 +239,144 @@
 }
 
 @layer utilities {
-  .text-display {
-    font-family: var(--font-family-display);
-    font-weight: 900;
+  /* ============================================
+     TYPOGRAPHY UTILITIES
+     ============================================ */
+
+  /* Masthead: EUANGELION wordmark only */
+  .text-masthead {
+    font-family: var(--font-family-serif);
     text-transform: uppercase;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.2em;
+    font-weight: 400;
   }
 
+  /* Display: hero titles, large headings */
+  .text-display {
+    font-family: var(--font-family-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  /* Label: small caps UI text */
   .text-label {
-    font-family: var(--font-inter), system-ui, sans-serif;
+    font-family: var(--font-family-display);
     text-transform: uppercase;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.1em;
     font-weight: 500;
   }
 
+  /* Serif italic: intro text, teasers */
   .text-serif-italic {
     font-family: var(--font-family-serif);
     font-style: italic;
     line-height: 1.6;
   }
 
+  /* Nav: menu items */
   .text-nav {
     font-family: var(--font-family-serif);
     font-style: italic;
     font-size: 1.5rem;
   }
 
-  /* Viewport-based responsive typography */
+  /* ============================================
+     FLUID TYPOGRAPHY
+     ============================================ */
   .vw-heading-xl {
-    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-size: clamp(2.5rem, 6vw, 5rem);
     line-height: 1;
   }
   .vw-heading-lg {
-    font-size: clamp(1.875rem, 4vw, 4rem);
+    font-size: clamp(1.875rem, 4vw, 3.5rem);
     line-height: 1.1;
   }
   .vw-heading-md {
-    font-size: clamp(1.5rem, 2.5vw, 2.75rem);
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     line-height: 1.2;
   }
   .vw-body-lg {
-    font-size: clamp(1.125rem, 1.5vw, 1.5rem);
-    line-height: 1.6;
-    max-width: 65ch;
+    font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+    line-height: 1.7;
+    max-width: 680px;
   }
   .vw-body {
-    font-size: clamp(1rem, 1.1vw, 1.125rem);
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
     line-height: 1.7;
-    max-width: 75ch;
+    max-width: 680px;
   }
   .vw-small {
     font-size: clamp(0.75rem, 0.85vw, 0.9375rem);
     line-height: 1.5;
   }
 
-  /* Motion utilities */
+  /* Day number: architectural display (120-160px) */
+  .text-day-number {
+    font-family: var(--font-family-display);
+    font-size: clamp(3.75rem, 10vw, 10rem);
+    font-weight: 100;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  /* ============================================
+     SCROLL ANIMATION: "Gentle Rise"
+     ============================================ */
   .observe-fade {
     opacity: 0;
   }
+
+  .gentle-rise {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: gentleRise 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
   .fade-in {
     opacity: 0;
-    animation: fadeIn 0.6s ease forwards;
+    animation: fadeIn 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
+
+  /* Stagger delays: 60ms between items */
+  .stagger-1 {
+    animation-delay: 60ms;
+  }
+  .stagger-2 {
+    animation-delay: 120ms;
+  }
+  .stagger-3 {
+    animation-delay: 180ms;
+  }
+  .stagger-4 {
+    animation-delay: 240ms;
+  }
+  .stagger-5 {
+    animation-delay: 300ms;
+  }
+  .stagger-6 {
+    animation-delay: 360ms;
+  }
+
+  /* Legacy delay classes (for backward compat) */
   .fade-in-delay-1 {
-    animation-delay: 0.1s;
+    animation-delay: 60ms;
   }
   .fade-in-delay-2 {
-    animation-delay: 0.2s;
+    animation-delay: 120ms;
   }
   .fade-in-delay-3 {
-    animation-delay: 0.3s;
+    animation-delay: 180ms;
   }
   .fade-in-delay-4 {
-    animation-delay: 0.4s;
+    animation-delay: 240ms;
   }
-  .slide-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideUp 0.6s ease forwards;
-  }
-  .slide-in-left {
-    opacity: 0;
-    transform: translateX(-30px);
-    animation: slideInLeft 0.8s ease-out forwards;
-  }
-  .slide-in-right {
-    opacity: 0;
-    transform: translateX(30px);
-    animation: slideInRight 0.8s ease-out forwards;
-  }
-  .scale-in {
-    opacity: 0;
-    transform: scale(0.95);
-    animation: scaleIn 0.6s ease-out forwards;
+
+  @keyframes gentleRise {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes fadeIn {
@@ -292,113 +384,103 @@
       opacity: 1;
     }
   }
-  @keyframes slideUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  @keyframes slideInRight {
-    from {
-      opacity: 0;
-      transform: translateX(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
 
-  /* Parallax effect */
-  .parallax {
-    will-change: transform;
-    transition: transform 0.3s ease-out;
-  }
-
-  /* Scroll Progress Indicator */
+  /* ============================================
+     SCROLL PROGRESS
+     ============================================ */
   .scroll-progress {
     position: fixed;
     top: 0;
     left: 0;
     height: 3px;
-    background: linear-gradient(
-      to right,
-      var(--color-gold),
-      var(--color-dark-gold)
-    );
+    background: var(--color-gold);
     transform-origin: left;
-    z-index: 100;
-    transition: transform 0.1s ease-out;
+    z-index: var(--z-sticky);
+    transition:
+      transform 100ms cubic-bezier(0, 0, 0.2, 1),
+      opacity 300ms cubic-bezier(0, 0, 0.2, 1);
   }
 
-  /* Sticky Section Headers */
-  .sticky-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    backdrop-filter: blur(8px);
-    background-color: rgba(250, 249, 246, 0.8);
-  }
-  .dark .sticky-header {
-    background-color: rgba(26, 26, 26, 0.8);
+  /* ============================================
+     SCRIPTURE BLOCK TREATMENT
+     ============================================ */
+  .scripture-block {
+    border-left: 3px solid var(--color-gold);
+    padding-left: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background: rgba(193, 154, 107, 0.05);
+    font-family: var(--font-family-serif);
+    font-style: italic;
+    line-height: 1.75;
   }
 
-  /* Color Utilities */
+  /* ============================================
+     PULL QUOTE
+     ============================================ */
+  .pull-quote {
+    font-family: var(--font-family-display);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  /* ============================================
+     COLOR UTILITIES
+     ============================================ */
   .text-gold {
     color: var(--color-gold);
   }
-  .text-dark-gold {
-    color: var(--color-dark-gold);
+  .text-scroll {
+    color: var(--color-scroll);
   }
-  .text-cream {
-    color: var(--color-cream);
+  .text-tehom {
+    color: var(--color-tehom);
   }
-  .bg-cream {
-    background-color: var(--color-cream);
+  .bg-tehom {
+    background-color: var(--color-tehom);
   }
-  .bg-cream-dark {
-    background-color: var(--bg-secondary);
+  .bg-scroll {
+    background-color: var(--color-scroll);
   }
   .bg-gold {
     background-color: var(--color-gold);
   }
-  .bg-dark-gold {
-    background-color: var(--color-dark-gold);
-  }
-  .bg-accent {
-    background-color: var(--bg-accent);
-  }
   .border-gold {
     border-color: var(--color-gold);
   }
-  .border-cream {
-    border-color: var(--color-cream);
+
+  /* Semantic utilities */
+  .bg-page {
+    background-color: var(--color-bg);
+  }
+  .text-page {
+    color: var(--color-text-primary);
+  }
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+  .text-tertiary {
+    color: var(--color-text-tertiary);
+  }
+  .text-muted {
+    color: var(--color-text-muted);
   }
   .border-subtle {
-    border-color: var(--border-subtle);
+    border-color: var(--color-border);
   }
-  .focus-gold {
-    outline: 2px solid var(--color-gold);
-    outline-offset: 2px;
+  .border-strong {
+    border-color: var(--color-border-strong);
+  }
+  .bg-surface {
+    background-color: var(--color-surface);
+  }
+  .bg-surface-raised {
+    background-color: var(--color-surface-raised);
+  }
+
+  /* Gold shimmer (rare decorative) */
+  .gold-shimmer {
+    background: linear-gradient(135deg, #c19a6b 0%, #d4af7f 50%, #c19a6b 100%);
   }
 }

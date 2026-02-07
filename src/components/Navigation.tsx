@@ -37,11 +37,12 @@ export default function Navigation() {
         Skip to main content
       </a>
 
-      <nav className="flex items-center justify-between px-6 py-8 md:px-12 lg:px-20">
+      <nav className="flex items-center justify-between px-6 py-8 md:px-[60px] lg:px-20">
         {/* Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+          className="flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-200 hover:bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+          style={{ transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' }}
           aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={isOpen}
         >
@@ -50,7 +51,10 @@ export default function Navigation() {
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            style={{ transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}
+            style={{
+              transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)',
+              transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+            }}
             aria-hidden="true"
           >
             {isOpen ? (
@@ -72,14 +76,15 @@ export default function Navigation() {
         </button>
 
         {/* Brand */}
-        <Link href="/" className="text-label vw-small text-gray-500">
+        <Link href="/" className="text-masthead vw-small text-muted">
           EUANGELION
         </Link>
 
         {/* Theme Toggle */}
         <button
           onClick={toggleTheme}
-          className="flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+          className="flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-200 hover:bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+          style={{ transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' }}
           aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         >
           {theme === 'dark' ? (
@@ -121,24 +126,27 @@ export default function Navigation() {
       {/* Slide-out Menu */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 transition-opacity duration-500"
+          className="fixed inset-0 transition-opacity duration-500"
           style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            backgroundColor: 'var(--color-overlay)',
             backdropFilter: 'blur(4px)',
+            zIndex: 300,
           }}
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="fixed bottom-0 left-0 top-0 z-50 w-full transform bg-cream p-12 shadow-2xl transition-transform duration-500 dark:bg-[hsl(0,0%,12%)] md:w-[480px] md:p-16"
+            className="fixed bottom-0 left-0 top-0 w-full transform bg-tehom p-12 shadow-xl transition-transform duration-500 md:w-[480px] md:p-16"
             style={{
               transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
+              transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+              zIndex: 400,
             }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close */}
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute right-8 top-8 flex h-10 w-10 items-center justify-center text-gray-400 transition-all duration-300 hover:rotate-90 hover:text-black dark:hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="absolute right-8 top-8 flex h-11 w-11 items-center justify-center text-muted transition-all duration-300 hover:rotate-90 hover:text-scroll focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
               aria-label="Close navigation menu"
             >
               <svg
@@ -160,7 +168,7 @@ export default function Navigation() {
             {/* Menu Items */}
             <nav className="mt-24 max-h-[60vh] space-y-8 overflow-y-auto md:mt-32 md:space-y-10">
               <div className="mb-6">
-                <p className="text-label vw-small mb-4 text-gray-400">
+                <p className="text-label vw-small mb-4 text-muted">
                   DAILY DEVOTIONALS
                 </p>
                 <div className="space-y-6">
@@ -217,10 +225,11 @@ export default function Navigation() {
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 pt-6 dark:border-gray-700">
-                <p className="text-label vw-small mb-4 text-gray-400">
-                  EXPLORE
-                </p>
+              <div
+                className="pt-6"
+                style={{ borderTop: '1px solid var(--color-border)' }}
+              >
+                <p className="text-label vw-small mb-4 text-muted">EXPLORE</p>
                 <div className="space-y-6">
                   <MenuItem
                     number="—"
@@ -244,10 +253,11 @@ export default function Navigation() {
             {/* Footer */}
             <div className="absolute bottom-12 left-12 right-12 md:bottom-16 md:left-16 md:right-16">
               <p
-                className="text-label vw-small leading-relaxed text-gray-400 opacity-0"
+                className="text-label vw-small leading-relaxed text-muted opacity-0"
                 style={{
-                  animation: 'fadeIn 0.6s ease forwards',
-                  animationDelay: '0.6s',
+                  animation:
+                    'fadeIn 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                  animationDelay: '0.5s',
                 }}
               >
                 VENERATE THE MIRACLE.
@@ -280,7 +290,7 @@ function MenuItem({
   isGold?: boolean
 }) {
   const delayStyles = {
-    animationDelay: `${0.1 + delay * 0.05}s`,
+    animationDelay: `${100 + delay * 60}ms`,
     animationFillMode: 'forwards' as const,
     opacity: 0,
   }
@@ -291,18 +301,24 @@ function MenuItem({
       style={delayStyles}
     >
       <span
-        className={`vw-small mt-1 font-sans ${disabled ? 'text-gray-300 dark:text-gray-600' : isGold ? 'text-gold' : 'text-gray-400'}`}
+        className={`vw-small mt-1 font-sans ${disabled ? 'text-tertiary' : isGold ? 'text-gold' : 'text-muted'}`}
       >
         {number}
       </span>
       <span
-        className={`text-nav vw-body-lg transition-all duration-300 ${disabled ? 'text-gray-300 dark:text-gray-600' : 'text-black dark:text-cream'}`}
+        className={`text-nav vw-body-lg transition-all duration-300 ${disabled ? 'text-tertiary' : 'text-scroll'}`}
+        style={{ transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' }}
       >
         <span
           className={
             !disabled
               ? 'inline-block transition-all duration-300 group-hover:translate-x-2 group-hover:text-gold'
               : ''
+          }
+          style={
+            !disabled
+              ? { transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }
+              : undefined
           }
         >
           {label}

@@ -11,11 +11,11 @@ export default function WakeUpPage() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in')
+            entry.target.classList.add('gentle-rise')
           }
         })
       },
-      { threshold: 0.1 },
+      { threshold: 0.15 },
     )
 
     const elements = document.querySelectorAll('.observe-fade')
@@ -25,20 +25,20 @@ export default function WakeUpPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a]">
+    <div className="bg-page min-h-screen">
       <Navigation />
 
       {/* Hero Section */}
-      <header className="mx-auto max-w-7xl px-6 pb-16 pt-12 md:px-12 md:pb-24 md:pt-20 lg:px-20">
+      <header className="mx-auto max-w-7xl px-6 pb-16 pt-12 md:px-[60px] md:pb-24 md:pt-20 lg:px-20">
         <div className="grid gap-8 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-10 md:col-start-2">
             <div className="observe-fade mb-12 text-center md:mb-16">
               <h1 className="text-display vw-heading-xl mb-6">WAKE UP</h1>
               <p className="text-label vw-small mb-8 text-gold">
-                7 SERIES · 35 DEVOTIONALS · 5 DAYS EACH
+                7 SERIES &middot; 35 DEVOTIONALS &middot; 5 DAYS EACH
               </p>
               <p
-                className="text-serif-italic vw-body-lg mx-auto mb-10"
+                className="text-serif-italic vw-body-lg mx-auto mb-10 text-secondary"
                 style={{ maxWidth: '50ch' }}
               >
                 In a world drowning in noise, Wake Up offers something rare:
@@ -47,7 +47,10 @@ export default function WakeUpPage() {
               </p>
               <Link
                 href="/wake-up/series/identity"
-                className="inline-block bg-black px-10 py-5 text-label vw-small text-cream transition-all duration-300 hover:bg-gray-800 dark:bg-cream dark:text-black dark:hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                className="inline-block bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                style={{
+                  transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+                }}
               >
                 Start with Question 01
               </Link>
@@ -57,16 +60,19 @@ export default function WakeUpPage() {
       </header>
 
       {/* Problem Statement */}
-      <section className="border-t border-subtle bg-cream-dark py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+      <section
+        className="bg-surface py-16 md:py-24"
+        style={{ borderTop: '1px solid var(--color-border)' }}
+      >
+        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="grid gap-8 md:grid-cols-12 md:gap-16">
             <div className="text-center md:col-span-8 md:col-start-3">
-              <p className="observe-fade vw-body mb-6 text-gray-700 dark:text-gray-300">
+              <p className="observe-fade vw-body mb-6 text-secondary">
                 We live in apocalyptic times. Political violence. Economic
                 collapse. 43% more anxious than last year. The ground beneath us
                 is shaking.
               </p>
-              <p className="observe-fade text-serif-italic vw-body-lg fade-in-delay-1">
+              <p className="observe-fade text-serif-italic vw-body-lg">
                 The seven questions below aren&apos;t easy. But they&apos;re
                 honest. Each one invites you into a 5-day journey to seek first
                 the kingdom—and discover that everything else gets added.
@@ -77,40 +83,43 @@ export default function WakeUpPage() {
       </section>
 
       {/* How It Works */}
-      <section className="border-t border-subtle py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+      <section
+        className="py-16 md:py-24"
+        style={{ borderTop: '1px solid var(--color-border)' }}
+      >
+        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="grid gap-8 md:grid-cols-12 md:gap-16">
             <div className="md:col-span-10 md:col-start-2">
               <h2 className="observe-fade text-label vw-small mb-10 text-center text-gold">
                 HOW IT WORKS
               </h2>
               <div className="grid gap-8 text-center md:grid-cols-3 md:gap-12">
-                <div className="observe-fade slide-in-left fade-in-delay-1">
+                <div className="observe-fade">
                   <div className="text-display vw-heading-md mb-4 text-gold">
                     01
                   </div>
-                  <p className="vw-body text-gray-700 dark:text-gray-300">
+                  <p className="vw-body text-secondary">
                     Pick a question that speaks to where you are.
                   </p>
                 </div>
-                <div className="observe-fade scale-in fade-in-delay-2">
+                <div className="observe-fade">
                   <div className="text-display vw-heading-md mb-4 text-gold">
                     02
                   </div>
-                  <p className="vw-body text-gray-700 dark:text-gray-300">
+                  <p className="vw-body text-secondary">
                     Read one devotional per day for 5 days.
                   </p>
                 </div>
-                <div className="observe-fade slide-in-right fade-in-delay-3">
+                <div className="observe-fade">
                   <div className="text-display vw-heading-md mb-4 text-gold">
                     03
                   </div>
-                  <p className="vw-body text-gray-700 dark:text-gray-300">
+                  <p className="vw-body text-secondary">
                     Reflect, journal, and let God reorder your heart.
                   </p>
                 </div>
               </div>
-              <p className="observe-fade vw-body mt-10 text-center text-gray-600 fade-in-delay-4 dark:text-gray-400">
+              <p className="observe-fade vw-body mt-10 text-center text-tertiary">
                 Each series follows a chiastic arc—building toward a revelation,
                 then reflecting back. Ancient structure. Modern questions.
               </p>
@@ -120,8 +129,12 @@ export default function WakeUpPage() {
       </section>
 
       {/* Seven Questions */}
-      <main id="main-content" className="border-t border-subtle py-20 md:py-32">
-        <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+      <main
+        id="main-content"
+        className="py-20 md:py-32"
+        style={{ borderTop: '1px solid var(--color-border)' }}
+      >
+        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="grid gap-8 md:grid-cols-12 md:gap-16">
             <div className="md:col-span-10 md:col-start-2">
               <h2 className="observe-fade text-label vw-small mb-12 text-center text-gold md:text-left">
@@ -133,13 +146,17 @@ export default function WakeUpPage() {
                   <Link
                     key={series.slug}
                     href={`/wake-up/series/${series.slug}`}
-                    className={`observe-fade block ${index > 0 ? `fade-in-delay-${Math.min(index, 4)}` : ''}`}
+                    className={`observe-fade block ${index > 0 ? `stagger-${Math.min(index, 6)}` : ''}`}
                   >
                     <div
-                      className={`group grid gap-6 border-b border-subtle py-8 transition-all duration-300 hover:border-gray-400 md:grid-cols-12 md:gap-12 md:py-10 ${series.isCenter ? 'md:-mx-8 md:bg-cream-dark md:px-8' : ''}`}
+                      className={`group grid gap-6 py-8 transition-all duration-300 md:grid-cols-12 md:gap-12 md:py-10 ${series.isCenter ? 'bg-surface-raised md:-mx-8 md:px-8' : ''}`}
+                      style={{
+                        borderBottom: '1px solid var(--color-border)',
+                        transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+                      }}
                     >
                       <div className="md:col-span-1">
-                        <span className="vw-small font-sans text-gray-400">
+                        <span className="vw-small font-sans text-muted">
                           {series.number}
                         </span>
                       </div>
@@ -153,8 +170,8 @@ export default function WakeUpPage() {
                       </div>
 
                       <div className="flex items-center justify-end md:col-span-2">
-                        <span className="text-label vw-small text-gray-400 transition-colors duration-300 group-hover:text-black dark:text-gray-500 dark:group-hover:text-cream">
-                          BEGIN →
+                        <span className="text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)]">
+                          BEGIN &rarr;
                         </span>
                       </div>
                     </div>
@@ -167,18 +184,19 @@ export default function WakeUpPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-subtle py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+      <footer
+        className="py-16 md:py-24"
+        style={{ borderTop: '1px solid var(--color-border)' }}
+      >
+        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="grid gap-8 md:grid-cols-12">
             <div className="text-center md:col-span-6 md:col-start-4">
-              <p className="observe-fade text-label vw-small leading-relaxed text-gray-400">
+              <p className="observe-fade text-label vw-small leading-relaxed text-muted">
                 VENERATE THE MIRACLE.
                 <br />
                 DISMANTLE THE HAVEL.
               </p>
-              <p className="vw-small mt-8 text-gray-400">
-                &copy; 2026 EUANGELION
-              </p>
+              <p className="vw-small mt-8 text-muted">&copy; 2026 EUANGELION</p>
             </div>
           </div>
         </div>

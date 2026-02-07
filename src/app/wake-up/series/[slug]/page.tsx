@@ -27,11 +27,11 @@ export default function SeriesPage({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in')
+            entry.target.classList.add('gentle-rise')
           }
         })
       },
-      { threshold: 0.1 },
+      { threshold: 0.15 },
     )
 
     const elements = document.querySelectorAll('.observe-fade')
@@ -42,14 +42,14 @@ export default function SeriesPage({
 
   if (!series) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-cream dark:bg-[#1a1a1a]">
+      <div className="flex min-h-screen items-center justify-center bg-page">
         <div className="text-center">
           <h1 className="text-display vw-heading-lg mb-8">Series Not Found</h1>
           <Link
             href="/wake-up"
-            className="inline-block bg-black px-10 py-5 text-label vw-small text-cream transition-all duration-300 hover:bg-gray-800"
+            className="inline-block bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
           >
-            ← Back to Wake Up
+            &larr; Back to Wake Up
           </Link>
         </div>
       </div>
@@ -57,21 +57,21 @@ export default function SeriesPage({
   }
 
   return (
-    <div className="min-h-screen bg-cream dark:bg-[#1a1a1a]">
+    <div className="min-h-screen bg-page">
       <Navigation />
 
       {/* Series Introduction */}
-      <header className="mx-auto max-w-7xl px-6 pb-20 pt-12 md:px-12 md:pb-32 md:pt-20 lg:px-20">
+      <header className="mx-auto max-w-7xl px-6 pb-20 pt-12 md:px-[60px] md:pb-32 md:pt-20 lg:px-20">
         <div className="grid gap-8 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-10 md:col-start-2">
             <Link
               href="/wake-up"
-              className="observe-fade vw-small mb-12 inline-block text-gray-400 transition-colors duration-300 hover:text-black dark:hover:text-cream"
+              className="observe-fade vw-small mb-12 inline-block text-muted transition-colors duration-300 hover:text-[var(--color-text-primary)]"
             >
-              ← All Questions
+              &larr; All Questions
             </Link>
 
-            <div className="observe-fade mb-16 fade-in-delay-1 md:mb-24">
+            <div className="observe-fade mb-16 md:mb-24">
               <h1 className="text-display vw-heading-xl mb-8">
                 {series.question}
               </h1>
@@ -82,28 +82,28 @@ export default function SeriesPage({
 
             <div className="mb-20 grid gap-8 md:mb-32 md:grid-cols-12 md:gap-12">
               <div className="md:col-span-7">
-                <p className="observe-fade text-serif-italic vw-body-lg mb-8 fade-in-delay-2">
+                <p className="observe-fade text-serif-italic vw-body-lg mb-8">
                   {series.introduction}
                 </p>
-                <p className="observe-fade vw-body text-gray-700 fade-in-delay-3 dark:text-gray-300">
+                <p className="observe-fade vw-body text-secondary">
                   {series.context}
                 </p>
               </div>
 
               <div className="md:col-span-5">
-                <div className="observe-fade bg-gray-50 p-8 fade-in-delay-4 dark:bg-[hsl(0,0%,15%)] md:p-10">
+                <div className="observe-fade bg-surface-raised p-8 md:p-10">
                   <div className="mb-4 flex items-center justify-between">
                     <p className="text-label vw-small text-gold">
                       5-DAY JOURNEY
                     </p>
                     {seriesProgress.completed > 0 && (
-                      <span className="text-label vw-small text-green-600">
+                      <span className="text-label vw-small text-[var(--color-success)]">
                         {seriesProgress.completed}/{seriesProgress.total}{' '}
                         Complete
                       </span>
                     )}
                   </div>
-                  <p className="vw-body mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
+                  <p className="vw-body mb-4 leading-relaxed text-secondary">
                     This series follows a chiastic structure
                     (A-B-C-B&apos;-A&apos;). Days 1 and 5 mirror each other.
                     Days 2 and 4 mirror each other. Day 3 is the pivot—the core
@@ -111,10 +111,22 @@ export default function SeriesPage({
                   </p>
                   {seriesProgress.completed > 0 && (
                     <div className="mt-4">
-                      <div className="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
+                      <div
+                        className="h-1 w-full overflow-hidden"
+                        style={{
+                          backgroundColor: 'var(--color-border)',
+                          borderRadius: '2px',
+                        }}
+                      >
                         <div
-                          className="h-2 rounded-full bg-green-600 transition-all duration-500"
-                          style={{ width: `${seriesProgress.percentage}%` }}
+                          className="h-1 transition-all duration-500"
+                          style={{
+                            width: `${seriesProgress.percentage}%`,
+                            backgroundColor: 'var(--color-gold)',
+                            borderRadius: '2px',
+                            transitionTimingFunction:
+                              'cubic-bezier(0, 0, 0.2, 1)',
+                          }}
                         />
                       </div>
                     </div>
@@ -129,7 +141,7 @@ export default function SeriesPage({
       {/* 5 Days */}
       <main
         id="main-content"
-        className="mx-auto max-w-7xl px-6 pb-32 md:px-12 md:pb-48 lg:px-20"
+        className="mx-auto max-w-7xl px-6 pb-32 md:px-[60px] md:pb-48 lg:px-20"
       >
         <div className="grid gap-8 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-10 md:col-start-2">
@@ -142,7 +154,7 @@ export default function SeriesPage({
                 return (
                   <div
                     key={day.slug}
-                    className={`observe-fade ${index > 0 ? `fade-in-delay-${Math.min(index, 4)}` : ''}`}
+                    className={`observe-fade ${index > 0 ? `stagger-${Math.min(index, 6)}` : ''}`}
                   >
                     {isLocked ? (
                       <div
@@ -181,17 +193,23 @@ export default function SeriesPage({
       {/* Lock Message Modal */}
       {lockMessage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center px-6"
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+          className="fixed inset-0 flex items-center justify-center px-6"
+          style={{
+            backgroundColor: 'var(--color-overlay)',
+            zIndex: 400,
+          }}
           onClick={() => setLockMessage(null)}
         >
           <div
-            className="w-full max-w-md bg-cream p-8 shadow-2xl dark:bg-[#1a1a1a]"
+            className="w-full max-w-md bg-page p-8"
+            style={{
+              boxShadow: 'var(--shadow-xl)',
+            }}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mb-6 flex items-start gap-4">
               <svg
-                className="mt-1 h-6 w-6 flex-shrink-0 text-gray-400"
+                className="mt-1 h-6 w-6 flex-shrink-0 text-muted"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -205,17 +223,15 @@ export default function SeriesPage({
                 <h3 className="text-display vw-heading-md mb-4">
                   Devotional Locked
                 </h3>
-                <p className="vw-body mb-4 text-gray-700 dark:text-gray-300">
+                <p className="vw-body mb-4 text-secondary">
                   This devotional is locked because it builds on previous days.
                 </p>
-                <p className="vw-body text-gray-700 dark:text-gray-300">
-                  {lockMessage.message}
-                </p>
+                <p className="vw-body text-secondary">{lockMessage.message}</p>
               </div>
             </div>
             <button
               onClick={() => setLockMessage(null)}
-              className="w-full bg-black px-6 py-4 text-label vw-small text-cream transition-colors hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="w-full bg-[var(--color-fg)] px-6 py-4 text-label vw-small text-[var(--color-bg)] transition-colors duration-300 hover:bg-gold hover:text-tehom focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             >
               Got It
             </button>
@@ -224,18 +240,19 @@ export default function SeriesPage({
       )}
 
       {/* Footer */}
-      <footer className="border-t border-subtle py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+      <footer
+        className="py-16 md:py-24"
+        style={{ borderTop: '1px solid var(--color-border)' }}
+      >
+        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="grid gap-8 md:grid-cols-12">
             <div className="md:col-span-6 md:col-start-4">
-              <p className="text-label vw-small leading-relaxed text-gray-400">
+              <p className="text-label vw-small leading-relaxed text-muted">
                 VENERATE THE MIRACLE.
                 <br />
                 DISMANTLE THE HAVEL.
               </p>
-              <p className="vw-small mt-8 text-gray-400">
-                &copy; 2026 EUANGELION
-              </p>
+              <p className="vw-small mt-8 text-muted">&copy; 2026 EUANGELION</p>
             </div>
           </div>
         </div>
@@ -255,11 +272,15 @@ function DayRow({
 }) {
   return (
     <div
-      className={`grid gap-6 border-b border-gray-200 py-8 transition-all duration-300 dark:border-gray-700 md:grid-cols-12 md:gap-12 md:py-10 ${!isLocked ? 'group-hover:border-gray-400' : ''} ${day.day === 3 ? 'md:-mx-8 md:bg-gray-50 md:px-8 dark:md:bg-[hsl(0,0%,15%)]' : ''}`}
+      className={`grid gap-6 py-8 transition-all duration-300 md:grid-cols-12 md:gap-12 md:py-10 ${!isLocked ? 'group-hover:border-[var(--color-border-strong)]' : ''} ${day.day === 3 ? 'bg-surface-raised md:-mx-8 md:px-8' : ''}`}
+      style={{
+        borderBottom: '1px solid var(--color-border)',
+        transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+      }}
     >
       <div className="md:col-span-1">
         <span
-          className={`text-label vw-small ${isLocked ? 'text-gray-300 dark:text-gray-600' : day.day === 3 ? 'text-gold' : 'text-gray-400'}`}
+          className={`text-label vw-small ${isLocked ? 'text-tertiary' : day.day === 3 ? 'text-gold' : 'text-muted'}`}
         >
           DAY {day.day}
         </span>
@@ -267,7 +288,7 @@ function DayRow({
 
       <div className="md:col-span-9">
         <p
-          className={`text-serif-italic vw-body-lg transition-all duration-300 ${isLocked ? 'text-gray-300 dark:text-gray-600' : 'group-hover:translate-x-2'}`}
+          className={`text-serif-italic vw-body-lg transition-all duration-300 ${isLocked ? 'text-tertiary' : 'group-hover:translate-x-2'}`}
         >
           <span
             className={
@@ -285,7 +306,7 @@ function DayRow({
         {isLocked ? (
           <>
             <svg
-              className="h-4 w-4 text-gray-300 dark:text-gray-600"
+              className="h-4 w-4 text-tertiary"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -295,17 +316,16 @@ function DayRow({
                 clipRule="evenodd"
               />
             </svg>
-            <span className="text-label vw-small text-gray-300 dark:text-gray-600">
-              LOCKED
-            </span>
+            <span className="text-label vw-small text-tertiary">LOCKED</span>
           </>
         ) : (
           <>
             {dayIsRead && (
               <svg
-                className="h-5 w-5 text-green-600"
+                className="h-5 w-5"
                 fill="currentColor"
                 viewBox="0 0 20 20"
+                style={{ color: 'var(--color-success)' }}
               >
                 <path
                   fillRule="evenodd"
@@ -314,8 +334,8 @@ function DayRow({
                 />
               </svg>
             )}
-            <span className="text-label vw-small text-gray-400 transition-colors duration-300 group-hover:text-black dark:text-gray-500 dark:group-hover:text-cream">
-              {dayIsRead ? 'READ AGAIN →' : 'READ →'}
+            <span className="text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)]">
+              {dayIsRead ? 'READ AGAIN \u2192' : 'READ \u2192'}
             </span>
           </>
         )}
