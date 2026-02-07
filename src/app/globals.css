@@ -483,4 +483,71 @@
   .gold-shimmer {
     background: linear-gradient(135deg, #c19a6b 0%, #d4af7f 50%, #c19a6b 100%);
   }
+
+  /* ============================================
+     SECTION BREATHING — generous editorial spacing
+     ============================================ */
+  .section-breathing {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  @media (min-width: 768px) {
+    .section-breathing {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .section-breathing {
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+    }
+  }
+
+  /* ============================================
+     SCROLL INDICATOR — animated down-chevron
+     ============================================ */
+  .scroll-indicator {
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollBounce {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(8px);
+      opacity: 1;
+    }
+  }
+
+  /* ============================================
+     LANDING STAGGERED LOAD
+     ============================================ */
+  .landing-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: landingReveal 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .landing-reveal-1 {
+    animation-delay: 0ms;
+  }
+  .landing-reveal-2 {
+    animation-delay: 200ms;
+  }
+  .landing-reveal-3 {
+    animation-delay: 400ms;
+  }
+  .landing-reveal-4 {
+    animation-delay: 600ms;
+  }
+
+  @keyframes landingReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }

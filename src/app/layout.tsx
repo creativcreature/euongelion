@@ -10,8 +10,17 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Euangelion',
-  description: 'Daily bread for the cluttered, hungry soul.',
+  title: { default: 'Euangelion', template: '%s | Euangelion' },
+  description:
+    'Daily bread for the cluttered, hungry soul. Ancient wisdom, modern design.',
+  metadataBase: new URL('https://euangelion.app'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Euangelion',
+  },
+  twitter: { card: 'summary_large_image' },
+  robots: { index: true, follow: true },
 }
 
 export default function RootLayout({
