@@ -215,9 +215,7 @@ export default function WakeUpPage() {
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="text-center">
             <p className="observe-fade text-label vw-small leading-relaxed text-muted">
-              VENERATE THE MIRACLE.
-              <br />
-              DISMANTLE THE HAVEL.
+              SOMETHING TO HOLD ONTO.
             </p>
             <p className="vw-small mt-8 text-muted">&copy; 2026 EUANGELION</p>
           </div>

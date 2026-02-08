@@ -551,3 +551,81 @@
     }
   }
 }
+
+/* ============================================
+   PRINT STYLESHEET
+   ============================================ */
+@media print {
+  /* Force light mode */
+  :root,
+  .dark {
+    --color-bg: #ffffff !important;
+    --color-fg: #000000 !important;
+    --color-text-primary: #000000 !important;
+    --color-text-secondary: #333333 !important;
+    --color-text-tertiary: #666666 !important;
+    --color-text-muted: #999999 !important;
+    --color-border: #cccccc !important;
+    --color-surface: #f5f5f5 !important;
+    --color-surface-raised: #eeeeee !important;
+    --color-gold: #8b6914 !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt !important;
+  }
+
+  /* Hide navigation, scroll progress, buttons, interactive elements */
+  nav,
+  .scroll-progress,
+  .skip-to-content,
+  button,
+  .scroll-indicator,
+  footer {
+    display: none !important;
+  }
+
+  /* Show all observe-fade elements */
+  .observe-fade {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Clean up layout */
+  .min-h-screen {
+    min-height: auto !important;
+  }
+
+  /* Scripture blocks: visible border */
+  .scripture-block {
+    border-left: 2pt solid #8b6914 !important;
+    background: #f9f9f9 !important;
+  }
+
+  /* Page breaks */
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  .observe-fade,
+  [class*='mb-24'],
+  [class*='mb-40'] {
+    page-break-inside: avoid;
+  }
+
+  /* Links: show URL */
+  a[href]::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  a[href^='/']::after,
+  a[href^='#']::after {
+    content: '';
+  }
+}

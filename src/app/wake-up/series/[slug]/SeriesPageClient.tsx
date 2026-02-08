@@ -219,9 +219,7 @@ export default function SeriesPageClient({
           <div className="grid gap-8 md:grid-cols-12">
             <div className="md:col-span-6 md:col-start-4">
               <p className="text-label vw-small leading-relaxed text-muted">
-                VENERATE THE MIRACLE.
-                <br />
-                DISMANTLE THE HAVEL.
+                SOMETHING TO HOLD ONTO.
               </p>
               <p className="vw-small mt-8 text-muted">&copy; 2026 EUANGELION</p>
             </div>

@@ -48,7 +48,7 @@ export interface DayMeta {
   slug: string
 }
 
-// Module types (for Substack 12-module format — Sprint 2)
+// Module types (12 MVP module types)
 export type ModuleType =
   | 'scripture'
   | 'vocab'
@@ -60,8 +60,41 @@ export type ModuleType =
   | 'takeaway'
   | 'bridge'
   | 'comprehension'
-  | 'interactive'
+  | 'profile'
   | 'resource'
+
+export interface Module {
+  type: ModuleType
+  heading?: string
+  // Scripture
+  passage?: string
+  reference?: string
+  translation?: string
+  // Vocab
+  word?: string
+  transliteration?: string
+  language?: string
+  definition?: string
+  usage?: string
+  // Teaching / Story / Insight / Takeaway / Bridge
+  content?: string
+  // Reflection
+  prompt?: string
+  // Prayer
+  prayerText?: string
+  breathPrayer?: string
+  // Comprehension
+  question?: string
+  options?: string[]
+  answer?: number
+  explanation?: string
+  // Profile
+  name?: string
+  era?: string
+  bio?: string
+  // Resource
+  resources?: Array<{ title: string; url?: string; description?: string }>
+}
 
 // Progress tracking
 export interface DevotionalProgress {

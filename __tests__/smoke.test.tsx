@@ -1,11 +1,64 @@
 import { render, screen } from '@testing-library/react'
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import Page from '@/app/page'
+
+// Mock browser APIs for test environment
+beforeEach(() => {
+  // Mock IntersectionObserver
+  const mockIntersectionObserver = class {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  }
+  Object.defineProperty(window, 'IntersectionObserver', {
+    writable: true,
+    value: mockIntersectionObserver,
+  })
+
+  // Mock localStorage
+  const store: Record<string, string> = {}
+  Object.defineProperty(window, 'localStorage', {
+    writable: true,
+    value: {
+      getItem: (key: string) => store[key] ?? null,
+      setItem: (key: string, value: string) => {
+        store[key] = value
+      },
+      removeItem: (key: string) => {
+        delete store[key]
+      },
+      clear: () => {
+        Object.keys(store).forEach((k) => delete store[k])
+      },
+      get length() {
+        return Object.keys(store).length
+      },
+      key: (index: number) => Object.keys(store)[index] ?? null,
+    },
+  })
+
+  // Mock matchMedia
+  Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    value: (query: string) => ({
+      matches: query === '(prefers-color-scheme: dark)',
+      media: query,
+      onchange: null,
+      addListener: () => {},
+      removeListener: () => {},
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      dispatchEvent: () => false,
+    }),
+  })
+})
 
 describe('Smoke Test', () => {
   it('renders the landing page without crashing', () => {
     render(<Page />)
     expect(screen.getByText('EUANGELION')).toBeInTheDocument()
-    expect(screen.getByText('Enter Wake-Up Magazine')).toBeInTheDocument()
+    expect(
+      screen.getByText(/Daily bread for the cluttered, hungry soul/),
+    ).toBeInTheDocument()
   })
 })

@@ -233,17 +233,45 @@ export default function Navigation() {
                 <div className="space-y-6">
                   <MenuItem
                     number="—"
+                    label="Home"
+                    href="/"
+                    onClick={() => setIsOpen(false)}
+                    delay={7}
+                  />
+                  <MenuItem
+                    number="—"
+                    label="Soul Audit"
+                    href="/soul-audit"
+                    onClick={() => setIsOpen(false)}
+                    delay={8}
+                  />
+                  <MenuItem
+                    number="—"
+                    label="All Series"
+                    href="/series"
+                    onClick={() => setIsOpen(false)}
+                    delay={9}
+                  />
+                  <MenuItem
+                    number="—"
                     label="Wake Up Magazine"
                     href="/wake-up"
                     onClick={() => setIsOpen(false)}
-                    delay={7}
+                    delay={10}
+                  />
+                  <MenuItem
+                    number="—"
+                    label="Settings"
+                    href="/settings"
+                    onClick={() => setIsOpen(false)}
+                    delay={11}
                   />
                   <MenuItem
                     number="—"
                     label="About"
                     href="/about"
                     onClick={() => setIsOpen(false)}
-                    delay={8}
+                    delay={12}
                     disabled
                   />
                 </div>
@@ -260,9 +288,7 @@ export default function Navigation() {
                   animationDelay: '0.5s',
                 }}
               >
-                VENERATE THE MIRACLE.
-                <br />
-                DISMANTLE THE HAVEL.
+                SOMETHING TO HOLD ONTO.
               </p>
             </div>
           </div>

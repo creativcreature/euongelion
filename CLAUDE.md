@@ -58,7 +58,7 @@ design-system/            # Design tokens, typography, dark mode
 - **Styling:** Tailwind utility classes. Order: layout → position → size → spacing → typography → visual → interactive
 - **State:** React hooks + localStorage (no external state lib yet)
 - **Dark mode:** Dark-first (`html.dark`). HSL color system.
-- **Fonts:** Impact (display), Playfair Display (serif), Inter (body)
+- **Fonts (current code):** Geist Sans (body), Playfair Display (serif). Design system specifies Monument Grotesk + Editorial New (not yet implemented).
 
 ## Design Philosophy
 
@@ -70,9 +70,12 @@ design-system/            # Design tokens, typography, dark mode
 
 ## Visual Directions
 
-Five contextual art directions: Risograph, Limited Palette, Contemplative Sacred, Bold Digital Collage, HOLOGRAPHIK Swiss.
-See: `docs/decisions/VISUAL-DIRECTIONS-PROPOSAL.md`
-Mood board: https://creativcreature.github.io/EUONGELION-Project-HUB/project-hub.html
+Three visual directions proposed (founder decision pending):
+
+1. **Sacred Chiaroscuro** — light breaking into darkness (Caravaggio, Tehom+Gold)
+2. **Textured Minimalism** — quiet presence, earned emptiness (Kinfolk, earth tones)
+3. **Risograph Sacred** — ancient texts through xerox (bold, limited palette)
+   Recommended: Hybrid (all 3 contextually). See: `docs/decisions/VISUAL-DIRECTIONS-PROPOSAL.md`
 
 ## Constraints
 

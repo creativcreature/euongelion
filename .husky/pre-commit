@@ -1,2 +1,15 @@
 npx lint-staged
 npm run type-check
+
+# Enforce CHANGELOG update when code files change
+CODE_CHANGED=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|tsx)$' | head -1)
+CHANGELOG_STAGED=$(git diff --cached --name-only | grep -c 'CHANGELOG.md')
+
+if [ -n "$CODE_CHANGED" ] && [ "$CHANGELOG_STAGED" -eq 0 ]; then
+  echo ""
+  echo "⚠️  CHANGELOG.md not staged but code files changed."
+  echo "   Update CHANGELOG.md before committing."
+  echo "   Bypass with --no-verify (emergencies only)."
+  echo ""
+  exit 1
+fi

@@ -6,7 +6,9 @@ import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import ScrollProgress from '@/components/ScrollProgress'
 import { useProgress, useReadingTime } from '@/hooks/useProgress'
-import type { Devotional, Panel } from '@/types'
+import ModuleRenderer from '@/components/ModuleRenderer'
+import { startSeries } from '@/lib/progress'
+import type { Devotional, Panel, Module } from '@/types'
 
 export default function DevotionalPageClient({ slug }: { slug: string }) {
   const [devotional, setDevotional] = useState<Devotional | null>(null)
@@ -29,6 +31,14 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
         if (!response.ok) throw new Error('Devotional not found')
         const data = await response.json()
         setDevotional(data)
+
+        // Auto-start series tracking for day-gating
+        const seriesMatch = slug.match(/^(.+)-day-\d+$/)
+        if (seriesMatch) {
+          const seriesSlug =
+            seriesMatch[1] === 'identity-crisis' ? 'identity' : seriesMatch[1]
+          startSeries(seriesSlug)
+        }
       } catch {
         setDevotional(null)
       } finally {
@@ -160,24 +170,42 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
         </div>
       </header>
 
-      {/* Devotional Panels */}
+      {/* Devotional Content — panels or modules */}
       <main
         id="main-content"
         className="mx-auto max-w-7xl px-6 pb-32 md:px-[60px] md:pb-48 lg:px-20"
       >
         <div className="grid gap-8 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-10 md:col-start-2">
-            {devotional.panels.slice(1).map((panel, index) => (
-              <div
-                key={panel.number}
-                ref={(el) => {
-                  panelRefs.current[index] = el
-                }}
-                className="observe-fade mb-24 md:mb-40"
-              >
-                <PanelComponent panel={panel} />
-              </div>
-            ))}
+            {/* Module-based rendering (new format) */}
+            {(devotional as Devotional & { modules?: Module[] }).modules &&
+              (devotional as Devotional & { modules?: Module[] }).modules!.map(
+                (mod, index) => (
+                  <div
+                    key={index}
+                    ref={(el) => {
+                      panelRefs.current[index] = el
+                    }}
+                    className="observe-fade"
+                  >
+                    <ModuleRenderer module={mod} />
+                  </div>
+                ),
+              )}
+
+            {/* Panel-based rendering (legacy format) */}
+            {!(devotional as Devotional & { modules?: Module[] }).modules &&
+              devotional.panels.slice(1).map((panel, index) => (
+                <div
+                  key={panel.number}
+                  ref={(el) => {
+                    panelRefs.current[index] = el
+                  }}
+                  className="observe-fade mb-24 md:mb-40"
+                >
+                  <PanelComponent panel={panel} />
+                </div>
+              ))}
           </div>
         </div>
       </main>
