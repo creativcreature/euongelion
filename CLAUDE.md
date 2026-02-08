@@ -2,10 +2,10 @@
 
 **Christian devotional PWA** — ancient wisdom, modern design. Spiritual formation over engagement metrics.
 
-- **URL:** euangelion.app (pending)
+- **URL:** euangelion-ruddy.vercel.app (custom domain euangelion.app pending)
 - **Brand:** Euangelion (Greek: "Good News")
 - **GitHub:** wokegodX/euangelion (private)
-- **Vercel:** wokegodxs-projects
+- **Vercel:** wokegodxs-projects/euangelion (ONLY this team — never james-projects)
 
 ## Tech Stack
 
@@ -102,8 +102,19 @@ Mood board: https://creativcreature.github.io/EUONGELION-Project-HUB/project-hub
 
 See `CHANGELOG.md` for full history and current sprint checklist.
 
-**Now:** Sprint 1 — Wake-Up Magazine (`/wake-up` with 35 devotionals)
-**Done:** Sprint 0 — Foundation (fresh app, tooling, migrations, GitHub, Vercel)
+**Now:** Sprint 3 complete — Supabase database, auth, sessions
+**Done:** Sprint 0 (foundation), Sprint 1 (Wake-Up Magazine), Sprint 2 (editorial redesign, SEO), Sprint 3 (Supabase, auth)
+
+## Deployment
+
+**CRITICAL — read before any deployment action:**
+
+- **Vercel account:** `wokegodx` on team `wokegodxs-projects`. NEVER deploy to any other team.
+- **Git email:** Must be `wokegod3@gmail.com`. Vercel rejects commits from unrecognized emails.
+- **Auto-deploy:** GitHub integration deploys on every push to `main`. No manual deploy needed.
+- **Env vars:** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_APP_URL` — set in Vercel project settings.
+- **Before deploying:** Run `npx vercel whoami` and confirm it says `wokegodx`. If it says anything else, STOP.
+- **Before committing:** Run `git config user.email` and confirm it says `wokegod3@gmail.com`. If not, STOP.
 
 ## Rules
 
@@ -114,6 +125,7 @@ See `CHANGELOG.md` for full history and current sprint checklist.
 5. **Branch for non-trivial work.** `main` = production. Feature branches for larger changes.
 6. **Don't over-engineer.** Build what's needed now, not what might be needed later.
 7. **Surface assumptions.** State them before implementing. Ask if uncertain.
+8. **Verify accounts before deploying.** Check `vercel whoami` and `git config user.email` before any deploy or push. Wrong account = broken deploys.
 
 ## Reference Library
 

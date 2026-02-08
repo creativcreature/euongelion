@@ -49,3 +49,4 @@ supabase/.temp/
 
 # Keys
 *.pem
+.env*.local
