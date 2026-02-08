@@ -2,7 +2,7 @@
 
 **Christian devotional PWA** — ancient wisdom, modern design. Spiritual formation over engagement metrics.
 
-- **URL:** euangelion-ruddy.vercel.app (custom domain euangelion.app pending)
+- **URL:** euangelion.app
 - **Brand:** Euangelion (Greek: "Good News")
 - **GitHub:** wokegodX/euangelion (private)
 - **Vercel:** wokegodxs-projects/euangelion (ONLY this team — never james-projects)
