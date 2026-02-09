@@ -263,6 +263,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "You're productive, efficient, always moving. But somewhere along the way, you stopped making room for the One who actually matters.",
     framework: 'Luke 10:38-42 - Martha and Mary',
     pathway: 'Sleep',
+    heroImage: '/images/devotionals/too-busy-for-god.png',
     keywords: [
       'busy',
       'overwhelmed',
@@ -290,6 +291,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "You scroll, you listen, you absorb. But can you distinguish God's voice from the noise?",
     framework: 'John 10:27 - My sheep hear my voice',
     pathway: 'Sleep',
+    heroImage: '/images/devotionals/hearing-god-in-the-noise-16.jpeg',
     keywords: [
       'distracted',
       'confused',
@@ -317,6 +319,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "You check in with God but don't live with Him. You visit but don't dwell. What changes when you stop commuting to God and start residing?",
     framework: 'John 15:4 - Remain in me, as I also remain in you',
     pathway: 'Sleep',
+    heroImage: '/images/devotionals/abiding-in-his-presence-16.jpeg',
     keywords: [
       'presence',
       'abiding',
@@ -345,6 +348,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       'You plan, you strategize, you grip tightly. But the more you try to control your life, the more it slips away.',
     framework: 'Luke 22:42 - Not my will, but yours be done',
     pathway: 'Sleep',
+    heroImage: '/images/devotionals/surrender-to-gods-will-16.jpeg',
     keywords: [
       'surrender',
       'control',
@@ -371,6 +375,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "The opening chapters of Genesis aren't just ancient history—they're the foundation for understanding who Christ is and why He came.",
     framework: 'Genesis 1:1 / John 1:1 - In the beginning',
     pathway: 'Awake',
+    heroImage: '/images/devotionals/in-the-beginning-week-1-the-god-who.jpeg',
     keywords: [
       'creation',
       'beginning',
@@ -397,6 +402,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "Mark's Gospel opens without preamble. No genealogy, no birth narrative. Just a voice in the wilderness and the beginning of the good news.",
     framework: 'Mark 1:1 - The beginning of the good news about Jesus',
     pathway: 'Awake',
+    heroImage: '/images/devotionals/what-is-the-gospel-week-18.jpeg',
     keywords: [
       'searching',
       'skeptical',
@@ -423,6 +429,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "You've heard of Jesus. Maybe you grew up with Him, maybe you didn't. But the question remains: why Him? Why not Buddha, or Muhammad, or just being a good person?",
     framework: 'Luke 2:10-11 - A Savior has been born to you',
     pathway: 'Awake',
+    heroImage: '/images/devotionals/why-jesus-day-16-week-18.jpeg',
     keywords: [
       'why Jesus',
       'is Jesus necessary',
@@ -449,6 +456,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       'You can recite the facts. You know the story. But knowing about someone and actually trusting them are two different things.',
     framework: 'John 3:16 - For God so loved the world',
     pathway: 'Awake',
+    heroImage: '/images/devotionals/what-does-it-mean-to-believe-day.jpeg',
     keywords: [
       'doubt',
       'faith',
@@ -476,6 +484,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "Following Jesus isn't a lifestyle upgrade. It's a death sentence to your old self. And somehow, it's the best news you've ever heard.",
     framework: 'Luke 9:23 - Take up your cross daily',
     pathway: 'Awake',
+    heroImage: '/images/devotionals/what-is-carrying-a-cross-day-16-week.jpeg',
     keywords: [
       'sacrifice',
       'cost',
@@ -501,6 +510,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       'Can you lose your salvation? Is it a one-time decision or an ongoing relationship? These questions matter because they shape how you live.',
     framework: 'Hebrews 6:4-6 / John 10:28-29',
     pathway: 'Awake',
+    heroImage: '/images/devotionals/once-saved-always-saved-day-16-week.jpeg',
     keywords: [
       'security',
       'salvation',
@@ -555,6 +565,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "Life happens. Pain, loss, unanswered prayers. And your faith gets tested. This series doesn't pretend that's easy.",
     framework: 'James 1:2-4 - Consider it pure joy',
     pathway: 'Awake',
+    heroImage: '/images/devotionals/the-nature-of-belief-day-16-week.jpeg',
     keywords: [
       'doubt',
       'faith',
@@ -608,6 +619,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "Most people start the Bible at Genesis 1. Few realize they're already reading about Jesus.",
     framework: 'John 1:1 - In the beginning was the Word',
     pathway: 'Awake',
+    heroImage: '/images/devotionals/the-word-before-words-week-1-deep.jpeg',
     keywords: [
       'beginning',
       'creation',
@@ -634,6 +646,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       'Genesis 1 and 2 tell different stories. Or do they? This series examines the apparent contradiction and finds purposeful design.',
     framework: 'Genesis 1-2',
     pathway: 'Awake',
+    heroImage: '/images/devotionals/genesis-two-stories-of-creation-deep.jpeg',
     keywords: [
       'creation',
       'identity',
@@ -659,6 +672,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "Church attendance is declining, but the hunger for genuine community is increasing. What if we've been doing church wrong?",
     framework: 'Acts 2:42-47 - They devoted themselves',
     pathway: 'Shepherd',
+    heroImage: '/images/devotionals/the-blueprint-of-community-deepdive.jpeg',
     keywords: [
       'lonely',
       'disconnected',
