@@ -2,65 +2,106 @@
   "day": 4,
   "title": "The Garden and the Gardener",
   "teaser": "Our calling to be co-gardeners with God",
+  "anchorVerse": "Genesis 2:8, John 15:1",
+  "theme": "Our calling to be co-gardeners with God",
   "framework": "Genesis 2:8, John 15:1",
   "scriptureReference": "Genesis 2:8, John 15:1",
   "modules": [
     {
       "type": "scripture",
-      "passage": "And the Lord God planted a garden in Eden, in the east, and there he put the man whom he had formed... The Lord God took the man and put him in the garden of Eden to work it and keep it.",
       "reference": "Genesis 2:8, 15",
-      "translation": "ESV"
+      "translation": "ESV",
+      "emphasis": [
+        "planted a garden",
+        "to work it and keep it"
+      ],
+      "passage": "And the Lord God planted a garden in Eden, in the east, and there he put the man whom he had formed... The Lord God took the man and put him in the garden of Eden to work it and keep it."
     },
     {
       "type": "scripture",
-      "passage": "I am the true vine, and my Father is the gardener.",
       "reference": "John 15:1",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "my Father is the gardener"
+      ],
+      "passage": "I am the true vine, and my Father is the gardener."
     },
     {
       "type": "teaching",
+      "body": "God's first home for humanity was not a palace, but a garden. He planted it, filled it with beauty and purpose, and then placed Adam in it with a job to do: \"to work it and take care of it\" (Genesis 2:15). This reveals a profound truth about our Creator: He is a Gardener, and He has made us to be co-gardeners with Him. Our purpose is not to be idle consumers, but active cultivators, bringing forth life and order and beauty in the world He has made.",
+      "keyInsight": "Your work is not a curse; it is a calling to cultivate the world on God's behalf.",
       "content": "God's first home for humanity was not a palace, but a garden. He planted it, filled it with beauty and purpose, and then placed Adam in it with a job to do: \"to work it and take care of it\" (Genesis 2:15). This reveals a profound truth about our Creator: He is a Gardener, and He has made us to be co-gardeners with Him. Our purpose is not to be idle consumers, but active cultivators, bringing forth life and order and beauty in the world He has made.",
       "heading": "Co-Gardeners with God"
     },
     {
       "type": "vocab",
+      "language": "hebrew",
       "word": "עָבַד וְשָׁמַר",
       "transliteration": "avad v'shamar",
-      "language": "hebrew",
+      "pronunciation": "ah-VAHD vuh-shah-MAR",
+      "meaning": "to work/serve and to keep/guard",
+      "rootMeaning": "This phrase is not about toil and labor in the way we often think of it. It is about cultivation and stewardship. It is the same language used to describe the duties of the priests in the Tabernacle (Numbers 3:7-8). They were to \"work\" and \"keep\" the house of God. This tells us that Adam's work in the garden was a form of worship. It was a sacred duty, a priestly task.",
+      "usageNote": "Our work, whatever it may be, can also be a form of worship. When we work with excellence, with integrity, and with a desire to bring forth more life and beauty into the world, we are fulfilling our original calling. We are acting as co-gardeners with God, tending to the corner of the world He has entrusted to us.",
       "definition": "to work/serve and to keep/guard",
       "usage": "This phrase is not about toil and labor in the way we often think of it. It is about cultivation and stewardship. It is the same language used to describe the duties of the priests in the Tabernacle (Numbers 3:7-8). They were to \"work\" and \"keep\" the house of God. This tells us that Adam's work in the garden was a form of worship. It was a sacred duty, a priestly task."
     },
     {
       "type": "story",
+      "body": "Ron Finley lived in South Central Los Angeles, a neighborhood he described as a \"food desert.\" The landscape was dominated by concrete, fast-food chains, and liquor stores. Fresh, healthy food was almost impossible to find. He got tired of seeing the problem, so he decided to become the solution. He took a neglected strip of dirt between his house and the street—a forgotten, barren piece of public land—and he planted a garden. He planted kale, and sunflowers, and pomegranates, turning a patch of urban blight into an oasis of life.\n\nAt first, he got in trouble. The city cited him for planting without a permit. But Ron Finley fought back. He started a movement, petitioning the city to change its laws. He became known as the \"Gangsta Gardener,\" a rebel with a cause. He wasn't just planting vegetables; he was planting hope. He started teaching kids in the neighborhood how to garden, showing them that they could grow their own food, that they could have a hand in changing their own environment. He was turning a generation of consumers into cultivators.\n\nRon Finley is a modern-day image of what it means to be a co-gardener with God. He saw a desolate space, a \"formless and empty\" patch of his world, and he didn't wait for someone else to fix it. He got his hands dirty. He planted, he watered, he cultivated, and he brought forth life. He took the garden God had given him—a small strip of dirt in South Central L.A.—and he worked it and took care of it, turning it into a place of beauty, nourishment, and community. He was living out the original mandate given to Adam in the Garden of Eden.",
+      "connectionToTheme": "We are called to be co-gardeners with God, to cultivate life and beauty in the desolate spaces of our world.",
       "content": "Ron Finley lived in South Central Los Angeles, a neighborhood he described as a \"food desert.\" The landscape was dominated by concrete, fast-food chains, and liquor stores. Fresh, healthy food was almost impossible to find. He got tired of seeing the problem, so he decided to become the solution. He took a neglected strip of dirt between his house and the street—a forgotten, barren piece of public land—and he planted a garden. He planted kale, and sunflowers, and pomegranates, turning a patch of urban blight into an oasis of life.\n\nAt first, he got in trouble. The city cited him for planting without a permit. But Ron Finley fought back. He started a movement, petitioning the city to change its laws. He became known as the \"Gangsta Gardener,\" a rebel with a cause. He wasn't just planting vegetables; he was planting hope. He started teaching kids in the neighborhood how to garden, showing them that they could grow their own food, that they could have a hand in changing their own environment. He was turning a generation of consumers into cultivators.\n\nRon Finley is a modern-day image of what it means to be a co-gardener with God. He saw a desolate space, a \"formless and empty\" patch of his world, and he didn't wait for someone else to fix it. He got his hands dirty. He planted, he watered, he cultivated, and he brought forth life. He took the garden God had given him—a small strip of dirt in South Central L.A.—and he worked it and took care of it, turning it into a place of beauty, nourishment, and community. He was living out the original mandate given to Adam in the Garden of Eden.",
       "heading": "The Gangsta Gardener"
     },
     {
       "type": "insight",
+      "body": "In Genesis 2, after forming Adam, God's very next act is to plant a garden. This is significant. The first environment for humanity is a place of cultivated beauty and purpose. God then places Adam in the garden with the specific instruction \"to work it and keep it.\" The Hebrew words are avad and shamar. Avad means to serve or to cultivate. Shamar means to guard, protect, and preserve. This was not a curse; it was a calling. It was a partnership. God planted the garden, and He invited Adam to be His co-worker in tending to it.\n\nIn John 15, Jesus uses this same imagery to describe our relationship with God. The Father is the Gardener, Jesus is the vine, and we are the branches. The goal is for us to bear fruit. This is a direct echo of our original purpose in Eden. We are meant to be fruitful, to bring forth life, to be productive in partnership with the Master Gardener. The work we do is not separate from our relationship with God; it is the very context in which that relationship flourishes.",
+      "fascinatingFact": "The Hebrew words 'avad' and 'shamar' used for Adam's work in Eden are the same words used to describe the duties of the priests in the Tabernacle (Numbers 3:7-8), suggesting that work is a form of worship.",
       "content": "In Genesis 2, after forming Adam, God's very next act is to plant a garden. This is significant. The first environment for humanity is a place of cultivated beauty and purpose. God then places Adam in the garden with the specific instruction \"to work it and keep it.\" The Hebrew words are avad and shamar. Avad means to serve or to cultivate. Shamar means to guard, protect, and preserve. This was not a curse; it was a calling. It was a partnership. God planted the garden, and He invited Adam to be His co-worker in tending to it.\n\nIn John 15, Jesus uses this same imagery to describe our relationship with God. The Father is the Gardener, Jesus is the vine, and we are the branches. The goal is for us to bear fruit. This is a direct echo of our original purpose in Eden. We are meant to be fruitful, to bring forth life, to be productive in partnership with the Master Gardener. The work we do is not separate from our relationship with God; it is the very context in which that relationship flourishes.",
       "heading": "What's Happening in the Text?"
     },
     {
       "type": "bridge",
-      "content": "Adam was placed in the garden with a sacred calling to work (avad) and keep (shamar) it—a priestly duty of cultivation and stewardship.\n\nYour work, whatever it may be, can be a form of worship when done with excellence, integrity, and a desire to bring forth more life and beauty."
+      "ancientTruth": "Adam was placed in the garden with a sacred calling to work (avad) and keep (shamar) it—a priestly duty of cultivation and stewardship.",
+      "modernApplication": "Your work, whatever it may be, can be a form of worship when done with excellence, integrity, and a desire to bring forth more life and beauty.",
+      "connectionPoint": "The \"garden\" God has placed you in could be your family, your workplace, your neighborhood, or a specific project or passion.",
+      "newTestamentEcho": "Jesus uses the same garden imagery in John 15: The Father is the Gardener, Jesus is the vine, and we are the branches, meant to bear fruit."
     },
     {
       "type": "reflection",
-      "prompt": "What is the 'garden' God has placed you in? It could be your family, your workplace, your neighborhood, or a specific project or passion."
+      "prompt": "What is the 'garden' God has placed you in? It could be your family, your workplace, your neighborhood, or a specific project or passion.",
+      "additionalQuestions": [
+        "How can you partner with God, the Master Gardener, to cultivate more life, beauty, and order in that space this week?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "The Lord will guide you always; he will satisfy your needs in a sun-scorched land and will strengthen your frame. You will be like a well-watered garden, like a spring whose waters never fail."
+      "reference": "Isaiah 58:11 (NIV)",
+      "posture": "petition",
+      "prayerText": "The Lord will guide you always; he will satisfy your needs in a sun-scorched land and will strengthen your frame. You will be like a well-watered garden, like a spring whose waters never fail.",
+      "prayerType": "scriptural"
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "What is one small, 'desolate space' in your life (it could be a cluttered room, a strained relationship, or a neglected hobby) that you could begin to cultivate this week?",
+        "What is one small step you could take to bring more life and order to it?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one 'garden' God has entrusted to you and how you can better cultivate it.",
+        "Discuss how viewing work as worship changes your perspective on daily tasks."
+      ]
     },
     {
       "type": "profile",
       "name": "Ron Finley",
+      "title": "The Gangsta Gardener",
+      "description": "An urban gardener from South Central Los Angeles who transformed neglected public spaces into thriving gardens, teaching his community to become cultivators rather than consumers.",
+      "keyQuote": "Gardening is the most therapeutic and defiant act you can do.",
+      "lessonForUs": "We can take the desolate spaces of our world and, through patient cultivation, turn them into places of beauty, nourishment, and community.",
       "heading": "The Gangsta Gardener"
     }
   ],
   "panels": [],
-  "totalWords": 836
+  "totalWords": 1830
 }

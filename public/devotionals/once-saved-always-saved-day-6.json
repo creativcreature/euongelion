@@ -1,66 +1,137 @@
 {
   "day": 6,
   "title": "Put It to Use: Running the Race with Perseverance",
+  "subtitle": "Practical Endurance",
   "teaser": "Living with endurance when the race of faith is long and the challenges are real",
+  "anchorVerse": "Hebrews 12:1-2",
+  "theme": "Living with endurance when the race of faith is long and the challenges are real",
   "framework": "Hebrews 12:1-2",
   "scriptureReference": "Hebrews 12:1-2",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off everything that hinders and the sin that so easily entangles. And let us run with perseverance the race marked out for us, fixing our eyes on Jesus, the pioneer and perfecter of faith. For the joy set before him he endured the cross, scorning its shame, and sat down at the right hand of God. Consider him who endured such opposition from sinners, so that you will not grow weary and lose heart.",
       "reference": "Hebrews 12:1-3",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "cloud of witnesses",
+        "run with perseverance",
+        "fixing our eyes on Jesus"
+      ],
+      "passage": "Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off everything that hinders and the sin that so easily entangles. And let us run with perseverance the race marked out for us, fixing our eyes on Jesus, the pioneer and perfecter of faith. For the joy set before him he endured the cross, scorning its shame, and sat down at the right hand of God. Consider him who endured such opposition from sinners, so that you will not grow weary and lose heart."
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "ὑπομονή",
       "transliteration": "hypomone",
-      "language": "greek",
+      "pronunciation": "hoo-po-mo-NAY",
+      "meaning": "perseverance, endurance, patience",
+      "rootMeaning": "This isn't passive waiting but active persistence - staying under the load without giving up, like a marathon runner who keeps going despite fatigue and obstacles.",
+      "usageNote": "The word comes from 'hypo' (under) and 'meno' (to remain). It means to remain under pressure without collapsing.",
+      "strongsNumber": "G5281",
       "definition": "perseverance, endurance, patience",
       "usage": "This isn't passive waiting but active persistence - staying under the load without giving up, like a marathon runner who keeps going despite fatigue and obstacles."
     },
     {
       "type": "teaching",
+      "body": "The author of Hebrews writes to believers experiencing persecution, discouragement, and the temptation to abandon their faith. The race metaphor assumes difficulty, fatigue, and sustained effort over time.\n\nThe Cloud of Witnesses: Chapter 11's 'hall of faith' provides examples demonstrating that faithful endurance is possible even in challenging circumstances. They ran their portion of the race and now encourage us.\n\nThrowing Off Hindrances: Athletes remove anything that slows them down. We must remove 'everything that hinders' (legitimate things that distract) and 'the sin that so easily entangles' (specific sins that trip us up).\n\nThe Race Marked Out: Each believer has a specific course to run. This isn't competition against others but personal calling.\n\nFixing Our Eyes on Jesus: The Greek word 'aphorao' means 'to look away from other things in order to fix attention on something specific.' Jesus is both Pioneer (blazing the trail before us) and Perfecter (completing the work of faith in us).\n\nJoy-Motivated Endurance: Jesus endured suffering not because he enjoyed it but because of 'the joy set before him.' We too can endure present difficulties with eyes on future reward.",
+      "keyInsight": "Perseverance in faith comes not from our own strength but from staying connected to Jesus and the community of believers who encourage us to keep running.",
       "content": "The author of Hebrews writes to believers experiencing persecution, discouragement, and the temptation to abandon their faith. The race metaphor assumes difficulty, fatigue, and sustained effort over time.\n\nThe Cloud of Witnesses: Chapter 11's 'hall of faith' provides examples demonstrating that faithful endurance is possible even in challenging circumstances. They ran their portion of the race and now encourage us.\n\nThrowing Off Hindrances: Athletes remove anything that slows them down. We must remove 'everything that hinders' (legitimate things that distract) and 'the sin that so easily entangles' (specific sins that trip us up).\n\nThe Race Marked Out: Each believer has a specific course to run. This isn't competition against others but personal calling.\n\nFixing Our Eyes on Jesus: The Greek word 'aphorao' means 'to look away from other things in order to fix attention on something specific.' Jesus is both Pioneer (blazing the trail before us) and Perfecter (completing the work of faith in us).\n\nJoy-Motivated Endurance: Jesus endured suffering not because he enjoyed it but because of 'the joy set before him.' We too can endure present difficulties with eyes on future reward.",
       "heading": "Running the Race with Endurance"
     },
     {
       "type": "story",
+      "body": "Three years after Emma's initial diagnosis, Dr. Sarah Martinez reflected on the profound changes that had occurred. Emma was now in long-term remission. David had become a different kind of pastor - one who preached with the authority of someone who had wrestled with God and discovered that his love is stronger than our questions. Sarah had found purpose in her work she had never experienced before.\n\n'You know what I've learned?' Sarah said to David. 'The race of faith isn't about running faster or being stronger than other people. It's about endurance - about keeping going when you don't feel like it, when you can't see the finish line, when you're not sure you're even on the right track.'\n\nDavid nodded. 'I used to think that strong faith meant never having questions. But I think real faith is the decision to keep trusting God even when you can't understand what he's doing.'\n\n'Emma taught me something important,' David continued. 'One day when she was really sick from chemo, she said, \"Daddy, I don't understand why I have to be sick, but I know you love me and you're taking care of me.\" That's when I realized that faith isn't about understanding everything - it's about trusting the character of someone who loves you even when you can't figure out what they're doing.'",
+      "connectionToTheme": "The race of faith is run not in isolation but in community, not by looking at our own performance but by fixing our eyes on Jesus.",
       "content": "Three years after Emma's initial diagnosis, Dr. Sarah Martinez reflected on the profound changes that had occurred. Emma was now in long-term remission. David had become a different kind of pastor - one who preached with the authority of someone who had wrestled with God and discovered that his love is stronger than our questions. Sarah had found purpose in her work she had never experienced before.\n\n'You know what I've learned?' Sarah said to David. 'The race of faith isn't about running faster or being stronger than other people. It's about endurance - about keeping going when you don't feel like it, when you can't see the finish line, when you're not sure you're even on the right track.'\n\nDavid nodded. 'I used to think that strong faith meant never having questions. But I think real faith is the decision to keep trusting God even when you can't understand what he's doing.'\n\n'Emma taught me something important,' David continued. 'One day when she was really sick from chemo, she said, \"Daddy, I don't understand why I have to be sick, but I know you love me and you're taking care of me.\" That's when I realized that faith isn't about understanding everything - it's about trusting the character of someone who loves you even when you can't figure out what they're doing.'",
       "heading": "Three Years Later"
     },
     {
       "type": "insight",
+      "body": "Jesus is described with two titles that explain why he deserves our focused attention.",
+      "historicalContext": "The Greek word 'archegos' (pioneer) means 'one who goes first' or 'originator.' Jesus blazed the trail of faith, showing that it's possible to live faithfully even in the face of suffering. The word 'teleiotes' (perfecter) means 'one who brings to completion.' He doesn't just start the race with us - he ensures we finish.",
+      "fascinatingFact": "The author uses the athletic imagery because the original audience was familiar with the Greek games. Marathon runners didn't just start races - they trained rigorously, removed unnecessary weight, and focused completely on the finish line. The Christian life requires the same discipline and focus.",
       "content": "Jesus is described with two titles that explain why he deserves our focused attention.",
       "heading": "Pioneer and Perfecter"
     },
     {
       "type": "bridge",
-      "content": "The author of Hebrews encouraged persecuted believers to run with endurance by fixing their eyes on Jesus.\n\nIn our instant-gratification culture, we struggle with anything that requires long-term commitment and delayed reward. The race of faith is a marathon, not a sprint."
+      "ancientTruth": "The author of Hebrews encouraged persecuted believers to run with endurance by fixing their eyes on Jesus.",
+      "modernApplication": "In our instant-gratification culture, we struggle with anything that requires long-term commitment and delayed reward. The race of faith is a marathon, not a sprint.",
+      "connectionPoint": "The same temptations to weariness and discouragement that challenged first-century believers challenge us today. The same solution applies: keep your eyes on Jesus.",
+      "newTestamentEcho": "Paul echoes this in 2 Timothy 4:7: 'I have fought the good fight, I have finished the race, I have kept the faith.'"
     },
     {
       "type": "reflection",
-      "prompt": "What does it mean to 'fix my eyes on Jesus' when circumstances tempt me to focus on my problems or my performance?"
+      "prompt": "What does it mean to 'fix my eyes on Jesus' when circumstances tempt me to focus on my problems or my performance?",
+      "additionalQuestions": [
+        "What are the specific hindrances in your life that tend to slow you down or distract you?",
+        "Who are the 'witnesses' in your life whose examples of faith encourage you to persevere?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "Help me run with endurance by keeping my eyes fixed on you rather than on my circumstances, my failures, or my achievements. Surround me with fellow believers who encourage me to keep going when I want to quit."
+      "posture": "petition",
+      "prayerText": "Help me run with endurance by keeping my eyes fixed on you rather than on my circumstances, my failures, or my achievements. Surround me with fellow believers who encourage me to keep going when I want to quit.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "Today I will identify one area where I've been trying to run the race of faith by looking at my circumstances or performance instead of looking at Jesus, and I will consciously shift my focus.",
+      "leavingAtCross": [
+        "The distractions that slow me down in the race of faith",
+        "The sins that easily entangle me",
+        "The tendency to focus on my performance rather than on Jesus"
+      ],
+      "receivingFromCross": [
+        "The endurance that comes from fixing my eyes on Jesus",
+        "The encouragement of fellow believers who run alongside me",
+        "The joy that motivates perseverance through present difficulties"
+      ],
+      "content": "Today I will identify one area where I've been trying to run the race of faith by looking at my circumstances or performance instead of looking at Jesus, and I will consciously shift my focus."
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "How do you maintain focus on Jesus when circumstances, emotions, or other people demand your attention?",
+        "What practices help you develop endurance for the long race of faith?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one hindrance or entangling sin you need to throw off",
+        "Discuss: How can we encourage each other to keep running when the race feels long and difficult?"
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "2 Timothy 4:7",
+          "text": "I have fought the good fight, I have finished the race, I have kept the faith."
+        },
+        {
+          "reference": "1 Corinthians 9:24-27",
+          "text": "Run in such a way as to get the prize... I discipline my body and keep it under control."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Hebrews 11-12",
+          "note": "Read the hall of faith and its application to understand the full context"
+        }
+      ]
     },
     {
       "type": "profile",
       "name": "Jesus Christ",
+      "title": "Pioneer and Perfecter of Faith",
+      "description": "Jesus is the one who blazed the trail of faith before us and who brings our faith to completion. He endured the cross for the joy set before him, demonstrating how to persevere through suffering with eyes fixed on future reward.",
+      "keyQuote": "For the joy set before him he endured the cross, scorning its shame, and sat down at the right hand of God.",
+      "lessonForUs": "Jesus's example teaches us that faithful endurance is possible even through the most extreme suffering, when we keep our eyes on the joy that awaits us.",
       "heading": "Pioneer and Perfecter of Faith"
     }
   ],
   "panels": [],
-  "totalWords": 677
+  "totalWords": 1722
 }

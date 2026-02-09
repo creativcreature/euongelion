@@ -1,65 +1,154 @@
 {
   "day": 1,
   "title": "The Call to Follow",
+  "subtitle": "What's Happening and Who's Involved?",
   "teaser": "Jesus's radical call to discipleship and its immediate context",
+  "anchorVerse": "Matthew 16:24",
+  "theme": "Jesus's radical call to discipleship and its immediate context",
   "framework": "Matthew 16:24",
   "scriptureReference": "Matthew 16:24",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Whoever wants to be my disciple must deny themselves and take up their cross and follow me.",
       "reference": "Matthew 16:24",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "deny themselves",
+        "take up their cross",
+        "follow me"
+      ],
+      "fullPassage": {
+        "reference": "Matthew 16:21-28",
+        "text": "21 From that time on Jesus began to explain to his disciples that he must go to Jerusalem and suffer many things at the hands of the elders, the chief priests and the teachers of the law, and that he must be killed and on the third day be raised to life. 22 Peter took him aside and began to rebuke him. 'Never, Lord!' he said. 'This shall never happen to you!' 23 Jesus turned and said to Peter, 'Get behind me, Satan! You are a stumbling block to me; you do not have in mind the concerns of God, but merely human concerns.' 24 Then Jesus said to his disciples, 'Whoever wants to be my disciple must deny themselves and take up their cross and follow me. 25 For whoever wants to save their life will lose it, but whoever loses their life for me will find it. 26 What good will it be for someone to gain the whole world, yet forfeit their soul? Or what can anyone give in exchange for their soul? 27 For the Son of Man is going to come in his Father's glory with his angels, and then he will reward each person according to what they have done. 28 Truly I tell you, some who are standing here will not taste death before they see the Son of Man coming in his kingdom.'"
+      },
+      "passage": "Whoever wants to be my disciple must deny themselves and take up their cross and follow me."
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "ἀκολουθέω",
       "transliteration": "Akoloutheo",
-      "language": "greek",
+      "pronunciation": "ah-ko-loo-THEH-oh",
+      "meaning": "To follow",
+      "rootMeaning": "This isn't casual accompaniment but deliberate, committed following - like a student following a master or a soldier following a commander.",
+      "aoristForms": {
+        "firstPerson": "ἠκολούθησα (ekolouthesa) - 'I followed'",
+        "secondPersonSingular": "ἠκολούθησας (ekolouthesas) - 'you followed'",
+        "thirdPersonSingular": "ἠκολούθησε (ekolouthese) - 'he/she/it followed'",
+        "firstPersonPlural": "ἠκολουθήσαμεν (ekolouthesamen) - 'we followed'",
+        "secondPersonPlural": "ἠκολουθήσατε (ekolouthesate) - 'you followed'",
+        "thirdPersonPlural": "ἠκολούθησαν (ekolouthesan) - 'they followed'"
+      },
+      "relatedVocabulary": [
+        {
+          "word": "σταυρός",
+          "transliteration": "stauros",
+          "meaning": "cross"
+        },
+        {
+          "word": "ἀρνέομαι",
+          "transliteration": "arneomai",
+          "meaning": "to deny"
+        },
+        {
+          "word": "ψυχή",
+          "transliteration": "psyche",
+          "meaning": "soul or life"
+        },
+        {
+          "word": "μαθητής",
+          "transliteration": "mathetes",
+          "meaning": "disciple or student"
+        },
+        {
+          "word": "διδάσκαλος",
+          "transliteration": "didaskalos",
+          "meaning": "teacher"
+        }
+      ],
+      "grammarNote": "Aorist endings all have 'σ' (sigma) in them - think 'S' for 'Simple past' or 'Finished action'!",
       "definition": "To follow",
       "usage": "This isn't casual accompaniment but deliberate, committed following - like a student following a master or a soldier following a commander."
     },
     {
       "type": "teaching",
+      "body": "This passage occurs at a crucial turning point in Matthew's Gospel. Jesus has just received Peter's confession that he is 'the Messiah, the Son of the living God' (16:16). But immediately after this high point, Jesus begins to explain that his messiahship will involve suffering and death. When Peter objects to this plan, Jesus delivers some of his harshest words to any of his disciples, calling Peter 'Satan' and accusing him of thinking like a human rather than like God.\n\nIt's in this context that Jesus makes his call to discipleship. He's not offering an easy path to personal fulfillment or worldly success. He's calling people to follow him on a path that leads through suffering to resurrection, through death to life.\n\nFor first-century readers, the image of 'taking up your cross' would have been vivid and terrifying. Crucifixion was the Roman method of execution for rebels and criminals - a slow, public, humiliating death designed to deter others from challenging Roman authority. When Jesus spoke of taking up a cross, his audience would have understood this as a call to be willing to die for your convictions.",
+      "keyInsight": "Jesus isn't just talking about literal martyrdom. The cross represents the principle of self-denial, of choosing God's will over our own preferences, of being willing to sacrifice immediate comfort and advantage for the sake of something greater.",
       "content": "This passage occurs at a crucial turning point in Matthew's Gospel. Jesus has just received Peter's confession that he is 'the Messiah, the Son of the living God' (16:16). But immediately after this high point, Jesus begins to explain that his messiahship will involve suffering and death. When Peter objects to this plan, Jesus delivers some of his harshest words to any of his disciples, calling Peter 'Satan' and accusing him of thinking like a human rather than like God.\n\nIt's in this context that Jesus makes his call to discipleship. He's not offering an easy path to personal fulfillment or worldly success. He's calling people to follow him on a path that leads through suffering to resurrection, through death to life.\n\nFor first-century readers, the image of 'taking up your cross' would have been vivid and terrifying. Crucifixion was the Roman method of execution for rebels and criminals - a slow, public, humiliating death designed to deter others from challenging Roman authority. When Jesus spoke of taking up a cross, his audience would have understood this as a call to be willing to die for your convictions.",
       "heading": "The Radical Nature of the Call"
     },
     {
       "type": "story",
+      "body": "Dr. Michael Rodriguez had everything he had worked for since medical school. At 38, he was the youngest department head in the history of Metropolitan Hospital, earning a salary that allowed him and his wife Carmen to live in a beautiful home in the suburbs and send their two children to private schools. His research on cardiac surgery techniques was gaining national attention, and he had just been offered a position at Johns Hopkins that would essentially guarantee his career trajectory toward becoming one of the country's leading heart surgeons.\n\nBut Michael couldn't stop thinking about the conversation he'd had with Dr. Sarah Kim, a colleague who had recently returned from a medical mission trip to Guatemala. She had shown him photos of the rural clinic where she had worked - a facility with basic equipment serving thousands of people who had no access to cardiac care. 'Michael, I saw conditions there that we could fix with procedures that are routine for us,' she had said. 'But there's no one with your expertise willing to work in those conditions.'\n\nThe offer Sarah was making was the opposite of everything Michael had been working toward. Instead of prestige and financial security, she was asking him to consider spending two years in a rural clinic, living in basic conditions, working with limited resources, and earning a fraction of his current salary. It would mean delaying his research, potentially damaging his career prospects, and asking his family to sacrifice the comfortable life they had built.\n\nAs Michael sat in his office looking at the Johns Hopkins contract on his desk, he realized he was facing a choice between two completely different definitions of success. One path led toward everything he had always thought he wanted; the other led toward something he had never seriously considered but couldn't shake from his mind.",
+      "connectionToTheme": "Sometimes the most important choices in life aren't between good and evil, but between different definitions of what makes life worth living.",
       "content": "Dr. Michael Rodriguez had everything he had worked for since medical school. At 38, he was the youngest department head in the history of Metropolitan Hospital, earning a salary that allowed him and his wife Carmen to live in a beautiful home in the suburbs and send their two children to private schools. His research on cardiac surgery techniques was gaining national attention, and he had just been offered a position at Johns Hopkins that would essentially guarantee his career trajectory toward becoming one of the country's leading heart surgeons.\n\nBut Michael couldn't stop thinking about the conversation he'd had with Dr. Sarah Kim, a colleague who had recently returned from a medical mission trip to Guatemala. She had shown him photos of the rural clinic where she had worked - a facility with basic equipment serving thousands of people who had no access to cardiac care. 'Michael, I saw conditions there that we could fix with procedures that are routine for us,' she had said. 'But there's no one with your expertise willing to work in those conditions.'\n\nThe offer Sarah was making was the opposite of everything Michael had been working toward. Instead of prestige and financial security, she was asking him to consider spending two years in a rural clinic, living in basic conditions, working with limited resources, and earning a fraction of his current salary. It would mean delaying his research, potentially damaging his career prospects, and asking his family to sacrifice the comfortable life they had built.\n\nAs Michael sat in his office looking at the Johns Hopkins contract on his desk, he realized he was facing a choice between two completely different definitions of success. One path led toward everything he had always thought he wanted; the other led toward something he had never seriously considered but couldn't shake from his mind.",
       "heading": "The Modern Doctor's Dilemma"
     },
     {
       "type": "insight",
+      "body": "Before we examine Matthew's account of Jesus's call to discipleship, we should understand who is telling this story and why his perspective matters. Matthew (also called Levi) was a tax collector before becoming one of Jesus's twelve apostles. This background is crucial for understanding his Gospel.\n\nTax collectors in first-century Palestine were among the most despised people in Jewish society. They worked for the Roman occupying forces, collecting taxes from their own people and often enriching themselves through corruption and extortion. They were considered traitors to their nation and their faith. For Matthew, following Jesus meant literally walking away from a lucrative career and accepting social ostracism from both his former colleagues and his fellow Jews.\n\nMatthew's Gospel was likely written between 70-85 AD, primarily for a Jewish-Christian audience. His frequent quotations from the Hebrew Scriptures and his emphasis on Jesus as the fulfillment of Old Testament prophecy suggest he was writing to people who needed to understand how Jesus fit into the story of Israel.",
+      "historicalContext": "Matthew's personal experience of costly discipleship - leaving everything to follow Jesus - gives particular weight to his recording of Jesus's teachings about the cost of following him. He knew firsthand what it meant to 'take up your cross.'",
+      "fascinatingFact": "From a historical credibility standpoint, Matthew's Gospel contains numerous details about Jewish customs, Palestinian geography, and first-century culture that have been confirmed by archaeological research.",
       "content": "Before we examine Matthew's account of Jesus's call to discipleship, we should understand who is telling this story and why his perspective matters. Matthew (also called Levi) was a tax collector before becoming one of Jesus's twelve apostles. This background is crucial for understanding his Gospel.\n\nTax collectors in first-century Palestine were among the most despised people in Jewish society. They worked for the Roman occupying forces, collecting taxes from their own people and often enriching themselves through corruption and extortion. They were considered traitors to their nation and their faith. For Matthew, following Jesus meant literally walking away from a lucrative career and accepting social ostracism from both his former colleagues and his fellow Jews.\n\nMatthew's Gospel was likely written between 70-85 AD, primarily for a Jewish-Christian audience. His frequent quotations from the Hebrew Scriptures and his emphasis on Jesus as the fulfillment of Old Testament prophecy suggest he was writing to people who needed to understand how Jesus fit into the story of Israel.",
       "heading": "Who Is Matthew?"
     },
     {
       "type": "bridge",
-      "content": "Jesus's call to 'take up your cross' connects to a broader biblical theme about the relationship between sacrifice and blessing, death and life. Throughout the Hebrew Scriptures, God's people are called to choose between immediate comfort and long-term faithfulness.\n\nThis isn't the gentle, comforting Jesus of popular imagination - this is Jesus making demands that seem to go against every human instinct for self-preservation and personal happiness."
+      "ancientTruth": "Jesus's call to 'take up your cross' connects to a broader biblical theme about the relationship between sacrifice and blessing, death and life. Throughout the Hebrew Scriptures, God's people are called to choose between immediate comfort and long-term faithfulness.",
+      "modernApplication": "This isn't the gentle, comforting Jesus of popular imagination - this is Jesus making demands that seem to go against every human instinct for self-preservation and personal happiness.",
+      "connectionPoint": "Abraham was called to leave his homeland and family for an unknown destination (Genesis 12:1). Moses gave up his position in Pharaoh's household to identify with the enslaved Israelites (Hebrews 11:24-26). The prophet Jeremiah was called to deliver messages that would make him unpopular and endangered (Jeremiah 1:17-19). In each case, faithfulness to God required sacrificing immediate advantages for the sake of a greater purpose.",
+      "newTestamentEcho": "The pattern throughout Scripture is that God's call often involves leaving behind what seems secure and comfortable in order to participate in something larger and more meaningful than personal success or happiness."
     },
     {
       "type": "reflection",
-      "prompt": "What does it mean to voluntarily choose a path that involves denial and sacrifice rather than pursuing personal comfort and success?"
+      "prompt": "What does it mean to voluntarily choose a path that involves denial and sacrifice rather than pursuing personal comfort and success?",
+      "additionalQuestions": [
+        "How does Jesus's call to 'take up your cross' challenge contemporary ideas about self-care, personal fulfillment, and the pursuit of happiness?",
+        "Matthew was a tax collector who literally left his career to follow Jesus. What would it mean for you to make a similar level of commitment to following Jesus?",
+        "Jesus rebuked Peter for thinking with 'human concerns' rather than 'God's concerns.' Where do you see this tension in your own thinking about what constitutes a good life?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "Help me to understand what Jesus is really asking of those who would follow him, and give me the courage to honestly consider the cost."
+      "posture": "petition",
+      "prayerText": "Help me to understand what Jesus is really asking of those who would follow him, and give me the courage to honestly consider the cost.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "Before you go to bed tonight, identify one area where you're currently choosing comfort over calling. Write it down. Tomorrow, take one small step toward the harder but more meaningful path.",
+      "leavingAtCross": [
+        "The assumption that following Jesus should be comfortable",
+        "The belief that my agenda should take priority over God's call",
+        "The fear of what others might think if I make sacrificial choices"
+      ],
+      "receivingFromCross": [
+        "Clarity about what Jesus is truly asking of his followers",
+        "Courage to honestly assess the cost of discipleship",
+        "Hope that the path of sacrifice leads to authentic life"
+      ],
+      "content": "Before you go to bed tonight, identify one area where you're currently choosing comfort over calling. Write it down. Tomorrow, take one small step toward the harder but more meaningful path."
     },
     {
       "type": "profile",
       "name": "Matthew (Levi)",
+      "title": "The Tax Collector Turned Apostle",
+      "description": "Matthew was a tax collector before becoming one of Jesus's twelve apostles. Tax collectors in first-century Palestine were among the most despised people in Jewish society - considered traitors who worked for the Roman occupying forces. For Matthew, following Jesus meant literally walking away from a lucrative career and accepting social ostracism.",
+      "keyQuote": "His personal experience of costly discipleship gives particular weight to his recording of Jesus's teachings about the cost of following him.",
+      "lessonForUs": "If Matthew could leave behind financial security and social standing to follow Jesus, we must honestly ask what we are willing to sacrifice for our faith.",
       "heading": "The Tax Collector Turned Apostle"
     },
     {
       "type": "profile",
       "name": "Peter",
+      "title": "The Disciple Who Resisted the Cross",
+      "description": "Peter represents the natural human response to Jesus's message about suffering. He wanted the benefits of following the Messiah without the cost. His rebuke of Jesus reveals how deeply our human instincts resist the idea that the path to life leads through death.",
+      "keyQuote": "Never, Lord! This shall never happen to you!",
+      "lessonForUs": "Jesus called Peter 'Satan' and 'a stumbling block' for thinking with human concerns rather than God's concerns. This challenges us to examine our own resistance to costly discipleship.",
       "heading": "The Disciple Who Resisted the Cross"
     }
   ],
   "panels": [],
-  "totalWords": 859
+  "totalWords": 2464
 }

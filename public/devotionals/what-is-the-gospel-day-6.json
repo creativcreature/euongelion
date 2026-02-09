@@ -1,66 +1,134 @@
 {
   "day": 6,
   "title": "Put It to Use",
+  "subtitle": "Practical Application",
   "teaser": "Living as people who actively prepare the way for ongoing transformation",
+  "anchorVerse": "Mark 1:3",
+  "theme": "Living as people who actively prepare the way for ongoing transformation",
   "framework": "Mark 1:3",
   "scriptureReference": "Mark 1:3",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Prepare the way for the Lord, make straight paths for him.",
       "reference": "Mark 1:3",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "Prepare the way",
+        "make straight paths"
+      ],
+      "passage": "Prepare the way for the Lord, make straight paths for him."
     },
     {
       "type": "vocab",
+      "language": "hebrew",
       "word": "תִּקּוּן",
       "transliteration": "Tikkun",
-      "language": "hebrew",
+      "pronunciation": "tee-KOON",
+      "meaning": "Repair, correction",
+      "rootMeaning": "While not directly from our passage, this Jewish concept captures the idea of actively working to repair what is broken in ourselves and our world, preparing for divine intervention.",
       "definition": "Repair, correction",
       "usage": "While not directly from our passage, this Jewish concept captures the idea of actively working to repair what is broken in ourselves and our world, preparing for divine intervention."
     },
     {
       "type": "teaching",
+      "body": "We've completed our investigation into Mark's opening passage. We've examined the text, traced its connections, understood its original context, applied it to our modern situation, and considered our response. Today is about integration—taking what we've learned and building it into the fabric of our daily lives.\n\n'Preparing the way for the Lord' isn't about earning God's approval or making ourselves worthy of divine attention. It's about removing the obstacles in our hearts and lives that prevent us from experiencing the transformation God wants to bring about.\n\nThe beautiful thing about this kind of preparation is that it benefits us even as we're doing it. Just as cleaning and organizing your home makes it more pleasant for you to live in, spiritual preparation makes our daily lives more peaceful, purposeful, and aligned with our deepest values.",
+      "keyInsight": "Spiritual preparation isn't a one-time event but an ongoing practice of creating space in our hearts and lives for God's transforming work.",
       "content": "We've completed our investigation into Mark's opening passage. We've examined the text, traced its connections, understood its original context, applied it to our modern situation, and considered our response. Today is about integration—taking what we've learned and building it into the fabric of our daily lives.\n\n'Preparing the way for the Lord' isn't about earning God's approval or making ourselves worthy of divine attention. It's about removing the obstacles in our hearts and lives that prevent us from experiencing the transformation God wants to bring about.\n\nThe beautiful thing about this kind of preparation is that it benefits us even as we're doing it. Just as cleaning and organizing your home makes it more pleasant for you to live in, spiritual preparation makes our daily lives more peaceful, purposeful, and aligned with our deepest values.",
       "heading": "Daily Practices for Gospel Living"
     },
     {
       "type": "story",
+      "body": "Think about the last time you prepared your home for an important guest—perhaps a family member you hadn't seen in years, or someone whose opinion really mattered to you. You probably didn't just tidy up the visible areas; you cleaned thoroughly, organized spaces that had been neglected, and maybe even made some improvements you'd been putting off.\n\nThe preparation wasn't just about impressing your guest; it was about creating an environment where meaningful connection could happen. You removed obstacles, cleared away distractions, and arranged things so that your time together could be as rich and unhindered as possible.",
+      "connectionToTheme": "This is the kind of preparation John was calling for, but in the spiritual realm—removing obstacles in our hearts and lives that prevent us from experiencing transformation.",
       "content": "Think about the last time you prepared your home for an important guest—perhaps a family member you hadn't seen in years, or someone whose opinion really mattered to you. You probably didn't just tidy up the visible areas; you cleaned thoroughly, organized spaces that had been neglected, and maybe even made some improvements you'd been putting off.\n\nThe preparation wasn't just about impressing your guest; it was about creating an environment where meaningful connection could happen. You removed obstacles, cleared away distractions, and arranged things so that your time together could be as rich and unhindered as possible.",
       "heading": "Preparing for an Important Guest"
     },
     {
       "type": "insight",
+      "body": "John's ministry happened in the wilderness—away from the distractions and pressures of city life, religious institutions, and social expectations. While we can't all retreat to the desert, we can create regular 'wilderness' time in our lives—space for honest reflection, spiritual reading, and prayer.\n\nPractical Steps:\n- Establish a daily time for spiritual reflection, even if it's just 10-15 minutes\n- Create a physical space in your home that's dedicated to spiritual practices\n- Consider regular retreats from technology and social media to create mental and spiritual space\n- Find natural settings where you can think and pray without interruption",
+      "historicalContext": "The wilderness was where Israel wandered for forty years, where they were tested, and where they received the Law from God—a place of hardship but also new beginnings.",
+      "fascinatingFact": "Signs of effective preparation include: increased sensitivity to moral and spiritual issues, growing desire for God, greater compassion for others, decreased attachment to material things, and greater alignment between stated values and actual choices.",
       "content": "John's ministry happened in the wilderness—away from the distractions and pressures of city life, religious institutions, and social expectations. While we can't all retreat to the desert, we can create regular 'wilderness' time in our lives—space for honest reflection, spiritual reading, and prayer.\n\nPractical Steps:\n- Establish a daily time for spiritual reflection, even if it's just 10-15 minutes\n- Create a physical space in your home that's dedicated to spiritual practices\n- Consider regular retreats from technology and social media to create mental and spiritual space\n- Find natural settings where you can think and pray without interruption",
       "heading": "Creating Your Own Wilderness Space"
     },
     {
       "type": "bridge",
-      "content": "John called people to prepare the way for the Lord by removing obstacles and making straight paths.\n\nWe can create regular 'wilderness' time in our lives, practice honest self-examination, cultivate expectant hope, and build community around transformation."
+      "ancientTruth": "John called people to prepare the way for the Lord by removing obstacles and making straight paths.",
+      "modernApplication": "We can create regular 'wilderness' time in our lives, practice honest self-examination, cultivate expectant hope, and build community around transformation.",
+      "connectionPoint": "The preparation we do benefits us even as we're doing it—spiritual disciplines make our daily lives more peaceful, purposeful, and aligned with our deepest values.",
+      "newTestamentEcho": "Jesus would later call his followers to 'seek first the kingdom of God' (Matthew 6:33)—making spiritual preparation a daily priority rather than an occasional activity."
     },
     {
       "type": "reflection",
-      "prompt": "What would it look like for me to actively 'prepare the way' in my daily life for ongoing spiritual transformation?"
+      "prompt": "What would it look like for me to actively 'prepare the way' in my daily life for ongoing spiritual transformation?",
+      "additionalQuestions": [
+        "Which of the practical steps outlined above feels most important for your current spiritual journey? Which feels most challenging?",
+        "How will you create regular 'wilderness' time in your life for spiritual reflection and growth?",
+        "What specific changes will you make this week to begin implementing what you've learned from studying Mark's opening passage?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "Help me to integrate what I've learned this week into practical steps that prepare my heart and life for your continued work in me."
+      "posture": "petition",
+      "prayerText": "Help me to integrate what I've learned this week into practical steps that prepare my heart and life for your continued work in me.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "I will establish one regular spiritual practice this week that creates space in my life for ongoing transformation.",
+      "leavingAtCross": [
+        "The belief that spiritual growth happens automatically without intentional effort",
+        "The excuse that I don't have time for spiritual practices",
+        "The isolation that prevents me from growing in community"
+      ],
+      "receivingFromCross": [
+        "The discipline to create regular space for spiritual reflection",
+        "The wisdom to integrate spiritual practices into daily life",
+        "The community to support ongoing transformation"
+      ],
+      "content": "I will establish one regular spiritual practice this week that creates space in my life for ongoing transformation."
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "What practical steps are you planning to take as a result of this week's study?",
+        "How do you hope to 'prepare the way' in your own life for ongoing spiritual transformation?"
+      ],
+      "forAccountabilityPartners": [
+        "Share your commitments and encourage others in their journey."
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 6:33",
+          "text": "Seek first the kingdom of God and his righteousness."
+        },
+        {
+          "reference": "Psalm 46:10",
+          "text": "Be still, and know that I am God."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "video",
+          "title": "Spiritual Disciplines for Everyday Life",
+          "note": "Practical guidance on developing spiritual disciplines"
+        }
+      ]
     },
     {
       "type": "profile",
       "name": "The Prepared Ones",
+      "title": "Those Who Prepare the Way",
+      "description": "Throughout Scripture, God has called people to prepare the way—whether building an ark, leading through the wilderness, or announcing the Messiah. We continue this tradition when we create space in our lives for God's transforming work.",
+      "keyQuote": "Prepare the way for the Lord, make straight paths for him.",
+      "lessonForUs": "Preparation isn't passive waiting—it's active participation in God's work. We prepare by removing obstacles, creating space, and positioning ourselves to receive what God wants to give.",
       "heading": "Those Who Prepare the Way"
     }
   ],
   "panels": [],
-  "totalWords": 496
+  "totalWords": 1323
 }

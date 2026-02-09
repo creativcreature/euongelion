@@ -2,45 +2,69 @@
   "day": 1,
   "title": "The Great Commission & the Upper Room",
   "teaser": "Jesus does not send His disciples out in their own strength - He promises real, Spirit-given power for a real mission",
+  "anchorVerse": "Acts 1:8",
+  "theme": "Jesus does not send His disciples out in their own strength - He promises real, Spirit-given power for a real mission",
   "framework": "Acts 1:8",
   "scriptureReference": "Acts 1:8",
   "modules": [
     {
       "type": "scripture",
-      "passage": "But you will receive power when the Holy Spirit comes on you; and you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth.",
       "reference": "Acts 1:8",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "receive power",
+        "Holy Spirit",
+        "witnesses"
+      ],
+      "context": "Jesus' final words before His ascension",
+      "passage": "But you will receive power when the Holy Spirit comes on you; and you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth."
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "δύναμις",
       "transliteration": "dynamis",
-      "language": "greek",
+      "pronunciation": "DOO-nah-mis",
+      "meaning": "power, active and effective power",
+      "rootMeaning": "Not just raw force, but the ability to actually do what God calls you to do. Jesus does not send the disciples out with inspirational vibes. He promises real, Spirit-given power for a real mission.",
+      "usageNote": "The English word 'dynamite' comes from this Greek word, though the biblical meaning emphasizes divine enablement rather than explosive force.",
       "definition": "power, active and effective power",
       "usage": "Not just raw force, but the ability to actually do what God calls you to do. Jesus does not send the disciples out with inspirational vibes. He promises real, Spirit-given power for a real mission."
     },
     {
       "type": "teaching",
+      "body": "After His resurrection, Jesus spends 40 days with His disciples, giving them 'many convincing proofs' that He is alive and teaching them about the kingdom of God (Acts 1:3). He commands them not to leave Jerusalem, but to wait for the promised Holy Spirit. Only then will they be ready to carry His message from their local city (Jerusalem), to their region (Judea and Samaria), and out into the wider world.\n\nThe 40 days between Jesus' resurrection and His ascension are crucial. This was an intensive training window where Jesus was proving the reality of His resurrection, reframing the disciples' expectations of what the Messiah would do, and reorienting them from political hopes to a global, Spirit-powered mission.\n\nThey wanted an immediate political revolution. Jesus gave them a spiritual commission. The kingdom would not spread by swords or votes, but by witnesses filled with the Spirit.",
+      "keyInsight": "It starts in an upper room before it ever reaches a public square. The pattern is: Wait, Receive power, Bear witness.",
       "content": "After His resurrection, Jesus spends 40 days with His disciples, giving them 'many convincing proofs' that He is alive and teaching them about the kingdom of God (Acts 1:3). He commands them not to leave Jerusalem, but to wait for the promised Holy Spirit. Only then will they be ready to carry His message from their local city (Jerusalem), to their region (Judea and Samaria), and out into the wider world.\n\nThe 40 days between Jesus' resurrection and His ascension are crucial. This was an intensive training window where Jesus was proving the reality of His resurrection, reframing the disciples' expectations of what the Messiah would do, and reorienting them from political hopes to a global, Spirit-powered mission.\n\nThey wanted an immediate political revolution. Jesus gave them a spiritual commission. The kingdom would not spread by swords or votes, but by witnesses filled with the Spirit.",
       "heading": "The Pattern: Wait, Receive, Witness"
     },
     {
       "type": "story",
+      "body": "In the early 1700s, a small village called Herrnhut in Saxony (in what is now eastern Germany) was anything but peaceful. It was filled with religious refugees from different traditions who had fled persecution and ended up living side by side on the estate of a young nobleman named Count Nicolaus von Zinzendorf. On paper, they were all Christians. In reality, the settlement was fracturing under arguments, suspicion, and quiet resentment.\n\nZinzendorf was deeply troubled. Instead of giving up, he began visiting homes one by one, listening to grievances, opening Scripture, and calling people to live as members of one body rather than rival factions. He urged them to take seriously Jesus' prayer 'that all of them may be one' in John 17.\n\nOn May 12, 1727, the community gathered and entered into a covenant they called their 'Brotherly Agreement' - a shared commitment to humility, mutual love, and obedience to Christ as the center of their common life. It was their way of going back to the 'upper room,' laying down their personal agendas and waiting together before God.\n\nA few months later, on August 13, 1727, during a communion service, many in the congregation experienced a deep sense of God's presence, conviction, and love all at once. Later accounts described it as their own Pentecost, a turning point when disunity gave way to a Spirit-given oneness.\n\nA small group committed to continuous prayer, each person taking an hour, so that someone from Herrnhut would be praying every hour of every day. That 'prayer watch' continued, in one form or another, for about 100 years. From this once-fractured village, hundreds of missionaries eventually went out across Europe, the Caribbean, North America, Africa, and beyond.",
+      "connectionToTheme": "Jesus does not ask you to be impressive. He asks you to be available. The pattern in Jerusalem and in Herrnhut is the same: wait, receive power, then witness.",
       "content": "In the early 1700s, a small village called Herrnhut in Saxony (in what is now eastern Germany) was anything but peaceful. It was filled with religious refugees from different traditions who had fled persecution and ended up living side by side on the estate of a young nobleman named Count Nicolaus von Zinzendorf. On paper, they were all Christians. In reality, the settlement was fracturing under arguments, suspicion, and quiet resentment.\n\nZinzendorf was deeply troubled. Instead of giving up, he began visiting homes one by one, listening to grievances, opening Scripture, and calling people to live as members of one body rather than rival factions. He urged them to take seriously Jesus' prayer 'that all of them may be one' in John 17.\n\nOn May 12, 1727, the community gathered and entered into a covenant they called their 'Brotherly Agreement' - a shared commitment to humility, mutual love, and obedience to Christ as the center of their common life. It was their way of going back to the 'upper room,' laying down their personal agendas and waiting together before God.\n\nA few months later, on August 13, 1727, during a communion service, many in the congregation experienced a deep sense of God's presence, conviction, and love all at once. Later accounts described it as their own Pentecost, a turning point when disunity gave way to a Spirit-given oneness.\n\nA small group committed to continuous prayer, each person taking an hour, so that someone from Herrnhut would be praying every hour of every day. That 'prayer watch' continued, in one form or another, for about 100 years. From this once-fractured village, hundreds of missionaries eventually went out across Europe, the Caribbean, North America, Africa, and beyond.",
       "heading": "The Moravians of Herrnhut (Part 1)"
     },
     {
       "type": "reflection",
-      "prompt": "Where am I trying to 'be a witness' in my own strength instead of waiting on and relying on the Holy Spirit's power?"
+      "prompt": "Where am I trying to 'be a witness' in my own strength instead of waiting on and relying on the Holy Spirit's power?",
+      "additionalQuestions": [],
+      "invitationType": "honest-examination"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "Before you rush into tasks, conversations, or ministry today, take five quiet minutes and pray: 'Holy Spirit, I cannot do this without You. Fill me. Lead me. Use me.' Treat that pause like your personal 'upper room.'",
+      "leavingAtCross": [],
+      "receivingFromCross": [],
+      "content": "Before you rush into tasks, conversations, or ministry today, take five quiet minutes and pray: 'Holy Spirit, I cannot do this without You. Fill me. Lead me. Use me.' Treat that pause like your personal 'upper room.'"
     },
     {
       "type": "prayer",
-      "prayerText": "Jesus, You did not send Your disciples without power, and You are not sending me without power either. Forgive me for trying to live this life in my own strength. Teach me to wait on Your Spirit, to depend on Your power, and to see my everyday life as a place to bear witness to You. Amen."
+      "posture": "petition",
+      "prayerText": "Jesus, You did not send Your disciples without power, and You are not sending me without power either. Forgive me for trying to live this life in my own strength. Teach me to wait on Your Spirit, to depend on Your power, and to see my everyday life as a place to bear witness to You. Amen.",
+      "prayerType": "personal"
     }
   ],
   "panels": [],
-  "totalWords": 608
+  "totalWords": 1238
 }

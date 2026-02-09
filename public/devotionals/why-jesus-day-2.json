@@ -1,41 +1,65 @@
 {
   "day": 2,
   "title": "The Promise Fulfilled",
+  "subtitle": "What's the Connection?",
   "teaser": "What's the Connection?",
   "framework": "Luke 2:14",
   "scriptureReference": "Luke 2:14",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Glory to God in the highest heaven, and on earth peace to those on whom his favor rests.",
       "reference": "Luke 2:14",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "Glory to God",
+        "peace on earth",
+        "his favor"
+      ],
+      "passage": "Glory to God in the highest heaven, and on earth peace to those on whom his favor rests."
     },
     {
       "type": "vocab",
+      "language": "hebrew",
       "word": "שָׁלוֹם",
       "transliteration": "Shalom",
-      "language": "hebrew",
+      "pronunciation": "shah-LOHM",
+      "strongs": "H7965",
       "definition": "Peace, wholeness, completeness",
-      "usage": "Not just the absence of conflict, but wholeness, harmony, and the restoration of right relationships between God, humanity, and creation"
+      "root_meaning": "Not just the absence of conflict, but wholeness, harmony, and the restoration of right relationships between God, humanity, and creation",
+      "usage_note": "Often translated as 'peace' but encompasses total well-being and restoration"
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "Imagine you've been working on a massive jigsaw puzzle for months—one of those 5,000-piece puzzles with an intricate, beautiful image. You've made steady progress, connecting sections here and there, but much of it still looks like scattered pieces without clear meaning.\n\nThen one day, you find a crucial piece that suddenly makes a large section of the puzzle click into place. Patterns that were unclear become obvious, and you can see how dozens of other pieces fit together.\n\nThis is something like what happened when Jesus was born. For centuries, God's people had been collecting 'pieces' of divine revelation—promises to Abraham about blessing all nations, prophecies about a coming king from David's line, predictions about a suffering servant who would bear the sins of many, visions of a kingdom where justice and peace would reign forever.\n\nThe birth of Jesus was like finding that crucial puzzle piece that suddenly made the whole picture clear.",
+      "pardes_layer": "peshat"
     },
     {
-      "type": "insight"
+      "type": "insight",
+      "text": "Jesus's birth represents the moment when God's scattered promises throughout history began to come together into a unified plan for human salvation."
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "**The Abrahamic Promise (2000 BC)**\n'All peoples on earth will be blessed through you' (Genesis 12:3). For centuries, this promise seemed impossible to fulfill. How could one small nation bless the entire world? The angels' announcement that this birth brings 'good news for all the people' suggests Jesus's birth begins the fulfillment of this ancient promise.\n\n**The Davidic Covenant (1000 BC)**\nGod promised King David that his throne would be established forever (2 Samuel 7:12-16). The angel's announcement that the Savior is born 'in the town of David' and is 'the Messiah' suggests Jesus is the ultimate fulfillment of this promise.\n\n**The Prophetic Vision**\nIsaiah spoke of a time when 'the wolf will live with the lamb' (Isaiah 11:6-9). Jeremiah promised a 'new covenant' where God would write His law on people's hearts (Jeremiah 31:31-34). The angels' song of 'peace on earth' suggests Jesus's birth inaugurates this prophetic vision.",
+      "pardes_layer": "remez"
     },
     {
-      "type": "bridge"
+      "type": "bridge",
+      "ancient": "The Hebrew prophets promised a coming Messiah who would bring peace, justice, and restoration",
+      "modern": "We still long for genuine peace and the restoration of broken relationships",
+      "connection": "The universal human longing for shalom points to a need that transcends cultural and historical boundaries",
+      "question": "What would it look like for there to be true 'peace on earth'? What would need to change for that to become reality?"
     },
     {
       "type": "scripture",
-      "passage": "For to us a child is born, to us a son is given, and the government will be on his shoulders. And he will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace. Of the greatness of his government and peace there will be no end.",
       "reference": "Isaiah 9:6-7",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "child is born",
+        "son is given",
+        "Prince of Peace",
+        "peace there will be no end"
+      ],
+      "passage": "For to us a child is born, to us a son is given, and the government will be on his shoulders. And he will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace. Of the greatness of his government and peace there will be no end."
     },
     {
       "type": "comprehension",
@@ -58,19 +82,23 @@
     },
     {
       "type": "reflection",
-      "prompt": "How does understanding Jesus's birth as the fulfillment of ancient promises change your perspective on the story? Does it make the claims more or less credible to you?"
+      "question": "How does understanding Jesus's birth as the fulfillment of ancient promises change your perspective on the story? Does it make the claims more or less credible to you?",
+      "prompt_text": "Consider: What does it mean that God's plan for human salvation took thousands of years to unfold?",
+      "allow_save": true
     },
     {
       "type": "takeaway",
-      "content": "Luke doesn't present Jesus's birth as an isolated miracle, but as the culmination of a divine plan that has been unfolding for millennia. If that's true, it changes everything about how we understand this story.",
+      "text": "Luke doesn't present Jesus's birth as an isolated miracle, but as the culmination of a divine plan that has been unfolding for millennia. If that's true, it changes everything about how we understand this story.",
+      "action": "Read Genesis 12:1-3 and Isaiah 9:6-7. Notice how specific the promises were and how they connect to what Luke describes.",
       "heading": "Key Insight"
     },
     {
       "type": "prayer",
-      "prayerText": "Help me to understand how Jesus's birth connects to humanity's deepest longings for peace, justice, and restoration. Show me how the ancient promises find their fulfillment in the child born in Bethlehem. Amen.",
-      "heading": "Closing Prayer"
+      "scripture_echo": "Isaiah 9:6",
+      "heading": "Closing Prayer",
+      "prayerText": "Help me to understand how Jesus's birth connects to humanity's deepest longings for peace, justice, and restoration. Show me how the ancient promises find their fulfillment in the child born in Bethlehem. Amen."
     }
   ],
   "panels": [],
-  "totalWords": 249
+  "totalWords": 741
 }

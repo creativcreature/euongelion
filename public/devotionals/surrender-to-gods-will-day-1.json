@@ -2,65 +2,144 @@
   "day": 1,
   "title": "The Agony of Surrender",
   "teaser": "True surrender isn't easy, but it's the pathway to God's greatest purposes",
+  "anchorVerse": "Luke 22:42",
+  "theme": "True surrender isn't easy, but it's the pathway to God's greatest purposes",
   "framework": "Luke 22:42",
   "scriptureReference": "Luke 22:42",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Father, if you are willing, take this cup from me; yet not my will, but yours be done.",
       "reference": "Luke 22:42",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "not my will",
+        "but yours be done"
+      ],
+      "passage": "Father, if you are willing, take this cup from me; yet not my will, but yours be done."
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "θέλημα",
       "transliteration": "thelema",
-      "language": "greek",
+      "pronunciation": "THEH-lay-mah",
+      "meaning": "will, desire, purpose",
+      "rootMeaning": "This isn't just a passive wish; it's an active intention. Jesus is contrasting His human desire to avoid suffering with the Father's active, redemptive purpose.",
+      "usageNote": "In Luke 22:42, Jesus is saying, 'My human desire (boulomai) is to avoid this, but I choose your divine purpose (thelema).'",
+      "relatedWords": [
+        {
+          "word": "βούλομαι (boulomai)",
+          "reference": "A more passive human desire or wish, what we might want to happen"
+        }
+      ],
+      "strongsNumber": "G2307",
       "definition": "will, desire, purpose",
       "usage": "This isn't just a passive wish; it's an active intention. Jesus is contrasting His human desire to avoid suffering with the Father's active, redemptive purpose."
     },
     {
       "type": "teaching",
+      "body": "The scene in the Garden of Gethsemane is one of the most profound in all of Scripture. It's a window into the raw humanity of Jesus and the cosmic significance of His surrender.\n\nJesus' prayer, 'take this cup from me,' is not a sign of weakness or doubt. It is a sign of his full humanity. He was not a divine robot, but a man who felt real, gut-wrenching anguish at the thought of the physical and spiritual suffering that awaited him. The 'cup' represented the full weight of God's wrath against sin, which He, the sinless one, was about to drink on our behalf. His sweat falling like drops of blood (a medical condition known as hematidrosis) underscores the extreme stress He was under.\n\nThe phrase 'not my will, but yours be done' is the hinge upon which human history turns. In the first garden, Adam chose his own will over God's, plunging humanity into sin and separation. In this garden, the second Adam, Jesus, chooses the Father's will over His own, paving the way for our redemption. This is the ultimate act of loving obedience.",
+      "keyInsight": "Jesus' struggle in the garden gives us permission to be honest with God about our own struggles. It shows us that surrender is not the absence of desire, but the choice to align our desires with God's.",
       "content": "The scene in the Garden of Gethsemane is one of the most profound in all of Scripture. It's a window into the raw humanity of Jesus and the cosmic significance of His surrender.\n\nJesus' prayer, 'take this cup from me,' is not a sign of weakness or doubt. It is a sign of his full humanity. He was not a divine robot, but a man who felt real, gut-wrenching anguish at the thought of the physical and spiritual suffering that awaited him. The 'cup' represented the full weight of God's wrath against sin, which He, the sinless one, was about to drink on our behalf. His sweat falling like drops of blood (a medical condition known as hematidrosis) underscores the extreme stress He was under.\n\nThe phrase 'not my will, but yours be done' is the hinge upon which human history turns. In the first garden, Adam chose his own will over God's, plunging humanity into sin and separation. In this garden, the second Adam, Jesus, chooses the Father's will over His own, paving the way for our redemption. This is the ultimate act of loving obedience.",
       "heading": "The Garden of Gethsemane"
     },
     {
       "type": "story",
+      "body": "Jim Elliot, a young missionary to Ecuador in the 1950s, wrestled deeply with God's will for his life. He felt a strong call to reach the unreached Huaorani people, a tribe known for their violence. Leaving behind his family, his home, and the woman he loved, Olive, felt like a monumental sacrifice. His journals are filled with prayers of surrender, asking God to align his desires with the divine will, even if it led to hardship.\n\nIn 1956, Jim and four other missionaries made contact with the Huaorani. Initially, the encounters were friendly. But then, for reasons still debated, the tribesmen turned on them. All five men were speared to death on a sandy riverbank. From a human perspective, it was a tragic and senseless loss. Five promising lives cut short. A mission seemingly failed.\n\nBut that act of surrender in the face of death was not the end of the story. The widows of the slain missionaries, including Jim's wife Elisabeth Elliot, later returned to live with the Huaorani people, demonstrating a forgiveness that the tribe could not comprehend. This act of love, born from the ultimate surrender of their husbands, eventually led to the conversion of many in the tribe. The very man who speared Jim Elliot became a pastor. Jim's agonizing surrender, which cost him his life, ultimately fulfilled the will of God in a way he could never have imagined.",
+      "connectionToTheme": "Our surrender to God's will is not about understanding the outcome. It's about trusting the One who holds the outcome in His hands. The greatest agony can lead to the greatest glory when we yield our will to His.",
       "content": "Jim Elliot, a young missionary to Ecuador in the 1950s, wrestled deeply with God's will for his life. He felt a strong call to reach the unreached Huaorani people, a tribe known for their violence. Leaving behind his family, his home, and the woman he loved, Olive, felt like a monumental sacrifice. His journals are filled with prayers of surrender, asking God to align his desires with the divine will, even if it led to hardship.\n\nIn 1956, Jim and four other missionaries made contact with the Huaorani. Initially, the encounters were friendly. But then, for reasons still debated, the tribesmen turned on them. All five men were speared to death on a sandy riverbank. From a human perspective, it was a tragic and senseless loss. Five promising lives cut short. A mission seemingly failed.\n\nBut that act of surrender in the face of death was not the end of the story. The widows of the slain missionaries, including Jim's wife Elisabeth Elliot, later returned to live with the Huaorani people, demonstrating a forgiveness that the tribe could not comprehend. This act of love, born from the ultimate surrender of their husbands, eventually led to the conversion of many in the tribe. The very man who speared Jim Elliot became a pastor. Jim's agonizing surrender, which cost him his life, ultimately fulfilled the will of God in a way he could never have imagined.",
       "heading": "Jim Elliot: Surrender unto Death"
     },
     {
       "type": "insight",
+      "body": "Jesus' prayer echoes the story of Abraham and Isaac on Mount Moriah. Abraham was willing to sacrifice his beloved son in obedience to God's command, trusting that God would provide. In Gethsemane, the Father is willing to sacrifice His beloved Son, and the Son willingly goes to the cross, trusting in the Father's plan. The difference is that this time, the ram in the thicket is not a substitute; the Son is the substitute for us.",
+      "historicalContext": "Ecclesiastes belongs to the Wisdom Literature (Job, Psalms, Proverbs, Ecclesiastes, Song of Songs), which addresses life's practical and philosophical questions through observation and reflection rather than Law or Prophecy.",
+      "fascinatingFact": "The Hebrew word 'chaphets' means 'to delight in' or 'to desire.' God's will (thelema) is not arbitrary or harsh; it is rooted in His good pleasure and what He delights in. Psalm 40:8, a messianic psalm, says, 'I delight to do your will, O my God; your law is within my heart.'",
       "content": "Jesus' prayer echoes the story of Abraham and Isaac on Mount Moriah. Abraham was willing to sacrifice his beloved son in obedience to God's command, trusting that God would provide. In Gethsemane, the Father is willing to sacrifice His beloved Son, and the Son willingly goes to the cross, trusting in the Father's plan. The difference is that this time, the ram in the thicket is not a substitute; the Son is the substitute for us.",
       "heading": "Echoes of Abraham and Isaac"
     },
     {
       "type": "bridge",
-      "content": "In the Garden of Gethsemane, Jesus faced the ultimate test of surrender—choosing the Father's will over His own human desire to avoid suffering.\n\nWe face our own Gethsemane moments—times when God's will conflicts with our desires. True surrender is choosing His purpose over our comfort."
+      "ancientTruth": "In the Garden of Gethsemane, Jesus faced the ultimate test of surrender—choosing the Father's will over His own human desire to avoid suffering.",
+      "modernApplication": "We face our own Gethsemane moments—times when God's will conflicts with our desires. True surrender is choosing His purpose over our comfort.",
+      "connectionPoint": "The same struggle between human desire and divine purpose that Jesus experienced is the struggle we face daily in our own lives.",
+      "newTestamentEcho": "Hebrews 5:8 says, 'Son though he was, he learned obedience from what he suffered.'"
     },
     {
       "type": "reflection",
-      "prompt": "Why is true surrender so often accompanied by agony?"
+      "prompt": "Why is true surrender so often accompanied by agony?",
+      "additionalQuestions": [
+        "What is the 'cup' in your life right now that you are asking God to take away?",
+        "In what specific area of your life are you resisting God's will? What are you afraid of?",
+        "What would it look like, in a practical sense, for you to pray 'not my will, but yours be done' in that situation today?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "Father, I confess that I often want my own will. Give me the strength to pray as Jesus did: not my will, but yours be done. Help me trust that your purpose is greater than my comfort."
+      "posture": "confession",
+      "prayerText": "Father, I confess that I often want my own will. Give me the strength to pray as Jesus did: not my will, but yours be done. Help me trust that your purpose is greater than my comfort.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "I will identify one area where I am resisting God's will and consciously surrender it to Him today, praying 'not my will, but yours be done.'",
+      "leavingAtCross": [
+        "My fear of what surrender might cost me",
+        "My insistence on understanding God's plan before obeying",
+        "My belief that my comfort is more important than God's purpose"
+      ],
+      "receivingFromCross": [
+        "The courage to surrender even when it's agonizing",
+        "Trust that God's purposes are greater than my pain",
+        "The example of Jesus who surrendered everything for me"
+      ],
+      "content": "I will identify one area where I am resisting God's will and consciously surrender it to Him today, praying 'not my will, but yours be done.'"
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "What part of Jesus' agony in Gethsemane speaks most deeply to your current situation?",
+        "Have you ever experienced a moment where surrender felt like agony but led to breakthrough?",
+        "How does knowing that Jesus struggled with surrender help you in your own struggles?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area where you are currently struggling to surrender to God's will",
+        "Ask each other: What are you afraid would happen if you fully surrendered?",
+        "Pray together the prayer of Jesus: 'Not my will, but yours be done'"
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hebrews 5:7-8",
+          "text": "During the days of Jesus' life on earth, he offered up prayers and petitions with fervent cries and tears to the one who could save him from death."
+        },
+        {
+          "reference": "Psalm 40:8",
+          "text": "I delight to do your will, O my God; your law is within my heart."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Through Gates of Splendor",
+          "author": "Elisabeth Elliot",
+          "note": "The story of Jim Elliot and the five missionaries who gave their lives in Ecuador"
+        }
+      ]
     },
     {
       "type": "profile",
       "name": "Jesus Christ",
+      "title": "The Ultimate Surrenderer",
+      "description": "In the Garden of Gethsemane, Jesus demonstrated what perfect surrender looks like. Though fully God, He was also fully human, experiencing real anguish at the prospect of the cross. Yet He chose the Father's will over His own.",
+      "keyQuote": "Not my will, but yours be done.",
+      "lessonForUs": "If Jesus, the Son of God, had to wrestle with surrender, we should expect to struggle too. But His example shows us that surrender is possible and leads to resurrection.",
       "heading": "The Ultimate Surrenderer"
     }
   ],
   "panels": [],
-  "totalWords": 671
+  "totalWords": 1829
 }

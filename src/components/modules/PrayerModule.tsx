@@ -2,7 +2,9 @@ import type { Module } from '@/types'
 
 export default function PrayerModule({ module }: { module: Module }) {
   const text = module.prayerText || module.content || ''
-  const paragraphs = text.split('\n\n')
+  if (!text && !module.breathPrayer) return null
+
+  const paragraphs = text ? text.split('\n\n') : []
 
   return (
     <div
@@ -12,9 +14,19 @@ export default function PrayerModule({ module }: { module: Module }) {
         paddingTop: '2rem',
       }}
     >
-      <p className="text-label vw-small mb-6 text-gold">
-        {module.heading || 'PRAYER'}
-      </p>
+      <div className="mb-6 flex items-center gap-3">
+        <p className="text-label vw-small text-gold">
+          {module.heading || 'PRAYER'}
+        </p>
+        {module.prayerType && (
+          <span className="vw-small text-muted">({module.prayerType})</span>
+        )}
+      </div>
+      {module.posture && (
+        <p className="mb-4 vw-small text-muted italic">
+          Posture: {module.posture}
+        </p>
+      )}
       <div className="space-y-6">
         {paragraphs.map((paragraph, i) => (
           <p key={i} className="text-serif-italic vw-body-lg leading-relaxed">

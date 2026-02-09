@@ -2,65 +2,199 @@
   "day": 2,
   "title": "Wisdom vs. Activity",
   "teaser": "Learning to seek wisdom before hasty action",
+  "anchorVerse": "Proverbs 19:2",
+  "theme": "Learning to seek wisdom before hasty action",
   "framework": "Proverbs 19:2",
   "scriptureReference": "Proverbs 19:2",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Desire without knowledge is not good - how much more will hasty feet miss the way!",
       "reference": "Proverbs 19:2",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "Desire without knowledge",
+        "hasty feet miss the way"
+      ],
+      "hebrewOriginal": "גַּם בְּלֹא־דַעַת נֶפֶשׁ לֹא־טוֹב וְאָץ בְּרַגְלַיִם חוֹטֵא",
+      "passage": "Desire without knowledge is not good - how much more will hasty feet miss the way!"
     },
     {
       "type": "vocab",
+      "language": "hebrew",
       "word": "דַּעַת",
       "transliteration": "da'at",
-      "language": "hebrew",
+      "pronunciation": "DAH-aht",
+      "meaning": "knowledge, awareness, understanding",
+      "rootMeaning": "Biblical da'at combines experiential and theoretical knowledge: practical wisdom gained through relationship with God.",
+      "wordByWord": [
+        {
+          "word": "גַּם",
+          "transliteration": "gam",
+          "meaning": "also, even, indeed"
+        },
+        {
+          "word": "בְּלֹא",
+          "transliteration": "belo",
+          "meaning": "without, lacking"
+        },
+        {
+          "word": "דַעַת",
+          "transliteration": "da'at",
+          "meaning": "knowledge, understanding, awareness"
+        },
+        {
+          "word": "נֶפֶשׁ",
+          "transliteration": "nefesh",
+          "meaning": "soul, desire, appetite"
+        },
+        {
+          "word": "לֹא־טוֹב",
+          "transliteration": "lo-tov",
+          "meaning": "not good"
+        },
+        {
+          "word": "וְאָץ",
+          "transliteration": "ve'atz",
+          "meaning": "and hasty, rushing"
+        },
+        {
+          "word": "בְּרַגְלַיִם",
+          "transliteration": "beraglaim",
+          "meaning": "with feet"
+        },
+        {
+          "word": "חוֹטֵא",
+          "transliteration": "choteh",
+          "meaning": "misses the mark, sins"
+        }
+      ],
+      "usageNote": "The word choteh (missing the mark) is the same root used for 'sin' - suggesting that rushing without wisdom is a form of spiritual failure.",
+      "strongsNumber": "H1847",
       "definition": "knowledge, awareness, understanding",
       "usage": "Biblical da'at combines experiential and theoretical knowledge: practical wisdom gained through relationship with God."
     },
     {
       "type": "teaching",
+      "body": "Proverbs 19:2 presents a paradox: desire (motivation, drive, passion) without knowledge leads to missing the way entirely. The Hebrew suggests that hasty feet - rapid movement without wisdom - actually slows down progress toward the goal.\n\nThe wise person moves deliberately, not desperately. They pause to gain da'at (knowledge) before taking action. This isn't procrastination; it's precision.",
+      "keyInsight": "The structure shows progression: desire without knowledge leads to hasty movement leads to missing the target.",
       "content": "Proverbs 19:2 presents a paradox: desire (motivation, drive, passion) without knowledge leads to missing the way entirely. The Hebrew suggests that hasty feet - rapid movement without wisdom - actually slows down progress toward the goal.\n\nThe wise person moves deliberately, not desperately. They pause to gain da'at (knowledge) before taking action. This isn't procrastination; it's precision.",
       "heading": "The Ancient Path of Wisdom"
     },
     {
       "type": "story",
+      "body": "David prided himself on being a quick decision-maker. 'Strike while the iron is hot,' he'd say. 'You snooze, you lose.' His calendar was packed with rapid-fire meetings, instant responses, and immediate action items.\n\nBut his hasty feet kept missing the way. The rushed hire who didn't work out. The quick investment that lost money. The immediate response that damaged a relationship. The fast decision that required months to undo.\n\nHis mentor asked a simple question: 'What if wisdom moves slower than ambition?'",
+      "connectionToTheme": "David represents the danger of speed without wisdom - achieving motion but missing the destination.",
       "content": "David prided himself on being a quick decision-maker. 'Strike while the iron is hot,' he'd say. 'You snooze, you lose.' His calendar was packed with rapid-fire meetings, instant responses, and immediate action items.\n\nBut his hasty feet kept missing the way. The rushed hire who didn't work out. The quick investment that lost money. The immediate response that damaged a relationship. The fast decision that required months to undo.\n\nHis mentor asked a simple question: 'What if wisdom moves slower than ambition?'",
       "heading": "The Hasty Feet Syndrome"
     },
     {
       "type": "insight",
+      "body": "Rachel consumed productivity podcasts, speed-read business books, and attended efficiency seminars. She had more information than ever but felt less wise than before. Her rapid consumption of content led to rapid decision-making that often missed the mark.\n\nThe breakthrough came when she realized: Information moves at the speed of light; wisdom moves at the speed of relationship.",
+      "historicalContext": "In Solomon's time, wisdom was cultivated through patient observation, careful reflection, and mentoring relationships. Decisions were made in community, with time for consultation and consideration.",
+      "fascinatingFact": "The Hebrew word for 'hasty' (atz) is related to the word for 'pressed' or 'squeezed.' When we're under pressure, we tend to make rushed decisions that squeeze out wisdom. Ancient Hebrew culture built in waiting periods for major decisions to prevent this spiritual hazard.",
+      "greekParallel": {
+        "concepts": [
+          {
+            "term": "gnosis",
+            "greek": "γνῶσις",
+            "meaning": "experiential knowledge"
+          },
+          {
+            "term": "episteme",
+            "greek": "ἐπιστήμη",
+            "meaning": "theoretical knowledge"
+          },
+          {
+            "term": "epignosis",
+            "greek": "ἐπίγνωσις",
+            "meaning": "full, complete knowledge of God (Ephesians 1:17)"
+          }
+        ]
+      },
       "content": "Rachel consumed productivity podcasts, speed-read business books, and attended efficiency seminars. She had more information than ever but felt less wise than before. Her rapid consumption of content led to rapid decision-making that often missed the mark.\n\nThe breakthrough came when she realized: Information moves at the speed of light; wisdom moves at the speed of relationship.",
       "heading": "Information vs. Wisdom"
     },
     {
       "type": "bridge",
-      "content": "Proverbs warns that desire without knowledge leads to missing the way - hasty feet that sin by missing the target.\n\nOur instant-everything world rewards quick responses over thoughtful ones. The pressure to decide quickly often prevents us from gaining the da'at necessary for wise choices."
+      "ancientTruth": "Proverbs warns that desire without knowledge leads to missing the way - hasty feet that sin by missing the target.",
+      "modernApplication": "Our instant-everything world rewards quick responses over thoughtful ones. The pressure to decide quickly often prevents us from gaining the da'at necessary for wise choices.",
+      "connectionPoint": "The wise and foolish builders Jesus described illustrate this principle perfectly - the hasty builder finished first but lost everything in the storm.",
+      "newTestamentEcho": "Jesus told of two builders: one who built quickly on sand, another who built slowly on rock (Matthew 7:24-27). The difference wasn't intelligence or resources - it was the willingness to slow down long enough to build wisely."
     },
     {
       "type": "reflection",
-      "prompt": "Where in your life is speed substituting for wisdom?"
+      "prompt": "Where in your life is speed substituting for wisdom?",
+      "additionalQuestions": [
+        "What's the difference between godly urgency and anxious haste?",
+        "How can you build 'wisdom pauses' into your decision-making process?",
+        "What decision are you rushing that might benefit from more da'at?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "God, give me da'at - true knowledge and understanding. Help me move with wisdom rather than haste, with purpose rather than panic. Slow my feet to match Your pace. Amen."
+      "posture": "petition",
+      "prayerText": "God, give me da'at - true knowledge and understanding. Help me move with wisdom rather than haste, with purpose rather than panic. Slow my feet to match Your pace. Amen.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "Before making any significant decision today, I will pause and ask: 'Do I have enough da'at (knowledge) to move forward wisely?'",
+      "leavingAtCross": [
+        "The pressure to make quick decisions without adequate wisdom",
+        "The fear that taking time to think means missing opportunities",
+        "The pride that equates speed with competence"
+      ],
+      "receivingFromCross": [
+        "The patience to seek da'at before acting",
+        "The confidence that God's timing is perfect",
+        "The wisdom to move deliberately rather than desperately"
+      ],
+      "content": "Before making any significant decision today, I will pause and ask: 'Do I have enough da'at (knowledge) to move forward wisely?'"
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "Where in your life do you tend to move too quickly without adequate knowledge?",
+        "What's the difference between godly urgency and anxious haste?",
+        "How can you build 'wisdom pauses' into your decision-making process?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area where hasty decisions have caused problems",
+        "Commit to seeking counsel before making significant choices this week",
+        "Ask each other: 'What decision are you rushing that might benefit from more da'at?'"
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 7:24-27",
+          "text": "The wise and foolish builders - building on rock vs. sand"
+        },
+        {
+          "reference": "Ephesians 1:17",
+          "text": "Paul's prayer for epignosis - full, complete knowledge of God"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Proverbs",
+          "note": "Study the contrast between the wise and the fool throughout the book"
+        }
+      ]
     },
     {
       "type": "profile",
       "name": "David (the story character)",
+      "title": "The Quick Decision-Maker",
+      "description": "A modern professional who prided himself on rapid decisions but learned that his hasty feet kept missing the way through rushed hires, quick investments, and immediate responses that backfired.",
+      "keyQuote": "Move at the speed of wisdom, not the speed of anxiety.",
+      "lessonForUs": "True urgency requires immediate action; perceived urgency often requires patient wisdom. Learn to distinguish between them.",
       "heading": "The Quick Decision-Maker"
     }
   ],
   "panels": [],
-  "totalWords": 350
+  "totalWords": 1108
 }

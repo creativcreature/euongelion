@@ -2,65 +2,149 @@
   "day": 1,
   "title": "Recognizing God's Voice",
   "teaser": "Learning to recognize Jesus' voice amid competing voices",
+  "anchorVerse": "John 10:27",
+  "theme": "Learning to recognize Jesus' voice amid competing voices",
   "framework": "John 10:27",
   "scriptureReference": "John 10:27",
   "modules": [
     {
       "type": "scripture",
-      "passage": "My sheep listen to my voice; I know them, and they follow me.",
       "reference": "John 10:27",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "listen to my voice",
+        "I know them",
+        "they follow me"
+      ],
+      "greekOriginal": "τὰ πρόβατά μου τῆς φωνῆς μου ἀκούουσιν, κἀγὼ γινώσκω αὐτά, καὶ ἀκολουθοῦσίν μοι",
+      "passage": "My sheep listen to my voice; I know them, and they follow me."
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "φωνή",
       "transliteration": "phōnē",
-      "language": "greek",
+      "pronunciation": "fo-NAY",
+      "meaning": "voice, sound",
+      "rootMeaning": "The Greek word phōnē refers to a voice or sound. It's where we get the English word 'telephone' - literally 'far-off voice.' The word emphasizes the personal, recognizable quality of the shepherd's call to his sheep.",
+      "usageNote": "In John 10, Jesus uses shepherd imagery to describe His relationship with believers. Just as sheep learn to recognize their own shepherd's unique call, believers learn to distinguish Christ's voice from all others.",
+      "relatedWords": [
+        {
+          "word": "ἀκούουσιν (akouousin)",
+          "reference": "They hear/listen - echoes the Hebrew concept of shema (hearing with obedience)"
+        }
+      ],
+      "strongsNumber": "G5456",
       "definition": "voice, sound",
       "usage": "The Greek word phōnē refers to a voice or sound. It's where we get the English word 'telephone' - literally 'far-off voice.' The word emphasizes the personal, recognizable quality of the shepherd's call to his sheep."
     },
     {
       "type": "teaching",
+      "body": "In Jesus' time, shepherds often had unique calls for their sheep. Multiple flocks could mingle, but each sheep learned to perk up only at the sound of its own shepherd. Jesus used this imagery in John 10 to describe how His followers recognize His voice.\n\nJust as you instantly know the voice of a loved one on the phone, the more you are acquainted with what Jesus' voice sounds like, the quicker you will discern His voice in the noise of this life. He speaks primarily through His Word and the Holy Spirit's gentle promptings in our hearts.\n\nIn a noisy world, many voices claim our attention - cultural messages, inner fears, even the enemy's lies. But God's voice is loving, true, and freeing, whereas the enemy's voice brings lies and condemnation. Most importantly, God's voice will never contradict Scripture.",
+      "keyInsight": "God's voice is loving, true, and freeing - and will never contradict Scripture.",
       "content": "In Jesus' time, shepherds often had unique calls for their sheep. Multiple flocks could mingle, but each sheep learned to perk up only at the sound of its own shepherd. Jesus used this imagery in John 10 to describe how His followers recognize His voice.\n\nJust as you instantly know the voice of a loved one on the phone, the more you are acquainted with what Jesus' voice sounds like, the quicker you will discern His voice in the noise of this life. He speaks primarily through His Word and the Holy Spirit's gentle promptings in our hearts.\n\nIn a noisy world, many voices claim our attention - cultural messages, inner fears, even the enemy's lies. But God's voice is loving, true, and freeing, whereas the enemy's voice brings lies and condemnation. Most importantly, God's voice will never contradict Scripture.",
       "heading": "The Ancient Shepherd's Promise"
     },
     {
       "type": "story",
+      "body": "Ava sat in her dorm room surrounded by advice blogs, social media feeds, and well-meaning friends all telling her how to live her life. When she faced a major decision about her summer internship, the cacophony of opinions left her more confused than ever.\n\nOne friend said, 'Follow your heart.' Another insisted, 'Think of your résumé.' Her parents had their own expectations.\n\nAva realized she'd been listening to everyone except God. In desperation, one evening she turned off her phone, opened her Bible, and prayed, 'God, speak to me.'\n\nIn the stillness that followed, a gentle thought surfaced - reminding her of Jesus' promise: 'Seek first the kingdom of God.' It wasn't an audible voice, but a verse she had heard in church, now echoing in her heart. In that quiet moment, Ava recognized God's voice speaking through Scripture to her anxious mind.",
+      "connectionToTheme": "Ava's experience illustrates how we often listen to every voice except God's, and how returning to Scripture in stillness helps us recognize His voice.",
       "content": "Ava sat in her dorm room surrounded by advice blogs, social media feeds, and well-meaning friends all telling her how to live her life. When she faced a major decision about her summer internship, the cacophony of opinions left her more confused than ever.\n\nOne friend said, 'Follow your heart.' Another insisted, 'Think of your résumé.' Her parents had their own expectations.\n\nAva realized she'd been listening to everyone except God. In desperation, one evening she turned off her phone, opened her Bible, and prayed, 'God, speak to me.'\n\nIn the stillness that followed, a gentle thought surfaced - reminding her of Jesus' promise: 'Seek first the kingdom of God.' It wasn't an audible voice, but a verse she had heard in church, now echoing in her heart. In that quiet moment, Ava recognized God's voice speaking through Scripture to her anxious mind.",
       "heading": "The Modern Sheep's Dilemma"
     },
     {
       "type": "insight",
+      "body": "Marcus worked in a startup where everyone had opinions about the company's direction. Investors wanted growth, employees wanted stability, customers wanted innovation. The noise was deafening.\n\nBut the real challenge wasn't external - it was internal. Marcus realized he'd been listening to fear (What if I fail?), pride (I need to prove myself), and comparison (Everyone else seems to have it figured out) more than he'd been listening to God.\n\nThe breakthrough came when he started each day asking, 'God, what is Your voice saying about today?' instead of immediately checking his phone for everyone else's voices.",
+      "historicalContext": "In ancient Israel, shepherds sometimes gave each sheep a name and could call them individually. The sheep would respond to their own name spoken in the familiar voice of their shepherd. Jesus likewise said, 'He calls his own sheep by name and leads them out' (John 10:3).",
+      "fascinatingFact": "The Greek word φωνή (phōnē) is where we get the English word 'telephone' - literally 'far-off voice.' Alexander Graham Bell's invention was about transmitting voice over distance, but Jesus has already bridged the greatest distance: 'My sheep hear My voice... and they follow Me.'",
       "content": "Marcus worked in a startup where everyone had opinions about the company's direction. Investors wanted growth, employees wanted stability, customers wanted innovation. The noise was deafening.\n\nBut the real challenge wasn't external - it was internal. Marcus realized he'd been listening to fear (What if I fail?), pride (I need to prove myself), and comparison (Everyone else seems to have it figured out) more than he'd been listening to God.\n\nThe breakthrough came when he started each day asking, 'God, what is Your voice saying about today?' instead of immediately checking his phone for everyone else's voices.",
       "heading": "The Contemporary Challenge: Competing Voices"
     },
     {
       "type": "bridge",
-      "content": "Sheep in Jesus' time recognized their shepherd's unique voice among many flocks.\n\nIn our world of endless notifications, competing opinions, and information overload, we must learn to recognize God's voice above all the noise."
+      "ancientTruth": "Sheep in Jesus' time recognized their shepherd's unique voice among many flocks.",
+      "modernApplication": "In our world of endless notifications, competing opinions, and information overload, we must learn to recognize God's voice above all the noise.",
+      "connectionPoint": "The more time we spend with Jesus - in His Word and prayer - the more familiar His voice becomes, just as sheep grow to know their shepherd.",
+      "newTestamentEcho": "At Jesus' Transfiguration, the Father said, 'Listen to Him!' (Mark 9:7). Recognizing God's voice leads to obedient action, not just a warm feeling."
     },
     {
       "type": "reflection",
-      "prompt": "How attuned are you to recognizing Jesus' voice amid all the noise around you?"
+      "prompt": "How attuned are you to recognizing Jesus' voice amid all the noise around you?",
+      "additionalQuestions": [
+        "Whose voice have you been listening to the most lately, and how can you give God the first say?",
+        "Where in your life do you struggle to recognize God's voice amid the noise?",
+        "What distractions or competing 'voices' do you need to turn down in order to hear Him better?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "Lord, You are my Good Shepherd. Help me recognize Your phōnē - Your voice - above every other voice. Teach me to listen as Your sheep, trusting and following wherever You lead. Amen."
+      "posture": "petition",
+      "prayerText": "Lord, You are my Good Shepherd. Help me recognize Your phōnē - Your voice - above every other voice. Teach me to listen as Your sheep, trusting and following wherever You lead. Amen.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "I will create a quiet space today (even just 5 minutes) to listen for God - shutting off other inputs - and ask Him to speak through His Word or Spirit.",
+      "leavingAtCross": [
+        "The belief that I have to figure out life all on my own, without God's guidance",
+        "The habit of listening to every other opinion while neglecting prayer and Scripture",
+        "The fear that God is silent or that I'm incapable of hearing Him"
+      ],
+      "receivingFromCross": [
+        "Confidence that Jesus, my Good Shepherd, is actively speaking and guiding me",
+        "The patience to wait and listen for His direction instead of rushing ahead",
+        "The peace that comes from following the Shepherd's voice, knowing He will lead me to what is best"
+      ],
+      "content": "I will create a quiet space today (even just 5 minutes) to listen for God - shutting off other inputs - and ask Him to speak through His Word or Spirit."
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "Where in your life do you struggle to recognize God's voice amid the noise?",
+        "What distractions or competing 'voices' do you need to turn down in order to hear Him better?",
+        "When have you sensed a peace or conviction that made you think, 'That was God speaking to me'? How did you respond?"
+      ],
+      "forAccountabilityPartners": [
+        "Share with a friend one area where you want to hear God's guidance more clearly. Ask them to pray with you and check in on how you're discerning God's voice.",
+        "Commit together to reading a short passage of Scripture each day this week and sharing with each other what you sense God saying through it.",
+        "At the end of the week, ask each other: 'What is one thing God said to you this week, and what did you do about it?'"
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "John 10:3",
+          "text": "He calls his own sheep by name and leads them out."
+        },
+        {
+          "reference": "Mark 9:7",
+          "text": "This is my Son, whom I love. Listen to him!"
+        },
+        {
+          "reference": "1 Samuel 3:1-10",
+          "text": "Samuel's learning curve in recognizing God's voice"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 10",
+          "note": "Read the full Good Shepherd discourse for context on Jesus' relationship with His sheep"
+        }
+      ]
     },
     {
       "type": "profile",
       "name": "Samuel",
+      "title": "The Boy Who Learned to Listen",
+      "description": "Young Samuel heard God's voice but didn't recognize it until Eli guided him. His progression from confusion to clarity reminds us that learning to discern God's voice often requires mentorship, patience, and the willingness to learn from our mistakes.",
+      "keyQuote": "Speak, for your servant is listening.",
+      "lessonForUs": "Recognizing God's voice is a skill that develops over time with practice, guidance from mature believers, and a posture of humble listening.",
       "heading": "The Boy Who Learned to Listen"
     }
   ],
   "panels": [],
-  "totalWords": 550
+  "totalWords": 1678
 }

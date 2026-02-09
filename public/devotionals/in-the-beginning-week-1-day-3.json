@@ -2,65 +2,103 @@
   "day": 3,
   "title": "Let There Be Light",
   "teaser": "",
+  "anchorVerse": "Genesis 1:3",
   "framework": "Genesis 1:3",
   "scriptureReference": "Genesis 1:3",
   "modules": [
     {
       "type": "scripture",
-      "passage": "And God said, 'Let there be light,' and there was light.",
       "reference": "Genesis 1:3",
-      "translation": "ESV"
+      "translation": "ESV",
+      "hebrewOriginal": "וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר וַיְהִי־אוֹר",
+      "passage": "And God said, 'Let there be light,' and there was light."
     },
     {
       "type": "vocab",
+      "language": "hebrew",
       "word": "יְהִי אוֹר",
       "transliteration": "yehi or",
-      "language": "hebrew",
+      "pronunciation": "yeh-HEE ohr",
+      "meaning": "Let there be light",
+      "rootMeaning": "This is one of the most famous phrases in Hebrew! 'Yehi' is the jussive form of the verb 'to be,' expressing a command or wish: 'let there be.' 'Or' means 'light.' Together: 'Let there be light!'",
+      "strongsNumber": "H1961, H216",
       "definition": "Let there be light",
       "usage": "This is one of the most famous phrases in Hebrew! 'Yehi' is the jussive form of the verb 'to be,' expressing a command or wish: 'let there be.' 'Or' means 'light.' Together: 'Let there be light!'"
     },
     {
       "type": "vocab",
+      "language": "hebrew",
       "word": "וַיֹּאמֶר",
       "transliteration": "vayomer",
-      "language": "hebrew",
+      "pronunciation": "vah-YOH-mehr",
+      "meaning": "And he said",
+      "rootMeaning": "From the root 'amar' meaning to say with authority and intention. When God speaks, He doesn't merely make sounds—He exercises sovereign authority over reality itself.",
+      "strongsNumber": "H559",
       "definition": "And he said",
       "usage": "From the root 'amar' meaning to say with authority and intention. When God speaks, He doesn't merely make sounds—He exercises sovereign authority over reality itself."
     },
     {
       "type": "teaching",
+      "body": "Genesis 1:3 marks a pivotal moment in the creation narrative. After describing the chaotic state of the earth and the Spirit hovering over the waters, the text records God's first spoken words. The Hebrew phrase 'Vayomer Elohim'—'And God said'—appears ten times in Genesis 1, creating a literary structure that emphasizes the power of divine speech. The choice to begin God's speaking with the creation of light is significant. Light is the most fundamental requirement for life as we know it. Without light, there can be no photosynthesis, no vision, no warmth, no energy. By speaking light into existence first, God establishes the foundation for all life that will follow. The simplicity of the command—just two Hebrew words, 'yehi or'—emphasizes the effortlessness of God's creative power. He doesn't need complex incantations, elaborate rituals, or tremendous effort. He simply speaks, and reality conforms to His word. The text immediately records: 'vayehi or'—'and there was light.' The response is instantaneous and complete. There's no delay, no partial fulfillment, no resistance. The same verb form that God uses to command ('yehi') is used to describe the result ('vayehi'). Reality perfectly mirrors God's word.",
+      "keyInsight": "When God speaks, reality has no choice but to obey. This pattern—God speaks, reality responds—establishes the fundamental principle that governs all of creation.",
       "content": "Genesis 1:3 marks a pivotal moment in the creation narrative. After describing the chaotic state of the earth and the Spirit hovering over the waters, the text records God's first spoken words. The Hebrew phrase 'Vayomer Elohim'—'And God said'—appears ten times in Genesis 1, creating a literary structure that emphasizes the power of divine speech. The choice to begin God's speaking with the creation of light is significant. Light is the most fundamental requirement for life as we know it. Without light, there can be no photosynthesis, no vision, no warmth, no energy. By speaking light into existence first, God establishes the foundation for all life that will follow. The simplicity of the command—just two Hebrew words, 'yehi or'—emphasizes the effortlessness of God's creative power. He doesn't need complex incantations, elaborate rituals, or tremendous effort. He simply speaks, and reality conforms to His word. The text immediately records: 'vayehi or'—'and there was light.' The response is instantaneous and complete. There's no delay, no partial fulfillment, no resistance. The same verb form that God uses to command ('yehi') is used to describe the result ('vayehi'). Reality perfectly mirrors God's word.",
       "heading": "The Power of Divine Speech"
     },
     {
       "type": "story",
+      "body": "Helen Keller was born in 1880 in Alabama. When she was 19 months old, an illness left her both deaf and blind. For six years, Helen lived in darkness and silence, unable to communicate effectively, becoming increasingly frustrated and violent when she couldn't make herself understood. In 1887, her parents hired Anne Sullivan, a teacher who had been partially blind herself and understood Helen's isolation. Anne began teaching Helen by spelling words into her hand using finger spelling, but Helen didn't understand that these movements represented words with meaning. The breakthrough came on April 5, 1887, at a water pump in the Keller family's yard. Anne held Helen's hand under flowing water while spelling 'W-A-T-E-R' into her other hand. Suddenly, Helen understood—the finger movements weren't random gestures but words representing real things. Helen later described that moment: 'Suddenly I felt a misty consciousness as of something forgotten—a thrill of returning thought; and somehow the mystery of language was revealed to me. I knew then that w-a-t-e-r meant the wonderful cool something that was flowing over my hand. That living word awakened my soul, gave it light, hope, joy, set it free!' In that instant, her world was transformed. She immediately wanted to know the names of everything around her, learning 30 words by day's end. Helen became the first deaf-blind person to earn a Bachelor of Arts degree, later writing: 'Before my teacher came to me, I did not know that I am. I lived in a world that was a no-world... But when my teacher came to me, and I learned that everything has a name, and that each name gave birth to a new thought, that began to awaken my soul and set it free.'",
+      "connectionToTheme": "Just as God's spoken word brought light into the darkness of creation, His word continues to bring light, understanding, and transformation into the darkness of human experience.",
       "content": "Helen Keller was born in 1880 in Alabama. When she was 19 months old, an illness left her both deaf and blind. For six years, Helen lived in darkness and silence, unable to communicate effectively, becoming increasingly frustrated and violent when she couldn't make herself understood. In 1887, her parents hired Anne Sullivan, a teacher who had been partially blind herself and understood Helen's isolation. Anne began teaching Helen by spelling words into her hand using finger spelling, but Helen didn't understand that these movements represented words with meaning. The breakthrough came on April 5, 1887, at a water pump in the Keller family's yard. Anne held Helen's hand under flowing water while spelling 'W-A-T-E-R' into her other hand. Suddenly, Helen understood—the finger movements weren't random gestures but words representing real things. Helen later described that moment: 'Suddenly I felt a misty consciousness as of something forgotten—a thrill of returning thought; and somehow the mystery of language was revealed to me. I knew then that w-a-t-e-r meant the wonderful cool something that was flowing over my hand. That living word awakened my soul, gave it light, hope, joy, set it free!' In that instant, her world was transformed. She immediately wanted to know the names of everything around her, learning 30 words by day's end. Helen became the first deaf-blind person to earn a Bachelor of Arts degree, later writing: 'Before my teacher came to me, I did not know that I am. I lived in a world that was a no-world... But when my teacher came to me, and I learned that everything has a name, and that each name gave birth to a new thought, that began to awaken my soul and set it free.'",
       "heading": "The Day Language Brought Light"
     },
     {
       "type": "bridge",
-      "content": "God spoke 'Let there be light,' and light came into existence by the power of His word.\n\nThe same God who spoke light into the primordial darkness can speak light into our darkness. When we feel surrounded by confusion or despair, we can trust in the creative power of God's word."
+      "ancientTruth": "God spoke 'Let there be light,' and light came into existence by the power of His word.",
+      "modernApplication": "The same God who spoke light into the primordial darkness can speak light into our darkness. When we feel surrounded by confusion or despair, we can trust in the creative power of God's word.",
+      "connectionPoint": "Words have power to create or destroy, to bring light or darkness, to build up or tear down.",
+      "newTestamentEcho": "In John 8:12, Jesus declares, 'I am the light of the world. Whoever follows me will not walk in darkness, but will have the light of life.' In 2 Corinthians 4:6, Paul explicitly connects Genesis 1:3 to salvation: 'For God, who said, \"Let light shine out of darkness,\" has shone in our hearts to give the light of the knowledge of the glory of God in the face of Jesus Christ.'"
     },
     {
       "type": "reflection",
-      "prompt": "How does God's word have creative power in your life today?"
+      "prompt": "How does God's word have creative power in your life today?",
+      "additionalQuestions": [
+        "What 'darkness' in your life needs God to speak light into it?",
+        "How does understanding the creative power of God's word change how you read Scripture?",
+        "In what ways are you called to speak 'light' into the darkness around you?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "God, You spoke light into darkness and light came into being. Speak into the dark areas of my life today. Let Your word create new realities of hope, peace, and purpose where there has been confusion and despair."
+      "posture": "petition",
+      "prayerText": "God, You spoke light into darkness and light came into being. Speak into the dark areas of my life today. Let Your word create new realities of hope, peace, and purpose where there has been confusion and despair.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "Today I will meditate on God's word, trusting that it has the power to bring light and transformation to my situation.",
+      "content": "Today I will meditate on God's word, trusting that it has the power to bring light and transformation to my situation."
     },
     {
       "type": "insight",
+      "body": "Today we learn four new Hebrew letters: ל (Lamed) makes 'l' sound, means 'to' or 'toward,' represents learning; מ (Mem) makes 'm' sound, means 'water,' represents chaos and life; ע (Ayin) is silent or has a slight guttural sound, means 'eye,' represents seeing; ן (Nun final) is the final form of Nun, used at end of words.",
+      "historicalContext": "The verb 'amar' (to say) implies authoritative speech, not casual conversation. The jussive mood expresses commands that must be obeyed. Hebrew often uses the same root for command and fulfillment (yehi/vayehi).",
+      "fascinatingFact": "The root 'or' (light) appears throughout Scripture: Genesis 1:3 (physical light), Psalm 119:105 (God's word as light), Isaiah 9:2 (messianic light), John 8:12 (Christ as light).",
       "content": "Today we learn four new Hebrew letters: ל (Lamed) makes 'l' sound, means 'to' or 'toward,' represents learning; מ (Mem) makes 'm' sound, means 'water,' represents chaos and life; ע (Ayin) is silent or has a slight guttural sound, means 'eye,' represents seeing; ן (Nun final) is the final form of Nun, used at end of words.",
       "heading": "New Hebrew Letters"
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "What darkness in your life needs God to speak light into it?",
+        "How does understanding the creative power of God's word change how you read Scripture?"
+      ],
+      "forAccountabilityPartners": [
+        "How can you bring God's light to someone who is in darkness this week?",
+        "What Scripture can you meditate on to experience God's creative word in your life?"
+      ]
     }
   ],
   "panels": [],
-  "totalWords": 747
+  "totalWords": 1694
 }

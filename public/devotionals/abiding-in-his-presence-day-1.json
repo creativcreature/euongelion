@@ -2,65 +2,144 @@
   "day": 1,
   "title": "From Visiting to Dwelling",
   "teaser": "Moving beyond spiritual visits to spiritual residence with God",
+  "anchorVerse": "John 15:4",
+  "theme": "Moving beyond spiritual visits to spiritual residence with God",
   "framework": "John 15:4",
   "scriptureReference": "John 15:4",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Remain in me, as I also remain in you. No branch can bear fruit by itself; it must remain in the vine. Neither can you bear fruit unless you remain in me.",
       "reference": "John 15:4",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "Remain in me",
+        "remain in the vine"
+      ],
+      "greekOriginal": "μείνατε ἐν ἐμοί, κἀγὼ ἐν ὑμῖν. καθὼς τὸ κλῆμα οὐ δύναται καρπὸν φέρειν ἀφ' ἑαυτοῦ ἐὰν μὴ μένῃ ἐν τῇ ἀμπέλῳ, οὕτως οὐδὲ ὑμεῖς ἐὰν μὴ ἐν ἐμοὶ μένητε",
+      "passage": "Remain in me, as I also remain in you. No branch can bear fruit by itself; it must remain in the vine. Neither can you bear fruit unless you remain in me."
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "μένω",
       "transliteration": "meno",
-      "language": "greek",
+      "pronunciation": "MEN-oh",
+      "meaning": "to remain, abide, dwell, stay",
+      "rootMeaning": "Implies not just temporary residence but permanent dwelling, continuous connection, and settled habitation. Appears 118 times in the New Testament, with 67 occurrences in John's writings.",
+      "usageNote": "Jesus repeats this word eleven times in John 15:1-11, emphasizing that fruitful Christian life isn't about periodic spiritual experiences but continuous spiritual residence.",
+      "relatedWords": [
+        {
+          "word": "μονή",
+          "reference": "Related to 'mansion' in John 14:2 - Jesus prepares a permanent dwelling place"
+        }
+      ],
+      "strongsNumber": "G3306",
       "definition": "to remain, abide, dwell, stay",
       "usage": "Implies not just temporary residence but permanent dwelling, continuous connection, and settled habitation. Appears 118 times in the New Testament, with 67 occurrences in John's writings."
     },
     {
       "type": "teaching",
+      "body": "In John 15, Jesus uses the metaphor of a vine and branches to describe our relationship with Him. The key word is meno - to remain, abide, or dwell. This isn't about occasional connection but permanent attachment. A branch doesn't visit the vine; it lives in the vine, drawing constant life and nourishment.\n\nJesus repeats this word eleven times in John 15:1-11, emphasizing that fruitful Christian life isn't about periodic spiritual experiences but continuous spiritual residence. The branch that tries to bear fruit while disconnected from the vine will wither and die.\n\nMost of us have been taught to 'spend time with God' - which implies that the rest of our time is spent without Him. But Jesus calls us to something deeper: to live our entire lives connected to Him, drawing strength and direction from His presence moment by moment.",
+      "keyInsight": "God doesn't want to be visited - He wants to be lived with.",
       "content": "In John 15, Jesus uses the metaphor of a vine and branches to describe our relationship with Him. The key word is meno - to remain, abide, or dwell. This isn't about occasional connection but permanent attachment. A branch doesn't visit the vine; it lives in the vine, drawing constant life and nourishment.\n\nJesus repeats this word eleven times in John 15:1-11, emphasizing that fruitful Christian life isn't about periodic spiritual experiences but continuous spiritual residence. The branch that tries to bear fruit while disconnected from the vine will wither and die.\n\nMost of us have been taught to 'spend time with God' - which implies that the rest of our time is spent without Him. But Jesus calls us to something deeper: to live our entire lives connected to Him, drawing strength and direction from His presence moment by moment.",
       "heading": "Jesus' Invitation to Permanent Residence"
     },
     {
       "type": "story",
+      "body": "Rachel had been a Christian for fifteen years, but she lived like a spiritual commuter. She'd drive to church on Sundays, visit God during her morning devotions, and check in with Him during crisis moments. But the rest of her life felt spiritually empty - like she was constantly traveling between her 'real life' and her 'God life.'\n\nThe breakthrough came during a particularly difficult season when Rachel realized she'd been treating God like a destination to visit rather than a home to live in. She began to understand that God wasn't calling her to better visits - He was inviting her to move in permanently.\n\nThe question that changed everything: 'What if God doesn't want to be visited - He wants to be lived with?'",
+      "connectionToTheme": "Rachel represents many believers who treat their relationship with God like commuting rather than dwelling.",
       "content": "Rachel had been a Christian for fifteen years, but she lived like a spiritual commuter. She'd drive to church on Sundays, visit God during her morning devotions, and check in with Him during crisis moments. But the rest of her life felt spiritually empty - like she was constantly traveling between her 'real life' and her 'God life.'\n\nThe breakthrough came during a particularly difficult season when Rachel realized she'd been treating God like a destination to visit rather than a home to live in. She began to understand that God wasn't calling her to better visits - He was inviting her to move in permanently.\n\nThe question that changed everything: 'What if God doesn't want to be visited - He wants to be lived with?'",
       "heading": "The Spiritual Commuter's Dilemma"
     },
     {
       "type": "insight",
+      "body": "The Old Testament concept of God 'dwelling' (Hebrew: shakan) among His people provides the foundation for Jesus' teaching on abiding. God didn't just visit Israel occasionally - He pitched His tent (tabernacle) in their midst and traveled with them.\n\nWhen Jesus said 'the Word became flesh and made his dwelling among us' (John 1:14), the Greek word for 'dwelling' is related to the Hebrew shakan. Jesus literally 'tabernacled' with humanity, showing us that God's desire is not occasional visits but permanent presence.\n\nThe progression is clear:\n- Old Testament: God dwells among His people (externally)\n- Gospels: God dwells with His people (incarnationally)\n- New Testament: God dwells in His people (internally through the Spirit)",
+      "historicalContext": "In ancient Middle Eastern culture, there was a significant difference between being a guest and being family. Guests were welcomed for specific periods and treated with honor, but family members lived in the house permanently and had access to everything. Jesus' invitation to 'abide' is an invitation to move from guest status to family status.",
+      "fascinatingFact": "The Greek word meno is related to the word 'mansion' in John 14:2 ('In my Father's house are many mansions'). Jesus isn't just preparing a place for us to visit in eternity - He's preparing a permanent dwelling place where we will abide with Him forever.",
       "content": "The Old Testament concept of God 'dwelling' (Hebrew: shakan) among His people provides the foundation for Jesus' teaching on abiding. God didn't just visit Israel occasionally - He pitched His tent (tabernacle) in their midst and traveled with them.\n\nWhen Jesus said 'the Word became flesh and made his dwelling among us' (John 1:14), the Greek word for 'dwelling' is related to the Hebrew shakan. Jesus literally 'tabernacled' with humanity, showing us that God's desire is not occasional visits but permanent presence.\n\nThe progression is clear:\n- Old Testament: God dwells among His people (externally)\n- Gospels: God dwells with His people (incarnationally)\n- New Testament: God dwells in His people (internally through the Spirit)",
       "heading": "The Tabernacle Principle"
     },
     {
       "type": "bridge",
-      "content": "Jesus invited His disciples to meno - to remain and abide in Him as branches remain in a vine.\n\nWe often treat our relationship with God like spiritual commuting - visiting Him during designated times but living our 'real lives' apart from Him."
+      "ancientTruth": "Jesus invited His disciples to meno - to remain and abide in Him as branches remain in a vine.",
+      "modernApplication": "We often treat our relationship with God like spiritual commuting - visiting Him during designated times but living our 'real lives' apart from Him.",
+      "connectionPoint": "The same invitation Jesus offered His disciples He offers us: not better visits but permanent residence in His presence.",
+      "newTestamentEcho": "John 1:14 declares that 'the Word became flesh and made his dwelling among us' - God has already moved into our neighborhood."
     },
     {
       "type": "reflection",
-      "prompt": "What's the difference between visiting God and dwelling with Him?"
+      "prompt": "What's the difference between visiting God and dwelling with Him?",
+      "additionalQuestions": [
+        "In what areas of your life do you feel disconnected from God's presence?",
+        "How might those areas change if you learned to abide there?",
+        "What would it look like to practice 'abiding awareness' throughout your regular activities?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "Jesus, You call me to meno - to remain and abide in You. Help me move beyond spiritual visits to spiritual residence. I want to live with You, not just visit You. Teach me what it means to make my home in Your presence. Amen."
+      "posture": "petition",
+      "prayerText": "Jesus, You call me to meno - to remain and abide in You. Help me move beyond spiritual visits to spiritual residence. I want to live with You, not just visit You. Teach me what it means to make my home in Your presence. Amen.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "I will practice 'abiding awareness' today - pausing throughout my regular activities to remember that I am connected to Jesus like a branch to a vine, drawing life from Him in this very moment.",
+      "leavingAtCross": [
+        "The exhausting pattern of spiritual commuting - constantly trying to get to God instead of recognizing I'm already with Him",
+        "The compartmentalized faith that separates 'spiritual time' from 'regular time'",
+        "The performance-based relationship that makes me feel I have to earn access to God's presence"
+      ],
+      "receivingFromCross": [
+        "The invitation to permanent residence in Christ - to live my entire life connected to Him",
+        "The understanding that every moment can be a moment of abiding, not just designated 'spiritual' times",
+        "The security of knowing that Jesus remains in me even when I'm not consciously thinking about Him"
+      ],
+      "content": "I will practice 'abiding awareness' today - pausing throughout my regular activities to remember that I am connected to Jesus like a branch to a vine, drawing life from Him in this very moment."
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "What does 'visiting God' versus 'dwelling with God' look like in your daily experience?",
+        "In what areas of your life do you feel most disconnected from God's presence? What might change if you learned to abide there?",
+        "How might your relationships, work, and leisure time be different if you truly believed Jesus was present and active in those areas?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area of your life where you struggle to sense God's presence. Brainstorm together how you might practice 'abiding awareness' in that area.",
+        "Commit to checking in with each other mid-week: 'How are you doing at remembering you're connected to the vine today?'",
+        "Pray together that God would help you move from spiritual visiting to spiritual dwelling."
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "John 1:14",
+          "text": "The Word became flesh and made his dwelling among us."
+        },
+        {
+          "reference": "John 15:5",
+          "text": "I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 15",
+          "note": "Read the full vine and branches discourse for context"
+        }
+      ]
     },
     {
       "type": "profile",
       "name": "Jesus",
+      "title": "The True Vine",
+      "description": "In John 15, Jesus identifies Himself as the true vine - the source of life, nourishment, and fruitfulness for all who remain connected to Him. This metaphor reveals His desire for intimate, continuous relationship with His followers.",
+      "keyQuote": "Remain in me, as I also remain in you.",
+      "lessonForUs": "Jesus doesn't call us to religious performance but to relational connection. Our fruitfulness depends entirely on our attachment to Him.",
       "heading": "The True Vine"
     }
   ],
   "panels": [],
-  "totalWords": 577
+  "totalWords": 1678
 }

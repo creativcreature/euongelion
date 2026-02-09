@@ -2,65 +2,148 @@
   "day": 5,
   "title": "Discerning God's Voice vs. My Feelings",
   "teaser": "Learning to distinguish God's guidance from emotional impulses",
+  "anchorVerse": "Jeremiah 17:9",
+  "theme": "Learning to distinguish God's guidance from emotional impulses",
   "framework": "Jeremiah 17:9",
   "scriptureReference": "Jeremiah 17:9",
   "modules": [
     {
       "type": "scripture",
-      "passage": "The heart is deceitful above all things and beyond cure. Who can understand it?",
       "reference": "Jeremiah 17:9",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "deceitful above all things",
+        "Who can understand it"
+      ],
+      "hebrewOriginal": "עָקֹב הַלֵּב מִכֹּל וְאָנֻשׁ הוּא מִי יֵדָעֶנּוּ",
+      "passage": "The heart is deceitful above all things and beyond cure. Who can understand it?"
     },
     {
       "type": "vocab",
+      "language": "hebrew",
       "word": "לֵב",
       "transliteration": "lev",
-      "language": "hebrew",
+      "pronunciation": "LAYV",
+      "meaning": "heart, inner self (mind, will, emotions)",
+      "rootMeaning": "In Hebrew thought, the lev (heart) was not just the seat of emotion; it referred to one's inner life - thoughts, will, and affections. Jeremiah 17:9's sobering statement that the heart is deceitful (literally 'crooked') comes in a context: the prior verses contrast the person who trusts in human strength versus the person who trusts in the Lord.",
+      "usageNote": "The heart in Hebrew thought encompasses what we would call mind, will, and emotions combined - our entire inner world. This is why Scripture calls us to 'guard your heart, for everything you do flows from it' (Proverbs 4:23).",
+      "relatedWords": [
+        {
+          "word": "עָקֹב (aqov)",
+          "reference": "Deceitful, crooked, twisted - describing the heart's tendency to mislead"
+        }
+      ],
+      "strongsNumber": "H3820",
       "definition": "heart, inner self (mind, will, emotions)",
       "usage": "In Hebrew thought, the lev (heart) was not just the seat of emotion; it referred to one's inner life - thoughts, will, and affections. Jeremiah 17:9's sobering statement that the heart is deceitful (literally 'crooked') comes in a context: the prior verses contrast the person who trusts in human strength versus the person who trusts in the Lord."
     },
     {
       "type": "teaching",
+      "body": "Our emotions are a God-given part of us, but Scripture warns that the heart (our inner feelings and desires) can be 'deceitful above all things.' That doesn't mean our feelings are always wrong; it means they're not a reliable stand-alone guide.\n\nThink of Peter, who felt sure he would never abandon Jesus, but later that very night he denied Him three times. Peter's emotional confidence wasn't the same as God's reality. Or consider Saul (later Paul) - he felt he was serving God by persecuting Christians, until Jesus appeared and corrected him.\n\nSo how do we discern between God's voice and our own inner voice?\n\nFirst: God's voice aligns with Scripture's unchanging truth, whereas our feelings often fluctuate.\n\nSecond: God's voice brings a wisdom and peace that transcends momentary emotion. Colossians 3:15 says 'Let the peace of Christ rule in your hearts.'\n\nThird: Seek wise counsel. Proverbs 11:14 notes that 'in an abundance of counselors there is safety.'",
+      "keyInsight": "Our emotions are God-given but not reliable as a stand-alone guide - they need to be submitted to Scripture, peace, and wise counsel.",
       "content": "Our emotions are a God-given part of us, but Scripture warns that the heart (our inner feelings and desires) can be 'deceitful above all things.' That doesn't mean our feelings are always wrong; it means they're not a reliable stand-alone guide.\n\nThink of Peter, who felt sure he would never abandon Jesus, but later that very night he denied Him three times. Peter's emotional confidence wasn't the same as God's reality. Or consider Saul (later Paul) - he felt he was serving God by persecuting Christians, until Jesus appeared and corrected him.\n\nSo how do we discern between God's voice and our own inner voice?\n\nFirst: God's voice aligns with Scripture's unchanging truth, whereas our feelings often fluctuate.\n\nSecond: God's voice brings a wisdom and peace that transcends momentary emotion. Colossians 3:15 says 'Let the peace of Christ rule in your hearts.'\n\nThird: Seek wise counsel. Proverbs 11:14 notes that 'in an abundance of counselors there is safety.'",
       "heading": "The Ancient Warning: The Deceitful Heart"
     },
     {
       "type": "story",
+      "body": "Daniel had an important life choice to make: whether to take a stable job in his hometown or move overseas for a missionary opportunity. His excitement soared at the idea of adventure abroad. He prayed, 'God, I feel so strongly that You want me to go!'\n\nWeeks later, however, the overseas position fell through due to unforeseen issues. Daniel was crushed. 'But God, I felt You leading me!' he lamented.\n\nIn the aftermath, a mentor gently challenged him: Had God clearly said to go, or had Daniel assumed his strong feelings were God's voice? Daniel decided to slow down and seek God afresh - spending extra time in Scripture, fasting, and asking for wise counsel.\n\nOver time, a different picture emerged: he noticed in prayer a recurring sense of peace about staying and serving in his own community first. It wasn't as glamorous as his original plan, but it aligned with a Bible principle that kept coming to mind: 'Whoever can be trusted with little can also be trusted with much' (Luke 16:10).",
+      "connectionToTheme": "Daniel's experience shows the danger of equating strong feelings with God's voice, and the wisdom of testing our impressions against Scripture, peace, and counsel.",
       "content": "Daniel had an important life choice to make: whether to take a stable job in his hometown or move overseas for a missionary opportunity. His excitement soared at the idea of adventure abroad. He prayed, 'God, I feel so strongly that You want me to go!'\n\nWeeks later, however, the overseas position fell through due to unforeseen issues. Daniel was crushed. 'But God, I felt You leading me!' he lamented.\n\nIn the aftermath, a mentor gently challenged him: Had God clearly said to go, or had Daniel assumed his strong feelings were God's voice? Daniel decided to slow down and seek God afresh - spending extra time in Scripture, fasting, and asking for wise counsel.\n\nOver time, a different picture emerged: he noticed in prayer a recurring sense of peace about staying and serving in his own community first. It wasn't as glamorous as his original plan, but it aligned with a Bible principle that kept coming to mind: 'Whoever can be trusted with little can also be trusted with much' (Luke 16:10).",
       "heading": "The Modern Disciple's Confusion"
     },
     {
       "type": "insight",
+      "body": "Sarah was known for her 'gut instincts' in business. She prided herself on making quick decisions based on how things 'felt.' This approach had served her well professionally, so she applied it to her spiritual life too.\n\nBut when Sarah's feelings led her to make several poor relational choices - each time convinced 'God was leading' - she began to question her discernment. A wise mentor helped her see that while emotions are important, they need to be submitted to Scripture and wise counsel.\n\nSarah learned to ask three questions before acting on strong feelings: 'Does this align with Scripture?' 'Do wise counselors agree?' and 'Does this bring lasting peace or just temporary excitement?'",
+      "historicalContext": "The ancient world understood the heart's complexity. Egyptian wisdom literature warned against trusting emotions alone. Greek philosophers like Aristotle distinguished between different types of desires and the need for reason to guide emotion. The Hebrew Scriptures go deeper, recognizing that the heart's corruption affects not just emotions but thoughts and will. This is why Psalm 139:23-24 prays, 'Search me, O God, and know my heart... See if there is any offensive way in me, and lead me in the way everlasting.'",
+      "fascinatingFact": "Martin Luther once wrote: 'Feelings come and feelings go, And feelings are deceiving: My warrant is the Word of God, Naught else is worth believing.' It's a reminder that while emotions have their place, God's Word is the final authority over what we think we're 'hearing.'",
       "content": "Sarah was known for her 'gut instincts' in business. She prided herself on making quick decisions based on how things 'felt.' This approach had served her well professionally, so she applied it to her spiritual life too.\n\nBut when Sarah's feelings led her to make several poor relational choices - each time convinced 'God was leading' - she began to question her discernment. A wise mentor helped her see that while emotions are important, they need to be submitted to Scripture and wise counsel.\n\nSarah learned to ask three questions before acting on strong feelings: 'Does this align with Scripture?' 'Do wise counselors agree?' and 'Does this bring lasting peace or just temporary excitement?'",
       "heading": "The Contemporary Challenge: Emotional Decision-Making"
     },
     {
       "type": "bridge",
-      "content": "Scripture has always warned that the human heart is unreliable as an ultimate guide - it can deceive us.\n\nIn our feelings-focused culture that says 'follow your heart,' believers must learn to submit emotions to Scripture and wise counsel."
+      "ancientTruth": "Scripture has always warned that the human heart is unreliable as an ultimate guide - it can deceive us.",
+      "modernApplication": "In our feelings-focused culture that says 'follow your heart,' believers must learn to submit emotions to Scripture and wise counsel.",
+      "connectionPoint": "The solution isn't to ignore emotions but to submit them to God's searching and Scripture's truth. Emotions inform but don't determine.",
+      "newTestamentEcho": "Jesus in Gethsemane shows the model: He honestly expressed His distress but ultimately prayed, 'Yet not My will, but Yours be done' (Luke 22:42)."
     },
     {
       "type": "reflection",
-      "prompt": "When you sense a leading or desire, how can you tell if it's God's voice guiding you or just your own emotions and wants?"
+      "prompt": "When you sense a leading or desire, how can you tell if it's God's voice guiding you or just your own emotions and wants?",
+      "additionalQuestions": [
+        "Can you recall a time you followed a feeling you thought was God, and it turned out not to be? What did you learn from that?",
+        "How can distinguishing between God's voice and your own impulses improve your decision-making and spiritual growth?",
+        "What practice helps you discern God's guidance (searching the Scriptures, journaling prayers, seeking confirmation)?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "Father, search my lev - my heart. I acknowledge that my feelings can mislead me. Purify my motives and sharpen my discernment. I submit my desires to Your Word and Spirit. Let Your voice be louder than my own inner voice. Amen."
+      "posture": "confession",
+      "prayerText": "Father, search my lev - my heart. I acknowledge that my feelings can mislead me. Purify my motives and sharpen my discernment. I submit my desires to Your Word and Spirit. Let Your voice be louder than my own inner voice. Amen.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "Today, when I experience a strong emotion or urge to act, I will pause and pray: 'Lord, is this from You, or just from me?' I will wait and, if possible, seek confirmation from Scripture before jumping forward.",
+      "leavingAtCross": [
+        "My insistence on having my own way, which can masquerade as 'God told me so'",
+        "The confusion and instability caused by following every emotional whim",
+        "Any bitterness toward God for times He didn't 'rubber-stamp' my plans"
+      ],
+      "receivingFromCross": [
+        "A new openness to God's true voice, even if it gently corrects or redirects me",
+        "Greater self-awareness about my emotions, submitted to Christ",
+        "The assurance that God's will - though not always what I initially want - is always loving and ultimately best for me and others"
+      ],
+      "content": "Today, when I experience a strong emotion or urge to act, I will pause and pray: 'Lord, is this from You, or just from me?' I will wait and, if possible, seek confirmation from Scripture before jumping forward."
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "Why do you think God sometimes says 'no' or 'wait' to us, even when we feel so sure about a direction? Have you experienced His loving redirection?",
+        "How can distinguishing between God's voice and your own impulses improve your decision-making and spiritual growth?",
+        "Share a practice that helps you discern God's guidance (searching the Scriptures, journaling prayers, seeking confirmation)."
+      ],
+      "forAccountabilityPartners": [
+        "Be honest with each other about something you strongly feel led to do. Help each other test that leading with questions: Does it align with Scripture? Does it bring peace or anxiety? What do wise counselors say?",
+        "Pray together about major decisions you're facing, asking God to reveal any areas where emotions might be clouding His voice.",
+        "Check in weekly: 'What's one way you distinguished between God's voice and your feelings this week?'"
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Colossians 3:15",
+          "text": "Let the peace of Christ rule in your hearts."
+        },
+        {
+          "reference": "Proverbs 11:14",
+          "text": "For lack of guidance a nation falls, but victory is won through many advisers."
+        },
+        {
+          "reference": "Psalm 139:23-24",
+          "text": "Search me, God, and know my heart; test me and know my anxious thoughts. See if there is any offensive way in me, and lead me in the way everlasting."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 22:39-46",
+          "note": "Study Jesus in Gethsemane as the model for submitting feelings to God's will"
+        }
+      ]
     },
     {
       "type": "profile",
       "name": "Jesus in Gethsemane",
+      "title": "The Model of Submitted Feelings",
+      "description": "In the Garden of Gethsemane, Jesus experienced intense emotional distress, even asking if the cup could pass from Him. Yet He submitted His feelings to the Father's will, showing us the path of true discernment.",
+      "keyQuote": "Yet not My will, but Yours be done.",
+      "lessonForUs": "Honest acknowledgment of our feelings before God, combined with willing submission to His will, is the path to true discernment and peace.",
       "heading": "The Model of Submitted Feelings"
     }
   ],
   "panels": [],
-  "totalWords": 669
+  "totalWords": 1960
 }

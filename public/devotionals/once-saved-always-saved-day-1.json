@@ -1,66 +1,137 @@
 {
   "day": 1,
   "title": "What's Happening (and Who's Involved)?",
+  "subtitle": "Jesus's Promise of Eternal Security",
   "teaser": "Understanding Jesus's absolute promise that no one can snatch his sheep from his hand",
+  "anchorVerse": "John 10:28",
+  "theme": "Understanding Jesus's absolute promise that no one can snatch his sheep from his hand",
   "framework": "John 10:28",
   "scriptureReference": "John 10:28",
   "modules": [
     {
       "type": "scripture",
-      "passage": "My sheep listen to my voice; I know them, and they follow me. I give them eternal life, and they shall never perish; no one will snatch them from my hand. My Father, who has given them to me, is greater than all; no one can snatch them from my Father's hand. I and the Father are one.",
       "reference": "John 10:27-30",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "I give them eternal life",
+        "they shall never perish",
+        "no one will snatch them from my hand"
+      ],
+      "passage": "My sheep listen to my voice; I know them, and they follow me. I give them eternal life, and they shall never perish; no one will snatch them from my hand. My Father, who has given them to me, is greater than all; no one can snatch them from my Father's hand. I and the Father are one."
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "ἁρπάζω",
       "transliteration": "harpazo",
-      "language": "greek",
+      "pronunciation": "har-PAD-zo",
+      "meaning": "to snatch, to seize by force",
+      "rootMeaning": "This is the word used for violent robbery or kidnapping. Jesus is saying that no external force can violently tear his sheep away from him.",
+      "usageNote": "The same word is used in 1 Thessalonians 4:17 for the 'rapture' - being caught up to meet the Lord.",
+      "strongsNumber": "G726",
       "definition": "to snatch, to seize by force",
       "usage": "This is the word used for violent robbery or kidnapping. Jesus is saying that no external force can violently tear his sheep away from him."
     },
     {
       "type": "teaching",
+      "body": "Jesus's statement about eternal security comes in response to a direct challenge from Jewish religious leaders who demanded that he tell them plainly whether he was the Messiah. His response reveals crucial truths about salvation and security.\n\nThe Nature of His Sheep: Jesus describes his followers as 'sheep' who 'listen to my voice' and 'follow me.' This isn't a passive relationship but an active, ongoing response to his leadership.\n\nThe Gift of Eternal Life: Jesus says 'I give them eternal life,' using the present tense. This isn't something he will give in the future but something he gives now to those who believe.\n\nThe Promise of Security: The phrase 'they shall never perish' uses a double negative in Greek, which is the strongest possible way to express negation. Jesus is making an absolute, unconditional promise.\n\nThe Double Protection: Jesus describes a double layer of protection - they are in his hand, and his hand is in the Father's hand. To reach Jesus's sheep, an enemy would have to overcome both the Son and the Father.",
+      "keyInsight": "Eternal security rests not on the believer's ability to hold onto God but on God's ability to hold onto the believer.",
       "content": "Jesus's statement about eternal security comes in response to a direct challenge from Jewish religious leaders who demanded that he tell them plainly whether he was the Messiah. His response reveals crucial truths about salvation and security.\n\nThe Nature of His Sheep: Jesus describes his followers as 'sheep' who 'listen to my voice' and 'follow me.' This isn't a passive relationship but an active, ongoing response to his leadership.\n\nThe Gift of Eternal Life: Jesus says 'I give them eternal life,' using the present tense. This isn't something he will give in the future but something he gives now to those who believe.\n\nThe Promise of Security: The phrase 'they shall never perish' uses a double negative in Greek, which is the strongest possible way to express negation. Jesus is making an absolute, unconditional promise.\n\nThe Double Protection: Jesus describes a double layer of protection - they are in his hand, and his hand is in the Father's hand. To reach Jesus's sheep, an enemy would have to overcome both the Son and the Father.",
       "heading": "Jesus's Promise of Eternal Security"
     },
     {
       "type": "story",
+      "body": "Dr. Sarah Martinez had been a pediatric oncologist for fifteen years when she began to question everything she thought she knew about faith, doubt, and perseverance. It started with a patient - eight-year-old Emma, who had been battling leukemia for two years. Emma's parents were devout Christians who had prayed fervently for healing.\n\nWhen Emma's condition worsened, her father, Pastor David Chen, began to struggle with doubt. 'Dr. Martinez,' he said, 'I've preached for twenty years that God is faithful. But watching my daughter suffer... I'm starting to wonder if I ever really believed at all.'\n\nThe question haunted Sarah: 'If I was really saved, would I be having these doubts?' She began to wonder: What does it really mean to be 'saved'? Is it a one-time decision that guarantees eternal security regardless of subsequent doubts or failures? Or is it an ongoing relationship that requires constant maintenance?",
+      "connectionToTheme": "The relationship between faith, doubt, and eternal security is more complex than simple formulas suggest, and real-life crises often force us to examine what we actually believe about salvation.",
       "content": "Dr. Sarah Martinez had been a pediatric oncologist for fifteen years when she began to question everything she thought she knew about faith, doubt, and perseverance. It started with a patient - eight-year-old Emma, who had been battling leukemia for two years. Emma's parents were devout Christians who had prayed fervently for healing.\n\nWhen Emma's condition worsened, her father, Pastor David Chen, began to struggle with doubt. 'Dr. Martinez,' he said, 'I've preached for twenty years that God is faithful. But watching my daughter suffer... I'm starting to wonder if I ever really believed at all.'\n\nThe question haunted Sarah: 'If I was really saved, would I be having these doubts?' She began to wonder: What does it really mean to be 'saved'? Is it a one-time decision that guarantees eternal security regardless of subsequent doubts or failures? Or is it an ongoing relationship that requires constant maintenance?",
       "heading": "The Pastor's Crisis"
     },
     {
       "type": "insight",
+      "body": "Jesus's imagery of sheep and shepherd connects directly to Old Testament passages like Psalm 23 and Ezekiel 34, where God promises to be the shepherd of his people and to rescue them from those who would harm them.",
+      "historicalContext": "In Ezekiel 34:11-16, God declares: 'I myself will search for my sheep and look after them... I will rescue them from all the places where they were scattered.' Jesus is claiming to fulfill these ancient promises, positioning himself as the divine shepherd who provides ultimate security for God's people.",
+      "fascinatingFact": "The phrase 'they shall never perish' uses the Greek construction 'ou me' with the aorist subjunctive - the strongest possible way to deny something will ever happen. It's emphatic denial that goes beyond simple negation.",
       "content": "Jesus's imagery of sheep and shepherd connects directly to Old Testament passages like Psalm 23 and Ezekiel 34, where God promises to be the shepherd of his people and to rescue them from those who would harm them.",
       "heading": "The Shepherd and the Sheep"
     },
     {
       "type": "bridge",
-      "content": "Jesus promised that no one could snatch his sheep from his hand, using the strongest possible language of denial.\n\nWhen you doubt your salvation because of your failures, fears, or feelings, remember that your security depends on God's grip, not yours."
+      "ancientTruth": "Jesus promised that no one could snatch his sheep from his hand, using the strongest possible language of denial.",
+      "modernApplication": "When you doubt your salvation because of your failures, fears, or feelings, remember that your security depends on God's grip, not yours.",
+      "connectionPoint": "The same insecurities that plagued first-century believers plague us today - the fear that we're not good enough, haven't believed hard enough, or might somehow fall away.",
+      "newTestamentEcho": "Paul echoes this promise in Romans 8:38-39: 'Nothing can separate us from the love of God that is in Christ Jesus our Lord.'"
     },
     {
       "type": "reflection",
-      "prompt": "What does it mean that Jesus gives eternal life as a present reality, not just a future hope?"
+      "prompt": "What does it mean that Jesus gives eternal life as a present reality, not just a future hope?",
+      "additionalQuestions": [
+        "What area of your life reveals that you're living as if your relationship with God depends on your performance rather than his promise?",
+        "How does Jesus's promise of security affect your understanding of your relationship with God?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "Help me understand the security I have in Christ while also taking seriously my responsibility to live faithfully as his follower. Free me from the anxiety of trying to earn what you have already given me by grace."
+      "posture": "petition",
+      "prayerText": "Help me understand the security I have in Christ while also taking seriously my responsibility to live faithfully as his follower. Free me from the anxiety of trying to earn what you have already given me by grace.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "Today I will identify one area where I've been living as if my relationship with God depends on my performance rather than his promise, and I will consciously rest in his security instead.",
+      "leavingAtCross": [
+        "The fear that my salvation depends on my performance",
+        "The anxiety of wondering if I've believed 'hard enough'",
+        "The pride that makes me think I can maintain my own security"
+      ],
+      "receivingFromCross": [
+        "The confidence that comes from God's unbreakable grip",
+        "The peace of knowing my security rests in his character, not mine",
+        "The freedom to serve God from gratitude rather than fear"
+      ],
+      "content": "Today I will identify one area where I've been living as if my relationship with God depends on my performance rather than his promise, and I will consciously rest in his security instead."
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "How does Jesus's promise of eternal security affect your understanding of your relationship with God?",
+        "What does it mean practically to 'listen to Jesus's voice' and 'follow him' in your contemporary context?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area where you struggle with assurance of salvation",
+        "Ask each other: 'How do you balance confidence in God's keeping power with personal responsibility for faithfulness?'"
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 23:1-4",
+          "text": "The Lord is my shepherd; I shall not want..."
+        },
+        {
+          "reference": "Ezekiel 34:11-16",
+          "text": "I myself will search for my sheep and look after them..."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "The Gospel of John",
+          "note": "Read John 10:1-30 for the full Good Shepherd discourse"
+        }
+      ]
     },
     {
       "type": "profile",
       "name": "John the Apostle",
+      "title": "The Disciple Whom Jesus Loved",
+      "description": "John was one of Jesus's closest disciples, part of his inner circle along with Peter and James. He refers to himself as 'the disciple whom Jesus loved,' indicating a particularly close relationship with Jesus. His Gospel is written specifically to help people understand what it means to have eternal life through faith in Jesus.",
+      "keyQuote": "These are written that you may believe that Jesus is the Messiah, the Son of God, and that by believing you may have life in his name.",
+      "lessonForUs": "John's intimate knowledge of Jesus gives us confidence that his testimony about eternal security comes from someone who knew Jesus personally and understood his promises.",
       "heading": "The Disciple Whom Jesus Loved"
     }
   ],
   "panels": [],
-  "totalWords": 586
+  "totalWords": 1575
 }

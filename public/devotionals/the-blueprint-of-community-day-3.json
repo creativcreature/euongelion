@@ -2,45 +2,70 @@
   "day": 3,
   "title": "Peter's Sermon and the First Response",
   "teaser": "The gospel confronts reality, requires a response, and creates community",
+  "anchorVerse": "Acts 2:38",
+  "theme": "The gospel confronts reality, requires a response, and creates community",
   "framework": "Acts 2:38",
   "scriptureReference": "Acts 2:38",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins. And you will receive the gift of the Holy Spirit.",
       "reference": "Acts 2:38",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "Repent",
+        "be baptized",
+        "forgiveness of your sins",
+        "gift of the Holy Spirit"
+      ],
+      "context": "Peter's response to the crowd asking 'What shall we do?'",
+      "passage": "Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins. And you will receive the gift of the Holy Spirit."
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "καρδίαν κατενύγησαν",
       "transliteration": "kardian katenygēsan",
-      "language": "greek",
+      "pronunciation": "kar-DEE-an kah-teh-NOO-gay-san",
+      "meaning": "cut to the heart, pierced in the heart",
+      "rootMeaning": "This phrase describes deep spiritual conviction - not shame, not guilt for guilt's sake, but a piercing clarity that awakens a person to truth and draws them toward God.",
+      "usageNote": "Found in Acts 2:37 describing the crowd's response to Peter's sermon",
       "definition": "cut to the heart, pierced in the heart",
       "usage": "This phrase describes deep spiritual conviction - not shame, not guilt for guilt's sake, but a piercing clarity that awakens a person to truth and draws them toward God."
     },
     {
       "type": "teaching",
+      "body": "Peter's sermon is the first Christian sermon in history, and it sets the pattern for gospel proclamation.\n\n1. The Gospel is rooted in Scripture: Peter quotes Joel and Psalms to show that Jesus fulfills God's long story. The gospel is not a new idea - it is the climax of God's plan.\n\n2. The Gospel confronts reality: Peter does not soften the truth: 'You crucified Him.' The gospel exposes sin so it can be healed, not hidden.\n\n3. The Gospel requires a response: The people ask, 'What shall we do?' The gospel is not just information. It is an invitation to transformation.\n\n4. The Gospel creates community: Repentance and baptism do not lead to isolation. They lead directly into the life of the church described in Acts 2:42-47.\n\n5. The Gospel opens the door for everyone: Peter ends with a promise: 'The promise is for you and your children and for all who are far off - for all whom the Lord our God will call' (Acts 2:39). This includes the nations, the outcasts, the outsiders, and the wanderers.",
+      "keyInsight": "The church begins not with a strategy meeting, but with surrendered hearts and a clear gospel.",
       "content": "Peter's sermon is the first Christian sermon in history, and it sets the pattern for gospel proclamation.\n\n1. The Gospel is rooted in Scripture: Peter quotes Joel and Psalms to show that Jesus fulfills God's long story. The gospel is not a new idea - it is the climax of God's plan.\n\n2. The Gospel confronts reality: Peter does not soften the truth: 'You crucified Him.' The gospel exposes sin so it can be healed, not hidden.\n\n3. The Gospel requires a response: The people ask, 'What shall we do?' The gospel is not just information. It is an invitation to transformation.\n\n4. The Gospel creates community: Repentance and baptism do not lead to isolation. They lead directly into the life of the church described in Acts 2:42-47.\n\n5. The Gospel opens the door for everyone: Peter ends with a promise: 'The promise is for you and your children and for all who are far off - for all whom the Lord our God will call' (Acts 2:39). This includes the nations, the outcasts, the outsiders, and the wanderers.",
       "heading": "The Pattern of Gospel Proclamation"
     },
     {
       "type": "story",
+      "body": "As news of Herrnhut's unity spread, visitors did not simply observe a peaceful community - many found themselves strangely moved by it. Some arrived ready to critique, but within hours felt something shift inside. Others came burdened by wounds from church conflicts or spiritual dryness, only to find their hearts stirred with unexpected clarity. It was not emotional manipulation. It was a calm conviction, the kind that comes when a community is so filled with prayer that people breathe in the atmosphere of God's presence without anyone trying to force it.\n\nOne traveler from Silesia wrote in his journal that he had planned to stay only a day. Instead, he stayed three weeks. What changed him was not a sermon or argument, but the way the people of Herrnhut loved one another with patience and humility. He said their unity 'laid open my heart' and exposed places he had ignored for years. Bitterness he had carried suddenly felt heavy. Habits he had justified felt hollow. He wrote, 'Their life was a sermon, and my heart was pierced.'\n\nAnother visitor, a young woman from Moravia, had grown numb to faith after years of exile and religious strife. When she arrived in Herrnhut, someone invited her to a simple evening prayer gathering. As she listened to men and women pray in their own words, she felt walls she had built begin to soften. She later described it as if 'the peace of God reached into the places I had locked away.' She wept quietly, not out of despair, but out of a conviction that she no longer needed to pretend.\n\nWhat touched them was not flawless people or perfect behavior. It was the unmistakable sense that God was at work among ordinary believers.",
+      "connectionToTheme": "When a community lives under the Spirit's presence, people are not pressured into change - they are invited into it. Conviction becomes a doorway to healing.",
       "content": "As news of Herrnhut's unity spread, visitors did not simply observe a peaceful community - many found themselves strangely moved by it. Some arrived ready to critique, but within hours felt something shift inside. Others came burdened by wounds from church conflicts or spiritual dryness, only to find their hearts stirred with unexpected clarity. It was not emotional manipulation. It was a calm conviction, the kind that comes when a community is so filled with prayer that people breathe in the atmosphere of God's presence without anyone trying to force it.\n\nOne traveler from Silesia wrote in his journal that he had planned to stay only a day. Instead, he stayed three weeks. What changed him was not a sermon or argument, but the way the people of Herrnhut loved one another with patience and humility. He said their unity 'laid open my heart' and exposed places he had ignored for years. Bitterness he had carried suddenly felt heavy. Habits he had justified felt hollow. He wrote, 'Their life was a sermon, and my heart was pierced.'\n\nAnother visitor, a young woman from Moravia, had grown numb to faith after years of exile and religious strife. When she arrived in Herrnhut, someone invited her to a simple evening prayer gathering. As she listened to men and women pray in their own words, she felt walls she had built begin to soften. She later described it as if 'the peace of God reached into the places I had locked away.' She wept quietly, not out of despair, but out of a conviction that she no longer needed to pretend.\n\nWhat touched them was not flawless people or perfect behavior. It was the unmistakable sense that God was at work among ordinary believers.",
       "heading": "The Moravians of Herrnhut (Part 3)"
     },
     {
       "type": "reflection",
-      "prompt": "Where is God trying to 'cut through' my defenses so I can repent, receive, and walk in a new direction?"
+      "prompt": "Where is God trying to 'cut through' my defenses so I can repent, receive, and walk in a new direction?",
+      "additionalQuestions": [],
+      "invitationType": "honest-examination"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "Think of one area in your life where you have been resisting conviction. Today, pray one honest sentence: 'Lord, make me willing to change.' The Spirit meets honesty faster than perfection.",
+      "leavingAtCross": [],
+      "receivingFromCross": [],
+      "content": "Think of one area in your life where you have been resisting conviction. Today, pray one honest sentence: 'Lord, make me willing to change.' The Spirit meets honesty faster than perfection."
     },
     {
       "type": "prayer",
-      "prayerText": "Jesus, thank You for the truth that sets me free. When Your Word confronts me, help me not to run or hide. Cut through what is false in me so I can walk in what is true. Give me the courage to repent, the humility to be formed, and the joy of life in Your Spirit. Amen."
+      "posture": "confession",
+      "prayerText": "Jesus, thank You for the truth that sets me free. When Your Word confronts me, help me not to run or hide. Cut through what is false in me so I can walk in what is true. Give me the courage to repent, the humility to be formed, and the joy of life in Your Spirit. Amen.",
+      "prayerType": "personal"
     }
   ],
   "panels": [],
-  "totalWords": 640
+  "totalWords": 1289
 }

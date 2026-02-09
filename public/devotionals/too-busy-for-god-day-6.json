@@ -2,65 +2,210 @@
   "day": 6,
   "title": "Integration and Commitment",
   "teaser": "Actively remembering God throughout daily life",
+  "anchorVerse": "Ecclesiastes 12:1",
+  "theme": "Actively remembering God throughout daily life",
   "framework": "Ecclesiastes 12:1",
   "scriptureReference": "Ecclesiastes 12:1",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Remember your Creator in the days of your youth, before the days of trouble come and the years approach when you will say, 'I find no pleasure in them.'",
       "reference": "Ecclesiastes 12:1",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "Remember your Creator",
+        "days of your youth"
+      ],
+      "hebrewOriginal": "וּזְכֹר אֶת־בּוֹרְאֶיךָ בִּימֵי בְּחוּרֹתֶיךָ",
+      "passage": "Remember your Creator in the days of your youth, before the days of trouble come and the years approach when you will say, 'I find no pleasure in them.'"
     },
     {
       "type": "vocab",
+      "language": "hebrew",
       "word": "זְכֹר",
       "transliteration": "zakhor",
-      "language": "hebrew",
+      "pronunciation": "zah-KHOR",
+      "meaning": "remember, be mindful, pay attention",
+      "rootMeaning": "This isn't casual recollection but active, intentional mindfulness. The Hebrew word implies paying attention, being mindful, keeping something at the forefront of consciousness.",
+      "wordByWord": [
+        {
+          "word": "וּזְכֹר",
+          "transliteration": "uzekhor",
+          "meaning": "and remember, be mindful of"
+        },
+        {
+          "word": "אֶת",
+          "transliteration": "et",
+          "meaning": "direct object marker"
+        },
+        {
+          "word": "בּוֹרְאֶיךָ",
+          "transliteration": "bor'eikha",
+          "meaning": "your Creator (plural of majesty)"
+        },
+        {
+          "word": "בִּימֵי",
+          "transliteration": "bimei",
+          "meaning": "in the days of"
+        },
+        {
+          "word": "בְּחוּרֹתֶיךָ",
+          "transliteration": "bechuroteikha",
+          "meaning": "your youth, your prime"
+        }
+      ],
+      "usageNote": "Zakhor is active, not passive. It's not just mental recall but intentional focus that leads to action. The plural form of Creator (bore'eicha) emphasizes God's majesty and ongoing creative activity.",
+      "strongsNumber": "H2142",
       "definition": "remember, be mindful, pay attention",
       "usage": "This isn't casual recollection but active, intentional mindfulness. The Hebrew word implies paying attention, being mindful, keeping something at the forefront of consciousness."
     },
     {
       "type": "teaching",
+      "body": "Ecclesiastes ends with an urgent call: zakhor - remember your Creator. This isn't casual recollection but active, intentional mindfulness. The Hebrew word implies paying attention, being mindful, keeping something at the forefront of consciousness.\n\nSolomon warns that if we don't remember God in our youth (when we have energy and opportunity), we may find ourselves too busy, too tired, or too distracted to remember Him when we're older.",
+      "keyInsight": "The command is to remember your Creator, not just a generic deity. This implies remembering the One who formed you, knows you, and has a purpose for your life.",
       "content": "Ecclesiastes ends with an urgent call: zakhor - remember your Creator. This isn't casual recollection but active, intentional mindfulness. The Hebrew word implies paying attention, being mindful, keeping something at the forefront of consciousness.\n\nSolomon warns that if we don't remember God in our youth (when we have energy and opportunity), we may find ourselves too busy, too tired, or too distracted to remember Him when we're older.",
       "heading": "The Ancient Call to Remember"
     },
     {
       "type": "story",
+      "body": "Maria's grandmother had a saying: 'A busy life is often a forgetful life.' Maria didn't understand it then, but at 35, she felt the truth of it. The busier she became, the more she forgot what really mattered.\n\nShe forgot to call her parents. Forgot to nurture friendships. Forgot to enjoy simple pleasures. And most dangerously, she forgot God - not intellectually, but practically. Her schedule had no room for the One who gave her life.\n\nThe wake-up call came when she realized: I've become so busy managing my life that I've forgotten who my life belongs to.",
+      "connectionToTheme": "Maria represents the danger of practical atheism - living as if God doesn't exist, even when we intellectually believe He does.",
       "content": "Maria's grandmother had a saying: 'A busy life is often a forgetful life.' Maria didn't understand it then, but at 35, she felt the truth of it. The busier she became, the more she forgot what really mattered.\n\nShe forgot to call her parents. Forgot to nurture friendships. Forgot to enjoy simple pleasures. And most dangerously, she forgot God - not intellectually, but practically. Her schedule had no room for the One who gave her life.\n\nThe wake-up call came when she realized: I've become so busy managing my life that I've forgotten who my life belongs to.",
       "heading": "The Forgetting That Leads to Frenzy"
     },
     {
       "type": "insight",
+      "body": "Robert lived in an age of infinite information but struggled with spiritual amnesia. His phone remembered everything - contacts, appointments, facts, directions. But this external memory made his internal memory lazy. He could recall data instantly but struggled to remember what mattered most.\n\nThe irony was stark: I have access to all knowledge but am forgetting the most important knowledge - who God is and who I am to Him.",
+      "historicalContext": "Before written records were common, memory was crucial for preserving truth. Hebrew culture developed elaborate systems for remembering God's works - festivals, songs, stories, rituals. These weren't just historical preservation but active spiritual formation.",
+      "fascinatingFact": "The Hebrew word zakhor appears over 200 times in the Old Testament, making remembrance one of the most frequently commanded spiritual disciplines. God knows that forgetting Him is the root of all spiritual problems, so He constantly calls His people back to active remembrance.",
+      "greekParallel": {
+        "concepts": [
+          {
+            "term": "mnemoneuo",
+            "greek": "Μνημονεύω",
+            "meaning": "to remember, call to mind, mention"
+          },
+          {
+            "term": "anamnesis",
+            "greek": "Ἀνάμνησις",
+            "meaning": "remembrance, memorial, recollection"
+          }
+        ],
+        "newTestamentUsage": "Jesus instituted the Lord's Supper as an act of anamnesis - 'Do this in remembrance of me' (Luke 22:19). The early church practiced active remembrance not as a mental exercise, but as a formative spiritual discipline."
+      },
       "content": "Robert lived in an age of infinite information but struggled with spiritual amnesia. His phone remembered everything - contacts, appointments, facts, directions. But this external memory made his internal memory lazy. He could recall data instantly but struggled to remember what mattered most.\n\nThe irony was stark: I have access to all knowledge but am forgetting the most important knowledge - who God is and who I am to Him.",
       "heading": "Digital Amnesia"
     },
     {
       "type": "bridge",
-      "content": "Solomon urgently calls us to remember our Creator - not casual recollection but active, intentional mindfulness that shapes our priorities.\n\nWe've outsourced memory to devices and systems, losing the spiritual discipline of active remembrance. This makes us vulnerable to practical atheism - living as if God doesn't exist, even when we intellectually believe He does."
+      "ancientTruth": "Solomon urgently calls us to remember our Creator - not casual recollection but active, intentional mindfulness that shapes our priorities.",
+      "modernApplication": "We've outsourced memory to devices and systems, losing the spiritual discipline of active remembrance. This makes us vulnerable to practical atheism - living as if God doesn't exist, even when we intellectually believe He does.",
+      "connectionPoint": "Throughout the Old Testament, Israel's cycle was predictable: blessing to prosperity to busyness to forgetting God to crisis to remembering to repentance to blessing.",
+      "newTestamentEcho": "Psalm 103:2 - 'Praise the Lord, my soul, and forget not all his benefits.' The psalmist had to actively choose to remember God's goodness rather than letting busyness crowd it out."
     },
     {
       "type": "reflection",
-      "prompt": "What if remembering God is the antidote to being too busy for God?"
+      "prompt": "What if remembering God is the antidote to being too busy for God?",
+      "additionalQuestions": [
+        "How has busyness caused you to forget God practically in your daily life?",
+        "What specific practices could help you zakhor (remember) God more consistently?",
+        "How would your priorities change if you actively remembered that God is your Creator and Sustainer every moment?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "God, help me zakhor - to actively remember and be mindful of You in every season of life. Don't let busyness make me forget who You are and who I am to You. Amen."
+      "posture": "petition",
+      "prayerText": "God, help me zakhor - to actively remember and be mindful of You in every season of life. Don't let busyness make me forget who You are and who I am to You. Amen.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "I will create a specific practice of zakhor - actively remembering God throughout my day, not just in designated 'spiritual' times.",
+      "leavingAtCross": [
+        "The practical atheism that comes from being too busy to remember God",
+        "The forgetfulness that leads to anxiety and meaningless activity",
+        "The pride that makes me think I can manage life without constant awareness of my Creator"
+      ],
+      "receivingFromCross": [
+        "The discipline of zakhor - active remembrance of God throughout each day",
+        "The peace that comes from remembering who is really in control",
+        "The joy of living in conscious relationship with my Creator"
+      ],
+      "remembranceRhythms": {
+        "morning": "God, this day belongs to You",
+        "midday": "God, help me see this situation from Your perspective",
+        "evening": "God, thank You for sustaining me today",
+        "weekly": "Sabbath as extended remembrance time",
+        "monthly": "Review how God has been faithful",
+        "annually": "Celebrate God's goodness over the past year"
+      },
+      "content": "I will create a specific practice of zakhor - actively remembering God throughout my day, not just in designated 'spiritual' times."
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "How has busyness caused you to forget God practically in your daily life?",
+        "What specific practices could help you zakhor (remember) God more consistently?",
+        "How would your priorities change if you actively remembered that God is your Creator and Sustainer every moment?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one way busyness has made you forget God practically",
+        "Commit to one specific 'remembrance rhythm' you'll practice this week",
+        "Ask each other: 'How can we help each other remember God in the midst of busy lives?'"
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 103:2",
+          "text": "Praise the Lord, my soul, and forget not all his benefits"
+        },
+        {
+          "reference": "Luke 22:19",
+          "text": "Do this in remembrance of me"
+        },
+        {
+          "reference": "Deuteronomy 8:18",
+          "text": "Remember the LORD your God, for it is he who gives you the ability to produce wealth"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ecclesiastes 12",
+          "note": "Study the conclusion of Solomon's wisdom and the call to remember"
+        }
+      ],
+      "weeklyChallenge": {
+        "title": "The Remembrance Experiment",
+        "description": "Practice zakhor by setting three daily reminders on your phone",
+        "reminders": [
+          {
+            "time": "Morning",
+            "prompt": "Remember your Creator - start the day acknowledging God's sovereignty"
+          },
+          {
+            "time": "Midday",
+            "prompt": "God is with you - pause to recognize God's presence in current circumstances"
+          },
+          {
+            "time": "Evening",
+            "prompt": "Give thanks - end the day remembering God's faithfulness"
+          }
+        ]
+      }
     },
     {
       "type": "profile",
       "name": "Maria",
+      "title": "The Forgetful Professional",
+      "description": "A modern professional who realized that her busy life had become a forgetful life - forgetting what matters most while managing what matters least.",
+      "keyQuote": "A busy life is often a forgetful life.",
+      "lessonForUs": "Develop 'remembrance rhythms' - specific practices that help you zakhor throughout the day: morning acknowledgment, midday perspective check, evening gratitude, weekly Sabbath, monthly review, annual celebration.",
       "heading": "The Forgetful Professional"
     }
   ],
   "panels": [],
-  "totalWords": 430
+  "totalWords": 1439
 }

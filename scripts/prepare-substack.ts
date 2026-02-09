@@ -3,151 +3,128 @@
  * Converts 19 Substack series JSONs into individual devotional day files
  * in public/devotionals/{series-slug}-day-{n}.json
  *
- * Handles three source formats:
- * Format A: { series: { id }, days: [{ day: { number, title }, modules }] }
- * Format B: { slug, title, days: [{ day_number, title, modules }] }
- * Format C: { series: { id }, day: { number }, modules } (single day)
+ * PRESERVES all original Substack data — only renames fields where
+ * component expectations differ from source naming.
+ *
+ * Handles five source variants:
+ * A: { series, days: [{ number, title, anchorVerse, theme, modules }] }
+ * B: { series, days: [{ day: { number, title }, modules }] }
+ * C: { series, days: [...], masterDocument, profiles, resources }
+ * D: { series, day: { number }, modules } (single day at root)
+ * E: { series, overview, modules } (overview treated as day 1)
  */
 
 import * as fs from 'fs'
 import * as path from 'path'
 
-const SERIES_DIR = path.join(__dirname, '..', 'content', 'series-json')
-const OUTPUT_DIR = path.join(__dirname, '..', 'public', 'devotionals')
+const SERIES_DIR = path.join(process.cwd(), 'content', 'series-json')
+const OUTPUT_DIR = path.join(process.cwd(), 'public', 'devotionals')
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyObj = Record<string, any>
 
-// Map nested Substack module fields to flat Module interface fields
-const MODULE_FIELD_MAP: Record<string, Record<string, string>> = {
-  scripture: {
-    text: 'passage',
-    reference: 'reference',
-    translation: 'translation',
-  },
-  vocab: {
-    word: 'word',
-    transliteration: 'transliteration',
-    language: 'language',
-    definition: 'definition',
-    meaning: 'definition',
-    root_meaning: 'usage',
-    rootMeaning: 'usage',
-    usage_note: 'usage',
-    usageNote: 'usage',
-  },
-  teaching: {
-    body: 'content',
-    title: 'heading',
-  },
-  story: {
-    body: 'content',
-    title: 'heading',
-  },
-  insight: {
-    body: 'content',
-    title: 'heading',
-  },
-  bridge: {
-    body: 'content',
-    title: 'heading',
-  },
-  reflection: {
-    prompt: 'prompt',
-    question: 'prompt',
-    body: 'content',
-    title: 'heading',
-  },
-  prayer: {
-    text: 'prayerText',
-    body: 'prayerText',
-    prayer_text: 'prayerText',
-    prayerText: 'prayerText',
-    breath_prayer: 'breathPrayer',
-    breathPrayer: 'breathPrayer',
-    title: 'heading',
-  },
-  takeaway: {
-    body: 'content',
-    text: 'content',
-    title: 'heading',
-    key_point: 'content',
-    keyPoint: 'content',
-  },
-  comprehension: {
-    question: 'question',
-    options: 'options',
-    answer: 'answer',
-    correct_answer: 'answer',
-    correctAnswer: 'answer',
-    explanation: 'explanation',
-    title: 'heading',
-  },
-  profile: {
-    name: 'name',
-    era: 'era',
-    bio: 'bio',
-    body: 'bio',
-    title: 'heading',
-    figure_name: 'name',
-    figureName: 'name',
-    time_period: 'era',
-    timePeriod: 'era',
-  },
-  resource: {
-    title: 'heading',
-    resources: 'resources',
-    items: 'resources',
-  },
-}
-
+/**
+ * Normalizes a module by spreading all nested content fields to the top level.
+ * Only renames the few fields where component expectations differ from source.
+ */
 function normalizeModule(mod: AnyObj): AnyObj {
-  const { type } = mod
-  const nested: AnyObj = mod.content || mod.data || {}
-  const fieldMap = MODULE_FIELD_MAP[type] || {}
-  const result: AnyObj = { type }
+  const { type, order, content, data, ...rest } = mod
 
-  // Map nested fields to flat Module fields
-  for (const [sourceKey, targetKey] of Object.entries(fieldMap)) {
-    if (nested[sourceKey] !== undefined && result[targetKey] === undefined) {
-      result[targetKey] = nested[sourceKey]
+  // Determine nested content object (Substack wraps fields under content or data)
+  const nested: AnyObj | null =
+    content && typeof content === 'object' && !Array.isArray(content)
+      ? content
+      : data && typeof data === 'object' && !Array.isArray(data)
+        ? data
+        : null
+
+  // Start with type + all top-level fields (excluding order/content/data wrappers)
+  const result: AnyObj = { type, ...rest }
+
+  if (nested) {
+    // Spread ALL nested fields into result (preserving everything)
+    for (const [key, val] of Object.entries(nested)) {
+      if (val !== undefined && val !== null) {
+        result[key] = val
+      }
     }
   }
 
-  // Bridge: combine ancientTruth + modernApplication
-  if (type === 'bridge' && !result['content']) {
-    const parts: string[] = []
-    const ancient = nested['ancientTruth'] || nested['ancient_truth']
-    const modern = nested['modernApplication'] || nested['modern_application']
-    if (ancient) parts.push(String(ancient))
-    if (modern) parts.push(String(modern))
-    if (parts.length > 0) result['content'] = parts.join('\n\n')
+  // --- Critical renames (component expects different field names) ---
+
+  // Scripture: text -> passage
+  if (type === 'scripture' && result.text && !result.passage) {
+    result.passage = result.text
+    delete result.text
   }
 
-  // Teaching fallback: keyInsight if no body
-  if (type === 'teaching' && !result['content']) {
-    const insight = nested['keyInsight'] || nested['key_insight']
-    if (insight) result['content'] = String(insight)
+  // Vocab: meaning -> definition (keep meaning as alias too)
+  if (result.meaning && !result.definition) {
+    result.definition = result.meaning
   }
 
-  // Comprehension: ensure answer is number
-  if (type === 'comprehension' && result['answer'] !== undefined) {
-    result['answer'] = Number(result['answer'])
+  // Vocab: rootMeaning -> usage (keep rootMeaning too)
+  if (result.rootMeaning && !result.usage) {
+    result.usage = result.rootMeaning
   }
 
-  // Heading fallback
-  if (!result['heading'] && nested['title']) {
-    result['heading'] = nested['title']
+  // Teaching/Story/Insight/Bridge: body -> content
+  if (result.body && !result.content) {
+    result.content = result.body
   }
+
+  // Title -> heading (avoid collision with devotional-level title)
+  if (result.title && type !== 'profile') {
+    if (!result.heading) result.heading = result.title
+    delete result.title
+  }
+
+  // Prayer: text -> prayerText (avoid collision with general text)
+  if (type === 'prayer') {
+    if (result.text && !result.prayerText) {
+      result.prayerText = result.text
+      delete result.text
+    }
+    // Rename prayer's type to prayerType to avoid collision with module type
+    if (result.type !== type) {
+      // type was overwritten by nested 'type' field (e.g., "personal")
+      result.prayerType = result.type
+      result.type = type
+    }
+  }
+
+  // Profile: keep title as heading, description stays as description
+  if (type === 'profile') {
+    if (result.title && !result.heading) {
+      result.heading = result.title
+    }
+  }
+
+  // Takeaway: commitment is the primary field — also provide as content for backward compat
+  if (type === 'takeaway' && result.commitment && !result.content) {
+    result.content = result.commitment
+  }
+
+  // Remove order metadata (not needed in output)
+  delete result.order
 
   return result
 }
 
 function estimateWordCount(modules: AnyObj[]): number {
   let words = 0
+  const countStr = (val: unknown): void => {
+    if (typeof val === 'string') {
+      words += val.split(/\s+/).length
+    } else if (Array.isArray(val)) {
+      val.forEach(countStr)
+    } else if (val && typeof val === 'object') {
+      Object.values(val).forEach(countStr)
+    }
+  }
   for (const mod of modules) {
     for (const val of Object.values(mod)) {
-      if (typeof val === 'string') words += val.split(/\s+/).length
+      countStr(val)
     }
   }
   return words
@@ -157,8 +134,10 @@ function writeDayFile(
   seriesSlug: string,
   dayNum: number,
   title: string,
+  subtitle: string,
   teaser: string,
   anchorVerse: string,
+  theme: string,
   rawModules: AnyObj[],
 ): void {
   const slug = `${seriesSlug}-day-${dayNum}`
@@ -171,10 +150,13 @@ function writeDayFile(
     if (firstScripture) scriptureRef = firstScripture.reference || ''
   }
 
-  const devotional = {
+  const devotional: AnyObj = {
     day: dayNum,
     title,
-    teaser,
+    ...(subtitle ? { subtitle } : {}),
+    teaser: teaser || theme || '',
+    ...(anchorVerse ? { anchorVerse } : {}),
+    ...(theme ? { theme } : {}),
     framework: scriptureRef,
     scriptureReference: scriptureRef,
     modules,
@@ -194,21 +176,23 @@ function processFile(filePath: string): number {
   let seriesTitle: string
 
   if (data.series && Array.isArray(data.days)) {
-    // Format A: { series: { id }, days: [...] }
-    // Days can be either { day: { number, title }, modules } or { number, title, modules }
+    // Variants A/B/C: multi-day series
     seriesSlug = data.series.id
     seriesTitle = data.series.title
+
     for (const dayEntry of data.days) {
       let dayNum: number
       let dayTitle: string
+      let subtitle = ''
       let theme = ''
       let anchorVerse = ''
       let modules: AnyObj[]
 
       if (dayEntry.day && typeof dayEntry.day === 'object') {
-        // { day: { number, title, ... }, modules }
+        // Variant B: { day: { number, title, subtitle, anchorVerse, theme }, modules }
         dayNum = dayEntry.day.number
         dayTitle = dayEntry.day.title
+        subtitle = dayEntry.day.subtitle || ''
         theme = dayEntry.day.theme || ''
         anchorVerse = dayEntry.day.anchorVerse || ''
         modules = dayEntry.modules
@@ -220,7 +204,7 @@ function processFile(filePath: string): number {
         anchorVerse = dayEntry.verse || dayEntry.anchorVerse || ''
         modules = dayEntry.modules
       } else {
-        // { number: 1, title: "...", modules: [...] }
+        // Variant A: { number: 1, title: "...", anchorVerse, theme, modules }
         dayNum = dayEntry.number
         dayTitle = dayEntry.title
         theme = dayEntry.theme || ''
@@ -228,11 +212,20 @@ function processFile(filePath: string): number {
         modules = dayEntry.modules
       }
 
-      writeDayFile(seriesSlug, dayNum, dayTitle, theme, anchorVerse, modules)
+      writeDayFile(
+        seriesSlug,
+        dayNum,
+        dayTitle,
+        subtitle,
+        theme,
+        anchorVerse,
+        theme,
+        modules,
+      )
       count++
     }
   } else if (!data.series && Array.isArray(data.days)) {
-    // Format B: { slug, title, days: [{ day_number, title, modules }] }
+    // Format B (no series wrapper): { slug, title, days: [{ day_number, title, modules }] }
     seriesSlug = data.slug
     seriesTitle = data.title
     for (const dayEntry of data.days) {
@@ -242,13 +235,15 @@ function processFile(filePath: string): number {
         dayNum,
         dayEntry.title,
         dayEntry.subtitle || '',
+        dayEntry.subtitle || '',
+        '',
         '',
         dayEntry.modules,
       )
       count++
     }
   } else if (data.series && data.day && data.modules) {
-    // Format C: single day file { series, day, modules }
+    // Variant D: single day file { series, day, modules }
     seriesSlug = data.series.id
     seriesTitle = data.series.title
     const dayNum = data.day.number || 1
@@ -256,20 +251,24 @@ function processFile(filePath: string): number {
       seriesSlug,
       dayNum,
       data.day.title || seriesTitle,
+      data.day.subtitle || '',
       data.day.theme || '',
       data.day.anchorVerse || '',
+      data.day.theme || '',
       data.modules,
     )
     count = 1
   } else if (data.series && data.overview && data.modules) {
-    // Format C variant: overview file, treat as day 1
+    // Variant E: overview file, treat as day 1
     seriesSlug = data.series.id
     seriesTitle = data.series.title
     writeDayFile(
       seriesSlug,
       1,
       seriesTitle,
+      '',
       data.overview.introduction || '',
+      '',
       '',
       data.modules,
     )
@@ -284,7 +283,7 @@ function processFile(filePath: string): number {
 }
 
 // Main
-console.log('Preparing Substack series...\n')
+console.log('Preparing Substack series (preserving all original data)...\n')
 
 if (!fs.existsSync(OUTPUT_DIR)) {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true })

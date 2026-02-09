@@ -2,65 +2,107 @@
   "day": 2,
   "title": "Made in His Image",
   "teaser": "Understanding our calling as image-bearers of God",
+  "anchorVerse": "Genesis 1:27, Ephesians 2:10",
+  "theme": "Understanding our calling as image-bearers of God",
   "framework": "Genesis 1:27, Ephesians 2:10",
   "scriptureReference": "Genesis 1:27, Ephesians 2:10",
   "modules": [
     {
       "type": "scripture",
-      "passage": "So God created mankind in his own image, in the image of God he created them; male and female he created them.",
       "reference": "Genesis 1:27",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "in his own image",
+        "in the image of God"
+      ],
+      "passage": "So God created mankind in his own image, in the image of God he created them; male and female he created them."
     },
     {
       "type": "scripture",
-      "passage": "For we are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.",
       "reference": "Ephesians 2:10",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "God's handiwork",
+        "created in Christ Jesus"
+      ],
+      "passage": "For we are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do."
     },
     {
       "type": "teaching",
+      "body": "To be made in God's \"image\" is not about having two arms and two legs; it is about having a specific function. We were created to be God's representatives on earth, to reflect His character into the world. The primary way we do this is through love, creativity, and exercising benevolent rule over creation. You are a mirror of God's glory.",
+      "keyInsight": "Your life is not your own; it is a reflection of the One who made you.",
       "content": "To be made in God's \"image\" is not about having two arms and two legs; it is about having a specific function. We were created to be God's representatives on earth, to reflect His character into the world. The primary way we do this is through love, creativity, and exercising benevolent rule over creation. You are a mirror of God's glory.",
       "heading": "The Mirror of God's Glory"
     },
     {
       "type": "vocab",
+      "language": "hebrew",
       "word": "צֶלֶם",
       "transliteration": "tselem",
-      "language": "hebrew",
+      "pronunciation": "TSEH-lem",
+      "meaning": "image, statue, representative likeness",
+      "rootMeaning": "This Hebrew word means a statue, an idol, or a representative likeness. It is about function, not form. We are created to be living, breathing statues of God, pointing the rest of creation to the true King. When people see our love, our creativity, our justice, and our mercy, they are meant to see a reflection of the God who made us.",
+      "usageNote": "Jesus is the perfect tselem of God (Colossians 1:15). And the goal of the Christian life is to be \"conformed to the image of his Son\" (Romans 8:29). Through the work of the Holy Spirit, we are being transformed, day by day, into a clearer and more accurate reflection of Jesus to the world.",
       "definition": "image, statue, representative likeness",
       "usage": "This Hebrew word means a statue, an idol, or a representative likeness. It is about function, not form. We are created to be living, breathing statues of God, pointing the rest of creation to the true King. When people see our love, our creativity, our justice, and our mercy, they are meant to see a reflection of the God who made us."
     },
     {
       "type": "story",
+      "body": "In the summer of 1941, in the hell of Auschwitz, a prisoner escaped. In retaliation, the camp commandant, Karl Fritzsch, ordered that ten men be chosen to die in a starvation bunker. As the guards pulled men from the ranks, one of them, a Polish sergeant named Franciszek Gajowniczek, cried out, \"My wife! My children!\" He was begging for his life, for the future of his family. At that moment, another prisoner, a man who was not chosen, stepped forward. It was a Catholic priest named Maximilian Kolbe. He walked calmly before the commandant and said, \"I am a Catholic priest. I want to die for that man. I am old; he has a wife and children.\"\n\nIn a place designed to strip every last vestige of humanity from its victims, to reduce men to numbers and animals, Kolbe did the unthinkable. He reflected the character of God. In that moment, he was a perfect image-bearer. He demonstrated the same sacrificial love that Christ showed on the cross, the love that says, \"Greater love has no one than this: to lay down one's life for one's friends\" (John 15:13). He chose to enter the darkness in place of another, to become a substitute, to offer his life as a ransom.\n\nFor two weeks, Kolbe led the other nine prisoners in prayers and hymns, turning a bunker of death into a chapel of hope. He was the last to die, killed by a lethal injection of carbolic acid on August 14, 1941. He was a man made of dust, but in his final act, he was a perfect image of the divine. He proved that even in the deepest darkness, the image of God in humanity cannot be fully extinguished. It can shine forth, a beacon of love and sacrifice, a testament to the God who created us to be reflections of His glory.",
+      "connectionToTheme": "Being made in God's image means reflecting His sacrificial love to the world, especially in its darkest places.",
       "content": "In the summer of 1941, in the hell of Auschwitz, a prisoner escaped. In retaliation, the camp commandant, Karl Fritzsch, ordered that ten men be chosen to die in a starvation bunker. As the guards pulled men from the ranks, one of them, a Polish sergeant named Franciszek Gajowniczek, cried out, \"My wife! My children!\" He was begging for his life, for the future of his family. At that moment, another prisoner, a man who was not chosen, stepped forward. It was a Catholic priest named Maximilian Kolbe. He walked calmly before the commandant and said, \"I am a Catholic priest. I want to die for that man. I am old; he has a wife and children.\"\n\nIn a place designed to strip every last vestige of humanity from its victims, to reduce men to numbers and animals, Kolbe did the unthinkable. He reflected the character of God. In that moment, he was a perfect image-bearer. He demonstrated the same sacrificial love that Christ showed on the cross, the love that says, \"Greater love has no one than this: to lay down one's life for one's friends\" (John 15:13). He chose to enter the darkness in place of another, to become a substitute, to offer his life as a ransom.\n\nFor two weeks, Kolbe led the other nine prisoners in prayers and hymns, turning a bunker of death into a chapel of hope. He was the last to die, killed by a lethal injection of carbolic acid on August 14, 1941. He was a man made of dust, but in his final act, he was a perfect image of the divine. He proved that even in the deepest darkness, the image of God in humanity cannot be fully extinguished. It can shine forth, a beacon of love and sacrifice, a testament to the God who created us to be reflections of His glory.",
       "heading": "The Image in the Darkness"
     },
     {
       "type": "insight",
+      "body": "Genesis 1:27 is the pinnacle of the creation account. To be made in God's \"image\" (tselem) and \"likeness\" (demuth) is not about physical appearance. In the ancient Near East, a king would set up an image of himself in a distant land to represent his authority and rule. Humanity is created to be God's representatives on earth, to rule on His behalf as benevolent stewards.\n\nBut the Fall marred this image. Sin distorted our ability to reflect God's character. This is why the New Testament is so focused on the theme of restoration. Ephesians 2:10 tells us that we are \"created in Christ Jesus to do good works.\" The Greek word for \"handiwork\" is poiema, from which we get our word \"poem.\" We are God's masterpiece, His work of art, and we are being re-created in Christ to once again reflect the beauty and goodness of our Creator.",
+      "fascinatingFact": "The Greek word for 'handiwork' in Ephesians 2:10 is 'poiema,' from which we get our word 'poem.' We are God's masterpiece, His work of art.",
       "content": "Genesis 1:27 is the pinnacle of the creation account. To be made in God's \"image\" (tselem) and \"likeness\" (demuth) is not about physical appearance. In the ancient Near East, a king would set up an image of himself in a distant land to represent his authority and rule. Humanity is created to be God's representatives on earth, to rule on His behalf as benevolent stewards.\n\nBut the Fall marred this image. Sin distorted our ability to reflect God's character. This is why the New Testament is so focused on the theme of restoration. Ephesians 2:10 tells us that we are \"created in Christ Jesus to do good works.\" The Greek word for \"handiwork\" is poiema, from which we get our word \"poem.\" We are God's masterpiece, His work of art, and we are being re-created in Christ to once again reflect the beauty and goodness of our Creator.",
       "heading": "What's Happening in the Text?"
     },
     {
       "type": "bridge",
-      "content": "Humanity was created to be God's image-bearers, His representatives on earth, reflecting His character and ruling on His behalf.\n\nIf your life's primary purpose is to reflect God's character, it changes your perspective on your daily tasks, your relationships, and your ambitions."
+      "ancientTruth": "Humanity was created to be God's image-bearers, His representatives on earth, reflecting His character and ruling on His behalf.",
+      "modernApplication": "If your life's primary purpose is to reflect God's character, it changes your perspective on your daily tasks, your relationships, and your ambitions.",
+      "connectionPoint": "Every act of love, creativity, justice, and mercy is an opportunity to be a living mirror of God's glory to those around you.",
+      "newTestamentEcho": "Paul writes in Colossians 1:15 that Jesus is 'the image of the invisible God.' He is the perfect tselem, and through Him, we are being restored to that original purpose (Romans 8:29)."
     },
     {
       "type": "reflection",
-      "prompt": "If your life's primary purpose is to reflect God's character, how does that change your perspective on your daily tasks, your relationships, and your ambitions?"
+      "prompt": "If your life's primary purpose is to reflect God's character, how does that change your perspective on your daily tasks, your relationships, and your ambitions?",
+      "additionalQuestions": [
+        "What is one practical way you can reflect His love, creativity, or wisdom to someone today?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "And we all, who with unveiled faces contemplate the Lord's glory, are being transformed into his image with ever-increasing glory, which comes from the Lord, who is the Spirit."
+      "reference": "2 Corinthians 3:18 (NIV)",
+      "posture": "transformation",
+      "prayerText": "And we all, who with unveiled faces contemplate the Lord's glory, are being transformed into his image with ever-increasing glory, which comes from the Lord, who is the Spirit.",
+      "prayerType": "scriptural"
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "Who is someone in your life who has been a powerful reflection of God's character to you?",
+        "What was it about their life that made you see God more clearly?"
+      ],
+      "forAccountabilityPartners": [
+        "Share about someone who has reflected God's character to you.",
+        "Discuss one practical way you can be a better image-bearer this week."
+      ]
     },
     {
       "type": "profile",
       "name": "Maximilian Kolbe",
+      "title": "The Saint of Auschwitz",
+      "description": "A Catholic priest who volunteered to die in place of a stranger in the Auschwitz concentration camp in 1941. In the darkest of circumstances, he demonstrated the image of God through sacrificial love.",
+      "keyQuote": "I am a Catholic priest. I want to die for that man.",
+      "lessonForUs": "Even in the deepest darkness, the image of God in humanity cannot be fully extinguished. We can shine forth as a beacon of love and sacrifice.",
       "heading": "The Saint of Auschwitz"
     }
   ],
   "panels": [],
-  "totalWords": 769
+  "totalWords": 1691
 }

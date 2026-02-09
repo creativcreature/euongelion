@@ -2,65 +2,148 @@
   "day": 2,
   "title": "Finding the Secret Place",
   "teaser": "Discovering God's hidden refuge where we can be completely authentic and safe",
+  "anchorVerse": "Psalm 91:1",
+  "theme": "Discovering God's hidden refuge where we can be completely authentic and safe",
   "framework": "Psalm 91:1",
   "scriptureReference": "Psalm 91:1",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Whoever dwells in the secret place of the Most High will rest in the shadow of the Almighty.",
       "reference": "Psalm 91:1",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "secret place",
+        "rest in the shadow"
+      ],
+      "hebrewOriginal": "יֹשֵׁב בְּסֵתֶר עֶלְיוֹן בְּצֵל שַׁדַּי יִתְלוֹנָן",
+      "passage": "Whoever dwells in the secret place of the Most High will rest in the shadow of the Almighty."
     },
     {
       "type": "vocab",
+      "language": "hebrew",
       "word": "סֵתֶר",
       "transliteration": "seter",
-      "language": "hebrew",
+      "pronunciation": "SEH-ter",
+      "meaning": "secret place, hiding place, shelter",
+      "rootMeaning": "Derived from the root word satar, meaning 'to hide' or 'to conceal.' This isn't hiding in fear but hiding in love - like a child who runs to hide in their parent's embrace.",
+      "usageNote": "Appears 35 times in the Old Testament, always referring to a place of concealment, protection, or intimacy.",
+      "relatedWords": [
+        {
+          "word": "סָתַר",
+          "reference": "The root verb meaning 'to hide' or 'to conceal'"
+        }
+      ],
+      "strongsNumber": "H5643",
       "definition": "secret place, hiding place, shelter",
       "usage": "Derived from the root word satar, meaning 'to hide' or 'to conceal.' This isn't hiding in fear but hiding in love - like a child who runs to hide in their parent's embrace."
     },
     {
       "type": "teaching",
+      "body": "Psalm 91 opens with one of Scripture's most comforting promises: those who dwell in God's secret place will find rest and protection. The Hebrew word seter refers to a hidden, private place - somewhere concealed from public view where intimate relationship can flourish.\n\nThis isn't about physical location but spiritual position. God's secret place is wherever we choose to be authentically present with Him, dropping our masks and pretenses. It's the place where we stop performing and start abiding.\n\nThe psalmist uses two different names for God in this verse: 'Most High' (Elyon) emphasizes God's supreme authority and power, while 'Almighty' (Shaddai) emphasizes His nurturing, protective care. In God's secret place, we experience both His majesty and His tenderness.",
+      "keyInsight": "God's secret place isn't a location where we have to be perfect - it's a relationship where we can be real.",
       "content": "Psalm 91 opens with one of Scripture's most comforting promises: those who dwell in God's secret place will find rest and protection. The Hebrew word seter refers to a hidden, private place - somewhere concealed from public view where intimate relationship can flourish.\n\nThis isn't about physical location but spiritual position. God's secret place is wherever we choose to be authentically present with Him, dropping our masks and pretenses. It's the place where we stop performing and start abiding.\n\nThe psalmist uses two different names for God in this verse: 'Most High' (Elyon) emphasizes God's supreme authority and power, while 'Almighty' (Shaddai) emphasizes His nurturing, protective care. In God's secret place, we experience both His majesty and His tenderness.",
       "heading": "The Ancient Promise of Divine Refuge"
     },
     {
       "type": "story",
+      "body": "Marcus was a high-powered executive who managed hundreds of employees and million-dollar budgets. In boardrooms, he was confident and decisive. But at home, he felt like he was still performing - trying to be the perfect husband, father, and neighbor.\n\nThe only place Marcus felt he could truly be himself was in his garage workshop at 5 AM, before anyone else was awake. There, surrounded by his tools and half-finished projects, he could drop all pretenses. It was there, in that unlikely sanctuary, that Marcus first began to understand what the psalmist meant by dwelling 'in the secret place of the Most High.'\n\nHe realized that God wasn't just inviting him to a physical location - He was offering him a spiritual refuge where he could be completely authentic and completely safe.",
+      "connectionToTheme": "Marcus discovered that the secret place isn't about location but about authenticity - being completely real with God.",
       "content": "Marcus was a high-powered executive who managed hundreds of employees and million-dollar budgets. In boardrooms, he was confident and decisive. But at home, he felt like he was still performing - trying to be the perfect husband, father, and neighbor.\n\nThe only place Marcus felt he could truly be himself was in his garage workshop at 5 AM, before anyone else was awake. There, surrounded by his tools and half-finished projects, he could drop all pretenses. It was there, in that unlikely sanctuary, that Marcus first began to understand what the psalmist meant by dwelling 'in the secret place of the Most High.'\n\nHe realized that God wasn't just inviting him to a physical location - He was offering him a spiritual refuge where he could be completely authentic and completely safe.",
       "heading": "The Executive's Hidden Sanctuary"
     },
     {
       "type": "insight",
+      "body": "When David was fleeing from Saul, he hid in the cave of Adullam (1 Samuel 22:1). It was there, in that literal hiding place, that David wrote some of his most intimate psalms. The cave became his seter - not just a physical refuge but a place of spiritual encounter.\n\nDavid's cave experience teaches us that God often meets us in our places of vulnerability and hiddenness. When we're stripped of our public personas and forced to face our need, we often discover God's presence more intimately than we ever did in our places of strength and visibility.\n\nThe progression in David's life shows us the pattern:\n- Crisis: Forced into hiding from external threats\n- Encounter: Meeting God in the vulnerable place\n- Transformation: Emerging with deeper intimacy and trust",
+      "historicalContext": "The Old Testament established cities of refuge (Numbers 35:6-15) where people could flee for protection and justice. These cities provide a picture of what God's secret place offers us - not just temporary shelter but permanent sanctuary.",
+      "fascinatingFact": "The Hebrew word for 'shadow' (tzel) in Psalm 91:1 is the same word used to describe the protective shadow of a mother bird's wings (Psalm 17:8, 36:7). God's secret place isn't a cold, distant fortress - it's the warm, intimate shelter of divine love.",
       "content": "When David was fleeing from Saul, he hid in the cave of Adullam (1 Samuel 22:1). It was there, in that literal hiding place, that David wrote some of his most intimate psalms. The cave became his seter - not just a physical refuge but a place of spiritual encounter.\n\nDavid's cave experience teaches us that God often meets us in our places of vulnerability and hiddenness. When we're stripped of our public personas and forced to face our need, we often discover God's presence more intimately than we ever did in our places of strength and visibility.\n\nThe progression in David's life shows us the pattern:\n- Crisis: Forced into hiding from external threats\n- Encounter: Meeting God in the vulnerable place\n- Transformation: Emerging with deeper intimacy and trust",
       "heading": "David's Cave Experience"
     },
     {
       "type": "bridge",
-      "content": "The psalmist declared that those who dwell in God's secret place find rest and protection.\n\nWe often wear masks even in our spiritual life, treating prayer like a performance rather than an intimate conversation."
+      "ancientTruth": "The psalmist declared that those who dwell in God's secret place find rest and protection.",
+      "modernApplication": "We often wear masks even in our spiritual life, treating prayer like a performance rather than an intimate conversation.",
+      "connectionPoint": "God invites us to the same authenticity David experienced in his cave - a place where we can drop all pretenses and be completely real.",
+      "newTestamentEcho": "Jesus modeled this when He withdrew to lonely places to pray (Luke 5:16), showing that even He needed intimate, unguarded time with the Father."
     },
     {
       "type": "reflection",
-      "prompt": "Where do you go when you need to feel completely safe and known?"
+      "prompt": "Where do you go when you need to feel completely safe and known?",
+      "additionalQuestions": [
+        "What prevents you from being completely authentic with God? What masks do you tend to wear even in prayer?",
+        "When have you experienced God's presence most intimately? What made that time different from your usual spiritual experiences?",
+        "How might your relationship with God change if you truly believed His secret place was always available to you?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "Most High God, You invite me into Your seter - Your secret place of intimacy and protection. Help me find that hidden refuge where I can be completely authentic with You. Teach me to dwell in Your presence, not just visit it. Amen."
+      "posture": "petition",
+      "prayerText": "Most High God, You invite me into Your seter - Your secret place of intimacy and protection. Help me find that hidden refuge where I can be completely authentic with You. Teach me to dwell in Your presence, not just visit it. Amen.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "I will identify one 'secret place' - whether physical or simply a time of day - where I can practice being completely honest and unguarded with God, bringing Him my real thoughts and feelings without trying to clean them up first.",
+      "leavingAtCross": [
+        "The exhausting effort to maintain perfect spiritual appearances",
+        "The fear that God will reject me if He sees my real struggles and doubts",
+        "The belief that I have to clean up my act before I can approach God's presence"
+      ],
+      "receivingFromCross": [
+        "Permission to be completely authentic in God's presence - to bring Him my mess, my questions, and my fears",
+        "The security of knowing that God's secret place is always available, no matter what I've done or how I'm feeling",
+        "The intimacy that comes from being fully known and fully loved"
+      ],
+      "content": "I will identify one 'secret place' - whether physical or simply a time of day - where I can practice being completely honest and unguarded with God, bringing Him my real thoughts and feelings without trying to clean them up first."
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "What prevents you from being completely authentic with God? What masks do you tend to wear even in prayer?",
+        "When have you experienced God's presence most intimately? What made that time different from your usual spiritual experiences?",
+        "How might your relationship with God change if you truly believed His secret place was always available to you?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area where you struggle to be authentic with God. Encourage each other to bring those real struggles into prayer this week.",
+        "Commit to practicing 'ugly prayers' together - times when you deliberately bring God your unfiltered thoughts and feelings.",
+        "Check in with each other: 'How are you doing at finding refuge in God's secret place rather than trying to handle things on your own?'"
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 17:8",
+          "text": "Keep me as the apple of your eye; hide me in the shadow of your wings."
+        },
+        {
+          "reference": "Psalm 36:7",
+          "text": "How priceless is your unfailing love, O God! People take refuge in the shadow of your wings."
+        },
+        {
+          "reference": "1 Samuel 22:1",
+          "text": "David left Gath and escaped to the cave of Adullam."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Psalm 91",
+          "note": "Read the complete psalm about dwelling in God's shelter"
+        }
+      ]
     },
     {
       "type": "profile",
       "name": "David",
+      "title": "The Fugitive King",
+      "description": "David wrote many of his most intimate psalms while hiding from Saul in caves and wilderness places. His experiences of vulnerability and hiddenness became the context for some of Scripture's deepest teachings on finding refuge in God.",
+      "keyQuote": "Whoever dwells in the secret place of the Most High will rest in the shadow of the Almighty.",
+      "lessonForUs": "Our places of vulnerability and weakness can become the very places where we experience God's presence most intimately.",
       "heading": "The Fugitive King"
     }
   ],
   "panels": [],
-  "totalWords": 563
+  "totalWords": 1683
 }

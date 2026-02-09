@@ -1,41 +1,69 @@
 {
   "day": 1,
   "title": "The Announcement",
+  "subtitle": "What's Happening and Who's Involved?",
   "teaser": "What's Happening and Who's Involved?",
   "framework": "Luke 2:10-11",
   "scriptureReference": "Luke 2:10-11",
   "modules": [
     {
       "type": "scripture",
-      "passage": "But the angel said to them, 'Do not be afraid. I bring you good news that will cause great joy for all the people. Today in the town of David a Savior has been born to you; he is the Messiah, the Lord.'",
       "reference": "Luke 2:10-11",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "good news",
+        "great joy",
+        "all the people",
+        "Savior",
+        "Messiah",
+        "Lord"
+      ],
+      "passage": "But the angel said to them, 'Do not be afraid. I bring you good news that will cause great joy for all the people. Today in the town of David a Savior has been born to you; he is the Messiah, the Lord.'"
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "σωτήρ",
       "transliteration": "Soter",
-      "language": "greek",
+      "pronunciation": "soh-TAIR",
+      "strongs": "G4990",
       "definition": "Savior, deliverer",
-      "usage": "One who saves or delivers from danger or destruction"
+      "root_meaning": "One who saves or delivers from danger or destruction",
+      "usage_note": "In the Roman world, this title was often applied to emperors who brought peace and prosperity. The angel's use of this term for a newborn baby would have been startling—and politically provocative."
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "Imagine you're a night-shift security guard at a major corporation. It's been a quiet evening—nothing unusual, just the normal routine. Then suddenly, the building's emergency lighting system activates, alarms start sounding, and your radio crackles with urgent messages from headquarters: 'This is not a drill. The situation we've been preparing for has arrived.'\n\nYour heart would be racing, not just from the surprise, but from the realization that something you'd been trained for but never expected to actually happen was now unfolding.\n\nThis is something like what happened to the shepherds outside Bethlehem. They were going about their ordinary work—watching sheep, staying alert for predators. Then suddenly the sky exploded with light, an angel appeared, and they received an announcement that the event their people had been waiting for centuries had finally arrived.\n\nBut here's what's remarkable: this world-changing announcement wasn't made to kings, priests, or scholars. It was made to working-class shepherds—people on the margins of society. The implication is profound: whatever was happening in Bethlehem was for everyone, not just the religious or political elite.",
+      "pardes_layer": "peshat"
     },
     {
-      "type": "bridge"
+      "type": "bridge",
+      "ancient": "Luke was a physician and traveling companion of Paul who 'carefully investigated everything from the beginning' and interviewed eyewitnesses",
+      "modern": "We still value careful investigation and eyewitness testimony when evaluating extraordinary claims",
+      "connection": "Luke's investigative methodology parallels how we approach any significant historical claim today",
+      "question": "What kind of problem would require a 'Savior' to solve it? What does this title suggest about the human condition?"
     },
     {
-      "type": "insight"
+      "type": "insight",
+      "text": "The angel's announcement raises a crucial question: Why was a Savior necessary? The very use of this title implies that humanity was in a condition from which it could not save itself."
     },
     {
       "type": "scripture",
-      "passage": "And there were shepherds living out in the fields nearby, keeping watch over their flocks at night. An angel of the Lord appeared to them, and the glory of the Lord shone around them, and they were terrified. But the angel said to them, 'Do not be afraid. I bring you good news that will cause great joy for all the people. Today in the town of David a Savior has been born to you; he is the Messiah, the Lord.' This will be a sign to you: You will find a baby wrapped in cloths and lying in a manger.' Suddenly a great company of the heavenly host appeared with the angel, praising God and saying, 'Glory to God in the highest heaven, and on earth peace to those on whom his favor rests.'",
       "reference": "Luke 2:8-20",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "terrified",
+        "Do not be afraid",
+        "good news",
+        "great joy",
+        "all the people"
+      ],
+      "passage": "And there were shepherds living out in the fields nearby, keeping watch over their flocks at night. An angel of the Lord appeared to them, and the glory of the Lord shone around them, and they were terrified. But the angel said to them, 'Do not be afraid. I bring you good news that will cause great joy for all the people. Today in the town of David a Savior has been born to you; he is the Messiah, the Lord.' This will be a sign to you: You will find a baby wrapped in cloths and lying in a manger.' Suddenly a great company of the heavenly host appeared with the angel, praising God and saying, 'Glory to God in the highest heaven, and on earth peace to those on whom his favor rests.'"
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "**Who's Involved?**\n\n**The Angel of the Lord:** This figure represents divine authority and serves as God's messenger. The angel's announcement isn't a suggestion or invitation—it's a declaration of what God has done.\n\n**The Shepherds:** They represent ordinary humanity—people doing honest work but without special religious or social status. Their selection as the first witnesses suggests that God's salvation is intended for everyone, not just the elite.\n\n**Mary and Joseph:** They are the human participants in God's plan, chosen not for their prominence but for their faithfulness.\n\n**The Baby Jesus:** He is identified as Savior (one who rescues), Messiah (the promised deliverer), and Lord (divine authority). These titles make extraordinary claims about this infant's identity and purpose.",
+      "pardes_layer": "remez"
     },
     {
       "type": "comprehension",
@@ -58,19 +86,23 @@
     },
     {
       "type": "reflection",
-      "prompt": "The angel announced 'good news that will cause great joy for all the people.' What would make news truly good for all people, regardless of their circumstances or background?"
+      "question": "The angel announced 'good news that will cause great joy for all the people.' What would make news truly good for all people, regardless of their circumstances or background?",
+      "prompt_text": "Consider what kind of solution would be universally needed and beneficial.",
+      "allow_save": true
     },
     {
       "type": "takeaway",
-      "content": "The circumstances of Jesus's birth announcement suggest that God's solution to humanity's deepest problem is available to all people, regardless of their social status or religious credentials.",
+      "text": "The circumstances of Jesus's birth announcement suggest that God's solution to humanity's deepest problem is available to all people, regardless of their social status or religious credentials.",
+      "action": "This week, consider: What would have to be true about humanity for us to need a 'Savior'? What problems can't we solve on our own?",
       "heading": "Key Insight"
     },
     {
       "type": "prayer",
-      "prayerText": "Help me to understand why this birth was necessary and what it reveals about both human need and divine love. Open my mind to honestly examine the claims being made about Jesus's identity and purpose. Amen.",
-      "heading": "Closing Prayer"
+      "scripture_echo": "Luke 2:10-11",
+      "heading": "Closing Prayer",
+      "prayerText": "Help me to understand why this birth was necessary and what it reveals about both human need and divine love. Open my mind to honestly examine the claims being made about Jesus's identity and purpose. Amen."
     }
   ],
   "panels": [],
-  "totalWords": 342
+  "totalWords": 849
 }

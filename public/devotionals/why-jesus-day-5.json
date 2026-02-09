@@ -1,41 +1,62 @@
 {
   "day": 5,
   "title": "What Am I Going to Do About It?",
+  "subtitle": "Personal Response",
   "teaser": "Personal Response",
   "framework": "Luke 2:17-18",
   "scriptureReference": "Luke 2:17-18",
   "modules": [
     {
       "type": "scripture",
-      "passage": "When they had seen him, they spread the word concerning what had been told them about this child, and all who heard it were amazed at what the shepherds said to them.",
       "reference": "Luke 2:17-18",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "spread the word",
+        "amazed"
+      ],
+      "passage": "When they had seen him, they spread the word concerning what had been told them about this child, and all who heard it were amazed at what the shepherds said to them."
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "διαγγέλλω",
       "transliteration": "Diangello",
-      "language": "greek",
+      "pronunciation": "dee-ang-GEL-oh",
+      "strongs": "G1229",
       "definition": "To spread the word, to proclaim thoroughly",
-      "usage": "Intentional communication of something important"
+      "root_meaning": "Intentional communication of something important",
+      "usage_note": "This isn't casual conversation but intentional communication of something significant. The shepherds became the first evangelists, sharing what they had witnessed."
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "Imagine you're hiking in a remote area when you come across someone who has fallen and is seriously injured. They're conscious but unable to move, and it's clear they need immediate medical attention.\n\nYou have a choice: you can continue on your planned route, perhaps telling yourself that someone else will probably find them, or you can change your plans entirely to get help.\n\nIf you choose to help, it will cost you something. Your entire day—maybe your entire trip—will be reorganized around this person's need.\n\nBut here's the thing: once you've seen the person and understood their condition, you can't really go back to your original plans as if nothing has happened. The knowledge of their need creates a moral obligation that changes everything about your situation.\n\nThis is something like the position we find ourselves in after investigating Jesus's claims. If we conclude that he truly is the Savior—that he offers something humanity desperately needs and can't provide for itself—then we can't simply file that information away and continue with our lives unchanged.",
+      "pardes_layer": "peshat"
     },
     {
-      "type": "insight"
+      "type": "insight",
+      "text": "Genuine conviction about Jesus's identity as Savior naturally leads to a reorientation of priorities and a desire to share that discovery with others."
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "**The Shepherds' Response Pattern**\n\nThe shepherds' reaction provides a model for how we might respond:\n\n**Investigation:** They didn't just accept the announcement at face value. They said, 'Let's go to Bethlehem and see this thing that has happened.' They moved from hearing a claim to personally investigating its truth.\n\n**Confirmation:** They 'found Mary and Joseph, and the baby, who was lying in the manger.' The evidence matched what they had been told, confirming the reliability of the message.\n\n**Proclamation:** They 'spread the word concerning what had been told them about this child.' Their personal confirmation led to public testimony.\n\n**Worship:** They 'returned, glorifying and praising God for all the things they had heard and seen.' Their response included both intellectual acknowledgment and emotional/spiritual engagement.",
+      "pardes_layer": "remez"
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "**Accepting Jesus as Savior**\n\nIf we conclude that Jesus truly is the Savior, what does it mean to accept his salvation?\n\n**Acknowledging Need:** Recognizing that we have a problem that requires external solution. This means moving beyond the assumption that we can save ourselves through our own efforts.\n\n**Trusting the Solution:** Believing that Jesus's death and resurrection actually accomplish what they claim—reconciliation with God, forgiveness of sins, and transformation of our fundamental relationship with the divine.\n\n**Receiving the Gift:** Accepting salvation as something freely given rather than earned. This can be challenging for people who are used to working for what they receive.\n\n**Surrendering Control:** Acknowledging Jesus as Lord means recognizing his authority over our lives. This doesn't mean becoming passive, but aligning our will with his revealed will.",
+      "pardes_layer": "derash"
     },
     {
-      "type": "bridge"
+      "type": "bridge",
+      "ancient": "The shepherds immediately investigated, confirmed, and shared what they discovered",
+      "modern": "We can follow the same pattern: investigate, confirm through personal experience, and share with others",
+      "connection": "Faith often grows gradually through experience and relationship rather than through purely intellectual argument",
+      "question": "If you became convinced that Jesus truly is the Savior, what would that conviction require of you?"
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "**Dealing with Doubt and Uncertainty**\n\nNot everyone who investigates Jesus's claims will arrive at complete certainty. Some may find themselves drawn to the message but still wrestling with questions or doubts. This is a normal and honest response to extraordinary claims.\n\nThe key is to respond authentically to whatever level of conviction we actually have. If we're 60% convinced, we can take steps appropriate to that level while continuing to investigate. If we're 90% convinced but still have specific concerns, we can address those concerns while moving forward with what we do believe.\n\n**The Cost of Discipleship**\n\nJesus himself was clear that following him involves cost:\n- **Reordering Priorities:** Putting our relationship with God ahead of career advancement, material accumulation, or social approval\n- **Moral Transformation:** Changing behaviors and attitudes inconsistent with Jesus's teachings\n- **Sacrificial Service:** Using our time, resources, and abilities to serve others\n- **Countercultural Witness:** Being willing to stand for truth even when unpopular",
+      "pardes_layer": "sod"
     },
     {
       "type": "comprehension",
@@ -58,19 +79,23 @@
     },
     {
       "type": "reflection",
-      "prompt": "Based on your investigation this week, how convinced are you that Jesus is the Savior the angels announced? What evidence do you find most compelling? What questions remain?"
+      "question": "Based on your investigation this week, how convinced are you that Jesus is the Savior the angels announced? What evidence do you find most compelling? What questions remain?",
+      "prompt_text": "Be honest about where you are in your journey of understanding.",
+      "allow_save": true
     },
     {
       "type": "takeaway",
-      "content": "The beauty of Jesus's offer is that we don't have to have everything figured out before we begin. We can start where we are, with whatever level of understanding and commitment we currently have, and grow from there.",
+      "text": "The beauty of Jesus's offer is that we don't have to have everything figured out before we begin. We can start where we are, with whatever level of understanding and commitment we currently have, and grow from there.",
+      "action": "Take one concrete step this week that reflects your current level of conviction about Jesus—whether that's continued investigation, a conversation with a believer, or a commitment to prayer.",
       "heading": "Key Insight"
     },
     {
       "type": "prayer",
-      "prayerText": "Give me the courage to respond honestly to what I've learned about Jesus, and the wisdom to understand what that response should look like in my daily life. Help me take authentic steps forward, even if I don't have all the answers yet. Amen.",
-      "heading": "Closing Prayer"
+      "scripture_echo": "Luke 2:17-18",
+      "heading": "Closing Prayer",
+      "prayerText": "Give me the courage to respond honestly to what I've learned about Jesus, and the wisdom to understand what that response should look like in my daily life. Help me take authentic steps forward, even if I don't have all the answers yet. Amen."
     }
   ],
   "panels": [],
-  "totalWords": 213
+  "totalWords": 972
 }

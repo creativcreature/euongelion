@@ -2,65 +2,148 @@
   "day": 2,
   "title": "Filtering Spiritual Noise",
   "teaser": "Learning to test spiritual messages against God's truth",
+  "anchorVerse": "1 John 4:1",
+  "theme": "Learning to test spiritual messages against God's truth",
   "framework": "1 John 4:1",
   "scriptureReference": "1 John 4:1",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Dear friends, do not believe every spirit, but test the spirits to see whether they are from God, because many false prophets have gone out into the world.",
       "reference": "1 John 4:1",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "do not believe every spirit",
+        "test the spirits"
+      ],
+      "greekOriginal": "Ἀγαπητοί, μὴ παντὶ πνεύματι πιστεύετε, ἀλλὰ δοκιμάζετε τὰ πνεύματα εἰ ἐκ τοῦ θεοῦ ἐστιν",
+      "passage": "Dear friends, do not believe every spirit, but test the spirits to see whether they are from God, because many false prophets have gone out into the world."
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "δοκιμάζω",
       "transliteration": "dokimazō",
-      "language": "greek",
+      "pronunciation": "doh-kee-MAH-zo",
+      "meaning": "to test, examine, prove genuine",
+      "rootMeaning": "In the Greco-Roman world, dokimazō was used for assaying metals and approving coinage - coin makers would test coins for purity, and only those that passed received an official stamp. Likewise, God calls us to be 'spiritual assayers.'",
+      "usageNote": "The word implies a thorough examination to determine authenticity, not skepticism for its own sake but careful discernment to protect what is precious.",
+      "relatedWords": [
+        {
+          "word": "δόκιμος (dokimos)",
+          "reference": "Approved, tested, genuine - the result of passing the dokimazō test"
+        }
+      ],
+      "strongsNumber": "G1381",
       "definition": "to test, examine, prove genuine",
       "usage": "In the Greco-Roman world, dokimazō was used for assaying metals and approving coinage - coin makers would test coins for purity, and only those that passed received an official stamp. Likewise, God calls us to be 'spiritual assayers.'"
     },
     {
       "type": "teaching",
+      "body": "The apostle John warned early Christians to 'test the spirits' - in other words, don't assume every spiritual-sounding message is from God. In an age of podcasts, YouTube sermons, and social media prophets, this command is more relevant than ever.\n\nWe filter what we drink and even the music we listen to; how much more should we filter what we accept into our souls? The Bible gives us reliable filters:\n\n• Does the message agree with clear Scripture?\n• Does it exalt Jesus Christ as Lord and lead toward godliness?\n• Does it produce the fruit of the Spirit (love, peace, humility) or the works of the flesh (division, pride)?\n\nWe have an enemy who 'masquerades as an angel of light' (2 Corinthians 11:14), so some falsehoods come sugar-coated in religious language. The believers in Berea did this by 'examining the Scriptures every day to see if what Paul said was true' (Acts 17:11). God doesn't mind our questions; He commends a faith that checks things out.",
+      "keyInsight": "God doesn't mind our questions; He commends a faith that checks things out against His Word.",
       "content": "The apostle John warned early Christians to 'test the spirits' - in other words, don't assume every spiritual-sounding message is from God. In an age of podcasts, YouTube sermons, and social media prophets, this command is more relevant than ever.\n\nWe filter what we drink and even the music we listen to; how much more should we filter what we accept into our souls? The Bible gives us reliable filters:\n\n• Does the message agree with clear Scripture?\n• Does it exalt Jesus Christ as Lord and lead toward godliness?\n• Does it produce the fruit of the Spirit (love, peace, humility) or the works of the flesh (division, pride)?\n\nWe have an enemy who 'masquerades as an angel of light' (2 Corinthians 11:14), so some falsehoods come sugar-coated in religious language. The believers in Berea did this by 'examining the Scriptures every day to see if what Paul said was true' (Acts 17:11). God doesn't mind our questions; He commends a faith that checks things out.",
       "heading": "The Ancient Call for Discernment"
     },
     {
       "type": "story",
+      "body": "Jordan was excited about a new online Bible teacher he discovered. The speaker was dynamic and promised 'secret insights' into God's will. Jordan binge-watched the videos, eager to hear from God.\n\nBut soon he noticed something unsettling: this teacher rarely referenced the Bible directly and claimed personal revelations that sounded odd. One lesson left Jordan feeling uneasy - it didn't match what he knew of Jesus' character.\n\nWith a friend's encouragement, Jordan went back to Scripture (like the Bereans did in Acts 17:11) and prayed for wisdom. Sure enough, he found clear Bible passages that contradicted the teacher's claims. From then on, he committed to testing every teaching against the Bible's truth, no matter how appealing the style or how popular the messenger.",
+      "connectionToTheme": "Jordan's experience demonstrates the importance of testing spiritual messages against Scripture, even when they come from charismatic or popular sources.",
       "content": "Jordan was excited about a new online Bible teacher he discovered. The speaker was dynamic and promised 'secret insights' into God's will. Jordan binge-watched the videos, eager to hear from God.\n\nBut soon he noticed something unsettling: this teacher rarely referenced the Bible directly and claimed personal revelations that sounded odd. One lesson left Jordan feeling uneasy - it didn't match what he knew of Jesus' character.\n\nWith a friend's encouragement, Jordan went back to Scripture (like the Bereans did in Acts 17:11) and prayed for wisdom. Sure enough, he found clear Bible passages that contradicted the teacher's claims. From then on, he committed to testing every teaching against the Bible's truth, no matter how appealing the style or how popular the messenger.",
       "heading": "The Modern Berean's Challenge"
     },
     {
       "type": "insight",
+      "body": "Lisa lived in an age of infinite spiritual content. Her phone buzzed with daily devotionals, podcast notifications, and inspirational quotes. She followed dozens of Christian influencers, each with their own interpretation of God's will.\n\nThe problem wasn't lack of spiritual input - it was lack of spiritual discernment. Lisa realized she was consuming more spiritual content than she was digesting. She was spiritually overfed but undernourished.\n\nThe solution came when she adopted the Berean principle: for every new teaching she encountered, she would spend equal time in Scripture, testing what she heard against what God had already clearly revealed.",
+      "historicalContext": "The first-century world was full of wandering teachers, philosophers, and spiritual gurus. Early Christians had to discern between apostles of Christ and the self-appointed 'super-apostles' who preached a different gospel (2 Corinthians 11:4-5,13). This is one reason the early church was careful to preserve the apostles' writings and form the New Testament canon - to have an authoritative measuring stick for truth.",
+      "fascinatingFact": "In the early church, extensive oral Scripture reading was a necessity due to high illiteracy. Believers often heard the Word in gatherings and used that to filter any new teachings. Early Christians would even stand when Scripture was read, as a sign that 'this is the authority.'",
       "content": "Lisa lived in an age of infinite spiritual content. Her phone buzzed with daily devotionals, podcast notifications, and inspirational quotes. She followed dozens of Christian influencers, each with their own interpretation of God's will.\n\nThe problem wasn't lack of spiritual input - it was lack of spiritual discernment. Lisa realized she was consuming more spiritual content than she was digesting. She was spiritually overfed but undernourished.\n\nThe solution came when she adopted the Berean principle: for every new teaching she encountered, she would spend equal time in Scripture, testing what she heard against what God had already clearly revealed.",
       "heading": "The Contemporary Crisis: Information Overload"
     },
     {
       "type": "bridge",
-      "content": "The early church was warned to test every spirit and teaching against God's revealed truth.\n\nIn our age of endless spiritual content - podcasts, social media prophets, and viral quotes - we must apply the same careful discernment."
+      "ancientTruth": "The early church was warned to test every spirit and teaching against God's revealed truth.",
+      "modernApplication": "In our age of endless spiritual content - podcasts, social media prophets, and viral quotes - we must apply the same careful discernment.",
+      "connectionPoint": "The Bereans were commended for examining Scripture daily to verify what they heard. We have even greater access to Scripture and no excuse for spiritual gullibility.",
+      "newTestamentEcho": "Paul warned that some would have 'itching ears' and gather teachers who tell them what they want to hear (2 Timothy 4:3). Our filter is always God's Word."
     },
     {
       "type": "reflection",
-      "prompt": "Do you tend to accept spiritual messages and teachings at face value, or do you 'dokimazō' - test them - against God's truth?"
+      "prompt": "Do you tend to accept spiritual messages and teachings at face value, or do you 'dokimazō' - test them - against God's truth?",
+      "additionalQuestions": [
+        "Think of a spiritual teaching or piece of advice you've received recently. How can you test its validity through Scripture and godly counsel before accepting it?",
+        "What 'noise' (social media opinions, pop spirituality, well-meaning friends) do you need to tune out in order to clearly hear the truth God is speaking to you?",
+        "When have you encountered a teaching that seemed spiritual but didn't align with Scripture? How did you handle it?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "Holy Spirit, give me discernment to dokimazō what I hear. I don't want to be led astray by spiritual noise or false voices. Help me filter everything through the truth of Your Word and the guidance of Your Spirit. Amen."
+      "posture": "petition",
+      "prayerText": "Holy Spirit, give me discernment to dokimazō what I hear. I don't want to be led astray by spiritual noise or false voices. Help me filter everything through the truth of Your Word and the guidance of Your Spirit. Amen.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "Before I accept any new spiritual idea or guidance today, I will pause to compare it with the Bible or run it by a mature Christian mentor.",
+      "leavingAtCross": [
+        "The naïveté that assumes every spiritual-sounding voice is trustworthy",
+        "The pride that makes me think I can't be deceived",
+        "The laziness that prefers quick, feel-good messages over diligently seeking truth"
+      ],
+      "receivingFromCross": [
+        "A discerning spirit that values truth over trendiness",
+        "Humility to admit I need God's Word and wise counsel as anchors",
+        "The freedom of living in God's light, where I'm not easily swayed by every wind of teaching"
+      ],
+      "content": "Before I accept any new spiritual idea or guidance today, I will pause to compare it with the Bible or run it by a mature Christian mentor."
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "What 'noise' (social media opinions, pop spirituality, well-meaning friends) do you need to tune out in order to clearly hear the truth God is speaking to you?",
+        "How can you become more like the Bereans, who 'examined the Scriptures daily' to test what they heard?",
+        "When have you encountered a teaching that seemed spiritual but didn't align with Scripture? How did you handle it?"
+      ],
+      "forAccountabilityPartners": [
+        "Challenge each other this week: if you encounter a confusing or questionable claim, pause and fact-check it together against the Bible.",
+        "Memorize together 1 John 4:1 or Proverbs 14:15 ('The simple believe anything, but the prudent give thought to their steps').",
+        "Pray for one another to develop 'ears to hear' God's truth clearly and courage to reject what is false."
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Acts 17:11",
+          "text": "Now the Berean Jews were of more noble character than those in Thessalonica, for they received the message with great eagerness and examined the Scriptures every day to see if what Paul said was true."
+        },
+        {
+          "reference": "2 Corinthians 11:14",
+          "text": "And no wonder, for Satan himself masquerades as an angel of light."
+        },
+        {
+          "reference": "Proverbs 14:15",
+          "text": "The simple believe anything, but the prudent give thought to their steps."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 John 4",
+          "note": "Read the full context for John's teaching on testing the spirits"
+        }
+      ]
     },
     {
       "type": "profile",
       "name": "The Bereans",
+      "title": "Noble Examiners of Truth",
+      "description": "The Berean Jews in Acts 17 were commended for their approach to new teaching: they received the message with eagerness but also examined the Scriptures daily to verify what they heard. Their method combined openness with discernment.",
+      "keyQuote": "They received the message with great eagerness and examined the Scriptures every day to see if what Paul said was true.",
+      "lessonForUs": "True discernment combines a heart open to God's truth with a mind that tests everything against Scripture. Skepticism without eagerness is cynicism; eagerness without testing is naïveté.",
       "heading": "Noble Examiners of Truth"
     }
   ],
   "panels": [],
-  "totalWords": 600
+  "totalWords": 1781
 }

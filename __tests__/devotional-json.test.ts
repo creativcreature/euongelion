@@ -66,4 +66,55 @@ describe('Devotional JSON Files', () => {
       }
     }
   })
+
+  it('rich Substack fields are preserved in regenerated devotionals', () => {
+    // Spot-check too-busy-for-god-day-1 (known to have all rich fields)
+    const path = join(DEVOTIONALS_DIR, 'too-busy-for-god-day-1.json')
+    if (!existsSync(path)) return
+    const data = JSON.parse(readFileSync(path, 'utf-8'))
+
+    const vocab = data.modules.find((m: { type: string }) => m.type === 'vocab')
+    expect(vocab, 'vocab module exists').toBeTruthy()
+    expect(vocab.pronunciation, 'vocab has pronunciation').toBeTruthy()
+    expect(vocab.strongsNumber, 'vocab has strongsNumber').toBeTruthy()
+    expect(vocab.wordByWord, 'vocab has wordByWord').toBeTruthy()
+    expect(vocab.wordByWord.length).toBeGreaterThan(0)
+
+    const takeaway = data.modules.find(
+      (m: { type: string }) => m.type === 'takeaway',
+    )
+    expect(takeaway, 'takeaway module exists').toBeTruthy()
+    expect(takeaway.commitment, 'takeaway has commitment').toBeTruthy()
+    expect(takeaway.leavingAtCross, 'takeaway has leavingAtCross').toBeTruthy()
+    expect(
+      takeaway.receivingFromCross,
+      'takeaway has receivingFromCross',
+    ).toBeTruthy()
+
+    const comprehension = data.modules.find(
+      (m: { type: string }) => m.type === 'comprehension',
+    )
+    expect(comprehension, 'comprehension module exists').toBeTruthy()
+    expect(
+      comprehension.forReflection,
+      'comprehension has forReflection',
+    ).toBeTruthy()
+    expect(comprehension.forReflection.length).toBeGreaterThan(0)
+
+    const teaching = data.modules.find(
+      (m: { type: string }) => m.type === 'teaching',
+    )
+    expect(teaching, 'teaching module exists').toBeTruthy()
+    expect(teaching.keyInsight, 'teaching has keyInsight').toBeTruthy()
+
+    const bridge = data.modules.find(
+      (m: { type: string }) => m.type === 'bridge',
+    )
+    expect(bridge, 'bridge module exists').toBeTruthy()
+    expect(bridge.ancientTruth, 'bridge has ancientTruth').toBeTruthy()
+    expect(
+      bridge.modernApplication,
+      'bridge has modernApplication',
+    ).toBeTruthy()
+  })
 })

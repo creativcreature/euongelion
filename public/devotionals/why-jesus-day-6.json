@@ -1,57 +1,83 @@
 {
   "day": 6,
   "title": "Put It to Use",
+  "subtitle": "Practical Application",
   "teaser": "Practical Application",
   "framework": "Luke 2:20",
   "scriptureReference": "Luke 2:20",
   "modules": [
     {
       "type": "scripture",
-      "passage": "The shepherds returned, glorifying and praising God for all the things they had heard and seen, which were just as they had been told.",
       "reference": "Luke 2:20",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "glorifying",
+        "praising God",
+        "just as they had been told"
+      ],
+      "passage": "The shepherds returned, glorifying and praising God for all the things they had heard and seen, which were just as they had been told."
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "δοξάζω",
       "transliteration": "Doxazo",
-      "language": "greek",
+      "pronunciation": "dox-AD-zoh",
+      "strongs": "G1392",
       "definition": "To glorify, to give glory",
-      "usage": "To recognize and declare someone's true worth and significance"
+      "root_meaning": "To recognize and declare someone's true worth and significance",
+      "usage_note": "The shepherds' response was to live in a way that reflected the magnitude of what they had discovered."
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "Think about a time when you received life-changing news—perhaps a job offer that would transform your career, a medical diagnosis that required major lifestyle changes, or the birth of a child that made you a parent.\n\nInitially, the news might have felt surreal, almost too big to fully grasp. But gradually, as the reality sank in, you began to make practical adjustments. You probably didn't change everything at once. Instead, you started with the most obvious and necessary adjustments, then gradually worked through the implications for other areas of your life.\n\nThis is similar to what happens when we truly accept that Jesus is our Savior and Lord. The reality is so significant that it can't be confined to one area of life—it gradually influences everything.\n\nLike the shepherds who 'returned, glorifying and praising God,' we find ourselves living differently because we've encountered something that changes our fundamental understanding of reality.",
+      "pardes_layer": "peshat"
     },
     {
-      "type": "insight"
+      "type": "insight",
+      "text": "Accepting Jesus as Savior doesn't require abandoning our normal responsibilities, but it does transform how we approach them and why we do them."
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "**Developing a Savior-Centered Identity**\n\nThe first practical step is allowing our identity to be shaped by our relationship with Jesus rather than by our achievements, failures, or social roles:\n\n**Daily Reminder:** Beginning each day by remembering that you are loved, forgiven, and accepted by God through Jesus. This provides a foundation of security that doesn't depend on your performance.\n\n**Identity Statements:** Regularly affirming truths about who you are in Christ: 'I am a child of God,' 'I am forgiven,' 'I am being transformed,' 'I have a purpose.'\n\n**Perspective on Failure:** When you fall short of your own standards, remembering that your worth isn't based on perfect performance but on God's grace.\n\n**Practicing Gratitude and Worship**\n\nThe shepherds' response was to glorify and praise God. This can become a regular practice:\n\n**Daily Gratitude:** Ending each day by identifying specific things you're grateful for, particularly evidences of God's grace.\n\n**Worship Practices:** Engaging in activities that acknowledge God's greatness—prayer, reading Scripture, spending time in nature, or participating in corporate worship.",
+      "pardes_layer": "remez"
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "**Aligning Priorities with Kingdom Values**\n\nJesus's lordship means allowing his values and priorities to shape our decisions:\n\n**Time Management:** Evaluating how you spend your time in light of what Jesus said was most important—loving God and loving others.\n\n**Financial Decisions:** Viewing your resources as gifts from God to be used for his purposes, not just personal comfort or security.\n\n**Career Choices:** Considering how your work can serve God's purposes and benefit others, not just advance your own interests.\n\n**Relationship Priorities:** Investing more deeply in relationships that matter most and approaching all relationships with greater love, forgiveness, and service.\n\n**Serving Others**\n\nThe angels announced that Jesus's birth was 'good news for all the people.' Living as saved people means participating in God's mission to bless others:\n\n**Acts of Service:** Looking for practical ways to help people in your community, workplace, or family.\n\n**Justice and Advocacy:** Standing up for those who are marginalized, oppressed, or voiceless.\n\n**Sharing the Gospel:** Finding natural and appropriate ways to share the good news about Jesus with others.",
+      "pardes_layer": "derash"
     },
     {
-      "type": "bridge"
+      "type": "bridge",
+      "ancient": "The shepherds returned to their normal work, but with a transformed perspective—glorifying and praising God",
+      "modern": "We return to our daily responsibilities, but with a new organizing principle that influences everything",
+      "connection": "In both cases, encounter with the Messiah becomes the lens through which we view all of life",
+      "question": "How can you live in a way that reflects the reality that Jesus is your Savior and Lord?"
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "**Measuring Progress**\n\nHow do we know if we're successfully integrating our faith into daily life? Some indicators include:\n\n**Increased Peace:** Growing sense of security and contentment that doesn't depend on external circumstances.\n\n**Greater Love:** More patience, kindness, and compassion in your relationships with others.\n\n**Clearer Purpose:** Better understanding of why you're here and how your life fits into God's larger purposes.\n\n**Moral Growth:** Progress in areas where you previously struggled with temptation or character issues.\n\n**Deeper Joy:** Not just happiness based on circumstances, but a deeper satisfaction that comes from knowing you're living according to your true purpose.",
+      "pardes_layer": "sod"
     },
     {
       "type": "takeaway",
-      "content": "This week you learned:\n\n1. **Day 1:** The announcement—Jesus is identified as Savior, Messiah, and Lord\n2. **Day 2:** The connection—Jesus fulfills centuries of divine promises\n3. **Day 3:** The original audience—this message challenged imperial power and included the marginalized\n4. **Day 4:** The lesson for today—Jesus offers salvation that addresses root causes, not just symptoms\n5. **Day 5:** Personal response—moving from recognition to commitment\n6. **Day 6:** Practical application—living as people who have encountered the Savior",
+      "text": "This week you learned:\n\n1. **Day 1:** The announcement—Jesus is identified as Savior, Messiah, and Lord\n2. **Day 2:** The connection—Jesus fulfills centuries of divine promises\n3. **Day 3:** The original audience—this message challenged imperial power and included the marginalized\n4. **Day 4:** The lesson for today—Jesus offers salvation that addresses root causes, not just symptoms\n5. **Day 5:** Personal response—moving from recognition to commitment\n6. **Day 6:** Practical application—living as people who have encountered the Savior",
+      "action": "Commit to one specific practice this week that reflects your response to what you've learned about Jesus as Savior.",
       "heading": "Week Summary"
     },
     {
       "type": "reflection",
-      "prompt": "What specific changes will you make this week to better align your daily life with your understanding of Jesus as Savior and Lord?"
+      "question": "What specific changes will you make this week to better align your daily life with your understanding of Jesus as Savior and Lord?",
+      "prompt_text": "Be specific and practical. What will you start, stop, or change?",
+      "allow_save": true
     },
     {
       "type": "prayer",
-      "prayerText": "Help me to integrate my understanding of Jesus as Savior into every aspect of my life, so that my actions, relationships, and priorities reflect this foundational truth. Like the shepherds, may I return to my daily responsibilities glorifying and praising You for what I have heard and seen. May my life point others to the One who offers salvation to all people. In Jesus' name, Amen.",
-      "heading": "Closing Prayer"
+      "scripture_echo": "Luke 2:20",
+      "heading": "Closing Prayer",
+      "prayerText": "Help me to integrate my understanding of Jesus as Savior into every aspect of my life, so that my actions, relationships, and priorities reflect this foundational truth. Like the shepherds, may I return to my daily responsibilities glorifying and praising You for what I have heard and seen. May my life point others to the One who offers salvation to all people. In Jesus' name, Amen."
     }
   ],
   "panels": [],
-  "totalWords": 225
+  "totalWords": 965
 }

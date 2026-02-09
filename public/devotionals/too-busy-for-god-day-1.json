@@ -2,65 +2,171 @@
   "day": 1,
   "title": "The Vanity of Busyness",
   "teaser": "Recognizing that busyness without God is meaningless vapor",
+  "anchorVerse": "Ecclesiastes 1:2",
+  "theme": "Recognizing that busyness without God is meaningless vapor",
   "framework": "Ecclesiastes 1:2",
   "scriptureReference": "Ecclesiastes 1:2",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Vanity of vanities, says the Preacher, vanity of vanities! All is vanity.",
       "reference": "Ecclesiastes 1:2",
-      "translation": "ESV"
+      "translation": "ESV",
+      "emphasis": [
+        "Vanity of vanities",
+        "All is vanity"
+      ],
+      "hebrewOriginal": "הֲבֵל הֲבָלִים אָמַר קֹהֶלֶת הֲבֵל הֲבָלִים הַכֹּל הָבֶל",
+      "passage": "Vanity of vanities, says the Preacher, vanity of vanities! All is vanity."
     },
     {
       "type": "vocab",
+      "language": "hebrew",
       "word": "הֶבֶל",
       "transliteration": "hevel",
-      "language": "hebrew",
+      "pronunciation": "HEH-vel",
+      "meaning": "vanity, meaninglessness, vapor, breath",
+      "rootMeaning": "Literally means 'breath' or 'vapor' - something that appears substantial but disappears when you try to grasp it.",
+      "usageNote": "The repetition 'hevel havelim' (vanity of vanities) creates emphasis - the ultimate degree of meaninglessness, like 'song of songs' or 'king of kings'.",
+      "wordByWord": [
+        {
+          "word": "הֲבֵל",
+          "transliteration": "havel",
+          "meaning": "vapor, breath, meaninglessness"
+        },
+        {
+          "word": "הֲבָלִים",
+          "transliteration": "havalim",
+          "meaning": "plural intensive form 'vanities'"
+        },
+        {
+          "word": "אָמַר",
+          "transliteration": "amar",
+          "meaning": "he said, declared"
+        },
+        {
+          "word": "קֹהֶלֶת",
+          "transliteration": "qohelet",
+          "meaning": "the Preacher, Teacher, Gatherer"
+        },
+        {
+          "word": "הַכֹּל",
+          "transliteration": "hakol",
+          "meaning": "everything, all things"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "הֶבֶל",
+          "reference": "Abel's name in Genesis - perhaps suggesting the brevity of his life"
+        }
+      ],
+      "strongsNumber": "H1892",
       "definition": "vanity, meaninglessness, vapor, breath",
       "usage": "Literally means 'breath' or 'vapor' - something that appears substantial but disappears when you try to grasp it."
     },
     {
       "type": "teaching",
+      "body": "Three thousand years ago, the wisest man who ever lived asked the same question you're asking. King Solomon, with unlimited resources and endless opportunities, looked at his packed schedule and declared: 'Hevel! Meaningless! All is meaningless!'\n\nSolomon wasn't being pessimistic; he was being honest about the nature of human activity apart from God. He conducted the ultimate productivity experiment - trying achievement, pleasure, wisdom, work, and wealth. His conclusion? Without God at the center, it's all hevel - vapor that appears substantial but vanishes when examined closely.\n\nThis isn't a condemnation of work or achievement. It's an exposure of the futility of activity that lacks eternal purpose and divine connection.",
+      "keyInsight": "Solomon wasn't condemning work or achievement. He was exposing the futility of activity that lacks eternal purpose and divine connection.",
       "content": "Three thousand years ago, the wisest man who ever lived asked the same question you're asking. King Solomon, with unlimited resources and endless opportunities, looked at his packed schedule and declared: 'Hevel! Meaningless! All is meaningless!'\n\nSolomon wasn't being pessimistic; he was being honest about the nature of human activity apart from God. He conducted the ultimate productivity experiment - trying achievement, pleasure, wisdom, work, and wealth. His conclusion? Without God at the center, it's all hevel - vapor that appears substantial but vanishes when examined closely.\n\nThis isn't a condemnation of work or achievement. It's an exposure of the futility of activity that lacks eternal purpose and divine connection.",
       "heading": "The Ancient Preacher's Wisdom"
     },
     {
       "type": "story",
+      "body": "Sarah refreshed her email for the 23rd time that morning. Three urgent requests, two 'quick questions,' and one meeting that would definitely run over. Her calendar looked like a game of Tetris played by someone having an anxiety attack.\n\nShe paused at her desk, staring at the motivational poster: 'Success is the sum of small efforts repeated day in and day out.' But what if those efforts were leading nowhere?\n\nThe question hit her like cold water: What if I'm incredibly busy doing incredibly meaningless things?",
+      "connectionToTheme": "Sarah represents the modern version of Solomon's ancient crisis - activity without meaning.",
       "content": "Sarah refreshed her email for the 23rd time that morning. Three urgent requests, two 'quick questions,' and one meeting that would definitely run over. Her calendar looked like a game of Tetris played by someone having an anxiety attack.\n\nShe paused at her desk, staring at the motivational poster: 'Success is the sum of small efforts repeated day in and day out.' But what if those efforts were leading nowhere?\n\nThe question hit her like cold water: What if I'm incredibly busy doing incredibly meaningless things?",
       "heading": "The Modern Preacher's Lament"
     },
     {
       "type": "insight",
+      "body": "Marcus worked 70-hour weeks for a nonprofit that fed hungry children. His busyness was literally about serving God's kingdom. How could that be hevel?\n\nBut late at night, when the emails finally stopped, Marcus felt the hollow ache Solomon described. He was successful, important, needed - and completely empty. He had become so busy serving God that he had forgotten how to be with God.\n\nThe revelation came during a 14-hour flight with no wifi: What if the most productive thing I could do today is nothing?",
+      "historicalContext": "Ecclesiastes belongs to the Wisdom Literature (Job, Psalms, Proverbs, Ecclesiastes, Song of Songs), which addresses life's practical and philosophical questions through observation and reflection rather than Law or Prophecy.",
+      "fascinatingFact": "The Hebrew word 'qohelet' (Preacher/Teacher) comes from the root 'qahal' meaning 'to gather' or 'assemble.' Solomon wasn't just teaching individuals - he was addressing the entire assembly of God's people about the danger of misplaced priorities.",
       "content": "Marcus worked 70-hour weeks for a nonprofit that fed hungry children. His busyness was literally about serving God's kingdom. How could that be hevel?\n\nBut late at night, when the emails finally stopped, Marcus felt the hollow ache Solomon described. He was successful, important, needed - and completely empty. He had become so busy serving God that he had forgotten how to be with God.\n\nThe revelation came during a 14-hour flight with no wifi: What if the most productive thing I could do today is nothing?",
       "heading": "Motion vs. Progress"
     },
     {
       "type": "bridge",
-      "content": "Solomon declared that all human activity apart from God is 'hevel' - vapor that disappears.\n\nYour packed calendar, endless notifications, and constant productivity might feel substantial, but without God at the center, you're grasping at vapor."
+      "ancientTruth": "Solomon declared that all human activity apart from God is 'hevel' - vapor that disappears.",
+      "modernApplication": "Your packed calendar, endless notifications, and constant productivity might feel substantial, but without God at the center, you're grasping at vapor.",
+      "connectionPoint": "The same restless pursuit of meaning that drove Solomon 3,000 years ago drives our hustle culture today. Different tools, same emptiness.",
+      "newTestamentEcho": "Jesus echoed Solomon's concern: 'What good is it for someone to gain the whole world, yet forfeit their soul?' (Mark 8:36)"
     },
     {
       "type": "reflection",
-      "prompt": "What activities fill your time but leave your soul empty?"
+      "prompt": "What activities fill your time but leave your soul empty?",
+      "additionalQuestions": [
+        "What would change if you believed that some of your 'urgent' activities were actually meaningless vapor?",
+        "When do you feel most tempted to equate busyness with faithfulness?",
+        "What are you afraid would happen if you slowed down?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "God, show me what in my life is hevel - meaningless vapor - and what has eternal weight. Help me distinguish between motion and progress. Give me the courage to stop running long enough to ask if I'm even running in the right direction. Amen."
+      "posture": "honest-confession",
+      "prayerText": "God, show me what in my life is hevel - meaningless vapor - and what has eternal weight. Help me distinguish between motion and progress. Give me the courage to stop running long enough to ask if I'm even running in the right direction. Amen.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "I will identify one 'vapor' activity that consumes time but produces no eternal value, and I will replace it with five minutes of stillness with God.",
+      "leavingAtCross": [
+        "The illusion that my busyness equals my worth",
+        "The fear that slowing down means falling behind",
+        "The pride that makes me believe the world depends on my constant activity"
+      ],
+      "receivingFromCross": [
+        "The truth that my value comes from God's love, not my productivity",
+        "The freedom to rest without guilt",
+        "The wisdom to distinguish between meaningful work and meaningless motion"
+      ],
+      "content": "I will identify one 'vapor' activity that consumes time but produces no eternal value, and I will replace it with five minutes of stillness with God."
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "What activities in your life might be hevel - appearing important but lacking eternal significance?",
+        "When do you feel most tempted to equate busyness with faithfulness?",
+        "How might God be calling you to simplify your schedule to make room for what truly matters?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area where you suspect you're confusing motion with progress",
+        "Commit to one specific change that will create space for God in your daily routine",
+        "Ask each other: 'What are you too busy for that might be the most important thing?'"
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Mark 8:36",
+          "text": "What good is it for someone to gain the whole world, yet forfeit their soul?"
+        },
+        {
+          "reference": "2 Timothy 3:7",
+          "text": "Always learning but never able to come to a knowledge of the truth."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ecclesiastes",
+          "note": "Read chapters 1-2 for Solomon's full investigation of meaning"
+        }
+      ]
     },
     {
       "type": "profile",
       "name": "Solomon (Qohelet)",
+      "title": "The Teacher",
+      "description": "King of Israel, son of David, traditionally credited as the author of Ecclesiastes. Despite having unlimited wisdom, wealth, and opportunity, Solomon discovered that all human achievement apart from God is ultimately meaningless.",
+      "keyQuote": "Vanity of vanities! All is vanity.",
+      "lessonForUs": "If the wisest and most successful man in history found his achievements empty without God, what makes us think our busy schedules will satisfy?",
       "heading": "The Teacher"
     }
   ],
   "panels": [],
-  "totalWords": 441
+  "totalWords": 1307
 }

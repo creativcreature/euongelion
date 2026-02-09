@@ -1,61 +1,265 @@
 {
   "day": 6,
   "title": "Put It to Use",
+  "subtitle": "Practical Application",
   "teaser": "Building cross-bearing discipleship into the ongoing patterns of daily life",
+  "anchorVerse": "Matthew 16:24",
+  "theme": "Building cross-bearing discipleship into the ongoing patterns of daily life",
   "framework": "Matthew 16:24",
   "scriptureReference": "Matthew 16:24",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Then Jesus said to his disciples, 'Whoever wants to be my disciple must deny themselves and take up their cross and follow me.'",
       "reference": "Matthew 16:24",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "Whoever wants to be my disciple"
+      ],
+      "greekText": "τότε ὁ Ἰησοῦς εἶπεν τοῖς μαθηταῖς αὐτοῦ· εἰ τις θέλει ὀπίσω μου ἔρχεσθαι, ἀρνησάσθω ἑαυτὸν καὶ ἀράτω τὸν σταυρὸν αὐτοῦ, καὶ ἀκολουθείτω μοι.",
+      "passage": "Then Jesus said to his disciples, 'Whoever wants to be my disciple must deny themselves and take up their cross and follow me.'"
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "μαθητής",
       "transliteration": "Mathetes",
-      "language": "greek",
+      "pronunciation": "mah-thay-TACE",
+      "meaning": "Disciple or learner",
+      "rootMeaning": "This isn't just someone who believes certain things about Jesus but someone who is actively learning to live like Jesus through ongoing practice and commitment.",
+      "fullVerseBreakdown": {
+        "words": [
+          {
+            "greek": "τότε",
+            "transliteration": "tote",
+            "meaning": "then"
+          },
+          {
+            "greek": "ὁ",
+            "transliteration": "ho",
+            "meaning": "the"
+          },
+          {
+            "greek": "Ἰησοῦς",
+            "transliteration": "Iesous",
+            "meaning": "Jesus"
+          },
+          {
+            "greek": "εἶπεν",
+            "transliteration": "eipen",
+            "meaning": "said (aorist, 3rd person singular)"
+          },
+          {
+            "greek": "τοῖς",
+            "transliteration": "tois",
+            "meaning": "to the (dative plural)"
+          },
+          {
+            "greek": "μαθηταῖς",
+            "transliteration": "mathetais",
+            "meaning": "disciples (dative plural)"
+          },
+          {
+            "greek": "αὐτοῦ",
+            "transliteration": "autou",
+            "meaning": "his (genitive)"
+          },
+          {
+            "greek": "εἰ",
+            "transliteration": "ei",
+            "meaning": "if"
+          },
+          {
+            "greek": "τις",
+            "transliteration": "tis",
+            "meaning": "anyone"
+          },
+          {
+            "greek": "θέλει",
+            "transliteration": "thelei",
+            "meaning": "wants (present, 3rd person singular)"
+          },
+          {
+            "greek": "ὀπίσω",
+            "transliteration": "opiso",
+            "meaning": "behind or after"
+          },
+          {
+            "greek": "μου",
+            "transliteration": "mou",
+            "meaning": "me (genitive)"
+          },
+          {
+            "greek": "ἔρχεσθαι",
+            "transliteration": "erchesthai",
+            "meaning": "to come (present infinitive)"
+          },
+          {
+            "greek": "ἀρνησάσθω",
+            "transliteration": "arnesastho",
+            "meaning": "let him deny (aorist imperative, 3rd person)"
+          },
+          {
+            "greek": "ἑαυτὸν",
+            "transliteration": "heauton",
+            "meaning": "himself (accusative)"
+          },
+          {
+            "greek": "καὶ",
+            "transliteration": "kai",
+            "meaning": "and"
+          },
+          {
+            "greek": "ἀράτω",
+            "transliteration": "arato",
+            "meaning": "let him take up (aorist imperative, 3rd person)"
+          },
+          {
+            "greek": "τὸν",
+            "transliteration": "ton",
+            "meaning": "the (accusative)"
+          },
+          {
+            "greek": "σταυρὸν",
+            "transliteration": "stauron",
+            "meaning": "cross (accusative)"
+          },
+          {
+            "greek": "αὐτοῦ",
+            "transliteration": "autou",
+            "meaning": "his (genitive)"
+          },
+          {
+            "greek": "καὶ",
+            "transliteration": "kai",
+            "meaning": "and"
+          },
+          {
+            "greek": "ἀκολουθείτω",
+            "transliteration": "akoloutheito",
+            "meaning": "let him follow (present imperative, 3rd person)"
+          },
+          {
+            "greek": "μοι",
+            "transliteration": "moi",
+            "meaning": "me (dative)"
+          }
+        ]
+      },
+      "grammarSummary": "In two weeks, you've learned to: Read the entire Greek alphabet fluently; Understand basic noun cases and their functions; Recognize present, aorist, and imperative verb forms; Identify participles and infinitives; Read conditional statements and purpose clauses; Translate complete passages from the New Testament.",
       "definition": "Disciple or learner",
       "usage": "This isn't just someone who believes certain things about Jesus but someone who is actively learning to live like Jesus through ongoing practice and commitment."
     },
     {
       "type": "teaching",
+      "body": "Cross-bearing discipleship isn't sustained by occasional dramatic gestures but by daily practices that gradually shape our character and priorities. These practices help us maintain focus on kingdom values even when cultural pressures pull us toward self-centered living.\n\nMorning Practices: Begin each day by remembering your identity as a follower of Jesus and asking how you can serve his kingdom that day. Read Scripture with the specific question: 'How is Jesus calling me to deny myself today?' Pray for opportunities to serve others and for wisdom to recognize those opportunities when they arise.\n\nEvening Practices: Reflect on the day's choices - where did you choose service over self-interest? Where did you fall short? Confess failures and accept God's forgiveness, while also learning from mistakes. Plan specific ways to live more faithfully tomorrow based on today's experiences.\n\nThis involves regular self-examination, confession when we fall short, and recommitment to following Jesus more faithfully. It also involves accepting God's grace and forgiveness when we fail, and allowing that grace to motivate continued growth rather than complacency.",
+      "keyInsight": "Cross-bearing discipleship isn't just about personal spiritual growth - it's about participating in God's work of healing and restoring the world. As we learn to live as Jesus lived, we become agents of his kingdom, contributing to justice, reconciliation, and human flourishing.",
       "content": "Cross-bearing discipleship isn't sustained by occasional dramatic gestures but by daily practices that gradually shape our character and priorities. These practices help us maintain focus on kingdom values even when cultural pressures pull us toward self-centered living.\n\nMorning Practices: Begin each day by remembering your identity as a follower of Jesus and asking how you can serve his kingdom that day. Read Scripture with the specific question: 'How is Jesus calling me to deny myself today?' Pray for opportunities to serve others and for wisdom to recognize those opportunities when they arise.\n\nEvening Practices: Reflect on the day's choices - where did you choose service over self-interest? Where did you fall short? Confess failures and accept God's forgiveness, while also learning from mistakes. Plan specific ways to live more faithfully tomorrow based on today's experiences.\n\nThis involves regular self-examination, confession when we fall short, and recommitment to following Jesus more faithfully. It also involves accepting God's grace and forgiveness when we fail, and allowing that grace to motivate continued growth rather than complacency.",
       "heading": "Building a Cross-Bearing Life"
     },
     {
       "type": "story",
+      "body": "Two years after Dr. Michael Rodriguez moved to Guatemala, he was invited back to Metropolitan Hospital to speak at their annual conference on global health. As he stood before his former colleagues, he reflected on how much had changed since he had last been in that auditorium.\n\nThe work in Guatemala had been everything Dr. Patterson had warned him it would be - challenging, frustrating, and sometimes heartbreaking. Michael had performed surgeries in conditions that would have been unthinkable in his previous practice, had watched patients die from conditions that would have been easily treatable with better resources, and had lived more simply than he ever had before.\n\nBut he had also experienced transformation he couldn't have imagined. He had trained twelve local doctors who were now providing cardiac care throughout the region. He had helped establish three satellite clinics that were serving remote communities. He had developed new surgical techniques adapted for resource-limited settings that were now being used in similar programs around the world.\n\nAfter his presentation, several doctors approached Michael to ask about opportunities for similar service. Dr. Chen, who had taken the Johns Hopkins position Michael had declined, pulled him aside. 'I've achieved everything I thought I wanted,' he said quietly. 'But listening to you today, I realize I may have gained the world but lost something essential about why I became a doctor in the first place.'",
+      "connectionToTheme": "Living as a cross-bearing disciple doesn't just transform our own lives - it creates ripple effects that can influence others and contribute to God's work of healing and restoration in the world.",
       "content": "Two years after Dr. Michael Rodriguez moved to Guatemala, he was invited back to Metropolitan Hospital to speak at their annual conference on global health. As he stood before his former colleagues, he reflected on how much had changed since he had last been in that auditorium.\n\nThe work in Guatemala had been everything Dr. Patterson had warned him it would be - challenging, frustrating, and sometimes heartbreaking. Michael had performed surgeries in conditions that would have been unthinkable in his previous practice, had watched patients die from conditions that would have been easily treatable with better resources, and had lived more simply than he ever had before.\n\nBut he had also experienced transformation he couldn't have imagined. He had trained twelve local doctors who were now providing cardiac care throughout the region. He had helped establish three satellite clinics that were serving remote communities. He had developed new surgical techniques adapted for resource-limited settings that were now being used in similar programs around the world.\n\nAfter his presentation, several doctors approached Michael to ask about opportunities for similar service. Dr. Chen, who had taken the Johns Hopkins position Michael had declined, pulled him aside. 'I've achieved everything I thought I wanted,' he said quietly. 'But listening to you today, I realize I may have gained the world but lost something essential about why I became a doctor in the first place.'",
       "heading": "The Long-Term Impact"
     },
     {
       "type": "insight",
+      "body": "How do we know if we're growing as cross-bearing disciples? Some indicators include:\n\nIncreased Generosity: Growing willingness to share your time, resources, and abilities with others, particularly those in need.\n\nGreater Peace: Less anxiety about your own security and success, more confidence in God's provision and purposes.\n\nDeeper Relationships: More authentic, loving, and sacrificial relationships with family, friends, and community.\n\nClearer Purpose: Better understanding of how your life fits into God's larger purposes, more satisfaction in serving something greater than yourself.\n\nMoral Courage: Increased willingness to stand for truth and justice, even when it's costly or unpopular.\n\nCross-bearing discipleship looks different in different seasons of life, and everyone experiences setbacks and failures. The key is to maintain long-term commitment while being flexible about specific applications.",
+      "historicalContext": "The long-term vision helps sustain us through difficult seasons and gives meaning to the sacrifices we make. We're not just trying to be better people - we're joining Jesus in his mission to redeem all things.",
+      "fascinatingFact": "Many who have made significant sacrifices report that they've discovered a quality of life - purpose, joy, meaningful relationships - that they never found when pursuing conventional success.",
       "content": "How do we know if we're growing as cross-bearing disciples? Some indicators include:\n\nIncreased Generosity: Growing willingness to share your time, resources, and abilities with others, particularly those in need.\n\nGreater Peace: Less anxiety about your own security and success, more confidence in God's provision and purposes.\n\nDeeper Relationships: More authentic, loving, and sacrificial relationships with family, friends, and community.\n\nClearer Purpose: Better understanding of how your life fits into God's larger purposes, more satisfaction in serving something greater than yourself.\n\nMoral Courage: Increased willingness to stand for truth and justice, even when it's costly or unpopular.\n\nCross-bearing discipleship looks different in different seasons of life, and everyone experiences setbacks and failures. The key is to maintain long-term commitment while being flexible about specific applications.",
       "heading": "Measuring Spiritual Progress"
     },
     {
       "type": "bridge",
-      "content": "Jesus called his disciples to deny themselves, take up their cross, and follow him - not as a one-time decision but as an ongoing way of life.\n\nWe integrate cross-bearing into daily rhythms through intentional practices, community support, and regular recommitment to kingdom priorities."
+      "ancientTruth": "Jesus called his disciples to deny themselves, take up their cross, and follow him - not as a one-time decision but as an ongoing way of life.",
+      "modernApplication": "We integrate cross-bearing into daily rhythms through intentional practices, community support, and regular recommitment to kingdom priorities.",
+      "connectionPoint": "The same call Jesus made to his first disciples applies to us today - and the same promise applies: those who lose their life for his sake will find it.",
+      "newTestamentEcho": "The early church modeled what cross-bearing community looks like: sharing resources, caring for one another, and supporting each other through persecution and hardship."
     },
     {
       "type": "reflection",
-      "prompt": "How can I structure my daily life to support ongoing growth as a cross-bearing disciple rather than just maintaining the status quo?"
+      "prompt": "How can I structure my daily life to support ongoing growth as a cross-bearing disciple rather than just maintaining the status quo?",
+      "additionalQuestions": [
+        "What specific daily, weekly, and monthly practices will you implement to support your growth as a cross-bearing disciple?",
+        "How will you measure your progress in following Jesus more faithfully? What indicators will you look for?",
+        "Who will you invite to support and hold you accountable in your commitment to cross-bearing discipleship?"
+      ],
+      "invitationType": "integration"
     },
     {
       "type": "prayer",
-      "prayerText": "Help me to build habits and rhythms that will sustain me in following Jesus faithfully over the long term, through both easy and difficult seasons."
+      "posture": "petition",
+      "prayerText": "Help me to build habits and rhythms that will sustain me in following Jesus faithfully over the long term, through both easy and difficult seasons.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "Schedule it now. Put one cross-bearing practice into your calendar for next week - volunteer time, difficult conversation, generous giving, or sacrificial service. Make it non-negotiable.",
+      "leavingAtCross": [
+        "The assumption that following Jesus can remain at the level of ideas without affecting daily practices",
+        "The habit of compartmentalizing faith from the rest of life",
+        "The tendency to rely on my own strength rather than community support"
+      ],
+      "receivingFromCross": [
+        "Practical rhythms that will sustain long-term discipleship",
+        "Community relationships for accountability and encouragement",
+        "Hope that participating in God's work will bring transformation to both me and the world"
+      ],
+      "content": "Schedule it now. Put one cross-bearing practice into your calendar for next week - volunteer time, difficult conversation, generous giving, or sacrificial service. Make it non-negotiable."
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "What did you learn this week about what it means to take up your cross and follow Jesus?",
+        "How has your understanding of discipleship changed through this study?",
+        "What specific practices will you implement as a result of this series?"
+      ],
+      "forAccountabilityPartners": [
+        "Share the most significant insight you gained this week about cross-bearing discipleship",
+        "Discuss the specific commitments each of you made and how you plan to follow through",
+        "Agree on a time to check in with each other about progress on your commitments"
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Mark 8:34-38",
+          "text": "Parallel passage on taking up the cross"
+        },
+        {
+          "reference": "Luke 9:23-27",
+          "text": "Luke's version of Jesus's call to discipleship"
+        },
+        {
+          "reference": "Luke 14:25-33",
+          "text": "Counting the cost of discipleship"
+        },
+        {
+          "reference": "Philippians 3:7-11",
+          "text": "Paul's perspective on losing everything to gain Christ"
+        },
+        {
+          "reference": "Romans 12:1-2",
+          "text": "Offering our bodies as living sacrifices"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "The Cost of Discipleship by Dietrich Bonhoeffer",
+          "note": "Classic exploration of what it means to follow Jesus sacrificially"
+        },
+        {
+          "type": "book",
+          "title": "Matthew (Gospel)",
+          "note": "Read the entire Gospel to understand the broader context of Jesus's call"
+        }
+      ]
     }
   ],
   "panels": [],
-  "totalWords": 699
+  "totalWords": 1964
 }

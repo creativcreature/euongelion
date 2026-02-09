@@ -2,60 +2,106 @@
   "day": 3,
   "title": "The Breath of Life",
   "teaser": "The intimate, life-giving nature of our Creator",
+  "anchorVerse": "Genesis 2:7, John 20:22",
+  "theme": "The intimate, life-giving nature of our Creator",
   "framework": "Genesis 2:7, John 20:22",
   "scriptureReference": "Genesis 2:7, John 20:22",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Then the Lord God formed a man from the dust of the ground and breathed into his nostrils the breath of life, and the man became a living being.",
       "reference": "Genesis 2:7",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "breathed into his nostrils the breath of life",
+        "became a living being"
+      ],
+      "hebrewOriginal": "וַיִּיצֶר יְהוָה אֱלֹהִים אֶת־הָאָדָם עָפָר מִן־הָאֲדָמָה וַיִּפַּח בְּאַפָּיו נִשְׁמַת חַיִּים וַיְהִי הָאָדָם לְנֶפֶשׁ חַיָּה",
+      "passage": "Then the Lord God formed a man from the dust of the ground and breathed into his nostrils the breath of life, and the man became a living being."
     },
     {
       "type": "scripture",
-      "passage": "And when he had said this, he breathed on them and said to them, 'Receive the Holy Spirit.'",
       "reference": "John 20:22",
-      "translation": "ESV"
+      "translation": "ESV",
+      "emphasis": [
+        "breathed on them",
+        "Receive the Holy Spirit"
+      ],
+      "passage": "And when he had said this, he breathed on them and said to them, 'Receive the Holy Spirit.'"
     },
     {
       "type": "teaching",
+      "body": "We are dust, but we are dust that has been kissed by God. The creation of Adam was not a distant, sterile event. It was an act of profound intimacy. The all-powerful Yahweh Elohim knelt, formed a man from the soil, and then breathed His own life into him. This divine breath, the neshamah, is what separates humanity from the rest of creation. It is the spirit, the life-force, the very essence of God given to us.",
+      "keyInsight": "Your life is not a product of chance; it is the result of a divine exhale.",
       "content": "We are dust, but we are dust that has been kissed by God. The creation of Adam was not a distant, sterile event. It was an act of profound intimacy. The all-powerful Yahweh Elohim knelt, formed a man from the soil, and then breathed His own life into him. This divine breath, the neshamah, is what separates humanity from the rest of creation. It is the spirit, the life-force, the very essence of God given to us.",
       "heading": "Dust Kissed by God"
     },
     {
       "type": "vocab",
+      "language": "hebrew",
       "word": "נְשָׁמָה",
       "transliteration": "neshamah",
-      "language": "hebrew",
+      "pronunciation": "neh-shah-MAH",
+      "meaning": "breath, spirit, life-force",
+      "rootMeaning": "This Hebrew word is one of several words for 'spirit' in the Old Testament, but it is the one most closely associated with the life-giving breath of God. It is the spark of conscious, intelligent, spiritual life that God imparts to humanity. It is what makes us capable of relationship with Him.",
+      "usageNote": "The root of neshamah is related to the word shem (name). To have neshamah is to have a name, an identity, a personal relationship with the One who breathed it into you. This is what separates humanity from the animals. We are not just alive; we are known by name.",
+      "relatedWords": [
+        {
+          "word": "רוּחַ",
+          "transliteration": "ruach",
+          "meaning": "The more general word for spirit or wind"
+        }
+      ],
       "definition": "breath, spirit, life-force",
       "usage": "This Hebrew word is one of several words for 'spirit' in the Old Testament, but it is the one most closely associated with the life-giving breath of God. It is the spark of conscious, intelligent, spiritual life that God imparts to humanity. It is what makes us capable of relationship with Him."
     },
     {
       "type": "story",
+      "body": "In 2010, Kate Ogg gave birth to twins, Emily and Jamie, at only 27 weeks. Emily was born healthy, but Jamie was delivered limp and silent. For twenty minutes, doctors worked to revive him, but he showed no signs of life. They pronounced him dead and handed his small, lifeless body to his mother so she could say goodbye. Kate took her son and laid him on her bare chest, a practice known as \"kangaroo care.\" She and her husband, David, spoke to him, told him his name, and poured out their love for the son they had just lost.\n\nFor two hours, Kate held her son, skin-to-skin, her warmth enveloping his cold body. She held him not to revive him, but simply to be with him, to love him in his final moments. But then, something miraculous happened. The baby began to gasp. The doctor dismissed it as a reflex, but Kate felt the life in him. She held him closer, and he began to breathe. Slowly, miraculously, Jamie came back to life, his breath returning, his color changing from gray to pink. The doctors were stunned. The baby they had declared dead was now alive and well, resting in the warmth of his mother's embrace.\n\nThis is a modern-day picture of Genesis 2:7. We are born spiritually lifeless, separated from God. But He does not abandon us. He draws near, holds us close, and breathes His own life into us. The story of Jamie Ogg is a testament to the power of presence, of warmth, of a love that refuses to let go. It is a beautiful illustration of the God who kneels in the dust, holds us in His arms, and breathes His own Spirit into our lungs, turning what was lifeless into a living soul.",
+      "connectionToTheme": "Our spiritual life is not our own achievement; it is the result of God's intimate, life-giving breath.",
       "content": "In 2010, Kate Ogg gave birth to twins, Emily and Jamie, at only 27 weeks. Emily was born healthy, but Jamie was delivered limp and silent. For twenty minutes, doctors worked to revive him, but he showed no signs of life. They pronounced him dead and handed his small, lifeless body to his mother so she could say goodbye. Kate took her son and laid him on her bare chest, a practice known as \"kangaroo care.\" She and her husband, David, spoke to him, told him his name, and poured out their love for the son they had just lost.\n\nFor two hours, Kate held her son, skin-to-skin, her warmth enveloping his cold body. She held him not to revive him, but simply to be with him, to love him in his final moments. But then, something miraculous happened. The baby began to gasp. The doctor dismissed it as a reflex, but Kate felt the life in him. She held him closer, and he began to breathe. Slowly, miraculously, Jamie came back to life, his breath returning, his color changing from gray to pink. The doctors were stunned. The baby they had declared dead was now alive and well, resting in the warmth of his mother's embrace.\n\nThis is a modern-day picture of Genesis 2:7. We are born spiritually lifeless, separated from God. But He does not abandon us. He draws near, holds us close, and breathes His own life into us. The story of Jamie Ogg is a testament to the power of presence, of warmth, of a love that refuses to let go. It is a beautiful illustration of the God who kneels in the dust, holds us in His arms, and breathes His own Spirit into our lungs, turning what was lifeless into a living soul.",
       "heading": "The Breath of a Mother"
     },
     {
       "type": "insight",
+      "body": "Genesis 2:7 gives us the close-up of creation. Yahweh Elohim acts as a potter, forming (yatsar) a man from the dust. This emphasizes our humble origins. But then, He does something extraordinary. He breathes into the man's nostrils the \"breath of life\" (neshamah). This is more than just air; it is the divine spark, the spirit, the very life-force of God. This is what makes humanity unique.\n\nJohn 20:22 is the new creation equivalent of this moment. After His resurrection, Jesus appears to His disciples, who are hiding in fear. He has conquered sin and death, and now He comes to give them new life. He \"breathed on them\" and said, \"Receive the Holy Spirit.\" This is a direct echo of Genesis 2:7. The same God who breathed life into Adam is now breathing new, spiritual life into His followers. This is the birth of the Church, the beginning of the new creation.",
+      "historicalContext": "The act of God breathing into Adam's nostrils is one of the most intimate moments in all of Scripture. In John 20:22, Jesus echoes this very act, signaling the new creation and the giving of the Holy Spirit.",
       "content": "Genesis 2:7 gives us the close-up of creation. Yahweh Elohim acts as a potter, forming (yatsar) a man from the dust. This emphasizes our humble origins. But then, He does something extraordinary. He breathes into the man's nostrils the \"breath of life\" (neshamah). This is more than just air; it is the divine spark, the spirit, the very life-force of God. This is what makes humanity unique.\n\nJohn 20:22 is the new creation equivalent of this moment. After His resurrection, Jesus appears to His disciples, who are hiding in fear. He has conquered sin and death, and now He comes to give them new life. He \"breathed on them\" and said, \"Receive the Holy Spirit.\" This is a direct echo of Genesis 2:7. The same God who breathed life into Adam is now breathing new, spiritual life into His followers. This is the birth of the Church, the beginning of the new creation.",
       "heading": "What's Happening in the Text?"
     },
     {
       "type": "bridge",
-      "content": "God formed Adam from dust and breathed His own life into him, making him a living soul with the divine spark of neshamah.\n\nYour life is a direct result of God's breath in your lungs. It is a continuous, moment-by-moment gift."
+      "ancientTruth": "God formed Adam from dust and breathed His own life into him, making him a living soul with the divine spark of neshamah.",
+      "modernApplication": "Your life is a direct result of God's breath in your lungs. It is a continuous, moment-by-moment gift.",
+      "connectionPoint": "Every breath you take is a fresh gift of life from the God who formed you.",
+      "newTestamentEcho": "When Jesus breathes on His disciples in John 20, He is restoring the neshamah that was lost in the Fall, giving them the Holy Spirit, the promise of the new covenant (Ezekiel 36:26)."
     },
     {
       "type": "reflection",
-      "prompt": "Your life is a direct result of God's breath in your lungs. It is a continuous, moment-by-moment gift. How does this truth change the way you view your own existence?"
+      "prompt": "Your life is a direct result of God's breath in your lungs. It is a continuous, moment-by-moment gift. How does this truth change the way you view your own existence?",
+      "additionalQuestions": [
+        "Can you pause today and become aware of your own breathing, recognizing each inhale as a fresh gift of life from the God who formed you?"
+      ],
+      "invitationType": "gratitude"
     },
     {
       "type": "prayer",
-      "prayerText": "The Spirit of God has made me; the breath of the Almighty gives me life."
+      "reference": "Job 33:4 (NIV)",
+      "posture": "gratitude",
+      "prayerText": "The Spirit of God has made me; the breath of the Almighty gives me life.",
+      "prayerType": "scriptural"
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "When have you felt the 'breath of God' in your own life?",
+        "It could be a moment of sudden clarity, a feeling of peace in the midst of a storm, or a renewed sense of purpose. How did that experience change you?"
+      ],
+      "forAccountabilityPartners": [
+        "Share a moment when you felt God's life-giving presence.",
+        "Discuss how the connection between Genesis 2:7 and John 20:22 deepens your understanding of the Holy Spirit."
+      ]
     }
   ],
   "panels": [],
-  "totalWords": 750
+  "totalWords": 1648
 }

@@ -1,57 +1,92 @@
 {
   "day": 4,
   "title": "The Lesson for Me Today",
+  "subtitle": "What's the Lesson for Me Today?",
   "teaser": "What's the Lesson for Me Today?",
   "framework": "Luke 2:10-11",
   "scriptureReference": "Luke 2:10-11",
   "modules": [
     {
       "type": "scripture",
-      "passage": "I bring you good news that will cause great joy for all the people. Today in the town of David a Savior has been born to you; he is the Messiah, the Lord.",
       "reference": "Luke 2:10-11",
-      "translation": "NIV"
+      "translation": "NIV",
+      "emphasis": [
+        "good news",
+        "great joy",
+        "all the people",
+        "Savior"
+      ],
+      "passage": "I bring you good news that will cause great joy for all the people. Today in the town of David a Savior has been born to you; he is the Messiah, the Lord."
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "εὐαγγέλιον",
       "transliteration": "Euangelion",
-      "language": "greek",
+      "pronunciation": "yoo-ang-GEL-ee-on",
+      "strongs": "G2098",
       "definition": "Good news, gospel",
-      "usage": "An announcement of victory or significant good news"
+      "root_meaning": "An announcement of victory or significant good news",
+      "usage_note": "This wasn't religious jargon but a term used for announcing military victories or significant political events. The angel is claiming that Jesus's birth is the most important news in human history."
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "Think about the last time you felt genuinely stuck—maybe in a relationship that wasn't working, a job that was draining your soul, a habit you couldn't break, or just a general sense that your life wasn't heading in the right direction.\n\nYou probably tried various solutions: self-help books, therapy, new routines, different environments, advice from friends. Some of these approaches likely helped to some degree. But if you're honest, you probably also discovered that many of your deepest problems were more persistent and complex than you initially thought.\n\nThis experience of trying multiple solutions to life's problems is remarkably similar to the human condition that the angel's announcement addresses. Throughout history, people have looked for salvation in various places: political systems, economic prosperity, technological advancement, personal achievement, relationships, or philosophical insights.\n\nThe angel's announcement suggests that while these approaches might provide partial or temporary relief, they don't address humanity's deepest problem.",
+      "pardes_layer": "peshat"
     },
     {
-      "type": "insight"
+      "type": "insight",
+      "text": "Jesus's claim to be the ultimate Savior challenges us to examine whether the solutions we're pursuing actually address our deepest needs or merely manage the symptoms of deeper problems."
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "**Modern Savior Narratives**\n\nJust as first-century people looked to Caesar for salvation, we live in a world full of competing claims about what will ultimately save us:\n\n**Technological Salvation:** The belief that advancing technology will solve humanity's fundamental problems. While technology has brought genuine benefits, it has also created new problems and hasn't addressed the moral dimensions of human suffering.\n\n**Political Salvation:** The conviction that the right political system will create a just society. History shows that political solutions are limited by the moral character of the people who implement them.\n\n**Economic Salvation:** The assumption that prosperity will provide lasting happiness. Yet studies consistently show that beyond meeting basic needs, increased wealth has diminishing returns on well-being.\n\n**Therapeutic Salvation:** The hope that psychological insight will resolve our deepest problems. While therapy can be enormously helpful, it often reveals that our issues go deeper than psychological wounds.\n\n**Achievement Salvation:** The pursuit of success as the path to meaning. This approach often leads to either crushing disappointment or the discovery that achievement doesn't provide the fulfillment it promised.",
+      "pardes_layer": "derash"
     },
     {
-      "type": "bridge"
+      "type": "bridge",
+      "ancient": "Caesar offered salvation through military power and efficient administration",
+      "modern": "We seek salvation through technology, politics, economics, therapy, and achievement",
+      "connection": "Both ancient and modern people look for solutions that address symptoms rather than root causes",
+      "question": "In a world saturated with information and competing claims, what would make news truly 'good' for all people? What kind of salvation do you actually need?"
     },
     {
-      "type": "teaching"
+      "type": "teaching",
+      "content": "**What Makes Jesus's Claim Different?**\n\n**Addresses Root Causes:** Rather than managing symptoms, Jesus claims to address the fundamental problem of human nature—our tendency toward selfishness, pride, and rebellion against what we know to be right.\n\n**Universal Scope:** The angel announced 'good news for all the people.' Jesus's salvation isn't limited by culture, class, intelligence, or personal history.\n\n**Eternal Perspective:** While other forms of salvation focus on improving this life, Jesus offers something that transcends death and addresses our deepest questions about ultimate meaning.\n\n**Grace-Based:** Unlike salvation through achievement or effort, Jesus's salvation is offered as a gift rather than something we earn.\n\n**Relational Foundation:** Jesus offers salvation through relationship with God rather than through abstract principles, techniques, or systems.",
+      "pardes_layer": "sod"
     },
     {
-      "type": "interactive"
+      "type": "interactive",
+      "interaction_type": "slider",
+      "prompt": "What are you currently looking to for salvation—for security, meaning, and hope?",
+      "options": [
+        "Career success",
+        "Relationships",
+        "Financial security",
+        "Self-improvement",
+        "Something else"
+      ],
+      "follow_up": "How well are these sources meeting your deepest needs?"
     },
     {
       "type": "reflection",
-      "prompt": "What would it mean for your daily life if Jesus truly is the Lord the angels announced? What would need to change in your priorities, relationships, and decision-making?"
+      "question": "What would it mean for your daily life if Jesus truly is the Lord the angels announced? What would need to change in your priorities, relationships, and decision-making?",
+      "prompt_text": "Be honest about both the appeal and the challenge of this claim.",
+      "allow_save": true
     },
     {
       "type": "takeaway",
-      "content": "The angel didn't just announce a Savior, but 'the Lord.' This title implies authority and demands allegiance. The claim is that Jesus's lordship is fundamentally different from human authority—exercised for our benefit rather than exploitation.",
+      "text": "The angel didn't just announce a Savior, but 'the Lord.' This title implies authority and demands allegiance. The claim is that Jesus's lordship is fundamentally different from human authority—exercised for our benefit rather than exploitation.",
+      "action": "This week, honestly evaluate: What have I been looking to for salvation? How has it been working?",
       "heading": "Key Insight"
     },
     {
       "type": "prayer",
-      "prayerText": "Help me to honestly examine what I'm looking to for salvation and security, and to understand what Jesus offers that is fundamentally different. Give me the courage to consider claims that challenge my assumptions about what I truly need. Amen.",
-      "heading": "Closing Prayer"
+      "scripture_echo": "Luke 2:10-11",
+      "heading": "Closing Prayer",
+      "prayerText": "Help me to honestly examine what I'm looking to for salvation and security, and to understand what Jesus offers that is fundamentally different. Give me the courage to consider claims that challenge my assumptions about what I truly need. Amen."
     }
   ],
   "panels": [],
-  "totalWords": 168
+  "totalWords": 808
 }

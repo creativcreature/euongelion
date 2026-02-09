@@ -17,6 +17,11 @@ export default function StoryModule({ module }: { module: Module }) {
           </p>
         ))}
       </div>
+      {module.connectionToTheme && (
+        <p className="mt-8 vw-body leading-relaxed text-secondary">
+          {module.connectionToTheme}
+        </p>
+      )}
     </div>
   )
 }

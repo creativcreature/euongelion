@@ -1,9 +1,10 @@
 import type { Module } from '@/types'
 
 export default function ProfileModule({ module }: { module: Module }) {
-  if (!module.bio) return null
+  if (!module.bio && !module.description && !module.name) return null
 
-  const paragraphs = module.bio.split('\n\n')
+  const bodyText = module.description || module.bio || ''
+  const paragraphs = bodyText ? bodyText.split('\n\n') : []
 
   return (
     <div
@@ -18,13 +19,36 @@ export default function ProfileModule({ module }: { module: Module }) {
       </p>
       <h3 className="text-display vw-heading-md mb-2">{module.name}</h3>
       {module.era && <p className="vw-small mb-6 text-muted">{module.era}</p>}
-      <div className="space-y-6">
-        {paragraphs.map((paragraph, i) => (
-          <p key={i} className="vw-body leading-relaxed text-secondary">
-            {paragraph}
+      {paragraphs.length > 0 && (
+        <div className="space-y-6">
+          {paragraphs.map((paragraph, i) => (
+            <p key={i} className="vw-body leading-relaxed text-secondary">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      )}
+      {module.keyQuote && (
+        <blockquote
+          className="mt-6 p-4"
+          style={{
+            borderLeft: '3px solid var(--color-gold)',
+            backgroundColor: 'rgba(191, 155, 48, 0.05)',
+          }}
+        >
+          <p className="text-serif-italic vw-body-lg leading-relaxed">
+            &ldquo;{module.keyQuote}&rdquo;
           </p>
-        ))}
-      </div>
+        </blockquote>
+      )}
+      {module.lessonForUs && (
+        <div className="mt-6">
+          <p className="text-label vw-small mb-2 text-muted">LESSON FOR US</p>
+          <p className="vw-body leading-relaxed text-secondary">
+            {module.lessonForUs}
+          </p>
+        </div>
+      )}
     </div>
   )
 }

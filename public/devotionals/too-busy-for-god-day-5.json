@@ -2,65 +2,211 @@
   "day": 5,
   "title": "Rest and Sabbath",
   "teaser": "Choosing peaceful rest over anxious productivity",
+  "anchorVerse": "Ecclesiastes 4:6",
+  "theme": "Choosing peaceful rest over anxious productivity",
   "framework": "Ecclesiastes 4:6",
   "scriptureReference": "Ecclesiastes 4:6",
   "modules": [
     {
       "type": "scripture",
-      "passage": "Better is a handful with quietness than both hands full with toil and a striving after wind.",
       "reference": "Ecclesiastes 4:6",
-      "translation": "ESV"
+      "translation": "ESV",
+      "emphasis": [
+        "handful with quietness",
+        "both hands full with toil"
+      ],
+      "hebrewOriginal": "טוֹב מְלֹא כַף נַחַת מִמְּלֹא חָפְנַיִם עָמָל וּרְעוּת רוּחַ",
+      "passage": "Better is a handful with quietness than both hands full with toil and a striving after wind."
     },
     {
       "type": "vocab",
+      "language": "hebrew",
       "word": "נַחַת",
       "transliteration": "nachat",
-      "language": "hebrew",
+      "pronunciation": "NAH-khat",
+      "meaning": "rest, quietness, peace",
+      "rootMeaning": "Nachat implies not just physical rest but spiritual settledness - a deep peace that comes from contentment rather than accumulation.",
+      "wordByWord": [
+        {
+          "word": "טוֹב",
+          "transliteration": "tov",
+          "meaning": "good, better"
+        },
+        {
+          "word": "מְלֹא",
+          "transliteration": "melo",
+          "meaning": "fullness, handful"
+        },
+        {
+          "word": "כַף",
+          "transliteration": "khaf",
+          "meaning": "palm, handful"
+        },
+        {
+          "word": "נַחַת",
+          "transliteration": "nachat",
+          "meaning": "rest, quietness, peace"
+        },
+        {
+          "word": "מִמְּלֹא",
+          "transliteration": "mimelo",
+          "meaning": "than fullness"
+        },
+        {
+          "word": "חָפְנַיִם",
+          "transliteration": "chofnayim",
+          "meaning": "both hands, double handful"
+        },
+        {
+          "word": "עָמָל",
+          "transliteration": "amal",
+          "meaning": "toil, labor, trouble"
+        },
+        {
+          "word": "וּרְעוּת",
+          "transliteration": "ure'ut",
+          "meaning": "and striving, pursuing"
+        },
+        {
+          "word": "רוּחַ",
+          "transliteration": "ruach",
+          "meaning": "wind, spirit, breath"
+        }
+      ],
+      "usageNote": "The image is vivid - one relaxed hand holding something valuable versus two hands frantically grasping at wind.",
+      "relatedWords": [
+        {
+          "word": "מְנוּחָה",
+          "transliteration": "menucha",
+          "meaning": "rest, dwelling place, peace - emphasizes the place or state of rest"
+        }
+      ],
+      "strongsNumber": "H5183",
       "definition": "rest, quietness, peace",
       "usage": "Nachat implies not just physical rest but spiritual settledness - a deep peace that comes from contentment rather than accumulation."
     },
     {
       "type": "teaching",
+      "body": "Ecclesiastes 4:6 presents a radical economic principle: better to have less with peace than more with anxiety. The Hebrew contrasts nachat (rest, quietness, contentment) with amal (toil, labor, trouble) and re'ut ruach (chasing after wind).\n\nSolomon observed that the pursuit of more often costs us the ability to enjoy what we have. The person with full hands but no rest is poorer than the person with less but peace.",
+      "keyInsight": "The image is vivid - one relaxed hand holding something valuable versus two hands frantically grasping at wind.",
       "content": "Ecclesiastes 4:6 presents a radical economic principle: better to have less with peace than more with anxiety. The Hebrew contrasts nachat (rest, quietness, contentment) with amal (toil, labor, trouble) and re'ut ruach (chasing after wind).\n\nSolomon observed that the pursuit of more often costs us the ability to enjoy what we have. The person with full hands but no rest is poorer than the person with less but peace.",
       "heading": "Solomon's Radical Economics"
     },
     {
       "type": "story",
+      "body": "Kevin worked two jobs, managed three side projects, and maintained five investment portfolios. His hands were literally full - and so was his stress level. Every opportunity felt urgent, every invitation felt mandatory, every project felt essential.\n\nHis grandfather, a farmer, watched Kevin's frantic activity: 'Son, you're working so hard to get more that you're missing what you already have.'\n\nThe wisdom hit like lightning: What if I'm so busy filling my hands that I can't receive what God wants to give me?",
+      "connectionToTheme": "Kevin represents the trap of accumulation - having both hands full but no peace.",
       "content": "Kevin worked two jobs, managed three side projects, and maintained five investment portfolios. His hands were literally full - and so was his stress level. Every opportunity felt urgent, every invitation felt mandatory, every project felt essential.\n\nHis grandfather, a farmer, watched Kevin's frantic activity: 'Son, you're working so hard to get more that you're missing what you already have.'\n\nThe wisdom hit like lightning: What if I'm so busy filling my hands that I can't receive what God wants to give me?",
       "heading": "The Full-Handed Poverty"
     },
     {
       "type": "insight",
+      "body": "Lisa believed the cultural lie: more opportunities = more success = more happiness. She said yes to everything, accumulated constantly, and worked relentlessly. But the more she gained, the more anxious she became.\n\nThe breakthrough came during a power outage that forced her to sit in silence for three hours. In that stillness, she realized: I have everything I thought I wanted and nothing I actually need.",
+      "historicalContext": "God commanded Israel to rest one day in seven, not because the work was finished but because trust was more important than productivity. The Sabbath declared that the world could function without their constant activity. Every seventh year, the land was to rest completely (Leviticus 25:4). God promised that the sixth year would produce enough for three years.",
+      "fascinatingFact": "The Hebrew word for 'work' (melakah) is the same word used for God's creative work in Genesis. When we rest on Sabbath, we're imitating God's pattern of creation and rest, acknowledging that we are creatures, not the Creator.",
+      "greekParallel": {
+        "concepts": [
+          {
+            "term": "anapausis",
+            "greek": "Ἀνάπαυσις",
+            "meaning": "rest, refreshment, relief"
+          },
+          {
+            "term": "katapausis",
+            "greek": "Κατάπαυσις",
+            "meaning": "rest, cessation, dwelling place"
+          }
+        ],
+        "newTestamentUsage": "Jesus promised, 'Come to me, all who labor and are heavy laden, and I will give you anapausis' (Matthew 11:28). Hebrews speaks of entering God's katapausis - a permanent state of rest through faith."
+      },
       "content": "Lisa believed the cultural lie: more opportunities = more success = more happiness. She said yes to everything, accumulated constantly, and worked relentlessly. But the more she gained, the more anxious she became.\n\nThe breakthrough came during a power outage that forced her to sit in silence for three hours. In that stillness, she realized: I have everything I thought I wanted and nothing I actually need.",
       "heading": "The Paradox of Sabbath Economics"
     },
     {
       "type": "bridge",
-      "content": "Solomon observed that having less with peace is better than having more with anxiety - a handful with quietness beats both hands full with toil.\n\nWe've largely lost Sabbath wisdom, creating a culture of perpetual productivity. The result is exactly what Ecclesiastes predicted - both hands full of toil and chasing after wind."
+      "ancientTruth": "Solomon observed that having less with peace is better than having more with anxiety - a handful with quietness beats both hands full with toil.",
+      "modernApplication": "We've largely lost Sabbath wisdom, creating a culture of perpetual productivity. The result is exactly what Ecclesiastes predicted - both hands full of toil and chasing after wind.",
+      "connectionPoint": "The story of Mary and Martha (Luke 10:38-42) illustrates this principle. Martha had both hands full of service, while Mary had one handful - sitting at Jesus' feet. Jesus affirmed that Mary had chosen 'the better part.'",
+      "newTestamentEcho": "Jesus promised rest to the weary: 'Come to me, all who labor and are heavy laden, and I will give you rest' (Matthew 11:28)."
     },
     {
       "type": "reflection",
-      "prompt": "What if having less but resting more is actually having more?"
+      "prompt": "What if having less but resting more is actually having more?",
+      "additionalQuestions": [
+        "Where in your life are you choosing 'both hands full with toil' instead of 'a handful with quietness'?",
+        "What would change if you truly believed that God could handle things while you rest?",
+        "What fears drive your need to stay constantly busy?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "God, teach me the wisdom of nachat - true rest and quietness. Help me choose the handful with peace over the double handful with anxiety. Show me that rest is not laziness but trust. Amen."
+      "posture": "petition",
+      "prayerText": "God, teach me the wisdom of nachat - true rest and quietness. Help me choose the handful with peace over the double handful with anxiety. Show me that rest is not laziness but trust. Amen.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "I will practice contentment by identifying one area where I can choose less activity and more peace, trusting that God's provision is sufficient.",
+      "leavingAtCross": [
+        "The lie that more activity equals more security",
+        "The fear that resting means falling behind",
+        "The pride that makes me believe everything depends on my constant effort"
+      ],
+      "receivingFromCross": [
+        "The peace of nachat - true rest that comes from trusting God's provision",
+        "The wisdom to choose quality over quantity",
+        "The faith to rest without guilt"
+      ],
+      "content": "I will practice contentment by identifying one area where I can choose less activity and more peace, trusting that God's provision is sufficient."
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "Where in your life are you choosing 'both hands full with toil' instead of 'a handful with quietness'?",
+        "What would change if you truly believed that God could handle things while you rest?",
+        "How can you build more nachat (peaceful rest) into your daily and weekly rhythms?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area where you're struggling to rest because of anxiety about outcomes",
+        "Commit to one specific practice of Sabbath rest this week",
+        "Ask each other: 'What are you afraid will happen if you slow down and rest?'"
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 11:28",
+          "text": "Come to me, all who labor and are heavy laden, and I will give you rest"
+        },
+        {
+          "reference": "Luke 10:38-42",
+          "text": "Mary and Martha - choosing the better part"
+        },
+        {
+          "reference": "Leviticus 25:4",
+          "text": "The Sabbath year - trusting God's provision"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ecclesiastes 4",
+          "note": "Study the context of meaningless toil and the wisdom of contentment"
+        }
+      ]
     },
     {
       "type": "profile",
       "name": "Kevin",
+      "title": "The Full-Handed Man",
+      "description": "A modern professional who worked multiple jobs and projects, learning from his farmer grandfather that working so hard to get more can cause us to miss what we already have.",
+      "keyQuote": "Son, you're working so hard to get more that you're missing what you already have.",
+      "lessonForUs": "Learn to distinguish between productive rest (activities that restore and refresh), consumptive rest (activities that merely distract or numb), faithful work (labor that serves God's purposes), and anxious toil (work driven by fear and greed).",
       "heading": "The Full-Handed Man"
     }
   ],
   "panels": [],
-  "totalWords": 391
+  "totalWords": 1323
 }

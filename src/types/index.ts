@@ -66,34 +66,107 @@ export type ModuleType =
 export interface Module {
   type: ModuleType
   heading?: string
+
   // Scripture
   passage?: string
   reference?: string
   translation?: string
+  emphasis?: string[]
+  hebrewOriginal?: string
+  greekOriginal?: string | null
+  fullPassage?: { reference: string; text: string }
+  scriptureContext?: string
+
   // Vocab
   word?: string
   transliteration?: string
   language?: string
   definition?: string
   usage?: string
+  pronunciation?: string
+  usageNote?: string
+  wordByWord?: Array<{
+    word: string
+    transliteration: string
+    meaning: string
+  }>
+  relatedWords?: Array<{
+    word: string
+    reference?: string
+    transliteration?: string
+    meaning?: string
+  }>
+  strongsNumber?: string
+  keyPhrases?: Array<{
+    greek?: string
+    transliteration?: string
+    meaning?: string
+  }>
+
   // Teaching / Story / Insight / Takeaway / Bridge
   content?: string
+  keyInsight?: string
+  connectionToTheme?: string
+  historicalContext?: string
+  fascinatingFact?: string
+  greekParallel?: {
+    concepts?: Array<{ term: string; greek: string; meaning: string }>
+  }
+
+  // Bridge
+  ancientTruth?: string
+  modernApplication?: string
+  connectionPoint?: string
+  newTestamentEcho?: string
+
   // Reflection
   prompt?: string
+  additionalQuestions?: string[]
+  invitationType?: string
+
   // Prayer
   prayerText?: string
   breathPrayer?: string
-  // Comprehension
+  prayerType?: string
+  posture?: string
+
+  // Takeaway
+  commitment?: string
+  leavingAtCross?: string[]
+  receivingFromCross?: string[]
+
+  // Comprehension (quiz-style)
   question?: string
   options?: string[]
   answer?: number
   explanation?: string
+  // Comprehension (reflection-style)
+  forReflection?: string[]
+  forAccountabilityPartners?: string[]
+
   // Profile
   name?: string
   era?: string
   bio?: string
+  description?: string
+  keyQuote?: string
+  lessonForUs?: string
+
   // Resource
   resources?: Array<{ title: string; url?: string; description?: string }>
+  relatedScriptures?: Array<{ reference: string; text: string }>
+  forDeeperStudy?: Array<{
+    type: string
+    title: string
+    url?: string
+    note?: string
+  }>
+  greekVocabulary?: Array<{
+    word: string
+    transliteration: string
+    meaning: string
+  }>
+  weeklyChallenge?: string
 }
 
 // Progress tracking

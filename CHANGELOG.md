@@ -33,6 +33,14 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ## Sprint 5 — Real MVP Rebuild
 
+### 2026-02-09
+
+- **Content pipeline rebuilt to preserve all original Substack data** — Rewrote `prepare-substack.ts` with spread-and-rename approach. All rich fields now preserved: pronunciation, wordByWord, Strong's numbers, keyInsight, historicalContext, fascinatingFact, leavingAtCross/receivingFromCross, forReflection, forAccountabilityPartners, connectionToTheme, ancientTruth, modernApplication, etc. 81 devotional JSONs regenerated.
+- **ModuleRenderer simplified** — Replaced 120-line manual field mapper with 60-line spread-and-rename normalizer matching the pipeline approach. All fields pass through; only 7 critical renames applied.
+- **All 12 module components upgraded** — ScriptureModule (+emphasis chips, Hebrew/Greek originals, scripture context), VocabModule (+pronunciation, Strong's badge, word-by-word table, related words, usage note), TeachingModule (+keyInsight callout), StoryModule (+connectionToTheme), InsightModule (+historicalContext, fascinatingFact), BridgeModule (structured Ancient Truth / Modern Application layout, connection point, NT echo), ReflectionModule (+additionalQuestions, invitationType label), PrayerModule (+posture label, prayer type), TakeawayModule (+commitment text, leavingAtCross/receivingFromCross lists), ComprehensionModule (dual-mode: quiz OR reflection), ProfileModule (+description, keyQuote pull-quote, lessonForUs), ResourceModule (+relatedScriptures, forDeeperStudy, greekVocabulary, weeklyChallenge). All components now have null guards.
+- **Module type expanded** — Added ~40 optional fields to `Module` interface in `src/types/index.ts` covering all rich Substack data.
+- **Test coverage** — New test asserting rich field preservation (vocab pronunciation/strongsNumber/wordByWord, takeaway commitment/leavingAtCross, comprehension forReflection, teaching keyInsight, bridge ancientTruth). 16 tests pass.
+
 ### 2026-02-08
 
 - **113 Substack devotional images downloaded** — Extracted topImage URLs from all 117 HTML source files, downloaded to `public/images/devotionals/`. Created `src/data/devotional-images.ts` with full slug→image mapping (106 devotionals + 9 series intros). Helper functions `getDevotionalImage()` and `getSeriesHeroImage()`.

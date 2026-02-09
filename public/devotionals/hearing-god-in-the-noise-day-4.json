@@ -2,65 +2,147 @@
   "day": 4,
   "title": "Hearing Through Scripture",
   "teaser": "Discovering God's living voice through His Word",
+  "anchorVerse": "Romans 10:17",
+  "theme": "Discovering God's living voice through His Word",
   "framework": "Romans 10:17",
   "scriptureReference": "Romans 10:17",
   "modules": [
     {
       "type": "scripture",
-      "passage": "So faith comes from hearing, and hearing through the word of Christ.",
       "reference": "Romans 10:17",
-      "translation": "ESV"
+      "translation": "ESV",
+      "emphasis": [
+        "faith comes from hearing",
+        "the word of Christ"
+      ],
+      "greekOriginal": "ἄρα ἡ πίστις ἐξ ἀκοῆς, ἡ δὲ ἀκοὴ διὰ ῥήματος Χριστοῦ",
+      "passage": "So faith comes from hearing, and hearing through the word of Christ."
     },
     {
       "type": "vocab",
+      "language": "greek",
       "word": "ῥῆμα",
       "transliteration": "rhēma",
-      "language": "greek",
+      "pronunciation": "RAY-mah",
+      "meaning": "spoken word, living message",
+      "rootMeaning": "The New Testament uses two main words for 'word': logos and rhēma. Logos often refers to the overall message or to Jesus Himself as the Word of God made flesh (John 1:1,14). Rhēma emphasizes a specific utterance or spoken word, often given for a particular occasion.",
+      "usageNote": "When Scripture 'comes alive' for you in a specific situation - that's experiencing rhēma. It's God's timely, personal message to your heart through Scripture.",
+      "relatedWords": [
+        {
+          "word": "λόγος (logos)",
+          "reference": "The Word - often referring to the full counsel of God or Christ Himself as the divine Word"
+        }
+      ],
+      "strongsNumber": "G4487",
       "definition": "spoken word, living message",
       "usage": "The New Testament uses two main words for 'word': logos and rhēma. Logos often refers to the overall message or to Jesus Himself as the Word of God made flesh (John 1:1,14). Rhēma emphasizes a specific utterance or spoken word, often given for a particular occasion."
     },
     {
       "type": "teaching",
+      "body": "If we want to hear God, the surest place to start is Scripture. The apostle Paul reminds us that 'faith comes by hearing...the word (rhēma) of Christ.' The Bible is often called God's Word (logos in Greek), but here rhēma is used, emphasizing a word that is spoken or illuminated in the moment.\n\nHave you ever had the experience where a verse you've read before suddenly strikes you as if God is speaking directly to you? That's a rhēma - God's timely, personal message to your heart through Scripture.\n\nHebrews 4:12 famously says, 'the word of God is alive and active... it judges the thoughts and attitudes of the heart.' This means Scripture isn't a dead letter; by the Spirit's power it becomes God's living voice to us now.\n\nWhen Jesus was tempted by Satan in the wilderness, He responded to each temptation with Scripture, saying, 'It is written...' and quoting God's Word (Luke 4:1-13). Jesus modeled that hearing and obeying God's written Word is sustenance for our souls.",
+      "keyInsight": "Scripture isn't a dead letter - by the Spirit's power it becomes God's living voice to us now.",
       "content": "If we want to hear God, the surest place to start is Scripture. The apostle Paul reminds us that 'faith comes by hearing...the word (rhēma) of Christ.' The Bible is often called God's Word (logos in Greek), but here rhēma is used, emphasizing a word that is spoken or illuminated in the moment.\n\nHave you ever had the experience where a verse you've read before suddenly strikes you as if God is speaking directly to you? That's a rhēma - God's timely, personal message to your heart through Scripture.\n\nHebrews 4:12 famously says, 'the word of God is alive and active... it judges the thoughts and attitudes of the heart.' This means Scripture isn't a dead letter; by the Spirit's power it becomes God's living voice to us now.\n\nWhen Jesus was tempted by Satan in the wilderness, He responded to each temptation with Scripture, saying, 'It is written...' and quoting God's Word (Luke 4:1-13). Jesus modeled that hearing and obeying God's written Word is sustenance for our souls.",
       "heading": "The Ancient Promise: God's Living Word"
     },
     {
       "type": "story",
+      "body": "Priya had been a Christian for years, but she often felt like she couldn't 'hear' God personally. She envied friends who talked about God guiding them, while her own prayers seemed to echo into silence.\n\nOne day, Priya joined a Bible study group almost reluctantly. As they read a passage aloud - the story of Jesus calming the storm - something unexpected happened. A particular verse jumped out at her: 'Why are you so afraid? Do you still have no faith?' (Mark 4:40).\n\nThose words pierced her, because she'd been battling anxiety for months. It was as if God had highlighted that line just for her. That night she went home and read the story again, this time aloud to herself. She sensed God reassuring her that He was in control of her storms.\n\nFrom then on, Priya approached her Bible time not as a duty but as an eagerly awaited dialogue with God.",
+      "connectionToTheme": "Priya's experience shows how Scripture becomes a living voice when we approach it expectantly, allowing God to speak to our specific circumstances.",
       "content": "Priya had been a Christian for years, but she often felt like she couldn't 'hear' God personally. She envied friends who talked about God guiding them, while her own prayers seemed to echo into silence.\n\nOne day, Priya joined a Bible study group almost reluctantly. As they read a passage aloud - the story of Jesus calming the storm - something unexpected happened. A particular verse jumped out at her: 'Why are you so afraid? Do you still have no faith?' (Mark 4:40).\n\nThose words pierced her, because she'd been battling anxiety for months. It was as if God had highlighted that line just for her. That night she went home and read the story again, this time aloud to herself. She sensed God reassuring her that He was in control of her storms.\n\nFrom then on, Priya approached her Bible time not as a duty but as an eagerly awaited dialogue with God.",
       "heading": "The Modern Seeker's Breakthrough"
     },
     {
       "type": "insight",
+      "body": "David was a seminary student who knew the Bible academically. He could parse Greek verbs and outline Paul's arguments. But despite his knowledge, he felt spiritually dry. The Bible had become a textbook to master rather than a voice to hear.\n\nThe shift came during a particularly difficult season when David started reading Scripture aloud and asking, 'God, what are You saying to me today?' Instead of analyzing the text, he began listening to it. The same passages he'd studied for years suddenly came alive with personal application and comfort.\n\nDavid learned the difference between studying about God and hearing from God through His Word.",
+      "historicalContext": "For the first 1,500 years of the Church, personal Bibles were rare - so hearing Scripture in community was central. Monks would often chant or recite entire Psalms from memory as part of their daily worship. The early church prioritized hearing Scripture. When Paul wrote to the churches, his letters were read aloud to the gathered community. This oral tradition meant believers were accustomed to hearing God's Word, not just reading it silently.",
+      "fascinatingFact": "The word Bible comes from the Greek ta biblia ('the books') - a reminder that Scripture is a collection of God's messages through many authors across centuries, yet it speaks with one Voice. Jesus promised this work of the Spirit: 'He will teach you all things and remind you of everything I have told you' (John 14:26).",
       "content": "David was a seminary student who knew the Bible academically. He could parse Greek verbs and outline Paul's arguments. But despite his knowledge, he felt spiritually dry. The Bible had become a textbook to master rather than a voice to hear.\n\nThe shift came during a particularly difficult season when David started reading Scripture aloud and asking, 'God, what are You saying to me today?' Instead of analyzing the text, he began listening to it. The same passages he'd studied for years suddenly came alive with personal application and comfort.\n\nDavid learned the difference between studying about God and hearing from God through His Word.",
       "heading": "The Contemporary Challenge: Bible as Information vs. Communication"
     },
     {
       "type": "bridge",
-      "content": "Scripture has always been God's primary way of speaking to His people - heard aloud in community, memorized, and treasured.\n\nToday we have unprecedented access to the Bible, yet often treat it as information to consume rather than a voice to hear."
+      "ancientTruth": "Scripture has always been God's primary way of speaking to His people - heard aloud in community, memorized, and treasured.",
+      "modernApplication": "Today we have unprecedented access to the Bible, yet often treat it as information to consume rather than a voice to hear.",
+      "connectionPoint": "The same Spirit who inspired Scripture illuminates it for us today. When we read expectantly, asking 'God, what are You saying to me?', the written Word becomes a spoken Word.",
+      "newTestamentEcho": "Jesus said, 'Man shall not live by bread alone, but by every word that comes from the mouth of God' (Matthew 4:4). Scripture is our daily spiritual sustenance."
     },
     {
       "type": "reflection",
-      "prompt": "Do you treat Scripture as a living voice in your life?"
+      "prompt": "Do you treat Scripture as a living voice in your life?",
+      "additionalQuestions": [
+        "How might your faith grow if you 'heard' God speak through His Word every day?",
+        "What is one Bible verse or story that has spoken to you personally in the past? How might God be using that same Scripture to speak to you in your current situation?",
+        "Do you find it easier to absorb the Bible by reading it or hearing it, or a combination of both? Why do you think that is?"
+      ],
+      "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "prayerText": "Lord, thank You that Your Word is not silent print on a page but a living rhēma - a spoken word to my heart. Open my ears to truly hear You in Scripture. As I read or listen to the Bible, let it build real faith in me. I want to encounter Your voice in the pages of Your Word. Amen."
+      "posture": "gratitude",
+      "prayerText": "Lord, thank You that Your Word is not silent print on a page but a living rhēma - a spoken word to my heart. Open my ears to truly hear You in Scripture. As I read or listen to the Bible, let it build real faith in me. I want to encounter Your voice in the pages of Your Word. Amen.",
+      "prayerType": "personal"
     },
     {
-      "type": "takeaway"
+      "type": "takeaway",
+      "commitment": "I will spend 15 minutes today reading a chapter of the Bible (perhaps aloud). Before I start, I will pray, 'Lord, I'm listening - please speak to me through this passage,' and then read expectantly.",
+      "leavingAtCross": [
+        "My neglect of God's Word, and the excuses that I'm 'too busy' or that the Bible is too dry or hard to understand",
+        "The tendency to seek God's voice in subjective ways while ignoring the clear voice He's already given in Scripture"
+      ],
+      "receivingFromCross": [
+        "A fresh hunger for Scripture as my primary source of God's voice",
+        "Ears that are open and expectant each time I open the Bible",
+        "The humility to be taught, corrected, and encouraged by God's Word, and the faith that 'all Scripture is God-breathed and useful' (2 Timothy 3:16) for my life"
+      ],
+      "content": "I will spend 15 minutes today reading a chapter of the Bible (perhaps aloud). Before I start, I will pray, 'Lord, I'm listening - please speak to me through this passage,' and then read expectantly."
     },
     {
-      "type": "comprehension"
+      "type": "comprehension",
+      "forReflection": [
+        "What's one Scripture that has been meaningful to you lately? Share how it spoke to you or guided you in a decision.",
+        "Do you find it easier to absorb the Bible by reading it or hearing it, or a combination of both? Why do you think that is?",
+        "How do you ensure that you're not just reading the Bible but actually listening to what God is saying through it?"
+      ],
+      "forAccountabilityPartners": [
+        "This week, pick a Bible passage and both listen to an audio version of it. Then meet to discuss what stood out from hearing it read aloud.",
+        "Encourage each other to memorize one new verse per week. When you meet, recite them and share why you chose that verse.",
+        "Pray together that God would 'open the eyes of your hearts' (Ephesians 1:18) to His Word."
+      ]
     },
     {
-      "type": "resource"
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hebrews 4:12",
+          "text": "For the word of God is alive and active. Sharper than any double-edged sword, it penetrates even to dividing soul and spirit, joints and marrow; it judges the thoughts and attitudes of the heart."
+        },
+        {
+          "reference": "2 Timothy 3:16",
+          "text": "All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness."
+        },
+        {
+          "reference": "John 14:26",
+          "text": "But the Advocate, the Holy Spirit, whom the Father will send in my name, will teach you all things and will remind you of everything I have said to you."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Acts 8:26-40",
+          "note": "Read the story of Philip and the Ethiopian eunuch for an example of Scripture coming alive through the Spirit"
+        }
+      ]
     },
     {
       "type": "profile",
       "name": "The Ethiopian Eunuch",
+      "title": "Seeker Who Heard God's Voice",
+      "description": "This court official was reading Isaiah but couldn't understand it until Philip, guided by the Spirit, explained how it pointed to Jesus. His story shows that Scripture often needs illumination - through the Spirit and through community.",
+      "keyQuote": "How can I understand unless someone explains it to me?",
+      "lessonForUs": "Hearing God through Scripture is enhanced by the Holy Spirit's illumination and by learning in community with other believers.",
       "heading": "Seeker Who Heard God's Voice"
     }
   ],
   "panels": [],
-  "totalWords": 648
+  "totalWords": 1971
 }
