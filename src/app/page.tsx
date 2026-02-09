@@ -276,9 +276,130 @@ export default function Home() {
         </section>
       )}
 
-      {/* Full-bleed editorial image placeholder */}
+      {/* How It Works */}
       <section
-        className="relative"
+        id="main-content"
+        className="dot-pattern relative section-breathing"
+        style={{ borderTop: '1px solid var(--color-border)' }}
+      >
+        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
+          <h2 className="observe-fade text-label vw-small mb-16 text-center text-gold">
+            HOW IT WORKS
+          </h2>
+          <div className="mx-auto grid max-w-4xl gap-12 text-center md:grid-cols-3 md:gap-16">
+            <div className="observe-fade">
+              {/* Compass icon */}
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="var(--color-gold)"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polygon
+                    points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"
+                    fill="rgba(193,154,107,0.15)"
+                    stroke="var(--color-gold)"
+                  />
+                </svg>
+              </div>
+              <div
+                className="mb-4 text-gold"
+                style={{
+                  fontFamily: 'var(--font-family-display)',
+                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+                  fontWeight: 700,
+                  lineHeight: 1,
+                }}
+              >
+                01
+              </div>
+              <p className="vw-body text-secondary">
+                Tell us what you&apos;re wrestling with. We&apos;ll match you to
+                a series.
+              </p>
+            </div>
+            <div className="observe-fade stagger-1">
+              {/* Book/reading icon */}
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="var(--color-gold)"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path
+                    d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+                    fill="rgba(193,154,107,0.15)"
+                  />
+                  <path
+                    d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                    fill="rgba(193,154,107,0.15)"
+                  />
+                </svg>
+              </div>
+              <div
+                className="mb-4 text-gold"
+                style={{
+                  fontFamily: 'var(--font-family-display)',
+                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+                  fontWeight: 700,
+                  lineHeight: 1,
+                }}
+              >
+                02
+              </div>
+              <p className="vw-body text-secondary">
+                Read one devotional per day. Short, deep, honest.
+              </p>
+            </div>
+            <div className="observe-fade stagger-2">
+              {/* Heart icon */}
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="rgba(193,154,107,0.15)"
+                  stroke="var(--color-gold)"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              </div>
+              <div
+                className="mb-4 text-gold"
+                style={{
+                  fontFamily: 'var(--font-family-display)',
+                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+                  fontWeight: 700,
+                  lineHeight: 1,
+                }}
+              >
+                03
+              </div>
+              <p className="vw-body text-secondary">
+                Reflect, journal, and let God reorder your heart.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Full-bleed editorial visual break */}
+      <section
+        className="relative overflow-hidden"
         style={{
           borderTop: '1px solid var(--color-border)',
           height: 'clamp(200px, 30vw, 400px)',
@@ -286,14 +407,42 @@ export default function Home() {
             'linear-gradient(135deg, var(--color-tehom) 0%, #2a1f1a 40%, #3d2b1f 70%, rgba(193, 154, 107, 0.2) 100%)',
         }}
       >
+        {/* Dot pattern overlay */}
+        <div className="dot-pattern-lg absolute inset-0 opacity-30" />
+        {/* Radial glow */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse at 50% 50%, rgba(193, 154, 107, 0.12) 0%, transparent 60%)',
+          }}
+        />
+        {/* Decorative cross */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'radial-gradient(ellipse at 60% 40%, rgba(193, 154, 107, 0.08) 0%, transparent 70%)',
-            }}
-          />
+          <svg
+            width="80"
+            height="80"
+            viewBox="0 0 80 80"
+            fill="none"
+            opacity="0.15"
+          >
+            <line
+              x1="40"
+              y1="8"
+              x2="40"
+              y2="72"
+              stroke="var(--color-gold)"
+              strokeWidth="1.5"
+            />
+            <line
+              x1="8"
+              y1="32"
+              x2="72"
+              y2="32"
+              stroke="var(--color-gold)"
+              strokeWidth="1.5"
+            />
+          </svg>
         </div>
       </section>
 
@@ -321,7 +470,7 @@ export default function Home() {
 
       {/* What This Is */}
       <section
-        className="section-breathing"
+        className="dot-pattern relative section-breathing"
         style={{ borderTop: '1px solid var(--color-border)' }}
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
@@ -406,70 +555,6 @@ export default function Home() {
             >
               View All 26 Series
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section
-        id="main-content"
-        className="section-breathing"
-        style={{ borderTop: '1px solid var(--color-border)' }}
-      >
-        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <h2 className="observe-fade text-label vw-small mb-16 text-center text-gold">
-            HOW IT WORKS
-          </h2>
-          <div className="mx-auto grid max-w-4xl gap-12 text-center md:grid-cols-3 md:gap-16">
-            <div className="observe-fade">
-              <div
-                className="mb-4 text-gold"
-                style={{
-                  fontFamily: 'var(--font-family-display)',
-                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 700,
-                  lineHeight: 1,
-                }}
-              >
-                01
-              </div>
-              <p className="vw-body text-secondary">
-                Tell us what you&apos;re wrestling with. We&apos;ll match you to
-                a series.
-              </p>
-            </div>
-            <div className="observe-fade stagger-1">
-              <div
-                className="mb-4 text-gold"
-                style={{
-                  fontFamily: 'var(--font-family-display)',
-                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 700,
-                  lineHeight: 1,
-                }}
-              >
-                02
-              </div>
-              <p className="vw-body text-secondary">
-                Read one devotional per day. Short, deep, honest.
-              </p>
-            </div>
-            <div className="observe-fade stagger-2">
-              <div
-                className="mb-4 text-gold"
-                style={{
-                  fontFamily: 'var(--font-family-display)',
-                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 700,
-                  lineHeight: 1,
-                }}
-              >
-                03
-              </div>
-              <p className="vw-body text-secondary">
-                Reflect, journal, and let God reorder your heart.
-              </p>
-            </div>
           </div>
         </div>
       </section>

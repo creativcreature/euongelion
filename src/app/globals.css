@@ -486,6 +486,25 @@
     background: linear-gradient(135deg, #c19a6b 0%, #d4af7f 50%, #c19a6b 100%);
   }
 
+  /* Dot pattern background (paper.design inspired) */
+  .dot-pattern {
+    background-image: radial-gradient(
+      circle,
+      var(--color-text-muted) 0.5px,
+      transparent 0.5px
+    );
+    background-size: 24px 24px;
+  }
+
+  .dot-pattern-lg {
+    background-image: radial-gradient(
+      circle,
+      var(--color-text-muted) 0.75px,
+      transparent 0.75px
+    );
+    background-size: 32px 32px;
+  }
+
   /* ============================================
      SECTION BREATHING — generous editorial spacing
      ============================================ */
