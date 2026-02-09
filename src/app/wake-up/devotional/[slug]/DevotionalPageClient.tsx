@@ -5,10 +5,10 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import ScrollProgress from '@/components/ScrollProgress'
-import SeriesHero from '@/components/SeriesHero'
 import { useProgress, useReadingTime } from '@/hooks/useProgress'
 import ModuleRenderer, { isFullWidthModule } from '@/components/ModuleRenderer'
 import { startSeries } from '@/lib/progress'
+import { getDevotionalImage } from '@/data/devotional-images'
 import type { Devotional, Panel, Module } from '@/types'
 
 function getSeriesSlugFromDevotional(slug: string): string | null {
@@ -28,6 +28,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
   const [isCompleted, setIsCompleted] = useState(false)
 
   const seriesSlug = getSeriesSlugFromDevotional(slug)
+  const devotionalImage = getDevotionalImage(slug)
 
   useEffect(() => {
     setIsCompleted(isRead(slug))
@@ -112,8 +113,42 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
       <ScrollProgress />
       <Navigation />
 
-      {/* Series Hero Visual */}
-      {seriesSlug && <SeriesHero seriesSlug={seriesSlug} size="card" overlay />}
+      {/* Devotional Hero Image */}
+      {devotionalImage ? (
+        <div className="relative h-[200px] w-full overflow-hidden md:h-[300px]">
+          <Image
+            src={devotionalImage}
+            alt={devotional?.title || ''}
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(180deg, rgba(26, 22, 18, 0.2) 0%, rgba(26, 22, 18, 0.7) 100%)',
+            }}
+          />
+        </div>
+      ) : seriesSlug ? (
+        <div
+          className="relative h-[200px] w-full overflow-hidden md:h-[300px]"
+          style={{
+            background:
+              'linear-gradient(135deg, var(--color-tehom) 0%, #2a1f1a 40%, #3d2b1f 100%)',
+          }}
+        >
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'radial-gradient(circle at 70% 30%, rgba(193, 154, 107, 0.1) 0%, transparent 60%)',
+            }}
+          />
+        </div>
+      ) : null}
 
       {/* Hero with massive day number */}
       <header className="relative mx-auto max-w-7xl px-6 py-20 md:px-[60px] md:py-32 lg:px-20">

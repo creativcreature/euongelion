@@ -35,6 +35,9 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ### 2026-02-08
 
+- **113 Substack devotional images downloaded** — Extracted topImage URLs from all 117 HTML source files, downloaded to `public/images/devotionals/`. Created `src/data/devotional-images.ts` with full slug→image mapping (106 devotionals + 9 series intros). Helper functions `getDevotionalImage()` and `getSeriesHeroImage()`.
+- **Devotional reader shows real images** — `DevotionalPageClient` displays devotional-specific hero image at top via `next/image` with dark overlay for readability. Falls back to gradient for series without images (Wake-Up 7).
+- **Wake-Up added to navigation** — "Wake-Up" link added to desktop sticky bar and mobile slide-out menu, linking to existing `/wake-up` landing page.
 - **Hero images wired up** — 5 Substack series with existing hero images (what-happens-when-you-repeatedly-sin, the-work-of-god, signs-boldness-opposition-integrity, from-jerusalem-to-the-nations, witness-under-pressure-expansion) now display real photographs via `next/image`. Images downloaded to `public/images/series/` (served locally, not hotlinked). `SeriesInfo` interface extended with optional `heroImage` field. `SeriesHero` component updated: shows real image when available, gradient fallback otherwise. Darker overlay for text readability on photos.
 - **How It Works repositioned** — Moved directly under fold (after hero + audit results) for immediate clarity. Added SVG icons (compass, book, heart) to each step.
 - **Paper.design-inspired visuals** — Dot-pattern background utility (`dot-pattern`, `dot-pattern-lg`). Applied to How It Works and What This Is sections. Editorial break upgraded with dot overlay, radial gold glow, and minimal cross motif.
