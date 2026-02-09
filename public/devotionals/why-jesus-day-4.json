@@ -1,0 +1,57 @@
+{
+  "day": 4,
+  "title": "The Lesson for Me Today",
+  "teaser": "What's the Lesson for Me Today?",
+  "framework": "Luke 2:10-11",
+  "scriptureReference": "Luke 2:10-11",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "I bring you good news that will cause great joy for all the people. Today in the town of David a Savior has been born to you; he is the Messiah, the Lord.",
+      "reference": "Luke 2:10-11",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "εὐαγγέλιον",
+      "transliteration": "Euangelion",
+      "language": "greek",
+      "definition": "Good news, gospel",
+      "usage": "An announcement of victory or significant good news"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "insight"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "bridge"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "interactive"
+    },
+    {
+      "type": "reflection",
+      "prompt": "What would it mean for your daily life if Jesus truly is the Lord the angels announced? What would need to change in your priorities, relationships, and decision-making?"
+    },
+    {
+      "type": "takeaway",
+      "content": "The angel didn't just announce a Savior, but 'the Lord.' This title implies authority and demands allegiance. The claim is that Jesus's lordship is fundamentally different from human authority—exercised for our benefit rather than exploitation.",
+      "heading": "Key Insight"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "Help me to honestly examine what I'm looking to for salvation and security, and to understand what Jesus offers that is fundamentally different. Give me the courage to consider claims that challenge my assumptions about what I truly need. Amen.",
+      "heading": "Closing Prayer"
+    }
+  ],
+  "panels": [],
+  "totalWords": 168
+}

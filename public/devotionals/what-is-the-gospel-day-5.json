@@ -1,0 +1,66 @@
+{
+  "day": 5,
+  "title": "What Am I Going to Do About It?",
+  "teaser": "Moving from investigation to personal decision",
+  "framework": "Mark 1:5",
+  "scriptureReference": "Mark 1:5",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "Confessing their sins, they were baptized by him in the Jordan River.",
+      "reference": "Mark 1:5",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "ἐξομολογέω",
+      "transliteration": "Exomologeo",
+      "language": "greek",
+      "definition": "To confess, to acknowledge openly",
+      "usage": "This isn't just admitting wrongdoing, but publicly declaring the truth about one's condition. It requires both honesty and courage."
+    },
+    {
+      "type": "teaching",
+      "content": "We've spent four days examining Mark's opening scene from multiple angles—literary, historical, cultural, and personal. Now comes the moment of decision. Investigation without response is merely academic exercise. If John's message and the promise of the coming Messiah have any validity, they demand a response.\n\nThe crowds who came to John made a significant decision: they chose to trust his spiritual authority over their own judgment and the judgment of the established religious leaders. This wasn't blind faith—John's message resonated with their experience and their understanding of Scripture—but it was a real act of trust.\n\nToday, we face a similar challenge. If we conclude that John's message (and by extension, Jesus's message) has validity, we must decide whether we're willing to trust that authority over our own preferences and cultural assumptions. This doesn't mean abandoning critical thinking, but it does mean being open to the possibility that our perspective might be limited or distorted.",
+      "heading": "Moving from Investigation to Decision"
+    },
+    {
+      "type": "story",
+      "content": "Imagine you're exploring a cave system with a group of friends. You've been following what you thought was the main passage, but gradually you realize you've taken a wrong turn somewhere. The passage is getting narrower, the air feels stale, and you're no longer sure you're heading toward the exit.\n\nYou have a choice: you can keep going forward, hoping that somehow this passage will eventually lead where you want to go, or you can acknowledge that you're lost and turn around to find the right path. The second option requires admitting you made a mistake, retracing your steps, and starting over from a known point. It's humbling, but it's also the only way to actually reach your destination.",
+      "heading": "The Cave System"
+    },
+    {
+      "type": "insight",
+      "content": "If someone today wanted to respond to John's message as his original audience did, what would that look like? While we can't literally go to the Jordan River to be baptized by John, we can take analogous steps:\n\nHonest Examination: Taking time for serious self-reflection about our moral and spiritual condition.\n\nAcknowledgment of Need: Moving beyond general admission that 'nobody's perfect' to specific recognition of ways we've fallen short.\n\nOpenness to Transformation: Expressing willingness to be changed, even in ways that might be uncomfortable.\n\nSeeking Community: John's baptism was a public act. Spiritual transformation rarely happens in isolation.",
+      "heading": "Practical Steps Toward Response"
+    },
+    {
+      "type": "bridge",
+      "content": "John's ministry required public confession of sin—a radical act of honesty about one's moral and spiritual condition.\n\nIn our therapeutic culture, we're comfortable talking about mistakes or psychological wounds, but the concept of 'sin'—moral failure that damages our relationship with God—feels archaic to many."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What would it look like for me to honestly acknowledge my need for the kind of transformation John was pointing toward?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "Give me the courage to be honest about my spiritual condition and the wisdom to respond appropriately to what I've learned."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "comprehension"
+    },
+    {
+      "type": "resource"
+    },
+    {
+      "type": "profile",
+      "name": "The Crowds",
+      "heading": "The Responders"
+    }
+  ],
+  "panels": [],
+  "totalWords": 527
+}

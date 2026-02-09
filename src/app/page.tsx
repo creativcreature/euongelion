@@ -1,11 +1,29 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
-import { DEVOTIONAL_SERIES } from '@/data/series'
+import SeriesHero from '@/components/SeriesHero'
+import { SERIES_DATA, FEATURED_SERIES } from '@/data/series'
 
 export default function Home() {
+  const [auditText, setAuditText] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const resultsRef = useRef<HTMLDivElement>(null)
+
+  // Inline audit results
+  const [auditResults, setAuditResults] = useState<{
+    matches: Array<{
+      slug: string
+      title: string
+      question: string
+      confidence: number
+      reasoning: string
+      preview?: { verse: string; paragraph: string }
+    }>
+  } | null>(null)
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -22,84 +40,264 @@ export default function Home() {
     elements.forEach((el) => observer.observe(el))
 
     return () => observer.disconnect()
-  }, [])
+  }, [auditResults])
+
+  async function handleAuditSubmit() {
+    const trimmed = auditText.trim()
+    if (trimmed.length === 0) {
+      setError("Take your time. When you're ready, just write what comes.")
+      return
+    }
+    if (trimmed.length < 10) {
+      setError('Say a little more. Even one sentence helps.')
+      return
+    }
+
+    setIsSubmitting(true)
+    setError(null)
+
+    try {
+      const res = await fetch('/api/soul-audit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ response: trimmed }),
+      })
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        throw new Error(
+          data.error || "Something broke. It's not you. We're working on it.",
+        )
+      }
+
+      const data = await res.json()
+
+      // Store in sessionStorage for /soul-audit/results if user navigates there
+      sessionStorage.setItem('soul-audit-result', JSON.stringify(data))
+
+      // Build matches array (handle both old and new API format)
+      if (data.matches) {
+        setAuditResults(data)
+      } else if (data.match) {
+        // Legacy format: single match + alternatives
+        const matches = [
+          data.match,
+          ...(data.alternatives || []).map(
+            (alt: { slug: string; title: string; question: string }) => ({
+              ...alt,
+              confidence: 0.7,
+              reasoning: '',
+            }),
+          ),
+        ].slice(0, 3)
+        setAuditResults({ matches })
+      }
+
+      // Scroll to results
+      setTimeout(() => {
+        resultsRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      }, 100)
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : 'Something broke. Try again.',
+      )
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-page">
       <Navigation />
 
-      {/* Hero — full viewport, typography-forward */}
-      <header className="flex min-h-[calc(100vh-88px)] flex-col items-center justify-center px-6 text-center">
-        <p className="landing-reveal landing-reveal-1 text-label vw-small mb-8 text-gold">
-          EU&middot;AN&middot;GE&middot;LION &middot; GREEK: &ldquo;GOOD
+      {/* Hero — EUANGELION massive + inline Soul Audit */}
+      <header className="flex min-h-[calc(100vh-57px)] flex-col items-center justify-center px-6 text-center">
+        {/* Massive wordmark */}
+        <h1
+          className="landing-reveal landing-reveal-1 text-masthead mb-4 w-full"
+          style={{
+            fontSize: 'clamp(2.5rem, 10vw, 8rem)',
+            lineHeight: 1,
+            letterSpacing: '0.15em',
+          }}
+        >
+          EUANGELION
+        </h1>
+
+        {/* Meaning */}
+        <p className="landing-reveal landing-reveal-1 text-label vw-small mb-8 text-muted">
+          EU&middot;AN&middot;GE&middot;LI&middot;ON &mdash; &ldquo;GOOD
           NEWS&rdquo;
         </p>
 
-        <h1
-          className="landing-reveal landing-reveal-2 text-serif-italic mx-auto mb-10"
+        {/* Tagline */}
+        <p
+          className="landing-reveal landing-reveal-2 text-serif-italic mx-auto mb-12"
           style={{
-            fontSize: 'clamp(2.5rem, 7vw, 5.5rem)',
-            lineHeight: 1.15,
-            maxWidth: '18ch',
+            fontSize: 'clamp(1.5rem, 4vw, 3rem)',
+            lineHeight: 1.3,
+            maxWidth: '20ch',
           }}
         >
           Daily bread for the cluttered, hungry soul.
-        </h1>
-
-        <p
-          className="landing-reveal landing-reveal-3 mx-auto mb-16 text-secondary"
-          style={{
-            fontSize: 'clamp(1rem, 1.3vw, 1.25rem)',
-            maxWidth: '50ch',
-            lineHeight: 1.8,
-          }}
-        >
-          Short daily readings that meet you where you are. No tracking. No
-          performance. Just content worth your time.
         </p>
 
-        <div className="landing-reveal landing-reveal-3 flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
-          <Link
-            href="/soul-audit"
-            className="inline-block bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-            style={{
-              transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+        {/* Inline Soul Audit */}
+        <div className="landing-reveal landing-reveal-3 w-full max-w-xl">
+          <p className="vw-body mb-4 text-secondary">
+            What are you wrestling with today?
+          </p>
+          <textarea
+            value={auditText}
+            onChange={(e) => {
+              setAuditText(e.target.value)
+              setError(null)
             }}
-          >
-            Take the Soul Audit
-          </Link>
-          <Link
-            href="/wake-up"
-            className="inline-block px-10 py-5 text-label vw-small text-muted transition-all duration-300 hover:text-[var(--color-text-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+            placeholder="Lately, I've been..."
+            rows={3}
+            disabled={isSubmitting}
+            className="mb-4 w-full resize-none bg-surface-raised p-5 text-serif-italic vw-body text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
             style={{
-              borderBottom: '1px solid var(--color-border)',
-              transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+              border: '1px solid var(--color-border)',
+              lineHeight: 1.7,
             }}
-          >
-            Start Reading
-          </Link>
-        </div>
+            onFocus={(e) => {
+              e.target.style.borderColor = 'var(--color-gold)'
+            }}
+            onBlur={(e) => {
+              e.target.style.borderColor = 'var(--color-border)'
+            }}
+          />
 
-        {/* Scroll indicator */}
-        <div className="landing-reveal landing-reveal-4 mt-auto pb-12">
-          <svg
-            className="scroll-indicator h-6 w-6 text-muted"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
+          {error && (
+            <p className="vw-small mb-4 text-center text-secondary">{error}</p>
+          )}
+
+          <button
+            onClick={handleAuditSubmit}
+            disabled={isSubmitting}
+            className="w-full bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom disabled:opacity-50"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
+            {isSubmitting ? 'Listening...' : 'Begin'}
+          </button>
+
+          {/* Secondary CTAs */}
+          <div className="mt-6 flex items-center justify-center gap-6">
+            <Link
+              href="/series"
+              className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+            >
+              Browse All Series
+            </Link>
+            <span className="text-muted">&middot;</span>
+            <Link
+              href="/series"
+              className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+            >
+              Skip to a series
+            </Link>
+          </div>
         </div>
       </header>
 
-      {/* Invitation — full-width surface */}
+      {/* Inline Soul Audit Results */}
+      {auditResults && (
+        <section
+          ref={resultsRef}
+          className="section-breathing"
+          style={{ borderTop: '1px solid var(--color-border)' }}
+        >
+          <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
+            <p className="observe-fade text-label vw-small mb-6 text-center text-gold">
+              WE FOUND SOMETHING FOR YOU
+            </p>
+            <h2 className="observe-fade text-serif-italic vw-heading-md mb-12 text-center">
+              Here&apos;s where we&apos;ll start.
+            </h2>
+
+            {/* 3 Equal Cards */}
+            <div className="grid gap-6 md:grid-cols-3">
+              {auditResults.matches.slice(0, 3).map((match, index) => (
+                <Link
+                  key={match.slug}
+                  href={`/wake-up/series/${match.slug}`}
+                  className="observe-fade group block"
+                >
+                  <div
+                    className="flex h-full flex-col overflow-hidden transition-all duration-300"
+                    style={{
+                      border: `1px solid ${index === 0 ? 'var(--color-gold)' : 'var(--color-border)'}`,
+                    }}
+                  >
+                    <SeriesHero
+                      seriesSlug={match.slug}
+                      size="thumbnail"
+                      overlay
+                    />
+                    <div className="flex flex-1 flex-col p-6">
+                      <p className="text-label vw-small mb-3 text-gold">
+                        {SERIES_DATA[match.slug]?.title || match.title}
+                      </p>
+                      <p className="text-serif-italic vw-body mb-3 flex-1 transition-colors duration-300 group-hover:text-gold">
+                        {match.question}
+                      </p>
+                      {match.reasoning && (
+                        <p className="vw-small mb-4 text-tertiary">
+                          {match.reasoning}
+                        </p>
+                      )}
+                      {match.preview && (
+                        <div
+                          className="mb-4 border-l-2 pl-4"
+                          style={{ borderColor: 'var(--color-gold)' }}
+                        >
+                          <p className="vw-small text-serif-italic text-secondary">
+                            &ldquo;{match.preview.verse}&rdquo;
+                          </p>
+                        </div>
+                      )}
+                      <div className="flex items-center justify-between">
+                        <span className="text-label vw-small text-muted">
+                          {SERIES_DATA[match.slug]?.days.length || '?'} DAYS
+                        </span>
+                        <span className="text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)]">
+                          START &rarr;
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Full-bleed editorial image placeholder */}
+      <section
+        className="relative"
+        style={{
+          borderTop: '1px solid var(--color-border)',
+          height: 'clamp(200px, 30vw, 400px)',
+          background:
+            'linear-gradient(135deg, var(--color-tehom) 0%, #2a1f1a 40%, #3d2b1f 70%, rgba(193, 154, 107, 0.2) 100%)',
+        }}
+      >
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'radial-gradient(ellipse at 60% 40%, rgba(193, 154, 107, 0.08) 0%, transparent 70%)',
+            }}
+          />
+        </div>
+      </section>
+
+      {/* Invitation */}
       <section
         className="bg-surface section-breathing"
         style={{ borderTop: '1px solid var(--color-border)' }}
@@ -140,9 +338,9 @@ export default function Home() {
             <div className="md:col-span-6 md:col-start-7">
               <div className="space-y-8">
                 <p className="observe-fade vw-body leading-relaxed text-secondary">
-                  Each series is five days. One reading per day. Designed to be
-                  short enough for busy lives and deep enough to be worth your
-                  time.
+                  Each series is a multi-day journey. One reading per day.
+                  Designed to be short enough for busy lives and deep enough to
+                  be worth your time.
                 </p>
                 <p className="observe-fade vw-body leading-relaxed text-secondary">
                   We don&apos;t have all the answers. But the questions are
@@ -154,101 +352,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Soul Audit CTA */}
+      {/* Featured Series */}
       <section
         className="section-breathing"
         style={{
           borderTop: '1px solid var(--color-border)',
-          borderBottom: '1px solid var(--color-border)',
         }}
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="observe-fade text-label vw-small mb-6 text-gold">
-              SOUL AUDIT
-            </p>
-            <h2
-              className="observe-fade text-serif-italic mb-8"
-              style={{
-                fontSize: 'clamp(2rem, 5vw, 4rem)',
-                lineHeight: 1.2,
-              }}
-            >
-              What are you wrestling with today?
-            </h2>
-            <p className="observe-fade vw-body mb-12 text-secondary">
-              Answer one question. We&apos;ll match you with a series that
-              speaks to where you are right now. No categories. No labels. Just
-              a starting point.
-            </p>
+          <h2 className="observe-fade text-label vw-small mb-12 text-center text-gold">
+            FEATURED SERIES
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {FEATURED_SERIES.map((slug) => {
+              const series = SERIES_DATA[slug]
+              if (!series) return null
+              return (
+                <Link
+                  key={slug}
+                  href={`/wake-up/series/${slug}`}
+                  className="observe-fade group block"
+                >
+                  <div
+                    className="overflow-hidden transition-all duration-300"
+                    style={{
+                      border: '1px solid var(--color-border)',
+                    }}
+                  >
+                    <SeriesHero seriesSlug={slug} size="card" overlay />
+                    <div className="p-6">
+                      <p className="text-label vw-small mb-2 text-gold">
+                        {series.title.toUpperCase()}
+                      </p>
+                      <p className="text-serif-italic vw-body transition-colors duration-300 group-hover:text-gold">
+                        {series.question}
+                      </p>
+                      <p className="vw-small mt-4 text-muted">
+                        {series.days.length} DAYS
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+          <div className="observe-fade mt-12 text-center">
             <Link
-              href="/soul-audit"
-              className="observe-fade inline-block bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              href="/series"
+              className="inline-block px-10 py-4 text-label vw-small text-muted transition-all duration-300 hover:text-[var(--color-text-primary)]"
               style={{
-                transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+                borderBottom: '1px solid var(--color-border)',
               }}
             >
-              Begin
+              View All 26 Series
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Seven Questions */}
-      <main id="main-content" className="section-breathing">
-        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <h2 className="observe-fade text-label vw-small mb-16 text-center text-gold md:text-left">
-            SEVEN QUESTIONS FOR THE SEARCHING
-          </h2>
-
-          <div>
-            {DEVOTIONAL_SERIES.map((series, index) => (
-              <Link
-                key={series.slug}
-                href={`/wake-up/series/${series.slug}`}
-                className={`observe-fade block ${index > 0 ? `stagger-${Math.min(index, 6)}` : ''}`}
-              >
-                <div
-                  className={`group py-10 transition-all duration-300 md:py-14 ${series.isCenter ? 'bg-surface-raised md:-mx-8 md:px-8' : ''}`}
-                  style={{
-                    borderBottom: '1px solid var(--color-border)',
-                    transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
-                  }}
-                >
-                  <div className="flex items-start gap-6 md:gap-10">
-                    <span
-                      className={`shrink-0 transition-colors duration-300 ${series.isCenter ? 'text-gold' : 'text-muted group-hover:text-secondary'}`}
-                      style={{
-                        fontFamily: 'var(--font-family-display)',
-                        fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
-                        fontWeight: 100,
-                        lineHeight: 1.2,
-                      }}
-                    >
-                      {series.number}
-                    </span>
-
-                    <div className="flex-1">
-                      <p className="text-serif-italic vw-body-lg transition-all duration-300 group-hover:translate-x-2">
-                        <span className="transition-colors duration-300 group-hover:text-gold">
-                          {series.question}
-                        </span>
-                      </p>
-                    </div>
-
-                    <span className="hidden shrink-0 self-center text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)] md:inline-block">
-                      BEGIN &rarr;
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </main>
-
       {/* How It Works */}
       <section
+        id="main-content"
         className="section-breathing"
         style={{ borderTop: '1px solid var(--color-border)' }}
       >
@@ -270,7 +434,8 @@ export default function Home() {
                 01
               </div>
               <p className="vw-body text-secondary">
-                Pick a question that speaks to where you are.
+                Tell us what you&apos;re wrestling with. We&apos;ll match you to
+                a series.
               </p>
             </div>
             <div className="observe-fade stagger-1">
@@ -286,7 +451,7 @@ export default function Home() {
                 02
               </div>
               <p className="vw-body text-secondary">
-                Read one devotional per day for 5 days.
+                Read one devotional per day. Short, deep, honest.
               </p>
             </div>
             <div className="observe-fade stagger-2">
@@ -306,11 +471,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <p className="observe-fade vw-body mt-16 text-center text-tertiary">
-            Each series follows a chiastic arc&mdash;building toward a
-            revelation, then reflecting back. Ancient structure. Modern
-            questions.
-          </p>
         </div>
       </section>
 
@@ -324,7 +484,21 @@ export default function Home() {
             <p className="observe-fade text-label vw-small leading-relaxed text-muted">
               SOMETHING TO HOLD ONTO.
             </p>
-            <p className="vw-small mt-8 text-muted">&copy; 2026 EUANGELION</p>
+            <div className="mt-8 flex items-center justify-center gap-6">
+              <Link
+                href="/privacy"
+                className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+              >
+                Privacy
+              </Link>
+              <Link
+                href="/terms"
+                className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+              >
+                Terms
+              </Link>
+            </div>
+            <p className="vw-small mt-6 text-muted">&copy; 2026 EUANGELION</p>
           </div>
         </div>
       </footer>

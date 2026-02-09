@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
+import { SERIES_DATA, ALL_SERIES_ORDER } from '@/data/series'
 import SeriesPageClient from './SeriesPageClient'
 
 interface Props {
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: series.title,
     description: series.question,
     openGraph: {
-      title: `${series.title} | Wake Up`,
+      title: `${series.title} | Euangelion`,
       description: series.question,
       type: 'article',
     },
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export function generateStaticParams() {
-  return SERIES_ORDER.map((slug) => ({ slug }))
+  return ALL_SERIES_ORDER.map((slug) => ({ slug }))
 }
 
 export default async function SeriesPage({ params }: Props) {

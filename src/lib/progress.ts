@@ -66,37 +66,8 @@ export function getOverallProgress() {
   }
 }
 
-export function canReadDevotional(slug: string) {
-  // Find which series this devotional belongs to
-  const seriesSlug = findSeriesForDevotional(slug)
-  if (!seriesSlug) return { canRead: false, reason: 'Not found' }
-
-  const devotionals = getSeriesDevotionals(seriesSlug)
-  const dayIndex = devotionals.indexOf(slug)
-  if (dayIndex === -1) return { canRead: false, reason: 'Not found' }
-
-  // Day 1 is always available
-  if (dayIndex === 0) return { canRead: true }
-
-  // Check sequential completion: previous day must be complete
-  const previousSlug = devotionals[dayIndex - 1]
-  if (!isDevotionalRead(previousSlug)) {
-    return {
-      canRead: false,
-      reason: 'Complete previous devotionals first',
-      nextToRead: previousSlug,
-    }
-  }
-
-  // Check day-gating: has enough time passed since series start?
-  const dayGateResult = isDayUnlocked(seriesSlug, dayIndex)
-  if (!dayGateResult.unlocked) {
-    return {
-      canRead: false,
-      reason: dayGateResult.message,
-    }
-  }
-
+export function canReadDevotional(_slug: string) {
+  // Day-gating disabled — all content freely accessible
   return { canRead: true }
 }
 

@@ -1,0 +1,76 @@
+{
+  "day": 1,
+  "title": "The Announcement",
+  "teaser": "What's Happening and Who's Involved?",
+  "framework": "Luke 2:10-11",
+  "scriptureReference": "Luke 2:10-11",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "But the angel said to them, 'Do not be afraid. I bring you good news that will cause great joy for all the people. Today in the town of David a Savior has been born to you; he is the Messiah, the Lord.'",
+      "reference": "Luke 2:10-11",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "σωτήρ",
+      "transliteration": "Soter",
+      "language": "greek",
+      "definition": "Savior, deliverer",
+      "usage": "One who saves or delivers from danger or destruction"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "bridge"
+    },
+    {
+      "type": "insight"
+    },
+    {
+      "type": "scripture",
+      "passage": "And there were shepherds living out in the fields nearby, keeping watch over their flocks at night. An angel of the Lord appeared to them, and the glory of the Lord shone around them, and they were terrified. But the angel said to them, 'Do not be afraid. I bring you good news that will cause great joy for all the people. Today in the town of David a Savior has been born to you; he is the Messiah, the Lord.' This will be a sign to you: You will find a baby wrapped in cloths and lying in a manger.' Suddenly a great company of the heavenly host appeared with the angel, praising God and saying, 'Glory to God in the highest heaven, and on earth peace to those on whom his favor rests.'",
+      "reference": "Luke 2:8-20",
+      "translation": "NIV"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "comprehension",
+      "question": "Why were the shepherds significant as the first witnesses to Jesus's birth?",
+      "options": [
+        {
+          "text": "They were wealthy and influential in society",
+          "correct": false
+        },
+        {
+          "text": "They represented ordinary people on the margins of society",
+          "correct": true
+        },
+        {
+          "text": "They were religious leaders with special authority",
+          "correct": false
+        }
+      ],
+      "explanation": "God chose working-class shepherds—people without special religious or social status—as the first witnesses, suggesting that His salvation is intended for everyone, not just the elite."
+    },
+    {
+      "type": "reflection",
+      "prompt": "The angel announced 'good news that will cause great joy for all the people.' What would make news truly good for all people, regardless of their circumstances or background?"
+    },
+    {
+      "type": "takeaway",
+      "content": "The circumstances of Jesus's birth announcement suggest that God's solution to humanity's deepest problem is available to all people, regardless of their social status or religious credentials.",
+      "heading": "Key Insight"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "Help me to understand why this birth was necessary and what it reveals about both human need and divine love. Open my mind to honestly examine the claims being made about Jesus's identity and purpose. Amen.",
+      "heading": "Closing Prayer"
+    }
+  ],
+  "panels": [],
+  "totalWords": 342
+}

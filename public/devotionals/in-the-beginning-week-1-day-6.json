@@ -1,0 +1,93 @@
+{
+  "day": 6,
+  "title": "Review and Practice",
+  "teaser": "",
+  "framework": "Genesis 1:1-5",
+  "scriptureReference": "Genesis 1:1-5",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "In the beginning, God created the heavens and the earth. The earth was without form and void, and darkness was over the face of the deep. And the Spirit of God was hovering over the face of the waters. And God said, 'Let there be light,' and there was light. And God saw the light, that it was good. And God separated the light from the darkness. God called the light Day, and the darkness he called Night. And there was evening and there was morning, the first day.",
+      "reference": "Genesis 1:1-5",
+      "translation": "ESV"
+    },
+    {
+      "type": "vocab",
+      "word": "בְּרֵאשִׁית",
+      "transliteration": "Bereshit",
+      "language": "hebrew",
+      "definition": "In the beginning",
+      "usage": "Review: The first word of the Hebrew Bible. בְּ (in) + רֵאשִׁית (beginning). The root רֹאשׁ (rosh) means 'head' or 'first.'"
+    },
+    {
+      "type": "vocab",
+      "word": "אֱלֹהִים",
+      "transliteration": "Elohim",
+      "language": "hebrew",
+      "definition": "God",
+      "usage": "Review: Grammatically plural but takes singular verbs. Emphasizes God's power and majesty."
+    },
+    {
+      "type": "vocab",
+      "word": "אוֹר",
+      "transliteration": "or",
+      "language": "hebrew",
+      "definition": "light",
+      "usage": "Review: The first thing God spoke into existence. Fundamental to life and vision."
+    },
+    {
+      "type": "vocab",
+      "word": "טוֹב",
+      "transliteration": "tov",
+      "language": "hebrew",
+      "definition": "good",
+      "usage": "Review: Comprehensive term for excellence, beauty, and rightness. God's evaluation of His creation."
+    },
+    {
+      "type": "vocab",
+      "word": "יוֹם",
+      "transliteration": "yom",
+      "language": "hebrew",
+      "definition": "day",
+      "usage": "Review: Can mean 24 hours, daylight, or an era. The first numbered day establishes God's rhythm."
+    },
+    {
+      "type": "teaching",
+      "content": "As we review Genesis 1:1-5, we're looking at the foundation upon which all biblical truth rests. These five verses establish the fundamental realities that shape everything else in Scripture: the existence of God, the creation of the universe, the power of God's word, the goodness of creation, and the rhythm of time. Verse 1 establishes that God is the Creator of everything that exists. Verse 2 describes the unformed state of creation before God's ordering work begins, with the Spirit of God hovering over the waters, ready to bring order and life. Verse 3 demonstrates the absolute power of divine speech—God speaks, and reality obeys. Verse 4 establishes God as the standard of goodness and beauty, and creates the fundamental distinction between light and darkness. Verse 5 establishes God's authority over time itself through the naming of day and night and the rhythm of evening and morning. These five verses reveal God's character progressively: Verse 1 shows God as Creator, Verse 2 shows God as present in chaos, Verse 3 shows God as powerful in speech, Verse 4 shows God as evaluator of goodness, and Verse 5 shows God as establisher of rhythm. Every verse points forward to Christ: Christ as the Word through whom all things were made (John 1:3), Christ as the one who brings order to our chaos (2 Corinthians 5:17), Christ as the Light of the world (John 8:12), Christ as the one who is perfectly good (Mark 10:18), and Christ as the one who gives us rest (Matthew 11:28).",
+      "heading": "The Foundation of Everything"
+    },
+    {
+      "type": "story",
+      "content": "Dr. William Tyndale was a 16th-century English scholar who believed that every person should be able to read the Bible in their own language. At the time, the Bible was only available in Latin, which most people couldn't read. When Tyndale requested permission to translate the Bible into English, he was refused by church authorities who wanted to maintain control over biblical interpretation. Undeterred, Tyndale left England and began working on his translation in secret. He taught himself Hebrew and Greek, spending years mastering the original languages of Scripture. He would often say, 'I cannot translate what I do not understand, and I cannot understand what I have not learned to read in the original.' One of the verses that gave Tyndale the most difficulty was Genesis 1:1. He wrote in his journal: 'How do you translate \"Bereshit bara Elohim\"? \"In the beginning God created\"—but these simple English words cannot capture the weight, the authority, the creative power that pulses through the Hebrew.' Tyndale's Hebrew studies convinced him that every Christian should have the opportunity to encounter Scripture in its original languages. He wrote, 'The Hebrew text is like a clear spring of water. Each translation is like a bucket drawn from that spring. The bucket may be clean and useful, but it can never contain all the freshness, clarity, and life of the spring itself.' When Tyndale's English New Testament was published in 1526, it was immediately banned and burned. Tyndale himself was eventually executed in 1536. His last words were reportedly, 'Lord, open the King of England's eyes.' Remarkably, just three years later, King Henry VIII authorized the publication of an English Bible—a Bible largely based on Tyndale's translation work. Today, scholars estimate that about 80% of the King James Version comes directly from Tyndale's translation.",
+      "heading": "The Spring of Living Water"
+    },
+    {
+      "type": "bridge",
+      "content": "In just five verses, Genesis establishes God as Creator, the power of His word, the goodness of creation, and the rhythm of time.\n\nLearning to read these verses in Hebrew connects us more directly to the original revelation, allowing us to hear God's voice with greater clarity and power."
+    },
+    {
+      "type": "reflection",
+      "prompt": "How has learning to read these Hebrew words changed your understanding of Genesis?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "God, thank You for the privilege of reading Your word in the language You chose to reveal it. As I practice these verses, help me not just to pronounce the words correctly, but to understand more deeply who You are and what You have done."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "insight",
+      "content": "This week we learned 20 out of 22 Hebrew letters: א ב ג ד ה ו ח ט י כ ל מ נ ע פ צ ק ר ש ת. Key words we can now read: בְּרֵאשִׁית (Bereshit) - In the beginning; בָּרָא (bara) - created; אֱלֹהִים (Elohim) - God; אוֹר (or) - light; טוֹב (tov) - good; יוֹם (yom) - day.",
+      "heading": "Hebrew Letters Learned This Week"
+    },
+    {
+      "type": "resource"
+    },
+    {
+      "type": "comprehension"
+    }
+  ],
+  "panels": [],
+  "totalWords": 939
+}

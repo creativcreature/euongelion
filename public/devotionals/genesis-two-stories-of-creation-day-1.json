@@ -1,0 +1,57 @@
+{
+  "day": 1,
+  "title": "The Divine Zoom Lens",
+  "teaser": "God's creative power revealed as both cosmic King and personal Potter",
+  "framework": "Genesis 1:26-27, Genesis 2:7",
+  "scriptureReference": "Genesis 1:26-27, Genesis 2:7",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "Then God said, 'Let us make mankind in our image, in our likeness, so that they may rule over the fish in the sea and the birds in the sky, over the livestock and all the wild animals, and over all the creatures that move along the ground.' So God created mankind in his own image, in the image of God he created them; male and female he created them.",
+      "reference": "Genesis 1:26-27",
+      "translation": "NIV"
+    },
+    {
+      "type": "scripture",
+      "passage": "Then the Lord God formed a man from the dust of the ground and breathed into his nostrils the breath of life, and the man became a living being.",
+      "reference": "Genesis 2:7",
+      "translation": "NIV"
+    },
+    {
+      "type": "teaching",
+      "content": "God's creative power is revealed in two distinct ways: as the cosmic King who speaks with authority from a distance, and as the personal Potter who lovingly shapes us up close. One is a word of command; the other is a breath of life. One shows us our royal purpose; the other, our intimate beginning. To understand who we are, we must embrace both.",
+      "heading": "Two Perspectives, One Creator"
+    },
+    {
+      "type": "vocab",
+      "word": "אֱלֹהִים / יְהוָה אֱלֹהִים",
+      "transliteration": "Elohim / Yahweh Elohim",
+      "language": "hebrew",
+      "definition": "God (majestic, powerful) / LORD God (personal, covenantal)",
+      "usage": "Elohim is the name for God that emphasizes His power, His majesty, and His role as the transcendent Creator of the universe. It is the name used throughout Genesis 1. Yahweh is the personal, covenantal name of God, the name He uses when He wants to be known in relationship. When combined with Elohim, it paints a picture of a God who is both all-powerful and deeply personal."
+    },
+    {
+      "type": "story",
+      "content": "The rescue of the 33 Chilean miners in 2010 was a story of two creations, two simultaneous acts of salvation. Above ground, a \"cosmic\" effort was underway. Engineers and technicians from around the world assembled a massive, complex drilling operation—a technological marvel designed to conquer half a mile of solid rock. It was a story of power, of human ingenuity on a grand scale, a distant, powerful force working from above to create a path to life. This was the \"Let us make a way\" of human engineering, a majestic, top-down plan to impose order on a chaotic situation.\n\nBut deep below, in the suffocating darkness, another kind of creation was happening. It was personal, intimate, and relational. Luis Urzua, the shift foreman, didn't have drills or technology. He had his presence. He gathered the men, organized their meager resources, and created a community out of chaos. He didn't command life from a distance; he nurtured it up close, man to man, in the dust and the darkness. He was the potter, shaping a fragile society with his hands and his words, breathing hope into his men when they had none.\n\nThe men were saved because both rescues were happening at once. They needed the powerful, distant plan of the engineers, the Elohim-like display of force that could break through the rock. But they also needed the immanent, personal leadership of Urzua, the Yahweh-like presence who walked with them in the darkness and kept their spirits alive. Without the drill, they would have been trapped forever. But without the community Urzua formed, they might have lost their minds and souls long before the drill arrived.",
+      "heading": "Two Rescues"
+    },
+    {
+      "type": "insight",
+      "content": "These two passages are not contradictory; they are complementary, like a wide-angle shot and a close-up of the same event. In Genesis 1, the majestic and transcendent Elohim speaks a royal decree: \"Let us make mankind.\" The language is plural (\"us,\" \"our\"), hinting at the Trinitarian community within the Godhead. The focus is on humanity's purpose and status: to be God's image-bearers and to rule over creation. This is our cosmic identity.\n\nIn Genesis 2, the camera zooms in. The name of God changes to the personal, covenantal Yahweh Elohim. He is no longer speaking from a distance but is now on the ground, acting as a potter. The word for \"formed\" (yatsar) is the same word used for a craftsman shaping clay. He then performs the most intimate of acts, breathing His own life (neshamah) into the man's nostrils. This is our personal identity, formed by the hands and filled with the very breath of God.",
+      "heading": "What's Happening in the Text?"
+    },
+    {
+      "type": "reflection",
+      "prompt": "Do you tend to see God more as the distant, all-powerful King of the universe, or as the close, personal Father who knows your every detail?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "When I consider your heavens, the work of your fingers, the moon and the stars, which you have set in place, what is mankind that you are mindful of them, human beings that you care for them?"
+    },
+    {
+      "type": "comprehension"
+    }
+  ],
+  "panels": [],
+  "totalWords": 769
+}

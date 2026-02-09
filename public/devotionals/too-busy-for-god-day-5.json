@@ -1,0 +1,66 @@
+{
+  "day": 5,
+  "title": "Rest and Sabbath",
+  "teaser": "Choosing peaceful rest over anxious productivity",
+  "framework": "Ecclesiastes 4:6",
+  "scriptureReference": "Ecclesiastes 4:6",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "Better is a handful with quietness than both hands full with toil and a striving after wind.",
+      "reference": "Ecclesiastes 4:6",
+      "translation": "ESV"
+    },
+    {
+      "type": "vocab",
+      "word": "נַחַת",
+      "transliteration": "nachat",
+      "language": "hebrew",
+      "definition": "rest, quietness, peace",
+      "usage": "Nachat implies not just physical rest but spiritual settledness - a deep peace that comes from contentment rather than accumulation."
+    },
+    {
+      "type": "teaching",
+      "content": "Ecclesiastes 4:6 presents a radical economic principle: better to have less with peace than more with anxiety. The Hebrew contrasts nachat (rest, quietness, contentment) with amal (toil, labor, trouble) and re'ut ruach (chasing after wind).\n\nSolomon observed that the pursuit of more often costs us the ability to enjoy what we have. The person with full hands but no rest is poorer than the person with less but peace.",
+      "heading": "Solomon's Radical Economics"
+    },
+    {
+      "type": "story",
+      "content": "Kevin worked two jobs, managed three side projects, and maintained five investment portfolios. His hands were literally full - and so was his stress level. Every opportunity felt urgent, every invitation felt mandatory, every project felt essential.\n\nHis grandfather, a farmer, watched Kevin's frantic activity: 'Son, you're working so hard to get more that you're missing what you already have.'\n\nThe wisdom hit like lightning: What if I'm so busy filling my hands that I can't receive what God wants to give me?",
+      "heading": "The Full-Handed Poverty"
+    },
+    {
+      "type": "insight",
+      "content": "Lisa believed the cultural lie: more opportunities = more success = more happiness. She said yes to everything, accumulated constantly, and worked relentlessly. But the more she gained, the more anxious she became.\n\nThe breakthrough came during a power outage that forced her to sit in silence for three hours. In that stillness, she realized: I have everything I thought I wanted and nothing I actually need.",
+      "heading": "The Paradox of Sabbath Economics"
+    },
+    {
+      "type": "bridge",
+      "content": "Solomon observed that having less with peace is better than having more with anxiety - a handful with quietness beats both hands full with toil.\n\nWe've largely lost Sabbath wisdom, creating a culture of perpetual productivity. The result is exactly what Ecclesiastes predicted - both hands full of toil and chasing after wind."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What if having less but resting more is actually having more?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "God, teach me the wisdom of nachat - true rest and quietness. Help me choose the handful with peace over the double handful with anxiety. Show me that rest is not laziness but trust. Amen."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "comprehension"
+    },
+    {
+      "type": "resource"
+    },
+    {
+      "type": "profile",
+      "name": "Kevin",
+      "heading": "The Full-Handed Man"
+    }
+  ],
+  "panels": [],
+  "totalWords": 391
+}

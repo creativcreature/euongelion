@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
+import { SERIES_DATA, ALL_SERIES_ORDER } from '@/data/series'
+import * as fs from 'fs'
+import * as path from 'path'
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY
 
@@ -29,104 +31,60 @@ function detectCrisis(text: string): boolean {
   return CRISIS_KEYWORDS.some((keyword) => lower.includes(keyword))
 }
 
-// Keyword-based fallback matching
-const SERIES_KEYWORDS: Record<string, string[]> = {
-  identity: [
-    'identity',
-    'who am i',
-    'lost',
-    'shaken',
-    'labels',
-    'defined',
-    'purpose',
-    'meaning',
-    'self',
-    'belong',
-  ],
-  peace: [
-    'peace',
-    'anxious',
-    'anxiety',
-    'control',
-    'worry',
-    'stressed',
-    'overwhelmed',
-    'restless',
-    'fear',
-    'panic',
-  ],
-  community: [
-    'lonely',
-    'alone',
-    'isolated',
-    'friends',
-    'community',
-    'church',
-    'people',
-    'relationships',
-    'trust',
-    'betrayed',
-  ],
-  kingdom: [
-    'politics',
-    'government',
-    'system',
-    'searching',
-    'looking',
-    'refuge',
-    'power',
-    'kingdom',
-    'world',
-    'broken',
-  ],
-  provision: [
-    'money',
-    'finances',
-    'job',
-    'work',
-    'provide',
-    'enough',
-    'scarcity',
-    'poor',
-    'rich',
-    'economy',
-    'inflation',
-  ],
-  truth: [
-    'truth',
-    'lies',
-    'misinformation',
-    'confused',
-    'real',
-    'fake',
-    'trust',
-    'media',
-    'believe',
-    'discern',
-  ],
-  hope: [
-    'hope',
-    'hopeless',
-    'dark',
-    'despair',
-    'pessimistic',
-    'depressed',
-    'grief',
-    'loss',
-    'tired',
-    'exhausted',
-    'doubt',
-  ],
+// Load Day 1 preview for a series
+function getDay1Preview(
+  slug: string,
+): { verse: string; paragraph: string } | null {
+  try {
+    const series = SERIES_DATA[slug]
+    if (!series || series.days.length === 0) return null
+
+    const day1Slug = series.days[0].slug
+    const filePath = path.join(
+      process.cwd(),
+      'public',
+      'devotionals',
+      `${day1Slug}.json`,
+    )
+
+    if (!fs.existsSync(filePath)) return null
+
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'))
+    const modules = data.modules || []
+
+    // Find first scripture module for verse
+    const scripture = modules.find(
+      (m: Record<string, unknown>) => m.type === 'scripture',
+    )
+    const verse = scripture?.passage || scripture?.reference || ''
+
+    // Find first teaching module for paragraph
+    const teaching = modules.find(
+      (m: Record<string, unknown>) => m.type === 'teaching',
+    )
+    const paragraph = teaching?.content
+      ? String(teaching.content).split('\n\n')[0]?.slice(0, 200)
+      : ''
+
+    if (!verse && !paragraph) return null
+    return { verse: verse.slice(0, 200), paragraph }
+  } catch {
+    return null
+  }
 }
 
+// Keyword-based fallback matching (all 26 series)
 function keywordMatch(text: string): { slug: string; confidence: number }[] {
   const lower = text.toLowerCase()
   const scores: { slug: string; score: number }[] = []
 
-  for (const [slug, keywords] of Object.entries(SERIES_KEYWORDS)) {
+  for (const slug of ALL_SERIES_ORDER) {
+    const series = SERIES_DATA[slug]
+    if (!series) continue
+
     let score = 0
-    for (const keyword of keywords) {
-      if (lower.includes(keyword)) score++
+    for (const keyword of series.keywords) {
+      if (lower.includes(keyword.toLowerCase())) score++
     }
     if (score > 0) scores.push({ slug, score })
   }
@@ -134,7 +92,6 @@ function keywordMatch(text: string): { slug: string; confidence: number }[] {
   scores.sort((a, b) => b.score - a.score)
 
   if (scores.length === 0) {
-    // Default to identity (first series) if no matches
     return [{ slug: 'identity', confidence: 0.3 }]
   }
 
@@ -166,23 +123,24 @@ export async function POST(request: NextRequest) {
           { name: 'National Suicide Prevention Lifeline', contact: '988' },
           { name: 'Crisis Text Line', contact: 'Text HOME to 741741' },
         ],
-        // Still provide a gentle match
-        match: {
-          slug: 'hope',
-          title: SERIES_DATA.hope.title,
-          question: SERIES_DATA.hope.question,
-          confidence: 1.0,
-          reasoning:
-            "When you're ready, we have words of hope waiting for you.",
-        },
-        alternatives: [],
+        matches: [
+          {
+            slug: 'hope',
+            title: SERIES_DATA.hope.title,
+            question: SERIES_DATA.hope.question,
+            confidence: 1.0,
+            reasoning:
+              "When you're ready, we have words of hope waiting for you.",
+            preview: getDay1Preview('hope'),
+          },
+        ],
       })
     }
 
-    // Build series descriptions for Claude
-    const seriesDescriptions = SERIES_ORDER.map((slug) => {
+    // Build series descriptions for Claude (all 26)
+    const seriesDescriptions = ALL_SERIES_ORDER.map((slug) => {
       const s = SERIES_DATA[slug]
-      return `- ${slug}: "${s.question}" — ${s.introduction}`
+      return `- ${slug}: "${s.question}" — ${s.introduction} [Keywords: ${s.keywords.join(', ')}]`
     }).join('\n')
 
     // Try Claude API first
@@ -199,30 +157,44 @@ export async function POST(request: NextRequest) {
             },
             body: JSON.stringify({
               model: 'claude-haiku-4-5-20251001',
-              max_tokens: 500,
+              max_tokens: 800,
               messages: [
                 {
                   role: 'user',
-                  content: `You are matching a user to a devotional series based on their response to "What are you wrestling with today?"
+                  content: `You are matching a user to devotional series based on their response to "What are you wrestling with today?"
 
 User response: "${userResponse}"
 
-Available series:
+Available series (26 total):
 ${seriesDescriptions}
 
 Return ONLY valid JSON (no markdown, no backticks) with this exact structure:
 {
-  "primary_match": "series_slug",
-  "confidence": 0.0 to 1.0,
-  "reasoning": "One sentence explaining why this series fits",
-  "alternatives": ["slug1", "slug2"]
+  "matches": [
+    {
+      "slug": "series_slug",
+      "confidence": 0.0 to 1.0,
+      "reasoning": "One warm sentence explaining why this series fits"
+    },
+    {
+      "slug": "second_best_slug",
+      "confidence": 0.0 to 1.0,
+      "reasoning": "One warm sentence"
+    },
+    {
+      "slug": "third_best_slug",
+      "confidence": 0.0 to 1.0,
+      "reasoning": "One warm sentence"
+    }
+  ]
 }
 
 Rules:
-- primary_match must be one of: ${SERIES_ORDER.join(', ')}
-- alternatives must be different from primary_match
-- confidence reflects how well the user's response maps to the series
-- reasoning should be warm and pastoral, not clinical`,
+- Return exactly 3 matches, each a different series
+- slugs must match exactly from the list above
+- confidence reflects how well the user's response maps to each series
+- reasoning should be warm and pastoral, not clinical
+- The first match should be the strongest fit`,
                 },
               ],
             }),
@@ -235,32 +207,37 @@ Rules:
 
           if (content) {
             const parsed = JSON.parse(content)
-            const primarySlug = parsed.primary_match as string
 
-            if (SERIES_DATA[primarySlug]) {
-              const primary = SERIES_DATA[primarySlug]
-              const alternatives = (parsed.alternatives || [])
-                .filter((s: string) => SERIES_DATA[s] && s !== primarySlug)
-                .slice(0, 2)
-                .map((s: string) => ({
-                  slug: s,
-                  title: SERIES_DATA[s].title,
-                  question: SERIES_DATA[s].question,
-                }))
+            if (parsed.matches && Array.isArray(parsed.matches)) {
+              const enrichedMatches = parsed.matches
+                .filter(
+                  (m: { slug: string }) =>
+                    SERIES_DATA[m.slug as keyof typeof SERIES_DATA],
+                )
+                .slice(0, 3)
+                .map(
+                  (m: {
+                    slug: string
+                    confidence: number
+                    reasoning: string
+                  }) => ({
+                    slug: m.slug,
+                    title: SERIES_DATA[m.slug].title,
+                    question: SERIES_DATA[m.slug].question,
+                    confidence: m.confidence || 0.8,
+                    reasoning:
+                      m.reasoning ||
+                      'We think this series speaks to where you are.',
+                    preview: getDay1Preview(m.slug),
+                  }),
+                )
 
-              return NextResponse.json({
-                crisis: false,
-                match: {
-                  slug: primarySlug,
-                  title: primary.title,
-                  question: primary.question,
-                  confidence: parsed.confidence || 0.8,
-                  reasoning:
-                    parsed.reasoning ||
-                    'We think this series speaks to where you are.',
-                },
-                alternatives,
-              })
+              if (enrichedMatches.length > 0) {
+                return NextResponse.json({
+                  crisis: false,
+                  matches: enrichedMatches,
+                })
+              }
             }
           }
         }
@@ -271,26 +248,19 @@ Rules:
 
     // Fallback: keyword matching
     const matches = keywordMatch(userResponse)
-    const primarySlug = matches[0].slug
-    const primary = SERIES_DATA[primarySlug]
-
-    const alternatives = matches.slice(1, 3).map((m) => ({
+    const enrichedMatches = matches.slice(0, 3).map((m) => ({
       slug: m.slug,
       title: SERIES_DATA[m.slug].title,
       question: SERIES_DATA[m.slug].question,
+      confidence: m.confidence,
+      reasoning:
+        'Based on what you shared, we think this series will meet you well.',
+      preview: getDay1Preview(m.slug),
     }))
 
     return NextResponse.json({
       crisis: false,
-      match: {
-        slug: primarySlug,
-        title: primary.title,
-        question: primary.question,
-        confidence: matches[0].confidence,
-        reasoning:
-          'Based on what you shared, we think this series will meet you well.',
-      },
-      alternatives,
+      matches: enrichedMatches,
     })
   } catch {
     return NextResponse.json(

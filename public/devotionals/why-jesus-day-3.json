@@ -1,0 +1,73 @@
+{
+  "day": 3,
+  "title": "The Original Audience",
+  "teaser": "What's the Lesson for the Original Audience?",
+  "framework": "Luke 2:11",
+  "scriptureReference": "Luke 2:11",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "Today in the town of David a Savior has been born to you; he is the Messiah, the Lord.",
+      "reference": "Luke 2:11",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "Divi Filius / Soter",
+      "transliteration": "Divi Filius / Soter",
+      "language": "latin",
+      "definition": "Son of God / Savior",
+      "usage": "Official titles used for Caesar Augustus"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "insight"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "bridge"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "comprehension",
+      "question": "Why would calling Jesus 'Savior' and 'Lord' have been politically provocative in the Roman Empire?",
+      "options": [
+        {
+          "text": "These were uncommon titles with no special meaning",
+          "correct": false
+        },
+        {
+          "text": "These were official titles claimed by Caesar Augustus himself",
+          "correct": true
+        },
+        {
+          "text": "Romans were tolerant of all religious claims",
+          "correct": false
+        }
+      ],
+      "explanation": "Caesar Augustus was officially titled 'Soter' (Savior) and 'Kyrios' (Lord). Using these same titles for Jesus was a direct challenge to imperial authority and could be considered treason."
+    },
+    {
+      "type": "reflection",
+      "prompt": "The early Christians risked persecution for proclaiming Jesus as Lord instead of Caesar. What does this suggest about the strength of their conviction? What would it take for you to risk social or economic consequences for your beliefs?"
+    },
+    {
+      "type": "takeaway",
+      "content": "By choosing shepherds—marginalized people—as the first witnesses to the Messiah's birth, God was making a statement about whose testimony matters and who is included in the kingdom.",
+      "heading": "Key Insight"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "Help me understand the courage it would have taken for early Christians to proclaim Jesus as Lord in a world where Caesar demanded ultimate allegiance. Give me similar courage to live according to my convictions, even when it's costly. Amen.",
+      "heading": "Closing Prayer"
+    }
+  ],
+  "panels": [],
+  "totalWords": 205
+}

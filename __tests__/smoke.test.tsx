@@ -56,7 +56,9 @@ beforeEach(() => {
 describe('Smoke Test', () => {
   it('renders the landing page without crashing', () => {
     render(<Page />)
-    expect(screen.getByText('EUANGELION')).toBeInTheDocument()
+    // EUANGELION appears in both nav logo and hero — use getAllByText
+    const euangelionElements = screen.getAllByText('EUANGELION')
+    expect(euangelionElements.length).toBeGreaterThanOrEqual(1)
     expect(
       screen.getByText(/Daily bread for the cluttered, hungry soul/),
     ).toBeInTheDocument()

@@ -1,0 +1,74 @@
+{
+  "day": 1,
+  "title": "In the Beginning God Created",
+  "teaser": "",
+  "framework": "Genesis 1:1",
+  "scriptureReference": "Genesis 1:1",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "In the beginning, God created the heavens and the earth.",
+      "reference": "Genesis 1:1",
+      "translation": "ESV"
+    },
+    {
+      "type": "vocab",
+      "word": "בְּרֵאשִׁית",
+      "transliteration": "Bereshit",
+      "language": "hebrew",
+      "definition": "In the beginning",
+      "usage": "This is the very first word of the Hebrew Bible! The word breaks down as: בְּ (be - 'in') + רֵאשִׁית (reshit - 'beginning'). The root רֹאשׁ (rosh) means 'head' or 'first,' so 'reshit' means 'the very first' or 'the beginning.'"
+    },
+    {
+      "type": "vocab",
+      "word": "בָּרָא",
+      "transliteration": "bara",
+      "language": "hebrew",
+      "definition": "created",
+      "usage": "Used exclusively for divine activity in the Old Testament. Humans can make, form, or fashion things from existing materials, but only God can 'bara'—create something from nothing."
+    },
+    {
+      "type": "vocab",
+      "word": "אֱלֹהִים",
+      "transliteration": "Elohim",
+      "language": "hebrew",
+      "definition": "God",
+      "usage": "Grammatically plural but takes singular verbs when referring to the one true God. The word comes from the root meaning 'strength' or 'power,' emphasizing God's absolute authority and capability."
+    },
+    {
+      "type": "teaching",
+      "content": "Genesis 1:1 is not just the beginning of the Bible—it's the foundation upon which all biblical truth rests. This single verse establishes several crucial truths that shape everything that follows. The Hebrew word 'bereshit' establishes that time itself has a beginning. This was a revolutionary concept in the ancient world, where most cultures believed in cyclical time or eternal matter. The Hebrew Bible declares that time, like everything else, is created by God. The concept of creation ex nihilo (out of nothing) was unique in the ancient world. Other creation myths describe gods forming the world from pre-existing chaos or from the bodies of defeated enemies. But Genesis declares that God creates by the power of His word alone, bringing into existence what did not exist before. The phrase 'the heavens and the earth' is a Hebrew idiom meaning 'everything that exists.' It's a merism—a figure of speech that expresses totality by naming the extremes. God didn't just create some things; He created everything.",
+      "heading": "The Foundation of Everything"
+    },
+    {
+      "type": "story",
+      "content": "Dr. Stephen Hawking was perhaps the most famous physicist of our time, known for his groundbreaking work on black holes and his book 'A Brief History of Time.' Despite being diagnosed with ALS at age 21 and given only two years to live, he continued his research for over 50 years, revolutionizing our understanding of the universe. Throughout his career, Hawking grappled with the question of cosmic origins, writing, 'If we find the answer to that, it would be the ultimate triumph of human reason—for then we would know the mind of God.' In 1981, Hawking attended a conference at the Vatican where Pope John Paul II told the assembled scientists they were free to study the evolution of the universe after the Big Bang, but should not inquire into the Big Bang itself because that was the moment of creation. Yet even Hawking's 'no boundary' proposal couldn't escape the fundamental question: Why does anything exist at all? What's remarkable is that Hawking, despite his atheism, couldn't escape the language of creation and purpose. Even his scientific equations seemed to point toward what Genesis 1:1 declares: 'In the beginning, God created.' The Hebrew word 'bara' means to create something from nothing—exactly what modern cosmology suggests happened at the moment of the Big Bang.",
+      "heading": "The Ultimate Question"
+    },
+    {
+      "type": "bridge",
+      "content": "In the beginning, God created the heavens and the earth.\n\nIf God created everything, then everything belongs to Him. This establishes His right to rule over His creation and our responsibility to live according to His design."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What does it mean that God existed before time itself began?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "God, You are the beginning of all things. Before time, before space, before anything existed, You were. Help me understand what it means to build my life on You as the foundation of everything."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "insight",
+      "content": "Today we learn six Hebrew letters: ב (Bet) makes 'b' or 'v' sound, means 'house' or 'in'; ר (Resh) makes 'r' sound, means 'head' or 'beginning'; א (Aleph) is a silent letter, represents the oneness of God; ש (Shin) makes 'sh' sound, represents divine fire; י (Yod) makes 'y' or 'i' sound, smallest letter, represents God's presence; ת (Tav) makes 't' sound, last letter of alphabet, represents completion.",
+      "heading": "Hebrew Letters Introduced"
+    },
+    {
+      "type": "comprehension"
+    }
+  ],
+  "panels": [],
+  "totalWords": 673
+}

@@ -1,0 +1,65 @@
+{
+  "day": 1,
+  "title": "The Call to Follow",
+  "teaser": "Jesus's radical call to discipleship and its immediate context",
+  "framework": "Matthew 16:24",
+  "scriptureReference": "Matthew 16:24",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "Whoever wants to be my disciple must deny themselves and take up their cross and follow me.",
+      "reference": "Matthew 16:24",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "ἀκολουθέω",
+      "transliteration": "Akoloutheo",
+      "language": "greek",
+      "definition": "To follow",
+      "usage": "This isn't casual accompaniment but deliberate, committed following - like a student following a master or a soldier following a commander."
+    },
+    {
+      "type": "teaching",
+      "content": "This passage occurs at a crucial turning point in Matthew's Gospel. Jesus has just received Peter's confession that he is 'the Messiah, the Son of the living God' (16:16). But immediately after this high point, Jesus begins to explain that his messiahship will involve suffering and death. When Peter objects to this plan, Jesus delivers some of his harshest words to any of his disciples, calling Peter 'Satan' and accusing him of thinking like a human rather than like God.\n\nIt's in this context that Jesus makes his call to discipleship. He's not offering an easy path to personal fulfillment or worldly success. He's calling people to follow him on a path that leads through suffering to resurrection, through death to life.\n\nFor first-century readers, the image of 'taking up your cross' would have been vivid and terrifying. Crucifixion was the Roman method of execution for rebels and criminals - a slow, public, humiliating death designed to deter others from challenging Roman authority. When Jesus spoke of taking up a cross, his audience would have understood this as a call to be willing to die for your convictions.",
+      "heading": "The Radical Nature of the Call"
+    },
+    {
+      "type": "story",
+      "content": "Dr. Michael Rodriguez had everything he had worked for since medical school. At 38, he was the youngest department head in the history of Metropolitan Hospital, earning a salary that allowed him and his wife Carmen to live in a beautiful home in the suburbs and send their two children to private schools. His research on cardiac surgery techniques was gaining national attention, and he had just been offered a position at Johns Hopkins that would essentially guarantee his career trajectory toward becoming one of the country's leading heart surgeons.\n\nBut Michael couldn't stop thinking about the conversation he'd had with Dr. Sarah Kim, a colleague who had recently returned from a medical mission trip to Guatemala. She had shown him photos of the rural clinic where she had worked - a facility with basic equipment serving thousands of people who had no access to cardiac care. 'Michael, I saw conditions there that we could fix with procedures that are routine for us,' she had said. 'But there's no one with your expertise willing to work in those conditions.'\n\nThe offer Sarah was making was the opposite of everything Michael had been working toward. Instead of prestige and financial security, she was asking him to consider spending two years in a rural clinic, living in basic conditions, working with limited resources, and earning a fraction of his current salary. It would mean delaying his research, potentially damaging his career prospects, and asking his family to sacrifice the comfortable life they had built.\n\nAs Michael sat in his office looking at the Johns Hopkins contract on his desk, he realized he was facing a choice between two completely different definitions of success. One path led toward everything he had always thought he wanted; the other led toward something he had never seriously considered but couldn't shake from his mind.",
+      "heading": "The Modern Doctor's Dilemma"
+    },
+    {
+      "type": "insight",
+      "content": "Before we examine Matthew's account of Jesus's call to discipleship, we should understand who is telling this story and why his perspective matters. Matthew (also called Levi) was a tax collector before becoming one of Jesus's twelve apostles. This background is crucial for understanding his Gospel.\n\nTax collectors in first-century Palestine were among the most despised people in Jewish society. They worked for the Roman occupying forces, collecting taxes from their own people and often enriching themselves through corruption and extortion. They were considered traitors to their nation and their faith. For Matthew, following Jesus meant literally walking away from a lucrative career and accepting social ostracism from both his former colleagues and his fellow Jews.\n\nMatthew's Gospel was likely written between 70-85 AD, primarily for a Jewish-Christian audience. His frequent quotations from the Hebrew Scriptures and his emphasis on Jesus as the fulfillment of Old Testament prophecy suggest he was writing to people who needed to understand how Jesus fit into the story of Israel.",
+      "heading": "Who Is Matthew?"
+    },
+    {
+      "type": "bridge",
+      "content": "Jesus's call to 'take up your cross' connects to a broader biblical theme about the relationship between sacrifice and blessing, death and life. Throughout the Hebrew Scriptures, God's people are called to choose between immediate comfort and long-term faithfulness.\n\nThis isn't the gentle, comforting Jesus of popular imagination - this is Jesus making demands that seem to go against every human instinct for self-preservation and personal happiness."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What does it mean to voluntarily choose a path that involves denial and sacrifice rather than pursuing personal comfort and success?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "Help me to understand what Jesus is really asking of those who would follow him, and give me the courage to honestly consider the cost."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "profile",
+      "name": "Matthew (Levi)",
+      "heading": "The Tax Collector Turned Apostle"
+    },
+    {
+      "type": "profile",
+      "name": "Peter",
+      "heading": "The Disciple Who Resisted the Cross"
+    }
+  ],
+  "panels": [],
+  "totalWords": 859
+}

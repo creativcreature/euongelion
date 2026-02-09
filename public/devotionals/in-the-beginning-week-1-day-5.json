@@ -1,0 +1,74 @@
+{
+  "day": 5,
+  "title": "The First Day",
+  "teaser": "",
+  "framework": "Genesis 1:5",
+  "scriptureReference": "Genesis 1:5",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "God called the light Day, and the darkness he called Night. And there was evening and there was morning, the first day.",
+      "reference": "Genesis 1:5",
+      "translation": "ESV"
+    },
+    {
+      "type": "vocab",
+      "word": "יוֹם אֶחָד",
+      "transliteration": "yom echad",
+      "language": "hebrew",
+      "definition": "one day / the first day",
+      "usage": "The word 'yom' means 'day' and can refer to a 24-hour period, daylight hours, or an indefinite period of time. 'Echad' means 'one' and emphasizes unity and uniqueness. This is the first numbered day in Scripture."
+    },
+    {
+      "type": "vocab",
+      "word": "עֶרֶב",
+      "transliteration": "erev",
+      "language": "hebrew",
+      "definition": "evening",
+      "usage": "Comes from a root meaning 'to mix' or 'to become dark.' Evening is the time when light and darkness mix, when the activities of the day wind down, when reflection and rest begin."
+    },
+    {
+      "type": "vocab",
+      "word": "בֹקֶר",
+      "transliteration": "boker",
+      "language": "hebrew",
+      "definition": "morning",
+      "usage": "Comes from a root meaning 'to break through' or 'to examine.' Morning is when light breaks through darkness, when new possibilities emerge, when work begins."
+    },
+    {
+      "type": "teaching",
+      "content": "Genesis 1:5 concludes the first day of creation with two significant divine acts: the naming of light and darkness, and the establishment of the evening-morning cycle. In Hebrew culture, naming was an act of authority and definition. To name something was to have dominion over it and to define its essential character. When God names the light 'Day' (yom) and the darkness 'Night' (laylah), He's exercising His sovereign authority over time itself. The phrase 'vayehi erev vayehi voker' (and there was evening and there was morning) appears six times in Genesis 1, marking each day of creation. This pattern is significant because it places evening before morning, suggesting that each day begins with rest rather than work. This order reflects a profound theological truth: in God's design, rest is not earned by work—rest is the foundation that makes meaningful work possible. We don't work in order to rest; we rest in order to work. The Sabbath is not a reward for six days of labor—it's the foundation that makes meaningful work possible. The phrase 'yom echad' is often translated as 'the first day,' but the Hebrew literally says 'day one' or 'one day.' The word 'echad' is the same word used in the Shema (Deuteronomy 6:4): 'Hear, O Israel: The Lord our God, the Lord is one (echad).' This connection suggests that the unity of the first day reflects the unity of God Himself.",
+      "heading": "The Authority of Naming and the Rhythm of Time"
+    },
+    {
+      "type": "story",
+      "content": "Rabbi Abraham Joshua Heschel was one of the most influential Jewish theologians of the 20th century. Born in Poland in 1907, he escaped Nazi Germany and became a professor at Jewish Theological Seminary in New York. Beyond his academic work, Heschel was known for his profound insights into 'the architecture of time.' He noticed that while most religions focus on sacred spaces—temples, churches, holy mountains—Judaism focuses primarily on sacred time, particularly the Sabbath, saying 'Judaism is a religion of time aiming at the sanctification of time.' In his book 'The Sabbath,' Heschel wrote about Genesis 1:5 and the pattern of evening and morning. He observed that each day of creation begins with evening, not morning—which seemed backwards to most people who think the day begins when they wake up. But Heschel saw profound wisdom in God's design: 'The day begins with evening because rest comes before work in God's economy. We don't work in order to rest; we rest in order to work. The Sabbath is not a reward for six days of labor—it's the foundation that makes meaningful work possible.' A businessman once complained to Heschel that he couldn't find time for God in his busy schedule, working from morning until night with barely time to eat. Heschel replied, 'You're thinking backwards. You're trying to fit God into your schedule instead of fitting your schedule into God's rhythm. If you begin each day with rest in God's presence, your work becomes more meaningful and effective.' Six months later, the man returned with a remarkable report: 'Rabbi, not only do I feel more connected to God, but my business is actually more successful. When I start with rest and reflection, I make better decisions. When I honor the Sabbath, I return to work refreshed and creative. I'm getting more done in six days than I used to get done in seven.'",
+      "heading": "The Architecture of Time"
+    },
+    {
+      "type": "bridge",
+      "content": "God named the light Day and the darkness Night, establishing the rhythm of evening and morning that governs all of life.\n\nIn our culture that often values constant productivity and 24/7 availability, the evening-morning pattern calls us back to a more sustainable and God-honoring rhythm of life."
+    },
+    {
+      "type": "reflection",
+      "prompt": "How does God's establishment of evening and morning rhythm speak to your need for rest and work?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "God, You established the rhythm of evening and morning, rest and work. Help me live according to Your design—finding rest in You before I begin my work, and trusting that You are working even when I am resting."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "insight",
+      "content": "Today we review letters from all five verses: א (Aleph) silent, represents God's oneness; ב (Bet) 'B' sound, first letter of Bible; ג (Gimel) 'G' sound, represents giving; ד (Dalet) 'D' sound, represents doors; ה (Heh) 'H' sound, represents breath; ו (Vav) 'V/O/U' sound, represents connection.",
+      "heading": "Hebrew Letters Review"
+    },
+    {
+      "type": "comprehension"
+    }
+  ],
+  "panels": [],
+  "totalWords": 859
+}

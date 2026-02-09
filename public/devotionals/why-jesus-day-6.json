@@ -1,0 +1,57 @@
+{
+  "day": 6,
+  "title": "Put It to Use",
+  "teaser": "Practical Application",
+  "framework": "Luke 2:20",
+  "scriptureReference": "Luke 2:20",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "The shepherds returned, glorifying and praising God for all the things they had heard and seen, which were just as they had been told.",
+      "reference": "Luke 2:20",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "δοξάζω",
+      "transliteration": "Doxazo",
+      "language": "greek",
+      "definition": "To glorify, to give glory",
+      "usage": "To recognize and declare someone's true worth and significance"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "insight"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "bridge"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "takeaway",
+      "content": "This week you learned:\n\n1. **Day 1:** The announcement—Jesus is identified as Savior, Messiah, and Lord\n2. **Day 2:** The connection—Jesus fulfills centuries of divine promises\n3. **Day 3:** The original audience—this message challenged imperial power and included the marginalized\n4. **Day 4:** The lesson for today—Jesus offers salvation that addresses root causes, not just symptoms\n5. **Day 5:** Personal response—moving from recognition to commitment\n6. **Day 6:** Practical application—living as people who have encountered the Savior",
+      "heading": "Week Summary"
+    },
+    {
+      "type": "reflection",
+      "prompt": "What specific changes will you make this week to better align your daily life with your understanding of Jesus as Savior and Lord?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "Help me to integrate my understanding of Jesus as Savior into every aspect of my life, so that my actions, relationships, and priorities reflect this foundational truth. Like the shepherds, may I return to my daily responsibilities glorifying and praising You for what I have heard and seen. May my life point others to the One who offers salvation to all people. In Jesus' name, Amen.",
+      "heading": "Closing Prayer"
+    }
+  ],
+  "panels": [],
+  "totalWords": 225
+}

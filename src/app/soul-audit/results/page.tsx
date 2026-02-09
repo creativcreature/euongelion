@@ -4,23 +4,26 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
+import SeriesHero from '@/components/SeriesHero'
+import { SERIES_DATA } from '@/data/series'
+
+interface AuditMatch {
+  slug: string
+  title: string
+  question: string
+  confidence: number
+  reasoning: string
+  preview?: { verse: string; paragraph: string }
+}
 
 interface AuditResult {
   crisis: boolean
   message?: string
   resources?: Array<{ name: string; contact: string }>
-  match: {
-    slug: string
-    title: string
-    question: string
-    confidence: number
-    reasoning: string
-  }
-  alternatives: Array<{
-    slug: string
-    title: string
-    question: string
-  }>
+  matches?: AuditMatch[]
+  // Legacy format compatibility
+  match?: AuditMatch
+  alternatives?: Array<{ slug: string; title: string; question: string }>
 }
 
 export default function SoulAuditResultsPage() {
@@ -65,13 +68,27 @@ export default function SoulAuditResultsPage() {
     )
   }
 
+  // Normalize to matches array (handle both new and legacy format)
+  const matches: AuditMatch[] = result.matches
+    ? result.matches
+    : result.match
+      ? [
+          result.match,
+          ...(result.alternatives || []).map((alt) => ({
+            ...alt,
+            confidence: 0.7,
+            reasoning: '',
+          })),
+        ]
+      : []
+
   return (
     <div className="min-h-screen bg-page">
       <Navigation />
 
       <main
         id="main-content"
-        className="mx-auto max-w-3xl px-6 pb-32 pt-12 md:px-[60px] md:pb-48 md:pt-20"
+        className="mx-auto max-w-7xl px-6 pb-32 pt-12 md:px-[60px] md:pb-48 md:pt-20 lg:px-20"
       >
         {/* Crisis Response */}
         {result.crisis && result.resources && (
@@ -108,82 +125,79 @@ export default function SoulAuditResultsPage() {
           </div>
         )}
 
-        {/* Match Header */}
-        <div className="observe-fade mb-6 text-center">
+        {/* Header */}
+        <div className="observe-fade mb-12 text-center">
           <p className="text-label vw-small mb-6 text-gold">
             {result.crisis ? "WHEN YOU'RE READY" : 'WE FOUND SOMETHING FOR YOU'}
           </p>
-          <h1 className="text-serif-italic vw-heading-md mb-8">
+          <h1 className="text-serif-italic vw-heading-md mb-4">
             {result.crisis
               ? "When you're ready, we have words of hope waiting."
               : "Here's where we'll start."}
           </h1>
-          <p
-            className="vw-body mx-auto text-secondary"
-            style={{ maxWidth: '50ch' }}
-          >
-            {result.match.reasoning}
-          </p>
         </div>
 
-        {/* Primary Match */}
-        <Link
-          href={`/wake-up/series/${result.match.slug}`}
-          className="observe-fade group mt-12 block"
-        >
-          <div
-            className="p-8 transition-all duration-300 md:p-12"
-            style={{
-              backgroundColor: 'var(--color-surface-raised)',
-              border: '1px solid var(--color-border)',
-              transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
-            }}
-          >
-            <p className="text-label vw-small mb-4 text-gold">YOUR SERIES</p>
-            <h2 className="text-serif-italic vw-heading-md mb-4 transition-colors duration-300 group-hover:text-gold">
-              {result.match.question}
-            </h2>
-            <div className="mt-8 flex items-center justify-between">
-              <span className="text-label vw-small text-muted">
-                5-DAY JOURNEY
-              </span>
-              <span className="text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)]">
-                START READING &rarr;
-              </span>
-            </div>
-          </div>
-        </Link>
-
-        {/* Alternatives */}
-        {result.alternatives.length > 0 && (
-          <div className="observe-fade mt-16">
-            <p className="text-label vw-small mb-8 text-muted">ALSO CONSIDER</p>
-            <div className="space-y-4">
-              {result.alternatives.map((alt) => (
-                <Link
-                  key={alt.slug}
-                  href={`/wake-up/series/${alt.slug}`}
-                  className="group block"
-                >
-                  <div
-                    className="flex items-center justify-between py-6 transition-all duration-300"
-                    style={{
-                      borderBottom: '1px solid var(--color-border)',
-                      transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
-                    }}
-                  >
-                    <p className="text-serif-italic vw-body-lg transition-all duration-300 group-hover:translate-x-2 group-hover:text-gold">
-                      {alt.question}
+        {/* 3 Equal Cards */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {matches.slice(0, 3).map((match, index) => (
+            <Link
+              key={match.slug}
+              href={`/wake-up/series/${match.slug}`}
+              className="observe-fade group block"
+            >
+              <div
+                className="flex h-full flex-col overflow-hidden transition-all duration-300"
+                style={{
+                  border: `1px solid ${index === 0 ? 'var(--color-gold)' : 'var(--color-border)'}`,
+                }}
+              >
+                <SeriesHero seriesSlug={match.slug} size="thumbnail" overlay />
+                <div className="flex flex-1 flex-col p-6 md:p-8">
+                  <p className="text-label vw-small mb-3 text-gold">
+                    {SERIES_DATA[match.slug]?.title || match.title}
+                  </p>
+                  <h2 className="text-serif-italic vw-body-lg mb-3 transition-colors duration-300 group-hover:text-gold">
+                    {match.question}
+                  </h2>
+                  {match.reasoning && (
+                    <p className="vw-small mb-4 text-tertiary">
+                      {match.reasoning}
                     </p>
-                    <span className="hidden shrink-0 pl-6 text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)] md:inline">
-                      BEGIN &rarr;
+                  )}
+                  {match.preview?.verse && (
+                    <div
+                      className="mb-4 border-l-2 pl-4"
+                      style={{ borderColor: 'var(--color-gold)' }}
+                    >
+                      <p className="vw-small text-serif-italic text-secondary">
+                        &ldquo;
+                        {match.preview.verse.length > 150
+                          ? match.preview.verse.slice(0, 150) + '...'
+                          : match.preview.verse}
+                        &rdquo;
+                      </p>
+                    </div>
+                  )}
+                  {match.preview?.paragraph && (
+                    <p className="vw-small mb-4 text-tertiary">
+                      {match.preview.paragraph.length > 150
+                        ? match.preview.paragraph.slice(0, 150) + '...'
+                        : match.preview.paragraph}
+                    </p>
+                  )}
+                  <div className="mt-auto flex items-center justify-between pt-4">
+                    <span className="text-label vw-small text-muted">
+                      {SERIES_DATA[match.slug]?.days.length || '?'} DAYS
+                    </span>
+                    <span className="text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)]">
+                      START &rarr;
                     </span>
                   </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
 
         {/* Browse All */}
         <div className="observe-fade mt-16 text-center">
@@ -191,11 +205,10 @@ export default function SoulAuditResultsPage() {
             Not quite right? You can always explore on your own.
           </p>
           <Link
-            href="/wake-up"
-            className="inline-block px-10 py-5 text-label vw-small text-muted transition-all duration-300 hover:text-[var(--color-text-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+            href="/series"
+            className="inline-block px-10 py-5 text-label vw-small text-muted transition-all duration-300 hover:text-[var(--color-text-primary)]"
             style={{
               borderBottom: '1px solid var(--color-border)',
-              transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
             }}
           >
             Browse All Series
@@ -203,7 +216,6 @@ export default function SoulAuditResultsPage() {
         </div>
       </main>
 
-      {/* Footer */}
       <footer
         className="py-16 md:py-24"
         style={{ borderTop: '1px solid var(--color-border)' }}

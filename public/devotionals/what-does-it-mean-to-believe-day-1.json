@@ -1,0 +1,71 @@
+{
+  "day": 1,
+  "title": "The Skeptic's Demand",
+  "teaser": "Understanding the nature of doubt and what kind of evidence is convincing",
+  "framework": "John 20:24-25",
+  "scriptureReference": "John 20:24-25",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "Unless I see the nail marks in his hands and put my finger where the nails were, and put my hand into his side, I will not believe.",
+      "reference": "John 20:25",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "πιστεύω",
+      "transliteration": "pisteuo",
+      "language": "greek",
+      "definition": "to believe, to trust",
+      "usage": "This isn't just intellectual agreement but active trust and commitment. In John's Gospel, it often means 'to believe into' someone, indicating relationship and dependence."
+    },
+    {
+      "type": "teaching",
+      "content": "The scene takes place one week after Jesus's resurrection. The disciples had already encountered the risen Jesus, but Thomas wasn't present for that first meeting. When they tell him about it, his response is one of the most famous expressions of skepticism in history: 'Unless I see the nail marks in his hands and put my finger where the nails were, and put my hand into his side, I will not believe.'\n\nThis isn't casual doubt—it's methodical skepticism. Thomas isn't saying he needs to see Jesus; he's specifying exactly what kind of evidence would convince him. He wants to examine the wounds, to touch the scars, to verify through his own senses that this is the same person who was crucified.\n\nThomas's skepticism is often criticized, but it's actually quite reasonable. He had seen Jesus die—crucifixion was a public, brutal form of execution designed to ensure death. Claims of resurrection would naturally require extraordinary evidence. Thomas wasn't being stubborn; he was being careful.\n\nWhat's interesting is that Thomas's doubt is specific and testable. He doesn't say, 'I'll never believe' or 'That's impossible.' He says, 'Here's exactly what it would take to convince me.' This is the kind of doubt that can lead to stronger faith because it's honest about what it would take to overcome reasonable skepticism.",
+      "heading": "The Anatomy of Doubt"
+    },
+    {
+      "type": "story",
+      "content": "Dr. Sarah Chen had built her career on skepticism. As an investigative journalist for The Washington Post, she had exposed corporate fraud, political corruption, and scientific misconduct. Her colleagues respected her because she never accepted claims at face value—she demanded documentation, cross-referenced sources, and followed the evidence wherever it led, even when it contradicted her initial assumptions.\n\nSo when her editor assigned her to investigate reports of a revolutionary new cancer treatment, Sarah approached it with her usual methodical doubt. The claims seemed too good to be true: a small biotech company claimed their experimental therapy was producing complete remissions in terminal patients. The medical establishment was skeptical, calling it 'false hope' and 'premature publicity.'\n\nSarah's first instinct was to debunk the story. She had seen too many medical 'breakthroughs' that turned out to be statistical manipulation or wishful thinking. But as she began her investigation, she encountered something unexpected: the evidence was compelling. Patient after patient showed documented, verifiable improvement. The company's research was rigorous, their data was transparent, and independent labs were confirming their results.\n\nThe problem was that accepting this evidence would require Sarah to fundamentally change her understanding of what was possible in cancer treatment. It wasn't just about believing new facts—it was about trusting that everything she thought she knew about the disease might be incomplete.",
+      "heading": "The Investigator's Dilemma"
+    },
+    {
+      "type": "profile",
+      "name": "Thomas (Didymus)",
+      "heading": "The Twin"
+    },
+    {
+      "type": "profile",
+      "name": "John (The Beloved Disciple)",
+      "heading": "The Eyewitness Author"
+    },
+    {
+      "type": "insight",
+      "content": "John's account raises important questions about the relationship between evidence and faith. Thomas receives the evidence he requested, but Jesus also speaks of those who 'have not seen and yet have believed.' This suggests that while evidence can support faith, faith ultimately involves trust that goes beyond what can be empirically verified.\n\nThis doesn't mean faith is irrational or that evidence is irrelevant. Rather, it suggests that faith involves a different kind of knowing—one that includes but transcends purely empirical verification. Thomas's experience becomes a bridge for readers who, like us, cannot physically examine Jesus's wounds but must decide whether the testimony of those who did is credible.",
+      "heading": "The Question of Evidence and Faith"
+    },
+    {
+      "type": "bridge",
+      "content": "Thomas demanded physical, tangible evidence before he would believe in the resurrection—he needed to see and touch the wounds himself.\n\nWe often face situations where we must decide whether to trust evidence that challenges our assumptions, whether in matters of faith or everyday life."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What level of evidence do I typically require before I'm willing to trust something or someone completely?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "Help me to examine honestly what it means to truly believe, and give me wisdom to understand the relationship between evidence and faith."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "comprehension"
+    },
+    {
+      "type": "resource"
+    }
+  ],
+  "panels": [],
+  "totalWords": 729
+}

@@ -5,20 +5,29 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import ScrollProgress from '@/components/ScrollProgress'
+import SeriesHero from '@/components/SeriesHero'
 import { useProgress, useReadingTime } from '@/hooks/useProgress'
-import ModuleRenderer from '@/components/ModuleRenderer'
+import ModuleRenderer, { isFullWidthModule } from '@/components/ModuleRenderer'
 import { startSeries } from '@/lib/progress'
 import type { Devotional, Panel, Module } from '@/types'
+
+function getSeriesSlugFromDevotional(slug: string): string | null {
+  const match = slug.match(/^(.+)-day-\d+$/)
+  if (!match) return null
+  return match[1] === 'identity-crisis' ? 'identity' : match[1]
+}
 
 export default function DevotionalPageClient({ slug }: { slug: string }) {
   const [devotional, setDevotional] = useState<Devotional | null>(null)
   const [loading, setLoading] = useState(true)
   const router = useRouter()
-  const panelRefs = useRef<(HTMLDivElement | null)[]>([])
+  const moduleRefs = useRef<(HTMLDivElement | null)[]>([])
 
   const { isRead, markComplete } = useProgress()
   const timeSpent = useReadingTime()
   const [isCompleted, setIsCompleted] = useState(false)
+
+  const seriesSlug = getSeriesSlugFromDevotional(slug)
 
   useEffect(() => {
     setIsCompleted(isRead(slug))
@@ -32,11 +41,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
         const data = await response.json()
         setDevotional(data)
 
-        // Auto-start series tracking for day-gating
-        const seriesMatch = slug.match(/^(.+)-day-\d+$/)
-        if (seriesMatch) {
-          const seriesSlug =
-            seriesMatch[1] === 'identity-crisis' ? 'identity' : seriesMatch[1]
+        if (seriesSlug) {
           startSeries(seriesSlug)
         }
       } catch {
@@ -47,7 +52,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
     }
 
     loadDevotional()
-  }, [slug])
+  }, [slug, seriesSlug])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -61,7 +66,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
       { threshold: 0.15 },
     )
 
-    panelRefs.current.forEach((ref) => {
+    moduleRefs.current.forEach((ref) => {
       if (ref) observer.observe(ref)
     })
 
@@ -89,20 +94,26 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
         <div className="text-center">
           <h1 className="text-display vw-heading-lg mb-8">Not Found</h1>
           <button
-            onClick={() => router.push('/wake-up')}
+            onClick={() => router.push('/series')}
             className="bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
           >
-            Return to Wake Up
+            Browse All Series
           </button>
         </div>
       </div>
     )
   }
 
+  const modules = (devotional as Devotional & { modules?: Module[] }).modules
+  const panels = devotional.panels
+
   return (
     <div className="min-h-screen bg-page">
       <ScrollProgress />
       <Navigation />
+
+      {/* Series Hero Visual */}
+      {seriesSlug && <SeriesHero seriesSlug={seriesSlug} size="card" overlay />}
 
       {/* Hero with massive day number */}
       <header className="relative mx-auto max-w-7xl px-6 py-20 md:px-[60px] md:py-32 lg:px-20">
@@ -170,44 +181,65 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
         </div>
       </header>
 
-      {/* Devotional Content — panels or modules */}
-      <main
-        id="main-content"
-        className="mx-auto max-w-7xl px-6 pb-32 md:px-[60px] md:pb-48 lg:px-20"
-      >
-        <div className="grid gap-8 md:grid-cols-12 md:gap-16">
-          <div className="md:col-span-10 md:col-start-2">
-            {/* Module-based rendering (new format) */}
-            {(devotional as Devotional & { modules?: Module[] }).modules &&
-              (devotional as Devotional & { modules?: Module[] }).modules!.map(
-                (mod, index) => (
-                  <div
-                    key={index}
-                    ref={(el) => {
-                      panelRefs.current[index] = el
-                    }}
-                    className="observe-fade"
-                  >
-                    <ModuleRenderer module={mod} />
-                  </div>
-                ),
-              )}
+      {/* Devotional Content — Hybrid Cinematic Layout */}
+      <main id="main-content" className="pb-32 md:pb-48">
+        {modules
+          ? modules.map((mod, index) => {
+              const moduleType = (mod as unknown as Record<string, unknown>)
+                .type as string
+              const fullWidth = isFullWidthModule(moduleType)
 
-            {/* Panel-based rendering (legacy format) */}
-            {!(devotional as Devotional & { modules?: Module[] }).modules &&
-              devotional.panels.slice(1).map((panel, index) => (
+              return fullWidth ? (
+                /* Full-width treatment: Scripture, Vocab, Prayer, Comprehension */
                 <div
-                  key={panel.number}
+                  key={index}
                   ref={(el) => {
-                    panelRefs.current[index] = el
+                    moduleRefs.current[index] = el
                   }}
-                  className="observe-fade mb-24 md:mb-40"
+                  className="observe-fade"
+                  style={{
+                    backgroundColor: 'var(--color-surface)',
+                    borderTop: '1px solid var(--color-border)',
+                    borderBottom: '1px solid var(--color-border)',
+                  }}
                 >
-                  <PanelComponent panel={panel} />
+                  <div className="mx-auto max-w-7xl px-6 py-16 md:px-[60px] md:py-24 lg:px-20">
+                    <div className="grid gap-8 md:grid-cols-12 md:gap-16">
+                      <div className="md:col-span-10 md:col-start-2">
+                        <ModuleRenderer module={mod} />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              ))}
-          </div>
-        </div>
+              ) : (
+                /* Continuous column: Teaching, Story, Insight, Bridge, etc. */
+                <div
+                  key={index}
+                  ref={(el) => {
+                    moduleRefs.current[index] = el
+                  }}
+                  className="observe-fade mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20"
+                >
+                  <div className="grid gap-8 md:grid-cols-12 md:gap-16">
+                    <div className="md:col-span-10 md:col-start-2">
+                      <ModuleRenderer module={mod} />
+                    </div>
+                  </div>
+                </div>
+              )
+            })
+          : /* Panel-based rendering (legacy format) */
+            panels?.slice(1).map((panel, index) => (
+              <div
+                key={panel.number}
+                ref={(el) => {
+                  moduleRefs.current[index] = el
+                }}
+                className="observe-fade mx-auto mb-24 max-w-7xl px-6 md:mb-40 md:px-[60px] lg:px-20"
+              >
+                <PanelComponent panel={panel} />
+              </div>
+            ))}
       </main>
 
       {/* Mark as Complete */}

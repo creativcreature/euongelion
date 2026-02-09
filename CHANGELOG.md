@@ -8,8 +8,8 @@ Format: Reverse chronological, grouped by sprint/date.
 ## Current Status
 
 **Target:** Easter 2026 MVP launch
-**Now:** Full MVP built — Soul Audit, modules, day-gating, settings, legal, AI pipeline
-**Next:** Generate content, deploy, iterate
+**Now:** Sprint 5 complete — Real MVP with 26 series, inline audit, hybrid cinematic reader
+**Next:** Generate real images (Gemini pipeline), analytics, share flow
 
 ### What's Built
 
@@ -19,14 +19,37 @@ Format: Reverse chronological, grouped by sprint/date.
 - [x] Sprint 2 — Editorial redesign, SEO, illustration pipeline script
 - [x] Sprint 3 — Supabase database, auth, sessions
 - [x] Deployment — euangelion.app live on wokegodxs-projects
-- [x] Sprint 4 — Full MVP (landing page, Soul Audit, modules, series browse, settings, legal, AI pipeline)
+- [x] Sprint 4 — Initial MVP (landing page, Soul Audit, modules, series browse, settings, legal, AI pipeline)
+- [x] Sprint 5 — Real MVP rebuild (26 series, fonts, inline audit, hybrid cinematic reader, navigation, SeriesHero)
 
 ### What's NOT Built (Post-MVP)
 
 - [ ] Progress tracking → Supabase (currently localStorage)
 - [ ] Analytics (Plausible)
-- [ ] 505+ devotionals (42 exist, need 42/week pace via AI pipeline)
+- [ ] Real hero images (Gemini pipeline — CSS placeholders in place)
 - [ ] Share flow (Web Share API)
+
+---
+
+## Sprint 5 — Real MVP Rebuild
+
+### 2026-02-08
+
+- **Day-gating disabled** — `canReadDevotional()` always returns `{ canRead: true }`. All content freely accessible.
+- **Fonts replaced** — Playfair Display → Cormorant Garamond (display/serif). Geist Sans → Space Grotesk (body/UI). Updated layout.tsx + globals.css.
+- **19 Substack series wired up** — `scripts/prepare-substack.ts` converts 19 Substack JSONs (3+ format variants) into 81 individual devotional files in `public/devotionals/`. All 26 series now in `src/data/series.ts` with pathway + keywords metadata.
+- **Module format normalization** — `ModuleRenderer.tsx` `normalizeModule()` handles flat, `content`-nested, and `data`-nested Substack formats. Maps field names (text→passage, body→content, meaning→definition, etc.).
+- **SeriesHero component** — CSS gradient backgrounds per series/pathway. Three visual directions: radial (Sacred Chiaroscuro), wave (Textured Minimalism), grid (Risograph). Supports hero/card/thumbnail sizes.
+- **Navigation rebuild** — Desktop: sticky persistent top bar with logo, nav links (Soul Audit, Series, Settings), dark mode toggle. Mobile: hamburger → right slide-out panel. Auto-closes on route change.
+- **Landing page rebuild** — EUANGELION massive edge-to-edge wordmark. Inline Soul Audit textarea (no page navigation). Results appear as 3 equal cards with SeriesHero. Full-bleed editorial placeholder. Featured Series (4 curated). How It Works grid. Footer with legal links.
+- **Soul Audit overhaul** — API now uses all 26 series in Claude prompt + keyword fallback. Returns 3 matches with reasoning + Day 1 previews (anchor verse + teaching paragraph). Results page: 3 equal visual cards with SeriesHero backgrounds.
+- **Series browse rewrite** — Shows all 26 series grouped: Wake-Up Magazine (7) + Deep Dives (19). Visual cards with SeriesHero thumbnails, dynamic day counts, progress bars.
+- **Series detail enhanced** — SeriesHero at top. Dynamic day count (not hardcoded 5). Chiastic structure description only for 5-day series.
+- **Devotional reader — hybrid cinematic layout** — Full-width treatment (distinct background + borders) for Scripture, Vocab, Prayer, Comprehension. Continuous column for Teaching, Story, Insight, Bridge, etc. SeriesHero card at top. Series slug extraction from devotional slug.
+- **Master Decisions Log** — `docs/MASTER-LOG.md` with 21 Sprint 5 decisions + 6 prior decisions.
+
+**26 Series (7 Wake-Up + 19 Substack):**
+identity, peace, community, kingdom, provision, truth, hope, too-busy-for-god, hearing-god-in-the-noise, abiding-in-his-presence, surrender-to-gods-will, in-the-beginning-week-1, what-is-the-gospel, why-jesus, what-does-it-mean-to-believe, what-is-carrying-a-cross, once-saved-always-saved, what-happens-when-you-repeatedly-sin, the-nature-of-belief, the-work-of-god, the-word-before-words, genesis-two-stories-of-creation, the-blueprint-of-community, signs-boldness-opposition-integrity, from-jerusalem-to-the-nations, witness-under-pressure-expansion
 
 ---
 

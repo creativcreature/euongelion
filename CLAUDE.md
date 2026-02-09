@@ -58,7 +58,7 @@ design-system/            # Design tokens, typography, dark mode
 - **Styling:** Tailwind utility classes. Order: layout → position → size → spacing → typography → visual → interactive
 - **State:** React hooks + localStorage (no external state lib yet)
 - **Dark mode:** Dark-first (`html.dark`). HSL color system.
-- **Fonts (current code):** Geist Sans (body), Playfair Display (serif). Design system specifies Monument Grotesk + Editorial New (not yet implemented).
+- **Fonts:** Space Grotesk (body/UI, closest free to Monument Grotesk), Cormorant Garamond (display/serif, closest free to Editorial New). SBL Hebrew for original language.
 
 ## Design Philosophy
 
@@ -104,9 +104,10 @@ Three visual directions proposed (founder decision pending):
 ## Current Status
 
 See `CHANGELOG.md` for full history and current sprint checklist.
+See `docs/MASTER-LOG.md` for all founder decisions across sessions.
 
-**Now:** Sprint 3 complete — Supabase database, auth, sessions
-**Done:** Sprint 0 (foundation), Sprint 1 (Wake-Up Magazine), Sprint 2 (editorial redesign, SEO), Sprint 3 (Supabase, auth)
+**Now:** Sprint 5 — Real MVP rebuild (26 series, inline audit, hybrid cinematic reader)
+**Done:** Sprint 0 (foundation), Sprint 1 (Wake-Up Magazine), Sprint 2 (editorial redesign, SEO), Sprint 3 (Supabase, auth), Sprint 4 (initial MVP), Sprint 5 (real MVP)
 
 ## Deployment
 

@@ -1,0 +1,52 @@
+{
+  "day": 1,
+  "title": "The Presence Before the Promise",
+  "teaser": "God's first act in our chaos is not to fix it, but to be present in it",
+  "framework": "Genesis 1:1-2, John 1:1-2",
+  "scriptureReference": "Genesis 1:1-2, John 1:1-2",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "In the beginning God created the heavens and the earth. Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters.",
+      "reference": "Genesis 1:1-2",
+      "translation": "NIV"
+    },
+    {
+      "type": "scripture",
+      "passage": "In the beginning was the Word, and the Word was with God, and the Word was God. He was with God in the beginning.",
+      "reference": "John 1:1-2",
+      "translation": "NIV"
+    },
+    {
+      "type": "teaching",
+      "content": "These verses do not introduce a theme - they establish reality.\n\nGenesis declares that everything has a source. John reveals that this source is not an impersonal force, but the Word - eternal, personal, divine. By opening this five-day journey with both verses, Scripture teaches us how to read everything that follows: creation and redemption begin in the same place, with the same Word.\n\nJesus is not added later to the story. He is present before the story begins.\n\nGenesis opens with a world that exists but is unfinished. Darkness is present, not as evil, but as potential. Nothing has gone wrong - nothing has yet been spoken.\n\nAnd God is already there.\n\nThe Spirit of God hovers - watchful, attentive, unhurried. Before light is created, before order is established, God is near.\n\nJohn then reveals what Genesis does not yet name: the speaking God speaks through the Word. Creation begins not with force or distance, but with relationship. The Word was with God and was God. When God speaks, He does so from within Himself.",
+      "heading": "The Beginning Is Already Full of Presence"
+    },
+    {
+      "type": "vocab",
+      "word": "בְּרֵאשִׁית",
+      "transliteration": "Bereshit",
+      "language": "hebrew",
+      "definition": "In the beginning",
+      "usage": "Commonly translated 'In the beginning,' but rooted in a word meaning head, source, or origin. John confirms what Bereshet implies: the source of all things is not an idea, but the Word Himself."
+    },
+    {
+      "type": "story",
+      "content": "On August 5, 2010, at 2:00 PM, the world collapsed for 33 men. A 700,000-ton block of granite, twice the weight of the Empire State Building, sheared off from the heart of the San Jose mine in Chile, sealing the exit and trapping them half a mile underground. The air filled with a thick, choking dust, blinding the men for hours. When it finally settled, they were confronted with a darkness so absolute it felt like a physical presence. The mine, a place of work and livelihood, had become their tomb. It was a modern tohu va-vohu, a formless, empty void where the familiar world had vanished.\n\nIn the immediate aftermath, panic was the first instinct. But then, one man, the shift foreman Luis Urzua, began to act. He gathered the 33 men and led them to a small, reinforced \"refuge\" room, a tiny pocket of safety in the vast, unstable mine. He took inventory of their meager supplies: a few cans of tuna, some expired milk, and a handful of crackers. He organized the men, rationing the food and water, and establishing a sense of order in the midst of the chaos. He did not have a plan for rescue. He did not know if they would ever be found. His first act was simply to be present with his men in their shared darkness.\n\nFor seventeen days, this was their reality. They were a small community suspended in the void, with no word from the outside world. They were not yet being rescued. They were not yet being supplied. They were simply being held. Urzua's leadership, his calm and steady presence, was an echo of the first act of God. Before the light, before the separation, before the creation of life, there was the Spirit of God, hovering over the deep, a protective presence in the chaos. The story of the 33 did not begin with a rescue plan, but with a leader who chose to be present in the void.",
+      "heading": "The Refuge in the Deep"
+    },
+    {
+      "type": "reflection",
+      "prompt": "If the Word was already present in the beginning, then He is not waiting for your life to reach clarity before drawing near. Where in your life does everything still feel unformed or unresolved - and what would it mean to trust that the Word is already there, hovering, before anything has been spoken into place?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "Lord, you have been our dwelling place throughout all generations. Before the mountains were born or you brought forth the whole world, from everlasting to everlasting you are God."
+    },
+    {
+      "type": "takeaway"
+    }
+  ],
+  "panels": [],
+  "totalWords": 718
+}

@@ -1,0 +1,66 @@
+{
+  "day": 3,
+  "title": "Time and Seasons",
+  "teaser": "Aligning activities with God's timing rather than human pressure",
+  "framework": "Ecclesiastes 3:1",
+  "scriptureReference": "Ecclesiastes 3:1",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "To every thing there is a season, and a time to every purpose under the heaven.",
+      "reference": "Ecclesiastes 3:1",
+      "translation": "KJV"
+    },
+    {
+      "type": "vocab",
+      "word": "עֵת",
+      "transliteration": "et",
+      "language": "hebrew",
+      "definition": "time, season, appointed time",
+      "usage": "Et doesn't just mean chronological time (chronos) but appointed time - the right moment for specific purposes. God operates by et, and wisdom means learning to recognize and respect these divine seasons."
+    },
+    {
+      "type": "teaching",
+      "content": "Ecclesiastes 3:1-8 presents one of Scripture's most famous passages about timing. Solomon observed that life has natural rhythms - seasons for different activities, emotions, and purposes. Fighting these seasons leads to frustration; flowing with them leads to fruitfulness.\n\nThe Hebrew word et doesn't just mean chronological time (chronos) but appointed time - the right moment for specific purposes. God operates by et, and wisdom means learning to recognize and respect these divine seasons.",
+      "heading": "The Ancient Rhythm of Seasons"
+    },
+    {
+      "type": "story",
+      "content": "Jennifer was a master of efficiency but a failure at timing. She had the right skills, right intentions, and right goals - but consistently wrong timing. She pushed for promotion during budget cuts, launched new initiatives during transitions, and tried to have serious conversations during stressful seasons.\n\nHer mentor observed: 'You're planting in winter and wondering why nothing grows.'\n\nThe insight was devastating and liberating: What if the problem isn't what I'm doing, but when I'm doing it?",
+      "heading": "The Season-Blind Life"
+    },
+    {
+      "type": "insight",
+      "content": "Michael lived by chronos - clock time, calendar time, deadline time. His life was scheduled in 15-minute increments, optimized for maximum efficiency. But he kept missing kairos moments - divine appointments, family needs, spiritual opportunities that couldn't be scheduled.\n\nThe wake-up call came when his daughter said: 'Daddy, you're always busy when I need you.' He realized he was so focused on managing time that he was missing the times that mattered most.",
+      "heading": "Chronos-Driven Living"
+    },
+    {
+      "type": "bridge",
+      "content": "Solomon observed that life has natural rhythms - seasons for different activities, emotions, and purposes.\n\nWe live in climate-controlled, 24/7, always-on environments that disconnect us from natural rhythms. We've gained efficiency but lost the wisdom of seasons."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What season are you in right now, and what activities belong to this season?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "God, teach me Your et - Your perfect timing. Help me discern when to act and when to wait, when to speak and when to be silent. Align my schedule with Your seasons. Amen."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "comprehension"
+    },
+    {
+      "type": "resource"
+    },
+    {
+      "type": "profile",
+      "name": "Jennifer",
+      "heading": "The Season-Blind Professional"
+    }
+  ],
+  "panels": [],
+  "totalWords": 393
+}

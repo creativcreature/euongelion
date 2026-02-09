@@ -1,0 +1,76 @@
+{
+  "day": 5,
+  "title": "What Am I Going to Do About It?",
+  "teaser": "Personal Response",
+  "framework": "Luke 2:17-18",
+  "scriptureReference": "Luke 2:17-18",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "When they had seen him, they spread the word concerning what had been told them about this child, and all who heard it were amazed at what the shepherds said to them.",
+      "reference": "Luke 2:17-18",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "διαγγέλλω",
+      "transliteration": "Diangello",
+      "language": "greek",
+      "definition": "To spread the word, to proclaim thoroughly",
+      "usage": "Intentional communication of something important"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "insight"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "bridge"
+    },
+    {
+      "type": "teaching"
+    },
+    {
+      "type": "comprehension",
+      "question": "What was the shepherds' response after they confirmed the angels' announcement?",
+      "options": [
+        {
+          "text": "They kept the news to themselves",
+          "correct": false
+        },
+        {
+          "text": "They spread the word about what they had discovered",
+          "correct": true
+        },
+        {
+          "text": "They returned to their normal routine unchanged",
+          "correct": false
+        }
+      ],
+      "explanation": "The shepherds 'spread the word concerning what had been told them about this child.' Their personal confirmation led naturally to public testimony—they became the first evangelists."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Based on your investigation this week, how convinced are you that Jesus is the Savior the angels announced? What evidence do you find most compelling? What questions remain?"
+    },
+    {
+      "type": "takeaway",
+      "content": "The beauty of Jesus's offer is that we don't have to have everything figured out before we begin. We can start where we are, with whatever level of understanding and commitment we currently have, and grow from there.",
+      "heading": "Key Insight"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "Give me the courage to respond honestly to what I've learned about Jesus, and the wisdom to understand what that response should look like in my daily life. Help me take authentic steps forward, even if I don't have all the answers yet. Amen.",
+      "heading": "Closing Prayer"
+    }
+  ],
+  "panels": [],
+  "totalWords": 213
+}

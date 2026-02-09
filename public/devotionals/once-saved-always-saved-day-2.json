@@ -1,0 +1,61 @@
+{
+  "day": 2,
+  "title": "What's the Connection?",
+  "teaser": "Understanding the connection between abiding in Christ and bearing fruit",
+  "framework": "John 15:5",
+  "scriptureReference": "John 15:5",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "I am the true vine, and my Father is the gardener. He cuts off every branch in me that bears no fruit, while every branch that does bear fruit he prunes so that it will be even more fruitful. You are already clean because of the word I have spoken to you. Remain in me, as I also remain in you. No branch can bear fruit by itself; it must remain in the vine. Neither can you bear fruit unless you remain in me. I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing. If you do not remain in me, you are like a branch that is thrown away and withers; such branches are picked up, thrown into the fire and burned. If you remain in me and my words remain in you, ask whatever you wish, and it will be done for you. This is to my Father's glory, that you bear much fruit, showing yourselves to be my disciples.",
+      "reference": "John 15:1-8",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "μένω",
+      "transliteration": "meno",
+      "language": "greek",
+      "definition": "to remain, to abide, to dwell",
+      "usage": "This isn't passive existence but active, intentional dwelling. It's the word used for staying in someone's house as a welcomed guest who belongs there."
+    },
+    {
+      "type": "teaching",
+      "content": "Jesus uses the familiar image of viticulture to explain spiritual realities. In first-century Palestine, vineyards were common, and everyone understood how vines and branches worked.\n\nThe Vine: Jesus identifies himself as 'the true vine,' distinguishing himself from false sources of spiritual life.\n\nThe Gardener: The Father tends the vine and manages the branches, suggesting that spiritual growth is under divine oversight.\n\nThe Branches: Believers derive their life entirely from their connection to the vine. They have no independent source of spiritual life.\n\nTwo Types of Branches: Fruitless branches are 'cut off' while fruitful branches are 'pruned' to increase fruitfulness. The Greek word for prune (kathairo) means 'to cleanse' - this isn't punishment but cultivation.\n\nThe Nature of Abiding: Abiding isn't a one-time decision but an ongoing relationship characterized by dependence, intimacy, obedience, and perseverance.",
+      "heading": "The Vine and Branches"
+    },
+    {
+      "type": "story",
+      "content": "Three weeks after their initial conversation, Dr. Sarah Martinez found Pastor David Chen in the hospital chapel at 2 AM. 'I've been thinking about what you said,' David told Sarah. 'About the difference between questioning God and losing faith.'\n\nDavid shared his insight: 'I've been reading John 15 over and over. For years, I interpreted it as a warning: Stay connected to Jesus or you'll be cut off. But I think I was missing the point. Jesus isn't threatening his disciples; he's explaining how spiritual life actually works.'\n\nHe continued: 'The branches don't produce fruit by trying harder. They produce fruit by staying connected to the vine. And when a branch stops receiving from the vine, it naturally withers - not as punishment, but as the inevitable result of being disconnected from its life source.'\n\n'So you're saying that the warning isn't about losing salvation but about losing connection?' Sarah asked.\n\n'Exactly. The fruit isn't what keeps them connected; the connection is what produces the fruit.'",
+      "heading": "The Chapel Conversation"
+    },
+    {
+      "type": "insight",
+      "content": "How does Jesus's teaching about branches being cut off relate to his promise that no one can snatch his sheep from his hand?",
+      "heading": "Understanding 'Cut Off'"
+    },
+    {
+      "type": "bridge",
+      "content": "Jesus taught that spiritual fruitfulness comes from abiding in him, not from independent effort.\n\nIn our performance-driven culture, we often try to produce spiritual fruit through our own efforts - more discipline, better habits, stronger willpower. Jesus calls us to a different approach: staying connected to him."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What does it mean to actively 'abide' in Christ rather than just believing facts about him?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "Teach me the difference between trying harder and trusting deeper, between religious effort and spiritual abiding. Help me stay connected to you as the source of all spiritual life and fruitfulness."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "comprehension"
+    },
+    {
+      "type": "resource"
+    }
+  ],
+  "panels": [],
+  "totalWords": 655
+}

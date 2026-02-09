@@ -53,11 +53,13 @@
      TYPOGRAPHY
      ============================================ */
   --font-family-display:
-    var(--font-geist-sans), 'Helvetica Neue', Arial, sans-serif;
+    var(--font-space-grotesk), 'Space Grotesk', 'Helvetica Neue', Arial,
+    sans-serif;
   --font-family-body:
-    var(--font-geist-sans), 'Helvetica Neue', Arial, sans-serif;
+    var(--font-space-grotesk), 'Space Grotesk', 'Helvetica Neue', Arial,
+    sans-serif;
   --font-family-serif:
-    var(--font-playfair), 'Playfair Display', 'Didot', Georgia, serif;
+    var(--font-cormorant), 'Cormorant Garamond', 'Didot', Georgia, serif;
 
   /* Letter spacing tokens */
   --tracking-tight: -0.02em;

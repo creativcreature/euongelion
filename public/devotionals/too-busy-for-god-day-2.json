@@ -1,0 +1,66 @@
+{
+  "day": 2,
+  "title": "Wisdom vs. Activity",
+  "teaser": "Learning to seek wisdom before hasty action",
+  "framework": "Proverbs 19:2",
+  "scriptureReference": "Proverbs 19:2",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "Desire without knowledge is not good - how much more will hasty feet miss the way!",
+      "reference": "Proverbs 19:2",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "דַּעַת",
+      "transliteration": "da'at",
+      "language": "hebrew",
+      "definition": "knowledge, awareness, understanding",
+      "usage": "Biblical da'at combines experiential and theoretical knowledge: practical wisdom gained through relationship with God."
+    },
+    {
+      "type": "teaching",
+      "content": "Proverbs 19:2 presents a paradox: desire (motivation, drive, passion) without knowledge leads to missing the way entirely. The Hebrew suggests that hasty feet - rapid movement without wisdom - actually slows down progress toward the goal.\n\nThe wise person moves deliberately, not desperately. They pause to gain da'at (knowledge) before taking action. This isn't procrastination; it's precision.",
+      "heading": "The Ancient Path of Wisdom"
+    },
+    {
+      "type": "story",
+      "content": "David prided himself on being a quick decision-maker. 'Strike while the iron is hot,' he'd say. 'You snooze, you lose.' His calendar was packed with rapid-fire meetings, instant responses, and immediate action items.\n\nBut his hasty feet kept missing the way. The rushed hire who didn't work out. The quick investment that lost money. The immediate response that damaged a relationship. The fast decision that required months to undo.\n\nHis mentor asked a simple question: 'What if wisdom moves slower than ambition?'",
+      "heading": "The Hasty Feet Syndrome"
+    },
+    {
+      "type": "insight",
+      "content": "Rachel consumed productivity podcasts, speed-read business books, and attended efficiency seminars. She had more information than ever but felt less wise than before. Her rapid consumption of content led to rapid decision-making that often missed the mark.\n\nThe breakthrough came when she realized: Information moves at the speed of light; wisdom moves at the speed of relationship.",
+      "heading": "Information vs. Wisdom"
+    },
+    {
+      "type": "bridge",
+      "content": "Proverbs warns that desire without knowledge leads to missing the way - hasty feet that sin by missing the target.\n\nOur instant-everything world rewards quick responses over thoughtful ones. The pressure to decide quickly often prevents us from gaining the da'at necessary for wise choices."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life is speed substituting for wisdom?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "God, give me da'at - true knowledge and understanding. Help me move with wisdom rather than haste, with purpose rather than panic. Slow my feet to match Your pace. Amen."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "comprehension"
+    },
+    {
+      "type": "resource"
+    },
+    {
+      "type": "profile",
+      "name": "David (the story character)",
+      "heading": "The Quick Decision-Maker"
+    }
+  ],
+  "panels": [],
+  "totalWords": 350
+}

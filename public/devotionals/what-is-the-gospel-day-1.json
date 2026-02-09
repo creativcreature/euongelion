@@ -1,0 +1,66 @@
+{
+  "day": 1,
+  "title": "A Voice in the Wilderness",
+  "teaser": "Understanding Mark's urgent narrative style and the introduction of John the Baptist",
+  "framework": "Mark 1:1, 3",
+  "scriptureReference": "Mark 1:1, 3",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "The beginning of the good news about Jesus the Messiah, the Son of God... a voice of one calling in the wilderness, 'Prepare the way for the Lord, make straight paths for him.'",
+      "reference": "Mark 1:1, 3",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "εὐαγγέλιον",
+      "transliteration": "Euangelion",
+      "language": "greek",
+      "definition": "Gospel, Good News",
+      "usage": "In the Roman world, this term announced great military victories or the birth of new emperors. Mark's use suggests he believed Jesus's arrival was the most significant news in history."
+    },
+    {
+      "type": "teaching",
+      "content": "Before we examine Mark's account, we should ask: Who is this author, and why should we listen to him? The Gospel itself doesn't name its author, but early church tradition consistently identifies him as John Mark, mentioned several times in the New Testament. Mark wasn't one of the twelve apostles, but he had remarkable access to eyewitness testimony. According to early church historians like Papias (writing around 125 AD), Mark served as Peter's interpreter and recorded Peter's preaching about Jesus. This makes Mark's Gospel essentially Peter's eyewitness account, filtered through Mark's careful documentation.\n\nMark also traveled with Paul and Barnabas on missionary journeys (Acts 12:25, 13:5) and was present during key moments in early church history. His mother's house in Jerusalem served as a meeting place for the early Christians (Acts 12:12). From a historical credibility standpoint, Mark's Gospel is considered by most scholars to be the earliest written Gospel (likely composed between 65-70 AD), making it our closest written source to the actual events.",
+      "heading": "Who is Mark?"
+    },
+    {
+      "type": "story",
+      "content": "Think of your favorite action movie. Does it start with a long, slow explanation of the characters' backstories? Or does it throw you right into a car chase, a daring escape, or a tense confrontation? Many of the most compelling stories, from the opening scene of Star Wars with a massive Star Destroyer pursuing a tiny rebel ship, to the thrilling temple escape in Raiders of the Lost Ark, begin in media res—in the middle of things. This narrative technique is designed to grab the audience's attention immediately, creating a sense of urgency and a desire to know what happens next.\n\nThis is exactly what the author of the Gospel of Mark does. He's not interested in a leisurely stroll through the history of Jesus's ancestors or the details of his birth. Instead, he wants his readers to feel the immediacy and importance of his message. By starting with the proclamation of John the Baptist in the wilderness—a place of testing and preparation in Jewish culture—Mark is signaling that this is not just another story.",
+      "heading": "In Media Res"
+    },
+    {
+      "type": "insight",
+      "content": "Mark immediately connects John the Baptist to two crucial Old Testament prophecies. The primary quote comes from Isaiah 40:3, written during the Babylonian exile: 'A voice of one calling in the wilderness, Prepare the way for the Lord.' The second quote, 'I will send my messenger ahead of you,' comes from Malachi 3:1. Mark's point is clear: this 'new' story isn't appearing in a vacuum.",
+      "heading": "Old Testament Connection"
+    },
+    {
+      "type": "bridge",
+      "content": "Mark 1:1 functions as both title and thesis statement. The action begins immediately in the wilderness, a location that carried deep significance for Jewish people.\n\nWhether you approach it with skepticism or faith, you can appreciate the narrative craft and investigate the historical claims being made."
+    },
+    {
+      "type": "reflection",
+      "prompt": "As I begin this investigation, how can I approach this with both critical thinking and genuine curiosity?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "As I begin this investigation, I'm open to examining the evidence and understanding the story being told. Help me approach this with both critical thinking and genuine curiosity."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "comprehension"
+    },
+    {
+      "type": "resource"
+    },
+    {
+      "type": "profile",
+      "name": "John Mark",
+      "heading": "The Gospel Writer"
+    }
+  ],
+  "panels": [],
+  "totalWords": 595
+}

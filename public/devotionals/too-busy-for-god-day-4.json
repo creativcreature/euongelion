@@ -1,0 +1,66 @@
+{
+  "day": 4,
+  "title": "The Fear of the Lord",
+  "teaser": "Establishing reverence for God as the foundation of all wisdom",
+  "framework": "Proverbs 9:10",
+  "scriptureReference": "Proverbs 9:10",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "The fear of the Lord is the beginning of wisdom, and knowledge of the Holy One is understanding.",
+      "reference": "Proverbs 9:10",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "יִרְאַת",
+      "transliteration": "yir'at",
+      "language": "hebrew",
+      "definition": "fear, reverence, awe",
+      "usage": "This isn't terror or anxiety, but profound reverence and awe. It's the recognition that God is God and we are not."
+    },
+    {
+      "type": "teaching",
+      "content": "Proverbs repeatedly declares that wisdom begins with yir'at Adonai - the fear of the Lord. This isn't terror or anxiety, but profound reverence and awe. It's the recognition that God is God and we are not.\n\nWithout this foundation, all human wisdom becomes foolishness. With it, even simple activities become meaningful because they're grounded in eternal reality.",
+      "heading": "The Ancient Foundation of Wisdom"
+    },
+    {
+      "type": "story",
+      "content": "Thomas was brilliant, driven, and incredibly busy. Advanced degrees, leadership positions, reputation for getting results. But his life felt increasingly chaotic and meaningless despite all his achievements.\n\nA wise friend asked: 'What if all your activity is built on the wrong foundation?'\n\nThomas had built his life on competence, achievement, and human approval. But he'd never considered building on yir'at Adonai - the fear of the Lord.",
+      "heading": "The Foundation Crisis"
+    },
+    {
+      "type": "insight",
+      "content": "Sarah feared missing deadlines, disappointing clients, falling behind competitors, and losing opportunities. Her calendar was driven by these fears, leaving no room for the fear of the Lord.\n\nThe revelation came during a crisis: What if I'm so afraid of human consequences that I've forgotten to fear divine ones?\n\nShe realized that proper fear of God actually liberates us from the tyranny of human fears. When we fear the right thing (God's displeasure), we're freed from fearing the wrong things (human opinion, temporal setbacks, finite losses).",
+      "heading": "Fearing the Wrong Things"
+    },
+    {
+      "type": "bridge",
+      "content": "Proverbs declares that all true wisdom begins with proper reverence for God - recognizing His authority and our dependence.\n\nContemporary productivity and success literature often ignores the spiritual dimension entirely, leading to efficient godlessness - being very good at things that don't ultimately matter."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What if the reason you're too busy for God is that you don't fear Him enough?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "God, give me yir'at Adonai - holy fear and reverence for You. Help me understand that all true wisdom begins with recognizing who You are and who I am in relation to You. Let this awe be the foundation of all my decisions. Amen."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "comprehension"
+    },
+    {
+      "type": "resource"
+    },
+    {
+      "type": "profile",
+      "name": "Thomas",
+      "heading": "The Brilliant Achiever"
+    }
+  ],
+  "panels": [],
+  "totalWords": 390
+}

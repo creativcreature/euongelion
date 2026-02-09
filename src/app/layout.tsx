@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { Playfair_Display } from 'next/font/google'
+import { Space_Grotesk, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 
-const playfair = Playfair_Display({
-  variable: '--font-playfair',
+const spaceGrotesk = Space_Grotesk({
+  variable: '--font-space-grotesk',
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+})
+
+const cormorant = Cormorant_Garamond({
+  variable: '--font-cormorant',
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
   style: ['normal', 'italic'],
 })
 
@@ -31,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${GeistSans.variable} ${playfair.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${cormorant.variable} antialiased`}
       >
         {children}
       </body>

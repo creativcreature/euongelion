@@ -1,0 +1,66 @@
+{
+  "day": 2,
+  "title": "The Ancient Path",
+  "teaser": "Connecting Old Testament prophecy to Gospel fulfillment",
+  "framework": "Mark 1:2-3",
+  "scriptureReference": "Mark 1:2-3",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "As it is written in Isaiah the prophet: 'I will send my messenger ahead of you, who will prepare your way'—'a voice of one calling in the wilderness, 'Prepare the way for the Lord, make straight paths for him.'",
+      "reference": "Mark 1:2-3",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "דֶּרֶךְ",
+      "transliteration": "Derek",
+      "language": "hebrew",
+      "definition": "Way, path, road",
+      "usage": "This isn't just about a physical road, but a way of life, a method, or a course of action. The prophets spoke of preparing a 'way' for God to work in human history."
+    },
+    {
+      "type": "teaching",
+      "content": "The passage Mark quotes comes from Isaiah 40:3, written during the Babylonian exile around 550 BC. Isaiah was promising that God would make a way for the exiles to return home—literally, a highway through the wilderness between Babylon and Jerusalem. The imagery is powerful: valleys filled in, mountains leveled, rough places made smooth. This was the language of ancient road construction, preparing the way for a king's procession.\n\nMark also quotes from Malachi 3:1: 'I will send my messenger ahead of you, who will prepare your way.' Malachi, writing around 450 BC, was the last of the Old Testament prophets. He promised that God would send a messenger to prepare the way before 'the Lord you are seeking will come to his temple.' By combining Isaiah and Malachi, Mark is suggesting that John the Baptist fulfills both prophecies.",
+      "heading": "The Thread of Expectation"
+    },
+    {
+      "type": "story",
+      "content": "Imagine you're watching a movie and suddenly a character appears who seems to fulfill a prophecy made in an earlier scene. Your immediate reaction might be skepticism—did the writers just manufacture this connection? Or is there something more sophisticated happening in the narrative structure?\n\nThis is exactly the situation we encounter in Mark's Gospel. He's not just telling us about John the Baptist; he's claiming that John's appearance was predicted centuries earlier by the prophet Isaiah. Mark is essentially saying, 'This isn't a coincidence. This is the fulfillment of an ancient plan.'",
+      "heading": "Prophecy and Fulfillment"
+    },
+    {
+      "type": "insight",
+      "content": "This interpretive method, called 'typology,' was common in first-century Judaism. Historical events were seen as patterns that would be repeated and fulfilled on a grander scale. The exodus from Egypt, the return from Babylon, and the coming of the Messiah were all seen as variations on the same theme: God rescuing his people.",
+      "heading": "Typology: Patterns in History"
+    },
+    {
+      "type": "bridge",
+      "content": "Isaiah promised that God would make a highway through the wilderness to bring his exiled people home.\n\nMark is suggesting that Isaiah's words had a deeper, more ultimate fulfillment—not just in the return from Babylon, but in the coming of the Messiah."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What does it mean for an ancient text to claim fulfillment of even older predictions? How should we evaluate such claims?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "Help me to examine these connections with both scholarly rigor and openness to the possibility that there might be a larger story at work here."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "comprehension"
+    },
+    {
+      "type": "resource"
+    },
+    {
+      "type": "profile",
+      "name": "Isaiah",
+      "heading": "The Prophet"
+    }
+  ],
+  "panels": [],
+  "totalWords": 478
+}

@@ -1,0 +1,66 @@
+{
+  "day": 1,
+  "title": "What's Happening (and Who's Involved)?",
+  "teaser": "Understanding Jesus's absolute promise that no one can snatch his sheep from his hand",
+  "framework": "John 10:28",
+  "scriptureReference": "John 10:28",
+  "modules": [
+    {
+      "type": "scripture",
+      "passage": "My sheep listen to my voice; I know them, and they follow me. I give them eternal life, and they shall never perish; no one will snatch them from my hand. My Father, who has given them to me, is greater than all; no one can snatch them from my Father's hand. I and the Father are one.",
+      "reference": "John 10:27-30",
+      "translation": "NIV"
+    },
+    {
+      "type": "vocab",
+      "word": "ἁρπάζω",
+      "transliteration": "harpazo",
+      "language": "greek",
+      "definition": "to snatch, to seize by force",
+      "usage": "This is the word used for violent robbery or kidnapping. Jesus is saying that no external force can violently tear his sheep away from him."
+    },
+    {
+      "type": "teaching",
+      "content": "Jesus's statement about eternal security comes in response to a direct challenge from Jewish religious leaders who demanded that he tell them plainly whether he was the Messiah. His response reveals crucial truths about salvation and security.\n\nThe Nature of His Sheep: Jesus describes his followers as 'sheep' who 'listen to my voice' and 'follow me.' This isn't a passive relationship but an active, ongoing response to his leadership.\n\nThe Gift of Eternal Life: Jesus says 'I give them eternal life,' using the present tense. This isn't something he will give in the future but something he gives now to those who believe.\n\nThe Promise of Security: The phrase 'they shall never perish' uses a double negative in Greek, which is the strongest possible way to express negation. Jesus is making an absolute, unconditional promise.\n\nThe Double Protection: Jesus describes a double layer of protection - they are in his hand, and his hand is in the Father's hand. To reach Jesus's sheep, an enemy would have to overcome both the Son and the Father.",
+      "heading": "Jesus's Promise of Eternal Security"
+    },
+    {
+      "type": "story",
+      "content": "Dr. Sarah Martinez had been a pediatric oncologist for fifteen years when she began to question everything she thought she knew about faith, doubt, and perseverance. It started with a patient - eight-year-old Emma, who had been battling leukemia for two years. Emma's parents were devout Christians who had prayed fervently for healing.\n\nWhen Emma's condition worsened, her father, Pastor David Chen, began to struggle with doubt. 'Dr. Martinez,' he said, 'I've preached for twenty years that God is faithful. But watching my daughter suffer... I'm starting to wonder if I ever really believed at all.'\n\nThe question haunted Sarah: 'If I was really saved, would I be having these doubts?' She began to wonder: What does it really mean to be 'saved'? Is it a one-time decision that guarantees eternal security regardless of subsequent doubts or failures? Or is it an ongoing relationship that requires constant maintenance?",
+      "heading": "The Pastor's Crisis"
+    },
+    {
+      "type": "insight",
+      "content": "Jesus's imagery of sheep and shepherd connects directly to Old Testament passages like Psalm 23 and Ezekiel 34, where God promises to be the shepherd of his people and to rescue them from those who would harm them.",
+      "heading": "The Shepherd and the Sheep"
+    },
+    {
+      "type": "bridge",
+      "content": "Jesus promised that no one could snatch his sheep from his hand, using the strongest possible language of denial.\n\nWhen you doubt your salvation because of your failures, fears, or feelings, remember that your security depends on God's grip, not yours."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What does it mean that Jesus gives eternal life as a present reality, not just a future hope?"
+    },
+    {
+      "type": "prayer",
+      "prayerText": "Help me understand the security I have in Christ while also taking seriously my responsibility to live faithfully as his follower. Free me from the anxiety of trying to earn what you have already given me by grace."
+    },
+    {
+      "type": "takeaway"
+    },
+    {
+      "type": "comprehension"
+    },
+    {
+      "type": "resource"
+    },
+    {
+      "type": "profile",
+      "name": "John the Apostle",
+      "heading": "The Disciple Whom Jesus Loved"
+    }
+  ],
+  "panels": [],
+  "totalWords": 586
+}

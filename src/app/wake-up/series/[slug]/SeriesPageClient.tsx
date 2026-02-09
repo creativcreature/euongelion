@@ -1,8 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
+import SeriesHero from '@/components/SeriesHero'
 import { useProgress } from '@/hooks/useProgress'
 import type { SeriesInfo } from '@/data/series'
 
@@ -15,10 +16,6 @@ export default function SeriesPageClient({
 }) {
   const { isRead, getSeriesProgress, canRead } = useProgress()
   const seriesProgress = getSeriesProgress(slug)
-  const [lockMessage, setLockMessage] = useState<{
-    slug: string
-    message: string
-  } | null>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,17 +35,22 @@ export default function SeriesPageClient({
     return () => observer.disconnect()
   }, [])
 
+  const dayCount = series.days.length
+
   return (
     <div className="min-h-screen bg-page">
       <Navigation />
 
-      {/* Series Hero */}
+      {/* Series Hero Image */}
+      <SeriesHero seriesSlug={slug} size="hero" overlay />
+
+      {/* Series Header */}
       <header className="mx-auto max-w-7xl px-6 pb-20 pt-12 md:px-[60px] md:pb-32 md:pt-20 lg:px-20">
         <Link
-          href="/wake-up"
+          href="/series"
           className="observe-fade vw-small mb-12 inline-block text-muted transition-colors duration-300 hover:text-[var(--color-text-primary)]"
         >
-          &larr; All Questions
+          &larr; All Series
         </Link>
 
         {/* Grid: content + sidebar */}
@@ -56,10 +58,13 @@ export default function SeriesPageClient({
           {/* Main content area */}
           <div className="md:col-span-7">
             <div className="observe-fade mb-12 md:mb-16">
+              <p className="text-label vw-small mb-4 text-gold">
+                {series.title}
+              </p>
               <h1 className="text-display vw-heading-xl mb-8">
                 {series.question}
               </h1>
-              <p className="text-label vw-small text-gold">
+              <p className="text-label vw-small text-muted">
                 {series.framework}
               </p>
             </div>
@@ -72,11 +77,13 @@ export default function SeriesPageClient({
             </p>
           </div>
 
-          {/* 5-Day Journey sidebar */}
+          {/* Journey sidebar */}
           <div className="md:col-span-4 md:col-start-9">
             <div className="observe-fade bg-surface-raised p-8 md:sticky md:top-24 md:p-10">
               <div className="mb-4 flex items-center justify-between">
-                <p className="text-label vw-small text-gold">5-DAY JOURNEY</p>
+                <p className="text-label vw-small text-gold">
+                  {dayCount}-DAY JOURNEY
+                </p>
                 {seriesProgress.completed > 0 && (
                   <span className="text-label vw-small text-[var(--color-success)]">
                     {seriesProgress.completed}/{seriesProgress.total} Complete
@@ -84,10 +91,9 @@ export default function SeriesPageClient({
                 )}
               </div>
               <p className="vw-body mb-4 leading-relaxed text-secondary">
-                This series follows a chiastic structure
-                (A-B-C-B&apos;-A&apos;). Days 1 and 5 mirror each other. Days 2
-                and 4 mirror each other. Day 3 is the pivot—the core revelation
-                everything builds toward.
+                {dayCount === 5
+                  ? 'This series follows a chiastic structure (A-B-C-B\u2019-A\u2019). Days 1 and 5 mirror each other. Days 2 and 4 mirror each other. Day 3 is the pivot\u2014the core revelation everything builds toward.'
+                  : `${dayCount} ${dayCount === 1 ? 'day' : 'days'} of guided reading to walk you through this topic, step by step.`}
               </p>
               {seriesProgress.completed > 0 && (
                 <div className="mt-4">
@@ -115,7 +121,7 @@ export default function SeriesPageClient({
         </div>
       </header>
 
-      {/* 5 Days — massive day numbers */}
+      {/* Day List */}
       <main
         id="main-content"
         className="mx-auto max-w-7xl px-6 pb-32 md:px-[60px] md:pb-48 lg:px-20"
@@ -125,6 +131,7 @@ export default function SeriesPageClient({
             const readingCheck = canRead(day.slug)
             const isLocked = !readingCheck.canRead
             const dayIsRead = isRead(day.slug)
+            const isCenter = dayCount === 5 && day.day === 3
 
             return (
               <div
@@ -132,18 +139,13 @@ export default function SeriesPageClient({
                 className={`observe-fade ${index > 0 ? `stagger-${Math.min(index, 6)}` : ''}`}
               >
                 {isLocked ? (
-                  <div
-                    onClick={() =>
-                      setLockMessage({
-                        slug: day.slug,
-                        message:
-                          readingCheck.reason ||
-                          'Complete previous devotionals first',
-                      })
-                    }
-                    className="block cursor-help opacity-40"
-                  >
-                    <DayBlock day={day} isLocked dayIsRead={false} />
+                  <div className="block opacity-40">
+                    <DayBlock
+                      day={day}
+                      isLocked
+                      dayIsRead={false}
+                      isCenter={isCenter}
+                    />
                   </div>
                 ) : (
                   <Link
@@ -154,6 +156,7 @@ export default function SeriesPageClient({
                       day={day}
                       isLocked={false}
                       dayIsRead={dayIsRead}
+                      isCenter={isCenter}
                     />
                   </Link>
                 )}
@@ -163,66 +166,17 @@ export default function SeriesPageClient({
         </div>
       </main>
 
-      {/* Lock Message Modal */}
-      {lockMessage && (
-        <div
-          className="fixed inset-0 flex items-center justify-center px-6"
-          style={{
-            backgroundColor: 'var(--color-overlay)',
-            zIndex: 400,
-          }}
-          onClick={() => setLockMessage(null)}
-        >
-          <div
-            className="w-full max-w-md bg-page p-8"
-            style={{ boxShadow: 'var(--shadow-xl)' }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="mb-6 flex items-start gap-4">
-              <svg
-                className="mt-1 h-6 w-6 flex-shrink-0 text-muted"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <div>
-                <h3 className="text-display vw-heading-md mb-4">
-                  Devotional Locked
-                </h3>
-                <p className="vw-body mb-4 text-secondary">
-                  This devotional is locked because it builds on previous days.
-                </p>
-                <p className="vw-body text-secondary">{lockMessage.message}</p>
-              </div>
-            </div>
-            <button
-              onClick={() => setLockMessage(null)}
-              className="w-full bg-[var(--color-fg)] px-6 py-4 text-label vw-small text-[var(--color-bg)] transition-colors duration-300 hover:bg-gold hover:text-tehom focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-            >
-              Got It
-            </button>
-          </div>
-        </div>
-      )}
-
       {/* Footer */}
       <footer
         className="py-16 md:py-24"
         style={{ borderTop: '1px solid var(--color-border)' }}
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <div className="grid gap-8 md:grid-cols-12">
-            <div className="md:col-span-6 md:col-start-4">
-              <p className="text-label vw-small leading-relaxed text-muted">
-                SOMETHING TO HOLD ONTO.
-              </p>
-              <p className="vw-small mt-8 text-muted">&copy; 2026 EUANGELION</p>
-            </div>
+          <div className="text-center">
+            <p className="text-label vw-small leading-relaxed text-muted">
+              SOMETHING TO HOLD ONTO.
+            </p>
+            <p className="vw-small mt-8 text-muted">&copy; 2026 EUANGELION</p>
           </div>
         </div>
       </footer>
@@ -234,13 +188,13 @@ function DayBlock({
   day,
   isLocked,
   dayIsRead,
+  isCenter,
 }: {
   day: { day: number; title: string; slug: string }
   isLocked: boolean
   dayIsRead: boolean
+  isCenter: boolean
 }) {
-  const isCenter = day.day === 3
-
   return (
     <div
       className={`${isCenter ? 'bg-surface-raised md:-mx-8 md:px-8 md:py-10' : ''}`}
@@ -249,7 +203,7 @@ function DayBlock({
       }}
     >
       <div className="flex items-center gap-8 md:gap-12">
-        {/* Massive day number */}
+        {/* Day number */}
         <span
           className={`text-day-number shrink-0 transition-colors duration-300 ${
             isLocked
