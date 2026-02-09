@@ -4,7 +4,7 @@ export default function ScriptureModule({ module }: { module: Module }) {
   if (!module.passage && !module.reference) return null
 
   return (
-    <div className="my-12 md:my-16">
+    <div className="my-16 md:my-24">
       {module.heading && (
         <p className="text-label vw-small mb-6 text-gold">{module.heading}</p>
       )}
@@ -31,20 +31,16 @@ export default function ScriptureModule({ module }: { module: Module }) {
         </p>
       )}
       {module.emphasis && module.emphasis.length > 0 && (
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-6 flex flex-wrap gap-3">
           {module.emphasis.map((word, i) => (
-            <span
-              key={i}
-              className="vw-small px-3 py-1 text-gold"
-              style={{ border: '1px solid var(--color-gold)' }}
-            >
+            <span key={i} className="vw-small text-gold italic">
               {word}
             </span>
           ))}
         </div>
       )}
       {module.scriptureContext && (
-        <p className="mt-6 vw-body leading-relaxed text-secondary">
+        <p className="mt-8 vw-body leading-relaxed text-secondary">
           {module.scriptureContext}
         </p>
       )}

@@ -4,20 +4,23 @@ export default function ReflectionModule({ module }: { module: Module }) {
   if (!module.prompt && !module.content) return null
 
   return (
-    <div className="module-surface my-12 p-8 md:my-16 md:p-10">
+    <div className="my-16 md:my-24">
       <p className="text-label vw-small mb-6 text-gold">
         {module.invitationType
           ? module.invitationType.toUpperCase()
           : 'REFLECT'}
       </p>
       {module.heading && (
-        <h3 className="text-display vw-heading-md mb-6">{module.heading}</h3>
+        <h3 className="text-display vw-heading-md mb-8">{module.heading}</h3>
       )}
-      <p className="text-serif-italic vw-body-lg leading-relaxed">
+      <p
+        className="text-serif-italic vw-body-lg leading-relaxed"
+        style={{ maxWidth: '640px' }}
+      >
         {module.prompt || module.content}
       </p>
       {module.additionalQuestions && module.additionalQuestions.length > 0 && (
-        <ul className="mt-6 space-y-3">
+        <ul className="mt-8 space-y-4">
           {module.additionalQuestions.map((q, i) => (
             <li key={i} className="vw-body leading-relaxed text-secondary">
               {q}

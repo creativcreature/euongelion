@@ -20,8 +20,8 @@ export default function ResourceModule({ module }: { module: Module }) {
     return null
 
   return (
-    <div className="my-12 md:my-16">
-      <p className="text-label vw-small mb-6 text-gold">
+    <div className="my-16 md:my-24">
+      <p className="text-label vw-small mb-8 text-gold">
         {module.heading || 'FURTHER READING'}
       </p>
 
@@ -56,9 +56,9 @@ export default function ResourceModule({ module }: { module: Module }) {
       )}
 
       {hasRelatedScriptures && (
-        <div className={hasResources ? 'mt-8' : ''}>
-          <p className="module-sublabel mb-3">RELATED SCRIPTURES</p>
-          <div className="space-y-3">
+        <div className={hasResources ? 'mt-10' : ''}>
+          <p className="module-sublabel mb-4">RELATED SCRIPTURES</p>
+          <div className="space-y-4">
             {module.relatedScriptures!.map((s, i) => (
               <div key={i}>
                 <p className="vw-small text-muted mb-1">{s.reference}</p>
@@ -72,8 +72,8 @@ export default function ResourceModule({ module }: { module: Module }) {
       )}
 
       {hasDeeperStudy && (
-        <div className="mt-8">
-          <p className="module-sublabel mb-3">FOR DEEPER STUDY</p>
+        <div className="mt-10">
+          <p className="module-sublabel mb-4">FOR DEEPER STUDY</p>
           <div className="space-y-3">
             {module.forDeeperStudy!.map((item, i) => (
               <div
@@ -81,7 +81,7 @@ export default function ResourceModule({ module }: { module: Module }) {
                 className="py-3"
                 style={{ borderBottom: '1px solid var(--color-border)' }}
               >
-                <div className="flex items-baseline gap-2">
+                <div className="flex items-baseline gap-3">
                   <span className="vw-small text-muted uppercase">
                     {item.type}
                   </span>
@@ -90,7 +90,7 @@ export default function ResourceModule({ module }: { module: Module }) {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="vw-body hover:text-gold"
+                      className="vw-body hover:text-gold transition-colors duration-300"
                     >
                       {item.title} &rarr;
                     </a>
@@ -108,13 +108,13 @@ export default function ResourceModule({ module }: { module: Module }) {
       )}
 
       {hasGreekVocab && (
-        <div className="mt-8">
-          <p className="module-sublabel mb-3">GREEK VOCABULARY</p>
-          <div className="space-y-2">
+        <div className="mt-10">
+          <p className="module-sublabel mb-4">GREEK VOCABULARY</p>
+          <div className="space-y-3">
             {module.greekVocabulary!.map((entry, i) => (
               <div
                 key={i}
-                className="flex items-baseline gap-3 py-2"
+                className="flex items-baseline gap-4 py-2"
                 style={{ borderBottom: '1px solid var(--color-border)' }}
               >
                 <span className="text-serif-italic">{entry.word}</span>
@@ -129,9 +129,9 @@ export default function ResourceModule({ module }: { module: Module }) {
       )}
 
       {hasWeeklyChallenge && (
-        <div className="module-callout mt-8">
+        <div className="module-accent mt-10">
           <p
-            className="module-sublabel mb-2"
+            className="module-sublabel mb-3"
             style={{ color: 'var(--color-gold)' }}
           >
             WEEKLY CHALLENGE

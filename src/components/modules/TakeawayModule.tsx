@@ -4,8 +4,8 @@ export default function TakeawayModule({ module }: { module: Module }) {
   if (!module.content && !module.commitment) return null
 
   return (
-    <div className="module-card-gold my-12 p-8 md:my-16 md:p-10">
-      <p className="text-label vw-small mb-4 text-gold">
+    <div className="my-16 md:my-24">
+      <p className="text-label vw-small mb-6 text-gold">
         {module.heading || 'TAKEAWAY'}
       </p>
       <p className="vw-body leading-relaxed">
@@ -13,13 +13,13 @@ export default function TakeawayModule({ module }: { module: Module }) {
       </p>
 
       {module.leavingAtCross && module.leavingAtCross.length > 0 && (
-        <div className="mt-6">
-          <p className="module-sublabel mb-3">LEAVING AT THE CROSS</p>
-          <ul className="space-y-2">
+        <div className="mt-10">
+          <p className="module-sublabel mb-4">LEAVING AT THE CROSS</p>
+          <ul className="space-y-3">
             {module.leavingAtCross.map((item, i) => (
               <li
                 key={i}
-                className="vw-body leading-relaxed text-secondary pl-4"
+                className="vw-body leading-relaxed text-secondary pl-5"
                 style={{ borderLeft: '2px solid var(--color-border)' }}
               >
                 {item}
@@ -30,18 +30,18 @@ export default function TakeawayModule({ module }: { module: Module }) {
       )}
 
       {module.receivingFromCross && module.receivingFromCross.length > 0 && (
-        <div className="mt-6">
+        <div className="mt-10">
           <p
-            className="module-sublabel mb-3"
+            className="module-sublabel mb-4"
             style={{ color: 'var(--color-gold)' }}
           >
             RECEIVING FROM THE CROSS
           </p>
-          <ul className="space-y-2">
+          <ul className="space-y-3">
             {module.receivingFromCross.map((item, i) => (
               <li
                 key={i}
-                className="vw-body leading-relaxed text-secondary pl-4"
+                className="vw-body leading-relaxed text-secondary pl-5"
                 style={{ borderLeft: '2px solid var(--color-gold)' }}
               >
                 {item}

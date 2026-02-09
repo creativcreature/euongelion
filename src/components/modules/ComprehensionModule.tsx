@@ -16,8 +16,8 @@ export default function ComprehensionModule({ module }: { module: Module }) {
   const isCorrect = selected === module.answer
 
   return (
-    <div className="module-surface my-12 p-8 md:my-16 md:p-10">
-      <p className="text-label vw-small mb-6 text-gold">
+    <div className="my-16 md:my-24">
+      <p className="text-label vw-small mb-8 text-gold">
         {module.heading || 'CHECK YOUR UNDERSTANDING'}
       </p>
 
@@ -25,7 +25,7 @@ export default function ComprehensionModule({ module }: { module: Module }) {
         <>
           <p className="vw-body mb-8 leading-relaxed">{module.question}</p>
           {module.options && (
-            <div className="mb-6 space-y-3">
+            <div className="mb-8 space-y-3">
               {module.options.map((option, i) => (
                 <button
                   key={i}
@@ -38,7 +38,7 @@ export default function ComprehensionModule({ module }: { module: Module }) {
                   disabled={revealed}
                   className="block w-full px-6 py-4 text-left vw-body transition-all duration-300"
                   style={{
-                    border: `1px solid ${
+                    borderBottom: `1px solid ${
                       revealed && i === module.answer
                         ? 'var(--color-success)'
                         : revealed && i === selected && !isCorrect
@@ -49,7 +49,7 @@ export default function ComprehensionModule({ module }: { module: Module }) {
                     }`,
                     backgroundColor:
                       revealed && i === module.answer
-                        ? 'rgba(74, 107, 79, 0.1)'
+                        ? 'rgba(74, 107, 79, 0.08)'
                         : 'transparent',
                   }}
                 >
@@ -69,8 +69,8 @@ export default function ComprehensionModule({ module }: { module: Module }) {
       {isReflectionMode && (
         <>
           {module.forReflection && module.forReflection.length > 0 && (
-            <div className="mb-6">
-              <p className="module-sublabel mb-3">FOR REFLECTION</p>
+            <div className="mb-8">
+              <p className="module-sublabel mb-4">FOR REFLECTION</p>
               <ul className="space-y-4">
                 {module.forReflection.map((q, i) => (
                   <li
@@ -85,8 +85,8 @@ export default function ComprehensionModule({ module }: { module: Module }) {
           )}
           {module.forAccountabilityPartners &&
             module.forAccountabilityPartners.length > 0 && (
-              <div className="mt-6">
-                <p className="module-sublabel mb-3">
+              <div>
+                <p className="module-sublabel mb-4">
                   FOR ACCOUNTABILITY PARTNERS
                 </p>
                 <ul className="space-y-3">

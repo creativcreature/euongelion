@@ -93,18 +93,6 @@ function normalizeModule(raw: Record<string, unknown>): Module {
   return result as unknown as Module
 }
 
-// Full-width module types get special layout treatment
-const FULL_WIDTH_TYPES = new Set([
-  'scripture',
-  'vocab',
-  'prayer',
-  'comprehension',
-])
-
-export function isFullWidthModule(type: string): boolean {
-  return FULL_WIDTH_TYPES.has(type)
-}
-
 export default function ModuleRenderer({
   module: raw,
 }: {

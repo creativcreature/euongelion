@@ -5,21 +5,25 @@ export default function InsightModule({ module }: { module: Module }) {
     return null
 
   return (
-    <div className="module-accent my-12 md:my-16">
+    <div className="my-16 md:my-24">
       {module.heading && (
-        <p className="text-label vw-small mb-4 text-gold">{module.heading}</p>
+        <p className="text-label vw-small mb-6 text-gold">{module.heading}</p>
       )}
-      {module.content && <p className="pull-quote">{module.content}</p>}
+      {module.content && (
+        <p className="text-serif-italic vw-body-lg leading-relaxed mb-8">
+          {module.content}
+        </p>
+      )}
       {module.historicalContext && (
-        <div className="mt-6">
-          <p className="module-sublabel mb-2">HISTORICAL CONTEXT</p>
+        <div className="mt-8">
+          <p className="module-sublabel mb-3">HISTORICAL CONTEXT</p>
           <p className="vw-body leading-relaxed text-secondary">
             {module.historicalContext}
           </p>
         </div>
       )}
       {module.fascinatingFact && (
-        <div className="module-callout mt-6">
+        <div className="module-accent mt-8">
           <p className="vw-body leading-relaxed text-secondary">
             {module.fascinatingFact}
           </p>

@@ -6,9 +6,9 @@ export default function StoryModule({ module }: { module: Module }) {
   const paragraphs = module.content.split('\n\n')
 
   return (
-    <div className="my-12 md:my-16">
+    <div className="my-16 md:my-24">
       {module.heading && (
-        <p className="text-label vw-small mb-6 text-gold">{module.heading}</p>
+        <p className="text-label vw-small mb-8 text-gold">{module.heading}</p>
       )}
       <div className="space-y-6">
         {paragraphs.map((paragraph, i) => (
@@ -18,7 +18,7 @@ export default function StoryModule({ module }: { module: Module }) {
         ))}
       </div>
       {module.connectionToTheme && (
-        <p className="mt-8 vw-body leading-relaxed text-secondary">
+        <p className="mt-10 vw-body leading-relaxed text-secondary">
           {module.connectionToTheme}
         </p>
       )}

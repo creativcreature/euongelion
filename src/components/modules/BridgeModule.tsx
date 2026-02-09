@@ -5,38 +5,41 @@ export default function BridgeModule({ module }: { module: Module }) {
     return null
 
   return (
-    <div className="module-accent my-12 md:my-16">
-      <p className="text-label vw-small mb-6 text-gold">
+    <div className="my-16 md:my-24">
+      <p className="text-label vw-small mb-8 text-gold">
         {module.heading || 'BRIDGE TO CHRIST'}
       </p>
 
       {module.ancientTruth && (
-        <div className="mb-6">
-          <p className="module-sublabel mb-2">ANCIENT TRUTH</p>
+        <div className="mb-10">
+          <p className="module-sublabel mb-3">ANCIENT TRUTH</p>
           <p className="vw-body leading-relaxed text-secondary">
             {module.ancientTruth}
           </p>
         </div>
       )}
 
+      {module.connectionPoint && (
+        <p
+          className="text-serif-italic vw-body-lg leading-relaxed mb-10"
+          style={{ maxWidth: '640px' }}
+        >
+          {module.connectionPoint}
+        </p>
+      )}
+
       {module.modernApplication && (
-        <div className="mb-6">
-          <p className="module-sublabel mb-2">MODERN APPLICATION</p>
+        <div className="mb-10">
+          <p className="module-sublabel mb-3">MODERN APPLICATION</p>
           <p className="vw-body leading-relaxed text-secondary">
             {module.modernApplication}
           </p>
         </div>
       )}
 
-      {module.connectionPoint && (
-        <p className="mb-6 text-serif-italic vw-body-lg leading-relaxed">
-          {module.connectionPoint}
-        </p>
-      )}
-
       {module.newTestamentEcho && (
-        <div className="mt-4">
-          <p className="module-sublabel mb-2">NEW TESTAMENT ECHO</p>
+        <div>
+          <p className="module-sublabel mb-3">NEW TESTAMENT ECHO</p>
           <p className="vw-body leading-relaxed text-secondary">
             {module.newTestamentEcho}
           </p>

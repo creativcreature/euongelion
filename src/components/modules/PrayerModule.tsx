@@ -7,10 +7,7 @@ export default function PrayerModule({ module }: { module: Module }) {
   const paragraphs = text ? text.split('\n\n') : []
 
   return (
-    <div
-      className="my-12 md:my-16"
-      style={{ borderTop: '2px solid var(--color-gold)', paddingTop: '2rem' }}
-    >
+    <div className="my-16 md:my-24">
       <div className="mb-6 flex items-baseline gap-3">
         <p className="text-label vw-small text-gold">
           {module.heading || 'PRAYER'}
@@ -20,7 +17,7 @@ export default function PrayerModule({ module }: { module: Module }) {
         )}
       </div>
       {module.posture && (
-        <p className="mb-4 vw-small italic text-muted">
+        <p className="mb-6 vw-small italic text-muted">
           Posture: {module.posture}
         </p>
       )}
@@ -32,7 +29,7 @@ export default function PrayerModule({ module }: { module: Module }) {
         ))}
       </div>
       {module.breathPrayer && (
-        <div className="mt-8">
+        <div className="mt-10">
           <p className="module-sublabel mb-3">BREATH PRAYER</p>
           <p className="text-serif-italic vw-body-lg text-gold">
             {module.breathPrayer}
