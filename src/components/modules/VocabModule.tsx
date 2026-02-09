@@ -4,13 +4,7 @@ export default function VocabModule({ module }: { module: Module }) {
   if (!module.word && !module.definition) return null
 
   return (
-    <div
-      className="my-12 p-8 md:my-16 md:p-10"
-      style={{
-        backgroundColor: 'var(--color-surface-raised)',
-        border: '1px solid var(--color-border)',
-      }}
-    >
+    <div className="module-card my-12 p-8 md:my-16 md:p-10">
       <div className="mb-4 flex items-center gap-3">
         <p className="text-label vw-small text-gold">
           {module.language === 'greek'
@@ -20,24 +14,10 @@ export default function VocabModule({ module }: { module: Module }) {
               : 'WORD STUDY'}
         </p>
         {module.strongsNumber && (
-          <span
-            className="vw-small px-2 py-0.5"
-            style={{
-              border: '1px solid var(--color-border)',
-              color: 'var(--color-muted)',
-              fontSize: '0.7rem',
-            }}
-          >
-            {module.strongsNumber}
-          </span>
+          <span className="vw-small text-muted">{module.strongsNumber}</span>
         )}
       </div>
-      <p
-        className="text-serif-italic mb-1"
-        style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', lineHeight: 1.3 }}
-      >
-        {module.word}
-      </p>
+      <p className="pull-quote mb-1">{module.word}</p>
       {(module.transliteration || module.pronunciation) && (
         <p className="vw-small mb-6 text-muted">
           {module.transliteration && <>/{module.transliteration}/</>}
@@ -48,7 +28,7 @@ export default function VocabModule({ module }: { module: Module }) {
       )}
       {module.definition && (
         <p className="vw-body mb-4 leading-relaxed text-secondary">
-          <span className="text-label vw-small text-muted">MEANING: </span>
+          <span className="module-sublabel mr-2">MEANING:</span>
           {module.definition}
         </p>
       )}
@@ -58,13 +38,13 @@ export default function VocabModule({ module }: { module: Module }) {
         </p>
       )}
       {module.usageNote && (
-        <p className="vw-body mb-4 leading-relaxed text-muted italic">
+        <p className="vw-body mb-4 italic leading-relaxed text-muted">
           {module.usageNote}
         </p>
       )}
       {module.wordByWord && module.wordByWord.length > 0 && (
         <div className="mt-6">
-          <p className="text-label vw-small mb-3 text-muted">WORD BY WORD</p>
+          <p className="module-sublabel mb-3">WORD BY WORD</p>
           <div className="space-y-2">
             {module.wordByWord.map((entry, i) => (
               <div
@@ -89,7 +69,7 @@ export default function VocabModule({ module }: { module: Module }) {
       )}
       {module.relatedWords && module.relatedWords.length > 0 && (
         <div className="mt-6">
-          <p className="text-label vw-small mb-3 text-muted">RELATED</p>
+          <p className="module-sublabel mb-3">RELATED</p>
           <div className="flex flex-wrap gap-3">
             {module.relatedWords.map((rw, i) => (
               <span key={i} className="vw-small text-secondary">

@@ -11,14 +11,8 @@ export default function TeachingModule({ module }: { module: Module }) {
         <h3 className="text-display vw-heading-md mb-8">{module.heading}</h3>
       )}
       {module.keyInsight && (
-        <div
-          className="mb-8 p-6"
-          style={{
-            borderLeft: '3px solid var(--color-gold)',
-            backgroundColor: 'rgba(191, 155, 48, 0.05)',
-          }}
-        >
-          <p className="text-label vw-small mb-2 text-gold">KEY INSIGHT</p>
+        <div className="module-callout mb-8">
+          <p className="module-sublabel mb-2">KEY INSIGHT</p>
           <p className="text-serif-italic vw-body-lg leading-relaxed">
             {module.keyInsight}
           </p>

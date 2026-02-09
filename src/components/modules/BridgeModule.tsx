@@ -5,20 +5,14 @@ export default function BridgeModule({ module }: { module: Module }) {
     return null
 
   return (
-    <div
-      className="my-12 md:my-16"
-      style={{
-        borderLeft: '3px solid var(--color-gold)',
-        paddingLeft: '1.5rem',
-      }}
-    >
+    <div className="module-accent my-12 md:my-16">
       <p className="text-label vw-small mb-6 text-gold">
         {module.heading || 'BRIDGE TO CHRIST'}
       </p>
 
       {module.ancientTruth && (
         <div className="mb-6">
-          <p className="text-label vw-small mb-2 text-muted">ANCIENT TRUTH</p>
+          <p className="module-sublabel mb-2">ANCIENT TRUTH</p>
           <p className="vw-body leading-relaxed text-secondary">
             {module.ancientTruth}
           </p>
@@ -27,9 +21,7 @@ export default function BridgeModule({ module }: { module: Module }) {
 
       {module.modernApplication && (
         <div className="mb-6">
-          <p className="text-label vw-small mb-2 text-muted">
-            MODERN APPLICATION
-          </p>
+          <p className="module-sublabel mb-2">MODERN APPLICATION</p>
           <p className="vw-body leading-relaxed text-secondary">
             {module.modernApplication}
           </p>
@@ -44,9 +36,7 @@ export default function BridgeModule({ module }: { module: Module }) {
 
       {module.newTestamentEcho && (
         <div className="mt-4">
-          <p className="text-label vw-small mb-2 text-muted">
-            NEW TESTAMENT ECHO
-          </p>
+          <p className="module-sublabel mb-2">NEW TESTAMENT ECHO</p>
           <p className="vw-body leading-relaxed text-secondary">
             {module.newTestamentEcho}
           </p>

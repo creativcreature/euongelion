@@ -57,9 +57,7 @@ export default function ResourceModule({ module }: { module: Module }) {
 
       {hasRelatedScriptures && (
         <div className={hasResources ? 'mt-8' : ''}>
-          <p className="text-label vw-small mb-3 text-muted">
-            RELATED SCRIPTURES
-          </p>
+          <p className="module-sublabel mb-3">RELATED SCRIPTURES</p>
           <div className="space-y-3">
             {module.relatedScriptures!.map((s, i) => (
               <div key={i}>
@@ -75,9 +73,7 @@ export default function ResourceModule({ module }: { module: Module }) {
 
       {hasDeeperStudy && (
         <div className="mt-8">
-          <p className="text-label vw-small mb-3 text-muted">
-            FOR DEEPER STUDY
-          </p>
+          <p className="module-sublabel mb-3">FOR DEEPER STUDY</p>
           <div className="space-y-3">
             {module.forDeeperStudy!.map((item, i) => (
               <div
@@ -85,7 +81,7 @@ export default function ResourceModule({ module }: { module: Module }) {
                 className="py-3"
                 style={{ borderBottom: '1px solid var(--color-border)' }}
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-baseline gap-2">
                   <span className="vw-small text-muted uppercase">
                     {item.type}
                   </span>
@@ -113,9 +109,7 @@ export default function ResourceModule({ module }: { module: Module }) {
 
       {hasGreekVocab && (
         <div className="mt-8">
-          <p className="text-label vw-small mb-3 text-muted">
-            GREEK VOCABULARY
-          </p>
+          <p className="module-sublabel mb-3">GREEK VOCABULARY</p>
           <div className="space-y-2">
             {module.greekVocabulary!.map((entry, i) => (
               <div
@@ -135,14 +129,13 @@ export default function ResourceModule({ module }: { module: Module }) {
       )}
 
       {hasWeeklyChallenge && (
-        <div
-          className="mt-8 p-6"
-          style={{
-            border: '1px solid var(--color-gold)',
-            backgroundColor: 'rgba(191, 155, 48, 0.05)',
-          }}
-        >
-          <p className="text-label vw-small mb-2 text-gold">WEEKLY CHALLENGE</p>
+        <div className="module-callout mt-8">
+          <p
+            className="module-sublabel mb-2"
+            style={{ color: 'var(--color-gold)' }}
+          >
+            WEEKLY CHALLENGE
+          </p>
           <p className="vw-body leading-relaxed">{module.weeklyChallenge}</p>
         </div>
       )}

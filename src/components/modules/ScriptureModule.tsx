@@ -12,18 +12,15 @@ export default function ScriptureModule({ module }: { module: Module }) {
         <p className="text-serif-italic vw-body-lg">{module.passage}</p>
       </blockquote>
       {module.reference && (
-        <p className="mt-4 text-label vw-small text-muted">
+        <p className="mt-4 vw-small text-muted">
           {module.reference}
           {module.translation && ` (${module.translation})`}
         </p>
       )}
       {module.hebrewOriginal && (
         <p
-          className="mt-4 text-muted"
-          style={{
-            fontFamily: 'var(--font-hebrew, serif)',
-            fontSize: '1.1rem',
-          }}
+          className="mt-4 vw-small text-muted"
+          style={{ fontFamily: 'var(--font-hebrew, serif)' }}
         >
           {module.hebrewOriginal}
         </p>
@@ -38,11 +35,8 @@ export default function ScriptureModule({ module }: { module: Module }) {
           {module.emphasis.map((word, i) => (
             <span
               key={i}
-              className="vw-small px-3 py-1"
-              style={{
-                border: '1px solid var(--color-gold)',
-                color: 'var(--color-gold)',
-              }}
+              className="vw-small px-3 py-1 text-gold"
+              style={{ border: '1px solid var(--color-gold)' }}
             >
               {word}
             </span>

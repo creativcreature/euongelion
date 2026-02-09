@@ -7,13 +7,7 @@ export default function ProfileModule({ module }: { module: Module }) {
   const paragraphs = bodyText ? bodyText.split('\n\n') : []
 
   return (
-    <div
-      className="my-12 p-8 md:my-16 md:p-10"
-      style={{
-        backgroundColor: 'var(--color-surface-raised)',
-        border: '1px solid var(--color-border)',
-      }}
-    >
+    <div className="module-card my-12 p-8 md:my-16 md:p-10">
       <p className="text-label vw-small mb-4 text-gold">
         {module.heading || 'HISTORICAL FIGURE'}
       </p>
@@ -29,13 +23,7 @@ export default function ProfileModule({ module }: { module: Module }) {
         </div>
       )}
       {module.keyQuote && (
-        <blockquote
-          className="mt-6 p-4"
-          style={{
-            borderLeft: '3px solid var(--color-gold)',
-            backgroundColor: 'rgba(191, 155, 48, 0.05)',
-          }}
-        >
+        <blockquote className="module-callout mt-6">
           <p className="text-serif-italic vw-body-lg leading-relaxed">
             &ldquo;{module.keyQuote}&rdquo;
           </p>
@@ -43,7 +31,7 @@ export default function ProfileModule({ module }: { module: Module }) {
       )}
       {module.lessonForUs && (
         <div className="mt-6">
-          <p className="text-label vw-small mb-2 text-muted">LESSON FOR US</p>
+          <p className="module-sublabel mb-2">LESSON FOR US</p>
           <p className="vw-body leading-relaxed text-secondary">
             {module.lessonForUs}
           </p>

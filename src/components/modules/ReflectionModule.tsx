@@ -4,13 +4,7 @@ export default function ReflectionModule({ module }: { module: Module }) {
   if (!module.prompt && !module.content) return null
 
   return (
-    <div
-      className="my-12 p-8 md:my-16 md:p-10"
-      style={{
-        backgroundColor: 'var(--color-surface)',
-        border: '1px solid var(--color-border)',
-      }}
-    >
+    <div className="module-surface my-12 p-8 md:my-16 md:p-10">
       <p className="text-label vw-small mb-6 text-gold">
         {module.invitationType
           ? module.invitationType.toUpperCase()

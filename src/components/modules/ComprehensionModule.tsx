@@ -16,20 +16,14 @@ export default function ComprehensionModule({ module }: { module: Module }) {
   const isCorrect = selected === module.answer
 
   return (
-    <div
-      className="my-12 p-8 md:my-16 md:p-10"
-      style={{
-        backgroundColor: 'var(--color-surface)',
-        border: '1px solid var(--color-border)',
-      }}
-    >
+    <div className="module-surface my-12 p-8 md:my-16 md:p-10">
       <p className="text-label vw-small mb-6 text-gold">
         {module.heading || 'CHECK YOUR UNDERSTANDING'}
       </p>
 
       {isQuizMode && (
         <>
-          <p className="vw-body-lg mb-8 leading-relaxed">{module.question}</p>
+          <p className="vw-body mb-8 leading-relaxed">{module.question}</p>
           {module.options && (
             <div className="mb-6 space-y-3">
               {module.options.map((option, i) => (
@@ -57,7 +51,6 @@ export default function ComprehensionModule({ module }: { module: Module }) {
                       revealed && i === module.answer
                         ? 'rgba(74, 107, 79, 0.1)'
                         : 'transparent',
-                    transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
                   }}
                 >
                   {option}
@@ -77,9 +70,7 @@ export default function ComprehensionModule({ module }: { module: Module }) {
         <>
           {module.forReflection && module.forReflection.length > 0 && (
             <div className="mb-6">
-              <p className="text-label vw-small mb-3 text-muted">
-                FOR REFLECTION
-              </p>
+              <p className="module-sublabel mb-3">FOR REFLECTION</p>
               <ul className="space-y-4">
                 {module.forReflection.map((q, i) => (
                   <li
@@ -95,7 +86,7 @@ export default function ComprehensionModule({ module }: { module: Module }) {
           {module.forAccountabilityPartners &&
             module.forAccountabilityPartners.length > 0 && (
               <div className="mt-6">
-                <p className="text-label vw-small mb-3 text-muted">
+                <p className="module-sublabel mb-3">
                   FOR ACCOUNTABILITY PARTNERS
                 </p>
                 <ul className="space-y-3">
