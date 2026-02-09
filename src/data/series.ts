@@ -7,6 +7,7 @@ export interface SeriesInfo {
   pathway: 'Sleep' | 'Awake' | 'Shepherd'
   days: Array<{ day: number; title: string; slug: string }>
   keywords: string[]
+  heroImage?: string
 }
 
 // ============================================
@@ -525,6 +526,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "You've confessed this sin a hundred times. You've promised to stop. You haven't. And now you're wondering if God is still listening.",
     framework: 'Romans 7:15-25 - The battle within',
     pathway: 'Awake',
+    heroImage: '/images/series/what-happens-when-you-repeatedly-sin.jpeg',
     keywords: [
       'sin',
       'guilt',
@@ -578,6 +580,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "You chase achievement, pleasure, recognition—and the hunger only grows. What if the thing you're starving for can't be earned?",
     framework: 'John 6:28-29 - This is the work of God: to believe',
     pathway: 'Awake',
+    heroImage: '/images/series/the-work-of-god.jpeg',
     keywords: [
       'hunger',
       'satisfaction',
@@ -681,6 +684,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "It's easier to be a Christian in private. But the early church didn't have that option. And neither do we.",
     framework: 'Acts 4:29-31 - Grant your servants boldness',
     pathway: 'Shepherd',
+    heroImage: '/images/series/signs-boldness-opposition-integrity.jpeg',
     keywords: [
       'boldness',
       'courage',
@@ -708,6 +712,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       "Persecution scattered the early church. And that scattering became the mechanism for the Gospel's spread. God works through disruption.",
     framework: 'Acts 1:8 - You will be my witnesses',
     pathway: 'Shepherd',
+    heroImage: '/images/series/from-jerusalem-to-the-nations.jpeg',
     keywords: [
       'mission',
       'purpose',
@@ -735,6 +740,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       'The early church thrived under persecution. Not despite it—through it. What did they know that we forgot?',
     framework: 'Acts 5:41 - Rejoicing that they were counted worthy to suffer',
     pathway: 'Shepherd',
+    heroImage: '/images/series/witness-under-pressure-expansion.jpeg',
     keywords: [
       'persecution',
       'pressure',

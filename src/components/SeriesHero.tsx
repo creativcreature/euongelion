@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { SERIES_DATA } from '@/data/series'
 
 type HeroSize = 'hero' | 'card' | 'thumbnail'
@@ -105,67 +106,91 @@ export default function SeriesHero({
   className?: string
 }) {
   const gradient = getGradient(seriesSlug)
+  const series = SERIES_DATA[seriesSlug]
+  const heroImage = series?.heroImage
 
   return (
     <div
       className={`relative w-full overflow-hidden ${SIZE_CLASSES[size]} ${className}`}
       style={{ background: gradient.bg }}
     >
-      {/* Pattern overlay */}
-      {gradient.pattern === 'radial' && (
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `radial-gradient(circle at 70% 30%, ${gradient.accent}15 0%, transparent 60%)`,
-          }}
-        />
-      )}
-      {gradient.pattern === 'wave' && (
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `
-              linear-gradient(180deg, transparent 0%, ${gradient.accent}08 50%, transparent 100%),
-              repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 40px,
-                ${gradient.accent}05 40px,
-                ${gradient.accent}05 41px
-              )
-            `,
-          }}
-        />
-      )}
-      {gradient.pattern === 'grid' && (
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              linear-gradient(${gradient.accent}08 1px, transparent 1px),
-              linear-gradient(90deg, ${gradient.accent}08 1px, transparent 1px)
-            `,
-            backgroundSize: '40px 40px',
-          }}
+      {/* Real image if available */}
+      {heroImage && (
+        <Image
+          src={heroImage}
+          alt={series?.title || ''}
+          fill
+          className="object-cover"
+          sizes={
+            size === 'hero'
+              ? '100vw'
+              : size === 'card'
+                ? '(max-width: 768px) 100vw, 50vw'
+                : '(max-width: 768px) 100vw, 33vw'
+          }
         />
       )}
 
-      {/* Noise texture */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
-        }}
-      />
+      {/* Pattern overlay (shown behind image as fallback, or alone) */}
+      {!heroImage && (
+        <>
+          {gradient.pattern === 'radial' && (
+            <div
+              className="absolute inset-0"
+              style={{
+                background: `radial-gradient(circle at 70% 30%, ${gradient.accent}15 0%, transparent 60%)`,
+              }}
+            />
+          )}
+          {gradient.pattern === 'wave' && (
+            <div
+              className="absolute inset-0"
+              style={{
+                background: `
+                  linear-gradient(180deg, transparent 0%, ${gradient.accent}08 50%, transparent 100%),
+                  repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 40px,
+                    ${gradient.accent}05 40px,
+                    ${gradient.accent}05 41px
+                  )
+                `,
+              }}
+            />
+          )}
+          {gradient.pattern === 'grid' && (
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `
+                  linear-gradient(${gradient.accent}08 1px, transparent 1px),
+                  linear-gradient(90deg, ${gradient.accent}08 1px, transparent 1px)
+                `,
+                backgroundSize: '40px 40px',
+              }}
+            />
+          )}
+
+          {/* Noise texture */}
+          <div
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
+            }}
+          />
+        </>
+      )}
 
       {/* Readability overlay for text */}
       {overlay && (
         <div
           className="absolute inset-0"
           style={{
-            background:
-              'linear-gradient(180deg, transparent 30%, rgba(26, 22, 18, 0.6) 100%)',
+            background: heroImage
+              ? 'linear-gradient(180deg, rgba(26, 22, 18, 0.3) 0%, rgba(26, 22, 18, 0.7) 100%)'
+              : 'linear-gradient(180deg, transparent 30%, rgba(26, 22, 18, 0.6) 100%)',
           }}
         />
       )}

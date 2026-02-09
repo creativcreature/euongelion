@@ -35,6 +35,7 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ### 2026-02-08
 
+- **Hero images wired up** — 5 Substack series with existing hero images (what-happens-when-you-repeatedly-sin, the-work-of-god, signs-boldness-opposition-integrity, from-jerusalem-to-the-nations, witness-under-pressure-expansion) now display real photographs via `next/image`. Images downloaded to `public/images/series/` (served locally, not hotlinked). `SeriesInfo` interface extended with optional `heroImage` field. `SeriesHero` component updated: shows real image when available, gradient fallback otherwise. Darker overlay for text readability on photos.
 - **How It Works repositioned** — Moved directly under fold (after hero + audit results) for immediate clarity. Added SVG icons (compass, book, heart) to each step.
 - **Paper.design-inspired visuals** — Dot-pattern background utility (`dot-pattern`, `dot-pattern-lg`). Applied to How It Works and What This Is sections. Editorial break upgraded with dot overlay, radial gold glow, and minimal cross motif.
 - **Day-gating disabled** — `canReadDevotional()` always returns `{ canRead: true }`. All content freely accessible.
