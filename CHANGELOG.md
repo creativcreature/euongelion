@@ -48,6 +48,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - **Phase 9: PWA** — manifest.json, service worker (cache-first static, network-first pages, offline fallback), offline page, PWA icons (192/512/maskable), ServiceWorkerRegistration component
 - **Phase 10: Accessibility + SEO + Legal** — aria-live on Soul Audit results, JSON-LD BreadcrumbList on series + devotional pages, sitemap expanded to all 26 series + all pages, .prose-legal CSS class, print stylesheet enhanced (@page rules, EUANGELION branding header)
 - **Phase 11: Cleanup** — Removed ~70 lines dead CSS (observe-fade, gentle-rise, stagger-\*, landing-reveal, fade-in-delay), removed dead functions from progress.ts, 0 lint warnings, 160 pages built
+- **Deploy fix** — Added missing Skeleton.tsx, AnimationProvider.tsx, LenisProvider.tsx (created in Phases 0/3 but not staged in initial commit)
 
 ---
 
