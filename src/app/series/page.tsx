@@ -23,8 +23,10 @@ export default function SeriesBrowsePage() {
 
       <header className="mx-auto max-w-7xl px-6 pb-16 pt-12 md:px-[60px] md:pb-24 md:pt-20 lg:px-20">
         <FadeIn>
-          <h1 className="text-display vw-heading-xl mb-8">All Series</h1>
-          <p className="text-serif-italic vw-body-lg text-secondary">
+          <h1 className="text-display vw-heading-xl mb-8 type-display">
+            All Series
+          </h1>
+          <p className="text-serif-italic vw-body-lg text-secondary type-prose type-serif-flow">
             {typographer(
               `${ALL_SERIES_ORDER.length} series. Ancient wisdom for modern wrestling. Pick one that speaks to where you are.`,
             )}
@@ -141,7 +143,7 @@ function SeriesCard({
         <div className="flex flex-1 flex-col p-6 md:p-8">
           <p className="text-label vw-small mb-3 text-gold">{series.title}</p>
 
-          <h2 className="text-serif-italic vw-body-lg mb-3 transition-colors duration-300 group-hover:text-gold">
+          <h2 className="text-serif-italic vw-body-lg mb-3 transition-colors duration-300 group-hover:text-gold type-serif-flow">
             {series.question}
           </h2>
 

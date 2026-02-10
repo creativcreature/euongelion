@@ -13,6 +13,8 @@ interface TextRevealProps {
   className?: string
   /** CSS class on each word span */
   wordClassName?: string
+  /** Inline styles on the container */
+  style?: React.CSSProperties
   /** Additional children after the split text */
   children?: ReactNode
 }
@@ -27,6 +29,7 @@ export default function TextReveal({
   as: Tag = 'h2',
   className = '',
   wordClassName = '',
+  style,
   children,
 }: TextRevealProps) {
   const { containerRef, onReady } = useSplitTextReveal()
@@ -41,6 +44,7 @@ export default function TextReveal({
     <Tag
       ref={containerRef as React.Ref<HTMLHeadingElement>}
       className={className}
+      style={style}
       aria-label={text}
     >
       {words}

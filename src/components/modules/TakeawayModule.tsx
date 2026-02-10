@@ -9,7 +9,7 @@ export default function TakeawayModule({ module }: { module: Module }) {
       <p className="text-label vw-small mb-6 text-gold">
         {module.heading || 'TAKEAWAY'}
       </p>
-      <p className="vw-body leading-relaxed">
+      <p className="vw-body leading-relaxed type-prose">
         {typographer(module.commitment || module.content || '')}
       </p>
 

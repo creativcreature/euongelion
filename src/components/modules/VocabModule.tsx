@@ -1,5 +1,8 @@
+'use client'
+
 import type { Module } from '@/types'
 import { typographer } from '@/lib/typographer'
+import GoldHighlight from '@/components/motion/GoldHighlight'
 
 export default function VocabModule({ module }: { module: Module }) {
   if (!module.word && !module.definition) return null
@@ -22,16 +25,14 @@ export default function VocabModule({ module }: { module: Module }) {
       {/* Scale + Font Pairing — massive word, small definition */}
       <div className="relative">
         <p
-          className="gold-shimmer"
+          className="type-display"
           style={{
-            fontFamily: 'var(--font-family-display)',
             fontSize: 'clamp(3rem, 8vw, 6rem)',
-            fontWeight: 300,
             lineHeight: 1,
             marginBottom: '0.25rem',
           }}
         >
-          {module.word}
+          <GoldHighlight>{module.word}</GoldHighlight>
         </p>
       </div>
       {(module.transliteration || module.pronunciation) && (

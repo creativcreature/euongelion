@@ -536,12 +536,35 @@
     background-color: var(--color-surface-raised);
   }
 
-  /* Gold shimmer (rare decorative — Scripture emphasis, key phrases) */
+  /* Gold shimmer (Scripture emphasis, key phrases — animated sweep) */
+  @keyframes gold-shimmer-sweep {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
   .gold-shimmer {
-    background: linear-gradient(135deg, #c19a6b 0%, #d4af7f 50%, #c19a6b 100%);
+    background: linear-gradient(
+      135deg,
+      #c19a6b 0%,
+      #d4af7f 30%,
+      #e8c992 50%,
+      #d4af7f 70%,
+      #c19a6b 100%
+    );
+    background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: gold-shimmer-sweep 3s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gold-shimmer {
+      animation: none;
+      background-size: 100% 100%;
+    }
   }
 
   /* Gold shimmer as background (for non-text elements) */
@@ -647,6 +670,28 @@
   }
   .btn-hover:active {
     transform: scale(0.98);
+  }
+
+  /* Breathing animation for prayer text */
+  @keyframes breathe {
+    0%,
+    100% {
+      opacity: 0.85;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.01);
+    }
+  }
+  .breathe-prayer {
+    animation: breathe 6s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .breathe-prayer {
+      animation: none;
+      opacity: 1;
+    }
   }
 
   /* Dot pattern background (paper.design inspired) */

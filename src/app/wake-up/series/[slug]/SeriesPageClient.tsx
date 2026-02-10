@@ -55,7 +55,7 @@ export default function SeriesPageClient({
                 <p className="text-label vw-small mb-4 text-gold">
                   {series.title}
                 </p>
-                <h1 className="text-display vw-heading-xl mb-8">
+                <h1 className="text-display vw-heading-xl mb-8 type-display">
                   {typographer(series.question)}
                 </h1>
                 <p className="text-label vw-small text-muted">
@@ -65,12 +65,12 @@ export default function SeriesPageClient({
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <p className="text-serif-italic vw-body-lg mb-8">
+              <p className="text-serif-italic vw-body-lg mb-8 type-prose type-serif-flow">
                 {typographer(series.introduction)}
               </p>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <p className="vw-body text-secondary">
+              <p className="vw-body text-secondary type-prose">
                 {typographer(series.context)}
               </p>
             </FadeIn>

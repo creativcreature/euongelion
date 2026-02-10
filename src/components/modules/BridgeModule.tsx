@@ -14,7 +14,7 @@ export default function BridgeModule({ module }: { module: Module }) {
       {module.ancientTruth && (
         <div className="mb-10">
           <p className="module-sublabel mb-3">ANCIENT TRUTH</p>
-          <p className="vw-body leading-relaxed text-secondary">
+          <p className="vw-body leading-relaxed text-secondary type-prose">
             {typographer(module.ancientTruth)}
           </p>
         </div>
@@ -32,7 +32,7 @@ export default function BridgeModule({ module }: { module: Module }) {
       {module.modernApplication && (
         <div className="mb-10">
           <p className="module-sublabel mb-3">MODERN APPLICATION</p>
-          <p className="vw-body leading-relaxed text-secondary">
+          <p className="vw-body leading-relaxed text-secondary type-prose">
             {typographer(module.modernApplication)}
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function BridgeModule({ module }: { module: Module }) {
       {module.newTestamentEcho && (
         <div>
           <p className="module-sublabel mb-3">NEW TESTAMENT ECHO</p>
-          <p className="vw-body leading-relaxed text-secondary">
+          <p className="vw-body leading-relaxed text-secondary type-prose">
             {typographer(module.newTestamentEcho)}
           </p>
         </div>
@@ -50,7 +50,10 @@ export default function BridgeModule({ module }: { module: Module }) {
       {module.content && !module.ancientTruth && !module.modernApplication && (
         <div className="space-y-6">
           {module.content.split('\n\n').map((paragraph, i) => (
-            <p key={i} className="vw-body leading-relaxed text-secondary">
+            <p
+              key={i}
+              className="vw-body leading-relaxed text-secondary type-prose"
+            >
               {typographer(paragraph)}
             </p>
           ))}

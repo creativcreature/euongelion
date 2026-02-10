@@ -1,10 +1,9 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-// Routes that require Supabase authentication to READ content
-// Users can browse series list and series pages without auth,
-// but must sign in to read actual devotionals
-const AUTH_REQUIRED_ROUTES = ['/wake-up/devotional/']
+// All content is freely accessible — no auth required to read
+// Auth is only needed for saving progress, syncing settings, etc.
+const AUTH_REQUIRED_ROUTES: string[] = []
 
 // Routes that always require auth
 const PROTECTED_ROUTES = ['/settings']

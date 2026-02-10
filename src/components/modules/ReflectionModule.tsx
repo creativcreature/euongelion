@@ -15,7 +15,7 @@ export default function ReflectionModule({ module }: { module: Module }) {
         <h3 className="text-display vw-heading-md mb-8">{module.heading}</h3>
       )}
       <p
-        className="text-serif-italic vw-body-lg leading-relaxed"
+        className="text-serif-italic vw-body-lg leading-relaxed type-prose"
         style={{ maxWidth: '640px' }}
       >
         {typographer(module.prompt || module.content || '')}

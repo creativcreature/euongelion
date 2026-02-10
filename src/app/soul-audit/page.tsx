@@ -90,14 +90,14 @@ export default function SoulAuditPage() {
         <div className="w-full max-w-2xl">
           {/* Line-Level Contrast: sans label above, serif italic question below */}
           <FadeIn y={0}>
-            <p className="text-label vw-small mb-6 text-center text-gold">
+            <p className="text-label vw-small mb-6 text-center text-gold type-caption">
               SOUL AUDIT
             </p>
           </FadeIn>
 
           <FadeIn delay={0.15} y={12}>
             <h1
-              className="text-serif-italic mb-6 text-center"
+              className="text-serif-italic mb-6 text-center type-display"
               style={{
                 fontSize: 'clamp(2rem, 5vw, 4rem)',
                 lineHeight: 1.2,
@@ -108,7 +108,7 @@ export default function SoulAuditPage() {
           </FadeIn>
 
           <FadeIn delay={0.3} y={8}>
-            <p className="vw-body mb-12 text-center text-secondary">
+            <p className="vw-body mb-12 text-center text-secondary type-prose">
               {typographer(
                 'You don\u2019t have to have it figured out. Just start writing.',
               )}

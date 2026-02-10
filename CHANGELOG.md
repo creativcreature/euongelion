@@ -8,8 +8,8 @@ Format: Reverse chronological, grouped by sprint/date.
 ## Current Status
 
 **Target:** Easter 2026 MVP launch
-**Now:** Production Relaunch complete — Phases 0-11. Design system, GSAP animations, AI chat, PWA, a11y, SEO.
-**Next:** Content generation (real images, additional module content), Supabase progress sync, deploy verification
+**Now:** Production Relaunch Phases A-D complete — Infrastructure wired to actual UI. Auth unblocked. Typography craft + motion components live.
+**Next:** Content generation (real images, additional module content), Supabase progress sync
 
 ### What's Built
 
@@ -22,6 +22,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - [x] Sprint 4 — Initial MVP (landing page, Soul Audit, modules, series browse, settings, legal, AI pipeline)
 - [x] Sprint 5 — Real MVP rebuild (26 series, fonts, inline audit, hybrid cinematic reader, navigation, SeriesHero)
 - [x] Production Relaunch Phases 0-11 — Design system consolidation, typography craft, GSAP/Framer Motion animations, Zustand stores, AI research chat, PWA, accessibility, SEO, dead code cleanup
+- [x] Fix What's Broken (Phases A-D) — Removed auth gate on devotionals, wired typography craft classes + motion components into all pages, animated gold shimmer + breathing prayer, TextReveal on homepage + devotional hero
 
 ### What's NOT Built (Post-MVP)
 
@@ -29,6 +30,17 @@ Format: Reverse chronological, grouped by sprint/date.
 - [ ] Real hero images (Gemini pipeline — CSS placeholders in place)
 - [ ] Web Push notifications (VAPID keys needed)
 - [ ] Additional module content (9 new module types built, need content in JSONs)
+
+---
+
+## Fix What's Broken — Wire Infrastructure to UI
+
+### 2026-02-09
+
+- **Phase A: Remove auth gate** — Emptied `AUTH_REQUIRED_ROUTES` in middleware.ts. Devotionals now freely accessible without sign-in. Settings still requires auth.
+- **Phase B: Homepage typography overhaul** — Imported GoldHighlight, DropCap, TextReveal into homepage. EUANGELION wordmark uses TextReveal (word-by-word GSAP reveal). "bread" wrapped in GoldHighlight (animated gold gradient on scroll). Invitation text uses DropCap component. Applied type-caption, type-display, type-data, type-prose, type-serif-flow across all homepage sections.
+- **Phase C: Devotional module animations** — Animated gold-shimmer CSS (3s infinite sweep, reduced-motion safe). Added breathing prayer animation (6s subtle scale pulse). Wired GoldHighlight into VocabModule. Wired DropCap into TeachingModule. Wrapped PrayerModule in FadeIn. Added type-prose to all module body text (Story, Insight, Bridge, Reflection, Takeaway). Increased stagger timing (0.05 → 0.1s, capped at 0.5s).
+- **Phase D: Site-wide polish** — TextReveal on devotional hero (non-image). type-display + type-prose on series browse, individual series, and Soul Audit pages. type-caption on Soul Audit label. type-serif-flow on series introductions and card questions.
 
 ---
 

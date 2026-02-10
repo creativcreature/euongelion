@@ -1,5 +1,8 @@
+'use client'
+
 import type { Module } from '@/types'
 import { typographer } from '@/lib/typographer'
+import DropCap from '@/components/motion/DropCap'
 
 export default function TeachingModule({ module }: { module: Module }) {
   if (!module.content && !module.keyInsight) return null
@@ -20,14 +23,20 @@ export default function TeachingModule({ module }: { module: Module }) {
         </p>
       )}
       <div className="space-y-6">
-        {paragraphs.map((paragraph, i) => (
-          <p
-            key={i}
-            className={`vw-body leading-relaxed text-secondary ${i === 0 ? 'drop-cap' : ''}`}
-          >
-            {typographer(paragraph)}
-          </p>
-        ))}
+        {paragraphs.map((paragraph, i) =>
+          i === 0 ? (
+            <DropCap key={i} className="vw-body leading-relaxed text-secondary">
+              {typographer(paragraph)}
+            </DropCap>
+          ) : (
+            <p
+              key={i}
+              className="vw-body leading-relaxed text-secondary type-prose"
+            >
+              {typographer(paragraph)}
+            </p>
+          ),
+        )}
       </div>
     </div>
   )

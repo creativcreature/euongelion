@@ -6,6 +6,9 @@ import Navigation from '@/components/Navigation'
 import SeriesHero from '@/components/SeriesHero'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
+import GoldHighlight from '@/components/motion/GoldHighlight'
+import DropCap from '@/components/motion/DropCap'
+import TextReveal from '@/components/motion/TextReveal'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
 import { SERIES_DATA, FEATURED_SERIES, ALL_SERIES_ORDER } from '@/data/series'
@@ -139,18 +142,16 @@ export default function Home() {
       {/* Hero — EUANGELION massive + inline Soul Audit */}
       <header className="flex min-h-[calc(100vh-57px)] flex-col items-center justify-center px-6 text-center">
         {/* Massive wordmark */}
-        <FadeIn y={0} duration={0.8}>
-          <h1
-            className="text-masthead mb-4 w-full"
-            style={{
-              fontSize: 'clamp(2.5rem, 10vw, 8rem)',
-              lineHeight: 1,
-              letterSpacing: '0.15em',
-            }}
-          >
-            EUANGELION
-          </h1>
-        </FadeIn>
+        <TextReveal
+          text="EUANGELION"
+          as="h1"
+          className="text-masthead type-sans-display mb-4 w-full"
+          style={{
+            fontSize: 'clamp(2.5rem, 10vw, 8rem)',
+            lineHeight: 1,
+            letterSpacing: '0.15em',
+          }}
+        />
 
         {/* Meaning */}
         <FadeIn delay={0.2} y={0}>
@@ -171,18 +172,18 @@ export default function Home() {
             }}
           >
             <span
-              className="text-label"
+              className="text-label type-caption"
               style={{
                 fontSize: 'clamp(0.75rem, 1.5vw, 1rem)',
-                letterSpacing: '0.12em',
                 display: 'block',
                 marginBottom: '0.25em',
               }}
             >
               DAILY
             </span>
-            <span className="text-serif-italic">
-              {typographer('bread for the cluttered, hungry soul.')}
+            <span className="text-serif-italic type-serif-flow type-prose">
+              <GoldHighlight>bread</GoldHighlight>
+              {typographer(' for the cluttered, hungry soul.')}
             </span>
           </p>
         </FadeIn>
@@ -357,7 +358,7 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <FadeIn>
-            <h2 className="text-label vw-small mb-16 text-center text-gold">
+            <h2 className="text-label vw-small mb-16 text-center text-gold type-caption">
               HOW IT WORKS
             </h2>
           </FadeIn>
@@ -387,13 +388,8 @@ export default function Home() {
                 </svg>
               </div>
               <div
-                className="mb-4 text-gold"
-                style={{
-                  fontFamily: 'var(--font-family-display)',
-                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 300,
-                  lineHeight: 1,
-                }}
+                className="mb-4 text-gold type-display type-data"
+                style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
               >
                 01
               </div>
@@ -430,13 +426,8 @@ export default function Home() {
                 </svg>
               </div>
               <div
-                className="mb-4 text-gold"
-                style={{
-                  fontFamily: 'var(--font-family-display)',
-                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 300,
-                  lineHeight: 1,
-                }}
+                className="mb-4 text-gold type-display type-data"
+                style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
               >
                 02
               </div>
@@ -466,13 +457,8 @@ export default function Home() {
                 </svg>
               </div>
               <div
-                className="mb-4 text-gold"
-                style={{
-                  fontFamily: 'var(--font-family-display)',
-                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 300,
-                  lineHeight: 1,
-                }}
+                className="mb-4 text-gold type-display type-data"
+                style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
               >
                 03
               </div>
@@ -550,15 +536,13 @@ export default function Home() {
                 {typographer('Something brought you here.')}
               </h2>
             </FadeIn>
+            <DropCap className="vw-body mb-6 leading-relaxed text-secondary">
+              {typographer(
+                'Maybe it\u2019s been a while since you thought about God. Maybe you think about Him all the time and feel nothing. Maybe you\u2019re tired.',
+              )}
+            </DropCap>
             <FadeIn delay={0.1}>
-              <p className="vw-body mb-6 leading-relaxed text-secondary">
-                {typographer(
-                  'Maybe it\u2019s been a while since you thought about God. Maybe you think about Him all the time and feel nothing. Maybe you\u2019re tired.',
-                )}
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <p className="vw-body leading-relaxed text-secondary">
+              <p className="vw-body leading-relaxed text-secondary type-prose">
                 {typographer('Whatever it is, you\u2019re welcome here.')}
               </p>
             </FadeIn>
@@ -575,12 +559,12 @@ export default function Home() {
           <div className="grid gap-16 md:grid-cols-12">
             <div className="md:col-span-5">
               <FadeIn>
-                <p className="text-label vw-small mb-6 text-gold">
+                <p className="text-label vw-small mb-6 text-gold type-caption">
                   WHAT THIS IS
                 </p>
               </FadeIn>
               <FadeIn delay={0.1}>
-                <p className="text-serif-italic vw-body-lg">
+                <p className="text-serif-italic vw-body-lg type-serif-flow type-prose">
                   {typographer(
                     'Honest content for people who believe, used to believe, or want to believe but have questions.',
                   )}
@@ -590,14 +574,14 @@ export default function Home() {
             <div className="md:col-span-6 md:col-start-7">
               <div className="space-y-8">
                 <FadeIn delay={0.15}>
-                  <p className="vw-body leading-relaxed text-secondary">
+                  <p className="vw-body leading-relaxed text-secondary type-prose">
                     {typographer(
                       'Each series is a multi-day journey. One reading per day. Designed to be short enough for busy lives and deep enough to be worth your time.',
                     )}
                   </p>
                 </FadeIn>
                 <FadeIn delay={0.25}>
-                  <p className="vw-body leading-relaxed text-secondary">
+                  <p className="vw-body leading-relaxed text-secondary type-prose">
                     {typographer(
                       'We don\u2019t have all the answers. But the questions are worth asking, and you shouldn\u2019t have to ask them alone.',
                     )}
@@ -618,7 +602,7 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <FadeIn>
-            <h2 className="text-label vw-small mb-12 text-center text-gold">
+            <h2 className="text-label vw-small mb-12 text-center text-gold type-caption">
               FEATURED SERIES
             </h2>
           </FadeIn>
@@ -679,7 +663,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="text-center">
             <FadeIn>
-              <p className="text-label vw-small leading-relaxed text-muted">
+              <p className="text-label vw-small leading-relaxed text-muted type-caption">
                 SOMETHING TO HOLD ONTO.
               </p>
             </FadeIn>

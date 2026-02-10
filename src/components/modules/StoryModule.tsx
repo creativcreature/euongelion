@@ -13,13 +13,16 @@ export default function StoryModule({ module }: { module: Module }) {
       )}
       <div className="space-y-6">
         {paragraphs.map((paragraph, i) => (
-          <p key={i} className="text-serif-italic vw-body-lg leading-relaxed">
+          <p
+            key={i}
+            className="text-serif-italic vw-body-lg leading-relaxed type-prose"
+          >
             {typographer(paragraph)}
           </p>
         ))}
       </div>
       {module.connectionToTheme && (
-        <p className="mt-10 vw-body leading-relaxed text-secondary">
+        <p className="mt-10 vw-body leading-relaxed text-secondary type-prose">
           {typographer(module.connectionToTheme)}
         </p>
       )}

@@ -17,6 +17,7 @@ import { isDayUnlocked } from '@/lib/day-gating'
 import { useProgressStore } from '@/stores/progressStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import DevotionalChat from '@/components/DevotionalChat'
+import TextReveal from '@/components/motion/TextReveal'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import { getDevotionalImage } from '@/data/devotional-images'
 import { SERIES_DATA } from '@/data/series'
@@ -186,9 +187,11 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                 </p>
               )}
             </div>
-            <h1 className="text-display vw-heading-xl mb-8">
-              {typographer(devotional.title)}
-            </h1>
+            <TextReveal
+              text={devotional.title}
+              as="h1"
+              className="text-display vw-heading-xl mb-8 type-display"
+            />
             {devotional.teaser && (
               <p
                 className="text-serif-italic vw-body-lg text-secondary"
@@ -230,7 +233,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
               <StaggerGrid selector="> *">
                 {modules
                   ? modules.map((mod, index) => (
-                      <FadeIn key={index} delay={index * 0.05}>
+                      <FadeIn key={index} delay={Math.min(index * 0.1, 0.5)}>
                         <ModuleRenderer module={mod} />
                       </FadeIn>
                     ))
@@ -367,7 +370,7 @@ function PanelComponent({ panel }: { panel: Panel }) {
             return (
               <p
                 key={i}
-                className={`mb-6 leading-relaxed ${
+                className={`mb-6 leading-relaxed type-prose ${
                   isScripture ? 'scripture-block' : 'text-secondary'
                 }`}
                 style={{ whiteSpace: 'pre-line', maxWidth: '680px' }}
