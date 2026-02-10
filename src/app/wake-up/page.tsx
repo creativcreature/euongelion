@@ -1,53 +1,44 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect } from 'react'
 import Navigation from '@/components/Navigation'
-import { DEVOTIONAL_SERIES } from '@/data/series'
+import FadeIn from '@/components/motion/FadeIn'
+import StaggerGrid from '@/components/motion/StaggerGrid'
+import { typographer } from '@/lib/typographer'
+import { DEVOTIONAL_SERIES, WAKEUP_SERIES_ORDER } from '@/data/series'
 
 export default function WakeUpPage() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('gentle-rise')
-          }
-        })
-      },
-      { threshold: 0.15 },
-    )
-
-    const elements = document.querySelectorAll('.observe-fade')
-    elements.forEach((el) => observer.observe(el))
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <div className="bg-page min-h-screen">
       <Navigation />
 
       {/* Full-viewport Hero */}
       <header className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
-        <div className="observe-fade">
+        <FadeIn y={0} duration={0.8}>
           <h1
             className="text-display mb-6"
             style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 1 }}
           >
             WAKE UP
           </h1>
+        </FadeIn>
+        <FadeIn delay={0.2} y={0}>
           <p className="text-label vw-small mb-8 text-gold">
-            7 SERIES &middot; 35 DEVOTIONALS &middot; 5 DAYS EACH
+            {WAKEUP_SERIES_ORDER.length} SERIES &middot;{' '}
+            {WAKEUP_SERIES_ORDER.length * 5} DEVOTIONALS &middot; 5 DAYS EACH
           </p>
+        </FadeIn>
+        <FadeIn delay={0.4} y={12}>
           <p
             className="text-serif-italic vw-body-lg mx-auto mb-16 text-secondary"
             style={{ maxWidth: '50ch' }}
           >
-            In a world drowning in noise, Wake Up offers something rare:
-            clarity, rest, and truth. Seven questions for the searching. Five
-            days per question. Ancient structure. Modern urgency.
+            {typographer(
+              'In a world drowning in noise, Wake Up offers something rare: clarity, rest, and truth. Seven questions for the searching. Five days per question. Ancient structure. Modern urgency.',
+            )}
           </p>
+        </FadeIn>
+        <FadeIn delay={0.6} y={16}>
           <Link
             href="/wake-up/series/identity"
             className="inline-block bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
@@ -57,7 +48,7 @@ export default function WakeUpPage() {
           >
             Start with Question 01
           </Link>
-        </div>
+        </FadeIn>
       </header>
 
       {/* Problem Statement — full-width surface */}
@@ -67,16 +58,20 @@ export default function WakeUpPage() {
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="observe-fade vw-body mb-6 text-secondary">
-              We live in apocalyptic times. Political violence. Economic
-              collapse. 43% more anxious than last year. The ground beneath us
-              is shaking.
-            </p>
-            <p className="observe-fade text-serif-italic vw-body-lg">
-              The seven questions below aren&apos;t easy. But they&apos;re
-              honest. Each one invites you into a 5-day journey to seek first
-              the kingdom—and discover that everything else gets added.
-            </p>
+            <FadeIn>
+              <p className="vw-body mb-6 text-secondary">
+                {typographer(
+                  'We live in apocalyptic times. Political violence. Economic collapse. 43% more anxious than last year. The ground beneath us is shaking.',
+                )}
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <p className="text-serif-italic vw-body-lg">
+                {typographer(
+                  'The seven questions below aren\u2019t easy. But they\u2019re honest. Each one invites you into a 5-day journey to seek first the kingdom\u2014and discover that everything else gets added.',
+                )}
+              </p>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -87,63 +82,70 @@ export default function WakeUpPage() {
         style={{ borderTop: '1px solid var(--color-border)' }}
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <h2 className="observe-fade text-label vw-small mb-16 text-center text-gold">
-            HOW IT WORKS
-          </h2>
-          <div className="mx-auto grid max-w-4xl gap-12 text-center md:grid-cols-3 md:gap-16">
-            <div className="observe-fade">
+          <FadeIn>
+            <h2 className="text-label vw-small mb-16 text-center text-gold">
+              HOW IT WORKS
+            </h2>
+          </FadeIn>
+          <StaggerGrid className="mx-auto grid max-w-4xl gap-12 text-center md:grid-cols-3 md:gap-16">
+            <div>
               <div
                 className="mb-4 text-gold"
                 style={{
                   fontFamily: 'var(--font-family-display)',
                   fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 700,
+                  fontWeight: 300,
                   lineHeight: 1,
                 }}
               >
                 01
               </div>
               <p className="vw-body text-secondary">
-                Pick a question that speaks to where you are.
+                {typographer('Pick a question that speaks to where you are.')}
               </p>
             </div>
-            <div className="observe-fade stagger-1">
+            <div>
               <div
                 className="mb-4 text-gold"
                 style={{
                   fontFamily: 'var(--font-family-display)',
                   fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 700,
+                  fontWeight: 300,
                   lineHeight: 1,
                 }}
               >
                 02
               </div>
               <p className="vw-body text-secondary">
-                Read one devotional per day for 5 days.
+                {typographer('Read one devotional per day for 5 days.')}
               </p>
             </div>
-            <div className="observe-fade stagger-2">
+            <div>
               <div
                 className="mb-4 text-gold"
                 style={{
                   fontFamily: 'var(--font-family-display)',
                   fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 700,
+                  fontWeight: 300,
                   lineHeight: 1,
                 }}
               >
                 03
               </div>
               <p className="vw-body text-secondary">
-                Reflect, journal, and let God reorder your heart.
+                {typographer(
+                  'Reflect, journal, and let God reorder your heart.',
+                )}
               </p>
             </div>
-          </div>
-          <p className="observe-fade vw-body mt-16 text-center text-tertiary">
-            Each series follows a chiastic arc—building toward a revelation,
-            then reflecting back. Ancient structure. Modern questions.
-          </p>
+          </StaggerGrid>
+          <FadeIn>
+            <p className="vw-body mt-16 text-center text-tertiary">
+              {typographer(
+                'Each series follows a chiastic arc\u2014building toward a revelation, then reflecting back. Ancient structure. Modern questions.',
+              )}
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -154,16 +156,18 @@ export default function WakeUpPage() {
         style={{ borderTop: '1px solid var(--color-border)' }}
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <h2 className="observe-fade text-label vw-small mb-16 text-center text-gold md:text-left">
-            SEVEN QUESTIONS FOR THE SEARCHING
-          </h2>
+          <FadeIn>
+            <h2 className="text-label vw-small mb-16 text-center text-gold md:text-left">
+              SEVEN QUESTIONS FOR THE SEARCHING
+            </h2>
+          </FadeIn>
 
-          <div>
-            {DEVOTIONAL_SERIES.map((series, index) => (
+          <StaggerGrid>
+            {DEVOTIONAL_SERIES.map((series) => (
               <Link
                 key={series.slug}
                 href={`/wake-up/series/${series.slug}`}
-                className={`observe-fade block ${index > 0 ? `stagger-${Math.min(index, 6)}` : ''}`}
+                className="block"
               >
                 <div
                   className={`group py-10 transition-all duration-300 md:py-14 ${series.isCenter ? 'bg-surface-raised md:-mx-8 md:px-8' : ''}`}
@@ -203,7 +207,7 @@ export default function WakeUpPage() {
                 </div>
               </Link>
             ))}
-          </div>
+          </StaggerGrid>
         </div>
       </main>
 
@@ -214,7 +218,7 @@ export default function WakeUpPage() {
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="text-center">
-            <p className="observe-fade text-label vw-small leading-relaxed text-muted">
+            <p className="text-label vw-small leading-relaxed text-muted">
               SOMETHING TO HOLD ONTO.
             </p>
             <p className="vw-small mt-8 text-muted">&copy; 2026 EUANGELION</p>

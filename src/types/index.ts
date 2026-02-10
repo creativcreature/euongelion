@@ -48,7 +48,7 @@ export interface DayMeta {
   slug: string
 }
 
-// Module types (12 MVP module types)
+// Module types (21 total — 12 MVP + 9 additional)
 export type ModuleType =
   | 'scripture'
   | 'vocab'
@@ -62,6 +62,15 @@ export type ModuleType =
   | 'comprehension'
   | 'profile'
   | 'resource'
+  | 'chronology'
+  | 'geography'
+  | 'visual'
+  | 'art'
+  | 'voice'
+  | 'interactive'
+  | 'match'
+  | 'order'
+  | 'reveal'
 
 export interface Module {
   type: ModuleType
@@ -167,6 +176,78 @@ export interface Module {
     meaning: string
   }>
   weeklyChallenge?: string
+
+  // Chronology
+  events?: Array<{
+    date?: string
+    description: string
+    significance?: string
+  }>
+
+  // Geography
+  location?: string
+  region?: string
+  significance?: string
+  modernDay?: string
+
+  // Visual
+  imageUrl?: string
+  imageAlt?: string
+  imageCaption?: string
+  meditationPrompt?: string
+
+  // Art
+  artwork?: {
+    url?: string
+    title?: string
+    artist?: string
+    year?: string
+    description?: string
+  }
+  reflectionPrompt?: string
+
+  // Voice
+  instruction?: string
+  duration?: string
+
+  // Interactive
+  steps?: Array<{
+    title?: string
+    description: string
+  }>
+
+  // Match
+  pairs?: Array<{
+    text: string
+    matchId: number
+  }>
+
+  // Order
+  orderItems?: Array<{
+    text: string
+    correctPosition: number
+  }>
+
+  // Reveal
+  reveals?: Array<{
+    label?: string
+    text: string
+  }>
+  summary?: string
+}
+
+// Chat types
+export type ChatColorLabel = 'gold' | 'burgundy' | 'olive' | 'shalom' | 'none'
+
+export interface ChatMessage {
+  id: string
+  role: 'user' | 'assistant'
+  content: string
+  devotionalSlug?: string
+  highlightedText?: string
+  favorited: boolean
+  colorLabel: ChatColorLabel
+  createdAt: string
 }
 
 // Progress tracking

@@ -1,11 +1,13 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-// Routes that require authentication (Supabase auth, not just session)
-const PROTECTED_ROUTES = ['/settings']
+// Routes that require Supabase authentication to READ content
+// Users can browse series list and series pages without auth,
+// but must sign in to read actual devotionals
+const AUTH_REQUIRED_ROUTES = ['/wake-up/devotional/']
 
-// Routes that require at least an anonymous session
-const SESSION_ROUTES = ['/daily-bread']
+// Routes that always require auth
+const PROTECTED_ROUTES = ['/settings']
 
 export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
@@ -42,24 +44,16 @@ export async function middleware(request: NextRequest) {
 
   const pathname = request.nextUrl.pathname
 
-  // Check protected routes (require Supabase auth)
-  if (PROTECTED_ROUTES.some((route) => pathname.startsWith(route))) {
-    if (!user) {
-      const url = request.nextUrl.clone()
-      url.pathname = '/'
-      url.searchParams.set('redirect', pathname)
-      return NextResponse.redirect(url)
-    }
-  }
+  // Check auth-required routes (devotional reading)
+  const needsAuth =
+    AUTH_REQUIRED_ROUTES.some((route) => pathname.startsWith(route)) ||
+    PROTECTED_ROUTES.some((route) => pathname.startsWith(route))
 
-  // Check session routes (require at least anonymous session cookie)
-  if (SESSION_ROUTES.some((route) => pathname.startsWith(route))) {
-    const sessionToken = request.cookies.get('euongelion_session')?.value
-    if (!sessionToken) {
-      const url = request.nextUrl.clone()
-      url.pathname = '/'
-      return NextResponse.redirect(url)
-    }
+  if (needsAuth && !user) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/auth/sign-in'
+    url.searchParams.set('redirect', pathname)
+    return NextResponse.redirect(url)
   }
 
   return supabaseResponse

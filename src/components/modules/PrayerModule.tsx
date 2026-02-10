@@ -1,4 +1,5 @@
 import type { Module } from '@/types'
+import { typographer } from '@/lib/typographer'
 
 export default function PrayerModule({ module }: { module: Module }) {
   const text = module.prayerText || module.content || ''
@@ -7,8 +8,8 @@ export default function PrayerModule({ module }: { module: Module }) {
   const paragraphs = text ? text.split('\n\n') : []
 
   return (
-    <div className="my-16 md:my-24">
-      <div className="mb-6 flex items-baseline gap-3">
+    <div className="my-16 text-center md:my-24">
+      <div className="mb-6 flex items-baseline justify-center gap-3">
         <p className="text-label vw-small text-gold">
           {module.heading || 'PRAYER'}
         </p>
@@ -21,10 +22,14 @@ export default function PrayerModule({ module }: { module: Module }) {
           Posture: {module.posture}
         </p>
       )}
-      <div className="space-y-6">
+      <div className="mx-auto space-y-6" style={{ maxWidth: '540px' }}>
         {paragraphs.map((paragraph, i) => (
-          <p key={i} className="text-serif-italic vw-body-lg leading-relaxed">
-            {paragraph}
+          <p
+            key={i}
+            className="text-serif-italic vw-body-lg leading-relaxed"
+            style={{ letterSpacing: '0.01em' }}
+          >
+            {typographer(paragraph)}
           </p>
         ))}
       </div>
@@ -32,7 +37,7 @@ export default function PrayerModule({ module }: { module: Module }) {
         <div className="mt-10">
           <p className="module-sublabel mb-3">BREATH PRAYER</p>
           <p className="text-serif-italic vw-body-lg text-gold">
-            {module.breathPrayer}
+            {typographer(module.breathPrayer)}
           </p>
         </div>
       )}

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import type { Module } from '@/types'
+import { typographer } from '@/lib/typographer'
 
 export default function ComprehensionModule({ module }: { module: Module }) {
   const [selected, setSelected] = useState<number | null>(null)
@@ -23,7 +24,9 @@ export default function ComprehensionModule({ module }: { module: Module }) {
 
       {isQuizMode && (
         <>
-          <p className="vw-body mb-8 leading-relaxed">{module.question}</p>
+          <p className="vw-body mb-8 leading-relaxed">
+            {typographer(module.question || '')}
+          </p>
           {module.options && (
             <div className="mb-8 space-y-3">
               {module.options.map((option, i) => (
@@ -53,14 +56,14 @@ export default function ComprehensionModule({ module }: { module: Module }) {
                         : 'transparent',
                   }}
                 >
-                  {option}
+                  {typographer(option)}
                 </button>
               ))}
             </div>
           )}
           {revealed && module.explanation && (
             <p className="vw-body leading-relaxed text-secondary">
-              {module.explanation}
+              {typographer(module.explanation)}
             </p>
           )}
         </>
@@ -77,7 +80,7 @@ export default function ComprehensionModule({ module }: { module: Module }) {
                     key={i}
                     className="text-serif-italic vw-body-lg leading-relaxed"
                   >
-                    {q}
+                    {typographer(q)}
                   </li>
                 ))}
               </ul>
@@ -95,7 +98,7 @@ export default function ComprehensionModule({ module }: { module: Module }) {
                       key={i}
                       className="vw-body leading-relaxed text-secondary"
                     >
-                      {q}
+                      {typographer(q)}
                     </li>
                   ))}
                 </ul>

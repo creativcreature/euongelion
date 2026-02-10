@@ -1,9 +1,11 @@
 'use client'
 
-import { useEffect } from 'react'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import SeriesHero from '@/components/SeriesHero'
+import FadeIn from '@/components/motion/FadeIn'
+import StaggerGrid from '@/components/motion/StaggerGrid'
+import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
 import {
   SERIES_DATA,
@@ -15,36 +17,19 @@ import {
 export default function SeriesBrowsePage() {
   const { getSeriesProgress } = useProgress()
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('gentle-rise')
-          }
-        })
-      },
-      { threshold: 0.15 },
-    )
-
-    const elements = document.querySelectorAll('.observe-fade')
-    elements.forEach((el) => observer.observe(el))
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <div className="min-h-screen bg-page">
       <Navigation />
 
       <header className="mx-auto max-w-7xl px-6 pb-16 pt-12 md:px-[60px] md:pb-24 md:pt-20 lg:px-20">
-        <div className="observe-fade">
+        <FadeIn>
           <h1 className="text-display vw-heading-xl mb-8">All Series</h1>
           <p className="text-serif-italic vw-body-lg text-secondary">
-            {ALL_SERIES_ORDER.length} series. Ancient wisdom for modern
-            wrestling. Pick one that speaks to where you are.
+            {typographer(
+              `${ALL_SERIES_ORDER.length} series. Ancient wisdom for modern wrestling. Pick one that speaks to where you are.`,
+            )}
           </p>
-        </div>
+        </FadeIn>
       </header>
 
       <main
@@ -53,59 +38,67 @@ export default function SeriesBrowsePage() {
       >
         {/* Wake-Up 7 */}
         <section className="mb-20">
-          <div className="observe-fade mb-8">
-            <p className="text-label vw-small text-gold">WAKE-UP MAGAZINE</p>
-            <p className="vw-small mt-2 text-muted">
-              Seven questions for the searching. Five days each.
-            </p>
-          </div>
+          <FadeIn>
+            <div className="mb-8">
+              <p className="text-label vw-small text-gold">WAKE-UP MAGAZINE</p>
+              <p className="vw-small mt-2 text-muted">
+                {typographer(
+                  'Seven questions for the searching. Five days each.',
+                )}
+              </p>
+            </div>
+          </FadeIn>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {WAKEUP_SERIES_ORDER.map((slug, index) => (
+          <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {WAKEUP_SERIES_ORDER.map((slug) => (
               <SeriesCard
                 key={slug}
                 slug={slug}
-                index={index}
                 progress={getSeriesProgress(slug)}
               />
             ))}
-          </div>
+          </StaggerGrid>
         </section>
 
         {/* Substack 19 */}
         <section>
-          <div className="observe-fade mb-8">
-            <p className="text-label vw-small text-gold">DEEP DIVES</p>
-            <p className="vw-small mt-2 text-muted">
-              Topical series from our archive. Dig into specific questions.
-            </p>
-          </div>
+          <FadeIn>
+            <div className="mb-8">
+              <p className="text-label vw-small text-gold">DEEP DIVES</p>
+              <p className="vw-small mt-2 text-muted">
+                {typographer(
+                  'Topical series from our archive. Dig into specific questions.',
+                )}
+              </p>
+            </div>
+          </FadeIn>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {SUBSTACK_SERIES_ORDER.map((slug, index) => (
+          <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {SUBSTACK_SERIES_ORDER.map((slug) => (
               <SeriesCard
                 key={slug}
                 slug={slug}
-                index={index}
                 progress={getSeriesProgress(slug)}
               />
             ))}
-          </div>
+          </StaggerGrid>
         </section>
 
         {/* Soul Audit CTA */}
-        <div className="observe-fade mt-16 text-center md:mt-24">
-          <p className="vw-body mb-6 text-secondary">
-            Not sure where to start?
-          </p>
-          <Link
-            href="/"
-            className="inline-block bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-            style={{ transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' }}
-          >
-            Take the Soul Audit
-          </Link>
-        </div>
+        <FadeIn>
+          <div className="mt-16 text-center md:mt-24">
+            <p className="vw-body mb-6 text-secondary">
+              {typographer('Not sure where to start?')}
+            </p>
+            <Link
+              href="/"
+              className="inline-block bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              style={{ transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' }}
+            >
+              Take the Soul Audit
+            </Link>
+          </div>
+        </FadeIn>
       </main>
 
       <footer
@@ -127,20 +120,15 @@ export default function SeriesBrowsePage() {
 
 function SeriesCard({
   slug,
-  index,
   progress,
 }: {
   slug: string
-  index: number
   progress: { completed: number; total: number; percentage: number }
 }) {
   const series = SERIES_DATA[slug]
 
   return (
-    <Link
-      href={`/wake-up/series/${slug}`}
-      className={`observe-fade group block ${index > 0 ? `stagger-${Math.min(index, 6)}` : ''}`}
-    >
+    <Link href={`/wake-up/series/${slug}`} className="group block">
       <div
         className="flex h-full flex-col overflow-hidden transition-all duration-300"
         style={{

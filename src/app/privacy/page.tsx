@@ -9,7 +9,15 @@ export const metadata = {
 
 export default async function PrivacyPage() {
   const filePath = path.join(process.cwd(), 'content/legal/privacy-policy.md')
-  const content = await fs.readFile(filePath, 'utf-8')
+  const [content, stat] = await Promise.all([
+    fs.readFile(filePath, 'utf-8'),
+    fs.stat(filePath),
+  ])
+  const lastUpdated = stat.mtime.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
 
   // Simple markdown to HTML: headings, paragraphs, lists, bold
   const html = markdownToHtml(content)
@@ -22,6 +30,7 @@ export default async function PrivacyPage() {
         id="main-content"
         className="mx-auto max-w-3xl px-6 pb-32 pt-12 md:px-[60px] md:pb-48 md:pt-20"
       >
+        <p className="vw-small mb-8 text-muted">Last updated: {lastUpdated}</p>
         <div
           className="prose-legal"
           dangerouslySetInnerHTML={{ __html: html }}

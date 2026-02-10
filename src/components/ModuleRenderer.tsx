@@ -11,6 +11,15 @@ import BridgeModule from './modules/BridgeModule'
 import ComprehensionModule from './modules/ComprehensionModule'
 import ProfileModule from './modules/ProfileModule'
 import ResourceModule from './modules/ResourceModule'
+import ChronologyModule from './modules/ChronologyModule'
+import GeographyModule from './modules/GeographyModule'
+import VisualModule from './modules/VisualModule'
+import ArtModule from './modules/ArtModule'
+import VoiceModule from './modules/VoiceModule'
+import InteractiveModule from './modules/InteractiveModule'
+import MatchModule from './modules/MatchModule'
+import OrderModule from './modules/OrderModule'
+import RevealModule from './modules/RevealModule'
 
 /**
  * Normalizes a module from either flat or nested Substack format.
@@ -125,6 +134,24 @@ export default function ModuleRenderer({
       return <ProfileModule module={normalized} />
     case 'resource':
       return <ResourceModule module={normalized} />
+    case 'chronology':
+      return <ChronologyModule module={normalized} />
+    case 'geography':
+      return <GeographyModule module={normalized} />
+    case 'visual':
+      return <VisualModule module={normalized} />
+    case 'art':
+      return <ArtModule module={normalized} />
+    case 'voice':
+      return <VoiceModule module={normalized} />
+    case 'interactive':
+      return <InteractiveModule module={normalized} />
+    case 'match':
+      return <MatchModule module={normalized} />
+    case 'order':
+      return <OrderModule module={normalized} />
+    case 'reveal':
+      return <RevealModule module={normalized} />
     default:
       return null
   }

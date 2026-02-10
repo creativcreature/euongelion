@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import '../../design-system/typography-craft.css';
 
 @theme {
   /* ============================================
@@ -120,12 +121,55 @@
   --duration-slower: 600ms;
 
   /* ============================================
-     Z-INDEX TOKENS
+     Z-INDEX TOKENS (Full Scale)
      ============================================ */
+  --z-negative: -1;
+  --z-base: 0;
+  --z-raised: 1;
+  --z-dropdown: 10;
   --z-sticky: 100;
   --z-fixed: 200;
   --z-overlay: 300;
   --z-modal: 400;
+  --z-popover: 500;
+  --z-tooltip: 600;
+  --z-toast: 700;
+  --z-max: 9999;
+
+  /* ============================================
+     EXTENDED SHADOWS
+     ============================================ */
+  --shadow-xs: 0 1px 2px rgba(26, 22, 18, 0.1);
+  --shadow-2xl: 0 24px 48px rgba(26, 22, 18, 0.25);
+  --shadow-inner: inset 0 2px 4px rgba(26, 22, 18, 0.1);
+  --shadow-glow: 0 0 20px rgba(193, 154, 107, 0.3);
+  --shadow-vignette: inset 0 0 100px rgba(26, 22, 18, 0.5);
+
+  /* ============================================
+     EXTENDED TRANSITIONS
+     ============================================ */
+  --duration-instant: 0ms;
+  --duration-slowest: 800ms;
+  --ease-linear: linear;
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* ============================================
+     ACCENT COLOR VARIANTS (Dark-mode lifted)
+     ============================================ */
+  --color-burgundy-light: #b85555;
+  --color-olive-light: #9d9d7a;
+  --color-shalom-light: #7a9aab;
+
+  /* ============================================
+     BASELINE GRID (Typography Craft)
+     ============================================ */
+  --baseline: 8px;
+
+  /* ============================================
+     COMPONENT TOKENS
+     ============================================ */
+  --nav-height: 64px;
+  --nav-height-mobile: 56px;
 }
 
 /* ============================================
@@ -201,7 +245,7 @@
   .skip-to-content {
     position: absolute;
     left: -9999px;
-    z-index: 9999;
+    z-index: var(--z-max);
     padding: 1rem 2rem;
     background-color: var(--color-gold);
     color: var(--color-tehom);
@@ -237,6 +281,34 @@
   img[alt*='Logo'] {
     filter: none !important;
     mix-blend-mode: normal !important;
+  }
+
+  /* High contrast mode */
+  @media (prefers-contrast: high) {
+    .dark {
+      --color-text-secondary: rgba(247, 243, 237, 0.85);
+      --color-text-tertiary: rgba(247, 243, 237, 0.75);
+      --color-border: rgba(247, 243, 237, 0.3);
+      --color-border-strong: rgba(247, 243, 237, 0.5);
+    }
+
+    :root:not(.dark) {
+      --color-text-secondary: rgba(26, 22, 18, 0.85);
+      --color-text-tertiary: rgba(26, 22, 18, 0.75);
+      --color-border: rgba(26, 22, 18, 0.3);
+      --color-border-strong: rgba(26, 22, 18, 0.5);
+    }
+  }
+
+  /* Forced colors mode (Windows High Contrast) */
+  @media (forced-colors: active) {
+    :root {
+      --color-bg: Canvas;
+      --color-fg: CanvasText;
+      --color-text-primary: CanvasText;
+      --color-gold: LinkText;
+      --color-border: CanvasText;
+    }
   }
 }
 
@@ -322,70 +394,7 @@
     letter-spacing: -0.02em;
   }
 
-  /* ============================================
-     SCROLL ANIMATION: "Gentle Rise"
-     ============================================ */
-  .observe-fade {
-    opacity: 0;
-  }
-
-  .gentle-rise {
-    opacity: 0;
-    transform: translateY(24px);
-    animation: gentleRise 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  .fade-in {
-    opacity: 0;
-    animation: fadeIn 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  /* Stagger delays: 60ms between items */
-  .stagger-1 {
-    animation-delay: 60ms;
-  }
-  .stagger-2 {
-    animation-delay: 120ms;
-  }
-  .stagger-3 {
-    animation-delay: 180ms;
-  }
-  .stagger-4 {
-    animation-delay: 240ms;
-  }
-  .stagger-5 {
-    animation-delay: 300ms;
-  }
-  .stagger-6 {
-    animation-delay: 360ms;
-  }
-
-  /* Legacy delay classes (for backward compat) */
-  .fade-in-delay-1 {
-    animation-delay: 60ms;
-  }
-  .fade-in-delay-2 {
-    animation-delay: 120ms;
-  }
-  .fade-in-delay-3 {
-    animation-delay: 180ms;
-  }
-  .fade-in-delay-4 {
-    animation-delay: 240ms;
-  }
-
-  @keyframes gentleRise {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
+  /* (Old observe-fade / gentle-rise / stagger classes removed — replaced by GSAP FadeIn + StaggerGrid components) */
 
   /* ============================================
      SCROLL PROGRESS
@@ -527,9 +536,117 @@
     background-color: var(--color-surface-raised);
   }
 
-  /* Gold shimmer (rare decorative) */
+  /* Gold shimmer (rare decorative — Scripture emphasis, key phrases) */
   .gold-shimmer {
     background: linear-gradient(135deg, #c19a6b 0%, #d4af7f 50%, #c19a6b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Gold shimmer as background (for non-text elements) */
+  .gold-shimmer-bg {
+    background: linear-gradient(135deg, #c19a6b 0%, #d4af7f 50%, #c19a6b 100%);
+  }
+
+  /* ============================================
+     ACCENT COLOR UTILITIES (Pathway colors)
+     ============================================ */
+  .accent-burgundy {
+    color: var(--color-burgundy-light);
+  }
+  .accent-olive {
+    color: var(--color-olive-light);
+  }
+  .accent-shalom {
+    color: var(--color-shalom-light);
+  }
+  .bg-accent-burgundy {
+    background-color: var(--color-burgundy);
+  }
+  .bg-accent-olive {
+    background-color: var(--color-olive);
+  }
+  .bg-accent-shalom {
+    background-color: var(--color-shalom);
+  }
+
+  :root:not(.dark) .accent-burgundy {
+    color: var(--color-burgundy);
+  }
+  :root:not(.dark) .accent-olive {
+    color: var(--color-olive);
+  }
+  :root:not(.dark) .accent-shalom {
+    color: var(--color-shalom);
+  }
+
+  /* ============================================
+     SEMANTIC TRANSITION UTILITIES
+     ============================================ */
+  .transition-theme {
+    transition:
+      color var(--duration-base) var(--ease-out),
+      background-color var(--duration-base) var(--ease-out),
+      border-color var(--duration-base) var(--ease-out);
+  }
+  .transition-opacity {
+    transition: opacity var(--duration-base) var(--ease-out);
+  }
+  .transition-transform {
+    transition: transform var(--duration-base) var(--ease-out);
+  }
+  .transition-shadow {
+    transition: box-shadow var(--duration-base) var(--ease-out);
+  }
+
+  /* ============================================
+     CARD LIFT — shadow on hover (uses shadow tokens!)
+     ============================================ */
+  .card-lift {
+    transition:
+      transform var(--duration-base) var(--ease-out),
+      box-shadow var(--duration-base) var(--ease-out);
+  }
+  .card-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* ============================================
+     ANIMATED UNDERLINE — gold, left-to-right
+     ============================================ */
+  .animated-underline {
+    position: relative;
+  }
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-gold);
+    transition: width var(--duration-moderate) var(--ease-out);
+  }
+  .animated-underline:hover::after {
+    width: 100%;
+  }
+
+  /* ============================================
+     BUTTON HOVER — subtle scale + shadow
+     ============================================ */
+  .btn-hover {
+    transition:
+      transform var(--duration-fast) var(--ease-out),
+      box-shadow var(--duration-fast) var(--ease-out);
+  }
+  .btn-hover:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-sm);
+  }
+  .btn-hover:active {
+    transform: scale(0.98);
   }
 
   /* Dot pattern background (paper.design inspired) */
@@ -598,31 +715,110 @@
   }
 
   /* ============================================
-     LANDING STAGGERED LOAD
+     PROSE-LEGAL — legal document styling
      ============================================ */
-  .landing-reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: landingReveal 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  .prose-legal {
+    max-width: 680px;
   }
-  .landing-reveal-1 {
-    animation-delay: 0ms;
+  .prose-legal h1 {
+    font-family: var(--font-family-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-primary);
   }
-  .landing-reveal-2 {
-    animation-delay: 200ms;
+  .prose-legal h2 {
+    font-family: var(--font-family-display);
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
   }
-  .landing-reveal-3 {
-    animation-delay: 400ms;
+  .prose-legal h3 {
+    font-family: var(--font-family-display);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-primary);
   }
-  .landing-reveal-4 {
-    animation-delay: 600ms;
+  .prose-legal p {
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    color: var(--color-text-secondary);
+  }
+  .prose-legal ul,
+  .prose-legal ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    color: var(--color-text-secondary);
+  }
+  .prose-legal li {
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+  .prose-legal strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+  .prose-legal a {
+    color: var(--color-gold);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .prose-legal a:hover {
+    color: var(--color-text-primary);
   }
 
-  @keyframes landingReveal {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* (Old landing-reveal classes removed — replaced by GSAP FadeIn components) */
+
+  /* ============================================
+     LENIS SMOOTH SCROLL
+     ============================================ */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling {
+    /* Placeholder for scroll-in-progress state */
+  }
+
+  /* ============================================
+     MOTION UTILITIES
+     ============================================ */
+
+  /* Will-change hints — apply during animation, remove after */
+  .will-change-transform {
+    will-change: transform;
+  }
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  /* GPU-accelerated layer */
+  .gpu {
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 }
 
@@ -630,6 +826,11 @@
    PRINT STYLESHEET
    ============================================ */
 @media print {
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+
   /* Force light mode */
   :root,
   .dark {
@@ -651,18 +852,35 @@
     font-size: 12pt !important;
   }
 
-  /* Hide navigation, scroll progress, buttons, interactive elements */
+  /* Branding header for print */
+  body::before {
+    content: 'EUANGELION';
+    display: block;
+    font-family: var(--font-family-serif);
+    font-size: 10pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #8b6914;
+    padding-bottom: 0.5cm;
+    margin-bottom: 0.5cm;
+    border-bottom: 0.5pt solid #cccccc;
+  }
+
+  /* Hide navigation, scroll progress, buttons, interactive elements, chat FAB */
   nav,
   .scroll-progress,
   .skip-to-content,
   button,
   .scroll-indicator,
-  footer {
+  footer,
+  [role='dialog'],
+  [aria-label='Open biblical research chat'] {
     display: none !important;
   }
 
-  /* Show all observe-fade elements */
-  .observe-fade {
+  /* Show all animated elements in final state */
+  [style*='opacity: 0'],
+  [data-gsap] {
     opacity: 1 !important;
     transform: none !important;
   }
@@ -672,10 +890,13 @@
     min-height: auto !important;
   }
 
-  /* Scripture blocks: visible border */
+  /* Scripture: constrain fullbleed to reading width */
   .scripture-block {
     border-left: 2pt solid #8b6914 !important;
     background: #f9f9f9 !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   /* Page breaks */
@@ -685,9 +906,13 @@
     page-break-after: avoid;
   }
 
-  .observe-fade,
   [class*='mb-24'],
   [class*='mb-40'] {
+    page-break-inside: avoid;
+  }
+
+  /* Module sections: avoid breaking inside */
+  .reading-flow > * {
     page-break-inside: avoid;
   }
 
@@ -701,5 +926,10 @@
   a[href^='/']::after,
   a[href^='#']::after {
     content: '';
+  }
+
+  /* Legal pages: clean print */
+  .prose-legal {
+    max-width: 100% !important;
   }
 }

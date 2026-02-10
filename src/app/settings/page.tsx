@@ -1,61 +1,58 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 import Navigation from '@/components/Navigation'
+import { useUIStore } from '@/stores/uiStore'
+import { useSettingsStore } from '@/stores/settingsStore'
+import { useChatStore } from '@/stores/chatStore'
 
 type Theme = 'dark' | 'light' | 'system'
 type SabbathDay = 'saturday' | 'sunday'
+type BibleTranslation = 'NIV' | 'ESV' | 'NASB' | 'KJV' | 'NLT' | 'MSG'
 
-function getStoredTheme(): Theme {
-  if (typeof window === 'undefined') return 'dark'
-  return (localStorage.getItem('theme-preference') as Theme) || 'dark'
-}
+const emptySubscribe = () => () => {}
 
-function getStoredSabbath(): SabbathDay {
-  if (typeof window === 'undefined') return 'sunday'
-  return (localStorage.getItem('sabbath-day') as SabbathDay) || 'sunday'
-}
-
-function getStoredTranslation(): string {
-  if (typeof window === 'undefined') return 'NIV'
-  return localStorage.getItem('bible-translation') || 'NIV'
+function useHydrated() {
+  return useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  )
 }
 
 export default function SettingsPage() {
-  const [themePreference, setThemePreference] = useState<Theme>(getStoredTheme)
-  const [sabbathDay, setSabbathDay] = useState<SabbathDay>(getStoredSabbath)
-  const [translation, setTranslation] = useState(getStoredTranslation)
+  const { theme, setTheme } = useUIStore()
+  const {
+    bibleTranslation,
+    sabbathDay,
+    anthropicApiKey,
+    setBibleTranslation,
+    setSabbathDay,
+    setAnthropicApiKey,
+  } = useSettingsStore()
+  const { messages, clearHistory } = useChatStore()
+
+  const hydrated = useHydrated()
+
+  // Show saved confirmation
   const [saved, setSaved] = useState(false)
-
-  useEffect(() => {
-    localStorage.setItem('theme-preference', themePreference)
-
-    if (themePreference === 'system') {
-      const prefersDark = window.matchMedia(
-        '(prefers-color-scheme: dark)',
-      ).matches
-      document.documentElement.classList.toggle('dark', prefersDark)
-      localStorage.removeItem('theme')
-    } else {
-      document.documentElement.classList.toggle(
-        'dark',
-        themePreference === 'dark',
-      )
-      localStorage.setItem('theme', themePreference)
-    }
-  }, [themePreference])
-
-  useEffect(() => {
-    localStorage.setItem('sabbath-day', sabbathDay)
-  }, [sabbathDay])
-
-  useEffect(() => {
-    localStorage.setItem('bible-translation', translation)
-  }, [translation])
-
-  function handleSave() {
+  function showSaved() {
     setSaved(true)
     setTimeout(() => setSaved(false), 2000)
+  }
+
+  if (!hydrated) {
+    return (
+      <div className="min-h-screen bg-page">
+        <Navigation />
+        <main
+          id="main-content"
+          className="mx-auto max-w-2xl px-6 pb-32 pt-12 md:px-[60px] md:pb-48 md:pt-20"
+        >
+          <h1 className="text-display vw-heading-lg mb-12">Settings</h1>
+        </main>
+      </div>
+    )
   }
 
   return (
@@ -78,56 +75,22 @@ export default function SettingsPage() {
             {(['dark', 'light', 'system'] as Theme[]).map((t) => (
               <button
                 key={t}
-                onClick={() => setThemePreference(t)}
-                className="px-6 py-3 text-label vw-small transition-all duration-300"
+                onClick={() => {
+                  setTheme(t)
+                  showSaved()
+                }}
+                className="px-6 py-3 text-label vw-small transition-theme"
                 style={{
                   backgroundColor:
-                    themePreference === t
-                      ? 'var(--color-fg)'
-                      : 'var(--color-surface)',
+                    theme === t ? 'var(--color-fg)' : 'var(--color-surface)',
                   color:
-                    themePreference === t
+                    theme === t
                       ? 'var(--color-bg)'
                       : 'var(--color-text-secondary)',
-                  border: `1px solid ${themePreference === t ? 'var(--color-fg)' : 'var(--color-border)'}`,
-                  transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+                  border: `1px solid ${theme === t ? 'var(--color-fg)' : 'var(--color-border)'}`,
                 }}
               >
                 {t.charAt(0).toUpperCase() + t.slice(1)}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Sabbath Day */}
-        <div
-          className="mb-8 pb-8"
-          style={{ borderBottom: '1px solid var(--color-border)' }}
-        >
-          <h2 className="text-label vw-small mb-4 text-gold">SABBATH DAY</h2>
-          <p className="vw-small mb-6 text-secondary">
-            No new content unlocks on your Sabbath.
-          </p>
-          <div className="flex gap-4">
-            {(['saturday', 'sunday'] as SabbathDay[]).map((day) => (
-              <button
-                key={day}
-                onClick={() => setSabbathDay(day)}
-                className="px-6 py-3 text-label vw-small transition-all duration-300"
-                style={{
-                  backgroundColor:
-                    sabbathDay === day
-                      ? 'var(--color-fg)'
-                      : 'var(--color-surface)',
-                  color:
-                    sabbathDay === day
-                      ? 'var(--color-bg)'
-                      : 'var(--color-text-secondary)',
-                  border: `1px solid ${sabbathDay === day ? 'var(--color-fg)' : 'var(--color-border)'}`,
-                  transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
-                }}
-              >
-                {day.charAt(0).toUpperCase() + day.slice(1)}
               </button>
             ))}
           </div>
@@ -142,11 +105,14 @@ export default function SettingsPage() {
             BIBLE TRANSLATION
           </h2>
           <p className="vw-small mb-6 text-secondary">
-            Default translation for Scripture passages.
+            Default translation shown in Scripture passages.
           </p>
           <select
-            value={translation}
-            onChange={(e) => setTranslation(e.target.value)}
+            value={bibleTranslation}
+            onChange={(e) => {
+              setBibleTranslation(e.target.value as BibleTranslation)
+              showSaved()
+            }}
             className="w-full max-w-xs bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)]"
             style={{
               border: '1px solid var(--color-border)',
@@ -162,17 +128,142 @@ export default function SettingsPage() {
           </select>
         </div>
 
-        {/* Save */}
-        <button
-          onClick={handleSave}
-          className="bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-          style={{ transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' }}
+        {/* Sabbath Day */}
+        <div
+          className="mb-8 pb-8"
+          style={{ borderBottom: '1px solid var(--color-border)' }}
         >
-          {saved ? 'Saved' : 'Save Preferences'}
-        </button>
+          <h2 className="text-label vw-small mb-4 text-gold">SABBATH DAY</h2>
+          <p className="vw-small mb-6 text-secondary">
+            No new content unlocks on your Sabbath. Rest is sacred.
+          </p>
+          <div className="flex gap-4">
+            {(['saturday', 'sunday'] as SabbathDay[]).map((day) => (
+              <button
+                key={day}
+                onClick={() => {
+                  setSabbathDay(day)
+                  showSaved()
+                }}
+                className="px-6 py-3 text-label vw-small transition-theme"
+                style={{
+                  backgroundColor:
+                    sabbathDay === day
+                      ? 'var(--color-fg)'
+                      : 'var(--color-surface)',
+                  color:
+                    sabbathDay === day
+                      ? 'var(--color-bg)'
+                      : 'var(--color-text-secondary)',
+                  border: `1px solid ${sabbathDay === day ? 'var(--color-fg)' : 'var(--color-border)'}`,
+                }}
+              >
+                {day.charAt(0).toUpperCase() + day.slice(1)}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* AI Research Chat */}
+        <div
+          className="mb-8 pb-8"
+          style={{ borderBottom: '1px solid var(--color-border)' }}
+        >
+          <h2 className="text-label vw-small mb-4 text-gold">
+            AI RESEARCH CHAT
+          </h2>
+          <p className="vw-small mb-6 text-secondary">
+            Add your own Anthropic API key for unlimited biblical research
+            questions. Without a key, you get 10 free questions per day.
+          </p>
+          <input
+            type="password"
+            value={anthropicApiKey}
+            onChange={(e) => {
+              setAnthropicApiKey(e.target.value)
+              showSaved()
+            }}
+            placeholder="sk-ant-..."
+            className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
+            style={{
+              border: '1px solid var(--color-border)',
+            }}
+            autoComplete="off"
+          />
+          <p className="mt-3 vw-small text-muted">
+            Your key is stored locally and never sent to our servers.
+          </p>
+        </div>
+
+        {/* Chat History */}
+        <div
+          className="mb-8 pb-8"
+          style={{ borderBottom: '1px solid var(--color-border)' }}
+        >
+          <h2 className="text-label vw-small mb-4 text-gold">CHAT HISTORY</h2>
+          <p className="vw-small mb-6 text-secondary">
+            {messages.length} message{messages.length !== 1 ? 's' : ''} saved
+            locally.
+          </p>
+          <div className="flex gap-4">
+            <button
+              onClick={() => {
+                if (messages.length === 0) return
+                const blob = new Blob([JSON.stringify(messages, null, 2)], {
+                  type: 'application/json',
+                })
+                const url = URL.createObjectURL(blob)
+                const a = document.createElement('a')
+                a.href = url
+                a.download = 'euangelion-chat-history.json'
+                a.click()
+                URL.revokeObjectURL(url)
+              }}
+              disabled={messages.length === 0}
+              className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-30"
+              style={{
+                backgroundColor: 'var(--color-surface)',
+                border: '1px solid var(--color-border)',
+                color: 'var(--color-text-secondary)',
+              }}
+            >
+              Export
+            </button>
+            <button
+              onClick={() => {
+                if (
+                  messages.length > 0 &&
+                  window.confirm(
+                    'Clear all chat history? This cannot be undone.',
+                  )
+                ) {
+                  clearHistory()
+                  showSaved()
+                }
+              }}
+              disabled={messages.length === 0}
+              className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-30"
+              style={{
+                backgroundColor: 'var(--color-surface)',
+                border: '1px solid var(--color-border)',
+                color: 'var(--color-error)',
+              }}
+            >
+              Clear History
+            </button>
+          </div>
+        </div>
+
+        {/* Saved indicator */}
+        <div
+          className="h-10 transition-opacity"
+          style={{ opacity: saved ? 1 : 0, transitionDuration: '300ms' }}
+        >
+          <p className="vw-small text-gold">Preferences saved automatically.</p>
+        </div>
 
         {/* Legal Links */}
-        <div className="mt-16">
+        <div className="mt-12">
           <p className="text-label vw-small mb-4 text-muted">LEGAL</p>
           <div className="space-y-3">
             <a

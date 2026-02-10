@@ -1,16 +1,29 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useSyncExternalStore } from 'react'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import SeriesHero from '@/components/SeriesHero'
-import { SERIES_DATA, FEATURED_SERIES } from '@/data/series'
+import FadeIn from '@/components/motion/FadeIn'
+import StaggerGrid from '@/components/motion/StaggerGrid'
+import { useSoulAuditStore } from '@/stores/soulAuditStore'
+import { typographer } from '@/lib/typographer'
+import { SERIES_DATA, FEATURED_SERIES, ALL_SERIES_ORDER } from '@/data/series'
+
+const emptySubscribe = () => () => {}
 
 export default function Home() {
   const [auditText, setAuditText] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const resultsRef = useRef<HTMLDivElement>(null)
+  const hydrated = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  )
+  const { auditCount, recordAudit, hasReachedLimit } = useSoulAuditStore()
+  const limitReached = hydrated && hasReachedLimit()
 
   // Inline audit results
   const [auditResults, setAuditResults] = useState<{
@@ -24,28 +37,15 @@ export default function Home() {
     }>
   } | null>(null)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('gentle-rise')
-          }
-        })
-      },
-      { threshold: 0.15 },
-    )
-
-    const elements = document.querySelectorAll('.observe-fade')
-    elements.forEach((el) => observer.observe(el))
-
-    return () => observer.disconnect()
-  }, [auditResults])
-
   async function handleAuditSubmit() {
+    if (limitReached) {
+      setError('You\u2019ve explored enough. Time to dive in.')
+      return
+    }
+
     const trimmed = auditText.trim()
     if (trimmed.length === 0) {
-      setError("Take your time. When you're ready, just write what comes.")
+      setError('Take your time. When you\u2019re ready, just write what comes.')
       return
     }
     if (trimmed.length < 10) {
@@ -66,7 +66,8 @@ export default function Home() {
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
         throw new Error(
-          data.error || "Something broke. It's not you. We're working on it.",
+          data.error ||
+            'Something broke. It\u2019s not you. We\u2019re working on it.',
         )
       }
 
@@ -78,6 +79,7 @@ export default function Home() {
       // Build matches array (handle both old and new API format)
       if (data.matches) {
         setAuditResults(data)
+        recordAudit(trimmed, data)
       } else if (data.match) {
         // Legacy format: single match + alternatives
         const matches = [
@@ -91,6 +93,7 @@ export default function Home() {
           ),
         ].slice(0, 3)
         setAuditResults({ matches })
+        recordAudit(trimmed, { matches })
       }
 
       // Scroll to results
@@ -111,96 +114,162 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-page">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Euangelion',
+            url: 'https://euangelion.app',
+            description:
+              'Daily bread for the cluttered, hungry soul. Christian devotional series for people who believe, used to believe, or want to believe.',
+            publisher: {
+              '@type': 'Organization',
+              name: 'Euangelion',
+              url: 'https://euangelion.app',
+            },
+          }),
+        }}
+      />
+
       <Navigation />
 
       {/* Hero — EUANGELION massive + inline Soul Audit */}
       <header className="flex min-h-[calc(100vh-57px)] flex-col items-center justify-center px-6 text-center">
         {/* Massive wordmark */}
-        <h1
-          className="landing-reveal landing-reveal-1 text-masthead mb-4 w-full"
-          style={{
-            fontSize: 'clamp(2.5rem, 10vw, 8rem)',
-            lineHeight: 1,
-            letterSpacing: '0.15em',
-          }}
-        >
-          EUANGELION
-        </h1>
+        <FadeIn y={0} duration={0.8}>
+          <h1
+            className="text-masthead mb-4 w-full"
+            style={{
+              fontSize: 'clamp(2.5rem, 10vw, 8rem)',
+              lineHeight: 1,
+              letterSpacing: '0.15em',
+            }}
+          >
+            EUANGELION
+          </h1>
+        </FadeIn>
 
         {/* Meaning */}
-        <p className="landing-reveal landing-reveal-1 text-label vw-small mb-8 text-muted">
-          EU&middot;AN&middot;GE&middot;LI&middot;ON &mdash; &ldquo;GOOD
-          NEWS&rdquo;
-        </p>
+        <FadeIn delay={0.2} y={0}>
+          <p className="text-label vw-small mb-8 text-muted">
+            EU&middot;AN&middot;GE&middot;LI&middot;ON &mdash; &ldquo;GOOD
+            NEWS&rdquo;
+          </p>
+        </FadeIn>
 
-        {/* Tagline */}
-        <p
-          className="landing-reveal landing-reveal-2 text-serif-italic mx-auto mb-12"
-          style={{
-            fontSize: 'clamp(1.5rem, 4vw, 3rem)',
-            lineHeight: 1.3,
-            maxWidth: '20ch',
-          }}
-        >
-          Daily bread for the cluttered, hungry soul.
-        </p>
+        {/* Tagline — Word-Level Mixing */}
+        <FadeIn delay={0.4} y={12}>
+          <p
+            className="mx-auto mb-12"
+            style={{
+              fontSize: 'clamp(1.5rem, 4vw, 3rem)',
+              lineHeight: 1.3,
+              maxWidth: '20ch',
+            }}
+          >
+            <span
+              className="text-label"
+              style={{
+                fontSize: 'clamp(0.75rem, 1.5vw, 1rem)',
+                letterSpacing: '0.12em',
+                display: 'block',
+                marginBottom: '0.25em',
+              }}
+            >
+              DAILY
+            </span>
+            <span className="text-serif-italic">
+              {typographer('bread for the cluttered, hungry soul.')}
+            </span>
+          </p>
+        </FadeIn>
 
         {/* Inline Soul Audit */}
-        <div className="landing-reveal landing-reveal-3 w-full max-w-xl">
-          <p className="vw-body mb-4 text-secondary">
-            What are you wrestling with today?
-          </p>
-          <textarea
-            value={auditText}
-            onChange={(e) => {
-              setAuditText(e.target.value)
-              setError(null)
-            }}
-            placeholder="Lately, I've been..."
-            rows={3}
-            disabled={isSubmitting}
-            className="mb-4 w-full resize-none bg-surface-raised p-5 text-serif-italic vw-body text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
-            style={{
-              border: '1px solid var(--color-border)',
-              lineHeight: 1.7,
-            }}
-            onFocus={(e) => {
-              e.target.style.borderColor = 'var(--color-gold)'
-            }}
-            onBlur={(e) => {
-              e.target.style.borderColor = 'var(--color-border)'
-            }}
-          />
+        <FadeIn delay={0.6} y={16}>
+          <div className="w-full max-w-xl">
+            <p className="vw-body mb-4 text-secondary">
+              {typographer('What are you wrestling with today?')}
+            </p>
 
-          {error && (
-            <p className="vw-small mb-4 text-center text-secondary">{error}</p>
-          )}
+            {limitReached ? (
+              <div className="py-8 text-center">
+                <p className="text-serif-italic vw-body-lg mb-8 text-secondary">
+                  {typographer('You\u2019ve explored enough. Time to dive in.')}
+                </p>
+                <Link
+                  href="/series"
+                  className="inline-block w-full bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
+                >
+                  Browse All Series &rarr;
+                </Link>
+              </div>
+            ) : (
+              <>
+                {hydrated && auditCount > 0 && (
+                  <p className="vw-small mb-4 text-center text-muted">
+                    Audit {auditCount + 1} of 3
+                  </p>
+                )}
 
-          <button
-            onClick={handleAuditSubmit}
-            disabled={isSubmitting}
-            className="w-full bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom disabled:opacity-50"
-          >
-            {isSubmitting ? 'Listening...' : 'Begin'}
-          </button>
+                <textarea
+                  value={auditText}
+                  onChange={(e) => {
+                    setAuditText(e.target.value)
+                    setError(null)
+                  }}
+                  placeholder="Lately, I've been..."
+                  rows={3}
+                  disabled={isSubmitting}
+                  className="mb-4 w-full resize-none bg-surface-raised p-5 text-serif-italic vw-body text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
+                  style={{
+                    border: '1px solid var(--color-border)',
+                    lineHeight: 1.7,
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = 'var(--color-gold)'
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = 'var(--color-border)'
+                  }}
+                />
 
-          {/* Secondary CTAs */}
-          <div className="mt-6 flex items-center justify-center gap-6">
-            <Link
-              href="/series"
-              className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
-            >
-              Browse All Series
-            </Link>
-            <span className="text-muted">&middot;</span>
-            <Link
-              href="/series"
-              className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
-            >
-              Skip to a series
-            </Link>
+                {error && (
+                  <p className="vw-small mb-4 text-center text-secondary">
+                    {error}
+                  </p>
+                )}
+
+                <button
+                  onClick={handleAuditSubmit}
+                  disabled={isSubmitting}
+                  className="w-full bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom disabled:opacity-50"
+                >
+                  {isSubmitting ? 'Listening...' : 'Begin'}
+                </button>
+              </>
+            )}
+
+            {/* Secondary CTAs */}
+            <div className="mt-6 flex items-center justify-center gap-6">
+              <Link
+                href="/series"
+                className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+              >
+                Browse All Series
+              </Link>
+              <span className="text-muted">&middot;</span>
+              <Link
+                href="/soul-audit"
+                className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+              >
+                Full Soul Audit
+              </Link>
+            </div>
           </div>
-        </div>
+        </FadeIn>
       </header>
 
       {/* Inline Soul Audit Results */}
@@ -211,20 +280,24 @@ export default function Home() {
           style={{ borderTop: '1px solid var(--color-border)' }}
         >
           <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-            <p className="observe-fade text-label vw-small mb-6 text-center text-gold">
-              WE FOUND SOMETHING FOR YOU
-            </p>
-            <h2 className="observe-fade text-serif-italic vw-heading-md mb-12 text-center">
-              Here&apos;s where we&apos;ll start.
-            </h2>
+            <FadeIn>
+              <p className="text-label vw-small mb-6 text-center text-gold">
+                WE FOUND SOMETHING FOR YOU
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <h2 className="text-serif-italic vw-heading-md mb-12 text-center">
+                {typographer('Here\u2019s where we\u2019ll start.')}
+              </h2>
+            </FadeIn>
 
             {/* 3 Equal Cards */}
-            <div className="grid gap-6 md:grid-cols-3">
+            <StaggerGrid className="grid gap-6 md:grid-cols-3">
               {auditResults.matches.slice(0, 3).map((match, index) => (
                 <Link
                   key={match.slug}
                   href={`/wake-up/series/${match.slug}`}
-                  className="observe-fade group block"
+                  className="group block"
                 >
                   <div
                     className="flex h-full flex-col overflow-hidden transition-all duration-300"
@@ -242,11 +315,11 @@ export default function Home() {
                         {SERIES_DATA[match.slug]?.title || match.title}
                       </p>
                       <p className="text-serif-italic vw-body mb-3 flex-1 transition-colors duration-300 group-hover:text-gold">
-                        {match.question}
+                        {typographer(match.question)}
                       </p>
                       {match.reasoning && (
                         <p className="vw-small mb-4 text-tertiary">
-                          {match.reasoning}
+                          {typographer(match.reasoning)}
                         </p>
                       )}
                       {match.preview && (
@@ -255,7 +328,7 @@ export default function Home() {
                           style={{ borderColor: 'var(--color-gold)' }}
                         >
                           <p className="vw-small text-serif-italic text-secondary">
-                            &ldquo;{match.preview.verse}&rdquo;
+                            {typographer(`\u201c${match.preview.verse}\u201d`)}
                           </p>
                         </div>
                       )}
@@ -271,7 +344,7 @@ export default function Home() {
                   </div>
                 </Link>
               ))}
-            </div>
+            </StaggerGrid>
           </div>
         </section>
       )}
@@ -283,13 +356,18 @@ export default function Home() {
         style={{ borderTop: '1px solid var(--color-border)' }}
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <h2 className="observe-fade text-label vw-small mb-16 text-center text-gold">
-            HOW IT WORKS
-          </h2>
-          <div className="mx-auto grid max-w-4xl gap-12 text-center md:grid-cols-3 md:gap-16">
-            <div className="observe-fade">
+          <FadeIn>
+            <h2 className="text-label vw-small mb-16 text-center text-gold">
+              HOW IT WORKS
+            </h2>
+          </FadeIn>
+          <StaggerGrid className="mx-auto grid max-w-4xl gap-12 text-center md:grid-cols-3 md:gap-16">
+            <div>
               {/* Compass icon */}
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center">
+              <div
+                className="mx-auto mb-6 flex h-16 w-16 items-center justify-center"
+                aria-hidden="true"
+              >
                 <svg
                   width="40"
                   height="40"
@@ -313,20 +391,24 @@ export default function Home() {
                 style={{
                   fontFamily: 'var(--font-family-display)',
                   fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 700,
+                  fontWeight: 300,
                   lineHeight: 1,
                 }}
               >
                 01
               </div>
               <p className="vw-body text-secondary">
-                Tell us what you&apos;re wrestling with. We&apos;ll match you to
-                a series.
+                {typographer(
+                  'Tell us what you\u2019re wrestling with. We\u2019ll match you to a series.',
+                )}
               </p>
             </div>
-            <div className="observe-fade stagger-1">
+            <div>
               {/* Book/reading icon */}
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center">
+              <div
+                className="mx-auto mb-6 flex h-16 w-16 items-center justify-center"
+                aria-hidden="true"
+              >
                 <svg
                   width="40"
                   height="40"
@@ -352,19 +434,24 @@ export default function Home() {
                 style={{
                   fontFamily: 'var(--font-family-display)',
                   fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 700,
+                  fontWeight: 300,
                   lineHeight: 1,
                 }}
               >
                 02
               </div>
               <p className="vw-body text-secondary">
-                Read one devotional per day. Short, deep, honest.
+                {typographer(
+                  'Read one devotional per day. Short, deep, honest.',
+                )}
               </p>
             </div>
-            <div className="observe-fade stagger-2">
+            <div>
               {/* Heart icon */}
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center">
+              <div
+                className="mx-auto mb-6 flex h-16 w-16 items-center justify-center"
+                aria-hidden="true"
+              >
                 <svg
                   width="40"
                   height="40"
@@ -383,17 +470,19 @@ export default function Home() {
                 style={{
                   fontFamily: 'var(--font-family-display)',
                   fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 700,
+                  fontWeight: 300,
                   lineHeight: 1,
                 }}
               >
                 03
               </div>
               <p className="vw-body text-secondary">
-                Reflect, journal, and let God reorder your heart.
+                {typographer(
+                  'Reflect, journal, and let God reorder your heart.',
+                )}
               </p>
             </div>
-          </div>
+          </StaggerGrid>
         </div>
       </section>
 
@@ -418,7 +507,10 @@ export default function Home() {
           }}
         />
         {/* Decorative cross */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div
+          className="absolute inset-0 flex items-center justify-center"
+          aria-hidden="true"
+        >
           <svg
             width="80"
             height="80"
@@ -453,17 +545,23 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="observe-fade text-serif-italic vw-heading-md mb-10">
-              Something brought you here.
-            </h2>
-            <p className="observe-fade vw-body mb-6 leading-relaxed text-secondary">
-              Maybe it&apos;s been a while since you thought about God. Maybe
-              you think about Him all the time and feel nothing. Maybe
-              you&apos;re tired.
-            </p>
-            <p className="observe-fade vw-body leading-relaxed text-secondary">
-              Whatever it is, you&apos;re welcome here.
-            </p>
+            <FadeIn>
+              <h2 className="text-serif-italic vw-heading-md mb-10">
+                {typographer('Something brought you here.')}
+              </h2>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <p className="vw-body mb-6 leading-relaxed text-secondary">
+                {typographer(
+                  'Maybe it\u2019s been a while since you thought about God. Maybe you think about Him all the time and feel nothing. Maybe you\u2019re tired.',
+                )}
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <p className="vw-body leading-relaxed text-secondary">
+                {typographer('Whatever it is, you\u2019re welcome here.')}
+              </p>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -476,25 +574,35 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="grid gap-16 md:grid-cols-12">
             <div className="md:col-span-5">
-              <h2 className="observe-fade text-label vw-small mb-6 text-gold">
-                WHAT THIS IS
-              </h2>
-              <p className="observe-fade text-serif-italic vw-body-lg">
-                Honest content for people who believe, used to believe, or want
-                to believe but have questions.
-              </p>
+              <FadeIn>
+                <p className="text-label vw-small mb-6 text-gold">
+                  WHAT THIS IS
+                </p>
+              </FadeIn>
+              <FadeIn delay={0.1}>
+                <p className="text-serif-italic vw-body-lg">
+                  {typographer(
+                    'Honest content for people who believe, used to believe, or want to believe but have questions.',
+                  )}
+                </p>
+              </FadeIn>
             </div>
             <div className="md:col-span-6 md:col-start-7">
               <div className="space-y-8">
-                <p className="observe-fade vw-body leading-relaxed text-secondary">
-                  Each series is a multi-day journey. One reading per day.
-                  Designed to be short enough for busy lives and deep enough to
-                  be worth your time.
-                </p>
-                <p className="observe-fade vw-body leading-relaxed text-secondary">
-                  We don&apos;t have all the answers. But the questions are
-                  worth asking, and you shouldn&apos;t have to ask them alone.
-                </p>
+                <FadeIn delay={0.15}>
+                  <p className="vw-body leading-relaxed text-secondary">
+                    {typographer(
+                      'Each series is a multi-day journey. One reading per day. Designed to be short enough for busy lives and deep enough to be worth your time.',
+                    )}
+                  </p>
+                </FadeIn>
+                <FadeIn delay={0.25}>
+                  <p className="vw-body leading-relaxed text-secondary">
+                    {typographer(
+                      'We don\u2019t have all the answers. But the questions are worth asking, and you shouldn\u2019t have to ask them alone.',
+                    )}
+                  </p>
+                </FadeIn>
               </div>
             </div>
           </div>
@@ -509,10 +617,12 @@ export default function Home() {
         }}
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <h2 className="observe-fade text-label vw-small mb-12 text-center text-gold">
-            FEATURED SERIES
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <FadeIn>
+            <h2 className="text-label vw-small mb-12 text-center text-gold">
+              FEATURED SERIES
+            </h2>
+          </FadeIn>
+          <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {FEATURED_SERIES.map((slug) => {
               const series = SERIES_DATA[slug]
               if (!series) return null
@@ -520,7 +630,7 @@ export default function Home() {
                 <Link
                   key={slug}
                   href={`/wake-up/series/${slug}`}
-                  className="observe-fade group block"
+                  className="group block"
                 >
                   <div
                     className="overflow-hidden transition-all duration-300"
@@ -534,7 +644,7 @@ export default function Home() {
                         {series.title.toUpperCase()}
                       </p>
                       <p className="text-serif-italic vw-body transition-colors duration-300 group-hover:text-gold">
-                        {series.question}
+                        {typographer(series.question)}
                       </p>
                       <p className="vw-small mt-4 text-muted">
                         {series.days.length} DAYS
@@ -544,18 +654,20 @@ export default function Home() {
                 </Link>
               )
             })}
-          </div>
-          <div className="observe-fade mt-12 text-center">
-            <Link
-              href="/series"
-              className="inline-block px-10 py-4 text-label vw-small text-muted transition-all duration-300 hover:text-[var(--color-text-primary)]"
-              style={{
-                borderBottom: '1px solid var(--color-border)',
-              }}
-            >
-              View All 26 Series
-            </Link>
-          </div>
+          </StaggerGrid>
+          <FadeIn>
+            <div className="mt-12 text-center">
+              <Link
+                href="/series"
+                className="inline-block px-10 py-4 text-label vw-small text-muted transition-all duration-300 hover:text-[var(--color-text-primary)]"
+                style={{
+                  borderBottom: '1px solid var(--color-border)',
+                }}
+              >
+                View All {ALL_SERIES_ORDER.length} Series
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -566,9 +678,11 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="text-center">
-            <p className="observe-fade text-label vw-small leading-relaxed text-muted">
-              SOMETHING TO HOLD ONTO.
-            </p>
+            <FadeIn>
+              <p className="text-label vw-small leading-relaxed text-muted">
+                SOMETHING TO HOLD ONTO.
+              </p>
+            </FadeIn>
             <div className="mt-8 flex items-center justify-center gap-6">
               <Link
                 href="/privacy"

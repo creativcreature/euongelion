@@ -5,6 +5,10 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import SeriesHero from '@/components/SeriesHero'
+import ShareButton from '@/components/ShareButton'
+import FadeIn from '@/components/motion/FadeIn'
+import StaggerGrid from '@/components/motion/StaggerGrid'
+import { typographer } from '@/lib/typographer'
 import { SERIES_DATA } from '@/data/series'
 
 interface AuditMatch {
@@ -40,26 +44,6 @@ export default function SoulAuditResultsPage() {
     }
   }, [result, router])
 
-  useEffect(() => {
-    if (!result) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('gentle-rise')
-          }
-        })
-      },
-      { threshold: 0.15 },
-    )
-
-    const elements = document.querySelectorAll('.observe-fade')
-    elements.forEach((el) => observer.observe(el))
-
-    return () => observer.disconnect()
-  }, [result])
-
   if (!result) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-page">
@@ -88,62 +72,73 @@ export default function SoulAuditResultsPage() {
 
       <main
         id="main-content"
+        aria-live="polite"
         className="mx-auto max-w-7xl px-6 pb-32 pt-12 md:px-[60px] md:pb-48 md:pt-20 lg:px-20"
       >
         {/* Crisis Response */}
         {result.crisis && result.resources && (
-          <div
-            className="observe-fade mb-16 p-8 md:p-12"
-            style={{
-              backgroundColor: 'var(--color-surface-raised)',
-              border: '1px solid var(--color-border)',
-            }}
-          >
-            <h2 className="text-serif-italic vw-heading-md mb-6">
-              We hear you.
-            </h2>
-            <p className="vw-body mb-6 leading-relaxed text-secondary">
-              What you&apos;re carrying sounds incredibly heavy. Before we
-              continue, we want you to know: you matter, and there are people
-              who want to help.
-            </p>
-            <div className="mb-8 space-y-4">
-              {result.resources.map((resource) => (
-                <div key={resource.name} className="flex items-center gap-4">
-                  <span className="text-label vw-small text-gold">
-                    {resource.contact}
-                  </span>
-                  <span className="vw-body text-secondary">
-                    {resource.name}
-                  </span>
-                </div>
-              ))}
+          <FadeIn>
+            <div
+              className="mb-16 p-8 md:p-12"
+              style={{
+                backgroundColor: 'var(--color-surface-raised)',
+                border: '1px solid var(--color-border)',
+              }}
+            >
+              <h2 className="text-serif-italic vw-heading-md mb-6">
+                {typographer('We hear you.')}
+              </h2>
+              <p className="vw-body mb-6 leading-relaxed text-secondary">
+                {typographer(
+                  'What you\u2019re carrying sounds incredibly heavy. Before we continue, we want you to know: you matter, and there are people who want to help.',
+                )}
+              </p>
+              <div className="mb-8 space-y-4">
+                {result.resources.map((resource) => (
+                  <div key={resource.name} className="flex items-center gap-4">
+                    <span className="text-label vw-small text-gold">
+                      {resource.contact}
+                    </span>
+                    <span className="vw-body text-secondary">
+                      {resource.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <p className="vw-body text-secondary">
+                {typographer('God sees you. He hasn\u2019t forgotten you.')}
+              </p>
             </div>
-            <p className="vw-body text-secondary">
-              God sees you. He hasn&apos;t forgotten you.
-            </p>
-          </div>
+          </FadeIn>
         )}
 
         {/* Header */}
-        <div className="observe-fade mb-12 text-center">
-          <p className="text-label vw-small mb-6 text-gold">
-            {result.crisis ? "WHEN YOU'RE READY" : 'WE FOUND SOMETHING FOR YOU'}
-          </p>
-          <h1 className="text-serif-italic vw-heading-md mb-4">
-            {result.crisis
-              ? "When you're ready, we have words of hope waiting."
-              : "Here's where we'll start."}
-          </h1>
+        <div className="mb-12 text-center">
+          <FadeIn>
+            <p className="text-label vw-small mb-6 text-gold">
+              {result.crisis
+                ? "WHEN YOU'RE READY"
+                : 'WE FOUND SOMETHING FOR YOU'}
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <h1 className="text-serif-italic vw-heading-md mb-4">
+              {typographer(
+                result.crisis
+                  ? 'When you\u2019re ready, we have words of hope waiting.'
+                  : 'Here\u2019s where we\u2019ll start.',
+              )}
+            </h1>
+          </FadeIn>
         </div>
 
         {/* 3 Equal Cards */}
-        <div className="grid gap-6 md:grid-cols-3">
+        <StaggerGrid className="grid gap-6 md:grid-cols-3">
           {matches.slice(0, 3).map((match, index) => (
             <Link
               key={match.slug}
               href={`/wake-up/series/${match.slug}`}
-              className="observe-fade group block"
+              className="group block"
             >
               <div
                 className="flex h-full flex-col overflow-hidden transition-all duration-300"
@@ -157,11 +152,11 @@ export default function SoulAuditResultsPage() {
                     {SERIES_DATA[match.slug]?.title || match.title}
                   </p>
                   <h2 className="text-serif-italic vw-body-lg mb-3 transition-colors duration-300 group-hover:text-gold">
-                    {match.question}
+                    {typographer(match.question)}
                   </h2>
                   {match.reasoning && (
                     <p className="vw-small mb-4 text-tertiary">
-                      {match.reasoning}
+                      {typographer(match.reasoning)}
                     </p>
                   )}
                   {match.preview?.verse && (
@@ -170,19 +165,23 @@ export default function SoulAuditResultsPage() {
                       style={{ borderColor: 'var(--color-gold)' }}
                     >
                       <p className="vw-small text-serif-italic text-secondary">
-                        &ldquo;
-                        {match.preview.verse.length > 150
-                          ? match.preview.verse.slice(0, 150) + '...'
-                          : match.preview.verse}
-                        &rdquo;
+                        {typographer(
+                          `\u201c${
+                            match.preview.verse.length > 150
+                              ? match.preview.verse.slice(0, 150) + '\u2026'
+                              : match.preview.verse
+                          }\u201d`,
+                        )}
                       </p>
                     </div>
                   )}
                   {match.preview?.paragraph && (
                     <p className="vw-small mb-4 text-tertiary">
-                      {match.preview.paragraph.length > 150
-                        ? match.preview.paragraph.slice(0, 150) + '...'
-                        : match.preview.paragraph}
+                      {typographer(
+                        match.preview.paragraph.length > 150
+                          ? match.preview.paragraph.slice(0, 150) + '\u2026'
+                          : match.preview.paragraph,
+                      )}
                     </p>
                   )}
                   <div className="mt-auto flex items-center justify-between pt-4">
@@ -197,23 +196,34 @@ export default function SoulAuditResultsPage() {
               </div>
             </Link>
           ))}
-        </div>
+        </StaggerGrid>
 
-        {/* Browse All */}
-        <div className="observe-fade mt-16 text-center">
-          <p className="vw-body mb-6 text-secondary">
-            Not quite right? You can always explore on your own.
-          </p>
-          <Link
-            href="/series"
-            className="inline-block px-10 py-5 text-label vw-small text-muted transition-all duration-300 hover:text-[var(--color-text-primary)]"
-            style={{
-              borderBottom: '1px solid var(--color-border)',
-            }}
-          >
-            Browse All Series
-          </Link>
-        </div>
+        {/* Browse All + Share */}
+        <FadeIn>
+          <div className="mt-16 text-center">
+            <p className="vw-body mb-6 text-secondary">
+              {typographer(
+                'Not quite right? You can always explore on your own.',
+              )}
+            </p>
+            <div className="flex items-center justify-center gap-8">
+              <Link
+                href="/series"
+                className="inline-block px-10 py-5 text-label vw-small text-muted transition-all duration-300 hover:text-[var(--color-text-primary)]"
+                style={{
+                  borderBottom: '1px solid var(--color-border)',
+                }}
+              >
+                Browse All Series
+              </Link>
+              <ShareButton
+                title="My Soul Audit Results"
+                text="I took the Soul Audit on Euangelion"
+                label="Share Results"
+              />
+            </div>
+          </div>
+        </FadeIn>
       </main>
 
       <footer

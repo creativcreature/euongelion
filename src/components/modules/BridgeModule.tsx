@@ -1,4 +1,5 @@
 import type { Module } from '@/types'
+import { typographer } from '@/lib/typographer'
 
 export default function BridgeModule({ module }: { module: Module }) {
   if (!module.content && !module.ancientTruth && !module.modernApplication)
@@ -14,7 +15,7 @@ export default function BridgeModule({ module }: { module: Module }) {
         <div className="mb-10">
           <p className="module-sublabel mb-3">ANCIENT TRUTH</p>
           <p className="vw-body leading-relaxed text-secondary">
-            {module.ancientTruth}
+            {typographer(module.ancientTruth)}
           </p>
         </div>
       )}
@@ -24,7 +25,7 @@ export default function BridgeModule({ module }: { module: Module }) {
           className="text-serif-italic vw-body-lg leading-relaxed mb-10"
           style={{ maxWidth: '640px' }}
         >
-          {module.connectionPoint}
+          {typographer(module.connectionPoint)}
         </p>
       )}
 
@@ -32,7 +33,7 @@ export default function BridgeModule({ module }: { module: Module }) {
         <div className="mb-10">
           <p className="module-sublabel mb-3">MODERN APPLICATION</p>
           <p className="vw-body leading-relaxed text-secondary">
-            {module.modernApplication}
+            {typographer(module.modernApplication)}
           </p>
         </div>
       )}
@@ -41,7 +42,7 @@ export default function BridgeModule({ module }: { module: Module }) {
         <div>
           <p className="module-sublabel mb-3">NEW TESTAMENT ECHO</p>
           <p className="vw-body leading-relaxed text-secondary">
-            {module.newTestamentEcho}
+            {typographer(module.newTestamentEcho)}
           </p>
         </div>
       )}
@@ -50,7 +51,7 @@ export default function BridgeModule({ module }: { module: Module }) {
         <div className="space-y-6">
           {module.content.split('\n\n').map((paragraph, i) => (
             <p key={i} className="vw-body leading-relaxed text-secondary">
-              {paragraph}
+              {typographer(paragraph)}
             </p>
           ))}
         </div>

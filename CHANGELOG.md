@@ -8,8 +8,8 @@ Format: Reverse chronological, grouped by sprint/date.
 ## Current Status
 
 **Target:** Easter 2026 MVP launch
-**Now:** Sprint 5 complete — Real MVP with 26 series, inline audit, hybrid cinematic reader
-**Next:** Generate real images (Gemini pipeline), analytics, share flow
+**Now:** Production Relaunch complete — Phases 0-11. Design system, GSAP animations, AI chat, PWA, a11y, SEO.
+**Next:** Content generation (real images, additional module content), Supabase progress sync, deploy verification
 
 ### What's Built
 
@@ -21,13 +21,33 @@ Format: Reverse chronological, grouped by sprint/date.
 - [x] Deployment — euangelion.app live on wokegodxs-projects
 - [x] Sprint 4 — Initial MVP (landing page, Soul Audit, modules, series browse, settings, legal, AI pipeline)
 - [x] Sprint 5 — Real MVP rebuild (26 series, fonts, inline audit, hybrid cinematic reader, navigation, SeriesHero)
+- [x] Production Relaunch Phases 0-11 — Design system consolidation, typography craft, GSAP/Framer Motion animations, Zustand stores, AI research chat, PWA, accessibility, SEO, dead code cleanup
 
 ### What's NOT Built (Post-MVP)
 
-- [ ] Progress tracking → Supabase (currently localStorage)
-- [ ] Analytics (Plausible)
+- [ ] Progress tracking → Supabase (currently localStorage, Zustand stores ready)
 - [ ] Real hero images (Gemini pipeline — CSS placeholders in place)
-- [ ] Share flow (Web Share API)
+- [ ] Web Push notifications (VAPID keys needed)
+- [ ] Additional module content (9 new module types built, need content in JSONs)
+
+---
+
+## Production Relaunch — Phases 0-11
+
+### 2026-02-09
+
+- **Phase 0: Design system consolidation** — Imported design-system/ tokens into globals.css, created typography-craft.css (optical sizing, hanging punctuation, ligatures, baseline grid, multi-column utilities), created typographer.ts (smart quotes, em-dashes), built animation infrastructure (GSAP registry, Lenis provider, FadeIn/StaggerGrid/TextReveal/ParallaxLayer/GoldHighlight/DropCap motion components), installed gsap, framer-motion, lenis, zustand, @vercel/analytics
+- **Phase 1: Zustand stores** — Created 6 stores (auth, progress, ui, settings, soulAudit, offline) with persist middleware, auth sign-in page, day-gating utility
+- **Phase 2: Day-gating + Share + Analytics** — Day-gating at 7AM user timezone, ShareButton (Web Share API + clipboard fallback), Toast component, Vercel Analytics
+- **Phase 3: Loading + Error + 404** — Brand-aligned error.tsx, not-found.tsx, loading skeletons per route, Skeleton UI component
+- **Phase 4: Devotional reader prototype** — Scripture poster variants, typographer integration, content audit script
+- **Phase 5: All modules enhanced** — Applied typographer() + GSAP animations to all 12 existing module components, built 9 additional module types (Chronology, Geography, Visual, Art, Voice, Interactive, Match, Order, Reveal)
+- **Phase 6: Landing + Soul Audit visual** — Replaced IntersectionObserver with FadeIn/StaggerGrid across landing page and Soul Audit, mixed-font typography
+- **Phase 7: Series + Navigation + micro-interactions** — Series pages migrated to motion components, Navigation aria attributes (aria-hidden on SVGs, role=dialog on mobile menu), z-index tokens replacing hardcoded values, .animated-underline + .btn-hover utilities
+- **Phase 8: AI Research Chat** — DevotionalChat modal (Framer Motion slide-up), TextHighlightTrigger (text selection → "Ask about this"), ChatMessage component (favorite + color-code), two-tier API (BYOK + free with daily limit), chatStore (Zustand persist), Settings page API key input + chat history management
+- **Phase 9: PWA** — manifest.json, service worker (cache-first static, network-first pages, offline fallback), offline page, PWA icons (192/512/maskable), ServiceWorkerRegistration component
+- **Phase 10: Accessibility + SEO + Legal** — aria-live on Soul Audit results, JSON-LD BreadcrumbList on series + devotional pages, sitemap expanded to all 26 series + all pages, .prose-legal CSS class, print stylesheet enhanced (@page rules, EUANGELION branding header)
+- **Phase 11: Cleanup** — Removed ~70 lines dead CSS (observe-fade, gentle-rise, stagger-\*, landing-reveal, fade-in-delay), removed dead functions from progress.ts, 0 lint warnings, 160 pages built
 
 ---
 

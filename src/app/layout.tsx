@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk, Cormorant_Garamond } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
+import Providers from './providers'
 import './globals.css'
 
 const spaceGrotesk = Space_Grotesk({
@@ -20,6 +23,12 @@ export const metadata: Metadata = {
   description:
     'Daily bread for the cluttered, hungry soul. Ancient wisdom, modern design.',
   metadataBase: new URL('https://euangelion.app'),
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Euangelion',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -27,6 +36,10 @@ export const metadata: Metadata = {
   },
   twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true },
+  other: {
+    'theme-color': '#1a1612',
+    'apple-mobile-web-app-capable': 'yes',
+  },
 }
 
 export default function RootLayout({
@@ -39,7 +52,9 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${cormorant.variable} antialiased`}
       >
-        {children}
+        <Providers>{children}</Providers>
+        <ServiceWorkerRegistration />
+        <Analytics />
       </body>
     </html>
   )

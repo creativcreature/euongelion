@@ -1,18 +1,41 @@
 import Link from 'next/link'
+import Navigation from '@/components/Navigation'
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center p-4 text-center">
-      <h2 className="mb-4 text-2xl font-bold">Page Not Found</h2>
-      <p className="mb-6 text-gray-600 dark:text-gray-400">
-        The page you&apos;re looking for doesn&apos;t exist.
-      </p>
-      <Link
-        href="/"
-        className="rounded-lg bg-neutral-900 px-6 py-3 text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+    <div className="min-h-screen bg-page">
+      <Navigation />
+
+      <main
+        id="main-content"
+        className="flex min-h-[calc(100vh-64px)] flex-col items-center justify-center px-6 text-center"
       >
-        Go home
-      </Link>
+        <p className="text-label vw-small mb-6 text-gold">404</p>
+        <h1 className="text-serif-italic vw-heading-md mb-6">
+          This page doesn&apos;t exist.
+        </h1>
+        <p
+          className="vw-body mb-10 text-secondary"
+          style={{ maxWidth: '40ch' }}
+        >
+          Whatever you were looking for, it&apos;s not here. But there&apos;s
+          plenty that is.
+        </p>
+        <div className="flex items-center gap-6">
+          <Link
+            href="/"
+            className="bg-[var(--color-fg)] px-8 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
+          >
+            Go Home
+          </Link>
+          <Link
+            href="/series"
+            className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+          >
+            Browse Series
+          </Link>
+        </div>
+      </main>
     </div>
   )
 }

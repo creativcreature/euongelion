@@ -1,4 +1,5 @@
 import type { Module } from '@/types'
+import { typographer } from '@/lib/typographer'
 
 export default function ResourceModule({ module }: { module: Module }) {
   const hasResources = module.resources && module.resources.length > 0
@@ -47,7 +48,7 @@ export default function ResourceModule({ module }: { module: Module }) {
               )}
               {resource.description && (
                 <p className="vw-small mt-2 text-secondary">
-                  {resource.description}
+                  {typographer(resource.description)}
                 </p>
               )}
             </div>
@@ -63,7 +64,7 @@ export default function ResourceModule({ module }: { module: Module }) {
               <div key={i}>
                 <p className="vw-small text-muted mb-1">{s.reference}</p>
                 <p className="text-serif-italic vw-body leading-relaxed">
-                  {s.text}
+                  {typographer(s.text)}
                 </p>
               </div>
             ))}
@@ -99,7 +100,9 @@ export default function ResourceModule({ module }: { module: Module }) {
                   )}
                 </div>
                 {item.note && (
-                  <p className="vw-small mt-1 text-secondary">{item.note}</p>
+                  <p className="vw-small mt-1 text-secondary">
+                    {typographer(item.note)}
+                  </p>
                 )}
               </div>
             ))}
@@ -136,7 +139,9 @@ export default function ResourceModule({ module }: { module: Module }) {
           >
             WEEKLY CHALLENGE
           </p>
-          <p className="vw-body leading-relaxed">{module.weeklyChallenge}</p>
+          <p className="vw-body leading-relaxed">
+            {typographer(module.weeklyChallenge || '')}
+          </p>
         </div>
       )}
     </div>

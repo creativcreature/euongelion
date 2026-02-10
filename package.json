@@ -15,12 +15,18 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.95.3",
+    "@vercel/analytics": "^1.6.1",
+    "framer-motion": "^12.34.0",
     "geist": "^1.7.0",
+    "gsap": "^3.14.2",
+    "lenis": "^1.3.17",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",

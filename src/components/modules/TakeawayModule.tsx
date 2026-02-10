@@ -1,4 +1,5 @@
 import type { Module } from '@/types'
+import { typographer } from '@/lib/typographer'
 
 export default function TakeawayModule({ module }: { module: Module }) {
   if (!module.content && !module.commitment) return null
@@ -9,7 +10,7 @@ export default function TakeawayModule({ module }: { module: Module }) {
         {module.heading || 'TAKEAWAY'}
       </p>
       <p className="vw-body leading-relaxed">
-        {module.commitment || module.content}
+        {typographer(module.commitment || module.content || '')}
       </p>
 
       {module.leavingAtCross && module.leavingAtCross.length > 0 && (
@@ -22,7 +23,7 @@ export default function TakeawayModule({ module }: { module: Module }) {
                 className="vw-body leading-relaxed text-secondary pl-5"
                 style={{ borderLeft: '2px solid var(--color-border)' }}
               >
-                {item}
+                {typographer(item)}
               </li>
             ))}
           </ul>
@@ -44,7 +45,7 @@ export default function TakeawayModule({ module }: { module: Module }) {
                 className="vw-body leading-relaxed text-secondary pl-5"
                 style={{ borderLeft: '2px solid var(--color-gold)' }}
               >
-                {item}
+                {typographer(item)}
               </li>
             ))}
           </ul>

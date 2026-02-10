@@ -74,7 +74,7 @@ export default function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-label vw-small transition-colors duration-200 hover:text-[var(--color-text-primary)] ${
+              className={`animated-underline text-label vw-small transition-colors duration-200 hover:text-[var(--color-text-primary)] ${
                 pathname === link.href ||
                 (link.href !== '/' && pathname?.startsWith(link.href))
                   ? 'text-[var(--color-text-primary)]'
@@ -100,6 +100,7 @@ export default function Navigation() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                aria-hidden="true"
               >
                 <circle cx="12" cy="12" r="4" />
                 <path d="M12 2v2" />
@@ -120,6 +121,7 @@ export default function Navigation() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                aria-hidden="true"
               >
                 <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
               </svg>
@@ -143,6 +145,7 @@ export default function Navigation() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                aria-hidden="true"
               >
                 <circle cx="12" cy="12" r="4" />
                 <path d="M12 2v2" />
@@ -163,6 +166,7 @@ export default function Navigation() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                aria-hidden="true"
               >
                 <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
               </svg>
@@ -211,15 +215,18 @@ export default function Navigation() {
           style={{
             backgroundColor: 'var(--color-overlay)',
             backdropFilter: 'blur(4px)',
-            zIndex: 300,
+            zIndex: 'var(--z-overlay)',
           }}
           onClick={() => setMobileOpen(false)}
         >
           <div
             className="fixed bottom-0 right-0 top-0 w-[280px] bg-tehom p-8 shadow-xl"
             style={{
-              zIndex: 400,
+              zIndex: 'var(--z-modal)',
             }}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation menu"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close */}

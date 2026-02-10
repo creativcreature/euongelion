@@ -1,4 +1,5 @@
 import type { Module } from '@/types'
+import { typographer } from '@/lib/typographer'
 
 export default function VocabModule({ module }: { module: Module }) {
   if (!module.word && !module.definition) return null
@@ -17,7 +18,22 @@ export default function VocabModule({ module }: { module: Module }) {
           <span className="vw-small text-muted">{module.strongsNumber}</span>
         )}
       </div>
-      <p className="pull-quote mb-1">{module.word}</p>
+
+      {/* Scale + Font Pairing — massive word, small definition */}
+      <div className="relative">
+        <p
+          className="gold-shimmer"
+          style={{
+            fontFamily: 'var(--font-family-display)',
+            fontSize: 'clamp(3rem, 8vw, 6rem)',
+            fontWeight: 300,
+            lineHeight: 1,
+            marginBottom: '0.25rem',
+          }}
+        >
+          {module.word}
+        </p>
+      </div>
       {(module.transliteration || module.pronunciation) && (
         <p className="vw-small mb-8 text-muted">
           {module.transliteration && <>/{module.transliteration}/</>}
@@ -28,17 +44,17 @@ export default function VocabModule({ module }: { module: Module }) {
       )}
       {module.definition && (
         <p className="vw-body mb-6 leading-relaxed text-secondary">
-          {module.definition}
+          {typographer(module.definition)}
         </p>
       )}
       {module.usage && (
         <p className="vw-body mb-6 leading-relaxed text-secondary">
-          {module.usage}
+          {typographer(module.usage)}
         </p>
       )}
       {module.usageNote && (
         <p className="vw-body mb-6 italic leading-relaxed text-muted">
-          {module.usageNote}
+          {typographer(module.usageNote)}
         </p>
       )}
       {module.wordByWord && module.wordByWord.length > 0 && (

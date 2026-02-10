@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
+import { SERIES_DATA, ALL_SERIES_ORDER } from '@/data/series'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://euangelion.app'
@@ -9,8 +9,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: baseUrl,
       lastModified: now,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/soul-audit`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/wake-up`,
@@ -18,21 +24,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/series`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: now,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: now,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ]
 
-  const seriesPages: MetadataRoute.Sitemap = SERIES_ORDER.map((slug) => ({
+  const seriesPages: MetadataRoute.Sitemap = ALL_SERIES_ORDER.map((slug) => ({
     url: `${baseUrl}/wake-up/series/${slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))
 
-  const devotionalPages: MetadataRoute.Sitemap = SERIES_ORDER.flatMap(
+  const devotionalPages: MetadataRoute.Sitemap = ALL_SERIES_ORDER.flatMap(
     (seriesSlug) =>
-      SERIES_DATA[seriesSlug].days.map((day) => ({
+      (SERIES_DATA[seriesSlug]?.days || []).map((day) => ({
         url: `${baseUrl}/wake-up/devotional/${day.slug}`,
         lastModified: now,
-        changeFrequency: 'monthly' as const,
+        changeFrequency: 'yearly' as const,
         priority: 0.7,
       })),
   )

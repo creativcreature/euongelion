@@ -1,14 +1,25 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import ScrollProgress from '@/components/ScrollProgress'
+import Link from 'next/link'
+import FadeIn from '@/components/motion/FadeIn'
+import StaggerGrid from '@/components/motion/StaggerGrid'
 import { useProgress, useReadingTime } from '@/hooks/useProgress'
 import ModuleRenderer from '@/components/ModuleRenderer'
+import ShareButton from '@/components/ShareButton'
+import { typographer } from '@/lib/typographer'
 import { startSeries } from '@/lib/progress'
+import { isDayUnlocked } from '@/lib/day-gating'
+import { useProgressStore } from '@/stores/progressStore'
+import { useSettingsStore } from '@/stores/settingsStore'
+import DevotionalChat from '@/components/DevotionalChat'
+import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import { getDevotionalImage } from '@/data/devotional-images'
+import { SERIES_DATA } from '@/data/series'
 import type { Devotional, Panel, Module } from '@/types'
 
 function getSeriesSlugFromDevotional(slug: string): string | null {
@@ -17,11 +28,15 @@ function getSeriesSlugFromDevotional(slug: string): string | null {
   return match[1] === 'identity-crisis' ? 'identity' : match[1]
 }
 
+function getDayIndexFromSlug(slug: string): number {
+  const match = slug.match(/-day-(\d+)$/)
+  return match ? parseInt(match[1], 10) - 1 : 0
+}
+
 export default function DevotionalPageClient({ slug }: { slug: string }) {
   const [devotional, setDevotional] = useState<Devotional | null>(null)
   const [loading, setLoading] = useState(true)
   const router = useRouter()
-  const moduleRefs = useRef<(HTMLDivElement | null)[]>([])
 
   const { isRead, markComplete } = useProgress()
   const timeSpent = useReadingTime()
@@ -29,6 +44,25 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
 
   const seriesSlug = getSeriesSlugFromDevotional(slug)
   const devotionalImage = getDevotionalImage(slug)
+  const dayIndex = getDayIndexFromSlug(slug)
+  const sabbathDay = useSettingsStore((s) => s.sabbathDay)
+  const seriesStartDate = useProgressStore((s) =>
+    seriesSlug ? s.seriesStartDates[seriesSlug] || null : null,
+  )
+  const zustandStartSeries = useProgressStore((s) => s.startSeries)
+  const dayGate = isDayUnlocked(dayIndex, seriesStartDate, sabbathDay)
+
+  // Series navigation: next/prev days
+  const seriesDays = seriesSlug ? SERIES_DATA[seriesSlug]?.days : null
+  const currentDayIdx = seriesDays?.findIndex((d) => d.slug === slug) ?? -1
+  const prevDay =
+    currentDayIdx > 0 && seriesDays ? seriesDays[currentDayIdx - 1] : null
+  const nextDay =
+    currentDayIdx >= 0 && seriesDays && currentDayIdx < seriesDays.length - 1
+      ? seriesDays[currentDayIdx + 1]
+      : null
+  const totalDays = seriesDays?.length || 0
+  const currentDayNum = currentDayIdx >= 0 ? currentDayIdx + 1 : 0
 
   useEffect(() => {
     setIsCompleted(isRead(slug))
@@ -44,6 +78,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
 
         if (seriesSlug) {
           startSeries(seriesSlug)
+          zustandStartSeries(seriesSlug)
         }
       } catch {
         setDevotional(null)
@@ -53,26 +88,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
     }
 
     loadDevotional()
-  }, [slug, seriesSlug])
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('gentle-rise')
-          }
-        })
-      },
-      { threshold: 0.1 },
-    )
-
-    moduleRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref)
-    })
-
-    return () => observer.disconnect()
-  }, [devotional])
+  }, [slug, seriesSlug, zustandStartSeries])
 
   if (loading) {
     return (
@@ -126,20 +142,30 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
           />
           <div className="relative w-full px-6 pb-16 pt-32 md:px-16 md:pb-20 lg:px-24">
             <div style={{ maxWidth: '900px' }}>
-              {devotional.scriptureReference && (
-                <p className="text-label vw-small mb-4 text-gold">
-                  {devotional.scriptureReference}
-                </p>
-              )}
+              <div className="mb-4 flex items-center gap-4">
+                {devotional.scriptureReference && (
+                  <p className="text-label vw-small text-gold">
+                    {devotional.scriptureReference}
+                  </p>
+                )}
+                {totalDays > 0 && (
+                  <p
+                    className="text-label vw-small text-scroll"
+                    style={{ opacity: 0.6 }}
+                  >
+                    DAY {currentDayNum} OF {totalDays}
+                  </p>
+                )}
+              </div>
               <h1 className="text-display vw-heading-lg mb-6 text-scroll">
-                {devotional.title}
+                {typographer(devotional.title)}
               </h1>
               {devotional.teaser && (
                 <p
                   className="text-serif-italic vw-body-lg text-scroll"
                   style={{ opacity: 0.8, maxWidth: '640px' }}
                 >
-                  {devotional.teaser}
+                  {typographer(devotional.teaser)}
                 </p>
               )}
             </div>
@@ -148,93 +174,174 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
       ) : (
         <header className="px-6 pb-16 pt-32 md:px-16 md:pb-24 md:pt-40 lg:px-24">
           <div style={{ maxWidth: '900px' }}>
-            {devotional.scriptureReference && (
-              <p className="text-label vw-small mb-6 text-gold">
-                {devotional.scriptureReference}
-              </p>
-            )}
+            <div className="mb-6 flex items-center gap-4">
+              {devotional.scriptureReference && (
+                <p className="text-label vw-small text-gold">
+                  {devotional.scriptureReference}
+                </p>
+              )}
+              {totalDays > 0 && (
+                <p className="text-label vw-small text-muted">
+                  DAY {currentDayNum} OF {totalDays}
+                </p>
+              )}
+            </div>
             <h1 className="text-display vw-heading-xl mb-8">
-              {devotional.title}
+              {typographer(devotional.title)}
             </h1>
             {devotional.teaser && (
               <p
                 className="text-serif-italic vw-body-lg text-secondary"
                 style={{ maxWidth: '640px' }}
               >
-                {devotional.teaser}
+                {typographer(devotional.teaser)}
               </p>
             )}
           </div>
         </header>
       )}
 
-      {/* Content — continuous scroll */}
-      <main
-        id="main-content"
-        className="px-6 pb-32 pt-16 md:px-16 md:pb-48 md:pt-24 lg:px-24"
-      >
-        <div className="reading-flow">
-          {modules
-            ? modules.map((mod, index) => (
-                <div
-                  key={index}
-                  ref={(el) => {
-                    moduleRefs.current[index] = el
-                  }}
-                  className="observe-fade"
-                >
-                  <ModuleRenderer module={mod} />
-                </div>
-              ))
-            : panels?.slice(1).map((panel, index) => (
-                <div
-                  key={panel.number}
-                  ref={(el) => {
-                    moduleRefs.current[index] = el
-                  }}
-                  className="observe-fade mb-20 md:mb-28"
-                >
-                  <PanelComponent panel={panel} />
-                </div>
-              ))}
-        </div>
-      </main>
-
-      {/* Mark as Complete */}
-      {!isCompleted && (
-        <div
-          className="px-6 pb-16 md:px-16 md:pb-24 lg:px-24"
-          style={{ maxWidth: '900px' }}
+      {/* Content — day-gated */}
+      {!dayGate.unlocked ? (
+        <main
+          id="main-content"
+          className="px-6 pb-32 pt-16 md:px-16 md:pb-48 md:pt-24 lg:px-24"
         >
-          <div
-            className="pt-12"
-            style={{ borderTop: '1px solid var(--color-border)' }}
-          >
-            <p className="text-serif-italic vw-body mb-8 text-secondary">
-              Finished reading?
+          <div className="mx-auto max-w-xl py-16 text-center">
+            <p className="text-serif-italic vw-body-lg mb-8 text-secondary">
+              {typographer(dayGate.message)}
             </p>
             <button
-              onClick={() => {
-                markComplete(slug, timeSpent)
-                setIsCompleted(true)
-              }}
+              onClick={() => router.back()}
               className="text-label vw-small text-gold transition-colors hover:text-[var(--color-text-primary)]"
             >
-              Mark as Complete &rarr;
+              &larr; Back to Series
             </button>
           </div>
-        </div>
+        </main>
+      ) : (
+        <>
+          {/* Content — continuous scroll */}
+          <main
+            id="main-content"
+            className="px-6 pb-32 pt-16 md:px-16 md:pb-48 md:pt-24 lg:px-24"
+          >
+            <div className="reading-flow">
+              <StaggerGrid selector="> *">
+                {modules
+                  ? modules.map((mod, index) => (
+                      <FadeIn key={index} delay={index * 0.05}>
+                        <ModuleRenderer module={mod} />
+                      </FadeIn>
+                    ))
+                  : panels?.slice(1).map((panel) => (
+                      <FadeIn key={panel.number}>
+                        <div className="mb-20 md:mb-28">
+                          <PanelComponent panel={panel} />
+                        </div>
+                      </FadeIn>
+                    ))}
+              </StaggerGrid>
+            </div>
+          </main>
+
+          {/* Mark as Complete */}
+          {!isCompleted && (
+            <div
+              className="px-6 pb-16 md:px-16 md:pb-24 lg:px-24"
+              style={{ maxWidth: '900px' }}
+            >
+              <div
+                className="pt-12"
+                style={{ borderTop: '1px solid var(--color-border)' }}
+              >
+                <p className="text-serif-italic vw-body mb-8 text-secondary">
+                  Finished reading?
+                </p>
+                <button
+                  onClick={() => {
+                    markComplete(slug, timeSpent)
+                    setIsCompleted(true)
+                  }}
+                  className="text-label vw-small text-gold transition-colors hover:text-[var(--color-text-primary)]"
+                >
+                  Mark as Complete &rarr;
+                </button>
+              </div>
+            </div>
+          )}
+        </>
+      )}
+
+      {/* Next/Prev Navigation */}
+      {(prevDay || nextDay) && (
+        <nav
+          className="px-6 md:px-16 lg:px-24"
+          style={{ borderTop: '1px solid var(--color-border)' }}
+          aria-label="Devotional navigation"
+        >
+          <div className="flex items-stretch" style={{ maxWidth: '900px' }}>
+            {prevDay ? (
+              <Link
+                href={`/wake-up/devotional/${prevDay.slug}`}
+                className="group flex-1 py-8 pr-4 transition-colors duration-300"
+              >
+                <p className="text-label vw-small mb-2 text-muted">
+                  &larr; PREVIOUS
+                </p>
+                <p className="text-serif-italic vw-body transition-colors duration-300 group-hover:text-gold">
+                  {prevDay.title}
+                </p>
+              </Link>
+            ) : (
+              <div className="flex-1" />
+            )}
+            {nextDay && (
+              <Link
+                href={`/wake-up/devotional/${nextDay.slug}`}
+                className="group flex-1 py-8 pl-4 text-right transition-colors duration-300"
+                style={{ borderLeft: '1px solid var(--color-border)' }}
+              >
+                <p className="text-label vw-small mb-2 text-muted">
+                  NEXT &rarr;
+                </p>
+                <p className="text-serif-italic vw-body transition-colors duration-300 group-hover:text-gold">
+                  {nextDay.title}
+                </p>
+              </Link>
+            )}
+          </div>
+        </nav>
       )}
 
       {/* Footer */}
       <footer className="px-6 pb-24 pt-12 md:px-16 md:pb-32 lg:px-24">
-        <button
-          onClick={() => router.back()}
-          className="text-label vw-small text-muted transition-colors duration-300 hover:text-[var(--color-text-primary)]"
-        >
-          &larr; Back
-        </button>
+        <div className="flex items-center justify-between">
+          <button
+            onClick={() => router.back()}
+            className="text-label vw-small text-muted transition-colors duration-300 hover:text-[var(--color-text-primary)]"
+          >
+            &larr; Back
+          </button>
+          {dayGate.unlocked && (
+            <ShareButton
+              title={devotional.title}
+              text={`${devotional.title} — Euangelion`}
+            />
+          )}
+        </div>
       </footer>
+
+      {/* AI Research Chat */}
+      {dayGate.unlocked && (
+        <>
+          <TextHighlightTrigger />
+          <DevotionalChat
+            devotionalSlug={slug}
+            devotionalTitle={devotional.title}
+          />
+        </>
+      )}
     </div>
   )
 }

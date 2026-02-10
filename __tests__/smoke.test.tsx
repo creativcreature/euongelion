@@ -59,8 +59,9 @@ describe('Smoke Test', () => {
     // EUANGELION appears in both nav logo and hero — use getAllByText
     const euangelionElements = screen.getAllByText('EUANGELION')
     expect(euangelionElements.length).toBeGreaterThanOrEqual(1)
+    // Tagline is split: "DAILY" (sans) + "bread for the cluttered, hungry soul." (serif)
     expect(
-      screen.getByText(/Daily bread for the cluttered, hungry soul/),
+      screen.getByText(/bread for the cluttered, hungry soul/),
     ).toBeInTheDocument()
   })
 })

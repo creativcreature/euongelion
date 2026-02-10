@@ -1,9 +1,17 @@
 /**
- * EUONGELION Design Tokens
- * Version: 1.0
+ * EUANGELION Design Tokens
+ * Version: 2.0
  *
- * A comprehensive design token system for the EUONGELION platform.
- * These CSS custom properties define the visual language of the brand.
+ * REFERENCE DOCUMENT — The canonical token source is `@theme {}` in
+ * `src/app/globals.css`. This file documents the complete token system
+ * including extended tokens not all registered with Tailwind.
+ *
+ * Naming convention (standardized Feb 2026):
+ *   --color-bg (not --color-background)
+ *   --color-fg (not --color-foreground)
+ *   --font-family-display (not --font-display)
+ *   --font-family-serif (not --font-masthead)
+ *   --max-w-reading (not --max-width-reading)
  *
  * Philosophy: Ownable. Restrained. Biblical.
  * - Six colors total (3 bold foundation, 3 intentional accents)

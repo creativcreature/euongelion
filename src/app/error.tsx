@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Link from 'next/link'
 
 export default function Error({
   error,
@@ -14,17 +15,34 @@ export default function Error({
   }, [error])
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center p-4 text-center">
-      <h2 className="mb-4 text-2xl font-bold">Something went wrong</h2>
-      <p className="mb-6 text-gray-600 dark:text-gray-400">
-        An unexpected error occurred. Please try again.
-      </p>
-      <button
-        onClick={reset}
-        className="rounded-lg bg-neutral-900 px-6 py-3 text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
-      >
-        Try again
-      </button>
+    <div className="min-h-screen bg-page">
+      <div className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+        <p className="text-label vw-small mb-6 text-gold">SOMETHING BROKE</p>
+        <h1 className="text-serif-italic vw-heading-md mb-6">
+          This wasn&apos;t supposed to happen.
+        </h1>
+        <p
+          className="vw-body mb-10 text-secondary"
+          style={{ maxWidth: '40ch' }}
+        >
+          We hit an unexpected error. It&apos;s not you — we&apos;re working on
+          it.
+        </p>
+        <div className="flex items-center gap-6">
+          <button
+            onClick={reset}
+            className="bg-[var(--color-fg)] px-8 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
+          >
+            Try Again
+          </button>
+          <Link
+            href="/"
+            className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+          >
+            Go Home
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }

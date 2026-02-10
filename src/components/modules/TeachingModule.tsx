@@ -1,4 +1,5 @@
 import type { Module } from '@/types'
+import { typographer } from '@/lib/typographer'
 
 export default function TeachingModule({ module }: { module: Module }) {
   if (!module.content && !module.keyInsight) return null
@@ -15,13 +16,16 @@ export default function TeachingModule({ module }: { module: Module }) {
           className="text-serif-italic vw-body-lg leading-relaxed mb-10 text-gold"
           style={{ maxWidth: '640px' }}
         >
-          {module.keyInsight}
+          {typographer(module.keyInsight)}
         </p>
       )}
       <div className="space-y-6">
         {paragraphs.map((paragraph, i) => (
-          <p key={i} className="vw-body leading-relaxed text-secondary">
-            {paragraph}
+          <p
+            key={i}
+            className={`vw-body leading-relaxed text-secondary ${i === 0 ? 'drop-cap' : ''}`}
+          >
+            {typographer(paragraph)}
           </p>
         ))}
       </div>

@@ -1,4 +1,5 @@
 import type { Module } from '@/types'
+import { typographer } from '@/lib/typographer'
 
 export default function ProfileModule({ module }: { module: Module }) {
   if (!module.bio && !module.description && !module.name) return null
@@ -17,7 +18,7 @@ export default function ProfileModule({ module }: { module: Module }) {
         <div className="space-y-6">
           {paragraphs.map((paragraph, i) => (
             <p key={i} className="vw-body leading-relaxed text-secondary">
-              {paragraph}
+              {typographer(paragraph)}
             </p>
           ))}
         </div>
@@ -25,7 +26,7 @@ export default function ProfileModule({ module }: { module: Module }) {
       {module.keyQuote && (
         <blockquote className="module-accent mt-10">
           <p className="text-serif-italic vw-body-lg leading-relaxed">
-            &ldquo;{module.keyQuote}&rdquo;
+            &ldquo;{typographer(module.keyQuote)}&rdquo;
           </p>
         </blockquote>
       )}
@@ -33,7 +34,7 @@ export default function ProfileModule({ module }: { module: Module }) {
         <div className="mt-10">
           <p className="module-sublabel mb-3">LESSON FOR US</p>
           <p className="vw-body leading-relaxed text-secondary">
-            {module.lessonForUs}
+            {typographer(module.lessonForUs)}
           </p>
         </div>
       )}

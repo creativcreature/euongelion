@@ -1,4 +1,5 @@
 import type { Module } from '@/types'
+import { typographer } from '@/lib/typographer'
 
 export default function ReflectionModule({ module }: { module: Module }) {
   if (!module.prompt && !module.content) return null
@@ -17,13 +18,13 @@ export default function ReflectionModule({ module }: { module: Module }) {
         className="text-serif-italic vw-body-lg leading-relaxed"
         style={{ maxWidth: '640px' }}
       >
-        {module.prompt || module.content}
+        {typographer(module.prompt || module.content || '')}
       </p>
       {module.additionalQuestions && module.additionalQuestions.length > 0 && (
         <ul className="mt-8 space-y-4">
           {module.additionalQuestions.map((q, i) => (
             <li key={i} className="vw-body leading-relaxed text-secondary">
-              {q}
+              {typographer(q)}
             </li>
           ))}
         </ul>
