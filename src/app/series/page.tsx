@@ -5,6 +5,8 @@ import Navigation from '@/components/Navigation'
 import SeriesHero from '@/components/SeriesHero'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
+import MixedHeadline, { Sans, Serif } from '@/components/MixedHeadline'
+import OrnamentDivider from '@/components/OrnamentDivider'
 import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
 import {
@@ -23,9 +25,9 @@ export default function SeriesBrowsePage() {
 
       <header className="mx-auto max-w-7xl px-6 pb-16 pt-12 md:px-[60px] md:pb-24 md:pt-20 lg:px-20">
         <FadeIn>
-          <h1 className="text-display vw-heading-xl mb-8 type-display">
-            All Series
-          </h1>
+          <MixedHeadline as="h1" size="xl" className="mb-8">
+            <Sans>ALL</Sans> <Serif>Series</Serif>
+          </MixedHeadline>
           <p className="text-serif-italic vw-body-lg text-secondary type-prose type-serif-flow">
             {typographer(
               `${ALL_SERIES_ORDER.length} series. Ancient wisdom for modern wrestling. Pick one that speaks to where you are.`,
@@ -42,8 +44,20 @@ export default function SeriesBrowsePage() {
         <section className="mb-20">
           <FadeIn>
             <div className="mb-8">
-              <p className="text-label vw-small text-gold">WAKE-UP MAGAZINE</p>
-              <p className="vw-small mt-2 text-muted">
+              <MixedHeadline as="p" size="sm" className="text-gold">
+                <Sans>WAKE-UP</Sans> <Serif>Magazine</Serif>
+              </MixedHeadline>
+              {/* Thin gold rule */}
+              <div
+                className="mt-3 mb-4"
+                style={{
+                  height: '1px',
+                  maxWidth: '200px',
+                  background: 'var(--color-gold)',
+                  opacity: 0.2,
+                }}
+              />
+              <p className="vw-small text-muted type-prose">
                 {typographer(
                   'Seven questions for the searching. Five days each.',
                 )}
@@ -66,8 +80,20 @@ export default function SeriesBrowsePage() {
         <section>
           <FadeIn>
             <div className="mb-8">
-              <p className="text-label vw-small text-gold">DEEP DIVES</p>
-              <p className="vw-small mt-2 text-muted">
+              <MixedHeadline as="p" size="sm" className="text-gold">
+                <Sans>DEEP</Sans> <Serif>Dives</Serif>
+              </MixedHeadline>
+              {/* Thin gold rule */}
+              <div
+                className="mt-3 mb-4"
+                style={{
+                  height: '1px',
+                  maxWidth: '200px',
+                  background: 'var(--color-gold)',
+                  opacity: 0.2,
+                }}
+              />
+              <p className="vw-small text-muted type-prose">
                 {typographer(
                   'Topical series from our archive. Dig into specific questions.',
                 )}
@@ -89,7 +115,7 @@ export default function SeriesBrowsePage() {
         {/* Soul Audit CTA */}
         <FadeIn>
           <div className="mt-16 text-center md:mt-24">
-            <p className="vw-body mb-6 text-secondary">
+            <p className="vw-body mb-6 text-secondary type-prose">
               {typographer('Not sure where to start?')}
             </p>
             <Link
@@ -109,10 +135,16 @@ export default function SeriesBrowsePage() {
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="text-center">
-            <p className="text-label vw-small leading-relaxed text-muted">
+            <OrnamentDivider />
+            <p
+              className="text-label vw-small leading-relaxed text-muted"
+              style={{ letterSpacing: '0.2em' }}
+            >
               SOMETHING TO HOLD ONTO.
             </p>
-            <p className="vw-small mt-8 text-muted">&copy; 2026 EUANGELION</p>
+            <p className="vw-small mt-8 text-muted oldstyle-nums">
+              &copy; 2026 EUANGELION
+            </p>
           </div>
         </div>
       </footer>
@@ -141,23 +173,32 @@ function SeriesCard({
         <SeriesHero seriesSlug={slug} size="thumbnail" overlay />
 
         <div className="flex flex-1 flex-col p-6 md:p-8">
-          <p className="text-label vw-small mb-3 text-gold">{series.title}</p>
+          <p className="text-label vw-small mb-2 text-gold">{series.title}</p>
+          {/* Thin gold rule */}
+          <div
+            className="mb-3"
+            style={{
+              height: '1px',
+              background: 'var(--color-gold)',
+              opacity: 0.2,
+            }}
+          />
 
           <h2 className="text-serif-italic vw-body-lg mb-3 transition-colors duration-300 group-hover:text-gold type-serif-flow">
             {series.question}
           </h2>
 
-          <p className="vw-small mb-6 flex-1 text-secondary">
+          <p className="vw-small mb-6 flex-1 text-secondary type-prose">
             {series.introduction.slice(0, 120)}...
           </p>
 
           <div className="flex items-center justify-between">
-            <span className="text-label vw-small text-muted">
+            <span className="text-label vw-small text-muted oldstyle-nums">
               {series.days.length} {series.days.length === 1 ? 'DAY' : 'DAYS'}
             </span>
             {progress.completed > 0 ? (
               <span
-                className="text-label vw-small"
+                className="text-label vw-small oldstyle-nums"
                 style={{ color: 'var(--color-success)' }}
               >
                 {progress.completed}/{progress.total}

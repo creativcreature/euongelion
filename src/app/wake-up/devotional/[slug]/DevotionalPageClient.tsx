@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Fragment } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Navigation from '@/components/Navigation'
@@ -8,6 +8,8 @@ import ScrollProgress from '@/components/ScrollProgress'
 import Link from 'next/link'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
+import MixedHeadline, { Sans, Serif } from '@/components/MixedHeadline'
+import OrnamentDivider from '@/components/OrnamentDivider'
 import { useProgress, useReadingTime } from '@/hooks/useProgress'
 import ModuleRenderer from '@/components/ModuleRenderer'
 import ShareButton from '@/components/ShareButton'
@@ -17,7 +19,6 @@ import { isDayUnlocked } from '@/lib/day-gating'
 import { useProgressStore } from '@/stores/progressStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import DevotionalChat from '@/components/DevotionalChat'
-import TextReveal from '@/components/motion/TextReveal'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import { getDevotionalImage } from '@/data/devotional-images'
 import { SERIES_DATA } from '@/data/series'
@@ -123,7 +124,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
       <ScrollProgress />
       <Navigation />
 
-      {/* Hero — full-bleed image or clean typography */}
+      {/* Hero — full-bleed image or clean typography with day ornament */}
       {devotionalImage ? (
         <div className="relative flex min-h-[50vh] items-end overflow-hidden md:min-h-[60vh]">
           <Image
@@ -145,13 +146,13 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
             <div style={{ maxWidth: '900px' }}>
               <div className="mb-4 flex items-center gap-4">
                 {devotional.scriptureReference && (
-                  <p className="text-label vw-small text-gold">
+                  <p className="type-micro text-gold">
                     {devotional.scriptureReference}
                   </p>
                 )}
                 {totalDays > 0 && (
                   <p
-                    className="text-label vw-small text-scroll"
+                    className="type-micro text-scroll oldstyle-nums"
                     style={{ opacity: 0.6 }}
                   >
                     DAY {currentDayNum} OF {totalDays}
@@ -173,25 +174,41 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
           </div>
         </div>
       ) : (
-        <header className="px-6 pb-16 pt-32 md:px-16 md:pb-24 md:pt-40 lg:px-24">
-          <div style={{ maxWidth: '900px' }}>
+        <header className="relative px-6 pb-16 pt-32 md:px-16 md:pb-24 md:pt-40 lg:px-24">
+          {/* Massive ornamental day number behind title */}
+          {currentDayNum > 0 && (
+            <div
+              className="type-day-ornament"
+              aria-hidden="true"
+              style={{ top: '1rem', left: '-0.5rem' }}
+            >
+              {currentDayNum}
+            </div>
+          )}
+          <div style={{ maxWidth: '900px', position: 'relative' }}>
             <div className="mb-6 flex items-center gap-4">
               {devotional.scriptureReference && (
-                <p className="text-label vw-small text-gold">
+                <p className="type-micro text-gold">
                   {devotional.scriptureReference}
                 </p>
               )}
               {totalDays > 0 && (
-                <p className="text-label vw-small text-muted">
+                <p className="type-micro text-muted oldstyle-nums">
                   DAY {currentDayNum} OF {totalDays}
                 </p>
               )}
             </div>
-            <TextReveal
-              text={devotional.title}
-              as="h1"
-              className="text-display vw-heading-xl mb-8 type-display"
-            />
+            <MixedHeadline as="h1" size="xl" className="mb-8">
+              {currentDayNum > 0 && (
+                <>
+                  <Sans>DAY {currentDayNum}</Sans>
+                  <span className="text-muted" style={{ margin: '0 0.1em' }}>
+                    &mdash;
+                  </span>
+                </>
+              )}
+              <Serif>{typographer(devotional.title)}</Serif>
+            </MixedHeadline>
             {devotional.teaser && (
               <p
                 className="text-serif-italic vw-body-lg text-secondary"
@@ -224,25 +241,31 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
         </main>
       ) : (
         <>
-          {/* Content — continuous scroll */}
+          {/* Content — continuous scroll with ornament dividers */}
           <main
             id="main-content"
             className="px-6 pb-32 pt-16 md:px-16 md:pb-48 md:pt-24 lg:px-24"
           >
-            <div className="reading-flow">
+            <div className="reading-flow type-prose baseline-grid">
               <StaggerGrid selector="> *">
                 {modules
                   ? modules.map((mod, index) => (
-                      <FadeIn key={index} delay={Math.min(index * 0.1, 0.5)}>
-                        <ModuleRenderer module={mod} />
-                      </FadeIn>
+                      <Fragment key={index}>
+                        {index > 0 && <OrnamentDivider />}
+                        <FadeIn delay={Math.min(index * 0.1, 0.5)}>
+                          <ModuleRenderer module={mod} />
+                        </FadeIn>
+                      </Fragment>
                     ))
-                  : panels?.slice(1).map((panel) => (
-                      <FadeIn key={panel.number}>
-                        <div className="mb-20 md:mb-28">
-                          <PanelComponent panel={panel} />
-                        </div>
-                      </FadeIn>
+                  : panels?.slice(1).map((panel, index) => (
+                      <Fragment key={panel.number}>
+                        {index > 0 && <OrnamentDivider />}
+                        <FadeIn>
+                          <div className="mb-20 md:mb-28">
+                            <PanelComponent panel={panel} />
+                          </div>
+                        </FadeIn>
+                      </Fragment>
                     ))}
               </StaggerGrid>
             </div>
@@ -276,7 +299,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
         </>
       )}
 
-      {/* Next/Prev Navigation */}
+      {/* Next/Prev Navigation — Mixed Headline style */}
       {(prevDay || nextDay) && (
         <nav
           className="px-6 md:px-16 lg:px-24"
@@ -289,9 +312,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                 href={`/wake-up/devotional/${prevDay.slug}`}
                 className="group flex-1 py-8 pr-4 transition-colors duration-300"
               >
-                <p className="text-label vw-small mb-2 text-muted">
-                  &larr; PREVIOUS
-                </p>
+                <p className="type-micro mb-2 text-muted">&larr; PREVIOUS</p>
                 <p className="text-serif-italic vw-body transition-colors duration-300 group-hover:text-gold">
                   {prevDay.title}
                 </p>
@@ -305,9 +326,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                 className="group flex-1 py-8 pl-4 text-right transition-colors duration-300"
                 style={{ borderLeft: '1px solid var(--color-border)' }}
               >
-                <p className="text-label vw-small mb-2 text-muted">
-                  NEXT &rarr;
-                </p>
+                <p className="type-micro mb-2 text-muted">NEXT &rarr;</p>
                 <p className="text-serif-italic vw-body transition-colors duration-300 group-hover:text-gold">
                   {nextDay.title}
                 </p>
@@ -361,7 +380,9 @@ function PanelComponent({ panel }: { panel: Panel }) {
       )}
 
       <div className={isPrayer ? 'module-accent' : ''}>
-        <div className={`${isPrayer ? 'text-serif-italic' : ''} vw-body`}>
+        <div
+          className={`${isPrayer ? 'text-serif-italic' : ''} vw-body type-prose`}
+        >
           {panel.content.split('\n\n').map((paragraph, i) => {
             const isScripture =
               paragraph.trim().startsWith('\u201c') &&
@@ -370,7 +391,7 @@ function PanelComponent({ panel }: { panel: Panel }) {
             return (
               <p
                 key={i}
-                className={`mb-6 leading-relaxed type-prose ${
+                className={`mb-6 leading-relaxed ${
                   isScripture ? 'scripture-block' : 'text-secondary'
                 }`}
                 style={{ whiteSpace: 'pre-line', maxWidth: '680px' }}

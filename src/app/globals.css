@@ -54,13 +54,11 @@
      TYPOGRAPHY
      ============================================ */
   --font-family-display:
-    var(--font-space-grotesk), 'Space Grotesk', 'Helvetica Neue', Arial,
-    sans-serif;
+    var(--font-inter), 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --font-family-body:
-    var(--font-space-grotesk), 'Space Grotesk', 'Helvetica Neue', Arial,
-    sans-serif;
+    var(--font-inter), 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --font-family-serif:
-    var(--font-cormorant), 'Cormorant Garamond', 'Didot', Georgia, serif;
+    var(--font-instrument-serif), 'Instrument Serif', Georgia, serif;
 
   /* Letter spacing tokens */
   --tracking-tight: -0.02em;
@@ -864,6 +862,94 @@
   .gpu {
     transform: translateZ(0);
     backface-visibility: hidden;
+  }
+
+  /* ============================================
+     MIXED HEADLINE SYSTEM (Emphasis-based)
+     ============================================ */
+  .headline-sans {
+    font-family: var(--font-family-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+  .headline-serif {
+    font-family: var(--font-family-serif);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.01em;
+  }
+  .headline-mixed {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.15em;
+  }
+
+  /* ============================================
+     SACRED ILLUMINATION SCALE
+     ============================================ */
+
+  /* Mega: hero wordmarks, massive display */
+  .type-mega {
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-family: var(--font-family-serif);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+  }
+
+  /* Micro: smallest labels, superscripts */
+  .type-micro {
+    font-size: clamp(0.6rem, 0.7vw, 0.75rem);
+    font-family: var(--font-family-display);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* Ornamental day number: massive, behind title, gold ghost */
+  .type-day-ornament {
+    font-family: var(--font-family-serif);
+    font-size: clamp(6rem, 18vw, 14rem);
+    font-weight: 400;
+    line-height: 0.7;
+    color: var(--color-gold);
+    opacity: 0.08;
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Old-style numerals utility */
+  .oldstyle-nums {
+    font-variant-numeric: oldstyle-nums proportional-nums;
+  }
+
+  /* ============================================
+     ORNAMENTAL DIVIDERS
+     ============================================ */
+  .ornament-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem auto;
+    max-width: 200px;
+  }
+  .ornament-divider::before,
+  .ornament-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-gold);
+    opacity: 0.2;
+  }
+  .ornament-divider .ornament {
+    color: var(--color-gold);
+    opacity: 0.3;
+    font-size: 0.75rem;
   }
 }
 

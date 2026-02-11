@@ -165,9 +165,9 @@ function ScaleVariant({
           className="pointer-events-none select-none"
           aria-hidden="true"
           style={{
-            fontFamily: 'var(--font-family-display)',
+            fontFamily: 'var(--font-family-serif)',
             fontSize: 'clamp(4rem, 12vw, 10rem)',
-            fontWeight: 300,
+            fontWeight: 400,
             lineHeight: 0.85,
             color: 'var(--color-gold)',
             opacity: 0.08,

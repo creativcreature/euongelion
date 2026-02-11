@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useSyncExternalStore } from 'react'
 import { useRouter } from 'next/navigation'
 import Navigation from '@/components/Navigation'
 import FadeIn from '@/components/motion/FadeIn'
+import MixedHeadline, { Sans, Serif } from '@/components/MixedHeadline'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
 
@@ -96,15 +97,14 @@ export default function SoulAuditPage() {
           </FadeIn>
 
           <FadeIn delay={0.15} y={12}>
-            <h1
-              className="text-serif-italic mb-6 text-center type-display"
-              style={{
-                fontSize: 'clamp(2rem, 5vw, 4rem)',
-                lineHeight: 1.2,
-              }}
+            <MixedHeadline
+              as="h1"
+              size="lg"
+              className="mb-6 justify-center text-center"
             >
-              {typographer('What are you wrestling with today?')}
-            </h1>
+              <Sans>WHAT ARE YOU</Sans> <Serif>wrestling with</Serif>{' '}
+              <Sans>TODAY?</Sans>
+            </MixedHeadline>
           </FadeIn>
 
           <FadeIn delay={0.3} y={8}>

@@ -1,20 +1,20 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk, Cormorant_Garamond } from 'next/font/google'
+import { Inter, Instrument_Serif } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
 import Providers from './providers'
 import './globals.css'
 
-const spaceGrotesk = Space_Grotesk({
-  variable: '--font-space-grotesk',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
 })
 
-const cormorant = Cormorant_Garamond({
-  variable: '--font-cormorant',
+const instrumentSerif = Instrument_Serif({
+  variable: '--font-instrument-serif',
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400'],
   style: ['normal', 'italic'],
 })
 
@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${spaceGrotesk.variable} ${cormorant.variable} antialiased`}
+        className={`${inter.variable} ${instrumentSerif.variable} antialiased`}
       >
         <Providers>{children}</Providers>
         <ServiceWorkerRegistration />

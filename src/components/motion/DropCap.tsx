@@ -10,7 +10,7 @@ interface DropCapProps {
 }
 
 /**
- * Drop cap paragraph — first letter is large Cormorant Garamond in gold.
+ * Drop cap paragraph — first letter is large Instrument Serif in gold.
  * Animates the drop cap letter on scroll (scale + opacity).
  * Uses CSS ::first-letter via the `drop-cap` class from typography-craft.css.
  */

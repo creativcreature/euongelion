@@ -18,16 +18,19 @@ export default function VocabModule({ module }: { module: Module }) {
               : 'WORD STUDY'}
         </p>
         {module.strongsNumber && (
-          <span className="vw-small text-muted">{module.strongsNumber}</span>
+          <span className="vw-small text-muted oldstyle-nums">
+            {module.strongsNumber}
+          </span>
         )}
       </div>
 
-      {/* Scale + Font Pairing — massive word, small definition */}
+      {/* Scale + Font Pairing — massive word in Instrument Serif */}
       <div className="relative">
         <p
-          className="type-display"
           style={{
+            fontFamily: 'var(--font-family-serif)',
             fontSize: 'clamp(3rem, 8vw, 6rem)',
+            fontWeight: 400,
             lineHeight: 1,
             marginBottom: '0.25rem',
           }}
@@ -44,12 +47,12 @@ export default function VocabModule({ module }: { module: Module }) {
         </p>
       )}
       {module.definition && (
-        <p className="vw-body mb-6 leading-relaxed text-secondary">
+        <p className="vw-body mb-6 leading-relaxed text-secondary type-prose">
           {typographer(module.definition)}
         </p>
       )}
       {module.usage && (
-        <p className="vw-body mb-6 leading-relaxed text-secondary">
+        <p className="vw-body mb-6 leading-relaxed text-secondary type-prose">
           {typographer(module.usage)}
         </p>
       )}

@@ -7,8 +7,9 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ## Current Status
 
+**Version:** 0.7.0
 **Target:** Easter 2026 MVP launch
-**Now:** Production Relaunch Phases A-D complete — Infrastructure wired to actual UI. Auth unblocked. Typography craft + motion components live.
+**Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
 **Next:** Content generation (real images, additional module content), Supabase progress sync
 
 ### What's Built
@@ -23,6 +24,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - [x] Sprint 5 — Real MVP rebuild (26 series, fonts, inline audit, hybrid cinematic reader, navigation, SeriesHero)
 - [x] Production Relaunch Phases 0-11 — Design system consolidation, typography craft, GSAP/Framer Motion animations, Zustand stores, AI research chat, PWA, accessibility, SEO, dead code cleanup
 - [x] Fix What's Broken (Phases A-D) — Removed auth gate on devotionals, wired typography craft classes + motion components into all pages, animated gold shimmer + breathing prayer, TextReveal on homepage + devotional hero
+- [x] v0.7.0 Typography Masterclass — Instrument Serif + Inter font swap, MixedHeadline system, PullQuote + OrnamentDivider components, sacred illumination scale, multi-column layouts, OpenType features activated
 
 ### What's NOT Built (Post-MVP)
 
@@ -30,6 +32,49 @@ Format: Reverse chronological, grouped by sprint/date.
 - [ ] Real hero images (Gemini pipeline — CSS placeholders in place)
 - [ ] Web Push notifications (VAPID keys needed)
 - [ ] Additional module content (9 new module types built, need content in JSONs)
+
+---
+
+## v0.7.0 — Typography Masterclass (2026-02-10)
+
+### Font Swap
+
+- **Instrument Serif** replaces Cormorant Garamond — condensed display serif, visibly serifed at all sizes
+- **Inter** replaces Space Grotesk — clean workhorse sans, 300-700 weight range
+- EUANGELION wordmark now renders in Instrument Serif (serifs VISIBLE)
+
+### New Components
+
+- **MixedHeadline** (`src/components/MixedHeadline.tsx`) — emphasis-based mixed sans/serif headlines with `<Sans>` and `<Serif>` sub-components. KEY words in serif italic, STRUCTURAL words in sans caps
+- **PullQuote** (`src/components/PullQuote.tsx`) — hanging gold oversized quote mark, thin gold rules above/below, centered attribution
+- **OrnamentDivider** (`src/components/OrnamentDivider.tsx`) — gold rules with centered ornament character between modules
+
+### Sacred Illumination CSS
+
+- `type-mega` (4-10rem serif display), `type-micro` (0.6-0.75rem sans labels), `type-day-ornament` (6-14rem gold ghost number)
+- `headline-sans` / `headline-serif` / `headline-mixed` — mixed headline utility classes
+- `ornament-divider` — gold rule + ornament between sections
+- `oldstyle-nums` — old-style numeral utility for casual numbers
+
+### Page Typography Overhauls
+
+- **Homepage:** MixedHeadline tagline ("DAILY _bread_ FOR THE _cluttered, hungry_ SOUL"), mixed section headers, Instrument Serif numbers (01/02/03), ghost Scripture text in visual break, gold ornament footer, gold rules on featured series cards
+- **Devotional reader:** Massive `.type-day-ornament` behind title, MixedHeadline day header ("DAY 1 — _title_"), ornamental dividers between all modules, `type-prose` + `baseline-grid` on reading flow
+- **Series browse:** MixedHeadline page title ("ALL _Series_"), section labels ("WAKE-UP _Magazine_", "DEEP _Dives_"), gold rules on cards, old-style numerals
+- **Series detail:** Large Instrument Serif italic question, `type-micro` labels, Instrument Serif day numbers, `columns-prose` on long introductions
+- **Soul Audit:** MixedHeadline question ("WHAT ARE YOU _wrestling with_ TODAY?")
+
+### Activated Typography Features
+
+- `type-prose` (ligatures, old-style nums, hanging punct) on all body text
+- Drop caps (Instrument Serif gold) on Teaching and Story module openings
+- Multi-column layouts (`columns-prose`) on long Teaching content
+- PullQuote on TeachingModule `keyInsight`, InsightModule `fascinatingFact`, ProfileModule `keyQuote`, BridgeModule `connectionPoint`
+- Old-style numerals on day counts, Strong's numbers, progress counters, copyright
+
+### Version
+
+- `package.json` bumped from `0.1.0` → `0.7.0`
 
 ---
 

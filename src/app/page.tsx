@@ -9,6 +9,8 @@ import StaggerGrid from '@/components/motion/StaggerGrid'
 import GoldHighlight from '@/components/motion/GoldHighlight'
 import DropCap from '@/components/motion/DropCap'
 import TextReveal from '@/components/motion/TextReveal'
+import MixedHeadline, { Sans, Serif } from '@/components/MixedHeadline'
+import OrnamentDivider from '@/components/OrnamentDivider'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
 import { SERIES_DATA, FEATURED_SERIES, ALL_SERIES_ORDER } from '@/data/series'
@@ -141,11 +143,11 @@ export default function Home() {
 
       {/* Hero — EUANGELION massive + inline Soul Audit */}
       <header className="flex min-h-[calc(100vh-57px)] flex-col items-center justify-center px-6 text-center">
-        {/* Massive wordmark */}
+        {/* Massive wordmark — NOW VISIBLY SERIFED */}
         <TextReveal
           text="EUANGELION"
           as="h1"
-          className="text-masthead type-sans-display mb-4 w-full"
+          className="text-masthead mb-4 w-full"
           style={{
             fontSize: 'clamp(2.5rem, 10vw, 8rem)',
             lineHeight: 1,
@@ -161,39 +163,34 @@ export default function Home() {
           </p>
         </FadeIn>
 
-        {/* Tagline — Word-Level Mixing */}
+        {/* Tagline — Emphasis-Based Mixed Headline */}
         <FadeIn delay={0.4} y={12}>
-          <p
-            className="mx-auto mb-12"
-            style={{
-              fontSize: 'clamp(1.5rem, 4vw, 3rem)',
-              lineHeight: 1.3,
-              maxWidth: '20ch',
-            }}
+          <MixedHeadline
+            as="p"
+            size="lg"
+            className="mx-auto mb-12 justify-center"
+            style={{ maxWidth: '20ch' }}
           >
-            <span
-              className="text-label type-caption"
-              style={{
-                fontSize: 'clamp(0.75rem, 1.5vw, 1rem)',
-                display: 'block',
-                marginBottom: '0.25em',
-              }}
-            >
-              DAILY
-            </span>
-            <span className="text-serif-italic type-serif-flow type-prose">
+            <Sans>DAILY</Sans>{' '}
+            <Serif>
               <GoldHighlight>bread</GoldHighlight>
-              {typographer(' for the cluttered, hungry soul.')}
-            </span>
-          </p>
+            </Serif>{' '}
+            <Sans>FOR THE</Sans>{' '}
+            <Serif>{typographer('cluttered, hungry')}</Serif> <Sans>SOUL.</Sans>
+          </MixedHeadline>
         </FadeIn>
 
         {/* Inline Soul Audit */}
         <FadeIn delay={0.6} y={16}>
           <div className="w-full max-w-xl">
-            <p className="vw-body mb-4 text-secondary">
-              {typographer('What are you wrestling with today?')}
-            </p>
+            <MixedHeadline
+              as="p"
+              size="sm"
+              className="mb-4 justify-center text-secondary"
+            >
+              <Sans>WHAT ARE YOU</Sans> <Serif>wrestling with</Serif>{' '}
+              <Sans>TODAY?</Sans>
+            </MixedHeadline>
 
             {limitReached ? (
               <div className="py-8 text-center">
@@ -210,7 +207,7 @@ export default function Home() {
             ) : (
               <>
                 {hydrated && auditCount > 0 && (
-                  <p className="vw-small mb-4 text-center text-muted">
+                  <p className="vw-small mb-4 text-center text-muted oldstyle-nums">
                     Audit {auditCount + 1} of 3
                   </p>
                 )}
@@ -319,7 +316,7 @@ export default function Home() {
                         {typographer(match.question)}
                       </p>
                       {match.reasoning && (
-                        <p className="vw-small mb-4 text-tertiary">
+                        <p className="vw-small mb-4 text-tertiary type-prose">
                           {typographer(match.reasoning)}
                         </p>
                       )}
@@ -334,7 +331,7 @@ export default function Home() {
                         </div>
                       )}
                       <div className="flex items-center justify-between">
-                        <span className="text-label vw-small text-muted">
+                        <span className="text-label vw-small text-muted oldstyle-nums">
                           {SERIES_DATA[match.slug]?.days.length || '?'} DAYS
                         </span>
                         <span className="text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)]">
@@ -358,9 +355,13 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <FadeIn>
-            <h2 className="text-label vw-small mb-16 text-center text-gold type-caption">
-              HOW IT WORKS
-            </h2>
+            <MixedHeadline
+              as="h2"
+              size="md"
+              className="mb-16 justify-center text-center"
+            >
+              <Sans>HOW IT</Sans> <Serif>Works</Serif>
+            </MixedHeadline>
           </FadeIn>
           <StaggerGrid className="mx-auto grid max-w-4xl gap-12 text-center md:grid-cols-3 md:gap-16">
             <div>
@@ -388,12 +389,16 @@ export default function Home() {
                 </svg>
               </div>
               <div
-                className="mb-4 text-gold type-display type-data"
-                style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
+                className="mb-4 text-gold oldstyle-nums"
+                style={{
+                  fontFamily: 'var(--font-family-serif)',
+                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+                  fontWeight: 400,
+                }}
               >
                 01
               </div>
-              <p className="vw-body text-secondary">
+              <p className="vw-body text-secondary type-prose">
                 {typographer(
                   'Tell us what you\u2019re wrestling with. We\u2019ll match you to a series.',
                 )}
@@ -426,12 +431,16 @@ export default function Home() {
                 </svg>
               </div>
               <div
-                className="mb-4 text-gold type-display type-data"
-                style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
+                className="mb-4 text-gold oldstyle-nums"
+                style={{
+                  fontFamily: 'var(--font-family-serif)',
+                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+                  fontWeight: 400,
+                }}
               >
                 02
               </div>
-              <p className="vw-body text-secondary">
+              <p className="vw-body text-secondary type-prose">
                 {typographer(
                   'Read one devotional per day. Short, deep, honest.',
                 )}
@@ -457,12 +466,16 @@ export default function Home() {
                 </svg>
               </div>
               <div
-                className="mb-4 text-gold type-display type-data"
-                style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
+                className="mb-4 text-gold oldstyle-nums"
+                style={{
+                  fontFamily: 'var(--font-family-serif)',
+                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+                  fontWeight: 400,
+                }}
               >
                 03
               </div>
-              <p className="vw-body text-secondary">
+              <p className="vw-body text-secondary type-prose">
                 {typographer(
                   'Reflect, journal, and let God reorder your heart.',
                 )}
@@ -492,35 +505,26 @@ export default function Home() {
               'radial-gradient(ellipse at 50% 50%, rgba(193, 154, 107, 0.12) 0%, transparent 60%)',
           }}
         />
-        {/* Decorative cross */}
+        {/* Massive ghost Scripture text */}
         <div
-          className="absolute inset-0 flex items-center justify-center"
+          className="pointer-events-none absolute inset-0 flex select-none items-center justify-center"
           aria-hidden="true"
         >
-          <svg
-            width="80"
-            height="80"
-            viewBox="0 0 80 80"
-            fill="none"
-            opacity="0.15"
+          <span
+            style={{
+              fontFamily: 'var(--font-family-serif)',
+              fontStyle: 'italic',
+              fontSize: 'clamp(3rem, 8vw, 7rem)',
+              fontWeight: 400,
+              color: 'var(--color-scroll)',
+              opacity: 0.04,
+              textAlign: 'center',
+              maxWidth: '80%',
+              lineHeight: 1.2,
+            }}
           >
-            <line
-              x1="40"
-              y1="8"
-              x2="40"
-              y2="72"
-              stroke="var(--color-gold)"
-              strokeWidth="1.5"
-            />
-            <line
-              x1="8"
-              y1="32"
-              x2="72"
-              y2="32"
-              stroke="var(--color-gold)"
-              strokeWidth="1.5"
-            />
-          </svg>
+            Remain in me, as I also remain in you.
+          </span>
         </div>
       </section>
 
@@ -532,9 +536,12 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="mx-auto max-w-3xl text-center">
             <FadeIn>
-              <h2 className="text-serif-italic vw-heading-md mb-10">
+              <p
+                className="text-serif-italic vw-heading-md mb-10"
+                style={{ fontStyle: 'italic' }}
+              >
                 {typographer('Something brought you here.')}
-              </h2>
+              </p>
             </FadeIn>
             <DropCap className="vw-body mb-6 leading-relaxed text-secondary">
               {typographer(
@@ -559,9 +566,9 @@ export default function Home() {
           <div className="grid gap-16 md:grid-cols-12">
             <div className="md:col-span-5">
               <FadeIn>
-                <p className="text-label vw-small mb-6 text-gold type-caption">
-                  WHAT THIS IS
-                </p>
+                <MixedHeadline as="p" size="sm" className="mb-6 text-gold">
+                  <Sans>WHAT THIS</Sans> <Serif>Is</Serif>
+                </MixedHeadline>
               </FadeIn>
               <FadeIn delay={0.1}>
                 <p className="text-serif-italic vw-body-lg type-serif-flow type-prose">
@@ -572,16 +579,16 @@ export default function Home() {
               </FadeIn>
             </div>
             <div className="md:col-span-6 md:col-start-7">
-              <div className="space-y-8">
+              <div className="space-y-8 columns-prose type-prose">
                 <FadeIn delay={0.15}>
-                  <p className="vw-body leading-relaxed text-secondary type-prose">
+                  <p className="vw-body leading-relaxed text-secondary">
                     {typographer(
                       'Each series is a multi-day journey. One reading per day. Designed to be short enough for busy lives and deep enough to be worth your time.',
                     )}
                   </p>
                 </FadeIn>
                 <FadeIn delay={0.25}>
-                  <p className="vw-body leading-relaxed text-secondary type-prose">
+                  <p className="vw-body leading-relaxed text-secondary">
                     {typographer(
                       'We don\u2019t have all the answers. But the questions are worth asking, and you shouldn\u2019t have to ask them alone.',
                     )}
@@ -602,9 +609,13 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <FadeIn>
-            <h2 className="text-label vw-small mb-12 text-center text-gold type-caption">
-              FEATURED SERIES
-            </h2>
+            <MixedHeadline
+              as="h2"
+              size="md"
+              className="mb-12 justify-center text-center"
+            >
+              <Sans>FEATURED</Sans> <Serif>Series</Serif>
+            </MixedHeadline>
           </FadeIn>
           <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {FEATURED_SERIES.map((slug) => {
@@ -627,10 +638,19 @@ export default function Home() {
                       <p className="text-label vw-small mb-2 text-gold">
                         {series.title.toUpperCase()}
                       </p>
+                      {/* Thin gold rule */}
+                      <div
+                        className="mb-3"
+                        style={{
+                          height: '1px',
+                          background: 'var(--color-gold)',
+                          opacity: 0.2,
+                        }}
+                      />
                       <p className="text-serif-italic vw-body transition-colors duration-300 group-hover:text-gold">
                         {typographer(series.question)}
                       </p>
-                      <p className="vw-small mt-4 text-muted">
+                      <p className="vw-small mt-4 text-muted oldstyle-nums">
                         {series.days.length} DAYS
                       </p>
                     </div>
@@ -662,8 +682,12 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="text-center">
+            <OrnamentDivider />
             <FadeIn>
-              <p className="text-label vw-small leading-relaxed text-muted type-caption">
+              <p
+                className="text-label vw-small leading-relaxed text-muted type-caption"
+                style={{ letterSpacing: '0.2em' }}
+              >
                 SOMETHING TO HOLD ONTO.
               </p>
             </FadeIn>
@@ -681,7 +705,9 @@ export default function Home() {
                 Terms
               </Link>
             </div>
-            <p className="vw-small mt-6 text-muted">&copy; 2026 EUANGELION</p>
+            <p className="vw-small mt-6 text-muted oldstyle-nums">
+              &copy; 2026 EUANGELION
+            </p>
           </div>
         </div>
       </footer>

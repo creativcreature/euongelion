@@ -58,7 +58,7 @@ design-system/            # Design tokens, typography, dark mode
 - **Styling:** Tailwind utility classes. Order: layout → position → size → spacing → typography → visual → interactive
 - **State:** React hooks + localStorage (no external state lib yet)
 - **Dark mode:** Dark-first (`html.dark`). HSL color system.
-- **Fonts:** Space Grotesk (body/UI, closest free to Monument Grotesk), Cormorant Garamond (display/serif, closest free to Editorial New). SBL Hebrew for original language.
+- **Fonts:** Inter (body/UI), Instrument Serif (display/serif). SBL Hebrew for original language.
 
 ## Design Philosophy
 

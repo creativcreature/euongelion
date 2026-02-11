@@ -6,6 +6,7 @@ import SeriesHero from '@/components/SeriesHero'
 import ShareButton from '@/components/ShareButton'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
+import OrnamentDivider from '@/components/OrnamentDivider'
 import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
 import type { SeriesInfo } from '@/data/series'
@@ -52,20 +53,21 @@ export default function SeriesPageClient({
           <div className="md:col-span-7">
             <FadeIn>
               <div className="mb-12 md:mb-16">
-                <p className="text-label vw-small mb-4 text-gold">
-                  {series.title}
-                </p>
-                <h1 className="text-display vw-heading-xl mb-8 type-display">
+                <p className="type-micro mb-4 text-gold">{series.title}</p>
+                <h1
+                  className="text-serif-italic vw-heading-xl mb-8"
+                  style={{ fontStyle: 'italic' }}
+                >
                   {typographer(series.question)}
                 </h1>
-                <p className="text-label vw-small text-muted">
-                  {series.framework}
-                </p>
+                <p className="type-micro text-muted">{series.framework}</p>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <p className="text-serif-italic vw-body-lg mb-8 type-prose type-serif-flow">
+              <p
+                className={`text-serif-italic vw-body-lg mb-8 type-prose type-serif-flow ${series.introduction.length > 200 ? 'columns-prose' : ''}`}
+              >
                 {typographer(series.introduction)}
               </p>
             </FadeIn>
@@ -81,16 +83,19 @@ export default function SeriesPageClient({
             <FadeIn delay={0.15}>
               <div className="bg-surface-raised p-8 md:sticky md:top-24 md:p-10">
                 <div className="mb-4 flex items-center justify-between">
-                  <p className="text-label vw-small text-gold">
+                  <p className="type-micro text-gold oldstyle-nums">
                     {dayCount}-DAY JOURNEY
                   </p>
                   {seriesProgress.completed > 0 && (
-                    <span className="text-label vw-small text-[var(--color-success)]">
+                    <span
+                      className="type-micro oldstyle-nums"
+                      style={{ color: 'var(--color-success)' }}
+                    >
                       {seriesProgress.completed}/{seriesProgress.total} Complete
                     </span>
                   )}
                 </div>
-                <p className="vw-body mb-4 leading-relaxed text-secondary">
+                <p className="vw-body mb-4 leading-relaxed text-secondary type-prose">
                   {dayCount === 5
                     ? 'This series follows a chiastic structure (A-B-C-B\u2019-A\u2019). Days 1 and 5 mirror each other. Days 2 and 4 mirror each other. Day 3 is the pivot\u2014the core revelation everything builds toward.'
                     : `${dayCount} ${dayCount === 1 ? 'day' : 'days'} of guided reading to walk you through this topic, step by step.`}
@@ -172,10 +177,16 @@ export default function SeriesPageClient({
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="text-center">
-            <p className="text-label vw-small leading-relaxed text-muted">
+            <OrnamentDivider />
+            <p
+              className="text-label vw-small leading-relaxed text-muted"
+              style={{ letterSpacing: '0.2em' }}
+            >
               SOMETHING TO HOLD ONTO.
             </p>
-            <p className="vw-small mt-8 text-muted">&copy; 2026 EUANGELION</p>
+            <p className="vw-small mt-8 text-muted oldstyle-nums">
+              &copy; 2026 EUANGELION
+            </p>
           </div>
         </div>
       </footer>
@@ -196,26 +207,33 @@ function DayBlock({
 }) {
   return (
     <div
-      className={`${isCenter ? 'bg-surface-raised md:-mx-8 md:px-8 md:py-10' : ''}`}
+      className={`relative ${isCenter ? 'bg-surface-raised md:-mx-8 md:px-8 md:py-10' : ''}`}
       style={{
         borderBottom: '1px solid var(--color-border)',
       }}
     >
       <div className="flex items-center gap-8 md:gap-12">
-        {/* Day number */}
+        {/* Day number — Instrument Serif, oversized */}
         <span
-          className={`text-day-number shrink-0 transition-colors duration-300 ${
+          className={`shrink-0 transition-colors duration-300 oldstyle-nums ${
             isLocked
               ? 'text-tertiary'
               : isCenter
                 ? 'text-gold'
                 : 'text-muted group-hover:text-secondary'
           }`}
+          style={{
+            fontFamily: 'var(--font-family-serif)',
+            fontSize: 'clamp(3.75rem, 10vw, 10rem)',
+            fontWeight: 400,
+            lineHeight: 1,
+            letterSpacing: '-0.02em',
+          }}
         >
           {day.day}
         </span>
 
-        {/* Title */}
+        {/* Title — serif italic */}
         <div className="flex-1">
           <p
             className={`text-serif-italic vw-body-lg transition-all duration-300 ${
@@ -264,7 +282,7 @@ function DayBlock({
                   />
                 </svg>
               )}
-              <span className="hidden text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)] md:inline">
+              <span className="hidden type-micro text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)] md:inline">
                 {dayIsRead ? 'READ AGAIN \u2192' : 'READ \u2192'}
               </span>
             </>

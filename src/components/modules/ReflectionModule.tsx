@@ -21,13 +21,20 @@ export default function ReflectionModule({ module }: { module: Module }) {
         {typographer(module.prompt || module.content || '')}
       </p>
       {module.additionalQuestions && module.additionalQuestions.length > 0 && (
-        <ul className="mt-8 space-y-4">
+        <ol
+          className="mt-8 space-y-4 oldstyle-nums"
+          style={{ paddingLeft: '1.5em' }}
+        >
           {module.additionalQuestions.map((q, i) => (
-            <li key={i} className="vw-body leading-relaxed text-secondary">
+            <li
+              key={i}
+              className="text-serif-italic vw-body leading-relaxed text-secondary"
+              style={{ paddingLeft: '0.5em' }}
+            >
               {typographer(q)}
             </li>
           ))}
-        </ul>
+        </ol>
       )}
     </div>
   )

@@ -1,5 +1,6 @@
 import type { Module } from '@/types'
 import { typographer } from '@/lib/typographer'
+import PullQuote from '@/components/PullQuote'
 
 export default function BridgeModule({ module }: { module: Module }) {
   if (!module.content && !module.ancientTruth && !module.modernApplication)
@@ -21,12 +22,7 @@ export default function BridgeModule({ module }: { module: Module }) {
       )}
 
       {module.connectionPoint && (
-        <p
-          className="text-serif-italic vw-body-lg leading-relaxed mb-10"
-          style={{ maxWidth: '640px' }}
-        >
-          {typographer(module.connectionPoint)}
-        </p>
+        <PullQuote>{module.connectionPoint}</PullQuote>
       )}
 
       {module.modernApplication && (
@@ -48,12 +44,9 @@ export default function BridgeModule({ module }: { module: Module }) {
       )}
 
       {module.content && !module.ancientTruth && !module.modernApplication && (
-        <div className="space-y-6">
+        <div className="space-y-6 type-prose">
           {module.content.split('\n\n').map((paragraph, i) => (
-            <p
-              key={i}
-              className="vw-body leading-relaxed text-secondary type-prose"
-            >
+            <p key={i} className="vw-body leading-relaxed text-secondary">
               {typographer(paragraph)}
             </p>
           ))}

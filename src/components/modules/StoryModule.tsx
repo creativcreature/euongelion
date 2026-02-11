@@ -1,5 +1,6 @@
 import type { Module } from '@/types'
 import { typographer } from '@/lib/typographer'
+import DropCap from '@/components/motion/DropCap'
 
 export default function StoryModule({ module }: { module: Module }) {
   if (!module.content) return null
@@ -11,18 +12,24 @@ export default function StoryModule({ module }: { module: Module }) {
       {module.heading && (
         <p className="text-label vw-small mb-8 text-gold">{module.heading}</p>
       )}
-      <div className="space-y-6">
-        {paragraphs.map((paragraph, i) => (
-          <p
-            key={i}
-            className="text-serif-italic vw-body-lg leading-relaxed type-prose"
-          >
-            {typographer(paragraph)}
-          </p>
-        ))}
+      <div className="space-y-6 type-prose">
+        {paragraphs.map((paragraph, i) =>
+          i === 0 ? (
+            <DropCap
+              key={i}
+              className="text-serif-italic vw-body-lg leading-relaxed"
+            >
+              {typographer(paragraph)}
+            </DropCap>
+          ) : (
+            <p key={i} className="text-serif-italic vw-body-lg leading-relaxed">
+              {typographer(paragraph)}
+            </p>
+          ),
+        )}
       </div>
       {module.connectionToTheme && (
-        <p className="mt-10 vw-body leading-relaxed text-secondary type-prose">
+        <p className="mt-10 vw-body leading-relaxed text-secondary">
           {typographer(module.connectionToTheme)}
         </p>
       )}

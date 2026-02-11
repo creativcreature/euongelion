@@ -24,7 +24,7 @@ export default function ComprehensionModule({ module }: { module: Module }) {
 
       {isQuizMode && (
         <>
-          <p className="vw-body mb-8 leading-relaxed">
+          <p className="vw-body mb-8 leading-relaxed type-prose">
             {typographer(module.question || '')}
           </p>
           {module.options && (

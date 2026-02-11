@@ -2,7 +2,7 @@
  * EUANGELION Typography Craft System
  *
  * Master letterpress treatment — fine printing meets sacred text.
- * Space Grotesk (sans) and Cormorant Garamond (serif) dance contextually.
+ * Inter (sans) and Instrument Serif (display serif) dance contextually.
  *
  * Requires: --baseline, --font-family-display, --font-family-serif tokens from @theme
  */
@@ -89,23 +89,23 @@
 
 /* ============================================
    DROP CAP
-   Cormorant Garamond, gold, floating
+   Instrument Serif, gold, floating
    ============================================ */
 
 .drop-cap::first-letter {
   font-family: var(--font-family-serif);
-  font-size: 4.5rem;
+  font-size: 5rem;
   float: left;
-  line-height: 0.8;
-  padding-right: 0.1em;
+  line-height: 0.75;
+  padding-right: 0.15em;
   margin-top: 0.05em;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--color-gold);
 }
 
 @media (max-width: 767px) {
   .drop-cap::first-letter {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
 }
 
@@ -192,7 +192,7 @@
   content: '\201C';
   font-family: var(--font-family-serif);
   font-size: clamp(6rem, 10vw, 8rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 0.5;
   color: var(--color-gold);
   opacity: 0.1;

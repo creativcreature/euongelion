@@ -1,5 +1,6 @@
 import type { Module } from '@/types'
 import { typographer } from '@/lib/typographer'
+import PullQuote from '@/components/PullQuote'
 
 export default function InsightModule({ module }: { module: Module }) {
   if (!module.content && !module.historicalContext && !module.fascinatingFact)
@@ -24,11 +25,7 @@ export default function InsightModule({ module }: { module: Module }) {
         </div>
       )}
       {module.fascinatingFact && (
-        <div className="module-accent mt-8">
-          <p className="vw-body leading-relaxed text-secondary type-prose">
-            {typographer(module.fascinatingFact)}
-          </p>
-        </div>
+        <PullQuote>{module.fascinatingFact}</PullQuote>
       )}
     </div>
   )
