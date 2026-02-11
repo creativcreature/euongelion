@@ -25,6 +25,13 @@ const NAV_MENU_LINKS = [
   { href: '/series', label: 'Series' },
   { href: '/settings', label: 'Settings' },
 ]
+const MASTHEAD_TICKER_ITEMS = ['EUANGELION', 'GOOD NEWS', 'DAILY BREAD']
+const AUDIT_PROMPTS = [
+  "Lately, I've been...",
+  'I feel stuck because...',
+  "I believe, but I'm wrestling with...",
+  'What I need from God right now is...',
+]
 
 function getInitialTheme(): 'light' | 'dark' {
   if (typeof window === 'undefined') return 'dark'
@@ -85,7 +92,9 @@ export default function Home() {
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
   const [now, setNow] = useState(() => new Date())
   const [navInMetaRail, setNavInMetaRail] = useState(false)
+  const [promptIndex, setPromptIndex] = useState(0)
   const resultsRef = useRef<HTMLDivElement>(null)
+  const auditTextareaRef = useRef<HTMLTextAreaElement>(null)
   const hydrated = useSyncExternalStore(
     emptySubscribe,
     () => true,
@@ -104,12 +113,38 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
+    const promptTimer = window.setInterval(() => {
+      setPromptIndex((prev) => (prev + 1) % AUDIT_PROMPTS.length)
+    }, 4500)
+    return () => window.clearInterval(promptTimer)
+  }, [])
+
+  useEffect(() => {
     const onScroll = () => {
       setNavInMetaRail(window.scrollY > 220)
     }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement | null
+      const tagName = target?.tagName ?? ''
+      const isFormTarget =
+        tagName === 'INPUT' ||
+        tagName === 'TEXTAREA' ||
+        target?.isContentEditable
+
+      if (event.key === '/' && !isFormTarget) {
+        event.preventDefault()
+        auditTextareaRef.current?.focus()
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
   }, [])
 
   const formattedNow = useMemo(
@@ -131,6 +166,16 @@ export default function Home() {
     localStorage.setItem('theme', next)
     document.documentElement.classList.toggle('dark', next === 'dark')
   }
+
+  const activeAuditPrompt = AUDIT_PROMPTS[promptIndex]
+  const auditWordCount = useMemo(
+    () =>
+      auditText.trim().length === 0
+        ? 0
+        : auditText.trim().split(/\s+/).filter(Boolean).length,
+    [auditText],
+  )
+  const auditReadiness = Math.min(100, Math.round((auditWordCount / 32) * 100))
 
   const [auditResults, setAuditResults] = useState<{
     matches: Array<{
@@ -283,18 +328,29 @@ export default function Home() {
               <h1
                 className="text-masthead relative mb-2 w-full cursor-default overflow-hidden text-left select-none"
                 style={{
-                  fontSize: 'clamp(2.8rem, 13vw, 11rem)',
+                  fontSize: 'clamp(1.95rem, 9.2vw, 11rem)',
                   lineHeight: 0.82,
-                  letterSpacing: '0.13em',
+                  letterSpacing: '0.1em',
                 }}
                 aria-label="Euangelion. Good News."
               >
                 <span className="masthead-ticker" aria-hidden="true">
-                  <span className="masthead-ticker-segment">
-                    EUANGELION • GOOD NEWS •
-                  </span>
-                  <span className="masthead-ticker-segment">
-                    EUANGELION • GOOD NEWS •
+                  <span className="masthead-ticker-track">
+                    {[0, 1].map((segmentIndex) => (
+                      <span
+                        key={segmentIndex}
+                        className="masthead-ticker-segment"
+                      >
+                        {MASTHEAD_TICKER_ITEMS.map((item, itemIndex) => (
+                          <span
+                            key={`${segmentIndex}-${item}-${itemIndex}`}
+                            className="masthead-ticker-item"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </span>
+                    ))}
                   </span>
                 </span>
               </h1>
@@ -384,16 +440,27 @@ export default function Home() {
                         )}
 
                         <textarea
+                          ref={auditTextareaRef}
                           value={auditText}
                           onChange={(e) => {
                             setAuditText(e.target.value)
                             setError(null)
                           }}
-                          placeholder="Lately, I've been..."
+                          placeholder={activeAuditPrompt}
                           rows={3}
                           disabled={isSubmitting}
-                          className="text-serif-italic vw-body mb-3 w-full resize-none border border-subtle bg-[rgba(255,255,255,0.65)] p-4 text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
-                          style={{ lineHeight: 1.7 }}
+                          className="text-serif-italic vw-body mb-2 w-full resize-none border border-subtle p-4 text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] transition-colors duration-200 focus:outline-none"
+                          style={{
+                            lineHeight: 1.7,
+                            background:
+                              'color-mix(in srgb, var(--color-bg) 78%, white)',
+                          }}
+                          onKeyDown={(e) => {
+                            if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+                              e.preventDefault()
+                              void handleAuditSubmit()
+                            }
+                          }}
                           onFocus={(e) => {
                             e.target.style.borderColor = 'var(--color-gold)'
                           }}
@@ -401,6 +468,32 @@ export default function Home() {
                             e.target.style.borderColor = 'var(--color-border)'
                           }}
                         />
+                        <div className="mb-3">
+                          <div className="mb-1 flex items-center justify-between">
+                            <p className="vw-small text-muted oldstyle-nums">
+                              {auditWordCount} words
+                            </p>
+                            <p className="vw-small text-muted oldstyle-nums">
+                              Readiness {auditReadiness}%
+                            </p>
+                          </div>
+                          <div
+                            className="h-1 w-full overflow-hidden"
+                            style={{
+                              background: 'var(--color-surface)',
+                              border: '1px solid var(--color-border)',
+                            }}
+                          >
+                            <div
+                              className="h-full transition-all duration-300"
+                              style={{
+                                width: `${auditReadiness}%`,
+                                background:
+                                  'linear-gradient(90deg, var(--color-gold), color-mix(in srgb, var(--color-gold) 55%, var(--color-text-primary)))',
+                              }}
+                            />
+                          </div>
+                        </div>
 
                         {error && (
                           <p className="vw-small mb-4 text-center text-secondary">
@@ -418,8 +511,9 @@ export default function Home() {
                             : 'Get My Match'}
                         </button>
 
-                        <p className="vw-small mt-4 text-center text-muted">
-                          No account required. Start reading immediately.
+                        <p className="vw-small mt-3 text-center text-muted">
+                          No account required. Press `/` to focus and `Cmd/Ctrl
+                          + Enter` to submit.
                         </p>
                       </>
                     )}

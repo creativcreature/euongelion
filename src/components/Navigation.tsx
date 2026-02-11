@@ -273,14 +273,15 @@ export default function Navigation({
         <div
           className="fixed inset-0 md:hidden"
           style={{
-            backgroundColor: 'var(--color-overlay)',
+            backgroundColor:
+              'color-mix(in srgb, var(--color-overlay) 90%, transparent)',
             backdropFilter: 'blur(4px)',
             zIndex: 'var(--z-overlay)',
           }}
           onClick={() => setMobileOpen(false)}
         >
           <div
-            className="fixed bottom-0 right-0 top-0 w-[280px] bg-tehom p-8 shadow-xl"
+            className="bg-page border-subtle fixed bottom-0 right-0 top-0 w-[300px] border-l p-8 shadow-xl"
             style={{
               zIndex: 'var(--z-modal)',
             }}
@@ -292,7 +293,7 @@ export default function Navigation({
             {/* Close */}
             <button
               onClick={() => setMobileOpen(false)}
-              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center text-muted transition-colors duration-200 hover:text-scroll"
+              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
               aria-label="Close navigation menu"
             >
               <svg
@@ -315,7 +316,9 @@ export default function Navigation({
             <nav className="mt-20 space-y-6">
               <Link
                 href="/"
-                className="block text-label vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+                className={`block text-label vw-small transition-colors duration-200 hover:text-[var(--color-text-primary)] ${
+                  pathname === '/' ? 'text-gold' : 'text-muted'
+                }`}
               >
                 HOME
               </Link>

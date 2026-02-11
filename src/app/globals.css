@@ -227,6 +227,8 @@
     font-size: clamp(15px, 1vw + 14px, 17px);
     background-color: var(--color-bg);
     color: var(--color-text-primary);
+    width: 100%;
+    overflow-x: hidden;
     transition:
       background-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
       color 400ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -236,6 +238,8 @@
     font-family: var(--font-family-serif);
     background-color: var(--color-bg);
     color: var(--color-text-primary);
+    width: 100%;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -290,19 +294,19 @@
 
   /* Dark mode class — theme transition */
   .dark {
-    --color-bg: #0f1b2e;
-    --color-fg: #fff8ec;
-    --color-text-primary: #fff8ec;
-    --color-text-secondary: rgba(255, 248, 236, 0.8);
-    --color-text-tertiary: rgba(255, 248, 236, 0.64);
-    --color-text-muted: rgba(255, 248, 236, 0.5);
-    --color-border: rgba(255, 248, 236, 0.18);
-    --color-border-strong: rgba(255, 248, 236, 0.3);
-    --color-surface: rgba(255, 248, 236, 0.09);
-    --color-surface-raised: rgba(255, 248, 236, 0.14);
-    --color-overlay: rgba(10, 18, 34, 0.78);
-    --color-hover: rgba(255, 248, 236, 0.14);
-    --color-active: rgba(255, 248, 236, 0.2);
+    --color-bg: #111a2b;
+    --color-fg: #f8f0e3;
+    --color-text-primary: #f8f0e3;
+    --color-text-secondary: rgba(248, 240, 227, 0.82);
+    --color-text-tertiary: rgba(248, 240, 227, 0.68);
+    --color-text-muted: rgba(248, 240, 227, 0.52);
+    --color-border: rgba(248, 240, 227, 0.2);
+    --color-border-strong: rgba(248, 240, 227, 0.32);
+    --color-surface: rgba(248, 240, 227, 0.08);
+    --color-surface-raised: rgba(248, 240, 227, 0.12);
+    --color-overlay: rgba(9, 14, 24, 0.82);
+    --color-hover: rgba(248, 240, 227, 0.12);
+    --color-active: rgba(248, 240, 227, 0.18);
   }
 
   /* Ensure logos don't get inverted */
@@ -340,6 +344,54 @@
       --color-border: CanvasText;
     }
   }
+}
+
+/* ============================================
+   GLOBAL NEWSPRINT SURFACE
+   ============================================ */
+.newsprint-site {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(18, 29, 48, 0.012) 0,
+      rgba(18, 29, 48, 0.012) 1px,
+      transparent 1px,
+      transparent 8px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(18, 29, 48, 0.006) 0,
+      rgba(18, 29, 48, 0.006) 1px,
+      transparent 1px,
+      transparent 7px
+    ),
+    var(--color-bg);
+  overflow-x: hidden;
+}
+
+.dark .newsprint-site {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.035)
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(248, 240, 227, 0.018) 0,
+      rgba(248, 240, 227, 0.018) 1px,
+      transparent 1px,
+      transparent 9px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(248, 240, 227, 0.01) 0,
+      rgba(248, 240, 227, 0.01) 1px,
+      transparent 1px,
+      transparent 8px
+    ),
+    var(--color-bg);
 }
 
 /* ============================================
@@ -398,20 +450,20 @@
 }
 
 .dark .newspaper-home {
-  --color-bg: #131b27;
-  --color-fg: #f2e9da;
+  --color-bg: #111a2b;
+  --color-fg: #f8f0e3;
   --color-gold: #d98b52;
-  --color-text-primary: #f2e9da;
-  --color-text-secondary: rgba(242, 233, 218, 0.84);
-  --color-text-tertiary: rgba(242, 233, 218, 0.68);
-  --color-text-muted: rgba(242, 233, 218, 0.52);
-  --color-border: rgba(242, 233, 218, 0.24);
-  --color-border-strong: rgba(242, 233, 218, 0.34);
-  --color-surface: rgba(242, 233, 218, 0.06);
-  --color-surface-raised: rgba(18, 27, 38, 0.9);
-  --color-overlay: rgba(19, 27, 39, 0.9);
-  --color-hover: rgba(242, 233, 218, 0.08);
-  --color-active: rgba(242, 233, 218, 0.13);
+  --color-text-primary: #f8f0e3;
+  --color-text-secondary: rgba(248, 240, 227, 0.84);
+  --color-text-tertiary: rgba(248, 240, 227, 0.68);
+  --color-text-muted: rgba(248, 240, 227, 0.52);
+  --color-border: rgba(248, 240, 227, 0.24);
+  --color-border-strong: rgba(248, 240, 227, 0.34);
+  --color-surface: rgba(248, 240, 227, 0.06);
+  --color-surface-raised: rgba(16, 24, 36, 0.9);
+  --color-overlay: rgba(11, 17, 27, 0.9);
+  --color-hover: rgba(248, 240, 227, 0.08);
+  --color-active: rgba(248, 240, 227, 0.13);
 }
 
 .newspaper-home::before {
@@ -583,15 +635,48 @@
 }
 
 .masthead-ticker {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+}
+
+.masthead-ticker-track {
   display: inline-flex;
   min-width: max-content;
   white-space: nowrap;
-  animation: masthead-ticker-scroll 13s linear infinite;
+  animation: masthead-ticker-scroll 16s linear infinite;
+  will-change: transform;
 }
 
 .masthead-ticker-segment {
-  display: inline-block;
-  padding-right: 1.4em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42em;
+  padding-right: 0.42em;
+}
+
+.masthead-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  border: 1px solid color-mix(in srgb, var(--color-border) 75%, transparent);
+  border-radius: 0.14em;
+  padding: 0.09em 0.22em 0.12em;
+  background: color-mix(in srgb, var(--color-surface) 75%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masthead-ticker-track {
+    animation: none;
+    transform: none;
+  }
 }
 
 @layer utilities {
@@ -1038,7 +1123,27 @@
      READING FLOW — continuous article container
      ============================================ */
   .reading-flow {
-    max-width: 900px;
+    width: min(100%, 1040px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .newspaper-reading .type-prose {
+    font-size: clamp(1.16rem, 1.2vw + 0.85rem, 1.45rem);
+    line-height: 1.72;
+  }
+
+  .newspaper-reading .type-prose p,
+  .newspaper-reading .vw-body,
+  .newspaper-reading .vw-body-lg {
+    max-width: 74ch;
+  }
+
+  .newspaper-reading .reading-flow > * {
+    width: 100%;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* ============================================

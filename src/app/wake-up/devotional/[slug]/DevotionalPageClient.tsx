@@ -120,13 +120,13 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
   const panels = devotional.panels
 
   return (
-    <div className="min-h-screen bg-page">
+    <div className="newspaper-reading min-h-screen bg-page">
       <ScrollProgress />
       <Navigation />
 
       {/* Hero — full-bleed image or clean typography with day ornament */}
       {devotionalImage ? (
-        <div className="relative flex min-h-[50vh] items-end overflow-hidden md:min-h-[60vh]">
+        <div className="border-subtle relative flex min-h-[48vh] items-end overflow-hidden border-b md:min-h-[58vh]">
           <Image
             src={devotionalImage}
             alt=""
@@ -142,8 +142,8 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                 'linear-gradient(180deg, transparent 20%, rgba(26, 22, 18, 0.85) 100%)',
             }}
           />
-          <div className="relative w-full px-6 pb-16 pt-32 md:px-16 md:pb-20 lg:px-24">
-            <div style={{ maxWidth: '900px' }}>
+          <div className="relative w-full px-6 pb-12 pt-28 md:px-10 md:pb-16 lg:px-16">
+            <div className="mx-auto w-full max-w-[1040px]">
               <div className="mb-4 flex items-center gap-4">
                 {devotional.scriptureReference && (
                   <p className="type-micro text-gold">
@@ -174,7 +174,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
           </div>
         </div>
       ) : (
-        <header className="relative px-6 pb-16 pt-32 md:px-16 md:pb-24 md:pt-40 lg:px-24">
+        <header className="border-subtle relative border-b px-6 pb-12 pt-24 md:px-10 md:pb-16 md:pt-32 lg:px-16">
           {/* Massive ornamental day number behind title */}
           {currentDayNum > 0 && (
             <div
@@ -185,7 +185,10 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
               {currentDayNum}
             </div>
           )}
-          <div style={{ maxWidth: '900px', position: 'relative' }}>
+          <div
+            className="mx-auto w-full max-w-[1040px]"
+            style={{ position: 'relative' }}
+          >
             <div className="mb-6 flex items-center gap-4">
               {devotional.scriptureReference && (
                 <p className="type-micro text-gold">
@@ -225,7 +228,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
       {!dayGate.unlocked ? (
         <main
           id="main-content"
-          className="px-6 pb-32 pt-16 md:px-16 md:pb-48 md:pt-24 lg:px-24"
+          className="px-6 pb-24 pt-12 md:px-10 md:pb-32 md:pt-16 lg:px-16"
         >
           <div className="mx-auto max-w-xl py-16 text-center">
             <p className="text-serif-italic vw-body-lg mb-8 text-secondary">
@@ -244,9 +247,9 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
           {/* Content — continuous scroll with ornament dividers */}
           <main
             id="main-content"
-            className="px-6 pb-32 pt-16 md:px-16 md:pb-48 md:pt-24 lg:px-24"
+            className="px-6 pb-24 pt-12 md:px-10 md:pb-32 md:pt-16 lg:px-16"
           >
-            <div className="reading-flow type-prose baseline-grid">
+            <div className="reading-flow type-prose baseline-grid mx-auto">
               <StaggerGrid selector="> *">
                 {modules
                   ? modules.map((mod, index) => (
@@ -273,12 +276,9 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
 
           {/* Mark as Complete */}
           {!isCompleted && (
-            <div
-              className="px-6 pb-16 md:px-16 md:pb-24 lg:px-24"
-              style={{ maxWidth: '900px' }}
-            >
+            <div className="px-6 pb-12 md:px-10 md:pb-16 lg:px-16">
               <div
-                className="pt-12"
+                className="mx-auto max-w-[1040px] pt-10"
                 style={{ borderTop: '1px solid var(--color-border)' }}
               >
                 <p className="text-serif-italic vw-body mb-8 text-secondary">
@@ -302,11 +302,11 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
       {/* Next/Prev Navigation — Mixed Headline style */}
       {(prevDay || nextDay) && (
         <nav
-          className="px-6 md:px-16 lg:px-24"
+          className="px-6 md:px-10 lg:px-16"
           style={{ borderTop: '1px solid var(--color-border)' }}
           aria-label="Devotional navigation"
         >
-          <div className="flex items-stretch" style={{ maxWidth: '900px' }}>
+          <div className="mx-auto flex max-w-[1040px] items-stretch">
             {prevDay ? (
               <Link
                 href={`/wake-up/devotional/${prevDay.slug}`}
@@ -338,7 +338,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
 
       {/* Footer */}
       <footer className="px-6 pb-24 pt-12 md:px-16 md:pb-32 lg:px-24">
-        <div className="flex items-center justify-between">
+        <div className="mx-auto flex max-w-[1040px] items-center justify-between">
           <button
             onClick={() => router.back()}
             className="text-label vw-small text-muted transition-colors duration-300 hover:text-[var(--color-text-primary)]"
@@ -374,7 +374,7 @@ function PanelComponent({ panel }: { panel: Panel }) {
   const [imageError, setImageError] = useState(false)
 
   return (
-    <div style={{ maxWidth: '900px' }}>
+    <div className="mx-auto w-full max-w-[980px]">
       {panel.heading && (
         <p className="text-label vw-small mb-6 text-gold">{panel.heading}</p>
       )}
@@ -394,7 +394,11 @@ function PanelComponent({ panel }: { panel: Panel }) {
                 className={`mb-6 leading-relaxed ${
                   isScripture ? 'scripture-block' : 'text-secondary'
                 }`}
-                style={{ whiteSpace: 'pre-line', maxWidth: '680px' }}
+                style={{
+                  whiteSpace: 'pre-line',
+                  maxWidth: '74ch',
+                  marginInline: 'auto',
+                }}
               >
                 {paragraph.split('**').map((part, j) =>
                   j % 2 === 1 ? (

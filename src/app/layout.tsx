@@ -51,7 +51,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className="antialiased">
+      <body className="newsprint-site antialiased">
         <Providers>{children}</Providers>
         <ServiceWorkerRegistration />
         <Analytics />

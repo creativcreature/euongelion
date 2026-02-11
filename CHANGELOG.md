@@ -76,6 +76,42 @@ Format: Reverse chronological, grouped by sprint/date.
   - Compacted Soul Audit card (padding, heading size, textarea rows, CTA height)
 - Bumped service worker cache namespace from `euangelion-v8` -> `euangelion-v9` in `public/sw.js` so fold/layout updates are immediately visible
 
+### Newspaper System Expansion + Ticker Rebuild (2026-02-11)
+
+- Rebuilt homepage masthead animation as a ticker-strip system in `src/app/page.tsx` + `src/app/globals.css`:
+  - Segment-based marquee track with repeated items (`EUANGELION`, `GOOD NEWS`, `DAILY BREAD`)
+  - Ticker-chip visual treatment to match modern headline-ticker style
+  - Reduced mobile masthead size to fit viewport width more reliably
+- Expanded newspaper feel site-wide:
+  - Added global newsprint surface treatment to `<body>` via `newsprint-site` class in `src/app/layout.tsx`
+  - Added cross-site paper grain/fiber background layering in `src/app/globals.css`
+- Improved dark mode palette consistency across the app:
+  - Updated global `.dark` semantic tokens to align with the successful Wake-Up dark palette direction
+  - Aligned `.dark .newspaper-home` tokens to the same tonal family
+- Fixed light-mode mobile navigation usability in `src/components/Navigation.tsx`:
+  - Replaced hard-coded dark drawer (`bg-tehom`) with semantic page surface
+  - Improved close/button/link color contrast in light mode
+- Desktop devotional layout pass in `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`:
+  - Centered hero/content/navigation/footer containers
+  - Increased readable content width while keeping prose constrained
+  - Added `newspaper-reading` wrapper and associated typography/layout refinements
+  - Preserved mobile devotional flow while improving desktop reading balance
+- Overflow/viewport hardening in `src/app/globals.css`:
+  - Added `overflow-x: hidden` + width constraints on `html`/`body`
+  - Prevented horizontal side scrolling from ticker/layout overflow
+- Bumped service worker cache namespace from `euangelion-v10` -> `euangelion-v11` in `public/sw.js` so latest interaction updates are immediately visible
+
+### Innovation UX Pass (2026-02-11)
+
+- Added high-leverage Soul Audit interaction improvements in `src/app/page.tsx`:
+  - Rotating intelligent prompt text for quicker first sentence momentum
+  - Keyboard shortcut `/` to jump focus to Soul Audit input
+  - Keyboard shortcut `Cmd/Ctrl + Enter` to submit the audit
+  - Live word count + readiness meter to guide completion without extra friction
+- Upgraded ticker polish in `src/app/globals.css`:
+  - Added edge mask fade, reduced-motion fallback, and chip-styled ticker units
+  - Improved marquee smoothness with track-level animation + will-change optimization
+
 ### Validation
 
 - `npm run lint` passes
