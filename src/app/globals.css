@@ -213,7 +213,6 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-family-display);
     letter-spacing: var(--tracking-tight);
   }
 

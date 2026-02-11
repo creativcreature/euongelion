@@ -113,12 +113,22 @@ See `docs/MASTER-LOG.md` for all founder decisions across sessions.
 
 **CRITICAL — read before any deployment action:**
 
+- **GitHub account:** `wokegodX`. NEVER use `meltatl-26` or `creativcreature` — those are WRONG for this project.
 - **Vercel account:** `wokegodx` on team `wokegodxs-projects`. NEVER deploy to any other team.
 - **Git email:** Must be `wokegod3@gmail.com`. Vercel rejects commits from unrecognized emails.
 - **Auto-deploy:** GitHub integration deploys on every push to `main`. No manual deploy needed.
 - **Env vars:** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_APP_URL` — set in Vercel project settings.
-- **Before deploying:** Run `npx vercel whoami` and confirm it says `wokegodx`. If it says anything else, STOP.
-- **Before committing:** Run `git config user.email` and confirm it says `wokegod3@gmail.com`. If not, STOP.
+
+**Before ANY push or deploy, run ALL of these:**
+
+```bash
+gh auth switch --user wokegodX   # This machine has multiple gh accounts — MUST switch first
+gh auth status                    # Confirm active account is wokegodX
+npx vercel whoami                 # Confirm it says wokegodx
+git config user.email             # Confirm it says wokegod3@gmail.com
+```
+
+If any check fails, **STOP**. Do not push or deploy.
 
 ## Rules
 
