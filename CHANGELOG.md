@@ -35,6 +35,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Hotfix — Serif Font Rendering (2026-02-11)
+
+### Root Cause
+
+- `next/font` variable classes were mounted on `<body>` while canonical typography tokens (`--font-family-*`) were resolved from `:root` (`<html>`), creating a scope mismatch for `--font-instrument-serif`
+- `--font-family-serif` used `var(--font-instrument-serif), ...` without inline fallback, so if the variable was unavailable the declaration became invalid and serif styles inherited sans
+
+### Fixes Applied
+
+- **Layout scope fix** (`src/app/layout.tsx`) — moved `inter.variable` and `instrumentSerif.variable` class injection from `<body>` to `<html>`
+- **Font token hardening** (`src/app/globals.css`) — changed font-family tokens to `var(..., fallback-list)` form:
+  - `--font-family-display: var(--font-inter, 'Inter', 'Helvetica Neue', Arial, sans-serif);`
+  - `--font-family-body: var(--font-inter, 'Inter', 'Helvetica Neue', Arial, sans-serif);`
+  - `--font-family-serif: var(--font-instrument-serif, 'Instrument Serif', Georgia, serif);`
+- Updated comments in `globals.css` to reflect runtime font variables now sourced from `<html>`
+
+### Validation
+
+- `npm run lint` passes with no new lint errors
+
+---
+
 ## v0.7.0 — Typography Masterclass (2026-02-10)
 
 ### Font Swap

@@ -50,15 +50,7 @@
   --color-error: #6b2c2c;
   --color-info: #4a5f6b;
 
-  /* ============================================
-     TYPOGRAPHY
-     ============================================ */
-  --font-family-display:
-    var(--font-inter), 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  --font-family-body:
-    var(--font-inter), 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  --font-family-serif:
-    var(--font-instrument-serif), 'Instrument Serif', Georgia, serif;
+  /* Typography: letter spacing only (font-family on :root below — @theme can't use var() refs to runtime variables) */
 
   /* Letter spacing tokens */
   --tracking-tight: -0.02em;
@@ -168,6 +160,35 @@
      ============================================ */
   --nav-height: 64px;
   --nav-height-mobile: 56px;
+}
+
+/* ============================================
+   FONT FAMILY VARIABLES
+   Must be outside @theme because they use var() refs
+   to runtime CSS variables set by next/font on <html>.
+   @theme compiles at build time and can't resolve them.
+   ============================================ */
+:root {
+  --font-family-display: var(
+    --font-inter,
+    'Inter',
+    'Helvetica Neue',
+    Arial,
+    sans-serif
+  );
+  --font-family-body: var(
+    --font-inter,
+    'Inter',
+    'Helvetica Neue',
+    Arial,
+    sans-serif
+  );
+  --font-family-serif: var(
+    --font-instrument-serif,
+    'Instrument Serif',
+    Georgia,
+    serif
+  );
 }
 
 /* ============================================
