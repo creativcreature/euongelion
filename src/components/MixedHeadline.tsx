@@ -14,7 +14,7 @@ const sizeStyles: Record<HeadlineSize, React.CSSProperties> = {
  * Emphasis-based mixed headline system.
  *
  * KEY/POWER words → <Serif> (Instrument Serif italic, larger feel)
- * STRUCTURAL words → <Sans> (Inter, caps, bold, tighter)
+ * STRUCTURAL words → <Sans> (Instrument Serif upright, caps, tighter)
  *
  * Usage:
  * <MixedHeadline as="h1" size="xl">
@@ -44,7 +44,7 @@ export default function MixedHeadline({
   )
 }
 
-/** Sans fragment: Inter, bold, uppercase, tight tracking */
+/** Upright fragment: Instrument Serif, bold, uppercase, tight tracking */
 export function Sans({
   children,
   className = '',

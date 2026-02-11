@@ -63,6 +63,28 @@ Format: Reverse chronological, grouped by sprint/date.
   - `--font-instrument-serif` now has a resilient serif fallback stack (`Instrument Serif`, `Georgia`, `Times New Roman`, `serif`)
 - Verified production build succeeds using webpack (`npx next build --webpack`)
 
+### Instrument Serif Cleanup Pass (2026-02-11)
+
+- Removed remaining Geist wiring from `src/app/layout.tsx` and kept `<html className="dark">` only
+- Imported Instrument Serif directly in `src/app/globals.css`:
+  - `@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');`
+- Unified all canonical font tokens to a single serif source in `src/app/globals.css`:
+  - `--font-family-display`, `--font-family-body`, and `--font-family-serif` now all resolve from `--font-family` → `--font-instrument-serif`
+- Replaced lingering `var(--font-family-display)` inline style usage with `var(--font-family-serif)` in:
+  - `src/components/PullQuote.tsx`
+  - `src/components/modules/InteractiveModule.tsx`
+  - `src/app/wake-up/page.tsx`
+  - `src/app/offline/page.tsx`
+- Updated stale typography comments in:
+  - `src/components/MixedHeadline.tsx`
+  - `design-system/typography-craft.css`
+
+### Validation (Second Pass)
+
+- `npm run lint` passes
+- `npm run type-check` passes
+- `npm run build` passes
+
 ---
 
 ## v0.7.0 — Typography Masterclass (2026-02-10)

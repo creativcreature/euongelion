@@ -48,7 +48,7 @@ export default function PullQuote({
 
         <p
           style={{
-            fontFamily: 'var(--font-family-display)',
+            fontFamily: 'var(--font-family-serif)',
             fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
             fontWeight: 700,
             lineHeight: 1.3,

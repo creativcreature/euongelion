@@ -13,7 +13,7 @@ export default function OfflinePage() {
       <p
         className="mb-8 text-gold"
         style={{
-          fontFamily: 'var(--font-family-display)',
+          fontFamily: 'var(--font-family-serif)',
           fontSize: 'clamp(2rem, 5vw, 3.5rem)',
           fontWeight: 300,
           lineHeight: 1.1,

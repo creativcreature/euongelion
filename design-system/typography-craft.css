@@ -2,7 +2,7 @@
  * EUANGELION Typography Craft System
  *
  * Master letterpress treatment — fine printing meets sacred text.
- * Inter (sans) and Instrument Serif (display serif) dance contextually.
+ * Instrument Serif carries both structural and expressive roles.
  *
  * Requires: --baseline, --font-family-display, --font-family-serif tokens from @theme
  */
@@ -17,36 +17,36 @@
 .type-display {
   letter-spacing: -0.02em;
   font-weight: 300;
-  font-family: var(--font-family-display);
+  font-family: var(--font-family-serif);
 }
 
 .type-body {
   letter-spacing: 0.01em;
   font-weight: 400;
-  font-family: var(--font-family-body);
+  font-family: var(--font-family-serif);
 }
 
 .type-small {
   letter-spacing: 0.02em;
   font-weight: 500;
-  font-family: var(--font-family-body);
+  font-family: var(--font-family-serif);
 }
 
 .type-caption {
   letter-spacing: 0.08em;
   font-weight: 600;
   text-transform: uppercase;
-  font-family: var(--font-family-display);
+  font-family: var(--font-family-serif);
 }
 
 /* ============================================
    MIXED FONT UTILITIES
-   Sans + Serif contextual pairing
+   Upright + italic contextual pairing
    ============================================ */
 
-/* Sans: bold, uppercase, tight — for structural words */
+/* Upright: bold, uppercase, tight — for structural words */
 .type-sans-display {
-  font-family: var(--font-family-display);
+  font-family: var(--font-family-serif);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.02em;
@@ -64,7 +64,7 @@
 /* Data context: lining numerals, tabular */
 .type-data {
   font-variant-numeric: lining-nums tabular-nums;
-  font-family: var(--font-family-display);
+  font-family: var(--font-family-serif);
 }
 
 /* ============================================
@@ -181,7 +181,7 @@
 
 .pull-quote-enhanced {
   position: relative;
-  font-family: var(--font-family-display);
+  font-family: var(--font-family-serif);
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 700;
   line-height: 1.3;

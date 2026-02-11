@@ -25,7 +25,7 @@ export default function InteractiveModule({ module }: { module: Module }) {
               <span
                 className="flex-shrink-0 text-display"
                 style={{
-                  fontFamily: 'var(--font-family-display)',
+                  fontFamily: 'var(--font-family-serif)',
                   fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
                   fontWeight: 300,
                   lineHeight: 1,

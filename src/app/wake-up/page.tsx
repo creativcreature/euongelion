@@ -92,7 +92,7 @@ export default function WakeUpPage() {
               <div
                 className="mb-4 text-gold"
                 style={{
-                  fontFamily: 'var(--font-family-display)',
+                  fontFamily: 'var(--font-family-serif)',
                   fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                   fontWeight: 300,
                   lineHeight: 1,
@@ -108,7 +108,7 @@ export default function WakeUpPage() {
               <div
                 className="mb-4 text-gold"
                 style={{
-                  fontFamily: 'var(--font-family-display)',
+                  fontFamily: 'var(--font-family-serif)',
                   fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                   fontWeight: 300,
                   lineHeight: 1,
@@ -124,7 +124,7 @@ export default function WakeUpPage() {
               <div
                 className="mb-4 text-gold"
                 style={{
-                  fontFamily: 'var(--font-family-display)',
+                  fontFamily: 'var(--font-family-serif)',
                   fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                   fontWeight: 300,
                   lineHeight: 1,
@@ -181,7 +181,7 @@ export default function WakeUpPage() {
                     <span
                       className={`shrink-0 transition-colors duration-300 ${series.isCenter ? 'text-gold' : 'text-muted group-hover:text-secondary'}`}
                       style={{
-                        fontFamily: 'var(--font-family-display)',
+                        fontFamily: 'var(--font-family-serif)',
                         fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
                         fontWeight: 100,
                         lineHeight: 1.2,

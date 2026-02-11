@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
 import { Analytics } from '@vercel/analytics/next'
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
 import Providers from './providers'
@@ -35,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`dark ${GeistSans.variable}`}>
+    <html lang="en" className="dark">
       <body className="antialiased">
         <Providers>{children}</Providers>
         <ServiceWorkerRegistration />
