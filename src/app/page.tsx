@@ -182,61 +182,80 @@ export default function Home() {
         >
           <div className="mx-auto max-w-[1600px] px-4 md:px-[60px] lg:px-20">
             <FadeIn>
+              <div
+                className="mb-6 flex flex-wrap items-center justify-between gap-3 py-2 text-label vw-small text-muted"
+                style={{
+                  borderTop: '1px solid var(--color-border)',
+                  borderBottom: '1px solid var(--color-border)',
+                }}
+              >
+                <span>HOME EDITION</span>
+                <span className="hidden md:inline">
+                  SPIRITUAL FORMATION JOURNAL
+                </span>
+                <span className="hidden lg:inline">Continued on page 2</span>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.03}>
               <h1
-                className="text-masthead mb-8 w-full text-center"
+                className="group text-masthead relative mb-4 w-full cursor-default text-center select-none"
                 style={{
                   fontSize: 'clamp(3.5rem, 16vw, 14rem)',
                   lineHeight: 0.9,
                   letterSpacing: '0.12em',
                 }}
+                aria-label="Euangelion. Good News."
+                title="Hover to reveal meaning"
               >
-                EUANGELION
+                <span className="block transition-all duration-500 group-hover:-translate-y-8 group-hover:opacity-0">
+                  EUANGELION
+                </span>
+                <span className="pointer-events-none absolute inset-0 block translate-y-8 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                  GOOD NEWS
+                </span>
               </h1>
+              <p className="vw-body mx-auto mb-10 max-w-[34ch] text-center text-secondary type-prose">
+                {typographer('Daily bread for the cluttered, hungry soul.')}
+              </p>
             </FadeIn>
 
-            <div className="grid gap-8 md:grid-cols-12 md:gap-10">
+            <div
+              className="grid gap-8 pt-8 md:grid-cols-12 md:gap-10"
+              style={{ borderTop: '1px solid var(--color-border)' }}
+            >
               <div className="md:col-span-7">
                 <FadeIn delay={0.05}>
                   <p className="text-label vw-small mb-4 text-gold">
-                    DAILY GUIDANCE FOR REAL STRUGGLES
+                    LEAD STORY
                   </p>
-                  <p className="vw-body-lg mb-8 max-w-[36ch] text-secondary type-prose">
+                  <h2 className="vw-heading-md mb-4 max-w-[22ch]">
+                    {typographer('Find your next faithful step.')}
+                  </h2>
+                  <p className="vw-body mb-8 max-w-[42ch] text-secondary type-prose">
                     {typographer(
                       'Move from spiritual fog to practical next steps through short, honest, scripture-rooted devotionals.',
                     )}
                   </p>
                 </FadeIn>
 
-                <FadeIn delay={0.1}>
-                  <div className="mb-8 flex flex-col gap-4 sm:flex-row">
-                    <a
-                      href="#start-audit"
-                      className="bg-gold px-8 py-4 text-center text-label vw-small text-tehom transition-all duration-300 hover:bg-[var(--color-fg)] hover:text-[var(--color-bg)]"
-                    >
-                      Start 2-Minute Soul Audit
-                    </a>
-                    <Link
-                      href="/series"
-                      className="border px-8 py-4 text-center text-label vw-small text-[var(--color-text-primary)] transition-colors duration-300 hover:border-gold hover:text-gold"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Browse Series Library
-                    </Link>
-                  </div>
-                </FadeIn>
-
                 <FadeIn delay={0.15}>
-                  <div className="grid gap-3 sm:grid-cols-3">
+                  <ul
+                    className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-4"
+                    style={{ borderTop: '1px solid var(--color-border)' }}
+                  >
                     {TRUST_POINTS.map((point) => (
-                      <div
+                      <li
                         key={point}
-                        className="px-4 py-3 text-center text-label vw-small text-muted"
-                        style={{ border: '1px solid var(--color-border)' }}
+                        className="vw-small flex items-center text-secondary"
                       >
+                        <span className="mr-2 text-gold" aria-hidden="true">
+                          •
+                        </span>
                         {point}
-                      </div>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </FadeIn>
               </div>
 
@@ -253,7 +272,7 @@ export default function Home() {
                     }}
                   >
                     <p className="text-label vw-small mb-4 text-gold">
-                      START HERE
+                      SOUL AUDIT • FRONT PAGE
                     </p>
                     <h2 className="vw-heading-md mb-3">
                       {typographer('What are you wrestling with right now?')}

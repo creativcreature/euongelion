@@ -150,6 +150,22 @@ Format: Reverse chronological, grouped by sprint/date.
 
 - Bumped service worker cache namespace from `euangelion-v1` to `euangelion-v2` in `public/sw.js` so clients pick up latest homepage/style changes instead of stale cached assets
 
+### Newspaper Hero + Masthead Hover (2026-02-11)
+
+- Updated homepage hero composition in `src/app/page.tsx` to feel more newspaper-like:
+  - Added dateline/edition strip with horizontal rules
+  - Reframed left column as `LEAD STORY`
+  - Kept Soul Audit as right-column front-page action above the fold
+- Added interactive masthead behavior:
+  - `EUANGELION` now animates to `GOOD NEWS` on mouse hover with vertical slide/fade transition
+- Updated trust points to render as inline editorial bullets instead of card/button-like blocks
+
+### Validation (Newspaper Hero Pass)
+
+- `npm run lint` passes
+- `npm run type-check` passes
+- `npm run build` passes
+
 ---
 
 ## v0.7.0 — Typography Masterclass (2026-02-10)
