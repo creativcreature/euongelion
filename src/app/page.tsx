@@ -356,7 +356,7 @@ export default function Home() {
           </div>
         </div>
 
-        <header className="border-subtle border-b pb-8 pt-2 md:pb-10 md:pt-3">
+        <header className="section-rule border-subtle border-b pb-8 pt-2 md:pb-10 md:pt-3">
           <div className="mx-auto max-w-[1720px] px-4 md:px-[56px] lg:px-20">
             <FadeIn delay={0.03}>
               <h1
@@ -446,7 +446,7 @@ export default function Home() {
                         </p>
                         <Link
                           href="/series"
-                          className="text-label vw-small inline-block w-full border border-[var(--color-text-primary)] bg-[var(--color-text-primary)] px-8 py-3 text-[var(--color-bg)] transition-colors duration-200 hover:bg-transparent hover:text-[var(--color-text-primary)]"
+                          className="cta-major text-label vw-small inline-flex w-full px-8 py-3"
                         >
                           Browse All Series &rarr;
                         </Link>
@@ -524,7 +524,7 @@ export default function Home() {
                         <button
                           onClick={handleAuditSubmit}
                           disabled={isSubmitting}
-                          className="text-label vw-small w-full border border-[var(--color-text-primary)] bg-[var(--color-text-primary)] px-8 py-2.5 text-[var(--color-bg)] transition-colors duration-200 hover:bg-transparent hover:text-[var(--color-text-primary)] disabled:opacity-50"
+                          className="cta-major text-label vw-small w-full px-8 py-2.5 disabled:opacity-50"
                         >
                           {isSubmitting
                             ? 'Finding Your Match...'
@@ -547,7 +547,7 @@ export default function Home() {
         {auditResults && (
           <section
             ref={resultsRef}
-            className="border-subtle border-b py-14 md:py-16 lg:py-20"
+            className="section-rule border-subtle border-b py-14 md:py-16 lg:py-20"
           >
             <div className="mx-auto max-w-[1720px] px-6 md:px-[56px] lg:px-20">
               <FadeIn>
@@ -728,7 +728,7 @@ export default function Home() {
           </section>
         )}
 
-        <section className="border-subtle border-b py-14 md:py-16 lg:py-20">
+        <section className="section-rule border-subtle border-b py-14 md:py-16 lg:py-20">
           <div className="mx-auto max-w-[1720px] px-6 md:px-[56px] lg:px-20">
             <FadeIn>
               <div className="newspaper-subrule mx-auto mb-10 max-w-4xl py-3 text-center">
@@ -767,7 +767,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-subtle border-b py-14 md:py-16 lg:py-20">
+        <section className="section-rule border-subtle border-b py-14 md:py-16 lg:py-20">
           <div className="mx-auto max-w-[1720px] px-6 md:px-[56px] lg:px-20">
             <FadeIn>
               <div className="newspaper-subrule mx-auto mb-10 max-w-4xl py-3 text-center">
@@ -820,7 +820,7 @@ export default function Home() {
               <div className="mt-10 text-center">
                 <Link
                   href="/series"
-                  className="text-label vw-small inline-block border-b border-subtle px-4 pb-1 text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+                  className="link-highlight text-label vw-small inline-block px-4 pb-1 text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
                 >
                   View All {ALL_SERIES_ORDER.length} Series
                 </Link>
@@ -829,7 +829,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-subtle border-b py-14 md:py-16 lg:py-20">
+        <section className="section-rule border-subtle border-b py-14 md:py-16 lg:py-20">
           <div className="mx-auto max-w-[1720px] px-6 md:px-[56px] lg:px-20">
             <FadeIn>
               <div className="newspaper-subrule mx-auto mb-10 max-w-4xl py-3 text-center">
@@ -876,13 +876,13 @@ export default function Home() {
                 <div className="flex flex-col justify-center gap-3 sm:flex-row">
                   <a
                     href="#start-audit"
-                    className="text-label vw-small border border-[var(--color-text-primary)] bg-[var(--color-text-primary)] px-8 py-3 text-[var(--color-bg)] transition-colors duration-200 hover:bg-transparent hover:text-[var(--color-text-primary)]"
+                    className="cta-major text-label vw-small px-8 py-3"
                   >
                     Take Soul Audit
                   </a>
                   <Link
                     href="/series"
-                    className="text-label vw-small border border-subtle px-8 py-3 text-[var(--color-text-primary)] transition-colors duration-200 hover:border-[var(--color-text-primary)]"
+                    className="animated-underline text-label vw-small px-8 py-3 text-[var(--color-text-primary)]"
                   >
                     Browse Series
                   </Link>
@@ -905,13 +905,13 @@ export default function Home() {
             <div className="mt-6 flex items-center justify-center gap-6">
               <Link
                 href="/privacy"
-                className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+                className="animated-underline vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
               >
                 Privacy
               </Link>
               <Link
                 href="/terms"
-                className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+                className="animated-underline vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
               >
                 Terms
               </Link>

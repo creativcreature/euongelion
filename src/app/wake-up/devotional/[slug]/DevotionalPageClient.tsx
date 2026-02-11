@@ -104,7 +104,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
           <h1 className="text-display vw-heading-lg mb-8">Not Found</h1>
           <button
             onClick={() => router.push('/series')}
-            className="text-label vw-small text-gold transition-colors hover:text-[var(--color-text-primary)]"
+            className="animated-underline text-label vw-small text-gold transition-colors hover:text-[var(--color-text-primary)]"
           >
             Browse All Series &rarr;
           </button>
@@ -123,7 +123,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
 
       {/* Hero — full-bleed image or clean typography with day ornament */}
       {devotionalImage ? (
-        <div className="border-subtle relative flex min-h-[34vh] items-end overflow-hidden border-b md:min-h-[42vh]">
+        <div className="section-rule border-subtle relative flex min-h-[34vh] items-end overflow-hidden border-b md:min-h-[42vh]">
           <Image
             src={devotionalImage}
             alt=""
@@ -136,7 +136,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
             className="absolute inset-0"
             style={{
               background:
-                'linear-gradient(180deg, transparent 20%, rgba(26, 22, 18, 0.85) 100%)',
+                'linear-gradient(180deg, transparent 20%, rgba(11, 20, 32, 0.88) 100%)',
             }}
           />
           <div className="relative w-full px-6 pb-12 pt-28 md:px-10 md:pb-16 lg:px-16">
@@ -171,7 +171,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
           </div>
         </div>
       ) : (
-        <header className="border-subtle relative border-b px-6 pb-12 pt-16 md:px-10 md:pb-16 md:pt-20 lg:px-16">
+        <header className="section-rule border-subtle relative border-b px-6 pb-12 pt-16 md:px-10 md:pb-16 md:pt-20 lg:px-16">
           {/* Massive ornamental day number behind title */}
           {currentDayNum > 0 && (
             <div
@@ -225,7 +225,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
             </p>
             <button
               onClick={() => router.back()}
-              className="text-label vw-small text-gold transition-colors hover:text-[var(--color-text-primary)]"
+              className="animated-underline text-label vw-small text-gold transition-colors hover:text-[var(--color-text-primary)]"
             >
               &larr; Back to Series
             </button>
@@ -262,7 +262,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
             <div className="px-6 pb-12 md:px-10 md:pb-16 lg:px-16">
               <div
                 className="mx-auto max-w-[1040px] pt-10"
-                style={{ borderTop: '1px solid var(--color-border)' }}
+                style={{ borderTop: '2px solid var(--color-border-strong)' }}
               >
                 <p className="text-serif-italic vw-body mb-8 text-secondary">
                   Finished reading?
@@ -272,7 +272,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                     markComplete(slug, timeSpent)
                     setIsCompleted(true)
                   }}
-                  className="text-label vw-small text-gold transition-colors hover:text-[var(--color-text-primary)]"
+                  className="cta-major text-label vw-small px-8 py-3"
                 >
                   Mark as Complete &rarr;
                 </button>
@@ -286,14 +286,14 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
       {(prevDay || nextDay) && (
         <nav
           className="px-6 md:px-10 lg:px-16"
-          style={{ borderTop: '1px solid var(--color-border)' }}
+          style={{ borderTop: '2px solid var(--color-border-strong)' }}
           aria-label="Devotional navigation"
         >
           <div className="mx-auto flex max-w-[1040px] items-stretch">
             {prevDay ? (
               <Link
                 href={`/wake-up/devotional/${prevDay.slug}`}
-                className="group flex-1 py-8 pr-4 transition-colors duration-300"
+                className="group link-highlight flex-1 py-8 pr-4 transition-colors duration-300"
               >
                 <p className="type-micro mb-2 text-muted">&larr; PREVIOUS</p>
                 <p className="text-serif-italic vw-body transition-colors duration-300 group-hover:text-gold">
@@ -306,8 +306,8 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
             {nextDay && (
               <Link
                 href={`/wake-up/devotional/${nextDay.slug}`}
-                className="group flex-1 py-8 pl-4 text-right transition-colors duration-300"
-                style={{ borderLeft: '1px solid var(--color-border)' }}
+                className="group link-highlight flex-1 py-8 pl-4 text-right transition-colors duration-300"
+                style={{ borderLeft: '2px solid var(--color-border-strong)' }}
               >
                 <p className="type-micro mb-2 text-muted">NEXT &rarr;</p>
                 <p className="text-serif-italic vw-body transition-colors duration-300 group-hover:text-gold">
@@ -324,7 +324,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
         <div className="mx-auto flex max-w-[1040px] items-center justify-between">
           <button
             onClick={() => router.back()}
-            className="text-label vw-small text-muted transition-colors duration-300 hover:text-[var(--color-text-primary)]"
+            className="animated-underline text-label vw-small text-muted transition-colors duration-300 hover:text-[var(--color-text-primary)]"
           >
             &larr; Back
           </button>

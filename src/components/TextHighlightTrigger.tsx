@@ -55,7 +55,7 @@ export default function TextHighlightTrigger() {
 
   return (
     <button
-      className="fixed text-label vw-small bg-gold px-3 py-2 text-tehom shadow-md transition-opacity duration-200"
+      className="fixed text-label vw-small border border-[var(--color-text-primary)] bg-gold px-3 py-2 text-tehom transition-opacity duration-200"
       style={{
         left: `${tooltip.x}px`,
         top: `${tooltip.y}px`,

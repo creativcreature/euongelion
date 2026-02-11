@@ -345,10 +345,7 @@ export default function SoulAuditResultsPage() {
             <div className="flex items-center justify-center gap-8">
               <Link
                 href="/series"
-                className="inline-block px-10 py-5 text-label vw-small text-muted transition-all duration-300 hover:text-[var(--color-text-primary)]"
-                style={{
-                  borderBottom: '1px solid var(--color-border)',
-                }}
+                className="link-highlight text-label vw-small inline-block px-10 py-5 text-muted transition-all duration-300 hover:text-[var(--color-text-primary)]"
               >
                 Browse All Series
               </Link>

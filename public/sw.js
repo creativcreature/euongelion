@@ -1,5 +1,5 @@
 // Euangelion Service Worker
-const CACHE_NAME = 'euangelion-v18'
+const CACHE_NAME = 'euangelion-v19'
 const OFFLINE_URL = '/offline'
 
 // Static assets to pre-cache

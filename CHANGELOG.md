@@ -35,6 +35,48 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Dark Newspaper UX Consolidation Pass (2026-02-11)
+
+### What Changed
+
+- Reworked newspaper dark mode to the selected visual direction in `src/app/globals.css`:
+  - Dark paper base set to deep navy-black (`#0B1420`)
+  - Primary ink switched to crisp off-white (`#E9EEF5`)
+  - Accent switched to classic gold-ink replacement (`#C8A56A`)
+  - Removed rim-light style gradients and blur-driven rail glow
+  - Increased rule hierarchy to stronger newspaper lines (1px body rules + 2px section/divider rules)
+  - Kept medium paper texture visibility without glow effects
+- Standardized typography intent:
+  - Main body remains Instrument Serif
+  - UI labels/callouts/nav moved to secondary UI stack (`Space Grotesk` first in stack) in:
+    - `src/app/globals.css`
+    - `design-system/typography-craft.css`
+- Added two interaction systems in `src/app/globals.css`:
+  - `cta-major`: lined-box CTA with border-draw animation + subtle print-offset motion
+  - Contextual small-link interactions:
+    - `animated-underline` for nav/standard links (underline draw + slight lift)
+    - `link-highlight` for editorial/key callouts (flat marker swipe, no glow)
+- Applied interaction/style cleanup across homepage + devotional surfaces:
+  - Homepage CTA/section/rule updates in `src/app/page.tsx`
+  - Soul Audit page CTA + headline simplification updates in `src/app/soul-audit/page.tsx`
+  - Soul Audit results link treatment updates in `src/app/soul-audit/results/page.tsx`
+  - Devotional reading/nav/CTA/rule updates in `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+  - Navigation rail/menu border treatment cleanup in `src/components/Navigation.tsx`
+  - Removed glow-like shadows from reading-side overlays/controls in:
+    - `src/components/DevotionalChat.tsx`
+    - `src/components/TextHighlightTrigger.tsx`
+    - `src/components/ShareButton.tsx` (underlined interaction pass)
+- Updated PWA theme color in `src/app/layout.tsx` to match dark paper base.
+- Bumped service worker cache namespace from `euangelion-v18` -> `euangelion-v19` in `public/sw.js` so styling changes propagate immediately.
+
+### Validation
+
+- `npm run lint` passes
+- `npm run type-check` passes
+- `npm run build` passes
+
+---
+
 ## Soul Audit Full 5-Day Plan Generation (2026-02-11)
 
 ### What Changed

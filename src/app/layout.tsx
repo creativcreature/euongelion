@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true },
   other: {
-    'theme-color': '#1a1612',
+    'theme-color': '#0b1420',
     'apple-mobile-web-app-capable': 'yes',
   },
 }

@@ -112,9 +112,11 @@ export default function Navigation({
         }`}
         style={{
           backgroundColor: 'var(--color-bg)',
-          borderBottom: '1px solid var(--color-border)',
+          borderBottom: isNewspaper
+            ? '2px solid var(--color-border-strong)'
+            : '1px solid var(--color-border)',
           ...(isNewspaper
-            ? { borderTop: '1px solid var(--color-border)' }
+            ? { borderTop: '2px solid var(--color-border-strong)' }
             : {}),
           zIndex: 'var(--z-sticky)',
         }}
@@ -281,7 +283,7 @@ export default function Navigation({
           onClick={() => setMobileOpen(false)}
         >
           <div
-            className="bg-page border-subtle fixed bottom-0 right-0 top-0 w-[300px] border-l p-8 shadow-xl"
+            className="bg-page border-subtle fixed bottom-0 right-0 top-0 w-[300px] border-l-2 p-8"
             style={{
               zIndex: 'var(--z-modal)',
             }}

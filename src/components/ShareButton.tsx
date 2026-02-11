@@ -68,7 +68,7 @@ export default function ShareButton({
     <>
       <button
         onClick={handleShare}
-        className={`text-label vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)] ${className}`}
+        className={`animated-underline text-label vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)] ${className}`}
         aria-label={`Share ${title}`}
       >
         <span className="flex items-center gap-2">

@@ -29,14 +29,14 @@
 .type-small {
   letter-spacing: 0.02em;
   font-weight: 500;
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-ui);
 }
 
 .type-caption {
   letter-spacing: 0.08em;
   font-weight: 600;
   text-transform: uppercase;
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-ui);
 }
 
 /* ============================================

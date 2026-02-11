@@ -4,7 +4,6 @@ import { useState, useRef, useEffect, useSyncExternalStore } from 'react'
 import { useRouter } from 'next/navigation'
 import Navigation from '@/components/Navigation'
 import FadeIn from '@/components/motion/FadeIn'
-import MixedHeadline, { Sans, Serif } from '@/components/MixedHeadline'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
 import type { SoulAuditResponse } from '@/types/soul-audit'
@@ -150,14 +149,9 @@ export default function SoulAuditPage() {
           </FadeIn>
 
           <FadeIn delay={0.15} y={12}>
-            <MixedHeadline
-              as="h1"
-              size="lg"
-              className="mb-6 justify-center text-center"
-            >
-              <Sans>WHAT ARE YOU</Sans> <Serif>wrestling with</Serif>{' '}
-              <Sans>TODAY?</Sans>
-            </MixedHeadline>
+            <h1 className="vw-heading-md mb-6 text-center">
+              {typographer('What are you wrestling with today?')}
+            </h1>
           </FadeIn>
 
           <FadeIn delay={0.3} y={8}>
@@ -176,7 +170,7 @@ export default function SoulAuditPage() {
                 </p>
                 <a
                   href="/series"
-                  className="inline-block w-full bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
+                  className="cta-major text-label vw-small inline-flex w-full px-10 py-5"
                 >
                   Browse All Series &rarr;
                 </a>
@@ -224,7 +218,7 @@ export default function SoulAuditPage() {
                 <button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className="w-full bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:opacity-50"
+                  className="cta-major text-label vw-small w-full px-10 py-5 disabled:opacity-50"
                   style={{
                     transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
                   }}
