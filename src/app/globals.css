@@ -316,7 +316,7 @@
 
   /* Masthead: EUANGELION wordmark only */
   .text-masthead {
-    font-family: var(--font-family-serif);
+    font-family: var(--font-family-serif) !important;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-weight: 400;
@@ -340,14 +340,14 @@
 
   /* Serif italic: intro text, teasers */
   .text-serif-italic {
-    font-family: var(--font-family-serif);
+    font-family: var(--font-family-serif) !important;
     font-style: italic;
     line-height: 1.6;
   }
 
   /* Nav: menu items */
   .text-nav {
-    font-family: var(--font-family-serif);
+    font-family: var(--font-family-serif) !important;
     font-style: italic;
     font-size: 1.5rem;
   }
@@ -418,7 +418,7 @@
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     background: rgba(193, 154, 107, 0.05);
-    font-family: var(--font-family-serif);
+    font-family: var(--font-family-serif) !important;
     font-style: italic;
     line-height: 1.75;
   }
@@ -873,7 +873,7 @@
     letter-spacing: -0.02em;
   }
   .headline-serif {
-    font-family: var(--font-family-serif);
+    font-family: var(--font-family-serif) !important;
     font-style: italic;
     font-weight: 400;
     text-transform: none;
@@ -893,7 +893,7 @@
   /* Mega: hero wordmarks, massive display */
   .type-mega {
     font-size: clamp(4rem, 12vw, 10rem);
-    font-family: var(--font-family-serif);
+    font-family: var(--font-family-serif) !important;
     font-weight: 400;
     line-height: 0.85;
     letter-spacing: -0.02em;
@@ -910,7 +910,7 @@
 
   /* Ornamental day number: massive, behind title, gold ghost */
   .type-day-ornament {
-    font-family: var(--font-family-serif);
+    font-family: var(--font-family-serif) !important;
     font-size: clamp(6rem, 18vw, 14rem);
     font-weight: 400;
     line-height: 0.7;

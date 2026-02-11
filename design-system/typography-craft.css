@@ -54,7 +54,7 @@
 
 /* Serif: italic, lowercase, flowing — for organic words */
 .type-serif-flow {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-serif) !important;
   font-style: italic;
   font-weight: 400;
   text-transform: none;
@@ -93,7 +93,7 @@
    ============================================ */
 
 .drop-cap::first-letter {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-serif) !important;
   font-size: 5rem;
   float: left;
   line-height: 0.75;
@@ -190,7 +190,7 @@
 
 .pull-quote-enhanced::before {
   content: '\201C';
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-serif) !important;
   font-size: clamp(6rem, 10vw, 8rem);
   font-weight: 400;
   line-height: 0.5;
