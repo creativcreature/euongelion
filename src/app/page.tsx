@@ -149,7 +149,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-page">
+    <div className="newspaper-home min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -170,38 +170,25 @@ export default function Home() {
       />
 
       <main id="main-content">
-        <header
-          className="pb-16 pt-6 md:pb-20 md:pt-10"
-          style={{
-            borderBottom: '1px solid var(--color-border)',
-            background:
-              'radial-gradient(circle at 14% 10%, rgba(226, 177, 91, 0.24) 0%, transparent 42%), radial-gradient(circle at 88% 24%, rgba(121, 200, 214, 0.22) 0%, transparent 38%), linear-gradient(180deg, rgba(255, 248, 236, 0.05) 0%, transparent 60%)',
-          }}
-        >
-          <div className="mx-auto max-w-[1600px] px-4 md:px-[60px] lg:px-20">
+        <header className="border-subtle border-b pb-12 pt-4 md:pb-14 md:pt-8">
+          <div className="mx-auto max-w-[1720px] px-4 md:px-[56px] lg:px-20">
             <FadeIn>
-              <div
-                className="mb-6 flex flex-wrap items-center justify-between gap-3 py-2 text-label vw-small text-muted"
-                style={{
-                  borderTop: '1px solid var(--color-border)',
-                  borderBottom: '1px solid var(--color-border)',
-                }}
-              >
+              <div className="newspaper-subrule text-label vw-small mb-6 flex flex-wrap items-center justify-between gap-3 py-2 text-muted">
                 <span>HOME EDITION</span>
                 <span className="hidden md:inline">
                   SPIRITUAL FORMATION JOURNAL
                 </span>
-                <span className="hidden lg:inline">Continued on page 2</span>
+                <span className="hidden lg:inline">Issue 01</span>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.03}>
               <h1
-                className="group text-masthead relative mb-4 w-full cursor-default text-center select-none"
+                className="group text-masthead relative mb-2 w-full cursor-default text-center select-none"
                 style={{
-                  fontSize: 'clamp(3.5rem, 16vw, 14rem)',
-                  lineHeight: 0.9,
-                  letterSpacing: '0.12em',
+                  fontSize: 'clamp(3.75rem, 18vw, 16rem)',
+                  lineHeight: 0.88,
+                  letterSpacing: '0.13em',
                 }}
                 aria-label="Euangelion. Good News."
                 title="Hover to reveal meaning"
@@ -214,35 +201,31 @@ export default function Home() {
                 </span>
               </h1>
               <Navigation variant="newspaper" showSkipLink={false} />
-              <p className="vw-body mx-auto mb-10 max-w-[34ch] text-center text-secondary type-prose">
-                {typographer('Daily bread for the cluttered, hungry soul.')}
+              <p className="vw-body mx-auto mb-10 mt-6 max-w-[40ch] text-center text-secondary type-prose">
+                {typographer(
+                  'A daily paper for your soul: clear scripture, honest reflection, and one faithful step forward.',
+                )}
               </p>
             </FadeIn>
 
-            <div
-              className="grid gap-8 pt-8 md:grid-cols-12 md:gap-10"
-              style={{ borderTop: '1px solid var(--color-border)' }}
-            >
-              <div className="md:col-span-7">
+            <div className="newspaper-rule grid gap-8 pt-8 md:grid-cols-12 md:gap-10">
+              <article className="md:col-span-7">
                 <FadeIn delay={0.05}>
                   <p className="text-label vw-small mb-4 text-gold">
                     LEAD STORY
                   </p>
                   <h2 className="vw-heading-md mb-4 max-w-[22ch]">
-                    {typographer('Find your next faithful step.')}
+                    {typographer('Find your next faithful step today.')}
                   </h2>
-                  <p className="vw-body mb-8 max-w-[42ch] text-secondary type-prose">
+                  <p className="vw-body mb-8 max-w-[44ch] text-secondary type-prose">
                     {typographer(
-                      'Move from spiritual fog to practical next steps through short, honest, scripture-rooted devotionals.',
+                      'Run a short soul audit and get matched to a focused devotional path for the season you are actually in.',
                     )}
                   </p>
                 </FadeIn>
 
-                <FadeIn delay={0.15}>
-                  <ul
-                    className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-4"
-                    style={{ borderTop: '1px solid var(--color-border)' }}
-                  >
+                <FadeIn delay={0.12}>
+                  <ul className="newspaper-subrule flex flex-wrap items-center gap-x-6 gap-y-2 py-3">
                     {TRUST_POINTS.map((point) => (
                       <li
                         key={point}
@@ -256,20 +239,11 @@ export default function Home() {
                     ))}
                   </ul>
                 </FadeIn>
-              </div>
+              </article>
 
-              <div className="md:col-span-5">
-                <FadeIn delay={0.2}>
-                  <div
-                    id="start-audit"
-                    className="bg-surface-raised p-6 md:p-7"
-                    style={{
-                      border: '1px solid var(--color-border)',
-                      boxShadow: 'var(--shadow-glow)',
-                      background:
-                        'linear-gradient(180deg, rgba(255, 248, 236, 0.1) 0%, rgba(121, 200, 214, 0.06) 100%)',
-                    }}
-                  >
+              <aside className="md:col-span-5">
+                <FadeIn delay={0.18}>
+                  <div id="start-audit" className="newspaper-card p-6 md:p-7">
                     <p className="text-label vw-small mb-4 text-gold">
                       SOUL AUDIT • FRONT PAGE
                     </p>
@@ -278,7 +252,7 @@ export default function Home() {
                     </h2>
                     <p className="vw-small mb-5 text-secondary type-prose">
                       {typographer(
-                        'Write honestly and we will match you to your best next series.',
+                        'Write one honest paragraph and we will match you with your best next series.',
                       )}
                     </p>
 
@@ -291,7 +265,7 @@ export default function Home() {
                         </p>
                         <Link
                           href="/series"
-                          className="inline-block w-full bg-gold px-10 py-4 text-label vw-small text-tehom transition-all duration-300 hover:bg-[var(--color-fg)] hover:text-[var(--color-bg)]"
+                          className="text-label vw-small inline-block w-full border border-[var(--color-text-primary)] bg-[var(--color-text-primary)] px-8 py-3 text-[var(--color-bg)] transition-colors duration-200 hover:bg-transparent hover:text-[var(--color-text-primary)]"
                         >
                           Browse All Series &rarr;
                         </Link>
@@ -313,11 +287,8 @@ export default function Home() {
                           placeholder="Lately, I've been..."
                           rows={4}
                           disabled={isSubmitting}
-                          className="mb-4 w-full resize-none bg-surface p-5 text-serif-italic vw-body text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
-                          style={{
-                            border: '1px solid var(--color-border)',
-                            lineHeight: 1.7,
-                          }}
+                          className="text-serif-italic vw-body mb-4 w-full resize-none border border-subtle bg-[rgba(255,255,255,0.65)] p-5 text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
+                          style={{ lineHeight: 1.7 }}
                           onFocus={(e) => {
                             e.target.style.borderColor = 'var(--color-gold)'
                           }}
@@ -335,7 +306,7 @@ export default function Home() {
                         <button
                           onClick={handleAuditSubmit}
                           disabled={isSubmitting}
-                          className="w-full bg-gold px-10 py-4 text-label vw-small text-tehom transition-all duration-300 hover:bg-[var(--color-fg)] hover:text-[var(--color-bg)] disabled:opacity-50"
+                          className="text-label vw-small w-full border border-[var(--color-text-primary)] bg-[var(--color-text-primary)] px-8 py-3 text-[var(--color-bg)] transition-colors duration-200 hover:bg-transparent hover:text-[var(--color-text-primary)] disabled:opacity-50"
                         >
                           {isSubmitting
                             ? 'Finding Your Match...'
@@ -343,14 +314,13 @@ export default function Home() {
                         </button>
 
                         <p className="vw-small mt-4 text-center text-muted">
-                          No account required. You can start reading
-                          immediately.
+                          No account required. Start reading immediately.
                         </p>
                       </>
                     )}
                   </div>
                 </FadeIn>
-              </div>
+              </aside>
             </div>
           </div>
         </header>
@@ -358,17 +328,18 @@ export default function Home() {
         {auditResults && (
           <section
             ref={resultsRef}
-            className="section-breathing"
-            style={{ borderBottom: '1px solid var(--color-border)' }}
+            className="border-subtle border-b py-14 md:py-16 lg:py-20"
           >
-            <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
+            <div className="mx-auto max-w-[1720px] px-6 md:px-[56px] lg:px-20">
               <FadeIn>
-                <p className="text-label vw-small mb-6 text-center text-gold">
-                  YOUR BEST NEXT SERIES
-                </p>
-                <h2 className="text-serif-italic vw-heading-md mb-12 text-center">
-                  {typographer('Start with one of these today.')}
-                </h2>
+                <div className="newspaper-subrule mb-10 py-3 text-center">
+                  <p className="text-label vw-small mb-2 text-gold">
+                    YOUR BEST NEXT SERIES
+                  </p>
+                  <h2 className="text-serif-italic vw-heading-md">
+                    {typographer('Start here today.')}
+                  </h2>
+                </div>
               </FadeIn>
 
               <StaggerGrid className="grid gap-6 md:grid-cols-3">
@@ -379,9 +350,12 @@ export default function Home() {
                     className="group block"
                   >
                     <div
-                      className="flex h-full flex-col overflow-hidden transition-all duration-300"
+                      className="newspaper-card flex h-full flex-col overflow-hidden transition-colors duration-200"
                       style={{
-                        border: `1px solid ${index === 0 ? 'var(--color-gold)' : 'var(--color-border)'}`,
+                        borderColor:
+                          index === 0
+                            ? 'var(--color-border-strong)'
+                            : 'var(--color-border)',
                       }}
                     >
                       <SeriesHero
@@ -393,7 +367,7 @@ export default function Home() {
                         <p className="text-label vw-small mb-3 text-gold">
                           {SERIES_DATA[match.slug]?.title || match.title}
                         </p>
-                        <p className="text-serif-italic vw-body mb-3 flex-1 transition-colors duration-300 group-hover:text-gold">
+                        <p className="text-serif-italic vw-body mb-3 flex-1 transition-colors duration-200 group-hover:text-gold">
                           {typographer(match.question)}
                         </p>
                         {match.reasoning && (
@@ -401,11 +375,12 @@ export default function Home() {
                             {typographer(match.reasoning)}
                           </p>
                         )}
+                        <div className="newspaper-rule mb-3" />
                         <div className="flex items-center justify-between">
                           <span className="text-label vw-small text-muted oldstyle-nums">
                             {SERIES_DATA[match.slug]?.days.length || '?'} DAYS
                           </span>
-                          <span className="text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)]">
+                          <span className="text-label vw-small text-muted transition-colors duration-200 group-hover:text-[var(--color-text-primary)]">
                             START &rarr;
                           </span>
                         </div>
@@ -418,34 +393,29 @@ export default function Home() {
           </section>
         )}
 
-        <section
-          className="dot-pattern section-breathing"
-          style={{
-            borderBottom: '1px solid var(--color-border)',
-            background:
-              'linear-gradient(180deg, rgba(121, 200, 214, 0.08) 0%, transparent 70%)',
-          }}
-        >
-          <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
+        <section className="border-subtle border-b py-14 md:py-16 lg:py-20">
+          <div className="mx-auto max-w-[1720px] px-6 md:px-[56px] lg:px-20">
             <FadeIn>
-              <h2 className="vw-heading-md mb-4 text-center">
-                {typographer('How this works')}
-              </h2>
-              <p className="vw-body mx-auto mb-12 text-center text-secondary type-prose">
-                {typographer(
-                  'A simple flow built to help you move forward quickly, not get stuck in more content.',
-                )}
-              </p>
+              <div className="newspaper-subrule mx-auto mb-10 max-w-4xl py-3 text-center">
+                <p className="text-label vw-small mb-2 text-gold">THE FLOW</p>
+                <h2 className="vw-heading-md mb-3">
+                  {typographer('How this works')}
+                </h2>
+                <p className="vw-body mx-auto max-w-[36ch] text-secondary type-prose">
+                  {typographer(
+                    'Clear, daily progress designed for consistency and traction.',
+                  )}
+                </p>
+              </div>
             </FadeIn>
 
-            <StaggerGrid className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+            <StaggerGrid className="grid gap-6 md:grid-cols-3">
               {FLOW_STEPS.map((step) => (
-                <div
+                <article
                   key={step.id}
-                  className="p-6 text-center"
-                  style={{ border: '1px solid var(--color-border)' }}
+                  className="newspaper-card flex h-full flex-col p-6"
                 >
-                  <p className="text-gold oldstyle-nums mb-3 vw-heading-md">
+                  <p className="text-gold oldstyle-nums vw-heading-md mb-3">
                     {step.id}
                   </p>
                   <h3 className="vw-body mb-3 text-[var(--color-text-primary)]">
@@ -454,60 +424,49 @@ export default function Home() {
                   <p className="vw-small text-secondary type-prose">
                     {typographer(step.body)}
                   </p>
-                </div>
+                </article>
               ))}
             </StaggerGrid>
           </div>
         </section>
 
-        <section
-          className="section-breathing"
-          style={{
-            borderBottom: '1px solid var(--color-border)',
-            background:
-              'linear-gradient(180deg, rgba(226, 177, 91, 0.07) 0%, transparent 65%)',
-          }}
-        >
-          <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
+        <section className="border-subtle border-b py-14 md:py-16 lg:py-20">
+          <div className="mx-auto max-w-[1720px] px-6 md:px-[56px] lg:px-20">
             <FadeIn>
-              <h2 className="vw-heading-md mb-4 text-center">
-                {typographer('Featured series')}
-              </h2>
-              <p className="vw-body mx-auto mb-12 text-center text-secondary type-prose">
-                {typographer(
-                  'Start with a proven path used by readers navigating doubt, burnout, grief, and renewal.',
-                )}
-              </p>
+              <div className="newspaper-subrule mx-auto mb-10 max-w-4xl py-3 text-center">
+                <p className="text-label vw-small mb-2 text-gold">
+                  FEATURED STORIES
+                </p>
+                <h2 className="vw-heading-md mb-3">
+                  {typographer('Featured series')}
+                </h2>
+                <p className="vw-body mx-auto max-w-[42ch] text-secondary type-prose">
+                  {typographer(
+                    'Choose a guided path for the exact struggle you are carrying.',
+                  )}
+                </p>
+              </div>
             </FadeIn>
 
             <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {FEATURED_SERIES.map((slug) => {
                 const series = SERIES_DATA[slug]
                 if (!series) return null
+
                 return (
                   <Link
                     key={slug}
                     href={`/wake-up/series/${slug}`}
                     className="group block"
                   >
-                    <div
-                      className="overflow-hidden transition-all duration-300"
-                      style={{ border: '1px solid var(--color-border)' }}
-                    >
+                    <div className="newspaper-card overflow-hidden transition-colors duration-200">
                       <SeriesHero seriesSlug={slug} size="card" overlay />
                       <div className="p-6">
                         <p className="text-label vw-small mb-2 text-gold">
                           {series.title.toUpperCase()}
                         </p>
-                        <div
-                          className="mb-3"
-                          style={{
-                            height: '1px',
-                            background: 'var(--color-gold)',
-                            opacity: 0.2,
-                          }}
-                        />
-                        <p className="text-serif-italic vw-body transition-colors duration-300 group-hover:text-gold">
+                        <div className="newspaper-rule mb-3" />
+                        <p className="text-serif-italic vw-body transition-colors duration-200 group-hover:text-gold">
                           {typographer(series.question)}
                         </p>
                         <p className="vw-small mt-4 text-muted oldstyle-nums">
@@ -521,11 +480,10 @@ export default function Home() {
             </StaggerGrid>
 
             <FadeIn>
-              <div className="mt-12 text-center">
+              <div className="mt-10 text-center">
                 <Link
                   href="/series"
-                  className="inline-block px-10 py-4 text-label vw-small text-muted transition-all duration-300 hover:text-[var(--color-text-primary)]"
-                  style={{ borderBottom: '1px solid var(--color-border)' }}
+                  className="text-label vw-small inline-block border-b border-subtle px-4 pb-1 text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
                 >
                   View All {ALL_SERIES_ORDER.length} Series
                 </Link>
@@ -534,23 +492,22 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          className="section-breathing"
-          style={{ borderBottom: '1px solid var(--color-border)' }}
-        >
-          <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
+        <section className="border-subtle border-b py-14 md:py-16 lg:py-20">
+          <div className="mx-auto max-w-[1720px] px-6 md:px-[56px] lg:px-20">
             <FadeIn>
-              <h2 className="vw-heading-md mb-12 text-center">
-                {typographer('Common questions')}
-              </h2>
+              <div className="newspaper-subrule mx-auto mb-10 max-w-4xl py-3 text-center">
+                <p className="text-label vw-small mb-2 text-gold">HELP DESK</p>
+                <h2 className="vw-heading-md">
+                  {typographer('Common questions')}
+                </h2>
+              </div>
             </FadeIn>
 
             <StaggerGrid className="grid gap-6 md:grid-cols-3">
               {FAQ_ITEMS.map((item) => (
                 <article
                   key={item.question}
-                  className="h-full p-6"
-                  style={{ border: '1px solid var(--color-border)' }}
+                  className="newspaper-card h-full p-6"
                 >
                   <h3 className="vw-body mb-3 text-[var(--color-text-primary)]">
                     {typographer(item.question)}
@@ -564,45 +521,43 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-surface section-breathing">
-          <div className="mx-auto max-w-4xl px-6 text-center md:px-[60px] lg:px-20">
+        <section className="py-14 md:py-16 lg:py-20">
+          <div className="mx-auto max-w-[1720px] px-6 md:px-[56px] lg:px-20">
             <FadeIn>
-              <p className="text-label vw-small mb-6 text-gold">
-                READY TO BEGIN?
-              </p>
-              <h2 className="text-serif-italic vw-heading-md mb-6">
-                {typographer('Start with one honest sentence.')}
-              </h2>
-              <p className="vw-body mx-auto mb-10 text-secondary type-prose">
-                {typographer(
-                  'You do not need certainty before you begin. You need a next step.',
-                )}
-              </p>
-              <div className="flex flex-col justify-center gap-4 sm:flex-row">
-                <a
-                  href="#start-audit"
-                  className="bg-gold px-10 py-4 text-label vw-small text-tehom transition-all duration-300 hover:bg-[var(--color-fg)] hover:text-[var(--color-bg)]"
-                >
-                  Take Soul Audit
-                </a>
-                <Link
-                  href="/series"
-                  className="border px-10 py-4 text-label vw-small text-[var(--color-text-primary)] transition-colors duration-300 hover:border-gold hover:text-gold"
-                  style={{ borderColor: 'var(--color-border)' }}
-                >
-                  Browse Series
-                </Link>
+              <div className="newspaper-card mx-auto max-w-4xl p-8 text-center md:p-10">
+                <p className="text-label vw-small mb-4 text-gold">
+                  READY TO BEGIN?
+                </p>
+                <h2 className="text-serif-italic vw-heading-md mb-5">
+                  {typographer('Start with one honest sentence.')}
+                </h2>
+                <p className="vw-body mx-auto mb-8 max-w-[36ch] text-secondary type-prose">
+                  {typographer(
+                    'You do not need certainty before you begin. You need a next step.',
+                  )}
+                </p>
+                <div className="flex flex-col justify-center gap-3 sm:flex-row">
+                  <a
+                    href="#start-audit"
+                    className="text-label vw-small border border-[var(--color-text-primary)] bg-[var(--color-text-primary)] px-8 py-3 text-[var(--color-bg)] transition-colors duration-200 hover:bg-transparent hover:text-[var(--color-text-primary)]"
+                  >
+                    Take Soul Audit
+                  </a>
+                  <Link
+                    href="/series"
+                    className="text-label vw-small border border-subtle px-8 py-3 text-[var(--color-text-primary)] transition-colors duration-200 hover:border-[var(--color-text-primary)]"
+                  >
+                    Browse Series
+                  </Link>
+                </div>
               </div>
             </FadeIn>
           </div>
         </section>
       </main>
 
-      <footer
-        className="py-16 md:py-20"
-        style={{ borderTop: '1px solid var(--color-border)' }}
-      >
-        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
+      <footer className="border-subtle border-t py-14 md:py-16">
+        <div className="mx-auto max-w-[1720px] px-6 md:px-[56px] lg:px-20">
           <div className="text-center">
             <p
               className="text-label vw-small leading-relaxed text-muted type-caption"
@@ -610,7 +565,7 @@ export default function Home() {
             >
               SOMETHING TO HOLD ONTO.
             </p>
-            <div className="mt-8 flex items-center justify-center gap-6">
+            <div className="mt-6 flex items-center justify-center gap-6">
               <Link
                 href="/privacy"
                 className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
@@ -624,7 +579,7 @@ export default function Home() {
                 Terms
               </Link>
             </div>
-            <p className="vw-small mt-6 text-muted oldstyle-nums">
+            <p className="vw-small mt-5 text-muted oldstyle-nums">
               &copy; 2026 EUANGELION
             </p>
           </div>

@@ -35,6 +35,68 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Newsprint Texture Pass (2026-02-11)
+
+### Scope
+
+- Shifted the homepage from "clean editorial" to explicit newsprint material feel
+- Targeted ink-on-paper atmosphere using layered texture treatment (no font-family changes)
+
+### What Changed
+
+- **Paper texture foundation** (`src/app/globals.css`):
+  - Enhanced `.newspaper-home` background with multi-layered paper grain, fiber lines, and subtle ink wash variation
+  - Added fixed pseudo-element overlays (`::before`, `::after`) for page-wide grain and print noise
+  - Added stacking isolation and z-index handling so texture stays behind content while covering the full page
+- **Printed surface treatment** (`src/app/globals.css`):
+  - Updated `.newspaper-card` with textured paper layering to look like ink printed on stock rather than flat UI cards
+- **Client cache refresh** (`public/sw.js`):
+  - Bumped service worker cache namespace from `euangelion-v4` -> `euangelion-v5` so browsers pull the new texture assets/styles immediately
+
+### Validation
+
+- `npm run build` passes
+
+---
+
+## Homepage Newspaper System Pass (2026-02-11)
+
+### Scope
+
+- Applied a full homepage visual overhaul to align with a newspaper-style editorial layout inspired by the requested reference
+- Kept existing font family setup intact (no typography family swap in this pass)
+- Focused changes on hierarchy, conversion flow, layout balance, and section consistency
+
+### What Changed
+
+- **Unified homepage treatment** (`src/app/page.tsx`):
+  - Root now uses `newspaper-home` for page-wide newspaper tokens/background
+  - All major sections moved to a consistent editorial system:
+    - masthead + edition strip
+    - nav rail directly under masthead
+    - lead story + above-fold Soul Audit
+    - results rail
+    - flow section
+    - featured section
+    - FAQ rail
+    - final conversion panel
+  - Removed mixed visual language (gradients/dot pattern-heavy style) in favor of consistent rails, rules, and cards
+  - Preserved masthead hover interaction (`EUANGELION` -> `GOOD NEWS`)
+- **Newspaper token tuning** (`src/app/globals.css`):
+  - Refined `newspaper-home` palette for warmer paper + stronger editorial contrast
+  - Kept accent treatment consistent through tokenized `--color-gold`
+  - Standardized newspaper card rendering via `newspaper-card`
+- **Cache bust for client refresh** (`public/sw.js`):
+  - Bumped service worker cache namespace from `euangelion-v3` -> `euangelion-v4` so clients pick up the new homepage CSS/markup
+
+### Validation
+
+- `npm run lint` passes
+- `npm run type-check` passes
+- `npm run build` passes
+
+---
+
 ## Hotfix — Serif Font Rendering (2026-02-11)
 
 ### Root Cause
