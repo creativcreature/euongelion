@@ -1,21 +1,58 @@
 'use client'
 
-import { useState, useRef, useSyncExternalStore } from 'react'
+import { useRef, useState, useSyncExternalStore } from 'react'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import SeriesHero from '@/components/SeriesHero'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
-import GoldHighlight from '@/components/motion/GoldHighlight'
-import DropCap from '@/components/motion/DropCap'
-import TextReveal from '@/components/motion/TextReveal'
-import MixedHeadline, { Sans, Serif } from '@/components/MixedHeadline'
-import OrnamentDivider from '@/components/OrnamentDivider'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
 import { SERIES_DATA, FEATURED_SERIES, ALL_SERIES_ORDER } from '@/data/series'
 
 const emptySubscribe = () => () => {}
+
+const TRUST_POINTS = [
+  'No account required',
+  '5-7 minutes per day',
+  'Biblically grounded',
+]
+
+const FLOW_STEPS = [
+  {
+    id: '01',
+    title: 'Name what you are carrying',
+    body: 'Tell us what you are wrestling with and we will point you to a fitting series.',
+  },
+  {
+    id: '02',
+    title: 'Read one short devotional daily',
+    body: 'Each day is designed to be doable and deep: scripture, reflection, prayer, and action.',
+  },
+  {
+    id: '03',
+    title: 'Build traction, not guilt',
+    body: 'You keep moving with clear next steps instead of getting stuck in spiritual overwhelm.',
+  },
+]
+
+const FAQ_ITEMS = [
+  {
+    question: 'What if I am skeptical or spiritually numb?',
+    answer:
+      'This is built for honest questions, not polished church answers. You can start exactly where you are.',
+  },
+  {
+    question: 'How much time do I need each day?',
+    answer:
+      'Most days are 5-7 minutes. Long enough to matter, short enough to sustain.',
+  },
+  {
+    question: 'Do I need to sign up first?',
+    answer:
+      'No. You can run a soul audit and start reading immediately. Account features are optional.',
+  },
+]
 
 export default function Home() {
   const [auditText, setAuditText] = useState('')
@@ -30,7 +67,6 @@ export default function Home() {
   const { auditCount, recordAudit, hasReachedLimit } = useSoulAuditStore()
   const limitReached = hydrated && hasReachedLimit()
 
-  // Inline audit results
   const [auditResults, setAuditResults] = useState<{
     matches: Array<{
       slug: string
@@ -77,16 +113,12 @@ export default function Home() {
       }
 
       const data = await res.json()
-
-      // Store in sessionStorage for /soul-audit/results if user navigates there
       sessionStorage.setItem('soul-audit-result', JSON.stringify(data))
 
-      // Build matches array (handle both old and new API format)
       if (data.matches) {
         setAuditResults(data)
         recordAudit(trimmed, data)
       } else if (data.match) {
-        // Legacy format: single match + alternatives
         const matches = [
           data.match,
           ...(data.alternatives || []).map(
@@ -101,7 +133,6 @@ export default function Home() {
         recordAudit(trimmed, { matches })
       }
 
-      // Scroll to results
       setTimeout(() => {
         resultsRef.current?.scrollIntoView({
           behavior: 'smooth',
@@ -119,7 +150,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-page">
-      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -141,556 +171,443 @@ export default function Home() {
 
       <Navigation />
 
-      {/* Hero — EUANGELION massive + inline Soul Audit */}
-      <header className="flex min-h-[calc(100vh-57px)] flex-col items-center justify-center px-6 text-center">
-        {/* Massive wordmark — NOW VISIBLY SERIFED */}
-        <TextReveal
-          text="EUANGELION"
-          as="h1"
-          className="text-masthead mb-4 w-full"
-          style={{
-            fontSize: 'clamp(2.5rem, 10vw, 8rem)',
-            lineHeight: 1,
-            letterSpacing: '0.15em',
-          }}
-        />
-
-        {/* Meaning */}
-        <FadeIn delay={0.2} y={0}>
-          <p className="text-label vw-small mb-8 text-muted">
-            EU&middot;AN&middot;GE&middot;LI&middot;ON &mdash; &ldquo;GOOD
-            NEWS&rdquo;
-          </p>
-        </FadeIn>
-
-        {/* Tagline — Emphasis-Based Mixed Headline */}
-        <FadeIn delay={0.4} y={12}>
-          <MixedHeadline
-            as="p"
-            size="lg"
-            className="mx-auto mb-12 justify-center"
-            style={{ maxWidth: '20ch' }}
-          >
-            <Sans>DAILY</Sans>{' '}
-            <Serif>
-              <GoldHighlight>bread</GoldHighlight>
-            </Serif>{' '}
-            <Sans>FOR THE</Sans>{' '}
-            <Serif>{typographer('cluttered, hungry')}</Serif> <Sans>SOUL.</Sans>
-          </MixedHeadline>
-        </FadeIn>
-
-        {/* Inline Soul Audit */}
-        <FadeIn delay={0.6} y={16}>
-          <div className="w-full max-w-xl">
-            <MixedHeadline
-              as="p"
-              size="sm"
-              className="mb-4 justify-center text-secondary"
-            >
-              <Sans>WHAT ARE YOU</Sans> <Serif>wrestling with</Serif>{' '}
-              <Sans>TODAY?</Sans>
-            </MixedHeadline>
-
-            {limitReached ? (
-              <div className="py-8 text-center">
-                <p className="text-serif-italic vw-body-lg mb-8 text-secondary">
-                  {typographer('You\u2019ve explored enough. Time to dive in.')}
+      <main id="main-content">
+        <header
+          className="section-breathing"
+          style={{ borderBottom: '1px solid var(--color-border)' }}
+        >
+          <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-12 md:px-[60px] lg:px-20">
+            <div className="md:col-span-7">
+              <FadeIn>
+                <p className="text-label vw-small mb-6 text-gold">
+                  DAILY GUIDANCE FOR REAL STRUGGLES
                 </p>
-                <Link
-                  href="/series"
-                  className="inline-block w-full bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
+                <h1 className="vw-heading-xl mb-6 max-w-[16ch]">
+                  {typographer('Find your next faithful step.')}
+                </h1>
+                <p className="vw-body-lg mb-8 max-w-[36ch] text-secondary type-prose">
+                  {typographer(
+                    'Euangelion helps you move from spiritual fog to practical next steps through short, honest, scripture-rooted devotionals.',
+                  )}
+                </p>
+              </FadeIn>
+
+              <FadeIn delay={0.1}>
+                <div className="mb-8 flex flex-col gap-4 sm:flex-row">
+                  <a
+                    href="#start-audit"
+                    className="bg-[var(--color-fg)] px-8 py-4 text-center text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
+                  >
+                    Start 2-Minute Soul Audit
+                  </a>
+                  <Link
+                    href="/series"
+                    className="border px-8 py-4 text-center text-label vw-small text-[var(--color-text-primary)] transition-colors duration-300 hover:border-gold hover:text-gold"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    Browse Series Library
+                  </Link>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.15}>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {TRUST_POINTS.map((point) => (
+                    <div
+                      key={point}
+                      className="px-4 py-3 text-center text-label vw-small text-muted"
+                      style={{ border: '1px solid var(--color-border)' }}
+                    >
+                      {point}
+                    </div>
+                  ))}
+                </div>
+              </FadeIn>
+            </div>
+
+            <div className="md:col-span-5">
+              <FadeIn delay={0.2}>
+                <div
+                  className="bg-surface-raised p-7"
+                  style={{ border: '1px solid var(--color-border)' }}
                 >
-                  Browse All Series &rarr;
-                </Link>
-              </div>
-            ) : (
-              <>
-                {hydrated && auditCount > 0 && (
-                  <p className="vw-small mb-4 text-center text-muted oldstyle-nums">
-                    Audit {auditCount + 1} of 3
+                  <p className="text-label vw-small mb-4 text-gold">
+                    WHAT YOU GET THIS WEEK
                   </p>
-                )}
-
-                <textarea
-                  value={auditText}
-                  onChange={(e) => {
-                    setAuditText(e.target.value)
-                    setError(null)
-                  }}
-                  placeholder="Lately, I've been..."
-                  rows={3}
-                  disabled={isSubmitting}
-                  className="mb-4 w-full resize-none bg-surface-raised p-5 text-serif-italic vw-body text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
-                  style={{
-                    border: '1px solid var(--color-border)',
-                    lineHeight: 1.7,
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = 'var(--color-gold)'
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = 'var(--color-border)'
-                  }}
-                />
-
-                {error && (
-                  <p className="vw-small mb-4 text-center text-secondary">
-                    {error}
-                  </p>
-                )}
-
-                <button
-                  onClick={handleAuditSubmit}
-                  disabled={isSubmitting}
-                  className="w-full bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom disabled:opacity-50"
-                >
-                  {isSubmitting ? 'Listening...' : 'Begin'}
-                </button>
-              </>
-            )}
-
-            {/* Secondary CTAs */}
-            <div className="mt-6 flex items-center justify-center gap-6">
-              <Link
-                href="/series"
-                className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
-              >
-                Browse All Series
-              </Link>
-              <span className="text-muted">&middot;</span>
-              <Link
-                href="/soul-audit"
-                className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
-              >
-                Full Soul Audit
-              </Link>
+                  <ul className="space-y-4">
+                    <li className="vw-body text-secondary type-prose">
+                      {typographer(
+                        'A clear starting point based on your actual struggle.',
+                      )}
+                    </li>
+                    <li className="vw-body text-secondary type-prose">
+                      {typographer(
+                        'A focused daily reading rhythm without information overload.',
+                      )}
+                    </li>
+                    <li className="vw-body text-secondary type-prose">
+                      {typographer(
+                        'Concrete reflection prompts that turn insight into action.',
+                      )}
+                    </li>
+                  </ul>
+                  <div
+                    className="mt-6 pt-6"
+                    style={{ borderTop: '1px solid var(--color-border)' }}
+                  >
+                    <Link
+                      href="/wake-up"
+                      className="text-label vw-small text-muted transition-colors duration-300 hover:text-[var(--color-text-primary)]"
+                    >
+                      Explore Wake-Up Magazine &rarr;
+                    </Link>
+                  </div>
+                </div>
+              </FadeIn>
             </div>
           </div>
-        </FadeIn>
-      </header>
+        </header>
 
-      {/* Inline Soul Audit Results */}
-      {auditResults && (
         <section
-          ref={resultsRef}
+          id="start-audit"
           className="section-breathing"
-          style={{ borderTop: '1px solid var(--color-border)' }}
+          style={{ borderBottom: '1px solid var(--color-border)' }}
+        >
+          <div className="mx-auto max-w-4xl px-6 md:px-[60px] lg:px-20">
+            <FadeIn>
+              <p className="text-label vw-small mb-6 text-center text-gold">
+                START HERE
+              </p>
+              <h2 className="vw-heading-md mb-4 text-center">
+                {typographer('What are you wrestling with right now?')}
+              </h2>
+              <p className="vw-body mb-10 text-center text-secondary type-prose">
+                {typographer(
+                  'Write honestly. We will match you to the best next series in seconds.',
+                )}
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.1}>
+              <div
+                className="bg-surface-raised p-6 md:p-8"
+                style={{ border: '1px solid var(--color-border)' }}
+              >
+                {limitReached ? (
+                  <div className="text-center">
+                    <p className="text-serif-italic vw-body-lg mb-8 text-secondary">
+                      {typographer(
+                        'You\u2019ve explored enough. Time to dive in.',
+                      )}
+                    </p>
+                    <Link
+                      href="/series"
+                      className="inline-block w-full bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
+                    >
+                      Browse All Series &rarr;
+                    </Link>
+                  </div>
+                ) : (
+                  <>
+                    {hydrated && auditCount > 0 && (
+                      <p className="vw-small mb-4 text-center text-muted oldstyle-nums">
+                        Audit {auditCount + 1} of 3
+                      </p>
+                    )}
+
+                    <textarea
+                      value={auditText}
+                      onChange={(e) => {
+                        setAuditText(e.target.value)
+                        setError(null)
+                      }}
+                      placeholder="Lately, I've been..."
+                      rows={4}
+                      disabled={isSubmitting}
+                      className="mb-4 w-full resize-none bg-surface p-5 text-serif-italic vw-body text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
+                      style={{
+                        border: '1px solid var(--color-border)',
+                        lineHeight: 1.7,
+                      }}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = 'var(--color-gold)'
+                      }}
+                      onBlur={(e) => {
+                        e.target.style.borderColor = 'var(--color-border)'
+                      }}
+                    />
+
+                    {error && (
+                      <p className="vw-small mb-4 text-center text-secondary">
+                        {error}
+                      </p>
+                    )}
+
+                    <button
+                      onClick={handleAuditSubmit}
+                      disabled={isSubmitting}
+                      className="w-full bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom disabled:opacity-50"
+                    >
+                      {isSubmitting ? 'Finding Your Match...' : 'Get My Match'}
+                    </button>
+
+                    <p className="vw-small mt-4 text-center text-muted">
+                      No account required. You can start reading immediately.
+                    </p>
+                  </>
+                )}
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        {auditResults && (
+          <section
+            ref={resultsRef}
+            className="section-breathing"
+            style={{ borderBottom: '1px solid var(--color-border)' }}
+          >
+            <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
+              <FadeIn>
+                <p className="text-label vw-small mb-6 text-center text-gold">
+                  YOUR BEST NEXT SERIES
+                </p>
+                <h2 className="text-serif-italic vw-heading-md mb-12 text-center">
+                  {typographer('Start with one of these today.')}
+                </h2>
+              </FadeIn>
+
+              <StaggerGrid className="grid gap-6 md:grid-cols-3">
+                {auditResults.matches.slice(0, 3).map((match, index) => (
+                  <Link
+                    key={match.slug}
+                    href={`/wake-up/series/${match.slug}`}
+                    className="group block"
+                  >
+                    <div
+                      className="flex h-full flex-col overflow-hidden transition-all duration-300"
+                      style={{
+                        border: `1px solid ${index === 0 ? 'var(--color-gold)' : 'var(--color-border)'}`,
+                      }}
+                    >
+                      <SeriesHero
+                        seriesSlug={match.slug}
+                        size="thumbnail"
+                        overlay
+                      />
+                      <div className="flex flex-1 flex-col p-6">
+                        <p className="text-label vw-small mb-3 text-gold">
+                          {SERIES_DATA[match.slug]?.title || match.title}
+                        </p>
+                        <p className="text-serif-italic vw-body mb-3 flex-1 transition-colors duration-300 group-hover:text-gold">
+                          {typographer(match.question)}
+                        </p>
+                        {match.reasoning && (
+                          <p className="vw-small mb-4 text-tertiary type-prose">
+                            {typographer(match.reasoning)}
+                          </p>
+                        )}
+                        <div className="flex items-center justify-between">
+                          <span className="text-label vw-small text-muted oldstyle-nums">
+                            {SERIES_DATA[match.slug]?.days.length || '?'} DAYS
+                          </span>
+                          <span className="text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)]">
+                            START &rarr;
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </StaggerGrid>
+            </div>
+          </section>
+        )}
+
+        <section
+          className="dot-pattern section-breathing"
+          style={{ borderBottom: '1px solid var(--color-border)' }}
         >
           <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
             <FadeIn>
-              <p className="text-label vw-small mb-6 text-center text-gold">
-                WE FOUND SOMETHING FOR YOU
+              <h2 className="vw-heading-md mb-4 text-center">
+                {typographer('How this works')}
+              </h2>
+              <p className="vw-body mx-auto mb-12 text-center text-secondary type-prose">
+                {typographer(
+                  'A simple flow built to help you move forward quickly, not get stuck in more content.',
+                )}
               </p>
             </FadeIn>
-            <FadeIn delay={0.1}>
-              <h2 className="text-serif-italic vw-heading-md mb-12 text-center">
-                {typographer('Here\u2019s where we\u2019ll start.')}
-              </h2>
-            </FadeIn>
 
-            {/* 3 Equal Cards */}
-            <StaggerGrid className="grid gap-6 md:grid-cols-3">
-              {auditResults.matches.slice(0, 3).map((match, index) => (
-                <Link
-                  key={match.slug}
-                  href={`/wake-up/series/${match.slug}`}
-                  className="group block"
+            <StaggerGrid className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+              {FLOW_STEPS.map((step) => (
+                <div
+                  key={step.id}
+                  className="p-6 text-center"
+                  style={{ border: '1px solid var(--color-border)' }}
                 >
-                  <div
-                    className="flex h-full flex-col overflow-hidden transition-all duration-300"
-                    style={{
-                      border: `1px solid ${index === 0 ? 'var(--color-gold)' : 'var(--color-border)'}`,
-                    }}
-                  >
-                    <SeriesHero
-                      seriesSlug={match.slug}
-                      size="thumbnail"
-                      overlay
-                    />
-                    <div className="flex flex-1 flex-col p-6">
-                      <p className="text-label vw-small mb-3 text-gold">
-                        {SERIES_DATA[match.slug]?.title || match.title}
-                      </p>
-                      <p className="text-serif-italic vw-body mb-3 flex-1 transition-colors duration-300 group-hover:text-gold">
-                        {typographer(match.question)}
-                      </p>
-                      {match.reasoning && (
-                        <p className="vw-small mb-4 text-tertiary type-prose">
-                          {typographer(match.reasoning)}
-                        </p>
-                      )}
-                      {match.preview && (
-                        <div
-                          className="mb-4 border-l-2 pl-4"
-                          style={{ borderColor: 'var(--color-gold)' }}
-                        >
-                          <p className="vw-small text-serif-italic text-secondary">
-                            {typographer(`\u201c${match.preview.verse}\u201d`)}
-                          </p>
-                        </div>
-                      )}
-                      <div className="flex items-center justify-between">
-                        <span className="text-label vw-small text-muted oldstyle-nums">
-                          {SERIES_DATA[match.slug]?.days.length || '?'} DAYS
-                        </span>
-                        <span className="text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)]">
-                          START &rarr;
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
+                  <p className="text-gold oldstyle-nums mb-3 vw-heading-md">
+                    {step.id}
+                  </p>
+                  <h3 className="vw-body mb-3 text-[var(--color-text-primary)]">
+                    {typographer(step.title)}
+                  </h3>
+                  <p className="vw-small text-secondary type-prose">
+                    {typographer(step.body)}
+                  </p>
+                </div>
               ))}
             </StaggerGrid>
           </div>
         </section>
-      )}
 
-      {/* How It Works */}
-      <section
-        id="main-content"
-        className="dot-pattern relative section-breathing"
-        style={{ borderTop: '1px solid var(--color-border)' }}
-      >
-        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <FadeIn>
-            <MixedHeadline
-              as="h2"
-              size="md"
-              className="mb-16 justify-center text-center"
-            >
-              <Sans>HOW IT</Sans> <Serif>Works</Serif>
-            </MixedHeadline>
-          </FadeIn>
-          <StaggerGrid className="mx-auto grid max-w-4xl gap-12 text-center md:grid-cols-3 md:gap-16">
-            <div>
-              {/* Compass icon */}
-              <div
-                className="mx-auto mb-6 flex h-16 w-16 items-center justify-center"
-                aria-hidden="true"
-              >
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--color-gold)"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <polygon
-                    points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"
-                    fill="rgba(193,154,107,0.15)"
-                    stroke="var(--color-gold)"
-                  />
-                </svg>
-              </div>
-              <div
-                className="mb-4 text-gold oldstyle-nums"
-                style={{
-                  fontFamily: 'var(--font-family-serif)',
-                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 400,
-                }}
-              >
-                01
-              </div>
-              <p className="vw-body text-secondary type-prose">
-                {typographer(
-                  'Tell us what you\u2019re wrestling with. We\u2019ll match you to a series.',
-                )}
-              </p>
-            </div>
-            <div>
-              {/* Book/reading icon */}
-              <div
-                className="mx-auto mb-6 flex h-16 w-16 items-center justify-center"
-                aria-hidden="true"
-              >
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--color-gold)"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path
-                    d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
-                    fill="rgba(193,154,107,0.15)"
-                  />
-                  <path
-                    d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
-                    fill="rgba(193,154,107,0.15)"
-                  />
-                </svg>
-              </div>
-              <div
-                className="mb-4 text-gold oldstyle-nums"
-                style={{
-                  fontFamily: 'var(--font-family-serif)',
-                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 400,
-                }}
-              >
-                02
-              </div>
-              <p className="vw-body text-secondary type-prose">
-                {typographer(
-                  'Read one devotional per day. Short, deep, honest.',
-                )}
-              </p>
-            </div>
-            <div>
-              {/* Heart icon */}
-              <div
-                className="mx-auto mb-6 flex h-16 w-16 items-center justify-center"
-                aria-hidden="true"
-              >
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="rgba(193,154,107,0.15)"
-                  stroke="var(--color-gold)"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
-              </div>
-              <div
-                className="mb-4 text-gold oldstyle-nums"
-                style={{
-                  fontFamily: 'var(--font-family-serif)',
-                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                  fontWeight: 400,
-                }}
-              >
-                03
-              </div>
-              <p className="vw-body text-secondary type-prose">
-                {typographer(
-                  'Reflect, journal, and let God reorder your heart.',
-                )}
-              </p>
-            </div>
-          </StaggerGrid>
-        </div>
-      </section>
-
-      {/* Full-bleed editorial visual break */}
-      <section
-        className="relative overflow-hidden"
-        style={{
-          borderTop: '1px solid var(--color-border)',
-          height: 'clamp(200px, 30vw, 400px)',
-          background:
-            'linear-gradient(135deg, var(--color-tehom) 0%, #2a1f1a 40%, #3d2b1f 70%, rgba(193, 154, 107, 0.2) 100%)',
-        }}
-      >
-        {/* Dot pattern overlay */}
-        <div className="dot-pattern-lg absolute inset-0 opacity-30" />
-        {/* Radial glow */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(ellipse at 50% 50%, rgba(193, 154, 107, 0.12) 0%, transparent 60%)',
-          }}
-        />
-        {/* Massive ghost Scripture text */}
-        <div
-          className="pointer-events-none absolute inset-0 flex select-none items-center justify-center"
-          aria-hidden="true"
+        <section
+          className="section-breathing"
+          style={{ borderBottom: '1px solid var(--color-border)' }}
         >
-          <span
-            style={{
-              fontFamily: 'var(--font-family-serif)',
-              fontStyle: 'italic',
-              fontSize: 'clamp(3rem, 8vw, 7rem)',
-              fontWeight: 400,
-              color: 'var(--color-scroll)',
-              opacity: 0.04,
-              textAlign: 'center',
-              maxWidth: '80%',
-              lineHeight: 1.2,
-            }}
-          >
-            Remain in me, as I also remain in you.
-          </span>
-        </div>
-      </section>
-
-      {/* Invitation */}
-      <section
-        className="bg-surface section-breathing"
-        style={{ borderTop: '1px solid var(--color-border)' }}
-      >
-        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
             <FadeIn>
-              <p
-                className="text-serif-italic vw-heading-md mb-10"
-                style={{ fontStyle: 'italic' }}
-              >
-                {typographer('Something brought you here.')}
+              <h2 className="vw-heading-md mb-4 text-center">
+                {typographer('Featured series')}
+              </h2>
+              <p className="vw-body mx-auto mb-12 text-center text-secondary type-prose">
+                {typographer(
+                  'Start with a proven path used by readers navigating doubt, burnout, grief, and renewal.',
+                )}
               </p>
             </FadeIn>
-            <DropCap className="vw-body mb-6 leading-relaxed text-secondary">
-              {typographer(
-                'Maybe it\u2019s been a while since you thought about God. Maybe you think about Him all the time and feel nothing. Maybe you\u2019re tired.',
-              )}
-            </DropCap>
-            <FadeIn delay={0.1}>
-              <p className="vw-body leading-relaxed text-secondary type-prose">
-                {typographer('Whatever it is, you\u2019re welcome here.')}
-              </p>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
 
-      {/* What This Is */}
-      <section
-        className="dot-pattern relative section-breathing"
-        style={{ borderTop: '1px solid var(--color-border)' }}
-      >
-        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <div className="grid gap-16 md:grid-cols-12">
-            <div className="md:col-span-5">
-              <FadeIn>
-                <MixedHeadline as="p" size="sm" className="mb-6 text-gold">
-                  <Sans>WHAT THIS</Sans> <Serif>Is</Serif>
-                </MixedHeadline>
-              </FadeIn>
-              <FadeIn delay={0.1}>
-                <p className="text-serif-italic vw-body-lg type-serif-flow type-prose">
-                  {typographer(
-                    'Honest content for people who believe, used to believe, or want to believe but have questions.',
-                  )}
-                </p>
-              </FadeIn>
-            </div>
-            <div className="md:col-span-6 md:col-start-7">
-              <div className="space-y-8 columns-prose type-prose">
-                <FadeIn delay={0.15}>
-                  <p className="vw-body leading-relaxed text-secondary">
-                    {typographer(
-                      'Each series is a multi-day journey. One reading per day. Designed to be short enough for busy lives and deep enough to be worth your time.',
-                    )}
-                  </p>
-                </FadeIn>
-                <FadeIn delay={0.25}>
-                  <p className="vw-body leading-relaxed text-secondary">
-                    {typographer(
-                      'We don\u2019t have all the answers. But the questions are worth asking, and you shouldn\u2019t have to ask them alone.',
-                    )}
-                  </p>
-                </FadeIn>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Series */}
-      <section
-        className="section-breathing"
-        style={{
-          borderTop: '1px solid var(--color-border)',
-        }}
-      >
-        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <FadeIn>
-            <MixedHeadline
-              as="h2"
-              size="md"
-              className="mb-12 justify-center text-center"
-            >
-              <Sans>FEATURED</Sans> <Serif>Series</Serif>
-            </MixedHeadline>
-          </FadeIn>
-          <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {FEATURED_SERIES.map((slug) => {
-              const series = SERIES_DATA[slug]
-              if (!series) return null
-              return (
-                <Link
-                  key={slug}
-                  href={`/wake-up/series/${slug}`}
-                  className="group block"
-                >
-                  <div
-                    className="overflow-hidden transition-all duration-300"
-                    style={{
-                      border: '1px solid var(--color-border)',
-                    }}
+            <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {FEATURED_SERIES.map((slug) => {
+                const series = SERIES_DATA[slug]
+                if (!series) return null
+                return (
+                  <Link
+                    key={slug}
+                    href={`/wake-up/series/${slug}`}
+                    className="group block"
                   >
-                    <SeriesHero seriesSlug={slug} size="card" overlay />
-                    <div className="p-6">
-                      <p className="text-label vw-small mb-2 text-gold">
-                        {series.title.toUpperCase()}
-                      </p>
-                      {/* Thin gold rule */}
-                      <div
-                        className="mb-3"
-                        style={{
-                          height: '1px',
-                          background: 'var(--color-gold)',
-                          opacity: 0.2,
-                        }}
-                      />
-                      <p className="text-serif-italic vw-body transition-colors duration-300 group-hover:text-gold">
-                        {typographer(series.question)}
-                      </p>
-                      <p className="vw-small mt-4 text-muted oldstyle-nums">
-                        {series.days.length} DAYS
-                      </p>
+                    <div
+                      className="overflow-hidden transition-all duration-300"
+                      style={{ border: '1px solid var(--color-border)' }}
+                    >
+                      <SeriesHero seriesSlug={slug} size="card" overlay />
+                      <div className="p-6">
+                        <p className="text-label vw-small mb-2 text-gold">
+                          {series.title.toUpperCase()}
+                        </p>
+                        <div
+                          className="mb-3"
+                          style={{
+                            height: '1px',
+                            background: 'var(--color-gold)',
+                            opacity: 0.2,
+                          }}
+                        />
+                        <p className="text-serif-italic vw-body transition-colors duration-300 group-hover:text-gold">
+                          {typographer(series.question)}
+                        </p>
+                        <p className="vw-small mt-4 text-muted oldstyle-nums">
+                          {series.days.length} DAYS
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              )
-            })}
-          </StaggerGrid>
-          <FadeIn>
-            <div className="mt-12 text-center">
-              <Link
-                href="/series"
-                className="inline-block px-10 py-4 text-label vw-small text-muted transition-all duration-300 hover:text-[var(--color-text-primary)]"
-                style={{
-                  borderBottom: '1px solid var(--color-border)',
-                }}
-              >
-                View All {ALL_SERIES_ORDER.length} Series
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+                  </Link>
+                )
+              })}
+            </StaggerGrid>
 
-      {/* Footer */}
+            <FadeIn>
+              <div className="mt-12 text-center">
+                <Link
+                  href="/series"
+                  className="inline-block px-10 py-4 text-label vw-small text-muted transition-all duration-300 hover:text-[var(--color-text-primary)]"
+                  style={{ borderBottom: '1px solid var(--color-border)' }}
+                >
+                  View All {ALL_SERIES_ORDER.length} Series
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        <section
+          className="section-breathing"
+          style={{ borderBottom: '1px solid var(--color-border)' }}
+        >
+          <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
+            <FadeIn>
+              <h2 className="vw-heading-md mb-12 text-center">
+                {typographer('Common questions')}
+              </h2>
+            </FadeIn>
+
+            <StaggerGrid className="grid gap-6 md:grid-cols-3">
+              {FAQ_ITEMS.map((item) => (
+                <article
+                  key={item.question}
+                  className="h-full p-6"
+                  style={{ border: '1px solid var(--color-border)' }}
+                >
+                  <h3 className="vw-body mb-3 text-[var(--color-text-primary)]">
+                    {typographer(item.question)}
+                  </h3>
+                  <p className="vw-small text-secondary type-prose">
+                    {typographer(item.answer)}
+                  </p>
+                </article>
+              ))}
+            </StaggerGrid>
+          </div>
+        </section>
+
+        <section className="bg-surface section-breathing">
+          <div className="mx-auto max-w-4xl px-6 text-center md:px-[60px] lg:px-20">
+            <FadeIn>
+              <p className="text-label vw-small mb-6 text-gold">
+                READY TO BEGIN?
+              </p>
+              <h2 className="text-serif-italic vw-heading-md mb-6">
+                {typographer('Start with one honest sentence.')}
+              </h2>
+              <p className="vw-body mx-auto mb-10 text-secondary type-prose">
+                {typographer(
+                  'You do not need certainty before you begin. You need a next step.',
+                )}
+              </p>
+              <div className="flex flex-col justify-center gap-4 sm:flex-row">
+                <a
+                  href="#start-audit"
+                  className="bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
+                >
+                  Take Soul Audit
+                </a>
+                <Link
+                  href="/series"
+                  className="border px-10 py-4 text-label vw-small text-[var(--color-text-primary)] transition-colors duration-300 hover:border-gold hover:text-gold"
+                  style={{ borderColor: 'var(--color-border)' }}
+                >
+                  Browse Series
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      </main>
+
       <footer
-        className="py-16 md:py-24"
+        className="py-16 md:py-20"
         style={{ borderTop: '1px solid var(--color-border)' }}
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="text-center">
-            <OrnamentDivider />
-            <FadeIn>
-              <p
-                className="text-label vw-small leading-relaxed text-muted type-caption"
-                style={{ letterSpacing: '0.2em' }}
-              >
-                SOMETHING TO HOLD ONTO.
-              </p>
-            </FadeIn>
+            <p
+              className="text-label vw-small leading-relaxed text-muted type-caption"
+              style={{ letterSpacing: '0.2em' }}
+            >
+              SOMETHING TO HOLD ONTO.
+            </p>
             <div className="mt-8 flex items-center justify-center gap-6">
               <Link
                 href="/privacy"

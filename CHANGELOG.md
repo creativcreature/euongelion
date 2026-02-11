@@ -103,6 +103,29 @@ Format: Reverse chronological, grouped by sprint/date.
 - `npm run type-check` passes
 - `npm run build` passes without external font fetches
 
+### Homepage Conversion Flow Refactor (2026-02-11)
+
+- Reworked `/` into a conversion-first funnel in `src/app/page.tsx` with a clearer sequence:
+  - Above-the-fold value proposition + primary CTA
+  - Low-friction "Start Here" soul-audit section
+  - Matched results reveal
+  - How-it-works clarity block
+  - Featured series proof section
+  - Objection-handling FAQ
+  - Final CTA close
+- Reduced visual imbalance by removing mixed-headline composition from the homepage and using simpler, consistent serif hierarchy for readability and scan speed
+- Improved CTA hierarchy:
+  - Primary: `Start 2-Minute Soul Audit`
+  - Secondary: `Browse Series Library`
+- Added trust and friction-reduction signals near the top of the page (`No account required`, time expectation, biblical grounding)
+- Kept existing soul-audit behavior, limits, and matching logic intact while clarifying copy and outcome framing
+
+### Validation (Homepage Conversion Refactor)
+
+- `npm run lint` passes
+- `npm run type-check` passes
+- `npm run build` passes
+
 ---
 
 ## v0.7.0 — Typography Masterclass (2026-02-10)
