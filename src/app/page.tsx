@@ -11,7 +11,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Navigation from '@/components/Navigation'
 import SeriesHero from '@/components/SeriesHero'
-import FlipTicker from '@/components/FlipTicker'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
@@ -332,12 +331,9 @@ export default function Home() {
                   lineHeight: 0.82,
                   letterSpacing: '0.1em',
                 }}
-                aria-label="Euangelion. Good News."
+                aria-label="Euangelion"
               >
-                <FlipTicker
-                  messages={['EUANGELION', 'GOOD NEWS']}
-                  className="masthead-airport"
-                />
+                EUANGELION
               </h1>
               <div
                 className={`home-nav-rail mt-1 transition-all duration-500 ${

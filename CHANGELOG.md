@@ -131,6 +131,14 @@ Format: Reverse chronological, grouped by sprint/date.
   - Replaced previous vertical-track glyph-roll styling (`flip-track`, `flip-char`) with dynamic flap states (`flip-static`, `flip-dynamic`)
 - Bumped service worker cache namespace from `euangelion-v12` -> `euangelion-v13` in `public/sw.js` so the refined ticker behavior is immediately visible
 
+### Masthead Simplification (2026-02-11)
+
+- Removed masthead ticker/effects and restored a static wordmark:
+  - Updated `src/app/page.tsx` masthead to render plain `EUANGELION` text
+  - Removed ticker component usage and deleted `src/components/FlipTicker.tsx`
+  - Removed split-flap ticker CSS from `src/app/globals.css`
+- Bumped service worker cache namespace from `euangelion-v13` -> `euangelion-v14` in `public/sw.js` so the static masthead is immediately visible
+
 ### Validation
 
 - `npm run lint` passes
