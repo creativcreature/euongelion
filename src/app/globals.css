@@ -165,10 +165,20 @@
 /* ============================================
    FONT FAMILY VARIABLES
    Must be outside @theme because they use var() refs
-   to runtime CSS variables set by next/font on <html>.
+   to runtime CSS variables set on <html>.
    @theme compiles at build time and can't resolve them.
    ============================================ */
 :root {
+  --font-inter: var(
+    --font-geist-sans,
+    'Inter',
+    'Helvetica Neue',
+    Arial,
+    sans-serif
+  );
+  --font-instrument-serif:
+    'Instrument Serif', Georgia, 'Times New Roman', serif;
+
   --font-family-display: var(
     --font-inter,
     'Inter',

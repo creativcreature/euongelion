@@ -55,6 +55,14 @@ Format: Reverse chronological, grouped by sprint/date.
 
 - `npm run lint` passes with no new lint errors
 
+### Render Outage Follow-up (2026-02-11)
+
+- Replaced `next/font/google` usage in `src/app/layout.tsx` with local `GeistSans` import (`geist/font/sans`) to remove hard dependency on Google Fonts network availability during builds
+- Added explicit source font variables in `src/app/globals.css`:
+  - `--font-inter` now resolves from `--font-geist-sans` with fallback stack
+  - `--font-instrument-serif` now has a resilient serif fallback stack (`Instrument Serif`, `Georgia`, `Times New Roman`, `serif`)
+- Verified production build succeeds using webpack (`npx next build --webpack`)
+
 ---
 
 ## v0.7.0 — Typography Masterclass (2026-02-10)

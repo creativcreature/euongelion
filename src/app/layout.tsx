@@ -1,22 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter, Instrument_Serif } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans'
 import { Analytics } from '@vercel/analytics/next'
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
 import Providers from './providers'
 import './globals.css'
-
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-})
-
-const instrumentSerif = Instrument_Serif({
-  variable: '--font-instrument-serif',
-  subsets: ['latin'],
-  weight: ['400'],
-  style: ['normal', 'italic'],
-})
 
 export const metadata: Metadata = {
   title: { default: 'Euangelion', template: '%s | Euangelion' },
@@ -48,10 +35,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      className={`dark ${inter.variable} ${instrumentSerif.variable}`}
-    >
+    <html lang="en" className={`dark ${GeistSans.variable}`}>
       <body className="antialiased">
         <Providers>{children}</Providers>
         <ServiceWorkerRegistration />
