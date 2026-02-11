@@ -85,6 +85,24 @@ Format: Reverse chronological, grouped by sprint/date.
 - `npm run type-check` passes
 - `npm run build` passes
 
+### Instrument Serif Local Asset Pass (2026-02-11)
+
+- Root issue remained: browser/runtime could still fall back when external Google Fonts requests were blocked or delayed
+- Added local Instrument Serif assets in `public/fonts/`:
+  - `InstrumentSerif-Regular.ttf`
+  - `InstrumentSerif-Italic.ttf`
+- Replaced remote font import with local `@font-face` declarations in `src/app/globals.css`:
+  - `src: url('/fonts/InstrumentSerif-Regular.ttf') format('truetype')`
+  - `src: url('/fonts/InstrumentSerif-Italic.ttf') format('truetype')`
+- Kept canonical font tokens mapped to Instrument Serif (`--font-family-display`, `--font-family-body`, `--font-family-serif`) so all typography utilities resolve to the same local family
+- Removed temporary `next/font/google` dependency in `src/app/layout.tsx` so builds no longer require `fonts.googleapis.com`
+
+### Validation (Local Asset Pass)
+
+- `npm run lint` passes
+- `npm run type-check` passes
+- `npm run build` passes without external font fetches
+
 ---
 
 ## v0.7.0 — Typography Masterclass (2026-02-10)
