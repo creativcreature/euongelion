@@ -126,6 +126,26 @@ Format: Reverse chronological, grouped by sprint/date.
 - `npm run type-check` passes
 - `npm run build` passes
 
+### Color Uplift Pass (2026-02-11)
+
+- Replaced drab brown-forward palette with a brighter, more life-giving core:
+  - Deep blue base (`--color-tehom`)
+  - Warm cream text/surfaces (`--color-scroll`)
+  - More luminous sun-gold accent (`--color-gold`)
+- Updated semantic dark/light tokens in `src/app/globals.css` for richer contrast and brighter surfaces (`--color-surface`, `--color-surface-raised`, borders, overlays, hover/active states)
+- Refined global shadow and glow tokens for warmer visual energy (`--shadow-glow`, focus ring/shadow scales)
+- Enhanced homepage visual atmosphere in `src/app/page.tsx`:
+  - Luminous hero gradients
+  - Gold-first primary CTA treatment
+  - Elevated audit card with glow and subtle color wash
+  - Added warm/cool gradient lifts to major informational sections
+
+### Validation (Color Uplift Pass)
+
+- `npm run lint` passes
+- `npm run type-check` passes
+- `npm run build` passes
+
 ---
 
 ## v0.7.0 — Typography Masterclass (2026-02-10)

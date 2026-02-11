@@ -173,193 +173,169 @@ export default function Home() {
 
       <main id="main-content">
         <header
-          className="section-breathing"
-          style={{ borderBottom: '1px solid var(--color-border)' }}
+          className="pb-16 pt-6 md:pb-20 md:pt-10"
+          style={{
+            borderBottom: '1px solid var(--color-border)',
+            background:
+              'radial-gradient(circle at 14% 10%, rgba(226, 177, 91, 0.24) 0%, transparent 42%), radial-gradient(circle at 88% 24%, rgba(121, 200, 214, 0.22) 0%, transparent 38%), linear-gradient(180deg, rgba(255, 248, 236, 0.05) 0%, transparent 60%)',
+          }}
         >
-          <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-12 md:px-[60px] lg:px-20">
-            <div className="md:col-span-7">
-              <FadeIn>
-                <p className="text-label vw-small mb-6 text-gold">
-                  DAILY GUIDANCE FOR REAL STRUGGLES
-                </p>
-                <h1 className="vw-heading-xl mb-6 max-w-[16ch]">
-                  {typographer('Find your next faithful step.')}
-                </h1>
-                <p className="vw-body-lg mb-8 max-w-[36ch] text-secondary type-prose">
-                  {typographer(
-                    'Euangelion helps you move from spiritual fog to practical next steps through short, honest, scripture-rooted devotionals.',
-                  )}
-                </p>
-              </FadeIn>
+          <div className="mx-auto max-w-[1600px] px-4 md:px-[60px] lg:px-20">
+            <FadeIn>
+              <h1
+                className="text-masthead mb-8 w-full text-center"
+                style={{
+                  fontSize: 'clamp(3.5rem, 16vw, 14rem)',
+                  lineHeight: 0.9,
+                  letterSpacing: '0.12em',
+                }}
+              >
+                EUANGELION
+              </h1>
+            </FadeIn>
 
-              <FadeIn delay={0.1}>
-                <div className="mb-8 flex flex-col gap-4 sm:flex-row">
-                  <a
-                    href="#start-audit"
-                    className="bg-[var(--color-fg)] px-8 py-4 text-center text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
-                  >
-                    Start 2-Minute Soul Audit
-                  </a>
-                  <Link
-                    href="/series"
-                    className="border px-8 py-4 text-center text-label vw-small text-[var(--color-text-primary)] transition-colors duration-300 hover:border-gold hover:text-gold"
-                    style={{ borderColor: 'var(--color-border)' }}
-                  >
-                    Browse Series Library
-                  </Link>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.15}>
-                <div className="grid gap-3 sm:grid-cols-3">
-                  {TRUST_POINTS.map((point) => (
-                    <div
-                      key={point}
-                      className="px-4 py-3 text-center text-label vw-small text-muted"
-                      style={{ border: '1px solid var(--color-border)' }}
-                    >
-                      {point}
-                    </div>
-                  ))}
-                </div>
-              </FadeIn>
-            </div>
-
-            <div className="md:col-span-5">
-              <FadeIn delay={0.2}>
-                <div
-                  className="bg-surface-raised p-7"
-                  style={{ border: '1px solid var(--color-border)' }}
-                >
+            <div className="grid gap-8 md:grid-cols-12 md:gap-10">
+              <div className="md:col-span-7">
+                <FadeIn delay={0.05}>
                   <p className="text-label vw-small mb-4 text-gold">
-                    WHAT YOU GET THIS WEEK
+                    DAILY GUIDANCE FOR REAL STRUGGLES
                   </p>
-                  <ul className="space-y-4">
-                    <li className="vw-body text-secondary type-prose">
-                      {typographer(
-                        'A clear starting point based on your actual struggle.',
-                      )}
-                    </li>
-                    <li className="vw-body text-secondary type-prose">
-                      {typographer(
-                        'A focused daily reading rhythm without information overload.',
-                      )}
-                    </li>
-                    <li className="vw-body text-secondary type-prose">
-                      {typographer(
-                        'Concrete reflection prompts that turn insight into action.',
-                      )}
-                    </li>
-                  </ul>
-                  <div
-                    className="mt-6 pt-6"
-                    style={{ borderTop: '1px solid var(--color-border)' }}
-                  >
-                    <Link
-                      href="/wake-up"
-                      className="text-label vw-small text-muted transition-colors duration-300 hover:text-[var(--color-text-primary)]"
+                  <p className="vw-body-lg mb-8 max-w-[36ch] text-secondary type-prose">
+                    {typographer(
+                      'Move from spiritual fog to practical next steps through short, honest, scripture-rooted devotionals.',
+                    )}
+                  </p>
+                </FadeIn>
+
+                <FadeIn delay={0.1}>
+                  <div className="mb-8 flex flex-col gap-4 sm:flex-row">
+                    <a
+                      href="#start-audit"
+                      className="bg-gold px-8 py-4 text-center text-label vw-small text-tehom transition-all duration-300 hover:bg-[var(--color-fg)] hover:text-[var(--color-bg)]"
                     >
-                      Explore Wake-Up Magazine &rarr;
+                      Start 2-Minute Soul Audit
+                    </a>
+                    <Link
+                      href="/series"
+                      className="border px-8 py-4 text-center text-label vw-small text-[var(--color-text-primary)] transition-colors duration-300 hover:border-gold hover:text-gold"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      Browse Series Library
                     </Link>
                   </div>
-                </div>
-              </FadeIn>
+                </FadeIn>
+
+                <FadeIn delay={0.15}>
+                  <div className="grid gap-3 sm:grid-cols-3">
+                    {TRUST_POINTS.map((point) => (
+                      <div
+                        key={point}
+                        className="px-4 py-3 text-center text-label vw-small text-muted"
+                        style={{ border: '1px solid var(--color-border)' }}
+                      >
+                        {point}
+                      </div>
+                    ))}
+                  </div>
+                </FadeIn>
+              </div>
+
+              <div className="md:col-span-5">
+                <FadeIn delay={0.2}>
+                  <div
+                    id="start-audit"
+                    className="bg-surface-raised p-6 md:p-7"
+                    style={{
+                      border: '1px solid var(--color-border)',
+                      boxShadow: 'var(--shadow-glow)',
+                      background:
+                        'linear-gradient(180deg, rgba(255, 248, 236, 0.1) 0%, rgba(121, 200, 214, 0.06) 100%)',
+                    }}
+                  >
+                    <p className="text-label vw-small mb-4 text-gold">
+                      START HERE
+                    </p>
+                    <h2 className="vw-heading-md mb-3">
+                      {typographer('What are you wrestling with right now?')}
+                    </h2>
+                    <p className="vw-small mb-5 text-secondary type-prose">
+                      {typographer(
+                        'Write honestly and we will match you to your best next series.',
+                      )}
+                    </p>
+
+                    {limitReached ? (
+                      <div className="text-center">
+                        <p className="text-serif-italic vw-body mb-6 text-secondary">
+                          {typographer(
+                            'You\u2019ve explored enough. Time to dive in.',
+                          )}
+                        </p>
+                        <Link
+                          href="/series"
+                          className="inline-block w-full bg-gold px-10 py-4 text-label vw-small text-tehom transition-all duration-300 hover:bg-[var(--color-fg)] hover:text-[var(--color-bg)]"
+                        >
+                          Browse All Series &rarr;
+                        </Link>
+                      </div>
+                    ) : (
+                      <>
+                        {hydrated && auditCount > 0 && (
+                          <p className="vw-small mb-4 text-center text-muted oldstyle-nums">
+                            Audit {auditCount + 1} of 3
+                          </p>
+                        )}
+
+                        <textarea
+                          value={auditText}
+                          onChange={(e) => {
+                            setAuditText(e.target.value)
+                            setError(null)
+                          }}
+                          placeholder="Lately, I've been..."
+                          rows={4}
+                          disabled={isSubmitting}
+                          className="mb-4 w-full resize-none bg-surface p-5 text-serif-italic vw-body text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
+                          style={{
+                            border: '1px solid var(--color-border)',
+                            lineHeight: 1.7,
+                          }}
+                          onFocus={(e) => {
+                            e.target.style.borderColor = 'var(--color-gold)'
+                          }}
+                          onBlur={(e) => {
+                            e.target.style.borderColor = 'var(--color-border)'
+                          }}
+                        />
+
+                        {error && (
+                          <p className="vw-small mb-4 text-center text-secondary">
+                            {error}
+                          </p>
+                        )}
+
+                        <button
+                          onClick={handleAuditSubmit}
+                          disabled={isSubmitting}
+                          className="w-full bg-gold px-10 py-4 text-label vw-small text-tehom transition-all duration-300 hover:bg-[var(--color-fg)] hover:text-[var(--color-bg)] disabled:opacity-50"
+                        >
+                          {isSubmitting
+                            ? 'Finding Your Match...'
+                            : 'Get My Match'}
+                        </button>
+
+                        <p className="vw-small mt-4 text-center text-muted">
+                          No account required. You can start reading
+                          immediately.
+                        </p>
+                      </>
+                    )}
+                  </div>
+                </FadeIn>
+              </div>
             </div>
           </div>
         </header>
-
-        <section
-          id="start-audit"
-          className="section-breathing"
-          style={{ borderBottom: '1px solid var(--color-border)' }}
-        >
-          <div className="mx-auto max-w-4xl px-6 md:px-[60px] lg:px-20">
-            <FadeIn>
-              <p className="text-label vw-small mb-6 text-center text-gold">
-                START HERE
-              </p>
-              <h2 className="vw-heading-md mb-4 text-center">
-                {typographer('What are you wrestling with right now?')}
-              </h2>
-              <p className="vw-body mb-10 text-center text-secondary type-prose">
-                {typographer(
-                  'Write honestly. We will match you to the best next series in seconds.',
-                )}
-              </p>
-            </FadeIn>
-
-            <FadeIn delay={0.1}>
-              <div
-                className="bg-surface-raised p-6 md:p-8"
-                style={{ border: '1px solid var(--color-border)' }}
-              >
-                {limitReached ? (
-                  <div className="text-center">
-                    <p className="text-serif-italic vw-body-lg mb-8 text-secondary">
-                      {typographer(
-                        'You\u2019ve explored enough. Time to dive in.',
-                      )}
-                    </p>
-                    <Link
-                      href="/series"
-                      className="inline-block w-full bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
-                    >
-                      Browse All Series &rarr;
-                    </Link>
-                  </div>
-                ) : (
-                  <>
-                    {hydrated && auditCount > 0 && (
-                      <p className="vw-small mb-4 text-center text-muted oldstyle-nums">
-                        Audit {auditCount + 1} of 3
-                      </p>
-                    )}
-
-                    <textarea
-                      value={auditText}
-                      onChange={(e) => {
-                        setAuditText(e.target.value)
-                        setError(null)
-                      }}
-                      placeholder="Lately, I've been..."
-                      rows={4}
-                      disabled={isSubmitting}
-                      className="mb-4 w-full resize-none bg-surface p-5 text-serif-italic vw-body text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
-                      style={{
-                        border: '1px solid var(--color-border)',
-                        lineHeight: 1.7,
-                      }}
-                      onFocus={(e) => {
-                        e.target.style.borderColor = 'var(--color-gold)'
-                      }}
-                      onBlur={(e) => {
-                        e.target.style.borderColor = 'var(--color-border)'
-                      }}
-                    />
-
-                    {error && (
-                      <p className="vw-small mb-4 text-center text-secondary">
-                        {error}
-                      </p>
-                    )}
-
-                    <button
-                      onClick={handleAuditSubmit}
-                      disabled={isSubmitting}
-                      className="w-full bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom disabled:opacity-50"
-                    >
-                      {isSubmitting ? 'Finding Your Match...' : 'Get My Match'}
-                    </button>
-
-                    <p className="vw-small mt-4 text-center text-muted">
-                      No account required. You can start reading immediately.
-                    </p>
-                  </>
-                )}
-              </div>
-            </FadeIn>
-          </div>
-        </section>
 
         {auditResults && (
           <section
@@ -426,7 +402,11 @@ export default function Home() {
 
         <section
           className="dot-pattern section-breathing"
-          style={{ borderBottom: '1px solid var(--color-border)' }}
+          style={{
+            borderBottom: '1px solid var(--color-border)',
+            background:
+              'linear-gradient(180deg, rgba(121, 200, 214, 0.08) 0%, transparent 70%)',
+          }}
         >
           <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
             <FadeIn>
@@ -464,7 +444,11 @@ export default function Home() {
 
         <section
           className="section-breathing"
-          style={{ borderBottom: '1px solid var(--color-border)' }}
+          style={{
+            borderBottom: '1px solid var(--color-border)',
+            background:
+              'linear-gradient(180deg, rgba(226, 177, 91, 0.07) 0%, transparent 65%)',
+          }}
         >
           <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
             <FadeIn>
@@ -579,7 +563,7 @@ export default function Home() {
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <a
                   href="#start-audit"
-                  className="bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
+                  className="bg-gold px-10 py-4 text-label vw-small text-tehom transition-all duration-300 hover:bg-[var(--color-fg)] hover:text-[var(--color-bg)]"
                 >
                   Take Soul Audit
                 </a>
