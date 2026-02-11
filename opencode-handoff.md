@@ -1,768 +1,286 @@
-# Euangelion Typography & Color System Overhaul
+# EUANGELION
 
-**Document Version:** 1.0  
-**Date:** February 11, 2026  
-**Status:** Ready for Implementation  
-**Assigned:** Claude / Codex
+## The Typography & Color Revolution
 
 ---
 
-## Executive Summary
-
-The Euangelion design system needs a typography and color overhaul to align with the new visual direction: **illuminated manuscript meets newspaper meets scroll**. The current system feels fractured, cold, and inconsistent because:
-
-1. **Mixed fonts fracture the reading experience** — Sans-serif headings over serif body creates cognitive dissonance
-2. **Flat color lacks sacred atmosphere** — No glow, depth, or stained glass richness
-3. **Multiple typography systems confuse hierarchy** — No unified voice
-
-**The fix:** Commit to **Instrument Serif as the only font** (except microscopic details), use **upright vs italic for hierarchy**, and enrich the palette with **gold spectrum + stained glass colors + illumination effects**.
+> _"Design is not just what it looks like and feels like. Design is how it works. We've been making it work wrong."_
 
 ---
 
-## Design Philosophy
+## The Problem
 
-### Core Principles
+Right now, when someone opens Euangelion, they feel something is off. They can't put their finger on it. The typography fights itself. The colors feel flat. The sacred atmosphere the content deserves simply isn't there.
 
-| Principle                   | Implementation                                       |
-| --------------------------- | ---------------------------------------------------- |
-| **Serif-only typography**   | Instrument Serif for all headings, body, labels, nav |
-| **Upright/italic contrast** | Hierarchy through font style, not font family        |
-| **Sacred atmosphere**       | Gold glows, stained glass accents, paper textures    |
-| **Newspaper structure**     | Date line, masthead, section headers, gold rules     |
-| **Manuscript heritage**     | Drop caps, ornamental dividers, illuminated effects  |
-| **Scroll unveiling**        | Content reveals on scroll, seamless flow             |
+We've been decorating a cathedral with office furniture.
 
-### The "Intrigue" System
+---
 
-Instead of sans-serif vs serif contrast, use **regular vs italic within Instrument Serif**:
+## The Vision
+
+What if opening Euangelion felt like unwrーリング a precious manuscript? What if every letter breathed with the weight of centuries, every headline whispered with intention, every color glowed like light through stained glass?
+
+This isn't an update. This is a **renaissance**.
+
+---
+
+## Why Typography Matters
+
+Typography isn't just "what font to use."
+
+Typography is **the voice of your words**. It's how someone feels before they read a single sentence. It's the difference between a tract and a treasure.
+
+For 1,500 years, the Church understood this. Every missal, every breviary, every illuminated manuscript was crafted so that the **form** would prepare the soul for the **content**.
+
+We're bringing that wisdom to the digital age.
+
+---
+
+## The Revolution
+
+### 1. ONE FONT. THAT'S IT.
+
+Every great design project in history eventually finds its voice. We've found ours.
+
+```
+Instrument Serif.
+```
+
+Not a "mix." Not a "contrast." Not a "deliberate pairing."
+
+**Just one font. Used brilliantly.**
+
+Every headline. Every body paragraph. Every label. Every navigation item. Every piece of text on the site will speak with one voice—the voice of a 15th-century printer who knew that sacred words deserve sacred form.
+
+_And we're going to make one font do more than most designers get from five._
+
+---
+
+### 2. THE INTRIGUE SYSTEM
+
+Here’s what most designers don't understand: **contrast isn't about font families.**
+
+You want emphasis? Use italics. You want structure? Use size. You want hierarchy? Use space.
+
+We've invented what we call **The Intrigue System**—a way of using a single font to create tension, rhythm, and visual interest that draws the eye exactly where you want it.
 
 ```
 DAILY <em>bread</em> FOR THE <em>cluttered, hungry</em> SOUL
-        ↑ italic for emphasis, creates visual intrigue
 ```
+
+The upright letters form the structure. The italic words create **intrigue**. The reader's eye pauses there. Those words become memorable.
+
+_That's not decoration. That's architecture._
 
 ---
 
-## Font Stack
+### 3. GOLD THAT GLOWS
 
-### Current Problem
+We've been using gold as a flat color.
 
-```css
-/* Conflicting — display/body use sans, only serif uses serif */
---font-family-display: var(--font-inter, 'Inter', sans-serif);
---font-family-body: var(--font-inter, 'Inter', sans-serif);
---font-family-serif: var(--font-instrument-serif, serif);
-```
+That's like using a sunset as a paint sample.
 
-### Fixed Implementation
+Gold in Euangelion will:
 
-Add to `src/app/globals.css` in the `:root` block:
+- **Glow** from text, not just sit there
+- **Bleed** into backgrounds with subtle illumination
+- **Pulse** gently, like candlelight in a sanctuary
+- **Layer** with stained glass accents that feel like light through cathedral windows
+
+We're not adding colors. We're adding **atmosphere**.
+
+---
+
+### 4. STAINED GLASS THEOLOGY
+
+Every color in our palette will carry meaning:
+
+| Color             | Meaning                      | Usage                 |
+| ----------------- | ---------------------------- | --------------------- |
+| **Deep Blue**     | Heaven, truth, the divine    | Scripture, revelation |
+| **Wine Red**      | Blood, sacrifice, communion  | Passion, atonement    |
+| **Royal Purple**  | Kingdom, royalty, priesthood | Authority, calling    |
+| **Emerald Green** | Life, growth, the Spirit     | Formation, fruit      |
+
+When a user sees blue, they feel they're encountering truth.
+When they see wine, they feel the weight of sacrifice.
+When they see purple, they feel the dignity of their calling.
+
+_This isn't decoration. This is preaching with pixels._
+
+---
+
+### 5. PAPER THAT BREATHES
+
+The background won't be flat. It won't be solid.
+
+It will be **parchment**. Subtle. Texture that suggests centuries of faithful readers. Grain that catches the light like vellum.
+
+Every scroll deserves a worthy surface.
+
+---
+
+## What We're Building
+
+### Components That Disappear
+
+Every UI element will feel like it's part of the content, not decoration around it:
+
+- **Navigation** that feels like marginalia in an ancient manuscript
+- **Headers** that scream without shouting
+- **Drop caps** that glow like gold leaf
+- **Dividers** that feel like ornamental borders in a Book of Hours
+
+### A Reading Experience
+
+Not a "website." A **reading experience**.
+
+When someone opens Euangelion, they shouldn't think "nice design."
+They should think "this feels like scripture."
+
+And then they should forget about the design entirely.
+
+---
+
+## The Technical Reality
+
+Here's what we're actually doing:
+
+### Font Stack
 
 ```css
 :root {
-  /* ============================================
-     SINGLE FONT — Instrument Serif
-     ============================================ */
-  --font-instrument-serif:
-    'Instrument Serif', Georgia, 'Times New Roman', serif;
-  --font-family: var(--font-instrument-serif);
-
-  /* Micro details only (page numbers, timestamps < 10px) */
-  --font-microscopic: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-
-  /* ============================================
-     FONT VARIATIONS
-     ============================================ */
-  --font-regular: var(--font-family);
-  --font-italic: var(--font-family);
-  --font-small-caps: var(--font-family);
+  --font-family: 'Instrument Serif', Georgia, serif;
+  --font-microscopic: system-ui; /* Only for timestamps, page numbers < 10px */
 }
 ```
 
-### Typography Utility Classes
+**One font variable. Everything else is styling, not family.**
 
-Replace all existing `.text-*`, `.type-*`, `.headline-*` utilities with this unified system:
+### Color System
 
 ```css
-/* ============================================
-   TYPOGRAPHY UTILITIES — Instrument Serif Only
-   ============================================ */
+--color-gold-light: #d4af7f; /* Glow */
+--color-gold-bright: #e8c992; /* Shine */
+--color-gold-deep: #8b6914; /* Shadow */
+--color-glass-blue: #3d5a80; /* Truth */
+--color-glass-wine: #8b3a3a; /* Sacrifice */
+--color-glass-purple: #5c4d6b; /* Kingdom */
+--color-glass-emerald: #4a6b4a; /* Life */
+```
 
-/* Base */
+### Typography Utilities
+
+```css
 .font-serif {
-  font-family: var(--font-family) !important;
+  font-family: var(--font-family);
 }
 .font-serif-italic {
-  font-family: var(--font-family) !important;
-  font-style: italic !important;
+  font-family: var(--font-family);
+  font-style: italic;
 }
 .font-small-caps {
-  font-family: var(--font-family) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.12em !important;
-  font-size: 0.85em !important;
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
-.font-microscopic {
-  font-family: var(--font-microscopic) !important;
-  font-size: 0.7rem !important;
-  letter-spacing: 0.05em !important;
-}
-
-/* ============================================
-   SIZING — Fluid clamp system
-   ============================================ */
-.text-mega {
-  font-size: clamp(4rem, 12vw, 10rem);
-  line-height: 0.9;
-  letter-spacing: 0.02em;
-}
-.text-display {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1;
-  letter-spacing: 0.02em;
-}
-.text-heading-xl {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  line-height: 1.05;
-}
-.text-heading-lg {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  line-height: 1.1;
-}
-.text-heading-md {
-  font-size: clamp(1.25rem, 2.5vw, 2rem);
-  line-height: 1.2;
-.text-body-lg {
-  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
-  line-height: 1.7;
-}
-.text-body {
-  font-size: clamp(1rem, 1.2vw, 1.25rem);
-  line-height: 1.7;
-}
-.text-small {
-  font-size: clamp(0.875rem, 1vw, 1rem);
-  line-height: 1.6;
-}
-.text-caption {
-  font-size: clamp(0.75rem, 0.85vw, 0.875rem);
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-}
-.text-label {
-  font-size: clamp(0.7rem, 0.8vw, 0.8rem);
-  line-height: 1.4;
-  letter-spacing: 0.1em;
-}
-
-/* ============================================
-   INTRIGUE — Italic emphasis within headlines
-   ============================================ */
 .intrigue {
-  font-style: italic !important;
-}
-.intrigue-light {
-  font-style: italic !important;
-  opacity: 0.85;
-}
-
-/* ============================================
-   TYPOGRAPHY CRAFT
-   ============================================ */
-.type-prose {
-  font-feature-settings:
-    'liga' 1,
-    'clig' 1,
-    'kern' 1;
-  font-variant-ligatures: common-ligatures;
-  font-variant-numeric: oldstyle-nums proportional-nums;
-  hanging-punctuation: first last;
-}
-
-/* ============================================
-   DROP CAP
-   ============================================ */
-.drop-cap::first-letter {
-  font-family: var(--font-family) !important;
-  font-size: 5rem;
-  float: left;
-  line-height: 0.7;
-  padding-right: 0.12em;
-  margin-top: 0.05em;
-  font-weight: 400;
-  color: var(--color-gold);
-}
-@media (max-width: 768px) {
-  .drop-cap::first-letter { font-size: 4rem; }
-}
-
-/* ============================================
-   SELECTION
-   ============================================ */
-::selection {
-  background-color: var(--color-gold);
-  color: var(--color-tehom);
-}
+  font-style: italic;
+} /* The magic */
 ```
 
----
-
-## Typography Hierarchy Reference
-
-### The Upright/Italic System
-
-| Element             | Style                     | Purpose                 |
-| ------------------- | ------------------------- | ----------------------- |
-| **Date line**       | Small caps, regular       | Anchors the day         |
-| **Masthead**        | Massive, regular, tracked | Screaming headline      |
-| **Tagline**         | Italic                    | Whisper under masthead  |
-| **Nav links**       | Italic                    | Inviting, not demanding |
-| **Section headers** | Regular (large)           | Structure               |
-| **Emphasis words**  | Italic (within headers)   | Intrigue                |
-| **Body text**       | Regular                   | Reading flow            |
-| **Scripture**       | Italic                    | Sacred quotation        |
-| **Pull quotes**     | Italic (large)            | Focus                   |
-| **Labels/captions** | Small caps, regular       | Metadata                |
-| **Footnote/micro**  | Microscopic sans          | Utility only            |
-
-### Example Usage
+### New Components
 
 ```tsx
-// "THE WORD BEFORE WORDS" — regular with intrigue
-<h1 className="font-serif text-mega tracking-widest">
-  THE <span className="intrigue">WORD</span> BEFORE <span className="intrigue">WORDS</span>
-</h1>
-
-// "Daily Bread" — simple contrast
-<h2 className="font-serif text-heading-xl">
-  DAILY <span className="intrigue">bread</span>
-</h2>
-
-// "Something to hold onto" — tagline
-<p className="font-serif-italic text-body-lg text-secondary">
-  Something to hold onto.
-</p>
-```
-
----
-
-## Color Palette Expansion
-
-### Current (Flat)
-
-```css
---color-tehom: #1a1612;
---color-scroll: #f7f3ed;
---color-gold: #c19a6b;
-```
-
-### Expanded (Sacred Atmosphere)
-
-Add to `src/app/globals.css`:
-
-```css
-/* ============================================
-   CORE — Unchanged
-   ============================================ */
---color-tehom: #1a1612;
---color-scroll: #f7f3ed;
---color-gold: #c19a6b;
---color-gold-rgb: 193, 154, 107;
-
-/* ============================================
-   GOLD SPECTRUM — For illumination
-   ============================================ */
---color-gold-light: #d4af7f; /* Highlight */
---color-gold-bright: #e8c992; /* Glow */
---color-gold-deep: #8b6914; /* Shadow/engraved */
---color-gold-ghost: rgba(193, 154, 107, 0.08); /* Background wash */
-
-/* ============================================
-   STAINED GLASS — For sacred accents
-   ============================================ */
---color-glass-blue: #3d5a80; /* Heaven/truth */
---color-glass-wine: #8b3a3a; /* Blood/sacrifice */
---color-glass-purple: #5c4d6b; /* Royalty/kingdom */
---color-glass-emerald: #4a6b4a; /* Life/growth */
---color-glass-amber: #b8860b; /* Divine presence */
-
-/* Stained glass light variants */
---color-glass-blue-light: #5c7a9e;
---color-glass-wine-light: #a85555;
---color-glass-purple-light: #7a6b8a;
---color-glass-emerald-light: #6b8a6b;
-
-/* ============================================
-   TEXTURE — Paper & parchment
-   ============================================ */
---color-parchment: #2a2420; /* Slightly lighter than tehom */
---color-parchment-light: #3a332e;
-
-/* ============================================
-   ILLUMINATION — Glow effects
-   ============================================ */
---color-illumination: #f4e4bc; /* Light through glass */
---color-glow-warm: rgba(244, 228, 188, 0.12);
---color-glow-gold: rgba(193, 154, 107, 0.2);
---color-glow-glass: rgba(61, 90, 128, 0.1);
-
-/* ============================================
-   SEMANTIC — Semantic color tokens
-   ============================================ */
---color-text-primary: var(--color-scroll);
---color-text-secondary: rgba(247, 243, 237, 0.75);
---color-text-tertiary: rgba(247, 243, 237, 0.5);
---color-text-muted: rgba(247, 243, 237, 0.35);
-
---color-border-subtle: rgba(247, 243, 237, 0.08);
---color-border-medium: rgba(247, 243, 237, 0.15);
---color-border-strong: rgba(247, 243, 237, 0.25);
-
---color-surface-wash: rgba(193, 154, 107, 0.03);
---color-surface-raised: rgba(247, 243, 237, 0.03);
-```
-
----
-
-## Illumination Effects
-
-Add to `src/app/globals.css`:
-
-```css
-/* ============================================
-   GOLD GLOW — Text
-   ============================================ */
-.text-glow-gold {
-  color: var(--color-gold-light);
-  text-shadow:
-    0 0 20px rgba(193, 154, 107, 0.3),
-    0 0 40px rgba(193, 154, 107, 0.15);
-}
-.text-glow-warm {
-  color: var(--color-illumination);
-  text-shadow:
-    0 0 25px rgba(244, 228, 188, 0.25),
-    0 0 50px rgba(244, 228, 188, 0.1);
-}
-
-/* ============================================
-   GOLD GLOW — Container
-   ============================================ */
-.glow-gold {
-  box-shadow:
-    0 0 30px rgba(193, 154, 107, 0.15),
-    0 0 60px rgba(193, 154, 107, 0.08),
-    inset 0 0 40px rgba(244, 228, 188, 0.03);
-}
-.glow-warm {
-  box-shadow:
-    0 0 40px rgba(244, 228, 188, 0.1),
-    inset 0 0 60px rgba(244, 228, 188, 0.04);
-}
-
-/* ============================================
-   STAINED GLASS BORDER
-   ============================================ */
-.glass-border-blue {
-  border: 1px solid var(--color-glass-blue);
-  box-shadow:
-    0 0 20px rgba(61, 90, 128, 0.2),
-    inset 0 0 30px rgba(61, 90, 128, 0.05);
-}
-.glass-border-wine {
-  border: 1px solid var(--color-glass-wine);
-  box-shadow:
-    0 0 20px rgba(139, 58, 58, 0.2),
-    inset 0 0 30px rgba(139, 58, 58, 0.05);
-}
-.glass-border-purple {
-  border: 1px solid var(--color-glass-purple);
-  box-shadow:
-    0 0 20px rgba(92, 77, 107, 0.2),
-    inset 0 0 30px rgba(92, 77, 107, 0.05);
-}
-
-/* ============================================
-   GOLD RULES — Horizontal dividers
-   ============================================ */
-.rule-gold-thin {
-  border: none;
-  border-top: 1px solid var(--color-gold);
-  opacity: 0.2;
-}
-.rule-gold-medium {
-  border: none;
-  border-top: 2px solid var(--color-gold);
-  opacity: 0.3;
-}
-.rule-gold-thick {
-  border: none;
-  border-top: 3px solid var(--color-gold);
-  opacity: 0.4;
-}
-
-/* ============================================
-   PAPER TEXTURE OVERLAY
-   ============================================ */
-.texture-paper {
-  background-image: url('/textures/paper-grain.png');
-  background-repeat: repeat;
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-/* ============================================
-   ILLUMINATED CONTAINER
-   ============================================ */
-.illuminated-box {
-  background: linear-gradient(
-    180deg,
-    var(--color-gold-ghost) 0%,
-    transparent 50%,
-    var(--color-gold-ghost) 100%
-  );
-  border-left: 3px solid var(--color-gold);
-  padding: 2rem;
-}
-```
-
----
-
-## Stained Glass Color Utilities
-
-```css
-/* Text colors */
-.text-glass-blue {
-  color: var(--color-glass-blue);
-}
-.text-glass-wine {
-  color: var(--color-glass-wine);
-}
-.text-glass-purple {
-  color: var(--color-glass-purple);
-}
-.text-glass-emerald {
-  color: var(--color-glass-emerald);
-}
-.text-glass-amber {
-  color: var(--color-glass-amber);
-}
-
-/* Background washes */
-.bg-glass-blue-wash {
-  background: linear-gradient(
-    135deg,
-    rgba(61, 90, 128, 0.08) 0%,
-    transparent 50%,
-    rgba(61, 90, 128, 0.03) 100%
-  );
-}
-.bg-glass-wine-wash {
-  background: linear-gradient(
-    135deg,
-    rgba(139, 58, 58, 0.06) 0%,
-    transparent 50%,
-    rgba(139, 58, 58, 0.02) 100%
-  );
-}
-
-/* Border accents */
-.border-glass-blue {
-  border-color: var(--color-glass-blue);
-}
-.border-glass-wine {
-  border-color: var(--color-glass-wine);
-}
-.border-glass-purple {
-  border-color: var(--color-glass-purple);
-}
-.border-glass-emerald {
-  border-color: var(--color-glass-emerald);
-}
-```
-
----
-
-## Component Updates
-
-### 1. Replace MixedHeadline with Headline
-
-Create `src/components/Headline.tsx`:
-
-```tsx
-interface HeadlineProps {
-  as?: 'h1' | 'h2' | 'h3' | 'h4'
-  size?: 'mega' | 'display' | 'heading-xl' | 'heading-lg' | 'heading-md'
-  className?: string
-  children: React.ReactNode
-}
-
-/**
- * Simple serif headline with optional italic emphasis.
- * Use <em> for intrigue/emphasis within the headline.
- */
-export default function Headline({
-  as: Tag = 'h2',
-  size = 'heading-md',
-  className = '',
-  children,
-}: HeadlineProps) {
-  const sizeClass = `text-${size}`
-
-  return (
-    <Tag className={`font-serif ${sizeClass} ${className}`}>{children}</Tag>
-  )
-}
-
-/**
- * Wrap words you want to emphasize/italicize
- */
-export function Em({ children }: { children: React.ReactNode }) {
-  return <span className="intrigue">{children}</span>
-}
-```
-
-**Usage:**
-
-```tsx
-<Headline as="h1" size="display">
+// Headline with intrigue
+<Headline>
   THE <Em>WORD</Em> BEFORE <Em>WORDS</Em>
 </Headline>
-
-<Headline as="h2" size="heading-lg">
-  DAILY <Em>bread</Em> FOR THE <Em>cluttered, hungry</Em> SOUL
-</Headline>
 ```
-
-### 2. Navigation.tsx
-
-**Current:** Uses `text-label` (sans)  
-**Fixed:**
-
-```tsx
-<Link
-  href="/"
-  className="font-serif-italic text-caption text-secondary hover:text-gold transition-colors"
->
-  Home
-</Link>
-```
-
-### 3. TeachingModule.tsx
-
-**Current:** Uses `text-display` (sans) for headings  
-**Fixed:**
-
-```tsx
-{
-  module.heading && (
-    <h3 className="font-serif text-heading-md mb-10">{module.heading}</h3>
-  )
-}
-```
-
-### 4. ScriptureModule.tsx
-
-**Current:** Uses `text-label` (sans) for reference  
-**Fixed:**
-
-```tsx
-<p className="font-small-caps text-label text-tertiary">
-  {module.reference} ({translation})
-</p>
-```
-
-### 5. PullQuote.tsx
-
-**Current:** Uses `font-family-display` (sans)  
-**Fixed:**
-
-```tsx
-<p className="font-serif-italic text-heading-md leading-relaxed">
-  {typographer(children)}
-</p>
-```
-
-### 6. All Other Modules
-
-Systematically review and update:
-
-- `StoryModule.tsx`
-- `ReflectionModule.tsx`
-- `BridgeModule.tsx`
-- `ComprehensionModule.tsx`
-- `VocabModule.tsx`
-- `ProfileModule.tsx`
-- `InsightModule.tsx`
-- `PrayerModule.tsx`
-- `TakeawayModule.tsx`
-- `ResourceModule.tsx`
-- And all new modules (Chronology, Geography, Visual, Art, Voice, etc.)
 
 ---
 
-## Implementation Phases
+## The Implementation
+
+We're doing this in phases because excellence takes time:
 
 ### Phase 1: Foundation
 
-| Task                 | File                  | Changes                                    |
-| -------------------- | --------------------- | ------------------------------------------ |
-| Reset font stack     | `src/app/globals.css` | Remove Inter references, single font       |
-| Add color tokens     | `src/app/globals.css` | Gold spectrum, stained glass, illumination |
-| Add illumination CSS | `src/app/globals.css` | Glows, rules, texture utilities            |
+- Reset font stack to single variable
+- Add complete color palette
+- Add illumination CSS effects
 
-### Phase 2: Typography Utilities
+### Phase 2: Typography System
 
-| Task                      | File                          | Changes                                              |
-| ------------------------- | ----------------------------- | ---------------------------------------------------- |
-| Consolidate utilities     | `src/app/globals.css`         | Replace all `.text-*`, `.type-*` with unified system |
-| Create Headline component | `src/components/Headline.tsx` | Replace MixedHeadline                                |
-| Create Em component       | `src/components/Em.tsx`       | For intrigue emphasis                                |
-| Update typographer        | `src/lib/typographer.ts`      | Ensure serif-only output                             |
+- Consolidate all utility classes
+- Create Headline and Em components
+- Remove MixedHeadline (the old way)
 
 ### Phase 3: Component Migration
 
-| Task                     | File                                         | Changes           |
-| ------------------------ | -------------------------------------------- | ----------------- |
-| Update Navigation        | `src/components/Navigation.tsx`              | Serif italic nav  |
-| Update TeachingModule    | `src/components/modules/TeachingModule.tsx`  | Serif headings    |
-| Update ScriptureModule   | `src/components/modules/ScriptureModule.tsx` | Serif labels      |
-| Update PullQuote         | `src/components/PullQuote.tsx`               | Serif quote text  |
-| Remove MixedHeadline     | `src/components/MixedHeadline.tsx`           | Delete or archive |
-| Update all other modules | `src/components/modules/*.tsx`               | Systematic review |
+- Update every module
+- Update navigation
+- Update all pages
 
-### Phase 4: Visual Polish
+### Phase 4: Polish
 
-| Task                     | File                                                         | Changes                        |
-| ------------------------ | ------------------------------------------------------------ | ------------------------------ |
-| Add paper texture        | `public/textures/paper-grain.png`                            | Subtle noise overlay (64x64px) |
-| Update homepage          | `src/app/page.tsx`                                           | New typography + color system  |
-| Update devotional reader | `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx` | Full system application        |
-| Update series pages      | `src/app/wake-up/series/[slug]/SeriesPageClient.tsx`         | Full system application        |
+- Add paper texture
+- Refine every transition
+- Test on every device
 
-### Phase 5: Validation
+### Phase 5: Perfection
 
-| Task          | Command                        | Expected                                           |
-| ------------- | ------------------------------ | -------------------------------------------------- |
-| Type check    | `npm run type-check`           | 0 errors                                           |
-| Lint          | `npm run lint`                 | 0 warnings                                         |
-| Build         | `npm run build`                | Success                                            |
-| Visual review | Browser check at `npm run dev` | Typography unified, colors rich, atmosphere sacred |
+- Build
+- Validate
+- Ship
 
 ---
 
-## Visual Before/After
+## The Promise
 
-### Before (Current)
+When we're done:
 
-```
-DAILY BREAD FOR THE CLUTTERED, HUNGRY SOUL
-↑ Sans uppercase (harsh, no intrigue)
+Someone will open Euangelion on a Tuesday morning.
+The masthead will glow softly.
+The date line will anchor their day.
+The first headline will arrest their attention.
+The first paragraph will feel like a prayer.
 
-The Spirit of God was hovering over the waters...
-↑ Sans body (disconnected from headings)
-
-Flat gold color, no glow, cold atmosphere
-```
-
-### After (New)
-
-```
-DAILY <em>bread</em> FOR THE <em>cluttered, hungry</em> SOUL
-↑ All serif, upright + italic contrast, intriguing rhythm
-
-The Spirit of God was hovering over the waters...
-↑ All serif, unified voice, sacred atmosphere
-
-Gold glows, stained glass accents, paper texture, warm illumination
-```
+And they won't think about design.
+They'll think about God.
 
 ---
 
-## Key Design Principles to Maintain
+## The Call
 
-1. **Instrument Serif everywhere** — No exceptions (except micro)
-2. **Upright + italic for hierarchy** — No font family contrast
-3. **Gold spectrum** — Light to deep for depth
-4. **Stained glass accents** — Blue, wine, purple, emerald
-5. **Glow effects** — Sacred illumination, not flat color
-6. **Paper texture** — Subtle overlay for warmth
-7. **Consistent spacing** — 8px baseline grid
-8. **Old-style numerals** — OpenType features always on
+This isn't a CSS refactor.
+
+This is a **statement** that sacred content deserves sacred form.
+This is a **commitment** to excellence in every pixel.
+This is a **refusal** to let digital ugliness cheapen eternal truth.
 
 ---
 
-## Files to Create
-
-| File                          | Purpose                   |
-| ----------------------------- | ------------------------- |
-| `src/components/Headline.tsx` | Replace MixedHeadline     |
-| `src/components/Em.tsx`       | Italic emphasis component |
-
-## Files to Modify
-
-| File                                                         | Changes                                     |
-| ------------------------------------------------------------ | ------------------------------------------- |
-| `src/app/globals.css`                                        | Complete rewrite of font/color/token system |
-| `src/components/Navigation.tsx`                              | Serif italic nav links                      |
-| `src/components/PullQuote.tsx`                               | Serif quote text                            |
-| `src/components/MixedHeadline.tsx`                           | Delete (replaced by Headline)               |
-| `src/components/modules/TeachingModule.tsx`                  | Serif headings                              |
-| `src/components/modules/ScriptureModule.tsx`                 | Serif labels                                |
-| `src/components/modules/*.tsx`                               | All other modules                           |
-| `src/app/page.tsx`                                           | Full typography update                      |
-| `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx` | Full typography update                      |
-| `src/app/wake-up/series/[slug]/SeriesPageClient.tsx`         | Full typography update                      |
-
-## Files to Delete
-
-| File                               | Reason                    |
-| ---------------------------------- | ------------------------- |
-| `src/components/MixedHeadline.tsx` | Replaced by Headline + Em |
-
-## Assets to Create
-
-| Asset                             | Location             | Purpose               |
-| --------------------------------- | -------------------- | --------------------- |
-| `public/textures/paper-grain.png` | 64x64px subtle noise | Paper texture overlay |
+> _"Details matter. It's worth waiting to get it right."_
+> — Steve Jobs
 
 ---
 
-## Validation Checklist
+## Let's Build This.
 
-- [ ] Date line uses serif small caps
-- [ ] Masthead is massive serif with gold glow
-- [ ] All headings are serif (no sans anywhere)
-- [ ] Nav links are serif italic
-- [ ] Body text is serif
-- [ ] Italic is used for emphasis within headlines ("intrigue")
-- [ ] Gold has visible glow in UI
-- [ ] Stained glass colors appear in appropriate contexts
-- [ ] Paper texture is visible on backgrounds
-- [ ] Gold rules separate sections
-- [ ] Drop caps are gold
-- [ ] All tests pass (`npm test`)
-- [ ] No lint errors (`npm run lint`)
-- [ ] Type check passes (`npm run type-check`)
-- [ ] Build succeeds (`npm run build`)
+`opencode-handoff.md` is ready.
+The vision is clear.
+The path is defined.
+
+Now we make it real.
 
 ---
 
-## Reference Sites
-
-- **Newspaper layout:** https://www.seaharvest.net.au/
-- **Typography + integration:** https://divinalingua.it/en
-- **Scroll integration:** https://ironhill.au/
+**Document Version:** 1.0  
+**Status:** Ready for Implementation  
+**The Work Begins:** Now
 
 ---
 
-## Questions for Clarification
-
-1. Should light mode be maintained, or should we go dark-only?
-2. What specific stained glass colors should be used for which contexts?
-3. Should the paper texture be visible on mobile, or only desktop?
-4. Are the ornamental dividers (❧ ✦ ※) still desired?
-
----
-
-_Document prepared for implementation handoff. Questions? Reach out before beginning work._
+_Euangelion_  
+_Daily bread for the cluttered, hungry soul._
