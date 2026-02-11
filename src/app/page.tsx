@@ -1,7 +1,14 @@
 'use client'
 
-import { useRef, useState, useSyncExternalStore } from 'react'
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Navigation from '@/components/Navigation'
 import SeriesHero from '@/components/SeriesHero'
 import FadeIn from '@/components/motion/FadeIn'
@@ -11,6 +18,22 @@ import { typographer } from '@/lib/typographer'
 import { SERIES_DATA, FEATURED_SERIES, ALL_SERIES_ORDER } from '@/data/series'
 
 const emptySubscribe = () => () => {}
+const NAV_MENU_LINKS = [
+  { href: '/', label: 'Home' },
+  { href: '/soul-audit', label: 'Soul Audit' },
+  { href: '/wake-up', label: 'Wake-Up' },
+  { href: '/series', label: 'Series' },
+  { href: '/settings', label: 'Settings' },
+]
+
+function getInitialTheme(): 'light' | 'dark' {
+  if (typeof window === 'undefined') return 'dark'
+  const stored = localStorage.getItem('theme')
+  if (stored === 'dark' || stored === 'light') return stored
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light'
+}
 
 const TRUST_POINTS = [
   'No account required',
@@ -55,9 +78,13 @@ const FAQ_ITEMS = [
 ]
 
 export default function Home() {
+  const pathname = usePathname()
   const [auditText, setAuditText] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
+  const [now, setNow] = useState(() => new Date())
+  const [navInMetaRail, setNavInMetaRail] = useState(false)
   const resultsRef = useRef<HTMLDivElement>(null)
   const hydrated = useSyncExternalStore(
     emptySubscribe,
@@ -66,6 +93,44 @@ export default function Home() {
   )
   const { auditCount, recordAudit, hasReachedLimit } = useSoulAuditStore()
   const limitReached = hydrated && hasReachedLimit()
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+  }, [theme])
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(new Date()), 30_000)
+    return () => window.clearInterval(timer)
+  }, [])
+
+  useEffect(() => {
+    const onScroll = () => {
+      setNavInMetaRail(window.scrollY > 220)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const formattedNow = useMemo(
+    () =>
+      now.toLocaleString('en-US', {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+      }),
+    [now],
+  )
+
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark'
+    setTheme(next)
+    localStorage.setItem('theme', next)
+    document.documentElement.classList.toggle('dark', next === 'dark')
+  }
 
   const [auditResults, setAuditResults] = useState<{
     matches: Array<{
@@ -170,54 +235,89 @@ export default function Home() {
       />
 
       <main id="main-content">
-        <header className="border-subtle border-b pb-12 pt-4 md:pb-14 md:pt-8">
+        <header className="border-subtle border-b pb-12 pt-0 md:pb-14">
           <div className="mx-auto max-w-[1720px] px-4 md:px-[56px] lg:px-20">
             <FadeIn>
-              <div className="newspaper-subrule text-label vw-small mb-6 flex flex-wrap items-center justify-between gap-3 py-2 text-muted">
-                <span>HOME EDITION</span>
-                <span className="hidden md:inline">
-                  SPIRITUAL FORMATION JOURNAL
-                </span>
-                <span className="hidden lg:inline">Issue 01</span>
+              <div className="home-meta-rail newspaper-subrule text-label vw-small mb-6 flex items-center justify-between gap-3 py-2 text-muted">
+                <span className="whitespace-nowrap">{formattedNow}</span>
+                <div className="hidden min-w-0 flex-1 items-center justify-center md:flex">
+                  {navInMetaRail ? (
+                    <nav className="home-meta-nav flex max-w-full items-center gap-5 overflow-x-auto px-4">
+                      {NAV_MENU_LINKS.map((link) => {
+                        const active =
+                          pathname === link.href ||
+                          (link.href !== '/' && pathname.startsWith(link.href))
+                        return (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className={`animated-underline whitespace-nowrap text-label vw-small transition-colors duration-200 ${
+                              active
+                                ? 'text-[var(--color-text-primary)]'
+                                : 'text-muted'
+                            }`}
+                          >
+                            {link.label.toUpperCase()}
+                          </Link>
+                        )
+                      })}
+                    </nav>
+                  ) : (
+                    <span className="truncate text-center">
+                      DAILY DEVOTIONAL AND HONEST REFLECTION
+                    </span>
+                  )}
+                </div>
+                <button
+                  onClick={toggleTheme}
+                  className="home-rail-theme text-label vw-small whitespace-nowrap border border-subtle px-3 py-1 transition-colors duration-200 hover:border-[var(--color-text-primary)] hover:text-[var(--color-text-primary)]"
+                  aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                >
+                  {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
+                </button>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.03}>
               <h1
-                className="group text-masthead relative mb-2 w-full cursor-default text-center select-none"
+                className="text-masthead relative mb-2 w-full cursor-default text-center select-none"
                 style={{
                   fontSize: 'clamp(3.75rem, 18vw, 16rem)',
                   lineHeight: 0.88,
                   letterSpacing: '0.13em',
                 }}
                 aria-label="Euangelion. Good News."
-                title="Hover to reveal meaning"
               >
-                <span className="block transition-all duration-500 group-hover:-translate-y-8 group-hover:opacity-0">
-                  EUANGELION
-                </span>
-                <span className="pointer-events-none absolute inset-0 block translate-y-8 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="masthead-primary block">EUANGELION</span>
+                <span className="masthead-secondary pointer-events-none absolute inset-0 block">
                   GOOD NEWS
                 </span>
               </h1>
-              <Navigation variant="newspaper" showSkipLink={false} />
-              <p className="vw-body mx-auto mb-10 mt-6 max-w-[40ch] text-center text-secondary type-prose">
-                {typographer(
-                  'A daily paper for your soul: clear scripture, honest reflection, and one faithful step forward.',
-                )}
-              </p>
+              <div
+                className={`home-nav-rail mt-3 transition-all duration-500 ${
+                  navInMetaRail
+                    ? 'md:pointer-events-none md:-translate-y-3 md:opacity-0'
+                    : 'md:translate-y-0 md:opacity-100'
+                }`}
+              >
+                <Navigation
+                  variant="newspaper"
+                  showSkipLink={false}
+                  showThemeToggle={false}
+                />
+              </div>
             </FadeIn>
 
             <div className="newspaper-rule grid gap-8 pt-8 md:grid-cols-12 md:gap-10">
               <article className="md:col-span-7">
                 <FadeIn delay={0.05}>
                   <p className="text-label vw-small mb-4 text-gold">
-                    LEAD STORY
+                    START HERE
                   </p>
-                  <h2 className="vw-heading-md mb-4 max-w-[22ch]">
+                  <h2 className="vw-heading-xl mb-4 max-w-[18ch]">
                     {typographer('Find your next faithful step today.')}
                   </h2>
-                  <p className="vw-body mb-8 max-w-[44ch] text-secondary type-prose">
+                  <p className="vw-body-lg mb-8 max-w-[42ch] text-secondary type-prose">
                     {typographer(
                       'Run a short soul audit and get matched to a focused devotional path for the season you are actually in.',
                     )}
@@ -229,7 +329,7 @@ export default function Home() {
                     {TRUST_POINTS.map((point) => (
                       <li
                         key={point}
-                        className="vw-small flex items-center text-secondary"
+                        className="vw-body flex items-center text-secondary"
                       >
                         <span className="mr-2 text-gold" aria-hidden="true">
                           •

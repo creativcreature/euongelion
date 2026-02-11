@@ -35,6 +35,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Homepage Header Flow + Scale Pass (2026-02-11)
+
+### What Changed
+
+- Reworked homepage header behavior in `src/app/page.tsx`:
+  - Replaced `HOME EDITION` rail text with live current date/time
+  - Replaced center rail copy with `DAILY DEVOTIONAL AND HONEST REFLECTION`
+  - Replaced right rail slot with a dark-mode toggle button
+  - Removed the subheading block: `A daily paper for your soul...`
+  - Renamed `LEAD STORY` to `START HERE`
+  - Increased hero lead typography (`Find your next faithful step today` + supporting copy)
+- Added sticky/nav handoff behavior:
+  - Top meta rail stays sticky
+  - Masthead scrolls normally
+  - Primary nav below masthead transitions out as scroll passes threshold
+  - Meta rail center swaps from tagline to nav links (replacing the center text on scroll)
+- Replaced hover-only masthead interaction with continuous looping animation between `EUANGELION` and `GOOD NEWS`
+- Updated `src/components/Navigation.tsx` with `showThemeToggle` prop so homepage can own dark-mode control in the top rail
+- Increased global typography utility scale in `src/app/globals.css` (`vw-heading-*`, `vw-body*`, `vw-small`) for larger text across the site
+- Restored dark-mode behavior for the newspaper theme by adding `.dark .newspaper-home` token overrides and dark card treatment
+- Bumped service worker cache namespace from `euangelion-v5` -> `euangelion-v6` in `public/sw.js` so clients pick up header/typography changes immediately
+
+### Validation
+
+- `npm run lint` passes
+- `npm run type-check` passes
+- `npm run build` passes
+
+---
+
 ## Edge Runtime Warning Removal (2026-02-11)
 
 ### What Changed
