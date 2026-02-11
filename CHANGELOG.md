@@ -112,6 +112,25 @@ Format: Reverse chronological, grouped by sprint/date.
   - Added edge mask fade, reduced-motion fallback, and chip-styled ticker units
   - Improved marquee smoothness with track-level animation + will-change optimization
 
+### Split-Flap Ticker Correction (2026-02-11)
+
+- Replaced marquee-style masthead with airport-board split-flap behavior to match requested header motion reference:
+  - Added `src/components/FlipTicker.tsx` (character-cell ticker with per-slot vertical tick transitions)
+  - Updated homepage masthead in `src/app/page.tsx` to use `FlipTicker` with `EUANGELION` <-> `GOOD NEWS`
+  - Replaced old marquee CSS in `src/app/globals.css` with split-flap board styles (`flip-cell`, `flip-track`, `flip-char`)
+- Bumped service worker cache namespace from `euangelion-v11` -> `euangelion-v12` in `public/sw.js` so ticker correction is immediately visible
+
+### Airport Board Ticker Behavior Refinement (2026-02-11)
+
+- Refined the masthead ticker to behave like a true split-flap airport board (not a horizontal sports ticker):
+  - Rebuilt `src/components/FlipTicker.tsx` animation logic so each character cell advances in stepped ticks toward the next message
+  - Added per-cell split-panel flip choreography (top + bottom flap timing) for mechanical board motion
+  - Tuned message cadence/stagger for `EUANGELION` <-> `GOOD NEWS` to read as header display text rather than marquee crawl
+- Reworked split-flap visuals in `src/app/globals.css`:
+  - Added half-panel layering, seam line, depth/ink shading, and dark-mode plate tuning for newspaper look
+  - Replaced previous vertical-track glyph-roll styling (`flip-track`, `flip-char`) with dynamic flap states (`flip-static`, `flip-dynamic`)
+- Bumped service worker cache namespace from `euangelion-v12` -> `euangelion-v13` in `public/sw.js` so the refined ticker behavior is immediately visible
+
 ### Validation
 
 - `npm run lint` passes

@@ -11,6 +11,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Navigation from '@/components/Navigation'
 import SeriesHero from '@/components/SeriesHero'
+import FlipTicker from '@/components/FlipTicker'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
@@ -25,7 +26,6 @@ const NAV_MENU_LINKS = [
   { href: '/series', label: 'Series' },
   { href: '/settings', label: 'Settings' },
 ]
-const MASTHEAD_TICKER_ITEMS = ['EUANGELION', 'GOOD NEWS', 'DAILY BREAD']
 const AUDIT_PROMPTS = [
   "Lately, I've been...",
   'I feel stuck because...',
@@ -334,25 +334,10 @@ export default function Home() {
                 }}
                 aria-label="Euangelion. Good News."
               >
-                <span className="masthead-ticker" aria-hidden="true">
-                  <span className="masthead-ticker-track">
-                    {[0, 1].map((segmentIndex) => (
-                      <span
-                        key={segmentIndex}
-                        className="masthead-ticker-segment"
-                      >
-                        {MASTHEAD_TICKER_ITEMS.map((item, itemIndex) => (
-                          <span
-                            key={`${segmentIndex}-${item}-${itemIndex}`}
-                            className="masthead-ticker-item"
-                          >
-                            {item}
-                          </span>
-                        ))}
-                      </span>
-                    ))}
-                  </span>
-                </span>
+                <FlipTicker
+                  messages={['EUANGELION', 'GOOD NEWS']}
+                  className="masthead-airport"
+                />
               </h1>
               <div
                 className={`home-nav-rail mt-1 transition-all duration-500 ${
