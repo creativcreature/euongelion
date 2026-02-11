@@ -146,6 +146,10 @@ Format: Reverse chronological, grouped by sprint/date.
 - `npm run type-check` passes
 - `npm run build` passes
 
+### Client Cache Refresh (2026-02-11)
+
+- Bumped service worker cache namespace from `euangelion-v1` to `euangelion-v2` in `public/sw.js` so clients pick up latest homepage/style changes instead of stale cached assets
+
 ---
 
 ## v0.7.0 — Typography Masterclass (2026-02-10)
