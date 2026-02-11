@@ -235,66 +235,71 @@ export default function Home() {
       />
 
       <main id="main-content">
-        <header className="border-subtle border-b pb-12 pt-0 md:pb-14">
-          <div className="mx-auto max-w-[1720px] px-4 md:px-[56px] lg:px-20">
-            <FadeIn>
-              <div className="home-meta-rail newspaper-subrule text-label vw-small mb-6 flex items-center justify-between gap-3 py-2 text-muted">
-                <span className="whitespace-nowrap">{formattedNow}</span>
-                <div className="hidden min-w-0 flex-1 items-center justify-center md:flex">
-                  {navInMetaRail ? (
-                    <nav className="home-meta-nav flex max-w-full items-center gap-5 overflow-x-auto px-4">
-                      {NAV_MENU_LINKS.map((link) => {
-                        const active =
-                          pathname === link.href ||
-                          (link.href !== '/' && pathname.startsWith(link.href))
-                        return (
-                          <Link
-                            key={link.href}
-                            href={link.href}
-                            className={`animated-underline whitespace-nowrap text-label vw-small transition-colors duration-200 ${
-                              active
-                                ? 'text-[var(--color-text-primary)]'
-                                : 'text-muted'
-                            }`}
-                          >
-                            {link.label.toUpperCase()}
-                          </Link>
-                        )
-                      })}
-                    </nav>
-                  ) : (
-                    <span className="truncate text-center">
-                      DAILY DEVOTIONAL AND HONEST REFLECTION
-                    </span>
-                  )}
-                </div>
-                <button
-                  onClick={toggleTheme}
-                  className="home-rail-theme text-label vw-small whitespace-nowrap border border-subtle px-3 py-1 transition-colors duration-200 hover:border-[var(--color-text-primary)] hover:text-[var(--color-text-primary)]"
-                  aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-                >
-                  {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
-                </button>
-              </div>
-            </FadeIn>
+        <div className="home-meta-rail newspaper-subrule text-label vw-small text-muted">
+          <div className="mx-auto flex max-w-[1720px] items-center justify-between gap-3 px-4 py-2 md:px-[56px] lg:px-20">
+            <span className="whitespace-nowrap">{formattedNow}</span>
+            <div className="hidden min-w-0 flex-1 items-center justify-center md:flex">
+              {navInMetaRail ? (
+                <nav className="home-meta-nav flex max-w-full items-center gap-5 overflow-x-auto px-4">
+                  {NAV_MENU_LINKS.map((link) => {
+                    const active =
+                      pathname === link.href ||
+                      (link.href !== '/' && pathname.startsWith(link.href))
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`animated-underline whitespace-nowrap text-label vw-small transition-colors duration-200 ${
+                          active
+                            ? 'text-[var(--color-text-primary)]'
+                            : 'text-muted'
+                        }`}
+                      >
+                        {link.label.toUpperCase()}
+                      </Link>
+                    )
+                  })}
+                </nav>
+              ) : (
+                <span className="truncate text-center">
+                  DAILY DEVOTIONAL AND HONEST REFLECTION
+                </span>
+              )}
+            </div>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="home-rail-theme text-label vw-small whitespace-nowrap border border-subtle px-3 py-1 transition-colors duration-200 hover:border-[var(--color-text-primary)] hover:text-[var(--color-text-primary)]"
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
+            </button>
+          </div>
+        </div>
 
+        <header className="border-subtle border-b pb-8 pt-2 md:pb-10 md:pt-3">
+          <div className="mx-auto max-w-[1720px] px-4 md:px-[56px] lg:px-20">
             <FadeIn delay={0.03}>
               <h1
-                className="text-masthead relative mb-2 w-full cursor-default text-center select-none"
+                className="text-masthead relative mb-2 w-full cursor-default overflow-hidden text-left select-none"
                 style={{
-                  fontSize: 'clamp(3.75rem, 18vw, 16rem)',
-                  lineHeight: 0.88,
+                  fontSize: 'clamp(2.8rem, 13vw, 11rem)',
+                  lineHeight: 0.82,
                   letterSpacing: '0.13em',
                 }}
                 aria-label="Euangelion. Good News."
               >
-                <span className="masthead-primary block">EUANGELION</span>
-                <span className="masthead-secondary pointer-events-none absolute inset-0 block">
-                  GOOD NEWS
+                <span className="masthead-ticker" aria-hidden="true">
+                  <span className="masthead-ticker-segment">
+                    EUANGELION • GOOD NEWS •
+                  </span>
+                  <span className="masthead-ticker-segment">
+                    EUANGELION • GOOD NEWS •
+                  </span>
                 </span>
               </h1>
               <div
-                className={`home-nav-rail mt-3 transition-all duration-500 ${
+                className={`home-nav-rail mt-1 transition-all duration-500 ${
                   navInMetaRail
                     ? 'md:pointer-events-none md:-translate-y-3 md:opacity-0'
                     : 'md:translate-y-0 md:opacity-100'
@@ -308,16 +313,16 @@ export default function Home() {
               </div>
             </FadeIn>
 
-            <div className="newspaper-rule grid gap-8 pt-8 md:grid-cols-12 md:gap-10">
+            <div className="newspaper-rule grid items-start gap-5 pt-4 md:grid-cols-12 md:gap-6">
               <article className="md:col-span-7">
                 <FadeIn delay={0.05}>
-                  <p className="text-label vw-small mb-4 text-gold">
+                  <p className="text-label vw-small mb-2 text-gold">
                     START HERE
                   </p>
-                  <h2 className="vw-heading-xl mb-4 max-w-[18ch]">
+                  <h2 className="vw-heading-lg mb-3 max-w-[18ch]">
                     {typographer('Find your next faithful step today.')}
                   </h2>
-                  <p className="vw-body-lg mb-8 max-w-[42ch] text-secondary type-prose">
+                  <p className="vw-body mb-5 max-w-[42ch] text-secondary type-prose">
                     {typographer(
                       'Run a short soul audit and get matched to a focused devotional path for the season you are actually in.',
                     )}
@@ -325,11 +330,11 @@ export default function Home() {
                 </FadeIn>
 
                 <FadeIn delay={0.12}>
-                  <ul className="newspaper-subrule flex flex-wrap items-center gap-x-6 gap-y-2 py-3">
+                  <ul className="newspaper-subrule flex flex-wrap items-center gap-x-6 gap-y-2 py-2">
                     {TRUST_POINTS.map((point) => (
                       <li
                         key={point}
-                        className="vw-body flex items-center text-secondary"
+                        className="vw-small flex items-center text-secondary"
                       >
                         <span className="mr-2 text-gold" aria-hidden="true">
                           •
@@ -343,14 +348,14 @@ export default function Home() {
 
               <aside className="md:col-span-5">
                 <FadeIn delay={0.18}>
-                  <div id="start-audit" className="newspaper-card p-6 md:p-7">
-                    <p className="text-label vw-small mb-4 text-gold">
+                  <div id="start-audit" className="newspaper-card p-4 md:p-5">
+                    <p className="text-label vw-small mb-2 text-gold">
                       SOUL AUDIT • FRONT PAGE
                     </p>
-                    <h2 className="vw-heading-md mb-3">
+                    <h2 className="mb-2 text-[clamp(1.4rem,2.2vw,2.15rem)] leading-[1.15]">
                       {typographer('What are you wrestling with right now?')}
                     </h2>
-                    <p className="vw-small mb-5 text-secondary type-prose">
+                    <p className="vw-small mb-3 text-secondary type-prose">
                       {typographer(
                         'Write one honest paragraph and we will match you with your best next series.',
                       )}
@@ -385,9 +390,9 @@ export default function Home() {
                             setError(null)
                           }}
                           placeholder="Lately, I've been..."
-                          rows={4}
+                          rows={3}
                           disabled={isSubmitting}
-                          className="text-serif-italic vw-body mb-4 w-full resize-none border border-subtle bg-[rgba(255,255,255,0.65)] p-5 text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
+                          className="text-serif-italic vw-body mb-3 w-full resize-none border border-subtle bg-[rgba(255,255,255,0.65)] p-4 text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
                           style={{ lineHeight: 1.7 }}
                           onFocus={(e) => {
                             e.target.style.borderColor = 'var(--color-gold)'
@@ -406,7 +411,7 @@ export default function Home() {
                         <button
                           onClick={handleAuditSubmit}
                           disabled={isSubmitting}
-                          className="text-label vw-small w-full border border-[var(--color-text-primary)] bg-[var(--color-text-primary)] px-8 py-3 text-[var(--color-bg)] transition-colors duration-200 hover:bg-transparent hover:text-[var(--color-text-primary)] disabled:opacity-50"
+                          className="text-label vw-small w-full border border-[var(--color-text-primary)] bg-[var(--color-text-primary)] px-8 py-2.5 text-[var(--color-bg)] transition-colors duration-200 hover:bg-transparent hover:text-[var(--color-text-primary)] disabled:opacity-50"
                         >
                           {isSubmitting
                             ? 'Finding Your Match...'

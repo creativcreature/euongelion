@@ -51,11 +51,30 @@ Format: Reverse chronological, grouped by sprint/date.
   - Masthead scrolls normally
   - Primary nav below masthead transitions out as scroll passes threshold
   - Meta rail center swaps from tagline to nav links (replacing the center text on scroll)
-- Replaced hover-only masthead interaction with continuous looping animation between `EUANGELION` and `GOOD NEWS`
+- Replaced hover-only masthead interaction with ticker-style masthead animation:
+  - Continuous horizontal marquee: `EUANGELION • GOOD NEWS`
 - Updated `src/components/Navigation.tsx` with `showThemeToggle` prop so homepage can own dark-mode control in the top rail
 - Increased global typography utility scale in `src/app/globals.css` (`vw-heading-*`, `vw-body*`, `vw-small`) for larger text across the site
 - Restored dark-mode behavior for the newspaper theme by adding `.dark .newspaper-home` token overrides and dark card treatment
-- Bumped service worker cache namespace from `euangelion-v5` -> `euangelion-v6` in `public/sw.js` so clients pick up header/typography changes immediately
+- Bumped service worker cache namespace from `euangelion-v7` -> `euangelion-v8` in `public/sw.js` so clients pick up interaction and sticky/navigation fixes immediately
+
+### Interaction Stability Follow-up (2026-02-11)
+
+- Moved sticky meta rail outside the animated header block in `src/app/page.tsx` to restore reliable sticky behavior
+- Hardened clickable behavior for top rail nav/theme controls in `src/app/globals.css`:
+  - Raised sticky rail z-index to top layer
+  - Enforced pointer-events on nav links and dark-mode control
+  - Added explicit sticky fallback (`position: -webkit-sticky`)
+- Added explicit `type="button"` on the top dark-mode control to avoid accidental form semantics
+
+### Above-the-Fold Soul Audit Pass (2026-02-11)
+
+- Compressed homepage hero vertical stack in `src/app/page.tsx` so the full Soul Audit block fits above the fold on desktop:
+  - Reduced masthead height footprint and nav spacing
+  - Tightened top section padding/gaps
+  - Reduced lead-story copy block vertical rhythm
+  - Compacted Soul Audit card (padding, heading size, textarea rows, CTA height)
+- Bumped service worker cache namespace from `euangelion-v8` -> `euangelion-v9` in `public/sw.js` so fold/layout updates are immediately visible
 
 ### Validation
 
