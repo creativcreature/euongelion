@@ -1,5 +1,5 @@
 // Euangelion Service Worker
-const CACHE_NAME = 'euangelion-v14'
+const CACHE_NAME = 'euangelion-v16'
 const OFFLINE_URL = '/offline'
 
 // Static assets to pre-cache
@@ -29,6 +29,13 @@ self.addEventListener('activate', (event) => {
     )
   )
   self.clients.claim()
+})
+
+// Allow client to force immediate activation of updated SW.
+self.addEventListener('message', (event) => {
+  if (event.data?.type === 'SKIP_WAITING') {
+    self.skipWaiting()
+  }
 })
 
 // Fetch strategy

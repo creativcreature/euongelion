@@ -589,24 +589,26 @@ export default function Home() {
               </div>
             </FadeIn>
 
-            <StaggerGrid className="grid gap-6 md:grid-cols-3">
+            <ol className="newspaper-flow-list mx-auto max-w-5xl">
               {FLOW_STEPS.map((step) => (
-                <article
+                <li
                   key={step.id}
-                  className="newspaper-card flex h-full flex-col p-6"
+                  className="newspaper-flow-item grid gap-4 py-6 md:grid-cols-[auto_1fr] md:items-start md:gap-8 md:py-8"
                 >
-                  <p className="text-gold oldstyle-nums vw-heading-md mb-3">
+                  <p className="text-gold oldstyle-nums vw-heading-md leading-none">
                     {step.id}
                   </p>
-                  <h3 className="vw-body mb-3 text-[var(--color-text-primary)]">
-                    {typographer(step.title)}
-                  </h3>
-                  <p className="vw-small text-secondary type-prose">
-                    {typographer(step.body)}
-                  </p>
-                </article>
+                  <div>
+                    <h3 className="vw-body mb-2 text-[var(--color-text-primary)]">
+                      {typographer(step.title)}
+                    </h3>
+                    <p className="vw-small max-w-[60ch] text-secondary type-prose">
+                      {typographer(step.body)}
+                    </p>
+                  </div>
+                </li>
               ))}
-            </StaggerGrid>
+            </ol>
           </div>
         </section>
 
@@ -683,28 +685,28 @@ export default function Home() {
               </div>
             </FadeIn>
 
-            <StaggerGrid className="grid gap-6 md:grid-cols-3">
+            <div className="newspaper-faq-list mx-auto max-w-5xl">
               {FAQ_ITEMS.map((item) => (
                 <article
                   key={item.question}
-                  className="newspaper-card h-full p-6"
+                  className="newspaper-faq-item py-6 md:py-8"
                 >
-                  <h3 className="vw-body mb-3 text-[var(--color-text-primary)]">
+                  <h3 className="vw-body mb-2 text-[var(--color-text-primary)]">
                     {typographer(item.question)}
                   </h3>
-                  <p className="vw-small text-secondary type-prose">
+                  <p className="vw-small max-w-[70ch] text-secondary type-prose">
                     {typographer(item.answer)}
                   </p>
                 </article>
               ))}
-            </StaggerGrid>
+            </div>
           </div>
         </section>
 
         <section className="py-14 md:py-16 lg:py-20">
           <div className="mx-auto max-w-[1720px] px-6 md:px-[56px] lg:px-20">
             <FadeIn>
-              <div className="newspaper-card mx-auto max-w-4xl p-8 text-center md:p-10">
+              <div className="mx-auto max-w-4xl border-y-2 border-subtle px-4 py-8 text-center md:px-6 md:py-10">
                 <p className="text-label vw-small mb-4 text-gold">
                   READY TO BEGIN?
                 </p>

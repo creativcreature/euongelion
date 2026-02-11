@@ -27,7 +27,7 @@
      ============================================ */
   --color-tehom: #0f1b2e;
   --color-scroll: #fff8ec;
-  --color-gold: #e2b15b;
+  --color-gold: #1f4f82;
 
   /* Theological Accents (rare, intentional use) */
   --color-burgundy: #8e3f3f;
@@ -37,7 +37,7 @@
   /* RGB channels for rgba() usage */
   --color-tehom-rgb: 15, 27, 46;
   --color-scroll-rgb: 255, 248, 236;
-  --color-gold-rgb: 226, 177, 91;
+  --color-gold-rgb: 31, 79, 130;
 
   /* ============================================
      SEMANTIC COLOR TOKENS (Dark mode default)
@@ -62,7 +62,7 @@
   /* Interactive states */
   --color-hover: rgba(247, 243, 237, 0.1);
   --color-active: rgba(247, 243, 237, 0.15);
-  --color-focus-ring: rgba(193, 154, 107, 0.4);
+  --color-focus-ring: rgba(31, 79, 130, 0.36);
 
   /* Feedback colors */
   --color-success: #5fa067;
@@ -114,7 +114,7 @@
   --shadow-md: 0 4px 8px rgba(15, 27, 46, 0.18);
   --shadow-lg: 0 8px 16px rgba(15, 27, 46, 0.24);
   --shadow-xl: 0 16px 32px rgba(15, 27, 46, 0.3);
-  --shadow-focus: 0 0 0 3px rgba(226, 177, 91, 0.45);
+  --shadow-focus: 0 0 0 3px rgba(31, 79, 130, 0.4);
 
   /* ============================================
      TRANSITION TOKENS
@@ -152,7 +152,7 @@
   --shadow-xs: 0 1px 2px rgba(15, 27, 46, 0.16);
   --shadow-2xl: 0 24px 48px rgba(15, 27, 46, 0.38);
   --shadow-inner: inset 0 2px 4px rgba(15, 27, 46, 0.14);
-  --shadow-glow: 0 0 28px rgba(226, 177, 91, 0.45);
+  --shadow-glow: none;
   --shadow-vignette: inset 0 0 100px rgba(8, 14, 26, 0.45);
 
   /* ============================================
@@ -400,30 +400,30 @@
 .newspaper-home {
   --color-bg: #fbf4e8;
   --color-fg: #19232f;
-  --color-gold: #b6492e;
+  --color-gold: #224f7d;
   --color-text-primary: #19232f;
   --color-text-secondary: rgba(25, 35, 47, 0.82);
   --color-text-tertiary: rgba(25, 35, 47, 0.66);
   --color-text-muted: rgba(25, 35, 47, 0.5);
-  --color-border: rgba(25, 35, 47, 0.24);
-  --color-border-strong: rgba(25, 35, 47, 0.36);
+  --color-border: rgba(25, 35, 47, 0.34);
+  --color-border-strong: rgba(25, 35, 47, 0.5);
   --color-surface: rgba(25, 35, 47, 0.035);
   --color-surface-raised: rgba(255, 255, 255, 0.72);
   --color-overlay: rgba(251, 244, 232, 0.9);
   --color-hover: rgba(25, 35, 47, 0.06);
   --color-active: rgba(25, 35, 47, 0.1);
-  --shadow-focus: 0 0 0 3px rgba(182, 73, 46, 0.28);
+  --shadow-focus: 0 0 0 3px rgba(34, 79, 125, 0.3);
   position: relative;
   isolation: isolate;
   background:
     radial-gradient(
       180% 140% at 8% 0%,
-      rgba(182, 73, 46, 0.06),
+      rgba(34, 79, 125, 0.07),
       transparent 40%
     ),
     radial-gradient(
       140% 120% at 100% 2%,
-      rgba(32, 97, 86, 0.05),
+      rgba(52, 94, 137, 0.05),
       transparent 34%
     ),
     linear-gradient(
@@ -452,13 +452,68 @@
 .dark .newspaper-home {
   --color-bg: #111a2b;
   --color-fg: #f8f0e3;
-  --color-gold: #d98b52;
+  --color-gold: #8db5e0;
   --color-text-primary: #f8f0e3;
   --color-text-secondary: rgba(248, 240, 227, 0.84);
   --color-text-tertiary: rgba(248, 240, 227, 0.68);
   --color-text-muted: rgba(248, 240, 227, 0.52);
-  --color-border: rgba(248, 240, 227, 0.24);
-  --color-border-strong: rgba(248, 240, 227, 0.34);
+  --color-border: rgba(248, 240, 227, 0.3);
+  --color-border-strong: rgba(248, 240, 227, 0.45);
+  --color-surface: rgba(248, 240, 227, 0.06);
+  --color-surface-raised: rgba(16, 24, 36, 0.9);
+  --color-overlay: rgba(11, 17, 27, 0.9);
+  --color-hover: rgba(248, 240, 227, 0.08);
+  --color-active: rgba(248, 240, 227, 0.13);
+}
+
+.newspaper-reading {
+  --color-bg: #f9f3e7;
+  --color-fg: #1a2639;
+  --color-gold: #224f7d;
+  --color-text-primary: #1a2639;
+  --color-text-secondary: rgba(26, 38, 57, 0.82);
+  --color-text-tertiary: rgba(26, 38, 57, 0.64);
+  --color-text-muted: rgba(26, 38, 57, 0.52);
+  --color-border: rgba(26, 38, 57, 0.34);
+  --color-border-strong: rgba(26, 38, 57, 0.5);
+  --color-surface: rgba(26, 38, 57, 0.035);
+  --color-surface-raised: rgba(255, 255, 255, 0.76);
+  --color-overlay: rgba(249, 243, 231, 0.9);
+  --color-hover: rgba(26, 38, 57, 0.07);
+  --color-active: rgba(26, 38, 57, 0.12);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.26),
+      rgba(255, 255, 255, 0.26)
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(26, 38, 57, 0.016) 0,
+      rgba(26, 38, 57, 0.016) 1px,
+      transparent 1px,
+      transparent 9px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(26, 38, 57, 0.01) 0,
+      rgba(26, 38, 57, 0.01) 1px,
+      transparent 1px,
+      transparent 8px
+    ),
+    var(--color-bg);
+}
+
+.dark .newspaper-reading {
+  --color-bg: #111a2b;
+  --color-fg: #f8f0e3;
+  --color-gold: #8db5e0;
+  --color-text-primary: #f8f0e3;
+  --color-text-secondary: rgba(248, 240, 227, 0.84);
+  --color-text-tertiary: rgba(248, 240, 227, 0.68);
+  --color-text-muted: rgba(248, 240, 227, 0.52);
+  --color-border: rgba(248, 240, 227, 0.3);
+  --color-border-strong: rgba(248, 240, 227, 0.45);
   --color-surface: rgba(248, 240, 227, 0.06);
   --color-surface-raised: rgba(16, 24, 36, 0.9);
   --color-overlay: rgba(11, 17, 27, 0.9);
@@ -547,49 +602,50 @@
 }
 
 .newspaper-rule {
-  border-top: 1px solid var(--color-border);
+  border-top: 1.5px solid var(--color-border);
 }
 
 .newspaper-subrule {
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  border-top: 1.5px solid var(--color-border);
+  border-bottom: 1.5px solid var(--color-border);
 }
 
 .newspaper-card {
   background:
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.66) 0%,
-      rgba(255, 255, 255, 0.56) 100%
+      rgba(255, 255, 255, 0.44) 0%,
+      rgba(255, 255, 255, 0.36) 100%
     ),
     repeating-linear-gradient(
       6deg,
-      rgba(25, 35, 47, 0.018) 0,
-      rgba(25, 35, 47, 0.018) 1px,
+      rgba(25, 35, 47, 0.014) 0,
+      rgba(25, 35, 47, 0.014) 1px,
       transparent 1px,
       transparent 8px
     ),
     var(--color-surface-raised);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 1px 0 rgba(25, 35, 47, 0.08);
+  border: 1.5px solid var(--color-border);
+  box-shadow: none;
 }
 
 .dark .newspaper-card {
   background:
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.05) 0%,
-      rgba(255, 255, 255, 0.025) 100%
+      rgba(255, 255, 255, 0.045) 0%,
+      rgba(255, 255, 255, 0.02) 100%
     ),
     repeating-linear-gradient(
       6deg,
-      rgba(242, 233, 218, 0.03) 0,
-      rgba(242, 233, 218, 0.03) 1px,
+      rgba(242, 233, 218, 0.024) 0,
+      rgba(242, 233, 218, 0.024) 1px,
       transparent 1px,
       transparent 8px
     ),
     var(--color-surface-raised);
-  box-shadow: 0 1px 0 rgba(242, 233, 218, 0.12);
+  border: 1.5px solid var(--color-border);
+  box-shadow: none;
 }
 
 .home-meta-rail {
@@ -602,7 +658,7 @@
   background-color: var(--color-bg);
   backdrop-filter: blur(6px);
   background-color: color-mix(in srgb, var(--color-bg) 84%, transparent);
-  box-shadow: 0 1px 0 var(--color-border);
+  box-shadow: 0 2px 0 var(--color-border);
 }
 
 .home-meta-nav::-webkit-scrollbar {
@@ -623,6 +679,28 @@
 
 .home-nav-rail {
   transform-origin: top center;
+}
+
+.newspaper-flow-list,
+.newspaper-faq-list {
+  border-top: 1.5px solid var(--color-border);
+}
+
+.newspaper-flow-item,
+.newspaper-faq-item {
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+.newspaper-reading-main {
+  border-top: 1.5px solid var(--color-border);
+}
+
+@media (min-width: 1024px) {
+  .newspaper-reading .reading-flow {
+    padding-inline: 2.5rem;
+    border-left: 1.5px solid var(--color-border);
+    border-right: 1.5px solid var(--color-border);
+  }
 }
 
 @layer utilities {
@@ -849,40 +927,15 @@
     background-color: var(--color-surface-raised);
   }
 
-  /* Gold shimmer (Scripture emphasis, key phrases — animated sweep) */
-  @keyframes gold-shimmer-sweep {
-    0% {
-      background-position: -200% center;
-    }
-    100% {
-      background-position: 200% center;
-    }
-  }
+  /* Ink emphasis: flat color, no glow/shimmer */
   .gold-shimmer {
-    background: linear-gradient(
-      135deg,
-      #c19a6b 0%,
-      #d4af7f 30%,
-      #e8c992 50%,
-      #d4af7f 70%,
-      #c19a6b 100%
-    );
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gold-shimmer-sweep 3s ease-in-out infinite;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .gold-shimmer {
-      animation: none;
-      background-size: 100% 100%;
-    }
+    color: var(--color-gold);
+    -webkit-text-fill-color: currentColor;
   }
 
-  /* Gold shimmer as background (for non-text elements) */
+  /* Ink accent as background */
   .gold-shimmer-bg {
-    background: linear-gradient(135deg, #c19a6b 0%, #d4af7f 50%, #c19a6b 100%);
+    background: var(--color-gold);
   }
 
   /* ============================================
@@ -985,26 +1038,11 @@
     transform: scale(0.98);
   }
 
-  /* Breathing animation for prayer text */
-  @keyframes breathe {
-    0%,
-    100% {
-      opacity: 0.85;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.01);
-    }
-  }
+  /* Prayer text: static, no pulsing glow */
   .breathe-prayer {
-    animation: breathe 6s ease-in-out infinite;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .breathe-prayer {
-      animation: none;
-      opacity: 1;
-    }
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 
   /* Dot pattern background (paper.design inspired) */
@@ -1069,14 +1107,14 @@
      READING FLOW — continuous article container
      ============================================ */
   .reading-flow {
-    width: min(100%, 1040px);
+    width: min(100%, 980px);
     margin-left: auto;
     margin-right: auto;
   }
 
   .newspaper-reading .type-prose {
-    font-size: clamp(1.16rem, 1.2vw + 0.85rem, 1.45rem);
-    line-height: 1.72;
+    font-size: clamp(1.18rem, 1.12vw + 0.9rem, 1.46rem);
+    line-height: 1.8;
   }
 
   .newspaper-reading .type-prose p,
@@ -1087,7 +1125,7 @@
 
   .newspaper-reading .reading-flow > * {
     width: 100%;
-    max-width: 940px;
+    max-width: 860px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1237,9 +1275,9 @@
 
   /* Micro: smallest labels, superscripts */
   .type-micro {
-    font-size: clamp(0.6rem, 0.7vw, 0.75rem);
+    font-size: clamp(0.72rem, 0.82vw, 0.86rem);
     font-family: var(--font-family-serif);
-    letter-spacing: 0.15em;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
     font-weight: 600;
   }

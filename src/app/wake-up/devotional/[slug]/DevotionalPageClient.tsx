@@ -6,9 +6,6 @@ import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import ScrollProgress from '@/components/ScrollProgress'
 import Link from 'next/link'
-import FadeIn from '@/components/motion/FadeIn'
-import StaggerGrid from '@/components/motion/StaggerGrid'
-import MixedHeadline, { Sans, Serif } from '@/components/MixedHeadline'
 import OrnamentDivider from '@/components/OrnamentDivider'
 import { useProgress, useReadingTime } from '@/hooks/useProgress'
 import ModuleRenderer from '@/components/ModuleRenderer'
@@ -122,11 +119,11 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
   return (
     <div className="newspaper-reading min-h-screen bg-page">
       <ScrollProgress />
-      <Navigation />
+      <Navigation variant="newspaper" />
 
       {/* Hero — full-bleed image or clean typography with day ornament */}
       {devotionalImage ? (
-        <div className="border-subtle relative flex min-h-[48vh] items-end overflow-hidden border-b md:min-h-[58vh]">
+        <div className="border-subtle relative flex min-h-[34vh] items-end overflow-hidden border-b md:min-h-[42vh]">
           <Image
             src={devotionalImage}
             alt=""
@@ -152,7 +149,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                 )}
                 {totalDays > 0 && (
                   <p
-                    className="type-micro text-scroll oldstyle-nums"
+                    className="type-micro text-muted oldstyle-nums"
                     style={{ opacity: 0.6 }}
                   >
                     DAY {currentDayNum} OF {totalDays}
@@ -174,7 +171,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
           </div>
         </div>
       ) : (
-        <header className="border-subtle relative border-b px-6 pb-12 pt-24 md:px-10 md:pb-16 md:pt-32 lg:px-16">
+        <header className="border-subtle relative border-b px-6 pb-12 pt-16 md:px-10 md:pb-16 md:pt-20 lg:px-16">
           {/* Massive ornamental day number behind title */}
           {currentDayNum > 0 && (
             <div
@@ -201,17 +198,9 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                 </p>
               )}
             </div>
-            <MixedHeadline as="h1" size="xl" className="mb-8">
-              {currentDayNum > 0 && (
-                <>
-                  <Sans>DAY {currentDayNum}</Sans>
-                  <span className="text-muted" style={{ margin: '0 0.1em' }}>
-                    &mdash;
-                  </span>
-                </>
-              )}
-              <Serif>{typographer(devotional.title)}</Serif>
-            </MixedHeadline>
+            <h1 className="text-display vw-heading-lg mb-8 max-w-[20ch]">
+              {typographer(devotional.title)}
+            </h1>
             {devotional.teaser && (
               <p
                 className="text-serif-italic vw-body-lg text-secondary"
@@ -247,30 +236,24 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
           {/* Content — continuous scroll with ornament dividers */}
           <main
             id="main-content"
-            className="px-6 pb-24 pt-12 md:px-10 md:pb-32 md:pt-16 lg:px-16"
+            className="newspaper-reading-main px-6 pb-24 pt-12 md:px-10 md:pb-32 md:pt-16 lg:px-16"
           >
             <div className="reading-flow type-prose baseline-grid mx-auto">
-              <StaggerGrid selector="> *">
-                {modules
-                  ? modules.map((mod, index) => (
-                      <Fragment key={index}>
-                        {index > 0 && <OrnamentDivider />}
-                        <FadeIn delay={Math.min(index * 0.1, 0.5)}>
-                          <ModuleRenderer module={mod} />
-                        </FadeIn>
-                      </Fragment>
-                    ))
-                  : panels?.slice(1).map((panel, index) => (
-                      <Fragment key={panel.number}>
-                        {index > 0 && <OrnamentDivider />}
-                        <FadeIn>
-                          <div className="mb-20 md:mb-28">
-                            <PanelComponent panel={panel} />
-                          </div>
-                        </FadeIn>
-                      </Fragment>
-                    ))}
-              </StaggerGrid>
+              {modules
+                ? modules.map((mod, index) => (
+                    <Fragment key={index}>
+                      {index > 0 && <OrnamentDivider />}
+                      <ModuleRenderer module={mod} />
+                    </Fragment>
+                  ))
+                : panels?.slice(1).map((panel, index) => (
+                    <Fragment key={panel.number}>
+                      {index > 0 && <OrnamentDivider />}
+                      <div className="mb-20 md:mb-24">
+                        <PanelComponent panel={panel} />
+                      </div>
+                    </Fragment>
+                  ))}
             </div>
           </main>
 

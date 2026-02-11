@@ -139,6 +139,37 @@ Format: Reverse chronological, grouped by sprint/date.
   - Removed split-flap ticker CSS from `src/app/globals.css`
 - Bumped service worker cache namespace from `euangelion-v13` -> `euangelion-v14` in `public/sw.js` so the static masthead is immediately visible
 
+### Blue Ink Newspaper Refinement (2026-02-11)
+
+- Shifted homepage + devotional visual language to blue-ink editorial treatment in `src/app/globals.css`:
+  - Updated accent from warm glow to blue-ink (`--color-gold` now blue-ink in newspaper contexts)
+  - Added darker section rules and stronger border contrast for newspaper structure
+  - Added dedicated `newspaper-reading` tokens so devotional pages match homepage editorial tone
+- Removed glow/shimmer effects to keep print-like flat ink rendering:
+  - Replaced animated `gold-shimmer` styling with static ink color
+  - Disabled prayer text pulsing (`breathe-prayer`) to reduce visual noise during long-form reading
+  - Simplified `src/components/motion/GoldHighlight.tsx` to flat text accent (no gradient reveal animation)
+- Reworked homepage editorial blocks in `src/app/page.tsx`:
+  - Converted `THE FLOW` from card grid to ruled newspaper step list
+  - Converted `HELP DESK` from cards to ruled Q&A column layout
+  - Flattened closing CTA treatment into ruled editorial block (less app-like card chrome)
+- Reworked devotional reading layout in `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`:
+  - Removed mixed headline treatment and restored single-voice title composition
+  - Reduced hero height so reading content appears sooner
+  - Switched to newspaper navigation variant for cleaner article framing
+  - Removed staggered module reveal wrappers for steadier long-form reading flow
+  - Added framed reading column treatment via `newspaper-reading-main` + `reading-flow` rule edges
+- Bumped service worker cache namespace from `euangelion-v14` -> `euangelion-v15` in `public/sw.js` so this style pass is immediately visible
+
+### Update Delivery Reliability Fix (2026-02-11)
+
+- Hardened production service worker update behavior in `src/components/ServiceWorkerRegistration.tsx`:
+  - Added immediate `registration.update()` check on load
+  - Added waiting-worker promotion via `postMessage({ type: 'SKIP_WAITING' })`
+  - Added `controllerchange` listener to auto-reload once new worker takes control
+- Added message handler in `public/sw.js` to honor `SKIP_WAITING` and activate updated worker immediately
+- Bumped service worker cache namespace from `euangelion-v15` -> `euangelion-v16` in `public/sw.js` to prevent partial stale/updated style mixes
+
 ### Validation
 
 - `npm run lint` passes
