@@ -8,7 +8,7 @@ const AUTH_REQUIRED_ROUTES: string[] = []
 // Routes that always require auth
 const PROTECTED_ROUTES = ['/settings']
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL

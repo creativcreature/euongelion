@@ -35,6 +35,37 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Edge Runtime Warning Removal (2026-02-11)
+
+### What Changed
+
+- Updated Open Graph image routes to use Node runtime instead of Edge:
+  - `src/app/opengraph-image.tsx`
+  - `src/app/wake-up/devotional/[slug]/opengraph-image.tsx`
+- Goal: eliminate the build warning about Edge runtime disabling static generation
+
+### Validation
+
+- `npm run build` passes
+- Warning `Using edge runtime on a page currently disables static generation for that page` no longer appears
+
+---
+
+## Next.js Proxy Migration (2026-02-11)
+
+### What Changed
+
+- Migrated route interception entrypoint from `src/middleware.ts` to `src/proxy.ts`
+- Renamed exported handler from `middleware` to `proxy` to match Next.js 16+ convention
+- Kept existing auth/session logic and matcher config intact
+
+### Validation
+
+- `npm run build` passes
+- Build warning `The "middleware" file convention is deprecated` no longer appears
+
+---
+
 ## Newsprint Texture Pass (2026-02-11)
 
 ### Scope
@@ -56,6 +87,13 @@ Format: Reverse chronological, grouped by sprint/date.
 ### Validation
 
 - `npm run build` passes
+
+### Visibility Follow-up (2026-02-11)
+
+- Added non-production cache reset behavior in `src/components/ServiceWorkerRegistration.tsx`:
+  - In production: keep normal SW registration
+  - In non-production (local/dev): automatically unregister existing service workers and clear `euangelion-*` caches
+- Purpose: prevent stale cached homepage assets from masking style updates during iterative design passes
 
 ---
 

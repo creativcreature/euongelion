@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
 
-export const runtime = 'edge'
+export const runtime = 'nodejs'
 export const alt = 'Wake Up Devotional'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
