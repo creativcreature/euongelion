@@ -20,10 +20,22 @@ const NAV_LINKS = [
   { href: '/settings', label: 'Settings' },
 ]
 
-export default function Navigation() {
+type NavigationVariant = 'default' | 'newspaper'
+
+export default function Navigation({
+  variant = 'default',
+  showSkipLink = true,
+}: {
+  variant?: NavigationVariant
+  showSkipLink?: boolean
+}) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
   const pathname = usePathname()
+  const isNewspaper = variant === 'newspaper'
+  const desktopLinks = isNewspaper
+    ? [{ href: '/', label: 'Home' }, ...NAV_LINKS]
+    : NAV_LINKS
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')
@@ -45,92 +57,133 @@ export default function Navigation() {
     setMobileOpen(false) // eslint-disable-line react-hooks/set-state-in-effect
   }, [pathname])
 
+  const themeIcon =
+    theme === 'dark' ? (
+      <svg
+        className="h-[18px] w-[18px] text-gold"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2" />
+        <path d="M12 20v2" />
+        <path d="m4.93 4.93 1.41 1.41" />
+        <path d="m17.66 17.66 1.41 1.41" />
+        <path d="M2 12h2" />
+        <path d="M20 12h2" />
+        <path d="m6.34 17.66-1.41 1.41" />
+        <path d="m19.07 4.93-1.41 1.41" />
+      </svg>
+    ) : (
+      <svg
+        className="h-[18px] w-[18px] text-gold"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+      </svg>
+    )
+
   return (
     <>
-      <a href="#main-content" className="skip-to-content">
-        Skip to main content
-      </a>
+      {showSkipLink && (
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
+      )}
 
-      {/* Desktop: persistent top bar */}
       <nav
-        className="sticky top-0 flex items-center justify-between px-6 py-4 md:px-[60px] lg:px-20"
+        className={`${
+          isNewspaper
+            ? 'relative flex items-center justify-center px-4 py-3 md:px-[60px] lg:px-20'
+            : 'sticky top-0 flex items-center justify-between px-6 py-4 md:px-[60px] lg:px-20'
+        }`}
         style={{
           backgroundColor: 'var(--color-bg)',
           borderBottom: '1px solid var(--color-border)',
+          ...(isNewspaper
+            ? { borderTop: '1px solid var(--color-border)' }
+            : {}),
           zIndex: 'var(--z-sticky)',
         }}
       >
-        {/* Left: Logo */}
-        <Link
-          href="/"
-          className="text-masthead vw-small text-[var(--color-text-primary)] transition-colors duration-200 hover:text-gold"
-        >
-          EUANGELION
-        </Link>
-
-        {/* Center/Right: Desktop nav links */}
-        <div className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`animated-underline text-label vw-small transition-colors duration-200 hover:text-[var(--color-text-primary)] ${
-                pathname === link.href ||
-                (link.href !== '/' && pathname?.startsWith(link.href))
-                  ? 'text-[var(--color-text-primary)]'
-                  : 'text-muted'
-              }`}
-            >
-              {link.label.toUpperCase()}
-            </Link>
-          ))}
-
-          {/* Dark mode toggle */}
-          <button
-            onClick={toggleTheme}
-            className="flex h-9 w-9 items-center justify-center rounded-full transition-colors duration-200 hover:bg-surface"
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+        {!isNewspaper && (
+          <Link
+            href="/"
+            className="text-masthead vw-small text-[var(--color-text-primary)] transition-colors duration-200 hover:text-gold"
           >
-            {theme === 'dark' ? (
-              <svg
-                className="h-[18px] w-[18px] text-gold"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
+            EUANGELION
+          </Link>
+        )}
+
+        {isNewspaper ? (
+          <>
+            <div className="hidden items-center gap-8 md:flex">
+              {desktopLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`animated-underline text-label vw-small transition-colors duration-200 hover:text-[var(--color-text-primary)] ${
+                    pathname === link.href ||
+                    (link.href !== '/' && pathname?.startsWith(link.href))
+                      ? 'text-[var(--color-text-primary)]'
+                      : 'text-muted'
+                  }`}
+                >
+                  {link.label.toUpperCase()}
+                </Link>
+              ))}
+            </div>
+            <button
+              onClick={toggleTheme}
+              className="absolute right-4 hidden h-9 w-9 items-center justify-center rounded-full transition-colors duration-200 hover:bg-surface md:flex"
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {themeIcon}
+            </button>
+          </>
+        ) : (
+          <div className="hidden items-center gap-8 md:flex">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`animated-underline text-label vw-small transition-colors duration-200 hover:text-[var(--color-text-primary)] ${
+                  pathname === link.href ||
+                  (link.href !== '/' && pathname?.startsWith(link.href))
+                    ? 'text-[var(--color-text-primary)]'
+                    : 'text-muted'
+                }`}
               >
-                <circle cx="12" cy="12" r="4" />
-                <path d="M12 2v2" />
-                <path d="M12 20v2" />
-                <path d="m4.93 4.93 1.41 1.41" />
-                <path d="m17.66 17.66 1.41 1.41" />
-                <path d="M2 12h2" />
-                <path d="M20 12h2" />
-                <path d="m6.34 17.66-1.41 1.41" />
-                <path d="m19.07 4.93-1.41 1.41" />
-              </svg>
-            ) : (
-              <svg
-                className="h-[18px] w-[18px] text-gold"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-              </svg>
-            )}
-          </button>
-        </div>
+                {link.label.toUpperCase()}
+              </Link>
+            ))}
+
+            {/* Dark mode toggle */}
+            <button
+              onClick={toggleTheme}
+              className="flex h-9 w-9 items-center justify-center rounded-full transition-colors duration-200 hover:bg-surface"
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {themeIcon}
+            </button>
+          </div>
+        )}
 
         {/* Right: Mobile hamburger + theme toggle */}
-        <div className="flex items-center gap-3 md:hidden">
+        <div
+          className={`flex items-center gap-3 md:hidden ${isNewspaper ? 'ml-auto' : ''}`}
+        >
           <button
             onClick={toggleTheme}
             className="flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-200 hover:bg-surface"

@@ -169,8 +169,6 @@ export default function Home() {
         }}
       />
 
-      <Navigation />
-
       <main id="main-content">
         <header
           className="pb-16 pt-6 md:pb-20 md:pt-10"
@@ -215,6 +213,7 @@ export default function Home() {
                   GOOD NEWS
                 </span>
               </h1>
+              <Navigation variant="newspaper" showSkipLink={false} />
               <p className="vw-body mx-auto mb-10 max-w-[34ch] text-center text-secondary type-prose">
                 {typographer('Daily bread for the cluttered, hungry soul.')}
               </p>

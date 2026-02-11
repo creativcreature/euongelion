@@ -166,6 +166,37 @@ Format: Reverse chronological, grouped by sprint/date.
 - `npm run type-check` passes
 - `npm run build` passes
 
+### Font Flash + Cache Update (2026-02-11)
+
+- Reduced masthead font flash by upgrading Instrument Serif loading:
+  - Added local `.woff2` files in `public/fonts/`
+  - Updated `@font-face` in `src/app/globals.css` to prefer `.woff2` with `.ttf` fallback
+  - Switched `font-display` from `swap` to `block` for the Instrument Serif faces
+  - Added font preloads in `src/app/layout.tsx` for regular + italic Instrument Serif (`rel="preload" as="font"`)
+- Bumped service worker cache key from `euangelion-v2` to `euangelion-v3` in `public/sw.js` to force fresh asset pickup
+
+### Validation (Font Flash Pass)
+
+- `npm run lint` passes
+- `npm run type-check` passes
+- `npm run build` passes
+
+### Navigation Newspaper Integration (2026-02-11)
+
+- Added navigation variants in `src/components/Navigation.tsx`:
+  - `default` (existing behavior for non-home routes)
+  - `newspaper` (logo-free, section-rail style, centered links)
+- Homepage now mounts navigation directly below the large masthead in `src/app/page.tsx`:
+  - Removed top-level standalone nav placement above the hero
+  - Inserted `Navigation` in newspaper mode under `EUANGELION`/`GOOD NEWS`
+- Removed the small `EUANGELION` wordmark from the homepage nav rail to keep the masthead as the single brand headline
+
+### Validation (Navigation Integration)
+
+- `npm run lint` passes
+- `npm run type-check` passes
+- `npm run build` passes
+
 ---
 
 ## v0.7.0 — Typography Masterclass (2026-02-10)
