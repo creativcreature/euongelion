@@ -35,6 +35,39 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Full 5-Day Plan Generation (2026-02-11)
+
+### What Changed
+
+- Reworked Soul Audit generation to return a full temporary 5-day custom plan in `src/app/api/soul-audit/route.ts`:
+  - Added `custom_plan` generation contract (5 structured days: scripture, reflection, prayer, next step, journal prompt)
+  - Enforced chiastic day arc labeling (`A`, `B`, `C`, `B'`, `A'`) across day output
+  - Added robust fallback generator that still produces a complete 5-day plan when AI is unavailable
+  - Kept ranked series matches as secondary pathways
+- Added new shared types in `src/types/soul-audit.ts`:
+  - `CustomPlan`, `CustomPlanDay`, and `ChiasticPosition`
+  - `SoulAuditResponse.customPlan` for first-class 5-day output
+  - Backward compatibility maintained for legacy `customDevotional` payloads
+- Updated homepage Soul Audit flow in `src/app/page.tsx`:
+  - Normalizes + stores `customPlan` payload in session storage
+  - Results block now shows Day 1 full devotional content plus a visible outline of all 5 generated days
+  - Updated copy from single-day custom devotional language to custom 5-day plan language
+- Updated dedicated Soul Audit route flow:
+  - `src/app/soul-audit/page.tsx` now normalizes legacy and new payloads to `customPlan`
+  - `src/app/soul-audit/results/page.tsx` now renders the full 5-day plan day-by-day (not just a single day)
+- Made generated plans temporary by default in `src/stores/soulAuditStore.ts`:
+  - Persisted store now keeps only `auditCount`
+  - Generated plan content remains session-scoped instead of durable local persistence
+- Bumped service worker cache namespace from `euangelion-v17` -> `euangelion-v18` in `public/sw.js` so clients pick up the new audit behavior immediately
+
+### Validation
+
+- `npm run lint` passes
+- `npm run type-check` passes
+- `npm run build` passes
+
+---
+
 ## Homepage Header Flow + Scale Pass (2026-02-11)
 
 ### What Changed
@@ -169,6 +202,24 @@ Format: Reverse chronological, grouped by sprint/date.
   - Added `controllerchange` listener to auto-reload once new worker takes control
 - Added message handler in `public/sw.js` to honor `SKIP_WAITING` and activate updated worker immediately
 - Bumped service worker cache namespace from `euangelion-v15` -> `euangelion-v16` in `public/sw.js` to prevent partial stale/updated style mixes
+
+### Soul Audit Custom Devotional Generation + Full-Width Masthead (2026-02-11)
+
+- Reworked Soul Audit API from series-only matching to custom devotional generation in `src/app/api/soul-audit/route.ts`:
+  - Added AI response contract to return both `custom_devotional` and ranked `matches`
+  - Added robust JSON parsing + match enrichment + fallback devotional construction
+  - Added grounded day-one context extraction from devotional source files for better personalized output
+  - Preserved crisis response handling with resource-first output
+- Added shared Soul Audit response types in `src/types/soul-audit.ts` and updated store typing in `src/stores/soulAuditStore.ts`
+- Updated homepage Soul Audit experience in `src/app/page.tsx`:
+  - Result section now leads with a generated custom devotional (scripture, reflection, prayer, next step, journal prompt)
+  - Series cards are now secondary follow-up pathways
+  - Updated Soul Audit value copy to reflect custom devotional generation
+- Updated dedicated Soul Audit flow:
+  - `src/app/soul-audit/page.tsx` now normalizes/stores the richer response payload
+  - `src/app/soul-audit/results/page.tsx` now renders the generated custom devotional as primary output
+- Made masthead wordmark span full width across the top in `src/app/page.tsx` + `src/app/globals.css` via `masthead-fullwidth` letter layout
+- Bumped service worker cache namespace from `euangelion-v16` -> `euangelion-v17` in `public/sw.js` so API/UI behavior updates are immediately visible
 
 ### Validation
 

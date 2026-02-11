@@ -681,6 +681,19 @@
   transform-origin: top center;
 }
 
+.masthead-fullwidth {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.1em;
+}
+
+.masthead-fullwidth > span {
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
 .newspaper-flow-list,
 .newspaper-faq-list {
   border-top: 1.5px solid var(--color-border);

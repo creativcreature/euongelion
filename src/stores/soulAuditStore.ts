@@ -1,24 +1,16 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-
-interface AuditMatch {
-  slug: string
-  title: string
-  question: string
-  confidence: number
-  reasoning: string
-  preview?: { verse: string; paragraph: string }
-}
+import type { SoulAuditResponse } from '@/types/soul-audit'
 
 interface SoulAuditState {
   /** Number of audits taken */
   auditCount: number
   /** Most recent audit results */
-  lastResults: { matches: AuditMatch[] } | null
+  lastResults: SoulAuditResponse | null
   /** The user's most recent audit text */
   lastInput: string | null
 
-  recordAudit: (input: string, results: { matches: AuditMatch[] }) => void
+  recordAudit: (input: string, results: SoulAuditResponse) => void
   clearResults: () => void
   hasReachedLimit: () => boolean
 }
@@ -50,6 +42,7 @@ export const useSoulAuditStore = create<SoulAuditState>()(
     }),
     {
       name: 'euangelion-soul-audit',
+      partialize: (state) => ({ auditCount: state.auditCount }),
     },
   ),
 )

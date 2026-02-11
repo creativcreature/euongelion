@@ -16,6 +16,7 @@ import StaggerGrid from '@/components/motion/StaggerGrid'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
 import { SERIES_DATA, FEATURED_SERIES, ALL_SERIES_ORDER } from '@/data/series'
+import type { AuditMatch, SoulAuditResponse } from '@/types/soul-audit'
 
 const emptySubscribe = () => () => {}
 const NAV_MENU_LINKS = [
@@ -31,6 +32,7 @@ const AUDIT_PROMPTS = [
   "I believe, but I'm wrestling with...",
   'What I need from God right now is...',
 ]
+const MASTHEAD_LETTERS = 'EUANGELION'.split('')
 
 function getInitialTheme(): 'light' | 'dark' {
   if (typeof window === 'undefined') return 'dark'
@@ -51,7 +53,7 @@ const FLOW_STEPS = [
   {
     id: '01',
     title: 'Name what you are carrying',
-    body: 'Tell us what you are wrestling with and we will point you to a fitting series.',
+    body: 'Tell us what you are wrestling with and we will craft a focused 5-day plan for your exact season.',
   },
   {
     id: '02',
@@ -61,7 +63,7 @@ const FLOW_STEPS = [
   {
     id: '03',
     title: 'Build traction, not guilt',
-    body: 'You keep moving with clear next steps instead of getting stuck in spiritual overwhelm.',
+    body: 'You get clear daily steps and optional series pathways for deeper follow-through.',
   },
 ]
 
@@ -82,6 +84,60 @@ const FAQ_ITEMS = [
       'No. You can run a soul audit and start reading immediately. Account features are optional.',
   },
 ]
+
+function normalizeSoulAuditResponse(
+  data: Partial<SoulAuditResponse>,
+): SoulAuditResponse {
+  const customPlan =
+    data.customPlan &&
+    Array.isArray(data.customPlan.days) &&
+    data.customPlan.days.length > 0
+      ? data.customPlan
+      : data.customDevotional
+        ? {
+            title: 'Your Custom Plan',
+            summary: 'A temporary plan crafted from what you shared.',
+            generatedAt:
+              data.customDevotional.generatedAt || new Date().toISOString(),
+            days: [
+              {
+                day: 1,
+                chiasticPosition: 'A' as const,
+                title: data.customDevotional.title,
+                scriptureReference: data.customDevotional.scriptureReference,
+                scriptureText: data.customDevotional.scriptureText,
+                reflection: data.customDevotional.reflection,
+                prayer: data.customDevotional.prayer,
+                nextStep: data.customDevotional.nextStep,
+                journalPrompt: data.customDevotional.journalPrompt,
+              },
+            ],
+          }
+        : undefined
+
+  return {
+    crisis: Boolean(data.crisis),
+    message: data.message,
+    resources: data.resources,
+    customPlan,
+    customDevotional: data.customDevotional,
+    matches: Array.isArray(data.matches)
+      ? data.matches
+      : data.match
+        ? [
+            data.match,
+            ...((data.alternatives || []).map(
+              (alt) =>
+                ({
+                  ...alt,
+                  confidence: 0.7,
+                  reasoning: '',
+                }) as AuditMatch,
+            ) || []),
+          ].slice(0, 3)
+        : [],
+  }
+}
 
 export default function Home() {
   const pathname = usePathname()
@@ -176,16 +232,9 @@ export default function Home() {
   )
   const auditReadiness = Math.min(100, Math.round((auditWordCount / 32) * 100))
 
-  const [auditResults, setAuditResults] = useState<{
-    matches: Array<{
-      slug: string
-      title: string
-      question: string
-      confidence: number
-      reasoning: string
-      preview?: { verse: string; paragraph: string }
-    }>
-  } | null>(null)
+  const [auditResults, setAuditResults] = useState<SoulAuditResponse | null>(
+    null,
+  )
 
   async function handleAuditSubmit() {
     if (limitReached) {
@@ -221,26 +270,12 @@ export default function Home() {
         )
       }
 
-      const data = await res.json()
-      sessionStorage.setItem('soul-audit-result', JSON.stringify(data))
+      const data = (await res.json()) as Partial<SoulAuditResponse>
+      const normalized = normalizeSoulAuditResponse(data)
+      sessionStorage.setItem('soul-audit-result', JSON.stringify(normalized))
 
-      if (data.matches) {
-        setAuditResults(data)
-        recordAudit(trimmed, data)
-      } else if (data.match) {
-        const matches = [
-          data.match,
-          ...(data.alternatives || []).map(
-            (alt: { slug: string; title: string; question: string }) => ({
-              ...alt,
-              confidence: 0.7,
-              reasoning: '',
-            }),
-          ),
-        ].slice(0, 3)
-        setAuditResults({ matches })
-        recordAudit(trimmed, { matches })
-      }
+      setAuditResults(normalized)
+      recordAudit(trimmed, normalized)
 
       setTimeout(() => {
         resultsRef.current?.scrollIntoView({
@@ -325,7 +360,7 @@ export default function Home() {
           <div className="mx-auto max-w-[1720px] px-4 md:px-[56px] lg:px-20">
             <FadeIn delay={0.03}>
               <h1
-                className="text-masthead relative mb-2 w-full cursor-default overflow-hidden text-left select-none"
+                className="text-masthead relative left-1/2 mb-2 w-[calc(100vw-2rem)] -translate-x-1/2 cursor-default overflow-hidden text-left select-none md:w-[calc(100vw-7rem)] lg:w-[calc(100vw-10rem)]"
                 style={{
                   fontSize: 'clamp(1.95rem, 9.2vw, 11rem)',
                   lineHeight: 0.82,
@@ -333,7 +368,11 @@ export default function Home() {
                 }}
                 aria-label="Euangelion"
               >
-                EUANGELION
+                <span className="masthead-fullwidth" aria-hidden="true">
+                  {MASTHEAD_LETTERS.map((letter, index) => (
+                    <span key={`${letter}-${index}`}>{letter}</span>
+                  ))}
+                </span>
               </h1>
               <div
                 className={`home-nav-rail mt-1 transition-all duration-500 ${
@@ -361,7 +400,7 @@ export default function Home() {
                   </h2>
                   <p className="vw-body mb-5 max-w-[42ch] text-secondary type-prose">
                     {typographer(
-                      'Run a short soul audit and get matched to a focused devotional path for the season you are actually in.',
+                      'Run a short soul audit and receive a custom 5-day plan crafted for what you are carrying right now.',
                     )}
                   </p>
                 </FadeIn>
@@ -394,7 +433,7 @@ export default function Home() {
                     </h2>
                     <p className="vw-small mb-3 text-secondary type-prose">
                       {typographer(
-                        'Write one honest paragraph and we will match you with your best next series.',
+                        'Write one honest paragraph and we will craft a focused 5-day devotional plan for this exact moment.',
                       )}
                     </p>
 
@@ -514,60 +553,176 @@ export default function Home() {
               <FadeIn>
                 <div className="newspaper-subrule mb-10 py-3 text-center">
                   <p className="text-label vw-small mb-2 text-gold">
-                    YOUR BEST NEXT SERIES
+                    YOUR CUSTOM 5-DAY PLAN
                   </p>
                   <h2 className="text-serif-italic vw-heading-md">
-                    {typographer('Start here today.')}
+                    {typographer(
+                      'For what you shared, here is your next week.',
+                    )}
                   </h2>
                 </div>
               </FadeIn>
 
-              <StaggerGrid className="grid gap-6 md:grid-cols-3">
-                {auditResults.matches.slice(0, 3).map((match, index) => (
-                  <Link
-                    key={match.slug}
-                    href={`/wake-up/series/${match.slug}`}
-                    className="group block"
-                  >
-                    <div
-                      className="newspaper-card flex h-full flex-col overflow-hidden transition-colors duration-200"
-                      style={{
-                        borderColor:
-                          index === 0
-                            ? 'var(--color-border-strong)'
-                            : 'var(--color-border)',
-                      }}
-                    >
-                      <SeriesHero
-                        seriesSlug={match.slug}
-                        size="thumbnail"
-                        overlay
-                      />
-                      <div className="flex flex-1 flex-col p-6">
-                        <p className="text-label vw-small mb-3 text-gold">
-                          {SERIES_DATA[match.slug]?.title || match.title}
-                        </p>
-                        <p className="text-serif-italic vw-body mb-3 flex-1 transition-colors duration-200 group-hover:text-gold">
-                          {typographer(match.question)}
-                        </p>
-                        {match.reasoning && (
-                          <p className="vw-small mb-4 text-tertiary type-prose">
-                            {typographer(match.reasoning)}
+              {auditResults.customPlan?.days?.[0] && (
+                <FadeIn delay={0.04}>
+                  <article className="newspaper-card mb-8 p-6 md:p-8">
+                    <p className="text-label vw-small mb-3 text-gold">
+                      DAY {auditResults.customPlan.days[0].day} OF{' '}
+                      {auditResults.customPlan.days.length}
+                    </p>
+                    <h3 className="vw-heading-md mb-4 max-w-[24ch]">
+                      {typographer(auditResults.customPlan.days[0].title)}
+                    </h3>
+                    <p className="text-label vw-small mb-2 text-muted">
+                      {auditResults.customPlan.days[0].scriptureReference}
+                    </p>
+                    <p className="scripture-block vw-body mb-6 text-secondary type-prose">
+                      {typographer(
+                        auditResults.customPlan.days[0].scriptureText,
+                      )}
+                    </p>
+                    <div className="vw-body mb-6 max-w-[72ch] text-secondary type-prose">
+                      {auditResults.customPlan.days[0].reflection
+                        .split('\n\n')
+                        .filter(Boolean)
+                        .map((paragraph, index) => (
+                          <p
+                            key={`custom-reflection-${index}`}
+                            className="mb-4"
+                          >
+                            {typographer(paragraph)}
                           </p>
-                        )}
-                        <div className="newspaper-rule mb-3" />
-                        <div className="flex items-center justify-between">
-                          <span className="text-label vw-small text-muted oldstyle-nums">
-                            {SERIES_DATA[match.slug]?.days.length || '?'} DAYS
-                          </span>
-                          <span className="text-label vw-small text-muted transition-colors duration-200 group-hover:text-[var(--color-text-primary)]">
-                            START &rarr;
-                          </span>
-                        </div>
+                        ))}
+                    </div>
+                    <div className="newspaper-rule mb-5" />
+                    <p className="text-label vw-small mb-2 text-gold">PRAYER</p>
+                    <p className="text-serif-italic vw-body mb-5 text-secondary type-prose">
+                      {typographer(auditResults.customPlan.days[0].prayer)}
+                    </p>
+                    <div className="grid gap-5 md:grid-cols-2">
+                      <div>
+                        <p className="text-label vw-small mb-2 text-gold">
+                          NEXT STEP
+                        </p>
+                        <p className="vw-small text-secondary type-prose">
+                          {typographer(
+                            auditResults.customPlan.days[0].nextStep,
+                          )}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-label vw-small mb-2 text-gold">
+                          JOURNAL PROMPT
+                        </p>
+                        <p className="vw-small text-secondary type-prose">
+                          {typographer(
+                            auditResults.customPlan.days[0].journalPrompt,
+                          )}
+                        </p>
                       </div>
                     </div>
-                  </Link>
-                ))}
+                  </article>
+                </FadeIn>
+              )}
+
+              {auditResults.customPlan && (
+                <FadeIn delay={0.05}>
+                  <article className="newspaper-card mb-10 p-6 md:p-8">
+                    <p className="text-label vw-small mb-2 text-gold">
+                      FULL PLAN
+                    </p>
+                    <h3 className="vw-body mb-3 max-w-[34ch]">
+                      {typographer(auditResults.customPlan.title)}
+                    </h3>
+                    <p className="vw-small mb-6 max-w-[72ch] text-secondary type-prose">
+                      {typographer(auditResults.customPlan.summary)}
+                    </p>
+                    <ol className="space-y-4">
+                      {auditResults.customPlan.days.map((dayPlan) => (
+                        <li
+                          key={`plan-preview-${dayPlan.day}`}
+                          className="newspaper-subrule py-3"
+                        >
+                          <div className="mb-1 flex items-center justify-between gap-4">
+                            <p className="text-label vw-small text-gold">
+                              DAY {dayPlan.day}
+                              {dayPlan.chiasticPosition
+                                ? ` • ${dayPlan.chiasticPosition}`
+                                : ''}
+                            </p>
+                            <p className="text-label vw-small text-muted">
+                              {dayPlan.scriptureReference}
+                            </p>
+                          </div>
+                          <p className="vw-body mb-2 text-[var(--color-text-primary)]">
+                            {typographer(dayPlan.title)}
+                          </p>
+                          <p className="vw-small text-secondary type-prose">
+                            {typographer(dayPlan.nextStep)}
+                          </p>
+                        </li>
+                      ))}
+                    </ol>
+                  </article>
+                </FadeIn>
+              )}
+
+              <FadeIn delay={0.06}>
+                <div className="newspaper-subrule mb-8 py-2 text-center">
+                  <p className="text-label vw-small text-muted">
+                    OPTIONAL SERIES PATHWAYS
+                  </p>
+                </div>
+              </FadeIn>
+
+              <StaggerGrid className="grid gap-6 md:grid-cols-3">
+                {(auditResults.matches || [])
+                  .slice(0, 3)
+                  .map((match, index) => (
+                    <Link
+                      key={match.slug}
+                      href={`/wake-up/series/${match.slug}`}
+                      className="group block"
+                    >
+                      <div
+                        className="newspaper-card flex h-full flex-col overflow-hidden transition-colors duration-200"
+                        style={{
+                          borderColor:
+                            index === 0
+                              ? 'var(--color-border-strong)'
+                              : 'var(--color-border)',
+                        }}
+                      >
+                        <SeriesHero
+                          seriesSlug={match.slug}
+                          size="thumbnail"
+                          overlay
+                        />
+                        <div className="flex flex-1 flex-col p-6">
+                          <p className="text-label vw-small mb-3 text-gold">
+                            {SERIES_DATA[match.slug]?.title || match.title}
+                          </p>
+                          <p className="text-serif-italic vw-body mb-3 flex-1 transition-colors duration-200 group-hover:text-gold">
+                            {typographer(match.question)}
+                          </p>
+                          {match.reasoning && (
+                            <p className="vw-small mb-4 text-tertiary type-prose">
+                              {typographer(match.reasoning)}
+                            </p>
+                          )}
+                          <div className="newspaper-rule mb-3" />
+                          <div className="flex items-center justify-between">
+                            <span className="text-label vw-small text-muted oldstyle-nums">
+                              {SERIES_DATA[match.slug]?.days.length || '?'} DAYS
+                            </span>
+                            <span className="text-label vw-small text-muted transition-colors duration-200 group-hover:text-[var(--color-text-primary)]">
+                              START &rarr;
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
               </StaggerGrid>
             </div>
           </section>

@@ -10,31 +10,71 @@ import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
 import { typographer } from '@/lib/typographer'
 import { SERIES_DATA } from '@/data/series'
+import type { AuditMatch, SoulAuditResponse } from '@/types/soul-audit'
 
-interface AuditMatch {
-  slug: string
-  title: string
-  question: string
-  confidence: number
-  reasoning: string
-  preview?: { verse: string; paragraph: string }
-}
+function normalizeSoulAuditResponse(
+  data: Partial<SoulAuditResponse>,
+): SoulAuditResponse {
+  const customPlan =
+    data.customPlan &&
+    Array.isArray(data.customPlan.days) &&
+    data.customPlan.days.length > 0
+      ? data.customPlan
+      : data.customDevotional
+        ? {
+            title: 'Your Custom Plan',
+            summary: 'A temporary plan crafted from what you shared.',
+            generatedAt:
+              data.customDevotional.generatedAt || new Date().toISOString(),
+            days: [
+              {
+                day: 1,
+                chiasticPosition: 'A' as const,
+                title: data.customDevotional.title,
+                scriptureReference: data.customDevotional.scriptureReference,
+                scriptureText: data.customDevotional.scriptureText,
+                reflection: data.customDevotional.reflection,
+                prayer: data.customDevotional.prayer,
+                nextStep: data.customDevotional.nextStep,
+                journalPrompt: data.customDevotional.journalPrompt,
+              },
+            ],
+          }
+        : undefined
 
-interface AuditResult {
-  crisis: boolean
-  message?: string
-  resources?: Array<{ name: string; contact: string }>
-  matches?: AuditMatch[]
-  // Legacy format compatibility
-  match?: AuditMatch
-  alternatives?: Array<{ slug: string; title: string; question: string }>
+  return {
+    crisis: Boolean(data.crisis),
+    message: data.message,
+    resources: data.resources,
+    customPlan,
+    customDevotional: data.customDevotional,
+    matches: Array.isArray(data.matches)
+      ? data.matches
+      : data.match
+        ? [
+            data.match,
+            ...((data.alternatives || []).map((alt) => ({
+              ...alt,
+              confidence: 0.7,
+              reasoning: '',
+            })) || []),
+          ].slice(0, 3)
+        : [],
+  }
 }
 
 export default function SoulAuditResultsPage() {
-  const [result] = useState<AuditResult | null>(() => {
+  const [result] = useState<SoulAuditResponse | null>(() => {
     if (typeof window === 'undefined') return null
     const stored = sessionStorage.getItem('soul-audit-result')
-    return stored ? JSON.parse(stored) : null
+    if (!stored) return null
+    try {
+      return normalizeSoulAuditResponse(
+        JSON.parse(stored) as Partial<SoulAuditResponse>,
+      )
+    } catch {
+      return null
+    }
   })
   const router = useRouter()
 
@@ -118,7 +158,7 @@ export default function SoulAuditResultsPage() {
             <p className="text-label vw-small mb-6 text-gold">
               {result.crisis
                 ? "WHEN YOU'RE READY"
-                : 'WE FOUND SOMETHING FOR YOU'}
+                : 'WE CRAFTED THIS FOR THIS WEEK'}
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -126,11 +166,107 @@ export default function SoulAuditResultsPage() {
               {typographer(
                 result.crisis
                   ? 'When you\u2019re ready, we have words of hope waiting.'
-                  : 'Here\u2019s where we\u2019ll start.',
+                  : 'Here is your custom 5-day plan.',
               )}
             </h1>
           </FadeIn>
         </div>
+
+        {result.customPlan && (
+          <FadeIn>
+            <section className="mb-14">
+              <article
+                className="mb-8 p-8 md:p-10"
+                style={{ border: '1px solid var(--color-border)' }}
+              >
+                <p className="text-label vw-small mb-2 text-gold">
+                  PLAN SUMMARY
+                </p>
+                <h2 className="vw-heading-md mb-3 max-w-[26ch]">
+                  {typographer(result.customPlan.title)}
+                </h2>
+                <p className="vw-body max-w-[74ch] text-secondary type-prose">
+                  {typographer(result.customPlan.summary)}
+                </p>
+              </article>
+
+              <div className="space-y-8">
+                {result.customPlan.days.map((dayPlan) => (
+                  <article
+                    key={`audit-day-${dayPlan.day}`}
+                    className="p-8 md:p-10"
+                    style={{ border: '1px solid var(--color-border)' }}
+                  >
+                    <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                      <p className="text-label vw-small text-gold">
+                        DAY {dayPlan.day}
+                        {dayPlan.chiasticPosition
+                          ? ` • ${dayPlan.chiasticPosition}`
+                          : ''}
+                      </p>
+                      <p className="text-label vw-small text-muted">
+                        {dayPlan.scriptureReference}
+                      </p>
+                    </div>
+                    <h2 className="vw-heading-md mb-4 max-w-[24ch]">
+                      {typographer(dayPlan.title)}
+                    </h2>
+                    <p className="scripture-block vw-body mb-6 text-secondary type-prose">
+                      {typographer(dayPlan.scriptureText)}
+                    </p>
+                    <div className="vw-body mb-6 max-w-[72ch] text-secondary type-prose">
+                      {dayPlan.reflection
+                        .split('\n\n')
+                        .filter(Boolean)
+                        .map((paragraph, index) => (
+                          <p
+                            key={`audit-day-${dayPlan.day}-reflection-${index}`}
+                            className="mb-4"
+                          >
+                            {typographer(paragraph)}
+                          </p>
+                        ))}
+                    </div>
+                    <div
+                      className="mb-5"
+                      style={{ borderTop: '1px solid var(--color-border)' }}
+                    />
+                    <p className="text-label vw-small mb-2 text-gold">PRAYER</p>
+                    <p className="text-serif-italic vw-body mb-5 text-secondary type-prose">
+                      {typographer(dayPlan.prayer)}
+                    </p>
+                    <div className="grid gap-5 md:grid-cols-2">
+                      <div>
+                        <p className="text-label vw-small mb-2 text-gold">
+                          NEXT STEP
+                        </p>
+                        <p className="vw-small text-secondary type-prose">
+                          {typographer(dayPlan.nextStep)}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-label vw-small mb-2 text-gold">
+                          JOURNAL PROMPT
+                        </p>
+                        <p className="vw-small text-secondary type-prose">
+                          {typographer(dayPlan.journalPrompt)}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          </FadeIn>
+        )}
+
+        <FadeIn>
+          <div className="mb-8 text-center">
+            <p className="text-label vw-small text-muted">
+              SERIES PATHWAYS FOR DEEPER FOLLOW-UP
+            </p>
+          </div>
+        </FadeIn>
 
         {/* 3 Equal Cards */}
         <StaggerGrid className="grid gap-6 md:grid-cols-3">
