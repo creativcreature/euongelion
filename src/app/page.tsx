@@ -148,6 +148,7 @@ export default function Home() {
   const pathname = usePathname()
   const topbarRef = useRef<HTMLElement | null>(null)
   const navRef = useRef<HTMLElement | null>(null)
+  const navSentinelRef = useRef<HTMLDivElement | null>(null)
 
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
   const [now, setNow] = useState(() => new Date())
@@ -227,20 +228,32 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    const syncDockState = () => {
-      if (!topbarRef.current || !navRef.current) return
-      const topbarBottom = topbarRef.current.getBoundingClientRect().bottom
-      const navTop = navRef.current.getBoundingClientRect().top
-      const nextDocked = navTop <= topbarBottom + 1
-      setNavDocked((prev) => (prev === nextDocked ? prev : nextDocked))
+    const sentinel = navSentinelRef.current
+    if (!sentinel) return
+
+    let observer: IntersectionObserver | null = null
+
+    const connectObserver = () => {
+      const topbarHeight = Math.ceil(
+        topbarRef.current?.getBoundingClientRect().height || 0,
+      )
+      observer?.disconnect()
+      observer = new IntersectionObserver(
+        ([entry]) => setNavDocked(!entry.isIntersecting),
+        {
+          root: null,
+          threshold: 0,
+          rootMargin: `-${topbarHeight}px 0px 0px 0px`,
+        },
+      )
+      observer.observe(sentinel)
     }
 
-    syncDockState()
-    window.addEventListener('scroll', syncDockState, { passive: true })
-    window.addEventListener('resize', syncDockState)
+    connectObserver()
+    window.addEventListener('resize', connectObserver)
     return () => {
-      window.removeEventListener('scroll', syncDockState)
-      window.removeEventListener('resize', syncDockState)
+      observer?.disconnect()
+      window.removeEventListener('resize', connectObserver)
     }
   }, [])
 
@@ -409,6 +422,12 @@ export default function Home() {
           </h1>
           <p className="mock-masthead-sub">GOOD NEWS COMING</p>
         </section>
+
+        <div
+          ref={navSentinelRef}
+          className="mock-nav-sentinel"
+          aria-hidden="true"
+        />
 
         <nav
           ref={navRef}
