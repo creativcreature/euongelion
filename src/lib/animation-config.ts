@@ -44,6 +44,27 @@ export const GSAP = {
     end: 'bottom 15%',
     toggleActions: 'play none none none' as const,
   },
+
+  // Motion profiles
+  profiles: {
+    editorialSubtle: {
+      y: 14,
+      duration: 0.62,
+      ease: 'power2.out',
+    },
+    devotionalCinematic: {
+      y: 34,
+      duration: 1.05,
+      ease: 'power4.out',
+    },
+  },
+
+  // Auto-rotating rails
+  rails: {
+    intervalMs: 5800,
+    transitionMs: 720,
+    pauseAfterInteractionMs: 1500,
+  },
 } as const
 
 // ============================================
@@ -55,10 +76,7 @@ export const FRAMER = {
   hover: {
     scale: { scale: 1.02, transition: { duration: 0.2 } },
     lift: { y: -4, transition: { duration: 0.2 } },
-    glow: {
-      boxShadow: '0 0 20px rgba(193, 154, 107, 0.3)',
-      transition: { duration: 0.3 },
-    },
+    glow: { boxShadow: 'none', transition: { duration: 0.3 } },
   },
 
   // Tap states

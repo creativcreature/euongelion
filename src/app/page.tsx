@@ -13,8 +13,13 @@ import Navigation from '@/components/Navigation'
 import SeriesHero from '@/components/SeriesHero'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
+import IllustrationFrame from '@/components/newspaper/IllustrationFrame'
+import WordblockPanel from '@/components/newspaper/WordblockPanel'
+import PrintRail from '@/components/newspaper/PrintRail'
+import FaqHoverCard from '@/components/newspaper/FaqHoverCard'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
+import { GSAP as GSAP_CONFIG } from '@/lib/animation-config'
 import { SERIES_DATA, FEATURED_SERIES, ALL_SERIES_ORDER } from '@/data/series'
 import type { AuditMatch, SoulAuditResponse } from '@/types/soul-audit'
 
@@ -24,7 +29,7 @@ const NAV_MENU_LINKS = [
   { href: '/soul-audit', label: 'Soul Audit' },
   { href: '/wake-up', label: 'Wake-Up' },
   { href: '/series', label: 'Series' },
-  { href: '/settings', label: 'Settings' },
+  { href: '/settings', label: 'Setting' },
 ]
 const AUDIT_PROMPTS = [
   "Lately, I've been...",
@@ -33,6 +38,20 @@ const AUDIT_PROMPTS = [
   'What I need from God right now is...',
 ]
 const MASTHEAD_LETTERS = 'EUANGELION'.split('')
+
+const NEWSPAPER_ILLUSTRATIONS = {
+  hero: '/images/illustrations/euangelion-homepage-engraving-04.svg',
+  flow: '/images/illustrations/euangelion-homepage-engraving-05.svg',
+  featured: '/images/illustrations/euangelion-homepage-engraving-06.svg',
+  faq: '/images/illustrations/euangelion-homepage-engraving-07.svg',
+  cta: '/images/illustrations/euangelion-homepage-engraving-08.svg',
+} as const
+
+const FLOW_ILLUSTRATIONS = [
+  '/images/illustrations/euangelion-homepage-engraving-09.svg',
+  '/images/illustrations/euangelion-homepage-engraving-10.svg',
+  '/images/illustrations/euangelion-homepage-engraving-11.svg',
+]
 
 function getInitialTheme(): 'light' | 'dark' {
   if (typeof window === 'undefined') return 'dark'
@@ -390,7 +409,21 @@ export default function Home() {
             </FadeIn>
 
             <div className="newspaper-rule grid items-start gap-5 pt-4 md:grid-cols-12 md:gap-6">
-              <article className="md:col-span-7">
+              <div className="md:col-span-2">
+                <FadeIn delay={0.04}>
+                  <IllustrationFrame
+                    src={NEWSPAPER_ILLUSTRATIONS.hero}
+                    alt="Engraving-style devotional illustration"
+                    effect="woodblock"
+                    aspect="portrait"
+                    priority
+                    wordblock="WHAT IS THIS PLACE?"
+                    caption="Daily devotional illustrations in a print-era visual language."
+                  />
+                </FadeIn>
+              </div>
+
+              <article className="md:col-span-5">
                 <FadeIn delay={0.05}>
                   <p className="text-label vw-small mb-2 text-gold">
                     START HERE
@@ -403,6 +436,15 @@ export default function Home() {
                       'Run a short soul audit and receive a custom 5-day plan crafted for what you are carrying right now.',
                     )}
                   </p>
+                </FadeIn>
+
+                <FadeIn delay={0.08}>
+                  <WordblockPanel
+                    eyebrow="WORD AS ART"
+                    title="Daily Devotional Desk."
+                    body="Clear Scripture, honest reflection, and one faithful step that becomes momentum."
+                    className="mb-5"
+                  />
                 </FadeIn>
 
                 <FadeIn delay={0.12}>
@@ -744,11 +786,23 @@ export default function Home() {
               </div>
             </FadeIn>
 
+            <FadeIn delay={0.04}>
+              <div className="mx-auto mb-7 max-w-[280px]">
+                <IllustrationFrame
+                  src={NEWSPAPER_ILLUSTRATIONS.flow}
+                  alt="How this works engraving"
+                  effect="woodblock"
+                  aspect="banner"
+                  decorative
+                />
+              </div>
+            </FadeIn>
+
             <ol className="newspaper-flow-list mx-auto max-w-5xl">
-              {FLOW_STEPS.map((step) => (
+              {FLOW_STEPS.map((step, index) => (
                 <li
                   key={step.id}
-                  className="newspaper-flow-item grid gap-4 py-6 md:grid-cols-[auto_1fr] md:items-start md:gap-8 md:py-8"
+                  className="newspaper-flow-item grid gap-4 py-6 md:grid-cols-[auto_1fr_180px] md:items-start md:gap-8 md:py-8"
                 >
                   <p className="text-gold oldstyle-nums vw-heading-md leading-none">
                     {step.id}
@@ -761,6 +815,13 @@ export default function Home() {
                       {typographer(step.body)}
                     </p>
                   </div>
+                  <IllustrationFrame
+                    src={FLOW_ILLUSTRATIONS[index % FLOW_ILLUSTRATIONS.length]}
+                    alt={`${step.title} illustration`}
+                    effect="halftone"
+                    aspect="square"
+                    decorative
+                  />
                 </li>
               ))}
             </ol>
@@ -785,36 +846,56 @@ export default function Home() {
               </div>
             </FadeIn>
 
-            <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {FEATURED_SERIES.map((slug) => {
-                const series = SERIES_DATA[slug]
-                if (!series) return null
+            <FadeIn delay={0.04}>
+              <div className="mx-auto mb-8 max-w-[320px]">
+                <IllustrationFrame
+                  src={NEWSPAPER_ILLUSTRATIONS.featured}
+                  alt="Featured section illustration"
+                  effect="dither"
+                  aspect="banner"
+                  decorative
+                />
+              </div>
+            </FadeIn>
 
-                return (
-                  <Link
-                    key={slug}
-                    href={`/wake-up/series/${slug}`}
-                    className="group block"
-                  >
-                    <div className="newspaper-card overflow-hidden transition-colors duration-200">
-                      <SeriesHero seriesSlug={slug} size="card" overlay />
-                      <div className="p-6">
-                        <p className="text-label vw-small mb-2 text-gold">
-                          {series.title.toUpperCase()}
-                        </p>
-                        <div className="newspaper-rule mb-3" />
-                        <p className="text-serif-italic vw-body transition-colors duration-200 group-hover:text-gold">
-                          {typographer(series.question)}
-                        </p>
-                        <p className="vw-small mt-4 text-muted oldstyle-nums">
-                          {series.days.length} DAYS
-                        </p>
+            <PrintRail
+              ariaLabel="Featured series"
+              intervalMs={GSAP_CONFIG.rails.intervalMs}
+              viewportClassName="pb-2"
+              items={FEATURED_SERIES.map((slug) => {
+                const series = SERIES_DATA[slug]
+
+                return {
+                  id: slug,
+                  content: series ? (
+                    <Link
+                      href={`/wake-up/series/${slug}`}
+                      className="group block"
+                    >
+                      <div className="newspaper-card overflow-hidden transition-colors duration-200">
+                        <SeriesHero seriesSlug={slug} size="card" overlay />
+                        <div className="p-6">
+                          <p className="text-label vw-small mb-2 text-gold">
+                            {series.title.toUpperCase()}
+                          </p>
+                          <div className="newspaper-rule mb-3" />
+                          <p className="text-serif-italic vw-body transition-colors duration-200 group-hover:text-gold">
+                            {typographer(series.question)}
+                          </p>
+                          <p className="vw-small mt-4 text-muted oldstyle-nums">
+                            {series.days.length} DAYS
+                          </p>
+                        </div>
                       </div>
+                    </Link>
+                  ) : (
+                    <div className="newspaper-card p-6">
+                      <p className="vw-body">Series unavailable</p>
                     </div>
-                  </Link>
-                )
+                  ),
+                }
               })}
-            </StaggerGrid>
+            />
 
             <FadeIn>
               <div className="mt-10 text-center">
@@ -840,20 +921,35 @@ export default function Home() {
               </div>
             </FadeIn>
 
-            <div className="newspaper-faq-list mx-auto max-w-5xl">
-              {FAQ_ITEMS.map((item) => (
-                <article
-                  key={item.question}
-                  className="newspaper-faq-item py-6 md:py-8"
-                >
-                  <h3 className="vw-body mb-2 text-[var(--color-text-primary)]">
-                    {typographer(item.question)}
-                  </h3>
-                  <p className="vw-small max-w-[70ch] text-secondary type-prose">
-                    {typographer(item.answer)}
-                  </p>
-                </article>
-              ))}
+            <div className="newspaper-faq-list mx-auto max-w-6xl pt-6">
+              <PrintRail
+                ariaLabel="FAQ"
+                intervalMs={GSAP_CONFIG.rails.intervalMs + 500}
+                items={[
+                  ...FAQ_ITEMS.map((item) => ({
+                    id: item.question,
+                    content: (
+                      <FaqHoverCard
+                        question={item.question}
+                        answer={item.answer}
+                      />
+                    ),
+                  })),
+                  {
+                    id: 'faq-illustration',
+                    content: (
+                      <IllustrationFrame
+                        src={NEWSPAPER_ILLUSTRATIONS.faq}
+                        alt="Engraving ornament"
+                        effect="dither"
+                        aspect="portrait"
+                        decorative
+                        caption="Hover or tap to reveal answers."
+                      />
+                    ),
+                  },
+                ]}
+              />
             </div>
           </div>
         </section>
@@ -861,34 +957,64 @@ export default function Home() {
         <section className="py-14 md:py-16 lg:py-20">
           <div className="mx-auto max-w-[1720px] px-6 md:px-[56px] lg:px-20">
             <FadeIn>
-              <div className="mx-auto max-w-4xl border-y-2 border-subtle px-4 py-8 text-center md:px-6 md:py-10">
-                <p className="text-label vw-small mb-4 text-gold">
-                  READY TO BEGIN?
-                </p>
-                <h2 className="text-serif-italic vw-heading-md mb-5">
-                  {typographer('Start with one honest sentence.')}
-                </h2>
-                <p className="vw-body mx-auto mb-8 max-w-[36ch] text-secondary type-prose">
-                  {typographer(
-                    'You do not need certainty before you begin. You need a next step.',
-                  )}
-                </p>
-                <div className="flex flex-col justify-center gap-3 sm:flex-row">
-                  <a
-                    href="#start-audit"
-                    className="cta-major text-label vw-small px-8 py-3"
-                  >
-                    Take Soul Audit
-                  </a>
-                  <Link
-                    href="/series"
-                    className="animated-underline text-label vw-small px-8 py-3 text-[var(--color-text-primary)]"
-                  >
-                    Browse Series
-                  </Link>
+              <div className="mx-auto max-w-5xl border-y-2 border-subtle px-4 py-8 text-center md:grid md:grid-cols-[1fr_280px] md:items-center md:gap-6 md:px-6 md:py-10">
+                <div>
+                  <p className="text-label vw-small mb-4 text-gold">
+                    READY TO BEGIN?
+                  </p>
+                  <h2 className="text-serif-italic vw-heading-md mb-5">
+                    {typographer('Start with one honest sentence.')}
+                  </h2>
+                  <p className="vw-body mx-auto mb-8 max-w-[36ch] text-secondary type-prose">
+                    {typographer(
+                      'You do not need certainty before you begin. You need a next step.',
+                    )}
+                  </p>
+                  <div className="flex flex-col justify-center gap-3 sm:flex-row">
+                    <a
+                      href="#start-audit"
+                      className="cta-major text-label vw-small px-8 py-3"
+                    >
+                      Take Soul Audit
+                    </a>
+                    <Link
+                      href="/series"
+                      className="animated-underline text-label vw-small px-8 py-3 text-[var(--color-text-primary)]"
+                    >
+                      Browse Series
+                    </Link>
+                  </div>
                 </div>
+                <IllustrationFrame
+                  src={NEWSPAPER_ILLUSTRATIONS.cta}
+                  alt="Closing devotional illustration"
+                  effect="ink"
+                  aspect="portrait"
+                  decorative
+                  className="mx-auto mt-8 w-full max-w-[240px] md:mt-0"
+                />
               </div>
             </FadeIn>
+          </div>
+        </section>
+
+        <section className="section-rule border-subtle border-b pb-8 pt-4 md:pb-10">
+          <div className="mx-auto max-w-[1720px] px-4 md:px-[56px] lg:px-20">
+            <h2
+              className="text-masthead relative left-1/2 w-[calc(100vw-2rem)] -translate-x-1/2 overflow-hidden text-left select-none md:w-[calc(100vw-7rem)] lg:w-[calc(100vw-10rem)]"
+              style={{
+                fontSize: 'clamp(1.95rem, 9.2vw, 11rem)',
+                lineHeight: 0.82,
+                letterSpacing: '0.1em',
+              }}
+              aria-label="Euangelion"
+            >
+              <span className="masthead-fullwidth" aria-hidden="true">
+                {MASTHEAD_LETTERS.map((letter, index) => (
+                  <span key={`footer-${letter}-${index}`}>{letter}</span>
+                ))}
+              </span>
+            </h2>
           </div>
         </section>
       </main>

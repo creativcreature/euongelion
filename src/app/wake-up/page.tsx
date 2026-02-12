@@ -4,24 +4,26 @@ import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
+import IllustrationFrame from '@/components/newspaper/IllustrationFrame'
+import DevotionalMilestoneReveal from '@/components/newspaper/DevotionalMilestoneReveal'
 import { typographer } from '@/lib/typographer'
 import { DEVOTIONAL_SERIES, WAKEUP_SERIES_ORDER } from '@/data/series'
 
 export default function WakeUpPage() {
   return (
-    <div className="bg-page min-h-screen">
+    <div className="newspaper-home min-h-screen">
       <Navigation />
 
       {/* Full-viewport Hero */}
-      <header className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
-        <FadeIn y={0} duration={0.8}>
+      <header className="section-rule grid min-h-[82vh] items-center gap-6 px-6 py-12 text-center md:grid-cols-[1fr_300px] md:px-[60px] lg:px-20">
+        <DevotionalMilestoneReveal variant="cinematic">
           <h1
             className="text-display mb-6"
             style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 1 }}
           >
             WAKE UP
           </h1>
-        </FadeIn>
+        </DevotionalMilestoneReveal>
         <FadeIn delay={0.2} y={0}>
           <p className="text-label vw-small mb-8 text-gold">
             {WAKEUP_SERIES_ORDER.length} SERIES &middot;{' '}
@@ -49,12 +51,23 @@ export default function WakeUpPage() {
             Start with Question 01
           </Link>
         </FadeIn>
+        <div className="mx-auto w-full max-w-[280px] md:max-w-none">
+          <IllustrationFrame
+            src="/images/illustrations/euangelion-homepage-engraving-08.svg"
+            alt="Wake-Up engraving"
+            effect="woodblock"
+            aspect="portrait"
+            decorative
+            wordblock="WAKE-UP EDITION"
+          />
+        </div>
       </header>
 
       {/* Problem Statement — full-width surface */}
-      <section
+      <DevotionalMilestoneReveal
         className="bg-surface section-breathing"
-        style={{ borderTop: '1px solid var(--color-border)' }}
+        style={{ borderTop: '2px solid var(--color-border-strong)' }}
+        as="section"
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <div className="mx-auto max-w-3xl text-center">
@@ -74,12 +87,13 @@ export default function WakeUpPage() {
             </FadeIn>
           </div>
         </div>
-      </section>
+      </DevotionalMilestoneReveal>
 
       {/* How It Works */}
-      <section
+      <DevotionalMilestoneReveal
         className="section-breathing"
-        style={{ borderTop: '1px solid var(--color-border)' }}
+        style={{ borderTop: '2px solid var(--color-border-strong)' }}
+        as="section"
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <FadeIn>
@@ -147,13 +161,13 @@ export default function WakeUpPage() {
             </p>
           </FadeIn>
         </div>
-      </section>
+      </DevotionalMilestoneReveal>
 
       {/* Seven Questions — the main event */}
       <main
         id="main-content"
         className="section-breathing"
-        style={{ borderTop: '1px solid var(--color-border)' }}
+        style={{ borderTop: '2px solid var(--color-border-strong)' }}
       >
         <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
           <FadeIn>

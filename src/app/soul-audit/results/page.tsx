@@ -86,7 +86,7 @@ export default function SoulAuditResultsPage() {
 
   if (!result) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-page">
+      <div className="newspaper-home flex min-h-screen items-center justify-center bg-page">
         <p className="text-muted">Loading...</p>
       </div>
     )
@@ -107,7 +107,7 @@ export default function SoulAuditResultsPage() {
       : []
 
   return (
-    <div className="min-h-screen bg-page">
+    <div className="newspaper-home min-h-screen bg-page">
       <Navigation />
 
       <main

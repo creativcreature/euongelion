@@ -17,6 +17,8 @@ import { useProgressStore } from '@/stores/progressStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import DevotionalChat from '@/components/DevotionalChat'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
+import DevotionalMilestoneReveal from '@/components/newspaper/DevotionalMilestoneReveal'
+import IllustrationFrame from '@/components/newspaper/IllustrationFrame'
 import { getDevotionalImage } from '@/data/devotional-images'
 import { SERIES_DATA } from '@/data/series'
 import type { Devotional, Panel, Module } from '@/types'
@@ -123,7 +125,11 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
 
       {/* Hero — full-bleed image or clean typography with day ornament */}
       {devotionalImage ? (
-        <div className="section-rule border-subtle relative flex min-h-[34vh] items-end overflow-hidden border-b md:min-h-[42vh]">
+        <DevotionalMilestoneReveal
+          variant="cinematic"
+          as="div"
+          className="section-rule border-subtle relative flex min-h-[34vh] items-end overflow-hidden border-b md:min-h-[42vh]"
+        >
           <Image
             src={devotionalImage}
             alt=""
@@ -169,9 +175,13 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
               )}
             </div>
           </div>
-        </div>
+        </DevotionalMilestoneReveal>
       ) : (
-        <header className="section-rule border-subtle relative border-b px-6 pb-12 pt-16 md:px-10 md:pb-16 md:pt-20 lg:px-16">
+        <DevotionalMilestoneReveal
+          variant="cinematic"
+          as="header"
+          className="section-rule border-subtle relative border-b px-6 pb-12 pt-16 md:px-10 md:pb-16 md:pt-20 lg:px-16"
+        >
           {/* Massive ornamental day number behind title */}
           {currentDayNum > 0 && (
             <div
@@ -209,8 +219,17 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                 {typographer(devotional.teaser)}
               </p>
             )}
+            <div className="mt-8 max-w-[240px]">
+              <IllustrationFrame
+                src="/images/illustrations/euangelion-homepage-engraving-10.svg"
+                alt="Devotional engraving motif"
+                effect="ink"
+                aspect="square"
+                decorative
+              />
+            </div>
           </div>
-        </header>
+        </DevotionalMilestoneReveal>
       )}
 
       {/* Content — day-gated */}
@@ -259,7 +278,11 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
 
           {/* Mark as Complete */}
           {!isCompleted && (
-            <div className="px-6 pb-12 md:px-10 md:pb-16 lg:px-16">
+            <DevotionalMilestoneReveal
+              as="div"
+              variant="cinematic"
+              className="px-6 pb-12 md:px-10 md:pb-16 lg:px-16"
+            >
               <div
                 className="mx-auto max-w-[1040px] pt-10"
                 style={{ borderTop: '2px solid var(--color-border-strong)' }}
@@ -277,7 +300,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                   Mark as Complete &rarr;
                 </button>
               </div>
-            </div>
+            </DevotionalMilestoneReveal>
           )}
         </>
       )}

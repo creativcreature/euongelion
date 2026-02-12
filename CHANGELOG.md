@@ -35,6 +35,65 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Newspaper Rebuild v3 + Illustration Pipeline Scaffold (2026-02-12)
+
+### What Changed
+
+- Implemented reusable newspaper system components:
+  - `src/components/newspaper/IllustrationFrame.tsx`
+  - `src/components/newspaper/WordblockPanel.tsx`
+  - `src/components/newspaper/PrintRail.tsx`
+  - `src/components/newspaper/FaqHoverCard.tsx`
+  - `src/components/newspaper/DevotionalMilestoneReveal.tsx`
+- Reworked homepage composition in `src/app/page.tsx`:
+  - Added print-style illustration slots in hero, flow, featured, FAQ, and CTA
+  - Added “word as art” support panel treatment
+  - Converted Featured Series to horizontal auto-rotating `PrintRail`
+  - Converted FAQ to horizontal auto-rotating `PrintRail` with `FaqHoverCard` hover/focus reveal and tap toggle on mobile
+  - Kept Soul Audit above fold and preserved existing submit/match logic
+  - Added full-width bottom `EUANGELION` wordmark section
+- Expanded print treatments and interaction styles in `src/app/globals.css`:
+  - Added Industry font-face support and switched UI/meta stack to Industry
+  - Added print effects: `effect-woodblock`, `effect-halftone`, `effect-dither`, `effect-ink`
+  - Added illustration framing, rail controls, dots, and FAQ reveal motion
+  - Maintained no-glow/rim-light treatment
+- Added Industry font files and illustration assets:
+  - `public/fonts/IndustryTest-Book.otf`
+  - `public/fonts/IndustryTest-Demi.otf`
+  - `public/fonts/IndustryTest-Bold.otf`
+  - `public/images/illustrations/*` (from `user-references/illustrations`)
+  - `public/images/illustrations/placeholder-ink-block.svg`
+- Extended motion config in `src/lib/animation-config.ts`:
+  - Added `editorialSubtle` and `devotionalCinematic` profiles
+  - Added rail timing tokens
+  - Removed hover glow effect fallback
+- Added illustration generation service scaffold:
+  - `src/lib/illustrations/provider.ts`
+  - `src/lib/illustrations/prompt-presets.ts`
+  - `src/lib/illustrations/nanobanana.ts`
+  - `src/app/api/illustrations/generate/route.ts`
+  - Supports validated prompt payloads, rate limiting, Nano-Banana provider calls, Supabase Storage upload, metadata insert, and fallback asset chain
+- Added persistence schema for generated illustration metadata:
+  - `supabase/migrations/20260212000001_create_generated_illustrations.sql`
+  - `database/migrations/008_create_generated_illustrations.sql`
+- Applied newspaper styling pass to key routes:
+  - `src/app/wake-up/page.tsx`
+  - `src/app/wake-up/series/[slug]/SeriesPageClient.tsx`
+  - `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+  - `src/app/series/page.tsx`
+  - `src/app/soul-audit/page.tsx`
+  - `src/app/soul-audit/results/page.tsx`
+- Updated environment template in `.env.example` with Nano-Banana and Supabase server variables.
+- Bumped service worker cache namespace from `euangelion-v19` -> `euangelion-v20` in `public/sw.js`.
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm run build`
+
+---
+
 ## Dark Newspaper UX Consolidation Pass (2026-02-11)
 
 ### What Changed

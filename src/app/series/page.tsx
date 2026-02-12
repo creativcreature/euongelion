@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation'
 import SeriesHero from '@/components/SeriesHero'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
+import IllustrationFrame from '@/components/newspaper/IllustrationFrame'
 import MixedHeadline, { Sans, Serif } from '@/components/MixedHeadline'
 import OrnamentDivider from '@/components/OrnamentDivider'
 import { typographer } from '@/lib/typographer'
@@ -20,10 +21,10 @@ export default function SeriesBrowsePage() {
   const { getSeriesProgress } = useProgress()
 
   return (
-    <div className="min-h-screen bg-page">
+    <div className="newspaper-home min-h-screen">
       <Navigation />
 
-      <header className="mx-auto max-w-7xl px-6 pb-16 pt-12 md:px-[60px] md:pb-24 md:pt-20 lg:px-20">
+      <header className="section-rule mx-auto max-w-7xl px-6 pb-16 pt-12 md:px-[60px] md:pb-24 md:pt-20 lg:px-20">
         <FadeIn>
           <MixedHeadline as="h1" size="xl" className="mb-8">
             <Sans>ALL</Sans> <Serif>Series</Serif>
@@ -33,6 +34,15 @@ export default function SeriesBrowsePage() {
               `${ALL_SERIES_ORDER.length} series. Ancient wisdom for modern wrestling. Pick one that speaks to where you are.`,
             )}
           </p>
+          <div className="mt-8 max-w-[320px]">
+            <IllustrationFrame
+              src="/images/illustrations/euangelion-homepage-engraving-11.svg"
+              alt="Series archive motif"
+              effect="dither"
+              aspect="banner"
+              decorative
+            />
+          </div>
         </FadeIn>
       </header>
 
@@ -164,9 +174,8 @@ function SeriesCard({
   return (
     <Link href={`/wake-up/series/${slug}`} className="group block">
       <div
-        className="flex h-full flex-col overflow-hidden transition-all duration-300"
+        className="newspaper-card flex h-full flex-col overflow-hidden transition-all duration-300"
         style={{
-          border: '1px solid var(--color-border)',
           transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
         }}
       >

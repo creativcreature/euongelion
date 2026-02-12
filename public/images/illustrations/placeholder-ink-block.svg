@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Euangelion illustration placeholder">
+  <rect width="1200" height="900" fill="#efe7d9"/>
+  <rect x="24" y="24" width="1152" height="852" fill="none" stroke="#1e2f6e" stroke-width="6"/>
+  <g fill="none" stroke="#1e2f6e" stroke-width="3" opacity="0.65">
+    <path d="M100 180h1000"/>
+    <path d="M100 320h1000"/>
+    <path d="M100 460h1000"/>
+    <path d="M100 600h1000"/>
+    <path d="M100 740h1000"/>
+  </g>
+  <text x="600" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="78" fill="#1e2f6e">EUANGELION</text>
+  <text x="600" y="505" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#1e2f6e">ILLUSTRATION PLACEHOLDER</text>
+</svg>

@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useSyncExternalStore } from 'react'
 import { useRouter } from 'next/navigation'
 import Navigation from '@/components/Navigation'
 import FadeIn from '@/components/motion/FadeIn'
+import IllustrationFrame from '@/components/newspaper/IllustrationFrame'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
 import type { SoulAuditResponse } from '@/types/soul-audit'
@@ -133,7 +134,7 @@ export default function SoulAuditPage() {
   }
 
   return (
-    <div className="min-h-screen bg-page">
+    <div className="newspaper-home min-h-screen">
       <Navigation />
 
       <main
@@ -160,6 +161,18 @@ export default function SoulAuditPage() {
                 'You don\u2019t have to have it figured out. Just start writing.',
               )}
             </p>
+          </FadeIn>
+
+          <FadeIn delay={0.34} y={10}>
+            <div className="mx-auto mb-8 max-w-[240px]">
+              <IllustrationFrame
+                src="/images/illustrations/euangelion-homepage-engraving-07.svg"
+                alt="Soul audit illustration"
+                effect="halftone"
+                aspect="square"
+                decorative
+              />
+            </div>
           </FadeIn>
 
           <FadeIn delay={0.4} y={16}>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect, type ReactNode } from 'react'
+import { useRef, useEffect, type CSSProperties, type ReactNode } from 'react'
 import { useAnimation } from '@/providers/AnimationProvider'
 import { GSAP as GSAP_CONFIG } from '@/lib/animation-config'
 
@@ -15,6 +15,7 @@ interface FadeInProps {
   /** Element tag */
   as?: 'div' | 'section' | 'article' | 'header' | 'footer' | 'p'
   className?: string
+  style?: CSSProperties
 }
 
 /**
@@ -30,6 +31,7 @@ export default function FadeIn({
   duration = GSAP_CONFIG.duration.base,
   as: Tag = 'div',
   className = '',
+  style,
 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null)
   const { shouldAnimate } = useAnimation()
@@ -62,7 +64,11 @@ export default function FadeIn({
   }, [shouldAnimate, delay, y, duration])
 
   return (
-    <Tag ref={ref as React.Ref<HTMLDivElement>} className={className}>
+    <Tag
+      ref={ref as React.Ref<HTMLDivElement>}
+      className={className}
+      style={style}
+    >
       {children}
     </Tag>
   )

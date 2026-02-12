@@ -7,6 +7,8 @@ import ShareButton from '@/components/ShareButton'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
 import OrnamentDivider from '@/components/OrnamentDivider'
+import DevotionalMilestoneReveal from '@/components/newspaper/DevotionalMilestoneReveal'
+import IllustrationFrame from '@/components/newspaper/IllustrationFrame'
 import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
 import type { SeriesInfo } from '@/data/series'
@@ -24,7 +26,7 @@ export default function SeriesPageClient({
   const dayCount = series.days.length
 
   return (
-    <div className="min-h-screen bg-page">
+    <div className="newspaper-reading min-h-screen">
       <Navigation />
 
       {/* Series Hero Image */}
@@ -32,7 +34,7 @@ export default function SeriesPageClient({
 
       {/* Series Header */}
       <header className="mx-auto max-w-7xl px-6 pb-20 pt-12 md:px-[60px] md:pb-32 md:pt-20 lg:px-20">
-        <FadeIn>
+        <DevotionalMilestoneReveal variant="cinematic">
           <div className="mb-12 flex items-center justify-between">
             <Link
               href="/series"
@@ -45,7 +47,7 @@ export default function SeriesPageClient({
               text={`${series.title} — Euangelion`}
             />
           </div>
-        </FadeIn>
+        </DevotionalMilestoneReveal>
 
         {/* Grid: content + sidebar */}
         <div className="grid gap-12 md:grid-cols-12 md:gap-16">
@@ -80,6 +82,15 @@ export default function SeriesPageClient({
 
           {/* Journey sidebar */}
           <div className="md:col-span-4 md:col-start-9">
+            <DevotionalMilestoneReveal className="mb-6" variant="editorial">
+              <IllustrationFrame
+                src="/images/illustrations/euangelion-homepage-engraving-09.svg"
+                alt="Series engraving motif"
+                effect="halftone"
+                aspect="square"
+                decorative
+              />
+            </DevotionalMilestoneReveal>
             <FadeIn delay={0.15}>
               <div className="bg-surface-raised p-8 md:sticky md:top-24 md:p-10">
                 <div className="mb-4 flex items-center justify-between">
