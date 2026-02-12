@@ -174,6 +174,47 @@ export default function Home() {
     return () => window.clearInterval(timer)
   }, [])
 
+  useEffect(() => {
+    const spans = Array.from(
+      document.querySelectorAll<HTMLElement>('.js-masthead-fit'),
+    )
+    if (!spans.length) return
+
+    const fitOne = (span: HTMLElement) => {
+      const heading = span.closest('.mock-masthead-word') as HTMLElement | null
+      if (!heading) return
+
+      span.style.setProperty('--mock-masthead-scale', '1')
+      const available = heading.clientWidth
+      const natural = span.scrollWidth
+      if (!available || !natural) return
+
+      const scale = available / natural
+      const clamped = Math.max(0.9, Math.min(scale, 1.3))
+      span.style.setProperty('--mock-masthead-scale', clamped.toFixed(4))
+    }
+
+    const fitAll = () => spans.forEach(fitOne)
+    const rafFit = () => window.requestAnimationFrame(fitAll)
+
+    rafFit()
+    const resizeObserver = new ResizeObserver(rafFit)
+    spans.forEach((span) => {
+      const heading = span.closest('.mock-masthead-word') as HTMLElement | null
+      if (heading) resizeObserver.observe(heading)
+    })
+
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(rafFit).catch(() => {})
+    }
+    window.addEventListener('resize', rafFit)
+
+    return () => {
+      resizeObserver.disconnect()
+      window.removeEventListener('resize', rafFit)
+    }
+  }, [])
+
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark'
     setTheme(next)
@@ -239,7 +280,11 @@ export default function Home() {
         </header>
 
         <section className="mock-masthead-block">
-          <h1 className="text-masthead mock-masthead-word">EUANGELION</h1>
+          <h1 className="text-masthead mock-masthead-word">
+            <span className="js-masthead-fit mock-masthead-text">
+              EUANGELION
+            </span>
+          </h1>
           <p className="mock-masthead-sub">GOOD NEWS COMING</p>
         </section>
 
@@ -478,7 +523,11 @@ export default function Home() {
         </section>
 
         <section className="mock-bottom-brand">
-          <h2 className="text-masthead mock-masthead-word">EUANGELION</h2>
+          <h2 className="text-masthead mock-masthead-word">
+            <span className="js-masthead-fit mock-masthead-text">
+              EUANGELION
+            </span>
+          </h2>
         </section>
       </main>
     </div>

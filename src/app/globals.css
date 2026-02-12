@@ -1837,24 +1837,30 @@
 
 .mock-masthead-word {
   margin: 0 auto;
-  display: block;
+  display: flex;
+  justify-content: center;
   width: 100%;
   max-width: none;
-  text-align: center;
+  overflow: visible;
+}
+
+.mock-masthead-text {
+  --mock-masthead-scale: 1;
+  display: inline-block;
   white-space: nowrap;
-  font-size: clamp(2.7rem, 17.4vw, 21rem);
-  line-height: 0.82;
+  text-align: center;
+  font-size: clamp(2.7rem, 13.6vw, 14.2rem);
+  line-height: 0.84;
   color: var(--mock-blue);
   text-transform: uppercase;
-  letter-spacing: -0.018em;
-  overflow: visible;
-  transform: scaleX(1.015);
+  letter-spacing: -0.008em;
+  transform: scaleX(var(--mock-masthead-scale));
   transform-origin: center center;
 }
 
 @supports (font-size: 1cqi) {
-  .mock-masthead-word {
-    font-size: clamp(2.7rem, 17.4cqi, 21rem);
+  .mock-masthead-text {
+    font-size: clamp(2.7rem, 13.6cqi, 14.2rem);
   }
 }
 
