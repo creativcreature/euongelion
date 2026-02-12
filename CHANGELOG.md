@@ -59,6 +59,13 @@ Format: Reverse chronological, grouped by sprint/date.
 - Corrected desktop grid collapse bug by lowering mockup breakpoint from `1200px` to `980px` so 3-column newspaper layout remains intact on laptop/desktop widths.
 - Reinforced section grid boundaries (`How this works` + `Featured Series`) with explicit top rule lines for stronger newspaper grid legibility.
 - Bumped service worker cache namespace from `euangelion-v21` -> `euangelion-v22` in `/public/sw.js` to force latest grid CSS refresh.
+- Performed strict proportion calibration against the mockup reference:
+  - Expanded frame to near full-bleed desktop width (`~1860px`) with tighter outer margin
+  - Added fixed section geometry variables for rails, hero, headers, cards, FAQ row, CTA, and bottom masthead band
+  - Re-tuned typography scale/line-height by section to match mock hierarchy and vertical rhythm
+  - Locked featured card row heights and media box dimensions for consistent newspaper grid cadence
+  - Tightened stroke weights and panel paddings to remove fluid/haphazard spacing drift
+- Bumped service worker cache namespace from `euangelion-v22` -> `euangelion-v23` in `/public/sw.js` to force immediate pickup of calibrated proportions.
 
 ### Validation
 
