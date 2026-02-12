@@ -1976,13 +1976,14 @@
 
 .mock-hero-grid {
   display: grid;
-  grid-template-columns: 228px minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 228px;
   border-bottom: var(--mock-stroke) solid var(--mock-line);
   min-height: var(--mock-h-hero);
 }
 
 .mock-hero-art {
-  border-right: var(--mock-stroke) solid var(--mock-line);
+  order: 3;
+  border-left: var(--mock-stroke) solid var(--mock-line);
   min-height: var(--mock-h-hero);
   background: var(--mock-paper);
   position: relative;
@@ -2000,6 +2001,7 @@
 }
 
 .mock-panel-copy {
+  order: 1;
   border-right: var(--mock-stroke) solid var(--mock-line);
 }
 
@@ -2030,6 +2032,8 @@
 }
 
 .mock-panel-audit {
+  order: 2;
+  border-right: var(--mock-stroke) solid var(--mock-line);
   display: grid;
   align-content: start;
   gap: 0.48rem;
@@ -2398,6 +2402,7 @@
   .mock-panel-audit {
     grid-column: span 2;
     border-top: 1px solid var(--mock-line);
+    border-right: 0;
   }
 
   .mock-panel-copy {
@@ -2487,7 +2492,7 @@
   }
 
   .mock-hero-art {
-    border-right: 0;
+    border-left: 0;
     border-bottom: 1px solid var(--mock-line);
     min-height: 200px;
   }

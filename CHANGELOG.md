@@ -89,6 +89,9 @@ Format: Reverse chronological, grouped by sprint/date.
   - Main nav now uses a single active render path per viewport to avoid duplicate menu rows
   - Sticky handoff keeps exactly one visible nav strip at a time
   - Mobile theme icon placement remains in nav while duplicate menu wrappers were removed
+- Desktop hero composition tweak:
+  - Moved the left engraving panel to the right side of the hero row (`WHAT IS THIS PLACE?` / `SOUL AUDIT` now lead left-to-right before the image)
+  - Preserved mobile stacking behavior
 - Rebuilt the “How this works” card internals in `src/app/page.tsx` and `src/app/globals.css`:
   - Step illustrations now sit on the left side of each card
   - Images run full-height within the box with a dedicated vertical divider
@@ -111,6 +114,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - Bumped service worker cache namespace from `euangelion-v36` -> `euangelion-v37` in `public/sw.js` for step-card bottom-padding refinement.
 - Bumped service worker cache namespace from `euangelion-v37` -> `euangelion-v38` in `public/sw.js` for masthead clipping fix refresh.
 - Bumped service worker cache namespace from `euangelion-v38` -> `euangelion-v39` in `public/sw.js` for nav cleanup + audit reset controls refresh.
+- Bumped service worker cache namespace from `euangelion-v39` -> `euangelion-v40` in `public/sw.js` for desktop hero panel-order refresh.
 
 ### Validation
 
