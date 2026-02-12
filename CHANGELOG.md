@@ -76,6 +76,7 @@ Format: Reverse chronological, grouped by sprint/date.
   - Renamed FAQ lead headline to reduce duplicate wording with the hero prompt
   - Mobile now renders all FAQ questions instead of the 3-card window
   - Removed FAQ arrow controls on mobile (desktop arrows remain)
+- Reduced bottom padding in “How this works” numbered text containers for tighter vertical rhythm (desktop + mobile).
 - Rebuilt the “How this works” card internals in `src/app/page.tsx` and `src/app/globals.css`:
   - Step illustrations now sit on the left side of each card
   - Images run full-height within the box with a dedicated vertical divider
@@ -95,6 +96,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - Bumped service worker cache namespace from `euangelion-v33` -> `euangelion-v34` in `public/sw.js` for mobile body-copy size refresh.
 - Bumped service worker cache namespace from `euangelion-v34` -> `euangelion-v35` in `public/sw.js` for mobile featured carousel refresh.
 - Bumped service worker cache namespace from `euangelion-v35` -> `euangelion-v36` in `public/sw.js` for mobile FAQ all-questions + no-arrows refresh.
+- Bumped service worker cache namespace from `euangelion-v36` -> `euangelion-v37` in `public/sw.js` for step-card bottom-padding refinement.
 
 ### Validation
 
