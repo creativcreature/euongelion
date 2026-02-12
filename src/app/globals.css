@@ -1857,7 +1857,7 @@
 
 .mock-hero-grid {
   display: grid;
-  grid-template-columns: 190px 1fr 1fr;
+  grid-template-columns: 190px minmax(0, 1fr) minmax(0, 1fr);
   border-bottom: 1px solid var(--mock-line);
 }
 
@@ -1991,6 +1991,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-bottom: 1px solid var(--mock-line);
+  border-top: 1px solid var(--mock-line);
 }
 
 .mock-step-card {
@@ -2034,6 +2035,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-bottom: 1px solid var(--mock-line);
+  border-top: 1px solid var(--mock-line);
 }
 
 .mock-featured-card {
@@ -2189,7 +2191,7 @@
   padding: 0.68rem 1rem 1rem;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 980px) {
   .mock-hero-grid {
     grid-template-columns: 150px 1fr;
   }

@@ -147,7 +147,6 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [faqIndex, setFaqIndex] = useState(0)
-  const [pauseFaq, setPauseFaq] = useState(false)
 
   const hydrated = useSyncExternalStore(
     emptySubscribe,
@@ -174,14 +173,6 @@ export default function Home() {
     const timer = window.setInterval(() => setNow(new Date()), 30_000)
     return () => window.clearInterval(timer)
   }, [])
-
-  useEffect(() => {
-    if (pauseFaq) return
-    const timer = window.setInterval(() => {
-      setFaqIndex((prev) => (prev + 1) % FAQ_ITEMS.length)
-    }, 6000)
-    return () => window.clearInterval(timer)
-  }, [pauseFaq])
 
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark'
@@ -405,11 +396,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section
-          className="mock-faq-row"
-          onMouseEnter={() => setPauseFaq(true)}
-          onMouseLeave={() => setPauseFaq(false)}
-        >
+        <section className="mock-faq-row">
           <article className="mock-faq-lead">
             <h3>What are you wrestling with today?</h3>
             <p>

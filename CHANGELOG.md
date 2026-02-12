@@ -56,6 +56,9 @@ Format: Reverse chronological, grouped by sprint/date.
 - Ensured masthead treatment uses Industry (UI stack) and body/copy uses Instrument Serif.
 - Removed forced smooth-scroll behavior in app providers (native browser scroll restored).
 - Bumped service worker cache namespace from `euangelion-v20` -> `euangelion-v21` in `/public/sw.js` to force refresh of the rebuilt homepage.
+- Corrected desktop grid collapse bug by lowering mockup breakpoint from `1200px` to `980px` so 3-column newspaper layout remains intact on laptop/desktop widths.
+- Reinforced section grid boundaries (`How this works` + `Featured Series`) with explicit top rule lines for stronger newspaper grid legibility.
+- Bumped service worker cache namespace from `euangelion-v21` -> `euangelion-v22` in `/public/sw.js` to force latest grid CSS refresh.
 
 ### Validation
 
