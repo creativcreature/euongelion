@@ -12,6 +12,7 @@ interface SoulAuditState {
 
   recordAudit: (input: string, results: SoulAuditResponse) => void
   clearResults: () => void
+  resetAudit: () => void
   hasReachedLimit: () => boolean
 }
 
@@ -34,6 +35,10 @@ export const useSoulAuditStore = create<SoulAuditState>()(
 
       clearResults: () => {
         set({ lastResults: null, lastInput: null })
+      },
+
+      resetAudit: () => {
+        set({ auditCount: 0, lastResults: null, lastInput: null })
       },
 
       hasReachedLimit: () => {

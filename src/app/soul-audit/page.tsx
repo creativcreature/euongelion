@@ -74,7 +74,8 @@ export default function SoulAuditPage() {
     () => true,
     () => false,
   )
-  const { auditCount, recordAudit, hasReachedLimit } = useSoulAuditStore()
+  const { auditCount, recordAudit, hasReachedLimit, resetAudit } =
+    useSoulAuditStore()
   const limitReached = hydrated && hasReachedLimit()
 
   useEffect(() => {
@@ -82,6 +83,13 @@ export default function SoulAuditPage() {
   }, [])
 
   const charCount = response.trim().length
+
+  const handleResetAudit = () => {
+    resetAudit()
+    setError(null)
+    setNudge(false)
+    sessionStorage.removeItem('soul-audit-result')
+  }
 
   async function handleSubmit() {
     if (limitReached) {
@@ -181,6 +189,13 @@ export default function SoulAuditPage() {
                 <p className="text-serif-italic vw-body-lg mb-8 text-secondary">
                   {typographer('You\u2019ve explored enough. Time to dive in.')}
                 </p>
+                <button
+                  type="button"
+                  onClick={handleResetAudit}
+                  className="text-label vw-small mb-6 inline-flex border border-[var(--color-border)] px-6 py-3"
+                >
+                  Reset Audit
+                </button>
                 <a
                   href="/series"
                   className="cta-major text-label vw-small inline-flex w-full px-10 py-5"
@@ -191,9 +206,18 @@ export default function SoulAuditPage() {
             ) : (
               <div>
                 {hydrated && auditCount > 0 && (
-                  <p className="vw-small mb-4 text-center text-muted">
-                    Audit {auditCount + 1} of 3
-                  </p>
+                  <div className="mb-4 grid justify-items-center gap-2">
+                    <p className="vw-small text-center text-muted">
+                      Audit {auditCount + 1} of 3
+                    </p>
+                    <button
+                      type="button"
+                      onClick={handleResetAudit}
+                      className="text-label vw-small border border-[var(--color-border)] px-4 py-2"
+                    >
+                      Reset Audit
+                    </button>
+                  </div>
                 )}
 
                 <textarea

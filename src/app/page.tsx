@@ -147,7 +147,6 @@ export default function Home() {
   const router = useRouter()
   const pathname = usePathname()
   const topbarRef = useRef<HTMLElement | null>(null)
-  const navRef = useRef<HTMLElement | null>(null)
   const navSentinelRef = useRef<HTMLDivElement | null>(null)
 
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
@@ -165,7 +164,8 @@ export default function Home() {
     () => true,
     () => false,
   )
-  const { auditCount, recordAudit, hasReachedLimit } = useSoulAuditStore()
+  const { auditCount, recordAudit, hasReachedLimit, resetAudit } =
+    useSoulAuditStore()
   const limitReached = hydrated && hasReachedLimit()
 
   const featuredSlugs = useMemo(() => ALL_SERIES_ORDER.slice(0, 6), [])
@@ -293,6 +293,12 @@ export default function Home() {
     setTheme(next)
     localStorage.setItem('theme', next)
     document.documentElement.classList.toggle('dark', next === 'dark')
+  }
+
+  const handleResetAudit = () => {
+    resetAudit()
+    setError(null)
+    sessionStorage.removeItem('soul-audit-result')
   }
 
   const renderNavLinks = (items: typeof NAV_ITEMS) =>
@@ -430,24 +436,24 @@ export default function Home() {
         />
 
         <nav
-          ref={navRef}
           className={`mock-nav text-label ${navDocked ? 'is-docked' : ''}`}
           aria-label="Main navigation"
         >
-          <div className="mock-nav-items mock-nav-items-desktop">
-            {renderNavLinks(NAV_ITEMS)}
-          </div>
-          <div className="mock-nav-items mock-nav-items-mobile">
-            {renderNavLinks(mobileNavItems)}
-            <button
-              type="button"
-              className="mock-nav-mobile-theme-toggle"
-              onClick={toggleTheme}
-              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            >
-              {theme === 'dark' ? '☀' : '◐'}
-            </button>
-          </div>
+          {isMobileViewport ? (
+            <>
+              {renderNavLinks(mobileNavItems)}
+              <button
+                type="button"
+                className="mock-nav-mobile-theme-toggle"
+                onClick={toggleTheme}
+                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              >
+                {theme === 'dark' ? '☀' : '◐'}
+              </button>
+            </>
+          ) : (
+            renderNavLinks(NAV_ITEMS)
+          )}
         </nav>
 
         <section className="mock-hero-grid">
@@ -507,7 +513,16 @@ export default function Home() {
               No account required. Start immediately.
             </p>
             {hydrated && auditCount > 0 && (
-              <p className="mock-footnote">Audit {auditCount + 1} of 3</p>
+              <>
+                <p className="mock-footnote">Audit {auditCount + 1} of 3</p>
+                <button
+                  type="button"
+                  className="mock-reset-btn text-label"
+                  onClick={handleResetAudit}
+                >
+                  Reset Audit
+                </button>
+              </>
             )}
             {error && <p className="mock-error">{error}</p>}
           </section>
@@ -667,6 +682,15 @@ export default function Home() {
           <p className="mock-footnote">
             No account required. Start immediately.
           </p>
+          {hydrated && auditCount > 0 && (
+            <button
+              type="button"
+              className="mock-reset-btn text-label"
+              onClick={handleResetAudit}
+            >
+              Reset Audit
+            </button>
+          )}
         </section>
 
         <section className="mock-bottom-brand">

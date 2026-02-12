@@ -81,6 +81,14 @@ Format: Reverse chronological, grouped by sprint/date.
   - Added fit-calculation safety margin to avoid sub-pixel edge cutoffs
   - Removed hard overflow clipping on the masthead container
   - Increased masthead line-height to prevent vertical glyph cropping
+- Added explicit Soul Audit reset controls for QA/testing:
+  - New persisted store action `resetAudit` resets audit count + cached audit data
+  - Reset controls added to homepage audit blocks and `/soul-audit` page states
+  - Reset also clears session-stored latest audit result payload
+- Simplified and cleaned nav rendering paths:
+  - Main nav now uses a single active render path per viewport to avoid duplicate menu rows
+  - Sticky handoff keeps exactly one visible nav strip at a time
+  - Mobile theme icon placement remains in nav while duplicate menu wrappers were removed
 - Rebuilt the “How this works” card internals in `src/app/page.tsx` and `src/app/globals.css`:
   - Step illustrations now sit on the left side of each card
   - Images run full-height within the box with a dedicated vertical divider
@@ -102,6 +110,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - Bumped service worker cache namespace from `euangelion-v35` -> `euangelion-v36` in `public/sw.js` for mobile FAQ all-questions + no-arrows refresh.
 - Bumped service worker cache namespace from `euangelion-v36` -> `euangelion-v37` in `public/sw.js` for step-card bottom-padding refinement.
 - Bumped service worker cache namespace from `euangelion-v37` -> `euangelion-v38` in `public/sw.js` for masthead clipping fix refresh.
+- Bumped service worker cache namespace from `euangelion-v38` -> `euangelion-v39` in `public/sw.js` for nav cleanup + audit reset controls refresh.
 
 ### Validation
 
