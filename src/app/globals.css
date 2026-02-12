@@ -1761,7 +1761,7 @@
   --mock-type-2: clamp(1.26rem, 1.2vw, 1.58rem);
   --mock-type-3: clamp(2.28rem, 2.48vw, 3.45rem);
   --mock-type-4: clamp(3.05rem, 3.68vw, 5.05rem);
-  --mock-type-masthead: clamp(4.35rem, 11.2vw, 12.6rem);
+  --mock-type-masthead: clamp(2.72rem, 12.1vw, 13.8rem);
   min-height: 100vh;
   background: var(--mock-bg);
   padding: 0.7rem;
@@ -1830,19 +1830,24 @@
 .mock-masthead-block {
   border-bottom: var(--mock-stroke) solid var(--mock-line);
   padding: 0.36rem 0 0.42rem;
-  min-height: 168px;
+  min-height: 182px;
 }
 
 .mock-masthead-word {
-  margin: 0;
+  margin: 0 auto;
+  display: block;
   width: 100%;
+  max-width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
   font-size: var(--mock-type-masthead);
-  line-height: 0.82;
+  line-height: 0.79;
   color: var(--mock-blue);
   text-transform: uppercase;
   letter-spacing: 0;
-  transform: scaleX(1.015);
-  transform-origin: left center;
+  transform: scaleX(1.045);
+  transform-origin: center center;
 }
 
 .mock-masthead-sub {
@@ -2242,7 +2247,7 @@
 
 .mock-bottom-brand {
   min-height: var(--mock-h-bottom-brand);
-  padding: 0.45rem 0 0.7rem;
+  padding: 0.4rem 0 0.62rem;
   display: grid;
   align-content: end;
 }
