@@ -35,6 +35,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Mockup Proportion Alignment Pass 2 (2026-02-12)
+
+### What Changed
+
+- Tuned the exact homepage implementation for closer proportional parity with the reference comp:
+  - Increased global type scale using fixed mockup tokens so all serif copy remains legible and scales consistently by section
+  - Removed masthead letter spacing and disabled kerning adjustments so `EUANGELION` tracks edge-to-edge like the mockup
+  - Tightened masthead padding and adjusted line-height/width treatment for a denser top lockup
+- Rebuilt the “How this works” card internals in `src/app/page.tsx` and `src/app/globals.css`:
+  - Step illustrations now sit on the left side of each card
+  - Images run full-height within the box with a dedicated vertical divider
+  - Text block is isolated to the right side to preserve mockup proportions
+- Updated FAQ highlight behavior in `src/app/page.tsx`:
+  - Removed hardcoded always-active blue FAQ card so highlight state is now interaction-driven only (hover/focus/tap behavior)
+- Bumped service worker cache namespace from `euangelion-v23` -> `euangelion-v24` in `public/sw.js` so clients pick up the latest layout calibration immediately.
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+
+---
+
 ## Exact Homepage Mockup Reconstruction (2026-02-12)
 
 ### What Changed

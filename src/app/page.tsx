@@ -339,16 +339,20 @@ export default function Home() {
         <section className="mock-steps-grid">
           {HOW_STEPS.map((step) => (
             <article key={step.title} className="mock-step-card">
-              <div className="mock-step-image" aria-hidden="true">
-                <Image
-                  src={step.image}
-                  alt=""
-                  fill
-                  sizes="(max-width: 900px) 100vw, 320px"
-                />
+              <div className="mock-step-image-wrap" aria-hidden="true">
+                <div className="mock-step-image">
+                  <Image
+                    src={step.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 900px) 100vw, 320px"
+                  />
+                </div>
               </div>
-              <h3>{step.title}</h3>
-              <p>{step.body}</p>
+              <div className="mock-step-copy">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
             </article>
           ))}
         </section>
@@ -421,7 +425,7 @@ export default function Home() {
           {faqWindow.map((item, idx) => (
             <article
               key={`${item.question}-${idx}`}
-              className={`mock-faq-card ${idx === 1 ? 'is-active' : ''}`}
+              className="mock-faq-card"
               tabIndex={0}
             >
               <p className="mock-faq-question">{item.question}</p>
