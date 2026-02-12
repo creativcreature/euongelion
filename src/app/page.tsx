@@ -216,7 +216,8 @@ export default function Home() {
       const currentSize = Number.parseFloat(getComputedStyle(span).fontSize)
       if (!available || !natural || !Number.isFinite(currentSize)) return
 
-      const nextSize = currentSize * (available / natural)
+      // Keep a tiny safety margin so glyph edges never clip from sub-pixel rounding.
+      const nextSize = currentSize * (available / natural) * 0.985
       const clamped = Math.max(36, Math.min(nextSize, 420))
       span.style.fontSize = `${clamped}px`
     }

@@ -1868,7 +1868,7 @@
   justify-content: center;
   width: 100%;
   max-width: none;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .mock-masthead-text {
@@ -1876,7 +1876,7 @@
   white-space: nowrap;
   text-align: center;
   font-size: clamp(2.7rem, 13.4vw, 14.2rem);
-  line-height: 0.84;
+  line-height: 0.9;
   color: var(--mock-blue);
   text-transform: uppercase;
   letter-spacing: -0.006em;
@@ -1917,6 +1917,17 @@
     border-color 220ms ease;
 }
 
+.mock-nav-items {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+
+.mock-nav-items-mobile {
+  display: none;
+}
+
 .mock-nav-item-wrap {
   display: inline-flex;
   align-items: center;
@@ -1946,6 +1957,21 @@
 
 .mock-nav-item.is-active {
   color: var(--mock-blue);
+}
+
+.mock-nav-mobile-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border: var(--mock-stroke) solid var(--mock-line);
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-family-ui);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .mock-hero-grid {
@@ -2436,6 +2462,17 @@
 
   .mock-nav {
     justify-content: flex-start;
+  }
+
+  .mock-nav-items-desktop {
+    display: none;
+  }
+
+  .mock-nav-items-mobile {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    white-space: nowrap;
   }
 
   .mock-masthead-sub {
