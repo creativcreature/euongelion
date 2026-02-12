@@ -49,6 +49,15 @@ Format: Reverse chronological, grouped by sprint/date.
   - Increased masthead scale substantially with browser-safe `vw` fallback + `cqi` enhancement so `EUANGELION` consistently fills the full container width and remains centered
   - Rebalanced masthead sizing to a fully fluid (non-fixed-feeling) scale to prevent oversized rendering while still filling the row proportionally across viewport sizes
   - Added live masthead fit logic that measures each `EUANGELION` lockup and applies dynamic horizontal scaling so the word fills the container edge-to-edge without clipping
+  - Removed horizontal glyph stretching and switched masthead fit to dynamic natural-size font scaling (no distorted letter proportions)
+  - Increased `GOOD NEWS COMING` sizing and right-edge alignment under the masthead lockup
+- Restored sticky newspaper header behavior:
+  - Top date rail is sticky
+  - Main nav now hands off into the sticky top rail and replaces the center “Daily Devotionals…” line when scrolled
+  - Mobile sticky behavior now moves nav into the top rail on scroll
+- Implemented mobile top-rail rotation:
+  - Date/time, subtitle, and mode toggle now fade between each other instead of stacking
+  - One item visible at a time with a 1.5s fade transition
 - Rebuilt the “How this works” card internals in `src/app/page.tsx` and `src/app/globals.css`:
   - Step illustrations now sit on the left side of each card
   - Images run full-height within the box with a dedicated vertical divider
@@ -61,6 +70,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - Bumped service worker cache namespace from `euangelion-v26` -> `euangelion-v27` in `public/sw.js` for the larger full-width masthead sizing refresh.
 - Bumped service worker cache namespace from `euangelion-v27` -> `euangelion-v28` in `public/sw.js` for the fluid masthead scaling adjustment.
 - Bumped service worker cache namespace from `euangelion-v28` -> `euangelion-v29` in `public/sw.js` for the dynamic edge-to-edge masthead fit update.
+- Bumped service worker cache namespace from `euangelion-v29` -> `euangelion-v30` in `public/sw.js` for sticky header + natural masthead fit refresh.
 
 ### Validation
 

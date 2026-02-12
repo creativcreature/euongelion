@@ -1,6 +1,12 @@
 'use client'
 
-import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
@@ -140,6 +146,8 @@ function normalizeSoulAuditResponse(
 export default function Home() {
   const router = useRouter()
   const pathname = usePathname()
+  const topbarRef = useRef<HTMLElement | null>(null)
+  const navRef = useRef<HTMLElement | null>(null)
 
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
   const [now, setNow] = useState(() => new Date())
@@ -147,6 +155,8 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [faqIndex, setFaqIndex] = useState(0)
+  const [navDocked, setNavDocked] = useState(false)
+  const [mobileTopbarIndex, setMobileTopbarIndex] = useState(0)
 
   const hydrated = useSyncExternalStore(
     emptySubscribe,
@@ -184,14 +194,15 @@ export default function Home() {
       const heading = span.closest('.mock-masthead-word') as HTMLElement | null
       if (!heading) return
 
-      span.style.setProperty('--mock-masthead-scale', '1')
+      span.style.fontSize = ''
       const available = heading.clientWidth
       const natural = span.scrollWidth
-      if (!available || !natural) return
+      const currentSize = Number.parseFloat(getComputedStyle(span).fontSize)
+      if (!available || !natural || !Number.isFinite(currentSize)) return
 
-      const scale = available / natural
-      const clamped = Math.max(0.9, Math.min(scale, 1.3))
-      span.style.setProperty('--mock-masthead-scale', clamped.toFixed(4))
+      const nextSize = currentSize * (available / natural)
+      const clamped = Math.max(36, Math.min(nextSize, 420))
+      span.style.fontSize = `${clamped}px`
     }
 
     const fitAll = () => spans.forEach(fitOne)
@@ -214,6 +225,39 @@ export default function Home() {
       window.removeEventListener('resize', rafFit)
     }
   }, [])
+
+  useEffect(() => {
+    const syncDockState = () => {
+      if (!topbarRef.current || !navRef.current) return
+      const topbarBottom = topbarRef.current.getBoundingClientRect().bottom
+      const navTop = navRef.current.getBoundingClientRect().top
+      const nextDocked = navTop <= topbarBottom + 1
+      setNavDocked((prev) => (prev === nextDocked ? prev : nextDocked))
+    }
+
+    syncDockState()
+    window.addEventListener('scroll', syncDockState, { passive: true })
+    window.addEventListener('resize', syncDockState)
+    return () => {
+      window.removeEventListener('scroll', syncDockState)
+      window.removeEventListener('resize', syncDockState)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const isMobile = window.matchMedia('(max-width: 900px)').matches
+    const reducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
+    if (!isMobile || reducedMotion || navDocked) return
+
+    const timer = window.setInterval(
+      () => setMobileTopbarIndex((prev) => (prev + 1) % 3),
+      1500,
+    )
+    return () => window.clearInterval(timer)
+  }, [navDocked])
 
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark'
@@ -266,17 +310,95 @@ export default function Home() {
   return (
     <div className={`mock-home ${theme === 'dark' ? 'is-dark' : ''}`}>
       <main className="mock-paper">
-        <header className="mock-topbar text-label">
-          <span>{formatMastheadDate(now)}</span>
-          <span>Daily Devotionals for the Hungry Soul</span>
-          <button
-            type="button"
-            className="mock-mode-toggle text-label"
-            onClick={toggleTheme}
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+        <header
+          ref={topbarRef}
+          className={`mock-topbar text-label ${navDocked ? 'is-nav-docked' : ''}`}
+        >
+          <div className="mock-topbar-desktop-row">
+            <span className="mock-topbar-date">{formatMastheadDate(now)}</span>
+            <span className="mock-topbar-center-copy">
+              Daily Devotionals for the Hungry Soul
+            </span>
+            <nav className="mock-topbar-nav mock-topbar-center-nav">
+              {NAV_ITEMS.map((item, index) => {
+                const active =
+                  pathname === item.href ||
+                  (item.href !== '/' && pathname?.startsWith(item.href))
+                return (
+                  <span key={item.href} className="mock-nav-item-wrap">
+                    <Link
+                      href={item.href}
+                      className={`mock-nav-item ${active ? 'is-active' : ''}`}
+                    >
+                      {item.label}
+                    </Link>
+                    {index < NAV_ITEMS.length - 1 && (
+                      <span aria-hidden="true">|</span>
+                    )}
+                  </span>
+                )
+              })}
+            </nav>
+            <button
+              type="button"
+              className="mock-mode-toggle text-label"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
+            </button>
+          </div>
+
+          <div
+            className={`mock-topbar-mobile-row ${navDocked ? 'is-nav-docked' : ''}`}
           >
-            {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
-          </button>
+            {!navDocked ? (
+              <>
+                <span
+                  className={`mock-topbar-mobile-item ${mobileTopbarIndex === 0 ? 'is-active' : ''}`}
+                >
+                  {formatMastheadDate(now)}
+                </span>
+                <span
+                  className={`mock-topbar-mobile-item ${mobileTopbarIndex === 1 ? 'is-active' : ''}`}
+                >
+                  Daily Devotionals for the Hungry Soul
+                </span>
+                <button
+                  type="button"
+                  className={`mock-topbar-mobile-item mock-topbar-mobile-mode ${mobileTopbarIndex === 2 ? 'is-active' : ''}`}
+                  onClick={toggleTheme}
+                  aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                >
+                  {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
+                </button>
+              </>
+            ) : (
+              <nav
+                className="mock-topbar-mobile-nav"
+                aria-label="Sticky navigation"
+              >
+                {NAV_ITEMS.map((item, index) => {
+                  const active =
+                    pathname === item.href ||
+                    (item.href !== '/' && pathname?.startsWith(item.href))
+                  return (
+                    <span key={item.href} className="mock-nav-item-wrap">
+                      <Link
+                        href={item.href}
+                        className={`mock-nav-item ${active ? 'is-active' : ''}`}
+                      >
+                        {item.label}
+                      </Link>
+                      {index < NAV_ITEMS.length - 1 && (
+                        <span aria-hidden="true">|</span>
+                      )}
+                    </span>
+                  )
+                })}
+              </nav>
+            )}
+          </div>
         </header>
 
         <section className="mock-masthead-block">
@@ -288,7 +410,11 @@ export default function Home() {
           <p className="mock-masthead-sub">GOOD NEWS COMING</p>
         </section>
 
-        <nav className="mock-nav text-label" aria-label="Main navigation">
+        <nav
+          ref={navRef}
+          className={`mock-nav text-label ${navDocked ? 'is-docked' : ''}`}
+          aria-label="Main navigation"
+        >
           {NAV_ITEMS.map((item, index) => {
             const active =
               pathname === item.href ||
