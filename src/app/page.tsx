@@ -168,6 +168,10 @@ export default function Home() {
   const limitReached = hydrated && hasReachedLimit()
 
   const featuredSlugs = useMemo(() => ALL_SERIES_ORDER.slice(0, 6), [])
+  const mobileNavItems = useMemo(
+    () => NAV_ITEMS.filter((item) => item.href !== '/settings'),
+    [],
+  )
   const faqWindow = useMemo(
     () =>
       [0, 1, 2].map(
@@ -266,7 +270,7 @@ export default function Home() {
     if (!isMobile || reducedMotion || navDocked) return
 
     const timer = window.setInterval(
-      () => setMobileTopbarIndex((prev) => (prev + 1) % 3),
+      () => setMobileTopbarIndex((prev) => (prev + 1) % 2),
       1500,
     )
     return () => window.clearInterval(timer)
@@ -278,6 +282,24 @@ export default function Home() {
     localStorage.setItem('theme', next)
     document.documentElement.classList.toggle('dark', next === 'dark')
   }
+
+  const renderNavLinks = (items: typeof NAV_ITEMS) =>
+    items.map((item, index) => {
+      const active =
+        pathname === item.href ||
+        (item.href !== '/' && pathname?.startsWith(item.href))
+      return (
+        <span key={item.href} className="mock-nav-item-wrap">
+          <Link
+            href={item.href}
+            className={`mock-nav-item ${active ? 'is-active' : ''}`}
+          >
+            {item.label}
+          </Link>
+          {index < items.length - 1 && <span aria-hidden="true">|</span>}
+        </span>
+      )
+    })
 
   async function submitAudit(raw: string) {
     if (limitReached) {
@@ -333,24 +355,7 @@ export default function Home() {
               Daily Devotionals for the Hungry Soul
             </span>
             <nav className="mock-topbar-nav mock-topbar-center-nav">
-              {NAV_ITEMS.map((item, index) => {
-                const active =
-                  pathname === item.href ||
-                  (item.href !== '/' && pathname?.startsWith(item.href))
-                return (
-                  <span key={item.href} className="mock-nav-item-wrap">
-                    <Link
-                      href={item.href}
-                      className={`mock-nav-item ${active ? 'is-active' : ''}`}
-                    >
-                      {item.label}
-                    </Link>
-                    {index < NAV_ITEMS.length - 1 && (
-                      <span aria-hidden="true">|</span>
-                    )}
-                  </span>
-                )
-              })}
+              {renderNavLinks(NAV_ITEMS)}
             </nav>
             <button
               type="button"
@@ -377,38 +382,21 @@ export default function Home() {
                 >
                   Daily Devotionals for the Hungry Soul
                 </span>
-                <button
-                  type="button"
-                  className={`mock-topbar-mobile-item mock-topbar-mobile-mode ${mobileTopbarIndex === 2 ? 'is-active' : ''}`}
-                  onClick={toggleTheme}
-                  aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-                >
-                  {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
-                </button>
               </>
             ) : (
               <nav
                 className="mock-topbar-mobile-nav"
                 aria-label="Sticky navigation"
               >
-                {NAV_ITEMS.map((item, index) => {
-                  const active =
-                    pathname === item.href ||
-                    (item.href !== '/' && pathname?.startsWith(item.href))
-                  return (
-                    <span key={item.href} className="mock-nav-item-wrap">
-                      <Link
-                        href={item.href}
-                        className={`mock-nav-item ${active ? 'is-active' : ''}`}
-                      >
-                        {item.label}
-                      </Link>
-                      {index < NAV_ITEMS.length - 1 && (
-                        <span aria-hidden="true">|</span>
-                      )}
-                    </span>
-                  )
-                })}
+                {renderNavLinks(mobileNavItems)}
+                <button
+                  type="button"
+                  className="mock-nav-mobile-theme-toggle"
+                  onClick={toggleTheme}
+                  aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                >
+                  {theme === 'dark' ? '☀' : '◐'}
+                </button>
               </nav>
             )}
           </div>
@@ -434,24 +422,20 @@ export default function Home() {
           className={`mock-nav text-label ${navDocked ? 'is-docked' : ''}`}
           aria-label="Main navigation"
         >
-          {NAV_ITEMS.map((item, index) => {
-            const active =
-              pathname === item.href ||
-              (item.href !== '/' && pathname?.startsWith(item.href))
-            return (
-              <span key={item.href} className="mock-nav-item-wrap">
-                <Link
-                  href={item.href}
-                  className={`mock-nav-item ${active ? 'is-active' : ''}`}
-                >
-                  {item.label}
-                </Link>
-                {index < NAV_ITEMS.length - 1 && (
-                  <span aria-hidden="true">|</span>
-                )}
-              </span>
-            )
-          })}
+          <div className="mock-nav-items mock-nav-items-desktop">
+            {renderNavLinks(NAV_ITEMS)}
+          </div>
+          <div className="mock-nav-items mock-nav-items-mobile">
+            {renderNavLinks(mobileNavItems)}
+            <button
+              type="button"
+              className="mock-nav-mobile-theme-toggle"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {theme === 'dark' ? '☀' : '◐'}
+            </button>
+          </div>
         </nav>
 
         <section className="mock-hero-grid">

@@ -60,6 +60,9 @@ Format: Reverse chronological, grouped by sprint/date.
   - Date/time, subtitle, and mode toggle now fade between each other instead of stacking
   - One item visible at a time with a 1.5s fade transition
 - Confirmed image containers remain flush (no added internal padding) for hero engraving, step images, and featured media frames.
+- Adjusted masthead subline alignment and sizing:
+  - `GOOD NEWS COMING` now aligns to the same right edge as the `EUANGELION` lockup
+  - Mobile subline size reduced to roughly half its previous visual size
 - Rebuilt the “How this works” card internals in `src/app/page.tsx` and `src/app/globals.css`:
   - Step illustrations now sit on the left side of each card
   - Images run full-height within the box with a dedicated vertical divider
@@ -74,6 +77,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - Bumped service worker cache namespace from `euangelion-v28` -> `euangelion-v29` in `public/sw.js` for the dynamic edge-to-edge masthead fit update.
 - Bumped service worker cache namespace from `euangelion-v29` -> `euangelion-v30` in `public/sw.js` for sticky header + natural masthead fit refresh.
 - Bumped service worker cache namespace from `euangelion-v30` -> `euangelion-v31` in `public/sw.js` for sticky-nav observer + image-padding correction refresh.
+- Bumped service worker cache namespace from `euangelion-v31` -> `euangelion-v32` in `public/sw.js` for masthead subline alignment + mobile size correction.
 
 ### Validation
 

@@ -1890,10 +1890,11 @@
 
 .mock-masthead-sub {
   margin: 0.08rem 0 0;
+  width: 100%;
   text-align: right;
   font-size: clamp(1.14rem, 1.35vw, 1.92rem);
   line-height: 1;
-  padding-right: 0.06em;
+  padding-right: 0;
   font-family: var(--font-family-serif);
 }
 
@@ -2435,6 +2436,10 @@
 
   .mock-nav {
     justify-content: flex-start;
+  }
+
+  .mock-masthead-sub {
+    font-size: clamp(0.56rem, 2.1vw, 0.8rem);
   }
 
   .mock-hero-grid,
