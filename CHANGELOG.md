@@ -35,6 +35,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Exact Homepage Mockup Reconstruction (2026-02-12)
+
+### What Changed
+
+- Rebuilt `/src/app/page.tsx` to match the provided newspaper mockup layout exactly:
+  - Top date rail + centered subtitle + right dark-mode control
+  - Full-width `EUANGELION` masthead + `GOOD NEWS COMING`
+  - Inline nav row (`HOME | SOUL AUDIT | WAKE-UP | SERIES | SETTING`)
+  - Hero triptych (engraving panel + left intro copy + right Soul Audit form)
+  - “How this works” headline and 3 step cards
+  - 3x2 featured devotional grid with mockup-style card geometry
+  - Centered “More Devotionals” strip
+  - FAQ/quote row with hover/tap answer reveal behavior
+  - Bottom CTA block and full-width closing `EUANGELION`
+- Added dedicated exact-match style system in `/src/app/globals.css` under `EXACT MOCKUP HOMEPAGE`:
+  - Mockup-specific color tokens for light and dark variants
+  - Border cadence, panel sizing, typography scale, and spacing tuned to the Illustrator composition
+  - Mobile fallback that preserves structure without horizontal overflow
+- Ensured masthead treatment uses Industry (UI stack) and body/copy uses Instrument Serif.
+- Removed forced smooth-scroll behavior in app providers (native browser scroll restored).
+- Bumped service worker cache namespace from `euangelion-v20` -> `euangelion-v21` in `/public/sw.js` to force refresh of the rebuilt homepage.
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm run build`
+
+---
+
 ## Newspaper Rebuild v3 + Illustration Pipeline Scaffold (2026-02-12)
 
 ### What Changed
