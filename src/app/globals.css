@@ -2127,7 +2127,7 @@
 }
 
 .mock-step-copy {
-  padding: 0.62rem 0.64rem 0.52rem;
+  padding: 0.62rem 0.64rem 0.3rem;
   display: grid;
   align-content: start;
 }
@@ -2495,7 +2495,7 @@
   }
 
   .mock-step-copy {
-    padding: 0.8rem 0.84rem 0.74rem;
+    padding: 0.8rem 0.84rem 0.42rem;
   }
 
   .mock-panel {

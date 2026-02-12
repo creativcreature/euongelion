@@ -158,6 +158,7 @@ export default function Home() {
   const [faqIndex, setFaqIndex] = useState(0)
   const [navDocked, setNavDocked] = useState(false)
   const [mobileTopbarIndex, setMobileTopbarIndex] = useState(0)
+  const [isMobileViewport, setIsMobileViewport] = useState(false)
 
   const hydrated = useSyncExternalStore(
     emptySubscribe,
@@ -179,10 +180,20 @@ export default function Home() {
       ),
     [faqIndex],
   )
+  const faqItemsToRender = isMobileViewport ? FAQ_ITEMS : faqWindow
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')
   }, [theme])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const media = window.matchMedia('(max-width: 900px)')
+    const syncViewport = () => setIsMobileViewport(media.matches)
+    syncViewport()
+    media.addEventListener('change', syncViewport)
+    return () => media.removeEventListener('change', syncViewport)
+  }, [])
 
   useEffect(() => {
     const timer = window.setInterval(() => setNow(new Date()), 30_000)
@@ -576,27 +587,29 @@ export default function Home() {
 
         <section className="mock-faq-row">
           <article className="mock-faq-lead">
-            <h3>What are you wrestling with today?</h3>
+            <h3>Questions before you begin?</h3>
             <p>
               Write one honest paragraph, and we will customize a 5 day
               devotional plan for you.
             </p>
           </article>
 
-          <button
-            type="button"
-            className="mock-arrow"
-            aria-label="Previous question"
-            onClick={() =>
-              setFaqIndex(
-                (prev) => (prev - 1 + FAQ_ITEMS.length) % FAQ_ITEMS.length,
-              )
-            }
-          >
-            &lt;
-          </button>
+          {!isMobileViewport && (
+            <button
+              type="button"
+              className="mock-arrow"
+              aria-label="Previous question"
+              onClick={() =>
+                setFaqIndex(
+                  (prev) => (prev - 1 + FAQ_ITEMS.length) % FAQ_ITEMS.length,
+                )
+              }
+            >
+              &lt;
+            </button>
+          )}
 
-          {faqWindow.map((item, idx) => (
+          {faqItemsToRender.map((item, idx) => (
             <article
               key={`${item.question}-${idx}`}
               className="mock-faq-card"
@@ -607,14 +620,18 @@ export default function Home() {
             </article>
           ))}
 
-          <button
-            type="button"
-            className="mock-arrow"
-            aria-label="Next question"
-            onClick={() => setFaqIndex((prev) => (prev + 1) % FAQ_ITEMS.length)}
-          >
-            &gt;
-          </button>
+          {!isMobileViewport && (
+            <button
+              type="button"
+              className="mock-arrow"
+              aria-label="Next question"
+              onClick={() =>
+                setFaqIndex((prev) => (prev + 1) % FAQ_ITEMS.length)
+              }
+            >
+              &gt;
+            </button>
+          )}
         </section>
 
         <section className="mock-cta">

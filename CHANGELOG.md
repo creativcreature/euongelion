@@ -72,6 +72,10 @@ Format: Reverse chronological, grouped by sprint/date.
 - Converted `Featured Series` into a mobile carousel:
   - Horizontal swipe rail with snap scrolling on cards
   - Desktop 3-column newspaper grid remains unchanged
+- Updated mobile FAQ section behavior:
+  - Renamed FAQ lead headline to reduce duplicate wording with the hero prompt
+  - Mobile now renders all FAQ questions instead of the 3-card window
+  - Removed FAQ arrow controls on mobile (desktop arrows remain)
 - Rebuilt the “How this works” card internals in `src/app/page.tsx` and `src/app/globals.css`:
   - Step illustrations now sit on the left side of each card
   - Images run full-height within the box with a dedicated vertical divider
@@ -90,6 +94,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - Bumped service worker cache namespace from `euangelion-v32` -> `euangelion-v33` in `public/sw.js` for mobile step-grid proportion + separator updates.
 - Bumped service worker cache namespace from `euangelion-v33` -> `euangelion-v34` in `public/sw.js` for mobile body-copy size refresh.
 - Bumped service worker cache namespace from `euangelion-v34` -> `euangelion-v35` in `public/sw.js` for mobile featured carousel refresh.
+- Bumped service worker cache namespace from `euangelion-v35` -> `euangelion-v36` in `public/sw.js` for mobile FAQ all-questions + no-arrows refresh.
 
 ### Validation
 
