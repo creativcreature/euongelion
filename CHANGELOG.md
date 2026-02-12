@@ -63,6 +63,15 @@ Format: Reverse chronological, grouped by sprint/date.
 - Adjusted masthead subline alignment and sizing:
   - `GOOD NEWS COMING` now aligns to the same right edge as the `EUANGELION` lockup
   - Mobile subline size reduced to roughly half its previous visual size
+- Mobile “How this works” step row now follows requested proportions:
+  - Image column set to ~1/3 and text column to ~2/3
+  - Added clear card separators between each step text container on mobile
+- Increased homepage mobile body-copy sizing for readability:
+  - Larger paragraph text across hero/supporting copy, step descriptions, featured descriptions, FAQ answers, and CTA supporting text
+  - Kept labels/meta typography unchanged so hierarchy remains intact
+- Converted `Featured Series` into a mobile carousel:
+  - Horizontal swipe rail with snap scrolling on cards
+  - Desktop 3-column newspaper grid remains unchanged
 - Rebuilt the “How this works” card internals in `src/app/page.tsx` and `src/app/globals.css`:
   - Step illustrations now sit on the left side of each card
   - Images run full-height within the box with a dedicated vertical divider
@@ -78,6 +87,9 @@ Format: Reverse chronological, grouped by sprint/date.
 - Bumped service worker cache namespace from `euangelion-v29` -> `euangelion-v30` in `public/sw.js` for sticky header + natural masthead fit refresh.
 - Bumped service worker cache namespace from `euangelion-v30` -> `euangelion-v31` in `public/sw.js` for sticky-nav observer + image-padding correction refresh.
 - Bumped service worker cache namespace from `euangelion-v31` -> `euangelion-v32` in `public/sw.js` for masthead subline alignment + mobile size correction.
+- Bumped service worker cache namespace from `euangelion-v32` -> `euangelion-v33` in `public/sw.js` for mobile step-grid proportion + separator updates.
+- Bumped service worker cache namespace from `euangelion-v33` -> `euangelion-v34` in `public/sw.js` for mobile body-copy size refresh.
+- Bumped service worker cache namespace from `euangelion-v34` -> `euangelion-v35` in `public/sw.js` for mobile featured carousel refresh.
 
 ### Validation
 

@@ -2442,6 +2442,18 @@
     font-size: clamp(0.56rem, 2.1vw, 0.8rem);
   }
 
+  .mock-body,
+  .mock-subcopy,
+  .mock-subcopy-center,
+  .mock-step-card p,
+  .mock-featured-card p,
+  .mock-faq-lead p,
+  .mock-faq-answer,
+  .mock-cta .mock-subcopy-center {
+    font-size: clamp(1.04rem, 3.55vw, 1.22rem);
+    line-height: 1.34;
+  }
+
   .mock-hero-grid,
   .mock-steps-grid,
   .mock-featured-grid {
@@ -2460,12 +2472,62 @@
     border-right: 0;
   }
 
+  .mock-steps-grid {
+    border-top: 1px solid var(--mock-line);
+  }
+
+  .mock-step-card {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    min-height: 188px;
+    border-top: 1px solid var(--mock-line);
+  }
+
+  .mock-step-card:first-child {
+    border-top: 0;
+  }
+
+  .mock-step-image-wrap {
+    min-height: 188px;
+  }
+
+  .mock-step-image {
+    min-height: 188px;
+  }
+
+  .mock-step-copy {
+    padding: 0.8rem 0.84rem 0.74rem;
+  }
+
   .mock-panel {
     padding: 0.86rem 0.95rem 0.96rem;
   }
 
   .mock-featured-card {
     border-top: 1px solid var(--mock-line);
+  }
+
+  .mock-featured-grid {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    min-height: auto;
+  }
+
+  .mock-featured-card {
+    flex: 0 0 84vw;
+    scroll-snap-align: start;
+    min-height: 488px;
+    border-right: 1px solid var(--mock-line);
+  }
+
+  .mock-featured-card:nth-child(3n) {
+    border-right: 1px solid var(--mock-line);
+  }
+
+  .mock-featured-card:last-child {
+    border-right: 0;
   }
 
   .mock-featured-card h3,
