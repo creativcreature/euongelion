@@ -53,7 +53,7 @@ export default function WakeUpPage() {
         </FadeIn>
         <div className="mx-auto w-full max-w-[280px] md:max-w-none">
           <IllustrationFrame
-            src="/images/illustrations/euangelion-homepage-engraving-08.svg"
+            src="/images/illustrations/generated/wakeup-hero-generated.png"
             alt="Wake-Up engraving"
             effect="woodblock"
             aspect="portrait"

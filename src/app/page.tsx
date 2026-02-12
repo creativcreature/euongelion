@@ -40,17 +40,17 @@ const AUDIT_PROMPTS = [
 const MASTHEAD_LETTERS = 'EUANGELION'.split('')
 
 const NEWSPAPER_ILLUSTRATIONS = {
-  hero: '/images/illustrations/euangelion-homepage-engraving-04.svg',
-  flow: '/images/illustrations/euangelion-homepage-engraving-05.svg',
-  featured: '/images/illustrations/euangelion-homepage-engraving-06.svg',
-  faq: '/images/illustrations/euangelion-homepage-engraving-07.svg',
-  cta: '/images/illustrations/euangelion-homepage-engraving-08.svg',
+  hero: '/images/illustrations/generated/home-hero-generated.png',
+  flow: '/images/illustrations/generated/home-flow-generated.png',
+  featured: '/images/illustrations/generated/home-featured-generated.png',
+  faq: '/images/illustrations/generated/home-faq-generated.png',
+  cta: '/images/illustrations/generated/devotional-milestone-generated.png',
 } as const
 
 const FLOW_ILLUSTRATIONS = [
-  '/images/illustrations/euangelion-homepage-engraving-09.svg',
-  '/images/illustrations/euangelion-homepage-engraving-10.svg',
-  '/images/illustrations/euangelion-homepage-engraving-11.svg',
+  '/images/illustrations/generated/home-flow-generated.png',
+  '/images/illustrations/generated/series-hero-generated.png',
+  '/images/illustrations/generated/devotional-milestone-generated.png',
 ]
 
 function getInitialTheme(): 'light' | 'dark' {

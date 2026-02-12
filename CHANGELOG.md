@@ -63,6 +63,15 @@ Format: Reverse chronological, grouped by sprint/date.
   - `public/fonts/IndustryTest-Bold.otf`
   - `public/images/illustrations/*` (from `user-references/illustrations`)
   - `public/images/illustrations/placeholder-ink-block.svg`
+- Executed live Gemini image generation batch (7/7 success) and wired generated outputs into active UI:
+  - `public/images/illustrations/generated/home-hero-generated.png`
+  - `public/images/illustrations/generated/home-flow-generated.png`
+  - `public/images/illustrations/generated/home-featured-generated.png`
+  - `public/images/illustrations/generated/home-faq-generated.png`
+  - `public/images/illustrations/generated/wakeup-hero-generated.png`
+  - `public/images/illustrations/generated/series-hero-generated.png`
+  - `public/images/illustrations/generated/devotional-milestone-generated.png`
+  - `public/images/illustrations/generated/generation-summary.json`
 - Extended motion config in `src/lib/animation-config.ts`:
   - Added `editorialSubtle` and `devotionalCinematic` profiles
   - Added rail timing tokens

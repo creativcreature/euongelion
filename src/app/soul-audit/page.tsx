@@ -166,7 +166,7 @@ export default function SoulAuditPage() {
           <FadeIn delay={0.34} y={10}>
             <div className="mx-auto mb-8 max-w-[240px]">
               <IllustrationFrame
-                src="/images/illustrations/euangelion-homepage-engraving-07.svg"
+                src="/images/illustrations/generated/home-faq-generated.png"
                 alt="Soul audit illustration"
                 effect="halftone"
                 aspect="square"

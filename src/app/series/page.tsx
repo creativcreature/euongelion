@@ -36,7 +36,7 @@ export default function SeriesBrowsePage() {
           </p>
           <div className="mt-8 max-w-[320px]">
             <IllustrationFrame
-              src="/images/illustrations/euangelion-homepage-engraving-11.svg"
+              src="/images/illustrations/generated/series-hero-generated.png"
               alt="Series archive motif"
               effect="dither"
               aspect="banner"

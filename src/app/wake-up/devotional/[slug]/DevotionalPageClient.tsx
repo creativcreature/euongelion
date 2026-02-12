@@ -221,7 +221,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
             )}
             <div className="mt-8 max-w-[240px]">
               <IllustrationFrame
-                src="/images/illustrations/euangelion-homepage-engraving-10.svg"
+                src="/images/illustrations/generated/devotional-milestone-generated.png"
                 alt="Devotional engraving motif"
                 effect="ink"
                 aspect="square"

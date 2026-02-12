@@ -84,7 +84,7 @@ export default function SeriesPageClient({
           <div className="md:col-span-4 md:col-start-9">
             <DevotionalMilestoneReveal className="mb-6" variant="editorial">
               <IllustrationFrame
-                src="/images/illustrations/euangelion-homepage-engraving-09.svg"
+                src="/images/illustrations/generated/series-hero-generated.png"
                 alt="Series engraving motif"
                 effect="halftone"
                 aspect="square"
