@@ -1829,25 +1829,27 @@
 
 .mock-masthead-block {
   border-bottom: var(--mock-stroke) solid var(--mock-line);
-  padding: 0.36rem 0 0.42rem;
-  min-height: 182px;
+  padding: 0.22rem 0 0.3rem;
+  min-height: auto;
+  height: auto;
+  container-type: inline-size;
 }
 
 .mock-masthead-word {
-  margin: 0 auto;
+  margin: 0;
   display: block;
-  width: 100%;
+  width: calc(100% + 0.11em);
+  margin-inline: -0.055em;
   max-width: 100%;
   text-align: center;
   white-space: nowrap;
-  overflow: hidden;
-  font-size: var(--mock-type-masthead);
-  line-height: 0.79;
+  font-size: clamp(2.72rem, 12.1cqi, 13.8rem);
+  line-height: 0.9;
   color: var(--mock-blue);
   text-transform: uppercase;
-  letter-spacing: 0;
-  transform: scaleX(1.045);
-  transform-origin: center center;
+  letter-spacing: -0.01em;
+  overflow: visible;
+  transform: none;
 }
 
 .mock-masthead-sub {
@@ -2246,10 +2248,12 @@
 }
 
 .mock-bottom-brand {
-  min-height: var(--mock-h-bottom-brand);
-  padding: 0.4rem 0 0.62rem;
+  min-height: auto;
+  height: auto;
+  padding: 0.26rem 0 0.44rem;
   display: grid;
   align-content: end;
+  container-type: inline-size;
 }
 
 .mock-bottom-brand .mock-masthead-word {
