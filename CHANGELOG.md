@@ -46,6 +46,7 @@ Format: Reverse chronological, grouped by sprint/date.
   - Resized + centered both mastheads so `EUANGELION` fills the container width without overflow clipping on responsive breakpoints
   - Removed fixed masthead section heights so both top and bottom `EUANGELION` containers are content-driven (`auto`) and no longer clip vertically
   - Switched masthead word sizing to container-based scale and applied edge compensation so the word now fills left and right edges without extra side gap
+  - Increased masthead scale substantially with browser-safe `vw` fallback + `cqi` enhancement so `EUANGELION` consistently fills the full container width and remains centered
 - Rebuilt the “How this works” card internals in `src/app/page.tsx` and `src/app/globals.css`:
   - Step illustrations now sit on the left side of each card
   - Images run full-height within the box with a dedicated vertical divider
@@ -55,6 +56,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - Bumped service worker cache namespace from `euangelion-v23` -> `euangelion-v24` in `public/sw.js` so clients pick up the latest layout calibration immediately.
 - Bumped service worker cache namespace from `euangelion-v24` -> `euangelion-v25` in `public/sw.js` for the masthead sizing/centering refresh.
 - Bumped service worker cache namespace from `euangelion-v25` -> `euangelion-v26` in `public/sw.js` for the masthead auto-height + edge-fill correction.
+- Bumped service worker cache namespace from `euangelion-v26` -> `euangelion-v27` in `public/sw.js` for the larger full-width masthead sizing refresh.
 
 ### Validation
 

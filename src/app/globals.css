@@ -1836,20 +1836,26 @@
 }
 
 .mock-masthead-word {
-  margin: 0;
+  margin: 0 auto;
   display: block;
-  width: calc(100% + 0.11em);
-  margin-inline: -0.055em;
-  max-width: 100%;
+  width: 100%;
+  max-width: none;
   text-align: center;
   white-space: nowrap;
-  font-size: clamp(2.72rem, 12.1cqi, 13.8rem);
-  line-height: 0.9;
+  font-size: clamp(2.7rem, 17.4vw, 21rem);
+  line-height: 0.82;
   color: var(--mock-blue);
   text-transform: uppercase;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.018em;
   overflow: visible;
-  transform: none;
+  transform: scaleX(1.015);
+  transform-origin: center center;
+}
+
+@supports (font-size: 1cqi) {
+  .mock-masthead-word {
+    font-size: clamp(2.7rem, 17.4cqi, 21rem);
+  }
 }
 
 .mock-masthead-sub {
