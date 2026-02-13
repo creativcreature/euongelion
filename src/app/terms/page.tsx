@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs'
 import path from 'path'
-import Navigation from '@/components/Navigation'
+import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 
 export const metadata = {
   title: 'Terms of Service | Euangelion',
@@ -22,8 +22,8 @@ export default async function TermsPage() {
   const html = markdownToHtml(content)
 
   return (
-    <div className="min-h-screen bg-page">
-      <Navigation />
+    <div className="newspaper-home min-h-screen">
+      <EuangelionShellHeader />
 
       <main
         id="main-content"

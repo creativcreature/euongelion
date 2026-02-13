@@ -1,10 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import Navigation from '@/components/Navigation'
+import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
-import IllustrationFrame from '@/components/newspaper/IllustrationFrame'
 import DevotionalMilestoneReveal from '@/components/newspaper/DevotionalMilestoneReveal'
 import { typographer } from '@/lib/typographer'
 import { DEVOTIONAL_SERIES, WAKEUP_SERIES_ORDER } from '@/data/series'
@@ -12,10 +11,10 @@ import { DEVOTIONAL_SERIES, WAKEUP_SERIES_ORDER } from '@/data/series'
 export default function WakeUpPage() {
   return (
     <div className="newspaper-home min-h-screen">
-      <Navigation />
+      <EuangelionShellHeader />
 
       {/* Full-viewport Hero */}
-      <header className="section-rule grid min-h-[82vh] items-center gap-6 px-6 py-12 text-center md:grid-cols-[1fr_300px] md:px-[60px] lg:px-20">
+      <header className="section-rule grid min-h-[82vh] items-center gap-6 px-6 py-12 text-center md:px-[60px] lg:px-20">
         <DevotionalMilestoneReveal variant="cinematic">
           <h1
             className="text-display mb-6"
@@ -51,16 +50,6 @@ export default function WakeUpPage() {
             Start with Question 01
           </Link>
         </FadeIn>
-        <div className="mx-auto w-full max-w-[280px] md:max-w-none">
-          <IllustrationFrame
-            src="/images/illustrations/generated/wakeup-hero-generated.png"
-            alt="Wake-Up engraving"
-            effect="woodblock"
-            aspect="portrait"
-            decorative
-            wordblock="WAKE-UP EDITION"
-          />
-        </div>
       </header>
 
       {/* Problem Statement — full-width surface */}

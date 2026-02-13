@@ -26,6 +26,9 @@ jobs:
       - name: Verify Production Contracts
         run: npm run verify:production-contracts
 
+      - name: Verify Tracking Integrity
+        run: npm run verify:tracking
+
       - name: Lint
         run: npm run lint
 

@@ -3,11 +3,21 @@
 import { Suspense, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import Navigation from '@/components/Navigation'
+import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+
+function normalizeRedirectPath(value: string | null): string {
+  if (!value) return '/'
+  const trimmed = value.trim()
+  if (!trimmed.startsWith('/')) return '/'
+  if (trimmed.startsWith('//')) return '/'
+  if (trimmed.includes('://')) return '/'
+  if (trimmed.length > 240) return '/'
+  return trimmed
+}
 
 function SignInForm() {
   const searchParams = useSearchParams()
-  const redirect = searchParams.get('redirect') || '/'
+  const redirect = normalizeRedirectPath(searchParams.get('redirect'))
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>(
     'idle',
@@ -32,7 +42,7 @@ function SignInForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email: trimmed,
-          redirectTo: `${window.location.origin}/auth/callback?redirect=${encodeURIComponent(redirect)}`,
+          redirectTo: `/auth/callback?redirect=${encodeURIComponent(redirect)}`,
         }),
       })
 
@@ -131,8 +141,8 @@ function SignInForm() {
 
 export default function SignInPage() {
   return (
-    <div className="min-h-screen bg-page">
-      <Navigation />
+    <div className="newspaper-home min-h-screen">
+      <EuangelionShellHeader />
 
       <main
         id="main-content"

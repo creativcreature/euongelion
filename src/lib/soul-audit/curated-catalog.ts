@@ -82,6 +82,19 @@ function normalizeDay(raw: unknown, fallbackDay: number): CuratedDay | null {
       const type = String(panel.type || '')
       return type === 'text' || type === 'text-with-image'
     })
+    const takeawayPanel = [...panels].reverse().find((panel) => {
+      const type = String(panel.type || '')
+      return type === 'text' || type === 'text-with-image'
+    })
+    const takeawayLine = String(
+      (dayObj.nextStep as string) ||
+        (dayObj.takeaway as string) ||
+        takeawayPanel?.content ||
+        '',
+    )
+      .trim()
+      .split('\n')
+      .find((line) => line.trim().length > 10)
 
     const syntheticModules: Array<Record<string, unknown>> = [
       {
@@ -102,6 +115,12 @@ function normalizeDay(raw: unknown, fallbackDay: number): CuratedDay | null {
       {
         type: 'prayer',
         prayerText: String(prayerPanel?.content || '').trim(),
+      },
+      {
+        type: 'takeaway',
+        commitment:
+          takeawayLine ||
+          `Practice one concrete response to "${title}" before the day ends.`,
       },
     ]
 

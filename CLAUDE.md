@@ -58,7 +58,7 @@ design-system/            # Design tokens, typography, dark mode
 - **Styling:** Tailwind utility classes. Order: layout → position → size → spacing → typography → visual → interactive
 - **State:** React hooks + localStorage (no external state lib yet)
 - **Dark mode:** Dark-first (`html.dark`). HSL color system.
-- **Fonts:** Inter (body/UI), Instrument Serif (display/serif). SBL Hebrew for original language.
+- **Fonts:** Instrument Serif (body + display reading copy), Industry (UI/meta/nav labels), SBL Hebrew for original language.
 
 ## Design Philosophy
 
@@ -101,6 +101,43 @@ Three visual directions proposed (founder decision pending):
 | Legal         | `content/legal/`, `docs/legal/`                                    |
 | Progress      | `CHANGELOG.md` — current sprint status + full history              |
 
+## Production Tracking Spine (Read First)
+
+These are mandatory every session and are the continuity backbone after context compaction:
+
+1. `docs/PRODUCTION-SOURCE-OF-TRUTH.md` — human canonical product intent.
+2. `docs/production-decisions.yaml` — machine contracts and decision ids.
+3. `docs/PRODUCTION-FEATURE-SCORECARD.md` — current feature-by-feature quality rating.
+4. `docs/PRODUCTION-10-10-PLAN.md` — gap-to-10 execution plan with acceptance criteria.
+5. `docs/PRODUCTION-COMPACTION-HANDOFF.md` — resume protocol and handoff checklist.
+6. `CHANGELOG.md` — historical log of shipped changes.
+
+## Product Alignment Docs (Required For UX Decisions)
+
+When changing user-facing behavior, these must be consulted in addition to the tracking spine:
+
+1. `docs/AUDIENCE.md` — who this is for and what they expect emotionally.
+2. `docs/PUBLIC-FACING-LANGUAGE.md` — approved tone/copy patterns.
+3. `docs/UX-FLOW-MAPS.md` — intended journey sequencing and decision points.
+4. `docs/SUCCESS-METRICS.md` — what “good flow” should optimize for.
+
+Before commit/PR:
+
+```bash
+npm run type-check
+npm run verify:production-contracts
+npm run verify:tracking
+npm run lint
+npm test
+```
+
+Release-quality verification (required before “production ready” claims):
+
+```bash
+npm run verify:ios-readiness
+npm run build
+```
+
 ## Current Status
 
 See `CHANGELOG.md` for full history and current sprint checklist.
@@ -140,6 +177,7 @@ If any check fails, **STOP**. Do not push or deploy.
 6. **Don't over-engineer.** Build what's needed now, not what might be needed later.
 7. **Surface assumptions.** State them before implementing. Ask if uncertain.
 8. **Verify accounts before deploying.** Check `vercel whoami` and `git config user.email` before any deploy or push. Wrong account = broken deploys.
+9. **Never ship doc/contract drift.** `docs/PRODUCTION-SOURCE-OF-TRUTH.md`, `docs/production-decisions.yaml`, `docs/PRODUCTION-FEATURE-SCORECARD.md`, `docs/PRODUCTION-10-10-PLAN.md`, `docs/PRODUCTION-COMPACTION-HANDOFF.md`, and `CHANGELOG.md` must remain aligned.
 
 ## Reference Library
 

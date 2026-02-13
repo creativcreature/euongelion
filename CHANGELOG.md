@@ -35,6 +35,514 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Auth Magic-Link Redirect Fix (2026-02-13)
+
+### What Changed
+
+- Fixed magic-link redirect construction to prevent fallback to wrong localhost host/port:
+  - `redirectTo` is now treated as a safe relative path and converted to an absolute callback URL using request origin in auth API route.
+  - file: `src/app/api/auth/magic-link/route.ts`
+- Fixed sign-in page payload so redirect path survives API sanitization:
+  - send relative callback path (`/auth/callback?...`) instead of absolute URL string.
+  - added local redirect-path normalization guard.
+  - file: `src/app/auth/sign-in/page.tsx`
+- Hardened auth callback redirect handling:
+  - callback now sanitizes `redirect` query param server-side before redirecting.
+  - file: `src/app/auth/callback/route.ts`
+- Added safety-net recovery for misrouted auth links landing on homepage (`/?code=...`):
+  - homepage now forwards auth callback query params to `/auth/callback`.
+  - file: `src/app/page.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test` (60 passing)
+
+---
+
+## Full 10/10 Phase Execution Pass C (2026-02-13)
+
+### What Changed
+
+- Billing lifecycle and iOS/web parity improvements:
+  - Added secure billing flash/session helpers:
+    - `src/lib/billing/flash.ts`
+  - Added Stripe billing portal route with request validation, rate limiting, request-id headers, and checkout-session-to-customer resolution:
+    - `src/app/api/billing/portal/route.ts`
+  - Hardened checkout route response behavior:
+    - adds request-id headers and explicit error codes
+    - includes `session_id={CHECKOUT_SESSION_ID}` on success redirect for billing management handoff
+    - file: `src/app/api/billing/checkout/route.ts`
+  - Extended billing config contract:
+    - `supportsBillingPortal` flag added in API + type contract
+    - files:
+      - `src/app/api/billing/config/route.ts`
+      - `src/types/billing.ts`
+  - Settings billing UX completion:
+    - parses and consumes billing query-state (`success` / `cancelled`)
+    - validates checkout session id and strips it from URL after consumption
+    - adds `Manage Subscription` flow through `/api/billing/portal`
+    - adds clearer disabled-state reasons and accessibility (`aria-live`, `aria-busy`, `aria-pressed`)
+    - file: `src/app/settings/page.tsx`
+- Accessibility + interaction polish:
+  - FAQ cards are now keyboard-operable on desktop with explicit active state and `aria-expanded` behavior.
+  - file: `src/app/page.tsx`
+  - Added FAQ active-state and reduced-motion style handling.
+  - file: `src/app/globals.css`
+- Motion/performance stabilization:
+  - Reworked editorial motion scanning from full-document rescans to incremental subtree scanning via mutation-added roots.
+  - Added disabled-interactive guards in motion prep logic.
+  - file: `src/components/EditorialMotionSystem.tsx`
+  - Added `content-visibility` optimization for long-form reading flow blocks.
+  - file: `src/app/globals.css`
+- iOS readiness tracking hardening:
+  - readiness script now asserts billing-portal route + settings integration.
+  - files:
+    - `scripts/check-ios-readiness.mjs`
+    - `docs/IOS-APP-STORE-SUBMISSION.md`
+- Added new test coverage for billing flash/session sanitization:
+  - `__tests__/billing-flash.test.ts`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test` (60 passing)
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:ios-readiness`
+- `npm run build` fails in this environment under Node `v25.3.0` with webpack `WasmHash` crash (`TypeError` in `next/dist/compiled/webpack/bundle5.js`). Project engine remains `>=20.10 <25`.
+
+---
+
+## Tracking Governance + 10/10 Planning Expansion (2026-02-13)
+
+### What Changed
+
+- Strengthened required documentation alignment for user-facing decisions:
+  - expanded machine contracts in `docs/production-decisions.yaml` with `SA-013`:
+    - `ux-alignment-docs-required-for-user-facing-decisions`
+  - expanded required tracking docs and required `CLAUDE.md` references to include:
+    - `docs/AUDIENCE.md`
+    - `docs/PUBLIC-FACING-LANGUAGE.md`
+    - `docs/UX-FLOW-MAPS.md`
+    - `docs/SUCCESS-METRICS.md`
+- Expanded production quality documentation for full-feature scoring and execution:
+  - rewrote `docs/PRODUCTION-FEATURE-SCORECARD.md` to include:
+    - explicit user-flow score matrix
+    - feature-by-feature scoring across governance, UX, soul audit, curation, reliability, accessibility, billing, iOS
+    - real-world benchmark mapping for each major touchpoint (Notion, Headspace, Stripe, Linear, Apple News, RevenueCat, Apple App Review)
+  - rewrote `docs/PRODUCTION-10-10-PLAN.md` to include:
+    - category-by-category target table
+    - six-phase execution path with measurable exit criteria
+    - verification and manual QA matrices
+    - required evidence artifacts for 10/10 claims
+  - rewrote `docs/PRODUCTION-COMPACTION-HANDOFF.md` with stricter resume protocol and non-negotiables
+- Updated `docs/PRODUCTION-SOURCE-OF-TRUTH.md`:
+  - added explicit UX alignment contract section tying behavior decisions to audience/language/flow/success docs
+
+### Validation
+
+- `npm run type-check`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run lint`
+- `npm test` (57 passing)
+- `npm run verify:ios-readiness`
+- `npm run build` fails in this environment under Node `v25.3.0` with webpack `WasmHash` crash (`TypeError` in `next/dist/compiled/webpack/bundle5.js`). Project engine remains `>=20.10 <25`.
+
+---
+
+## UX Flow Clarity Pass C (2026-02-13)
+
+### What Changed
+
+- Replaced forced homepage auto-redirect to active route with a visible resume CTA:
+  - homepage now keeps user agency and shows `CONTINUE MY DEVOTIONAL` when an active path exists
+  - file: `src/app/page.tsx`
+- Improved homepage copy clarity and reduced repetitive placeholder language:
+  - refreshed How-it-Works body text
+  - refreshed Featured Series support copy
+  - updated featured card support line to use series question
+  - refined FAQ lead copy
+  - file: `src/app/page.tsx`
+- Strengthened Soul Audit option-card disabled affordance:
+  - clearer locked visual treatment and unlock hint text before consent
+  - files:
+    - `src/app/soul-audit/results/page.tsx`
+    - `src/app/globals.css`
+- Improved mobile FAQ readability:
+  - FAQ answers now remain visible on mobile for lower-friction scan behavior
+  - file: `src/app/globals.css`
+- Added explicit locked-day guidance on series list cards:
+  - locked items now render an inline unlock explanation
+  - file: `src/app/wake-up/series/[slug]/SeriesPageClient.tsx`
+- Added style support for homepage active-path banner:
+  - file: `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+
+---
+
+## Production Tracking + 10/10 Quality Governance Hardening (2026-02-13)
+
+### What Changed
+
+- Added a machine-enforced tracking integrity layer:
+  - New script: `scripts/check-tracking-integrity.mjs`
+  - New npm script: `npm run verify:tracking`
+  - Enforces:
+    - required production tracking docs exist
+    - `CLAUDE.md` includes required production references
+    - `package.json` semver and `CHANGELOG.md` version marker stay aligned
+    - pre-commit and CI both execute tracking verification
+- Wired tracking verification into enforcement points:
+  - `.husky/pre-commit` now runs `npm run verify:tracking`
+  - `.github/workflows/ci.yml` now runs `npm run verify:tracking`
+- Expanded machine contracts in `docs/production-decisions.yaml`:
+  - Added SA-010, SA-011, SA-012 (tracking spine, version sync, CLAUDE references)
+  - Added required tracking docs + required CLAUDE references contract sections
+- Strengthened documentation continuity and production planning:
+  - Added `docs/PRODUCTION-FEATURE-SCORECARD.md` (feature-by-feature scored gap analysis)
+  - Added `docs/PRODUCTION-10-10-PLAN.md` (category-by-category gap-to-10 remediation with acceptance criteria)
+  - Added `docs/PRODUCTION-COMPACTION-HANDOFF.md` (strict resume/handoff runbook)
+  - Updated `docs/PRODUCTION-SOURCE-OF-TRUTH.md` with tracking + versioning contract section
+  - Updated `CLAUDE.md` with canonical tracking flow references
+
+### Outcome
+
+- Tracking, versioning, and continuity are now explicitly documented and enforced by automation in both local commit flow and CI.
+- The project now has a production-grade scorecard + execution plan system for pushing each category to 10/10 with measurable criteria.
+
+---
+
+## Full 10/10 Phase Execution Pass A (2026-02-13)
+
+### What Changed
+
+- Rebuilt shared newspaper shell header behavior to match homepage interaction model across non-home routes:
+  - docked sticky nav behavior via sentinel intersection
+  - desktop topbar swaps center copy to navigation when docked
+  - mobile topbar alternates date/copy every 1.5s before dock, then swaps to sticky nav + theme icon
+  - masthead fit logic updated to scale EUANGELION to container width without clipping
+  - file: `src/components/EuangelionShellHeader.tsx`
+- Improved shell typography alignment:
+  - `GOOD NEWS COMING` now keeps right padding aligned with masthead content bounds
+  - file: `src/app/globals.css`
+- Hardened Soul Audit staged API validation:
+  - strict run id and option id format checks in consent/select routes
+  - timezone string sanitization + timezone offset normalization before schedule policy resolution
+  - stable 3+2 option-split enforcement in submit route (guard + fail-fast contract)
+  - files:
+    - `src/lib/api-security.ts`
+    - `src/app/api/soul-audit/consent/route.ts`
+    - `src/app/api/soul-audit/select/route.ts`
+    - `src/app/api/soul-audit/submit/route.ts`
+- Expanded regression coverage:
+  - added API security helper tests
+  - added option split assertions (3 AI + 2 prefab)
+  - added invalid run/option id edge-case tests
+  - files:
+    - `__tests__/api-security.test.ts`
+    - `__tests__/soul-audit-flow.test.ts`
+    - `__tests__/soul-audit-edge-cases.test.ts`
+- Updated production tracking artifacts with execution snapshot and revised scoring:
+  - `docs/PRODUCTION-FEATURE-SCORECARD.md`
+  - `docs/PRODUCTION-10-10-PLAN.md`
+  - `docs/PRODUCTION-COMPACTION-HANDOFF.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test` (54 passing)
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:ios-readiness`
+- `npm run build` currently fails in this environment under Node `v25.3.0` with webpack `WasmHash` crash. Project runtime guard remains `>=20.10 <25` (`package.json` engines, `.nvmrc` = `22`).
+
+---
+
+## Full 10/10 Phase Execution Pass B (2026-02-13)
+
+### What Changed
+
+- Hardened staged Soul Audit flow for session/cookie churn between submit -> consent -> select:
+  - `verifyRunToken` and `verifyConsentToken` now support controlled session-mismatch fallback mode.
+  - Consent/select routes now accept valid signed tokens even when cookie-backed session rotates, preventing false `run not found` / access denied dead-ends.
+  - files:
+    - `src/lib/soul-audit/run-token.ts`
+    - `src/lib/soul-audit/consent-token.ts`
+    - `src/app/api/soul-audit/consent/route.ts`
+    - `src/app/api/soul-audit/select/route.ts`
+- Fixed staged-token payload ceiling:
+  - Increased body limits for staged routes to prevent 413 failures with signed run/consent tokens.
+  - files:
+    - `src/app/api/soul-audit/consent/route.ts`
+    - `src/app/api/soul-audit/select/route.ts`
+- Enforced stricter curated-first behavior:
+  - Removed metadata-only fallback candidates so audit option/plan curation remains module-sourced.
+  - file:
+    - `src/lib/soul-audit/curation-engine.ts`
+- Expanded regression coverage:
+  - Added session-mismatch fallback tests for run and consent tokens.
+  - Added staged flow test that simulates session token churn across submit/consent/select.
+  - files:
+    - `__tests__/soul-audit-run-token.test.ts`
+    - `__tests__/soul-audit-consent-token.test.ts`
+    - `__tests__/soul-audit-flow.test.ts`
+- Updated production tracking artifacts for continuity:
+  - `docs/PRODUCTION-10-10-PLAN.md`
+  - `docs/PRODUCTION-FEATURE-SCORECARD.md`
+  - `docs/PRODUCTION-COMPACTION-HANDOFF.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test` (57 passing)
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:ios-readiness`
+- `npm run build` still fails in this environment under Node `v25.3.0` with webpack `WasmHash` crash.
+
+---
+
+## AI Devotional Left Rail: Next Days + Archive (2026-02-13)
+
+### What Changed
+
+- Added a persistent left rail to AI devotional results views (`/soul-audit/results?planToken=...`) with:
+  - `NEXT DAYS` list for upcoming plan days (including onboarding progression from day 0 to upcoming locked days).
+  - `ARCHIVE` list for prior AI devotional plans.
+- Updated `src/app/soul-audit/results/page.tsx` to:
+  - fetch archive data from `/api/soul-audit/archive`
+  - build a merged day timeline from unlocked plan days + locked previews
+  - render desktop sticky left rail and day anchor links for unlocked entries.
+
+### Outcome
+
+- Onboarding devotional and all AI devotional paths now surface upcoming days and prior plan archive in a consistent left-side navigation area.
+
+---
+
+## Global Newspaper-Bound Shell Pass (2026-02-13)
+
+### What Changed
+
+- Standardized all app routes onto the same bound newspaper container system used by the homepage look:
+  - Updated global shell behavior for `.newspaper-home` and `.newspaper-reading` in `src/app/globals.css`:
+    - fixed-width bounded frame
+    - page border
+    - consistent outer margin
+    - viewport-safe minimum height
+    - overflow clipping to prevent side-scroll
+- Replaced remaining mixed navigation/page shells with unified masthead shell:
+  - switched remaining routes from `Navigation`/plain `bg-page` wrappers to `EuangelionShellHeader`
+  - applied across auth, settings, legal, offline, error/not-found, loading states, soul-audit routes, series, and devotional states.
+- Brought loading and error states into the same visual system so every state maintains the newspaper-bound presentation.
+
+### Outcome
+
+- The site now uses a consistent homepage-style bound newspaper look across all major pages and state surfaces (normal, loading, error, offline).
+
+---
+
+## Left Library System: Archive + Bookmarks + Chat Notes + Favorite Verses (2026-02-13)
+
+### What Changed
+
+- Added persistent devotional library mechanics with left-menu navigation:
+  - New component: `src/components/DevotionalLibraryRail.tsx`
+  - Sections:
+    - Archived Pages
+    - Bookmarks
+    - Chat Notes
+    - Favorite Verses
+- Upgraded `My Devotional` into a full library home (instead of placeholder fallback):
+  - `src/app/my-devotional/page.tsx`
+  - Supports `?tab=` deep links for left-menu sections.
+- Added archive endpoint for curated plan history:
+  - `GET /api/soul-audit/archive`
+  - `src/app/api/soul-audit/archive/route.ts`
+- Added repository support for persisted list/fallback/delete behavior:
+  - `listPlanInstancesForSessionWithFallback`
+  - `getAllPlanDaysWithFallback`
+  - `listAnnotationsWithFallback`
+  - `removeAnnotation`
+  - `listBookmarksWithFallback`
+  - `removeBookmark`
+  - `src/lib/soul-audit/repository.ts`
+- Added delete mechanics to APIs:
+  - `DELETE /api/bookmarks?devotionalSlug=...`
+  - `DELETE /api/annotations?annotationId=...`
+  - Updated list endpoints to use fallback-backed retrieval.
+- Added saved-note and favorite-verse capture from devotional/chat flows:
+  - Chat assistant messages now support `Save note` action.
+    - `src/components/ChatMessage.tsx`
+    - `src/components/DevotionalChat.tsx`
+  - Text selection popover now supports `Save Verse` (stored as highlight annotation with favorite-verse style metadata).
+    - `src/components/TextHighlightTrigger.tsx`
+  - Devotional pages now include explicit bookmark actions and left menu links to the library.
+    - `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+
+### Outcome
+
+- Archive/bookmark/chat-note/favorite-verse sections are no longer passive concepts; they are functional, persisted features with create/list/remove mechanics.
+- Users now have a consistent left-side library model for devotional history and saved artifacts.
+
+---
+
+## Personalized Devotional Home + Unified Masthead Shell (2026-02-13)
+
+### What Changed
+
+- Made post-audit behavior user-home driven:
+  - `/` now resolves to the active devotional route when a current selection exists.
+  - Added `GET /api/soul-audit/current` to resolve the current devotional route from cookie/session-backed data.
+  - Added persistent current-route cookie writes in `POST /api/soul-audit/select`.
+- Added dedicated user-home route:
+  - New page: `src/app/my-devotional/page.tsx`
+  - Redirects to active devotional route when available; otherwise prompts to start Soul Audit.
+- Added repository fallback helpers for session-aware navigation recovery:
+  - `listAuditRunsForSessionWithFallback`
+  - `getLatestSelectionForSessionWithFallback`
+  - `listPlanInstancesForSession`
+  - `getLatestPlanInstanceForSessionWithFallback`
+- Introduced shared newspaper masthead shell:
+  - New component: `src/components/EuangelionShellHeader.tsx`
+  - Applied to:
+    - `src/app/soul-audit/page.tsx`
+    - `src/app/soul-audit/results/page.tsx`
+    - `src/app/wake-up/page.tsx`
+    - `src/app/series/page.tsx`
+    - `src/app/wake-up/series/[slug]/SeriesPageClient.tsx`
+    - `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+- Navigation consistency updates:
+  - Added `My Devotional` navigation target.
+  - Normalized `Settings` label.
+  - Added `/my-devotional` to sitemap.
+
+### Outcome
+
+- The curated daily devotional now has a stable home destination and is reachable from primary navigation.
+- Devotional/home surfaces share a consistent Euangelion-first newspaper masthead structure.
+
+---
+
+## Generated Image Removal (2026-02-13)
+
+### What Changed
+
+- Removed all generated image asset directories and files from the app bundle:
+  - `public/images/illustrations/generated/`
+  - `public/images/devotionals/`
+  - `public/images/series/`
+  - `public/devotionals/wU1-legnext.png`
+- Removed stale generated-image mappings and references:
+  - deleted `src/data/devotional-images.ts`
+  - removed all series `heroImage` references that pointed to deleted generated/devotional image files
+- Hard-disabled runtime illustration generation endpoint:
+  - `src/app/api/illustrations/generate/route.ts` now returns `410` (`ILLUSTRATION_GENERATION_REMOVED`)
+
+### Outcome
+
+- The site no longer serves or requests generated devotional/series illustration files.
+- Any call to the generation endpoint is explicitly blocked.
+
+---
+
+## Soul Audit Reliability + Day-Lock Toggle + Longer Curation (2026-02-13)
+
+### What Changed
+
+- Added stateless Soul Audit run-token fallback so consent/selection still work when runtime memory is cold:
+  - New: `src/lib/soul-audit/run-token.ts`
+  - Updated:
+    - `src/app/api/soul-audit/submit/route.ts` (now returns `runToken`)
+    - `src/app/api/soul-audit/consent/route.ts` (run-token verification fallback)
+    - `src/app/api/soul-audit/select/route.ts` (run-token + option fallback)
+    - `src/types/soul-audit.ts`
+- Improved results-page resilience by caching generated plan days in session storage and hydrating from cached plan data when API fetches fail:
+  - `src/app/soul-audit/results/page.tsx`
+- Added day-locking toggle (default OFF for testing) with client + server parity:
+  - New: `src/lib/day-locking.ts`
+  - Updated:
+    - `src/stores/settingsStore.ts` (`dayLockingEnabled`)
+    - `src/app/settings/page.tsx` (Testing toggle UI + cookie sync)
+    - `src/lib/day-gating.ts` (client day-gate bypass when toggle OFF)
+    - `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+    - `src/app/api/devotional-plan/[token]/day/[n]/route.ts` (server day-lock bypass)
+    - `.env.example` (`DAY_LOCKING_DEFAULT`, `SOUL_AUDIT_RUN_TOKEN_SECRET`)
+- Extended curated devotional output length and depth:
+  - richer reflection/prayer/next-step/journal assembly with reference grounding
+  - `src/lib/soul-audit/curated-builder.ts`
+- Added weekday-specific onboarding variants for Wednesday/Thursday/Friday starts:
+  - schedule now computes `onboardingVariant` + `onboardingDays`
+  - `src/lib/soul-audit/schedule.ts`
+  - `src/app/api/soul-audit/select/route.ts`
+- Hardened curated candidate generation fallback so option creation does not collapse when module extraction is sparse:
+  - `src/lib/soul-audit/curated-catalog.ts`
+  - `src/lib/soul-audit/curation-engine.ts`
+- Fixed build/type blockers introduced in iOS + billing integration:
+  - `capacitor.config.ts` (removed deprecated `bundledWebRuntime`)
+  - `src/lib/billing/purchases.ts` (RevenueCat offerings API typing fix)
+  - `src/app/api/chat/route.ts` (nullable highlight typing fix)
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test`
+- `npm run verify:production-contracts`
+- `npm run verify:ios-readiness`
+- `npm run build`
+
+---
+
+## Editorial Motion + Type-First Imagery Pass (2026-02-13)
+
+### What Changed
+
+- Added a global editorial motion system that auto-applies:
+  - scroll-based type reveal for paragraph/headline/list text blocks,
+  - staggered `strong`/`em` emphasis reveal treatment,
+  - line animations for links and buttons across mock/newspaper surfaces.
+  - Files:
+    - `src/components/EditorialMotionSystem.tsx`
+    - `src/app/providers.tsx`
+    - `src/app/globals.css`
+- Removed non-essential runtime imagery from reading flows so typography leads:
+  - devotional hero is now typography-first only (removed dynamic image hero),
+  - devotional panel image blocks removed,
+  - visual/art modules now render textual metadata + prompts without image rendering,
+  - series cards now use typographic preview blocks instead of image thumbnails.
+  - Files:
+    - `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+    - `src/components/modules/VisualModule.tsx`
+    - `src/components/modules/ArtModule.tsx`
+    - `src/app/series/page.tsx`
+- Added Node runtime guard for build consistency:
+  - `package.json` engines now enforce `>=20.10 <25`,
+  - `.nvmrc` added (`22`).
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test`
+- `npm run verify:production-contracts`
+- `npm run build` currently fails in this environment on Node `v25.3.0` with webpack `WasmHash` crash; runtime is now guarded to prevent this mismatch.
+
+---
+
 ## Soul Audit Curation Visibility + Personalized Onboarding (2026-02-13)
 
 ### What Changed

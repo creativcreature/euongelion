@@ -26,7 +26,12 @@ export function isDayUnlocked(
   dayIndex: number,
   seriesStartDate: string | null,
   sabbathDay: 'saturday' | 'sunday' = 'sunday',
+  dayLockingEnabled = true,
 ): DayGateResult {
+  if (!dayLockingEnabled) {
+    return { unlocked: true, message: '' }
+  }
+
   // Day 1 is always unlocked
   if (dayIndex === 0) {
     return { unlocked: true, message: '' }

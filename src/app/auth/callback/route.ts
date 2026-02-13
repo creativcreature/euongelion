@@ -2,11 +2,12 @@ import { NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { onAuthSuccess } from '@/lib/auth'
+import { sanitizeSafeRedirectPath } from '@/lib/api-security'
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get('code')
-  const redirect = searchParams.get('redirect') || '/daily-bread'
+  const redirect = sanitizeSafeRedirectPath(searchParams.get('redirect')) || '/'
 
   if (code) {
     const cookieStore = await cookies()

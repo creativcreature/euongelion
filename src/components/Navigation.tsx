@@ -14,10 +14,11 @@ function getInitialTheme(): 'light' | 'dark' {
 }
 
 const NAV_LINKS = [
+  { href: '/my-devotional', label: 'My Devotional' },
   { href: '/soul-audit', label: 'Soul Audit' },
   { href: '/wake-up', label: 'Wake-Up' },
   { href: '/series', label: 'Series' },
-  { href: '/settings', label: 'Setting' },
+  { href: '/settings', label: 'Settings' },
 ]
 
 type NavigationVariant = 'default' | 'newspaper'
@@ -33,6 +34,7 @@ export default function Navigation({
 }) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
+  const [authenticated, setAuthenticated] = useState(false)
   const pathname = usePathname()
   const isNewspaper = variant === 'newspaper'
   const desktopLinks = isNewspaper
@@ -56,6 +58,23 @@ export default function Navigation({
       document.body.style.overflow = ''
     }
   }, [mobileOpen])
+
+  useEffect(() => {
+    let cancelled = false
+    async function loadSession() {
+      try {
+        const res = await fetch('/api/auth/session')
+        const data = (await res.json()) as { authenticated?: boolean }
+        if (!cancelled) setAuthenticated(Boolean(data.authenticated))
+      } catch {
+        if (!cancelled) setAuthenticated(false)
+      }
+    }
+    void loadSession()
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
   // Close mobile menu on route change — intentional sync with navigation
   useEffect(() => {
@@ -186,6 +205,26 @@ export default function Navigation({
               >
                 {themeIcon}
               </button>
+            )}
+
+            {authenticated ? (
+              <button
+                onClick={async () => {
+                  await fetch('/api/auth/sign-out', { method: 'POST' })
+                  setAuthenticated(false)
+                  window.location.href = '/'
+                }}
+                className="animated-underline text-label vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+              >
+                SIGN OUT
+              </button>
+            ) : (
+              <Link
+                href={`/auth/sign-in?redirect=${encodeURIComponent(pathname || '/')}`}
+                className="animated-underline text-label vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+              >
+                SIGN IN
+              </Link>
             )}
           </div>
         )}
@@ -341,6 +380,26 @@ export default function Navigation({
                   {link.label.toUpperCase()}
                 </Link>
               ))}
+              {authenticated ? (
+                <button
+                  onClick={async () => {
+                    await fetch('/api/auth/sign-out', { method: 'POST' })
+                    setAuthenticated(false)
+                    setMobileOpen(false)
+                    window.location.href = '/'
+                  }}
+                  className="block text-label vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+                >
+                  SIGN OUT
+                </button>
+              ) : (
+                <Link
+                  href={`/auth/sign-in?redirect=${encodeURIComponent(pathname || '/')}`}
+                  className="block text-label vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+                >
+                  SIGN IN
+                </Link>
+              )}
             </nav>
 
             {/* Footer */}

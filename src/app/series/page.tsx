@@ -1,11 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import Navigation from '@/components/Navigation'
-import SeriesHero from '@/components/SeriesHero'
+import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
-import IllustrationFrame from '@/components/newspaper/IllustrationFrame'
 import MixedHeadline, { Sans, Serif } from '@/components/MixedHeadline'
 import OrnamentDivider from '@/components/OrnamentDivider'
 import { typographer } from '@/lib/typographer'
@@ -22,7 +20,7 @@ export default function SeriesBrowsePage() {
 
   return (
     <div className="newspaper-home min-h-screen">
-      <Navigation />
+      <EuangelionShellHeader />
 
       <header className="section-rule mx-auto max-w-7xl px-6 pb-16 pt-12 md:px-[60px] md:pb-24 md:pt-20 lg:px-20">
         <FadeIn>
@@ -34,15 +32,6 @@ export default function SeriesBrowsePage() {
               `${ALL_SERIES_ORDER.length} series. Ancient wisdom for modern wrestling. Pick one that speaks to where you are.`,
             )}
           </p>
-          <div className="mt-8 max-w-[320px]">
-            <IllustrationFrame
-              src="/images/illustrations/generated/series-hero-generated.png"
-              alt="Series archive motif"
-              effect="dither"
-              aspect="banner"
-              decorative
-            />
-          </div>
         </FadeIn>
       </header>
 
@@ -179,7 +168,15 @@ function SeriesCard({
           transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
         }}
       >
-        <SeriesHero seriesSlug={slug} size="thumbnail" overlay />
+        <div
+          className="mx-6 mt-6 border border-[var(--color-border)] p-4 md:mx-8 md:mt-8 md:p-5"
+          style={{ minHeight: '132px' }}
+        >
+          <p className="text-label vw-small mb-3 text-gold">FEATURED PATH</p>
+          <p className="text-serif-italic vw-body text-[var(--color-text-primary)]">
+            {series.question}
+          </p>
+        </div>
 
         <div className="flex flex-1 flex-col p-6 md:p-8">
           <p className="text-label vw-small mb-2 text-gold">{series.title}</p>

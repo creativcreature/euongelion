@@ -1,10 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
+import {
+  getClientKey,
+  readJsonWithLimit,
+  sanitizeOptionalText,
+  sanitizeSingleLine,
+  takeRateLimit,
+  withRateLimitHeaders,
+} from '@/lib/api-security'
+import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 
 const APP_API_KEY = process.env.ANTHROPIC_API_KEY
 const FREE_TIER_DAILY_LIMIT = 10
 const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages'
+const MAX_BODY_BYTES = 30_000
+const MAX_CHAT_REQUESTS_PER_MINUTE = 30
+const MAX_MESSAGE_CHARS = 2_500
+const MAX_HIGHLIGHT_CHARS = 600
+
+const freeTierDailyCounter = new Map<string, { count: number; date: string }>()
 
 const SYSTEM_PROMPT = `You are a biblical research assistant for Euangelion, a Christian devotional app.
 
@@ -111,10 +126,72 @@ interface ChatRequestBody {
   userApiKey?: string
 }
 
+function getUtcDateKey(): string {
+  return new Date().toISOString().slice(0, 10)
+}
+
+function consumeDailyFreeTier(sessionKey: string): boolean {
+  const date = getUtcDateKey()
+  const current = freeTierDailyCounter.get(sessionKey)
+  if (!current || current.date !== date) {
+    freeTierDailyCounter.set(sessionKey, { count: 1, date })
+    return true
+  }
+  if (current.count >= FREE_TIER_DAILY_LIMIT) return false
+  current.count += 1
+  freeTierDailyCounter.set(sessionKey, current)
+  return true
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as ChatRequestBody
-    const { messages, devotionalSlug, highlightedText, userApiKey } = body
+    const limiter = takeRateLimit({
+      namespace: 'chat',
+      key: getClientKey(request),
+      limit: MAX_CHAT_REQUESTS_PER_MINUTE,
+      windowMs: 60_000,
+    })
+    if (!limiter.ok) {
+      return withRateLimitHeaders(
+        NextResponse.json(
+          { error: 'Too many chat requests. Please retry shortly.' },
+          { status: 429 },
+        ),
+        limiter.retryAfterSeconds,
+      )
+    }
+
+    const parsed = await readJsonWithLimit<ChatRequestBody>({
+      request,
+      maxBytes: MAX_BODY_BYTES,
+    })
+    if (!parsed.ok) {
+      return NextResponse.json(
+        { error: parsed.error },
+        { status: parsed.status },
+      )
+    }
+
+    const body = parsed.data
+    const rawMessages = Array.isArray(body.messages) ? body.messages : []
+    const messages = rawMessages
+      .slice(-10)
+      .map((item) => ({
+        role: item.role,
+        content: sanitizeSingleLine(item.content, MAX_MESSAGE_CHARS),
+      }))
+      .filter(
+        (item) =>
+          (item.role === 'user' || item.role === 'assistant') &&
+          item.content.length > 0,
+      )
+
+    const devotionalSlug = sanitizeSingleLine(body.devotionalSlug, 120)
+    const highlightedText = sanitizeOptionalText(
+      body.highlightedText,
+      MAX_HIGHLIGHT_CHARS,
+    )
+    const userApiKey = sanitizeOptionalText(body.userApiKey, 240)
 
     if (!messages || messages.length === 0) {
       return NextResponse.json(
@@ -148,11 +225,8 @@ export async function POST(request: NextRequest) {
 
     // Check free-tier rate limit (only when using app key)
     if (!userApiKey) {
-      const dailyCount = parseInt(
-        request.headers.get('x-daily-count') || '0',
-        10,
-      )
-      if (dailyCount >= FREE_TIER_DAILY_LIMIT) {
+      const sessionToken = await getOrCreateAuditSessionToken()
+      if (!consumeDailyFreeTier(sessionToken)) {
         return NextResponse.json(
           {
             error: `You\u2019ve used your ${FREE_TIER_DAILY_LIMIT} daily questions. Add your own API key in Settings for unlimited access.`,
@@ -163,7 +237,10 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const contextPrompt = buildContextPrompt(devotionalSlug, highlightedText)
+    const contextPrompt = buildContextPrompt(
+      devotionalSlug || undefined,
+      highlightedText ?? undefined,
+    )
     const systemContent = SYSTEM_PROMPT + contextPrompt
 
     // Call Anthropic API
@@ -178,7 +255,7 @@ export async function POST(request: NextRequest) {
         model: 'claude-sonnet-4-5-20250929',
         max_tokens: userApiKey ? 2048 : 1024,
         system: systemContent,
-        messages: messages.slice(-10).map((m) => ({
+        messages: messages.map((m) => ({
           role: m.role,
           content: m.content,
         })),

@@ -3,6 +3,13 @@ type StartPolicy =
   | 'tuesday_archived_monday'
   | 'wed_sun_onboarding'
 
+export type OnboardingVariant =
+  | 'none'
+  | 'wednesday_3_day'
+  | 'thursday_2_day'
+  | 'friday_1_day'
+  | 'weekend_bridge'
+
 const UNLOCK_HOUR = 7
 
 function toLocal(utc: Date, offsetMinutes: number): Date {
@@ -48,6 +55,8 @@ export function resolveStartPolicy(
   offsetMinutes: number,
 ): {
   startPolicy: StartPolicy
+  onboardingVariant: OnboardingVariant
+  onboardingDays: 0 | 1 | 2 | 3
   startedAt: string
   cycleStartAt: string
 } {
@@ -55,6 +64,8 @@ export function resolveStartPolicy(
   const day = localNow.getUTCDay()
 
   let startPolicy: StartPolicy
+  let onboardingVariant: OnboardingVariant = 'none'
+  let onboardingDays: 0 | 1 | 2 | 3 = 0
   let cycleStartLocal: Date
 
   if (day === 1) {
@@ -66,10 +77,25 @@ export function resolveStartPolicy(
   } else {
     startPolicy = 'wed_sun_onboarding'
     cycleStartLocal = withUnlockHour(getNextMonday(localNow))
+    if (day === 3) {
+      onboardingVariant = 'wednesday_3_day'
+      onboardingDays = 3
+    } else if (day === 4) {
+      onboardingVariant = 'thursday_2_day'
+      onboardingDays = 2
+    } else if (day === 5) {
+      onboardingVariant = 'friday_1_day'
+      onboardingDays = 1
+    } else {
+      onboardingVariant = 'weekend_bridge'
+      onboardingDays = 1
+    }
   }
 
   return {
     startPolicy,
+    onboardingVariant,
+    onboardingDays,
     startedAt: nowUtc.toISOString(),
     cycleStartAt: toUtc(cycleStartLocal, offsetMinutes).toISOString(),
   }

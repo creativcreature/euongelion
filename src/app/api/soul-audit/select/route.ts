@@ -1,5 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
 import {
+  getClientKey,
+  isSafeAuditOptionId,
+  isSafeAuditRunId,
+  normalizeTimezoneOffsetMinutes,
+  readJsonWithLimit,
+  sanitizeTimezone,
+  takeRateLimit,
+  withRateLimitHeaders,
+} from '@/lib/api-security'
+import {
   buildCuratedFirstPlan,
   buildOnboardingDay,
   MissingCuratedModuleError,
@@ -11,18 +21,64 @@ import {
   getAuditRunWithFallback,
   getConsentWithFallback,
   getSelectionWithFallback,
+  saveConsent,
   saveSelection,
 } from '@/lib/soul-audit/repository'
 import { resolveStartPolicy } from '@/lib/soul-audit/schedule'
+import { verifyConsentToken } from '@/lib/soul-audit/consent-token'
+import { verifyRunToken } from '@/lib/soul-audit/run-token'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import type {
   SoulAuditSelectRequest,
   SoulAuditSelectResponse,
 } from '@/types/soul-audit'
 
+const MAX_SELECT_BODY_BYTES = 32_768
+const MAX_SELECT_REQUESTS_PER_MINUTE = 30
+const CURRENT_ROUTE_COOKIE = 'euangelion_current_route'
+const CURRENT_ROUTE_MAX_AGE = 30 * 24 * 60 * 60
+
+function withCurrentRouteCookie(response: NextResponse, route: string) {
+  response.cookies.set(CURRENT_ROUTE_COOKIE, route, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+    maxAge: CURRENT_ROUTE_MAX_AGE,
+    path: '/',
+  })
+  return response
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as SoulAuditSelectRequest
+    const parsed = await readJsonWithLimit<SoulAuditSelectRequest>({
+      request,
+      maxBytes: MAX_SELECT_BODY_BYTES,
+    })
+    if (!parsed.ok) {
+      return NextResponse.json(
+        { error: parsed.error },
+        { status: parsed.status },
+      )
+    }
+
+    const limiter = takeRateLimit({
+      namespace: 'soul-audit-select',
+      key: getClientKey(request),
+      limit: MAX_SELECT_REQUESTS_PER_MINUTE,
+      windowMs: 60_000,
+    })
+    if (!limiter.ok) {
+      return withRateLimitHeaders(
+        NextResponse.json(
+          { error: 'Too many selection attempts. Please retry shortly.' },
+          { status: 429 },
+        ),
+        limiter.retryAfterSeconds,
+      )
+    }
+
+    const body = parsed.data
     const runId = String(body.auditRunId || '').trim()
     const optionId = String(body.optionId || '').trim()
 
@@ -33,7 +89,32 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const run = await getAuditRunWithFallback(runId)
+    if (!isSafeAuditRunId(runId) || !isSafeAuditOptionId(optionId)) {
+      return NextResponse.json(
+        { error: 'Invalid auditRunId or optionId format.' },
+        { status: 400 },
+      )
+    }
+
+    const sessionToken = await getOrCreateAuditSessionToken()
+
+    let run = await getAuditRunWithFallback(runId)
+    const verifiedToken = verifyRunToken({
+      token: body.runToken,
+      expectedRunId: runId,
+      sessionToken,
+      allowSessionMismatch: true,
+    })
+    if (!run && verifiedToken) {
+      run = {
+        id: runId,
+        session_token: sessionToken,
+        response_text: verifiedToken.responseText,
+        crisis_detected: verifiedToken.crisisDetected,
+        created_at: verifiedToken.issuedAt,
+      }
+    }
+
     if (!run) {
       return NextResponse.json(
         { error: 'Audit run not found.' },
@@ -41,15 +122,40 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const sessionToken = await getOrCreateAuditSessionToken()
-    if (run.session_token !== sessionToken) {
+    if (run.session_token !== sessionToken && !verifiedToken) {
       return NextResponse.json(
         { error: 'Audit run access denied.' },
         { status: 403 },
       )
     }
+    if (run.session_token !== sessionToken && verifiedToken) {
+      run = {
+        ...run,
+        session_token: sessionToken,
+        response_text: verifiedToken.responseText,
+        crisis_detected: verifiedToken.crisisDetected,
+      }
+    }
 
-    const consent = await getConsentWithFallback(runId)
+    let consent = await getConsentWithFallback(runId)
+    if (!consent) {
+      const verifiedConsent = verifyConsentToken({
+        token: body.consentToken,
+        expectedRunId: runId,
+        sessionToken,
+        allowSessionMismatch: true,
+      })
+      if (verifiedConsent) {
+        consent = await saveConsent({
+          runId,
+          sessionToken,
+          essentialAccepted: verifiedConsent.essentialAccepted,
+          analyticsOptIn: verifiedConsent.analyticsOptIn,
+          crisisAcknowledged: verifiedConsent.crisisAcknowledged,
+        })
+      }
+    }
+
     if (!consent?.essential_accepted) {
       return NextResponse.json(
         {
@@ -84,10 +190,15 @@ export async function POST(request: NextRequest) {
         planToken: existingSelection.plan_token ?? undefined,
         seriesSlug: existingSelection.series_slug,
       }
-      return NextResponse.json(existingPayload, { status: 200 })
+      return withCurrentRouteCookie(
+        NextResponse.json(existingPayload, { status: 200 }),
+        existingPayload.route,
+      )
     }
 
-    const option = (await getAuditOptionsWithFallback(runId)).find(
+    const options = await getAuditOptionsWithFallback(runId)
+    const fallbackOptions = verifiedToken?.options ?? []
+    const option = [...options, ...fallbackOptions].find(
       (item) => item.id === optionId,
     )
     if (!option) {
@@ -110,26 +221,40 @@ export async function POST(request: NextRequest) {
         route: `/wake-up/series/${option.slug}`,
         seriesSlug: option.slug,
       }
-      return NextResponse.json(payload, { status: 200 })
+      return withCurrentRouteCookie(
+        NextResponse.json(payload, { status: 200 }),
+        payload.route,
+      )
     }
+
+    const curationSeed =
+      option.preview &&
+      typeof option.preview === 'object' &&
+      option.preview.curationSeed &&
+      typeof option.preview.curationSeed === 'object' &&
+      typeof option.preview.curationSeed.seriesSlug === 'string' &&
+      typeof option.preview.curationSeed.dayNumber === 'number' &&
+      typeof option.preview.curationSeed.candidateKey === 'string'
+        ? option.preview.curationSeed
+        : null
 
     const planDays = buildCuratedFirstPlan({
       seriesSlug: option.slug,
       userResponse: run.response_text,
+      anchorSeed: curationSeed,
     })
 
     const timezone =
-      body.timezone ||
-      request.headers.get('x-timezone') ||
-      Intl.DateTimeFormat().resolvedOptions().timeZone ||
+      sanitizeTimezone(body.timezone) ??
+      sanitizeTimezone(request.headers.get('x-timezone')) ??
+      Intl.DateTimeFormat().resolvedOptions().timeZone ??
       'UTC'
     const offsetMinutes =
-      typeof body.timezoneOffsetMinutes === 'number'
-        ? body.timezoneOffsetMinutes
-        : Number.parseInt(
-            request.headers.get('x-timezone-offset') || '0',
-            10,
-          ) || 0
+      normalizeTimezoneOffsetMinutes(body.timezoneOffsetMinutes) ??
+      normalizeTimezoneOffsetMinutes(
+        request.headers.get('x-timezone-offset'),
+      ) ??
+      0
 
     const schedule = resolveStartPolicy(new Date(), offsetMinutes)
     const daysForPlan =
@@ -138,6 +263,8 @@ export async function POST(request: NextRequest) {
             buildOnboardingDay({
               userResponse: run.response_text,
               firstDay: planDays[0],
+              variant: schedule.onboardingVariant,
+              onboardingDays: schedule.onboardingDays,
             }),
             ...planDays,
           ]
@@ -152,6 +279,8 @@ export async function POST(request: NextRequest) {
       startPolicy: schedule.startPolicy,
       startedAt: schedule.startedAt,
       cycleStartAt: schedule.cycleStartAt,
+      onboardingVariant: schedule.onboardingVariant,
+      onboardingDays: schedule.onboardingDays,
       days: daysForPlan,
     })
 
@@ -170,12 +299,16 @@ export async function POST(request: NextRequest) {
       route: `/soul-audit/results?planToken=${plan.token}`,
       planToken: plan.token,
       seriesSlug: option.slug,
+      planDays: daysForPlan,
     }
 
     // Warm cache path for immediate UI fetches.
     getAllPlanDays(plan.token)
 
-    return NextResponse.json(payload, { status: 200 })
+    return withCurrentRouteCookie(
+      NextResponse.json(payload, { status: 200 }),
+      payload.route,
+    )
   } catch (error) {
     if (error instanceof MissingCuratedModuleError) {
       return NextResponse.json(

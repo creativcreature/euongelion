@@ -20,6 +20,14 @@ decisions:
     title: local-corpus-only-chat-and-endnotes
   - id: SA-009
     title: mock-account-testing-shell-enabled
+  - id: SA-010
+    title: tracking-spine-docs-and-compaction-handoff-required
+  - id: SA-011
+    title: semver-and-changelog-must-stay-in-sync
+  - id: SA-012
+    title: claude-doc-must-reference-production-tracking-stack
+  - id: SA-013
+    title: ux-alignment-docs-required-for-user-facing-decisions
 
 contracts:
   required_files:
@@ -47,3 +55,26 @@ contracts:
     - ai_primary:3
     - curated_prefab:2
     - total:5
+  required_tracking_docs:
+    - CHANGELOG.md
+    - CLAUDE.md
+    - docs/PRODUCTION-SOURCE-OF-TRUTH.md
+    - docs/production-decisions.yaml
+    - docs/PRODUCTION-FEATURE-SCORECARD.md
+    - docs/PRODUCTION-10-10-PLAN.md
+    - docs/PRODUCTION-COMPACTION-HANDOFF.md
+    - docs/AUDIENCE.md
+    - docs/PUBLIC-FACING-LANGUAGE.md
+    - docs/UX-FLOW-MAPS.md
+    - docs/SUCCESS-METRICS.md
+  required_claude_references:
+    - docs/PRODUCTION-SOURCE-OF-TRUTH.md
+    - docs/production-decisions.yaml
+    - docs/PRODUCTION-FEATURE-SCORECARD.md
+    - docs/PRODUCTION-10-10-PLAN.md
+    - docs/PRODUCTION-COMPACTION-HANDOFF.md
+    - docs/AUDIENCE.md
+    - docs/PUBLIC-FACING-LANGUAGE.md
+    - docs/UX-FLOW-MAPS.md
+    - docs/SUCCESS-METRICS.md
+    - CHANGELOG.md

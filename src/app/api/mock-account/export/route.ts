@@ -36,7 +36,6 @@ export async function GET() {
     return NextResponse.json({
       exportedAt: new Date().toISOString(),
       mode: session.mode,
-      sessionToken,
       data: {
         auditRuns: listAuditRunsForSession(sessionToken),
         auditSelections: listSelectionsForSession(sessionToken),

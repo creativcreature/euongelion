@@ -59,3 +59,26 @@ Euangelion Soul Audit and Devotional Engine are curated-first and selection-firs
 2. CI fails when required contracts are missing or stale.
 3. Feature commits must reference a production decision id.
 4. `CHANGELOG.md` remains historical log only.
+
+## Tracking + Versioning Contracts
+
+1. `CLAUDE.md` must point to:
+2. `docs/PRODUCTION-SOURCE-OF-TRUTH.md`
+3. `docs/production-decisions.yaml`
+4. `docs/PRODUCTION-FEATURE-SCORECARD.md`
+5. `docs/PRODUCTION-10-10-PLAN.md`
+6. `docs/PRODUCTION-COMPACTION-HANDOFF.md`
+7. `CHANGELOG.md`
+8. `package.json` semver version and `CHANGELOG.md` current version marker must match.
+9. `npm run verify:tracking` is required in pre-commit and CI.
+
+## UX Alignment Contracts
+
+All user-facing decisions must be aligned to:
+
+1. `docs/AUDIENCE.md`
+2. `docs/PUBLIC-FACING-LANGUAGE.md`
+3. `docs/UX-FLOW-MAPS.md`
+4. `docs/SUCCESS-METRICS.md`
+
+These are required continuity inputs, not optional references.

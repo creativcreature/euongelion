@@ -140,6 +140,35 @@ describe('Soul Audit edge cases', () => {
     expect(payload.code).toBe('ESSENTIAL_CONSENT_REQUIRED')
   })
 
+  it('rejects invalid audit run id format at consent and select', async () => {
+    const consentResponse = await consentHandler(
+      postJson('http://localhost/api/soul-audit/consent', {
+        auditRunId: '../not-safe',
+        essentialAccepted: true,
+      }) as never,
+    )
+    expect(consentResponse.status).toBe(400)
+
+    const selectResponse = await selectHandler(
+      postJson('http://localhost/api/soul-audit/select', {
+        auditRunId: '../not-safe',
+        optionId: 'ai_primary:identity:1:1',
+      }) as never,
+    )
+    expect(selectResponse.status).toBe(400)
+  })
+
+  it('rejects invalid option id format at select', async () => {
+    const submitPayload = await createRunAndConsent()
+    const response = await selectHandler(
+      postJson('http://localhost/api/soul-audit/select', {
+        auditRunId: submitPayload.auditRunId,
+        optionId: 'DROP TABLE',
+      }) as never,
+    )
+    expect(response.status).toBe(400)
+  })
+
   it('rejects consent/select for a different session token', async () => {
     const submitPayload = await createRunAndConsent()
 
@@ -169,7 +198,7 @@ describe('Soul Audit edge cases', () => {
     const response = await selectHandler(
       postJson('http://localhost/api/soul-audit/select', {
         auditRunId: submitPayload.auditRunId,
-        optionId: 'ai_primary:not-real:1',
+        optionId: 'ai_primary:not-real:9:9',
       }) as never,
     )
     expect(response.status).toBe(404)

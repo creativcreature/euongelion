@@ -1,13 +1,10 @@
 import Skeleton from '@/components/ui/Skeleton'
+import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 
 export default function SoulAuditResultsLoading() {
   return (
-    <div className="min-h-screen bg-page">
-      {/* Nav placeholder */}
-      <div
-        className="h-14"
-        style={{ borderBottom: '1px solid var(--color-border)' }}
-      />
+    <div className="newspaper-home min-h-screen">
+      <EuangelionShellHeader />
 
       <div className="mx-auto max-w-7xl px-6 pb-32 pt-12 md:px-[60px] md:pb-48 md:pt-20 lg:px-20">
         {/* Header */}

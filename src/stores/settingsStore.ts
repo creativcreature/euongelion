@@ -9,10 +9,12 @@ interface SettingsState {
   bibleTranslation: BibleTranslation
   sabbathDay: SabbathDay
   anthropicApiKey: string
+  dayLockingEnabled: boolean
 
   setBibleTranslation: (t: BibleTranslation) => void
   setSabbathDay: (d: SabbathDay) => void
   setAnthropicApiKey: (key: string) => void
+  setDayLockingEnabled: (enabled: boolean) => void
 }
 
 export const useSettingsStore = create<SettingsState>()(
@@ -21,10 +23,12 @@ export const useSettingsStore = create<SettingsState>()(
       bibleTranslation: 'NIV',
       sabbathDay: 'sunday',
       anthropicApiKey: '',
+      dayLockingEnabled: false,
 
       setBibleTranslation: (bibleTranslation) => set({ bibleTranslation }),
       setSabbathDay: (sabbathDay) => set({ sabbathDay }),
       setAnthropicApiKey: (anthropicApiKey) => set({ anthropicApiKey }),
+      setDayLockingEnabled: (dayLockingEnabled) => set({ dayLockingEnabled }),
     }),
     {
       name: 'euangelion-settings',

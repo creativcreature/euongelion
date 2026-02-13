@@ -3,11 +3,12 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
-import Navigation from '@/components/Navigation'
+import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import FadeIn from '@/components/motion/FadeIn'
 import { typographer } from '@/lib/typographer'
 import type {
   CustomPlanDay,
+  SoulAuditConsentResponse,
   SoulAuditSelectResponse,
   SoulAuditSubmitResponseV2,
 } from '@/types/soul-audit'
@@ -24,6 +25,30 @@ type PlanDayPreview = Pick<
   CustomPlanDay,
   'day' | 'title' | 'scriptureReference' | 'scriptureText'
 >
+
+type ArchivePlanSummary = {
+  planToken: string
+  createdAt: string
+  route: string
+  seriesSlug: string
+  days: Array<{
+    day: number
+    title: string
+    route: string
+  }>
+}
+
+const PLAN_CACHE_PREFIX = 'soul-audit-plan-v2:'
+
+function formatShortDate(value: string): string {
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) return value
+  return date.toLocaleDateString('en-US', {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric',
+  })
+}
 
 function isFullPlanDay(value: unknown): value is CustomPlanDay {
   if (!value || typeof value !== 'object') return false
@@ -73,14 +98,32 @@ function loadSelectionResult(): SoulAuditSelectResponse | null {
   }
 }
 
+function persistPlanDays(token: string, days: CustomPlanDay[]): void {
+  if (typeof window === 'undefined' || !token || days.length === 0) return
+  sessionStorage.setItem(`${PLAN_CACHE_PREFIX}${token}`, JSON.stringify(days))
+}
+
+function loadPlanDays(token: string): CustomPlanDay[] {
+  if (typeof window === 'undefined' || !token) return []
+  const raw = sessionStorage.getItem(`${PLAN_CACHE_PREFIX}${token}`)
+  if (!raw) return []
+  try {
+    const parsed = JSON.parse(raw) as unknown[]
+    return Array.isArray(parsed) ? parsed.filter(isFullPlanDay) : []
+  } catch {
+    return []
+  }
+}
+
 export default function SoulAuditResultsPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const initialSelection = loadSelectionResult()
 
   const [submitResult, setSubmitResult] =
     useState<SoulAuditSubmitResponseV2 | null>(() => loadSubmitResult())
   const [selection, setSelection] = useState<SoulAuditSelectResponse | null>(
-    () => loadSelectionResult(),
+    () => initialSelection,
   )
   const [essentialConsent, setEssentialConsent] = useState(false)
   const [analyticsOptIn, setAnalyticsOptIn] = useState(false)
@@ -88,11 +131,16 @@ export default function SoulAuditResultsPage() {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [runExpired, setRunExpired] = useState(false)
-  const [planDays, setPlanDays] = useState<CustomPlanDay[]>([])
+  const [planDays, setPlanDays] = useState<CustomPlanDay[]>(() =>
+    Array.isArray(initialSelection?.planDays)
+      ? initialSelection.planDays.filter(isFullPlanDay)
+      : [],
+  )
   const [lockedDayPreviews, setLockedDayPreviews] = useState<PlanDayPreview[]>(
     [],
   )
   const [lockedMessages, setLockedMessages] = useState<string[]>([])
+  const [archivePlans, setArchivePlans] = useState<ArchivePlanSummary[]>([])
   const [loadingPlan, setLoadingPlan] = useState(false)
 
   useEffect(() => {
@@ -101,15 +149,31 @@ export default function SoulAuditResultsPage() {
     setSubmitResult(fromStorage)
   }, [])
 
+  useEffect(() => {
+    const fromStorage = loadSelectionResult()
+    if (!fromStorage) return
+    setSelection(fromStorage)
+    if (Array.isArray(fromStorage.planDays)) {
+      const safeDays = fromStorage.planDays.filter(isFullPlanDay)
+      if (safeDays.length > 0) {
+        setPlanDays(safeDays)
+      }
+    }
+  }, [])
+
   const planToken = useMemo(() => {
     return searchParams.get('planToken') || selection?.planToken || null
   }, [searchParams, selection?.planToken])
+  const selectionUnlocked = Boolean(
+    essentialConsent && (!submitResult?.crisis.required || crisisAcknowledged),
+  )
 
   const loadPlan = useCallback(async (token: string) => {
     setLoadingPlan(true)
     setError(null)
 
     try {
+      const cachedPlanDays = loadPlanDays(token)
       const requests = [1, 2, 3, 4, 5].map(async (day) => {
         const response = await fetch(
           `/api/devotional-plan/${token}/day/${day}?preview=1`,
@@ -162,11 +226,23 @@ export default function SoulAuditResultsPage() {
 
       unlockedDays.sort((a, b) => a.day - b.day)
       lockedPreviews.sort((a, b) => a.day - b.day)
-      setPlanDays(unlockedDays)
+      const resolvedPlanDays =
+        unlockedDays.length > 0 ? unlockedDays : cachedPlanDays
+      setPlanDays(resolvedPlanDays)
       setLockedDayPreviews(lockedPreviews)
       setLockedMessages(Array.from(new Set(locks)))
+      if (resolvedPlanDays.length > 0) {
+        persistPlanDays(token, resolvedPlanDays)
+      }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Unable to load plan.')
+      const cachedPlanDays = loadPlanDays(token)
+      if (cachedPlanDays.length > 0) {
+        setPlanDays(cachedPlanDays)
+        setLockedDayPreviews([])
+        setLockedMessages([])
+      } else {
+        setError(err instanceof Error ? err.message : 'Unable to load plan.')
+      }
     } finally {
       setLoadingPlan(false)
     }
@@ -174,8 +250,87 @@ export default function SoulAuditResultsPage() {
 
   useEffect(() => {
     if (!planToken) return
+    const cachedPlanDays = loadPlanDays(planToken)
+    if (cachedPlanDays.length > 0) {
+      setPlanDays(cachedPlanDays)
+    }
     void loadPlan(planToken)
   }, [loadPlan, planToken])
+
+  useEffect(() => {
+    if (!planToken) return
+    let cancelled = false
+
+    async function loadArchive() {
+      try {
+        const response = await fetch('/api/soul-audit/archive', {
+          cache: 'no-store',
+        })
+        if (!response.ok) return
+        const payload = (await response.json()) as {
+          archive?: ArchivePlanSummary[]
+        }
+        if (!cancelled && Array.isArray(payload.archive)) {
+          setArchivePlans(payload.archive)
+        }
+      } catch {
+        // no-op
+      }
+    }
+
+    void loadArchive()
+    return () => {
+      cancelled = true
+    }
+  }, [planToken])
+
+  const railDays = useMemo(() => {
+    const byDay = new Map<
+      number,
+      {
+        day: number
+        title: string
+        scriptureReference?: string
+        locked: boolean
+      }
+    >()
+
+    for (const day of planDays) {
+      byDay.set(day.day, {
+        day: day.day,
+        title: day.title,
+        scriptureReference: day.scriptureReference,
+        locked: false,
+      })
+    }
+
+    for (const day of lockedDayPreviews) {
+      if (byDay.has(day.day)) continue
+      byDay.set(day.day, {
+        day: day.day,
+        title: day.title,
+        scriptureReference: day.scriptureReference,
+        locked: true,
+      })
+    }
+
+    return Array.from(byDay.values()).sort((a, b) => a.day - b.day)
+  }, [lockedDayPreviews, planDays])
+
+  const currentDayNumber = useMemo(() => {
+    if (planDays.length === 0) return null
+    return Math.max(...planDays.map((day) => day.day))
+  }, [planDays])
+
+  const nextDays = useMemo(() => {
+    if (currentDayNumber === null) return railDays
+    return railDays.filter((day) => day.day > currentDayNumber)
+  }, [currentDayNumber, railDays])
+
+  const archiveForRail = useMemo(
+    () => archivePlans.filter((plan) => plan.planToken !== planToken),
+    [archivePlans, planToken],
+  )
 
   useEffect(() => {
     if (submitResult) return
@@ -195,6 +350,7 @@ export default function SoulAuditResultsPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           auditRunId: submitResult.auditRunId,
+          runToken: submitResult.runToken,
           essentialAccepted: essentialConsent,
           analyticsOptIn,
           crisisAcknowledged,
@@ -211,6 +367,8 @@ export default function SoulAuditResultsPage() {
         }
         throw new Error(payload.error || 'Consent could not be recorded.')
       }
+      const consentPayload =
+        (await consentRes.json()) as SoulAuditConsentResponse
 
       const selectRes = await fetch('/api/soul-audit/select', {
         method: 'POST',
@@ -222,6 +380,8 @@ export default function SoulAuditResultsPage() {
         body: JSON.stringify({
           auditRunId: submitResult.auditRunId,
           optionId,
+          runToken: submitResult.runToken,
+          consentToken: consentPayload.consentToken,
           timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
           timezoneOffsetMinutes: new Date().getTimezoneOffset(),
         }),
@@ -255,6 +415,15 @@ export default function SoulAuditResultsPage() {
       }
 
       if (selectionPayload.planToken) {
+        if (Array.isArray(selectionPayload.planDays)) {
+          const safePlanDays = selectionPayload.planDays.filter(isFullPlanDay)
+          if (safePlanDays.length > 0) {
+            setPlanDays(safePlanDays)
+            setLockedDayPreviews([])
+            setLockedMessages([])
+            persistPlanDays(selectionPayload.planToken, safePlanDays)
+          }
+        }
         router.push(
           `/soul-audit/results?planToken=${selectionPayload.planToken}`,
         )
@@ -270,15 +439,18 @@ export default function SoulAuditResultsPage() {
 
   if (!submitResult && !planToken) {
     return (
-      <div className="newspaper-home flex min-h-screen items-center justify-center bg-page">
-        <p className="text-muted">Loading...</p>
+      <div className="newspaper-home min-h-screen bg-page">
+        <EuangelionShellHeader />
+        <div className="flex min-h-[calc(100vh-64px)] items-center justify-center">
+          <p className="text-muted">Loading...</p>
+        </div>
       </div>
     )
   }
 
   return (
     <div className="newspaper-home min-h-screen bg-page">
-      <Navigation />
+      <EuangelionShellHeader />
       <main className="mx-auto max-w-6xl px-6 pb-24 pt-10 md:px-12">
         <FadeIn>
           <header className="mb-10 text-center">
@@ -374,6 +546,11 @@ export default function SoulAuditResultsPage() {
                     {submitResult.remainingAudits} audits remaining this cycle
                   </p>
                 </div>
+                {!selectionUnlocked && (
+                  <p className="vw-small mb-4 text-secondary">
+                    Check essential consent first to unlock option selection.
+                  </p>
+                )}
                 <div className="grid gap-4 md:grid-cols-3">
                   {submitResult.options
                     .filter((option) => option.kind === 'ai_primary')
@@ -381,9 +558,12 @@ export default function SoulAuditResultsPage() {
                       <button
                         key={option.id}
                         type="button"
-                        disabled={submitting}
+                        disabled={submitting || !selectionUnlocked}
                         onClick={() => void submitConsentAndSelect(option.id)}
-                        className="audit-option-card group relative cursor-pointer overflow-hidden text-left"
+                        className={`audit-option-card group relative overflow-hidden text-left ${
+                          selectionUnlocked ? 'cursor-pointer' : 'is-disabled'
+                        }`}
+                        aria-disabled={submitting || !selectionUnlocked}
                         style={{
                           border: '1px solid var(--color-border)',
                           padding: '1.25rem',
@@ -398,8 +578,20 @@ export default function SoulAuditResultsPage() {
                         <p className="vw-small text-secondary">
                           {typographer(option.reasoning)}
                         </p>
+                        {option.preview?.verse && (
+                          <p className="vw-small mt-3 text-muted">
+                            {typographer(option.preview.verse)}
+                          </p>
+                        )}
+                        {option.preview?.paragraph && (
+                          <p className="vw-small mt-1 text-secondary">
+                            {typographer(option.preview.paragraph)}
+                          </p>
+                        )}
                         <p className="audit-option-hint text-label vw-small mt-4">
-                          Click to build this path
+                          {selectionUnlocked
+                            ? 'Click to build this path'
+                            : 'Check consent to unlock'}
                         </p>
                         <span className="audit-option-underline" />
                       </button>
@@ -420,9 +612,12 @@ export default function SoulAuditResultsPage() {
                       <button
                         key={option.id}
                         type="button"
-                        disabled={submitting}
+                        disabled={submitting || !selectionUnlocked}
                         onClick={() => void submitConsentAndSelect(option.id)}
-                        className="audit-option-card group relative cursor-pointer overflow-hidden text-left"
+                        className={`audit-option-card group relative overflow-hidden text-left ${
+                          selectionUnlocked ? 'cursor-pointer' : 'is-disabled'
+                        }`}
+                        aria-disabled={submitting || !selectionUnlocked}
                         style={{
                           border: '1px solid var(--color-border)',
                           padding: '1.25rem',
@@ -437,8 +632,15 @@ export default function SoulAuditResultsPage() {
                         <p className="vw-small text-secondary">
                           Opens series overview.
                         </p>
+                        {option.preview?.verse && (
+                          <p className="vw-small mt-3 text-muted">
+                            {typographer(option.preview.verse)}
+                          </p>
+                        )}
                         <p className="audit-option-hint text-label vw-small mt-4">
-                          Click to open this series
+                          {selectionUnlocked
+                            ? 'Click to open this series'
+                            : 'Check consent to unlock'}
                         </p>
                         <span className="audit-option-underline" />
                       </button>
@@ -450,109 +652,153 @@ export default function SoulAuditResultsPage() {
         )}
 
         {planToken && (
-          <section>
-            {loadingPlan && (
-              <p className="vw-body mb-6 text-secondary">
-                Building your day-by-day devotional path...
-              </p>
-            )}
-
-            {lockedMessages.length > 0 && (
-              <div className="mb-8 space-y-2">
-                {lockedMessages.map((message, index) => (
-                  <p
-                    key={`${message}-${index}`}
-                    className="vw-small text-secondary"
-                  >
-                    {message}
+          <section className="md:grid md:grid-cols-[260px_minmax(0,1fr)] md:gap-8">
+            <aside className="mb-6 md:mb-0">
+              <div
+                className="border-subtle bg-surface-raised p-4 md:sticky md:top-28"
+                style={{ borderColor: 'var(--color-border)' }}
+              >
+                <p className="text-label vw-small mb-3 text-gold">NEXT DAYS</p>
+                {nextDays.length === 0 ? (
+                  <p className="vw-small text-muted">
+                    You have reached the latest unlocked day.
                   </p>
-                ))}
-              </div>
-            )}
-
-            {lockedDayPreviews.length > 0 && (
-              <div className="mb-8">
-                <p className="text-label vw-small mb-3 text-gold">
-                  YOUR CURATED 5-DAY PREVIEW
-                </p>
-                <div className="grid gap-3 md:grid-cols-2">
-                  {lockedDayPreviews.map((day) => (
-                    <article
-                      key={`locked-preview-${day.day}`}
-                      style={{
-                        border: '1px solid var(--color-border)',
-                        padding: '1rem',
-                        background: 'var(--color-surface)',
-                      }}
-                    >
-                      <p className="text-label vw-small mb-1 text-gold">
-                        DAY {day.day} • LOCKED
-                      </p>
-                      <h3 className="vw-body mb-1">{typographer(day.title)}</h3>
-                      <p className="vw-small text-muted">
-                        {day.scriptureReference}
-                      </p>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <div className="space-y-6">
-              {planDays.map((day) => (
-                <article
-                  key={`plan-day-${day.day}`}
-                  style={{
-                    border: '1px solid var(--color-border)',
-                    padding: '1.5rem',
-                  }}
-                >
-                  <p className="text-label vw-small mb-2 text-gold">
-                    DAY {day.day}
-                    {day.chiasticPosition ? ` • ${day.chiasticPosition}` : ''}
-                  </p>
-                  <h2 className="vw-heading-md mb-2">
-                    {typographer(day.title)}
-                  </h2>
-                  <p className="vw-small mb-4 text-muted">
-                    {day.scriptureReference}
-                  </p>
-                  <p className="scripture-block vw-body mb-4 text-secondary">
-                    {typographer(day.scriptureText)}
-                  </p>
-                  <p className="vw-body mb-4 text-secondary type-prose">
-                    {typographer(day.reflection)}
-                  </p>
-                  <p className="text-serif-italic vw-body mb-4 text-secondary type-prose">
-                    {typographer(day.prayer)}
-                  </p>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <p className="vw-small text-secondary">
-                      <strong className="text-gold">NEXT STEP: </strong>
-                      {typographer(day.nextStep)}
-                    </p>
-                    <p className="vw-small text-secondary">
-                      <strong className="text-gold">JOURNAL: </strong>
-                      {typographer(day.journalPrompt)}
-                    </p>
-                  </div>
-                  {(day.endnotes?.length ?? 0) > 0 && (
-                    <div className="mt-5 border-t pt-4">
-                      <p className="text-label vw-small mb-2 text-gold">
-                        ENDNOTES
-                      </p>
-                      {day.endnotes?.map((note) => (
-                        <p
-                          key={`${day.day}-endnote-${note.id}`}
-                          className="vw-small text-muted"
-                        >
-                          [{note.id}] {note.source} — {note.note}
+                ) : (
+                  <div className="grid gap-2">
+                    {nextDays.map((day) => (
+                      <div
+                        key={`rail-next-day-${day.day}`}
+                        className="border px-3 py-2"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        <p className="text-label vw-small text-gold">
+                          DAY {day.day}
+                          {day.locked ? ' • LOCKED' : ''}
                         </p>
+                        {day.locked ? (
+                          <p className="vw-small text-secondary">
+                            {typographer(day.title)}
+                          </p>
+                        ) : (
+                          <a
+                            href={`#plan-day-${day.day}`}
+                            className="vw-small link-highlight text-secondary"
+                          >
+                            {typographer(day.title)}
+                          </a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <div
+                  className="mt-5 border-t pt-4"
+                  style={{ borderColor: 'var(--color-border)' }}
+                >
+                  <p className="text-label vw-small mb-3 text-gold">ARCHIVE</p>
+                  {archiveForRail.length === 0 ? (
+                    <p className="vw-small text-muted">
+                      No previous AI devotional plans yet.
+                    </p>
+                  ) : (
+                    <div className="grid gap-2">
+                      {archiveForRail.slice(0, 6).map((plan) => (
+                        <Link
+                          key={`archive-${plan.planToken}`}
+                          href={plan.route}
+                          className="block border px-3 py-2 text-secondary"
+                          style={{ borderColor: 'var(--color-border)' }}
+                        >
+                          <p className="text-label vw-small text-gold">PLAN</p>
+                          <p className="vw-small">
+                            {formatShortDate(plan.createdAt)}
+                          </p>
+                        </Link>
                       ))}
                     </div>
                   )}
-                </article>
-              ))}
+                </div>
+              </div>
+            </aside>
+
+            <div>
+              {loadingPlan && (
+                <p className="vw-body mb-6 text-secondary">
+                  Building your day-by-day devotional path...
+                </p>
+              )}
+
+              {lockedMessages.length > 0 && (
+                <div className="mb-8 space-y-2">
+                  {lockedMessages.map((message, index) => (
+                    <p
+                      key={`${message}-${index}`}
+                      className="vw-small text-secondary"
+                    >
+                      {message}
+                    </p>
+                  ))}
+                </div>
+              )}
+
+              <div className="space-y-6">
+                {planDays.map((day) => (
+                  <article
+                    key={`plan-day-${day.day}`}
+                    id={`plan-day-${day.day}`}
+                    style={{
+                      border: '1px solid var(--color-border)',
+                      padding: '1.5rem',
+                    }}
+                  >
+                    <p className="text-label vw-small mb-2 text-gold">
+                      DAY {day.day}
+                      {day.chiasticPosition ? ` • ${day.chiasticPosition}` : ''}
+                    </p>
+                    <h2 className="vw-heading-md mb-2">
+                      {typographer(day.title)}
+                    </h2>
+                    <p className="vw-small mb-4 text-muted">
+                      {day.scriptureReference}
+                    </p>
+                    <p className="scripture-block vw-body mb-4 text-secondary">
+                      {typographer(day.scriptureText)}
+                    </p>
+                    <p className="vw-body mb-4 text-secondary type-prose">
+                      {typographer(day.reflection)}
+                    </p>
+                    <p className="text-serif-italic vw-body mb-4 text-secondary type-prose">
+                      {typographer(day.prayer)}
+                    </p>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <p className="vw-small text-secondary">
+                        <strong className="text-gold">NEXT STEP: </strong>
+                        {typographer(day.nextStep)}
+                      </p>
+                      <p className="vw-small text-secondary">
+                        <strong className="text-gold">JOURNAL: </strong>
+                        {typographer(day.journalPrompt)}
+                      </p>
+                    </div>
+                    {(day.endnotes?.length ?? 0) > 0 && (
+                      <div className="mt-5 border-t pt-4">
+                        <p className="text-label vw-small mb-2 text-gold">
+                          ENDNOTES
+                        </p>
+                        {day.endnotes?.map((note) => (
+                          <p
+                            key={`${day.day}-endnote-${note.id}`}
+                            className="vw-small text-muted"
+                          >
+                            [{note.id}] {note.source} — {note.note}
+                          </p>
+                        ))}
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
             </div>
           </section>
         )}
@@ -576,9 +822,21 @@ export default function SoulAuditResultsPage() {
           </div>
         )}
 
-        <div className="mt-10 text-center">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-5 text-center">
+          <Link
+            href="/my-devotional"
+            className="text-label vw-small link-highlight"
+          >
+            My Devotional Home
+          </Link>
           <Link href="/series" className="text-label vw-small link-highlight">
             Browse All Series
+          </Link>
+          <Link
+            href="/soul-audit"
+            className="text-label vw-small link-highlight"
+          >
+            New Soul Audit
           </Link>
         </div>
       </main>

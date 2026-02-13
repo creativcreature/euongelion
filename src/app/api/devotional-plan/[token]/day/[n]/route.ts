@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { isDayLockingEnabledForRequest } from '@/lib/day-locking'
 import {
   getPlanDayWithFallback,
   getPlanInstanceWithFallback,
@@ -54,6 +55,29 @@ export async function GET(
     const instance = await getPlanInstanceWithFallback(token)
     if (!instance) {
       return NextResponse.json({ error: 'Plan not found.' }, { status: 404 })
+    }
+
+    const dayLockingEnabled = isDayLockingEnabledForRequest(request)
+    if (!dayLockingEnabled) {
+      const unlockedDay = await getPlanDayWithFallback(token, dayNumber)
+      if (!unlockedDay) {
+        return NextResponse.json(
+          { error: 'Plan day not found.' },
+          { status: 404 },
+        )
+      }
+
+      return NextResponse.json(
+        {
+          locked: false,
+          archived: false,
+          onboarding: dayNumber === 0,
+          day: unlockedDay.content,
+          policy: instance.start_policy,
+          dayLocking: 'disabled',
+        },
+        { status: 200 },
+      )
     }
 
     const unlock = isPlanDayUnlocked({

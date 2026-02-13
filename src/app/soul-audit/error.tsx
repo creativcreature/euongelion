@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
-import Navigation from '@/components/Navigation'
+import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 
 export default function SoulAuditError({
   error,
@@ -16,8 +16,8 @@ export default function SoulAuditError({
   }, [error])
 
   return (
-    <div className="min-h-screen bg-page">
-      <Navigation />
+    <div className="newspaper-home min-h-screen">
+      <EuangelionShellHeader />
 
       <main
         id="main-content"

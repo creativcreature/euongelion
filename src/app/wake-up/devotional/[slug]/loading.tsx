@@ -1,14 +1,11 @@
 import Skeleton from '@/components/ui/Skeleton'
 import { SkeletonText } from '@/components/ui/Skeleton'
+import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 
 export default function DevotionalLoading() {
   return (
-    <div className="min-h-screen bg-page">
-      {/* Nav placeholder */}
-      <div
-        className="h-14"
-        style={{ borderBottom: '1px solid var(--color-border)' }}
-      />
+    <div className="newspaper-reading min-h-screen">
+      <EuangelionShellHeader />
 
       {/* Hero skeleton */}
       <header className="px-6 pb-16 pt-32 md:px-16 md:pb-24 md:pt-40 lg:px-24">

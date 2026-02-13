@@ -15,10 +15,12 @@ export default function ChatMessage({
   message,
   onToggleFavorite,
   onSetColorLabel,
+  onSaveNote,
 }: {
   message: ChatMessageType
   onToggleFavorite: (id: string) => void
   onSetColorLabel: (id: string, label: ChatColorLabel) => void
+  onSaveNote?: (message: ChatMessageType) => void
 }) {
   const isUser = message.role === 'user'
 
@@ -87,6 +89,15 @@ export default function ChatMessage({
                 aria-label={`Label as ${label}`}
               />
             ),
+          )}
+
+          {onSaveNote && (
+            <button
+              onClick={() => onSaveNote(message)}
+              className="vw-small text-muted transition-colors duration-200 hover:text-gold"
+            >
+              Save note
+            </button>
           )}
         </div>
       )}

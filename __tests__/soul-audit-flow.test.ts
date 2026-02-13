@@ -4,8 +4,10 @@ import { POST as consentHandler } from '@/app/api/soul-audit/consent/route'
 import { POST as selectHandler } from '@/app/api/soul-audit/select/route'
 import { resetSessionAuditCount } from '@/lib/soul-audit/repository'
 
+let mockedSessionToken = 'test-session-token'
+
 vi.mock('@/lib/soul-audit/session', () => ({
-  getOrCreateAuditSessionToken: vi.fn(async () => 'test-session-token'),
+  getOrCreateAuditSessionToken: vi.fn(async () => mockedSessionToken),
 }))
 
 function postJson(
@@ -22,7 +24,11 @@ function postJson(
 
 describe('Soul Audit staged flow', () => {
   beforeEach(() => {
+    mockedSessionToken = 'test-session-token'
     resetSessionAuditCount('test-session-token')
+    resetSessionAuditCount('session-a')
+    resetSessionAuditCount('session-b')
+    resetSessionAuditCount('session-c')
   })
 
   it('submit returns exactly 5 options and no eager plan payload', async () => {
@@ -37,6 +43,14 @@ describe('Soul Audit staged flow', () => {
     expect(payload.version).toBe('v2')
     expect(Array.isArray(payload.options)).toBe(true)
     expect((payload.options as unknown[]).length).toBe(5)
+    const aiPrimary = (payload.options as Array<{ kind: string }>).filter(
+      (option) => option.kind === 'ai_primary',
+    ).length
+    const curatedPrefab = (payload.options as Array<{ kind: string }>).filter(
+      (option) => option.kind === 'curated_prefab',
+    ).length
+    expect(aiPrimary).toBe(3)
+    expect(curatedPrefab).toBe(2)
     expect(payload).not.toHaveProperty('customPlan')
     expect(payload).not.toHaveProperty('customDevotional')
   })
@@ -91,6 +105,10 @@ describe('Soul Audit staged flow', () => {
       }) as never,
     )
     expect(consentResponse.status).toBe(200)
+    const consentPayload = (await consentResponse.json()) as {
+      consentToken?: string
+    }
+    expect(typeof consentPayload.consentToken).toBe('string')
 
     const aiOptions = submitPayload.options.filter(
       (option) => option.kind === 'ai_primary',
@@ -200,5 +218,60 @@ describe('Soul Audit staged flow', () => {
     expect(payload.selectionType).toBe('curated_prefab')
     expect(payload.route).toMatch(/^\/wake-up\/series\//)
     expect(payload.planToken).toBeUndefined()
+  })
+
+  it('survives session-token churn via run/consent token fallback', async () => {
+    mockedSessionToken = 'session-a'
+    const submitResponse = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        response: 'too much on my plate and I need faithful clarity now.',
+      }) as never,
+    )
+    expect(submitResponse.status).toBe(200)
+
+    const submitPayload = (await submitResponse.json()) as {
+      auditRunId: string
+      runToken: string
+      options: Array<{ id: string; kind: string }>
+    }
+    const prefabOption = submitPayload.options.find(
+      (option) => option.kind === 'curated_prefab',
+    )
+    expect(prefabOption).toBeTruthy()
+
+    mockedSessionToken = 'session-b'
+    const consentResponse = await consentHandler(
+      postJson('http://localhost/api/soul-audit/consent', {
+        auditRunId: submitPayload.auditRunId,
+        runToken: submitPayload.runToken,
+        essentialAccepted: true,
+        analyticsOptIn: false,
+        crisisAcknowledged: false,
+      }) as never,
+    )
+    expect(consentResponse.status).toBe(200)
+    const consentPayload = (await consentResponse.json()) as {
+      consentToken: string
+    }
+    expect(typeof consentPayload.consentToken).toBe('string')
+
+    mockedSessionToken = 'session-c'
+    const selectionResponse = await selectHandler(
+      postJson('http://localhost/api/soul-audit/select', {
+        auditRunId: submitPayload.auditRunId,
+        optionId: prefabOption?.id,
+        runToken: submitPayload.runToken,
+        consentToken: consentPayload.consentToken,
+      }) as never,
+    )
+    expect(selectionResponse.status).toBe(200)
+    const selectionPayload = (await selectionResponse.json()) as {
+      ok: boolean
+      selectionType: string
+      route: string
+    }
+    expect(selectionPayload.ok).toBe(true)
+    expect(selectionPayload.selectionType).toBe('curated_prefab')
+    expect(selectionPayload.route).toMatch(/^\/wake-up\/series\//)
   })
 })

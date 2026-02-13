@@ -21,6 +21,24 @@ describe('Soul Audit schedule policy edge cases', () => {
     const nowUtc = new Date('2026-02-20T14:00:00.000Z') // Friday
     const policy = resolveStartPolicy(nowUtc, 0)
     expect(policy.startPolicy).toBe('wed_sun_onboarding')
+    expect(policy.onboardingVariant).toBe('friday_1_day')
+    expect(policy.onboardingDays).toBe(1)
+  })
+
+  it('returns 3-day onboarding variant for Wednesday starts', () => {
+    const nowUtc = new Date('2026-02-18T14:00:00.000Z') // Wednesday
+    const policy = resolveStartPolicy(nowUtc, 0)
+    expect(policy.startPolicy).toBe('wed_sun_onboarding')
+    expect(policy.onboardingVariant).toBe('wednesday_3_day')
+    expect(policy.onboardingDays).toBe(3)
+  })
+
+  it('returns 2-day onboarding variant for Thursday starts', () => {
+    const nowUtc = new Date('2026-02-19T14:00:00.000Z') // Thursday
+    const policy = resolveStartPolicy(nowUtc, 0)
+    expect(policy.startPolicy).toBe('wed_sun_onboarding')
+    expect(policy.onboardingVariant).toBe('thursday_2_day')
+    expect(policy.onboardingDays).toBe(2)
   })
 
   it('unlocks onboarding day for wed_sun_onboarding policy', () => {

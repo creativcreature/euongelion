@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import {
+  getClientKey,
+  readJsonWithLimit,
+  takeRateLimit,
+  withRateLimitHeaders,
+} from '@/lib/api-security'
+import {
   getMockAccountSession,
   upsertMockAccountSession,
 } from '@/lib/soul-audit/repository'
@@ -11,6 +17,9 @@ interface Body {
   mode?: Mode
   analyticsOptIn?: boolean
 }
+
+const MAX_SESSION_BODY_BYTES = 2_048
+const MAX_SESSION_REQUESTS_PER_MINUTE = 40
 
 function capabilities(mode: Mode) {
   if (mode === 'mock_account') {
@@ -31,7 +40,34 @@ function capabilities(mode: Mode) {
 
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as Body
+    const limiter = takeRateLimit({
+      namespace: 'mock-account-session',
+      key: getClientKey(request),
+      limit: MAX_SESSION_REQUESTS_PER_MINUTE,
+      windowMs: 60_000,
+    })
+    if (!limiter.ok) {
+      return withRateLimitHeaders(
+        NextResponse.json(
+          { error: 'Too many session requests. Please retry shortly.' },
+          { status: 429 },
+        ),
+        limiter.retryAfterSeconds,
+      )
+    }
+
+    const parsed = await readJsonWithLimit<Body>({
+      request,
+      maxBytes: MAX_SESSION_BODY_BYTES,
+    })
+    if (!parsed.ok) {
+      return NextResponse.json(
+        { error: parsed.error },
+        { status: parsed.status },
+      )
+    }
+
+    const body = parsed.data
     const mode: Mode =
       body.mode === 'mock_account' ? 'mock_account' : 'anonymous'
     const analyticsOptIn = Boolean(body.analyticsOptIn)
@@ -45,7 +81,6 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       ok: true,
-      sessionToken,
       mode: session.mode,
       analyticsOptIn: session.analytics_opt_in,
       capabilities: capabilities(session.mode),
@@ -67,7 +102,6 @@ export async function GET() {
 
     return NextResponse.json({
       ok: true,
-      sessionToken,
       mode,
       analyticsOptIn: session?.analytics_opt_in ?? false,
       capabilities: capabilities(mode),

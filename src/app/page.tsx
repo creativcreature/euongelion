@@ -19,26 +19,27 @@ const emptySubscribe = () => () => {}
 
 const NAV_ITEMS = [
   { href: '/', label: 'HOME' },
+  { href: '/my-devotional', label: 'MY DEVOTIONAL' },
   { href: '/soul-audit', label: 'SOUL AUDIT' },
   { href: '/wake-up', label: 'WAKE-UP' },
   { href: '/series', label: 'SERIES' },
-  { href: '/settings', label: 'SETTING' },
+  { href: '/settings', label: 'SETTINGS' },
 ]
 
 const HOW_STEPS = [
   {
     title: '1. Name it.',
-    body: 'Write one honest paragraph, and we will customize a 5 day devotional plan for you.',
+    body: 'Name what is real without polishing it. Honest words are enough.',
     image: '/images/illustrations/euangelion-homepage-engraving-09.svg',
   },
   {
     title: '2. Read it.',
-    body: 'Write one honest paragraph, and we will customize a 5 day devotional plan for you.',
+    body: 'Review five matched devotional paths and choose where to begin.',
     image: '/images/illustrations/euangelion-homepage-engraving-10.svg',
   },
   {
     title: '3. Now Walk It Out.',
-    body: 'Write one honest paragraph, and we will customize a 5 day devotional plan for you.',
+    body: 'Get your curated 5-day plan and take one faithful step each day.',
     image: '/images/illustrations/euangelion-homepage-engraving-11.svg',
   },
 ]
@@ -101,6 +102,10 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [faqIndex, setFaqIndex] = useState(0)
+  const [activeFaqQuestion, setActiveFaqQuestion] = useState<string | null>(
+    null,
+  )
+  const [resumeRoute, setResumeRoute] = useState<string | null>(null)
   const [navDocked, setNavDocked] = useState(false)
   const [mobileTopbarIndex, setMobileTopbarIndex] = useState(0)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
@@ -127,6 +132,81 @@ export default function Home() {
     [faqIndex],
   )
   const faqItemsToRender = isMobileViewport ? FAQ_ITEMS : faqWindow
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const params = new URLSearchParams(window.location.search)
+    const hasAuthCallbackParams =
+      params.has('code') || params.has('token_hash') || params.has('type')
+
+    if (!hasAuthCallbackParams) return
+
+    const query = params.toString()
+    router.replace(`/auth/callback${query ? `?${query}` : ''}`)
+  }, [router])
+
+  useEffect(() => {
+    if (isMobileViewport) {
+      setActiveFaqQuestion(null)
+      return
+    }
+    setActiveFaqQuestion((previous) => {
+      if (
+        previous &&
+        faqItemsToRender.some((item) => item.question === previous)
+      ) {
+        return previous
+      }
+      return faqItemsToRender[0]?.question ?? null
+    })
+  }, [faqItemsToRender, isMobileViewport])
+
+  useEffect(() => {
+    let cancelled = false
+
+    const fromSession = sessionStorage.getItem('soul-audit-selection-v2')
+    if (fromSession) {
+      try {
+        const parsed = JSON.parse(fromSession) as { route?: string }
+        if (parsed.route && parsed.route !== '/' && !cancelled) {
+          setResumeRoute(parsed.route)
+          return
+        }
+      } catch {
+        // no-op
+      }
+    }
+
+    async function resolveCurrentHome() {
+      try {
+        const response = await fetch('/api/soul-audit/current', {
+          cache: 'no-store',
+        })
+        if (!response.ok) return
+
+        const payload = (await response.json()) as {
+          hasCurrent?: boolean
+          route?: string
+        }
+        if (
+          payload.hasCurrent &&
+          typeof payload.route === 'string' &&
+          payload.route !== '/' &&
+          !cancelled
+        ) {
+          setResumeRoute(payload.route)
+          return
+        }
+      } catch {
+        // no-op
+      }
+    }
+
+    void resolveCurrentHome()
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')
@@ -382,6 +462,17 @@ export default function Home() {
           <p className="mock-masthead-sub">GOOD NEWS COMING</p>
         </section>
 
+        {resumeRoute && (
+          <section className="mock-resume-row">
+            <p className="mock-footnote">
+              You already have an active devotional path.
+            </p>
+            <Link href={resumeRoute} className="mock-btn text-label">
+              CONTINUE MY DEVOTIONAL
+            </Link>
+          </section>
+        )}
+
         <div
           ref={navSentinelRef}
           className="mock-nav-sentinel"
@@ -485,8 +576,7 @@ export default function Home() {
           <p className="text-label mock-kicker">WHAT ARE YOU EVEN DOING?</p>
           <h2 className="mock-title-center">How this works.</h2>
           <p className="mock-subcopy-center">
-            Write one honest paragraph, and we will customize a 5 day devotional
-            plan for you.
+            Simple flow. Honest input. Focused output that meets where you are.
           </p>
         </section>
 
@@ -515,8 +605,7 @@ export default function Home() {
           <p className="text-label mock-kicker">HAND CRAFTED</p>
           <h2 className="mock-title-center">Featured Series</h2>
           <p className="mock-subcopy-center">
-            Write one honest paragraph, and we will customize a 5 day devotional
-            plan for you.
+            Curated reading paths for common spiritual seasons and questions.
           </p>
         </section>
 
@@ -532,13 +621,7 @@ export default function Home() {
               >
                 <div className="mock-card-media" aria-hidden="true" />
                 <h3>{series.title}.</h3>
-                <p>
-                  Write one honest paragraph,
-                  <br />
-                  and we will customize a 5 day
-                  <br />
-                  devotional plan for you.
-                </p>
+                <p>{series.question}</p>
                 <span className="text-label">5 DAYS</span>
               </Link>
             )
@@ -557,10 +640,7 @@ export default function Home() {
         <section className="mock-faq-row">
           <article className="mock-faq-lead">
             <h3>Questions before you begin?</h3>
-            <p>
-              Write one honest paragraph, and we will customize a 5 day
-              devotional plan for you.
-            </p>
+            <p>Honest answers, clear expectations, no pressure.</p>
           </article>
 
           {!isMobileViewport && (
@@ -578,16 +658,43 @@ export default function Home() {
             </button>
           )}
 
-          {faqItemsToRender.map((item, idx) => (
-            <article
-              key={`${item.question}-${idx}`}
-              className="mock-faq-card"
-              tabIndex={0}
-            >
-              <p className="mock-faq-question">{item.question}</p>
-              <p className="mock-faq-answer">{item.answer}</p>
-            </article>
-          ))}
+          {faqItemsToRender.map((item, idx) => {
+            const cardId = `faq-card-${idx}`
+            const answerId = `faq-answer-${idx}`
+            const isActive =
+              !isMobileViewport && activeFaqQuestion === item.question
+
+            if (isMobileViewport) {
+              return (
+                <article
+                  key={`${item.question}-${idx}`}
+                  className="mock-faq-card"
+                >
+                  <p className="mock-faq-question">{item.question}</p>
+                  <p className="mock-faq-answer">{item.answer}</p>
+                </article>
+              )
+            }
+
+            return (
+              <button
+                type="button"
+                key={`${item.question}-${idx}`}
+                id={cardId}
+                className={`mock-faq-card ${isActive ? 'is-active' : ''}`}
+                aria-expanded={isActive}
+                aria-controls={answerId}
+                onMouseEnter={() => setActiveFaqQuestion(item.question)}
+                onFocus={() => setActiveFaqQuestion(item.question)}
+                onClick={() => setActiveFaqQuestion(item.question)}
+              >
+                <p className="mock-faq-question">{item.question}</p>
+                <p id={answerId} className="mock-faq-answer">
+                  {item.answer}
+                </p>
+              </button>
+            )
+          })}
 
           {!isMobileViewport && (
             <button

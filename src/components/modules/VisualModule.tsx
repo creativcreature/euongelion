@@ -1,14 +1,17 @@
 'use client'
 
-import { useState } from 'react'
-import Image from 'next/image'
 import type { Module } from '@/types'
 import { typographer } from '@/lib/typographer'
 
 export default function VisualModule({ module }: { module: Module }) {
-  const [imageError, setImageError] = useState(false)
-
-  if (!module.imageUrl && !module.content) return null
+  if (
+    !module.imageUrl &&
+    !module.content &&
+    !module.imageCaption &&
+    !module.meditationPrompt
+  ) {
+    return null
+  }
 
   return (
     <div className="my-16 md:my-24">
@@ -16,27 +19,13 @@ export default function VisualModule({ module }: { module: Module }) {
         {module.heading || 'VISUAL MEDITATION'}
       </p>
 
-      {module.imageUrl && !imageError && (
-        <div
-          className="relative mb-8 overflow-hidden"
+      {(module.imageCaption || module.imageAlt) && (
+        <p
+          className="text-serif-italic vw-small mb-8 text-muted"
           style={{ maxWidth: '720px' }}
         >
-          <div className="relative aspect-[4/3]">
-            <Image
-              src={module.imageUrl}
-              alt={module.imageAlt || ''}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 720px"
-              onError={() => setImageError(true)}
-            />
-          </div>
-          {module.imageCaption && (
-            <p className="mt-4 vw-small italic text-muted">
-              {typographer(module.imageCaption)}
-            </p>
-          )}
-        </div>
+          {typographer(module.imageCaption || module.imageAlt || '')}
+        </p>
       )}
 
       {module.content && (

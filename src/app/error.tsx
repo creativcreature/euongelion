@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
+import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 
 export default function Error({
   error,
@@ -15,8 +16,9 @@ export default function Error({
   }, [error])
 
   return (
-    <div className="min-h-screen bg-page">
-      <div className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+    <div className="newspaper-home min-h-screen">
+      <EuangelionShellHeader />
+      <div className="flex min-h-[calc(100vh-64px)] flex-col items-center justify-center px-6 text-center">
         <p className="text-label vw-small mb-6 text-gold">SOMETHING BROKE</p>
         <h1 className="text-serif-italic vw-heading-md mb-6">
           This wasn&apos;t supposed to happen.

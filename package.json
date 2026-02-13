@@ -2,13 +2,21 @@
   "name": "euangelion",
   "version": "0.7.0",
   "private": true,
+  "engines": {
+    "node": ">=20.10 <25"
+  },
   "scripts": {
     "dev": "next dev --port 3333",
     "build": "next build --webpack",
     "start": "next start --port 3333",
+    "ios:sync": "npx cap sync ios",
+    "ios:open": "npx cap open ios",
+    "ios:run": "npx cap run ios",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
     "verify:production-contracts": "node scripts/check-production-contracts.mjs",
+    "verify:tracking": "node scripts/check-tracking-integrity.mjs",
+    "verify:ios-readiness": "node scripts/check-ios-readiness.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
@@ -16,7 +24,12 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@capacitor/cli": "^8.1.0",
+    "@capacitor/core": "^8.1.0",
+    "@capacitor/device": "^8.0.1",
+    "@capacitor/ios": "^8.1.0",
     "@gsap/react": "^2.1.2",
+    "@revenuecat/purchases-capacitor": "^12.1.2",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.95.3",
     "@vercel/analytics": "^1.6.1",
@@ -27,6 +40,7 @@
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "stripe": "^20.3.1",
     "zustand": "^5.0.11"
   },
   "devDependencies": {

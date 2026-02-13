@@ -1,14 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import Navigation from '@/components/Navigation'
-import SeriesHero from '@/components/SeriesHero'
+import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import ShareButton from '@/components/ShareButton'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
 import OrnamentDivider from '@/components/OrnamentDivider'
 import DevotionalMilestoneReveal from '@/components/newspaper/DevotionalMilestoneReveal'
-import IllustrationFrame from '@/components/newspaper/IllustrationFrame'
 import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
 import type { SeriesInfo } from '@/data/series'
@@ -27,10 +25,7 @@ export default function SeriesPageClient({
 
   return (
     <div className="newspaper-reading min-h-screen">
-      <Navigation />
-
-      {/* Series Hero Image */}
-      <SeriesHero seriesSlug={slug} size="hero" overlay />
+      <EuangelionShellHeader />
 
       {/* Series Header */}
       <header className="mx-auto max-w-7xl px-6 pb-20 pt-12 md:px-[60px] md:pb-32 md:pt-20 lg:px-20">
@@ -82,15 +77,6 @@ export default function SeriesPageClient({
 
           {/* Journey sidebar */}
           <div className="md:col-span-4 md:col-start-9">
-            <DevotionalMilestoneReveal className="mb-6" variant="editorial">
-              <IllustrationFrame
-                src="/images/illustrations/generated/series-hero-generated.png"
-                alt="Series engraving motif"
-                effect="halftone"
-                aspect="square"
-                decorative
-              />
-            </DevotionalMilestoneReveal>
             <FadeIn delay={0.15}>
               <div className="bg-surface-raised p-8 md:sticky md:top-24 md:p-10">
                 <div className="mb-4 flex items-center justify-between">
@@ -148,6 +134,9 @@ export default function SeriesPageClient({
           {series.days.map((day) => {
             const readingCheck = canRead(day.slug)
             const isLocked = !readingCheck.canRead
+            const lockMessage =
+              (readingCheck as { message?: string }).message ||
+              'This day unlocks in sequence as you continue your reading rhythm.'
             const dayIsRead = isRead(day.slug)
             const isCenter = dayCount === 5 && day.day === 3
 
@@ -161,6 +150,7 @@ export default function SeriesPageClient({
                       dayIsRead={false}
                       isCenter={isCenter}
                     />
+                    <p className="vw-small mt-2 text-muted">{lockMessage}</p>
                   </div>
                 ) : (
                   <Link

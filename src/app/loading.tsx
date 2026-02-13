@@ -1,13 +1,10 @@
 import Skeleton from '@/components/ui/Skeleton'
+import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 
 export default function RootLoading() {
   return (
-    <div className="min-h-screen bg-page">
-      {/* Nav placeholder */}
-      <div
-        className="h-14"
-        style={{ borderBottom: '1px solid var(--color-border)' }}
-      />
+    <div className="newspaper-home min-h-screen">
+      <EuangelionShellHeader />
 
       {/* Hero skeleton */}
       <div className="flex min-h-[calc(100vh-57px)] flex-col items-center justify-center px-6 text-center">

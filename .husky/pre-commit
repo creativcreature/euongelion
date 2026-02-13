@@ -13,6 +13,7 @@ fi
 
 npm run type-check
 npm run verify:production-contracts
+npm run verify:tracking
 
 # Enforce CHANGELOG update when code files change
 CODE_CHANGED=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|tsx)$' | head -1)

@@ -6,7 +6,7 @@ import ChatMessage from './ChatMessage'
 import { useChatStore } from '@/stores/chatStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { typographer } from '@/lib/typographer'
-import type { ChatColorLabel } from '@/types'
+import type { ChatColorLabel, ChatMessage as ChatMessageType } from '@/types'
 
 const FREE_TIER_LIMIT = 10
 
@@ -38,6 +38,36 @@ export default function DevotionalChat({
   } = useChatStore()
 
   const anthropicApiKey = useSettingsStore((s) => s.anthropicApiKey)
+
+  const saveChatNote = useCallback(
+    async (message: ChatMessageType) => {
+      try {
+        const response = await fetch('/api/annotations', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            devotionalSlug,
+            annotationType: 'note',
+            anchorText: message.highlightedText || null,
+            body: message.content,
+            style: {
+              source: 'chat',
+              messageId: message.id,
+              colorLabel: message.colorLabel,
+            },
+          }),
+        })
+        if (response.ok) {
+          window.dispatchEvent(new CustomEvent('libraryUpdated'))
+        }
+      } catch {
+        // no-op
+      }
+    },
+    [devotionalSlug],
+  )
 
   // Set devotional context when component mounts
   useEffect(() => {
@@ -259,6 +289,7 @@ export default function DevotionalChat({
                   onSetColorLabel={(id: string, label: ChatColorLabel) =>
                     setColorLabel(id, label)
                   }
+                  onSaveNote={(message) => void saveChatNote(message)}
                 />
               ))}
 

@@ -1,8 +1,13 @@
 import type { CustomPlanDay, DevotionalDayEndnote } from '@/types/soul-audit'
-import { getCuratedCatalog } from './curated-catalog'
+import {
+  findCandidateBySeed,
+  rankCandidatesForInput,
+  type CurationSeed,
+  type CuratedDayCandidate,
+} from './curation-engine'
 import { retrieveReferenceHits } from './reference-volumes'
+import type { OnboardingVariant } from './schedule'
 
-const REQUIRED_CORE_MODULES = ['scripture', 'teaching', 'reflection', 'prayer']
 const CHIASTIC_POSITIONS: Array<'A' | 'B' | 'C' | "B'" | "A'"> = [
   'A',
   'B',
@@ -10,26 +15,6 @@ const CHIASTIC_POSITIONS: Array<'A' | 'B' | 'C' | "B'" | "A'"> = [
   "B'",
   "A'",
 ]
-const DAY_BIASES = [
-  'honest',
-  'trust',
-  'practice',
-  'community',
-  'endure',
-] as const
-
-interface ModuleCandidate {
-  key: string
-  seriesSlug: string
-  seriesTitle: string
-  sourcePath: string
-  day: number
-  dayTitle: string
-  scriptureReference: string
-  type: string
-  payload: Record<string, unknown>
-  searchText: string
-}
 
 export class MissingCuratedModuleError extends Error {
   constructor(slug: string, day: number, moduleType: string) {
@@ -40,208 +25,86 @@ export class MissingCuratedModuleError extends Error {
   }
 }
 
-function toLine(value: unknown, fallback = ''): string {
+function toLine(value: unknown): string {
   return typeof value === 'string' && value.trim().length > 0
     ? value.trim()
-    : fallback
+    : ''
 }
 
-function extractKeywords(input: string): string[] {
-  return Array.from(
-    new Set(
-      input
-        .toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, ' ')
-        .split(/\s+/)
-        .map((word) => word.trim())
-        .filter((word) => word.length >= 4),
-    ),
-  ).slice(0, 16)
-}
-
-function generatedBridge(userResponse: string, dayTitle: string): string {
+function personalizedBridge(
+  userResponse: string,
+  day: CuratedDayCandidate,
+): string {
   const snippet = userResponse.trim().slice(0, 180)
-  if (!snippet) return `Carry this truth from ${dayTitle} into your next step.`
-  return `From what you shared ("${snippet}"), this day invites one faithful step: bring that exact tension to God and stay honest in His presence.`
+  const base = `Today in "${day.dayTitle}", take one concrete step with what you just read: ${day.takeawayText}`
+  if (!snippet) return base
+  return `${base}\n\nFrom what you shared ("${snippet}"), bring that exact tension honestly before God today.`
 }
 
-function normalizeType(value: unknown): string {
-  return toLine(value).toLowerCase()
+function expandedReflection(
+  userResponse: string,
+  day: CuratedDayCandidate,
+  referenceHit?: { source: string; excerpt: string },
+): string {
+  const bridge = personalizedBridge(userResponse, day)
+  const contextualNote = referenceHit
+    ? `Reference grounding (${referenceHit.source}): ${referenceHit.excerpt}`
+    : 'Stay with the text slowly. Let the Scripture name what you are carrying before you try to fix it.'
+
+  return `${day.teachingText}\n\n${bridge}\n\n${contextualNote}`
 }
 
-function buildSearchText(parts: unknown[]): string {
-  return parts
-    .map((part) => toLine(part))
-    .filter(Boolean)
-    .join(' ')
-    .toLowerCase()
-}
-
-function buildModuleCandidates(): ModuleCandidate[] {
-  const candidates: ModuleCandidate[] = []
-
-  for (const series of getCuratedCatalog().values()) {
-    for (const day of series.days) {
-      day.modules.forEach((module, index) => {
-        const payload = module as Record<string, unknown>
-        const type = normalizeType(payload.type)
-        if (!type) return
-
-        const searchText = buildSearchText([
-          series.slug,
-          series.title,
-          day.title,
-          day.scriptureReference,
-          payload.title,
-          payload.reference,
-          payload.text,
-          payload.passage,
-          payload.body,
-          payload.content,
-          payload.prompt,
-          payload.commitment,
-          payload.modernApplication,
-          payload.keyInsight,
-        ])
-
-        candidates.push({
-          key: `${series.slug}:${day.day}:${type}:${index}`,
-          seriesSlug: series.slug,
-          seriesTitle: series.title,
-          sourcePath: series.sourcePath,
-          day: day.day,
-          dayTitle: day.title,
-          scriptureReference: day.scriptureReference,
-          type,
-          payload,
-          searchText,
-        })
-      })
-    }
+function personalizedPrayerLine(userResponse: string): string {
+  const snippet = userResponse.trim().slice(0, 120)
+  if (!snippet) {
+    return 'Help me walk this faithfully, one step at a time.'
   }
-
-  return candidates
+  return `You know what I am carrying ("${snippet}"). Meet me in it and lead me in truth.`
 }
 
-function scoreCandidate(params: {
-  candidate: ModuleCandidate
-  anchorSlug: string
-  keywords: string[]
-  dayBias: string
-  context?: { seriesSlug: string; day: number } | null
-}): number {
-  const { candidate, anchorSlug, keywords, dayBias, context } = params
-  let score = 0
-
-  if (candidate.seriesSlug === anchorSlug) score += 6
-  if (context && candidate.seriesSlug === context.seriesSlug) score += 2
-  if (context && candidate.day === context.day) score += 1
-  if (dayBias && candidate.searchText.includes(dayBias)) score += 1.5
-
-  for (const keyword of keywords) {
-    if (candidate.searchText.includes(keyword)) score += 1
-  }
-
-  // Deterministic tie-breaker to keep rankings stable.
-  const tieBreaker =
-    (candidate.key
-      .split('')
-      .reduce((sum, char) => sum + char.charCodeAt(0), 0) %
-      97) /
-    1000
-
-  return score + tieBreaker
+function expandedPrayer(
+  userResponse: string,
+  day: CuratedDayCandidate,
+): string {
+  return [
+    day.prayerText,
+    personalizedPrayerLine(userResponse),
+    `Anchor this in me today through ${day.scriptureReference}, and give me courage to live what I read.`,
+  ].join('\n\n')
 }
 
-function pickBestModule(params: {
-  type: string
-  candidates: ModuleCandidate[]
-  usedModuleKeys: Set<string>
-  usedAnchorDays?: Set<string>
-  anchorSlug: string
-  keywords: string[]
-  dayBias: string
-  context?: { seriesSlug: string; day: number } | null
-  uniqueAnchorDay?: boolean
-}): ModuleCandidate | null {
-  const scoped = params.candidates.filter(
-    (candidate) =>
-      candidate.type === params.type &&
-      !params.usedModuleKeys.has(candidate.key),
-  )
-  if (scoped.length === 0) return null
-
-  const withDayFilter =
-    params.uniqueAnchorDay && params.usedAnchorDays
-      ? scoped.filter(
-          (candidate) =>
-            !params.usedAnchorDays?.has(
-              `${candidate.seriesSlug}:${candidate.day}`,
-            ),
-        )
-      : scoped
-
-  const pool = withDayFilter.length > 0 ? withDayFilter : scoped
-  return pool
-    .map((candidate) => ({
-      candidate,
-      score: scoreCandidate({
-        candidate,
-        anchorSlug: params.anchorSlug,
-        keywords: params.keywords,
-        dayBias: params.dayBias,
-        context: params.context,
-      }),
-    }))
-    .sort((a, b) => b.score - a.score)[0]?.candidate
+function expandedNextStep(day: CuratedDayCandidate): string {
+  const base = toLine(day.takeawayText)
+  if (!base) return ''
+  return `${base} Then choose one concrete action you can complete before the day ends.`
 }
 
-function selectModule(params: {
-  type: string
-  candidates: ModuleCandidate[]
-  usedModuleKeys: Set<string>
-  usedAnchorDays?: Set<string>
-  anchorSlug: string
-  keywords: string[]
-  dayBias: string
-  context?: { seriesSlug: string; day: number } | null
-  uniqueAnchorDay?: boolean
-}): ModuleCandidate | null {
-  const match = pickBestModule(params)
-  if (!match) return null
-
-  params.usedModuleKeys.add(match.key)
-  if (params.uniqueAnchorDay && params.usedAnchorDays) {
-    params.usedAnchorDays.add(`${match.seriesSlug}:${match.day}`)
-  }
-  return match
+function expandedJournalPrompt(day: CuratedDayCandidate): string {
+  const base = toLine(day.reflectionPrompt)
+  if (!base) return ''
+  return `${base}\nWhat resistance do you notice in yourself, and what would faithful obedience look like in one sentence?`
 }
 
 function buildEndnotes(params: {
-  scriptureReference: string
-  moduleSources: string[]
+  candidate: CuratedDayCandidate
   userResponse: string
 }): DevotionalDayEndnote[] {
   const notes: DevotionalDayEndnote[] = [
     {
       id: 1,
       source: 'Scripture',
-      note:
-        params.scriptureReference || 'Scripture reference in curated modules',
+      note: params.candidate.scriptureReference,
+    },
+    {
+      id: 2,
+      source: params.candidate.sourcePath,
+      note: `${params.candidate.seriesSlug} day ${params.candidate.dayNumber}`,
     },
   ]
 
-  params.moduleSources.slice(0, 3).forEach((source) => {
-    notes.push({
-      id: notes.length + 1,
-      source,
-      note: 'Curated module source',
-    })
-  })
-
   const referenceHits = retrieveReferenceHits({
     userResponse: params.userResponse,
-    scriptureReference: params.scriptureReference,
+    scriptureReference: params.candidate.scriptureReference,
     limit: 2,
   })
 
@@ -256,231 +119,151 @@ function buildEndnotes(params: {
   return notes
 }
 
+function selectPlanCandidates(params: {
+  seriesSlug: string
+  userResponse: string
+  anchorSeed?: CurationSeed | null
+}): CuratedDayCandidate[] {
+  const ranked = rankCandidatesForInput({
+    input: `${params.userResponse} ${params.seriesSlug}`,
+    anchorSeriesSlug: params.seriesSlug,
+    anchorSeed: params.anchorSeed,
+  })
+
+  const selected: CuratedDayCandidate[] = []
+  const usedKeys = new Set<string>()
+
+  if (params.anchorSeed) {
+    const anchor = findCandidateBySeed(params.anchorSeed)
+    if (anchor) {
+      selected.push(anchor)
+      usedKeys.add(anchor.key)
+    }
+  }
+
+  for (const entry of ranked) {
+    if (selected.length >= 5) break
+    if (usedKeys.has(entry.candidate.key)) continue
+    selected.push(entry.candidate)
+    usedKeys.add(entry.candidate.key)
+  }
+
+  if (selected.length < 5) {
+    throw new MissingCuratedModuleError(
+      params.seriesSlug,
+      selected.length + 1,
+      'day',
+    )
+  }
+
+  return selected.slice(0, 5)
+}
+
 export function buildCuratedFirstPlan(params: {
   seriesSlug: string
   userResponse: string
+  anchorSeed?: CurationSeed | null
 }): CustomPlanDay[] {
-  const candidates = buildModuleCandidates()
-  if (candidates.length === 0) {
-    throw new MissingCuratedModuleError(params.seriesSlug, 1, 'module-catalog')
-  }
+  const selectedDays = selectPlanCandidates(params)
 
-  const keywords = extractKeywords(
-    `${params.userResponse} ${params.seriesSlug}`,
-  )
-  const usedModuleKeys = new Set<string>()
-  const usedAnchorDays = new Set<string>()
-  const planDays: CustomPlanDay[] = []
-
-  for (let index = 0; index < 5; index += 1) {
+  return selectedDays.map((candidate, index) => {
     const dayNumber = index + 1
-    const dayBias = DAY_BIASES[index] ?? ''
-
-    const scripture = selectModule({
-      type: 'scripture',
-      candidates,
-      usedModuleKeys,
-      usedAnchorDays,
-      anchorSlug: params.seriesSlug,
-      keywords,
-      dayBias,
-      uniqueAnchorDay: true,
+    const referenceHits = retrieveReferenceHits({
+      userResponse: params.userResponse,
+      scriptureReference: candidate.scriptureReference,
+      limit: 1,
     })
-    if (!scripture) {
+    const reflection = expandedReflection(
+      params.userResponse,
+      candidate,
+      referenceHits[0],
+    )
+    const prayer = expandedPrayer(params.userResponse, candidate)
+
+    const nextStep = expandedNextStep(candidate)
+    const journalPrompt = expandedJournalPrompt(candidate)
+    if (!nextStep) {
       throw new MissingCuratedModuleError(
         params.seriesSlug,
         dayNumber,
-        'scripture',
+        'takeaway',
+      )
+    }
+    if (!journalPrompt) {
+      throw new MissingCuratedModuleError(
+        params.seriesSlug,
+        dayNumber,
+        'reflection',
       )
     }
 
-    const context = { seriesSlug: scripture.seriesSlug, day: scripture.day }
-    const teaching = selectModule({
-      type: 'teaching',
-      candidates,
-      usedModuleKeys,
-      anchorSlug: params.seriesSlug,
-      keywords,
-      dayBias,
-      context,
-    })
-    const reflection = selectModule({
-      type: 'reflection',
-      candidates,
-      usedModuleKeys,
-      anchorSlug: params.seriesSlug,
-      keywords,
-      dayBias,
-      context,
-    })
-    const prayer = selectModule({
-      type: 'prayer',
-      candidates,
-      usedModuleKeys,
-      anchorSlug: params.seriesSlug,
-      keywords,
-      dayBias,
-      context,
-    })
-
-    for (const required of REQUIRED_CORE_MODULES) {
-      if (
-        (required === 'teaching' && !teaching) ||
-        (required === 'reflection' && !reflection) ||
-        (required === 'prayer' && !prayer)
-      ) {
-        throw new MissingCuratedModuleError(
-          params.seriesSlug,
-          dayNumber,
-          required,
-        )
-      }
-    }
-
-    const takeaway = selectModule({
-      type: 'takeaway',
-      candidates,
-      usedModuleKeys,
-      anchorSlug: params.seriesSlug,
-      keywords,
-      dayBias,
-      context,
-    })
-    const bridge = selectModule({
-      type: 'bridge',
-      candidates,
-      usedModuleKeys,
-      anchorSlug: params.seriesSlug,
-      keywords,
-      dayBias,
-      context,
-    })
-
-    const scriptureReference = toLine(
-      scripture.payload.reference ?? scripture.scriptureReference,
-      scripture.scriptureReference,
-    )
-    const scriptureText = toLine(
-      scripture.payload.text ?? scripture.payload.passage,
-      'See scripture reference above.',
-    )
-
-    const dayTitle = toLine(
-      teaching?.payload.title ?? scripture.dayTitle,
-      `Day ${dayNumber}`,
-    )
-    const curatedReflection = toLine(
-      teaching?.payload.body ??
-        teaching?.payload.content ??
-        reflection?.payload.prompt,
-      'Read slowly and receive what is true.',
-    )
-    const reflectionText = `${curatedReflection}\n\n${generatedBridge(params.userResponse, dayTitle)}`
-
-    const curatedPrayer = toLine(
-      prayer?.payload.text ??
-        prayer?.payload.prayerText ??
-        prayer?.payload.content,
-      'Lord Jesus, hold me steady in your presence today.',
-    )
-    const polishedPrayer = `${curatedPrayer} Help me walk this faithfully, one step at a time.`
-
-    const reflectionQuestions = Array.isArray(
-      reflection?.payload.additionalQuestions,
-    )
-      ? (reflection?.payload.additionalQuestions as unknown[])
-          .map((question) => String(question))
-          .join(' ')
-      : ''
-
-    const nextStep = toLine(
-      takeaway?.payload.commitment ??
-        bridge?.payload.modernApplication ??
-        reflectionQuestions,
-      'Write one concrete act of obedience for today and practice it before sunset.',
-    )
-
-    const journalPrompt = toLine(
-      reflection?.payload.prompt ?? reflection?.payload.content,
-      'What is one thing God is inviting me to trust today?',
-    )
-
-    const moduleSources = Array.from(
-      new Set(
-        [scripture, teaching, reflection, prayer, takeaway, bridge]
-          .filter((module): module is ModuleCandidate => Boolean(module))
-          .map(
-            (module) =>
-              `${module.sourcePath} (${module.seriesSlug} day ${module.day}, ${module.type})`,
-          ),
-      ),
-    )
-
-    planDays.push({
+    return {
       day: dayNumber,
       chiasticPosition: CHIASTIC_POSITIONS[index],
-      title: dayTitle,
-      scriptureReference,
-      scriptureText,
-      reflection: reflectionText,
-      prayer: polishedPrayer,
+      title: candidate.dayTitle,
+      scriptureReference: candidate.scriptureReference,
+      scriptureText: candidate.scriptureText,
+      reflection,
+      prayer,
       nextStep,
       journalPrompt,
       endnotes: buildEndnotes({
-        scriptureReference,
-        moduleSources,
+        candidate,
         userResponse: params.userResponse,
       }),
-    })
-  }
-
-  return planDays
+    }
+  })
 }
 
 export function buildOnboardingDay(params: {
   userResponse: string
   firstDay: CustomPlanDay
+  variant: OnboardingVariant
+  onboardingDays: number
 }): CustomPlanDay {
   const snippet = params.userResponse.trim().slice(0, 180)
-  const firstDayTitle = toLine(params.firstDay.title, 'Day 1')
-  const firstReference = toLine(
-    params.firstDay.scriptureReference,
-    'Lamentations 3:22-23',
-  )
+  const firstDayTitle = params.firstDay.title
+  const intro =
+    params.variant === 'wednesday_3_day'
+      ? 'Wednesday start: a 3-day rhythm primer (Wed-Thu-Fri) to establish momentum before Monday cycle launch.'
+      : params.variant === 'thursday_2_day'
+        ? 'Thursday start: a 2-day rhythm primer (Thu-Fri) so your Monday cycle begins with pace.'
+        : params.variant === 'friday_1_day'
+          ? 'Friday start: a focused 1-day primer to orient your heart before the full Monday cycle.'
+          : 'Weekend start: a bridge devotional to settle your pace before Monday cycle launch.'
+  const nextStep =
+    params.onboardingDays >= 2
+      ? `Read this onboarding day now, then return daily for your ${params.onboardingDays}-day rhythm primer. Full cycle unlock begins Monday at 7:00 AM local time.`
+      : 'Read this onboarding day now. Full cycle unlock begins Monday at 7:00 AM local time.'
 
   return {
     day: 0,
     title: 'Onboarding: Prepare for Your 5-Day Path',
-    scriptureReference: firstReference,
-    scriptureText: toLine(
-      params.firstDay.scriptureText,
-      'The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning.',
-    ),
-    reflection:
-      snippet.length > 0
-        ? `You shared: "${snippet}". This onboarding day helps you settle before your full cycle unlocks. We already curated your 5-day path; now take one honest breath and begin.\n\nYour first day is "${firstDayTitle}".`
-        : `This onboarding day helps you settle before your full cycle unlocks. We already curated your 5-day path; now take one honest breath and begin.\n\nYour first day is "${firstDayTitle}".`,
+    scriptureReference: params.firstDay.scriptureReference,
+    scriptureText: params.firstDay.scriptureText,
+    reflection: snippet
+      ? `You shared: "${snippet}". ${intro}\n\nYour full 5-day curated path is already prepared. Start with this orientation and move into Day 1 with honesty.\n\nYour first day is "${firstDayTitle}".`
+      : `${intro}\n\nYour full 5-day curated path is already prepared. Start with this orientation and move into Day 1 with honesty.\n\nYour first day is "${firstDayTitle}".`,
     prayer:
-      'Lord Jesus, prepare my heart for this coming rhythm. Give me honesty, steadiness, and trust as I begin.',
-    nextStep:
-      'Read your Day 1 preview below, then set a reminder for 7:00 AM local time when your full cycle unlocks.',
+      'Lord Jesus, steady my pace as I begin this path. Give me courage to be honest and faithful in each next step.',
+    nextStep,
     journalPrompt:
-      'What do I most need God to stabilize in me before this cycle begins?',
+      'What do I want to bring before God first as this devotional path begins?',
     endnotes: [
       {
         id: 1,
         source: 'Scripture',
-        note: firstReference,
+        note: params.firstDay.scriptureReference,
       },
       {
         id: 2,
         source: 'Scheduling Policy',
-        note: 'Wed-Sun starts include onboarding before Monday cycle.',
+        note: `${params.variant} onboarding before Monday cycle.`,
       },
       {
         id: 3,
         source: 'Curated Plan Anchor',
-        note: `Preview anchored to ${firstDayTitle}.`,
+        note: `Day 1 preview: ${firstDayTitle}.`,
       },
     ],
   }

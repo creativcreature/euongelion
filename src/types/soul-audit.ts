@@ -4,7 +4,15 @@ export interface AuditMatch {
   question: string
   confidence: number
   reasoning: string
-  preview?: { verse: string; paragraph: string } | null
+  preview?: {
+    verse: string
+    paragraph: string
+    curationSeed?: {
+      seriesSlug: string
+      dayNumber: number
+      candidateKey: string
+    }
+  } | null
 }
 
 export type AuditOptionKind = 'ai_primary' | 'curated_prefab'
@@ -30,6 +38,7 @@ export interface CrisisRequirement {
 export interface SoulAuditSubmitResponseV2 {
   version: 'v2'
   auditRunId: string
+  runToken: string
   remainingAudits: number
   requiresEssentialConsent: true
   analyticsOptInDefault: false
@@ -49,6 +58,7 @@ export interface SoulAuditSubmitResponseV2 {
 
 export interface SoulAuditConsentRequest {
   auditRunId: string
+  runToken?: string
   essentialAccepted: boolean
   analyticsOptIn?: boolean
   crisisAcknowledged?: boolean
@@ -60,11 +70,14 @@ export interface SoulAuditConsentResponse {
   essentialAccepted: boolean
   analyticsOptIn: boolean
   crisisAcknowledged: boolean
+  consentToken: string
 }
 
 export interface SoulAuditSelectRequest {
   auditRunId: string
   optionId: string
+  runToken?: string
+  consentToken?: string
   timezone?: string
   timezoneOffsetMinutes?: number
 }
@@ -78,6 +91,7 @@ export interface SoulAuditSelectResponse {
   route: string
   planToken?: string
   seriesSlug?: string
+  planDays?: CustomPlanDay[]
 }
 
 export interface DevotionalDayEndnote {

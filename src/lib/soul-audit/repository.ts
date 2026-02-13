@@ -51,6 +51,13 @@ export interface DevotionalPlanInstanceRecord {
     | 'monday_cycle'
     | 'tuesday_archived_monday'
     | 'wed_sun_onboarding'
+  onboarding_variant?:
+    | 'none'
+    | 'wednesday_3_day'
+    | 'thursday_2_day'
+    | 'friday_1_day'
+    | 'weekend_bridge'
+  onboarding_days?: number
   started_at: string
   cycle_start_at: string
   created_at: string
@@ -171,6 +178,26 @@ async function safeUpsert(table: string, values: object) {
     )
       .from(table)
       .upsert(values)
+  } catch {
+    // no-op
+  }
+}
+
+async function safeDelete(
+  table: string,
+  filters: Record<string, string | number | boolean>,
+) {
+  const supabase = maybeSupabase()
+  if (!supabase) return
+
+  try {
+    let query = (supabase as any).from(table).delete()
+
+    for (const [key, value] of Object.entries(filters)) {
+      query = query.eq(key, value)
+    }
+
+    await query
   } catch {
     // no-op
   }
@@ -302,6 +329,29 @@ export function listAuditRunsForSession(
   )
 }
 
+export async function listAuditRunsForSessionWithFallback(
+  sessionToken: string,
+): Promise<AuditRunRecord[]> {
+  const cached = listAuditRunsForSession(sessionToken)
+  const fetched = await safeSelectMany<AuditRunRecord>('audit_runs', {
+    session_token: sessionToken,
+  })
+
+  for (const run of fetched) {
+    getStore().runs.set(run.id, run)
+  }
+
+  const merged = [...cached, ...fetched]
+  const byId = new Map<string, AuditRunRecord>()
+  for (const run of merged) {
+    byId.set(run.id, run)
+  }
+
+  return Array.from(byId.values()).sort((a, b) =>
+    b.created_at.localeCompare(a.created_at),
+  )
+}
+
 export function getAuditOptions(runId: string): AuditOptionRecord[] {
   return getStore().optionsByRun.get(runId) ?? []
 }
@@ -418,6 +468,52 @@ export function listSelectionsForSession(
   )
 }
 
+export async function getLatestSelectionForSessionWithFallback(
+  sessionToken: string,
+): Promise<AuditSelectionRecord | null> {
+  const runs = await listAuditRunsForSessionWithFallback(sessionToken)
+  if (runs.length === 0) return null
+
+  const runIds = new Set(runs.map((run) => run.id))
+  const cachedSelections = Array.from(
+    getStore().selectionByRun.values(),
+  ).filter((selection) => runIds.has(selection.audit_run_id))
+
+  const missingRunIds = runs
+    .map((run) => run.id)
+    .filter((runId) => !getStore().selectionByRun.has(runId))
+
+  for (const runId of missingRunIds) {
+    const fetchedForRun = await safeSelectMany<AuditSelectionRecord>(
+      'audit_selections',
+      {
+        audit_run_id: runId,
+      },
+    )
+    if (fetchedForRun.length === 0) continue
+
+    fetchedForRun.sort((a, b) => b.created_at.localeCompare(a.created_at))
+    getStore().selectionByRun.set(runId, fetchedForRun[0])
+    for (const row of fetchedForRun.slice(1)) {
+      const existing = getStore().selectionByRun.get(row.audit_run_id)
+      if (!existing) {
+        getStore().selectionByRun.set(row.audit_run_id, row)
+      }
+    }
+  }
+
+  const merged = [
+    ...cachedSelections,
+    ...Array.from(getStore().selectionByRun.values()).filter((selection) =>
+      runIds.has(selection.audit_run_id),
+    ),
+  ]
+  if (merged.length === 0) return null
+
+  merged.sort((a, b) => b.created_at.localeCompare(a.created_at))
+  return merged[0]
+}
+
 export async function createPlan(params: {
   runId: string
   sessionToken: string
@@ -425,6 +521,8 @@ export async function createPlan(params: {
   timezone: string
   timezoneOffsetMinutes: number
   startPolicy: DevotionalPlanInstanceRecord['start_policy']
+  onboardingVariant?: DevotionalPlanInstanceRecord['onboarding_variant']
+  onboardingDays?: number
   startedAt: string
   cycleStartAt: string
   days: CustomPlanDay[]
@@ -441,6 +539,8 @@ export async function createPlan(params: {
     timezone: params.timezone,
     timezone_offset_minutes: params.timezoneOffsetMinutes,
     start_policy: params.startPolicy,
+    onboarding_variant: params.onboardingVariant,
+    onboarding_days: params.onboardingDays,
     started_at: params.startedAt,
     cycle_start_at: params.cycleStartAt,
     created_at: now,
@@ -488,6 +588,65 @@ export function getPlanInstance(
   token: string,
 ): DevotionalPlanInstanceRecord | null {
   return getStore().planByToken.get(token) ?? null
+}
+
+export function listPlanInstancesForSession(
+  sessionToken: string,
+): DevotionalPlanInstanceRecord[] {
+  return Array.from(getStore().planByToken.values()).filter(
+    (plan) => plan.session_token === sessionToken,
+  )
+}
+
+export async function listPlanInstancesForSessionWithFallback(
+  sessionToken: string,
+): Promise<DevotionalPlanInstanceRecord[]> {
+  const cached = listPlanInstancesForSession(sessionToken)
+  const fetched = await safeSelectMany<DevotionalPlanInstanceRecord>(
+    'devotional_plan_instances',
+    {
+      session_token: sessionToken,
+    },
+  )
+
+  const merged = [...cached, ...fetched]
+  const byToken = new Map<string, DevotionalPlanInstanceRecord>()
+  for (const plan of merged) {
+    byToken.set(plan.plan_token, plan)
+  }
+
+  const sorted = Array.from(byToken.values()).sort((a, b) =>
+    b.created_at.localeCompare(a.created_at),
+  )
+  for (const row of sorted) {
+    getStore().planByToken.set(row.plan_token, row)
+  }
+  return sorted
+}
+
+export async function getLatestPlanInstanceForSessionWithFallback(
+  sessionToken: string,
+): Promise<DevotionalPlanInstanceRecord | null> {
+  const cached = listPlanInstancesForSession(sessionToken)
+  if (cached.length > 0) {
+    cached.sort((a, b) => b.created_at.localeCompare(a.created_at))
+    return cached[0]
+  }
+
+  const fetched = await safeSelectMany<DevotionalPlanInstanceRecord>(
+    'devotional_plan_instances',
+    {
+      session_token: sessionToken,
+    },
+  )
+  if (fetched.length === 0) return null
+
+  for (const plan of fetched) {
+    getStore().planByToken.set(plan.plan_token, plan)
+  }
+
+  fetched.sort((a, b) => b.created_at.localeCompare(a.created_at))
+  return fetched[0]
 }
 
 export async function getPlanInstanceWithFallback(
@@ -544,6 +703,27 @@ export async function getPlanDayWithFallback(
 
 export function getAllPlanDays(token: string): DevotionalPlanDayRecord[] {
   return getStore().planDaysByToken.get(token) ?? []
+}
+
+export async function getAllPlanDaysWithFallback(
+  token: string,
+): Promise<DevotionalPlanDayRecord[]> {
+  const cached = getAllPlanDays(token)
+  if (cached.length > 0) {
+    return [...cached].sort((a, b) => a.day_number - b.day_number)
+  }
+
+  const fetched = await safeSelectMany<DevotionalPlanDayRecord>(
+    'devotional_plan_days',
+    {
+      plan_token: token,
+    },
+  )
+  if (fetched.length === 0) return []
+
+  fetched.sort((a, b) => a.day_number - b.day_number)
+  getStore().planDaysByToken.set(token, fetched)
+  return fetched
 }
 
 export async function upsertMockAccountSession(params: {
@@ -603,6 +783,42 @@ export function listAnnotations(sessionToken: string): AnnotationRecord[] {
   return getStore().annotationsBySession.get(sessionToken) ?? []
 }
 
+export async function listAnnotationsWithFallback(
+  sessionToken: string,
+): Promise<AnnotationRecord[]> {
+  const cached = listAnnotations(sessionToken)
+  const fetched = await safeSelectMany<AnnotationRecord>('annotations', {
+    session_token: sessionToken,
+  })
+
+  const merged = [...cached, ...fetched]
+  const byId = new Map<string, AnnotationRecord>()
+  for (const row of merged) {
+    byId.set(row.id, row)
+  }
+
+  const sorted = Array.from(byId.values()).sort((a, b) =>
+    b.created_at.localeCompare(a.created_at),
+  )
+  getStore().annotationsBySession.set(sessionToken, sorted)
+  return sorted
+}
+
+export async function removeAnnotation(params: {
+  sessionToken: string
+  annotationId: string
+}): Promise<boolean> {
+  const store = getStore()
+  const existing = store.annotationsBySession.get(params.sessionToken) ?? []
+  const next = existing.filter((row) => row.id !== params.annotationId)
+  store.annotationsBySession.set(params.sessionToken, next)
+  await safeDelete('annotations', {
+    id: params.annotationId,
+    session_token: params.sessionToken,
+  })
+  return next.length < existing.length
+}
+
 export async function addBookmark(params: {
   sessionToken: string
   devotionalSlug: string
@@ -633,4 +849,42 @@ export function listBookmarks(sessionToken: string): BookmarkRecord[] {
     (bookmark) =>
       now - new Date(bookmark.created_at).getTime() <= THIRTY_DAYS_MS,
   )
+}
+
+export async function listBookmarksWithFallback(
+  sessionToken: string,
+): Promise<BookmarkRecord[]> {
+  const cached = listBookmarks(sessionToken)
+  const fetched = await safeSelectMany<BookmarkRecord>('session_bookmarks', {
+    session_token: sessionToken,
+  })
+
+  const merged = [...cached, ...fetched]
+  const bySlug = new Map<string, BookmarkRecord>()
+  for (const row of merged) {
+    bySlug.set(row.devotional_slug, row)
+  }
+
+  const sorted = Array.from(bySlug.values()).sort((a, b) =>
+    b.created_at.localeCompare(a.created_at),
+  )
+  getStore().bookmarksBySession.set(sessionToken, sorted)
+  return sorted
+}
+
+export async function removeBookmark(params: {
+  sessionToken: string
+  devotionalSlug: string
+}): Promise<boolean> {
+  const store = getStore()
+  const existing = store.bookmarksBySession.get(params.sessionToken) ?? []
+  const next = existing.filter(
+    (row) => row.devotional_slug !== params.devotionalSlug,
+  )
+  store.bookmarksBySession.set(params.sessionToken, next)
+  await safeDelete('session_bookmarks', {
+    session_token: params.sessionToken,
+    devotional_slug: params.devotionalSlug,
+  })
+  return next.length < existing.length
 }

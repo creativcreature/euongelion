@@ -2,8 +2,7 @@
 
 import { useEffect, useState, Fragment } from 'react'
 import { useRouter } from 'next/navigation'
-import Image from 'next/image'
-import Navigation from '@/components/Navigation'
+import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import ScrollProgress from '@/components/ScrollProgress'
 import Link from 'next/link'
 import OrnamentDivider from '@/components/OrnamentDivider'
@@ -18,8 +17,6 @@ import { useSettingsStore } from '@/stores/settingsStore'
 import DevotionalChat from '@/components/DevotionalChat'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import DevotionalMilestoneReveal from '@/components/newspaper/DevotionalMilestoneReveal'
-import IllustrationFrame from '@/components/newspaper/IllustrationFrame'
-import { getDevotionalImage } from '@/data/devotional-images'
 import { SERIES_DATA } from '@/data/series'
 import type { Devotional, Panel, Module } from '@/types'
 
@@ -44,14 +41,19 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
   const [isCompleted, setIsCompleted] = useState(false)
 
   const seriesSlug = getSeriesSlugFromDevotional(slug)
-  const devotionalImage = getDevotionalImage(slug)
   const dayIndex = getDayIndexFromSlug(slug)
   const sabbathDay = useSettingsStore((s) => s.sabbathDay)
+  const dayLockingEnabled = useSettingsStore((s) => s.dayLockingEnabled)
   const seriesStartDate = useProgressStore((s) =>
     seriesSlug ? s.seriesStartDates[seriesSlug] || null : null,
   )
   const zustandStartSeries = useProgressStore((s) => s.startSeries)
-  const dayGate = isDayUnlocked(dayIndex, seriesStartDate, sabbathDay)
+  const dayGate = isDayUnlocked(
+    dayIndex,
+    seriesStartDate,
+    sabbathDay,
+    dayLockingEnabled,
+  )
 
   // Series navigation: next/prev days
   const seriesDays = seriesSlug ? SERIES_DATA[seriesSlug]?.days : null
@@ -93,23 +95,29 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-page">
-        <p className="text-serif-italic vw-body text-muted">Loading...</p>
+      <div className="newspaper-reading min-h-screen">
+        <EuangelionShellHeader />
+        <div className="flex min-h-[calc(100vh-64px)] items-center justify-center">
+          <p className="text-serif-italic vw-body text-muted">Loading...</p>
+        </div>
       </div>
     )
   }
 
   if (!devotional) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-page">
-        <div className="text-center">
-          <h1 className="text-display vw-heading-lg mb-8">Not Found</h1>
-          <button
-            onClick={() => router.push('/series')}
-            className="animated-underline text-label vw-small text-gold transition-colors hover:text-[var(--color-text-primary)]"
-          >
-            Browse All Series &rarr;
-          </button>
+      <div className="newspaper-reading min-h-screen">
+        <EuangelionShellHeader />
+        <div className="flex min-h-[calc(100vh-64px)] items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-display vw-heading-lg mb-8">Not Found</h1>
+            <button
+              onClick={() => router.push('/series')}
+              className="animated-underline text-label vw-small text-gold transition-colors hover:text-[var(--color-text-primary)]"
+            >
+              Browse All Series &rarr;
+            </button>
+          </div>
         </div>
       </div>
     )
@@ -121,189 +129,184 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
   return (
     <div className="newspaper-reading min-h-screen bg-page">
       <ScrollProgress />
-      <Navigation variant="newspaper" />
+      <EuangelionShellHeader />
 
-      {/* Hero — full-bleed image or clean typography with day ornament */}
-      {devotionalImage ? (
-        <DevotionalMilestoneReveal
-          variant="cinematic"
-          as="div"
-          className="section-rule border-subtle relative flex min-h-[34vh] items-end overflow-hidden border-b md:min-h-[42vh]"
-        >
-          <Image
-            src={devotionalImage}
-            alt=""
-            fill
-            className="object-cover"
-            sizes="100vw"
-            priority
-          />
+      {/* Hero — typography-first presentation */}
+      <DevotionalMilestoneReveal
+        variant="cinematic"
+        as="header"
+        className="section-rule border-subtle relative border-b px-6 pb-12 pt-16 md:px-10 md:pb-16 md:pt-20 lg:px-16"
+      >
+        {currentDayNum > 0 && (
           <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(180deg, transparent 20%, rgba(11, 20, 32, 0.88) 100%)',
-            }}
-          />
-          <div className="relative w-full px-6 pb-12 pt-28 md:px-10 md:pb-16 lg:px-16">
-            <div className="mx-auto w-full max-w-[1040px]">
-              <div className="mb-4 flex items-center gap-4">
-                {devotional.scriptureReference && (
-                  <p className="type-micro text-gold">
-                    {devotional.scriptureReference}
-                  </p>
-                )}
-                {totalDays > 0 && (
-                  <p
-                    className="type-micro text-muted oldstyle-nums"
-                    style={{ opacity: 0.6 }}
-                  >
-                    DAY {currentDayNum} OF {totalDays}
-                  </p>
-                )}
-              </div>
-              <h1 className="text-display vw-heading-lg mb-6 text-scroll">
-                {typographer(devotional.title)}
-              </h1>
-              {devotional.teaser && (
-                <p
-                  className="text-serif-italic vw-body-lg text-scroll"
-                  style={{ opacity: 0.8, maxWidth: '640px' }}
-                >
-                  {typographer(devotional.teaser)}
-                </p>
-              )}
-            </div>
-          </div>
-        </DevotionalMilestoneReveal>
-      ) : (
-        <DevotionalMilestoneReveal
-          variant="cinematic"
-          as="header"
-          className="section-rule border-subtle relative border-b px-6 pb-12 pt-16 md:px-10 md:pb-16 md:pt-20 lg:px-16"
-        >
-          {/* Massive ornamental day number behind title */}
-          {currentDayNum > 0 && (
-            <div
-              className="type-day-ornament"
-              aria-hidden="true"
-              style={{ top: '1rem', left: '-0.5rem' }}
-            >
-              {currentDayNum}
-            </div>
-          )}
-          <div
-            className="mx-auto w-full max-w-[1040px]"
-            style={{ position: 'relative' }}
+            className="type-day-ornament"
+            aria-hidden="true"
+            style={{ top: '1rem', left: '-0.5rem' }}
           >
-            <div className="mb-6 flex items-center gap-4">
-              {devotional.scriptureReference && (
-                <p className="type-micro text-gold">
-                  {devotional.scriptureReference}
-                </p>
-              )}
-              {totalDays > 0 && (
-                <p className="type-micro text-muted oldstyle-nums">
-                  DAY {currentDayNum} OF {totalDays}
-                </p>
-              )}
-            </div>
-            <h1 className="text-display vw-heading-lg mb-8 max-w-[20ch]">
-              {typographer(devotional.title)}
-            </h1>
-            {devotional.teaser && (
-              <p
-                className="text-serif-italic vw-body-lg text-secondary"
-                style={{ maxWidth: '640px' }}
-              >
-                {typographer(devotional.teaser)}
+            {currentDayNum}
+          </div>
+        )}
+        <div
+          className="mx-auto w-full max-w-[1040px]"
+          style={{ position: 'relative' }}
+        >
+          <div className="mb-6 flex items-center gap-4">
+            {devotional.scriptureReference && (
+              <p className="type-micro text-gold">
+                {devotional.scriptureReference}
               </p>
             )}
-            <div className="mt-8 max-w-[240px]">
-              <IllustrationFrame
-                src="/images/illustrations/generated/devotional-milestone-generated.png"
-                alt="Devotional engraving motif"
-                effect="ink"
-                aspect="square"
-                decorative
-              />
-            </div>
+            {totalDays > 0 && (
+              <p className="type-micro text-muted oldstyle-nums">
+                DAY {currentDayNum} OF {totalDays}
+              </p>
+            )}
           </div>
-        </DevotionalMilestoneReveal>
-      )}
+          <h1 className="text-display vw-heading-lg mb-8 max-w-[20ch]">
+            {typographer(devotional.title)}
+          </h1>
+          {devotional.teaser && (
+            <p
+              className="text-serif-italic vw-body-lg text-secondary"
+              style={{ maxWidth: '640px' }}
+            >
+              {typographer(devotional.teaser)}
+            </p>
+          )}
+        </div>
+      </DevotionalMilestoneReveal>
 
       {/* Content — day-gated */}
-      {!dayGate.unlocked ? (
-        <main
-          id="main-content"
-          className="px-6 pb-24 pt-12 md:px-10 md:pb-32 md:pt-16 lg:px-16"
-        >
-          <div className="mx-auto max-w-xl py-16 text-center">
-            <p className="text-serif-italic vw-body-lg mb-8 text-secondary">
-              {typographer(dayGate.message)}
-            </p>
-            <button
-              onClick={() => router.back()}
-              className="animated-underline text-label vw-small text-gold transition-colors hover:text-[var(--color-text-primary)]"
-            >
-              &larr; Back to Series
-            </button>
-          </div>
-        </main>
-      ) : (
-        <>
-          {/* Content — continuous scroll with ornament dividers */}
-          <main
-            id="main-content"
-            className="newspaper-reading-main px-6 pb-24 pt-12 md:px-10 md:pb-32 md:pt-16 lg:px-16"
-          >
-            <div className="reading-flow type-prose baseline-grid mx-auto">
-              {modules
-                ? modules.map((mod, index) => (
-                    <Fragment key={index}>
-                      {index > 0 && <OrnamentDivider />}
-                      <ModuleRenderer module={mod} />
-                    </Fragment>
-                  ))
-                : panels?.slice(1).map((panel, index) => (
-                    <Fragment key={panel.number}>
-                      {index > 0 && <OrnamentDivider />}
-                      <div className="mb-20 md:mb-24">
-                        <PanelComponent panel={panel} />
-                      </div>
-                    </Fragment>
-                  ))}
+      <section className="px-4 pb-6 pt-8 md:px-6">
+        <div className="mx-auto max-w-[1360px] md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-8">
+          <aside className="mb-6 hidden md:block">
+            <div className="border-subtle bg-surface-raised sticky top-28 p-4">
+              <p className="text-label vw-small mb-3 text-gold">LIBRARY</p>
+              <nav className="grid gap-2">
+                <Link
+                  href="/my-devotional?tab=archive"
+                  className="text-label vw-small border px-3 py-2 text-muted"
+                >
+                  Archived Pages
+                </Link>
+                <Link
+                  href="/my-devotional?tab=bookmarks"
+                  className="text-label vw-small border px-3 py-2 text-muted"
+                >
+                  Bookmarks
+                </Link>
+                <Link
+                  href="/my-devotional?tab=chat-notes"
+                  className="text-label vw-small border px-3 py-2 text-muted"
+                >
+                  Chat Notes
+                </Link>
+                <Link
+                  href="/my-devotional?tab=favorite-verses"
+                  className="text-label vw-small border px-3 py-2 text-muted"
+                >
+                  Favorite Verses
+                </Link>
+              </nav>
             </div>
-          </main>
+          </aside>
 
-          {/* Mark as Complete */}
-          {!isCompleted && (
-            <DevotionalMilestoneReveal
-              as="div"
-              variant="cinematic"
-              className="px-6 pb-12 md:px-10 md:pb-16 lg:px-16"
+          {!dayGate.unlocked ? (
+            <main
+              id="main-content"
+              className="px-2 pb-20 pt-4 md:px-0 md:pb-24"
             >
-              <div
-                className="mx-auto max-w-[1040px] pt-10"
-                style={{ borderTop: '2px solid var(--color-border-strong)' }}
-              >
-                <p className="text-serif-italic vw-body mb-8 text-secondary">
-                  Finished reading?
+              <div className="mx-auto max-w-xl py-16 text-center">
+                <p className="text-serif-italic vw-body-lg mb-8 text-secondary">
+                  {typographer(dayGate.message)}
                 </p>
                 <button
-                  onClick={() => {
-                    markComplete(slug, timeSpent)
-                    setIsCompleted(true)
-                  }}
-                  className="cta-major text-label vw-small px-8 py-3"
+                  onClick={() => router.back()}
+                  className="animated-underline text-label vw-small text-gold transition-colors hover:text-[var(--color-text-primary)]"
                 >
-                  Mark as Complete &rarr;
+                  &larr; Back to Series
                 </button>
               </div>
-            </DevotionalMilestoneReveal>
+            </main>
+          ) : (
+            <>
+              {/* Content — continuous scroll with ornament dividers */}
+              <main
+                id="main-content"
+                className="newspaper-reading-main px-2 pb-20 pt-4 md:px-0 md:pb-24"
+              >
+                <div className="reading-flow type-prose baseline-grid mx-auto">
+                  {modules
+                    ? modules.map((mod, index) => (
+                        <Fragment key={index}>
+                          {index > 0 && <OrnamentDivider />}
+                          <ModuleRenderer module={mod} />
+                        </Fragment>
+                      ))
+                    : panels?.slice(1).map((panel, index) => (
+                        <Fragment key={panel.number}>
+                          {index > 0 && <OrnamentDivider />}
+                          <div className="mb-20 md:mb-24">
+                            <PanelComponent panel={panel} />
+                          </div>
+                        </Fragment>
+                      ))}
+                </div>
+              </main>
+
+              {/* Mark as Complete */}
+              {!isCompleted && (
+                <DevotionalMilestoneReveal as="div" variant="cinematic">
+                  <div
+                    className="mx-auto max-w-[1040px] pt-6"
+                    style={{
+                      borderTop: '2px solid var(--color-border-strong)',
+                    }}
+                  >
+                    <p className="text-serif-italic vw-body mb-8 text-secondary">
+                      Finished reading?
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      <button
+                        onClick={() => {
+                          markComplete(slug, timeSpent)
+                          setIsCompleted(true)
+                          window.dispatchEvent(
+                            new CustomEvent('libraryUpdated'),
+                          )
+                        }}
+                        className="cta-major text-label vw-small px-8 py-3"
+                      >
+                        Mark as Complete &rarr;
+                      </button>
+                      <button
+                        type="button"
+                        className="text-label vw-small border px-5 py-3"
+                        style={{ borderColor: 'var(--color-border)' }}
+                        onClick={async () => {
+                          await fetch('/api/bookmarks', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                              devotionalSlug: slug,
+                              note: devotional.title,
+                            }),
+                          })
+                          window.dispatchEvent(
+                            new CustomEvent('libraryUpdated'),
+                          )
+                        }}
+                      >
+                        Save Bookmark
+                      </button>
+                    </div>
+                  </div>
+                </DevotionalMilestoneReveal>
+              )}
+            </>
           )}
-        </>
-      )}
+        </div>
+      </section>
 
       {/* Next/Prev Navigation — Mixed Headline style */}
       {(prevDay || nextDay) && (
@@ -352,10 +355,30 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
             &larr; Back
           </button>
           {dayGate.unlocked && (
-            <ShareButton
-              title={devotional.title}
-              text={`${devotional.title} — Euangelion`}
-            />
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                className="text-label vw-small border px-4 py-2"
+                style={{ borderColor: 'var(--color-border)' }}
+                onClick={async () => {
+                  await fetch('/api/bookmarks', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      devotionalSlug: slug,
+                      note: devotional.title,
+                    }),
+                  })
+                  window.dispatchEvent(new CustomEvent('libraryUpdated'))
+                }}
+              >
+                Bookmark
+              </button>
+              <ShareButton
+                title={devotional.title}
+                text={`${devotional.title} — Euangelion`}
+              />
+            </div>
           )}
         </div>
       </footer>
@@ -363,7 +386,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
       {/* AI Research Chat */}
       {dayGate.unlocked && (
         <>
-          <TextHighlightTrigger />
+          <TextHighlightTrigger devotionalSlug={slug} />
           <DevotionalChat
             devotionalSlug={slug}
             devotionalTitle={devotional.title}
@@ -376,8 +399,6 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
 
 function PanelComponent({ panel }: { panel: Panel }) {
   const isPrayer = panel.type === 'prayer'
-  const hasImage = panel.type === 'text-with-image'
-  const [imageError, setImageError] = useState(false)
 
   return (
     <div className="mx-auto w-full max-w-[980px]">
@@ -420,21 +441,6 @@ function PanelComponent({ panel }: { panel: Panel }) {
           })}
         </div>
       </div>
-
-      {hasImage && panel.illustration && !imageError && (
-        <div className="mt-8" style={{ maxWidth: '500px' }}>
-          <div className="relative aspect-square overflow-hidden">
-            <Image
-              src={`/devotionals/${panel.illustration.file}`}
-              alt={panel.illustration.description}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 500px"
-              onError={() => setImageError(true)}
-            />
-          </div>
-        </div>
-      )}
     </div>
   )
 }
