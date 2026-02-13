@@ -35,6 +35,38 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Reset + Curation Specificity + Blue Theme Alignment (2026-02-13)
+
+### What Changed
+
+- Soul audit reset now clears active devotional state server-side, not just local storage:
+  - added `POST /api/soul-audit/reset` to clear session audit runs/options/consent/selections/plans and remove current-route cookie.
+  - files:
+    - `src/app/api/soul-audit/reset/route.ts`
+    - `src/lib/soul-audit/repository.ts`
+    - `src/app/page.tsx`
+    - `src/app/soul-audit/page.tsx`
+    - `src/app/soul-audit/results/page.tsx`
+- AI option previews are now generated from user language instead of generic series titles:
+  - generated AI titles from matched themes + response snippets
+  - personalized option questions/reasoning/preview text with audit-specific phrasing
+  - file:
+    - `src/lib/soul-audit/matching.ts`
+- Cross-site blue palette alignment:
+  - aligned `.newspaper-home` and `.newspaper-reading` token values to the same blue newspaper family as homepage styling.
+  - file:
+    - `src/app/globals.css`
+- Added tests for reset behavior and AI-title specificity:
+  - files:
+    - `__tests__/soul-audit-flow.test.ts`
+    - `__tests__/soul-audit-edge-cases.test.ts`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test`
+
 ## Auth Magic-Link Redirect Fix (2026-02-13)
 
 ### What Changed

@@ -812,6 +812,9 @@ export default function SoulAuditResultsPage() {
                 onClick={() => {
                   sessionStorage.removeItem('soul-audit-submit-v2')
                   sessionStorage.removeItem('soul-audit-selection-v2')
+                  void fetch('/api/soul-audit/reset', { method: 'POST' }).catch(
+                    () => {},
+                  )
                   router.push('/soul-audit')
                 }}
                 className="cta-major text-label vw-small mt-4 px-5 py-2"

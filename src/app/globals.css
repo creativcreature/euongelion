@@ -423,35 +423,35 @@
    HOMEPAGE NEWSPAPER MODE
    ============================================ */
 .newspaper-home {
-  --color-bg: #fbf4e8;
-  --color-fg: #19232f;
-  --color-gold: #224f7d;
-  --color-text-primary: #19232f;
-  --color-text-secondary: rgba(25, 35, 47, 0.82);
-  --color-text-tertiary: rgba(25, 35, 47, 0.66);
-  --color-text-muted: rgba(25, 35, 47, 0.5);
-  --color-border: rgba(25, 35, 47, 0.34);
-  --color-border-strong: rgba(25, 35, 47, 0.5);
-  --color-surface: rgba(25, 35, 47, 0.035);
-  --color-surface-raised: rgba(255, 255, 255, 0.72);
-  --color-overlay: rgba(251, 244, 232, 0.9);
-  --color-hover: rgba(25, 35, 47, 0.06);
-  --color-active: rgba(25, 35, 47, 0.1);
-  --shadow-focus: 0 0 0 3px rgba(34, 79, 125, 0.3);
+  --color-bg: #f0ece6;
+  --color-fg: #11182a;
+  --color-gold: #1f2a8d;
+  --color-text-primary: #11182a;
+  --color-text-secondary: rgba(17, 24, 42, 0.82);
+  --color-text-tertiary: rgba(17, 24, 42, 0.66);
+  --color-text-muted: rgba(17, 24, 42, 0.52);
+  --color-border: rgba(46, 56, 128, 0.34);
+  --color-border-strong: rgba(46, 56, 128, 0.54);
+  --color-surface: rgba(31, 42, 141, 0.035);
+  --color-surface-raised: rgba(245, 238, 227, 0.92);
+  --color-overlay: rgba(240, 236, 230, 0.92);
+  --color-hover: rgba(31, 42, 141, 0.06);
+  --color-active: rgba(31, 42, 141, 0.11);
+  --shadow-focus: 0 0 0 3px rgba(31, 42, 141, 0.3);
   position: relative;
   isolation: isolate;
   background:
     repeating-linear-gradient(
       0deg,
-      rgba(25, 35, 47, 0.02) 0,
-      rgba(25, 35, 47, 0.02) 1px,
+      rgba(46, 56, 128, 0.02) 0,
+      rgba(46, 56, 128, 0.02) 1px,
       transparent 1px,
       transparent 10px
     ),
     repeating-linear-gradient(
       90deg,
-      rgba(25, 35, 47, 0.012) 0,
-      rgba(25, 35, 47, 0.012) 1px,
+      rgba(46, 56, 128, 0.012) 0,
+      rgba(46, 56, 128, 0.012) 1px,
       transparent 1px,
       transparent 8px
     ),
@@ -466,50 +466,50 @@
 }
 
 .dark .newspaper-home {
-  --color-bg: #0b1420;
-  --color-fg: #e9eef5;
-  --color-gold: #c8a56a;
-  --color-text-primary: #e9eef5;
-  --color-text-secondary: rgba(233, 238, 245, 0.84);
-  --color-text-tertiary: rgba(233, 238, 245, 0.68);
-  --color-text-muted: rgba(233, 238, 245, 0.52);
-  --color-border: rgba(233, 238, 245, 0.2);
-  --color-border-strong: rgba(233, 238, 245, 0.36);
-  --color-surface: rgba(233, 238, 245, 0.03);
-  --color-surface-raised: rgba(15, 27, 42, 0.9);
-  --color-overlay: rgba(7, 12, 20, 0.9);
-  --color-hover: rgba(233, 238, 245, 0.08);
-  --color-active: rgba(233, 238, 245, 0.13);
-  --shadow-focus: 0 0 0 2px rgba(200, 165, 106, 0.55);
+  --color-bg: #0a1320;
+  --color-fg: #efe5d8;
+  --color-gold: #2236a2;
+  --color-text-primary: #efe5d8;
+  --color-text-secondary: rgba(239, 229, 216, 0.84);
+  --color-text-tertiary: rgba(239, 229, 216, 0.68);
+  --color-text-muted: rgba(239, 229, 216, 0.56);
+  --color-border: rgba(239, 229, 216, 0.42);
+  --color-border-strong: rgba(239, 229, 216, 0.66);
+  --color-surface: rgba(239, 229, 216, 0.04);
+  --color-surface-raised: rgba(18, 34, 54, 0.9);
+  --color-overlay: rgba(10, 19, 32, 0.92);
+  --color-hover: rgba(239, 229, 216, 0.09);
+  --color-active: rgba(239, 229, 216, 0.15);
+  --shadow-focus: 0 0 0 2px rgba(34, 54, 162, 0.55);
 }
 
 .newspaper-reading {
-  --color-bg: #f9f3e7;
-  --color-fg: #1a2639;
-  --color-gold: #224f7d;
-  --color-text-primary: #1a2639;
-  --color-text-secondary: rgba(26, 38, 57, 0.82);
-  --color-text-tertiary: rgba(26, 38, 57, 0.64);
-  --color-text-muted: rgba(26, 38, 57, 0.52);
-  --color-border: rgba(26, 38, 57, 0.34);
-  --color-border-strong: rgba(26, 38, 57, 0.5);
-  --color-surface: rgba(26, 38, 57, 0.035);
-  --color-surface-raised: rgba(255, 255, 255, 0.76);
-  --color-overlay: rgba(249, 243, 231, 0.9);
-  --color-hover: rgba(26, 38, 57, 0.07);
-  --color-active: rgba(26, 38, 57, 0.12);
+  --color-bg: #f0ece6;
+  --color-fg: #11182a;
+  --color-gold: #1f2a8d;
+  --color-text-primary: #11182a;
+  --color-text-secondary: rgba(17, 24, 42, 0.82);
+  --color-text-tertiary: rgba(17, 24, 42, 0.66);
+  --color-text-muted: rgba(17, 24, 42, 0.52);
+  --color-border: rgba(46, 56, 128, 0.34);
+  --color-border-strong: rgba(46, 56, 128, 0.54);
+  --color-surface: rgba(31, 42, 141, 0.035);
+  --color-surface-raised: rgba(245, 238, 227, 0.92);
+  --color-overlay: rgba(240, 236, 230, 0.92);
+  --color-hover: rgba(31, 42, 141, 0.07);
+  --color-active: rgba(31, 42, 141, 0.12);
   background:
     repeating-linear-gradient(
       0deg,
-      rgba(26, 38, 57, 0.02) 0,
-      rgba(26, 38, 57, 0.02) 1px,
+      rgba(46, 56, 128, 0.02) 0,
+      rgba(46, 56, 128, 0.02) 1px,
       transparent 1px,
       transparent 10px
     ),
     repeating-linear-gradient(
       90deg,
-      rgba(26, 38, 57, 0.014) 0,
-      rgba(26, 38, 57, 0.014) 1px,
+      rgba(46, 56, 128, 0.014) 0,
+      rgba(46, 56, 128, 0.014) 1px,
       transparent 1px,
       transparent 8px
     ),
@@ -523,21 +523,21 @@
 }
 
 .dark .newspaper-reading {
-  --color-bg: #0b1420;
-  --color-fg: #e9eef5;
-  --color-gold: #c8a56a;
-  --color-text-primary: #e9eef5;
-  --color-text-secondary: rgba(233, 238, 245, 0.84);
-  --color-text-tertiary: rgba(233, 238, 245, 0.68);
-  --color-text-muted: rgba(233, 238, 245, 0.52);
-  --color-border: rgba(233, 238, 245, 0.2);
-  --color-border-strong: rgba(233, 238, 245, 0.36);
-  --color-surface: rgba(233, 238, 245, 0.03);
-  --color-surface-raised: rgba(15, 27, 42, 0.9);
-  --color-overlay: rgba(7, 12, 20, 0.9);
-  --color-hover: rgba(233, 238, 245, 0.08);
-  --color-active: rgba(233, 238, 245, 0.13);
-  --shadow-focus: 0 0 0 2px rgba(200, 165, 106, 0.55);
+  --color-bg: #0a1320;
+  --color-fg: #efe5d8;
+  --color-gold: #2236a2;
+  --color-text-primary: #efe5d8;
+  --color-text-secondary: rgba(239, 229, 216, 0.84);
+  --color-text-tertiary: rgba(239, 229, 216, 0.68);
+  --color-text-muted: rgba(239, 229, 216, 0.56);
+  --color-border: rgba(239, 229, 216, 0.42);
+  --color-border-strong: rgba(239, 229, 216, 0.66);
+  --color-surface: rgba(239, 229, 216, 0.04);
+  --color-surface-raised: rgba(18, 34, 54, 0.9);
+  --color-overlay: rgba(10, 19, 32, 0.92);
+  --color-hover: rgba(239, 229, 216, 0.09);
+  --color-active: rgba(239, 229, 216, 0.15);
+  --shadow-focus: 0 0 0 2px rgba(34, 54, 162, 0.55);
 }
 
 .newspaper-home::before {
@@ -549,8 +549,8 @@
   opacity: 0.18;
   background: repeating-linear-gradient(
     14deg,
-    rgba(18, 29, 48, 0.05) 0,
-    rgba(18, 29, 48, 0.05) 1px,
+    rgba(46, 56, 128, 0.05) 0,
+    rgba(46, 56, 128, 0.05) 1px,
     transparent 1px,
     transparent 12px
   );
@@ -566,8 +566,8 @@
   opacity: 0.14;
   background: repeating-linear-gradient(
     -14deg,
-    rgba(18, 29, 48, 0.035) 0,
-    rgba(18, 29, 48, 0.035) 1px,
+    rgba(46, 56, 128, 0.035) 0,
+    rgba(46, 56, 128, 0.035) 1px,
     transparent 1px,
     transparent 11px
   );

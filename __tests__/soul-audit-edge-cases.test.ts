@@ -2,8 +2,12 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { POST as submitHandler } from '@/app/api/soul-audit/submit/route'
 import { POST as consentHandler } from '@/app/api/soul-audit/consent/route'
 import { POST as selectHandler } from '@/app/api/soul-audit/select/route'
+import { POST as resetHandler } from '@/app/api/soul-audit/reset/route'
 import { GET as planDayHandler } from '@/app/api/devotional-plan/[token]/day/[n]/route'
-import { resetSessionAuditCount } from '@/lib/soul-audit/repository'
+import {
+  getLatestSelectionForSessionWithFallback,
+  resetSessionAuditCount,
+} from '@/lib/soul-audit/repository'
 
 let sessionToken = 'edge-session'
 
@@ -224,5 +228,32 @@ describe('Soul Audit edge cases', () => {
       { params: Promise.resolve({ token: 'not-real', n: '1' }) } as never,
     )
     expect(response.status).toBe(404)
+  })
+
+  it('reset endpoint clears current selection state for session', async () => {
+    const submitPayload = await createRunAndConsent()
+    const prefabOption = submitPayload.options.find(
+      (option) => option.kind === 'curated_prefab',
+    )
+    expect(prefabOption).toBeTruthy()
+
+    const selectResponse = await selectHandler(
+      postJson('http://localhost/api/soul-audit/select', {
+        auditRunId: submitPayload.auditRunId,
+        optionId: prefabOption?.id,
+      }) as never,
+    )
+    expect(selectResponse.status).toBe(200)
+
+    const beforeReset =
+      await getLatestSelectionForSessionWithFallback(sessionToken)
+    expect(beforeReset).not.toBeNull()
+
+    const resetResponse = await resetHandler()
+    expect(resetResponse.status).toBe(200)
+
+    const afterReset =
+      await getLatestSelectionForSessionWithFallback(sessionToken)
+    expect(afterReset).toBeNull()
   })
 })

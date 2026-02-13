@@ -269,6 +269,79 @@ export function resetSessionAuditCount(sessionToken: string): void {
   getStore().sessionAuditCounts.set(sessionToken, 0)
 }
 
+export async function clearSessionAuditState(
+  sessionToken: string,
+): Promise<void> {
+  const store = getStore()
+  resetSessionAuditCount(sessionToken)
+
+  const runs = await listAuditRunsForSessionWithFallback(sessionToken)
+  const runIds = Array.from(new Set(runs.map((run) => run.id)))
+  for (const [runId, run] of store.runs.entries()) {
+    if (run.session_token === sessionToken && !runIds.includes(runId)) {
+      runIds.push(runId)
+    }
+  }
+
+  const plans = await listPlanInstancesForSessionWithFallback(sessionToken)
+  const planTokens = Array.from(new Set(plans.map((plan) => plan.plan_token)))
+  for (const [planToken, plan] of store.planByToken.entries()) {
+    if (
+      plan.session_token === sessionToken &&
+      !planTokens.includes(planToken)
+    ) {
+      planTokens.push(planToken)
+    }
+  }
+
+  // Clear runtime state first so UI no longer resolves stale "current" routes.
+  for (const runId of runIds) {
+    store.runs.delete(runId)
+    store.optionsByRun.delete(runId)
+    store.consentByRun.delete(runId)
+    store.selectionByRun.delete(runId)
+  }
+  for (const planToken of planTokens) {
+    store.planByToken.delete(planToken)
+    store.planDaysByToken.delete(planToken)
+  }
+
+  // Best-effort persistence cleanup. Keep failure-tolerant behavior.
+  for (const planToken of planTokens) {
+    const cachedDays = getAllPlanDays(planToken)
+    const persistedDays =
+      cachedDays.length > 0
+        ? cachedDays
+        : await safeSelectMany<DevotionalPlanDayRecord>(
+            'devotional_plan_days',
+            {
+              plan_token: planToken,
+            },
+          )
+
+    for (const day of persistedDays) {
+      await safeDelete('devotional_day_citations', {
+        plan_day_id: day.id,
+      })
+    }
+    await safeDelete('devotional_plan_days', { plan_token: planToken })
+    await safeDelete('devotional_plan_instances', {
+      plan_token: planToken,
+      session_token: sessionToken,
+    })
+  }
+
+  for (const runId of runIds) {
+    await safeDelete('audit_selections', { audit_run_id: runId })
+    await safeDelete('consent_records', { audit_run_id: runId })
+    await safeDelete('audit_options', { audit_run_id: runId })
+    await safeDelete('audit_runs', {
+      id: runId,
+      session_token: sessionToken,
+    })
+  }
+}
+
 export async function createAuditRun(params: {
   sessionToken: string
   responseText: string

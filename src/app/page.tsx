@@ -326,12 +326,27 @@ export default function Home() {
     document.documentElement.classList.toggle('dark', next === 'dark')
   }
 
-  const handleResetAudit = () => {
+  const handleResetAudit = async () => {
     resetAudit()
     setError(null)
+    setResumeRoute(null)
+    setAuditText('')
     sessionStorage.removeItem('soul-audit-result')
     sessionStorage.removeItem('soul-audit-submit-v2')
     sessionStorage.removeItem('soul-audit-selection-v2')
+
+    try {
+      const response = await fetch('/api/soul-audit/reset', {
+        method: 'POST',
+      })
+      if (!response.ok) {
+        throw new Error('Unable to reset server audit state.')
+      }
+    } catch {
+      setError(
+        'Local audit state was reset, but server reset failed. Please try once more.',
+      )
+    }
   }
 
   const renderNavLinks = (items: typeof NAV_ITEMS) =>
@@ -562,7 +577,7 @@ export default function Home() {
                 <button
                   type="button"
                   className="mock-reset-btn text-label"
-                  onClick={handleResetAudit}
+                  onClick={() => void handleResetAudit()}
                 >
                   Reset Audit
                 </button>
@@ -746,7 +761,7 @@ export default function Home() {
             <button
               type="button"
               className="mock-reset-btn text-label"
-              onClick={handleResetAudit}
+              onClick={() => void handleResetAudit()}
             >
               Reset Audit
             </button>

@@ -32,13 +32,27 @@ export default function SoulAuditPage() {
 
   const charCount = response.trim().length
 
-  const handleResetAudit = () => {
+  const handleResetAudit = async () => {
     resetAudit()
     setError(null)
     setNudge(false)
+    setResponse('')
     sessionStorage.removeItem('soul-audit-result')
     sessionStorage.removeItem('soul-audit-submit-v2')
     sessionStorage.removeItem('soul-audit-selection-v2')
+
+    try {
+      const response = await fetch('/api/soul-audit/reset', {
+        method: 'POST',
+      })
+      if (!response.ok) {
+        throw new Error('Unable to reset server audit state.')
+      }
+    } catch {
+      setError(
+        'Local audit state was reset, but server reset failed. Please try once more.',
+      )
+    }
   }
 
   async function handleSubmit() {
@@ -127,7 +141,7 @@ export default function SoulAuditPage() {
                 </p>
                 <button
                   type="button"
-                  onClick={handleResetAudit}
+                  onClick={() => void handleResetAudit()}
                   className="text-label vw-small mb-6 inline-flex border border-[var(--color-border)] px-6 py-3"
                 >
                   Reset Audit
@@ -148,7 +162,7 @@ export default function SoulAuditPage() {
                     </p>
                     <button
                       type="button"
-                      onClick={handleResetAudit}
+                      onClick={() => void handleResetAudit()}
                       className="text-label vw-small border border-[var(--color-border)] px-4 py-2"
                     >
                       Reset Audit

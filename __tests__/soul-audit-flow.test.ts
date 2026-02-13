@@ -51,6 +51,17 @@ describe('Soul Audit staged flow', () => {
     ).length
     expect(aiPrimary).toBe(3)
     expect(curatedPrefab).toBe(2)
+    const aiTitles = (payload.options as Array<{ kind: string; title: string }>)
+      .filter((option) => option.kind === 'ai_primary')
+      .map((option) => option.title)
+    expect(aiTitles.every((title) => title.trim().length > 0)).toBe(true)
+    expect(
+      aiTitles.some((title) =>
+        /(peace|distracted|spiritual|numb|skeptic|truth|overwhelmed)/i.test(
+          title,
+        ),
+      ),
+    ).toBe(true)
     expect(payload).not.toHaveProperty('customPlan')
     expect(payload).not.toHaveProperty('customDevotional')
   })
