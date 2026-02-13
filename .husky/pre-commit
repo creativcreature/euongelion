@@ -1,3 +1,9 @@
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACMR)
+if [ -z "$STAGED_FILES" ]; then
+  echo "No staged files. Skipping pre-commit checks."
+  exit 0
+fi
+
 npx lint-staged
 npm run type-check
 npm run verify:production-contracts
