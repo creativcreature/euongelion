@@ -35,6 +35,34 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Audit Results Reliability + Click Affordance Pass (2026-02-13)
+
+### What Changed
+
+- Fixed Soul Audit run/plan lookup reliability across route hops and process restarts by adding Supabase read-fallbacks for:
+  - `audit_runs`, `audit_options`, `consent_records`, `audit_selections`
+  - `devotional_plan_instances`, `devotional_plan_days`
+  - File: `src/lib/soul-audit/repository.ts`
+- Updated staged API routes to use fallback-aware getters so selection and plan rendering no longer depend only on in-memory state:
+  - `src/app/api/soul-audit/consent/route.ts`
+  - `src/app/api/soul-audit/select/route.ts`
+  - `src/app/api/devotional-plan/[token]/day/[n]/route.ts`
+- Improved Soul Audit results UX for click clarity:
+  - Added animated, hover/focus-lift option cards with underline sweep and explicit click hint text.
+  - Added stale-run recovery path with “Restart Soul Audit” action when a run has expired/not found.
+  - Files: `src/app/soul-audit/results/page.tsx`, `src/app/globals.css`
+- Bumped service worker cache namespace `euangelion-v41` -> `euangelion-v42` so clients receive the audit/render + interaction updates immediately:
+  - `public/sw.js`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm run test -- __tests__/soul-audit-flow.test.ts __tests__/soul-audit-edge-cases.test.ts`
+- `npm run verify:production-contracts`
+
+---
+
 ## Soul Audit Real-Time Module Curation Fix (2026-02-13)
 
 ### What Changed

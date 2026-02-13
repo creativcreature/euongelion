@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getAuditRun, saveConsent } from '@/lib/soul-audit/repository'
+import {
+  getAuditRunWithFallback,
+  saveConsent,
+} from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import type {
   SoulAuditConsentRequest,
@@ -31,7 +34,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const run = getAuditRun(runId)
+    const run = await getAuditRunWithFallback(runId)
     if (!run) {
       return NextResponse.json(
         { error: 'Audit run not found' },

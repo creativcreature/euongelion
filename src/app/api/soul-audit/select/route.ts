@@ -6,10 +6,10 @@ import {
 import {
   createPlan,
   getAllPlanDays,
-  getAuditOptions,
-  getAuditRun,
-  getConsent,
-  getSelection,
+  getAuditOptionsWithFallback,
+  getAuditRunWithFallback,
+  getConsentWithFallback,
+  getSelectionWithFallback,
   saveSelection,
 } from '@/lib/soul-audit/repository'
 import { resolveStartPolicy } from '@/lib/soul-audit/schedule'
@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const run = getAuditRun(runId)
+    const run = await getAuditRunWithFallback(runId)
     if (!run) {
       return NextResponse.json(
         { error: 'Audit run not found.' },
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const consent = getConsent(runId)
+    const consent = await getConsentWithFallback(runId)
     if (!consent?.essential_accepted) {
       return NextResponse.json(
         {
@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const existingSelection = getSelection(runId)
+    const existingSelection = await getSelectionWithFallback(runId)
     if (existingSelection) {
       const existingPayload: SoulAuditSelectResponse = {
         ok: true,
@@ -86,7 +86,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(existingPayload, { status: 200 })
     }
 
-    const option = getAuditOptions(runId).find((item) => item.id === optionId)
+    const option = (await getAuditOptionsWithFallback(runId)).find(
+      (item) => item.id === optionId,
+    )
     if (!option) {
       return NextResponse.json({ error: 'Option not found.' }, { status: 404 })
     }

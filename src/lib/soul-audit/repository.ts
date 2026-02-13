@@ -176,6 +176,57 @@ async function safeUpsert(table: string, values: object) {
   }
 }
 
+async function safeSelectOne<T>(
+  table: string,
+  filters: Record<string, string | number | boolean>,
+): Promise<T | null> {
+  const supabase = maybeSupabase()
+  if (!supabase) return null
+
+  try {
+    let query = (supabase as any).from(table).select('*')
+
+    for (const [key, value] of Object.entries(filters)) {
+      query = query.eq(key, value)
+    }
+
+    const { data, error } = (await query.maybeSingle()) as {
+      data: T | null
+      error: unknown
+    }
+    if (error) return null
+    return data ?? null
+  } catch {
+    return null
+  }
+}
+
+async function safeSelectMany<T>(
+  table: string,
+  filters: Record<string, string | number | boolean>,
+): Promise<T[]> {
+  const supabase = maybeSupabase()
+  if (!supabase) return []
+
+  try {
+    let query = (supabase as any).from(table).select('*')
+
+    for (const [key, value] of Object.entries(filters)) {
+      query = query.eq(key, value)
+    }
+
+    const { data, error } = (await query) as {
+      data: T[] | null
+      error: unknown
+    }
+    if (error) return []
+
+    return data ?? []
+  } catch {
+    return []
+  }
+}
+
 export function getSessionAuditCount(sessionToken: string): number {
   return getStore().sessionAuditCounts.get(sessionToken) ?? 0
 }
@@ -228,6 +279,21 @@ export function getAuditRun(runId: string): AuditRunRecord | null {
   return getStore().runs.get(runId) ?? null
 }
 
+export async function getAuditRunWithFallback(
+  runId: string,
+): Promise<AuditRunRecord | null> {
+  const cached = getAuditRun(runId)
+  if (cached) return cached
+
+  const fetched = await safeSelectOne<AuditRunRecord>('audit_runs', {
+    id: runId,
+  })
+  if (!fetched) return null
+
+  getStore().runs.set(runId, fetched)
+  return fetched
+}
+
 export function listAuditRunsForSession(
   sessionToken: string,
 ): AuditRunRecord[] {
@@ -238,6 +304,22 @@ export function listAuditRunsForSession(
 
 export function getAuditOptions(runId: string): AuditOptionRecord[] {
   return getStore().optionsByRun.get(runId) ?? []
+}
+
+export async function getAuditOptionsWithFallback(
+  runId: string,
+): Promise<AuditOptionRecord[]> {
+  const cached = getAuditOptions(runId)
+  if (cached.length > 0) return cached
+
+  const fetched = await safeSelectMany<AuditOptionRecord>('audit_options', {
+    audit_run_id: runId,
+  })
+  if (fetched.length === 0) return []
+
+  fetched.sort((a, b) => a.rank - b.rank)
+  getStore().optionsByRun.set(runId, fetched)
+  return fetched
 }
 
 export async function saveConsent(params: {
@@ -266,6 +348,21 @@ export function getConsent(runId: string): ConsentRecord | null {
   return getStore().consentByRun.get(runId) ?? null
 }
 
+export async function getConsentWithFallback(
+  runId: string,
+): Promise<ConsentRecord | null> {
+  const cached = getConsent(runId)
+  if (cached) return cached
+
+  const fetched = await safeSelectOne<ConsentRecord>('consent_records', {
+    audit_run_id: runId,
+  })
+  if (!fetched) return null
+
+  getStore().consentByRun.set(runId, fetched)
+  return fetched
+}
+
 export async function saveSelection(params: {
   runId: string
   optionId: string
@@ -290,6 +387,24 @@ export async function saveSelection(params: {
 
 export function getSelection(runId: string): AuditSelectionRecord | null {
   return getStore().selectionByRun.get(runId) ?? null
+}
+
+export async function getSelectionWithFallback(
+  runId: string,
+): Promise<AuditSelectionRecord | null> {
+  const cached = getSelection(runId)
+  if (cached) return cached
+
+  const fetched = await safeSelectOne<AuditSelectionRecord>(
+    'audit_selections',
+    {
+      audit_run_id: runId,
+    },
+  )
+  if (!fetched) return null
+
+  getStore().selectionByRun.set(runId, fetched)
+  return fetched
 }
 
 export function listSelectionsForSession(
@@ -375,12 +490,56 @@ export function getPlanInstance(
   return getStore().planByToken.get(token) ?? null
 }
 
+export async function getPlanInstanceWithFallback(
+  token: string,
+): Promise<DevotionalPlanInstanceRecord | null> {
+  const cached = getPlanInstance(token)
+  if (cached) return cached
+
+  const fetched = await safeSelectOne<DevotionalPlanInstanceRecord>(
+    'devotional_plan_instances',
+    {
+      plan_token: token,
+    },
+  )
+  if (!fetched) return null
+
+  getStore().planByToken.set(token, fetched)
+  return fetched
+}
+
 export function getPlanDay(
   token: string,
   dayNumber: number,
 ): DevotionalPlanDayRecord | null {
   const days = getStore().planDaysByToken.get(token) ?? []
   return days.find((day) => day.day_number === dayNumber) ?? null
+}
+
+export async function getPlanDayWithFallback(
+  token: string,
+  dayNumber: number,
+): Promise<DevotionalPlanDayRecord | null> {
+  const cached = getPlanDay(token, dayNumber)
+  if (cached) return cached
+
+  const fetched = await safeSelectOne<DevotionalPlanDayRecord>(
+    'devotional_plan_days',
+    {
+      plan_token: token,
+      day_number: dayNumber,
+    },
+  )
+  if (!fetched) return null
+
+  const current = getStore().planDaysByToken.get(token) ?? []
+  const next = [
+    ...current.filter((day) => day.day_number !== dayNumber),
+    fetched,
+  ]
+  next.sort((a, b) => a.day_number - b.day_number)
+  getStore().planDaysByToken.set(token, next)
+  return fetched
 }
 
 export function getAllPlanDays(token: string): DevotionalPlanDayRecord[] {

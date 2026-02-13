@@ -58,6 +58,7 @@ export default function SoulAuditResultsPage() {
   const [crisisAcknowledged, setCrisisAcknowledged] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [runExpired, setRunExpired] = useState(false)
   const [planDays, setPlanDays] = useState<CustomPlanDay[]>([])
   const [lockedMessages, setLockedMessages] = useState<string[]>([])
   const [loadingPlan, setLoadingPlan] = useState(false)
@@ -133,6 +134,7 @@ export default function SoulAuditResultsPage() {
     if (!submitResult) return
     setSubmitting(true)
     setError(null)
+    setRunExpired(false)
 
     try {
       const consentRes = await fetch('/api/soul-audit/consent', {
@@ -149,6 +151,10 @@ export default function SoulAuditResultsPage() {
       if (!consentRes.ok) {
         const payload = (await consentRes.json().catch(() => ({}))) as {
           error?: string
+          code?: string
+        }
+        if (consentRes.status === 404 || payload.code === 'RUN_NOT_FOUND') {
+          setRunExpired(true)
         }
         throw new Error(payload.error || 'Consent could not be recorded.')
       }
@@ -173,6 +179,12 @@ export default function SoulAuditResultsPage() {
           error?: string
         }
       if (!selectRes.ok || !selectionPayload.ok) {
+        if (
+          selectRes.status === 404 ||
+          selectionPayload.error?.toLowerCase().includes('run not found')
+        ) {
+          setRunExpired(true)
+        }
         throw new Error(
           selectionPayload.error || 'Unable to lock your devotional choice.',
         )
@@ -225,6 +237,11 @@ export default function SoulAuditResultsPage() {
                   : 'Choose your devotional path.',
               )}
             </h1>
+            {!planToken && (
+              <p className="vw-small mt-3 text-secondary">
+                Tap a card to continue. Each option is clickable.
+              </p>
+            )}
           </header>
         </FadeIn>
 
@@ -313,7 +330,7 @@ export default function SoulAuditResultsPage() {
                         type="button"
                         disabled={submitting}
                         onClick={() => void submitConsentAndSelect(option.id)}
-                        className="text-left"
+                        className="audit-option-card group relative cursor-pointer overflow-hidden text-left"
                         style={{
                           border: '1px solid var(--color-border)',
                           padding: '1.25rem',
@@ -328,6 +345,10 @@ export default function SoulAuditResultsPage() {
                         <p className="vw-small text-secondary">
                           {typographer(option.reasoning)}
                         </p>
+                        <p className="audit-option-hint text-label vw-small mt-4">
+                          Click to build this path
+                        </p>
+                        <span className="audit-option-underline" />
                       </button>
                     ))}
                 </div>
@@ -348,7 +369,7 @@ export default function SoulAuditResultsPage() {
                         type="button"
                         disabled={submitting}
                         onClick={() => void submitConsentAndSelect(option.id)}
-                        className="text-left"
+                        className="audit-option-card group relative cursor-pointer overflow-hidden text-left"
                         style={{
                           border: '1px solid var(--color-border)',
                           padding: '1.25rem',
@@ -363,6 +384,10 @@ export default function SoulAuditResultsPage() {
                         <p className="vw-small text-secondary">
                           Opens series overview.
                         </p>
+                        <p className="audit-option-hint text-label vw-small mt-4">
+                          Click to open this series
+                        </p>
+                        <span className="audit-option-underline" />
                       </button>
                     ))}
                 </div>
@@ -452,7 +477,22 @@ export default function SoulAuditResultsPage() {
         )}
 
         {error && (
-          <p className="vw-body mt-6 text-center text-secondary">{error}</p>
+          <div className="mt-6 text-center">
+            <p className="vw-body text-secondary">{error}</p>
+            {runExpired && (
+              <button
+                type="button"
+                onClick={() => {
+                  sessionStorage.removeItem('soul-audit-submit-v2')
+                  sessionStorage.removeItem('soul-audit-selection-v2')
+                  router.push('/soul-audit')
+                }}
+                className="cta-major text-label vw-small mt-4 px-5 py-2"
+              >
+                Restart Soul Audit
+              </button>
+            )}
+          </div>
         )}
 
         <div className="mt-10 text-center">

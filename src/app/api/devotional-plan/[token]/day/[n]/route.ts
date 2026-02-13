@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getPlanDay, getPlanInstance } from '@/lib/soul-audit/repository'
+import {
+  getPlanDayWithFallback,
+  getPlanInstanceWithFallback,
+} from '@/lib/soul-audit/repository'
 import { isPlanDayUnlocked } from '@/lib/soul-audit/schedule'
 
 function onboardingDay() {
@@ -46,7 +49,7 @@ export async function GET(
       )
     }
 
-    const instance = getPlanInstance(token)
+    const instance = await getPlanInstanceWithFallback(token)
     if (!instance) {
       return NextResponse.json({ error: 'Plan not found.' }, { status: 404 })
     }
@@ -84,7 +87,7 @@ export async function GET(
       )
     }
 
-    const planDay = getPlanDay(token, dayNumber)
+    const planDay = await getPlanDayWithFallback(token, dayNumber)
     if (!planDay) {
       return NextResponse.json(
         { error: 'Plan day not found.' },

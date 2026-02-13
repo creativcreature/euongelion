@@ -1320,6 +1320,65 @@
     transform: scaleX(1);
   }
 
+  .audit-option-card {
+    transition:
+      transform var(--duration-moderate) var(--ease-out),
+      border-color var(--duration-moderate) var(--ease-out),
+      background-color var(--duration-moderate) var(--ease-out),
+      box-shadow var(--duration-moderate) var(--ease-out);
+  }
+  .audit-option-card:hover,
+  .audit-option-card:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--color-border-strong) !important;
+    background-color: var(--color-hover);
+    box-shadow: 0 6px 14px rgba(15, 27, 46, 0.08);
+  }
+  .dark .audit-option-card:hover,
+  .dark .audit-option-card:focus-visible {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.34);
+  }
+
+  .audit-option-hint {
+    color: var(--color-gold);
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+    transition:
+      transform var(--duration-base) var(--ease-out),
+      opacity var(--duration-base) var(--ease-out);
+  }
+  .audit-option-card:hover .audit-option-hint,
+  .audit-option-card:focus-visible .audit-option-hint {
+    transform: translateX(4px);
+    opacity: 1;
+  }
+
+  .audit-option-underline {
+    position: absolute;
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: 0.6rem;
+    height: 1.5px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-gold) 30%,
+      var(--color-gold) 70%,
+      transparent 100%
+    );
+    transform: scaleX(0.12);
+    transform-origin: left center;
+    opacity: 0.45;
+    transition:
+      transform var(--duration-moderate) var(--ease-out),
+      opacity var(--duration-moderate) var(--ease-out);
+  }
+  .audit-option-card:hover .audit-option-underline,
+  .audit-option-card:focus-visible .audit-option-underline {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
   .btn-hover {
     transition:
       transform var(--duration-fast) var(--ease-out),
