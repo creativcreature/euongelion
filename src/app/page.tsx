@@ -133,6 +133,11 @@ export default function Home() {
   }, [theme])
 
   useEffect(() => {
+    // Defensive reset in case mobile menu state from another route left scroll locked.
+    document.body.style.overflow = ''
+  }, [])
+
+  useEffect(() => {
     if (typeof window === 'undefined') return
     const media = window.matchMedia('(max-width: 900px)')
     const syncViewport = () => setIsMobileViewport(media.matches)

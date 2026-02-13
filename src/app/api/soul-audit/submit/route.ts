@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           error:
-            'No curated options are currently available. Please try again after content sync.',
+            'No curated options are available right now. Please refresh and try again.',
           code: 'NO_CURATED_OPTIONS',
         },
         { status: 409 },

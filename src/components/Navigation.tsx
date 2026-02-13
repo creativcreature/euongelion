@@ -51,7 +51,10 @@ export default function Navigation({
   }
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : 'unset'
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
   }, [mobileOpen])
 
   // Close mobile menu on route change — intentional sync with navigation

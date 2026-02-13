@@ -98,6 +98,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Curation + Scroll/Sticky Reliability Hotfix (2026-02-13)
+
+### What Changed
+
+- Fixed curated-option fallback so Soul Audit can still curate when runtime cannot read `content/*` paths directly:
+  - Added runtime-safe catalog fallback from bundled `public/devotionals/*.json` + `SERIES_DATA`.
+  - Added panel-to-module normalization for legacy devotional files (`panels` -> synthetic `scripture/teaching/reflection/prayer` modules).
+  - File: `src/lib/soul-audit/curated-catalog.ts`
+- Updated Soul Audit empty-catalog error copy to clearer retry language:
+  - File: `src/app/api/soul-audit/submit/route.ts`
+- Fixed persistent scroll-lock issue caused by mobile menu overflow state:
+  - Added cleanup reset for `document.body.style.overflow` in navigation effect.
+  - Added defensive overflow reset on homepage mount.
+  - Files: `src/components/Navigation.tsx`, `src/app/page.tsx`
+- Improved sticky/nav reliability on homepage newspaper shell:
+  - Switched `.mock-home` horizontal overflow from `clip` to `hidden` to avoid sticky inconsistencies on some browsers.
+  - Added sticky fallback positioning for `.mock-nav`.
+  - File: `src/app/globals.css`
+- Bumped service worker cache namespace `euangelion-v40` -> `euangelion-v41` so clients pick up the fixes immediately:
+  - File: `public/sw.js`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test`
+- `npm run verify:production-contracts`
+
+---
+
 ## Mockup Proportion Alignment Pass 2 (2026-02-12)
 
 ### What Changed

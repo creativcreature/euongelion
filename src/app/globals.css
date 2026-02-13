@@ -1766,7 +1766,7 @@
   background: var(--mock-bg);
   padding: 0.7rem;
   color: var(--mock-ink);
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 .mock-home.is-dark {
@@ -1902,9 +1902,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top: var(--mock-h-topbar);
+  z-index: 65;
   gap: 0.45rem;
   min-height: var(--mock-h-nav);
   border-bottom: var(--mock-stroke) solid var(--mock-line);
+  background: var(--mock-paper);
   padding: 0.15rem 0.55rem;
   font-size: var(--mock-type-0);
   overflow-x: auto;
