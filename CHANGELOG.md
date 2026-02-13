@@ -35,6 +35,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Auth Callback Hardening + Home Active-Devotional UX (2026-02-13)
+
+### What Changed
+
+- Fixed magic-link callback handling for additional Supabase auth return modes:
+  - `/auth/callback` now supports both `code` exchange flow and `token_hash + type` verification flow.
+  - callback redirect now accepts sanitized `redirect` or `next` path params.
+  - file:
+    - `src/app/auth/callback/route.ts`
+- Homepage active-devotional behavior is now conditional and in-place:
+  - when a user already has an active devotional (`resumeRoute` present), the soul-audit UI on home is replaced with “You have a devotional waiting” + continue CTA.
+  - removed the separate standalone “active devotional” strip and moved this state into the main audit panel/CTA locations.
+  - file:
+    - `src/app/page.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test`
+
 ## Soul Audit Reset + Curation Specificity + Blue Theme Alignment (2026-02-13)
 
 ### What Changed

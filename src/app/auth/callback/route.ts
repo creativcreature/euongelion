@@ -4,12 +4,40 @@ import { cookies } from 'next/headers'
 import { onAuthSuccess } from '@/lib/auth'
 import { sanitizeSafeRedirectPath } from '@/lib/api-security'
 
+type SupportedOtpType =
+  | 'signup'
+  | 'invite'
+  | 'magiclink'
+  | 'recovery'
+  | 'email'
+  | 'email_change'
+
+const SUPPORTED_OTP_TYPES = new Set<SupportedOtpType>([
+  'signup',
+  'invite',
+  'magiclink',
+  'recovery',
+  'email',
+  'email_change',
+])
+
+function parseOtpType(value: string | null): SupportedOtpType | null {
+  if (!value) return null
+  const normalized = value.trim().toLowerCase() as SupportedOtpType
+  return SUPPORTED_OTP_TYPES.has(normalized) ? normalized : null
+}
+
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get('code')
-  const redirect = sanitizeSafeRedirectPath(searchParams.get('redirect')) || '/'
+  const tokenHash = searchParams.get('token_hash')
+  const otpType = parseOtpType(searchParams.get('type'))
+  const redirect =
+    sanitizeSafeRedirectPath(searchParams.get('redirect')) ||
+    sanitizeSafeRedirectPath(searchParams.get('next')) ||
+    '/'
 
-  if (code) {
+  if (code || (tokenHash && otpType)) {
     const cookieStore = await cookies()
 
     const supabase = createServerClient(
@@ -29,11 +57,16 @@ export async function GET(request: Request) {
       },
     )
 
-    const { data, error } = await supabase.auth.exchangeCodeForSession(code)
+    const authResult = code
+      ? await supabase.auth.exchangeCodeForSession(code)
+      : await supabase.auth.verifyOtp({
+          token_hash: tokenHash as string,
+          type: otpType as SupportedOtpType,
+        })
 
-    if (!error && data.user) {
+    if (!authResult.error && authResult.data.user) {
       // Link anonymous session to authenticated user
-      await onAuthSuccess(data.user.id)
+      await onAuthSuccess(authResult.data.user.id)
       return NextResponse.redirect(`${origin}${redirect}`)
     }
   }

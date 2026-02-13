@@ -477,17 +477,6 @@ export default function Home() {
           <p className="mock-masthead-sub">GOOD NEWS COMING</p>
         </section>
 
-        {resumeRoute && (
-          <section className="mock-resume-row">
-            <p className="mock-footnote">
-              You already have an active devotional path.
-            </p>
-            <Link href={resumeRoute} className="mock-btn text-label">
-              CONTINUE MY DEVOTIONAL
-            </Link>
-          </section>
-        )}
-
         <div
           ref={navSentinelRef}
           className="mock-nav-sentinel"
@@ -537,53 +526,72 @@ export default function Home() {
           </article>
 
           <section className="mock-panel mock-panel-audit" id="start-audit">
-            <div className="mock-audit-head">
-              <p className="text-label mock-kicker">SOUL AUDIT</p>
-              <h2 className="mock-title">What are you wrestling with today?</h2>
-              <p className="mock-subcopy">
-                Write one honest paragraph, and we will customize a 5 day
-                devotional plan for you.
-              </p>
-            </div>
-
-            <textarea
-              value={auditText}
-              onChange={(e) => {
-                setAuditText(e.target.value)
-                setError(null)
-              }}
-              placeholder="Write your paragraph here..."
-              rows={3}
-              disabled={isSubmitting}
-              className="mock-textarea"
-              aria-label="What are you wrestling with today?"
-            />
-
-            <button
-              type="button"
-              className="mock-btn text-label"
-              onClick={() => void submitAudit(auditText)}
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? 'BUILDING YOUR PLAN...' : 'GET MY DEVOTION'}
-            </button>
-
-            <p className="mock-footnote">
-              No account required. Start immediately.
-            </p>
-            {hydrated && auditCount > 0 && (
+            {resumeRoute ? (
               <>
-                <p className="mock-footnote">Audit {auditCount + 1} of 3</p>
+                <div className="mock-audit-head">
+                  <p className="text-label mock-kicker">MY DEVOTIONAL</p>
+                  <h2 className="mock-title">You have a devotional waiting.</h2>
+                  <p className="mock-subcopy">
+                    Continue where you left off. Your current path is ready.
+                  </p>
+                </div>
+                <Link href={resumeRoute} className="mock-btn text-label">
+                  CONTINUE MY DEVOTIONAL
+                </Link>
+                <p className="mock-footnote">Resume your current path now.</p>
+              </>
+            ) : (
+              <>
+                <div className="mock-audit-head">
+                  <p className="text-label mock-kicker">SOUL AUDIT</p>
+                  <h2 className="mock-title">
+                    What are you wrestling with today?
+                  </h2>
+                  <p className="mock-subcopy">
+                    Write one honest paragraph, and we will customize a 5 day
+                    devotional plan for you.
+                  </p>
+                </div>
+
+                <textarea
+                  value={auditText}
+                  onChange={(e) => {
+                    setAuditText(e.target.value)
+                    setError(null)
+                  }}
+                  placeholder="Write your paragraph here..."
+                  rows={3}
+                  disabled={isSubmitting}
+                  className="mock-textarea"
+                  aria-label="What are you wrestling with today?"
+                />
+
                 <button
                   type="button"
-                  className="mock-reset-btn text-label"
-                  onClick={() => void handleResetAudit()}
+                  className="mock-btn text-label"
+                  onClick={() => void submitAudit(auditText)}
+                  disabled={isSubmitting}
                 >
-                  Reset Audit
+                  {isSubmitting ? 'BUILDING YOUR PLAN...' : 'GET MY DEVOTION'}
                 </button>
+                <p className="mock-footnote">
+                  No account required. Start immediately.
+                </p>
+                {hydrated && auditCount > 0 && (
+                  <>
+                    <p className="mock-footnote">Audit {auditCount + 1} of 3</p>
+                    <button
+                      type="button"
+                      className="mock-reset-btn text-label"
+                      onClick={() => void handleResetAudit()}
+                    >
+                      Reset Audit
+                    </button>
+                  </>
+                )}
+                {error && <p className="mock-error">{error}</p>}
               </>
             )}
-            {error && <p className="mock-error">{error}</p>}
           </section>
         </section>
 
@@ -727,44 +735,62 @@ export default function Home() {
 
         <section className="mock-cta">
           <p className="text-label mock-kicker">READY TO BEGIN?</p>
-          <h2 className="mock-cta-headline">Start with one honest sentence.</h2>
-          <p className="mock-subcopy-center">
-            You do not need certainty before you begin. You need a next step.
-            You need grace.
-          </p>
+          {resumeRoute ? (
+            <>
+              <h2 className="mock-cta-headline">
+                Your devotional is ready to continue.
+              </h2>
+              <p className="mock-subcopy-center">
+                Jump back into your current day and keep your rhythm.
+              </p>
+              <Link href={resumeRoute} className="mock-btn text-label">
+                CONTINUE MY DEVOTIONAL
+              </Link>
+            </>
+          ) : (
+            <>
+              <h2 className="mock-cta-headline">
+                Start with one honest sentence.
+              </h2>
+              <p className="mock-subcopy-center">
+                You do not need certainty before you begin. You need a next
+                step. You need grace.
+              </p>
 
-          <textarea
-            value={auditText}
-            onChange={(e) => {
-              setAuditText(e.target.value)
-              setError(null)
-            }}
-            placeholder="Write your paragraph here..."
-            rows={3}
-            disabled={isSubmitting}
-            className="mock-textarea"
-            aria-label="Start with one honest sentence"
-          />
+              <textarea
+                value={auditText}
+                onChange={(e) => {
+                  setAuditText(e.target.value)
+                  setError(null)
+                }}
+                placeholder="Write your paragraph here..."
+                rows={3}
+                disabled={isSubmitting}
+                className="mock-textarea"
+                aria-label="Start with one honest sentence"
+              />
 
-          <button
-            type="button"
-            className="mock-btn text-label"
-            onClick={() => void submitAudit(auditText)}
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'BUILDING YOUR PLAN...' : 'GET MY DEVOTION'}
-          </button>
-          <p className="mock-footnote">
-            No account required. Start immediately.
-          </p>
-          {hydrated && auditCount > 0 && (
-            <button
-              type="button"
-              className="mock-reset-btn text-label"
-              onClick={() => void handleResetAudit()}
-            >
-              Reset Audit
-            </button>
+              <button
+                type="button"
+                className="mock-btn text-label"
+                onClick={() => void submitAudit(auditText)}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'BUILDING YOUR PLAN...' : 'GET MY DEVOTION'}
+              </button>
+              <p className="mock-footnote">
+                No account required. Start immediately.
+              </p>
+              {hydrated && auditCount > 0 && (
+                <button
+                  type="button"
+                  className="mock-reset-btn text-label"
+                  onClick={() => void handleResetAudit()}
+                >
+                  Reset Audit
+                </button>
+              )}
+            </>
           )}
         </section>
 
