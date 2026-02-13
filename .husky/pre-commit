@@ -4,7 +4,13 @@ if [ -z "$STAGED_FILES" ]; then
   exit 0
 fi
 
-npx lint-staged
+LINT_STAGED_MATCHES=$(echo "$STAGED_FILES" | grep -E '^(src/.+\.(ts|tsx)|__tests__/.+\.(ts|tsx)|.+\.(css|json|md))$' || true)
+if [ -n "$LINT_STAGED_MATCHES" ]; then
+  npx lint-staged
+else
+  echo "No lint-staged matching files. Skipping lint-staged."
+fi
+
 npm run type-check
 npm run verify:production-contracts
 
