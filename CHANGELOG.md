@@ -35,6 +35,30 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Real-Time Module Curation Fix (2026-02-13)
+
+### What Changed
+
+- Switched AI option generation away from curated-catalog availability checks so submit returns the expected 3 AI + 2 prefab options when series metadata is present:
+  - `src/lib/soul-audit/matching.ts`
+- Rebuilt AI devotional construction to assemble each day from real-time module candidates across curated repository resources (module-level selection), instead of binding AI selection to one prebuilt series/day track:
+  - `src/lib/soul-audit/curated-builder.ts`
+- Removed select-route hard dependency that blocked AI plan creation when a specific curated series slug was unavailable, while preserving fail-closed behavior for missing required core modules:
+  - `src/app/api/soul-audit/select/route.ts`
+- Preserved curated-first policy:
+  - core modules stay curated (`scripture`, `teaching`, `reflection`, `prayer`)
+  - generation remains assistive polish only
+  - local reference-volume grounding remains enforced
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm run test -- __tests__/soul-audit-flow.test.ts __tests__/soul-audit-edge-cases.test.ts`
+- `npm run verify:production-contracts`
+
+---
+
 ## Soul Audit + Devotional Engine Consolidation (2026-02-13)
 
 ### What Changed

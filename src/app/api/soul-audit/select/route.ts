@@ -3,7 +3,6 @@ import {
   buildCuratedFirstPlan,
   MissingCuratedModuleError,
 } from '@/lib/soul-audit/curated-builder'
-import { getCuratedSeries } from '@/lib/soul-audit/curated-catalog'
 import {
   createPlan,
   getAllPlanDays,
@@ -109,17 +108,6 @@ export async function POST(request: NextRequest) {
         seriesSlug: option.slug,
       }
       return NextResponse.json(payload, { status: 200 })
-    }
-
-    const curatedSeries = getCuratedSeries(option.slug)
-    if (!curatedSeries) {
-      return NextResponse.json(
-        {
-          error: `Curated source for ${option.slug} is missing. Generation is blocked by policy.`,
-          code: 'MISSING_CURATED_SOURCE',
-        },
-        { status: 422 },
-      )
     }
 
     const planDays = buildCuratedFirstPlan({

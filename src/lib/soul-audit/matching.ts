@@ -1,7 +1,6 @@
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 import type { AuditOptionKind, AuditOptionPreview } from '@/types/soul-audit'
 import { PREFAB_FALLBACK_SLUGS, SOUL_AUDIT_OPTION_SPLIT } from './constants'
-import { getCuratedSeries, getCuratedSeriesSlugs } from './curated-catalog'
 
 export function sanitizeAuditInput(input: unknown): string {
   if (typeof input !== 'string') return ''
@@ -17,10 +16,8 @@ function keywordMatch(
 ): Array<{ slug: string; confidence: number }> {
   const lower = text.toLowerCase()
   const scores: Array<{ slug: string; score: number }> = []
-  const curated = new Set(getCuratedSeriesSlugs())
 
   for (const slug of ALL_SERIES_ORDER) {
-    if (!curated.has(slug)) continue
     const series = SERIES_DATA[slug]
     if (!series) continue
 
@@ -32,9 +29,12 @@ function keywordMatch(
   }
 
   if (scores.length === 0) {
-    const fallback = getCuratedSeriesSlugs()[0]
-    if (!fallback) return []
-    return [{ slug: fallback, confidence: 0.45 }]
+    return ALL_SERIES_ORDER.slice(0, SOUL_AUDIT_OPTION_SPLIT.aiPrimary).map(
+      (slug, index) => ({
+        slug,
+        confidence: Math.max(0.45, 0.6 - index * 0.05),
+      }),
+    )
   }
 
   scores.sort((a, b) => b.score - a.score)
@@ -53,40 +53,33 @@ function makeOption(
   confidence: number,
 ): AuditOptionPreview | null {
   const series = SERIES_DATA[slug]
-  const curatedSeries = getCuratedSeries(slug)
-  if (!series && !curatedSeries) return null
+  if (!series) return null
 
   return {
     id: `${kind}:${slug}:${rank}`,
     slug,
     kind,
     rank,
-    title: series?.title ?? curatedSeries?.title ?? slug,
-    question:
-      series?.question ??
-      `Would this ${curatedSeries?.title ?? 'series'} fit your current season?`,
+    title: series.title,
+    question: series.question,
     confidence,
     reasoning:
       kind === 'ai_primary'
-        ? 'This path aligns with what you shared in your audit.'
-        : 'A curated fallback path if you want something steady and proven.',
+        ? 'Real-time curated modules that align with what you shared.'
+        : 'A stable prefab series if you want a proven guided path.',
   }
 }
 
 function getPrefabSlugs(primarySlugs: string[]): string[] {
-  const curated = new Set(getCuratedSeriesSlugs())
   const preferred = PREFAB_FALLBACK_SLUGS.filter(
-    (slug) => curated.has(slug) && !primarySlugs.includes(slug),
+    (slug) => slug in SERIES_DATA && !primarySlugs.includes(slug),
   )
   if (preferred.length >= SOUL_AUDIT_OPTION_SPLIT.curatedPrefab) {
     return preferred.slice(0, SOUL_AUDIT_OPTION_SPLIT.curatedPrefab)
   }
 
   const fill = ALL_SERIES_ORDER.filter(
-    (slug) =>
-      curated.has(slug) &&
-      !primarySlugs.includes(slug) &&
-      !preferred.includes(slug),
+    (slug) => !primarySlugs.includes(slug) && !preferred.includes(slug),
   )
 
   return [...preferred, ...fill].slice(0, SOUL_AUDIT_OPTION_SPLIT.curatedPrefab)
@@ -102,9 +95,9 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
 
   if (aiOptions.length < SOUL_AUDIT_OPTION_SPLIT.aiPrimary) {
     const used = new Set(aiOptions.map((opt) => opt.slug))
-    const curated = getCuratedSeriesSlugs().filter((slug) => !used.has(slug))
+    const fallbackSeries = ALL_SERIES_ORDER.filter((slug) => !used.has(slug))
     const needed = SOUL_AUDIT_OPTION_SPLIT.aiPrimary - aiOptions.length
-    const fillers = curated
+    const fillers = fallbackSeries
       .slice(0, needed)
       .map((slug, idx) =>
         makeOption(slug, 'ai_primary', aiOptions.length + idx + 1, 0.55),
