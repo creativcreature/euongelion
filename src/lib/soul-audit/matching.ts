@@ -13,19 +13,23 @@ export function sanitizeAuditInput(input: unknown): string {
 
 function keywordMatch(
   text: string,
-): Array<{ slug: string; confidence: number }> {
-  const lower = text.toLowerCase()
-  const scores: Array<{ slug: string; score: number }> = []
+): Array<{ slug: string; confidence: number; matched: string[] }> {
+  const lower = expandSemanticHints(text.toLowerCase())
+  const scores: Array<{ slug: string; score: number; matched: string[] }> = []
 
   for (const slug of ALL_SERIES_ORDER) {
     const series = SERIES_DATA[slug]
     if (!series) continue
 
     let score = 0
+    const matched: string[] = []
     for (const keyword of series.keywords) {
-      if (lower.includes(keyword.toLowerCase())) score++
+      if (lower.includes(keyword.toLowerCase())) {
+        score++
+        matched.push(keyword)
+      }
     }
-    if (score > 0) scores.push({ slug, score })
+    if (score > 0) scores.push({ slug, score, matched })
   }
 
   if (scores.length === 0) {
@@ -33,6 +37,7 @@ function keywordMatch(
       (slug, index) => ({
         slug,
         confidence: Math.max(0.45, 0.6 - index * 0.05),
+        matched: [],
       }),
     )
   }
@@ -43,7 +48,39 @@ function keywordMatch(
   return scores.slice(0, SOUL_AUDIT_OPTION_SPLIT.aiPrimary).map((item) => ({
     slug: item.slug,
     confidence: Math.min(item.score / maxScore, 1),
+    matched: item.matched.slice(0, 3),
   }))
+}
+
+function expandSemanticHints(lower: string): string {
+  const hints: Array<{ trigger: RegExp; inject: string }> = [
+    {
+      trigger: /\btoo much on my plate\b/,
+      inject: 'busy overwhelmed exhausted',
+    },
+    {
+      trigger: /\boverloaded\b|\boverwhelm(ed|ing)?\b/,
+      inject: 'busy anxiety',
+    },
+    { trigger: /\bburn(ed|out)?\b/, inject: 'exhausted rest peace' },
+    {
+      trigger: /\banxious|anxiety|panic|stress(ed)?\b/,
+      inject: 'peace control worry',
+    },
+    { trigger: /\blonely|alone|isolated\b/, inject: 'community relationships' },
+    {
+      trigger: /\bconfused|uncertain|misinformation|truth\b/,
+      inject: 'truth discern',
+    },
+  ]
+
+  let expanded = lower
+  for (const hint of hints) {
+    if (hint.trigger.test(lower)) {
+      expanded += ` ${hint.inject}`
+    }
+  }
+  return expanded
 }
 
 function makeOption(
@@ -51,6 +88,7 @@ function makeOption(
   kind: AuditOptionKind,
   rank: number,
   confidence: number,
+  matched: string[] = [],
 ): AuditOptionPreview | null {
   const series = SERIES_DATA[slug]
   if (!series) return null
@@ -65,7 +103,9 @@ function makeOption(
     confidence,
     reasoning:
       kind === 'ai_primary'
-        ? 'Real-time curated modules that align with what you shared.'
+        ? matched.length > 0
+          ? `Matched themes from your response: ${matched.join(', ')}.`
+          : 'Real-time curated modules assembled from your response.'
         : 'A stable prefab series if you want a proven guided path.',
   }
 }
@@ -89,7 +129,7 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
   const aiMatches = keywordMatch(input)
   let aiOptions = aiMatches
     .map((m, index) =>
-      makeOption(m.slug, 'ai_primary', index + 1, m.confidence),
+      makeOption(m.slug, 'ai_primary', index + 1, m.confidence, m.matched),
     )
     .filter((opt): opt is AuditOptionPreview => Boolean(opt))
 
@@ -100,7 +140,7 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
     const fillers = fallbackSeries
       .slice(0, needed)
       .map((slug, idx) =>
-        makeOption(slug, 'ai_primary', aiOptions.length + idx + 1, 0.55),
+        makeOption(slug, 'ai_primary', aiOptions.length + idx + 1, 0.55, []),
       )
       .filter((opt): opt is AuditOptionPreview => Boolean(opt))
     aiOptions = [...aiOptions, ...fillers]

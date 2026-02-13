@@ -17,7 +17,36 @@ type PlanDayResponse = {
   archived: boolean
   onboarding: boolean
   message?: string
-  day?: CustomPlanDay
+  day?: CustomPlanDay | PlanDayPreview | null
+}
+
+type PlanDayPreview = Pick<
+  CustomPlanDay,
+  'day' | 'title' | 'scriptureReference' | 'scriptureText'
+>
+
+function isFullPlanDay(value: unknown): value is CustomPlanDay {
+  if (!value || typeof value !== 'object') return false
+  const day = value as Partial<CustomPlanDay>
+  return (
+    typeof day.day === 'number' &&
+    typeof day.title === 'string' &&
+    typeof day.scriptureReference === 'string' &&
+    typeof day.reflection === 'string' &&
+    typeof day.prayer === 'string' &&
+    typeof day.nextStep === 'string' &&
+    typeof day.journalPrompt === 'string'
+  )
+}
+
+function isPlanPreview(value: unknown): value is PlanDayPreview {
+  if (!value || typeof value !== 'object') return false
+  const day = value as Partial<PlanDayPreview>
+  return (
+    typeof day.day === 'number' &&
+    typeof day.title === 'string' &&
+    typeof day.scriptureReference === 'string'
+  )
 }
 
 function loadSubmitResult(): SoulAuditSubmitResponseV2 | null {
@@ -60,6 +89,9 @@ export default function SoulAuditResultsPage() {
   const [error, setError] = useState<string | null>(null)
   const [runExpired, setRunExpired] = useState(false)
   const [planDays, setPlanDays] = useState<CustomPlanDay[]>([])
+  const [lockedDayPreviews, setLockedDayPreviews] = useState<PlanDayPreview[]>(
+    [],
+  )
   const [lockedMessages, setLockedMessages] = useState<string[]>([])
   const [loadingPlan, setLoadingPlan] = useState(false)
 
@@ -79,20 +111,37 @@ export default function SoulAuditResultsPage() {
 
     try {
       const requests = [1, 2, 3, 4, 5].map(async (day) => {
-        const response = await fetch(`/api/devotional-plan/${token}/day/${day}`)
+        const response = await fetch(
+          `/api/devotional-plan/${token}/day/${day}?preview=1`,
+        )
         const payload = (await response.json()) as PlanDayResponse
         return { day, status: response.status, payload }
       })
 
       const responses = await Promise.all(requests)
       const unlockedDays: CustomPlanDay[] = []
+      const lockedPreviews: PlanDayPreview[] = []
       const locks: string[] = []
 
       for (const entry of responses) {
         if (entry.status === 200 && entry.payload.day) {
-          unlockedDays.push(entry.payload.day)
+          if (entry.payload.locked && isPlanPreview(entry.payload.day)) {
+            lockedPreviews.push(entry.payload.day)
+          } else if (
+            !entry.payload.locked &&
+            isFullPlanDay(entry.payload.day)
+          ) {
+            unlockedDays.push(entry.payload.day)
+          }
         }
         if (entry.status === 423 && entry.payload.message) {
+          locks.push(entry.payload.message)
+        }
+        if (
+          entry.status === 200 &&
+          entry.payload.locked &&
+          entry.payload.message
+        ) {
           locks.push(entry.payload.message)
         }
       }
@@ -105,13 +154,17 @@ export default function SoulAuditResultsPage() {
         if (onboardingResponse.status === 200) {
           const onboardingPayload =
             (await onboardingResponse.json()) as PlanDayResponse
-          if (onboardingPayload.day) unlockedDays.push(onboardingPayload.day)
+          if (isFullPlanDay(onboardingPayload.day)) {
+            unlockedDays.push(onboardingPayload.day)
+          }
         }
       }
 
       unlockedDays.sort((a, b) => a.day - b.day)
+      lockedPreviews.sort((a, b) => a.day - b.day)
       setPlanDays(unlockedDays)
-      setLockedMessages(locks)
+      setLockedDayPreviews(lockedPreviews)
+      setLockedMessages(Array.from(new Set(locks)))
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Unable to load plan.')
     } finally {
@@ -414,6 +467,34 @@ export default function SoulAuditResultsPage() {
                     {message}
                   </p>
                 ))}
+              </div>
+            )}
+
+            {lockedDayPreviews.length > 0 && (
+              <div className="mb-8">
+                <p className="text-label vw-small mb-3 text-gold">
+                  YOUR CURATED 5-DAY PREVIEW
+                </p>
+                <div className="grid gap-3 md:grid-cols-2">
+                  {lockedDayPreviews.map((day) => (
+                    <article
+                      key={`locked-preview-${day.day}`}
+                      style={{
+                        border: '1px solid var(--color-border)',
+                        padding: '1rem',
+                        background: 'var(--color-surface)',
+                      }}
+                    >
+                      <p className="text-label vw-small mb-1 text-gold">
+                        DAY {day.day} • LOCKED
+                      </p>
+                      <h3 className="vw-body mb-1">{typographer(day.title)}</h3>
+                      <p className="vw-small text-muted">
+                        {day.scriptureReference}
+                      </p>
+                    </article>
+                  ))}
+                </div>
               </div>
             )}
 

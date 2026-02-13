@@ -36,12 +36,14 @@ function onboardingDay() {
 }
 
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   context: { params: Promise<{ token: string; n: string }> },
 ) {
   try {
     const { token, n } = await context.params
     const dayNumber = Number.parseInt(n, 10)
+    const previewRequested =
+      new URL(request.url).searchParams.get('preview') === '1'
     if (!token || !Number.isFinite(dayNumber)) {
       return NextResponse.json(
         { error: 'Invalid token or day.' },
@@ -63,6 +65,28 @@ export async function GET(
     })
 
     if (!unlock.unlocked) {
+      if (previewRequested && dayNumber > 0) {
+        const previewDay = await getPlanDayWithFallback(token, dayNumber)
+        return NextResponse.json(
+          {
+            locked: true,
+            archived: false,
+            onboarding: false,
+            day: previewDay?.content
+              ? {
+                  day: previewDay.content.day,
+                  title: previewDay.content.title,
+                  scriptureReference: previewDay.content.scriptureReference,
+                  scriptureText: previewDay.content.scriptureText,
+                }
+              : null,
+            message: unlock.message,
+            policy: instance.start_policy,
+          },
+          { status: 200 },
+        )
+      }
+
       return NextResponse.json(
         {
           locked: true,
@@ -75,12 +99,13 @@ export async function GET(
     }
 
     if (unlock.onboarding && dayNumber === 0) {
+      const onboardingPlanDay = await getPlanDayWithFallback(token, 0)
       return NextResponse.json(
         {
           locked: false,
           archived: false,
           onboarding: true,
-          day: onboardingDay(),
+          day: onboardingPlanDay?.content ?? onboardingDay(),
           policy: instance.start_policy,
         },
         { status: 200 },

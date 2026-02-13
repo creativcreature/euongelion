@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import {
   buildCuratedFirstPlan,
+  buildOnboardingDay,
   MissingCuratedModuleError,
 } from '@/lib/soul-audit/curated-builder'
 import {
@@ -131,6 +132,16 @@ export async function POST(request: NextRequest) {
           ) || 0
 
     const schedule = resolveStartPolicy(new Date(), offsetMinutes)
+    const daysForPlan =
+      schedule.startPolicy === 'wed_sun_onboarding' && planDays[0]
+        ? [
+            buildOnboardingDay({
+              userResponse: run.response_text,
+              firstDay: planDays[0],
+            }),
+            ...planDays,
+          ]
+        : planDays
 
     const plan = await createPlan({
       runId,
@@ -141,7 +152,7 @@ export async function POST(request: NextRequest) {
       startPolicy: schedule.startPolicy,
       startedAt: schedule.startedAt,
       cycleStartAt: schedule.cycleStartAt,
-      days: planDays,
+      days: daysForPlan,
     })
 
     await saveSelection({

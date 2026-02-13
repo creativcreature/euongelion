@@ -436,3 +436,52 @@ export function buildCuratedFirstPlan(params: {
 
   return planDays
 }
+
+export function buildOnboardingDay(params: {
+  userResponse: string
+  firstDay: CustomPlanDay
+}): CustomPlanDay {
+  const snippet = params.userResponse.trim().slice(0, 180)
+  const firstDayTitle = toLine(params.firstDay.title, 'Day 1')
+  const firstReference = toLine(
+    params.firstDay.scriptureReference,
+    'Lamentations 3:22-23',
+  )
+
+  return {
+    day: 0,
+    title: 'Onboarding: Prepare for Your 5-Day Path',
+    scriptureReference: firstReference,
+    scriptureText: toLine(
+      params.firstDay.scriptureText,
+      'The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning.',
+    ),
+    reflection:
+      snippet.length > 0
+        ? `You shared: "${snippet}". This onboarding day helps you settle before your full cycle unlocks. We already curated your 5-day path; now take one honest breath and begin.\n\nYour first day is "${firstDayTitle}".`
+        : `This onboarding day helps you settle before your full cycle unlocks. We already curated your 5-day path; now take one honest breath and begin.\n\nYour first day is "${firstDayTitle}".`,
+    prayer:
+      'Lord Jesus, prepare my heart for this coming rhythm. Give me honesty, steadiness, and trust as I begin.',
+    nextStep:
+      'Read your Day 1 preview below, then set a reminder for 7:00 AM local time when your full cycle unlocks.',
+    journalPrompt:
+      'What do I most need God to stabilize in me before this cycle begins?',
+    endnotes: [
+      {
+        id: 1,
+        source: 'Scripture',
+        note: firstReference,
+      },
+      {
+        id: 2,
+        source: 'Scheduling Policy',
+        note: 'Wed-Sun starts include onboarding before Monday cycle.',
+      },
+      {
+        id: 3,
+        source: 'Curated Plan Anchor',
+        note: `Preview anchored to ${firstDayTitle}.`,
+      },
+    ],
+  }
+}

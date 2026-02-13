@@ -35,6 +35,30 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Curation Visibility + Personalized Onboarding (2026-02-13)
+
+### What Changed
+
+- Replaced static Wed-Sun onboarding devotional with a curated personalized onboarding day derived from the generated plan + user response:
+  - `src/lib/soul-audit/curated-builder.ts`
+  - `src/app/api/soul-audit/select/route.ts`
+- Added locked-day preview support so users can immediately see their crafted 5-day structure even before unlock time:
+  - `src/app/api/devotional-plan/[token]/day/[n]/route.ts` (`?preview=1`)
+  - `src/app/soul-audit/results/page.tsx`
+- Improved AI option matching signals and reasoning text so options reflect user language more clearly (including overload/burnout semantic hints):
+  - `src/lib/soul-audit/matching.ts`
+- Bumped service worker cache namespace `euangelion-v42` -> `euangelion-v43` to force delivery of the curation/render updates:
+  - `public/sw.js`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm run test -- __tests__/soul-audit-flow.test.ts __tests__/soul-audit-edge-cases.test.ts __tests__/soul-audit-schedule.test.ts`
+- `npm run verify:production-contracts`
+
+---
+
 ## Audit Results Reliability + Click Affordance Pass (2026-02-13)
 
 ### What Changed
