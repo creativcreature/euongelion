@@ -1,16 +1,15 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import type { SoulAuditResponse } from '@/types/soul-audit'
 
 interface SoulAuditState {
   /** Number of audits taken */
   auditCount: number
   /** Most recent audit results */
-  lastResults: SoulAuditResponse | null
+  lastResults: unknown | null
   /** The user's most recent audit text */
   lastInput: string | null
 
-  recordAudit: (input: string, results: SoulAuditResponse) => void
+  recordAudit: (input: string, results: unknown) => void
   clearResults: () => void
   resetAudit: () => void
   hasReachedLimit: () => boolean

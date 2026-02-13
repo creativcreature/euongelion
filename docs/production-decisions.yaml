@@ -1,0 +1,49 @@
+version: 1
+updated_at: 2026-02-13
+
+decisions:
+  - id: SA-001
+    title: submit-is-options-only
+  - id: SA-002
+    title: five-options-split-3-plus-2
+  - id: SA-003
+    title: essential-consent-required-analytics-opt-in-default-off
+  - id: SA-004
+    title: crisis-acknowledgement-gate-required
+  - id: SA-005
+    title: curated-first-80-20-with-fail-closed-core-modules
+  - id: SA-006
+    title: no-full-plan-until-selection
+  - id: SA-007
+    title: monday-tuesday-wed-sun-scheduling-policy
+  - id: SA-008
+    title: local-corpus-only-chat-and-endnotes
+  - id: SA-009
+    title: mock-account-testing-shell-enabled
+
+contracts:
+  required_files:
+    - src/app/api/soul-audit/submit/route.ts
+    - src/app/api/soul-audit/consent/route.ts
+    - src/app/api/soul-audit/select/route.ts
+    - src/app/api/devotional-plan/[token]/day/[n]/route.ts
+    - src/app/api/mock-account/session/route.ts
+    - src/app/api/mock-account/export/route.ts
+    - src/app/api/annotations/route.ts
+    - src/app/api/bookmarks/route.ts
+    - src/lib/soul-audit/curated-builder.ts
+    - src/lib/soul-audit/schedule.ts
+  submit_route_forbidden_tokens:
+    - customPlan
+    - customDevotional
+  required_submit_tokens:
+    - options
+    - auditRunId
+    - requiresEssentialConsent
+  required_chat_guard_tokens:
+    - local corpus
+    - devotional context
+  policy_split:
+    - ai_primary:3
+    - curated_prefab:2
+    - total:5

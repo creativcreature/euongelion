@@ -1,21 +1,76 @@
 import { NextRequest, NextResponse } from 'next/server'
+import fs from 'fs'
+import path from 'path'
 
 const APP_API_KEY = process.env.ANTHROPIC_API_KEY
 const FREE_TIER_DAILY_LIMIT = 10
 const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages'
 
-const SYSTEM_PROMPT = `You are a biblical research assistant for Euangelion, a Christian devotional app. Your purpose is to help users explore Scripture deeply — cross-references, word studies, historical context, theology, and commentary insights.
+const SYSTEM_PROMPT = `You are a biblical research assistant for Euangelion, a Christian devotional app.
 
 Guidelines:
 - Be warm, thoughtful, and scholarly without being academic or preachy.
 - When discussing Scripture, cite specific references (book, chapter, verse).
 - Offer cross-references and connections between passages when relevant.
 - For word studies, reference the original Hebrew or Greek when helpful.
-- Acknowledge different theological perspectives with grace.
-- If a question goes beyond your knowledge, say so honestly and suggest resources.
-- For questions unrelated to faith, Scripture, or spiritual formation, gently redirect: "That's a great question, but it's outside my area. I'm best at exploring Scripture and theology — want to dig into something there?"
 - Keep responses concise but substantive. Aim for 2-4 paragraphs unless the question demands more.
-- Use proper typographic punctuation (curly quotes, em-dashes).`
+- You must only use the supplied local corpus context (devotional JSON + local reference volumes).
+- Do not use or imply internet search, external retrieval, or knowledge outside provided context.
+- If context is missing, say so plainly and invite a narrower question from the current devotional.`
+
+function getLocalDevotionalContext(devotionalSlug?: string): string {
+  if (!devotionalSlug) return ''
+  const filePath = path.join(
+    process.cwd(),
+    'public',
+    'devotionals',
+    `${devotionalSlug}.json`,
+  )
+  if (!fs.existsSync(filePath)) return ''
+
+  try {
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf8')) as Record<
+      string,
+      unknown
+    >
+    const title = String(data.title || devotionalSlug)
+    const scriptureReference = String(data.scriptureReference || '')
+    const modules = Array.isArray(data.modules)
+      ? (data.modules as Array<Record<string, unknown>>)
+      : []
+    const scripture = modules.find((module) => module.type === 'scripture')
+    const teaching = modules.find((module) => module.type === 'teaching')
+    const reflection = modules.find((module) => module.type === 'reflection')
+
+    return [
+      `Devotional: ${title}`,
+      scriptureReference ? `Scripture: ${scriptureReference}` : '',
+      scripture && scripture.content
+        ? `Scripture text: ${String((scripture.content as Record<string, unknown>).text || '').slice(0, 700)}`
+        : '',
+      teaching && teaching.content
+        ? `Teaching excerpt: ${String((teaching.content as Record<string, unknown>).body || '').slice(0, 700)}`
+        : '',
+      reflection && reflection.content
+        ? `Reflection prompt: ${String((reflection.content as Record<string, unknown>).prompt || '').slice(0, 300)}`
+        : '',
+    ]
+      .filter(Boolean)
+      .join('\n')
+  } catch {
+    return ''
+  }
+}
+
+function getLocalReferenceContext(): string {
+  const filePath = path.join(process.cwd(), 'content', 'reference', 'README.md')
+  if (!fs.existsSync(filePath)) return ''
+  try {
+    return fs.readFileSync(filePath, 'utf8').slice(0, 1400)
+  } catch {
+    return ''
+  }
+}
 
 function buildContextPrompt(
   devotionalSlug?: string,
@@ -35,7 +90,18 @@ function buildContextPrompt(
     )
   }
 
-  return parts.length > 0 ? `\n\nContext: ${parts.join(' ')}` : ''
+  const devotionalContext = getLocalDevotionalContext(devotionalSlug)
+  const referenceContext = getLocalReferenceContext()
+
+  if (devotionalContext) {
+    parts.push(`Local devotional context:\n${devotionalContext}`)
+  }
+
+  if (referenceContext) {
+    parts.push(`Local reference-volume context:\n${referenceContext}`)
+  }
+
+  return parts.length > 0 ? `\n\nContext:\n${parts.join('\n\n')}` : ''
 }
 
 interface ChatRequestBody {
@@ -53,6 +119,16 @@ export async function POST(request: NextRequest) {
     if (!messages || messages.length === 0) {
       return NextResponse.json(
         { error: 'Messages are required' },
+        { status: 400 },
+      )
+    }
+
+    if (!devotionalSlug && !highlightedText) {
+      return NextResponse.json(
+        {
+          error:
+            'Study chat is limited to devotional context. Open a devotional or highlight text first.',
+        },
         { status: 400 },
       )
     }

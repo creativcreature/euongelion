@@ -7,60 +7,9 @@ import FadeIn from '@/components/motion/FadeIn'
 import IllustrationFrame from '@/components/newspaper/IllustrationFrame'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
-import type { SoulAuditResponse } from '@/types/soul-audit'
+import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
 
 const emptySubscribe = () => () => {}
-
-function normalizeSoulAuditResponse(
-  data: Partial<SoulAuditResponse>,
-): SoulAuditResponse {
-  const customPlan =
-    data.customPlan &&
-    Array.isArray(data.customPlan.days) &&
-    data.customPlan.days.length > 0
-      ? data.customPlan
-      : data.customDevotional
-        ? {
-            title: 'Your Custom Plan',
-            summary: 'A temporary plan crafted from what you shared.',
-            generatedAt:
-              data.customDevotional.generatedAt || new Date().toISOString(),
-            days: [
-              {
-                day: 1,
-                chiasticPosition: 'A' as const,
-                title: data.customDevotional.title,
-                scriptureReference: data.customDevotional.scriptureReference,
-                scriptureText: data.customDevotional.scriptureText,
-                reflection: data.customDevotional.reflection,
-                prayer: data.customDevotional.prayer,
-                nextStep: data.customDevotional.nextStep,
-                journalPrompt: data.customDevotional.journalPrompt,
-              },
-            ],
-          }
-        : undefined
-
-  return {
-    crisis: Boolean(data.crisis),
-    message: data.message,
-    resources: data.resources,
-    customPlan,
-    customDevotional: data.customDevotional,
-    matches: Array.isArray(data.matches)
-      ? data.matches
-      : data.match
-        ? [
-            data.match,
-            ...((data.alternatives || []).map((alt) => ({
-              ...alt,
-              confidence: 0.7,
-              reasoning: '',
-            })) || []),
-          ].slice(0, 3)
-        : [],
-  }
-}
 
 export default function SoulAuditPage() {
   const [response, setResponse] = useState('')
@@ -89,6 +38,8 @@ export default function SoulAuditPage() {
     setError(null)
     setNudge(false)
     sessionStorage.removeItem('soul-audit-result')
+    sessionStorage.removeItem('soul-audit-submit-v2')
+    sessionStorage.removeItem('soul-audit-selection-v2')
   }
 
   async function handleSubmit() {
@@ -112,7 +63,7 @@ export default function SoulAuditPage() {
     setError(null)
 
     try {
-      const res = await fetch('/api/soul-audit', {
+      const res = await fetch('/api/soul-audit/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ response: response.trim() }),
@@ -126,12 +77,10 @@ export default function SoulAuditPage() {
         )
       }
 
-      const data = (await res.json()) as Partial<SoulAuditResponse>
-      const normalized = normalizeSoulAuditResponse(data)
-
-      // Store results in sessionStorage for the results page
-      sessionStorage.setItem('soul-audit-result', JSON.stringify(normalized))
-      recordAudit(response.trim(), normalized)
+      const data = (await res.json()) as SoulAuditSubmitResponseV2
+      sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(data))
+      sessionStorage.removeItem('soul-audit-selection-v2')
+      recordAudit(response.trim(), data)
       router.push('/soul-audit/results')
     } catch (err) {
       setError(
@@ -265,7 +214,7 @@ export default function SoulAuditPage() {
 
                 <p className="vw-small mt-8 text-center text-muted">
                   {typographer(
-                    'This is between you and the page. Your response is used to craft a full custom 5-day plan for where you are right now.',
+                    'This is between you and the page. We will show five options first, then build the full 5-day plan after you choose.',
                   )}
                 </p>
               </div>

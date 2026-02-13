@@ -35,6 +35,69 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit + Devotional Engine Consolidation (2026-02-13)
+
+### What Changed
+
+- Replaced monolithic Soul Audit behavior with staged contracts:
+  - `POST /api/soul-audit/submit` now returns option previews only (no eager full plan payload).
+  - `POST /api/soul-audit/consent` records essential consent + optional analytics opt-in (default OFF) and enforces crisis acknowledgement.
+  - `POST /api/soul-audit/select` locks choice and branches:
+    - AI primary option => generates devotional plan after selection.
+    - Curated prefab option => routes to series overview.
+- Added day-level devotional plan endpoint and scheduling policy:
+  - `GET /api/devotional-plan/[token]/day/[n]`
+  - Monday start => normal cycle
+  - Tuesday start => Monday readable as archived
+  - Wednesday-Sunday start => onboarding day before Monday cycle
+  - 7:00 AM local-time unlock cadence enforced.
+- Implemented curated-first devotional builder and local-corpus grounding:
+  - Added curated catalog loader with source priority:
+    - `content/approved` -> `content/final` -> `content/series-json`
+  - Added fail-closed validation for missing curated core modules.
+  - Limited adaptive generation to assistive polishing around curated modules.
+  - Added structured endnotes per generated day.
+- Added local reference-volume retriever and connected endnote sourcing:
+  - `src/lib/soul-audit/reference-volumes.ts`
+  - Grounding restricted to local repository corpus (no internet retrieval).
+- Added mock-account and user artifact API scaffolding:
+  - `POST/GET /api/mock-account/session`
+  - `GET /api/mock-account/export` (mock account + analytics opt-in required)
+  - `POST/GET /api/annotations`
+  - `POST/GET /api/bookmarks`
+- Hardened study chat constraints in `src/app/api/chat/route.ts`:
+  - Requires devotional/highlight context.
+  - Injects only local devotional + local reference context.
+  - Explicitly blocks external retrieval behavior in system prompt.
+- Added governance system and machine-enforced drift checks:
+  - `docs/PRODUCTION-SOURCE-OF-TRUTH.md`
+  - `docs/production-decisions.yaml`
+  - `scripts/check-production-contracts.mjs`
+  - CI now fails when production contracts drift (`npm run verify:production-contracts`).
+  - Pre-commit now runs production contract verification.
+  - Commit-msg gate added: feature commits must reference decision id format `SA-###`.
+- Added schema migration for staged Soul Audit/plan/account artifacts:
+  - `supabase/migrations/20260213000001_soul_audit_engine_consolidation.sql`
+  - New entities include:
+    - `audit_runs`, `audit_options`, `consent_records`, `audit_selections`
+    - `devotional_plan_instances`, `devotional_plan_days`, `devotional_day_citations`
+    - `annotations`, `session_bookmarks`, `mock_account_sessions`
+- Updated frontend selection-first flow:
+  - `src/app/page.tsx` and `src/app/soul-audit/page.tsx` now submit to `/api/soul-audit/submit`.
+  - `src/app/soul-audit/results/page.tsx` rebuilt to:
+    - render exactly 5 choices (3 AI primary + 2 curated prefab),
+    - enforce consent/crisis acknowledgement before selection,
+    - render plan content only after successful option selection.
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm run verify:production-contracts`
+- `npm test`
+
+---
+
 ## Mockup Proportion Alignment Pass 2 (2026-02-12)
 
 ### What Changed

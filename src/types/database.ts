@@ -420,6 +420,238 @@ export type SoulAuditSessionInsert = {
 }
 
 // =============================================================================
+// Soul Audit Staged Flow
+// =============================================================================
+
+export type AuditRun = {
+  id: string
+  session_token: string
+  response_text: string
+  crisis_detected: boolean
+  created_at: string
+}
+
+export type AuditRunInsert = {
+  id?: string
+  session_token: string
+  response_text: string
+  crisis_detected?: boolean
+  created_at?: string
+}
+
+export type AuditRunUpdate = Partial<AuditRunInsert>
+
+export type AuditOption = {
+  id: string
+  audit_run_id: string
+  slug: string
+  kind: 'ai_primary' | 'curated_prefab'
+  rank: number
+  title: string
+  question: string
+  confidence: number
+  reasoning: string
+  preview: Record<string, unknown> | null
+  created_at: string
+}
+
+export type AuditOptionInsert = {
+  id: string
+  audit_run_id: string
+  slug: string
+  kind: 'ai_primary' | 'curated_prefab'
+  rank: number
+  title: string
+  question: string
+  confidence?: number
+  reasoning: string
+  preview?: Record<string, unknown> | null
+  created_at?: string
+}
+
+export type AuditOptionUpdate = Partial<AuditOptionInsert>
+
+export type ConsentRecord = {
+  id: string
+  audit_run_id: string
+  session_token: string
+  essential_accepted: boolean
+  analytics_opt_in: boolean
+  crisis_acknowledged: boolean
+  created_at: string
+}
+
+export type ConsentRecordInsert = {
+  id?: string
+  audit_run_id: string
+  session_token: string
+  essential_accepted: boolean
+  analytics_opt_in?: boolean
+  crisis_acknowledged?: boolean
+  created_at?: string
+}
+
+export type ConsentRecordUpdate = Partial<ConsentRecordInsert>
+
+export type AuditSelection = {
+  id: string
+  audit_run_id: string
+  option_id: string
+  option_kind: 'ai_primary' | 'curated_prefab'
+  series_slug: string
+  plan_token: string | null
+  created_at: string
+}
+
+export type AuditSelectionInsert = {
+  id?: string
+  audit_run_id: string
+  option_id: string
+  option_kind: 'ai_primary' | 'curated_prefab'
+  series_slug: string
+  plan_token?: string | null
+  created_at?: string
+}
+
+export type AuditSelectionUpdate = Partial<AuditSelectionInsert>
+
+export type DevotionalPlanInstance = {
+  id: string
+  plan_token: string
+  audit_run_id: string
+  session_token: string
+  series_slug: string
+  timezone: string
+  timezone_offset_minutes: number
+  start_policy:
+    | 'monday_cycle'
+    | 'tuesday_archived_monday'
+    | 'wed_sun_onboarding'
+  started_at: string
+  cycle_start_at: string
+  created_at: string
+}
+
+export type DevotionalPlanInstanceInsert = {
+  id?: string
+  plan_token?: string
+  audit_run_id: string
+  session_token: string
+  series_slug: string
+  timezone?: string
+  timezone_offset_minutes?: number
+  start_policy:
+    | 'monday_cycle'
+    | 'tuesday_archived_monday'
+    | 'wed_sun_onboarding'
+  started_at?: string
+  cycle_start_at: string
+  created_at?: string
+}
+
+export type DevotionalPlanInstanceUpdate = Partial<DevotionalPlanInstanceInsert>
+
+export type DevotionalPlanDay = {
+  id: string
+  plan_token: string
+  day_number: number
+  content: Record<string, unknown>
+  created_at: string
+}
+
+export type DevotionalPlanDayInsert = {
+  id?: string
+  plan_token: string
+  day_number: number
+  content: Record<string, unknown>
+  created_at?: string
+}
+
+export type DevotionalPlanDayUpdate = Partial<DevotionalPlanDayInsert>
+
+export type DevotionalDayCitation = {
+  id: string
+  plan_day_id: string
+  endnote_index: number
+  source: string
+  note: string
+  created_at: string
+}
+
+export type DevotionalDayCitationInsert = {
+  id?: string
+  plan_day_id: string
+  endnote_index: number
+  source: string
+  note: string
+  created_at?: string
+}
+
+export type DevotionalDayCitationUpdate = Partial<DevotionalDayCitationInsert>
+
+export type Annotation = {
+  id: string
+  session_token: string
+  devotional_slug: string
+  annotation_type: 'note' | 'highlight' | 'sticky' | 'sticker'
+  anchor_text: string | null
+  body: string | null
+  style: Record<string, unknown> | null
+  created_at: string
+}
+
+export type AnnotationInsert = {
+  id?: string
+  session_token: string
+  devotional_slug: string
+  annotation_type: 'note' | 'highlight' | 'sticky' | 'sticker'
+  anchor_text?: string | null
+  body?: string | null
+  style?: Record<string, unknown> | null
+  created_at?: string
+}
+
+export type AnnotationUpdate = Partial<AnnotationInsert>
+
+export type SessionBookmark = {
+  id: string
+  session_token: string
+  devotional_slug: string
+  note: string | null
+  created_at: string
+}
+
+export type SessionBookmarkInsert = {
+  id?: string
+  session_token: string
+  devotional_slug: string
+  note?: string | null
+  created_at?: string
+}
+
+export type SessionBookmarkUpdate = Partial<SessionBookmarkInsert>
+
+export type MockAccountSession = {
+  id: string
+  session_token: string
+  mode: 'anonymous' | 'mock_account'
+  analytics_opt_in: boolean
+  created_at: string
+  updated_at: string
+}
+
+export type MockAccountSessionInsert = {
+  id?: string
+  session_token: string
+  mode: 'anonymous' | 'mock_account'
+  analytics_opt_in?: boolean
+  created_at?: string
+  updated_at?: string
+}
+
+export type MockAccountSessionUpdate = Partial<MockAccountSessionInsert>
+
+// =============================================================================
 // User Streaks (View)
 // =============================================================================
 
@@ -512,6 +744,66 @@ export type Database = {
         Row: SoulAuditSession
         Insert: SoulAuditSessionInsert
         Update: Partial<SoulAuditSessionInsert>
+        Relationships: []
+      }
+      audit_runs: {
+        Row: AuditRun
+        Insert: AuditRunInsert
+        Update: AuditRunUpdate
+        Relationships: []
+      }
+      audit_options: {
+        Row: AuditOption
+        Insert: AuditOptionInsert
+        Update: AuditOptionUpdate
+        Relationships: []
+      }
+      consent_records: {
+        Row: ConsentRecord
+        Insert: ConsentRecordInsert
+        Update: ConsentRecordUpdate
+        Relationships: []
+      }
+      audit_selections: {
+        Row: AuditSelection
+        Insert: AuditSelectionInsert
+        Update: AuditSelectionUpdate
+        Relationships: []
+      }
+      devotional_plan_instances: {
+        Row: DevotionalPlanInstance
+        Insert: DevotionalPlanInstanceInsert
+        Update: DevotionalPlanInstanceUpdate
+        Relationships: []
+      }
+      devotional_plan_days: {
+        Row: DevotionalPlanDay
+        Insert: DevotionalPlanDayInsert
+        Update: DevotionalPlanDayUpdate
+        Relationships: []
+      }
+      devotional_day_citations: {
+        Row: DevotionalDayCitation
+        Insert: DevotionalDayCitationInsert
+        Update: DevotionalDayCitationUpdate
+        Relationships: []
+      }
+      annotations: {
+        Row: Annotation
+        Insert: AnnotationInsert
+        Update: AnnotationUpdate
+        Relationships: []
+      }
+      session_bookmarks: {
+        Row: SessionBookmark
+        Insert: SessionBookmarkInsert
+        Update: SessionBookmarkUpdate
+        Relationships: []
+      }
+      mock_account_sessions: {
+        Row: MockAccountSession
+        Insert: MockAccountSessionInsert
+        Update: MockAccountSessionUpdate
         Relationships: []
       }
     }

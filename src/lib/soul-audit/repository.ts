@@ -1,0 +1,477 @@
+import { randomUUID } from 'crypto'
+import { createAdminClient } from '@/lib/supabase/admin'
+import type {
+  AuditOptionPreview,
+  CustomPlan,
+  CustomPlanDay,
+} from '@/types/soul-audit'
+
+export interface AuditRunRecord {
+  id: string
+  session_token: string
+  response_text: string
+  crisis_detected: boolean
+  created_at: string
+}
+
+export interface AuditOptionRecord extends AuditOptionPreview {
+  audit_run_id: string
+  created_at: string
+}
+
+export interface ConsentRecord {
+  id: string
+  audit_run_id: string
+  session_token: string
+  essential_accepted: boolean
+  analytics_opt_in: boolean
+  crisis_acknowledged: boolean
+  created_at: string
+}
+
+export interface AuditSelectionRecord {
+  id: string
+  audit_run_id: string
+  option_id: string
+  option_kind: 'ai_primary' | 'curated_prefab'
+  series_slug: string
+  plan_token: string | null
+  created_at: string
+}
+
+export interface DevotionalPlanInstanceRecord {
+  id: string
+  plan_token: string
+  audit_run_id: string
+  session_token: string
+  series_slug: string
+  timezone: string
+  timezone_offset_minutes: number
+  start_policy:
+    | 'monday_cycle'
+    | 'tuesday_archived_monday'
+    | 'wed_sun_onboarding'
+  started_at: string
+  cycle_start_at: string
+  created_at: string
+}
+
+export interface DevotionalPlanDayRecord {
+  id: string
+  plan_token: string
+  day_number: number
+  content: CustomPlanDay
+  created_at: string
+}
+
+export interface AnnotationRecord {
+  id: string
+  session_token: string
+  devotional_slug: string
+  annotation_type: 'note' | 'highlight' | 'sticky' | 'sticker'
+  anchor_text: string | null
+  body: string | null
+  style: Record<string, unknown> | null
+  created_at: string
+}
+
+export interface BookmarkRecord {
+  id: string
+  session_token: string
+  devotional_slug: string
+  note: string | null
+  created_at: string
+}
+
+export interface MockAccountSessionRecord {
+  id: string
+  session_token: string
+  mode: 'anonymous' | 'mock_account'
+  analytics_opt_in: boolean
+  created_at: string
+  updated_at: string
+}
+
+type RuntimeStore = {
+  sessionAuditCounts: Map<string, number>
+  runs: Map<string, AuditRunRecord>
+  optionsByRun: Map<string, AuditOptionRecord[]>
+  consentByRun: Map<string, ConsentRecord>
+  selectionByRun: Map<string, AuditSelectionRecord>
+  planByToken: Map<string, DevotionalPlanInstanceRecord>
+  planDaysByToken: Map<string, DevotionalPlanDayRecord[]>
+  annotationsBySession: Map<string, AnnotationRecord[]>
+  bookmarksBySession: Map<string, BookmarkRecord[]>
+  mockSessionsByToken: Map<string, MockAccountSessionRecord>
+}
+
+declare global {
+  var __euangelionSoulAuditStore__: RuntimeStore | undefined
+}
+
+function getStore(): RuntimeStore {
+  if (!global.__euangelionSoulAuditStore__) {
+    global.__euangelionSoulAuditStore__ = {
+      sessionAuditCounts: new Map(),
+      runs: new Map(),
+      optionsByRun: new Map(),
+      consentByRun: new Map(),
+      selectionByRun: new Map(),
+      planByToken: new Map(),
+      planDaysByToken: new Map(),
+      annotationsBySession: new Map(),
+      bookmarksBySession: new Map(),
+      mockSessionsByToken: new Map(),
+    }
+  }
+  return global.__euangelionSoulAuditStore__
+}
+
+function maybeSupabase() {
+  if (
+    !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    !process.env.SUPABASE_SERVICE_ROLE_KEY
+  ) {
+    return null
+  }
+  try {
+    return createAdminClient()
+  } catch {
+    return null
+  }
+}
+
+async function safeInsert(table: string, values: object) {
+  const supabase = maybeSupabase()
+  if (!supabase) return
+
+  try {
+    // Keep runtime resilient if migrations are pending in an environment.
+    await (
+      supabase as unknown as {
+        from: (name: string) => { insert: (value: object) => Promise<unknown> }
+      }
+    )
+      .from(table)
+      .insert(values)
+  } catch {
+    // no-op
+  }
+}
+
+async function safeUpsert(table: string, values: object) {
+  const supabase = maybeSupabase()
+  if (!supabase) return
+
+  try {
+    await (
+      supabase as unknown as {
+        from: (name: string) => { upsert: (value: object) => Promise<unknown> }
+      }
+    )
+      .from(table)
+      .upsert(values)
+  } catch {
+    // no-op
+  }
+}
+
+export function getSessionAuditCount(sessionToken: string): number {
+  return getStore().sessionAuditCounts.get(sessionToken) ?? 0
+}
+
+export function bumpSessionAuditCount(sessionToken: string): number {
+  const store = getStore()
+  const next = (store.sessionAuditCounts.get(sessionToken) ?? 0) + 1
+  store.sessionAuditCounts.set(sessionToken, next)
+  return next
+}
+
+export function resetSessionAuditCount(sessionToken: string): void {
+  getStore().sessionAuditCounts.set(sessionToken, 0)
+}
+
+export async function createAuditRun(params: {
+  sessionToken: string
+  responseText: string
+  crisisDetected: boolean
+  options: AuditOptionPreview[]
+}): Promise<{ run: AuditRunRecord; options: AuditOptionRecord[] }> {
+  const now = new Date().toISOString()
+  const run: AuditRunRecord = {
+    id: randomUUID(),
+    session_token: params.sessionToken,
+    response_text: params.responseText,
+    crisis_detected: params.crisisDetected,
+    created_at: now,
+  }
+
+  const optionRows: AuditOptionRecord[] = params.options.map((option) => ({
+    ...option,
+    audit_run_id: run.id,
+    created_at: now,
+  }))
+
+  const store = getStore()
+  store.runs.set(run.id, run)
+  store.optionsByRun.set(run.id, optionRows)
+
+  await safeInsert('audit_runs', run)
+  for (const option of optionRows) {
+    await safeInsert('audit_options', option)
+  }
+
+  return { run, options: optionRows }
+}
+
+export function getAuditRun(runId: string): AuditRunRecord | null {
+  return getStore().runs.get(runId) ?? null
+}
+
+export function listAuditRunsForSession(
+  sessionToken: string,
+): AuditRunRecord[] {
+  return Array.from(getStore().runs.values()).filter(
+    (run) => run.session_token === sessionToken,
+  )
+}
+
+export function getAuditOptions(runId: string): AuditOptionRecord[] {
+  return getStore().optionsByRun.get(runId) ?? []
+}
+
+export async function saveConsent(params: {
+  runId: string
+  sessionToken: string
+  essentialAccepted: boolean
+  analyticsOptIn: boolean
+  crisisAcknowledged: boolean
+}): Promise<ConsentRecord> {
+  const consent: ConsentRecord = {
+    id: randomUUID(),
+    audit_run_id: params.runId,
+    session_token: params.sessionToken,
+    essential_accepted: params.essentialAccepted,
+    analytics_opt_in: params.analyticsOptIn,
+    crisis_acknowledged: params.crisisAcknowledged,
+    created_at: new Date().toISOString(),
+  }
+
+  getStore().consentByRun.set(params.runId, consent)
+  await safeInsert('consent_records', consent)
+  return consent
+}
+
+export function getConsent(runId: string): ConsentRecord | null {
+  return getStore().consentByRun.get(runId) ?? null
+}
+
+export async function saveSelection(params: {
+  runId: string
+  optionId: string
+  optionKind: 'ai_primary' | 'curated_prefab'
+  seriesSlug: string
+  planToken: string | null
+}): Promise<AuditSelectionRecord> {
+  const selection: AuditSelectionRecord = {
+    id: randomUUID(),
+    audit_run_id: params.runId,
+    option_id: params.optionId,
+    option_kind: params.optionKind,
+    series_slug: params.seriesSlug,
+    plan_token: params.planToken,
+    created_at: new Date().toISOString(),
+  }
+
+  getStore().selectionByRun.set(params.runId, selection)
+  await safeInsert('audit_selections', selection)
+  return selection
+}
+
+export function getSelection(runId: string): AuditSelectionRecord | null {
+  return getStore().selectionByRun.get(runId) ?? null
+}
+
+export function listSelectionsForSession(
+  sessionToken: string,
+): AuditSelectionRecord[] {
+  const runIds = new Set(
+    listAuditRunsForSession(sessionToken).map((run) => run.id),
+  )
+  return Array.from(getStore().selectionByRun.values()).filter((selection) =>
+    runIds.has(selection.audit_run_id),
+  )
+}
+
+export async function createPlan(params: {
+  runId: string
+  sessionToken: string
+  seriesSlug: string
+  timezone: string
+  timezoneOffsetMinutes: number
+  startPolicy: DevotionalPlanInstanceRecord['start_policy']
+  startedAt: string
+  cycleStartAt: string
+  days: CustomPlanDay[]
+}): Promise<{ token: string; plan: CustomPlan }> {
+  const token = randomUUID()
+  const now = new Date().toISOString()
+
+  const planRow: DevotionalPlanInstanceRecord = {
+    id: randomUUID(),
+    plan_token: token,
+    audit_run_id: params.runId,
+    session_token: params.sessionToken,
+    series_slug: params.seriesSlug,
+    timezone: params.timezone,
+    timezone_offset_minutes: params.timezoneOffsetMinutes,
+    start_policy: params.startPolicy,
+    started_at: params.startedAt,
+    cycle_start_at: params.cycleStartAt,
+    created_at: now,
+  }
+
+  const dayRows: DevotionalPlanDayRecord[] = params.days.map((day) => ({
+    id: randomUUID(),
+    plan_token: token,
+    day_number: day.day,
+    content: day,
+    created_at: now,
+  }))
+
+  const store = getStore()
+  store.planByToken.set(token, planRow)
+  store.planDaysByToken.set(token, dayRows)
+
+  await safeInsert('devotional_plan_instances', planRow)
+  for (const day of dayRows) {
+    await safeInsert('devotional_plan_days', day)
+    for (const endnote of day.content.endnotes ?? []) {
+      await safeInsert('devotional_day_citations', {
+        id: randomUUID(),
+        plan_day_id: day.id,
+        endnote_index: endnote.id,
+        source: endnote.source,
+        note: endnote.note,
+      })
+    }
+  }
+
+  return {
+    token,
+    plan: {
+      title: 'Your Custom Plan',
+      summary:
+        'A curated-first devotional path with local reference grounding.',
+      generatedAt: now,
+      days: params.days,
+    },
+  }
+}
+
+export function getPlanInstance(
+  token: string,
+): DevotionalPlanInstanceRecord | null {
+  return getStore().planByToken.get(token) ?? null
+}
+
+export function getPlanDay(
+  token: string,
+  dayNumber: number,
+): DevotionalPlanDayRecord | null {
+  const days = getStore().planDaysByToken.get(token) ?? []
+  return days.find((day) => day.day_number === dayNumber) ?? null
+}
+
+export function getAllPlanDays(token: string): DevotionalPlanDayRecord[] {
+  return getStore().planDaysByToken.get(token) ?? []
+}
+
+export async function upsertMockAccountSession(params: {
+  sessionToken: string
+  mode: 'anonymous' | 'mock_account'
+  analyticsOptIn: boolean
+}): Promise<MockAccountSessionRecord> {
+  const existing = getStore().mockSessionsByToken.get(params.sessionToken)
+  const now = new Date().toISOString()
+  const row: MockAccountSessionRecord = {
+    id: existing?.id ?? randomUUID(),
+    session_token: params.sessionToken,
+    mode: params.mode,
+    analytics_opt_in: params.analyticsOptIn,
+    created_at: existing?.created_at ?? now,
+    updated_at: now,
+  }
+
+  getStore().mockSessionsByToken.set(params.sessionToken, row)
+  await safeUpsert('mock_account_sessions', row)
+  return row
+}
+
+export function getMockAccountSession(
+  sessionToken: string,
+): MockAccountSessionRecord | null {
+  return getStore().mockSessionsByToken.get(sessionToken) ?? null
+}
+
+export async function addAnnotation(params: {
+  sessionToken: string
+  devotionalSlug: string
+  annotationType: AnnotationRecord['annotation_type']
+  anchorText: string | null
+  body: string | null
+  style: Record<string, unknown> | null
+}): Promise<AnnotationRecord> {
+  const row: AnnotationRecord = {
+    id: randomUUID(),
+    session_token: params.sessionToken,
+    devotional_slug: params.devotionalSlug,
+    annotation_type: params.annotationType,
+    anchor_text: params.anchorText,
+    body: params.body,
+    style: params.style,
+    created_at: new Date().toISOString(),
+  }
+
+  const store = getStore()
+  const current = store.annotationsBySession.get(params.sessionToken) ?? []
+  store.annotationsBySession.set(params.sessionToken, [row, ...current])
+  await safeInsert('annotations', row)
+  return row
+}
+
+export function listAnnotations(sessionToken: string): AnnotationRecord[] {
+  return getStore().annotationsBySession.get(sessionToken) ?? []
+}
+
+export async function addBookmark(params: {
+  sessionToken: string
+  devotionalSlug: string
+  note: string | null
+}): Promise<BookmarkRecord> {
+  const row: BookmarkRecord = {
+    id: randomUUID(),
+    session_token: params.sessionToken,
+    devotional_slug: params.devotionalSlug,
+    note: params.note,
+    created_at: new Date().toISOString(),
+  }
+
+  const store = getStore()
+  const existing = store.bookmarksBySession.get(params.sessionToken) ?? []
+  const filtered = existing.filter(
+    (b) => b.devotional_slug !== row.devotional_slug,
+  )
+  store.bookmarksBySession.set(params.sessionToken, [row, ...filtered])
+  await safeInsert('session_bookmarks', row)
+  return row
+}
+
+export function listBookmarks(sessionToken: string): BookmarkRecord[] {
+  const now = Date.now()
+  const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000
+  return (getStore().bookmarksBySession.get(sessionToken) ?? []).filter(
+    (bookmark) =>
+      now - new Date(bookmark.created_at).getTime() <= THIRTY_DAYS_MS,
+  )
+}

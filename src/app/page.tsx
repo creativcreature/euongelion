@@ -13,7 +13,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
-import type { SoulAuditResponse, AuditMatch } from '@/types/soul-audit'
+import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
 
 const emptySubscribe = () => () => {}
 
@@ -87,60 +87,6 @@ function formatMastheadDate(now: Date): string {
     hour12: true,
   })
   return `${month}. ${day}, ${year} ${time.replace(' AM', '').replace(' PM', '')}`
-}
-
-function normalizeSoulAuditResponse(
-  data: Partial<SoulAuditResponse>,
-): SoulAuditResponse {
-  const customPlan =
-    data.customPlan &&
-    Array.isArray(data.customPlan.days) &&
-    data.customPlan.days.length > 0
-      ? data.customPlan
-      : data.customDevotional
-        ? {
-            title: 'Your Custom Plan',
-            summary: 'A temporary plan crafted from what you shared.',
-            generatedAt:
-              data.customDevotional.generatedAt || new Date().toISOString(),
-            days: [
-              {
-                day: 1,
-                chiasticPosition: 'A' as const,
-                title: data.customDevotional.title,
-                scriptureReference: data.customDevotional.scriptureReference,
-                scriptureText: data.customDevotional.scriptureText,
-                reflection: data.customDevotional.reflection,
-                prayer: data.customDevotional.prayer,
-                nextStep: data.customDevotional.nextStep,
-                journalPrompt: data.customDevotional.journalPrompt,
-              },
-            ],
-          }
-        : undefined
-
-  return {
-    crisis: Boolean(data.crisis),
-    message: data.message,
-    resources: data.resources,
-    customPlan,
-    customDevotional: data.customDevotional,
-    matches: Array.isArray(data.matches)
-      ? data.matches
-      : data.match
-        ? [
-            data.match,
-            ...((data.alternatives || []).map(
-              (alt) =>
-                ({
-                  ...alt,
-                  confidence: 0.7,
-                  reasoning: '',
-                }) as AuditMatch,
-            ) || []),
-          ].slice(0, 3)
-        : [],
-  }
 }
 
 export default function Home() {
@@ -299,6 +245,8 @@ export default function Home() {
     resetAudit()
     setError(null)
     sessionStorage.removeItem('soul-audit-result')
+    sessionStorage.removeItem('soul-audit-submit-v2')
+    sessionStorage.removeItem('soul-audit-selection-v2')
   }
 
   const renderNavLinks = (items: typeof NAV_ITEMS) =>
@@ -335,7 +283,7 @@ export default function Home() {
     setError(null)
 
     try {
-      const res = await fetch('/api/soul-audit', {
+      const res = await fetch('/api/soul-audit/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ response: trimmed }),
@@ -346,10 +294,10 @@ export default function Home() {
         throw new Error(data.error || 'Unable to process soul audit right now.')
       }
 
-      const data = (await res.json()) as Partial<SoulAuditResponse>
-      const normalized = normalizeSoulAuditResponse(data)
-      sessionStorage.setItem('soul-audit-result', JSON.stringify(normalized))
-      recordAudit(trimmed, normalized)
+      const data = (await res.json()) as SoulAuditSubmitResponseV2
+      sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(data))
+      sessionStorage.removeItem('soul-audit-selection-v2')
+      recordAudit(trimmed, data)
       router.push('/soul-audit/results')
     } catch (err) {
       setError(

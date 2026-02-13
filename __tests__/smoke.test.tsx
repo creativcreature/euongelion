@@ -1,6 +1,15 @@
 import { render, screen } from '@testing-library/react'
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
 import Page from '@/app/page'
+
+vi.mock('next/navigation', () => ({
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+  }),
+  usePathname: () => '/',
+}))
 
 // Mock browser APIs for test environment
 beforeEach(() => {
@@ -13,6 +22,16 @@ beforeEach(() => {
   Object.defineProperty(window, 'IntersectionObserver', {
     writable: true,
     value: mockIntersectionObserver,
+  })
+
+  const mockResizeObserver = class {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  }
+  Object.defineProperty(window, 'ResizeObserver', {
+    writable: true,
+    value: mockResizeObserver,
   })
 
   // Mock localStorage
@@ -59,9 +78,9 @@ describe('Smoke Test', () => {
     // EUANGELION appears in both nav logo and hero — use getAllByText
     const euangelionElements = screen.getAllByText('EUANGELION')
     expect(euangelionElements.length).toBeGreaterThanOrEqual(1)
-    // Tagline is split: "DAILY" (sans) + "bread for the cluttered, hungry soul." (serif)
+    // Masthead kicker copy is present.
     expect(
-      screen.getByText(/bread for the cluttered, hungry soul/),
-    ).toBeInTheDocument()
+      screen.getAllByText(/Daily Devotionals for the Hungry Soul/).length,
+    ).toBeGreaterThanOrEqual(1)
   })
 })

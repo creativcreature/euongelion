@@ -1,90 +1,209 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Navigation from '@/components/Navigation'
-import SeriesHero from '@/components/SeriesHero'
-import ShareButton from '@/components/ShareButton'
 import FadeIn from '@/components/motion/FadeIn'
-import StaggerGrid from '@/components/motion/StaggerGrid'
 import { typographer } from '@/lib/typographer'
-import { SERIES_DATA } from '@/data/series'
-import type { AuditMatch, SoulAuditResponse } from '@/types/soul-audit'
+import type {
+  CustomPlanDay,
+  SoulAuditSelectResponse,
+  SoulAuditSubmitResponseV2,
+} from '@/types/soul-audit'
 
-function normalizeSoulAuditResponse(
-  data: Partial<SoulAuditResponse>,
-): SoulAuditResponse {
-  const customPlan =
-    data.customPlan &&
-    Array.isArray(data.customPlan.days) &&
-    data.customPlan.days.length > 0
-      ? data.customPlan
-      : data.customDevotional
-        ? {
-            title: 'Your Custom Plan',
-            summary: 'A temporary plan crafted from what you shared.',
-            generatedAt:
-              data.customDevotional.generatedAt || new Date().toISOString(),
-            days: [
-              {
-                day: 1,
-                chiasticPosition: 'A' as const,
-                title: data.customDevotional.title,
-                scriptureReference: data.customDevotional.scriptureReference,
-                scriptureText: data.customDevotional.scriptureText,
-                reflection: data.customDevotional.reflection,
-                prayer: data.customDevotional.prayer,
-                nextStep: data.customDevotional.nextStep,
-                journalPrompt: data.customDevotional.journalPrompt,
-              },
-            ],
-          }
-        : undefined
+type PlanDayResponse = {
+  locked: boolean
+  archived: boolean
+  onboarding: boolean
+  message?: string
+  day?: CustomPlanDay
+}
 
-  return {
-    crisis: Boolean(data.crisis),
-    message: data.message,
-    resources: data.resources,
-    customPlan,
-    customDevotional: data.customDevotional,
-    matches: Array.isArray(data.matches)
-      ? data.matches
-      : data.match
-        ? [
-            data.match,
-            ...((data.alternatives || []).map((alt) => ({
-              ...alt,
-              confidence: 0.7,
-              reasoning: '',
-            })) || []),
-          ].slice(0, 3)
-        : [],
+function loadSubmitResult(): SoulAuditSubmitResponseV2 | null {
+  if (typeof window === 'undefined') return null
+  const raw = sessionStorage.getItem('soul-audit-submit-v2')
+  if (!raw) return null
+  try {
+    const parsed = JSON.parse(raw) as SoulAuditSubmitResponseV2
+    return parsed.version === 'v2' ? parsed : null
+  } catch {
+    return null
+  }
+}
+
+function loadSelectionResult(): SoulAuditSelectResponse | null {
+  if (typeof window === 'undefined') return null
+  const raw = sessionStorage.getItem('soul-audit-selection-v2')
+  if (!raw) return null
+  try {
+    const parsed = JSON.parse(raw) as SoulAuditSelectResponse
+    return parsed.ok ? parsed : null
+  } catch {
+    return null
   }
 }
 
 export default function SoulAuditResultsPage() {
-  const [result] = useState<SoulAuditResponse | null>(() => {
-    if (typeof window === 'undefined') return null
-    const stored = sessionStorage.getItem('soul-audit-result')
-    if (!stored) return null
-    try {
-      return normalizeSoulAuditResponse(
-        JSON.parse(stored) as Partial<SoulAuditResponse>,
-      )
-    } catch {
-      return null
-    }
-  })
   const router = useRouter()
+  const searchParams = useSearchParams()
+
+  const [submitResult, setSubmitResult] =
+    useState<SoulAuditSubmitResponseV2 | null>(() => loadSubmitResult())
+  const [selection, setSelection] = useState<SoulAuditSelectResponse | null>(
+    () => loadSelectionResult(),
+  )
+  const [essentialConsent, setEssentialConsent] = useState(false)
+  const [analyticsOptIn, setAnalyticsOptIn] = useState(false)
+  const [crisisAcknowledged, setCrisisAcknowledged] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [planDays, setPlanDays] = useState<CustomPlanDay[]>([])
+  const [lockedMessages, setLockedMessages] = useState<string[]>([])
+  const [loadingPlan, setLoadingPlan] = useState(false)
 
   useEffect(() => {
-    if (!result) {
-      router.push('/soul-audit')
-    }
-  }, [result, router])
+    const fromStorage = loadSubmitResult()
+    if (!fromStorage) return
+    setSubmitResult(fromStorage)
+  }, [])
 
-  if (!result) {
+  const planToken = useMemo(() => {
+    return searchParams.get('planToken') || selection?.planToken || null
+  }, [searchParams, selection?.planToken])
+
+  const loadPlan = useCallback(async (token: string) => {
+    setLoadingPlan(true)
+    setError(null)
+
+    try {
+      const requests = [1, 2, 3, 4, 5].map(async (day) => {
+        const response = await fetch(`/api/devotional-plan/${token}/day/${day}`)
+        const payload = (await response.json()) as PlanDayResponse
+        return { day, status: response.status, payload }
+      })
+
+      const responses = await Promise.all(requests)
+      const unlockedDays: CustomPlanDay[] = []
+      const locks: string[] = []
+
+      for (const entry of responses) {
+        if (entry.status === 200 && entry.payload.day) {
+          unlockedDays.push(entry.payload.day)
+        }
+        if (entry.status === 423 && entry.payload.message) {
+          locks.push(entry.payload.message)
+        }
+      }
+
+      // Wed-Sun onboarding mode: day 0 exists before Monday cycle unlocks.
+      if (unlockedDays.length === 0) {
+        const onboardingResponse = await fetch(
+          `/api/devotional-plan/${token}/day/0`,
+        )
+        if (onboardingResponse.status === 200) {
+          const onboardingPayload =
+            (await onboardingResponse.json()) as PlanDayResponse
+          if (onboardingPayload.day) unlockedDays.push(onboardingPayload.day)
+        }
+      }
+
+      unlockedDays.sort((a, b) => a.day - b.day)
+      setPlanDays(unlockedDays)
+      setLockedMessages(locks)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Unable to load plan.')
+    } finally {
+      setLoadingPlan(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!planToken) return
+    void loadPlan(planToken)
+  }, [loadPlan, planToken])
+
+  useEffect(() => {
+    if (submitResult) return
+    if (planToken) return
+    router.push('/soul-audit')
+  }, [submitResult, router, planToken])
+
+  async function submitConsentAndSelect(optionId: string) {
+    if (!submitResult) return
+    setSubmitting(true)
+    setError(null)
+
+    try {
+      const consentRes = await fetch('/api/soul-audit/consent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          auditRunId: submitResult.auditRunId,
+          essentialAccepted: essentialConsent,
+          analyticsOptIn,
+          crisisAcknowledged,
+        }),
+      })
+
+      if (!consentRes.ok) {
+        const payload = (await consentRes.json().catch(() => ({}))) as {
+          error?: string
+        }
+        throw new Error(payload.error || 'Consent could not be recorded.')
+      }
+
+      const selectRes = await fetch('/api/soul-audit/select', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-timezone': Intl.DateTimeFormat().resolvedOptions().timeZone,
+          'x-timezone-offset': String(new Date().getTimezoneOffset()),
+        },
+        body: JSON.stringify({
+          auditRunId: submitResult.auditRunId,
+          optionId,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          timezoneOffsetMinutes: new Date().getTimezoneOffset(),
+        }),
+      })
+
+      const selectionPayload =
+        (await selectRes.json()) as SoulAuditSelectResponse & {
+          error?: string
+        }
+      if (!selectRes.ok || !selectionPayload.ok) {
+        throw new Error(
+          selectionPayload.error || 'Unable to lock your devotional choice.',
+        )
+      }
+
+      setSelection(selectionPayload)
+      sessionStorage.setItem(
+        'soul-audit-selection-v2',
+        JSON.stringify(selectionPayload),
+      )
+
+      if (selectionPayload.selectionType === 'curated_prefab') {
+        router.push(selectionPayload.route)
+        return
+      }
+
+      if (selectionPayload.planToken) {
+        router.push(
+          `/soul-audit/results?planToken=${selectionPayload.planToken}`,
+        )
+      }
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : 'Unable to complete selection.',
+      )
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  if (!submitResult && !planToken) {
     return (
       <div className="newspaper-home flex min-h-screen items-center justify-center bg-page">
         <p className="text-muted">Loading...</p>
@@ -92,286 +211,256 @@ export default function SoulAuditResultsPage() {
     )
   }
 
-  // Normalize to matches array (handle both new and legacy format)
-  const matches: AuditMatch[] = result.matches
-    ? result.matches
-    : result.match
-      ? [
-          result.match,
-          ...(result.alternatives || []).map((alt) => ({
-            ...alt,
-            confidence: 0.7,
-            reasoning: '',
-          })),
-        ]
-      : []
-
   return (
     <div className="newspaper-home min-h-screen bg-page">
       <Navigation />
-
-      <main
-        id="main-content"
-        aria-live="polite"
-        className="mx-auto max-w-7xl px-6 pb-32 pt-12 md:px-[60px] md:pb-48 md:pt-20 lg:px-20"
-      >
-        {/* Crisis Response */}
-        {result.crisis && result.resources && (
-          <FadeIn>
-            <div
-              className="mb-16 p-8 md:p-12"
-              style={{
-                backgroundColor: 'var(--color-surface-raised)',
-                border: '1px solid var(--color-border)',
-              }}
-            >
-              <h2 className="text-serif-italic vw-heading-md mb-6">
-                {typographer('We hear you.')}
-              </h2>
-              <p className="vw-body mb-6 leading-relaxed text-secondary">
-                {typographer(
-                  'What you\u2019re carrying sounds incredibly heavy. Before we continue, we want you to know: you matter, and there are people who want to help.',
-                )}
-              </p>
-              <div className="mb-8 space-y-4">
-                {result.resources.map((resource) => (
-                  <div key={resource.name} className="flex items-center gap-4">
-                    <span className="text-label vw-small text-gold">
-                      {resource.contact}
-                    </span>
-                    <span className="vw-body text-secondary">
-                      {resource.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <p className="vw-body text-secondary">
-                {typographer('God sees you. He hasn\u2019t forgotten you.')}
-              </p>
-            </div>
-          </FadeIn>
-        )}
-
-        {/* Header */}
-        <div className="mb-12 text-center">
-          <FadeIn>
-            <p className="text-label vw-small mb-6 text-gold">
-              {result.crisis
-                ? "WHEN YOU'RE READY"
-                : 'WE CRAFTED THIS FOR THIS WEEK'}
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <h1 className="text-serif-italic vw-heading-md mb-4">
+      <main className="mx-auto max-w-6xl px-6 pb-24 pt-10 md:px-12">
+        <FadeIn>
+          <header className="mb-10 text-center">
+            <p className="text-label vw-small mb-4 text-gold">SOUL AUDIT</p>
+            <h1 className="vw-heading-md">
               {typographer(
-                result.crisis
-                  ? 'When you\u2019re ready, we have words of hope waiting.'
-                  : 'Here is your custom 5-day plan.',
+                planToken
+                  ? 'Your devotional path is now active.'
+                  : 'Choose your devotional path.',
               )}
             </h1>
-          </FadeIn>
-        </div>
+          </header>
+        </FadeIn>
 
-        {result.customPlan && (
-          <FadeIn>
-            <section className="mb-14">
-              <article
-                className="mb-8 p-8 md:p-10"
-                style={{ border: '1px solid var(--color-border)' }}
+        {!planToken && submitResult && (
+          <>
+            <FadeIn>
+              <section
+                className="mb-8 rounded-none border p-6"
+                style={{ borderColor: 'var(--color-border)' }}
               >
-                <p className="text-label vw-small mb-2 text-gold">
-                  PLAN SUMMARY
-                </p>
-                <h2 className="vw-heading-md mb-3 max-w-[26ch]">
-                  {typographer(result.customPlan.title)}
-                </h2>
-                <p className="vw-body max-w-[74ch] text-secondary type-prose">
-                  {typographer(result.customPlan.summary)}
-                </p>
-              </article>
-
-              <div className="space-y-8">
-                {result.customPlan.days.map((dayPlan) => (
-                  <article
-                    key={`audit-day-${dayPlan.day}`}
-                    className="p-8 md:p-10"
-                    style={{ border: '1px solid var(--color-border)' }}
-                  >
-                    <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                      <p className="text-label vw-small text-gold">
-                        DAY {dayPlan.day}
-                        {dayPlan.chiasticPosition
-                          ? ` • ${dayPlan.chiasticPosition}`
-                          : ''}
-                      </p>
-                      <p className="text-label vw-small text-muted">
-                        {dayPlan.scriptureReference}
-                      </p>
-                    </div>
-                    <h2 className="vw-heading-md mb-4 max-w-[24ch]">
-                      {typographer(dayPlan.title)}
-                    </h2>
-                    <p className="scripture-block vw-body mb-6 text-secondary type-prose">
-                      {typographer(dayPlan.scriptureText)}
-                    </p>
-                    <div className="vw-body mb-6 max-w-[72ch] text-secondary type-prose">
-                      {dayPlan.reflection
-                        .split('\n\n')
-                        .filter(Boolean)
-                        .map((paragraph, index) => (
-                          <p
-                            key={`audit-day-${dayPlan.day}-reflection-${index}`}
-                            className="mb-4"
-                          >
-                            {typographer(paragraph)}
-                          </p>
-                        ))}
-                    </div>
-                    <div
-                      className="mb-5"
-                      style={{ borderTop: '1px solid var(--color-border)' }}
+                <div className="grid gap-3">
+                  <label className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      checked={essentialConsent}
+                      onChange={(e) => setEssentialConsent(e.target.checked)}
                     />
-                    <p className="text-label vw-small mb-2 text-gold">PRAYER</p>
-                    <p className="text-serif-italic vw-body mb-5 text-secondary type-prose">
-                      {typographer(dayPlan.prayer)}
+                    <span className="vw-small">
+                      I consent to essential processing so my devotional options
+                      and selected plan can be created.
+                    </span>
+                  </label>
+
+                  <label className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      checked={analyticsOptIn}
+                      onChange={(e) => setAnalyticsOptIn(e.target.checked)}
+                    />
+                    <span className="vw-small">
+                      Optional: allow anonymous analytics (default is off).
+                    </span>
+                  </label>
+
+                  {submitResult.crisis.required && (
+                    <label className="flex items-start gap-3">
+                      <input
+                        type="checkbox"
+                        checked={crisisAcknowledged}
+                        onChange={(e) =>
+                          setCrisisAcknowledged(e.target.checked)
+                        }
+                      />
+                      <span className="vw-small">
+                        I acknowledge the crisis resources above and want to
+                        continue to devotional options.
+                      </span>
+                    </label>
+                  )}
+                </div>
+
+                {submitResult.crisis.required && (
+                  <div className="mt-5 border-t pt-4">
+                    <p className="text-label vw-small mb-3 text-gold">
+                      CRISIS RESOURCES
                     </p>
-                    <div className="grid gap-5 md:grid-cols-2">
-                      <div>
+                    {submitResult.crisis.resources.map((resource) => (
+                      <p
+                        key={resource.name}
+                        className="vw-small text-secondary"
+                      >
+                        {resource.name}: {resource.contact}
+                      </p>
+                    ))}
+                  </div>
+                )}
+              </section>
+            </FadeIn>
+
+            <FadeIn>
+              <section className="mb-6">
+                <div className="mb-4 flex items-center justify-between">
+                  <p className="text-label vw-small text-gold">
+                    3 PRIMARY AI OPTIONS
+                  </p>
+                  <p className="vw-small text-muted">
+                    {submitResult.remainingAudits} audits remaining this cycle
+                  </p>
+                </div>
+                <div className="grid gap-4 md:grid-cols-3">
+                  {submitResult.options
+                    .filter((option) => option.kind === 'ai_primary')
+                    .map((option) => (
+                      <button
+                        key={option.id}
+                        type="button"
+                        disabled={submitting}
+                        onClick={() => void submitConsentAndSelect(option.id)}
+                        className="text-left"
+                        style={{
+                          border: '1px solid var(--color-border)',
+                          padding: '1.25rem',
+                        }}
+                      >
                         <p className="text-label vw-small mb-2 text-gold">
-                          NEXT STEP
+                          {option.title}
                         </p>
-                        <p className="vw-small text-secondary type-prose">
-                          {typographer(dayPlan.nextStep)}
+                        <p className="vw-body mb-2">
+                          {typographer(option.question)}
                         </p>
-                      </div>
-                      <div>
+                        <p className="vw-small text-secondary">
+                          {typographer(option.reasoning)}
+                        </p>
+                      </button>
+                    ))}
+                </div>
+              </section>
+            </FadeIn>
+
+            <FadeIn>
+              <section>
+                <p className="text-label vw-small mb-4 text-gold">
+                  2 CURATED PREFAB OPTIONS
+                </p>
+                <div className="grid gap-4 md:grid-cols-2">
+                  {submitResult.options
+                    .filter((option) => option.kind === 'curated_prefab')
+                    .map((option) => (
+                      <button
+                        key={option.id}
+                        type="button"
+                        disabled={submitting}
+                        onClick={() => void submitConsentAndSelect(option.id)}
+                        className="text-left"
+                        style={{
+                          border: '1px solid var(--color-border)',
+                          padding: '1.25rem',
+                        }}
+                      >
                         <p className="text-label vw-small mb-2 text-gold">
-                          JOURNAL PROMPT
+                          {option.title}
                         </p>
-                        <p className="vw-small text-secondary type-prose">
-                          {typographer(dayPlan.journalPrompt)}
+                        <p className="vw-body mb-2">
+                          {typographer(option.question)}
                         </p>
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </section>
-          </FadeIn>
+                        <p className="vw-small text-secondary">
+                          Opens series overview.
+                        </p>
+                      </button>
+                    ))}
+                </div>
+              </section>
+            </FadeIn>
+          </>
         )}
 
-        <FadeIn>
-          <div className="mb-8 text-center">
-            <p className="text-label vw-small text-muted">
-              SERIES PATHWAYS FOR DEEPER FOLLOW-UP
-            </p>
-          </div>
-        </FadeIn>
+        {planToken && (
+          <section>
+            {loadingPlan && (
+              <p className="vw-body mb-6 text-secondary">
+                Building your day-by-day devotional path...
+              </p>
+            )}
 
-        {/* 3 Equal Cards */}
-        <StaggerGrid className="grid gap-6 md:grid-cols-3">
-          {matches.slice(0, 3).map((match, index) => (
-            <Link
-              key={match.slug}
-              href={`/wake-up/series/${match.slug}`}
-              className="group block"
-            >
-              <div
-                className="flex h-full flex-col overflow-hidden transition-all duration-300"
-                style={{
-                  border: `1px solid ${index === 0 ? 'var(--color-gold)' : 'var(--color-border)'}`,
-                }}
-              >
-                <SeriesHero seriesSlug={match.slug} size="thumbnail" overlay />
-                <div className="flex flex-1 flex-col p-6 md:p-8">
-                  <p className="text-label vw-small mb-3 text-gold">
-                    {SERIES_DATA[match.slug]?.title || match.title}
+            {lockedMessages.length > 0 && (
+              <div className="mb-8 space-y-2">
+                {lockedMessages.map((message, index) => (
+                  <p
+                    key={`${message}-${index}`}
+                    className="vw-small text-secondary"
+                  >
+                    {message}
                   </p>
-                  <h2 className="text-serif-italic vw-body-lg mb-3 transition-colors duration-300 group-hover:text-gold">
-                    {typographer(match.question)}
+                ))}
+              </div>
+            )}
+
+            <div className="space-y-6">
+              {planDays.map((day) => (
+                <article
+                  key={`plan-day-${day.day}`}
+                  style={{
+                    border: '1px solid var(--color-border)',
+                    padding: '1.5rem',
+                  }}
+                >
+                  <p className="text-label vw-small mb-2 text-gold">
+                    DAY {day.day}
+                    {day.chiasticPosition ? ` • ${day.chiasticPosition}` : ''}
+                  </p>
+                  <h2 className="vw-heading-md mb-2">
+                    {typographer(day.title)}
                   </h2>
-                  {match.reasoning && (
-                    <p className="vw-small mb-4 text-tertiary">
-                      {typographer(match.reasoning)}
+                  <p className="vw-small mb-4 text-muted">
+                    {day.scriptureReference}
+                  </p>
+                  <p className="scripture-block vw-body mb-4 text-secondary">
+                    {typographer(day.scriptureText)}
+                  </p>
+                  <p className="vw-body mb-4 text-secondary type-prose">
+                    {typographer(day.reflection)}
+                  </p>
+                  <p className="text-serif-italic vw-body mb-4 text-secondary type-prose">
+                    {typographer(day.prayer)}
+                  </p>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <p className="vw-small text-secondary">
+                      <strong className="text-gold">NEXT STEP: </strong>
+                      {typographer(day.nextStep)}
                     </p>
-                  )}
-                  {match.preview?.verse && (
-                    <div
-                      className="mb-4 border-l-2 pl-4"
-                      style={{ borderColor: 'var(--color-gold)' }}
-                    >
-                      <p className="vw-small text-serif-italic text-secondary">
-                        {typographer(
-                          `\u201c${
-                            match.preview.verse.length > 150
-                              ? match.preview.verse.slice(0, 150) + '\u2026'
-                              : match.preview.verse
-                          }\u201d`,
-                        )}
+                    <p className="vw-small text-secondary">
+                      <strong className="text-gold">JOURNAL: </strong>
+                      {typographer(day.journalPrompt)}
+                    </p>
+                  </div>
+                  {(day.endnotes?.length ?? 0) > 0 && (
+                    <div className="mt-5 border-t pt-4">
+                      <p className="text-label vw-small mb-2 text-gold">
+                        ENDNOTES
                       </p>
+                      {day.endnotes?.map((note) => (
+                        <p
+                          key={`${day.day}-endnote-${note.id}`}
+                          className="vw-small text-muted"
+                        >
+                          [{note.id}] {note.source} — {note.note}
+                        </p>
+                      ))}
                     </div>
                   )}
-                  {match.preview?.paragraph && (
-                    <p className="vw-small mb-4 text-tertiary">
-                      {typographer(
-                        match.preview.paragraph.length > 150
-                          ? match.preview.paragraph.slice(0, 150) + '\u2026'
-                          : match.preview.paragraph,
-                      )}
-                    </p>
-                  )}
-                  <div className="mt-auto flex items-center justify-between pt-4">
-                    <span className="text-label vw-small text-muted">
-                      {SERIES_DATA[match.slug]?.days.length || '?'} DAYS
-                    </span>
-                    <span className="text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)]">
-                      START &rarr;
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </StaggerGrid>
-
-        {/* Browse All + Share */}
-        <FadeIn>
-          <div className="mt-16 text-center">
-            <p className="vw-body mb-6 text-secondary">
-              {typographer(
-                'Not quite right? You can always explore on your own.',
-              )}
-            </p>
-            <div className="flex items-center justify-center gap-8">
-              <Link
-                href="/series"
-                className="link-highlight text-label vw-small inline-block px-10 py-5 text-muted transition-all duration-300 hover:text-[var(--color-text-primary)]"
-              >
-                Browse All Series
-              </Link>
-              <ShareButton
-                title="My Soul Audit Results"
-                text="I took the Soul Audit on Euangelion"
-                label="Share Results"
-              />
+                </article>
+              ))}
             </div>
-          </div>
-        </FadeIn>
-      </main>
+          </section>
+        )}
 
-      <footer
-        className="py-16 md:py-24"
-        style={{ borderTop: '1px solid var(--color-border)' }}
-      >
-        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <div className="text-center">
-            <p className="text-label vw-small leading-relaxed text-muted">
-              SOMETHING TO HOLD ONTO.
-            </p>
-            <p className="vw-small mt-8 text-muted">&copy; 2026 EUANGELION</p>
-          </div>
+        {error && (
+          <p className="vw-body mt-6 text-center text-secondary">{error}</p>
+        )}
+
+        <div className="mt-10 text-center">
+          <Link href="/series" className="text-label vw-small link-highlight">
+            Browse All Series
+          </Link>
         </div>
-      </footer>
+      </main>
     </div>
   )
 }

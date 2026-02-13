@@ -23,6 +23,9 @@ jobs:
       - name: Type check
         run: npm run type-check
 
+      - name: Verify Production Contracts
+        run: npm run verify:production-contracts
+
       - name: Lint
         run: npm run lint
 
