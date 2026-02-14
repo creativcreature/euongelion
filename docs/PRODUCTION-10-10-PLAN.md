@@ -32,6 +32,21 @@ Still required for 10/10:
 2. Billing E2E route tests for checkout/portal success and failure branches.
 3. Automated accessibility/performance regression gates (keyboard path + INP budget alerts).
 
+## Execution Update (2026-02-14 Layout Pass)
+
+Completed in this pass:
+
+1. Unified homepage masthead/topbar/navigation into shared `EuangelionShellHeader` to remove duplicate logic and route drift.
+2. Replaced observer-only nav docking with deterministic scroll/resize dock-state computation and added dedicated regression tests.
+3. Expanded mobile topbar ticker from two items to three (date, descriptor line, mode label) with reduced-motion safeguards.
+4. Improved masthead readability/fit behavior by loosening max-size clipping constraints and tightening line-height precision.
+
+Still required for 10/10:
+
+1. Manual viewport parity QA against mock proportions (375/390/768/1280/1440, light/dark).
+2. Route-by-route navigation walkthrough and keyboard traversal evidence capture.
+3. Additional automated visual regression snapshots for masthead and sticky shell transitions.
+
 ## Operating Rules
 
 1. Highest current score is capped at 5/10 per founder baseline.

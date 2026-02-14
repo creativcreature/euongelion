@@ -35,6 +35,57 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Layout Phase Pass 1: Shared Newspaper Shell Stabilization (2026-02-14)
+
+### What Changed
+
+- Unified homepage and internal pages onto one shell header implementation:
+  - homepage now uses shared `EuangelionShellHeader` instead of duplicated topbar/masthead/nav logic.
+  - file:
+    - `src/app/page.tsx`
+    - `src/components/EuangelionShellHeader.tsx`
+- Sticky navigation behavior was hardened:
+  - replaced observer-only dock logic with deterministic scroll/resize dock-state computation.
+  - kept desktop and mobile dock transitions aligned with one state model.
+  - files:
+    - `src/components/EuangelionShellHeader.tsx`
+    - `src/app/globals.css`
+- Masthead and readability adjustments:
+  - improved masthead fit behavior to avoid under-fill/clipping constraints.
+  - updated masthead rendering precision and line-height.
+  - dark theme variables for homepage now also key off global `.dark` class for cross-page consistency.
+  - file:
+    - `src/app/globals.css`
+- Mobile topbar ticker refinement:
+  - expanded to three rotating items (date, devotional descriptor, current mode label) while preserving reduced-motion behavior.
+  - file:
+    - `src/components/EuangelionShellHeader.tsx`
+- Added regression tests for docked/undocked shell states:
+  - new test file:
+    - `__tests__/shell-header.test.tsx`
+
+### Tracking Updates
+
+- Updated feature PRDs with incremental outcomes and score deltas:
+  - `docs/feature-prds/F-005.md`
+  - `docs/feature-prds/F-009.md`
+  - `docs/feature-prds/F-010.md`
+  - `docs/feature-prds/F-011.md`
+  - `docs/feature-prds/F-014.md`
+- Updated scorecard + plan + compaction snapshot:
+  - `docs/PRODUCTION-FEATURE-SCORECARD.md`
+  - `docs/PRODUCTION-10-10-PLAN.md`
+  - `docs/PRODUCTION-COMPACTION-HANDOFF.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test` (63 passing)
+- `npm run build` fails in this environment under Node `v25.3.0` with webpack `WasmHash` `TypeError`; project engine remains Node `>=20.10 <25`.
+
+---
+
 ## Production Governance Bootstrap Hardening (2026-02-14)
 
 ### What Changed

@@ -119,3 +119,13 @@ npm run build
 - Score changes: Tracking/continuity and release-readiness process maturity improved; no runtime UX score claim made in this pass.
 - Blockers: None in current environment.
 - Next steps: Execute feature PRDs by score gap order (layout/system shell -> navigation/audit pathing -> devotional home and archive mechanics -> chat/notes/highlights/bookmarks UX parity).
+
+### Continuity Snapshot (2026-02-14 10:20 local)
+
+- Scope completed: Layout-first execution pass for masthead + sticky shell + navigation consistency.
+- Decision ids touched: SA-013, SA-014, SA-015.
+- Feature ids touched: F-005, F-009, F-010, F-011, F-014.
+- Verification run: `type-check`, `lint`, `test` (63 pass) passed; `build` failed under Node `v25.3.0` (`WasmHash`), consistent with engine target `>=20.10 <25`.
+- Score changes: User Flow + Navigation category moved from 4/10 to 5/10 in scorecard; specific feature scores raised to 5/10 engineering baseline where changes landed.
+- Blockers: Build verification is blocked on local Node 25 runtime mismatch; remaining manual visual parity QA and keyboard-path evidence capture.
+- Next steps: Execute Chat phase next (F-033/F-034), then Onboarding phase (F-032) per locked ordering.

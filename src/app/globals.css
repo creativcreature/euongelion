@@ -1982,7 +1982,8 @@
   overflow-x: hidden;
 }
 
-.mock-home.is-dark {
+.mock-home.is-dark,
+.dark .mock-home {
   --mock-bg: #0a1320;
   --mock-paper: #122236;
   --mock-ink: #efe5d8;
@@ -2089,10 +2090,11 @@
   white-space: nowrap;
   text-align: center;
   font-size: clamp(2.7rem, 13.4vw, 14.2rem);
-  line-height: 0.9;
+  line-height: 0.94;
   color: var(--mock-blue);
   text-transform: uppercase;
   letter-spacing: -0.006em;
+  text-rendering: geometricPrecision;
 }
 
 @supports (font-size: 1cqi) {
@@ -2141,9 +2143,10 @@
 }
 
 .mock-nav.is-docked {
-  display: none;
   max-height: 0;
   opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
   padding-top: 0;
   padding-bottom: 0;
   border-bottom-color: transparent;

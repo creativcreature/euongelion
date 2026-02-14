@@ -52,6 +52,14 @@ export default function EuangelionShellHeader() {
     () => NAV_ITEMS.filter((item) => item.href !== '/settings'),
     [],
   )
+  const mobileTickerItems = useMemo(
+    () => [
+      formatMastheadDate(now),
+      'Daily Devotionals for the Hungry Soul',
+      theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE',
+    ],
+    [now, theme],
+  )
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')
@@ -60,6 +68,10 @@ export default function EuangelionShellHeader() {
   useEffect(() => {
     const timer = window.setInterval(() => setNow(new Date()), 30_000)
     return () => window.clearInterval(timer)
+  }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = ''
   }, [])
 
   useEffect(() => {
@@ -73,7 +85,9 @@ export default function EuangelionShellHeader() {
 
   useEffect(() => {
     const spans = Array.from(
-      document.querySelectorAll<HTMLElement>('.js-shell-masthead-fit'),
+      document.querySelectorAll<HTMLElement>(
+        '.js-shell-masthead-fit, .js-masthead-fit',
+      ),
     )
     if (!spans.length) return
 
@@ -87,9 +101,8 @@ export default function EuangelionShellHeader() {
       const currentSize = Number.parseFloat(getComputedStyle(span).fontSize)
       if (!available || !natural || !Number.isFinite(currentSize)) return
 
-      const nextSize = currentSize * (available / natural) * 0.985
-      const clamped = Math.max(36, Math.min(nextSize, 420))
-      span.style.fontSize = `${clamped}px`
+      const nextSize = currentSize * (available / natural) * 0.996
+      span.style.fontSize = `${Math.max(36, nextSize)}px`
     }
 
     const fitAll = () => spans.forEach(fitOne)
@@ -115,31 +128,31 @@ export default function EuangelionShellHeader() {
 
   useEffect(() => {
     const sentinel = navSentinelRef.current
-    if (!sentinel) return
+    const topbar = topbarRef.current
+    if (!sentinel || !topbar) return
 
-    let observer: IntersectionObserver | null = null
+    let rafId = 0
 
-    const connectObserver = () => {
-      const topbarHeight = Math.ceil(
-        topbarRef.current?.getBoundingClientRect().height || 0,
-      )
-      observer?.disconnect()
-      observer = new IntersectionObserver(
-        ([entry]) => setNavDocked(!entry.isIntersecting),
-        {
-          root: null,
-          threshold: 0,
-          rootMargin: `-${topbarHeight}px 0px 0px 0px`,
-        },
-      )
-      observer.observe(sentinel)
+    const recomputeDockState = () => {
+      rafId = 0
+      const topbarHeight = Math.ceil(topbar.getBoundingClientRect().height || 0)
+      const sentinelTop = sentinel.getBoundingClientRect().top
+      setNavDocked(sentinelTop <= topbarHeight)
     }
 
-    connectObserver()
-    window.addEventListener('resize', connectObserver)
+    const queueDockState = () => {
+      if (rafId) return
+      rafId = window.requestAnimationFrame(recomputeDockState)
+    }
+
+    queueDockState()
+    window.addEventListener('scroll', queueDockState, { passive: true })
+    window.addEventListener('resize', queueDockState)
+
     return () => {
-      observer?.disconnect()
-      window.removeEventListener('resize', connectObserver)
+      if (rafId) window.cancelAnimationFrame(rafId)
+      window.removeEventListener('scroll', queueDockState)
+      window.removeEventListener('resize', queueDockState)
     }
   }, [])
 
@@ -151,11 +164,14 @@ export default function EuangelionShellHeader() {
     if (!isMobileViewport || reducedMotion || navDocked) return
 
     const timer = window.setInterval(
-      () => setMobileTopbarIndex((prev) => (prev + 1) % 2),
+      () =>
+        setMobileTopbarIndex(
+          (prev) => (prev + 1) % Math.max(1, mobileTickerItems.length),
+        ),
       1500,
     )
     return () => window.clearInterval(timer)
-  }, [isMobileViewport, navDocked])
+  }, [isMobileViewport, mobileTickerItems.length, navDocked])
 
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark'
@@ -182,7 +198,7 @@ export default function EuangelionShellHeader() {
     })
 
   return (
-    <header>
+    <header data-nav-docked={navDocked ? 'true' : 'false'}>
       <div
         ref={topbarRef}
         className={`mock-topbar text-label ${navDocked ? 'is-nav-docked' : ''}`}
@@ -209,18 +225,14 @@ export default function EuangelionShellHeader() {
           className={`mock-topbar-mobile-row ${navDocked ? 'is-nav-docked' : ''}`}
         >
           {!navDocked ? (
-            <>
+            mobileTickerItems.map((item, index) => (
               <span
-                className={`mock-topbar-mobile-item ${mobileTopbarIndex === 0 ? 'is-active' : ''}`}
+                key={`${item}-${index}`}
+                className={`mock-topbar-mobile-item ${mobileTopbarIndex === index ? 'is-active' : ''}`}
               >
-                {formatMastheadDate(now)}
+                {item}
               </span>
-              <span
-                className={`mock-topbar-mobile-item ${mobileTopbarIndex === 1 ? 'is-active' : ''}`}
-              >
-                Daily Devotionals for the Hungry Soul
-              </span>
-            </>
+            ))
           ) : (
             <nav
               className="mock-topbar-mobile-nav"
@@ -258,6 +270,7 @@ export default function EuangelionShellHeader() {
       <nav
         className={`mock-nav text-label ${navDocked ? 'is-docked' : ''}`}
         aria-label="Main navigation"
+        aria-hidden={navDocked}
       >
         {isMobileViewport ? (
           <>
