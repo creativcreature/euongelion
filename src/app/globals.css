@@ -2259,7 +2259,10 @@
   align-items: center;
   justify-content: center;
   position: sticky;
-  top: calc(var(--mock-h-topbar, 42px) + env(safe-area-inset-top, 0px));
+  top: calc(
+    var(--shell-topbar-height, var(--mock-h-topbar, 42px)) +
+      env(safe-area-inset-top, 0px)
+  );
   z-index: 65;
   gap: 0.45rem;
   min-height: var(--mock-h-nav, 34px);

@@ -151,6 +151,32 @@ export default function EuangelionShellHeader() {
   }, [])
 
   useEffect(() => {
+    const topbar = topbarRef.current
+    if (!topbar) return
+    const frame = topbar.closest('.mock-shell-frame') as HTMLElement | null
+
+    const applyTopbarHeight = () => {
+      const height = Math.ceil(topbar.getBoundingClientRect().height || 0)
+      if (frame && height > 0) {
+        frame.style.setProperty('--shell-topbar-height', `${height}px`)
+      }
+    }
+
+    applyTopbarHeight()
+    const observer = new ResizeObserver(() =>
+      window.requestAnimationFrame(applyTopbarHeight),
+    )
+    observer.observe(topbar)
+    window.addEventListener('resize', applyTopbarHeight)
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('resize', applyTopbarHeight)
+      frame?.style.removeProperty('--shell-topbar-height')
+    }
+  }, [])
+
+  useEffect(() => {
     const sentinel = navSentinelRef.current
     const topbar = topbarRef.current
     if (!sentinel || !topbar) return

@@ -492,6 +492,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Dynamic Sticky Offset Calibration Pass (2026-02-14)
+
+### What Changed
+
+- Added runtime topbar height measurement in shell header and wrote value to `--shell-topbar-height`.
+- Updated main nav sticky offset to consume measured topbar height instead of only static token fallback.
+- Improves dock/sticky reliability when topbar height changes due viewport or content wrapping.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed
