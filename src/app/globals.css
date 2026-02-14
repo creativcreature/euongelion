@@ -1975,6 +1975,17 @@
   --mock-type-3: clamp(2.28rem, 2.48vw, 3.45rem);
   --mock-type-4: clamp(3.05rem, 3.68vw, 5.05rem);
   --mock-type-masthead: clamp(2.72rem, 12.1vw, 13.8rem);
+  --color-bg: var(--mock-bg);
+  --color-fg: var(--mock-ink);
+  --color-gold: var(--mock-blue);
+  --color-text-primary: var(--mock-ink);
+  --color-text-secondary: var(--mock-muted);
+  --color-text-tertiary: rgba(17, 24, 42, 0.66);
+  --color-text-muted: rgba(17, 24, 42, 0.56);
+  --color-border: color-mix(in srgb, var(--mock-line) 55%, transparent);
+  --color-border-strong: var(--mock-line);
+  --color-surface: color-mix(in srgb, var(--mock-paper) 86%, transparent);
+  --color-surface-raised: color-mix(in srgb, var(--mock-paper) 95%, white 5%);
   min-height: 100vh;
   background: var(--mock-bg);
   padding: 0.7rem;
@@ -1990,6 +2001,17 @@
   --mock-blue: #2236a2;
   --mock-line: rgba(239, 229, 216, 0.72);
   --mock-muted: rgba(239, 229, 216, 0.8);
+  --color-bg: var(--mock-bg);
+  --color-fg: var(--mock-ink);
+  --color-gold: #c8a56a;
+  --color-text-primary: var(--mock-ink);
+  --color-text-secondary: var(--mock-muted);
+  --color-text-tertiary: rgba(239, 229, 216, 0.7);
+  --color-text-muted: rgba(239, 229, 216, 0.58);
+  --color-border: color-mix(in srgb, var(--mock-line) 72%, transparent);
+  --color-border-strong: var(--mock-line);
+  --color-surface: color-mix(in srgb, var(--mock-paper) 84%, transparent);
+  --color-surface-raised: color-mix(in srgb, var(--mock-paper) 95%, black 5%);
 }
 
 .mock-paper {
@@ -2648,6 +2670,314 @@
   padding-right: 0.2rem;
 }
 
+.mock-wakeup-series-grid {
+  min-height: auto;
+}
+
+.mock-wakeup-series-card {
+  min-height: 420px;
+}
+
+.mock-series-hero-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  border-bottom: var(--mock-stroke) solid var(--mock-line);
+}
+
+.mock-series-copy {
+  border-right: var(--mock-stroke) solid var(--mock-line);
+}
+
+.mock-series-meta {
+  display: grid;
+  align-content: start;
+  gap: 0.62rem;
+}
+
+.mock-series-progress-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.mock-series-progress-head p {
+  margin: 0;
+}
+
+.mock-series-progress {
+  height: 8px;
+  border: var(--mock-stroke) solid var(--mock-line);
+  background: color-mix(in srgb, var(--mock-paper) 90%, white 10%);
+}
+
+.mock-series-progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--mock-blue);
+}
+
+.mock-series-meta-actions {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
+}
+
+.mock-series-share {
+  color: var(--mock-ink) !important;
+}
+
+.mock-series-share:hover {
+  color: var(--mock-blue) !important;
+}
+
+.mock-series-days-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-bottom: var(--mock-stroke) solid var(--mock-line);
+}
+
+.mock-series-day-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mock-series-day-card {
+  border-right: var(--mock-stroke) solid var(--mock-line);
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  min-height: 210px;
+  padding: 0.78rem 0.8rem 0.7rem;
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  transition: background-color 180ms ease;
+}
+
+.mock-series-day-link:hover .mock-series-day-card {
+  background: color-mix(in srgb, var(--mock-blue) 12%, var(--mock-paper) 88%);
+}
+
+.mock-series-day-card.is-locked {
+  opacity: 0.6;
+}
+
+.mock-series-days-grid > *:nth-child(3n) .mock-series-day-card {
+  border-right: 0;
+}
+
+.mock-series-day-number {
+  margin: 0;
+}
+
+.mock-series-day-card h3 {
+  margin: 0;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-3);
+  line-height: 0.94;
+}
+
+.mock-series-day-status {
+  margin: 0;
+  font-family: var(--font-family-ui);
+  letter-spacing: 0.04em;
+  font-size: var(--mock-type-0);
+}
+
+.mock-series-day-lock {
+  margin: 0;
+  color: var(--mock-muted);
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.2;
+}
+
+.mock-devotional-hero {
+  border-bottom: var(--mock-stroke) solid var(--mock-line);
+  padding: 0.92rem 0.95rem 1rem;
+  display: grid;
+  gap: 0.44rem;
+}
+
+.mock-devotional-hero-top {
+  display: flex;
+  align-items: center;
+  gap: 0.72rem;
+  flex-wrap: wrap;
+}
+
+.mock-devotional-hero-top span {
+  display: inline-flex;
+}
+
+.mock-devotional-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.68rem;
+  flex-wrap: wrap;
+}
+
+.mock-devotional-shell {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  border-bottom: var(--mock-stroke) solid var(--mock-line);
+}
+
+.mock-devotional-sidebar {
+  border-right: var(--mock-stroke) solid var(--mock-line);
+  padding: 0.82rem 0.72rem;
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+}
+
+.mock-devotional-daylist {
+  display: grid;
+  gap: 0;
+  border: var(--mock-stroke) solid var(--mock-line);
+}
+
+.mock-devotional-day {
+  display: grid;
+  gap: 0.18rem;
+  border-bottom: var(--mock-stroke) solid var(--mock-line);
+  padding: 0.42rem 0.45rem;
+  text-decoration: none;
+  color: inherit;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.16;
+}
+
+.mock-devotional-day:last-child {
+  border-bottom: 0;
+}
+
+.mock-devotional-day.is-current {
+  background: color-mix(in srgb, var(--mock-blue) 14%, var(--mock-paper) 86%);
+}
+
+.mock-devotional-day.is-locked {
+  opacity: 0.48;
+  background: color-mix(in srgb, var(--mock-paper) 92%, black 8%);
+}
+
+.mock-devotional-library {
+  display: grid;
+  gap: 0.45rem;
+  border: var(--mock-stroke) solid var(--mock-line);
+  padding: 0.54rem 0.58rem;
+}
+
+.mock-devotional-library a {
+  text-decoration: none;
+  color: inherit;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.16;
+}
+
+.mock-devotional-main-wrap {
+  min-width: 0;
+}
+
+.mock-devotional-main {
+  padding: 0.82rem 0.95rem 0.92rem;
+}
+
+.mock-devotional-flow {
+  display: grid;
+  gap: 0;
+}
+
+.mock-devotional-block {
+  min-width: 0;
+}
+
+.mock-devotional-divider {
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  margin: 0.62rem 0 0.76rem;
+}
+
+.mock-devotional-main .type-micro,
+.mock-devotional-main .text-gold {
+  color: var(--mock-blue) !important;
+}
+
+.mock-devotional-main .text-secondary,
+.mock-devotional-main .text-muted,
+.mock-devotional-main .text-tertiary {
+  color: var(--mock-muted) !important;
+}
+
+.mock-devotional-panel {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.mock-devotional-scripture {
+  color: var(--mock-ink);
+  font-style: italic;
+}
+
+.mock-devotional-actions {
+  margin-top: 0.76rem;
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  padding-top: 0.76rem;
+  display: grid;
+  gap: 0.62rem;
+}
+
+.mock-devotional-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.56rem;
+}
+
+.mock-devotional-lock {
+  border: var(--mock-stroke) solid var(--mock-line);
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.68rem;
+  justify-items: start;
+}
+
+.mock-devotional-nav-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-bottom: var(--mock-stroke) solid var(--mock-line);
+}
+
+.mock-devotional-nav-link {
+  display: grid;
+  gap: 0.34rem;
+  text-decoration: none;
+  color: inherit;
+  border-right: var(--mock-stroke) solid var(--mock-line);
+  padding: 0.78rem 0.86rem 0.8rem;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-2);
+  line-height: 1.04;
+}
+
+.mock-devotional-nav-link:last-child {
+  border-right: 0;
+}
+
+.mock-devotional-nav-link.align-right {
+  text-align: right;
+}
+
+.mock-devotional-nav-link.is-empty {
+  min-height: 92px;
+}
+
+.mock-devotional-error-actions {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 @media (max-width: 980px) {
   .mock-hero-grid {
     grid-template-columns: 150px 1fr;
@@ -2691,6 +3021,36 @@
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
+  }
+
+  .mock-series-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mock-series-copy {
+    border-right: 0;
+    border-bottom: var(--mock-stroke) solid var(--mock-line);
+  }
+
+  .mock-series-days-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mock-series-days-grid > *:nth-child(3n) .mock-series-day-card {
+    border-right: var(--mock-stroke) solid var(--mock-line);
+  }
+
+  .mock-series-days-grid > *:nth-child(2n) .mock-series-day-card {
+    border-right: 0;
+  }
+
+  .mock-devotional-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .mock-devotional-sidebar {
+    border-right: 0;
+    border-bottom: var(--mock-stroke) solid var(--mock-line);
   }
 }
 
@@ -2870,6 +3230,54 @@
   .mock-nav-mobile-theme-toggle {
     margin-left: 0.2rem;
     flex: 0 0 auto;
+  }
+
+  .mock-wakeup-series-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: visible;
+  }
+
+  .mock-wakeup-series-card {
+    min-height: 320px;
+  }
+
+  .mock-series-days-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mock-series-days-grid > *:nth-child(2n) .mock-series-day-card {
+    border-right: 0;
+  }
+
+  .mock-series-day-card {
+    min-height: 174px;
+  }
+
+  .mock-devotional-hero {
+    padding: 0.84rem 0.88rem 0.9rem;
+  }
+
+  .mock-devotional-main {
+    padding: 0.78rem 0.86rem 0.88rem;
+  }
+
+  .mock-devotional-nav-row {
+    grid-template-columns: 1fr;
+  }
+
+  .mock-devotional-nav-link,
+  .mock-devotional-nav-link:last-child {
+    border-right: 0;
+    border-bottom: var(--mock-stroke) solid var(--mock-line);
+  }
+
+  .mock-devotional-nav-link:last-child {
+    border-bottom: 0;
+  }
+
+  .mock-devotional-nav-link.align-right {
+    text-align: left;
   }
 }
 

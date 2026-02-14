@@ -106,7 +106,7 @@ export default function WakeUpPage() {
           </p>
         </section>
 
-        <section className="mock-featured-grid">
+        <section className="mock-featured-grid mock-wakeup-series-grid">
           {DEVOTIONAL_SERIES.map((series) => {
             const info = SERIES_DATA[series.slug]
             if (!info) return null
@@ -114,12 +114,15 @@ export default function WakeUpPage() {
               <Link
                 href={`/wake-up/series/${series.slug}`}
                 key={series.slug}
-                className="mock-featured-card"
+                className="mock-featured-card mock-wakeup-series-card"
               >
                 <div className="mock-card-media" aria-hidden="true" />
                 <h3>{info.title}.</h3>
                 <p>{info.question}</p>
-                <span className="text-label">5 DAYS</span>
+                <p className="mock-featured-day text-label">
+                  START WITH: {info.days[0]?.title || 'DAY 1'}
+                </p>
+                <span className="text-label">{info.days.length || 5} DAYS</span>
               </Link>
             )
           })}

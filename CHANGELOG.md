@@ -35,7 +35,35 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
-## Wake Up Page Restyle to Match Home Page (2026-02-14)
+## Wake Up Route Family Newspaper Shell Alignment (2026-02-14)
+
+### What Changed
+
+- Restyled the full Wake Up route family to match home-page newspaper shell treatment:
+  - `/wake-up`
+  - `/wake-up/series/[slug]`
+  - `/wake-up/devotional/[slug]`
+- Applied home-style blue-ink typography + newsletter border system across series and devotional screens:
+  - moved series/devotional clients to `mock-home` + `mock-paper` shell.
+  - added dedicated `mock-series-*` and `mock-devotional-*` classes for bordered panel/grid behavior.
+- Set Wake Up 7-question display to explicit 3-column desktop card layout mirroring home featured cards, with mobile-responsive collapse.
+- Updated devotional loading/error pages to use the same newspaper shell.
+- Added token aliasing in `mock-home` so module renderers inherit the same blue newspaper palette.
+
+### Files
+
+- `src/app/wake-up/page.tsx`
+- `src/app/wake-up/series/[slug]/SeriesPageClient.tsx`
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+- `src/app/wake-up/devotional/[slug]/loading.tsx`
+- `src/app/wake-up/devotional/[slug]/error.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test` (64 passing)
 
 ## Mobile Shell Polish Pass (2026-02-14)
 
@@ -62,20 +90,6 @@ Format: Reverse chronological, grouped by sprint/date.
 - `npm run type-check`
 - `npm run lint`
 - `npm test` (64 passing)
-
-### What Changed
-
-- Restyled `/wake-up` page to use the `mock-*` CSS system matching the home page
-  - Wrapper: `newspaper-home` → `mock-home` > `mock-paper` (cream/dark paper frame)
-  - Blue fonts via `var(--mock-blue)`, newsletter borders via `var(--mock-line)`
-  - 7 series questions now display in a 3-column `mock-featured-grid` card layout (was a vertical list)
-  - Each card: blue media box, serif title, question text, "5 DAYS" label — matching home page featured series cards
-  - Hero: compact `mock-section-center` band (was full-viewport 82vh with animations)
-  - How It Works: `mock-steps-grid` with SVG illustrations (was StaggerGrid with serif numbers)
-  - Footer: `mock-more-row` + `mock-bottom-brand` EUANGELION wordmark
-  - Removed animation wrappers: FadeIn, StaggerGrid, DevotionalMilestoneReveal
-  - Removed `'use client'` directive (page is now a Server Component)
-  - file: `src/app/wake-up/page.tsx`
 
 ---
 
