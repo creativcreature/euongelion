@@ -1,9 +1,12 @@
 import { cleanup, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import userEvent from '@testing-library/user-event'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 
+let mockPathname = '/'
+
 vi.mock('next/navigation', () => ({
-  usePathname: () => '/',
+  usePathname: () => mockPathname,
 }))
 
 type RectInit = {
@@ -30,6 +33,7 @@ describe('EuangelionShellHeader', () => {
   let sentinelTop = 200
 
   beforeEach(() => {
+    mockPathname = '/'
     const mockResizeObserver = class {
       observe() {}
       unobserve() {}
@@ -128,5 +132,31 @@ describe('EuangelionShellHeader', () => {
         .querySelector('.mock-topbar')
         ?.classList.contains('is-nav-docked'),
     ).toBe(true)
+  })
+
+  it('closes mobile secondary menu when route changes', async () => {
+    sentinelTop = 200
+    const user = userEvent.setup()
+    const { rerender } = render(<EuangelionShellHeader />)
+
+    const toggle = screen.getByRole('button', {
+      name: 'Open secondary menu',
+    })
+    await user.click(toggle)
+
+    await waitFor(() => {
+      expect(
+        screen.getByRole('button', { name: 'Close secondary menu' }),
+      ).toBeInTheDocument()
+    })
+
+    mockPathname = '/series'
+    rerender(<EuangelionShellHeader />)
+
+    await waitFor(() => {
+      expect(
+        screen.getByRole('button', { name: 'Open secondary menu' }),
+      ).toBeInTheDocument()
+    })
   })
 })

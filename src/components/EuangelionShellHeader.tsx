@@ -43,6 +43,7 @@ export default function EuangelionShellHeader() {
   const pathname = usePathname()
   const topbarRef = useRef<HTMLDivElement | null>(null)
   const navSentinelRef = useRef<HTMLDivElement | null>(null)
+  const previousPathnameRef = useRef(pathname)
 
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
   const [now, setNow] = useState(() => new Date())
@@ -214,6 +215,8 @@ export default function EuangelionShellHeader() {
   }, [isMobileViewport, mobileTickerItems.length, navDocked])
 
   useEffect(() => {
+    if (previousPathnameRef.current === pathname) return
+    previousPathnameRef.current = pathname
     if (!mobileMenuOpen) return
     const rafId = window.requestAnimationFrame(() => setMobileMenuOpen(false))
     return () => window.cancelAnimationFrame(rafId)

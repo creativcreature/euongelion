@@ -173,6 +173,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Navigation Regression Coverage Pass (2026-02-14)
+
+### What Changed
+
+- Extended `shell-header` tests to cover route-change behavior for mobile menu state.
+- Added an interaction test that opens the mobile secondary menu, simulates a pathname change, and verifies the menu auto-closes.
+- Added `@testing-library/user-event` to support realistic interaction coverage.
+
+### Files
+
+- `__tests__/shell-header.test.tsx`
+- `package.json`
+- `package-lock.json`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed
