@@ -422,8 +422,16 @@ export default function Home() {
 
         <section className="mock-faq-row">
           <article className="mock-faq-lead">
-            <h3>Questions before you begin?</h3>
-            <p>Honest answers, clear expectations, no pressure.</p>
+            <h3>
+              {isMobileViewport
+                ? 'Frequently asked questions.'
+                : 'Questions before you begin?'}
+            </h3>
+            <p>
+              {isMobileViewport
+                ? 'Everything you need to know before you start.'
+                : 'Honest answers, clear expectations, no pressure.'}
+            </p>
           </article>
 
           {!isMobileViewport && (

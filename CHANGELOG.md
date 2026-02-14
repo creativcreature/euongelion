@@ -472,6 +472,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Mobile FAQ Lead Copy Pass (2026-02-14)
+
+### What Changed
+
+- Updated homepage FAQ lead copy on mobile viewports:
+  - headline becomes “Frequently asked questions.”
+  - support line becomes “Everything you need to know before you start.”
+- Desktop FAQ lead wording remains unchanged.
+
+### Files
+
+- `src/app/page.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed
