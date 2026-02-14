@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import SeriesCardIcon from '@/components/newspaper/SeriesCardIcon'
 import { typographer } from '@/lib/typographer'
 import { WAKEUP_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 
@@ -118,7 +119,9 @@ export default function WakeUpPage() {
                 key={slug}
                 className="mock-featured-card mock-wakeup-series-card"
               >
-                <div className="mock-card-media" aria-hidden="true" />
+                <div className="mock-card-media" aria-hidden="true">
+                  <SeriesCardIcon slug={slug} />
+                </div>
                 <h3>{info.title}.</h3>
                 <p>{info.question}</p>
                 <p className="mock-featured-day text-label">

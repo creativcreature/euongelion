@@ -35,6 +35,142 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Navigation Timing + Devotional Spacing Refinement (2026-02-14)
+
+### What Changed
+
+- Stabilized desktop sticky-nav docking behavior in shell header with hysteresis thresholds to reduce flaky docking transitions.
+- Slowed mobile top-bar ticker/fade cadence for a more subtle and legible transition rhythm.
+- Removed horizontal overflow behavior from shell nav presentation and tightened mobile nav wrapping behavior.
+- Increased desktop reading typography scale (`vw-heading-md`, `vw-body-lg`, `vw-body`, `vw-small`) for better long-form legibility.
+- Introduced formalized devotional spacing rhythm tokens and applied them to devotional shell blocks/panels.
+- Updated mobile devotional layout behavior:
+  - no left/right border lines on devotional panels/sidebar,
+  - full-width usage on mobile,
+  - breadcrumb and panel padding normalized for edge-to-edge reading.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+
+---
+
+## Anthropic-Aligned Skill + Agent Expansion (2026-02-14)
+
+### What Changed
+
+- Refactored core Claude skills into Anthropic-style structure:
+  - added YAML frontmatter (`name`, `description`),
+  - shortened task scope instructions,
+  - explicit progressive-disclosure reference loading,
+  - workflow/guardrail/validation sections.
+- Added 3 new workflow-specific skills:
+  - `soul-audit-delivery`
+  - `release-readiness`
+  - `docs-tracking-governance`
+- Added `agents/openai.yaml` metadata files for all active skills.
+- Added a new workflow-specific specialist agent roster:
+  - Product Manager
+  - Soul Audit Engineer
+  - Backend Platform Engineer
+  - Front-End Developer
+  - Devotional Writer
+  - Devotional Editor
+  - QA Test Engineer
+  - Release Manager
+- Added `.claude/agents/AGENT-ROSTER.md` so specialist agents are discoverable and sequenced.
+- Added documentation references in `CLAUDE.md` and process docs to keep this system visible in every future session.
+
+### Files
+
+- `.claude/skills/euangelion-platform/SKILL.md`
+- `.claude/skills/wokegod-brand/SKILL.md`
+- `.claude/skills/README.md`
+- `.claude/skills/euangelion-platform/agents/openai.yaml`
+- `.claude/skills/wokegod-brand/agents/openai.yaml`
+- `.claude/skills/soul-audit-delivery/SKILL.md`
+- `.claude/skills/soul-audit-delivery/references/flow-contracts.md`
+- `.claude/skills/soul-audit-delivery/references/curation-contracts.md`
+- `.claude/skills/soul-audit-delivery/references/failure-modes.md`
+- `.claude/skills/soul-audit-delivery/agents/openai.yaml`
+- `.claude/skills/release-readiness/SKILL.md`
+- `.claude/skills/release-readiness/references/gate-checklist.md`
+- `.claude/skills/release-readiness/references/verification-matrix.md`
+- `.claude/skills/release-readiness/references/app-store-ops.md`
+- `.claude/skills/release-readiness/agents/openai.yaml`
+- `.claude/skills/docs-tracking-governance/SKILL.md`
+- `.claude/skills/docs-tracking-governance/references/update-order.md`
+- `.claude/skills/docs-tracking-governance/references/traceability-rules.md`
+- `.claude/skills/docs-tracking-governance/references/common-failures.md`
+- `.claude/skills/docs-tracking-governance/agents/openai.yaml`
+- `.claude/agents/AGENT-ROSTER.md`
+- `.claude/agents/PRODUCT-MANAGER.md`
+- `.claude/agents/SOUL-AUDIT-ENGINEER.md`
+- `.claude/agents/BACKEND-PLATFORM-ENGINEER.md`
+- `.claude/agents/FRONTEND-DEVELOPER.md`
+- `.claude/agents/DEVOTIONAL-WRITER.md`
+- `.claude/agents/DEVOTIONAL-EDITOR.md`
+- `.claude/agents/QA-TEST-ENGINEER.md`
+- `.claude/agents/RELEASE-MANAGER.md`
+- `docs/process/CLAUDE-SKILL-SYSTEM.md`
+- `CLAUDE.md`
+
+### Validation
+
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+
+---
+
+## Mobile Hero Illustration Crop Fix (2026-02-14)
+
+### What Changed
+
+- Fixed poor mobile cropping for the home “wrestling” hero engraving.
+- On mobile breakpoints, hero illustration now uses `object-fit: contain` with centered positioning so the full artwork remains visible inside the newspaper panel.
+
+### Files
+
+- `src/app/globals.css`
+
+### Validation
+
+- Visual QA on mobile hero section (`/`)
+
+---
+
+## Series Card Icon Pass (2026-02-14)
+
+### What Changed
+
+- Replaced blue placeholder media blocks in series cards with topic-mapped line icons (no emojis).
+- Added a reusable `SeriesCardIcon` component and slug-to-icon mapping for Wake Up + Substack series.
+- Applied icon rendering across:
+  - Home featured series grid.
+  - Wake Up seven-question grid.
+- Updated card media styling to preserve newspaper borders/layout while switching from solid fill blocks to icon frames.
+
+### Files
+
+- `src/components/newspaper/SeriesCardIcon.tsx`
+- `src/app/page.tsx`
+- `src/app/wake-up/page.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+
+---
+
 ## Wake Up Route Family Newspaper Shell Alignment (2026-02-14)
 
 ### What Changed

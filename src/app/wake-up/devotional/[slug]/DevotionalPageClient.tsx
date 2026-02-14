@@ -107,15 +107,23 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
 
   if (loading) {
     return (
-      <div className="mock-home">
-        <main className="mock-paper">
-          <EuangelionShellHeader />
+      <div className="newspaper-home min-h-screen bg-page">
+        <EuangelionShellHeader />
+        <main className="devotional-shell-main mx-auto max-w-6xl px-6 pb-24 pt-10 md:px-12">
+          <Breadcrumbs
+            className="mb-7"
+            items={[
+              { label: 'HOME', href: '/' },
+              { label: 'WAKE-UP', href: '/wake-up' },
+              { label: 'DEVOTIONAL' },
+            ]}
+          />
           <section
-            className="mock-section-center"
-            style={{ minHeight: '320px' }}
+            className="devotional-shell-panel border px-6 py-10 text-center"
+            style={{ borderColor: 'var(--color-border)' }}
           >
-            <p className="text-label mock-kicker">LOADING</p>
-            <h1 className="mock-title-center">Preparing your devotional.</h1>
+            <p className="text-label vw-small mb-3 text-gold">LOADING</p>
+            <h1 className="vw-heading-md">Preparing your devotional.</h1>
           </section>
         </main>
       </div>
@@ -124,21 +132,32 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
 
   if (!devotional) {
     return (
-      <div className="mock-home">
-        <main className="mock-paper">
-          <EuangelionShellHeader />
+      <div className="newspaper-home min-h-screen bg-page">
+        <EuangelionShellHeader />
+        <main className="devotional-shell-main mx-auto max-w-6xl px-6 pb-24 pt-10 md:px-12">
+          <Breadcrumbs
+            className="mb-7"
+            items={[
+              { label: 'HOME', href: '/' },
+              { label: 'WAKE-UP', href: '/wake-up' },
+              { label: 'DEVOTIONAL' },
+            ]}
+          />
           <section
-            className="mock-section-center"
-            style={{ minHeight: '320px' }}
+            className="devotional-shell-panel border px-6 py-10 text-center"
+            style={{ borderColor: 'var(--color-border)' }}
           >
-            <p className="text-label mock-kicker">NOT FOUND</p>
-            <h1 className="mock-title-center">
+            <p className="text-label vw-small mb-3 text-gold">NOT FOUND</p>
+            <h1 className="vw-heading-md">
               We couldn&apos;t load this reading.
             </h1>
-            <p className="mock-subcopy-center">
+            <p className="vw-small mt-3 text-secondary">
               Try a different devotional from your series.
             </p>
-            <Link href="/wake-up" className="mock-btn text-label">
+            <Link
+              href="/wake-up"
+              className="cta-major text-label vw-small mt-6 inline-block px-5 py-2"
+            >
               BROWSE WAKE UP
             </Link>
           </section>
@@ -151,12 +170,13 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
   const panels = devotional.panels
 
   return (
-    <div className="mock-home">
-      <main className="mock-paper">
-        <ScrollProgress />
-        <EuangelionShellHeader />
+    <div className="newspaper-home min-h-screen bg-page">
+      <ScrollProgress />
+      <EuangelionShellHeader />
+
+      <main className="devotional-shell-main mx-auto max-w-6xl px-6 pb-24 pt-10 md:px-12">
         <Breadcrumbs
-          className="mock-breadcrumb-row"
+          className="devotional-shell-breadcrumb mb-7"
           items={[
             { label: 'HOME', href: '/' },
             { label: 'WAKE-UP', href: '/wake-up' },
@@ -170,154 +190,213 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                   },
                 ]
               : []),
-            {
-              label: (devotional.title || 'DEVOTIONAL').toUpperCase(),
-            },
+            { label: (devotional.title || 'DEVOTIONAL').toUpperCase() },
           ]}
         />
 
-        <section className="mock-devotional-hero">
-          <div className="mock-devotional-hero-top text-label">
+        <header
+          className="devotional-shell-panel devotional-shell-block mb-8 border px-6 py-6"
+          style={{ borderColor: 'var(--color-border)' }}
+        >
+          <div className="mb-3 flex flex-wrap items-center gap-3">
             {devotional.scriptureReference && (
-              <span>{devotional.scriptureReference}</span>
+              <p className="text-label vw-small text-gold">
+                {devotional.scriptureReference}
+              </p>
             )}
             {totalDays > 0 && (
-              <span>
+              <p className="text-label vw-small text-muted oldstyle-nums">
                 DAY {currentDayNum} OF {totalDays}
-              </span>
+              </p>
             )}
           </div>
-          <h1 className="mock-title">{typographer(devotional.title)}</h1>
+          <h1 className="vw-heading-md mb-3">
+            {typographer(devotional.title)}
+          </h1>
           {devotional.teaser && (
-            <p className="mock-body">{typographer(devotional.teaser)}</p>
+            <p className="vw-body text-secondary">
+              {typographer(devotional.teaser)}
+            </p>
           )}
-          <div className="mock-devotional-hero-actions">
+
+          <div className="mt-5 flex flex-wrap items-center gap-3">
             <Link
               href={seriesSlug ? `/wake-up/series/${seriesSlug}` : '/wake-up'}
-              className="mock-reset-btn text-label"
+              className="text-label vw-small link-highlight"
             >
               BACK TO SERIES
             </Link>
             <ShareButton
               title={devotional.title}
               text={`${devotional.title} — Euangelion`}
-              className="mock-series-share"
             />
           </div>
-        </section>
+        </header>
 
-        <section className="mock-devotional-shell">
-          <aside className="mock-devotional-sidebar">
-            {seriesDays && seriesDays.length > 0 && (
-              <>
-                <p className="text-label mock-kicker">IN THIS SERIES</p>
-                <nav
-                  className="mock-devotional-daylist"
-                  aria-label="Series days"
-                >
-                  {seriesDays.map((day) => {
-                    const check = canRead(day.slug)
-                    const isLocked = !check.canRead && day.slug !== slug
-                    const isCurrent = day.slug === slug
+        <section className="devotional-shell-grid md:grid md:grid-cols-[260px_minmax(0,1fr)] md:gap-8">
+          <aside className="devotional-shell-sidebar-wrap mb-6 md:mb-0">
+            <div
+              className="devotional-shell-sidebar border-subtle bg-surface-raised p-4 md:sticky md:top-28"
+              style={{ borderColor: 'var(--color-border)' }}
+            >
+              {seriesDays && seriesDays.length > 0 && (
+                <>
+                  <p className="text-label vw-small mb-3 text-gold">
+                    IN THIS SERIES
+                  </p>
+                  <div className="mb-5 grid gap-2">
+                    {seriesDays.map((day) => {
+                      const check = canRead(day.slug)
+                      const isLocked = !check.canRead && day.slug !== slug
+                      const isCurrent = day.slug === slug
 
-                    const content = (
-                      <>
-                        <span className="text-label">DAY {day.day}</span>
-                        <span>{day.title}</span>
-                      </>
-                    )
+                      if (isLocked) {
+                        return (
+                          <div
+                            key={day.slug}
+                            className="border px-3 py-2"
+                            style={{
+                              borderColor: 'var(--color-border)',
+                              opacity: 0.58,
+                            }}
+                          >
+                            <p className="text-label vw-small text-gold">
+                              DAY {day.day} • LOCKED
+                            </p>
+                            <p className="vw-small text-secondary">
+                              {day.title}
+                            </p>
+                          </div>
+                        )
+                      }
 
-                    if (isLocked) {
                       return (
-                        <div
+                        <Link
                           key={day.slug}
-                          className="mock-devotional-day is-locked"
+                          href={`/wake-up/devotional/${day.slug}`}
+                          className="block border px-3 py-2"
+                          style={{
+                            borderColor: isCurrent
+                              ? 'var(--color-border-strong)'
+                              : 'var(--color-border)',
+                            background: isCurrent
+                              ? 'var(--color-active)'
+                              : 'transparent',
+                          }}
                         >
-                          {content}
-                        </div>
+                          <p className="text-label vw-small text-gold">
+                            DAY {day.day}
+                          </p>
+                          <p className="vw-small text-secondary">{day.title}</p>
+                        </Link>
                       )
-                    }
+                    })}
+                  </div>
+                </>
+              )}
 
-                    return (
-                      <Link
-                        key={day.slug}
-                        href={`/wake-up/devotional/${day.slug}`}
-                        className={`mock-devotional-day ${isCurrent ? 'is-current' : ''}`}
-                      >
-                        {content}
-                      </Link>
-                    )
-                  })}
-                </nav>
-              </>
-            )}
-
-            <div className="mock-devotional-library">
-              <p className="text-label mock-kicker">LIBRARY</p>
-              <Link href="/my-devotional?tab=archive">Archived Pages</Link>
-              <Link href="/my-devotional?tab=bookmarks">Bookmarks</Link>
-              <Link href="/my-devotional?tab=chat-notes">Chat Notes</Link>
-              <Link href="/my-devotional?tab=favorite-verses">
-                Favorite Verses
-              </Link>
+              <div
+                className="border-t pt-4"
+                style={{ borderColor: 'var(--color-border)' }}
+              >
+                <p className="text-label vw-small mb-3 text-gold">LIBRARY</p>
+                <div className="grid gap-2">
+                  <Link
+                    href="/my-devotional?tab=archive"
+                    className="block border px-3 py-2 text-secondary"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    Archived Pages
+                  </Link>
+                  <Link
+                    href="/my-devotional?tab=bookmarks"
+                    className="block border px-3 py-2 text-secondary"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    Bookmarks
+                  </Link>
+                  <Link
+                    href="/my-devotional?tab=chat-notes"
+                    className="block border px-3 py-2 text-secondary"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    Chat Notes
+                  </Link>
+                  <Link
+                    href="/my-devotional?tab=favorite-verses"
+                    className="block border px-3 py-2 text-secondary"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    Favorite Verses
+                  </Link>
+                </div>
+              </div>
             </div>
           </aside>
 
-          <div className="mock-devotional-main-wrap">
+          <div>
             {!dayGate.unlocked ? (
-              <main id="main-content" className="mock-devotional-main">
-                <section className="mock-devotional-lock">
-                  <p className="mock-body">{typographer(dayGate.message)}</p>
-                  <button
-                    type="button"
-                    onClick={() => router.back()}
-                    className="mock-btn text-label"
-                  >
-                    BACK TO SERIES
-                  </button>
-                </section>
-              </main>
+              <section
+                className="devotional-shell-panel border px-6 py-8"
+                style={{ borderColor: 'var(--color-border)' }}
+              >
+                <p className="vw-body text-secondary">
+                  {typographer(dayGate.message)}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => router.back()}
+                  className="cta-major text-label vw-small mt-6 px-5 py-2"
+                >
+                  BACK TO SERIES
+                </button>
+              </section>
             ) : (
-              <main id="main-content" className="mock-devotional-main">
-                <div className="mock-devotional-flow">
+              <>
+                <div className="space-y-6">
                   {modules
                     ? modules.map((module, index) => (
-                        <section key={index} className="mock-devotional-block">
-                          {index > 0 && (
-                            <div
-                              className="mock-devotional-divider"
-                              aria-hidden="true"
-                            />
-                          )}
+                        <article
+                          key={index}
+                          className="devotional-shell-panel border px-6 py-6"
+                          style={{ borderColor: 'var(--color-border)' }}
+                        >
                           <ModuleRenderer module={module} />
-                        </section>
+                        </article>
                       ))
                     : panels?.slice(1).map((panel, index) => (
                         <Fragment key={panel.number}>
-                          <section className="mock-devotional-block">
+                          <article
+                            className="devotional-shell-panel border px-6 py-6"
+                            style={{ borderColor: 'var(--color-border)' }}
+                          >
                             {index > 0 && (
                               <div
-                                className="mock-devotional-divider"
+                                className="mb-6 border-t"
+                                style={{ borderColor: 'var(--color-border)' }}
                                 aria-hidden="true"
                               />
                             )}
                             <PanelComponent panel={panel} />
-                          </section>
+                          </article>
                         </Fragment>
                       ))}
                 </div>
 
-                <section className="mock-devotional-actions">
-                  <p className="mock-subcopy">
+                <section
+                  className="devotional-shell-panel mt-6 border px-6 py-5"
+                  style={{ borderColor: 'var(--color-border)' }}
+                >
+                  <p className="vw-small text-secondary">
                     {isCompleted
                       ? 'Completed. Return anytime to read again.'
                       : 'Finished reading? Mark this day complete.'}
                   </p>
-                  <div className="mock-devotional-action-row">
+                  <div className="mt-4 flex flex-wrap items-center gap-3">
                     {!isCompleted && (
                       <button
                         type="button"
-                        className="mock-btn text-label"
+                        className="cta-major text-label vw-small px-5 py-2"
                         onClick={() => {
                           markComplete(slug, timeSpent)
                           setIsCompleted(true)
@@ -331,78 +410,76 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                     )}
                     <button
                       type="button"
-                      className="mock-reset-btn text-label"
+                      className="text-label vw-small link-highlight"
                       onClick={() => void saveBookmark(devotional.title)}
                     >
                       SAVE BOOKMARK
                     </button>
                   </div>
                 </section>
-              </main>
+              </>
             )}
           </div>
         </section>
 
         {(prevDay || nextDay) && (
           <nav
-            className="mock-devotional-nav-row"
+            className="devotional-shell-nav mt-8 grid gap-4 md:grid-cols-2"
             aria-label="Devotional navigation"
           >
             {prevDay ? (
               <Link
                 href={`/wake-up/devotional/${prevDay.slug}`}
-                className="mock-devotional-nav-link"
+                className="devotional-shell-panel block border px-5 py-4"
+                style={{ borderColor: 'var(--color-border)' }}
               >
-                <span className="text-label">&larr; PREVIOUS</span>
-                <span>{prevDay.title}</span>
+                <p className="text-label vw-small text-gold">&larr; PREVIOUS</p>
+                <p className="vw-body text-secondary">{prevDay.title}</p>
               </Link>
             ) : (
-              <div className="mock-devotional-nav-link is-empty" />
+              <div
+                className="devotional-shell-panel border px-5 py-4"
+                style={{ borderColor: 'var(--color-border)', opacity: 0.5 }}
+              />
             )}
 
             {nextDay ? (
               <Link
                 href={`/wake-up/devotional/${nextDay.slug}`}
-                className="mock-devotional-nav-link align-right"
+                className="devotional-shell-panel block border px-5 py-4 text-right"
+                style={{ borderColor: 'var(--color-border)' }}
               >
-                <span className="text-label">NEXT &rarr;</span>
-                <span>{nextDay.title}</span>
+                <p className="text-label vw-small text-gold">NEXT &rarr;</p>
+                <p className="vw-body text-secondary">{nextDay.title}</p>
               </Link>
             ) : (
-              <div className="mock-devotional-nav-link is-empty" />
+              <div
+                className="devotional-shell-panel border px-5 py-4"
+                style={{ borderColor: 'var(--color-border)', opacity: 0.5 }}
+              />
             )}
           </nav>
         )}
-
-        <section className="mock-bottom-brand">
-          <h2 className="text-masthead mock-masthead-word">
-            <span className="js-shell-masthead-fit mock-masthead-text">
-              EUANGELION
-            </span>
-          </h2>
-        </section>
-
-        {dayGate.unlocked && (
-          <>
-            <TextHighlightTrigger devotionalSlug={slug} />
-            <DevotionalChat
-              devotionalSlug={slug}
-              devotionalTitle={devotional.title}
-            />
-          </>
-        )}
       </main>
+
+      {dayGate.unlocked && (
+        <>
+          <TextHighlightTrigger devotionalSlug={slug} />
+          <DevotionalChat
+            devotionalSlug={slug}
+            devotionalTitle={devotional.title}
+          />
+        </>
+      )}
     </div>
   )
 }
 
 function PanelComponent({ panel }: { panel: Panel }) {
-  const isPrayer = panel.type === 'prayer'
-
   return (
-    <article className={`mock-devotional-panel ${isPrayer ? 'is-prayer' : ''}`}>
+    <article>
       {panel.heading && (
-        <p className="text-label mock-kicker">{panel.heading}</p>
+        <p className="text-label vw-small mb-3 text-gold">{panel.heading}</p>
       )}
 
       {panel.content.split('\n\n').map((paragraph, i) => {
@@ -413,7 +490,7 @@ function PanelComponent({ panel }: { panel: Panel }) {
         return (
           <p
             key={i}
-            className={`mock-body ${isScripture ? 'mock-devotional-scripture' : ''}`}
+            className={`vw-body mb-4 ${isScripture ? 'text-serif-italic' : 'text-secondary'} type-prose`}
             style={{ whiteSpace: 'pre-line' }}
           >
             {paragraph

@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { href: '/series', label: 'SERIES' },
   { href: '/settings', label: 'SETTINGS' },
 ]
+const MOBILE_TICKER_INTERVAL_MS = 4600
 
 function getInitialTheme(): 'light' | 'dark' {
   if (typeof window === 'undefined') return 'light'
@@ -137,7 +138,14 @@ export default function EuangelionShellHeader() {
       rafId = 0
       const topbarHeight = Math.ceil(topbar.getBoundingClientRect().height || 0)
       const sentinelTop = sentinel.getBoundingClientRect().top
-      setNavDocked(sentinelTop <= topbarHeight)
+      setNavDocked((previous) => {
+        const dockThreshold = topbarHeight + 2
+        const undockThreshold = topbarHeight + 24
+        if (previous) {
+          return sentinelTop <= undockThreshold
+        }
+        return sentinelTop <= dockThreshold
+      })
     }
 
     const queueDockState = () => {
@@ -168,7 +176,7 @@ export default function EuangelionShellHeader() {
         setMobileTopbarIndex(
           (prev) => (prev + 1) % Math.max(1, mobileTickerItems.length),
         ),
-      1500,
+      MOBILE_TICKER_INTERVAL_MS,
     )
     return () => window.clearInterval(timer)
   }, [isMobileViewport, mobileTickerItems.length, navDocked])

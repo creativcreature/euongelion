@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import SeriesCardIcon from '@/components/newspaper/SeriesCardIcon'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_DATA } from '@/data/series'
@@ -397,7 +398,9 @@ export default function Home() {
               key={slug}
               className="mock-featured-card"
             >
-              <div className="mock-card-media" aria-hidden="true" />
+              <div className="mock-card-media" aria-hidden="true">
+                <SeriesCardIcon slug={slug} />
+              </div>
               <h3>{series.title}.</h3>
               <p>{series.question}</p>
               <p className="mock-featured-day text-label">
