@@ -202,7 +202,8 @@ export default function EuangelionShellHeader() {
     const reducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
     ).matches
-    if (!isMobileViewport || reducedMotion || navDocked) return
+    if (!isMobileViewport || reducedMotion || navDocked || mobileMenuOpen)
+      return
 
     const timer = window.setInterval(
       () =>
@@ -212,7 +213,7 @@ export default function EuangelionShellHeader() {
       MOBILE_TICKER_INTERVAL_MS,
     )
     return () => window.clearInterval(timer)
-  }, [isMobileViewport, mobileTickerItems.length, navDocked])
+  }, [isMobileViewport, mobileTickerItems.length, navDocked, mobileMenuOpen])
 
   useEffect(() => {
     if (previousPathnameRef.current === pathname) return

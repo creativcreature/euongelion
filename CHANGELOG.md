@@ -236,6 +236,25 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Mobile Topbar Interaction Pause Pass (2026-02-14)
+
+### What Changed
+
+- Paused mobile topbar ticker rotation while the mobile menu is expanded.
+- Prevents rotating date/slogan/mode labels from shifting during active menu interaction.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed
