@@ -18,6 +18,84 @@ const MAX_BODY_BYTES = 30_000
 const MAX_CHAT_REQUESTS_PER_MINUTE = 30
 const MAX_MESSAGE_CHARS = 2_500
 const MAX_HIGHLIGHT_CHARS = 600
+const MAX_CHAT_CITATIONS = 12
+const BIBLE_BOOKS = [
+  'Genesis',
+  'Exodus',
+  'Leviticus',
+  'Numbers',
+  'Deuteronomy',
+  'Joshua',
+  'Judges',
+  'Ruth',
+  '1 Samuel',
+  '2 Samuel',
+  '1 Kings',
+  '2 Kings',
+  '1 Chronicles',
+  '2 Chronicles',
+  'Ezra',
+  'Nehemiah',
+  'Esther',
+  'Job',
+  'Psalms',
+  'Proverbs',
+  'Ecclesiastes',
+  'Song of Songs',
+  'Song of Solomon',
+  'Isaiah',
+  'Jeremiah',
+  'Lamentations',
+  'Ezekiel',
+  'Daniel',
+  'Hosea',
+  'Joel',
+  'Amos',
+  'Obadiah',
+  'Jonah',
+  'Micah',
+  'Nahum',
+  'Habakkuk',
+  'Zephaniah',
+  'Haggai',
+  'Zechariah',
+  'Malachi',
+  'Matthew',
+  'Mark',
+  'Luke',
+  'John',
+  'Acts',
+  'Romans',
+  '1 Corinthians',
+  '2 Corinthians',
+  'Galatians',
+  'Ephesians',
+  'Philippians',
+  'Colossians',
+  '1 Thessalonians',
+  '2 Thessalonians',
+  '1 Timothy',
+  '2 Timothy',
+  'Titus',
+  'Philemon',
+  'Hebrews',
+  'James',
+  '1 Peter',
+  '2 Peter',
+  '1 John',
+  '2 John',
+  '3 John',
+  'Jude',
+  'Revelation',
+]
+const SCRIPTURE_CITATION_REGEX = new RegExp(
+  `\\b(?:${BIBLE_BOOKS.map((book) =>
+    book.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'),
+  )
+    .sort((a, b) => b.length - a.length)
+    .join('|')})\\s\\d{1,3}:\\d{1,3}(?:-\\d{1,3})?\\b`,
+  'g',
+)
 
 const freeTierDailyCounter = new Map<string, { count: number; date: string }>()
 
@@ -33,15 +111,41 @@ Guidelines:
 - Do not use or imply internet search, external retrieval, or knowledge outside provided context.
 - If context is missing, say so plainly and invite a narrower question from the current devotional.`
 
-function getLocalDevotionalContext(devotionalSlug?: string): string {
-  if (!devotionalSlug) return ''
+type ChatCitation = {
+  id: string
+  label: string
+  type: 'scripture' | 'devotional_context' | 'local_reference' | 'highlight'
+  source: string
+}
+
+type ContextPacket = {
+  prompt: string
+  sources: ChatCitation[]
+  hasDevotionalContext: boolean
+  hasReferenceContext: boolean
+  hasHighlightContext: boolean
+}
+
+function normalizeCitationId(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 64)
+}
+
+function getLocalDevotionalContextPacket(devotionalSlug?: string): {
+  prompt: string
+  sources: ChatCitation[]
+} {
+  if (!devotionalSlug) return { prompt: '', sources: [] }
   const filePath = path.join(
     process.cwd(),
     'public',
     'devotionals',
     `${devotionalSlug}.json`,
   )
-  if (!fs.existsSync(filePath)) return ''
+  if (!fs.existsSync(filePath)) return { prompt: '', sources: [] }
 
   try {
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8')) as Record<
@@ -57,7 +161,7 @@ function getLocalDevotionalContext(devotionalSlug?: string): string {
     const teaching = modules.find((module) => module.type === 'teaching')
     const reflection = modules.find((module) => module.type === 'reflection')
 
-    return [
+    const prompt = [
       `Devotional: ${title}`,
       scriptureReference ? `Scripture: ${scriptureReference}` : '',
       scripture && scripture.content
@@ -72,26 +176,59 @@ function getLocalDevotionalContext(devotionalSlug?: string): string {
     ]
       .filter(Boolean)
       .join('\n')
+
+    const sources: ChatCitation[] = [
+      {
+        id: `devotional-${normalizeCitationId(devotionalSlug)}`,
+        label: `Devotional context: ${title}`,
+        type: 'devotional_context',
+        source: `public/devotionals/${devotionalSlug}.json`,
+      },
+    ]
+    if (scriptureReference) {
+      sources.push({
+        id: `scripture-${normalizeCitationId(scriptureReference)}`,
+        label: `Scripture anchor: ${scriptureReference}`,
+        type: 'scripture',
+        source: scriptureReference,
+      })
+    }
+    return { prompt, sources }
   } catch {
-    return ''
+    return { prompt: '', sources: [] }
   }
 }
 
-function getLocalReferenceContext(): string {
+function getLocalReferenceContextPacket(): {
+  prompt: string
+  sources: ChatCitation[]
+} {
   const filePath = path.join(process.cwd(), 'content', 'reference', 'README.md')
-  if (!fs.existsSync(filePath)) return ''
+  if (!fs.existsSync(filePath)) return { prompt: '', sources: [] }
   try {
-    return fs.readFileSync(filePath, 'utf8').slice(0, 1400)
+    const referencePrompt = fs.readFileSync(filePath, 'utf8').slice(0, 1400)
+    return {
+      prompt: referencePrompt,
+      sources: [
+        {
+          id: 'reference-readme',
+          label: 'Local reference volume index',
+          type: 'local_reference',
+          source: 'content/reference/README.md',
+        },
+      ],
+    }
   } catch {
-    return ''
+    return { prompt: '', sources: [] }
   }
 }
 
-function buildContextPrompt(
+function buildContextPacket(
   devotionalSlug?: string,
   highlightedText?: string,
-): string {
+): ContextPacket {
   const parts: string[] = []
+  const sources: ChatCitation[] = []
 
   if (devotionalSlug) {
     parts.push(
@@ -103,20 +240,49 @@ function buildContextPrompt(
     parts.push(
       `The user highlighted this text and is asking about it: "${highlightedText}"`,
     )
+    sources.push({
+      id: `highlight-${normalizeCitationId(highlightedText)}`,
+      label: 'Highlighted text context',
+      type: 'highlight',
+      source: highlightedText.slice(0, 120),
+    })
   }
 
-  const devotionalContext = getLocalDevotionalContext(devotionalSlug)
-  const referenceContext = getLocalReferenceContext()
+  const devotionalContext = getLocalDevotionalContextPacket(devotionalSlug)
+  const referenceContext = getLocalReferenceContextPacket()
 
-  if (devotionalContext) {
-    parts.push(`Local devotional context:\n${devotionalContext}`)
+  if (devotionalContext.prompt) {
+    parts.push(`Local devotional context:\n${devotionalContext.prompt}`)
+    sources.push(...devotionalContext.sources)
   }
 
-  if (referenceContext) {
-    parts.push(`Local reference-volume context:\n${referenceContext}`)
+  if (referenceContext.prompt) {
+    parts.push(`Local reference-volume context:\n${referenceContext.prompt}`)
+    sources.push(...referenceContext.sources)
   }
 
-  return parts.length > 0 ? `\n\nContext:\n${parts.join('\n\n')}` : ''
+  return {
+    prompt: parts.length > 0 ? `\n\nContext:\n${parts.join('\n\n')}` : '',
+    sources: Array.from(
+      new Map(sources.map((source) => [source.id, source])).values(),
+    ),
+    hasDevotionalContext: Boolean(devotionalContext.prompt),
+    hasReferenceContext: Boolean(referenceContext.prompt),
+    hasHighlightContext: Boolean(highlightedText),
+  }
+}
+
+function extractScriptureCitations(message: string): ChatCitation[] {
+  const references = Array.from(
+    new Set((message.match(SCRIPTURE_CITATION_REGEX) || []).map((m) => m)),
+  ).slice(0, 8)
+
+  return references.map((reference) => ({
+    id: `scripture-response-${normalizeCitationId(reference)}`,
+    label: `Scripture citation: ${reference}`,
+    type: 'scripture',
+    source: reference,
+  }))
 }
 
 interface ChatRequestBody {
@@ -237,11 +403,11 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const contextPrompt = buildContextPrompt(
+    const contextPacket = buildContextPacket(
       devotionalSlug || undefined,
       highlightedText ?? undefined,
     )
-    const systemContent = SYSTEM_PROMPT + contextPrompt
+    const systemContent = SYSTEM_PROMPT + contextPacket.prompt
 
     // Call Anthropic API
     const response = await fetch(ANTHROPIC_API_URL, {
@@ -286,10 +452,24 @@ export async function POST(request: NextRequest) {
     }
     const assistantMessage =
       data.content?.[0]?.text || 'I wasn\u2019t able to generate a response.'
+    const citations = [
+      ...contextPacket.sources,
+      ...extractScriptureCitations(assistantMessage),
+    ].slice(0, MAX_CHAT_CITATIONS)
 
     return NextResponse.json({
       message: assistantMessage,
       usingUserKey: !!userApiKey,
+      guardrails: {
+        scope: 'local-corpus-only',
+        internetSearch: false,
+        devotionalSlug: devotionalSlug || null,
+        hasHighlightedText: Boolean(highlightedText),
+        hasDevotionalContext: contextPacket.hasDevotionalContext,
+        hasReferenceContext: contextPacket.hasReferenceContext,
+        sources: contextPacket.sources.map((source) => source.source),
+      },
+      citations,
     })
   } catch (error) {
     console.error('Chat API error:', error)

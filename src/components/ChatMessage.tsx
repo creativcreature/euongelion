@@ -54,6 +54,28 @@ export default function ChatMessage({
         >
           {typographer(message.content)}
         </p>
+
+        {!isUser && message.guardrails && (
+          <p className="vw-small mt-3 text-muted">
+            LOCAL CORPUS ONLY · NO INTERNET SEARCH
+          </p>
+        )}
+
+        {!isUser && (message.citations?.length ?? 0) > 0 && (
+          <div
+            className="mt-3 border-t pt-3"
+            style={{ borderColor: 'var(--color-border)' }}
+          >
+            <p className="text-label vw-small mb-2 text-gold">SOURCES</p>
+            <ul className="space-y-1">
+              {message.citations?.map((citation) => (
+                <li key={citation.id} className="vw-small text-muted">
+                  {typographer(citation.source)}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       {/* Actions (assistant messages only) */}

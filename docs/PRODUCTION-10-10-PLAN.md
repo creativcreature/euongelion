@@ -47,6 +47,21 @@ Still required for 10/10:
 2. Route-by-route navigation walkthrough and keyboard traversal evidence capture.
 3. Additional automated visual regression snapshots for masthead and sticky shell transitions.
 
+## Execution Update (2026-02-14 Chat Pass)
+
+Completed in this pass:
+
+1. Added explicit chat guardrail metadata from API (`local-corpus-only`, no internet search, context presence flags).
+2. Added structured citation payloads in chat responses combining local-context sources and scripture citations detected in assistant output.
+3. Rendered guardrail scope messaging and per-message source lists in chat UI for desktop/mobile.
+4. Added regression tests validating chat response metadata contract.
+
+Still required for 10/10:
+
+1. Manual UX pass for citation density and readability at 375/390 and desktop widths.
+2. Add inline source-to-text segment anchors for long assistant replies.
+3. Add explicit empty-state handling when no citations are produced.
+
 ## Operating Rules
 
 1. Highest current score is capped at 5/10 per founder baseline.

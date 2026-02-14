@@ -35,6 +35,69 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Wake Up Page Restyle to Match Home Page (2026-02-14)
+
+### What Changed
+
+- Restyled `/wake-up` page to use the `mock-*` CSS system matching the home page
+  - Wrapper: `newspaper-home` → `mock-home` > `mock-paper` (cream/dark paper frame)
+  - Blue fonts via `var(--mock-blue)`, newsletter borders via `var(--mock-line)`
+  - 7 series questions now display in a 3-column `mock-featured-grid` card layout (was a vertical list)
+  - Each card: blue media box, serif title, question text, "5 DAYS" label — matching home page featured series cards
+  - Hero: compact `mock-section-center` band (was full-viewport 82vh with animations)
+  - How It Works: `mock-steps-grid` with SVG illustrations (was StaggerGrid with serif numbers)
+  - Footer: `mock-more-row` + `mock-bottom-brand` EUANGELION wordmark
+  - Removed animation wrappers: FadeIn, StaggerGrid, DevotionalMilestoneReveal
+  - Removed `'use client'` directive (page is now a Server Component)
+  - file: `src/app/wake-up/page.tsx`
+
+---
+
+## Chat Phase Pass + Homepage Series Visibility (2026-02-14)
+
+### What Changed
+
+- Chat guardrail contract is now explicit and surfaced:
+  - `/api/chat` now returns guardrail metadata indicating local-corpus-only scope and no internet-search behavior.
+  - files:
+    - `src/app/api/chat/route.ts`
+    - `src/types/index.ts`
+- Chat citation visibility was implemented end-to-end:
+  - API now returns structured citation entries from local context and scripture references detected in assistant replies.
+  - assistant chat messages now render inline source lists.
+  - files:
+    - `src/app/api/chat/route.ts`
+    - `src/components/DevotionalChat.tsx`
+    - `src/components/ChatMessage.tsx`
+    - `src/types/index.ts`
+- Added regression test coverage for chat metadata:
+  - file:
+    - `__tests__/chat-response-metadata.test.ts`
+- Homepage featured series reliability update:
+  - featured devotional series cards now use a safe fallback data path so cards always render.
+  - cards now show the first devotional day title (`START WITH ...`) to make the series devotional path explicit on home.
+  - files:
+    - `src/app/page.tsx`
+    - `src/app/globals.css`
+
+### Tracking Updates
+
+- Updated feature PRDs:
+  - `docs/feature-prds/F-033.md`
+  - `docs/feature-prds/F-034.md`
+- Updated plan/scorecard/handoff:
+  - `docs/PRODUCTION-10-10-PLAN.md`
+  - `docs/PRODUCTION-FEATURE-SCORECARD.md`
+  - `docs/PRODUCTION-COMPACTION-HANDOFF.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test` (64 passing)
+
+---
+
 ## Layout Phase Pass 1: Shared Newspaper Shell Stabilization (2026-02-14)
 
 ### What Changed

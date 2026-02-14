@@ -2447,6 +2447,12 @@
   line-height: 1.2;
 }
 
+.mock-featured-day {
+  margin: 0.2rem 0 0;
+  color: var(--mock-ink);
+  font-size: var(--mock-type-0);
+}
+
 .mock-featured-card span {
   justify-self: end;
   align-self: end;

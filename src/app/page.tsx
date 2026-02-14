@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
-import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
+import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_DATA } from '@/data/series'
 import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
 
 const emptySubscribe = () => () => {}
@@ -73,7 +73,28 @@ export default function Home() {
     useSoulAuditStore()
   const limitReached = hydrated && hasReachedLimit()
 
-  const featuredSlugs = useMemo(() => ALL_SERIES_ORDER.slice(0, 6), [])
+  const featuredSlugs = useMemo(() => {
+    const seeded = [...FEATURED_SERIES, ...ALL_SERIES_ORDER]
+    const deduped = Array.from(new Set(seeded))
+    return deduped.slice(0, 6)
+  }, [])
+  const featuredSeries = useMemo(() => {
+    const fromOrder: Array<{
+      slug: string
+      series: (typeof SERIES_DATA)[keyof typeof SERIES_DATA]
+    }> = []
+    for (const slug of featuredSlugs) {
+      const series = SERIES_DATA[slug]
+      if (!series) continue
+      fromOrder.push({ slug, series })
+    }
+
+    if (fromOrder.length > 0) return fromOrder
+
+    return Object.entries(SERIES_DATA)
+      .slice(0, 6)
+      .map(([slug, series]) => ({ slug, series }))
+  }, [featuredSlugs])
   const faqWindow = useMemo(
     () =>
       [0, 1, 2].map(
@@ -370,22 +391,21 @@ export default function Home() {
         </section>
 
         <section className="mock-featured-grid">
-          {featuredSlugs.map((slug) => {
-            const series = SERIES_DATA[slug]
-            if (!series) return null
-            return (
-              <Link
-                href={`/wake-up/series/${slug}`}
-                key={slug}
-                className="mock-featured-card"
-              >
-                <div className="mock-card-media" aria-hidden="true" />
-                <h3>{series.title}.</h3>
-                <p>{series.question}</p>
-                <span className="text-label">5 DAYS</span>
-              </Link>
-            )
-          })}
+          {featuredSeries.map(({ slug, series }) => (
+            <Link
+              href={`/wake-up/series/${slug}`}
+              key={slug}
+              className="mock-featured-card"
+            >
+              <div className="mock-card-media" aria-hidden="true" />
+              <h3>{series.title}.</h3>
+              <p>{series.question}</p>
+              <p className="mock-featured-day text-label">
+                START WITH: {series.days[0]?.title || 'DAY 1'}
+              </p>
+              <span className="text-label">{series.days.length || 5} DAYS</span>
+            </Link>
+          ))}
         </section>
 
         <section className="mock-more-row">

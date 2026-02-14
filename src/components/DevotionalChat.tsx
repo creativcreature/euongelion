@@ -6,9 +6,22 @@ import ChatMessage from './ChatMessage'
 import { useChatStore } from '@/stores/chatStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { typographer } from '@/lib/typographer'
-import type { ChatColorLabel, ChatMessage as ChatMessageType } from '@/types'
+import type {
+  ChatCitation,
+  ChatColorLabel,
+  ChatGuardrailMeta,
+  ChatMessage as ChatMessageType,
+} from '@/types'
 
 const FREE_TIER_LIMIT = 10
+
+type ChatApiResponse = {
+  message?: string
+  usingUserKey?: boolean
+  citations?: ChatCitation[]
+  guardrails?: ChatGuardrailMeta
+  error?: string
+}
 
 export default function DevotionalChat({
   devotionalSlug,
@@ -91,6 +104,9 @@ export default function DevotionalChat({
   const contextMessages = messages.filter(
     (m) => m.devotionalSlug === devotionalSlug,
   )
+  const latestAssistantMessage = [...contextMessages]
+    .reverse()
+    .find((message) => message.role === 'assistant')
 
   const dailyCount = getDailyCount()
   const isFreeTier = !anthropicApiKey
@@ -137,7 +153,7 @@ export default function DevotionalChat({
         }),
       })
 
-      const data = await response.json()
+      const data = (await response.json()) as ChatApiResponse
 
       if (!response.ok) {
         setError(data.error || 'Something went wrong.')
@@ -147,8 +163,10 @@ export default function DevotionalChat({
       // Add assistant message
       addMessage({
         role: 'assistant',
-        content: data.message,
+        content: data.message || 'I was not able to generate a response.',
         devotionalSlug,
+        citations: Array.isArray(data.citations) ? data.citations : [],
+        guardrails: data.guardrails,
       })
 
       // Increment daily count for free tier
@@ -264,6 +282,27 @@ export default function DevotionalChat({
 
             {/* Messages */}
             <div className="flex-1 overflow-y-auto px-5 py-4">
+              <div
+                className="mb-4 border px-3 py-2"
+                style={{ borderColor: 'var(--color-border)' }}
+              >
+                <p className="text-label vw-small text-gold">CHAT SCOPE</p>
+                <p className="vw-small mt-1 text-muted">
+                  {typographer(
+                    'Local corpus only. No internet search. Responses are grounded in your current devotional context and local reference volumes.',
+                  )}
+                </p>
+              </div>
+
+              {latestAssistantMessage?.guardrails && (
+                <div className="mb-4">
+                  <p className="vw-small text-muted">
+                    Sources in scope:{' '}
+                    {latestAssistantMessage.guardrails.sources.length}
+                  </p>
+                </div>
+              )}
+
               {contextMessages.length === 0 && (
                 <div className="py-8 text-center">
                   <p className="text-serif-italic vw-body mb-4 text-secondary">

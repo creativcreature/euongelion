@@ -129,3 +129,13 @@ npm run build
 - Score changes: User Flow + Navigation category moved from 4/10 to 5/10 in scorecard; specific feature scores raised to 5/10 engineering baseline where changes landed.
 - Blockers: Build verification is blocked on local Node 25 runtime mismatch; remaining manual visual parity QA and keyboard-path evidence capture.
 - Next steps: Execute Chat phase next (F-033/F-034), then Onboarding phase (F-032) per locked ordering.
+
+### Continuity Snapshot (2026-02-14 10:32 local)
+
+- Scope completed: Chat phase pass for explicit guardrail visibility and citation visibility; homepage featured series cards hardened to always render valid series devotionals.
+- Decision ids touched: SA-008, SA-013, SA-014.
+- Feature ids touched: F-033, F-034.
+- Verification run: `type-check`, `lint`, `test` (64 pass) passed.
+- Score changes: F-034 raised from 4/10 to 5/10 engineering baseline; F-033 remained 5/10 with stronger contract coverage.
+- Blockers: Manual QA evidence capture remains for mobile citation readability and long-response source density.
+- Next steps: Execute Onboarding phase (F-032), then devotional-home continuity and left-rail parity features (F-029/F-030/F-031).

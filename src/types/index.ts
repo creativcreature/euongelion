@@ -239,12 +239,31 @@ export interface Module {
 // Chat types
 export type ChatColorLabel = 'gold' | 'burgundy' | 'olive' | 'shalom' | 'none'
 
+export interface ChatCitation {
+  id: string
+  label: string
+  type: 'scripture' | 'devotional_context' | 'local_reference' | 'highlight'
+  source: string
+}
+
+export interface ChatGuardrailMeta {
+  scope: 'local-corpus-only'
+  internetSearch: false
+  devotionalSlug: string | null
+  hasHighlightedText: boolean
+  hasDevotionalContext: boolean
+  hasReferenceContext: boolean
+  sources: string[]
+}
+
 export interface ChatMessage {
   id: string
   role: 'user' | 'assistant'
   content: string
   devotionalSlug?: string
   highlightedText?: string
+  citations?: ChatCitation[]
+  guardrails?: ChatGuardrailMeta
   favorited: boolean
   colorLabel: ChatColorLabel
   createdAt: string
