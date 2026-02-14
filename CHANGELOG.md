@@ -65,6 +65,37 @@ Format: Reverse chronological, grouped by sprint/date.
 - `npm run lint`
 - `npm test` (64 passing)
 
+## Breadcrumb Navigation Pass (2026-02-14)
+
+### What Changed
+
+- Added a reusable breadcrumb component and applied it to recommendation-flow pages for better orientation and backtracking.
+- Added breadcrumbs to:
+  - `/series`
+  - `/wake-up`
+  - `/wake-up/series/[slug]`
+  - `/wake-up/devotional/[slug]`
+  - `/soul-audit/results`
+  - `/my-devotional`
+- Added shared breadcrumb styling compatible with both `newspaper-home` and `mock-home` shells.
+
+### Files
+
+- `src/components/Breadcrumbs.tsx`
+- `src/app/series/page.tsx`
+- `src/app/wake-up/page.tsx`
+- `src/app/wake-up/series/[slug]/SeriesPageClient.tsx`
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/my-devotional/page.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test` (64 passing)
+
 ## Mobile Shell Polish Pass (2026-02-14)
 
 ### What Changed

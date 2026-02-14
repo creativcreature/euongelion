@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
@@ -23,6 +24,10 @@ export default function SeriesBrowsePage() {
       <EuangelionShellHeader />
 
       <header className="section-rule mx-auto max-w-7xl px-6 pb-16 pt-12 md:px-[60px] md:pb-24 md:pt-20 lg:px-20">
+        <Breadcrumbs
+          items={[{ label: 'HOME', href: '/' }, { label: 'SERIES' }]}
+          className="mb-6"
+        />
         <FadeIn>
           <MixedHeadline as="h1" size="xl" className="mb-8">
             <Sans>ALL</Sans> <Serif>Series</Serif>

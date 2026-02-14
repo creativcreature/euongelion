@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import FadeIn from '@/components/motion/FadeIn'
 import { typographer } from '@/lib/typographer'
@@ -452,6 +453,14 @@ export default function SoulAuditResultsPage() {
     <div className="newspaper-home min-h-screen bg-page">
       <EuangelionShellHeader />
       <main className="mx-auto max-w-6xl px-6 pb-24 pt-10 md:px-12">
+        <Breadcrumbs
+          className="mb-7"
+          items={[
+            { label: 'HOME', href: '/' },
+            { label: 'SOUL AUDIT', href: '/soul-audit' },
+            { label: 'RESULTS' },
+          ]}
+        />
         <FadeIn>
           <header className="mb-10 text-center">
             <p className="text-label vw-small mb-4 text-gold">SOUL AUDIT</p>

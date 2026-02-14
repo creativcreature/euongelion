@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { typographer } from '@/lib/typographer'
 import {
   DEVOTIONAL_SERIES,
@@ -31,6 +32,10 @@ export default function WakeUpPage() {
     <div className="mock-home">
       <main className="mock-paper">
         <EuangelionShellHeader />
+        <Breadcrumbs
+          className="mock-breadcrumb-row"
+          items={[{ label: 'HOME', href: '/' }, { label: 'WAKE-UP' }]}
+        />
 
         {/* Hero */}
         <section className="mock-section-center" style={{ minHeight: '260px' }}>

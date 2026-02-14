@@ -4,6 +4,7 @@ import { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import ScrollProgress from '@/components/ScrollProgress'
 import ModuleRenderer from '@/components/ModuleRenderer'
 import ShareButton from '@/components/ShareButton'
@@ -154,6 +155,26 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
       <main className="mock-paper">
         <ScrollProgress />
         <EuangelionShellHeader />
+        <Breadcrumbs
+          className="mock-breadcrumb-row"
+          items={[
+            { label: 'HOME', href: '/' },
+            { label: 'WAKE-UP', href: '/wake-up' },
+            ...(seriesSlug
+              ? [
+                  {
+                    label: (
+                      SERIES_DATA[seriesSlug]?.title || 'SERIES'
+                    ).toUpperCase(),
+                    href: `/wake-up/series/${seriesSlug}`,
+                  },
+                ]
+              : []),
+            {
+              label: (devotional.title || 'DEVOTIONAL').toUpperCase(),
+            },
+          ]}
+        />
 
         <section className="mock-devotional-hero">
           <div className="mock-devotional-hero-top text-label">

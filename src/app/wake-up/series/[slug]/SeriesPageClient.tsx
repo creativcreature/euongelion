@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButton from '@/components/ShareButton'
 import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
@@ -22,6 +23,14 @@ export default function SeriesPageClient({
     <div className="mock-home">
       <main className="mock-paper">
         <EuangelionShellHeader />
+        <Breadcrumbs
+          className="mock-breadcrumb-row"
+          items={[
+            { label: 'HOME', href: '/' },
+            { label: 'WAKE-UP', href: '/wake-up' },
+            { label: series.title.toUpperCase() },
+          ]}
+        />
 
         <section className="mock-series-hero-grid">
           <article className="mock-panel mock-series-copy">

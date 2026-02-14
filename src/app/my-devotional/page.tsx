@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import DevotionalLibraryRail from '@/components/DevotionalLibraryRail'
 
@@ -54,6 +55,11 @@ export default function MyDevotionalPage() {
   return (
     <div className="newspaper-home min-h-screen bg-page">
       <EuangelionShellHeader />
+      <div className="mx-auto max-w-7xl px-4 pt-5 md:px-6">
+        <Breadcrumbs
+          items={[{ label: 'HOME', href: '/' }, { label: 'MY DEVOTIONAL' }]}
+        />
+      </div>
 
       <main
         id="main-content"
