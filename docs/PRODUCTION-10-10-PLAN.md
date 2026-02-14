@@ -92,6 +92,20 @@ Still required for 10/10:
 2. Selection-level observability on fallback usage and relevance drift.
 3. Manual desktop/mobile walkthrough evidence for option quality and plan specificity.
 
+## Execution Update (2026-02-14 Devotional Home Shell Pass)
+
+Completed in this pass:
+
+1. Restyled `/my-devotional` into the same newspaper shell (`mock-home` + `mock-paper`) used by homepage/devotional routes.
+2. Unified breadcrumb and panel rhythm so devotional-home continuity is visually and structurally consistent.
+3. Preserved existing library mechanics while aligning entry layout with the core editorial shell.
+
+Still required for 10/10:
+
+1. Full route continuity walkthrough from home -> my devotional -> devotional day -> archive return path.
+2. Mobile spacing and touch-target QA at 375/390 with screenshot evidence.
+3. Left-rail parity expansion on devotional detail pages (beyond link-out shortcuts).
+
 ## Operating Rules
 
 1. Highest current score is capped at 5/10 per founder baseline.

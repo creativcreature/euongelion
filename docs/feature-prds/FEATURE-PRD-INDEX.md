@@ -32,7 +32,7 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-026 | Devotional Engine | 80/20 curation/generation                     | 4/10     | planned     | [F-026.md](./F-026.md) |
 | F-027 | Devotional Engine | Endnotes output                               | 4/10     | planned     | [F-027.md](./F-027.md) |
 | F-028 | Devotional Engine | Length/depth quality                          | 4/10     | planned     | [F-028.md](./F-028.md) |
-| F-029 | Devotional UX     | Daily home continuity                         | 4/10     | planned     | [F-029.md](./F-029.md) |
+| F-029 | Devotional UX     | Daily home continuity                         | 4/10     | in-progress | [F-029.md](./F-029.md) |
 | F-030 | Devotional UX     | Left rail (archive/bookmarks/notes/favorites) | 4/10     | planned     | [F-030.md](./F-030.md) |
 | F-031 | Devotional UX     | Day progression display                       | 4/10     | planned     | [F-031.md](./F-031.md) |
 | F-032 | Devotional UX     | Onboarding Wed/Thu/Fri variants               | 5/10     | in-progress | [F-032.md](./F-032.md) |

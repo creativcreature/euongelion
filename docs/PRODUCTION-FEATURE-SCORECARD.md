@@ -68,7 +68,7 @@ Scoring Rule: Per founder direction, current scores are capped at **5/10** maxim
 | Devotional Engine | 80/20 curation/generation                     |       4 |   6 | Add measurable module contribution telemetry                                                       | Human-in-the-loop generation standards                                       |
 | Devotional Engine | Endnotes output                               |       4 |   6 | Require structured source endnotes per generated section                                           | Citation integrity pattern                                                   |
 | Devotional Engine | Length/depth quality                          |       4 |   6 | Add min section-length and narrative coherence checks                                              | High-quality editorial standards                                             |
-| Devotional UX     | Daily home continuity                         |       4 |   6 | Route all return paths to contextual daily home                                                    | [Notion Home](https://www.notion.so/product)                                 |
+| Devotional UX     | Daily home continuity                         |       8 |   2 | Complete route-level parity QA for `/my-devotional` + devotional shells on mobile/desktop          | [Notion Home](https://www.notion.so/product)                                 |
 | Devotional UX     | Left rail (archive/bookmarks/notes/favorites) |       4 |   6 | Add unified nav + deep-link states + mobile drawer equivalent                                      | [Notion sidebar](https://www.notion.so/product)                              |
 | Devotional UX     | Day progression display                       |       4 |   6 | Add clear past/current/next status chips                                                           | Habit app progression models                                                 |
 | Devotional UX     | Onboarding Wed/Thu/Fri variants               |       5 |   5 | Expand day-start branching tests and copy variants                                                 | [Headspace onboarding adaptation](https://www.headspace.com/)                |
@@ -99,7 +99,7 @@ Scoring Rule: Per founder direction, current scores are capped at **5/10** maxim
 | User Flow + Navigation          |  6/10 |
 | Typography + Motion             |  4/10 |
 | Soul Audit + Curation Engine    |  5/10 |
-| Devotional Experience + Library |  4/10 |
+| Devotional Experience + Library |  5/10 |
 | Reliability + Security          |  5/10 |
 | Accessibility + Performance     |  4/10 |
 | Billing + iOS Readiness         |  4/10 |

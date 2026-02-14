@@ -53,21 +53,18 @@ export default function MyDevotionalPage() {
   }, [])
 
   return (
-    <div className="newspaper-home min-h-screen bg-page">
-      <EuangelionShellHeader />
-      <div className="mx-auto max-w-7xl px-4 pt-5 md:px-6">
+    <div className="mock-home">
+      <main className="mock-paper">
+        <EuangelionShellHeader />
+
         <Breadcrumbs
+          className="app-breadcrumbs mock-breadcrumb-row"
           items={[{ label: 'HOME', href: '/' }, { label: 'MY DEVOTIONAL' }]}
         />
-      </div>
 
-      <main
-        id="main-content"
-        className="mx-auto max-w-7xl px-4 pb-20 pt-8 md:px-6"
-      >
         <section
-          className="mb-6 border px-4 py-4 md:px-6 md:py-5"
-          style={{ borderColor: 'var(--color-border-strong)' }}
+          className="mock-panel border-b"
+          style={{ borderColor: 'var(--mock-line, var(--color-border))' }}
         >
           <p className="text-label vw-small mb-2 text-gold">
             MY DEVOTIONAL HOME
@@ -104,7 +101,9 @@ export default function MyDevotionalPage() {
           )}
         </section>
 
-        <DevotionalLibraryRail initialTab={initialTab} />
+        <section className="mock-panel">
+          <DevotionalLibraryRail initialTab={initialTab} />
+        </section>
       </main>
     </div>
   )

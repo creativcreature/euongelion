@@ -89,6 +89,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Devotional Home Newspaper Shell Pass (2026-02-14)
+
+### What Changed
+
+- Restyled `/my-devotional` into the same newspaper shell used by home and devotional routes:
+  - moved page wrapper to `mock-home` + `mock-paper`,
+  - reused shared masthead/nav shell via `EuangelionShellHeader`,
+  - moved breadcrumbs into shared newspaper breadcrumb row styling,
+  - normalized bordered panel rhythm for current-path CTA + library rail section.
+
+### Files
+
+- `src/app/my-devotional/page.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx __tests__/soul-audit-curation.test.ts`
+
+---
+
 ## Archive + Bookmark + Contrast Pass (2026-02-14)
 
 ### What Changed

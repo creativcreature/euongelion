@@ -323,7 +323,7 @@ features:
     feature: Daily home continuity
     slug: devotional-ux-daily-home-continuity
     baseline_score: 4
-    status: planned
+    status: in-progress
     prd: docs/feature-prds/F-029.md
     methodology_refs:
       - M00

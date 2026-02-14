@@ -149,3 +149,13 @@ npm run build
 - Score changes: Navigation and Soul Audit curation rows increased in scorecard; User Flow + Navigation moved to 6/10, Soul Audit + Curation Engine moved to 5/10.
 - Blockers: Manual QA evidence for route walkthrough and mobile touch behavior still required before higher score promotion.
 - Next steps: Execute devotional-home continuity and left-rail parity pass (F-029/F-030/F-031), then typography/motion polish pass with manual evidence capture.
+
+### Continuity Snapshot (2026-02-14 12:58 local)
+
+- Scope completed: Devotional home continuity shell pass for `/my-devotional` to align with homepage newspaper structure.
+- Decision ids touched: SA-013, SA-014, SA-015.
+- Feature ids touched: F-029.
+- Verification run: `type-check`, `lint`, `test` (`shell-header`, `soul-audit-curation`) passed.
+- Score changes: Devotional Experience + Library category moved to 5/10; Daily home continuity row improved in scorecard.
+- Blockers: Full route walkthrough and mobile spacing evidence still pending.
+- Next steps: Left-rail parity expansion on devotional detail routes (F-030), then typography/motion polish and manual evidence capture.
