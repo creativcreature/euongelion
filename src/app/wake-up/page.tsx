@@ -3,11 +3,7 @@ import Image from 'next/image'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { typographer } from '@/lib/typographer'
-import {
-  DEVOTIONAL_SERIES,
-  WAKEUP_SERIES_ORDER,
-  SERIES_DATA,
-} from '@/data/series'
+import { WAKEUP_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 
 const HOW_STEPS = [
   {
@@ -112,13 +108,14 @@ export default function WakeUpPage() {
         </section>
 
         <section className="mock-featured-grid mock-wakeup-series-grid">
-          {DEVOTIONAL_SERIES.map((series) => {
-            const info = SERIES_DATA[series.slug]
+          {WAKEUP_SERIES_ORDER.map((slug) => {
+            const info = SERIES_DATA[slug]
             if (!info) return null
+
             return (
               <Link
-                href={`/wake-up/series/${series.slug}`}
-                key={series.slug}
+                href={`/wake-up/series/${slug}`}
+                key={slug}
                 className="mock-featured-card mock-wakeup-series-card"
               >
                 <div className="mock-card-media" aria-hidden="true" />

@@ -128,6 +128,22 @@ Format: Reverse chronological, grouped by sprint/date.
 - `npm run verify:tracking`
 - `npm run verify:feature-prds`
 
+## Wake Up 7-Question Cards Restoration (2026-02-14)
+
+### What Changed
+
+- Restored `/wake-up` seven-question card rendering to map directly from `WAKEUP_SERIES_ORDER` so all 7 cards are rendered in the featured grid.
+- Kept card presentation aligned with home-page featured series card styling (blue media panel, serif title/question, `START WITH`, day count labels).
+
+### Files
+
+- `src/app/wake-up/page.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+
 ## Breadcrumb Navigation Pass (2026-02-14)
 
 ### What Changed
