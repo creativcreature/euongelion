@@ -48,9 +48,9 @@ Scoring Rule: Per founder direction, current scores are capped at **5/10** maxim
 | Homepage UX       | Hero proportion parity                        |       4 |   6 | Add pixel-grid target metrics and regression snapshots                                             | Design-spec parity workflows                                                 |
 | Homepage UX       | Primary CTA clarity                           |       5 |   5 | Keep one primary intent and secondary supporting actions                                           | [Headspace](https://www.headspace.com/) conversion clarity                   |
 | Homepage UX       | FAQ interaction model                         |       4 |   6 | Normalize hover/focus/tap reveal mechanics across devices                                          | [Notion toggles](https://www.notion.so/help) predictable disclosure          |
-| Navigation        | Sticky desktop nav                            |       5 |   5 | Add deterministic dock state tests and fallback state                                              | [Notion](https://www.notion.so/) sticky shell                                |
-| Navigation        | Sticky mobile nav                             |       5 |   5 | Ensure single source of truth for dock thresholds                                                  | [Linear mobile web](https://linear.app/) minimal sticky controls             |
-| Navigation        | Menu correctness                              |       5 |   5 | Remove duplicate routes and add route-health test                                                  | Common SaaS nav QA pattern                                                   |
+| Navigation        | Sticky desktop nav                            |       6 |   4 | Add deterministic dock state tests and fallback state                                              | [Notion](https://www.notion.so/) sticky shell                                |
+| Navigation        | Sticky mobile nav                             |       7 |   3 | Validate two-tier mobile IA on physical devices + reduced-motion parity                            | [Linear mobile web](https://linear.app/) minimal sticky controls             |
+| Navigation        | Menu correctness                              |       8 |   2 | Add full route navigation walkthrough evidence and keyboard-only nav traversal logs                | Common SaaS nav QA pattern                                                   |
 | Typography        | Instrument Serif coverage                     |       4 |   6 | Component audit and tokenized font utility enforcement                                             | [The New Yorker](https://www.newyorker.com/) type consistency                |
 | Typography        | Industry UI/meta coverage                     |       4 |   6 | Restrict UI labels to Industry class tokens only                                                   | Editorial design systems                                                     |
 | Typography        | Readability floor                             |       5 |   5 | Enforce min readable size at 375/390 breakpoints                                                   | WCAG + Apple readability guidance                                            |
@@ -96,7 +96,7 @@ Scoring Rule: Per founder direction, current scores are capped at **5/10** maxim
 | Category                        | Score |
 | ------------------------------- | ----: |
 | Governance + Tracking           |  5/10 |
-| User Flow + Navigation          |  5/10 |
+| User Flow + Navigation          |  6/10 |
 | Typography + Motion             |  4/10 |
 | Soul Audit + Curation Engine    |  4/10 |
 | Devotional Experience + Library |  4/10 |

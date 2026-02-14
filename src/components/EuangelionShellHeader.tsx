@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { href: '/series', label: 'SERIES' },
   { href: '/settings', label: 'SETTINGS' },
 ]
+const MOBILE_PRIMARY_NAV_PATHS = ['/', '/my-devotional', '/soul-audit']
 const MOBILE_TICKER_INTERVAL_MS = 4600
 
 function getInitialTheme(): 'light' | 'dark' {
@@ -48,10 +49,25 @@ export default function EuangelionShellHeader() {
   const [navDocked, setNavDocked] = useState(false)
   const [mobileTopbarIndex, setMobileTopbarIndex] = useState(0)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const mobileNavItems = useMemo(
     () => NAV_ITEMS.filter((item) => item.href !== '/settings'),
     [],
+  )
+  const mobilePrimaryNavItems = useMemo(
+    () =>
+      mobileNavItems.filter((item) =>
+        MOBILE_PRIMARY_NAV_PATHS.includes(item.href),
+      ),
+    [mobileNavItems],
+  )
+  const mobileSecondaryNavItems = useMemo(
+    () =>
+      mobileNavItems.filter(
+        (item) => !MOBILE_PRIMARY_NAV_PATHS.includes(item.href),
+      ),
+    [mobileNavItems],
   )
   const mobileTickerItems = useMemo(
     () => [
@@ -78,7 +94,13 @@ export default function EuangelionShellHeader() {
   useEffect(() => {
     if (typeof window === 'undefined') return
     const media = window.matchMedia('(max-width: 900px)')
-    const syncViewport = () => setIsMobileViewport(media.matches)
+    const syncViewport = () => {
+      const matches = media.matches
+      setIsMobileViewport(matches)
+      if (!matches) {
+        setMobileMenuOpen(false)
+      }
+    }
     syncViewport()
     media.addEventListener('change', syncViewport)
     return () => media.removeEventListener('change', syncViewport)
@@ -205,6 +227,64 @@ export default function EuangelionShellHeader() {
       )
     })
 
+  const renderMobileNav = (panelClassName: string) => (
+    <>
+      <div className="mock-mobile-nav-main">
+        {mobilePrimaryNavItems.map((item) => {
+          const active =
+            pathname === item.href ||
+            (item.href !== '/' && pathname?.startsWith(item.href))
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`mock-nav-item ${active ? 'is-active' : ''}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+          )
+        })}
+        <button
+          type="button"
+          className={`mock-mobile-menu-toggle ${mobileMenuOpen ? 'is-open' : ''}`}
+          onClick={() => setMobileMenuOpen((current) => !current)}
+          aria-label={
+            mobileMenuOpen ? 'Close secondary menu' : 'Open secondary menu'
+          }
+          aria-expanded={mobileMenuOpen}
+        >
+          {mobileMenuOpen ? 'CLOSE' : 'MENU'}
+        </button>
+        <button
+          type="button"
+          className="mock-nav-mobile-theme-toggle"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+        >
+          {theme === 'dark' ? '☀' : '◐'}
+        </button>
+      </div>
+      <div className={`${panelClassName} ${mobileMenuOpen ? 'is-open' : ''}`}>
+        {mobileSecondaryNavItems.map((item) => {
+          const active =
+            pathname === item.href ||
+            (item.href !== '/' && pathname?.startsWith(item.href))
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`mock-nav-item ${active ? 'is-active' : ''}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+          )
+        })}
+      </div>
+    </>
+  )
+
   return (
     <header data-nav-docked={navDocked ? 'true' : 'false'}>
       <div
@@ -242,20 +322,14 @@ export default function EuangelionShellHeader() {
               </span>
             ))
           ) : (
-            <nav
-              className="mock-topbar-mobile-nav"
-              aria-label="Sticky navigation"
-            >
-              {renderNavLinks(mobileNavItems)}
-              <button
-                type="button"
-                className="mock-nav-mobile-theme-toggle"
-                onClick={toggleTheme}
-                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            <div className="mock-topbar-mobile-nav">
+              <nav
+                className="mock-mobile-nav-main-shell"
+                aria-label="Sticky navigation"
               >
-                {theme === 'dark' ? '☀' : '◐'}
-              </button>
-            </nav>
+                {renderMobileNav('mock-mobile-nav-panel')}
+              </nav>
+            </div>
           )}
         </div>
       </div>
@@ -280,21 +354,9 @@ export default function EuangelionShellHeader() {
         aria-label="Main navigation"
         aria-hidden={navDocked}
       >
-        {isMobileViewport ? (
-          <>
-            {renderNavLinks(mobileNavItems)}
-            <button
-              type="button"
-              className="mock-nav-mobile-theme-toggle"
-              onClick={toggleTheme}
-              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            >
-              {theme === 'dark' ? '☀' : '◐'}
-            </button>
-          </>
-        ) : (
-          renderNavLinks(NAV_ITEMS)
-        )}
+        {isMobileViewport
+          ? renderMobileNav('mock-mobile-nav-panel')
+          : renderNavLinks(NAV_ITEMS)}
       </nav>
     </header>
   )

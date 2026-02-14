@@ -35,6 +35,31 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Navigation IA + Docked Reliability Pass (2026-02-14)
+
+### What Changed
+
+- Refactored mobile shell navigation into a two-tier information architecture:
+  - primary links remain visible (`HOME`, `MY DEVOTIONAL`, `SOUL AUDIT`);
+  - secondary links (`WAKE-UP`, `SERIES`) moved into an explicit `MENU` panel.
+- Added explicit mobile menu state controls with automatic close behavior on mobile link navigation and when leaving mobile viewport widths.
+- Improved docked desktop topbar layout so the sticky menu occupies a stable center column without clipping/crowding date and mode controls.
+- Normalized sticky-mobile docked rendering to use the same compact menu structure as the non-docked mobile nav.
+- Preserved mobile dark-mode icon affordance in nav while reducing wrapping/overflow pressure.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx`
+
+---
+
 ## Archive + Bookmark + Contrast Pass (2026-02-14)
 
 ### What Changed
