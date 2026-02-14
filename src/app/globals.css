@@ -2289,6 +2289,11 @@
 }
 
 .mock-nav-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.65rem;
+  padding: 0.1rem 0.2rem;
   text-decoration: none;
   color: inherit;
 }

@@ -390,6 +390,24 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Nav Hit-Area Polish Pass (2026-02-14)
+
+### What Changed
+
+- Increased shell nav link click/tap targets by enforcing inline-flex alignment, minimum height, and light internal padding on `.mock-nav-item`.
+- Improves navigation reliability without changing the newspaper visual language.
+
+### Files
+
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed
