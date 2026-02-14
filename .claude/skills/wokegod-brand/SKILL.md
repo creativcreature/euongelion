@@ -1,263 +1,73 @@
+---
+name: wokegod-brand
+description: Use this skill when implementing visual direction, typography, spacing, iconography, animation behavior, and editorial UI styling for Euangelion.
+---
+
 # wokeGod Brand Skill
 
-**Version:** 1.0  
-**Last Updated:** January 16, 2026
+## When To Use
 
----
+Use for:
 
-## PURPOSE
+- typography and type hierarchy decisions
+- color/paper/ink palette implementation
+- layout rhythm, spacing, borders, and newspaper shell styling
+- motion treatment (subtle, reading-first interactions)
+- icon and asset styling consistency
 
-This skill enables Claude to automatically apply wokeGod brand guidelines to any content - generating illustrations, styling text, processing images, and creating cohesive visual experiences.
+Do not use this skill for platform data-contract logic without `euangelion-platform`.
 
----
+## Inputs To Confirm
 
-## QUICK START
+1. Target page(s) and viewport scope (desktop/mobile).
+2. Expected visual reference or approval baseline.
+3. Any constraints (e.g., no generated images, no glow, no emojis).
 
-### For Illustrations:
+## Progressive Disclosure References
+
+Read only references required for the task:
+
+1. `references/typography.md` for font system and type scale.
+2. `references/colors.md` for palette and contrast.
+3. `references/spacing.md` for rhythm and layout density.
+4. `references/components.md` for reusable component treatments.
+5. `references/responsive.md` for breakpoint behavior.
+6. `references/animations.md` and `references/scroll-experience.md` for motion.
+7. `references/accessibility.md` for WCAG checks.
+8. `references/external-assets.md` when using any user-supplied assets.
+
+## Implementation Workflow
+
+1. Establish visual target and constraints from current docs/mockups.
+2. Apply smallest cohesive styling pass across all affected pages/components.
+3. Validate:
+   - no horizontal overflow
+   - readable type at smallest viewport
+   - dark/light parity where required
+   - interaction affordances are clear
+4. Run verification:
+   - `npm run type-check`
+   - `npm run lint`
+   - targeted UI/manual checks
+5. Update `CHANGELOG.md` with exact scope.
+
+## Guardrails
+
+- No emoji-based iconography.
+- Preserve established newspaper-shell structure unless explicitly changed.
+- Keep body reading comfort first; avoid aggressive motion.
+- Maintain AA contrast and keyboard/focus visibility.
+
+## Optional Script Usage
+
+If image-processing or illustration helper is explicitly requested:
 
 ```bash
-cd .claude/skills/brand-illustrator
-python scripts/brand_illustrator.py "Devotional about finding rest in God"
+python .claude/skills/wokegod-brand/scripts/brand_illustrator.py "<prompt>"
 ```
 
-### For Content Styling:
+Only use generated assets when requested; otherwise prefer curated/user-provided assets.
 
-Claude will automatically read references and apply brand specs to any content you provide.
-
----
-
-## SKILL STRUCTURE
-
-```
-brand-illustrator/
-├── SKILL.md (this file)
-├── references/
-│   ├── colors.md ✅
-│   ├── typography.md ✅
-│   ├── photography.md ✅
-│   ├── scroll-experience.md ✅
-│   ├── spacing.md ✅
-│   ├── external-assets.md ✅
-│   ├── visual-world.md (user-provided)
-│   ├── style.md (user-provided)
-│   └── idea-mapping.md (user-provided)
-├── scripts/
-│   └── brand_illustrator.py ✅
-└── assets/ (generated)
-```
-
----
-
-## HOW CLAUDE USES THIS SKILL
-
-### 1. Content Analysis
-
-**When user provides content:**
-
-- Claude reads `idea-mapping.md` to determine theme
-- Matches theme to visual concepts from `visual-world.md`
-- Selects appropriate style from `style.md`
-
-### 2. Image Generation Workflow
-
-**Process:**
-
-1. Analyze content theme
-2. Generate 3 concept options (from visual-world + idea-mapping)
-3. Wait for user selection
-4. Craft detailed prompt incorporating:
-   - Photography guidelines (Caravaggio style)
-   - Color palette (muted, desaturated)
-   - Composition rules (generous space)
-5. Generate image (via API)
-6. Apply post-processing (desaturate, contrast, vignette)
-7. Save to dated project folder
-
-**Script:** `scripts/brand_illustrator.py`
-
-### 3. Typography Application
-
-**When styling text content:**
-
-- Apply Monument Grotesk (or fallback) from `typography.md`
-- Use Kinfolk-style serif for "EUANGELION" masthead only
-- Scale according to responsive specs
-- Implement spacing from `spacing.md`
-- Ensure WCAG contrast ratios
-
-### 4. Image Treatment
-
-**For external/uploaded images:**
-
-- Check acceptance criteria from `external-assets.md`
-- Apply standard treatment pipeline:
-  - Desaturate -30%
-  - Contrast +15%
-  - Vignette 10%
-  - Grain 5%
-- Generate responsive sizes (1920px, 1200px, 800px)
-- Compress (JPG 80%, WebP 85%)
-
-### 5. Scroll Experience Implementation
-
-**When building devotional layout:**
-
-- Create full-viewport sections (from `scroll-experience.md`)
-- Implement PaRDeS interaction layers
-- Add scroll-triggered animations (fade + slide)
-- Include Easter eggs (margin notes, hidden text)
-- Ensure accessibility (keyboard nav, screen reader)
-
----
-
-## BUILDER METHOD
-
-### Quick Start for New Illustrations
-
-1. **Gather Content:**
-
-   ```bash
-   # Claude receives content description
-   "I need a hero image for a devotional about recognizing God in daily moments"
-   ```
-
-2. **Generate Concepts:**
-
-   ```bash
-   python scripts/brand_illustrator.py "recognizing God in daily moments"
-   ```
-
-   Output:
-
-   ```
-   Option 1: Morning light streaming through window onto simple breakfast table
-   Option 2: Open eyes with light reflection, contemplative close-up
-   Option 3: Doorway with warm light, threshold moment
-   ```
-
-3. **User Selects:**
-
-   ```
-   → Selected: Option 1
-   ```
-
-4. **Generate & Save:**
-   - Crafts detailed prompt with brand guidelines
-   - Generates image (via API)
-   - Saves to `/mnt/user-data/outputs/brand-projects/illustration-YYYYMMDD-HHMMSS/`
-
----
-
-## PROCESS WORKFLOWS
-
-### Workflow 1: Content→Illustration
-
-```
-User Content
-    ↓
-Analyze Theme (idea-mapping.md)
-    ↓
-Suggest Objects/Scenes (visual-world.md)
-    ↓
-Generate 3 Concepts
-    ↓
-User Selects
-    ↓
-Craft Detailed Prompt (photography.md + style.md)
-    ↓
-Generate Image (API)
-    ↓
-Post-Process (external-assets.md)
-    ↓
-Save to Project Folder
-```
-
-### Workflow 2: Style Application
-
-```
-Raw Content (text, images)
-    ↓
-Apply Typography (typography.md)
-    ↓
-Process Images (photography.md + external-assets.md)
-    ↓
-Apply Spacing (spacing.md)
-    ↓
-Build Layout (scroll-experience.md)
-    ↓
-Output Styled Content
-```
-
----
-
-## REFERENCE PRIORITY
-
-When multiple guidelines conflict, priority order:
-
-1. **photography.md** - Visual style foundation
-2. **colors.md** - Color palette is sacred
-3. **typography.md** - Type scale and families
-4. **spacing.md** - Breathing room non-negotiable
-5. **style.md** - Overall aesthetic decisions
-6. **visual-world.md** - Subject matter library
-7. **idea-mapping.md** - Theme→visual logic
-
----
-
-## AI-FIRST CONTENT: Processing Instructions
-
-### Topic | Approach | Objects/Elements | Style | Tone
-
-|-------|----------|------------------|-------|------|
-| AI coding | Morning ritual builder with code | Laptop, monitor, window light | Builder's world | Calm, focused |
-| AI as collaborator | Two perspectives merging | Desk setup, notebook + screen | Duet energy | Partnership |
-| Prompt engineering | Conversation bubbles, chat UI | Chat interface, speech elements | Digital but warm | Clear, direct |
-| When AI fails | Debugging scene | Crossed-out code, eraser, rework | Real, honest | Humble |
-| Debugging | Detective work | Magnifying glass over code | Mystery solving | Curious |
-
-(From idea-mapping.md - see full file for complete mapping)
-
----
-
-## BRAND CONSISTENCY CHECKS
-
-Before finalizing any output, verify:
-
-- [ ] Colors match palette (Tehom Black, Scroll White, God is Gold dominant)
-- [ ] Typography uses Monument Grotesk system (NOT multiple fonts)
-- [ ] Images follow Caravaggio style (single-source lighting, dramatic)
-- [ ] Spacing uses 8px grid (generous, never cramped)
-- [ ] Hebrew terms isolated and prominent (gold, 28-32px)
-- [ ] No modern clutter in images (phones, logos, screens)
-- [ ] Contrast ratios pass WCAG 2.1 AA (4.5:1 minimum)
-- [ ] Mobile-responsive (test at 320px, 768px, 1440px)
-
----
-
-## TROUBLESHOOTING
-
-### Problem: Generated image off-brand
-
-**Solution:**
-
-- Check prompt includes full photography guidelines
-- Verify desaturation applied (-30%)
-- Ensure "avoid modern objects" in negative prompt
-
-### Problem: Typography too crowded
-
-**Solution:**
-
-- Apply spacing.md specs (80-120px section padding)
-- Check line-height is 1.7 for body text
-- Verify max-width is 680px for reading
-
-### Problem: User image rejected
-
-**Solution:**
-
-- Check external-assets.md acceptance criteria
-- Offer fallback options (texture, solid color, typography-only)
 - Suggest curated stock alternatives
 
 ---

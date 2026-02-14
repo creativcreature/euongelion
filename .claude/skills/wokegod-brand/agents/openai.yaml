@@ -1,0 +1,7 @@
+interface:
+  display_name: "wokeGod Brand"
+  short_description: "Implement visual system and typography"
+  default_prompt: "Use $wokegod-brand to style this feature to the approved visual system and interaction standards."
+
+policy:
+  allow_implicit_invocation: true

@@ -130,6 +130,21 @@ When changing user-facing behavior, these must be consulted in addition to the t
 
 1. `docs/runbooks/NEXT-SESSION-OPERATING-RUNBOOK.md` — exact protocol for continuing work in the next terminal session with no contract drift.
 2. `docs/process/FUTURE-APP-ENVIRONMENT-PLAYBOOK.md` — reusable environment bootstrap and governance model for future app projects.
+3. `docs/process/CLAUDE-SKILL-SYSTEM.md` — skill architecture standard aligned to Anthropic skill guidance.
+
+## Skill + Agent System
+
+- Skill index: `.claude/skills/README.md`
+- Workflow agent roster: `.claude/agents/AGENT-ROSTER.md`
+- Canonical specialist agents:
+  - `.claude/agents/PRODUCT-MANAGER.md`
+  - `.claude/agents/SOUL-AUDIT-ENGINEER.md`
+  - `.claude/agents/BACKEND-PLATFORM-ENGINEER.md`
+  - `.claude/agents/FRONTEND-DEVELOPER.md`
+  - `.claude/agents/DEVOTIONAL-WRITER.md`
+  - `.claude/agents/DEVOTIONAL-EDITOR.md`
+  - `.claude/agents/QA-TEST-ENGINEER.md`
+  - `.claude/agents/RELEASE-MANAGER.md`
 
 Before commit/PR:
 
