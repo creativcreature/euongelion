@@ -446,6 +446,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Sticky Sidebar Offset Unification Pass (2026-02-14)
+
+### What Changed
+
+- Added shell-aware sticky offset utility (`.shell-sticky-panel`) that aligns sticky side rails under the shared top strip/nav stack.
+- Replaced hardcoded `md:top-*` sticky offsets in:
+  - soul audit results side panel,
+  - devotional page sidebar,
+  - devotional library rail.
+- Keeps panels non-sticky on mobile and sticky from `md` upward.
+
+### Files
+
+- `src/app/globals.css`
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+- `src/components/DevotionalLibraryRail.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed

@@ -786,7 +786,7 @@ export default function SoulAuditResultsPage() {
           <section className="md:grid md:grid-cols-[260px_minmax(0,1fr)] md:gap-8">
             <aside className="mb-6 md:mb-0">
               <div
-                className="border-subtle bg-surface-raised p-4 md:sticky md:top-28"
+                className="shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
                 style={{ borderColor: 'var(--color-border)' }}
               >
                 <p className="text-label vw-small mb-3 text-gold">NEXT DAYS</p>

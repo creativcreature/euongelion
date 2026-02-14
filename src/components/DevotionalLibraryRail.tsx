@@ -228,7 +228,7 @@ export default function DevotionalLibraryRail({
       className={`grid gap-6 md:grid-cols-[260px_minmax(0,1fr)] ${className}`.trim()}
     >
       <aside
-        className="border-subtle bg-surface-raised p-4 md:sticky md:top-24 md:h-fit"
+        className="shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
         aria-label="Devotional library menu"
       >
         <p className="text-label vw-small mb-4 text-gold">LIBRARY</p>

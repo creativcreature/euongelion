@@ -236,7 +236,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
         <section className="devotional-shell-grid md:grid md:grid-cols-[260px_minmax(0,1fr)] md:gap-8">
           <aside className="devotional-shell-sidebar-wrap mb-6 md:mb-0">
             <div
-              className="devotional-shell-sidebar border-subtle bg-surface-raised p-4 md:sticky md:top-28"
+              className="devotional-shell-sidebar shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
               style={{ borderColor: 'var(--color-border)' }}
             >
               {seriesDays && seriesDays.length > 0 && (
