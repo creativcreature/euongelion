@@ -111,6 +111,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Scroll Lock Recovery Pass (2026-02-14)
+
+### What Changed
+
+- Fixed route-level scroll freeze risk by adding a defensive global scroll unlock in app providers:
+  - clears `body`/`html` inline overflow locks on route change,
+  - removes stale `lenis-stopped` class state.
+- Removed legacy mobile-menu body overflow locking side effects from unused navigation/store code paths to prevent accidental persistent scroll lock.
+
+### Files
+
+- `src/app/providers.tsx`
+- `src/stores/uiStore.ts`
+- `src/components/Navigation.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx`
+
+---
+
 ## Archive + Bookmark + Contrast Pass (2026-02-14)
 
 ### What Changed

@@ -53,13 +53,6 @@ export default function Navigation({
   }
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [mobileOpen])
-
-  useEffect(() => {
     let cancelled = false
     async function loadSession() {
       try {

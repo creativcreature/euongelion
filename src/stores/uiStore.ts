@@ -40,20 +40,9 @@ export const useUIStore = create<UIState>()(
       },
 
       toggleMobileMenu: () =>
-        set((s) => {
-          const next = !s.mobileMenuOpen
-          if (typeof document !== 'undefined') {
-            document.body.style.overflow = next ? 'hidden' : ''
-          }
-          return { mobileMenuOpen: next }
-        }),
+        set((s) => ({ mobileMenuOpen: !s.mobileMenuOpen })),
 
-      closeMobileMenu: () => {
-        if (typeof document !== 'undefined') {
-          document.body.style.overflow = ''
-        }
-        set({ mobileMenuOpen: false })
-      },
+      closeMobileMenu: () => set({ mobileMenuOpen: false }),
     }),
     {
       name: 'euangelion-ui',
