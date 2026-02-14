@@ -286,6 +286,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Route Scroll-Unlock Hardening Pass (2026-02-14)
+
+### What Changed
+
+- Expanded route-change scroll unlock cleanup in app providers:
+  - clears stale `overflow`, `position`, `top`, and `width` inline locks from `body`,
+  - clears stale `overflow`/`position` inline locks from `html`,
+  - keeps `lenis-stopped` class removal.
+- Prevents legacy lock styles from trapping scroll after route transitions.
+
+### Files
+
+- `src/app/providers.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed

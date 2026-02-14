@@ -13,8 +13,12 @@ export default function Providers({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Defensive global unlock so legacy menu locks cannot freeze page scroll.
-    document.body.style.overflow = ''
-    document.documentElement.style.overflow = ''
+    document.body.style.removeProperty('overflow')
+    document.body.style.removeProperty('position')
+    document.body.style.removeProperty('top')
+    document.body.style.removeProperty('width')
+    document.documentElement.style.removeProperty('overflow')
+    document.documentElement.style.removeProperty('position')
     document.documentElement.classList.remove('lenis-stopped')
   }, [pathname])
 
