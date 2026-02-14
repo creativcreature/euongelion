@@ -367,6 +367,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Split Fallback Resilience Pass (2026-02-14)
+
+### What Changed
+
+- Added deterministic series-metadata fallback path in `buildAuditOptions` when curated day candidates are unavailable or split assembly is incomplete.
+- Fallback still enforces the product contract:
+  - exactly 3 `ai_primary` options,
+  - exactly 2 `curated_prefab` options.
+- Added automated regression test for no-candidate condition to prevent dead-end submit states.
+
+### Files
+
+- `src/lib/soul-audit/matching.ts`
+- `__tests__/soul-audit-fallback-options.test.ts`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/soul-audit-fallback-options.test.ts __tests__/soul-audit-flow.test.ts __tests__/soul-audit-curation.test.ts`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed

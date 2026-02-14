@@ -312,6 +312,107 @@ function getPrefabSlugs(primarySlugs: string[]): string[] {
   return [...preferred, ...fill].slice(0, SOUL_AUDIT_OPTION_SPLIT.curatedPrefab)
 }
 
+function hasExpectedOptionSplit(options: AuditOptionPreview[]): boolean {
+  const aiPrimary = options.filter((option) => option.kind === 'ai_primary')
+  const curatedPrefab = options.filter(
+    (option) => option.kind === 'curated_prefab',
+  )
+  return (
+    options.length === SOUL_AUDIT_OPTION_SPLIT.total &&
+    aiPrimary.length === SOUL_AUDIT_OPTION_SPLIT.aiPrimary &&
+    curatedPrefab.length === SOUL_AUDIT_OPTION_SPLIT.curatedPrefab
+  )
+}
+
+function buildSeriesFallbackOptions(input: string): AuditOptionPreview[] {
+  const normalizedInput = collapseWhitespace(input).toLowerCase()
+  const ranked: Array<{
+    slug: keyof typeof SERIES_DATA
+    series: (typeof SERIES_DATA)[keyof typeof SERIES_DATA]
+    index: number
+    matched: string[]
+    score: number
+  }> = []
+
+  ALL_SERIES_ORDER.forEach((slug, index) => {
+    const series = SERIES_DATA[slug]
+    if (!series) return
+
+    const matched = series.keywords.filter((keyword) =>
+      normalizedInput.includes(keyword.toLowerCase()),
+    )
+    ranked.push({ slug, series, index, matched, score: matched.length })
+  })
+
+  ranked.sort((a, b) => b.score - a.score || a.index - b.index)
+
+  const picks = ranked.slice(0, SOUL_AUDIT_OPTION_SPLIT.total)
+  const aiPicks = picks.slice(0, SOUL_AUDIT_OPTION_SPLIT.aiPrimary)
+  const prefabPicks = picks.slice(SOUL_AUDIT_OPTION_SPLIT.aiPrimary)
+
+  const aiOptions = aiPicks.map((entry, index) => {
+    const firstDay = entry.series.days[0]
+    const titleSeed = entry.matched[0]
+    const title = titleSeed
+      ? `${titleCase(titleSeed)}: ${firstDay?.title ?? entry.series.title}`
+      : (firstDay?.title ?? entry.series.title)
+    const paragraph = toInputSnippet(input, 76)
+      ? `From what you shared, begin here: ${entry.series.introduction}`
+      : entry.series.introduction
+
+    return {
+      id: `ai_primary:${entry.slug}:${firstDay?.day ?? 1}:fallback:${index + 1}`,
+      slug: entry.slug,
+      kind: 'ai_primary' as const,
+      rank: index + 1,
+      title,
+      question: entry.series.question,
+      confidence: Math.max(0.45, 0.78 - index * 0.1),
+      reasoning:
+        entry.matched.length > 0
+          ? `Matched your language (${entry.matched.slice(0, 3).join(', ')}) against curated series taxonomy.`
+          : `Mapped your response to curated series taxonomy in ${entry.series.title}.`,
+      preview: {
+        verse: entry.series.framework.split(' - ')[0] ?? entry.series.framework,
+        paragraph: paragraph.slice(0, 320),
+        curationSeed: {
+          seriesSlug: entry.slug,
+          dayNumber: firstDay?.day ?? 1,
+          candidateKey: `${entry.slug}:fallback:day-1`,
+        },
+      },
+    }
+  })
+
+  const prefabOptions = prefabPicks.map((entry, index) => {
+    const firstDay = entry.series.days[0]
+    return {
+      id: `curated_prefab:${entry.slug}:${firstDay?.day ?? 1}:fallback:${index + 1}`,
+      slug: entry.slug,
+      kind: 'curated_prefab' as const,
+      rank: aiOptions.length + index + 1,
+      title: entry.series.title,
+      question: entry.series.question,
+      confidence: Math.max(0.35, 0.66 - index * 0.08),
+      reasoning: 'A stable prefab series if you want a proven guided path.',
+      preview: {
+        verse: entry.series.framework.split(' - ')[0] ?? entry.series.framework,
+        paragraph: entry.series.introduction.slice(0, 320),
+        curationSeed: {
+          seriesSlug: entry.slug,
+          dayNumber: firstDay?.day ?? 1,
+          candidateKey: `${entry.slug}:fallback:day-1`,
+        },
+      },
+    }
+  })
+
+  return [...aiOptions, ...prefabOptions].slice(
+    0,
+    SOUL_AUDIT_OPTION_SPLIT.total,
+  )
+}
+
 export function buildAuditOptions(input: string): AuditOptionPreview[] {
   const primary = choosePrimaryMatches(input)
   let aiOptions = primary.map((match, index) =>
@@ -374,8 +475,10 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
     })
     .filter((option): option is AuditOptionPreview => Boolean(option))
 
-  return [...aiOptions, ...prefabOptions].slice(
+  const assembled = [...aiOptions, ...prefabOptions].slice(
     0,
     SOUL_AUDIT_OPTION_SPLIT.total,
   )
+  if (hasExpectedOptionSplit(assembled)) return assembled
+  return buildSeriesFallbackOptions(input)
 }
