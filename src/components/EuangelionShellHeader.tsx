@@ -213,6 +213,12 @@ export default function EuangelionShellHeader() {
     return () => window.clearInterval(timer)
   }, [isMobileViewport, mobileTickerItems.length, navDocked])
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    const rafId = window.requestAnimationFrame(() => setMobileMenuOpen(false))
+    return () => window.cancelAnimationFrame(rafId)
+  }, [pathname, mobileMenuOpen])
+
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark'
     setTheme(next)

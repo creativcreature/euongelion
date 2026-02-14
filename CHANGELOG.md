@@ -154,6 +154,25 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Mobile Menu Route-Reset Pass (2026-02-14)
+
+### What Changed
+
+- Added route-change menu reset behavior in the shared shell header so the mobile secondary menu is automatically closed after navigation.
+- Implemented via animation-frame callback to avoid synchronous effect state updates and prevent stale expanded menu overlays on newly opened pages.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed
