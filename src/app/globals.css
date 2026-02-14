@@ -270,6 +270,8 @@
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+    overscroll-behavior-y: auto;
+    -webkit-overflow-scrolling: touch;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -463,7 +465,7 @@
   min-height: calc(100vh - 1.4rem);
   border: 1.5px solid var(--color-border-strong);
   box-sizing: border-box;
-  overflow-x: visible;
+  overflow-x: hidden;
   overflow-y: visible;
 }
 
@@ -2271,11 +2273,10 @@
   background: var(--mock-paper, var(--color-bg));
   padding: 0.15rem 0.55rem;
   font-size: var(--mock-type-0, 0.92rem);
-  overflow-x: clip;
+  overflow: visible;
   white-space: nowrap;
   max-height: 54px;
   transition:
-    max-height 260ms ease,
     opacity 220ms ease,
     padding 220ms ease,
     border-color 220ms ease;
@@ -2288,10 +2289,9 @@
 }
 
 .mock-nav.is-docked {
-  max-height: 0;
+  display: none;
   opacity: 0;
   visibility: hidden;
-  overflow: hidden;
   padding-top: 0;
   padding-bottom: 0;
   border-bottom-color: transparent;
@@ -3406,7 +3406,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x pan-y;
+    touch-action: auto;
     padding-bottom: 0.06rem;
   }
 
@@ -3524,7 +3524,7 @@
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x pan-y;
+    touch-action: auto;
     overscroll-behavior-x: contain;
     overscroll-behavior-y: auto;
     min-height: auto;

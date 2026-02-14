@@ -35,6 +35,40 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Scroll Fluidity Hardening Pass (2026-02-14)
+
+### What Changed
+
+- Hardened global route lifecycle scroll recovery:
+  - expanded provider-level unlock cleanup to clear both axis-specific and generic overflow locks on `body`/`html`.
+  - re-applies unlock logic when page resumes (`pageshow`) and when returning to visible tab state.
+- Reduced sticky/nav container scroll-trap risk:
+  - switched shell nav overflow from clipped to visible.
+  - replaced docked nav max-height collapse with `display: none` to avoid sticky collapse edge cases.
+- Improved mobile gesture interop on horizontal strips:
+  - normalized touch handling from forced axis rules to browser-default `touch-action: auto` on mobile nav strip and featured rail.
+- Suppressed horizontal container spill risk in old shell wrapper by setting `.newspaper-home` to `overflow-x: hidden`.
+
+### Files
+
+- `src/app/providers.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Navigation IA + Docked Reliability Pass (2026-02-14)
 
 ### What Changed
