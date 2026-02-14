@@ -97,6 +97,37 @@ Format: Reverse chronological, grouped by sprint/date.
 - `npm run verify:tracking`
 - `npm run verify:feature-prds`
 
+## Onboarding Variant Visibility Pass (2026-02-14)
+
+### What Changed
+
+- Implemented explicit onboarding metadata across soul-audit flow:
+  - selection response now includes onboarding/cycle metadata for AI plans.
+  - devotional plan day response now includes schedule metadata for UI context.
+- Added explicit Wed/Thu/Fri/weekend onboarding variant visibility in Soul Audit results:
+  - onboarding banner now shows active primer variant and full cycle unlock time.
+- Improved onboarding devotional copy fidelity:
+  - onboarding titles now reflect exact variant (`Wednesday 3-Day`, `Thursday 2-Day`, `Friday 1-Day`, `Weekend Bridge`).
+  - cadence next-step copy now reinforces consistency behavior.
+- Added regression tests for onboarding variant copy.
+
+### Files
+
+- `src/types/soul-audit.ts`
+- `src/app/api/soul-audit/select/route.ts`
+- `src/app/api/devotional-plan/[token]/day/[n]/route.ts`
+- `src/app/soul-audit/results/page.tsx`
+- `src/lib/soul-audit/curated-builder.ts`
+- `__tests__/onboarding-variant-content.test.ts`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test` (67 passing)
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+
 ## Breadcrumb Navigation Pass (2026-02-14)
 
 ### What Changed

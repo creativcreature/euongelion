@@ -18,6 +18,7 @@ import {
   createPlan,
   getAllPlanDays,
   getAuditOptionsWithFallback,
+  getPlanInstanceWithFallback,
   getAuditRunWithFallback,
   getConsentWithFallback,
   getSelectionWithFallback,
@@ -37,6 +38,62 @@ const MAX_SELECT_BODY_BYTES = 32_768
 const MAX_SELECT_REQUESTS_PER_MINUTE = 30
 const CURRENT_ROUTE_COOKIE = 'euangelion_current_route'
 const CURRENT_ROUTE_MAX_AGE = 30 * 24 * 60 * 60
+
+function toOnboardingMeta(
+  plan:
+    | {
+        start_policy:
+          | 'monday_cycle'
+          | 'tuesday_archived_monday'
+          | 'wed_sun_onboarding'
+        onboarding_variant?:
+          | 'none'
+          | 'wednesday_3_day'
+          | 'thursday_2_day'
+          | 'friday_1_day'
+          | 'weekend_bridge'
+        onboarding_days?: number
+        cycle_start_at: string
+        timezone: string
+        timezone_offset_minutes: number
+      }
+    | {
+        startPolicy:
+          | 'monday_cycle'
+          | 'tuesday_archived_monday'
+          | 'wed_sun_onboarding'
+        onboardingVariant?:
+          | 'none'
+          | 'wednesday_3_day'
+          | 'thursday_2_day'
+          | 'friday_1_day'
+          | 'weekend_bridge'
+        onboardingDays?: number
+        cycleStartAt: string
+        timezone: string
+        timezoneOffsetMinutes: number
+      },
+) {
+  if ('start_policy' in plan) {
+    return {
+      startPolicy: plan.start_policy,
+      onboardingVariant: plan.onboarding_variant ?? 'none',
+      onboardingDays: plan.onboarding_days ?? 0,
+      cycleStartAt: plan.cycle_start_at,
+      timezone: plan.timezone,
+      timezoneOffsetMinutes: plan.timezone_offset_minutes,
+    }
+  }
+
+  return {
+    startPolicy: plan.startPolicy,
+    onboardingVariant: plan.onboardingVariant ?? 'none',
+    onboardingDays: plan.onboardingDays ?? 0,
+    cycleStartAt: plan.cycleStartAt,
+    timezone: plan.timezone,
+    timezoneOffsetMinutes: plan.timezoneOffsetMinutes,
+  }
+}
 
 function withCurrentRouteCookie(response: NextResponse, route: string) {
   response.cookies.set(CURRENT_ROUTE_COOKIE, route, {
@@ -179,6 +236,11 @@ export async function POST(request: NextRequest) {
 
     const existingSelection = await getSelectionWithFallback(runId)
     if (existingSelection) {
+      const existingPlan =
+        existingSelection.plan_token &&
+        existingSelection.option_kind === 'ai_primary'
+          ? await getPlanInstanceWithFallback(existingSelection.plan_token)
+          : null
       const existingPayload: SoulAuditSelectResponse = {
         ok: true,
         auditRunId: runId,
@@ -189,6 +251,9 @@ export async function POST(request: NextRequest) {
             : `/soul-audit/results?planToken=${existingSelection.plan_token}`,
         planToken: existingSelection.plan_token ?? undefined,
         seriesSlug: existingSelection.series_slug,
+        onboardingMeta: existingPlan
+          ? toOnboardingMeta(existingPlan)
+          : undefined,
       }
       return withCurrentRouteCookie(
         NextResponse.json(existingPayload, { status: 200 }),
@@ -300,6 +365,14 @@ export async function POST(request: NextRequest) {
       planToken: plan.token,
       seriesSlug: option.slug,
       planDays: daysForPlan,
+      onboardingMeta: toOnboardingMeta({
+        startPolicy: schedule.startPolicy,
+        onboardingVariant: schedule.onboardingVariant,
+        onboardingDays: schedule.onboardingDays,
+        cycleStartAt: schedule.cycleStartAt,
+        timezone,
+        timezoneOffsetMinutes: offsetMinutes,
+      }),
     }
 
     // Warm cache path for immediate UI fetches.

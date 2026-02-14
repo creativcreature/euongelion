@@ -84,6 +84,27 @@ export interface SoulAuditSelectRequest {
 
 export type SoulAuditSelectionKind = 'ai_primary' | 'curated_prefab'
 
+export type PlanStartPolicy =
+  | 'monday_cycle'
+  | 'tuesday_archived_monday'
+  | 'wed_sun_onboarding'
+
+export type PlanOnboardingVariant =
+  | 'none'
+  | 'wednesday_3_day'
+  | 'thursday_2_day'
+  | 'friday_1_day'
+  | 'weekend_bridge'
+
+export interface PlanOnboardingMeta {
+  startPolicy: PlanStartPolicy
+  onboardingVariant: PlanOnboardingVariant
+  onboardingDays: number
+  cycleStartAt: string
+  timezone: string
+  timezoneOffsetMinutes: number
+}
+
 export interface SoulAuditSelectResponse {
   ok: boolean
   auditRunId: string
@@ -92,6 +113,7 @@ export interface SoulAuditSelectResponse {
   planToken?: string
   seriesSlug?: string
   planDays?: CustomPlanDay[]
+  onboardingMeta?: PlanOnboardingMeta
 }
 
 export interface DevotionalDayEndnote {

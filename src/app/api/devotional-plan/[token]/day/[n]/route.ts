@@ -1,20 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { isDayLockingEnabledForRequest } from '@/lib/day-locking'
 import {
+  type DevotionalPlanInstanceRecord,
   getPlanDayWithFallback,
   getPlanInstanceWithFallback,
 } from '@/lib/soul-audit/repository'
 import { isPlanDayUnlocked } from '@/lib/soul-audit/schedule'
 
-function onboardingDay() {
+function onboardingDay(instance: DevotionalPlanInstanceRecord) {
+  const variant = instance.onboarding_variant ?? 'none'
+  const variantTitle =
+    variant === 'wednesday_3_day'
+      ? 'Wednesday 3-Day Primer'
+      : variant === 'thursday_2_day'
+        ? 'Thursday 2-Day Primer'
+        : variant === 'friday_1_day'
+          ? 'Friday 1-Day Primer'
+          : 'Weekend Bridge Primer'
+  const intro =
+    variant === 'wednesday_3_day'
+      ? 'You joined on Wednesday. This 3-day rhythm primer (Wed-Thu-Fri) helps you establish cadence before the Monday cycle starts.'
+      : variant === 'thursday_2_day'
+        ? 'You joined on Thursday. This 2-day rhythm primer (Thu-Fri) helps you settle your pace before the Monday cycle starts.'
+        : variant === 'friday_1_day'
+          ? 'You joined on Friday. This focused 1-day primer prepares your heart for the Monday cycle.'
+          : 'You joined on the weekend. This bridge day helps you settle your pace before the Monday cycle starts.'
+
   return {
     day: 0,
-    title: 'Onboarding: Prepare for Monday',
+    title: `Onboarding: ${variantTitle}`,
     scriptureReference: 'Lamentations 3:22-23',
     scriptureText:
       'The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning.',
-    reflection:
-      'You joined midweek, so this onboarding day helps you settle your pace. Read slowly, note what feels heavy, and bring it honestly before God.',
+    reflection: `${intro} Read slowly, note what feels heavy, and bring it honestly before God.`,
     prayer:
       'Lord Jesus, prepare my heart for the cycle ahead. Teach me to begin with honesty and receive your mercy day by day.',
     nextStep:
@@ -30,10 +48,25 @@ function onboardingDay() {
       {
         id: 2,
         source: 'Scheduling Policy',
-        note: 'Wed-Sun starts receive onboarding before Monday cycle.',
+        note: `${variant} onboarding before Monday cycle.`,
       },
     ],
   }
+}
+
+function scheduleMeta(
+  instance: DevotionalPlanInstanceRecord,
+  dayLockingEnabled: boolean,
+) {
+  return {
+    startPolicy: instance.start_policy,
+    onboardingVariant: instance.onboarding_variant ?? 'none',
+    onboardingDays: instance.onboarding_days ?? 0,
+    cycleStartAt: instance.cycle_start_at,
+    timezone: instance.timezone,
+    timezoneOffsetMinutes: instance.timezone_offset_minutes,
+    dayLocking: dayLockingEnabled ? 'enabled' : 'disabled',
+  } as const
 }
 
 export async function GET(
@@ -74,7 +107,7 @@ export async function GET(
           onboarding: dayNumber === 0,
           day: unlockedDay.content,
           policy: instance.start_policy,
-          dayLocking: 'disabled',
+          schedule: scheduleMeta(instance, false),
         },
         { status: 200 },
       )
@@ -106,6 +139,7 @@ export async function GET(
               : null,
             message: unlock.message,
             policy: instance.start_policy,
+            schedule: scheduleMeta(instance, true),
           },
           { status: 200 },
         )
@@ -117,6 +151,7 @@ export async function GET(
           message: unlock.message,
           policy: instance.start_policy,
           day: dayNumber,
+          schedule: scheduleMeta(instance, true),
         },
         { status: 423 },
       )
@@ -129,8 +164,9 @@ export async function GET(
           locked: false,
           archived: false,
           onboarding: true,
-          day: onboardingPlanDay?.content ?? onboardingDay(),
+          day: onboardingPlanDay?.content ?? onboardingDay(instance),
           policy: instance.start_policy,
+          schedule: scheduleMeta(instance, true),
         },
         { status: 200 },
       )
@@ -151,6 +187,7 @@ export async function GET(
         onboarding: false,
         day: planDay.content,
         policy: instance.start_policy,
+        schedule: scheduleMeta(instance, true),
       },
       { status: 200 },
     )

@@ -9,6 +9,7 @@ import FadeIn from '@/components/motion/FadeIn'
 import { typographer } from '@/lib/typographer'
 import type {
   CustomPlanDay,
+  PlanOnboardingMeta,
   SoulAuditConsentResponse,
   SoulAuditSelectResponse,
   SoulAuditSubmitResponseV2,
@@ -20,6 +21,9 @@ type PlanDayResponse = {
   onboarding: boolean
   message?: string
   day?: CustomPlanDay | PlanDayPreview | null
+  schedule?: PlanOnboardingMeta & {
+    dayLocking?: 'enabled' | 'disabled'
+  }
 }
 
 type PlanDayPreview = Pick<
@@ -49,6 +53,45 @@ function formatShortDate(value: string): string {
     day: '2-digit',
     year: 'numeric',
   })
+}
+
+function formatCycleStart(value: string, timezone?: string): string {
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) return value
+
+  return date.toLocaleString('en-US', {
+    weekday: 'short',
+    month: 'short',
+    day: '2-digit',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    timeZone: timezone || undefined,
+  })
+}
+
+function onboardingLabel(meta: PlanOnboardingMeta | null): string | null {
+  if (!meta || meta.startPolicy !== 'wed_sun_onboarding') return null
+  if (meta.onboardingVariant === 'wednesday_3_day')
+    return 'WEDNESDAY 3-DAY PRIMER'
+  if (meta.onboardingVariant === 'thursday_2_day')
+    return 'THURSDAY 2-DAY PRIMER'
+  if (meta.onboardingVariant === 'friday_1_day') return 'FRIDAY 1-DAY PRIMER'
+  return 'WEEKEND BRIDGE PRIMER'
+}
+
+function onboardingDescription(meta: PlanOnboardingMeta | null): string | null {
+  if (!meta || meta.startPolicy !== 'wed_sun_onboarding') return null
+  if (meta.onboardingVariant === 'wednesday_3_day') {
+    return 'You started on Wednesday. Use this 3-day primer to build rhythm before the full Monday cycle.'
+  }
+  if (meta.onboardingVariant === 'thursday_2_day') {
+    return 'You started on Thursday. Use this 2-day primer to settle your pace before Monday.'
+  }
+  if (meta.onboardingVariant === 'friday_1_day') {
+    return 'You started on Friday. This focused primer prepares your next step before Monday.'
+  }
+  return 'You started on the weekend. This bridge day keeps momentum until Monday.'
 }
 
 function isFullPlanDay(value: unknown): value is CustomPlanDay {
@@ -143,6 +186,10 @@ export default function SoulAuditResultsPage() {
   const [lockedMessages, setLockedMessages] = useState<string[]>([])
   const [archivePlans, setArchivePlans] = useState<ArchivePlanSummary[]>([])
   const [loadingPlan, setLoadingPlan] = useState(false)
+  const [planOnboardingMeta, setPlanOnboardingMeta] =
+    useState<PlanOnboardingMeta | null>(
+      initialSelection?.onboardingMeta ?? null,
+    )
 
   useEffect(() => {
     const fromStorage = loadSubmitResult()
@@ -154,6 +201,9 @@ export default function SoulAuditResultsPage() {
     const fromStorage = loadSelectionResult()
     if (!fromStorage) return
     setSelection(fromStorage)
+    if (fromStorage.onboardingMeta) {
+      setPlanOnboardingMeta(fromStorage.onboardingMeta)
+    }
     if (Array.isArray(fromStorage.planDays)) {
       const safeDays = fromStorage.planDays.filter(isFullPlanDay)
       if (safeDays.length > 0) {
@@ -187,8 +237,12 @@ export default function SoulAuditResultsPage() {
       const unlockedDays: CustomPlanDay[] = []
       const lockedPreviews: PlanDayPreview[] = []
       const locks: string[] = []
+      let resolvedSchedule: PlanOnboardingMeta | null = null
 
       for (const entry of responses) {
+        if (!resolvedSchedule && entry.payload.schedule) {
+          resolvedSchedule = entry.payload.schedule
+        }
         if (entry.status === 200 && entry.payload.day) {
           if (entry.payload.locked && isPlanPreview(entry.payload.day)) {
             lockedPreviews.push(entry.payload.day)
@@ -219,6 +273,9 @@ export default function SoulAuditResultsPage() {
         if (onboardingResponse.status === 200) {
           const onboardingPayload =
             (await onboardingResponse.json()) as PlanDayResponse
+          if (!resolvedSchedule && onboardingPayload.schedule) {
+            resolvedSchedule = onboardingPayload.schedule
+          }
           if (isFullPlanDay(onboardingPayload.day)) {
             unlockedDays.push(onboardingPayload.day)
           }
@@ -232,6 +289,9 @@ export default function SoulAuditResultsPage() {
       setPlanDays(resolvedPlanDays)
       setLockedDayPreviews(lockedPreviews)
       setLockedMessages(Array.from(new Set(locks)))
+      if (resolvedSchedule) {
+        setPlanOnboardingMeta(resolvedSchedule)
+      }
       if (resolvedPlanDays.length > 0) {
         persistPlanDays(token, resolvedPlanDays)
       }
@@ -405,6 +465,9 @@ export default function SoulAuditResultsPage() {
       }
 
       setSelection(selectionPayload)
+      if (selectionPayload.onboardingMeta) {
+        setPlanOnboardingMeta(selectionPayload.onboardingMeta)
+      }
       sessionStorage.setItem(
         'soul-audit-selection-v2',
         JSON.stringify(selectionPayload),
@@ -437,6 +500,15 @@ export default function SoulAuditResultsPage() {
       setSubmitting(false)
     }
   }
+
+  const onboardingKicker = onboardingLabel(planOnboardingMeta)
+  const onboardingBlurb = onboardingDescription(planOnboardingMeta)
+  const cycleStartLabel =
+    planOnboardingMeta &&
+    formatCycleStart(
+      planOnboardingMeta.cycleStartAt,
+      planOnboardingMeta.timezone,
+    )
 
   if (!submitResult && !planToken) {
     return (
@@ -475,6 +547,24 @@ export default function SoulAuditResultsPage() {
               <p className="vw-small mt-3 text-secondary">
                 Tap a card to continue. Each option is clickable.
               </p>
+            )}
+            {planToken && onboardingKicker && onboardingBlurb && (
+              <div
+                className="mx-auto mt-5 max-w-3xl border px-4 py-3 text-left"
+                style={{ borderColor: 'var(--color-border)' }}
+              >
+                <p className="text-label vw-small text-gold">
+                  {onboardingKicker}
+                </p>
+                <p className="vw-small mt-2 text-secondary">
+                  {typographer(onboardingBlurb)}
+                </p>
+                {cycleStartLabel && (
+                  <p className="vw-small mt-2 text-muted">
+                    Full 5-day cycle unlock: {cycleStartLabel}
+                  </p>
+                )}
+              </div>
             )}
           </header>
         </FadeIn>

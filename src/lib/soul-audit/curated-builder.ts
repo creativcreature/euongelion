@@ -223,6 +223,14 @@ export function buildOnboardingDay(params: {
 }): CustomPlanDay {
   const snippet = params.userResponse.trim().slice(0, 180)
   const firstDayTitle = params.firstDay.title
+  const variantLabel =
+    params.variant === 'wednesday_3_day'
+      ? 'Wednesday 3-Day Primer'
+      : params.variant === 'thursday_2_day'
+        ? 'Thursday 2-Day Primer'
+        : params.variant === 'friday_1_day'
+          ? 'Friday 1-Day Primer'
+          : 'Weekend Bridge Primer'
   const intro =
     params.variant === 'wednesday_3_day'
       ? 'Wednesday start: a 3-day rhythm primer (Wed-Thu-Fri) to establish momentum before Monday cycle launch.'
@@ -238,7 +246,7 @@ export function buildOnboardingDay(params: {
 
   return {
     day: 0,
-    title: 'Onboarding: Prepare for Your 5-Day Path',
+    title: `Onboarding: ${variantLabel}`,
     scriptureReference: params.firstDay.scriptureReference,
     scriptureText: params.firstDay.scriptureText,
     reflection: snippet
@@ -246,7 +254,7 @@ export function buildOnboardingDay(params: {
       : `${intro}\n\nYour full 5-day curated path is already prepared. Start with this orientation and move into Day 1 with honesty.\n\nYour first day is "${firstDayTitle}".`,
     prayer:
       'Lord Jesus, steady my pace as I begin this path. Give me courage to be honest and faithful in each next step.',
-    nextStep,
+    nextStep: `${nextStep} Keep this same daily reading window to build consistency.`,
     journalPrompt:
       'What do I want to bring before God first as this devotional path begins?',
     endnotes: [

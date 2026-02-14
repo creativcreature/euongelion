@@ -62,6 +62,21 @@ Still required for 10/10:
 2. Add inline source-to-text segment anchors for long assistant replies.
 3. Add explicit empty-state handling when no citations are produced.
 
+## Execution Update (2026-02-14 Onboarding Pass)
+
+Completed in this pass:
+
+1. Added explicit onboarding metadata propagation from selection/day APIs (`startPolicy`, variant, onboarding days, cycle start, timezone).
+2. Added visible onboarding variant context in Soul Audit results for Wed/Thu/Fri/weekend starts, including cycle start timestamp.
+3. Upgraded onboarding devotional fallback/title copy to variant-specific naming and cadence language.
+4. Added onboarding variant content tests to prevent regression.
+
+Still required for 10/10:
+
+1. Manual QA pass on onboarding variant messaging across desktop/mobile breakpoints.
+2. Add integration test coverage for API route metadata payloads under real plan-instance fetches.
+3. Add visual state chips for onboarding day progression in the left rail.
+
 ## Operating Rules
 
 1. Highest current score is capped at 5/10 per founder baseline.

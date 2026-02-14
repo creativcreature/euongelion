@@ -358,8 +358,8 @@ features:
     category: Devotional UX
     feature: Onboarding Wed/Thu/Fri variants
     slug: devotional-ux-onboarding-wed-thu-fri-variants
-    baseline_score: 4
-    status: planned
+    baseline_score: 5
+    status: in-progress
     prd: docs/feature-prds/F-032.md
     methodology_refs:
       - M00
