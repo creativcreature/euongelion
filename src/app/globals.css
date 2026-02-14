@@ -463,7 +463,8 @@
   min-height: calc(100vh - 1.4rem);
   border: 1.5px solid var(--color-border-strong);
   box-sizing: border-box;
-  overflow-x: clip;
+  overflow-x: visible;
+  overflow-y: visible;
 }
 
 .dark .newspaper-home {
@@ -520,7 +521,8 @@
   min-height: calc(100vh - 1.4rem);
   border: 1.5px solid var(--color-border-strong);
   box-sizing: border-box;
-  overflow-x: clip;
+  overflow-x: visible;
+  overflow-y: visible;
 }
 
 .dark .newspaper-reading {
@@ -2025,7 +2027,8 @@
   margin: 0 auto;
   border: var(--mock-stroke) solid var(--mock-line);
   background: var(--mock-paper);
-  overflow-x: clip;
+  overflow-x: visible;
+  overflow-y: visible;
 }
 
 .mock-shell-frame {

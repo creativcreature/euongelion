@@ -134,6 +134,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Sticky Container Overflow Hardening Pass (2026-02-14)
+
+### What Changed
+
+- Removed frame-level `overflow-x: clip` on the primary page containers (`mock-paper`, `newspaper-home`, `newspaper-reading`) and switched to visible overflow on wrappers.
+- This avoids sticky containment bugs that can cause the top strip/nav to stop sticking or get “pinned wrong” on inner routes in some browsers.
+- Kept global body-level horizontal overflow control in place so viewport side-scroll remains suppressed.
+
+### Files
+
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed
