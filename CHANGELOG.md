@@ -134,6 +134,31 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
+
+### What Changed
+
+- Made the top shell (`date strip + masthead + nav`) render as one canonical framed header across routes by introducing a shared shell frame wrapper in `EuangelionShellHeader`.
+- Added resilient header token fallbacks so the shell stays correctly positioned outside `mock-home` wrappers.
+- Added explicit `newspaper-home` / `newspaper-reading` shell-frame normalization so inner pages use the exact same top frame geometry as homepage (no offset/clamped header).
+- Updated sticky positioning to honor safe-area insets for topbar/nav so the header strip stays visible on mobile/PWA surfaces.
+- Hardened nav docking state updates with an `IntersectionObserver` assist to reduce missed dock transitions on non-home routes.
+- Updated mobile home hero artwork treatment to crop toward the top portion (zoomed/top-biased) instead of full contain fit.
+- Added extra mobile touch-scroll guards on horizontal rows to reduce “stuck scroll” behavior while swiping over carousels/rails.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx`
+
+---
+
 ## Archive + Bookmark + Contrast Pass (2026-02-14)
 
 ### What Changed

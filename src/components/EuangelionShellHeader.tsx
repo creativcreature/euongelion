@@ -175,12 +175,22 @@ export default function EuangelionShellHeader() {
       rafId = window.requestAnimationFrame(recomputeDockState)
     }
 
+    const observer =
+      typeof IntersectionObserver !== 'undefined'
+        ? new IntersectionObserver(queueDockState, {
+            root: null,
+            threshold: [0, 1],
+          })
+        : null
+    observer?.observe(sentinel)
+
     queueDockState()
     window.addEventListener('scroll', queueDockState, { passive: true })
     window.addEventListener('resize', queueDockState)
 
     return () => {
       if (rafId) window.cancelAnimationFrame(rafId)
+      observer?.disconnect()
       window.removeEventListener('scroll', queueDockState)
       window.removeEventListener('resize', queueDockState)
     }
@@ -286,78 +296,80 @@ export default function EuangelionShellHeader() {
   )
 
   return (
-    <header data-nav-docked={navDocked ? 'true' : 'false'}>
-      <div
-        ref={topbarRef}
-        className={`mock-topbar text-label ${navDocked ? 'is-nav-docked' : ''}`}
-      >
-        <div className="mock-topbar-desktop-row">
-          <span className="mock-topbar-date">{formatMastheadDate(now)}</span>
-          <span className="mock-topbar-center-copy">
-            Daily Devotionals for the Hungry Soul
-          </span>
-          <nav className="mock-topbar-nav mock-topbar-center-nav">
-            {renderNavLinks(NAV_ITEMS)}
-          </nav>
-          <button
-            type="button"
-            className="mock-mode-toggle text-label"
-            onClick={toggleTheme}
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+    <div className="mock-shell-frame">
+      <header data-nav-docked={navDocked ? 'true' : 'false'}>
+        <div
+          ref={topbarRef}
+          className={`mock-topbar text-label ${navDocked ? 'is-nav-docked' : ''}`}
+        >
+          <div className="mock-topbar-desktop-row">
+            <span className="mock-topbar-date">{formatMastheadDate(now)}</span>
+            <span className="mock-topbar-center-copy">
+              Daily Devotionals for the Hungry Soul
+            </span>
+            <nav className="mock-topbar-nav mock-topbar-center-nav">
+              {renderNavLinks(NAV_ITEMS)}
+            </nav>
+            <button
+              type="button"
+              className="mock-mode-toggle text-label"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
+            </button>
+          </div>
+
+          <div
+            className={`mock-topbar-mobile-row ${navDocked ? 'is-nav-docked' : ''}`}
           >
-            {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
-          </button>
+            {!navDocked ? (
+              mobileTickerItems.map((item, index) => (
+                <span
+                  key={`${item}-${index}`}
+                  className={`mock-topbar-mobile-item ${mobileTopbarIndex === index ? 'is-active' : ''}`}
+                >
+                  {item}
+                </span>
+              ))
+            ) : (
+              <div className="mock-topbar-mobile-nav">
+                <nav
+                  className="mock-mobile-nav-main-shell"
+                  aria-label="Sticky navigation"
+                >
+                  {renderMobileNav('mock-mobile-nav-panel')}
+                </nav>
+              </div>
+            )}
+          </div>
         </div>
+
+        <section className="mock-masthead-block">
+          <h1 className="text-masthead mock-masthead-word">
+            <span className="js-shell-masthead-fit mock-masthead-text">
+              EUANGELION
+            </span>
+          </h1>
+          <p className="mock-masthead-sub">GOOD NEWS COMING</p>
+        </section>
 
         <div
-          className={`mock-topbar-mobile-row ${navDocked ? 'is-nav-docked' : ''}`}
+          ref={navSentinelRef}
+          className="mock-nav-sentinel"
+          aria-hidden="true"
+        />
+
+        <nav
+          className={`mock-nav text-label ${navDocked ? 'is-docked' : ''}`}
+          aria-label="Main navigation"
+          aria-hidden={navDocked}
         >
-          {!navDocked ? (
-            mobileTickerItems.map((item, index) => (
-              <span
-                key={`${item}-${index}`}
-                className={`mock-topbar-mobile-item ${mobileTopbarIndex === index ? 'is-active' : ''}`}
-              >
-                {item}
-              </span>
-            ))
-          ) : (
-            <div className="mock-topbar-mobile-nav">
-              <nav
-                className="mock-mobile-nav-main-shell"
-                aria-label="Sticky navigation"
-              >
-                {renderMobileNav('mock-mobile-nav-panel')}
-              </nav>
-            </div>
-          )}
-        </div>
-      </div>
-
-      <section className="mock-masthead-block">
-        <h1 className="text-masthead mock-masthead-word">
-          <span className="js-shell-masthead-fit mock-masthead-text">
-            EUANGELION
-          </span>
-        </h1>
-        <p className="mock-masthead-sub">GOOD NEWS COMING</p>
-      </section>
-
-      <div
-        ref={navSentinelRef}
-        className="mock-nav-sentinel"
-        aria-hidden="true"
-      />
-
-      <nav
-        className={`mock-nav text-label ${navDocked ? 'is-docked' : ''}`}
-        aria-label="Main navigation"
-        aria-hidden={navDocked}
-      >
-        {isMobileViewport
-          ? renderMobileNav('mock-mobile-nav-panel')
-          : renderNavLinks(NAV_ITEMS)}
-      </nav>
-    </header>
+          {isMobileViewport
+            ? renderMobileNav('mock-mobile-nav-panel')
+            : renderNavLinks(NAV_ITEMS)}
+        </nav>
+      </header>
+    </div>
   )
 }
