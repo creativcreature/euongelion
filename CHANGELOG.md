@@ -427,6 +427,25 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Error Copy Pass (2026-02-14)
+
+### What Changed
+
+- Reworded `NO_CURATED_OPTIONS` submit-path error copy to be user-actionable and non-technical.
+- New message asks for one more sentence instead of implying backend content-sync failure.
+
+### Files
+
+- `src/app/api/soul-audit/submit/route.ts`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/soul-audit-flow.test.ts`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed

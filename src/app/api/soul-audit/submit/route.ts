@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           error:
-            'No curated options are available right now. Please refresh and try again.',
+            'We could not assemble devotional options from your response yet. Add one more sentence and try again.',
           code: 'NO_CURATED_OPTIONS',
         },
         { status: 409 },
