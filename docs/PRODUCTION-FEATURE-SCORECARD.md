@@ -1,8 +1,14 @@
 # Production Feature Scorecard
 
-Last Updated: 2026-02-13
+Last Updated: 2026-02-14
 Owner: Product + Engineering
 Scoring Rule: Per founder direction, current scores are capped at **5/10** maximum. Every row includes a path to verified 10/10.
+
+## PRD Linkage
+
+1. Canonical feature PRD index: `docs/feature-prds/FEATURE-PRD-INDEX.md`
+2. Canonical machine registry: `docs/feature-prds/FEATURE-PRD-REGISTRY.yaml`
+3. Every score change must be reflected in the matching `docs/feature-prds/F-xxx.md` outcomes log.
 
 ## Evaluation Sources
 

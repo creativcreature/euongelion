@@ -1,8 +1,22 @@
 # Production 10/10 Plan
 
-Last Updated: 2026-02-13
+Last Updated: 2026-02-14
 Owner: Product + Engineering
 Objective: Move every scorecard category to verified **10/10** with evidence, not claims.
+
+## Execution Ordering (Locked)
+
+1. Layout
+2. Chat
+3. Onboarding
+4. Remaining features in PRD registry order with dependency constraints
+5. App Store release gate and submission preparation
+
+## PRD Operating System Requirement
+
+1. Every tracked feature is represented in `docs/feature-prds/F-xxx.md`.
+2. PRD outcomes log updates are required with feature code changes.
+3. Methodology mapping is required per PRD (`M00` + one or more source methods).
 
 ## Execution Update (2026-02-13 Pass C)
 

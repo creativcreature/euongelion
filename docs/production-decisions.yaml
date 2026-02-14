@@ -1,5 +1,5 @@
 version: 1
-updated_at: 2026-02-13
+updated_at: 2026-02-14
 
 decisions:
   - id: SA-001
@@ -28,6 +28,14 @@ decisions:
     title: claude-doc-must-reference-production-tracking-stack
   - id: SA-013
     title: ux-alignment-docs-required-for-user-facing-decisions
+  - id: SA-014
+    title: one-prd-per-feature-with-outcomes-log-required
+  - id: SA-015
+    title: methodology-traceability-required-for-feature-work
+  - id: SA-016
+    title: frozen-user-reference-directories-must-not-be-removed-or-renamed
+  - id: SA-017
+    title: app-store-release-gate-must-pass-before-submission
 
 contracts:
   required_files:
@@ -67,6 +75,13 @@ contracts:
     - docs/PUBLIC-FACING-LANGUAGE.md
     - docs/UX-FLOW-MAPS.md
     - docs/SUCCESS-METRICS.md
+    - docs/feature-prds/FEATURE-PRD-INDEX.md
+    - docs/feature-prds/FEATURE-PRD-REGISTRY.yaml
+    - docs/methodology/M00-EUANGELION-UNIFIED-METHODOLOGY.md
+    - docs/methodology/M00-METHODOLOGY-TRACEABILITY-MATRIX.md
+    - docs/methodology/METHOD-SOURCE-INDEX.md
+    - docs/appstore/APP-STORE-RELEASE-GATE.md
+    - docs/REFERENCE-FOLDERS-INDEX.md
   required_claude_references:
     - docs/PRODUCTION-SOURCE-OF-TRUTH.md
     - docs/production-decisions.yaml
@@ -77,4 +92,32 @@ contracts:
     - docs/PUBLIC-FACING-LANGUAGE.md
     - docs/UX-FLOW-MAPS.md
     - docs/SUCCESS-METRICS.md
+    - docs/feature-prds/FEATURE-PRD-INDEX.md
+    - docs/feature-prds/FEATURE-PRD-REGISTRY.yaml
+    - docs/methodology/M00-EUANGELION-UNIFIED-METHODOLOGY.md
+    - docs/appstore/APP-STORE-RELEASE-GATE.md
+    - docs/REFERENCE-FOLDERS-INDEX.md
     - CHANGELOG.md
+  required_prd_dirs:
+    - docs/feature-prds
+    - docs/methodology
+    - docs/appstore
+    - docs/runbooks
+  required_methodology_docs:
+    - docs/methodology/M00-EUANGELION-UNIFIED-METHODOLOGY.md
+    - docs/methodology/M00-METHODOLOGY-TRACEABILITY-MATRIX.md
+    - docs/methodology/M00-DUPLICATION-RESOLUTION-LOG.md
+    - docs/methodology/METHOD-SOURCE-INDEX.md
+    - docs/methodology/M01-ENGENIUS-SITE-ARCHITECTURE.md
+    - docs/methodology/M02-SAAS-WEB-BEST-PRACTICES.md
+    - docs/methodology/M03-USERLYTICS-IA-RESEARCH.md
+    - docs/methodology/M04-NAVIGATION-DESIGN-BEST-PRACTICES.md
+    - docs/methodology/M05-BAYMARD-SELF-SERVICE-UX.md
+    - docs/methodology/M06-CONNECTIVE-IA-UX-STRATEGY.md
+  required_appstore_docs:
+    - docs/appstore/APP-STORE-RELEASE-GATE.md
+    - docs/appstore/APP-STORE-ASSET-TRACKER.md
+    - docs/appstore/APP-REVIEW-NOTES-TEMPLATE.md
+  frozen_reference_dirs:
+    - user-references
+    - docs/user refmat

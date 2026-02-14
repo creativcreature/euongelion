@@ -35,6 +35,58 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Production Governance Bootstrap Hardening (2026-02-14)
+
+### What Changed
+
+- Added feature PRD operating system:
+  - generated canonical feature PRDs (`F-001` to `F-050`) under `docs/feature-prds/`
+  - added machine registry + index:
+    - `docs/feature-prds/FEATURE-PRD-REGISTRY.yaml`
+    - `docs/feature-prds/FEATURE-PRD-INDEX.md`
+- Added unified methodology pack for IA/navigation/UX flow alignment:
+  - `docs/methodology/M00-EUANGELION-UNIFIED-METHODOLOGY.md`
+  - `docs/methodology/M00-METHODOLOGY-TRACEABILITY-MATRIX.md`
+  - source-method docs + duplication-resolution artifacts in `docs/methodology/`
+- Added App Store release-gate documentation set:
+  - `docs/appstore/APP-STORE-RELEASE-GATE.md`
+  - `docs/appstore/APP-STORE-ASSET-TRACKER.md`
+  - `docs/appstore/APP-REVIEW-NOTES-TEMPLATE.md`
+- Added frozen reference-folder policy:
+  - `docs/REFERENCE-FOLDERS-INDEX.md`
+- Added enforcement scripts and wired them into project checks:
+  - `scripts/check-feature-prd-integrity.mjs`
+  - `scripts/check-feature-prd-update-link.mjs`
+  - `scripts/check-methodology-traceability.mjs`
+  - `scripts/check-folder-structure-integrity.mjs`
+  - `scripts/check-appstore-gate.mjs`
+  - updated `scripts/check-tracking-integrity.mjs`
+- Updated hooks/CI/contracts to enforce the new governance model:
+  - `.husky/pre-commit`
+  - `.github/workflows/ci.yml`
+  - `docs/production-decisions.yaml`
+  - `docs/PRODUCTION-SOURCE-OF-TRUTH.md`
+  - `docs/PRODUCTION-10-10-PLAN.md`
+  - `docs/PRODUCTION-FEATURE-SCORECARD.md`
+  - `docs/PRODUCTION-COMPACTION-HANDOFF.md`
+  - `CLAUDE.md`
+  - `package.json`
+
+### Validation
+
+- `npm run type-check`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run lint`
+- `npm test` (61 passing)
+- `npm run build` (passed)
+
+---
+
 ## Auth Callback Hardening + Home Active-Devotional UX (2026-02-13)
 
 ### What Changed

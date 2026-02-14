@@ -29,6 +29,18 @@ jobs:
       - name: Verify Tracking Integrity
         run: npm run verify:tracking
 
+      - name: Verify Feature PRD Integrity
+        run: npm run verify:feature-prds
+
+      - name: Verify Methodology Traceability
+        run: npm run verify:methodology-traceability
+
+      - name: Verify Folder Structure Integrity
+        run: npm run verify:folder-structure
+
+      - name: Verify App Store Gate
+        run: npm run verify:appstore-gate
+
       - name: Lint
         run: npm run lint
 

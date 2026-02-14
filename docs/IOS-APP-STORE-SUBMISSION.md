@@ -1,5 +1,7 @@
 # iOS App Store Submission Readiness
 
+Primary release checklist: `docs/appstore/APP-STORE-RELEASE-GATE.md`
+
 ## Implemented in repo
 
 - Native iOS target via Capacitor (`ios/App/App.xcodeproj`).

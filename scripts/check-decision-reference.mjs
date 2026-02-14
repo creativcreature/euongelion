@@ -34,3 +34,21 @@ if (!/\bSA-\d{3}\b/.test(message)) {
   )
   process.exit(1)
 }
+
+const featureIds = Array.from(new Set(message.match(/\bF-\d{3}\b/g) || []))
+if (featureIds.length === 0) {
+  console.error(
+    '\n⚠️  Feature commit messages must reference a feature PRD id (e.g., F-005).\n',
+  )
+  process.exit(1)
+}
+
+for (const featureId of featureIds) {
+  const expectedPrdPath = `docs/feature-prds/${featureId}.md`
+  if (!staged.includes(expectedPrdPath)) {
+    console.error(
+      `\n⚠️  Commit references ${featureId} but ${expectedPrdPath} is not staged.\n`,
+    )
+    process.exit(1)
+  }
+}

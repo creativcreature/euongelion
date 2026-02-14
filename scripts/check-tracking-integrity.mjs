@@ -90,9 +90,36 @@ if (!changelog.includes(`**Version:** ${version}`)) {
 if (!preCommit.includes('npm run verify:tracking')) {
   fail('.husky/pre-commit must run "npm run verify:tracking"')
 }
+if (!preCommit.includes('npm run verify:feature-prds')) {
+  fail('.husky/pre-commit must run "npm run verify:feature-prds"')
+}
+if (!preCommit.includes('npm run verify:feature-prd-link')) {
+  fail('.husky/pre-commit must run "npm run verify:feature-prd-link"')
+}
+if (!preCommit.includes('npm run verify:methodology-traceability')) {
+  fail('.husky/pre-commit must run "npm run verify:methodology-traceability"')
+}
+if (!preCommit.includes('npm run verify:folder-structure')) {
+  fail('.husky/pre-commit must run "npm run verify:folder-structure"')
+}
+if (!preCommit.includes('npm run verify:appstore-gate')) {
+  fail('.husky/pre-commit must run "npm run verify:appstore-gate"')
+}
 
 if (!ciWorkflow.includes('npm run verify:tracking')) {
   fail('.github/workflows/ci.yml must run "npm run verify:tracking"')
+}
+if (!ciWorkflow.includes('npm run verify:feature-prds')) {
+  fail('.github/workflows/ci.yml must run "npm run verify:feature-prds"')
+}
+if (!ciWorkflow.includes('npm run verify:methodology-traceability')) {
+  fail('.github/workflows/ci.yml must run "npm run verify:methodology-traceability"')
+}
+if (!ciWorkflow.includes('npm run verify:folder-structure')) {
+  fail('.github/workflows/ci.yml must run "npm run verify:folder-structure"')
+}
+if (!ciWorkflow.includes('npm run verify:appstore-gate')) {
+  fail('.github/workflows/ci.yml must run "npm run verify:appstore-gate"')
 }
 
 console.log('[tracking-integrity] OK')

@@ -111,6 +111,11 @@ These are mandatory every session and are the continuity backbone after context 
 4. `docs/PRODUCTION-10-10-PLAN.md` — gap-to-10 execution plan with acceptance criteria.
 5. `docs/PRODUCTION-COMPACTION-HANDOFF.md` — resume protocol and handoff checklist.
 6. `CHANGELOG.md` — historical log of shipped changes.
+7. `docs/feature-prds/FEATURE-PRD-INDEX.md` — canonical feature PRD list.
+8. `docs/feature-prds/FEATURE-PRD-REGISTRY.yaml` — machine-readable feature registry.
+9. `docs/methodology/M00-EUANGELION-UNIFIED-METHODOLOGY.md` — canonical IA/navigation UX method.
+10. `docs/appstore/APP-STORE-RELEASE-GATE.md` — release gate requirements.
+11. `docs/REFERENCE-FOLDERS-INDEX.md` — frozen reference folder policy.
 
 ## Product Alignment Docs (Required For UX Decisions)
 

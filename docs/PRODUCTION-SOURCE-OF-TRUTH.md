@@ -1,6 +1,6 @@
 # Production Source of Truth
 
-Last Updated: 2026-02-13
+Last Updated: 2026-02-14
 Owner: Product + Engineering
 Status: Authoritative
 
@@ -59,6 +59,19 @@ Euangelion Soul Audit and Devotional Engine are curated-first and selection-firs
 2. CI fails when required contracts are missing or stale.
 3. Feature commits must reference a production decision id.
 4. `CHANGELOG.md` remains historical log only.
+
+## Feature PRD Governance
+
+1. Every feature has a canonical PRD in `docs/feature-prds/F-xxx.md`.
+2. Feature code changes must update the matching PRD outcomes log.
+3. Feature commit messages must reference both `SA-xxx` and `F-xxx`.
+4. Baseline scoring is capped at 6 until founder elevates.
+5. Founder is the only authority to assign 10/10.
+
+## Folder Preservation Policy
+
+1. `user-references` and `docs/user refmat` are frozen directories.
+2. These directories must not be deleted, renamed, or moved by cleanup passes.
 
 ## Tracking + Versioning Contracts
 
