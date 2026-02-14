@@ -102,7 +102,7 @@ export default function EuangelionShellHeader() {
       if (!available || !natural || !Number.isFinite(currentSize)) return
 
       const nextSize = currentSize * (available / natural) * 0.996
-      span.style.fontSize = `${Math.max(36, nextSize)}px`
+      span.style.fontSize = `${Math.max(18, nextSize)}px`
     }
 
     const fitAll = () => spans.forEach(fitOne)

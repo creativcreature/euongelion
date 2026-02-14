@@ -37,6 +37,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ## Wake Up Page Restyle to Match Home Page (2026-02-14)
 
+## Mobile Shell Polish Pass (2026-02-14)
+
+### What Changed
+
+- Improved mobile shell rendering and stability:
+  - lowered masthead auto-fit minimum size so `EUANGELION` scales down cleanly on narrow widths without clipping.
+  - tightened mobile nav/ticker row layout and touch spacing.
+  - files:
+    - `src/components/EuangelionShellHeader.tsx`
+    - `src/app/globals.css`
+- Increased mobile readability and spacing consistency:
+  - responsive type scale adjustments for body/headline sizes on <=900px.
+  - improved panel/FAQ/textarea spacing and tap target comfort.
+  - files:
+    - `src/app/globals.css`
+- Reduced mobile overflow risk:
+  - enforced clipping at paper/shell boundaries and refined narrow-width card sizing (<=640px).
+  - files:
+    - `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test` (64 passing)
+
 ### What Changed
 
 - Restyled `/wake-up` page to use the `mock-*` CSS system matching the home page
