@@ -346,6 +346,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Docked Nav Focus-Safety Pass (2026-02-14)
+
+### What Changed
+
+- Marked collapsed main nav as `inert` while docked into the top strip.
+- Prevents hidden duplicate nav links from remaining keyboard-focusable during docked state.
+- Added tests to assert `inert` toggles correctly alongside docked/undocked nav state.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `__tests__/shell-header.test.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed

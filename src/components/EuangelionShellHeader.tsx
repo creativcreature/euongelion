@@ -377,6 +377,7 @@ export default function EuangelionShellHeader() {
           className={`mock-nav text-label ${navDocked ? 'is-docked' : ''}`}
           aria-label="Main navigation"
           aria-hidden={navDocked}
+          inert={navDocked}
         >
           {isMobileViewport
             ? renderMobileNav('mock-mobile-nav-panel')

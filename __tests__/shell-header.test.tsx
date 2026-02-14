@@ -109,6 +109,9 @@ describe('EuangelionShellHeader', () => {
         screen.getByLabelText('Main navigation').getAttribute('aria-hidden'),
       ).toBe('false')
     })
+    expect(screen.getByLabelText('Main navigation')).not.toHaveAttribute(
+      'inert',
+    )
 
     expect(
       container
@@ -130,6 +133,7 @@ describe('EuangelionShellHeader', () => {
         screen.getByLabelText('Main navigation').getAttribute('aria-hidden'),
       ).toBe('true')
     })
+    expect(screen.getByLabelText('Main navigation')).toHaveAttribute('inert')
 
     expect(
       container
