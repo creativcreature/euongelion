@@ -328,6 +328,24 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Mobile Gesture Interop Pass (2026-02-14)
+
+### What Changed
+
+- Updated touch-action policy on horizontal mobile rails/nav strips from `pan-y` to `pan-x pan-y`.
+- Allows both axis gestures so horizontal swipe zones do not fight vertical page scrolling.
+
+### Files
+
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed
