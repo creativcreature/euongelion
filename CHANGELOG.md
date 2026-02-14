@@ -308,6 +308,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Mobile Hero Crop Rebalance Pass (2026-02-14)
+
+### What Changed
+
+- Rebalanced homepage mobile hero image treatment to preserve a clearer “top two-thirds” composition:
+  - increased hero art slot minimum height,
+  - reduced zoom scale,
+  - shifted focal point slightly down from absolute top to avoid harsh clipping.
+
+### Files
+
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed

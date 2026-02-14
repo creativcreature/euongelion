@@ -3433,13 +3433,13 @@
   .mock-hero-art {
     border-left: 0;
     border-bottom: 1px solid var(--mock-line);
-    min-height: 200px;
+    min-height: 232px;
   }
 
   .mock-hero-art img {
     object-fit: cover;
-    object-position: center top;
-    transform: scale(1.14);
+    object-position: center 14%;
+    transform: scale(1.06);
     transform-origin: center top;
     padding: 0;
   }
