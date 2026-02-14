@@ -70,6 +70,24 @@ function formatDate(value: string): string {
   })
 }
 
+function resolveBookmarkHref(devotionalSlug: string): string {
+  const planMatch = devotionalSlug.match(/^plan-([a-f0-9-]+)-day-(\d+)$/i)
+  if (planMatch) {
+    const [, token, day] = planMatch
+    return `/soul-audit/results?planToken=${token}#plan-day-${day}`
+  }
+  return `/wake-up/devotional/${devotionalSlug}`
+}
+
+function resolveBookmarkLabel(devotionalSlug: string): string {
+  const planMatch = devotionalSlug.match(/^plan-([a-f0-9-]+)-day-(\d+)$/i)
+  if (!planMatch) {
+    return SLUG_META.get(devotionalSlug)?.title || devotionalSlug
+  }
+  const [, , day] = planMatch
+  return `Plan Day ${day}`
+}
+
 export default function DevotionalLibraryRail({
   className = '',
   initialTab = 'archive',
@@ -343,11 +361,10 @@ export default function DevotionalLibraryRail({
                       >
                         <div>
                           <Link
-                            href={`/wake-up/devotional/${bookmark.devotional_slug}`}
+                            href={resolveBookmarkHref(bookmark.devotional_slug)}
                             className="vw-small link-highlight text-secondary"
                           >
-                            {SLUG_META.get(bookmark.devotional_slug)?.title ||
-                              bookmark.devotional_slug}
+                            {resolveBookmarkLabel(bookmark.devotional_slug)}
                           </Link>
                           <p className="vw-small text-muted">
                             {bookmark.note || 'Saved bookmark'}

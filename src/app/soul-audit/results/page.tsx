@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import FadeIn from '@/components/motion/FadeIn'
 import { typographer } from '@/lib/typographer'
 import type {
@@ -190,6 +191,8 @@ export default function SoulAuditResultsPage() {
     useState<PlanOnboardingMeta | null>(
       initialSelection?.onboardingMeta ?? null,
     )
+  const [bookmarkingDay, setBookmarkingDay] = useState<number | null>(null)
+  const [savedDay, setSavedDay] = useState<number | null>(null)
 
   useEffect(() => {
     const fromStorage = loadSubmitResult()
@@ -498,6 +501,35 @@ export default function SoulAuditResultsPage() {
       )
     } finally {
       setSubmitting(false)
+    }
+  }
+
+  async function savePlanDayBookmark(day: CustomPlanDay) {
+    if (!planToken) return
+    setBookmarkingDay(day.day)
+    setSavedDay(null)
+
+    try {
+      const response = await fetch('/api/bookmarks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          devotionalSlug: `plan-${planToken}-day-${day.day}`,
+          note: day.title,
+        }),
+      })
+      if (!response.ok) {
+        throw new Error('Unable to save bookmark.')
+      }
+      setSavedDay(day.day)
+      window.dispatchEvent(new CustomEvent('libraryUpdated'))
+      window.setTimeout(() => {
+        setSavedDay((current) => (current === day.day ? null : current))
+      }, 1800)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Unable to save bookmark.')
+    } finally {
+      setBookmarkingDay((current) => (current === day.day ? null : current))
     }
   }
 
@@ -880,6 +912,23 @@ export default function SoulAuditResultsPage() {
                         {typographer(day.journalPrompt)}
                       </p>
                     </div>
+                    <div className="mt-4 flex flex-wrap items-center gap-3">
+                      <button
+                        type="button"
+                        className="text-label vw-small link-highlight"
+                        disabled={bookmarkingDay === day.day}
+                        onClick={() => void savePlanDayBookmark(day)}
+                      >
+                        {savedDay === day.day
+                          ? 'BOOKMARK SAVED'
+                          : bookmarkingDay === day.day
+                            ? 'SAVING...'
+                            : 'SAVE BOOKMARK'}
+                      </button>
+                      <span className="vw-small text-muted">
+                        Highlight any line to save a favorite verse.
+                      </span>
+                    </div>
                     {(day.endnotes?.length ?? 0) > 0 && (
                       <div className="mt-5 border-t pt-4">
                         <p className="text-label vw-small mb-2 text-gold">
@@ -942,6 +991,9 @@ export default function SoulAuditResultsPage() {
           </Link>
         </div>
       </main>
+      {planToken && (
+        <TextHighlightTrigger devotionalSlug={`plan-${planToken}`} />
+      )}
     </div>
   )
 }

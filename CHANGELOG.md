@@ -35,6 +35,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Archive + Bookmark + Contrast Pass (2026-02-14)
+
+### What Changed
+
+- Improved archive access usability for Soul Audit plans:
+  - archive API day links now deep-link to specific plan days (`#plan-day-{n}`).
+- Improved bookmark flow across curated plan output:
+  - added per-day bookmark action on Soul Audit results plan cards.
+  - added bookmark route parsing for AI-plan bookmarks in library rail (so plan bookmarks open the correct results route instead of a missing wake-up slug).
+- Improved readability on blue-highlight interactions:
+  - FAQ hover/active state now explicitly sets readable question/answer colors.
+
+### Files
+
+- `src/app/api/soul-audit/archive/route.ts`
+- `src/components/DevotionalLibraryRail.tsx`
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+
+---
+
 ## Navigation Timing + Devotional Spacing Refinement (2026-02-14)
 
 ### What Changed

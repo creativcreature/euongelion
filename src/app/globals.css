@@ -2651,6 +2651,18 @@
   color: #f3eadb;
 }
 
+.mock-faq-card:hover .mock-faq-question,
+.mock-faq-card:focus .mock-faq-question,
+.mock-faq-card.is-active .mock-faq-question {
+  color: #f3eadb;
+}
+
+.mock-faq-card:hover .mock-faq-answer,
+.mock-faq-card:focus .mock-faq-answer,
+.mock-faq-card.is-active .mock-faq-answer {
+  color: color-mix(in srgb, #f3eadb 88%, white 12%);
+}
+
 .mock-faq-card:focus-visible {
   outline: 2px solid var(--mock-line);
   outline-offset: -2px;
