@@ -408,6 +408,25 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Build Runtime Guard Pass (2026-02-14)
+
+### What Changed
+
+- Added explicit Node runtime guard script for build pipeline.
+- `npm run build` now fails fast with a clear message when Node is outside the supported engine range (`>=20.10 <25`), avoiding opaque webpack crashes.
+
+### Files
+
+- `scripts/check-node-version.mjs`
+- `package.json`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed
