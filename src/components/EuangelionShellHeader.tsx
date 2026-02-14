@@ -13,7 +13,7 @@ const NAV_ITEMS = [
   { href: '/settings', label: 'SETTINGS' },
 ]
 const MOBILE_PRIMARY_NAV_PATHS = ['/', '/my-devotional', '/soul-audit']
-const MOBILE_TICKER_INTERVAL_MS = 4600
+const MOBILE_TICKER_INTERVAL_MS = 6200
 
 function getInitialTheme(): 'light' | 'dark' {
   if (typeof window === 'undefined') return 'light'

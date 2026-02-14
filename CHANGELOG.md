@@ -195,6 +195,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Mobile Topbar Cadence Refinement Pass (2026-02-14)
+
+### What Changed
+
+- Slowed mobile topbar ticker cadence from `4600ms` to `6200ms`.
+- Increased mobile topbar fade transition to `4200ms` for softer cross-fades between date/slogan/mode labels.
+- Maintains reduced-motion guard behavior by keeping ticker disabled when reduced motion is enabled.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed
