@@ -126,6 +126,11 @@ When changing user-facing behavior, these must be consulted in addition to the t
 3. `docs/UX-FLOW-MAPS.md` — intended journey sequencing and decision points.
 4. `docs/SUCCESS-METRICS.md` — what “good flow” should optimize for.
 
+## Operating Playbooks
+
+1. `docs/runbooks/NEXT-SESSION-OPERATING-RUNBOOK.md` — exact protocol for continuing work in the next terminal session with no contract drift.
+2. `docs/process/FUTURE-APP-ENVIRONMENT-PLAYBOOK.md` — reusable environment bootstrap and governance model for future app projects.
+
 Before commit/PR:
 
 ```bash

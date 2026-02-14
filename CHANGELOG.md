@@ -65,6 +65,38 @@ Format: Reverse chronological, grouped by sprint/date.
 - `npm run lint`
 - `npm test` (64 passing)
 
+## Process Documentation Handoff + Environment Playbook (2026-02-14)
+
+### What Changed
+
+- Added a repository-specific runbook for next terminal session continuity:
+  - startup sequence
+  - required document read order
+  - verification stack
+  - commit message and traceability rules
+  - push/deploy account safety checks
+  - handoff template and failure recovery
+- Added a reusable, general environment playbook for future app projects:
+  - scaffold baseline
+  - governance model
+  - delivery cycle
+  - traceability contract
+  - security/compliance baseline
+  - anti-drift checklist
+- Linked both docs from core guidance docs so future sessions discover them immediately.
+
+### Files
+
+- `docs/runbooks/NEXT-SESSION-OPERATING-RUNBOOK.md`
+- `docs/process/FUTURE-APP-ENVIRONMENT-PLAYBOOK.md`
+- `docs/runbooks/README.md`
+- `CLAUDE.md`
+
+### Validation
+
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+
 ## Breadcrumb Navigation Pass (2026-02-14)
 
 ### What Changed
