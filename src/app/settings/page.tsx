@@ -244,10 +244,7 @@ export default function SettingsPage() {
     return (
       <div className="newspaper-home min-h-screen">
         <EuangelionShellHeader />
-        <main
-          id="main-content"
-          className="mx-auto max-w-2xl px-6 pb-32 pt-12 md:px-[60px] md:pb-48 md:pt-20"
-        >
+        <main id="main-content" className="shell-content-pad mx-auto max-w-2xl">
           <h1 className="text-display vw-heading-lg mb-12">Settings</h1>
         </main>
       </div>
@@ -258,10 +255,7 @@ export default function SettingsPage() {
     <div className="newspaper-home min-h-screen">
       <EuangelionShellHeader />
 
-      <main
-        id="main-content"
-        className="mx-auto max-w-2xl px-6 pb-32 pt-12 md:px-[60px] md:pb-48 md:pt-20"
-      >
+      <main id="main-content" className="shell-content-pad mx-auto max-w-2xl">
         <h1 className="text-display vw-heading-lg mb-12">Settings</h1>
 
         {/* Theme */}

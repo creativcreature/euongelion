@@ -109,7 +109,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
     return (
       <div className="newspaper-home min-h-screen bg-page">
         <EuangelionShellHeader />
-        <main className="devotional-shell-main mx-auto max-w-6xl px-6 pb-24 pt-10 md:px-12">
+        <main className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
           <Breadcrumbs
             className="mb-7"
             items={[
@@ -134,7 +134,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
     return (
       <div className="newspaper-home min-h-screen bg-page">
         <EuangelionShellHeader />
-        <main className="devotional-shell-main mx-auto max-w-6xl px-6 pb-24 pt-10 md:px-12">
+        <main className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
           <Breadcrumbs
             className="mb-7"
             items={[
@@ -174,7 +174,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
       <ScrollProgress />
       <EuangelionShellHeader />
 
-      <main className="devotional-shell-main mx-auto max-w-6xl px-6 pb-24 pt-10 md:px-12">
+      <main className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
         <Breadcrumbs
           className="devotional-shell-breadcrumb mb-7"
           items={[

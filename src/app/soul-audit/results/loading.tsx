@@ -6,7 +6,7 @@ export default function SoulAuditResultsLoading() {
     <div className="newspaper-home min-h-screen">
       <EuangelionShellHeader />
 
-      <div className="mx-auto max-w-7xl px-6 pb-32 pt-12 md:px-[60px] md:pb-48 md:pt-20 lg:px-20">
+      <div className="shell-content-pad mx-auto max-w-7xl lg:px-20">
         {/* Header */}
         <div className="mb-12 text-center">
           <Skeleton className="mx-auto mb-6 h-4 w-48" />

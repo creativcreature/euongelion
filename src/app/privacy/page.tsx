@@ -26,10 +26,7 @@ export default async function PrivacyPage() {
     <div className="newspaper-home min-h-screen">
       <EuangelionShellHeader />
 
-      <main
-        id="main-content"
-        className="mx-auto max-w-3xl px-6 pb-32 pt-12 md:px-[60px] md:pb-48 md:pt-20"
-      >
+      <main id="main-content" className="shell-content-pad mx-auto max-w-3xl">
         <p className="vw-small mb-8 text-muted">Last updated: {lastUpdated}</p>
         <div
           className="prose-legal"

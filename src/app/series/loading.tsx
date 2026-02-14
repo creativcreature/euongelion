@@ -6,7 +6,7 @@ export default function SeriesLoading() {
     <div className="newspaper-home min-h-screen">
       <EuangelionShellHeader />
 
-      <div className="mx-auto max-w-7xl px-6 pb-32 pt-12 md:px-[60px] md:pb-48 md:pt-20 lg:px-20">
+      <div className="shell-content-pad mx-auto max-w-7xl lg:px-20">
         {/* Header */}
         <div className="mb-16">
           <Skeleton className="mb-8 h-12 w-64" />

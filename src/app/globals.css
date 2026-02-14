@@ -2070,6 +2070,13 @@
   font-kerning: none;
 }
 
+.shell-content-pad {
+  padding-top: clamp(1.5rem, 2.5vw, 2.4rem);
+  padding-bottom: clamp(4rem, 6.5vw, 6rem);
+  padding-left: clamp(1rem, 2vw, 1.5rem);
+  padding-right: clamp(1rem, 2vw, 1.5rem);
+}
+
 .app-breadcrumbs {
   border: var(--mock-stroke, 1px) solid
     var(--color-border-strong, var(--mock-line, #2e3880));

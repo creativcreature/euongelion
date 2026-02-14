@@ -255,6 +255,37 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Cross-Page Shell Spacing Rhythm Pass (2026-02-14)
+
+### What Changed
+
+- Added shared `.shell-content-pad` spacing utility to align top/bottom/side rhythm across non-home pages.
+- Applied unified shell spacing to:
+  - soul-audit results + loading,
+  - devotional detail (all states),
+  - settings, terms, privacy,
+  - series loading.
+- Reduces “pushed/misaligned” feeling between home shell and inner-page content bands.
+
+### Files
+
+- `src/app/globals.css`
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/soul-audit/results/loading.tsx`
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+- `src/app/settings/page.tsx`
+- `src/app/terms/page.tsx`
+- `src/app/privacy/page.tsx`
+- `src/app/series/loading.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed
