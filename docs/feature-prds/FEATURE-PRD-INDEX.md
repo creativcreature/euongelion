@@ -13,8 +13,8 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-007 | Homepage UX       | Primary CTA clarity                           | 5/10     | planned     | [F-007.md](./F-007.md) |
 | F-008 | Homepage UX       | FAQ interaction model                         | 4/10     | planned     | [F-008.md](./F-008.md) |
 | F-009 | Navigation        | Sticky desktop nav                            | 4/10     | planned     | [F-009.md](./F-009.md) |
-| F-010 | Navigation        | Sticky mobile nav                             | 4/10     | planned     | [F-010.md](./F-010.md) |
-| F-011 | Navigation        | Menu correctness                              | 4/10     | planned     | [F-011.md](./F-011.md) |
+| F-010 | Navigation        | Sticky mobile nav                             | 4/10     | in-progress | [F-010.md](./F-010.md) |
+| F-011 | Navigation        | Menu correctness                              | 4/10     | in-progress | [F-011.md](./F-011.md) |
 | F-012 | Typography        | Instrument Serif coverage                     | 4/10     | planned     | [F-012.md](./F-012.md) |
 | F-013 | Typography        | Industry UI/meta coverage                     | 4/10     | planned     | [F-013.md](./F-013.md) |
 | F-014 | Typography        | Readability floor                             | 4/10     | planned     | [F-014.md](./F-014.md) |
@@ -24,11 +24,11 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-018 | Motion            | Scroll reveal restraint                       | 4/10     | planned     | [F-018.md](./F-018.md) |
 | F-019 | Soul Audit        | Submit contract (options-only)                | 5/10     | planned     | [F-019.md](./F-019.md) |
 | F-020 | Soul Audit        | Consent gate                                  | 5/10     | planned     | [F-020.md](./F-020.md) |
-| F-021 | Soul Audit        | 3 AI + 2 prefab split                         | 5/10     | planned     | [F-021.md](./F-021.md) |
+| F-021 | Soul Audit        | 3 AI + 2 prefab split                         | 5/10     | in-progress | [F-021.md](./F-021.md) |
 | F-022 | Soul Audit        | Selection locking                             | 5/10     | planned     | [F-022.md](./F-022.md) |
-| F-023 | Soul Audit        | Curated curation quality                      | 4/10     | planned     | [F-023.md](./F-023.md) |
+| F-023 | Soul Audit        | Curated curation quality                      | 4/10     | in-progress | [F-023.md](./F-023.md) |
 | F-024 | Soul Audit        | Crisis path                                   | 4/10     | planned     | [F-024.md](./F-024.md) |
-| F-025 | Devotional Engine | Curated-first assembly                        | 4/10     | planned     | [F-025.md](./F-025.md) |
+| F-025 | Devotional Engine | Curated-first assembly                        | 4/10     | in-progress | [F-025.md](./F-025.md) |
 | F-026 | Devotional Engine | 80/20 curation/generation                     | 4/10     | planned     | [F-026.md](./F-026.md) |
 | F-027 | Devotional Engine | Endnotes output                               | 4/10     | planned     | [F-027.md](./F-027.md) |
 | F-028 | Devotional Engine | Length/depth quality                          | 4/10     | planned     | [F-028.md](./F-028.md) |

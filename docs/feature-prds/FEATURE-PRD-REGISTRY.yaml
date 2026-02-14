@@ -102,7 +102,7 @@ features:
     feature: Sticky mobile nav
     slug: navigation-sticky-mobile-nav
     baseline_score: 4
-    status: planned
+    status: in-progress
     prd: docs/feature-prds/F-010.md
     methodology_refs:
       - M00
@@ -114,7 +114,7 @@ features:
     feature: Menu correctness
     slug: navigation-menu-correctness
     baseline_score: 4
-    status: planned
+    status: in-progress
     prd: docs/feature-prds/F-011.md
     methodology_refs:
       - M00
@@ -227,7 +227,7 @@ features:
     feature: 3 AI + 2 prefab split
     slug: soul-audit-3-ai-plus-2-prefab-split
     baseline_score: 5
-    status: planned
+    status: in-progress
     prd: docs/feature-prds/F-021.md
     methodology_refs:
       - M00
@@ -251,7 +251,7 @@ features:
     feature: Curated curation quality
     slug: soul-audit-curated-curation-quality
     baseline_score: 4
-    status: planned
+    status: in-progress
     prd: docs/feature-prds/F-023.md
     methodology_refs:
       - M00
@@ -275,7 +275,7 @@ features:
     feature: Curated-first assembly
     slug: devotional-engine-curated-first-assembly
     baseline_score: 4
-    status: planned
+    status: in-progress
     prd: docs/feature-prds/F-025.md
     methodology_refs:
       - M00

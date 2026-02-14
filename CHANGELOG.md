@@ -60,6 +60,35 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Curation Reliability Pass (2026-02-14)
+
+### What Changed
+
+- Hardened curation candidate availability:
+  - added repository-backed metadata fallback candidates when curated module catalogs are unavailable at runtime.
+- Hardened curation split reliability:
+  - prioritized options from series with complete 5-day candidate coverage to reduce downstream selection failures.
+- Improved curated plan assembly coherence:
+  - plan builder now prioritizes preferred-series day flow first, then fills from ranked corpus only when necessary.
+- Added explicit regression tests for curation reliability:
+  - candidate pool existence + complete-series coverage.
+  - first AI option selection must return a plan token.
+
+### Files
+
+- `src/lib/soul-audit/curation-engine.ts`
+- `src/lib/soul-audit/matching.ts`
+- `src/lib/soul-audit/curated-builder.ts`
+- `__tests__/soul-audit-curation.test.ts`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/soul-audit-curation.test.ts __tests__/soul-audit-flow.test.ts __tests__/soul-audit-edge-cases.test.ts`
+
+---
+
 ## Archive + Bookmark + Contrast Pass (2026-02-14)
 
 ### What Changed

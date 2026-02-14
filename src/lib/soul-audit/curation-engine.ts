@@ -29,6 +29,13 @@ function toLine(value: unknown): string {
     : ''
 }
 
+function clampText(value: string, maxLength: number): string {
+  const normalized = value.replace(/\s+/g, ' ').trim()
+  if (!normalized) return ''
+  if (normalized.length <= maxLength) return normalized
+  return `${normalized.slice(0, maxLength - 3).trimEnd()}...`
+}
+
 function moduleText(
   module: Record<string, unknown> | undefined,
   keys: string[],
@@ -86,6 +93,68 @@ export function expandSemanticHints(input: string): string {
     }
   }
   return expanded
+}
+
+function deriveFrameworkReference(value: string): string {
+  if (!value) return ''
+  const [reference] = value.split(' - ')
+  return reference?.trim() || value.trim()
+}
+
+function buildSeriesMetadataFallbackCandidates(): CuratedDayCandidate[] {
+  const fallbackCandidates: CuratedDayCandidate[] = []
+  const sourcePath = 'src/data/series.ts (metadata fallback)'
+
+  for (const [slug, series] of Object.entries(SERIES_DATA)) {
+    const frameworkReference = deriveFrameworkReference(series.framework)
+    const teachingBase = clampText(
+      `${series.introduction} ${series.context}`,
+      320,
+    )
+
+    for (const day of series.days) {
+      const dayKey = `${slug}:${day.day}:metadata`
+      const dayTitle = day.title.trim() || `Day ${day.day}`
+      const reflectionPrompt =
+        series.question.trim() ||
+        `What is one honest response you have to "${dayTitle}" today?`
+      const prayerText = `Jesus, meet me in "${dayTitle}" today. Teach me to walk in truth, humility, and faithful action.`
+      const takeawayText = `Practice "${dayTitle}" in one concrete action before the day ends.`
+      const scriptureText = clampText(
+        `${series.framework}. ${series.introduction}`,
+        280,
+      )
+
+      fallbackCandidates.push({
+        key: dayKey,
+        seriesSlug: slug,
+        seriesTitle: series.title,
+        sourcePath,
+        dayNumber: day.day,
+        dayTitle,
+        scriptureReference: frameworkReference || series.framework,
+        scriptureText,
+        teachingText: teachingBase || scriptureText,
+        reflectionPrompt,
+        prayerText,
+        takeawayText,
+        searchText: [
+          slug,
+          series.title,
+          dayTitle,
+          series.question,
+          series.framework,
+          series.introduction,
+          series.context,
+          ...series.keywords,
+        ]
+          .join(' ')
+          .toLowerCase(),
+      })
+    }
+  }
+
+  return fallbackCandidates
 }
 
 let cachedCandidates: CuratedDayCandidate[] | null = null
@@ -168,6 +237,10 @@ export function getCuratedDayCandidates(): CuratedDayCandidate[] {
         searchText,
       })
     }
+  }
+
+  if (candidates.length === 0) {
+    candidates.push(...buildSeriesMetadataFallbackCandidates())
   }
 
   cachedCandidates = candidates

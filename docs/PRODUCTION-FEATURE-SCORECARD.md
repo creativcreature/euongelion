@@ -60,11 +60,11 @@ Scoring Rule: Per founder direction, current scores are capped at **5/10** maxim
 | Motion            | Scroll reveal restraint                       |       4 |   6 | Keep reveals boundary-only, never body-copy jitter                                                 | [Medium](https://medium.com/) reading comfort model                          |
 | Soul Audit        | Submit contract (options-only)                |       5 |   5 | Keep staged API contract tests and forbidden-token checks                                          | Progressive disclosure best practice                                         |
 | Soul Audit        | Consent gate                                  |       5 |   5 | Maintain essential-only gate and optional analytics OFF                                            | [Headspace privacy UX](https://www.headspace.com/)                           |
-| Soul Audit        | 3 AI + 2 prefab split                         |       5 |   5 | Keep split assertions and telemetry drift checks                                                   | Editorial rail balancing pattern                                             |
+| Soul Audit        | 3 AI + 2 prefab split                         |       7 |   3 | Keep split assertions and add live telemetry for fallback-series usage                             | Editorial rail balancing pattern                                             |
 | Soul Audit        | Selection locking                             |       5 |   5 | Persist selection idempotently and guard duplicate submits                                         | Checkout idempotency patterns                                                |
-| Soul Audit        | Curated curation quality                      |       4 |   6 | Expose provenance metadata from modules/reference volumes                                          | Human+AI editorial attribution models                                        |
+| Soul Audit        | Curated curation quality                      |       7 |   3 | Add founder-curated relevance QA set and rank explainability traces                                | Human+AI editorial attribution models                                        |
 | Soul Audit        | Crisis path                                   |       4 |   6 | Add explicit ack checkpoints with tested continuation paths                                        | Mental-health product crisis flows                                           |
-| Devotional Engine | Curated-first assembly                        |       4 |   6 | Enforce missing-core fail-closed before render                                                     | Content safety governance                                                    |
+| Devotional Engine | Curated-first assembly                        |       7 |   3 | Add observability on cross-series fallback and tighten curation quality thresholds                 | Content safety governance                                                    |
 | Devotional Engine | 80/20 curation/generation                     |       4 |   6 | Add measurable module contribution telemetry                                                       | Human-in-the-loop generation standards                                       |
 | Devotional Engine | Endnotes output                               |       4 |   6 | Require structured source endnotes per generated section                                           | Citation integrity pattern                                                   |
 | Devotional Engine | Length/depth quality                          |       4 |   6 | Add min section-length and narrative coherence checks                                              | High-quality editorial standards                                             |
@@ -98,7 +98,7 @@ Scoring Rule: Per founder direction, current scores are capped at **5/10** maxim
 | Governance + Tracking           |  5/10 |
 | User Flow + Navigation          |  6/10 |
 | Typography + Motion             |  4/10 |
-| Soul Audit + Curation Engine    |  4/10 |
+| Soul Audit + Curation Engine    |  5/10 |
 | Devotional Experience + Library |  4/10 |
 | Reliability + Security          |  5/10 |
 | Accessibility + Performance     |  4/10 |

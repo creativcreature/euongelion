@@ -139,3 +139,13 @@ npm run build
 - Score changes: F-034 raised from 4/10 to 5/10 engineering baseline; F-033 remained 5/10 with stronger contract coverage.
 - Blockers: Manual QA evidence capture remains for mobile citation readability and long-response source density.
 - Next steps: Execute Onboarding phase (F-032), then devotional-home continuity and left-rail parity features (F-029/F-030/F-031).
+
+### Continuity Snapshot (2026-02-14 12:50 local)
+
+- Scope completed: Navigation IA hardening pass + Soul Audit curation reliability pass (candidate fallback, split robustness, coherent plan selection).
+- Decision ids touched: SA-002, SA-005, SA-013, SA-014, SA-015.
+- Feature ids touched: F-010, F-011, F-021, F-023, F-025.
+- Verification run: `type-check`, `lint`, `test` (`shell-header`, `soul-audit-curation`, `soul-audit-flow`, `soul-audit-edge-cases`), `verify:production-contracts`, `verify:tracking`, `verify:feature-prds`, `verify:feature-prd-link`, `verify:methodology-traceability`, `verify:folder-structure`, `verify:appstore-gate` passed.
+- Score changes: Navigation and Soul Audit curation rows increased in scorecard; User Flow + Navigation moved to 6/10, Soul Audit + Curation Engine moved to 5/10.
+- Blockers: Manual QA evidence for route walkthrough and mobile touch behavior still required before higher score promotion.
+- Next steps: Execute devotional-home continuity and left-rail parity pass (F-029/F-030/F-031), then typography/motion polish pass with manual evidence capture.

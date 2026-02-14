@@ -77,6 +77,21 @@ Still required for 10/10:
 2. Add integration test coverage for API route metadata payloads under real plan-instance fetches.
 3. Add visual state chips for onboarding day progression in the left rail.
 
+## Execution Update (2026-02-14 Curation Reliability Pass)
+
+Completed in this pass:
+
+1. Added repository-backed metadata fallback candidates when curated catalog files are unavailable at runtime.
+2. Hardened option split quality by preferring series with complete 5-day candidate coverage.
+3. Improved plan assembly coherence by prioritizing preferred-series day flow before ranked cross-series fallback.
+4. Added dedicated curation reliability test coverage (`__tests__/soul-audit-curation.test.ts`).
+
+Still required for 10/10:
+
+1. Founder-led relevance QA dataset pass against real audit inputs.
+2. Selection-level observability on fallback usage and relevance drift.
+3. Manual desktop/mobile walkthrough evidence for option quality and plan specificity.
+
 ## Operating Rules
 
 1. Highest current score is capped at 5/10 per founder baseline.

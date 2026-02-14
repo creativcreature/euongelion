@@ -163,7 +163,28 @@ function choosePrimaryMatches(input: string): Array<{
   confidence: number
   matched: string[]
 }> {
-  const ranked = rankCandidatesForInput({ input })
+  const candidates = getCuratedDayCandidates()
+  const eligibleSeries = new Set<string>()
+  const countsBySeries = new Map<string, Set<number>>()
+
+  for (const candidate of candidates) {
+    if (!countsBySeries.has(candidate.seriesSlug)) {
+      countsBySeries.set(candidate.seriesSlug, new Set<number>())
+    }
+    countsBySeries.get(candidate.seriesSlug)?.add(candidate.dayNumber)
+  }
+
+  for (const [seriesSlug, daySet] of countsBySeries.entries()) {
+    if (daySet.size >= 5) {
+      eligibleSeries.add(seriesSlug)
+    }
+  }
+
+  const ranked = rankCandidatesForInput({ input }).filter((entry) =>
+    eligibleSeries.size === 0
+      ? true
+      : eligibleSeries.has(entry.candidate.seriesSlug),
+  )
   if (ranked.length === 0) return []
 
   const topScore = Math.max(1, ranked[0]?.score ?? 1)
@@ -257,14 +278,24 @@ function makeOption(params: {
 }
 
 function getPrefabSlugs(primarySlugs: string[]): string[] {
+  const countsBySeries = new Map<string, Set<number>>()
+  for (const candidate of getCuratedDayCandidates()) {
+    if (!countsBySeries.has(candidate.seriesSlug)) {
+      countsBySeries.set(candidate.seriesSlug, new Set<number>())
+    }
+    countsBySeries.get(candidate.seriesSlug)?.add(candidate.dayNumber)
+  }
+
   const curatedSeries = new Set(
-    getCuratedDayCandidates().map((candidate) => candidate.seriesSlug),
+    Array.from(countsBySeries.entries())
+      .filter(([, days]) => days.size >= 5)
+      .map(([seriesSlug]) => seriesSlug),
   )
 
   const preferred = PREFAB_FALLBACK_SLUGS.filter(
     (slug) =>
       slug in SERIES_DATA &&
-      curatedSeries.has(slug) &&
+      (curatedSeries.size === 0 || curatedSeries.has(slug)) &&
       !primarySlugs.includes(slug),
   )
   if (preferred.length >= SOUL_AUDIT_OPTION_SPLIT.curatedPrefab) {
@@ -273,7 +304,7 @@ function getPrefabSlugs(primarySlugs: string[]): string[] {
 
   const fill = ALL_SERIES_ORDER.filter(
     (slug) =>
-      curatedSeries.has(slug) &&
+      (curatedSeries.size === 0 || curatedSeries.has(slug)) &&
       !primarySlugs.includes(slug) &&
       !preferred.includes(slug),
   )
@@ -296,8 +327,20 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
 
   if (aiOptions.length < SOUL_AUDIT_OPTION_SPLIT.aiPrimary) {
     const usedSeries = new Set(aiOptions.map((option) => option.slug))
+    const countsBySeries = new Map<string, Set<number>>()
+    for (const candidate of getCuratedDayCandidates()) {
+      if (!countsBySeries.has(candidate.seriesSlug)) {
+        countsBySeries.set(candidate.seriesSlug, new Set<number>())
+      }
+      countsBySeries.get(candidate.seriesSlug)?.add(candidate.dayNumber)
+    }
+
     const fillers = getCuratedDayCandidates()
-      .filter((candidate) => !usedSeries.has(candidate.seriesSlug))
+      .filter((candidate) => {
+        if (usedSeries.has(candidate.seriesSlug)) return false
+        const dayCount = countsBySeries.get(candidate.seriesSlug)?.size ?? 0
+        return dayCount >= 5
+      })
       .slice(0, SOUL_AUDIT_OPTION_SPLIT.aiPrimary - aiOptions.length)
       .map((candidate, idx) =>
         makeOption({

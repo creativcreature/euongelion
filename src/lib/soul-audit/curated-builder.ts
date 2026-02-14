@@ -1,6 +1,7 @@
 import type { CustomPlanDay, DevotionalDayEndnote } from '@/types/soul-audit'
 import {
   findCandidateBySeed,
+  getCuratedDayCandidates,
   rankCandidatesForInput,
   type CurationSeed,
   type CuratedDayCandidate,
@@ -124,28 +125,42 @@ function selectPlanCandidates(params: {
   userResponse: string
   anchorSeed?: CurationSeed | null
 }): CuratedDayCandidate[] {
+  const allCandidates = getCuratedDayCandidates()
+  const preferredSeries = allCandidates
+    .filter((candidate) => candidate.seriesSlug === params.seriesSlug)
+    .sort((a, b) => a.dayNumber - b.dayNumber)
+
+  const selected: CuratedDayCandidate[] = []
+  const usedKeys = new Set<string>()
+
+  const pushUnique = (candidate: CuratedDayCandidate | null) => {
+    if (!candidate || usedKeys.has(candidate.key)) return
+    selected.push(candidate)
+    usedKeys.add(candidate.key)
+  }
+
+  if (params.anchorSeed) {
+    pushUnique(findCandidateBySeed(params.anchorSeed))
+  }
+
+  for (const candidate of preferredSeries) {
+    if (selected.length >= 5) break
+    pushUnique(candidate)
+  }
+
+  if (selected.length >= 5) {
+    return selected.slice(0, 5)
+  }
+
   const ranked = rankCandidatesForInput({
     input: `${params.userResponse} ${params.seriesSlug}`,
     anchorSeriesSlug: params.seriesSlug,
     anchorSeed: params.anchorSeed,
   })
 
-  const selected: CuratedDayCandidate[] = []
-  const usedKeys = new Set<string>()
-
-  if (params.anchorSeed) {
-    const anchor = findCandidateBySeed(params.anchorSeed)
-    if (anchor) {
-      selected.push(anchor)
-      usedKeys.add(anchor.key)
-    }
-  }
-
   for (const entry of ranked) {
     if (selected.length >= 5) break
-    if (usedKeys.has(entry.candidate.key)) continue
-    selected.push(entry.candidate)
-    usedKeys.add(entry.candidate.key)
+    pushUnique(entry.candidate)
   }
 
   if (selected.length < 5) {
