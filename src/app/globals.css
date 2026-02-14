@@ -2231,7 +2231,7 @@
   white-space: nowrap;
   text-align: center;
   font-size: clamp(2.7rem, 13.4vw, 14.2rem);
-  line-height: 0.94;
+  line-height: 0.96;
   color: var(--mock-blue, var(--color-gold));
   text-transform: uppercase;
   letter-spacing: -0.006em;

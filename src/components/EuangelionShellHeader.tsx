@@ -125,7 +125,7 @@ export default function EuangelionShellHeader() {
       const currentSize = Number.parseFloat(getComputedStyle(span).fontSize)
       if (!available || !natural || !Number.isFinite(currentSize)) return
 
-      const nextSize = currentSize * (available / natural) * 0.996
+      const nextSize = currentSize * (available / natural) * 0.988
       span.style.fontSize = `${Math.max(18, nextSize)}px`
     }
 

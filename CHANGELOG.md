@@ -513,6 +513,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Masthead Clip-Safety Refinement Pass (2026-02-14)
+
+### What Changed
+
+- Tightened shell masthead fit safety factor in `EuangelionShellHeader` (`0.996 -> 0.988`) to reduce edge clipping risk.
+- Slightly relaxed masthead line-height (`0.94 -> 0.96`) to avoid vertical clipping while preserving full-width visual impact.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed
