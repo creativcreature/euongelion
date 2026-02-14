@@ -115,6 +115,10 @@ describe('EuangelionShellHeader', () => {
         .querySelector('.mock-topbar')
         ?.classList.contains('is-nav-docked'),
     ).toBe(false)
+    expect(screen.getAllByRole('link', { name: 'HOME' })[0]).toHaveAttribute(
+      'aria-current',
+      'page',
+    )
   })
 
   it('docks nav into topbar when sentinel crosses the topbar line', async () => {

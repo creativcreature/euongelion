@@ -238,6 +238,7 @@ export default function EuangelionShellHeader() {
           <Link
             href={item.href}
             className={`mock-nav-item ${active ? 'is-active' : ''}`}
+            aria-current={active ? 'page' : undefined}
           >
             {item.label}
           </Link>
@@ -258,6 +259,7 @@ export default function EuangelionShellHeader() {
               key={item.href}
               href={item.href}
               className={`mock-nav-item ${active ? 'is-active' : ''}`}
+              aria-current={active ? 'page' : undefined}
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.label}
@@ -294,6 +296,7 @@ export default function EuangelionShellHeader() {
               key={item.href}
               href={item.href}
               className={`mock-nav-item ${active ? 'is-active' : ''}`}
+              aria-current={active ? 'page' : undefined}
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.label}

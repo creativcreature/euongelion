@@ -216,6 +216,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Shell Nav Accessibility Pass (2026-02-14)
+
+### What Changed
+
+- Added `aria-current="page"` to active desktop and mobile shell navigation links.
+- Added regression coverage asserting active home link exposes `aria-current` in the shell header test suite.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `__tests__/shell-header.test.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- __tests__/shell-header.test.tsx`
+
+---
+
 ## Universal Shell Header + Mobile Hero Crop Pass (2026-02-14)
 
 ### What Changed
