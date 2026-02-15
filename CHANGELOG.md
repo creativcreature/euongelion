@@ -149,6 +149,37 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Chat Guardrail Fail-Closed Pass (2026-02-15)
+
+### What Changed
+
+- Strengthened chat context gate behavior:
+  - chat now fails closed when devotional slug does not resolve to a local devotional context file;
+  - chat now fails closed when local reference corpus is unavailable.
+- Added explicit recovery-facing error copy for both cases so users know how to proceed.
+- Added regression coverage for unresolved devotional slug guardrail behavior.
+
+### Files
+
+- `src/app/api/chat/route.ts`
+- `__tests__/chat-guardrails.test.ts`
+- `docs/feature-prds/F-033.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Scroll Fluidity Hardening Pass (2026-02-14)
 
 ### What Changed

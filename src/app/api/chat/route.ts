@@ -376,6 +376,31 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    const contextPacket = buildContextPacket(
+      devotionalSlug || undefined,
+      highlightedText ?? undefined,
+    )
+
+    if (!contextPacket.hasDevotionalContext) {
+      return NextResponse.json(
+        {
+          error:
+            'Devotional context is unavailable for this page. Open a devotional day before using study chat.',
+        },
+        { status: 400 },
+      )
+    }
+
+    if (!contextPacket.hasReferenceContext) {
+      return NextResponse.json(
+        {
+          error:
+            'Local reference corpus is unavailable. Sync reference volumes before using study chat.',
+        },
+        { status: 503 },
+      )
+    }
+
     // Determine which API key to use
     const apiKey = userApiKey || APP_API_KEY
 
@@ -403,10 +428,6 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const contextPacket = buildContextPacket(
-      devotionalSlug || undefined,
-      highlightedText ?? undefined,
-    )
     const systemContent = SYSTEM_PROMPT + contextPacket.prompt
 
     // Call Anthropic API
