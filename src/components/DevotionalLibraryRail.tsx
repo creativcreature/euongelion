@@ -2,10 +2,17 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
-import { useProgressStore } from '@/stores/progressStore'
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
+import { useProgressStore } from '@/stores/progressStore'
 
-type LibraryMenuKey = 'archive' | 'bookmarks' | 'chat-notes' | 'favorite-verses'
+type LibraryMenuKey =
+  | 'today'
+  | 'bookmarks'
+  | 'highlights'
+  | 'notes'
+  | 'chat-history'
+  | 'archive'
+  | 'trash'
 
 type BookmarkRow = {
   id: string
@@ -36,12 +43,53 @@ type PlanArchiveRow = {
   }>
 }
 
+type ActiveDayRow = {
+  day: number
+  title: string
+  scriptureReference: string
+  status: 'current' | 'unlocked' | 'locked' | 'archived' | 'onboarding'
+  route: string
+  lockMessage?: string
+}
+
+type ActiveDaysPayload = {
+  ok?: boolean
+  hasPlan?: boolean
+  planToken?: string
+  seriesSlug?: string
+  currentDay?: number | null
+  dayLocking?: 'enabled' | 'disabled'
+  days?: ActiveDayRow[]
+}
+
 type CompletionRow = {
   slug: string
   title: string
   series: string
   completedAt: string
 }
+
+type ArchivedArtifactKind = 'bookmark' | 'annotation'
+
+type ArchivedArtifact = {
+  id: string
+  kind: ArchivedArtifactKind
+  devotionalSlug: string
+  label: string
+  sublabel?: string | null
+  createdAt: string
+  annotationType?: AnnotationRow['annotation_type']
+  anchorText?: string | null
+  body?: string | null
+  style?: Record<string, unknown> | null
+}
+
+type TrashedArtifact = ArchivedArtifact & {
+  trashedAt: string
+}
+
+const ARCHIVE_STORAGE_KEY = 'euangelion-library-archived-artifacts-v1'
+const TRASH_STORAGE_KEY = 'euangelion-library-trash-artifacts-v1'
 
 function buildSlugMetaMap() {
   const map = new Map<string, { title: string; series: string }>()
@@ -70,36 +118,91 @@ function formatDate(value: string): string {
   })
 }
 
-function resolveBookmarkHref(devotionalSlug: string): string {
+function parsePlanSlug(
+  devotionalSlug: string,
+): { token: string; day: number } | null {
   const planMatch = devotionalSlug.match(/^plan-([a-f0-9-]+)-day-(\d+)$/i)
-  if (planMatch) {
-    const [, token, day] = planMatch
-    return `/soul-audit/results?planToken=${token}#plan-day-${day}`
+  if (!planMatch) return null
+  return {
+    token: planMatch[1],
+    day: Number.parseInt(planMatch[2], 10),
+  }
+}
+
+function resolveDevotionalHref(devotionalSlug: string): string {
+  const plan = parsePlanSlug(devotionalSlug)
+  if (plan) {
+    return `/soul-audit/results?planToken=${plan.token}#plan-day-${plan.day}`
   }
   return `/wake-up/devotional/${devotionalSlug}`
 }
 
-function resolveBookmarkLabel(devotionalSlug: string): string {
-  const planMatch = devotionalSlug.match(/^plan-([a-f0-9-]+)-day-(\d+)$/i)
-  if (!planMatch) {
-    return SLUG_META.get(devotionalSlug)?.title || devotionalSlug
+function resolveDevotionalLabel(devotionalSlug: string): string {
+  const plan = parsePlanSlug(devotionalSlug)
+  if (plan) return `Plan Day ${plan.day}`
+  return SLUG_META.get(devotionalSlug)?.title || devotionalSlug
+}
+
+function resolveSeriesLabel(devotionalSlug: string): string {
+  const plan = parsePlanSlug(devotionalSlug)
+  if (plan) return 'Soul Audit Plan'
+  return SLUG_META.get(devotionalSlug)?.series || 'Wake-Up'
+}
+
+function safeParseLocalArray<T>(key: string): T[] {
+  if (typeof window === 'undefined') return []
+  const raw = window.localStorage.getItem(key)
+  if (!raw) return []
+  try {
+    const parsed = JSON.parse(raw) as unknown
+    return Array.isArray(parsed) ? (parsed as T[]) : []
+  } catch {
+    return []
   }
-  const [, , day] = planMatch
-  return `Plan Day ${day}`
+}
+
+function normalizeInitialTab(value: string | undefined): LibraryMenuKey {
+  if (
+    value === 'today' ||
+    value === 'bookmarks' ||
+    value === 'highlights' ||
+    value === 'notes' ||
+    value === 'chat-history' ||
+    value === 'archive' ||
+    value === 'trash'
+  ) {
+    return value
+  }
+
+  if (value === 'favorite-verses') return 'highlights'
+  if (value === 'chat-notes') return 'chat-history'
+  return 'today'
 }
 
 export default function DevotionalLibraryRail({
   className = '',
-  initialTab = 'archive',
+  initialTab = 'today',
 }: {
   className?: string
-  initialTab?: LibraryMenuKey
+  initialTab?: string
 }) {
-  const [active, setActive] = useState<LibraryMenuKey>(initialTab)
+  const [active, setActive] = useState<LibraryMenuKey>(
+    normalizeInitialTab(initialTab),
+  )
+  const [activeDays, setActiveDays] = useState<ActiveDayRow[]>([])
+  const [activePlanToken, setActivePlanToken] = useState<string | null>(null)
+  const [activeSeriesSlug, setActiveSeriesSlug] = useState<string | null>(null)
   const [bookmarks, setBookmarks] = useState<BookmarkRow[]>([])
-  const [chatNotes, setChatNotes] = useState<AnnotationRow[]>([])
-  const [favoriteVerses, setFavoriteVerses] = useState<AnnotationRow[]>([])
+  const [highlights, setHighlights] = useState<AnnotationRow[]>([])
+  const [notes, setNotes] = useState<AnnotationRow[]>([])
+  const [chatHistory, setChatHistory] = useState<AnnotationRow[]>([])
   const [archivePlans, setArchivePlans] = useState<PlanArchiveRow[]>([])
+  const [archivedArtifacts, setArchivedArtifacts] = useState<
+    ArchivedArtifact[]
+  >([])
+  const [trashedArtifacts, setTrashedArtifacts] = useState<TrashedArtifact[]>(
+    [],
+  )
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const completions = useProgressStore((s) => s.completions)
@@ -118,55 +221,94 @@ export default function DevotionalLibraryRail({
       })
   }, [completions])
 
+  useEffect(() => {
+    setArchivedArtifacts(
+      safeParseLocalArray<ArchivedArtifact>(ARCHIVE_STORAGE_KEY),
+    )
+    setTrashedArtifacts(safeParseLocalArray<TrashedArtifact>(TRASH_STORAGE_KEY))
+  }, [])
+
+  function persistArchiveState(
+    nextArchive: ArchivedArtifact[],
+    nextTrash: TrashedArtifact[],
+  ) {
+    setArchivedArtifacts(nextArchive)
+    setTrashedArtifacts(nextTrash)
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(
+        ARCHIVE_STORAGE_KEY,
+        JSON.stringify(nextArchive),
+      )
+      window.localStorage.setItem(TRASH_STORAGE_KEY, JSON.stringify(nextTrash))
+    }
+  }
+
   async function loadLibrary() {
     setLoading(true)
     setError(null)
 
     try {
-      const [bookmarksRes, chatNotesRes, favoritesRes, archiveRes] =
+      const [activeDaysRes, bookmarksRes, annotationsRes, archiveRes] =
         await Promise.all([
+          fetch('/api/daily-bread/active-days', { cache: 'no-store' }),
           fetch('/api/bookmarks', { cache: 'no-store' }),
-          fetch('/api/annotations?annotationType=note&styleSource=chat', {
-            cache: 'no-store',
-          }),
-          fetch(
-            '/api/annotations?annotationType=highlight&styleKind=favorite_verse',
-            {
-              cache: 'no-store',
-            },
-          ),
+          fetch('/api/annotations', { cache: 'no-store' }),
           fetch('/api/soul-audit/archive', { cache: 'no-store' }),
         ])
 
-      const [bookmarksJson, chatNotesJson, favoritesJson, archiveJson] =
+      const [activeDaysJson, bookmarksJson, annotationsJson, archiveJson] =
         await Promise.all([
+          activeDaysRes.json().catch(() => ({})),
           bookmarksRes.json().catch(() => ({})),
-          chatNotesRes.json().catch(() => ({})),
-          favoritesRes.json().catch(() => ({})),
+          annotationsRes.json().catch(() => ({})),
           archiveRes.json().catch(() => ({})),
         ])
 
+      const activeDaysPayload = activeDaysJson as ActiveDaysPayload
+      const annotationRows = Array.isArray(
+        (annotationsJson as { annotations?: unknown[] }).annotations,
+      )
+        ? ((annotationsJson as { annotations: AnnotationRow[] })
+            .annotations as AnnotationRow[])
+        : []
+
+      setActiveDays(
+        Array.isArray(activeDaysPayload.days)
+          ? [...activeDaysPayload.days].sort((a, b) => a.day - b.day)
+          : [],
+      )
+      setActivePlanToken(
+        typeof activeDaysPayload.planToken === 'string'
+          ? activeDaysPayload.planToken
+          : null,
+      )
+      setActiveSeriesSlug(
+        typeof activeDaysPayload.seriesSlug === 'string'
+          ? activeDaysPayload.seriesSlug
+          : null,
+      )
       setBookmarks(
         Array.isArray((bookmarksJson as { bookmarks?: unknown[] }).bookmarks)
           ? ((bookmarksJson as { bookmarks: BookmarkRow[] })
               .bookmarks as BookmarkRow[])
           : [],
       )
-      setChatNotes(
-        Array.isArray(
-          (chatNotesJson as { annotations?: unknown[] }).annotations,
-        )
-          ? ((chatNotesJson as { annotations: AnnotationRow[] })
-              .annotations as AnnotationRow[])
-          : [],
+      setHighlights(
+        annotationRows.filter((row) => row.annotation_type === 'highlight'),
       )
-      setFavoriteVerses(
-        Array.isArray(
-          (favoritesJson as { annotations?: unknown[] }).annotations,
-        )
-          ? ((favoritesJson as { annotations: AnnotationRow[] })
-              .annotations as AnnotationRow[])
-          : [],
+      setChatHistory(
+        annotationRows.filter(
+          (row) =>
+            row.annotation_type === 'note' &&
+            String(row.style?.source || '') === 'chat',
+        ),
+      )
+      setNotes(
+        annotationRows.filter(
+          (row) =>
+            row.annotation_type === 'note' &&
+            String(row.style?.source || '') !== 'chat',
+        ),
       )
       setArchivePlans(
         Array.isArray((archiveJson as { archive?: unknown[] }).archive)
@@ -186,7 +328,7 @@ export default function DevotionalLibraryRail({
   }, [])
 
   useEffect(() => {
-    setActive(initialTab)
+    setActive(normalizeInitialTab(initialTab))
   }, [initialTab])
 
   useEffect(() => {
@@ -197,35 +339,128 @@ export default function DevotionalLibraryRail({
     return () => window.removeEventListener('libraryUpdated', handler)
   }, [])
 
-  async function removeBookmarkRow(devotionalSlug: string) {
+  async function archiveBookmarkRow(bookmark: BookmarkRow) {
     await fetch(
-      `/api/bookmarks?devotionalSlug=${encodeURIComponent(devotionalSlug)}`,
+      `/api/bookmarks?devotionalSlug=${encodeURIComponent(bookmark.devotional_slug)}`,
       { method: 'DELETE' },
     )
+
     setBookmarks((prev) =>
-      prev.filter((row) => row.devotional_slug !== devotionalSlug),
+      prev.filter((row) => row.devotional_slug !== bookmark.devotional_slug),
     )
+    const artifact: ArchivedArtifact = {
+      id: `bookmark:${bookmark.id}`,
+      kind: 'bookmark',
+      devotionalSlug: bookmark.devotional_slug,
+      label: resolveDevotionalLabel(bookmark.devotional_slug),
+      sublabel: bookmark.note || 'Saved bookmark',
+      createdAt: bookmark.created_at,
+    }
+    persistArchiveState([artifact, ...archivedArtifacts], trashedArtifacts)
   }
 
-  async function removeAnnotationRow(annotationId: string) {
+  async function archiveAnnotationRow(annotation: AnnotationRow) {
     await fetch(
-      `/api/annotations?annotationId=${encodeURIComponent(annotationId)}`,
-      { method: 'DELETE' },
+      `/api/annotations?annotationId=${encodeURIComponent(annotation.id)}`,
+      {
+        method: 'DELETE',
+      },
     )
-    setChatNotes((prev) => prev.filter((row) => row.id !== annotationId))
-    setFavoriteVerses((prev) => prev.filter((row) => row.id !== annotationId))
+
+    setHighlights((prev) => prev.filter((row) => row.id !== annotation.id))
+    setNotes((prev) => prev.filter((row) => row.id !== annotation.id))
+    setChatHistory((prev) => prev.filter((row) => row.id !== annotation.id))
+
+    const artifact: ArchivedArtifact = {
+      id: `annotation:${annotation.id}`,
+      kind: 'annotation',
+      devotionalSlug: annotation.devotional_slug,
+      label: resolveDevotionalLabel(annotation.devotional_slug),
+      sublabel: annotation.anchor_text || annotation.body || 'Saved annotation',
+      createdAt: annotation.created_at,
+      annotationType: annotation.annotation_type,
+      anchorText: annotation.anchor_text,
+      body: annotation.body,
+      style: annotation.style,
+    }
+    persistArchiveState([artifact, ...archivedArtifacts], trashedArtifacts)
+  }
+
+  async function restoreArtifact(artifact: ArchivedArtifact | TrashedArtifact) {
+    if (artifact.kind === 'bookmark') {
+      const response = await fetch('/api/bookmarks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          devotionalSlug: artifact.devotionalSlug,
+          note: artifact.sublabel ?? null,
+        }),
+      })
+      if (!response.ok) {
+        throw new Error('Unable to restore bookmark.')
+      }
+    }
+
+    if (artifact.kind === 'annotation') {
+      const response = await fetch('/api/annotations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          devotionalSlug: artifact.devotionalSlug,
+          annotationType: artifact.annotationType ?? 'note',
+          anchorText: artifact.anchorText ?? null,
+          body: artifact.body ?? null,
+          style: artifact.style ?? null,
+        }),
+      })
+      if (!response.ok) {
+        throw new Error('Unable to restore annotation.')
+      }
+    }
+
+    persistArchiveState(
+      archivedArtifacts.filter((item) => item.id !== artifact.id),
+      trashedArtifacts.filter((item) => item.id !== artifact.id),
+    )
+    await loadLibrary()
+    window.dispatchEvent(new CustomEvent('libraryUpdated'))
+  }
+
+  function moveArtifactToTrash(artifact: ArchivedArtifact) {
+    const nextArchive = archivedArtifacts.filter(
+      (item) => item.id !== artifact.id,
+    )
+    const nextTrash: TrashedArtifact[] = [
+      {
+        ...artifact,
+        trashedAt: new Date().toISOString(),
+      },
+      ...trashedArtifacts,
+    ]
+    persistArchiveState(nextArchive, nextTrash)
+  }
+
+  function removeArtifactPermanently(artifactId: string) {
+    persistArchiveState(
+      archivedArtifacts,
+      trashedArtifacts.filter((item) => item.id !== artifactId),
+    )
   }
 
   const counts = {
-    archive: archivePlans.length + completionRows.length,
+    today: activeDays.length,
     bookmarks: bookmarks.length,
-    'chat-notes': chatNotes.length,
-    'favorite-verses': favoriteVerses.length,
+    highlights: highlights.length,
+    notes: notes.length,
+    'chat-history': chatHistory.length,
+    archive:
+      archivePlans.length + completionRows.length + archivedArtifacts.length,
+    trash: trashedArtifacts.length,
   } as const
 
   return (
     <section
-      className={`grid gap-6 md:grid-cols-[260px_minmax(0,1fr)] ${className}`.trim()}
+      className={`grid gap-6 md:grid-cols-[280px_minmax(0,1fr)] ${className}`.trim()}
     >
       <aside
         className="shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
@@ -235,10 +470,13 @@ export default function DevotionalLibraryRail({
         <nav className="grid gap-2">
           {(
             [
-              ['archive', 'Archived Pages'],
+              ['today', 'Today + 7 Days'],
               ['bookmarks', 'Bookmarks'],
-              ['chat-notes', 'Chat Notes'],
-              ['favorite-verses', 'Favorite Verses'],
+              ['highlights', 'Highlights'],
+              ['notes', 'Notes'],
+              ['chat-history', 'Chat History'],
+              ['archive', 'Archive'],
+              ['trash', 'Trash'],
             ] as Array<[LibraryMenuKey, string]>
           ).map(([key, label]) => (
             <button
@@ -247,7 +485,7 @@ export default function DevotionalLibraryRail({
               onClick={() => setActive(key)}
               className={`text-label vw-small flex items-center justify-between border px-3 py-2 text-left ${
                 active === key
-                  ? 'text-[var(--color-text-primary)]'
+                  ? 'bg-surface-raised text-[var(--color-text-primary)]'
                   : 'text-muted'
               }`}
               style={{ borderColor: 'var(--color-border)' }}
@@ -266,6 +504,223 @@ export default function DevotionalLibraryRail({
           <p className="vw-small text-secondary">{error}</p>
         ) : (
           <>
+            {active === 'today' && (
+              <div>
+                <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+                  <p className="text-label vw-small text-gold">
+                    TODAY + 7 DAYS
+                  </p>
+                  {activeSeriesSlug && (
+                    <p className="vw-small text-muted">
+                      {activeSeriesSlug.toUpperCase()}
+                    </p>
+                  )}
+                </div>
+                {activeDays.length === 0 ? (
+                  <p className="vw-small text-muted">
+                    No active devotional plan yet. Start a Soul Audit to begin.
+                  </p>
+                ) : (
+                  <div className="space-y-2">
+                    {activeDays.map((day) => (
+                      <div
+                        key={`active-day-${day.day}`}
+                        className="border px-3 py-2"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
+                          <p className="text-label vw-small text-gold">
+                            DAY {day.day}
+                          </p>
+                          <p className="text-label vw-small text-muted">
+                            {day.status.toUpperCase()}
+                          </p>
+                        </div>
+                        {day.status === 'locked' ? (
+                          <p className="vw-small text-secondary">
+                            {day.title}
+                            {day.lockMessage ? ` — ${day.lockMessage}` : ''}
+                          </p>
+                        ) : (
+                          <Link
+                            href={day.route}
+                            className="vw-small link-highlight text-secondary"
+                          >
+                            {day.title}
+                          </Link>
+                        )}
+                        <p className="vw-small mt-1 text-muted">
+                          {day.scriptureReference}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {activePlanToken && (
+                  <p className="vw-small mt-3 text-muted">
+                    Active plan token: {activePlanToken}
+                  </p>
+                )}
+              </div>
+            )}
+
+            {active === 'bookmarks' && (
+              <div>
+                <p className="text-label vw-small mb-3 text-gold">Bookmarks</p>
+                {bookmarks.length === 0 ? (
+                  <p className="vw-small text-muted">No bookmarks yet.</p>
+                ) : (
+                  <div className="space-y-2">
+                    {bookmarks.map((bookmark) => (
+                      <div
+                        key={bookmark.id}
+                        className="flex items-start justify-between gap-3 border px-3 py-2"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        <div>
+                          <Link
+                            href={resolveDevotionalHref(
+                              bookmark.devotional_slug,
+                            )}
+                            className="vw-small link-highlight text-secondary"
+                          >
+                            {resolveDevotionalLabel(bookmark.devotional_slug)}
+                          </Link>
+                          <p className="vw-small text-muted">
+                            {bookmark.note ||
+                              resolveSeriesLabel(bookmark.devotional_slug)}
+                          </p>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => void archiveBookmarkRow(bookmark)}
+                          className="text-label vw-small link-highlight"
+                        >
+                          Archive
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {active === 'highlights' && (
+              <div>
+                <p className="text-label vw-small mb-3 text-gold">Highlights</p>
+                {highlights.length === 0 ? (
+                  <p className="vw-small text-muted">
+                    No highlights saved yet.
+                  </p>
+                ) : (
+                  <div className="space-y-2">
+                    {highlights.map((row) => (
+                      <div
+                        key={row.id}
+                        className="border px-3 py-2"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        <div className="mb-2 flex items-center justify-between gap-3">
+                          <Link
+                            href={resolveDevotionalHref(row.devotional_slug)}
+                            className="vw-small link-highlight text-muted"
+                          >
+                            {resolveDevotionalLabel(row.devotional_slug)}
+                          </Link>
+                          <button
+                            type="button"
+                            onClick={() => void archiveAnnotationRow(row)}
+                            className="text-label vw-small link-highlight"
+                          >
+                            Archive
+                          </button>
+                        </div>
+                        <p className="text-serif-italic vw-small text-secondary">
+                          {row.anchor_text || row.body}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {active === 'notes' && (
+              <div>
+                <p className="text-label vw-small mb-3 text-gold">Notes</p>
+                {notes.length === 0 ? (
+                  <p className="vw-small text-muted">No notes saved yet.</p>
+                ) : (
+                  <div className="space-y-2">
+                    {notes.map((note) => (
+                      <div
+                        key={note.id}
+                        className="border px-3 py-2"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        <div className="mb-2 flex items-center justify-between gap-3">
+                          <Link
+                            href={resolveDevotionalHref(note.devotional_slug)}
+                            className="vw-small link-highlight text-muted"
+                          >
+                            {resolveDevotionalLabel(note.devotional_slug)}
+                          </Link>
+                          <button
+                            type="button"
+                            onClick={() => void archiveAnnotationRow(note)}
+                            className="text-label vw-small link-highlight"
+                          >
+                            Archive
+                          </button>
+                        </div>
+                        <p className="vw-small text-secondary">{note.body}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {active === 'chat-history' && (
+              <div>
+                <p className="text-label vw-small mb-3 text-gold">
+                  Chat History
+                </p>
+                {chatHistory.length === 0 ? (
+                  <p className="vw-small text-muted">
+                    No chat notes saved yet.
+                  </p>
+                ) : (
+                  <div className="space-y-2">
+                    {chatHistory.map((note) => (
+                      <div
+                        key={note.id}
+                        className="border px-3 py-2"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        <div className="mb-2 flex items-center justify-between gap-3">
+                          <Link
+                            href={resolveDevotionalHref(note.devotional_slug)}
+                            className="vw-small link-highlight text-muted"
+                          >
+                            {resolveDevotionalLabel(note.devotional_slug)}
+                          </Link>
+                          <button
+                            type="button"
+                            onClick={() => void archiveAnnotationRow(note)}
+                            className="text-label vw-small link-highlight"
+                          >
+                            Archive
+                          </button>
+                        </div>
+                        <p className="vw-small text-secondary">{note.body}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
             {active === 'archive' && (
               <div className="space-y-6">
                 <div>
@@ -296,7 +751,7 @@ export default function DevotionalLibraryRail({
                             </span>
                           </div>
                           <div className="grid gap-2 md:grid-cols-2">
-                            {plan.days.slice(0, 5).map((day) => (
+                            {plan.days.slice(0, 7).map((day) => (
                               <Link
                                 key={`${plan.planToken}-${day.day}`}
                                 href={day.route}
@@ -343,124 +798,106 @@ export default function DevotionalLibraryRail({
                     </div>
                   )}
                 </div>
+
+                <div>
+                  <p className="text-label vw-small mb-3 text-gold">
+                    Archived Artifacts
+                  </p>
+                  {archivedArtifacts.length === 0 ? (
+                    <p className="vw-small text-muted">
+                      Nothing manually archived yet.
+                    </p>
+                  ) : (
+                    <div className="space-y-2">
+                      {archivedArtifacts.map((item) => (
+                        <div
+                          key={item.id}
+                          className="border px-3 py-2"
+                          style={{ borderColor: 'var(--color-border)' }}
+                        >
+                          <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
+                            <p className="text-label vw-small text-gold">
+                              {item.kind.toUpperCase()}
+                            </p>
+                            <p className="vw-small text-muted">
+                              {formatDate(item.createdAt)}
+                            </p>
+                          </div>
+                          <p className="vw-small text-secondary">
+                            {item.label}
+                          </p>
+                          {item.sublabel ? (
+                            <p className="vw-small mt-1 text-muted">
+                              {item.sublabel}
+                            </p>
+                          ) : null}
+                          <div className="mt-2 flex items-center gap-4">
+                            <button
+                              type="button"
+                              className="text-label vw-small link-highlight"
+                              onClick={() => void restoreArtifact(item)}
+                            >
+                              Restore
+                            </button>
+                            <button
+                              type="button"
+                              className="text-label vw-small link-highlight"
+                              onClick={() => moveArtifactToTrash(item)}
+                            >
+                              Move To Trash
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             )}
 
-            {active === 'bookmarks' && (
+            {active === 'trash' && (
               <div>
-                <p className="text-label vw-small mb-3 text-gold">Bookmarks</p>
-                {bookmarks.length === 0 ? (
-                  <p className="vw-small text-muted">No bookmarks yet.</p>
+                <p className="text-label vw-small mb-3 text-gold">Trash</p>
+                {trashedArtifacts.length === 0 ? (
+                  <p className="vw-small text-muted">Trash is empty.</p>
                 ) : (
                   <div className="space-y-2">
-                    {bookmarks.map((bookmark) => (
+                    {trashedArtifacts.map((item) => (
                       <div
-                        key={bookmark.id}
-                        className="flex items-center justify-between gap-3 border px-3 py-2"
+                        key={item.id}
+                        className="border px-3 py-2"
                         style={{ borderColor: 'var(--color-border)' }}
                       >
-                        <div>
-                          <Link
-                            href={resolveBookmarkHref(bookmark.devotional_slug)}
-                            className="vw-small link-highlight text-secondary"
-                          >
-                            {resolveBookmarkLabel(bookmark.devotional_slug)}
-                          </Link>
+                        <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
+                          <p className="text-label vw-small text-gold">
+                            {item.kind.toUpperCase()}
+                          </p>
                           <p className="vw-small text-muted">
-                            {bookmark.note || 'Saved bookmark'}
+                            Trashed {formatDate(item.trashedAt)}
                           </p>
                         </div>
-                        <button
-                          type="button"
-                          onClick={() =>
-                            void removeBookmarkRow(bookmark.devotional_slug)
-                          }
-                          className="text-label vw-small text-muted"
-                        >
-                          Remove
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {active === 'chat-notes' && (
-              <div>
-                <p className="text-label vw-small mb-3 text-gold">Chat Notes</p>
-                {chatNotes.length === 0 ? (
-                  <p className="vw-small text-muted">
-                    No chat notes saved yet.
-                  </p>
-                ) : (
-                  <div className="space-y-2">
-                    {chatNotes.map((note) => (
-                      <div
-                        key={note.id}
-                        className="border px-3 py-2"
-                        style={{ borderColor: 'var(--color-border)' }}
-                      >
-                        <div className="mb-2 flex items-center justify-between gap-3">
-                          <Link
-                            href={`/wake-up/devotional/${note.devotional_slug}`}
-                            className="vw-small link-highlight text-muted"
-                          >
-                            {SLUG_META.get(note.devotional_slug)?.title ||
-                              note.devotional_slug}
-                          </Link>
+                        <p className="vw-small text-secondary">{item.label}</p>
+                        {item.sublabel ? (
+                          <p className="vw-small mt-1 text-muted">
+                            {item.sublabel}
+                          </p>
+                        ) : null}
+                        <div className="mt-2 flex items-center gap-4">
                           <button
                             type="button"
-                            onClick={() => void removeAnnotationRow(note.id)}
-                            className="text-label vw-small text-muted"
+                            className="text-label vw-small link-highlight"
+                            onClick={() => void restoreArtifact(item)}
                           >
-                            Remove
+                            Restore
                           </button>
-                        </div>
-                        <p className="vw-small text-secondary">{note.body}</p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {active === 'favorite-verses' && (
-              <div>
-                <p className="text-label vw-small mb-3 text-gold">
-                  Favorite Verses
-                </p>
-                {favoriteVerses.length === 0 ? (
-                  <p className="vw-small text-muted">
-                    Highlight text in a devotional, then tap Save Verse.
-                  </p>
-                ) : (
-                  <div className="space-y-2">
-                    {favoriteVerses.map((row) => (
-                      <div
-                        key={row.id}
-                        className="border px-3 py-2"
-                        style={{ borderColor: 'var(--color-border)' }}
-                      >
-                        <div className="mb-2 flex items-center justify-between gap-3">
-                          <Link
-                            href={`/wake-up/devotional/${row.devotional_slug}`}
-                            className="vw-small link-highlight text-muted"
-                          >
-                            {SLUG_META.get(row.devotional_slug)?.series ||
-                              'Devotional'}
-                          </Link>
                           <button
                             type="button"
-                            onClick={() => void removeAnnotationRow(row.id)}
-                            className="text-label vw-small text-muted"
+                            className="text-label vw-small link-highlight"
+                            onClick={() => removeArtifactPermanently(item.id)}
                           >
-                            Remove
+                            Delete Forever
                           </button>
                         </div>
-                        <p className="text-serif-italic vw-small text-secondary">
-                          {row.anchor_text || row.body}
-                        </p>
                       </div>
                     ))}
                   </div>

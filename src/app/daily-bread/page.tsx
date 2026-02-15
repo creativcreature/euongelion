@@ -38,12 +38,18 @@ export default function DailyBreadPage() {
   const tab = searchParams.get('tab')
   const tutorialRequested = searchParams.get('tutorial') === '1'
   const initialTab =
+    tab === 'today' ||
     tab === 'bookmarks' ||
+    tab === 'highlights' ||
+    tab === 'notes' ||
+    tab === 'chat-history' ||
+    tab === 'archive' ||
+    tab === 'trash' ||
+    // Backward compatibility for legacy links.
     tab === 'chat-notes' ||
-    tab === 'favorite-verses' ||
-    tab === 'archive'
+    tab === 'favorite-verses'
       ? tab
-      : 'archive'
+      : 'today'
 
   useEffect(() => {
     let cancelled = false

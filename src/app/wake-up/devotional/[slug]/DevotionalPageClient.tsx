@@ -302,6 +302,13 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                 <p className="text-label vw-small mb-3 text-gold">LIBRARY</p>
                 <div className="grid gap-2">
                   <Link
+                    href="/daily-bread?tab=today"
+                    className="block border px-3 py-2 text-secondary"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    Today + 7 Days
+                  </Link>
+                  <Link
                     href="/daily-bread?tab=archive"
                     className="block border px-3 py-2 text-secondary"
                     style={{ borderColor: 'var(--color-border)' }}
@@ -316,18 +323,25 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                     Bookmarks
                   </Link>
                   <Link
-                    href="/daily-bread?tab=chat-notes"
+                    href="/daily-bread?tab=notes"
                     className="block border px-3 py-2 text-secondary"
                     style={{ borderColor: 'var(--color-border)' }}
                   >
-                    Chat Notes
+                    Notes
                   </Link>
                   <Link
-                    href="/daily-bread?tab=favorite-verses"
+                    href="/daily-bread?tab=highlights"
                     className="block border px-3 py-2 text-secondary"
                     style={{ borderColor: 'var(--color-border)' }}
                   >
-                    Favorite Verses
+                    Highlights
+                  </Link>
+                  <Link
+                    href="/daily-bread?tab=chat-history"
+                    className="block border px-3 py-2 text-secondary"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    Chat History
                   </Link>
                 </div>
               </div>

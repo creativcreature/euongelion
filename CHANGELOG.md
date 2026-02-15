@@ -35,6 +35,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Daily Bread Left-Rail Consolidation Pass (2026-02-15)
+
+### What Changed
+
+- Added canonical active-day contract endpoint:
+  - `GET /api/daily-bread/active-days` now returns current plan day metadata with `current/unlocked/locked/archived/onboarding` status resolution.
+- Rebuilt Daily Bread library rail into the locked IA structure:
+  - `Today + 7 Days`, `Bookmarks`, `Highlights`, `Notes`, `Chat History`, `Archive`, `Trash`.
+- Added archive lifecycle interactions for saved artifacts:
+  - bookmarks/annotations can be archived from their sections;
+  - archived artifacts can be restored or moved to trash;
+  - trashed artifacts can be restored or permanently deleted.
+- Fixed devotional link routing integrity in rail items:
+  - `plan-<token>-day-<n>` links now resolve to `/soul-audit/results?planToken=<token>#plan-day-<n>`.
+- Updated devotional page quick links to new tab taxonomy with backward-compatible tab normalization.
+- Added automated test coverage for active-day API lock state contracts.
+
+### Files
+
+- `src/app/api/daily-bread/active-days/route.ts`
+- `src/components/DevotionalLibraryRail.tsx`
+- `src/app/daily-bread/page.tsx`
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+- `__tests__/daily-bread-active-days.test.ts`
+- `docs/feature-prds/F-030.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Scroll Fluidity Hardening Pass (2026-02-14)
 
 ### What Changed
