@@ -1,0 +1,18 @@
+{
+  "appName": "Euangelion",
+  "subtitle": "Daily Devotionals for the Hungry Soul",
+  "description": "Euangelion helps people find the next faithful step through Scripture-first daily devotionals, honest reflection, and guided prayer. Users can complete a Soul Audit to receive curated devotional paths, follow day-by-day reading cadence, save highlights and notes, and revisit archives from one focused reading home.",
+  "keywords": "devotional,bible,scripture,prayer,christian,reflection,faith,journal,daily bread,soul audit",
+  "supportUrl": "https://euangelion.app/help",
+  "privacyPolicyUrl": "https://euangelion.app/privacy",
+  "marketingUrl": "https://euangelion.app",
+  "categoryPrimary": "Lifestyle",
+  "categorySecondary": "Reference",
+  "ageRating": "12+",
+  "copyright": "2026 Euangelion",
+  "reviewContact": {
+    "name": "Euangelion Support",
+    "email": "support@euangelion.app",
+    "phone": "+1-000-000-0000"
+  }
+}

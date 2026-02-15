@@ -35,6 +35,48 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## App Store Submission Gate Hardening (2026-02-15)
+
+### What Changed
+
+- Expanded App Store readiness gate from section-presence checks into machine-validated metadata contracts:
+  - validates required App Store metadata fields
+  - enforces App Store metadata limits (description <= 4000, keywords <= 100)
+  - enforces secure URLs for support/privacy/marketing fields
+  - validates review contact email presence.
+- Added explicit App Store metadata source file:
+  - `docs/appstore/APP-STORE-METADATA.json`
+- Added structured App Store test evidence tracker:
+  - `docs/appstore/APP-STORE-TEST-EVIDENCE.md`
+- Strengthened release checks for:
+  - release-gate section coverage
+  - asset tracker markers
+  - app review notes template structure
+  - iOS submission product IDs and verification commands.
+
+### Files
+
+- `scripts/check-appstore-gate.mjs`
+- `docs/appstore/APP-STORE-METADATA.json`
+- `docs/appstore/APP-STORE-TEST-EVIDENCE.md`
+- `docs/feature-prds/F-050.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## iOS Shell Readiness Pass (2026-02-15)
 
 ### What Changed
