@@ -2302,10 +2302,15 @@
 .mock-masthead-block {
   border-bottom: var(--mock-stroke, 1px) solid
     var(--mock-line, var(--color-border-strong));
-  padding: 0.22rem 0 0.3rem;
+  padding: 0.04rem 0 0.24rem;
   min-height: auto;
   height: auto;
   container-type: inline-size;
+}
+
+.mock-masthead-block .mock-masthead-text {
+  line-height: 0.9;
+  transform: translateY(-0.015em);
 }
 
 .mock-masthead-word {

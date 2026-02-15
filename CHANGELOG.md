@@ -188,6 +188,7 @@ Format: Reverse chronological, grouped by sprint/date.
   - enlarged homepage desktop body-copy scale, aligned hero panel vertical rhythm with CTA rhythm, and tuned FAQ hover state to blue answer reveal while keeping question default;
   - updated featured-series presentation to 3-card carousel groups without placeholder image/icon blocks, with expanded preview copy;
   - added timed featured-series rotation and hardened card CSS to remove any legacy blank media/icon strip from rendering paths.
+  - tightened masthead top spacing by reducing header masthead top padding and nudging `EUANGELION` upward for closer border fit.
   - aligned shell-header test contract to the new single-nav architecture (removed docked-nav expectations).
   - bumped service-worker cache version to force stale homepage/header assets to refresh in production clients.
   - added service-worker version migration guard that unregisters stale workers and clears `euangelion-*` caches when version changes, then re-registers cleanly.
