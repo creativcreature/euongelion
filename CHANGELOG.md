@@ -35,6 +35,39 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Option Specificity Pass (2026-02-15)
+
+### What Changed
+
+- Improved primary AI option specificity in curated matching:
+  - weighted user-input terms ahead of generic matched tags
+  - extracted a cleaner "core burden" phrase from the user audit text
+  - made AI title/question/preview copy reflect user language more directly.
+- Kept scripture-first preview contract intact for each AI option.
+- Added regression contract to ensure AI option copy stays anchored to user-provided language.
+
+### Files
+
+- `src/lib/soul-audit/matching.ts`
+- `__tests__/soul-audit-option-specificity.test.ts`
+- `docs/feature-prds/F-023.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Mobile Menu Correctness Pass (2026-02-15)
 
 ### What Changed

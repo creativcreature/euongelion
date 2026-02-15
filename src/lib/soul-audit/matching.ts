@@ -41,6 +41,12 @@ const TITLE_STOP_WORDS = new Set([
   'would',
   'your',
   'youre',
+  'into',
+  'through',
+  'still',
+  'because',
+  'every',
+  'about',
 ])
 
 export function sanitizeAuditInput(input: unknown): string {
@@ -71,6 +77,48 @@ function titleCase(word: string): string {
   return word[0].toUpperCase() + word.slice(1).toLowerCase()
 }
 
+function headlineCase(value: string): string {
+  return value
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((word) => {
+      const normalized = word.toLowerCase()
+      if (TITLE_STOP_WORDS.has(normalized)) return normalized
+      return titleCase(normalized)
+    })
+    .join(' ')
+}
+
+function extractCoreBurden(input: string, maxLength = 64): string {
+  const normalized = collapseWhitespace(input)
+  if (!normalized) return ''
+
+  const clause =
+    normalized
+      .split(/[.!?;]/)
+      .map((part) => collapseWhitespace(part))
+      .find(Boolean) ?? normalized
+
+  const stripped = collapseWhitespace(
+    clause.replace(
+      /\b(i|im|i'm|ive|i've|just|really|maybe|kind|sort|that|this|feel)\b/gi,
+      ' ',
+    ),
+  )
+
+  const source = stripped.length >= 12 ? stripped : clause
+  if (source.length <= maxLength) return source
+
+  const words = source.split(' ')
+  let output = ''
+  for (const word of words) {
+    const next = `${output} ${word}`.trim()
+    if (next.length > maxLength) break
+    output = next
+  }
+  return output || source.slice(0, maxLength).trimEnd()
+}
+
 function extractInputThemeTerms(input: string): string[] {
   const words = collapseWhitespace(input)
     .toLowerCase()
@@ -87,6 +135,7 @@ function extractInputThemeTerms(input: string): string[] {
 }
 
 function pickThemeTerms(input: string, matched: string[]): string[] {
+  const inputTerms = extractInputThemeTerms(input)
   const fromMatches = matched
     .map((value) =>
       value
@@ -97,7 +146,7 @@ function pickThemeTerms(input: string, matched: string[]): string[] {
     .flatMap((value) => value.split(/\s+/))
     .filter((word) => word.length >= 4 && !TITLE_STOP_WORDS.has(word))
 
-  const merged = [...fromMatches, ...extractInputThemeTerms(input)]
+  const merged = [...inputTerms, ...fromMatches]
   return Array.from(new Set(merged)).slice(0, 2)
 }
 
@@ -108,17 +157,20 @@ function buildAiGeneratedTitle(params: {
 }): string {
   const themeTerms = pickThemeTerms(params.input, params.matched)
   const dayTitle = collapseWhitespace(params.candidate.dayTitle)
+  const coreBurden = extractCoreBurden(params.input, 40)
 
   if (themeTerms.length === 2) {
-    return `${titleCase(themeTerms[0])} + ${titleCase(themeTerms[1])}: ${dayTitle}`
+    return `${headlineCase(`${themeTerms[0]} ${themeTerms[1]}`)}: ${dayTitle}`
   }
 
   if (themeTerms.length === 1) {
-    return `${titleCase(themeTerms[0])}: ${dayTitle}`
+    return `${headlineCase(themeTerms[0])}: ${dayTitle}`
   }
 
-  const snippet = toInputSnippet(params.input, 52)
-  if (snippet.length >= 12) return snippet
+  if (coreBurden.length >= 12) {
+    return `${headlineCase(coreBurden)}: ${dayTitle}`
+  }
+
   return dayTitle
 }
 
@@ -126,9 +178,10 @@ function buildAiQuestion(params: {
   candidate: CuratedDayCandidate
   input: string
 }): string {
-  const snippet = toInputSnippet(params.input, 84)
-  if (!snippet) return params.candidate.reflectionPrompt
-  return `You wrote "${snippet}". ${params.candidate.reflectionPrompt}`
+  const burden =
+    extractCoreBurden(params.input, 84) || toInputSnippet(params.input, 84)
+  if (!burden) return params.candidate.reflectionPrompt
+  return `You named this burden: "${burden}". ${params.candidate.reflectionPrompt}`
 }
 
 function buildAiReasoning(params: {
@@ -152,10 +205,10 @@ function buildAiPreviewParagraph(params: {
   candidate: CuratedDayCandidate
   input: string
 }): string {
-  const snippet = toInputSnippet(params.input, 74)
+  const burden = extractCoreBurden(params.input, 70)
   const teaching = params.candidate.teachingText.slice(0, 230).trim()
-  if (!snippet) return teaching
-  return `From what you shared ("${snippet}"), begin here: ${teaching}`
+  if (!burden) return teaching
+  return `Because you named "${burden}", begin with ${params.candidate.scriptureReference}. ${teaching}`
 }
 
 function choosePrimaryMatches(input: string): Array<{
