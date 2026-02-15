@@ -2,6 +2,9 @@
 
 import { useEffect } from 'react'
 
+const SW_VERSION = 'v44'
+const SW_VERSION_KEY = 'euangelion-sw-version'
+
 export default function ServiceWorkerRegistration() {
   useEffect(() => {
     if (!('serviceWorker' in navigator)) return
@@ -19,35 +22,54 @@ export default function ServiceWorkerRegistration() {
         onControllerChange,
       )
 
-      void navigator.serviceWorker
-        .register('/sw.js')
-        .then((registration) => {
-          const promoteWaitingWorker = (worker: ServiceWorker | null) => {
-            if (!worker) return
-            worker.postMessage({ type: 'SKIP_WAITING' })
+      void (async () => {
+        const previousVersion = localStorage.getItem(SW_VERSION_KEY)
+        if (previousVersion !== SW_VERSION) {
+          const registrations = await navigator.serviceWorker.getRegistrations()
+          await Promise.all(
+            registrations.map((registration) => registration.unregister()),
+          )
+          if ('caches' in window) {
+            const keys = await caches.keys()
+            await Promise.all(
+              keys
+                .filter((key) => key.startsWith('euangelion-'))
+                .map((key) => caches.delete(key)),
+            )
           }
+          localStorage.setItem(SW_VERSION_KEY, SW_VERSION)
+        }
 
-          // Ensure browser checks for updates immediately.
-          void registration.update()
-          promoteWaitingWorker(registration.waiting)
+        await navigator.serviceWorker
+          .register('/sw.js')
+          .then((registration) => {
+            const promoteWaitingWorker = (worker: ServiceWorker | null) => {
+              if (!worker) return
+              worker.postMessage({ type: 'SKIP_WAITING' })
+            }
 
-          registration.addEventListener('updatefound', () => {
-            const installing = registration.installing
-            if (!installing) return
+            // Ensure browser checks for updates immediately.
+            void registration.update()
+            promoteWaitingWorker(registration.waiting)
 
-            installing.addEventListener('statechange', () => {
-              if (
-                installing.state === 'installed' &&
-                navigator.serviceWorker.controller
-              ) {
-                promoteWaitingWorker(registration.waiting || installing)
-              }
+            registration.addEventListener('updatefound', () => {
+              const installing = registration.installing
+              if (!installing) return
+
+              installing.addEventListener('statechange', () => {
+                if (
+                  installing.state === 'installed' &&
+                  navigator.serviceWorker.controller
+                ) {
+                  promoteWaitingWorker(registration.waiting || installing)
+                }
+              })
             })
           })
-        })
-        .catch(() => {
-          // Silent fail — SW registration is best-effort
-        })
+          .catch(() => {
+            // Silent fail — SW registration is best-effort
+          })
+      })()
 
       return () => {
         navigator.serviceWorker.removeEventListener(

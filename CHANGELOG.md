@@ -190,6 +190,7 @@ Format: Reverse chronological, grouped by sprint/date.
   - added timed featured-series rotation and hardened card CSS to remove any legacy blank media/icon strip from rendering paths.
   - aligned shell-header test contract to the new single-nav architecture (removed docked-nav expectations).
   - bumped service-worker cache version to force stale homepage/header assets to refresh in production clients.
+  - added service-worker version migration guard that unregisters stale workers and clears `euangelion-*` caches when version changes, then re-registers cleanly.
 - Expanded shell consistency across non-home routes:
   - added breadcrumbs to settings and soul-audit pages;
   - added shared site footer to auth pages.
@@ -213,6 +214,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - `src/app/page.tsx`
 - `__tests__/shell-header.test.tsx`
 - `public/sw.js`
+- `src/components/ServiceWorkerRegistration.tsx`
 - `docs/feature-prds/F-029.md`
 
 ### Validation
