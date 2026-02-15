@@ -7,6 +7,14 @@ const AUTH_REQUIRED_ROUTES: string[] = []
 
 // Routes that always require auth
 const PROTECTED_ROUTES = ['/settings']
+const ADMIN_ROUTES = ['/admin']
+
+function adminAllowlist(): string[] {
+  return (process.env.ADMIN_EMAIL_ALLOWLIST || '')
+    .split(',')
+    .map((entry) => entry.trim().toLowerCase())
+    .filter(Boolean)
+}
 
 export async function proxy(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
@@ -46,13 +54,27 @@ export async function proxy(request: NextRequest) {
   // Check auth-required routes (devotional reading)
   const needsAuth =
     AUTH_REQUIRED_ROUTES.some((route) => pathname.startsWith(route)) ||
-    PROTECTED_ROUTES.some((route) => pathname.startsWith(route))
+    PROTECTED_ROUTES.some((route) => pathname.startsWith(route)) ||
+    ADMIN_ROUTES.some((route) => pathname.startsWith(route))
 
   if (needsAuth && !user) {
     const url = request.nextUrl.clone()
     url.pathname = '/auth/sign-in'
     url.searchParams.set('redirect', pathname)
     return NextResponse.redirect(url)
+  }
+
+  const needsAdmin = ADMIN_ROUTES.some((route) => pathname.startsWith(route))
+  if (needsAdmin) {
+    const allowedEmails = adminAllowlist()
+    const userEmail = user?.email?.toLowerCase() || ''
+    const isAdmin = Boolean(userEmail && allowedEmails.includes(userEmail))
+    if (!isAdmin) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/'
+      url.searchParams.set('adminDenied', '1')
+      return NextResponse.redirect(url)
+    }
   }
 
   return supabaseResponse

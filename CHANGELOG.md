@@ -215,6 +215,10 @@ Format: Reverse chronological, grouped by sprint/date.
     - replaced static help page with searchable FAQ hub and category filtering;
     - added replay tutorial entry points from Help and Settings;
     - added skippable/replayable walkthrough modal on Daily Bread (auto-first-run + query-trigger support).
+  - implemented protected admin runtime surface:
+    - added `/admin/*` pages (dashboard, YouTube allowlist, moderation, feed controls, transparency, audit logs) with shared shell navigation;
+    - added proxy-layer admin route guarding with `ADMIN_EMAIL_ALLOWLIST` email-role enforcement.
+  - documented `ADMIN_EMAIL_ALLOWLIST` in environment variable docs for deployment parity.
   - aligned shell-header test contract to the new single-nav architecture (removed docked-nav expectations).
   - bumped service-worker cache version to force stale homepage/header assets to refresh in production clients.
   - added service-worker version migration guard that unregisters stale workers and clears `euangelion-*` caches when version changes, then re-registers cleanly.
@@ -239,6 +243,15 @@ Format: Reverse chronological, grouped by sprint/date.
 - `src/app/help/page.tsx`
 - `src/components/HelpHubPageClient.tsx`
 - `src/components/WalkthroughModal.tsx`
+- `src/components/AdminShell.tsx`
+- `src/app/admin/page.tsx`
+- `src/app/admin/youtube-allowlist/page.tsx`
+- `src/app/admin/moderation/page.tsx`
+- `src/app/admin/feed-controls/page.tsx`
+- `src/app/admin/transparency/page.tsx`
+- `src/app/admin/audit-logs/page.tsx`
+- `src/proxy.ts`
+- `docs/technical/ENVIRONMENT-VARIABLES.md`
 - `src/app/auth/sign-in/page.tsx`
 - `src/app/auth/sign-up/page.tsx`
 - `src/app/page.tsx`

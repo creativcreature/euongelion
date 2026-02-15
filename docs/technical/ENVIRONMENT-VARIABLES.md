@@ -191,6 +191,29 @@ NEXT_PUBLIC_UNLOCK_HOUR=7
 
 ---
 
+### ADMIN_EMAIL_ALLOWLIST
+
+| Property           | Value                                                                                |
+| ------------------ | ------------------------------------------------------------------------------------ |
+| **Required**       | No (required only for `/admin/*` access)                                             |
+| **Client Exposed** | No (SERVER ONLY)                                                                     |
+| **Description**    | Comma-separated list of admin emails allowed to access protected in-app admin routes |
+| **Format**         | `email1@example.com,email2@example.com`                                              |
+
+**Example:**
+
+```bash
+ADMIN_EMAIL_ALLOWLIST=admin@euangelion.app,ops@euangelion.app
+```
+
+**Behavior:**
+
+- `/admin/*` routes require authenticated users and allowlisted email.
+- Non-allowlisted users are redirected to home.
+- Keep this list in deployment secrets, never client code.
+
+---
+
 ## Rate Limiting (Optional)
 
 ### UPSTASH_REDIS_URL
