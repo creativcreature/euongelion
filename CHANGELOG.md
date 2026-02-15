@@ -35,6 +35,43 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## iOS Shell Readiness Pass (2026-02-15)
+
+### What Changed
+
+- Normalized shared shell safe-area handling for iOS notch/home-indicator contexts:
+  - introduced shell safe-area tokens on `.mock-shell-frame`
+  - switched topbar from sticky offset translation to explicit safe-area top padding.
+- Fixed sticky offset stacking behavior:
+  - desktop nav now anchors to measured topbar height only (no duplicate inset offset)
+  - shell sticky side panels now use measured topbar + nav heights.
+- Mobile shell behavior hardened:
+  - utility topbar remains non-sticky on mobile
+  - primary nav remains sticky at viewport top for route consistency.
+- Added iOS shell contract tests to lock these rules and prevent regressions.
+
+### Files
+
+- `src/app/globals.css`
+- `__tests__/ios-shell-readiness-contract.test.ts`
+- `docs/feature-prds/F-049.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Billing Lifecycle State Pass (2026-02-15)
 
 ### What Changed

@@ -2073,6 +2073,8 @@
 }
 
 .mock-shell-frame {
+  --shell-safe-top: env(safe-area-inset-top, 0px);
+  --shell-safe-bottom: env(safe-area-inset-bottom, 0px);
   width: min(var(--mock-frame-max, 1860px), calc(100% - 1.4rem));
   max-width: calc(100vw - 1.4rem);
   margin: 0 auto;
@@ -2129,8 +2131,8 @@
   .shell-sticky-panel {
     position: sticky;
     top: calc(
-      var(--mock-h-topbar, 42px) + var(--mock-h-nav, 34px) + 0.9rem +
-        env(safe-area-inset-top, 0px)
+      var(--shell-topbar-height, var(--mock-h-topbar, 42px)) +
+        var(--mock-h-nav, 34px) + 0.9rem
     );
   }
 }
@@ -2179,9 +2181,10 @@
 
 .mock-topbar {
   position: sticky;
-  top: env(safe-area-inset-top, 0px);
+  top: 0;
   z-index: 70;
-  min-height: var(--mock-h-topbar, 42px);
+  min-height: calc(var(--mock-h-topbar, 42px) + var(--shell-safe-top, 0px));
+  padding-top: var(--shell-safe-top, 0px);
   background: var(--mock-paper, var(--color-bg));
   border-bottom: var(--mock-stroke, 1px) solid
     var(--mock-line, var(--color-border-strong));
@@ -2404,10 +2407,7 @@
   align-items: center;
   justify-content: center;
   position: sticky;
-  top: calc(
-    var(--shell-topbar-height, var(--mock-h-topbar, 42px)) +
-      env(safe-area-inset-top, 0px)
-  );
+  top: var(--shell-topbar-height, var(--mock-h-topbar, 42px));
   z-index: 65;
   gap: 0.45rem;
   min-height: var(--mock-h-nav, 34px);
@@ -3683,7 +3683,7 @@
   .mock-nav {
     justify-content: flex-start;
     align-items: stretch;
-    top: env(safe-area-inset-top, 0px);
+    top: 0;
     overflow: visible;
     flex-direction: column;
     gap: 0.28rem;
