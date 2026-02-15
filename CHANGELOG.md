@@ -76,6 +76,41 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Day Progression Teaser Pass (2026-02-15)
+
+### What Changed
+
+- Extended active-day progression API contract:
+  - `GET /api/daily-bread/active-days` now includes `scriptureText` and `unlockAt` for day rows, enabling richer locked-day teasers.
+- Improved `Today + 7 Days` progression UX in Daily Bread:
+  - locked days now provide a `View teaser` action;
+  - teaser panel shows day title, scripture reference + text, unlock time, and lock explanation.
+- Added reminder toggle flow for locked days:
+  - per-plan/day reminder preference stored locally and reflected inline in day rows/teaser panel.
+- Added regression assertion for locked-day `unlockAt` metadata in active-day API tests.
+
+### Files
+
+- `src/app/api/daily-bread/active-days/route.ts`
+- `src/components/DevotionalLibraryRail.tsx`
+- `__tests__/daily-bread-active-days.test.ts`
+- `docs/feature-prds/F-031.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Scroll Fluidity Hardening Pass (2026-02-14)
 
 ### What Changed

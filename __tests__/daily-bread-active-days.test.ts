@@ -18,6 +18,7 @@ let planDays: Array<{
   content: {
     title: string
     scriptureReference: string
+    scriptureText: string
   }
 }> = []
 let unlockResolver: (dayNumber: number) => {
@@ -91,15 +92,28 @@ describe('GET /api/daily-bread/active-days', () => {
     planDays = [
       {
         day_number: 1,
-        content: { title: 'Name It', scriptureReference: 'Psalm 46:10' },
+        content: {
+          title: 'Name It',
+          scriptureReference: 'Psalm 46:10',
+          scriptureText: 'Be still and know that I am God.',
+        },
       },
       {
         day_number: 2,
-        content: { title: 'Read It', scriptureReference: 'Isaiah 40:31' },
+        content: {
+          title: 'Read It',
+          scriptureReference: 'Isaiah 40:31',
+          scriptureText:
+            'Those who hope in the Lord will renew their strength.',
+        },
       },
       {
         day_number: 3,
-        content: { title: 'Walk It Out', scriptureReference: 'James 1:22' },
+        content: {
+          title: 'Walk It Out',
+          scriptureReference: 'James 1:22',
+          scriptureText: 'Be doers of the word, and not hearers only.',
+        },
       },
     ]
 
@@ -134,15 +148,28 @@ describe('GET /api/daily-bread/active-days', () => {
     planDays = [
       {
         day_number: 1,
-        content: { title: 'Archive Day', scriptureReference: 'Psalm 13:5' },
+        content: {
+          title: 'Archive Day',
+          scriptureReference: 'Psalm 13:5',
+          scriptureText: 'I trust in your unfailing love.',
+        },
       },
       {
         day_number: 2,
-        content: { title: 'Current Day', scriptureReference: 'John 14:27' },
+        content: {
+          title: 'Current Day',
+          scriptureReference: 'John 14:27',
+          scriptureText: 'Peace I leave with you; my peace I give to you.',
+        },
       },
       {
         day_number: 3,
-        content: { title: 'Locked Day', scriptureReference: 'Phil 4:6-7' },
+        content: {
+          title: 'Locked Day',
+          scriptureReference: 'Phil 4:6-7',
+          scriptureText:
+            'Do not be anxious about anything, but in everything by prayer.',
+        },
       },
     ]
 
@@ -178,7 +205,12 @@ describe('GET /api/daily-bread/active-days', () => {
     const payload = (await response.json()) as {
       currentDay: number
       dayLocking: 'enabled' | 'disabled'
-      days: Array<{ day: number; status: string; lockMessage?: string }>
+      days: Array<{
+        day: number
+        status: string
+        lockMessage?: string
+        unlockAt?: string
+      }>
     }
 
     expect(payload.dayLocking).toBe('enabled')
@@ -192,5 +224,6 @@ describe('GET /api/daily-bread/active-days', () => {
     expect(day2?.status).toBe('current')
     expect(day3?.status).toBe('locked')
     expect(day3?.lockMessage).toContain("isn't ready")
+    expect(day3?.unlockAt).toBeDefined()
   })
 })

@@ -18,9 +18,11 @@ type ActiveDayRow = {
   day: number
   title: string
   scriptureReference: string
+  scriptureText: string
   status: ActiveDayStatus
   route: string
   lockMessage?: string
+  unlockAt?: string
 }
 
 function statusPriority(status: ActiveDayStatus): number {
@@ -29,6 +31,18 @@ function statusPriority(status: ActiveDayStatus): number {
   if (status === 'unlocked') return 3
   if (status === 'archived') return 2
   return 1
+}
+
+function resolveUnlockAtIso(
+  cycleStartAtIso: string,
+  dayNumber: number,
+): string {
+  const base = new Date(cycleStartAtIso)
+  if (Number.isNaN(base.getTime())) return cycleStartAtIso
+  const target = new Date(base)
+  const offset = Math.max(0, dayNumber - 1)
+  target.setUTCDate(target.getUTCDate() + offset)
+  return target.toISOString()
 }
 
 export async function GET(request: NextRequest) {
@@ -66,6 +80,7 @@ export async function GET(request: NextRequest) {
           day: day.day_number,
           title: day.content.title,
           scriptureReference: day.content.scriptureReference,
+          scriptureText: day.content.scriptureText,
           status: 'unlocked',
           route: `/soul-audit/results?planToken=${latestPlan.plan_token}#plan-day-${day.day_number}`,
         }
@@ -91,9 +106,14 @@ export async function GET(request: NextRequest) {
         day: day.day_number,
         title: day.content.title,
         scriptureReference: day.content.scriptureReference,
+        scriptureText: day.content.scriptureText,
         status,
         route: `/soul-audit/results?planToken=${latestPlan.plan_token}#plan-day-${day.day_number}`,
         lockMessage: status === 'locked' ? unlock.message : undefined,
+        unlockAt:
+          status === 'locked'
+            ? resolveUnlockAtIso(latestPlan.cycle_start_at, day.day_number)
+            : undefined,
       }
     })
 

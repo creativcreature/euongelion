@@ -47,9 +47,11 @@ type ActiveDayRow = {
   day: number
   title: string
   scriptureReference: string
+  scriptureText: string
   status: 'current' | 'unlocked' | 'locked' | 'archived' | 'onboarding'
   route: string
   lockMessage?: string
+  unlockAt?: string
 }
 
 type ActiveDaysPayload = {
@@ -90,6 +92,7 @@ type TrashedArtifact = ArchivedArtifact & {
 
 const ARCHIVE_STORAGE_KEY = 'euangelion-library-archived-artifacts-v1'
 const TRASH_STORAGE_KEY = 'euangelion-library-trash-artifacts-v1'
+const LOCKED_DAY_REMINDER_KEY = 'euangelion-locked-day-reminders-v1'
 
 function buildSlugMetaMap() {
   const map = new Map<string, { title: string; series: string }>()
@@ -161,6 +164,39 @@ function safeParseLocalArray<T>(key: string): T[] {
   }
 }
 
+function safeParseLocalRecord(key: string): Record<string, boolean> {
+  if (typeof window === 'undefined') return {}
+  const raw = window.localStorage.getItem(key)
+  if (!raw) return {}
+  try {
+    const parsed = JSON.parse(raw) as unknown
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+      return {}
+    }
+    return Object.fromEntries(
+      Object.entries(parsed).filter((entry) => typeof entry[1] === 'boolean'),
+    )
+  } catch {
+    return {}
+  }
+}
+
+function formatUnlockDate(value: string | undefined): string {
+  if (!value) return 'Next scheduled unlock at 7:00 AM local time.'
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) {
+    return 'Next scheduled unlock at 7:00 AM local time.'
+  }
+  return date.toLocaleString('en-US', {
+    weekday: 'short',
+    month: 'short',
+    day: '2-digit',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  })
+}
+
 function normalizeInitialTab(value: string | undefined): LibraryMenuKey {
   if (
     value === 'today' ||
@@ -203,6 +239,10 @@ export default function DevotionalLibraryRail({
   const [trashedArtifacts, setTrashedArtifacts] = useState<TrashedArtifact[]>(
     [],
   )
+  const [lockedDayTeaser, setLockedDayTeaser] = useState<ActiveDayRow | null>(
+    null,
+  )
+  const [dayReminders, setDayReminders] = useState<Record<string, boolean>>({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const completions = useProgressStore((s) => s.completions)
@@ -226,6 +266,7 @@ export default function DevotionalLibraryRail({
       safeParseLocalArray<ArchivedArtifact>(ARCHIVE_STORAGE_KEY),
     )
     setTrashedArtifacts(safeParseLocalArray<TrashedArtifact>(TRASH_STORAGE_KEY))
+    setDayReminders(safeParseLocalRecord(LOCKED_DAY_REMINDER_KEY))
   }, [])
 
   function persistArchiveState(
@@ -277,6 +318,13 @@ export default function DevotionalLibraryRail({
           ? [...activeDaysPayload.days].sort((a, b) => a.day - b.day)
           : [],
       )
+      setLockedDayTeaser((current) => {
+        if (!current || !Array.isArray(activeDaysPayload.days)) return current
+        const nextMatch = activeDaysPayload.days.find(
+          (day) => day.day === current.day,
+        )
+        return nextMatch ?? null
+      })
       setActivePlanToken(
         typeof activeDaysPayload.planToken === 'string'
           ? activeDaysPayload.planToken
@@ -447,6 +495,28 @@ export default function DevotionalLibraryRail({
     )
   }
 
+  function reminderKey(day: ActiveDayRow): string {
+    const planToken = activePlanToken || 'no-plan'
+    return `${planToken}:${day.day}`
+  }
+
+  function toggleReminder(day: ActiveDayRow) {
+    const key = reminderKey(day)
+    setDayReminders((current) => {
+      const next = {
+        ...current,
+        [key]: !current[key],
+      }
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem(
+          LOCKED_DAY_REMINDER_KEY,
+          JSON.stringify(next),
+        )
+      }
+      return next
+    })
+  }
+
   const counts = {
     today: activeDays.length,
     bookmarks: bookmarks.length,
@@ -521,40 +591,105 @@ export default function DevotionalLibraryRail({
                     No active devotional plan yet. Start a Soul Audit to begin.
                   </p>
                 ) : (
-                  <div className="space-y-2">
-                    {activeDays.map((day) => (
+                  <>
+                    <div className="space-y-2">
+                      {activeDays.map((day) => {
+                        const dayReminderEnabled =
+                          dayReminders[reminderKey(day)]
+                        return (
+                          <div
+                            key={`active-day-${day.day}`}
+                            className="border px-3 py-2"
+                            style={{ borderColor: 'var(--color-border)' }}
+                          >
+                            <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
+                              <p className="text-label vw-small text-gold">
+                                DAY {day.day}
+                              </p>
+                              <p className="text-label vw-small text-muted">
+                                {day.status.toUpperCase()}
+                              </p>
+                            </div>
+                            {day.status === 'locked' ? (
+                              <>
+                                <p className="vw-small text-secondary">
+                                  {day.title}
+                                </p>
+                                <button
+                                  type="button"
+                                  className="text-label vw-small mt-2 link-highlight"
+                                  onClick={() => setLockedDayTeaser(day)}
+                                >
+                                  View teaser
+                                </button>
+                                {dayReminderEnabled ? (
+                                  <p className="vw-small mt-1 text-muted">
+                                    Reminder enabled.
+                                  </p>
+                                ) : null}
+                              </>
+                            ) : (
+                              <Link
+                                href={day.route}
+                                className="vw-small link-highlight text-secondary"
+                              >
+                                {day.title}
+                              </Link>
+                            )}
+                            <p className="vw-small mt-1 text-muted">
+                              {day.scriptureReference}
+                            </p>
+                          </div>
+                        )
+                      })}
+                    </div>
+
+                    {lockedDayTeaser && (
                       <div
-                        key={`active-day-${day.day}`}
-                        className="border px-3 py-2"
+                        className="mt-4 border px-3 py-3"
                         style={{ borderColor: 'var(--color-border)' }}
                       >
-                        <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
-                          <p className="text-label vw-small text-gold">
-                            DAY {day.day}
-                          </p>
-                          <p className="text-label vw-small text-muted">
-                            {day.status.toUpperCase()}
-                          </p>
-                        </div>
-                        {day.status === 'locked' ? (
-                          <p className="vw-small text-secondary">
-                            {day.title}
-                            {day.lockMessage ? ` — ${day.lockMessage}` : ''}
-                          </p>
-                        ) : (
-                          <Link
-                            href={day.route}
-                            className="vw-small link-highlight text-secondary"
-                          >
-                            {day.title}
-                          </Link>
-                        )}
-                        <p className="vw-small mt-1 text-muted">
-                          {day.scriptureReference}
+                        <p className="text-label vw-small text-gold">
+                          LOCKED DAY TEASER
                         </p>
+                        <p className="vw-small mt-2 text-secondary">
+                          Day {lockedDayTeaser.day}: {lockedDayTeaser.title}
+                        </p>
+                        <p className="vw-small mt-1 text-muted">
+                          {lockedDayTeaser.scriptureReference}
+                        </p>
+                        <p className="text-serif-italic vw-small mt-2 text-secondary">
+                          {lockedDayTeaser.scriptureText}
+                        </p>
+                        <p className="vw-small mt-2 text-muted">
+                          Unlocks: {formatUnlockDate(lockedDayTeaser.unlockAt)}
+                        </p>
+                        {lockedDayTeaser.lockMessage ? (
+                          <p className="vw-small mt-1 text-muted">
+                            {lockedDayTeaser.lockMessage}
+                          </p>
+                        ) : null}
+                        <div className="mt-3 flex flex-wrap items-center gap-4">
+                          <button
+                            type="button"
+                            className="text-label vw-small link-highlight"
+                            onClick={() => toggleReminder(lockedDayTeaser)}
+                          >
+                            {dayReminders[reminderKey(lockedDayTeaser)]
+                              ? 'Disable reminder'
+                              : 'Enable reminder'}
+                          </button>
+                          <button
+                            type="button"
+                            className="text-label vw-small link-highlight"
+                            onClick={() => setLockedDayTeaser(null)}
+                          >
+                            Close teaser
+                          </button>
+                        </div>
                       </div>
-                    ))}
-                  </div>
+                    )}
+                  </>
                 )}
                 {activePlanToken && (
                   <p className="vw-small mt-3 text-muted">
