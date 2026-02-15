@@ -53,6 +53,9 @@ export default function EuangelionShellHeader({
   const topbarRef = useRef<HTMLDivElement | null>(null)
   const previousPathnameRef = useRef(pathname)
   const accountMenuRef = useRef<HTMLDivElement | null>(null)
+  const accountTriggerRef = useRef<HTMLButtonElement | null>(null)
+  const mobileMenuToggleRef = useRef<HTMLButtonElement | null>(null)
+  const mobileMenuPanelRef = useRef<HTMLDivElement | null>(null)
 
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
   const [now, setNow] = useState(() => new Date())
@@ -154,9 +157,51 @@ export default function EuangelionShellHeader({
       setAccountMenuOpen(false)
     }
 
+    const focusFrame = window.requestAnimationFrame(() => {
+      const firstItem =
+        accountMenuRef.current?.querySelector<HTMLElement>('[role="menuitem"]')
+      firstItem?.focus()
+    })
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key !== 'Escape') return
+      setAccountMenuOpen(false)
+      accountTriggerRef.current?.focus()
+    }
+
     document.addEventListener('mousedown', closeIfOutside)
-    return () => document.removeEventListener('mousedown', closeIfOutside)
+    document.addEventListener('keydown', closeOnEscape)
+    return () => {
+      window.cancelAnimationFrame(focusFrame)
+      document.removeEventListener('mousedown', closeIfOutside)
+      document.removeEventListener('keydown', closeOnEscape)
+    }
   }, [accountMenuOpen])
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    const panel = mobileMenuPanelRef.current
+    if (!panel) return
+
+    const focusFrame = window.requestAnimationFrame(() => {
+      const firstInteractive = panel.querySelector<HTMLElement>(
+        'a[href], button:not([disabled])',
+      )
+      firstInteractive?.focus()
+    })
+
+    function onPanelKeydown(event: KeyboardEvent) {
+      if (event.key !== 'Escape') return
+      setMobileMenuOpen(false)
+      mobileMenuToggleRef.current?.focus()
+    }
+
+    panel.addEventListener('keydown', onPanelKeydown)
+    return () => {
+      window.cancelAnimationFrame(focusFrame)
+      panel.removeEventListener('keydown', onPanelKeydown)
+    }
+  }, [mobileMenuOpen])
 
   useEffect(() => {
     const spans = Array.from(
@@ -331,15 +376,23 @@ export default function EuangelionShellHeader({
           type="button"
           className={`mock-mobile-menu-toggle ${mobileMenuOpen ? 'is-open' : ''}`}
           onClick={() => setMobileMenuOpen((current) => !current)}
+          ref={mobileMenuToggleRef}
           aria-label={
             mobileMenuOpen ? 'Close secondary menu' : 'Open secondary menu'
           }
           aria-expanded={mobileMenuOpen}
+          aria-controls="shell-mobile-secondary-nav"
         >
           {mobileMenuOpen ? 'CLOSE' : 'MENU'}
         </button>
       </div>
-      <div className={`${panelClassName} ${mobileMenuOpen ? 'is-open' : ''}`}>
+      <div
+        id="shell-mobile-secondary-nav"
+        ref={mobileMenuPanelRef}
+        role="group"
+        aria-label="Secondary navigation"
+        className={`${panelClassName} ${mobileMenuOpen ? 'is-open' : ''}`}
+      >
         {mobileSecondaryNavItems.map((item) => {
           const active = isNavItemActive(item.href)
           return (
@@ -428,6 +481,7 @@ export default function EuangelionShellHeader({
                   <button
                     type="button"
                     className="mock-account-trigger text-label"
+                    ref={accountTriggerRef}
                     aria-haspopup="menu"
                     aria-expanded={accountMenuOpen}
                     onClick={() => setAccountMenuOpen((current) => !current)}

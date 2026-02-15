@@ -35,6 +35,41 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Keyboard Navigation Accessibility Pass (2026-02-15)
+
+### What Changed
+
+- Improved mobile shell menu keyboard semantics:
+  - added `aria-controls="shell-mobile-secondary-nav"` on the mobile menu toggle.
+  - added labeled secondary nav group (`role="group"`, `aria-label="Secondary navigation"`).
+  - added Escape key close behavior for mobile secondary menu with focus return to menu toggle.
+- Improved account menu keyboard behavior:
+  - first menu item now receives focus when account menu opens.
+  - Escape closes account menu and returns focus to account trigger.
+- Added regression coverage in `shell-header` tests for keyboard close behavior and menu wiring.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `__tests__/shell-header.test.tsx`
+- `docs/feature-prds/F-044.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## LCP + CLS Stability Pass (2026-02-15)
 
 ### What Changed

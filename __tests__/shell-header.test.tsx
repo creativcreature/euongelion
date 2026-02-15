@@ -160,4 +160,34 @@ describe('EuangelionShellHeader', () => {
       ).toBeInTheDocument()
     })
   })
+
+  it('wires mobile secondary menu keyboard escape close behavior', async () => {
+    const user = userEvent.setup()
+    render(<EuangelionShellHeader />)
+
+    const toggle = screen.getByRole('button', {
+      name: 'Open secondary menu',
+    })
+    expect(toggle).toHaveAttribute(
+      'aria-controls',
+      'shell-mobile-secondary-nav',
+    )
+
+    await user.click(toggle)
+
+    const panel = await screen.findByRole('group', {
+      name: 'Secondary navigation',
+    })
+    expect(panel).toBeInTheDocument()
+
+    await user.keyboard('{Escape}')
+
+    await waitFor(() => {
+      const reopenedToggle = screen.getByRole('button', {
+        name: 'Open secondary menu',
+      })
+      expect(reopenedToggle).toBeInTheDocument()
+      expect(reopenedToggle).toHaveFocus()
+    })
+  })
 })
