@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
+import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
@@ -263,6 +264,33 @@ export default function SettingsPage() {
           items={[{ label: 'HOME', href: '/' }, { label: 'SETTINGS' }]}
         />
         <h1 className="text-display vw-heading-lg mb-12">Settings</h1>
+
+        <div
+          id="tutorial"
+          className="mb-8 pb-8"
+          style={{ borderBottom: '1px solid var(--color-border)' }}
+        >
+          <h2 className="text-label vw-small mb-4 text-gold">
+            WALKTHROUGH &amp; HELP
+          </h2>
+          <p className="vw-small mb-4 text-secondary">
+            Replay the guided Daily Bread walkthrough at any time.
+          </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link
+              href="/daily-bread?tutorial=1"
+              className="mock-btn text-label"
+            >
+              REPLAY TUTORIAL
+            </Link>
+            <Link
+              href="/help#faq"
+              className="text-label vw-small link-highlight"
+            >
+              Open Help FAQ
+            </Link>
+          </div>
+        </div>
 
         {/* Theme */}
         <div

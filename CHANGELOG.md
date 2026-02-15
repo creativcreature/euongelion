@@ -211,6 +211,10 @@ Format: Reverse chronological, grouped by sprint/date.
     - reduced desktop homepage body-copy scale slightly for balance;
     - increased homepage headline weight and added additional bottom spacing.
   - added Phase 16 coverage with a dedicated help/onboarding tutorial test suite to enforce help-hub FAQ search, homepage FAQ linkage, and guided walkthrough replay/skip contracts.
+  - implemented runtime Help + walkthrough experience (not test-only):
+    - replaced static help page with searchable FAQ hub and category filtering;
+    - added replay tutorial entry points from Help and Settings;
+    - added skippable/replayable walkthrough modal on Daily Bread (auto-first-run + query-trigger support).
   - aligned shell-header test contract to the new single-nav architecture (removed docked-nav expectations).
   - bumped service-worker cache version to force stale homepage/header assets to refresh in production clients.
   - added service-worker version migration guard that unregisters stale workers and clears `euangelion-*` caches when version changes, then re-registers cleanly.
@@ -232,6 +236,9 @@ Format: Reverse chronological, grouped by sprint/date.
 - `src/app/wake-up/devotional/[slug]/error.tsx`
 - `src/app/soul-audit/page.tsx`
 - `src/app/settings/page.tsx`
+- `src/app/help/page.tsx`
+- `src/components/HelpHubPageClient.tsx`
+- `src/components/WalkthroughModal.tsx`
 - `src/app/auth/sign-in/page.tsx`
 - `src/app/auth/sign-up/page.tsx`
 - `src/app/page.tsx`
