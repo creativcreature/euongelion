@@ -186,7 +186,8 @@ Format: Reverse chronological, grouped by sprint/date.
   - restored sticky top utility row + sticky primary nav behavior by removing short-container sticky constraints;
   - removed residual docked-nav CSS branches and synchronized sticky offset on both shell frame + paper container to prevent header/menu double-render and sticky drift;
   - enlarged homepage desktop body-copy scale, aligned hero panel vertical rhythm with CTA rhythm, and tuned FAQ hover state to blue answer reveal while keeping question default;
-  - updated featured-series presentation to 3-card carousel groups without placeholder image/icon blocks, with expanded preview copy.
+  - updated featured-series presentation to 3-card carousel groups without placeholder image/icon blocks, with expanded preview copy;
+  - added timed featured-series rotation and hardened card CSS to remove any legacy blank media/icon strip from rendering paths.
   - aligned shell-header test contract to the new single-nav architecture (removed docked-nav expectations).
   - bumped service-worker cache version to force stale homepage/header assets to refresh in production clients.
 - Expanded shell consistency across non-home routes:

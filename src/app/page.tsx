@@ -116,6 +116,20 @@ export default function Home() {
     featuredSlides[featuredCarouselIndex % Math.max(1, featuredSlides.length)]
 
   useEffect(() => {
+    if (featuredSlides.length <= 1) return
+    if (typeof window === 'undefined') return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    const timer = window.setInterval(() => {
+      setFeaturedCarouselIndex(
+        (previous) => (previous + 1) % featuredSlides.length,
+      )
+    }, 7_000)
+
+    return () => window.clearInterval(timer)
+  }, [featuredSlides.length])
+
+  useEffect(() => {
     if (typeof window === 'undefined') return
     const params = new URLSearchParams(window.location.search)
     const hasAuthCallbackParams =
@@ -401,7 +415,10 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="mock-featured-grid">
+        <section
+          className="mock-featured-grid"
+          aria-label="Featured series carousel"
+        >
           {activeFeaturedSeries.map(({ slug, series }) => (
             <Link
               href={`/wake-up/series/${slug}`}

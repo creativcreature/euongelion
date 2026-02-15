@@ -2677,7 +2677,7 @@
 
 .mock-featured-card {
   display: grid;
-  grid-template-rows: 150px auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto auto;
   gap: 0.5rem;
   border-right: var(--mock-stroke) solid var(--mock-line);
   border-top: var(--mock-stroke) solid var(--mock-line);
@@ -2692,11 +2692,11 @@
 }
 
 .mock-card-media {
-  height: 136px;
+  display: none;
+  height: 0;
   border: calc(var(--mock-stroke) * 1.35) solid var(--mock-line);
   background: color-mix(in srgb, var(--mock-paper) 95%, white 5%);
   padding: 0;
-  display: grid;
   place-items: center;
   color: var(--mock-blue);
 }
@@ -2910,12 +2910,14 @@
 .mock-homepage {
   --mock-h-hero: 420px;
   --mock-h-feature-card: 660px;
+  --mock-panel-pad-y-top: 0.85rem;
+  --mock-panel-pad-y-bottom: 1rem;
 }
 
 .mock-homepage .mock-panel,
 .mock-homepage .mock-cta {
-  padding-top: 0.85rem;
-  padding-bottom: 1rem;
+  padding-top: var(--mock-panel-pad-y-top);
+  padding-bottom: var(--mock-panel-pad-y-bottom);
 }
 
 .mock-homepage .mock-panel {
