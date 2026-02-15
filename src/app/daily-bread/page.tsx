@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import DevotionalLibraryRail from '@/components/DevotionalLibraryRail'
 import SiteFooter from '@/components/SiteFooter'
@@ -57,11 +56,6 @@ export default function DailyBreadPage() {
     <div className="mock-home">
       <main className="mock-paper">
         <EuangelionShellHeader />
-
-        <Breadcrumbs
-          className="app-breadcrumbs mock-breadcrumb-row"
-          items={[{ label: 'HOME', href: '/' }, { label: 'DAILY BREAD' }]}
-        />
 
         <section
           className="mock-panel border-b"

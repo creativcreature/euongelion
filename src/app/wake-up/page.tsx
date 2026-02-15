@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import SeriesCardIcon from '@/components/newspaper/SeriesCardIcon'
+import { scriptureLeadFromFramework } from '@/lib/scripture-reference'
 import { typographer } from '@/lib/typographer'
 import { WAKEUP_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 
@@ -119,15 +119,20 @@ export default function WakeUpPage() {
                 key={slug}
                 className="mock-featured-card mock-wakeup-series-card"
               >
-                <div className="mock-card-media" aria-hidden="true">
-                  <SeriesCardIcon slug={slug} />
-                </div>
+                <p className="mock-scripture-lead">
+                  {typographer(scriptureLeadFromFramework(info.framework))}
+                </p>
                 <h3>{info.title}.</h3>
                 <p>{info.question}</p>
+                <p className="mock-featured-preview">
+                  {typographer(info.introduction.slice(0, 140).trim())}...
+                </p>
                 <p className="mock-featured-day text-label">
                   START WITH: {info.days[0]?.title || 'DAY 1'}
                 </p>
-                <span className="text-label">{info.days.length || 5} DAYS</span>
+                <span className="mock-featured-days text-label">
+                  {info.days.length || 5} DAYS
+                </span>
               </Link>
             )
           })}

@@ -191,6 +191,25 @@ Format: Reverse chronological, grouped by sprint/date.
   - tightened masthead top spacing by reducing header masthead top padding and nudging `EUANGELION` upward for closer border fit.
   - doubled desktop homepage body-copy scale, doubled masthead pronunciation line size, moved bottom `EUANGELION` below the footer, expanded featured-series preview text, enabled tap-to-reveal FAQ answers on mobile, and increased spacing under the series CTA footnote.
   - normalized card media styling so non-home series surfaces retain icon/media frames while homepage cards remain text-first.
+  - refined shell/nav behavior and mobile ergonomics:
+    - moved mobile dark-mode action into dropdown panel as a full-width menu item;
+    - made mobile topbar non-sticky so only nav sticks on scroll;
+    - simplified mobile nav touch behavior (wrap, no horizontal strip lock) to reduce scroll/swipe stickiness;
+    - removed breadcrumbs from main nav pages (`/series`, `/daily-bread`, `/soul-audit`);
+    - aligned mobile `newspaper-home`/`newspaper-reading` widths with homepage frame geometry.
+  - tuned homepage typography/content density:
+    - reduced homepage series preview copy length and preview text scale;
+    - kept desktop pronunciation line large while shrinking mobile pronunciation line to avoid wrapping;
+    - restored mobile homepage body copy to baseline scale.
+  - made devotional previews scripture-led and removed duplicate card density:
+    - moved scripture reference to the first/primary line across homepage, wake-up, series browse, and soul-audit option previews;
+    - styled scripture lead as the largest preview element for clearer theological hierarchy;
+    - tightened homepage featured-series body preview to ~25-30 words and removed repeated context density;
+    - replaced homepage featured `START WITH` copy with explicit `START SERIES` CTA treatment.
+  - finalized homepage readability polish:
+    - desktop FAQ now reveals answers on hover-only interaction and keeps question-first default state;
+    - reduced desktop homepage body-copy scale slightly for balance;
+    - increased homepage headline weight and added additional bottom spacing.
   - aligned shell-header test contract to the new single-nav architecture (removed docked-nav expectations).
   - bumped service-worker cache version to force stale homepage/header assets to refresh in production clients.
   - added service-worker version migration guard that unregisters stale workers and clears `euangelion-*` caches when version changes, then re-registers cleanly.
@@ -215,6 +234,10 @@ Format: Reverse chronological, grouped by sprint/date.
 - `src/app/auth/sign-in/page.tsx`
 - `src/app/auth/sign-up/page.tsx`
 - `src/app/page.tsx`
+- `src/app/series/page.tsx`
+- `src/app/wake-up/page.tsx`
+- `src/app/soul-audit/results/page.tsx`
+- `src/lib/scripture-reference.ts`
 - `__tests__/shell-header.test.tsx`
 - `public/sw.js`
 - `src/components/ServiceWorkerRegistration.tsx`

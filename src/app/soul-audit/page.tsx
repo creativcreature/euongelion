@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect, useSyncExternalStore } from 'react'
 import { useRouter } from 'next/navigation'
-import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import FadeIn from '@/components/motion/FadeIn'
@@ -114,10 +113,6 @@ export default function SoulAuditPage() {
         className="flex min-h-[calc(100vh-88px)] flex-col items-center justify-center px-6"
       >
         <div className="w-full max-w-2xl">
-          <Breadcrumbs
-            className="mb-7"
-            items={[{ label: 'HOME', href: '/' }, { label: 'SOUL AUDIT' }]}
-          />
           {/* Line-Level Contrast: sans label above, serif italic question below */}
           <FadeIn y={0}>
             <p className="text-label vw-small mb-6 text-center text-gold type-caption">

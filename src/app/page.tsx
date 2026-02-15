@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
+import { scriptureLeadFromFramework } from '@/lib/scripture-reference'
 import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_DATA } from '@/data/series'
 import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
@@ -115,10 +116,11 @@ export default function Home() {
   const activeFeaturedSeries =
     featuredSlides[featuredCarouselIndex % Math.max(1, featuredSlides.length)]
 
-  const formatSeriesPreview = (introduction: string, context: string) => {
-    const combined = typographer(`${introduction} ${context}`)
-    if (combined.length <= 280) return combined
-    return `${combined.slice(0, 277).trimEnd()}...`
+  const formatSeriesPreview = (introduction: string) => {
+    const combined = typographer(introduction).replace(/\s+/g, ' ').trim()
+    const words = combined.split(' ').filter(Boolean)
+    if (words.length <= 30) return combined
+    return `${words.slice(0, 28).join(' ')}...`
   }
 
   useEffect(() => {
@@ -148,20 +150,10 @@ export default function Home() {
   }, [router])
 
   useEffect(() => {
-    if (isMobileViewport) {
+    if (!isMobileViewport) {
       setActiveFaqQuestion(null)
-      return
     }
-    setActiveFaqQuestion((previous) => {
-      if (
-        previous &&
-        faqItemsToRender.some((item) => item.question === previous)
-      ) {
-        return previous
-      }
-      return faqItemsToRender[0]?.question ?? null
-    })
-  }, [faqItemsToRender, isMobileViewport])
+  }, [isMobileViewport])
 
   useEffect(() => {
     let cancelled = false
@@ -431,15 +423,22 @@ export default function Home() {
               key={slug}
               className="mock-featured-card"
             >
+              <p className="mock-scripture-lead">
+                {typographer(scriptureLeadFromFramework(series.framework))}
+              </p>
               <h3>{series.title}.</h3>
-              <p className="mock-featured-preview">
-                {formatSeriesPreview(series.introduction, series.context)}
-              </p>
               <p>{series.question}</p>
-              <p className="mock-featured-day text-label">
-                START WITH: {series.days[0]?.title || 'DAY 1'}
+              <p className="mock-featured-preview">
+                {formatSeriesPreview(series.introduction)}
               </p>
-              <span className="text-label">{series.days.length || 5} DAYS</span>
+              <div className="mock-featured-actions">
+                <span className="mock-series-start text-label">
+                  START SERIES
+                </span>
+                <span className="mock-featured-days text-label">
+                  {series.days.length || 5} DAYS
+                </span>
+              </div>
             </Link>
           ))}
         </section>
@@ -519,7 +518,8 @@ export default function Home() {
           {faqItemsToRender.map((item, idx) => {
             const cardId = `faq-card-${idx}`
             const answerId = `faq-answer-${idx}`
-            const isActive = activeFaqQuestion === item.question
+            const isActive =
+              isMobileViewport && activeFaqQuestion === item.question
 
             if (isMobileViewport) {
               return (
@@ -549,12 +549,9 @@ export default function Home() {
                 type="button"
                 key={`${item.question}-${idx}`}
                 id={cardId}
-                className={`mock-faq-card ${isActive ? 'is-active' : ''}`}
-                aria-expanded={isActive}
+                className="mock-faq-card"
+                aria-expanded={false}
                 aria-controls={answerId}
-                onMouseEnter={() => setActiveFaqQuestion(item.question)}
-                onFocus={() => setActiveFaqQuestion(item.question)}
-                onClick={() => setActiveFaqQuestion(item.question)}
               >
                 <p className="mock-faq-question">{item.question}</p>
                 <p id={answerId} className="mock-faq-answer">

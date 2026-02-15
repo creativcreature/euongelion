@@ -1,0 +1,123 @@
+version: 1
+updated_at: 2026-02-14
+
+decisions:
+  - id: SA-001
+    title: submit-is-options-only
+  - id: SA-002
+    title: five-options-split-3-plus-2
+  - id: SA-003
+    title: essential-consent-required-analytics-opt-in-default-off
+  - id: SA-004
+    title: crisis-acknowledgement-gate-required
+  - id: SA-005
+    title: curated-first-80-20-with-fail-closed-core-modules
+  - id: SA-006
+    title: no-full-plan-until-selection
+  - id: SA-007
+    title: monday-tuesday-wed-sun-scheduling-policy
+  - id: SA-008
+    title: local-corpus-only-chat-and-endnotes
+  - id: SA-009
+    title: mock-account-testing-shell-enabled
+  - id: SA-010
+    title: tracking-spine-docs-and-compaction-handoff-required
+  - id: SA-011
+    title: semver-and-changelog-must-stay-in-sync
+  - id: SA-012
+    title: claude-doc-must-reference-production-tracking-stack
+  - id: SA-013
+    title: ux-alignment-docs-required-for-user-facing-decisions
+  - id: SA-014
+    title: one-prd-per-feature-with-outcomes-log-required
+  - id: SA-015
+    title: methodology-traceability-required-for-feature-work
+  - id: SA-016
+    title: frozen-user-reference-directories-must-not-be-removed-or-renamed
+  - id: SA-017
+    title: app-store-release-gate-must-pass-before-submission
+
+contracts:
+  required_files:
+    - src/app/api/soul-audit/submit/route.ts
+    - src/app/api/soul-audit/consent/route.ts
+    - src/app/api/soul-audit/select/route.ts
+    - src/app/api/devotional-plan/[token]/day/[n]/route.ts
+    - src/app/api/mock-account/session/route.ts
+    - src/app/api/mock-account/export/route.ts
+    - src/app/api/annotations/route.ts
+    - src/app/api/bookmarks/route.ts
+    - src/lib/soul-audit/curated-builder.ts
+    - src/lib/soul-audit/schedule.ts
+  submit_route_forbidden_tokens:
+    - customPlan
+    - customDevotional
+  required_submit_tokens:
+    - options
+    - auditRunId
+    - requiresEssentialConsent
+  required_chat_guard_tokens:
+    - local corpus
+    - devotional context
+  policy_split:
+    - ai_primary:3
+    - curated_prefab:2
+    - total:5
+  required_tracking_docs:
+    - CHANGELOG.md
+    - CLAUDE.md
+    - docs/PRODUCTION-SOURCE-OF-TRUTH.md
+    - docs/production-decisions.yaml
+    - docs/PRODUCTION-FEATURE-SCORECARD.md
+    - docs/PRODUCTION-10-10-PLAN.md
+    - docs/PRODUCTION-COMPACTION-HANDOFF.md
+    - docs/AUDIENCE.md
+    - docs/PUBLIC-FACING-LANGUAGE.md
+    - docs/UX-FLOW-MAPS.md
+    - docs/SUCCESS-METRICS.md
+    - docs/feature-prds/FEATURE-PRD-INDEX.md
+    - docs/feature-prds/FEATURE-PRD-REGISTRY.yaml
+    - docs/methodology/M00-EUANGELION-UNIFIED-METHODOLOGY.md
+    - docs/methodology/M00-METHODOLOGY-TRACEABILITY-MATRIX.md
+    - docs/methodology/METHOD-SOURCE-INDEX.md
+    - docs/appstore/APP-STORE-RELEASE-GATE.md
+    - docs/REFERENCE-FOLDERS-INDEX.md
+  required_claude_references:
+    - docs/PRODUCTION-SOURCE-OF-TRUTH.md
+    - docs/production-decisions.yaml
+    - docs/PRODUCTION-FEATURE-SCORECARD.md
+    - docs/PRODUCTION-10-10-PLAN.md
+    - docs/PRODUCTION-COMPACTION-HANDOFF.md
+    - docs/AUDIENCE.md
+    - docs/PUBLIC-FACING-LANGUAGE.md
+    - docs/UX-FLOW-MAPS.md
+    - docs/SUCCESS-METRICS.md
+    - docs/feature-prds/FEATURE-PRD-INDEX.md
+    - docs/feature-prds/FEATURE-PRD-REGISTRY.yaml
+    - docs/methodology/M00-EUANGELION-UNIFIED-METHODOLOGY.md
+    - docs/appstore/APP-STORE-RELEASE-GATE.md
+    - docs/REFERENCE-FOLDERS-INDEX.md
+    - CHANGELOG.md
+  required_prd_dirs:
+    - docs/feature-prds
+    - docs/methodology
+    - docs/appstore
+    - docs/runbooks
+  required_methodology_docs:
+    - docs/methodology/M00-EUANGELION-UNIFIED-METHODOLOGY.md
+    - docs/methodology/M00-METHODOLOGY-TRACEABILITY-MATRIX.md
+    - docs/methodology/M00-DUPLICATION-RESOLUTION-LOG.md
+    - docs/methodology/METHOD-SOURCE-INDEX.md
+    - docs/methodology/M01-ENGENIUS-SITE-ARCHITECTURE.md
+    - docs/methodology/M02-SAAS-WEB-BEST-PRACTICES.md
+    - docs/methodology/M03-USERLYTICS-IA-RESEARCH.md
+    - docs/methodology/M04-NAVIGATION-DESIGN-BEST-PRACTICES.md
+    - docs/methodology/M05-BAYMARD-SELF-SERVICE-UX.md
+    - docs/methodology/M06-CONNECTIVE-IA-UX-STRATEGY.md
+  required_appstore_docs:
+    - docs/appstore/APP-STORE-RELEASE-GATE.md
+    - docs/appstore/APP-STORE-ASSET-TRACKER.md
+    - docs/appstore/APP-REVIEW-NOTES-TEMPLATE.md
+  frozen_reference_dirs:
+    - user-references
+    - docs/user refmat

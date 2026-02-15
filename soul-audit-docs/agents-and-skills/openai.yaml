@@ -1,0 +1,7 @@
+interface:
+  display_name: "Soul Audit Delivery"
+  short_description: "Build and fix Soul Audit staged flow"
+  default_prompt: "Use $soul-audit-delivery to implement or debug submit, consent, and select flow behavior."
+
+policy:
+  allow_implicit_invocation: true

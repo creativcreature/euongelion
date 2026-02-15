@@ -83,12 +83,8 @@ export default function EuangelionShellHeader({
     [mobileNavItems],
   )
   const mobileTickerItems = useMemo(
-    () => [
-      formatMastheadDate(now),
-      'Daily Devotionals for the Hungry Soul',
-      theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE',
-    ],
-    [now, theme],
+    () => ['Daily Devotionals for the Hungry Soul'],
+    [],
   )
 
   useEffect(() => {
@@ -239,7 +235,13 @@ export default function EuangelionShellHeader({
     const reducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
     ).matches
-    if (!isMobileViewport || reducedMotion || mobileMenuOpen) return
+    if (
+      !isMobileViewport ||
+      reducedMotion ||
+      mobileMenuOpen ||
+      mobileTickerItems.length <= 1
+    )
+      return
 
     const timer = window.setInterval(
       () =>
@@ -336,14 +338,6 @@ export default function EuangelionShellHeader({
         >
           {mobileMenuOpen ? 'CLOSE' : 'MENU'}
         </button>
-        <button
-          type="button"
-          className="mock-nav-mobile-theme-toggle"
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-        >
-          {theme === 'dark' ? '☀' : '◐'}
-        </button>
       </div>
       <div className={`${panelClassName} ${mobileMenuOpen ? 'is-open' : ''}`}>
         {mobileSecondaryNavItems.map((item) => {
@@ -360,6 +354,14 @@ export default function EuangelionShellHeader({
             </Link>
           )
         })}
+        <button
+          type="button"
+          className="mock-nav-item mock-mobile-theme-item"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+        >
+          {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
+        </button>
         {!authLoading &&
           (authenticated ? (
             <>
@@ -410,9 +412,6 @@ export default function EuangelionShellHeader({
         <div ref={topbarRef} className="mock-topbar text-label">
           <div className="mock-topbar-desktop-row">
             <span className="mock-topbar-date">{formatMastheadDate(now)}</span>
-            <span className="mock-topbar-center-copy">
-              Daily Devotionals for the Hungry Soul
-            </span>
             <div className="mock-topbar-actions">
               <button
                 type="button"

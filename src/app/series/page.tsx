@@ -1,12 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import MixedHeadline, { Sans, Serif } from '@/components/MixedHeadline'
 import SiteFooter from '@/components/SiteFooter'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
+import { scriptureLeadFromFramework } from '@/lib/scripture-reference'
 import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
 import {
@@ -24,10 +24,6 @@ export default function SeriesBrowsePage() {
       <EuangelionShellHeader />
 
       <header className="section-rule mx-auto max-w-7xl px-6 pb-16 pt-12 md:px-[60px] md:pb-24 md:pt-20 lg:px-20">
-        <Breadcrumbs
-          items={[{ label: 'HOME', href: '/' }, { label: 'SERIES' }]}
-          className="mb-6"
-        />
         <FadeIn>
           <MixedHeadline as="h1" size="xl" className="mb-8">
             <Sans>ALL</Sans> <Serif>Series</Serif>
@@ -159,9 +155,9 @@ function SeriesCard({
           className="mx-6 mt-6 border border-[var(--color-border)] p-4 md:mx-8 md:mt-8 md:p-5"
           style={{ minHeight: '132px' }}
         >
-          <p className="text-label vw-small mb-3 text-gold">FEATURED PATH</p>
-          <p className="text-serif-italic vw-body text-[var(--color-text-primary)]">
-            {series.question}
+          <p className="text-label vw-small mb-3 text-gold">SCRIPTURE LEAD</p>
+          <p className="text-serif-italic vw-body-lg text-[var(--color-text-primary)]">
+            {typographer(scriptureLeadFromFramework(series.framework))}
           </p>
         </div>
 
@@ -177,7 +173,7 @@ function SeriesCard({
             }}
           />
 
-          <h2 className="text-serif-italic vw-body-lg mb-3 transition-colors duration-300 group-hover:text-gold type-serif-flow">
+          <h2 className="text-serif-italic vw-body mb-3 transition-colors duration-300 group-hover:text-gold type-serif-flow">
             {series.question}
           </h2>
 

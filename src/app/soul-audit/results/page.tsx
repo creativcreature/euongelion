@@ -806,6 +806,11 @@ export default function SoulAuditResultsPage() {
                         style={{ borderColor: 'var(--color-border)' }}
                       >
                         <div className="flex flex-wrap items-center justify-between gap-2">
+                          {saved.verse && (
+                            <p className="audit-option-verse vw-small w-full">
+                              {typographer(saved.verse)}
+                            </p>
+                          )}
                           <p className="text-label vw-small text-gold">
                             {saved.title}
                           </p>
@@ -1000,17 +1005,17 @@ export default function SoulAuditResultsPage() {
                           }`}
                           aria-disabled={submitting || !selectionUnlocked}
                         >
+                          {option.preview?.verse && (
+                            <p className="audit-option-verse vw-small mb-2">
+                              {typographer(option.preview.verse)}
+                            </p>
+                          )}
                           <p className="text-label vw-small mb-2 text-gold">
                             {option.title}
                           </p>
                           <p className="vw-body mb-2">
                             {typographer(option.question)}
                           </p>
-                          {option.preview?.verse && (
-                            <p className="vw-small mt-3 text-muted">
-                              {typographer(option.preview.verse)}
-                            </p>
-                          )}
                           {option.preview?.paragraph && (
                             <p className="vw-small mt-1 text-secondary">
                               {typographer(option.preview.paragraph)}
@@ -1085,6 +1090,11 @@ export default function SoulAuditResultsPage() {
                           }`}
                           aria-disabled={submitting || !selectionUnlocked}
                         >
+                          {option.preview?.verse && (
+                            <p className="audit-option-verse vw-small mb-2">
+                              {typographer(option.preview.verse)}
+                            </p>
+                          )}
                           <p className="text-label vw-small mb-2 text-gold">
                             {option.title}
                           </p>
@@ -1094,11 +1104,6 @@ export default function SoulAuditResultsPage() {
                           <p className="vw-small text-secondary">
                             Opens series overview.
                           </p>
-                          {option.preview?.verse && (
-                            <p className="vw-small mt-3 text-muted">
-                              {typographer(option.preview.verse)}
-                            </p>
-                          )}
                           <p className="audit-option-hint text-label vw-small mt-4">
                             {selectionUnlocked
                               ? 'Click to open this series'
