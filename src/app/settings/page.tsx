@@ -23,6 +23,33 @@ import type { BillingConfigResponse, BillingPlan } from '@/types/billing'
 type Theme = 'dark' | 'light' | 'system'
 type SabbathDay = 'saturday' | 'sunday'
 type BibleTranslation = 'NIV' | 'ESV' | 'NASB' | 'KJV' | 'NLT' | 'MSG'
+type MockMode = 'anonymous' | 'mock_account'
+
+type MockRetention = {
+  anonymousSessionDays: number
+  bookmarksDays: number
+  notesDays: number
+  highlightsDays: number
+  chatHistoryDays: number
+  archivedArtifactsDays: number
+  trashRestoreWindowDays: number
+}
+
+type MockAccountSessionResponse = {
+  ok?: boolean
+  mode?: MockMode
+  analyticsOptIn?: boolean
+  capabilities?: string[]
+  retention?: MockRetention
+  retentionSummary?: Record<string, string>
+  error?: string
+}
+
+type MockExportResponse = {
+  ok?: boolean
+  error?: string
+  code?: string
+}
 
 const emptySubscribe = () => () => {}
 
@@ -57,6 +84,18 @@ export default function SettingsPage() {
   const [checkoutSessionId, setCheckoutSessionId] = useState<string | null>(
     null,
   )
+  const [privacyMode, setPrivacyMode] = useState<MockMode>('anonymous')
+  const [privacyAnalyticsOptIn, setPrivacyAnalyticsOptIn] = useState(false)
+  const [privacyCapabilities, setPrivacyCapabilities] = useState<string[]>([])
+  const [privacyRetention, setPrivacyRetention] =
+    useState<MockRetention | null>(null)
+  const [privacyRetentionSummary, setPrivacyRetentionSummary] = useState<
+    Record<string, string>
+  >({})
+  const [privacyBusy, setPrivacyBusy] = useState(false)
+  const [privacyExportBusy, setPrivacyExportBusy] = useState(false)
+  const [privacyMessage, setPrivacyMessage] = useState<string | null>(null)
+  const [privacyError, setPrivacyError] = useState<string | null>(null)
 
   const hydrated = useHydrated()
 
@@ -82,6 +121,109 @@ export default function SettingsPage() {
   function showSaved() {
     setSaved(true)
     setTimeout(() => setSaved(false), 2000)
+  }
+
+  async function loadPrivacySession() {
+    try {
+      const response = await fetch('/api/mock-account/session', {
+        cache: 'no-store',
+      })
+      const payload = (await response.json()) as MockAccountSessionResponse
+      if (!response.ok || !payload.ok) {
+        throw new Error(payload.error || 'Unable to load privacy session.')
+      }
+
+      setPrivacyMode(
+        payload.mode === 'mock_account' ? 'mock_account' : 'anonymous',
+      )
+      setPrivacyAnalyticsOptIn(Boolean(payload.analyticsOptIn))
+      setPrivacyCapabilities(
+        Array.isArray(payload.capabilities) ? payload.capabilities : [],
+      )
+      setPrivacyRetention(payload.retention ?? null)
+      setPrivacyRetentionSummary(payload.retentionSummary ?? {})
+    } catch (error) {
+      setPrivacyError(
+        error instanceof Error
+          ? error.message
+          : 'Unable to load privacy settings.',
+      )
+    }
+  }
+
+  async function savePrivacySession(next: {
+    mode: MockMode
+    analyticsOptIn: boolean
+  }) {
+    setPrivacyBusy(true)
+    setPrivacyError(null)
+    setPrivacyMessage(null)
+    try {
+      const response = await fetch('/api/mock-account/session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(next),
+      })
+      const payload = (await response.json()) as MockAccountSessionResponse
+      if (!response.ok || !payload.ok) {
+        throw new Error(payload.error || 'Unable to save privacy settings.')
+      }
+
+      setPrivacyMode(
+        payload.mode === 'mock_account' ? 'mock_account' : 'anonymous',
+      )
+      setPrivacyAnalyticsOptIn(Boolean(payload.analyticsOptIn))
+      setPrivacyCapabilities(
+        Array.isArray(payload.capabilities) ? payload.capabilities : [],
+      )
+      setPrivacyRetention(payload.retention ?? null)
+      setPrivacyRetentionSummary(payload.retentionSummary ?? {})
+      setPrivacyMessage('Privacy preferences saved.')
+      showSaved()
+    } catch (error) {
+      setPrivacyError(
+        error instanceof Error
+          ? error.message
+          : 'Unable to save privacy settings.',
+      )
+    } finally {
+      setPrivacyBusy(false)
+    }
+  }
+
+  async function exportMockAccountData() {
+    setPrivacyExportBusy(true)
+    setPrivacyError(null)
+    setPrivacyMessage(null)
+
+    try {
+      const response = await fetch('/api/mock-account/export', {
+        cache: 'no-store',
+      })
+      const payload = (await response.json()) as MockExportResponse
+      if (!response.ok) {
+        throw new Error(payload.error || 'Unable to export data.')
+      }
+
+      const blob = new Blob([JSON.stringify(payload, null, 2)], {
+        type: 'application/json',
+      })
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `euangelion-mock-account-export-${new Date()
+        .toISOString()
+        .slice(0, 10)}.json`
+      a.click()
+      URL.revokeObjectURL(url)
+      setPrivacyMessage('Mock account export downloaded.')
+    } catch (error) {
+      setPrivacyError(
+        error instanceof Error ? error.message : 'Unable to export data.',
+      )
+    } finally {
+      setPrivacyExportBusy(false)
+    }
   }
 
   useEffect(() => {
@@ -129,6 +271,7 @@ export default function SettingsPage() {
       }
     }
     void loadBilling()
+    void loadPrivacySession()
     return () => {
       mounted = false
     }
@@ -424,6 +567,139 @@ export default function SettingsPage() {
           <p className="mt-3 vw-small text-muted">
             Your key is stored locally and never sent to our servers.
           </p>
+        </div>
+
+        {/* Privacy + Mock Account */}
+        <div
+          className="mb-8 pb-8"
+          style={{ borderBottom: '1px solid var(--color-border)' }}
+        >
+          <h2 className="text-label vw-small mb-4 text-gold">PRIVACY + DATA</h2>
+          <p className="vw-small mb-6 text-secondary">
+            Anonymous mode is default. Switch to mock account mode to enable
+            full save features and export.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            {(['anonymous', 'mock_account'] as MockMode[]).map((mode) => (
+              <button
+                type="button"
+                key={mode}
+                onClick={() =>
+                  void savePrivacySession({
+                    mode,
+                    analyticsOptIn: privacyAnalyticsOptIn,
+                  })
+                }
+                disabled={privacyBusy || privacyExportBusy}
+                aria-pressed={privacyMode === mode}
+                className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-40"
+                style={{
+                  backgroundColor:
+                    privacyMode === mode
+                      ? 'var(--color-fg)'
+                      : 'var(--color-surface)',
+                  color:
+                    privacyMode === mode
+                      ? 'var(--color-bg)'
+                      : 'var(--color-text-secondary)',
+                  border: `1px solid ${
+                    privacyMode === mode
+                      ? 'var(--color-fg)'
+                      : 'var(--color-border)'
+                  }`,
+                }}
+              >
+                {mode === 'anonymous' ? 'Anonymous (Default)' : 'Mock Account'}
+              </button>
+            ))}
+          </div>
+
+          <div className="mt-4">
+            <label className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                checked={privacyAnalyticsOptIn}
+                onChange={(event) => {
+                  const next = event.target.checked
+                  setPrivacyAnalyticsOptIn(next)
+                  void savePrivacySession({
+                    mode: privacyMode,
+                    analyticsOptIn: next,
+                  })
+                }}
+                disabled={privacyBusy || privacyExportBusy}
+              />
+              <span className="vw-small text-secondary">
+                Optional analytics opt-in (default OFF). Required for
+                mock-account export.
+              </span>
+            </label>
+          </div>
+
+          <div className="mt-5">
+            <p className="text-label vw-small mb-2 text-gold">CAPABILITIES</p>
+            <p className="vw-small text-secondary">
+              {privacyCapabilities.length > 0
+                ? privacyCapabilities.join(', ')
+                : 'bookmarks, resume'}
+            </p>
+          </div>
+
+          <div className="mt-5 grid gap-2">
+            <p className="text-label vw-small text-gold">RETENTION</p>
+            {Object.entries(privacyRetentionSummary).map(([key, value]) => (
+              <p key={key} className="vw-small text-muted">
+                {value}
+              </p>
+            ))}
+            {privacyRetention && (
+              <p className="vw-small text-muted">
+                Anonymous session: {privacyRetention.anonymousSessionDays} days.
+                Trash restore window: {privacyRetention.trashRestoreWindowDays}{' '}
+                days.
+              </p>
+            )}
+          </div>
+
+          <div className="mt-5 flex flex-wrap items-center gap-4">
+            <button
+              type="button"
+              onClick={() => void exportMockAccountData()}
+              disabled={
+                privacyExportBusy ||
+                privacyBusy ||
+                privacyMode !== 'mock_account'
+              }
+              className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-30"
+              style={{
+                backgroundColor: 'var(--color-surface)',
+                border: '1px solid var(--color-border)',
+                color: 'var(--color-text-secondary)',
+              }}
+            >
+              {privacyExportBusy ? 'Exporting...' : 'Export Mock Account Data'}
+            </button>
+            {privacyMode !== 'mock_account' && (
+              <p className="vw-small text-muted">
+                Switch to mock account mode to enable export.
+              </p>
+            )}
+          </div>
+
+          {privacyError && (
+            <p
+              className="vw-small mt-4"
+              style={{ color: 'var(--color-error)' }}
+              aria-live="assertive"
+            >
+              {privacyError}
+            </p>
+          )}
+          {privacyMessage && (
+            <p className="vw-small mt-4 text-gold" aria-live="polite">
+              {privacyMessage}
+            </p>
+          )}
         </div>
 
         {/* Testing / Release toggles */}

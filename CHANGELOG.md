@@ -180,6 +180,53 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Privacy Session + Mock Export Pass (2026-02-15)
+
+### What Changed
+
+- Added explicit retention policy contract:
+  - introduced `src/lib/privacy/retention.ts` with canonical retention windows and summary copy.
+- Hardened mock-account session and export API responses:
+  - `/api/mock-account/session` now returns anonymous-default marker, capabilities, and retention metadata;
+  - `/api/mock-account/export` now uses fallback-backed repository reads and returns export summary counts + retention metadata.
+- Added repository fallback helpers for better runtime reliability:
+  - `getMockAccountSessionWithFallback`;
+  - `listSelectionsForSessionWithFallback`.
+- Added full Settings privacy/data section:
+  - anonymous/mock-account mode toggle;
+  - analytics opt-in toggle (default OFF);
+  - capabilities visibility;
+  - retention clarity copy;
+  - mock-account JSON export action with user feedback.
+- Added API-level regression tests for mock-account session/export gating and success paths.
+
+### Files
+
+- `src/lib/privacy/retention.ts`
+- `src/lib/soul-audit/repository.ts`
+- `src/app/api/mock-account/session/route.ts`
+- `src/app/api/mock-account/export/route.ts`
+- `src/app/settings/page.tsx`
+- `__tests__/mock-account-api.test.ts`
+- `docs/feature-prds/F-035.md`
+- `docs/feature-prds/F-036.md`
+- `docs/feature-prds/F-037.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Scroll Fluidity Hardening Pass (2026-02-14)
 
 ### What Changed

@@ -1,17 +1,21 @@
 import { NextResponse } from 'next/server'
 import {
-  getMockAccountSession,
-  listAnnotations,
-  listAuditRunsForSession,
-  listBookmarks,
-  listSelectionsForSession,
+  getMockAccountSessionWithFallback,
+  listAnnotationsWithFallback,
+  listAuditRunsForSessionWithFallback,
+  listBookmarksWithFallback,
+  listSelectionsForSessionWithFallback,
 } from '@/lib/soul-audit/repository'
+import {
+  RETENTION_POLICY,
+  retentionPolicySummary,
+} from '@/lib/privacy/retention'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 
 export async function GET() {
   try {
     const sessionToken = await getOrCreateAuditSessionToken()
-    const session = getMockAccountSession(sessionToken)
+    const session = await getMockAccountSessionWithFallback(sessionToken)
 
     if (!session || session.mode !== 'mock_account') {
       return NextResponse.json(
@@ -33,14 +37,32 @@ export async function GET() {
       )
     }
 
+    const [auditRuns, auditSelections, annotations, bookmarks] =
+      await Promise.all([
+        listAuditRunsForSessionWithFallback(sessionToken),
+        listSelectionsForSessionWithFallback(sessionToken),
+        listAnnotationsWithFallback(sessionToken),
+        listBookmarksWithFallback(sessionToken),
+      ])
+
     return NextResponse.json({
+      ok: true,
       exportedAt: new Date().toISOString(),
       mode: session.mode,
+      analyticsOptIn: session.analytics_opt_in,
+      retention: RETENTION_POLICY,
+      retentionSummary: retentionPolicySummary(),
+      summary: {
+        auditRuns: auditRuns.length,
+        auditSelections: auditSelections.length,
+        annotations: annotations.length,
+        bookmarks: bookmarks.length,
+      },
       data: {
-        auditRuns: listAuditRunsForSession(sessionToken),
-        auditSelections: listSelectionsForSession(sessionToken),
-        annotations: listAnnotations(sessionToken),
-        bookmarks: listBookmarks(sessionToken),
+        auditRuns,
+        auditSelections,
+        annotations,
+        bookmarks,
       },
     })
   } catch (error) {

@@ -6,9 +6,13 @@ import {
   withRateLimitHeaders,
 } from '@/lib/api-security'
 import {
-  getMockAccountSession,
+  getMockAccountSessionWithFallback,
   upsertMockAccountSession,
 } from '@/lib/soul-audit/repository'
+import {
+  RETENTION_POLICY,
+  retentionPolicySummary,
+} from '@/lib/privacy/retention'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 
 type Mode = 'anonymous' | 'mock_account'
@@ -36,6 +40,18 @@ function capabilities(mode: Mode) {
     ]
   }
   return ['bookmarks', 'resume']
+}
+
+function responsePayload(params: { mode: Mode; analyticsOptIn: boolean }) {
+  return {
+    ok: true,
+    mode: params.mode,
+    analyticsOptIn: params.analyticsOptIn,
+    isAnonymousDefault: params.mode === 'anonymous',
+    capabilities: capabilities(params.mode),
+    retention: RETENTION_POLICY,
+    retentionSummary: retentionPolicySummary(),
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -79,12 +95,12 @@ export async function POST(request: NextRequest) {
       analyticsOptIn,
     })
 
-    return NextResponse.json({
-      ok: true,
-      mode: session.mode,
-      analyticsOptIn: session.analytics_opt_in,
-      capabilities: capabilities(session.mode),
-    })
+    return NextResponse.json(
+      responsePayload({
+        mode: session.mode,
+        analyticsOptIn: session.analytics_opt_in,
+      }),
+    )
   } catch (error) {
     console.error('Mock account session error:', error)
     return NextResponse.json(
@@ -97,15 +113,15 @@ export async function POST(request: NextRequest) {
 export async function GET() {
   try {
     const sessionToken = await getOrCreateAuditSessionToken()
-    const session = getMockAccountSession(sessionToken)
+    const session = await getMockAccountSessionWithFallback(sessionToken)
     const mode: Mode = session?.mode ?? 'anonymous'
 
-    return NextResponse.json({
-      ok: true,
-      mode,
-      analyticsOptIn: session?.analytics_opt_in ?? false,
-      capabilities: capabilities(mode),
-    })
+    return NextResponse.json(
+      responsePayload({
+        mode,
+        analyticsOptIn: session?.analytics_opt_in ?? false,
+      }),
+    )
   } catch (error) {
     console.error('Mock account session lookup error:', error)
     return NextResponse.json(

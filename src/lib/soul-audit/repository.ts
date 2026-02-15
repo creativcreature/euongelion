@@ -541,6 +541,47 @@ export function listSelectionsForSession(
   )
 }
 
+export async function listSelectionsForSessionWithFallback(
+  sessionToken: string,
+): Promise<AuditSelectionRecord[]> {
+  const runs = await listAuditRunsForSessionWithFallback(sessionToken)
+  if (runs.length === 0) return []
+
+  const runIds = Array.from(new Set(runs.map((run) => run.id)))
+  const cached = Array.from(getStore().selectionByRun.values()).filter(
+    (selection) => runIds.includes(selection.audit_run_id),
+  )
+
+  const fetched: AuditSelectionRecord[] = []
+  for (const runId of runIds) {
+    const rows = await safeSelectMany<AuditSelectionRecord>(
+      'audit_selections',
+      {
+        audit_run_id: runId,
+      },
+    )
+    fetched.push(...rows)
+  }
+
+  const merged = [...cached, ...fetched]
+  const byRun = new Map<string, AuditSelectionRecord>()
+  for (const row of merged.sort((a, b) =>
+    b.created_at.localeCompare(a.created_at),
+  )) {
+    if (!byRun.has(row.audit_run_id)) {
+      byRun.set(row.audit_run_id, row)
+    }
+  }
+
+  const sorted = Array.from(byRun.values()).sort((a, b) =>
+    b.created_at.localeCompare(a.created_at),
+  )
+  for (const row of sorted) {
+    getStore().selectionByRun.set(row.audit_run_id, row)
+  }
+  return sorted
+}
+
 export async function getLatestSelectionForSessionWithFallback(
   sessionToken: string,
 ): Promise<AuditSelectionRecord | null> {
@@ -824,6 +865,24 @@ export function getMockAccountSession(
   sessionToken: string,
 ): MockAccountSessionRecord | null {
   return getStore().mockSessionsByToken.get(sessionToken) ?? null
+}
+
+export async function getMockAccountSessionWithFallback(
+  sessionToken: string,
+): Promise<MockAccountSessionRecord | null> {
+  const cached = getMockAccountSession(sessionToken)
+  if (cached) return cached
+
+  const fetched = await safeSelectOne<MockAccountSessionRecord>(
+    'mock_account_sessions',
+    {
+      session_token: sessionToken,
+    },
+  )
+  if (!fetched) return null
+
+  getStore().mockSessionsByToken.set(sessionToken, fetched)
+  return fetched
 }
 
 export async function addAnnotation(params: {
