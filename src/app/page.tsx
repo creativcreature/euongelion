@@ -292,6 +292,7 @@ export default function Home() {
               alt=""
               fill
               sizes="(max-width: 900px) 100vw, 190px"
+              priority
             />
           </div>
 

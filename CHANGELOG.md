@@ -35,6 +35,44 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## LCP + CLS Stability Pass (2026-02-15)
+
+### What Changed
+
+- Improved masthead/font loading stability:
+  - preloaded `IndustryTest-Bold.otf` in root layout to match the real masthead weight.
+  - updated all Industry `@font-face` declarations to `font-display: block` to reduce visible fallback swaps.
+- Improved homepage above-the-fold image loading:
+  - marked hero engraving image as `priority` for better LCP reliability.
+- Added regression contracts for:
+  - bold masthead font preload presence
+  - hero LCP image priority
+  - Industry font-display strategy consistency.
+
+### Files
+
+- `src/app/layout.tsx`
+- `src/app/page.tsx`
+- `src/app/globals.css`
+- `__tests__/lcp-cls-contract.test.ts`
+- `docs/feature-prds/F-042.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Overflow + Sticky Layout Stability Pass (2026-02-15)
 
 ### What Changed

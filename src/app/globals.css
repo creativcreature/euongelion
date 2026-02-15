@@ -16,7 +16,7 @@
   src: url('/fonts/IndustryTest-Book.otf') format('opentype');
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -24,7 +24,7 @@
   src: url('/fonts/IndustryTest-Demi.otf') format('opentype');
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -32,7 +32,7 @@
   src: url('/fonts/IndustryTest-Bold.otf') format('opentype');
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {

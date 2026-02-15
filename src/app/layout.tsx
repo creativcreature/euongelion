@@ -64,6 +64,13 @@ export default function RootLayout({
           type="font/otf"
           crossOrigin="anonymous"
         />
+        <link
+          rel="preload"
+          href="/fonts/IndustryTest-Bold.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="newsprint-site antialiased">
         <Providers>{children}</Providers>
