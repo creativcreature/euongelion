@@ -4,6 +4,7 @@ import { useEffect, type ReactNode } from 'react'
 import { usePathname } from 'next/navigation'
 import AnimationProvider from '@/providers/AnimationProvider'
 import EditorialMotionSystem from '@/components/EditorialMotionSystem'
+import NetworkStatusBanner from '@/components/NetworkStatusBanner'
 
 /**
  * Client-side providers wrapper.
@@ -48,6 +49,7 @@ export default function Providers({ children }: { children: ReactNode }) {
   return (
     <AnimationProvider>
       <EditorialMotionSystem />
+      <NetworkStatusBanner />
       {children}
     </AnimationProvider>
   )

@@ -97,8 +97,14 @@ export default function SoulAuditPage() {
       recordAudit(response.trim(), data)
       router.push('/soul-audit/results')
     } catch (err) {
+      const offline =
+        typeof window !== 'undefined' && navigator && !navigator.onLine
       setError(
-        err instanceof Error ? err.message : 'Something broke. Try again.',
+        offline
+          ? 'You are offline. Reconnect to generate your devotional options.'
+          : err instanceof Error
+            ? err.message
+            : 'Something broke. Try again.',
       )
       setIsSubmitting(false)
     }

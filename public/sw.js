@@ -1,13 +1,17 @@
 // Euangelion Service Worker
-const CACHE_NAME = 'euangelion-v44'
+const CACHE_NAME = 'euangelion-v45'
 const OFFLINE_URL = '/offline'
+const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 
 // Static assets to pre-cache
 const PRECACHE_URLS = [
   '/',
   '/offline',
+  '/daily-bread',
   '/series',
   '/soul-audit',
+  '/help',
+  '/settings',
   '/wake-up',
 ]
 
@@ -49,8 +53,29 @@ self.addEventListener('fetch', (event) => {
   // Skip API routes — always network
   if (url.pathname.startsWith('/api/')) return
 
-  // Skip Next.js internals
-  if (url.pathname.startsWith('/_next/')) return
+  // Next.js build assets and fonts: stale-while-revalidate for resilient offline shell
+  if (
+    url.pathname.startsWith('/_next/static/') ||
+    url.pathname.startsWith('/fonts/') ||
+    STATIC_ASSET_RE.test(url.pathname)
+  ) {
+    event.respondWith(
+      caches.match(request).then((cached) => {
+        const networkFetch = fetch(request)
+          .then((response) => {
+            if (response.ok) {
+              const clone = response.clone()
+              caches.open(CACHE_NAME).then((cache) => cache.put(request, clone))
+            }
+            return response
+          })
+          .catch(() => cached || new Response('', { status: 503 }))
+
+        return cached || networkFetch
+      }),
+    )
+    return
+  }
 
   // Devotional JSON files: cache-first (they rarely change)
   if (url.pathname.startsWith('/devotionals/') && url.pathname.endsWith('.json')) {
@@ -70,18 +95,23 @@ self.addEventListener('fetch', (event) => {
   }
 
   // Images: cache-first
-  if (url.pathname.startsWith('/images/') || url.pathname.match(/\.(png|jpg|jpeg|webp|svg)$/)) {
+  if (
+    url.pathname.startsWith('/images/') ||
+    url.pathname.match(/\.(png|jpg|jpeg|webp|svg)$/)
+  ) {
     event.respondWith(
       caches.match(request).then((cached) => {
         if (cached) return cached
-        return fetch(request).then((response) => {
-          if (response.ok) {
-            const clone = response.clone()
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone))
-          }
-          return response
-        }).catch(() => new Response('', { status: 404 }))
-      })
+        return fetch(request)
+          .then((response) => {
+            if (response.ok) {
+              const clone = response.clone()
+              caches.open(CACHE_NAME).then((cache) => cache.put(request, clone))
+            }
+            return response
+          })
+          .catch(() => new Response('', { status: 404 }))
+      }),
     )
     return
   }

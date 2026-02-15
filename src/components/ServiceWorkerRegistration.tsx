@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 
-const SW_VERSION = 'v44'
+const SW_VERSION = 'v45'
 const SW_VERSION_KEY = 'euangelion-sw-version'
 
 export default function ServiceWorkerRegistration() {

@@ -35,6 +35,51 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Offline + Degraded State Reliability Pass (2026-02-15)
+
+### What Changed
+
+- Added global connectivity status UX:
+  - new `NetworkStatusBanner` shows persistent offline state and brief reconnect sync notice.
+- Wired connectivity banner globally via app providers so degraded-state visibility is consistent across routes.
+- Improved Soul Audit submission recovery messaging:
+  - offline network failures now show explicit reconnect guidance instead of generic failure copy.
+- Hardened service worker caching strategy:
+  - bumped service worker/cache version to `v45`
+  - expanded precache routes (including `/daily-bread`, `/help`, `/settings`)
+  - added stale-while-revalidate path for Next static assets and fonts to improve offline shell resilience.
+- Added regression coverage for:
+  - network status banner offline/reconnect behavior
+  - service worker cache/strategy contract expectations.
+
+### Files
+
+- `src/components/NetworkStatusBanner.tsx`
+- `src/app/providers.tsx`
+- `src/app/soul-audit/page.tsx`
+- `src/components/ServiceWorkerRegistration.tsx`
+- `public/sw.js`
+- `src/app/globals.css`
+- `__tests__/network-status-banner.test.tsx`
+- `__tests__/offline-sw-contract.test.ts`
+- `docs/feature-prds/F-040.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Error Observability Contract Pass (2026-02-15)
 
 ### What Changed
