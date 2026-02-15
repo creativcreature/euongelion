@@ -22,3 +22,22 @@ export interface BillingConfigResponse {
   }
   plans: BillingPlan[]
 }
+
+export interface BillingEntitlementsResponse {
+  ok: boolean
+  requestId: string
+  authenticated: boolean
+  entitlements: {
+    subscriptionTier: 'free' | 'premium' | 'lifetime'
+    premiumActive: boolean
+    ownedThemes: string[]
+    ownedStickerPacks: string[]
+    features: {
+      'premium-subscription': boolean
+      'premium-series': boolean
+      'archive-tools': boolean
+      'theme-customization': boolean
+      'sticker-overlays': boolean
+    }
+  }
+}

@@ -35,6 +35,48 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Billing Entitlement Checks Pass (2026-02-15)
+
+### What Changed
+
+- Added canonical billing entitlement resolver:
+  - normalizes subscription tier (`free|premium|lifetime`)
+  - resolves purchased theme/sticker ownership against known catalog IDs
+  - derives feature-level access flags (`premium-series`, `archive-tools`, etc.).
+- Added entitlement API endpoint:
+  - `GET /api/billing/entitlements`
+  - returns authenticated state + normalized entitlement snapshot
+  - includes request-id tracing and rate-limit/error protections.
+- Extended billing type contracts with `BillingEntitlementsResponse`.
+- Added regression tests for:
+  - entitlement normalization and feature resolution logic
+  - entitlement API responses for anonymous and premium-authenticated users.
+
+### Files
+
+- `src/lib/billing/entitlements.ts`
+- `src/app/api/billing/entitlements/route.ts`
+- `src/types/billing.ts`
+- `__tests__/billing-entitlements.test.ts`
+- `__tests__/billing-entitlements-api.test.ts`
+- `docs/feature-prds/F-047.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Screen Reader Semantics Pass (2026-02-15)
 
 ### What Changed
