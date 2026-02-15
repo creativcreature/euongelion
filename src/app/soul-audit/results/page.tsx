@@ -8,6 +8,7 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import FadeIn from '@/components/motion/FadeIn'
+import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
 import type {
   CustomPlanDay,
@@ -165,6 +166,7 @@ export default function SoulAuditResultsPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const initialSelection = loadSelectionResult()
+  const { lastInput } = useSoulAuditStore()
 
   const [submitResult, setSubmitResult] =
     useState<SoulAuditSubmitResponseV2 | null>(() => loadSubmitResult())
@@ -194,6 +196,20 @@ export default function SoulAuditResultsPage() {
     )
   const [bookmarkingDay, setBookmarkingDay] = useState<number | null>(null)
   const [savedDay, setSavedDay] = useState<number | null>(null)
+  const [expandedReasoningOptionId, setExpandedReasoningOptionId] = useState<
+    string | null
+  >(null)
+  const [rerollUsed, setRerollUsed] = useState(false)
+  const [showRerollConfirm, setShowRerollConfirm] = useState(false)
+  const [rerollConfirmValue, setRerollConfirmValue] = useState('')
+  const [isRerolling, setIsRerolling] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    setRerollUsed(
+      window.sessionStorage.getItem('soul-audit-reroll-used') === 'true',
+    )
+  }, [])
 
   useEffect(() => {
     const fromStorage = loadSubmitResult()
@@ -505,6 +521,57 @@ export default function SoulAuditResultsPage() {
     }
   }
 
+  async function rerollOptions() {
+    if (!submitResult || !lastInput) {
+      setError(
+        'Reroll unavailable because your original audit text is not in session. Please start a new Soul Audit.',
+      )
+      return
+    }
+    if (rerollUsed) {
+      setError('You already used your one reroll for this audit.')
+      return
+    }
+
+    setIsRerolling(true)
+    setError(null)
+    setRunExpired(false)
+
+    try {
+      const response = await fetch('/api/soul-audit/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ response: lastInput }),
+      })
+      const payload = (await response.json()) as SoulAuditSubmitResponseV2 & {
+        error?: string
+      }
+      if (!response.ok || payload.version !== 'v2') {
+        throw new Error(
+          payload.error || 'Unable to reroll options right now. Please retry.',
+        )
+      }
+
+      setSubmitResult(payload)
+      setSelection(null)
+      setEssentialConsent(false)
+      setAnalyticsOptIn(false)
+      setCrisisAcknowledged(false)
+      setExpandedReasoningOptionId(null)
+      setShowRerollConfirm(false)
+      setRerollConfirmValue('')
+      setRerollUsed(true)
+
+      sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
+      sessionStorage.removeItem('soul-audit-selection-v2')
+      sessionStorage.setItem('soul-audit-reroll-used', 'true')
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Unable to reroll options.')
+    } finally {
+      setIsRerolling(false)
+    }
+  }
+
   async function savePlanDayBookmark(day: CustomPlanDay) {
     if (!planToken) return
     setBookmarkingDay(day.day)
@@ -669,6 +736,74 @@ export default function SoulAuditResultsPage() {
             </FadeIn>
 
             <FadeIn>
+              <section
+                className="mb-7 border p-4"
+                style={{ borderColor: 'var(--color-border)' }}
+              >
+                <p className="text-label vw-small mb-2 text-gold">
+                  OPTION CONTROLS
+                </p>
+                <p className="vw-small text-secondary">
+                  You can reroll once. Rerolling discards the current 5 options
+                  permanently.
+                </p>
+                {!rerollUsed ? (
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                    {!showRerollConfirm ? (
+                      <button
+                        type="button"
+                        className="text-label vw-small link-highlight"
+                        onClick={() => setShowRerollConfirm(true)}
+                        disabled={isRerolling || submitting}
+                      >
+                        Reroll Options (1x)
+                      </button>
+                    ) : (
+                      <>
+                        <input
+                          value={rerollConfirmValue}
+                          onChange={(event) =>
+                            setRerollConfirmValue(event.target.value)
+                          }
+                          placeholder="Type REROLL"
+                          className="bg-surface-raised px-3 py-2 vw-small"
+                          style={{ border: '1px solid var(--color-border)' }}
+                          disabled={isRerolling}
+                        />
+                        <button
+                          type="button"
+                          className="cta-major text-label vw-small px-4 py-2 disabled:opacity-50"
+                          disabled={
+                            isRerolling ||
+                            rerollConfirmValue.trim().toUpperCase() !== 'REROLL'
+                          }
+                          onClick={() => void rerollOptions()}
+                        >
+                          {isRerolling ? 'Rerolling...' : 'Confirm Reroll'}
+                        </button>
+                        <button
+                          type="button"
+                          className="text-label vw-small link-highlight"
+                          onClick={() => {
+                            setShowRerollConfirm(false)
+                            setRerollConfirmValue('')
+                          }}
+                          disabled={isRerolling}
+                        >
+                          Cancel
+                        </button>
+                      </>
+                    )}
+                  </div>
+                ) : (
+                  <p className="vw-small mt-2 text-muted">
+                    Reroll already used for this audit run.
+                  </p>
+                )}
+              </section>
+            </FadeIn>
+
+            <FadeIn>
               <section className="mb-6">
                 <div className="mb-4 flex items-center justify-between">
                   <p className="text-label vw-small text-gold">
@@ -687,46 +822,70 @@ export default function SoulAuditResultsPage() {
                   {submitResult.options
                     .filter((option) => option.kind === 'ai_primary')
                     .map((option) => (
-                      <button
+                      <article
                         key={option.id}
-                        type="button"
-                        disabled={submitting || !selectionUnlocked}
-                        onClick={() => void submitConsentAndSelect(option.id)}
-                        className={`audit-option-card group relative overflow-hidden text-left ${
-                          selectionUnlocked ? 'cursor-pointer' : 'is-disabled'
-                        }`}
-                        aria-disabled={submitting || !selectionUnlocked}
+                        className="audit-option-card group relative overflow-hidden text-left"
                         style={{
                           border: '1px solid var(--color-border)',
                           padding: '1.25rem',
                         }}
                       >
-                        <p className="text-label vw-small mb-2 text-gold">
-                          {option.title}
-                        </p>
-                        <p className="vw-body mb-2">
-                          {typographer(option.question)}
-                        </p>
-                        <p className="vw-small text-secondary">
-                          {typographer(option.reasoning)}
-                        </p>
-                        {option.preview?.verse && (
-                          <p className="vw-small mt-3 text-muted">
-                            {typographer(option.preview.verse)}
+                        <button
+                          type="button"
+                          disabled={submitting || !selectionUnlocked}
+                          onClick={() => void submitConsentAndSelect(option.id)}
+                          className={`w-full text-left ${
+                            selectionUnlocked ? 'cursor-pointer' : 'is-disabled'
+                          }`}
+                          aria-disabled={submitting || !selectionUnlocked}
+                        >
+                          <p className="text-label vw-small mb-2 text-gold">
+                            {option.title}
                           </p>
-                        )}
-                        {option.preview?.paragraph && (
-                          <p className="vw-small mt-1 text-secondary">
-                            {typographer(option.preview.paragraph)}
+                          <p className="vw-body mb-2">
+                            {typographer(option.question)}
                           </p>
-                        )}
-                        <p className="audit-option-hint text-label vw-small mt-4">
-                          {selectionUnlocked
-                            ? 'Click to build this path'
-                            : 'Check consent to unlock'}
-                        </p>
+                          {option.preview?.verse && (
+                            <p className="vw-small mt-3 text-muted">
+                              {typographer(option.preview.verse)}
+                            </p>
+                          )}
+                          {option.preview?.paragraph && (
+                            <p className="vw-small mt-1 text-secondary">
+                              {typographer(option.preview.paragraph)}
+                            </p>
+                          )}
+                          <p className="audit-option-hint text-label vw-small mt-4">
+                            {selectionUnlocked
+                              ? 'Click to build this path'
+                              : 'Check consent to unlock'}
+                          </p>
+                        </button>
+                        <div
+                          className="mt-3 border-t pt-3"
+                          style={{ borderColor: 'var(--color-border)' }}
+                        >
+                          <button
+                            type="button"
+                            className="text-label vw-small link-highlight"
+                            onClick={() =>
+                              setExpandedReasoningOptionId((current) =>
+                                current === option.id ? null : option.id,
+                              )
+                            }
+                          >
+                            {expandedReasoningOptionId === option.id
+                              ? 'Hide reasoning'
+                              : 'Why this path?'}
+                          </button>
+                          {expandedReasoningOptionId === option.id && (
+                            <p className="vw-small mt-2 text-secondary">
+                              {typographer(option.reasoning)}
+                            </p>
+                          )}
+                        </div>
                         <span className="audit-option-underline" />
-                      </button>
+                      </article>
                     ))}
                 </div>
               </section>
@@ -741,41 +900,68 @@ export default function SoulAuditResultsPage() {
                   {submitResult.options
                     .filter((option) => option.kind === 'curated_prefab')
                     .map((option) => (
-                      <button
+                      <article
                         key={option.id}
-                        type="button"
-                        disabled={submitting || !selectionUnlocked}
-                        onClick={() => void submitConsentAndSelect(option.id)}
-                        className={`audit-option-card group relative overflow-hidden text-left ${
-                          selectionUnlocked ? 'cursor-pointer' : 'is-disabled'
-                        }`}
-                        aria-disabled={submitting || !selectionUnlocked}
+                        className="audit-option-card group relative overflow-hidden text-left"
                         style={{
                           border: '1px solid var(--color-border)',
                           padding: '1.25rem',
                         }}
                       >
-                        <p className="text-label vw-small mb-2 text-gold">
-                          {option.title}
-                        </p>
-                        <p className="vw-body mb-2">
-                          {typographer(option.question)}
-                        </p>
-                        <p className="vw-small text-secondary">
-                          Opens series overview.
-                        </p>
-                        {option.preview?.verse && (
-                          <p className="vw-small mt-3 text-muted">
-                            {typographer(option.preview.verse)}
+                        <button
+                          type="button"
+                          disabled={submitting || !selectionUnlocked}
+                          onClick={() => void submitConsentAndSelect(option.id)}
+                          className={`w-full text-left ${
+                            selectionUnlocked ? 'cursor-pointer' : 'is-disabled'
+                          }`}
+                          aria-disabled={submitting || !selectionUnlocked}
+                        >
+                          <p className="text-label vw-small mb-2 text-gold">
+                            {option.title}
                           </p>
-                        )}
-                        <p className="audit-option-hint text-label vw-small mt-4">
-                          {selectionUnlocked
-                            ? 'Click to open this series'
-                            : 'Check consent to unlock'}
-                        </p>
+                          <p className="vw-body mb-2">
+                            {typographer(option.question)}
+                          </p>
+                          <p className="vw-small text-secondary">
+                            Opens series overview.
+                          </p>
+                          {option.preview?.verse && (
+                            <p className="vw-small mt-3 text-muted">
+                              {typographer(option.preview.verse)}
+                            </p>
+                          )}
+                          <p className="audit-option-hint text-label vw-small mt-4">
+                            {selectionUnlocked
+                              ? 'Click to open this series'
+                              : 'Check consent to unlock'}
+                          </p>
+                        </button>
+                        <div
+                          className="mt-3 border-t pt-3"
+                          style={{ borderColor: 'var(--color-border)' }}
+                        >
+                          <button
+                            type="button"
+                            className="text-label vw-small link-highlight"
+                            onClick={() =>
+                              setExpandedReasoningOptionId((current) =>
+                                current === option.id ? null : option.id,
+                              )
+                            }
+                          >
+                            {expandedReasoningOptionId === option.id
+                              ? 'Hide reasoning'
+                              : 'Why this path?'}
+                          </button>
+                          {expandedReasoningOptionId === option.id && (
+                            <p className="vw-small mt-2 text-secondary">
+                              {typographer(option.reasoning)}
+                            </p>
+                          )}
+                        </div>
                         <span className="audit-option-underline" />
-                      </button>
+                      </article>
                     ))}
                 </div>
               </section>

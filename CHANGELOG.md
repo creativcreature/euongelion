@@ -132,6 +132,40 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Results Interaction Pass (2026-02-15)
+
+### What Changed
+
+- Upgraded `/soul-audit/results` option interaction model:
+  - added per-option reasoning accordion (`Why this path?`) for both AI and prefab options;
+  - moved reasoning copy out of default card body to reduce visual noise and improve scanability.
+- Added one-time reroll control to results:
+  - explicit irreversible warning copy;
+  - typed confirmation (`REROLL`) before action;
+  - reroll state persisted for the current session (`soul-audit-reroll-used`).
+- Added session-aware reroll behavior:
+  - uses stored audit input from `useSoulAuditStore`;
+  - replaces the option set and clears in-progress consent/selection state so users cannot mix stale and new options in one flow.
+
+### Files
+
+- `src/app/soul-audit/results/page.tsx`
+- `docs/feature-prds/F-021.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Navigation IA + Docked Reliability Pass (2026-02-14)
 
 ### What Changed
