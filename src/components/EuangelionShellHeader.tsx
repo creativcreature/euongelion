@@ -209,11 +209,13 @@ export default function EuangelionShellHeader({
     const topbar = topbarRef.current
     if (!topbar) return
     const frame = topbar.closest('.mock-shell-frame') as HTMLElement | null
+    const paper = topbar.closest('.mock-paper') as HTMLElement | null
 
     const applyTopbarHeight = () => {
       const height = Math.ceil(topbar.getBoundingClientRect().height || 0)
-      if (frame && height > 0) {
-        frame.style.setProperty('--shell-topbar-height', `${height}px`)
+      if (height > 0) {
+        frame?.style.setProperty('--shell-topbar-height', `${height}px`)
+        paper?.style.setProperty('--shell-topbar-height', `${height}px`)
       }
     }
 
@@ -228,6 +230,7 @@ export default function EuangelionShellHeader({
       observer.disconnect()
       window.removeEventListener('resize', applyTopbarHeight)
       frame?.style.removeProperty('--shell-topbar-height')
+      paper?.style.removeProperty('--shell-topbar-height')
     }
   }, [])
 

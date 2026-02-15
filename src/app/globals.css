@@ -2169,38 +2169,6 @@
 
 .mock-topbar-center-nav {
   display: none;
-  justify-self: center;
-}
-
-.mock-topbar.is-nav-docked .mock-topbar-center-copy {
-  display: none;
-}
-
-.mock-topbar.is-nav-docked .mock-topbar-center-nav {
-  display: flex;
-  justify-self: stretch;
-  min-width: 0;
-}
-
-.mock-topbar.is-nav-docked .mock-topbar-desktop-row {
-  grid-template-columns: auto minmax(0, 1fr) auto;
-}
-
-.mock-topbar-nav {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  white-space: nowrap;
-}
-
-.mock-topbar.is-nav-docked .mock-topbar-nav {
-  justify-content: center;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.mock-topbar.is-nav-docked .mock-topbar-nav::-webkit-scrollbar {
-  display: none;
 }
 
 .mock-mode-toggle {
@@ -2416,23 +2384,6 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-}
-
-.mock-nav.is-docked {
-  display: none;
-  opacity: 0;
-  visibility: hidden;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-bottom-color: transparent;
-  pointer-events: none;
-}
-
-.mock-nav-sentinel {
-  width: 100%;
-  height: 1px;
-  margin: 0;
-  padding: 0;
 }
 
 .mock-nav-item {
@@ -3566,12 +3517,6 @@
     position: relative;
     min-height: var(--mock-h-topbar);
     padding: 0.28rem var(--mock-pad-x);
-  }
-
-  .mock-topbar-mobile-row.is-nav-docked {
-    display: grid;
-    align-items: center;
-    justify-items: stretch;
   }
 
   .mock-nav {
