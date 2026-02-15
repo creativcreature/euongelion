@@ -35,6 +35,48 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Overflow + Sticky Layout Stability Pass (2026-02-15)
+
+### What Changed
+
+- Hardened newspaper frame sizing to reduce horizontal overflow and scroll trapping:
+  - switched main frame widths from viewport-only math to percentage-based width with viewport max guards.
+- Updated these containers with new width/max-width contracts:
+  - `.newspaper-home`
+  - `.newspaper-reading`
+  - `.mock-paper`
+  - `.mock-shell-frame`
+- Removed `overflow-x: hidden` from `.newspaper-home` to avoid sticky behavior regressions caused by clipping ancestors.
+- Refined mobile frame sizing:
+  - `width: calc(100% - 0.5rem)`
+  - `max-width: calc(100dvw - 0.5rem)`
+- Added CSS contract tests for:
+  - sticky-compatible overflow behavior
+  - frame width guard invariants
+  - sticky nav rule presence.
+
+### Files
+
+- `src/app/globals.css`
+- `__tests__/layout-overflow-contract.test.ts`
+- `docs/feature-prds/F-041.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Offline + Degraded State Reliability Pass (2026-02-15)
 
 ### What Changed
