@@ -15,6 +15,7 @@ import {
   restoreIosPurchases,
 } from '@/lib/billing/purchases'
 import {
+  type BillingLifecycleState,
   resolveBillingFlash,
   sanitizeCheckoutSessionId,
 } from '@/lib/billing/flash'
@@ -81,6 +82,8 @@ export default function SettingsPage() {
   const [billingPortalBusy, setBillingPortalBusy] = useState(false)
   const [billingError, setBillingError] = useState<string | null>(null)
   const [billingMessage, setBillingMessage] = useState<string | null>(null)
+  const [billingLifecycleState, setBillingLifecycleState] =
+    useState<BillingLifecycleState>('idle')
   const [checkoutSessionId, setCheckoutSessionId] = useState<string | null>(
     null,
   )
@@ -115,6 +118,46 @@ export default function SettingsPage() {
     }
     return 'Billing configuration is loading.'
   }, [billingConfig, billingEnabled, billingPlatform])
+
+  const billingLifecycleCopy = useMemo(() => {
+    switch (billingLifecycleState) {
+      case 'processing':
+        return 'Payment is processing. Please wait while we confirm your billing status.'
+      case 'succeeded':
+        return 'Payment confirmed. Premium access is active.'
+      case 'cancelled':
+        return 'Checkout was cancelled before completion.'
+      case 'restore_succeeded':
+        return 'Purchases restored successfully.'
+      case 'restore_failed':
+        return 'Restore failed. Try again in a few moments.'
+      case 'requires_action':
+        return 'Payment needs additional verification from your bank.'
+      case 'failed':
+        return 'Payment failed. Retry with the same or a different method.'
+      case 'unknown':
+        return 'Billing status could not be verified. Please retry.'
+      case 'idle':
+      default:
+        return null
+    }
+  }, [billingLifecycleState])
+
+  const billingLifecycleTone = useMemo(() => {
+    if (
+      billingLifecycleState === 'succeeded' ||
+      billingLifecycleState === 'restore_succeeded'
+    ) {
+      return 'success'
+    }
+    if (billingLifecycleState === 'processing') {
+      return 'pending'
+    }
+    if (billingLifecycleState === 'idle') {
+      return 'neutral'
+    }
+    return 'error'
+  }, [billingLifecycleState])
 
   // Show saved confirmation
   const [saved, setSaved] = useState(false)
@@ -253,6 +296,7 @@ export default function SettingsPage() {
           billingStatus: checkoutStatus,
           platform,
         })
+        setBillingLifecycleState(flash.state)
         if (flash.message) setBillingMessage(flash.message)
         if (flash.error) setBillingError(flash.error)
 
@@ -267,6 +311,7 @@ export default function SettingsPage() {
         }
       } catch {
         if (!mounted) return
+        setBillingLifecycleState('failed')
         setBillingError('Unable to load billing settings right now.')
       }
     }
@@ -284,6 +329,7 @@ export default function SettingsPage() {
 
   async function startWebCheckout(plan: BillingPlan) {
     setBillingBusy(true)
+    setBillingLifecycleState('processing')
     setBillingError(null)
     setBillingMessage(null)
     try {
@@ -301,6 +347,7 @@ export default function SettingsPage() {
       }
       window.location.href = payload.checkoutUrl
     } catch (error) {
+      setBillingLifecycleState('failed')
       setBillingError(
         error instanceof Error ? error.message : 'Unable to start checkout.',
       )
@@ -311,12 +358,15 @@ export default function SettingsPage() {
 
   async function startIosPurchase(plan: BillingPlan) {
     setBillingBusy(true)
+    setBillingLifecycleState('processing')
     setBillingError(null)
     setBillingMessage(null)
     try {
       await purchasePlanOnIos(plan.id)
+      setBillingLifecycleState('succeeded')
       setBillingMessage('Purchase complete. Premium access is now active.')
     } catch (error) {
+      setBillingLifecycleState('failed')
       setBillingError(
         error instanceof Error
           ? error.message
@@ -329,12 +379,15 @@ export default function SettingsPage() {
 
   async function restorePurchasesAction() {
     setBillingBusy(true)
+    setBillingLifecycleState('processing')
     setBillingError(null)
     setBillingMessage(null)
     try {
       await restoreIosPurchases()
+      setBillingLifecycleState('restore_succeeded')
       setBillingMessage('Restored App Store purchases.')
     } catch (error) {
+      setBillingLifecycleState('restore_failed')
       setBillingError(
         error instanceof Error
           ? error.message
@@ -347,6 +400,7 @@ export default function SettingsPage() {
 
   async function openBillingPortal() {
     if (!checkoutSessionId) {
+      setBillingLifecycleState('failed')
       setBillingError(
         'No recent checkout session found. Complete checkout once to enable billing management.',
       )
@@ -354,6 +408,7 @@ export default function SettingsPage() {
     }
 
     setBillingPortalBusy(true)
+    setBillingLifecycleState('processing')
     setBillingError(null)
     setBillingMessage(null)
     try {
@@ -376,6 +431,7 @@ export default function SettingsPage() {
       }
       window.location.href = payload.portalUrl
     } catch (error) {
+      setBillingLifecycleState('failed')
       setBillingError(
         error instanceof Error
           ? error.message
@@ -819,6 +875,23 @@ export default function SettingsPage() {
             >
               Restore Purchases
             </button>
+          )}
+
+          {!billingMessage && !billingError && billingLifecycleCopy && (
+            <p
+              className="vw-small mt-4"
+              style={
+                billingLifecycleTone === 'success'
+                  ? { color: 'var(--color-gold)' }
+                  : billingLifecycleTone === 'pending'
+                    ? { color: 'var(--color-text-muted)' }
+                    : { color: 'var(--color-error)' }
+              }
+              role="status"
+              aria-live="polite"
+            >
+              {billingLifecycleCopy}
+            </p>
           )}
 
           {billingError && (

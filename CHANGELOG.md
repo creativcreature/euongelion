@@ -35,6 +35,46 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Billing Lifecycle State Pass (2026-02-15)
+
+### What Changed
+
+- Extended billing flash contracts with explicit lifecycle states:
+  - `processing`
+  - `requires_action`
+  - `restore_succeeded` / `restore_failed`
+  - `failed` / `unknown`
+- Updated settings billing UX to surface lifecycle status feedback with:
+  - clear state-specific copy for payment, restore, and recovery states
+  - polite live announcements for non-error lifecycle updates
+  - error-priority treatment for failed and blocked states.
+- Extended billing lifecycle regression tests to cover:
+  - restore success/failure mappings
+  - terminal payment failure mapping.
+
+### Files
+
+- `src/lib/billing/flash.ts`
+- `src/app/settings/page.tsx`
+- `__tests__/billing-flash.test.ts`
+- `docs/feature-prds/F-048.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Billing Entitlement Checks Pass (2026-02-15)
 
 ### What Changed

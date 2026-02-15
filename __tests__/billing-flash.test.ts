@@ -28,23 +28,86 @@ describe('billing flash utilities', () => {
     expect(
       resolveBillingFlash({ billingStatus: 'success', platform: 'web' }),
     ).toEqual({
+      state: 'succeeded',
       message:
         'Subscription activated. You can now manage billing from settings.',
       error: null,
+      recoverable: true,
     })
 
     expect(
       resolveBillingFlash({ billingStatus: 'cancelled', platform: 'ios' }),
     ).toEqual({
+      state: 'cancelled',
       message: null,
       error: 'App Store purchase was cancelled.',
+      recoverable: true,
     })
 
     expect(
       resolveBillingFlash({ billingStatus: 'unknown_status', platform: 'web' }),
     ).toEqual({
+      state: 'unknown',
       message: null,
       error: 'Billing status could not be verified. Please retry.',
+      recoverable: true,
+    })
+  })
+
+  it('maps processing and requires-action lifecycle states', () => {
+    expect(
+      resolveBillingFlash({ billingStatus: 'processing', platform: 'web' }),
+    ).toEqual({
+      state: 'processing',
+      message: 'Payment is processing. We will unlock access once confirmed.',
+      error: null,
+      recoverable: true,
+    })
+
+    expect(
+      resolveBillingFlash({
+        billingStatus: 'requires_action',
+        platform: 'web',
+      }),
+    ).toEqual({
+      state: 'requires_action',
+      message: null,
+      error:
+        'Payment requires additional action. Please retry checkout and follow your bank prompts.',
+      recoverable: true,
+    })
+  })
+
+  it('maps restore and terminal failure lifecycle states', () => {
+    expect(
+      resolveBillingFlash({
+        billingStatus: 'restore_success',
+        platform: 'web',
+      }),
+    ).toEqual({
+      state: 'restore_succeeded',
+      message: 'Purchases restored successfully.',
+      error: null,
+      recoverable: true,
+    })
+
+    expect(
+      resolveBillingFlash({ billingStatus: 'restore_failed', platform: 'ios' }),
+    ).toEqual({
+      state: 'restore_failed',
+      message: null,
+      error: 'Could not restore purchases right now. Please try again.',
+      recoverable: true,
+    })
+
+    expect(
+      resolveBillingFlash({ billingStatus: 'failed', platform: 'web' }),
+    ).toEqual({
+      state: 'failed',
+      message: null,
+      error:
+        'Payment did not complete. Please retry or use a different payment method.',
+      recoverable: true,
     })
   })
 })
