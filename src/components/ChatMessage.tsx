@@ -1,5 +1,6 @@
 'use client'
 
+import { useMemo, useState } from 'react'
 import { typographer } from '@/lib/typographer'
 import type { ChatMessage as ChatMessageType, ChatColorLabel } from '@/types'
 
@@ -23,6 +24,29 @@ export default function ChatMessage({
   onSaveNote?: (message: ChatMessageType) => void
 }) {
   const isUser = message.role === 'user'
+  const [showAllCitations, setShowAllCitations] = useState(false)
+  const [copied, setCopied] = useState(false)
+  const citations = useMemo(() => {
+    return Array.from(
+      new Map((message.citations ?? []).map((c) => [c.id, c])).values(),
+    )
+  }, [message.citations])
+
+  const visibleCitations = showAllCitations ? citations : citations.slice(0, 3)
+
+  async function copyCitations() {
+    if (typeof navigator === 'undefined' || citations.length === 0) return
+    const citationLines = citations
+      .map((citation) => `${citation.label}: ${citation.source}`)
+      .join('\n')
+    try {
+      await navigator.clipboard.writeText(citationLines)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 1400)
+    } catch {
+      // no-op
+    }
+  }
 
   return (
     <div
@@ -61,19 +85,41 @@ export default function ChatMessage({
           </p>
         )}
 
-        {!isUser && (message.citations?.length ?? 0) > 0 && (
+        {!isUser && citations.length > 0 && (
           <div
             className="mt-3 border-t pt-3"
             style={{ borderColor: 'var(--color-border)' }}
           >
             <p className="text-label vw-small mb-2 text-gold">SOURCES</p>
             <ul className="space-y-1">
-              {message.citations?.map((citation) => (
+              {visibleCitations.map((citation) => (
                 <li key={citation.id} className="vw-small text-muted">
+                  <span className="text-label text-gold">
+                    {citation.type.replace('_', ' ')}:
+                  </span>{' '}
                   {typographer(citation.source)}
                 </li>
               ))}
             </ul>
+            {citations.length > 3 && (
+              <button
+                type="button"
+                className="text-label vw-small mt-2 link-highlight"
+                aria-expanded={showAllCitations}
+                onClick={() => setShowAllCitations((current) => !current)}
+              >
+                {showAllCitations
+                  ? 'Show fewer sources'
+                  : `Show all sources (${citations.length})`}
+              </button>
+            )}
+            <button
+              type="button"
+              className="text-label vw-small mt-2 ml-4 link-highlight"
+              onClick={() => void copyCitations()}
+            >
+              {copied ? 'Copied' : 'Copy sources'}
+            </button>
           </div>
         )}
       </div>

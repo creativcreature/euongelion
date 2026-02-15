@@ -111,6 +111,44 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Chat Citation Readability Pass (2026-02-15)
+
+### What Changed
+
+- Improved assistant citation readability in chat:
+  - deduplicated citation items by ID before rendering;
+  - collapsed long citation lists by default (first 3), with explicit expand/collapse control.
+- Added utility actions for citation handling:
+  - `Copy sources` button copies full citation set to clipboard;
+  - transient copied-state feedback for confirmation.
+- Added clearer context-integrity messaging in chat shell:
+  - now displays whether devotional context and local reference corpus are loaded for latest response metadata.
+- Added focused UI tests for citation interactions:
+  - collapse/expand behavior;
+  - clipboard copy behavior.
+
+### Files
+
+- `src/components/ChatMessage.tsx`
+- `src/components/DevotionalChat.tsx`
+- `__tests__/chat-message-citations.test.tsx`
+- `docs/feature-prds/F-034.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Scroll Fluidity Hardening Pass (2026-02-14)
 
 ### What Changed

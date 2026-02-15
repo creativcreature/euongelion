@@ -300,6 +300,16 @@ export default function DevotionalChat({
                     Sources in scope:{' '}
                     {latestAssistantMessage.guardrails.sources.length}
                   </p>
+                  <p className="vw-small text-muted">
+                    Devotional context:{' '}
+                    {latestAssistantMessage.guardrails.hasDevotionalContext
+                      ? 'loaded'
+                      : 'missing'}{' '}
+                    · Reference corpus:{' '}
+                    {latestAssistantMessage.guardrails.hasReferenceContext
+                      ? 'loaded'
+                      : 'missing'}
+                  </p>
                 </div>
               )}
 
