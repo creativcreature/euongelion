@@ -35,6 +35,57 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Screen Reader Semantics Pass (2026-02-15)
+
+### What Changed
+
+- Added explicit `main-content` landmarks across key route surfaces so skip-link navigation resolves consistently:
+  - homepage
+  - daily bread
+  - soul audit results
+  - wake-up index
+  - wake-up series page
+  - wake-up devotional pages
+- Improved shell header semantics:
+  - converted topbar date from generic `span` to semantic `<time>` with `dateTime`.
+  - added polite live-region semantics for mobile ticker row.
+  - marked inactive ticker items `aria-hidden` to reduce duplicate announcements.
+  - exposed mobile secondary nav visibility with `aria-hidden`.
+  - labeled account popup menu with `aria-label="Account menu"`.
+- Added regression coverage for:
+  - shell date semantic element presence
+  - primary route landmark contracts
+  - mobile secondary-nav ARIA visibility state in shell header tests.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/page.tsx`
+- `src/app/daily-bread/page.tsx`
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/wake-up/page.tsx`
+- `src/app/wake-up/series/[slug]/SeriesPageClient.tsx`
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+- `__tests__/shell-header.test.tsx`
+- `__tests__/screen-reader-landmarks-contract.test.ts`
+- `docs/feature-prds/F-046.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Contrast + Readability Accessibility Pass (2026-02-15)
 
 ### What Changed

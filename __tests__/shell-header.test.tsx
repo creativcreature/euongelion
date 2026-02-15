@@ -119,6 +119,7 @@ describe('EuangelionShellHeader', () => {
     expect(
       screen.getAllByText('Daily Devotionals for the Hungry Soul').length,
     ).toBeGreaterThan(0)
+    expect(container.querySelector('time.mock-topbar-date')).toBeTruthy()
   })
 
   it('does not render docked topbar nav state classes', async () => {
@@ -179,6 +180,7 @@ describe('EuangelionShellHeader', () => {
       name: 'Secondary navigation',
     })
     expect(panel).toBeInTheDocument()
+    expect(panel).toHaveAttribute('aria-hidden', 'false')
 
     await user.keyboard('{Escape}')
 

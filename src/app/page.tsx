@@ -282,7 +282,7 @@ export default function Home() {
 
   return (
     <div className="mock-home mock-homepage">
-      <main className="mock-paper">
+      <main id="main-content" className="mock-paper">
         <EuangelionShellHeader />
 
         <section className="mock-hero-grid">

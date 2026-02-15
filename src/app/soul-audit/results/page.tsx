@@ -729,7 +729,7 @@ export default function SoulAuditResultsPage() {
   return (
     <div className="newspaper-home min-h-screen bg-page">
       <EuangelionShellHeader />
-      <main className="shell-content-pad mx-auto max-w-6xl">
+      <main id="main-content" className="shell-content-pad mx-auto max-w-6xl">
         <Breadcrumbs
           className="mb-7"
           items={[

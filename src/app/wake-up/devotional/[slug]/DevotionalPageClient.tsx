@@ -109,7 +109,10 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
     return (
       <div className="newspaper-home min-h-screen bg-page">
         <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
-        <main className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
+        <main
+          id="main-content"
+          className="devotional-shell-main shell-content-pad mx-auto max-w-6xl"
+        >
           <Breadcrumbs
             className="mb-7"
             items={[
@@ -134,7 +137,10 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
     return (
       <div className="newspaper-home min-h-screen bg-page">
         <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
-        <main className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
+        <main
+          id="main-content"
+          className="devotional-shell-main shell-content-pad mx-auto max-w-6xl"
+        >
           <Breadcrumbs
             className="mb-7"
             items={[
@@ -174,7 +180,10 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
       <ScrollProgress />
       <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
 
-      <main className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
+      <main
+        id="main-content"
+        className="devotional-shell-main shell-content-pad mx-auto max-w-6xl"
+      >
         <Breadcrumbs
           className="devotional-shell-breadcrumb mb-7"
           items={[

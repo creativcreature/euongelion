@@ -27,7 +27,7 @@ const HOW_STEPS = [
 export default function WakeUpPage() {
   return (
     <div className="mock-home">
-      <main className="mock-paper">
+      <main id="main-content" className="mock-paper">
         <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
         <Breadcrumbs
           className="mock-breadcrumb-row"

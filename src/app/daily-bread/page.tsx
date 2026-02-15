@@ -92,7 +92,7 @@ export default function DailyBreadPage() {
 
   return (
     <div className="mock-home">
-      <main className="mock-paper">
+      <main id="main-content" className="mock-paper">
         <EuangelionShellHeader />
 
         <section

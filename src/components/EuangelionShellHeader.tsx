@@ -391,6 +391,7 @@ export default function EuangelionShellHeader({
         ref={mobileMenuPanelRef}
         role="group"
         aria-label="Secondary navigation"
+        aria-hidden={!mobileMenuOpen}
         className={`${panelClassName} ${mobileMenuOpen ? 'is-open' : ''}`}
       >
         {mobileSecondaryNavItems.map((item) => {
@@ -464,7 +465,13 @@ export default function EuangelionShellHeader({
       <header>
         <div ref={topbarRef} className="mock-topbar text-label">
           <div className="mock-topbar-desktop-row">
-            <span className="mock-topbar-date">{formatMastheadDate(now)}</span>
+            <time
+              className="mock-topbar-date"
+              dateTime={now.toISOString()}
+              aria-live="polite"
+            >
+              {formatMastheadDate(now)}
+            </time>
             <div className="mock-topbar-actions">
               <button
                 type="button"
@@ -489,7 +496,11 @@ export default function EuangelionShellHeader({
                     {userInitial}
                   </button>
                   {accountMenuOpen && (
-                    <div className="mock-account-menu" role="menu">
+                    <div
+                      className="mock-account-menu"
+                      role="menu"
+                      aria-label="Account menu"
+                    >
                       <Link
                         href="/daily-bread"
                         role="menuitem"
@@ -544,11 +555,16 @@ export default function EuangelionShellHeader({
             </div>
           </div>
 
-          <div className="mock-topbar-mobile-row">
+          <div
+            className="mock-topbar-mobile-row"
+            role="status"
+            aria-live="polite"
+          >
             {mobileTickerItems.map((item, index) => (
               <span
                 key={`${item}-${index}`}
                 className={`mock-topbar-mobile-item ${mobileTopbarIndex === index ? 'is-active' : ''}`}
+                aria-hidden={mobileTopbarIndex !== index}
               >
                 {item}
               </span>
