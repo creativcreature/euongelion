@@ -47,6 +47,19 @@ type ArchivePlanSummary = {
 }
 
 const PLAN_CACHE_PREFIX = 'soul-audit-plan-v2:'
+const SAVED_OPTIONS_KEY = 'soul-audit-saved-options-v1'
+
+type SavedAuditOption = {
+  id: string
+  auditRunId: string
+  kind: 'ai_primary' | 'curated_prefab'
+  title: string
+  question: string
+  reasoning: string
+  verse?: string
+  paragraph?: string
+  savedAt: string
+}
 
 function formatShortDate(value: string): string {
   const date = new Date(value)
@@ -162,6 +175,34 @@ function loadPlanDays(token: string): CustomPlanDay[] {
   }
 }
 
+function loadSavedAuditOptions(): SavedAuditOption[] {
+  if (typeof window === 'undefined') return []
+  const raw = window.localStorage.getItem(SAVED_OPTIONS_KEY)
+  if (!raw) return []
+
+  try {
+    const parsed = JSON.parse(raw) as SavedAuditOption[]
+    if (!Array.isArray(parsed)) return []
+    return parsed
+      .filter(
+        (entry) =>
+          typeof entry.id === 'string' &&
+          typeof entry.auditRunId === 'string' &&
+          typeof entry.title === 'string' &&
+          typeof entry.question === 'string' &&
+          typeof entry.savedAt === 'string',
+      )
+      .sort((a, b) => b.savedAt.localeCompare(a.savedAt))
+  } catch {
+    return []
+  }
+}
+
+function persistSavedAuditOptions(options: SavedAuditOption[]) {
+  if (typeof window === 'undefined') return
+  window.localStorage.setItem(SAVED_OPTIONS_KEY, JSON.stringify(options))
+}
+
 export default function SoulAuditResultsPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -203,12 +244,17 @@ export default function SoulAuditResultsPage() {
   const [showRerollConfirm, setShowRerollConfirm] = useState(false)
   const [rerollConfirmValue, setRerollConfirmValue] = useState('')
   const [isRerolling, setIsRerolling] = useState(false)
+  const [savedOptions, setSavedOptions] = useState<SavedAuditOption[]>([])
+  const [savedOptionsMessage, setSavedOptionsMessage] = useState<string | null>(
+    null,
+  )
 
   useEffect(() => {
     if (typeof window === 'undefined') return
     setRerollUsed(
       window.sessionStorage.getItem('soul-audit-reroll-used') === 'true',
     )
+    setSavedOptions(loadSavedAuditOptions())
   }, [])
 
   useEffect(() => {
@@ -572,6 +618,65 @@ export default function SoulAuditResultsPage() {
     }
   }
 
+  function saveOptionForLater(option: {
+    id: string
+    kind: 'ai_primary' | 'curated_prefab'
+    title: string
+    question: string
+    reasoning: string
+    preview?: { verse: string; paragraph: string } | null
+  }) {
+    if (!submitResult) return
+    const nextEntry: SavedAuditOption = {
+      id: option.id,
+      auditRunId: submitResult.auditRunId,
+      kind: option.kind,
+      title: option.title,
+      question: option.question,
+      reasoning: option.reasoning,
+      verse: option.preview?.verse,
+      paragraph: option.preview?.paragraph,
+      savedAt: new Date().toISOString(),
+    }
+
+    setSavedOptions((current) => {
+      if (current.some((entry) => entry.id === nextEntry.id)) {
+        setSavedOptionsMessage('Already saved.')
+        window.setTimeout(() => setSavedOptionsMessage(null), 1600)
+        return current
+      }
+      const next = [nextEntry, ...current].slice(0, 24)
+      persistSavedAuditOptions(next)
+      setSavedOptionsMessage('Saved for later.')
+      window.setTimeout(() => setSavedOptionsMessage(null), 1600)
+      return next
+    })
+  }
+
+  function removeSavedOption(id: string) {
+    setSavedOptions((current) => {
+      const next = current.filter((entry) => entry.id !== id)
+      persistSavedAuditOptions(next)
+      return next
+    })
+  }
+
+  function cleanSavedOptions() {
+    const cutoff = Date.now() - 30 * 24 * 60 * 60 * 1000
+    setSavedOptions((current) => {
+      const next = current.filter(
+        (entry) => new Date(entry.savedAt).getTime() >= cutoff,
+      )
+      persistSavedAuditOptions(next)
+      return next
+    })
+  }
+
+  const hasStaleSavedOptions = savedOptions.some(
+    (entry) =>
+      Date.now() - new Date(entry.savedAt).getTime() > 30 * 24 * 60 * 60 * 1000,
+  )
+
   async function savePlanDayBookmark(day: CustomPlanDay) {
     if (!planToken) return
     setBookmarkingDay(day.day)
@@ -671,6 +776,62 @@ export default function SoulAuditResultsPage() {
 
         {!planToken && submitResult && (
           <>
+            <FadeIn>
+              <section
+                className="mb-7 border p-4"
+                style={{ borderColor: 'var(--color-border)' }}
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <p className="text-label vw-small text-gold">SAVED PATHS</p>
+                  {hasStaleSavedOptions && (
+                    <button
+                      type="button"
+                      className="text-label vw-small link-highlight"
+                      onClick={cleanSavedOptions}
+                    >
+                      Monthly clean house
+                    </button>
+                  )}
+                </div>
+                {savedOptions.length === 0 ? (
+                  <p className="vw-small mt-2 text-muted">
+                    Save options you may want to revisit later.
+                  </p>
+                ) : (
+                  <div className="mt-3 grid gap-2">
+                    {savedOptions.slice(0, 6).map((saved) => (
+                      <div
+                        key={`saved-option-${saved.id}`}
+                        className="border px-3 py-2"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <p className="text-label vw-small text-gold">
+                            {saved.title}
+                          </p>
+                          <button
+                            type="button"
+                            className="text-label vw-small link-highlight"
+                            onClick={() => removeSavedOption(saved.id)}
+                          >
+                            Remove
+                          </button>
+                        </div>
+                        <p className="vw-small mt-1 text-secondary">
+                          {typographer(saved.question)}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {savedOptionsMessage && (
+                  <p className="vw-small mt-2 text-muted">
+                    {savedOptionsMessage}
+                  </p>
+                )}
+              </section>
+            </FadeIn>
+
             <FadeIn>
               <section
                 className="mb-8 rounded-none border p-6"
@@ -867,6 +1028,13 @@ export default function SoulAuditResultsPage() {
                         >
                           <button
                             type="button"
+                            className="text-label vw-small link-highlight mr-4"
+                            onClick={() => saveOptionForLater(option)}
+                          >
+                            Save for later
+                          </button>
+                          <button
+                            type="button"
                             className="text-label vw-small link-highlight"
                             onClick={() =>
                               setExpandedReasoningOptionId((current) =>
@@ -941,6 +1109,13 @@ export default function SoulAuditResultsPage() {
                           className="mt-3 border-t pt-3"
                           style={{ borderColor: 'var(--color-border)' }}
                         >
+                          <button
+                            type="button"
+                            className="text-label vw-small link-highlight mr-4"
+                            onClick={() => saveOptionForLater(option)}
+                          >
+                            Save for later
+                          </button>
                           <button
                             type="button"
                             className="text-label vw-small link-highlight"

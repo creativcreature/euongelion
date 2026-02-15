@@ -146,6 +146,10 @@ Format: Reverse chronological, grouped by sprint/date.
 - Added session-aware reroll behavior:
   - uses stored audit input from `useSoulAuditStore`;
   - replaces the option set and clears in-progress consent/selection state so users cannot mix stale and new options in one flow.
+- Added saved-option management in results:
+  - `Save for later` controls on option cards;
+  - saved-paths panel for quick revisit;
+  - monthly clean-house cleanup action for stale saved options.
 
 ### Files
 
