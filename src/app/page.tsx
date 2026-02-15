@@ -115,6 +115,12 @@ export default function Home() {
   const activeFeaturedSeries =
     featuredSlides[featuredCarouselIndex % Math.max(1, featuredSlides.length)]
 
+  const formatSeriesPreview = (introduction: string, context: string) => {
+    const combined = typographer(`${introduction} ${context}`)
+    if (combined.length <= 280) return combined
+    return `${combined.slice(0, 277).trimEnd()}...`
+  }
+
   useEffect(() => {
     if (featuredSlides.length <= 1) return
     if (typeof window === 'undefined') return
@@ -427,7 +433,7 @@ export default function Home() {
             >
               <h3>{series.title}.</h3>
               <p className="mock-featured-preview">
-                {typographer(series.introduction)}
+                {formatSeriesPreview(series.introduction, series.context)}
               </p>
               <p>{series.question}</p>
               <p className="mock-featured-day text-label">
@@ -472,7 +478,7 @@ export default function Home() {
           </section>
         )}
 
-        <section className="mock-more-row">
+        <section className="mock-more-row mock-series-more-row">
           <Link href="/series" className="mock-btn text-label">
             MORE DEVOTIONALS
           </Link>
@@ -513,18 +519,28 @@ export default function Home() {
           {faqItemsToRender.map((item, idx) => {
             const cardId = `faq-card-${idx}`
             const answerId = `faq-answer-${idx}`
-            const isActive =
-              !isMobileViewport && activeFaqQuestion === item.question
+            const isActive = activeFaqQuestion === item.question
 
             if (isMobileViewport) {
               return (
-                <article
+                <button
+                  type="button"
                   key={`${item.question}-${idx}`}
-                  className="mock-faq-card"
+                  id={cardId}
+                  className={`mock-faq-card ${isActive ? 'is-active' : ''}`}
+                  aria-expanded={isActive}
+                  aria-controls={answerId}
+                  onClick={() =>
+                    setActiveFaqQuestion((previous) =>
+                      previous === item.question ? null : item.question,
+                    )
+                  }
                 >
                   <p className="mock-faq-question">{item.question}</p>
-                  <p className="mock-faq-answer">{item.answer}</p>
-                </article>
+                  <p id={answerId} className="mock-faq-answer">
+                    {item.answer}
+                  </p>
+                </button>
               )
             }
 
@@ -628,6 +644,7 @@ export default function Home() {
           )}
         </section>
 
+        <SiteFooter />
         <section className="mock-bottom-brand">
           <h2 className="text-masthead mock-masthead-word">
             <span className="js-shell-masthead-fit mock-masthead-text">
@@ -635,7 +652,6 @@ export default function Home() {
             </span>
           </h2>
         </section>
-        <SiteFooter />
       </main>
     </div>
   )
