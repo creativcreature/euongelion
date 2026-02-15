@@ -13,7 +13,7 @@ type CurrentPayload = {
   route?: string
 }
 
-export default function MyDevotionalPage() {
+export default function DailyBreadPage() {
   const searchParams = useSearchParams()
   const [loadingCurrent, setLoadingCurrent] = useState(true)
   const [currentRoute, setCurrentRoute] = useState<string | null>(null)
@@ -60,16 +60,14 @@ export default function MyDevotionalPage() {
 
         <Breadcrumbs
           className="app-breadcrumbs mock-breadcrumb-row"
-          items={[{ label: 'HOME', href: '/' }, { label: 'MY DEVOTIONAL' }]}
+          items={[{ label: 'HOME', href: '/' }, { label: 'DAILY BREAD' }]}
         />
 
         <section
           className="mock-panel border-b"
           style={{ borderColor: 'var(--mock-line, var(--color-border))' }}
         >
-          <p className="text-label vw-small mb-2 text-gold">
-            MY DEVOTIONAL HOME
-          </p>
+          <p className="text-label vw-small mb-2 text-gold">DAILY BREAD</p>
           {loadingCurrent ? (
             <p className="vw-small text-muted">Loading your current path...</p>
           ) : currentRoute ? (

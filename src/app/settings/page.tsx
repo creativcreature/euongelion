@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import SiteFooter from '@/components/SiteFooter'
 import { useUIStore } from '@/stores/uiStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { useChatStore } from '@/stores/chatStore'
@@ -615,6 +616,7 @@ export default function SettingsPage() {
           </div>
         </div>
       </main>
+      <SiteFooter />
     </div>
   )
 }

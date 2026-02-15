@@ -69,6 +69,69 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Shell IA + Auth Entry + Footer/Legal Completion Pass (2026-02-15)
+
+### What Changed
+
+- Updated shared shell masthead:
+  - removed `GOOD NEWS COMING`;
+  - added centered pronunciation/meta line under `EUANGELION`:
+    - `EU•AN•GE•LION (YOO-AN-GEL-EE-ON) • GREEK: "GOOD`.
+- Updated global shell navigation to canonical IA:
+  - `HOME | SOUL AUDIT | DAILY BREAD | SERIES`.
+- Added auth entry points in header shell:
+  - desktop top-right `SIGN IN` / `SIGN UP` when logged out;
+  - account avatar menu when logged in;
+  - mobile menu now includes auth actions as well.
+- Added canonical devotional home route:
+  - introduced `/daily-bread` with the devotional library shell.
+- Added shared production footer and linked support/legal surfaces:
+  - product/company/help/legal columns;
+  - added routes: `/help`, `/about`, `/support`, `/cookie-policy`, `/community-guidelines`, `/content-disclaimer`, `/donation-disclosure`.
+- Wired footer across core pages and updated sitemap entries for new public routes.
+- Updated internal route references from legacy `/my-devotional` to canonical `/daily-bread` in core flows.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+- `src/components/SiteFooter.tsx`
+- `src/components/StaticInfoPage.tsx`
+- `src/app/daily-bread/page.tsx`
+- `src/app/auth/sign-up/page.tsx`
+- `src/app/help/page.tsx`
+- `src/app/about/page.tsx`
+- `src/app/support/page.tsx`
+- `src/app/cookie-policy/page.tsx`
+- `src/app/community-guidelines/page.tsx`
+- `src/app/content-disclaimer/page.tsx`
+- `src/app/donation-disclosure/page.tsx`
+- `src/app/page.tsx`
+- `src/app/soul-audit/page.tsx`
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/series/page.tsx`
+- `src/app/settings/page.tsx`
+- `src/app/privacy/page.tsx`
+- `src/app/terms/page.tsx`
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+- `src/components/Navigation.tsx`
+- `src/app/sitemap.ts`
+- `docs/feature-prds/F-011.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Navigation IA + Docked Reliability Pass (2026-02-14)
 
 ### What Changed

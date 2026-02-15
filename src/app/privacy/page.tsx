@@ -1,6 +1,8 @@
 import { promises as fs } from 'fs'
 import path from 'path'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import SiteFooter from '@/components/SiteFooter'
 
 export const metadata = {
   title: 'Privacy Policy | Euangelion',
@@ -27,26 +29,17 @@ export default async function PrivacyPage() {
       <EuangelionShellHeader />
 
       <main id="main-content" className="shell-content-pad mx-auto max-w-3xl">
+        <Breadcrumbs
+          className="mb-7"
+          items={[{ label: 'HOME', href: '/' }, { label: 'PRIVACY' }]}
+        />
         <p className="vw-small mb-8 text-muted">Last updated: {lastUpdated}</p>
         <div
           className="prose-legal"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </main>
-
-      <footer
-        className="py-16 md:py-24"
-        style={{ borderTop: '1px solid var(--color-border)' }}
-      >
-        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <div className="text-center">
-            <p className="text-label vw-small leading-relaxed text-muted">
-              SOMETHING TO HOLD ONTO.
-            </p>
-            <p className="vw-small mt-8 text-muted">&copy; 2026 EUANGELION</p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }

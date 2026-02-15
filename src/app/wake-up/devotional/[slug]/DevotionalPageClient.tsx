@@ -302,28 +302,28 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                 <p className="text-label vw-small mb-3 text-gold">LIBRARY</p>
                 <div className="grid gap-2">
                   <Link
-                    href="/my-devotional?tab=archive"
+                    href="/daily-bread?tab=archive"
                     className="block border px-3 py-2 text-secondary"
                     style={{ borderColor: 'var(--color-border)' }}
                   >
                     Archived Pages
                   </Link>
                   <Link
-                    href="/my-devotional?tab=bookmarks"
+                    href="/daily-bread?tab=bookmarks"
                     className="block border px-3 py-2 text-secondary"
                     style={{ borderColor: 'var(--color-border)' }}
                   >
                     Bookmarks
                   </Link>
                   <Link
-                    href="/my-devotional?tab=chat-notes"
+                    href="/daily-bread?tab=chat-notes"
                     className="block border px-3 py-2 text-secondary"
                     style={{ borderColor: 'var(--color-border)' }}
                   >
                     Chat Notes
                   </Link>
                   <Link
-                    href="/my-devotional?tab=favorite-verses"
+                    href="/daily-bread?tab=favorite-verses"
                     className="block border px-3 py-2 text-secondary"
                     style={{ borderColor: 'var(--color-border)' }}
                   >

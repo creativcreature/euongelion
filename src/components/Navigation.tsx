@@ -14,7 +14,7 @@ function getInitialTheme(): 'light' | 'dark' {
 }
 
 const NAV_LINKS = [
-  { href: '/my-devotional', label: 'My Devotional' },
+  { href: '/daily-bread', label: 'Daily Bread' },
   { href: '/soul-audit', label: 'Soul Audit' },
   { href: '/wake-up', label: 'Wake-Up' },
   { href: '/series', label: 'Series' },

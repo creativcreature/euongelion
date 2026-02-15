@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useSyncExternalStore } from 'react'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import SiteFooter from '@/components/SiteFooter'
 import FadeIn from '@/components/motion/FadeIn'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
@@ -223,6 +224,7 @@ export default function SoulAuditPage() {
           </FadeIn>
         </div>
       </main>
+      <SiteFooter />
     </div>
   )
 }

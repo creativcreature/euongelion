@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import SiteFooter from '@/components/SiteFooter'
 import SeriesCardIcon from '@/components/newspaper/SeriesCardIcon'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
@@ -500,6 +501,11 @@ export default function Home() {
             </button>
           )}
         </section>
+        <section className="mock-more-row">
+          <Link href="/help#faq" className="mock-btn text-label">
+            VIEW FULL FAQ
+          </Link>
+        </section>
 
         <section className="mock-cta">
           <p className="text-label mock-kicker">READY TO BEGIN?</p>
@@ -569,6 +575,7 @@ export default function Home() {
             </span>
           </h2>
         </section>
+        <SiteFooter />
       </main>
     </div>
   )

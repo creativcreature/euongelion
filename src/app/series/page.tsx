@@ -3,10 +3,10 @@
 import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import MixedHeadline, { Sans, Serif } from '@/components/MixedHeadline'
+import SiteFooter from '@/components/SiteFooter'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
-import MixedHeadline, { Sans, Serif } from '@/components/MixedHeadline'
-import OrnamentDivider from '@/components/OrnamentDivider'
 import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
 import {
@@ -133,25 +133,7 @@ export default function SeriesBrowsePage() {
         </FadeIn>
       </main>
 
-      <footer
-        className="py-16 md:py-24"
-        style={{ borderTop: '1px solid var(--color-border)' }}
-      >
-        <div className="mx-auto max-w-7xl px-6 md:px-[60px] lg:px-20">
-          <div className="text-center">
-            <OrnamentDivider />
-            <p
-              className="text-label vw-small leading-relaxed text-muted"
-              style={{ letterSpacing: '0.2em' }}
-            >
-              SOMETHING TO HOLD ONTO.
-            </p>
-            <p className="vw-small mt-8 text-muted oldstyle-nums">
-              &copy; 2026 EUANGELION
-            </p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }

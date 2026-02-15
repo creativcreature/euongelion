@@ -6,13 +6,16 @@ import { usePathname } from 'next/navigation'
 
 const NAV_ITEMS = [
   { href: '/', label: 'HOME' },
-  { href: '/my-devotional', label: 'MY DEVOTIONAL' },
   { href: '/soul-audit', label: 'SOUL AUDIT' },
-  { href: '/wake-up', label: 'WAKE-UP' },
+  { href: '/daily-bread', label: 'DAILY BREAD' },
   { href: '/series', label: 'SERIES' },
-  { href: '/settings', label: 'SETTINGS' },
 ]
-const MOBILE_PRIMARY_NAV_PATHS = ['/', '/my-devotional', '/soul-audit']
+const MOBILE_PRIMARY_NAV_PATHS = ['/', '/soul-audit', '/daily-bread']
+const MOBILE_EXTRA_ITEMS = [
+  { href: '/help', label: 'HELP' },
+  { href: '/settings', label: 'SETTINGS' },
+  { href: '/wake-up', label: 'WAKE-UP' },
+]
 const MOBILE_TICKER_INTERVAL_MS = 6200
 
 function getInitialTheme(): 'light' | 'dark' {
@@ -44,6 +47,7 @@ export default function EuangelionShellHeader() {
   const topbarRef = useRef<HTMLDivElement | null>(null)
   const navSentinelRef = useRef<HTMLDivElement | null>(null)
   const previousPathnameRef = useRef(pathname)
+  const accountMenuRef = useRef<HTMLDivElement | null>(null)
 
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
   const [now, setNow] = useState(() => new Date())
@@ -51,9 +55,13 @@ export default function EuangelionShellHeader() {
   const [mobileTopbarIndex, setMobileTopbarIndex] = useState(0)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [authLoading, setAuthLoading] = useState(true)
+  const [authenticated, setAuthenticated] = useState(false)
+  const [userEmail, setUserEmail] = useState<string | null>(null)
+  const [accountMenuOpen, setAccountMenuOpen] = useState(false)
 
   const mobileNavItems = useMemo(
-    () => NAV_ITEMS.filter((item) => item.href !== '/settings'),
+    () => [...NAV_ITEMS, ...MOBILE_EXTRA_ITEMS],
     [],
   )
   const mobilePrimaryNavItems = useMemo(
@@ -93,6 +101,36 @@ export default function EuangelionShellHeader() {
   }, [])
 
   useEffect(() => {
+    let cancelled = false
+    async function loadSession() {
+      try {
+        const response = await fetch('/api/auth/session', { cache: 'no-store' })
+        const payload = (await response.json()) as {
+          authenticated?: boolean
+          user?: { email?: string | null } | null
+        }
+        if (!cancelled) {
+          setAuthenticated(Boolean(payload.authenticated))
+          setUserEmail(payload.user?.email ?? null)
+        }
+      } catch {
+        if (!cancelled) {
+          setAuthenticated(false)
+          setUserEmail(null)
+        }
+      } finally {
+        if (!cancelled) {
+          setAuthLoading(false)
+        }
+      }
+    }
+    void loadSession()
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  useEffect(() => {
     if (typeof window === 'undefined') return
     const media = window.matchMedia('(max-width: 900px)')
     const syncViewport = () => {
@@ -106,6 +144,19 @@ export default function EuangelionShellHeader() {
     media.addEventListener('change', syncViewport)
     return () => media.removeEventListener('change', syncViewport)
   }, [])
+
+  useEffect(() => {
+    if (!accountMenuOpen) return
+
+    function closeIfOutside(event: MouseEvent) {
+      if (!accountMenuRef.current) return
+      if (accountMenuRef.current.contains(event.target as Node)) return
+      setAccountMenuOpen(false)
+    }
+
+    document.addEventListener('mousedown', closeIfOutside)
+    return () => document.removeEventListener('mousedown', closeIfOutside)
+  }, [accountMenuOpen])
 
   useEffect(() => {
     const spans = Array.from(
@@ -255,11 +306,35 @@ export default function EuangelionShellHeader() {
     localStorage.setItem('theme', next)
   }
 
+  const redirectPath = encodeURIComponent(pathname || '/')
+
+  async function handleSignOut() {
+    try {
+      await fetch('/api/auth/sign-out', { method: 'POST' })
+    } finally {
+      setAuthenticated(false)
+      setUserEmail(null)
+      setAccountMenuOpen(false)
+      if (typeof window !== 'undefined') {
+        window.location.assign('/')
+      }
+    }
+  }
+
+  const userInitial = (userEmail || 'U').trim().charAt(0).toUpperCase() || 'U'
+
+  const isNavItemActive = (href: string) => {
+    if (href === '/daily-bread') {
+      return (
+        pathname === '/daily-bread' || pathname?.startsWith('/my-devotional')
+      )
+    }
+    return pathname === href || (href !== '/' && pathname?.startsWith(href))
+  }
+
   const renderNavLinks = (items: typeof NAV_ITEMS) =>
     items.map((item, index) => {
-      const active =
-        pathname === item.href ||
-        (item.href !== '/' && pathname?.startsWith(item.href))
+      const active = isNavItemActive(item.href)
       return (
         <span key={item.href} className="mock-nav-item-wrap">
           <Link
@@ -278,9 +353,7 @@ export default function EuangelionShellHeader() {
     <>
       <div className="mock-mobile-nav-main">
         {mobilePrimaryNavItems.map((item) => {
-          const active =
-            pathname === item.href ||
-            (item.href !== '/' && pathname?.startsWith(item.href))
+          const active = isNavItemActive(item.href)
           return (
             <Link
               key={item.href}
@@ -315,9 +388,7 @@ export default function EuangelionShellHeader() {
       </div>
       <div className={`${panelClassName} ${mobileMenuOpen ? 'is-open' : ''}`}>
         {mobileSecondaryNavItems.map((item) => {
-          const active =
-            pathname === item.href ||
-            (item.href !== '/' && pathname?.startsWith(item.href))
+          const active = isNavItemActive(item.href)
           return (
             <Link
               key={item.href}
@@ -330,6 +401,46 @@ export default function EuangelionShellHeader() {
             </Link>
           )
         })}
+        {!authLoading &&
+          (authenticated ? (
+            <>
+              <Link
+                href="/settings"
+                className={`mock-nav-item ${isNavItemActive('/settings') ? 'is-active' : ''}`}
+                aria-current={isNavItemActive('/settings') ? 'page' : undefined}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                ACCOUNT
+              </Link>
+              <button
+                type="button"
+                className="mock-nav-item"
+                onClick={() => {
+                  setMobileMenuOpen(false)
+                  void handleSignOut()
+                }}
+              >
+                SIGN OUT
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                href={`/auth/sign-in?redirect=${redirectPath}`}
+                className="mock-nav-item"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                SIGN IN
+              </Link>
+              <Link
+                href={`/auth/sign-up?redirect=${redirectPath}`}
+                className="mock-nav-item"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                SIGN UP
+              </Link>
+            </>
+          ))}
       </div>
     </>
   )
@@ -349,14 +460,82 @@ export default function EuangelionShellHeader() {
             <nav className="mock-topbar-nav mock-topbar-center-nav">
               {renderNavLinks(NAV_ITEMS)}
             </nav>
-            <button
-              type="button"
-              className="mock-mode-toggle text-label"
-              onClick={toggleTheme}
-              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            >
-              {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
-            </button>
+            <div className="mock-topbar-actions">
+              <button
+                type="button"
+                className="mock-mode-toggle text-label"
+                onClick={toggleTheme}
+                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              >
+                {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
+              </button>
+              {authLoading ? (
+                <span className="mock-auth-loading">...</span>
+              ) : authenticated ? (
+                <div className="mock-account-wrap" ref={accountMenuRef}>
+                  <button
+                    type="button"
+                    className="mock-account-trigger text-label"
+                    aria-haspopup="menu"
+                    aria-expanded={accountMenuOpen}
+                    onClick={() => setAccountMenuOpen((current) => !current)}
+                  >
+                    {userInitial}
+                  </button>
+                  {accountMenuOpen && (
+                    <div className="mock-account-menu" role="menu">
+                      <Link
+                        href="/daily-bread"
+                        role="menuitem"
+                        className="mock-account-item"
+                        onClick={() => setAccountMenuOpen(false)}
+                      >
+                        Daily Bread
+                      </Link>
+                      <Link
+                        href="/settings"
+                        role="menuitem"
+                        className="mock-account-item"
+                        onClick={() => setAccountMenuOpen(false)}
+                      >
+                        Settings
+                      </Link>
+                      <Link
+                        href="/help"
+                        role="menuitem"
+                        className="mock-account-item"
+                        onClick={() => setAccountMenuOpen(false)}
+                      >
+                        Help
+                      </Link>
+                      <button
+                        type="button"
+                        role="menuitem"
+                        className="mock-account-item"
+                        onClick={() => void handleSignOut()}
+                      >
+                        Sign Out
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div className="mock-auth-links">
+                  <Link
+                    href={`/auth/sign-in?redirect=${redirectPath}`}
+                    className="mock-auth-link"
+                  >
+                    SIGN IN
+                  </Link>
+                  <Link
+                    href={`/auth/sign-up?redirect=${redirectPath}`}
+                    className="mock-auth-link"
+                  >
+                    SIGN UP
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
 
           <div
@@ -390,7 +569,9 @@ export default function EuangelionShellHeader() {
               EUANGELION
             </span>
           </h1>
-          <p className="mock-masthead-sub">GOOD NEWS COMING</p>
+          <p className="mock-masthead-pronunciation text-label">
+            EU•AN•GE•LION (YOO-AN-GEL-EE-ON) • GREEK: &quot;GOOD
+          </p>
         </section>
 
         <div

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import SiteFooter from '@/components/SiteFooter'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import FadeIn from '@/components/motion/FadeIn'
 import { typographer } from '@/lib/typographer'
@@ -975,10 +976,10 @@ export default function SoulAuditResultsPage() {
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-5 text-center">
           <Link
-            href="/my-devotional"
+            href="/daily-bread"
             className="text-label vw-small link-highlight"
           >
-            My Devotional Home
+            Daily Bread Home
           </Link>
           <Link href="/series" className="text-label vw-small link-highlight">
             Browse All Series
@@ -991,6 +992,7 @@ export default function SoulAuditResultsPage() {
           </Link>
         </div>
       </main>
+      <SiteFooter />
       {planToken && (
         <TextHighlightTrigger devotionalSlug={`plan-${planToken}`} />
       )}
