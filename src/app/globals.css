@@ -2003,7 +2003,7 @@
   --mock-ink: #11182a;
   --mock-blue: #1f2a8d;
   --mock-line: #2e3880;
-  --mock-muted: rgba(17, 24, 42, 0.76);
+  --mock-muted: rgba(17, 24, 42, 0.82);
   --mock-frame-max: 1860px;
   --mock-stroke: 1.5px;
   --mock-pad-x: 0.95rem;
@@ -2029,7 +2029,7 @@
   --color-text-primary: var(--mock-ink);
   --color-text-secondary: var(--mock-muted);
   --color-text-tertiary: rgba(17, 24, 42, 0.66);
-  --color-text-muted: rgba(17, 24, 42, 0.56);
+  --color-text-muted: rgba(17, 24, 42, 0.64);
   --color-border: color-mix(in srgb, var(--mock-line) 55%, transparent);
   --color-border-strong: var(--mock-line);
   --color-surface: color-mix(in srgb, var(--mock-paper) 86%, transparent);
@@ -2048,14 +2048,14 @@
   --mock-ink: #efe5d8;
   --mock-blue: #2236a2;
   --mock-line: rgba(239, 229, 216, 0.72);
-  --mock-muted: rgba(239, 229, 216, 0.8);
+  --mock-muted: rgba(239, 229, 216, 0.86);
   --color-bg: var(--mock-bg);
   --color-fg: var(--mock-ink);
   --color-gold: #c8a56a;
   --color-text-primary: var(--mock-ink);
   --color-text-secondary: var(--mock-muted);
   --color-text-tertiary: rgba(239, 229, 216, 0.7);
-  --color-text-muted: rgba(239, 229, 216, 0.58);
+  --color-text-muted: rgba(239, 229, 216, 0.68);
   --color-border: color-mix(in srgb, var(--mock-line) 72%, transparent);
   --color-border-strong: var(--mock-line);
   --color-surface: color-mix(in srgb, var(--mock-paper) 84%, transparent);
@@ -2600,6 +2600,7 @@
   margin: 0;
   text-align: center;
   font-size: var(--mock-type-0);
+  line-height: 1.25;
   color: var(--mock-muted);
   font-family: var(--font-family-serif);
 }
@@ -2607,7 +2608,8 @@
 .mock-error {
   margin: 0;
   color: #a63131;
-  font-size: clamp(0.68rem, 0.8vw, 0.92rem);
+  font-size: clamp(0.92rem, 0.95vw, 1.08rem);
+  line-height: 1.3;
   text-align: center;
 }
 
@@ -2922,6 +2924,17 @@
   outline-offset: -2px;
 }
 
+.mock-btn:is(:hover, :focus-visible),
+.mock-auth-link:is(:hover, :focus-visible),
+.mock-nav-item:is(:hover, :focus-visible),
+.mock-account-item:is(:hover, :focus-visible),
+.mock-carousel-btn:is(:hover, :focus-visible),
+.mock-reset-btn:is(:hover, :focus-visible),
+.mock-mobile-menu-toggle:is(:hover, :focus-visible) {
+  background: var(--mock-blue);
+  color: var(--mock-paper);
+}
+
 .mock-carousel-controls {
   display: inline-flex;
   align-items: center;
@@ -3054,7 +3067,7 @@
 .mock-homepage .mock-faq-question,
 .mock-homepage .mock-faq-answer,
 .mock-homepage .mock-faq-lead p {
-  font-size: clamp(1rem, 1.02vw, 1.16rem);
+  font-size: clamp(1.06rem, 1.08vw, 1.22rem);
   line-height: 1.26;
 }
 
@@ -3075,6 +3088,31 @@
 .mock-homepage .mock-faq-card:focus .mock-faq-answer,
 .mock-homepage .mock-faq-card.is-active .mock-faq-answer {
   color: var(--mock-blue);
+  font-weight: 500;
+}
+
+@media (prefers-contrast: high) {
+  .mock-home {
+    --mock-line: #1f2a8d;
+    --mock-muted: rgba(17, 24, 42, 0.9);
+    --color-text-muted: rgba(17, 24, 42, 0.8);
+  }
+
+  .mock-home.is-dark,
+  .dark .mock-home {
+    --mock-line: rgba(239, 229, 216, 0.95);
+    --mock-muted: rgba(239, 229, 216, 0.95);
+    --color-text-muted: rgba(239, 229, 216, 0.84);
+  }
+
+  .mock-faq-card:focus-visible,
+  .mock-btn:focus-visible,
+  .mock-auth-link:focus-visible,
+  .mock-nav-item:focus-visible,
+  .mock-account-item:focus-visible,
+  .mock-reset-btn:focus-visible {
+    outline-width: 3px;
+  }
 }
 
 .mock-bottom-brand {

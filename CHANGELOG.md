@@ -35,6 +35,43 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Contrast + Readability Accessibility Pass (2026-02-15)
+
+### What Changed
+
+- Raised readability contrast in newspaper shell tokens:
+  - strengthened muted text opacity in light/dark mock shells.
+- Improved legibility for secondary supportive copy:
+  - increased `.mock-footnote` line-height
+  - increased `.mock-error` minimum font size and line-height.
+- Improved interaction-state readability:
+  - added higher-contrast hover/focus states for shell nav/buttons/links (`mock-*` controls).
+  - increased FAQ answer size and weight in homepage hover/reveal state for better scanability.
+- Added explicit high-contrast mode overrides for mock shells under `prefers-contrast: high`.
+- Added regression contracts for contrast/readability token invariants.
+
+### Files
+
+- `src/app/globals.css`
+- `__tests__/contrast-readability-contract.test.ts`
+- `docs/feature-prds/F-045.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Keyboard Navigation Accessibility Pass (2026-02-15)
 
 ### What Changed
