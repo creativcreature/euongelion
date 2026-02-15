@@ -4,6 +4,7 @@ import { Suspense, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import SiteFooter from '@/components/SiteFooter'
 
 function normalizeRedirectPath(value: string | null): string {
   if (!value) return '/'
@@ -161,6 +162,7 @@ export default function SignInPage() {
           <SignInForm />
         </Suspense>
       </main>
+      <SiteFooter />
     </div>
   )
 }

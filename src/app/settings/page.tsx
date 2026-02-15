@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import { useUIStore } from '@/stores/uiStore'
@@ -257,6 +258,10 @@ export default function SettingsPage() {
       <EuangelionShellHeader />
 
       <main id="main-content" className="shell-content-pad mx-auto max-w-2xl">
+        <Breadcrumbs
+          className="mb-7"
+          items={[{ label: 'HOME', href: '/' }, { label: 'SETTINGS' }]}
+        />
         <h1 className="text-display vw-heading-lg mb-12">Settings</h1>
 
         {/* Theme */}

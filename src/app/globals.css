@@ -2325,6 +2325,10 @@
   color: var(--color-text-muted);
 }
 
+.wake-shell {
+  --mock-blue: #111418;
+}
+
 .mock-masthead-block {
   border-bottom: var(--mock-stroke, 1px) solid
     var(--mock-line, var(--color-border-strong));

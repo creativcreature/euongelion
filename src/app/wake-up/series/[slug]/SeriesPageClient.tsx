@@ -22,7 +22,7 @@ export default function SeriesPageClient({
   return (
     <div className="mock-home">
       <main className="mock-paper">
-        <EuangelionShellHeader />
+        <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
         <Breadcrumbs
           className="mock-breadcrumb-row"
           items={[

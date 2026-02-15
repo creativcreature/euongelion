@@ -108,7 +108,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
   if (loading) {
     return (
       <div className="newspaper-home min-h-screen bg-page">
-        <EuangelionShellHeader />
+        <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
         <main className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
           <Breadcrumbs
             className="mb-7"
@@ -133,7 +133,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
   if (!devotional) {
     return (
       <div className="newspaper-home min-h-screen bg-page">
-        <EuangelionShellHeader />
+        <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
         <main className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
           <Breadcrumbs
             className="mb-7"
@@ -172,7 +172,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
   return (
     <div className="newspaper-home min-h-screen bg-page">
       <ScrollProgress />
-      <EuangelionShellHeader />
+      <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
 
       <main className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
         <Breadcrumbs

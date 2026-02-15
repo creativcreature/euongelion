@@ -42,7 +42,13 @@ function formatMastheadDate(now: Date): string {
   return `${month}. ${day}, ${year} ${time.replace(' AM', '').replace(' PM', '')}`
 }
 
-export default function EuangelionShellHeader() {
+export default function EuangelionShellHeader({
+  brandWord = 'EUANGELION',
+  tone = 'default',
+}: {
+  brandWord?: string
+  tone?: 'default' | 'wake'
+}) {
   const pathname = usePathname()
   const topbarRef = useRef<HTMLDivElement | null>(null)
   const navSentinelRef = useRef<HTMLDivElement | null>(null)
@@ -446,7 +452,7 @@ export default function EuangelionShellHeader() {
   )
 
   return (
-    <div className="mock-shell-frame">
+    <div className={`mock-shell-frame ${tone === 'wake' ? 'wake-shell' : ''}`}>
       <header data-nav-docked={navDocked ? 'true' : 'false'}>
         <div
           ref={topbarRef}
@@ -566,12 +572,14 @@ export default function EuangelionShellHeader() {
         <section className="mock-masthead-block">
           <h1 className="text-masthead mock-masthead-word">
             <span className="js-shell-masthead-fit mock-masthead-text">
-              EUANGELION
+              {brandWord}
             </span>
           </h1>
-          <p className="mock-masthead-pronunciation text-label">
-            EU•AN•GE•LION (YOO-AN-GEL-EE-ON) • GREEK: &quot;GOOD
-          </p>
+          {tone !== 'wake' && (
+            <p className="mock-masthead-pronunciation text-label">
+              EU•AN•GE•LION (YOO-AN-GEL-EE-ON) • GREEK: &quot;GOOD
+            </p>
+          )}
         </section>
 
         <div

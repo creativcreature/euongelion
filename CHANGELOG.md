@@ -166,6 +166,51 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Wake-Up Boundary + Daily Bread Canonicalization Pass (2026-02-15)
+
+### What Changed
+
+- Added Wake-Up shell boundary behavior while keeping shared mechanics:
+  - `EuangelionShellHeader` now supports branded masthead variants (`brandWord`, `tone`);
+  - wake-up routes now render `WAKE UP` masthead with warm-ink tone override.
+- Strengthened canonical devotional home routing:
+  - added `/daily-bread` route as canonical devotional dashboard;
+  - updated core internal links from `/my-devotional` to `/daily-bread` where relevant.
+- Expanded shell consistency across non-home routes:
+  - added breadcrumbs to settings and soul-audit pages;
+  - added shared site footer to auth pages.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+- `src/app/daily-bread/page.tsx`
+- `src/app/sitemap.ts`
+- `src/app/wake-up/page.tsx`
+- `src/app/wake-up/series/[slug]/SeriesPageClient.tsx`
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+- `src/app/wake-up/devotional/[slug]/loading.tsx`
+- `src/app/wake-up/devotional/[slug]/error.tsx`
+- `src/app/soul-audit/page.tsx`
+- `src/app/settings/page.tsx`
+- `src/app/auth/sign-in/page.tsx`
+- `src/app/auth/sign-up/page.tsx`
+- `docs/feature-prds/F-029.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Navigation IA + Docked Reliability Pass (2026-02-14)
 
 ### What Changed

@@ -18,7 +18,7 @@ export default function DevotionalError({
   return (
     <div className="mock-home">
       <main className="mock-paper">
-        <EuangelionShellHeader />
+        <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
         <section className="mock-section-center" style={{ minHeight: '320px' }}>
           <p className="text-label mock-kicker">DEVOTIONAL UNAVAILABLE</p>
           <h1 className="mock-title-center">
