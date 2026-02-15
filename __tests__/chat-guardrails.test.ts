@@ -13,6 +13,7 @@ describe('Chat local-corpus guardrails edge cases', () => {
 
     const response = await chatHandler(request as never)
     expect(response.status).toBe(400)
+    expect(response.headers.get('X-Request-Id')).toBeTruthy()
     const payload = (await response.json()) as { error?: string }
     expect(payload.error).toMatch(/devotional context/i)
   })
@@ -29,6 +30,7 @@ describe('Chat local-corpus guardrails edge cases', () => {
 
     const response = await chatHandler(request as never)
     expect([400, 503]).toContain(response.status)
+    expect(response.headers.get('X-Request-Id')).toBeTruthy()
     const payload = (await response.json()) as { error?: string }
     expect(payload.error).toMatch(/unavailable/i)
   })

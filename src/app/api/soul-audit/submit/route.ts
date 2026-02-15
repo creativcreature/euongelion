@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { crisisRequirement, detectCrisis } from '@/lib/soul-audit/crisis'
 import {
+  createRequestId,
   getClientKey,
+  jsonError,
+  logApiError,
   readJsonWithLimit,
   takeRateLimit,
-  withRateLimitHeaders,
+  withRequestIdHeaders,
 } from '@/lib/api-security'
 import {
   MAX_AUDITS_PER_CYCLE,
@@ -45,74 +48,76 @@ function hasExpectedOptionSplit(options: Array<{ kind: string }>): boolean {
 }
 
 export async function POST(request: NextRequest) {
+  const requestId = createRequestId()
+  const clientKey = getClientKey(request)
   try {
     const parsed = await readJsonWithLimit<SubmitBody>({
       request,
       maxBytes: MAX_SUBMIT_BODY_BYTES,
     })
     if (!parsed.ok) {
-      return NextResponse.json(
-        { error: parsed.error },
-        { status: parsed.status },
-      )
+      return jsonError({
+        error: parsed.error,
+        status: parsed.status,
+        requestId,
+      })
     }
 
     const sessionToken = await getOrCreateAuditSessionToken()
     const limiter = takeRateLimit({
       namespace: 'soul-audit-submit',
-      key: `${sessionToken}:${getClientKey(request)}`,
+      key: `${sessionToken}:${clientKey}`,
       limit: MAX_SUBMITS_PER_MINUTE,
       windowMs: 60_000,
     })
     if (!limiter.ok) {
-      return withRateLimitHeaders(
-        NextResponse.json(
-          { error: 'Too many audit submissions. Please retry shortly.' },
-          { status: 429 },
-        ),
-        limiter,
-      )
+      return jsonError({
+        error: 'Too many audit submissions. Please retry shortly.',
+        status: 429,
+        requestId,
+        rateLimit: limiter,
+      })
     }
 
     const body = parsed.data
     const responseText = sanitizeAuditInput(body.response)
 
     if (!responseText) {
-      return NextResponse.json(
-        { error: 'Write one honest paragraph so we can continue.' },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'Write one honest paragraph so we can continue.',
+        status: 400,
+        requestId,
+      })
     }
 
     if (responseText.length > 2000) {
-      return NextResponse.json(
-        { error: 'Please keep your response under 2000 characters.' },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'Please keep your response under 2000 characters.',
+        status: 400,
+        requestId,
+      })
     }
 
     const currentCount = getSessionAuditCount(sessionToken)
     if (currentCount >= MAX_AUDITS_PER_CYCLE) {
-      return NextResponse.json(
-        {
-          error: 'You have reached the audit limit for this cycle.',
-          code: 'AUDIT_LIMIT_REACHED',
-        },
-        { status: 429 },
-      )
+      return jsonError({
+        error: 'You have reached the audit limit for this cycle.',
+        code: 'AUDIT_LIMIT_REACHED',
+        status: 429,
+        requestId,
+      })
     }
 
     const crisisDetected = detectCrisis(responseText)
     const options = buildAuditOptions(responseText)
     if (options.length === 0) {
-      return NextResponse.json(
-        {
-          error:
-            'We could not assemble devotional options from your response yet. Add one more sentence and try again.',
-          code: 'NO_CURATED_OPTIONS',
-        },
-        { status: 409 },
-      )
+      return jsonError({
+        error:
+          'We could not assemble devotional options from your response yet. Add one more sentence and try again.',
+        code: 'NO_CURATED_OPTIONS',
+        status: 409,
+        requestId,
+      })
     }
 
     const { run, options: persistedOptions } = await createAuditRun({
@@ -135,13 +140,12 @@ export async function POST(request: NextRequest) {
     }
 
     if (!hasExpectedOptionSplit(responseOptions)) {
-      return NextResponse.json(
-        {
-          error: 'Unable to assemble a stable devotional option split.',
-          code: 'OPTION_SPLIT_INVALID',
-        },
-        { status: 500 },
-      )
+      return jsonError({
+        error: 'Unable to assemble a stable devotional option split.',
+        code: 'OPTION_SPLIT_INVALID',
+        status: 500,
+        requestId,
+      })
     }
 
     const runToken = createRunToken({
@@ -169,12 +173,23 @@ export async function POST(request: NextRequest) {
       },
     }
 
-    return NextResponse.json(payload, { status: 200 })
-  } catch (error) {
-    console.error('Soul audit submit error:', error)
-    return NextResponse.json(
-      { error: 'Unable to process soul audit right now.' },
-      { status: 500 },
+    return withRequestIdHeaders(
+      NextResponse.json(payload, { status: 200 }),
+      requestId,
     )
+  } catch (error) {
+    logApiError({
+      scope: 'soul-audit-submit',
+      requestId,
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
+    return jsonError({
+      error: 'Unable to process soul audit right now.',
+      status: 500,
+      requestId,
+    })
   }
 }

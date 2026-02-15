@@ -35,6 +35,57 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Error Observability Contract Pass (2026-02-15)
+
+### What Changed
+
+- Added shared API observability helpers:
+  - request id generation (`createRequestId`)
+  - standard response tracing headers (`X-Request-Id`, `Cache-Control: no-store`)
+  - standardized error envelope helper (`jsonError`)
+  - structured server logging helper (`logApiError`)
+- Applied the observability contract to core high-traffic routes:
+  - soul-audit submit/consent/select
+  - chat
+  - bookmarks
+  - annotations
+- Standardized error responses now include request ids for client-side support/debug loops.
+- Standardized rate-limited responses now include both request-id and rate-limit headers.
+- Added regression tests for:
+  - request-id header helper behavior
+  - standardized error payload + headers
+  - structured error logging call shape
+  - chat guardrail error responses emitting request-id headers
+
+### Files
+
+- `src/lib/api-security.ts`
+- `src/app/api/soul-audit/submit/route.ts`
+- `src/app/api/soul-audit/consent/route.ts`
+- `src/app/api/soul-audit/select/route.ts`
+- `src/app/api/chat/route.ts`
+- `src/app/api/bookmarks/route.ts`
+- `src/app/api/annotations/route.ts`
+- `__tests__/api-security.test.ts`
+- `__tests__/chat-guardrails.test.ts`
+- `docs/feature-prds/F-039.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## API Abuse Controls Reliability Pass (2026-02-15)
 
 ### What Changed

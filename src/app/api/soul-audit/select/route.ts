@@ -1,13 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server'
 import {
+  createRequestId,
   getClientKey,
   isSafeAuditOptionId,
   isSafeAuditRunId,
+  jsonError,
+  logApiError,
   normalizeTimezoneOffsetMinutes,
   readJsonWithLimit,
   sanitizeTimezone,
   takeRateLimit,
-  withRateLimitHeaders,
+  withRequestIdHeaders,
 } from '@/lib/api-security'
 import {
   buildCuratedFirstPlan,
@@ -107,32 +110,34 @@ function withCurrentRouteCookie(response: NextResponse, route: string) {
 }
 
 export async function POST(request: NextRequest) {
+  const requestId = createRequestId()
+  const clientKey = getClientKey(request)
   try {
     const parsed = await readJsonWithLimit<SoulAuditSelectRequest>({
       request,
       maxBytes: MAX_SELECT_BODY_BYTES,
     })
     if (!parsed.ok) {
-      return NextResponse.json(
-        { error: parsed.error },
-        { status: parsed.status },
-      )
+      return jsonError({
+        error: parsed.error,
+        status: parsed.status,
+        requestId,
+      })
     }
 
     const limiter = takeRateLimit({
       namespace: 'soul-audit-select',
-      key: getClientKey(request),
+      key: clientKey,
       limit: MAX_SELECT_REQUESTS_PER_MINUTE,
       windowMs: 60_000,
     })
     if (!limiter.ok) {
-      return withRateLimitHeaders(
-        NextResponse.json(
-          { error: 'Too many selection attempts. Please retry shortly.' },
-          { status: 429 },
-        ),
-        limiter,
-      )
+      return jsonError({
+        error: 'Too many selection attempts. Please retry shortly.',
+        status: 429,
+        requestId,
+        rateLimit: limiter,
+      })
     }
 
     const body = parsed.data
@@ -140,17 +145,19 @@ export async function POST(request: NextRequest) {
     const optionId = String(body.optionId || '').trim()
 
     if (!runId || !optionId) {
-      return NextResponse.json(
-        { error: 'auditRunId and optionId are required.' },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'auditRunId and optionId are required.',
+        status: 400,
+        requestId,
+      })
     }
 
     if (!isSafeAuditRunId(runId) || !isSafeAuditOptionId(optionId)) {
-      return NextResponse.json(
-        { error: 'Invalid auditRunId or optionId format.' },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'Invalid auditRunId or optionId format.',
+        status: 400,
+        requestId,
+      })
     }
 
     const sessionToken = await getOrCreateAuditSessionToken()
@@ -173,17 +180,19 @@ export async function POST(request: NextRequest) {
     }
 
     if (!run) {
-      return NextResponse.json(
-        { error: 'Audit run not found.' },
-        { status: 404 },
-      )
+      return jsonError({
+        error: 'Audit run not found.',
+        status: 404,
+        requestId,
+      })
     }
 
     if (run.session_token !== sessionToken && !verifiedToken) {
-      return NextResponse.json(
-        { error: 'Audit run access denied.' },
-        { status: 403 },
-      )
+      return jsonError({
+        error: 'Audit run access denied.',
+        status: 403,
+        requestId,
+      })
     }
     if (run.session_token !== sessionToken && verifiedToken) {
       run = {
@@ -214,24 +223,21 @@ export async function POST(request: NextRequest) {
     }
 
     if (!consent?.essential_accepted) {
-      return NextResponse.json(
-        {
-          error: 'Essential consent is required before selection.',
-          code: 'ESSENTIAL_CONSENT_REQUIRED',
-        },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'Essential consent is required before selection.',
+        code: 'ESSENTIAL_CONSENT_REQUIRED',
+        status: 400,
+        requestId,
+      })
     }
 
     if (run.crisis_detected && !consent.crisis_acknowledged) {
-      return NextResponse.json(
-        {
-          error:
-            'Crisis resource acknowledgement is required before continuing.',
-          code: 'CRISIS_ACK_REQUIRED',
-        },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'Crisis resource acknowledgement is required before continuing.',
+        code: 'CRISIS_ACK_REQUIRED',
+        status: 400,
+        requestId,
+      })
     }
 
     const existingSelection = await getSelectionWithFallback(runId)
@@ -256,7 +262,10 @@ export async function POST(request: NextRequest) {
           : undefined,
       }
       return withCurrentRouteCookie(
-        NextResponse.json(existingPayload, { status: 200 }),
+        withRequestIdHeaders(
+          NextResponse.json(existingPayload, { status: 200 }),
+          requestId,
+        ),
         existingPayload.route,
       )
     }
@@ -267,7 +276,11 @@ export async function POST(request: NextRequest) {
       (item) => item.id === optionId,
     )
     if (!option) {
-      return NextResponse.json({ error: 'Option not found.' }, { status: 404 })
+      return jsonError({
+        error: 'Option not found.',
+        status: 404,
+        requestId,
+      })
     }
 
     if (option.kind === 'curated_prefab') {
@@ -287,7 +300,10 @@ export async function POST(request: NextRequest) {
         seriesSlug: option.slug,
       }
       return withCurrentRouteCookie(
-        NextResponse.json(payload, { status: 200 }),
+        withRequestIdHeaders(
+          NextResponse.json(payload, { status: 200 }),
+          requestId,
+        ),
         payload.route,
       )
     }
@@ -379,21 +395,34 @@ export async function POST(request: NextRequest) {
     getAllPlanDays(plan.token)
 
     return withCurrentRouteCookie(
-      NextResponse.json(payload, { status: 200 }),
+      withRequestIdHeaders(
+        NextResponse.json(payload, { status: 200 }),
+        requestId,
+      ),
       payload.route,
     )
   } catch (error) {
     if (error instanceof MissingCuratedModuleError) {
-      return NextResponse.json(
-        { error: error.message, code: 'MISSING_CURATED_MODULE' },
-        { status: 422 },
-      )
+      return jsonError({
+        error: error.message,
+        code: 'MISSING_CURATED_MODULE',
+        status: 422,
+        requestId,
+      })
     }
 
-    console.error('Soul audit selection error:', error)
-    return NextResponse.json(
-      { error: 'Unable to start devotional plan right now.' },
-      { status: 500 },
-    )
+    logApiError({
+      scope: 'soul-audit-select',
+      requestId,
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
+    return jsonError({
+      error: 'Unable to start devotional plan right now.',
+      status: 500,
+      requestId,
+    })
   }
 }

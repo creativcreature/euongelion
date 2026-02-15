@@ -1,11 +1,15 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import {
+  createRequestId,
   isSafeAuditOptionId,
   isSafeAuditRunId,
+  jsonError,
+  logApiError,
   normalizeTimezoneOffsetMinutes,
   sanitizeTimezone,
   takeRateLimit,
   withRateLimitHeaders,
+  withRequestIdHeaders,
 } from '@/lib/api-security'
 
 describe('API security helpers', () => {
@@ -82,5 +86,63 @@ describe('API security helpers', () => {
     expect(next.headers.get('X-RateLimit-Limit')).toBe('30')
     expect(next.headers.get('X-RateLimit-Remaining')).toBe('0')
     expect(next.headers.get('X-RateLimit-Reset')).toBe('1700000000')
+  })
+
+  it('creates request ids and attaches request headers', () => {
+    const requestId = createRequestId()
+    expect(requestId.length).toBeGreaterThan(10)
+
+    const response = new Response(JSON.stringify({ ok: true }), { status: 200 })
+    const next = withRequestIdHeaders(response, requestId)
+    expect(next.headers.get('X-Request-Id')).toBe(requestId)
+    expect(next.headers.get('Cache-Control')).toBe('no-store')
+  })
+
+  it('returns standardized error payload with request id and headers', async () => {
+    const response = jsonError({
+      error: 'Too many requests',
+      status: 429,
+      requestId: 'rid-123',
+      code: 'RATE_LIMITED',
+      rateLimit: {
+        retryAfterSeconds: 30,
+        limit: 10,
+        remaining: 0,
+        resetAtSeconds: 1_700_000_100,
+      },
+    })
+
+    expect(response.status).toBe(429)
+    expect(response.headers.get('X-Request-Id')).toBe('rid-123')
+    expect(response.headers.get('Retry-After')).toBe('30')
+    expect(response.headers.get('X-RateLimit-Limit')).toBe('10')
+
+    const payload = (await response.json()) as Record<string, unknown>
+    expect(payload.error).toBe('Too many requests')
+    expect(payload.requestId).toBe('rid-123')
+    expect(payload.code).toBe('RATE_LIMITED')
+  })
+
+  it('logs structured API error records', () => {
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    const failure = new Error('boom')
+    logApiError({
+      scope: 'unit-test',
+      requestId: 'rid-abc',
+      error: failure,
+      method: 'POST',
+      path: '/api/test',
+      clientKey: 'ip:test',
+      context: { component: 'api-security' },
+    })
+    expect(spy).toHaveBeenCalled()
+    const [label, payload] = spy.mock.calls[0] as [
+      string,
+      Record<string, unknown>,
+    ]
+    expect(label).toContain('api:unit-test')
+    expect(payload.requestId).toBe('rid-abc')
+    expect(payload.path).toBe('/api/test')
+    spy.mockRestore()
   })
 })

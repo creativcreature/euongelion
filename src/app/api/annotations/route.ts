@@ -6,12 +6,15 @@ import {
 } from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import {
+  createRequestId,
   getClientKey,
   isSafeSlug,
+  jsonError,
+  logApiError,
   readJsonWithLimit,
   sanitizeOptionalText,
   takeRateLimit,
-  withRateLimitHeaders,
+  withRequestIdHeaders,
 } from '@/lib/api-security'
 
 interface AnnotationBody {
@@ -27,21 +30,22 @@ const MAX_BODY_BYTES = 8_192
 const MAX_ANNOTATION_REQUESTS_PER_MINUTE = 80
 
 export async function POST(request: NextRequest) {
+  const requestId = createRequestId()
+  const clientKey = getClientKey(request)
   try {
     const limiter = takeRateLimit({
       namespace: 'annotations-post',
-      key: getClientKey(request),
+      key: clientKey,
       limit: MAX_ANNOTATION_REQUESTS_PER_MINUTE,
       windowMs: 60_000,
     })
     if (!limiter.ok) {
-      return withRateLimitHeaders(
-        NextResponse.json(
-          { error: 'Too many annotation requests. Please retry shortly.' },
-          { status: 429 },
-        ),
-        limiter,
-      )
+      return jsonError({
+        error: 'Too many annotation requests. Please retry shortly.',
+        status: 429,
+        requestId,
+        rateLimit: limiter,
+      })
     }
 
     const parsed = await readJsonWithLimit<AnnotationBody>({
@@ -49,10 +53,11 @@ export async function POST(request: NextRequest) {
       maxBytes: MAX_BODY_BYTES,
     })
     if (!parsed.ok) {
-      return NextResponse.json(
-        { error: parsed.error },
-        { status: parsed.status },
-      )
+      return jsonError({
+        error: parsed.error,
+        status: parsed.status,
+        requestId,
+      })
     }
 
     const payload = parsed.data
@@ -64,12 +69,11 @@ export async function POST(request: NextRequest) {
       !isSafeSlug(devotionalSlug) ||
       !ALLOWED_TYPES.has(annotationType)
     ) {
-      return NextResponse.json(
-        {
-          error: 'Safe devotionalSlug and valid annotationType are required.',
-        },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'Safe devotionalSlug and valid annotationType are required.',
+        status: 400,
+        requestId,
+      })
     }
 
     const sessionToken = await getOrCreateAuditSessionToken()
@@ -86,35 +90,50 @@ export async function POST(request: NextRequest) {
       style: payload.style ?? null,
     })
 
-    return NextResponse.json({ ok: true, annotation: row }, { status: 200 })
-  } catch (error) {
-    console.error('Annotation create error:', error)
-    return NextResponse.json(
-      { error: 'Unable to save annotation.' },
-      { status: 500 },
+    return withRequestIdHeaders(
+      NextResponse.json({ ok: true, annotation: row }, { status: 200 }),
+      requestId,
     )
+  } catch (error) {
+    logApiError({
+      scope: 'annotations-post',
+      requestId,
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
+    return jsonError({
+      error: 'Unable to save annotation.',
+      status: 500,
+      requestId,
+    })
   }
 }
 
 export async function GET(request: NextRequest) {
+  const requestId = createRequestId()
+  const clientKey = getClientKey(request)
   try {
     const devotionalSlug = request.nextUrl.searchParams.get('devotionalSlug')
     const annotationType = request.nextUrl.searchParams.get('annotationType')
     const styleSource = request.nextUrl.searchParams.get('styleSource')
     const styleKind = request.nextUrl.searchParams.get('styleKind')
     if (devotionalSlug && !isSafeSlug(devotionalSlug)) {
-      return NextResponse.json(
-        { error: 'Invalid devotionalSlug query parameter.' },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'Invalid devotionalSlug query parameter.',
+        status: 400,
+        requestId,
+      })
     }
     const sessionToken = await getOrCreateAuditSessionToken()
 
     if (annotationType && !ALLOWED_TYPES.has(annotationType)) {
-      return NextResponse.json(
-        { error: 'Invalid annotationType query parameter.' },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'Invalid annotationType query parameter.',
+        status: 400,
+        requestId,
+      })
     }
 
     const annotations = (
@@ -137,26 +156,40 @@ export async function GET(request: NextRequest) {
       return true
     })
 
-    return NextResponse.json({ ok: true, annotations }, { status: 200 })
-  } catch (error) {
-    console.error('Annotation list error:', error)
-    return NextResponse.json(
-      { error: 'Unable to fetch annotations.' },
-      { status: 500 },
+    return withRequestIdHeaders(
+      NextResponse.json({ ok: true, annotations }, { status: 200 }),
+      requestId,
     )
+  } catch (error) {
+    logApiError({
+      scope: 'annotations-get',
+      requestId,
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
+    return jsonError({
+      error: 'Unable to fetch annotations.',
+      status: 500,
+      requestId,
+    })
   }
 }
 
 export async function DELETE(request: NextRequest) {
+  const requestId = createRequestId()
+  const clientKey = getClientKey(request)
   try {
     const annotationId = String(
       request.nextUrl.searchParams.get('annotationId') || '',
     ).trim()
     if (!annotationId) {
-      return NextResponse.json(
-        { error: 'annotationId query parameter is required.' },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'annotationId query parameter is required.',
+        status: 400,
+        requestId,
+      })
     }
 
     const sessionToken = await getOrCreateAuditSessionToken()
@@ -165,12 +198,23 @@ export async function DELETE(request: NextRequest) {
       annotationId,
     })
 
-    return NextResponse.json({ ok: true }, { status: 200 })
-  } catch (error) {
-    console.error('Annotation delete error:', error)
-    return NextResponse.json(
-      { error: 'Unable to remove annotation.' },
-      { status: 500 },
+    return withRequestIdHeaders(
+      NextResponse.json({ ok: true }, { status: 200 }),
+      requestId,
     )
+  } catch (error) {
+    logApiError({
+      scope: 'annotations-delete',
+      requestId,
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
+    return jsonError({
+      error: 'Unable to remove annotation.',
+      status: 500,
+      requestId,
+    })
   }
 }

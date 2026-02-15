@@ -1,8 +1,14 @@
-import type { NextRequest } from 'next/server'
+import { NextResponse, type NextRequest } from 'next/server'
 
 interface RateLimitBucket {
   count: number
   resetAt: number
+}
+
+type SerializedError = {
+  name: string
+  message: string
+  stack?: string
 }
 
 const rateLimitStore = new Map<string, RateLimitBucket>()
@@ -24,6 +30,29 @@ function toInt(value: string | null): number {
   if (!value) return 0
   const parsed = Number.parseInt(value, 10)
   return Number.isFinite(parsed) ? parsed : 0
+}
+
+function serializeError(error: unknown): SerializedError {
+  if (error instanceof Error) {
+    return {
+      name: error.name,
+      message: error.message,
+      stack: error.stack,
+    }
+  }
+
+  return {
+    name: 'UnknownError',
+    message: typeof error === 'string' ? error : JSON.stringify(error),
+  }
+}
+
+export function createRequestId(): string {
+  try {
+    return crypto.randomUUID()
+  } catch {
+    return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`
+  }
 }
 
 export function getClientKey(request: Request): string {
@@ -218,17 +247,77 @@ export function sanitizeSafeRedirectPath(value: unknown): string | undefined {
   return trimmed
 }
 
-export function withRateLimitHeaders(
-  response: Response,
-  meta:
-    | number
-    | {
-        retryAfterSeconds: number
-        limit?: number
-        remaining?: number
-        resetAtSeconds?: number
-      },
-): Response {
+export type RateLimitHeaderMeta =
+  | number
+  | {
+      retryAfterSeconds: number
+      limit?: number
+      remaining?: number
+      resetAtSeconds?: number
+    }
+
+export function withRequestIdHeaders<T extends Response>(
+  response: T,
+  requestId: string,
+): T {
+  response.headers.set('X-Request-Id', requestId)
+  if (!response.headers.has('Cache-Control')) {
+    response.headers.set('Cache-Control', 'no-store')
+  }
+  return response
+}
+
+export function jsonError(params: {
+  error: string
+  status: number
+  requestId: string
+  code?: string
+  details?: Record<string, unknown>
+  rateLimit?: RateLimitHeaderMeta
+}): NextResponse {
+  const payload: Record<string, unknown> = {
+    error: params.error,
+    requestId: params.requestId,
+  }
+
+  if (params.code) {
+    payload.code = params.code
+  }
+  if (params.details) {
+    Object.assign(payload, params.details)
+  }
+
+  const response = NextResponse.json(payload, { status: params.status })
+  withRequestIdHeaders(response, params.requestId)
+  if (typeof params.rateLimit !== 'undefined') {
+    withRateLimitHeaders(response, params.rateLimit)
+  }
+  return response
+}
+
+export function logApiError(params: {
+  scope: string
+  requestId: string
+  error: unknown
+  method?: string
+  path?: string
+  clientKey?: string
+  context?: Record<string, unknown>
+}) {
+  console.error(`[api:${params.scope}]`, {
+    requestId: params.requestId,
+    method: params.method,
+    path: params.path,
+    clientKey: params.clientKey,
+    ...(params.context || {}),
+    error: serializeError(params.error),
+  })
+}
+
+export function withRateLimitHeaders<T extends Response>(
+  response: T,
+  meta: RateLimitHeaderMeta,
+): T {
   const retryAfterSeconds =
     typeof meta === 'number' ? meta : meta.retryAfterSeconds
   response.headers.set('Retry-After', String(retryAfterSeconds))

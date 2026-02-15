@@ -2,12 +2,15 @@ import { NextRequest, NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 import {
+  createRequestId,
   getClientKey,
+  jsonError,
+  logApiError,
   readJsonWithLimit,
   sanitizeOptionalText,
   sanitizeSingleLine,
   takeRateLimit,
-  withRateLimitHeaders,
+  withRequestIdHeaders,
 } from '@/lib/api-security'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 
@@ -310,21 +313,22 @@ function consumeDailyFreeTier(sessionKey: string): boolean {
 }
 
 export async function POST(request: NextRequest) {
+  const requestId = createRequestId()
+  const clientKey = getClientKey(request)
   try {
     const limiter = takeRateLimit({
       namespace: 'chat',
-      key: getClientKey(request),
+      key: clientKey,
       limit: MAX_CHAT_REQUESTS_PER_MINUTE,
       windowMs: 60_000,
     })
     if (!limiter.ok) {
-      return withRateLimitHeaders(
-        NextResponse.json(
-          { error: 'Too many chat requests. Please retry shortly.' },
-          { status: 429 },
-        ),
-        limiter,
-      )
+      return jsonError({
+        error: 'Too many chat requests. Please retry shortly.',
+        status: 429,
+        requestId,
+        rateLimit: limiter,
+      })
     }
 
     const parsed = await readJsonWithLimit<ChatRequestBody>({
@@ -332,10 +336,11 @@ export async function POST(request: NextRequest) {
       maxBytes: MAX_BODY_BYTES,
     })
     if (!parsed.ok) {
-      return NextResponse.json(
-        { error: parsed.error },
-        { status: parsed.status },
-      )
+      return jsonError({
+        error: parsed.error,
+        status: parsed.status,
+        requestId,
+      })
     }
 
     const body = parsed.data
@@ -360,20 +365,20 @@ export async function POST(request: NextRequest) {
     const userApiKey = sanitizeOptionalText(body.userApiKey, 240)
 
     if (!messages || messages.length === 0) {
-      return NextResponse.json(
-        { error: 'Messages are required' },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'Messages are required',
+        status: 400,
+        requestId,
+      })
     }
 
     if (!devotionalSlug && !highlightedText) {
-      return NextResponse.json(
-        {
-          error:
-            'Study chat is limited to devotional context. Open a devotional or highlight text first.',
-        },
-        { status: 400 },
-      )
+      return jsonError({
+        error:
+          'Study chat is limited to devotional context. Open a devotional or highlight text first.',
+        status: 400,
+        requestId,
+      })
     }
 
     const contextPacket = buildContextPacket(
@@ -382,49 +387,45 @@ export async function POST(request: NextRequest) {
     )
 
     if (!contextPacket.hasDevotionalContext) {
-      return NextResponse.json(
-        {
-          error:
-            'Devotional context is unavailable for this page. Open a devotional day before using study chat.',
-        },
-        { status: 400 },
-      )
+      return jsonError({
+        error:
+          'Devotional context is unavailable for this page. Open a devotional day before using study chat.',
+        status: 400,
+        requestId,
+      })
     }
 
     if (!contextPacket.hasReferenceContext) {
-      return NextResponse.json(
-        {
-          error:
-            'Local reference corpus is unavailable. Sync reference volumes before using study chat.',
-        },
-        { status: 503 },
-      )
+      return jsonError({
+        error:
+          'Local reference corpus is unavailable. Sync reference volumes before using study chat.',
+        status: 503,
+        requestId,
+      })
     }
 
     // Determine which API key to use
     const apiKey = userApiKey || APP_API_KEY
 
     if (!apiKey) {
-      return NextResponse.json(
-        {
-          error:
-            'No API key available. Add your own key in Settings for unlimited access.',
-        },
-        { status: 503 },
-      )
+      return jsonError({
+        error:
+          'No API key available. Add your own key in Settings for unlimited access.',
+        status: 503,
+        requestId,
+      })
     }
 
     // Check free-tier rate limit (only when using app key)
     if (!userApiKey) {
       const sessionToken = await getOrCreateAuditSessionToken()
       if (!consumeDailyFreeTier(sessionToken)) {
-        return NextResponse.json(
-          {
-            error: `You\u2019ve used your ${FREE_TIER_DAILY_LIMIT} daily questions. Add your own API key in Settings for unlimited access.`,
-            limitReached: true,
-          },
-          { status: 429 },
-        )
+        return jsonError({
+          error: `You\u2019ve used your ${FREE_TIER_DAILY_LIMIT} daily questions. Add your own API key in Settings for unlimited access.`,
+          status: 429,
+          requestId,
+          details: { limitReached: true },
+        })
       }
     }
 
@@ -456,16 +457,18 @@ export async function POST(request: NextRequest) {
         'API request failed'
 
       if (response.status === 401) {
-        return NextResponse.json(
-          { error: 'Invalid API key. Please check your key in Settings.' },
-          { status: 401 },
-        )
+        return jsonError({
+          error: 'Invalid API key. Please check your key in Settings.',
+          status: 401,
+          requestId,
+        })
       }
 
-      return NextResponse.json(
-        { error: errorMessage },
-        { status: response.status },
-      )
+      return jsonError({
+        error: errorMessage,
+        status: response.status,
+        requestId,
+      })
     }
 
     const data = (await response.json()) as {
@@ -478,25 +481,36 @@ export async function POST(request: NextRequest) {
       ...extractScriptureCitations(assistantMessage),
     ].slice(0, MAX_CHAT_CITATIONS)
 
-    return NextResponse.json({
-      message: assistantMessage,
-      usingUserKey: !!userApiKey,
-      guardrails: {
-        scope: 'local-corpus-only',
-        internetSearch: false,
-        devotionalSlug: devotionalSlug || null,
-        hasHighlightedText: Boolean(highlightedText),
-        hasDevotionalContext: contextPacket.hasDevotionalContext,
-        hasReferenceContext: contextPacket.hasReferenceContext,
-        sources: contextPacket.sources.map((source) => source.source),
-      },
-      citations,
-    })
-  } catch (error) {
-    console.error('Chat API error:', error)
-    return NextResponse.json(
-      { error: 'Something went wrong. Please try again.' },
-      { status: 500 },
+    return withRequestIdHeaders(
+      NextResponse.json({
+        message: assistantMessage,
+        usingUserKey: !!userApiKey,
+        guardrails: {
+          scope: 'local-corpus-only',
+          internetSearch: false,
+          devotionalSlug: devotionalSlug || null,
+          hasHighlightedText: Boolean(highlightedText),
+          hasDevotionalContext: contextPacket.hasDevotionalContext,
+          hasReferenceContext: contextPacket.hasReferenceContext,
+          sources: contextPacket.sources.map((source) => source.source),
+        },
+        citations,
+      }),
+      requestId,
     )
+  } catch (error) {
+    logApiError({
+      scope: 'chat',
+      requestId,
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
+    return jsonError({
+      error: 'Something went wrong. Please try again.',
+      status: 500,
+      requestId,
+    })
   }
 }

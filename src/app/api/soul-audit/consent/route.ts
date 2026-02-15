@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import {
+  createRequestId,
   getClientKey,
   isSafeAuditRunId,
+  jsonError,
+  logApiError,
   readJsonWithLimit,
   takeRateLimit,
-  withRateLimitHeaders,
+  withRequestIdHeaders,
 } from '@/lib/api-security'
 import {
   getAuditRunWithFallback,
@@ -22,32 +25,34 @@ const MAX_CONSENT_BODY_BYTES = 32_768
 const MAX_CONSENT_REQUESTS_PER_MINUTE = 30
 
 export async function POST(request: NextRequest) {
+  const requestId = createRequestId()
+  const clientKey = getClientKey(request)
   try {
     const parsed = await readJsonWithLimit<SoulAuditConsentRequest>({
       request,
       maxBytes: MAX_CONSENT_BODY_BYTES,
     })
     if (!parsed.ok) {
-      return NextResponse.json(
-        { error: parsed.error },
-        { status: parsed.status },
-      )
+      return jsonError({
+        error: parsed.error,
+        status: parsed.status,
+        requestId,
+      })
     }
 
     const limiter = takeRateLimit({
       namespace: 'soul-audit-consent',
-      key: getClientKey(request),
+      key: clientKey,
       limit: MAX_CONSENT_REQUESTS_PER_MINUTE,
       windowMs: 60_000,
     })
     if (!limiter.ok) {
-      return withRateLimitHeaders(
-        NextResponse.json(
-          { error: 'Too many consent requests. Please retry shortly.' },
-          { status: 429 },
-        ),
-        limiter,
-      )
+      return jsonError({
+        error: 'Too many consent requests. Please retry shortly.',
+        status: 429,
+        requestId,
+        rateLimit: limiter,
+      })
     }
 
     const body = parsed.data
@@ -57,20 +62,20 @@ export async function POST(request: NextRequest) {
     const crisisAcknowledged = Boolean(body.crisisAcknowledged)
 
     if (!runId || !isSafeAuditRunId(runId)) {
-      return NextResponse.json(
-        { error: 'A valid auditRunId is required.' },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'A valid auditRunId is required.',
+        status: 400,
+        requestId,
+      })
     }
 
     if (!essentialAccepted) {
-      return NextResponse.json(
-        {
-          error: 'Essential functional consent is required to continue.',
-          code: 'ESSENTIAL_CONSENT_REQUIRED',
-        },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'Essential functional consent is required to continue.',
+        code: 'ESSENTIAL_CONSENT_REQUIRED',
+        status: 400,
+        requestId,
+      })
     }
 
     const sessionToken = await getOrCreateAuditSessionToken()
@@ -96,16 +101,18 @@ export async function POST(request: NextRequest) {
     }
 
     if (!run) {
-      return NextResponse.json(
-        { error: 'Audit run not found' },
-        { status: 404 },
-      )
+      return jsonError({
+        error: 'Audit run not found',
+        status: 404,
+        requestId,
+      })
     }
     if (run.session_token !== sessionToken && !verified) {
-      return NextResponse.json(
-        { error: 'Audit run access denied' },
-        { status: 403 },
-      )
+      return jsonError({
+        error: 'Audit run access denied',
+        status: 403,
+        requestId,
+      })
     }
     if (run.session_token !== sessionToken && verified) {
       run = {
@@ -117,14 +124,13 @@ export async function POST(request: NextRequest) {
     }
 
     if (run.crisis_detected && !crisisAcknowledged) {
-      return NextResponse.json(
-        {
-          error:
-            'You must acknowledge crisis resources before continuing to devotional options.',
-          code: 'CRISIS_ACK_REQUIRED',
-        },
-        { status: 400 },
-      )
+      return jsonError({
+        error:
+          'You must acknowledge crisis resources before continuing to devotional options.',
+        code: 'CRISIS_ACK_REQUIRED',
+        status: 400,
+        requestId,
+      })
     }
 
     const consent = await saveConsent({
@@ -150,12 +156,23 @@ export async function POST(request: NextRequest) {
       }),
     }
 
-    return NextResponse.json(payload, { status: 200 })
-  } catch (error) {
-    console.error('Soul audit consent error:', error)
-    return NextResponse.json(
-      { error: 'Unable to record consent right now.' },
-      { status: 500 },
+    return withRequestIdHeaders(
+      NextResponse.json(payload, { status: 200 }),
+      requestId,
     )
+  } catch (error) {
+    logApiError({
+      scope: 'soul-audit-consent',
+      requestId,
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
+    return jsonError({
+      error: 'Unable to record consent right now.',
+      status: 500,
+      requestId,
+    })
   }
 }

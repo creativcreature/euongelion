@@ -6,12 +6,15 @@ import {
 } from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import {
+  createRequestId,
   getClientKey,
   isSafeSlug,
+  jsonError,
+  logApiError,
   readJsonWithLimit,
   sanitizeOptionalText,
   takeRateLimit,
-  withRateLimitHeaders,
+  withRequestIdHeaders,
 } from '@/lib/api-security'
 
 interface BookmarkBody {
@@ -23,21 +26,22 @@ const MAX_BODY_BYTES = 4_096
 const MAX_BOOKMARK_REQUESTS_PER_MINUTE = 80
 
 export async function POST(request: NextRequest) {
+  const requestId = createRequestId()
+  const clientKey = getClientKey(request)
   try {
     const limiter = takeRateLimit({
       namespace: 'bookmarks-post',
-      key: getClientKey(request),
+      key: clientKey,
       limit: MAX_BOOKMARK_REQUESTS_PER_MINUTE,
       windowMs: 60_000,
     })
     if (!limiter.ok) {
-      return withRateLimitHeaders(
-        NextResponse.json(
-          { error: 'Too many bookmark requests. Please retry shortly.' },
-          { status: 429 },
-        ),
-        limiter,
-      )
+      return jsonError({
+        error: 'Too many bookmark requests. Please retry shortly.',
+        status: 429,
+        requestId,
+        rateLimit: limiter,
+      })
     }
 
     const parsed = await readJsonWithLimit<BookmarkBody>({
@@ -45,19 +49,21 @@ export async function POST(request: NextRequest) {
       maxBytes: MAX_BODY_BYTES,
     })
     if (!parsed.ok) {
-      return NextResponse.json(
-        { error: parsed.error },
-        { status: parsed.status },
-      )
+      return jsonError({
+        error: parsed.error,
+        status: parsed.status,
+        requestId,
+      })
     }
 
     const body = parsed.data
     const devotionalSlug = String(body.devotionalSlug || '').trim()
     if (!devotionalSlug || !isSafeSlug(devotionalSlug)) {
-      return NextResponse.json(
-        { error: 'A safe devotionalSlug is required.' },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'A safe devotionalSlug is required.',
+        status: 400,
+        requestId,
+      })
     }
 
     const sessionToken = await getOrCreateAuditSessionToken()
@@ -67,40 +73,65 @@ export async function POST(request: NextRequest) {
       note: sanitizeOptionalText(body.note, 1_000),
     })
 
-    return NextResponse.json({ ok: true, bookmark }, { status: 200 })
-  } catch (error) {
-    console.error('Bookmark create error:', error)
-    return NextResponse.json(
-      { error: 'Unable to save bookmark.' },
-      { status: 500 },
+    return withRequestIdHeaders(
+      NextResponse.json({ ok: true, bookmark }, { status: 200 }),
+      requestId,
     )
+  } catch (error) {
+    logApiError({
+      scope: 'bookmarks-post',
+      requestId,
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
+    return jsonError({
+      error: 'Unable to save bookmark.',
+      status: 500,
+      requestId,
+    })
   }
 }
 
 export async function GET() {
+  const requestId = createRequestId()
   try {
     const sessionToken = await getOrCreateAuditSessionToken()
     const bookmarks = await listBookmarksWithFallback(sessionToken)
-    return NextResponse.json({ ok: true, bookmarks }, { status: 200 })
-  } catch (error) {
-    console.error('Bookmark list error:', error)
-    return NextResponse.json(
-      { error: 'Unable to fetch bookmarks.' },
-      { status: 500 },
+    return withRequestIdHeaders(
+      NextResponse.json({ ok: true, bookmarks }, { status: 200 }),
+      requestId,
     )
+  } catch (error) {
+    logApiError({
+      scope: 'bookmarks-get',
+      requestId,
+      error,
+      method: 'GET',
+      path: '/api/bookmarks',
+    })
+    return jsonError({
+      error: 'Unable to fetch bookmarks.',
+      status: 500,
+      requestId,
+    })
   }
 }
 
 export async function DELETE(request: NextRequest) {
+  const requestId = createRequestId()
+  const clientKey = getClientKey(request)
   try {
     const devotionalSlug = String(
       request.nextUrl.searchParams.get('devotionalSlug') || '',
     ).trim()
     if (!devotionalSlug || !isSafeSlug(devotionalSlug)) {
-      return NextResponse.json(
-        { error: 'A safe devotionalSlug query parameter is required.' },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'A safe devotionalSlug query parameter is required.',
+        status: 400,
+        requestId,
+      })
     }
 
     const sessionToken = await getOrCreateAuditSessionToken()
@@ -109,12 +140,23 @@ export async function DELETE(request: NextRequest) {
       devotionalSlug,
     })
 
-    return NextResponse.json({ ok: true }, { status: 200 })
-  } catch (error) {
-    console.error('Bookmark delete error:', error)
-    return NextResponse.json(
-      { error: 'Unable to remove bookmark.' },
-      { status: 500 },
+    return withRequestIdHeaders(
+      NextResponse.json({ ok: true }, { status: 200 }),
+      requestId,
     )
+  } catch (error) {
+    logApiError({
+      scope: 'bookmarks-delete',
+      requestId,
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
+    return jsonError({
+      error: 'Unable to remove bookmark.',
+      status: 500,
+      requestId,
+    })
   }
 }
