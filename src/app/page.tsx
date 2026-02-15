@@ -6,7 +6,6 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
-import SeriesCardIcon from '@/components/newspaper/SeriesCardIcon'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_DATA } from '@/data/series'
@@ -65,6 +64,7 @@ export default function Home() {
   )
   const [resumeRoute, setResumeRoute] = useState<string | null>(null)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
+  const [featuredCarouselIndex, setFeaturedCarouselIndex] = useState(0)
 
   const hydrated = useSyncExternalStore(
     emptySubscribe,
@@ -78,7 +78,7 @@ export default function Home() {
   const featuredSlugs = useMemo(() => {
     const seeded = [...FEATURED_SERIES, ...ALL_SERIES_ORDER]
     const deduped = Array.from(new Set(seeded))
-    return deduped.slice(0, 6)
+    return deduped.slice(0, 12)
   }, [])
   const featuredSeries = useMemo(() => {
     const fromOrder: Array<{
@@ -105,6 +105,15 @@ export default function Home() {
     [faqIndex],
   )
   const faqItemsToRender = isMobileViewport ? FAQ_ITEMS : faqWindow
+  const featuredSlides = useMemo(() => {
+    const groups: (typeof featuredSeries)[] = []
+    for (let i = 0; i < featuredSeries.length; i += 3) {
+      groups.push(featuredSeries.slice(i, i + 3))
+    }
+    return groups.length > 0 ? groups : [featuredSeries.slice(0, 3)]
+  }, [featuredSeries])
+  const activeFeaturedSeries =
+    featuredSlides[featuredCarouselIndex % Math.max(1, featuredSlides.length)]
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -260,7 +269,7 @@ export default function Home() {
   }
 
   return (
-    <div className="mock-home">
+    <div className="mock-home mock-homepage">
       <main className="mock-paper">
         <EuangelionShellHeader />
 
@@ -393,16 +402,16 @@ export default function Home() {
         </section>
 
         <section className="mock-featured-grid">
-          {featuredSeries.map(({ slug, series }) => (
+          {activeFeaturedSeries.map(({ slug, series }) => (
             <Link
               href={`/wake-up/series/${slug}`}
               key={slug}
               className="mock-featured-card"
             >
-              <div className="mock-card-media" aria-hidden="true">
-                <SeriesCardIcon slug={slug} />
-              </div>
               <h3>{series.title}.</h3>
+              <p className="mock-featured-preview">
+                {typographer(series.introduction)}
+              </p>
               <p>{series.question}</p>
               <p className="mock-featured-day text-label">
                 START WITH: {series.days[0]?.title || 'DAY 1'}
@@ -411,6 +420,40 @@ export default function Home() {
             </Link>
           ))}
         </section>
+
+        {featuredSlides.length > 1 && (
+          <section className="mock-more-row">
+            <div className="mock-carousel-controls">
+              <button
+                type="button"
+                className="mock-carousel-btn text-label"
+                onClick={() =>
+                  setFeaturedCarouselIndex(
+                    (previous) =>
+                      (previous - 1 + featuredSlides.length) %
+                      featuredSlides.length,
+                  )
+                }
+              >
+                PREV
+              </button>
+              <p className="mock-footnote">
+                {featuredCarouselIndex + 1} / {featuredSlides.length}
+              </p>
+              <button
+                type="button"
+                className="mock-carousel-btn text-label"
+                onClick={() =>
+                  setFeaturedCarouselIndex(
+                    (previous) => (previous + 1) % featuredSlides.length,
+                  )
+                }
+              >
+                NEXT
+              </button>
+            </div>
+          </section>
+        )}
 
         <section className="mock-more-row">
           <Link href="/series" className="mock-btn text-label">

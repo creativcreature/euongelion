@@ -2044,6 +2044,7 @@
 }
 
 .mock-paper > .mock-shell-frame {
+  display: contents;
   width: 100%;
   margin: 0;
   border-left: 0;
@@ -2053,6 +2054,7 @@
 
 .newspaper-home > .mock-shell-frame,
 .newspaper-reading > .mock-shell-frame {
+  display: contents;
   width: 100%;
   margin: 0;
   border-left: 0;
@@ -2915,6 +2917,21 @@
   outline-offset: -2px;
 }
 
+.mock-carousel-controls {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.72rem;
+}
+
+.mock-carousel-btn {
+  border: var(--mock-stroke) solid var(--mock-line);
+  background: transparent;
+  color: inherit;
+  padding: 0.22rem 0.62rem;
+  cursor: pointer;
+}
+
 .mock-cta {
   border-bottom: var(--mock-stroke) solid var(--mock-line);
   text-align: center;
@@ -2937,6 +2954,65 @@
 .mock-cta .mock-textarea {
   max-width: 720px;
   margin-top: 0.45rem;
+}
+
+.mock-homepage {
+  --mock-h-hero: 420px;
+  --mock-h-feature-card: 660px;
+}
+
+.mock-homepage .mock-panel,
+.mock-homepage .mock-cta {
+  padding-top: 0.85rem;
+  padding-bottom: 1rem;
+}
+
+.mock-homepage .mock-panel {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.mock-homepage .mock-body,
+.mock-homepage .mock-subcopy,
+.mock-homepage .mock-subcopy-center,
+.mock-homepage .mock-step-card p,
+.mock-homepage .mock-featured-card p,
+.mock-homepage .mock-faq-lead p,
+.mock-homepage .mock-faq-answer,
+.mock-homepage .mock-cta .mock-subcopy-center {
+  font-size: clamp(1.95rem, 2.05vw, 2.3rem);
+  line-height: 1.2;
+}
+
+.mock-homepage .mock-featured-grid {
+  min-height: auto;
+}
+
+.mock-homepage .mock-featured-card {
+  grid-template-rows: auto auto 1fr auto auto;
+}
+
+.mock-homepage .mock-featured-preview {
+  color: var(--mock-ink);
+}
+
+.mock-homepage .mock-faq-card:hover,
+.mock-homepage .mock-faq-card:focus,
+.mock-homepage .mock-faq-card.is-active {
+  background: transparent;
+  color: inherit;
+}
+
+.mock-homepage .mock-faq-card:hover .mock-faq-question,
+.mock-homepage .mock-faq-card:focus .mock-faq-question,
+.mock-homepage .mock-faq-card.is-active .mock-faq-question {
+  color: inherit;
+}
+
+.mock-homepage .mock-faq-card:hover .mock-faq-answer,
+.mock-homepage .mock-faq-card:focus .mock-faq-answer,
+.mock-homepage .mock-faq-card.is-active .mock-faq-answer {
+  color: var(--mock-blue);
 }
 
 .mock-bottom-brand {

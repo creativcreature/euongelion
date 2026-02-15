@@ -180,6 +180,12 @@ Format: Reverse chronological, grouped by sprint/date.
 - Strengthened canonical devotional home routing:
   - added `/daily-bread` route as canonical devotional dashboard;
   - updated core internal links from `/my-devotional` to `/daily-bread` where relevant.
+  - converted legacy `/my-devotional` page into a query-preserving redirect to `/daily-bread`.
+- Fixed homepage shell behavior and mockup parity gaps:
+  - removed duplicate/docked nav transfer behavior so only one primary nav remains below masthead;
+  - restored sticky top utility row + sticky primary nav behavior by removing short-container sticky constraints;
+  - enlarged homepage desktop body-copy scale, aligned hero panel vertical rhythm with CTA rhythm, and tuned FAQ hover state to blue answer reveal while keeping question default;
+  - updated featured-series presentation to 3-card carousel groups without placeholder image/icon blocks, with expanded preview copy.
 - Expanded shell consistency across non-home routes:
   - added breadcrumbs to settings and soul-audit pages;
   - added shared site footer to auth pages.
@@ -189,6 +195,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - `src/components/EuangelionShellHeader.tsx`
 - `src/app/globals.css`
 - `src/app/daily-bread/page.tsx`
+- `src/app/my-devotional/page.tsx`
 - `src/app/sitemap.ts`
 - `src/app/wake-up/page.tsx`
 - `src/app/wake-up/series/[slug]/SeriesPageClient.tsx`
@@ -199,6 +206,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - `src/app/settings/page.tsx`
 - `src/app/auth/sign-in/page.tsx`
 - `src/app/auth/sign-up/page.tsx`
+- `src/app/page.tsx`
 - `docs/feature-prds/F-029.md`
 
 ### Validation

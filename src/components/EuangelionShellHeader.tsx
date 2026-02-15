@@ -51,13 +51,11 @@ export default function EuangelionShellHeader({
 }) {
   const pathname = usePathname()
   const topbarRef = useRef<HTMLDivElement | null>(null)
-  const navSentinelRef = useRef<HTMLDivElement | null>(null)
   const previousPathnameRef = useRef(pathname)
   const accountMenuRef = useRef<HTMLDivElement | null>(null)
 
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
   const [now, setNow] = useState(() => new Date())
-  const [navDocked, setNavDocked] = useState(false)
   const [mobileTopbarIndex, setMobileTopbarIndex] = useState(0)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -234,59 +232,11 @@ export default function EuangelionShellHeader({
   }, [])
 
   useEffect(() => {
-    const sentinel = navSentinelRef.current
-    const topbar = topbarRef.current
-    if (!sentinel || !topbar) return
-
-    let rafId = 0
-
-    const recomputeDockState = () => {
-      rafId = 0
-      const topbarHeight = Math.ceil(topbar.getBoundingClientRect().height || 0)
-      const sentinelTop = sentinel.getBoundingClientRect().top
-      setNavDocked((previous) => {
-        const dockThreshold = topbarHeight + 2
-        const undockThreshold = topbarHeight + 24
-        if (previous) {
-          return sentinelTop <= undockThreshold
-        }
-        return sentinelTop <= dockThreshold
-      })
-    }
-
-    const queueDockState = () => {
-      if (rafId) return
-      rafId = window.requestAnimationFrame(recomputeDockState)
-    }
-
-    const observer =
-      typeof IntersectionObserver !== 'undefined'
-        ? new IntersectionObserver(queueDockState, {
-            root: null,
-            threshold: [0, 1],
-          })
-        : null
-    observer?.observe(sentinel)
-
-    queueDockState()
-    window.addEventListener('scroll', queueDockState, { passive: true })
-    window.addEventListener('resize', queueDockState)
-
-    return () => {
-      if (rafId) window.cancelAnimationFrame(rafId)
-      observer?.disconnect()
-      window.removeEventListener('scroll', queueDockState)
-      window.removeEventListener('resize', queueDockState)
-    }
-  }, [])
-
-  useEffect(() => {
     if (typeof window === 'undefined') return
     const reducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
     ).matches
-    if (!isMobileViewport || reducedMotion || navDocked || mobileMenuOpen)
-      return
+    if (!isMobileViewport || reducedMotion || mobileMenuOpen) return
 
     const timer = window.setInterval(
       () =>
@@ -296,7 +246,7 @@ export default function EuangelionShellHeader({
       MOBILE_TICKER_INTERVAL_MS,
     )
     return () => window.clearInterval(timer)
-  }, [isMobileViewport, mobileTickerItems.length, navDocked, mobileMenuOpen])
+  }, [isMobileViewport, mobileTickerItems.length, mobileMenuOpen])
 
   useEffect(() => {
     if (previousPathnameRef.current === pathname) return
@@ -453,19 +403,13 @@ export default function EuangelionShellHeader({
 
   return (
     <div className={`mock-shell-frame ${tone === 'wake' ? 'wake-shell' : ''}`}>
-      <header data-nav-docked={navDocked ? 'true' : 'false'}>
-        <div
-          ref={topbarRef}
-          className={`mock-topbar text-label ${navDocked ? 'is-nav-docked' : ''}`}
-        >
+      <header>
+        <div ref={topbarRef} className="mock-topbar text-label">
           <div className="mock-topbar-desktop-row">
             <span className="mock-topbar-date">{formatMastheadDate(now)}</span>
             <span className="mock-topbar-center-copy">
               Daily Devotionals for the Hungry Soul
             </span>
-            <nav className="mock-topbar-nav mock-topbar-center-nav">
-              {renderNavLinks(NAV_ITEMS)}
-            </nav>
             <div className="mock-topbar-actions">
               <button
                 type="button"
@@ -544,28 +488,15 @@ export default function EuangelionShellHeader({
             </div>
           </div>
 
-          <div
-            className={`mock-topbar-mobile-row ${navDocked ? 'is-nav-docked' : ''}`}
-          >
-            {!navDocked ? (
-              mobileTickerItems.map((item, index) => (
-                <span
-                  key={`${item}-${index}`}
-                  className={`mock-topbar-mobile-item ${mobileTopbarIndex === index ? 'is-active' : ''}`}
-                >
-                  {item}
-                </span>
-              ))
-            ) : (
-              <div className="mock-topbar-mobile-nav">
-                <nav
-                  className="mock-mobile-nav-main-shell"
-                  aria-label="Sticky navigation"
-                >
-                  {renderMobileNav('mock-mobile-nav-panel')}
-                </nav>
-              </div>
-            )}
+          <div className="mock-topbar-mobile-row">
+            {mobileTickerItems.map((item, index) => (
+              <span
+                key={`${item}-${index}`}
+                className={`mock-topbar-mobile-item ${mobileTopbarIndex === index ? 'is-active' : ''}`}
+              >
+                {item}
+              </span>
+            ))}
           </div>
         </div>
 
@@ -582,18 +513,7 @@ export default function EuangelionShellHeader({
           )}
         </section>
 
-        <div
-          ref={navSentinelRef}
-          className="mock-nav-sentinel"
-          aria-hidden="true"
-        />
-
-        <nav
-          className={`mock-nav text-label ${navDocked ? 'is-docked' : ''}`}
-          aria-label="Main navigation"
-          aria-hidden={navDocked}
-          inert={navDocked}
-        >
+        <nav className="mock-nav text-label" aria-label="Main navigation">
           {isMobileViewport
             ? renderMobileNav('mock-mobile-nav-panel')
             : renderNavLinks(NAV_ITEMS)}
