@@ -2697,11 +2697,11 @@
 }
 
 .mock-card-media {
-  display: none;
-  height: 0;
+  height: 136px;
   border: calc(var(--mock-stroke) * 1.35) solid var(--mock-line);
   background: color-mix(in srgb, var(--mock-paper) 95%, white 5%);
   padding: 0;
+  display: grid;
   place-items: center;
   color: var(--mock-blue);
 }

@@ -190,6 +190,7 @@ Format: Reverse chronological, grouped by sprint/date.
   - added timed featured-series rotation and hardened card CSS to remove any legacy blank media/icon strip from rendering paths.
   - tightened masthead top spacing by reducing header masthead top padding and nudging `EUANGELION` upward for closer border fit.
   - doubled desktop homepage body-copy scale, doubled masthead pronunciation line size, moved bottom `EUANGELION` below the footer, expanded featured-series preview text, enabled tap-to-reveal FAQ answers on mobile, and increased spacing under the series CTA footnote.
+  - normalized card media styling so non-home series surfaces retain icon/media frames while homepage cards remain text-first.
   - aligned shell-header test contract to the new single-nav architecture (removed docked-nav expectations).
   - bumped service-worker cache version to force stale homepage/header assets to refresh in production clients.
   - added service-worker version migration guard that unregisters stale workers and clears `euangelion-*` caches when version changes, then re-registers cleanly.
