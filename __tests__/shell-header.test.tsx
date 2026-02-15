@@ -80,6 +80,14 @@ describe('EuangelionShellHeader', () => {
       },
     })
 
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({
+        ok: true,
+        json: async () => ({ authenticated: false, user: null }),
+      })),
+    )
+
     vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(
       function getBoundingClientRectMock(this: HTMLElement) {
         if (this.classList.contains('mock-topbar')) {
@@ -92,6 +100,7 @@ describe('EuangelionShellHeader', () => {
 
   afterEach(() => {
     cleanup()
+    vi.unstubAllGlobals()
     vi.restoreAllMocks()
   })
 
@@ -191,5 +200,34 @@ describe('EuangelionShellHeader', () => {
       expect(reopenedToggle).toBeInTheDocument()
       expect(reopenedToggle).toHaveFocus()
     })
+  })
+
+  it('avoids duplicate settings/account links in authenticated mobile menu', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({
+        ok: true,
+        json: async () => ({
+          authenticated: true,
+          user: { email: 'reader@example.com' },
+        }),
+      })),
+    )
+    const user = userEvent.setup()
+    render(<EuangelionShellHeader />)
+
+    const toggle = await screen.findByRole('button', {
+      name: 'Open secondary menu',
+    })
+    await user.click(toggle)
+
+    await waitFor(() => {
+      expect(
+        screen.getByRole('button', { name: 'Close secondary menu' }),
+      ).toBeInTheDocument()
+    })
+
+    expect(screen.getByRole('link', { name: 'ACCOUNT' })).toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: 'SETTINGS' })).toBeNull()
   })
 })

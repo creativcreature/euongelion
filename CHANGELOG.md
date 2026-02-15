@@ -35,6 +35,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Mobile Menu Correctness Pass (2026-02-15)
+
+### What Changed
+
+- Removed duplicated mobile secondary menu route by dropping static `SETTINGS` from shared secondary nav items.
+- Kept authenticated account navigation as a single explicit `ACCOUNT` entry in mobile secondary menu.
+- Added regression coverage to ensure authenticated mobile menu does not reintroduce `SETTINGS` duplication.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `__tests__/shell-header.test.tsx`
+- `docs/feature-prds/F-011.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## App Store Submission Gate Hardening (2026-02-15)
 
 ### What Changed

@@ -13,7 +13,6 @@ const NAV_ITEMS = [
 const MOBILE_PRIMARY_NAV_PATHS = ['/', '/soul-audit', '/daily-bread']
 const MOBILE_EXTRA_ITEMS = [
   { href: '/help', label: 'HELP' },
-  { href: '/settings', label: 'SETTINGS' },
   { href: '/wake-up', label: 'WAKE-UP' },
 ]
 const MOBILE_TICKER_INTERVAL_MS = 6200
