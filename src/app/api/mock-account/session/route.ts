@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
           { error: 'Too many session requests. Please retry shortly.' },
           { status: 429 },
         ),
-        limiter.retryAfterSeconds,
+        limiter,
       )
     }
 

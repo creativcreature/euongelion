@@ -35,6 +35,61 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## API Abuse Controls Reliability Pass (2026-02-15)
+
+### What Changed
+
+- Hardened shared API rate-limiter contract:
+  - `takeRateLimit` now returns structured metadata (`limit`, `remaining`, `resetAtSeconds`) instead of only a reset timestamp.
+  - Added bounded in-memory bucket cleanup to prevent unbounded key growth under abusive traffic bursts.
+- Standardized `X-RateLimit-*` response headers across protected APIs:
+  - `X-RateLimit-Limit`
+  - `X-RateLimit-Remaining`
+  - `X-RateLimit-Reset`
+- Propagated richer rate-limit header behavior to core endpoints:
+  - soul-audit submit/consent/select
+  - bookmarks
+  - annotations
+  - chat
+  - mock-account session
+  - auth magic-link
+  - billing checkout and billing portal
+- Added abuse-control regression tests for:
+  - metadata values from limiter calls
+  - response header contract emitted by helper utilities
+
+### Files
+
+- `src/lib/api-security.ts`
+- `src/app/api/soul-audit/submit/route.ts`
+- `src/app/api/soul-audit/consent/route.ts`
+- `src/app/api/soul-audit/select/route.ts`
+- `src/app/api/bookmarks/route.ts`
+- `src/app/api/annotations/route.ts`
+- `src/app/api/chat/route.ts`
+- `src/app/api/mock-account/session/route.ts`
+- `src/app/api/auth/magic-link/route.ts`
+- `src/app/api/billing/checkout/route.ts`
+- `src/app/api/billing/portal/route.ts`
+- `__tests__/api-security.test.ts`
+- `docs/feature-prds/F-038.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Daily Bread Left-Rail Consolidation Pass (2026-02-15)
 
 ### What Changed

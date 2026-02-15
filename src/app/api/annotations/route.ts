@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
           { error: 'Too many annotation requests. Please retry shortly.' },
           { status: 429 },
         ),
-        limiter.retryAfterSeconds,
+        limiter,
       )
     }
 

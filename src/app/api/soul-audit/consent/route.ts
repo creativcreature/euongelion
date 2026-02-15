@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
           { error: 'Too many consent requests. Please retry shortly.' },
           { status: 429 },
         ),
-        limiter.retryAfterSeconds,
+        limiter,
       )
     }
 

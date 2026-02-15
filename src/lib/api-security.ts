@@ -6,6 +6,9 @@ interface RateLimitBucket {
 }
 
 const rateLimitStore = new Map<string, RateLimitBucket>()
+const MAX_RATE_LIMIT_BUCKETS = 5_000
+const RATE_LIMIT_PRUNE_INTERVAL_MS = 30_000
+let lastRateLimitPruneMs = 0
 
 const SAFE_SLUG_RE = /^[a-z0-9-]{1,120}$/
 const SAFE_AUDIT_RUN_ID_RE = /^[a-f0-9-]{36}$/i
@@ -41,17 +44,50 @@ export function takeRateLimit(params: {
   key: string
   limit: number
   windowMs: number
-}): { ok: boolean; retryAfterSeconds: number } {
+}): {
+  ok: boolean
+  retryAfterSeconds: number
+  limit: number
+  remaining: number
+  resetAtSeconds: number
+} {
   const stamp = nowMs()
+  if (stamp - lastRateLimitPruneMs >= RATE_LIMIT_PRUNE_INTERVAL_MS) {
+    lastRateLimitPruneMs = stamp
+
+    for (const [id, bucket] of rateLimitStore.entries()) {
+      if (bucket.resetAt <= stamp) {
+        rateLimitStore.delete(id)
+      }
+    }
+
+    if (rateLimitStore.size > MAX_RATE_LIMIT_BUCKETS) {
+      const overflow = rateLimitStore.size - MAX_RATE_LIMIT_BUCKETS
+      const victims = Array.from(rateLimitStore.entries())
+        .sort((a, b) => a[1].resetAt - b[1].resetAt)
+        .slice(0, overflow)
+      for (const [id] of victims) {
+        rateLimitStore.delete(id)
+      }
+    }
+  }
+
   const id = `${params.namespace}:${params.key}`
   const bucket = rateLimitStore.get(id)
 
   if (!bucket || bucket.resetAt <= stamp) {
+    const resetAt = stamp + params.windowMs
     rateLimitStore.set(id, {
       count: 1,
-      resetAt: stamp + params.windowMs,
+      resetAt,
     })
-    return { ok: true, retryAfterSeconds: Math.ceil(params.windowMs / 1000) }
+    return {
+      ok: true,
+      retryAfterSeconds: Math.ceil(params.windowMs / 1000),
+      limit: params.limit,
+      remaining: Math.max(0, params.limit - 1),
+      resetAtSeconds: Math.ceil(resetAt / 1000),
+    }
   }
 
   if (bucket.count >= params.limit) {
@@ -61,6 +97,9 @@ export function takeRateLimit(params: {
         1,
         Math.ceil((bucket.resetAt - stamp) / 1000),
       ),
+      limit: params.limit,
+      remaining: 0,
+      resetAtSeconds: Math.ceil(bucket.resetAt / 1000),
     }
   }
 
@@ -69,6 +108,9 @@ export function takeRateLimit(params: {
   return {
     ok: true,
     retryAfterSeconds: Math.max(1, Math.ceil((bucket.resetAt - stamp) / 1000)),
+    limit: params.limit,
+    remaining: Math.max(0, params.limit - bucket.count),
+    resetAtSeconds: Math.ceil(bucket.resetAt / 1000),
   }
 }
 
@@ -178,9 +220,29 @@ export function sanitizeSafeRedirectPath(value: unknown): string | undefined {
 
 export function withRateLimitHeaders(
   response: Response,
-  retryAfterSeconds: number,
+  meta:
+    | number
+    | {
+        retryAfterSeconds: number
+        limit?: number
+        remaining?: number
+        resetAtSeconds?: number
+      },
 ): Response {
+  const retryAfterSeconds =
+    typeof meta === 'number' ? meta : meta.retryAfterSeconds
   response.headers.set('Retry-After', String(retryAfterSeconds))
+  if (typeof meta !== 'number') {
+    if (typeof meta.limit === 'number') {
+      response.headers.set('X-RateLimit-Limit', String(meta.limit))
+    }
+    if (typeof meta.remaining === 'number') {
+      response.headers.set('X-RateLimit-Remaining', String(meta.remaining))
+    }
+    if (typeof meta.resetAtSeconds === 'number') {
+      response.headers.set('X-RateLimit-Reset', String(meta.resetAtSeconds))
+    }
+  }
   return response
 }
 

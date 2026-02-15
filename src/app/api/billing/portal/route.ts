@@ -34,7 +34,14 @@ function jsonWithRequestId(
   init: {
     status: number
     requestId: string
-    retryAfterSeconds?: number
+    rateLimit?:
+      | number
+      | {
+          retryAfterSeconds: number
+          limit?: number
+          remaining?: number
+          resetAtSeconds?: number
+        }
   },
 ) {
   const response = NextResponse.json(body, {
@@ -45,8 +52,11 @@ function jsonWithRequestId(
     },
   })
 
-  if (typeof init.retryAfterSeconds === 'number') {
-    return withRateLimitHeaders(response, init.retryAfterSeconds)
+  if (typeof init.rateLimit === 'number') {
+    return withRateLimitHeaders(response, init.rateLimit)
+  }
+  if (init.rateLimit) {
+    return withRateLimitHeaders(response, init.rateLimit)
   }
 
   return response
@@ -71,7 +81,7 @@ export async function POST(request: NextRequest) {
       {
         status: 429,
         requestId,
-        retryAfterSeconds: limit.retryAfterSeconds,
+        rateLimit: limit,
       },
     )
   }

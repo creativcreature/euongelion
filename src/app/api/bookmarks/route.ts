@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
           { error: 'Too many bookmark requests. Please retry shortly.' },
           { status: 429 },
         ),
-        limiter.retryAfterSeconds,
+        limiter,
       )
     }
 

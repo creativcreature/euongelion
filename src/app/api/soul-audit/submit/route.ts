@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
           { error: 'Too many audit submissions. Please retry shortly.' },
           { status: 429 },
         ),
-        limiter.retryAfterSeconds,
+        limiter,
       )
     }
 
