@@ -186,6 +186,7 @@ Format: Reverse chronological, grouped by sprint/date.
   - restored sticky top utility row + sticky primary nav behavior by removing short-container sticky constraints;
   - enlarged homepage desktop body-copy scale, aligned hero panel vertical rhythm with CTA rhythm, and tuned FAQ hover state to blue answer reveal while keeping question default;
   - updated featured-series presentation to 3-card carousel groups without placeholder image/icon blocks, with expanded preview copy.
+  - aligned shell-header test contract to the new single-nav architecture (removed docked-nav expectations).
 - Expanded shell consistency across non-home routes:
   - added breadcrumbs to settings and soul-audit pages;
   - added shared site footer to auth pages.
@@ -207,6 +208,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - `src/app/auth/sign-in/page.tsx`
 - `src/app/auth/sign-up/page.tsx`
 - `src/app/page.tsx`
+- `__tests__/shell-header.test.tsx`
 - `docs/feature-prds/F-029.md`
 
 ### Validation

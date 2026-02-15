@@ -30,8 +30,6 @@ function rect({ top, height, width = 1000 }: RectInit): DOMRect {
 }
 
 describe('EuangelionShellHeader', () => {
-  let sentinelTop = 200
-
   beforeEach(() => {
     mockPathname = '/'
     const mockResizeObserver = class {
@@ -87,9 +85,6 @@ describe('EuangelionShellHeader', () => {
         if (this.classList.contains('mock-topbar')) {
           return rect({ top: 0, height: 42 })
         }
-        if (this.classList.contains('mock-nav-sentinel')) {
-          return rect({ top: sentinelTop, height: 1 })
-        }
         return rect({ top: 0, height: 0 })
       },
     )
@@ -100,14 +95,13 @@ describe('EuangelionShellHeader', () => {
     vi.restoreAllMocks()
   })
 
-  it('keeps primary nav visible when sentinel is below topbar', async () => {
-    sentinelTop = 180
+  it('keeps primary nav visible and interactive', async () => {
     const { container } = render(<EuangelionShellHeader />)
 
     await waitFor(() => {
       expect(
         screen.getByLabelText('Main navigation').getAttribute('aria-hidden'),
-      ).toBe('false')
+      ).toBe(null)
     })
     expect(screen.getByLabelText('Main navigation')).not.toHaveAttribute(
       'inert',
@@ -122,28 +116,27 @@ describe('EuangelionShellHeader', () => {
       'aria-current',
       'page',
     )
+    expect(
+      screen.getAllByText('Daily Devotionals for the Hungry Soul').length,
+    ).toBeGreaterThan(0)
   })
 
-  it('docks nav into topbar when sentinel crosses the topbar line', async () => {
-    sentinelTop = 0
+  it('does not render docked topbar nav state classes', async () => {
     const { container } = render(<EuangelionShellHeader />)
 
     await waitFor(() => {
-      expect(
-        screen.getByLabelText('Main navigation').getAttribute('aria-hidden'),
-      ).toBe('true')
+      expect(screen.getByLabelText('Main navigation')).toBeInTheDocument()
     })
-    expect(screen.getByLabelText('Main navigation')).toHaveAttribute('inert')
 
     expect(
       container
         .querySelector('.mock-topbar')
         ?.classList.contains('is-nav-docked'),
-    ).toBe(true)
+    ).toBe(false)
+    expect(container.querySelector('.mock-nav-sentinel')).toBeNull()
   })
 
   it('closes mobile secondary menu when route changes', async () => {
-    sentinelTop = 200
     const user = userEvent.setup()
     const { rerender } = render(<EuangelionShellHeader />)
 
