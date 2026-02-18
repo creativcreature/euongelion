@@ -23,6 +23,7 @@ import {
   bumpSessionAuditCount,
   createAuditRun,
   getSessionAuditCount,
+  saveAuditTelemetry,
 } from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
@@ -35,6 +36,20 @@ interface SubmitBody {
 
 const MAX_SUBMIT_BODY_BYTES = 8_192
 const MAX_SUBMITS_PER_MINUTE = 12
+
+function extractMatchedTermsFromReasoning(reasoning: string): string[] {
+  const match = reasoning.match(/\(([^)]+)\)/)
+  if (!match?.[1]) return []
+
+  return Array.from(
+    new Set(
+      match[1]
+        .split(',')
+        .map((token) => token.trim().toLowerCase())
+        .filter((token) => token.length >= 3),
+    ),
+  ).slice(0, 6)
+}
 
 function hasExpectedOptionSplit(options: Array<{ kind: string }>): boolean {
   const aiPrimaryCount = options.filter(
@@ -219,6 +234,48 @@ export async function POST(request: NextRequest) {
         optionSplit: SOUL_AUDIT_OPTION_SPLIT,
       },
     }
+
+    const aiPrimary = responseOptions.filter(
+      (option) => option.kind === 'ai_primary',
+    )
+    const curatedPrefab = responseOptions.filter(
+      (option) => option.kind === 'curated_prefab',
+    )
+    const matchedTerms = Array.from(
+      new Set(
+        aiPrimary.flatMap((option) =>
+          extractMatchedTermsFromReasoning(option.reasoning),
+        ),
+      ),
+    ).slice(0, 12)
+    const avgConfidence =
+      responseOptions.length > 0
+        ? Number(
+            (
+              responseOptions.reduce(
+                (total, option) => total + option.confidence,
+                0,
+              ) / responseOptions.length
+            ).toFixed(4),
+          )
+        : 0
+    const strategy = responseOptions.some((option) =>
+      option.id.includes(':fallback:'),
+    )
+      ? 'series_fallback'
+      : 'curated_candidates'
+
+    await saveAuditTelemetry({
+      runId: run.id,
+      sessionToken,
+      strategy,
+      splitValid: hasExpectedOptionSplit(responseOptions),
+      aiPrimaryCount: aiPrimary.length,
+      curatedPrefabCount: curatedPrefab.length,
+      avgConfidence,
+      responseExcerpt: responseText.slice(0, 280),
+      matchedTerms,
+    })
 
     return withRequestIdHeaders(
       NextResponse.json(payload, { status: 200 }),

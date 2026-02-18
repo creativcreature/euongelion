@@ -1,6 +1,6 @@
 # Production Feature Scorecard
 
-Last Updated: 2026-02-14
+Last Updated: 2026-02-18
 Owner: Product + Engineering
 Scoring Rule: Per founder direction, current scores are capped at **5/10** maximum. Every row includes a path to verified 10/10.
 

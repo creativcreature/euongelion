@@ -47,18 +47,7 @@ export default function NetworkStatusBanner() {
     }
   }, [])
 
-  if (!isOnline) {
-    return (
-      <div
-        className="network-status-banner is-offline"
-        role="status"
-        aria-live="polite"
-      >
-        Offline mode: showing cached pages. Reconnect to sync latest
-        devotionals.
-      </div>
-    )
-  }
+  if (!isOnline) return null
 
   if (showOnlineNotice) {
     return (

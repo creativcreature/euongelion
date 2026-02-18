@@ -90,6 +90,20 @@ export interface BookmarkRecord {
   created_at: string
 }
 
+export interface AuditTelemetryRecord {
+  id: string
+  audit_run_id: string
+  session_token: string
+  strategy: 'curated_candidates' | 'series_fallback'
+  split_valid: boolean
+  ai_primary_count: number
+  curated_prefab_count: number
+  avg_confidence: number
+  response_excerpt: string
+  matched_terms: string[]
+  created_at: string
+}
+
 export interface MockAccountSessionRecord {
   id: string
   session_token: string
@@ -110,6 +124,7 @@ type RuntimeStore = {
   annotationsBySession: Map<string, AnnotationRecord[]>
   bookmarksBySession: Map<string, BookmarkRecord[]>
   mockSessionsByToken: Map<string, MockAccountSessionRecord>
+  telemetryByRun: Map<string, AuditTelemetryRecord>
 }
 
 declare global {
@@ -129,6 +144,7 @@ function getStore(): RuntimeStore {
       annotationsBySession: new Map(),
       bookmarksBySession: new Map(),
       mockSessionsByToken: new Map(),
+      telemetryByRun: new Map(),
     }
   }
   return global.__euangelionSoulAuditStore__
@@ -373,6 +389,40 @@ export async function createAuditRun(params: {
   }
 
   return { run, options: optionRows }
+}
+
+export async function saveAuditTelemetry(params: {
+  runId: string
+  sessionToken: string
+  strategy: AuditTelemetryRecord['strategy']
+  splitValid: boolean
+  aiPrimaryCount: number
+  curatedPrefabCount: number
+  avgConfidence: number
+  responseExcerpt: string
+  matchedTerms: string[]
+}): Promise<AuditTelemetryRecord> {
+  const row: AuditTelemetryRecord = {
+    id: randomUUID(),
+    audit_run_id: params.runId,
+    session_token: params.sessionToken,
+    strategy: params.strategy,
+    split_valid: params.splitValid,
+    ai_primary_count: params.aiPrimaryCount,
+    curated_prefab_count: params.curatedPrefabCount,
+    avg_confidence: params.avgConfidence,
+    response_excerpt: params.responseExcerpt,
+    matched_terms: params.matchedTerms,
+    created_at: new Date().toISOString(),
+  }
+
+  getStore().telemetryByRun.set(params.runId, row)
+  await safeInsert('audit_option_telemetry', row)
+  return row
+}
+
+export function getAuditTelemetry(runId: string): AuditTelemetryRecord | null {
+  return getStore().telemetryByRun.get(runId) ?? null
 }
 
 export function getAuditRun(runId: string): AuditRunRecord | null {

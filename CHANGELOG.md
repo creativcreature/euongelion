@@ -5,6 +5,45 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Reliability + Curation Telemetry Pass (2026-02-18)
+
+### What Changed
+
+- Removed the persistent offline banner copy from runtime UI to reduce reading interruption during disconnected sessions.
+- Added Soul Audit curation telemetry persistence on submit:
+  - assembly strategy (`curated_candidates` vs `series_fallback`)
+  - split validity (3 AI + 2 prefab)
+  - average confidence
+  - matched-term trace from option reasoning
+  - response excerpt for debugging relevance drift.
+- Synced feature tracking drift in `FEATURE-PRD-INDEX.md` for active in-progress features and refreshed scorecard timestamp.
+
+### Files
+
+- `src/components/NetworkStatusBanner.tsx`
+- `src/app/api/soul-audit/submit/route.ts`
+- `src/lib/soul-audit/repository.ts`
+- `docs/feature-prds/F-023.md`
+- `docs/feature-prds/F-040.md`
+- `docs/feature-prds/FEATURE-PRD-INDEX.md`
+- `docs/PRODUCTION-FEATURE-SCORECARD.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Current Status
 
 **Version:** 0.7.0

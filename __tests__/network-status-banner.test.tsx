@@ -20,16 +20,16 @@ describe('NetworkStatusBanner', () => {
     mockOnlineState(true)
   })
 
-  it('shows offline banner when app boots offline', () => {
+  it('suppresses offline banner when app boots offline', () => {
     mockOnlineState(false)
     render(<NetworkStatusBanner />)
-    expect(screen.getByText(/offline mode/i)).toBeTruthy()
+    expect(screen.queryByText(/offline mode/i)).toBeNull()
   })
 
   it('shows brief online sync notice after reconnect', () => {
     mockOnlineState(false)
     render(<NetworkStatusBanner />)
-    expect(screen.getByText(/offline mode/i)).toBeTruthy()
+    expect(screen.queryByText(/offline mode/i)).toBeNull()
 
     mockOnlineState(true)
     act(() => {
