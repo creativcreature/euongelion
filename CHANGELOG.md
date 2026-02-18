@@ -35,6 +35,39 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Scroll Lock Recovery Hardening (2026-02-15)
+
+### What Changed
+
+- Hardened route-level global scroll unlock by clearing stale Lenis classes from both `html` and `body`:
+  - `lenis`
+  - `lenis-smooth`
+  - `lenis-scrolling`
+  - `lenis-stopped`
+- Preserved existing inline overflow/style unlock behavior and expanded regression coverage to prevent relocking regressions.
+
+### Files
+
+- `src/app/providers.tsx`
+- `__tests__/scroll-unlock-contract.test.ts`
+- `docs/feature-prds/F-011.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Soul Audit Run-Recovery Pass (2026-02-15)
 
 ### What Changed

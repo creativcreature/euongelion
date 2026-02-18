@@ -25,7 +25,15 @@ export default function Providers({ children }: { children: ReactNode }) {
       document.documentElement.style.removeProperty('overflow-x')
       document.documentElement.style.removeProperty('overflow-y')
       document.documentElement.style.removeProperty('position')
-      document.documentElement.classList.remove('lenis-stopped')
+      for (const klass of [
+        'lenis',
+        'lenis-smooth',
+        'lenis-scrolling',
+        'lenis-stopped',
+      ]) {
+        document.documentElement.classList.remove(klass)
+        document.body.classList.remove(klass)
+      }
     }
 
     unlockGlobalScroll()
