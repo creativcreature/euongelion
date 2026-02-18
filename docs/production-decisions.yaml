@@ -61,6 +61,25 @@ contracts:
   required_chat_guard_tokens:
     - local corpus
     - devotional context
+  scorecard_required_tokens:
+    - Founder scoring authority is capped at **5/10** baseline until founder elevation.
+    - Engineering implementation scores may exceed 5 with evidence.
+  non_wakeup_shell_required_files:
+    - src/app/settings/page.tsx
+    - src/app/privacy/page.tsx
+    - src/app/terms/page.tsx
+    - src/app/offline/page.tsx
+    - src/app/loading.tsx
+    - src/app/error.tsx
+    - src/app/not-found.tsx
+    - src/components/AdminShell.tsx
+    - src/components/StaticInfoPage.tsx
+    - src/components/HelpHubPageClient.tsx
+  non_wakeup_shell_required_tokens:
+    - mock-home
+    - mock-paper
+  non_wakeup_shell_forbidden_tokens:
+    - newspaper-home
   policy_split:
     - ai_primary:3
     - curated_prefab:2

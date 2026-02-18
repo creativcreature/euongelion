@@ -5,6 +5,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Governance Alignment Gate Pass (2026-02-18)
+
+### What Changed
+
+- Added a new automated governance gate to prevent drift in three areas:
+  - feature status parity between `FEATURE-PRD-INDEX.md` and `FEATURE-PRD-REGISTRY.yaml`
+  - production scorecard scoring-rule consistency
+  - non-Wake-Up shell wrapper parity for key shared shell pages/components.
+- Wired the gate into:
+  - `npm` verification scripts
+  - pre-commit hooks
+  - CI workflow
+  - tracking integrity enforcement.
+- Added explicit shell and scorecard tokens to `production-decisions.yaml` contracts.
+
+### Files
+
+- `scripts/check-governance-alignment.mjs`
+- `scripts/check-tracking-integrity.mjs`
+- `.husky/pre-commit`
+- `.github/workflows/ci.yml`
+- `package.json`
+- `docs/production-decisions.yaml`
+- `docs/feature-prds/F-002.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:governance-alignment`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Auth Save-Gate Alignment Pass (2026-02-18)
 
 ### What Changed

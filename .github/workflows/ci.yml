@@ -32,6 +32,9 @@ jobs:
       - name: Verify Feature PRD Integrity
         run: npm run verify:feature-prds
 
+      - name: Verify Governance Alignment
+        run: npm run verify:governance-alignment
+
       - name: Verify Methodology Traceability
         run: npm run verify:methodology-traceability
 

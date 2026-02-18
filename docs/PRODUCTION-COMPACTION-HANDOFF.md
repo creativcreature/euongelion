@@ -26,6 +26,7 @@ npm run verify:production-contracts
 npm run verify:tracking
 npm run verify:feature-prds
 npm run verify:feature-prd-link
+npm run verify:governance-alignment
 npm run verify:methodology-traceability
 npm run verify:folder-structure
 npm run verify:appstore-gate
@@ -82,6 +83,7 @@ npm run verify:production-contracts
 npm run verify:tracking
 npm run verify:feature-prds
 npm run verify:feature-prd-link
+npm run verify:governance-alignment
 npm run verify:methodology-traceability
 npm run verify:folder-structure
 npm run verify:appstore-gate
@@ -92,6 +94,16 @@ npm run build
 ```
 
 ## Current Snapshot
+
+### Continuity Snapshot (2026-02-18 15:40 local)
+
+- Scope completed: Added governance-alignment gate for feature-index parity, scorecard policy consistency, and non-Wake-Up shell wrapper parity; integrated into pre-commit/CI/tracking.
+- Decision ids touched: SA-010, SA-014.
+- Feature ids touched: F-002.
+- Verification run: `lint`, `type-check`, `test`, `verify:production-contracts`, `verify:tracking`, `verify:feature-prds`, `verify:feature-prd-link`, `verify:governance-alignment`, `verify:methodology-traceability`, `verify:folder-structure`, `verify:appstore-gate`.
+- Score changes: Governance tracking reliability improved; no runtime UX score claim in this pass.
+- Blockers: None in this governance pass.
+- Next steps: Continue runtime feature execution phases under updated gate stack.
 
 ### Continuity Snapshot (2026-02-18 12:30 local)
 

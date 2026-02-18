@@ -18,6 +18,7 @@
     "verify:tracking": "node scripts/check-tracking-integrity.mjs",
     "verify:feature-prds": "node scripts/check-feature-prd-integrity.mjs",
     "verify:feature-prd-link": "node scripts/check-feature-prd-update-link.mjs",
+    "verify:governance-alignment": "node scripts/check-governance-alignment.mjs",
     "verify:methodology-traceability": "node scripts/check-methodology-traceability.mjs",
     "verify:folder-structure": "node scripts/check-folder-structure-integrity.mjs",
     "verify:appstore-gate": "node scripts/check-appstore-gate.mjs",

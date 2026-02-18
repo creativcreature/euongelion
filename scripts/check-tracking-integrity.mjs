@@ -96,6 +96,9 @@ if (!preCommit.includes('npm run verify:feature-prds')) {
 if (!preCommit.includes('npm run verify:feature-prd-link')) {
   fail('.husky/pre-commit must run "npm run verify:feature-prd-link"')
 }
+if (!preCommit.includes('npm run verify:governance-alignment')) {
+  fail('.husky/pre-commit must run "npm run verify:governance-alignment"')
+}
 if (!preCommit.includes('npm run verify:methodology-traceability')) {
   fail('.husky/pre-commit must run "npm run verify:methodology-traceability"')
 }
@@ -111,6 +114,9 @@ if (!ciWorkflow.includes('npm run verify:tracking')) {
 }
 if (!ciWorkflow.includes('npm run verify:feature-prds')) {
   fail('.github/workflows/ci.yml must run "npm run verify:feature-prds"')
+}
+if (!ciWorkflow.includes('npm run verify:governance-alignment')) {
+  fail('.github/workflows/ci.yml must run "npm run verify:governance-alignment"')
 }
 if (!ciWorkflow.includes('npm run verify:methodology-traceability')) {
   fail('.github/workflows/ci.yml must run "npm run verify:methodology-traceability"')
