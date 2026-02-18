@@ -35,6 +35,39 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Run-Recovery Pass (2026-02-15)
+
+### What Changed
+
+- Persisted latest Soul Audit input in browser session at submit time.
+- Added run-expired recovery in results:
+  - when an audit run expires, users can now `Reload Options` from their last submitted input instead of hard-dead-ending.
+  - retained explicit restart path for a full clean reset.
+- Updated reroll logic to use the same session-backed input source so reroll remains available after a page refresh.
+- Cleared persisted input on audit reset/restart paths.
+
+### Files
+
+- `src/app/page.tsx`
+- `src/app/soul-audit/results/page.tsx`
+- `docs/feature-prds/F-022.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Soul Audit Option Specificity Pass (2026-02-15)
 
 ### What Changed

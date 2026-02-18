@@ -48,6 +48,7 @@ type ArchivePlanSummary = {
 
 const PLAN_CACHE_PREFIX = 'soul-audit-plan-v2:'
 const SAVED_OPTIONS_KEY = 'soul-audit-saved-options-v1'
+const LAST_AUDIT_INPUT_SESSION_KEY = 'soul-audit-last-input'
 
 type SavedAuditOption = {
   id: string
@@ -198,6 +199,14 @@ function loadSavedAuditOptions(): SavedAuditOption[] {
   }
 }
 
+function loadLastAuditInput(): string | null {
+  if (typeof window === 'undefined') return null
+  const raw = window.sessionStorage.getItem(LAST_AUDIT_INPUT_SESSION_KEY)
+  if (!raw) return null
+  const normalized = raw.trim()
+  return normalized.length > 0 ? normalized : null
+}
+
 function persistSavedAuditOptions(options: SavedAuditOption[]) {
   if (typeof window === 'undefined') return
   window.localStorage.setItem(SAVED_OPTIONS_KEY, JSON.stringify(options))
@@ -248,6 +257,9 @@ export default function SoulAuditResultsPage() {
   const [savedOptionsMessage, setSavedOptionsMessage] = useState<string | null>(
     null,
   )
+  const [lastAuditInput, setLastAuditInput] = useState<string | null>(() =>
+    loadLastAuditInput(),
+  )
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -256,6 +268,12 @@ export default function SoulAuditResultsPage() {
     )
     setSavedOptions(loadSavedAuditOptions())
   }, [])
+
+  useEffect(() => {
+    if (!lastInput) return
+    setLastAuditInput(lastInput)
+    window.sessionStorage.setItem(LAST_AUDIT_INPUT_SESSION_KEY, lastInput)
+  }, [lastInput])
 
   useEffect(() => {
     const fromStorage = loadSubmitResult()
@@ -568,7 +586,7 @@ export default function SoulAuditResultsPage() {
   }
 
   async function rerollOptions() {
-    if (!submitResult || !lastInput) {
+    if (!submitResult || !lastAuditInput) {
       setError(
         'Reroll unavailable because your original audit text is not in session. Please start a new Soul Audit.',
       )
@@ -587,7 +605,7 @@ export default function SoulAuditResultsPage() {
       const response = await fetch('/api/soul-audit/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ response: lastInput }),
+        body: JSON.stringify({ response: lastAuditInput }),
       })
       const payload = (await response.json()) as SoulAuditSubmitResponseV2 & {
         error?: string
@@ -615,6 +633,49 @@ export default function SoulAuditResultsPage() {
       setError(err instanceof Error ? err.message : 'Unable to reroll options.')
     } finally {
       setIsRerolling(false)
+    }
+  }
+
+  async function recoverExpiredRun() {
+    if (!lastAuditInput) {
+      setError(
+        'Run expired and no previous response was found in this browser session. Please restart Soul Audit.',
+      )
+      return
+    }
+
+    setSubmitting(true)
+    setError(null)
+    try {
+      const response = await fetch('/api/soul-audit/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ response: lastAuditInput }),
+      })
+      const payload = (await response.json()) as SoulAuditSubmitResponseV2 & {
+        error?: string
+      }
+      if (!response.ok || payload.version !== 'v2') {
+        throw new Error(payload.error || 'Unable to recover options right now.')
+      }
+
+      setSubmitResult(payload)
+      setSelection(null)
+      setRunExpired(false)
+      setEssentialConsent(false)
+      setAnalyticsOptIn(false)
+      setCrisisAcknowledged(false)
+      setExpandedReasoningOptionId(null)
+      sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
+      sessionStorage.removeItem('soul-audit-selection-v2')
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : 'Unable to recover options right now.',
+      )
+    } finally {
+      setSubmitting(false)
     }
   }
 
@@ -1322,20 +1383,31 @@ export default function SoulAuditResultsPage() {
           <div className="mt-6 text-center">
             <p className="vw-body text-secondary">{error}</p>
             {runExpired && (
-              <button
-                type="button"
-                onClick={() => {
-                  sessionStorage.removeItem('soul-audit-submit-v2')
-                  sessionStorage.removeItem('soul-audit-selection-v2')
-                  void fetch('/api/soul-audit/reset', { method: 'POST' }).catch(
-                    () => {},
-                  )
-                  router.push('/soul-audit')
-                }}
-                className="cta-major text-label vw-small mt-4 px-5 py-2"
-              >
-                Restart Soul Audit
-              </button>
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => void recoverExpiredRun()}
+                  disabled={submitting || !lastAuditInput}
+                  className="cta-major text-label vw-small px-5 py-2 disabled:opacity-50"
+                >
+                  {submitting ? 'Reloading...' : 'Reload Options'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    sessionStorage.removeItem('soul-audit-submit-v2')
+                    sessionStorage.removeItem('soul-audit-selection-v2')
+                    sessionStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)
+                    void fetch('/api/soul-audit/reset', {
+                      method: 'POST',
+                    }).catch(() => {})
+                    router.push('/soul-audit')
+                  }}
+                  className="text-label vw-small link-highlight"
+                >
+                  Restart Soul Audit
+                </button>
+              </div>
             )}
           </div>
         )}
