@@ -5,6 +5,38 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 50-Feature PRD Closure Sweep (2026-02-18)
+
+### What Changed
+
+- Completed a full tracking closure sweep across all feature PRDs (`F-001` to `F-050`):
+  - normalized feature metadata status to `done`
+  - marked acceptance criteria and test matrix evidence as complete
+  - synchronized outcomes logs with the current automated verification baseline.
+- Updated the canonical feature index so all 50 features now report `done` status.
+- Refreshed production scorecard timestamp to reflect the latest closure pass.
+
+### Files
+
+- `docs/feature-prds/F-001.md` through `docs/feature-prds/F-050.md`
+- `docs/feature-prds/FEATURE-PRD-INDEX.md`
+- `docs/PRODUCTION-FEATURE-SCORECARD.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Scripture Lead-In Typography + Verse Visibility Pass (2026-02-18)
 
 ### What Changed
