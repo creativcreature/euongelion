@@ -3,6 +3,7 @@ import { POST as submitHandler } from '@/app/api/soul-audit/submit/route'
 import { POST as consentHandler } from '@/app/api/soul-audit/consent/route'
 import { POST as selectHandler } from '@/app/api/soul-audit/select/route'
 import { resetSessionAuditCount } from '@/lib/soul-audit/repository'
+import { createConsentToken } from '@/lib/soul-audit/consent-token'
 
 let mockedSessionToken = 'test-session-token'
 
@@ -89,9 +90,60 @@ describe('Soul Audit staged flow', () => {
     const consentPayload = (await consentResponse.json()) as {
       code?: string
       error?: string
+      crisis?: {
+        required?: boolean
+        resources?: Array<{ name: string; contact: string }>
+      }
     }
     expect(consentPayload.code).toBe('CRISIS_ACK_REQUIRED')
     expect(consentPayload.error).toMatch(/acknowledge/i)
+    expect(consentPayload.crisis?.required).toBe(true)
+    expect(Array.isArray(consentPayload.crisis?.resources)).toBe(true)
+  })
+
+  it('selection returns crisis gate details when consent token skips acknowledgement', async () => {
+    mockedSessionToken = 'session-crisis-select'
+    resetSessionAuditCount(mockedSessionToken)
+
+    const submitResponse = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        response: 'I want to die and do not want to be here anymore.',
+      }) as never,
+    )
+    expect(submitResponse.status).toBe(200)
+    const submitPayload = (await submitResponse.json()) as {
+      auditRunId: string
+      runToken: string
+      options: Array<{ id: string }>
+    }
+
+    const forgedConsentToken = createConsentToken({
+      auditRunId: submitPayload.auditRunId,
+      essentialAccepted: true,
+      analyticsOptIn: false,
+      crisisAcknowledged: false,
+      sessionToken: mockedSessionToken,
+    })
+
+    const selectResponse = await selectHandler(
+      postJson('http://localhost/api/soul-audit/select', {
+        auditRunId: submitPayload.auditRunId,
+        optionId: submitPayload.options[0].id,
+        runToken: submitPayload.runToken,
+        consentToken: forgedConsentToken,
+      }) as never,
+    )
+    expect(selectResponse.status).toBe(400)
+    const selectPayload = (await selectResponse.json()) as {
+      code?: string
+      crisis?: {
+        required?: boolean
+        resources?: Array<{ name: string; contact: string }>
+      }
+    }
+    expect(selectPayload.code).toBe('CRISIS_ACK_REQUIRED')
+    expect(selectPayload.crisis?.required).toBe(true)
+    expect(Array.isArray(selectPayload.crisis?.resources)).toBe(true)
   })
 
   it('AI option path returns plan token after consent + selection', async () => {
@@ -347,5 +399,33 @@ describe('Soul Audit staged flow', () => {
     expect(reroll.status).toBe(403)
     const payload = (await reroll.json()) as { error?: string }
     expect(payload.error).toMatch(/could not be verified/i)
+  })
+
+  it('rejects reroll requests that alter the original response text', async () => {
+    mockedSessionToken = 'session-reroll-mismatch'
+    resetSessionAuditCount(mockedSessionToken)
+
+    const first = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        response: 'I need clarity, peace, and faithful consistency this week.',
+      }) as never,
+    )
+    expect(first.status).toBe(200)
+    const firstPayload = (await first.json()) as {
+      auditRunId: string
+      runToken: string
+    }
+
+    const mismatch = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        response: 'Completely different response text for bypass testing.',
+        rerollForRunId: firstPayload.auditRunId,
+        runToken: firstPayload.runToken,
+      }) as never,
+    )
+    expect(mismatch.status).toBe(409)
+    const payload = (await mismatch.json()) as { code?: string; error?: string }
+    expect(payload.code).toBe('REROLL_RESPONSE_MISMATCH')
+    expect(payload.error).toMatch(/original audit response/i)
   })
 })

@@ -32,6 +32,7 @@ import { resolveStartPolicy } from '@/lib/soul-audit/schedule'
 import { verifyConsentToken } from '@/lib/soul-audit/consent-token'
 import { verifyRunToken } from '@/lib/soul-audit/run-token'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
+import { crisisRequirement } from '@/lib/soul-audit/crisis'
 import type {
   SoulAuditSelectRequest,
   SoulAuditSelectResponse,
@@ -182,6 +183,7 @@ export async function POST(request: NextRequest) {
     if (!run) {
       return jsonError({
         error: 'Audit run not found.',
+        code: 'RUN_NOT_FOUND',
         status: 404,
         requestId,
       })
@@ -190,6 +192,7 @@ export async function POST(request: NextRequest) {
     if (run.session_token !== sessionToken && !verifiedToken) {
       return jsonError({
         error: 'Audit run access denied.',
+        code: 'RUN_ACCESS_DENIED',
         status: 403,
         requestId,
       })
@@ -228,6 +231,12 @@ export async function POST(request: NextRequest) {
         code: 'ESSENTIAL_CONSENT_REQUIRED',
         status: 400,
         requestId,
+        details: {
+          requiredActions: {
+            essentialConsent: true,
+            analyticsOptInOptional: true,
+          },
+        },
       })
     }
 
@@ -237,6 +246,9 @@ export async function POST(request: NextRequest) {
         code: 'CRISIS_ACK_REQUIRED',
         status: 400,
         requestId,
+        details: {
+          crisis: crisisRequirement(true),
+        },
       })
     }
 

@@ -117,8 +117,12 @@ describe('Soul Audit edge cases', () => {
       }) as never,
     )
     expect(consentResponse.status).toBe(400)
-    const payload = (await consentResponse.json()) as { code?: string }
+    const payload = (await consentResponse.json()) as {
+      code?: string
+      requiredActions?: { essentialConsent?: boolean }
+    }
     expect(payload.code).toBe('ESSENTIAL_CONSENT_REQUIRED')
+    expect(payload.requiredActions?.essentialConsent).toBe(true)
   })
 
   it('blocks selection before consent', async () => {
@@ -140,8 +144,12 @@ describe('Soul Audit edge cases', () => {
       }) as never,
     )
     expect(selectionResponse.status).toBe(400)
-    const payload = (await selectionResponse.json()) as { code?: string }
+    const payload = (await selectionResponse.json()) as {
+      code?: string
+      requiredActions?: { essentialConsent?: boolean }
+    }
     expect(payload.code).toBe('ESSENTIAL_CONSENT_REQUIRED')
+    expect(payload.requiredActions?.essentialConsent).toBe(true)
   })
 
   it('rejects invalid audit run id format at consent and select', async () => {

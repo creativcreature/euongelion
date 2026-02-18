@@ -76,6 +76,58 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Consent + Crisis + Selection Hardening Pass (2026-02-18)
+
+### What Changed
+
+- Implemented explicit consent-recording flow in Soul Audit results:
+  - option selection now unlocks after consent is recorded (not checkbox-only)
+  - consent changes invalidate stale consent-token state and require re-record
+  - added consent status guidance (`Record Consent`, `Consent Recorded`, recovery messaging).
+- Added dedicated crisis-support rendering in results for crisis-detected runs:
+  - shows crisis prompt
+  - renders actionable resource links (call/text)
+  - adds immediate-help CTA.
+- Hardened API gate detail payloads:
+  - consent/select essential gate errors now include `requiredActions` metadata
+  - crisis gate errors now include crisis prompt/resources detail payload.
+- Hardened reroll locking in submit route:
+  - reroll now rejects modified input text relative to original verified run token (`REROLL_RESPONSE_MISMATCH`), preventing limit bypass via altered reroll payloads.
+- Expanded regression coverage for:
+  - crisis gate detail payloads
+  - essential-gate required-action payloads
+  - reroll text-mismatch rejection.
+
+### Files
+
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/api/soul-audit/submit/route.ts`
+- `src/app/api/soul-audit/consent/route.ts`
+- `src/app/api/soul-audit/select/route.ts`
+- `__tests__/soul-audit-flow.test.ts`
+- `__tests__/soul-audit-edge-cases.test.ts`
+- `__tests__/soul-audit-consent-gate-contract.test.ts`
+- `docs/feature-prds/F-020.md`
+- `docs/feature-prds/F-022.md`
+- `docs/feature-prds/F-024.md`
+- `docs/feature-prds/FEATURE-PRD-INDEX.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Auth Shell Parity Pass (2026-02-18)
 
 ### What Changed

@@ -130,6 +130,18 @@ export async function POST(request: NextRequest) {
         requestId,
       })
     }
+    if (
+      rerollVerified &&
+      responseText !== sanitizeAuditInput(rerollVerified.responseText)
+    ) {
+      return jsonError({
+        error:
+          'Reroll can only use the original audit response. Start a new audit to use different input.',
+        code: 'REROLL_RESPONSE_MISMATCH',
+        status: 409,
+        requestId,
+      })
+    }
 
     const currentCount = getSessionAuditCount(sessionToken)
     if (!rerollVerified && currentCount >= MAX_AUDITS_PER_CYCLE) {

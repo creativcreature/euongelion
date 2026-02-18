@@ -11,6 +11,7 @@ import FadeIn from '@/components/motion/FadeIn'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
 import type {
+  CrisisResource,
   CustomPlanDay,
   PlanOnboardingMeta,
   SoulAuditConsentResponse,
@@ -213,6 +214,17 @@ function persistSavedAuditOptions(options: SavedAuditOption[]) {
   window.localStorage.setItem(SAVED_OPTIONS_KEY, JSON.stringify(options))
 }
 
+function crisisResourceHref(resource: CrisisResource): string | null {
+  const normalized = resource.contact.toLowerCase()
+  if (normalized.includes('741741')) {
+    return 'sms:741741?body=HOME'
+  }
+  if (normalized.includes('988')) {
+    return 'tel:988'
+  }
+  return null
+}
+
 export default function SoulAuditResultsPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -227,6 +239,13 @@ export default function SoulAuditResultsPage() {
   const [essentialConsent, setEssentialConsent] = useState(false)
   const [analyticsOptIn, setAnalyticsOptIn] = useState(false)
   const [crisisAcknowledged, setCrisisAcknowledged] = useState(false)
+  const [consentToken, setConsentToken] = useState<string | null>(null)
+  const [consentFingerprint, setConsentFingerprint] = useState<string | null>(
+    null,
+  )
+  const [consentStatus, setConsentStatus] = useState<
+    'idle' | 'saving' | 'saved' | 'error'
+  >('idle')
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [runExpired, setRunExpired] = useState(false)
@@ -300,9 +319,31 @@ export default function SoulAuditResultsPage() {
   const planToken = useMemo(() => {
     return searchParams.get('planToken') || selection?.planToken || null
   }, [searchParams, selection?.planToken])
-  const selectionUnlocked = Boolean(
+  const currentConsentFingerprint = useMemo(() => {
+    if (!submitResult) return null
+    return [
+      submitResult.auditRunId,
+      essentialConsent ? '1' : '0',
+      analyticsOptIn ? '1' : '0',
+      crisisAcknowledged ? '1' : '0',
+    ].join(':')
+  }, [submitResult, essentialConsent, analyticsOptIn, crisisAcknowledged])
+  const consentRequirementsMet = Boolean(
     essentialConsent && (!submitResult?.crisis.required || crisisAcknowledged),
   )
+  const selectionUnlocked = Boolean(
+    consentToken &&
+    consentFingerprint &&
+    currentConsentFingerprint &&
+    consentFingerprint === currentConsentFingerprint,
+  )
+
+  useEffect(() => {
+    if (!consentFingerprint || !currentConsentFingerprint) return
+    if (consentFingerprint === currentConsentFingerprint) return
+    setConsentToken(null)
+    setConsentStatus('idle')
+  }, [consentFingerprint, currentConsentFingerprint])
 
   const loadPlan = useCallback(async (token: string) => {
     setLoadingPlan(true)
@@ -484,9 +525,19 @@ export default function SoulAuditResultsPage() {
     router.push('/soul-audit')
   }, [submitResult, router, planToken])
 
-  async function submitConsentAndSelect(optionId: string) {
-    if (!submitResult) return
-    setSubmitting(true)
+  async function recordConsent(): Promise<string | null> {
+    if (!submitResult || !currentConsentFingerprint) return null
+    if (!consentRequirementsMet) {
+      setError(
+        submitResult.crisis.required && !crisisAcknowledged
+          ? 'Acknowledge crisis resources before continuing.'
+          : 'Essential consent is required before continuing.',
+      )
+      setConsentStatus('error')
+      return null
+    }
+
+    setConsentStatus('saving')
     setError(null)
     setRunExpired(false)
 
@@ -503,18 +554,55 @@ export default function SoulAuditResultsPage() {
         }),
       })
 
+      const payload = (await consentRes.json().catch(() => ({}))) as {
+        error?: string
+        code?: string
+      }
       if (!consentRes.ok) {
-        const payload = (await consentRes.json().catch(() => ({}))) as {
-          error?: string
-          code?: string
-        }
         if (consentRes.status === 404 || payload.code === 'RUN_NOT_FOUND') {
           setRunExpired(true)
         }
+        setConsentStatus('error')
         throw new Error(payload.error || 'Consent could not be recorded.')
       }
-      const consentPayload =
-        (await consentRes.json()) as SoulAuditConsentResponse
+
+      const consentPayload = payload as SoulAuditConsentResponse
+      setConsentToken(consentPayload.consentToken)
+      setConsentFingerprint(currentConsentFingerprint)
+      setConsentStatus('saved')
+      return consentPayload.consentToken
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : 'Consent could not be recorded.',
+      )
+      return null
+    }
+  }
+
+  async function submitConsentAndSelect(optionId: string) {
+    if (!submitResult) return
+    if (!selectionUnlocked && !consentRequirementsMet) {
+      setError(
+        submitResult.crisis.required && !crisisAcknowledged
+          ? 'Acknowledge crisis resources before choosing a devotional path.'
+          : 'Essential consent is required before choosing a devotional path.',
+      )
+      return
+    }
+
+    setSubmitting(true)
+    setError(null)
+    setRunExpired(false)
+
+    try {
+      let resolvedConsentToken = selectionUnlocked ? consentToken : null
+      if (!resolvedConsentToken) {
+        resolvedConsentToken = await recordConsent()
+      }
+      if (!resolvedConsentToken) {
+        setSubmitting(false)
+        return
+      }
 
       const selectRes = await fetch('/api/soul-audit/select', {
         method: 'POST',
@@ -527,7 +615,7 @@ export default function SoulAuditResultsPage() {
           auditRunId: submitResult.auditRunId,
           optionId,
           runToken: submitResult.runToken,
-          consentToken: consentPayload.consentToken,
+          consentToken: resolvedConsentToken,
           timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
           timezoneOffsetMinutes: new Date().getTimezoneOffset(),
         }),
@@ -536,6 +624,7 @@ export default function SoulAuditResultsPage() {
       const selectionPayload =
         (await selectRes.json()) as SoulAuditSelectResponse & {
           error?: string
+          code?: string
         }
       if (!selectRes.ok || !selectionPayload.ok) {
         if (
@@ -543,6 +632,14 @@ export default function SoulAuditResultsPage() {
           selectionPayload.error?.toLowerCase().includes('run not found')
         ) {
           setRunExpired(true)
+        }
+        if (
+          selectionPayload.code === 'ESSENTIAL_CONSENT_REQUIRED' ||
+          selectionPayload.code === 'CRISIS_ACK_REQUIRED'
+        ) {
+          setConsentToken(null)
+          setConsentFingerprint(null)
+          setConsentStatus('error')
         }
         throw new Error(
           selectionPayload.error || 'Unable to lock your devotional choice.',
@@ -626,6 +723,9 @@ export default function SoulAuditResultsPage() {
       setEssentialConsent(false)
       setAnalyticsOptIn(false)
       setCrisisAcknowledged(false)
+      setConsentToken(null)
+      setConsentFingerprint(null)
+      setConsentStatus('idle')
       setExpandedReasoningOptionId(null)
       setShowRerollConfirm(false)
       setRerollConfirmValue('')
@@ -680,6 +780,9 @@ export default function SoulAuditResultsPage() {
       setEssentialConsent(false)
       setAnalyticsOptIn(false)
       setCrisisAcknowledged(false)
+      setConsentToken(null)
+      setConsentFingerprint(null)
+      setConsentStatus('idle')
       setExpandedReasoningOptionId(null)
       setShowRerollConfirm(false)
       setRerollConfirmValue('')
@@ -922,6 +1025,52 @@ export default function SoulAuditResultsPage() {
                 className="mb-8 rounded-none border p-6"
                 style={{ borderColor: 'var(--color-border)' }}
               >
+                {submitResult.crisis.required && (
+                  <div
+                    className="mb-5 border-b pb-4"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    <p className="text-label vw-small mb-2 text-gold">
+                      CRISIS SUPPORT
+                    </p>
+                    <p className="vw-small mb-2 text-secondary">
+                      {typographer(submitResult.crisis.prompt)}
+                    </p>
+                    <div className="grid gap-2">
+                      {submitResult.crisis.resources.map((resource) => {
+                        const href = crisisResourceHref(resource)
+                        return (
+                          <p
+                            key={resource.name}
+                            className="vw-small text-secondary"
+                          >
+                            <span className="text-label vw-small text-gold">
+                              {resource.name}:
+                            </span>{' '}
+                            {href ? (
+                              <a
+                                href={href}
+                                className="link-highlight"
+                                rel="noreferrer"
+                              >
+                                {resource.contact}
+                              </a>
+                            ) : (
+                              resource.contact
+                            )}
+                          </p>
+                        )
+                      })}
+                    </div>
+                    <a
+                      href="tel:988"
+                      className="text-label vw-small link-highlight mt-3 inline-block"
+                    >
+                      I NEED IMMEDIATE HELP NOW
+                    </a>
+                  </div>
+                )}
+
                 <div className="grid gap-3">
                   <label className="flex items-start gap-3">
                     <input
@@ -956,28 +1105,38 @@ export default function SoulAuditResultsPage() {
                         }
                       />
                       <span className="vw-small">
-                        I acknowledge the crisis resources above and want to
-                        continue to devotional options.
+                        I acknowledge the crisis resources above before
+                        continuing to devotional options.
                       </span>
                     </label>
                   )}
                 </div>
 
-                {submitResult.crisis.required && (
-                  <div className="mt-5 border-t pt-4">
-                    <p className="text-label vw-small mb-3 text-gold">
-                      CRISIS RESOURCES
-                    </p>
-                    {submitResult.crisis.resources.map((resource) => (
-                      <p
-                        key={resource.name}
-                        className="vw-small text-secondary"
-                      >
-                        {resource.name}: {resource.contact}
-                      </p>
-                    ))}
-                  </div>
-                )}
+                <div className="mt-5 flex flex-wrap items-center gap-3">
+                  <button
+                    type="button"
+                    className="cta-major text-label vw-small px-4 py-2 disabled:opacity-50"
+                    onClick={() => void recordConsent()}
+                    disabled={
+                      consentStatus === 'saving' || !consentRequirementsMet
+                    }
+                  >
+                    {consentStatus === 'saving'
+                      ? 'Recording Consent...'
+                      : selectionUnlocked
+                        ? 'Consent Recorded'
+                        : 'Record Consent'}
+                  </button>
+                  <p className="vw-small text-secondary">
+                    {selectionUnlocked
+                      ? 'Consent saved. You can now select a devotional path.'
+                      : submitResult.crisis.required && !crisisAcknowledged
+                        ? 'Acknowledge crisis support before recording consent.'
+                        : essentialConsent
+                          ? 'Record consent to unlock option selection.'
+                          : 'Check essential consent to continue.'}
+                  </p>
+                </div>
               </section>
             </FadeIn>
 
@@ -1061,7 +1220,11 @@ export default function SoulAuditResultsPage() {
                 </div>
                 {!selectionUnlocked && (
                   <p className="vw-small mb-4 text-secondary">
-                    Check essential consent first to unlock option selection.
+                    {submitResult.crisis.required && !crisisAcknowledged
+                      ? 'Acknowledge crisis support, then record consent to unlock option selection.'
+                      : essentialConsent
+                        ? 'Record consent to unlock option selection.'
+                        : 'Check essential consent, then record consent to unlock option selection.'}
                   </p>
                 )}
                 <div className="grid gap-4 md:grid-cols-3">
@@ -1104,7 +1267,7 @@ export default function SoulAuditResultsPage() {
                           <p className="audit-option-hint text-label vw-small mt-4">
                             {selectionUnlocked
                               ? 'Click to build this path'
-                              : 'Check consent to unlock'}
+                              : 'Record consent to unlock'}
                           </p>
                         </button>
                         <div
@@ -1187,7 +1350,7 @@ export default function SoulAuditResultsPage() {
                           <p className="audit-option-hint text-label vw-small mt-4">
                             {selectionUnlocked
                               ? 'Click to open this series'
-                              : 'Check consent to unlock'}
+                              : 'Record consent to unlock'}
                           </p>
                         </button>
                         <div
