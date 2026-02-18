@@ -25,21 +25,24 @@ export default async function PrivacyPage() {
   const html = markdownToHtml(content)
 
   return (
-    <div className="newspaper-home min-h-screen">
-      <EuangelionShellHeader />
-
-      <main id="main-content" className="shell-content-pad mx-auto max-w-3xl">
-        <Breadcrumbs
-          className="mb-7"
-          items={[{ label: 'HOME', href: '/' }, { label: 'PRIVACY' }]}
-        />
-        <p className="vw-small mb-8 text-muted">Last updated: {lastUpdated}</p>
-        <div
-          className="prose-legal"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+    <div className="mock-home min-h-screen">
+      <main id="main-content" className="mock-paper min-h-screen">
+        <EuangelionShellHeader />
+        <div className="shell-content-pad mx-auto max-w-3xl">
+          <Breadcrumbs
+            className="mb-7"
+            items={[{ label: 'HOME', href: '/' }, { label: 'PRIVACY' }]}
+          />
+          <p className="vw-small mb-8 text-muted">
+            Last updated: {lastUpdated}
+          </p>
+          <div
+            className="prose-legal"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        </div>
+        <SiteFooter />
       </main>
-      <SiteFooter />
     </div>
   )
 }

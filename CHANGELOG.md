@@ -5,6 +5,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Non-Wake-Up Shell Parity Pass (2026-02-18)
+
+### What Changed
+
+- Migrated remaining non-Wake-Up utility/system routes to the shared homepage shell contract (`mock-home` + `mock-paper`) for consistent topbar/nav/sticky frame behavior.
+- Updated pages/components:
+  - `/settings`
+  - `/privacy`
+  - `/terms`
+  - `/offline`
+  - root `loading`, root `error`, and `404`
+  - admin shell pages.
+- Eliminated mixed wrapper usage (`newspaper-home` on non-Wake-Up pages) from runtime route components.
+
+### Files
+
+- `src/app/settings/page.tsx`
+- `src/app/privacy/page.tsx`
+- `src/app/terms/page.tsx`
+- `src/app/offline/page.tsx`
+- `src/app/loading.tsx`
+- `src/app/error.tsx`
+- `src/app/not-found.tsx`
+- `src/components/AdminShell.tsx`
+- `docs/feature-prds/F-029.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Governance Drift Reconciliation Pass (2026-02-18)
 
 ### What Changed
