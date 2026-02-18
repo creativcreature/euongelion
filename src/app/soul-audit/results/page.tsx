@@ -49,6 +49,7 @@ type ArchivePlanSummary = {
 const PLAN_CACHE_PREFIX = 'soul-audit-plan-v2:'
 const SAVED_OPTIONS_KEY = 'soul-audit-saved-options-v1'
 const LAST_AUDIT_INPUT_SESSION_KEY = 'soul-audit-last-input'
+const REROLL_USED_SESSION_KEY = 'soul-audit-reroll-used'
 
 type SavedAuditOption = {
   id: string
@@ -264,7 +265,7 @@ export default function SoulAuditResultsPage() {
   useEffect(() => {
     if (typeof window === 'undefined') return
     setRerollUsed(
-      window.sessionStorage.getItem('soul-audit-reroll-used') === 'true',
+      window.sessionStorage.getItem(REROLL_USED_SESSION_KEY) === 'true',
     )
     setSavedOptions(loadSavedAuditOptions())
   }, [])
@@ -628,7 +629,7 @@ export default function SoulAuditResultsPage() {
 
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
       sessionStorage.removeItem('soul-audit-selection-v2')
-      sessionStorage.setItem('soul-audit-reroll-used', 'true')
+      sessionStorage.setItem(REROLL_USED_SESSION_KEY, 'true')
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Unable to reroll options.')
     } finally {
@@ -666,8 +667,12 @@ export default function SoulAuditResultsPage() {
       setAnalyticsOptIn(false)
       setCrisisAcknowledged(false)
       setExpandedReasoningOptionId(null)
+      setShowRerollConfirm(false)
+      setRerollConfirmValue('')
+      setRerollUsed(false)
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
       sessionStorage.removeItem('soul-audit-selection-v2')
+      sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
     } catch (err) {
       setError(
         err instanceof Error
@@ -1398,6 +1403,7 @@ export default function SoulAuditResultsPage() {
                     sessionStorage.removeItem('soul-audit-submit-v2')
                     sessionStorage.removeItem('soul-audit-selection-v2')
                     sessionStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)
+                    sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
                     void fetch('/api/soul-audit/reset', {
                       method: 'POST',
                     }).catch(() => {})

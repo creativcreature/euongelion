@@ -14,6 +14,7 @@ import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
 
 const emptySubscribe = () => () => {}
 const LAST_AUDIT_INPUT_SESSION_KEY = 'soul-audit-last-input'
+const REROLL_USED_SESSION_KEY = 'soul-audit-reroll-used'
 
 const HOW_STEPS = [
   {
@@ -226,6 +227,7 @@ export default function Home() {
     sessionStorage.removeItem('soul-audit-submit-v2')
     sessionStorage.removeItem('soul-audit-selection-v2')
     sessionStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)
+    sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
 
     try {
       const response = await fetch('/api/soul-audit/reset', {
@@ -272,6 +274,7 @@ export default function Home() {
       sessionStorage.setItem(LAST_AUDIT_INPUT_SESSION_KEY, trimmed)
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(data))
       sessionStorage.removeItem('soul-audit-selection-v2')
+      sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
       recordAudit(trimmed, data)
       router.push('/soul-audit/results')
     } catch (err) {

@@ -35,6 +35,42 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Reroll State Isolation Pass (2026-02-15)
+
+### What Changed
+
+- Prevented reroll-state leakage across new and recovered audit runs.
+- Cleared `soul-audit-reroll-used` on:
+  - fresh homepage submit
+  - homepage reset
+  - run-expired restart
+  - run-expired reload recovery.
+- Reset in-memory reroll UI state after successful expired-run recovery.
+- Added contract assertions so reroll-state reset behavior remains locked.
+
+### Files
+
+- `src/app/page.tsx`
+- `src/app/soul-audit/results/page.tsx`
+- `__tests__/soul-audit-run-recovery-contract.test.ts`
+- `docs/feature-prds/F-021.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Scroll Lock Recovery Hardening (2026-02-15)
 
 ### What Changed
