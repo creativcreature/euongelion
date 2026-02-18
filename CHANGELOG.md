@@ -5,6 +5,51 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Depth + Shell Reliability Pass (2026-02-18)
+
+### What Changed
+
+- Hardened Soul Audit results flow for expired sessions:
+  - selection/consent `RUN_NOT_FOUND` paths now auto-attempt run recovery
+  - users receive refreshed options instead of dead-end selection failures.
+- Deepened curated devotional output quality:
+  - stronger burden/theme personalization in reflection/prayer
+  - minimum-length guards for reflection/prayer body
+  - richer next-step and journal prompts
+  - explicit 80/20 curation/composition endnote marker.
+- Improved Daily Bread rail accessibility:
+  - tablist/tab/tabpanel semantics for section switching
+  - explicit action labels for teaser/reminder/archive controls
+  - new regression tests for rail accessibility behavior.
+- Hardened scroll behavior by preventing Lenis stopped-state overflow locking from trapping page scroll.
+- Moved static/help surfaces to shared `mock-home` + `mock-paper` shell for full header/nav framing parity with homepage-style routes.
+
+### Files
+
+- `src/app/soul-audit/results/page.tsx`
+- `src/lib/soul-audit/curated-builder.ts`
+- `src/components/DevotionalLibraryRail.tsx`
+- `src/app/globals.css`
+- `src/components/StaticInfoPage.tsx`
+- `src/components/HelpHubPageClient.tsx`
+- `__tests__/devotional-library-rail-accessibility.test.tsx`
+- `docs/feature-prds/F-022.md`
+- `docs/feature-prds/F-026.md`
+- `docs/feature-prds/F-028.md`
+- `docs/feature-prds/F-029.md`
+- `docs/feature-prds/F-030.md`
+- `docs/feature-prds/F-041.md`
+- `docs/feature-prds/F-044.md`
+- `docs/feature-prds/F-046.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/devotional-library-rail-accessibility.test.tsx __tests__/network-status-banner.test.tsx`
+
+---
+
 ## Reliability + Curation Telemetry Pass (2026-02-18)
 
 ### What Changed

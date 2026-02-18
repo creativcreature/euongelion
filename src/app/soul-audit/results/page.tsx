@@ -560,7 +560,10 @@ export default function SoulAuditResultsPage() {
       }
       if (!consentRes.ok) {
         if (consentRes.status === 404 || payload.code === 'RUN_NOT_FOUND') {
-          setRunExpired(true)
+          const recovered = await recoverExpiredRun({ silent: true })
+          if (!recovered) {
+            setRunExpired(true)
+          }
         }
         setConsentStatus('error')
         throw new Error(payload.error || 'Consent could not be recorded.')
@@ -631,7 +634,14 @@ export default function SoulAuditResultsPage() {
           selectRes.status === 404 ||
           selectionPayload.error?.toLowerCase().includes('run not found')
         ) {
-          setRunExpired(true)
+          const recovered = await recoverExpiredRun({ silent: true })
+          if (!recovered) {
+            setRunExpired(true)
+          } else {
+            throw new Error(
+              'Your audit run expired. Fresh options were reloaded. Select your path again.',
+            )
+          }
         }
         if (
           selectionPayload.code === 'ESSENTIAL_CONSENT_REQUIRED' ||
@@ -741,22 +751,31 @@ export default function SoulAuditResultsPage() {
     }
   }
 
-  async function recoverExpiredRun() {
+  async function recoverExpiredRun(options?: {
+    silent?: boolean
+  }): Promise<boolean> {
+    const silent = Boolean(options?.silent)
     if (!lastAuditInput) {
-      setError(
-        'Run expired and no previous response was found in this browser session. Please restart Soul Audit.',
-      )
-      return
+      if (!silent) {
+        setError(
+          'Run expired and no previous response was found in this browser session. Please restart Soul Audit.',
+        )
+      }
+      return false
     }
     if (!submitResult?.auditRunId || !submitResult.runToken) {
-      setError(
-        'Run details expired and could not be verified. Please restart Soul Audit.',
-      )
-      return
+      if (!silent) {
+        setError(
+          'Run details expired and could not be verified. Please restart Soul Audit.',
+        )
+      }
+      return false
     }
 
-    setSubmitting(true)
-    setError(null)
+    if (!silent) {
+      setSubmitting(true)
+      setError(null)
+    }
     try {
       const response = await fetch('/api/soul-audit/submit', {
         method: 'POST',
@@ -790,14 +809,20 @@ export default function SoulAuditResultsPage() {
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
       sessionStorage.removeItem('soul-audit-selection-v2')
       sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
+      return true
     } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : 'Unable to recover options right now.',
-      )
+      if (!silent) {
+        setError(
+          err instanceof Error
+            ? err.message
+            : 'Unable to recover options right now.',
+        )
+      }
+      return false
     } finally {
-      setSubmitting(false)
+      if (!silent) {
+        setSubmitting(false)
+      }
     }
   }
 

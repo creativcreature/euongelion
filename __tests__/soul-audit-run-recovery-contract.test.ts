@@ -40,7 +40,7 @@ describe('Soul Audit run-recovery contract', () => {
       "const REROLL_USED_SESSION_KEY = 'soul-audit-reroll-used'",
     )
     expect(results).toContain('function loadLastAuditInput(): string | null')
-    expect(results).toContain('async function recoverExpiredRun()')
+    expect(results).toContain('async function recoverExpiredRun(options?:')
     expect(results).toContain('Reload Options')
     expect(results).toContain('setRerollUsed(false)')
     expect(results).toContain(

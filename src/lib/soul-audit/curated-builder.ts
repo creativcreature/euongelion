@@ -32,13 +32,43 @@ function toLine(value: unknown): string {
     : ''
 }
 
+function splitKeywords(value: string): string[] {
+  return Array.from(
+    new Set(
+      value
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, ' ')
+        .split(/\s+/)
+        .map((token) => token.trim())
+        .filter((token) => token.length >= 4),
+    ),
+  ).slice(0, 5)
+}
+
+function focusPhrase(value: string): string {
+  const tokens = splitKeywords(value)
+  if (tokens.length === 0) return ''
+  if (tokens.length === 1) return tokens[0]
+  if (tokens.length === 2) return `${tokens[0]} and ${tokens[1]}`
+  return `${tokens[0]}, ${tokens[1]}, and ${tokens[2]}`
+}
+
+function ensureMinimumLength(value: string, minimum: number): string {
+  if (value.length >= minimum) return value
+  return `${value}\n\nStay with this text for two minutes before moving on. Ask what obedience looks like by the end of the day.`
+}
+
 function personalizedBridge(
   userResponse: string,
   day: CuratedDayCandidate,
 ): string {
   const snippet = userResponse.trim().slice(0, 180)
+  const themes = focusPhrase(userResponse)
   const base = `Today in "${day.dayTitle}", take one concrete step with what you just read: ${day.takeawayText}`
-  if (!snippet) return base
+  if (!snippet && !themes) return base
+  if (!snippet) {
+    return `${base}\n\nBring your current tension around ${themes} honestly before God today.`
+  }
   return `${base}\n\nFrom what you shared ("${snippet}"), bring that exact tension honestly before God today.`
 }
 
@@ -48,11 +78,17 @@ function expandedReflection(
   referenceHit?: { source: string; excerpt: string },
 ): string {
   const bridge = personalizedBridge(userResponse, day)
+  const themes = focusPhrase(userResponse)
   const contextualNote = referenceHit
     ? `Reference grounding (${referenceHit.source}): ${referenceHit.excerpt}`
     : 'Stay with the text slowly. Let the Scripture name what you are carrying before you try to fix it.'
-
-  return `${day.teachingText}\n\n${bridge}\n\n${contextualNote}`
+  const thematicLine = themes
+    ? `The burden language you shared points to ${themes}. Read for where this passage addresses that directly.`
+    : 'Read for the phrase that most clearly names your present burden.'
+  return ensureMinimumLength(
+    `${day.teachingText}\n\n${thematicLine}\n\n${bridge}\n\n${contextualNote}`,
+    420,
+  )
 }
 
 function personalizedPrayerLine(userResponse: string): string {
@@ -67,23 +103,26 @@ function expandedPrayer(
   userResponse: string,
   day: CuratedDayCandidate,
 ): string {
-  return [
-    day.prayerText,
-    personalizedPrayerLine(userResponse),
-    `Anchor this in me today through ${day.scriptureReference}, and give me courage to live what I read.`,
-  ].join('\n\n')
+  return ensureMinimumLength(
+    [
+      day.prayerText,
+      personalizedPrayerLine(userResponse),
+      `Anchor this in me today through ${day.scriptureReference}, and give me courage to live what I read.`,
+    ].join('\n\n'),
+    220,
+  )
 }
 
 function expandedNextStep(day: CuratedDayCandidate): string {
   const base = toLine(day.takeawayText)
   if (!base) return ''
-  return `${base} Then choose one concrete action you can complete before the day ends.`
+  return `${base} Then choose one concrete action you can complete before the day ends, and set a specific hour to do it.`
 }
 
 function expandedJournalPrompt(day: CuratedDayCandidate): string {
   const base = toLine(day.reflectionPrompt)
   if (!base) return ''
-  return `${base}\nWhat resistance do you notice in yourself, and what would faithful obedience look like in one sentence?`
+  return `${base}\nWhat resistance do you notice in yourself, and what would faithful obedience look like in one sentence?\nWhich exact phrase from Scripture will you carry into today?`
 }
 
 function buildEndnotes(params: {
@@ -100,6 +139,11 @@ function buildEndnotes(params: {
       id: 2,
       source: params.candidate.sourcePath,
       note: `${params.candidate.seriesSlug} day ${params.candidate.dayNumber}`,
+    },
+    {
+      id: 3,
+      source: 'Composition Policy',
+      note: 'Curated core modules 80% / generation-assisted bridge and language polish 20%.',
     },
   ]
 

@@ -527,6 +527,15 @@ export default function DevotionalLibraryRail({
       archivePlans.length + completionRows.length + archivedArtifacts.length,
     trash: trashedArtifacts.length,
   } as const
+  const libraryTabs: Array<[LibraryMenuKey, string]> = [
+    ['today', 'Today + 7 Days'],
+    ['bookmarks', 'Bookmarks'],
+    ['highlights', 'Highlights'],
+    ['notes', 'Notes'],
+    ['chat-history', 'Chat History'],
+    ['archive', 'Archive'],
+    ['trash', 'Trash'],
+  ]
 
   return (
     <section
@@ -537,22 +546,20 @@ export default function DevotionalLibraryRail({
         aria-label="Devotional library menu"
       >
         <p className="text-label vw-small mb-4 text-gold">LIBRARY</p>
-        <nav className="grid gap-2">
-          {(
-            [
-              ['today', 'Today + 7 Days'],
-              ['bookmarks', 'Bookmarks'],
-              ['highlights', 'Highlights'],
-              ['notes', 'Notes'],
-              ['chat-history', 'Chat History'],
-              ['archive', 'Archive'],
-              ['trash', 'Trash'],
-            ] as Array<[LibraryMenuKey, string]>
-          ).map(([key, label]) => (
+        <nav
+          className="grid gap-2"
+          role="tablist"
+          aria-label="Daily Bread library sections"
+        >
+          {libraryTabs.map(([key, label]) => (
             <button
               key={key}
               type="button"
               onClick={() => setActive(key)}
+              role="tab"
+              id={`library-tab-${key}`}
+              aria-selected={active === key}
+              aria-controls={`library-panel-${key}`}
               className={`text-label vw-small flex items-center justify-between border px-3 py-2 text-left ${
                 active === key
                   ? 'bg-surface-raised text-[var(--color-text-primary)]'
@@ -567,7 +574,12 @@ export default function DevotionalLibraryRail({
         </nav>
       </aside>
 
-      <div className="border-subtle bg-page p-4 md:p-6">
+      <div
+        className="border-subtle bg-page p-4 md:p-6"
+        role="tabpanel"
+        id={`library-panel-${active}`}
+        aria-labelledby={`library-tab-${active}`}
+      >
         {loading ? (
           <p className="vw-small text-muted">Loading library...</p>
         ) : error ? (
@@ -619,6 +631,7 @@ export default function DevotionalLibraryRail({
                                   type="button"
                                   className="text-label vw-small mt-2 link-highlight"
                                   onClick={() => setLockedDayTeaser(day)}
+                                  aria-label={`View teaser for day ${day.day}`}
                                 >
                                   View teaser
                                 </button>
@@ -674,6 +687,11 @@ export default function DevotionalLibraryRail({
                             type="button"
                             className="text-label vw-small link-highlight"
                             onClick={() => toggleReminder(lockedDayTeaser)}
+                            aria-label={`${
+                              dayReminders[reminderKey(lockedDayTeaser)]
+                                ? 'Disable'
+                                : 'Enable'
+                            } reminder for day ${lockedDayTeaser.day}`}
                           >
                             {dayReminders[reminderKey(lockedDayTeaser)]
                               ? 'Disable reminder'
@@ -683,6 +701,7 @@ export default function DevotionalLibraryRail({
                             type="button"
                             className="text-label vw-small link-highlight"
                             onClick={() => setLockedDayTeaser(null)}
+                            aria-label="Close locked day teaser"
                           >
                             Close teaser
                           </button>
@@ -730,6 +749,9 @@ export default function DevotionalLibraryRail({
                           type="button"
                           onClick={() => void archiveBookmarkRow(bookmark)}
                           className="text-label vw-small link-highlight"
+                          aria-label={`Archive bookmark for ${resolveDevotionalLabel(
+                            bookmark.devotional_slug,
+                          )}`}
                         >
                           Archive
                         </button>
@@ -766,6 +788,9 @@ export default function DevotionalLibraryRail({
                             type="button"
                             onClick={() => void archiveAnnotationRow(row)}
                             className="text-label vw-small link-highlight"
+                            aria-label={`Archive highlight from ${resolveDevotionalLabel(
+                              row.devotional_slug,
+                            )}`}
                           >
                             Archive
                           </button>
@@ -804,6 +829,9 @@ export default function DevotionalLibraryRail({
                             type="button"
                             onClick={() => void archiveAnnotationRow(note)}
                             className="text-label vw-small link-highlight"
+                            aria-label={`Archive note from ${resolveDevotionalLabel(
+                              note.devotional_slug,
+                            )}`}
                           >
                             Archive
                           </button>
@@ -844,6 +872,9 @@ export default function DevotionalLibraryRail({
                             type="button"
                             onClick={() => void archiveAnnotationRow(note)}
                             className="text-label vw-small link-highlight"
+                            aria-label={`Archive chat note from ${resolveDevotionalLabel(
+                              note.devotional_slug,
+                            )}`}
                           >
                             Archive
                           </button>

@@ -1768,7 +1768,7 @@
   }
 
   .lenis.lenis-stopped {
-    overflow: hidden;
+    overflow: auto !important;
   }
 
   .lenis.lenis-scrolling {
