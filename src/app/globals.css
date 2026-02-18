@@ -2766,10 +2766,13 @@
 
 .mock-scripture-lead {
   margin: 0;
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-ui);
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: none;
   color: var(--mock-ink) !important;
-  font-size: var(--mock-type-3) !important;
-  line-height: 0.98 !important;
+  font-size: clamp(1.24rem, 1.26vw, 1.48rem) !important;
+  line-height: 1.22 !important;
 }
 
 .mock-featured-day {
@@ -3049,9 +3052,9 @@
 }
 
 .mock-homepage .mock-featured-card .mock-scripture-lead {
-  font-size: clamp(2.1rem, 2.08vw, 2.5rem) !important;
-  line-height: 0.97 !important;
-  margin-bottom: 0.1rem;
+  font-size: clamp(1.3rem, 1.3vw, 1.58rem) !important;
+  line-height: 1.22 !important;
+  margin-bottom: 0.3rem;
 }
 
 .mock-homepage .mock-featured-card p {

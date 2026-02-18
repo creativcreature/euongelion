@@ -156,8 +156,14 @@ function SeriesCard({
           className="mx-6 mt-6 border border-[var(--color-border)] p-4 md:mx-8 md:mt-8 md:p-5"
           style={{ minHeight: '132px' }}
         >
-          <p className="text-label vw-small mb-3 text-gold">SCRIPTURE LEAD</p>
-          <p className="text-serif-italic vw-body-lg text-[var(--color-text-primary)]">
+          <p
+            className="vw-body mb-1 text-[var(--color-text-primary)]"
+            style={{
+              fontFamily: 'var(--font-family-ui)',
+              letterSpacing: '0.018em',
+              lineHeight: 1.3,
+            }}
+          >
             {typographer(scriptureLeadFromFramework(series.framework))}
           </p>
         </div>

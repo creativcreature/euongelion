@@ -16,7 +16,7 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-010 | Navigation        | Sticky mobile nav                             | 4/10     | in-progress | [F-010.md](./F-010.md) |
 | F-011 | Navigation        | Menu correctness                              | 4/10     | in-progress | [F-011.md](./F-011.md) |
 | F-012 | Typography        | Instrument Serif coverage                     | 4/10     | planned     | [F-012.md](./F-012.md) |
-| F-013 | Typography        | Industry UI/meta coverage                     | 4/10     | planned     | [F-013.md](./F-013.md) |
+| F-013 | Typography        | Industry UI/meta coverage                     | 4/10     | in-progress | [F-013.md](./F-013.md) |
 | F-014 | Typography        | Readability floor                             | 4/10     | planned     | [F-014.md](./F-014.md) |
 | F-015 | Typography        | Hierarchy cadence                             | 4/10     | planned     | [F-015.md](./F-015.md) |
 | F-016 | Motion            | Micro-interaction polish                      | 5/10     | planned     | [F-016.md](./F-016.md) |

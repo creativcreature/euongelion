@@ -5,6 +5,40 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Scripture Lead-In Typography + Verse Visibility Pass (2026-02-18)
+
+### What Changed
+
+- Updated scripture lead-in formatting to show the actual verse snippet plus scripture reference (instead of reference-only output).
+- Switched scripture preview typography to Industry across homepage/wake-up featured cards and series listing cards.
+- Removed literal `SCRIPTURE LEAD` label text from series cards to reduce UI noise and keep focus on scripture content.
+- Added regression coverage for scripture lead-in parsing behavior.
+- Synced feature tracking status for `F-013` in the feature PRD index.
+
+### Files
+
+- `src/lib/scripture-reference.ts`
+- `src/app/globals.css`
+- `src/app/series/page.tsx`
+- `__tests__/scripture-reference.test.ts`
+- `docs/feature-prds/F-013.md`
+- `docs/feature-prds/FEATURE-PRD-INDEX.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/scripture-reference.test.ts`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Billing Lifecycle Reconciliation Pass (2026-02-18)
 
 ### What Changed
