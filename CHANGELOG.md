@@ -5,6 +5,42 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Billing Lifecycle Reconciliation Pass (2026-02-18)
+
+### What Changed
+
+- Added checkout-session lifecycle resolver and API:
+  - `GET /api/billing/lifecycle?session_id=...`
+  - validates/loads Stripe checkout session (+ subscription when present)
+  - maps canonical lifecycle status (`pending`, `success`, `requires_action`, `failed`, `expired`) for runtime use.
+- Updated Settings billing load to reconcile lifecycle from the new endpoint when `session_id` is present, so post-checkout UX is based on actual Stripe state instead of query-string assumptions alone.
+- Added lifecycle unit tests for active, past-due, and expired checkout paths.
+
+### Files
+
+- `src/lib/billing/lifecycle.ts`
+- `src/app/api/billing/lifecycle/route.ts`
+- `src/app/settings/page.tsx`
+- `__tests__/billing-lifecycle.test.ts`
+- `docs/feature-prds/F-047.md`
+- `docs/feature-prds/F-048.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Soul Audit Depth + Shell Reliability Pass (2026-02-18)
 
 ### What Changed

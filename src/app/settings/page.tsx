@@ -284,12 +284,36 @@ export default function SettingsPage() {
         }
 
         const params = new URLSearchParams(window.location.search)
-        const checkoutStatus = params.get('billing')
+        let checkoutStatus = params.get('billing')
         const parsedSessionId = sanitizeCheckoutSessionId(
           params.get('session_id'),
         )
         if (parsedSessionId) {
           setCheckoutSessionId(parsedSessionId)
+          try {
+            const lifecycleRes = await fetch(
+              `/api/billing/lifecycle?session_id=${encodeURIComponent(
+                parsedSessionId,
+              )}`,
+              {
+                cache: 'no-store',
+              },
+            )
+            const lifecyclePayload = (await lifecycleRes.json()) as {
+              billingStatus?: string
+              premiumActive?: boolean
+            }
+            if (lifecycleRes.ok && lifecyclePayload.billingStatus) {
+              checkoutStatus = lifecyclePayload.billingStatus
+              if (lifecyclePayload.premiumActive) {
+                setBillingMessage(
+                  'Subscription confirmed. Premium features are now active.',
+                )
+              }
+            }
+          } catch {
+            // Keep query-param fallback flash behavior.
+          }
         }
 
         const flash = resolveBillingFlash({
