@@ -46,5 +46,9 @@ describe('Soul Audit run-recovery contract', () => {
     expect(results).toContain(
       'sessionStorage.removeItem(REROLL_USED_SESSION_KEY)',
     )
+    expect(results).toContain('!submitResult?.runToken')
+    expect(results).toContain(
+      'Run details expired and could not be verified. Please restart Soul Audit.',
+    )
   })
 })

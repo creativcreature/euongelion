@@ -587,7 +587,7 @@ export default function SoulAuditResultsPage() {
   }
 
   async function rerollOptions() {
-    if (!submitResult || !lastAuditInput) {
+    if (!submitResult || !lastAuditInput || !submitResult.runToken) {
       setError(
         'Reroll unavailable because your original audit text is not in session. Please start a new Soul Audit.',
       )
@@ -648,6 +648,12 @@ export default function SoulAuditResultsPage() {
       )
       return
     }
+    if (!submitResult?.auditRunId || !submitResult.runToken) {
+      setError(
+        'Run details expired and could not be verified. Please restart Soul Audit.',
+      )
+      return
+    }
 
     setSubmitting(true)
     setError(null)
@@ -657,8 +663,8 @@ export default function SoulAuditResultsPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           response: lastAuditInput,
-          rerollForRunId: submitResult?.auditRunId,
-          runToken: submitResult?.runToken,
+          rerollForRunId: submitResult.auditRunId,
+          runToken: submitResult.runToken,
         }),
       })
       const payload = (await response.json()) as SoulAuditSubmitResponseV2 & {
@@ -1400,7 +1406,12 @@ export default function SoulAuditResultsPage() {
                 <button
                   type="button"
                   onClick={() => void recoverExpiredRun()}
-                  disabled={submitting || !lastAuditInput}
+                  disabled={
+                    submitting ||
+                    !lastAuditInput ||
+                    !submitResult?.auditRunId ||
+                    !submitResult?.runToken
+                  }
                   className="cta-major text-label vw-small px-5 py-2 disabled:opacity-50"
                 >
                   {submitting ? 'Reloading...' : 'Reload Options'}

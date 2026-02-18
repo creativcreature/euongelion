@@ -49,6 +49,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - Added contract assertions so reroll-state reset behavior remains locked.
 - Added token-verified reroll/recovery submit mode so reloading options does not consume additional audit-cycle quota.
 - Added API flow coverage for quota-preserving reroll and unverified reroll rejection.
+- Tightened results-side guards so reroll/recovery actions require current run-token presence before execution.
 
 ### Files
 
