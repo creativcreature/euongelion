@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import FadeIn from '@/components/motion/FadeIn'
+import { submitSoulAuditResponse } from '@/lib/soul-audit/submit-client'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
 import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
@@ -15,6 +16,9 @@ export default function SoulAuditPage() {
   const [response, setResponse] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [lastFailedSubmission, setLastFailedSubmission] = useState<
+    string | null
+  >(null)
   const [nudge, setNudge] = useState(false)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const router = useRouter()
@@ -31,13 +35,12 @@ export default function SoulAuditPage() {
     textareaRef.current?.focus()
   }, [])
 
-  const charCount = response.trim().length
-
   const handleResetAudit = async () => {
     resetAudit()
     setError(null)
     setNudge(false)
     setResponse('')
+    setLastFailedSubmission(null)
     sessionStorage.removeItem('soul-audit-result')
     sessionStorage.removeItem('soul-audit-submit-v2')
     sessionStorage.removeItem('soul-audit-selection-v2')
@@ -56,20 +59,26 @@ export default function SoulAuditPage() {
     }
   }
 
-  async function handleSubmit() {
+  async function submitResponse(raw: string) {
+    const trimmedResponse = raw.trim()
+    const charCount = trimmedResponse.length
+
     if (limitReached) {
       setError('You\u2019ve explored enough. Time to dive in.')
+      setLastFailedSubmission(null)
       return
     }
 
     if (charCount === 0) {
       setError('Take your time. When you\u2019re ready, just write what comes.')
+      setLastFailedSubmission(null)
       return
     }
 
     if (charCount < 10 && !nudge) {
       setNudge(true)
       setError('Say a little more. Even one sentence helps.')
+      setLastFailedSubmission(null)
       return
     }
 
@@ -77,37 +86,25 @@ export default function SoulAuditPage() {
     setError(null)
 
     try {
-      const res = await fetch('/api/soul-audit/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ response: response.trim() }),
-      })
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}))
-        throw new Error(
-          data.error ||
-            'Something broke. It\u2019s not you. We\u2019re working on it.',
-        )
-      }
-
-      const data = (await res.json()) as SoulAuditSubmitResponseV2
+      const data = (await submitSoulAuditResponse({
+        response: trimmedResponse,
+      })) as SoulAuditSubmitResponseV2
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(data))
       sessionStorage.removeItem('soul-audit-selection-v2')
-      recordAudit(response.trim(), data)
+      recordAudit(trimmedResponse, data)
+      setLastFailedSubmission(null)
       router.push('/soul-audit/results')
     } catch (err) {
-      const offline =
-        typeof window !== 'undefined' && navigator && !navigator.onLine
       setError(
-        offline
-          ? 'You are offline. Reconnect to generate your devotional options.'
-          : err instanceof Error
-            ? err.message
-            : 'Something broke. Try again.',
+        err instanceof Error ? err.message : 'Something broke. Try again.',
       )
+      setLastFailedSubmission(trimmedResponse)
       setIsSubmitting(false)
     }
+  }
+
+  async function handleSubmit() {
+    await submitResponse(response)
   }
 
   return (
@@ -208,6 +205,19 @@ export default function SoulAuditPage() {
                     <p className="vw-body mb-6 text-center text-secondary">
                       {error}
                     </p>
+                  )}
+                  {error && lastFailedSubmission && !isSubmitting && (
+                    <div className="mb-6 text-center">
+                      <button
+                        type="button"
+                        className="text-label vw-small border border-[var(--color-border)] px-5 py-2"
+                        onClick={() =>
+                          void submitResponse(lastFailedSubmission)
+                        }
+                      >
+                        Retry Last Submit
+                      </button>
+                    </div>
                   )}
 
                   <button

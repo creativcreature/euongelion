@@ -8,6 +8,7 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { scriptureLeadFromFramework } from '@/lib/scripture-reference'
+import { submitSoulAuditResponse } from '@/lib/soul-audit/submit-client'
 import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_DATA } from '@/data/series'
 import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
@@ -61,6 +62,9 @@ export default function Home() {
   const [auditText, setAuditText] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [lastFailedSubmission, setLastFailedSubmission] = useState<
+    string | null
+  >(null)
   const [faqIndex, setFaqIndex] = useState(0)
   const [activeFaqQuestion, setActiveFaqQuestion] = useState<string | null>(
     null,
@@ -223,6 +227,7 @@ export default function Home() {
     setError(null)
     setResumeRoute(null)
     setAuditText('')
+    setLastFailedSubmission(null)
     sessionStorage.removeItem('soul-audit-result')
     sessionStorage.removeItem('soul-audit-submit-v2')
     sessionStorage.removeItem('soul-audit-selection-v2')
@@ -246,12 +251,14 @@ export default function Home() {
   async function submitAudit(raw: string) {
     if (limitReached) {
       setError('You\u2019ve explored enough. Time to dive in.')
+      setLastFailedSubmission(null)
       return
     }
 
     const trimmed = raw.trim()
     if (trimmed.length < 10) {
       setError('Write one honest paragraph so we can craft your devotional.')
+      setLastFailedSubmission(null)
       return
     }
 
@@ -259,28 +266,21 @@ export default function Home() {
     setError(null)
 
     try {
-      const res = await fetch('/api/soul-audit/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ response: trimmed }),
-      })
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}))
-        throw new Error(data.error || 'Unable to process soul audit right now.')
-      }
-
-      const data = (await res.json()) as SoulAuditSubmitResponseV2
+      const data = (await submitSoulAuditResponse({
+        response: trimmed,
+      })) as SoulAuditSubmitResponseV2
       sessionStorage.setItem(LAST_AUDIT_INPUT_SESSION_KEY, trimmed)
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(data))
       sessionStorage.removeItem('soul-audit-selection-v2')
       sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
       recordAudit(trimmed, data)
+      setLastFailedSubmission(null)
       router.push('/soul-audit/results')
     } catch (err) {
       setError(
         err instanceof Error ? err.message : 'Something broke. Try again.',
       )
+      setLastFailedSubmission(trimmed)
     } finally {
       setIsSubmitting(false)
     }
@@ -378,6 +378,15 @@ export default function Home() {
                   </>
                 )}
                 {error && <p className="mock-error">{error}</p>}
+                {lastFailedSubmission && !isSubmitting && (
+                  <button
+                    type="button"
+                    className="mock-reset-btn text-label"
+                    onClick={() => void submitAudit(lastFailedSubmission)}
+                  >
+                    Retry Last Submit
+                  </button>
+                )}
               </>
             )}
           </section>
@@ -635,6 +644,16 @@ export default function Home() {
               <p className="mock-footnote">
                 No account required. Start immediately.
               </p>
+              {error && <p className="mock-error">{error}</p>}
+              {lastFailedSubmission && !isSubmitting && (
+                <button
+                  type="button"
+                  className="mock-reset-btn text-label"
+                  onClick={() => void submitAudit(lastFailedSubmission)}
+                >
+                  Retry Last Submit
+                </button>
+              )}
               {hydrated && auditCount > 0 && (
                 <button
                   type="button"

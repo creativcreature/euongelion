@@ -96,11 +96,31 @@ for (const token of requiredChatTokens) {
 
 const homePage = readFile(path.join(ROOT, 'src/app/page.tsx'))
 const soulAuditPage = readFile(path.join(ROOT, 'src/app/soul-audit/page.tsx'))
-if (!homePage.includes('/api/soul-audit/submit')) {
+const submitClientPath = path.join(
+  ROOT,
+  'src/lib/soul-audit/submit-client.ts',
+)
+const submitClient = fs.existsSync(submitClientPath)
+  ? readFile(submitClientPath)
+  : ''
+const helperTargetsSubmitRoute = submitClient.includes('/api/soul-audit/submit')
+
+const homeDirectSubmit = homePage.includes('/api/soul-audit/submit')
+const homeHelperSubmit = homePage.includes('submitSoulAuditResponse(')
+if (!homeDirectSubmit && !homeHelperSubmit) {
   fail('src/app/page.tsx must submit to /api/soul-audit/submit')
 }
-if (!soulAuditPage.includes('/api/soul-audit/submit')) {
+if (homeHelperSubmit && !helperTargetsSubmitRoute) {
+  fail('submit helper must submit to /api/soul-audit/submit')
+}
+
+const soulAuditDirectSubmit = soulAuditPage.includes('/api/soul-audit/submit')
+const soulAuditHelperSubmit = soulAuditPage.includes('submitSoulAuditResponse(')
+if (!soulAuditDirectSubmit && !soulAuditHelperSubmit) {
   fail('src/app/soul-audit/page.tsx must submit to /api/soul-audit/submit')
+}
+if (soulAuditHelperSubmit && !helperTargetsSubmitRoute) {
+  fail('submit helper must submit to /api/soul-audit/submit')
 }
 
 console.log('[production-contracts] OK')

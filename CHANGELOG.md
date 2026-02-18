@@ -35,6 +35,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Submit Resilience Pass (2026-02-18)
+
+### What Changed
+
+- Added shared client submit transport for Soul Audit:
+  - request timeout guard with abort handling
+  - normalized offline/server/timeout error mapping.
+- Wired both submit entry points (`/` homepage and `/soul-audit`) to the shared submit transport.
+- Added retry affordance for failed submits so users can retry the last payload without retyping.
+- Updated production-contract verification to support helper-based submit transport while still enforcing `/api/soul-audit/submit` as canonical endpoint.
+- Added regression tests for:
+  - successful submit payload passthrough
+  - server error propagation
+  - timeout failure mapping
+  - offline failure mapping.
+
+### Files
+
+- `src/lib/soul-audit/submit-client.ts`
+- `src/app/page.tsx`
+- `src/app/soul-audit/page.tsx`
+- `__tests__/soul-audit-submit-client.test.ts`
+- `docs/feature-prds/F-019.md`
+- `scripts/check-production-contracts.mjs`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Shell Consistency + Scroll Unlock Hardening (2026-02-18)
 
 ### What Changed
