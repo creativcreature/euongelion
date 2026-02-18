@@ -78,14 +78,24 @@ export default function TextHighlightTrigger({
           },
         }),
       })
-      if (response.ok) {
-        setSaved(true)
-        window.dispatchEvent(new CustomEvent('libraryUpdated'))
-        setTimeout(() => {
-          setTooltip(null)
-          setSaved(false)
-        }, 700)
+      if (!response.ok) {
+        const payload = (await response.json().catch(() => ({}))) as {
+          code?: string
+        }
+        if (payload.code === 'AUTH_REQUIRED_SAVE_STATE') {
+          const redirect = `${window.location.pathname}${window.location.search}`
+          window.location.assign(
+            `/auth/sign-in?redirect=${encodeURIComponent(redirect)}`,
+          )
+        }
+        return
       }
+      setSaved(true)
+      window.dispatchEvent(new CustomEvent('libraryUpdated'))
+      setTimeout(() => {
+        setTooltip(null)
+        setSaved(false)
+      }, 700)
     } finally {
       setSaving(false)
     }

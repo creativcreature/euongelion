@@ -388,10 +388,17 @@ export default function DevotionalLibraryRail({
   }, [])
 
   async function archiveBookmarkRow(bookmark: BookmarkRow) {
-    await fetch(
+    const response = await fetch(
       `/api/bookmarks?devotionalSlug=${encodeURIComponent(bookmark.devotional_slug)}`,
       { method: 'DELETE' },
     )
+    if (!response.ok) {
+      const payload = (await response.json().catch(() => ({}))) as {
+        error?: string
+      }
+      setError(payload.error || 'Unable to archive bookmark.')
+      return
+    }
 
     setBookmarks((prev) =>
       prev.filter((row) => row.devotional_slug !== bookmark.devotional_slug),
@@ -408,12 +415,19 @@ export default function DevotionalLibraryRail({
   }
 
   async function archiveAnnotationRow(annotation: AnnotationRow) {
-    await fetch(
+    const response = await fetch(
       `/api/annotations?annotationId=${encodeURIComponent(annotation.id)}`,
       {
         method: 'DELETE',
       },
     )
+    if (!response.ok) {
+      const payload = (await response.json().catch(() => ({}))) as {
+        error?: string
+      }
+      setError(payload.error || 'Unable to archive annotation.')
+      return
+    }
 
     setHighlights((prev) => prev.filter((row) => row.id !== annotation.id))
     setNotes((prev) => prev.filter((row) => row.id !== annotation.id))
@@ -445,7 +459,11 @@ export default function DevotionalLibraryRail({
         }),
       })
       if (!response.ok) {
-        throw new Error('Unable to restore bookmark.')
+        const payload = (await response.json().catch(() => ({}))) as {
+          error?: string
+        }
+        setError(payload.error || 'Unable to restore bookmark.')
+        return
       }
     }
 
@@ -462,7 +480,11 @@ export default function DevotionalLibraryRail({
         }),
       })
       if (!response.ok) {
-        throw new Error('Unable to restore annotation.')
+        const payload = (await response.json().catch(() => ({}))) as {
+          error?: string
+        }
+        setError(payload.error || 'Unable to restore annotation.')
+        return
       }
     }
 

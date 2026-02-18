@@ -5,6 +5,7 @@ import {
   removeAnnotation,
 } from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
+import { getUser } from '@/lib/auth'
 import {
   createRequestId,
   getClientKey,
@@ -33,6 +34,16 @@ export async function POST(request: NextRequest) {
   const requestId = createRequestId()
   const clientKey = getClientKey(request)
   try {
+    const user = await getUser()
+    if (!user) {
+      return jsonError({
+        error: 'Sign in is required before saving notes or highlights.',
+        code: 'AUTH_REQUIRED_SAVE_STATE',
+        status: 401,
+        requestId,
+      })
+    }
+
     const limiter = takeRateLimit({
       namespace: 'annotations-post',
       key: clientKey,
@@ -76,7 +87,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    const sessionToken = await getOrCreateAuditSessionToken()
+    const sessionToken = user.id
     const row = await addAnnotation({
       sessionToken,
       devotionalSlug,
@@ -126,7 +137,8 @@ export async function GET(request: NextRequest) {
         requestId,
       })
     }
-    const sessionToken = await getOrCreateAuditSessionToken()
+    const user = await getUser()
+    const sessionToken = user?.id ?? (await getOrCreateAuditSessionToken())
 
     if (annotationType && !ALLOWED_TYPES.has(annotationType)) {
       return jsonError({
@@ -181,6 +193,16 @@ export async function DELETE(request: NextRequest) {
   const requestId = createRequestId()
   const clientKey = getClientKey(request)
   try {
+    const user = await getUser()
+    if (!user) {
+      return jsonError({
+        error: 'Sign in is required before deleting notes or highlights.',
+        code: 'AUTH_REQUIRED_SAVE_STATE',
+        status: 401,
+        requestId,
+      })
+    }
+
     const annotationId = String(
       request.nextUrl.searchParams.get('annotationId') || '',
     ).trim()
@@ -192,7 +214,7 @@ export async function DELETE(request: NextRequest) {
       })
     }
 
-    const sessionToken = await getOrCreateAuditSessionToken()
+    const sessionToken = user.id
     await removeAnnotation({
       sessionToken,
       annotationId,

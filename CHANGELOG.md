@@ -5,6 +5,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Auth Save-Gate Alignment Pass (2026-02-18)
+
+### What Changed
+
+- Aligned runtime behavior to the product contract:
+  - no-account users can continue core browse/audit flows
+  - persistent save-state actions now require sign-in.
+- Enforced auth requirement on write operations for:
+  - `POST/DELETE /api/bookmarks`
+  - `POST/DELETE /api/annotations`
+- Added explicit `AUTH_REQUIRED_SAVE_STATE` API error code and human-readable messaging for blocked save operations.
+- Standardized authenticated save-state persistence keys to account identity (`user.id`) for bookmarks/annotations writes.
+- Improved UI error handling for save/archive/restore interactions to surface API auth errors instead of silent failure paths.
+
+### Files
+
+- `src/app/api/bookmarks/route.ts`
+- `src/app/api/annotations/route.ts`
+- `src/app/soul-audit/results/page.tsx`
+- `src/components/TextHighlightTrigger.tsx`
+- `src/components/DevotionalLibraryRail.tsx`
+- `src/components/DevotionalChat.tsx`
+- `docs/PRODUCTION-SOURCE-OF-TRUTH.md`
+- `docs/production-decisions.yaml`
+- `docs/feature-prds/F-035.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Curated Fail-Closed Enforcement Pass (2026-02-18)
 
 ### What Changed

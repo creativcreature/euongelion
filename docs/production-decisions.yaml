@@ -36,6 +36,8 @@ decisions:
     title: frozen-user-reference-directories-must-not-be-removed-or-renamed
   - id: SA-017
     title: app-store-release-gate-must-pass-before-submission
+  - id: SA-018
+    title: auth-required-for-persistent-save-state-actions
 
 contracts:
   required_files:

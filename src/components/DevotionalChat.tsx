@@ -72,9 +72,19 @@ export default function DevotionalChat({
             },
           }),
         })
-        if (response.ok) {
-          window.dispatchEvent(new CustomEvent('libraryUpdated'))
+        if (!response.ok) {
+          const payload = (await response.json().catch(() => ({}))) as {
+            error?: string
+            code?: string
+          }
+          if (payload.code === 'AUTH_REQUIRED_SAVE_STATE') {
+            setError(
+              payload.error || 'Sign in is required before saving notes.',
+            )
+          }
+          return
         }
+        window.dispatchEvent(new CustomEvent('libraryUpdated'))
       } catch {
         // no-op
       }

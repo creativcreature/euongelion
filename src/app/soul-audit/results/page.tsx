@@ -900,7 +900,16 @@ export default function SoulAuditResultsPage() {
         }),
       })
       if (!response.ok) {
-        throw new Error('Unable to save bookmark.')
+        const payload = (await response.json().catch(() => ({}))) as {
+          error?: string
+          code?: string
+        }
+        throw new Error(
+          payload.error ||
+            (payload.code === 'AUTH_REQUIRED_SAVE_STATE'
+              ? 'Sign in is required before saving bookmarks.'
+              : 'Unable to save bookmark.'),
+        )
       }
       setSavedDay(day.day)
       window.dispatchEvent(new CustomEvent('libraryUpdated'))

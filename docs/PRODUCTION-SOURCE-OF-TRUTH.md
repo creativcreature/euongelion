@@ -16,8 +16,8 @@ Euangelion Soul Audit and Devotional Engine are curated-first and selection-firs
 
 ## Locked Product Decisions
 
-1. No-account core usage in testing phase.
-2. Simulated account mode exists now; real auth deferred.
+1. No-account core usage in testing phase remains enabled for landing, audit submit, and option review.
+2. Real auth is enabled. Persistent save-state actions require sign-in.
 3. Soul Audit returns exactly 5 choices:
 4. 3 primary AI-ranked options.
 5. 2 secondary curated prefab options.

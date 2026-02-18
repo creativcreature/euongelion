@@ -5,6 +5,7 @@ import {
   removeBookmark,
 } from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
+import { getUser } from '@/lib/auth'
 import {
   createRequestId,
   getClientKey,
@@ -29,6 +30,16 @@ export async function POST(request: NextRequest) {
   const requestId = createRequestId()
   const clientKey = getClientKey(request)
   try {
+    const user = await getUser()
+    if (!user) {
+      return jsonError({
+        error: 'Sign in is required before saving bookmarks.',
+        code: 'AUTH_REQUIRED_SAVE_STATE',
+        status: 401,
+        requestId,
+      })
+    }
+
     const limiter = takeRateLimit({
       namespace: 'bookmarks-post',
       key: clientKey,
@@ -66,7 +77,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    const sessionToken = await getOrCreateAuditSessionToken()
+    const sessionToken = user.id
     const bookmark = await addBookmark({
       sessionToken,
       devotionalSlug,
@@ -97,7 +108,8 @@ export async function POST(request: NextRequest) {
 export async function GET() {
   const requestId = createRequestId()
   try {
-    const sessionToken = await getOrCreateAuditSessionToken()
+    const user = await getUser()
+    const sessionToken = user?.id ?? (await getOrCreateAuditSessionToken())
     const bookmarks = await listBookmarksWithFallback(sessionToken)
     return withRequestIdHeaders(
       NextResponse.json({ ok: true, bookmarks }, { status: 200 }),
@@ -123,6 +135,16 @@ export async function DELETE(request: NextRequest) {
   const requestId = createRequestId()
   const clientKey = getClientKey(request)
   try {
+    const user = await getUser()
+    if (!user) {
+      return jsonError({
+        error: 'Sign in is required before modifying bookmarks.',
+        code: 'AUTH_REQUIRED_SAVE_STATE',
+        status: 401,
+        requestId,
+      })
+    }
+
     const devotionalSlug = String(
       request.nextUrl.searchParams.get('devotionalSlug') || '',
     ).trim()
@@ -134,7 +156,7 @@ export async function DELETE(request: NextRequest) {
       })
     }
 
-    const sessionToken = await getOrCreateAuditSessionToken()
+    const sessionToken = user.id
     await removeBookmark({
       sessionToken,
       devotionalSlug,
