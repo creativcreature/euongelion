@@ -45,11 +45,13 @@ Format: Reverse chronological, grouped by sprint/date.
   - retained explicit restart path for a full clean reset.
 - Updated reroll logic to use the same session-backed input source so reroll remains available after a page refresh.
 - Cleared persisted input on audit reset/restart paths.
+- Added contract test coverage for run-recovery key invariants (input persistence + reload affordance).
 
 ### Files
 
 - `src/app/page.tsx`
 - `src/app/soul-audit/results/page.tsx`
+- `__tests__/soul-audit-run-recovery-contract.test.ts`
 - `docs/feature-prds/F-022.md`
 
 ### Validation
