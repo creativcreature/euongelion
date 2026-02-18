@@ -16,6 +16,7 @@ import {
   buildCuratedFirstPlan,
   buildOnboardingDay,
   MissingCuratedModuleError,
+  MissingReferenceGroundingError,
 } from '@/lib/soul-audit/curated-builder'
 import {
   createPlan,
@@ -414,10 +415,16 @@ export async function POST(request: NextRequest) {
       payload.route,
     )
   } catch (error) {
-    if (error instanceof MissingCuratedModuleError) {
+    if (
+      error instanceof MissingCuratedModuleError ||
+      error instanceof MissingReferenceGroundingError
+    ) {
       return jsonError({
         error: error.message,
-        code: 'MISSING_CURATED_MODULE',
+        code:
+          error instanceof MissingReferenceGroundingError
+            ? 'MISSING_REFERENCE_GROUNDING'
+            : 'MISSING_CURATED_MODULE',
         status: 422,
         requestId,
       })

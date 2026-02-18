@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import { CURATED_SOURCE_PRIORITY } from './constants'
-import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 
 export interface CuratedDayModule {
   type: string
@@ -141,51 +140,6 @@ function normalizeDay(raw: unknown, fallbackDay: number): CuratedDay | null {
   }
 }
 
-function buildSeriesFromPublicDevotionals(): CuratedSeries[] {
-  const results: CuratedSeries[] = []
-
-  for (const seriesSlug of ALL_SERIES_ORDER) {
-    const series = SERIES_DATA[seriesSlug]
-    if (!series) continue
-
-    const days: CuratedDay[] = []
-    for (const dayMeta of series.days) {
-      const filePath = path.join(
-        process.cwd(),
-        'public',
-        'devotionals',
-        `${dayMeta.slug}.json`,
-      )
-      const parsed = loadJsonFile(filePath)
-      if (!parsed) continue
-
-      const normalized = normalizeDay(
-        {
-          ...parsed,
-          day: dayMeta.day,
-          title: parsed.title || dayMeta.title,
-          scriptureReference:
-            parsed.scriptureReference || parsed.anchorVerse || '',
-        },
-        dayMeta.day,
-      )
-      if (!normalized) continue
-      days.push(normalized)
-    }
-
-    if (days.length >= 5) {
-      results.push({
-        slug: seriesSlug,
-        title: series.title,
-        sourcePath: 'public/devotionals/*.json',
-        days: days.sort((a, b) => a.day - b.day),
-      })
-    }
-  }
-
-  return results
-}
-
 function loadJsonFile(filePath: string): JsonObject | null {
   try {
     const raw = fs.readFileSync(filePath, 'utf8')
@@ -262,15 +216,6 @@ export function getCuratedCatalog(): Map<string, CuratedSeries> {
       if (!catalog.has(entry.slug)) {
         catalog.set(entry.slug, entry)
       }
-    }
-  }
-
-  // Runtime-safe fallback: curate from bundled public devotionals when
-  // content directories are unavailable in deployed server file tracing.
-  const publicFallbackSeries = buildSeriesFromPublicDevotionals()
-  for (const entry of publicFallbackSeries) {
-    if (!catalog.has(entry.slug)) {
-      catalog.set(entry.slug, entry)
     }
   }
 

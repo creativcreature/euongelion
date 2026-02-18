@@ -94,7 +94,7 @@ export interface AuditTelemetryRecord {
   id: string
   audit_run_id: string
   session_token: string
-  strategy: 'curated_candidates' | 'series_fallback'
+  strategy: 'curated_candidates'
   split_valid: boolean
   ai_primary_count: number
   curated_prefab_count: number

@@ -5,6 +5,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Curated Fail-Closed Enforcement Pass (2026-02-18)
+
+### What Changed
+
+- Removed runtime fallback option generation paths from Soul Audit matching.
+- Removed curated catalog fallback loading from bundled public devotional files.
+- Removed metadata-derived candidate fallback paths in curation engine.
+- Enforced mandatory reference-volume grounding for curated plan assembly:
+  - plan generation now fails closed when a day cannot retrieve local reference hits.
+  - selection route now returns explicit `MISSING_REFERENCE_GROUNDING` (422) for this condition.
+- Updated fail-closed regression coverage for zero curated candidate scenarios.
+
+### Files
+
+- `src/lib/soul-audit/matching.ts`
+- `src/lib/soul-audit/curated-catalog.ts`
+- `src/lib/soul-audit/curation-engine.ts`
+- `src/lib/soul-audit/curated-builder.ts`
+- `src/lib/soul-audit/repository.ts`
+- `src/app/api/soul-audit/submit/route.ts`
+- `src/app/api/soul-audit/select/route.ts`
+- `__tests__/soul-audit-fallback-options.test.ts`
+- `docs/feature-prds/F-023.md`
+- `docs/feature-prds/F-025.md`
+- `docs/feature-prds/F-026.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Non-Wake-Up Shell Parity Pass (2026-02-18)
 
 ### What Changed

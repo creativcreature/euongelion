@@ -259,11 +259,7 @@ export async function POST(request: NextRequest) {
             ).toFixed(4),
           )
         : 0
-    const strategy = responseOptions.some((option) =>
-      option.id.includes(':fallback:'),
-    )
-      ? 'series_fallback'
-      : 'curated_candidates'
+    const strategy = 'curated_candidates'
 
     await saveAuditTelemetry({
       runId: run.id,

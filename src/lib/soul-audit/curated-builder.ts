@@ -6,7 +6,7 @@ import {
   type CurationSeed,
   type CuratedDayCandidate,
 } from './curation-engine'
-import { retrieveReferenceHits } from './reference-volumes'
+import { retrieveReferenceHits, type ReferenceHit } from './reference-volumes'
 import type { OnboardingVariant } from './schedule'
 
 const CHIASTIC_POSITIONS: Array<'A' | 'B' | 'C' | "B'" | "A'"> = [
@@ -23,6 +23,15 @@ export class MissingCuratedModuleError extends Error {
       `Missing curated core module "${moduleType}" for ${slug} day ${day}. Rendering is blocked.`,
     )
     this.name = 'MissingCuratedModuleError'
+  }
+}
+
+export class MissingReferenceGroundingError extends Error {
+  constructor(slug: string, day: number) {
+    super(
+      `Missing required reference-volume grounding for ${slug} day ${day}. Rendering is blocked.`,
+    )
+    this.name = 'MissingReferenceGroundingError'
   }
 }
 
@@ -127,7 +136,7 @@ function expandedJournalPrompt(day: CuratedDayCandidate): string {
 
 function buildEndnotes(params: {
   candidate: CuratedDayCandidate
-  userResponse: string
+  referenceHits: ReferenceHit[]
 }): DevotionalDayEndnote[] {
   const notes: DevotionalDayEndnote[] = [
     {
@@ -147,13 +156,7 @@ function buildEndnotes(params: {
     },
   ]
 
-  const referenceHits = retrieveReferenceHits({
-    userResponse: params.userResponse,
-    scriptureReference: params.candidate.scriptureReference,
-    limit: 2,
-  })
-
-  referenceHits.forEach((hit) => {
+  params.referenceHits.forEach((hit) => {
     notes.push({
       id: notes.length + 1,
       source: hit.source,
@@ -230,8 +233,11 @@ export function buildCuratedFirstPlan(params: {
     const referenceHits = retrieveReferenceHits({
       userResponse: params.userResponse,
       scriptureReference: candidate.scriptureReference,
-      limit: 1,
+      limit: 2,
     })
+    if (referenceHits.length === 0) {
+      throw new MissingReferenceGroundingError(params.seriesSlug, dayNumber)
+    }
     const reflection = expandedReflection(
       params.userResponse,
       candidate,
@@ -268,7 +274,7 @@ export function buildCuratedFirstPlan(params: {
       journalPrompt,
       endnotes: buildEndnotes({
         candidate,
-        userResponse: params.userResponse,
+        referenceHits,
       }),
     }
   })
