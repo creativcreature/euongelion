@@ -76,6 +76,37 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Auth Shell Parity Pass (2026-02-18)
+
+### What Changed
+
+- Normalized auth entry routes to the same bounded newspaper shell used on homepage and core nav routes:
+  - `/auth/sign-in`
+  - `/auth/sign-up`
+- Both routes now render inside `mock-home` + `mock-paper` and use shared shell spacing so header/nav sticky behavior and border framing remain consistent.
+
+### Files
+
+- `src/app/auth/sign-in/page.tsx`
+- `src/app/auth/sign-up/page.tsx`
+- `docs/feature-prds/F-029.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Shell Consistency + Scroll Unlock Hardening (2026-02-18)
 
 ### What Changed

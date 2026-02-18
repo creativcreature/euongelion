@@ -142,27 +142,26 @@ function SignInForm() {
 
 export default function SignInPage() {
   return (
-    <div className="newspaper-home min-h-screen">
-      <EuangelionShellHeader />
+    <div className="mock-home">
+      <main id="main-content" className="mock-paper">
+        <EuangelionShellHeader />
 
-      <main
-        id="main-content"
-        className="mx-auto flex min-h-[calc(100vh-64px)] max-w-md flex-col items-center justify-center px-6"
-      >
-        <Suspense
-          fallback={
-            <div className="w-full text-center">
-              <p className="text-label vw-small mb-4 text-gold">SIGN IN</p>
-              <h1 className="text-serif-italic vw-heading-md mb-3">
-                Welcome back.
-              </h1>
-            </div>
-          }
-        >
-          <SignInForm />
-        </Suspense>
+        <section className="shell-content-pad mx-auto flex min-h-[calc(100vh-120px)] max-w-md flex-col items-center justify-center">
+          <Suspense
+            fallback={
+              <div className="w-full text-center">
+                <p className="text-label vw-small mb-4 text-gold">SIGN IN</p>
+                <h1 className="text-serif-italic vw-heading-md mb-3">
+                  Welcome back.
+                </h1>
+              </div>
+            }
+          >
+            <SignInForm />
+          </Suspense>
+        </section>
+        <SiteFooter />
       </main>
-      <SiteFooter />
     </div>
   )
 }
