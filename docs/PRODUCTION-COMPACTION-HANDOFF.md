@@ -1,6 +1,6 @@
 # Production Compaction Handoff
 
-Last Updated: 2026-02-14
+Last Updated: 2026-02-18
 Purpose: Guarantee continuity after context compaction with no behavior drift.
 
 ## Mandatory Resume Order
@@ -92,6 +92,15 @@ npm run build
 ```
 
 ## Current Snapshot
+
+### Continuity Snapshot (2026-02-18 12:30 local)
+
+- Scope completed: Governance drift reconciliation for feature tracking metadata and scoring policy wording.
+- Decision ids touched: SA-010, SA-014.
+- Verification run: `type-check`, `verify:production-contracts`, `verify:tracking`, `verify:feature-prds`, `verify:feature-prd-link`, `verify:methodology-traceability`, `verify:folder-structure`, `verify:appstore-gate`.
+- Score changes: No runtime UX score changes; tracking semantics aligned.
+- Blockers: None in this governance pass.
+- Next steps: Execute shell parity pass across remaining non-Wake-Up routes.
 
 ### Continuity Snapshot (2026-02-13 00:00 local)
 

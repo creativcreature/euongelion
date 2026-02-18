@@ -2,7 +2,7 @@
 
 Last Updated: 2026-02-18
 Owner: Product + Engineering
-Scoring Rule: Per founder direction, current scores are capped at **5/10** maximum. Every row includes a path to verified 10/10.
+Scoring Rule: Founder scoring authority is capped at **5/10** baseline until founder elevation. Engineering implementation scores may exceed 5 with evidence. Every row includes a path to verified 10/10.
 
 ## PRD Linkage
 

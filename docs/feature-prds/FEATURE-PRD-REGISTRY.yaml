@@ -1,12 +1,12 @@
 version: 1
-updated_at: 2026-02-14
+updated_at: 2026-02-18
 features:
   - id: F-001
     category: Governance
     feature: Changelog discipline
     slug: governance-changelog-discipline
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-001.md
     methodology_refs:
       - M00
@@ -15,7 +15,7 @@ features:
     feature: CLAUDE tracking spine
     slug: governance-claude-tracking-spine
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-002.md
     methodology_refs:
       - M00
@@ -24,7 +24,7 @@ features:
     feature: Version sync
     slug: governance-version-sync
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-003.md
     methodology_refs:
       - M00
@@ -33,7 +33,7 @@ features:
     feature: Compaction continuity
     slug: governance-compaction-continuity
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-004.md
     methodology_refs:
       - M00
@@ -42,7 +42,7 @@ features:
     feature: Masthead sizing/fidelity
     slug: homepage-ux-masthead-sizing-fidelity
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-005.md
     methodology_refs:
       - M00
@@ -54,7 +54,7 @@ features:
     feature: Hero proportion parity
     slug: homepage-ux-hero-proportion-parity
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-006.md
     methodology_refs:
       - M00
@@ -66,7 +66,7 @@ features:
     feature: Primary CTA clarity
     slug: homepage-ux-primary-cta-clarity
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-007.md
     methodology_refs:
       - M00
@@ -78,7 +78,7 @@ features:
     feature: FAQ interaction model
     slug: homepage-ux-faq-interaction-model
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-008.md
     methodology_refs:
       - M00
@@ -90,7 +90,7 @@ features:
     feature: Sticky desktop nav
     slug: navigation-sticky-desktop-nav
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-009.md
     methodology_refs:
       - M00
@@ -102,7 +102,7 @@ features:
     feature: Sticky mobile nav
     slug: navigation-sticky-mobile-nav
     baseline_score: 4
-    status: in-progress
+    status: done
     prd: docs/feature-prds/F-010.md
     methodology_refs:
       - M00
@@ -114,7 +114,7 @@ features:
     feature: Menu correctness
     slug: navigation-menu-correctness
     baseline_score: 4
-    status: in-progress
+    status: done
     prd: docs/feature-prds/F-011.md
     methodology_refs:
       - M00
@@ -126,7 +126,7 @@ features:
     feature: Instrument Serif coverage
     slug: typography-instrument-serif-coverage
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-012.md
     methodology_refs:
       - M00
@@ -137,7 +137,7 @@ features:
     feature: Industry UI/meta coverage
     slug: typography-industry-ui-meta-coverage
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-013.md
     methodology_refs:
       - M00
@@ -148,7 +148,7 @@ features:
     feature: Readability floor
     slug: typography-readability-floor
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-014.md
     methodology_refs:
       - M00
@@ -159,7 +159,7 @@ features:
     feature: Hierarchy cadence
     slug: typography-hierarchy-cadence
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-015.md
     methodology_refs:
       - M00
@@ -170,7 +170,7 @@ features:
     feature: Micro-interaction polish
     slug: motion-micro-interaction-polish
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-016.md
     methodology_refs:
       - M00
@@ -181,7 +181,7 @@ features:
     feature: Reduced-motion parity
     slug: motion-reduced-motion-parity
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-017.md
     methodology_refs:
       - M00
@@ -192,7 +192,7 @@ features:
     feature: Scroll reveal restraint
     slug: motion-scroll-reveal-restraint
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-018.md
     methodology_refs:
       - M00
@@ -203,7 +203,7 @@ features:
     feature: Submit contract (options-only)
     slug: soul-audit-submit-contract-options-only
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-019.md
     methodology_refs:
       - M00
@@ -215,7 +215,7 @@ features:
     feature: Consent gate
     slug: soul-audit-consent-gate
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-020.md
     methodology_refs:
       - M00
@@ -227,7 +227,7 @@ features:
     feature: 3 AI + 2 prefab split
     slug: soul-audit-3-ai-plus-2-prefab-split
     baseline_score: 5
-    status: in-progress
+    status: done
     prd: docs/feature-prds/F-021.md
     methodology_refs:
       - M00
@@ -239,7 +239,7 @@ features:
     feature: Selection locking
     slug: soul-audit-selection-locking
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-022.md
     methodology_refs:
       - M00
@@ -251,7 +251,7 @@ features:
     feature: Curated curation quality
     slug: soul-audit-curated-curation-quality
     baseline_score: 4
-    status: in-progress
+    status: done
     prd: docs/feature-prds/F-023.md
     methodology_refs:
       - M00
@@ -263,7 +263,7 @@ features:
     feature: Crisis path
     slug: soul-audit-crisis-path
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-024.md
     methodology_refs:
       - M00
@@ -275,7 +275,7 @@ features:
     feature: Curated-first assembly
     slug: devotional-engine-curated-first-assembly
     baseline_score: 4
-    status: in-progress
+    status: done
     prd: docs/feature-prds/F-025.md
     methodology_refs:
       - M00
@@ -287,7 +287,7 @@ features:
     feature: 80/20 curation/generation
     slug: devotional-engine-80-20-curation-generation
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-026.md
     methodology_refs:
       - M00
@@ -299,7 +299,7 @@ features:
     feature: Endnotes output
     slug: devotional-engine-endnotes-output
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-027.md
     methodology_refs:
       - M00
@@ -311,7 +311,7 @@ features:
     feature: Length/depth quality
     slug: devotional-engine-length-depth-quality
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-028.md
     methodology_refs:
       - M00
@@ -323,7 +323,7 @@ features:
     feature: Daily home continuity
     slug: devotional-ux-daily-home-continuity
     baseline_score: 4
-    status: in-progress
+    status: done
     prd: docs/feature-prds/F-029.md
     methodology_refs:
       - M00
@@ -335,7 +335,7 @@ features:
     feature: Left rail (archive/bookmarks/notes/favorites)
     slug: devotional-ux-left-rail-archive-bookmarks-notes-favorites
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-030.md
     methodology_refs:
       - M00
@@ -347,7 +347,7 @@ features:
     feature: Day progression display
     slug: devotional-ux-day-progression-display
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-031.md
     methodology_refs:
       - M00
@@ -359,7 +359,7 @@ features:
     feature: Onboarding Wed/Thu/Fri variants
     slug: devotional-ux-onboarding-wed-thu-fri-variants
     baseline_score: 5
-    status: in-progress
+    status: done
     prd: docs/feature-prds/F-032.md
     methodology_refs:
       - M00
@@ -371,7 +371,7 @@ features:
     feature: Local-corpus-only guardrail
     slug: chat-local-corpus-only-guardrail
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-033.md
     methodology_refs:
       - M00
@@ -382,7 +382,7 @@ features:
     feature: Citation visibility
     slug: chat-citation-visibility
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-034.md
     methodology_refs:
       - M00
@@ -393,7 +393,7 @@ features:
     feature: Anonymous default
     slug: data-and-privacy-anonymous-default
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-035.md
     methodology_refs:
       - M00
@@ -403,7 +403,7 @@ features:
     feature: Data export (mock account)
     slug: data-and-privacy-data-export-mock-account
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-036.md
     methodology_refs:
       - M00
@@ -413,7 +413,7 @@ features:
     feature: Retention clarity
     slug: data-and-privacy-retention-clarity
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-037.md
     methodology_refs:
       - M00
@@ -423,7 +423,7 @@ features:
     feature: API abuse controls
     slug: reliability-api-abuse-controls
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-038.md
     methodology_refs:
       - M00
@@ -432,7 +432,7 @@ features:
     feature: Error observability
     slug: reliability-error-observability
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-039.md
     methodology_refs:
       - M00
@@ -441,7 +441,7 @@ features:
     feature: Offline/degraded states
     slug: reliability-offline-degraded-states
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-040.md
     methodology_refs:
       - M00
@@ -450,7 +450,7 @@ features:
     feature: No horizontal overflow
     slug: performance-no-horizontal-overflow
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-041.md
     methodology_refs:
       - M00
@@ -460,7 +460,7 @@ features:
     feature: LCP/CLS stability
     slug: performance-lcp-cls-stability
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-042.md
     methodology_refs:
       - M00
@@ -470,7 +470,7 @@ features:
     feature: Interaction smoothness
     slug: performance-interaction-smoothness
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-043.md
     methodology_refs:
       - M00
@@ -480,7 +480,7 @@ features:
     feature: Keyboard navigation
     slug: accessibility-keyboard-navigation
     baseline_score: 5
-    status: planned
+    status: done
     prd: docs/feature-prds/F-044.md
     methodology_refs:
       - M00
@@ -490,7 +490,7 @@ features:
     feature: Contrast & readability
     slug: accessibility-contrast-and-readability
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-045.md
     methodology_refs:
       - M00
@@ -500,7 +500,7 @@ features:
     feature: Screen reader semantics
     slug: accessibility-screen-reader-semantics
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-046.md
     methodology_refs:
       - M00
@@ -510,7 +510,7 @@ features:
     feature: Entitlement checks
     slug: billing-entitlement-checks
     baseline_score: 3
-    status: planned
+    status: done
     prd: docs/feature-prds/F-047.md
     methodology_refs:
       - M00
@@ -520,7 +520,7 @@ features:
     feature: Payment lifecycle states
     slug: billing-payment-lifecycle-states
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-048.md
     methodology_refs:
       - M00
@@ -530,7 +530,7 @@ features:
     feature: Shell readiness
     slug: ios-shell-readiness
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-049.md
     methodology_refs:
       - M00
@@ -540,7 +540,7 @@ features:
     feature: App Store submission readiness
     slug: ios-app-store-submission-readiness
     baseline_score: 4
-    status: planned
+    status: done
     prd: docs/feature-prds/F-050.md
     methodology_refs:
       - M00

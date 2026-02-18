@@ -5,6 +5,39 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Governance Drift Reconciliation Pass (2026-02-18)
+
+### What Changed
+
+- Reconciled feature tracking status drift by aligning `FEATURE-PRD-REGISTRY.yaml` status values with the canonical done-state index.
+- Updated production tracking timestamps to reflect current governance state:
+  - `docs/PRODUCTION-SOURCE-OF-TRUTH.md`
+  - `docs/production-decisions.yaml`
+  - `docs/PRODUCTION-COMPACTION-HANDOFF.md`
+- Corrected scorecard policy wording to remove contradiction between founder-scoring rules and engineering implementation scores.
+- Added a new continuity snapshot recording the governance reconciliation pass.
+
+### Files
+
+- `docs/feature-prds/FEATURE-PRD-REGISTRY.yaml`
+- `docs/PRODUCTION-SOURCE-OF-TRUTH.md`
+- `docs/production-decisions.yaml`
+- `docs/PRODUCTION-FEATURE-SCORECARD.md`
+- `docs/PRODUCTION-COMPACTION-HANDOFF.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Shell Continuity + Founder Scoring Runbook Pass (2026-02-18)
 
 ### What Changed
