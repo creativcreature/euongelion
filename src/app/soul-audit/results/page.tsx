@@ -925,725 +925,761 @@ export default function SoulAuditResultsPage() {
 
   if (!submitResult && !planToken) {
     return (
-      <div className="newspaper-home min-h-screen bg-page">
-        <EuangelionShellHeader />
-        <div className="flex min-h-[calc(100vh-64px)] items-center justify-center">
-          <p className="text-muted">Loading...</p>
-        </div>
+      <div className="mock-home">
+        <main id="main-content" className="mock-paper">
+          <EuangelionShellHeader />
+          <section className="mock-panel">
+            <div className="flex min-h-[40vh] items-center justify-center">
+              <p className="text-muted">Loading...</p>
+            </div>
+          </section>
+          <SiteFooter />
+        </main>
       </div>
     )
   }
 
   return (
-    <div className="newspaper-home min-h-screen bg-page">
-      <EuangelionShellHeader />
-      <main id="main-content" className="shell-content-pad mx-auto max-w-6xl">
-        <Breadcrumbs
-          className="mb-7"
-          items={[
-            { label: 'HOME', href: '/' },
-            { label: 'SOUL AUDIT', href: '/soul-audit' },
-            { label: 'RESULTS' },
-          ]}
-        />
-        <FadeIn>
-          <header className="mb-10 text-center">
-            <p className="text-label vw-small mb-4 text-gold">SOUL AUDIT</p>
-            <h1 className="vw-heading-md">
-              {typographer(
-                planToken
-                  ? 'Your devotional path is now active.'
-                  : 'Choose your devotional path.',
-              )}
-            </h1>
-            {!planToken && (
-              <p className="vw-small mt-3 text-secondary">
-                Tap a card to continue. Each option is clickable.
-              </p>
-            )}
-            {planToken && onboardingKicker && onboardingBlurb && (
-              <div
-                className="mx-auto mt-5 max-w-3xl border px-4 py-3 text-left"
-                style={{ borderColor: 'var(--color-border)' }}
-              >
-                <p className="text-label vw-small text-gold">
-                  {onboardingKicker}
-                </p>
-                <p className="vw-small mt-2 text-secondary">
-                  {typographer(onboardingBlurb)}
-                </p>
-                {cycleStartLabel && (
-                  <p className="vw-small mt-2 text-muted">
-                    Full 5-day cycle unlock: {cycleStartLabel}
-                  </p>
-                )}
-              </div>
-            )}
-          </header>
-        </FadeIn>
-
-        {!planToken && submitResult && (
-          <>
+    <div className="mock-home">
+      <main id="main-content" className="mock-paper">
+        <EuangelionShellHeader />
+        <section className="mock-panel">
+          <div className="mx-auto w-full max-w-6xl shell-content-pad">
+            <Breadcrumbs
+              className="mb-7"
+              items={[
+                { label: 'HOME', href: '/' },
+                { label: 'SOUL AUDIT', href: '/soul-audit' },
+                { label: 'RESULTS' },
+              ]}
+            />
             <FadeIn>
-              <section
-                className="mb-7 border p-4"
-                style={{ borderColor: 'var(--color-border)' }}
-              >
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-label vw-small text-gold">SAVED PATHS</p>
-                  {hasStaleSavedOptions && (
-                    <button
-                      type="button"
-                      className="text-label vw-small link-highlight"
-                      onClick={cleanSavedOptions}
-                    >
-                      Monthly clean house
-                    </button>
+              <header className="mb-10 text-center">
+                <p className="text-label vw-small mb-4 text-gold">SOUL AUDIT</p>
+                <h1 className="vw-heading-md">
+                  {typographer(
+                    planToken
+                      ? 'Your devotional path is now active.'
+                      : 'Choose your devotional path.',
                   )}
-                </div>
-                {savedOptions.length === 0 ? (
-                  <p className="vw-small mt-2 text-muted">
-                    Save options you may want to revisit later.
-                  </p>
-                ) : (
-                  <div className="mt-3 grid gap-2">
-                    {savedOptions.slice(0, 6).map((saved) => (
-                      <div
-                        key={`saved-option-${saved.id}`}
-                        className="border px-3 py-2"
-                        style={{ borderColor: 'var(--color-border)' }}
-                      >
-                        <div className="flex flex-wrap items-center justify-between gap-2">
-                          {saved.verse && (
-                            <p className="audit-option-verse vw-small w-full">
-                              {typographer(saved.verse)}
-                            </p>
-                          )}
-                          <p className="text-label vw-small text-gold">
-                            {saved.title}
-                          </p>
-                          <button
-                            type="button"
-                            className="text-label vw-small link-highlight"
-                            onClick={() => removeSavedOption(saved.id)}
-                          >
-                            Remove
-                          </button>
-                        </div>
-                        <p className="vw-small mt-1 text-secondary">
-                          {typographer(saved.question)}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                {savedOptionsMessage && (
-                  <p className="vw-small mt-2 text-muted">
-                    {savedOptionsMessage}
+                </h1>
+                {!planToken && (
+                  <p className="vw-small mt-3 text-secondary">
+                    Tap a card to continue. Each option is clickable.
                   </p>
                 )}
-              </section>
-            </FadeIn>
-
-            <FadeIn>
-              <section
-                className="mb-8 rounded-none border p-6"
-                style={{ borderColor: 'var(--color-border)' }}
-              >
-                {submitResult.crisis.required && (
+                {planToken && onboardingKicker && onboardingBlurb && (
                   <div
-                    className="mb-5 border-b pb-4"
+                    className="mx-auto mt-5 max-w-3xl border px-4 py-3 text-left"
                     style={{ borderColor: 'var(--color-border)' }}
                   >
-                    <p className="text-label vw-small mb-2 text-gold">
-                      CRISIS SUPPORT
+                    <p className="text-label vw-small text-gold">
+                      {onboardingKicker}
                     </p>
-                    <p className="vw-small mb-2 text-secondary">
-                      {typographer(submitResult.crisis.prompt)}
+                    <p className="vw-small mt-2 text-secondary">
+                      {typographer(onboardingBlurb)}
                     </p>
-                    <div className="grid gap-2">
-                      {submitResult.crisis.resources.map((resource) => {
-                        const href = crisisResourceHref(resource)
-                        return (
-                          <p
-                            key={resource.name}
-                            className="vw-small text-secondary"
-                          >
-                            <span className="text-label vw-small text-gold">
-                              {resource.name}:
-                            </span>{' '}
-                            {href ? (
-                              <a
-                                href={href}
-                                className="link-highlight"
-                                rel="noreferrer"
-                              >
-                                {resource.contact}
-                              </a>
-                            ) : (
-                              resource.contact
-                            )}
-                          </p>
-                        )
-                      })}
-                    </div>
-                    <a
-                      href="tel:988"
-                      className="text-label vw-small link-highlight mt-3 inline-block"
-                    >
-                      I NEED IMMEDIATE HELP NOW
-                    </a>
+                    {cycleStartLabel && (
+                      <p className="vw-small mt-2 text-muted">
+                        Full 5-day cycle unlock: {cycleStartLabel}
+                      </p>
+                    )}
                   </div>
                 )}
-
-                <div className="grid gap-3">
-                  <label className="flex items-start gap-3">
-                    <input
-                      type="checkbox"
-                      checked={essentialConsent}
-                      onChange={(e) => setEssentialConsent(e.target.checked)}
-                    />
-                    <span className="vw-small">
-                      I consent to essential processing so my devotional options
-                      and selected plan can be created.
-                    </span>
-                  </label>
-
-                  <label className="flex items-start gap-3">
-                    <input
-                      type="checkbox"
-                      checked={analyticsOptIn}
-                      onChange={(e) => setAnalyticsOptIn(e.target.checked)}
-                    />
-                    <span className="vw-small">
-                      Optional: allow anonymous analytics (default is off).
-                    </span>
-                  </label>
-
-                  {submitResult.crisis.required && (
-                    <label className="flex items-start gap-3">
-                      <input
-                        type="checkbox"
-                        checked={crisisAcknowledged}
-                        onChange={(e) =>
-                          setCrisisAcknowledged(e.target.checked)
-                        }
-                      />
-                      <span className="vw-small">
-                        I acknowledge the crisis resources above before
-                        continuing to devotional options.
-                      </span>
-                    </label>
-                  )}
-                </div>
-
-                <div className="mt-5 flex flex-wrap items-center gap-3">
-                  <button
-                    type="button"
-                    className="cta-major text-label vw-small px-4 py-2 disabled:opacity-50"
-                    onClick={() => void recordConsent()}
-                    disabled={
-                      consentStatus === 'saving' || !consentRequirementsMet
-                    }
-                  >
-                    {consentStatus === 'saving'
-                      ? 'Recording Consent...'
-                      : selectionUnlocked
-                        ? 'Consent Recorded'
-                        : 'Record Consent'}
-                  </button>
-                  <p className="vw-small text-secondary">
-                    {selectionUnlocked
-                      ? 'Consent saved. You can now select a devotional path.'
-                      : submitResult.crisis.required && !crisisAcknowledged
-                        ? 'Acknowledge crisis support before recording consent.'
-                        : essentialConsent
-                          ? 'Record consent to unlock option selection.'
-                          : 'Check essential consent to continue.'}
-                  </p>
-                </div>
-              </section>
+              </header>
             </FadeIn>
 
-            <FadeIn>
-              <section
-                className="mb-7 border p-4"
-                style={{ borderColor: 'var(--color-border)' }}
-              >
-                <p className="text-label vw-small mb-2 text-gold">
-                  OPTION CONTROLS
-                </p>
-                <p className="vw-small text-secondary">
-                  You can reroll once. Rerolling discards the current 5 options
-                  permanently.
-                </p>
-                {!rerollUsed ? (
-                  <div className="mt-3 flex flex-wrap items-center gap-2">
-                    {!showRerollConfirm ? (
-                      <button
-                        type="button"
-                        className="text-label vw-small link-highlight"
-                        onClick={() => setShowRerollConfirm(true)}
-                        disabled={isRerolling || submitting}
-                      >
-                        Reroll Options (1x)
-                      </button>
-                    ) : (
-                      <>
-                        <input
-                          value={rerollConfirmValue}
-                          onChange={(event) =>
-                            setRerollConfirmValue(event.target.value)
-                          }
-                          placeholder="Type REROLL"
-                          className="bg-surface-raised px-3 py-2 vw-small"
-                          style={{ border: '1px solid var(--color-border)' }}
-                          disabled={isRerolling}
-                        />
-                        <button
-                          type="button"
-                          className="cta-major text-label vw-small px-4 py-2 disabled:opacity-50"
-                          disabled={
-                            isRerolling ||
-                            rerollConfirmValue.trim().toUpperCase() !== 'REROLL'
-                          }
-                          onClick={() => void rerollOptions()}
-                        >
-                          {isRerolling ? 'Rerolling...' : 'Confirm Reroll'}
-                        </button>
+            {!planToken && submitResult && (
+              <>
+                <FadeIn>
+                  <section
+                    className="mb-7 border p-4"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <p className="text-label vw-small text-gold">
+                        SAVED PATHS
+                      </p>
+                      {hasStaleSavedOptions && (
                         <button
                           type="button"
                           className="text-label vw-small link-highlight"
-                          onClick={() => {
-                            setShowRerollConfirm(false)
-                            setRerollConfirmValue('')
-                          }}
-                          disabled={isRerolling}
+                          onClick={cleanSavedOptions}
                         >
-                          Cancel
+                          Monthly clean house
                         </button>
-                      </>
-                    )}
-                  </div>
-                ) : (
-                  <p className="vw-small mt-2 text-muted">
-                    Reroll already used for this audit run.
-                  </p>
-                )}
-              </section>
-            </FadeIn>
-
-            <FadeIn>
-              <section className="mb-6">
-                <div className="mb-4 flex items-center justify-between">
-                  <p className="text-label vw-small text-gold">
-                    3 PRIMARY AI OPTIONS
-                  </p>
-                  <p className="vw-small text-muted">
-                    {submitResult.remainingAudits} audits remaining this cycle
-                  </p>
-                </div>
-                {!selectionUnlocked && (
-                  <p className="vw-small mb-4 text-secondary">
-                    {submitResult.crisis.required && !crisisAcknowledged
-                      ? 'Acknowledge crisis support, then record consent to unlock option selection.'
-                      : essentialConsent
-                        ? 'Record consent to unlock option selection.'
-                        : 'Check essential consent, then record consent to unlock option selection.'}
-                  </p>
-                )}
-                <div className="grid gap-4 md:grid-cols-3">
-                  {submitResult.options
-                    .filter((option) => option.kind === 'ai_primary')
-                    .map((option) => (
-                      <article
-                        key={option.id}
-                        className="audit-option-card group relative overflow-hidden text-left"
-                        style={{
-                          border: '1px solid var(--color-border)',
-                          padding: '1.25rem',
-                        }}
-                      >
-                        <button
-                          type="button"
-                          disabled={submitting || !selectionUnlocked}
-                          onClick={() => void submitConsentAndSelect(option.id)}
-                          className={`w-full text-left ${
-                            selectionUnlocked ? 'cursor-pointer' : 'is-disabled'
-                          }`}
-                          aria-disabled={submitting || !selectionUnlocked}
-                        >
-                          {option.preview?.verse && (
-                            <p className="audit-option-verse vw-small mb-2">
-                              {typographer(option.preview.verse)}
-                            </p>
-                          )}
-                          <p className="text-label vw-small mb-2 text-gold">
-                            {option.title}
-                          </p>
-                          <p className="vw-body mb-2">
-                            {typographer(option.question)}
-                          </p>
-                          {option.preview?.paragraph && (
+                      )}
+                    </div>
+                    {savedOptions.length === 0 ? (
+                      <p className="vw-small mt-2 text-muted">
+                        Save options you may want to revisit later.
+                      </p>
+                    ) : (
+                      <div className="mt-3 grid gap-2">
+                        {savedOptions.slice(0, 6).map((saved) => (
+                          <div
+                            key={`saved-option-${saved.id}`}
+                            className="border px-3 py-2"
+                            style={{ borderColor: 'var(--color-border)' }}
+                          >
+                            <div className="flex flex-wrap items-center justify-between gap-2">
+                              {saved.verse && (
+                                <p className="audit-option-verse vw-small w-full">
+                                  {typographer(saved.verse)}
+                                </p>
+                              )}
+                              <p className="text-label vw-small text-gold">
+                                {saved.title}
+                              </p>
+                              <button
+                                type="button"
+                                className="text-label vw-small link-highlight"
+                                onClick={() => removeSavedOption(saved.id)}
+                              >
+                                Remove
+                              </button>
+                            </div>
                             <p className="vw-small mt-1 text-secondary">
-                              {typographer(option.preview.paragraph)}
+                              {typographer(saved.question)}
                             </p>
-                          )}
-                          <p className="audit-option-hint text-label vw-small mt-4">
-                            {selectionUnlocked
-                              ? 'Click to build this path'
-                              : 'Record consent to unlock'}
-                          </p>
-                        </button>
-                        <div
-                          className="mt-3 border-t pt-3"
-                          style={{ borderColor: 'var(--color-border)' }}
-                        >
-                          <button
-                            type="button"
-                            className="text-label vw-small link-highlight mr-4"
-                            onClick={() => saveOptionForLater(option)}
-                          >
-                            Save for later
-                          </button>
-                          <button
-                            type="button"
-                            className="text-label vw-small link-highlight"
-                            onClick={() =>
-                              setExpandedReasoningOptionId((current) =>
-                                current === option.id ? null : option.id,
-                              )
-                            }
-                          >
-                            {expandedReasoningOptionId === option.id
-                              ? 'Hide reasoning'
-                              : 'Why this path?'}
-                          </button>
-                          {expandedReasoningOptionId === option.id && (
-                            <p className="vw-small mt-2 text-secondary">
-                              {typographer(option.reasoning)}
-                            </p>
-                          )}
-                        </div>
-                        <span className="audit-option-underline" />
-                      </article>
-                    ))}
-                </div>
-              </section>
-            </FadeIn>
-
-            <FadeIn>
-              <section>
-                <p className="text-label vw-small mb-4 text-gold">
-                  2 CURATED PREFAB OPTIONS
-                </p>
-                <div className="grid gap-4 md:grid-cols-2">
-                  {submitResult.options
-                    .filter((option) => option.kind === 'curated_prefab')
-                    .map((option) => (
-                      <article
-                        key={option.id}
-                        className="audit-option-card group relative overflow-hidden text-left"
-                        style={{
-                          border: '1px solid var(--color-border)',
-                          padding: '1.25rem',
-                        }}
-                      >
-                        <button
-                          type="button"
-                          disabled={submitting || !selectionUnlocked}
-                          onClick={() => void submitConsentAndSelect(option.id)}
-                          className={`w-full text-left ${
-                            selectionUnlocked ? 'cursor-pointer' : 'is-disabled'
-                          }`}
-                          aria-disabled={submitting || !selectionUnlocked}
-                        >
-                          {option.preview?.verse && (
-                            <p className="audit-option-verse vw-small mb-2">
-                              {typographer(option.preview.verse)}
-                            </p>
-                          )}
-                          <p className="text-label vw-small mb-2 text-gold">
-                            {option.title}
-                          </p>
-                          <p className="vw-body mb-2">
-                            {typographer(option.question)}
-                          </p>
-                          <p className="vw-small text-secondary">
-                            Opens series overview.
-                          </p>
-                          <p className="audit-option-hint text-label vw-small mt-4">
-                            {selectionUnlocked
-                              ? 'Click to open this series'
-                              : 'Record consent to unlock'}
-                          </p>
-                        </button>
-                        <div
-                          className="mt-3 border-t pt-3"
-                          style={{ borderColor: 'var(--color-border)' }}
-                        >
-                          <button
-                            type="button"
-                            className="text-label vw-small link-highlight mr-4"
-                            onClick={() => saveOptionForLater(option)}
-                          >
-                            Save for later
-                          </button>
-                          <button
-                            type="button"
-                            className="text-label vw-small link-highlight"
-                            onClick={() =>
-                              setExpandedReasoningOptionId((current) =>
-                                current === option.id ? null : option.id,
-                              )
-                            }
-                          >
-                            {expandedReasoningOptionId === option.id
-                              ? 'Hide reasoning'
-                              : 'Why this path?'}
-                          </button>
-                          {expandedReasoningOptionId === option.id && (
-                            <p className="vw-small mt-2 text-secondary">
-                              {typographer(option.reasoning)}
-                            </p>
-                          )}
-                        </div>
-                        <span className="audit-option-underline" />
-                      </article>
-                    ))}
-                </div>
-              </section>
-            </FadeIn>
-          </>
-        )}
-
-        {planToken && (
-          <section className="md:grid md:grid-cols-[260px_minmax(0,1fr)] md:gap-8">
-            <aside className="mb-6 md:mb-0">
-              <div
-                className="shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
-                style={{ borderColor: 'var(--color-border)' }}
-              >
-                <p className="text-label vw-small mb-3 text-gold">NEXT DAYS</p>
-                {nextDays.length === 0 ? (
-                  <p className="vw-small text-muted">
-                    You have reached the latest unlocked day.
-                  </p>
-                ) : (
-                  <div className="grid gap-2">
-                    {nextDays.map((day) => (
-                      <div
-                        key={`rail-next-day-${day.day}`}
-                        className="border px-3 py-2"
-                        style={{ borderColor: 'var(--color-border)' }}
-                      >
-                        <p className="text-label vw-small text-gold">
-                          DAY {day.day}
-                          {day.locked ? ' • LOCKED' : ''}
-                        </p>
-                        {day.locked ? (
-                          <p className="vw-small text-secondary">
-                            {typographer(day.title)}
-                          </p>
-                        ) : (
-                          <a
-                            href={`#plan-day-${day.day}`}
-                            className="vw-small link-highlight text-secondary"
-                          >
-                            {typographer(day.title)}
-                          </a>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                <div
-                  className="mt-5 border-t pt-4"
-                  style={{ borderColor: 'var(--color-border)' }}
-                >
-                  <p className="text-label vw-small mb-3 text-gold">ARCHIVE</p>
-                  {archiveForRail.length === 0 ? (
-                    <p className="vw-small text-muted">
-                      No previous AI devotional plans yet.
-                    </p>
-                  ) : (
-                    <div className="grid gap-2">
-                      {archiveForRail.slice(0, 6).map((plan) => (
-                        <Link
-                          key={`archive-${plan.planToken}`}
-                          href={plan.route}
-                          className="block border px-3 py-2 text-secondary"
-                          style={{ borderColor: 'var(--color-border)' }}
-                        >
-                          <p className="text-label vw-small text-gold">PLAN</p>
-                          <p className="vw-small">
-                            {formatShortDate(plan.createdAt)}
-                          </p>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </aside>
-
-            <div>
-              {loadingPlan && (
-                <p className="vw-body mb-6 text-secondary">
-                  Building your day-by-day devotional path...
-                </p>
-              )}
-
-              {lockedMessages.length > 0 && (
-                <div className="mb-8 space-y-2">
-                  {lockedMessages.map((message, index) => (
-                    <p
-                      key={`${message}-${index}`}
-                      className="vw-small text-secondary"
-                    >
-                      {message}
-                    </p>
-                  ))}
-                </div>
-              )}
-
-              <div className="space-y-6">
-                {planDays.map((day) => (
-                  <article
-                    key={`plan-day-${day.day}`}
-                    id={`plan-day-${day.day}`}
-                    style={{
-                      border: '1px solid var(--color-border)',
-                      padding: '1.5rem',
-                    }}
-                  >
-                    <p className="text-label vw-small mb-2 text-gold">
-                      DAY {day.day}
-                      {day.chiasticPosition ? ` • ${day.chiasticPosition}` : ''}
-                    </p>
-                    <h2 className="vw-heading-md mb-2">
-                      {typographer(day.title)}
-                    </h2>
-                    <p className="vw-small mb-4 text-muted">
-                      {day.scriptureReference}
-                    </p>
-                    <p className="scripture-block vw-body mb-4 text-secondary">
-                      {typographer(day.scriptureText)}
-                    </p>
-                    <p className="vw-body mb-4 text-secondary type-prose">
-                      {typographer(day.reflection)}
-                    </p>
-                    <p className="text-serif-italic vw-body mb-4 text-secondary type-prose">
-                      {typographer(day.prayer)}
-                    </p>
-                    <div className="grid gap-4 md:grid-cols-2">
-                      <p className="vw-small text-secondary">
-                        <strong className="text-gold">NEXT STEP: </strong>
-                        {typographer(day.nextStep)}
-                      </p>
-                      <p className="vw-small text-secondary">
-                        <strong className="text-gold">JOURNAL: </strong>
-                        {typographer(day.journalPrompt)}
-                      </p>
-                    </div>
-                    <div className="mt-4 flex flex-wrap items-center gap-3">
-                      <button
-                        type="button"
-                        className="text-label vw-small link-highlight"
-                        disabled={bookmarkingDay === day.day}
-                        onClick={() => void savePlanDayBookmark(day)}
-                      >
-                        {savedDay === day.day
-                          ? 'BOOKMARK SAVED'
-                          : bookmarkingDay === day.day
-                            ? 'SAVING...'
-                            : 'SAVE BOOKMARK'}
-                      </button>
-                      <span className="vw-small text-muted">
-                        Highlight any line to save a favorite verse.
-                      </span>
-                    </div>
-                    {(day.endnotes?.length ?? 0) > 0 && (
-                      <div className="mt-5 border-t pt-4">
-                        <p className="text-label vw-small mb-2 text-gold">
-                          ENDNOTES
-                        </p>
-                        {day.endnotes?.map((note) => (
-                          <p
-                            key={`${day.day}-endnote-${note.id}`}
-                            className="vw-small text-muted"
-                          >
-                            [{note.id}] {note.source} — {note.note}
-                          </p>
+                          </div>
                         ))}
                       </div>
                     )}
-                  </article>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
+                    {savedOptionsMessage && (
+                      <p className="vw-small mt-2 text-muted">
+                        {savedOptionsMessage}
+                      </p>
+                    )}
+                  </section>
+                </FadeIn>
 
-        {error && (
-          <div className="mt-6 text-center">
-            <p className="vw-body text-secondary">{error}</p>
-            {runExpired && (
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => void recoverExpiredRun()}
-                  disabled={
-                    submitting ||
-                    !lastAuditInput ||
-                    !submitResult?.auditRunId ||
-                    !submitResult?.runToken
-                  }
-                  className="cta-major text-label vw-small px-5 py-2 disabled:opacity-50"
-                >
-                  {submitting ? 'Reloading...' : 'Reload Options'}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    sessionStorage.removeItem('soul-audit-submit-v2')
-                    sessionStorage.removeItem('soul-audit-selection-v2')
-                    sessionStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)
-                    sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
-                    void fetch('/api/soul-audit/reset', {
-                      method: 'POST',
-                    }).catch(() => {})
-                    router.push('/soul-audit')
-                  }}
-                  className="text-label vw-small link-highlight"
-                >
-                  Restart Soul Audit
-                </button>
+                <FadeIn>
+                  <section
+                    className="mb-8 rounded-none border p-6"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    {submitResult.crisis.required && (
+                      <div
+                        className="mb-5 border-b pb-4"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        <p className="text-label vw-small mb-2 text-gold">
+                          CRISIS SUPPORT
+                        </p>
+                        <p className="vw-small mb-2 text-secondary">
+                          {typographer(submitResult.crisis.prompt)}
+                        </p>
+                        <div className="grid gap-2">
+                          {submitResult.crisis.resources.map((resource) => {
+                            const href = crisisResourceHref(resource)
+                            return (
+                              <p
+                                key={resource.name}
+                                className="vw-small text-secondary"
+                              >
+                                <span className="text-label vw-small text-gold">
+                                  {resource.name}:
+                                </span>{' '}
+                                {href ? (
+                                  <a
+                                    href={href}
+                                    className="link-highlight"
+                                    rel="noreferrer"
+                                  >
+                                    {resource.contact}
+                                  </a>
+                                ) : (
+                                  resource.contact
+                                )}
+                              </p>
+                            )
+                          })}
+                        </div>
+                        <a
+                          href="tel:988"
+                          className="text-label vw-small link-highlight mt-3 inline-block"
+                        >
+                          I NEED IMMEDIATE HELP NOW
+                        </a>
+                      </div>
+                    )}
+
+                    <div className="grid gap-3">
+                      <label className="flex items-start gap-3">
+                        <input
+                          type="checkbox"
+                          checked={essentialConsent}
+                          onChange={(e) =>
+                            setEssentialConsent(e.target.checked)
+                          }
+                        />
+                        <span className="vw-small">
+                          I consent to essential processing so my devotional
+                          options and selected plan can be created.
+                        </span>
+                      </label>
+
+                      <label className="flex items-start gap-3">
+                        <input
+                          type="checkbox"
+                          checked={analyticsOptIn}
+                          onChange={(e) => setAnalyticsOptIn(e.target.checked)}
+                        />
+                        <span className="vw-small">
+                          Optional: allow anonymous analytics (default is off).
+                        </span>
+                      </label>
+
+                      {submitResult.crisis.required && (
+                        <label className="flex items-start gap-3">
+                          <input
+                            type="checkbox"
+                            checked={crisisAcknowledged}
+                            onChange={(e) =>
+                              setCrisisAcknowledged(e.target.checked)
+                            }
+                          />
+                          <span className="vw-small">
+                            I acknowledge the crisis resources above before
+                            continuing to devotional options.
+                          </span>
+                        </label>
+                      )}
+                    </div>
+
+                    <div className="mt-5 flex flex-wrap items-center gap-3">
+                      <button
+                        type="button"
+                        className="cta-major text-label vw-small px-4 py-2 disabled:opacity-50"
+                        onClick={() => void recordConsent()}
+                        disabled={
+                          consentStatus === 'saving' || !consentRequirementsMet
+                        }
+                      >
+                        {consentStatus === 'saving'
+                          ? 'Recording Consent...'
+                          : selectionUnlocked
+                            ? 'Consent Recorded'
+                            : 'Record Consent'}
+                      </button>
+                      <p className="vw-small text-secondary">
+                        {selectionUnlocked
+                          ? 'Consent saved. You can now select a devotional path.'
+                          : submitResult.crisis.required && !crisisAcknowledged
+                            ? 'Acknowledge crisis support before recording consent.'
+                            : essentialConsent
+                              ? 'Record consent to unlock option selection.'
+                              : 'Check essential consent to continue.'}
+                      </p>
+                    </div>
+                  </section>
+                </FadeIn>
+
+                <FadeIn>
+                  <section
+                    className="mb-7 border p-4"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    <p className="text-label vw-small mb-2 text-gold">
+                      OPTION CONTROLS
+                    </p>
+                    <p className="vw-small text-secondary">
+                      You can reroll once. Rerolling discards the current 5
+                      options permanently.
+                    </p>
+                    {!rerollUsed ? (
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
+                        {!showRerollConfirm ? (
+                          <button
+                            type="button"
+                            className="text-label vw-small link-highlight"
+                            onClick={() => setShowRerollConfirm(true)}
+                            disabled={isRerolling || submitting}
+                          >
+                            Reroll Options (1x)
+                          </button>
+                        ) : (
+                          <>
+                            <input
+                              value={rerollConfirmValue}
+                              onChange={(event) =>
+                                setRerollConfirmValue(event.target.value)
+                              }
+                              placeholder="Type REROLL"
+                              className="bg-surface-raised px-3 py-2 vw-small"
+                              style={{
+                                border: '1px solid var(--color-border)',
+                              }}
+                              disabled={isRerolling}
+                            />
+                            <button
+                              type="button"
+                              className="cta-major text-label vw-small px-4 py-2 disabled:opacity-50"
+                              disabled={
+                                isRerolling ||
+                                rerollConfirmValue.trim().toUpperCase() !==
+                                  'REROLL'
+                              }
+                              onClick={() => void rerollOptions()}
+                            >
+                              {isRerolling ? 'Rerolling...' : 'Confirm Reroll'}
+                            </button>
+                            <button
+                              type="button"
+                              className="text-label vw-small link-highlight"
+                              onClick={() => {
+                                setShowRerollConfirm(false)
+                                setRerollConfirmValue('')
+                              }}
+                              disabled={isRerolling}
+                            >
+                              Cancel
+                            </button>
+                          </>
+                        )}
+                      </div>
+                    ) : (
+                      <p className="vw-small mt-2 text-muted">
+                        Reroll already used for this audit run.
+                      </p>
+                    )}
+                  </section>
+                </FadeIn>
+
+                <FadeIn>
+                  <section className="mb-6">
+                    <div className="mb-4 flex items-center justify-between">
+                      <p className="text-label vw-small text-gold">
+                        3 PRIMARY AI OPTIONS
+                      </p>
+                      <p className="vw-small text-muted">
+                        {submitResult.remainingAudits} audits remaining this
+                        cycle
+                      </p>
+                    </div>
+                    {!selectionUnlocked && (
+                      <p className="vw-small mb-4 text-secondary">
+                        {submitResult.crisis.required && !crisisAcknowledged
+                          ? 'Acknowledge crisis support, then record consent to unlock option selection.'
+                          : essentialConsent
+                            ? 'Record consent to unlock option selection.'
+                            : 'Check essential consent, then record consent to unlock option selection.'}
+                      </p>
+                    )}
+                    <div className="grid gap-4 md:grid-cols-3">
+                      {submitResult.options
+                        .filter((option) => option.kind === 'ai_primary')
+                        .map((option) => (
+                          <article
+                            key={option.id}
+                            className="audit-option-card group relative overflow-hidden text-left"
+                            style={{
+                              border: '1px solid var(--color-border)',
+                              padding: '1.25rem',
+                            }}
+                          >
+                            <button
+                              type="button"
+                              disabled={submitting || !selectionUnlocked}
+                              onClick={() =>
+                                void submitConsentAndSelect(option.id)
+                              }
+                              className={`w-full text-left ${
+                                selectionUnlocked
+                                  ? 'cursor-pointer'
+                                  : 'is-disabled'
+                              }`}
+                              aria-disabled={submitting || !selectionUnlocked}
+                            >
+                              {option.preview?.verse && (
+                                <p className="audit-option-verse vw-small mb-2">
+                                  {typographer(option.preview.verse)}
+                                </p>
+                              )}
+                              <p className="text-label vw-small mb-2 text-gold">
+                                {option.title}
+                              </p>
+                              <p className="vw-body mb-2">
+                                {typographer(option.question)}
+                              </p>
+                              {option.preview?.paragraph && (
+                                <p className="vw-small mt-1 text-secondary">
+                                  {typographer(option.preview.paragraph)}
+                                </p>
+                              )}
+                              <p className="audit-option-hint text-label vw-small mt-4">
+                                {selectionUnlocked
+                                  ? 'Click to build this path'
+                                  : 'Record consent to unlock'}
+                              </p>
+                            </button>
+                            <div
+                              className="mt-3 border-t pt-3"
+                              style={{ borderColor: 'var(--color-border)' }}
+                            >
+                              <button
+                                type="button"
+                                className="text-label vw-small link-highlight mr-4"
+                                onClick={() => saveOptionForLater(option)}
+                              >
+                                Save for later
+                              </button>
+                              <button
+                                type="button"
+                                className="text-label vw-small link-highlight"
+                                onClick={() =>
+                                  setExpandedReasoningOptionId((current) =>
+                                    current === option.id ? null : option.id,
+                                  )
+                                }
+                              >
+                                {expandedReasoningOptionId === option.id
+                                  ? 'Hide reasoning'
+                                  : 'Why this path?'}
+                              </button>
+                              {expandedReasoningOptionId === option.id && (
+                                <p className="vw-small mt-2 text-secondary">
+                                  {typographer(option.reasoning)}
+                                </p>
+                              )}
+                            </div>
+                            <span className="audit-option-underline" />
+                          </article>
+                        ))}
+                    </div>
+                  </section>
+                </FadeIn>
+
+                <FadeIn>
+                  <section>
+                    <p className="text-label vw-small mb-4 text-gold">
+                      2 CURATED PREFAB OPTIONS
+                    </p>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      {submitResult.options
+                        .filter((option) => option.kind === 'curated_prefab')
+                        .map((option) => (
+                          <article
+                            key={option.id}
+                            className="audit-option-card group relative overflow-hidden text-left"
+                            style={{
+                              border: '1px solid var(--color-border)',
+                              padding: '1.25rem',
+                            }}
+                          >
+                            <button
+                              type="button"
+                              disabled={submitting || !selectionUnlocked}
+                              onClick={() =>
+                                void submitConsentAndSelect(option.id)
+                              }
+                              className={`w-full text-left ${
+                                selectionUnlocked
+                                  ? 'cursor-pointer'
+                                  : 'is-disabled'
+                              }`}
+                              aria-disabled={submitting || !selectionUnlocked}
+                            >
+                              {option.preview?.verse && (
+                                <p className="audit-option-verse vw-small mb-2">
+                                  {typographer(option.preview.verse)}
+                                </p>
+                              )}
+                              <p className="text-label vw-small mb-2 text-gold">
+                                {option.title}
+                              </p>
+                              <p className="vw-body mb-2">
+                                {typographer(option.question)}
+                              </p>
+                              <p className="vw-small text-secondary">
+                                Opens series overview.
+                              </p>
+                              <p className="audit-option-hint text-label vw-small mt-4">
+                                {selectionUnlocked
+                                  ? 'Click to open this series'
+                                  : 'Record consent to unlock'}
+                              </p>
+                            </button>
+                            <div
+                              className="mt-3 border-t pt-3"
+                              style={{ borderColor: 'var(--color-border)' }}
+                            >
+                              <button
+                                type="button"
+                                className="text-label vw-small link-highlight mr-4"
+                                onClick={() => saveOptionForLater(option)}
+                              >
+                                Save for later
+                              </button>
+                              <button
+                                type="button"
+                                className="text-label vw-small link-highlight"
+                                onClick={() =>
+                                  setExpandedReasoningOptionId((current) =>
+                                    current === option.id ? null : option.id,
+                                  )
+                                }
+                              >
+                                {expandedReasoningOptionId === option.id
+                                  ? 'Hide reasoning'
+                                  : 'Why this path?'}
+                              </button>
+                              {expandedReasoningOptionId === option.id && (
+                                <p className="vw-small mt-2 text-secondary">
+                                  {typographer(option.reasoning)}
+                                </p>
+                              )}
+                            </div>
+                            <span className="audit-option-underline" />
+                          </article>
+                        ))}
+                    </div>
+                  </section>
+                </FadeIn>
+              </>
+            )}
+
+            {planToken && (
+              <section className="md:grid md:grid-cols-[260px_minmax(0,1fr)] md:gap-8">
+                <aside className="mb-6 md:mb-0">
+                  <div
+                    className="shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    <p className="text-label vw-small mb-3 text-gold">
+                      NEXT DAYS
+                    </p>
+                    {nextDays.length === 0 ? (
+                      <p className="vw-small text-muted">
+                        You have reached the latest unlocked day.
+                      </p>
+                    ) : (
+                      <div className="grid gap-2">
+                        {nextDays.map((day) => (
+                          <div
+                            key={`rail-next-day-${day.day}`}
+                            className="border px-3 py-2"
+                            style={{ borderColor: 'var(--color-border)' }}
+                          >
+                            <p className="text-label vw-small text-gold">
+                              DAY {day.day}
+                              {day.locked ? ' • LOCKED' : ''}
+                            </p>
+                            {day.locked ? (
+                              <p className="vw-small text-secondary">
+                                {typographer(day.title)}
+                              </p>
+                            ) : (
+                              <a
+                                href={`#plan-day-${day.day}`}
+                                className="vw-small link-highlight text-secondary"
+                              >
+                                {typographer(day.title)}
+                              </a>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <div
+                      className="mt-5 border-t pt-4"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      <p className="text-label vw-small mb-3 text-gold">
+                        ARCHIVE
+                      </p>
+                      {archiveForRail.length === 0 ? (
+                        <p className="vw-small text-muted">
+                          No previous AI devotional plans yet.
+                        </p>
+                      ) : (
+                        <div className="grid gap-2">
+                          {archiveForRail.slice(0, 6).map((plan) => (
+                            <Link
+                              key={`archive-${plan.planToken}`}
+                              href={plan.route}
+                              className="block border px-3 py-2 text-secondary"
+                              style={{ borderColor: 'var(--color-border)' }}
+                            >
+                              <p className="text-label vw-small text-gold">
+                                PLAN
+                              </p>
+                              <p className="vw-small">
+                                {formatShortDate(plan.createdAt)}
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </aside>
+
+                <div>
+                  {loadingPlan && (
+                    <p className="vw-body mb-6 text-secondary">
+                      Building your day-by-day devotional path...
+                    </p>
+                  )}
+
+                  {lockedMessages.length > 0 && (
+                    <div className="mb-8 space-y-2">
+                      {lockedMessages.map((message, index) => (
+                        <p
+                          key={`${message}-${index}`}
+                          className="vw-small text-secondary"
+                        >
+                          {message}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+
+                  <div className="space-y-6">
+                    {planDays.map((day) => (
+                      <article
+                        key={`plan-day-${day.day}`}
+                        id={`plan-day-${day.day}`}
+                        style={{
+                          border: '1px solid var(--color-border)',
+                          padding: '1.5rem',
+                        }}
+                      >
+                        <p className="text-label vw-small mb-2 text-gold">
+                          DAY {day.day}
+                          {day.chiasticPosition
+                            ? ` • ${day.chiasticPosition}`
+                            : ''}
+                        </p>
+                        <h2 className="vw-heading-md mb-2">
+                          {typographer(day.title)}
+                        </h2>
+                        <p className="vw-small mb-4 text-muted">
+                          {day.scriptureReference}
+                        </p>
+                        <p className="scripture-block vw-body mb-4 text-secondary">
+                          {typographer(day.scriptureText)}
+                        </p>
+                        <p className="vw-body mb-4 text-secondary type-prose">
+                          {typographer(day.reflection)}
+                        </p>
+                        <p className="text-serif-italic vw-body mb-4 text-secondary type-prose">
+                          {typographer(day.prayer)}
+                        </p>
+                        <div className="grid gap-4 md:grid-cols-2">
+                          <p className="vw-small text-secondary">
+                            <strong className="text-gold">NEXT STEP: </strong>
+                            {typographer(day.nextStep)}
+                          </p>
+                          <p className="vw-small text-secondary">
+                            <strong className="text-gold">JOURNAL: </strong>
+                            {typographer(day.journalPrompt)}
+                          </p>
+                        </div>
+                        <div className="mt-4 flex flex-wrap items-center gap-3">
+                          <button
+                            type="button"
+                            className="text-label vw-small link-highlight"
+                            disabled={bookmarkingDay === day.day}
+                            onClick={() => void savePlanDayBookmark(day)}
+                          >
+                            {savedDay === day.day
+                              ? 'BOOKMARK SAVED'
+                              : bookmarkingDay === day.day
+                                ? 'SAVING...'
+                                : 'SAVE BOOKMARK'}
+                          </button>
+                          <span className="vw-small text-muted">
+                            Highlight any line to save a favorite verse.
+                          </span>
+                        </div>
+                        {(day.endnotes?.length ?? 0) > 0 && (
+                          <div className="mt-5 border-t pt-4">
+                            <p className="text-label vw-small mb-2 text-gold">
+                              ENDNOTES
+                            </p>
+                            {day.endnotes?.map((note) => (
+                              <p
+                                key={`${day.day}-endnote-${note.id}`}
+                                className="vw-small text-muted"
+                              >
+                                [{note.id}] {note.source} — {note.note}
+                              </p>
+                            ))}
+                          </div>
+                        )}
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {error && (
+              <div className="mt-6 text-center">
+                <p className="vw-body text-secondary">{error}</p>
+                {runExpired && (
+                  <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+                    <button
+                      type="button"
+                      onClick={() => void recoverExpiredRun()}
+                      disabled={
+                        submitting ||
+                        !lastAuditInput ||
+                        !submitResult?.auditRunId ||
+                        !submitResult?.runToken
+                      }
+                      className="cta-major text-label vw-small px-5 py-2 disabled:opacity-50"
+                    >
+                      {submitting ? 'Reloading...' : 'Reload Options'}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        sessionStorage.removeItem('soul-audit-submit-v2')
+                        sessionStorage.removeItem('soul-audit-selection-v2')
+                        sessionStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)
+                        sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
+                        void fetch('/api/soul-audit/reset', {
+                          method: 'POST',
+                        }).catch(() => {})
+                        router.push('/soul-audit')
+                      }}
+                      className="text-label vw-small link-highlight"
+                    >
+                      Restart Soul Audit
+                    </button>
+                  </div>
+                )}
               </div>
             )}
-          </div>
-        )}
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-5 text-center">
-          <Link
-            href="/daily-bread"
-            className="text-label vw-small link-highlight"
-          >
-            Daily Bread Home
-          </Link>
-          <Link href="/series" className="text-label vw-small link-highlight">
-            Browse All Series
-          </Link>
-          <Link
-            href="/soul-audit"
-            className="text-label vw-small link-highlight"
-          >
-            New Soul Audit
-          </Link>
-        </div>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-5 text-center">
+              <Link
+                href="/daily-bread"
+                className="text-label vw-small link-highlight"
+              >
+                Daily Bread Home
+              </Link>
+              <Link
+                href="/series"
+                className="text-label vw-small link-highlight"
+              >
+                Browse All Series
+              </Link>
+              <Link
+                href="/soul-audit"
+                className="text-label vw-small link-highlight"
+              >
+                New Soul Audit
+              </Link>
+            </div>
+          </div>
+        </section>
+        <SiteFooter />
       </main>
-      <SiteFooter />
       {planToken && (
         <TextHighlightTrigger devotionalSlug={`plan-${planToken}`} />
       )}

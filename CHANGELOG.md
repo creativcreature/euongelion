@@ -5,6 +5,41 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Shell Continuity + Founder Scoring Runbook Pass (2026-02-18)
+
+### What Changed
+
+- Unified Soul Audit results route shell with Daily Bread shell:
+  - `/soul-audit/results`
+  - `/soul-audit/results/loading`
+  - `/soul-audit/error`
+- These routes now use the same `mock-home` + `mock-paper` frame contract as core devotional pages, removing cross-route visual drift from mixed shell systems.
+- Added a founder-facing manual UX scoring runbook to evaluate features/design/system with repeatable 0-10 scoring.
+
+### Files
+
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/soul-audit/results/loading.tsx`
+- `src/app/soul-audit/error.tsx`
+- `docs/process/FOUNDER-10-10-UX-EVALUATION-RUNBOOK.md`
+- `docs/feature-prds/F-029.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## 50-Feature PRD Closure Sweep (2026-02-18)
 
 ### What Changed
