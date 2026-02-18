@@ -606,7 +606,11 @@ export default function SoulAuditResultsPage() {
       const response = await fetch('/api/soul-audit/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ response: lastAuditInput }),
+        body: JSON.stringify({
+          response: lastAuditInput,
+          rerollForRunId: submitResult.auditRunId,
+          runToken: submitResult.runToken,
+        }),
       })
       const payload = (await response.json()) as SoulAuditSubmitResponseV2 & {
         error?: string
@@ -651,7 +655,11 @@ export default function SoulAuditResultsPage() {
       const response = await fetch('/api/soul-audit/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ response: lastAuditInput }),
+        body: JSON.stringify({
+          response: lastAuditInput,
+          rerollForRunId: submitResult?.auditRunId,
+          runToken: submitResult?.runToken,
+        }),
       })
       const payload = (await response.json()) as SoulAuditSubmitResponseV2 & {
         error?: string

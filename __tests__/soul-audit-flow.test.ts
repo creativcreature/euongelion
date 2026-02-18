@@ -285,4 +285,67 @@ describe('Soul Audit staged flow', () => {
     expect(selectionPayload.selectionType).toBe('curated_prefab')
     expect(selectionPayload.route).toMatch(/^\/wake-up\/series\//)
   })
+
+  it('reroll submit mode does not consume additional audit-cycle count', async () => {
+    mockedSessionToken = 'session-reroll-cycle'
+    resetSessionAuditCount(mockedSessionToken)
+
+    const first = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        response:
+          'I feel overwhelmed and need clarity for this week right now.',
+      }) as never,
+    )
+    expect(first.status).toBe(200)
+    const firstPayload = (await first.json()) as {
+      auditRunId: string
+      runToken: string
+      remainingAudits: number
+      version: string
+    }
+    expect(firstPayload.version).toBe('v2')
+    expect(firstPayload.remainingAudits).toBe(2)
+
+    const reroll = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        response:
+          'I feel overwhelmed and need clarity for this week right now.',
+        rerollForRunId: firstPayload.auditRunId,
+        runToken: firstPayload.runToken,
+      }) as never,
+    )
+    expect(reroll.status).toBe(200)
+    const rerollPayload = (await reroll.json()) as {
+      remainingAudits: number
+      version: string
+    }
+    expect(rerollPayload.version).toBe('v2')
+    expect(rerollPayload.remainingAudits).toBe(2)
+  })
+
+  it('rejects unverified reroll submit requests', async () => {
+    mockedSessionToken = 'session-reroll-invalid'
+    resetSessionAuditCount(mockedSessionToken)
+
+    const first = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        response: 'I am spiritually numb and need a faithful next step.',
+      }) as never,
+    )
+    expect(first.status).toBe(200)
+    const firstPayload = (await first.json()) as {
+      auditRunId: string
+    }
+
+    const reroll = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        response: 'I am spiritually numb and need a faithful next step.',
+        rerollForRunId: firstPayload.auditRunId,
+        runToken: 'invalid.token.value',
+      }) as never,
+    )
+    expect(reroll.status).toBe(403)
+    const payload = (await reroll.json()) as { error?: string }
+    expect(payload.error).toMatch(/could not be verified/i)
+  })
 })

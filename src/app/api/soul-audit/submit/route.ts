@@ -3,6 +3,7 @@ import { crisisRequirement, detectCrisis } from '@/lib/soul-audit/crisis'
 import {
   createRequestId,
   getClientKey,
+  isSafeAuditRunId,
   jsonError,
   logApiError,
   readJsonWithLimit,
@@ -17,7 +18,7 @@ import {
   buildAuditOptions,
   sanitizeAuditInput,
 } from '@/lib/soul-audit/matching'
-import { createRunToken } from '@/lib/soul-audit/run-token'
+import { createRunToken, verifyRunToken } from '@/lib/soul-audit/run-token'
 import {
   bumpSessionAuditCount,
   createAuditRun,
@@ -28,6 +29,8 @@ import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
 
 interface SubmitBody {
   response?: string
+  rerollForRunId?: string
+  runToken?: string
 }
 
 const MAX_SUBMIT_BODY_BYTES = 8_192
@@ -81,6 +84,10 @@ export async function POST(request: NextRequest) {
 
     const body = parsed.data
     const responseText = sanitizeAuditInput(body.response)
+    const rerollForRunId = String(body.rerollForRunId || '').trim()
+    const rerollRequested = rerollForRunId.length > 0
+    const providedRunToken =
+      typeof body.runToken === 'string' ? body.runToken : null
 
     if (!responseText) {
       return jsonError({
@@ -98,8 +105,34 @@ export async function POST(request: NextRequest) {
       })
     }
 
+    if (rerollRequested && !isSafeAuditRunId(rerollForRunId)) {
+      return jsonError({
+        error: 'Invalid reroll audit run id.',
+        status: 400,
+        requestId,
+      })
+    }
+
+    const rerollVerified =
+      rerollRequested && rerollForRunId
+        ? verifyRunToken({
+            token: providedRunToken,
+            expectedRunId: rerollForRunId,
+            sessionToken,
+            allowSessionMismatch: true,
+          })
+        : null
+
+    if (rerollRequested && !rerollVerified) {
+      return jsonError({
+        error: 'Reroll request could not be verified.',
+        status: 403,
+        requestId,
+      })
+    }
+
     const currentCount = getSessionAuditCount(sessionToken)
-    if (currentCount >= MAX_AUDITS_PER_CYCLE) {
+    if (!rerollVerified && currentCount >= MAX_AUDITS_PER_CYCLE) {
       return jsonError({
         error: 'You have reached the audit limit for this cycle.',
         code: 'AUDIT_LIMIT_REACHED',
@@ -127,7 +160,9 @@ export async function POST(request: NextRequest) {
       options,
     })
 
-    const nextCount = bumpSessionAuditCount(sessionToken)
+    const nextCount = rerollVerified
+      ? currentCount
+      : bumpSessionAuditCount(sessionToken)
     let responseOptions = persistedOptions
       .map(
         ({ audit_run_id: _auditRunId, created_at: _createdAt, ...rest }) =>

@@ -47,12 +47,16 @@ Format: Reverse chronological, grouped by sprint/date.
   - run-expired reload recovery.
 - Reset in-memory reroll UI state after successful expired-run recovery.
 - Added contract assertions so reroll-state reset behavior remains locked.
+- Added token-verified reroll/recovery submit mode so reloading options does not consume additional audit-cycle quota.
+- Added API flow coverage for quota-preserving reroll and unverified reroll rejection.
 
 ### Files
 
 - `src/app/page.tsx`
 - `src/app/soul-audit/results/page.tsx`
+- `src/app/api/soul-audit/submit/route.ts`
 - `__tests__/soul-audit-run-recovery-contract.test.ts`
+- `__tests__/soul-audit-flow.test.ts`
 - `docs/feature-prds/F-021.md`
 
 ### Validation
