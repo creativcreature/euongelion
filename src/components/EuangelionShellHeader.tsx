@@ -16,6 +16,28 @@ const MOBILE_EXTRA_ITEMS = [
   { href: '/wake-up', label: 'WAKE-UP' },
 ]
 const MOBILE_TICKER_INTERVAL_MS = 6200
+const SCROLL_LOCK_CLASSES = [
+  'lenis',
+  'lenis-smooth',
+  'lenis-scrolling',
+  'lenis-stopped',
+] as const
+const SCROLL_LOCK_STYLE_PROPS = [
+  'overflow',
+  'overflow-x',
+  'overflow-y',
+  'position',
+  'top',
+  'left',
+  'right',
+  'width',
+  'height',
+  'touch-action',
+  'overscroll-behavior',
+  'overscroll-behavior-y',
+  'padding-right',
+] as const
+const SCROLL_LOCK_DATA_ATTRIBUTES = ['data-scroll-locked', 'data-lenis-prevent']
 
 function getInitialTheme(): 'light' | 'dark' {
   if (typeof window === 'undefined') return 'light'
@@ -39,6 +61,25 @@ function formatMastheadDate(now: Date): string {
     hour12: true,
   })
   return `${month}. ${day}, ${year} ${time.replace(' AM', '').replace(' PM', '')}`
+}
+
+function clearGlobalScrollLocks() {
+  if (typeof document === 'undefined') return
+
+  for (const prop of SCROLL_LOCK_STYLE_PROPS) {
+    document.body.style.removeProperty(prop)
+    document.documentElement.style.removeProperty(prop)
+  }
+
+  for (const klass of SCROLL_LOCK_CLASSES) {
+    document.body.classList.remove(klass)
+    document.documentElement.classList.remove(klass)
+  }
+
+  for (const attr of SCROLL_LOCK_DATA_ATTRIBUTES) {
+    document.body.removeAttribute(attr)
+    document.documentElement.removeAttribute(attr)
+  }
 }
 
 export default function EuangelionShellHeader({
@@ -99,8 +140,14 @@ export default function EuangelionShellHeader({
   }, [])
 
   useEffect(() => {
-    document.body.style.overflow = ''
+    clearGlobalScrollLocks()
   }, [])
+
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      clearGlobalScrollLocks()
+    }
+  }, [mobileMenuOpen, pathname])
 
   useEffect(() => {
     let cancelled = false

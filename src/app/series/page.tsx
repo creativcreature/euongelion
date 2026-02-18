@@ -20,116 +20,117 @@ export default function SeriesBrowsePage() {
   const { getSeriesProgress } = useProgress()
 
   return (
-    <div className="newspaper-home min-h-screen">
-      <EuangelionShellHeader />
+    <div className="mock-home">
+      <main id="main-content" className="mock-paper">
+        <EuangelionShellHeader />
 
-      <header className="section-rule mx-auto max-w-7xl px-6 pb-16 pt-12 md:px-[60px] md:pb-24 md:pt-20 lg:px-20">
-        <FadeIn>
-          <MixedHeadline as="h1" size="xl" className="mb-8">
-            <Sans>ALL</Sans> <Serif>Series</Serif>
-          </MixedHeadline>
-          <p className="text-serif-italic vw-body-lg text-secondary type-prose type-serif-flow">
-            {typographer(
-              `${ALL_SERIES_ORDER.length} series. Ancient wisdom for modern wrestling. Pick one that speaks to where you are.`,
-            )}
-          </p>
-        </FadeIn>
-      </header>
-
-      <main
-        id="main-content"
-        className="mx-auto max-w-7xl px-6 pb-32 md:px-[60px] md:pb-48 lg:px-20"
-      >
-        {/* Wake-Up 7 */}
-        <section className="mb-20">
+        <header className="shell-content-pad section-rule mx-auto max-w-7xl pb-14 md:pb-20">
           <FadeIn>
-            <div className="mb-8">
-              <MixedHeadline as="p" size="sm" className="text-gold">
-                <Sans>WAKE-UP</Sans> <Serif>Magazine</Serif>
-              </MixedHeadline>
-              {/* Thin gold rule */}
-              <div
-                className="mt-3 mb-4"
-                style={{
-                  height: '1px',
-                  maxWidth: '200px',
-                  background: 'var(--color-gold)',
-                  opacity: 0.2,
-                }}
-              />
-              <p className="vw-small text-muted type-prose">
-                {typographer(
-                  'Seven questions for the searching. Five days each.',
-                )}
-              </p>
-            </div>
-          </FadeIn>
-
-          <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {WAKEUP_SERIES_ORDER.map((slug) => (
-              <SeriesCard
-                key={slug}
-                slug={slug}
-                progress={getSeriesProgress(slug)}
-              />
-            ))}
-          </StaggerGrid>
-        </section>
-
-        {/* Substack 19 */}
-        <section>
-          <FadeIn>
-            <div className="mb-8">
-              <MixedHeadline as="p" size="sm" className="text-gold">
-                <Sans>DEEP</Sans> <Serif>Dives</Serif>
-              </MixedHeadline>
-              {/* Thin gold rule */}
-              <div
-                className="mt-3 mb-4"
-                style={{
-                  height: '1px',
-                  maxWidth: '200px',
-                  background: 'var(--color-gold)',
-                  opacity: 0.2,
-                }}
-              />
-              <p className="vw-small text-muted type-prose">
-                {typographer(
-                  'Topical series from our archive. Dig into specific questions.',
-                )}
-              </p>
-            </div>
-          </FadeIn>
-
-          <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {SUBSTACK_SERIES_ORDER.map((slug) => (
-              <SeriesCard
-                key={slug}
-                slug={slug}
-                progress={getSeriesProgress(slug)}
-              />
-            ))}
-          </StaggerGrid>
-        </section>
-
-        {/* Soul Audit CTA */}
-        <FadeIn>
-          <div className="mt-16 text-center md:mt-24">
-            <p className="vw-body mb-6 text-secondary type-prose">
-              {typographer('Not sure where to start?')}
+            <MixedHeadline as="h1" size="xl" className="mb-8">
+              <Sans>ALL</Sans> <Serif>Series</Serif>
+            </MixedHeadline>
+            <p className="text-serif-italic vw-body-lg text-secondary type-prose type-serif-flow">
+              {typographer(
+                `${ALL_SERIES_ORDER.length} series. Ancient wisdom for modern wrestling. Pick one that speaks to where you are.`,
+              )}
             </p>
-            <Link
-              href="/"
-              className="inline-block bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-              style={{ transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' }}
-            >
-              Take the Soul Audit
-            </Link>
-          </div>
-        </FadeIn>
-      </main>
+          </FadeIn>
+        </header>
 
-      <SiteFooter />
+        <section className="shell-content-pad mx-auto max-w-7xl pt-10">
+          {/* Wake-Up 7 */}
+          <section className="mb-20">
+            <FadeIn>
+              <div className="mb-8">
+                <MixedHeadline as="p" size="sm" className="text-gold">
+                  <Sans>WAKE-UP</Sans> <Serif>Magazine</Serif>
+                </MixedHeadline>
+                {/* Thin gold rule */}
+                <div
+                  className="mt-3 mb-4"
+                  style={{
+                    height: '1px',
+                    maxWidth: '200px',
+                    background: 'var(--color-gold)',
+                    opacity: 0.2,
+                  }}
+                />
+                <p className="vw-small text-muted type-prose">
+                  {typographer(
+                    'Seven questions for the searching. Five days each.',
+                  )}
+                </p>
+              </div>
+            </FadeIn>
+
+            <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {WAKEUP_SERIES_ORDER.map((slug) => (
+                <SeriesCard
+                  key={slug}
+                  slug={slug}
+                  progress={getSeriesProgress(slug)}
+                />
+              ))}
+            </StaggerGrid>
+          </section>
+
+          {/* Substack 19 */}
+          <section>
+            <FadeIn>
+              <div className="mb-8">
+                <MixedHeadline as="p" size="sm" className="text-gold">
+                  <Sans>DEEP</Sans> <Serif>Dives</Serif>
+                </MixedHeadline>
+                {/* Thin gold rule */}
+                <div
+                  className="mt-3 mb-4"
+                  style={{
+                    height: '1px',
+                    maxWidth: '200px',
+                    background: 'var(--color-gold)',
+                    opacity: 0.2,
+                  }}
+                />
+                <p className="vw-small text-muted type-prose">
+                  {typographer(
+                    'Topical series from our archive. Dig into specific questions.',
+                  )}
+                </p>
+              </div>
+            </FadeIn>
+
+            <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {SUBSTACK_SERIES_ORDER.map((slug) => (
+                <SeriesCard
+                  key={slug}
+                  slug={slug}
+                  progress={getSeriesProgress(slug)}
+                />
+              ))}
+            </StaggerGrid>
+          </section>
+
+          {/* Soul Audit CTA */}
+          <FadeIn>
+            <div className="mt-16 text-center md:mt-24">
+              <p className="vw-body mb-6 text-secondary type-prose">
+                {typographer('Not sure where to start?')}
+              </p>
+              <Link
+                href="/"
+                className="inline-block bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                style={{
+                  transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+                }}
+              >
+                Take the Soul Audit
+              </Link>
+            </div>
+          </FadeIn>
+        </section>
+
+        <SiteFooter />
+      </main>
     </div>
   )
 }

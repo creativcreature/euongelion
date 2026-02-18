@@ -35,6 +35,48 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Shell Consistency + Scroll Unlock Hardening (2026-02-18)
+
+### What Changed
+
+- Strengthened global shell scroll recovery in `EuangelionShellHeader`:
+  - clears stale lock styles on `html` and `body` (`overflow`, `position`, `touch-action`, `overscroll-*`, lock-related geometry props)
+  - clears stale lock classes (`lenis`, `lenis-smooth`, `lenis-scrolling`, `lenis-stopped`)
+  - clears stale lock attributes (`data-scroll-locked`, `data-lenis-prevent`)
+  - runs cleanup on mount and on route/menu transitions.
+- Added regression coverage to lock these cleanup guarantees.
+- Normalized main-nav route shell framing for consistency with homepage newspaper bounds:
+  - `/soul-audit`
+  - `/series`
+  - `/series/loading`
+- These routes now use the shared `mock-home` + `mock-paper` structure and shared shell spacing so sticky header/nav behavior remains consistent across core surfaces.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `__tests__/shell-header.test.tsx`
+- `src/app/soul-audit/page.tsx`
+- `src/app/series/page.tsx`
+- `src/app/series/loading.tsx`
+- `docs/feature-prds/F-011.md`
+- `docs/feature-prds/F-029.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+- `npm run verify:ios-readiness`
+
+---
+
 ## Soul Audit Reroll State Isolation Pass (2026-02-15)
 
 ### What Changed

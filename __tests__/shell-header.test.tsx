@@ -146,6 +146,40 @@ describe('EuangelionShellHeader', () => {
     expect(container.querySelector('.mock-nav-sentinel')).toBeNull()
   })
 
+  it('clears stale global scroll-lock artifacts on mount and route changes', async () => {
+    document.body.style.overflow = 'hidden'
+    document.body.style.position = 'fixed'
+    document.documentElement.style.overflow = 'hidden'
+    document.documentElement.classList.add('lenis-stopped')
+    document.body.setAttribute('data-scroll-locked', 'true')
+
+    const { rerender } = render(<EuangelionShellHeader />)
+
+    await waitFor(() => {
+      expect(document.body.style.overflow).toBe('')
+      expect(document.body.style.position).toBe('')
+      expect(document.documentElement.style.overflow).toBe('')
+      expect(document.documentElement.classList.contains('lenis-stopped')).toBe(
+        false,
+      )
+      expect(document.body.hasAttribute('data-scroll-locked')).toBe(false)
+    })
+
+    document.body.style.overflow = 'hidden'
+    document.documentElement.classList.add('lenis-stopped')
+    document.body.setAttribute('data-scroll-locked', 'true')
+    mockPathname = '/series'
+    rerender(<EuangelionShellHeader />)
+
+    await waitFor(() => {
+      expect(document.body.style.overflow).toBe('')
+      expect(document.documentElement.classList.contains('lenis-stopped')).toBe(
+        false,
+      )
+      expect(document.body.hasAttribute('data-scroll-locked')).toBe(false)
+    })
+  })
+
   it('closes mobile secondary menu when route changes', async () => {
     const user = userEvent.setup()
     const { rerender } = render(<EuangelionShellHeader />)
