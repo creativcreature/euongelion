@@ -39,6 +39,7 @@ export interface SoulAuditSubmitResponseV2 {
   version: 'v2'
   auditRunId: string
   runToken: string
+  inputGuidance?: string
   remainingAudits: number
   requiresEssentialConsent: true
   analyticsOptInDefault: false

@@ -20,7 +20,6 @@ export default function SoulAuditPage() {
   const [lastFailedSubmission, setLastFailedSubmission] = useState<
     string | null
   >(null)
-  const [nudge, setNudge] = useState(false)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const router = useRouter()
   const hydrated = useSyncExternalStore(
@@ -39,7 +38,6 @@ export default function SoulAuditPage() {
   const handleResetAudit = async () => {
     resetAudit()
     setError(null)
-    setNudge(false)
     setResponse('')
     setLastFailedSubmission(null)
     sessionStorage.removeItem('soul-audit-result')
@@ -72,13 +70,6 @@ export default function SoulAuditPage() {
 
     if (charCount === 0) {
       setError('Take your time. When you\u2019re ready, just write what comes.')
-      setLastFailedSubmission(null)
-      return
-    }
-
-    if (charCount < 10 && !nudge) {
-      setNudge(true)
-      setError('Say a little more. Even one sentence helps.')
       setLastFailedSubmission(null)
       return
     }
@@ -181,7 +172,6 @@ export default function SoulAuditPage() {
                     onChange={(e) => {
                       setResponse(e.target.value)
                       setError(null)
-                      setNudge(false)
                     }}
                     placeholder="Lately, I've been..."
                     rows={6}

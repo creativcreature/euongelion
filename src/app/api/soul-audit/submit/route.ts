@@ -14,6 +14,7 @@ import {
   MAX_AUDITS_PER_CYCLE,
   SOUL_AUDIT_OPTION_SPLIT,
 } from '@/lib/soul-audit/constants'
+import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 import {
   buildAuditOptions,
   sanitizeAuditInput,
@@ -26,7 +27,10 @@ import {
   saveAuditTelemetry,
 } from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
-import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
+import type {
+  AuditOptionPreview,
+  SoulAuditSubmitResponseV2,
+} from '@/types/soul-audit'
 
 interface SubmitBody {
   response?: string
@@ -63,6 +67,78 @@ function hasExpectedOptionSplit(options: Array<{ kind: string }>): boolean {
     aiPrimaryCount === SOUL_AUDIT_OPTION_SPLIT.aiPrimary &&
     curatedPrefabCount === SOUL_AUDIT_OPTION_SPLIT.curatedPrefab
   )
+}
+
+function getLowContextGuidance(input: string): string | null {
+  const words = input
+    .trim()
+    .split(/\s+/)
+    .filter((token) => token.length > 0)
+  if (words.length > 3) return null
+
+  return 'We built options from a short input. Add one more sentence for more precise curation.'
+}
+
+function parseFrameworkReference(framework: string): string {
+  const normalized = framework.trim()
+  if (!normalized) return 'Scripture'
+  const [referencePart] = normalized.split(/\s+-\s+/)
+  const reference = referencePart.trim()
+  return reference || 'Scripture'
+}
+
+function buildEmergencyFallbackOptions(input: string): AuditOptionPreview[] {
+  const uniqueSlugs = Array.from(new Set(ALL_SERIES_ORDER)).filter(
+    (slug) =>
+      slug in SERIES_DATA &&
+      Array.isArray(SERIES_DATA[slug]?.days) &&
+      SERIES_DATA[slug].days.length > 0,
+  )
+  if (uniqueSlugs.length === 0) return []
+
+  const snippet = input.trim().slice(0, 68) || 'this season'
+  const required = SOUL_AUDIT_OPTION_SPLIT.total
+  const selectedSlugs = Array.from({ length: required }, (_, index) => {
+    return uniqueSlugs[index % uniqueSlugs.length]
+  })
+
+  return selectedSlugs.map((slug, index) => {
+    const series = SERIES_DATA[slug]
+    const dayOne = [...series.days].sort((a, b) => a.day - b.day)[0]
+    const verse = parseFrameworkReference(series.framework)
+    const aiPrimary = index < SOUL_AUDIT_OPTION_SPLIT.aiPrimary
+    const dayNumber = dayOne?.day ?? 1
+    const baseConfidence = aiPrimary
+      ? Math.max(0.42, 0.62 - index * 0.08)
+      : Math.max(
+          0.34,
+          0.52 - (index - SOUL_AUDIT_OPTION_SPLIT.aiPrimary) * 0.08,
+        )
+
+    return {
+      id: `${aiPrimary ? 'ai_primary' : 'curated_prefab'}:${slug}:${dayNumber}:${index + 1}`,
+      slug,
+      kind: aiPrimary ? 'ai_primary' : 'curated_prefab',
+      rank: index + 1,
+      title: aiPrimary ? `${series.title}: ${snippet}` : series.title,
+      question: series.question,
+      confidence: Number(baseConfidence.toFixed(3)),
+      reasoning: aiPrimary
+        ? `Matched to curated series modules using a short-input fallback (${series.title}).`
+        : 'A stable prefab series if you want a proven guided path.',
+      preview: {
+        verse,
+        paragraph: aiPrimary
+          ? `You shared "${snippet}". Start here for a clear next faithful step. ${series.introduction}`
+          : series.introduction,
+        curationSeed: {
+          seriesSlug: slug,
+          dayNumber,
+          candidateKey: `emergency-fallback:${slug}:${dayNumber}`,
+        },
+      },
+    }
+  })
 }
 
 export async function POST(request: NextRequest) {
@@ -106,7 +182,7 @@ export async function POST(request: NextRequest) {
 
     if (!responseText) {
       return jsonError({
-        error: 'Write one honest paragraph so we can continue.',
+        error: 'Write at least one word so we can continue.',
         status: 400,
         requestId,
       })
@@ -169,13 +245,16 @@ export async function POST(request: NextRequest) {
     }
 
     const crisisDetected = detectCrisis(responseText)
-    const options = buildAuditOptions(responseText)
-    if (options.length === 0) {
+    const inputGuidance = getLowContextGuidance(responseText)
+    let options = buildAuditOptions(responseText)
+    if (!hasExpectedOptionSplit(options)) {
+      options = buildEmergencyFallbackOptions(responseText)
+    }
+    if (!hasExpectedOptionSplit(options)) {
       return jsonError({
-        error:
-          'We could not assemble devotional options from your response yet. Add one more sentence and try again.',
-        code: 'NO_CURATED_OPTIONS',
-        status: 409,
+        error: 'Unable to assemble devotional options right now.',
+        code: 'OPTION_ASSEMBLY_FAILED',
+        status: 500,
         requestId,
       })
     }
@@ -222,6 +301,7 @@ export async function POST(request: NextRequest) {
       version: 'v2',
       auditRunId: run.id,
       runToken,
+      ...(inputGuidance ? { inputGuidance } : {}),
       remainingAudits: Math.max(0, MAX_AUDITS_PER_CYCLE - nextCount),
       requiresEssentialConsent: true,
       analyticsOptInDefault: false,

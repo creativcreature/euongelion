@@ -247,8 +247,8 @@ export default function Home() {
     }
 
     const trimmed = raw.trim()
-    if (trimmed.length < 10) {
-      setError('Write one honest paragraph so we can craft your devotional.')
+    if (trimmed.length === 0) {
+      setError('Write what is real for you right now and try again.')
       setLastFailedSubmission(null)
       return
     }

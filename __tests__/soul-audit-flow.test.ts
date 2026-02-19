@@ -76,6 +76,30 @@ describe('Soul Audit staged flow', () => {
     expect(payload).not.toHaveProperty('customDevotional')
   })
 
+  it('accepts single-word input and still returns options', async () => {
+    const response = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        response: 'money',
+      }) as never,
+    )
+    expect(response.status).toBe(200)
+
+    const payload = (await response.json()) as {
+      options?: Array<{ kind: string }>
+      inputGuidance?: string
+    }
+    expect(Array.isArray(payload.options)).toBe(true)
+    expect(payload.options).toHaveLength(5)
+    expect(
+      payload.options?.filter((option) => option.kind === 'ai_primary').length,
+    ).toBe(3)
+    expect(
+      payload.options?.filter((option) => option.kind === 'curated_prefab')
+        .length,
+    ).toBe(2)
+    expect(typeof payload.inputGuidance).toBe('string')
+  })
+
   it('crisis acknowledgement gate is enforced at consent', async () => {
     const submitResponse = await submitHandler(
       postJson('http://localhost/api/soul-audit/submit', {

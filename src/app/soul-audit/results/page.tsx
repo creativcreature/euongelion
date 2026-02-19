@@ -1057,6 +1057,11 @@ export default function SoulAuditResultsPage() {
                     Tap a card to continue. Each option is clickable.
                   </p>
                 )}
+                {!planToken && submitResult?.inputGuidance && (
+                  <p className="vw-small mt-3 text-muted">
+                    {submitResult.inputGuidance}
+                  </p>
+                )}
                 {(planToken || submitResult) && (
                   <div className="mt-4">
                     <button

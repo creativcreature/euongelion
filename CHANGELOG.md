@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Short-Input Reliability Fix (2026-02-20)
+
+### What Changed
+
+- Removed short-input hard gates for Soul Audit submit on homepage and `/soul-audit`.
+- Added low-context guidance (non-blocking) for very short responses.
+- Added guaranteed emergency fallback option assembly in submit API so short inputs still return a stable `3 AI + 2 prefab` option split instead of failing with no-options errors.
+- Added regression test proving one-word input still returns valid options.
+
+### Files
+
+- `src/app/api/soul-audit/submit/route.ts`
+- `src/app/page.tsx`
+- `src/app/soul-audit/page.tsx`
+- `src/app/soul-audit/results/page.tsx`
+- `src/types/soul-audit.ts`
+- `__tests__/soul-audit-flow.test.ts`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/soul-audit-flow.test.ts __tests__/soul-audit-fallback-options.test.ts`
+
+---
+
 ## Mobile Chat Peek Focus Fix (2026-02-20)
 
 ### What Changed
