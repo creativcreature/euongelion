@@ -334,8 +334,8 @@ export default function Home() {
                     What are you wrestling with today?
                   </h2>
                   <p className="mock-subcopy">
-                    Write one honest paragraph, and we will customize a 5 day
-                    devotional plan for you.
+                    Write one honest sentence (or even a few words), and we will
+                    customize a 5 day devotional plan for you.
                   </p>
                 </div>
 

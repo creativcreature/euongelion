@@ -100,6 +100,28 @@ describe('Soul Audit staged flow', () => {
     expect(typeof payload.inputGuidance).toBe('string')
   })
 
+  it('accepts short phrase input and returns options without hard gate', async () => {
+    const response = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        response: 'I need money today',
+      }) as never,
+    )
+    expect(response.status).toBe(200)
+
+    const payload = (await response.json()) as {
+      options?: Array<{ kind: string }>
+    }
+    expect(Array.isArray(payload.options)).toBe(true)
+    expect(payload.options).toHaveLength(5)
+    expect(
+      payload.options?.filter((option) => option.kind === 'ai_primary').length,
+    ).toBe(3)
+    expect(
+      payload.options?.filter((option) => option.kind === 'curated_prefab')
+        .length,
+    ).toBe(2)
+  })
+
   it('crisis acknowledgement gate is enforced at consent', async () => {
     const submitResponse = await submitHandler(
       postJson('http://localhost/api/soul-audit/submit', {

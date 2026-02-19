@@ -13,6 +13,8 @@ Format: Reverse chronological, grouped by sprint/date.
 - Added low-context guidance (non-blocking) for very short responses.
 - Added guaranteed emergency fallback option assembly in submit API so short inputs still return a stable `3 AI + 2 prefab` option split instead of failing with no-options errors.
 - Added regression test proving one-word input still returns valid options.
+- Added regression test proving short-phrase input (`I need money today`) returns valid options with no hard gate.
+- Updated homepage Soul Audit helper copy to reflect sentence/short-input support.
 
 ### Files
 
