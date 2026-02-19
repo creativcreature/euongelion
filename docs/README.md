@@ -92,6 +92,7 @@ EUONGELION-STARTUP/
 - [Contributing](./CONTRIBUTING.md) - How to contribute
 - [Deployment](./DEPLOYMENT.md) - Deployment instructions
 - [Development](./DEVELOPMENT.md) - Local setup guide
+- [Euangelion Design System](./design/EUANGELION-DESIGN-SYSTEM.md) - Cross-platform Apple-HIG-aligned foundations, components, patterns, and token architecture
 - [Change Execution Protocol](./process/CHANGE-EXECUTION-PROTOCOL.md) - Required plan-first and live UI verification workflow
 
 ### Technical Documentation
