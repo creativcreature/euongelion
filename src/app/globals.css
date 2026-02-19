@@ -2312,22 +2312,12 @@
 }
 
 .mock-paper > .mock-shell-frame {
-  display: block;
-  width: 100%;
-  margin: 0;
-  border-left: 0;
-  border-right: 0;
-  background: transparent;
+  display: contents;
 }
 
 .newspaper-home > .mock-shell-frame,
 .newspaper-reading > .mock-shell-frame {
-  display: block;
-  width: 100%;
-  margin: 0;
-  border-left: 0;
-  border-right: 0;
-  background: transparent;
+  display: contents;
 }
 
 .mock-home .text-label {
