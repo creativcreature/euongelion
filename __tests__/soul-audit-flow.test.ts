@@ -2,13 +2,22 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { POST as submitHandler } from '@/app/api/soul-audit/submit/route'
 import { POST as consentHandler } from '@/app/api/soul-audit/consent/route'
 import { POST as selectHandler } from '@/app/api/soul-audit/select/route'
-import { resetSessionAuditCount } from '@/lib/soul-audit/repository'
+import { POST as resetHandler } from '@/app/api/soul-audit/reset/route'
+import { GET as activeDaysHandler } from '@/app/api/daily-bread/active-days/route'
+import {
+  getLatestSelectionForSessionWithFallback,
+  resetSessionAuditCount,
+} from '@/lib/soul-audit/repository'
 import { createConsentToken } from '@/lib/soul-audit/consent-token'
 
 let mockedSessionToken = 'test-session-token'
 
 vi.mock('@/lib/soul-audit/session', () => ({
   getOrCreateAuditSessionToken: vi.fn(async () => mockedSessionToken),
+  rotateAuditSessionToken: vi.fn(async () => {
+    mockedSessionToken = `${mockedSessionToken}-rotated`
+    return mockedSessionToken
+  }),
 }))
 
 function postJson(
@@ -281,6 +290,142 @@ describe('Soul Audit staged flow', () => {
     expect(payload.selectionType).toBe('curated_prefab')
     expect(payload.route).toMatch(/^\/devotional\//)
     expect(payload.planToken).toBeUndefined()
+  })
+
+  it('prefab selection becomes the active daily-bread source', async () => {
+    mockedSessionToken = 'session-prefab-current'
+    resetSessionAuditCount(mockedSessionToken)
+
+    const submitResponse = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        response: 'I feel disconnected and need guidance this week.',
+      }) as never,
+    )
+    expect(submitResponse.status).toBe(200)
+    const submitPayload = (await submitResponse.json()) as {
+      auditRunId: string
+      options: Array<{ id: string; kind: string }>
+    }
+
+    const consentResponse = await consentHandler(
+      postJson('http://localhost/api/soul-audit/consent', {
+        auditRunId: submitPayload.auditRunId,
+        essentialAccepted: true,
+        analyticsOptIn: false,
+        crisisAcknowledged: false,
+      }) as never,
+    )
+    expect(consentResponse.status).toBe(200)
+
+    const prefabOption = submitPayload.options.find(
+      (option) => option.kind === 'curated_prefab',
+    )
+    expect(prefabOption).toBeTruthy()
+
+    const selectionResponse = await selectHandler(
+      postJson('http://localhost/api/soul-audit/select', {
+        auditRunId: submitPayload.auditRunId,
+        optionId: prefabOption?.id,
+      }) as never,
+    )
+    expect(selectionResponse.status).toBe(200)
+    const selectionPayload = (await selectionResponse.json()) as {
+      route: string
+      selectionType: string
+    }
+    expect(selectionPayload.selectionType).toBe('curated_prefab')
+    expect(selectionPayload.route).toMatch(/^\/devotional\//)
+    const selectionCookie = selectionResponse.headers.get('set-cookie') || ''
+    expect(selectionCookie).toContain('euangelion_current_route=')
+
+    const persistedSelection =
+      await getLatestSelectionForSessionWithFallback(mockedSessionToken)
+    expect(persistedSelection?.option_kind).toBe('curated_prefab')
+
+    const activeDaysResponse = await activeDaysHandler({
+      cookies: { get: () => undefined },
+    } as never)
+    expect(activeDaysResponse.status).toBe(200)
+    const activeDaysPayload = (await activeDaysResponse.json()) as {
+      hasPlan: boolean
+      planToken: string | null
+      dayLocking: 'enabled' | 'disabled'
+      days: Array<{
+        day: number
+        status: string
+        route: string
+      }>
+    }
+    expect(activeDaysPayload.hasPlan).toBe(true)
+    expect(activeDaysPayload.planToken).toBeNull()
+    expect(['enabled', 'disabled']).toContain(activeDaysPayload.dayLocking)
+    expect(activeDaysPayload.days.length).toBeGreaterThanOrEqual(5)
+    expect(activeDaysPayload.days[0]?.status).toBe('current')
+    expect(activeDaysPayload.days[0]?.route).toBe(selectionPayload.route)
+  })
+
+  it('reset clears current devotional route after prefab selection', async () => {
+    mockedSessionToken = 'session-prefab-reset'
+    resetSessionAuditCount(mockedSessionToken)
+
+    const submitResponse = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        response: 'I feel disconnected and need guidance this week.',
+      }) as never,
+    )
+    expect(submitResponse.status).toBe(200)
+    const submitPayload = (await submitResponse.json()) as {
+      auditRunId: string
+      options: Array<{ id: string; kind: string }>
+    }
+
+    const consentResponse = await consentHandler(
+      postJson('http://localhost/api/soul-audit/consent', {
+        auditRunId: submitPayload.auditRunId,
+        essentialAccepted: true,
+        analyticsOptIn: false,
+        crisisAcknowledged: false,
+      }) as never,
+    )
+    expect(consentResponse.status).toBe(200)
+
+    const prefabOption = submitPayload.options.find(
+      (option) => option.kind === 'curated_prefab',
+    )
+    expect(prefabOption).toBeTruthy()
+
+    const selectionResponse = await selectHandler(
+      postJson('http://localhost/api/soul-audit/select', {
+        auditRunId: submitPayload.auditRunId,
+        optionId: prefabOption?.id,
+      }) as never,
+    )
+    expect(selectionResponse.status).toBe(200)
+
+    const beforeReset =
+      await getLatestSelectionForSessionWithFallback(mockedSessionToken)
+    expect(beforeReset?.option_kind).toBe('curated_prefab')
+
+    const resetResponse = await resetHandler()
+    expect(resetResponse.status).toBe(200)
+    const resetCookie = resetResponse.headers.get('set-cookie') || ''
+    expect(resetCookie).toContain('euangelion_current_route=;')
+
+    const afterReset = await getLatestSelectionForSessionWithFallback(
+      'session-prefab-reset',
+    )
+    expect(afterReset).toBeNull()
+
+    const activeDaysResponse = await activeDaysHandler({
+      cookies: { get: () => undefined },
+    } as never)
+    const activeDaysPayload = (await activeDaysResponse.json()) as {
+      hasPlan: boolean
+      days: unknown[]
+    }
+    expect(activeDaysResponse.status).toBe(200)
+    expect(activeDaysPayload.hasPlan).toBe(false)
+    expect(activeDaysPayload.days).toEqual([])
   })
 
   it('survives session-token churn via run/consent token fallback', async () => {

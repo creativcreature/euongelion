@@ -5,6 +5,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Prefab Current-Path E2E Contract Coverage (2026-02-20)
+
+### What Changed
+
+- Added staged-flow regression coverage for the curated prefab main-path contract:
+  - prefab selection now has explicit test evidence that it becomes the active Daily Bread source.
+  - active-days response is validated to resolve curated prefab day routes as current devotional state.
+  - reset behavior is validated to clear prefab active selection state and return Daily Bread to empty-state.
+- Updated session mocks in staged-flow tests to include reset-session rotation behavior so tests match production reset contracts.
+
+### Files
+
+- `__tests__/soul-audit-flow.test.ts`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:governance-alignment`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Current-Path Validity + Reset Session Rotation (2026-02-20)
 
 ### What Changed
