@@ -5,6 +5,31 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Shell Navigation Root-Cause Rewrite (2026-02-19)
+
+### What Changed
+
+- Removed JS-driven docked/undocked nav state switching from the shared shell header.
+- Replaced it with one stable nav tree that is always mounted; desktop/mobile variants now switch via CSS layout only.
+- Preserved mobile menu accessibility controls (escape close, outside click/touch close, route-change close) while removing brittle viewport mode toggling.
+- Bumped service-worker cache/runtime version to `v48` so production clients refresh stale shell/nav bundles.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+- `src/components/ServiceWorkerRegistration.tsx`
+- `public/sw.js`
+- `__tests__/shell-header.test.tsx`
+- `docs/feature-prds/F-029.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm test -- --run __tests__/shell-header.test.tsx __tests__/layout-overflow-contract.test.ts __tests__/ios-shell-readiness-contract.test.ts __tests__/navigation-routing-shell.test.ts __tests__/offline-sw-contract.test.ts`
+
+---
+
 ## Natural Dock Trigger Refinement (2026-02-19)
 
 ### What Changed

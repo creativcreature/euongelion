@@ -151,50 +151,23 @@ describe('EuangelionShellHeader', () => {
     expect(container.querySelector('.mock-nav-sentinel')).toBeNull()
   })
 
-  it('docks nav into topbar when nav row physically reaches topbar', async () => {
-    const originalMatchMedia = window.matchMedia
-    Object.defineProperty(window, 'matchMedia', {
-      writable: true,
-      value: (query: string) => ({
-        matches: query === '(prefers-reduced-motion: reduce)' ? false : false,
-        media: query,
-        onchange: null,
-        addListener: () => {},
-        removeListener: () => {},
-        addEventListener: () => {},
-        removeEventListener: () => {},
-        dispatchEvent: () => false,
-      }),
+  it('keeps one stable nav row and does not switch to docked replacement state', async () => {
+    const { container, rerender } = render(<EuangelionShellHeader />)
+
+    await waitFor(() => {
+      expect(screen.getByLabelText('Main navigation')).toBeInTheDocument()
     })
 
-    try {
-      const { container, rerender } = render(<EuangelionShellHeader />)
+    mockNavTop = 41
+    rerender(<EuangelionShellHeader />)
+    window.dispatchEvent(new Event('scroll'))
 
-      await waitFor(() => {
-        expect(
-          container
-            .querySelector('.mock-topbar')
-            ?.classList.contains('is-nav-docked'),
-        ).toBe(false)
-      })
-
-      mockNavTop = 41
-      rerender(<EuangelionShellHeader />)
-      window.dispatchEvent(new Event('scroll'))
-
-      await waitFor(() => {
-        expect(
-          container
-            .querySelector('.mock-topbar')
-            ?.classList.contains('is-nav-docked'),
-        ).toBe(true)
-      })
-    } finally {
-      Object.defineProperty(window, 'matchMedia', {
-        writable: true,
-        value: originalMatchMedia,
-      })
-    }
+    await waitFor(() => {
+      expect(container.querySelector('.mock-topbar.is-nav-docked')).toBeNull()
+      expect(screen.getByLabelText('Main navigation')).not.toHaveAttribute(
+        'aria-hidden',
+      )
+    })
   })
 
   it('clears stale global scroll-lock artifacts on mount and route changes', async () => {

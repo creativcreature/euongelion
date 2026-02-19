@@ -2680,6 +2680,18 @@
     border-color 220ms ease;
 }
 
+.mock-nav-desktop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.mock-nav-mobile {
+  display: none;
+  width: 100%;
+}
+
 .mock-nav.is-docked {
   visibility: hidden;
   opacity: 0;
@@ -4097,6 +4109,15 @@
     white-space: normal;
     max-height: none;
     padding: 0.26rem 0.55rem 0.42rem;
+  }
+
+  .mock-nav-desktop {
+    display: none;
+  }
+
+  .mock-nav-mobile {
+    display: grid;
+    gap: 0.28rem;
   }
 
   .mock-nav-item-wrap {
