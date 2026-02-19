@@ -10,10 +10,6 @@ const NAV_ITEMS = [
   { href: '/daily-bread', label: 'DAILY BREAD' },
   { href: '/series', label: 'SERIES' },
 ]
-const MOBILE_EXTRA_ITEMS = [
-  { href: '/help', label: 'HELP' },
-  { href: '/wake-up', label: 'WAKE-UP' },
-]
 const MOBILE_TICKER_INTERVAL_MS = 6200
 const SCROLL_LOCK_CLASSES = [
   'lenis',
@@ -92,30 +88,21 @@ export default function EuangelionShellHeader({
   const previousPathnameRef = useRef(pathname)
   const accountMenuRef = useRef<HTMLDivElement | null>(null)
   const accountTriggerRef = useRef<HTMLButtonElement | null>(null)
-  const mobileMenuToggleRef = useRef<HTMLButtonElement | null>(null)
-  const mobileMenuPanelRef = useRef<HTMLDivElement | null>(null)
-
   const mastheadRef = useRef<HTMLElement | null>(null)
 
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
   const [now, setNow] = useState(() => new Date())
   const [mobileTopbarIndex, setMobileTopbarIndex] = useState(0)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [authLoading, setAuthLoading] = useState(true)
   const [authenticated, setAuthenticated] = useState(false)
   const [userEmail, setUserEmail] = useState<string | null>(null)
   const [accountMenuOpen, setAccountMenuOpen] = useState(false)
   const [navDocked, setNavDocked] = useState(false)
 
-  const mobileMenuItems = useMemo(
-    () => [...NAV_ITEMS, ...MOBILE_EXTRA_ITEMS],
-    [],
-  )
   const mobileTickerItems = useMemo(
     () => [
       formatMastheadDate(now),
       'Daily Devotionals for the Hungry Soul',
-      'Scripture-led. Honest reflection. Faithful next step.',
     ],
     [now],
   )
@@ -133,11 +120,6 @@ export default function EuangelionShellHeader({
     clearGlobalScrollLocks()
   }, [])
 
-  useEffect(() => {
-    if (!mobileMenuOpen) {
-      clearGlobalScrollLocks()
-    }
-  }, [mobileMenuOpen, pathname])
 
   useEffect(() => {
     let cancelled = false
@@ -200,51 +182,6 @@ export default function EuangelionShellHeader({
   }, [accountMenuOpen])
 
   useEffect(() => {
-    if (!mobileMenuOpen) return
-    const panel = mobileMenuPanelRef.current
-    if (!panel) return
-
-    const focusFrame = window.requestAnimationFrame(() => {
-      const firstInteractive = panel.querySelector<HTMLElement>(
-        'a[href], button:not([disabled])',
-      )
-      firstInteractive?.focus()
-    })
-
-    function onPanelKeydown(event: KeyboardEvent) {
-      if (event.key !== 'Escape') return
-      setMobileMenuOpen(false)
-      mobileMenuToggleRef.current?.focus()
-    }
-
-    panel.addEventListener('keydown', onPanelKeydown)
-    return () => {
-      window.cancelAnimationFrame(focusFrame)
-      panel.removeEventListener('keydown', onPanelKeydown)
-    }
-  }, [mobileMenuOpen])
-
-  useEffect(() => {
-    if (!mobileMenuOpen) return
-
-    function onPointerDown(event: MouseEvent | TouchEvent) {
-      const target = event.target as Node
-      const panel = mobileMenuPanelRef.current
-      const toggle = mobileMenuToggleRef.current
-      if (!panel || !toggle) return
-      if (panel.contains(target) || toggle.contains(target)) return
-      setMobileMenuOpen(false)
-    }
-
-    document.addEventListener('mousedown', onPointerDown)
-    document.addEventListener('touchstart', onPointerDown, { passive: true })
-    return () => {
-      document.removeEventListener('mousedown', onPointerDown)
-      document.removeEventListener('touchstart', onPointerDown)
-    }
-  }, [mobileMenuOpen])
-
-  useEffect(() => {
     const spans = Array.from(
       document.querySelectorAll<HTMLElement>(
         '.js-shell-masthead-fit, .js-masthead-fit',
@@ -297,7 +234,7 @@ export default function EuangelionShellHeader({
     const reducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
     ).matches
-    if (reducedMotion || mobileMenuOpen || mobileTickerItems.length <= 1) return
+    if (reducedMotion || mobileTickerItems.length <= 1) return
 
     const timer = window.setInterval(
       () =>
@@ -307,7 +244,7 @@ export default function EuangelionShellHeader({
       MOBILE_TICKER_INTERVAL_MS,
     )
     return () => window.clearInterval(timer)
-  }, [mobileTickerItems.length, mobileMenuOpen])
+  }, [mobileTickerItems.length])
 
   // Dock nav into topbar when masthead scrolls out of view (desktop only)
   useEffect(() => {
@@ -351,7 +288,6 @@ export default function EuangelionShellHeader({
   useEffect(() => {
     if (previousPathnameRef.current === pathname) return
     previousPathnameRef.current = pathname
-    setMobileMenuOpen(false)
     setAccountMenuOpen(false)
   }, [pathname])
 
@@ -404,109 +340,26 @@ export default function EuangelionShellHeader({
       )
     })
 
-  const activeMobileItem =
-    NAV_ITEMS.find((item) => isNavItemActive(item.href)) || NAV_ITEMS[0]
-
-  const renderMobileNav = (panelClassName: string) => (
-    <>
-      <div className="mock-mobile-nav-main">
-        <Link
-          href={activeMobileItem.href}
-          className="mock-nav-item mock-mobile-nav-current is-active"
-          aria-current="page"
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          {activeMobileItem.label}
-        </Link>
-        <button
-          type="button"
-          className={`mock-mobile-menu-toggle ${mobileMenuOpen ? 'is-open' : ''}`}
-          onClick={() => setMobileMenuOpen((current) => !current)}
-          ref={mobileMenuToggleRef}
-          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={mobileMenuOpen}
-          aria-controls={
-            mobileMenuOpen ? 'shell-mobile-secondary-nav' : undefined
-          }
-        >
-          {mobileMenuOpen ? 'CLOSE' : 'MENU'}
-        </button>
-      </div>
-      {mobileMenuOpen && (
-        <div
-          id="shell-mobile-secondary-nav"
-          ref={mobileMenuPanelRef}
-          role="group"
-          aria-label="Navigation menu"
-          className={`${panelClassName} is-open`}
-        >
-          {mobileMenuItems.map((item) => {
-            const active = isNavItemActive(item.href)
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`mock-nav-item ${active ? 'is-active' : ''}`}
-                aria-current={active ? 'page' : undefined}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            )
-          })}
-          <button
-            type="button"
-            className="mock-nav-item mock-mobile-theme-item"
-            onClick={toggleTheme}
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-          >
-            {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
-          </button>
-          {!authLoading &&
-            (authenticated ? (
-              <>
-                <Link
-                  href="/settings"
-                  className={`mock-nav-item ${isNavItemActive('/settings') ? 'is-active' : ''}`}
-                  aria-current={
-                    isNavItemActive('/settings') ? 'page' : undefined
-                  }
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  ACCOUNT
-                </Link>
-                <button
-                  type="button"
-                  className="mock-nav-item"
-                  onClick={() => {
-                    setMobileMenuOpen(false)
-                    void handleSignOut()
-                  }}
-                >
-                  SIGN OUT
-                </button>
-              </>
-            ) : (
-              <>
-                <Link
-                  href={`/auth/sign-in?redirect=${redirectPath}`}
-                  className="mock-nav-item"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  SIGN IN
-                </Link>
-                <Link
-                  href={`/auth/sign-up?redirect=${redirectPath}`}
-                  className="mock-nav-item"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  SIGN UP
-                </Link>
-              </>
-            ))}
-        </div>
-      )}
-    </>
+  const renderMobileNav = () => (
+    <div className="mock-mobile-nav-inline">
+      {NAV_ITEMS.map((item, index) => {
+        const active = isNavItemActive(item.href)
+        return (
+          <span key={item.href} className="mock-nav-item-wrap">
+            <Link
+              href={item.href}
+              className={`mock-nav-item ${active ? 'is-active' : ''}`}
+              aria-current={active ? 'page' : undefined}
+            >
+              {item.label}
+            </Link>
+            {index < NAV_ITEMS.length - 1 && (
+              <span aria-hidden="true">|</span>
+            )}
+          </span>
+        )
+      })}
+    </div>
   )
 
   return (
@@ -655,7 +508,7 @@ export default function EuangelionShellHeader({
         >
           <div className="mock-nav-desktop">{renderNavLinks(NAV_ITEMS)}</div>
           <div className="mock-nav-mobile">
-            {renderMobileNav('mock-mobile-nav-panel')}
+            {renderMobileNav()}
           </div>
         </nav>
       </header>
