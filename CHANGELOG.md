@@ -5,6 +5,43 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Current-Path Validity + Reset Session Rotation (2026-02-20)
+
+### What Changed
+
+- Hardened current-route resolution so “continue devotional” only appears when content is actually resolvable:
+  - AI plan candidates now require plan-day content to exist before becoming current.
+  - Curated prefab candidates now require a valid series with devotional days.
+  - AI selection candidates now require a resolvable plan + day payload.
+- Hardened reset behavior to eliminate stale-session continuation drift:
+  - `/api/soul-audit/reset` now rotates the audit session token after clearing state.
+  - stale current-route prompts no longer persist across reset when backing persistence cleanup is eventually consistent.
+- Added regression coverage for unresolved-candidate suppression in current-route API.
+
+### Files
+
+- `src/app/api/soul-audit/current/route.ts`
+- `src/app/api/soul-audit/reset/route.ts`
+- `src/lib/soul-audit/session.ts`
+- `__tests__/soul-audit-current-route.test.ts`
+- `docs/feature-prds/F-029.md`
+
+### Validation
+
+- `npx vitest run __tests__/soul-audit-current-route.test.ts __tests__/daily-bread-active-days.test.ts __tests__/soul-audit-flow.test.ts`
+- `npm run lint`
+- `npm run type-check`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:governance-alignment`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Curated Prefab Active-Path Fix (2026-02-20)
 
 ### What Changed

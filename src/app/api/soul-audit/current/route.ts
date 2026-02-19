@@ -1,8 +1,10 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import {
+  getAllPlanDaysWithFallback,
   getLatestPlanInstanceForSessionWithFallback,
   getLatestSelectionForSessionWithFallback,
+  getPlanInstanceWithFallback,
 } from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import { SERIES_DATA } from '@/data/series'
@@ -55,33 +57,45 @@ export async function GET() {
   const candidates: CurrentCandidate[] = []
 
   if (latestPlan) {
-    candidates.push({
-      route: `/soul-audit/results?planToken=${latestPlan.plan_token}`,
-      createdAt: latestPlan.created_at,
-      selectionType: 'ai_primary',
-      planToken: latestPlan.plan_token,
-      seriesSlug: latestPlan.series_slug,
-    })
+    const planDays = await getAllPlanDaysWithFallback(latestPlan.plan_token)
+    if (planDays.length > 0) {
+      candidates.push({
+        route: `/soul-audit/results?planToken=${latestPlan.plan_token}`,
+        createdAt: latestPlan.created_at,
+        selectionType: 'ai_primary',
+        planToken: latestPlan.plan_token,
+        seriesSlug: latestPlan.series_slug,
+      })
+    }
   }
 
   if (latestSelection?.option_kind === 'curated_prefab') {
-    candidates.push({
-      route: curatedSelectionRoute(latestSelection.series_slug),
-      createdAt: latestSelection.created_at,
-      selectionType: 'curated_prefab',
-      seriesSlug: latestSelection.series_slug,
-    })
+    const series = SERIES_DATA[latestSelection.series_slug]
+    if (series?.days?.length) {
+      candidates.push({
+        route: curatedSelectionRoute(latestSelection.series_slug),
+        createdAt: latestSelection.created_at,
+        selectionType: 'curated_prefab',
+        seriesSlug: latestSelection.series_slug,
+      })
+    }
   } else if (
     latestSelection?.option_kind === 'ai_primary' &&
     latestSelection.plan_token
   ) {
-    candidates.push({
-      route: `/soul-audit/results?planToken=${latestSelection.plan_token}`,
-      createdAt: latestSelection.created_at,
-      selectionType: 'ai_primary',
-      planToken: latestSelection.plan_token,
-      seriesSlug: latestSelection.series_slug,
-    })
+    const plan = await getPlanInstanceWithFallback(latestSelection.plan_token)
+    const planDays = plan
+      ? await getAllPlanDaysWithFallback(latestSelection.plan_token)
+      : []
+    if (plan && planDays.length > 0) {
+      candidates.push({
+        route: `/soul-audit/results?planToken=${latestSelection.plan_token}`,
+        createdAt: latestSelection.created_at,
+        selectionType: 'ai_primary',
+        planToken: latestSelection.plan_token,
+        seriesSlug: latestSelection.series_slug,
+      })
+    }
   }
 
   candidates.sort((a, b) => b.createdAt.localeCompare(a.createdAt))
