@@ -5,6 +5,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Desktop Nav Docking Behavior Update (2026-02-19)
+
+### What Changed
+
+- Reintroduced desktop docked-topbar behavior in the shell header by mounting nav links into the topbar center once masthead scrolls out.
+- Added intersection-based docking state in the header component and synchronized desktop/mobile nav visibility contracts.
+- Refined docked desktop nav collapse styles while preserving mobile sticky-nav behavior.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run type-check`
+- `npm test -- --run __tests__/layout-overflow-contract.test.ts __tests__/ios-shell-readiness-contract.test.ts`
+
+---
+
 ## Shell Container + Process Guardrails Update (2026-02-19)
 
 ### What Changed

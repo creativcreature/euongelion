@@ -95,6 +95,8 @@ export default function EuangelionShellHeader({
   const mobileMenuToggleRef = useRef<HTMLButtonElement | null>(null)
   const mobileMenuPanelRef = useRef<HTMLDivElement | null>(null)
 
+  const mastheadRef = useRef<HTMLElement | null>(null)
+
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
   const [now, setNow] = useState(() => new Date())
   const [mobileTopbarIndex, setMobileTopbarIndex] = useState(0)
@@ -103,6 +105,7 @@ export default function EuangelionShellHeader({
   const [authenticated, setAuthenticated] = useState(false)
   const [userEmail, setUserEmail] = useState<string | null>(null)
   const [accountMenuOpen, setAccountMenuOpen] = useState(false)
+  const [navDocked, setNavDocked] = useState(false)
 
   const mobileMenuItems = useMemo(
     () => [...NAV_ITEMS, ...MOBILE_EXTRA_ITEMS],
@@ -306,6 +309,45 @@ export default function EuangelionShellHeader({
     return () => window.clearInterval(timer)
   }, [mobileTickerItems.length, mobileMenuOpen])
 
+  // Dock nav into topbar when masthead scrolls out of view (desktop only)
+  useEffect(() => {
+    const masthead = mastheadRef.current
+    if (!masthead) return
+
+    const mql = window.matchMedia('(max-width: 900px)')
+    // On mobile, never dock — nav sticks independently
+    if (mql.matches) {
+      setNavDocked(false)
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // When masthead is no longer visible, dock the nav into topbar
+        setNavDocked(!entry.isIntersecting)
+      },
+      {
+        // Offset by the topbar height so docking triggers right when
+        // the masthead's bottom edge meets the topbar's bottom edge
+        rootMargin: '-42px 0px 0px 0px',
+        threshold: 0,
+      },
+    )
+    observer.observe(masthead)
+
+    const handleResize = () => {
+      if (mql.matches) {
+        setNavDocked(false)
+      }
+    }
+    mql.addEventListener('change', handleResize)
+
+    return () => {
+      observer.disconnect()
+      mql.removeEventListener('change', handleResize)
+    }
+  }, [])
+
   useEffect(() => {
     if (previousPathnameRef.current === pathname) return
     previousPathnameRef.current = pathname
@@ -480,9 +522,18 @@ export default function EuangelionShellHeader({
               {formatMastheadDate(now)}
             </time>
             <div className="mock-topbar-center-slot">
-              <p className="mock-topbar-center-copy">
-                Daily Devotionals for the Hungry Soul
-              </p>
+              {navDocked ? (
+                <nav
+                  className="mock-topbar-center-nav"
+                  aria-label="Main navigation"
+                >
+                  {renderNavLinks(NAV_ITEMS)}
+                </nav>
+              ) : (
+                <p className="mock-topbar-center-copy">
+                  Daily Devotionals for the Hungry Soul
+                </p>
+              )}
             </div>
             <div className="mock-topbar-actions">
               <button
@@ -584,7 +635,7 @@ export default function EuangelionShellHeader({
           </div>
         </div>
 
-        <section className="mock-masthead-block">
+        <section className="mock-masthead-block" ref={mastheadRef}>
           <h1 className="text-masthead mock-masthead-word">
             <span className="js-shell-masthead-fit mock-masthead-text">
               {brandWord}
@@ -597,7 +648,11 @@ export default function EuangelionShellHeader({
           )}
         </section>
 
-        <nav className="mock-nav text-label" aria-label="Main navigation">
+        <nav
+          className={`mock-nav text-label${navDocked ? ' is-docked' : ''}`}
+          aria-label={navDocked ? undefined : 'Main navigation'}
+          aria-hidden={navDocked ? true : undefined}
+        >
           <div className="mock-nav-desktop">{renderNavLinks(NAV_ITEMS)}</div>
           <div className="mock-nav-mobile">
             {renderMobileNav('mock-mobile-nav-panel')}
