@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Mobile Chat Peek Focus Fix (2026-02-20)
+
+### What Changed
+
+- Refined mobile chat focus behavior:
+  - chat input no longer auto-focuses while mobile sheet is in `PEEK` mode.
+  - input auto-focus now triggers only on desktop or when mobile sheet is expanded.
+  - prevents keyboard pop-up from obscuring devotional content during peek-first usage.
+
+### Files
+
+- `src/components/DevotionalChat.tsx`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/chat-ux.test.ts`
+
+---
+
 ## Highlight Recolor Controls Pass (2026-02-20)
 
 ### What Changed

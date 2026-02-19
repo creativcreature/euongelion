@@ -105,12 +105,14 @@ export default function DevotionalChat({
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
-  // Focus input when modal opens
+  // Focus input when modal opens on desktop, or when mobile sheet is expanded.
   useEffect(() => {
-    if (isOpen) {
-      setTimeout(() => inputRef.current?.focus(), 300)
-    }
-  }, [isOpen])
+    if (!isOpen) return
+    if (isMobileViewport && mobilePeekMode) return
+
+    const timeoutId = window.setTimeout(() => inputRef.current?.focus(), 300)
+    return () => window.clearTimeout(timeoutId)
+  }, [isOpen, isMobileViewport, mobilePeekMode])
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -129,6 +131,12 @@ export default function DevotionalChat({
       setMobilePeekMode(false)
     }
   }, [isOpen, isMobileViewport])
+
+  useEffect(() => {
+    if (!isOpen || !isMobileViewport || mobilePeekMode) return
+    const timeoutId = window.setTimeout(() => inputRef.current?.focus(), 120)
+    return () => window.clearTimeout(timeoutId)
+  }, [isMobileViewport, isOpen, mobilePeekMode])
 
   // Filter messages for current devotional context
   const contextMessages = messages.filter(
