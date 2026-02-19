@@ -17,6 +17,7 @@ Format: Reverse chronological, grouped by sprint/date.
   - `/api/soul-audit/reset` now rotates the audit session token after clearing state.
   - stale current-route prompts no longer persist across reset when backing persistence cleanup is eventually consistent.
 - Added regression coverage for unresolved-candidate suppression in current-route API.
+- Updated edge-case test mocks to include reset-session rotation dependency so the full test suite remains green after reset-contract hardening.
 
 ### Files
 
@@ -25,6 +26,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - `src/lib/soul-audit/session.ts`
 - `__tests__/soul-audit-current-route.test.ts`
 - `__tests__/soul-audit-reset-route.test.ts`
+- `__tests__/soul-audit-edge-cases.test.ts`
 - `docs/feature-prds/F-029.md`
 
 ### Validation

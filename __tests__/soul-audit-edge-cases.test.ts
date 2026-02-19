@@ -13,6 +13,7 @@ let sessionToken = 'edge-session'
 
 vi.mock('@/lib/soul-audit/session', () => ({
   getOrCreateAuditSessionToken: vi.fn(async () => sessionToken),
+  rotateAuditSessionToken: vi.fn(async () => `${sessionToken}-rotated`),
 }))
 
 function postJson(url: string, body: Record<string, unknown>) {
