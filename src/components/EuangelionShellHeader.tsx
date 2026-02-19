@@ -89,6 +89,8 @@ export default function EuangelionShellHeader({
   tone?: 'default' | 'wake'
 }) {
   const pathname = usePathname()
+  const topbarRef = useRef<HTMLDivElement | null>(null)
+  const mastheadRef = useRef<HTMLElement | null>(null)
   const previousPathnameRef = useRef(pathname)
   const accountMenuRef = useRef<HTMLDivElement | null>(null)
   const accountTriggerRef = useRef<HTMLButtonElement | null>(null)
@@ -100,6 +102,7 @@ export default function EuangelionShellHeader({
   const [mobileTopbarIndex, setMobileTopbarIndex] = useState(0)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isNavDocked, setIsNavDocked] = useState(false)
   const [authLoading, setAuthLoading] = useState(true)
   const [authenticated, setAuthenticated] = useState(false)
   const [userEmail, setUserEmail] = useState<string | null>(null)
@@ -181,6 +184,46 @@ export default function EuangelionShellHeader({
     media.addEventListener('change', syncViewport)
     return () => media.removeEventListener('change', syncViewport)
   }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (isMobileViewport) {
+      setIsNavDocked(false)
+      return
+    }
+
+    let rafId = 0
+
+    const updateDockedState = () => {
+      rafId = 0
+      const topbar = topbarRef.current
+      const masthead = mastheadRef.current
+      if (!topbar || !masthead) return
+
+      const topbarBottom = topbar.getBoundingClientRect().bottom
+      const mastheadBottom = masthead.getBoundingClientRect().bottom
+      const nextDocked = mastheadBottom <= topbarBottom + 1
+
+      setIsNavDocked((current) =>
+        current === nextDocked ? current : nextDocked,
+      )
+    }
+
+    const onScrollOrResize = () => {
+      if (rafId) return
+      rafId = window.requestAnimationFrame(updateDockedState)
+    }
+
+    updateDockedState()
+    window.addEventListener('scroll', onScrollOrResize, { passive: true })
+    window.addEventListener('resize', onScrollOrResize)
+
+    return () => {
+      if (rafId) window.cancelAnimationFrame(rafId)
+      window.removeEventListener('scroll', onScrollOrResize)
+      window.removeEventListener('resize', onScrollOrResize)
+    }
+  }, [isMobileViewport, pathname])
 
   useEffect(() => {
     if (!accountMenuOpen) return
@@ -493,7 +536,10 @@ export default function EuangelionShellHeader({
   return (
     <div className={`mock-shell-frame ${tone === 'wake' ? 'wake-shell' : ''}`}>
       <header className="mock-shell-header">
-        <div className="mock-topbar text-label">
+        <div
+          ref={topbarRef}
+          className={`mock-topbar text-label ${isNavDocked ? 'is-nav-docked' : ''}`}
+        >
           <div className="mock-topbar-desktop-row">
             <time
               className="mock-topbar-date"
@@ -502,6 +548,20 @@ export default function EuangelionShellHeader({
             >
               {formatMastheadDate(now)}
             </time>
+            <div className="mock-topbar-center-slot">
+              {isNavDocked ? (
+                <div
+                  className="mock-topbar-center-nav"
+                  aria-label="Docked navigation"
+                >
+                  {renderNavLinks(NAV_ITEMS)}
+                </div>
+              ) : (
+                <p className="mock-topbar-center-copy">
+                  Daily Devotionals for the Hungry Soul
+                </p>
+              )}
+            </div>
             <div className="mock-topbar-actions">
               <button
                 type="button"
@@ -602,7 +662,7 @@ export default function EuangelionShellHeader({
           </div>
         </div>
 
-        <section className="mock-masthead-block">
+        <section ref={mastheadRef} className="mock-masthead-block">
           <h1 className="text-masthead mock-masthead-word">
             <span className="js-shell-masthead-fit mock-masthead-text">
               {brandWord}
@@ -615,7 +675,11 @@ export default function EuangelionShellHeader({
           )}
         </section>
 
-        <nav className="mock-nav text-label" aria-label="Main navigation">
+        <nav
+          className={`mock-nav text-label ${isNavDocked && !isMobileViewport ? 'is-docked' : ''}`}
+          aria-label="Main navigation"
+          aria-hidden={isNavDocked && !isMobileViewport ? true : undefined}
+        >
           {isMobileViewport
             ? renderMobileNav('mock-mobile-nav-panel')
             : renderNavLinks(NAV_ITEMS)}

@@ -93,6 +93,9 @@ describe('EuangelionShellHeader', () => {
         if (this.classList.contains('mock-topbar')) {
           return rect({ top: 0, height: 42 })
         }
+        if (this.classList.contains('mock-masthead-block')) {
+          return rect({ top: 42, height: 168 })
+        }
         return rect({ top: 0, height: 0 })
       },
     )

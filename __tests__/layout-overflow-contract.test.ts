@@ -21,9 +21,18 @@ describe('Layout overflow and sticky contract', () => {
     expect(css).toContain('max-width: calc(100dvw - 0.5rem);')
   })
 
-  it('keeps main navigation sticky', () => {
+  it('keeps desktop nav in normal flow so it can dock into topbar on scroll', () => {
     const navBlock = css.match(/\.mock-nav\s*\{[\s\S]*?\n\}/)?.[0]
     expect(navBlock).toBeTruthy()
-    expect(navBlock).toContain('position: sticky;')
+    expect(navBlock).toContain('position: static;')
+  })
+
+  it('keeps mobile nav sticky for small-view navigation', () => {
+    const mobileBlock = css.match(
+      /@media \(max-width: 900px\)\s*\{[\s\S]*?\.mock-nav\s*\{[\s\S]*?\n\s*\}/,
+    )?.[0]
+    expect(mobileBlock).toBeTruthy()
+    expect(mobileBlock).toContain('position: sticky;')
+    expect(mobileBlock).toContain('top: 0;')
   })
 })

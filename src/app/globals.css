@@ -2423,7 +2423,7 @@
 
 .mock-topbar-desktop-row {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 0.75rem;
   min-height: var(--mock-h-topbar, 42px);
@@ -2441,7 +2441,31 @@
 }
 
 .mock-topbar-center-nav {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+
+.mock-topbar-center-slot {
+  justify-self: center;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.mock-topbar-center-nav .mock-nav-item-wrap {
+  gap: 0.35rem;
+}
+
+.mock-topbar-center-nav .mock-nav-item {
+  min-height: 1.5rem;
+  padding: 0.06rem 0.14rem;
+}
+
+.mock-topbar-center-nav > .mock-nav-item-wrap > span[aria-hidden='true'] {
+  opacity: 0.66;
 }
 
 .mock-mode-toggle {
@@ -2636,10 +2660,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: var(--mock-h-topbar, 42px);
-  z-index: 110;
+  position: static;
+  top: auto;
+  z-index: 60;
   isolation: isolate;
   gap: 0.45rem;
   min-height: var(--mock-h-nav, 34px);
@@ -2655,6 +2678,10 @@
     opacity 220ms ease,
     padding 220ms ease,
     border-color 220ms ease;
+}
+
+.mock-nav.is-docked {
+  display: none;
 }
 
 .mock-nav-item-wrap {
@@ -4056,9 +4083,12 @@
   }
 
   .mock-nav {
+    position: -webkit-sticky;
+    position: sticky;
     justify-content: flex-start;
     align-items: stretch;
     top: 0;
+    z-index: 110;
     overflow: visible;
     flex-direction: column;
     gap: 0.28rem;

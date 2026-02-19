@@ -5,6 +5,35 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Topbar Docked-Menu Contract (2026-02-19)
+
+### What Changed
+
+- Restored desktop topbar center copy: `Daily Devotionals for the Hungry Soul`.
+- Implemented scroll docking behavior:
+  - date/time and dark mode remain sticky in topbar.
+  - main menu scrolls up, docks into the topbar center, and replaces the slogan.
+  - standalone desktop nav row hides while docked to prevent duplicate menus.
+- Updated nav layout contract:
+  - desktop nav row is flow-based (non-sticky) so it can dock into topbar.
+  - mobile nav remains sticky at top.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+- `__tests__/shell-header.test.tsx`
+- `__tests__/layout-overflow-contract.test.ts`
+- `__tests__/ios-shell-readiness-contract.test.ts`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/shell-header.test.tsx __tests__/layout-overflow-contract.test.ts __tests__/ios-shell-readiness-contract.test.ts __tests__/navigation-routing-shell.test.ts`
+
+---
+
 ## Sticky Header Containing-Block Fix (2026-02-19)
 
 ### What Changed
