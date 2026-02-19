@@ -40,6 +40,8 @@ function shouldSkipReveal(node: HTMLElement): boolean {
 
 function shouldSkipInteractive(node: HTMLElement): boolean {
   if (node.dataset.noInkLine === 'true') return true
+  if (node.closest('nav, .mock-topbar, .mock-nav, .mock-account-menu'))
+    return true
   if (node.closest('[aria-hidden="true"]')) return true
   if (node.matches('button:disabled,[aria-disabled="true"]')) return true
 

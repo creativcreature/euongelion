@@ -2410,7 +2410,7 @@
 .mock-topbar {
   position: sticky;
   top: 0;
-  z-index: 70;
+  z-index: 120;
   min-height: calc(var(--mock-h-topbar, 42px) + var(--shell-safe-top, 0px));
   padding-top: var(--shell-safe-top, 0px);
   background: var(--mock-paper, var(--color-bg));
@@ -2636,7 +2636,7 @@
   justify-content: center;
   position: sticky;
   top: var(--shell-topbar-height, var(--mock-h-topbar, 42px));
-  z-index: 65;
+  z-index: 110;
   isolation: isolate;
   gap: 0.45rem;
   min-height: var(--mock-h-nav, 34px);
@@ -2668,6 +2668,8 @@
   padding: 0.1rem 0.2rem;
   text-decoration: none;
   color: inherit;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
 .mock-nav-item.is-active {
@@ -2722,6 +2724,7 @@
   font-size: var(--mock-type-0, 0.92rem);
   line-height: 1;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 .mock-mobile-menu-toggle.is-open {
@@ -2731,6 +2734,7 @@
 .mock-mobile-nav-panel {
   display: none;
   width: 100%;
+  align-items: stretch;
 }
 
 .mock-mobile-nav-panel.is-open {
@@ -4080,7 +4084,7 @@
   }
 
   .mock-mobile-nav-main {
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-wrap: nowrap;
     overflow: visible;
     touch-action: auto;

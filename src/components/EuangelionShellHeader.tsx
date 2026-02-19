@@ -239,6 +239,26 @@ export default function EuangelionShellHeader({
   }, [mobileMenuOpen])
 
   useEffect(() => {
+    if (!mobileMenuOpen) return
+
+    function onPointerDown(event: MouseEvent | TouchEvent) {
+      const target = event.target as Node
+      const panel = mobileMenuPanelRef.current
+      const toggle = mobileMenuToggleRef.current
+      if (!panel || !toggle) return
+      if (panel.contains(target) || toggle.contains(target)) return
+      setMobileMenuOpen(false)
+    }
+
+    document.addEventListener('mousedown', onPointerDown)
+    document.addEventListener('touchstart', onPointerDown, { passive: true })
+    return () => {
+      document.removeEventListener('mousedown', onPointerDown)
+      document.removeEventListener('touchstart', onPointerDown)
+    }
+  }, [mobileMenuOpen])
+
+  useEffect(() => {
     const spans = Array.from(
       document.querySelectorAll<HTMLElement>(
         '.js-shell-masthead-fit, .js-masthead-fit',
@@ -414,86 +434,89 @@ export default function EuangelionShellHeader({
           className={`mock-mobile-menu-toggle ${mobileMenuOpen ? 'is-open' : ''}`}
           onClick={() => setMobileMenuOpen((current) => !current)}
           ref={mobileMenuToggleRef}
-          aria-label={
-            mobileMenuOpen ? 'Close secondary menu' : 'Open secondary menu'
-          }
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileMenuOpen}
-          aria-controls="shell-mobile-secondary-nav"
+          aria-controls={
+            mobileMenuOpen ? 'shell-mobile-secondary-nav' : undefined
+          }
         >
           {mobileMenuOpen ? 'CLOSE' : 'MENU'}
         </button>
       </div>
-      <div
-        id="shell-mobile-secondary-nav"
-        ref={mobileMenuPanelRef}
-        role="group"
-        aria-label="Navigation menu"
-        aria-hidden={!mobileMenuOpen}
-        className={`${panelClassName} ${mobileMenuOpen ? 'is-open' : ''}`}
-      >
-        {mobileMenuItems.map((item) => {
-          const active = isNavItemActive(item.href)
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`mock-nav-item ${active ? 'is-active' : ''}`}
-              aria-current={active ? 'page' : undefined}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          )
-        })}
-        <button
-          type="button"
-          className="mock-nav-item mock-mobile-theme-item"
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+      {mobileMenuOpen && (
+        <div
+          id="shell-mobile-secondary-nav"
+          ref={mobileMenuPanelRef}
+          role="group"
+          aria-label="Navigation menu"
+          className={`${panelClassName} is-open`}
         >
-          {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
-        </button>
-        {!authLoading &&
-          (authenticated ? (
-            <>
+          {mobileMenuItems.map((item) => {
+            const active = isNavItemActive(item.href)
+            return (
               <Link
-                href="/settings"
-                className={`mock-nav-item ${isNavItemActive('/settings') ? 'is-active' : ''}`}
-                aria-current={isNavItemActive('/settings') ? 'page' : undefined}
+                key={item.href}
+                href={item.href}
+                className={`mock-nav-item ${active ? 'is-active' : ''}`}
+                aria-current={active ? 'page' : undefined}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                ACCOUNT
+                {item.label}
               </Link>
-              <button
-                type="button"
-                className="mock-nav-item"
-                onClick={() => {
-                  setMobileMenuOpen(false)
-                  void handleSignOut()
-                }}
-              >
-                SIGN OUT
-              </button>
-            </>
-          ) : (
-            <>
-              <Link
-                href={`/auth/sign-in?redirect=${redirectPath}`}
-                className="mock-nav-item"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                SIGN IN
-              </Link>
-              <Link
-                href={`/auth/sign-up?redirect=${redirectPath}`}
-                className="mock-nav-item"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                SIGN UP
-              </Link>
-            </>
-          ))}
-      </div>
+            )
+          })}
+          <button
+            type="button"
+            className="mock-nav-item mock-mobile-theme-item"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          >
+            {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
+          </button>
+          {!authLoading &&
+            (authenticated ? (
+              <>
+                <Link
+                  href="/settings"
+                  className={`mock-nav-item ${isNavItemActive('/settings') ? 'is-active' : ''}`}
+                  aria-current={
+                    isNavItemActive('/settings') ? 'page' : undefined
+                  }
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  ACCOUNT
+                </Link>
+                <button
+                  type="button"
+                  className="mock-nav-item"
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    void handleSignOut()
+                  }}
+                >
+                  SIGN OUT
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  href={`/auth/sign-in?redirect=${redirectPath}`}
+                  className="mock-nav-item"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  SIGN IN
+                </Link>
+                <Link
+                  href={`/auth/sign-up?redirect=${redirectPath}`}
+                  className="mock-nav-item"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  SIGN UP
+                </Link>
+              </>
+            ))}
+        </div>
+      )}
     </>
   )
 

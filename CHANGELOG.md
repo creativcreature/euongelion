@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Navigation Contract Hardening (2026-02-19)
+
+### What Changed
+
+- Hardened mobile menu behavior to eliminate stale/duplicate nav states:
+  - mobile dropdown now mounts only when opened (no hidden duplicate menu tree kept mounted).
+  - added outside-click/touch close handling for the mobile menu.
+- Updated mobile menu semantics to `Open menu` / `Close menu` and kept keyboard escape close behavior.
+- Prevented editorial micro-interaction decorators from modifying nav/topbar controls.
+- Increased sticky stack reliability and clickability by tightening nav/topbar z-index and touch/pointer behavior.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/components/EditorialMotionSystem.tsx`
+- `src/app/globals.css`
+- `__tests__/shell-header.test.tsx`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/shell-header.test.tsx __tests__/navigation-routing-shell.test.ts __tests__/scroll-unlock-contract.test.ts __tests__/ios-shell-readiness-contract.test.ts __tests__/layout-overflow-contract.test.ts`
+
+---
+
 ## Navigation Reliability Rebuild (2026-02-20)
 
 ### What Changed

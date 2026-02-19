@@ -185,13 +185,13 @@ describe('EuangelionShellHeader', () => {
     const { rerender } = render(<EuangelionShellHeader />)
 
     const toggle = screen.getByRole('button', {
-      name: 'Open secondary menu',
+      name: 'Open menu',
     })
     await user.click(toggle)
 
     await waitFor(() => {
       expect(
-        screen.getByRole('button', { name: 'Close secondary menu' }),
+        screen.getByRole('button', { name: 'Close menu' }),
       ).toBeInTheDocument()
     })
 
@@ -200,7 +200,7 @@ describe('EuangelionShellHeader', () => {
 
     await waitFor(() => {
       expect(
-        screen.getByRole('button', { name: 'Open secondary menu' }),
+        screen.getByRole('button', { name: 'Open menu' }),
       ).toBeInTheDocument()
     })
   })
@@ -210,30 +210,44 @@ describe('EuangelionShellHeader', () => {
     render(<EuangelionShellHeader />)
 
     const toggle = screen.getByRole('button', {
-      name: 'Open secondary menu',
+      name: 'Open menu',
     })
-    expect(toggle).toHaveAttribute(
-      'aria-controls',
-      'shell-mobile-secondary-nav',
-    )
+    expect(toggle).not.toHaveAttribute('aria-controls')
 
     await user.click(toggle)
+
+    await waitFor(() => {
+      expect(
+        screen.getByRole('button', { name: 'Close menu' }),
+      ).toHaveAttribute('aria-controls', 'shell-mobile-secondary-nav')
+    })
 
     const panel = await screen.findByRole('group', {
       name: 'Navigation menu',
     })
     expect(panel).toBeInTheDocument()
-    expect(panel).toHaveAttribute('aria-hidden', 'false')
 
     await user.keyboard('{Escape}')
 
     await waitFor(() => {
       const reopenedToggle = screen.getByRole('button', {
-        name: 'Open secondary menu',
+        name: 'Open menu',
       })
       expect(reopenedToggle).toBeInTheDocument()
       expect(reopenedToggle).toHaveFocus()
     })
+  })
+
+  it('does not keep duplicate mobile menu links mounted while closed', async () => {
+    render(<EuangelionShellHeader />)
+
+    await waitFor(() => {
+      expect(
+        screen.getByRole('button', { name: 'Open menu' }),
+      ).toBeInTheDocument()
+    })
+
+    expect(screen.queryByRole('group', { name: 'Navigation menu' })).toBeNull()
   })
 
   it('avoids duplicate settings/account links in authenticated mobile menu', async () => {
@@ -251,13 +265,13 @@ describe('EuangelionShellHeader', () => {
     render(<EuangelionShellHeader />)
 
     const toggle = await screen.findByRole('button', {
-      name: 'Open secondary menu',
+      name: 'Open menu',
     })
     await user.click(toggle)
 
     await waitFor(() => {
       expect(
-        screen.getByRole('button', { name: 'Close secondary menu' }),
+        screen.getByRole('button', { name: 'Close menu' }),
       ).toBeInTheDocument()
     })
 
