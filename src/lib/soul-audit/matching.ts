@@ -211,6 +211,61 @@ function buildAiPreviewParagraph(params: {
   return `Because you named "${burden}", begin with ${params.candidate.scriptureReference}. ${teaching}`
 }
 
+function parseFramework(seriesFramework: string): {
+  reference: string
+  text: string
+} {
+  const normalized = collapseWhitespace(seriesFramework)
+  if (!normalized) {
+    return {
+      reference: 'Scripture',
+      text: 'Continue reading with honesty and faithfulness.',
+    }
+  }
+
+  const [referencePart, ...rest] = normalized.split(/\s+-\s+/)
+  const reference = collapseWhitespace(referencePart)
+  const text = collapseWhitespace(rest.join(' - '))
+
+  return {
+    reference: reference || 'Scripture',
+    text: text || 'Continue reading with honesty and faithfulness.',
+  }
+}
+
+function fallbackCandidateForSeries(slug: string): CuratedDayCandidate | null {
+  const series = SERIES_DATA[slug]
+  if (!series) return null
+  const dayOne = [...series.days].sort((a, b) => a.day - b.day)[0]
+  if (!dayOne) return null
+
+  const framework = parseFramework(series.framework)
+  return {
+    key: `series-fallback:${slug}:1`,
+    seriesSlug: slug,
+    seriesTitle: series.title,
+    sourcePath: 'series-metadata',
+    dayNumber: dayOne.day,
+    dayTitle: dayOne.title,
+    scriptureReference: framework.reference,
+    scriptureText: framework.text,
+    teachingText: collapseWhitespace(series.introduction || series.context),
+    reflectionPrompt: series.question,
+    prayerText: `Lord, meet me in this season and guide my next faithful step in ${series.title}.`,
+    takeawayText: `Take one concrete action from ${series.title} before today ends.`,
+    searchText: [
+      slug,
+      series.title,
+      series.question,
+      series.introduction,
+      series.context,
+      series.keywords.join(' '),
+    ]
+      .join(' ')
+      .toLowerCase(),
+  }
+}
+
 function choosePrimaryMatches(input: string): Array<{
   candidate: CuratedDayCandidate
   confidence: number
@@ -361,8 +416,17 @@ function getPrefabSlugs(primarySlugs: string[]): string[] {
       !primarySlugs.includes(slug) &&
       !preferred.includes(slug),
   )
-
-  return [...preferred, ...fill].slice(0, SOUL_AUDIT_OPTION_SPLIT.curatedPrefab)
+  const merged = [...preferred, ...fill]
+  if (merged.length < SOUL_AUDIT_OPTION_SPLIT.curatedPrefab) {
+    const relaxedFill = ALL_SERIES_ORDER.filter(
+      (slug) =>
+        slug in SERIES_DATA &&
+        !primarySlugs.includes(slug) &&
+        !merged.includes(slug),
+    )
+    merged.push(...relaxedFill)
+  }
+  return merged.slice(0, SOUL_AUDIT_OPTION_SPLIT.curatedPrefab)
 }
 
 function hasExpectedOptionSplit(options: AuditOptionPreview[]): boolean {
@@ -419,16 +483,45 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
     aiOptions = [...aiOptions, ...fillers]
   }
 
+  if (
+    aiOptions.length > 0 &&
+    aiOptions.length < SOUL_AUDIT_OPTION_SPLIT.aiPrimary
+  ) {
+    let idx = 0
+    const source = [...aiOptions]
+    while (aiOptions.length < SOUL_AUDIT_OPTION_SPLIT.aiPrimary) {
+      const template = source[idx % source.length]
+      const dayNumber =
+        template.preview &&
+        typeof template.preview === 'object' &&
+        template.preview.curationSeed &&
+        typeof template.preview.curationSeed === 'object' &&
+        typeof template.preview.curationSeed.dayNumber === 'number'
+          ? template.preview.curationSeed.dayNumber
+          : 1
+      aiOptions.push({
+        ...template,
+        id: `ai_primary:${template.slug}:${dayNumber}:${aiOptions.length + 1}`,
+        rank: aiOptions.length + 1,
+        confidence: Math.max(0.45, template.confidence - 0.05 * idx),
+      })
+      idx += 1
+    }
+  }
+
   aiOptions = aiOptions.slice(0, SOUL_AUDIT_OPTION_SPLIT.aiPrimary)
+  if (aiOptions.length === 0) {
+    // Fail closed only when there is no curated AI anchor candidate at all.
+    return []
+  }
 
   const aiSlugs = aiOptions.map((option) => option.slug)
   const prefabOptions = getPrefabSlugs(aiSlugs)
     .map((slug, index) => {
-      const candidate = getCuratedDayCandidates().find(
-        (item) => item.seriesSlug === slug,
-      )
+      const candidate =
+        getCuratedDayCandidates().find((item) => item.seriesSlug === slug) ??
+        fallbackCandidateForSeries(slug)
       if (!candidate) return null
-
       return makeOption({
         candidate,
         kind: 'curated_prefab',
@@ -439,7 +532,32 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
     })
     .filter((option): option is AuditOptionPreview => Boolean(option))
 
-  const assembled = [...aiOptions, ...prefabOptions].slice(
+  let assembled = [...aiOptions, ...prefabOptions].slice(
+    0,
+    SOUL_AUDIT_OPTION_SPLIT.total,
+  )
+  if (hasExpectedOptionSplit(assembled)) return assembled
+
+  const fallbackPrefabs = ALL_SERIES_ORDER.filter(
+    (slug) =>
+      !aiSlugs.includes(slug) &&
+      !prefabOptions.some((option) => option.slug === slug),
+  )
+    .slice(0, SOUL_AUDIT_OPTION_SPLIT.curatedPrefab - prefabOptions.length)
+    .map((slug, index) => {
+      const candidate = fallbackCandidateForSeries(slug)
+      if (!candidate) return null
+      return makeOption({
+        candidate,
+        kind: 'curated_prefab',
+        rank: aiOptions.length + prefabOptions.length + index + 1,
+        confidence: 0.4,
+        input,
+      })
+    })
+    .filter((option): option is AuditOptionPreview => Boolean(option))
+
+  assembled = [...aiOptions, ...prefabOptions, ...fallbackPrefabs].slice(
     0,
     SOUL_AUDIT_OPTION_SPLIT.total,
   )

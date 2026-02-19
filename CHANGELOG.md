@@ -5,6 +5,40 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Split Resilience Hardening (2026-02-20)
+
+### What Changed
+
+- Strengthened `3 AI + 2 prefab` split reliability for submit-path edge cases:
+  - when AI candidates are concentrated in one series, submit now keeps the 3 AI contract and fills prefab slots via series-metadata fallback instead of failing the entire option set.
+  - preserved fail-closed behavior when curated candidates are completely unavailable.
+- Added split-focused regression coverage:
+  - staged-flow continuity tests now validate prefab selection persistence/reset flow contracts.
+  - fallback-options tests now verify single-series concentration still returns a valid 3+2 split.
+
+### Files
+
+- `src/lib/soul-audit/matching.ts`
+- `__tests__/soul-audit-flow.test.ts`
+- `__tests__/soul-audit-fallback-options.test.ts`
+- `docs/feature-prds/F-021.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:governance-alignment`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Scorecard Refresh: Daily Home Continuity (2026-02-20)
 
 ### What Changed
