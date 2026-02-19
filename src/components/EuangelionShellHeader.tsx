@@ -10,7 +10,6 @@ const NAV_ITEMS = [
   { href: '/daily-bread', label: 'DAILY BREAD' },
   { href: '/series', label: 'SERIES' },
 ]
-const MOBILE_PRIMARY_NAV_PATHS = ['/', '/soul-audit', '/daily-bread', '/series']
 const MOBILE_EXTRA_ITEMS = [
   { href: '/help', label: 'HELP' },
   { href: '/wake-up', label: 'WAKE-UP' },
@@ -107,18 +106,10 @@ export default function EuangelionShellHeader({
   const [userEmail, setUserEmail] = useState<string | null>(null)
   const [accountMenuOpen, setAccountMenuOpen] = useState(false)
 
-  const mobileNavItems = useMemo(
+  const mobileMenuItems = useMemo(
     () => [...NAV_ITEMS, ...MOBILE_EXTRA_ITEMS],
     [],
   )
-  const mobilePrimaryNavItems = useMemo(() => {
-    const paths = new Set(MOBILE_PRIMARY_NAV_PATHS)
-    return mobileNavItems.filter((item) => paths.has(item.href))
-  }, [mobileNavItems])
-  const mobileSecondaryNavItems = useMemo(() => {
-    const paths = new Set(MOBILE_PRIMARY_NAV_PATHS)
-    return mobileNavItems.filter((item) => !paths.has(item.href))
-  }, [mobileNavItems])
   const mobileTickerItems = useMemo(
     () => [
       formatMastheadDate(now),
@@ -404,28 +395,20 @@ export default function EuangelionShellHeader({
       )
     })
 
+  const activeMobileItem =
+    NAV_ITEMS.find((item) => isNavItemActive(item.href)) || NAV_ITEMS[0]
+
   const renderMobileNav = (panelClassName: string) => (
     <>
       <div className="mock-mobile-nav-main">
-        <div
-          className="mock-mobile-nav-main-links"
-          aria-label="Primary mobile navigation"
+        <Link
+          href={activeMobileItem.href}
+          className="mock-nav-item mock-mobile-nav-current is-active"
+          aria-current="page"
+          onClick={() => setMobileMenuOpen(false)}
         >
-          {mobilePrimaryNavItems.map((item) => {
-            const active = isNavItemActive(item.href)
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`mock-nav-item ${active ? 'is-active' : ''}`}
-                aria-current={active ? 'page' : undefined}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            )
-          })}
-        </div>
+          {activeMobileItem.label}
+        </Link>
         <button
           type="button"
           className={`mock-mobile-menu-toggle ${mobileMenuOpen ? 'is-open' : ''}`}
@@ -444,11 +427,11 @@ export default function EuangelionShellHeader({
         id="shell-mobile-secondary-nav"
         ref={mobileMenuPanelRef}
         role="group"
-        aria-label="Secondary navigation"
+        aria-label="Navigation menu"
         aria-hidden={!mobileMenuOpen}
         className={`${panelClassName} ${mobileMenuOpen ? 'is-open' : ''}`}
       >
-        {mobileSecondaryNavItems.map((item) => {
+        {mobileMenuItems.map((item) => {
           const active = isNavItemActive(item.href)
           return (
             <Link

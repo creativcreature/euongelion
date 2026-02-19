@@ -220,7 +220,7 @@ describe('EuangelionShellHeader', () => {
     await user.click(toggle)
 
     const panel = await screen.findByRole('group', {
-      name: 'Secondary navigation',
+      name: 'Navigation menu',
     })
     expect(panel).toBeInTheDocument()
     expect(panel).toHaveAttribute('aria-hidden', 'false')

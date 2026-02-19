@@ -5,6 +5,30 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Navigation Reliability Rebuild (2026-02-20)
+
+### What Changed
+
+- Reworked mobile nav into a single clean contract:
+  - one active-link surface + one `MENU` toggle in the sticky nav row.
+  - full nav list now lives in one dropdown panel (no split primary/secondary regions).
+- Improved sticky reliability across shells by removing `display: contents` from shell wrappers that were hosting header/nav.
+- Updated header keyboard/accessibility test contract for the renamed mobile panel label.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+- `__tests__/shell-header.test.tsx`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/shell-header.test.tsx __tests__/navigation-routing-shell.test.ts __tests__/scroll-unlock-contract.test.ts`
+
+---
+
 ## Soul Audit Submit Retry Hardening (2026-02-20)
 
 ### What Changed
