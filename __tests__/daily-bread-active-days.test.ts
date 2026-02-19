@@ -125,7 +125,7 @@ describe('GET /api/daily-bread/active-days', () => {
       hasPlan: boolean
       currentDay: number
       dayLocking: 'enabled' | 'disabled'
-      days: Array<{ day: number; status: string }>
+      days: Array<{ day: number; status: string; route?: string }>
     }
 
     expect(payload.hasPlan).toBe(true)
@@ -134,6 +134,9 @@ describe('GET /api/daily-bread/active-days', () => {
     expect(payload.days[0].status).toBe('unlocked')
     expect(payload.days[1].status).toBe('unlocked')
     expect(payload.days[2].status).toBe('current')
+    expect(payload.days[2]?.route).toBe(
+      '/soul-audit/results?planToken=token-123&day=3',
+    )
   })
 
   it('returns archived, current, and locked statuses when day locking is enabled', async () => {
@@ -208,6 +211,7 @@ describe('GET /api/daily-bread/active-days', () => {
       days: Array<{
         day: number
         status: string
+        route?: string
         lockMessage?: string
         unlockAt?: string
       }>
@@ -225,5 +229,6 @@ describe('GET /api/daily-bread/active-days', () => {
     expect(day3?.status).toBe('locked')
     expect(day3?.lockMessage).toContain("isn't ready")
     expect(day3?.unlockAt).toBeDefined()
+    expect(day3?.route).toBe('/soul-audit/results?planToken=token-xyz&day=3')
   })
 })

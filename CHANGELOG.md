@@ -5,6 +5,38 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Day Route Contract Tests (2026-02-20)
+
+### What Changed
+
+- Added regression coverage to lock the `?day=` route contract for devotional timeline navigation:
+  - active day API test now asserts `route` values use `?planToken=...&day=N`
+  - archive API route test added to ensure archived day links use the same query-based day selection.
+- Updated library rail accessibility test fixtures to the same query route pattern.
+
+### Files
+
+- `__tests__/daily-bread-active-days.test.ts`
+- `__tests__/soul-audit-archive-route.test.ts`
+- `__tests__/devotional-library-rail-accessibility.test.tsx`
+- `docs/feature-prds/F-029.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:governance-alignment`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Reader Shell Parity + Day Route Consistency (2026-02-20)
 
 ### What Changed

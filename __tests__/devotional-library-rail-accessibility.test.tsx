@@ -50,7 +50,7 @@ describe('DevotionalLibraryRail accessibility', () => {
                 scriptureReference: 'Psalm 46:10',
                 scriptureText: 'Be still, and know that I am God.',
                 status: 'current',
-                route: '/soul-audit/results?planToken=plan-token-1#plan-day-1',
+                route: '/soul-audit/results?planToken=plan-token-1&day=1',
               },
               {
                 day: 2,
@@ -59,7 +59,7 @@ describe('DevotionalLibraryRail accessibility', () => {
                 scriptureText:
                   'Trust in the Lord with all your heart, and lean not on your own understanding.',
                 status: 'locked',
-                route: '/soul-audit/results?planToken=plan-token-1#plan-day-2',
+                route: '/soul-audit/results?planToken=plan-token-1&day=2',
                 lockMessage:
                   "This day isn't ready yet. Your next day unlocks at 7:00 AM local time.",
               },
