@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, useSyncExternalStore } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
@@ -150,12 +151,12 @@ export default function SoulAuditPage() {
                   >
                     Reset Audit
                   </button>
-                  <a
+                  <Link
                     href="/series"
                     className="cta-major text-label vw-small inline-flex w-full px-10 py-5"
                   >
                     Browse All Series &rarr;
-                  </a>
+                  </Link>
                 </div>
               ) : (
                 <div>

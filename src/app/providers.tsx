@@ -4,7 +4,6 @@ import { useEffect, type ReactNode } from 'react'
 import { usePathname } from 'next/navigation'
 import AnimationProvider from '@/providers/AnimationProvider'
 import EditorialMotionSystem from '@/components/EditorialMotionSystem'
-import NetworkStatusBanner from '@/components/NetworkStatusBanner'
 
 /**
  * Client-side providers wrapper.
@@ -14,7 +13,7 @@ export default function Providers({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const unlockGlobalScroll = () => {
-      // Defensive global unlock so legacy menu locks cannot freeze page scroll.
+      // Defensive global unlock so stale menu locks cannot freeze page scroll.
       document.body.style.removeProperty('overflow')
       document.body.style.removeProperty('overflow-x')
       document.body.style.removeProperty('overflow-y')
@@ -31,8 +30,8 @@ export default function Providers({ children }: { children: ReactNode }) {
         'lenis-scrolling',
         'lenis-stopped',
       ]) {
-        document.documentElement.classList.remove(klass)
         document.body.classList.remove(klass)
+        document.documentElement.classList.remove(klass)
       }
     }
 
@@ -57,7 +56,6 @@ export default function Providers({ children }: { children: ReactNode }) {
   return (
     <AnimationProvider>
       <EditorialMotionSystem />
-      <NetworkStatusBanner />
       {children}
     </AnimationProvider>
   )

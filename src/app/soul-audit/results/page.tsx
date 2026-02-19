@@ -7,6 +7,10 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
+import ScrollProgress from '@/components/ScrollProgress'
+import ReaderTimeline, {
+  type ReaderSectionAnchor,
+} from '@/components/ReaderTimeline'
 import FadeIn from '@/components/motion/FadeIn'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { typographer } from '@/lib/typographer'
@@ -280,6 +284,9 @@ export default function SoulAuditResultsPage() {
   const [lastAuditInput, setLastAuditInput] = useState<string | null>(() =>
     loadLastAuditInput(),
   )
+  const [selectedDayNumber, setSelectedDayNumber] = useState<number | null>(
+    null,
+  )
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -319,6 +326,12 @@ export default function SoulAuditResultsPage() {
   const planToken = useMemo(() => {
     return searchParams.get('planToken') || selection?.planToken || null
   }, [searchParams, selection?.planToken])
+  const requestedDayNumber = useMemo(() => {
+    const raw = searchParams.get('day')
+    if (!raw) return null
+    const parsed = Number.parseInt(raw, 10)
+    return Number.isFinite(parsed) ? parsed : null
+  }, [searchParams])
   const currentConsentFingerprint = useMemo(() => {
     if (!submitResult) return null
     return [
@@ -508,16 +521,47 @@ export default function SoulAuditResultsPage() {
     if (planDays.length === 0) return null
     return Math.max(...planDays.map((day) => day.day))
   }, [planDays])
-
-  const nextDays = useMemo(() => {
-    if (currentDayNumber === null) return railDays
-    return railDays.filter((day) => day.day > currentDayNumber)
-  }, [currentDayNumber, railDays])
+  const selectedRailDay = useMemo(
+    () => railDays.find((day) => day.day === selectedDayNumber) ?? null,
+    [railDays, selectedDayNumber],
+  )
+  const selectedPlanDay = useMemo(
+    () => planDays.find((day) => day.day === selectedDayNumber) ?? null,
+    [planDays, selectedDayNumber],
+  )
+  const daySectionAnchors = useMemo<ReaderSectionAnchor[]>(() => {
+    if (!selectedPlanDay) return []
+    return [
+      { id: `day-${selectedPlanDay.day}-scripture`, label: 'SCRIPTURE' },
+      { id: `day-${selectedPlanDay.day}-reflection`, label: 'REFLECTION' },
+      { id: `day-${selectedPlanDay.day}-prayer`, label: 'PRAYER' },
+      { id: `day-${selectedPlanDay.day}-practice`, label: 'NEXT STEP' },
+      { id: `day-${selectedPlanDay.day}-journal`, label: 'JOURNAL' },
+    ]
+  }, [selectedPlanDay])
 
   const archiveForRail = useMemo(
     () => archivePlans.filter((plan) => plan.planToken !== planToken),
     [archivePlans, planToken],
   )
+
+  useEffect(() => {
+    if (requestedDayNumber === null) return
+    setSelectedDayNumber((current) =>
+      current === requestedDayNumber ? current : requestedDayNumber,
+    )
+  }, [requestedDayNumber])
+
+  useEffect(() => {
+    if (railDays.length === 0) return
+    const hasSelected =
+      selectedDayNumber !== null &&
+      railDays.some((entry) => entry.day === selectedDayNumber)
+    if (hasSelected) return
+
+    const fallbackDay = currentDayNumber ?? railDays[0].day
+    setSelectedDayNumber(fallbackDay)
+  }, [currentDayNumber, railDays, selectedDayNumber])
 
   useEffect(() => {
     if (submitResult) return
@@ -923,6 +967,36 @@ export default function SoulAuditResultsPage() {
     }
   }
 
+  function switchToDay(dayNumber: number) {
+    if (!planToken) return
+    setSelectedDayNumber(dayNumber)
+
+    const params = new URLSearchParams(searchParams.toString())
+    params.set('planToken', planToken)
+    params.set('day', String(dayNumber))
+    router.replace(`/soul-audit/results?${params.toString()}`, {
+      scroll: false,
+    })
+    window.scrollTo({ top: 0, behavior: 'auto' })
+  }
+
+  async function handleResetAudit() {
+    setError(null)
+    sessionStorage.removeItem('soul-audit-result')
+    sessionStorage.removeItem('soul-audit-submit-v2')
+    sessionStorage.removeItem('soul-audit-selection-v2')
+    sessionStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)
+    sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
+
+    try {
+      await fetch('/api/soul-audit/reset', { method: 'POST' })
+    } catch {
+      // continue local reset
+    }
+
+    router.push('/soul-audit')
+  }
+
   const onboardingKicker = onboardingLabel(planOnboardingMeta)
   const onboardingBlurb = onboardingDescription(planOnboardingMeta)
   const cycleStartLabel =
@@ -951,6 +1025,7 @@ export default function SoulAuditResultsPage() {
   return (
     <div className="mock-home">
       <main id="main-content" className="mock-paper">
+        {planToken && <ScrollProgress showLabel />}
         <EuangelionShellHeader />
         <section className="mock-panel">
           <div className="mx-auto w-full max-w-6xl shell-content-pad">
@@ -976,6 +1051,17 @@ export default function SoulAuditResultsPage() {
                   <p className="vw-small mt-3 text-secondary">
                     Tap a card to continue. Each option is clickable.
                   </p>
+                )}
+                {(planToken || submitResult) && (
+                  <div className="mt-4">
+                    <button
+                      type="button"
+                      className="mock-reset-btn text-label"
+                      onClick={() => void handleResetAudit()}
+                    >
+                      RESET AUDIT
+                    </button>
+                  </div>
                 )}
                 {planToken && onboardingKicker && onboardingBlurb && (
                   <div
@@ -1450,153 +1536,217 @@ export default function SoulAuditResultsPage() {
             )}
 
             {planToken && (
-              <section className="md:grid md:grid-cols-[260px_minmax(0,1fr)] md:gap-8">
-                <aside className="mb-6 md:mb-0">
-                  <div
-                    className="shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
+              <>
+                {railDays.length > 0 && (
+                  <section
+                    className="mb-6 border p-3"
                     style={{ borderColor: 'var(--color-border)' }}
                   >
-                    <p className="text-label vw-small mb-3 text-gold">
-                      NEXT DAYS
+                    <p className="text-label vw-small mb-2 text-gold">
+                      DAY STRIP
                     </p>
-                    {nextDays.length === 0 ? (
-                      <p className="vw-small text-muted">
-                        You have reached the latest unlocked day.
-                      </p>
-                    ) : (
-                      <div className="grid gap-2">
-                        {nextDays.map((day) => (
-                          <div
-                            key={`rail-next-day-${day.day}`}
-                            className="border px-3 py-2"
-                            style={{ borderColor: 'var(--color-border)' }}
+                    <div className="flex flex-wrap gap-2">
+                      {railDays.map((day) => {
+                        const isSelected = day.day === selectedDayNumber
+                        return (
+                          <button
+                            key={`top-day-${day.day}`}
+                            type="button"
+                            onClick={() => switchToDay(day.day)}
+                            className="text-label vw-small border px-3 py-2"
+                            style={{
+                              borderColor: isSelected
+                                ? 'var(--color-border-strong)'
+                                : 'var(--color-border)',
+                              background: isSelected
+                                ? 'var(--color-active)'
+                                : 'transparent',
+                              opacity: day.locked ? 0.72 : 1,
+                            }}
                           >
-                            <p className="text-label vw-small text-gold">
-                              DAY {day.day}
-                              {day.locked ? ' • LOCKED' : ''}
-                            </p>
-                            {day.locked ? (
+                            DAY {day.day}
+                            {day.locked ? ' · LOCKED' : ''}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  </section>
+                )}
+
+                <section className="md:grid md:grid-cols-[280px_minmax(0,1fr)] md:gap-8">
+                  <aside className="mb-6 md:mb-0">
+                    <div
+                      className="shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      <p className="text-label vw-small mb-3 text-gold">
+                        DEVOTIONAL TIMELINE
+                      </p>
+                      <div className="grid gap-2">
+                        {railDays.map((day) => {
+                          const isSelected = day.day === selectedDayNumber
+                          return (
+                            <button
+                              key={`rail-day-${day.day}`}
+                              type="button"
+                              className="border px-3 py-2 text-left"
+                              style={{
+                                borderColor: isSelected
+                                  ? 'var(--color-border-strong)'
+                                  : 'var(--color-border)',
+                                background: isSelected
+                                  ? 'var(--color-active)'
+                                  : 'transparent',
+                                opacity: day.locked ? 0.72 : 1,
+                              }}
+                              onClick={() => switchToDay(day.day)}
+                            >
+                              <p className="text-label vw-small text-gold">
+                                DAY {day.day}
+                                {day.locked ? ' · LOCKED' : ''}
+                              </p>
                               <p className="vw-small text-secondary">
                                 {typographer(day.title)}
                               </p>
-                            ) : (
-                              <a
-                                href={`#plan-day-${day.day}`}
-                                className="vw-small link-highlight text-secondary"
+                              {day.scriptureReference && (
+                                <p className="vw-small text-muted">
+                                  {day.scriptureReference}
+                                </p>
+                              )}
+                            </button>
+                          )
+                        })}
+                      </div>
+
+                      {daySectionAnchors.length > 0 && (
+                        <div
+                          className="mt-5 border-t pt-4"
+                          style={{ borderColor: 'var(--color-border)' }}
+                        >
+                          <p className="text-label vw-small mb-3 text-gold">
+                            SECTION TIMELINE
+                          </p>
+                          <ReaderTimeline anchors={daySectionAnchors} />
+                        </div>
+                      )}
+
+                      <div
+                        className="mt-5 border-t pt-4"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        <p className="text-label vw-small mb-3 text-gold">
+                          ARCHIVE
+                        </p>
+                        {archiveForRail.length === 0 ? (
+                          <p className="vw-small text-muted">
+                            No previous AI devotional plans yet.
+                          </p>
+                        ) : (
+                          <div className="grid gap-2">
+                            {archiveForRail.slice(0, 6).map((plan) => (
+                              <Link
+                                key={`archive-${plan.planToken}`}
+                                href={plan.route}
+                                className="block border px-3 py-2 text-secondary"
+                                style={{ borderColor: 'var(--color-border)' }}
                               >
-                                {typographer(day.title)}
-                              </a>
-                            )}
+                                <p className="text-label vw-small text-gold">
+                                  PLAN
+                                </p>
+                                <p className="vw-small">
+                                  {formatShortDate(plan.createdAt)}
+                                </p>
+                              </Link>
+                            ))}
                           </div>
+                        )}
+                      </div>
+                    </div>
+                  </aside>
+
+                  <div>
+                    {loadingPlan && (
+                      <p className="vw-body mb-6 text-secondary">
+                        Building your day-by-day devotional path...
+                      </p>
+                    )}
+
+                    {lockedMessages.length > 0 && (
+                      <div className="mb-6 space-y-2">
+                        {lockedMessages.map((message, index) => (
+                          <p
+                            key={`${message}-${index}`}
+                            className="vw-small text-secondary"
+                          >
+                            {message}
+                          </p>
                         ))}
                       </div>
                     )}
 
-                    <div
-                      className="mt-5 border-t pt-4"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      <p className="text-label vw-small mb-3 text-gold">
-                        ARCHIVE
-                      </p>
-                      {archiveForRail.length === 0 ? (
-                        <p className="vw-small text-muted">
-                          No previous AI devotional plans yet.
-                        </p>
-                      ) : (
-                        <div className="grid gap-2">
-                          {archiveForRail.slice(0, 6).map((plan) => (
-                            <Link
-                              key={`archive-${plan.planToken}`}
-                              href={plan.route}
-                              className="block border px-3 py-2 text-secondary"
-                              style={{ borderColor: 'var(--color-border)' }}
-                            >
-                              <p className="text-label vw-small text-gold">
-                                PLAN
-                              </p>
-                              <p className="vw-small">
-                                {formatShortDate(plan.createdAt)}
-                              </p>
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </aside>
-
-                <div>
-                  {loadingPlan && (
-                    <p className="vw-body mb-6 text-secondary">
-                      Building your day-by-day devotional path...
-                    </p>
-                  )}
-
-                  {lockedMessages.length > 0 && (
-                    <div className="mb-8 space-y-2">
-                      {lockedMessages.map((message, index) => (
-                        <p
-                          key={`${message}-${index}`}
-                          className="vw-small text-secondary"
-                        >
-                          {message}
-                        </p>
-                      ))}
-                    </div>
-                  )}
-
-                  <div className="space-y-6">
-                    {planDays.map((day) => (
+                    {selectedPlanDay ? (
                       <article
-                        key={`plan-day-${day.day}`}
-                        id={`plan-day-${day.day}`}
+                        key={`plan-day-${selectedPlanDay.day}`}
                         style={{
                           border: '1px solid var(--color-border)',
                           padding: '1.5rem',
                         }}
                       >
                         <p className="text-label vw-small mb-2 text-gold">
-                          DAY {day.day}
-                          {day.chiasticPosition
-                            ? ` • ${day.chiasticPosition}`
-                            : ''}
+                          DAY {selectedPlanDay.day}
                         </p>
                         <h2 className="vw-heading-md mb-2">
-                          {typographer(day.title)}
+                          {typographer(selectedPlanDay.title)}
                         </h2>
                         <p className="vw-small mb-4 text-muted">
-                          {day.scriptureReference}
+                          {selectedPlanDay.scriptureReference}
                         </p>
-                        <p className="scripture-block vw-body mb-4 text-secondary">
-                          {typographer(day.scriptureText)}
+                        <p
+                          id={`day-${selectedPlanDay.day}-scripture`}
+                          className="scripture-block vw-body mb-4 text-secondary"
+                        >
+                          {typographer(selectedPlanDay.scriptureText)}
                         </p>
-                        <p className="vw-body mb-4 text-secondary type-prose">
-                          {typographer(day.reflection)}
+                        <p
+                          id={`day-${selectedPlanDay.day}-reflection`}
+                          className="vw-body mb-4 text-secondary type-prose"
+                        >
+                          {typographer(selectedPlanDay.reflection)}
                         </p>
-                        <p className="text-serif-italic vw-body mb-4 text-secondary type-prose">
-                          {typographer(day.prayer)}
+                        <p
+                          id={`day-${selectedPlanDay.day}-prayer`}
+                          className="text-serif-italic vw-body mb-4 text-secondary type-prose"
+                        >
+                          {typographer(selectedPlanDay.prayer)}
                         </p>
-                        <div className="grid gap-4 md:grid-cols-2">
+                        <div
+                          id={`day-${selectedPlanDay.day}-practice`}
+                          className="grid gap-4 md:grid-cols-2"
+                        >
                           <p className="vw-small text-secondary">
                             <strong className="text-gold">NEXT STEP: </strong>
-                            {typographer(day.nextStep)}
+                            {typographer(selectedPlanDay.nextStep)}
                           </p>
-                          <p className="vw-small text-secondary">
+                          <p
+                            id={`day-${selectedPlanDay.day}-journal`}
+                            className="vw-small text-secondary"
+                          >
                             <strong className="text-gold">JOURNAL: </strong>
-                            {typographer(day.journalPrompt)}
+                            {typographer(selectedPlanDay.journalPrompt)}
                           </p>
                         </div>
                         <div className="mt-4 flex flex-wrap items-center gap-3">
                           <button
                             type="button"
                             className="text-label vw-small link-highlight"
-                            disabled={bookmarkingDay === day.day}
-                            onClick={() => void savePlanDayBookmark(day)}
+                            disabled={bookmarkingDay === selectedPlanDay.day}
+                            onClick={() =>
+                              void savePlanDayBookmark(selectedPlanDay)
+                            }
                           >
-                            {savedDay === day.day
+                            {savedDay === selectedPlanDay.day
                               ? 'BOOKMARK SAVED'
-                              : bookmarkingDay === day.day
+                              : bookmarkingDay === selectedPlanDay.day
                                 ? 'SAVING...'
                                 : 'SAVE BOOKMARK'}
                           </button>
@@ -1604,14 +1754,14 @@ export default function SoulAuditResultsPage() {
                             Highlight any line to save a favorite verse.
                           </span>
                         </div>
-                        {(day.endnotes?.length ?? 0) > 0 && (
+                        {(selectedPlanDay.endnotes?.length ?? 0) > 0 && (
                           <div className="mt-5 border-t pt-4">
                             <p className="text-label vw-small mb-2 text-gold">
                               ENDNOTES
                             </p>
-                            {day.endnotes?.map((note) => (
+                            {selectedPlanDay.endnotes?.map((note) => (
                               <p
-                                key={`${day.day}-endnote-${note.id}`}
+                                key={`${selectedPlanDay.day}-endnote-${note.id}`}
                                 className="vw-small text-muted"
                               >
                                 [{note.id}] {note.source} — {note.note}
@@ -1620,10 +1770,37 @@ export default function SoulAuditResultsPage() {
                           </div>
                         )}
                       </article>
-                    ))}
+                    ) : selectedRailDay?.locked ? (
+                      <article
+                        style={{
+                          border: '1px solid var(--color-border)',
+                          padding: '1.5rem',
+                        }}
+                      >
+                        <p className="text-label vw-small mb-2 text-gold">
+                          DAY {selectedRailDay.day} · LOCKED
+                        </p>
+                        <h2 className="vw-heading-md mb-2">
+                          {typographer(selectedRailDay.title)}
+                        </h2>
+                        {selectedRailDay.scriptureReference && (
+                          <p className="vw-small mb-4 text-muted">
+                            {selectedRailDay.scriptureReference}
+                          </p>
+                        )}
+                        <p className="vw-body text-secondary">
+                          This day is visible in your timeline and will unlock
+                          on schedule.
+                        </p>
+                      </article>
+                    ) : (
+                      <p className="vw-body text-secondary">
+                        Select a day from the timeline to continue.
+                      </p>
+                    )}
                   </div>
-                </div>
-              </section>
+                </section>
+              </>
             )}
 
             {error && (

@@ -1,11 +1,12 @@
 'use client'
 
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ScrollProgress from '@/components/ScrollProgress'
+import ReaderTimeline from '@/components/ReaderTimeline'
 import ModuleRenderer from '@/components/ModuleRenderer'
 import ShareButton from '@/components/ShareButton'
 import DevotionalChat from '@/components/DevotionalChat'
@@ -30,7 +31,13 @@ function getDayIndexFromSlug(slug: string): number {
   return match ? Number.parseInt(match[1], 10) - 1 : 0
 }
 
-export default function DevotionalPageClient({ slug }: { slug: string }) {
+export default function DevotionalPageClient({
+  slug,
+  silo = 'wake',
+}: {
+  slug: string
+  silo?: 'wake' | 'euangelion'
+}) {
   const [devotional, setDevotional] = useState<Devotional | null>(null)
   const [loading, setLoading] = useState(true)
   const [isCompleted, setIsCompleted] = useState(false)
@@ -57,6 +64,16 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
   )
 
   const seriesDays = seriesSlug ? SERIES_DATA[seriesSlug]?.days : null
+  const isWake = silo === 'wake'
+  const brandWord = isWake ? 'WAKE UP' : 'EUANGELION'
+  const headerTone = isWake ? 'wake' : 'default'
+  const parentRoute = isWake ? '/wake-up' : '/series'
+  const seriesRoutePrefix = isWake ? '/wake-up/series' : '/series'
+  const devotionalRoutePrefix = isWake ? '/wake-up/devotional' : '/devotional'
+  const parentLabel = isWake ? 'WAKE-UP' : 'SERIES'
+  const modules = (devotional as (Devotional & { modules?: Module[] }) | null)
+    ?.modules
+  const panels = devotional?.panels
   const currentDayIdx = seriesDays?.findIndex((d) => d.slug === slug) ?? -1
   const prevDay =
     currentDayIdx > 0 && seriesDays ? seriesDays[currentDayIdx - 1] : null
@@ -66,6 +83,17 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
       : null
   const totalDays = seriesDays?.length || 0
   const currentDayNum = currentDayIdx >= 0 ? currentDayIdx + 1 : 0
+  const timelineAnchors = useMemo(() => {
+    const source =
+      modules && modules.length > 0
+        ? modules.map((module) => module.heading || module.type || 'Section')
+        : (panels ?? []).slice(1).map((panel) => panel.heading || 'Section')
+
+    return source.map((label, index) => ({
+      id: `devotional-section-${index + 1}`,
+      label: `S${index + 1}: ${label}`,
+    }))
+  }, [modules, panels])
 
   useEffect(() => {
     setIsCompleted(isRead(slug))
@@ -108,7 +136,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
   if (loading) {
     return (
       <div className="newspaper-home min-h-screen bg-page">
-        <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
+        <EuangelionShellHeader brandWord={brandWord} tone={headerTone} />
         <main
           id="main-content"
           className="devotional-shell-main shell-content-pad mx-auto max-w-6xl"
@@ -117,7 +145,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
             className="mb-7"
             items={[
               { label: 'HOME', href: '/' },
-              { label: 'WAKE-UP', href: '/wake-up' },
+              { label: parentLabel, href: parentRoute },
               { label: 'DEVOTIONAL' },
             ]}
           />
@@ -136,7 +164,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
   if (!devotional) {
     return (
       <div className="newspaper-home min-h-screen bg-page">
-        <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
+        <EuangelionShellHeader brandWord={brandWord} tone={headerTone} />
         <main
           id="main-content"
           className="devotional-shell-main shell-content-pad mx-auto max-w-6xl"
@@ -145,7 +173,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
             className="mb-7"
             items={[
               { label: 'HOME', href: '/' },
-              { label: 'WAKE-UP', href: '/wake-up' },
+              { label: parentLabel, href: parentRoute },
               { label: 'DEVOTIONAL' },
             ]}
           />
@@ -161,10 +189,10 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
               Try a different devotional from your series.
             </p>
             <Link
-              href="/wake-up"
+              href={parentRoute}
               className="cta-major text-label vw-small mt-6 inline-block px-5 py-2"
             >
-              BROWSE WAKE UP
+              {isWake ? 'BROWSE WAKE UP' : 'BROWSE SERIES'}
             </Link>
           </section>
         </main>
@@ -172,13 +200,10 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
     )
   }
 
-  const modules = (devotional as Devotional & { modules?: Module[] }).modules
-  const panels = devotional.panels
-
   return (
     <div className="newspaper-home min-h-screen bg-page">
-      <ScrollProgress />
-      <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
+      <ScrollProgress showLabel />
+      <EuangelionShellHeader brandWord={brandWord} tone={headerTone} />
 
       <main
         id="main-content"
@@ -188,14 +213,14 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
           className="devotional-shell-breadcrumb mb-7"
           items={[
             { label: 'HOME', href: '/' },
-            { label: 'WAKE-UP', href: '/wake-up' },
+            { label: parentLabel, href: parentRoute },
             ...(seriesSlug
               ? [
                   {
                     label: (
                       SERIES_DATA[seriesSlug]?.title || 'SERIES'
                     ).toUpperCase(),
-                    href: `/wake-up/series/${seriesSlug}`,
+                    href: `${seriesRoutePrefix}/${seriesSlug}`,
                   },
                 ]
               : []),
@@ -230,7 +255,9 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
 
           <div className="mt-5 flex flex-wrap items-center gap-3">
             <Link
-              href={seriesSlug ? `/wake-up/series/${seriesSlug}` : '/wake-up'}
+              href={
+                seriesSlug ? `${seriesRoutePrefix}/${seriesSlug}` : parentRoute
+              }
               className="text-label vw-small link-highlight"
             >
               BACK TO SERIES
@@ -282,7 +309,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                       return (
                         <Link
                           key={day.slug}
-                          href={`/wake-up/devotional/${day.slug}`}
+                          href={`${devotionalRoutePrefix}/${day.slug}`}
                           className="block border px-3 py-2"
                           style={{
                             borderColor: isCurrent
@@ -302,6 +329,19 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                     })}
                   </div>
                 </>
+              )}
+
+              {timelineAnchors.length > 0 && (
+                <div
+                  className="border-t pt-4"
+                  style={{ borderColor: 'var(--color-border)' }}
+                >
+                  <p className="text-label vw-small mb-3 text-gold">TIMELINE</p>
+                  <ReaderTimeline
+                    anchors={timelineAnchors}
+                    className="reader-sidebar-timeline"
+                  />
+                </div>
               )}
 
               <div
@@ -381,6 +421,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                     ? modules.map((module, index) => (
                         <article
                           key={index}
+                          id={`devotional-section-${index + 1}`}
                           className="devotional-shell-panel border px-6 py-6"
                           style={{ borderColor: 'var(--color-border)' }}
                         >
@@ -390,6 +431,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
                     : panels?.slice(1).map((panel, index) => (
                         <Fragment key={panel.number}>
                           <article
+                            id={`devotional-section-${index + 1}`}
                             className="devotional-shell-panel border px-6 py-6"
                             style={{ borderColor: 'var(--color-border)' }}
                           >
@@ -452,7 +494,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
           >
             {prevDay ? (
               <Link
-                href={`/wake-up/devotional/${prevDay.slug}`}
+                href={`${devotionalRoutePrefix}/${prevDay.slug}`}
                 className="devotional-shell-panel block border px-5 py-4"
                 style={{ borderColor: 'var(--color-border)' }}
               >
@@ -468,7 +510,7 @@ export default function DevotionalPageClient({ slug }: { slug: string }) {
 
             {nextDay ? (
               <Link
-                href={`/wake-up/devotional/${nextDay.slug}`}
+                href={`${devotionalRoutePrefix}/${nextDay.slug}`}
                 className="devotional-shell-panel block border px-5 py-4 text-right"
                 style={{ borderColor: 'var(--color-border)' }}
               >

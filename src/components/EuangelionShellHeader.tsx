@@ -37,7 +37,7 @@ const SCROLL_LOCK_STYLE_PROPS = [
   'overscroll-behavior-y',
   'padding-right',
 ] as const
-const SCROLL_LOCK_DATA_ATTRIBUTES = ['data-scroll-locked', 'data-lenis-prevent']
+const SCROLL_LOCK_DATA_ATTRIBUTES = ['data-scroll-locked']
 
 function getInitialTheme(): 'light' | 'dark' {
   if (typeof window === 'undefined') return 'light'
@@ -256,6 +256,7 @@ export default function EuangelionShellHeader({
       ),
     )
     if (!spans.length) return
+    let disposed = false
 
     const fitOne = (span: HTMLElement) => {
       const heading = span.closest('.mock-masthead-word') as HTMLElement | null
@@ -272,7 +273,10 @@ export default function EuangelionShellHeader({
     }
 
     const fitAll = () => spans.forEach(fitOne)
-    const rafFit = () => window.requestAnimationFrame(fitAll)
+    const rafFit = () => {
+      if (disposed || typeof window === 'undefined') return
+      window.requestAnimationFrame(fitAll)
+    }
 
     rafFit()
     const resizeObserver = new ResizeObserver(rafFit)
@@ -287,6 +291,7 @@ export default function EuangelionShellHeader({
     window.addEventListener('resize', rafFit)
 
     return () => {
+      disposed = true
       resizeObserver.disconnect()
       window.removeEventListener('resize', rafFit)
     }

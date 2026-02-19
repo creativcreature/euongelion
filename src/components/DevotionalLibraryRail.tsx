@@ -135,9 +135,9 @@ function parsePlanSlug(
 function resolveDevotionalHref(devotionalSlug: string): string {
   const plan = parsePlanSlug(devotionalSlug)
   if (plan) {
-    return `/soul-audit/results?planToken=${plan.token}#plan-day-${plan.day}`
+    return `/soul-audit/results?planToken=${plan.token}&day=${plan.day}`
   }
-  return `/wake-up/devotional/${devotionalSlug}`
+  return `/devotional/${devotionalSlug}`
 }
 
 function resolveDevotionalLabel(devotionalSlug: string): string {
@@ -973,7 +973,7 @@ export default function DevotionalLibraryRail({
                           style={{ borderColor: 'var(--color-border)' }}
                         >
                           <Link
-                            href={`/wake-up/devotional/${item.slug}`}
+                            href={`/devotional/${item.slug}`}
                             className="vw-small link-highlight text-secondary"
                           >
                             {item.title}

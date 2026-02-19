@@ -266,7 +266,7 @@ export async function POST(request: NextRequest) {
         selectionType: existingSelection.option_kind,
         route:
           existingSelection.option_kind === 'curated_prefab'
-            ? `/wake-up/series/${existingSelection.series_slug}`
+            ? `/series/${existingSelection.series_slug}`
             : `/soul-audit/results?planToken=${existingSelection.plan_token}`,
         planToken: existingSelection.plan_token ?? undefined,
         seriesSlug: existingSelection.series_slug,
@@ -309,7 +309,7 @@ export async function POST(request: NextRequest) {
         ok: true,
         auditRunId: runId,
         selectionType: 'curated_prefab',
-        route: `/wake-up/series/${option.slug}`,
+        route: `/series/${option.slug}`,
         seriesSlug: option.slug,
       }
       return withCurrentRouteCookie(

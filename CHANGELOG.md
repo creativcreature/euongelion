@@ -5,6 +5,123 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Devotional Reader Consolidation Pass (2026-02-19)
+
+### What Changed
+
+- Refactored Soul Audit results devotional rendering to a single-day reader:
+  - day strip + left rail controls
+  - URL day-state (`?planToken=...&day=N`)
+  - locked-day teaser rendering (no full locked body in main panel)
+  - chiastic markers removed from visible day labels.
+- Added devotional reading affordances:
+  - sticky top progress line with percent label
+  - left timeline section-jump component (`ReaderTimeline`) on reader surfaces
+  - Soul Audit reset action restored and made visible in homepage audit box and results header.
+- Introduced Euangelion devotional route tree and defaulted curated flow to Euangelion routes:
+  - added `/series/[slug]` and `/devotional/[slug]`
+  - updated Soul Audit curated prefab route targets from `/wake-up/series/*` to `/series/*`
+  - updated session current-route normalization to support `/series/*` and `/devotional/*`.
+- Rebuilt `/series` into a single responsive A→Z grid with filter controls:
+  - pathway, topic, progress, source, reading-time, search
+  - removed mixed “ALL Series” heading treatment and static count copy
+  - scripture preview styling + question hierarchy cleanup.
+- Removed runtime offline banner display from global providers.
+- Cleaned native-scroll reliability while preserving stale class cleanup for contract compatibility.
+
+### Files
+
+- `src/app/soul-audit/results/page.tsx`
+- `src/components/ReaderTimeline.tsx`
+- `src/components/ScrollProgress.tsx`
+- `src/app/page.tsx`
+- `src/app/series/page.tsx`
+- `src/app/series/[slug]/page.tsx`
+- `src/app/devotional/[slug]/page.tsx`
+- `src/app/devotional/[slug]/loading.tsx`
+- `src/app/devotional/[slug]/error.tsx`
+- `src/app/wake-up/series/[slug]/SeriesPageClient.tsx`
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+- `src/app/api/soul-audit/select/route.ts`
+- `src/app/api/soul-audit/current/route.ts`
+- `src/components/DevotionalLibraryRail.tsx`
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/providers.tsx`
+- `src/app/sitemap.ts`
+- `src/app/globals.css`
+- `__tests__/soul-audit-flow.test.ts`
+
+### Validation
+
+- `npm run lint -- --fix`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:governance-alignment`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
+## Reference Library Expansion + Legal Audit (2026-02-18)
+
+### What Changed
+
+**New Public Domain Commentary Library** — `content/reference/commentaries/`
+
+Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~25MB) from Project Gutenberg — all fully public domain and cleared for commercial use. Each author has a `metadata.json` with: license status, source URLs, citation format, and notes.
+
+**Authors Added (locally downloaded):**
+
+- Augustine of Hippo (354–430): Confessions, City of God, On Christian Doctrine, Enchiridion
+- Thomas à Kempis (c.1380–1471): Imitation of Christ
+- Martin Luther (1483–1546): Commentary on Galatians, 95 Theses, Table Talk, Large Catechism
+- John Calvin (1509–1564): Institutes of the Christian Religion (2 vols, Beveridge trans.)
+- Brother Lawrence (c.1614–1691): Practice of the Presence of God
+- John Wesley (1703–1791): Sermons on Several Occasions (4 vols)
+- Jonathan Edwards (1703–1758): Religious Affections, Sinners in the Hands of an Angry God, Freedom of Will, True Virtue
+- George Whitefield (1714–1770): Sermons on Important Subjects
+- Andrew Murray (1828–1917): 22 works including Abide in Christ, True Vine, Absolute Surrender, With Christ in the School of Prayer, Ministry of Intercession
+- Charles Spurgeon (1834–1892): Morning & Evening + 4 additional works
+- A.W. Tozer (1897–1963): The Pursuit of God ONLY (other Tozer works are copyrighted)
+- Frederick Douglass (c.1817–1895): Narrative, My Bondage and My Freedom, Life and Times
+
+**Authors Added (metadata + external links only):**
+
+- Matthew Henry (1662–1714): Full Commentary — see CCEL link in metadata.json
+- John Gill (1697–1771): Exposition of the Entire Bible — see StudyLight link in metadata.json
+
+**Legal Audit of Existing Resources:**
+
+- ⚠️ Scrollmapper flagged: MIT license covers the aggregation code only. If the symlink is restored, all 140+ translations must be audited. Only commercially safe: KJV, ASV, WEB, YLT, Darby.
+- BBE (Bible in Basic English) flagged: US copyright status unconfirmed — do not use commercially until verified.
+
+**Permission Letters Drafted:**
+
+- `content/legal/permission-letters/barry-howard-permission-request.md`
+- `content/legal/permission-letters/kevin-head-permission-request.md`
+- Neither may be used commercially until written permission is received.
+
+**MLK Jr. Status Documented:** Estate controls copyright until ~2038+. External citation only (max 1-3 sentences with attribution). See King Institute at kinginstitute.stanford.edu.
+
+**Bulk Download Script:** `scripts/download-commentary-library.sh` — run to pull additional Murray, Spurgeon, Edwards, Calvin, Wesley, Luther, Douglass, and Augustine works from Project Gutenberg.
+
+### Files Changed
+
+- `content/reference/commentaries/` (new real directory, was broken symlink)
+- `content/reference/commentaries/[14 author subdirs]/` (metadata.json + .txt files)
+- `scripts/download-commentary-library.sh`
+- `content/THEOLOGICAL-RESOURCES.md` (v2.0 — expanded source list + legal status)
+- `docs/REFERENCE-FOLDERS-INDEX.md` (commentary library table + broken symlink warnings)
+- `content/legal/permission-letters/barry-howard-permission-request.md`
+- `content/legal/permission-letters/kevin-head-permission-request.md`
+
+---
+
 ## Governance Alignment Gate Pass (2026-02-18)
 
 ### What Changed

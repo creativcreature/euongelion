@@ -143,7 +143,9 @@ export default function WakeUpPage() {
           <Link href="/series" className="mock-btn text-label">
             ALL DEVOTIONALS
           </Link>
-          <p className="mock-footnote">26 series. No account required.</p>
+          <p className="mock-footnote">
+            No account required. Start immediately.
+          </p>
         </section>
 
         {/* Bottom Brand */}

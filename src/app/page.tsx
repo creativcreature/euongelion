@@ -327,6 +327,13 @@ export default function Home() {
                   CONTINUE MY DEVOTIONAL
                 </Link>
                 <p className="mock-footnote">Resume your current path now.</p>
+                <button
+                  type="button"
+                  className="mock-reset-btn text-label"
+                  onClick={() => void handleResetAudit()}
+                >
+                  Reset Audit
+                </button>
               </>
             ) : (
               <>
@@ -366,17 +373,15 @@ export default function Home() {
                   No account required. Start immediately.
                 </p>
                 {hydrated && auditCount > 0 && (
-                  <>
-                    <p className="mock-footnote">Audit {auditCount + 1} of 3</p>
-                    <button
-                      type="button"
-                      className="mock-reset-btn text-label"
-                      onClick={() => void handleResetAudit()}
-                    >
-                      Reset Audit
-                    </button>
-                  </>
+                  <p className="mock-footnote">Audit {auditCount + 1} of 3</p>
                 )}
+                <button
+                  type="button"
+                  className="mock-reset-btn text-label"
+                  onClick={() => void handleResetAudit()}
+                >
+                  Reset Audit
+                </button>
                 {error && <p className="mock-error">{error}</p>}
                 {lastFailedSubmission && !isSubmitting && (
                   <button
@@ -435,7 +440,7 @@ export default function Home() {
         >
           {activeFeaturedSeries.map(({ slug, series }) => (
             <Link
-              href={`/wake-up/series/${slug}`}
+              href={`/series/${slug}`}
               key={slug}
               className="mock-featured-card"
             >

@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import { useMemo, useState } from 'react'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import MixedHeadline, { Sans, Serif } from '@/components/MixedHeadline'
 import SiteFooter from '@/components/SiteFooter'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
@@ -13,120 +13,222 @@ import {
   SERIES_DATA,
   ALL_SERIES_ORDER,
   WAKEUP_SERIES_ORDER,
-  SUBSTACK_SERIES_ORDER,
 } from '@/data/series'
+
+type ProgressFilter = 'all' | 'not-started' | 'in-progress' | 'complete'
+type SourceFilter = 'all' | 'wake-up' | 'euangelion'
+type ReadingTimeFilter = 'all' | 'short' | 'medium' | 'long'
 
 export default function SeriesBrowsePage() {
   const { getSeriesProgress } = useProgress()
+  const [pathway, setPathway] = useState<
+    'all' | 'Sleep' | 'Awake' | 'Shepherd'
+  >('all')
+  const [topic, setTopic] = useState('all')
+  const [progressFilter, setProgressFilter] = useState<ProgressFilter>('all')
+  const [sourceFilter, setSourceFilter] = useState<SourceFilter>('all')
+  const [readingTimeFilter, setReadingTimeFilter] =
+    useState<ReadingTimeFilter>('all')
+  const [query, setQuery] = useState('')
+
+  const availableTopics = useMemo(() => {
+    const topics = new Set<string>()
+    for (const slug of ALL_SERIES_ORDER) {
+      const series = SERIES_DATA[slug]
+      if (!series) continue
+      for (const keyword of series.keywords.slice(0, 3)) {
+        topics.add(keyword)
+      }
+    }
+    return ['all', ...Array.from(topics).sort((a, b) => a.localeCompare(b))]
+  }, [])
+
+  const seriesCards = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    const wakeupSlugSet = new Set<string>(WAKEUP_SERIES_ORDER)
+    return ALL_SERIES_ORDER.map((slug) => {
+      const series = SERIES_DATA[slug]
+      const progress = getSeriesProgress(slug)
+      const isWake = wakeupSlugSet.has(slug)
+      return {
+        slug,
+        series,
+        progress,
+        source: isWake ? 'wake-up' : 'euangelion',
+      }
+    })
+      .filter((entry) => Boolean(entry.series))
+      .filter((entry) =>
+        pathway === 'all' ? true : entry.series.pathway === pathway,
+      )
+      .filter((entry) =>
+        sourceFilter === 'all' ? true : entry.source === sourceFilter,
+      )
+      .filter((entry) =>
+        topic === 'all'
+          ? true
+          : entry.series.keywords.some((keyword) => keyword === topic),
+      )
+      .filter((entry) => {
+        if (readingTimeFilter === 'all') return true
+        const dayCount = entry.series.days.length
+        if (readingTimeFilter === 'short') return dayCount <= 5
+        if (readingTimeFilter === 'medium')
+          return dayCount >= 6 && dayCount <= 7
+        return dayCount >= 8
+      })
+      .filter((entry) => {
+        if (progressFilter === 'all') return true
+        if (progressFilter === 'not-started')
+          return entry.progress.completed === 0
+        if (progressFilter === 'complete') {
+          return entry.progress.completed >= entry.progress.total
+        }
+        return (
+          entry.progress.completed > 0 &&
+          entry.progress.completed < entry.progress.total
+        )
+      })
+      .filter((entry) => {
+        if (!q) return true
+        return (
+          entry.series.title.toLowerCase().includes(q) ||
+          entry.series.question.toLowerCase().includes(q) ||
+          entry.series.introduction.toLowerCase().includes(q) ||
+          entry.series.keywords.some((keyword) =>
+            keyword.toLowerCase().includes(q),
+          )
+        )
+      })
+      .sort((a, b) => a.series.title.localeCompare(b.series.title))
+  }, [
+    getSeriesProgress,
+    pathway,
+    sourceFilter,
+    topic,
+    readingTimeFilter,
+    progressFilter,
+    query,
+  ])
 
   return (
     <div className="mock-home">
       <main id="main-content" className="mock-paper">
         <EuangelionShellHeader />
 
-        <header className="shell-content-pad section-rule mx-auto max-w-7xl pb-14 md:pb-20">
+        <header className="shell-content-pad section-rule mx-auto max-w-7xl pb-12 md:pb-16">
           <FadeIn>
-            <MixedHeadline as="h1" size="xl" className="mb-8">
-              <Sans>ALL</Sans> <Serif>Series</Serif>
-            </MixedHeadline>
-            <p className="text-serif-italic vw-body-lg text-secondary type-prose type-serif-flow">
-              {typographer(
-                `${ALL_SERIES_ORDER.length} series. Ancient wisdom for modern wrestling. Pick one that speaks to where you are.`,
-              )}
+            <h1 className="vw-heading-lg mb-6 series-page-heading">
+              All Series
+            </h1>
+            <p className="vw-body text-secondary type-prose">
+              Scripture-first reading paths, ordered for focus and consistency.
             </p>
           </FadeIn>
         </header>
 
-        <section className="shell-content-pad mx-auto max-w-7xl pt-10">
-          {/* Wake-Up 7 */}
-          <section className="mb-20">
-            <FadeIn>
-              <div className="mb-8">
-                <MixedHeadline as="p" size="sm" className="text-gold">
-                  <Sans>WAKE-UP</Sans> <Serif>Magazine</Serif>
-                </MixedHeadline>
-                {/* Thin gold rule */}
-                <div
-                  className="mt-3 mb-4"
-                  style={{
-                    height: '1px',
-                    maxWidth: '200px',
-                    background: 'var(--color-gold)',
-                    opacity: 0.2,
-                  }}
-                />
-                <p className="vw-small text-muted type-prose">
-                  {typographer(
-                    'Seven questions for the searching. Five days each.',
-                  )}
-                </p>
-              </div>
-            </FadeIn>
-
-            <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {WAKEUP_SERIES_ORDER.map((slug) => (
-                <SeriesCard
-                  key={slug}
-                  slug={slug}
-                  progress={getSeriesProgress(slug)}
-                />
-              ))}
-            </StaggerGrid>
-          </section>
-
-          {/* Substack 19 */}
-          <section>
-            <FadeIn>
-              <div className="mb-8">
-                <MixedHeadline as="p" size="sm" className="text-gold">
-                  <Sans>DEEP</Sans> <Serif>Dives</Serif>
-                </MixedHeadline>
-                {/* Thin gold rule */}
-                <div
-                  className="mt-3 mb-4"
-                  style={{
-                    height: '1px',
-                    maxWidth: '200px',
-                    background: 'var(--color-gold)',
-                    opacity: 0.2,
-                  }}
-                />
-                <p className="vw-small text-muted type-prose">
-                  {typographer(
-                    'Topical series from our archive. Dig into specific questions.',
-                  )}
-                </p>
-              </div>
-            </FadeIn>
-
-            <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {SUBSTACK_SERIES_ORDER.map((slug) => (
-                <SeriesCard
-                  key={slug}
-                  slug={slug}
-                  progress={getSeriesProgress(slug)}
-                />
-              ))}
-            </StaggerGrid>
-          </section>
-
-          {/* Soul Audit CTA */}
-          <FadeIn>
-            <div className="mt-16 text-center md:mt-24">
-              <p className="vw-body mb-6 text-secondary type-prose">
-                {typographer('Not sure where to start?')}
-              </p>
-              <Link
-                href="/"
-                className="inline-block bg-[var(--color-fg)] px-10 py-5 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-                style={{
-                  transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
-                }}
+        <section className="shell-content-pad mx-auto max-w-7xl pb-8">
+          <div className="series-filter-grid">
+            <label className="series-filter-item">
+              <span className="text-label vw-small">Pathway</span>
+              <select
+                value={pathway}
+                onChange={(event) =>
+                  setPathway(event.target.value as typeof pathway)
+                }
               >
-                Take the Soul Audit
-              </Link>
-            </div>
-          </FadeIn>
+                <option value="all">All</option>
+                <option value="Sleep">Sleep</option>
+                <option value="Awake">Awake</option>
+                <option value="Shepherd">Shepherd</option>
+              </select>
+            </label>
+
+            <label className="series-filter-item">
+              <span className="text-label vw-small">Topic</span>
+              <select
+                value={topic}
+                onChange={(event) => setTopic(event.target.value)}
+              >
+                {availableTopics.map((item) => (
+                  <option key={item} value={item}>
+                    {item === 'all' ? 'All' : item}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="series-filter-item">
+              <span className="text-label vw-small">Progress</span>
+              <select
+                value={progressFilter}
+                onChange={(event) =>
+                  setProgressFilter(event.target.value as ProgressFilter)
+                }
+              >
+                <option value="all">All</option>
+                <option value="not-started">Not started</option>
+                <option value="in-progress">In progress</option>
+                <option value="complete">Complete</option>
+              </select>
+            </label>
+
+            <label className="series-filter-item">
+              <span className="text-label vw-small">Source</span>
+              <select
+                value={sourceFilter}
+                onChange={(event) =>
+                  setSourceFilter(event.target.value as SourceFilter)
+                }
+              >
+                <option value="all">All</option>
+                <option value="euangelion">Euangelion</option>
+                <option value="wake-up">Wake-Up</option>
+              </select>
+            </label>
+
+            <label className="series-filter-item">
+              <span className="text-label vw-small">Reading time</span>
+              <select
+                value={readingTimeFilter}
+                onChange={(event) =>
+                  setReadingTimeFilter(event.target.value as ReadingTimeFilter)
+                }
+              >
+                <option value="all">All</option>
+                <option value="short">Short</option>
+                <option value="medium">Medium</option>
+                <option value="long">Long</option>
+              </select>
+            </label>
+
+            <label className="series-filter-item series-filter-search">
+              <span className="text-label vw-small">Search</span>
+              <input
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="Search series..."
+              />
+            </label>
+          </div>
+        </section>
+
+        <section className="shell-content-pad mx-auto max-w-7xl pb-16">
+          <StaggerGrid className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {seriesCards.map(({ slug, series, progress }) => (
+              <SeriesCard
+                key={slug}
+                slug={slug}
+                progress={progress}
+                series={series}
+              />
+            ))}
+          </StaggerGrid>
+          {seriesCards.length === 0 && (
+            <p className="vw-body mt-8 text-secondary">
+              No series matched your current filters.
+            </p>
+          )}
         </section>
 
         <SiteFooter />
@@ -138,54 +240,32 @@ export default function SeriesBrowsePage() {
 function SeriesCard({
   slug,
   progress,
+  series,
 }: {
   slug: string
   progress: { completed: number; total: number; percentage: number }
+  series: (typeof SERIES_DATA)[keyof typeof SERIES_DATA]
 }) {
-  const series = SERIES_DATA[slug]
-
   return (
-    <Link href={`/wake-up/series/${slug}`} className="group block">
-      <div
-        className="newspaper-card flex h-full flex-col overflow-hidden transition-all duration-300"
-        style={{
-          transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
-        }}
-      >
+    <Link href={`/series/${slug}`} className="group block">
+      <div className="newspaper-card flex h-full flex-col overflow-hidden">
         <div
           className="mx-6 mt-6 border border-[var(--color-border)] p-4 md:mx-8 md:mt-8 md:p-5"
           style={{ minHeight: '132px' }}
         >
-          <p
-            className="vw-body mb-1 text-[var(--color-text-primary)]"
-            style={{
-              fontFamily: 'var(--font-family-ui)',
-              letterSpacing: '0.018em',
-              lineHeight: 1.3,
-            }}
-          >
+          <p className="series-card-scripture">
             {typographer(scriptureLeadFromFramework(series.framework))}
           </p>
         </div>
 
         <div className="flex flex-1 flex-col p-6 md:p-8">
           <p className="text-label vw-small mb-2 text-gold">{series.title}</p>
-          {/* Thin gold rule */}
-          <div
-            className="mb-3"
-            style={{
-              height: '1px',
-              background: 'var(--color-gold)',
-              opacity: 0.2,
-            }}
-          />
-
-          <h2 className="text-serif-italic vw-body mb-3 transition-colors duration-300 group-hover:text-gold type-serif-flow">
+          <h2 className="series-card-question vw-body mb-3">
             {series.question}
           </h2>
-
           <p className="vw-small mb-6 flex-1 text-secondary type-prose">
-            {series.introduction.slice(0, 120)}...
+            {typographer(series.introduction).split(' ').slice(0, 30).join(' ')}
+            ...
           </p>
 
           <div className="flex items-center justify-between">
@@ -200,32 +280,9 @@ function SeriesCard({
                 {progress.completed}/{progress.total}
               </span>
             ) : (
-              <span className="text-label vw-small text-muted transition-colors duration-300 group-hover:text-[var(--color-text-primary)]">
-                BEGIN &rarr;
-              </span>
+              <span className="text-label vw-small text-muted">BEGIN →</span>
             )}
           </div>
-
-          {progress.completed > 0 && (
-            <div className="mt-3">
-              <div
-                className="h-1 w-full overflow-hidden"
-                style={{
-                  backgroundColor: 'var(--color-border)',
-                  borderRadius: '2px',
-                }}
-              >
-                <div
-                  className="h-1 transition-all duration-500"
-                  style={{
-                    width: `${progress.percentage}%`,
-                    backgroundColor: 'var(--color-gold)',
-                    borderRadius: '2px',
-                  }}
-                />
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </Link>

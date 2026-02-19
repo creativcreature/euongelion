@@ -92,21 +92,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  const seriesPages: MetadataRoute.Sitemap = ALL_SERIES_ORDER.map((slug) => ({
-    url: `${baseUrl}/wake-up/series/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }))
+  const seriesPages: MetadataRoute.Sitemap = ALL_SERIES_ORDER.flatMap(
+    (slug) => [
+      {
+        url: `${baseUrl}/series/${slug}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.8,
+      },
+      {
+        url: `${baseUrl}/wake-up/series/${slug}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      },
+    ],
+  )
 
   const devotionalPages: MetadataRoute.Sitemap = ALL_SERIES_ORDER.flatMap(
     (seriesSlug) =>
-      (SERIES_DATA[seriesSlug]?.days || []).map((day) => ({
-        url: `${baseUrl}/wake-up/devotional/${day.slug}`,
-        lastModified: now,
-        changeFrequency: 'yearly' as const,
-        priority: 0.7,
-      })),
+      (SERIES_DATA[seriesSlug]?.days || []).flatMap((day) => [
+        {
+          url: `${baseUrl}/devotional/${day.slug}`,
+          lastModified: now,
+          changeFrequency: 'yearly' as const,
+          priority: 0.7,
+        },
+        {
+          url: `${baseUrl}/wake-up/devotional/${day.slug}`,
+          lastModified: now,
+          changeFrequency: 'yearly' as const,
+          priority: 0.5,
+        },
+      ]),
   )
 
   return [...staticPages, ...seriesPages, ...devotionalPages]

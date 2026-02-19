@@ -11,23 +11,32 @@ import type { SeriesInfo } from '@/data/series'
 export default function SeriesPageClient({
   slug,
   series,
+  silo = 'wake',
 }: {
   slug: string
   series: SeriesInfo
+  silo?: 'wake' | 'euangelion'
 }) {
   const { isRead, getSeriesProgress, canRead } = useProgress()
   const seriesProgress = getSeriesProgress(slug)
   const dayCount = series.days.length
+  const isWake = silo === 'wake'
+  const brandWord = isWake ? 'WAKE UP' : 'EUANGELION'
+  const headerTone = isWake ? 'wake' : 'default'
+  const parentHref = isWake ? '/wake-up' : '/series'
+  const dayHrefPrefix = isWake ? '/wake-up/devotional' : '/devotional'
+  const parentLabel = isWake ? 'WAKE-UP' : 'SERIES'
+  const browseLabel = isWake ? 'ALL WAKE UP SERIES' : 'ALL SERIES'
 
   return (
     <div className="mock-home">
       <main id="main-content" className="mock-paper">
-        <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
+        <EuangelionShellHeader brandWord={brandWord} tone={headerTone} />
         <Breadcrumbs
           className="mock-breadcrumb-row"
           items={[
             { label: 'HOME', href: '/' },
-            { label: 'WAKE-UP', href: '/wake-up' },
+            { label: parentLabel, href: parentHref },
             { label: series.title.toUpperCase() },
           ]}
         />
@@ -61,8 +70,8 @@ export default function SeriesPageClient({
             </div>
 
             <div className="mock-series-meta-actions">
-              <Link href="/wake-up" className="mock-btn text-label">
-                ALL WAKE UP SERIES
+              <Link href={parentHref} className="mock-btn text-label">
+                {browseLabel}
               </Link>
               <ShareButton
                 title={series.title}
@@ -116,7 +125,7 @@ export default function SeriesPageClient({
             return (
               <Link
                 key={day.slug}
-                href={`/wake-up/devotional/${day.slug}`}
+                href={`${dayHrefPrefix}/${day.slug}`}
                 className="mock-series-day-link"
               >
                 {card}
@@ -128,7 +137,7 @@ export default function SeriesPageClient({
         <section className="mock-bottom-brand">
           <h2 className="text-masthead mock-masthead-word">
             <span className="js-shell-masthead-fit mock-masthead-text">
-              EUANGELION
+              {brandWord}
             </span>
           </h2>
         </section>

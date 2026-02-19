@@ -15,7 +15,10 @@ function normalizeCurrentRoute(value: string | undefined): string | null {
   if (/^\/soul-audit\/results\?planToken=[a-f0-9-]+$/i.test(value)) {
     return value
   }
-  if (/^\/wake-up\/series\/[a-z0-9-]+$/i.test(value)) {
+  if (/^\/series\/[a-z0-9-]+$/i.test(value)) {
+    return value
+  }
+  if (/^\/devotional\/[a-z0-9-]+$/i.test(value)) {
     return value
   }
   return null
@@ -67,7 +70,7 @@ export async function GET() {
   const latestSelection =
     await getLatestSelectionForSessionWithFallback(sessionToken)
   if (latestSelection?.option_kind === 'curated_prefab') {
-    const route = `/wake-up/series/${latestSelection.series_slug}`
+    const route = `/series/${latestSelection.series_slug}`
     const response = NextResponse.json(
       {
         ok: true,
