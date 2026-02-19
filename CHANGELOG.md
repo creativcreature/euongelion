@@ -5,6 +5,34 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Sticky Nav + Scroll Responsiveness Repair (2026-02-19)
+
+### What Changed
+
+- Removed dynamic JS-driven topbar height offset dependency from shell header/nav sticky behavior.
+- Moved sticky offset contract to stable CSS token usage:
+  - nav now pins from `--mock-h-topbar`.
+  - sticky side panel offset now uses static shell height tokens.
+- Reduced scroll-snap aggressiveness (`mandatory` -> `proximity`) on horizontal rails to prevent first-gesture scroll swallowing.
+- Relaxed horizontal overscroll containment on mobile featured rail to reduce “double scroll before page scroll” behavior.
+- Bumped SW cache/runtime version (`v47`) so production clients receive updated nav/scroll contract immediately.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+- `public/sw.js`
+- `src/components/ServiceWorkerRegistration.tsx`
+- `__tests__/ios-shell-readiness-contract.test.ts`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/shell-header.test.tsx __tests__/ios-shell-readiness-contract.test.ts __tests__/layout-overflow-contract.test.ts __tests__/scroll-unlock-contract.test.ts __tests__/navigation-routing-shell.test.ts __tests__/offline-sw-contract.test.ts`
+
+---
+
 ## Navigation Contract Hardening (2026-02-19)
 
 ### What Changed

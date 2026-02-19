@@ -1016,7 +1016,7 @@
   grid-auto-columns: minmax(270px, 1fr);
   gap: 1rem;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   padding: 0.25rem 0.15rem 0.8rem;
   scrollbar-width: thin;
 }
@@ -2358,10 +2358,7 @@
 @media (min-width: 768px) {
   .shell-sticky-panel {
     position: sticky;
-    top: calc(
-      var(--shell-topbar-height, var(--mock-h-topbar, 42px)) +
-        var(--mock-h-nav, 34px) + 0.9rem
-    );
+    top: calc(var(--mock-h-topbar, 42px) + var(--mock-h-nav, 34px) + 0.9rem);
   }
 }
 
@@ -2635,7 +2632,7 @@
   align-items: center;
   justify-content: center;
   position: sticky;
-  top: var(--shell-topbar-height, var(--mock-h-topbar, 42px));
+  top: var(--mock-h-topbar, 42px);
   z-index: 110;
   isolation: isolate;
   gap: 0.45rem;
@@ -4237,10 +4234,10 @@
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
     touch-action: auto;
-    overscroll-behavior-x: contain;
+    overscroll-behavior-x: auto;
     overscroll-behavior-y: auto;
     min-height: auto;
   }

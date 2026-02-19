@@ -17,9 +17,7 @@ describe('iOS shell readiness contract', () => {
     expect(css).toContain('.mock-topbar {')
     expect(css).toContain('top: 0;')
     expect(css).toContain('padding-top: var(--shell-safe-top, 0px);')
-    expect(css).toContain(
-      'top: var(--shell-topbar-height, var(--mock-h-topbar, 42px));',
-    )
+    expect(css).toContain('top: var(--mock-h-topbar, 42px);')
   })
 
   it('keeps mobile nav pinned to viewport top while topbar scrolls away', () => {

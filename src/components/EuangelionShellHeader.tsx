@@ -89,7 +89,6 @@ export default function EuangelionShellHeader({
   tone?: 'default' | 'wake'
 }) {
   const pathname = usePathname()
-  const topbarRef = useRef<HTMLDivElement | null>(null)
   const previousPathnameRef = useRef(pathname)
   const accountMenuRef = useRef<HTMLDivElement | null>(null)
   const accountTriggerRef = useRef<HTMLButtonElement | null>(null)
@@ -307,35 +306,6 @@ export default function EuangelionShellHeader({
   }, [])
 
   useEffect(() => {
-    const topbar = topbarRef.current
-    if (!topbar) return
-    const frame = topbar.closest('.mock-shell-frame') as HTMLElement | null
-    const paper = topbar.closest('.mock-paper') as HTMLElement | null
-
-    const applyTopbarHeight = () => {
-      const height = Math.ceil(topbar.getBoundingClientRect().height || 0)
-      if (height > 0) {
-        frame?.style.setProperty('--shell-topbar-height', `${height}px`)
-        paper?.style.setProperty('--shell-topbar-height', `${height}px`)
-      }
-    }
-
-    applyTopbarHeight()
-    const observer = new ResizeObserver(() =>
-      window.requestAnimationFrame(applyTopbarHeight),
-    )
-    observer.observe(topbar)
-    window.addEventListener('resize', applyTopbarHeight)
-
-    return () => {
-      observer.disconnect()
-      window.removeEventListener('resize', applyTopbarHeight)
-      frame?.style.removeProperty('--shell-topbar-height')
-      paper?.style.removeProperty('--shell-topbar-height')
-    }
-  }, [])
-
-  useEffect(() => {
     if (typeof window === 'undefined') return
     const reducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
@@ -523,7 +493,7 @@ export default function EuangelionShellHeader({
   return (
     <div className={`mock-shell-frame ${tone === 'wake' ? 'wake-shell' : ''}`}>
       <header>
-        <div ref={topbarRef} className="mock-topbar text-label">
+        <div className="mock-topbar text-label">
           <div className="mock-topbar-desktop-row">
             <time
               className="mock-topbar-date"
