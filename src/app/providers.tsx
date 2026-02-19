@@ -4,6 +4,7 @@ import { useEffect, type ReactNode } from 'react'
 import { usePathname } from 'next/navigation'
 import AnimationProvider from '@/providers/AnimationProvider'
 import EditorialMotionSystem from '@/components/EditorialMotionSystem'
+import CookieConsentBanner from '@/components/CookieConsentBanner'
 
 /**
  * Client-side providers wrapper.
@@ -57,6 +58,7 @@ export default function Providers({ children }: { children: ReactNode }) {
     <AnimationProvider>
       <EditorialMotionSystem />
       {children}
+      <CookieConsentBanner />
     </AnimationProvider>
   )
 }

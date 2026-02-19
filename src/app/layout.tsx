@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { Analytics } from '@vercel/analytics/next'
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
+import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics'
 import Providers from './providers'
 import './globals.css'
 
@@ -75,7 +75,7 @@ export default function RootLayout({
       <body className="newsprint-site antialiased">
         <Providers>{children}</Providers>
         <ServiceWorkerRegistration />
-        <Analytics />
+        <ConsentAwareAnalytics />
       </body>
     </html>
   )

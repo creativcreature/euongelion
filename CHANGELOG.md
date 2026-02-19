@@ -5,6 +5,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Site-Entry Cookie Consent + Soul Audit Flow Cleanup (2026-02-19)
+
+### What Changed
+
+- Added a global site-entry cookie notice with two explicit actions: `Use Essential Only` and `Accept All Cookies`.
+- Persisted consent in a dedicated cookie so consent is handled immediately on entry rather than inside Soul Audit option selection.
+- Removed consent checkboxes and consent-record button from Soul Audit results; devotional options now surface immediately after audit completion.
+- Kept crisis-resource acknowledgement gate in Soul Audit results only when crisis content is detected.
+- Added consent-aware analytics mounting so optional analytics run only when cookie consent opts in.
+
+### Files
+
+- `src/components/CookieConsentBanner.tsx`
+- `src/components/ConsentAwareAnalytics.tsx`
+- `src/lib/site-consent.ts`
+- `src/app/providers.tsx`
+- `src/app/layout.tsx`
+- `src/app/soul-audit/results/page.tsx`
+- `__tests__/soul-audit-consent-gate-contract.test.ts`
+- `__tests__/site-consent.test.ts`
+- `docs/feature-prds/F-020.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm test -- --run __tests__/site-consent.test.ts __tests__/soul-audit-consent-gate-contract.test.ts`
+
+---
+
 ## Desktop Nav Docking Behavior Update (2026-02-19)
 
 ### What Changed

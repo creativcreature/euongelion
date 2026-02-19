@@ -29,19 +29,37 @@ describe('Soul Audit consent gate contract', () => {
     'select',
     'route.ts',
   )
+  const providersPath = path.join(process.cwd(), 'src', 'app', 'providers.tsx')
+  const bannerPath = path.join(
+    process.cwd(),
+    'src',
+    'components',
+    'CookieConsentBanner.tsx',
+  )
+  const analyticsPath = path.join(
+    process.cwd(),
+    'src',
+    'components',
+    'ConsentAwareAnalytics.tsx',
+  )
 
   const results = fs.readFileSync(resultsPath, 'utf8')
   const consentRoute = fs.readFileSync(consentRoutePath, 'utf8')
   const selectRoute = fs.readFileSync(selectRoutePath, 'utf8')
+  const providers = fs.readFileSync(providersPath, 'utf8')
+  const banner = fs.readFileSync(bannerPath, 'utf8')
+  const analytics = fs.readFileSync(analyticsPath, 'utf8')
 
-  it('requires recorded consent token state before option unlock in results UI', () => {
-    expect(results).toContain('const [consentToken, setConsentToken]')
-    expect(results).toContain('const selectionUnlocked = Boolean(')
-    expect(results).toContain(
-      'consentFingerprint === currentConsentFingerprint',
-    )
-    expect(results).toContain('Record Consent')
-    expect(results).toContain('Consent Recorded')
+  it('moves consent interaction to site-level cookie notice and keeps results focused on options', () => {
+    expect(providers).toContain('<CookieConsentBanner />')
+    expect(banner).toContain('Cookie Notice')
+    expect(banner).toContain('Use Essential Only')
+    expect(banner).toContain('Accept All Cookies')
+    expect(results).toContain('readSiteConsentFromDocument')
+    expect(results).toContain('const optionSelectionReady = Boolean(')
+    expect(results).not.toContain('const [consentToken, setConsentToken]')
+    expect(results).not.toContain('Record Consent')
+    expect(analytics).toContain('readSiteConsentFromDocument')
   })
 
   it('returns required-action metadata for essential consent gates in APIs', () => {
