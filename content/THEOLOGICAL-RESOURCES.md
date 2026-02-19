@@ -252,23 +252,45 @@ Source: [source_url as noted in metadata.json]
 | **Howard Thurman** (1899–1981)      | ⛔ Mostly copyrighted               | 1-3 sentence quotes with attribution only                          | Published editions                                                         |
 | **Gardner Taylor** (1918–2015)      | ⛔ Copyrighted                      | 1-3 sentence quotes with attribution only                          | Published editions                                                         |
 
-### Scrollmapper Warning
+### Bible Translations (locally stored — `/reference/bibles/open-bibles/`)
 
-⚠️ `content/reference/bibles/scrollmapper/` (broken symlink) — if restored, must audit all translations. MIT license covers the code/tool ONLY, not the underlying translation texts. Many translations in the collection (NIV, ESV, NASB, etc.) are commercially copyrighted. Only use: KJV, ASV, WEB, YLT, Darby.
+All confirmed public domain, cleared for commercial use. Full details: `content/reference/bibles/README.md`
 
-### Bibles (Public Domain — locally stored or external)
+| Abbrev  | Full Name                                             | License                                                                          |
+| ------- | ----------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **BSB** | Berean Standard Bible (2023) — CC0, modern, scholarly | ✅ **CC0 — Best choice for contemporary English**                                |
+| KJV     | King James Version (1769)                             | ✅ Public Domain                                                                 |
+| ASV     | American Standard Version (1901)                      | ✅ Public Domain                                                                 |
+| WEB     | World English Bible                                   | ✅ Public Domain                                                                 |
+| WEBBE   | World English Bible (British Edition)                 | ✅ Public Domain                                                                 |
+| YLT     | Young's Literal Translation (NT only)                 | ✅ Public Domain                                                                 |
+| DARBY   | Darby Bible                                           | ✅ Public Domain                                                                 |
+| **BBE** | Bible in Basic English (1965)                         | ✅ **Confirmed Public Domain** (1965 edition published without copyright notice) |
+| DRA     | Douay-Rheims 1899 American Edition                    | ✅ Public Domain                                                                 |
+| OEB-US  | Open English Bible, US Edition                        | ✅ Public Domain                                                                 |
+| OEB-CW  | Open English Bible, Commonwealth Edition              | ✅ Public Domain                                                                 |
 
-| Resource                             | Path                                        | Format   | License       |
-| ------------------------------------ | ------------------------------------------- | -------- | ------------- |
-| Matthew Henry Commentary             | External (CCEL) — broken symlink locally    | Markdown | Public Domain |
-| Strong's Hebrew + Greek Lexicons     | `/reference/lexicons/strongs/`              | JSON/XML | Public Domain |
-| WEB Bible                            | `/reference/bibles/WEB-json/`               | JSON     | Public Domain |
-| Hebrew Masoretic Text (Leningrad)    | `/reference/bibles/hebrew-masoretic/`       | OSIS XML | Public Domain |
-| Greek SBLGNT                         | `/reference/bibles/greek-sblgnt/`           | XML      | CC BY 4.0     |
-| Theographic (people, places, events) | `/reference/bibles/theographic/`            | JSON     | CC BY 4.0     |
-| STEPBible tagged texts + lexicons    | `/reference/stepbible-data/`                | Text     | CC BY 4.0     |
-| Nave's Topical Index                 | `/reference/dictionaries/naves-topical/`    | Data     | Public Domain |
-| Treasury of Scripture Knowledge      | `/reference/dictionaries/cross-references/` | JSON/SQL | Public Domain |
+**BSB download:** `bash scripts/download-bsb.sh` or fetch at runtime from `https://bible.helloao.org/api/BSB/{BOOK}/{CHAPTER}.json`
+
+**Modern translations (NIV, ESV, NLT):** Use API.Bible at runtime only. Never store locally.
+
+### Lexicons (locally stored — `/reference/lexicons/`)
+
+| Resource         | Contents                                              | License              |
+| ---------------- | ----------------------------------------------------- | -------------------- |
+| `morphhb/`       | OpenScriptures Morphologically Tagged Hebrew Bible    | Free w/ attribution  |
+| `HebrewLexicon/` | BDB Outline (BrownDriverBriggs.xml, HebrewStrong.xml) | Free w/ attribution  |
+| `strongs/`       | Strong's Hebrew + Greek Dictionaries (1890)           | Public Domain        |
+| `Abbott-Smith/`  | Abbott-Smith Manual Greek Lexicon of the NT (1922)    | ✅ CC0 Public Domain |
+
+### STEPBible Data (`/reference/stepbible-data/STEPBible-Data/Lexicons/`)
+
+| Resource  | Contents                               | License                                   |
+| --------- | -------------------------------------- | ----------------------------------------- |
+| TBESG     | Extended Strong's for Greek            | ✅ CC BY 4.0                              |
+| TBESH     | Extended Strong's for Hebrew           | ✅ CC BY 4.0                              |
+| TFLSJ     | Full Liddell-Scott-Jones Greek Lexicon | ✅ CC BY 4.0                              |
+| **TTESV** | ESV Tagged Bible                       | ❌ **CC BY-NC — DO NOT USE COMMERCIALLY** |
 
 ---
 

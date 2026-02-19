@@ -31,16 +31,56 @@ Each subfolder contains: plain `.txt` files + `metadata.json` (author info, lice
 
 **Bulk download script:** `scripts/download-commentary-library.sh`
 
-## Broken Symlinks (legacy — do not restore without audit)
+## Bible Translations (added Feb 19 2026)
 
-The following are broken symlinks pointing to deleted `euongelion-old` backup. They reference valid data that no longer exists locally:
+`content/reference/bibles/` — real directory (broken symlink replaced)
 
-- `content/reference/bibles/` → `euongelion-old/content/reference/bibles`
-- `content/reference/dictionaries/` → `euongelion-old/content/reference/dictionaries`
-- `content/reference/lexicons/` → `euongelion-old/content/reference/lexicons`
-- `content/reference/stepbible-data/` → `euongelion-old/content/reference/stepbible-data`
+| Subfolder             | Contents                                     | License           | Commercial |
+| --------------------- | -------------------------------------------- | ----------------- | ---------- |
+| `bibles/open-bibles/` | 10 English PD translations + 38 multilingual | All Public Domain | ✅ Yes     |
+| `bibles/BSB/`         | Berean Standard Bible (CC0, download script) | CC0 Public Domain | ✅ Yes     |
 
-⚠️ **Scrollmapper warning:** If bibles symlink is restored, audit all 140+ translations. Many are copyrighted (NIV, ESV, NASB). Only commercially usable: KJV, ASV, WEB, YLT, Darby, BBE (pending US copyright verification).
+### English Translations in open-bibles
+
+KJV, ASV, WEB, WEBBE, YLT, DARBY, **BBE** (confirmed PD — 1965 edition no copyright notice), DRA (Douay-Rheims), OEB-CW, OEB-US
+
+**BSB download:** `bash scripts/download-bsb.sh` or use API at runtime: `https://bible.helloao.org/api/BSB/{BOOK}/{CHAPTER}.json`
+
+## Lexicons (added Feb 19 2026)
+
+`content/reference/lexicons/` — real directory (broken symlink replaced)
+
+| Subfolder                 | Contents                                              | License                 | Commercial |
+| ------------------------- | ----------------------------------------------------- | ----------------------- | ---------- |
+| `lexicons/morphhb/`       | OpenScriptures Morphologically Tagged Hebrew Bible    | Free use w/ attribution | ✅ Yes     |
+| `lexicons/HebrewLexicon/` | BDB Outline (BrownDriverBriggs.xml, HebrewStrong.xml) | Free use w/ attribution | ✅ Yes     |
+| `lexicons/strongs/`       | Strong's Hebrew + Greek Dictionaries                  | Public Domain           | ✅ Yes     |
+| `lexicons/Abbott-Smith/`  | Abbott-Smith Manual Greek Lexicon of the NT (1922)    | CC0 Public Domain       | ✅ Yes     |
+
+See `content/reference/lexicons/README.md` for detailed usage notes.
+
+## STEPBible-Data (added Feb 19 2026)
+
+`content/reference/stepbible-data/STEPBible-Data/` — real directory (broken symlink replaced)
+
+| File                           | License          | Commercial |
+| ------------------------------ | ---------------- | ---------- |
+| TBESG, TBESH, TFLSJ (Lexicons) | CC BY 4.0        | ✅ Yes     |
+| TIPNR, TEGMC, TEHMC            | CC BY 4.0        | ✅ Yes     |
+| **TTESV (ESV Tagged Bible)**   | **CC BY-NC 4.0** | ❌ **NO**  |
+
+**WARNING:** Never use TTESV commercially. ESV is Crossway copyright + NC restriction.
+
+## Legacy — All Broken Symlinks Now Replaced
+
+All four broken symlinks from the deleted `euongelion-old` backup have been replaced with real directories:
+
+- `content/reference/bibles/` ← now real
+- `content/reference/lexicons/` ← now real
+- `content/reference/stepbible-data/` ← now real
+- `content/reference/dictionaries/` ← now real (empty — restore content as needed)
+
+The old Scrollmapper data (140+ translations) is NOT restored. The open-bibles repo replaces it with properly licensed PD translations only.
 
 ## Policy
 
@@ -49,3 +89,4 @@ The following are broken symlinks pointing to deleted `euongelion-old` backup. T
 - Integrity checks enforce folder presence.
 - All new commentary additions must include `metadata.json` with license + source URL.
 - Commercial use requires public domain or CC license confirmation before download.
+- **Never store TTESV or any other CC BY-NC content in a commercial product.**
