@@ -1,7 +1,7 @@
 # Theological Resources Library
 
-**Version:** 1.0
-**Last Updated:** January 16, 2026
+**Version:** 2.0
+**Last Updated:** February 18, 2026
 **Purpose:** Reference materials for generating theologically sound devotional content
 
 ---
@@ -206,17 +206,69 @@ Example endnote:
 
 ## In-House Reference Library
 
-Located at `/content/reference/`:
+Located at `/content/reference/`. All content is for-profit commercial use — only public domain or CC-licensed works are stored locally.
 
-| Resource                             | Path                                     | Format   |
-| ------------------------------------ | ---------------------------------------- | -------- |
-| Matthew Henry Commentary             | `/reference/commentaries/matthew-henry/` | Markdown |
-| Strong's Hebrew Lexicon              | `/reference/lexicons/strongs-hebrew/`    | JSON/XML |
-| Strong's Greek Lexicon               | `/reference/lexicons/strongs-greek/`     | JSON/XML |
-| WEB Bible                            | `/reference/bibles/WEB-json/`            | JSON     |
-| Hebrew Masoretic Text                | `/reference/bibles/hebrew-masoretic/`    | OSIS XML |
-| Greek SBLGNT                         | `/reference/bibles/greek-sblgnt/`        | XML      |
-| Theographic (people, places, events) | `/reference/bibles/theographic/`         | JSON     |
+### Commentaries (locally downloaded — `/reference/commentaries/`)
+
+| Author                               | Tradition                 | Works                                                                                | Status           | Path                             |
+| ------------------------------------ | ------------------------- | ------------------------------------------------------------------------------------ | ---------------- | -------------------------------- |
+| **Augustine of Hippo** (354–430)     | Catholic/Church Father    | Confessions, City of God, On Christian Doctrine, Enchiridion                         | ✅ Public Domain | `commentaries/augustine/`        |
+| **Thomas à Kempis** (c.1380–1471)    | Catholic/Devotio Moderna  | Imitation of Christ                                                                  | ✅ Public Domain | `commentaries/thomas-a-kempis/`  |
+| **Martin Luther** (1483–1546)        | Lutheran/Reformer         | Commentary on Galatians, 95 Theses, Table Talk, Large Catechism                      | ✅ Public Domain | `commentaries/luther/`           |
+| **John Calvin** (1509–1564)          | Reformed                  | Institutes of the Christian Religion (2 vols)                                        | ✅ Public Domain | `commentaries/calvin/`           |
+| **Brother Lawrence** (c.1614–1691)   | Catholic/Carmelite        | Practice of the Presence of God                                                      | ✅ Public Domain | `commentaries/brother-lawrence/` |
+| **John Wesley** (1703–1791)          | Methodist/Arminian        | Sermons on Several Occasions (4 vols)                                                | ✅ Public Domain | `commentaries/wesley/`           |
+| **Jonathan Edwards** (1703–1758)     | Reformed/Puritan          | Religious Affections, Sinners in Hands of an Angry God, Freedom of Will, True Virtue | ✅ Public Domain | `commentaries/edwards/`          |
+| **George Whitefield** (1714–1770)    | Calvinist Methodist       | Sermons on Important Subjects                                                        | ✅ Public Domain | `commentaries/whitefield/`       |
+| **Andrew Murray** (1828–1917)        | Dutch Reformed/Keswick    | 22 works incl. Abide in Christ, True Vine, Prayer, Absolute Surrender                | ✅ Public Domain | `commentaries/murray/`           |
+| **Charles Spurgeon** (1834–1892)     | Reformed Baptist          | Morning & Evening + 4 additional works                                               | ✅ Public Domain | `commentaries/spurgeon/`         |
+| **A.W. Tozer** (1897–1963)           | CMA/Evangelical           | The Pursuit of God ONLY                                                              | ✅ Public Domain | `commentaries/tozer/`            |
+| **Frederick Douglass** (c.1817–1895) | Black Church/Abolitionist | Narrative, My Bondage and My Freedom, Life and Times                                 | ✅ Public Domain | `commentaries/douglass/`         |
+
+**External link only (not downloaded):**
+| Author | Key Works | Source |
+|---|---|---|
+| **Matthew Henry** (1662–1714) | Complete Commentary on the Whole Bible (6 vols) | [CCEL](https://ccel.org/ccel/henry/mhc2/MHC00000.HTM) |
+| **John Gill** (1697–1771) | Exposition of the Entire Bible (9 vols) | [StudyLight](https://www.studylight.org/commentaries/eng/geb.html) |
+| **John Chrysostom** (349–407) | Homilies on the NT | [CCEL](https://ccel.org/ccel/schaff/npnf110) / [New Advent](https://www.newadvent.org/fathers/) |
+| **Athanasius** (c.296–373) | On the Incarnation | [CCEL](https://ccel.org/ccel/athanasius/incarnation) |
+
+### Citation Format for Locally Downloaded Works
+
+```
+[Author Last, First]. _[Title]_. [Year of publication]. [Chapter/Section].
+Source: [source_url as noted in metadata.json]
+```
+
+### Copyright-Restricted Sources (external citation + attribution only)
+
+| Person                              | Status                              | How to Use                                                         | Source                                                                     |
+| ----------------------------------- | ----------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| **MLK Jr.** (1929–1968)             | ⛔ Copyrighted until ~2038+         | 1-3 sentence quotes with attribution only. Never download locally. | [King Institute (Stanford)](https://kinginstitute.stanford.edu/)           |
+| **Dietrich Bonhoeffer** (1906–1945) | ⛔ Copyrighted                      | 1-3 sentence quotes with attribution only                          | Library/academic access                                                    |
+| **C.S. Lewis** (1898–1963)          | ⛔ Copyrighted in US until ~2058    | 1-3 sentence quotes with attribution only                          | Published editions                                                         |
+| **Pastor Barry Howard**             | ⛔ Copyrighted — permission PENDING | No use until written permission received                           | [Baptist News Global](https://baptistnews.com/article/author/barryhoward/) |
+| **Pastor Kevin Head**               | ⛔ Copyrighted — permission PENDING | No use until written permission received                           | [First Baptist Roswell](https://fbroswell.org/preacher/dr-kevin-head/)     |
+| **Howard Thurman** (1899–1981)      | ⛔ Mostly copyrighted               | 1-3 sentence quotes with attribution only                          | Published editions                                                         |
+| **Gardner Taylor** (1918–2015)      | ⛔ Copyrighted                      | 1-3 sentence quotes with attribution only                          | Published editions                                                         |
+
+### Scrollmapper Warning
+
+⚠️ `content/reference/bibles/scrollmapper/` (broken symlink) — if restored, must audit all translations. MIT license covers the code/tool ONLY, not the underlying translation texts. Many translations in the collection (NIV, ESV, NASB, etc.) are commercially copyrighted. Only use: KJV, ASV, WEB, YLT, Darby.
+
+### Bibles (Public Domain — locally stored or external)
+
+| Resource                             | Path                                        | Format   | License       |
+| ------------------------------------ | ------------------------------------------- | -------- | ------------- |
+| Matthew Henry Commentary             | External (CCEL) — broken symlink locally    | Markdown | Public Domain |
+| Strong's Hebrew + Greek Lexicons     | `/reference/lexicons/strongs/`              | JSON/XML | Public Domain |
+| WEB Bible                            | `/reference/bibles/WEB-json/`               | JSON     | Public Domain |
+| Hebrew Masoretic Text (Leningrad)    | `/reference/bibles/hebrew-masoretic/`       | OSIS XML | Public Domain |
+| Greek SBLGNT                         | `/reference/bibles/greek-sblgnt/`           | XML      | CC BY 4.0     |
+| Theographic (people, places, events) | `/reference/bibles/theographic/`            | JSON     | CC BY 4.0     |
+| STEPBible tagged texts + lexicons    | `/reference/stepbible-data/`                | Text     | CC BY 4.0     |
+| Nave's Topical Index                 | `/reference/dictionaries/naves-topical/`    | Data     | Public Domain |
+| Treasury of Scripture Knowledge      | `/reference/dictionaries/cross-references/` | JSON/SQL | Public Domain |
 
 ---
 
@@ -225,5 +277,7 @@ Located at `/content/reference/`:
 1. **Primary sources first:** Use Scripture, then lexicons, then commentaries
 2. **Balance traditions:** Don't rely solely on one theological tradition
 3. **Cite everything:** Every claim that isn't common knowledge needs a citation
-4. **Verify accuracy:** Cross-check commentary claims against original language tools
+4. **Verbatim only:** Never paraphrase as if quoting. Always quote exactly.
 5. **Endnotes always:** Full citations at end, superscript numbers in text
+6. **Direct links:** Every citation must include a direct URL to the source
+7. **Commercial clearance first:** Never use a source without confirming its public domain or CC status for commercial use
