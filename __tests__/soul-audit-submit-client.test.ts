@@ -35,19 +35,49 @@ describe('submitSoulAuditResponse', () => {
       vi.fn(async () => ({
         ok: false,
         json: async () => ({
-          error: 'No curated options are currently available.',
+          error: 'Rate limit reached.',
         }),
       })),
     )
 
     await expect(
       submitSoulAuditResponse({ response: 'too much on my plate today' }),
-    ).rejects.toEqual(
-      new SoulAuditSubmitError(
-        'server',
-        'No curated options are currently available.',
-      ),
-    )
+    ).rejects.toEqual(new SoulAuditSubmitError('server', 'Rate limit reached.'))
+  })
+
+  it('retries once with enriched text for retryable no-options errors', async () => {
+    const payload = {
+      auditRunId: 'run_retry_ok',
+      options: [{ id: 'x' }],
+    }
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce({
+        ok: false,
+        json: async () => ({
+          error:
+            'We could not assemble devotional options from your response yet. Add one more sentence and try again.',
+          code: 'NO_CURATED_OPTIONS',
+        }),
+      })
+      .mockResolvedValueOnce({
+        ok: true,
+        json: async () => payload,
+      })
+
+    vi.stubGlobal('fetch', fetchMock)
+
+    await expect(
+      submitSoulAuditResponse({ response: 'money' }),
+    ).resolves.toEqual(payload)
+
+    expect(fetchMock).toHaveBeenCalledTimes(2)
+    const secondCall = fetchMock.mock.calls[1]?.[1] as RequestInit | undefined
+    expect(typeof secondCall?.body).toBe('string')
+    const secondPayload = JSON.parse(String(secondCall?.body)) as {
+      response: string
+    }
+    expect(secondPayload.response).toContain('I need guidance for this season.')
   })
 
   it('returns timeout error when submit exceeds timeout window', async () => {

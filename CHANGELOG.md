@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Submit Retry Hardening (2026-02-20)
+
+### What Changed
+
+- Hardened Soul Audit client submit transport with one automatic retry for retryable no-options failures.
+- On retryable response codes/messages, client enriches input once and retries transparently to avoid dead-end submit states.
+- Kept non-retryable server failures explicit and unchanged.
+
+### Files
+
+- `src/lib/soul-audit/submit-client.ts`
+- `__tests__/soul-audit-submit-client.test.ts`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/soul-audit-submit-client.test.ts __tests__/soul-audit-flow.test.ts`
+
+---
+
 ## Mobile Topbar Fade Cycle Refinement (2026-02-20)
 
 ### What Changed
