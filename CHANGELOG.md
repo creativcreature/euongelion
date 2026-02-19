@@ -5,6 +5,41 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Auth Provider Completion (2026-02-19)
+
+### What Changed
+
+- Added first-class social auth options on both auth entry routes:
+  - `Continue with Apple`
+  - `Continue with Google`
+  - existing magic-link flow remains available as fallback.
+- Wired provider sign-in to Supabase OAuth with safe callback routing through existing auth callback:
+  - redirect target is normalized to safe relative paths
+  - OAuth callback continues through `/auth/callback?redirect=...` and then returns to the requested in-app route.
+- Unified busy/error behavior across provider and magic-link actions so users cannot trigger overlapping auth requests.
+
+### Files
+
+- `src/app/auth/sign-in/page.tsx`
+- `src/app/auth/sign-up/page.tsx`
+- `docs/feature-prds/F-050.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:governance-alignment`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Soul Audit Current-Route Reliability Fix (2026-02-19)
 
 ### What Changed
