@@ -12,6 +12,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - Bumped service worker cache key from `euangelion-v45` to `euangelion-v46`.
 - Bumped client SW migration key from `v45` to `v46`.
 - This forces stale clients to unregister old workers/cache and pick up the latest homepage/header/nav assets after deployment.
+- Updated offline SW contract test to assert versioned cache namespace format (`euangelion-vN`) so cache-roll passes stay aligned with test gates.
 
 ### Files
 

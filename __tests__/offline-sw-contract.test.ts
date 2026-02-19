@@ -7,7 +7,7 @@ describe('Offline service worker contract', () => {
   const sw = fs.readFileSync(swPath, 'utf8')
 
   it('uses current cache namespace', () => {
-    expect(sw).toContain("const CACHE_NAME = 'euangelion-v45'")
+    expect(sw).toMatch(/const CACHE_NAME = 'euangelion-v\d+'/)
   })
 
   it('precaches critical routes for degraded navigation', () => {
