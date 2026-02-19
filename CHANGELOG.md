@@ -24,11 +24,12 @@ Format: Reverse chronological, grouped by sprint/date.
 - `src/app/api/soul-audit/reset/route.ts`
 - `src/lib/soul-audit/session.ts`
 - `__tests__/soul-audit-current-route.test.ts`
+- `__tests__/soul-audit-reset-route.test.ts`
 - `docs/feature-prds/F-029.md`
 
 ### Validation
 
-- `npx vitest run __tests__/soul-audit-current-route.test.ts __tests__/daily-bread-active-days.test.ts __tests__/soul-audit-flow.test.ts`
+- `npx vitest run __tests__/soul-audit-current-route.test.ts __tests__/soul-audit-reset-route.test.ts __tests__/daily-bread-active-days.test.ts __tests__/soul-audit-flow.test.ts`
 - `npm run lint`
 - `npm run type-check`
 - `npm run verify:production-contracts`
