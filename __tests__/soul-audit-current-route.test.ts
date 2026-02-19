@@ -79,7 +79,7 @@ describe('GET /api/soul-audit/current', () => {
 
     expect(payload.hasCurrent).toBe(true)
     expect(payload.selectionType).toBe('curated_prefab')
-    expect(payload.route).toBe('/series/community')
+    expect(payload.route).toBe('/devotional/community-day-1')
   })
 
   it('returns newest AI plan route when plan is newer than prefab selection', async () => {

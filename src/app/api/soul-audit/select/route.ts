@@ -34,6 +34,7 @@ import { verifyConsentToken } from '@/lib/soul-audit/consent-token'
 import { verifyRunToken } from '@/lib/soul-audit/run-token'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import { crisisRequirement } from '@/lib/soul-audit/crisis'
+import { SERIES_DATA } from '@/data/series'
 import type {
   SoulAuditSelectRequest,
   SoulAuditSelectResponse,
@@ -109,6 +110,14 @@ function withCurrentRouteCookie(response: NextResponse, route: string) {
     path: '/',
   })
   return response
+}
+
+function curatedSelectionRoute(seriesSlug: string): string {
+  const firstDay = SERIES_DATA[seriesSlug]?.days?.[0]
+  if (firstDay?.slug) {
+    return `/devotional/${firstDay.slug}`
+  }
+  return `/series/${seriesSlug}`
 }
 
 export async function POST(request: NextRequest) {
@@ -266,7 +275,7 @@ export async function POST(request: NextRequest) {
         selectionType: existingSelection.option_kind,
         route:
           existingSelection.option_kind === 'curated_prefab'
-            ? `/series/${existingSelection.series_slug}`
+            ? curatedSelectionRoute(existingSelection.series_slug)
             : `/soul-audit/results?planToken=${existingSelection.plan_token}`,
         planToken: existingSelection.plan_token ?? undefined,
         seriesSlug: existingSelection.series_slug,
@@ -309,7 +318,7 @@ export async function POST(request: NextRequest) {
         ok: true,
         auditRunId: runId,
         selectionType: 'curated_prefab',
-        route: `/series/${option.slug}`,
+        route: curatedSelectionRoute(option.slug),
         seriesSlug: option.slug,
       }
       return withCurrentRouteCookie(

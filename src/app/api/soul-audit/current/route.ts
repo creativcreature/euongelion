@@ -5,6 +5,7 @@ import {
   getLatestSelectionForSessionWithFallback,
 } from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
+import { SERIES_DATA } from '@/data/series'
 
 const CURRENT_ROUTE_COOKIE = 'euangelion_current_route'
 const CURRENT_ROUTE_MAX_AGE = 30 * 24 * 60 * 60
@@ -32,6 +33,14 @@ type CurrentCandidate = {
   seriesSlug?: string
 }
 
+function curatedSelectionRoute(seriesSlug: string): string {
+  const firstDay = SERIES_DATA[seriesSlug]?.days?.[0]
+  if (firstDay?.slug) {
+    return `/devotional/${firstDay.slug}`
+  }
+  return `/series/${seriesSlug}`
+}
+
 export async function GET() {
   const cookieStore = await cookies()
   const routeFromCookie = normalizeCurrentRoute(
@@ -57,7 +66,7 @@ export async function GET() {
 
   if (latestSelection?.option_kind === 'curated_prefab') {
     candidates.push({
-      route: `/series/${latestSelection.series_slug}`,
+      route: curatedSelectionRoute(latestSelection.series_slug),
       createdAt: latestSelection.created_at,
       selectionType: 'curated_prefab',
       seriesSlug: latestSelection.series_slug,

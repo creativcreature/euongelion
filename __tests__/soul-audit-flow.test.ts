@@ -279,7 +279,7 @@ describe('Soul Audit staged flow', () => {
       planToken?: string
     }
     expect(payload.selectionType).toBe('curated_prefab')
-    expect(payload.route).toMatch(/^\/series\//)
+    expect(payload.route).toMatch(/^\/devotional\//)
     expect(payload.planToken).toBeUndefined()
   })
 
@@ -335,7 +335,7 @@ describe('Soul Audit staged flow', () => {
     }
     expect(selectionPayload.ok).toBe(true)
     expect(selectionPayload.selectionType).toBe('curated_prefab')
-    expect(selectionPayload.route).toMatch(/^\/series\//)
+    expect(selectionPayload.route).toMatch(/^\/devotional\//)
   })
 
   it('reroll submit mode does not consume additional audit-cycle count', async () => {

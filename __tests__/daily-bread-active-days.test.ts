@@ -13,6 +13,12 @@ let latestPlan: {
   cycle_start_at: string
   timezone_offset_minutes: number
 } | null = null
+let latestSelection: {
+  option_kind: 'ai_primary' | 'curated_prefab'
+  plan_token: string | null
+  series_slug: string
+  created_at: string
+} | null = null
 let planDays: Array<{
   day_number: number
   content: {
@@ -43,6 +49,8 @@ vi.mock('@/lib/day-locking', () => ({
 
 vi.mock('@/lib/soul-audit/repository', () => ({
   getLatestPlanInstanceForSessionWithFallback: vi.fn(async () => latestPlan),
+  getLatestSelectionForSessionWithFallback: vi.fn(async () => latestSelection),
+  getPlanInstanceWithFallback: vi.fn(async () => null),
   getAllPlanDaysWithFallback: vi.fn(async () => planDays),
 }))
 
@@ -57,6 +65,7 @@ describe('GET /api/daily-bread/active-days', () => {
     sessionToken = `daily-bread-${Date.now()}-${Math.random().toString(36).slice(2)}`
     dayLockingEnabled = false
     latestPlan = null
+    latestSelection = null
     planDays = []
     unlockResolver = () => ({
       unlocked: true,
@@ -230,5 +239,34 @@ describe('GET /api/daily-bread/active-days', () => {
     expect(day3?.lockMessage).toContain("isn't ready")
     expect(day3?.unlockAt).toBeDefined()
     expect(day3?.route).toBe('/soul-audit/results?planToken=token-xyz&day=3')
+  })
+
+  it('returns curated series days when curated prefab is latest selection', async () => {
+    latestSelection = {
+      option_kind: 'curated_prefab',
+      plan_token: null,
+      series_slug: 'community',
+      created_at: '2026-02-20T12:00:00.000Z',
+    }
+
+    const response = await activeDaysHandler(
+      new Request('http://localhost/api/daily-bread/active-days') as never,
+    )
+    expect(response.status).toBe(200)
+    const payload = (await response.json()) as {
+      hasPlan: boolean
+      planToken: string | null
+      seriesSlug: string
+      currentDay: number | null
+      days: Array<{ day: number; status: string; route: string }>
+    }
+
+    expect(payload.hasPlan).toBe(true)
+    expect(payload.planToken).toBeNull()
+    expect(payload.seriesSlug).toBe('community')
+    expect(payload.currentDay).toBe(1)
+    expect(payload.days.length).toBeGreaterThan(0)
+    expect(payload.days[0]?.status).toBe('current')
+    expect(payload.days[0]?.route).toBe('/devotional/community-day-1')
   })
 })

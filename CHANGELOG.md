@@ -5,6 +5,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Curated Prefab Active-Path Fix (2026-02-20)
+
+### What Changed
+
+- Fixed curated prefab continuity so prefab selections behave like an active devotional path instead of a browse-only dead end:
+  - `soul-audit/select` now resolves curated route to first devotional day in the selected series (fallback: series overview)
+  - `soul-audit/current` now returns curated current-path route as first devotional day for resume continuity.
+- Fixed Daily Bread active-days resolution to honor newest current source:
+  - chooses latest candidate between plan-based and curated-prefab selection sources
+  - when curated prefab is newest, returns series day rows as active timeline with day 1 current.
+- Added regression coverage for:
+  - curated route continuity in current-path API
+  - prefab route contract in staged soul-audit flow
+  - daily-bread active-days curated fallback rendering.
+
+### Files
+
+- `src/app/api/soul-audit/select/route.ts`
+- `src/app/api/soul-audit/current/route.ts`
+- `src/app/api/daily-bread/active-days/route.ts`
+- `__tests__/soul-audit-current-route.test.ts`
+- `__tests__/soul-audit-flow.test.ts`
+- `__tests__/daily-bread-active-days.test.ts`
+- `docs/feature-prds/F-029.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:governance-alignment`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Day Route Contract Tests (2026-02-20)
 
 ### What Changed
@@ -207,6 +248,42 @@ Format: Reverse chronological, grouped by sprint/date.
 - `npm run verify:methodology-traceability`
 - `npm run verify:folder-structure`
 - `npm run verify:appstore-gate`
+
+---
+
+## Bible + Lexicon Library Expansion (2026-02-19)
+
+### What Changed
+
+**Bible Translations** — `content/reference/bibles/`
+
+- Replaced broken symlink with real directory
+- Cloned `seven1m/open-bibles` — 10 English public domain translations + 38 multilingual
+- English: KJV, ASV, WEB, WEBBE, YLT, DARBY, **BBE (confirmed PD)**, DRA, OEB-US, OEB-CW
+- Created `scripts/download-bsb.sh` to download Berean Standard Bible (CC0) from official API
+- BSB is recommended primary translation for contemporary English in the app
+- **BBE confirmed public domain:** 1965 edition published without copyright notice = auto-PD in US
+
+**Lexicons** — `content/reference/lexicons/`
+
+- Replaced broken symlink with real directory
+- `openscriptures/morphhb` — Morphologically tagged Hebrew Bible (113MB)
+- `openscriptures/HebrewLexicon` — BDB outline (23MB)
+- `openscriptures/strongs` — Strong's Hebrew + Greek (25MB)
+- `Freely-Given-org/Abbott-Smith` — Manual Greek Lexicon of NT (87MB, CC0)
+
+**STEPBible-Data** — `content/reference/stepbible-data/`
+
+- Replaced broken symlink with real directory
+- `Freely-Given-org/STEPBible-Data` (CC BY 4.0, commercial OK for lexicons)
+- ⚠️ TTESV (ESV tagged) is CC BY-NC — commercial use prohibited
+
+**Documentation**
+
+- `content/reference/bibles/README.md` — translation inventory with license table
+- `content/reference/lexicons/README.md` — lexicon inventory with commercial flags
+- `docs/REFERENCE-FOLDERS-INDEX.md` — fully updated
+- `content/THEOLOGICAL-RESOURCES.md` — Bibles + Lexicons sections rewritten
 
 ---
 
