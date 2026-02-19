@@ -5,6 +5,31 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Reader Highlighting Pass (2026-02-20)
+
+### What Changed
+
+- Added visible in-reader highlighting with palette selection:
+  - text selection now opens a highlight toolbar with 5 color options.
+  - highlights are saved as annotations with color metadata and rendered inline in the devotional text.
+  - saved highlights are rehydrated on page load for the active devotional slug.
+- Improved highlights visibility in Daily Bread library:
+  - highlight rows now render with matching color treatment so saved context is easier to scan.
+
+### Files
+
+- `src/components/TextHighlightTrigger.tsx`
+- `src/components/DevotionalLibraryRail.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/devotional-library-rail-accessibility.test.tsx __tests__/shell-header.test.tsx`
+
+---
+
 ## Navigation Reliability Pass (2026-02-20)
 
 ### What Changed

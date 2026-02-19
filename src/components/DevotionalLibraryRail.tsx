@@ -31,6 +31,15 @@ type AnnotationRow = {
   created_at: string
 }
 
+type HighlightColor = 'yellow' | 'blue' | 'green' | 'pink' | 'purple'
+const HIGHLIGHT_COLORS: HighlightColor[] = [
+  'yellow',
+  'blue',
+  'green',
+  'pink',
+  'purple',
+]
+
 type PlanArchiveRow = {
   planToken: string
   seriesSlug: string
@@ -195,6 +204,15 @@ function formatUnlockDate(value: string | undefined): string {
     minute: '2-digit',
     hour12: true,
   })
+}
+
+function resolveHighlightColor(style: Record<string, unknown> | null) {
+  const candidate = String(style?.color || '')
+    .trim()
+    .toLowerCase()
+  return HIGHLIGHT_COLORS.includes(candidate as HighlightColor)
+    ? (candidate as HighlightColor)
+    : 'yellow'
 }
 
 function normalizeInitialTab(value: string | undefined): LibraryMenuKey {
@@ -793,35 +811,40 @@ export default function DevotionalLibraryRail({
                   </p>
                 ) : (
                   <div className="space-y-2">
-                    {highlights.map((row) => (
-                      <div
-                        key={row.id}
-                        className="border px-3 py-2"
-                        style={{ borderColor: 'var(--color-border)' }}
-                      >
-                        <div className="mb-2 flex items-center justify-between gap-3">
-                          <Link
-                            href={resolveDevotionalHref(row.devotional_slug)}
-                            className="vw-small link-highlight text-muted"
+                    {highlights.map((row) => {
+                      const color = resolveHighlightColor(row.style)
+                      return (
+                        <div
+                          key={row.id}
+                          className="border px-3 py-2"
+                          style={{ borderColor: 'var(--color-border)' }}
+                        >
+                          <div className="mb-2 flex items-center justify-between gap-3">
+                            <Link
+                              href={resolveDevotionalHref(row.devotional_slug)}
+                              className="vw-small link-highlight text-muted"
+                            >
+                              {resolveDevotionalLabel(row.devotional_slug)}
+                            </Link>
+                            <button
+                              type="button"
+                              onClick={() => void archiveAnnotationRow(row)}
+                              className="text-label vw-small link-highlight"
+                              aria-label={`Archive highlight from ${resolveDevotionalLabel(
+                                row.devotional_slug,
+                              )}`}
+                            >
+                              Archive
+                            </button>
+                          </div>
+                          <p
+                            className={`text-serif-italic vw-small text-secondary reader-highlight-snippet reader-highlight-snippet--${color}`}
                           >
-                            {resolveDevotionalLabel(row.devotional_slug)}
-                          </Link>
-                          <button
-                            type="button"
-                            onClick={() => void archiveAnnotationRow(row)}
-                            className="text-label vw-small link-highlight"
-                            aria-label={`Archive highlight from ${resolveDevotionalLabel(
-                              row.devotional_slug,
-                            )}`}
-                          >
-                            Archive
-                          </button>
+                            {row.anchor_text || row.body}
+                          </p>
                         </div>
-                        <p className="text-serif-italic vw-small text-secondary">
-                          {row.anchor_text || row.body}
-                        </p>
-                      </div>
-                    ))}
+                      )
+                    })}
                   </div>
                 )}
               </div>

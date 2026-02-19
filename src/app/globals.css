@@ -1593,6 +1593,153 @@
     transform: scaleX(1);
   }
 
+  .reader-highlight-toolbar {
+    max-width: min(92vw, 540px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  }
+
+  .reader-highlight-color-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.32rem;
+    margin-right: 0.2rem;
+  }
+
+  .reader-highlight-swatch {
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 999px;
+    cursor: pointer;
+    transition:
+      transform 140ms ease,
+      border-color 140ms ease;
+  }
+
+  .reader-highlight-swatch.is-active {
+    transform: scale(1.08);
+    border-color: var(--color-text-primary);
+  }
+
+  .reader-highlight-swatch--yellow {
+    background: #f6df80;
+  }
+
+  .reader-highlight-swatch--blue {
+    background: #9ec4ff;
+  }
+
+  .reader-highlight-swatch--green {
+    background: #a8dca6;
+  }
+
+  .reader-highlight-swatch--pink {
+    background: #efb5cc;
+  }
+
+  .reader-highlight-swatch--purple {
+    background: #ceb6f4;
+  }
+
+  .reader-highlight {
+    border-radius: 2px;
+    padding: 0 0.02em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .reader-highlight--yellow {
+    background: rgba(246, 223, 128, 0.54);
+  }
+
+  .reader-highlight--blue {
+    background: rgba(158, 196, 255, 0.48);
+  }
+
+  .reader-highlight--green {
+    background: rgba(168, 220, 166, 0.52);
+  }
+
+  .reader-highlight--pink {
+    background: rgba(239, 181, 204, 0.5);
+  }
+
+  .reader-highlight--purple {
+    background: rgba(206, 182, 244, 0.5);
+  }
+
+  .reader-highlight-snippet {
+    display: inline;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding: 0 0.08em;
+    border-radius: 2px;
+  }
+
+  .reader-highlight-snippet--yellow {
+    background: rgba(246, 223, 128, 0.32);
+  }
+
+  .reader-highlight-snippet--blue {
+    background: rgba(158, 196, 255, 0.3);
+  }
+
+  .reader-highlight-snippet--green {
+    background: rgba(168, 220, 166, 0.3);
+  }
+
+  .reader-highlight-snippet--pink {
+    background: rgba(239, 181, 204, 0.3);
+  }
+
+  .reader-highlight-snippet--purple {
+    background: rgba(206, 182, 244, 0.32);
+  }
+
+  .dark .reader-highlight {
+    color: var(--color-text-primary);
+  }
+
+  .dark .reader-highlight--yellow {
+    background: rgba(246, 223, 128, 0.34);
+  }
+
+  .dark .reader-highlight--blue {
+    background: rgba(112, 160, 255, 0.34);
+  }
+
+  .dark .reader-highlight--green {
+    background: rgba(117, 199, 126, 0.34);
+  }
+
+  .dark .reader-highlight--pink {
+    background: rgba(236, 134, 188, 0.34);
+  }
+
+  .dark .reader-highlight--purple {
+    background: rgba(158, 128, 230, 0.34);
+  }
+
+  .dark .reader-highlight-snippet--yellow {
+    background: rgba(246, 223, 128, 0.22);
+  }
+
+  .dark .reader-highlight-snippet--blue {
+    background: rgba(112, 160, 255, 0.22);
+  }
+
+  .dark .reader-highlight-snippet--green {
+    background: rgba(117, 199, 126, 0.22);
+  }
+
+  .dark .reader-highlight-snippet--pink {
+    background: rgba(236, 134, 188, 0.22);
+  }
+
+  .dark .reader-highlight-snippet--purple {
+    background: rgba(158, 128, 230, 0.22);
+  }
+
   .audit-option-card {
     transition:
       transform var(--duration-moderate) var(--ease-out),
