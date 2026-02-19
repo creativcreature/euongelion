@@ -36,6 +36,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - Added regression test proving one-word input still returns valid options.
 - Added regression test proving short-phrase input (`I need money today`) returns valid options with no hard gate.
 - Updated homepage Soul Audit helper copy to reflect sentence/short-input support.
+- Added non-blocking short-input UI nudge on homepage and `/soul-audit` (`Add one more sentence for more precise curation.`) while still allowing submit.
 
 ### Files
 

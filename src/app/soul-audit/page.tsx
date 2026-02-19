@@ -30,6 +30,11 @@ export default function SoulAuditPage() {
   const { auditCount, recordAudit, hasReachedLimit, resetAudit } =
     useSoulAuditStore()
   const limitReached = hydrated && hasReachedLimit()
+  const shortInputWordCount = response
+    .trim()
+    .split(/\s+/)
+    .filter((token) => token.length > 0).length
+  const showLowContextHint = shortInputWordCount > 0 && shortInputWordCount <= 3
 
   useEffect(() => {
     textareaRef.current?.focus()
@@ -191,6 +196,11 @@ export default function SoulAuditPage() {
                       e.target.style.borderColor = 'var(--color-border)'
                     }}
                   />
+                  {showLowContextHint && (
+                    <p className="vw-small mb-6 text-center text-muted">
+                      Add one more sentence for more precise curation.
+                    </p>
+                  )}
 
                   {error && (
                     <p className="vw-body mb-6 text-center text-secondary">

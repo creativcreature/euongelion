@@ -121,6 +121,11 @@ export default function Home() {
   }, [featuredSeries])
   const activeFeaturedSeries =
     featuredSlides[featuredCarouselIndex % Math.max(1, featuredSlides.length)]
+  const auditWordCount = auditText
+    .trim()
+    .split(/\s+/)
+    .filter((token) => token.length > 0).length
+  const showLowContextHint = auditWordCount > 0 && auditWordCount <= 3
 
   const formatSeriesPreview = (introduction: string) => {
     const combined = typographer(introduction).replace(/\s+/g, ' ').trim()
@@ -351,6 +356,11 @@ export default function Home() {
                   className="mock-textarea"
                   aria-label="What are you wrestling with today?"
                 />
+                {showLowContextHint && (
+                  <p className="mock-footnote">
+                    Add one more sentence for more precise curation.
+                  </p>
+                )}
 
                 <button
                   type="button"
@@ -628,6 +638,11 @@ export default function Home() {
                 className="mock-textarea"
                 aria-label="Start with one honest sentence"
               />
+              {showLowContextHint && (
+                <p className="mock-footnote">
+                  Add one more sentence for more precise curation.
+                </p>
+              )}
 
               <button
                 type="button"
