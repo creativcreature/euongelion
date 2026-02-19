@@ -3,6 +3,7 @@ import {
   addAnnotation,
   listAnnotationsWithFallback,
   removeAnnotation,
+  updateAnnotation,
 } from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import { getUser } from '@/lib/auth'
@@ -19,6 +20,7 @@ import {
 } from '@/lib/api-security'
 
 interface AnnotationBody {
+  annotationId?: string
   devotionalSlug?: string
   annotationType?: 'note' | 'highlight' | 'sticky' | 'sticker'
   anchorText?: string | null
@@ -235,6 +237,94 @@ export async function DELETE(request: NextRequest) {
     })
     return jsonError({
       error: 'Unable to remove annotation.',
+      status: 500,
+      requestId,
+    })
+  }
+}
+
+export async function PATCH(request: NextRequest) {
+  const requestId = createRequestId()
+  const clientKey = getClientKey(request)
+  try {
+    const user = await getUser()
+    if (!user) {
+      return jsonError({
+        error: 'Sign in is required before updating notes or stickies.',
+        code: 'AUTH_REQUIRED_SAVE_STATE',
+        status: 401,
+        requestId,
+      })
+    }
+
+    const limiter = takeRateLimit({
+      namespace: 'annotations-patch',
+      key: clientKey,
+      limit: MAX_ANNOTATION_REQUESTS_PER_MINUTE,
+      windowMs: 60_000,
+    })
+    if (!limiter.ok) {
+      return jsonError({
+        error: 'Too many annotation update requests. Please retry shortly.',
+        status: 429,
+        requestId,
+        rateLimit: limiter,
+      })
+    }
+
+    const parsed = await readJsonWithLimit<AnnotationBody>({
+      request,
+      maxBytes: MAX_BODY_BYTES,
+    })
+    if (!parsed.ok) {
+      return jsonError({
+        error: parsed.error,
+        status: parsed.status,
+        requestId,
+      })
+    }
+
+    const payload = parsed.data
+    const annotationId = String(payload.annotationId || '').trim()
+    if (!annotationId) {
+      return jsonError({
+        error: 'annotationId is required.',
+        status: 400,
+        requestId,
+      })
+    }
+
+    const row = await updateAnnotation({
+      sessionToken: user.id,
+      annotationId,
+      anchorText: sanitizeOptionalText(payload.anchorText, 500),
+      body: sanitizeOptionalText(payload.body, 4_000),
+      style: payload.style ?? null,
+    })
+
+    if (!row) {
+      return jsonError({
+        error: 'Annotation not found.',
+        status: 404,
+        requestId,
+      })
+    }
+
+    return withRequestIdHeaders(
+      NextResponse.json({ ok: true, annotation: row }, { status: 200 }),
+      requestId,
+    )
+  } catch (error) {
+    logApiError({
+      scope: 'annotations-patch',
+      requestId,
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
+    return jsonError({
+      error: 'Unable to update annotation.',
       status: 500,
       requestId,
     })

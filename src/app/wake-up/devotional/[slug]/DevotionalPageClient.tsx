@@ -11,6 +11,7 @@ import ModuleRenderer from '@/components/ModuleRenderer'
 import ShareButton from '@/components/ShareButton'
 import DevotionalChat from '@/components/DevotionalChat'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
+import DevotionalStickiesLayer from '@/components/DevotionalStickiesLayer'
 import SiteFooter from '@/components/SiteFooter'
 import { typographer } from '@/lib/typographer'
 import { startSeries } from '@/lib/progress'
@@ -416,7 +417,7 @@ export default function DevotionalPageClient({
               </div>
             </aside>
 
-            <div>
+            <div className="devotional-reader-stage">
               {!dayGate.unlocked ? (
                 <section
                   className="devotional-shell-panel border px-6 py-8"
@@ -435,6 +436,7 @@ export default function DevotionalPageClient({
                 </section>
               ) : (
                 <>
+                  <DevotionalStickiesLayer devotionalSlug={slug} />
                   <div className="space-y-6">
                     {modules
                       ? modules.map((module, index) => (

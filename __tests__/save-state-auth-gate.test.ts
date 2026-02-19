@@ -1,6 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { POST as bookmarkPost } from '@/app/api/bookmarks/route'
-import { POST as annotationPost } from '@/app/api/annotations/route'
+import {
+  PATCH as annotationPatch,
+  POST as annotationPost,
+} from '@/app/api/annotations/route'
 
 const mockedGetUser = vi.hoisted(() => vi.fn())
 
@@ -15,6 +18,14 @@ vi.mock('@/lib/soul-audit/session', () => ({
 function postJson(url: string, body: Record<string, unknown>) {
   return new Request(url, {
     method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(body),
+  })
+}
+
+function patchJson(url: string, body: Record<string, unknown>) {
+  return new Request(url, {
+    method: 'PATCH',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(body),
   })
@@ -71,5 +82,18 @@ describe('save-state auth gate', () => {
       }) as never,
     )
     expect(response.status).toBe(200)
+  })
+
+  it('blocks annotation updates for unauthenticated users', async () => {
+    mockedGetUser.mockResolvedValue(null)
+    const response = await annotationPatch(
+      patchJson('http://localhost/api/annotations', {
+        annotationId: 'fake-annotation-id',
+        body: 'Updated sticky text',
+      }) as never,
+    )
+    expect(response.status).toBe(401)
+    const payload = (await response.json()) as { code?: string }
+    expect(payload.code).toBe('AUTH_REQUIRED_SAVE_STATE')
   })
 })

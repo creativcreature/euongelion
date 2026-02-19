@@ -5,6 +5,39 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Reader Stickies Pass (2026-02-20)
+
+### What Changed
+
+- Added desktop sticky notes to devotional readers:
+  - new sticky-note layer with `ADD STICKY`, drag handle, inline edit, and delete.
+  - sticky annotations persist via `/api/annotations` (`POST` create, `PATCH` update, `DELETE` remove).
+  - sticky positions are stored as normalized coordinates and rehydrated per devotional slug.
+- Improved library visibility:
+  - stickies now appear in Daily Bread `Notes` tab as a dedicated `Stickies` section.
+  - note counts include sticky-note entries.
+- Added annotation update contract support:
+  - repository update function and API `PATCH` handler for annotation edits.
+  - auth-gate coverage now includes annotation update writes.
+
+### Files
+
+- `src/components/DevotionalStickiesLayer.tsx`
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+- `src/components/DevotionalLibraryRail.tsx`
+- `src/app/api/annotations/route.ts`
+- `src/lib/soul-audit/repository.ts`
+- `src/app/globals.css`
+- `__tests__/save-state-auth-gate.test.ts`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/save-state-auth-gate.test.ts __tests__/devotional-library-rail-accessibility.test.tsx`
+
+---
+
 ## Reader Highlighting Pass (2026-02-20)
 
 ### What Changed

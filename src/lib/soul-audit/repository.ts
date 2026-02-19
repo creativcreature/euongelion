@@ -219,6 +219,32 @@ async function safeDelete(
   }
 }
 
+async function safeUpdate<T>(
+  table: string,
+  filters: Record<string, string | number | boolean>,
+  values: object,
+): Promise<T | null> {
+  const supabase = maybeSupabase()
+  if (!supabase) return null
+
+  try {
+    let query = (supabase as any).from(table).update(values)
+
+    for (const [key, value] of Object.entries(filters)) {
+      query = query.eq(key, value)
+    }
+
+    const { data, error } = (await query.select('*').maybeSingle()) as {
+      data: T | null
+      error: unknown
+    }
+    if (error) return null
+    return data ?? null
+  } catch {
+    return null
+  }
+}
+
 async function safeSelectOne<T>(
   table: string,
   filters: Record<string, string | number | boolean>,
@@ -999,6 +1025,52 @@ export async function removeAnnotation(params: {
     session_token: params.sessionToken,
   })
   return next.length < existing.length
+}
+
+export async function updateAnnotation(params: {
+  sessionToken: string
+  annotationId: string
+  anchorText: string | null
+  body: string | null
+  style: Record<string, unknown> | null
+}): Promise<AnnotationRecord | null> {
+  const store = getStore()
+  const cached = store.annotationsBySession.get(params.sessionToken) ?? []
+  const existing =
+    cached.find((row) => row.id === params.annotationId) ??
+    (await safeSelectOne<AnnotationRecord>('annotations', {
+      id: params.annotationId,
+      session_token: params.sessionToken,
+    }))
+
+  if (!existing) return null
+
+  const nextRow: AnnotationRecord = {
+    ...existing,
+    anchor_text: params.anchorText,
+    body: params.body,
+    style: params.style,
+  }
+
+  const next = cached.map((row) =>
+    row.id === params.annotationId ? nextRow : row,
+  )
+  store.annotationsBySession.set(params.sessionToken, next)
+
+  const persisted = await safeUpdate<AnnotationRecord>(
+    'annotations',
+    {
+      id: params.annotationId,
+      session_token: params.sessionToken,
+    },
+    {
+      anchor_text: params.anchorText,
+      body: params.body,
+      style: params.style,
+    },
+  )
+
+  return persisted ?? nextRow
 }
 
 export async function addBookmark(params: {

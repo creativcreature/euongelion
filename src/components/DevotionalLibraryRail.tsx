@@ -249,6 +249,7 @@ export default function DevotionalLibraryRail({
   const [bookmarks, setBookmarks] = useState<BookmarkRow[]>([])
   const [highlights, setHighlights] = useState<AnnotationRow[]>([])
   const [notes, setNotes] = useState<AnnotationRow[]>([])
+  const [stickyNotes, setStickyNotes] = useState<AnnotationRow[]>([])
   const [chatHistory, setChatHistory] = useState<AnnotationRow[]>([])
   const [archivePlans, setArchivePlans] = useState<PlanArchiveRow[]>([])
   const [archivedArtifacts, setArchivedArtifacts] = useState<
@@ -376,6 +377,9 @@ export default function DevotionalLibraryRail({
             String(row.style?.source || '') !== 'chat',
         ),
       )
+      setStickyNotes(
+        annotationRows.filter((row) => row.annotation_type === 'sticky'),
+      )
       setArchivePlans(
         Array.isArray((archiveJson as { archive?: unknown[] }).archive)
           ? ((archiveJson as { archive: PlanArchiveRow[] })
@@ -449,6 +453,7 @@ export default function DevotionalLibraryRail({
 
     setHighlights((prev) => prev.filter((row) => row.id !== annotation.id))
     setNotes((prev) => prev.filter((row) => row.id !== annotation.id))
+    setStickyNotes((prev) => prev.filter((row) => row.id !== annotation.id))
     setChatHistory((prev) => prev.filter((row) => row.id !== annotation.id))
 
     const artifact: ArchivedArtifact = {
@@ -561,7 +566,7 @@ export default function DevotionalLibraryRail({
     today: activeDays.length,
     bookmarks: bookmarks.length,
     highlights: highlights.length,
-    notes: notes.length,
+    notes: notes.length + stickyNotes.length,
     'chat-history': chatHistory.length,
     archive:
       archivePlans.length + completionRows.length + archivedArtifacts.length,
@@ -853,7 +858,7 @@ export default function DevotionalLibraryRail({
             {active === 'notes' && (
               <div>
                 <p className="text-label vw-small mb-3 text-gold">Notes</p>
-                {notes.length === 0 ? (
+                {notes.length === 0 && stickyNotes.length === 0 ? (
                   <p className="vw-small text-muted">No notes saved yet.</p>
                 ) : (
                   <div className="space-y-2">
@@ -884,6 +889,51 @@ export default function DevotionalLibraryRail({
                         <p className="vw-small text-secondary">{note.body}</p>
                       </div>
                     ))}
+
+                    {stickyNotes.length > 0 && (
+                      <div className="pt-3">
+                        <p className="text-label vw-small mb-2 text-gold">
+                          Stickies
+                        </p>
+                        <div className="space-y-2">
+                          {stickyNotes.map((sticky) => (
+                            <div
+                              key={sticky.id}
+                              className="border px-3 py-2"
+                              style={{ borderColor: 'var(--color-border)' }}
+                            >
+                              <div className="mb-2 flex items-center justify-between gap-3">
+                                <Link
+                                  href={resolveDevotionalHref(
+                                    sticky.devotional_slug,
+                                  )}
+                                  className="vw-small link-highlight text-muted"
+                                >
+                                  {resolveDevotionalLabel(
+                                    sticky.devotional_slug,
+                                  )}
+                                </Link>
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    void archiveAnnotationRow(sticky)
+                                  }
+                                  className="text-label vw-small link-highlight"
+                                  aria-label={`Archive sticky from ${resolveDevotionalLabel(
+                                    sticky.devotional_slug,
+                                  )}`}
+                                >
+                                  Archive
+                                </button>
+                              </div>
+                              <p className="vw-small text-secondary">
+                                {sticky.body}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
