@@ -5,6 +5,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Desktop Sticky Nav Reality Fix (2026-02-19)
+
+### What Changed
+
+- Restored true desktop sticky behavior for the shared shell nav (`.mock-nav`) so navigation remains pinned below the sticky topbar during real scrolling.
+- Removed the prior desktop `position: static` nav contract and updated regression coverage to enforce sticky behavior on desktop as well as mobile.
+- Bumped service-worker cache/runtime generation to `v49` so production clients refresh stale nav shell assets.
+
+### Files
+
+- `src/app/globals.css`
+- `__tests__/layout-overflow-contract.test.ts`
+- `public/sw.js`
+- `src/components/ServiceWorkerRegistration.tsx`
+
+### Validation
+
+- `npm run type-check`
+- `npm test -- --run __tests__/layout-overflow-contract.test.ts __tests__/ios-shell-readiness-contract.test.ts __tests__/shell-header.test.tsx __tests__/navigation-routing-shell.test.ts __tests__/offline-sw-contract.test.ts`
+
+---
+
 ## Shell Navigation Root-Cause Rewrite (2026-02-19)
 
 ### What Changed
