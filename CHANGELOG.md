@@ -5,6 +5,30 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Reader Continuity + Mobile Chat Peek Pass (2026-02-20)
+
+### What Changed
+
+- Fixed Soul Audit reader continuity for day-specific artifacts:
+  - plan-day highlights now save against day-specific slugs (`plan-<token>-day-<n>`) instead of a plan-wide slug.
+  - added sticky-note layer to Soul Audit day reader so plan days get the same sticky tooling as devotional pages.
+  - this restores clean Daily Bread linking for saved plan-day highlights/stickies.
+- Improved mobile chat usability:
+  - added mobile chat sheet `PEEK/EXPAND` toggle so users can quickly reveal devotional content behind chat for reference.
+
+### Files
+
+- `src/app/soul-audit/results/page.tsx`
+- `src/components/DevotionalChat.tsx`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/soul-audit-flow.test.ts __tests__/chat-ux.test.ts`
+
+---
+
 ## Reader Stickies Pass (2026-02-20)
 
 ### What Changed

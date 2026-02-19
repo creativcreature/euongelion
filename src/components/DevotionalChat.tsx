@@ -33,6 +33,8 @@ export default function DevotionalChat({
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [isMobileViewport, setIsMobileViewport] = useState(false)
+  const [mobilePeekMode, setMobilePeekMode] = useState(true)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
@@ -110,6 +112,24 @@ export default function DevotionalChat({
     }
   }, [isOpen])
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const media = window.matchMedia('(max-width: 640px)')
+    const syncViewport = () => setIsMobileViewport(media.matches)
+    syncViewport()
+    media.addEventListener('change', syncViewport)
+    return () => media.removeEventListener('change', syncViewport)
+  }, [])
+
+  useEffect(() => {
+    if (!isOpen) return
+    if (isMobileViewport) {
+      setMobilePeekMode(true)
+    } else {
+      setMobilePeekMode(false)
+    }
+  }, [isOpen, isMobileViewport])
+
   // Filter messages for current devotional context
   const contextMessages = messages.filter(
     (m) => m.devotionalSlug === devotionalSlug,
@@ -121,6 +141,11 @@ export default function DevotionalChat({
   const dailyCount = getDailyCount()
   const isFreeTier = !anthropicApiKey
   const limitReached = isFreeTier && dailyCount >= FREE_TIER_LIMIT
+  const modalHeight = isMobileViewport
+    ? mobilePeekMode
+      ? '46vh'
+      : '82vh'
+    : '70vh'
 
   const sendMessage = useCallback(async () => {
     const text = input.trim()
@@ -247,7 +272,7 @@ export default function DevotionalChat({
               zIndex: 'var(--z-modal)',
               width: '100%',
               maxWidth: '440px',
-              height: '70vh',
+              height: modalHeight,
               maxHeight: '600px',
               border: '1px solid var(--color-border)',
               boxShadow: 'none',
@@ -268,26 +293,42 @@ export default function DevotionalChat({
                   </p>
                 )}
               </div>
-              <button
-                onClick={close}
-                className="flex h-9 w-9 items-center justify-center text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
-                aria-label="Close chat"
-              >
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
+              <div className="flex items-center gap-2">
+                {isMobileViewport && (
+                  <button
+                    onClick={() => setMobilePeekMode((current) => !current)}
+                    className="text-label vw-small border px-2 py-1 text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+                    style={{ borderColor: 'var(--color-border)' }}
+                    aria-label={
+                      mobilePeekMode
+                        ? 'Expand chat sheet'
+                        : 'Peek devotional behind chat'
+                    }
+                  >
+                    {mobilePeekMode ? 'EXPAND' : 'PEEK'}
+                  </button>
+                )}
+                <button
+                  onClick={close}
+                  className="flex h-9 w-9 items-center justify-center text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
+                  aria-label="Close chat"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
 
             {/* Messages */}

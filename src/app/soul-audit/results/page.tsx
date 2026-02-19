@@ -7,6 +7,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
+import DevotionalStickiesLayer from '@/components/DevotionalStickiesLayer'
 import ScrollProgress from '@/components/ScrollProgress'
 import ReaderTimeline, {
   type ReaderSectionAnchor,
@@ -529,6 +530,10 @@ export default function SoulAuditResultsPage() {
     () => planDays.find((day) => day.day === selectedDayNumber) ?? null,
     [planDays, selectedDayNumber],
   )
+  const selectedPlanDaySlug =
+    planToken && selectedPlanDay
+      ? `plan-${planToken}-day-${selectedPlanDay.day}`
+      : null
   const daySectionAnchors = useMemo<ReaderSectionAnchor[]>(() => {
     if (!selectedPlanDay) return []
     return [
@@ -1664,7 +1669,7 @@ export default function SoulAuditResultsPage() {
                     </div>
                   </aside>
 
-                  <div>
+                  <div className="devotional-reader-stage">
                     {loadingPlan && (
                       <p className="vw-body mb-6 text-secondary">
                         Building your day-by-day devotional path...
@@ -1685,91 +1690,98 @@ export default function SoulAuditResultsPage() {
                     )}
 
                     {selectedPlanDay ? (
-                      <article
-                        key={`plan-day-${selectedPlanDay.day}`}
-                        style={{
-                          border: '1px solid var(--color-border)',
-                          padding: '1.5rem',
-                        }}
-                      >
-                        <p className="text-label vw-small mb-2 text-gold">
-                          DAY {selectedPlanDay.day}
-                        </p>
-                        <h2 className="vw-heading-md mb-2">
-                          {typographer(selectedPlanDay.title)}
-                        </h2>
-                        <p className="vw-small mb-4 text-muted">
-                          {selectedPlanDay.scriptureReference}
-                        </p>
-                        <p
-                          id={`day-${selectedPlanDay.day}-scripture`}
-                          className="scripture-block vw-body mb-4 text-secondary"
+                      <>
+                        {selectedPlanDaySlug && (
+                          <DevotionalStickiesLayer
+                            devotionalSlug={selectedPlanDaySlug}
+                          />
+                        )}
+                        <article
+                          key={`plan-day-${selectedPlanDay.day}`}
+                          style={{
+                            border: '1px solid var(--color-border)',
+                            padding: '1.5rem',
+                          }}
                         >
-                          {typographer(selectedPlanDay.scriptureText)}
-                        </p>
-                        <p
-                          id={`day-${selectedPlanDay.day}-reflection`}
-                          className="vw-body mb-4 text-secondary type-prose"
-                        >
-                          {typographer(selectedPlanDay.reflection)}
-                        </p>
-                        <p
-                          id={`day-${selectedPlanDay.day}-prayer`}
-                          className="text-serif-italic vw-body mb-4 text-secondary type-prose"
-                        >
-                          {typographer(selectedPlanDay.prayer)}
-                        </p>
-                        <div
-                          id={`day-${selectedPlanDay.day}-practice`}
-                          className="grid gap-4 md:grid-cols-2"
-                        >
-                          <p className="vw-small text-secondary">
-                            <strong className="text-gold">NEXT STEP: </strong>
-                            {typographer(selectedPlanDay.nextStep)}
+                          <p className="text-label vw-small mb-2 text-gold">
+                            DAY {selectedPlanDay.day}
+                          </p>
+                          <h2 className="vw-heading-md mb-2">
+                            {typographer(selectedPlanDay.title)}
+                          </h2>
+                          <p className="vw-small mb-4 text-muted">
+                            {selectedPlanDay.scriptureReference}
                           </p>
                           <p
-                            id={`day-${selectedPlanDay.day}-journal`}
-                            className="vw-small text-secondary"
+                            id={`day-${selectedPlanDay.day}-scripture`}
+                            className="scripture-block vw-body mb-4 text-secondary"
                           >
-                            <strong className="text-gold">JOURNAL: </strong>
-                            {typographer(selectedPlanDay.journalPrompt)}
+                            {typographer(selectedPlanDay.scriptureText)}
                           </p>
-                        </div>
-                        <div className="mt-4 flex flex-wrap items-center gap-3">
-                          <button
-                            type="button"
-                            className="text-label vw-small link-highlight"
-                            disabled={bookmarkingDay === selectedPlanDay.day}
-                            onClick={() =>
-                              void savePlanDayBookmark(selectedPlanDay)
-                            }
+                          <p
+                            id={`day-${selectedPlanDay.day}-reflection`}
+                            className="vw-body mb-4 text-secondary type-prose"
                           >
-                            {savedDay === selectedPlanDay.day
-                              ? 'BOOKMARK SAVED'
-                              : bookmarkingDay === selectedPlanDay.day
-                                ? 'SAVING...'
-                                : 'SAVE BOOKMARK'}
-                          </button>
-                          <span className="vw-small text-muted">
-                            Highlight any line to save a favorite verse.
-                          </span>
-                        </div>
-                        {(selectedPlanDay.endnotes?.length ?? 0) > 0 && (
-                          <div className="mt-5 border-t pt-4">
-                            <p className="text-label vw-small mb-2 text-gold">
-                              ENDNOTES
+                            {typographer(selectedPlanDay.reflection)}
+                          </p>
+                          <p
+                            id={`day-${selectedPlanDay.day}-prayer`}
+                            className="text-serif-italic vw-body mb-4 text-secondary type-prose"
+                          >
+                            {typographer(selectedPlanDay.prayer)}
+                          </p>
+                          <div
+                            id={`day-${selectedPlanDay.day}-practice`}
+                            className="grid gap-4 md:grid-cols-2"
+                          >
+                            <p className="vw-small text-secondary">
+                              <strong className="text-gold">NEXT STEP: </strong>
+                              {typographer(selectedPlanDay.nextStep)}
                             </p>
-                            {selectedPlanDay.endnotes?.map((note) => (
-                              <p
-                                key={`${selectedPlanDay.day}-endnote-${note.id}`}
-                                className="vw-small text-muted"
-                              >
-                                [{note.id}] {note.source} — {note.note}
-                              </p>
-                            ))}
+                            <p
+                              id={`day-${selectedPlanDay.day}-journal`}
+                              className="vw-small text-secondary"
+                            >
+                              <strong className="text-gold">JOURNAL: </strong>
+                              {typographer(selectedPlanDay.journalPrompt)}
+                            </p>
                           </div>
-                        )}
-                      </article>
+                          <div className="mt-4 flex flex-wrap items-center gap-3">
+                            <button
+                              type="button"
+                              className="text-label vw-small link-highlight"
+                              disabled={bookmarkingDay === selectedPlanDay.day}
+                              onClick={() =>
+                                void savePlanDayBookmark(selectedPlanDay)
+                              }
+                            >
+                              {savedDay === selectedPlanDay.day
+                                ? 'BOOKMARK SAVED'
+                                : bookmarkingDay === selectedPlanDay.day
+                                  ? 'SAVING...'
+                                  : 'SAVE BOOKMARK'}
+                            </button>
+                            <span className="vw-small text-muted">
+                              Highlight any line to save a favorite verse.
+                            </span>
+                          </div>
+                          {(selectedPlanDay.endnotes?.length ?? 0) > 0 && (
+                            <div className="mt-5 border-t pt-4">
+                              <p className="text-label vw-small mb-2 text-gold">
+                                ENDNOTES
+                              </p>
+                              {selectedPlanDay.endnotes?.map((note) => (
+                                <p
+                                  key={`${selectedPlanDay.day}-endnote-${note.id}`}
+                                  className="vw-small text-muted"
+                                >
+                                  [{note.id}] {note.source} — {note.note}
+                                </p>
+                              ))}
+                            </div>
+                          )}
+                        </article>
+                      </>
                     ) : selectedRailDay?.locked ? (
                       <article
                         style={{
@@ -1873,8 +1885,8 @@ export default function SoulAuditResultsPage() {
           </h2>
         </section>
       </main>
-      {planToken && (
-        <TextHighlightTrigger devotionalSlug={`plan-${planToken}`} />
+      {selectedPlanDaySlug && (
+        <TextHighlightTrigger devotionalSlug={selectedPlanDaySlug} />
       )}
     </div>
   )
