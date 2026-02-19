@@ -5,6 +5,41 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Current-Route Reliability Fix (2026-02-19)
+
+### What Changed
+
+- Fixed stale homepage continuation prompts:
+  - homepage now resolves resume state from `/api/soul-audit/current` as source of truth
+  - stale local selection state is cleared when no active devotional route exists.
+- Fixed curated prefab selection continuity:
+  - `/api/soul-audit/current` now chooses the newest valid path by timestamp across latest AI plan + latest selection
+  - newer curated prefab selections can become the main continuation route over older AI plan routes.
+- Added regression coverage for current-route precedence and stale-cookie clearing.
+
+### Files
+
+- `src/app/api/soul-audit/current/route.ts`
+- `src/app/page.tsx`
+- `__tests__/soul-audit-current-route.test.ts`
+- `docs/feature-prds/F-029.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:governance-alignment`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Devotional Reader Consolidation Pass (2026-02-19)
 
 ### What Changed

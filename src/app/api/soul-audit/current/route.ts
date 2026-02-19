@@ -24,78 +24,93 @@ function normalizeCurrentRoute(value: string | undefined): string | null {
   return null
 }
 
+type CurrentCandidate = {
+  route: string
+  createdAt: string
+  selectionType: 'ai_primary' | 'curated_prefab'
+  planToken?: string
+  seriesSlug?: string
+}
+
 export async function GET() {
   const cookieStore = await cookies()
   const routeFromCookie = normalizeCurrentRoute(
     cookieStore.get(CURRENT_ROUTE_COOKIE)?.value,
   )
-  if (routeFromCookie) {
-    return NextResponse.json(
-      {
-        ok: true,
-        hasCurrent: true,
-        route: routeFromCookie,
-      },
-      { status: 200 },
-    )
-  }
-
   const sessionToken = await getOrCreateAuditSessionToken()
   const latestPlan =
     await getLatestPlanInstanceForSessionWithFallback(sessionToken)
-
-  if (latestPlan) {
-    const route = `/soul-audit/results?planToken=${latestPlan.plan_token}`
-    const response = NextResponse.json(
-      {
-        ok: true,
-        hasCurrent: true,
-        route,
-        selectionType: 'ai_primary',
-        planToken: latestPlan.plan_token,
-        seriesSlug: latestPlan.series_slug,
-      },
-      { status: 200 },
-    )
-    response.cookies.set(CURRENT_ROUTE_COOKIE, route, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      maxAge: CURRENT_ROUTE_MAX_AGE,
-      path: '/',
-    })
-    return response
-  }
-
   const latestSelection =
     await getLatestSelectionForSessionWithFallback(sessionToken)
+
+  const candidates: CurrentCandidate[] = []
+
+  if (latestPlan) {
+    candidates.push({
+      route: `/soul-audit/results?planToken=${latestPlan.plan_token}`,
+      createdAt: latestPlan.created_at,
+      selectionType: 'ai_primary',
+      planToken: latestPlan.plan_token,
+      seriesSlug: latestPlan.series_slug,
+    })
+  }
+
   if (latestSelection?.option_kind === 'curated_prefab') {
-    const route = `/series/${latestSelection.series_slug}`
+    candidates.push({
+      route: `/series/${latestSelection.series_slug}`,
+      createdAt: latestSelection.created_at,
+      selectionType: 'curated_prefab',
+      seriesSlug: latestSelection.series_slug,
+    })
+  } else if (
+    latestSelection?.option_kind === 'ai_primary' &&
+    latestSelection.plan_token
+  ) {
+    candidates.push({
+      route: `/soul-audit/results?planToken=${latestSelection.plan_token}`,
+      createdAt: latestSelection.created_at,
+      selectionType: 'ai_primary',
+      planToken: latestSelection.plan_token,
+      seriesSlug: latestSelection.series_slug,
+    })
+  }
+
+  candidates.sort((a, b) => b.createdAt.localeCompare(a.createdAt))
+  const current = candidates[0]
+
+  if (current) {
     const response = NextResponse.json(
       {
         ok: true,
         hasCurrent: true,
-        route,
-        selectionType: latestSelection.option_kind,
-        seriesSlug: latestSelection.series_slug,
+        route: current.route,
+        selectionType: current.selectionType,
+        planToken: current.planToken,
+        seriesSlug: current.seriesSlug,
       },
       { status: 200 },
     )
-    response.cookies.set(CURRENT_ROUTE_COOKIE, route, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      maxAge: CURRENT_ROUTE_MAX_AGE,
-      path: '/',
-    })
+    if (routeFromCookie !== current.route) {
+      response.cookies.set(CURRENT_ROUTE_COOKIE, current.route, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
+        maxAge: CURRENT_ROUTE_MAX_AGE,
+        path: '/',
+      })
+    }
     return response
   }
 
-  return NextResponse.json(
+  const response = NextResponse.json(
     {
       ok: true,
       hasCurrent: false,
     },
     { status: 200 },
   )
+  if (routeFromCookie) {
+    response.cookies.delete(CURRENT_ROUTE_COOKIE)
+  }
+  return response
 }

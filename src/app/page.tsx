@@ -164,41 +164,32 @@ export default function Home() {
   useEffect(() => {
     let cancelled = false
 
-    const fromSession = sessionStorage.getItem('soul-audit-selection-v2')
-    if (fromSession) {
-      try {
-        const parsed = JSON.parse(fromSession) as { route?: string }
-        if (parsed.route && parsed.route !== '/' && !cancelled) {
-          setResumeRoute(parsed.route)
-          return
-        }
-      } catch {
-        // no-op
-      }
-    }
-
     async function resolveCurrentHome() {
       try {
         const response = await fetch('/api/soul-audit/current', {
           cache: 'no-store',
         })
-        if (!response.ok) return
+        if (!response.ok) throw new Error('Current route unavailable.')
 
         const payload = (await response.json()) as {
           hasCurrent?: boolean
           route?: string
         }
+        if (cancelled) return
+
         if (
           payload.hasCurrent &&
           typeof payload.route === 'string' &&
-          payload.route !== '/' &&
-          !cancelled
+          payload.route !== '/'
         ) {
           setResumeRoute(payload.route)
-          return
+        } else {
+          setResumeRoute(null)
+          sessionStorage.removeItem('soul-audit-selection-v2')
         }
       } catch {
-        // no-op
+        if (cancelled) return
+        setResumeRoute(null)
       }
     }
 
