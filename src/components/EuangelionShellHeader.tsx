@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   { href: '/daily-bread', label: 'DAILY BREAD' },
   { href: '/series', label: 'SERIES' },
 ]
-const MOBILE_PRIMARY_NAV_PATHS = ['/', '/soul-audit', '/daily-bread']
+const MOBILE_PRIMARY_NAV_PATHS = ['/', '/soul-audit', '/daily-bread', '/series']
 const MOBILE_EXTRA_ITEMS = [
   { href: '/help', label: 'HELP' },
   { href: '/wake-up', label: 'WAKE-UP' },
@@ -111,20 +111,14 @@ export default function EuangelionShellHeader({
     () => [...NAV_ITEMS, ...MOBILE_EXTRA_ITEMS],
     [],
   )
-  const mobilePrimaryNavItems = useMemo(
-    () =>
-      mobileNavItems.filter((item) =>
-        MOBILE_PRIMARY_NAV_PATHS.includes(item.href),
-      ),
-    [mobileNavItems],
-  )
-  const mobileSecondaryNavItems = useMemo(
-    () =>
-      mobileNavItems.filter(
-        (item) => !MOBILE_PRIMARY_NAV_PATHS.includes(item.href),
-      ),
-    [mobileNavItems],
-  )
+  const mobilePrimaryNavItems = useMemo(() => {
+    const paths = new Set(MOBILE_PRIMARY_NAV_PATHS)
+    return mobileNavItems.filter((item) => paths.has(item.href))
+  }, [mobileNavItems])
+  const mobileSecondaryNavItems = useMemo(() => {
+    const paths = new Set(MOBILE_PRIMARY_NAV_PATHS)
+    return mobileNavItems.filter((item) => !paths.has(item.href))
+  }, [mobileNavItems])
   const mobileTickerItems = useMemo(
     () => ['Daily Devotionals for the Hungry Soul'],
     [],
@@ -409,20 +403,25 @@ export default function EuangelionShellHeader({
   const renderMobileNav = (panelClassName: string) => (
     <>
       <div className="mock-mobile-nav-main">
-        {mobilePrimaryNavItems.map((item) => {
-          const active = isNavItemActive(item.href)
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`mock-nav-item ${active ? 'is-active' : ''}`}
-              aria-current={active ? 'page' : undefined}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          )
-        })}
+        <div
+          className="mock-mobile-nav-main-links"
+          aria-label="Primary mobile navigation"
+        >
+          {mobilePrimaryNavItems.map((item) => {
+            const active = isNavItemActive(item.href)
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`mock-nav-item ${active ? 'is-active' : ''}`}
+                aria-current={active ? 'page' : undefined}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
+        </div>
         <button
           type="button"
           className={`mock-mobile-menu-toggle ${mobileMenuOpen ? 'is-open' : ''}`}

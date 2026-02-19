@@ -5,6 +5,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Navigation Reliability Pass (2026-02-20)
+
+### What Changed
+
+- Fixed shared shell nav consistency and mobile usability:
+  - promoted `SERIES` into mobile primary navigation so desktop and mobile core routes match.
+  - hardened mobile nav item partitioning using set-based filtering to avoid accidental duplicates.
+  - refactored mobile primary nav into a dedicated horizontal scroller container for stable tap targets without wrapping collisions.
+  - tightened sticky/nav stacking isolation to reduce overlap/interference during scroll.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/shell-header.test.tsx __tests__/layout-overflow-contract.test.ts __tests__/ios-shell-readiness-contract.test.ts`
+
+---
+
 ## Soul Audit Split Resilience Hardening (2026-02-20)
 
 ### What Changed
