@@ -11,7 +11,7 @@ Format: Reverse chronological, grouped by sprint/date.
 
 - Strengthened `3 AI + 2 prefab` split reliability for submit-path edge cases:
   - when AI candidates are concentrated in one series, submit now keeps the 3 AI contract and fills prefab slots via series-metadata fallback instead of failing the entire option set.
-  - preserved fail-closed behavior when curated candidates are completely unavailable.
+  - when curated candidates are temporarily unavailable, submit now falls back to local series metadata to preserve a stable 3+2 option set rather than returning a no-options dead end.
 - Added split-focused regression coverage:
   - staged-flow continuity tests now validate prefab selection persistence/reset flow contracts.
   - fallback-options tests now verify single-series concentration still returns a valid 3+2 split.

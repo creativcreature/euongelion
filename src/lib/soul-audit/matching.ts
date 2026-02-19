@@ -331,6 +331,44 @@ function choosePrimaryMatches(input: string): Array<{
   return selected
 }
 
+function chooseSeriesMetadataFallbackPrimary(input: string): Array<{
+  candidate: CuratedDayCandidate
+  confidence: number
+  matched: string[]
+}> {
+  const terms = extractInputThemeTerms(input)
+  const scored = ALL_SERIES_ORDER.map((slug) => {
+    const candidate = fallbackCandidateForSeries(slug)
+    if (!candidate) return null
+
+    const haystack = candidate.searchText
+    const matches = terms.filter((term) => haystack.includes(term)).slice(0, 3)
+    const score =
+      matches.length * 3 +
+      (SERIES_DATA[slug]?.pathway === 'Awake' ? 0.3 : 0) +
+      (slug.length % 7) / 100
+    return { candidate, score, matches }
+  })
+    .filter(
+      (
+        entry,
+      ): entry is {
+        candidate: CuratedDayCandidate
+        score: number
+        matches: string[]
+      } => Boolean(entry),
+    )
+    .sort((a, b) => b.score - a.score)
+
+  if (scored.length === 0) return []
+  const topScore = Math.max(1, scored[0]?.score ?? 1)
+  return scored.slice(0, SOUL_AUDIT_OPTION_SPLIT.aiPrimary).map((entry) => ({
+    candidate: entry.candidate,
+    confidence: Math.max(0.45, Math.min(1, entry.score / topScore)),
+    matched: entry.matches,
+  }))
+}
+
 function makeOption(params: {
   candidate: CuratedDayCandidate
   kind: AuditOptionKind
@@ -509,9 +547,23 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
     }
   }
 
+  if (aiOptions.length === 0) {
+    const metadataFallback = chooseSeriesMetadataFallbackPrimary(input)
+    aiOptions = metadataFallback.map((match, index) =>
+      makeOption({
+        candidate: match.candidate,
+        kind: 'ai_primary',
+        rank: index + 1,
+        confidence: match.confidence,
+        input,
+        matched: match.matched,
+      }),
+    )
+  }
+
   aiOptions = aiOptions.slice(0, SOUL_AUDIT_OPTION_SPLIT.aiPrimary)
   if (aiOptions.length === 0) {
-    // Fail closed only when there is no curated AI anchor candidate at all.
+    // Fail closed only when both curated and metadata fallback candidates are unavailable.
     return []
   }
 

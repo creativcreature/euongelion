@@ -56,11 +56,17 @@ describe('soul audit options fallback', () => {
     curationState.ranked = []
   })
 
-  it('fails closed when curated candidates are unavailable', () => {
+  it('falls back to series metadata when curated candidates are unavailable', () => {
     const options = buildAuditOptions(
       'I feel overwhelmed, isolated, and unsure how to keep faith when everything shifts.',
     )
-    expect(options).toHaveLength(0)
+    expect(options).toHaveLength(5)
+    expect(
+      options.filter((option) => option.kind === 'ai_primary'),
+    ).toHaveLength(3)
+    expect(
+      options.filter((option) => option.kind === 'curated_prefab'),
+    ).toHaveLength(2)
   })
 
   it('keeps 3+2 split when curated candidates come from a single series', () => {
