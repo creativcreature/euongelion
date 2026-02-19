@@ -5,6 +5,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Reader Shell Parity + Day Route Consistency (2026-02-20)
+
+### What Changed
+
+- Unified devotional/series route framing to the same homepage newspaper shell contract:
+  - devotional readers (`/devotional/[slug]`, `/wake-up/devotional/[slug]`) now render inside `mock-home` + `mock-paper`
+  - series detail (`/series/[slug]`, `/wake-up/series/[slug]`) now includes full footer + bottom masthead parity.
+- Extended footer + bottom masthead parity to core devotional surfaces:
+  - `/daily-bread`
+  - `/soul-audit/results`
+  - `/series`.
+- Fixed active day/archive links to use explicit day query state instead of stale hash anchors:
+  - day links now route with `?planToken=...&day=N`, matching the single-day reader model.
+
+### Files
+
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx`
+- `src/app/wake-up/series/[slug]/SeriesPageClient.tsx`
+- `src/app/daily-bread/page.tsx`
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/series/page.tsx`
+- `src/app/api/daily-bread/active-days/route.ts`
+- `src/app/api/soul-audit/archive/route.ts`
+- `docs/feature-prds/F-029.md`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run`
+- `npm run verify:production-contracts`
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:governance-alignment`
+- `npm run verify:methodology-traceability`
+- `npm run verify:folder-structure`
+- `npm run verify:appstore-gate`
+
+---
+
 ## Auth Provider Completion (2026-02-19)
 
 ### What Changed

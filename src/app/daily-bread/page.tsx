@@ -145,6 +145,13 @@ export default function DailyBreadPage() {
           <DevotionalLibraryRail initialTab={initialTab} />
         </section>
         <SiteFooter />
+        <section className="mock-bottom-brand">
+          <h2 className="text-masthead mock-masthead-word">
+            <span className="js-shell-masthead-fit mock-masthead-text">
+              EUANGELION
+            </span>
+          </h2>
+        </section>
       </main>
       <WalkthroughModal
         open={showWalkthrough}

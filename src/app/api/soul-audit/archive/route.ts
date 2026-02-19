@@ -21,7 +21,7 @@ export async function GET() {
           days: days.map((row) => ({
             day: row.day_number,
             title: row.content.title,
-            route: `/soul-audit/results?planToken=${plan.plan_token}#plan-day-${row.day_number}`,
+            route: `/soul-audit/results?planToken=${plan.plan_token}&day=${row.day_number}`,
           })),
         }
       }),

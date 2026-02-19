@@ -82,7 +82,7 @@ export async function GET(request: NextRequest) {
           scriptureReference: day.content.scriptureReference,
           scriptureText: day.content.scriptureText,
           status: 'unlocked',
-          route: `/soul-audit/results?planToken=${latestPlan.plan_token}#plan-day-${day.day_number}`,
+          route: `/soul-audit/results?planToken=${latestPlan.plan_token}&day=${day.day_number}`,
         }
       }
 
@@ -108,7 +108,7 @@ export async function GET(request: NextRequest) {
         scriptureReference: day.content.scriptureReference,
         scriptureText: day.content.scriptureText,
         status,
-        route: `/soul-audit/results?planToken=${latestPlan.plan_token}#plan-day-${day.day_number}`,
+        route: `/soul-audit/results?planToken=${latestPlan.plan_token}&day=${day.day_number}`,
         lockMessage: status === 'locked' ? unlock.message : undefined,
         unlockAt:
           status === 'locked'

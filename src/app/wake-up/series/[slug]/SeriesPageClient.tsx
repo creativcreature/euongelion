@@ -4,6 +4,7 @@ import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButton from '@/components/ShareButton'
+import SiteFooter from '@/components/SiteFooter'
 import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
 import type { SeriesInfo } from '@/data/series'
@@ -133,6 +134,8 @@ export default function SeriesPageClient({
             )
           })}
         </section>
+
+        <SiteFooter />
 
         <section className="mock-bottom-brand">
           <h2 className="text-masthead mock-masthead-word">
