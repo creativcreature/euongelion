@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Service Worker Cache Roll Forward (2026-02-20)
+
+### What Changed
+
+- Bumped service worker cache key from `euangelion-v45` to `euangelion-v46`.
+- Bumped client SW migration key from `v45` to `v46`.
+- This forces stale clients to unregister old workers/cache and pick up the latest homepage/header/nav assets after deployment.
+
+### Files
+
+- `public/sw.js`
+- `src/components/ServiceWorkerRegistration.tsx`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/navigation-routing-shell.test.ts __tests__/shell-header.test.tsx __tests__/scroll-unlock-contract.test.ts`
+
+---
+
 ## Soul Audit Short-Input Reliability Fix (2026-02-20)
 
 ### What Changed
