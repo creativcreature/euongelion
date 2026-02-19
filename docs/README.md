@@ -92,6 +92,7 @@ EUONGELION-STARTUP/
 - [Contributing](./CONTRIBUTING.md) - How to contribute
 - [Deployment](./DEPLOYMENT.md) - Deployment instructions
 - [Development](./DEVELOPMENT.md) - Local setup guide
+- [Change Execution Protocol](./process/CHANGE-EXECUTION-PROTOCOL.md) - Required plan-first and live UI verification workflow
 
 ### Technical Documentation
 

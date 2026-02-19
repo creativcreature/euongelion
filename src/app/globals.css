@@ -257,7 +257,7 @@
     background-color: var(--color-bg);
     color: var(--color-text-primary);
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
     transition:
       background-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
       color 400ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -268,8 +268,8 @@
     background-color: var(--color-bg);
     color: var(--color-text-primary);
     width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-x: visible;
+    overflow-y: visible;
     overscroll-behavior-y: auto;
     -webkit-overflow-scrolling: touch;
     -webkit-font-smoothing: antialiased;
@@ -400,7 +400,7 @@
       transparent 8px
     ),
     var(--color-bg);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .dark .newsprint-site {
@@ -2266,7 +2266,8 @@
   background: var(--mock-bg);
   padding: 0.7rem;
   color: var(--mock-ink);
-  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .mock-home.is-dark,
@@ -2303,14 +2304,7 @@
 .mock-shell-frame {
   --shell-safe-top: env(safe-area-inset-top, 0px);
   --shell-safe-bottom: env(safe-area-inset-bottom, 0px);
-  width: min(var(--mock-frame-max, 1860px), calc(100% - 1.4rem));
-  max-width: calc(100vw - 1.4rem);
-  margin: 0 auto;
-  border-left: var(--mock-stroke, 1.5px) solid
-    var(--mock-line, var(--color-border-strong));
-  border-right: var(--mock-stroke, 1.5px) solid
-    var(--mock-line, var(--color-border-strong));
-  background: var(--mock-paper, var(--color-bg));
+  display: contents;
 }
 
 .mock-shell-header {

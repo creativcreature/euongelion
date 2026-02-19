@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Shell Container + Process Guardrails Update (2026-02-19)
+
+### What Changed
+
+- Updated shared shell container styles to reduce clipping/overflow constraints that interfere with sticky shell behavior (`.mock-shell-frame` now uses `display: contents`; root/home overflow strategy adjusted).
+- Added a permanent execution protocol that requires plan-first workflow and live UI verification before declaring fixes.
+- Linked the protocol from docs index so it remains discoverable.
+
+### Files
+
+- `src/app/globals.css`
+- `docs/process/CHANGE-EXECUTION-PROTOCOL.md`
+- `docs/README.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm test -- --run __tests__/layout-overflow-contract.test.ts __tests__/ios-shell-readiness-contract.test.ts`
+
+---
+
 ## Desktop Sticky Nav Reality Fix (2026-02-19)
 
 ### What Changed
