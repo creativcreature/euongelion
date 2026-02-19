@@ -4075,7 +4075,7 @@
     justify-content: flex-start;
     flex-wrap: nowrap;
     overflow: visible;
-    touch-action: pan-y;
+    touch-action: auto;
     padding-bottom: 0;
   }
 

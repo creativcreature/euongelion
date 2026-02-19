@@ -28,6 +28,25 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Mobile Nav Touch-Scroll Reliability Tweak (2026-02-20)
+
+### What Changed
+
+- Removed restrictive `touch-action: pan-y` from the mobile nav main row and restored `touch-action: auto`.
+- This reduces touch gesture conflicts between nav region interactions and normal vertical page scrolling.
+
+### Files
+
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/navigation-routing-shell.test.ts __tests__/scroll-unlock-contract.test.ts`
+
+---
+
 ## Service Worker Cache Roll Forward (2026-02-20)
 
 ### What Changed
