@@ -215,6 +215,16 @@ function resolveHighlightColor(style: Record<string, unknown> | null) {
     : 'yellow'
 }
 
+function mergeHighlightStyle(
+  style: Record<string, unknown> | null,
+  color: HighlightColor,
+) {
+  return {
+    ...(style ?? {}),
+    color,
+  }
+}
+
 function normalizeInitialTab(value: string | undefined): LibraryMenuKey {
   if (
     value === 'today' ||
@@ -248,6 +258,7 @@ export default function DevotionalLibraryRail({
   const [activeSeriesSlug, setActiveSeriesSlug] = useState<string | null>(null)
   const [bookmarks, setBookmarks] = useState<BookmarkRow[]>([])
   const [highlights, setHighlights] = useState<AnnotationRow[]>([])
+  const [updatingHighlightIds, setUpdatingHighlightIds] = useState<string[]>([])
   const [notes, setNotes] = useState<AnnotationRow[]>([])
   const [stickyNotes, setStickyNotes] = useState<AnnotationRow[]>([])
   const [chatHistory, setChatHistory] = useState<AnnotationRow[]>([])
@@ -469,6 +480,60 @@ export default function DevotionalLibraryRail({
       style: annotation.style,
     }
     persistArchiveState([artifact, ...archivedArtifacts], trashedArtifacts)
+  }
+
+  async function updateHighlightColor(
+    annotation: AnnotationRow,
+    color: HighlightColor,
+  ) {
+    setUpdatingHighlightIds((current) =>
+      current.includes(annotation.id) ? current : [...current, annotation.id],
+    )
+    try {
+      const response = await fetch('/api/annotations', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          annotationId: annotation.id,
+          anchorText: annotation.anchor_text,
+          body: annotation.body,
+          style: mergeHighlightStyle(annotation.style, color),
+        }),
+      })
+      const payload = (await response.json().catch(() => ({}))) as {
+        code?: string
+        error?: string
+      }
+      if (!response.ok) {
+        if (payload.code === 'AUTH_REQUIRED_SAVE_STATE') {
+          if (typeof window !== 'undefined') {
+            const redirect = `${window.location.pathname}${window.location.search}`
+            window.location.assign(
+              `/auth/sign-in?redirect=${encodeURIComponent(redirect)}`,
+            )
+          }
+          return
+        }
+        setError(payload.error || 'Unable to update highlight color.')
+        return
+      }
+
+      setHighlights((current) =>
+        current.map((row) =>
+          row.id === annotation.id
+            ? {
+                ...row,
+                style: mergeHighlightStyle(row.style, color),
+              }
+            : row,
+        ),
+      )
+      window.dispatchEvent(new CustomEvent('libraryUpdated'))
+    } finally {
+      setUpdatingHighlightIds((current) =>
+        current.filter((id) => id !== annotation.id),
+      )
+    }
   }
 
   async function restoreArtifact(artifact: ArchivedArtifact | TrashedArtifact) {
@@ -847,6 +912,29 @@ export default function DevotionalLibraryRail({
                           >
                             {row.anchor_text || row.body}
                           </p>
+                          <div className="mt-2 flex items-center gap-2">
+                            <span className="text-label vw-small text-muted">
+                              Color:
+                            </span>
+                            <div className="reader-highlight-color-row">
+                              {HIGHLIGHT_COLORS.map((option) => (
+                                <button
+                                  key={`${row.id}-${option}`}
+                                  type="button"
+                                  className={`reader-highlight-swatch reader-highlight-swatch--${option} ${
+                                    color === option ? 'is-active' : ''
+                                  }`}
+                                  onClick={() =>
+                                    void updateHighlightColor(row, option)
+                                  }
+                                  aria-label={`Set highlight color to ${option}`}
+                                  disabled={updatingHighlightIds.includes(
+                                    row.id,
+                                  )}
+                                />
+                              ))}
+                            </div>
+                          </div>
                         </div>
                       )
                     })}

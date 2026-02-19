@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Highlight Recolor Controls Pass (2026-02-20)
+
+### What Changed
+
+- Added post-save highlight color editing in Daily Bread:
+  - each saved highlight now shows the 5-color palette in the Highlights panel.
+  - selecting a swatch updates highlight color via annotation `PATCH`.
+  - local panel state updates immediately and syncs through library refresh events.
+
+### Files
+
+- `src/components/DevotionalLibraryRail.tsx`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/devotional-library-rail-accessibility.test.tsx __tests__/save-state-auth-gate.test.ts`
+
+---
+
 ## Reader Continuity + Mobile Chat Peek Pass (2026-02-20)
 
 ### What Changed
