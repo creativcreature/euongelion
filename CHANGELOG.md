@@ -5,6 +5,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Mobile Topbar Fade Cycle Refinement (2026-02-20)
+
+### What Changed
+
+- Expanded mobile topbar ticker from one static line to a 3-item rotating cycle:
+  - current date/time
+  - `Daily Devotionals for the Hungry Soul`
+  - `Scripture-led. Honest reflection. Faithful next step.`
+- Tuned mobile ticker fade transition to a subtler `1.5s` opacity blend.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/shell-header.test.tsx __tests__/navigation-routing-shell.test.ts`
+
+---
+
 ## Service Worker Cache Roll Forward (2026-02-20)
 
 ### What Changed

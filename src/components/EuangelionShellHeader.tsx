@@ -120,8 +120,12 @@ export default function EuangelionShellHeader({
     return mobileNavItems.filter((item) => !paths.has(item.href))
   }, [mobileNavItems])
   const mobileTickerItems = useMemo(
-    () => ['Daily Devotionals for the Hungry Soul'],
-    [],
+    () => [
+      formatMastheadDate(now),
+      'Daily Devotionals for the Hungry Soul',
+      'Scripture-led. Honest reflection. Faithful next step.',
+    ],
+    [now],
   )
 
   useEffect(() => {
