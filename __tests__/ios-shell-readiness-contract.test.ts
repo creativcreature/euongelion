@@ -14,7 +14,10 @@ describe('iOS shell readiness contract', () => {
   })
 
   it('uses topbar-safe-area padding instead of double sticky offsets', () => {
+    expect(css).toContain('.mock-shell-header {')
+    expect(css).toContain('display: contents;')
     expect(css).toContain('.mock-topbar {')
+    expect(css).toContain('position: -webkit-sticky;')
     expect(css).toContain('top: 0;')
     expect(css).toContain('padding-top: var(--shell-safe-top, 0px);')
     expect(css).toContain('top: var(--mock-h-topbar, 42px);')

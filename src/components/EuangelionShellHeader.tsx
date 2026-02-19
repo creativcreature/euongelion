@@ -492,7 +492,7 @@ export default function EuangelionShellHeader({
 
   return (
     <div className={`mock-shell-frame ${tone === 'wake' ? 'wake-shell' : ''}`}>
-      <header>
+      <header className="mock-shell-header">
         <div className="mock-topbar text-label">
           <div className="mock-topbar-desktop-row">
             <time

@@ -2313,6 +2313,10 @@
   background: var(--mock-paper, var(--color-bg));
 }
 
+.mock-shell-header {
+  display: contents;
+}
+
 .mock-paper > .mock-shell-frame {
   display: block;
   width: 100%;
@@ -2405,6 +2409,7 @@
 }
 
 .mock-topbar {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 120;
@@ -2631,6 +2636,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: -webkit-sticky;
   position: sticky;
   top: var(--mock-h-topbar, 42px);
   z-index: 110;

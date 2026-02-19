@@ -5,6 +5,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Sticky Header Containing-Block Fix (2026-02-19)
+
+### What Changed
+
+- Fixed sticky nav/topbar containment by converting the shell header wrapper to `display: contents`, so sticky elements are no longer constrained by a bounded header box.
+- Added explicit `position: -webkit-sticky` to topbar and nav for stronger Safari/iOS sticky reliability.
+- Added readiness contract assertions for the new shell-header sticky structure.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+- `__tests__/ios-shell-readiness-contract.test.ts`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/shell-header.test.tsx __tests__/ios-shell-readiness-contract.test.ts __tests__/navigation-routing-shell.test.ts __tests__/layout-overflow-contract.test.ts`
+
+---
+
 ## Sticky Nav + Scroll Responsiveness Repair (2026-02-19)
 
 ### What Changed
