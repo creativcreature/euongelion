@@ -90,7 +90,7 @@ export default function EuangelionShellHeader({
 }) {
   const pathname = usePathname()
   const topbarRef = useRef<HTMLDivElement | null>(null)
-  const mastheadRef = useRef<HTMLElement | null>(null)
+  const navRef = useRef<HTMLElement | null>(null)
   const previousPathnameRef = useRef(pathname)
   const accountMenuRef = useRef<HTMLDivElement | null>(null)
   const accountTriggerRef = useRef<HTMLButtonElement | null>(null)
@@ -197,12 +197,12 @@ export default function EuangelionShellHeader({
     const updateDockedState = () => {
       rafId = 0
       const topbar = topbarRef.current
-      const masthead = mastheadRef.current
-      if (!topbar || !masthead) return
+      const nav = navRef.current
+      if (!topbar || !nav) return
 
       const topbarBottom = topbar.getBoundingClientRect().bottom
-      const mastheadBottom = masthead.getBoundingClientRect().bottom
-      const nextDocked = mastheadBottom <= topbarBottom + 1
+      const navTop = nav.getBoundingClientRect().top
+      const nextDocked = navTop <= topbarBottom + 1
 
       setIsNavDocked((current) =>
         current === nextDocked ? current : nextDocked,
@@ -662,7 +662,7 @@ export default function EuangelionShellHeader({
           </div>
         </div>
 
-        <section ref={mastheadRef} className="mock-masthead-block">
+        <section className="mock-masthead-block">
           <h1 className="text-masthead mock-masthead-word">
             <span className="js-shell-masthead-fit mock-masthead-text">
               {brandWord}
@@ -676,6 +676,7 @@ export default function EuangelionShellHeader({
         </section>
 
         <nav
+          ref={navRef}
           className={`mock-nav text-label ${isNavDocked && !isMobileViewport ? 'is-docked' : ''}`}
           aria-label="Main navigation"
           aria-hidden={isNavDocked && !isMobileViewport ? true : undefined}

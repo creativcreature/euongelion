@@ -2681,7 +2681,9 @@
 }
 
 .mock-nav.is-docked {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .mock-nav-item-wrap {

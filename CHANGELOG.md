@@ -5,6 +5,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Natural Dock Trigger Refinement (2026-02-19)
+
+### What Changed
+
+- Refined desktop dock behavior to trigger exactly when the nav row physically reaches the sticky topbar.
+- Dock-state detection now uses nav-row top vs topbar bottom (instead of masthead position).
+- Kept dock/undock reversible by hiding the source nav with `visibility/opacity` (not `display: none`) so geometry stays measurable.
+
+### Files
+
+- `src/components/EuangelionShellHeader.tsx`
+- `src/app/globals.css`
+- `__tests__/shell-header.test.tsx`
+
+### Validation
+
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --run __tests__/shell-header.test.tsx __tests__/layout-overflow-contract.test.ts __tests__/ios-shell-readiness-contract.test.ts`
+
+---
+
 ## Topbar Docked-Menu Contract (2026-02-19)
 
 ### What Changed

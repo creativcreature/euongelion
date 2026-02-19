@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 
 let mockPathname = '/'
+let mockNavTop = 260
 
 vi.mock('next/navigation', () => ({
   usePathname: () => mockPathname,
@@ -32,6 +33,7 @@ function rect({ top, height, width = 1000 }: RectInit): DOMRect {
 describe('EuangelionShellHeader', () => {
   beforeEach(() => {
     mockPathname = '/'
+    mockNavTop = 260
     const mockResizeObserver = class {
       observe() {}
       unobserve() {}
@@ -93,8 +95,8 @@ describe('EuangelionShellHeader', () => {
         if (this.classList.contains('mock-topbar')) {
           return rect({ top: 0, height: 42 })
         }
-        if (this.classList.contains('mock-masthead-block')) {
-          return rect({ top: 42, height: 168 })
+        if (this.classList.contains('mock-nav')) {
+          return rect({ top: mockNavTop, height: 34 })
         }
         return rect({ top: 0, height: 0 })
       },
@@ -147,6 +149,52 @@ describe('EuangelionShellHeader', () => {
         ?.classList.contains('is-nav-docked'),
     ).toBe(false)
     expect(container.querySelector('.mock-nav-sentinel')).toBeNull()
+  })
+
+  it('docks nav into topbar when nav row physically reaches topbar', async () => {
+    const originalMatchMedia = window.matchMedia
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: (query: string) => ({
+        matches: query === '(prefers-reduced-motion: reduce)' ? false : false,
+        media: query,
+        onchange: null,
+        addListener: () => {},
+        removeListener: () => {},
+        addEventListener: () => {},
+        removeEventListener: () => {},
+        dispatchEvent: () => false,
+      }),
+    })
+
+    try {
+      const { container, rerender } = render(<EuangelionShellHeader />)
+
+      await waitFor(() => {
+        expect(
+          container
+            .querySelector('.mock-topbar')
+            ?.classList.contains('is-nav-docked'),
+        ).toBe(false)
+      })
+
+      mockNavTop = 41
+      rerender(<EuangelionShellHeader />)
+      window.dispatchEvent(new Event('scroll'))
+
+      await waitFor(() => {
+        expect(
+          container
+            .querySelector('.mock-topbar')
+            ?.classList.contains('is-nav-docked'),
+        ).toBe(true)
+      })
+    } finally {
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        value: originalMatchMedia,
+      })
+    }
   })
 
   it('clears stale global scroll-lock artifacts on mount and route changes', async () => {
