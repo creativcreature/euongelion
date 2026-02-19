@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Scorecard Refresh: Daily Home Continuity (2026-02-20)
+
+### What Changed
+
+- Updated production scorecard recency and continuity scoring evidence:
+  - `Last Updated` advanced to `2026-02-20`.
+  - `Daily devotional as home` user-flow row raised to reflect current-route validity hardening + prefab continuity + reset contracts proven in test coverage.
+
+### Files
+
+- `docs/PRODUCTION-FEATURE-SCORECARD.md`
+
+### Validation
+
+- `npm run verify:tracking`
+- `npm run verify:feature-prds`
+- `npm run verify:feature-prd-link`
+- `npm run verify:production-contracts`
+
+---
+
 ## Prefab Current-Path E2E Contract Coverage (2026-02-20)
 
 ### What Changed

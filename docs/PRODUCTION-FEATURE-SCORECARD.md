@@ -1,6 +1,6 @@
 # Production Feature Scorecard
 
-Last Updated: 2026-02-18
+Last Updated: 2026-02-20
 Owner: Product + Engineering
 Scoring Rule: Founder scoring authority is capped at **5/10** baseline until founder elevation. Engineering implementation scores may exceed 5 with evidence. Every row includes a path to verified 10/10.
 
@@ -23,18 +23,18 @@ Scoring Rule: Founder scoring authority is capped at **5/10** baseline until fou
 
 ## User Flow Scorecard
 
-| Flow                              | User Expectation                                             | Current | Gap | 10/10 Fix                                                         | Real-World Reference                                                             |
-| --------------------------------- | ------------------------------------------------------------ | ------: | --: | ----------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| Landing -> first action           | Understand value and start in under 10 seconds               |       5 |   5 | Lock hierarchy and CTA language to one obvious next action        | [Headspace](https://www.headspace.com/) clear first-step funnel                  |
-| Soul audit submit                 | Submit never fails silently and gives clear feedback         |       5 |   5 | Add explicit loading, retry, timeout, and failure recovery states | [Stripe Checkout](https://stripe.com/payments/checkout) robust form resilience   |
-| Consent -> option unlock          | Consent behavior is explicit and reversible                  |       5 |   5 | Add stronger inline rationale and state transitions               | [Notion privacy controls](https://www.notion.so/help) clear settings semantics   |
-| Option selection -> plan          | No full plan before selection, then immediate progression    |       5 |   5 | Add plan-generation status timeline with recovery                 | [Headspace program pick flow](https://www.headspace.com/) progressive disclosure |
-| Daily devotional as home          | Returning user lands in the right daily context              |       4 |   6 | Strengthen resume routing + state badges + "today" context        | [Notion Home](https://www.notion.so/product) return-to-work continuity           |
-| Archive/bookmarks/notes retrieval | User can retrieve prior content with one predictable pattern |       4 |   6 | Normalize left-rail IA and add mobile access parity               | [Apple Notes](https://www.apple.com/ios/notes/) retrieval model                  |
-| Cross-page navigation             | Sticky nav is stable, consistent, and non-janky              |       5 |   5 | Add scroll-state integration tests + snapshot baselines           | [Linear](https://linear.app/) stable shell behavior                              |
-| Long-form reading continuity      | Typography and spacing remain comfortable at all sizes       |       4 |   6 | Lock type scale tokens and desktop/mobile readability thresholds  | [Apple News](https://www.apple.com/apple-news/) editorial rhythm                 |
-| Help/recovery states              | Every error or empty state gives an actionable path          |       4 |   6 | Replace generic errors with route-specific recovery CTAs          | [Linear](https://linear.app/) action-first error handling                        |
-| End-to-end trust                  | User understands what is saved, why, and where               |       4 |   6 | Add explicit persistence labels and data-boundary copy            | [Notion](https://www.notion.so/security) transparency patterns                   |
+| Flow                              | User Expectation                                             | Current | Gap | 10/10 Fix                                                          | Real-World Reference                                                             |
+| --------------------------------- | ------------------------------------------------------------ | ------: | --: | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| Landing -> first action           | Understand value and start in under 10 seconds               |       5 |   5 | Lock hierarchy and CTA language to one obvious next action         | [Headspace](https://www.headspace.com/) clear first-step funnel                  |
+| Soul audit submit                 | Submit never fails silently and gives clear feedback         |       5 |   5 | Add explicit loading, retry, timeout, and failure recovery states  | [Stripe Checkout](https://stripe.com/payments/checkout) robust form resilience   |
+| Consent -> option unlock          | Consent behavior is explicit and reversible                  |       5 |   5 | Add stronger inline rationale and state transitions                | [Notion privacy controls](https://www.notion.so/help) clear settings semantics   |
+| Option selection -> plan          | No full plan before selection, then immediate progression    |       5 |   5 | Add plan-generation status timeline with recovery                  | [Headspace program pick flow](https://www.headspace.com/) progressive disclosure |
+| Daily devotional as home          | Returning user lands in the right daily context              |       8 |   2 | Keep current-route validity + prefab continuity contracts enforced | [Notion Home](https://www.notion.so/product) return-to-work continuity           |
+| Archive/bookmarks/notes retrieval | User can retrieve prior content with one predictable pattern |       4 |   6 | Normalize left-rail IA and add mobile access parity                | [Apple Notes](https://www.apple.com/ios/notes/) retrieval model                  |
+| Cross-page navigation             | Sticky nav is stable, consistent, and non-janky              |       5 |   5 | Add scroll-state integration tests + snapshot baselines            | [Linear](https://linear.app/) stable shell behavior                              |
+| Long-form reading continuity      | Typography and spacing remain comfortable at all sizes       |       4 |   6 | Lock type scale tokens and desktop/mobile readability thresholds   | [Apple News](https://www.apple.com/apple-news/) editorial rhythm                 |
+| Help/recovery states              | Every error or empty state gives an actionable path          |       4 |   6 | Replace generic errors with route-specific recovery CTAs           | [Linear](https://linear.app/) action-first error handling                        |
+| End-to-end trust                  | User understands what is saved, why, and where               |       4 |   6 | Add explicit persistence labels and data-boundary copy             | [Notion](https://www.notion.so/security) transparency patterns                   |
 
 ## Feature-by-Feature Scorecard
 
