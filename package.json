@@ -38,6 +38,8 @@
     "@revenuecat/purchases-capacitor": "^12.1.2",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.95.3",
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.36.2",
     "@vercel/analytics": "^1.6.1",
     "framer-motion": "^12.34.0",
     "geist": "^1.7.0",

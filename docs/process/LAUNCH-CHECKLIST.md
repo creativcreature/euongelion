@@ -115,6 +115,12 @@ LAUNCH DECISION: [ ] GO  [ ] NO-GO
 | [ ]   | Multiple device sessions handled                        |     |
 | [ ]   | Session invalidation on password change (if applicable) |     |
 
+### 2.5 Social Auth Kill Switch Recovery
+
+| Check | Pass                                                                                                                                          |
+| ----- | --------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| [ ]   | Create Google account -> flip kill switch to `false` (`social_auth_enabled=false`) -> send magic link to same email -> verify session created |     |
+
 ---
 
 ## Section 3: Email Delivery
@@ -419,12 +425,12 @@ LAUNCH DECISION: [ ] GO  [ ] NO-GO
 
 ### 10.2 Monitoring Schedule
 
-| Shift               | Owner      | Hours             |
-| ------------------- | ---------- | ----------------- |
-| Launch day (0-8h)   | ****\_**** | **_:_** - **_:_** |
-| Launch day (8-16h)  | ****\_**** | **_:_** - **_:_** |
-| Launch day (16-24h) | ****\_**** | **_:_** - **_:_** |
-| Day 2               | ****\_**** | On-call           |
+| Shift               | Owner          | Hours             |
+| ------------------- | -------------- | ----------------- |
+| Launch day (0-8h)   | \***\*\_\*\*** | **_:_** - **_:_** |
+| Launch day (8-16h)  | \***\*\_\*\*** | **_:_** - **_:_** |
+| Launch day (16-24h) | \***\*\_\*\*** | **_:_** - **_:_** |
+| Day 2               | \***\*\_\*\*** | On-call           |
 
 ### 10.3 Communication Channels
 

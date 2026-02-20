@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Auth v7.1 Patch: Kill-Switch Checklist Clarity + Upstash Limiter Analytics (2026-02-20)
+
+### What Changed
+
+- Added explicit kill-switch recovery wording to launch checklists so step execution is unambiguous:
+  - Create Google account -> flip kill switch to `false` (`social_auth_enabled=false`) -> send magic link to same email -> verify session created.
+- Added auth-focused Upstash limiter module scaffold with analytics enabled:
+  - `oauthLimiter` (`10 / 15m`, `analytics: true`)
+  - `magicLinkLimiter` (`5 / 15m`, `analytics: true`)
+- Added PRD traceability entry for abuse-control scope increment.
+
+### Files
+
+- `docs/process/LAUNCH-CHECKLIST.md`
+- `soul-audit-docs/marketing-and-launch/LAUNCH-CHECKLIST.md`
+- `src/lib/auth/rate-limit.ts`
+- `docs/feature-prds/F-038.md`
+- `package.json`
+- `package-lock.json`
+
+### Validation
+
+- `npm run type-check`
+
+---
+
 ## Non-Blocking Cookie Consent for Soul Audit Selection (2026-02-20)
 
 ### What Changed

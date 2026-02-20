@@ -115,6 +115,12 @@ LAUNCH DECISION: [ ] GO  [ ] NO-GO
 | [ ]   | Multiple device sessions handled                        |     |
 | [ ]   | Session invalidation on password change (if applicable) |     |
 
+### 2.5 Social Auth Kill Switch Recovery
+
+| Check | Pass                                                                                                                                          |
+| ----- | --------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| [ ]   | Create Google account -> flip kill switch to `false` (`social_auth_enabled=false`) -> send magic link to same email -> verify session created |     |
+
 ---
 
 ## Section 3: Email Delivery
