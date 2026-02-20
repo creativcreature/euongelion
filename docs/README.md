@@ -94,6 +94,7 @@ EUONGELION-STARTUP/
 - [Development](./DEVELOPMENT.md) - Local setup guide
 - [Euangelion Design System](./design/EUANGELION-DESIGN-SYSTEM.md) - Cross-platform Apple-HIG-aligned foundations, components, patterns, and token architecture
 - [Change Execution Protocol](./process/CHANGE-EXECUTION-PROTOCOL.md) - Required plan-first and live UI verification workflow
+- [LLM Commit + Push Gates Runbook](./process/LLM-COMMIT-PUSH-GATES-RUNBOOK.md) - Exact commit/push commands, hook gates, and failure recovery for agent handoff
 
 ### Technical Documentation
 
