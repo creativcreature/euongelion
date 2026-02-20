@@ -30,4 +30,10 @@ describe('Contrast and readability contract', () => {
     expect(css).toContain('::-moz-selection')
     expect(css).toContain('color: #fff;')
   })
+
+  it('defines visible consent-required and inline selection error styles', () => {
+    expect(css).toContain('.cookie-consent-banner.is-required')
+    expect(css).toContain('.soul-audit-selection-error')
+    expect(css).toContain('cookie-consent-required-pulse')
+  })
 })

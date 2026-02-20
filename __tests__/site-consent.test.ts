@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
+  SITE_CONSENT_REQUIRED_EVENT,
   SITE_CONSENT_COOKIE,
   createSiteConsent,
   parseSiteConsentCookieValue,
@@ -9,6 +10,10 @@ import {
 } from '@/lib/site-consent'
 
 describe('site consent cookie helpers', () => {
+  it('exports consent event names for update and required-action flows', () => {
+    expect(SITE_CONSENT_REQUIRED_EVENT).toBe('euangelion:site-consent-required')
+  })
+
   it('serializes and parses consent payload', () => {
     const consent = createSiteConsent(true)
     const header = serializeSiteConsentCookie(consent)

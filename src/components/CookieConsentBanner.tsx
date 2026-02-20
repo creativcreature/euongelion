@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import {
+  SITE_CONSENT_REQUIRED_EVENT,
   SITE_CONSENT_UPDATED_EVENT,
   createSiteConsent,
   readSiteConsentFromDocument,
@@ -12,14 +13,45 @@ import {
 
 export default function CookieConsentBanner() {
   const headingRef = useRef<HTMLHeadingElement | null>(null)
+  const requiredPulseTimeoutRef = useRef<number | null>(null)
   const [visible, setVisible] = useState(() =>
     typeof document === 'undefined' ? false : !readSiteConsentFromDocument(),
   )
+  const [isRequiredAttention, setIsRequiredAttention] = useState(false)
 
   useEffect(() => {
     if (!visible) return
     headingRef.current?.focus()
   }, [visible])
+
+  useEffect(() => {
+    const handleConsentRequired = () => {
+      setVisible(true)
+      setIsRequiredAttention(true)
+
+      if (requiredPulseTimeoutRef.current !== null) {
+        window.clearTimeout(requiredPulseTimeoutRef.current)
+      }
+      requiredPulseTimeoutRef.current = window.setTimeout(() => {
+        setIsRequiredAttention(false)
+      }, 1500)
+
+      window.requestAnimationFrame(() => {
+        headingRef.current?.focus()
+      })
+    }
+
+    window.addEventListener(SITE_CONSENT_REQUIRED_EVENT, handleConsentRequired)
+    return () => {
+      window.removeEventListener(
+        SITE_CONSENT_REQUIRED_EVENT,
+        handleConsentRequired,
+      )
+      if (requiredPulseTimeoutRef.current !== null) {
+        window.clearTimeout(requiredPulseTimeoutRef.current)
+      }
+    }
+  }, [])
 
   async function persistSessionPrivacy(consent: SiteConsent) {
     try {
@@ -44,6 +76,7 @@ export default function CookieConsentBanner() {
         detail: consent,
       }),
     )
+    setIsRequiredAttention(false)
     setVisible(false)
     void persistSessionPrivacy(consent)
   }
@@ -52,7 +85,9 @@ export default function CookieConsentBanner() {
 
   return (
     <aside
-      className="cookie-consent-banner"
+      className={`cookie-consent-banner${
+        isRequiredAttention ? ' is-required' : ''
+      }`}
       role="dialog"
       aria-live="polite"
       aria-labelledby="consent-heading"

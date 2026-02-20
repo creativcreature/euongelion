@@ -5,6 +5,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Consent-Gate No-Op Visibility Fix (2026-02-20)
+
+### What Changed
+
+- Fixed Soul Audit option click no-op perception at the root consent gate.
+- Added a dedicated browser event (`euangelion:site-consent-required`) for missing-consent required action.
+- Updated cookie banner behavior to react to required-consent events by forcing visibility, focusing the heading, and applying a short attention pulse.
+- Moved selection-failure messaging for blocked option clicks into a high-visibility inline error block directly above option cards on `/soul-audit/results`.
+- Kept strict consent-block behavior unchanged: option selection does not proceed until essential site consent is accepted.
+
+### Files
+
+- `src/lib/site-consent.ts`
+- `src/components/CookieConsentBanner.tsx`
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/globals.css`
+- `__tests__/site-consent.test.ts`
+- `__tests__/contrast-readability-contract.test.ts`
+- `__tests__/soul-audit-results-selection-ui.test.tsx`
+- `docs/feature-prds/F-020.md`
+
+### Validation
+
+- `npm run type-check`
+- `npx eslint src/lib/site-consent.ts src/components/CookieConsentBanner.tsx src/app/soul-audit/results/page.tsx __tests__/site-consent.test.ts __tests__/contrast-readability-contract.test.ts __tests__/soul-audit-results-selection-ui.test.tsx`
+- `npx prettier --check src/lib/site-consent.ts src/components/CookieConsentBanner.tsx src/app/soul-audit/results/page.tsx src/app/globals.css __tests__/site-consent.test.ts __tests__/contrast-readability-contract.test.ts __tests__/soul-audit-results-selection-ui.test.tsx`
+- `npm run test -- __tests__/site-consent.test.ts __tests__/contrast-readability-contract.test.ts __tests__/soul-audit-results-selection-ui.test.tsx`
+
+---
+
 ## AI Pathway Root-Cause Fix + Selection Contrast Update (2026-02-20)
 
 ### What Changed

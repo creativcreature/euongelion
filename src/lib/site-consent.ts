@@ -1,5 +1,6 @@
 export const SITE_CONSENT_COOKIE = 'euangelion_site_consent'
 export const SITE_CONSENT_UPDATED_EVENT = 'euangelion:site-consent-updated'
+export const SITE_CONSENT_REQUIRED_EVENT = 'euangelion:site-consent-required'
 
 const SITE_CONSENT_VERSION = 1
 const SITE_CONSENT_MAX_AGE_SECONDS = 180 * 24 * 60 * 60

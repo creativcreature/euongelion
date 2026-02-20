@@ -15,6 +15,7 @@ import ReaderTimeline, {
 import FadeIn from '@/components/motion/FadeIn'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import {
+  SITE_CONSENT_REQUIRED_EVENT,
   SITE_CONSENT_UPDATED_EVENT,
   readSiteConsentFromDocument,
   type SiteConsent,
@@ -265,6 +266,9 @@ export default function SoulAuditResultsPage() {
   const [crisisAcknowledged, setCrisisAcknowledged] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [selectionInlineError, setSelectionInlineError] = useState<
+    string | null
+  >(null)
   const [runExpired, setRunExpired] = useState(false)
   const [planDays, setPlanDays] = useState<CustomPlanDay[]>(() =>
     Array.isArray(initialSelection?.planDays)
@@ -580,20 +584,26 @@ export default function SoulAuditResultsPage() {
   async function recordRunConsent(): Promise<string | null> {
     if (!submitResult) return null
     if (!hasEssentialConsent) {
-      setError(
-        'Cookie consent is handled at site entry. Please complete the cookie notice and retry.',
+      setSelectionInlineError(
+        'Cookie consent required. Use the cookie notice at the bottom to continue.',
       )
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new Event(SITE_CONSENT_REQUIRED_EVENT))
+      }
+      setError(null)
       return null
     }
     if (!crisisRequirementsMet) {
-      setError(
+      setSelectionInlineError(
         submitResult.crisis.required && !crisisAcknowledged
           ? 'Acknowledge crisis resources before continuing.'
           : 'Unable to continue right now.',
       )
+      setError(null)
       return null
     }
 
+    setSelectionInlineError(null)
     setError(null)
     setRunExpired(false)
 
@@ -636,12 +646,15 @@ export default function SoulAuditResultsPage() {
 
   async function submitConsentAndSelect(optionId: string) {
     if (!submitResult) return
+    setSelectionInlineError(null)
+
     if (!crisisRequirementsMet) {
-      setError(
+      setSelectionInlineError(
         submitResult.crisis.required && !crisisAcknowledged
           ? 'Acknowledge crisis resources before choosing a devotional path.'
           : 'Option selection is currently unavailable.',
       )
+      setError(null)
       return
     }
 
@@ -724,9 +737,10 @@ export default function SoulAuditResultsPage() {
         router.push(selectionPayload.route)
       }
     } catch (err) {
-      setError(
-        err instanceof Error ? err.message : 'Unable to complete selection.',
-      )
+      const message =
+        err instanceof Error ? err.message : 'Unable to complete selection.'
+      setSelectionInlineError(message)
+      setError(message)
     } finally {
       setSubmitting(false)
     }
@@ -745,6 +759,7 @@ export default function SoulAuditResultsPage() {
     }
 
     setIsRerolling(true)
+    setSelectionInlineError(null)
     setError(null)
     setRunExpired(false)
 
@@ -806,6 +821,7 @@ export default function SoulAuditResultsPage() {
 
     if (!silent) {
       setSubmitting(true)
+      setSelectionInlineError(null)
       setError(null)
     }
     try {
@@ -963,6 +979,7 @@ export default function SoulAuditResultsPage() {
   }
 
   async function handleResetAudit() {
+    setSelectionInlineError(null)
     setError(null)
     sessionStorage.removeItem('soul-audit-result')
     sessionStorage.removeItem('soul-audit-submit-v2')
@@ -1123,6 +1140,19 @@ export default function SoulAuditResultsPage() {
                         </label>
                       </div>
                     </section>
+                  </FadeIn>
+                )}
+
+                {selectionInlineError && (
+                  <FadeIn>
+                    <div
+                      className="soul-audit-selection-error mb-6"
+                      role="alert"
+                    >
+                      <p className="vw-small text-secondary">
+                        {typographer(selectionInlineError)}
+                      </p>
+                    </div>
                   </FadeIn>
                 )}
 
