@@ -74,6 +74,19 @@ describe('Soul Audit staged flow', () => {
     ).toBe(true)
     expect(payload).not.toHaveProperty('customPlan')
     expect(payload).not.toHaveProperty('customDevotional')
+
+    const optionsWithPreview = payload.options as Array<{
+      preview?: { verse?: string; verseText?: string }
+    }>
+    expect(
+      optionsWithPreview.every(
+        (option) =>
+          typeof option.preview?.verse === 'string' &&
+          option.preview.verse.trim().length > 0 &&
+          typeof option.preview?.verseText === 'string' &&
+          option.preview.verseText.trim().length > 0,
+      ),
+    ).toBe(true)
   })
 
   it('accepts single-word input and still returns options', async () => {

@@ -1,4 +1,5 @@
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
+import { clampScriptureSnippet } from '@/lib/scripture-reference'
 import type { AuditOptionKind, AuditOptionPreview } from '@/types/soul-audit'
 import { PREFAB_FALLBACK_SLUGS, SOUL_AUDIT_OPTION_SPLIT } from './constants'
 import {
@@ -408,6 +409,7 @@ function makeOption(params: {
       : 'A stable prefab series if you want a proven guided path.',
     preview: {
       verse: params.candidate.scriptureReference,
+      verseText: clampScriptureSnippet(params.candidate.scriptureText),
       paragraph: aiPrimary
         ? buildAiPreviewParagraph({
             candidate: params.candidate,

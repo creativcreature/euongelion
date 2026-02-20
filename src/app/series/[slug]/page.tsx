@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { SERIES_DATA, ALL_SERIES_ORDER } from '@/data/series'
+import { buildSeriesDayScriptureMap } from '@/lib/soul-audit/series-day-scripture'
 import SeriesPageClient from '@/app/wake-up/series/[slug]/SeriesPageClient'
 
 export const revalidate = 3600
@@ -33,6 +34,11 @@ export default async function SeriesPage({ params }: Props) {
   const { slug } = await params
   const series = SERIES_DATA[slug]
   if (!series) notFound()
+  const dayScriptureByDayNumber = buildSeriesDayScriptureMap({
+    seriesSlug: slug,
+    framework: series.framework,
+    dayNumbers: series.days.map((day) => day.day),
+  })
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -60,7 +66,12 @@ export default async function SeriesPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <SeriesPageClient slug={slug} series={series} silo="euangelion" />
+      <SeriesPageClient
+        slug={slug}
+        series={series}
+        silo="euangelion"
+        dayScriptureByDayNumber={dayScriptureByDayNumber}
+      />
     </>
   )
 }

@@ -19,6 +19,7 @@ import {
   readSiteConsentFromDocument,
   type SiteConsent,
 } from '@/lib/site-consent'
+import { clampScriptureSnippet } from '@/lib/scripture-reference'
 import { typographer } from '@/lib/typographer'
 import type {
   CrisisResource,
@@ -70,6 +71,7 @@ type SavedAuditOption = {
   question: string
   reasoning: string
   verse?: string
+  verseText?: string
   paragraph?: string
   savedAt: string
 }
@@ -222,6 +224,19 @@ function loadLastAuditInput(): string | null {
 function persistSavedAuditOptions(options: SavedAuditOption[]) {
   if (typeof window === 'undefined') return
   window.localStorage.setItem(SAVED_OPTIONS_KEY, JSON.stringify(options))
+}
+
+function resolveVerseSnippet(
+  verseText?: string | null,
+  paragraph?: string | null,
+): string {
+  if (typeof verseText === 'string' && verseText.trim().length > 0) {
+    return clampScriptureSnippet(verseText)
+  }
+  if (typeof paragraph === 'string' && paragraph.trim().length > 0) {
+    return clampScriptureSnippet(paragraph)
+  }
+  return ''
 }
 
 function crisisResourceHref(resource: CrisisResource): string | null {
@@ -844,7 +859,7 @@ export default function SoulAuditResultsPage() {
     title: string
     question: string
     reasoning: string
-    preview?: { verse: string; paragraph: string } | null
+    preview?: { verse: string; verseText?: string; paragraph: string } | null
   }) {
     if (!submitResult) return
     const nextEntry: SavedAuditOption = {
@@ -855,6 +870,7 @@ export default function SoulAuditResultsPage() {
       question: option.question,
       reasoning: option.reasoning,
       verse: option.preview?.verse,
+      verseText: option.preview?.verseText,
       paragraph: option.preview?.paragraph,
       savedAt: new Date().toISOString(),
     }
@@ -1133,83 +1149,95 @@ export default function SoulAuditResultsPage() {
                     <div className="grid gap-4 md:grid-cols-3">
                       {submitResult.options
                         .filter((option) => option.kind === 'ai_primary')
-                        .map((option) => (
-                          <article
-                            key={option.id}
-                            className="audit-option-card group relative overflow-hidden text-left"
-                            style={{
-                              border: '1px solid var(--color-border)',
-                              padding: '1.25rem',
-                            }}
-                          >
-                            <button
-                              type="button"
-                              disabled={!optionSelectionReady}
-                              onClick={() =>
-                                void submitConsentAndSelect(option.id)
-                              }
-                              className={`w-full text-left ${
-                                optionSelectionReady
-                                  ? 'cursor-pointer'
-                                  : 'is-disabled'
-                              }`}
-                              aria-disabled={!optionSelectionReady}
-                            >
-                              {option.preview?.verse && (
-                                <p className="audit-option-verse mb-2">
-                                  {typographer(option.preview.verse)}
-                                </p>
-                              )}
-                              <p className="audit-option-title mb-2 text-gold">
-                                {option.title}
-                              </p>
-                              <p className="audit-option-question mb-2">
-                                {typographer(option.question)}
-                              </p>
-                              {option.preview?.paragraph && (
-                                <p className="audit-option-support mt-1 text-secondary">
-                                  {typographer(option.preview.paragraph)}
-                                </p>
-                              )}
-                              <p className="audit-option-hint mt-4">
-                                {optionSelectionReady
-                                  ? 'Click to build this path'
-                                  : 'Unavailable until requirements are met'}
-                              </p>
-                            </button>
-                            <div
-                              className="mt-3 border-t pt-3"
-                              style={{ borderColor: 'var(--color-border)' }}
+                        .map((option) => {
+                          const verseSnippet = resolveVerseSnippet(
+                            option.preview?.verseText,
+                            option.preview?.paragraph,
+                          )
+
+                          return (
+                            <article
+                              key={option.id}
+                              className="audit-option-card group relative overflow-hidden text-left"
+                              style={{
+                                border: '1px solid var(--color-border)',
+                                padding: '1.25rem',
+                              }}
                             >
                               <button
                                 type="button"
-                                className="audit-option-meta-link link-highlight mr-4"
-                                onClick={() => saveOptionForLater(option)}
-                              >
-                                Save for later
-                              </button>
-                              <button
-                                type="button"
-                                className="audit-option-meta-link link-highlight"
+                                disabled={!optionSelectionReady}
                                 onClick={() =>
-                                  setExpandedReasoningOptionId((current) =>
-                                    current === option.id ? null : option.id,
-                                  )
+                                  void submitConsentAndSelect(option.id)
                                 }
+                                className={`w-full text-left ${
+                                  optionSelectionReady
+                                    ? 'cursor-pointer'
+                                    : 'is-disabled'
+                                }`}
+                                aria-disabled={!optionSelectionReady}
                               >
-                                {expandedReasoningOptionId === option.id
-                                  ? 'Hide reasoning'
-                                  : 'Why this path?'}
-                              </button>
-                              {expandedReasoningOptionId === option.id && (
-                                <p className="audit-option-support mt-2 text-secondary">
-                                  {typographer(option.reasoning)}
+                                {option.preview?.verse && (
+                                  <p className="audit-option-verse mb-2">
+                                    {typographer(option.preview.verse)}
+                                  </p>
+                                )}
+                                {verseSnippet && (
+                                  <p className="audit-option-verse-snippet mb-3">
+                                    {typographer(verseSnippet)}
+                                  </p>
+                                )}
+                                <p className="audit-option-title mb-2 text-gold">
+                                  {option.title}
                                 </p>
-                              )}
-                            </div>
-                            <span className="audit-option-underline" />
-                          </article>
-                        ))}
+                                <p className="audit-option-question mb-2">
+                                  {typographer(option.question)}
+                                </p>
+                                {option.preview?.paragraph && (
+                                  <p className="audit-option-support mt-1 text-secondary">
+                                    {typographer(option.preview.paragraph)}
+                                  </p>
+                                )}
+                                <p className="audit-option-hint mt-4">
+                                  {optionSelectionReady
+                                    ? 'Click to build this path'
+                                    : 'Unavailable until requirements are met'}
+                                </p>
+                              </button>
+                              <div
+                                className="mt-3 border-t pt-3"
+                                style={{ borderColor: 'var(--color-border)' }}
+                              >
+                                <button
+                                  type="button"
+                                  className="audit-option-meta-link link-highlight mr-4"
+                                  onClick={() => saveOptionForLater(option)}
+                                >
+                                  Save for later
+                                </button>
+                                <button
+                                  type="button"
+                                  className="audit-option-meta-link link-highlight"
+                                  onClick={() =>
+                                    setExpandedReasoningOptionId((current) =>
+                                      current === option.id ? null : option.id,
+                                    )
+                                  }
+                                >
+                                  {expandedReasoningOptionId === option.id
+                                    ? 'Hide reasoning'
+                                    : 'Why this path?'}
+                                </button>
+                                {expandedReasoningOptionId === option.id && (
+                                  <p className="audit-option-support mt-2 text-secondary">
+                                    {typographer(option.reasoning)}
+                                  </p>
+                                )}
+                              </div>
+                              <span className="audit-option-underline" />
+                            </article>
+                          )
+                        })}
                     </div>
                   </section>
                 </FadeIn>
@@ -1222,81 +1250,93 @@ export default function SoulAuditResultsPage() {
                     <div className="grid gap-4 md:grid-cols-2">
                       {submitResult.options
                         .filter((option) => option.kind === 'curated_prefab')
-                        .map((option) => (
-                          <article
-                            key={option.id}
-                            className="audit-option-card group relative overflow-hidden text-left"
-                            style={{
-                              border: '1px solid var(--color-border)',
-                              padding: '1.25rem',
-                            }}
-                          >
-                            <button
-                              type="button"
-                              disabled={!optionSelectionReady}
-                              onClick={() =>
-                                void submitConsentAndSelect(option.id)
-                              }
-                              className={`w-full text-left ${
-                                optionSelectionReady
-                                  ? 'cursor-pointer'
-                                  : 'is-disabled'
-                              }`}
-                              aria-disabled={!optionSelectionReady}
-                            >
-                              {option.preview?.verse && (
-                                <p className="audit-option-verse mb-2">
-                                  {typographer(option.preview.verse)}
-                                </p>
-                              )}
-                              <p className="audit-option-title mb-2 text-gold">
-                                {option.title}
-                              </p>
-                              <p className="audit-option-question mb-2">
-                                {typographer(option.question)}
-                              </p>
-                              <p className="audit-option-support text-secondary">
-                                Opens series overview.
-                              </p>
-                              <p className="audit-option-hint mt-4">
-                                {optionSelectionReady
-                                  ? 'Click to open this series'
-                                  : 'Unavailable until requirements are met'}
-                              </p>
-                            </button>
-                            <div
-                              className="mt-3 border-t pt-3"
-                              style={{ borderColor: 'var(--color-border)' }}
+                        .map((option) => {
+                          const verseSnippet = resolveVerseSnippet(
+                            option.preview?.verseText,
+                            option.preview?.paragraph,
+                          )
+
+                          return (
+                            <article
+                              key={option.id}
+                              className="audit-option-card group relative overflow-hidden text-left"
+                              style={{
+                                border: '1px solid var(--color-border)',
+                                padding: '1.25rem',
+                              }}
                             >
                               <button
                                 type="button"
-                                className="audit-option-meta-link link-highlight mr-4"
-                                onClick={() => saveOptionForLater(option)}
-                              >
-                                Save for later
-                              </button>
-                              <button
-                                type="button"
-                                className="audit-option-meta-link link-highlight"
+                                disabled={!optionSelectionReady}
                                 onClick={() =>
-                                  setExpandedReasoningOptionId((current) =>
-                                    current === option.id ? null : option.id,
-                                  )
+                                  void submitConsentAndSelect(option.id)
                                 }
+                                className={`w-full text-left ${
+                                  optionSelectionReady
+                                    ? 'cursor-pointer'
+                                    : 'is-disabled'
+                                }`}
+                                aria-disabled={!optionSelectionReady}
                               >
-                                {expandedReasoningOptionId === option.id
-                                  ? 'Hide reasoning'
-                                  : 'Why this path?'}
-                              </button>
-                              {expandedReasoningOptionId === option.id && (
-                                <p className="audit-option-support mt-2 text-secondary">
-                                  {typographer(option.reasoning)}
+                                {option.preview?.verse && (
+                                  <p className="audit-option-verse mb-2">
+                                    {typographer(option.preview.verse)}
+                                  </p>
+                                )}
+                                {verseSnippet && (
+                                  <p className="audit-option-verse-snippet mb-3">
+                                    {typographer(verseSnippet)}
+                                  </p>
+                                )}
+                                <p className="audit-option-title mb-2 text-gold">
+                                  {option.title}
                                 </p>
-                              )}
-                            </div>
-                            <span className="audit-option-underline" />
-                          </article>
-                        ))}
+                                <p className="audit-option-question mb-2">
+                                  {typographer(option.question)}
+                                </p>
+                                <p className="audit-option-support text-secondary">
+                                  Opens series overview.
+                                </p>
+                                <p className="audit-option-hint mt-4">
+                                  {optionSelectionReady
+                                    ? 'Click to open this series'
+                                    : 'Unavailable until requirements are met'}
+                                </p>
+                              </button>
+                              <div
+                                className="mt-3 border-t pt-3"
+                                style={{ borderColor: 'var(--color-border)' }}
+                              >
+                                <button
+                                  type="button"
+                                  className="audit-option-meta-link link-highlight mr-4"
+                                  onClick={() => saveOptionForLater(option)}
+                                >
+                                  Save for later
+                                </button>
+                                <button
+                                  type="button"
+                                  className="audit-option-meta-link link-highlight"
+                                  onClick={() =>
+                                    setExpandedReasoningOptionId((current) =>
+                                      current === option.id ? null : option.id,
+                                    )
+                                  }
+                                >
+                                  {expandedReasoningOptionId === option.id
+                                    ? 'Hide reasoning'
+                                    : 'Why this path?'}
+                                </button>
+                                {expandedReasoningOptionId === option.id && (
+                                  <p className="audit-option-support mt-2 text-secondary">
+                                    {typographer(option.reasoning)}
+                                  </p>
+                                )}
+                              </div>
+                              <span className="audit-option-underline" />
+                            </article>
+                          )
+                        })}
                     </div>
                   </section>
                 </FadeIn>
@@ -1322,34 +1362,46 @@ export default function SoulAuditResultsPage() {
                         )}
                       </div>
                       <div className="mt-3 grid gap-2">
-                        {savedOptions.slice(0, 6).map((saved) => (
-                          <div
-                            key={`saved-option-${saved.id}`}
-                            className="border px-3 py-2"
-                            style={{ borderColor: 'var(--color-border)' }}
-                          >
-                            <div className="flex flex-wrap items-center justify-between gap-2">
-                              {saved.verse && (
-                                <p className="audit-option-verse w-full">
-                                  {typographer(saved.verse)}
+                        {savedOptions.slice(0, 6).map((saved) => {
+                          const verseSnippet = resolveVerseSnippet(
+                            saved.verseText,
+                            saved.paragraph,
+                          )
+
+                          return (
+                            <div
+                              key={`saved-option-${saved.id}`}
+                              className="border px-3 py-2"
+                              style={{ borderColor: 'var(--color-border)' }}
+                            >
+                              <div className="flex flex-wrap items-center justify-between gap-2">
+                                {saved.verse && (
+                                  <p className="audit-option-verse w-full">
+                                    {typographer(saved.verse)}
+                                  </p>
+                                )}
+                                {verseSnippet && (
+                                  <p className="audit-option-verse-snippet w-full">
+                                    {typographer(verseSnippet)}
+                                  </p>
+                                )}
+                                <p className="audit-option-title text-gold">
+                                  {saved.title}
                                 </p>
-                              )}
-                              <p className="audit-option-title text-gold">
-                                {saved.title}
+                                <button
+                                  type="button"
+                                  className="audit-option-meta-link link-highlight"
+                                  onClick={() => removeSavedOption(saved.id)}
+                                >
+                                  Remove
+                                </button>
+                              </div>
+                              <p className="audit-option-support mt-1 text-secondary">
+                                {typographer(saved.question)}
                               </p>
-                              <button
-                                type="button"
-                                className="audit-option-meta-link link-highlight"
-                                onClick={() => removeSavedOption(saved.id)}
-                              >
-                                Remove
-                              </button>
                             </div>
-                            <p className="audit-option-support mt-1 text-secondary">
-                              {typographer(saved.question)}
-                            </p>
-                          </div>
-                        ))}
+                          )
+                        })}
                       </div>
                       {savedOptionsMessage && (
                         <p className="vw-small mt-2 text-muted">

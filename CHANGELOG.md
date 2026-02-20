@@ -5,6 +5,58 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Scripture-First Cards + Homepage Prompt Weight Fix (2026-02-20)
+
+### What Changed
+
+- Fixed homepage prompt typography by setting only these two titles to regular weight (`400`):
+  - `Find Your Next Faithful Step Today.`
+  - `What are you wrestling with today?`
+- Normalized devotional card scripture lead across surfaces into a two-line contract:
+  - line 1: scripture reference
+  - line 2: short scripture snippet
+- Applied scripture-first rendering to:
+  - homepage featured cards
+  - Wake-Up featured cards
+  - series catalog cards
+  - Soul Audit option cards and Saved Paths cards
+  - Wake-Up / Series day cards
+- Added day-level scripture mapping for series routes with fallback order:
+  - curated day scripture
+  - parsed `series.framework`
+  - safe placeholder (`Scripture`)
+- Extended Soul Audit preview payload with additive `preview.verseText` and wired fallback snippet derivation for legacy saved payloads.
+
+### Files
+
+- `src/lib/scripture-reference.ts`
+- `src/lib/soul-audit/series-day-scripture.ts`
+- `src/app/page.tsx`
+- `src/app/wake-up/page.tsx`
+- `src/app/series/page.tsx`
+- `src/app/wake-up/series/[slug]/page.tsx`
+- `src/app/series/[slug]/page.tsx`
+- `src/app/wake-up/series/[slug]/SeriesPageClient.tsx`
+- `src/types/soul-audit.ts`
+- `src/lib/soul-audit/matching.ts`
+- `src/app/api/soul-audit/submit/route.ts`
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/globals.css`
+- `__tests__/scripture-reference.test.ts`
+- `__tests__/soul-audit-flow.test.ts`
+- `__tests__/soul-audit-fallback-options.test.ts`
+- `__tests__/series-day-scripture.test.ts`
+- `__tests__/series-page-client-scripture.test.tsx`
+- `__tests__/series-day-route-scripture.test.tsx`
+- `docs/feature-prds/F-024.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm test -- --run __tests__/scripture-reference.test.ts __tests__/soul-audit-flow.test.ts __tests__/soul-audit-fallback-options.test.ts __tests__/series-day-scripture.test.ts __tests__/series-page-client-scripture.test.tsx __tests__/series-day-route-scripture.test.tsx`
+
+---
+
 ## Soul Audit Results Reorder + Accessibility Settings Runtime (2026-02-20)
 
 ### What Changed

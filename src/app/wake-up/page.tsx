@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import { scriptureLeadFromFramework } from '@/lib/scripture-reference'
+import { scriptureLeadPartsFromFramework } from '@/lib/scripture-reference'
 import { typographer } from '@/lib/typographer'
 import { WAKEUP_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 
@@ -112,6 +112,7 @@ export default function WakeUpPage() {
           {WAKEUP_SERIES_ORDER.map((slug) => {
             const info = SERIES_DATA[slug]
             if (!info) return null
+            const scripture = scriptureLeadPartsFromFramework(info.framework)
 
             return (
               <Link
@@ -119,9 +120,16 @@ export default function WakeUpPage() {
                 key={slug}
                 className="mock-featured-card mock-wakeup-series-card"
               >
-                <p className="mock-scripture-lead">
-                  {typographer(scriptureLeadFromFramework(info.framework))}
-                </p>
+                <div className="mock-scripture-lead">
+                  <p className="mock-scripture-lead-reference">
+                    {typographer(scripture.reference || 'Scripture')}
+                  </p>
+                  {scripture.snippet && (
+                    <p className="mock-scripture-lead-snippet">
+                      {typographer(scripture.snippet)}
+                    </p>
+                  )}
+                </div>
                 <h3>{info.title}.</h3>
                 <p>{info.question}</p>
                 <p className="mock-featured-preview">

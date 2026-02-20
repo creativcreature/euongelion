@@ -8,15 +8,18 @@ import SiteFooter from '@/components/SiteFooter'
 import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
 import type { SeriesInfo } from '@/data/series'
+import type { DayScriptureByDayNumber } from '@/lib/soul-audit/series-day-scripture'
 
 export default function SeriesPageClient({
   slug,
   series,
   silo = 'wake',
+  dayScriptureByDayNumber = {},
 }: {
   slug: string
   series: SeriesInfo
   silo?: 'wake' | 'euangelion'
+  dayScriptureByDayNumber?: DayScriptureByDayNumber
 }) {
   const { isRead, getSeriesProgress, canRead } = useProgress()
   const seriesProgress = getSeriesProgress(slug)
@@ -96,6 +99,10 @@ export default function SeriesPageClient({
             const readingCheck = canRead(day.slug)
             const isLocked = !readingCheck.canRead
             const dayIsRead = isRead(day.slug)
+            const dayScripture = dayScriptureByDayNumber[day.day] ?? {
+              reference: 'Scripture',
+              snippet: '',
+            }
             const lockMessage =
               (readingCheck as { message?: string }).message ||
               'Unlocks in sequence as you continue.'
@@ -107,6 +114,14 @@ export default function SeriesPageClient({
                 <p className="text-label mock-series-day-number">
                   DAY {day.day}
                 </p>
+                <p className="mock-series-day-scripture-reference">
+                  {typographer(dayScripture.reference || 'Scripture')}
+                </p>
+                {dayScripture.snippet && (
+                  <p className="mock-series-day-scripture-snippet">
+                    {typographer(dayScripture.snippet)}
+                  </p>
+                )}
                 <h3>{day.title}</h3>
                 <p className="mock-series-day-status">
                   {isLocked ? 'LOCKED' : dayIsRead ? 'READ AGAIN' : 'READ NOW'}

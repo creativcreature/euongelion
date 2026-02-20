@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
-import { scriptureLeadFromFramework } from '@/lib/scripture-reference'
+import { scriptureLeadPartsFromFramework } from '@/lib/scripture-reference'
 import { submitSoulAuditResponse } from '@/lib/soul-audit/submit-client'
 import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_DATA } from '@/data/series'
@@ -300,7 +300,9 @@ export default function Home() {
 
           <article className="mock-panel mock-panel-copy">
             <p className="text-label mock-kicker">WHAT IS THIS PLACE?</p>
-            <h2 className="mock-title">Find Your Next Faithful Step Today.</h2>
+            <h2 className="mock-title mock-homepage-prompt-title">
+              Find Your Next Faithful Step Today.
+            </h2>
             <div className="mock-rule" />
             <p className="mock-body">
               {typographer(
@@ -335,7 +337,7 @@ export default function Home() {
               <>
                 <div className="mock-audit-head">
                   <p className="text-label mock-kicker">SOUL AUDIT</p>
-                  <h2 className="mock-title">
+                  <h2 className="mock-title mock-homepage-prompt-title">
                     What are you wrestling with today?
                   </h2>
                   <p className="mock-subcopy">
@@ -439,30 +441,41 @@ export default function Home() {
           className="mock-featured-grid"
           aria-label="Featured series carousel"
         >
-          {activeFeaturedSeries.map(({ slug, series }) => (
-            <Link
-              href={`/series/${slug}`}
-              key={slug}
-              className="mock-featured-card"
-            >
-              <p className="mock-scripture-lead">
-                {typographer(scriptureLeadFromFramework(series.framework))}
-              </p>
-              <h3>{series.title}.</h3>
-              <p>{series.question}</p>
-              <p className="mock-featured-preview">
-                {formatSeriesPreview(series.introduction)}
-              </p>
-              <div className="mock-featured-actions">
-                <span className="mock-series-start text-label">
-                  START SERIES
-                </span>
-                <span className="mock-featured-days text-label">
-                  {series.days.length || 5} DAYS
-                </span>
-              </div>
-            </Link>
-          ))}
+          {activeFeaturedSeries.map(({ slug, series }) => {
+            const scripture = scriptureLeadPartsFromFramework(series.framework)
+
+            return (
+              <Link
+                href={`/series/${slug}`}
+                key={slug}
+                className="mock-featured-card"
+              >
+                <div className="mock-scripture-lead">
+                  <p className="mock-scripture-lead-reference">
+                    {typographer(scripture.reference || 'Scripture')}
+                  </p>
+                  {scripture.snippet && (
+                    <p className="mock-scripture-lead-snippet">
+                      {typographer(scripture.snippet)}
+                    </p>
+                  )}
+                </div>
+                <h3>{series.title}.</h3>
+                <p>{series.question}</p>
+                <p className="mock-featured-preview">
+                  {formatSeriesPreview(series.introduction)}
+                </p>
+                <div className="mock-featured-actions">
+                  <span className="mock-series-start text-label">
+                    START SERIES
+                  </span>
+                  <span className="mock-featured-days text-label">
+                    {series.days.length || 5} DAYS
+                  </span>
+                </div>
+              </Link>
+            )
+          })}
         </section>
 
         {featuredSlides.length > 1 && (

@@ -15,6 +15,7 @@ import {
   SOUL_AUDIT_OPTION_SPLIT,
 } from '@/lib/soul-audit/constants'
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
+import { scriptureLeadPartsFromFramework } from '@/lib/scripture-reference'
 import {
   buildAuditOptions,
   sanitizeAuditInput,
@@ -79,14 +80,6 @@ function getLowContextGuidance(input: string): string | null {
   return 'We built options from a short input. Add one more sentence for more precise curation.'
 }
 
-function parseFrameworkReference(framework: string): string {
-  const normalized = framework.trim()
-  if (!normalized) return 'Scripture'
-  const [referencePart] = normalized.split(/\s+-\s+/)
-  const reference = referencePart.trim()
-  return reference || 'Scripture'
-}
-
 function buildEmergencyFallbackOptions(input: string): AuditOptionPreview[] {
   const uniqueSlugs = Array.from(new Set(ALL_SERIES_ORDER)).filter(
     (slug) =>
@@ -105,7 +98,7 @@ function buildEmergencyFallbackOptions(input: string): AuditOptionPreview[] {
   return selectedSlugs.map((slug, index) => {
     const series = SERIES_DATA[slug]
     const dayOne = [...series.days].sort((a, b) => a.day - b.day)[0]
-    const verse = parseFrameworkReference(series.framework)
+    const scripture = scriptureLeadPartsFromFramework(series.framework)
     const aiPrimary = index < SOUL_AUDIT_OPTION_SPLIT.aiPrimary
     const dayNumber = dayOne?.day ?? 1
     const baseConfidence = aiPrimary
@@ -127,7 +120,8 @@ function buildEmergencyFallbackOptions(input: string): AuditOptionPreview[] {
         ? `Matched to curated series modules using a short-input fallback (${series.title}).`
         : 'A stable prefab series if you want a proven guided path.',
       preview: {
-        verse,
+        verse: scripture.reference || 'Scripture',
+        verseText: scripture.snippet,
         paragraph: aiPrimary
           ? `You shared "${snippet}". Start here for a clear next faithful step. ${series.introduction}`
           : series.introduction,

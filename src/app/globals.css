@@ -922,10 +922,25 @@ html.reduce-motion *::after {
 }
 
 .series-card-scripture {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.series-card-scripture-reference {
+  margin: 0;
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.86rem, 0.5vw + 0.76rem, 0.98rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.series-card-scripture-snippet {
+  margin: 0;
   font-family: var(--font-family-serif);
-  font-style: italic;
-  font-size: clamp(1.02rem, 1.28vw, 1.2rem);
-  line-height: 1.38;
+  font-size: clamp(1.02rem, 1.2vw, 1.18rem);
+  line-height: 1.36;
   color: var(--color-text-primary);
 }
 
@@ -1899,10 +1914,20 @@ html.reduce-motion *::after {
 
   .audit-option-verse {
     margin: 0;
+    color: var(--color-text-secondary);
+    font-family: var(--font-family-ui);
+    font-size: clamp(0.84rem, 0.42vw + 0.78rem, 0.96rem);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .audit-option-verse-snippet {
+    margin: 0;
     color: var(--color-text-primary);
     font-family: var(--font-family-serif);
-    font-size: clamp(1.18rem, 0.7vw + 1rem, 1.5rem);
-    line-height: 1.24;
+    font-size: clamp(1.02rem, 0.54vw + 0.93rem, 1.2rem);
+    line-height: 1.38;
   }
 
   .audit-option-title {
@@ -1918,15 +1943,15 @@ html.reduce-motion *::after {
     margin: 0;
     color: var(--color-text-primary);
     font-family: var(--font-family-serif);
-    font-size: clamp(1.08rem, 0.58vw + 0.94rem, 1.3rem);
-    line-height: 1.46;
+    font-size: clamp(1.04rem, 0.5vw + 0.93rem, 1.2rem);
+    line-height: 1.42;
   }
 
   .audit-option-support {
     margin: 0;
     font-family: var(--font-family-ui);
-    font-size: clamp(0.93rem, 0.35vw + 0.86rem, 1rem);
-    line-height: 1.45;
+    font-size: clamp(0.96rem, 0.34vw + 0.89rem, 1.04rem);
+    line-height: 1.44;
   }
 
   .audit-option-meta-link {
@@ -3195,13 +3220,30 @@ html.reduce-motion *::after {
 }
 
 .mock-scripture-lead {
+  margin: 0 0 0.12rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.mock-scripture-lead-reference {
   margin: 0;
   font-family: var(--font-family-ui);
-  font-weight: 500;
-  letter-spacing: 0.025em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mock-muted) !important;
+  font-size: clamp(0.84rem, 0.44vw + 0.78rem, 0.96rem) !important;
+  line-height: 1.2 !important;
+}
+
+.mock-scripture-lead-snippet {
+  margin: 0;
+  font-family: var(--font-family-serif);
+  font-weight: 400;
+  letter-spacing: 0.01em;
   text-transform: none;
   color: var(--mock-ink) !important;
-  font-size: clamp(1.24rem, 1.26vw, 1.48rem) !important;
+  font-size: clamp(1.18rem, 1.12vw, 1.36rem) !important;
   line-height: 1.22 !important;
 }
 
@@ -3482,9 +3524,16 @@ html.reduce-motion *::after {
 }
 
 .mock-homepage .mock-featured-card .mock-scripture-lead {
-  font-size: clamp(1.3rem, 1.3vw, 1.58rem) !important;
+  margin-bottom: 0.34rem;
+}
+
+.mock-homepage .mock-featured-card .mock-scripture-lead-reference {
+  font-size: clamp(0.88rem, 0.48vw + 0.8rem, 1rem) !important;
+}
+
+.mock-homepage .mock-featured-card .mock-scripture-lead-snippet {
+  font-size: clamp(1.24rem, 1.18vw, 1.44rem) !important;
   line-height: 1.22 !important;
-  margin-bottom: 0.3rem;
 }
 
 .mock-homepage .mock-featured-card p {
@@ -3495,6 +3544,10 @@ html.reduce-motion *::after {
 .mock-homepage .mock-title {
   margin-bottom: 0.24rem;
   font-weight: 700;
+}
+
+.mock-homepage .mock-title.mock-homepage-prompt-title {
+  font-weight: 400;
 }
 
 .mock-homepage .mock-faq-question,
@@ -3679,7 +3732,7 @@ html.reduce-motion *::after {
 .mock-series-day-card {
   border-right: var(--mock-stroke) solid var(--mock-line);
   border-top: var(--mock-stroke) solid var(--mock-line);
-  min-height: 210px;
+  min-height: 244px;
   padding: 0.78rem 0.8rem 0.7rem;
   display: grid;
   align-content: start;
@@ -3701,6 +3754,23 @@ html.reduce-motion *::after {
 
 .mock-series-day-number {
   margin: 0;
+}
+
+.mock-series-day-scripture-reference {
+  margin: 0;
+  font-family: var(--font-family-ui);
+  font-size: var(--mock-type-0);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+.mock-series-day-scripture-snippet {
+  margin: 0;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.18;
+  color: var(--mock-ink);
 }
 
 .mock-series-day-card h3 {
@@ -4505,7 +4575,7 @@ html.reduce-motion *::after {
   }
 
   .mock-series-day-card {
-    min-height: 174px;
+    min-height: 206px;
   }
 
   .mock-devotional-hero {

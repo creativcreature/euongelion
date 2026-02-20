@@ -67,6 +67,13 @@ describe('soul audit options fallback', () => {
     expect(
       options.filter((option) => option.kind === 'curated_prefab'),
     ).toHaveLength(2)
+    expect(
+      options.every(
+        (option) =>
+          typeof option.preview?.verseText === 'string' &&
+          option.preview.verseText.trim().length > 0,
+      ),
+    ).toBe(true)
   })
 
   it('keeps 3+2 split when curated candidates come from a single series', () => {
@@ -88,5 +95,12 @@ describe('soul audit options fallback', () => {
     expect(
       options.filter((option) => option.kind === 'curated_prefab'),
     ).toHaveLength(2)
+    expect(
+      options.every(
+        (option) =>
+          typeof option.preview?.verseText === 'string' &&
+          option.preview.verseText.trim().length > 0,
+      ),
+    ).toBe(true)
   })
 })

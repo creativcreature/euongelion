@@ -6,6 +6,7 @@ export interface AuditMatch {
   reasoning: string
   preview?: {
     verse: string
+    verseText?: string
     paragraph: string
     curationSeed?: {
       seriesSlug: string

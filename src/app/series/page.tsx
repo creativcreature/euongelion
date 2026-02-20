@@ -6,7 +6,7 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerGrid from '@/components/motion/StaggerGrid'
-import { scriptureLeadFromFramework } from '@/lib/scripture-reference'
+import { scriptureLeadPartsFromFramework } from '@/lib/scripture-reference'
 import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
 import {
@@ -253,16 +253,25 @@ function SeriesCard({
   progress: { completed: number; total: number; percentage: number }
   series: (typeof SERIES_DATA)[keyof typeof SERIES_DATA]
 }) {
+  const scripture = scriptureLeadPartsFromFramework(series.framework)
+
   return (
     <Link href={`/series/${slug}`} className="group block">
       <div className="newspaper-card flex h-full flex-col overflow-hidden">
         <div
           className="mx-6 mt-6 border border-[var(--color-border)] p-4 md:mx-8 md:mt-8 md:p-5"
-          style={{ minHeight: '132px' }}
+          style={{ minHeight: '156px' }}
         >
-          <p className="series-card-scripture">
-            {typographer(scriptureLeadFromFramework(series.framework))}
-          </p>
+          <div className="series-card-scripture">
+            <p className="series-card-scripture-reference">
+              {typographer(scripture.reference || 'Scripture')}
+            </p>
+            {scripture.snippet && (
+              <p className="series-card-scripture-snippet">
+                {typographer(scripture.snippet)}
+              </p>
+            )}
+          </div>
         </div>
 
         <div className="flex flex-1 flex-col p-6 md:p-8">
