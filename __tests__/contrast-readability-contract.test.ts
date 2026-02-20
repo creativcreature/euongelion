@@ -24,4 +24,10 @@ describe('Contrast and readability contract', () => {
     expect(css).toContain('--mock-line: #1f2a8d;')
     expect(css).toContain('--color-text-muted: rgba(239, 229, 216, 0.84);')
   })
+
+  it('forces white text for browser copy/paste selection across engines', () => {
+    expect(css).toContain('::selection')
+    expect(css).toContain('::-moz-selection')
+    expect(css).toContain('color: #fff;')
+  })
 })

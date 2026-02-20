@@ -105,7 +105,7 @@ describe('GET /api/soul-audit/current', () => {
       series_slug: 'truth',
       created_at: '2026-02-15T10:00:00.000Z',
     }
-    planDaysByToken['new-plan-token'] = [{ day_number: 1 }]
+    planDaysByToken['new-plan-token'] = [{ day_number: 0 }, { day_number: 1 }]
     latestSelection = {
       option_kind: 'curated_prefab',
       plan_token: null,
@@ -122,7 +122,9 @@ describe('GET /api/soul-audit/current', () => {
 
     expect(payload.hasCurrent).toBe(true)
     expect(payload.selectionType).toBe('ai_primary')
-    expect(payload.route).toBe('/soul-audit/results?planToken=new-plan-token')
+    expect(payload.route).toBe(
+      '/soul-audit/results?planToken=new-plan-token&day=0',
+    )
   })
 
   it('returns hasCurrent false when candidates have no resolvable content', async () => {

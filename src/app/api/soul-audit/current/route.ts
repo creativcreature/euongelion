@@ -15,7 +15,7 @@ const CURRENT_ROUTE_MAX_AGE = 30 * 24 * 60 * 60
 function normalizeCurrentRoute(value: string | undefined): string | null {
   if (!value) return null
 
-  if (/^\/soul-audit\/results\?planToken=[a-f0-9-]+$/i.test(value)) {
+  if (/^\/soul-audit\/results\?planToken=[a-f0-9-]+(&day=\d+)?$/i.test(value)) {
     return value
   }
   if (/^\/series\/[a-z0-9-]+$/i.test(value)) {
@@ -43,6 +43,23 @@ function curatedSelectionRoute(seriesSlug: string): string {
   return `/series/${seriesSlug}`
 }
 
+function getInitialPlanDayNumber(
+  planDays: Array<{ day_number: number }>,
+): number {
+  const dayNumbers = planDays
+    .map((day) => day.day_number)
+    .filter((day): day is number => Number.isFinite(day))
+    .sort((a, b) => a - b)
+  if (dayNumbers.length === 0) return 1
+  return dayNumbers.includes(0) ? 0 : dayNumbers[0]
+}
+
+function aiRoute(planToken: string, planDays: Array<{ day_number: number }>) {
+  return `/soul-audit/results?planToken=${planToken}&day=${getInitialPlanDayNumber(
+    planDays,
+  )}`
+}
+
 export async function GET() {
   const cookieStore = await cookies()
   const routeFromCookie = normalizeCurrentRoute(
@@ -60,7 +77,7 @@ export async function GET() {
     const planDays = await getAllPlanDaysWithFallback(latestPlan.plan_token)
     if (planDays.length > 0) {
       candidates.push({
-        route: `/soul-audit/results?planToken=${latestPlan.plan_token}`,
+        route: aiRoute(latestPlan.plan_token, planDays),
         createdAt: latestPlan.created_at,
         selectionType: 'ai_primary',
         planToken: latestPlan.plan_token,
@@ -89,7 +106,7 @@ export async function GET() {
       : []
     if (plan && planDays.length > 0) {
       candidates.push({
-        route: `/soul-audit/results?planToken=${latestSelection.plan_token}`,
+        route: aiRoute(latestSelection.plan_token, planDays),
         createdAt: latestSelection.created_at,
         selectionType: 'ai_primary',
         planToken: latestSelection.plan_token,

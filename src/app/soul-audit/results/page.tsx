@@ -721,9 +721,7 @@ export default function SoulAuditResultsPage() {
             persistPlanDays(selectionPayload.planToken, safePlanDays)
           }
         }
-        router.push(
-          `/soul-audit/results?planToken=${selectionPayload.planToken}`,
-        )
+        router.push(selectionPayload.route)
       }
     } catch (err) {
       setError(

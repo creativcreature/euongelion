@@ -18,6 +18,7 @@ import {
   MissingCuratedModuleError,
   MissingReferenceGroundingError,
 } from '@/lib/soul-audit/curated-builder'
+import { buildMetadataFallbackPlan } from '@/lib/soul-audit/metadata-plan-builder'
 import {
   createPlan,
   getAllPlanDays,
@@ -118,6 +119,29 @@ function curatedSelectionRoute(seriesSlug: string): string {
     return `/devotional/${firstDay.slug}`
   }
   return `/series/${seriesSlug}`
+}
+
+function getInitialPlanDayNumber(
+  days: Array<
+    | {
+        day: number
+      }
+    | {
+        day_number: number
+      }
+  >,
+): number {
+  const dayNumbers = days
+    .map((day) => ('day' in day ? day.day : day.day_number))
+    .filter((day): day is number => Number.isFinite(day))
+    .sort((a, b) => a - b)
+
+  if (dayNumbers.length === 0) return 1
+  return dayNumbers.includes(0) ? 0 : dayNumbers[0]
+}
+
+function buildAiResultsRoute(planToken: string, day: number): string {
+  return `/soul-audit/results?planToken=${planToken}&day=${day}`
 }
 
 export async function POST(request: NextRequest) {
@@ -269,6 +293,15 @@ export async function POST(request: NextRequest) {
         existingSelection.option_kind === 'ai_primary'
           ? await getPlanInstanceWithFallback(existingSelection.plan_token)
           : null
+      const existingPlanDays =
+        existingSelection.plan_token &&
+        existingSelection.option_kind === 'ai_primary'
+          ? await getAllPlanDays(existingSelection.plan_token)
+          : []
+      const existingInitialDay = getInitialPlanDayNumber(existingPlanDays)
+      const existingAiRoute = existingSelection.plan_token
+        ? buildAiResultsRoute(existingSelection.plan_token, existingInitialDay)
+        : '/soul-audit/results'
       const existingPayload: SoulAuditSelectResponse = {
         ok: true,
         auditRunId: runId,
@@ -276,7 +309,7 @@ export async function POST(request: NextRequest) {
         route:
           existingSelection.option_kind === 'curated_prefab'
             ? curatedSelectionRoute(existingSelection.series_slug)
-            : `/soul-audit/results?planToken=${existingSelection.plan_token}`,
+            : existingAiRoute,
         planToken: existingSelection.plan_token ?? undefined,
         seriesSlug: existingSelection.series_slug,
         onboardingMeta: existingPlan
@@ -341,11 +374,34 @@ export async function POST(request: NextRequest) {
         ? option.preview.curationSeed
         : null
 
-    const planDays = buildCuratedFirstPlan({
-      seriesSlug: option.slug,
-      userResponse: run.response_text,
-      anchorSeed: curationSeed,
-    })
+    let planDays
+    try {
+      planDays = buildCuratedFirstPlan({
+        seriesSlug: option.slug,
+        userResponse: run.response_text,
+        anchorSeed: curationSeed,
+      })
+    } catch (error) {
+      if (
+        error instanceof MissingCuratedModuleError ||
+        error instanceof MissingReferenceGroundingError
+      ) {
+        planDays = buildMetadataFallbackPlan({
+          seriesSlug: option.slug,
+          userResponse: run.response_text,
+        })
+      } else {
+        throw error
+      }
+    }
+
+    if (!Array.isArray(planDays) || planDays.length === 0) {
+      return jsonError({
+        error: 'Unable to start devotional plan right now.',
+        status: 500,
+        requestId,
+      })
+    }
 
     const timezone =
       sanitizeTimezone(body.timezone) ??
@@ -399,7 +455,10 @@ export async function POST(request: NextRequest) {
       ok: true,
       auditRunId: runId,
       selectionType: 'ai_primary',
-      route: `/soul-audit/results?planToken=${plan.token}`,
+      route: buildAiResultsRoute(
+        plan.token,
+        getInitialPlanDayNumber(daysForPlan),
+      ),
       planToken: plan.token,
       seriesSlug: option.slug,
       planDays: daysForPlan,
@@ -424,21 +483,6 @@ export async function POST(request: NextRequest) {
       payload.route,
     )
   } catch (error) {
-    if (
-      error instanceof MissingCuratedModuleError ||
-      error instanceof MissingReferenceGroundingError
-    ) {
-      return jsonError({
-        error: error.message,
-        code:
-          error instanceof MissingReferenceGroundingError
-            ? 'MISSING_REFERENCE_GROUNDING'
-            : 'MISSING_CURATED_MODULE',
-        status: 422,
-        requestId,
-      })
-    }
-
     logApiError({
       scope: 'soul-audit-select',
       requestId,

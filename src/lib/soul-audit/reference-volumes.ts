@@ -6,6 +6,38 @@ export interface ReferenceHit {
   excerpt: string
 }
 
+const STOP_WORDS = new Set([
+  'about',
+  'after',
+  'again',
+  'against',
+  'because',
+  'before',
+  'being',
+  'between',
+  'could',
+  'doing',
+  'every',
+  'first',
+  'from',
+  'have',
+  'just',
+  'more',
+  'should',
+  'their',
+  'there',
+  'these',
+  'they',
+  'this',
+  'through',
+  'what',
+  'when',
+  'where',
+  'with',
+  'would',
+  'your',
+])
+
 function collectReferenceFiles(dir: string, acc: string[]): void {
   if (!fs.existsSync(dir)) return
   const entries = fs.readdirSync(dir, { withFileTypes: true })
@@ -20,6 +52,16 @@ function collectReferenceFiles(dir: string, acc: string[]): void {
   }
 }
 
+let cachedReferenceFiles: string[] | null = null
+
+function listReferenceFiles(root: string): string[] {
+  if (cachedReferenceFiles) return cachedReferenceFiles
+  const files: string[] = []
+  collectReferenceFiles(root, files)
+  cachedReferenceFiles = files
+  return files
+}
+
 function keywordsFromInput(input: string): string[] {
   return Array.from(
     new Set(
@@ -28,9 +70,9 @@ function keywordsFromInput(input: string): string[] {
         .replace(/[^a-z0-9\s]/g, ' ')
         .split(/\s+/)
         .map((w) => w.trim())
-        .filter((w) => w.length >= 5),
+        .filter((w) => w.length >= 3 && !STOP_WORDS.has(w)),
     ),
-  ).slice(0, 8)
+  ).slice(0, 16)
 }
 
 export function retrieveReferenceHits(params: {
@@ -39,16 +81,19 @@ export function retrieveReferenceHits(params: {
   limit?: number
 }): ReferenceHit[] {
   const root = path.join(process.cwd(), 'content', 'reference')
-  const files: string[] = []
-  collectReferenceFiles(root, files)
+  const files = listReferenceFiles(root)
 
-  const keywords = keywordsFromInput(
+  let keywords = keywordsFromInput(
     `${params.userResponse} ${params.scriptureReference}`,
   )
   const limit = params.limit ?? 3
-  if (files.length === 0 || keywords.length === 0) return []
+  if (files.length === 0) return []
+  if (keywords.length === 0) {
+    keywords = keywordsFromInput(params.scriptureReference)
+  }
 
   const hits: ReferenceHit[] = []
+  let deterministicFallback: ReferenceHit | null = null
 
   for (const file of files) {
     if (hits.length >= limit) break
@@ -60,19 +105,31 @@ export function retrieveReferenceHits(params: {
       continue
     }
 
+    const relativeSource = path.relative(process.cwd(), file)
     const lines = text.split('\n')
+
     for (const line of lines) {
       const normalized = line.toLowerCase()
       if (!normalized.trim()) continue
-      if (!keywords.some((kw) => normalized.includes(kw))) continue
+      if (!deterministicFallback) {
+        deterministicFallback = {
+          source: relativeSource,
+          excerpt: line.trim().slice(0, 240),
+        }
+      }
+      if (keywords.length === 0) continue
 
-      hits.push({
-        source: path.relative(process.cwd(), file),
-        excerpt: line.trim().slice(0, 240),
-      })
-      break
+      if (keywords.some((keyword) => normalized.includes(keyword))) {
+        hits.push({
+          source: relativeSource,
+          excerpt: line.trim().slice(0, 240),
+        })
+        break
+      }
     }
   }
 
-  return hits
+  if (hits.length > 0) return hits.slice(0, limit)
+
+  return deterministicFallback ? [deterministicFallback] : []
 }

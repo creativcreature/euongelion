@@ -44,7 +44,7 @@ describe('Soul Audit curation reliability', () => {
     expect(completeSeries.length).toBeGreaterThan(0)
   })
 
-  it('selecting the first AI option returns a devotional plan or explicit fail-closed signal', async () => {
+  it('selecting the first AI option always returns a devotional plan route', async () => {
     const localOptions = buildAuditOptions(
       'too much on my plate and I need focused peace and faithful structure',
     )
@@ -87,18 +87,12 @@ describe('Soul Audit curation reliability', () => {
       ok?: boolean
       selectionType?: string
       planToken?: string
-      code?: string
+      route?: string
     }
-    if (selectResponse.status === 200) {
-      expect(selectPayload.ok).toBe(true)
-      expect(selectPayload.selectionType).toBe('ai_primary')
-      expect(typeof selectPayload.planToken).toBe('string')
-      return
-    }
-
-    expect(selectResponse.status).toBe(422)
-    expect(selectPayload.code).toMatch(
-      /MISSING_REFERENCE_GROUNDING|MISSING_CURATED_MODULE/,
-    )
+    expect(selectResponse.status).toBe(200)
+    expect(selectPayload.ok).toBe(true)
+    expect(selectPayload.selectionType).toBe('ai_primary')
+    expect(typeof selectPayload.planToken).toBe('string')
+    expect(selectPayload.route).toMatch(/planToken=.*&day=\d+/)
   })
 })

@@ -5,6 +5,38 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## AI Pathway Root-Cause Fix + Selection Contrast Update (2026-02-20)
+
+### What Changed
+
+- Fixed the AI pathway root cause where selection could fail with curated grounding errors and appear as a dead click.
+- Added deterministic metadata-plan fallback generation when curated module/reference grounding is unavailable so AI selections always return a valid plan route.
+- Updated AI selection routing to day-qualified routes (`planToken` + `day`) and aligned current-route resume behavior/cookie continuity.
+- Updated Soul Audit results client to navigate using API-provided route for AI selections.
+- Updated copy/paste text selection styling so selected text renders white in both standard and Firefox engines (`::selection` and `::-moz-selection`).
+
+### Files
+
+- `src/lib/soul-audit/reference-volumes.ts`
+- `src/lib/soul-audit/metadata-plan-builder.ts`
+- `src/app/api/soul-audit/select/route.ts`
+- `src/app/api/soul-audit/current/route.ts`
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/globals.css`
+- `__tests__/soul-audit-flow.test.ts`
+- `__tests__/soul-audit-curation.test.ts`
+- `__tests__/soul-audit-current-route.test.ts`
+- `__tests__/contrast-readability-contract.test.ts`
+- `__tests__/soul-audit-reference-volumes.test.ts`
+- `__tests__/metadata-plan-builder.test.ts`
+
+### Validation
+
+- `npm run type-check`
+- `npm test -- --run __tests__/soul-audit-flow.test.ts __tests__/soul-audit-curation.test.ts __tests__/soul-audit-current-route.test.ts __tests__/contrast-readability-contract.test.ts __tests__/soul-audit-reference-volumes.test.ts __tests__/metadata-plan-builder.test.ts`
+
+---
+
 ## Scripture-First Cards + Homepage Prompt Weight Fix (2026-02-20)
 
 ### What Changed

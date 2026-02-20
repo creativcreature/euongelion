@@ -287,12 +287,9 @@ describe('Soul Audit staged flow', () => {
         break
       }
 
-      // Fail-closed (422) is expected for incomplete curated series candidates.
-      if (selectionResponse.status !== 422) {
-        throw new Error(
-          `Unexpected selection status ${selectionResponse.status}: ${JSON.stringify(selectionPayload)}`,
-        )
-      }
+      throw new Error(
+        `Unexpected selection status ${selectionResponse.status}: ${JSON.stringify(selectionPayload)}`,
+      )
     }
 
     expect(successful).toBe(true)
@@ -303,7 +300,7 @@ describe('Soul Audit staged flow', () => {
     expect(selectionPayload.ok).toBe(true)
     expect(selectionPayload.selectionType).toBe('ai_primary')
     expect(selectionPayload.planToken).toBeTruthy()
-    expect(selectionPayload.route).toMatch(/planToken=/)
+    expect(selectionPayload.route).toMatch(/planToken=.*&day=\d+/)
   })
 
   it('prefab option routes to series overview after consent + selection', async () => {

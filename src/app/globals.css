@@ -1243,8 +1243,13 @@ html.reduce-motion *::after {
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--color-gold) 78%, transparent);
-    color: var(--color-fg);
+    background: color-mix(in srgb, var(--color-text-primary) 70%, black 30%);
+    color: #fff;
+  }
+
+  ::-moz-selection {
+    background: color-mix(in srgb, var(--color-text-primary) 70%, black 30%);
+    color: #fff;
   }
 
   /* Day number: architectural display (120-160px) */
