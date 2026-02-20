@@ -64,7 +64,12 @@ function focusPhrase(value: string): string {
 
 function ensureMinimumLength(value: string, minimum: number): string {
   if (value.length >= minimum) return value
-  return `${value}\n\nStay with this text for two minutes before moving on. Ask what obedience looks like by the end of the day.`
+  return `${value}\n\nStay with this text for two minutes before moving on. Ask what faithful obedience looks like before the day ends.\n\nWrite one line: "Today I will respond by ___."`
+}
+
+function clamp(value: string, limit: number): string {
+  if (value.length <= limit) return value
+  return `${value.slice(0, limit - 3).trimEnd()}...`
 }
 
 function personalizedBridge(
@@ -84,19 +89,27 @@ function personalizedBridge(
 function expandedReflection(
   userResponse: string,
   day: CuratedDayCandidate,
-  referenceHit?: { source: string; excerpt: string },
+  referenceHits: Array<{ source: string; excerpt: string }>,
 ): string {
   const bridge = personalizedBridge(userResponse, day)
   const themes = focusPhrase(userResponse)
-  const contextualNote = referenceHit
-    ? `Reference grounding (${referenceHit.source}): ${referenceHit.excerpt}`
-    : 'Stay with the text slowly. Let the Scripture name what you are carrying before you try to fix it.'
+  const scriptureAnchor = `Scripture anchor (${day.scriptureReference}): ${clamp(day.scriptureText, 520)}`
+  const reflectionPromptLine = `Reflection prompt: ${day.reflectionPrompt}`
+  const contextualNote =
+    referenceHits.length > 0
+      ? referenceHits
+          .map(
+            (hit, index) =>
+              `Commentary witness ${index + 1} (${hit.source}): ${hit.excerpt}`,
+          )
+          .join('\n\n')
+      : 'Stay with the text slowly. Let the Scripture name what you are carrying before you try to fix it.'
   const thematicLine = themes
     ? `The burden language you shared points to ${themes}. Read for where this passage addresses that directly.`
     : 'Read for the phrase that most clearly names your present burden.'
   return ensureMinimumLength(
-    `${day.teachingText}\n\n${thematicLine}\n\n${bridge}\n\n${contextualNote}`,
-    420,
+    `${scriptureAnchor}\n\n${day.teachingText}\n\n${reflectionPromptLine}\n\n${thematicLine}\n\n${bridge}\n\n${contextualNote}`,
+    700,
   )
 }
 
@@ -114,11 +127,12 @@ function expandedPrayer(
 ): string {
   return ensureMinimumLength(
     [
+      `Jesus, as I receive ${day.scriptureReference}, slow me down enough to listen and obey.`,
       day.prayerText,
       personalizedPrayerLine(userResponse),
       `Anchor this in me today through ${day.scriptureReference}, and give me courage to live what I read.`,
     ].join('\n\n'),
-    220,
+    280,
   )
 }
 
@@ -233,7 +247,7 @@ export function buildCuratedFirstPlan(params: {
     const referenceHits = retrieveReferenceHits({
       userResponse: params.userResponse,
       scriptureReference: candidate.scriptureReference,
-      limit: 2,
+      limit: 3,
     })
     if (referenceHits.length === 0) {
       throw new MissingReferenceGroundingError(params.seriesSlug, dayNumber)
@@ -241,7 +255,7 @@ export function buildCuratedFirstPlan(params: {
     const reflection = expandedReflection(
       params.userResponse,
       candidate,
-      referenceHits[0],
+      referenceHits,
     )
     const prayer = expandedPrayer(params.userResponse, candidate)
 

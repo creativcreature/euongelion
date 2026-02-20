@@ -80,7 +80,28 @@ function getLowContextGuidance(input: string): string | null {
   return 'We built options from a short input. Add one more sentence for more precise curation.'
 }
 
-function buildEmergencyFallbackOptions(input: string): AuditOptionPreview[] {
+function createOptionVariantSeed(): number {
+  try {
+    const seed = new Uint32Array(1)
+    crypto.getRandomValues(seed)
+    return (Date.now() ^ seed[0]) >>> 0
+  } catch {
+    return Date.now() >>> 0
+  }
+}
+
+const FALLBACK_TITLE_VARIANTS = [
+  'Start Here',
+  'Steady Steps',
+  'Quiet Resolve',
+  'Honest Prayer',
+  'Faithful Next Step',
+]
+
+function buildEmergencyFallbackOptions(
+  input: string,
+  variantSeed: number,
+): AuditOptionPreview[] {
   const uniqueSlugs = Array.from(new Set(ALL_SERIES_ORDER)).filter(
     (slug) =>
       slug in SERIES_DATA &&
@@ -91,8 +112,9 @@ function buildEmergencyFallbackOptions(input: string): AuditOptionPreview[] {
 
   const snippet = input.trim().slice(0, 68) || 'this season'
   const required = SOUL_AUDIT_OPTION_SPLIT.total
+  const rotation = uniqueSlugs.length > 0 ? variantSeed % uniqueSlugs.length : 0
   const selectedSlugs = Array.from({ length: required }, (_, index) => {
-    return uniqueSlugs[index % uniqueSlugs.length]
+    return uniqueSlugs[(rotation + index) % uniqueSlugs.length]
   })
 
   return selectedSlugs.map((slug, index) => {
@@ -108,12 +130,19 @@ function buildEmergencyFallbackOptions(input: string): AuditOptionPreview[] {
           0.52 - (index - SOUL_AUDIT_OPTION_SPLIT.aiPrimary) * 0.08,
         )
 
+    const variantLabel =
+      FALLBACK_TITLE_VARIANTS[
+        (variantSeed + index) % FALLBACK_TITLE_VARIANTS.length
+      ]
+
     return {
       id: `${aiPrimary ? 'ai_primary' : 'curated_prefab'}:${slug}:${dayNumber}:${index + 1}`,
       slug,
       kind: aiPrimary ? 'ai_primary' : 'curated_prefab',
       rank: index + 1,
-      title: aiPrimary ? `${series.title}: ${snippet}` : series.title,
+      title: aiPrimary
+        ? `${series.title}: ${snippet} - ${variantLabel}`
+        : series.title,
       question: series.question,
       confidence: Number(baseConfidence.toFixed(3)),
       reasoning: aiPrimary
@@ -240,9 +269,10 @@ export async function POST(request: NextRequest) {
 
     const crisisDetected = detectCrisis(responseText)
     const inputGuidance = getLowContextGuidance(responseText)
-    let options = buildAuditOptions(responseText)
+    const optionVariantSeed = createOptionVariantSeed()
+    let options = buildAuditOptions(responseText, optionVariantSeed)
     if (!hasExpectedOptionSplit(options)) {
-      options = buildEmergencyFallbackOptions(responseText)
+      options = buildEmergencyFallbackOptions(responseText, optionVariantSeed)
     }
     if (!hasExpectedOptionSplit(options)) {
       return jsonError({

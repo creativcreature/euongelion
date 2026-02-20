@@ -19,9 +19,18 @@ function normalizeRedirectPath(value: string | null): string {
   return trimmed
 }
 
+function authErrorMessage(code: string | null): string {
+  if (!code) return ''
+  if (code === 'auth_failed') {
+    return 'Sign-up could not be completed. Please try again.'
+  }
+  return 'Sign-up could not be completed. Please try again.'
+}
+
 function SignUpForm() {
   const searchParams = useSearchParams()
   const redirect = normalizeRedirectPath(searchParams.get('redirect'))
+  const callbackError = authErrorMessage(searchParams.get('error'))
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>(
     'idle',
@@ -130,6 +139,12 @@ function SignUpForm() {
       <p className="vw-body mb-8 text-center text-secondary">
         Use email magic link. No password needed.
       </p>
+
+      {callbackError && (
+        <p className="vw-small mb-6 text-center text-secondary">
+          {callbackError}
+        </p>
+      )}
 
       <div className="mb-6 space-y-3">
         <button

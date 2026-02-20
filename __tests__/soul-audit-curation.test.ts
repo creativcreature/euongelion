@@ -44,6 +44,15 @@ describe('Soul Audit curation reliability', () => {
     expect(completeSeries.length).toBeGreaterThan(0)
   })
 
+  it('extracts rich module text from nested data modules', () => {
+    const candidates = getCuratedDayCandidates()
+    const candidate = candidates.find((item) => item.seriesSlug === 'why-jesus')
+    expect(candidate).toBeTruthy()
+    expect((candidate?.teachingText ?? '').length).toBeGreaterThan(200)
+    expect((candidate?.reflectionPrompt ?? '').length).toBeGreaterThan(30)
+    expect((candidate?.scriptureText ?? '').length).toBeGreaterThan(60)
+  })
+
   it('selecting the first AI option always returns a devotional plan route', async () => {
     const localOptions = buildAuditOptions(
       'too much on my plate and I need focused peace and faithful structure',

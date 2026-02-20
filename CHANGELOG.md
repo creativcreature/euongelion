@@ -5,6 +5,55 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Post-Signup Onboarding + Deeper AI Devotional Curation (2026-02-20)
+
+### What Changed
+
+- Added a skippable post-signup onboarding flow at `/onboarding`:
+  - Sabbath selection (`Saturday` / `Sunday`)
+  - Appearance + readability defaults (`theme`, `text size`, `reduce motion`, `high contrast`, `reading comfort`)
+  - Bible translation default selection
+  - Feature orientation for Soul Audit, Daily Bread, and Settings
+- Updated auth callback routing to send first-session users into onboarding before normal app entry, while preserving safe redirect targets.
+- Added onboarding state persistence through authenticated metadata API (`/api/auth/onboarding`) and replay entry from Settings.
+- Improved auth failure UX by routing callback failures to sign-in/sign-up with explicit error state instead of silent homepage fallback.
+- Fixed AI devotional short-output root causes:
+  - Curated module parser now hydrates nested `data` payloads correctly.
+  - Curation engine now aggregates multi-block teaching/commentary text per day instead of taking only the first block.
+  - Reference-volume retrieval now prefers higher-signal commentary excerpts and avoids noisy corpus paths.
+  - Metadata fallback devotional days now generate longer reflection/prayer content.
+- Removed remaining localhost redirect fallbacks from runtime `src/` auth URL resolution.
+
+### Files
+
+- `src/lib/auth/onboarding.ts`
+- `src/app/api/auth/onboarding/route.ts`
+- `src/app/onboarding/page.tsx`
+- `src/app/onboarding/OnboardingClient.tsx`
+- `src/app/auth/callback/route.ts`
+- `src/app/auth/sign-in/page.tsx`
+- `src/app/auth/sign-up/page.tsx`
+- `src/proxy.ts`
+- `src/app/settings/page.tsx`
+- `src/lib/auth.ts`
+- `src/lib/soul-audit/curated-catalog.ts`
+- `src/lib/soul-audit/curation-engine.ts`
+- `src/lib/soul-audit/curated-builder.ts`
+- `src/lib/soul-audit/reference-volumes.ts`
+- `src/lib/soul-audit/metadata-plan-builder.ts`
+- `__tests__/auth-onboarding-state.test.ts`
+- `__tests__/soul-audit-curation.test.ts`
+- `__tests__/metadata-plan-builder.test.ts`
+- `docs/feature-prds/F-028.md`
+- `docs/feature-prds/F-050.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm test -- --run __tests__/auth-onboarding-state.test.ts __tests__/soul-audit-curation.test.ts __tests__/soul-audit-option-specificity.test.ts __tests__/soul-audit-fallback-options.test.ts __tests__/soul-audit-reference-volumes.test.ts __tests__/metadata-plan-builder.test.ts`
+
+---
+
 ## Auth v7.1 Patch: Kill-Switch Checklist Clarity + Upstash Limiter Analytics (2026-02-20)
 
 ### What Changed

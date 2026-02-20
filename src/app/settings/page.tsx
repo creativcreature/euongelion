@@ -509,9 +509,16 @@ export default function SettingsPage() {
               WALKTHROUGH &amp; HELP
             </h2>
             <p className="vw-small mb-4 text-secondary">
-              Replay the guided Daily Bread walkthrough at any time.
+              Replay onboarding or the guided Daily Bread walkthrough at any
+              time.
             </p>
             <div className="flex flex-wrap items-center gap-4">
+              <Link
+                href="/onboarding?force=1&redirect=%2Fsettings"
+                className="mock-btn text-label"
+              >
+                REPLAY ONBOARDING
+              </Link>
               <Link
                 href="/daily-bread?tutorial=1"
                 className="mock-btn text-label"

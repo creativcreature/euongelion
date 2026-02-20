@@ -1,6 +1,14 @@
 import { createClient } from './supabase/server'
 import { getSession, linkSessionToUser } from './session'
 
+function resolveAuthRedirectBaseUrl(): string {
+  const configured = process.env.NEXT_PUBLIC_APP_URL?.trim()
+  if (configured) return configured.replace(/\/$/, '')
+
+  // Keep auth callbacks canonical when env config is missing.
+  return 'https://euangelion.app'
+}
+
 /**
  * Get the currently authenticated user (or null)
  */
@@ -17,12 +25,11 @@ export async function getUser() {
  */
 export async function sendMagicLink(email: string, redirectTo?: string) {
   const supabase = await createClient()
+  const authRedirectBaseUrl = resolveAuthRedirectBaseUrl()
   const { error } = await supabase.auth.signInWithOtp({
     email,
     options: {
-      emailRedirectTo:
-        redirectTo ||
-        `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3333'}/auth/callback`,
+      emailRedirectTo: redirectTo || `${authRedirectBaseUrl}/auth/callback`,
     },
   })
 

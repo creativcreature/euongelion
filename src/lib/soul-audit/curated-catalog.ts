@@ -34,10 +34,34 @@ function normalizeModule(raw: unknown): CuratedDayModule | null {
     rawModule.content && typeof rawModule.content === 'object'
       ? (rawModule.content as JsonObject)
       : {}
+  const data =
+    rawModule.data && typeof rawModule.data === 'object'
+      ? (rawModule.data as JsonObject)
+      : {}
+
+  const promptText = String(data.prompt_text || '').trim()
+  const questionText = String(data.question || '').trim()
+  const takeawayAction = String(data.action || '').trim()
+  const takeawayText = String(data.text || '').trim()
 
   return {
-    ...content,
     ...rawModule,
+    ...content,
+    ...data,
+    ...(promptText ? { prompt: promptText } : {}),
+    ...(!promptText && questionText ? { prompt: questionText } : {}),
+    ...(takeawayAction ? { commitment: takeawayAction } : {}),
+    ...(!takeawayAction && takeawayText && type === 'takeaway'
+      ? { commitment: takeawayText }
+      : {}),
+    ...(typeof data.modern === 'string' &&
+    !Object.prototype.hasOwnProperty.call(data, 'modernApplication')
+      ? { modernApplication: data.modern }
+      : {}),
+    ...(typeof data.connection === 'string' &&
+    !Object.prototype.hasOwnProperty.call(data, 'connectionPoint')
+      ? { connectionPoint: data.connection }
+      : {}),
     type,
   }
 }

@@ -6,7 +6,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 const AUTH_REQUIRED_ROUTES: string[] = []
 
 // Routes that always require auth
-const PROTECTED_ROUTES = ['/settings']
+const PROTECTED_ROUTES = ['/settings', '/onboarding']
 const ADMIN_ROUTES = ['/admin']
 
 function adminAllowlist(): string[] {

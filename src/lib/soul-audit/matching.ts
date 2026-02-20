@@ -50,6 +50,15 @@ const TITLE_STOP_WORDS = new Set([
   'about',
 ])
 
+const OPTION_TITLE_VARIANTS = [
+  'Start Here',
+  'Faithful Next Step',
+  'Steady Rebuild',
+  'Quiet Resolve',
+  'Daily Realignment',
+  'Honest Momentum',
+]
+
 export function sanitizeAuditInput(input: unknown): string {
   if (typeof input !== 'string') return ''
   return input
@@ -118,6 +127,17 @@ function extractCoreBurden(input: string, maxLength = 64): string {
     output = next
   }
   return output || source.slice(0, maxLength).trimEnd()
+}
+
+function normalizeVariantSeed(seed?: number): number | null {
+  if (typeof seed !== 'number' || !Number.isFinite(seed)) return null
+  const normalized = Math.abs(Math.trunc(seed))
+  return Number.isFinite(normalized) ? normalized : null
+}
+
+function optionTitleVariant(seed: number | null, rank: number): string | null {
+  if (seed === null) return null
+  return OPTION_TITLE_VARIANTS[(seed + rank) % OPTION_TITLE_VARIANTS.length]
 }
 
 function extractInputThemeTerms(input: string): string[] {
@@ -377,22 +397,27 @@ function makeOption(params: {
   confidence: number
   input: string
   matched?: string[]
+  variantSeed?: number
 }): AuditOptionPreview {
   const matched = params.matched ?? []
   const aiPrimary = params.kind === 'ai_primary'
+  const variantSeed = normalizeVariantSeed(params.variantSeed)
+  const variant = optionTitleVariant(variantSeed, params.rank)
+  const baseTitle = aiPrimary
+    ? buildAiGeneratedTitle({
+        candidate: params.candidate,
+        input: params.input,
+        matched,
+      })
+    : params.candidate.seriesTitle
+  const title = aiPrimary && variant ? `${baseTitle} - ${variant}` : baseTitle
 
   return {
     id: `${params.kind}:${params.candidate.seriesSlug}:${params.candidate.dayNumber}:${params.rank}`,
     slug: params.candidate.seriesSlug,
     kind: params.kind,
     rank: params.rank,
-    title: aiPrimary
-      ? buildAiGeneratedTitle({
-          candidate: params.candidate,
-          input: params.input,
-          matched,
-        })
-      : params.candidate.seriesTitle,
+    title,
     question: aiPrimary
       ? buildAiQuestion({
           candidate: params.candidate,
@@ -481,7 +506,10 @@ function hasExpectedOptionSplit(options: AuditOptionPreview[]): boolean {
   )
 }
 
-export function buildAuditOptions(input: string): AuditOptionPreview[] {
+export function buildAuditOptions(
+  input: string,
+  variantSeed?: number,
+): AuditOptionPreview[] {
   const primary = choosePrimaryMatches(input)
   let aiOptions = primary.map((match, index) =>
     makeOption({
@@ -491,6 +519,7 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
       confidence: match.confidence,
       input,
       matched: match.matched,
+      variantSeed,
     }),
   )
 
@@ -518,6 +547,7 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
           rank: aiOptions.length + idx + 1,
           confidence: 0.55,
           input,
+          variantSeed,
         }),
       )
     aiOptions = [...aiOptions, ...fillers]
@@ -544,6 +574,7 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
         id: `ai_primary:${template.slug}:${dayNumber}:${aiOptions.length + 1}`,
         rank: aiOptions.length + 1,
         confidence: Math.max(0.45, template.confidence - 0.05 * idx),
+        title: template.title,
       })
       idx += 1
     }
@@ -559,6 +590,7 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
         confidence: match.confidence,
         input,
         matched: match.matched,
+        variantSeed,
       }),
     )
   }
@@ -582,6 +614,7 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
         rank: aiOptions.length + index + 1,
         confidence: Math.max(0.35, 0.75 - index * 0.1),
         input,
+        variantSeed,
       })
     })
     .filter((option): option is AuditOptionPreview => Boolean(option))
@@ -607,6 +640,7 @@ export function buildAuditOptions(input: string): AuditOptionPreview[] {
         rank: aiOptions.length + prefabOptions.length + index + 1,
         confidence: 0.4,
         input,
+        variantSeed,
       })
     })
     .filter((option): option is AuditOptionPreview => Boolean(option))

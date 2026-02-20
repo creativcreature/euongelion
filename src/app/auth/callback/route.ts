@@ -3,6 +3,7 @@ import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { onAuthSuccess } from '@/lib/auth'
 import { sanitizeSafeRedirectPath } from '@/lib/api-security'
+import { shouldRequirePostSignupOnboarding } from '@/lib/auth/onboarding'
 
 type SupportedOtpType =
   | 'signup'
@@ -67,10 +68,23 @@ export async function GET(request: Request) {
     if (!authResult.error && authResult.data.user) {
       // Link anonymous session to authenticated user
       await onAuthSuccess(authResult.data.user.id)
+      const shouldOnboard = shouldRequirePostSignupOnboarding(
+        authResult.data.user,
+      )
+      const alreadyHeadingToOnboarding = redirect.startsWith('/onboarding')
+
+      if (shouldOnboard && !alreadyHeadingToOnboarding) {
+        const query = new URLSearchParams()
+        query.set('redirect', redirect)
+        return NextResponse.redirect(`${origin}/onboarding?${query.toString()}`)
+      }
+
       return NextResponse.redirect(`${origin}${redirect}`)
     }
   }
 
-  // Auth failed — redirect to home
-  return NextResponse.redirect(`${origin}/?error=auth_failed`)
+  // Auth failed — redirect to sign-in with explicit state.
+  return NextResponse.redirect(
+    `${origin}/auth/sign-in?error=auth_failed&redirect=${encodeURIComponent(redirect)}`,
+  )
 }

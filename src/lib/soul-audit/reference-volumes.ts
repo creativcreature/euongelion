@@ -38,28 +38,59 @@ const STOP_WORDS = new Set([
   'your',
 ])
 
+const SKIP_SEGMENTS = new Set(['.git', 'stepbible-data'])
+const MAX_FILE_BYTES = 4 * 1024 * 1024
+const MAX_LINES_PER_FILE = 220
+const MAX_CORPUS_LINES = 24000
+
+interface ReferenceCorpusLine {
+  source: string
+  sourcePriority: number
+  text: string
+  normalized: string
+}
+
+function shouldSkipPath(target: string): boolean {
+  const segments = target.split(path.sep)
+  return segments.some((segment) => SKIP_SEGMENTS.has(segment))
+}
+
 function collectReferenceFiles(dir: string, acc: string[]): void {
   if (!fs.existsSync(dir)) return
+  if (shouldSkipPath(dir)) return
+
   const entries = fs.readdirSync(dir, { withFileTypes: true })
   for (const entry of entries) {
     const full = path.join(dir, entry.name)
+    if (shouldSkipPath(full)) continue
+
     if (entry.isDirectory()) {
       collectReferenceFiles(full, acc)
       continue
     }
+
     if (!/\.(md|markdown|txt|json)$/i.test(entry.name)) continue
+
+    try {
+      const stat = fs.statSync(full)
+      if (stat.size > MAX_FILE_BYTES) continue
+    } catch {
+      continue
+    }
+
     acc.push(full)
   }
 }
 
 let cachedReferenceFiles: string[] | null = null
+let cachedCorpus: ReferenceCorpusLine[] | null = null
 
 function listReferenceFiles(root: string): string[] {
   if (cachedReferenceFiles) return cachedReferenceFiles
   const files: string[] = []
   collectReferenceFiles(root, files)
-  cachedReferenceFiles = files
-  return files
+  cachedReferenceFiles = files.sort()
+  return cachedReferenceFiles
 }
 
 function keywordsFromInput(input: string): string[] {
@@ -72,31 +103,40 @@ function keywordsFromInput(input: string): string[] {
         .map((w) => w.trim())
         .filter((w) => w.length >= 3 && !STOP_WORDS.has(w)),
     ),
-  ).slice(0, 16)
+  ).slice(0, 18)
 }
 
-export function retrieveReferenceHits(params: {
-  userResponse: string
-  scriptureReference: string
-  limit?: number
-}): ReferenceHit[] {
-  const root = path.join(process.cwd(), 'content', 'reference')
-  const files = listReferenceFiles(root)
+function lineLooksUsable(line: string): boolean {
+  const normalized = line.replace(/\s+/g, ' ').trim()
+  if (normalized.length < 48 || normalized.length > 420) return false
 
-  let keywords = keywordsFromInput(
-    `${params.userResponse} ${params.scriptureReference}`,
-  )
-  const limit = params.limit ?? 3
-  if (files.length === 0) return []
-  if (keywords.length === 0) {
-    keywords = keywordsFromInput(params.scriptureReference)
+  const words = normalized.split(' ')
+  if (words.length < 7) return false
+
+  const alphaChars = (normalized.match(/[a-z]/gi) ?? []).length
+  if (alphaChars < Math.floor(normalized.length * 0.45)) return false
+
+  return true
+}
+
+function sourcePriority(relativeSource: string): number {
+  if (relativeSource.includes(`${path.sep}commentaries${path.sep}`)) {
+    return relativeSource.endsWith('.txt') ? 5 : 3
   }
+  if (relativeSource.includes(`${path.sep}bibles${path.sep}`)) return 2
+  if (relativeSource.includes(`${path.sep}lexicons${path.sep}`)) return 2
+  if (relativeSource.includes(`${path.sep}dictionaries${path.sep}`)) return 2
+  return 1
+}
 
-  const hits: ReferenceHit[] = []
-  let deterministicFallback: ReferenceHit | null = null
+function buildReferenceCorpus(root: string): ReferenceCorpusLine[] {
+  if (cachedCorpus) return cachedCorpus
+
+  const files = listReferenceFiles(root)
+  const corpus: ReferenceCorpusLine[] = []
 
   for (const file of files) {
-    if (hits.length >= limit) break
+    if (corpus.length >= MAX_CORPUS_LINES) break
 
     let text = ''
     try {
@@ -106,30 +146,128 @@ export function retrieveReferenceHits(params: {
     }
 
     const relativeSource = path.relative(process.cwd(), file)
+    const priority = sourcePriority(relativeSource)
     const lines = text.split('\n')
 
-    for (const line of lines) {
-      const normalized = line.toLowerCase()
-      if (!normalized.trim()) continue
-      if (!deterministicFallback) {
-        deterministicFallback = {
-          source: relativeSource,
-          excerpt: line.trim().slice(0, 240),
-        }
-      }
-      if (keywords.length === 0) continue
+    let acceptedFromFile = 0
+    for (const rawLine of lines) {
+      if (acceptedFromFile >= MAX_LINES_PER_FILE) break
+      if (corpus.length >= MAX_CORPUS_LINES) break
 
-      if (keywords.some((keyword) => normalized.includes(keyword))) {
-        hits.push({
-          source: relativeSource,
-          excerpt: line.trim().slice(0, 240),
-        })
-        break
-      }
+      const trimmed = rawLine.replace(/\s+/g, ' ').trim()
+      if (!lineLooksUsable(trimmed)) continue
+
+      corpus.push({
+        source: relativeSource,
+        sourcePriority: priority,
+        text: trimmed,
+        normalized: trimmed.toLowerCase(),
+      })
+      acceptedFromFile += 1
     }
   }
 
-  if (hits.length > 0) return hits.slice(0, limit)
+  cachedCorpus = corpus
+  return corpus
+}
 
-  return deterministicFallback ? [deterministicFallback] : []
+function tokenizeScriptureReference(reference: string): string[] {
+  const compact = reference.replace(/\s+/g, ' ').trim().toLowerCase()
+  if (!compact) return []
+
+  return compact
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .map((token) => token.trim())
+    .filter((token) => token.length >= 2)
+    .slice(0, 5)
+}
+
+function countKeywordHits(line: string, keywords: string[]): number {
+  let hits = 0
+  for (const keyword of keywords) {
+    if (line.includes(keyword)) hits += 1
+  }
+  return hits
+}
+
+function deterministicScore(line: ReferenceCorpusLine): number {
+  const stable = `${line.source}|${line.text}`
+  return stable.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0)
+}
+
+export function retrieveReferenceHits(params: {
+  userResponse: string
+  scriptureReference: string
+  limit?: number
+}): ReferenceHit[] {
+  const root = path.join(process.cwd(), 'content', 'reference')
+  const corpus = buildReferenceCorpus(root)
+  const limit = params.limit ?? 3
+  if (corpus.length === 0) return []
+
+  let keywords = keywordsFromInput(
+    `${params.userResponse} ${params.scriptureReference}`,
+  )
+  if (keywords.length === 0) {
+    keywords = keywordsFromInput(params.scriptureReference)
+  }
+
+  const scriptureTokens = tokenizeScriptureReference(params.scriptureReference)
+  const scored = corpus
+    .map((line) => {
+      const keywordHits = countKeywordHits(line.normalized, keywords)
+      const scriptureHits = countKeywordHits(line.normalized, scriptureTokens)
+      const score =
+        line.sourcePriority * 4 + keywordHits * 5 + scriptureHits * 3
+
+      return {
+        line,
+        score,
+        keywordHits,
+        scriptureHits,
+        deterministic: deterministicScore(line),
+      }
+    })
+    .filter((entry) =>
+      keywords.length > 0
+        ? entry.keywordHits > 0 || entry.scriptureHits > 0
+        : entry.scriptureHits > 0,
+    )
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score
+      return a.deterministic - b.deterministic
+    })
+
+  const hits: ReferenceHit[] = []
+  const seen = new Set<string>()
+
+  for (const entry of scored) {
+    const dedupeKey = `${entry.line.source}|${entry.line.text.toLowerCase()}`
+    if (seen.has(dedupeKey)) continue
+    seen.add(dedupeKey)
+
+    hits.push({
+      source: entry.line.source,
+      excerpt: entry.line.text.slice(0, 280),
+    })
+
+    if (hits.length >= limit) break
+  }
+
+  if (hits.length > 0) return hits
+
+  const deterministicFallback =
+    corpus.find((line) =>
+      line.source.includes(`${path.sep}commentaries${path.sep}`),
+    ) ?? corpus[0]
+
+  if (!deterministicFallback) return []
+
+  return [
+    {
+      source: deterministicFallback.source,
+      excerpt: deterministicFallback.text.slice(0, 280),
+    },
+  ]
 }

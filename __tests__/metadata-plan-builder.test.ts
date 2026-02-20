@@ -12,5 +12,7 @@ describe('buildMetadataFallbackPlan', () => {
     expect(plan[0]?.day).toBe(1)
     expect(plan[4]?.day).toBe(5)
     expect(plan.every((day) => day.scriptureReference.length > 0)).toBe(true)
+    expect(plan.every((day) => day.reflection.length >= 500)).toBe(true)
+    expect(plan.every((day) => day.prayer.length >= 220)).toBe(true)
   })
 })
