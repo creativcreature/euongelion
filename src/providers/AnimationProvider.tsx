@@ -7,6 +7,7 @@ import {
   useEffect,
   type ReactNode,
 } from 'react'
+import { useSettingsStore } from '@/stores/settingsStore'
 
 interface AnimationContextValue {
   /** User prefers reduced motion */
@@ -42,6 +43,7 @@ export default function AnimationProvider({
 }: {
   children: ReactNode
 }) {
+  const reduceMotionSetting = useSettingsStore((state) => state.reduceMotion)
   const [prefersReducedMotion, setPrefersReducedMotion] =
     useState(getInitialMotion)
   const [isMobile, setIsMobile] = useState(getInitialMobile)
@@ -70,7 +72,7 @@ export default function AnimationProvider({
       value={{
         prefersReducedMotion,
         isMobile,
-        shouldAnimate: !prefersReducedMotion,
+        shouldAnimate: !prefersReducedMotion && !reduceMotionSetting,
       }}
     >
       {children}

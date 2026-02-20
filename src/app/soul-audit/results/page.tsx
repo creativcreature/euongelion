@@ -272,8 +272,6 @@ export default function SoulAuditResultsPage() {
     string | null
   >(null)
   const [rerollUsed, setRerollUsed] = useState(false)
-  const [showRerollConfirm, setShowRerollConfirm] = useState(false)
-  const [rerollConfirmValue, setRerollConfirmValue] = useState('')
   const [isRerolling, setIsRerolling] = useState(false)
   const [savedOptions, setSavedOptions] = useState<SavedAuditOption[]>([])
   const [savedOptionsMessage, setSavedOptionsMessage] = useState<string | null>(
@@ -343,11 +341,11 @@ export default function SoulAuditResultsPage() {
     return Number.isFinite(parsed) ? parsed : null
   }, [searchParams])
   const hasEssentialConsent = Boolean(siteConsent?.essentialAccepted)
-  const consentRequirementsMet = Boolean(
-    hasEssentialConsent &&
-    (!submitResult?.crisis.required || crisisAcknowledged),
+  const crisisRequirementsMet = Boolean(
+    !submitResult?.crisis.required || crisisAcknowledged,
   )
-  const optionSelectionReady = Boolean(!submitting && consentRequirementsMet)
+  const optionSelectionReady = Boolean(!submitting && crisisRequirementsMet)
+  const rerollsRemaining = rerollUsed ? 0 : 1
 
   const loadPlan = useCallback(async (token: string) => {
     setLoadingPlan(true)
@@ -568,15 +566,15 @@ export default function SoulAuditResultsPage() {
     if (!submitResult) return null
     if (!hasEssentialConsent) {
       setError(
-        'Essential cookies must be accepted in the site cookie notice before continuing.',
+        'Cookie consent is handled at site entry. Please complete the cookie notice and retry.',
       )
       return null
     }
-    if (!consentRequirementsMet) {
+    if (!crisisRequirementsMet) {
       setError(
         submitResult.crisis.required && !crisisAcknowledged
           ? 'Acknowledge crisis resources before continuing.'
-          : 'Cookie consent is required before continuing.',
+          : 'Unable to continue right now.',
       )
       return null
     }
@@ -623,13 +621,11 @@ export default function SoulAuditResultsPage() {
 
   async function submitConsentAndSelect(optionId: string) {
     if (!submitResult) return
-    if (!consentRequirementsMet) {
+    if (!crisisRequirementsMet) {
       setError(
-        !hasEssentialConsent
-          ? 'Accept essential cookies in the site cookie notice before choosing a devotional path.'
-          : submitResult.crisis.required && !crisisAcknowledged
-            ? 'Acknowledge crisis resources before choosing a devotional path.'
-            : 'Cookie consent is required before choosing a devotional path.',
+        submitResult.crisis.required && !crisisAcknowledged
+          ? 'Acknowledge crisis resources before choosing a devotional path.'
+          : 'Option selection is currently unavailable.',
       )
       return
     }
@@ -762,8 +758,6 @@ export default function SoulAuditResultsPage() {
       setSelection(null)
       setCrisisAcknowledged(false)
       setExpandedReasoningOptionId(null)
-      setShowRerollConfirm(false)
-      setRerollConfirmValue('')
       setRerollUsed(true)
 
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
@@ -823,8 +817,6 @@ export default function SoulAuditResultsPage() {
       setRunExpired(false)
       setCrisisAcknowledged(false)
       setExpandedReasoningOptionId(null)
-      setShowRerollConfirm(false)
-      setRerollConfirmValue('')
       setRerollUsed(false)
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
       sessionStorage.removeItem('soul-audit-selection-v2')
@@ -1028,21 +1020,11 @@ export default function SoulAuditResultsPage() {
                     Tap a card to continue. Each option is clickable.
                   </p>
                 )}
-                {!planToken && submitResult?.inputGuidance && (
+                {!planToken && (
                   <p className="vw-small mt-3 text-muted">
-                    {submitResult.inputGuidance}
+                    We built options from a short input. Add one more sentence
+                    for more precise curation.
                   </p>
-                )}
-                {(planToken || submitResult) && (
-                  <div className="mt-4">
-                    <button
-                      type="button"
-                      className="mock-reset-btn text-label"
-                      onClick={() => void handleResetAudit()}
-                    >
-                      RESET AUDIT
-                    </button>
-                  </div>
                 )}
                 {planToken && onboardingKicker && onboardingBlurb && (
                   <div
@@ -1067,95 +1049,13 @@ export default function SoulAuditResultsPage() {
 
             {!planToken && submitResult && (
               <>
-                <FadeIn>
-                  <section
-                    className="mb-7 border p-4"
-                    style={{ borderColor: 'var(--color-border)' }}
-                  >
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <p className="text-label vw-small text-gold">
-                        SAVED PATHS
-                      </p>
-                      {hasStaleSavedOptions && (
-                        <button
-                          type="button"
-                          className="text-label vw-small link-highlight"
-                          onClick={cleanSavedOptions}
-                        >
-                          Monthly clean house
-                        </button>
-                      )}
-                    </div>
-                    {savedOptions.length === 0 ? (
-                      <p className="vw-small mt-2 text-muted">
-                        Save options you may want to revisit later.
-                      </p>
-                    ) : (
-                      <div className="mt-3 grid gap-2">
-                        {savedOptions.slice(0, 6).map((saved) => (
-                          <div
-                            key={`saved-option-${saved.id}`}
-                            className="border px-3 py-2"
-                            style={{ borderColor: 'var(--color-border)' }}
-                          >
-                            <div className="flex flex-wrap items-center justify-between gap-2">
-                              {saved.verse && (
-                                <p className="audit-option-verse vw-small w-full">
-                                  {typographer(saved.verse)}
-                                </p>
-                              )}
-                              <p className="text-label vw-small text-gold">
-                                {saved.title}
-                              </p>
-                              <button
-                                type="button"
-                                className="text-label vw-small link-highlight"
-                                onClick={() => removeSavedOption(saved.id)}
-                              >
-                                Remove
-                              </button>
-                            </div>
-                            <p className="vw-small mt-1 text-secondary">
-                              {typographer(saved.question)}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                    {savedOptionsMessage && (
-                      <p className="vw-small mt-2 text-muted">
-                        {savedOptionsMessage}
-                      </p>
-                    )}
-                  </section>
-                </FadeIn>
-
-                <FadeIn>
-                  <section
-                    className="mb-8 rounded-none border p-6"
-                    style={{ borderColor: 'var(--color-border)' }}
-                  >
-                    {!hasEssentialConsent && (
-                      <div
-                        className="mb-5 border-b pb-4"
-                        style={{ borderColor: 'var(--color-border)' }}
-                      >
-                        <p className="text-label vw-small mb-2 text-gold">
-                          COOKIE CONSENT REQUIRED
-                        </p>
-                        <p className="vw-small text-secondary">
-                          Accept essential cookies in the site cookie notice to
-                          continue. This is now handled at site entry, not in
-                          Soul Audit options.
-                        </p>
-                      </div>
-                    )}
-
-                    {submitResult.crisis.required && (
-                      <div
-                        className="mb-5 border-b pb-4"
-                        style={{ borderColor: 'var(--color-border)' }}
-                      >
+                {submitResult.crisis.required && (
+                  <FadeIn>
+                    <section
+                      className="mb-6 rounded-none border p-6"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      <div>
                         <p className="text-label vw-small mb-2 text-gold">
                           CRISIS SUPPORT
                         </p>
@@ -1208,121 +1108,9 @@ export default function SoulAuditResultsPage() {
                           </span>
                         </label>
                       </div>
-                    )}
-
-                    {hasEssentialConsent && !submitResult.crisis.required && (
-                      <p className="vw-small text-secondary">
-                        Cookie consent is already recorded. Choose a devotional
-                        path below.
-                      </p>
-                    )}
-                    {hasEssentialConsent &&
-                      submitResult.crisis.required &&
-                      !crisisAcknowledged && (
-                        <p className="vw-small text-secondary">
-                          Acknowledge crisis resources above to unlock option
-                          selection.
-                        </p>
-                      )}
-                    {!hasEssentialConsent && (
-                      <p className="vw-small text-secondary">
-                        The cookie notice must be completed before option
-                        selection can continue.
-                      </p>
-                    )}
-                    {optionSelectionReady && (
-                      <p className="vw-small text-secondary">
-                        You can now select any option.
-                      </p>
-                    )}
-                    {siteConsent && (
-                      <p className="vw-small text-muted mt-2">
-                        Analytics:{' '}
-                        {siteConsent.analyticsOptIn ? 'opted in' : 'opted out'}{' '}
-                        (managed in cookie notice/settings).
-                      </p>
-                    )}
-                    <div className="mt-4">
-                      <p className="vw-small text-secondary">
-                        Cookie policy details:{' '}
-                        <Link href="/cookie-policy" className="link-highlight">
-                          /cookie-policy
-                        </Link>
-                      </p>
-                    </div>
-                  </section>
-                </FadeIn>
-
-                <FadeIn>
-                  <section
-                    className="mb-7 border p-4"
-                    style={{ borderColor: 'var(--color-border)' }}
-                  >
-                    <p className="text-label vw-small mb-2 text-gold">
-                      OPTION CONTROLS
-                    </p>
-                    <p className="vw-small text-secondary">
-                      You can reroll once. Rerolling discards the current 5
-                      options permanently.
-                    </p>
-                    {!rerollUsed ? (
-                      <div className="mt-3 flex flex-wrap items-center gap-2">
-                        {!showRerollConfirm ? (
-                          <button
-                            type="button"
-                            className="text-label vw-small link-highlight"
-                            onClick={() => setShowRerollConfirm(true)}
-                            disabled={isRerolling || submitting}
-                          >
-                            Reroll Options (1x)
-                          </button>
-                        ) : (
-                          <>
-                            <input
-                              value={rerollConfirmValue}
-                              onChange={(event) =>
-                                setRerollConfirmValue(event.target.value)
-                              }
-                              placeholder="Type REROLL"
-                              className="bg-surface-raised px-3 py-2 vw-small"
-                              style={{
-                                border: '1px solid var(--color-border)',
-                              }}
-                              disabled={isRerolling}
-                            />
-                            <button
-                              type="button"
-                              className="cta-major text-label vw-small px-4 py-2 disabled:opacity-50"
-                              disabled={
-                                isRerolling ||
-                                rerollConfirmValue.trim().toUpperCase() !==
-                                  'REROLL'
-                              }
-                              onClick={() => void rerollOptions()}
-                            >
-                              {isRerolling ? 'Rerolling...' : 'Confirm Reroll'}
-                            </button>
-                            <button
-                              type="button"
-                              className="text-label vw-small link-highlight"
-                              onClick={() => {
-                                setShowRerollConfirm(false)
-                                setRerollConfirmValue('')
-                              }}
-                              disabled={isRerolling}
-                            >
-                              Cancel
-                            </button>
-                          </>
-                        )}
-                      </div>
-                    ) : (
-                      <p className="vw-small mt-2 text-muted">
-                        Reroll already used for this audit run.
-                      </p>
-                    )}
-                  </section>
-                </FadeIn>
+                    </section>
+                  </FadeIn>
+                )}
 
                 <FadeIn>
                   <section className="mb-6">
@@ -1337,11 +1125,9 @@ export default function SoulAuditResultsPage() {
                     </div>
                     {!optionSelectionReady && (
                       <p className="vw-small mb-4 text-secondary">
-                        {!hasEssentialConsent
-                          ? 'Complete cookie consent notice first.'
-                          : submitResult.crisis.required && !crisisAcknowledged
-                            ? 'Acknowledge crisis resources to unlock option selection.'
-                            : 'Option selection is currently unavailable.'}
+                        {submitResult.crisis.required && !crisisAcknowledged
+                          ? 'Acknowledge crisis resources to unlock option selection.'
+                          : 'Option selection is currently unavailable.'}
                       </p>
                     )}
                     <div className="grid gap-4 md:grid-cols-3">
@@ -1370,22 +1156,22 @@ export default function SoulAuditResultsPage() {
                               aria-disabled={!optionSelectionReady}
                             >
                               {option.preview?.verse && (
-                                <p className="audit-option-verse vw-small mb-2">
+                                <p className="audit-option-verse mb-2">
                                   {typographer(option.preview.verse)}
                                 </p>
                               )}
-                              <p className="text-label vw-small mb-2 text-gold">
+                              <p className="audit-option-title mb-2 text-gold">
                                 {option.title}
                               </p>
-                              <p className="vw-body mb-2">
+                              <p className="audit-option-question mb-2">
                                 {typographer(option.question)}
                               </p>
                               {option.preview?.paragraph && (
-                                <p className="vw-small mt-1 text-secondary">
+                                <p className="audit-option-support mt-1 text-secondary">
                                   {typographer(option.preview.paragraph)}
                                 </p>
                               )}
-                              <p className="audit-option-hint text-label vw-small mt-4">
+                              <p className="audit-option-hint mt-4">
                                 {optionSelectionReady
                                   ? 'Click to build this path'
                                   : 'Unavailable until requirements are met'}
@@ -1397,14 +1183,14 @@ export default function SoulAuditResultsPage() {
                             >
                               <button
                                 type="button"
-                                className="text-label vw-small link-highlight mr-4"
+                                className="audit-option-meta-link link-highlight mr-4"
                                 onClick={() => saveOptionForLater(option)}
                               >
                                 Save for later
                               </button>
                               <button
                                 type="button"
-                                className="text-label vw-small link-highlight"
+                                className="audit-option-meta-link link-highlight"
                                 onClick={() =>
                                   setExpandedReasoningOptionId((current) =>
                                     current === option.id ? null : option.id,
@@ -1416,7 +1202,7 @@ export default function SoulAuditResultsPage() {
                                   : 'Why this path?'}
                               </button>
                               {expandedReasoningOptionId === option.id && (
-                                <p className="vw-small mt-2 text-secondary">
+                                <p className="audit-option-support mt-2 text-secondary">
                                   {typographer(option.reasoning)}
                                 </p>
                               )}
@@ -1429,9 +1215,9 @@ export default function SoulAuditResultsPage() {
                 </FadeIn>
 
                 <FadeIn>
-                  <section>
+                  <section className="mb-7">
                     <p className="text-label vw-small mb-4 text-gold">
-                      2 CURATED PREFAB OPTIONS
+                      2 CURATED STARTER PATHS
                     </p>
                     <div className="grid gap-4 md:grid-cols-2">
                       {submitResult.options
@@ -1459,20 +1245,20 @@ export default function SoulAuditResultsPage() {
                               aria-disabled={!optionSelectionReady}
                             >
                               {option.preview?.verse && (
-                                <p className="audit-option-verse vw-small mb-2">
+                                <p className="audit-option-verse mb-2">
                                   {typographer(option.preview.verse)}
                                 </p>
                               )}
-                              <p className="text-label vw-small mb-2 text-gold">
+                              <p className="audit-option-title mb-2 text-gold">
                                 {option.title}
                               </p>
-                              <p className="vw-body mb-2">
+                              <p className="audit-option-question mb-2">
                                 {typographer(option.question)}
                               </p>
-                              <p className="vw-small text-secondary">
+                              <p className="audit-option-support text-secondary">
                                 Opens series overview.
                               </p>
-                              <p className="audit-option-hint text-label vw-small mt-4">
+                              <p className="audit-option-hint mt-4">
                                 {optionSelectionReady
                                   ? 'Click to open this series'
                                   : 'Unavailable until requirements are met'}
@@ -1484,14 +1270,14 @@ export default function SoulAuditResultsPage() {
                             >
                               <button
                                 type="button"
-                                className="text-label vw-small link-highlight mr-4"
+                                className="audit-option-meta-link link-highlight mr-4"
                                 onClick={() => saveOptionForLater(option)}
                               >
                                 Save for later
                               </button>
                               <button
                                 type="button"
-                                className="text-label vw-small link-highlight"
+                                className="audit-option-meta-link link-highlight"
                                 onClick={() =>
                                   setExpandedReasoningOptionId((current) =>
                                     current === option.id ? null : option.id,
@@ -1503,7 +1289,7 @@ export default function SoulAuditResultsPage() {
                                   : 'Why this path?'}
                               </button>
                               {expandedReasoningOptionId === option.id && (
-                                <p className="vw-small mt-2 text-secondary">
+                                <p className="audit-option-support mt-2 text-secondary">
                                   {typographer(option.reasoning)}
                                 </p>
                               )}
@@ -1511,6 +1297,97 @@ export default function SoulAuditResultsPage() {
                             <span className="audit-option-underline" />
                           </article>
                         ))}
+                    </div>
+                  </section>
+                </FadeIn>
+
+                {savedOptions.length > 0 && (
+                  <FadeIn>
+                    <section
+                      className="mb-7 border p-4"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <p className="text-label vw-small text-gold">
+                          SAVED PATHS
+                        </p>
+                        {hasStaleSavedOptions && (
+                          <button
+                            type="button"
+                            className="text-label vw-small link-highlight"
+                            onClick={cleanSavedOptions}
+                          >
+                            Monthly clean house
+                          </button>
+                        )}
+                      </div>
+                      <div className="mt-3 grid gap-2">
+                        {savedOptions.slice(0, 6).map((saved) => (
+                          <div
+                            key={`saved-option-${saved.id}`}
+                            className="border px-3 py-2"
+                            style={{ borderColor: 'var(--color-border)' }}
+                          >
+                            <div className="flex flex-wrap items-center justify-between gap-2">
+                              {saved.verse && (
+                                <p className="audit-option-verse w-full">
+                                  {typographer(saved.verse)}
+                                </p>
+                              )}
+                              <p className="audit-option-title text-gold">
+                                {saved.title}
+                              </p>
+                              <button
+                                type="button"
+                                className="audit-option-meta-link link-highlight"
+                                onClick={() => removeSavedOption(saved.id)}
+                              >
+                                Remove
+                              </button>
+                            </div>
+                            <p className="audit-option-support mt-1 text-secondary">
+                              {typographer(saved.question)}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                      {savedOptionsMessage && (
+                        <p className="vw-small mt-2 text-muted">
+                          {savedOptionsMessage}
+                        </p>
+                      )}
+                    </section>
+                  </FadeIn>
+                )}
+
+                <FadeIn>
+                  <section
+                    className="mb-7 border p-4"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <p className="text-label vw-small text-gold">REROLL</p>
+                      <p className="vw-small text-muted">
+                        {rerollsRemaining}/1 left
+                      </p>
+                    </div>
+                    <div className="mt-3 flex flex-wrap items-center gap-3">
+                      <button
+                        type="button"
+                        className="cta-major text-label vw-small px-4 py-2 disabled:opacity-50"
+                        onClick={() => void rerollOptions()}
+                        disabled={rerollUsed || isRerolling || submitting}
+                        title="Reroll discards the current five options and gives you one new set."
+                      >
+                        {isRerolling
+                          ? 'Rerolling...'
+                          : rerollUsed
+                            ? 'Reroll Used'
+                            : 'Reroll Options'}
+                      </button>
+                      <p className="vw-small text-secondary">
+                        One reroll per audit run.
+                      </p>
                     </div>
                   </section>
                 </FadeIn>
@@ -1828,6 +1705,18 @@ export default function SoulAuditResultsPage() {
                     </button>
                   </div>
                 )}
+              </div>
+            )}
+
+            {(submitResult || planToken) && (
+              <div className="mt-10 text-center">
+                <button
+                  type="button"
+                  className="mock-reset-btn text-label"
+                  onClick={() => void handleResetAudit()}
+                >
+                  RESET AUDIT
+                </button>
               </div>
             )}
 

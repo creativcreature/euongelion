@@ -380,6 +380,47 @@
   }
 }
 
+html[data-text-scale='large'] {
+  font-size: clamp(16px, 1.08vw + 14px, 18px);
+}
+
+html[data-text-scale='xlarge'] {
+  font-size: clamp(17px, 1.18vw + 14px, 19px);
+}
+
+html[data-high-contrast='on']:not(.dark) {
+  --color-text-secondary: rgba(26, 22, 18, 0.9);
+  --color-text-tertiary: rgba(26, 22, 18, 0.82);
+  --color-text-muted: rgba(26, 22, 18, 0.74);
+  --color-border: rgba(26, 22, 18, 0.36);
+  --color-border-strong: rgba(26, 22, 18, 0.58);
+}
+
+html.dark[data-high-contrast='on'] {
+  --color-text-secondary: rgba(247, 243, 237, 0.9);
+  --color-text-tertiary: rgba(247, 243, 237, 0.84);
+  --color-text-muted: rgba(247, 243, 237, 0.76);
+  --color-border: rgba(247, 243, 237, 0.36);
+  --color-border-strong: rgba(247, 243, 237, 0.58);
+}
+
+html[data-reading-comfort='on'] p,
+html[data-reading-comfort='on'] li,
+html[data-reading-comfort='on'] blockquote,
+html[data-reading-comfort='on'] .vw-body,
+html[data-reading-comfort='on'] .type-prose {
+  line-height: 1.72;
+  letter-spacing: 0.01em;
+}
+
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
 /* ============================================
    GLOBAL NEWSPRINT SURFACE
    ============================================ */
@@ -1840,7 +1881,11 @@
 
   .audit-option-hint {
     color: var(--color-gold);
-    letter-spacing: 0.08em;
+    font-family: var(--font-family-ui);
+    font-size: clamp(0.9rem, 0.36vw + 0.85rem, 1rem);
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
     opacity: 0.7;
     transition:
       transform var(--duration-base) var(--ease-out),
@@ -1856,8 +1901,40 @@
     margin: 0;
     color: var(--color-text-primary);
     font-family: var(--font-family-serif);
-    font-size: clamp(1.35rem, 1.35vw, 1.7rem);
-    line-height: 1.1;
+    font-size: clamp(1.18rem, 0.7vw + 1rem, 1.5rem);
+    line-height: 1.24;
+  }
+
+  .audit-option-title {
+    margin: 0;
+    font-family: var(--font-family-ui);
+    font-size: clamp(0.98rem, 0.4vw + 0.9rem, 1.08rem);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .audit-option-question {
+    margin: 0;
+    color: var(--color-text-primary);
+    font-family: var(--font-family-serif);
+    font-size: clamp(1.08rem, 0.58vw + 0.94rem, 1.3rem);
+    line-height: 1.46;
+  }
+
+  .audit-option-support {
+    margin: 0;
+    font-family: var(--font-family-ui);
+    font-size: clamp(0.93rem, 0.35vw + 0.86rem, 1rem);
+    line-height: 1.45;
+  }
+
+  .audit-option-meta-link {
+    font-family: var(--font-family-ui);
+    font-size: clamp(0.9rem, 0.32vw + 0.84rem, 0.98rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 
   .audit-option-underline {

@@ -5,12 +5,17 @@ import { usePathname } from 'next/navigation'
 import AnimationProvider from '@/providers/AnimationProvider'
 import EditorialMotionSystem from '@/components/EditorialMotionSystem'
 import CookieConsentBanner from '@/components/CookieConsentBanner'
+import { useSettingsStore } from '@/stores/settingsStore'
 
 /**
  * Client-side providers wrapper.
  */
 export default function Providers({ children }: { children: ReactNode }) {
   const pathname = usePathname()
+  const textScale = useSettingsStore((state) => state.textScale)
+  const reduceMotion = useSettingsStore((state) => state.reduceMotion)
+  const highContrast = useSettingsStore((state) => state.highContrast)
+  const readingComfort = useSettingsStore((state) => state.readingComfort)
 
   useEffect(() => {
     const unlockGlobalScroll = () => {
@@ -53,6 +58,14 @@ export default function Providers({ children }: { children: ReactNode }) {
       document.removeEventListener('visibilitychange', onVisibilityChange)
     }
   }, [pathname])
+
+  useEffect(() => {
+    const root = document.documentElement
+    root.dataset.textScale = textScale
+    root.dataset.highContrast = highContrast ? 'on' : 'off'
+    root.dataset.readingComfort = readingComfort ? 'on' : 'off'
+    root.classList.toggle('reduce-motion', reduceMotion)
+  }, [highContrast, readingComfort, reduceMotion, textScale])
 
   return (
     <AnimationProvider>

@@ -5,6 +5,44 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Results Reorder + Accessibility Settings Runtime (2026-02-20)
+
+### What Changed
+
+- Reorganized Soul Audit results selection flow to the requested order: primary options, curated starter paths, conditional saved paths, reroll controls, then reset.
+- Replaced typed reroll confirmation with a single action button + remaining count.
+- Removed Soul Audit cookie-consent UI from selection screen; consent remains handled at site entry.
+- Rebalanced option-card typography hierarchy for clearer title/question/support/action contrast and larger readability floor.
+- Implemented settings-driven accessibility runtime controls:
+  - text scale (`default`, `large`, `xlarge`)
+  - reduced motion toggle
+  - high contrast toggle
+  - reading comfort toggle
+- Applied accessibility preferences globally via root HTML data attributes/classes and motion-provider behavior.
+- Added canonical design-system contracts to code: `DesignTokenSet`, `AccessibilityPreferences`, and `ComponentSpec`.
+
+### Files
+
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/globals.css`
+- `src/app/settings/page.tsx`
+- `src/stores/settingsStore.ts`
+- `src/app/providers.tsx`
+- `src/providers/AnimationProvider.tsx`
+- `src/types/design-system.ts`
+- `src/types/index.ts`
+- `docs/feature-prds/F-024.md`
+
+### Validation
+
+- `npm run type-check`
+- `npx eslint src/app/soul-audit/results/page.tsx src/app/settings/page.tsx src/app/providers.tsx src/providers/AnimationProvider.tsx src/stores/settingsStore.ts src/types/design-system.ts src/types/index.ts`
+- `node scripts/check-feature-prd-integrity.mjs`
+- `node scripts/check-feature-prd-update-link.mjs`
+- Live browser verification: reordered Soul Audit section flow with and without saved paths, and root accessibility attributes/classes update behavior.
+
+---
+
 ## Site-Entry Cookie Consent + Soul Audit Flow Cleanup (2026-02-19)
 
 ### What Changed

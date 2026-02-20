@@ -1,3 +1,10 @@
+export type {
+  AccessibilityPreferences,
+  ComponentSpec,
+  DesignTokenSet,
+  TextScalePreference,
+} from './design-system'
+
 // Pathway types (Soul Audit result)
 export type Pathway = 'Sleep' | 'Awake' | 'Shepherd'
 

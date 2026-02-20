@@ -24,6 +24,7 @@ import type { BillingConfigResponse, BillingPlan } from '@/types/billing'
 type Theme = 'dark' | 'light' | 'system'
 type SabbathDay = 'saturday' | 'sunday'
 type BibleTranslation = 'NIV' | 'ESV' | 'NASB' | 'KJV' | 'NLT' | 'MSG'
+type TextScale = 'default' | 'large' | 'xlarge'
 type MockMode = 'anonymous' | 'mock_account'
 
 type MockRetention = {
@@ -69,10 +70,18 @@ export default function SettingsPage() {
     sabbathDay,
     anthropicApiKey,
     dayLockingEnabled,
+    textScale,
+    reduceMotion,
+    highContrast,
+    readingComfort,
     setBibleTranslation,
     setSabbathDay,
     setAnthropicApiKey,
     setDayLockingEnabled,
+    setTextScale,
+    setReduceMotion,
+    setHighContrast,
+    setReadingComfort,
   } = useSettingsStore()
   const { messages, clearHistory } = useChatStore()
   const [billingConfig, setBillingConfig] =
@@ -548,6 +557,95 @@ export default function SettingsPage() {
                   {t.charAt(0).toUpperCase() + t.slice(1)}
                 </button>
               ))}
+            </div>
+          </div>
+
+          <div
+            className="mb-8 pb-8"
+            style={{ borderBottom: '1px solid var(--color-border)' }}
+          >
+            <h2 className="text-label vw-small mb-4 text-gold">
+              ACCESSIBILITY
+            </h2>
+            <p className="vw-small mb-6 text-secondary">
+              Accessibility preferences apply globally across the site.
+            </p>
+
+            <p className="text-label vw-small mb-3 text-gold">TEXT SIZE</p>
+            <div className="mb-6 flex flex-wrap gap-3">
+              {(['default', 'large', 'xlarge'] as TextScale[]).map((scale) => (
+                <button
+                  type="button"
+                  key={scale}
+                  onClick={() => {
+                    setTextScale(scale)
+                    showSaved()
+                  }}
+                  aria-pressed={textScale === scale}
+                  className="px-6 py-3 text-label vw-small transition-theme"
+                  style={{
+                    backgroundColor:
+                      textScale === scale
+                        ? 'var(--color-fg)'
+                        : 'var(--color-surface)',
+                    color:
+                      textScale === scale
+                        ? 'var(--color-bg)'
+                        : 'var(--color-text-secondary)',
+                    border: `1px solid ${
+                      textScale === scale
+                        ? 'var(--color-fg)'
+                        : 'var(--color-border)'
+                    }`,
+                  }}
+                >
+                  {scale === 'default'
+                    ? 'Default'
+                    : scale === 'large'
+                      ? 'Large'
+                      : 'Extra Large'}
+                </button>
+              ))}
+            </div>
+
+            <div className="grid gap-3">
+              <label className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  checked={reduceMotion}
+                  onChange={(event) => {
+                    setReduceMotion(event.target.checked)
+                    showSaved()
+                  }}
+                />
+                <span className="vw-small text-secondary">Reduce motion</span>
+              </label>
+              <label className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  checked={highContrast}
+                  onChange={(event) => {
+                    setHighContrast(event.target.checked)
+                    showSaved()
+                  }}
+                />
+                <span className="vw-small text-secondary">
+                  High contrast mode
+                </span>
+              </label>
+              <label className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  checked={readingComfort}
+                  onChange={(event) => {
+                    setReadingComfort(event.target.checked)
+                    showSaved()
+                  }}
+                />
+                <span className="vw-small text-secondary">
+                  Reading comfort mode (more line-height and spacing)
+                </span>
+              </label>
             </div>
           </div>
 
