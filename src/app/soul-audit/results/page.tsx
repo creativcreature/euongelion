@@ -15,7 +15,6 @@ import ReaderTimeline, {
 import FadeIn from '@/components/motion/FadeIn'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import {
-  SITE_CONSENT_REQUIRED_EVENT,
   SITE_CONSENT_UPDATED_EVENT,
   readSiteConsentFromDocument,
   type SiteConsent,
@@ -359,7 +358,6 @@ export default function SoulAuditResultsPage() {
     const parsed = Number.parseInt(raw, 10)
     return Number.isFinite(parsed) ? parsed : null
   }, [searchParams])
-  const hasEssentialConsent = Boolean(siteConsent?.essentialAccepted)
   const crisisRequirementsMet = Boolean(
     !submitResult?.crisis.required || crisisAcknowledged,
   )
@@ -583,16 +581,6 @@ export default function SoulAuditResultsPage() {
 
   async function recordRunConsent(): Promise<string | null> {
     if (!submitResult) return null
-    if (!hasEssentialConsent) {
-      setSelectionInlineError(
-        'Cookie consent required. Use the cookie notice at the bottom to continue.',
-      )
-      if (typeof window !== 'undefined') {
-        window.dispatchEvent(new Event(SITE_CONSENT_REQUIRED_EVENT))
-      }
-      setError(null)
-      return null
-    }
     if (!crisisRequirementsMet) {
       setSelectionInlineError(
         submitResult.crisis.required && !crisisAcknowledged

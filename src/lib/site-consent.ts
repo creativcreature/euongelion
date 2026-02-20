@@ -53,7 +53,11 @@ export function parseSiteConsentCookieValue(
 
 export function serializeSiteConsentCookie(consent: SiteConsent): string {
   const encoded = encodeURIComponent(JSON.stringify(consent))
-  return `${SITE_CONSENT_COOKIE}=${encoded}; Path=/; Max-Age=${SITE_CONSENT_MAX_AGE_SECONDS}; SameSite=Lax`
+  const secure =
+    typeof window !== 'undefined' && window.location.protocol === 'https:'
+      ? '; Secure'
+      : ''
+  return `${SITE_CONSENT_COOKIE}=${encoded}; Path=/; Max-Age=${SITE_CONSENT_MAX_AGE_SECONDS}; SameSite=Lax${secure}`
 }
 
 export function readSiteConsentFromRequest(

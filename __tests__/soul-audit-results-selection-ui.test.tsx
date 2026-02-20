@@ -3,7 +3,6 @@ import userEvent from '@testing-library/user-event'
 import type { ReactNode } from 'react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import SoulAuditResultsPage from '@/app/soul-audit/results/page'
-import { SITE_CONSENT_REQUIRED_EVENT } from '@/lib/site-consent'
 import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
 
 const pushMock = vi.fn()
@@ -137,30 +136,51 @@ describe('Soul Audit results selection consent UX', () => {
     vi.unstubAllGlobals()
   })
 
-  it('shows inline consent-required error, dispatches event, and avoids selection API call', async () => {
+  it('does not gate option selection on site-cookie state and proceeds to devotional routing', async () => {
     const user = userEvent.setup()
-    const fetchMock = vi.fn()
-    const dispatchSpy = vi.spyOn(window, 'dispatchEvent')
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({
+          ok: true,
+          auditRunId: 'run_test',
+          essentialAccepted: true,
+          analyticsOptIn: false,
+          crisisAcknowledged: false,
+          consentToken: 'consent-token-1',
+        }),
+      })
+      .mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({
+          ok: true,
+          auditRunId: 'run_test',
+          selectionType: 'ai_primary',
+          route: '/soul-audit/results?planToken=plan-token-1&day=1',
+          planToken: 'plan-token-1',
+          planDays: [],
+        }),
+      })
     vi.stubGlobal('fetch', fetchMock)
 
-    const { container } = render(<SoulAuditResultsPage />)
+    render(<SoulAuditResultsPage />)
 
     await user.click(screen.getByRole('button', { name: /Path Alpha/i }))
 
     await waitFor(() => {
-      expect(
-        screen.getByText(
-          /Cookie consent required\. Use the cookie notice at the bottom to continue\./i,
-        ),
-      ).toBeInTheDocument()
+      expect(pushMock).toHaveBeenCalledWith(
+        '/soul-audit/results?planToken=plan-token-1&day=1',
+      )
     })
 
-    expect(container.querySelector('.soul-audit-selection-error')).toBeTruthy()
     expect(
-      dispatchSpy.mock.calls.some(
-        ([event]) => (event as Event).type === SITE_CONSENT_REQUIRED_EVENT,
+      screen.queryByText(
+        /Cookie consent required\. Use the cookie notice at the bottom to continue\./i,
       ),
-    ).toBe(true)
-    expect(fetchMock).not.toHaveBeenCalled()
+    ).toBeNull()
+    const calledRoutes = fetchMock.mock.calls.map(([url]) => String(url))
+    expect(calledRoutes).toContain('/api/soul-audit/consent')
+    expect(calledRoutes).toContain('/api/soul-audit/select')
   })
 })

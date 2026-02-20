@@ -5,6 +5,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Non-Blocking Cookie Consent for Soul Audit Selection (2026-02-20)
+
+### What Changed
+
+- Removed site-cookie consent as a gate for Soul Audit option selection.
+- Soul Audit card clicks now proceed directly through selection flow even when site-consent cookie is absent.
+- Kept cookie notice behavior for optional analytics preference only.
+- Hardened client-set site-consent cookie attributes to include `Secure` automatically on HTTPS contexts.
+
+### Files
+
+- `src/app/soul-audit/results/page.tsx`
+- `src/lib/site-consent.ts`
+- `__tests__/soul-audit-results-selection-ui.test.tsx`
+- `docs/feature-prds/F-020.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm run test -- __tests__/site-consent.test.ts __tests__/soul-audit-results-selection-ui.test.tsx __tests__/soul-audit-consent-gate-contract.test.ts`
+
+---
+
 ## Soul Audit Consent-Gate No-Op Visibility Fix (2026-02-20)
 
 ### What Changed
