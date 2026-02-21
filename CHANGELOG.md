@@ -5,6 +5,34 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Guest Gate + Plan Day Recovery Patch (2026-02-21)
+
+### What Changed
+
+- Added a first-audit guest conversion gate on results selection:
+  - If unauthenticated on audit #1, users are prompted to sign up before devotional entry.
+  - Added a no-account soft-onboard fallback with Sabbath day, theme, and text size capture.
+- Improved plan retrieval resilience for missing numbered days:
+  - Existing-selection payloads now include `planDays` for immediate client hydration.
+  - Plan-day API now resolves missing day-number gaps using ordered fallback mapping so Day 2 and other gaps do not disappear from retrieval.
+- Strengthened Soul Audit option phrasing cleanup by filtering generic matched terms that can degrade titles into telegraphic fragments.
+
+### Files
+
+- `src/app/soul-audit/results/page.tsx`
+- `src/app/api/soul-audit/select/route.ts`
+- `src/app/api/devotional-plan/[token]/day/[n]/route.ts`
+- `src/lib/soul-audit/matching.ts`
+- `src/app/api/soul-audit/submit/route.ts`
+- `docs/feature-prds/F-024.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+
+---
+
 ## Soul Audit Copy Integrity Patch (2026-02-21)
 
 ### What Changed

@@ -299,6 +299,9 @@ export async function POST(request: NextRequest) {
       const existingAiRoute = existingSelection.plan_token
         ? buildAiResultsRoute(existingSelection.plan_token, existingInitialDay)
         : '/soul-audit/results'
+      const existingPlanDayContent = existingPlanDays
+        .map((day) => day.content)
+        .sort((a, b) => a.day - b.day)
       const existingPayload: SoulAuditSelectResponse = {
         ok: true,
         auditRunId: runId,
@@ -309,6 +312,10 @@ export async function POST(request: NextRequest) {
             : existingAiRoute,
         planToken: existingSelection.plan_token ?? undefined,
         seriesSlug: existingSelection.series_slug,
+        planDays:
+          existingSelection.option_kind === 'ai_primary'
+            ? existingPlanDayContent
+            : undefined,
         onboardingMeta: existingPlan
           ? toOnboardingMeta(existingPlan)
           : undefined,

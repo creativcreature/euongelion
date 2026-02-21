@@ -14,6 +14,8 @@ import ReaderTimeline, {
 } from '@/components/ReaderTimeline'
 import FadeIn from '@/components/motion/FadeIn'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
+import { useSettingsStore } from '@/stores/settingsStore'
+import { useUIStore } from '@/stores/uiStore'
 import {
   SITE_CONSENT_UPDATED_EVENT,
   readSiteConsentFromDocument,
@@ -62,6 +64,7 @@ const PLAN_CACHE_PREFIX = 'soul-audit-plan-v2:'
 const SAVED_OPTIONS_KEY = 'soul-audit-saved-options-v1'
 const LAST_AUDIT_INPUT_SESSION_KEY = 'soul-audit-last-input'
 const REROLL_USED_SESSION_KEY = 'soul-audit-reroll-used'
+const GUEST_SIGNUP_GATE_KEY = 'soul-audit-guest-signup-gate-v1'
 const LEGACY_BURDEN_FRAMING_PATTERN =
   /\b(you named this burden|because you named)\b/i
 const LEGACY_FRAGMENT_TITLE_PATTERN = /^want learn\b/i
@@ -78,6 +81,14 @@ type SavedAuditOption = {
   paragraph?: string
   savedAt: string
 }
+
+type AuthSessionSnapshot = {
+  authenticated: boolean
+  user: { id: string; email: string | null } | null
+}
+
+type GuestOnboardingTheme = 'dark' | 'light' | 'system'
+type GuestOnboardingTextScale = 'default' | 'large' | 'xlarge'
 
 function containsLegacyAuditLanguage(
   value: string | null | undefined,
@@ -98,6 +109,20 @@ function hasLegacyAuditOptionCopy(result: SoulAuditSubmitResponseV2): boolean {
       containsLegacyAuditLanguage(option.preview?.paragraph)
     )
   })
+}
+
+function sanitizeLegacyDisplayText(value: string): string {
+  return value
+    .replace(
+      /you named this burden:\s*["“]?([^"”]+)["”]?\s*/gi,
+      'You shared this reflection: "$1". ',
+    )
+    .replace(
+      /because you named\s*["“]?([^"”]+)["”]?\s*/gi,
+      'Because you shared this reflection, ',
+    )
+    .replace(/\s+/g, ' ')
+    .trim()
 }
 
 function formatShortDate(value: string): string {
@@ -284,7 +309,13 @@ export default function SoulAuditResultsPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const initialSelection = loadSelectionResult()
-  const { lastInput } = useSoulAuditStore()
+  const { lastInput, auditCount } = useSoulAuditStore()
+  const currentSabbathDay = useSettingsStore((state) => state.sabbathDay)
+  const currentTextScale = useSettingsStore((state) => state.textScale)
+  const setSabbathDay = useSettingsStore((state) => state.setSabbathDay)
+  const setTextScale = useSettingsStore((state) => state.setTextScale)
+  const currentTheme = useUIStore((state) => state.theme)
+  const setTheme = useUIStore((state) => state.setTheme)
 
   const [submitResult, setSubmitResult] =
     useState<SoulAuditSubmitResponseV2 | null>(() => loadSubmitResult())
@@ -331,6 +362,22 @@ export default function SoulAuditResultsPage() {
   const [selectedDayNumber, setSelectedDayNumber] = useState<number | null>(
     null,
   )
+  const [authState, setAuthState] = useState<AuthSessionSnapshot>({
+    authenticated: false,
+    user: null,
+  })
+  const [authStateLoaded, setAuthStateLoaded] = useState(false)
+  const [guestGateOpen, setGuestGateOpen] = useState(false)
+  const [guestGateStep, setGuestGateStep] = useState<'signup' | 'onboarding'>(
+    'signup',
+  )
+  const [pendingOptionId, setPendingOptionId] = useState<string | null>(null)
+  const [guestSabbathDay, setGuestSabbathDay] = useState<'saturday' | 'sunday'>(
+    'sunday',
+  )
+  const [guestTheme, setGuestTheme] = useState<GuestOnboardingTheme>('dark')
+  const [guestTextScale, setGuestTextScale] =
+    useState<GuestOnboardingTextScale>('default')
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -338,6 +385,46 @@ export default function SoulAuditResultsPage() {
       window.sessionStorage.getItem(REROLL_USED_SESSION_KEY) === 'true',
     )
     setSavedOptions(loadSavedAuditOptions())
+  }, [])
+
+  useEffect(() => {
+    setGuestSabbathDay(currentSabbathDay)
+  }, [currentSabbathDay])
+
+  useEffect(() => {
+    setGuestTextScale(currentTextScale)
+  }, [currentTextScale])
+
+  useEffect(() => {
+    setGuestTheme(currentTheme)
+  }, [currentTheme])
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function loadAuthState() {
+      try {
+        const response = await fetch('/api/auth/session', { cache: 'no-store' })
+        const payload = (await response.json()) as AuthSessionSnapshot
+        if (cancelled) return
+        setAuthState({
+          authenticated: Boolean(payload?.authenticated),
+          user: payload?.user ?? null,
+        })
+      } catch {
+        if (cancelled) return
+        setAuthState({ authenticated: false, user: null })
+      } finally {
+        if (!cancelled) {
+          setAuthStateLoaded(true)
+        }
+      }
+    }
+
+    void loadAuthState()
+    return () => {
+      cancelled = true
+    }
   }, [])
 
   useEffect(() => {
@@ -662,7 +749,33 @@ export default function SoulAuditResultsPage() {
     }
   }
 
+  function hasSeenGuestSignupGate(): boolean {
+    if (typeof window === 'undefined') return false
+    return window.localStorage.getItem(GUEST_SIGNUP_GATE_KEY) === 'seen'
+  }
+
+  function markGuestSignupGateSeen() {
+    if (typeof window === 'undefined') return
+    window.localStorage.setItem(GUEST_SIGNUP_GATE_KEY, 'seen')
+  }
+
   async function submitConsentAndSelect(optionId: string) {
+    if (
+      authStateLoaded &&
+      !authState.authenticated &&
+      auditCount <= 1 &&
+      !hasSeenGuestSignupGate()
+    ) {
+      setPendingOptionId(optionId)
+      setGuestGateStep('signup')
+      setGuestGateOpen(true)
+      return
+    }
+
+    await submitConsentAndSelectInternal(optionId)
+  }
+
+  async function submitConsentAndSelectInternal(optionId: string) {
     if (!submitResult) return
     setSelectionInlineError(null)
 
@@ -762,6 +875,29 @@ export default function SoulAuditResultsPage() {
     } finally {
       setSubmitting(false)
     }
+  }
+
+  function handleGuestSoftOnboardingContinue() {
+    if (!pendingOptionId) return
+
+    setSabbathDay(guestSabbathDay)
+    setTextScale(guestTextScale)
+    setTheme(guestTheme)
+    markGuestSignupGateSeen()
+    setGuestGateOpen(false)
+
+    void submitConsentAndSelectInternal(pendingOptionId)
+    setPendingOptionId(null)
+  }
+
+  function redirectToSignUpFromGuestGate() {
+    markGuestSignupGateSeen()
+    setGuestGateOpen(false)
+
+    const currentPath = `/soul-audit/results${
+      searchParams.toString() ? `?${searchParams.toString()}` : ''
+    }`
+    router.push(`/auth/sign-up?redirect=${encodeURIComponent(currentPath)}`)
   }
 
   async function rerollOptions() {
@@ -944,6 +1080,21 @@ export default function SoulAuditResultsPage() {
     (entry) =>
       Date.now() - new Date(entry.savedAt).getTime() > 30 * 24 * 60 * 60 * 1000,
   )
+  const displayOptions = useMemo(() => {
+    if (!submitResult) return []
+    return submitResult.options.map((option) => ({
+      ...option,
+      title: sanitizeLegacyDisplayText(option.title),
+      question: sanitizeLegacyDisplayText(option.question),
+      reasoning: sanitizeLegacyDisplayText(option.reasoning),
+      preview: option.preview
+        ? {
+            ...option.preview,
+            paragraph: sanitizeLegacyDisplayText(option.preview.paragraph),
+          }
+        : option.preview,
+    }))
+  }, [submitResult])
 
   async function savePlanDayBookmark(day: CustomPlanDay) {
     if (!planToken) return
@@ -1174,6 +1325,172 @@ export default function SoulAuditResultsPage() {
                   </FadeIn>
                 )}
 
+                {guestGateOpen && (
+                  <FadeIn>
+                    <section
+                      className="mb-6 rounded-sm bg-surface-raised p-5"
+                      style={{ border: '1px solid var(--color-border)' }}
+                      aria-live="polite"
+                    >
+                      {guestGateStep === 'signup' ? (
+                        <div className="grid gap-4">
+                          <p className="text-label vw-small text-gold">
+                            SAVE YOUR FIRST AUDIT
+                          </p>
+                          <p className="vw-small text-secondary">
+                            Create an account before entering your devotional so
+                            this first path is saved across devices.
+                          </p>
+                          <div className="flex flex-wrap gap-3">
+                            <button
+                              type="button"
+                              className="text-label vw-small px-5 py-2"
+                              style={{
+                                border: '1px solid var(--color-border)',
+                              }}
+                              onClick={redirectToSignUpFromGuestGate}
+                            >
+                              Sign up now
+                            </button>
+                            <button
+                              type="button"
+                              className="text-label vw-small px-5 py-2"
+                              style={{
+                                border: '1px solid var(--color-border)',
+                              }}
+                              onClick={() => setGuestGateStep('onboarding')}
+                            >
+                              Continue as guest
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="grid gap-4">
+                          <p className="text-label vw-small text-gold">
+                            QUICK GUEST SETUP
+                          </p>
+                          <p className="vw-small text-secondary">
+                            Choose a Sabbath day and reading defaults before
+                            entering this devotional.
+                          </p>
+                          <div className="grid gap-3">
+                            <p className="text-label vw-small text-gold">
+                              Sabbath day
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              {(['saturday', 'sunday'] as const).map((day) => (
+                                <button
+                                  key={day}
+                                  type="button"
+                                  className="text-label vw-small px-4 py-2"
+                                  style={{
+                                    border: '1px solid var(--color-border)',
+                                    background:
+                                      guestSabbathDay === day
+                                        ? 'var(--color-fg)'
+                                        : 'transparent',
+                                    color:
+                                      guestSabbathDay === day
+                                        ? 'var(--color-bg)'
+                                        : 'var(--color-text-primary)',
+                                  }}
+                                  onClick={() => setGuestSabbathDay(day)}
+                                >
+                                  {day[0].toUpperCase() + day.slice(1)}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                          <div className="grid gap-3">
+                            <p className="text-label vw-small text-gold">
+                              Theme
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              {(['dark', 'light', 'system'] as const).map(
+                                (theme) => (
+                                  <button
+                                    key={theme}
+                                    type="button"
+                                    className="text-label vw-small px-4 py-2"
+                                    style={{
+                                      border: '1px solid var(--color-border)',
+                                      background:
+                                        guestTheme === theme
+                                          ? 'var(--color-fg)'
+                                          : 'transparent',
+                                      color:
+                                        guestTheme === theme
+                                          ? 'var(--color-bg)'
+                                          : 'var(--color-text-primary)',
+                                    }}
+                                    onClick={() => setGuestTheme(theme)}
+                                  >
+                                    {theme[0].toUpperCase() + theme.slice(1)}
+                                  </button>
+                                ),
+                              )}
+                            </div>
+                          </div>
+                          <div className="grid gap-3">
+                            <p className="text-label vw-small text-gold">
+                              Text size
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              {(['default', 'large', 'xlarge'] as const).map(
+                                (scale) => (
+                                  <button
+                                    key={scale}
+                                    type="button"
+                                    className="text-label vw-small px-4 py-2"
+                                    style={{
+                                      border: '1px solid var(--color-border)',
+                                      background:
+                                        guestTextScale === scale
+                                          ? 'var(--color-fg)'
+                                          : 'transparent',
+                                      color:
+                                        guestTextScale === scale
+                                          ? 'var(--color-bg)'
+                                          : 'var(--color-text-primary)',
+                                    }}
+                                    onClick={() => setGuestTextScale(scale)}
+                                  >
+                                    {scale === 'xlarge'
+                                      ? 'XLarge'
+                                      : scale[0].toUpperCase() + scale.slice(1)}
+                                  </button>
+                                ),
+                              )}
+                            </div>
+                          </div>
+                          <div className="flex flex-wrap gap-3 pt-2">
+                            <button
+                              type="button"
+                              className="text-label vw-small px-5 py-2"
+                              style={{
+                                border: '1px solid var(--color-border)',
+                              }}
+                              onClick={handleGuestSoftOnboardingContinue}
+                            >
+                              Continue to devotional
+                            </button>
+                            <button
+                              type="button"
+                              className="text-label vw-small px-5 py-2"
+                              style={{
+                                border: '1px solid var(--color-border)',
+                              }}
+                              onClick={() => setGuestGateStep('signup')}
+                            >
+                              Back
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </section>
+                  </FadeIn>
+                )}
+
                 <FadeIn>
                   <section className="mb-6">
                     <div className="mb-4 flex items-center justify-between">
@@ -1193,7 +1510,7 @@ export default function SoulAuditResultsPage() {
                       </p>
                     )}
                     <div className="grid gap-4 md:grid-cols-3">
-                      {submitResult.options
+                      {displayOptions
                         .filter((option) => option.kind === 'ai_primary')
                         .map((option) => {
                           const verseSnippet = resolveVerseSnippet(
@@ -1294,7 +1611,7 @@ export default function SoulAuditResultsPage() {
                       2 CURATED STARTER PATHS
                     </p>
                     <div className="grid gap-4 md:grid-cols-2">
-                      {submitResult.options
+                      {displayOptions
                         .filter((option) => option.kind === 'curated_prefab')
                         .map((option) => {
                           const verseSnippet = resolveVerseSnippet(

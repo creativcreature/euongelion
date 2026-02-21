@@ -2,10 +2,12 @@ import { NextRequest, NextResponse } from 'next/server'
 import { isDayLockingEnabledForRequest } from '@/lib/day-locking'
 import {
   type DevotionalPlanInstanceRecord,
+  getAllPlanDaysWithFallback,
   getPlanDayWithFallback,
   getPlanInstanceWithFallback,
 } from '@/lib/soul-audit/repository'
 import { isPlanDayUnlocked } from '@/lib/soul-audit/schedule'
+import type { CustomPlanDay } from '@/types/soul-audit'
 
 function onboardingDay(instance: DevotionalPlanInstanceRecord) {
   const variant = instance.onboarding_variant ?? 'none'
@@ -69,6 +71,30 @@ function scheduleMeta(
   } as const
 }
 
+async function resolvePlanDayContent(
+  token: string,
+  dayNumber: number,
+): Promise<CustomPlanDay | null> {
+  const exact = await getPlanDayWithFallback(token, dayNumber)
+  if (exact?.content) return exact.content
+
+  const all = await getAllPlanDaysWithFallback(token)
+  const sorted = [...all].sort((a, b) => a.day_number - b.day_number)
+  const onboarding = sorted.find((entry) => entry.day_number === 0)?.content
+  const sequence = sorted
+    .filter((entry) => entry.day_number > 0)
+    .map((entry) => entry.content)
+
+  if (dayNumber === 0 && onboarding) return onboarding
+  const byIndex = sequence[dayNumber - 1]
+  if (!byIndex) return null
+
+  return {
+    ...byIndex,
+    day: dayNumber,
+  }
+}
+
 export async function GET(
   request: NextRequest,
   context: { params: Promise<{ token: string; n: string }> },
@@ -92,7 +118,7 @@ export async function GET(
 
     const dayLockingEnabled = isDayLockingEnabledForRequest(request)
     if (!dayLockingEnabled) {
-      const unlockedDay = await getPlanDayWithFallback(token, dayNumber)
+      const unlockedDay = await resolvePlanDayContent(token, dayNumber)
       if (!unlockedDay) {
         return NextResponse.json(
           { error: 'Plan day not found.' },
@@ -105,7 +131,7 @@ export async function GET(
           locked: false,
           archived: false,
           onboarding: dayNumber === 0,
-          day: unlockedDay.content,
+          day: unlockedDay,
           policy: instance.start_policy,
           schedule: scheduleMeta(instance, false),
         },
@@ -123,18 +149,18 @@ export async function GET(
 
     if (!unlock.unlocked) {
       if (previewRequested && dayNumber > 0) {
-        const previewDay = await getPlanDayWithFallback(token, dayNumber)
+        const previewDay = await resolvePlanDayContent(token, dayNumber)
         return NextResponse.json(
           {
             locked: true,
             archived: false,
             onboarding: false,
-            day: previewDay?.content
+            day: previewDay
               ? {
-                  day: previewDay.content.day,
-                  title: previewDay.content.title,
-                  scriptureReference: previewDay.content.scriptureReference,
-                  scriptureText: previewDay.content.scriptureText,
+                  day: previewDay.day,
+                  title: previewDay.title,
+                  scriptureReference: previewDay.scriptureReference,
+                  scriptureText: previewDay.scriptureText,
                 }
               : null,
             message: unlock.message,
@@ -172,7 +198,7 @@ export async function GET(
       )
     }
 
-    const planDay = await getPlanDayWithFallback(token, dayNumber)
+    const planDay = await resolvePlanDayContent(token, dayNumber)
     if (!planDay) {
       return NextResponse.json(
         { error: 'Plan day not found.' },
@@ -185,7 +211,7 @@ export async function GET(
         locked: false,
         archived: unlock.archived,
         onboarding: false,
-        day: planDay.content,
+        day: planDay,
         policy: instance.start_policy,
         schedule: scheduleMeta(instance, true),
       },

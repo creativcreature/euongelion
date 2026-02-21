@@ -168,7 +168,13 @@ function pickThemeTerms(input: string, matched: string[]): string[] {
         .trim(),
     )
     .flatMap((value) => value.split(/\s+/))
-    .filter((word) => word.length >= 4 && !TITLE_STOP_WORDS.has(word))
+    .filter(
+      (word) =>
+        word.length >= 4 &&
+        !TITLE_STOP_WORDS.has(word) &&
+        !GENERIC_INTENT_TERMS.has(word),
+    )
+    .map((word) => THEME_TERM_NORMALIZATION[word] ?? word)
 
   const merged = [...inputTerms, ...fromMatches]
   return Array.from(new Set(merged)).slice(0, 2)

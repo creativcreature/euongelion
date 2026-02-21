@@ -180,6 +180,36 @@ function isLowQualityTitle(value: string): boolean {
   return false
 }
 
+function sanitizeOptionCopy(option: AuditOptionPreview): AuditOptionPreview {
+  const title = normalizeLegacyFraming(option.title)
+  const question = normalizeLegacyFraming(option.question)
+  const reasoning = normalizeLegacyFraming(option.reasoning)
+  const paragraph = option.preview?.paragraph
+    ? normalizeLegacyFraming(option.preview.paragraph)
+    : option.preview?.paragraph
+
+  return {
+    ...option,
+    title: isLowQualityTitle(title)
+      ? option.preview?.verse || option.title
+      : title,
+    question,
+    reasoning,
+    preview: option.preview
+      ? {
+          ...option.preview,
+          paragraph: paragraph ?? option.preview.paragraph,
+        }
+      : option.preview,
+  }
+}
+
+function sanitizeOptionSet(
+  options: AuditOptionPreview[],
+): AuditOptionPreview[] {
+  return options.map(sanitizeOptionCopy)
+}
+
 async function parseAuditIntentWithBrain(input: string) {
   const fallback = parseAuditIntent(input)
   const availability = providerAvailabilityForUser({ userKeys: undefined })
@@ -575,6 +605,7 @@ export async function POST(request: NextRequest) {
       })
     }
     options = await polishAiOptionsWithBrain(effectiveResponseText, options)
+    options = sanitizeOptionSet(options)
 
     const { run, options: persistedOptions } = await createAuditRun({
       sessionToken,
@@ -592,9 +623,12 @@ export async function POST(request: NextRequest) {
           rest,
       )
       .slice(0, SOUL_AUDIT_OPTION_SPLIT.total)
+    responseOptions = sanitizeOptionSet(responseOptions)
 
     if (!hasExpectedOptionSplit(responseOptions)) {
-      responseOptions = options.slice(0, SOUL_AUDIT_OPTION_SPLIT.total)
+      responseOptions = sanitizeOptionSet(
+        options.slice(0, SOUL_AUDIT_OPTION_SPLIT.total),
+      )
     }
 
     if (!hasExpectedOptionSplit(responseOptions)) {
