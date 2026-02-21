@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { buildAuditOptions } from '@/lib/soul-audit/matching'
 import { getCuratedDayCandidates } from '@/lib/soul-audit/curation-engine'
 import { POST as submitHandler } from '@/app/api/soul-audit/submit/route'
@@ -7,6 +7,7 @@ import { POST as selectHandler } from '@/app/api/soul-audit/select/route'
 import { resetSessionAuditCount } from '@/lib/soul-audit/repository'
 
 let sessionToken = 'curation-session'
+const originalRunTokenSecret = process.env.SOUL_AUDIT_RUN_TOKEN_SECRET
 
 vi.mock('@/lib/soul-audit/session', () => ({
   getOrCreateAuditSessionToken: vi.fn(async () => sessionToken),
@@ -22,8 +23,18 @@ function postJson(url: string, body: Record<string, unknown>) {
 
 describe('Soul Audit curation reliability', () => {
   beforeEach(() => {
+    process.env.SOUL_AUDIT_RUN_TOKEN_SECRET =
+      'test-run-token-secret-12345678901234567890'
     sessionToken = `curation-session-${Date.now()}-${Math.random().toString(36).slice(2)}`
     resetSessionAuditCount(sessionToken)
+  })
+
+  afterAll(() => {
+    if (originalRunTokenSecret === undefined) {
+      delete process.env.SOUL_AUDIT_RUN_TOKEN_SECRET
+      return
+    }
+    process.env.SOUL_AUDIT_RUN_TOKEN_SECRET = originalRunTokenSecret
   })
 
   it('has curated candidates and at least one complete 5-day series', () => {

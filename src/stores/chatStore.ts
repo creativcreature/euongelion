@@ -2,9 +2,13 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import type { ChatMessage, ChatColorLabel } from '@/types'
 
+type BrainMode = 'auto' | 'openai' | 'google' | 'minimax' | 'nvidia_kimi'
+
 interface ChatState {
   /** All chat messages (persistent history) */
   messages: ChatMessage[]
+  /** Threads that have been trimmed due to history cap */
+  trimmedThreadSlugs: string[]
   /** Whether the chat modal is open */
   isOpen: boolean
   /** Highlighted text that triggered the chat (transient) */
@@ -15,12 +19,20 @@ interface ChatState {
   dailyMessageCount: number
   /** Date string for daily count reset */
   dailyCountDate: string
+  /** Per-thread brain override (devotional slug keyed) */
+  threadBrainModeBySlug: Record<string, BrainMode>
 
   open: (highlightedText?: string) => void
   close: () => void
   setDevotionalContext: (slug: string | null) => void
   addMessage: (
     message: Omit<ChatMessage, 'id' | 'createdAt' | 'favorited' | 'colorLabel'>,
+  ) => string
+  updateMessage: (
+    messageId: string,
+    patch: Partial<
+      Omit<ChatMessage, 'id' | 'createdAt' | 'devotionalSlug' | 'role'>
+    >,
   ) => void
   toggleFavorite: (messageId: string) => void
   setColorLabel: (messageId: string, label: ChatColorLabel) => void
@@ -32,6 +44,9 @@ interface ChatState {
   }) => ChatMessage[]
   incrementDailyCount: () => void
   getDailyCount: () => number
+  setThreadBrainMode: (devotionalSlug: string, mode: BrainMode) => void
+  getThreadBrainMode: (devotionalSlug: string) => BrainMode | null
+  isThreadTrimmed: (devotionalSlug: string) => boolean
 }
 
 function generateId(): string {
@@ -42,15 +57,19 @@ function todayString(): string {
   return new Date().toISOString().split('T')[0]
 }
 
+const MAX_MESSAGES_PER_THREAD = 100
+
 export const useChatStore = create<ChatState>()(
   persist(
     (set, get) => ({
       messages: [],
+      trimmedThreadSlugs: [],
       isOpen: false,
       highlightedText: null,
       currentDevotionalSlug: null,
       dailyMessageCount: 0,
       dailyCountDate: todayString(),
+      threadBrainModeBySlug: {},
 
       open: (highlightedText) => {
         set({ isOpen: true, highlightedText: highlightedText || null })
@@ -72,7 +91,45 @@ export const useChatStore = create<ChatState>()(
           colorLabel: 'none',
           ...partial,
         }
-        set({ messages: [...get().messages, message] })
+        const current = get()
+        const nextMessages = [...current.messages, message]
+        const slug = message.devotionalSlug
+        if (!slug) {
+          set({ messages: nextMessages })
+          return message.id
+        }
+
+        const threadMessages = nextMessages.filter(
+          (m) => m.devotionalSlug === slug,
+        )
+        if (threadMessages.length <= MAX_MESSAGES_PER_THREAD) {
+          set({ messages: nextMessages })
+          return message.id
+        }
+
+        const overflow = threadMessages.length - MAX_MESSAGES_PER_THREAD
+        const toDrop = new Set(
+          threadMessages.slice(0, overflow).map((entry) => entry.id),
+        )
+        const trimmedMessages = nextMessages.filter(
+          (entry) => !toDrop.has(entry.id),
+        )
+        const trimmedThreadSlugs = Array.from(
+          new Set([...current.trimmedThreadSlugs, slug]),
+        )
+        set({
+          messages: trimmedMessages,
+          trimmedThreadSlugs,
+        })
+        return message.id
+      },
+
+      updateMessage: (messageId, patch) => {
+        set({
+          messages: get().messages.map((message) =>
+            message.id === messageId ? { ...message, ...patch } : message,
+          ),
+        })
       },
 
       toggleFavorite: (messageId) => {
@@ -92,7 +149,7 @@ export const useChatStore = create<ChatState>()(
       },
 
       clearHistory: () => {
-        set({ messages: [] })
+        set({ messages: [], trimmedThreadSlugs: [] })
       },
 
       getFilteredMessages: (filter) => {
@@ -129,13 +186,34 @@ export const useChatStore = create<ChatState>()(
         if (dailyCountDate !== today) return 0
         return dailyMessageCount
       },
+
+      setThreadBrainMode: (devotionalSlug, mode) => {
+        if (!devotionalSlug) return
+        set({
+          threadBrainModeBySlug: {
+            ...get().threadBrainModeBySlug,
+            [devotionalSlug]: mode,
+          },
+        })
+      },
+
+      getThreadBrainMode: (devotionalSlug) => {
+        if (!devotionalSlug) return null
+        return get().threadBrainModeBySlug[devotionalSlug] || null
+      },
+      isThreadTrimmed: (devotionalSlug) => {
+        if (!devotionalSlug) return false
+        return get().trimmedThreadSlugs.includes(devotionalSlug)
+      },
     }),
     {
       name: 'euangelion-chat',
       partialize: (state) => ({
         messages: state.messages,
+        trimmedThreadSlugs: state.trimmedThreadSlugs,
         dailyMessageCount: state.dailyMessageCount,
         dailyCountDate: state.dailyCountDate,
+        threadBrainModeBySlug: state.threadBrainModeBySlug,
       }),
     },
   ),

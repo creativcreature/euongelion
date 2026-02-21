@@ -5,6 +5,78 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Brain v2: Multi-Provider Closed-RAG + User Brain Controls (2026-02-21)
+
+### What Changed
+
+- Replaced single-provider chat execution with Brain Router orchestration:
+  - Provider pool scaffolded for OpenAI, Google, MiniMax, NVIDIA Kimi
+  - Auto mode now routes by quality-floor + lowest-cost eligible provider
+  - Platform cap enforcement now halts platform-funded requests and prompts BYO
+- Added new AI operations APIs:
+  - `GET /api/brain/providers`
+  - `GET/POST /api/brain/preferences`
+  - `GET /api/chat/usage`
+  - `GET/POST /api/admin/brain/reindex` (admin allowlist guarded)
+- Added usage ledger and quota-state tracking with per-provider breakdown plus usage page at `/usage`.
+- Upgraded chat contract to closed-RAG-first with explicit open-web acknowledgement:
+  - Closed mode stays local-corpus grounded
+  - Open Web requires explicit per-query acknowledgement
+  - Open Web responses include inline source markers + source cards
+- Reworked devotional chat UX into a right study drawer:
+  - Closed by default and remembered in Settings state
+  - Quick brain mode switch in chat composer region
+  - Left thread rail restores devotional/thread context
+- Expanded settings + onboarding defaults:
+  - Default brain mode
+  - Open Web default preference
+  - Devotional depth preference (`5-7`, `20-30`, `45-60`, `variable`)
+  - BYO provider key fields for OpenAI/Google/MiniMax/NVIDIA Kimi
+- Removed deterministic AI pathway fallback in selection route:
+  - `select` now returns transparent grounded-curation error (`422`) when curated grounding is unavailable.
+- Added CMS planning kickoff artifact immediately after Brain v2 execution.
+
+### Files
+
+- `src/app/api/chat/route.ts`
+- `src/lib/brain/types.ts`
+- `src/lib/brain/router.ts`
+- `src/lib/brain/usage-ledger.ts`
+- `src/lib/brain/flags.ts`
+- `src/lib/brain/cost.ts`
+- `src/lib/brain/rag-index.ts`
+- `src/lib/brain/intent-parser.ts`
+- `src/lib/brain/dedupe.ts`
+- `src/lib/brain/preferences.ts`
+- `src/app/api/brain/providers/route.ts`
+- `src/app/api/brain/preferences/route.ts`
+- `src/app/api/chat/usage/route.ts`
+- `src/app/api/admin/brain/reindex/route.ts`
+- `src/components/DevotionalChat.tsx`
+- `src/components/ChatMessage.tsx`
+- `src/stores/settingsStore.ts`
+- `src/stores/chatStore.ts`
+- `src/app/settings/page.tsx`
+- `src/lib/auth/onboarding.ts`
+- `src/app/onboarding/OnboardingClient.tsx`
+- `src/app/api/auth/onboarding/route.ts`
+- `src/app/api/soul-audit/select/route.ts`
+- `src/app/api/soul-audit/submit/route.ts`
+- `src/app/usage/page.tsx`
+- `__tests__/chat-response-metadata.test.ts`
+- `__tests__/chat-open-web-contract.test.ts`
+- `docs/cms/CMS-PLANNING-KICKOFF.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+- `npm run test -- --run __tests__/chat-guardrails.test.ts __tests__/chat-response-metadata.test.ts __tests__/chat-message-citations.test.tsx`
+- `npm run test -- --run __tests__/chat-open-web-contract.test.ts`
+- `npm run test -- --run __tests__/soul-audit-flow.test.ts __tests__/soul-audit-curation.test.ts`
+
+---
+
 ## Post-Signup Onboarding + Deeper AI Devotional Curation (2026-02-20)
 
 ### What Changed

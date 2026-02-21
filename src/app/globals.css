@@ -3,12 +3,10 @@
 
 @font-face {
   font-family: 'Instrument Serif';
-  src:
-    url('/fonts/InstrumentSerif-Regular.woff2') format('woff2'),
-    url('/fonts/InstrumentSerif-Regular.ttf') format('truetype');
+  src: url('/fonts/InstrumentSerif-Regular.woff2') format('woff2');
   font-style: normal;
   font-weight: 400;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -16,7 +14,7 @@
   src: url('/fonts/IndustryTest-Book.otf') format('opentype');
   font-style: normal;
   font-weight: 400;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -24,7 +22,7 @@
   src: url('/fonts/IndustryTest-Demi.otf') format('opentype');
   font-style: normal;
   font-weight: 600;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -32,17 +30,15 @@
   src: url('/fonts/IndustryTest-Bold.otf') format('opentype');
   font-style: normal;
   font-weight: 700;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Instrument Serif';
-  src:
-    url('/fonts/InstrumentSerif-Italic.woff2') format('woff2'),
-    url('/fonts/InstrumentSerif-Italic.ttf') format('truetype');
+  src: url('/fonts/InstrumentSerif-Italic.woff2') format('woff2');
   font-style: italic;
   font-weight: 400;
-  font-display: block;
+  font-display: optional;
 }
 
 @theme {

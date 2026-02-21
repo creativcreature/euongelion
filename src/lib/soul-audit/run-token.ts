@@ -35,11 +35,13 @@ function base64UrlDecode(input: string): string {
 }
 
 function tokenSecret(): string {
-  return (
-    process.env.SOUL_AUDIT_RUN_TOKEN_SECRET ||
-    process.env.NEXTAUTH_SECRET ||
-    'euangelion-dev-run-token-secret'
-  )
+  const secret = process.env.SOUL_AUDIT_RUN_TOKEN_SECRET
+  if (!secret || secret.trim().length < 32) {
+    throw new Error(
+      'SOUL_AUDIT_RUN_TOKEN_SECRET is required and must be at least 32 characters.',
+    )
+  }
+  return secret
 }
 
 function fingerprintSession(sessionToken: string): string {
@@ -88,7 +90,6 @@ export function verifyRunToken(params: {
   token: string | null | undefined
   expectedRunId: string
   sessionToken: string
-  allowSessionMismatch?: boolean
 }): VerifiedRunToken | null {
   const token = params.token?.trim()
   if (!token) return null
@@ -108,7 +109,7 @@ export function verifyRunToken(params: {
 
     const fingerprint = fingerprintSession(params.sessionToken)
     const sessionBound = decoded.sessionFingerprint === fingerprint
-    if (!sessionBound && !params.allowSessionMismatch) return null
+    if (!sessionBound) return null
 
     const issuedAt = new Date(decoded.issuedAt).getTime()
     if (!Number.isFinite(issuedAt)) return null

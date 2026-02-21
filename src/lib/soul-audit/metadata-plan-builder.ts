@@ -44,8 +44,8 @@ function buildFallbackDay(params: {
 }): CustomPlanDay {
   const userSnippet = normalizeInputSnippet(params.userResponse)
   const userLine = userSnippet
-    ? `You named this burden: "${userSnippet}".`
-    : 'Bring your current burden honestly before God.'
+    ? `You shared this reflection: "${userSnippet}".`
+    : 'Bring your present season honestly before God.'
 
   const keywordFocus = params.keywords.slice(0, 3).join(', ')
   const focusLine = keywordFocus
@@ -68,7 +68,7 @@ function buildFallbackDay(params: {
   const prayer = ensureMinLength(
     [
       `Lord Jesus, meet me in ${params.dayTitle} and steady me in Your truth.`,
-      `You know my burden${userSnippet ? ` ("${userSnippet}")` : ''}. Replace hurry and fear with trust and obedience.`,
+      `You know what I am carrying${userSnippet ? ` ("${userSnippet}")` : ''}. Replace hurry and fear with trust and obedience.`,
       `Use ${params.scriptureReference} to shape my words, my decisions, and my attention today.`,
     ].join('\n\n'),
     280,

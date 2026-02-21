@@ -47,7 +47,7 @@ function jsonWithRequestId(
 export async function GET(request: NextRequest) {
   const requestId = randomUUID()
   const key = getClientKey(request)
-  const limit = takeRateLimit({
+  const limit = await takeRateLimit({
     namespace: 'billing-lifecycle',
     key,
     limit: MAX_REQUESTS_PER_MINUTE,

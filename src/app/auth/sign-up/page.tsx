@@ -7,7 +7,7 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import { createClient as createSupabaseClient } from '@/lib/supabase/client'
 
-type OAuthProvider = 'apple' | 'google'
+type OAuthProvider = 'google'
 
 function normalizeRedirectPath(value: string | null): string {
   if (!value) return '/'
@@ -147,16 +147,6 @@ function SignUpForm() {
       )}
 
       <div className="mb-6 space-y-3">
-        <button
-          type="button"
-          disabled={isBusy}
-          onClick={() => handleOAuth('apple')}
-          className="w-full bg-surface-raised px-10 py-4 text-label vw-small text-[var(--color-text-primary)] transition-colors duration-200 hover:bg-[var(--color-fg)] hover:text-[var(--color-bg)] disabled:opacity-50"
-          style={{ border: '1px solid var(--color-border)' }}
-          aria-label="Continue with Apple"
-        >
-          {oauthProvider === 'apple' ? 'Connecting...' : 'Continue with Apple'}
-        </button>
         <button
           type="button"
           disabled={isBusy}

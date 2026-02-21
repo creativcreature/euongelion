@@ -139,6 +139,41 @@ function normalizeSearchText(parts: string[]): string {
   return combined.slice(0, 6000)
 }
 
+const DOMAIN_STOP_WORDS = new Set([
+  'the',
+  'and',
+  'for',
+  'that',
+  'this',
+  'with',
+  'from',
+  'into',
+  'your',
+  'about',
+  'just',
+  'really',
+  'very',
+  'have',
+  'been',
+  'being',
+  'want',
+  'need',
+  'feel',
+  'like',
+  'today',
+  'right',
+  'now',
+  'then',
+  'there',
+  'when',
+  'where',
+  'what',
+  'will',
+  'would',
+  'could',
+  'should',
+])
+
 function extractKeywords(input: string): string[] {
   return Array.from(
     new Set(
@@ -147,7 +182,12 @@ function extractKeywords(input: string): string[] {
         .replace(/[^a-z0-9\s-]/g, ' ')
         .split(/\s+/)
         .map((word) => word.trim())
-        .filter((word) => word.length >= 4),
+        .filter(
+          (word) =>
+            word.length >= 3 &&
+            !DOMAIN_STOP_WORDS.has(word) &&
+            /^[a-z0-9-]+$/.test(word),
+        ),
     ),
   ).slice(0, 20)
 }
@@ -175,6 +215,65 @@ export function expandSemanticHints(input: string): string {
     },
     { trigger: /\bguilty|shame|sin\b/, inject: 'grace mercy forgiveness' },
     { trigger: /\bdoubt|skeptic|skeptical\b/, inject: 'belief trust gospel' },
+    {
+      trigger: /\bpray|prayer|learn to pray\b/,
+      inject: 'prayer communion ask seek',
+    },
+    { trigger: /\bjoy|rejoice|celebrate\b/, inject: 'joy gratitude praise' },
+    { trigger: /\bhope|hopeless\b/, inject: 'hope endurance promise' },
+    { trigger: /\blove|loving|unloved\b/, inject: 'love belonging identity' },
+    {
+      trigger: /\bangry|anger|resentment\b/,
+      inject: 'forgiveness gentleness patience',
+    },
+    {
+      trigger: /\bforgive|forgiveness\b/,
+      inject: 'mercy reconciliation release',
+    },
+    {
+      trigger: /\btemptation|addiction|habit\b/,
+      inject: 'self-control repentance freedom',
+    },
+    {
+      trigger: /\bidentity|worth|value\b/,
+      inject: 'identity belonging son daughter',
+    },
+    {
+      trigger: /\bmarriage|spouse\b/,
+      inject: 'covenant patience communication',
+    },
+    {
+      trigger: /\bparent|kids|children\b/,
+      inject: 'parenting wisdom gentleness',
+    },
+    {
+      trigger: /\bmoney|debt|finances|work\b/,
+      inject: 'provision stewardship trust',
+    },
+    {
+      trigger: /\bdecision|discern|discernment\b/,
+      inject: 'wisdom counsel discernment',
+    },
+    {
+      trigger: /\brest|sabbath|tired|fatigue\b/,
+      inject: 'rest sabbath renewal',
+    },
+    { trigger: /\bfear|afraid\b/, inject: 'courage trust presence' },
+    {
+      trigger: /\bhealing|sick|illness\b/,
+      inject: 'healing comfort perseverance',
+    },
+    {
+      trigger: /\bwaiting|delay|patient\b/,
+      inject: 'patience endurance timing',
+    },
+    { trigger: /\bchurch|community\b/, inject: 'community fellowship unity' },
+    {
+      trigger: /\bmission|evangelism|witness\b/,
+      inject: 'mission witness courage',
+    },
+    { trigger: /\bgrief|mourning|loss\b/, inject: 'comfort lament hope' },
+    { trigger: /\bpeace|calm\b/, inject: 'peace stillness trust' },
   ]
 
   let expanded = lower

@@ -4,6 +4,9 @@ import type { UserSession, UserSessionInsert } from '@/types/database'
 
 const SESSION_COOKIE_NAME = 'euongelion_session'
 const SESSION_MAX_AGE = 30 * 24 * 60 * 60 // 30 days in seconds
+const LAST_ACTIVE_WRITE_INTERVAL_MS = 60_000
+
+const lastActiveWriteBySessionId = new Map<string, number>()
 
 /**
  * Generate a cryptographically random session token
@@ -62,11 +65,16 @@ export async function getSession(): Promise<UserSession | null> {
 
   if (error || !data) return null
 
-  // Touch last_active_at
-  await supabase
-    .from('user_sessions')
-    .update({ last_active_at: new Date().toISOString() })
-    .eq('id', data.id)
+  // Throttle last_active_at writes to avoid contention on rapid concurrent checks.
+  const now = Date.now()
+  const lastWrite = lastActiveWriteBySessionId.get(data.id) ?? 0
+  if (now - lastWrite >= LAST_ACTIVE_WRITE_INTERVAL_MS) {
+    lastActiveWriteBySessionId.set(data.id, now)
+    void supabase
+      .from('user_sessions')
+      .update({ last_active_at: new Date(now).toISOString() })
+      .eq('id', data.id)
+  }
 
   return data as UserSession
 }

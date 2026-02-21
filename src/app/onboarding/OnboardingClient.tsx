@@ -103,6 +103,15 @@ export default function OnboardingClient({
   const setBibleTranslation = useSettingsStore(
     (state) => state.setBibleTranslation,
   )
+  const setDefaultBrainMode = useSettingsStore(
+    (state) => state.setDefaultBrainMode,
+  )
+  const setOpenWebDefaultEnabled = useSettingsStore(
+    (state) => state.setOpenWebDefaultEnabled,
+  )
+  const setDevotionalDepthPreference = useSettingsStore(
+    (state) => state.setDevotionalDepthPreference,
+  )
   const setTextScale = useSettingsStore((state) => state.setTextScale)
   const setReduceMotion = useSettingsStore((state) => state.setReduceMotion)
   const setHighContrast = useSettingsStore((state) => state.setHighContrast)
@@ -124,6 +133,9 @@ export default function OnboardingClient({
     setTheme(preferences.theme)
     setSabbathDay(preferences.sabbathDay)
     setBibleTranslation(preferences.bibleTranslation)
+    setDefaultBrainMode(preferences.defaultBrainMode)
+    setOpenWebDefaultEnabled(preferences.openWebDefaultEnabled)
+    setDevotionalDepthPreference(preferences.devotionalDepthPreference)
     setTextScale(preferences.textScale)
     setReduceMotion(preferences.reduceMotion)
     setHighContrast(preferences.highContrast)
@@ -309,34 +321,114 @@ export default function OnboardingClient({
 
     if (currentStep.key === 'scripture') {
       return (
-        <div className="grid gap-4">
-          <p className="text-label vw-small text-gold">BIBLE TRANSLATION</p>
-          <select
-            value={prefs.bibleTranslation}
-            onChange={(event) =>
-              setPrefs((prev) => ({
-                ...prev,
-                bibleTranslation: event.target
-                  .value as BibleTranslationPreference,
-              }))
-            }
-            className="w-full max-w-sm bg-surface-raised px-5 py-3 vw-body text-[var(--color-text-primary)]"
-            style={{
-              border: '1px solid var(--color-border)',
-              appearance: 'none',
-            }}
-            aria-label="Default Bible translation"
-          >
-            <option value="NIV">NIV (New International Version)</option>
-            <option value="ESV">ESV (English Standard Version)</option>
-            <option value="NASB">NASB (New American Standard Bible)</option>
-            <option value="KJV">KJV (King James Version)</option>
-            <option value="NLT">NLT (New Living Translation)</option>
-            <option value="MSG">MSG (The Message)</option>
-          </select>
+        <div className="grid gap-6">
+          <div className="grid gap-4">
+            <p className="text-label vw-small text-gold">BIBLE TRANSLATION</p>
+            <select
+              value={prefs.bibleTranslation}
+              onChange={(event) =>
+                setPrefs((prev) => ({
+                  ...prev,
+                  bibleTranslation: event.target
+                    .value as BibleTranslationPreference,
+                }))
+              }
+              className="w-full max-w-sm bg-surface-raised px-5 py-3 vw-body text-[var(--color-text-primary)]"
+              style={{
+                border: '1px solid var(--color-border)',
+                appearance: 'none',
+              }}
+              aria-label="Default Bible translation"
+            >
+              <option value="NIV">NIV (New International Version)</option>
+              <option value="ESV">ESV (English Standard Version)</option>
+              <option value="NASB">NASB (New American Standard Bible)</option>
+              <option value="KJV">KJV (King James Version)</option>
+              <option value="NLT">NLT (New Living Translation)</option>
+              <option value="MSG">MSG (The Message)</option>
+            </select>
+          </div>
+
+          <div>
+            <p className="text-label vw-small mb-3 text-gold">
+              DEVOTIONAL DEPTH
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: '5-7 min', value: 'short_5_7' },
+                { label: '20-30 min', value: 'medium_20_30' },
+                { label: '45-60 min', value: 'long_45_60' },
+                { label: 'Variable', value: 'variable' },
+              ].map((option) => (
+                <OptionButton
+                  key={option.value}
+                  active={prefs.devotionalDepthPreference === option.value}
+                  onClick={() =>
+                    setPrefs((prev) => ({
+                      ...prev,
+                      devotionalDepthPreference: option.value as
+                        | 'short_5_7'
+                        | 'medium_20_30'
+                        | 'long_45_60'
+                        | 'variable',
+                    }))
+                  }
+                >
+                  {option.label}
+                </OptionButton>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-3">
+            <p className="text-label vw-small text-gold">DEFAULT BRAIN</p>
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: 'Auto', value: 'auto' },
+                { label: 'OpenAI', value: 'openai' },
+                { label: 'Google', value: 'google' },
+                { label: 'MiniMax', value: 'minimax' },
+                { label: 'NVIDIA Kimi', value: 'nvidia_kimi' },
+              ].map((option) => (
+                <OptionButton
+                  key={option.value}
+                  active={prefs.defaultBrainMode === option.value}
+                  onClick={() =>
+                    setPrefs((prev) => ({
+                      ...prev,
+                      defaultBrainMode: option.value as
+                        | 'auto'
+                        | 'openai'
+                        | 'google'
+                        | 'minimax'
+                        | 'nvidia_kimi',
+                    }))
+                  }
+                >
+                  {option.label}
+                </OptionButton>
+              ))}
+            </div>
+            <label className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                checked={prefs.openWebDefaultEnabled}
+                onChange={(event) =>
+                  setPrefs((prev) => ({
+                    ...prev,
+                    openWebDefaultEnabled: event.target.checked,
+                  }))
+                }
+              />
+              <span className="vw-small text-secondary">
+                Allow Open Web mode by default (you can still turn it off per
+                chat).
+              </span>
+            </label>
+          </div>
+
           <p className="vw-small text-secondary">
-            This becomes your default Scripture surface across devotional cards
-            and reading screens.
+            These defaults can be changed anytime in Settings.
           </p>
         </div>
       )

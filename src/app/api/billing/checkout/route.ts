@@ -66,7 +66,7 @@ function jsonWithRequestId(
 export async function POST(request: NextRequest) {
   const requestId = randomUUID()
   const key = getClientKey(request)
-  const limit = takeRateLimit({
+  const limit = await takeRateLimit({
     namespace: 'billing-checkout',
     key,
     limit: MAX_CHECKOUTS_PER_MINUTE,

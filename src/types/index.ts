@@ -249,18 +249,45 @@ export type ChatColorLabel = 'gold' | 'burgundy' | 'olive' | 'shalom' | 'none'
 export interface ChatCitation {
   id: string
   label: string
-  type: 'scripture' | 'devotional_context' | 'local_reference' | 'highlight'
+  type:
+    | 'scripture'
+    | 'devotional_context'
+    | 'local_reference'
+    | 'highlight'
+    | 'open_web'
   source: string
+  url?: string
+  publisher?: string
+  date?: string
+  snippet?: string
 }
 
 export interface ChatGuardrailMeta {
-  scope: 'local-corpus-only'
-  internetSearch: false
+  scope: 'local-corpus-only' | 'open-web-opt-in'
+  internetSearch: boolean
   devotionalSlug: string | null
   hasHighlightedText: boolean
   hasDevotionalContext: boolean
   hasReferenceContext: boolean
   sources: string[]
+  retrievalMode?: 'closed' | 'open_web'
+  provider?: string
+  openWebAcknowledged?: boolean
+  insufficientContext?: boolean
+}
+
+export interface ChatSourceCard {
+  id: string
+  title: string
+  publisher?: string
+  url?: string
+  date?: string
+  snippet: string
+  sourceType:
+    | 'local_reference'
+    | 'devotional_context'
+    | 'scripture'
+    | 'open_web'
 }
 
 export interface ChatMessage {
@@ -271,6 +298,9 @@ export interface ChatMessage {
   highlightedText?: string
   citations?: ChatCitation[]
   guardrails?: ChatGuardrailMeta
+  sourceCards?: ChatSourceCard[]
+  brainProvider?: string
+  retrievalMode?: 'closed' | 'open_web'
   favorited: boolean
   colorLabel: ChatColorLabel
   createdAt: string

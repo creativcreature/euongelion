@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { POST as submitHandler } from '@/app/api/soul-audit/submit/route'
 import { POST as consentHandler } from '@/app/api/soul-audit/consent/route'
 import { POST as selectHandler } from '@/app/api/soul-audit/select/route'
@@ -11,6 +11,7 @@ import {
 import { createConsentToken } from '@/lib/soul-audit/consent-token'
 
 let mockedSessionToken = 'test-session-token'
+const originalRunTokenSecret = process.env.SOUL_AUDIT_RUN_TOKEN_SECRET
 
 vi.mock('@/lib/soul-audit/session', () => ({
   getOrCreateAuditSessionToken: vi.fn(async () => mockedSessionToken),
@@ -34,11 +35,21 @@ function postJson(
 
 describe('Soul Audit staged flow', () => {
   beforeEach(() => {
+    process.env.SOUL_AUDIT_RUN_TOKEN_SECRET =
+      'test-run-token-secret-12345678901234567890'
     mockedSessionToken = 'test-session-token'
     resetSessionAuditCount('test-session-token')
     resetSessionAuditCount('session-a')
     resetSessionAuditCount('session-b')
     resetSessionAuditCount('session-c')
+  })
+
+  afterAll(() => {
+    if (originalRunTokenSecret === undefined) {
+      delete process.env.SOUL_AUDIT_RUN_TOKEN_SECRET
+      return
+    }
+    process.env.SOUL_AUDIT_RUN_TOKEN_SECRET = originalRunTokenSecret
   })
 
   it('submit returns exactly 5 options and no eager plan payload', async () => {
@@ -484,7 +495,7 @@ describe('Soul Audit staged flow', () => {
     expect(activeDaysPayload.days).toEqual([])
   })
 
-  it('survives session-token churn via run/consent token fallback', async () => {
+  it('rejects run/consent token reuse after session-token churn', async () => {
     mockedSessionToken = 'session-a'
     const submitResponse = await submitHandler(
       postJson('http://localhost/api/soul-audit/submit', {
@@ -513,30 +524,13 @@ describe('Soul Audit staged flow', () => {
         crisisAcknowledged: false,
       }) as never,
     )
-    expect(consentResponse.status).toBe(200)
+    expect(consentResponse.status).toBe(403)
     const consentPayload = (await consentResponse.json()) as {
-      consentToken: string
+      code?: string
+      error?: string
     }
-    expect(typeof consentPayload.consentToken).toBe('string')
-
-    mockedSessionToken = 'session-c'
-    const selectionResponse = await selectHandler(
-      postJson('http://localhost/api/soul-audit/select', {
-        auditRunId: submitPayload.auditRunId,
-        optionId: prefabOption?.id,
-        runToken: submitPayload.runToken,
-        consentToken: consentPayload.consentToken,
-      }) as never,
-    )
-    expect(selectionResponse.status).toBe(200)
-    const selectionPayload = (await selectionResponse.json()) as {
-      ok: boolean
-      selectionType: string
-      route: string
-    }
-    expect(selectionPayload.ok).toBe(true)
-    expect(selectionPayload.selectionType).toBe('curated_prefab')
-    expect(selectionPayload.route).toMatch(/^\/devotional\//)
+    expect(consentPayload.code).toBe('RUN_ACCESS_DENIED')
+    expect(consentPayload.error).toMatch(/access denied/i)
   })
 
   it('reroll submit mode does not consume additional audit-cycle count', async () => {

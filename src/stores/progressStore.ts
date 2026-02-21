@@ -22,14 +22,16 @@ export const useProgressStore = create<ProgressState>()(
       seriesStartDates: {},
 
       markComplete: (slug, timeSpent) => {
-        const { completions } = get()
-        if (completions.some((p) => p.slug === slug)) return
-
-        set({
-          completions: [
-            ...completions,
-            { slug, completedAt: new Date().toISOString(), timeSpent },
-          ],
+        set((state) => {
+          if (state.completions.some((p) => p.slug === slug)) {
+            return state
+          }
+          return {
+            completions: [
+              ...state.completions,
+              { slug, completedAt: new Date().toISOString(), timeSpent },
+            ],
+          }
         })
       },
 
@@ -46,14 +48,14 @@ export const useProgressStore = create<ProgressState>()(
       },
 
       startSeries: (seriesSlug) => {
-        const { seriesStartDates } = get()
-        if (seriesStartDates[seriesSlug]) return
-
-        set({
-          seriesStartDates: {
-            ...seriesStartDates,
-            [seriesSlug]: new Date().toISOString(),
-          },
+        set((state) => {
+          if (state.seriesStartDates[seriesSlug]) return state
+          return {
+            seriesStartDates: {
+              ...state.seriesStartDates,
+              [seriesSlug]: new Date().toISOString(),
+            },
+          }
         })
       },
 

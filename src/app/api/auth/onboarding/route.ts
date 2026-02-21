@@ -5,6 +5,7 @@ import {
   readOnboardingStateFromMetadata,
   sanitizeOnboardingPreferences,
 } from '@/lib/auth/onboarding'
+import { buildBrainSettingsPatch } from '@/lib/brain/preferences'
 import {
   createRequestId,
   jsonError,
@@ -99,10 +100,18 @@ export async function POST(request: NextRequest) {
     )
     const skipped = parsed.data.skipped === true
 
-    const metadataPatch = buildOnboardingMetadataPatch({
+    const onboardingPatch = buildOnboardingMetadataPatch({
       existingMetadata: user.user_metadata,
       preferences,
       skipped,
+    })
+    const metadataPatch = buildBrainSettingsPatch({
+      existingMetadata: onboardingPatch,
+      settings: {
+        defaultBrainMode: preferences.defaultBrainMode,
+        openWebDefaultEnabled: preferences.openWebDefaultEnabled,
+        devotionalLengthPreference: preferences.devotionalDepthPreference,
+      },
     })
 
     const { data, error: updateError } = await supabase.auth.updateUser({

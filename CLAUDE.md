@@ -13,7 +13,7 @@
 - **Styling:** Tailwind CSS v4, dark-first
 - **Database:** Supabase (PostgreSQL + RLS + Auth)
 - **Testing:** Vitest + React Testing Library
-- **Deploy:** Vercel (Hobby — max 12 serverless functions)
+- **Deploy:** Vercel (Pro for launch capacity)
 - **CI:** GitHub Actions (build + lint + type-check + test)
 
 ## Commands
@@ -80,7 +80,7 @@ Three visual directions proposed (founder decision pending):
 ## Constraints
 
 - **Port 3333** — ports 3000-3005 are occupied
-- **Vercel Hobby** — max 12 serverless functions
+- **Vercel route count** — current API surface exceeds Hobby limits; Pro is required pre-launch
 - **Reference library** — 13GB in `content/reference/`, always gitignored
 - **WCAG 2.1 AA** minimum accessibility
 - **Performance:** LCP < 2.5s, FID < 100ms, CLS < 0.1
@@ -203,6 +203,7 @@ If any check fails, **STOP**. Do not push or deploy.
 7. **Surface assumptions.** State them before implementing. Ask if uncertain.
 8. **Verify accounts before deploying.** Check `vercel whoami` and `git config user.email` before any deploy or push. Wrong account = broken deploys.
 9. **Never ship doc/contract drift.** `docs/PRODUCTION-SOURCE-OF-TRUTH.md`, `docs/production-decisions.yaml`, `docs/PRODUCTION-FEATURE-SCORECARD.md`, `docs/PRODUCTION-10-10-PLAN.md`, `docs/PRODUCTION-COMPACTION-HANDOFF.md`, and `CHANGELOG.md` must remain aligned.
+10. **No partial launch.** Do not ship degraded MVP/auth/content pathways. Release only when full launch gate passes.
 
 ## Reference Library
 

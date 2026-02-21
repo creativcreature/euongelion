@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    const limiter = takeRateLimit({
+    const limiter = await takeRateLimit({
       namespace: 'annotations-post',
       key: clientKey,
       limit: MAX_ANNOTATION_REQUESTS_PER_MINUTE,
@@ -257,7 +257,7 @@ export async function PATCH(request: NextRequest) {
       })
     }
 
-    const limiter = takeRateLimit({
+    const limiter = await takeRateLimit({
       namespace: 'annotations-patch',
       key: clientKey,
       limit: MAX_ANNOTATION_REQUESTS_PER_MINUTE,

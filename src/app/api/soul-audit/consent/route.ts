@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    const limiter = takeRateLimit({
+    const limiter = await takeRateLimit({
       namespace: 'soul-audit-consent',
       key: clientKey,
       limit: MAX_CONSENT_REQUESTS_PER_MINUTE,
@@ -91,7 +91,6 @@ export async function POST(request: NextRequest) {
       token: body.runToken,
       expectedRunId: runId,
       sessionToken,
-      allowSessionMismatch: true,
     })
 
     let run = await getAuditRunWithFallback(runId)

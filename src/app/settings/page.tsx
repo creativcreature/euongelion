@@ -1,6 +1,12 @@
 'use client'
 
-import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from 'react'
 import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
@@ -25,6 +31,7 @@ type Theme = 'dark' | 'light' | 'system'
 type SabbathDay = 'saturday' | 'sunday'
 type BibleTranslation = 'NIV' | 'ESV' | 'NASB' | 'KJV' | 'NLT' | 'MSG'
 type TextScale = 'default' | 'large' | 'xlarge'
+type BrainMode = 'auto' | 'openai' | 'google' | 'minimax' | 'nvidia_kimi'
 type MockMode = 'anonymous' | 'mock_account'
 
 type MockRetention = {
@@ -68,7 +75,15 @@ export default function SettingsPage() {
   const {
     bibleTranslation,
     sabbathDay,
+    defaultBrainMode,
+    openWebDefaultEnabled,
+    devotionalDepthPreference,
+    keyStorageMode,
     anthropicApiKey,
+    openaiApiKey,
+    googleApiKey,
+    minimaxApiKey,
+    nvidiaKimiApiKey,
     dayLockingEnabled,
     textScale,
     reduceMotion,
@@ -76,7 +91,17 @@ export default function SettingsPage() {
     readingComfort,
     setBibleTranslation,
     setSabbathDay,
+    setDefaultBrainMode,
+    setOpenWebDefaultEnabled,
+    setDevotionalDepthPreference,
+    setKeyStorageMode,
+    hydrateRememberedProviderKeys,
+    clearProviderKeys,
     setAnthropicApiKey,
+    setOpenaiApiKey,
+    setGoogleApiKey,
+    setMinimaxApiKey,
+    setNvidiaKimiApiKey,
     setDayLockingEnabled,
     setTextScale,
     setReduceMotion,
@@ -108,6 +133,7 @@ export default function SettingsPage() {
   const [privacyExportBusy, setPrivacyExportBusy] = useState(false)
   const [privacyMessage, setPrivacyMessage] = useState<string | null>(null)
   const [privacyError, setPrivacyError] = useState<string | null>(null)
+  const brainSyncTimerRef = useRef<number | null>(null)
 
   const hydrated = useHydrated()
 
@@ -359,6 +385,43 @@ export default function SettingsPage() {
     if (!hydrated || typeof document === 'undefined') return
     document.cookie = serializeDayLockingCookie(dayLockingEnabled)
   }, [dayLockingEnabled, hydrated])
+
+  useEffect(() => {
+    if (!hydrated) return
+    void hydrateRememberedProviderKeys()
+  }, [hydrated, hydrateRememberedProviderKeys])
+
+  useEffect(() => {
+    if (!hydrated) return
+    if (brainSyncTimerRef.current) {
+      window.clearTimeout(brainSyncTimerRef.current)
+    }
+
+    brainSyncTimerRef.current = window.setTimeout(() => {
+      void fetch('/api/brain/preferences', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          defaultBrainMode,
+          openWebDefaultEnabled,
+          devotionalDepthPreference,
+        }),
+      }).catch(() => {
+        // Best-effort sync for authenticated users.
+      })
+    }, 500)
+
+    return () => {
+      if (brainSyncTimerRef.current) {
+        window.clearTimeout(brainSyncTimerRef.current)
+      }
+    }
+  }, [
+    hydrated,
+    defaultBrainMode,
+    openWebDefaultEnabled,
+    devotionalDepthPreference,
+  ])
 
   async function startWebCheckout(plan: BillingPlan) {
     setBillingBusy(true)
@@ -726,35 +789,241 @@ export default function SettingsPage() {
             </div>
           </div>
 
-          {/* AI Research Chat */}
+          {/* Brain + AI */}
           <div
             className="mb-8 pb-8"
             style={{ borderBottom: '1px solid var(--color-border)' }}
           >
             <h2 className="text-label vw-small mb-4 text-gold">
-              AI RESEARCH CHAT
+              BRAIN ROUTING + AI
             </h2>
             <p className="vw-small mb-6 text-secondary">
-              Add your own Anthropic API key for unlimited biblical research
-              questions. Without a key, you get 10 free questions per day.
+              Choose your default brain, devotional depth profile, and optional
+              BYO provider keys.
             </p>
-            <input
-              type="password"
-              value={anthropicApiKey}
-              onChange={(e) => {
-                setAnthropicApiKey(e.target.value)
-                showSaved()
-              }}
-              placeholder="sk-ant-..."
-              className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
-              style={{
-                border: '1px solid var(--color-border)',
-              }}
-              autoComplete="off"
-            />
-            <p className="mt-3 vw-small text-muted">
-              Your key is stored locally and never sent to our servers.
-            </p>
+            <div className="grid gap-6">
+              <div className="grid gap-3">
+                <p className="text-label vw-small text-gold">DEFAULT BRAIN</p>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    { label: 'Auto (Claude-first)', value: 'auto' },
+                    { label: 'Claude/OpenAI', value: 'openai' },
+                    { label: 'Google', value: 'google' },
+                    { label: 'MiniMax', value: 'minimax' },
+                    { label: 'NVIDIA Kimi', value: 'nvidia_kimi' },
+                  ].map((option) => (
+                    <button
+                      key={option.value}
+                      type="button"
+                      onClick={() => {
+                        setDefaultBrainMode(option.value as BrainMode)
+                        showSaved()
+                      }}
+                      aria-pressed={defaultBrainMode === option.value}
+                      className="px-4 py-2 text-label vw-small"
+                      style={{
+                        border: `1px solid ${
+                          defaultBrainMode === option.value
+                            ? 'var(--color-border-strong)'
+                            : 'var(--color-border)'
+                        }`,
+                        background:
+                          defaultBrainMode === option.value
+                            ? 'var(--color-active)'
+                            : 'var(--color-surface)',
+                      }}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid gap-3">
+                <p className="text-label vw-small text-gold">
+                  DEVOTIONAL DEPTH
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    { label: '5-7 min', value: 'short_5_7' },
+                    { label: '20-30 min', value: 'medium_20_30' },
+                    { label: '45-60 min', value: 'long_45_60' },
+                    { label: 'Variable', value: 'variable' },
+                  ].map((option) => (
+                    <button
+                      key={option.value}
+                      type="button"
+                      onClick={() => {
+                        setDevotionalDepthPreference(
+                          option.value as
+                            | 'short_5_7'
+                            | 'medium_20_30'
+                            | 'long_45_60'
+                            | 'variable',
+                        )
+                        showSaved()
+                      }}
+                      aria-pressed={devotionalDepthPreference === option.value}
+                      className="px-4 py-2 text-label vw-small"
+                      style={{
+                        border: `1px solid ${
+                          devotionalDepthPreference === option.value
+                            ? 'var(--color-border-strong)'
+                            : 'var(--color-border)'
+                        }`,
+                        background:
+                          devotionalDepthPreference === option.value
+                            ? 'var(--color-active)'
+                            : 'var(--color-surface)',
+                      }}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <label className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  checked={openWebDefaultEnabled}
+                  onChange={(event) => {
+                    setOpenWebDefaultEnabled(event.target.checked)
+                    showSaved()
+                  }}
+                />
+                <span className="vw-small text-secondary">
+                  Open Web mode default (still requires explicit per-query
+                  acknowledgement in chat).
+                </span>
+              </label>
+
+              <div className="grid gap-4">
+                <p className="text-label vw-small text-gold">BYO KEYS</p>
+                <div className="flex flex-wrap gap-3">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setKeyStorageMode('session_only')
+                      showSaved()
+                    }}
+                    aria-pressed={keyStorageMode === 'session_only'}
+                    className="px-4 py-2 text-label vw-small"
+                    style={{
+                      border: `1px solid ${
+                        keyStorageMode === 'session_only'
+                          ? 'var(--color-border-strong)'
+                          : 'var(--color-border)'
+                      }`,
+                      background:
+                        keyStorageMode === 'session_only'
+                          ? 'var(--color-active)'
+                          : 'var(--color-surface)',
+                    }}
+                  >
+                    Session only
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setKeyStorageMode('remember_encrypted')
+                      showSaved()
+                    }}
+                    aria-pressed={keyStorageMode === 'remember_encrypted'}
+                    className="px-4 py-2 text-label vw-small"
+                    style={{
+                      border: `1px solid ${
+                        keyStorageMode === 'remember_encrypted'
+                          ? 'var(--color-border-strong)'
+                          : 'var(--color-border)'
+                      }`,
+                      background:
+                        keyStorageMode === 'remember_encrypted'
+                          ? 'var(--color-active)'
+                          : 'var(--color-surface)',
+                    }}
+                  >
+                    Remember encrypted
+                  </button>
+                </div>
+                <input
+                  type="password"
+                  value={openaiApiKey || anthropicApiKey}
+                  onChange={(event) => {
+                    setOpenaiApiKey(event.target.value)
+                    setAnthropicApiKey(event.target.value)
+                    showSaved()
+                  }}
+                  placeholder="OpenAI key"
+                  className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
+                  style={{ border: '1px solid var(--color-border)' }}
+                  autoComplete="off"
+                />
+                <input
+                  type="password"
+                  value={googleApiKey}
+                  onChange={(event) => {
+                    setGoogleApiKey(event.target.value)
+                    showSaved()
+                  }}
+                  placeholder="Google key"
+                  className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
+                  style={{ border: '1px solid var(--color-border)' }}
+                  autoComplete="off"
+                />
+                <input
+                  type="password"
+                  value={minimaxApiKey}
+                  onChange={(event) => {
+                    setMinimaxApiKey(event.target.value)
+                    showSaved()
+                  }}
+                  placeholder="MiniMax key"
+                  className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
+                  style={{ border: '1px solid var(--color-border)' }}
+                  autoComplete="off"
+                />
+                <input
+                  type="password"
+                  value={nvidiaKimiApiKey}
+                  onChange={(event) => {
+                    setNvidiaKimiApiKey(event.target.value)
+                    showSaved()
+                  }}
+                  placeholder="NVIDIA Kimi key"
+                  className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
+                  style={{ border: '1px solid var(--color-border)' }}
+                  autoComplete="off"
+                />
+                <p className="vw-small text-muted">
+                  {keyStorageMode === 'session_only'
+                    ? 'Keys stay in-memory for this browser session and are not persisted.'
+                    : 'Keys are encrypted before local persistence on this device.'}
+                </p>
+                <p className="vw-small text-muted">
+                  Client-side encryption protects storage at rest, but does not
+                  mitigate active XSS inside the browser runtime.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    clearProviderKeys()
+                    showSaved()
+                  }}
+                  className="w-fit border px-4 py-2 text-label vw-small"
+                  style={{ borderColor: 'var(--color-border)' }}
+                >
+                  Clear all provider keys
+                </button>
+              </div>
+
+              <Link
+                href="/usage"
+                className="text-label vw-small link-highlight"
+              >
+                View usage + quota details
+              </Link>
+            </div>
           </div>
 
           {/* Privacy + Mock Account */}

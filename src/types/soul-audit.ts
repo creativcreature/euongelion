@@ -45,6 +45,10 @@ export interface SoulAuditSubmitResponseV2 {
   requiresEssentialConsent: true
   analyticsOptInDefault: false
   consentAccepted: boolean
+  clarifierRequired?: boolean
+  clarifierPrompt?: string | null
+  clarifierOptions?: string[]
+  clarifierToken?: string | null
   crisis: CrisisRequirement
   options: AuditOptionPreview[]
   policy: {

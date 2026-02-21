@@ -1,9 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server'
-
-interface RateLimitBucket {
-  count: number
-  resetAt: number
-}
+import { createHash } from 'crypto'
+import { Redis } from '@upstash/redis'
 
 type SerializedError = {
   name: string
@@ -11,10 +8,10 @@ type SerializedError = {
   stack?: string
 }
 
-const rateLimitStore = new Map<string, RateLimitBucket>()
-const MAX_RATE_LIMIT_BUCKETS = 5_000
-const RATE_LIMIT_PRUNE_INTERVAL_MS = 30_000
-let lastRateLimitPruneMs = 0
+interface RateLimitBucket {
+  count: number
+  resetAt: number
+}
 
 const SAFE_SLUG_RE = /^[a-z0-9-]{1,120}$/
 const SAFE_AUDIT_RUN_ID_RE = /^[a-f0-9-]{36}$/i
@@ -22,8 +19,72 @@ const SAFE_AUDIT_OPTION_ID_RE =
   /^(ai_primary|curated_prefab):[a-z0-9-]{1,120}:[0-9]{1,2}:[0-9]{1,2}$/i
 const SAFE_TIMEZONE_RE = /^[A-Za-z_]+(?:\/[A-Za-z0-9._+-]+)+$/
 
+let redisClient: Redis | null = null
+const memoryRateLimitStore = new Map<string, RateLimitBucket>()
+
+function getRedisClient(): Redis | null {
+  if (redisClient) return redisClient
+  const url = process.env.UPSTASH_REDIS_REST_URL
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN
+  if (!url || !token) return null
+
+  redisClient = new Redis({
+    url,
+    token,
+  })
+  return redisClient
+}
+
 function nowMs() {
   return Date.now()
+}
+
+function takeRateLimitMemory(params: {
+  namespace: string
+  key: string
+  limit: number
+  windowMs: number
+}) {
+  const stamp = nowMs()
+  const id = `${params.namespace}:${params.key}`
+  const existing = memoryRateLimitStore.get(id)
+  if (!existing || existing.resetAt <= stamp) {
+    const resetAt = stamp + params.windowMs
+    memoryRateLimitStore.set(id, { count: 1, resetAt })
+    return {
+      ok: true,
+      retryAfterSeconds: Math.ceil(params.windowMs / 1000),
+      limit: params.limit,
+      remaining: Math.max(0, params.limit - 1),
+      resetAtSeconds: Math.ceil(resetAt / 1000),
+    }
+  }
+
+  if (existing.count >= params.limit) {
+    return {
+      ok: false,
+      retryAfterSeconds: Math.max(
+        1,
+        Math.ceil((existing.resetAt - stamp) / 1000),
+      ),
+      limit: params.limit,
+      remaining: 0,
+      resetAtSeconds: Math.ceil(existing.resetAt / 1000),
+    }
+  }
+
+  existing.count += 1
+  memoryRateLimitStore.set(id, existing)
+  return {
+    ok: true,
+    retryAfterSeconds: Math.max(
+      1,
+      Math.ceil((existing.resetAt - stamp) / 1000),
+    ),
+    limit: params.limit,
+    remaining: Math.max(0, params.limit - existing.count),
+    resetAtSeconds: Math.ceil(existing.resetAt / 1000),
+  }
 }
 
 function toInt(value: string | null): number {
@@ -57,89 +118,82 @@ export function createRequestId(): string {
 
 export function getClientKey(request: Request): string {
   const forwarded = request.headers.get('x-forwarded-for')
+  let ip = ''
   if (forwarded) {
     const first = forwarded.split(',')[0]?.trim()
-    if (first) return `ip:${first}`
+    if (first) ip = first
   }
 
-  const real = request.headers.get('x-real-ip')?.trim()
-  if (real) return `ip:${real}`
+  if (!ip) {
+    const real = request.headers.get('x-real-ip')?.trim()
+    if (real) ip = real
+  }
 
-  return 'ip:unknown'
+  if (!ip) ip = 'unknown'
+
+  const hash = createHash('sha256')
+    .update(`ip:${ip}`)
+    .digest('hex')
+    .slice(0, 24)
+
+  return `ip:${hash}`
 }
 
-export function takeRateLimit(params: {
+export function getRequestPath(request: Request, fallback = '/'): string {
+  try {
+    return new URL(request.url).pathname || fallback
+  } catch {
+    return fallback
+  }
+}
+
+export async function takeRateLimit(params: {
   namespace: string
   key: string
   limit: number
   windowMs: number
-}): {
+}): Promise<{
   ok: boolean
   retryAfterSeconds: number
   limit: number
   remaining: number
   resetAtSeconds: number
-} {
+}> {
   const stamp = nowMs()
-  if (stamp - lastRateLimitPruneMs >= RATE_LIMIT_PRUNE_INTERVAL_MS) {
-    lastRateLimitPruneMs = stamp
-
-    for (const [id, bucket] of rateLimitStore.entries()) {
-      if (bucket.resetAt <= stamp) {
-        rateLimitStore.delete(id)
-      }
-    }
-
-    if (rateLimitStore.size > MAX_RATE_LIMIT_BUCKETS) {
-      const overflow = rateLimitStore.size - MAX_RATE_LIMIT_BUCKETS
-      const victims = Array.from(rateLimitStore.entries())
-        .sort((a, b) => a[1].resetAt - b[1].resetAt)
-        .slice(0, overflow)
-      for (const [id] of victims) {
-        rateLimitStore.delete(id)
-      }
-    }
+  const redis = getRedisClient()
+  if (!redis) {
+    return takeRateLimitMemory(params)
   }
 
-  const id = `${params.namespace}:${params.key}`
-  const bucket = rateLimitStore.get(id)
-
-  if (!bucket || bucket.resetAt <= stamp) {
-    const resetAt = stamp + params.windowMs
-    rateLimitStore.set(id, {
-      count: 1,
-      resetAt,
-    })
+  const redisKey = `rl:${params.namespace}:${params.key}`
+  const windowSeconds = Math.max(1, Math.ceil(params.windowMs / 1000))
+  try {
+    const count = await redis.incr(redisKey)
+    if (count === 1) {
+      await redis.expire(redisKey, windowSeconds)
+    }
+    const ttl = await redis.ttl(redisKey)
+    const retryAfter = ttl > 0 ? ttl : windowSeconds
+    const resetAtSeconds = Math.ceil((stamp + retryAfter * 1000) / 1000)
+    const remaining = Math.max(0, params.limit - count)
+    if (count > params.limit) {
+      return {
+        ok: false,
+        retryAfterSeconds: retryAfter,
+        limit: params.limit,
+        remaining: 0,
+        resetAtSeconds,
+      }
+    }
     return {
       ok: true,
-      retryAfterSeconds: Math.ceil(params.windowMs / 1000),
+      retryAfterSeconds: retryAfter,
       limit: params.limit,
-      remaining: Math.max(0, params.limit - 1),
-      resetAtSeconds: Math.ceil(resetAt / 1000),
+      remaining,
+      resetAtSeconds,
     }
-  }
-
-  if (bucket.count >= params.limit) {
-    return {
-      ok: false,
-      retryAfterSeconds: Math.max(
-        1,
-        Math.ceil((bucket.resetAt - stamp) / 1000),
-      ),
-      limit: params.limit,
-      remaining: 0,
-      resetAtSeconds: Math.ceil(bucket.resetAt / 1000),
-    }
-  }
-
-  bucket.count += 1
-  rateLimitStore.set(id, bucket)
-  return {
-    ok: true,
-    retryAfterSeconds: Math.max(1, Math.ceil((bucket.resetAt - stamp) / 1000)),
-    limit: params.limit,
-    remaining: Math.max(0, params.limit - bucket.count),
-    resetAtSeconds: Math.ceil(bucket.resetAt / 1000),
+  } catch {
+    return takeRateLimitMemory(params)
   }
 }
 

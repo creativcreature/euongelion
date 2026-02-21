@@ -10,10 +10,12 @@ describe('Chat response metadata', () => {
     const fetchMock = vi.fn(async () => {
       return new Response(
         JSON.stringify({
-          content: [
+          choices: [
             {
-              type: 'text',
-              text: 'Consider John 3:16 and Romans 8:1 as you pray today.',
+              message: {
+                content:
+                  'Consider John 3:16 and Romans 8:1 as you pray today. John 3:16 reminds you that God loved the world and gave His Son, while Romans 8:1 assures that there is no condemnation for those in Christ Jesus. Hold these together in prayer so assurance and repentance remain connected as you seek faithful obedience.',
+              },
             },
           ],
         }),
@@ -30,7 +32,7 @@ describe('Chat response metadata', () => {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
-        userApiKey: 'test-api-key',
+        userApiKey: 'sk-testkeyvalue1234567890123456789012345678',
         devotionalSlug: 'identity-crisis-day-1',
         highlightedText: 'too much on my plate',
         messages: [

@@ -65,7 +65,7 @@ function jsonWithRequestId(
 export async function POST(request: NextRequest) {
   const requestId = randomUUID()
   const key = getClientKey(request)
-  const limit = takeRateLimit({
+  const limit = await takeRateLimit({
     namespace: 'billing-portal',
     key,
     limit: MAX_REQUESTS_PER_MINUTE,

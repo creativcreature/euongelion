@@ -105,8 +105,8 @@ function expandedReflection(
           .join('\n\n')
       : 'Stay with the text slowly. Let the Scripture name what you are carrying before you try to fix it.'
   const thematicLine = themes
-    ? `The burden language you shared points to ${themes}. Read for where this passage addresses that directly.`
-    : 'Read for the phrase that most clearly names your present burden.'
+    ? `What you shared points to ${themes}. Read for where this passage addresses that directly.`
+    : 'Read for the phrase that most clearly speaks to your present season.'
   return ensureMinimumLength(
     `${scriptureAnchor}\n\n${day.teachingText}\n\n${reflectionPromptLine}\n\n${thematicLine}\n\n${bridge}\n\n${contextualNote}`,
     700,

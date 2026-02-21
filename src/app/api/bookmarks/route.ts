@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    const limiter = takeRateLimit({
+    const limiter = await takeRateLimit({
       namespace: 'bookmarks-post',
       key: clientKey,
       limit: MAX_BOOKMARK_REQUESTS_PER_MINUTE,

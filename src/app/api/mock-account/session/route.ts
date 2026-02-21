@@ -56,7 +56,7 @@ function responsePayload(params: { mode: Mode; analyticsOptIn: boolean }) {
 
 export async function POST(request: NextRequest) {
   try {
-    const limiter = takeRateLimit({
+    const limiter = await takeRateLimit({
       namespace: 'mock-account-session',
       key: getClientKey(request),
       limit: MAX_SESSION_REQUESTS_PER_MINUTE,

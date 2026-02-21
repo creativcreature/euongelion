@@ -18,7 +18,6 @@ import {
   MissingCuratedModuleError,
   MissingReferenceGroundingError,
 } from '@/lib/soul-audit/curated-builder'
-import { buildMetadataFallbackPlan } from '@/lib/soul-audit/metadata-plan-builder'
 import {
   createPlan,
   getAllPlanDays,
@@ -160,7 +159,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    const limiter = takeRateLimit({
+    const limiter = await takeRateLimit({
       namespace: 'soul-audit-select',
       key: clientKey,
       limit: MAX_SELECT_REQUESTS_PER_MINUTE,
@@ -202,7 +201,6 @@ export async function POST(request: NextRequest) {
       token: body.runToken,
       expectedRunId: runId,
       sessionToken,
-      allowSessionMismatch: true,
     })
     if (!run && verifiedToken) {
       run = {
@@ -246,7 +244,6 @@ export async function POST(request: NextRequest) {
         token: body.consentToken,
         expectedRunId: runId,
         sessionToken,
-        allowSessionMismatch: true,
       })
       if (verifiedConsent) {
         consent = await saveConsent({
@@ -386,9 +383,12 @@ export async function POST(request: NextRequest) {
         error instanceof MissingCuratedModuleError ||
         error instanceof MissingReferenceGroundingError
       ) {
-        planDays = buildMetadataFallbackPlan({
-          seriesSlug: option.slug,
-          userResponse: run.response_text,
+        return jsonError({
+          error:
+            'This AI pathway could not be curated with grounded modules right now. Please choose another AI option or retry in a moment.',
+          code: 'AI_PATHWAY_GROUNDING_UNAVAILABLE',
+          status: 422,
+          requestId,
         })
       } else {
         throw error

@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
   const clientKey = getClientKey(request)
 
   try {
-    const limiter = takeRateLimit({
+    const limiter = await takeRateLimit({
       namespace: 'billing-entitlements',
       key: clientKey,
       limit: MAX_REQUESTS_PER_MINUTE,

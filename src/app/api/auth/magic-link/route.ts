@@ -22,7 +22,7 @@ function isValidEmail(email: string): boolean {
 
 export async function POST(request: NextRequest) {
   try {
-    const limiter = takeRateLimit({
+    const limiter = await takeRateLimit({
       namespace: 'auth-magic-link',
       key: getClientKey(request),
       limit: MAX_MAGIC_LINK_REQUESTS_PER_MINUTE,

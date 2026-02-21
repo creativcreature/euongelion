@@ -50,15 +50,6 @@ const TITLE_STOP_WORDS = new Set([
   'about',
 ])
 
-const OPTION_TITLE_VARIANTS = [
-  'Start Here',
-  'Faithful Next Step',
-  'Steady Rebuild',
-  'Quiet Resolve',
-  'Daily Realignment',
-  'Honest Momentum',
-]
-
 export function sanitizeAuditInput(input: unknown): string {
   if (typeof input !== 'string') return ''
   return input
@@ -129,17 +120,6 @@ function extractCoreBurden(input: string, maxLength = 64): string {
   return output || source.slice(0, maxLength).trimEnd()
 }
 
-function normalizeVariantSeed(seed?: number): number | null {
-  if (typeof seed !== 'number' || !Number.isFinite(seed)) return null
-  const normalized = Math.abs(Math.trunc(seed))
-  return Number.isFinite(normalized) ? normalized : null
-}
-
-function optionTitleVariant(seed: number | null, rank: number): string | null {
-  if (seed === null) return null
-  return OPTION_TITLE_VARIANTS[(seed + rank) % OPTION_TITLE_VARIANTS.length]
-}
-
 function extractInputThemeTerms(input: string): string[] {
   const words = collapseWhitespace(input)
     .toLowerCase()
@@ -199,10 +179,10 @@ function buildAiQuestion(params: {
   candidate: CuratedDayCandidate
   input: string
 }): string {
-  const burden =
+  const focus =
     extractCoreBurden(params.input, 84) || toInputSnippet(params.input, 84)
-  if (!burden) return params.candidate.reflectionPrompt
-  return `You named this burden: "${burden}". ${params.candidate.reflectionPrompt}`
+  if (!focus) return params.candidate.reflectionPrompt
+  return `As you reflect on "${focus}", ${params.candidate.reflectionPrompt}`
 }
 
 function buildAiReasoning(params: {
@@ -226,10 +206,10 @@ function buildAiPreviewParagraph(params: {
   candidate: CuratedDayCandidate
   input: string
 }): string {
-  const burden = extractCoreBurden(params.input, 70)
+  const focus = extractCoreBurden(params.input, 70)
   const teaching = params.candidate.teachingText.slice(0, 230).trim()
-  if (!burden) return teaching
-  return `Because you named "${burden}", begin with ${params.candidate.scriptureReference}. ${teaching}`
+  if (!focus) return teaching
+  return `Begin with ${params.candidate.scriptureReference} as you reflect on "${focus}". ${teaching}`
 }
 
 function parseFramework(seriesFramework: string): {
@@ -401,8 +381,6 @@ function makeOption(params: {
 }): AuditOptionPreview {
   const matched = params.matched ?? []
   const aiPrimary = params.kind === 'ai_primary'
-  const variantSeed = normalizeVariantSeed(params.variantSeed)
-  const variant = optionTitleVariant(variantSeed, params.rank)
   const baseTitle = aiPrimary
     ? buildAiGeneratedTitle({
         candidate: params.candidate,
@@ -410,7 +388,7 @@ function makeOption(params: {
         matched,
       })
     : params.candidate.seriesTitle
-  const title = aiPrimary && variant ? `${baseTitle} - ${variant}` : baseTitle
+  const title = baseTitle
 
   return {
     id: `${params.kind}:${params.candidate.seriesSlug}:${params.candidate.dayNumber}:${params.rank}`,

@@ -10,12 +10,20 @@ export type BibleTranslationPreference =
   | 'KJV'
   | 'NLT'
   | 'MSG'
+export type DevotionalDepthPreference =
+  | 'short_5_7'
+  | 'medium_20_30'
+  | 'long_45_60'
+  | 'variable'
 
 export interface OnboardingPreferences {
   theme: ThemePreference
   textScale: TextScalePreference
   sabbathDay: SabbathDayPreference
   bibleTranslation: BibleTranslationPreference
+  defaultBrainMode: 'auto' | 'openai' | 'google' | 'minimax' | 'nvidia_kimi'
+  openWebDefaultEnabled: boolean
+  devotionalDepthPreference: DevotionalDepthPreference
   reduceMotion: boolean
   highContrast: boolean
   readingComfort: boolean
@@ -33,6 +41,9 @@ export const DEFAULT_ONBOARDING_PREFERENCES: OnboardingPreferences = {
   textScale: 'default',
   sabbathDay: 'sunday',
   bibleTranslation: 'NIV',
+  defaultBrainMode: 'auto',
+  openWebDefaultEnabled: false,
+  devotionalDepthPreference: 'short_5_7',
   reduceMotion: false,
   highContrast: false,
   readingComfort: false,
@@ -82,6 +93,31 @@ function toTranslation(
     : fallback
 }
 
+function toBrainMode(
+  value: unknown,
+  fallback: OnboardingPreferences['defaultBrainMode'],
+): OnboardingPreferences['defaultBrainMode'] {
+  return value === 'auto' ||
+    value === 'openai' ||
+    value === 'google' ||
+    value === 'minimax' ||
+    value === 'nvidia_kimi'
+    ? value
+    : fallback
+}
+
+function toDevotionalDepth(
+  value: unknown,
+  fallback: DevotionalDepthPreference,
+): DevotionalDepthPreference {
+  return value === 'short_5_7' ||
+    value === 'medium_20_30' ||
+    value === 'long_45_60' ||
+    value === 'variable'
+    ? value
+    : fallback
+}
+
 export function sanitizeOnboardingPreferences(
   raw: unknown,
   fallback: OnboardingPreferences = DEFAULT_ONBOARDING_PREFERENCES,
@@ -95,6 +131,18 @@ export function sanitizeOnboardingPreferences(
     bibleTranslation: toTranslation(
       payload.bibleTranslation,
       fallback.bibleTranslation,
+    ),
+    defaultBrainMode: toBrainMode(
+      payload.defaultBrainMode,
+      fallback.defaultBrainMode,
+    ),
+    openWebDefaultEnabled: toBoolean(
+      payload.openWebDefaultEnabled,
+      fallback.openWebDefaultEnabled,
+    ),
+    devotionalDepthPreference: toDevotionalDepth(
+      payload.devotionalDepthPreference,
+      fallback.devotionalDepthPreference,
     ),
     reduceMotion: toBoolean(payload.reduceMotion, fallback.reduceMotion),
     highContrast: toBoolean(payload.highContrast, fallback.highContrast),

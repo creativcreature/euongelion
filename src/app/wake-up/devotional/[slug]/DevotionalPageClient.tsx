@@ -2,6 +2,7 @@
 
 import { Fragment, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -9,7 +10,6 @@ import ScrollProgress from '@/components/ScrollProgress'
 import ReaderTimeline from '@/components/ReaderTimeline'
 import ModuleRenderer from '@/components/ModuleRenderer'
 import ShareButton from '@/components/ShareButton'
-import DevotionalChat from '@/components/DevotionalChat'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import DevotionalStickiesLayer from '@/components/DevotionalStickiesLayer'
 import SiteFooter from '@/components/SiteFooter'
@@ -21,6 +21,11 @@ import { useProgressStore } from '@/stores/progressStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { SERIES_DATA } from '@/data/series'
 import type { Devotional, Module, Panel } from '@/types'
+
+const DevotionalChat = dynamic(() => import('@/components/DevotionalChat'), {
+  ssr: false,
+  loading: () => null,
+})
 
 function getSeriesSlugFromDevotional(slug: string): string | null {
   const match = slug.match(/^(.+)-day-\d+$/)

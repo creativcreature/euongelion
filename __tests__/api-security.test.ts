@@ -39,21 +39,21 @@ describe('API security helpers', () => {
     expect(normalizeTimezoneOffsetMinutes('bad')).toBeNull()
   })
 
-  it('returns rich rate-limit metadata and blocks over limit', () => {
+  it('returns rich rate-limit metadata and blocks over limit', async () => {
     const namespace = `test-${Date.now()}`
-    const first = takeRateLimit({
+    const first = await takeRateLimit({
       namespace,
       key: 'client-a',
       limit: 2,
       windowMs: 60_000,
     })
-    const second = takeRateLimit({
+    const second = await takeRateLimit({
       namespace,
       key: 'client-a',
       limit: 2,
       windowMs: 60_000,
     })
-    const third = takeRateLimit({
+    const third = await takeRateLimit({
       namespace,
       key: 'client-a',
       limit: 2,

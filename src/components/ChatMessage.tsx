@@ -31,13 +31,22 @@ export default function ChatMessage({
       new Map((message.citations ?? []).map((c) => [c.id, c])).values(),
     )
   }, [message.citations])
+  const sourceCards = useMemo(
+    () => message.sourceCards ?? [],
+    [message.sourceCards],
+  )
 
   const visibleCitations = showAllCitations ? citations : citations.slice(0, 3)
 
   async function copyCitations() {
     if (typeof navigator === 'undefined' || citations.length === 0) return
     const citationLines = citations
-      .map((citation) => `${citation.label}: ${citation.source}`)
+      .map(
+        (citation) =>
+          `${citation.label}: ${citation.url || citation.source}${
+            citation.publisher ? ` (${citation.publisher})` : ''
+          }`,
+      )
       .join('\n')
     try {
       await navigator.clipboard.writeText(citationLines)
@@ -122,6 +131,38 @@ export default function ChatMessage({
             </button>
           </div>
         )}
+
+        {!isUser && sourceCards.length > 0 && (
+          <div
+            className="mt-3 border-t pt-3"
+            style={{ borderColor: 'var(--color-border)' }}
+          >
+            <p className="text-label vw-small mb-2 text-gold">SOURCE CARDS</p>
+            <ul className="space-y-2">
+              {sourceCards.slice(0, 4).map((card) => (
+                <li
+                  key={card.id}
+                  className="border px-3 py-2"
+                  style={{ borderColor: 'var(--color-border)' }}
+                >
+                  <p className="text-label vw-small text-gold">
+                    {typographer(card.title)}
+                  </p>
+                  <p className="vw-small text-muted">
+                    {typographer(card.snippet)}
+                  </p>
+                  {(card.url || card.publisher || card.date) && (
+                    <p className="vw-small text-muted mt-1">
+                      {[card.publisher, card.date, card.url]
+                        .filter(Boolean)
+                        .join(' · ')}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       {/* Actions (assistant messages only) */}
@@ -143,19 +184,30 @@ export default function ChatMessage({
             (label) => (
               <button
                 key={label}
+                type="button"
                 onClick={() =>
                   onSetColorLabel(
                     message.id,
                     message.colorLabel === label ? 'none' : label,
                   )
                 }
-                className="h-3 w-3 rounded-full transition-opacity duration-200 hover:opacity-100"
+                className="flex h-11 w-11 items-center justify-center rounded-full transition-opacity duration-200 hover:opacity-100"
                 style={{
-                  backgroundColor: COLOR_LABEL_MAP[label],
-                  opacity: message.colorLabel === label ? 1 : 0.3,
+                  backgroundColor:
+                    message.colorLabel === label
+                      ? 'var(--color-active)'
+                      : 'transparent',
+                  border: '1px solid var(--color-border)',
+                  opacity: message.colorLabel === label ? 1 : 0.6,
                 }}
                 aria-label={`Label as ${label}`}
-              />
+              >
+                <span
+                  className="h-3 w-3 rounded-full"
+                  style={{ backgroundColor: COLOR_LABEL_MAP[label] }}
+                  aria-hidden="true"
+                />
+              </button>
             ),
           )}
 

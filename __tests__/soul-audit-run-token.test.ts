@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { beforeAll, describe, expect, it } from 'vitest'
 import type { AuditOptionPreview } from '@/types/soul-audit'
 import { createRunToken, verifyRunToken } from '@/lib/soul-audit/run-token'
 
@@ -25,6 +25,11 @@ const options: AuditOptionPreview[] = [
 ]
 
 describe('soul audit run-token', () => {
+  beforeAll(() => {
+    process.env.SOUL_AUDIT_RUN_TOKEN_SECRET =
+      'test-secret-token-value-for-soul-audit-0123456789'
+  })
+
   it('verifies a valid token for the same run and session', () => {
     const token = createRunToken({
       auditRunId: 'run-1',
@@ -64,7 +69,7 @@ describe('soul audit run-token', () => {
     expect(verified).toBeNull()
   })
 
-  it('accepts token when session mismatch fallback is enabled', () => {
+  it('rejects token when session does not match (strict binding)', () => {
     const token = createRunToken({
       auditRunId: 'run-2b',
       responseText: 'I am searching for peace.',
@@ -77,11 +82,9 @@ describe('soul audit run-token', () => {
       token,
       expectedRunId: 'run-2b',
       sessionToken: 'session-b',
-      allowSessionMismatch: true,
     })
 
-    expect(verified).not.toBeNull()
-    expect(verified?.sessionBound).toBe(false)
+    expect(verified).toBeNull()
   })
 
   it('rejects token when run id does not match', () => {
