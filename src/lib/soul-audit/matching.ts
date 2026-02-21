@@ -50,6 +50,26 @@ const TITLE_STOP_WORDS = new Set([
   'about',
 ])
 
+const GENERIC_INTENT_TERMS = new Set([
+  'want',
+  'learn',
+  'need',
+  'help',
+  'start',
+  'daily',
+  'here',
+  'more',
+  'grow',
+  'trying',
+  'try',
+])
+
+const THEME_TERM_NORMALIZATION: Record<string, string> = {
+  pray: 'prayer',
+  praying: 'prayer',
+  bible: 'scripture',
+}
+
 export function sanitizeAuditInput(input: unknown): string {
   if (typeof input !== 'string') return ''
   return input
@@ -130,8 +150,11 @@ function extractInputThemeTerms(input: string): string[] {
       (word) =>
         word.length >= 4 &&
         !TITLE_STOP_WORDS.has(word) &&
+        !GENERIC_INTENT_TERMS.has(word) &&
         /^[a-z0-9-]+$/.test(word),
     )
+    .map((word) => THEME_TERM_NORMALIZATION[word] ?? word)
+
   return Array.from(new Set(words))
 }
 
@@ -159,6 +182,13 @@ function buildAiGeneratedTitle(params: {
   const themeTerms = pickThemeTerms(params.input, params.matched)
   const dayTitle = collapseWhitespace(params.candidate.dayTitle)
   const coreBurden = extractCoreBurden(params.input, 40)
+
+  const genericIntentPattern =
+    /^(want|need|trying|try|hope|looking)\s+to\s+(learn|grow|understand|know|pray)\b/i
+
+  if (genericIntentPattern.test(coreBurden)) {
+    return dayTitle
+  }
 
   if (themeTerms.length === 2) {
     return `${headlineCase(`${themeTerms[0]} ${themeTerms[1]}`)}: ${dayTitle}`

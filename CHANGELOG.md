@@ -5,6 +5,30 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Copy Integrity Patch (2026-02-21)
+
+### What Changed
+
+- Removed telegraphic title fragments from deterministic Soul Audit option title generation (`want/learn` style token stitching).
+- Added API-side generation guardrails to reject burden-framing language in AI-polished options:
+  - Blocked phrases like `You named this burden` and `Because you named`.
+  - Enforced complete natural-language titles (no keyword-fragment headings).
+- Added legacy-session invalidation in results loader so old cached pre-fix options are dropped and regenerated instead of re-rendered.
+
+### Files
+
+- `src/lib/soul-audit/matching.ts`
+- `src/app/api/soul-audit/submit/route.ts`
+- `src/app/soul-audit/results/page.tsx`
+- `docs/feature-prds/F-024.md`
+
+### Validation
+
+- `npm run type-check`
+- `npm run lint`
+
+---
+
 ## Brain v2: Multi-Provider Closed-RAG + User Brain Controls (2026-02-21)
 
 ### What Changed

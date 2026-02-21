@@ -125,6 +125,11 @@ type AiIntentPayload = {
   intentTags?: string[]
 }
 
+const DISALLOWED_BURDEN_FRAMING_PATTERN =
+  /\b(you named this burden|because you named)\b/i
+const TELEGRAPHIC_TITLE_PATTERN =
+  /^(want|need|learn|help|start|daily)\b(?:\s+\w+){0,2}\s*[:\-]/i
+
 function parseAiPolishPayload(raw: string): AiPolishPayload | null {
   const trimmed = raw.trim()
   if (!trimmed) return null
@@ -147,6 +152,32 @@ function parseAiIntentPayload(raw: string): AiIntentPayload | null {
   } catch {
     return null
   }
+}
+
+function normalizeLegacyFraming(value: string): string {
+  return value
+    .replace(
+      /you named this burden:\s*["“]?([^"”]+)["”]?\s*/gi,
+      'You shared this reflection: "$1". ',
+    )
+    .replace(
+      /because you named\s*["“]?([^"”]+)["”]?\s*/gi,
+      'Because you shared this reflection, ',
+    )
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function hasDisallowedFraming(value: string): boolean {
+  return DISALLOWED_BURDEN_FRAMING_PATTERN.test(value)
+}
+
+function isLowQualityTitle(value: string): boolean {
+  const normalized = value.trim()
+  if (!normalized) return true
+  if (TELEGRAPHIC_TITLE_PATTERN.test(normalized)) return true
+  if (/^want learn\b/i.test(normalized)) return true
+  return false
 }
 
 async function parseAuditIntentWithBrain(input: string) {
@@ -322,7 +353,7 @@ async function polishAiOptionsWithBrain(
       .map((doc) => `- ${doc.title}: ${doc.content.slice(0, 260)}`)
       .join('\n')
 
-    const systemPrompt = `You generate one Soul Audit pathway option for Euangelion.\nRules:\n- Return strict JSON object only.\n- Keep title <= 72 chars.\n- Keep question between 18 and 42 words.\n- Keep reasoning between 18 and 40 words.\n- Keep paragraph between 70 and 130 words.\n- Use grounded language from provided module context.\nSchema: {\"title\":string,\"question\":string,\"reasoning\":string,\"paragraph\":string,\"verse\"?:string,\"verseText\"?:string}\n\nGrounding context:\n${groundingPrompt}`
+    const systemPrompt = `You generate one Soul Audit pathway option for Euangelion.\nRules:\n- Return strict JSON object only.\n- Keep title <= 72 chars.\n- Keep question between 18 and 42 words.\n- Keep reasoning between 18 and 40 words.\n- Keep paragraph between 70 and 130 words.\n- Use grounded language from provided module context.\n- Never use these phrases: "You named this burden" or "Because you named".\n- Do not force negative framing when the user intent is growth or learning.\n- Titles must be complete natural language phrases, never keyword fragments (forbidden example: "Want Learn: ...").\nSchema: {\"title\":string,\"question\":string,\"reasoning\":string,\"paragraph\":string,\"verse\"?:string,\"verseText\"?:string}\n\nGrounding context:\n${groundingPrompt}`
 
     let candidate = option
     let accepted = false
@@ -347,22 +378,36 @@ async function polishAiOptionsWithBrain(
         const parsed = parseAiPolishPayload(generation.output)
         if (!parsed) continue
 
-        const title = (parsed.title || option.title).trim().slice(0, 90)
+        const title = normalizeLegacyFraming(
+          (parsed.title || option.title).trim(),
+        ).slice(0, 90)
         const question = clampWords(
-          (parsed.question || option.question).trim(),
+          normalizeLegacyFraming((parsed.question || option.question).trim()),
           18,
           42,
         )
         const reasoning = clampWords(
-          (parsed.reasoning || option.reasoning).trim(),
+          normalizeLegacyFraming((parsed.reasoning || option.reasoning).trim()),
           18,
           40,
         )
         const paragraph = clampWords(
-          (parsed.paragraph || option.preview?.paragraph || '').trim(),
+          normalizeLegacyFraming(
+            (parsed.paragraph || option.preview?.paragraph || '').trim(),
+          ),
           70,
           130,
         )
+
+        if (
+          isLowQualityTitle(title) ||
+          hasDisallowedFraming(title) ||
+          hasDisallowedFraming(question) ||
+          hasDisallowedFraming(reasoning) ||
+          hasDisallowedFraming(paragraph)
+        ) {
+          continue
+        }
 
         const duplicate = await duplicateCheck({
           scope: AI_OPTION_DUPLICATE_SCOPE,

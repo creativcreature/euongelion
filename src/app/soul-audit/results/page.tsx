@@ -62,6 +62,9 @@ const PLAN_CACHE_PREFIX = 'soul-audit-plan-v2:'
 const SAVED_OPTIONS_KEY = 'soul-audit-saved-options-v1'
 const LAST_AUDIT_INPUT_SESSION_KEY = 'soul-audit-last-input'
 const REROLL_USED_SESSION_KEY = 'soul-audit-reroll-used'
+const LEGACY_BURDEN_FRAMING_PATTERN =
+  /\b(you named this burden|because you named)\b/i
+const LEGACY_FRAGMENT_TITLE_PATTERN = /^want learn\b/i
 
 type SavedAuditOption = {
   id: string
@@ -74,6 +77,27 @@ type SavedAuditOption = {
   verseText?: string
   paragraph?: string
   savedAt: string
+}
+
+function containsLegacyAuditLanguage(
+  value: string | null | undefined,
+): boolean {
+  if (!value) return false
+  return (
+    LEGACY_BURDEN_FRAMING_PATTERN.test(value) ||
+    LEGACY_FRAGMENT_TITLE_PATTERN.test(value.trim())
+  )
+}
+
+function hasLegacyAuditOptionCopy(result: SoulAuditSubmitResponseV2): boolean {
+  return result.options.some((option) => {
+    return (
+      containsLegacyAuditLanguage(option.title) ||
+      containsLegacyAuditLanguage(option.question) ||
+      containsLegacyAuditLanguage(option.reasoning) ||
+      containsLegacyAuditLanguage(option.preview?.paragraph)
+    )
+  })
 }
 
 function formatShortDate(value: string): string {
@@ -155,7 +179,13 @@ function loadSubmitResult(): SoulAuditSubmitResponseV2 | null {
   if (!raw) return null
   try {
     const parsed = JSON.parse(raw) as SoulAuditSubmitResponseV2
-    return parsed.version === 'v2' ? parsed : null
+    if (parsed.version !== 'v2') return null
+    if (hasLegacyAuditOptionCopy(parsed)) {
+      sessionStorage.removeItem('soul-audit-submit-v2')
+      sessionStorage.removeItem('soul-audit-selection-v2')
+      return null
+    }
+    return parsed
   } catch {
     return null
   }
