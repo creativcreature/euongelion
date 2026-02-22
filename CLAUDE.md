@@ -146,7 +146,7 @@ When changing user-facing behavior, these must be consulted in addition to the t
   - `.claude/agents/QA-TEST-ENGINEER.md`
   - `.claude/agents/RELEASE-MANAGER.md`
 
-Before commit/PR:
+Before commit/PR (full guide: `docs/runbooks/COMMIT-AND-DEPLOY-GUIDE.md`):
 
 ```bash
 npm run type-check
@@ -175,22 +175,25 @@ See `docs/MASTER-LOG.md` for all founder decisions across sessions.
 
 **CRITICAL — read before any deployment action:**
 
-- **GitHub account:** `wokegodX`. NEVER use `meltatl-26` or `creativcreature` — those are WRONG for this project.
-- **Vercel account:** `wokegodx` on team `wokegodxs-projects`. NEVER deploy to any other team.
-- **Git email:** Must be `wokegod3@gmail.com`. Vercel rejects commits from unrecognized emails.
+- **GitHub account:** `creativcreature`. This machine has multiple gh accounts — MUST switch first.
+- **GitHub repo:** `creativcreature/euongelion`
+- **Vercel team:** `james-projects-5d824c1e/euongelion`
+- **Git email:** Must be `chrisparker21@gmail.com`.
+- **Production URL:** `https://euangelion.app`
 - **Auto-deploy:** GitHub integration deploys on every push to `main`. No manual deploy needed.
 - **Env vars:** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_APP_URL` — set in Vercel project settings.
 
 **Before ANY push or deploy, run ALL of these:**
 
 ```bash
-gh auth switch --user wokegodX   # This machine has multiple gh accounts — MUST switch first
-gh auth status                    # Confirm active account is wokegodX
-npx vercel whoami                 # Confirm it says wokegodx
-git config user.email             # Confirm it says wokegod3@gmail.com
+gh auth switch --user creativcreature  # This machine has multiple gh accounts — MUST switch first
+gh auth status                          # Confirm active account is creativcreature
+git config user.email                   # Confirm it says chrisparker21@gmail.com
 ```
 
 If any check fails, **STOP**. Do not push or deploy.
+
+**Full commit/deploy walkthrough:** `docs/runbooks/COMMIT-AND-DEPLOY-GUIDE.md`
 
 ## Rules
 
