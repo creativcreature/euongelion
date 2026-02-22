@@ -5,6 +5,93 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Deployment Infrastructure Fix + Documentation Canonicalization (2026-02-21)
+
+### What Changed
+
+- **Main branch restored**: Force-pushed real 225-commit production history to main, replacing 71-commit Codex-rewritten history with unrelated root
+- **middleware.ts removed**: Next.js 16 uses `proxy.ts` — coexisting `middleware.ts` was causing ALL Vercel deployments to fail with 0ms build errors (`Both middleware file and proxy file detected`)
+- **Vercel deployment restored**: Manual `vercel --prod` succeeded — 476 static pages, 32 series, production live at euangelion.app
+- **Git identity canonicalized**: email `chrisparker21@gmail.com`, name `creativcreature`, gh account `creativcreature`
+- **CLAUDE.md rewritten**: Corrected all account references (GitHub `creativcreature/euongelion`, Vercel `james-projects-5d824c1e/euongelion`), added proxy.ts note, updated content counts (175 devotionals, 32 series)
+- **COMMIT-AND-DEPLOY-GUIDE.md** created at project root — full walkthrough of 11 pre-commit hooks, commit-msg requirements, account verification, and deployment flow
+
+### Files
+
+- `src/middleware.ts` — DELETED (root cause of all deployment failures)
+- `CLAUDE.md` — full rewrite with canonical account info
+- `COMMIT-AND-DEPLOY-GUIDE.md` — NEW (moved from `docs/runbooks/`)
+- `.vercel/project.json` — linked to correct team
+
+### Validation
+
+- `vercel --prod` deployed successfully (476 pages)
+- `gh auth status` confirms creativcreature
+- `git config user.email` confirms chrisparker21@gmail.com
+
+---
+
+## Sprint 5 Capstone: Apple TV Browse Page + Content Pipeline + Typography Overhaul (2026-02-21)
+
+### Content Pipeline (Phase 1)
+
+- **5 incomplete series completed** (1 day → 6 days each): what-does-it-mean-to-believe, what-happens-when-you-repeatedly-sin, the-work-of-god, signs-boldness-opposition-integrity, witness-under-pressure-expansion — parsed from Substack HTML export
+- **7 new series added**: anointed, coming-to-the-end-of-ourselves, valued, what-is-christianity, rooted, present-in-the-chaos, standing-strong — from docx source files
+- **1 draft series removed**: from-jerusalem-to-the-nations (empty draft, no content)
+- **"What is Christianity?" (Phase 1D)**: 5-day Sleep pathway series — Galatians 1-5 arc through Dennis Quaid's story, written for skeptical seekers via Devotional Writer agent
+- **Final content inventory**: 175 devotionals across 32 series (up from 115/26)
+
+### Apple TV Browse Page (Phase 2)
+
+- **Dynamic composition layout** at `/series` — NOT a flat database grid
+  - Featured editorial: asymmetric grid (1 spotlight + 2 stacked)
+  - 6 theme-based rails: "When You're Overwhelmed", "When You're Searching", "When You're Hurting", "Going Deeper", "When You Need Your People", "Finding Your Worth"
+  - 4 layout types: `rail`, `grid`, `spotlight-rail`, `centered-row`
+  - Wake-Up Originals branded collection rail
+  - Continue Reading rail (conditional, in-progress only)
+- **New components**: BrowseSeriesCard (3 variants: spotlight/featured/standard), SeriesRailSection (5 layout modes), SeriesSearchPanel (text search + topic/reading-time/progress filters)
+- **Series rails data config**: `src/data/series-rails.ts` — editorially curated slug arrays, layout modes, labels
+- **Search + filter panel**: slide-down with debounced text search, filter chips, results in StaggerGrid
+- **No scroll-snap** — fully user-controlled native scrolling (PrintRail snapScroll={false})
+- **No pathway labels anywhere** — pathways are internal only
+
+### Typography & Visual Design (Phase 3)
+
+- **Mobile full-width**: Removed side borders/margins on ≤900px — content fills full viewport edge-to-edge
+- **Poster-scale type hierarchy**: vw-heading-xl up to clamp(3.5rem, 9vw, 8rem), day numbers at architectural scale
+- **Pull-quote full-bleed**: Key insights break the panel grid for visual rhythm
+- **Gold rule accents**: Thin gold rules between major devotional sections
+- **Increased white space**: Generous module spacing for breathing room
+- **Series detail scripture-lead redesign**: Scripture/framework leads page (above H1), question as editorial sub-deck, dynamic day count
+
+### Soul Audit Continuity
+
+- Soul Audit option pills, selection flow, and plan day assembly unchanged in this commit
+- Guest gate, copy integrity patches, and plan-day recovery from prior commits remain intact
+- No pathway labels exposed in browse page (pathways remain internal)
+
+### Files (78 files total)
+
+- `public/devotionals/` — 60+ new JSON devotional files
+- `src/data/series.ts` — 7 new SeriesInfo entries, 5 updated day arrays, 1 removal
+- `src/data/series-rails.ts` — NEW: editorial rail configuration
+- `src/components/BrowseSeriesCard.tsx` — NEW
+- `src/components/SeriesRailSection.tsx` — NEW
+- `src/components/SeriesSearchPanel.tsx` — NEW
+- `src/app/series/page.tsx` — full rewrite (Apple TV dynamic composition)
+- `src/app/globals.css` — browse card classes, mobile full-width fix, poster typography, pull-quote bleed
+- `src/components/newspaper/PrintRail.tsx` — snapScroll prop added
+- `src/app/wake-up/series/[slug]/SeriesPageClient.tsx` — scripture-lead redesign
+
+### Validation
+
+- `npm run type-check` ✅
+- `npm run lint` ✅
+- `npm test` — series-data 10/10 passed
+- Browser verified at 375px, 768px, 1024px — dynamic composition, search/filters, typography
+
+---
+
 ## Phase 1D Complete: "What is Christianity?" Series + Series Detail Scripture Lead (2026-02-21)
 
 ### What Changed

@@ -4,8 +4,8 @@
 
 - **URL:** euangelion.app
 - **Brand:** Euangelion (Greek: "Good News")
-- **GitHub:** wokegodX/euangelion (private)
-- **Vercel:** wokegodxs-projects/euangelion (ONLY this team — never james-projects)
+- **GitHub:** creativcreature/euongelion (private)
+- **Vercel:** james-projects-5d824c1e/euongelion
 
 ## Tech Stack
 
@@ -41,7 +41,7 @@ src/
 ├── hooks/                # Custom hooks
 ├── lib/                  # Utilities
 └── types/                # TypeScript types
-public/devotionals/       # 42 devotional JSON files
+public/devotionals/       # 175 devotional JSON files (32 series)
 content/                  # Source content + strategy docs
   └── reference/          # 13GB reference library (gitignored)
 docs/                     # Project documentation (38 files)
@@ -59,6 +59,7 @@ design-system/            # Design tokens, typography, dark mode
 - **State:** React hooks + localStorage (no external state lib yet)
 - **Dark mode:** Dark-first (`html.dark`). HSL color system.
 - **Fonts:** Instrument Serif (body + display reading copy), Industry (UI/meta/nav labels), SBL Hebrew for original language.
+- **Middleware:** Next.js 16 uses `proxy.ts` (NOT `middleware.ts`). Do not create `middleware.ts`.
 
 ## Design Philosophy
 
@@ -124,7 +125,7 @@ When changing user-facing behavior, these must be consulted in addition to the t
 1. `docs/AUDIENCE.md` — who this is for and what they expect emotionally.
 2. `docs/PUBLIC-FACING-LANGUAGE.md` — approved tone/copy patterns.
 3. `docs/UX-FLOW-MAPS.md` — intended journey sequencing and decision points.
-4. `docs/SUCCESS-METRICS.md` — what “good flow” should optimize for.
+4. `docs/SUCCESS-METRICS.md` — what "good flow" should optimize for.
 
 ## Operating Playbooks
 
@@ -146,7 +147,7 @@ When changing user-facing behavior, these must be consulted in addition to the t
   - `.claude/agents/QA-TEST-ENGINEER.md`
   - `.claude/agents/RELEASE-MANAGER.md`
 
-Before commit/PR (full guide: `docs/runbooks/COMMIT-AND-DEPLOY-GUIDE.md`):
+Before commit/PR (full guide: `COMMIT-AND-DEPLOY-GUIDE.md`):
 
 ```bash
 npm run type-check
@@ -156,7 +157,7 @@ npm run lint
 npm test
 ```
 
-Release-quality verification (required before “production ready” claims):
+Release-quality verification (required before "production ready" claims):
 
 ```bash
 npm run verify:ios-readiness
@@ -168,7 +169,7 @@ npm run build
 See `CHANGELOG.md` for full history and current sprint checklist.
 See `docs/MASTER-LOG.md` for all founder decisions across sessions.
 
-**Now:** Sprint 5 — Real MVP rebuild (26 series, inline audit, hybrid cinematic reader)
+**Now:** Sprint 5 — Real MVP rebuild (32 series, 175 devotionals, Apple TV browse, inline audit)
 **Done:** Sprint 0 (foundation), Sprint 1 (Wake-Up Magazine), Sprint 2 (editorial redesign, SEO), Sprint 3 (Supabase, auth), Sprint 4 (initial MVP), Sprint 5 (real MVP)
 
 ## Deployment
@@ -193,7 +194,7 @@ git config user.email                   # Confirm it says chrisparker21@gmail.co
 
 If any check fails, **STOP**. Do not push or deploy.
 
-**Full commit/deploy walkthrough:** `docs/runbooks/COMMIT-AND-DEPLOY-GUIDE.md`
+**Full commit/deploy walkthrough:** `COMMIT-AND-DEPLOY-GUIDE.md`
 
 ## Rules
 
@@ -204,7 +205,7 @@ If any check fails, **STOP**. Do not push or deploy.
 5. **Branch for non-trivial work.** `main` = production. Feature branches for larger changes.
 6. **Don't over-engineer.** Build what's needed now, not what might be needed later.
 7. **Surface assumptions.** State them before implementing. Ask if uncertain.
-8. **Verify accounts before deploying.** Check `vercel whoami` and `git config user.email` before any deploy or push. Wrong account = broken deploys.
+8. **Verify accounts before deploying.** Check `gh auth status` and `git config user.email` before any deploy or push. Wrong account = broken deploys.
 9. **Never ship doc/contract drift.** `docs/PRODUCTION-SOURCE-OF-TRUTH.md`, `docs/production-decisions.yaml`, `docs/PRODUCTION-FEATURE-SCORECARD.md`, `docs/PRODUCTION-10-10-PLAN.md`, `docs/PRODUCTION-COMPACTION-HANDOFF.md`, and `CHANGELOG.md` must remain aligned.
 10. **No partial launch.** Do not ship degraded MVP/auth/content pathways. Release only when full launch gate passes.
 
