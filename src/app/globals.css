@@ -2936,8 +2936,8 @@ html.reduce-motion *::after {
 
 .mock-home.is-dark,
 .dark .mock-home {
-  --mock-bg: #0a1320;
-  --mock-paper: #122236;
+  --mock-bg: #171b69;
+  --mock-paper: #171b69;
   --mock-ink: #efe5d8;
   --mock-blue: #171b69;
   --mock-blue-text: var(--mock-ink);
@@ -3915,6 +3915,19 @@ html.reduce-motion *::after {
 .mock-mobile-menu-toggle:is(:hover, :focus-visible) {
   background: var(--mock-blue);
   color: var(--mock-paper);
+}
+
+.mock-homepage.mock-home.is-dark .mock-nav-item.is-active,
+.dark .mock-homepage .mock-nav-item.is-active,
+.mock-homepage.mock-home.is-dark .mock-nav-item:is(:hover, :focus-visible),
+.dark .mock-homepage .mock-nav-item:is(:hover, :focus-visible),
+.mock-homepage.mock-home.is-dark .mock-mobile-menu-toggle.is-open,
+.dark .mock-homepage .mock-mobile-menu-toggle.is-open,
+.mock-homepage.mock-home.is-dark
+  .mock-mobile-menu-toggle:is(:hover, :focus-visible),
+.dark .mock-homepage .mock-mobile-menu-toggle:is(:hover, :focus-visible) {
+  background: var(--color-gold);
+  color: var(--mock-blue);
 }
 
 .mock-carousel-controls {
