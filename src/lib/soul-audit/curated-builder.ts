@@ -224,10 +224,12 @@ function selectPlanCandidates(params: {
     pushUnique(entry.candidate)
   }
 
-  if (selected.length < 5) {
+  // Return whatever candidates we have — even fewer than 5.
+  // The plan will be shorter but still functional.
+  if (selected.length === 0) {
     throw new MissingCuratedModuleError(
       params.seriesSlug,
-      selected.length + 1,
+      1,
       'day',
     )
   }
@@ -259,22 +261,12 @@ export function buildCuratedFirstPlan(params: {
     )
     const prayer = expandedPrayer(params.userResponse, candidate)
 
-    const nextStep = expandedNextStep(candidate)
-    const journalPrompt = expandedJournalPrompt(candidate)
-    if (!nextStep) {
-      throw new MissingCuratedModuleError(
-        params.seriesSlug,
-        dayNumber,
-        'takeaway',
-      )
-    }
-    if (!journalPrompt) {
-      throw new MissingCuratedModuleError(
-        params.seriesSlug,
-        dayNumber,
-        'reflection',
-      )
-    }
+    const nextStep =
+      expandedNextStep(candidate) ||
+      'Choose one concrete action from today\'s reading you can complete before the day ends, and set a specific hour to do it.'
+    const journalPrompt =
+      expandedJournalPrompt(candidate) ||
+      'What is one phrase from today\'s Scripture that speaks to where you are right now?\nWhat resistance do you notice in yourself, and what would faithful obedience look like in one sentence?'
 
     return {
       day: dayNumber,

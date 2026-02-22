@@ -13,12 +13,13 @@ Format: Reverse chronological, grouped by sprint/date.
 - **Set `SOUL_AUDIT_RUN_TOKEN_SECRET`** in Vercel production environment.
 - **Fixed "Audit 4 of 3" display bug**: Homepage showed `auditCount + 1` even when limit was reached (3 of 3 → "4 of 3"). Now shows "All 3 audits used. Reset to start fresh." when limit is hit, and uses the `MAX_AUDITS_PER_CYCLE` constant instead of a hardcoded "3".
 - **Fixed 422 on `/api/soul-audit/select`**: `buildCuratedFirstPlan` threw `MissingReferenceGroundingError` because the 13GB reference library (`content/reference/`) is gitignored and not deployed to Vercel. Made reference grounding optional — plans now build with curated content and fallback reflection paragraphs when reference volumes are absent.
+- **Fixed second 422 on `/api/soul-audit/select`**: `selectPlanCandidates` threw `MissingCuratedModuleError` when fewer than 5 curated day candidates were found for a series. Now returns whatever candidates are available (1–5) instead of crashing. Also replaced fatal throws for missing `nextStep`/`journalPrompt` with theologically appropriate fallback text so plans always build.
 
 ### Files
 
 - `src/lib/soul-audit/run-token.ts` — resilient `tokenSecret()` with fallback chain
 - `src/app/page.tsx` — fixed audit counter display + imported `MAX_AUDITS_PER_CYCLE`
-- `src/lib/soul-audit/curated-builder.ts` — reference grounding no longer fatal when absent
+- `src/lib/soul-audit/curated-builder.ts` — reference grounding no longer fatal; plan assembly resilient with fallbacks for missing candidates and modules
 
 ---
 
