@@ -5,6 +5,21 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Production Fix (2026-02-21)
+
+### What Changed
+
+- **Fixed 500 on `/api/soul-audit/submit`**: `createRunToken()` threw because `SOUL_AUDIT_RUN_TOKEN_SECRET` env var was not set in Vercel. Added resilient fallback that derives a secret from `SUPABASE_SERVICE_ROLE_KEY` when the dedicated secret is missing, preventing hard crashes.
+- **Set `SOUL_AUDIT_RUN_TOKEN_SECRET`** in Vercel production environment.
+- **Fixed "Audit 4 of 3" display bug**: Homepage showed `auditCount + 1` even when limit was reached (3 of 3 → "4 of 3"). Now shows "All 3 audits used. Reset to start fresh." when limit is hit, and uses the `MAX_AUDITS_PER_CYCLE` constant instead of a hardcoded "3".
+
+### Files
+
+- `src/lib/soul-audit/run-token.ts` — resilient `tokenSecret()` with fallback chain
+- `src/app/page.tsx` — fixed audit counter display + imported `MAX_AUDITS_PER_CYCLE`
+
+---
+
 ## Deployment Infrastructure Fix + Documentation Canonicalization (2026-02-21)
 
 ### What Changed

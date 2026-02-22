@@ -9,6 +9,7 @@ import SiteFooter from '@/components/SiteFooter'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { scriptureLeadPartsFromFramework } from '@/lib/scripture-reference'
 import { submitSoulAuditResponse } from '@/lib/soul-audit/submit-client'
+import { MAX_AUDITS_PER_CYCLE } from '@/lib/soul-audit/constants'
 import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_DATA } from '@/data/series'
 import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
@@ -375,8 +376,16 @@ export default function Home() {
                 <p className="mock-footnote">
                   No account required. Start immediately.
                 </p>
-                {hydrated && auditCount > 0 && (
-                  <p className="mock-footnote">Audit {auditCount + 1} of 3</p>
+                {hydrated && auditCount > 0 && !limitReached && (
+                  <p className="mock-footnote">
+                    Audit {auditCount + 1} of {MAX_AUDITS_PER_CYCLE}
+                  </p>
+                )}
+                {hydrated && limitReached && (
+                  <p className="mock-footnote">
+                    All {MAX_AUDITS_PER_CYCLE} audits used. Reset to start
+                    fresh.
+                  </p>
                 )}
                 <button
                   type="button"
