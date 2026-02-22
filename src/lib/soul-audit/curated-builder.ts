@@ -1,3 +1,4 @@
+import { SERIES_DATA } from '@/data/series'
 import type { CustomPlanDay, DevotionalDayEndnote } from '@/types/soul-audit'
 import {
   findCandidateBySeed,
@@ -181,6 +182,56 @@ function buildEndnotes(params: {
   return notes
 }
 
+function parseFrameworkFromSeries(
+  framework: string | undefined,
+): { reference: string; text: string } {
+  if (!framework) return { reference: '', text: '' }
+  const referenceMatch = framework.match(
+    /(?:scripture|reference|verse)[:\s]*["']?([^"'\n]+)/i,
+  )
+  const textMatch = framework.match(/(?:text|passage)[:\s]*["']?([^"'\n]+)/i)
+  return {
+    reference: referenceMatch?.[1]?.trim() || framework.split('\n')[0] || '',
+    text: textMatch?.[1]?.trim() || '',
+  }
+}
+
+function metadataFallbackCandidate(
+  slug: string,
+): CuratedDayCandidate | null {
+  const series = SERIES_DATA[slug]
+  if (!series) return null
+  const dayOne = [...series.days].sort((a, b) => a.day - b.day)[0]
+  if (!dayOne) return null
+
+  const framework = parseFrameworkFromSeries(series.framework)
+  return {
+    key: `metadata-fallback:${slug}:1`,
+    seriesSlug: slug,
+    seriesTitle: series.title,
+    sourcePath: 'series-metadata',
+    dayNumber: dayOne.day,
+    dayTitle: dayOne.title,
+    scriptureReference: framework.reference || 'Scripture',
+    scriptureText:
+      framework.text ||
+      series.introduction?.slice(0, 300) ||
+      series.context?.slice(0, 300) ||
+      '',
+    teachingText: [series.introduction, series.context]
+      .filter(Boolean)
+      .join('\n\n')
+      .slice(0, 2000) || series.title,
+    reflectionPrompt: series.question || `What does ${series.title} stir in you?`,
+    prayerText: `Lord, meet me in this season and guide my next faithful step in ${series.title}.`,
+    takeawayText: `Take one concrete action from ${series.title} before today ends.`,
+    searchText: [slug, series.title, series.question, series.introduction]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase(),
+  }
+}
+
 function selectPlanCandidates(params: {
   seriesSlug: string
   userResponse: string
@@ -224,8 +275,16 @@ function selectPlanCandidates(params: {
     pushUnique(entry.candidate)
   }
 
-  // Return whatever candidates we have — even fewer than 5.
-  // The plan will be shorter but still functional.
+  // When the curated catalog is unavailable (e.g. Vercel serverless
+  // functions missing the content/series-json files), fall back to a
+  // single-day plan built from series metadata in SERIES_DATA.
+  if (selected.length === 0) {
+    const fallback = metadataFallbackCandidate(params.seriesSlug)
+    if (fallback) {
+      selected.push(fallback)
+    }
+  }
+
   if (selected.length === 0) {
     throw new MissingCuratedModuleError(
       params.seriesSlug,

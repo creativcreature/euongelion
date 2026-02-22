@@ -14,12 +14,14 @@ Format: Reverse chronological, grouped by sprint/date.
 - **Fixed "Audit 4 of 3" display bug**: Homepage showed `auditCount + 1` even when limit was reached (3 of 3 → "4 of 3"). Now shows "All 3 audits used. Reset to start fresh." when limit is hit, and uses the `MAX_AUDITS_PER_CYCLE` constant instead of a hardcoded "3".
 - **Fixed 422 on `/api/soul-audit/select`**: `buildCuratedFirstPlan` threw `MissingReferenceGroundingError` because the 13GB reference library (`content/reference/`) is gitignored and not deployed to Vercel. Made reference grounding optional — plans now build with curated content and fallback reflection paragraphs when reference volumes are absent.
 - **Fixed second 422 on `/api/soul-audit/select`**: `selectPlanCandidates` threw `MissingCuratedModuleError` when fewer than 5 curated day candidates were found for a series. Now returns whatever candidates are available (1–5) instead of crashing. Also replaced fatal throws for missing `nextStep`/`journalPrompt` with theologically appropriate fallback text so plans always build.
+- **Fixed root cause: curated JSON files missing from Vercel serverless bundle**: `content/series-json/*.json` files are read at runtime via `fs.readFileSync` with dynamic paths, so Next.js output file tracing couldn't discover them. Added `outputFileTracingIncludes` to `next.config.ts` to explicitly include these files. Also added metadata-based fallback in `selectPlanCandidates` — when the curated catalog is empty (files not available), builds a single-day plan from `SERIES_DATA` metadata instead of throwing.
 
 ### Files
 
 - `src/lib/soul-audit/run-token.ts` — resilient `tokenSecret()` with fallback chain
 - `src/app/page.tsx` — fixed audit counter display + imported `MAX_AUDITS_PER_CYCLE`
-- `src/lib/soul-audit/curated-builder.ts` — reference grounding no longer fatal; plan assembly resilient with fallbacks for missing candidates and modules
+- `src/lib/soul-audit/curated-builder.ts` — reference grounding no longer fatal; plan assembly resilient with metadata fallback when catalog unavailable
+- `next.config.ts` — added `outputFileTracingIncludes` for curated series JSON files
 
 ---
 

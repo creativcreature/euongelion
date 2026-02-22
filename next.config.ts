@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  // Include curated series JSON files in Vercel serverless function bundles.
+  // These are read at runtime via fs.readFileSync (dynamic paths) so the
+  // output file tracer cannot discover them automatically.
+  outputFileTracingIncludes: {
+    '/api/soul-audit/*': ['./content/series-json/**/*.json'],
+  },
   async headers() {
     const csp = [
       "default-src 'self'",
