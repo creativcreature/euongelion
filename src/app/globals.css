@@ -2893,6 +2893,7 @@ html.reduce-motion *::after {
   --mock-paper: #f5eee3;
   --mock-ink: #11182a;
   --mock-blue: #1f2a8d;
+  --mock-blue-text: var(--mock-blue);
   --mock-line: #2e3880;
   --mock-muted: rgba(17, 24, 42, 0.82);
   --mock-frame-max: 1860px;
@@ -2938,7 +2939,8 @@ html.reduce-motion *::after {
   --mock-bg: #0a1320;
   --mock-paper: #122236;
   --mock-ink: #efe5d8;
-  --mock-blue: #2236a2;
+  --mock-blue: #171b69;
+  --mock-blue-text: var(--mock-ink);
   --mock-line: rgba(239, 229, 216, 0.72);
   --mock-muted: rgba(239, 229, 216, 0.86);
   --color-bg: var(--mock-bg);
@@ -3272,7 +3274,7 @@ html.reduce-motion *::after {
   text-align: center;
   font-size: clamp(2.7rem, 13.4vw, 14.2rem);
   line-height: 0.96;
-  color: var(--mock-blue, var(--color-gold));
+  color: var(--mock-blue-text, var(--mock-blue, var(--color-gold)));
   text-transform: uppercase;
   letter-spacing: -0.006em;
   text-rendering: geometricPrecision;
@@ -3370,7 +3372,7 @@ html.reduce-motion *::after {
 }
 
 .mock-nav-item.is-active {
-  color: var(--mock-blue, var(--color-gold));
+  color: var(--mock-blue-text, var(--mock-blue, var(--color-gold)));
 }
 
 .mock-mobile-nav-main {
@@ -3425,7 +3427,7 @@ html.reduce-motion *::after {
 }
 
 .mock-mobile-menu-toggle.is-open {
-  color: var(--mock-blue, var(--color-gold));
+  color: var(--mock-blue-text, var(--mock-blue, var(--color-gold)));
 }
 
 .mock-mobile-nav-panel {
@@ -3466,6 +3468,10 @@ html.reduce-motion *::after {
   padding: 0;
 }
 
+.mock-homepage.mock-home.is-dark .mock-hero-art,
+.dark .mock-homepage .mock-hero-art {
+  background: var(--mock-ink);
+}
 .mock-hero-art img {
   object-fit: cover;
   filter: contrast(1.05);
@@ -3685,7 +3691,7 @@ html.reduce-motion *::after {
   padding: 0;
   display: grid;
   place-items: center;
-  color: var(--mock-blue);
+  color: var(--mock-blue-text, var(--mock-blue));
 }
 
 .mock-home.is-dark .mock-card-media {
@@ -4074,7 +4080,7 @@ html.reduce-motion *::after {
 .mock-homepage .mock-faq-card:hover .mock-faq-answer,
 .mock-homepage .mock-faq-card:focus .mock-faq-answer,
 .mock-homepage .mock-faq-card.is-active .mock-faq-answer {
-  color: var(--mock-blue);
+  color: var(--mock-blue-text, var(--mock-blue));
   font-weight: 500;
 }
 
@@ -4227,7 +4233,7 @@ html.reduce-motion *::after {
 }
 
 .mock-series-share:hover {
-  color: var(--mock-blue) !important;
+  color: var(--mock-blue-text, var(--mock-blue)) !important;
 }
 
 .mock-series-days-grid {
@@ -4416,7 +4422,7 @@ html.reduce-motion *::after {
 
 .mock-devotional-main .type-micro,
 .mock-devotional-main .text-gold {
-  color: var(--mock-blue) !important;
+  color: var(--mock-blue-text, var(--mock-blue)) !important;
 }
 
 .mock-devotional-main .text-secondary,
