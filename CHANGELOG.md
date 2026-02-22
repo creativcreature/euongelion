@@ -5,6 +5,45 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Phase 1D Complete: "What is Christianity?" Series + Series Detail Scripture Lead (2026-02-21)
+
+### What Changed
+
+- **Phase 1D — Drew's Devotional Rewrite**: Created 5-day "What is Christianity?" series for Sleep pathway
+  - Galatians 1–5 arc through Dennis Quaid's story of addiction, recovery, and faith
+  - Written for skeptical seekers (heavy assumption on skepticism per AUDIENCE.md)
+  - Day 1: "The Question Everyone's Afraid to Ask" (Galatians 1:6-9, euangelion)
+  - Day 2: "When Religion Becomes a Cage" (Galatians 2:16, dikaioō)
+  - Day 3: "The God Who Doesn't Need Your Resume" (Galatians 3:2-3, sarx)
+  - Day 4: "Free, Not Fixed" (Galatians 5:1, eleutheria)
+  - Day 5: "A Faith Worth Having" (Galatians 5:22-23, karpos)
+  - Each day has 12 modules: scripture, vocab, teaching, story, insight, bridge, reflection, prayer, takeaway, comprehension, resource, profile
+- **Series Detail Page Redesign**: Scripture/framework now leads the page (above H1)
+  - Question becomes editorial sub-deck (existing H1 position)
+  - Framework removed from sidebar to avoid duplication
+  - Gold italic Instrument Serif treatment for scripture lead
+  - Fixed hardcoded "5 Day Path" → dynamic `{dayCount} Day Path`
+- **Content inventory**: 175 individual devotionals across 32 series (up from 170/31)
+- Added `what-is-christianity` to SeriesCardIcon mapping (gospel icon)
+- Updated series-data test from 31 → 32 series count
+
+### Files
+
+- `public/devotionals/what-is-christianity-day-{1-5}.json` (5 new)
+- `src/data/series.ts` — new SeriesInfo entry + NEW_SERIES_ORDER update
+- `src/app/wake-up/series/[slug]/SeriesPageClient.tsx` — scripture-lead redesign
+- `src/app/globals.css` — `.mock-series-scripture-lead` class
+- `src/components/newspaper/SeriesCardIcon.tsx` — icon mapping
+- `__tests__/series-data.test.ts` — count update to 32
+
+### Validation
+
+- `npm run type-check` ✅
+- `npm run lint` ✅ (0 errors, 2 pre-existing warnings)
+- `npm test` — series-data: 10/10 passed; 5 pre-existing failures in unrelated tests
+
+---
+
 ## Soul Audit Guest Gate + Plan Day Recovery Patch (2026-02-21)
 
 ### What Changed

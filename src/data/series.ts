@@ -458,13 +458,11 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       'intellectual',
       'head vs heart',
     ],
-    days: [
-      {
-        day: 1,
-        title: "The Skeptic's Demand",
-        slug: 'what-does-it-mean-to-believe-day-1',
-      },
-    ],
+    days: Array.from({ length: 6 }, (_, i) => ({
+      day: i + 1,
+      title: `Day ${i + 1}`,
+      slug: `what-does-it-mean-to-believe-day-${i + 1}`,
+    })),
   },
   'what-is-carrying-a-cross': {
     title: 'What Is Carrying a Cross?',
@@ -536,13 +534,11 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       'forgiveness',
       'grace',
     ],
-    days: [
-      {
-        day: 1,
-        title: "Paul's Struggle",
-        slug: 'what-happens-when-you-repeatedly-sin-day-1',
-      },
-    ],
+    days: Array.from({ length: 6 }, (_, i) => ({
+      day: i + 1,
+      title: `Day ${i + 1}`,
+      slug: `what-happens-when-you-repeatedly-sin-day-${i + 1}`,
+    })),
   },
   'the-nature-of-belief': {
     title: 'The Nature of Belief',
@@ -588,13 +584,11 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       'striving',
       'enough',
     ],
-    days: [
-      {
-        day: 1,
-        title: 'The Work of God',
-        slug: 'the-work-of-god-day-1',
-      },
-    ],
+    days: Array.from({ length: 6 }, (_, i) => ({
+      day: i + 1,
+      title: `Day ${i + 1}`,
+      slug: `the-work-of-god-day-${i + 1}`,
+    })),
   },
   'the-word-before-words': {
     title: 'The Word Before Words',
@@ -691,40 +685,11 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       'public faith',
       'witness',
     ],
-    days: [
-      {
-        day: 1,
-        title: 'Signs, Boldness, Opposition & Integrity',
-        slug: 'signs-boldness-opposition-integrity-day-1',
-      },
-    ],
-  },
-  'from-jerusalem-to-the-nations': {
-    title: 'From Jerusalem to the Nations',
-    question:
-      'What if God uses our service, our suffering, and even our enemies to advance His kingdom?',
-    introduction:
-      "The Gospel wasn't meant to stay in Jerusalem. This series traces how God used unlikely means to spread the good news to the entire world.",
-    context:
-      "Persecution scattered the early church. And that scattering became the mechanism for the Gospel's spread. God works through disruption.",
-    framework: 'Acts 1:8 - You will be my witnesses',
-    pathway: 'Shepherd',
-    keywords: [
-      'mission',
-      'purpose',
-      'suffering',
-      'witness',
-      'calling',
-      'expansion',
-      'global',
-    ],
-    days: [
-      {
-        day: 1,
-        title: 'Servants, Suffering, and a Surprising Conversion',
-        slug: 'from-jerusalem-to-the-nations-day-1',
-      },
-    ],
+    days: Array.from({ length: 5 }, (_, i) => ({
+      day: i + 1,
+      title: `Day ${i + 1}`,
+      slug: `signs-boldness-opposition-integrity-day-${i + 1}`,
+    })),
   },
   'witness-under-pressure-expansion': {
     title: 'Witness Under Pressure',
@@ -745,11 +710,224 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       'suffering',
       'faithfulness',
     ],
+    days: Array.from({ length: 5 }, (_, i) => ({
+      day: i + 1,
+      title: `Day ${i + 1}`,
+      slug: `witness-under-pressure-expansion-day-${i + 1}`,
+    })),
+  },
+
+  // ============================================
+  // New Series (Phase 1C — from docx sources)
+  // ============================================
+
+  anointed: {
+    title: 'Anointed',
+    question:
+      'What does it mean to be chosen, set apart, and empowered by God?',
+    introduction:
+      "Anointing isn't a feeling—it's a calling. This 5-day series explores what it means to be chosen before you're ready, empowered beyond your ability, and sent into a world that needs what only God can give through you.",
+    context:
+      "David was anointed in a field while his brothers watched. The disciples were empowered in an upper room while the world slept. God's anointing doesn't follow human logic—it precedes human readiness.",
+    framework: '1 Samuel 16:13 / Acts 1:8 - Anointed with purpose and power',
+    pathway: 'Awake',
+    keywords: [
+      'anointing',
+      'chosen',
+      'purpose',
+      'empowerment',
+      'calling',
+      'Holy Spirit',
+      'set apart',
+    ],
+    days: Array.from({ length: 5 }, (_, i) => ({
+      day: i + 1,
+      title: `Day ${i + 1}`,
+      slug: `anointed-day-${i + 1}`,
+    })),
+  },
+  'coming-to-the-end-of-ourselves': {
+    title: 'Coming to the End of Ourselves',
+    question:
+      'What happens when you reach the place where your own strength runs out?',
+    introduction:
+      'There is a strange grace at the end of yourself. When striving stops and surrender begins, something unexpected happens. This series explores the holy ground of human limitation—and the God who meets us there.',
+    context:
+      "Joni Eareckson Tada dove into shallow water at age 17 and became a quadriplegic. What looked like the end of everything became the beginning of a life she never imagined. Her story isn't unique—it's a pattern. God's deepest work begins where human capability ends.",
+    framework: '2 Corinthians 12:9-10 - My grace is sufficient for you',
+    pathway: 'Sleep',
+    keywords: [
+      'surrender',
+      'weakness',
+      'limitation',
+      'grace',
+      'suffering',
+      'purpose',
+      'letting go',
+      'brokenness',
+    ],
+    days: Array.from({ length: 5 }, (_, i) => ({
+      day: i + 1,
+      title: `Day ${i + 1}`,
+      slug: `coming-to-the-end-of-ourselves-day-${i + 1}`,
+    })),
+  },
+  valued: {
+    title: 'Valued',
+    question:
+      'Where does your worth come from when the world says you have none?',
+    introduction:
+      "Nick Vujicic was born without arms or legs. The world said he was broken. God said he was beloved. This 5-day series explores the radical claim that your value isn't earned, achieved, or measured—it's given.",
+    context:
+      'In a culture that measures worth by productivity, appearance, and achievement, the gospel makes an outrageous claim: you are valuable simply because you exist. Not because of what you do, but because of whose you are.',
+    framework: 'Psalm 139:14 - Fearfully and wonderfully made',
+    pathway: 'Sleep',
+    keywords: [
+      'worth',
+      'value',
+      'identity',
+      'self-worth',
+      'image of God',
+      'beloved',
+      'enough',
+    ],
+    days: Array.from({ length: 5 }, (_, i) => ({
+      day: i + 1,
+      title: `Day ${i + 1}`,
+      slug: `valued-day-${i + 1}`,
+    })),
+  },
+  rooted: {
+    title: 'Rooted',
+    question:
+      'How do you hold onto faith when everything around you is trying to tear it out?',
+    introduction:
+      "During the Rwandan genocide, Immaculee Ilibagiza spent 91 days hiding in a tiny bathroom with seven other women. In that darkness, she discovered a faith so deep that even genocide couldn't uproot it. This series explores what it means to be rooted in something the world cannot destroy.",
+    context:
+      "Faith under extreme pressure either deepens or dies. There is no middle ground. This series walks through the reality of what it takes to stay rooted when the storm isn't metaphorical—it's your life.",
+    framework: 'Colossians 2:6-7 - Rooted and built up in Him',
+    pathway: 'Awake',
+    keywords: [
+      'faith',
+      'roots',
+      'perseverance',
+      'suffering',
+      'resilience',
+      'foundation',
+      'unshakeable',
+    ],
+    days: Array.from({ length: 5 }, (_, i) => ({
+      day: i + 1,
+      title: `Day ${i + 1}`,
+      slug: `rooted-day-${i + 1}`,
+    })),
+  },
+  'present-in-the-chaos': {
+    title: 'Present in the Chaos',
+    question:
+      "How do you find God's presence when your life is moving too fast to stop?",
+    introduction:
+      'Chad Reynolds built a company, gained everything the world promises, and found himself emptier than when he started. This series explores the radical invitation to find God not after the chaos settles, but right in the middle of it.',
+    context:
+      "Busyness isn't just a schedule problem—it's a spiritual crisis. When your calendar is your identity and your inbox is your altar, something sacred gets lost. This series is for anyone running too fast to notice they're running from God.",
+    framework: 'Psalm 46:10 - Be still, and know that I am God',
+    pathway: 'Sleep',
+    keywords: [
+      'busyness',
+      'presence',
+      'stillness',
+      'chaos',
+      'overwhelmed',
+      'rest',
+      'peace',
+      'burnout',
+    ],
+    days: Array.from({ length: 5 }, (_, i) => ({
+      day: i + 1,
+      title: `Day ${i + 1}`,
+      slug: `present-in-the-chaos-day-${i + 1}`,
+    })),
+  },
+  'standing-strong': {
+    title: 'Standing Strong',
+    question:
+      'How do you move from doubt to unshakeable faith in a world that constantly tests your convictions?',
+    introduction:
+      "Standing strong isn't about never wavering—it's about knowing where to plant your feet when the ground shakes. This 7-day series traces the journey from doubt to deep, tested conviction through the lens of Philippians and the story of Sarah Chen.",
+    context:
+      "Sarah Chen was a neuroscientist who thought faith was for people who couldn't think clearly. Then her research led her somewhere she never expected. This series follows her journey alongside Paul's letter to the Philippians—two stories of conviction forged under pressure.",
+    framework: 'Philippians 4:13 - I can do all things through Christ',
+    pathway: 'Awake',
+    keywords: [
+      'doubt',
+      'conviction',
+      'strength',
+      'Philippians',
+      'endurance',
+      'faith',
+      'perseverance',
+      'standing firm',
+    ],
+    days: Array.from({ length: 7 }, (_, i) => ({
+      day: i + 1,
+      title: `Day ${i + 1}`,
+      slug: `standing-strong-day-${i + 1}`,
+    })),
+  },
+
+  // ============================================
+  // Phase 1D: Drew's Devotional Rewrite
+  // ============================================
+
+  'what-is-christianity': {
+    title: 'What is Christianity?',
+    question:
+      'What is Christianity when you strip away the bumper stickers, the politics, and the performance?',
+    introduction:
+      "Most people have opinions about Christianity. Fewer have asked what it actually claims. This 5-day series goes back to the source — Paul's letter to the Galatians — and asks the question most churches skip: is Christianity news about what God has done, or advice about what you should do? The answer changes everything.",
+    context:
+      "Through the story of Dennis Quaid — an actor whose inherited Baptist faith collapsed under Hollywood's weight, whose cocaine addiction exposed the emptiness beneath success, and whose slow return to faith defied every neat conversion narrative — we trace Paul's argument that Christianity is not a performance system. It is an announcement. And the freedom it offers is stranger, messier, and more durable than religion.",
+    framework:
+      'Galatians 1-5 — From counterfeit gospels through justification by faith to the freedom of the Spirit',
+    pathway: 'Sleep',
+    keywords: [
+      'christianity',
+      'gospel',
+      'grace',
+      'freedom',
+      'performance',
+      'doubt',
+      'skepticism',
+      'Galatians',
+      'Dennis Quaid',
+      'addiction',
+      'recovery',
+    ],
     days: [
       {
         day: 1,
-        title: 'Witness Under Pressure',
-        slug: 'witness-under-pressure-expansion-day-1',
+        title: "The Question Everyone's Afraid to Ask",
+        slug: 'what-is-christianity-day-1',
+      },
+      {
+        day: 2,
+        title: 'When Religion Becomes a Cage',
+        slug: 'what-is-christianity-day-2',
+      },
+      {
+        day: 3,
+        title: "The God Who Doesn't Need Your Resume",
+        slug: 'what-is-christianity-day-3',
+      },
+      {
+        day: 4,
+        title: 'Free, Not Fixed',
+        slug: 'what-is-christianity-day-4',
+      },
+      {
+        day: 5,
+        title: 'A Faith Worth Having',
+        slug: 'what-is-christianity-day-5',
       },
     ],
   },
@@ -770,7 +948,7 @@ export const WAKEUP_SERIES_ORDER = [
   'hope',
 ] as const
 
-// All 19 Substack series
+// All 18 Substack series
 export const SUBSTACK_SERIES_ORDER = [
   'too-busy-for-god',
   'hearing-god-in-the-noise',
@@ -789,14 +967,25 @@ export const SUBSTACK_SERIES_ORDER = [
   'genesis-two-stories-of-creation',
   'the-blueprint-of-community',
   'signs-boldness-opposition-integrity',
-  'from-jerusalem-to-the-nations',
   'witness-under-pressure-expansion',
 ] as const
 
-// All 26 series combined
+// New series (from docx sources, Phase 1C)
+export const NEW_SERIES_ORDER = [
+  'anointed',
+  'coming-to-the-end-of-ourselves',
+  'valued',
+  'rooted',
+  'present-in-the-chaos',
+  'standing-strong',
+  'what-is-christianity',
+] as const
+
+// All 32 series combined (7 Wake-Up + 18 Substack + 7 new)
 export const ALL_SERIES_ORDER = [
   ...WAKEUP_SERIES_ORDER,
   ...SUBSTACK_SERIES_ORDER,
+  ...NEW_SERIES_ORDER,
 ] as const
 
 // Backward compat: SERIES_ORDER = original 7

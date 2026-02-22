@@ -48,8 +48,15 @@ const SLUG_TO_ICON: Record<string, IconToken> = {
   'genesis-two-stories-of-creation': 'genesis',
   'the-blueprint-of-community': 'blueprint',
   'signs-boldness-opposition-integrity': 'witness',
-  'from-jerusalem-to-the-nations': 'witness',
   'witness-under-pressure-expansion': 'witness',
+  // New series (Phase 1C + 1D)
+  'what-is-christianity': 'gospel',
+  anointed: 'cross',
+  'coming-to-the-end-of-ourselves': 'surrender',
+  valued: 'identity',
+  rooted: 'provision',
+  'present-in-the-chaos': 'peace',
+  'standing-strong': 'belief',
 }
 
 function resolveIconToken(slug: string): IconToken {

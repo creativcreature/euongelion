@@ -8,9 +8,10 @@ import {
 } from '@/data/series'
 
 describe('Series Data', () => {
-  it('has 26 series in SERIES_ORDER (ALL_SERIES_ORDER)', () => {
-    expect(SERIES_ORDER).toHaveLength(26)
-    expect(ALL_SERIES_ORDER).toHaveLength(26)
+  it('has 32 series in SERIES_ORDER (ALL_SERIES_ORDER)', () => {
+    // 7 Wake-Up + 18 Substack + 7 new = 32
+    expect(SERIES_ORDER).toHaveLength(32)
+    expect(ALL_SERIES_ORDER).toHaveLength(32)
   })
 
   it('has 7 Wake-Up series', () => {

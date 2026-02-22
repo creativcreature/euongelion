@@ -48,6 +48,9 @@ export default function SeriesPageClient({
         <section className="mock-series-hero-grid">
           <article className="mock-panel mock-series-copy">
             <p className="text-label mock-kicker">SERIES</p>
+            <p className="mock-series-scripture-lead">
+              {typographer(series.framework)}
+            </p>
             <h1 className="mock-title">{typographer(series.question)}</h1>
             <div className="mock-rule" />
             <p className="mock-body">{typographer(series.introduction)}</p>
@@ -58,7 +61,6 @@ export default function SeriesPageClient({
             <p className="text-label mock-kicker">
               {series.title.toUpperCase()}
             </p>
-            <p className="mock-subcopy">{series.framework}</p>
 
             <div className="mock-series-progress-head">
               <p className="text-label">{dayCount} DAY JOURNEY</p>
@@ -88,7 +90,7 @@ export default function SeriesPageClient({
 
         <section className="mock-section-center">
           <p className="text-label mock-kicker">DAILY READINGS</p>
-          <h2 className="mock-title-center">5 Day Path</h2>
+          <h2 className="mock-title-center">{dayCount} Day Path</h2>
           <p className="mock-subcopy-center">
             Read in order. Return daily. Keep your rhythm.
           </p>
