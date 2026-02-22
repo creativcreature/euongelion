@@ -244,14 +244,14 @@ export function buildCuratedFirstPlan(params: {
 
   return selectedDays.map((candidate, index) => {
     const dayNumber = index + 1
+    // Reference grounding is optional — the 13GB reference library is
+    // gitignored and not deployed to Vercel. When absent, the plan still
+    // builds with curated content and a fallback reflection paragraph.
     const referenceHits = retrieveReferenceHits({
       userResponse: params.userResponse,
       scriptureReference: candidate.scriptureReference,
       limit: 3,
     })
-    if (referenceHits.length === 0) {
-      throw new MissingReferenceGroundingError(params.seriesSlug, dayNumber)
-    }
     const reflection = expandedReflection(
       params.userResponse,
       candidate,
