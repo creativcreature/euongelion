@@ -3373,6 +3373,17 @@ html.reduce-motion *::after {
 
 .mock-nav-item.is-active {
   color: var(--mock-blue-text, var(--mock-blue, var(--color-gold)));
+  text-decoration: underline;
+  text-decoration-color: var(--color-gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+}
+
+.mock-nav-item:is(:hover, :focus-visible) {
+  text-decoration: underline;
+  text-decoration-color: var(--color-gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
 }
 
 .mock-mobile-nav-main {
@@ -3908,7 +3919,6 @@ html.reduce-motion *::after {
 
 .mock-btn:is(:hover, :focus-visible),
 .mock-auth-link:is(:hover, :focus-visible),
-.mock-nav-item:is(:hover, :focus-visible),
 .mock-account-item:is(:hover, :focus-visible),
 .mock-carousel-btn:is(:hover, :focus-visible),
 .mock-reset-btn:is(:hover, :focus-visible),
@@ -3917,10 +3927,6 @@ html.reduce-motion *::after {
   color: var(--mock-paper);
 }
 
-.mock-homepage.mock-home.is-dark .mock-nav-item.is-active,
-.dark .mock-homepage .mock-nav-item.is-active,
-.mock-homepage.mock-home.is-dark .mock-nav-item:is(:hover, :focus-visible),
-.dark .mock-homepage .mock-nav-item:is(:hover, :focus-visible),
 .mock-homepage.mock-home.is-dark .mock-mobile-menu-toggle.is-open,
 .dark .mock-homepage .mock-mobile-menu-toggle.is-open,
 .mock-homepage.mock-home.is-dark
