@@ -5,6 +5,35 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-052: Artwork Image Layer — 319 Artworks Mapped (2026-02-22)
+
+### What Changed
+
+- **Build-time artwork manifest**: New `scripts/generate-artwork-manifest.mjs` reads 319 `artwork.json` files and generates typed `src/data/artwork-manifest.ts` with hero scoring, redistribution, and slug normalization. 32 series heroes selected, 170 devotionals filled to 3+ artworks each.
+- **Series card full-bleed hero images**: Apple TV-style artwork backgrounds on all series cards (browse page, homepage featured, pathway carousels). Scrim gradient ensures text readability. 64 image requests (32 series x dark + light) all load correctly.
+- **CSS-only dark/light image switching**: Both `print-dark.webp` and `print-light.webp` render in DOM; opacity toggled via `:root:not(.dark)` — zero hydration mismatch risk.
+- **Inline devotional artwork**: `DevotionalArtwork` component with cinematic 4:3 frames interleaved at editorial breakpoints between modules. `ArtworkAttribution` component with compact and full museum card variants.
+- **Lightbox gallery**: `ArtworkLightbox` with full museum card attribution, swipe/arrow navigation, keyboard support (Escape, Arrow keys), focus trap, and body scroll lock.
+- **Homepage + SeriesHero integration**: Hero images on featured cards, manifest hero as fallback in SeriesHero component.
+
+### Files
+
+- `scripts/generate-artwork-manifest.mjs` — NEW: build-time manifest generator
+- `src/data/artwork-manifest.ts` — GENERATED: typed image manifest
+- `src/components/BrowseSeriesCard.tsx` — hero image layer + scrim
+- `src/components/DevotionalArtwork.tsx` — NEW: inline cinematic artwork
+- `src/components/ArtworkAttribution.tsx` — NEW: compact/full attribution
+- `src/components/ArtworkLightbox.tsx` — NEW: gallery lightbox
+- `src/lib/artwork-placement.ts` — NEW: insertion point calculator
+- `src/hooks/useLightbox.ts` — NEW: lightbox state hook
+- `src/app/globals.css` — hero, artwork, lightbox CSS
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx` — artwork interleaving + lightbox
+- `src/app/page.tsx` — hero images on featured cards
+- `src/components/SeriesHero.tsx` — manifest hero fallback
+- `package.json` — added generate:artwork-manifest script, prepended to build
+
+---
+
 ## Series Card Restyling + Homepage Free Scroll (2026-02-22)
 
 ### What Changed

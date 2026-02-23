@@ -1,0 +1,16 @@
+{
+  "slug": "artifact-rosetta-stone",
+  "title": "Rosetta Stone",
+  "artist": "Unknown (Ancient Egyptian)",
+  "year": "196 BC",
+  "medium": "artifact",
+  "museum": "British Museum, London",
+  "license": "Public Domain (pre-1928)",
+  "printStyle": "etching",
+  "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rosetta_Stone.JPG/1280px-Rosetta_Stone.JPG",
+  "devotionalSlugs": [
+    "the-word-before-words-day-2"
+  ],
+  "seriesSlug": "the-word-before-words",
+  "colors": []
+}

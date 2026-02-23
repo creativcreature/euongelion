@@ -1,0 +1,16 @@
+{
+  "slug": "el-greco-pentecost",
+  "title": "Pentecost",
+  "artist": "El Greco",
+  "year": "c.1597",
+  "medium": "painting",
+  "museum": "Museo del Prado, Madrid",
+  "license": "Public Domain (pre-1928)",
+  "printStyle": "mezzotint",
+  "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Pentecost%C3%A9s_%28El_Greco%2C_1597%29.jpg/1280px-Pentecost%C3%A9s_%28El_Greco%2C_1597%29.jpg",
+  "devotionalSlugs": [
+    "the-blueprint-of-community-day-2"
+  ],
+  "seriesSlug": "the-blueprint-of-community",
+  "colors": []
+}

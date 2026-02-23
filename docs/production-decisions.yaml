@@ -38,6 +38,8 @@ decisions:
     title: app-store-release-gate-must-pass-before-submission
   - id: SA-018
     title: auth-required-for-persistent-save-state-actions
+  - id: SA-019
+    title: artwork-image-layer-full-bleed-heroes-inline-lightbox
 
 contracts:
   required_files:

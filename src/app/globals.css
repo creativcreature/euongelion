@@ -3709,6 +3709,76 @@ html.reduce-motion *::after {
   background: var(--mock-blue, #171b69);
 }
 
+/* ─── Series card hero image layer ──────────────────────────────── */
+
+.series-card-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.series-card-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.series-card-img {
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+/* Dark mode default: show dark variant */
+.series-card-img-dark {
+  opacity: 1;
+}
+.series-card-img-light {
+  opacity: 0;
+}
+
+/* Light mode: swap variants */
+:root:not(.dark) .series-card-img-dark {
+  opacity: 0;
+}
+:root:not(.dark) .series-card-img-light {
+  opacity: 1;
+}
+
+/* Scrim gradient for text readability */
+.series-card-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 27, 46, 0.15) 0%,
+    rgba(15, 27, 46, 0.55) 40%,
+    rgba(15, 27, 46, 0.88) 75%,
+    rgba(15, 27, 46, 0.95) 100%
+  );
+}
+
+:root:not(.dark) .series-card-scrim {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 248, 236, 0.15) 0%,
+    rgba(255, 248, 236, 0.55) 40%,
+    rgba(255, 248, 236, 0.88) 75%,
+    rgba(255, 248, 236, 0.95) 100%
+  );
+}
+
+/* Card text content above image */
+.series-card-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto;
+  gap: 0.5rem;
+  height: 100%;
+}
+
+/* ─── End hero image ────────────────────────────────────────────── */
+
 .mock-featured-card:nth-child(3n) {
   border-right: 0;
 }
@@ -5251,5 +5321,295 @@ html.reduce-motion *::after {
   .mock-faq-card,
   .mock-faq-answer {
     transition: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   DEVOTIONAL ARTWORK — inline cinematic images in reading flow
+   ═══════════════════════════════════════════════════════════════════ */
+
+.devotional-artwork {
+  margin: 0;
+  padding: 0;
+}
+
+.devotional-artwork-frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  transition: transform 0.2s ease;
+}
+
+.devotional-artwork-frame:hover {
+  transform: scale(1.008);
+}
+
+.devotional-artwork-frame:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.devotional-artwork-img {
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+/* Dark mode: show dark print */
+.devotional-artwork-img-dark {
+  opacity: 1;
+}
+.devotional-artwork-img-light {
+  opacity: 0;
+}
+
+:root:not(.dark) .devotional-artwork-img-dark {
+  opacity: 0;
+}
+:root:not(.dark) .devotional-artwork-img-light {
+  opacity: 1;
+}
+
+.devotional-artwork figcaption {
+  padding: 0.5rem 0 0;
+}
+
+/* ─── Artwork Attribution ───────────────────────────────────────── */
+
+.artwork-attribution-compact {
+  margin: 0;
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.72rem, 0.3vw + 0.68rem, 0.82rem);
+  letter-spacing: 0.02em;
+  color: var(--color-text-tertiary);
+  line-height: 1.4;
+}
+
+.artwork-attribution-title {
+  font-style: italic;
+}
+
+.artwork-attribution-full {
+  text-align: center;
+}
+
+.artwork-attribution-title-full {
+  font-family: var(--font-family-serif);
+  font-style: italic;
+  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.18rem);
+  color: var(--color-text-primary);
+  margin: 0 0 0.25rem;
+}
+
+.artwork-attribution-artist-full {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.82rem, 0.3vw + 0.76rem, 0.92rem);
+  color: var(--color-text-secondary);
+  margin: 0 0 0.25rem;
+}
+
+.artwork-attribution-meta {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.72rem, 0.2vw + 0.68rem, 0.8rem);
+  color: var(--color-text-tertiary);
+  margin: 0 0 0.15rem;
+}
+
+.artwork-attribution-license {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.66rem, 0.2vw + 0.62rem, 0.74rem);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   LIGHTBOX — full-screen artwork gallery
+   ═══════════════════════════════════════════════════════════════════ */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+:root:not(.dark) .lightbox-overlay {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 52;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+:root:not(.dark) .lightbox-close {
+  color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+:root:not(.dark) .lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.lightbox-counter {
+  position: absolute;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 52;
+  font-family: var(--font-family-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+:root:not(.dark) .lightbox-counter {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 52;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+:root:not(.dark) .lightbox-nav {
+  color: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+:root:not(.dark) .lightbox-nav:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.lightbox-nav-prev {
+  left: 1rem;
+}
+
+.lightbox-nav-next {
+  right: 1rem;
+}
+
+.lightbox-image-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+  gap: 1.25rem;
+}
+
+.lightbox-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 70vh;
+}
+
+.lightbox-img {
+  object-fit: contain;
+}
+
+/* Dark mode: show dark print */
+.lightbox-img-dark {
+  opacity: 1;
+}
+.lightbox-img-light {
+  opacity: 0;
+}
+
+:root:not(.dark) .lightbox-img-dark {
+  opacity: 0;
+}
+:root:not(.dark) .lightbox-img-light {
+  opacity: 1;
+}
+
+.lightbox-attribution {
+  max-width: 600px;
+}
+
+/* Lightbox attribution text colors for dark overlay */
+.lightbox-overlay .artwork-attribution-title-full {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.lightbox-overlay .artwork-attribution-artist-full {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.lightbox-overlay .artwork-attribution-meta {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lightbox-overlay .artwork-attribution-license {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+:root:not(.dark) .lightbox-overlay .artwork-attribution-title-full {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+:root:not(.dark) .lightbox-overlay .artwork-attribution-artist-full {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+:root:not(.dark) .lightbox-overlay .artwork-attribution-meta {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+:root:not(.dark) .lightbox-overlay .artwork-attribution-license {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Lightbox mobile ───────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .lightbox-nav {
+    display: none;
+  }
+
+  .lightbox-image-container {
+    max-height: 55vh;
+  }
+
+  .lightbox-overlay {
+    padding: 0.75rem;
   }
 }

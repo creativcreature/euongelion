@@ -12,6 +12,7 @@ import { submitSoulAuditResponse } from '@/lib/soul-audit/submit-client'
 import { MAX_AUDITS_PER_CYCLE } from '@/lib/soul-audit/constants'
 import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_DATA } from '@/data/series'
+import { SERIES_HERO } from '@/data/artwork-manifest'
 import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
 
 const emptySubscribe = () => () => {}
@@ -426,35 +427,60 @@ export default function Home() {
         <section className="mock-featured-grid" aria-label="Featured series">
           {featuredSeries.map(({ slug, series }) => {
             const scripture = scriptureLeadPartsFromFramework(series.framework)
+            const hero = SERIES_HERO[slug]
 
             return (
               <Link
                 href={`/series/${slug}`}
                 key={slug}
-                className="mock-featured-card"
+                className={`mock-featured-card${hero ? ' series-card-hero' : ''}`}
               >
-                <div className="mock-scripture-lead">
-                  <p className="mock-scripture-lead-reference">
-                    {typographer(scripture.reference || 'Scripture')}
-                  </p>
-                  {scripture.snippet && (
-                    <p className="mock-scripture-lead-snippet">
-                      {typographer(scripture.snippet)}
+                {hero && (
+                  <div className="series-card-hero-image" aria-hidden="true">
+                    <Image
+                      src={hero.darkSrc}
+                      alt=""
+                      fill
+                      sizes="(max-width: 767px) 84vw, 33vw"
+                      className="series-card-img series-card-img-dark"
+                      loading="lazy"
+                    />
+                    <Image
+                      src={hero.lightSrc}
+                      alt=""
+                      fill
+                      sizes="(max-width: 767px) 84vw, 33vw"
+                      className="series-card-img series-card-img-light"
+                      loading="lazy"
+                    />
+                    <div className="series-card-scrim" />
+                  </div>
+                )}
+
+                <div className={hero ? 'series-card-content' : undefined}>
+                  <div className="mock-scripture-lead">
+                    <p className="mock-scripture-lead-reference">
+                      {typographer(scripture.reference || 'Scripture')}
                     </p>
-                  )}
-                </div>
-                <h3>{series.title}.</h3>
-                <p>{series.question}</p>
-                <p className="mock-featured-preview">
-                  {formatSeriesPreview(series.introduction)}
-                </p>
-                <div className="mock-featured-actions">
-                  <span className="mock-series-start text-label">
-                    START SERIES
-                  </span>
-                  <span className="mock-featured-days text-label">
-                    {series.days.length || 5} DAYS
-                  </span>
+                    {scripture.snippet && (
+                      <p className="mock-scripture-lead-snippet">
+                        {typographer(scripture.snippet)}
+                      </p>
+                    )}
+                  </div>
+                  <h3>{series.title}.</h3>
+                  <p>{series.question}</p>
+                  <p className="mock-featured-preview">
+                    {formatSeriesPreview(series.introduction)}
+                  </p>
+                  <div className="mock-featured-actions">
+                    <span className="mock-series-start text-label">
+                      START SERIES
+                    </span>
+                    <span className="mock-featured-days text-label">
+                      {series.days.length || 5} DAYS
+                    </span>
+                  </div>
                 </div>
               </Link>
             )

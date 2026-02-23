@@ -7,7 +7,8 @@
   },
   "scripts": {
     "dev": "next dev --port 3333",
-    "build": "node scripts/check-node-version.mjs && next build --webpack",
+    "generate:artwork-manifest": "node scripts/generate-artwork-manifest.mjs",
+    "build": "node scripts/check-node-version.mjs && node scripts/generate-artwork-manifest.mjs && next build --webpack",
     "start": "next start --port 3333",
     "ios:sync": "npx cap sync ios",
     "ios:open": "npx cap open ios",

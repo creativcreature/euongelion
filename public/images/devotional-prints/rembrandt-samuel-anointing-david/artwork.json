@@ -1,0 +1,16 @@
+{
+  "slug": "rembrandt-samuel-anointing-david",
+  "title": "Samuel Anointing David",
+  "artist": "Rembrandt van Rijn",
+  "year": "c.1655",
+  "medium": "painting",
+  "museum": "Private Collection",
+  "license": "Public Domain (pre-1928)",
+  "printStyle": "mezzotint",
+  "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/De_zalving_van_David_tussen_ru%C3%AFnes_van_het_Forum_Romanum%2C_RP-T-1905-17.jpg/1280px-De_zalving_van_David_tussen_ru%C3%AFnes_van_het_Forum_Romanum%2C_RP-T-1905-17.jpg",
+  "devotionalSlugs": [
+    "anointed-day-1"
+  ],
+  "seriesSlug": "anointed",
+  "colors": []
+}

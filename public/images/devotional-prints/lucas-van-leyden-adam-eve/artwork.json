@@ -1,0 +1,16 @@
+{
+  "slug": "lucas-van-leyden-adam-eve",
+  "title": "Adam and Eve",
+  "artist": "Lucas van Leyden",
+  "year": "1530",
+  "medium": "painting",
+  "museum": "Rijksmuseum, Amsterdam",
+  "license": "Public Domain (pre-1928)",
+  "printStyle": "etching",
+  "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Albrecht_D%C3%BCrer%2C_Adam_and_Eve%2C_1504%2C_Engraving.jpg/1280px-Albrecht_D%C3%BCrer%2C_Adam_and_Eve%2C_1504%2C_Engraving.jpg",
+  "devotionalSlugs": [
+    "genesis-two-stories-of-creation-day-5"
+  ],
+  "seriesSlug": "genesis-two-stories-of-creation",
+  "colors": []
+}

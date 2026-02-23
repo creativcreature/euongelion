@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { SERIES_DATA } from '@/data/series'
+import { SERIES_HERO } from '@/data/artwork-manifest'
 
 type HeroSize = 'hero' | 'card' | 'thumbnail'
 
@@ -107,15 +108,45 @@ export default function SeriesHero({
 }) {
   const gradient = getGradient(seriesSlug)
   const series = SERIES_DATA[seriesSlug]
-  const heroImage = series?.heroImage
+  const manifestHero = SERIES_HERO[seriesSlug]
+  const heroImage = series?.heroImage || manifestHero?.darkSrc
 
   return (
     <div
       className={`relative w-full overflow-hidden ${SIZE_CLASSES[size]} ${className}`}
       style={{ background: gradient.bg }}
     >
-      {/* Real image if available */}
-      {heroImage && (
+      {/* Real image if available — dark/light variants from manifest */}
+      {heroImage && manifestHero && !series?.heroImage ? (
+        <>
+          <Image
+            src={manifestHero.darkSrc}
+            alt={series?.title || ''}
+            fill
+            className="object-cover series-card-img-dark"
+            sizes={
+              size === 'hero'
+                ? '100vw'
+                : size === 'card'
+                  ? '(max-width: 768px) 100vw, 50vw'
+                  : '(max-width: 768px) 100vw, 33vw'
+            }
+          />
+          <Image
+            src={manifestHero.lightSrc}
+            alt=""
+            fill
+            className="object-cover series-card-img-light"
+            sizes={
+              size === 'hero'
+                ? '100vw'
+                : size === 'card'
+                  ? '(max-width: 768px) 100vw, 50vw'
+                  : '(max-width: 768px) 100vw, 33vw'
+            }
+          />
+        </>
+      ) : heroImage ? (
         <Image
           src={heroImage}
           alt={series?.title || ''}
@@ -129,7 +160,7 @@ export default function SeriesHero({
                 : '(max-width: 768px) 100vw, 33vw'
           }
         />
-      )}
+      ) : null}
 
       {/* Pattern overlay (shown behind image as fallback, or alone) */}
       {!heroImage && (

@@ -1,0 +1,16 @@
+{
+  "slug": "steen-merry-family",
+  "title": "The Merry Family",
+  "artist": "Jan Steen",
+  "year": "1668",
+  "medium": "painting",
+  "museum": "Rijksmuseum, Amsterdam",
+  "license": "Public Domain (pre-1928)",
+  "printStyle": "woodcut",
+  "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Amsterdam_-_Rijksmuseum_1885_-_The_Gallery_of_Honour_%281st_Floor%29_-_The_Merry_Family_1668_by_Jan_Steen.png/1280px-Amsterdam_-_Rijksmuseum_1885_-_The_Gallery_of_Honour_%281st_Floor%29_-_The_Merry_Family_1668_by_Jan_Steen.png",
+  "devotionalSlugs": [
+    "provision-day-2"
+  ],
+  "seriesSlug": "provision",
+  "colors": []
+}

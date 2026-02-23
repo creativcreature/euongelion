@@ -1,0 +1,16 @@
+{
+  "slug": "rembrandt-adam-eve-etching",
+  "title": "Adam and Eve",
+  "artist": "Rembrandt van Rijn",
+  "year": "1638",
+  "medium": "painting",
+  "museum": "British Museum, London",
+  "license": "Public Domain (pre-1928)",
+  "printStyle": "etching",
+  "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Rembrandt_adam_and_eve.detail.jpg",
+  "devotionalSlugs": [
+    "genesis-two-stories-of-creation-day-5"
+  ],
+  "seriesSlug": "genesis-two-stories-of-creation",
+  "colors": []
+}

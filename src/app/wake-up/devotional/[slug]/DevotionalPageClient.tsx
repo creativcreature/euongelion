@@ -12,14 +12,19 @@ import ModuleRenderer from '@/components/ModuleRenderer'
 import ShareButton from '@/components/ShareButton'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import DevotionalStickiesLayer from '@/components/DevotionalStickiesLayer'
+import DevotionalArtwork from '@/components/DevotionalArtwork'
+import ArtworkLightbox from '@/components/ArtworkLightbox'
 import SiteFooter from '@/components/SiteFooter'
 import { typographer } from '@/lib/typographer'
 import { startSeries } from '@/lib/progress'
 import { isDayUnlocked } from '@/lib/day-gating'
+import { calculateInsertionPoints } from '@/lib/artwork-placement'
 import { useProgress, useReadingTime } from '@/hooks/useProgress'
+import { useLightbox } from '@/hooks/useLightbox'
 import { useProgressStore } from '@/stores/progressStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { SERIES_DATA } from '@/data/series'
+import { DEVOTIONAL_ARTWORKS } from '@/data/artwork-manifest'
 import type { Devotional, Module, Panel } from '@/types'
 
 const DevotionalChat = dynamic(() => import('@/components/DevotionalChat'), {
@@ -101,6 +106,28 @@ export default function DevotionalPageClient({
       label: `S${index + 1}: ${label}`,
     }))
   }, [modules, panels])
+
+  // Artwork images for this devotional
+  const artworks = useMemo(() => DEVOTIONAL_ARTWORKS[slug] || [], [slug])
+  const lightbox = useLightbox(artworks)
+
+  // Calculate where to insert artwork between content sections
+  const contentCount = modules ? modules.length : (panels?.slice(1).length ?? 0)
+  const insertionPoints = useMemo(
+    () => calculateInsertionPoints(contentCount, artworks.length),
+    [contentCount, artworks.length],
+  )
+
+  // Build a map: afterIndex -> artwork to show
+  const artworkByPosition = useMemo(() => {
+    const map = new Map<number, (typeof artworks)[0]>()
+    insertionPoints.forEach((pos, i) => {
+      if (i < artworks.length) {
+        map.set(pos, artworks[i])
+      }
+    })
+    return map
+  }, [insertionPoints, artworks])
 
   useEffect(() => {
     setIsCompleted(isRead(slug))
@@ -445,14 +472,25 @@ export default function DevotionalPageClient({
                   <div className="space-y-6">
                     {modules
                       ? modules.map((module, index) => (
-                          <article
-                            key={index}
-                            id={`devotional-section-${index + 1}`}
-                            className="devotional-shell-panel border px-6 py-6"
-                            style={{ borderColor: 'var(--color-border)' }}
-                          >
-                            <ModuleRenderer module={module} />
-                          </article>
+                          <Fragment key={index}>
+                            <article
+                              id={`devotional-section-${index + 1}`}
+                              className="devotional-shell-panel border px-6 py-6"
+                              style={{ borderColor: 'var(--color-border)' }}
+                            >
+                              <ModuleRenderer module={module} />
+                            </article>
+                            {artworkByPosition.has(index) && (
+                              <DevotionalArtwork
+                                artwork={artworkByPosition.get(index)!}
+                                onOpenLightbox={() =>
+                                  lightbox.open(
+                                    artworkByPosition.get(index)!.slug,
+                                  )
+                                }
+                              />
+                            )}
+                          </Fragment>
                         ))
                       : panels?.slice(1).map((panel, index) => (
                           <Fragment key={panel.number}>
@@ -470,6 +508,16 @@ export default function DevotionalPageClient({
                               )}
                               <PanelComponent panel={panel} />
                             </article>
+                            {artworkByPosition.has(index) && (
+                              <DevotionalArtwork
+                                artwork={artworkByPosition.get(index)!}
+                                onOpenLightbox={() =>
+                                  lightbox.open(
+                                    artworkByPosition.get(index)!.slug,
+                                  )
+                                }
+                              />
+                            )}
                           </Fragment>
                         ))}
                   </div>
@@ -573,6 +621,17 @@ export default function DevotionalPageClient({
           />
         </>
       )}
+
+      {/* Artwork lightbox gallery */}
+      <ArtworkLightbox
+        artwork={lightbox.current}
+        isOpen={lightbox.isOpen}
+        currentIndex={lightbox.currentIndex}
+        total={lightbox.total}
+        onClose={lightbox.close}
+        onNext={lightbox.next}
+        onPrev={lightbox.prev}
+      />
     </div>
   )
 }

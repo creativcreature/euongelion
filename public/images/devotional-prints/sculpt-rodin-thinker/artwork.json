@@ -1,0 +1,16 @@
+{
+  "slug": "sculpt-rodin-thinker",
+  "title": "The Thinker",
+  "artist": "Auguste Rodin",
+  "year": "1902",
+  "medium": "sculpture",
+  "museum": "Musée Rodin, Paris",
+  "license": "Public Domain (pre-1928)",
+  "printStyle": "etching",
+  "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/The_Thinker_statue%2C_bronze%2C_1880_CE%2C_by_Auguste_Rodin._The_Burrell_Collection%2C_Glasgow.jpg",
+  "devotionalSlugs": [
+    "the-nature-of-belief-day-1"
+  ],
+  "seriesSlug": "the-nature-of-belief",
+  "colors": []
+}

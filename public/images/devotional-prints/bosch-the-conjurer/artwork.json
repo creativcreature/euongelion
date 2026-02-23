@@ -1,0 +1,16 @@
+{
+  "slug": "bosch-the-conjurer",
+  "title": "The Conjurer",
+  "artist": "Hieronymus Bosch",
+  "year": "c.1502",
+  "medium": "painting",
+  "museum": "Musée municipal, Saint-Germain-en-Laye",
+  "license": "Public Domain (pre-1928)",
+  "printStyle": "woodcut",
+  "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/The_Conjurer%2C_ca._1502.jpg/1280px-The_Conjurer%2C_ca._1502.jpg",
+  "devotionalSlugs": [
+    "kingdom-day-1"
+  ],
+  "seriesSlug": "kingdom",
+  "colors": []
+}

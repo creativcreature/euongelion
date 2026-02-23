@@ -1,0 +1,16 @@
+{
+  "slug": "cranach-adam-eve",
+  "title": "Adam and Eve",
+  "artist": "Lucas Cranach the Elder",
+  "year": "1526",
+  "medium": "painting",
+  "museum": "Courtauld Gallery, London",
+  "license": "Public Domain (pre-1928)",
+  "printStyle": "woodcut",
+  "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Adam_and_Eve%2C_by_Lucas_Cranach_the_Elder%2C_1526%2C_oil_on_wood_-_Courtauld_Institute_of_Art%2C_London_-_DSC00844.jpg/1280px-Adam_and_Eve%2C_by_Lucas_Cranach_the_Elder%2C_1526%2C_oil_on_wood_-_Courtauld_Institute_of_Art%2C_London_-_DSC00844.jpg",
+  "devotionalSlugs": [
+    "genesis-two-stories-of-creation-day-2"
+  ],
+  "seriesSlug": "genesis-two-stories-of-creation",
+  "colors": []
+}

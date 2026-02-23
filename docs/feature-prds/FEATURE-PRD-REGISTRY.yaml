@@ -545,3 +545,12 @@ features:
     methodology_refs:
       - M00
       - M05
+  - id: F-052
+    category: Visual / Content
+    feature: Artwork image layer (heroes + inline + lightbox)
+    slug: artwork-image-layer
+    baseline_score: 0
+    status: done
+    prd: docs/feature-prds/F-052.md
+    methodology_refs:
+      - M00

@@ -1,7 +1,9 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { SERIES_DATA } from '@/data/series'
+import { SERIES_HERO } from '@/data/artwork-manifest'
 import { scriptureLeadPartsFromFramework } from '@/lib/scripture-reference'
 import { typographer } from '@/lib/typographer'
 
@@ -29,6 +31,7 @@ export default function BrowseSeriesCard({
   const series = SERIES_DATA[slug]
   if (!series) return null
 
+  const hero = SERIES_HERO[slug]
   const dayCount = series.days.length
   const scripture = scriptureLeadPartsFromFramework(series.framework)
 
@@ -53,29 +56,55 @@ export default function BrowseSeriesCard({
   return (
     <Link
       href={`/series/${slug}`}
-      className="mock-featured-card"
+      className={`mock-featured-card${hero ? ' series-card-hero' : ''}`}
       aria-label={`${series.title}: ${series.question}`}
     >
-      <div className="mock-scripture-lead">
-        <p className="mock-scripture-lead-reference">
-          {typographer(scripture.reference || 'Scripture')}
-        </p>
-        {scripture.snippet && (
-          <p className="mock-scripture-lead-snippet">
-            {typographer(scripture.snippet)}
+      {/* Full-bleed hero image layer */}
+      {hero && (
+        <div className="series-card-hero-image" aria-hidden="true">
+          <Image
+            src={hero.darkSrc}
+            alt=""
+            fill
+            sizes="(max-width: 767px) 84vw, 33vw"
+            className="series-card-img series-card-img-dark"
+            loading="lazy"
+          />
+          <Image
+            src={hero.lightSrc}
+            alt=""
+            fill
+            sizes="(max-width: 767px) 84vw, 33vw"
+            className="series-card-img series-card-img-light"
+            loading="lazy"
+          />
+          <div className="series-card-scrim" />
+        </div>
+      )}
+
+      {/* Card content — above the image */}
+      <div className={hero ? 'series-card-content' : undefined}>
+        <div className="mock-scripture-lead">
+          <p className="mock-scripture-lead-reference">
+            {typographer(scripture.reference || 'Scripture')}
           </p>
-        )}
-      </div>
-      <h3>{series.title}.</h3>
-      <p>{series.question}</p>
-      <p className="mock-featured-preview">
-        {formatSeriesPreview(series.introduction)}
-      </p>
-      <div className="mock-featured-actions">
-        <span className="mock-series-start text-label">{actionLabel}</span>
-        <span className="mock-featured-days text-label">
-          {dayCount} {dayCount === 1 ? 'DAY' : 'DAYS'}
-        </span>
+          {scripture.snippet && (
+            <p className="mock-scripture-lead-snippet">
+              {typographer(scripture.snippet)}
+            </p>
+          )}
+        </div>
+        <h3>{series.title}.</h3>
+        <p>{series.question}</p>
+        <p className="mock-featured-preview">
+          {formatSeriesPreview(series.introduction)}
+        </p>
+        <div className="mock-featured-actions">
+          <span className="mock-series-start text-label">{actionLabel}</span>
+          <span className="mock-featured-days text-label">
+            {dayCount} {dayCount === 1 ? 'DAY' : 'DAYS'}
+          </span>
+        </div>
       </div>
 
       {/* Apple TV-style progress bar */}
