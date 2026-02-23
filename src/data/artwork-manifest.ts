@@ -10,8 +10,8 @@ export interface ArtworkEntry {
   museum: string
   license: string
   printStyle: string
-  darkSrc: string
-  lightSrc: string
+  src: string
+  relevance: string
 }
 
 export const SERIES_HERO: Record<string, ArtworkEntry> = {
@@ -24,9 +24,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Pinacoteca di Brera, Milan',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/campi-still-life-vine/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/campi-still-life-vine/print-light.webp',
+    src: '/images/devotional-prints/campi-still-life-vine/print.webp',
+    relevance: '',
   },
   anointed: {
     slug: 'rembrandt-samuel-anointing-david',
@@ -37,10 +36,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Private Collection',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-samuel-anointing-david/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-samuel-anointing-david/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-samuel-anointing-david/print.webp',
+    relevance: '',
   },
   'coming-to-the-end-of-ourselves': {
     slug: 'courbet-desperate-man-end',
@@ -51,10 +48,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Private Collection',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/courbet-desperate-man-end/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/courbet-desperate-man-end/print-light.webp',
+    src: '/images/devotional-prints/courbet-desperate-man-end/print.webp',
+    relevance: '',
   },
   community: {
     slug: 'brown-work',
@@ -65,8 +60,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Manchester Art Gallery',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/brown-work/print-dark.webp',
-    lightSrc: '/images/devotional-prints/brown-work/print-light.webp',
+    src: '/images/devotional-prints/brown-work/print.webp',
+    relevance: '',
   },
   'genesis-two-stories-of-creation': {
     slug: 'raphael-god-father-school',
@@ -77,10 +72,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Apostolic Palace, Vatican',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/raphael-god-father-school/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/raphael-god-father-school/print-light.webp',
+    src: '/images/devotional-prints/raphael-god-father-school/print.webp',
+    relevance: '',
   },
   'hearing-god-in-the-noise': {
     slug: 'bosch-garden-hell-panel',
@@ -91,10 +84,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Museo del Prado, Madrid',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/bosch-garden-hell-panel/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/bosch-garden-hell-panel/print-light.webp',
+    src: '/images/devotional-prints/bosch-garden-hell-panel/print.webp',
+    relevance: '',
   },
   hope: {
     slug: 'grunewald-resurrection-isenheim',
@@ -105,10 +96,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Musée Unterlinden, Colmar',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/grunewald-resurrection-isenheim/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/grunewald-resurrection-isenheim/print-light.webp',
+    src: '/images/devotional-prints/grunewald-resurrection-isenheim/print.webp',
+    relevance: '',
   },
   identity: {
     slug: 'courbet-the-desperate-man',
@@ -119,10 +108,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Private Collection',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/courbet-the-desperate-man/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/courbet-the-desperate-man/print-light.webp',
+    src: '/images/devotional-prints/courbet-the-desperate-man/print.webp',
+    relevance: '',
   },
   'in-the-beginning-week-1': {
     slug: 'tintoretto-creation-animals',
@@ -133,10 +120,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: "Gallerie dell'Accademia, Venice",
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/tintoretto-creation-animals/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/tintoretto-creation-animals/print-light.webp',
+    src: '/images/devotional-prints/tintoretto-creation-animals/print.webp',
+    relevance: '',
   },
   kingdom: {
     slug: 'bosch-the-conjurer',
@@ -147,8 +132,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Musée municipal, Saint-Germain-en-Laye',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/bosch-the-conjurer/print-dark.webp',
-    lightSrc: '/images/devotional-prints/bosch-the-conjurer/print-light.webp',
+    src: '/images/devotional-prints/bosch-the-conjurer/print.webp',
+    relevance: '',
   },
   'once-saved-always-saved': {
     slug: 'brueghel-garden-eden-young',
@@ -159,10 +144,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Private Collection',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/brueghel-garden-eden-young/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/brueghel-garden-eden-young/print-light.webp',
+    src: '/images/devotional-prints/brueghel-garden-eden-young/print.webp',
+    relevance: '',
   },
   peace: {
     slug: 'vermeer-woman-reading-letter',
@@ -173,10 +156,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Rijksmuseum, Amsterdam',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/vermeer-woman-reading-letter/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/vermeer-woman-reading-letter/print-light.webp',
+    src: '/images/devotional-prints/vermeer-woman-reading-letter/print.webp',
+    relevance: '',
   },
   'present-in-the-chaos': {
     slug: 'bruegel-carnival-lent',
@@ -187,9 +168,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Kunsthistorisches Museum, Vienna',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/bruegel-carnival-lent/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/bruegel-carnival-lent/print-light.webp',
+    src: '/images/devotional-prints/bruegel-carnival-lent/print.webp',
+    relevance: '',
   },
   provision: {
     slug: 'tissot-gathering-manna',
@@ -200,9 +180,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Jewish Museum, New York',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/tissot-gathering-manna/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/tissot-gathering-manna/print-light.webp',
+    src: '/images/devotional-prints/tissot-gathering-manna/print.webp',
+    relevance: '',
   },
   rooted: {
     slug: 'aivazovsky-ninth-wave-rooted',
@@ -213,10 +192,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Russian Museum, St. Petersburg',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print-light.webp',
+    src: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print.webp',
+    relevance: '',
   },
   'signs-boldness-opposition-integrity': {
     slug: 'raphael-paul-preaching-athens',
@@ -227,10 +204,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Victoria and Albert Museum, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/raphael-paul-preaching-athens/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/raphael-paul-preaching-athens/print-light.webp',
+    src: '/images/devotional-prints/raphael-paul-preaching-athens/print.webp',
+    relevance: '',
   },
   'standing-strong': {
     slug: 'caravaggio-incredulity-thomas',
@@ -241,10 +216,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Sanssouci, Potsdam',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/caravaggio-incredulity-thomas/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/caravaggio-incredulity-thomas/print-light.webp',
+    src: '/images/devotional-prints/caravaggio-incredulity-thomas/print.webp',
+    relevance: '',
   },
   'surrender-to-gods-will': {
     slug: 'mantegna-agony-in-garden',
@@ -255,10 +228,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'National Gallery, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/mantegna-agony-in-garden/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/mantegna-agony-in-garden/print-light.webp',
+    src: '/images/devotional-prints/mantegna-agony-in-garden/print.webp',
+    relevance: '',
   },
   'the-blueprint-of-community': {
     slug: 'duccio-pentecost-1308',
@@ -269,9 +240,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: "Museo dell'Opera del Duomo, Siena",
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/duccio-pentecost-1308/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/duccio-pentecost-1308/print-light.webp',
+    src: '/images/devotional-prints/duccio-pentecost-1308/print.webp',
+    relevance: '',
   },
   'the-nature-of-belief': {
     slug: 'angelico-annunciation-draw-near',
@@ -282,10 +252,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Museum of San Marco, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/angelico-annunciation-draw-near/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/angelico-annunciation-draw-near/print-light.webp',
+    src: '/images/devotional-prints/angelico-annunciation-draw-near/print.webp',
+    relevance: '',
   },
   'the-word-before-words': {
     slug: 'cole-voyage-life-childhood',
@@ -296,10 +264,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'National Gallery of Art, Washington DC',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/cole-voyage-life-childhood/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/cole-voyage-life-childhood/print-light.webp',
+    src: '/images/devotional-prints/cole-voyage-life-childhood/print.webp',
+    relevance: '',
   },
   'the-work-of-god': {
     slug: 'rembrandt-supper-emmaus',
@@ -310,10 +276,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-supper-emmaus/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-supper-emmaus/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-supper-emmaus/print.webp',
+    relevance: '',
   },
   'too-busy-for-god': {
     slug: 'steen-rhetoricians-window',
@@ -324,10 +288,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Philadelphia Museum of Art',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/steen-rhetoricians-window/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/steen-rhetoricians-window/print-light.webp',
+    src: '/images/devotional-prints/steen-rhetoricians-window/print.webp',
+    relevance: '',
   },
   truth: {
     slug: 'bruegel-tower-babel',
@@ -338,8 +300,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Kunsthistorisches Museum, Vienna',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/bruegel-tower-babel/print-dark.webp',
-    lightSrc: '/images/devotional-prints/bruegel-tower-babel/print-light.webp',
+    src: '/images/devotional-prints/bruegel-tower-babel/print.webp',
+    relevance: '',
   },
   valued: {
     slug: 'durer-self-portrait-imago-dei',
@@ -350,10 +312,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Alte Pinakothek, Munich',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/durer-self-portrait-imago-dei/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/durer-self-portrait-imago-dei/print-light.webp',
+    src: '/images/devotional-prints/durer-self-portrait-imago-dei/print.webp',
+    relevance: '',
   },
   'what-does-it-mean-to-believe': {
     slug: 'rembrandt-thomas-apostle',
@@ -364,10 +324,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Pushkin Museum of Fine Arts, Moscow',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-thomas-apostle/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-thomas-apostle/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-thomas-apostle/print.webp',
+    relevance: '',
   },
   'what-happens-when-you-repeatedly-sin': {
     slug: 'moreau-salome-dancing',
@@ -378,9 +336,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Musée Gustave Moreau, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/moreau-salome-dancing/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/moreau-salome-dancing/print-light.webp',
+    src: '/images/devotional-prints/moreau-salome-dancing/print.webp',
+    relevance: '',
   },
   'what-is-carrying-a-cross': {
     slug: 'rembrandt-christ-cross-etching',
@@ -391,10 +348,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Museum Het Rembrandthuis, Amsterdam',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-christ-cross-etching/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-christ-cross-etching/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-christ-cross-etching/print.webp',
+    relevance: '',
   },
   'what-is-christianity': {
     slug: 'goya-sleep-reason-monsters',
@@ -405,10 +360,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Museo del Prado, Madrid',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/goya-sleep-reason-monsters/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/goya-sleep-reason-monsters/print-light.webp',
+    src: '/images/devotional-prints/goya-sleep-reason-monsters/print.webp',
+    relevance: '',
   },
   'what-is-the-gospel': {
     slug: 'tissot-saint-john-baptist',
@@ -419,10 +372,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Brooklyn Museum, New York',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/tissot-saint-john-baptist/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/tissot-saint-john-baptist/print-light.webp',
+    src: '/images/devotional-prints/tissot-saint-john-baptist/print.webp',
+    relevance: '',
   },
   'why-jesus': {
     slug: 'botticelli-mystical-nativity',
@@ -433,10 +384,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'National Gallery, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/botticelli-mystical-nativity/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/botticelli-mystical-nativity/print-light.webp',
+    src: '/images/devotional-prints/botticelli-mystical-nativity/print.webp',
+    relevance: '',
   },
   'witness-under-pressure-expansion': {
     slug: 'rembrandt-stoning-stephen-1625',
@@ -447,10 +396,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     museum: 'Musée des Beaux-Arts, Lyon',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-stoning-stephen-1625/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-stoning-stephen-1625/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-stoning-stephen-1625/print.webp',
+    relevance: '',
   },
 }
 
@@ -465,10 +412,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Ravenna, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-sant-apollinare-mosaic/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-sant-apollinare-mosaic/print-light.webp',
+      src: '/images/devotional-prints/arch-sant-apollinare-mosaic/print.webp',
+      relevance: '',
     },
     {
       slug: 'campi-still-life-vine',
@@ -479,10 +424,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Pinacoteca di Brera, Milan',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/campi-still-life-vine/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/campi-still-life-vine/print-light.webp',
+      src: '/images/devotional-prints/campi-still-life-vine/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-mont-saint-michel-cloister',
@@ -493,10 +436,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mont Saint-Michel, Normandy, France',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-mont-saint-michel-cloister/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-mont-saint-michel-cloister/print-light.webp',
+      src: '/images/devotional-prints/arch-mont-saint-michel-cloister/print.webp',
+      relevance: '',
     },
   ],
   'abiding-in-his-presence-day-2': [
@@ -509,10 +450,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Ravenna, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-sant-apollinare-nave/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-sant-apollinare-nave/print-light.webp',
+      src: '/images/devotional-prints/arch-sant-apollinare-nave/print.webp',
+      relevance: '',
     },
     {
       slug: 'hooch-interior-woman-window',
@@ -523,10 +462,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/hooch-interior-woman-window/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/hooch-interior-woman-window/print-light.webp',
+      src: '/images/devotional-prints/hooch-interior-woman-window/print.webp',
+      relevance: '',
     },
     {
       slug: 'campi-still-life-vine',
@@ -537,10 +474,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Pinacoteca di Brera, Milan',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/campi-still-life-vine/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/campi-still-life-vine/print-light.webp',
+      src: '/images/devotional-prints/campi-still-life-vine/print.webp',
+      relevance: '',
     },
   ],
   'abiding-in-his-presence-day-3': [
@@ -553,10 +488,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Istanbul, Turkey',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-hagia-sophia-dome/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-hagia-sophia-dome/print-light.webp',
+      src: '/images/devotional-prints/arch-hagia-sophia-dome/print.webp',
+      relevance: '',
     },
     {
       slug: 'coleman-storm-king-hudson',
@@ -567,10 +500,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Smithsonian American Art Museum',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/coleman-storm-king-hudson/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/coleman-storm-king-hudson/print-light.webp',
+      src: '/images/devotional-prints/coleman-storm-king-hudson/print.webp',
+      relevance: '',
     },
     {
       slug: 'tissot-the-tabernacle',
@@ -581,10 +512,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jewish Museum, New York',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/tissot-the-tabernacle/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/tissot-the-tabernacle/print-light.webp',
+      src: '/images/devotional-prints/tissot-the-tabernacle/print.webp',
+      relevance: '',
     },
   ],
   'abiding-in-his-presence-day-4': [
@@ -597,10 +526,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo del Prado, Madrid',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/murillo-mystic-marriage-catherine/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/murillo-mystic-marriage-catherine/print-light.webp',
+      src: '/images/devotional-prints/murillo-mystic-marriage-catherine/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-sant-apollinare-nave',
@@ -611,10 +538,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Ravenna, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-sant-apollinare-nave/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-sant-apollinare-nave/print-light.webp',
+      src: '/images/devotional-prints/arch-sant-apollinare-nave/print.webp',
+      relevance: '',
     },
     {
       slug: 'coleman-storm-king-hudson',
@@ -625,10 +550,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Smithsonian American Art Museum',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/coleman-storm-king-hudson/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/coleman-storm-king-hudson/print-light.webp',
+      src: '/images/devotional-prints/coleman-storm-king-hudson/print.webp',
+      relevance: '',
     },
   ],
   'abiding-in-his-presence-day-5': [
@@ -641,10 +564,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Russian Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/aivazovsky-ninth-wave/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/aivazovsky-ninth-wave/print-light.webp',
+      src: '/images/devotional-prints/aivazovsky-ninth-wave/print.webp',
+      relevance: '',
     },
     {
       slug: 'dahl-ship-storm',
@@ -655,8 +576,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Nasjonalmuseet, Oslo',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc: '/images/devotional-prints/dahl-ship-storm/print-dark.webp',
-      lightSrc: '/images/devotional-prints/dahl-ship-storm/print-light.webp',
+      src: '/images/devotional-prints/dahl-ship-storm/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-hagia-sophia-dome',
@@ -667,10 +588,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Istanbul, Turkey',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-hagia-sophia-dome/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-hagia-sophia-dome/print-light.webp',
+      src: '/images/devotional-prints/arch-hagia-sophia-dome/print.webp',
+      relevance: '',
     },
   ],
   'abiding-in-his-presence-day-6': [
@@ -683,10 +602,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mont Saint-Michel, Normandy, France',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-mont-saint-michel-cloister/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-mont-saint-michel-cloister/print-light.webp',
+      src: '/images/devotional-prints/arch-mont-saint-michel-cloister/print.webp',
+      relevance: '',
     },
     {
       slug: 'aivazovsky-ninth-wave',
@@ -697,10 +614,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Russian Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/aivazovsky-ninth-wave/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/aivazovsky-ninth-wave/print-light.webp',
+      src: '/images/devotional-prints/aivazovsky-ninth-wave/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-sant-apollinare-mosaic',
@@ -711,10 +626,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Ravenna, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-sant-apollinare-mosaic/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-sant-apollinare-mosaic/print-light.webp',
+      src: '/images/devotional-prints/arch-sant-apollinare-mosaic/print.webp',
+      relevance: '',
     },
   ],
   'anointed-day-1': [
@@ -727,10 +640,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-samuel-anointing-david/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-samuel-anointing-david/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-samuel-anointing-david/print.webp',
+      relevance: '',
     },
     {
       slug: 'caravaggio-david-goliath-hero',
@@ -741,10 +652,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Galleria Borghese, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/caravaggio-david-goliath-hero/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/caravaggio-david-goliath-hero/print-light.webp',
+      src: '/images/devotional-prints/caravaggio-david-goliath-hero/print.webp',
+      relevance: '',
     },
     {
       slug: 'chardin-grace-anointed',
@@ -755,10 +664,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/chardin-grace-anointed/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/chardin-grace-anointed/print-light.webp',
+      src: '/images/devotional-prints/chardin-grace-anointed/print.webp',
+      relevance: '',
     },
   ],
   'anointed-day-2': [
@@ -771,10 +678,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mount Zion, Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-upper-room-spirit/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-upper-room-spirit/print-light.webp',
+      src: '/images/devotional-prints/arch-upper-room-spirit/print.webp',
+      relevance: '',
     },
     {
       slug: 'el-greco-pentecost-anointed',
@@ -785,10 +690,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo del Prado, Madrid',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/el-greco-pentecost-anointed/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/el-greco-pentecost-anointed/print-light.webp',
+      src: '/images/devotional-prints/el-greco-pentecost-anointed/print.webp',
+      relevance: '',
     },
     {
       slug: 'angelico-noli-me-tangere-2',
@@ -799,10 +702,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-noli-me-tangere-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-noli-me-tangere-2/print-light.webp',
+      src: '/images/devotional-prints/angelico-noli-me-tangere-2/print.webp',
+      relevance: '',
     },
   ],
   'anointed-day-4': [
@@ -815,10 +716,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/chardin-grace-anointed/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/chardin-grace-anointed/print-light.webp',
+      src: '/images/devotional-prints/chardin-grace-anointed/print.webp',
+      relevance: '',
     },
     {
       slug: 'millet-man-with-hoe-anointed',
@@ -829,10 +728,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'J. Paul Getty Museum, Los Angeles',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/millet-man-with-hoe-anointed/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/millet-man-with-hoe-anointed/print-light.webp',
+      src: '/images/devotional-prints/millet-man-with-hoe-anointed/print.webp',
+      relevance: '',
     },
     {
       slug: 'caravaggio-david-goliath-hero',
@@ -843,10 +740,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Galleria Borghese, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/caravaggio-david-goliath-hero/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/caravaggio-david-goliath-hero/print-light.webp',
+      src: '/images/devotional-prints/caravaggio-david-goliath-hero/print.webp',
+      relevance: '',
     },
   ],
   'anointed-day-5': [
@@ -859,10 +754,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-noli-me-tangere-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-noli-me-tangere-2/print-light.webp',
+      src: '/images/devotional-prints/angelico-noli-me-tangere-2/print.webp',
+      relevance: '',
     },
     {
       slug: 'rubens-anointing-christ-feet',
@@ -873,10 +766,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hermitage Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/rubens-anointing-christ-feet/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rubens-anointing-christ-feet/print-light.webp',
+      src: '/images/devotional-prints/rubens-anointing-christ-feet/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-upper-room-spirit',
@@ -887,10 +778,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mount Zion, Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-upper-room-spirit/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-upper-room-spirit/print-light.webp',
+      src: '/images/devotional-prints/arch-upper-room-spirit/print.webp',
+      relevance: '',
     },
   ],
   'coming-to-the-end-of-ourselves-day-1': [
@@ -903,10 +792,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/courbet-desperate-man-end/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/courbet-desperate-man-end/print-light.webp',
+      src: '/images/devotional-prints/courbet-desperate-man-end/print.webp',
+      relevance: '',
     },
     {
       slug: 'friedrich-monk-sea-end',
@@ -917,10 +804,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Alte Nationalgalerie, Berlin',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/friedrich-monk-sea-end/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/friedrich-monk-sea-end/print-light.webp',
+      src: '/images/devotional-prints/friedrich-monk-sea-end/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-gethsemane-end-ourselves',
@@ -931,10 +816,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-gethsemane-end-ourselves/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-gethsemane-end-ourselves/print-light.webp',
+      src: '/images/devotional-prints/arch-gethsemane-end-ourselves/print.webp',
+      relevance: '',
     },
   ],
   'coming-to-the-end-of-ourselves-day-2': [
@@ -947,10 +830,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Multiple collections',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/durer-prodigal-son-swine-end/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/durer-prodigal-son-swine-end/print-light.webp',
+      src: '/images/devotional-prints/durer-prodigal-son-swine-end/print.webp',
+      relevance: '',
     },
     {
       slug: 'tissot-prodigal-son-city',
@@ -961,10 +842,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Art Gallery of Hamilton, Canada',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/tissot-prodigal-son-city/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/tissot-prodigal-son-city/print-light.webp',
+      src: '/images/devotional-prints/tissot-prodigal-son-city/print.webp',
+      relevance: '',
     },
     {
       slug: 'friedrich-monk-sea-end',
@@ -975,10 +854,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Alte Nationalgalerie, Berlin',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/friedrich-monk-sea-end/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/friedrich-monk-sea-end/print-light.webp',
+      src: '/images/devotional-prints/friedrich-monk-sea-end/print.webp',
+      relevance: '',
     },
   ],
   'coming-to-the-end-of-ourselves-day-3': [
@@ -991,10 +868,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hermitage Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-return-prodigal-end/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-return-prodigal-end/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-return-prodigal-end/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-self-portrait-two-circles',
@@ -1005,10 +880,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kenwood House, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-self-portrait-two-circles/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-self-portrait-two-circles/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-self-portrait-two-circles/print.webp',
+      relevance: '',
     },
     {
       slug: 'durer-prodigal-son-swine-end',
@@ -1019,10 +892,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Multiple collections',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/durer-prodigal-son-swine-end/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/durer-prodigal-son-swine-end/print-light.webp',
+      src: '/images/devotional-prints/durer-prodigal-son-swine-end/print.webp',
+      relevance: '',
     },
   ],
   'coming-to-the-end-of-ourselves-day-4': [
@@ -1035,10 +906,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "St. Peter's Basilica, Vatican",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-michelangelo-pieta-end/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-michelangelo-pieta-end/print-light.webp',
+      src: '/images/devotional-prints/sculpt-michelangelo-pieta-end/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-return-prodigal-end',
@@ -1049,10 +918,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hermitage Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-return-prodigal-end/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-return-prodigal-end/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-return-prodigal-end/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-self-portrait-two-circles',
@@ -1063,10 +930,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kenwood House, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-self-portrait-two-circles/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-self-portrait-two-circles/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-self-portrait-two-circles/print.webp',
+      relevance: '',
     },
   ],
   'coming-to-the-end-of-ourselves-day-5': [
@@ -1079,10 +944,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-gethsemane-end-ourselves/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-gethsemane-end-ourselves/print-light.webp',
+      src: '/images/devotional-prints/arch-gethsemane-end-ourselves/print.webp',
+      relevance: '',
     },
     {
       slug: 'watts-hope-end',
@@ -1093,8 +956,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Tate Britain, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc: '/images/devotional-prints/watts-hope-end/print-dark.webp',
-      lightSrc: '/images/devotional-prints/watts-hope-end/print-light.webp',
+      src: '/images/devotional-prints/watts-hope-end/print.webp',
+      relevance: '',
     },
     {
       slug: 'courbet-desperate-man-end',
@@ -1105,10 +968,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/courbet-desperate-man-end/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/courbet-desperate-man-end/print-light.webp',
+      src: '/images/devotional-prints/courbet-desperate-man-end/print.webp',
+      relevance: '',
     },
   ],
   'community-day-1': [
@@ -1121,8 +982,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/arch-forum-romanum/print-dark.webp',
-      lightSrc: '/images/devotional-prints/arch-forum-romanum/print-light.webp',
+      src: '/images/devotional-prints/arch-forum-romanum/print.webp',
+      relevance: '',
     },
     {
       slug: 'brown-work',
@@ -1133,8 +994,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Manchester Art Gallery',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/brown-work/print-dark.webp',
-      lightSrc: '/images/devotional-prints/brown-work/print-light.webp',
+      src: '/images/devotional-prints/brown-work/print.webp',
+      relevance: '',
     },
     {
       slug: 'bruegel-peasant-wedding',
@@ -1145,10 +1006,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kunsthistorisches Museum, Vienna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bruegel-peasant-wedding/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-peasant-wedding/print-light.webp',
+      src: '/images/devotional-prints/bruegel-peasant-wedding/print.webp',
+      relevance: '',
     },
   ],
   'community-day-2': [
@@ -1161,10 +1020,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Thielska Galleriet, Stockholm',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/hammershoi-five-portraits/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/hammershoi-five-portraits/print-light.webp',
+      src: '/images/devotional-prints/hammershoi-five-portraits/print.webp',
+      relevance: '',
     },
     {
       slug: 'sloan-sunday-women',
@@ -1175,8 +1032,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Addison Gallery of American Art',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc: '/images/devotional-prints/sloan-sunday-women/print-dark.webp',
-      lightSrc: '/images/devotional-prints/sloan-sunday-women/print-light.webp',
+      src: '/images/devotional-prints/sloan-sunday-women/print.webp',
+      relevance: '',
     },
     {
       slug: 'brown-work',
@@ -1187,8 +1044,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Manchester Art Gallery',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/brown-work/print-dark.webp',
-      lightSrc: '/images/devotional-prints/brown-work/print-light.webp',
+      src: '/images/devotional-prints/brown-work/print.webp',
+      relevance: '',
     },
   ],
   'community-day-3': [
@@ -1201,10 +1058,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Chartres, France',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-chartres-cathedral-exterior/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-chartres-cathedral-exterior/print-light.webp',
+      src: '/images/devotional-prints/arch-chartres-cathedral-exterior/print.webp',
+      relevance: '',
     },
     {
       slug: 'pontormo-two-friends',
@@ -1215,9 +1070,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Fondazione Cini, Venice',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/pontormo-two-friends/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/pontormo-two-friends/print-light.webp',
+      src: '/images/devotional-prints/pontormo-two-friends/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-dura-europos-house-church',
@@ -1228,10 +1082,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Yale University Art Gallery (fresco)',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-dura-europos-house-church/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-dura-europos-house-church/print-light.webp',
+      src: '/images/devotional-prints/arch-dura-europos-house-church/print.webp',
+      relevance: '',
     },
   ],
   'community-day-4': [
@@ -1244,10 +1096,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Yale University Art Gallery (fresco)',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-dura-europos-house-church/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-dura-europos-house-church/print-light.webp',
+      src: '/images/devotional-prints/arch-dura-europos-house-church/print.webp',
+      relevance: '',
     },
     {
       slug: 'juanes-last-supper',
@@ -1258,8 +1108,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo del Prado, Madrid',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/juanes-last-supper/print-dark.webp',
-      lightSrc: '/images/devotional-prints/juanes-last-supper/print-light.webp',
+      src: '/images/devotional-prints/juanes-last-supper/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-chartres-cathedral-exterior',
@@ -1270,10 +1120,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Chartres, France',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-chartres-cathedral-exterior/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-chartres-cathedral-exterior/print-light.webp',
+      src: '/images/devotional-prints/arch-chartres-cathedral-exterior/print.webp',
+      relevance: '',
     },
   ],
   'community-day-5': [
@@ -1286,9 +1134,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Musée d'Orsay, Paris",
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc: '/images/devotional-prints/daumier-washerwoman/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/daumier-washerwoman/print-light.webp',
+      src: '/images/devotional-prints/daumier-washerwoman/print.webp',
+      relevance: '',
     },
     {
       slug: 'bruegel-peasant-wedding',
@@ -1299,10 +1146,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kunsthistorisches Museum, Vienna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bruegel-peasant-wedding/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-peasant-wedding/print-light.webp',
+      src: '/images/devotional-prints/bruegel-peasant-wedding/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-forum-romanum',
@@ -1313,8 +1158,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/arch-forum-romanum/print-dark.webp',
-      lightSrc: '/images/devotional-prints/arch-forum-romanum/print-light.webp',
+      src: '/images/devotional-prints/arch-forum-romanum/print.webp',
+      relevance: '',
     },
   ],
   'genesis-two-stories-of-creation-day-1': [
@@ -1327,10 +1172,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-pantheon-dome-oculus/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-pantheon-dome-oculus/print-light.webp',
+      src: '/images/devotional-prints/arch-pantheon-dome-oculus/print.webp',
+      relevance: '',
     },
     {
       slug: 'raphael-god-father-school',
@@ -1341,10 +1184,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Apostolic Palace, Vatican',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/raphael-god-father-school/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/raphael-god-father-school/print-light.webp',
+      src: '/images/devotional-prints/raphael-god-father-school/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-alhambra-gardens-granada',
@@ -1355,10 +1196,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Granada, Spain',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-alhambra-gardens-granada/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-alhambra-gardens-granada/print-light.webp',
+      src: '/images/devotional-prints/arch-alhambra-gardens-granada/print.webp',
+      relevance: '',
     },
   ],
   'genesis-two-stories-of-creation-day-2': [
@@ -1371,8 +1210,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Courtauld Gallery, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/cranach-adam-eve/print-dark.webp',
-      lightSrc: '/images/devotional-prints/cranach-adam-eve/print-light.webp',
+      src: '/images/devotional-prints/cranach-adam-eve/print.webp',
+      relevance: '',
     },
     {
       slug: 'durer-self-portrait-1500',
@@ -1383,10 +1222,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Alte Pinakothek, Munich',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/durer-self-portrait-1500/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/durer-self-portrait-1500/print-light.webp',
+      src: '/images/devotional-prints/durer-self-portrait-1500/print.webp',
+      relevance: '',
     },
     {
       slug: 'artifact-sumerian-creation-tablet',
@@ -1397,10 +1234,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/artifact-sumerian-creation-tablet/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/artifact-sumerian-creation-tablet/print-light.webp',
+      src: '/images/devotional-prints/artifact-sumerian-creation-tablet/print.webp',
+      relevance: '',
     },
   ],
   'genesis-two-stories-of-creation-day-3': [
@@ -1413,10 +1248,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/artifact-sumerian-creation-tablet/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/artifact-sumerian-creation-tablet/print-light.webp',
+      src: '/images/devotional-prints/artifact-sumerian-creation-tablet/print.webp',
+      relevance: '',
     },
     {
       slug: 'cortona-god-creating-animals',
@@ -1427,10 +1260,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Pinacoteca Capitolina, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/cortona-god-creating-animals/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/cortona-god-creating-animals/print-light.webp',
+      src: '/images/devotional-prints/cortona-god-creating-animals/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-pantheon-dome-oculus',
@@ -1441,10 +1272,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-pantheon-dome-oculus/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-pantheon-dome-oculus/print-light.webp',
+      src: '/images/devotional-prints/arch-pantheon-dome-oculus/print.webp',
+      relevance: '',
     },
   ],
   'genesis-two-stories-of-creation-day-4': [
@@ -1457,10 +1286,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Granada, Spain',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-alhambra-gardens-granada/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-alhambra-gardens-granada/print-light.webp',
+      src: '/images/devotional-prints/arch-alhambra-gardens-granada/print.webp',
+      relevance: '',
     },
     {
       slug: 'brueghel-garden-eden-elder',
@@ -1471,10 +1298,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mauritshuis, The Hague',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/brueghel-garden-eden-elder/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/brueghel-garden-eden-elder/print-light.webp',
+      src: '/images/devotional-prints/brueghel-garden-eden-elder/print.webp',
+      relevance: '',
     },
     {
       slug: 'michelangelo-creation-adam-2',
@@ -1485,10 +1310,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Sistine Chapel, Vatican',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/michelangelo-creation-adam-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/michelangelo-creation-adam-2/print-light.webp',
+      src: '/images/devotional-prints/michelangelo-creation-adam-2/print.webp',
+      relevance: '',
     },
   ],
   'genesis-two-stories-of-creation-day-5': [
@@ -1501,10 +1324,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rijksmuseum, Amsterdam',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/lucas-van-leyden-adam-eve/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/lucas-van-leyden-adam-eve/print-light.webp',
+      src: '/images/devotional-prints/lucas-van-leyden-adam-eve/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-adam-eve-etching',
@@ -1515,10 +1336,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-adam-eve-etching/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-adam-eve-etching/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-adam-eve-etching/print.webp',
+      relevance: '',
     },
     {
       slug: 'brueghel-garden-eden-elder',
@@ -1529,10 +1348,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mauritshuis, The Hague',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/brueghel-garden-eden-elder/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/brueghel-garden-eden-elder/print-light.webp',
+      src: '/images/devotional-prints/brueghel-garden-eden-elder/print.webp',
+      relevance: '',
     },
   ],
   'hearing-god-in-the-noise-day-1': [
@@ -1545,10 +1362,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Catacomb of Priscilla, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-catacombs-good-shepherd/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-catacombs-good-shepherd/print-light.webp',
+      src: '/images/devotional-prints/arch-catacombs-good-shepherd/print.webp',
+      relevance: '',
     },
     {
       slug: 'hammershoi-sunbeam-strandgade',
@@ -1559,10 +1374,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo Thyssen-Bornemisza, Madrid',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/hammershoi-sunbeam-strandgade/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/hammershoi-sunbeam-strandgade/print-light.webp',
+      src: '/images/devotional-prints/hammershoi-sunbeam-strandgade/print.webp',
+      relevance: '',
     },
     {
       slug: 'allston-elijah-desert',
@@ -1573,10 +1386,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of Fine Arts, Boston',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/allston-elijah-desert/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/allston-elijah-desert/print-light.webp',
+      src: '/images/devotional-prints/allston-elijah-desert/print.webp',
+      relevance: '',
     },
   ],
   'hearing-god-in-the-noise-day-2': [
@@ -1589,10 +1400,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo del Prado, Madrid',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bosch-garden-hell-panel/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bosch-garden-hell-panel/print-light.webp',
+      src: '/images/devotional-prints/bosch-garden-hell-panel/print.webp',
+      relevance: '',
     },
     {
       slug: 'bruegel-tower-babel-1563',
@@ -1603,10 +1412,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kunsthistorisches Museum, Vienna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bruegel-tower-babel-1563/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-tower-babel-1563/print-light.webp',
+      src: '/images/devotional-prints/bruegel-tower-babel-1563/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-scriptorium-medieval',
@@ -1617,10 +1424,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Abbey of Saint-Gall, Switzerland',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-scriptorium-medieval/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-scriptorium-medieval/print-light.webp',
+      src: '/images/devotional-prints/arch-scriptorium-medieval/print.webp',
+      relevance: '',
     },
   ],
   'hearing-god-in-the-noise-day-3': [
@@ -1633,10 +1438,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of Fine Arts, Boston',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/allston-elijah-desert/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/allston-elijah-desert/print-light.webp',
+      src: '/images/devotional-prints/allston-elijah-desert/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-cave-elijah-carmel-2',
@@ -1647,10 +1450,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mount Carmel, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-cave-elijah-carmel-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-cave-elijah-carmel-2/print-light.webp',
+      src: '/images/devotional-prints/arch-cave-elijah-carmel-2/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-catacombs-good-shepherd',
@@ -1661,10 +1462,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Catacomb of Priscilla, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-catacombs-good-shepherd/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-catacombs-good-shepherd/print-light.webp',
+      src: '/images/devotional-prints/arch-catacombs-good-shepherd/print.webp',
+      relevance: '',
     },
   ],
   'hearing-god-in-the-noise-day-4': [
@@ -1677,10 +1476,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Abbey of Saint-Gall, Switzerland',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-scriptorium-medieval/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-scriptorium-medieval/print-light.webp',
+      src: '/images/devotional-prints/arch-scriptorium-medieval/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-scholar-study',
@@ -1691,10 +1488,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Gemäldegalerie, Berlin',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-scholar-study/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-scholar-study/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-scholar-study/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-fontenay-cloister',
@@ -1705,10 +1500,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Fontenay, Burgundy, France',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-fontenay-cloister/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-fontenay-cloister/print-light.webp',
+      src: '/images/devotional-prints/arch-fontenay-cloister/print.webp',
+      relevance: '',
     },
   ],
   'hearing-god-in-the-noise-day-5': [
@@ -1721,10 +1514,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Fontenay, Burgundy, France',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-fontenay-cloister/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-fontenay-cloister/print-light.webp',
+      src: '/images/devotional-prints/arch-fontenay-cloister/print.webp',
+      relevance: '',
     },
     {
       slug: 'millet-the-angelus',
@@ -1735,8 +1526,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Musée d'Orsay, Paris",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/millet-the-angelus/print-dark.webp',
-      lightSrc: '/images/devotional-prints/millet-the-angelus/print-light.webp',
+      src: '/images/devotional-prints/millet-the-angelus/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-cave-elijah-carmel-2',
@@ -1747,10 +1538,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mount Carmel, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-cave-elijah-carmel-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-cave-elijah-carmel-2/print-light.webp',
+      src: '/images/devotional-prints/arch-cave-elijah-carmel-2/print.webp',
+      relevance: '',
     },
   ],
   'hearing-god-in-the-noise-day-6': [
@@ -1763,10 +1552,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/chardin-grace-at-table/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/chardin-grace-at-table/print-light.webp',
+      src: '/images/devotional-prints/chardin-grace-at-table/print.webp',
+      relevance: '',
     },
     {
       slug: 'clausen-stone-pickers',
@@ -1777,10 +1564,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Laing Art Gallery, Newcastle',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/clausen-stone-pickers/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/clausen-stone-pickers/print-light.webp',
+      src: '/images/devotional-prints/clausen-stone-pickers/print.webp',
+      relevance: '',
     },
     {
       slug: 'bosch-garden-hell-panel',
@@ -1791,10 +1576,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo del Prado, Madrid',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bosch-garden-hell-panel/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bosch-garden-hell-panel/print-light.webp',
+      src: '/images/devotional-prints/bosch-garden-hell-panel/print.webp',
+      relevance: '',
     },
   ],
   'hope-day-1': [
@@ -1807,10 +1590,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Forum Romanum, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-arch-titus-relief/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-arch-titus-relief/print-light.webp',
+      src: '/images/devotional-prints/arch-arch-titus-relief/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-return-prodigal-son',
@@ -1821,10 +1602,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hermitage Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-return-prodigal-son/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-return-prodigal-son/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-return-prodigal-son/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-garden-tomb-jerusalem',
@@ -1835,10 +1614,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-garden-tomb-jerusalem/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-garden-tomb-jerusalem/print-light.webp',
+      src: '/images/devotional-prints/arch-garden-tomb-jerusalem/print.webp',
+      relevance: '',
     },
   ],
   'hope-day-2': [
@@ -1851,10 +1628,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-western-wall-19c/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-western-wall-19c/print-light.webp',
+      src: '/images/devotional-prints/arch-western-wall-19c/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-holy-sepulchre-dome',
@@ -1865,10 +1640,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-holy-sepulchre-dome/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-holy-sepulchre-dome/print-light.webp',
+      src: '/images/devotional-prints/arch-holy-sepulchre-dome/print.webp',
+      relevance: '',
     },
     {
       slug: 'burnand-peter-john-running',
@@ -1879,10 +1652,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Musée d'Orsay, Paris",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/burnand-peter-john-running/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/burnand-peter-john-running/print-light.webp',
+      src: '/images/devotional-prints/burnand-peter-john-running/print.webp',
+      relevance: '',
     },
   ],
   'hope-day-3': [
@@ -1895,10 +1666,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-holy-sepulchre-dome/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-holy-sepulchre-dome/print-light.webp',
+      src: '/images/devotional-prints/arch-holy-sepulchre-dome/print.webp',
+      relevance: '',
     },
     {
       slug: 'burnand-peter-john-running',
@@ -1909,10 +1678,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Musée d'Orsay, Paris",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/burnand-peter-john-running/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/burnand-peter-john-running/print-light.webp',
+      src: '/images/devotional-prints/burnand-peter-john-running/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-western-wall-19c',
@@ -1923,10 +1690,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-western-wall-19c/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-western-wall-19c/print-light.webp',
+      src: '/images/devotional-prints/arch-western-wall-19c/print.webp',
+      relevance: '',
     },
   ],
   'hope-day-4': [
@@ -1939,10 +1704,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Musée d'Orsay, Paris",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/lhermitte-the-harvest/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/lhermitte-the-harvest/print-light.webp',
+      src: '/images/devotional-prints/lhermitte-the-harvest/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-return-prodigal-son',
@@ -1953,10 +1716,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hermitage Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-return-prodigal-son/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-return-prodigal-son/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-return-prodigal-son/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-arch-titus-relief',
@@ -1967,10 +1728,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Forum Romanum, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-arch-titus-relief/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-arch-titus-relief/print-light.webp',
+      src: '/images/devotional-prints/arch-arch-titus-relief/print.webp',
+      relevance: '',
     },
   ],
   'hope-day-5': [
@@ -1983,10 +1742,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-garden-tomb-jerusalem/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-garden-tomb-jerusalem/print-light.webp',
+      src: '/images/devotional-prints/arch-garden-tomb-jerusalem/print.webp',
+      relevance: '',
     },
     {
       slug: 'grunewald-resurrection-isenheim',
@@ -1997,10 +1754,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée Unterlinden, Colmar',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/grunewald-resurrection-isenheim/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/grunewald-resurrection-isenheim/print-light.webp',
+      src: '/images/devotional-prints/grunewald-resurrection-isenheim/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-arch-titus-relief',
@@ -2011,10 +1766,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Forum Romanum, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-arch-titus-relief/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-arch-titus-relief/print-light.webp',
+      src: '/images/devotional-prints/arch-arch-titus-relief/print.webp',
+      relevance: '',
     },
   ],
   'identity-crisis-day-1': [
@@ -2027,10 +1780,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/courbet-the-desperate-man/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/courbet-the-desperate-man/print-light.webp',
+      src: '/images/devotional-prints/courbet-the-desperate-man/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-laocoon-sons',
@@ -2041,9 +1792,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Vatican Museums, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/sculpt-laocoon-sons/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-laocoon-sons/print-light.webp',
+      src: '/images/devotional-prints/sculpt-laocoon-sons/print.webp',
+      relevance: '',
     },
     {
       slug: 'bouguereau-difficult-lesson',
@@ -2054,10 +1804,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/bouguereau-difficult-lesson/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bouguereau-difficult-lesson/print-light.webp',
+      src: '/images/devotional-prints/bouguereau-difficult-lesson/print.webp',
+      relevance: '',
     },
   ],
   'identity-crisis-day-2': [
@@ -2070,10 +1818,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Metropolitan Museum of Art, New York',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/el-greco-portrait-man/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/el-greco-portrait-man/print-light.webp',
+      src: '/images/devotional-prints/el-greco-portrait-man/print.webp',
+      relevance: '',
     },
     {
       slug: 'watteau-gilles-pierrot',
@@ -2084,10 +1830,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/watteau-gilles-pierrot/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/watteau-gilles-pierrot/print-light.webp',
+      src: '/images/devotional-prints/watteau-gilles-pierrot/print.webp',
+      relevance: '',
     },
     {
       slug: 'caravaggio-david-goliath',
@@ -2098,10 +1842,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Galleria Borghese, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/caravaggio-david-goliath/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/caravaggio-david-goliath/print-light.webp',
+      src: '/images/devotional-prints/caravaggio-david-goliath/print.webp',
+      relevance: '',
     },
   ],
   'identity-crisis-day-3': [
@@ -2114,10 +1856,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Florence, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-baptistery-florence/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-baptistery-florence/print-light.webp',
+      src: '/images/devotional-prints/arch-baptistery-florence/print.webp',
+      relevance: '',
     },
     {
       slug: 'guercino-god-father-angels',
@@ -2128,10 +1868,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Pinacoteca di Brera, Milan',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/guercino-god-father-angels/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/guercino-god-father-angels/print-light.webp',
+      src: '/images/devotional-prints/guercino-god-father-angels/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-damascus-gate-jerusalem',
@@ -2142,10 +1880,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-damascus-gate-jerusalem/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-damascus-gate-jerusalem/print-light.webp',
+      src: '/images/devotional-prints/arch-damascus-gate-jerusalem/print.webp',
+      relevance: '',
     },
   ],
   'identity-crisis-day-4': [
@@ -2158,10 +1894,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Dordrecht Museum',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/scheffer-temptation-christ/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/scheffer-temptation-christ/print-light.webp',
+      src: '/images/devotional-prints/scheffer-temptation-christ/print.webp',
+      relevance: '',
     },
     {
       slug: 'caravaggio-david-goliath',
@@ -2172,10 +1906,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Galleria Borghese, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/caravaggio-david-goliath/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/caravaggio-david-goliath/print-light.webp',
+      src: '/images/devotional-prints/caravaggio-david-goliath/print.webp',
+      relevance: '',
     },
     {
       slug: 'courbet-the-desperate-man',
@@ -2186,10 +1918,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/courbet-the-desperate-man/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/courbet-the-desperate-man/print-light.webp',
+      src: '/images/devotional-prints/courbet-the-desperate-man/print.webp',
+      relevance: '',
     },
   ],
   'identity-crisis-day-5': [
@@ -2202,10 +1932,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-damascus-gate-jerusalem/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-damascus-gate-jerusalem/print-light.webp',
+      src: '/images/devotional-prints/arch-damascus-gate-jerusalem/print.webp',
+      relevance: '',
     },
     {
       slug: 'bouguereau-difficult-lesson',
@@ -2216,10 +1944,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/bouguereau-difficult-lesson/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bouguereau-difficult-lesson/print-light.webp',
+      src: '/images/devotional-prints/bouguereau-difficult-lesson/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-baptistery-florence',
@@ -2230,10 +1956,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Florence, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-baptistery-florence/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-baptistery-florence/print-light.webp',
+      src: '/images/devotional-prints/arch-baptistery-florence/print.webp',
+      relevance: '',
     },
   ],
   'in-the-beginning-week-1-day-1': [
@@ -2246,10 +1970,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/artifact-babylonian-creation-tablet/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/artifact-babylonian-creation-tablet/print-light.webp',
+      src: '/images/devotional-prints/artifact-babylonian-creation-tablet/print.webp',
+      relevance: '',
     },
     {
       slug: 'tintoretto-creation-animals',
@@ -2260,10 +1982,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Gallerie dell'Accademia, Venice",
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/tintoretto-creation-animals/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/tintoretto-creation-animals/print-light.webp',
+      src: '/images/devotional-prints/tintoretto-creation-animals/print.webp',
+      relevance: '',
     },
     {
       slug: 'artifact-torah-scroll-historical',
@@ -2274,10 +1994,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jewish Theological Seminary',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/artifact-torah-scroll-historical/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/artifact-torah-scroll-historical/print-light.webp',
+      src: '/images/devotional-prints/artifact-torah-scroll-historical/print.webp',
+      relevance: '',
     },
   ],
   'in-the-beginning-week-1-day-2': [
@@ -2290,10 +2008,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Musée d'Orsay, Paris",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/corot-lake-ville-davray/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/corot-lake-ville-davray/print-light.webp',
+      src: '/images/devotional-prints/corot-lake-ville-davray/print.webp',
+      relevance: '',
     },
     {
       slug: 'turner-evening-deluge',
@@ -2304,10 +2020,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery of Art, Washington DC',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/turner-evening-deluge/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/turner-evening-deluge/print-light.webp',
+      src: '/images/devotional-prints/turner-evening-deluge/print.webp',
+      relevance: '',
     },
     {
       slug: 'michelangelo-creation-of-adam',
@@ -2318,10 +2032,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Sistine Chapel, Vatican',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/michelangelo-creation-of-adam/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/michelangelo-creation-of-adam/print-light.webp',
+      src: '/images/devotional-prints/michelangelo-creation-of-adam/print.webp',
+      relevance: '',
     },
   ],
   'in-the-beginning-week-1-day-3': [
@@ -2334,10 +2046,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Currier Museum of Art, Manchester NH',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/cole-sunny-morning-hudson/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/cole-sunny-morning-hudson/print-light.webp',
+      src: '/images/devotional-prints/cole-sunny-morning-hudson/print.webp',
+      relevance: '',
     },
     {
       slug: 'wright-philosopher-orrery',
@@ -2348,10 +2058,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Derby Museum and Art Gallery',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/wright-philosopher-orrery/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/wright-philosopher-orrery/print-light.webp',
+      src: '/images/devotional-prints/wright-philosopher-orrery/print.webp',
+      relevance: '',
     },
     {
       slug: 'church-twilight-wilderness',
@@ -2362,10 +2070,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Cleveland Museum of Art',
       license: 'Public Domain (pre-1928)',
       printStyle: 'risograph',
-      darkSrc:
-        '/images/devotional-prints/church-twilight-wilderness/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/church-twilight-wilderness/print-light.webp',
+      src: '/images/devotional-prints/church-twilight-wilderness/print.webp',
+      relevance: '',
     },
   ],
   'in-the-beginning-week-1-day-4': [
@@ -2378,10 +2084,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Cleveland Museum of Art',
       license: 'Public Domain (pre-1928)',
       printStyle: 'risograph',
-      darkSrc:
-        '/images/devotional-prints/church-twilight-wilderness/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/church-twilight-wilderness/print-light.webp',
+      src: '/images/devotional-prints/church-twilight-wilderness/print.webp',
+      relevance: '',
     },
     {
       slug: 'monet-water-lilies-creation',
@@ -2392,10 +2096,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Art Institute of Chicago',
       license: 'Public Domain (pre-1928)',
       printStyle: 'risograph',
-      darkSrc:
-        '/images/devotional-prints/monet-water-lilies-creation/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/monet-water-lilies-creation/print-light.webp',
+      src: '/images/devotional-prints/monet-water-lilies-creation/print.webp',
+      relevance: '',
     },
     {
       slug: 'cole-sunny-morning-hudson',
@@ -2406,10 +2108,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Currier Museum of Art, Manchester NH',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/cole-sunny-morning-hudson/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/cole-sunny-morning-hudson/print-light.webp',
+      src: '/images/devotional-prints/cole-sunny-morning-hudson/print.webp',
+      relevance: '',
     },
   ],
   'in-the-beginning-week-1-day-5': [
@@ -2422,10 +2122,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Musée d'Orsay, Paris",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/millet-angelus-rhythm/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/millet-angelus-rhythm/print-light.webp',
+      src: '/images/devotional-prints/millet-angelus-rhythm/print.webp',
+      relevance: '',
     },
     {
       slug: 'corot-lake-ville-davray',
@@ -2436,10 +2134,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Musée d'Orsay, Paris",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/corot-lake-ville-davray/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/corot-lake-ville-davray/print-light.webp',
+      src: '/images/devotional-prints/corot-lake-ville-davray/print.webp',
+      relevance: '',
     },
     {
       slug: 'monet-water-lilies-creation',
@@ -2450,10 +2146,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Art Institute of Chicago',
       license: 'Public Domain (pre-1928)',
       printStyle: 'risograph',
-      darkSrc:
-        '/images/devotional-prints/monet-water-lilies-creation/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/monet-water-lilies-creation/print-light.webp',
+      src: '/images/devotional-prints/monet-water-lilies-creation/print.webp',
+      relevance: '',
     },
   ],
   'in-the-beginning-week-1-day-6': [
@@ -2466,10 +2160,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jewish Theological Seminary',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/artifact-torah-scroll-historical/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/artifact-torah-scroll-historical/print-light.webp',
+      src: '/images/devotional-prints/artifact-torah-scroll-historical/print.webp',
+      relevance: '',
     },
     {
       slug: 'michelangelo-creation-of-adam',
@@ -2480,10 +2172,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Sistine Chapel, Vatican',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/michelangelo-creation-of-adam/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/michelangelo-creation-of-adam/print-light.webp',
+      src: '/images/devotional-prints/michelangelo-creation-of-adam/print.webp',
+      relevance: '',
     },
     {
       slug: 'artifact-babylonian-creation-tablet',
@@ -2494,10 +2184,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/artifact-babylonian-creation-tablet/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/artifact-babylonian-creation-tablet/print-light.webp',
+      src: '/images/devotional-prints/artifact-babylonian-creation-tablet/print.webp',
+      relevance: '',
     },
   ],
   'kingdom-day-1': [
@@ -2510,8 +2198,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée municipal, Saint-Germain-en-Laye',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/bosch-the-conjurer/print-dark.webp',
-      lightSrc: '/images/devotional-prints/bosch-the-conjurer/print-light.webp',
+      src: '/images/devotional-prints/bosch-the-conjurer/print.webp',
+      relevance: '',
     },
     {
       slug: 'el-greco-burial-count-orgaz',
@@ -2522,10 +2210,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Church of Santo Tomé, Toledo',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/el-greco-burial-count-orgaz/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/el-greco-burial-count-orgaz/print-light.webp',
+      src: '/images/devotional-prints/el-greco-burial-count-orgaz/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-palatine-hill-ruins',
@@ -2536,10 +2222,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-palatine-hill-ruins/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-palatine-hill-ruins/print-light.webp',
+      src: '/images/devotional-prints/arch-palatine-hill-ruins/print.webp',
+      relevance: '',
     },
   ],
   'kingdom-day-3': [
@@ -2552,10 +2236,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Koninklijk Museum, Antwerp',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/rubens-washing-of-feet/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rubens-washing-of-feet/print-light.webp',
+      src: '/images/devotional-prints/rubens-washing-of-feet/print.webp',
+      relevance: '',
     },
     {
       slug: 'del-sarto-last-supper',
@@ -2566,10 +2248,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Cenacolo di San Salvi, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/del-sarto-last-supper/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/del-sarto-last-supper/print-light.webp',
+      src: '/images/devotional-prints/del-sarto-last-supper/print.webp',
+      relevance: '',
     },
     {
       slug: 'murillo-loaves-fishes',
@@ -2580,10 +2260,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hospital de los Venerables, Seville',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/murillo-loaves-fishes/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/murillo-loaves-fishes/print-light.webp',
+      src: '/images/devotional-prints/murillo-loaves-fishes/print.webp',
+      relevance: '',
     },
   ],
   'kingdom-day-4': [
@@ -2596,10 +2274,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Cenacolo di San Salvi, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/del-sarto-last-supper/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/del-sarto-last-supper/print-light.webp',
+      src: '/images/devotional-prints/del-sarto-last-supper/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-bernini-angel-cross',
@@ -2610,10 +2286,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Sant'Andrea delle Fratte, Rome",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-bernini-angel-cross/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-bernini-angel-cross/print-light.webp',
+      src: '/images/devotional-prints/sculpt-bernini-angel-cross/print.webp',
+      relevance: '',
     },
     {
       slug: 'el-greco-burial-count-orgaz',
@@ -2624,10 +2298,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Church of Santo Tomé, Toledo',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/el-greco-burial-count-orgaz/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/el-greco-burial-count-orgaz/print-light.webp',
+      src: '/images/devotional-prints/el-greco-burial-count-orgaz/print.webp',
+      relevance: '',
     },
   ],
   'kingdom-day-5': [
@@ -2640,10 +2312,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-palatine-hill-ruins/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-palatine-hill-ruins/print-light.webp',
+      src: '/images/devotional-prints/arch-palatine-hill-ruins/print.webp',
+      relevance: '',
     },
     {
       slug: 'murillo-loaves-fishes',
@@ -2654,10 +2324,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hospital de los Venerables, Seville',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/murillo-loaves-fishes/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/murillo-loaves-fishes/print-light.webp',
+      src: '/images/devotional-prints/murillo-loaves-fishes/print.webp',
+      relevance: '',
     },
     {
       slug: 'bosch-the-conjurer',
@@ -2668,8 +2336,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée municipal, Saint-Germain-en-Laye',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/bosch-the-conjurer/print-dark.webp',
-      lightSrc: '/images/devotional-prints/bosch-the-conjurer/print-light.webp',
+      src: '/images/devotional-prints/bosch-the-conjurer/print.webp',
+      relevance: '',
     },
   ],
   'once-saved-always-saved-day-1': [
@@ -2682,10 +2350,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Ravenna, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/print-light.webp',
+      src: '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-arch-constantine',
@@ -2696,10 +2362,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-arch-constantine/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-arch-constantine/print-light.webp',
+      src: '/images/devotional-prints/arch-arch-constantine/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-via-sacra-rome',
@@ -2710,9 +2374,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Roman Forum, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/arch-via-sacra-rome/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-via-sacra-rome/print-light.webp',
+      src: '/images/devotional-prints/arch-via-sacra-rome/print.webp',
+      relevance: '',
     },
   ],
   'once-saved-always-saved-day-2': [
@@ -2725,10 +2388,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/brueghel-garden-eden-young/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/brueghel-garden-eden-young/print-light.webp',
+      src: '/images/devotional-prints/brueghel-garden-eden-young/print.webp',
+      relevance: '',
     },
     {
       slug: 'carracci-pieta-1603',
@@ -2739,9 +2400,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo di Capodimonte, Naples',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc: '/images/devotional-prints/carracci-pieta-1603/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/carracci-pieta-1603/print-light.webp',
+      src: '/images/devotional-prints/carracci-pieta-1603/print.webp',
+      relevance: '',
     },
     {
       slug: 'chardin-still-life-arts',
@@ -2752,10 +2412,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hermitage Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/chardin-still-life-arts/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/chardin-still-life-arts/print-light.webp',
+      src: '/images/devotional-prints/chardin-still-life-arts/print.webp',
+      relevance: '',
     },
   ],
   'once-saved-always-saved-day-3': [
@@ -2768,10 +2426,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery of Art, Washington DC',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-apostle-paul-writing/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-apostle-paul-writing/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-apostle-paul-writing/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-donatello-saint-george',
@@ -2782,10 +2438,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo Nazionale del Bargello, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-donatello-saint-george/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-donatello-saint-george/print-light.webp',
+      src: '/images/devotional-prints/sculpt-donatello-saint-george/print.webp',
+      relevance: '',
     },
     {
       slug: 'watts-hope-1886',
@@ -2796,8 +2450,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Tate Britain, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc: '/images/devotional-prints/watts-hope-1886/print-dark.webp',
-      lightSrc: '/images/devotional-prints/watts-hope-1886/print-light.webp',
+      src: '/images/devotional-prints/watts-hope-1886/print.webp',
+      relevance: '',
     },
   ],
   'once-saved-always-saved-day-4': [
@@ -2810,10 +2464,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-arch-constantine/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-arch-constantine/print-light.webp',
+      src: '/images/devotional-prints/arch-arch-constantine/print.webp',
+      relevance: '',
     },
     {
       slug: 'carracci-pieta-1603',
@@ -2824,9 +2476,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo di Capodimonte, Naples',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc: '/images/devotional-prints/carracci-pieta-1603/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/carracci-pieta-1603/print-light.webp',
+      src: '/images/devotional-prints/carracci-pieta-1603/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-ravenna-good-shepherd-mosaic',
@@ -2837,10 +2488,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Ravenna, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/print-light.webp',
+      src: '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/print.webp',
+      relevance: '',
     },
   ],
   'once-saved-always-saved-day-5': [
@@ -2853,10 +2502,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hermitage Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/chardin-still-life-arts/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/chardin-still-life-arts/print-light.webp',
+      src: '/images/devotional-prints/chardin-still-life-arts/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-donatello-saint-george',
@@ -2867,10 +2514,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo Nazionale del Bargello, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-donatello-saint-george/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-donatello-saint-george/print-light.webp',
+      src: '/images/devotional-prints/sculpt-donatello-saint-george/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-apostle-paul-writing',
@@ -2881,10 +2526,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery of Art, Washington DC',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-apostle-paul-writing/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-apostle-paul-writing/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-apostle-paul-writing/print.webp',
+      relevance: '',
     },
   ],
   'once-saved-always-saved-day-6': [
@@ -2897,9 +2540,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Roman Forum, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/arch-via-sacra-rome/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-via-sacra-rome/print-light.webp',
+      src: '/images/devotional-prints/arch-via-sacra-rome/print.webp',
+      relevance: '',
     },
     {
       slug: 'watts-hope-1886',
@@ -2910,8 +2552,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Tate Britain, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc: '/images/devotional-prints/watts-hope-1886/print-dark.webp',
-      lightSrc: '/images/devotional-prints/watts-hope-1886/print-light.webp',
+      src: '/images/devotional-prints/watts-hope-1886/print.webp',
+      relevance: '',
     },
     {
       slug: 'brueghel-garden-eden-young',
@@ -2922,10 +2564,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/brueghel-garden-eden-young/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/brueghel-garden-eden-young/print-light.webp',
+      src: '/images/devotional-prints/brueghel-garden-eden-young/print.webp',
+      relevance: '',
     },
   ],
   'peace-day-1': [
@@ -2938,10 +2578,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Chartres Cathedral, France',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-chartres-labyrinth/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-chartres-labyrinth/print-light.webp',
+      src: '/images/devotional-prints/arch-chartres-labyrinth/print.webp',
+      relevance: '',
     },
     {
       slug: 'hammershoi-interior-strandgade',
@@ -2952,10 +2590,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Ordrupgaard, Copenhagen',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/hammershoi-interior-strandgade/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/hammershoi-interior-strandgade/print-light.webp',
+      src: '/images/devotional-prints/hammershoi-interior-strandgade/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-dome-rock-interior',
@@ -2966,10 +2602,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-dome-rock-interior/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-dome-rock-interior/print-light.webp',
+      src: '/images/devotional-prints/arch-dome-rock-interior/print.webp',
+      relevance: '',
     },
   ],
   'peace-day-2': [
@@ -2982,8 +2616,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc: '/images/devotional-prints/bouguereau-youth/print-dark.webp',
-      lightSrc: '/images/devotional-prints/bouguereau-youth/print-light.webp',
+      src: '/images/devotional-prints/bouguereau-youth/print.webp',
+      relevance: '',
     },
     {
       slug: 'daumier-third-class-carriage',
@@ -2994,10 +2628,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Metropolitan Museum of Art, New York',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/daumier-third-class-carriage/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/daumier-third-class-carriage/print-light.webp',
+      src: '/images/devotional-prints/daumier-third-class-carriage/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-upper-room-cenaculum',
@@ -3008,10 +2640,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mount Zion, Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-upper-room-cenaculum/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-upper-room-cenaculum/print-light.webp',
+      src: '/images/devotional-prints/arch-upper-room-cenaculum/print.webp',
+      relevance: '',
     },
   ],
   'peace-day-3': [
@@ -3024,10 +2654,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-dome-rock-interior/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-dome-rock-interior/print-light.webp',
+      src: '/images/devotional-prints/arch-dome-rock-interior/print.webp',
+      relevance: '',
     },
     {
       slug: 'vermeer-woman-reading-letter',
@@ -3038,10 +2666,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rijksmuseum, Amsterdam',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/vermeer-woman-reading-letter/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/vermeer-woman-reading-letter/print-light.webp',
+      src: '/images/devotional-prints/vermeer-woman-reading-letter/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-chartres-labyrinth',
@@ -3052,10 +2678,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Chartres Cathedral, France',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-chartres-labyrinth/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-chartres-labyrinth/print-light.webp',
+      src: '/images/devotional-prints/arch-chartres-labyrinth/print.webp',
+      relevance: '',
     },
   ],
   'peace-day-4': [
@@ -3068,10 +2692,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée Rodin, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-rodin-prodigal-son/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-rodin-prodigal-son/print-light.webp',
+      src: '/images/devotional-prints/sculpt-rodin-prodigal-son/print.webp',
+      relevance: '',
     },
     {
       slug: 'daumier-third-class-carriage',
@@ -3082,10 +2704,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Metropolitan Museum of Art, New York',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/daumier-third-class-carriage/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/daumier-third-class-carriage/print-light.webp',
+      src: '/images/devotional-prints/daumier-third-class-carriage/print.webp',
+      relevance: '',
     },
     {
       slug: 'hammershoi-interior-strandgade',
@@ -3096,10 +2716,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Ordrupgaard, Copenhagen',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/hammershoi-interior-strandgade/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/hammershoi-interior-strandgade/print-light.webp',
+      src: '/images/devotional-prints/hammershoi-interior-strandgade/print.webp',
+      relevance: '',
     },
   ],
   'peace-day-5': [
@@ -3112,10 +2730,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mount Zion, Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-upper-room-cenaculum/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-upper-room-cenaculum/print-light.webp',
+      src: '/images/devotional-prints/arch-upper-room-cenaculum/print.webp',
+      relevance: '',
     },
     {
       slug: 'tissot-christ-appears-apostles',
@@ -3126,10 +2742,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Brooklyn Museum, New York',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/tissot-christ-appears-apostles/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/tissot-christ-appears-apostles/print-light.webp',
+      src: '/images/devotional-prints/tissot-christ-appears-apostles/print.webp',
+      relevance: '',
     },
     {
       slug: 'bouguereau-youth',
@@ -3140,8 +2754,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc: '/images/devotional-prints/bouguereau-youth/print-dark.webp',
-      lightSrc: '/images/devotional-prints/bouguereau-youth/print-light.webp',
+      src: '/images/devotional-prints/bouguereau-youth/print.webp',
+      relevance: '',
     },
   ],
   'present-in-the-chaos-day-1': [
@@ -3154,10 +2768,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-roman-forum-chaos/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-roman-forum-chaos/print-light.webp',
+      src: '/images/devotional-prints/arch-roman-forum-chaos/print.webp',
+      relevance: '',
     },
     {
       slug: 'bruegel-carnival-lent',
@@ -3168,10 +2780,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kunsthistorisches Museum, Vienna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bruegel-carnival-lent/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-carnival-lent/print-light.webp',
+      src: '/images/devotional-prints/bruegel-carnival-lent/print.webp',
+      relevance: '',
     },
     {
       slug: 'angelico-annunciation-present',
@@ -3182,10 +2792,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-annunciation-present/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-annunciation-present/print-light.webp',
+      src: '/images/devotional-prints/angelico-annunciation-present/print.webp',
+      relevance: '',
     },
   ],
   'present-in-the-chaos-day-2': [
@@ -3198,10 +2806,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Metropolitan Museum of Art, New York',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/daumier-third-class-chaos/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/daumier-third-class-chaos/print-light.webp',
+      src: '/images/devotional-prints/daumier-third-class-chaos/print.webp',
+      relevance: '',
     },
     {
       slug: 'steen-merry-family-chaos',
@@ -3212,10 +2818,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rijksmuseum, Amsterdam',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/steen-merry-family-chaos/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/steen-merry-family-chaos/print-light.webp',
+      src: '/images/devotional-prints/steen-merry-family-chaos/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-roman-forum-chaos',
@@ -3226,10 +2830,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-roman-forum-chaos/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-roman-forum-chaos/print-light.webp',
+      src: '/images/devotional-prints/arch-roman-forum-chaos/print.webp',
+      relevance: '',
     },
   ],
   'present-in-the-chaos-day-3': [
@@ -3242,10 +2844,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/chardin-still-life-stillness/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/chardin-still-life-stillness/print-light.webp',
+      src: '/images/devotional-prints/chardin-still-life-stillness/print.webp',
+      relevance: '',
     },
     {
       slug: 'vermeer-woman-reading-chaos',
@@ -3256,10 +2856,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rijksmuseum, Amsterdam',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/vermeer-woman-reading-chaos/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/vermeer-woman-reading-chaos/print-light.webp',
+      src: '/images/devotional-prints/vermeer-woman-reading-chaos/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-monastery-sinai-burning-bush',
@@ -3270,10 +2868,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mount Sinai, Egypt',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-monastery-sinai-burning-bush/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-monastery-sinai-burning-bush/print-light.webp',
+      src: '/images/devotional-prints/arch-monastery-sinai-burning-bush/print.webp',
+      relevance: '',
     },
   ],
   'present-in-the-chaos-day-4': [
@@ -3286,10 +2882,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-annunciation-present/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-annunciation-present/print-light.webp',
+      src: '/images/devotional-prints/angelico-annunciation-present/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-monastery-sinai-burning-bush',
@@ -3300,10 +2894,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mount Sinai, Egypt',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-monastery-sinai-burning-bush/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-monastery-sinai-burning-bush/print-light.webp',
+      src: '/images/devotional-prints/arch-monastery-sinai-burning-bush/print.webp',
+      relevance: '',
     },
     {
       slug: 'allston-elijah-desert-present',
@@ -3314,10 +2906,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of Fine Arts, Boston',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/allston-elijah-desert-present/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/allston-elijah-desert-present/print-light.webp',
+      src: '/images/devotional-prints/allston-elijah-desert-present/print.webp',
+      relevance: '',
     },
   ],
   'present-in-the-chaos-day-5': [
@@ -3330,10 +2920,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of Fine Arts, Boston',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/allston-elijah-desert-present/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/allston-elijah-desert-present/print-light.webp',
+      src: '/images/devotional-prints/allston-elijah-desert-present/print.webp',
+      relevance: '',
     },
     {
       slug: 'hammershoi-interior-still',
@@ -3344,10 +2932,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Städel Museum, Frankfurt',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/hammershoi-interior-still/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/hammershoi-interior-still/print-light.webp',
+      src: '/images/devotional-prints/hammershoi-interior-still/print.webp',
+      relevance: '',
     },
     {
       slug: 'hammershoi-interior-woman',
@@ -3358,10 +2944,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Städel Museum, Frankfurt',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/hammershoi-interior-woman/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/hammershoi-interior-woman/print-light.webp',
+      src: '/images/devotional-prints/hammershoi-interior-woman/print.webp',
+      relevance: '',
     },
   ],
   'provision-day-1': [
@@ -3374,10 +2958,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-egyptian-granary/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-egyptian-granary/print-light.webp',
+      src: '/images/devotional-prints/arch-egyptian-granary/print.webp',
+      relevance: '',
     },
     {
       slug: 'tissot-gathering-manna',
@@ -3388,10 +2970,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jewish Museum, New York',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/tissot-gathering-manna/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/tissot-gathering-manna/print-light.webp',
+      src: '/images/devotional-prints/tissot-gathering-manna/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-tabgha-loaves-mosaic',
@@ -3402,10 +2982,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Tabgha, Sea of Galilee, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-tabgha-loaves-mosaic/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-tabgha-loaves-mosaic/print-light.webp',
+      src: '/images/devotional-prints/arch-tabgha-loaves-mosaic/print.webp',
+      relevance: '',
     },
   ],
   'provision-day-2': [
@@ -3418,8 +2996,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rijksmuseum, Amsterdam',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/steen-merry-family/print-dark.webp',
-      lightSrc: '/images/devotional-prints/steen-merry-family/print-light.webp',
+      src: '/images/devotional-prints/steen-merry-family/print.webp',
+      relevance: '',
     },
     {
       slug: 'millet-the-gleaners',
@@ -3430,9 +3008,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Musée d'Orsay, Paris",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/millet-the-gleaners/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/millet-the-gleaners/print-light.webp',
+      src: '/images/devotional-prints/millet-the-gleaners/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-ghiberti-gates-paradise-manna',
@@ -3443,10 +3020,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Museo dell'Opera del Duomo, Florence",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/print-light.webp',
+      src: '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/print.webp',
+      relevance: '',
     },
   ],
   'provision-day-3': [
@@ -3459,10 +3034,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Museo dell'Opera del Duomo, Florence",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/print-light.webp',
+      src: '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/print.webp',
+      relevance: '',
     },
     {
       slug: 'veronese-feast-cana',
@@ -3473,9 +3046,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/veronese-feast-cana/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/veronese-feast-cana/print-light.webp',
+      src: '/images/devotional-prints/veronese-feast-cana/print.webp',
+      relevance: '',
     },
     {
       slug: 'brown-work-shared',
@@ -3486,8 +3058,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Manchester Art Gallery',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/brown-work-shared/print-dark.webp',
-      lightSrc: '/images/devotional-prints/brown-work-shared/print-light.webp',
+      src: '/images/devotional-prints/brown-work-shared/print.webp',
+      relevance: '',
     },
   ],
   'provision-day-4': [
@@ -3500,10 +3072,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Tabgha, Sea of Galilee, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-tabgha-loaves-mosaic/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-tabgha-loaves-mosaic/print-light.webp',
+      src: '/images/devotional-prints/arch-tabgha-loaves-mosaic/print.webp',
+      relevance: '',
     },
     {
       slug: 'brown-work-shared',
@@ -3514,8 +3084,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Manchester Art Gallery',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/brown-work-shared/print-dark.webp',
-      lightSrc: '/images/devotional-prints/brown-work-shared/print-light.webp',
+      src: '/images/devotional-prints/brown-work-shared/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-egyptian-granary',
@@ -3526,10 +3096,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-egyptian-granary/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-egyptian-granary/print-light.webp',
+      src: '/images/devotional-prints/arch-egyptian-granary/print.webp',
+      relevance: '',
     },
   ],
   'rooted-day-1': [
@@ -3542,10 +3110,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Russian Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print-light.webp',
+      src: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-ancient-olive-trees-gethsemane',
@@ -3556,10 +3122,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/print-light.webp',
+      src: '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-via-sacra-rooted',
@@ -3570,10 +3134,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-via-sacra-rooted/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-via-sacra-rooted/print-light.webp',
+      src: '/images/devotional-prints/arch-via-sacra-rooted/print.webp',
+      relevance: '',
     },
   ],
   'rooted-day-2': [
@@ -3586,10 +3148,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/courbet-desperate-rooted/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/courbet-desperate-rooted/print-light.webp',
+      src: '/images/devotional-prints/courbet-desperate-rooted/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-jacob-wrestling-rooted',
@@ -3600,10 +3160,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Gemäldegalerie, Berlin',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-jacob-wrestling-rooted/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-jacob-wrestling-rooted/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-jacob-wrestling-rooted/print.webp',
+      relevance: '',
     },
     {
       slug: 'bruegel-peasant-wedding-roots',
@@ -3614,10 +3172,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kunsthistorisches Museum, Vienna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bruegel-peasant-wedding-roots/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-peasant-wedding-roots/print-light.webp',
+      src: '/images/devotional-prints/bruegel-peasant-wedding-roots/print.webp',
+      relevance: '',
     },
   ],
   'rooted-day-3': [
@@ -3630,10 +3186,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum Folkwang, Essen',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/friedrich-woman-rising-sun/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/friedrich-woman-rising-sun/print-light.webp',
+      src: '/images/devotional-prints/friedrich-woman-rising-sun/print.webp',
+      relevance: '',
     },
     {
       slug: 'millet-angelus-rooted',
@@ -3644,10 +3198,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Musée d'Orsay, Paris",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/millet-angelus-rooted/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/millet-angelus-rooted/print-light.webp',
+      src: '/images/devotional-prints/millet-angelus-rooted/print.webp',
+      relevance: '',
     },
     {
       slug: 'courbet-desperate-rooted',
@@ -3658,10 +3210,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/courbet-desperate-rooted/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/courbet-desperate-rooted/print-light.webp',
+      src: '/images/devotional-prints/courbet-desperate-rooted/print.webp',
+      relevance: '',
     },
   ],
   'rooted-day-4': [
@@ -3674,10 +3224,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kunsthistorisches Museum, Vienna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bruegel-peasant-wedding-roots/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-peasant-wedding-roots/print-light.webp',
+      src: '/images/devotional-prints/bruegel-peasant-wedding-roots/print.webp',
+      relevance: '',
     },
     {
       slug: 'friedrich-oak-snow',
@@ -3688,8 +3236,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Nationalgalerie, Berlin',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/friedrich-oak-snow/print-dark.webp',
-      lightSrc: '/images/devotional-prints/friedrich-oak-snow/print-light.webp',
+      src: '/images/devotional-prints/friedrich-oak-snow/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-ancient-olive-trees-gethsemane',
@@ -3700,10 +3248,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/print-light.webp',
+      src: '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/print.webp',
+      relevance: '',
     },
   ],
   'rooted-day-5': [
@@ -3716,10 +3262,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-via-sacra-rooted/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-via-sacra-rooted/print-light.webp',
+      src: '/images/devotional-prints/arch-via-sacra-rooted/print.webp',
+      relevance: '',
     },
     {
       slug: 'grunewald-resurrection-rooted',
@@ -3730,10 +3274,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée Unterlinden, Colmar',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/grunewald-resurrection-rooted/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/grunewald-resurrection-rooted/print-light.webp',
+      src: '/images/devotional-prints/grunewald-resurrection-rooted/print.webp',
+      relevance: '',
     },
     {
       slug: 'aivazovsky-ninth-wave-rooted',
@@ -3744,10 +3286,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Russian Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print-light.webp',
+      src: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print.webp',
+      relevance: '',
     },
   ],
   'signs-boldness-opposition-integrity-day-1': [
@@ -3760,10 +3300,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Athens, Greece',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-areopagus-mars-hill/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-areopagus-mars-hill/print-light.webp',
+      src: '/images/devotional-prints/arch-areopagus-mars-hill/print.webp',
+      relevance: '',
     },
     {
       slug: 'raphael-paul-preaching-athens',
@@ -3774,10 +3312,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Victoria and Albert Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/raphael-paul-preaching-athens/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/raphael-paul-preaching-athens/print-light.webp',
+      src: '/images/devotional-prints/raphael-paul-preaching-athens/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-antonia-fortress-site',
@@ -3788,10 +3324,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-antonia-fortress-site/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-antonia-fortress-site/print-light.webp',
+      src: '/images/devotional-prints/arch-antonia-fortress-site/print.webp',
+      relevance: '',
     },
   ],
   'signs-boldness-opposition-integrity-day-2': [
@@ -3804,10 +3338,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-antonia-fortress-site/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-antonia-fortress-site/print-light.webp',
+      src: '/images/devotional-prints/arch-antonia-fortress-site/print.webp',
+      relevance: '',
     },
     {
       slug: 'carracci-stoning-stephen',
@@ -3818,10 +3350,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/carracci-stoning-stephen/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/carracci-stoning-stephen/print-light.webp',
+      src: '/images/devotional-prints/carracci-stoning-stephen/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-areopagus-mars-hill',
@@ -3832,10 +3362,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Athens, Greece',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-areopagus-mars-hill/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-areopagus-mars-hill/print-light.webp',
+      src: '/images/devotional-prints/arch-areopagus-mars-hill/print.webp',
+      relevance: '',
     },
   ],
   'signs-boldness-opposition-integrity-day-3': [
@@ -3848,10 +3376,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-beautiful-gate-temple/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-beautiful-gate-temple/print-light.webp',
+      src: '/images/devotional-prints/arch-beautiful-gate-temple/print.webp',
+      relevance: '',
     },
     {
       slug: 'raphael-healing-lame-man-2',
@@ -3862,10 +3388,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Victoria and Albert Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/raphael-healing-lame-man-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/raphael-healing-lame-man-2/print-light.webp',
+      src: '/images/devotional-prints/raphael-healing-lame-man-2/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-mamertine-prison-cell',
@@ -3876,10 +3400,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-mamertine-prison-cell/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-mamertine-prison-cell/print-light.webp',
+      src: '/images/devotional-prints/arch-mamertine-prison-cell/print.webp',
+      relevance: '',
     },
   ],
   'signs-boldness-opposition-integrity-day-5': [
@@ -3892,10 +3414,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-mamertine-prison-cell/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-mamertine-prison-cell/print-light.webp',
+      src: '/images/devotional-prints/arch-mamertine-prison-cell/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-apostle-peter-prison',
@@ -3906,10 +3426,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Various collections',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-apostle-peter-prison/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-apostle-peter-prison/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-apostle-peter-prison/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-beautiful-gate-temple',
@@ -3920,10 +3438,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-beautiful-gate-temple/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-beautiful-gate-temple/print-light.webp',
+      src: '/images/devotional-prints/arch-beautiful-gate-temple/print.webp',
+      relevance: '',
     },
   ],
   'standing-strong-day-1': [
@@ -3936,10 +3452,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Sanssouci, Potsdam',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/caravaggio-incredulity-thomas/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/caravaggio-incredulity-thomas/print-light.webp',
+      src: '/images/devotional-prints/caravaggio-incredulity-thomas/print.webp',
+      relevance: '',
     },
     {
       slug: 'friedrich-wanderer-fog',
@@ -3950,10 +3464,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hamburger Kunsthalle',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/friedrich-wanderer-fog/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/friedrich-wanderer-fog/print-light.webp',
+      src: '/images/devotional-prints/friedrich-wanderer-fog/print.webp',
+      relevance: '',
     },
     {
       slug: 'lippi-music-making-angels',
@@ -3964,10 +3476,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Uffizi Gallery, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/lippi-music-making-angels/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/lippi-music-making-angels/print-light.webp',
+      src: '/images/devotional-prints/lippi-music-making-angels/print.webp',
+      relevance: '',
     },
   ],
   'standing-strong-day-2': [
@@ -3980,10 +3490,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Ephesus, Turkey',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ephesus-library-celsus/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ephesus-library-celsus/print-light.webp',
+      src: '/images/devotional-prints/arch-ephesus-library-celsus/print.webp',
+      relevance: '',
     },
     {
       slug: 'raphael-school-athens-standing',
@@ -3994,10 +3502,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Apostolic Palace, Vatican',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/raphael-school-athens-standing/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/raphael-school-athens-standing/print-light.webp',
+      src: '/images/devotional-prints/raphael-school-athens-standing/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-library-celsus-ephesus-2',
@@ -4008,10 +3514,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Ephesus, Turkey',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-library-celsus-ephesus-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-library-celsus-ephesus-2/print-light.webp',
+      src: '/images/devotional-prints/arch-library-celsus-ephesus-2/print.webp',
+      relevance: '',
     },
   ],
   'standing-strong-day-3': [
@@ -4024,10 +3528,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Philippi, Greece',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-philippi-ruins-greece/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-philippi-ruins-greece/print-light.webp',
+      src: '/images/devotional-prints/arch-philippi-ruins-greece/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-apostle-paul-standing',
@@ -4038,10 +3540,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery of Art, Washington DC',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-apostle-paul-standing/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-apostle-paul-standing/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-apostle-paul-standing/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-mamertine-prison-paul',
@@ -4052,10 +3552,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-mamertine-prison-paul/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-mamertine-prison-paul/print-light.webp',
+      src: '/images/devotional-prints/arch-mamertine-prison-paul/print.webp',
+      relevance: '',
     },
   ],
   'standing-strong-day-4': [
@@ -4068,10 +3566,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Ephesus, Turkey',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-library-celsus-ephesus-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-library-celsus-ephesus-2/print-light.webp',
+      src: '/images/devotional-prints/arch-library-celsus-ephesus-2/print.webp',
+      relevance: '',
     },
     {
       slug: 'raphael-apostle-paul-preaching',
@@ -4082,10 +3578,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Victoria and Albert Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/raphael-apostle-paul-preaching/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/raphael-apostle-paul-preaching/print-light.webp',
+      src: '/images/devotional-prints/raphael-apostle-paul-preaching/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-ephesus-library-celsus',
@@ -4096,10 +3590,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Ephesus, Turkey',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ephesus-library-celsus/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ephesus-library-celsus/print-light.webp',
+      src: '/images/devotional-prints/arch-ephesus-library-celsus/print.webp',
+      relevance: '',
     },
   ],
   'standing-strong-day-5': [
@@ -4112,10 +3604,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Uffizi Gallery, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/lippi-music-making-angels/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/lippi-music-making-angels/print-light.webp',
+      src: '/images/devotional-prints/lippi-music-making-angels/print.webp',
+      relevance: '',
     },
     {
       slug: 'vermeer-girl-pearl-standing',
@@ -4126,10 +3616,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mauritshuis, The Hague',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/vermeer-girl-pearl-standing/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/vermeer-girl-pearl-standing/print-light.webp',
+      src: '/images/devotional-prints/vermeer-girl-pearl-standing/print.webp',
+      relevance: '',
     },
     {
       slug: 'raphael-school-athens-standing',
@@ -4140,10 +3628,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Apostolic Palace, Vatican',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/raphael-school-athens-standing/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/raphael-school-athens-standing/print-light.webp',
+      src: '/images/devotional-prints/raphael-school-athens-standing/print.webp',
+      relevance: '',
     },
   ],
   'standing-strong-day-6': [
@@ -4156,10 +3642,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hamburger Kunsthalle',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/friedrich-wanderer-fog/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/friedrich-wanderer-fog/print-light.webp',
+      src: '/images/devotional-prints/friedrich-wanderer-fog/print.webp',
+      relevance: '',
     },
     {
       slug: 'caravaggio-incredulity-thomas',
@@ -4170,10 +3654,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Sanssouci, Potsdam',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/caravaggio-incredulity-thomas/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/caravaggio-incredulity-thomas/print-light.webp',
+      src: '/images/devotional-prints/caravaggio-incredulity-thomas/print.webp',
+      relevance: '',
     },
     {
       slug: 'raphael-apostle-paul-preaching',
@@ -4184,10 +3666,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Victoria and Albert Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/raphael-apostle-paul-preaching/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/raphael-apostle-paul-preaching/print-light.webp',
+      src: '/images/devotional-prints/raphael-apostle-paul-preaching/print.webp',
+      relevance: '',
     },
   ],
   'standing-strong-day-7': [
@@ -4200,10 +3680,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-mamertine-prison-paul/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-mamertine-prison-paul/print-light.webp',
+      src: '/images/devotional-prints/arch-mamertine-prison-paul/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-michelangelo-david-standing',
@@ -4214,10 +3692,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Galleria dell'Accademia, Florence",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-michelangelo-david-standing/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-michelangelo-david-standing/print-light.webp',
+      src: '/images/devotional-prints/sculpt-michelangelo-david-standing/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-philippi-ruins-greece',
@@ -4228,10 +3704,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Philippi, Greece',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-philippi-ruins-greece/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-philippi-ruins-greece/print-light.webp',
+      src: '/images/devotional-prints/arch-philippi-ruins-greece/print.webp',
+      relevance: '',
     },
   ],
   'surrender-to-gods-will-day-1': [
@@ -4244,10 +3718,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-gethsemane-olive-trees/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-gethsemane-olive-trees/print-light.webp',
+      src: '/images/devotional-prints/arch-gethsemane-olive-trees/print.webp',
+      relevance: '',
     },
     {
       slug: 'mantegna-agony-in-garden',
@@ -4258,10 +3730,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/mantegna-agony-in-garden/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/mantegna-agony-in-garden/print-light.webp',
+      src: '/images/devotional-prints/mantegna-agony-in-garden/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-canterbury-cathedral-nave',
@@ -4272,10 +3742,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Canterbury, England',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-canterbury-cathedral-nave/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-canterbury-cathedral-nave/print-light.webp',
+      src: '/images/devotional-prints/arch-canterbury-cathedral-nave/print.webp',
+      relevance: '',
     },
   ],
   'surrender-to-gods-will-day-2': [
@@ -4288,10 +3756,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Isabella Stewart Gardner Museum, Boston',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-storm-sea-galilee/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-storm-sea-galilee/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-storm-sea-galilee/print.webp',
+      relevance: '',
     },
     {
       slug: 'el-greco-agony-garden',
@@ -4302,10 +3768,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/el-greco-agony-garden/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/el-greco-agony-garden/print-light.webp',
+      src: '/images/devotional-prints/el-greco-agony-garden/print.webp',
+      relevance: '',
     },
     {
       slug: 'mantegna-agony-in-garden',
@@ -4316,10 +3780,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/mantegna-agony-in-garden/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/mantegna-agony-in-garden/print-light.webp',
+      src: '/images/devotional-prints/mantegna-agony-in-garden/print.webp',
+      relevance: '',
     },
   ],
   'surrender-to-gods-will-day-3': [
@@ -4332,10 +3794,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hermitage Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-abraham-isaac/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-abraham-isaac/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-abraham-isaac/print.webp',
+      relevance: '',
     },
     {
       slug: 'reni-massacre-innocents',
@@ -4346,10 +3806,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Pinacoteca Nazionale, Bologna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/reni-massacre-innocents/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/reni-massacre-innocents/print-light.webp',
+      src: '/images/devotional-prints/reni-massacre-innocents/print.webp',
+      relevance: '',
     },
     {
       slug: 'el-greco-agony-garden',
@@ -4360,10 +3818,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/el-greco-agony-garden/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/el-greco-agony-garden/print-light.webp',
+      src: '/images/devotional-prints/el-greco-agony-garden/print.webp',
+      relevance: '',
     },
   ],
   'surrender-to-gods-will-day-4': [
@@ -4376,10 +3832,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-via-dolorosa-arch/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-via-dolorosa-arch/print-light.webp',
+      src: '/images/devotional-prints/arch-via-dolorosa-arch/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-michelangelo-pieta',
@@ -4390,10 +3844,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "St. Peter's Basilica, Vatican",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-michelangelo-pieta/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-michelangelo-pieta/print-light.webp',
+      src: '/images/devotional-prints/sculpt-michelangelo-pieta/print.webp',
+      relevance: '',
     },
     {
       slug: 'chardin-grace-before-meal',
@@ -4404,10 +3856,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/chardin-grace-before-meal/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/chardin-grace-before-meal/print-light.webp',
+      src: '/images/devotional-prints/chardin-grace-before-meal/print.webp',
+      relevance: '',
     },
   ],
   'surrender-to-gods-will-day-5': [
@@ -4420,10 +3870,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Canterbury, England',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-canterbury-cathedral-nave/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-canterbury-cathedral-nave/print-light.webp',
+      src: '/images/devotional-prints/arch-canterbury-cathedral-nave/print.webp',
+      relevance: '',
     },
     {
       slug: 'palmer-magic-apple-tree',
@@ -4434,10 +3882,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Fitzwilliam Museum, Cambridge',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/palmer-magic-apple-tree/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/palmer-magic-apple-tree/print-light.webp',
+      src: '/images/devotional-prints/palmer-magic-apple-tree/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-gethsemane-olive-trees',
@@ -4448,10 +3894,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-gethsemane-olive-trees/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-gethsemane-olive-trees/print-light.webp',
+      src: '/images/devotional-prints/arch-gethsemane-olive-trees/print.webp',
+      relevance: '',
     },
   ],
   'surrender-to-gods-will-day-6': [
@@ -4464,10 +3908,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/chardin-grace-before-meal/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/chardin-grace-before-meal/print-light.webp',
+      src: '/images/devotional-prints/chardin-grace-before-meal/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-bernini-saint-teresa',
@@ -4478,10 +3920,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Santa Maria della Vittoria, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-bernini-saint-teresa/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-bernini-saint-teresa/print-light.webp',
+      src: '/images/devotional-prints/sculpt-bernini-saint-teresa/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-via-dolorosa-arch',
@@ -4492,10 +3932,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-via-dolorosa-arch/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-via-dolorosa-arch/print-light.webp',
+      src: '/images/devotional-prints/arch-via-dolorosa-arch/print.webp',
+      relevance: '',
     },
   ],
   'the-blueprint-of-community-day-1': [
@@ -4508,10 +3946,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mount Zion, Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-cenaculum-upper-room/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-cenaculum-upper-room/print-light.webp',
+      src: '/images/devotional-prints/arch-cenaculum-upper-room/print.webp',
+      relevance: '',
     },
     {
       slug: 'duccio-pentecost-1308',
@@ -4522,10 +3958,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Museo dell'Opera del Duomo, Siena",
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/duccio-pentecost-1308/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/duccio-pentecost-1308/print-light.webp',
+      src: '/images/devotional-prints/duccio-pentecost-1308/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-hagia-sophia-apse',
@@ -4536,10 +3970,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Istanbul, Turkey',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-hagia-sophia-apse/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-hagia-sophia-apse/print-light.webp',
+      src: '/images/devotional-prints/arch-hagia-sophia-apse/print.webp',
+      relevance: '',
     },
   ],
   'the-blueprint-of-community-day-2': [
@@ -4552,10 +3984,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Istanbul, Turkey',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-hagia-sophia-apse/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-hagia-sophia-apse/print-light.webp',
+      src: '/images/devotional-prints/arch-hagia-sophia-apse/print.webp',
+      relevance: '',
     },
     {
       slug: 'el-greco-pentecost',
@@ -4566,8 +3996,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo del Prado, Madrid',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc: '/images/devotional-prints/el-greco-pentecost/print-dark.webp',
-      lightSrc: '/images/devotional-prints/el-greco-pentecost/print-light.webp',
+      src: '/images/devotional-prints/el-greco-pentecost/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-cenaculum-upper-room',
@@ -4578,10 +4008,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mount Zion, Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-cenaculum-upper-room/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-cenaculum-upper-room/print-light.webp',
+      src: '/images/devotional-prints/arch-cenaculum-upper-room/print.webp',
+      relevance: '',
     },
   ],
   'the-blueprint-of-community-day-3': [
@@ -4594,10 +4022,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Victoria and Albert Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/raphael-healing-lame-man/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/raphael-healing-lame-man/print-light.webp',
+      src: '/images/devotional-prints/raphael-healing-lame-man/print.webp',
+      relevance: '',
     },
     {
       slug: 'bruegel-peasant-wedding-2',
@@ -4608,10 +4034,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kunsthistorisches Museum, Vienna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bruegel-peasant-wedding-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-peasant-wedding-2/print-light.webp',
+      src: '/images/devotional-prints/bruegel-peasant-wedding-2/print.webp',
+      relevance: '',
     },
     {
       slug: 'duccio-pentecost-1308',
@@ -4622,10 +4046,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Museo dell'Opera del Duomo, Siena",
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/duccio-pentecost-1308/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/duccio-pentecost-1308/print-light.webp',
+      src: '/images/devotional-prints/duccio-pentecost-1308/print.webp',
+      relevance: '',
     },
   ],
   'the-blueprint-of-community-day-4': [
@@ -4638,10 +4060,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-mamertine-prison-rome/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-mamertine-prison-rome/print-light.webp',
+      src: '/images/devotional-prints/arch-mamertine-prison-rome/print.webp',
+      relevance: '',
     },
     {
       slug: 'rubens-saint-peter-tribute',
@@ -4652,10 +4072,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Academy of Fine Arts, San Francisco',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/rubens-saint-peter-tribute/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rubens-saint-peter-tribute/print-light.webp',
+      src: '/images/devotional-prints/rubens-saint-peter-tribute/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-road-to-gaza-ancient',
@@ -4666,10 +4084,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Negev Desert, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-road-to-gaza-ancient/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-road-to-gaza-ancient/print-light.webp',
+      src: '/images/devotional-prints/arch-road-to-gaza-ancient/print.webp',
+      relevance: '',
     },
   ],
   'the-blueprint-of-community-day-5': [
@@ -4682,10 +4098,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Negev Desert, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-road-to-gaza-ancient/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-road-to-gaza-ancient/print-light.webp',
+      src: '/images/devotional-prints/arch-road-to-gaza-ancient/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-philip-baptizing-ethiopian',
@@ -4696,10 +4110,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum Catharijneconvent, Utrecht',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-philip-baptizing-ethiopian/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-philip-baptizing-ethiopian/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-philip-baptizing-ethiopian/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-mamertine-prison-rome',
@@ -4710,10 +4122,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-mamertine-prison-rome/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-mamertine-prison-rome/print-light.webp',
+      src: '/images/devotional-prints/arch-mamertine-prison-rome/print.webp',
+      relevance: '',
     },
   ],
   'the-nature-of-belief-day-1': [
@@ -4726,9 +4136,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée Rodin, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/sculpt-rodin-thinker/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-rodin-thinker/print-light.webp',
+      src: '/images/devotional-prints/sculpt-rodin-thinker/print.webp',
+      relevance: '',
     },
     {
       slug: 'wright-alchemist-patience',
@@ -4739,10 +4148,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Derby Museum and Art Gallery',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/wright-alchemist-patience/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/wright-alchemist-patience/print-light.webp',
+      src: '/images/devotional-prints/wright-alchemist-patience/print.webp',
+      relevance: '',
     },
     {
       slug: 'angelico-annunciation-draw-near',
@@ -4753,10 +4160,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-annunciation-draw-near/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-annunciation-draw-near/print-light.webp',
+      src: '/images/devotional-prints/angelico-annunciation-draw-near/print.webp',
+      relevance: '',
     },
   ],
   'the-nature-of-belief-day-2': [
@@ -4769,10 +4174,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Gemäldegalerie, Berlin',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-jacob-wrestling-belief/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-jacob-wrestling-belief/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-jacob-wrestling-belief/print.webp',
+      relevance: '',
     },
     {
       slug: 'bosch-ship-fools-tongue',
@@ -4783,10 +4186,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bosch-ship-fools-tongue/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bosch-ship-fools-tongue/print-light.webp',
+      src: '/images/devotional-prints/bosch-ship-fools-tongue/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-bourdelle-beethoven-endure',
@@ -4797,10 +4198,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée Bourdelle, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/print-light.webp',
+      src: '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/print.webp',
+      relevance: '',
     },
   ],
   'the-nature-of-belief-day-3': [
@@ -4813,10 +4212,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Florence, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-hospital-innocents-belief/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-hospital-innocents-belief/print-light.webp',
+      src: '/images/devotional-prints/arch-hospital-innocents-belief/print.webp',
+      relevance: '',
     },
     {
       slug: 'bruegel-works-mercy-belief',
@@ -4827,10 +4224,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée des Beaux-Arts, Mons',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bruegel-works-mercy-belief/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-works-mercy-belief/print-light.webp',
+      src: '/images/devotional-prints/bruegel-works-mercy-belief/print.webp',
+      relevance: '',
     },
     {
       slug: 'angelico-annunciation-draw-near',
@@ -4841,10 +4236,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-annunciation-draw-near/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-annunciation-draw-near/print-light.webp',
+      src: '/images/devotional-prints/angelico-annunciation-draw-near/print.webp',
+      relevance: '',
     },
   ],
   'the-nature-of-belief-day-4': [
@@ -4857,10 +4250,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bosch-ship-fools-tongue/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bosch-ship-fools-tongue/print-light.webp',
+      src: '/images/devotional-prints/bosch-ship-fools-tongue/print.webp',
+      relevance: '',
     },
     {
       slug: 'bruegel-works-mercy-belief',
@@ -4871,10 +4262,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée des Beaux-Arts, Mons',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bruegel-works-mercy-belief/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-works-mercy-belief/print-light.webp',
+      src: '/images/devotional-prints/bruegel-works-mercy-belief/print.webp',
+      relevance: '',
     },
     {
       slug: 'guercino-doubting-thomas-2',
@@ -4885,10 +4274,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Sanssouci, Potsdam',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/guercino-doubting-thomas-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/guercino-doubting-thomas-2/print-light.webp',
+      src: '/images/devotional-prints/guercino-doubting-thomas-2/print.webp',
+      relevance: '',
     },
   ],
   'the-nature-of-belief-day-5': [
@@ -4901,10 +4288,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-annunciation-draw-near/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-annunciation-draw-near/print-light.webp',
+      src: '/images/devotional-prints/angelico-annunciation-draw-near/print.webp',
+      relevance: '',
     },
     {
       slug: 'guercino-doubting-thomas-2',
@@ -4915,10 +4300,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Sanssouci, Potsdam',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/guercino-doubting-thomas-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/guercino-doubting-thomas-2/print-light.webp',
+      src: '/images/devotional-prints/guercino-doubting-thomas-2/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-hospital-innocents-belief',
@@ -4929,10 +4312,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Florence, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-hospital-innocents-belief/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-hospital-innocents-belief/print-light.webp',
+      src: '/images/devotional-prints/arch-hospital-innocents-belief/print.webp',
+      relevance: '',
     },
   ],
   'the-nature-of-belief-day-6': [
@@ -4945,10 +4326,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée Bourdelle, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/print-light.webp',
+      src: '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/print.webp',
+      relevance: '',
     },
     {
       slug: 'wright-alchemist-patience',
@@ -4959,10 +4338,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Derby Museum and Art Gallery',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/wright-alchemist-patience/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/wright-alchemist-patience/print-light.webp',
+      src: '/images/devotional-prints/wright-alchemist-patience/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-jacob-wrestling-belief',
@@ -4973,10 +4350,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Gemäldegalerie, Berlin',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-jacob-wrestling-belief/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-jacob-wrestling-belief/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-jacob-wrestling-belief/print.webp',
+      relevance: '',
     },
   ],
   'the-word-before-words-day-1': [
@@ -4989,10 +4364,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Lascaux, Dordogne, France',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-lascaux-cave-paintings/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-lascaux-cave-paintings/print-light.webp',
+      src: '/images/devotional-prints/arch-lascaux-cave-paintings/print.webp',
+      relevance: '',
     },
     {
       slug: 'cole-voyage-life-childhood',
@@ -5003,10 +4376,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery of Art, Washington DC',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/cole-voyage-life-childhood/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/cole-voyage-life-childhood/print-light.webp',
+      src: '/images/devotional-prints/cole-voyage-life-childhood/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-church-annunciation-nazareth',
@@ -5017,10 +4388,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Nazareth, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-church-annunciation-nazareth/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-church-annunciation-nazareth/print-light.webp',
+      src: '/images/devotional-prints/arch-church-annunciation-nazareth/print.webp',
+      relevance: '',
     },
   ],
   'the-word-before-words-day-2': [
@@ -5033,10 +4402,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/artifact-rosetta-stone/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/artifact-rosetta-stone/print-light.webp',
+      src: '/images/devotional-prints/artifact-rosetta-stone/print.webp',
+      relevance: '',
     },
     {
       slug: 'raphael-school-of-athens',
@@ -5047,10 +4414,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Apostolic Palace, Vatican',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/raphael-school-of-athens/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/raphael-school-of-athens/print-light.webp',
+      src: '/images/devotional-prints/raphael-school-of-athens/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-judean-desert-engraving',
@@ -5061,10 +4426,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Library',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-judean-desert-engraving/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-judean-desert-engraving/print-light.webp',
+      src: '/images/devotional-prints/arch-judean-desert-engraving/print.webp',
+      relevance: '',
     },
   ],
   'the-word-before-words-day-3': [
@@ -5077,10 +4440,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-annunciation-logos/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-annunciation-logos/print-light.webp',
+      src: '/images/devotional-prints/angelico-annunciation-logos/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-church-annunciation-nazareth',
@@ -5091,10 +4452,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Nazareth, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-church-annunciation-nazareth/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-church-annunciation-nazareth/print-light.webp',
+      src: '/images/devotional-prints/arch-church-annunciation-nazareth/print.webp',
+      relevance: '',
     },
     {
       slug: 'caravaggio-saint-john-baptist',
@@ -5105,10 +4464,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musei Capitolini, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/caravaggio-saint-john-baptist/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/caravaggio-saint-john-baptist/print-light.webp',
+      src: '/images/devotional-prints/caravaggio-saint-john-baptist/print.webp',
+      relevance: '',
     },
   ],
   'the-word-before-words-day-4': [
@@ -5121,10 +4478,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kunsthistorisches Museum, Vienna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-old-man-praying/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-old-man-praying/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-old-man-praying/print.webp',
+      relevance: '',
     },
     {
       slug: 'vermeer-woman-pearl-necklace',
@@ -5135,10 +4490,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Gemäldegalerie, Berlin',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/vermeer-woman-pearl-necklace/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/vermeer-woman-pearl-necklace/print-light.webp',
+      src: '/images/devotional-prints/vermeer-woman-pearl-necklace/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-lascaux-cave-paintings',
@@ -5149,10 +4502,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Lascaux, Dordogne, France',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-lascaux-cave-paintings/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-lascaux-cave-paintings/print-light.webp',
+      src: '/images/devotional-prints/arch-lascaux-cave-paintings/print.webp',
+      relevance: '',
     },
   ],
   'the-word-before-words-day-5': [
@@ -5165,10 +4516,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Library',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-judean-desert-engraving/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-judean-desert-engraving/print-light.webp',
+      src: '/images/devotional-prints/arch-judean-desert-engraving/print.webp',
+      relevance: '',
     },
     {
       slug: 'caravaggio-john-wilderness',
@@ -5179,10 +4528,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Nelson-Atkins Museum, Kansas City',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/caravaggio-john-wilderness/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/caravaggio-john-wilderness/print-light.webp',
+      src: '/images/devotional-prints/caravaggio-john-wilderness/print.webp',
+      relevance: '',
     },
     {
       slug: 'angelico-annunciation-logos',
@@ -5193,10 +4540,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-annunciation-logos/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-annunciation-logos/print-light.webp',
+      src: '/images/devotional-prints/angelico-annunciation-logos/print.webp',
+      relevance: '',
     },
   ],
   'the-work-of-god-day-1': [
@@ -5209,10 +4554,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Capernaum, Sea of Galilee',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-capernaum-synagogue-ruins/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-capernaum-synagogue-ruins/print-light.webp',
+      src: '/images/devotional-prints/arch-capernaum-synagogue-ruins/print.webp',
+      relevance: '',
     },
     {
       slug: 'millet-man-with-hoe',
@@ -5223,9 +4566,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'J. Paul Getty Museum, Los Angeles',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/millet-man-with-hoe/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/millet-man-with-hoe/print-light.webp',
+      src: '/images/devotional-prints/millet-man-with-hoe/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-ancient-bread-oven-israel',
@@ -5236,10 +4578,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Israel Antiquities Authority',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ancient-bread-oven-israel/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ancient-bread-oven-israel/print-light.webp',
+      src: '/images/devotional-prints/arch-ancient-bread-oven-israel/print.webp',
+      relevance: '',
     },
   ],
   'the-work-of-god-day-2': [
@@ -5252,10 +4592,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Destroyed 1945',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/courbet-stone-breakers-work/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/courbet-stone-breakers-work/print-light.webp',
+      src: '/images/devotional-prints/courbet-stone-breakers-work/print.webp',
+      relevance: '',
     },
     {
       slug: 'millet-sower-work',
@@ -5266,8 +4604,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of Fine Arts, Boston',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/millet-sower-work/print-dark.webp',
-      lightSrc: '/images/devotional-prints/millet-sower-work/print-light.webp',
+      src: '/images/devotional-prints/millet-sower-work/print.webp',
+      relevance: '',
     },
     {
       slug: 'millet-man-with-hoe',
@@ -5278,9 +4616,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'J. Paul Getty Museum, Los Angeles',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/millet-man-with-hoe/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/millet-man-with-hoe/print-light.webp',
+      src: '/images/devotional-prints/millet-man-with-hoe/print.webp',
+      relevance: '',
     },
   ],
   'the-work-of-god-day-3': [
@@ -5293,10 +4630,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/veronese-feast-cana-hunger/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/veronese-feast-cana-hunger/print-light.webp',
+      src: '/images/devotional-prints/veronese-feast-cana-hunger/print.webp',
+      relevance: '',
     },
     {
       slug: 'millet-sower-work',
@@ -5307,8 +4642,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of Fine Arts, Boston',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/millet-sower-work/print-dark.webp',
-      lightSrc: '/images/devotional-prints/millet-sower-work/print-light.webp',
+      src: '/images/devotional-prints/millet-sower-work/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-supper-emmaus',
@@ -5319,10 +4654,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-supper-emmaus/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-supper-emmaus/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-supper-emmaus/print.webp',
+      relevance: '',
     },
   ],
   'the-work-of-god-day-4': [
@@ -5335,10 +4668,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Israel Antiquities Authority',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ancient-bread-oven-israel/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ancient-bread-oven-israel/print-light.webp',
+      src: '/images/devotional-prints/arch-ancient-bread-oven-israel/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-supper-emmaus',
@@ -5349,10 +4680,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-supper-emmaus/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-supper-emmaus/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-supper-emmaus/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-capernaum-synagogue-ruins',
@@ -5363,10 +4692,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Capernaum, Sea of Galilee',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-capernaum-synagogue-ruins/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-capernaum-synagogue-ruins/print-light.webp',
+      src: '/images/devotional-prints/arch-capernaum-synagogue-ruins/print.webp',
+      relevance: '',
     },
   ],
   'the-work-of-god-day-5': [
@@ -5379,10 +4706,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Cincinnati Art Museum',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/chardin-still-life-bread/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/chardin-still-life-bread/print-light.webp',
+      src: '/images/devotional-prints/chardin-still-life-bread/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-tabgha-mosaic-fish',
@@ -5393,10 +4718,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Tabgha, Sea of Galilee',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-tabgha-mosaic-fish/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-tabgha-mosaic-fish/print-light.webp',
+      src: '/images/devotional-prints/arch-tabgha-mosaic-fish/print.webp',
+      relevance: '',
     },
     {
       slug: 'courbet-stone-breakers-work',
@@ -5407,10 +4730,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Destroyed 1945',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/courbet-stone-breakers-work/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/courbet-stone-breakers-work/print-light.webp',
+      src: '/images/devotional-prints/courbet-stone-breakers-work/print.webp',
+      relevance: '',
     },
   ],
   'the-work-of-god-day-6': [
@@ -5423,10 +4744,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Tabgha, Sea of Galilee',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-tabgha-mosaic-fish/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-tabgha-mosaic-fish/print-light.webp',
+      src: '/images/devotional-prints/arch-tabgha-mosaic-fish/print.webp',
+      relevance: '',
     },
     {
       slug: 'tissot-feeding-five-thousand',
@@ -5437,10 +4756,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Brooklyn Museum, New York',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/tissot-feeding-five-thousand/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/tissot-feeding-five-thousand/print-light.webp',
+      src: '/images/devotional-prints/tissot-feeding-five-thousand/print.webp',
+      relevance: '',
     },
     {
       slug: 'chardin-still-life-bread',
@@ -5451,10 +4768,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Cincinnati Art Museum',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/chardin-still-life-bread/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/chardin-still-life-bread/print-light.webp',
+      src: '/images/devotional-prints/chardin-still-life-bread/print.webp',
+      relevance: '',
     },
   ],
   'too-busy-for-god-day-1': [
@@ -5467,10 +4782,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-trajan-market-ruins/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-trajan-market-ruins/print-light.webp',
+      src: '/images/devotional-prints/arch-trajan-market-ruins/print.webp',
+      relevance: '',
     },
     {
       slug: 'steen-rhetoricians-window',
@@ -5481,10 +4794,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Philadelphia Museum of Art',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/steen-rhetoricians-window/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/steen-rhetoricians-window/print-light.webp',
+      src: '/images/devotional-prints/steen-rhetoricians-window/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-westminster-cloister',
@@ -5495,10 +4806,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Westminster Abbey, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-westminster-cloister/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-westminster-cloister/print-light.webp',
+      src: '/images/devotional-prints/arch-westminster-cloister/print.webp',
+      relevance: '',
     },
   ],
   'too-busy-for-god-day-2': [
@@ -5511,10 +4820,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Westminster Abbey, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-westminster-cloister/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-westminster-cloister/print-light.webp',
+      src: '/images/devotional-prints/arch-westminster-cloister/print.webp',
+      relevance: '',
     },
     {
       slug: 'vermeer-christ-martha-mary',
@@ -5525,10 +4832,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Scottish National Gallery, Edinburgh',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/vermeer-christ-martha-mary/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/vermeer-christ-martha-mary/print-light.webp',
+      src: '/images/devotional-prints/vermeer-christ-martha-mary/print.webp',
+      relevance: '',
     },
     {
       slug: 'durer-saint-jerome-study',
@@ -5539,10 +4844,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museu Nacional de Arte Antiga, Lisbon',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/durer-saint-jerome-study/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/durer-saint-jerome-study/print-light.webp',
+      src: '/images/devotional-prints/durer-saint-jerome-study/print.webp',
+      relevance: '',
     },
   ],
   'too-busy-for-god-day-3': [
@@ -5555,10 +4858,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Capernaum, Sea of Galilee',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-capernaum-synagogue/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-capernaum-synagogue/print-light.webp',
+      src: '/images/devotional-prints/arch-capernaum-synagogue/print.webp',
+      relevance: '',
     },
     {
       slug: 'durer-saint-jerome-study',
@@ -5569,10 +4870,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museu Nacional de Arte Antiga, Lisbon',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/durer-saint-jerome-study/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/durer-saint-jerome-study/print-light.webp',
+      src: '/images/devotional-prints/durer-saint-jerome-study/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-cave-elijah-carmel',
@@ -5583,10 +4882,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Haifa, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-cave-elijah-carmel/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-cave-elijah-carmel/print-light.webp',
+      src: '/images/devotional-prints/arch-cave-elijah-carmel/print.webp',
+      relevance: '',
     },
   ],
   'too-busy-for-god-day-4': [
@@ -5599,10 +4896,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Alte Nationalgalerie, Berlin',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/friedrich-monk-by-sea/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/friedrich-monk-by-sea/print-light.webp',
+      src: '/images/devotional-prints/friedrich-monk-by-sea/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-ghiberti-gates-detail',
@@ -5613,10 +4908,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Museo dell'Opera del Duomo, Florence",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-ghiberti-gates-detail/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-ghiberti-gates-detail/print-light.webp',
+      src: '/images/devotional-prints/sculpt-ghiberti-gates-detail/print.webp',
+      relevance: '',
     },
     {
       slug: 'steen-rhetoricians-window',
@@ -5627,10 +4920,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Philadelphia Museum of Art',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/steen-rhetoricians-window/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/steen-rhetoricians-window/print-light.webp',
+      src: '/images/devotional-prints/steen-rhetoricians-window/print.webp',
+      relevance: '',
     },
   ],
   'too-busy-for-god-day-5': [
@@ -5643,10 +4934,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "Museo dell'Opera del Duomo, Florence",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-ghiberti-gates-detail/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-ghiberti-gates-detail/print-light.webp',
+      src: '/images/devotional-prints/sculpt-ghiberti-gates-detail/print.webp',
+      relevance: '',
     },
     {
       slug: 'friedrich-monk-by-sea',
@@ -5657,10 +4946,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Alte Nationalgalerie, Berlin',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/friedrich-monk-by-sea/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/friedrich-monk-by-sea/print-light.webp',
+      src: '/images/devotional-prints/friedrich-monk-by-sea/print.webp',
+      relevance: '',
     },
     {
       slug: 'vermeer-christ-martha-mary',
@@ -5671,10 +4958,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Scottish National Gallery, Edinburgh',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/vermeer-christ-martha-mary/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/vermeer-christ-martha-mary/print-light.webp',
+      src: '/images/devotional-prints/vermeer-christ-martha-mary/print.webp',
+      relevance: '',
     },
   ],
   'too-busy-for-god-day-6': [
@@ -5687,10 +4972,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Haifa, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-cave-elijah-carmel/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-cave-elijah-carmel/print-light.webp',
+      src: '/images/devotional-prints/arch-cave-elijah-carmel/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-capernaum-synagogue',
@@ -5701,10 +4984,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Capernaum, Sea of Galilee',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-capernaum-synagogue/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-capernaum-synagogue/print-light.webp',
+      src: '/images/devotional-prints/arch-capernaum-synagogue/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-trajan-market-ruins',
@@ -5715,10 +4996,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-trajan-market-ruins/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-trajan-market-ruins/print-light.webp',
+      src: '/images/devotional-prints/arch-trajan-market-ruins/print.webp',
+      relevance: '',
     },
   ],
   'truth-day-1': [
@@ -5731,23 +5010,20 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kunsthistorisches Museum, Vienna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/bruegel-tower-babel/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-tower-babel/print-light.webp',
+      src: '/images/devotional-prints/bruegel-tower-babel/print.webp',
+      relevance: '',
     },
     {
-      slug: 'goya-saturn-devouring',
-      title: 'Saturn Devouring His Son',
-      artist: 'Francisco de Goya',
-      year: '1819–23',
+      slug: 'caravaggio-ecce-homo',
+      title: 'Ecce Homo',
+      artist: 'Caravaggio',
+      year: '1605',
       medium: 'painting',
-      museum: 'Museo del Prado, Madrid',
+      museum: 'Palazzo Bianco, Genoa',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/goya-saturn-devouring/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/goya-saturn-devouring/print-light.webp',
+      src: '/images/devotional-prints/caravaggio-ecce-homo/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-straight-street-damascus',
@@ -5758,10 +5034,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Damascus, Syria',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-straight-street-damascus/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-straight-street-damascus/print-light.webp',
+      src: '/images/devotional-prints/arch-straight-street-damascus/print.webp',
+      relevance: '',
     },
   ],
   'truth-day-2': [
@@ -5774,8 +5048,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Tretyakov Gallery, Moscow',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc: '/images/devotional-prints/ge-what-is-truth/print-dark.webp',
-      lightSrc: '/images/devotional-prints/ge-what-is-truth/print-light.webp',
+      src: '/images/devotional-prints/ge-what-is-truth/print.webp',
+      relevance: '',
     },
     {
       slug: 'caravaggio-ecce-homo',
@@ -5786,9 +5060,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Palazzo Bianco, Genoa',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc: '/images/devotional-prints/caravaggio-ecce-homo/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/caravaggio-ecce-homo/print-light.webp',
+      src: '/images/devotional-prints/caravaggio-ecce-homo/print.webp',
+      relevance: '',
     },
     {
       slug: 'daumier-third-class-truth',
@@ -5799,10 +5072,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Metropolitan Museum of Art, New York',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/daumier-third-class-truth/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/daumier-third-class-truth/print-light.webp',
+      src: '/images/devotional-prints/daumier-third-class-truth/print.webp',
+      relevance: '',
     },
   ],
   'truth-day-3': [
@@ -5815,10 +5086,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-christ-pilgrim/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-christ-pilgrim/print-light.webp',
+      src: '/images/devotional-prints/angelico-christ-pilgrim/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-straight-street-damascus',
@@ -5829,10 +5098,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Damascus, Syria',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-straight-street-damascus/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-straight-street-damascus/print-light.webp',
+      src: '/images/devotional-prints/arch-straight-street-damascus/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-old-bailey-london',
@@ -5843,10 +5110,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'London, England',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-old-bailey-london/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-old-bailey-london/print-light.webp',
+      src: '/images/devotional-prints/arch-old-bailey-london/print.webp',
+      relevance: '',
     },
   ],
   'truth-day-4': [
@@ -5859,10 +5124,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Metropolitan Museum of Art, New York',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/daumier-third-class-truth/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/daumier-third-class-truth/print-light.webp',
+      src: '/images/devotional-prints/daumier-third-class-truth/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-themis-justice',
@@ -5873,10 +5136,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Archaeological Museum, Athens',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-themis-justice/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-themis-justice/print-light.webp',
+      src: '/images/devotional-prints/sculpt-themis-justice/print.webp',
+      relevance: '',
     },
     {
       slug: 'bruegel-tower-babel',
@@ -5887,9 +5148,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kunsthistorisches Museum, Vienna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/bruegel-tower-babel/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-tower-babel/print-light.webp',
+      src: '/images/devotional-prints/bruegel-tower-babel/print.webp',
+      relevance: '',
     },
   ],
   'truth-day-5': [
@@ -5902,10 +5162,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'London, England',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-old-bailey-london/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-old-bailey-london/print-light.webp',
+      src: '/images/devotional-prints/arch-old-bailey-london/print.webp',
+      relevance: '',
     },
     {
       slug: 'vermeer-the-geographer',
@@ -5916,10 +5174,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Städel Museum, Frankfurt',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/vermeer-the-geographer/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/vermeer-the-geographer/print-light.webp',
+      src: '/images/devotional-prints/vermeer-the-geographer/print.webp',
+      relevance: '',
     },
     {
       slug: 'angelico-christ-pilgrim',
@@ -5930,10 +5186,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-christ-pilgrim/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-christ-pilgrim/print-light.webp',
+      src: '/images/devotional-prints/angelico-christ-pilgrim/print.webp',
+      relevance: '',
     },
   ],
   'valued-day-1': [
@@ -5946,10 +5200,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Alte Pinakothek, Munich',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/durer-self-portrait-imago-dei/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/durer-self-portrait-imago-dei/print-light.webp',
+      src: '/images/devotional-prints/durer-self-portrait-imago-dei/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-winged-victory-samothrace',
@@ -5960,10 +5212,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-winged-victory-samothrace/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-winged-victory-samothrace/print-light.webp',
+      src: '/images/devotional-prints/sculpt-winged-victory-samothrace/print.webp',
+      relevance: '',
     },
     {
       slug: 'courbet-stone-breakers-valued',
@@ -5974,10 +5224,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Destroyed 1945',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/courbet-stone-breakers-valued/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/courbet-stone-breakers-valued/print-light.webp',
+      src: '/images/devotional-prints/courbet-stone-breakers-valued/print.webp',
+      relevance: '',
     },
   ],
   'valued-day-2': [
@@ -5990,10 +5238,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Destroyed 1945',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/courbet-stone-breakers-valued/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/courbet-stone-breakers-valued/print-light.webp',
+      src: '/images/devotional-prints/courbet-stone-breakers-valued/print.webp',
+      relevance: '',
     },
     {
       slug: 'daumier-third-class-valued',
@@ -6004,10 +5250,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Metropolitan Museum of Art, New York',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/daumier-third-class-valued/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/daumier-third-class-valued/print-light.webp',
+      src: '/images/devotional-prints/daumier-third-class-valued/print.webp',
+      relevance: '',
     },
     {
       slug: 'cassatt-mother-child',
@@ -6018,9 +5262,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Wichita Art Museum',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/cassatt-mother-child/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/cassatt-mother-child/print-light.webp',
+      src: '/images/devotional-prints/cassatt-mother-child/print.webp',
+      relevance: '',
     },
   ],
   'valued-day-3': [
@@ -6033,10 +5276,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kunsthistorisches Museum, Vienna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-titus-reading/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-titus-reading/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-titus-reading/print.webp',
+      relevance: '',
     },
     {
       slug: 'vermeer-girl-pearl-earring',
@@ -6047,10 +5288,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mauritshuis, The Hague',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/vermeer-girl-pearl-earring/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/vermeer-girl-pearl-earring/print-light.webp',
+      src: '/images/devotional-prints/vermeer-girl-pearl-earring/print.webp',
+      relevance: '',
     },
     {
       slug: 'daumier-third-class-valued',
@@ -6061,10 +5300,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Metropolitan Museum of Art, New York',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/daumier-third-class-valued/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/daumier-third-class-valued/print-light.webp',
+      src: '/images/devotional-prints/daumier-third-class-valued/print.webp',
+      relevance: '',
     },
   ],
   'valued-day-4': [
@@ -6077,10 +5314,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'linocut',
-      darkSrc:
-        '/images/devotional-prints/blake-glad-day-albion/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/blake-glad-day-albion/print-light.webp',
+      src: '/images/devotional-prints/blake-glad-day-albion/print.webp',
+      relevance: '',
     },
     {
       slug: 'michelangelo-creation-adam-hands',
@@ -6091,10 +5326,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Sistine Chapel, Vatican',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/michelangelo-creation-adam-hands/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/michelangelo-creation-adam-hands/print-light.webp',
+      src: '/images/devotional-prints/michelangelo-creation-adam-hands/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-self-portrait-63',
@@ -6105,10 +5338,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-self-portrait-63/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-self-portrait-63/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-self-portrait-63/print.webp',
+      relevance: '',
     },
   ],
   'valued-day-5': [
@@ -6121,9 +5352,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Wichita Art Museum',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/cassatt-mother-child/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/cassatt-mother-child/print-light.webp',
+      src: '/images/devotional-prints/cassatt-mother-child/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-self-portrait-valued',
@@ -6134,10 +5364,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-self-portrait-valued/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-self-portrait-valued/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-self-portrait-valued/print.webp',
+      relevance: '',
     },
     {
       slug: 'blake-glad-day-albion',
@@ -6148,10 +5376,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'linocut',
-      darkSrc:
-        '/images/devotional-prints/blake-glad-day-albion/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/blake-glad-day-albion/print-light.webp',
+      src: '/images/devotional-prints/blake-glad-day-albion/print.webp',
+      relevance: '',
     },
   ],
   'what-does-it-mean-to-believe-day-1': [
@@ -6164,10 +5390,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Chennai (Madras), India',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-san-thome-basilica/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-san-thome-basilica/print-light.webp',
+      src: '/images/devotional-prints/arch-san-thome-basilica/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-thomas-apostle',
@@ -6178,10 +5402,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Pushkin Museum of Fine Arts, Moscow',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-thomas-apostle/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-thomas-apostle/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-thomas-apostle/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-maria-laach-choir-stalls',
@@ -6192,10 +5414,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Maria Laach Abbey, Germany',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-maria-laach-choir-stalls/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-maria-laach-choir-stalls/print-light.webp',
+      src: '/images/devotional-prints/arch-maria-laach-choir-stalls/print.webp',
+      relevance: '',
     },
   ],
   'what-does-it-mean-to-believe-day-2': [
@@ -6208,10 +5428,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Gemäldegalerie, Berlin',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-jacob-wrestling-angel/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-jacob-wrestling-angel/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-jacob-wrestling-angel/print.webp',
+      relevance: '',
     },
     {
       slug: 'bosch-ship-fools',
@@ -6222,8 +5440,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/bosch-ship-fools/print-dark.webp',
-      lightSrc: '/images/devotional-prints/bosch-ship-fools/print-light.webp',
+      src: '/images/devotional-prints/bosch-ship-fools/print.webp',
+      relevance: '',
     },
     {
       slug: 'bruegel-works-mercy',
@@ -6234,9 +5452,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée des Beaux-Arts, Mons',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/bruegel-works-mercy/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-works-mercy/print-light.webp',
+      src: '/images/devotional-prints/bruegel-works-mercy/print.webp',
+      relevance: '',
     },
   ],
   'what-does-it-mean-to-believe-day-3': [
@@ -6249,10 +5466,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Florence, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ospedale-innocenti/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ospedale-innocenti/print-light.webp',
+      src: '/images/devotional-prints/arch-ospedale-innocenti/print.webp',
+      relevance: '',
     },
     {
       slug: 'bruegel-works-mercy',
@@ -6263,9 +5478,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée des Beaux-Arts, Mons',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/bruegel-works-mercy/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-works-mercy/print-light.webp',
+      src: '/images/devotional-prints/bruegel-works-mercy/print.webp',
+      relevance: '',
     },
     {
       slug: 'angelico-annunciation-believe',
@@ -6276,10 +5490,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-annunciation-believe/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-annunciation-believe/print-light.webp',
+      src: '/images/devotional-prints/angelico-annunciation-believe/print.webp',
+      relevance: '',
     },
   ],
   'what-does-it-mean-to-believe-day-4': [
@@ -6292,8 +5504,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée du Louvre, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc: '/images/devotional-prints/bosch-ship-fools/print-dark.webp',
-      lightSrc: '/images/devotional-prints/bosch-ship-fools/print-light.webp',
+      src: '/images/devotional-prints/bosch-ship-fools/print.webp',
+      relevance: '',
     },
     {
       slug: 'guercino-doubting-thomas',
@@ -6304,10 +5516,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Pinacoteca Nazionale, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/guercino-doubting-thomas/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/guercino-doubting-thomas/print-light.webp',
+      src: '/images/devotional-prints/guercino-doubting-thomas/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-san-thome-basilica',
@@ -6318,10 +5528,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Chennai (Madras), India',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-san-thome-basilica/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-san-thome-basilica/print-light.webp',
+      src: '/images/devotional-prints/arch-san-thome-basilica/print.webp',
+      relevance: '',
     },
   ],
   'what-does-it-mean-to-believe-day-5': [
@@ -6334,10 +5542,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-annunciation-believe/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-annunciation-believe/print-light.webp',
+      src: '/images/devotional-prints/angelico-annunciation-believe/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-maria-laach-choir-stalls',
@@ -6348,10 +5554,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Maria Laach Abbey, Germany',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-maria-laach-choir-stalls/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-maria-laach-choir-stalls/print-light.webp',
+      src: '/images/devotional-prints/arch-maria-laach-choir-stalls/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-ospedale-innocenti',
@@ -6362,10 +5566,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Florence, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ospedale-innocenti/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ospedale-innocenti/print-light.webp',
+      src: '/images/devotional-prints/arch-ospedale-innocenti/print.webp',
+      relevance: '',
     },
   ],
   'what-does-it-mean-to-believe-day-6': [
@@ -6378,10 +5580,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée Bourdelle, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-bourdelle-beethoven/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-bourdelle-beethoven/print-light.webp',
+      src: '/images/devotional-prints/sculpt-bourdelle-beethoven/print.webp',
+      relevance: '',
     },
     {
       slug: 'wright-the-alchemist',
@@ -6392,9 +5592,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Derby Museum and Art Gallery',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc: '/images/devotional-prints/wright-the-alchemist/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/wright-the-alchemist/print-light.webp',
+      src: '/images/devotional-prints/wright-the-alchemist/print.webp',
+      relevance: '',
     },
     {
       slug: 'guercino-doubting-thomas',
@@ -6405,10 +5604,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Pinacoteca Nazionale, Rome',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/guercino-doubting-thomas/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/guercino-doubting-thomas/print-light.webp',
+      src: '/images/devotional-prints/guercino-doubting-thomas/print.webp',
+      relevance: '',
     },
   ],
   'what-happens-when-you-repeatedly-sin-day-1': [
@@ -6421,10 +5618,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée Gustave Moreau, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/moreau-salome-dancing/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/moreau-salome-dancing/print-light.webp',
+      src: '/images/devotional-prints/moreau-salome-dancing/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-rodin-prodigal-son-sin',
@@ -6435,10 +5630,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée Rodin, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-rodin-prodigal-son-sin/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-rodin-prodigal-son-sin/print-light.webp',
+      src: '/images/devotional-prints/sculpt-rodin-prodigal-son-sin/print.webp',
+      relevance: '',
     },
     {
       slug: 'murillo-return-prodigal',
@@ -6449,10 +5642,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery of Art, Washington DC',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/murillo-return-prodigal/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/murillo-return-prodigal/print-light.webp',
+      src: '/images/devotional-prints/murillo-return-prodigal/print.webp',
+      relevance: '',
     },
   ],
   'what-happens-when-you-repeatedly-sin-day-2': [
@@ -6465,10 +5656,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Multiple print collections',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/durer-prodigal-son-swine/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/durer-prodigal-son-swine/print-light.webp',
+      src: '/images/devotional-prints/durer-prodigal-son-swine/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-prodigal-son-return',
@@ -6479,10 +5668,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hermitage Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-prodigal-son-return/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-prodigal-son-return/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-prodigal-son-return/print.webp',
+      relevance: '',
     },
     {
       slug: 'angelico-last-judgment-detail',
@@ -6493,10 +5680,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo di San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-last-judgment-detail/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-last-judgment-detail/print-light.webp',
+      src: '/images/devotional-prints/angelico-last-judgment-detail/print.webp',
+      relevance: '',
     },
   ],
   'what-happens-when-you-repeatedly-sin-day-3': [
@@ -6509,10 +5694,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo del Prado, Madrid',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/velazquez-christ-crucified-sin/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/velazquez-christ-crucified-sin/print-light.webp',
+      src: '/images/devotional-prints/velazquez-christ-crucified-sin/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-prodigal-son-return',
@@ -6523,10 +5706,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hermitage Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-prodigal-son-return/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-prodigal-son-return/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-prodigal-son-return/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-prodigal-son-tavern',
@@ -6537,10 +5718,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Gemäldegalerie Alte Meister, Dresden',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-prodigal-son-tavern/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-prodigal-son-tavern/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-prodigal-son-tavern/print.webp',
+      relevance: '',
     },
   ],
   'what-happens-when-you-repeatedly-sin-day-5': [
@@ -6553,10 +5732,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo di San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-last-judgment-detail/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-last-judgment-detail/print-light.webp',
+      src: '/images/devotional-prints/angelico-last-judgment-detail/print.webp',
+      relevance: '',
     },
     {
       slug: 'murillo-return-prodigal',
@@ -6567,10 +5744,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery of Art, Washington DC',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/murillo-return-prodigal/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/murillo-return-prodigal/print-light.webp',
+      src: '/images/devotional-prints/murillo-return-prodigal/print.webp',
+      relevance: '',
     },
     {
       slug: 'durer-prodigal-son-swine',
@@ -6581,10 +5756,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Multiple print collections',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/durer-prodigal-son-swine/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/durer-prodigal-son-swine/print-light.webp',
+      src: '/images/devotional-prints/durer-prodigal-son-swine/print.webp',
+      relevance: '',
     },
   ],
   'what-happens-when-you-repeatedly-sin-day-6': [
@@ -6597,10 +5770,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-self-portrait-old/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-self-portrait-old/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-self-portrait-old/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-prodigal-son-tavern',
@@ -6611,10 +5782,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Gemäldegalerie Alte Meister, Dresden',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-prodigal-son-tavern/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-prodigal-son-tavern/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-prodigal-son-tavern/print.webp',
+      relevance: '',
     },
     {
       slug: 'moreau-salome-dancing',
@@ -6625,10 +5794,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée Gustave Moreau, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/moreau-salome-dancing/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/moreau-salome-dancing/print-light.webp',
+      src: '/images/devotional-prints/moreau-salome-dancing/print.webp',
+      relevance: '',
     },
   ],
   'what-is-carrying-a-cross-day-1': [
@@ -6641,10 +5808,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-via-dolorosa-jerusalem/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-via-dolorosa-jerusalem/print-light.webp',
+      src: '/images/devotional-prints/arch-via-dolorosa-jerusalem/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-christ-cross-etching',
@@ -6655,10 +5820,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum Het Rembrandthuis, Amsterdam',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-christ-cross-etching/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-christ-cross-etching/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-christ-cross-etching/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-santa-croce-interior',
@@ -6669,10 +5832,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-santa-croce-interior/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-santa-croce-interior/print-light.webp',
+      src: '/images/devotional-prints/arch-santa-croce-interior/print.webp',
+      relevance: '',
     },
   ],
   'what-is-carrying-a-cross-day-2': [
@@ -6685,10 +5846,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ancient-quarry-golgotha/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ancient-quarry-golgotha/print-light.webp',
+      src: '/images/devotional-prints/arch-ancient-quarry-golgotha/print.webp',
+      relevance: '',
     },
     {
       slug: 'courbet-stone-breakers-cross',
@@ -6699,10 +5858,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Destroyed 1945',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/courbet-stone-breakers-cross/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/courbet-stone-breakers-cross/print-light.webp',
+      src: '/images/devotional-prints/courbet-stone-breakers-cross/print.webp',
+      relevance: '',
     },
     {
       slug: 'angelico-noli-me-tangere',
@@ -6713,10 +5870,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-noli-me-tangere/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-noli-me-tangere/print-light.webp',
+      src: '/images/devotional-prints/angelico-noli-me-tangere/print.webp',
+      relevance: '',
     },
   ],
   'what-is-carrying-a-cross-day-3': [
@@ -6729,10 +5884,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-santa-croce-interior/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-santa-croce-interior/print-light.webp',
+      src: '/images/devotional-prints/arch-santa-croce-interior/print.webp',
+      relevance: '',
     },
     {
       slug: 'van-dyck-christ-cross',
@@ -6743,10 +5896,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Koninklijk Museum, Antwerp',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/van-dyck-christ-cross/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/van-dyck-christ-cross/print-light.webp',
+      src: '/images/devotional-prints/van-dyck-christ-cross/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-garden-tomb-exterior-2',
@@ -6757,10 +5908,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-garden-tomb-exterior-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-garden-tomb-exterior-2/print-light.webp',
+      src: '/images/devotional-prints/arch-garden-tomb-exterior-2/print.webp',
+      relevance: '',
     },
   ],
   'what-is-carrying-a-cross-day-4': [
@@ -6773,10 +5922,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée Unterlinden, Colmar',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/grunewald-crucifixion-isenheim/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/grunewald-crucifixion-isenheim/print-light.webp',
+      src: '/images/devotional-prints/grunewald-crucifixion-isenheim/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-michelangelo-pieta-cross',
@@ -6787,10 +5934,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "St. Peter's Basilica, Vatican",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-michelangelo-pieta-cross/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-michelangelo-pieta-cross/print-light.webp',
+      src: '/images/devotional-prints/sculpt-michelangelo-pieta-cross/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-via-dolorosa-jerusalem',
@@ -6801,10 +5946,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-via-dolorosa-jerusalem/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-via-dolorosa-jerusalem/print-light.webp',
+      src: '/images/devotional-prints/arch-via-dolorosa-jerusalem/print.webp',
+      relevance: '',
     },
   ],
   'what-is-carrying-a-cross-day-5': [
@@ -6817,10 +5960,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-colosseum-arena-floor/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-colosseum-arena-floor/print-light.webp',
+      src: '/images/devotional-prints/arch-colosseum-arena-floor/print.webp',
+      relevance: '',
     },
     {
       slug: 'angelico-noli-me-tangere',
@@ -6831,10 +5972,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-noli-me-tangere/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-noli-me-tangere/print-light.webp',
+      src: '/images/devotional-prints/angelico-noli-me-tangere/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-ancient-quarry-golgotha',
@@ -6845,10 +5984,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ancient-quarry-golgotha/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ancient-quarry-golgotha/print-light.webp',
+      src: '/images/devotional-prints/arch-ancient-quarry-golgotha/print.webp',
+      relevance: '',
     },
   ],
   'what-is-carrying-a-cross-day-6': [
@@ -6861,10 +5998,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-garden-tomb-exterior-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-garden-tomb-exterior-2/print-light.webp',
+      src: '/images/devotional-prints/arch-garden-tomb-exterior-2/print.webp',
+      relevance: '',
     },
     {
       slug: 'grunewald-resurrection-isenheim',
@@ -6875,10 +6010,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée Unterlinden, Colmar',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/grunewald-resurrection-isenheim/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/grunewald-resurrection-isenheim/print-light.webp',
+      src: '/images/devotional-prints/grunewald-resurrection-isenheim/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-colosseum-arena-floor',
@@ -6889,10 +6022,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rome, Italy',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-colosseum-arena-floor/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-colosseum-arena-floor/print-light.webp',
+      src: '/images/devotional-prints/arch-colosseum-arena-floor/print.webp',
+      relevance: '',
     },
   ],
   'what-is-christianity-day-1': [
@@ -6905,10 +6036,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo del Prado, Madrid',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/goya-sleep-reason-monsters/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/goya-sleep-reason-monsters/print-light.webp',
+      src: '/images/devotional-prints/goya-sleep-reason-monsters/print.webp',
+      relevance: '',
     },
     {
       slug: 'durer-prodigal-swine-cage',
@@ -6919,10 +6048,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Multiple collections',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/durer-prodigal-swine-cage/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/durer-prodigal-swine-cage/print-light.webp',
+      src: '/images/devotional-prints/durer-prodigal-swine-cage/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-return-prodigal-grace',
@@ -6933,10 +6060,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hermitage Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-return-prodigal-grace/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-return-prodigal-grace/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-return-prodigal-grace/print.webp',
+      relevance: '',
     },
   ],
   'what-is-christianity-day-2': [
@@ -6949,10 +6074,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Multiple collections',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/durer-prodigal-swine-cage/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/durer-prodigal-swine-cage/print-light.webp',
+      src: '/images/devotional-prints/durer-prodigal-swine-cage/print.webp',
+      relevance: '',
     },
     {
       slug: 'goya-sleep-reason-monsters',
@@ -6963,10 +6086,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo del Prado, Madrid',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/goya-sleep-reason-monsters/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/goya-sleep-reason-monsters/print-light.webp',
+      src: '/images/devotional-prints/goya-sleep-reason-monsters/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-apostle-paul-galatians',
@@ -6977,10 +6098,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery of Art, Washington DC',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-apostle-paul-galatians/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-apostle-paul-galatians/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-apostle-paul-galatians/print.webp',
+      relevance: '',
     },
   ],
   'what-is-christianity-day-3': [
@@ -6993,10 +6112,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hermitage Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-return-prodigal-grace/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-return-prodigal-grace/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-return-prodigal-grace/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-thorvaldsen-christ-grace',
@@ -7007,10 +6124,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Church of Our Lady, Copenhagen',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-thorvaldsen-christ-grace/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-thorvaldsen-christ-grace/print-light.webp',
+      src: '/images/devotional-prints/sculpt-thorvaldsen-christ-grace/print.webp',
+      relevance: '',
     },
     {
       slug: 'van-eyck-ghent-adoration-lamb',
@@ -7021,10 +6136,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "St. Bavo's Cathedral, Ghent",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/van-eyck-ghent-adoration-lamb/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/van-eyck-ghent-adoration-lamb/print-light.webp',
+      src: '/images/devotional-prints/van-eyck-ghent-adoration-lamb/print.webp',
+      relevance: '',
     },
   ],
   'what-is-christianity-day-4': [
@@ -7037,10 +6150,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Central Anatolia, Turkey',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-galatia-ancient-road/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-galatia-ancient-road/print-light.webp',
+      src: '/images/devotional-prints/arch-galatia-ancient-road/print.webp',
+      relevance: '',
     },
     {
       slug: 'van-eyck-ghent-adoration-lamb',
@@ -7051,10 +6162,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: "St. Bavo's Cathedral, Ghent",
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/van-eyck-ghent-adoration-lamb/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/van-eyck-ghent-adoration-lamb/print-light.webp',
+      src: '/images/devotional-prints/van-eyck-ghent-adoration-lamb/print.webp',
+      relevance: '',
     },
     {
       slug: 'angelico-annunciation-faith-worth',
@@ -7065,10 +6174,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-annunciation-faith-worth/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-annunciation-faith-worth/print-light.webp',
+      src: '/images/devotional-prints/angelico-annunciation-faith-worth/print.webp',
+      relevance: '',
     },
   ],
   'what-is-christianity-day-5': [
@@ -7081,10 +6188,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-annunciation-faith-worth/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-annunciation-faith-worth/print-light.webp',
+      src: '/images/devotional-prints/angelico-annunciation-faith-worth/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-apostle-paul-galatians',
@@ -7095,10 +6200,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery of Art, Washington DC',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-apostle-paul-galatians/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-apostle-paul-galatians/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-apostle-paul-galatians/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-galatia-ancient-road',
@@ -7109,10 +6212,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Central Anatolia, Turkey',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-galatia-ancient-road/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-galatia-ancient-road/print-light.webp',
+      src: '/images/devotional-prints/arch-galatia-ancient-road/print.webp',
+      relevance: '',
     },
   ],
   'what-is-the-gospel-day-1': [
@@ -7125,10 +6226,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Library',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-jordan-river-wilderness/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-jordan-river-wilderness/print-light.webp',
+      src: '/images/devotional-prints/arch-jordan-river-wilderness/print.webp',
+      relevance: '',
     },
     {
       slug: 'tissot-saint-john-baptist',
@@ -7139,10 +6238,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Brooklyn Museum, New York',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/tissot-saint-john-baptist/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/tissot-saint-john-baptist/print-light.webp',
+      src: '/images/devotional-prints/tissot-saint-john-baptist/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-ancient-olive-press',
@@ -7153,10 +6250,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Various sites, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ancient-olive-press/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ancient-olive-press/print-light.webp',
+      src: '/images/devotional-prints/arch-ancient-olive-press/print.webp',
+      relevance: '',
     },
   ],
   'what-is-the-gospel-day-2': [
@@ -7169,10 +6264,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Beit Sahour, Bethlehem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-shepherds-field-chapel/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-shepherds-field-chapel/print-light.webp',
+      src: '/images/devotional-prints/arch-shepherds-field-chapel/print.webp',
+      relevance: '',
     },
     {
       slug: 'tanner-the-annunciation',
@@ -7183,10 +6276,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Philadelphia Museum of Art',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/tanner-the-annunciation/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/tanner-the-annunciation/print-light.webp',
+      src: '/images/devotional-prints/tanner-the-annunciation/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-yardenit-jordan-site',
@@ -7197,10 +6288,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Yardenit, Sea of Galilee, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-yardenit-jordan-site/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-yardenit-jordan-site/print-light.webp',
+      src: '/images/devotional-prints/arch-yardenit-jordan-site/print.webp',
+      relevance: '',
     },
   ],
   'what-is-the-gospel-day-3': [
@@ -7213,10 +6302,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rembrandt House Museum, Amsterdam',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-rich-young-ruler/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-rich-young-ruler/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-rich-young-ruler/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-rodin-burghers-calais',
@@ -7227,10 +6314,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée Rodin, Paris',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-rodin-burghers-calais/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-rodin-burghers-calais/print-light.webp',
+      src: '/images/devotional-prints/sculpt-rodin-burghers-calais/print.webp',
+      relevance: '',
     },
     {
       slug: 'courbet-stone-breakers',
@@ -7241,10 +6326,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Destroyed 1945 (known from photographs)',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/courbet-stone-breakers/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/courbet-stone-breakers/print-light.webp',
+      src: '/images/devotional-prints/courbet-stone-breakers/print.webp',
+      relevance: '',
     },
   ],
   'what-is-the-gospel-day-4': [
@@ -7257,10 +6340,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Various sites, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ancient-olive-press/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ancient-olive-press/print-light.webp',
+      src: '/images/devotional-prints/arch-ancient-olive-press/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-workers-vineyard',
@@ -7271,10 +6352,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Hermitage Museum, St. Petersburg',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-workers-vineyard/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-workers-vineyard/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-workers-vineyard/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-jordan-river-wilderness',
@@ -7285,10 +6364,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Library',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-jordan-river-wilderness/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-jordan-river-wilderness/print-light.webp',
+      src: '/images/devotional-prints/arch-jordan-river-wilderness/print.webp',
+      relevance: '',
     },
   ],
   'what-is-the-gospel-day-5': [
@@ -7301,10 +6378,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Destroyed 1945 (known from photographs)',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/courbet-stone-breakers/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/courbet-stone-breakers/print-light.webp',
+      src: '/images/devotional-prints/courbet-stone-breakers/print.webp',
+      relevance: '',
     },
     {
       slug: 'daumier-good-samaritan',
@@ -7315,10 +6390,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Private Collection',
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
-      darkSrc:
-        '/images/devotional-prints/daumier-good-samaritan/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/daumier-good-samaritan/print-light.webp',
+      src: '/images/devotional-prints/daumier-good-samaritan/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-baptism-christ',
@@ -7329,10 +6402,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rijksmuseum, Amsterdam',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-baptism-christ/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-baptism-christ/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-baptism-christ/print.webp',
+      relevance: '',
     },
   ],
   'what-is-the-gospel-day-6': [
@@ -7345,10 +6416,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Yardenit, Sea of Galilee, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-yardenit-jordan-site/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-yardenit-jordan-site/print-light.webp',
+      src: '/images/devotional-prints/arch-yardenit-jordan-site/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-baptism-christ',
@@ -7359,10 +6428,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Rijksmuseum, Amsterdam',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-baptism-christ/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-baptism-christ/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-baptism-christ/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-shepherds-field-chapel',
@@ -7373,10 +6440,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Beit Sahour, Bethlehem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-shepherds-field-chapel/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-shepherds-field-chapel/print-light.webp',
+      src: '/images/devotional-prints/arch-shepherds-field-chapel/print.webp',
+      relevance: '',
     },
   ],
   'why-jesus-day-1': [
@@ -7389,10 +6454,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Bethlehem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-church-nativity-bethlehem/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-church-nativity-bethlehem/print-light.webp',
+      src: '/images/devotional-prints/arch-church-nativity-bethlehem/print.webp',
+      relevance: '',
     },
     {
       slug: 'botticelli-mystical-nativity',
@@ -7403,10 +6466,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/botticelli-mystical-nativity/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/botticelli-mystical-nativity/print-light.webp',
+      src: '/images/devotional-prints/botticelli-mystical-nativity/print.webp',
+      relevance: '',
     },
     {
       slug: 'angelico-transfiguration',
@@ -7417,10 +6478,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-transfiguration/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-transfiguration/print-light.webp',
+      src: '/images/devotional-prints/angelico-transfiguration/print.webp',
+      relevance: '',
     },
   ],
   'why-jesus-day-2': [
@@ -7433,10 +6492,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'National Gallery of Art, Washington DC',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/lotto-adoration-christ-child/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/lotto-adoration-christ-child/print-light.webp',
+      src: '/images/devotional-prints/lotto-adoration-christ-child/print.webp',
+      relevance: '',
     },
     {
       slug: 'sculpt-donatello-marble-david',
@@ -7447,10 +6504,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo Nazionale del Bargello, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/sculpt-donatello-marble-david/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/sculpt-donatello-marble-david/print-light.webp',
+      src: '/images/devotional-prints/sculpt-donatello-marble-david/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-holy-sepulchre-dome-int',
@@ -7461,10 +6516,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-holy-sepulchre-dome-int/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-holy-sepulchre-dome-int/print-light.webp',
+      src: '/images/devotional-prints/arch-holy-sepulchre-dome-int/print.webp',
+      relevance: '',
     },
   ],
   'why-jesus-day-3': [
@@ -7477,10 +6530,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'British Library',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-temple-mount-engraving/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-temple-mount-engraving/print-light.webp',
+      src: '/images/devotional-prints/arch-temple-mount-engraving/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-raising-lazarus',
@@ -7491,10 +6542,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Los Angeles County Museum of Art',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-raising-lazarus/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-raising-lazarus/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-raising-lazarus/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-garden-tomb-exterior',
@@ -7505,10 +6554,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-garden-tomb-exterior/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-garden-tomb-exterior/print-light.webp',
+      src: '/images/devotional-prints/arch-garden-tomb-exterior/print.webp',
+      relevance: '',
     },
   ],
   'why-jesus-day-4': [
@@ -7521,10 +6568,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-holy-sepulchre-dome-int/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-holy-sepulchre-dome-int/print-light.webp',
+      src: '/images/devotional-prints/arch-holy-sepulchre-dome-int/print.webp',
+      relevance: '',
     },
     {
       slug: 'velazquez-christ-crucified',
@@ -7535,10 +6580,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museo del Prado, Madrid',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/velazquez-christ-crucified/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/velazquez-christ-crucified/print-light.webp',
+      src: '/images/devotional-prints/velazquez-christ-crucified/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-church-nativity-bethlehem',
@@ -7549,10 +6592,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Bethlehem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-church-nativity-bethlehem/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-church-nativity-bethlehem/print-light.webp',
+      src: '/images/devotional-prints/arch-church-nativity-bethlehem/print.webp',
+      relevance: '',
     },
   ],
   'why-jesus-day-5': [
@@ -7565,10 +6606,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Jerusalem',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-garden-tomb-exterior/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-garden-tomb-exterior/print-light.webp',
+      src: '/images/devotional-prints/arch-garden-tomb-exterior/print.webp',
+      relevance: '',
     },
     {
       slug: 'veronese-the-resurrection',
@@ -7579,10 +6618,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Gemäldegalerie, Dresden',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/veronese-the-resurrection/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/veronese-the-resurrection/print-light.webp',
+      src: '/images/devotional-prints/veronese-the-resurrection/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-basilica-tabor',
@@ -7593,9 +6630,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mount Tabor, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/arch-basilica-tabor/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-basilica-tabor/print-light.webp',
+      src: '/images/devotional-prints/arch-basilica-tabor/print.webp',
+      relevance: '',
     },
   ],
   'why-jesus-day-6': [
@@ -7608,9 +6644,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Mount Tabor, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc: '/images/devotional-prints/arch-basilica-tabor/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-basilica-tabor/print-light.webp',
+      src: '/images/devotional-prints/arch-basilica-tabor/print.webp',
+      relevance: '',
     },
     {
       slug: 'raphael-transfiguration',
@@ -7621,10 +6656,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Pinacoteca Vaticana, Vatican',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/raphael-transfiguration/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/raphael-transfiguration/print-light.webp',
+      src: '/images/devotional-prints/raphael-transfiguration/print.webp',
+      relevance: '',
     },
     {
       slug: 'angelico-transfiguration',
@@ -7635,10 +6668,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum of San Marco, Florence',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/angelico-transfiguration/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/angelico-transfiguration/print-light.webp',
+      src: '/images/devotional-prints/angelico-transfiguration/print.webp',
+      relevance: '',
     },
   ],
   'witness-under-pressure-expansion-day-1': [
@@ -7651,10 +6682,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée des Beaux-Arts, Lyon',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-stoning-stephen-1625/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-stoning-stephen-1625/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-stoning-stephen-1625/print.webp',
+      relevance: '',
     },
     {
       slug: 'raphael-conversion-paul',
@@ -7665,10 +6694,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Victoria and Albert Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/raphael-conversion-paul/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/raphael-conversion-paul/print-light.webp',
+      src: '/images/devotional-prints/raphael-conversion-paul/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-philip-ethiopian-2',
@@ -7679,10 +6706,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum Catharijneconvent, Utrecht',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-philip-ethiopian-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-philip-ethiopian-2/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-philip-ethiopian-2/print.webp',
+      relevance: '',
     },
   ],
   'witness-under-pressure-expansion-day-2': [
@@ -7695,10 +6720,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Syria',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-damascus-road-ancient/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-damascus-road-ancient/print-light.webp',
+      src: '/images/devotional-prints/arch-damascus-road-ancient/print.webp',
+      relevance: '',
     },
     {
       slug: 'raphael-conversion-paul',
@@ -7709,10 +6732,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Victoria and Albert Museum, London',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/raphael-conversion-paul/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/raphael-conversion-paul/print-light.webp',
+      src: '/images/devotional-prints/raphael-conversion-paul/print.webp',
+      relevance: '',
     },
     {
       slug: 'bruegel-pentecost-expansion',
@@ -7723,10 +6744,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kunsthistorisches Museum, Vienna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bruegel-pentecost-expansion/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-pentecost-expansion/print-light.webp',
+      src: '/images/devotional-prints/bruegel-pentecost-expansion/print.webp',
+      relevance: '',
     },
   ],
   'witness-under-pressure-expansion-day-3': [
@@ -7739,10 +6758,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Negev, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ancient-gaza-road-negev/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ancient-gaza-road-negev/print-light.webp',
+      src: '/images/devotional-prints/arch-ancient-gaza-road-negev/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-philip-ethiopian-2',
@@ -7753,10 +6770,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Museum Catharijneconvent, Utrecht',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-philip-ethiopian-2/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-philip-ethiopian-2/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-philip-ethiopian-2/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-amphitheater-caesarea',
@@ -7767,10 +6782,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Caesarea Maritime National Park, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-amphitheater-caesarea/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-amphitheater-caesarea/print-light.webp',
+      src: '/images/devotional-prints/arch-amphitheater-caesarea/print.webp',
+      relevance: '',
     },
   ],
   'witness-under-pressure-expansion-day-4': [
@@ -7783,10 +6796,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Caesarea Maritime National Park, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-amphitheater-caesarea/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-amphitheater-caesarea/print-light.webp',
+      src: '/images/devotional-prints/arch-amphitheater-caesarea/print.webp',
+      relevance: '',
     },
     {
       slug: 'van-dyck-martyrdom-sebastian',
@@ -7797,10 +6808,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Alte Pinakothek, Munich',
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
-      darkSrc:
-        '/images/devotional-prints/van-dyck-martyrdom-sebastian/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/van-dyck-martyrdom-sebastian/print-light.webp',
+      src: '/images/devotional-prints/van-dyck-martyrdom-sebastian/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-ancient-gaza-road-negev',
@@ -7811,10 +6820,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Negev, Israel',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-ancient-gaza-road-negev/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-ancient-gaza-road-negev/print-light.webp',
+      src: '/images/devotional-prints/arch-ancient-gaza-road-negev/print.webp',
+      relevance: '',
     },
   ],
   'witness-under-pressure-expansion-day-5': [
@@ -7827,10 +6834,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Kunsthistorisches Museum, Vienna',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/bruegel-pentecost-expansion/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/bruegel-pentecost-expansion/print-light.webp',
+      src: '/images/devotional-prints/bruegel-pentecost-expansion/print.webp',
+      relevance: '',
     },
     {
       slug: 'rembrandt-stoning-saint-stephen',
@@ -7841,10 +6846,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Musée des Beaux-Arts, Lyon',
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
-      darkSrc:
-        '/images/devotional-prints/rembrandt-stoning-saint-stephen/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/rembrandt-stoning-saint-stephen/print-light.webp',
+      src: '/images/devotional-prints/rembrandt-stoning-saint-stephen/print.webp',
+      relevance: '',
     },
     {
       slug: 'arch-damascus-road-ancient',
@@ -7855,10 +6858,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       museum: 'Syria',
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
-      darkSrc:
-        '/images/devotional-prints/arch-damascus-road-ancient/print-dark.webp',
-      lightSrc:
-        '/images/devotional-prints/arch-damascus-road-ancient/print-light.webp',
+      src: '/images/devotional-prints/arch-damascus-road-ancient/print.webp',
+      relevance: '',
     },
   ],
 }
@@ -7873,9 +6874,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Russian Museum, St. Petersburg',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/aivazovsky-ninth-wave/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/aivazovsky-ninth-wave/print-light.webp',
+    src: '/images/devotional-prints/aivazovsky-ninth-wave/print.webp',
+    relevance: '',
   },
   'aivazovsky-ninth-wave-rooted': {
     slug: 'aivazovsky-ninth-wave-rooted',
@@ -7886,10 +6886,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Russian Museum, St. Petersburg',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print-light.webp',
+    src: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print.webp',
+    relevance: '',
   },
   'allston-elijah-desert': {
     slug: 'allston-elijah-desert',
@@ -7900,9 +6898,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum of Fine Arts, Boston',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/allston-elijah-desert/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/allston-elijah-desert/print-light.webp',
+    src: '/images/devotional-prints/allston-elijah-desert/print.webp',
+    relevance: '',
   },
   'allston-elijah-desert-present': {
     slug: 'allston-elijah-desert-present',
@@ -7913,10 +6910,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum of Fine Arts, Boston',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/allston-elijah-desert-present/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/allston-elijah-desert-present/print-light.webp',
+    src: '/images/devotional-prints/allston-elijah-desert-present/print.webp',
+    relevance: '',
   },
   'angelico-annunciation-believe': {
     slug: 'angelico-annunciation-believe',
@@ -7927,10 +6922,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum of San Marco, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/angelico-annunciation-believe/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/angelico-annunciation-believe/print-light.webp',
+    src: '/images/devotional-prints/angelico-annunciation-believe/print.webp',
+    relevance: '',
   },
   'angelico-annunciation-draw-near': {
     slug: 'angelico-annunciation-draw-near',
@@ -7941,10 +6934,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum of San Marco, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/angelico-annunciation-draw-near/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/angelico-annunciation-draw-near/print-light.webp',
+    src: '/images/devotional-prints/angelico-annunciation-draw-near/print.webp',
+    relevance: '',
   },
   'angelico-annunciation-faith-worth': {
     slug: 'angelico-annunciation-faith-worth',
@@ -7955,10 +6946,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum of San Marco, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/angelico-annunciation-faith-worth/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/angelico-annunciation-faith-worth/print-light.webp',
+    src: '/images/devotional-prints/angelico-annunciation-faith-worth/print.webp',
+    relevance: '',
   },
   'angelico-annunciation-logos': {
     slug: 'angelico-annunciation-logos',
@@ -7969,10 +6958,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum of San Marco, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/angelico-annunciation-logos/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/angelico-annunciation-logos/print-light.webp',
+    src: '/images/devotional-prints/angelico-annunciation-logos/print.webp',
+    relevance: '',
   },
   'angelico-annunciation-present': {
     slug: 'angelico-annunciation-present',
@@ -7983,10 +6970,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum of San Marco, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/angelico-annunciation-present/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/angelico-annunciation-present/print-light.webp',
+    src: '/images/devotional-prints/angelico-annunciation-present/print.webp',
+    relevance: '',
   },
   'angelico-christ-pilgrim': {
     slug: 'angelico-christ-pilgrim',
@@ -7997,10 +6982,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum of San Marco, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/angelico-christ-pilgrim/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/angelico-christ-pilgrim/print-light.webp',
+    src: '/images/devotional-prints/angelico-christ-pilgrim/print.webp',
+    relevance: '',
   },
   'angelico-last-judgment-detail': {
     slug: 'angelico-last-judgment-detail',
@@ -8011,10 +6994,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museo di San Marco, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/angelico-last-judgment-detail/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/angelico-last-judgment-detail/print-light.webp',
+    src: '/images/devotional-prints/angelico-last-judgment-detail/print.webp',
+    relevance: '',
   },
   'angelico-noli-me-tangere': {
     slug: 'angelico-noli-me-tangere',
@@ -8025,10 +7006,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum of San Marco, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/angelico-noli-me-tangere/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/angelico-noli-me-tangere/print-light.webp',
+    src: '/images/devotional-prints/angelico-noli-me-tangere/print.webp',
+    relevance: '',
   },
   'angelico-noli-me-tangere-2': {
     slug: 'angelico-noli-me-tangere-2',
@@ -8039,10 +7018,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum of San Marco, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/angelico-noli-me-tangere-2/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/angelico-noli-me-tangere-2/print-light.webp',
+    src: '/images/devotional-prints/angelico-noli-me-tangere-2/print.webp',
+    relevance: '',
   },
   'angelico-transfiguration': {
     slug: 'angelico-transfiguration',
@@ -8053,10 +7030,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum of San Marco, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/angelico-transfiguration/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/angelico-transfiguration/print-light.webp',
+    src: '/images/devotional-prints/angelico-transfiguration/print.webp',
+    relevance: '',
   },
   'arch-alhambra-gardens-granada': {
     slug: 'arch-alhambra-gardens-granada',
@@ -8067,10 +7042,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Granada, Spain',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-alhambra-gardens-granada/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-alhambra-gardens-granada/print-light.webp',
+    src: '/images/devotional-prints/arch-alhambra-gardens-granada/print.webp',
+    relevance: '',
   },
   'arch-amphitheater-caesarea': {
     slug: 'arch-amphitheater-caesarea',
@@ -8081,10 +7054,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Caesarea Maritime National Park, Israel',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-amphitheater-caesarea/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-amphitheater-caesarea/print-light.webp',
+    src: '/images/devotional-prints/arch-amphitheater-caesarea/print.webp',
+    relevance: '',
   },
   'arch-ancient-bread-oven-israel': {
     slug: 'arch-ancient-bread-oven-israel',
@@ -8095,10 +7066,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Israel Antiquities Authority',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-ancient-bread-oven-israel/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-ancient-bread-oven-israel/print-light.webp',
+    src: '/images/devotional-prints/arch-ancient-bread-oven-israel/print.webp',
+    relevance: '',
   },
   'arch-ancient-gaza-road-negev': {
     slug: 'arch-ancient-gaza-road-negev',
@@ -8109,10 +7078,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Negev, Israel',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-ancient-gaza-road-negev/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-ancient-gaza-road-negev/print-light.webp',
+    src: '/images/devotional-prints/arch-ancient-gaza-road-negev/print.webp',
+    relevance: '',
   },
   'arch-ancient-olive-press': {
     slug: 'arch-ancient-olive-press',
@@ -8123,10 +7090,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Various sites, Israel',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-ancient-olive-press/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-ancient-olive-press/print-light.webp',
+    src: '/images/devotional-prints/arch-ancient-olive-press/print.webp',
+    relevance: '',
   },
   'arch-ancient-olive-trees-gethsemane': {
     slug: 'arch-ancient-olive-trees-gethsemane',
@@ -8137,10 +7102,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/print-light.webp',
+    src: '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/print.webp',
+    relevance: '',
   },
   'arch-ancient-quarry-golgotha': {
     slug: 'arch-ancient-quarry-golgotha',
@@ -8151,10 +7114,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-ancient-quarry-golgotha/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-ancient-quarry-golgotha/print-light.webp',
+    src: '/images/devotional-prints/arch-ancient-quarry-golgotha/print.webp',
+    relevance: '',
+  },
+  'arch-antioch-ancient-ruins': {
+    slug: 'arch-antioch-ancient-ruins',
+    title: 'Antioch Ancient Ruins',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-antioch-ancient-ruins/print.webp',
+    relevance: '',
   },
   'arch-antonia-fortress-site': {
     slug: 'arch-antonia-fortress-site',
@@ -8165,10 +7138,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-antonia-fortress-site/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-antonia-fortress-site/print-light.webp',
+    src: '/images/devotional-prints/arch-antonia-fortress-site/print.webp',
+    relevance: '',
   },
   'arch-arch-constantine': {
     slug: 'arch-arch-constantine',
@@ -8179,9 +7150,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rome, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-arch-constantine/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-arch-constantine/print-light.webp',
+    src: '/images/devotional-prints/arch-arch-constantine/print.webp',
+    relevance: '',
   },
   'arch-arch-titus-relief': {
     slug: 'arch-arch-titus-relief',
@@ -8192,9 +7162,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Forum Romanum, Rome',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-arch-titus-relief/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-arch-titus-relief/print-light.webp',
+    src: '/images/devotional-prints/arch-arch-titus-relief/print.webp',
+    relevance: '',
   },
   'arch-areopagus-mars-hill': {
     slug: 'arch-areopagus-mars-hill',
@@ -8205,10 +7174,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Athens, Greece',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-areopagus-mars-hill/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-areopagus-mars-hill/print-light.webp',
+    src: '/images/devotional-prints/arch-areopagus-mars-hill/print.webp',
+    relevance: '',
+  },
+  'arch-babylon-gate': {
+    slug: 'arch-babylon-gate',
+    title: 'Reconstruction of the Ishtar Gate, Babylon',
+    artist: 'Photograph',
+    year: 'c.1902',
+    medium: 'architecture',
+    museum: 'Pergamon Museum, Berlin',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/arch-babylon-gate/print.webp',
+    relevance: '',
   },
   'arch-baptistery-florence': {
     slug: 'arch-baptistery-florence',
@@ -8219,10 +7198,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Florence, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-baptistery-florence/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-baptistery-florence/print-light.webp',
+    src: '/images/devotional-prints/arch-baptistery-florence/print.webp',
+    relevance: '',
   },
   'arch-basilica-tabor': {
     slug: 'arch-basilica-tabor',
@@ -8233,8 +7210,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Mount Tabor, Israel',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-basilica-tabor/print-dark.webp',
-    lightSrc: '/images/devotional-prints/arch-basilica-tabor/print-light.webp',
+    src: '/images/devotional-prints/arch-basilica-tabor/print.webp',
+    relevance: '',
   },
   'arch-beautiful-gate-temple': {
     slug: 'arch-beautiful-gate-temple',
@@ -8245,10 +7222,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-beautiful-gate-temple/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-beautiful-gate-temple/print-light.webp',
+    src: '/images/devotional-prints/arch-beautiful-gate-temple/print.webp',
+    relevance: '',
+  },
+  'arch-benedictine-abbey-humility': {
+    slug: 'arch-benedictine-abbey-humility',
+    title: 'Benedictine Abbey Humility',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-benedictine-abbey-humility/print.webp',
+    relevance: '',
+  },
+  'arch-bethlehem-field-jesse': {
+    slug: 'arch-bethlehem-field-jesse',
+    title: 'Bethlehem Field Jesse',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-bethlehem-field-jesse/print.webp',
+    relevance: '',
+  },
+  'arch-byzantine-churches-samaria': {
+    slug: 'arch-byzantine-churches-samaria',
+    title: 'Byzantine Churches Samaria',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-byzantine-churches-samaria/print.webp',
+    relevance: '',
   },
   'arch-canterbury-cathedral-nave': {
     slug: 'arch-canterbury-cathedral-nave',
@@ -8259,10 +7270,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Canterbury, England',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-canterbury-cathedral-nave/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-canterbury-cathedral-nave/print-light.webp',
+    src: '/images/devotional-prints/arch-canterbury-cathedral-nave/print.webp',
+    relevance: '',
+  },
+  'arch-capernaum-house-church': {
+    slug: 'arch-capernaum-house-church',
+    title: 'Capernaum House Church',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-capernaum-house-church/print.webp',
+    relevance: '',
   },
   'arch-capernaum-synagogue': {
     slug: 'arch-capernaum-synagogue',
@@ -8273,10 +7294,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Capernaum, Sea of Galilee',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-capernaum-synagogue/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-capernaum-synagogue/print-light.webp',
+    src: '/images/devotional-prints/arch-capernaum-synagogue/print.webp',
+    relevance: '',
   },
   'arch-capernaum-synagogue-ruins': {
     slug: 'arch-capernaum-synagogue-ruins',
@@ -8287,10 +7306,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Capernaum, Sea of Galilee',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-capernaum-synagogue-ruins/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-capernaum-synagogue-ruins/print-light.webp',
+    src: '/images/devotional-prints/arch-capernaum-synagogue-ruins/print.webp',
+    relevance: '',
+  },
+  'arch-cappadocia-dark-church': {
+    slug: 'arch-cappadocia-dark-church',
+    title: 'Dark Church (Karanlık Kilise), Göreme, Cappadocia',
+    artist: 'Architecture',
+    year: 'c.11th century',
+    medium: 'architecture',
+    museum: 'Göreme, Turkey',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/arch-cappadocia-dark-church/print.webp',
+    relevance: '',
   },
   'arch-catacombs-good-shepherd': {
     slug: 'arch-catacombs-good-shepherd',
@@ -8301,10 +7330,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Catacomb of Priscilla, Rome',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-catacombs-good-shepherd/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-catacombs-good-shepherd/print-light.webp',
+    src: '/images/devotional-prints/arch-catacombs-good-shepherd/print.webp',
+    relevance: '',
+  },
+  'arch-catacombs-priscilla-early': {
+    slug: 'arch-catacombs-priscilla-early',
+    title: 'Catacombs Priscilla Early',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-catacombs-priscilla-early/print.webp',
+    relevance: '',
   },
   'arch-cave-elijah-carmel': {
     slug: 'arch-cave-elijah-carmel',
@@ -8315,10 +7354,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Haifa, Israel',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-cave-elijah-carmel/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-cave-elijah-carmel/print-light.webp',
+    src: '/images/devotional-prints/arch-cave-elijah-carmel/print.webp',
+    relevance: '',
   },
   'arch-cave-elijah-carmel-2': {
     slug: 'arch-cave-elijah-carmel-2',
@@ -8329,10 +7366,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Mount Carmel, Israel',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-cave-elijah-carmel-2/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-cave-elijah-carmel-2/print-light.webp',
+    src: '/images/devotional-prints/arch-cave-elijah-carmel-2/print.webp',
+    relevance: '',
   },
   'arch-cenaculum-upper-room': {
     slug: 'arch-cenaculum-upper-room',
@@ -8343,10 +7378,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Mount Zion, Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-cenaculum-upper-room/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-cenaculum-upper-room/print-light.webp',
+    src: '/images/devotional-prints/arch-cenaculum-upper-room/print.webp',
+    relevance: '',
   },
   'arch-chartres-cathedral-exterior': {
     slug: 'arch-chartres-cathedral-exterior',
@@ -8357,10 +7390,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Chartres, France',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-chartres-cathedral-exterior/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-chartres-cathedral-exterior/print-light.webp',
+    src: '/images/devotional-prints/arch-chartres-cathedral-exterior/print.webp',
+    relevance: '',
+  },
+  'arch-chartres-cathedral-roots': {
+    slug: 'arch-chartres-cathedral-roots',
+    title: 'Chartres Cathedral Roots',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-chartres-cathedral-roots/print.webp',
+    relevance: '',
   },
   'arch-chartres-labyrinth': {
     slug: 'arch-chartres-labyrinth',
@@ -8371,10 +7414,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Chartres Cathedral, France',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-chartres-labyrinth/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-chartres-labyrinth/print-light.webp',
+    src: '/images/devotional-prints/arch-chartres-labyrinth/print.webp',
+    relevance: '',
   },
   'arch-church-annunciation-nazareth': {
     slug: 'arch-church-annunciation-nazareth',
@@ -8385,10 +7426,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Nazareth, Israel',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-church-annunciation-nazareth/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-church-annunciation-nazareth/print-light.webp',
+    src: '/images/devotional-prints/arch-church-annunciation-nazareth/print.webp',
+    relevance: '',
   },
   'arch-church-nativity-bethlehem': {
     slug: 'arch-church-nativity-bethlehem',
@@ -8399,10 +7438,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Bethlehem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-church-nativity-bethlehem/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-church-nativity-bethlehem/print-light.webp',
+    src: '/images/devotional-prints/arch-church-nativity-bethlehem/print.webp',
+    relevance: '',
+  },
+  'arch-cluny-abbey-ruins': {
+    slug: 'arch-cluny-abbey-ruins',
+    title: 'Cluny Abbey Ruins',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-cluny-abbey-ruins/print.webp',
+    relevance: '',
   },
   'arch-colosseum-arena-floor': {
     slug: 'arch-colosseum-arena-floor',
@@ -8413,10 +7462,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rome, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-colosseum-arena-floor/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-colosseum-arena-floor/print-light.webp',
+    src: '/images/devotional-prints/arch-colosseum-arena-floor/print.webp',
+    relevance: '',
+  },
+  'arch-colosseum-ruins': {
+    slug: 'arch-colosseum-ruins',
+    title: 'Colosseum Ruins',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-colosseum-ruins/print.webp',
+    relevance: '',
+  },
+  'arch-corinth-temple-apollo': {
+    slug: 'arch-corinth-temple-apollo',
+    title: 'Temple of Apollo, Ancient Corinth',
+    artist: 'Architecture',
+    year: 'c.560 BC',
+    medium: 'architecture',
+    museum: 'Corinth, Greece',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-corinth-temple-apollo/print.webp',
+    relevance: '',
   },
   'arch-damascus-gate-jerusalem': {
     slug: 'arch-damascus-gate-jerusalem',
@@ -8427,10 +7498,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem, Israel',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-damascus-gate-jerusalem/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-damascus-gate-jerusalem/print-light.webp',
+    src: '/images/devotional-prints/arch-damascus-gate-jerusalem/print.webp',
+    relevance: '',
   },
   'arch-damascus-road-ancient': {
     slug: 'arch-damascus-road-ancient',
@@ -8441,10 +7510,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Syria',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-damascus-road-ancient/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-damascus-road-ancient/print-light.webp',
+    src: '/images/devotional-prints/arch-damascus-road-ancient/print.webp',
+    relevance: '',
   },
   'arch-dome-rock-interior': {
     slug: 'arch-dome-rock-interior',
@@ -8455,10 +7522,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-dome-rock-interior/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-dome-rock-interior/print-light.webp',
+    src: '/images/devotional-prints/arch-dome-rock-interior/print.webp',
+    relevance: '',
   },
   'arch-dura-europos-house-church': {
     slug: 'arch-dura-europos-house-church',
@@ -8469,10 +7534,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Yale University Art Gallery (fresco)',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-dura-europos-house-church/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-dura-europos-house-church/print-light.webp',
+    src: '/images/devotional-prints/arch-dura-europos-house-church/print.webp',
+    relevance: '',
   },
   'arch-egyptian-granary': {
     slug: 'arch-egyptian-granary',
@@ -8483,9 +7546,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'British Museum, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-egyptian-granary/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-egyptian-granary/print-light.webp',
+    src: '/images/devotional-prints/arch-egyptian-granary/print.webp',
+    relevance: '',
   },
   'arch-ephesus-library-celsus': {
     slug: 'arch-ephesus-library-celsus',
@@ -8496,10 +7558,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Ephesus, Turkey',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-ephesus-library-celsus/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-ephesus-library-celsus/print-light.webp',
+    src: '/images/devotional-prints/arch-ephesus-library-celsus/print.webp',
+    relevance: '',
+  },
+  'arch-ephesus-temple-artemis': {
+    slug: 'arch-ephesus-temple-artemis',
+    title: 'Site of the Temple of Artemis, Ephesus',
+    artist: 'Photograph',
+    year: 'c.1895',
+    medium: 'architecture',
+    museum: 'Historical Archive',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-ephesus-temple-artemis/print.webp',
+    relevance: '',
   },
   'arch-fontenay-cloister': {
     slug: 'arch-fontenay-cloister',
@@ -8510,9 +7582,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Fontenay, Burgundy, France',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-fontenay-cloister/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-fontenay-cloister/print-light.webp',
+    src: '/images/devotional-prints/arch-fontenay-cloister/print.webp',
+    relevance: '',
   },
   'arch-forum-romanum': {
     slug: 'arch-forum-romanum',
@@ -8523,8 +7594,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rome, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-forum-romanum/print-dark.webp',
-    lightSrc: '/images/devotional-prints/arch-forum-romanum/print-light.webp',
+    src: '/images/devotional-prints/arch-forum-romanum/print.webp',
+    relevance: '',
   },
   'arch-galatia-ancient-road': {
     slug: 'arch-galatia-ancient-road',
@@ -8535,10 +7606,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Central Anatolia, Turkey',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-galatia-ancient-road/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-galatia-ancient-road/print-light.webp',
+    src: '/images/devotional-prints/arch-galatia-ancient-road/print.webp',
+    relevance: '',
   },
   'arch-garden-tomb-exterior': {
     slug: 'arch-garden-tomb-exterior',
@@ -8549,10 +7618,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-garden-tomb-exterior/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-garden-tomb-exterior/print-light.webp',
+    src: '/images/devotional-prints/arch-garden-tomb-exterior/print.webp',
+    relevance: '',
   },
   'arch-garden-tomb-exterior-2': {
     slug: 'arch-garden-tomb-exterior-2',
@@ -8563,10 +7630,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-garden-tomb-exterior-2/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-garden-tomb-exterior-2/print-light.webp',
+    src: '/images/devotional-prints/arch-garden-tomb-exterior-2/print.webp',
+    relevance: '',
   },
   'arch-garden-tomb-jerusalem': {
     slug: 'arch-garden-tomb-jerusalem',
@@ -8577,10 +7642,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-garden-tomb-jerusalem/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-garden-tomb-jerusalem/print-light.webp',
+    src: '/images/devotional-prints/arch-garden-tomb-jerusalem/print.webp',
+    relevance: '',
   },
   'arch-gethsemane-end-ourselves': {
     slug: 'arch-gethsemane-end-ourselves',
@@ -8591,10 +7654,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-gethsemane-end-ourselves/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-gethsemane-end-ourselves/print-light.webp',
+    src: '/images/devotional-prints/arch-gethsemane-end-ourselves/print.webp',
+    relevance: '',
   },
   'arch-gethsemane-olive-trees': {
     slug: 'arch-gethsemane-olive-trees',
@@ -8605,10 +7666,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-gethsemane-olive-trees/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-gethsemane-olive-trees/print-light.webp',
+    src: '/images/devotional-prints/arch-gethsemane-olive-trees/print.webp',
+    relevance: '',
   },
   'arch-hagia-sophia-apse': {
     slug: 'arch-hagia-sophia-apse',
@@ -8619,9 +7678,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Istanbul, Turkey',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-hagia-sophia-apse/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-hagia-sophia-apse/print-light.webp',
+    src: '/images/devotional-prints/arch-hagia-sophia-apse/print.webp',
+    relevance: '',
   },
   'arch-hagia-sophia-dome': {
     slug: 'arch-hagia-sophia-dome',
@@ -8632,9 +7690,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Istanbul, Turkey',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-hagia-sophia-dome/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-hagia-sophia-dome/print-light.webp',
+    src: '/images/devotional-prints/arch-hagia-sophia-dome/print.webp',
+    relevance: '',
   },
   'arch-holy-sepulchre-dome': {
     slug: 'arch-holy-sepulchre-dome',
@@ -8645,10 +7702,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-holy-sepulchre-dome/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-holy-sepulchre-dome/print-light.webp',
+    src: '/images/devotional-prints/arch-holy-sepulchre-dome/print.webp',
+    relevance: '',
   },
   'arch-holy-sepulchre-dome-int': {
     slug: 'arch-holy-sepulchre-dome-int',
@@ -8659,10 +7714,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-holy-sepulchre-dome-int/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-holy-sepulchre-dome-int/print-light.webp',
+    src: '/images/devotional-prints/arch-holy-sepulchre-dome-int/print.webp',
+    relevance: '',
   },
   'arch-hospital-innocents-belief': {
     slug: 'arch-hospital-innocents-belief',
@@ -8673,10 +7726,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Florence, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-hospital-innocents-belief/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-hospital-innocents-belief/print-light.webp',
+    src: '/images/devotional-prints/arch-hospital-innocents-belief/print.webp',
+    relevance: '',
+  },
+  'arch-jabbok-ford': {
+    slug: 'arch-jabbok-ford',
+    title: 'Jabbok Ford',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-jabbok-ford/print.webp',
+    relevance: '',
+  },
+  'arch-jabbok-river-ford': {
+    slug: 'arch-jabbok-river-ford',
+    title: 'Jabbok River Ford',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-jabbok-river-ford/print.webp',
+    relevance: '',
+  },
+  'arch-jaffa-gate-1900': {
+    slug: 'arch-jaffa-gate-1900',
+    title: 'Jaffa Gate, Jerusalem, c.1900',
+    artist: 'Photograph',
+    year: 'c.1900',
+    medium: 'architecture',
+    museum: 'Historical Archive',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-jaffa-gate-1900/print.webp',
+    relevance: '',
   },
   'arch-jordan-river-wilderness': {
     slug: 'arch-jordan-river-wilderness',
@@ -8687,10 +7774,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'British Library',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-jordan-river-wilderness/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-jordan-river-wilderness/print-light.webp',
+    src: '/images/devotional-prints/arch-jordan-river-wilderness/print.webp',
+    relevance: '',
   },
   'arch-judean-desert-engraving': {
     slug: 'arch-judean-desert-engraving',
@@ -8701,10 +7786,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'British Library',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-judean-desert-engraving/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-judean-desert-engraving/print-light.webp',
+    src: '/images/devotional-prints/arch-judean-desert-engraving/print.webp',
+    relevance: '',
+  },
+  'arch-lalibela-rock-church': {
+    slug: 'arch-lalibela-rock-church',
+    title: "Bet Giyorgis (Saint George's Rock-Hewn Church, Lalibela)",
+    artist: 'Architecture',
+    year: 'c.12th-13th century',
+    medium: 'architecture',
+    museum: 'Lalibela, Ethiopia',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-lalibela-rock-church/print.webp',
+    relevance: '',
+  },
+  'arch-laodicea-ruins': {
+    slug: 'arch-laodicea-ruins',
+    title: 'Ruins of Laodicea',
+    artist: 'Photograph',
+    year: 'c.1910',
+    medium: 'architecture',
+    museum: 'Historical Archive',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-laodicea-ruins/print.webp',
+    relevance: '',
   },
   'arch-lascaux-cave-paintings': {
     slug: 'arch-lascaux-cave-paintings',
@@ -8715,10 +7822,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Lascaux, Dordogne, France',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-lascaux-cave-paintings/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-lascaux-cave-paintings/print-light.webp',
+    src: '/images/devotional-prints/arch-lascaux-cave-paintings/print.webp',
+    relevance: '',
   },
   'arch-library-celsus-ephesus-2': {
     slug: 'arch-library-celsus-ephesus-2',
@@ -8729,10 +7834,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Ephesus, Turkey',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-library-celsus-ephesus-2/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-library-celsus-ephesus-2/print-light.webp',
+    src: '/images/devotional-prints/arch-library-celsus-ephesus-2/print.webp',
+    relevance: '',
+  },
+  'arch-lithostrotos-praetorium': {
+    slug: 'arch-lithostrotos-praetorium',
+    title: 'Lithostrotos Praetorium',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-lithostrotos-praetorium/print.webp',
+    relevance: '',
   },
   'arch-mamertine-prison-cell': {
     slug: 'arch-mamertine-prison-cell',
@@ -8743,10 +7858,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rome, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-mamertine-prison-cell/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-mamertine-prison-cell/print-light.webp',
+    src: '/images/devotional-prints/arch-mamertine-prison-cell/print.webp',
+    relevance: '',
   },
   'arch-mamertine-prison-paul': {
     slug: 'arch-mamertine-prison-paul',
@@ -8757,10 +7870,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rome, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-mamertine-prison-paul/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-mamertine-prison-paul/print-light.webp',
+    src: '/images/devotional-prints/arch-mamertine-prison-paul/print.webp',
+    relevance: '',
   },
   'arch-mamertine-prison-rome': {
     slug: 'arch-mamertine-prison-rome',
@@ -8771,10 +7882,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rome, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-mamertine-prison-rome/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-mamertine-prison-rome/print-light.webp',
+    src: '/images/devotional-prints/arch-mamertine-prison-rome/print.webp',
+    relevance: '',
   },
   'arch-maria-laach-choir-stalls': {
     slug: 'arch-maria-laach-choir-stalls',
@@ -8785,10 +7894,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Maria Laach Abbey, Germany',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-maria-laach-choir-stalls/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-maria-laach-choir-stalls/print-light.webp',
+    src: '/images/devotional-prints/arch-maria-laach-choir-stalls/print.webp',
+    relevance: '',
+  },
+  'arch-masada-fortress-ruins': {
+    slug: 'arch-masada-fortress-ruins',
+    title: 'Masada Fortress Ruins',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-masada-fortress-ruins/print.webp',
+    relevance: '',
+  },
+  'arch-masada-ruins': {
+    slug: 'arch-masada-ruins',
+    title: 'Masada Ruins',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-masada-ruins/print.webp',
+    relevance: '',
+  },
+  'arch-megiddo-armageddon': {
+    slug: 'arch-megiddo-armageddon',
+    title: 'Tel Megiddo (Armageddon — chariot city)',
+    artist: 'Archaeology',
+    year: 'c.3000 BC',
+    medium: 'architecture',
+    museum: 'Jezreel Valley, Israel',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/arch-megiddo-armageddon/print.webp',
+    relevance: '',
   },
   'arch-monastery-sinai-burning-bush': {
     slug: 'arch-monastery-sinai-burning-bush',
@@ -8799,10 +7942,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Mount Sinai, Egypt',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-monastery-sinai-burning-bush/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-monastery-sinai-burning-bush/print-light.webp',
+    src: '/images/devotional-prints/arch-monastery-sinai-burning-bush/print.webp',
+    relevance: '',
   },
   'arch-mont-saint-michel-cloister': {
     slug: 'arch-mont-saint-michel-cloister',
@@ -8813,10 +7954,80 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Mont Saint-Michel, Normandy, France',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-mont-saint-michel-cloister/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-mont-saint-michel-cloister/print-light.webp',
+    src: '/images/devotional-prints/arch-mont-saint-michel-cloister/print.webp',
+    relevance: '',
+  },
+  'arch-mount-athos-hermit': {
+    slug: 'arch-mount-athos-hermit',
+    title: 'Mount Athos Hermit',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-mount-athos-hermit/print.webp',
+    relevance: '',
+  },
+  'arch-mount-nebo-view': {
+    slug: 'arch-mount-nebo-view',
+    title: 'View from Mount Nebo',
+    artist: 'Photograph',
+    year: 'c.1900',
+    medium: 'architecture',
+    museum: 'Historical Archive',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-mount-nebo-view/print.webp',
+    relevance: '',
+  },
+  'arch-mount-of-olives-old': {
+    slug: 'arch-mount-of-olives-old',
+    title: 'Mount of Olives, 19th Century',
+    artist: 'Photograph',
+    year: 'c.1890',
+    medium: 'architecture',
+    museum: 'Historical Archive',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-mount-of-olives-old/print.webp',
+    relevance: '',
+  },
+  'arch-mount-sinai-chapel': {
+    slug: 'arch-mount-sinai-chapel',
+    title: "St. Catherine's Monastery, Mount Sinai",
+    artist: 'Photograph',
+    year: 'c.1870',
+    medium: 'architecture',
+    museum: 'Historical Archive',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-mount-sinai-chapel/print.webp',
+    relevance: '',
+  },
+  'arch-nazareth-village-old': {
+    slug: 'arch-nazareth-village-old',
+    title: 'Nazareth Village, 19th Century',
+    artist: 'Photograph',
+    year: 'c.1880',
+    medium: 'architecture',
+    museum: 'Historical Archive',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-nazareth-village-old/print.webp',
+    relevance: '',
+  },
+  'arch-nineveh-gates': {
+    slug: 'arch-nineveh-gates',
+    title: 'Nineveh City Gates Reconstruction',
+    artist: 'Photograph',
+    year: 'c.1920',
+    medium: 'architecture',
+    museum: 'Historical Archive',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/arch-nineveh-gates/print.webp',
+    relevance: '',
   },
   'arch-old-bailey-london': {
     slug: 'arch-old-bailey-london',
@@ -8827,9 +8038,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'London, England',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-old-bailey-london/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-old-bailey-london/print-light.webp',
+    src: '/images/devotional-prints/arch-old-bailey-london/print.webp',
+    relevance: '',
   },
   'arch-ospedale-innocenti': {
     slug: 'arch-ospedale-innocenti',
@@ -8840,10 +8050,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Florence, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-ospedale-innocenti/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-ospedale-innocenti/print-light.webp',
+    src: '/images/devotional-prints/arch-ospedale-innocenti/print.webp',
+    relevance: '',
   },
   'arch-palatine-hill-ruins': {
     slug: 'arch-palatine-hill-ruins',
@@ -8854,10 +8062,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rome, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-palatine-hill-ruins/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-palatine-hill-ruins/print-light.webp',
+    src: '/images/devotional-prints/arch-palatine-hill-ruins/print.webp',
+    relevance: '',
   },
   'arch-pantheon-dome-oculus': {
     slug: 'arch-pantheon-dome-oculus',
@@ -8868,10 +8074,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rome, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-pantheon-dome-oculus/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-pantheon-dome-oculus/print-light.webp',
+    src: '/images/devotional-prints/arch-pantheon-dome-oculus/print.webp',
+    relevance: '',
+  },
+  'arch-patmos-monastery-john': {
+    slug: 'arch-patmos-monastery-john',
+    title: 'Monastery of Saint John the Theologian, Patmos',
+    artist: 'Architecture',
+    year: 'c.1088 AD',
+    medium: 'architecture',
+    museum: 'Patmos, Greece',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/arch-patmos-monastery-john/print.webp',
+    relevance: '',
   },
   'arch-philippi-ruins-greece': {
     slug: 'arch-philippi-ruins-greece',
@@ -8882,10 +8098,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Philippi, Greece',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-philippi-ruins-greece/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-philippi-ruins-greece/print-light.webp',
+    src: '/images/devotional-prints/arch-philippi-ruins-greece/print.webp',
+    relevance: '',
+  },
+  'arch-pool-siloam': {
+    slug: 'arch-pool-siloam',
+    title: 'Pool of Siloam (site of blind man healed)',
+    artist: 'Archaeology',
+    year: 'c.8th century BC',
+    medium: 'architecture',
+    museum: 'Jerusalem, Israel',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-pool-siloam/print.webp',
+    relevance: '',
+  },
+  'arch-qumran-caves': {
+    slug: 'arch-qumran-caves',
+    title: 'Qumran Caves (Dead Sea Scrolls Site)',
+    artist: 'Photograph',
+    year: 'c.1947',
+    medium: 'architecture',
+    museum: 'Historical Archive',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-qumran-caves/print.webp',
+    relevance: '',
   },
   'arch-ravenna-good-shepherd-mosaic': {
     slug: 'arch-ravenna-good-shepherd-mosaic',
@@ -8896,10 +8134,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Ravenna, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/print-light.webp',
+    src: '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/print.webp',
+    relevance: '',
   },
   'arch-road-to-gaza-ancient': {
     slug: 'arch-road-to-gaza-ancient',
@@ -8910,10 +8146,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Negev Desert, Israel',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-road-to-gaza-ancient/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-road-to-gaza-ancient/print-light.webp',
+    src: '/images/devotional-prints/arch-road-to-gaza-ancient/print.webp',
+    relevance: '',
   },
   'arch-roman-forum-chaos': {
     slug: 'arch-roman-forum-chaos',
@@ -8924,9 +8158,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rome, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-roman-forum-chaos/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-roman-forum-chaos/print-light.webp',
+    src: '/images/devotional-prints/arch-roman-forum-chaos/print.webp',
+    relevance: '',
+  },
+  'arch-roman-slave-market': {
+    slug: 'arch-roman-slave-market',
+    title: 'Roman Slave Market',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-roman-slave-market/print.webp',
+    relevance: '',
   },
   'arch-san-thome-basilica': {
     slug: 'arch-san-thome-basilica',
@@ -8937,10 +8182,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Chennai (Madras), India',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-san-thome-basilica/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-san-thome-basilica/print-light.webp',
+    src: '/images/devotional-prints/arch-san-thome-basilica/print.webp',
+    relevance: '',
+  },
+  'arch-san-vitale-ravenna': {
+    slug: 'arch-san-vitale-ravenna',
+    title: 'San Vitale (Byzantine octagonal church interior)',
+    artist: 'Architecture',
+    year: 'c.547',
+    medium: 'architecture',
+    museum: 'Ravenna, Italy',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-san-vitale-ravenna/print.webp',
+    relevance: '',
+  },
+  'arch-sanhedrin-tomb-jerusalem': {
+    slug: 'arch-sanhedrin-tomb-jerusalem',
+    title: 'Sanhedrin Tomb Jerusalem',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-sanhedrin-tomb-jerusalem/print.webp',
+    relevance: '',
   },
   'arch-sant-apollinare-mosaic': {
     slug: 'arch-sant-apollinare-mosaic',
@@ -8951,10 +8218,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Ravenna, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-sant-apollinare-mosaic/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-sant-apollinare-mosaic/print-light.webp',
+    src: '/images/devotional-prints/arch-sant-apollinare-mosaic/print.webp',
+    relevance: '',
   },
   'arch-sant-apollinare-nave': {
     slug: 'arch-sant-apollinare-nave',
@@ -8965,10 +8230,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Ravenna, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-sant-apollinare-nave/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-sant-apollinare-nave/print-light.webp',
+    src: '/images/devotional-prints/arch-sant-apollinare-nave/print.webp',
+    relevance: '',
   },
   'arch-santa-croce-interior': {
     slug: 'arch-santa-croce-interior',
@@ -8979,10 +8242,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rome, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-santa-croce-interior/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-santa-croce-interior/print-light.webp',
+    src: '/images/devotional-prints/arch-santa-croce-interior/print.webp',
+    relevance: '',
+  },
+  'arch-santa-sabina-rome': {
+    slug: 'arch-santa-sabina-rome',
+    title: 'Basilica of Santa Sabina (5th century nave)',
+    artist: 'Architecture',
+    year: 'c.422-32',
+    medium: 'architecture',
+    museum: 'Rome, Italy',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-santa-sabina-rome/print.webp',
+    relevance: '',
   },
   'arch-scriptorium-medieval': {
     slug: 'arch-scriptorium-medieval',
@@ -8993,10 +8266,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Abbey of Saint-Gall, Switzerland',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-scriptorium-medieval/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-scriptorium-medieval/print-light.webp',
+    src: '/images/devotional-prints/arch-scriptorium-medieval/print.webp',
+    relevance: '',
   },
   'arch-shepherds-field-chapel': {
     slug: 'arch-shepherds-field-chapel',
@@ -9007,10 +8278,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Beit Sahour, Bethlehem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-shepherds-field-chapel/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-shepherds-field-chapel/print-light.webp',
+    src: '/images/devotional-prints/arch-shepherds-field-chapel/print.webp',
+    relevance: '',
+  },
+  'arch-stonehenge-engraving': {
+    slug: 'arch-stonehenge-engraving',
+    title: 'Stonehenge Engraving',
+    artist: 'Unknown',
+    year: '',
+    medium: 'architecture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/arch-stonehenge-engraving/print.webp',
+    relevance: '',
   },
   'arch-straight-street-damascus': {
     slug: 'arch-straight-street-damascus',
@@ -9021,10 +8302,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Damascus, Syria',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-straight-street-damascus/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-straight-street-damascus/print-light.webp',
+    src: '/images/devotional-prints/arch-straight-street-damascus/print.webp',
+    relevance: '',
   },
   'arch-tabgha-loaves-mosaic': {
     slug: 'arch-tabgha-loaves-mosaic',
@@ -9035,10 +8314,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Tabgha, Sea of Galilee, Israel',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-tabgha-loaves-mosaic/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-tabgha-loaves-mosaic/print-light.webp',
+    src: '/images/devotional-prints/arch-tabgha-loaves-mosaic/print.webp',
+    relevance: '',
   },
   'arch-tabgha-mosaic-fish': {
     slug: 'arch-tabgha-mosaic-fish',
@@ -9049,10 +8326,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Tabgha, Sea of Galilee',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-tabgha-mosaic-fish/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-tabgha-mosaic-fish/print-light.webp',
+    src: '/images/devotional-prints/arch-tabgha-mosaic-fish/print.webp',
+    relevance: '',
   },
   'arch-temple-mount-engraving': {
     slug: 'arch-temple-mount-engraving',
@@ -9063,10 +8338,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'British Library',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-temple-mount-engraving/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-temple-mount-engraving/print-light.webp',
+    src: '/images/devotional-prints/arch-temple-mount-engraving/print.webp',
+    relevance: '',
   },
   'arch-trajan-market-ruins': {
     slug: 'arch-trajan-market-ruins',
@@ -9077,10 +8350,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rome, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-trajan-market-ruins/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-trajan-market-ruins/print-light.webp',
+    src: '/images/devotional-prints/arch-trajan-market-ruins/print.webp',
+    relevance: '',
   },
   'arch-upper-room-cenaculum': {
     slug: 'arch-upper-room-cenaculum',
@@ -9091,10 +8362,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Mount Zion, Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-upper-room-cenaculum/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-upper-room-cenaculum/print-light.webp',
+    src: '/images/devotional-prints/arch-upper-room-cenaculum/print.webp',
+    relevance: '',
   },
   'arch-upper-room-spirit': {
     slug: 'arch-upper-room-spirit',
@@ -9105,9 +8374,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Mount Zion, Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-upper-room-spirit/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-upper-room-spirit/print-light.webp',
+    src: '/images/devotional-prints/arch-upper-room-spirit/print.webp',
+    relevance: '',
   },
   'arch-via-dolorosa-arch': {
     slug: 'arch-via-dolorosa-arch',
@@ -9118,9 +8386,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-via-dolorosa-arch/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-via-dolorosa-arch/print-light.webp',
+    src: '/images/devotional-prints/arch-via-dolorosa-arch/print.webp',
+    relevance: '',
   },
   'arch-via-dolorosa-jerusalem': {
     slug: 'arch-via-dolorosa-jerusalem',
@@ -9131,10 +8398,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jerusalem',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-via-dolorosa-jerusalem/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-via-dolorosa-jerusalem/print-light.webp',
+    src: '/images/devotional-prints/arch-via-dolorosa-jerusalem/print.webp',
+    relevance: '',
   },
   'arch-via-sacra-rome': {
     slug: 'arch-via-sacra-rome',
@@ -9145,8 +8410,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Roman Forum, Rome',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-via-sacra-rome/print-dark.webp',
-    lightSrc: '/images/devotional-prints/arch-via-sacra-rome/print-light.webp',
+    src: '/images/devotional-prints/arch-via-sacra-rome/print.webp',
+    relevance: '',
   },
   'arch-via-sacra-rooted': {
     slug: 'arch-via-sacra-rooted',
@@ -9157,9 +8422,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rome, Italy',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-via-sacra-rooted/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-via-sacra-rooted/print-light.webp',
+    src: '/images/devotional-prints/arch-via-sacra-rooted/print.webp',
+    relevance: '',
   },
   'arch-western-wall-19c': {
     slug: 'arch-western-wall-19c',
@@ -9170,9 +8434,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'British Museum, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/arch-western-wall-19c/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-western-wall-19c/print-light.webp',
+    src: '/images/devotional-prints/arch-western-wall-19c/print.webp',
+    relevance: '',
   },
   'arch-westminster-cloister': {
     slug: 'arch-westminster-cloister',
@@ -9183,10 +8446,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Westminster Abbey, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-westminster-cloister/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-westminster-cloister/print-light.webp',
+    src: '/images/devotional-prints/arch-westminster-cloister/print.webp',
+    relevance: '',
   },
   'arch-yardenit-jordan-site': {
     slug: 'arch-yardenit-jordan-site',
@@ -9197,10 +8458,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Yardenit, Sea of Galilee, Israel',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/arch-yardenit-jordan-site/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/arch-yardenit-jordan-site/print-light.webp',
+    src: '/images/devotional-prints/arch-yardenit-jordan-site/print.webp',
+    relevance: '',
+  },
+  'artifact-ancient-oil-lamp': {
+    slug: 'artifact-ancient-oil-lamp',
+    title: 'First-Century Oil Lamp (Palestine)',
+    artist: 'Ancient',
+    year: 'c.50 CE',
+    medium: 'artifact',
+    museum: 'Israel Antiquities Authority',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/artifact-ancient-oil-lamp/print.webp',
+    relevance: '',
+  },
+  'artifact-arch-titus-menorah': {
+    slug: 'artifact-arch-titus-menorah',
+    title: 'Arch of Titus — Menorah Relief (Jerusalem temple objects)',
+    artist: 'Ancient Artisans',
+    year: 'c.81 AD',
+    medium: 'artifact',
+    museum: 'Roman Forum, Rome',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/artifact-arch-titus-menorah/print.webp',
+    relevance: '',
+  },
+  'artifact-armenian-gospel-1262': {
+    slug: 'artifact-armenian-gospel-1262',
+    title: 'Mughni Gospel (Armenian illuminated manuscript, 1262)',
+    artist: 'Armenian Illuminators',
+    year: '1262',
+    medium: 'manuscript',
+    museum: 'Matenadaran Institute, Yerevan',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/artifact-armenian-gospel-1262/print.webp',
+    relevance: '',
   },
   'artifact-babylonian-creation-tablet': {
     slug: 'artifact-babylonian-creation-tablet',
@@ -9211,10 +8506,164 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'British Museum, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/artifact-babylonian-creation-tablet/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/artifact-babylonian-creation-tablet/print-light.webp',
+    src: '/images/devotional-prints/artifact-babylonian-creation-tablet/print.webp',
+    relevance: '',
+  },
+  'artifact-book-of-kells-chi-rho': {
+    slug: 'artifact-book-of-kells-chi-rho',
+    title: 'Book of Kells — Chi-Rho Page',
+    artist: 'Columban Monks',
+    year: 'c.800 AD',
+    medium: 'manuscript',
+    museum: 'Trinity College Dublin',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/artifact-book-of-kells-chi-rho/print.webp',
+    relevance: '',
+  },
+  'artifact-cyrus-cylinder': {
+    slug: 'artifact-cyrus-cylinder',
+    title: 'Cyrus Cylinder (Decree allowing exiles to return)',
+    artist: 'Ancient Artisans',
+    year: 'c.539 BC',
+    medium: 'artifact',
+    museum: 'British Museum, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/artifact-cyrus-cylinder/print.webp',
+    relevance: '',
+  },
+  'artifact-dead-sea-scroll-isaiah': {
+    slug: 'artifact-dead-sea-scroll-isaiah',
+    title: 'Great Isaiah Scroll (Dead Sea Scrolls, 1QIsa)',
+    artist: 'Ancient Scribes',
+    year: 'c.150-100 BC',
+    medium: 'artifact',
+    museum: 'Shrine of the Book, Israel Museum, Jerusalem',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/artifact-dead-sea-scroll-isaiah/print.webp',
+    relevance: '',
+  },
+  'artifact-dead-sea-scrolls': {
+    slug: 'artifact-dead-sea-scrolls',
+    title: 'The Great Isaiah Scroll (Dead Sea Scrolls)',
+    artist: 'Ancient',
+    year: 'c.150 BCE',
+    medium: 'artifact',
+    museum: 'Israel Museum, Jerusalem',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/artifact-dead-sea-scrolls/print.webp',
+    relevance: '',
+  },
+  'artifact-hezekiah-seal': {
+    slug: 'artifact-hezekiah-seal',
+    title: 'Seal (Bulla) of Hezekiah',
+    artist: 'Ancient',
+    year: 'c.700 BCE',
+    medium: 'artifact',
+    museum: 'Israel Antiquities Authority',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/artifact-hezekiah-seal/print.webp',
+    relevance: '',
+  },
+  'artifact-lachish-reliefs': {
+    slug: 'artifact-lachish-reliefs',
+    title: "Siege of Lachish Reliefs (Sennacherib's palace)",
+    artist: 'Ancient Artisans',
+    year: 'c.700 BC',
+    medium: 'artifact',
+    museum: 'British Museum, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/artifact-lachish-reliefs/print.webp',
+    relevance: '',
+  },
+  'artifact-lindisfarne-carpet-page': {
+    slug: 'artifact-lindisfarne-carpet-page',
+    title: 'Lindisfarne Gospels — Carpet Page',
+    artist: 'Eadfrith, Bishop of Lindisfarne',
+    year: 'c.715-20 AD',
+    medium: 'manuscript',
+    museum: 'British Library, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/artifact-lindisfarne-carpet-page/print.webp',
+    relevance: '',
+  },
+  'artifact-menorah-relief': {
+    slug: 'artifact-menorah-relief',
+    title: 'Menorah Stone Relief',
+    artist: 'Ancient',
+    year: 'c.100 CE',
+    medium: 'artifact',
+    museum: 'Israel Museum, Jerusalem',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/artifact-menorah-relief/print.webp',
+    relevance: '',
+  },
+  'artifact-moabite-stone-mesha': {
+    slug: 'artifact-moabite-stone-mesha',
+    title: 'Mesha Stele (Moabite Stone — mentions Israel and Yahweh)',
+    artist: 'Ancient Artisans',
+    year: 'c.840 BC',
+    medium: 'artifact',
+    museum: 'Musée du Louvre, Paris',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/artifact-moabite-stone-mesha/print.webp',
+    relevance: '',
+  },
+  'artifact-pilate-stone': {
+    slug: 'artifact-pilate-stone',
+    title: 'Pilate Stone (Pontius Pilate inscription, Caesarea Maritima)',
+    artist: 'Ancient Artisans',
+    year: 'c.26-36 AD',
+    medium: 'artifact',
+    museum: 'Israel Museum, Jerusalem',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/artifact-pilate-stone/print.webp',
+    relevance: '',
+  },
+  'artifact-psalter-illuminated': {
+    slug: 'artifact-psalter-illuminated',
+    title: 'Psalter Illuminated',
+    artist: 'Unknown',
+    year: '',
+    medium: 'artifact',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/artifact-psalter-illuminated/print.webp',
+    relevance: '',
+  },
+  'artifact-psalter-speech-scrolls': {
+    slug: 'artifact-psalter-speech-scrolls',
+    title: 'Psalter Speech Scrolls',
+    artist: 'Unknown',
+    year: '',
+    medium: 'artifact',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/artifact-psalter-speech-scrolls/print.webp',
+    relevance: '',
+  },
+  'artifact-roman-denarius-tiberius': {
+    slug: 'artifact-roman-denarius-tiberius',
+    title: "Denarius of Tiberius Caesar ('Render unto Caesar' coin)",
+    artist: 'Roman Mint',
+    year: 'c.14-37 AD',
+    medium: 'artifact',
+    museum: 'Various collections',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/artifact-roman-denarius-tiberius/print.webp',
+    relevance: '',
   },
   'artifact-rosetta-stone': {
     slug: 'artifact-rosetta-stone',
@@ -9225,9 +8674,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'British Museum, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/artifact-rosetta-stone/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/artifact-rosetta-stone/print-light.webp',
+    src: '/images/devotional-prints/artifact-rosetta-stone/print.webp',
+    relevance: '',
+  },
+  'artifact-siloam-inscription': {
+    slug: 'artifact-siloam-inscription',
+    title: "Siloam Inscription (Hezekiah's Tunnel)",
+    artist: 'Ancient Artisans',
+    year: 'c.701 BC',
+    medium: 'artifact',
+    museum: 'Istanbul Archaeological Museums',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/artifact-siloam-inscription/print.webp',
+    relevance: '',
   },
   'artifact-sumerian-creation-tablet': {
     slug: 'artifact-sumerian-creation-tablet',
@@ -9238,10 +8698,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'British Museum, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/artifact-sumerian-creation-tablet/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/artifact-sumerian-creation-tablet/print-light.webp',
+    src: '/images/devotional-prints/artifact-sumerian-creation-tablet/print.webp',
+    relevance: '',
   },
   'artifact-torah-scroll-historical': {
     slug: 'artifact-torah-scroll-historical',
@@ -9252,10 +8710,68 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jewish Theological Seminary',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc:
-      '/images/devotional-prints/artifact-torah-scroll-historical/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/artifact-torah-scroll-historical/print-light.webp',
+    src: '/images/devotional-prints/artifact-torah-scroll-historical/print.webp',
+    relevance: '',
+  },
+  'artifact-winchester-bible-genesis': {
+    slug: 'artifact-winchester-bible-genesis',
+    title: 'Winchester Bible Genesis',
+    artist: 'Unknown',
+    year: '',
+    medium: 'artifact',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/artifact-winchester-bible-genesis/print.webp',
+    relevance: '',
+  },
+  'bassano-adoration-shepherds': {
+    slug: 'bassano-adoration-shepherds',
+    title: 'Adoration of the Shepherds',
+    artist: 'Jacopo Bassano',
+    year: 'c.1568',
+    medium: 'painting',
+    museum: 'Galleria Borghese, Rome',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/bassano-adoration-shepherds/print.webp',
+    relevance: '',
+  },
+  'bassano-christ-driving-merchants': {
+    slug: 'bassano-christ-driving-merchants',
+    title: 'Christ Driving Merchants',
+    artist: 'Jacopo Bassano',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/bassano-christ-driving-merchants/print.webp',
+    relevance: '',
+  },
+  'bellini-pieta': {
+    slug: 'bellini-pieta',
+    title: 'Pietà',
+    artist: 'Giovanni Bellini',
+    year: 'c.1455',
+    medium: 'painting',
+    museum: 'Brera, Milan',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/bellini-pieta/print.webp',
+    relevance: '',
+  },
+  'bellini-transfiguration': {
+    slug: 'bellini-transfiguration',
+    title: 'Transfiguration',
+    artist: 'Giovanni Bellini',
+    year: 'c.1455',
+    medium: 'painting',
+    museum: 'Correr Museum, Venice',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/bellini-transfiguration/print.webp',
+    relevance: '',
   },
   'blake-glad-day-albion': {
     slug: 'blake-glad-day-albion',
@@ -9266,9 +8782,80 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'British Museum, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'linocut',
-    darkSrc: '/images/devotional-prints/blake-glad-day-albion/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/blake-glad-day-albion/print-light.webp',
+    src: '/images/devotional-prints/blake-glad-day-albion/print.webp',
+    relevance: '',
+  },
+  'blake-great-red-dragon': {
+    slug: 'blake-great-red-dragon',
+    title: 'The Great Red Dragon',
+    artist: 'William Blake',
+    year: 'c.1805',
+    medium: 'watercolor',
+    museum: 'National Gallery of Art, Washington',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/blake-great-red-dragon/print.webp',
+    relevance: '',
+  },
+  'blake-job-morning-stars': {
+    slug: 'blake-job-morning-stars',
+    title: 'When the Morning Stars Sang Together',
+    artist: 'William Blake',
+    year: '1825',
+    medium: 'engraving',
+    museum: 'Morgan Library, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/blake-job-morning-stars/print.webp',
+    relevance: '',
+  },
+  'blake-job-restored': {
+    slug: 'blake-job-restored',
+    title: 'Job Restored',
+    artist: 'William Blake',
+    year: '1825',
+    medium: 'engraving',
+    museum: 'Morgan Library, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/blake-job-restored/print.webp',
+    relevance: '',
+  },
+  'blake-whore-babylon': {
+    slug: 'blake-whore-babylon',
+    title: 'The Whore of Babylon',
+    artist: 'William Blake',
+    year: 'c.1809',
+    medium: 'watercolor',
+    museum: 'British Museum, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/blake-whore-babylon/print.webp',
+    relevance: '',
+  },
+  'bocklin-sacred-wood': {
+    slug: 'bocklin-sacred-wood',
+    title: 'Sacred Wood',
+    artist: 'Arnold Böcklin',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/bocklin-sacred-wood/print.webp',
+    relevance: '',
+  },
+  'bosch-conjurer-false-gospel': {
+    slug: 'bosch-conjurer-false-gospel',
+    title: 'Conjurer False Gospel',
+    artist: 'Hieronymus Bosch',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/bosch-conjurer-false-gospel/print.webp',
+    relevance: '',
   },
   'bosch-garden-hell-panel': {
     slug: 'bosch-garden-hell-panel',
@@ -9279,10 +8866,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museo del Prado, Madrid',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/bosch-garden-hell-panel/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/bosch-garden-hell-panel/print-light.webp',
+    src: '/images/devotional-prints/bosch-garden-hell-panel/print.webp',
+    relevance: '',
   },
   'bosch-ship-fools': {
     slug: 'bosch-ship-fools',
@@ -9293,8 +8878,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/bosch-ship-fools/print-dark.webp',
-    lightSrc: '/images/devotional-prints/bosch-ship-fools/print-light.webp',
+    src: '/images/devotional-prints/bosch-ship-fools/print.webp',
+    relevance: '',
   },
   'bosch-ship-fools-tongue': {
     slug: 'bosch-ship-fools-tongue',
@@ -9305,10 +8890,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/bosch-ship-fools-tongue/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/bosch-ship-fools-tongue/print-light.webp',
+    src: '/images/devotional-prints/bosch-ship-fools-tongue/print.webp',
+    relevance: '',
   },
   'bosch-the-conjurer': {
     slug: 'bosch-the-conjurer',
@@ -9319,8 +8902,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée municipal, Saint-Germain-en-Laye',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/bosch-the-conjurer/print-dark.webp',
-    lightSrc: '/images/devotional-prints/bosch-the-conjurer/print-light.webp',
+    src: '/images/devotional-prints/bosch-the-conjurer/print.webp',
+    relevance: '',
+  },
+  'botticelli-annunciation-uffizi': {
+    slug: 'botticelli-annunciation-uffizi',
+    title: 'The Annunciation',
+    artist: 'Sandro Botticelli',
+    year: '1489-90',
+    medium: 'painting',
+    museum: 'Uffizi Gallery, Florence',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/botticelli-annunciation-uffizi/print.webp',
+    relevance: '',
+  },
+  'botticelli-lamentation-christ': {
+    slug: 'botticelli-lamentation-christ',
+    title: 'Lamentation over the Dead Christ',
+    artist: 'Sandro Botticelli',
+    year: 'c.1495',
+    medium: 'painting',
+    museum: 'Alte Pinakothek, Munich',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/botticelli-lamentation-christ/print.webp',
+    relevance: '',
+  },
+  'botticelli-mystic-nativity': {
+    slug: 'botticelli-mystic-nativity',
+    title: 'Mystic Nativity',
+    artist: 'Sandro Botticelli',
+    year: '1500-01',
+    medium: 'painting',
+    museum: 'National Gallery, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/botticelli-mystic-nativity/print.webp',
+    relevance: '',
   },
   'botticelli-mystical-nativity': {
     slug: 'botticelli-mystical-nativity',
@@ -9331,10 +8950,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Gallery, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/botticelli-mystical-nativity/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/botticelli-mystical-nativity/print-light.webp',
+    src: '/images/devotional-prints/botticelli-mystical-nativity/print.webp',
+    relevance: '',
   },
   'bouguereau-difficult-lesson': {
     slug: 'bouguereau-difficult-lesson',
@@ -9345,10 +8962,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Private Collection',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc:
-      '/images/devotional-prints/bouguereau-difficult-lesson/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/bouguereau-difficult-lesson/print-light.webp',
+    src: '/images/devotional-prints/bouguereau-difficult-lesson/print.webp',
+    relevance: '',
+  },
+  'bouguereau-pieta': {
+    slug: 'bouguereau-pieta',
+    title: 'Pieta',
+    artist: 'William-Adolphe Bouguereau',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/bouguereau-pieta/print.webp',
+    relevance: '',
+  },
+  'bouguereau-pieta-paris': {
+    slug: 'bouguereau-pieta-paris',
+    title: 'Pietà (Mother of Sorrows)',
+    artist: 'William-Adolphe Bouguereau',
+    year: '1876',
+    medium: 'painting',
+    museum: 'Musée du Petit Palais, Paris',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/bouguereau-pieta-paris/print.webp',
+    relevance: '',
   },
   'bouguereau-youth': {
     slug: 'bouguereau-youth',
@@ -9359,8 +8998,56 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Private Collection',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc: '/images/devotional-prints/bouguereau-youth/print-dark.webp',
-    lightSrc: '/images/devotional-prints/bouguereau-youth/print-light.webp',
+    src: '/images/devotional-prints/bouguereau-youth/print.webp',
+    relevance: '',
+  },
+  'bouts-gathering-manna': {
+    slug: 'bouts-gathering-manna',
+    title: 'The Gathering of the Manna (predella panel)',
+    artist: 'Dieric Bouts',
+    year: '1464-68',
+    medium: 'painting',
+    museum: "Saint Peter's Church, Leuven",
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/bouts-gathering-manna/print.webp',
+    relevance: '',
+  },
+  'bouts-last-supper-altarpiece': {
+    slug: 'bouts-last-supper-altarpiece',
+    title: 'The Last Supper Altarpiece',
+    artist: 'Dieric Bouts',
+    year: '1464',
+    medium: 'painting',
+    museum: "Saint Peter's Church, Leuven",
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/bouts-last-supper-altarpiece/print.webp',
+    relevance: '',
+  },
+  'bouts-last-supper-leuven': {
+    slug: 'bouts-last-supper-leuven',
+    title: 'Last Supper (Altarpiece of the Holy Sacrament)',
+    artist: 'Dieric Bouts',
+    year: '1464-68',
+    medium: 'painting',
+    museum: "Saint Peter's Church, Leuven",
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/bouts-last-supper-leuven/print.webp',
+    relevance: '',
+  },
+  'brown-jesus-washing-feet': {
+    slug: 'brown-jesus-washing-feet',
+    title: "Jesus Washing Peter's Feet",
+    artist: 'Ford Madox Brown',
+    year: '1852-56',
+    medium: 'painting',
+    museum: 'Tate Britain, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/brown-jesus-washing-feet/print.webp',
+    relevance: '',
   },
   'brown-work': {
     slug: 'brown-work',
@@ -9371,8 +9058,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Manchester Art Gallery',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/brown-work/print-dark.webp',
-    lightSrc: '/images/devotional-prints/brown-work/print-light.webp',
+    src: '/images/devotional-prints/brown-work/print.webp',
+    relevance: '',
   },
   'brown-work-shared': {
     slug: 'brown-work-shared',
@@ -9383,8 +9070,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Manchester Art Gallery',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/brown-work-shared/print-dark.webp',
-    lightSrc: '/images/devotional-prints/brown-work-shared/print-light.webp',
+    src: '/images/devotional-prints/brown-work-shared/print.webp',
+    relevance: '',
   },
   'bruegel-carnival-lent': {
     slug: 'bruegel-carnival-lent',
@@ -9395,9 +9082,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Kunsthistorisches Museum, Vienna',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/bruegel-carnival-lent/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/bruegel-carnival-lent/print-light.webp',
+    src: '/images/devotional-prints/bruegel-carnival-lent/print.webp',
+    relevance: '',
   },
   'bruegel-peasant-wedding': {
     slug: 'bruegel-peasant-wedding',
@@ -9408,10 +9094,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Kunsthistorisches Museum, Vienna',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/bruegel-peasant-wedding/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/bruegel-peasant-wedding/print-light.webp',
+    src: '/images/devotional-prints/bruegel-peasant-wedding/print.webp',
+    relevance: '',
   },
   'bruegel-peasant-wedding-2': {
     slug: 'bruegel-peasant-wedding-2',
@@ -9422,10 +9106,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Kunsthistorisches Museum, Vienna',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/bruegel-peasant-wedding-2/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/bruegel-peasant-wedding-2/print-light.webp',
+    src: '/images/devotional-prints/bruegel-peasant-wedding-2/print.webp',
+    relevance: '',
   },
   'bruegel-peasant-wedding-roots': {
     slug: 'bruegel-peasant-wedding-roots',
@@ -9436,10 +9118,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Kunsthistorisches Museum, Vienna',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/bruegel-peasant-wedding-roots/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/bruegel-peasant-wedding-roots/print-light.webp',
+    src: '/images/devotional-prints/bruegel-peasant-wedding-roots/print.webp',
+    relevance: '',
   },
   'bruegel-pentecost-expansion': {
     slug: 'bruegel-pentecost-expansion',
@@ -9450,10 +9130,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Kunsthistorisches Museum, Vienna',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/bruegel-pentecost-expansion/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/bruegel-pentecost-expansion/print-light.webp',
+    src: '/images/devotional-prints/bruegel-pentecost-expansion/print.webp',
+    relevance: '',
   },
   'bruegel-tower-babel': {
     slug: 'bruegel-tower-babel',
@@ -9464,8 +9142,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Kunsthistorisches Museum, Vienna',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/bruegel-tower-babel/print-dark.webp',
-    lightSrc: '/images/devotional-prints/bruegel-tower-babel/print-light.webp',
+    src: '/images/devotional-prints/bruegel-tower-babel/print.webp',
+    relevance: '',
   },
   'bruegel-tower-babel-1563': {
     slug: 'bruegel-tower-babel-1563',
@@ -9476,10 +9154,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Kunsthistorisches Museum, Vienna',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/bruegel-tower-babel-1563/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/bruegel-tower-babel-1563/print-light.webp',
+    src: '/images/devotional-prints/bruegel-tower-babel-1563/print.webp',
+    relevance: '',
   },
   'bruegel-works-mercy': {
     slug: 'bruegel-works-mercy',
@@ -9490,8 +9166,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée des Beaux-Arts, Mons',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/bruegel-works-mercy/print-dark.webp',
-    lightSrc: '/images/devotional-prints/bruegel-works-mercy/print-light.webp',
+    src: '/images/devotional-prints/bruegel-works-mercy/print.webp',
+    relevance: '',
   },
   'bruegel-works-mercy-belief': {
     slug: 'bruegel-works-mercy-belief',
@@ -9502,10 +9178,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée des Beaux-Arts, Mons',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/bruegel-works-mercy-belief/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/bruegel-works-mercy-belief/print-light.webp',
+    src: '/images/devotional-prints/bruegel-works-mercy-belief/print.webp',
+    relevance: '',
   },
   'brueghel-garden-eden-elder': {
     slug: 'brueghel-garden-eden-elder',
@@ -9516,10 +9190,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Mauritshuis, The Hague',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/brueghel-garden-eden-elder/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/brueghel-garden-eden-elder/print-light.webp',
+    src: '/images/devotional-prints/brueghel-garden-eden-elder/print.webp',
+    relevance: '',
   },
   'brueghel-garden-eden-young': {
     slug: 'brueghel-garden-eden-young',
@@ -9530,10 +9202,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Private Collection',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/brueghel-garden-eden-young/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/brueghel-garden-eden-young/print-light.webp',
+    src: '/images/devotional-prints/brueghel-garden-eden-young/print.webp',
+    relevance: '',
   },
   'burnand-peter-john-running': {
     slug: 'burnand-peter-john-running',
@@ -9544,10 +9214,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Musée d'Orsay, Paris",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/burnand-peter-john-running/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/burnand-peter-john-running/print-light.webp',
+    src: '/images/devotional-prints/burnand-peter-john-running/print.webp',
+    relevance: '',
+  },
+  'burne-jones-annunciation': {
+    slug: 'burne-jones-annunciation',
+    title: 'The Annunciation',
+    artist: 'Edward Burne-Jones',
+    year: '1876-79',
+    medium: 'painting',
+    museum: 'Lady Lever Art Gallery, Liverpool',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/burne-jones-annunciation/print.webp',
+    relevance: '',
+  },
+  'burne-jones-star-bethlehem': {
+    slug: 'burne-jones-star-bethlehem',
+    title: 'The Star of Bethlehem',
+    artist: 'Edward Burne-Jones',
+    year: '1890',
+    medium: 'painting',
+    museum: 'Birmingham Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/burne-jones-star-bethlehem/print.webp',
+    relevance: '',
   },
   'campi-still-life-vine': {
     slug: 'campi-still-life-vine',
@@ -9558,9 +9250,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Pinacoteca di Brera, Milan',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/campi-still-life-vine/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/campi-still-life-vine/print-light.webp',
+    src: '/images/devotional-prints/campi-still-life-vine/print.webp',
+    relevance: '',
+  },
+  'campin-annunciation-merode': {
+    slug: 'campin-annunciation-merode',
+    title: 'The Merode Annunciation',
+    artist: 'Robert Campin',
+    year: 'c.1425',
+    medium: 'painting',
+    museum: 'Metropolitan Museum of Art',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/campin-annunciation-merode/print.webp',
+    relevance: '',
+  },
+  'campin-merode-altarpiece': {
+    slug: 'campin-merode-altarpiece',
+    title: 'Mérode Altarpiece (Annunciation Triptych)',
+    artist: 'Robert Campin',
+    year: 'c.1425-28',
+    medium: 'painting',
+    museum: 'The Cloisters, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/campin-merode-altarpiece/print.webp',
+    relevance: '',
+  },
+  'caravaggio-calling-matthew': {
+    slug: 'caravaggio-calling-matthew',
+    title: 'The Calling of Saint Matthew',
+    artist: 'Caravaggio',
+    year: '1599',
+    medium: 'painting',
+    museum: 'San Luigi dei Francesi, Rome',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/caravaggio-calling-matthew/print.webp',
+    relevance: '',
   },
   'caravaggio-david-goliath': {
     slug: 'caravaggio-david-goliath',
@@ -9571,10 +9298,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Galleria Borghese, Rome',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/caravaggio-david-goliath/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/caravaggio-david-goliath/print-light.webp',
+    src: '/images/devotional-prints/caravaggio-david-goliath/print.webp',
+    relevance: '',
   },
   'caravaggio-david-goliath-hero': {
     slug: 'caravaggio-david-goliath-hero',
@@ -9585,10 +9310,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Galleria Borghese, Rome',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/caravaggio-david-goliath-hero/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/caravaggio-david-goliath-hero/print-light.webp',
+    src: '/images/devotional-prints/caravaggio-david-goliath-hero/print.webp',
+    relevance: '',
   },
   'caravaggio-ecce-homo': {
     slug: 'caravaggio-ecce-homo',
@@ -9599,8 +9322,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Palazzo Bianco, Genoa',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/caravaggio-ecce-homo/print-dark.webp',
-    lightSrc: '/images/devotional-prints/caravaggio-ecce-homo/print-light.webp',
+    src: '/images/devotional-prints/caravaggio-ecce-homo/print.webp',
+    relevance: '',
   },
   'caravaggio-incredulity-thomas': {
     slug: 'caravaggio-incredulity-thomas',
@@ -9611,10 +9334,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Sanssouci, Potsdam',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/caravaggio-incredulity-thomas/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/caravaggio-incredulity-thomas/print-light.webp',
+    src: '/images/devotional-prints/caravaggio-incredulity-thomas/print.webp',
+    relevance: '',
   },
   'caravaggio-john-wilderness': {
     slug: 'caravaggio-john-wilderness',
@@ -9625,10 +9346,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Nelson-Atkins Museum, Kansas City',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/caravaggio-john-wilderness/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/caravaggio-john-wilderness/print-light.webp',
+    src: '/images/devotional-prints/caravaggio-john-wilderness/print.webp',
+    relevance: '',
+  },
+  'caravaggio-nativity': {
+    slug: 'caravaggio-nativity',
+    title: 'Nativity with St Francis and St Lawrence',
+    artist: 'Caravaggio',
+    year: '1609',
+    medium: 'painting',
+    museum: 'Formerly Oratory of San Lorenzo, Palermo',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/caravaggio-nativity/print.webp',
+    relevance: '',
   },
   'caravaggio-saint-john-baptist': {
     slug: 'caravaggio-saint-john-baptist',
@@ -9639,10 +9370,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musei Capitolini, Rome',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/caravaggio-saint-john-baptist/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/caravaggio-saint-john-baptist/print-light.webp',
+    src: '/images/devotional-prints/caravaggio-saint-john-baptist/print.webp',
+    relevance: '',
+  },
+  'carneo-good-shepherd': {
+    slug: 'carneo-good-shepherd',
+    title: 'Good Shepherd',
+    artist: 'Antonio Carneo',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/carneo-good-shepherd/print.webp',
+    relevance: '',
   },
   'carracci-pieta-1603': {
     slug: 'carracci-pieta-1603',
@@ -9653,8 +9394,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museo di Capodimonte, Naples',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/carracci-pieta-1603/print-dark.webp',
-    lightSrc: '/images/devotional-prints/carracci-pieta-1603/print-light.webp',
+    src: '/images/devotional-prints/carracci-pieta-1603/print.webp',
+    relevance: '',
   },
   'carracci-stoning-stephen': {
     slug: 'carracci-stoning-stephen',
@@ -9665,10 +9406,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/carracci-stoning-stephen/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/carracci-stoning-stephen/print-light.webp',
+    src: '/images/devotional-prints/carracci-stoning-stephen/print.webp',
+    relevance: '',
   },
   'cassatt-mother-child': {
     slug: 'cassatt-mother-child',
@@ -9679,8 +9418,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Wichita Art Museum',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/cassatt-mother-child/print-dark.webp',
-    lightSrc: '/images/devotional-prints/cassatt-mother-child/print-light.webp',
+    src: '/images/devotional-prints/cassatt-mother-child/print.webp',
+    relevance: '',
   },
   'chardin-grace-anointed': {
     slug: 'chardin-grace-anointed',
@@ -9691,9 +9430,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/chardin-grace-anointed/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/chardin-grace-anointed/print-light.webp',
+    src: '/images/devotional-prints/chardin-grace-anointed/print.webp',
+    relevance: '',
   },
   'chardin-grace-at-table': {
     slug: 'chardin-grace-at-table',
@@ -9704,9 +9442,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/chardin-grace-at-table/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/chardin-grace-at-table/print-light.webp',
+    src: '/images/devotional-prints/chardin-grace-at-table/print.webp',
+    relevance: '',
   },
   'chardin-grace-before-meal': {
     slug: 'chardin-grace-before-meal',
@@ -9717,10 +9454,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/chardin-grace-before-meal/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/chardin-grace-before-meal/print-light.webp',
+    src: '/images/devotional-prints/chardin-grace-before-meal/print.webp',
+    relevance: '',
+  },
+  'chardin-grace-table': {
+    slug: 'chardin-grace-table',
+    title: 'Grace Table',
+    artist: 'Jean-Baptiste-Siméon Chardin',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/chardin-grace-table/print.webp',
+    relevance: '',
   },
   'chardin-still-life-arts': {
     slug: 'chardin-still-life-arts',
@@ -9731,10 +9478,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Hermitage Museum, St. Petersburg',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/chardin-still-life-arts/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/chardin-still-life-arts/print-light.webp',
+    src: '/images/devotional-prints/chardin-still-life-arts/print.webp',
+    relevance: '',
   },
   'chardin-still-life-bread': {
     slug: 'chardin-still-life-bread',
@@ -9745,10 +9490,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Cincinnati Art Museum',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/chardin-still-life-bread/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/chardin-still-life-bread/print-light.webp',
+    src: '/images/devotional-prints/chardin-still-life-bread/print.webp',
+    relevance: '',
   },
   'chardin-still-life-stillness': {
     slug: 'chardin-still-life-stillness',
@@ -9759,10 +9502,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/chardin-still-life-stillness/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/chardin-still-life-stillness/print-light.webp',
+    src: '/images/devotional-prints/chardin-still-life-stillness/print.webp',
+    relevance: '',
   },
   'church-twilight-wilderness': {
     slug: 'church-twilight-wilderness',
@@ -9773,10 +9514,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Cleveland Museum of Art',
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
-    darkSrc:
-      '/images/devotional-prints/church-twilight-wilderness/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/church-twilight-wilderness/print-light.webp',
+    src: '/images/devotional-prints/church-twilight-wilderness/print.webp',
+    relevance: '',
+  },
+  'cimabue-crucifix-assisi': {
+    slug: 'cimabue-crucifix-assisi',
+    title: 'Crucifix of Assisi',
+    artist: 'Cimabue',
+    year: 'c.1272',
+    medium: 'painting',
+    museum: 'Museo di Santa Croce, Florence',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/cimabue-crucifix-assisi/print.webp',
+    relevance: '',
   },
   'clausen-stone-pickers': {
     slug: 'clausen-stone-pickers',
@@ -9787,9 +9538,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Laing Art Gallery, Newcastle',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc: '/images/devotional-prints/clausen-stone-pickers/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/clausen-stone-pickers/print-light.webp',
+    src: '/images/devotional-prints/clausen-stone-pickers/print.webp',
+    relevance: '',
+  },
+  'cole-expulsion-eden': {
+    slug: 'cole-expulsion-eden',
+    title: 'Expulsion from the Garden of Eden',
+    artist: 'Thomas Cole',
+    year: '1828',
+    medium: 'painting',
+    museum: 'Museum of Fine Arts, Boston',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/cole-expulsion-eden/print.webp',
+    relevance: '',
+  },
+  'cole-mount-etna-sunrise': {
+    slug: 'cole-mount-etna-sunrise',
+    title: 'Mount Etna from Taormina',
+    artist: 'Thomas Cole',
+    year: '1843',
+    medium: 'painting',
+    museum: 'Wadsworth Atheneum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/cole-mount-etna-sunrise/print.webp',
+    relevance: '',
   },
   'cole-sunny-morning-hudson': {
     slug: 'cole-sunny-morning-hudson',
@@ -9800,10 +9574,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Currier Museum of Art, Manchester NH',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/cole-sunny-morning-hudson/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/cole-sunny-morning-hudson/print-light.webp',
+    src: '/images/devotional-prints/cole-sunny-morning-hudson/print.webp',
+    relevance: '',
   },
   'cole-voyage-life-childhood': {
     slug: 'cole-voyage-life-childhood',
@@ -9814,10 +9586,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Gallery of Art, Washington DC',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/cole-voyage-life-childhood/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/cole-voyage-life-childhood/print-light.webp',
+    src: '/images/devotional-prints/cole-voyage-life-childhood/print.webp',
+    relevance: '',
   },
   'coleman-storm-king-hudson': {
     slug: 'coleman-storm-king-hudson',
@@ -9828,10 +9598,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Smithsonian American Art Museum',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/coleman-storm-king-hudson/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/coleman-storm-king-hudson/print-light.webp',
+    src: '/images/devotional-prints/coleman-storm-king-hudson/print.webp',
+    relevance: '',
   },
   'corot-lake-ville-davray': {
     slug: 'corot-lake-ville-davray',
@@ -9842,10 +9610,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Musée d'Orsay, Paris",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/corot-lake-ville-davray/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/corot-lake-ville-davray/print-light.webp',
+    src: '/images/devotional-prints/corot-lake-ville-davray/print.webp',
+    relevance: '',
   },
   'cortona-god-creating-animals': {
     slug: 'cortona-god-creating-animals',
@@ -9856,10 +9622,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Pinacoteca Capitolina, Rome',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/cortona-god-creating-animals/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/cortona-god-creating-animals/print-light.webp',
+    src: '/images/devotional-prints/cortona-god-creating-animals/print.webp',
+    relevance: '',
   },
   'courbet-desperate-man-end': {
     slug: 'courbet-desperate-man-end',
@@ -9870,10 +9634,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Private Collection',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/courbet-desperate-man-end/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/courbet-desperate-man-end/print-light.webp',
+    src: '/images/devotional-prints/courbet-desperate-man-end/print.webp',
+    relevance: '',
   },
   'courbet-desperate-rooted': {
     slug: 'courbet-desperate-rooted',
@@ -9884,10 +9646,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Private Collection',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/courbet-desperate-rooted/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/courbet-desperate-rooted/print-light.webp',
+    src: '/images/devotional-prints/courbet-desperate-rooted/print.webp',
+    relevance: '',
   },
   'courbet-stone-breakers': {
     slug: 'courbet-stone-breakers',
@@ -9898,9 +9658,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Destroyed 1945 (known from photographs)',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc: '/images/devotional-prints/courbet-stone-breakers/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/courbet-stone-breakers/print-light.webp',
+    src: '/images/devotional-prints/courbet-stone-breakers/print.webp',
+    relevance: '',
   },
   'courbet-stone-breakers-cross': {
     slug: 'courbet-stone-breakers-cross',
@@ -9911,10 +9670,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Destroyed 1945',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc:
-      '/images/devotional-prints/courbet-stone-breakers-cross/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/courbet-stone-breakers-cross/print-light.webp',
+    src: '/images/devotional-prints/courbet-stone-breakers-cross/print.webp',
+    relevance: '',
   },
   'courbet-stone-breakers-valued': {
     slug: 'courbet-stone-breakers-valued',
@@ -9925,10 +9682,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Destroyed 1945',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc:
-      '/images/devotional-prints/courbet-stone-breakers-valued/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/courbet-stone-breakers-valued/print-light.webp',
+    src: '/images/devotional-prints/courbet-stone-breakers-valued/print.webp',
+    relevance: '',
   },
   'courbet-stone-breakers-work': {
     slug: 'courbet-stone-breakers-work',
@@ -9939,10 +9694,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Destroyed 1945',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc:
-      '/images/devotional-prints/courbet-stone-breakers-work/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/courbet-stone-breakers-work/print-light.webp',
+    src: '/images/devotional-prints/courbet-stone-breakers-work/print.webp',
+    relevance: '',
   },
   'courbet-the-desperate-man': {
     slug: 'courbet-the-desperate-man',
@@ -9953,10 +9706,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Private Collection',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/courbet-the-desperate-man/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/courbet-the-desperate-man/print-light.webp',
+    src: '/images/devotional-prints/courbet-the-desperate-man/print.webp',
+    relevance: '',
   },
   'cranach-adam-eve': {
     slug: 'cranach-adam-eve',
@@ -9967,8 +9718,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Courtauld Gallery, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/cranach-adam-eve/print-dark.webp',
-    lightSrc: '/images/devotional-prints/cranach-adam-eve/print-light.webp',
+    src: '/images/devotional-prints/cranach-adam-eve/print.webp',
+    relevance: '',
+  },
+  'cranach-adam-eve-paradise': {
+    slug: 'cranach-adam-eve-paradise',
+    title: 'Adam and Eve in Paradise',
+    artist: 'Lucas Cranach the Elder',
+    year: 'c.1530',
+    medium: 'painting',
+    museum: 'Gemäldegalerie, Berlin',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/cranach-adam-eve-paradise/print.webp',
+    relevance: '',
+  },
+  'cranach-david-bathsheba': {
+    slug: 'cranach-david-bathsheba',
+    title: 'David and Bathsheba',
+    artist: 'Lucas Cranach the Elder',
+    year: '1526',
+    medium: 'painting',
+    museum: 'Gemäldegalerie, Berlin',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/cranach-david-bathsheba/print.webp',
+    relevance: '',
+  },
+  'cranach-law-gospel': {
+    slug: 'cranach-law-gospel',
+    title: 'Law and Gospel (Gesetz und Gnade)',
+    artist: 'Lucas Cranach the Elder',
+    year: 'c.1529',
+    medium: 'painting',
+    museum: 'Schlossmuseum, Gotha',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/cranach-law-gospel/print.webp',
+    relevance: '',
   },
   'dahl-ship-storm': {
     slug: 'dahl-ship-storm',
@@ -9979,8 +9766,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Nasjonalmuseet, Oslo',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/dahl-ship-storm/print-dark.webp',
-    lightSrc: '/images/devotional-prints/dahl-ship-storm/print-light.webp',
+    src: '/images/devotional-prints/dahl-ship-storm/print.webp',
+    relevance: '',
+  },
+  'danby-sixth-seal': {
+    slug: 'danby-sixth-seal',
+    title: 'The Opening of the Sixth Seal',
+    artist: 'Francis Danby',
+    year: '1828',
+    medium: 'painting',
+    museum: 'National Gallery of Ireland',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/danby-sixth-seal/print.webp',
+    relevance: '',
   },
   'daumier-good-samaritan': {
     slug: 'daumier-good-samaritan',
@@ -9991,9 +9790,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Private Collection',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc: '/images/devotional-prints/daumier-good-samaritan/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/daumier-good-samaritan/print-light.webp',
+    src: '/images/devotional-prints/daumier-good-samaritan/print.webp',
+    relevance: '',
   },
   'daumier-third-class-carriage': {
     slug: 'daumier-third-class-carriage',
@@ -10004,10 +9802,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Metropolitan Museum of Art, New York',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc:
-      '/images/devotional-prints/daumier-third-class-carriage/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/daumier-third-class-carriage/print-light.webp',
+    src: '/images/devotional-prints/daumier-third-class-carriage/print.webp',
+    relevance: '',
   },
   'daumier-third-class-chaos': {
     slug: 'daumier-third-class-chaos',
@@ -10018,10 +9814,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Metropolitan Museum of Art, New York',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc:
-      '/images/devotional-prints/daumier-third-class-chaos/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/daumier-third-class-chaos/print-light.webp',
+    src: '/images/devotional-prints/daumier-third-class-chaos/print.webp',
+    relevance: '',
   },
   'daumier-third-class-truth': {
     slug: 'daumier-third-class-truth',
@@ -10032,10 +9826,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Metropolitan Museum of Art, New York',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc:
-      '/images/devotional-prints/daumier-third-class-truth/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/daumier-third-class-truth/print-light.webp',
+    src: '/images/devotional-prints/daumier-third-class-truth/print.webp',
+    relevance: '',
   },
   'daumier-third-class-valued': {
     slug: 'daumier-third-class-valued',
@@ -10046,10 +9838,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Metropolitan Museum of Art, New York',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc:
-      '/images/devotional-prints/daumier-third-class-valued/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/daumier-third-class-valued/print-light.webp',
+    src: '/images/devotional-prints/daumier-third-class-valued/print.webp',
+    relevance: '',
   },
   'daumier-washerwoman': {
     slug: 'daumier-washerwoman',
@@ -10060,8 +9850,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Musée d'Orsay, Paris",
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc: '/images/devotional-prints/daumier-washerwoman/print-dark.webp',
-    lightSrc: '/images/devotional-prints/daumier-washerwoman/print-light.webp',
+    src: '/images/devotional-prints/daumier-washerwoman/print.webp',
+    relevance: '',
+  },
+  'defrance-almsgiving': {
+    slug: 'defrance-almsgiving',
+    title: 'Almsgiving',
+    artist: 'Léonard Defrance',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/defrance-almsgiving/print.webp',
+    relevance: '',
   },
   'del-sarto-last-supper': {
     slug: 'del-sarto-last-supper',
@@ -10072,9 +9874,476 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Cenacolo di San Salvi, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/del-sarto-last-supper/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/del-sarto-last-supper/print-light.webp',
+    src: '/images/devotional-prints/del-sarto-last-supper/print.webp',
+    relevance: '',
+  },
+  'delacroix-jacob-angel-saint-sulpice': {
+    slug: 'delacroix-jacob-angel-saint-sulpice',
+    title: 'Jacob Wrestling with the Angel',
+    artist: 'Eugène Delacroix',
+    year: '1854-61',
+    medium: 'fresco',
+    museum: 'Saint-Sulpice Church, Paris',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/delacroix-jacob-angel-saint-sulpice/print.webp',
+    relevance: '',
+  },
+  'delacroix-lament-jeremiah': {
+    slug: 'delacroix-lament-jeremiah',
+    title: 'Lament Jeremiah',
+    artist: 'Eugène Delacroix',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/delacroix-lament-jeremiah/print.webp',
+    relevance: '',
+  },
+  'delacroix-pieta-saint-denis': {
+    slug: 'delacroix-pieta-saint-denis',
+    title: 'Pietà',
+    artist: 'Eugène Delacroix',
+    year: '1844',
+    medium: 'painting',
+    museum: 'Church of Saint-Denis-du-Saint-Sacrement, Paris',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/delacroix-pieta-saint-denis/print.webp',
+    relevance: '',
+  },
+  'dore-absalom': {
+    slug: 'dore-absalom',
+    title: 'The Death of Absalom',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-absalom/print.webp',
+    relevance: '',
+  },
+  'dore-adam-eve-garden': {
+    slug: 'dore-adam-eve-garden',
+    title: 'Adam and Eve in Paradise',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-adam-eve-garden/print.webp',
+    relevance: '',
+  },
+  'dore-agony-garden': {
+    slug: 'dore-agony-garden',
+    title: 'The Agony in the Garden (Gethsemane)',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Public Domain (La Sainte Bible, 1866)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/dore-agony-garden/print.webp',
+    relevance: '',
+  },
+  'dore-cain-abel': {
+    slug: 'dore-cain-abel',
+    title: 'Cain and Abel',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-cain-abel/print.webp',
+    relevance: '',
+  },
+  'dore-creation-light': {
+    slug: 'dore-creation-light',
+    title: 'Let There Be Light',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-creation-light/print.webp',
+    relevance: '',
+  },
+  'dore-daniel-furnace': {
+    slug: 'dore-daniel-furnace',
+    title: 'The Three Hebrews in the Furnace',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-daniel-furnace/print.webp',
+    relevance: '',
+  },
+  'dore-daniel-lions': {
+    slug: 'dore-daniel-lions',
+    title: "Daniel in the Lions' Den",
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Public Domain (La Sainte Bible, 1866)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/dore-daniel-lions/print.webp',
+    relevance: '',
+  },
+  'dore-david-goliath-engraving': {
+    slug: 'dore-david-goliath-engraving',
+    title: 'David Slays Goliath',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Public Domain (La Sainte Bible, 1866)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-david-goliath-engraving/print.webp',
+    relevance: '',
+  },
+  'dore-david-psalms': {
+    slug: 'dore-david-psalms',
+    title: 'David Playing the Harp',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-david-psalms/print.webp',
+    relevance: '',
+  },
+  'dore-destruction-pharaoh': {
+    slug: 'dore-destruction-pharaoh',
+    title: "The Destruction of Pharaoh's Host",
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-destruction-pharaoh/print.webp',
+    relevance: '',
+  },
+  'dore-divine-comedy-inferno': {
+    slug: 'dore-divine-comedy-inferno',
+    title: 'Inferno: Charon Crossing the Styx',
+    artist: 'Gustave Doré',
+    year: '1861',
+    medium: 'engraving',
+    museum: 'Public Domain (Divine Comedy illustrations, 1861)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/dore-divine-comedy-inferno/print.webp',
+    relevance: '',
+  },
+  'dore-elijah-chariot': {
+    slug: 'dore-elijah-chariot',
+    title: 'Elijah Ascending in the Chariot of Fire',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-elijah-chariot/print.webp',
+    relevance: '',
+  },
+  'dore-entry-jerusalem': {
+    slug: 'dore-entry-jerusalem',
+    title: 'The Entry into Jerusalem',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-entry-jerusalem/print.webp',
+    relevance: '',
+  },
+  'dore-esther-king': {
+    slug: 'dore-esther-king',
+    title: 'Esther Before Ahasuerus',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-esther-king/print.webp',
+    relevance: '',
+  },
+  'dore-ezekiel-bones': {
+    slug: 'dore-ezekiel-bones',
+    title: 'The Vision of the Valley of Dry Bones',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-ezekiel-bones/print.webp',
+    relevance: '',
+  },
+  'dore-ezekiel-dry-bones-dore': {
+    slug: 'dore-ezekiel-dry-bones-dore',
+    title: "Ezekiel's Vision of the Valley of Dry Bones",
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Public Domain (La Sainte Bible, 1866)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/dore-ezekiel-dry-bones-dore/print.webp',
+    relevance: '',
+  },
+  'dore-fall-babylon': {
+    slug: 'dore-fall-babylon',
+    title: 'The Fall of Babylon',
+    artist: 'Gustave Doré',
+    year: '1865',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-fall-babylon/print.webp',
+    relevance: '',
+  },
+  'dore-fall-jericho': {
+    slug: 'dore-fall-jericho',
+    title: 'The Fall of Jericho',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Public Domain (La Sainte Bible, 1866)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-fall-jericho/print.webp',
+    relevance: '',
+  },
+  'dore-gethsemane': {
+    slug: 'dore-gethsemane',
+    title: 'Jesus in Gethsemane',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-gethsemane/print.webp',
+    relevance: '',
+  },
+  'dore-isaiah-angels': {
+    slug: 'dore-isaiah-angels',
+    title: "Isaiah's Vision of Seraphim",
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-isaiah-angels/print.webp',
+    relevance: '',
+  },
+  'dore-isaiah-vision': {
+    slug: 'dore-isaiah-vision',
+    title: "Isaiah's Vision",
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-isaiah-vision/print.webp',
+    relevance: '',
+  },
+  'dore-jacob-angels-ladder': {
+    slug: 'dore-jacob-angels-ladder',
+    title: "Jacob's Dream — Ladder with Angels",
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Public Domain (La Sainte Bible, 1866)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/dore-jacob-angels-ladder/print.webp',
+    relevance: '',
+  },
+  'dore-jonah': {
+    slug: 'dore-jonah',
+    title: 'Jonah Cast Forth by the Whale',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-jonah/print.webp',
+    relevance: '',
+  },
+  'dore-joseph-sold-brothers': {
+    slug: 'dore-joseph-sold-brothers',
+    title: 'Joseph Sold by His Brothers',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Public Domain (La Sainte Bible, 1866)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-joseph-sold-brothers/print.webp',
+    relevance: '',
+  },
+  'dore-last-supper': {
+    slug: 'dore-last-supper',
+    title: 'The Last Supper',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-last-supper/print.webp',
+    relevance: '',
+  },
+  'dore-moses-nebo': {
+    slug: 'dore-moses-nebo',
+    title: 'Moses Views the Promised Land from Nebo',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-moses-nebo/print.webp',
+    relevance: '',
+  },
+  'dore-new-jerusalem': {
+    slug: 'dore-new-jerusalem',
+    title: 'The New Jerusalem',
+    artist: 'Gustave Doré',
+    year: '1865',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-new-jerusalem/print.webp',
+    relevance: '',
+  },
+  'dore-noah-ark-animals': {
+    slug: 'dore-noah-ark-animals',
+    title: 'Noah Lets the Animals onto the Ark',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Public Domain (La Sainte Bible, 1866)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-noah-ark-animals/print.webp',
+    relevance: '',
+  },
+  'dore-noah-dove': {
+    slug: 'dore-noah-dove',
+    title: 'Noah Releasing the Dove',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-noah-dove/print.webp',
+    relevance: '',
+  },
+  'dore-ruth-gleaning': {
+    slug: 'dore-ruth-gleaning',
+    title: 'Ruth in the Field of Boaz',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-ruth-gleaning/print.webp',
+    relevance: '',
+  },
+  'dore-samson-pillars': {
+    slug: 'dore-samson-pillars',
+    title: 'Samson Destroying the Temple',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-samson-pillars/print.webp',
+    relevance: '',
+  },
+  'dore-sermon-mount': {
+    slug: 'dore-sermon-mount',
+    title: 'The Sermon on the Mount',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-sermon-mount/print.webp',
+    relevance: '',
+  },
+  'dore-solomon-temple': {
+    slug: 'dore-solomon-temple',
+    title: "Solomon's Temple Dedication",
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-solomon-temple/print.webp',
+    relevance: '',
+  },
+  'dore-tower-babel': {
+    slug: 'dore-tower-babel',
+    title: 'The Tower of Babel',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-tower-babel/print.webp',
+    relevance: '',
+  },
+  'dore-walking-water': {
+    slug: 'dore-walking-water',
+    title: 'Jesus Walking on the Water',
+    artist: 'Gustave Doré',
+    year: '1866',
+    medium: 'engraving',
+    museum: 'Bible Illustrations (Doré)',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/dore-walking-water/print.webp',
+    relevance: '',
+  },
+  'duccio-entry-jerusalem': {
+    slug: 'duccio-entry-jerusalem',
+    title: 'Entry into Jerusalem',
+    artist: 'Duccio di Buoninsegna',
+    year: '1308',
+    medium: 'painting',
+    museum: "Museo dell'Opera del Duomo, Siena",
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/duccio-entry-jerusalem/print.webp',
+    relevance: '',
   },
   'duccio-pentecost-1308': {
     slug: 'duccio-pentecost-1308',
@@ -10085,9 +10354,80 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Museo dell'Opera del Duomo, Siena",
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/duccio-pentecost-1308/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/duccio-pentecost-1308/print-light.webp',
+    src: '/images/devotional-prints/duccio-pentecost-1308/print.webp',
+    relevance: '',
+  },
+  'durer-adam-eve-engraving': {
+    slug: 'durer-adam-eve-engraving',
+    title: 'Adam and Eve',
+    artist: 'Albrecht Dürer',
+    year: '1504',
+    medium: 'engraving',
+    museum: 'British Museum, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/durer-adam-eve-engraving/print.webp',
+    relevance: '',
+  },
+  'durer-four-horsemen': {
+    slug: 'durer-four-horsemen',
+    title: 'The Four Horsemen of the Apocalypse',
+    artist: 'Albrecht Dürer',
+    year: '1498',
+    medium: 'woodcut',
+    museum: 'Metropolitan Museum of Art',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/durer-four-horsemen/print.webp',
+    relevance: '',
+  },
+  'durer-four-horsemen-woodcut': {
+    slug: 'durer-four-horsemen-woodcut',
+    title: 'The Four Horsemen of the Apocalypse',
+    artist: 'Albrecht Dürer',
+    year: '1498',
+    medium: 'woodcut',
+    museum: 'British Museum, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/durer-four-horsemen-woodcut/print.webp',
+    relevance: '',
+  },
+  'durer-knight-death-devil': {
+    slug: 'durer-knight-death-devil',
+    title: 'Knight, Death and the Devil',
+    artist: 'Albrecht Dürer',
+    year: '1513',
+    medium: 'engraving',
+    museum: 'British Museum, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/durer-knight-death-devil/print.webp',
+    relevance: '',
+  },
+  'durer-melancholia-engraving': {
+    slug: 'durer-melancholia-engraving',
+    title: 'Melencolia I',
+    artist: 'Albrecht Dürer',
+    year: '1514',
+    medium: 'engraving',
+    museum: 'British Museum, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/durer-melancholia-engraving/print.webp',
+    relevance: '',
+  },
+  'durer-prodigal-son-engr': {
+    slug: 'durer-prodigal-son-engr',
+    title: 'The Prodigal Son Among the Swine',
+    artist: 'Albrecht Dürer',
+    year: 'c.1496',
+    medium: 'engraving',
+    museum: 'British Museum, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/durer-prodigal-son-engr/print.webp',
+    relevance: '',
   },
   'durer-prodigal-son-swine': {
     slug: 'durer-prodigal-son-swine',
@@ -10098,10 +10438,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Multiple print collections',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/durer-prodigal-son-swine/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/durer-prodigal-son-swine/print-light.webp',
+    src: '/images/devotional-prints/durer-prodigal-son-swine/print.webp',
+    relevance: '',
   },
   'durer-prodigal-son-swine-end': {
     slug: 'durer-prodigal-son-swine-end',
@@ -10112,10 +10450,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Multiple collections',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/durer-prodigal-son-swine-end/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/durer-prodigal-son-swine-end/print-light.webp',
+    src: '/images/devotional-prints/durer-prodigal-son-swine-end/print.webp',
+    relevance: '',
   },
   'durer-prodigal-swine-cage': {
     slug: 'durer-prodigal-swine-cage',
@@ -10126,10 +10462,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Multiple collections',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/durer-prodigal-swine-cage/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/durer-prodigal-swine-cage/print-light.webp',
+    src: '/images/devotional-prints/durer-prodigal-swine-cage/print.webp',
+    relevance: '',
   },
   'durer-saint-jerome-study': {
     slug: 'durer-saint-jerome-study',
@@ -10140,10 +10474,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museu Nacional de Arte Antiga, Lisbon',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/durer-saint-jerome-study/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/durer-saint-jerome-study/print-light.webp',
+    src: '/images/devotional-prints/durer-saint-jerome-study/print.webp',
+    relevance: '',
   },
   'durer-self-portrait-1500': {
     slug: 'durer-self-portrait-1500',
@@ -10154,10 +10486,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Alte Pinakothek, Munich',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/durer-self-portrait-1500/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/durer-self-portrait-1500/print-light.webp',
+    src: '/images/devotional-prints/durer-self-portrait-1500/print.webp',
+    relevance: '',
   },
   'durer-self-portrait-imago-dei': {
     slug: 'durer-self-portrait-imago-dei',
@@ -10168,10 +10498,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Alte Pinakothek, Munich',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/durer-self-portrait-imago-dei/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/durer-self-portrait-imago-dei/print-light.webp',
+    src: '/images/devotional-prints/durer-self-portrait-imago-dei/print.webp',
+    relevance: '',
   },
   'el-greco-agony-garden': {
     slug: 'el-greco-agony-garden',
@@ -10182,9 +10510,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Gallery, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/el-greco-agony-garden/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/el-greco-agony-garden/print-light.webp',
+    src: '/images/devotional-prints/el-greco-agony-garden/print.webp',
+    relevance: '',
   },
   'el-greco-burial-count-orgaz': {
     slug: 'el-greco-burial-count-orgaz',
@@ -10195,10 +10522,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Church of Santo Tomé, Toledo',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/el-greco-burial-count-orgaz/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/el-greco-burial-count-orgaz/print-light.webp',
+    src: '/images/devotional-prints/el-greco-burial-count-orgaz/print.webp',
+    relevance: '',
+  },
+  'el-greco-disrobing-christ': {
+    slug: 'el-greco-disrobing-christ',
+    title: 'El Expolio — The Disrobing of Christ',
+    artist: 'El Greco',
+    year: '1577',
+    medium: 'painting',
+    museum: 'Toledo Cathedral',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/el-greco-disrobing-christ/print.webp',
+    relevance: '',
+  },
+  'el-greco-espolio': {
+    slug: 'el-greco-espolio',
+    title: 'El Espolio (Christ Stripped of His Garments)',
+    artist: 'El Greco',
+    year: '1577-79',
+    medium: 'painting',
+    museum: 'Toledo Cathedral',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/el-greco-espolio/print.webp',
+    relevance: '',
+  },
+  'el-greco-holy-family': {
+    slug: 'el-greco-holy-family',
+    title: 'The Holy Family with Saint Anne',
+    artist: 'El Greco',
+    year: 'c.1590-95',
+    medium: 'painting',
+    museum: 'El Greco Museum, Toledo',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/el-greco-holy-family/print.webp',
+    relevance: '',
   },
   'el-greco-pentecost': {
     slug: 'el-greco-pentecost',
@@ -10209,8 +10570,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museo del Prado, Madrid',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/el-greco-pentecost/print-dark.webp',
-    lightSrc: '/images/devotional-prints/el-greco-pentecost/print-light.webp',
+    src: '/images/devotional-prints/el-greco-pentecost/print.webp',
+    relevance: '',
   },
   'el-greco-pentecost-anointed': {
     slug: 'el-greco-pentecost-anointed',
@@ -10221,10 +10582,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museo del Prado, Madrid',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/el-greco-pentecost-anointed/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/el-greco-pentecost-anointed/print-light.webp',
+    src: '/images/devotional-prints/el-greco-pentecost-anointed/print.webp',
+    relevance: '',
   },
   'el-greco-portrait-man': {
     slug: 'el-greco-portrait-man',
@@ -10235,9 +10594,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Metropolitan Museum of Art, New York',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/el-greco-portrait-man/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/el-greco-portrait-man/print-light.webp',
+    src: '/images/devotional-prints/el-greco-portrait-man/print.webp',
+    relevance: '',
+  },
+  'el-greco-resurrection': {
+    slug: 'el-greco-resurrection',
+    title: 'The Resurrection',
+    artist: 'El Greco',
+    year: 'c.1597',
+    medium: 'painting',
+    museum: 'Prado Museum, Madrid',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/el-greco-resurrection/print.webp',
+    relevance: '',
+  },
+  'el-greco-resurrection-prado': {
+    slug: 'el-greco-resurrection-prado',
+    title: 'The Resurrection',
+    artist: 'El Greco',
+    year: 'c.1596-1600',
+    medium: 'painting',
+    museum: 'Museo del Prado, Madrid',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/el-greco-resurrection-prado/print.webp',
+    relevance: '',
   },
   'friedrich-monk-by-sea': {
     slug: 'friedrich-monk-by-sea',
@@ -10248,9 +10630,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Alte Nationalgalerie, Berlin',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/friedrich-monk-by-sea/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/friedrich-monk-by-sea/print-light.webp',
+    src: '/images/devotional-prints/friedrich-monk-by-sea/print.webp',
+    relevance: '',
   },
   'friedrich-monk-sea-end': {
     slug: 'friedrich-monk-sea-end',
@@ -10261,9 +10642,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Alte Nationalgalerie, Berlin',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/friedrich-monk-sea-end/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/friedrich-monk-sea-end/print-light.webp',
+    src: '/images/devotional-prints/friedrich-monk-sea-end/print.webp',
+    relevance: '',
   },
   'friedrich-oak-snow': {
     slug: 'friedrich-oak-snow',
@@ -10274,8 +10654,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Nationalgalerie, Berlin',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/friedrich-oak-snow/print-dark.webp',
-    lightSrc: '/images/devotional-prints/friedrich-oak-snow/print-light.webp',
+    src: '/images/devotional-prints/friedrich-oak-snow/print.webp',
+    relevance: '',
   },
   'friedrich-wanderer-fog': {
     slug: 'friedrich-wanderer-fog',
@@ -10286,9 +10666,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Hamburger Kunsthalle',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/friedrich-wanderer-fog/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/friedrich-wanderer-fog/print-light.webp',
+    src: '/images/devotional-prints/friedrich-wanderer-fog/print.webp',
+    relevance: '',
   },
   'friedrich-woman-rising-sun': {
     slug: 'friedrich-woman-rising-sun',
@@ -10299,10 +10678,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum Folkwang, Essen',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/friedrich-woman-rising-sun/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/friedrich-woman-rising-sun/print-light.webp',
+    src: '/images/devotional-prints/friedrich-woman-rising-sun/print.webp',
+    relevance: '',
+  },
+  'ge-golgotha': {
+    slug: 'ge-golgotha',
+    title: 'Golgotha',
+    artist: 'Nikolai Ge',
+    year: '1893',
+    medium: 'painting',
+    museum: 'State Russian Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/ge-golgotha/print.webp',
+    relevance: '',
+  },
+  'ge-last-supper-russian': {
+    slug: 'ge-last-supper-russian',
+    title: 'The Last Supper',
+    artist: 'Nikolai Ge',
+    year: '1863',
+    medium: 'painting',
+    museum: 'State Russian Museum, St. Petersburg',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/ge-last-supper-russian/print.webp',
+    relevance: '',
   },
   'ge-what-is-truth': {
     slug: 'ge-what-is-truth',
@@ -10313,21 +10714,92 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Tretyakov Gallery, Moscow',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/ge-what-is-truth/print-dark.webp',
-    lightSrc: '/images/devotional-prints/ge-what-is-truth/print-light.webp',
+    src: '/images/devotional-prints/ge-what-is-truth/print.webp',
+    relevance: '',
   },
-  'goya-saturn-devouring': {
-    slug: 'goya-saturn-devouring',
-    title: 'Saturn Devouring His Son',
-    artist: 'Francisco de Goya',
-    year: '1819–23',
+  'geertgen-nativity-night': {
+    slug: 'geertgen-nativity-night',
+    title: 'Nativity at Night',
+    artist: 'Geertgen tot Sint Jans',
+    year: 'c.1490',
     medium: 'painting',
-    museum: 'Museo del Prado, Madrid',
+    museum: 'National Gallery, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/goya-saturn-devouring/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/goya-saturn-devouring/print-light.webp',
+    src: '/images/devotional-prints/geertgen-nativity-night/print.webp',
+    relevance: '',
+  },
+  'gerard-david-baptism-christ': {
+    slug: 'gerard-david-baptism-christ',
+    title: 'The Baptism of Christ Triptych',
+    artist: 'Gerard David',
+    year: 'c.1502-08',
+    medium: 'painting',
+    museum: 'Groeningemuseum, Bruges',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/gerard-david-baptism-christ/print.webp',
+    relevance: '',
+  },
+  'gerome-golgotha': {
+    slug: 'gerome-golgotha',
+    title: 'Golgotha',
+    artist: 'Jean-Léon Gérôme',
+    year: '1867',
+    medium: 'painting',
+    museum: "Musée d'Orsay, Paris",
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/gerome-golgotha/print.webp',
+    relevance: '',
+  },
+  'gerome-prayer-egypt': {
+    slug: 'gerome-prayer-egypt',
+    title: 'Prayer in the Mosque of Amrou',
+    artist: 'Jean-Léon Gérôme',
+    year: '1872',
+    medium: 'painting',
+    museum: 'Private Collection',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/gerome-prayer-egypt/print.webp',
+    relevance: '',
+  },
+  'ghirlandaio-calling-apostles': {
+    slug: 'ghirlandaio-calling-apostles',
+    title: 'The Calling of the Apostles',
+    artist: 'Domenico Ghirlandaio',
+    year: '1481',
+    medium: 'fresco',
+    museum: 'Sistine Chapel, Vatican',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/ghirlandaio-calling-apostles/print.webp',
+    relevance: '',
+  },
+  'giotto-kiss-judas-arena': {
+    slug: 'giotto-kiss-judas-arena',
+    title: 'The Kiss of Judas (Arrest of Christ)',
+    artist: 'Giotto di Bondone',
+    year: 'c.1304-06',
+    medium: 'fresco',
+    museum: 'Scrovegni Chapel (Arena Chapel), Padua',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/giotto-kiss-judas-arena/print.webp',
+    relevance: '',
+  },
+  'goya-last-communion-calasanz': {
+    slug: 'goya-last-communion-calasanz',
+    title: 'The Last Communion of Saint Joseph of Calasanz',
+    artist: 'Francisco de Goya',
+    year: '1819',
+    medium: 'painting',
+    museum: 'Escuelas Pías de San Antón, Madrid',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/goya-last-communion-calasanz/print.webp',
+    relevance: '',
   },
   'goya-sleep-reason-monsters': {
     slug: 'goya-sleep-reason-monsters',
@@ -10338,10 +10810,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museo del Prado, Madrid',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/goya-sleep-reason-monsters/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/goya-sleep-reason-monsters/print-light.webp',
+    src: '/images/devotional-prints/goya-sleep-reason-monsters/print.webp',
+    relevance: '',
+  },
+  'grunewald-annunciation-isenheim': {
+    slug: 'grunewald-annunciation-isenheim',
+    title: 'Annunciation (Isenheim Altarpiece)',
+    artist: 'Matthias Grünewald',
+    year: '1512-16',
+    medium: 'painting',
+    museum: 'Musée Unterlinden, Colmar',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/grunewald-annunciation-isenheim/print.webp',
+    relevance: '',
   },
   'grunewald-crucifixion-isenheim': {
     slug: 'grunewald-crucifixion-isenheim',
@@ -10352,10 +10834,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée Unterlinden, Colmar',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/grunewald-crucifixion-isenheim/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/grunewald-crucifixion-isenheim/print-light.webp',
+    src: '/images/devotional-prints/grunewald-crucifixion-isenheim/print.webp',
+    relevance: '',
   },
   'grunewald-resurrection-isenheim': {
     slug: 'grunewald-resurrection-isenheim',
@@ -10366,10 +10846,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée Unterlinden, Colmar',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/grunewald-resurrection-isenheim/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/grunewald-resurrection-isenheim/print-light.webp',
+    src: '/images/devotional-prints/grunewald-resurrection-isenheim/print.webp',
+    relevance: '',
   },
   'grunewald-resurrection-rooted': {
     slug: 'grunewald-resurrection-rooted',
@@ -10380,10 +10858,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée Unterlinden, Colmar',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/grunewald-resurrection-rooted/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/grunewald-resurrection-rooted/print-light.webp',
+    src: '/images/devotional-prints/grunewald-resurrection-rooted/print.webp',
+    relevance: '',
   },
   'guercino-doubting-thomas': {
     slug: 'guercino-doubting-thomas',
@@ -10394,10 +10870,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Pinacoteca Nazionale, Rome',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/guercino-doubting-thomas/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/guercino-doubting-thomas/print-light.webp',
+    src: '/images/devotional-prints/guercino-doubting-thomas/print.webp',
+    relevance: '',
   },
   'guercino-doubting-thomas-2': {
     slug: 'guercino-doubting-thomas-2',
@@ -10408,10 +10882,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Sanssouci, Potsdam',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/guercino-doubting-thomas-2/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/guercino-doubting-thomas-2/print-light.webp',
+    src: '/images/devotional-prints/guercino-doubting-thomas-2/print.webp',
+    relevance: '',
   },
   'guercino-god-father-angels': {
     slug: 'guercino-god-father-angels',
@@ -10422,10 +10894,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Pinacoteca di Brera, Milan',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/guercino-god-father-angels/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/guercino-god-father-angels/print-light.webp',
+    src: '/images/devotional-prints/guercino-god-father-angels/print.webp',
+    relevance: '',
   },
   'hammershoi-five-portraits': {
     slug: 'hammershoi-five-portraits',
@@ -10436,10 +10906,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Thielska Galleriet, Stockholm',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/hammershoi-five-portraits/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/hammershoi-five-portraits/print-light.webp',
+    src: '/images/devotional-prints/hammershoi-five-portraits/print.webp',
+    relevance: '',
+  },
+  'hammershoi-interior-peace': {
+    slug: 'hammershoi-interior-peace',
+    title: 'Interior Peace',
+    artist: 'Vilhelm Hammershøi',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/hammershoi-interior-peace/print.webp',
+    relevance: '',
   },
   'hammershoi-interior-still': {
     slug: 'hammershoi-interior-still',
@@ -10450,10 +10930,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Städel Museum, Frankfurt',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/hammershoi-interior-still/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/hammershoi-interior-still/print-light.webp',
+    src: '/images/devotional-prints/hammershoi-interior-still/print.webp',
+    relevance: '',
   },
   'hammershoi-interior-strandgade': {
     slug: 'hammershoi-interior-strandgade',
@@ -10464,10 +10942,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Ordrupgaard, Copenhagen',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/hammershoi-interior-strandgade/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/hammershoi-interior-strandgade/print-light.webp',
+    src: '/images/devotional-prints/hammershoi-interior-strandgade/print.webp',
+    relevance: '',
+  },
+  'hammershoi-interior-sunbeam-floor': {
+    slug: 'hammershoi-interior-sunbeam-floor',
+    title: 'Interior Sunbeam Floor',
+    artist: 'Vilhelm Hammershøi',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/hammershoi-interior-sunbeam-floor/print.webp',
+    relevance: '',
   },
   'hammershoi-interior-woman': {
     slug: 'hammershoi-interior-woman',
@@ -10478,10 +10966,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Städel Museum, Frankfurt',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/hammershoi-interior-woman/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/hammershoi-interior-woman/print-light.webp',
+    src: '/images/devotional-prints/hammershoi-interior-woman/print.webp',
+    relevance: '',
   },
   'hammershoi-sunbeam-strandgade': {
     slug: 'hammershoi-sunbeam-strandgade',
@@ -10492,10 +10978,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museo Thyssen-Bornemisza, Madrid',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/hammershoi-sunbeam-strandgade/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/hammershoi-sunbeam-strandgade/print-light.webp',
+    src: '/images/devotional-prints/hammershoi-sunbeam-strandgade/print.webp',
+    relevance: '',
+  },
+  'holbein-dead-christ': {
+    slug: 'holbein-dead-christ',
+    title: 'The Body of the Dead Christ in the Tomb',
+    artist: 'Hans Holbein the Younger',
+    year: '1521',
+    medium: 'painting',
+    museum: 'Kunstmuseum Basel',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/holbein-dead-christ/print.webp',
+    relevance: '',
+  },
+  'holbein-dead-christ-tomb': {
+    slug: 'holbein-dead-christ-tomb',
+    title: 'The Body of the Dead Christ in the Tomb',
+    artist: 'Hans Holbein the Younger',
+    year: '1521-22',
+    medium: 'painting',
+    museum: 'Kunstmuseum Basel',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/holbein-dead-christ-tomb/print.webp',
+    relevance: '',
+  },
+  'holbein-meyer-madonna': {
+    slug: 'holbein-meyer-madonna',
+    title: 'Darmstadt Madonna (Meyer Madonna)',
+    artist: 'Hans Holbein the Younger',
+    year: '1526-28',
+    medium: 'painting',
+    museum: 'Hessisches Landesmuseum Darmstadt',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/holbein-meyer-madonna/print.webp',
+    relevance: '',
   },
   'hooch-interior-woman-window': {
     slug: 'hooch-interior-woman-window',
@@ -10506,10 +11026,176 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/hooch-interior-woman-window/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/hooch-interior-woman-window/print-light.webp',
+    src: '/images/devotional-prints/hooch-interior-woman-window/print.webp',
+    relevance: '',
+  },
+  'hugo-portinari-adoration': {
+    slug: 'hugo-portinari-adoration',
+    title: 'The Adoration of the Shepherds',
+    artist: 'Hugo van der Goes',
+    year: 'c.1475',
+    medium: 'painting',
+    museum: 'Uffizi Gallery, Florence',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/hugo-portinari-adoration/print.webp',
+    relevance: '',
+  },
+  'hugo-portinari-triptych': {
+    slug: 'hugo-portinari-triptych',
+    title: 'Portinari Triptych (Adoration of the Shepherds)',
+    artist: 'Hugo van der Goes',
+    year: 'c.1476-79',
+    medium: 'painting',
+    museum: 'Uffizi Gallery, Florence',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/hugo-portinari-triptych/print.webp',
+    relevance: '',
+  },
+  'hunt-finding-saviour-temple': {
+    slug: 'hunt-finding-saviour-temple',
+    title: 'The Finding of the Saviour in the Temple',
+    artist: 'William Holman Hunt',
+    year: '1860',
+    medium: 'painting',
+    museum: 'Birmingham Museum and Art Gallery',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/hunt-finding-saviour-temple/print.webp',
+    relevance: '',
+  },
+  'hunt-finding-temple': {
+    slug: 'hunt-finding-temple',
+    title: 'The Finding of the Saviour in the Temple',
+    artist: 'William Holman Hunt',
+    year: '1860',
+    medium: 'painting',
+    museum: 'Birmingham Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/hunt-finding-temple/print.webp',
+    relevance: '',
+  },
+  'hunt-light-world': {
+    slug: 'hunt-light-world',
+    title: 'The Light of the World',
+    artist: 'William Holman Hunt',
+    year: '1853',
+    medium: 'painting',
+    museum: 'Keble College, Oxford',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/hunt-light-world/print.webp',
+    relevance: '',
+  },
+  'hunt-scapegoat': {
+    slug: 'hunt-scapegoat',
+    title: 'The Scapegoat',
+    artist: 'William Holman Hunt',
+    year: '1854',
+    medium: 'painting',
+    museum: 'Lady Lever Art Gallery, Port Sunlight',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/hunt-scapegoat/print.webp',
+    relevance: '',
+  },
+  'hunt-scapegoat-lever': {
+    slug: 'hunt-scapegoat-lever',
+    title: 'The Scapegoat',
+    artist: 'William Holman Hunt',
+    year: '1854-56',
+    medium: 'painting',
+    museum: 'Lady Lever Art Gallery, Liverpool',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/hunt-scapegoat-lever/print.webp',
+    relevance: '',
+  },
+  'hunt-shadow-death': {
+    slug: 'hunt-shadow-death',
+    title: 'The Shadow of Death',
+    artist: 'William Holman Hunt',
+    year: '1871',
+    medium: 'painting',
+    museum: 'Manchester Art Gallery',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/hunt-shadow-death/print.webp',
+    relevance: '',
+  },
+  'icon-pantocrator-sinai': {
+    slug: 'icon-pantocrator-sinai',
+    title: 'Christ Pantocrator (Sinai Icon)',
+    artist: 'Byzantine',
+    year: 'c.6th century',
+    medium: 'icon',
+    museum: "St. Catherine's Monastery, Sinai",
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/icon-pantocrator-sinai/print.webp',
+    relevance: '',
+  },
+  'icon-resurrection-anastasis': {
+    slug: 'icon-resurrection-anastasis',
+    title: 'Anastasis (The Harrowing of Hell)',
+    artist: 'Byzantine',
+    year: 'c.14th century',
+    medium: 'fresco',
+    museum: 'Chora Church, Istanbul',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/icon-resurrection-anastasis/print.webp',
+    relevance: '',
+  },
+  'icon-transfiguration-theophanes': {
+    slug: 'icon-transfiguration-theophanes',
+    title: 'The Transfiguration',
+    artist: 'Theophanes the Greek',
+    year: 'c.1403',
+    medium: 'icon',
+    museum: 'Tretyakov Gallery, Moscow',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/icon-transfiguration-theophanes/print.webp',
+    relevance: '',
+  },
+  'icon-vladimirskaya': {
+    slug: 'icon-vladimirskaya',
+    title: 'Vladimir Mother of God (Theotokos)',
+    artist: 'Byzantine',
+    year: 'c.12th century',
+    medium: 'icon',
+    museum: 'Tretyakov Gallery, Moscow',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/icon-vladimirskaya/print.webp',
+    relevance: '',
+  },
+  'ivanov-appearance-christ-people': {
+    slug: 'ivanov-appearance-christ-people',
+    title: 'The Appearance of Christ to the People',
+    artist: 'Alexander Ivanov',
+    year: '1837-57',
+    medium: 'painting',
+    museum: 'Tretyakov Gallery, Moscow',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/ivanov-appearance-christ-people/print.webp',
+    relevance: '',
+  },
+  'ivanov-christ-people': {
+    slug: 'ivanov-christ-people',
+    title: 'The Appearance of Christ Before the People',
+    artist: 'Alexander Ivanov',
+    year: '1857',
+    medium: 'painting',
+    museum: 'Tretyakov Gallery, Moscow',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/ivanov-christ-people/print.webp',
+    relevance: '',
   },
   'juanes-last-supper': {
     slug: 'juanes-last-supper',
@@ -10520,8 +11206,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museo del Prado, Madrid',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/juanes-last-supper/print-dark.webp',
-    lightSrc: '/images/devotional-prints/juanes-last-supper/print-light.webp',
+    src: '/images/devotional-prints/juanes-last-supper/print.webp',
+    relevance: '',
+  },
+  'leighton-elijah': {
+    slug: 'leighton-elijah',
+    title: 'Elijah in the Wilderness',
+    artist: 'Frederic Leighton',
+    year: '1878',
+    medium: 'painting',
+    museum: 'Walker Art Gallery, Liverpool',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/leighton-elijah/print.webp',
+    relevance: '',
+  },
+  'leighton-elijah-desert': {
+    slug: 'leighton-elijah-desert',
+    title: 'Elijah in the Wilderness',
+    artist: 'Frederic Leighton',
+    year: '1878',
+    medium: 'painting',
+    museum: 'Walker Art Gallery, Liverpool',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/leighton-elijah-desert/print.webp',
+    relevance: '',
+  },
+  'lhermitte-reapers-pay': {
+    slug: 'lhermitte-reapers-pay',
+    title: 'Reapers Pay',
+    artist: 'Léon Lhermitte',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/lhermitte-reapers-pay/print.webp',
+    relevance: '',
   },
   'lhermitte-the-harvest': {
     slug: 'lhermitte-the-harvest',
@@ -10532,9 +11254,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Musée d'Orsay, Paris",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/lhermitte-the-harvest/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/lhermitte-the-harvest/print-light.webp',
+    src: '/images/devotional-prints/lhermitte-the-harvest/print.webp',
+    relevance: '',
+  },
+  'lippi-annunciation': {
+    slug: 'lippi-annunciation',
+    title: 'The Annunciation',
+    artist: 'Filippo Lippi',
+    year: 'c.1443',
+    medium: 'painting',
+    museum: 'San Lorenzo, Florence',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/lippi-annunciation/print.webp',
+    relevance: '',
+  },
+  'lippi-annunciation-munich': {
+    slug: 'lippi-annunciation-munich',
+    title: 'The Annunciation',
+    artist: 'Fra Filippo Lippi',
+    year: 'c.1449-50',
+    medium: 'painting',
+    museum: 'Alte Pinakothek, Munich',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/lippi-annunciation-munich/print.webp',
+    relevance: '',
   },
   'lippi-music-making-angels': {
     slug: 'lippi-music-making-angels',
@@ -10545,10 +11290,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Uffizi Gallery, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/lippi-music-making-angels/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/lippi-music-making-angels/print-light.webp',
+    src: '/images/devotional-prints/lippi-music-making-angels/print.webp',
+    relevance: '',
+  },
+  'lorenzetti-presentation-temple': {
+    slug: 'lorenzetti-presentation-temple',
+    title: 'Presentation of Jesus at the Temple',
+    artist: 'Ambrogio Lorenzetti',
+    year: '1342',
+    medium: 'painting',
+    museum: 'Uffizi Gallery, Florence',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/lorenzetti-presentation-temple/print.webp',
+    relevance: '',
   },
   'lotto-adoration-christ-child': {
     slug: 'lotto-adoration-christ-child',
@@ -10559,10 +11314,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Gallery of Art, Washington DC',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/lotto-adoration-christ-child/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/lotto-adoration-christ-child/print-light.webp',
+    src: '/images/devotional-prints/lotto-adoration-christ-child/print.webp',
+    relevance: '',
   },
   'lucas-van-leyden-adam-eve': {
     slug: 'lucas-van-leyden-adam-eve',
@@ -10573,10 +11326,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rijksmuseum, Amsterdam',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/lucas-van-leyden-adam-eve/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/lucas-van-leyden-adam-eve/print-light.webp',
+    src: '/images/devotional-prints/lucas-van-leyden-adam-eve/print.webp',
+    relevance: '',
   },
   'mantegna-agony-in-garden': {
     slug: 'mantegna-agony-in-garden',
@@ -10587,10 +11338,140 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Gallery, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/mantegna-agony-in-garden/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/mantegna-agony-in-garden/print-light.webp',
+    src: '/images/devotional-prints/mantegna-agony-in-garden/print.webp',
+    relevance: '',
+  },
+  'martin-belshazzar': {
+    slug: 'martin-belshazzar',
+    title: "Belshazzar's Feast",
+    artist: 'John Martin',
+    year: '1820',
+    medium: 'painting',
+    museum: 'Yale Center for British Art',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/martin-belshazzar/print.webp',
+    relevance: '',
+  },
+  'martin-deluge': {
+    slug: 'martin-deluge',
+    title: 'The Deluge',
+    artist: 'John Martin',
+    year: '1834',
+    medium: 'painting',
+    museum: 'Yale Center for British Art',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/martin-deluge/print.webp',
+    relevance: '',
+  },
+  'martin-destruction-sodom': {
+    slug: 'martin-destruction-sodom',
+    title: 'The Destruction of Sodom and Gomorrah',
+    artist: 'John Martin',
+    year: '1852',
+    medium: 'painting',
+    museum: 'Laing Art Gallery, Newcastle',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/martin-destruction-sodom/print.webp',
+    relevance: '',
+  },
+  'martin-great-day': {
+    slug: 'martin-great-day',
+    title: 'The Great Day of His Wrath',
+    artist: 'John Martin',
+    year: '1853',
+    medium: 'painting',
+    museum: 'Tate Britain, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/martin-great-day/print.webp',
+    relevance: '',
+  },
+  'martin-joshua-sun': {
+    slug: 'martin-joshua-sun',
+    title: 'Joshua Commanding the Sun to Stand Still',
+    artist: 'John Martin',
+    year: '1816',
+    medium: 'painting',
+    museum: 'United Grand Lodge of England',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/martin-joshua-sun/print.webp',
+    relevance: '',
+  },
+  'martin-last-judgment': {
+    slug: 'martin-last-judgment',
+    title: 'The Last Judgment',
+    artist: 'John Martin',
+    year: '1853',
+    medium: 'painting',
+    museum: 'Tate Britain, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/martin-last-judgment/print.webp',
+    relevance: '',
+  },
+  'martini-annunciation-siena': {
+    slug: 'martini-annunciation-siena',
+    title: 'The Annunciation with Saints',
+    artist: 'Simone Martini',
+    year: '1333',
+    medium: 'painting',
+    museum: 'Uffizi Gallery, Florence',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/martini-annunciation-siena/print.webp',
+    relevance: '',
+  },
+  'masaccio-expulsion-eden': {
+    slug: 'masaccio-expulsion-eden',
+    title: 'The Expulsion from the Garden of Eden',
+    artist: 'Masaccio',
+    year: 'c.1425',
+    medium: 'fresco',
+    museum: 'Brancacci Chapel, Florence',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/masaccio-expulsion-eden/print.webp',
+    relevance: '',
+  },
+  'masaccio-tribute-money': {
+    slug: 'masaccio-tribute-money',
+    title: 'The Tribute Money',
+    artist: 'Masaccio',
+    year: 'c.1425',
+    medium: 'fresco',
+    museum: 'Brancacci Chapel, Florence',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/masaccio-tribute-money/print.webp',
+    relevance: '',
+  },
+  'memling-adoration-magi': {
+    slug: 'memling-adoration-magi',
+    title: 'The Adoration of the Magi',
+    artist: 'Hans Memling',
+    year: 'c.1470',
+    medium: 'painting',
+    museum: 'Prado Museum, Madrid',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/memling-adoration-magi/print.webp',
+    relevance: '',
+  },
+  'memling-last-judgment': {
+    slug: 'memling-last-judgment',
+    title: 'The Last Judgment Triptych',
+    artist: 'Hans Memling',
+    year: 'c.1467',
+    medium: 'painting',
+    museum: 'National Museum, Gdańsk',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/memling-last-judgment/print.webp',
+    relevance: '',
   },
   'michelangelo-creation-adam-2': {
     slug: 'michelangelo-creation-adam-2',
@@ -10601,10 +11482,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Sistine Chapel, Vatican',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/michelangelo-creation-adam-2/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/michelangelo-creation-adam-2/print-light.webp',
+    src: '/images/devotional-prints/michelangelo-creation-adam-2/print.webp',
+    relevance: '',
   },
   'michelangelo-creation-adam-hands': {
     slug: 'michelangelo-creation-adam-hands',
@@ -10615,10 +11494,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Sistine Chapel, Vatican',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/michelangelo-creation-adam-hands/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/michelangelo-creation-adam-hands/print-light.webp',
+    src: '/images/devotional-prints/michelangelo-creation-adam-hands/print.webp',
+    relevance: '',
   },
   'michelangelo-creation-of-adam': {
     slug: 'michelangelo-creation-of-adam',
@@ -10629,10 +11506,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Sistine Chapel, Vatican',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/michelangelo-creation-of-adam/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/michelangelo-creation-of-adam/print-light.webp',
+    src: '/images/devotional-prints/michelangelo-creation-of-adam/print.webp',
+    relevance: '',
+  },
+  'millais-christ-carpenter': {
+    slug: 'millais-christ-carpenter',
+    title: "Christ in the House of His Parents (Carpenter's Shop)",
+    artist: 'John Everett Millais',
+    year: '1849-50',
+    medium: 'painting',
+    museum: 'Tate Britain, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/millais-christ-carpenter/print.webp',
+    relevance: '',
+  },
+  'millais-christ-parents': {
+    slug: 'millais-christ-parents',
+    title: 'Christ in the House of His Parents',
+    artist: 'John Everett Millais',
+    year: '1849',
+    medium: 'painting',
+    museum: 'Tate Britain, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/millais-christ-parents/print.webp',
+    relevance: '',
+  },
+  'millet-angelus-orsay': {
+    slug: 'millet-angelus-orsay',
+    title: 'The Angelus (Prayer over harvest)',
+    artist: 'Jean-François Millet',
+    year: '1857-59',
+    medium: 'painting',
+    museum: "Musée d'Orsay, Paris",
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/millet-angelus-orsay/print.webp',
+    relevance: '',
   },
   'millet-angelus-rhythm': {
     slug: 'millet-angelus-rhythm',
@@ -10643,9 +11554,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Musée d'Orsay, Paris",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/millet-angelus-rhythm/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/millet-angelus-rhythm/print-light.webp',
+    src: '/images/devotional-prints/millet-angelus-rhythm/print.webp',
+    relevance: '',
   },
   'millet-angelus-rooted': {
     slug: 'millet-angelus-rooted',
@@ -10656,9 +11566,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Musée d'Orsay, Paris",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/millet-angelus-rooted/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/millet-angelus-rooted/print-light.webp',
+    src: '/images/devotional-prints/millet-angelus-rooted/print.webp',
+    relevance: '',
+  },
+  'millet-gleaners-orsay': {
+    slug: 'millet-gleaners-orsay',
+    title: 'The Gleaners (Ruth in the field)',
+    artist: 'Jean-François Millet',
+    year: '1857',
+    medium: 'painting',
+    museum: "Musée d'Orsay, Paris",
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/millet-gleaners-orsay/print.webp',
+    relevance: '',
+  },
+  'millet-man-hoe-getty': {
+    slug: 'millet-man-hoe-getty',
+    title: 'Man with a Hoe',
+    artist: 'Jean-François Millet',
+    year: '1860-62',
+    medium: 'painting',
+    museum: 'J. Paul Getty Museum, Los Angeles',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/millet-man-hoe-getty/print.webp',
+    relevance: '',
   },
   'millet-man-with-hoe': {
     slug: 'millet-man-with-hoe',
@@ -10669,8 +11602,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'J. Paul Getty Museum, Los Angeles',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/millet-man-with-hoe/print-dark.webp',
-    lightSrc: '/images/devotional-prints/millet-man-with-hoe/print-light.webp',
+    src: '/images/devotional-prints/millet-man-with-hoe/print.webp',
+    relevance: '',
   },
   'millet-man-with-hoe-anointed': {
     slug: 'millet-man-with-hoe-anointed',
@@ -10681,10 +11614,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'J. Paul Getty Museum, Los Angeles',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/millet-man-with-hoe-anointed/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/millet-man-with-hoe-anointed/print-light.webp',
+    src: '/images/devotional-prints/millet-man-with-hoe-anointed/print.webp',
+    relevance: '',
   },
   'millet-sower-work': {
     slug: 'millet-sower-work',
@@ -10695,8 +11626,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum of Fine Arts, Boston',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/millet-sower-work/print-dark.webp',
-    lightSrc: '/images/devotional-prints/millet-sower-work/print-light.webp',
+    src: '/images/devotional-prints/millet-sower-work/print.webp',
+    relevance: '',
+  },
+  'millet-sunday-barbizon': {
+    slug: 'millet-sunday-barbizon',
+    title: 'Sunday Barbizon',
+    artist: 'Jean-François Millet',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/millet-sunday-barbizon/print.webp',
+    relevance: '',
   },
   'millet-the-angelus': {
     slug: 'millet-the-angelus',
@@ -10707,8 +11650,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Musée d'Orsay, Paris",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/millet-the-angelus/print-dark.webp',
-    lightSrc: '/images/devotional-prints/millet-the-angelus/print-light.webp',
+    src: '/images/devotional-prints/millet-the-angelus/print.webp',
+    relevance: '',
   },
   'millet-the-gleaners': {
     slug: 'millet-the-gleaners',
@@ -10719,8 +11662,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Musée d'Orsay, Paris",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/millet-the-gleaners/print-dark.webp',
-    lightSrc: '/images/devotional-prints/millet-the-gleaners/print-light.webp',
+    src: '/images/devotional-prints/millet-the-gleaners/print.webp',
+    relevance: '',
   },
   'monet-water-lilies-creation': {
     slug: 'monet-water-lilies-creation',
@@ -10731,10 +11674,80 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Art Institute of Chicago',
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
-    darkSrc:
-      '/images/devotional-prints/monet-water-lilies-creation/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/monet-water-lilies-creation/print-light.webp',
+    src: '/images/devotional-prints/monet-water-lilies-creation/print.webp',
+    relevance: '',
+  },
+  'monticelli-garden-tuileries': {
+    slug: 'monticelli-garden-tuileries',
+    title: 'Garden Tuileries',
+    artist: 'Adolphe Monticelli',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/monticelli-garden-tuileries/print.webp',
+    relevance: '',
+  },
+  'moreau-elijah': {
+    slug: 'moreau-elijah',
+    title: 'Elijah',
+    artist: 'Gustave Moreau',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/moreau-elijah/print.webp',
+    relevance: '',
+  },
+  'moreau-job-doubt': {
+    slug: 'moreau-job-doubt',
+    title: 'Job Doubt',
+    artist: 'Gustave Moreau',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/moreau-job-doubt/print.webp',
+    relevance: '',
+  },
+  'moreau-job-end': {
+    slug: 'moreau-job-end',
+    title: 'Job End',
+    artist: 'Gustave Moreau',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/moreau-job-end/print.webp',
+    relevance: '',
+  },
+  'moreau-job-suffering': {
+    slug: 'moreau-job-suffering',
+    title: 'Job Suffering',
+    artist: 'Gustave Moreau',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/moreau-job-suffering/print.webp',
+    relevance: '',
+  },
+  'moreau-job-trials': {
+    slug: 'moreau-job-trials',
+    title: 'Job Trials',
+    artist: 'Gustave Moreau',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/moreau-job-trials/print.webp',
+    relevance: '',
   },
   'moreau-salome-dancing': {
     slug: 'moreau-salome-dancing',
@@ -10745,9 +11758,104 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée Gustave Moreau, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/moreau-salome-dancing/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/moreau-salome-dancing/print-light.webp',
+    src: '/images/devotional-prints/moreau-salome-dancing/print.webp',
+    relevance: '',
+  },
+  'mosaic-palatine-pantocrator': {
+    slug: 'mosaic-palatine-pantocrator',
+    title: 'Christ Pantocrator (Palatine Chapel)',
+    artist: 'Byzantine',
+    year: 'c.1140',
+    medium: 'mosaic',
+    museum: 'Palatine Chapel, Palermo',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/mosaic-palatine-pantocrator/print.webp',
+    relevance: '',
+  },
+  'mosaic-ravenna-christos': {
+    slug: 'mosaic-ravenna-christos',
+    title: 'Christ as Good Shepherd (Ravenna Mosaic)',
+    artist: 'Byzantine',
+    year: 'c.5th century',
+    medium: 'mosaic',
+    museum: 'Mausoleum of Galla Placidia, Ravenna',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/mosaic-ravenna-christos/print.webp',
+    relevance: '',
+  },
+  'ms-hours-duc-berry': {
+    slug: 'ms-hours-duc-berry',
+    title: 'February (Très Riches Heures)',
+    artist: 'Limbourg Brothers',
+    year: 'c.1412',
+    medium: 'manuscript',
+    museum: 'Musée Condé, Chantilly',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/ms-hours-duc-berry/print.webp',
+    relevance: '',
+  },
+  'ms-hours-duc-nativity': {
+    slug: 'ms-hours-duc-nativity',
+    title: 'Nativity (Très Riches Heures)',
+    artist: 'Limbourg Brothers',
+    year: 'c.1412',
+    medium: 'manuscript',
+    museum: 'Musée Condé, Chantilly',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/ms-hours-duc-nativity/print.webp',
+    relevance: '',
+  },
+  'ms-lindisfarne-chi-rho': {
+    slug: 'ms-lindisfarne-chi-rho',
+    title: 'Chi-Rho Page (Lindisfarne Gospels)',
+    artist: 'Eadfrith',
+    year: 'c.715',
+    medium: 'manuscript',
+    museum: 'British Library, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/ms-lindisfarne-chi-rho/print.webp',
+    relevance: '',
+  },
+  'munch-anxiety': {
+    slug: 'munch-anxiety',
+    title: 'Anxiety',
+    artist: 'Edvard Munch',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/munch-anxiety/print.webp',
+    relevance: '',
+  },
+  'murillo-angels-kitchen': {
+    slug: 'murillo-angels-kitchen',
+    title: "Angels' Kitchen (Miracle of the Angels)",
+    artist: 'Bartolomé Esteban Murillo',
+    year: '1646',
+    medium: 'painting',
+    museum: 'Musée du Louvre, Paris',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/murillo-angels-kitchen/print.webp',
+    relevance: '',
+  },
+  'murillo-good-shepherd-boy': {
+    slug: 'murillo-good-shepherd-boy',
+    title: 'The Good Shepherd (Child Christ)',
+    artist: 'Bartolomé Esteban Murillo',
+    year: 'c.1660',
+    medium: 'painting',
+    museum: 'Museo del Prado, Madrid',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/murillo-good-shepherd-boy/print.webp',
+    relevance: '',
   },
   'murillo-loaves-fishes': {
     slug: 'murillo-loaves-fishes',
@@ -10758,9 +11866,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Hospital de los Venerables, Seville',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/murillo-loaves-fishes/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/murillo-loaves-fishes/print-light.webp',
+    src: '/images/devotional-prints/murillo-loaves-fishes/print.webp',
+    relevance: '',
   },
   'murillo-mystic-marriage-catherine': {
     slug: 'murillo-mystic-marriage-catherine',
@@ -10771,10 +11878,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museo del Prado, Madrid',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/murillo-mystic-marriage-catherine/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/murillo-mystic-marriage-catherine/print-light.webp',
+    src: '/images/devotional-prints/murillo-mystic-marriage-catherine/print.webp',
+    relevance: '',
   },
   'murillo-return-prodigal': {
     slug: 'murillo-return-prodigal',
@@ -10785,10 +11890,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Gallery of Art, Washington DC',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/murillo-return-prodigal/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/murillo-return-prodigal/print-light.webp',
+    src: '/images/devotional-prints/murillo-return-prodigal/print.webp',
+    relevance: '',
+  },
+  'murillo-return-prodigal-son': {
+    slug: 'murillo-return-prodigal-son',
+    title: 'The Return of the Prodigal Son',
+    artist: 'Bartolomé Esteban Murillo',
+    year: 'c.1667-70',
+    medium: 'painting',
+    museum: 'National Gallery of Art, Washington',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/murillo-return-prodigal-son/print.webp',
+    relevance: '',
+  },
+  'nesterov-vision-bartholomew': {
+    slug: 'nesterov-vision-bartholomew',
+    title: 'The Vision of the Youth Bartholomew',
+    artist: 'Mikhail Nesterov',
+    year: '1889-90',
+    medium: 'painting',
+    museum: 'Tretyakov Gallery, Moscow',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/nesterov-vision-bartholomew/print.webp',
+    relevance: '',
   },
   'palmer-magic-apple-tree': {
     slug: 'palmer-magic-apple-tree',
@@ -10799,10 +11926,56 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Fitzwilliam Museum, Cambridge',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/palmer-magic-apple-tree/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/palmer-magic-apple-tree/print-light.webp',
+    src: '/images/devotional-prints/palmer-magic-apple-tree/print.webp',
+    relevance: '',
+  },
+  'perugino-crucifixion': {
+    slug: 'perugino-crucifixion',
+    title: 'Crucifixion with Saints',
+    artist: 'Pietro Perugino',
+    year: 'c.1481',
+    medium: 'fresco',
+    museum: 'Santa Maria Maddalena dei Pazzi, Florence',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/perugino-crucifixion/print.webp',
+    relevance: '',
+  },
+  'perugino-delivery-keys': {
+    slug: 'perugino-delivery-keys',
+    title: 'Christ Handing the Keys to Saint Peter',
+    artist: 'Pietro Perugino',
+    year: '1481',
+    medium: 'fresco',
+    museum: 'Sistine Chapel, Vatican',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/perugino-delivery-keys/print.webp',
+    relevance: '',
+  },
+  'piero-baptism-christ': {
+    slug: 'piero-baptism-christ',
+    title: 'The Baptism of Christ',
+    artist: 'Piero della Francesca',
+    year: 'c.1448',
+    medium: 'painting',
+    museum: 'National Gallery, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/piero-baptism-christ/print.webp',
+    relevance: '',
+  },
+  'piero-resurrection': {
+    slug: 'piero-resurrection',
+    title: 'The Resurrection',
+    artist: 'Piero della Francesca',
+    year: 'c.1463',
+    medium: 'fresco',
+    museum: 'Palazzo della Residenza, Sansepolcro',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/piero-resurrection/print.webp',
+    relevance: '',
   },
   'pontormo-two-friends': {
     slug: 'pontormo-two-friends',
@@ -10813,8 +11986,68 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Fondazione Cini, Venice',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/pontormo-two-friends/print-dark.webp',
-    lightSrc: '/images/devotional-prints/pontormo-two-friends/print-light.webp',
+    src: '/images/devotional-prints/pontormo-two-friends/print.webp',
+    relevance: '',
+  },
+  'poussin-stoning-saint-stephen': {
+    slug: 'poussin-stoning-saint-stephen',
+    title: 'Stoning Saint Stephen',
+    artist: 'Nicolas Poussin',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/poussin-stoning-saint-stephen/print.webp',
+    relevance: '',
+  },
+  'poussin-stoning-stephen-1625': {
+    slug: 'poussin-stoning-stephen-1625',
+    title: 'Stoning Stephen 1625',
+    artist: 'Nicolas Poussin',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/poussin-stoning-stephen-1625/print.webp',
+    relevance: '',
+  },
+  'poynter-israel-egypt': {
+    slug: 'poynter-israel-egypt',
+    title: 'Israel in Egypt',
+    artist: 'Edward John Poynter',
+    year: '1867',
+    medium: 'painting',
+    museum: 'Guildhall Art Gallery, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/poynter-israel-egypt/print.webp',
+    relevance: '',
+  },
+  'poynter-visit-queen-sheba': {
+    slug: 'poynter-visit-queen-sheba',
+    title: 'The Visit of the Queen of Sheba',
+    artist: 'Edward John Poynter',
+    year: '1890',
+    medium: 'painting',
+    museum: 'Art Gallery of New South Wales',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/poynter-visit-queen-sheba/print.webp',
+    relevance: '',
+  },
+  'provost-adoration-kings': {
+    slug: 'provost-adoration-kings',
+    title: 'The Adoration of the Kings',
+    artist: 'Jan Provost',
+    year: 'c.1515',
+    medium: 'painting',
+    museum: 'Musée du Louvre, Paris',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/provost-adoration-kings/print.webp',
+    relevance: '',
   },
   'raphael-apostle-paul-preaching': {
     slug: 'raphael-apostle-paul-preaching',
@@ -10825,10 +12058,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Victoria and Albert Museum, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/raphael-apostle-paul-preaching/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/raphael-apostle-paul-preaching/print-light.webp',
+    src: '/images/devotional-prints/raphael-apostle-paul-preaching/print.webp',
+    relevance: '',
   },
   'raphael-conversion-paul': {
     slug: 'raphael-conversion-paul',
@@ -10839,10 +12070,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Victoria and Albert Museum, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/raphael-conversion-paul/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/raphael-conversion-paul/print-light.webp',
+    src: '/images/devotional-prints/raphael-conversion-paul/print.webp',
+    relevance: '',
   },
   'raphael-god-father-school': {
     slug: 'raphael-god-father-school',
@@ -10853,10 +12082,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Apostolic Palace, Vatican',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/raphael-god-father-school/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/raphael-god-father-school/print-light.webp',
+    src: '/images/devotional-prints/raphael-god-father-school/print.webp',
+    relevance: '',
   },
   'raphael-healing-lame-man': {
     slug: 'raphael-healing-lame-man',
@@ -10867,10 +12094,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Victoria and Albert Museum, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/raphael-healing-lame-man/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/raphael-healing-lame-man/print-light.webp',
+    src: '/images/devotional-prints/raphael-healing-lame-man/print.webp',
+    relevance: '',
   },
   'raphael-healing-lame-man-2': {
     slug: 'raphael-healing-lame-man-2',
@@ -10881,10 +12106,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Victoria and Albert Museum, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/raphael-healing-lame-man-2/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/raphael-healing-lame-man-2/print-light.webp',
+    src: '/images/devotional-prints/raphael-healing-lame-man-2/print.webp',
+    relevance: '',
   },
   'raphael-paul-preaching-athens': {
     slug: 'raphael-paul-preaching-athens',
@@ -10895,10 +12118,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Victoria and Albert Museum, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/raphael-paul-preaching-athens/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/raphael-paul-preaching-athens/print-light.webp',
+    src: '/images/devotional-prints/raphael-paul-preaching-athens/print.webp',
+    relevance: '',
   },
   'raphael-school-athens-standing': {
     slug: 'raphael-school-athens-standing',
@@ -10909,10 +12130,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Apostolic Palace, Vatican',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/raphael-school-athens-standing/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/raphael-school-athens-standing/print-light.webp',
+    src: '/images/devotional-prints/raphael-school-athens-standing/print.webp',
+    relevance: '',
   },
   'raphael-school-of-athens': {
     slug: 'raphael-school-of-athens',
@@ -10923,10 +12142,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Apostolic Palace, Vatican',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/raphael-school-of-athens/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/raphael-school-of-athens/print-light.webp',
+    src: '/images/devotional-prints/raphael-school-of-athens/print.webp',
+    relevance: '',
   },
   'raphael-transfiguration': {
     slug: 'raphael-transfiguration',
@@ -10937,10 +12154,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Pinacoteca Vaticana, Vatican',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/raphael-transfiguration/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/raphael-transfiguration/print-light.webp',
+    src: '/images/devotional-prints/raphael-transfiguration/print.webp',
+    relevance: '',
   },
   'rembrandt-abraham-isaac': {
     slug: 'rembrandt-abraham-isaac',
@@ -10951,10 +12166,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Hermitage Museum, St. Petersburg',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-abraham-isaac/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-abraham-isaac/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-abraham-isaac/print.webp',
+    relevance: '',
   },
   'rembrandt-adam-eve-etching': {
     slug: 'rembrandt-adam-eve-etching',
@@ -10965,10 +12178,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'British Museum, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-adam-eve-etching/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-adam-eve-etching/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-adam-eve-etching/print.webp',
+    relevance: '',
   },
   'rembrandt-apostle-paul-galatians': {
     slug: 'rembrandt-apostle-paul-galatians',
@@ -10979,10 +12190,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Gallery of Art, Washington DC',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-apostle-paul-galatians/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-apostle-paul-galatians/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-apostle-paul-galatians/print.webp',
+    relevance: '',
   },
   'rembrandt-apostle-paul-standing': {
     slug: 'rembrandt-apostle-paul-standing',
@@ -10993,10 +12202,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Gallery of Art, Washington DC',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-apostle-paul-standing/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-apostle-paul-standing/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-apostle-paul-standing/print.webp',
+    relevance: '',
   },
   'rembrandt-apostle-paul-writing': {
     slug: 'rembrandt-apostle-paul-writing',
@@ -11007,10 +12214,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Gallery of Art, Washington DC',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-apostle-paul-writing/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-apostle-paul-writing/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-apostle-paul-writing/print.webp',
+    relevance: '',
   },
   'rembrandt-apostle-peter-prison': {
     slug: 'rembrandt-apostle-peter-prison',
@@ -11021,10 +12226,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Various collections',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-apostle-peter-prison/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-apostle-peter-prison/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-apostle-peter-prison/print.webp',
+    relevance: '',
   },
   'rembrandt-baptism-christ': {
     slug: 'rembrandt-baptism-christ',
@@ -11035,10 +12238,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rijksmuseum, Amsterdam',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-baptism-christ/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-baptism-christ/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-baptism-christ/print.webp',
+    relevance: '',
+  },
+  'rembrandt-belshazzar': {
+    slug: 'rembrandt-belshazzar',
+    title: "Belshazzar's Feast",
+    artist: 'Rembrandt van Rijn',
+    year: 'c.1636',
+    medium: 'painting',
+    museum: 'National Gallery, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rembrandt-belshazzar/print.webp',
+    relevance: '',
   },
   'rembrandt-christ-cross-etching': {
     slug: 'rembrandt-christ-cross-etching',
@@ -11049,10 +12262,56 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum Het Rembrandthuis, Amsterdam',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-christ-cross-etching/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-christ-cross-etching/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-christ-cross-etching/print.webp',
+    relevance: '',
+  },
+  'rembrandt-david-bathsheba': {
+    slug: 'rembrandt-david-bathsheba',
+    title: 'Bathsheba at Her Bath',
+    artist: 'Rembrandt van Rijn',
+    year: '1654',
+    medium: 'painting',
+    museum: 'Louvre, Paris',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rembrandt-david-bathsheba/print.webp',
+    relevance: '',
+  },
+  'rembrandt-descent-cross': {
+    slug: 'rembrandt-descent-cross',
+    title: 'The Descent from the Cross',
+    artist: 'Rembrandt van Rijn',
+    year: '1634',
+    medium: 'painting',
+    museum: 'Alte Pinakothek, Munich',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rembrandt-descent-cross/print.webp',
+    relevance: '',
+  },
+  'rembrandt-esther-feast': {
+    slug: 'rembrandt-esther-feast',
+    title: 'Haman Recognizes His Fate',
+    artist: 'Rembrandt van Rijn',
+    year: 'c.1665',
+    medium: 'painting',
+    museum: 'Hermitage Museum, St. Petersburg',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rembrandt-esther-feast/print.webp',
+    relevance: '',
+  },
+  'rembrandt-holy-family': {
+    slug: 'rembrandt-holy-family',
+    title: 'The Holy Family',
+    artist: 'Rembrandt van Rijn',
+    year: '1645',
+    medium: 'painting',
+    museum: 'Hermitage Museum, St. Petersburg',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rembrandt-holy-family/print.webp',
+    relevance: '',
   },
   'rembrandt-jacob-wrestling-angel': {
     slug: 'rembrandt-jacob-wrestling-angel',
@@ -11063,10 +12322,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Gemäldegalerie, Berlin',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-jacob-wrestling-angel/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-jacob-wrestling-angel/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-jacob-wrestling-angel/print.webp',
+    relevance: '',
   },
   'rembrandt-jacob-wrestling-belief': {
     slug: 'rembrandt-jacob-wrestling-belief',
@@ -11077,10 +12334,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Gemäldegalerie, Berlin',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-jacob-wrestling-belief/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-jacob-wrestling-belief/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-jacob-wrestling-belief/print.webp',
+    relevance: '',
   },
   'rembrandt-jacob-wrestling-rooted': {
     slug: 'rembrandt-jacob-wrestling-rooted',
@@ -11091,10 +12346,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Gemäldegalerie, Berlin',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-jacob-wrestling-rooted/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-jacob-wrestling-rooted/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-jacob-wrestling-rooted/print.webp',
+    relevance: '',
+  },
+  'rembrandt-jeremiah': {
+    slug: 'rembrandt-jeremiah',
+    title: 'Jeremiah Lamenting the Destruction of Jerusalem',
+    artist: 'Rembrandt van Rijn',
+    year: '1630',
+    medium: 'painting',
+    museum: 'Rijksmuseum, Amsterdam',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rembrandt-jeremiah/print.webp',
+    relevance: '',
+  },
+  'rembrandt-joseph-coat-brothers': {
+    slug: 'rembrandt-joseph-coat-brothers',
+    title: 'Joseph Coat Brothers',
+    artist: 'Rembrandt van Rijn',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rembrandt-joseph-coat-brothers/print.webp',
+    relevance: '',
+  },
+  'rembrandt-moses-tablets': {
+    slug: 'rembrandt-moses-tablets',
+    title: 'Moses with the Tablets of the Law',
+    artist: 'Rembrandt van Rijn',
+    year: '1659',
+    medium: 'painting',
+    museum: 'Gemäldegalerie, Berlin',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rembrandt-moses-tablets/print.webp',
+    relevance: '',
   },
   'rembrandt-old-man-praying': {
     slug: 'rembrandt-old-man-praying',
@@ -11105,10 +12394,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Kunsthistorisches Museum, Vienna',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-old-man-praying/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-old-man-praying/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-old-man-praying/print.webp',
+    relevance: '',
+  },
+  'rembrandt-peter-denies': {
+    slug: 'rembrandt-peter-denies',
+    title: 'Peter Denies Christ',
+    artist: 'Rembrandt van Rijn',
+    year: '1660',
+    medium: 'painting',
+    museum: 'Rijksmuseum, Amsterdam',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rembrandt-peter-denies/print.webp',
+    relevance: '',
   },
   'rembrandt-philip-baptizing-ethiopian': {
     slug: 'rembrandt-philip-baptizing-ethiopian',
@@ -11119,10 +12418,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum Catharijneconvent, Utrecht',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-philip-baptizing-ethiopian/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-philip-baptizing-ethiopian/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-philip-baptizing-ethiopian/print.webp',
+    relevance: '',
   },
   'rembrandt-philip-ethiopian-2': {
     slug: 'rembrandt-philip-ethiopian-2',
@@ -11133,10 +12430,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museum Catharijneconvent, Utrecht',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-philip-ethiopian-2/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-philip-ethiopian-2/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-philip-ethiopian-2/print.webp',
+    relevance: '',
   },
   'rembrandt-prodigal-son-return': {
     slug: 'rembrandt-prodigal-son-return',
@@ -11147,10 +12442,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Hermitage Museum, St. Petersburg',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-prodigal-son-return/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-prodigal-son-return/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-prodigal-son-return/print.webp',
+    relevance: '',
   },
   'rembrandt-prodigal-son-tavern': {
     slug: 'rembrandt-prodigal-son-tavern',
@@ -11161,10 +12454,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Gemäldegalerie Alte Meister, Dresden',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-prodigal-son-tavern/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-prodigal-son-tavern/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-prodigal-son-tavern/print.webp',
+    relevance: '',
   },
   'rembrandt-raising-lazarus': {
     slug: 'rembrandt-raising-lazarus',
@@ -11175,10 +12466,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Los Angeles County Museum of Art',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-raising-lazarus/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-raising-lazarus/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-raising-lazarus/print.webp',
+    relevance: '',
+  },
+  'rembrandt-rest-egypt': {
+    slug: 'rembrandt-rest-egypt',
+    title: 'Rest on the Flight into Egypt',
+    artist: 'Rembrandt van Rijn',
+    year: 'c.1647',
+    medium: 'painting',
+    museum: 'National Gallery of Ireland',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rembrandt-rest-egypt/print.webp',
+    relevance: '',
   },
   'rembrandt-return-prodigal-end': {
     slug: 'rembrandt-return-prodigal-end',
@@ -11189,10 +12490,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Hermitage Museum, St. Petersburg',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-return-prodigal-end/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-return-prodigal-end/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-return-prodigal-end/print.webp',
+    relevance: '',
   },
   'rembrandt-return-prodigal-grace': {
     slug: 'rembrandt-return-prodigal-grace',
@@ -11203,10 +12502,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Hermitage Museum, St. Petersburg',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-return-prodigal-grace/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-return-prodigal-grace/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-return-prodigal-grace/print.webp',
+    relevance: '',
   },
   'rembrandt-return-prodigal-son': {
     slug: 'rembrandt-return-prodigal-son',
@@ -11217,10 +12514,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Hermitage Museum, St. Petersburg',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-return-prodigal-son/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-return-prodigal-son/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-return-prodigal-son/print.webp',
+    relevance: '',
   },
   'rembrandt-rich-young-ruler': {
     slug: 'rembrandt-rich-young-ruler',
@@ -11231,10 +12526,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rembrandt House Museum, Amsterdam',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-rich-young-ruler/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-rich-young-ruler/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-rich-young-ruler/print.webp',
+    relevance: '',
   },
   'rembrandt-samuel-anointing-david': {
     slug: 'rembrandt-samuel-anointing-david',
@@ -11245,10 +12538,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Private Collection',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-samuel-anointing-david/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-samuel-anointing-david/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-samuel-anointing-david/print.webp',
+    relevance: '',
+  },
+  'rembrandt-saul-david': {
+    slug: 'rembrandt-saul-david',
+    title: 'Saul and David',
+    artist: 'Rembrandt van Rijn',
+    year: 'c.1655',
+    medium: 'painting',
+    museum: 'Mauritshuis, The Hague',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rembrandt-saul-david/print.webp',
+    relevance: '',
   },
   'rembrandt-scholar-study': {
     slug: 'rembrandt-scholar-study',
@@ -11259,10 +12562,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Gemäldegalerie, Berlin',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-scholar-study/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-scholar-study/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-scholar-study/print.webp',
+    relevance: '',
   },
   'rembrandt-self-portrait-63': {
     slug: 'rembrandt-self-portrait-63',
@@ -11273,10 +12574,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Gallery, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-self-portrait-63/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-self-portrait-63/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-self-portrait-63/print.webp',
+    relevance: '',
   },
   'rembrandt-self-portrait-old': {
     slug: 'rembrandt-self-portrait-old',
@@ -11287,10 +12586,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Gallery, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-self-portrait-old/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-self-portrait-old/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-self-portrait-old/print.webp',
+    relevance: '',
   },
   'rembrandt-self-portrait-two-circles': {
     slug: 'rembrandt-self-portrait-two-circles',
@@ -11301,10 +12598,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Kenwood House, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-self-portrait-two-circles/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-self-portrait-two-circles/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-self-portrait-two-circles/print.webp',
+    relevance: '',
   },
   'rembrandt-self-portrait-valued': {
     slug: 'rembrandt-self-portrait-valued',
@@ -11315,10 +12610,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Gallery, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-self-portrait-valued/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-self-portrait-valued/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-self-portrait-valued/print.webp',
+    relevance: '',
+  },
+  'rembrandt-simeon-temple': {
+    slug: 'rembrandt-simeon-temple',
+    title: 'Simeon in the Temple',
+    artist: 'Rembrandt van Rijn',
+    year: '1669',
+    medium: 'painting',
+    museum: 'Nationalmuseum, Stockholm',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rembrandt-simeon-temple/print.webp',
+    relevance: '',
   },
   'rembrandt-stoning-saint-stephen': {
     slug: 'rembrandt-stoning-saint-stephen',
@@ -11329,10 +12634,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée des Beaux-Arts, Lyon',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-stoning-saint-stephen/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-stoning-saint-stephen/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-stoning-saint-stephen/print.webp',
+    relevance: '',
   },
   'rembrandt-stoning-stephen-1625': {
     slug: 'rembrandt-stoning-stephen-1625',
@@ -11343,10 +12646,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée des Beaux-Arts, Lyon',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-stoning-stephen-1625/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-stoning-stephen-1625/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-stoning-stephen-1625/print.webp',
+    relevance: '',
   },
   'rembrandt-storm-sea-galilee': {
     slug: 'rembrandt-storm-sea-galilee',
@@ -11357,10 +12658,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Isabella Stewart Gardner Museum, Boston',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-storm-sea-galilee/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-storm-sea-galilee/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-storm-sea-galilee/print.webp',
+    relevance: '',
   },
   'rembrandt-supper-emmaus': {
     slug: 'rembrandt-supper-emmaus',
@@ -11371,10 +12670,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-supper-emmaus/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-supper-emmaus/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-supper-emmaus/print.webp',
+    relevance: '',
+  },
+  'rembrandt-susanna-elders': {
+    slug: 'rembrandt-susanna-elders',
+    title: 'Susanna and the Elders',
+    artist: 'Rembrandt van Rijn',
+    year: '1647',
+    medium: 'painting',
+    museum: 'Gemäldegalerie, Berlin',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/rembrandt-susanna-elders/print.webp',
+    relevance: '',
   },
   'rembrandt-thomas-apostle': {
     slug: 'rembrandt-thomas-apostle',
@@ -11385,10 +12694,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Pushkin Museum of Fine Arts, Moscow',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-thomas-apostle/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-thomas-apostle/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-thomas-apostle/print.webp',
+    relevance: '',
   },
   'rembrandt-titus-reading': {
     slug: 'rembrandt-titus-reading',
@@ -11399,10 +12706,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Kunsthistorisches Museum, Vienna',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-titus-reading/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-titus-reading/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-titus-reading/print.webp',
+    relevance: '',
+  },
+  'rembrandt-woman-adultery': {
+    slug: 'rembrandt-woman-adultery',
+    title: 'Woman Adultery',
+    artist: 'Rembrandt van Rijn',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rembrandt-woman-adultery/print.webp',
+    relevance: '',
   },
   'rembrandt-workers-vineyard': {
     slug: 'rembrandt-workers-vineyard',
@@ -11413,10 +12730,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Hermitage Museum, St. Petersburg',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/rembrandt-workers-vineyard/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rembrandt-workers-vineyard/print-light.webp',
+    src: '/images/devotional-prints/rembrandt-workers-vineyard/print.webp',
+    relevance: '',
+  },
+  'reni-annunciation-shepherds': {
+    slug: 'reni-annunciation-shepherds',
+    title: 'Annunciation Shepherds',
+    artist: 'Guido Reni',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/reni-annunciation-shepherds/print.webp',
+    relevance: '',
+  },
+  'reni-good-shepherd': {
+    slug: 'reni-good-shepherd',
+    title: 'Good Shepherd',
+    artist: 'Guido Reni',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/reni-good-shepherd/print.webp',
+    relevance: '',
+  },
+  'reni-good-shepherd-day1': {
+    slug: 'reni-good-shepherd-day1',
+    title: 'Good Shepherd Day1',
+    artist: 'Guido Reni',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/reni-good-shepherd-day1/print.webp',
+    relevance: '',
   },
   'reni-massacre-innocents': {
     slug: 'reni-massacre-innocents',
@@ -11427,10 +12778,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Pinacoteca Nazionale, Bologna',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/reni-massacre-innocents/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/reni-massacre-innocents/print-light.webp',
+    src: '/images/devotional-prints/reni-massacre-innocents/print.webp',
+    relevance: '',
+  },
+  'repin-resurrection-jairus': {
+    slug: 'repin-resurrection-jairus',
+    title: "The Raising of Jairus's Daughter",
+    artist: 'Ilya Repin',
+    year: '1871',
+    medium: 'painting',
+    museum: 'State Russian Museum, St. Petersburg',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/repin-resurrection-jairus/print.webp',
+    relevance: '',
+  },
+  'rossetti-beata-beatrix': {
+    slug: 'rossetti-beata-beatrix',
+    title: 'Beata Beatrix',
+    artist: 'Dante Gabriel Rossetti',
+    year: '1870',
+    medium: 'painting',
+    museum: 'Tate Britain, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/rossetti-beata-beatrix/print.webp',
+    relevance: '',
+  },
+  'rossetti-ecce-ancilla': {
+    slug: 'rossetti-ecce-ancilla',
+    title: 'Ecce Ancilla Domini',
+    artist: 'Dante Gabriel Rossetti',
+    year: '1850',
+    medium: 'painting',
+    museum: 'Tate Britain, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/rossetti-ecce-ancilla/print.webp',
+    relevance: '',
   },
   'rubens-anointing-christ-feet': {
     slug: 'rubens-anointing-christ-feet',
@@ -11441,10 +12826,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Hermitage Museum, St. Petersburg',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/rubens-anointing-christ-feet/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rubens-anointing-christ-feet/print-light.webp',
+    src: '/images/devotional-prints/rubens-anointing-christ-feet/print.webp',
+    relevance: '',
+  },
+  'rubens-descent-cross': {
+    slug: 'rubens-descent-cross',
+    title: 'The Descent from the Cross',
+    artist: 'Peter Paul Rubens',
+    year: '1612',
+    medium: 'painting',
+    museum: 'Cathedral of Our Lady, Antwerp',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rubens-descent-cross/print.webp',
+    relevance: '',
+  },
+  'rubens-elevation-cross': {
+    slug: 'rubens-elevation-cross',
+    title: 'The Elevation of the Cross',
+    artist: 'Peter Paul Rubens',
+    year: '1610',
+    medium: 'painting',
+    museum: 'Cathedral of Our Lady, Antwerp',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/rubens-elevation-cross/print.webp',
+    relevance: '',
+  },
+  'rubens-last-supper': {
+    slug: 'rubens-last-supper',
+    title: 'The Last Supper',
+    artist: 'Peter Paul Rubens',
+    year: '1630',
+    medium: 'painting',
+    museum: 'Pinacoteca di Brera, Milan',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rubens-last-supper/print.webp',
+    relevance: '',
   },
   'rubens-saint-peter-tribute': {
     slug: 'rubens-saint-peter-tribute',
@@ -11455,10 +12874,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Academy of Fine Arts, San Francisco',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/rubens-saint-peter-tribute/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rubens-saint-peter-tribute/print-light.webp',
+    src: '/images/devotional-prints/rubens-saint-peter-tribute/print.webp',
+    relevance: '',
+  },
+  'rubens-samson-delilah': {
+    slug: 'rubens-samson-delilah',
+    title: 'Samson and Delilah',
+    artist: 'Peter Paul Rubens',
+    year: 'c.1609',
+    medium: 'painting',
+    museum: 'National Gallery, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/rubens-samson-delilah/print.webp',
+    relevance: '',
   },
   'rubens-washing-of-feet': {
     slug: 'rubens-washing-of-feet',
@@ -11469,9 +12898,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Koninklijk Museum, Antwerp',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/rubens-washing-of-feet/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/rubens-washing-of-feet/print-light.webp',
+    src: '/images/devotional-prints/rubens-washing-of-feet/print.webp',
+    relevance: '',
+  },
+  'rublev-trinity-icon': {
+    slug: 'rublev-trinity-icon',
+    title: 'The Trinity (Hospitality of Abraham)',
+    artist: 'Andrei Rublev',
+    year: 'c.1410',
+    medium: 'icon',
+    museum: 'Tretyakov Gallery, Moscow',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/rublev-trinity-icon/print.webp',
+    relevance: '',
+  },
+  'sassetta-journey-magi': {
+    slug: 'sassetta-journey-magi',
+    title: 'Journey of the Magi',
+    artist: 'Sassetta',
+    year: '1435',
+    medium: 'painting',
+    museum: 'Metropolitan Museum of Art, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/sassetta-journey-magi/print.webp',
+    relevance: '',
   },
   'scheffer-temptation-christ': {
     slug: 'scheffer-temptation-christ',
@@ -11482,10 +12934,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Dordrecht Museum',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/scheffer-temptation-christ/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/scheffer-temptation-christ/print-light.webp',
+    src: '/images/devotional-prints/scheffer-temptation-christ/print.webp',
+    relevance: '',
   },
   'sculpt-bernini-angel-cross': {
     slug: 'sculpt-bernini-angel-cross',
@@ -11496,10 +12946,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Sant'Andrea delle Fratte, Rome",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-bernini-angel-cross/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-bernini-angel-cross/print-light.webp',
+    src: '/images/devotional-prints/sculpt-bernini-angel-cross/print.webp',
+    relevance: '',
+  },
+  'sculpt-bernini-david': {
+    slug: 'sculpt-bernini-david',
+    title: 'David',
+    artist: 'Gian Lorenzo Bernini',
+    year: '1623',
+    medium: 'sculpture',
+    museum: 'Borghese Gallery, Rome',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/sculpt-bernini-david/print.webp',
+    relevance: '',
   },
   'sculpt-bernini-saint-teresa': {
     slug: 'sculpt-bernini-saint-teresa',
@@ -11510,10 +12970,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Santa Maria della Vittoria, Rome',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-bernini-saint-teresa/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-bernini-saint-teresa/print-light.webp',
+    src: '/images/devotional-prints/sculpt-bernini-saint-teresa/print.webp',
+    relevance: '',
   },
   'sculpt-bourdelle-beethoven': {
     slug: 'sculpt-bourdelle-beethoven',
@@ -11524,10 +12982,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée Bourdelle, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-bourdelle-beethoven/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-bourdelle-beethoven/print-light.webp',
+    src: '/images/devotional-prints/sculpt-bourdelle-beethoven/print.webp',
+    relevance: '',
   },
   'sculpt-bourdelle-beethoven-endure': {
     slug: 'sculpt-bourdelle-beethoven-endure',
@@ -11538,10 +12994,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée Bourdelle, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/print-light.webp',
+    src: '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/print.webp',
+    relevance: '',
   },
   'sculpt-donatello-marble-david': {
     slug: 'sculpt-donatello-marble-david',
@@ -11552,10 +13006,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museo Nazionale del Bargello, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-donatello-marble-david/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-donatello-marble-david/print-light.webp',
+    src: '/images/devotional-prints/sculpt-donatello-marble-david/print.webp',
+    relevance: '',
   },
   'sculpt-donatello-saint-george': {
     slug: 'sculpt-donatello-saint-george',
@@ -11566,10 +13018,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museo Nazionale del Bargello, Florence',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-donatello-saint-george/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-donatello-saint-george/print-light.webp',
+    src: '/images/devotional-prints/sculpt-donatello-saint-george/print.webp',
+    relevance: '',
   },
   'sculpt-ghiberti-gates-detail': {
     slug: 'sculpt-ghiberti-gates-detail',
@@ -11580,10 +13030,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Museo dell'Opera del Duomo, Florence",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-ghiberti-gates-detail/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-ghiberti-gates-detail/print-light.webp',
+    src: '/images/devotional-prints/sculpt-ghiberti-gates-detail/print.webp',
+    relevance: '',
+  },
+  'sculpt-ghiberti-gates-moses': {
+    slug: 'sculpt-ghiberti-gates-moses',
+    title: 'Gates of Paradise — Moses Panel',
+    artist: 'Lorenzo Ghiberti',
+    year: 'c.1435',
+    medium: 'sculpture',
+    museum: 'Baptistery, Florence',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/sculpt-ghiberti-gates-moses/print.webp',
+    relevance: '',
   },
   'sculpt-ghiberti-gates-paradise-manna': {
     slug: 'sculpt-ghiberti-gates-paradise-manna',
@@ -11594,10 +13054,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Museo dell'Opera del Duomo, Florence",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/print-light.webp',
+    src: '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/print.webp',
+    relevance: '',
+  },
+  'sculpt-ghiberti-gates-solomon': {
+    slug: 'sculpt-ghiberti-gates-solomon',
+    title: 'Gates of Paradise — Solomon and Queen of Sheba',
+    artist: 'Lorenzo Ghiberti',
+    year: 'c.1435',
+    medium: 'sculpture',
+    museum: 'Baptistery, Florence',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/sculpt-ghiberti-gates-solomon/print.webp',
+    relevance: '',
   },
   'sculpt-laocoon-sons': {
     slug: 'sculpt-laocoon-sons',
@@ -11608,8 +13078,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Vatican Museums, Rome',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/sculpt-laocoon-sons/print-dark.webp',
-    lightSrc: '/images/devotional-prints/sculpt-laocoon-sons/print-light.webp',
+    src: '/images/devotional-prints/sculpt-laocoon-sons/print.webp',
+    relevance: '',
+  },
+  'sculpt-michelangelo-awakening-slave': {
+    slug: 'sculpt-michelangelo-awakening-slave',
+    title: 'Awakening Slave',
+    artist: 'Michelangelo',
+    year: '',
+    medium: 'sculpture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/sculpt-michelangelo-awakening-slave/print.webp',
+    relevance: '',
   },
   'sculpt-michelangelo-david-standing': {
     slug: 'sculpt-michelangelo-david-standing',
@@ -11620,10 +13102,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Galleria dell'Accademia, Florence",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-michelangelo-david-standing/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-michelangelo-david-standing/print-light.webp',
+    src: '/images/devotional-prints/sculpt-michelangelo-david-standing/print.webp',
+    relevance: '',
+  },
+  'sculpt-michelangelo-moses': {
+    slug: 'sculpt-michelangelo-moses',
+    title: 'Moses',
+    artist: 'Michelangelo',
+    year: '1513',
+    medium: 'sculpture',
+    museum: 'San Pietro in Vincoli, Rome',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/sculpt-michelangelo-moses/print.webp',
+    relevance: '',
   },
   'sculpt-michelangelo-pieta': {
     slug: 'sculpt-michelangelo-pieta',
@@ -11634,10 +13126,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "St. Peter's Basilica, Vatican",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-michelangelo-pieta/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-michelangelo-pieta/print-light.webp',
+    src: '/images/devotional-prints/sculpt-michelangelo-pieta/print.webp',
+    relevance: '',
   },
   'sculpt-michelangelo-pieta-cross': {
     slug: 'sculpt-michelangelo-pieta-cross',
@@ -11648,10 +13138,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "St. Peter's Basilica, Vatican",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-michelangelo-pieta-cross/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-michelangelo-pieta-cross/print-light.webp',
+    src: '/images/devotional-prints/sculpt-michelangelo-pieta-cross/print.webp',
+    relevance: '',
   },
   'sculpt-michelangelo-pieta-end': {
     slug: 'sculpt-michelangelo-pieta-end',
@@ -11662,10 +13150,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "St. Peter's Basilica, Vatican",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-michelangelo-pieta-end/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-michelangelo-pieta-end/print-light.webp',
+    src: '/images/devotional-prints/sculpt-michelangelo-pieta-end/print.webp',
+    relevance: '',
   },
   'sculpt-rodin-burghers-calais': {
     slug: 'sculpt-rodin-burghers-calais',
@@ -11676,10 +13162,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée Rodin, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-rodin-burghers-calais/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-rodin-burghers-calais/print-light.webp',
+    src: '/images/devotional-prints/sculpt-rodin-burghers-calais/print.webp',
+    relevance: '',
   },
   'sculpt-rodin-prodigal-son': {
     slug: 'sculpt-rodin-prodigal-son',
@@ -11690,10 +13174,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée Rodin, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-rodin-prodigal-son/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-rodin-prodigal-son/print-light.webp',
+    src: '/images/devotional-prints/sculpt-rodin-prodigal-son/print.webp',
+    relevance: '',
   },
   'sculpt-rodin-prodigal-son-sin': {
     slug: 'sculpt-rodin-prodigal-son-sin',
@@ -11704,10 +13186,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée Rodin, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-rodin-prodigal-son-sin/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-rodin-prodigal-son-sin/print-light.webp',
+    src: '/images/devotional-prints/sculpt-rodin-prodigal-son-sin/print.webp',
+    relevance: '',
   },
   'sculpt-rodin-thinker': {
     slug: 'sculpt-rodin-thinker',
@@ -11718,8 +13198,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée Rodin, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/sculpt-rodin-thinker/print-dark.webp',
-    lightSrc: '/images/devotional-prints/sculpt-rodin-thinker/print-light.webp',
+    src: '/images/devotional-prints/sculpt-rodin-thinker/print.webp',
+    relevance: '',
+  },
+  'sculpt-sluter-well-moses': {
+    slug: 'sculpt-sluter-well-moses',
+    title: 'The Well of Moses',
+    artist: 'Claus Sluter',
+    year: 'c.1395',
+    medium: 'sculpture',
+    museum: 'Chartreuse de Champmol, Dijon',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/sculpt-sluter-well-moses/print.webp',
+    relevance: '',
   },
   'sculpt-themis-justice': {
     slug: 'sculpt-themis-justice',
@@ -11730,9 +13222,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Archaeological Museum, Athens',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/sculpt-themis-justice/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-themis-justice/print-light.webp',
+    src: '/images/devotional-prints/sculpt-themis-justice/print.webp',
+    relevance: '',
+  },
+  'sculpt-thorvaldsen-christ': {
+    slug: 'sculpt-thorvaldsen-christ',
+    title: 'Christ',
+    artist: 'Bertel Thorvaldsen',
+    year: '',
+    medium: 'sculpture',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/sculpt-thorvaldsen-christ/print.webp',
+    relevance: '',
   },
   'sculpt-thorvaldsen-christ-grace': {
     slug: 'sculpt-thorvaldsen-christ-grace',
@@ -11743,10 +13246,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Church of Our Lady, Copenhagen',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-thorvaldsen-christ-grace/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-thorvaldsen-christ-grace/print-light.webp',
+    src: '/images/devotional-prints/sculpt-thorvaldsen-christ-grace/print.webp',
+    relevance: '',
   },
   'sculpt-winged-victory-samothrace': {
     slug: 'sculpt-winged-victory-samothrace',
@@ -11757,10 +13258,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/sculpt-winged-victory-samothrace/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/sculpt-winged-victory-samothrace/print-light.webp',
+    src: '/images/devotional-prints/sculpt-winged-victory-samothrace/print.webp',
+    relevance: '',
+  },
+  'siemiradzki-neros-torches': {
+    slug: 'siemiradzki-neros-torches',
+    title: "Nero's Torches",
+    artist: 'Henryk Siemiradzki',
+    year: '1876',
+    medium: 'painting',
+    museum: 'National Museum, Kraków',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/siemiradzki-neros-torches/print.webp',
+    relevance: '',
+  },
+  'siemiradzki-torches-nero': {
+    slug: 'siemiradzki-torches-nero',
+    title: 'Torches of Nero (Christian Martyrs)',
+    artist: 'Henryk Siemiradzki',
+    year: '1876',
+    medium: 'painting',
+    museum: 'National Museum, Kraków',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/siemiradzki-torches-nero/print.webp',
+    relevance: '',
+  },
+  'signorelli-resurrection-dead': {
+    slug: 'signorelli-resurrection-dead',
+    title: 'The Resurrection of the Dead',
+    artist: 'Luca Signorelli',
+    year: '1499',
+    medium: 'fresco',
+    museum: 'Orvieto Cathedral',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/signorelli-resurrection-dead/print.webp',
+    relevance: '',
   },
   'sloan-sunday-women': {
     slug: 'sloan-sunday-women',
@@ -11771,8 +13306,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Addison Gallery of American Art',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc: '/images/devotional-prints/sloan-sunday-women/print-dark.webp',
-    lightSrc: '/images/devotional-prints/sloan-sunday-women/print-light.webp',
+    src: '/images/devotional-prints/sloan-sunday-women/print.webp',
+    relevance: '',
   },
   'steen-merry-family': {
     slug: 'steen-merry-family',
@@ -11783,8 +13318,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rijksmuseum, Amsterdam',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/steen-merry-family/print-dark.webp',
-    lightSrc: '/images/devotional-prints/steen-merry-family/print-light.webp',
+    src: '/images/devotional-prints/steen-merry-family/print.webp',
+    relevance: '',
   },
   'steen-merry-family-chaos': {
     slug: 'steen-merry-family-chaos',
@@ -11795,10 +13330,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rijksmuseum, Amsterdam',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/steen-merry-family-chaos/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/steen-merry-family-chaos/print-light.webp',
+    src: '/images/devotional-prints/steen-merry-family-chaos/print.webp',
+    relevance: '',
   },
   'steen-rhetoricians-window': {
     slug: 'steen-rhetoricians-window',
@@ -11809,10 +13342,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Philadelphia Museum of Art',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/steen-rhetoricians-window/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/steen-rhetoricians-window/print-light.webp',
+    src: '/images/devotional-prints/steen-rhetoricians-window/print.webp',
+    relevance: '',
+  },
+  'surikov-boyarynya-morozova': {
+    slug: 'surikov-boyarynya-morozova',
+    title: 'Boyarynya Morozova (Old Believer martyr)',
+    artist: 'Vasily Surikov',
+    year: '1887',
+    medium: 'painting',
+    museum: 'Tretyakov Gallery, Moscow',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/surikov-boyarynya-morozova/print.webp',
+    relevance: '',
+  },
+  'tanner-daniel-lions': {
+    slug: 'tanner-daniel-lions',
+    title: "Daniel in the Lions' Den",
+    artist: 'Henry Ossawa Tanner',
+    year: '1896',
+    medium: 'painting',
+    museum: 'San Diego Museum of Art',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/tanner-daniel-lions/print.webp',
+    relevance: '',
   },
   'tanner-the-annunciation': {
     slug: 'tanner-the-annunciation',
@@ -11823,10 +13378,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Philadelphia Museum of Art',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/tanner-the-annunciation/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/tanner-the-annunciation/print-light.webp',
+    src: '/images/devotional-prints/tanner-the-annunciation/print.webp',
+    relevance: '',
+  },
+  'tiepolo-abraham-angels': {
+    slug: 'tiepolo-abraham-angels',
+    title: 'Abraham and the Angels',
+    artist: 'Giovanni Battista Tiepolo',
+    year: 'c.1773',
+    medium: 'painting',
+    museum: 'Museo del Prado, Madrid',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tiepolo-abraham-angels/print.webp',
+    relevance: '',
+  },
+  'tiepolo-finding-moses': {
+    slug: 'tiepolo-finding-moses',
+    title: 'Finding of Moses',
+    artist: 'Giovanni Battista Tiepolo',
+    year: 'c.1740',
+    medium: 'painting',
+    museum: 'National Gallery of Scotland, Edinburgh',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tiepolo-finding-moses/print.webp',
+    relevance: '',
   },
   'tintoretto-creation-animals': {
     slug: 'tintoretto-creation-animals',
@@ -11837,10 +13414,92 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "Gallerie dell'Accademia, Venice",
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/tintoretto-creation-animals/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/tintoretto-creation-animals/print-light.webp',
+    src: '/images/devotional-prints/tintoretto-creation-animals/print.webp',
+    relevance: '',
+  },
+  'tintoretto-last-supper-san-giorgio': {
+    slug: 'tintoretto-last-supper-san-giorgio',
+    title: 'The Last Supper',
+    artist: 'Jacopo Tintoretto',
+    year: '1592-94',
+    medium: 'painting',
+    museum: 'San Giorgio Maggiore, Venice',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/tintoretto-last-supper-san-giorgio/print.webp',
+    relevance: '',
+  },
+  'tintoretto-paradise-doges': {
+    slug: 'tintoretto-paradise-doges',
+    title: 'Paradise',
+    artist: 'Jacopo Tintoretto',
+    year: '1594',
+    medium: 'painting',
+    museum: "Doge's Palace, Venice",
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tintoretto-paradise-doges/print.webp',
+    relevance: '',
+  },
+  'tissot-aaron-priesthood': {
+    slug: 'tissot-aaron-priesthood',
+    title: 'Aaron the High Priest',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/tissot-aaron-priesthood/print.webp',
+    relevance: '',
+  },
+  'tissot-abraham-mamre': {
+    slug: 'tissot-abraham-mamre',
+    title: 'Abraham and the Three Angels',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-abraham-mamre/print.webp',
+    relevance: '',
+  },
+  'tissot-anointing-saul': {
+    slug: 'tissot-anointing-saul',
+    title: 'The Anointing of Saul',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/tissot-anointing-saul/print.webp',
+    relevance: '',
+  },
+  'tissot-cain-abel': {
+    slug: 'tissot-cain-abel',
+    title: 'Cain and Abel',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/tissot-cain-abel/print.webp',
+    relevance: '',
+  },
+  'tissot-calling-first-disciples': {
+    slug: 'tissot-calling-first-disciples',
+    title: 'The Calling of James and John',
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-calling-first-disciples/print.webp',
+    relevance: '',
   },
   'tissot-christ-appears-apostles': {
     slug: 'tissot-christ-appears-apostles',
@@ -11851,10 +13510,80 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Brooklyn Museum, New York',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/tissot-christ-appears-apostles/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/tissot-christ-appears-apostles/print-light.webp',
+    src: '/images/devotional-prints/tissot-christ-appears-apostles/print.webp',
+    relevance: '',
+  },
+  'tissot-crucifixion': {
+    slug: 'tissot-crucifixion',
+    title: 'The Crucifixion',
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/tissot-crucifixion/print.webp',
+    relevance: '',
+  },
+  'tissot-daniel-lions': {
+    slug: 'tissot-daniel-lions',
+    title: "Daniel in the Lion's Den",
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/tissot-daniel-lions/print.webp',
+    relevance: '',
+  },
+  'tissot-daughter-jairus': {
+    slug: 'tissot-daughter-jairus',
+    title: "The Raising of Jairus's Daughter",
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/tissot-daughter-jairus/print.webp',
+    relevance: '',
+  },
+  'tissot-david-ark-dance': {
+    slug: 'tissot-david-ark-dance',
+    title: 'David Dancing Before the Ark',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-david-ark-dance/print.webp',
+    relevance: '',
+  },
+  'tissot-death-moses': {
+    slug: 'tissot-death-moses',
+    title: 'The Death of Moses',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/tissot-death-moses/print.webp',
+    relevance: '',
+  },
+  'tissot-elijah-fiery-chariot': {
+    slug: 'tissot-elijah-fiery-chariot',
+    title: 'The Ascent of Elijah',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/tissot-elijah-fiery-chariot/print.webp',
+    relevance: '',
   },
   'tissot-feeding-five-thousand': {
     slug: 'tissot-feeding-five-thousand',
@@ -11865,10 +13594,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Brooklyn Museum, New York',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/tissot-feeding-five-thousand/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/tissot-feeding-five-thousand/print-light.webp',
+    src: '/images/devotional-prints/tissot-feeding-five-thousand/print.webp',
+    relevance: '',
   },
   'tissot-gathering-manna': {
     slug: 'tissot-gathering-manna',
@@ -11879,9 +13606,260 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jewish Museum, New York',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/tissot-gathering-manna/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/tissot-gathering-manna/print-light.webp',
+    src: '/images/devotional-prints/tissot-gathering-manna/print.webp',
+    relevance: '',
+  },
+  'tissot-jacob-dream': {
+    slug: 'tissot-jacob-dream',
+    title: "Jacob's Dream",
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/tissot-jacob-dream/print.webp',
+    relevance: '',
+  },
+  'tissot-jesus-mary-magdalene': {
+    slug: 'tissot-jesus-mary-magdalene',
+    title: 'Christ Appears to Mary Magdalene',
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-jesus-mary-magdalene/print.webp',
+    relevance: '',
+  },
+  'tissot-jesus-samaritan-woman': {
+    slug: 'tissot-jesus-samaritan-woman',
+    title: 'Jesus and the Samaritan Woman',
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-jesus-samaritan-woman/print.webp',
+    relevance: '',
+  },
+  'tissot-jesus-temple-12': {
+    slug: 'tissot-jesus-temple-12',
+    title: 'Jesus Among the Doctors',
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-jesus-temple-12/print.webp',
+    relevance: '',
+  },
+  'tissot-jordan-priests': {
+    slug: 'tissot-jordan-priests',
+    title: 'The Ark Crossing the Jordan',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-jordan-priests/print.webp',
+    relevance: '',
+  },
+  'tissot-joseph-brothers-egypt2': {
+    slug: 'tissot-joseph-brothers-egypt2',
+    title: "Joseph's Brothers in Egypt",
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-joseph-brothers-egypt2/print.webp',
+    relevance: '',
+  },
+  'tissot-joseph-pharaoh': {
+    slug: 'tissot-joseph-pharaoh',
+    title: "Joseph Interprets Pharaoh's Dream",
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-joseph-pharaoh/print.webp',
+    relevance: '',
+  },
+  'tissot-joseph-pit': {
+    slug: 'tissot-joseph-pit',
+    title: 'Joseph Pit',
+    artist: 'James Tissot',
+    year: '',
+    medium: 'painting',
+    museum: '',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/tissot-joseph-pit/print.webp',
+    relevance: '',
+  },
+  'tissot-joseph-prisoners': {
+    slug: 'tissot-joseph-prisoners',
+    title: 'Joseph Interprets in Prison',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/tissot-joseph-prisoners/print.webp',
+    relevance: '',
+  },
+  'tissot-joseph-revealed': {
+    slug: 'tissot-joseph-revealed',
+    title: 'Joseph Makes Himself Known',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/tissot-joseph-revealed/print.webp',
+    relevance: '',
+  },
+  'tissot-marriage-cana': {
+    slug: 'tissot-marriage-cana',
+    title: 'The Marriage at Cana',
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-marriage-cana/print.webp',
+    relevance: '',
+  },
+  'tissot-nathan-david': {
+    slug: 'tissot-nathan-david',
+    title: 'Nathan Rebukes David',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/tissot-nathan-david/print.webp',
+    relevance: '',
+  },
+  'tissot-noah-ark': {
+    slug: 'tissot-noah-ark',
+    title: 'Building the Ark',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/tissot-noah-ark/print.webp',
+    relevance: '',
+  },
+  'tissot-nt-jesus-before-pilate': {
+    slug: 'tissot-nt-jesus-before-pilate',
+    title: 'Jesus Before Pilate',
+    artist: 'James Tissot',
+    year: '1886-94',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/tissot-nt-jesus-before-pilate/print.webp',
+    relevance: '',
+  },
+  'tissot-nt-raising-lazarus': {
+    slug: 'tissot-nt-raising-lazarus',
+    title: 'The Raising of Lazarus',
+    artist: 'James Tissot',
+    year: '1886-94',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-nt-raising-lazarus/print.webp',
+    relevance: '',
+  },
+  'tissot-nt-sermon-mount': {
+    slug: 'tissot-nt-sermon-mount',
+    title: 'The Sermon on the Mount',
+    artist: 'James Tissot',
+    year: '1886-94',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'halftone',
+    src: '/images/devotional-prints/tissot-nt-sermon-mount/print.webp',
+    relevance: '',
+  },
+  'tissot-ot-moses-serpent': {
+    slug: 'tissot-ot-moses-serpent',
+    title: 'Moses and the Brazen Serpent',
+    artist: 'James Tissot',
+    year: '1896-1902',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/tissot-ot-moses-serpent/print.webp',
+    relevance: '',
+  },
+  'tissot-ot-tower-babel': {
+    slug: 'tissot-ot-tower-babel',
+    title: 'The Tower of Babel',
+    artist: 'James Tissot',
+    year: '1896-1902',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/tissot-ot-tower-babel/print.webp',
+    relevance: '',
+  },
+  'tissot-peter-keys': {
+    slug: 'tissot-peter-keys',
+    title: 'Saint Peter',
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/tissot-peter-keys/print.webp',
+    relevance: '',
+  },
+  'tissot-pilate-washes-hands': {
+    slug: 'tissot-pilate-washes-hands',
+    title: 'Pilate Washes His Hands',
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/tissot-pilate-washes-hands/print.webp',
+    relevance: '',
+  },
+  'tissot-prodigal-return2': {
+    slug: 'tissot-prodigal-return2',
+    title: "The Prodigal's Return (Father Waiting)",
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-prodigal-return2/print.webp',
+    relevance: '',
   },
   'tissot-prodigal-son-city': {
     slug: 'tissot-prodigal-son-city',
@@ -11892,10 +13870,56 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Art Gallery of Hamilton, Canada',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc:
-      '/images/devotional-prints/tissot-prodigal-son-city/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/tissot-prodigal-son-city/print-light.webp',
+    src: '/images/devotional-prints/tissot-prodigal-son-city/print.webp',
+    relevance: '',
+  },
+  'tissot-queen-sheba': {
+    slug: 'tissot-queen-sheba',
+    title: 'The Queen of Sheba',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-queen-sheba/print.webp',
+    relevance: '',
+  },
+  'tissot-rachel-well': {
+    slug: 'tissot-rachel-well',
+    title: 'Jacob and Rachel at the Well',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-rachel-well/print.webp',
+    relevance: '',
+  },
+  'tissot-red-sea-crossing': {
+    slug: 'tissot-red-sea-crossing',
+    title: 'The Crossing of the Red Sea',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-red-sea-crossing/print.webp',
+    relevance: '',
+  },
+  'tissot-rich-man-lazarus': {
+    slug: 'tissot-rich-man-lazarus',
+    title: 'The Rich Man in Hell',
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/tissot-rich-man-lazarus/print.webp',
+    relevance: '',
   },
   'tissot-saint-john-baptist': {
     slug: 'tissot-saint-john-baptist',
@@ -11906,10 +13930,44 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Brooklyn Museum, New York',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/tissot-saint-john-baptist/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/tissot-saint-john-baptist/print-light.webp',
+    src: '/images/devotional-prints/tissot-saint-john-baptist/print.webp',
+    relevance: '',
+  },
+  'tissot-tabernacle-ark': {
+    slug: 'tissot-tabernacle-ark',
+    title: 'The Ark of the Covenant',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/tissot-tabernacle-ark/print.webp',
+    relevance: '',
+  },
+  'tissot-ten-lepers': {
+    slug: 'tissot-ten-lepers',
+    title: 'The Cleansing of the Ten Lepers',
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/tissot-ten-lepers/print.webp',
+    relevance: '',
+  },
+  'tissot-ten-virgins': {
+    slug: 'tissot-ten-virgins',
+    title: 'The Wise and Foolish Virgins',
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/tissot-ten-virgins/print.webp',
+    relevance: '',
   },
   'tissot-the-tabernacle': {
     slug: 'tissot-the-tabernacle',
@@ -11920,9 +13978,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Jewish Museum, New York',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/tissot-the-tabernacle/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/tissot-the-tabernacle/print-light.webp',
+    src: '/images/devotional-prints/tissot-the-tabernacle/print.webp',
+    relevance: '',
+  },
+  'tissot-walking-water': {
+    slug: 'tissot-walking-water',
+    title: 'Jesus Walking on the Sea',
+    artist: 'James Tissot',
+    year: '1886',
+    medium: 'gouache',
+    museum: 'Brooklyn Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/tissot-walking-water/print.webp',
+    relevance: '',
+  },
+  'tissot-water-from-rock': {
+    slug: 'tissot-water-from-rock',
+    title: 'Moses Striking the Rock',
+    artist: 'James Tissot',
+    year: '1896',
+    medium: 'gouache',
+    museum: 'Jewish Museum, New York',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/tissot-water-from-rock/print.webp',
+    relevance: '',
   },
   'turner-evening-deluge': {
     slug: 'turner-evening-deluge',
@@ -11933,9 +14014,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'National Gallery of Art, Washington DC',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/turner-evening-deluge/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/turner-evening-deluge/print-light.webp',
+    src: '/images/devotional-prints/turner-evening-deluge/print.webp',
+    relevance: '',
   },
   'van-dyck-christ-cross': {
     slug: 'van-dyck-christ-cross',
@@ -11946,9 +14026,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Koninklijk Museum, Antwerp',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/van-dyck-christ-cross/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/van-dyck-christ-cross/print-light.webp',
+    src: '/images/devotional-prints/van-dyck-christ-cross/print.webp',
+    relevance: '',
   },
   'van-dyck-martyrdom-sebastian': {
     slug: 'van-dyck-martyrdom-sebastian',
@@ -11959,10 +14038,32 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Alte Pinakothek, Munich',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/van-dyck-martyrdom-sebastian/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/van-dyck-martyrdom-sebastian/print-light.webp',
+    src: '/images/devotional-prints/van-dyck-martyrdom-sebastian/print.webp',
+    relevance: '',
+  },
+  'van-eyck-annunciation': {
+    slug: 'van-eyck-annunciation',
+    title: 'The Annunciation',
+    artist: 'Jan van Eyck',
+    year: 'c.1434',
+    medium: 'painting',
+    museum: 'National Gallery of Art, Washington',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/van-eyck-annunciation/print.webp',
+    relevance: '',
+  },
+  'van-eyck-annunciation-dc': {
+    slug: 'van-eyck-annunciation-dc',
+    title: 'The Annunciation',
+    artist: 'Jan van Eyck',
+    year: 'c.1434-36',
+    medium: 'painting',
+    museum: 'National Gallery of Art, Washington DC',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/van-eyck-annunciation-dc/print.webp',
+    relevance: '',
   },
   'van-eyck-ghent-adoration-lamb': {
     slug: 'van-eyck-ghent-adoration-lamb',
@@ -11973,10 +14074,68 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: "St. Bavo's Cathedral, Ghent",
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/van-eyck-ghent-adoration-lamb/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/van-eyck-ghent-adoration-lamb/print-light.webp',
+    src: '/images/devotional-prints/van-eyck-ghent-adoration-lamb/print.webp',
+    relevance: '',
+  },
+  'van-eyck-ghent-lamb-detail': {
+    slug: 'van-eyck-ghent-lamb-detail',
+    title: 'Adoration of the Mystic Lamb (detail)',
+    artist: 'Jan van Eyck',
+    year: '1432',
+    medium: 'painting',
+    museum: "Saint Bavo's Cathedral, Ghent",
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/van-eyck-ghent-lamb-detail/print.webp',
+    relevance: '',
+  },
+  'van-weyden-descent-cross': {
+    slug: 'van-weyden-descent-cross',
+    title: 'Descent from the Cross',
+    artist: 'Rogier van der Weyden',
+    year: '1435',
+    medium: 'painting',
+    museum: 'Prado Museum, Madrid',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/van-weyden-descent-cross/print.webp',
+    relevance: '',
+  },
+  'van-weyden-last-judgment': {
+    slug: 'van-weyden-last-judgment',
+    title: 'The Last Judgment',
+    artist: 'Rogier van der Weyden',
+    year: 'c.1450',
+    medium: 'painting',
+    museum: 'Hôtel-Dieu, Beaune',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/van-weyden-last-judgment/print.webp',
+    relevance: '',
+  },
+  'vasnetsov-baptism-fresco': {
+    slug: 'vasnetsov-baptism-fresco',
+    title: 'The Baptism of Russia (Vladimir Baptizes)',
+    artist: 'Viktor Vasnetsov',
+    year: '1895-96',
+    medium: 'fresco',
+    museum: "St. Vladimir's Cathedral, Kyiv",
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'risograph',
+    src: '/images/devotional-prints/vasnetsov-baptism-fresco/print.webp',
+    relevance: '',
+  },
+  'velazquez-adoration-magi': {
+    slug: 'velazquez-adoration-magi',
+    title: 'Adoration of the Magi',
+    artist: 'Diego Velázquez',
+    year: '1619',
+    medium: 'painting',
+    museum: 'Museo del Prado, Madrid',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/velazquez-adoration-magi/print.webp',
+    relevance: '',
   },
   'velazquez-christ-crucified': {
     slug: 'velazquez-christ-crucified',
@@ -11987,10 +14146,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museo del Prado, Madrid',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/velazquez-christ-crucified/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/velazquez-christ-crucified/print-light.webp',
+    src: '/images/devotional-prints/velazquez-christ-crucified/print.webp',
+    relevance: '',
   },
   'velazquez-christ-crucified-sin': {
     slug: 'velazquez-christ-crucified-sin',
@@ -12001,10 +14158,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Museo del Prado, Madrid',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/velazquez-christ-crucified-sin/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/velazquez-christ-crucified-sin/print-light.webp',
+    src: '/images/devotional-prints/velazquez-christ-crucified-sin/print.webp',
+    relevance: '',
+  },
+  'velazquez-joseph-coat': {
+    slug: 'velazquez-joseph-coat',
+    title: "Joseph's Bloody Coat Brought to Jacob",
+    artist: 'Diego Velázquez',
+    year: 'c.1630',
+    medium: 'painting',
+    museum: 'Monastery of El Escorial, Spain',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/velazquez-joseph-coat/print.webp',
+    relevance: '',
   },
   'vermeer-christ-martha-mary': {
     slug: 'vermeer-christ-martha-mary',
@@ -12015,10 +14182,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Scottish National Gallery, Edinburgh',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/vermeer-christ-martha-mary/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/vermeer-christ-martha-mary/print-light.webp',
+    src: '/images/devotional-prints/vermeer-christ-martha-mary/print.webp',
+    relevance: '',
   },
   'vermeer-girl-pearl-earring': {
     slug: 'vermeer-girl-pearl-earring',
@@ -12029,10 +14194,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Mauritshuis, The Hague',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/vermeer-girl-pearl-earring/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/vermeer-girl-pearl-earring/print-light.webp',
+    src: '/images/devotional-prints/vermeer-girl-pearl-earring/print.webp',
+    relevance: '',
   },
   'vermeer-girl-pearl-standing': {
     slug: 'vermeer-girl-pearl-standing',
@@ -12043,10 +14206,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Mauritshuis, The Hague',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/vermeer-girl-pearl-standing/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/vermeer-girl-pearl-standing/print-light.webp',
+    src: '/images/devotional-prints/vermeer-girl-pearl-standing/print.webp',
+    relevance: '',
   },
   'vermeer-the-geographer': {
     slug: 'vermeer-the-geographer',
@@ -12057,9 +14218,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Städel Museum, Frankfurt',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc: '/images/devotional-prints/vermeer-the-geographer/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/vermeer-the-geographer/print-light.webp',
+    src: '/images/devotional-prints/vermeer-the-geographer/print.webp',
+    relevance: '',
   },
   'vermeer-woman-pearl-necklace': {
     slug: 'vermeer-woman-pearl-necklace',
@@ -12070,10 +14230,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Gemäldegalerie, Berlin',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/vermeer-woman-pearl-necklace/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/vermeer-woman-pearl-necklace/print-light.webp',
+    src: '/images/devotional-prints/vermeer-woman-pearl-necklace/print.webp',
+    relevance: '',
   },
   'vermeer-woman-reading-chaos': {
     slug: 'vermeer-woman-reading-chaos',
@@ -12084,10 +14242,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rijksmuseum, Amsterdam',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/vermeer-woman-reading-chaos/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/vermeer-woman-reading-chaos/print-light.webp',
+    src: '/images/devotional-prints/vermeer-woman-reading-chaos/print.webp',
+    relevance: '',
   },
   'vermeer-woman-reading-letter': {
     slug: 'vermeer-woman-reading-letter',
@@ -12098,10 +14254,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Rijksmuseum, Amsterdam',
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
-    darkSrc:
-      '/images/devotional-prints/vermeer-woman-reading-letter/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/vermeer-woman-reading-letter/print-light.webp',
+    src: '/images/devotional-prints/vermeer-woman-reading-letter/print.webp',
+    relevance: '',
   },
   'veronese-feast-cana': {
     slug: 'veronese-feast-cana',
@@ -12112,8 +14266,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc: '/images/devotional-prints/veronese-feast-cana/print-dark.webp',
-    lightSrc: '/images/devotional-prints/veronese-feast-cana/print-light.webp',
+    src: '/images/devotional-prints/veronese-feast-cana/print.webp',
+    relevance: '',
   },
   'veronese-feast-cana-hunger': {
     slug: 'veronese-feast-cana-hunger',
@@ -12124,10 +14278,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
-    darkSrc:
-      '/images/devotional-prints/veronese-feast-cana-hunger/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/veronese-feast-cana-hunger/print-light.webp',
+    src: '/images/devotional-prints/veronese-feast-cana-hunger/print.webp',
+    relevance: '',
+  },
+  'veronese-supper-emmaus-louvre': {
+    slug: 'veronese-supper-emmaus-louvre',
+    title: 'Supper at Emmaus',
+    artist: 'Paolo Veronese',
+    year: 'c.1559-60',
+    medium: 'painting',
+    museum: 'Musée du Louvre, Paris',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/veronese-supper-emmaus-louvre/print.webp',
+    relevance: '',
   },
   'veronese-the-resurrection': {
     slug: 'veronese-the-resurrection',
@@ -12138,10 +14302,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Gemäldegalerie, Dresden',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/veronese-the-resurrection/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/veronese-the-resurrection/print-light.webp',
+    src: '/images/devotional-prints/veronese-the-resurrection/print.webp',
+    relevance: '',
+  },
+  'veronese-wedding-cana-louvre': {
+    slug: 'veronese-wedding-cana-louvre',
+    title: 'The Wedding at Cana',
+    artist: 'Paolo Veronese',
+    year: '1563',
+    medium: 'painting',
+    museum: 'Musée du Louvre, Paris',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/veronese-wedding-cana-louvre/print.webp',
+    relevance: '',
   },
   'watteau-gilles-pierrot': {
     slug: 'watteau-gilles-pierrot',
@@ -12152,9 +14326,20 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Musée du Louvre, Paris',
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
-    darkSrc: '/images/devotional-prints/watteau-gilles-pierrot/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/watteau-gilles-pierrot/print-light.webp',
+    src: '/images/devotional-prints/watteau-gilles-pierrot/print.webp',
+    relevance: '',
+  },
+  'watts-good-samaritan': {
+    slug: 'watts-good-samaritan',
+    title: 'The Good Samaritan',
+    artist: 'George Frederic Watts',
+    year: '1896',
+    medium: 'painting',
+    museum: 'Watts Gallery, Compton',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/watts-good-samaritan/print.webp',
+    relevance: '',
   },
   'watts-hope-1886': {
     slug: 'watts-hope-1886',
@@ -12165,8 +14350,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Tate Britain, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/watts-hope-1886/print-dark.webp',
-    lightSrc: '/images/devotional-prints/watts-hope-1886/print-light.webp',
+    src: '/images/devotional-prints/watts-hope-1886/print.webp',
+    relevance: '',
   },
   'watts-hope-end': {
     slug: 'watts-hope-end',
@@ -12177,8 +14362,92 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Tate Britain, London',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/watts-hope-end/print-dark.webp',
-    lightSrc: '/images/devotional-prints/watts-hope-end/print-light.webp',
+    src: '/images/devotional-prints/watts-hope-end/print.webp',
+    relevance: '',
+  },
+  'watts-hope-tate': {
+    slug: 'watts-hope-tate',
+    title: 'Hope',
+    artist: 'George Frederic Watts',
+    year: '1886',
+    medium: 'painting',
+    museum: 'Tate Britain, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/watts-hope-tate/print.webp',
+    relevance: '',
+  },
+  'watts-love-and-death': {
+    slug: 'watts-love-and-death',
+    title: 'Love and Death',
+    artist: 'George Frederic Watts',
+    year: '1877',
+    medium: 'painting',
+    museum: 'Tate Britain, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/watts-love-and-death/print.webp',
+    relevance: '',
+  },
+  'watts-love-death': {
+    slug: 'watts-love-death',
+    title: 'Love and Death',
+    artist: 'George Frederic Watts',
+    year: '1875',
+    medium: 'painting',
+    museum: 'Watts Gallery, Compton',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/watts-love-death/print.webp',
+    relevance: '',
+  },
+  'west-death-pale-horse': {
+    slug: 'west-death-pale-horse',
+    title: 'Death on a Pale Horse',
+    artist: 'Benjamin West',
+    year: '1817',
+    medium: 'painting',
+    museum: 'Pennsylvania Academy of Fine Arts',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/west-death-pale-horse/print.webp',
+    relevance: '',
+  },
+  'west-moses-law': {
+    slug: 'west-moses-law',
+    title: 'Moses Receiving the Law',
+    artist: 'Benjamin West',
+    year: '1784',
+    medium: 'painting',
+    museum: 'Bob Jones University Museum',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/west-moses-law/print.webp',
+    relevance: '',
+  },
+  'weyden-deposition-prado': {
+    slug: 'weyden-deposition-prado',
+    title: 'Descent from the Cross (Deposition)',
+    artist: 'Rogier van der Weyden',
+    year: 'c.1435',
+    medium: 'painting',
+    museum: 'Museo del Prado, Madrid',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/weyden-deposition-prado/print.webp',
+    relevance: '',
+  },
+  'weyden-last-judgment-beaune': {
+    slug: 'weyden-last-judgment-beaune',
+    title: 'Last Judgment Altarpiece',
+    artist: 'Rogier van der Weyden',
+    year: 'c.1446-52',
+    medium: 'painting',
+    museum: 'Hôtel-Dieu, Beaune',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'woodcut',
+    src: '/images/devotional-prints/weyden-last-judgment-beaune/print.webp',
+    relevance: '',
   },
   'wright-alchemist-patience': {
     slug: 'wright-alchemist-patience',
@@ -12189,10 +14458,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Derby Museum and Art Gallery',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/wright-alchemist-patience/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/wright-alchemist-patience/print-light.webp',
+    src: '/images/devotional-prints/wright-alchemist-patience/print.webp',
+    relevance: '',
   },
   'wright-philosopher-orrery': {
     slug: 'wright-philosopher-orrery',
@@ -12203,10 +14470,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Derby Museum and Art Gallery',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc:
-      '/images/devotional-prints/wright-philosopher-orrery/print-dark.webp',
-    lightSrc:
-      '/images/devotional-prints/wright-philosopher-orrery/print-light.webp',
+    src: '/images/devotional-prints/wright-philosopher-orrery/print.webp',
+    relevance: '',
   },
   'wright-the-alchemist': {
     slug: 'wright-the-alchemist',
@@ -12217,7 +14482,55 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     museum: 'Derby Museum and Art Gallery',
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
-    darkSrc: '/images/devotional-prints/wright-the-alchemist/print-dark.webp',
-    lightSrc: '/images/devotional-prints/wright-the-alchemist/print-light.webp',
+    src: '/images/devotional-prints/wright-the-alchemist/print.webp',
+    relevance: '',
+  },
+  'zurbaran-agnus-dei': {
+    slug: 'zurbaran-agnus-dei',
+    title: 'Agnus Dei (Lamb of God)',
+    artist: 'Francisco de Zurbarán',
+    year: 'c.1635-40',
+    medium: 'painting',
+    museum: 'Museo del Prado, Madrid',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/zurbaran-agnus-dei/print.webp',
+    relevance: '',
+  },
+  'zurbaran-saint-francis': {
+    slug: 'zurbaran-saint-francis',
+    title: 'Saint Francis in Meditation',
+    artist: 'Francisco de Zurbarán',
+    year: 'c.1635-39',
+    medium: 'painting',
+    museum: 'National Gallery, London',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/zurbaran-saint-francis/print.webp',
+    relevance: '',
+  },
+  'zurbaran-saint-peter-apostle': {
+    slug: 'zurbaran-saint-peter-apostle',
+    title: 'Saint Peter the Apostle',
+    artist: 'Francisco de Zurbarán',
+    year: 'c.1629',
+    medium: 'painting',
+    museum: 'Museo del Prado, Madrid',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'etching',
+    src: '/images/devotional-prints/zurbaran-saint-peter-apostle/print.webp',
+    relevance: '',
+  },
+  'zurbaran-saint-serapion': {
+    slug: 'zurbaran-saint-serapion',
+    title: 'Saint Serapion',
+    artist: 'Francisco de Zurbarán',
+    year: '1628',
+    medium: 'painting',
+    museum: 'Wadsworth Atheneum, Hartford',
+    license: 'Public Domain (pre-1928)',
+    printStyle: 'mezzotint',
+    src: '/images/devotional-prints/zurbaran-saint-serapion/print.webp',
+    relevance: '',
   },
 }

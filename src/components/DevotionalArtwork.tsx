@@ -35,19 +35,11 @@ export default function DevotionalArtwork({
         aria-label={`View "${artwork.title}" in gallery`}
       >
         <Image
-          src={artwork.darkSrc}
+          src={artwork.src}
           alt={`${artwork.title} by ${artwork.artist}`}
           fill
           sizes="(max-width: 767px) 100vw, (max-width: 1024px) 66vw, 700px"
-          className="devotional-artwork-img devotional-artwork-img-dark"
-          loading="lazy"
-        />
-        <Image
-          src={artwork.lightSrc}
-          alt=""
-          fill
-          sizes="(max-width: 767px) 100vw, (max-width: 1024px) 66vw, 700px"
-          className="devotional-artwork-img devotional-artwork-img-light"
+          className="devotional-artwork-img"
           loading="lazy"
         />
       </div>

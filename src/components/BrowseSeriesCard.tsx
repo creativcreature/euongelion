@@ -63,19 +63,11 @@ export default function BrowseSeriesCard({
       {hero && (
         <div className="series-card-hero-image" aria-hidden="true">
           <Image
-            src={hero.darkSrc}
+            src={hero.src}
             alt=""
             fill
             sizes="(max-width: 767px) 84vw, 33vw"
-            className="series-card-img series-card-img-dark"
-            loading="lazy"
-          />
-          <Image
-            src={hero.lightSrc}
-            alt=""
-            fill
-            sizes="(max-width: 767px) 84vw, 33vw"
-            className="series-card-img series-card-img-light"
+            className="series-card-img"
             loading="lazy"
           />
           <div className="series-card-scrim" />

@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-052: Blue Woodprint Remap — 639 Artworks, Single Image Source (2026-02-23)
+
+### What Changed
+
+- **Remapped to unified blue woodprint (`print.webp`)**: Replaced dual `print-dark.webp`/`print-light.webp` with single `print.webp` blue-on-white woodprint style matching homepage engravings (`#171b69` deep indigo). Eliminates CSS-only dark/light toggle complexity and hydration mismatch risk.
+- **Artwork count nearly doubled**: 639 artworks (up from 319). 50 new artwork.json metadata files generated for directories that had images but no metadata.
+- **Dark mode via CSS inversion**: Single `filter: invert(1)` rule flips blue-on-white to white-on-dark, maintaining the woodprint aesthetic in both modes.
+- **Card text legibility improved**: Scrim gradient opacity increased (top 15%→45%, mid 55%→65%) for better text readability over duotone woodprint backgrounds.
+- **Relevance field infrastructure**: Added `relevance` field to ArtworkEntry interface and manifest generator. Displayed in lightbox museum card with italic serif styling. Ready for future storytelling curation.
+- **Manifest coverage**: 32 series heroes, 170 devotionals with 3+ artworks each, 639 total artworks in lookup table.
+
+### Files
+
+- `scripts/generate-artwork-manifest.mjs` — single `print.webp` check, `src` field replaces `darkSrc`/`lightSrc`, added `relevance` field
+- `src/data/artwork-manifest.ts` — regenerated: 639 artworks, new ArtworkEntry interface with `src` + `relevance`
+- `src/components/BrowseSeriesCard.tsx` — single `<Image>`, removed dark/light pair
+- `src/components/DevotionalArtwork.tsx` — single `<Image>`, removed dark/light pair
+- `src/components/ArtworkLightbox.tsx` — single `<Image>`, removed dark/light pair
+- `src/components/ArtworkAttribution.tsx` — added relevance display in full variant
+- `src/components/SeriesHero.tsx` — single `src` field, removed dark/light rendering
+- `src/app/page.tsx` — homepage featured cards use single image source
+- `src/app/globals.css` — removed dark/light toggle CSS, added `filter: invert(1)` for dark mode, improved scrim, added relevance styling
+- `.gitignore` — added `raw.jpg` exclusion for artwork source files
+- `public/images/devotional-prints/` — 639 `print.webp` + 369 `artwork.json` (319 existing + 50 new), removed 738 old dark/light files
+
+---
+
 ## F-052: Artwork Image Layer — 319 Artworks Mapped (2026-02-22)
 
 ### What Changed

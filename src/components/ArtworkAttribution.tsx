@@ -67,6 +67,9 @@ export default function ArtworkAttribution({
       {artwork.license && (
         <p className="artwork-attribution-license">{artwork.license}</p>
       )}
+      {artwork.relevance && (
+        <p className="artwork-attribution-relevance">{artwork.relevance}</p>
+      )}
     </div>
   )
 }

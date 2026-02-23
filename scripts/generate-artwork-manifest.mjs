@@ -42,11 +42,10 @@ function loadAllArtworks() {
 
     try {
       const data = JSON.parse(readFileSync(artworkPath, 'utf8'))
-      const darkPath = join(PRINTS_DIR, dir, 'print-dark.webp')
-      const lightPath = join(PRINTS_DIR, dir, 'print-light.webp')
+      const printPath = join(PRINTS_DIR, dir, 'print.webp')
 
-      // Skip if either print file is missing
-      if (!existsSync(darkPath) || !existsSync(lightPath)) continue
+      // Skip if print.webp is missing
+      if (!existsSync(printPath)) continue
 
       artworks.push({
         slug: data.slug || dir,
@@ -57,8 +56,8 @@ function loadAllArtworks() {
         museum: data.museum || '',
         license: data.license || 'Public Domain',
         printStyle: data.printStyle || 'etching',
-        darkSrc: `/images/devotional-prints/${dir}/print-dark.webp`,
-        lightSrc: `/images/devotional-prints/${dir}/print-light.webp`,
+        src: `/images/devotional-prints/${dir}/print.webp`,
+        relevance: data.relevance || '',
         devotionalSlugs: data.devotionalSlugs || [],
         seriesSlug: normalizeSeriesSlug(data.seriesSlug || ''),
         _dir: dir,
@@ -258,8 +257,8 @@ function generateManifest() {
     '  museum: string',
     '  license: string',
     '  printStyle: string',
-    '  darkSrc: string',
-    '  lightSrc: string',
+    '  src: string',
+    '  relevance: string',
     '}',
     '',
   ]
@@ -275,8 +274,8 @@ function generateManifest() {
       `  museum: ${JSON.stringify(a.museum)},`,
       `  license: ${JSON.stringify(a.license)},`,
       `  printStyle: ${JSON.stringify(a.printStyle)},`,
-      `  darkSrc: ${JSON.stringify(a.darkSrc)},`,
-      `  lightSrc: ${JSON.stringify(a.lightSrc)},`,
+      `  src: ${JSON.stringify(a.src)},`,
+      `  relevance: ${JSON.stringify(a.relevance)},`,
     ].join(' ')
   }
 

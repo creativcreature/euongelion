@@ -109,43 +109,28 @@ export default function SeriesHero({
   const gradient = getGradient(seriesSlug)
   const series = SERIES_DATA[seriesSlug]
   const manifestHero = SERIES_HERO[seriesSlug]
-  const heroImage = series?.heroImage || manifestHero?.darkSrc
+  const heroImage = series?.heroImage || manifestHero?.src
 
   return (
     <div
       className={`relative w-full overflow-hidden ${SIZE_CLASSES[size]} ${className}`}
       style={{ background: gradient.bg }}
     >
-      {/* Real image if available — dark/light variants from manifest */}
+      {/* Real image if available — blue woodprint from manifest */}
       {heroImage && manifestHero && !series?.heroImage ? (
-        <>
-          <Image
-            src={manifestHero.darkSrc}
-            alt={series?.title || ''}
-            fill
-            className="object-cover series-card-img-dark"
-            sizes={
-              size === 'hero'
-                ? '100vw'
-                : size === 'card'
-                  ? '(max-width: 768px) 100vw, 50vw'
-                  : '(max-width: 768px) 100vw, 33vw'
-            }
-          />
-          <Image
-            src={manifestHero.lightSrc}
-            alt=""
-            fill
-            className="object-cover series-card-img-light"
-            sizes={
-              size === 'hero'
-                ? '100vw'
-                : size === 'card'
-                  ? '(max-width: 768px) 100vw, 50vw'
-                  : '(max-width: 768px) 100vw, 33vw'
-            }
-          />
-        </>
+        <Image
+          src={manifestHero.src}
+          alt={series?.title || ''}
+          fill
+          className="object-cover series-card-img"
+          sizes={
+            size === 'hero'
+              ? '100vw'
+              : size === 'card'
+                ? '(max-width: 768px) 100vw, 50vw'
+                : '(max-width: 768px) 100vw, 33vw'
+          }
+        />
       ) : heroImage ? (
         <Image
           src={heroImage}

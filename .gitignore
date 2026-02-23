@@ -30,6 +30,9 @@ content/reference/dictionaries/
 content/reference/lexicons/
 content/reference/stepbible-data/
 
+# Artwork source files (blue woodprint generated from these)
+public/images/devotional-prints/*/raw.jpg
+
 # OS
 .DS_Store
 Thumbs.db
