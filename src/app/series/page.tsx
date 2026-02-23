@@ -8,7 +8,7 @@ import SeriesRailSection from '@/components/SeriesRailSection'
 import SeriesSearchPanel from '@/components/SeriesSearchPanel'
 import BrowseSeriesCard from '@/components/BrowseSeriesCard'
 import { useProgress } from '@/hooks/useProgress'
-import { ALL_SERIES_ORDER } from '@/data/series'
+import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 import {
   SERIES_RAILS,
   FEATURED_SERIES_SLUGS,
@@ -27,18 +27,25 @@ export default function SeriesBrowsePage() {
   const { getSeriesProgress } = useProgress()
   const [isSearchOpen, setIsSearchOpen] = useState(false)
 
-  // Build progress map matching component interface
+  // Build progress map with total for progress bar
   const progressMap = useMemo(() => {
     const map: Record<
       string,
-      { completed: boolean; inProgress: boolean; currentDay?: number }
+      {
+        completed: boolean
+        inProgress: boolean
+        currentDay?: number
+        total?: number
+      }
     > = {}
     for (const slug of ALL_SERIES_ORDER) {
       const p = getSeriesProgress(slug)
+      const series = SERIES_DATA[slug]
       map[slug] = {
         completed: p.completed >= p.total && p.total > 0,
         inProgress: p.completed > 0 && p.completed < p.total,
         currentDay: p.completed > 0 ? p.completed + 1 : undefined,
+        total: series?.days.length ?? p.total,
       }
     }
     return map
@@ -116,27 +123,17 @@ export default function SeriesBrowsePage() {
         {/* Dynamic composition — only visible when search is closed */}
         {!isSearchOpen && (
           <>
-            {/* [B] Featured Editorial — asymmetric grid: 1 large + 2 stacked */}
+            {/* [B] Featured Editorial — newspaper grid (matches homepage) */}
             <section className="shell-content-pad mx-auto max-w-7xl pb-12 md:pb-16">
               <FadeIn>
-                <div className="browse-featured-grid">
-                  <div className="browse-featured-primary">
+                <div className="mock-featured-grid">
+                  {FEATURED_SERIES_SLUGS.map((slug) => (
                     <BrowseSeriesCard
-                      slug={FEATURED_SERIES_SLUGS[0]}
-                      variant="spotlight"
-                      progress={progressMap[FEATURED_SERIES_SLUGS[0]]}
+                      key={slug}
+                      slug={slug}
+                      progress={progressMap[slug]}
                     />
-                  </div>
-                  <div className="browse-featured-secondary">
-                    {FEATURED_SERIES_SLUGS.slice(1, 3).map((slug) => (
-                      <BrowseSeriesCard
-                        key={slug}
-                        slug={slug}
-                        variant="featured"
-                        progress={progressMap[slug]}
-                      />
-                    ))}
-                  </div>
+                  ))}
                 </div>
               </FadeIn>
             </section>

@@ -3689,6 +3689,24 @@ html.reduce-motion *::after {
   min-height: var(--mock-h-feature-card);
   text-decoration: none;
   color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Apple TV-style progress bar — bottom of series card */
+.series-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: var(--progress, 0%);
+  height: 3px;
+  background: var(--color-gold);
+  border-radius: 0 1px 0 0;
+  transition: width 0.3s ease;
+}
+
+:root:not(.dark) .series-progress-bar {
+  background: var(--mock-blue, #171b69);
 }
 
 .mock-featured-card:nth-child(3n) {

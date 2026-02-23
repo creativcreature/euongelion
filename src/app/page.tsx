@@ -72,7 +72,7 @@ export default function Home() {
   )
   const [resumeRoute, setResumeRoute] = useState<string | null>(null)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
-  const [featuredCarouselIndex, setFeaturedCarouselIndex] = useState(0)
+  // Carousel state removed — free scroll only
 
   const hydrated = useSyncExternalStore(
     emptySubscribe,
@@ -113,15 +113,6 @@ export default function Home() {
     [faqIndex],
   )
   const faqItemsToRender = isMobileViewport ? FAQ_ITEMS : faqWindow
-  const featuredSlides = useMemo(() => {
-    const groups: (typeof featuredSeries)[] = []
-    for (let i = 0; i < featuredSeries.length; i += 3) {
-      groups.push(featuredSeries.slice(i, i + 3))
-    }
-    return groups.length > 0 ? groups : [featuredSeries.slice(0, 3)]
-  }, [featuredSeries])
-  const activeFeaturedSeries =
-    featuredSlides[featuredCarouselIndex % Math.max(1, featuredSlides.length)]
   const auditWordCount = auditText
     .trim()
     .split(/\s+/)
@@ -134,20 +125,6 @@ export default function Home() {
     if (words.length <= 30) return combined
     return `${words.slice(0, 28).join(' ')}...`
   }
-
-  useEffect(() => {
-    if (featuredSlides.length <= 1) return
-    if (typeof window === 'undefined') return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-
-    const timer = window.setInterval(() => {
-      setFeaturedCarouselIndex(
-        (previous) => (previous + 1) % featuredSlides.length,
-      )
-    }, 7_000)
-
-    return () => window.clearInterval(timer)
-  }, [featuredSlides.length])
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -446,11 +423,8 @@ export default function Home() {
           </p>
         </section>
 
-        <section
-          className="mock-featured-grid"
-          aria-label="Featured series carousel"
-        >
-          {activeFeaturedSeries.map(({ slug, series }) => {
+        <section className="mock-featured-grid" aria-label="Featured series">
+          {featuredSeries.map(({ slug, series }) => {
             const scripture = scriptureLeadPartsFromFramework(series.framework)
 
             return (
@@ -486,40 +460,6 @@ export default function Home() {
             )
           })}
         </section>
-
-        {featuredSlides.length > 1 && (
-          <section className="mock-more-row">
-            <div className="mock-carousel-controls">
-              <button
-                type="button"
-                className="mock-carousel-btn text-label"
-                onClick={() =>
-                  setFeaturedCarouselIndex(
-                    (previous) =>
-                      (previous - 1 + featuredSlides.length) %
-                      featuredSlides.length,
-                  )
-                }
-              >
-                PREV
-              </button>
-              <p className="mock-footnote">
-                {featuredCarouselIndex + 1} / {featuredSlides.length}
-              </p>
-              <button
-                type="button"
-                className="mock-carousel-btn text-label"
-                onClick={() =>
-                  setFeaturedCarouselIndex(
-                    (previous) => (previous + 1) % featuredSlides.length,
-                  )
-                }
-              >
-                NEXT
-              </button>
-            </div>
-          </section>
-        )}
 
         <section className="mock-more-row mock-series-more-row">
           <Link href="/series" className="mock-btn text-label">

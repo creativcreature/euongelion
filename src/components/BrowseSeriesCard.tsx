@@ -1,80 +1,91 @@
 'use client'
 
 import Link from 'next/link'
-import SeriesHero from '@/components/SeriesHero'
 import { SERIES_DATA } from '@/data/series'
-
-type CardVariant = 'spotlight' | 'featured' | 'standard'
+import { scriptureLeadPartsFromFramework } from '@/lib/scripture-reference'
+import { typographer } from '@/lib/typographer'
 
 interface BrowseSeriesCardProps {
   slug: string
-  variant?: CardVariant
-  progress?: { completed: boolean; inProgress: boolean; currentDay?: number }
+  progress?: {
+    completed: boolean
+    inProgress: boolean
+    currentDay?: number
+    total?: number
+  }
+}
+
+function formatSeriesPreview(introduction: string): string {
+  const combined = typographer(introduction).replace(/\s+/g, ' ').trim()
+  const words = combined.split(' ').filter(Boolean)
+  if (words.length <= 30) return combined
+  return `${words.slice(0, 28).join(' ')}...`
 }
 
 export default function BrowseSeriesCard({
   slug,
-  variant = 'standard',
   progress,
 }: BrowseSeriesCardProps) {
   const series = SERIES_DATA[slug]
   if (!series) return null
 
   const dayCount = series.days.length
-  const introSnippet =
-    series.introduction.split(' ').slice(0, 30).join(' ') +
-    (series.introduction.split(' ').length > 30 ? '…' : '')
+  const scripture = scriptureLeadPartsFromFramework(series.framework)
+
+  // Progress bar: percentage of days completed
+  const total = progress?.total ?? dayCount
+  const completedDays = progress?.currentDay
+    ? progress.currentDay - 1
+    : progress?.completed
+      ? total
+      : 0
+  const progressPercent =
+    total > 0 && completedDays > 0
+      ? Math.round((completedDays / total) * 100)
+      : 0
+
+  const actionLabel = progress?.completed
+    ? 'COMPLETED'
+    : progress?.inProgress
+      ? 'CONTINUE'
+      : 'START SERIES'
 
   return (
     <Link
       href={`/series/${slug}`}
-      className={`browse-card browse-card--${variant} newspaper-card group`}
+      className="mock-featured-card"
       aria-label={`${series.title}: ${series.question}`}
     >
-      <div className="browse-card-hero">
-        <SeriesHero
-          seriesSlug={slug}
-          size={variant === 'spotlight' ? 'hero' : 'card'}
-          overlay
-        />
+      <div className="mock-scripture-lead">
+        <p className="mock-scripture-lead-reference">
+          {typographer(scripture.reference || 'Scripture')}
+        </p>
+        {scripture.snippet && (
+          <p className="mock-scripture-lead-snippet">
+            {typographer(scripture.snippet)}
+          </p>
+        )}
       </div>
-
-      <div className="browse-card-overlay">
-        {/* Progress indicator */}
-        {progress?.inProgress && !progress?.completed && (
-          <span className="browse-card-progress" aria-label="In progress">
-            <span className="browse-card-progress-dot" />
-          </span>
-        )}
-        {progress?.completed && (
-          <span className="browse-card-progress" aria-label="Completed">
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
-              fill="none"
-              stroke="var(--color-gold)"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M3 7l3 3 5-5" />
-            </svg>
-          </span>
-        )}
-
-        <h3 className="browse-card-title">{series.title}</h3>
-        <p className="browse-card-question">{series.question}</p>
-
-        {variant === 'spotlight' && (
-          <p className="browse-card-intro">{introSnippet}</p>
-        )}
-
-        <span className="browse-card-meta">
-          <span className="oldstyle-nums">{dayCount}</span>{' '}
-          {dayCount === 1 ? 'day' : 'days'}
+      <h3>{series.title}.</h3>
+      <p>{series.question}</p>
+      <p className="mock-featured-preview">
+        {formatSeriesPreview(series.introduction)}
+      </p>
+      <div className="mock-featured-actions">
+        <span className="mock-series-start text-label">{actionLabel}</span>
+        <span className="mock-featured-days text-label">
+          {dayCount} {dayCount === 1 ? 'DAY' : 'DAYS'}
         </span>
       </div>
+
+      {/* Apple TV-style progress bar */}
+      {progressPercent > 0 && (
+        <div
+          className="series-progress-bar"
+          style={{ '--progress': `${progressPercent}%` } as React.CSSProperties}
+          aria-label={`${completedDays} of ${total} days completed`}
+        />
+      )}
     </Link>
   )
 }

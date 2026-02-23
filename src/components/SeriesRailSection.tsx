@@ -3,6 +3,7 @@
 import PrintRail from '@/components/newspaper/PrintRail'
 import BrowseSeriesCard from '@/components/BrowseSeriesCard'
 import FadeIn from '@/components/motion/FadeIn'
+import { SERIES_DATA } from '@/data/series'
 import type { RailLayout } from '@/data/series-rails'
 
 interface SeriesRailSectionProps {
@@ -15,6 +16,19 @@ interface SeriesRailSectionProps {
     { completed: boolean; inProgress: boolean; currentDay?: number }
   >
   className?: string
+}
+
+function progressWithTotal(
+  slug: string,
+  progress?: Record<
+    string,
+    { completed: boolean; inProgress: boolean; currentDay?: number }
+  >,
+) {
+  const p = progress?.[slug]
+  if (!p) return undefined
+  const series = SERIES_DATA[slug]
+  return { ...p, total: series?.days.length ?? 0 }
 }
 
 export default function SeriesRailSection({
@@ -41,8 +55,7 @@ export default function SeriesRailSection({
             content: (
               <BrowseSeriesCard
                 slug={slug}
-                variant="standard"
-                progress={progress[slug]}
+                progress={progressWithTotal(slug, progress)}
               />
             ),
           }))}
@@ -56,13 +69,12 @@ export default function SeriesRailSection({
       )}
 
       {layout === 'grid' && (
-        <div className="browse-editorial-grid">
+        <div className="mock-featured-grid shell-content-pad mx-auto max-w-7xl">
           {slugs.map((slug) => (
             <BrowseSeriesCard
               key={slug}
               slug={slug}
-              variant="standard"
-              progress={progress[slug]}
+              progress={progressWithTotal(slug, progress)}
             />
           ))}
         </div>
@@ -74,8 +86,7 @@ export default function SeriesRailSection({
             <div className="browse-spotlight-hero">
               <BrowseSeriesCard
                 slug={slugs[0]}
-                variant="spotlight"
-                progress={progress[slugs[0]]}
+                progress={progressWithTotal(slugs[0], progress)}
               />
             </div>
           )}
@@ -86,8 +97,7 @@ export default function SeriesRailSection({
                 content: (
                   <BrowseSeriesCard
                     slug={slug}
-                    variant="standard"
-                    progress={progress[slug]}
+                    progress={progressWithTotal(slug, progress)}
                   />
                 ),
               }))}
@@ -103,39 +113,26 @@ export default function SeriesRailSection({
       )}
 
       {layout === 'centered-row' && (
-        <div className="browse-centered-row">
+        <div className="mock-featured-grid shell-content-pad mx-auto max-w-7xl">
           {slugs.map((slug) => (
             <BrowseSeriesCard
               key={slug}
               slug={slug}
-              variant="standard"
-              progress={progress[slug]}
+              progress={progressWithTotal(slug, progress)}
             />
           ))}
         </div>
       )}
 
       {layout === 'featured-grid' && (
-        <div className="browse-featured-grid">
-          {slugs[0] && (
-            <div className="browse-featured-primary">
-              <BrowseSeriesCard
-                slug={slugs[0]}
-                variant="spotlight"
-                progress={progress[slugs[0]]}
-              />
-            </div>
-          )}
-          <div className="browse-featured-secondary">
-            {slugs.slice(1, 3).map((slug) => (
-              <BrowseSeriesCard
-                key={slug}
-                slug={slug}
-                variant="featured"
-                progress={progress[slug]}
-              />
-            ))}
-          </div>
+        <div className="mock-featured-grid shell-content-pad mx-auto max-w-7xl">
+          {slugs.map((slug) => (
+            <BrowseSeriesCard
+              key={slug}
+              slug={slug}
+              progress={progressWithTotal(slug, progress)}
+            />
+          ))}
         </div>
       )}
     </FadeIn>

@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Series Card Restyling + Homepage Free Scroll (2026-02-22)
+
+### What Changed
+
+- **Series cards restyled as newspaper blocks**: Replaced gradient-background `SeriesHero` cards with text-only newspaper blocks matching homepage `.mock-featured-card` pattern. Cards now show: scripture reference, snippet, title, question, intro preview, START SERIES / CONTINUE / COMPLETED action label, day count.
+- **Homepage carousel converted to free scroll**: Removed PREV/NEXT pagination, auto-rotate timer, page indicators. All featured series now render directly in `.mock-featured-grid` — 3-column grid on desktop, horizontal free-scroll on mobile/tablet.
+- **Apple TV-style progress bar**: Added 3px progress bar at card bottom for in-progress series. Gold in dark mode, blue in light mode, with smooth width transition.
+- **Shared newspaper grid borders**: Adjacent cards share `border-right` + `border-top` forming continuous newspaper column layout.
+- **Verified at 3 breakpoints**: Mobile (375px), tablet (768px), desktop (1024px+).
+
+### Files
+
+- `src/components/BrowseSeriesCard.tsx` — rewritten (gradient → newspaper block)
+- `src/components/SeriesRailSection.tsx` — simplified (removed variant passing)
+- `src/app/series/page.tsx` — updated (mock-featured-grid, removed variants)
+- `src/app/page.tsx` — simplified (removed carousel state/controls)
+- `src/app/globals.css` — added progress bar CSS (6 lines)
+- `src/components/SeriesSearchPanel.tsx` — removed stale variant prop
+
+---
+
 ## Soul Audit Production Fix (2026-02-21)
 
 ### What Changed

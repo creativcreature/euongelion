@@ -244,7 +244,6 @@ export default function SeriesSearchPanel({
             <BrowseSeriesCard
               key={slug}
               slug={slug}
-              variant="standard"
               progress={progress[slug]}
             />
           ))}
