@@ -352,6 +352,7 @@ function clampWords(value: string, minWords: number, maxWords: number): string {
 async function polishAiOptionsWithBrain(
   responseText: string,
   options: AuditOptionPreview[],
+  precomputedIntent?: Awaited<ReturnType<typeof parseAuditIntentWithBrain>>,
 ): Promise<AuditOptionPreview[]> {
   const aiIndices = options
     .map((option, index) => ({ option, index }))
@@ -364,7 +365,8 @@ async function polishAiOptionsWithBrain(
   )
   if (!available) return options
 
-  const intent = await parseAuditIntentWithBrain(responseText)
+  const intent =
+    precomputedIntent ?? (await parseAuditIntentWithBrain(responseText))
   const next = [...options]
 
   for (const { option, index } of aiIndices) {
@@ -594,7 +596,15 @@ export async function POST(request: NextRequest) {
     const crisisDetected = detectCrisis(effectiveResponseText)
     const inputGuidance = getLowContextGuidance(effectiveResponseText)
     const optionVariantSeed = createOptionVariantSeed()
-    let options = buildAuditOptions(effectiveResponseText, optionVariantSeed)
+
+    // Parse intent FIRST so AI-extracted themes influence candidate selection.
+    const precomputedIntent = await parseAuditIntentWithBrain(
+      effectiveResponseText,
+    )
+    let options = buildAuditOptions(effectiveResponseText, optionVariantSeed, [
+      ...precomputedIntent.themes,
+      ...precomputedIntent.intentTags,
+    ])
     if (!hasExpectedOptionSplit(options)) {
       return jsonError({
         error:
@@ -604,7 +614,11 @@ export async function POST(request: NextRequest) {
         requestId,
       })
     }
-    options = await polishAiOptionsWithBrain(effectiveResponseText, options)
+    options = await polishAiOptionsWithBrain(
+      effectiveResponseText,
+      options,
+      precomputedIntent,
+    )
     options = sanitizeOptionSet(options)
 
     const { run, options: persistedOptions } = await createAuditRun({

@@ -6,13 +6,12 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
+import SeriesRailSection from '@/components/SeriesRailSection'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
-import { scriptureLeadPartsFromFramework } from '@/lib/scripture-reference'
 import { submitSoulAuditResponse } from '@/lib/soul-audit/submit-client'
 import { MAX_AUDITS_PER_CYCLE } from '@/lib/soul-audit/constants'
 import { typographer } from '@/lib/typographer'
-import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_DATA } from '@/data/series'
-import { SERIES_HERO } from '@/data/artwork-manifest'
+import { ALL_SERIES_ORDER, FEATURED_SERIES } from '@/data/series'
 import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
 
 const emptySubscribe = () => () => {}
@@ -87,25 +86,8 @@ export default function Home() {
   const featuredSlugs = useMemo(() => {
     const seeded = [...FEATURED_SERIES, ...ALL_SERIES_ORDER]
     const deduped = Array.from(new Set(seeded))
-    return deduped.slice(0, 12)
+    return deduped.slice(0, 6)
   }, [])
-  const featuredSeries = useMemo(() => {
-    const fromOrder: Array<{
-      slug: string
-      series: (typeof SERIES_DATA)[keyof typeof SERIES_DATA]
-    }> = []
-    for (const slug of featuredSlugs) {
-      const series = SERIES_DATA[slug]
-      if (!series) continue
-      fromOrder.push({ slug, series })
-    }
-
-    if (fromOrder.length > 0) return fromOrder
-
-    return Object.entries(SERIES_DATA)
-      .slice(0, 6)
-      .map(([slug, series]) => ({ slug, series }))
-  }, [featuredSlugs])
   const faqWindow = useMemo(
     () =>
       [0, 1, 2].map(
@@ -119,13 +101,6 @@ export default function Home() {
     .split(/\s+/)
     .filter((token) => token.length > 0).length
   const showLowContextHint = auditWordCount > 0 && auditWordCount <= 3
-
-  const formatSeriesPreview = (introduction: string) => {
-    const combined = typographer(introduction).replace(/\s+/g, ' ').trim()
-    const words = combined.split(' ').filter(Boolean)
-    if (words.length <= 30) return combined
-    return `${words.slice(0, 28).join(' ')}...`
-  }
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -266,8 +241,8 @@ export default function Home() {
       <main id="main-content" className="mock-paper">
         <EuangelionShellHeader />
 
-        <section className="mock-hero-grid">
-          <div className="mock-hero-art" aria-hidden="true">
+        <section className="homepage-hero" id="start-audit">
+          <div className="homepage-hero-art" aria-hidden="true">
             <Image
               src="/images/illustrations/euangelion-homepage-engraving-04.svg"
               alt=""
@@ -277,33 +252,22 @@ export default function Home() {
             />
           </div>
 
-          <article className="mock-panel mock-panel-copy">
-            <p className="text-label mock-kicker">WHAT IS THIS PLACE?</p>
-            <h2 className="mock-title mock-homepage-prompt-title">
-              Find Your Next Faithful Step Today.
-            </h2>
-            <div className="mock-rule" />
-            <p className="mock-body">
-              {typographer(
-                'Run a short soul audit and get matched to a focused devotional path for the season you are actually in.',
-              )}
-            </p>
-          </article>
-
-          <section className="mock-panel mock-panel-audit" id="start-audit">
+          <div className="homepage-hero-main">
             {resumeRoute ? (
               <>
-                <div className="mock-audit-head">
-                  <p className="text-label mock-kicker">MY DEVOTIONAL</p>
-                  <h2 className="mock-title">You have a devotional waiting.</h2>
-                  <p className="mock-subcopy">
-                    Continue where you left off. Your current path is ready.
-                  </p>
-                </div>
-                <Link href={resumeRoute} className="mock-btn text-label">
+                <p className="text-label mock-kicker">MY DEVOTIONAL</p>
+                <h2 className="mock-title mock-homepage-prompt-title">
+                  You have a devotional waiting.
+                </h2>
+                <p className="mock-subcopy">
+                  Continue where you left off. Your current path is ready.
+                </p>
+                <Link
+                  href={resumeRoute}
+                  className="mock-btn mock-btn-inline text-label"
+                >
                   CONTINUE MY DEVOTIONAL
                 </Link>
-                <p className="mock-footnote">Resume your current path now.</p>
                 <button
                   type="button"
                   className="mock-reset-btn text-label"
@@ -314,16 +278,15 @@ export default function Home() {
               </>
             ) : (
               <>
-                <div className="mock-audit-head">
-                  <p className="text-label mock-kicker">SOUL AUDIT</p>
-                  <h2 className="mock-title mock-homepage-prompt-title">
-                    What are you wrestling with today?
-                  </h2>
-                  <p className="mock-subcopy">
-                    Write one honest sentence (or even a few words), and we will
-                    customize a 5 day devotional plan for you.
-                  </p>
-                </div>
+                <p className="text-label mock-kicker">SOUL AUDIT</p>
+                <h1 className="mock-title mock-homepage-prompt-title">
+                  What are you wrestling with today?
+                </h1>
+                <p className="mock-subcopy">
+                  {typographer(
+                    'Name what is real and get matched to a focused devotional path for the season you are actually in.',
+                  )}
+                </p>
 
                 <textarea
                   value={auditText}
@@ -337,6 +300,30 @@ export default function Home() {
                   className="mock-textarea"
                   aria-label="What are you wrestling with today?"
                 />
+
+                {/* Sample prompt pills — like ChatGPT */}
+                <div className="homepage-prompt-pills">
+                  {[
+                    'I feel anxious about my future',
+                    'I want to learn about the prophets',
+                    'I keep falling into the same sin',
+                    'I don\u2019t know what I believe',
+                  ].map((pill) => (
+                    <button
+                      key={pill}
+                      type="button"
+                      className="homepage-prompt-pill text-label"
+                      onClick={() => {
+                        setAuditText(pill)
+                        setError(null)
+                      }}
+                      disabled={isSubmitting}
+                    >
+                      {pill}
+                    </button>
+                  ))}
+                </div>
+
                 {showLowContextHint && (
                   <p className="mock-footnote">
                     Add one more sentence for more precise curation.
@@ -345,7 +332,7 @@ export default function Home() {
 
                 <button
                   type="button"
-                  className="mock-btn text-label"
+                  className="mock-btn mock-btn-inline text-label"
                   onClick={() => void submitAudit(auditText)}
                   disabled={isSubmitting}
                 >
@@ -384,7 +371,7 @@ export default function Home() {
                 )}
               </>
             )}
-          </section>
+          </div>
         </section>
 
         <section className="mock-section-center">
@@ -416,68 +403,13 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="mock-section-center">
-          <p className="text-label mock-kicker">HAND CRAFTED</p>
-          <h2 className="mock-title-center">Featured Series</h2>
-          <p className="mock-subcopy-center">
-            Curated reading paths for common spiritual seasons and questions.
-          </p>
-        </section>
-
-        <section className="mock-featured-grid" aria-label="Featured series">
-          {featuredSeries.map(({ slug, series }) => {
-            const scripture = scriptureLeadPartsFromFramework(series.framework)
-            const hero = SERIES_HERO[slug]
-
-            return (
-              <Link
-                href={`/series/${slug}`}
-                key={slug}
-                className={`mock-featured-card${hero ? ' series-card-hero' : ''}`}
-              >
-                {hero && (
-                  <div className="series-card-hero-image" aria-hidden="true">
-                    <Image
-                      src={hero.src}
-                      alt=""
-                      fill
-                      sizes="(max-width: 767px) 84vw, 33vw"
-                      className="series-card-img"
-                      loading="lazy"
-                    />
-                    <div className="series-card-scrim" />
-                  </div>
-                )}
-
-                <div className={hero ? 'series-card-content' : undefined}>
-                  <div className="mock-scripture-lead">
-                    <p className="mock-scripture-lead-reference">
-                      {typographer(scripture.reference || 'Scripture')}
-                    </p>
-                    {scripture.snippet && (
-                      <p className="mock-scripture-lead-snippet">
-                        {typographer(scripture.snippet)}
-                      </p>
-                    )}
-                  </div>
-                  <h3>{series.title}.</h3>
-                  <p>{series.question}</p>
-                  <p className="mock-featured-preview">
-                    {formatSeriesPreview(series.introduction)}
-                  </p>
-                  <div className="mock-featured-actions">
-                    <span className="mock-series-start text-label">
-                      START SERIES
-                    </span>
-                    <span className="mock-featured-days text-label">
-                      {series.days.length || 5} DAYS
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            )
-          })}
-        </section>
+        <SeriesRailSection
+          label="Featured Series"
+          subtitle="Curated reading paths for common spiritual seasons and questions."
+          slugs={featuredSlugs}
+          layout="rail"
+          cardVariant="large"
+        />
 
         <section className="mock-more-row mock-series-more-row">
           <Link href="/series" className="mock-btn text-label">

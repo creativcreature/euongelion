@@ -303,7 +303,10 @@ function fallbackCandidateForSeries(slug: string): CuratedDayCandidate | null {
   }
 }
 
-function choosePrimaryMatches(input: string): Array<{
+function choosePrimaryMatches(
+  input: string,
+  aiThemes?: string[],
+): Array<{
   candidate: CuratedDayCandidate
   confidence: number
   matched: string[]
@@ -325,7 +328,7 @@ function choosePrimaryMatches(input: string): Array<{
     }
   }
 
-  const ranked = rankCandidatesForInput({ input }).filter((entry) =>
+  const ranked = rankCandidatesForInput({ input, aiThemes }).filter((entry) =>
     eligibleSeries.size === 0
       ? true
       : eligibleSeries.has(entry.candidate.seriesSlug),
@@ -523,8 +526,9 @@ function hasExpectedOptionSplit(options: AuditOptionPreview[]): boolean {
 export function buildAuditOptions(
   input: string,
   variantSeed?: number,
+  aiThemes?: string[],
 ): AuditOptionPreview[] {
-  const primary = choosePrimaryMatches(input)
+  const primary = choosePrimaryMatches(input, aiThemes)
   let aiOptions = primary.map((match, index) =>
     makeOption({
       candidate: match.candidate,

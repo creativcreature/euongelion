@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -23,6 +24,8 @@ import {
 } from '@/lib/site-consent'
 import { clampScriptureSnippet } from '@/lib/scripture-reference'
 import { typographer } from '@/lib/typographer'
+import { SERIES_DATA } from '@/data/series'
+import { SERIES_HERO } from '@/data/artwork-manifest'
 import type {
   CrisisResource,
   CustomPlanDay,
@@ -1513,19 +1516,15 @@ export default function SoulAuditResultsPage() {
                       {displayOptions
                         .filter((option) => option.kind === 'ai_primary')
                         .map((option) => {
-                          const verseSnippet = resolveVerseSnippet(
-                            option.preview?.verseText,
-                            option.preview?.paragraph,
-                          )
+                          const hero = SERIES_HERO[option.slug]
+                          const series = SERIES_DATA[option.slug]
+                          const keywords = (series?.keywords ?? []).slice(0, 3)
+                          const dayCount = series?.days.length ?? 0
 
                           return (
                             <article
                               key={option.id}
-                              className="audit-option-card group relative overflow-hidden text-left"
-                              style={{
-                                border: '1px solid var(--color-border)',
-                                padding: '1.25rem',
-                              }}
+                              className="audit-option-card audit-option-card-large group relative overflow-hidden text-left"
                             >
                               <button
                                 type="button"
@@ -1540,37 +1539,53 @@ export default function SoulAuditResultsPage() {
                                 }`}
                                 aria-disabled={!optionSelectionReady}
                               >
+                                {/* Ref → Title → Image → Keywords → Action */}
                                 {option.preview?.verse && (
-                                  <p className="audit-option-verse mb-2">
-                                    {typographer(option.preview.verse)}
+                                  <div className="mock-scripture-lead audit-option-pad">
+                                    <p className="mock-scripture-lead-reference">
+                                      {typographer(option.preview.verse)}
+                                    </p>
+                                  </div>
+                                )}
+                                <h3 className="audit-option-title audit-option-pad">
+                                  {option.title}.
+                                </h3>
+                                {hero && (
+                                  <div
+                                    className="series-card-thumbnail"
+                                    aria-hidden="true"
+                                  >
+                                    <Image
+                                      src={hero.src}
+                                      alt=""
+                                      width={600}
+                                      height={450}
+                                      className="series-card-thumbnail-img"
+                                      loading="lazy"
+                                      sizes="(max-width: 767px) 84vw, 33vw"
+                                    />
+                                  </div>
+                                )}
+                                {keywords.length > 0 && (
+                                  <p className="series-card-keywords audit-option-pad">
+                                    {keywords.join(' \u2022 ')}
                                   </p>
                                 )}
-                                {verseSnippet && (
-                                  <p className="audit-option-verse-snippet mb-3">
-                                    {typographer(verseSnippet)}
-                                  </p>
-                                )}
-                                <p className="audit-option-title mb-2 text-gold">
-                                  {option.title}
-                                </p>
-                                <p className="audit-option-question mb-2">
-                                  {typographer(option.question)}
-                                </p>
-                                {option.preview?.paragraph && (
-                                  <p className="audit-option-support mt-1 text-secondary">
-                                    {typographer(option.preview.paragraph)}
-                                  </p>
-                                )}
-                                <p className="audit-option-hint mt-4">
-                                  {optionSelectionReady
-                                    ? 'Click to build this path'
-                                    : 'Unavailable until requirements are met'}
-                                </p>
+                                <div className="mock-featured-actions audit-option-pad">
+                                  <span className="mock-series-start text-label">
+                                    {optionSelectionReady
+                                      ? 'BUILD THIS PATH'
+                                      : 'UNAVAILABLE'}
+                                  </span>
+                                  {dayCount > 0 && (
+                                    <span className="mock-featured-days text-label">
+                                      {dayCount}{' '}
+                                      {dayCount === 1 ? 'DAY' : 'DAYS'}
+                                    </span>
+                                  )}
+                                </div>
                               </button>
-                              <div
-                                className="mt-3 border-t pt-3"
-                                style={{ borderColor: 'var(--color-border)' }}
-                              >
+                              <div className="audit-option-meta audit-option-pad">
                                 <button
                                   type="button"
                                   className="audit-option-meta-link link-highlight mr-4"
@@ -1614,19 +1629,14 @@ export default function SoulAuditResultsPage() {
                       {displayOptions
                         .filter((option) => option.kind === 'curated_prefab')
                         .map((option) => {
-                          const verseSnippet = resolveVerseSnippet(
-                            option.preview?.verseText,
-                            option.preview?.paragraph,
-                          )
+                          const series = SERIES_DATA[option.slug]
+                          const keywords = (series?.keywords ?? []).slice(0, 3)
+                          const dayCount = series?.days.length ?? 0
 
                           return (
                             <article
                               key={option.id}
-                              className="audit-option-card group relative overflow-hidden text-left"
-                              style={{
-                                border: '1px solid var(--color-border)',
-                                padding: '1.25rem',
-                              }}
+                              className="audit-option-card audit-option-card-small group relative overflow-hidden text-left"
                             >
                               <button
                                 type="button"
@@ -1641,35 +1651,30 @@ export default function SoulAuditResultsPage() {
                                 }`}
                                 aria-disabled={!optionSelectionReady}
                               >
-                                {option.preview?.verse && (
-                                  <p className="audit-option-verse mb-2">
-                                    {typographer(option.preview.verse)}
+                                {/* Small variant: Title → Keywords → Action */}
+                                <h3 className="audit-option-title">
+                                  {option.title}.
+                                </h3>
+                                {keywords.length > 0 && (
+                                  <p className="series-card-keywords">
+                                    {keywords.join(' \u2022 ')}
                                   </p>
                                 )}
-                                {verseSnippet && (
-                                  <p className="audit-option-verse-snippet mb-3">
-                                    {typographer(verseSnippet)}
-                                  </p>
-                                )}
-                                <p className="audit-option-title mb-2 text-gold">
-                                  {option.title}
-                                </p>
-                                <p className="audit-option-question mb-2">
-                                  {typographer(option.question)}
-                                </p>
-                                <p className="audit-option-support text-secondary">
-                                  Opens series overview.
-                                </p>
-                                <p className="audit-option-hint mt-4">
-                                  {optionSelectionReady
-                                    ? 'Click to open this series'
-                                    : 'Unavailable until requirements are met'}
-                                </p>
+                                <div className="mock-featured-actions">
+                                  <span className="mock-series-start text-label">
+                                    {optionSelectionReady
+                                      ? 'OPEN SERIES'
+                                      : 'UNAVAILABLE'}
+                                  </span>
+                                  {dayCount > 0 && (
+                                    <span className="mock-featured-days text-label">
+                                      {dayCount}{' '}
+                                      {dayCount === 1 ? 'DAY' : 'DAYS'}
+                                    </span>
+                                  )}
+                                </div>
                               </button>
-                              <div
-                                className="mt-3 border-t pt-3"
-                                style={{ borderColor: 'var(--color-border)' }}
-                              >
+                              <div className="audit-option-meta">
                                 <button
                                   type="button"
                                   className="audit-option-meta-link link-highlight mr-4"

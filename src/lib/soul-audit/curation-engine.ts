@@ -274,6 +274,41 @@ export function expandSemanticHints(input: string): string {
     },
     { trigger: /\bgrief|mourning|loss\b/, inject: 'comfort lament hope' },
     { trigger: /\bpeace|calm\b/, inject: 'peace stillness trust' },
+    // Biblical topic triggers
+    {
+      trigger: /\bprophet(s|ic|ess)?\b/,
+      inject: 'prophecy calling obedience old-testament isaiah jeremiah',
+    },
+    { trigger: /\bpsalm(s|ist)?\b/, inject: 'worship praise lament david' },
+    { trigger: /\bgospel(s)?\b/, inject: 'jesus good-news salvation' },
+    {
+      trigger: /\bpaul\b|epistles?\b/,
+      inject: 'letters church doctrine theology',
+    },
+    {
+      trigger: /\bgenesis\b|creation\b/,
+      inject: 'beginning creation fall covenant abraham',
+    },
+    {
+      trigger: /\bexodus\b|passover\b/,
+      inject: 'freedom deliverance moses',
+    },
+    {
+      trigger: /\bwisdom\b|\bproverbs?\b/,
+      inject: 'wisdom discernment solomon',
+    },
+    {
+      trigger: /\bsuffering|trial(s)?\b/,
+      inject: 'endurance perseverance testing job',
+    },
+    {
+      trigger: /\bresurrection|easter|risen\b/,
+      inject: 'hope victory death life',
+    },
+    {
+      trigger: /\bjesus|christ|messiah\b/,
+      inject: 'gospel salvation kingdom lord',
+    },
   ]
 
   let expanded = lower
@@ -409,6 +444,7 @@ export function rankCandidatesForInput(params: {
   input: string
   anchorSeriesSlug?: string
   anchorSeed?: CurationSeed | null
+  aiThemes?: string[]
 }): Array<{
   candidate: CuratedDayCandidate
   score: number
@@ -433,6 +469,14 @@ export function rankCandidatesForInput(params: {
         if (candidate.seriesSlug === params.anchorSeed.seriesSlug) score += 2
         if (candidate.dayNumber === params.anchorSeed.dayNumber) score += 4
         if (candidate.key === params.anchorSeed.candidateKey) score += 6
+      }
+
+      // AI theme boost — high weight so AI-extracted themes dominate.
+      if (params.aiThemes?.length) {
+        const themeMatches = params.aiThemes.filter((theme) =>
+          candidate.searchText.includes(theme.toLowerCase()),
+        )
+        score += themeMatches.length * 4
       }
 
       // Slight bias toward the top-ranked canonical series metadata.

@@ -162,7 +162,7 @@ export default function ArtworkLightbox({
       <div className="lightbox-image-wrap">
         <div className="lightbox-image-container">
           <Image
-            src={artwork.src}
+            src={artwork.rawSrc}
             alt={`${artwork.title} by ${artwork.artist}`}
             fill
             sizes="(max-width: 900px) 90vw, 900px"

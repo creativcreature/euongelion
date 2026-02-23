@@ -122,7 +122,7 @@ export default function SeriesHero({
           src={manifestHero.src}
           alt={series?.title || ''}
           fill
-          className="object-cover series-card-img"
+          className="object-cover series-card-thumbnail-img"
           sizes={
             size === 'hero'
               ? '100vw'

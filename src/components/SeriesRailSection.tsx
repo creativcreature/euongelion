@@ -2,6 +2,7 @@
 
 import PrintRail from '@/components/newspaper/PrintRail'
 import BrowseSeriesCard from '@/components/BrowseSeriesCard'
+import type { CardVariant } from '@/components/BrowseSeriesCard'
 import FadeIn from '@/components/motion/FadeIn'
 import { SERIES_DATA } from '@/data/series'
 import type { RailLayout } from '@/data/series-rails'
@@ -16,6 +17,7 @@ interface SeriesRailSectionProps {
     { completed: boolean; inProgress: boolean; currentDay?: number }
   >
   className?: string
+  cardVariant?: CardVariant
 }
 
 function progressWithTotal(
@@ -38,6 +40,7 @@ export default function SeriesRailSection({
   layout,
   progress = {},
   className = '',
+  cardVariant = 'medium',
 }: SeriesRailSectionProps) {
   if (!slugs.length) return null
 
@@ -56,6 +59,7 @@ export default function SeriesRailSection({
               <BrowseSeriesCard
                 slug={slug}
                 progress={progressWithTotal(slug, progress)}
+                variant={cardVariant}
               />
             ),
           }))}
@@ -75,6 +79,7 @@ export default function SeriesRailSection({
               key={slug}
               slug={slug}
               progress={progressWithTotal(slug, progress)}
+              variant={cardVariant}
             />
           ))}
         </div>
@@ -87,6 +92,7 @@ export default function SeriesRailSection({
               <BrowseSeriesCard
                 slug={slugs[0]}
                 progress={progressWithTotal(slugs[0], progress)}
+                variant="large"
               />
             </div>
           )}
@@ -98,6 +104,7 @@ export default function SeriesRailSection({
                   <BrowseSeriesCard
                     slug={slug}
                     progress={progressWithTotal(slug, progress)}
+                    variant={cardVariant}
                   />
                 ),
               }))}
@@ -119,6 +126,7 @@ export default function SeriesRailSection({
               key={slug}
               slug={slug}
               progress={progressWithTotal(slug, progress)}
+              variant={cardVariant}
             />
           ))}
         </div>
@@ -131,6 +139,7 @@ export default function SeriesRailSection({
               key={slug}
               slug={slug}
               progress={progressWithTotal(slug, progress)}
+              variant={cardVariant}
             />
           ))}
         </div>

@@ -47,6 +47,9 @@ function loadAllArtworks() {
       // Skip if print.webp is missing
       if (!existsSync(printPath)) continue
 
+      const rawPath = join(PRINTS_DIR, dir, 'raw.jpg')
+      const hasRaw = existsSync(rawPath)
+
       artworks.push({
         slug: data.slug || dir,
         title: data.title || 'Untitled',
@@ -57,6 +60,7 @@ function loadAllArtworks() {
         license: data.license || 'Public Domain',
         printStyle: data.printStyle || 'etching',
         src: `/images/devotional-prints/${dir}/print.webp`,
+        rawSrc: hasRaw ? `/images/devotional-prints/${dir}/raw.jpg` : `/images/devotional-prints/${dir}/print.webp`,
         relevance: data.relevance || '',
         devotionalSlugs: data.devotionalSlugs || [],
         seriesSlug: normalizeSeriesSlug(data.seriesSlug || ''),
@@ -258,6 +262,7 @@ function generateManifest() {
     '  license: string',
     '  printStyle: string',
     '  src: string',
+    '  rawSrc: string',
     '  relevance: string',
     '}',
     '',
@@ -275,6 +280,7 @@ function generateManifest() {
       `  license: ${JSON.stringify(a.license)},`,
       `  printStyle: ${JSON.stringify(a.printStyle)},`,
       `  src: ${JSON.stringify(a.src)},`,
+      `  rawSrc: ${JSON.stringify(a.rawSrc)},`,
       `  relevance: ${JSON.stringify(a.relevance)},`,
     ].join(' ')
   }

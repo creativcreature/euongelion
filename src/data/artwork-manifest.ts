@@ -11,6 +11,7 @@ export interface ArtworkEntry {
   license: string
   printStyle: string
   src: string
+  rawSrc: string
   relevance: string
 }
 
@@ -25,6 +26,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/campi-still-life-vine/print.webp',
+    rawSrc: '/images/devotional-prints/campi-still-life-vine/raw.jpg',
     relevance: '',
   },
   anointed: {
@@ -37,6 +39,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-samuel-anointing-david/print.webp',
+    rawSrc:
+      '/images/devotional-prints/rembrandt-samuel-anointing-david/raw.jpg',
     relevance: '',
   },
   'coming-to-the-end-of-ourselves': {
@@ -49,6 +53,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/courbet-desperate-man-end/print.webp',
+    rawSrc: '/images/devotional-prints/courbet-desperate-man-end/raw.jpg',
     relevance: '',
   },
   community: {
@@ -61,6 +66,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/brown-work/print.webp',
+    rawSrc: '/images/devotional-prints/brown-work/raw.jpg',
     relevance: '',
   },
   'genesis-two-stories-of-creation': {
@@ -73,6 +79,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/raphael-god-father-school/print.webp',
+    rawSrc: '/images/devotional-prints/raphael-god-father-school/raw.jpg',
     relevance: '',
   },
   'hearing-god-in-the-noise': {
@@ -85,6 +92,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bosch-garden-hell-panel/print.webp',
+    rawSrc: '/images/devotional-prints/bosch-garden-hell-panel/raw.jpg',
     relevance: '',
   },
   hope: {
@@ -97,6 +105,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/grunewald-resurrection-isenheim/print.webp',
+    rawSrc: '/images/devotional-prints/grunewald-resurrection-isenheim/raw.jpg',
     relevance: '',
   },
   identity: {
@@ -109,6 +118,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/courbet-the-desperate-man/print.webp',
+    rawSrc: '/images/devotional-prints/courbet-the-desperate-man/raw.jpg',
     relevance: '',
   },
   'in-the-beginning-week-1': {
@@ -121,6 +131,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tintoretto-creation-animals/print.webp',
+    rawSrc: '/images/devotional-prints/tintoretto-creation-animals/raw.jpg',
     relevance: '',
   },
   kingdom: {
@@ -133,6 +144,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bosch-the-conjurer/print.webp',
+    rawSrc: '/images/devotional-prints/bosch-the-conjurer/raw.jpg',
     relevance: '',
   },
   'once-saved-always-saved': {
@@ -145,6 +157,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/brueghel-garden-eden-young/print.webp',
+    rawSrc: '/images/devotional-prints/brueghel-garden-eden-young/raw.jpg',
     relevance: '',
   },
   peace: {
@@ -157,6 +170,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/vermeer-woman-reading-letter/print.webp',
+    rawSrc: '/images/devotional-prints/vermeer-woman-reading-letter/raw.jpg',
     relevance: '',
   },
   'present-in-the-chaos': {
@@ -169,6 +183,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bruegel-carnival-lent/print.webp',
+    rawSrc: '/images/devotional-prints/bruegel-carnival-lent/raw.jpg',
     relevance: '',
   },
   provision: {
@@ -181,6 +196,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-gathering-manna/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-gathering-manna/raw.jpg',
     relevance: '',
   },
   rooted: {
@@ -193,6 +209,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print.webp',
+    rawSrc: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/raw.jpg',
     relevance: '',
   },
   'signs-boldness-opposition-integrity': {
@@ -205,6 +222,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/raphael-paul-preaching-athens/print.webp',
+    rawSrc: '/images/devotional-prints/raphael-paul-preaching-athens/raw.jpg',
     relevance: '',
   },
   'standing-strong': {
@@ -217,6 +235,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/caravaggio-incredulity-thomas/print.webp',
+    rawSrc: '/images/devotional-prints/caravaggio-incredulity-thomas/raw.jpg',
     relevance: '',
   },
   'surrender-to-gods-will': {
@@ -229,6 +248,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/mantegna-agony-in-garden/print.webp',
+    rawSrc: '/images/devotional-prints/mantegna-agony-in-garden/raw.jpg',
     relevance: '',
   },
   'the-blueprint-of-community': {
@@ -241,6 +261,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/duccio-pentecost-1308/print.webp',
+    rawSrc: '/images/devotional-prints/duccio-pentecost-1308/raw.jpg',
     relevance: '',
   },
   'the-nature-of-belief': {
@@ -253,6 +274,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/angelico-annunciation-draw-near/print.webp',
+    rawSrc: '/images/devotional-prints/angelico-annunciation-draw-near/raw.jpg',
     relevance: '',
   },
   'the-word-before-words': {
@@ -265,6 +287,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/cole-voyage-life-childhood/print.webp',
+    rawSrc: '/images/devotional-prints/cole-voyage-life-childhood/raw.jpg',
     relevance: '',
   },
   'the-work-of-god': {
@@ -277,6 +300,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-supper-emmaus/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-supper-emmaus/raw.jpg',
     relevance: '',
   },
   'too-busy-for-god': {
@@ -289,6 +313,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/steen-rhetoricians-window/print.webp',
+    rawSrc: '/images/devotional-prints/steen-rhetoricians-window/raw.jpg',
     relevance: '',
   },
   truth: {
@@ -301,6 +326,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bruegel-tower-babel/print.webp',
+    rawSrc: '/images/devotional-prints/bruegel-tower-babel/raw.jpg',
     relevance: '',
   },
   valued: {
@@ -313,6 +339,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/durer-self-portrait-imago-dei/print.webp',
+    rawSrc: '/images/devotional-prints/durer-self-portrait-imago-dei/raw.jpg',
     relevance: '',
   },
   'what-does-it-mean-to-believe': {
@@ -325,6 +352,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-thomas-apostle/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-thomas-apostle/raw.jpg',
     relevance: '',
   },
   'what-happens-when-you-repeatedly-sin': {
@@ -337,6 +365,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/moreau-salome-dancing/print.webp',
+    rawSrc: '/images/devotional-prints/moreau-salome-dancing/raw.jpg',
     relevance: '',
   },
   'what-is-carrying-a-cross': {
@@ -349,6 +378,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/rembrandt-christ-cross-etching/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-christ-cross-etching/raw.jpg',
     relevance: '',
   },
   'what-is-christianity': {
@@ -361,6 +391,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/goya-sleep-reason-monsters/print.webp',
+    rawSrc: '/images/devotional-prints/goya-sleep-reason-monsters/raw.jpg',
     relevance: '',
   },
   'what-is-the-gospel': {
@@ -373,6 +404,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-saint-john-baptist/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-saint-john-baptist/raw.jpg',
     relevance: '',
   },
   'why-jesus': {
@@ -385,6 +417,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/botticelli-mystical-nativity/print.webp',
+    rawSrc: '/images/devotional-prints/botticelli-mystical-nativity/raw.jpg',
     relevance: '',
   },
   'witness-under-pressure-expansion': {
@@ -397,6 +430,7 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/rembrandt-stoning-stephen-1625/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-stoning-stephen-1625/raw.jpg',
     relevance: '',
   },
 }
@@ -413,6 +447,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-sant-apollinare-mosaic/print.webp',
+      rawSrc: '/images/devotional-prints/arch-sant-apollinare-mosaic/raw.jpg',
       relevance: '',
     },
     {
@@ -425,6 +460,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/campi-still-life-vine/print.webp',
+      rawSrc: '/images/devotional-prints/campi-still-life-vine/raw.jpg',
       relevance: '',
     },
     {
@@ -437,6 +473,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-mont-saint-michel-cloister/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-mont-saint-michel-cloister/raw.jpg',
       relevance: '',
     },
   ],
@@ -451,6 +489,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-sant-apollinare-nave/print.webp',
+      rawSrc: '/images/devotional-prints/arch-sant-apollinare-nave/raw.jpg',
       relevance: '',
     },
     {
@@ -463,6 +502,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/hooch-interior-woman-window/print.webp',
+      rawSrc: '/images/devotional-prints/hooch-interior-woman-window/raw.jpg',
       relevance: '',
     },
     {
@@ -475,6 +515,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/campi-still-life-vine/print.webp',
+      rawSrc: '/images/devotional-prints/campi-still-life-vine/raw.jpg',
       relevance: '',
     },
   ],
@@ -489,6 +530,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-hagia-sophia-dome/print.webp',
+      rawSrc: '/images/devotional-prints/arch-hagia-sophia-dome/raw.jpg',
       relevance: '',
     },
     {
@@ -501,6 +543,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/coleman-storm-king-hudson/print.webp',
+      rawSrc: '/images/devotional-prints/coleman-storm-king-hudson/raw.jpg',
       relevance: '',
     },
     {
@@ -513,6 +556,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/tissot-the-tabernacle/print.webp',
+      rawSrc: '/images/devotional-prints/tissot-the-tabernacle/raw.jpg',
       relevance: '',
     },
   ],
@@ -527,6 +571,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/murillo-mystic-marriage-catherine/print.webp',
+      rawSrc:
+        '/images/devotional-prints/murillo-mystic-marriage-catherine/raw.jpg',
       relevance: '',
     },
     {
@@ -539,6 +585,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-sant-apollinare-nave/print.webp',
+      rawSrc: '/images/devotional-prints/arch-sant-apollinare-nave/raw.jpg',
       relevance: '',
     },
     {
@@ -551,6 +598,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/coleman-storm-king-hudson/print.webp',
+      rawSrc: '/images/devotional-prints/coleman-storm-king-hudson/raw.jpg',
       relevance: '',
     },
   ],
@@ -565,6 +613,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/aivazovsky-ninth-wave/print.webp',
+      rawSrc: '/images/devotional-prints/aivazovsky-ninth-wave/raw.jpg',
       relevance: '',
     },
     {
@@ -577,6 +626,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/dahl-ship-storm/print.webp',
+      rawSrc: '/images/devotional-prints/dahl-ship-storm/raw.jpg',
       relevance: '',
     },
     {
@@ -589,6 +639,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-hagia-sophia-dome/print.webp',
+      rawSrc: '/images/devotional-prints/arch-hagia-sophia-dome/raw.jpg',
       relevance: '',
     },
   ],
@@ -603,6 +654,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-mont-saint-michel-cloister/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-mont-saint-michel-cloister/raw.jpg',
       relevance: '',
     },
     {
@@ -615,6 +668,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/aivazovsky-ninth-wave/print.webp',
+      rawSrc: '/images/devotional-prints/aivazovsky-ninth-wave/raw.jpg',
       relevance: '',
     },
     {
@@ -627,6 +681,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-sant-apollinare-mosaic/print.webp',
+      rawSrc: '/images/devotional-prints/arch-sant-apollinare-mosaic/raw.jpg',
       relevance: '',
     },
   ],
@@ -641,6 +696,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-samuel-anointing-david/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-samuel-anointing-david/raw.jpg',
       relevance: '',
     },
     {
@@ -653,6 +710,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/caravaggio-david-goliath-hero/print.webp',
+      rawSrc: '/images/devotional-prints/caravaggio-david-goliath-hero/raw.jpg',
       relevance: '',
     },
     {
@@ -665,6 +723,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/chardin-grace-anointed/print.webp',
+      rawSrc: '/images/devotional-prints/chardin-grace-anointed/raw.jpg',
       relevance: '',
     },
   ],
@@ -679,6 +738,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-upper-room-spirit/print.webp',
+      rawSrc: '/images/devotional-prints/arch-upper-room-spirit/raw.jpg',
       relevance: '',
     },
     {
@@ -691,6 +751,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/el-greco-pentecost-anointed/print.webp',
+      rawSrc: '/images/devotional-prints/el-greco-pentecost-anointed/raw.jpg',
       relevance: '',
     },
     {
@@ -703,6 +764,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-noli-me-tangere-2/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-noli-me-tangere-2/raw.jpg',
       relevance: '',
     },
   ],
@@ -717,6 +779,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/chardin-grace-anointed/print.webp',
+      rawSrc: '/images/devotional-prints/chardin-grace-anointed/raw.jpg',
       relevance: '',
     },
     {
@@ -729,6 +792,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/millet-man-with-hoe-anointed/print.webp',
+      rawSrc: '/images/devotional-prints/millet-man-with-hoe-anointed/raw.jpg',
       relevance: '',
     },
     {
@@ -741,6 +805,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/caravaggio-david-goliath-hero/print.webp',
+      rawSrc: '/images/devotional-prints/caravaggio-david-goliath-hero/raw.jpg',
       relevance: '',
     },
   ],
@@ -755,6 +820,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-noli-me-tangere-2/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-noli-me-tangere-2/raw.jpg',
       relevance: '',
     },
     {
@@ -767,6 +833,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/rubens-anointing-christ-feet/print.webp',
+      rawSrc: '/images/devotional-prints/rubens-anointing-christ-feet/raw.jpg',
       relevance: '',
     },
     {
@@ -779,6 +846,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-upper-room-spirit/print.webp',
+      rawSrc: '/images/devotional-prints/arch-upper-room-spirit/raw.jpg',
       relevance: '',
     },
   ],
@@ -793,6 +861,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/courbet-desperate-man-end/print.webp',
+      rawSrc: '/images/devotional-prints/courbet-desperate-man-end/raw.jpg',
       relevance: '',
     },
     {
@@ -805,6 +874,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/friedrich-monk-sea-end/print.webp',
+      rawSrc: '/images/devotional-prints/friedrich-monk-sea-end/raw.jpg',
       relevance: '',
     },
     {
@@ -817,6 +887,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-gethsemane-end-ourselves/print.webp',
+      rawSrc: '/images/devotional-prints/arch-gethsemane-end-ourselves/raw.jpg',
       relevance: '',
     },
   ],
@@ -831,6 +902,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/durer-prodigal-son-swine-end/print.webp',
+      rawSrc: '/images/devotional-prints/durer-prodigal-son-swine-end/raw.jpg',
       relevance: '',
     },
     {
@@ -843,6 +915,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/tissot-prodigal-son-city/print.webp',
+      rawSrc: '/images/devotional-prints/tissot-prodigal-son-city/raw.jpg',
       relevance: '',
     },
     {
@@ -855,6 +928,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/friedrich-monk-sea-end/print.webp',
+      rawSrc: '/images/devotional-prints/friedrich-monk-sea-end/raw.jpg',
       relevance: '',
     },
   ],
@@ -869,6 +943,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-return-prodigal-end/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-return-prodigal-end/raw.jpg',
       relevance: '',
     },
     {
@@ -881,6 +956,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-self-portrait-two-circles/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-self-portrait-two-circles/raw.jpg',
       relevance: '',
     },
     {
@@ -893,6 +970,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/durer-prodigal-son-swine-end/print.webp',
+      rawSrc: '/images/devotional-prints/durer-prodigal-son-swine-end/raw.jpg',
       relevance: '',
     },
   ],
@@ -907,6 +985,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-michelangelo-pieta-end/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-michelangelo-pieta-end/raw.jpg',
       relevance: '',
     },
     {
@@ -919,6 +998,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-return-prodigal-end/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-return-prodigal-end/raw.jpg',
       relevance: '',
     },
     {
@@ -931,6 +1011,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-self-portrait-two-circles/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-self-portrait-two-circles/raw.jpg',
       relevance: '',
     },
   ],
@@ -945,6 +1027,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-gethsemane-end-ourselves/print.webp',
+      rawSrc: '/images/devotional-prints/arch-gethsemane-end-ourselves/raw.jpg',
       relevance: '',
     },
     {
@@ -957,6 +1040,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/watts-hope-end/print.webp',
+      rawSrc: '/images/devotional-prints/watts-hope-end/raw.jpg',
       relevance: '',
     },
     {
@@ -969,6 +1053,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/courbet-desperate-man-end/print.webp',
+      rawSrc: '/images/devotional-prints/courbet-desperate-man-end/raw.jpg',
       relevance: '',
     },
   ],
@@ -983,6 +1068,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-forum-romanum/print.webp',
+      rawSrc: '/images/devotional-prints/arch-forum-romanum/raw.jpg',
       relevance: '',
     },
     {
@@ -995,6 +1081,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/brown-work/print.webp',
+      rawSrc: '/images/devotional-prints/brown-work/raw.jpg',
       relevance: '',
     },
     {
@@ -1007,6 +1094,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-peasant-wedding/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-peasant-wedding/raw.jpg',
       relevance: '',
     },
   ],
@@ -1021,6 +1109,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/hammershoi-five-portraits/print.webp',
+      rawSrc: '/images/devotional-prints/hammershoi-five-portraits/raw.jpg',
       relevance: '',
     },
     {
@@ -1033,6 +1122,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/sloan-sunday-women/print.webp',
+      rawSrc: '/images/devotional-prints/sloan-sunday-women/raw.jpg',
       relevance: '',
     },
     {
@@ -1045,6 +1135,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/brown-work/print.webp',
+      rawSrc: '/images/devotional-prints/brown-work/raw.jpg',
       relevance: '',
     },
   ],
@@ -1059,6 +1150,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-chartres-cathedral-exterior/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-chartres-cathedral-exterior/raw.jpg',
       relevance: '',
     },
     {
@@ -1071,6 +1164,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/pontormo-two-friends/print.webp',
+      rawSrc: '/images/devotional-prints/pontormo-two-friends/raw.jpg',
       relevance: '',
     },
     {
@@ -1083,6 +1177,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-dura-europos-house-church/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-dura-europos-house-church/raw.jpg',
       relevance: '',
     },
   ],
@@ -1097,6 +1193,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-dura-europos-house-church/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-dura-europos-house-church/raw.jpg',
       relevance: '',
     },
     {
@@ -1109,6 +1207,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/juanes-last-supper/print.webp',
+      rawSrc: '/images/devotional-prints/juanes-last-supper/raw.jpg',
       relevance: '',
     },
     {
@@ -1121,6 +1220,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-chartres-cathedral-exterior/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-chartres-cathedral-exterior/raw.jpg',
       relevance: '',
     },
   ],
@@ -1135,6 +1236,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/daumier-washerwoman/print.webp',
+      rawSrc: '/images/devotional-prints/daumier-washerwoman/raw.jpg',
       relevance: '',
     },
     {
@@ -1147,6 +1249,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-peasant-wedding/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-peasant-wedding/raw.jpg',
       relevance: '',
     },
     {
@@ -1159,6 +1262,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-forum-romanum/print.webp',
+      rawSrc: '/images/devotional-prints/arch-forum-romanum/raw.jpg',
       relevance: '',
     },
   ],
@@ -1173,6 +1277,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-pantheon-dome-oculus/print.webp',
+      rawSrc: '/images/devotional-prints/arch-pantheon-dome-oculus/raw.jpg',
       relevance: '',
     },
     {
@@ -1185,6 +1290,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/raphael-god-father-school/print.webp',
+      rawSrc: '/images/devotional-prints/raphael-god-father-school/raw.jpg',
       relevance: '',
     },
     {
@@ -1197,6 +1303,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-alhambra-gardens-granada/print.webp',
+      rawSrc: '/images/devotional-prints/arch-alhambra-gardens-granada/raw.jpg',
       relevance: '',
     },
   ],
@@ -1211,6 +1318,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/cranach-adam-eve/print.webp',
+      rawSrc: '/images/devotional-prints/cranach-adam-eve/raw.jpg',
       relevance: '',
     },
     {
@@ -1223,6 +1331,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/durer-self-portrait-1500/print.webp',
+      rawSrc: '/images/devotional-prints/durer-self-portrait-1500/raw.jpg',
       relevance: '',
     },
     {
@@ -1235,6 +1344,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/artifact-sumerian-creation-tablet/print.webp',
+      rawSrc:
+        '/images/devotional-prints/artifact-sumerian-creation-tablet/raw.jpg',
       relevance: '',
     },
   ],
@@ -1249,6 +1360,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/artifact-sumerian-creation-tablet/print.webp',
+      rawSrc:
+        '/images/devotional-prints/artifact-sumerian-creation-tablet/raw.jpg',
       relevance: '',
     },
     {
@@ -1261,6 +1374,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/cortona-god-creating-animals/print.webp',
+      rawSrc: '/images/devotional-prints/cortona-god-creating-animals/raw.jpg',
       relevance: '',
     },
     {
@@ -1273,6 +1387,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-pantheon-dome-oculus/print.webp',
+      rawSrc: '/images/devotional-prints/arch-pantheon-dome-oculus/raw.jpg',
       relevance: '',
     },
   ],
@@ -1287,6 +1402,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-alhambra-gardens-granada/print.webp',
+      rawSrc: '/images/devotional-prints/arch-alhambra-gardens-granada/raw.jpg',
       relevance: '',
     },
     {
@@ -1299,6 +1415,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/brueghel-garden-eden-elder/print.webp',
+      rawSrc: '/images/devotional-prints/brueghel-garden-eden-elder/raw.jpg',
       relevance: '',
     },
     {
@@ -1311,6 +1428,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/michelangelo-creation-adam-2/print.webp',
+      rawSrc: '/images/devotional-prints/michelangelo-creation-adam-2/raw.jpg',
       relevance: '',
     },
   ],
@@ -1325,6 +1443,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/lucas-van-leyden-adam-eve/print.webp',
+      rawSrc: '/images/devotional-prints/lucas-van-leyden-adam-eve/raw.jpg',
       relevance: '',
     },
     {
@@ -1337,6 +1456,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/rembrandt-adam-eve-etching/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-adam-eve-etching/raw.jpg',
       relevance: '',
     },
     {
@@ -1349,6 +1469,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/brueghel-garden-eden-elder/print.webp',
+      rawSrc: '/images/devotional-prints/brueghel-garden-eden-elder/raw.jpg',
       relevance: '',
     },
   ],
@@ -1363,6 +1484,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-catacombs-good-shepherd/print.webp',
+      rawSrc: '/images/devotional-prints/arch-catacombs-good-shepherd/raw.jpg',
       relevance: '',
     },
     {
@@ -1375,6 +1497,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/hammershoi-sunbeam-strandgade/print.webp',
+      rawSrc: '/images/devotional-prints/hammershoi-sunbeam-strandgade/raw.jpg',
       relevance: '',
     },
     {
@@ -1387,6 +1510,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/allston-elijah-desert/print.webp',
+      rawSrc: '/images/devotional-prints/allston-elijah-desert/raw.jpg',
       relevance: '',
     },
   ],
@@ -1401,6 +1525,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bosch-garden-hell-panel/print.webp',
+      rawSrc: '/images/devotional-prints/bosch-garden-hell-panel/raw.jpg',
       relevance: '',
     },
     {
@@ -1413,6 +1538,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-tower-babel-1563/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-tower-babel-1563/raw.jpg',
       relevance: '',
     },
     {
@@ -1425,6 +1551,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-scriptorium-medieval/print.webp',
+      rawSrc: '/images/devotional-prints/arch-scriptorium-medieval/raw.jpg',
       relevance: '',
     },
   ],
@@ -1439,6 +1566,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/allston-elijah-desert/print.webp',
+      rawSrc: '/images/devotional-prints/allston-elijah-desert/raw.jpg',
       relevance: '',
     },
     {
@@ -1451,6 +1579,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-cave-elijah-carmel-2/print.webp',
+      rawSrc: '/images/devotional-prints/arch-cave-elijah-carmel-2/raw.jpg',
       relevance: '',
     },
     {
@@ -1463,6 +1592,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-catacombs-good-shepherd/print.webp',
+      rawSrc: '/images/devotional-prints/arch-catacombs-good-shepherd/raw.jpg',
       relevance: '',
     },
   ],
@@ -1477,6 +1607,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-scriptorium-medieval/print.webp',
+      rawSrc: '/images/devotional-prints/arch-scriptorium-medieval/raw.jpg',
       relevance: '',
     },
     {
@@ -1489,6 +1620,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/rembrandt-scholar-study/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-scholar-study/raw.jpg',
       relevance: '',
     },
     {
@@ -1501,6 +1633,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-fontenay-cloister/print.webp',
+      rawSrc: '/images/devotional-prints/arch-fontenay-cloister/raw.jpg',
       relevance: '',
     },
   ],
@@ -1515,6 +1648,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-fontenay-cloister/print.webp',
+      rawSrc: '/images/devotional-prints/arch-fontenay-cloister/raw.jpg',
       relevance: '',
     },
     {
@@ -1527,6 +1661,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/millet-the-angelus/print.webp',
+      rawSrc: '/images/devotional-prints/millet-the-angelus/raw.jpg',
       relevance: '',
     },
     {
@@ -1539,6 +1674,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-cave-elijah-carmel-2/print.webp',
+      rawSrc: '/images/devotional-prints/arch-cave-elijah-carmel-2/raw.jpg',
       relevance: '',
     },
   ],
@@ -1553,6 +1689,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/chardin-grace-at-table/print.webp',
+      rawSrc: '/images/devotional-prints/chardin-grace-at-table/raw.jpg',
       relevance: '',
     },
     {
@@ -1565,6 +1702,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/clausen-stone-pickers/print.webp',
+      rawSrc: '/images/devotional-prints/clausen-stone-pickers/raw.jpg',
       relevance: '',
     },
     {
@@ -1577,6 +1715,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bosch-garden-hell-panel/print.webp',
+      rawSrc: '/images/devotional-prints/bosch-garden-hell-panel/raw.jpg',
       relevance: '',
     },
   ],
@@ -1591,6 +1730,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-arch-titus-relief/print.webp',
+      rawSrc: '/images/devotional-prints/arch-arch-titus-relief/raw.jpg',
       relevance: '',
     },
     {
@@ -1603,6 +1743,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-return-prodigal-son/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-return-prodigal-son/raw.jpg',
       relevance: '',
     },
     {
@@ -1615,6 +1756,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-garden-tomb-jerusalem/print.webp',
+      rawSrc: '/images/devotional-prints/arch-garden-tomb-jerusalem/raw.jpg',
       relevance: '',
     },
   ],
@@ -1629,6 +1771,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-western-wall-19c/print.webp',
+      rawSrc: '/images/devotional-prints/arch-western-wall-19c/raw.jpg',
       relevance: '',
     },
     {
@@ -1641,6 +1784,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-holy-sepulchre-dome/print.webp',
+      rawSrc: '/images/devotional-prints/arch-holy-sepulchre-dome/raw.jpg',
       relevance: '',
     },
     {
@@ -1653,6 +1797,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/burnand-peter-john-running/print.webp',
+      rawSrc: '/images/devotional-prints/burnand-peter-john-running/raw.jpg',
       relevance: '',
     },
   ],
@@ -1667,6 +1812,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-holy-sepulchre-dome/print.webp',
+      rawSrc: '/images/devotional-prints/arch-holy-sepulchre-dome/raw.jpg',
       relevance: '',
     },
     {
@@ -1679,6 +1825,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/burnand-peter-john-running/print.webp',
+      rawSrc: '/images/devotional-prints/burnand-peter-john-running/raw.jpg',
       relevance: '',
     },
     {
@@ -1691,6 +1838,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-western-wall-19c/print.webp',
+      rawSrc: '/images/devotional-prints/arch-western-wall-19c/raw.jpg',
       relevance: '',
     },
   ],
@@ -1705,6 +1853,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/lhermitte-the-harvest/print.webp',
+      rawSrc: '/images/devotional-prints/lhermitte-the-harvest/raw.jpg',
       relevance: '',
     },
     {
@@ -1717,6 +1866,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-return-prodigal-son/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-return-prodigal-son/raw.jpg',
       relevance: '',
     },
     {
@@ -1729,6 +1879,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-arch-titus-relief/print.webp',
+      rawSrc: '/images/devotional-prints/arch-arch-titus-relief/raw.jpg',
       relevance: '',
     },
   ],
@@ -1743,6 +1894,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-garden-tomb-jerusalem/print.webp',
+      rawSrc: '/images/devotional-prints/arch-garden-tomb-jerusalem/raw.jpg',
       relevance: '',
     },
     {
@@ -1755,6 +1907,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/grunewald-resurrection-isenheim/print.webp',
+      rawSrc:
+        '/images/devotional-prints/grunewald-resurrection-isenheim/raw.jpg',
       relevance: '',
     },
     {
@@ -1767,6 +1921,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-arch-titus-relief/print.webp',
+      rawSrc: '/images/devotional-prints/arch-arch-titus-relief/raw.jpg',
       relevance: '',
     },
   ],
@@ -1781,6 +1936,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/courbet-the-desperate-man/print.webp',
+      rawSrc: '/images/devotional-prints/courbet-the-desperate-man/raw.jpg',
       relevance: '',
     },
     {
@@ -1793,6 +1949,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-laocoon-sons/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-laocoon-sons/raw.jpg',
       relevance: '',
     },
     {
@@ -1805,6 +1962,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/bouguereau-difficult-lesson/print.webp',
+      rawSrc: '/images/devotional-prints/bouguereau-difficult-lesson/raw.jpg',
       relevance: '',
     },
   ],
@@ -1819,6 +1977,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/el-greco-portrait-man/print.webp',
+      rawSrc: '/images/devotional-prints/el-greco-portrait-man/raw.jpg',
       relevance: '',
     },
     {
@@ -1831,6 +1990,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/watteau-gilles-pierrot/print.webp',
+      rawSrc: '/images/devotional-prints/watteau-gilles-pierrot/raw.jpg',
       relevance: '',
     },
     {
@@ -1843,6 +2003,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/caravaggio-david-goliath/print.webp',
+      rawSrc: '/images/devotional-prints/caravaggio-david-goliath/raw.jpg',
       relevance: '',
     },
   ],
@@ -1857,6 +2018,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-baptistery-florence/print.webp',
+      rawSrc: '/images/devotional-prints/arch-baptistery-florence/raw.jpg',
       relevance: '',
     },
     {
@@ -1869,6 +2031,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/guercino-god-father-angels/print.webp',
+      rawSrc: '/images/devotional-prints/guercino-god-father-angels/raw.jpg',
       relevance: '',
     },
     {
@@ -1881,6 +2044,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-damascus-gate-jerusalem/print.webp',
+      rawSrc: '/images/devotional-prints/arch-damascus-gate-jerusalem/raw.jpg',
       relevance: '',
     },
   ],
@@ -1895,6 +2059,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/scheffer-temptation-christ/print.webp',
+      rawSrc: '/images/devotional-prints/scheffer-temptation-christ/raw.jpg',
       relevance: '',
     },
     {
@@ -1907,6 +2072,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/caravaggio-david-goliath/print.webp',
+      rawSrc: '/images/devotional-prints/caravaggio-david-goliath/raw.jpg',
       relevance: '',
     },
     {
@@ -1919,6 +2085,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/courbet-the-desperate-man/print.webp',
+      rawSrc: '/images/devotional-prints/courbet-the-desperate-man/raw.jpg',
       relevance: '',
     },
   ],
@@ -1933,6 +2100,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-damascus-gate-jerusalem/print.webp',
+      rawSrc: '/images/devotional-prints/arch-damascus-gate-jerusalem/raw.jpg',
       relevance: '',
     },
     {
@@ -1945,6 +2113,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/bouguereau-difficult-lesson/print.webp',
+      rawSrc: '/images/devotional-prints/bouguereau-difficult-lesson/raw.jpg',
       relevance: '',
     },
     {
@@ -1957,6 +2126,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-baptistery-florence/print.webp',
+      rawSrc: '/images/devotional-prints/arch-baptistery-florence/raw.jpg',
       relevance: '',
     },
   ],
@@ -1971,6 +2141,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/artifact-babylonian-creation-tablet/print.webp',
+      rawSrc:
+        '/images/devotional-prints/artifact-babylonian-creation-tablet/raw.jpg',
       relevance: '',
     },
     {
@@ -1983,6 +2155,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/tintoretto-creation-animals/print.webp',
+      rawSrc: '/images/devotional-prints/tintoretto-creation-animals/raw.jpg',
       relevance: '',
     },
     {
@@ -1995,6 +2168,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/artifact-torah-scroll-historical/print.webp',
+      rawSrc:
+        '/images/devotional-prints/artifact-torah-scroll-historical/raw.jpg',
       relevance: '',
     },
   ],
@@ -2009,6 +2184,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/corot-lake-ville-davray/print.webp',
+      rawSrc: '/images/devotional-prints/corot-lake-ville-davray/raw.jpg',
       relevance: '',
     },
     {
@@ -2021,6 +2197,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/turner-evening-deluge/print.webp',
+      rawSrc: '/images/devotional-prints/turner-evening-deluge/raw.jpg',
       relevance: '',
     },
     {
@@ -2033,6 +2210,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/michelangelo-creation-of-adam/print.webp',
+      rawSrc: '/images/devotional-prints/michelangelo-creation-of-adam/raw.jpg',
       relevance: '',
     },
   ],
@@ -2047,6 +2225,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/cole-sunny-morning-hudson/print.webp',
+      rawSrc: '/images/devotional-prints/cole-sunny-morning-hudson/raw.jpg',
       relevance: '',
     },
     {
@@ -2059,6 +2238,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/wright-philosopher-orrery/print.webp',
+      rawSrc: '/images/devotional-prints/wright-philosopher-orrery/raw.jpg',
       relevance: '',
     },
     {
@@ -2071,6 +2251,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'risograph',
       src: '/images/devotional-prints/church-twilight-wilderness/print.webp',
+      rawSrc: '/images/devotional-prints/church-twilight-wilderness/raw.jpg',
       relevance: '',
     },
   ],
@@ -2085,6 +2266,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'risograph',
       src: '/images/devotional-prints/church-twilight-wilderness/print.webp',
+      rawSrc: '/images/devotional-prints/church-twilight-wilderness/raw.jpg',
       relevance: '',
     },
     {
@@ -2097,6 +2279,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'risograph',
       src: '/images/devotional-prints/monet-water-lilies-creation/print.webp',
+      rawSrc: '/images/devotional-prints/monet-water-lilies-creation/raw.jpg',
       relevance: '',
     },
     {
@@ -2109,6 +2292,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/cole-sunny-morning-hudson/print.webp',
+      rawSrc: '/images/devotional-prints/cole-sunny-morning-hudson/raw.jpg',
       relevance: '',
     },
   ],
@@ -2123,6 +2307,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/millet-angelus-rhythm/print.webp',
+      rawSrc: '/images/devotional-prints/millet-angelus-rhythm/raw.jpg',
       relevance: '',
     },
     {
@@ -2135,6 +2320,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/corot-lake-ville-davray/print.webp',
+      rawSrc: '/images/devotional-prints/corot-lake-ville-davray/raw.jpg',
       relevance: '',
     },
     {
@@ -2147,6 +2333,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'risograph',
       src: '/images/devotional-prints/monet-water-lilies-creation/print.webp',
+      rawSrc: '/images/devotional-prints/monet-water-lilies-creation/raw.jpg',
       relevance: '',
     },
   ],
@@ -2161,6 +2348,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/artifact-torah-scroll-historical/print.webp',
+      rawSrc:
+        '/images/devotional-prints/artifact-torah-scroll-historical/raw.jpg',
       relevance: '',
     },
     {
@@ -2173,6 +2362,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/michelangelo-creation-of-adam/print.webp',
+      rawSrc: '/images/devotional-prints/michelangelo-creation-of-adam/raw.jpg',
       relevance: '',
     },
     {
@@ -2185,6 +2375,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/artifact-babylonian-creation-tablet/print.webp',
+      rawSrc:
+        '/images/devotional-prints/artifact-babylonian-creation-tablet/raw.jpg',
       relevance: '',
     },
   ],
@@ -2199,6 +2391,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bosch-the-conjurer/print.webp',
+      rawSrc: '/images/devotional-prints/bosch-the-conjurer/raw.jpg',
       relevance: '',
     },
     {
@@ -2211,6 +2404,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/el-greco-burial-count-orgaz/print.webp',
+      rawSrc: '/images/devotional-prints/el-greco-burial-count-orgaz/raw.jpg',
       relevance: '',
     },
     {
@@ -2223,6 +2417,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-palatine-hill-ruins/print.webp',
+      rawSrc: '/images/devotional-prints/arch-palatine-hill-ruins/raw.jpg',
       relevance: '',
     },
   ],
@@ -2237,6 +2432,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/rubens-washing-of-feet/print.webp',
+      rawSrc: '/images/devotional-prints/rubens-washing-of-feet/raw.jpg',
       relevance: '',
     },
     {
@@ -2249,6 +2445,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/del-sarto-last-supper/print.webp',
+      rawSrc: '/images/devotional-prints/del-sarto-last-supper/raw.jpg',
       relevance: '',
     },
     {
@@ -2261,6 +2458,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/murillo-loaves-fishes/print.webp',
+      rawSrc: '/images/devotional-prints/murillo-loaves-fishes/raw.jpg',
       relevance: '',
     },
   ],
@@ -2275,6 +2473,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/del-sarto-last-supper/print.webp',
+      rawSrc: '/images/devotional-prints/del-sarto-last-supper/raw.jpg',
       relevance: '',
     },
     {
@@ -2287,6 +2486,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-bernini-angel-cross/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-bernini-angel-cross/raw.jpg',
       relevance: '',
     },
     {
@@ -2299,6 +2499,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/el-greco-burial-count-orgaz/print.webp',
+      rawSrc: '/images/devotional-prints/el-greco-burial-count-orgaz/raw.jpg',
       relevance: '',
     },
   ],
@@ -2313,6 +2514,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-palatine-hill-ruins/print.webp',
+      rawSrc: '/images/devotional-prints/arch-palatine-hill-ruins/raw.jpg',
       relevance: '',
     },
     {
@@ -2325,6 +2527,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/murillo-loaves-fishes/print.webp',
+      rawSrc: '/images/devotional-prints/murillo-loaves-fishes/raw.jpg',
       relevance: '',
     },
     {
@@ -2337,6 +2540,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bosch-the-conjurer/print.webp',
+      rawSrc: '/images/devotional-prints/bosch-the-conjurer/raw.jpg',
       relevance: '',
     },
   ],
@@ -2351,6 +2555,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/raw.jpg',
       relevance: '',
     },
     {
@@ -2363,6 +2569,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-arch-constantine/print.webp',
+      rawSrc: '/images/devotional-prints/arch-arch-constantine/raw.jpg',
       relevance: '',
     },
     {
@@ -2375,6 +2582,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-via-sacra-rome/print.webp',
+      rawSrc: '/images/devotional-prints/arch-via-sacra-rome/raw.jpg',
       relevance: '',
     },
   ],
@@ -2389,6 +2597,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/brueghel-garden-eden-young/print.webp',
+      rawSrc: '/images/devotional-prints/brueghel-garden-eden-young/raw.jpg',
       relevance: '',
     },
     {
@@ -2401,6 +2610,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/carracci-pieta-1603/print.webp',
+      rawSrc: '/images/devotional-prints/carracci-pieta-1603/raw.jpg',
       relevance: '',
     },
     {
@@ -2413,6 +2623,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/chardin-still-life-arts/print.webp',
+      rawSrc: '/images/devotional-prints/chardin-still-life-arts/raw.jpg',
       relevance: '',
     },
   ],
@@ -2427,6 +2638,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-apostle-paul-writing/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-apostle-paul-writing/raw.jpg',
       relevance: '',
     },
     {
@@ -2439,6 +2652,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-donatello-saint-george/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-donatello-saint-george/raw.jpg',
       relevance: '',
     },
     {
@@ -2451,6 +2665,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/watts-hope-1886/print.webp',
+      rawSrc: '/images/devotional-prints/watts-hope-1886/raw.jpg',
       relevance: '',
     },
   ],
@@ -2465,6 +2680,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-arch-constantine/print.webp',
+      rawSrc: '/images/devotional-prints/arch-arch-constantine/raw.jpg',
       relevance: '',
     },
     {
@@ -2477,6 +2693,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/carracci-pieta-1603/print.webp',
+      rawSrc: '/images/devotional-prints/carracci-pieta-1603/raw.jpg',
       relevance: '',
     },
     {
@@ -2489,6 +2706,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/raw.jpg',
       relevance: '',
     },
   ],
@@ -2503,6 +2722,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/chardin-still-life-arts/print.webp',
+      rawSrc: '/images/devotional-prints/chardin-still-life-arts/raw.jpg',
       relevance: '',
     },
     {
@@ -2515,6 +2735,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-donatello-saint-george/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-donatello-saint-george/raw.jpg',
       relevance: '',
     },
     {
@@ -2527,6 +2748,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-apostle-paul-writing/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-apostle-paul-writing/raw.jpg',
       relevance: '',
     },
   ],
@@ -2541,6 +2764,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-via-sacra-rome/print.webp',
+      rawSrc: '/images/devotional-prints/arch-via-sacra-rome/raw.jpg',
       relevance: '',
     },
     {
@@ -2553,6 +2777,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/watts-hope-1886/print.webp',
+      rawSrc: '/images/devotional-prints/watts-hope-1886/raw.jpg',
       relevance: '',
     },
     {
@@ -2565,6 +2790,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/brueghel-garden-eden-young/print.webp',
+      rawSrc: '/images/devotional-prints/brueghel-garden-eden-young/raw.jpg',
       relevance: '',
     },
   ],
@@ -2579,6 +2805,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-chartres-labyrinth/print.webp',
+      rawSrc: '/images/devotional-prints/arch-chartres-labyrinth/raw.jpg',
       relevance: '',
     },
     {
@@ -2591,6 +2818,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/hammershoi-interior-strandgade/print.webp',
+      rawSrc:
+        '/images/devotional-prints/hammershoi-interior-strandgade/raw.jpg',
       relevance: '',
     },
     {
@@ -2603,6 +2832,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-dome-rock-interior/print.webp',
+      rawSrc: '/images/devotional-prints/arch-dome-rock-interior/raw.jpg',
       relevance: '',
     },
   ],
@@ -2617,6 +2847,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/bouguereau-youth/print.webp',
+      rawSrc: '/images/devotional-prints/bouguereau-youth/raw.jpg',
       relevance: '',
     },
     {
@@ -2629,6 +2860,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/daumier-third-class-carriage/print.webp',
+      rawSrc: '/images/devotional-prints/daumier-third-class-carriage/raw.jpg',
       relevance: '',
     },
     {
@@ -2641,6 +2873,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-upper-room-cenaculum/print.webp',
+      rawSrc: '/images/devotional-prints/arch-upper-room-cenaculum/raw.jpg',
       relevance: '',
     },
   ],
@@ -2655,6 +2888,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-dome-rock-interior/print.webp',
+      rawSrc: '/images/devotional-prints/arch-dome-rock-interior/raw.jpg',
       relevance: '',
     },
     {
@@ -2667,6 +2901,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/vermeer-woman-reading-letter/print.webp',
+      rawSrc: '/images/devotional-prints/vermeer-woman-reading-letter/raw.jpg',
       relevance: '',
     },
     {
@@ -2679,6 +2914,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-chartres-labyrinth/print.webp',
+      rawSrc: '/images/devotional-prints/arch-chartres-labyrinth/raw.jpg',
       relevance: '',
     },
   ],
@@ -2693,6 +2929,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-rodin-prodigal-son/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-rodin-prodigal-son/raw.jpg',
       relevance: '',
     },
     {
@@ -2705,6 +2942,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/daumier-third-class-carriage/print.webp',
+      rawSrc: '/images/devotional-prints/daumier-third-class-carriage/raw.jpg',
       relevance: '',
     },
     {
@@ -2717,6 +2955,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/hammershoi-interior-strandgade/print.webp',
+      rawSrc:
+        '/images/devotional-prints/hammershoi-interior-strandgade/raw.jpg',
       relevance: '',
     },
   ],
@@ -2731,6 +2971,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-upper-room-cenaculum/print.webp',
+      rawSrc: '/images/devotional-prints/arch-upper-room-cenaculum/raw.jpg',
       relevance: '',
     },
     {
@@ -2743,6 +2984,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/tissot-christ-appears-apostles/print.webp',
+      rawSrc:
+        '/images/devotional-prints/tissot-christ-appears-apostles/raw.jpg',
       relevance: '',
     },
     {
@@ -2755,6 +2998,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/bouguereau-youth/print.webp',
+      rawSrc: '/images/devotional-prints/bouguereau-youth/raw.jpg',
       relevance: '',
     },
   ],
@@ -2769,6 +3013,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-roman-forum-chaos/print.webp',
+      rawSrc: '/images/devotional-prints/arch-roman-forum-chaos/raw.jpg',
       relevance: '',
     },
     {
@@ -2781,6 +3026,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-carnival-lent/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-carnival-lent/raw.jpg',
       relevance: '',
     },
     {
@@ -2793,6 +3039,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-annunciation-present/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-annunciation-present/raw.jpg',
       relevance: '',
     },
   ],
@@ -2807,6 +3054,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/daumier-third-class-chaos/print.webp',
+      rawSrc: '/images/devotional-prints/daumier-third-class-chaos/raw.jpg',
       relevance: '',
     },
     {
@@ -2819,6 +3067,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/steen-merry-family-chaos/print.webp',
+      rawSrc: '/images/devotional-prints/steen-merry-family-chaos/raw.jpg',
       relevance: '',
     },
     {
@@ -2831,6 +3080,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-roman-forum-chaos/print.webp',
+      rawSrc: '/images/devotional-prints/arch-roman-forum-chaos/raw.jpg',
       relevance: '',
     },
   ],
@@ -2845,6 +3095,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/chardin-still-life-stillness/print.webp',
+      rawSrc: '/images/devotional-prints/chardin-still-life-stillness/raw.jpg',
       relevance: '',
     },
     {
@@ -2857,6 +3108,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/vermeer-woman-reading-chaos/print.webp',
+      rawSrc: '/images/devotional-prints/vermeer-woman-reading-chaos/raw.jpg',
       relevance: '',
     },
     {
@@ -2869,6 +3121,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-monastery-sinai-burning-bush/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-monastery-sinai-burning-bush/raw.jpg',
       relevance: '',
     },
   ],
@@ -2883,6 +3137,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-annunciation-present/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-annunciation-present/raw.jpg',
       relevance: '',
     },
     {
@@ -2895,6 +3150,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-monastery-sinai-burning-bush/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-monastery-sinai-burning-bush/raw.jpg',
       relevance: '',
     },
     {
@@ -2907,6 +3164,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/allston-elijah-desert-present/print.webp',
+      rawSrc: '/images/devotional-prints/allston-elijah-desert-present/raw.jpg',
       relevance: '',
     },
   ],
@@ -2921,6 +3179,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/allston-elijah-desert-present/print.webp',
+      rawSrc: '/images/devotional-prints/allston-elijah-desert-present/raw.jpg',
       relevance: '',
     },
     {
@@ -2933,6 +3192,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/hammershoi-interior-still/print.webp',
+      rawSrc: '/images/devotional-prints/hammershoi-interior-still/raw.jpg',
       relevance: '',
     },
     {
@@ -2945,6 +3205,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/hammershoi-interior-woman/print.webp',
+      rawSrc: '/images/devotional-prints/hammershoi-interior-woman/raw.jpg',
       relevance: '',
     },
   ],
@@ -2959,6 +3220,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-egyptian-granary/print.webp',
+      rawSrc: '/images/devotional-prints/arch-egyptian-granary/raw.jpg',
       relevance: '',
     },
     {
@@ -2971,6 +3233,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/tissot-gathering-manna/print.webp',
+      rawSrc: '/images/devotional-prints/tissot-gathering-manna/raw.jpg',
       relevance: '',
     },
     {
@@ -2983,6 +3246,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-tabgha-loaves-mosaic/print.webp',
+      rawSrc: '/images/devotional-prints/arch-tabgha-loaves-mosaic/raw.jpg',
       relevance: '',
     },
   ],
@@ -2997,6 +3261,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/steen-merry-family/print.webp',
+      rawSrc: '/images/devotional-prints/steen-merry-family/raw.jpg',
       relevance: '',
     },
     {
@@ -3009,6 +3274,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/millet-the-gleaners/print.webp',
+      rawSrc: '/images/devotional-prints/millet-the-gleaners/raw.jpg',
       relevance: '',
     },
     {
@@ -3021,6 +3287,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/print.webp',
+      rawSrc:
+        '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/raw.jpg',
       relevance: '',
     },
   ],
@@ -3035,6 +3303,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/print.webp',
+      rawSrc:
+        '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/raw.jpg',
       relevance: '',
     },
     {
@@ -3047,6 +3317,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/veronese-feast-cana/print.webp',
+      rawSrc: '/images/devotional-prints/veronese-feast-cana/raw.jpg',
       relevance: '',
     },
     {
@@ -3059,6 +3330,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/brown-work-shared/print.webp',
+      rawSrc: '/images/devotional-prints/brown-work-shared/raw.jpg',
       relevance: '',
     },
   ],
@@ -3073,6 +3345,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-tabgha-loaves-mosaic/print.webp',
+      rawSrc: '/images/devotional-prints/arch-tabgha-loaves-mosaic/raw.jpg',
       relevance: '',
     },
     {
@@ -3085,6 +3358,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/brown-work-shared/print.webp',
+      rawSrc: '/images/devotional-prints/brown-work-shared/raw.jpg',
       relevance: '',
     },
     {
@@ -3097,6 +3371,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-egyptian-granary/print.webp',
+      rawSrc: '/images/devotional-prints/arch-egyptian-granary/raw.jpg',
       relevance: '',
     },
   ],
@@ -3111,6 +3386,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print.webp',
+      rawSrc: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/raw.jpg',
       relevance: '',
     },
     {
@@ -3123,6 +3399,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/raw.jpg',
       relevance: '',
     },
     {
@@ -3135,6 +3413,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-via-sacra-rooted/print.webp',
+      rawSrc: '/images/devotional-prints/arch-via-sacra-rooted/raw.jpg',
       relevance: '',
     },
   ],
@@ -3149,6 +3428,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/courbet-desperate-rooted/print.webp',
+      rawSrc: '/images/devotional-prints/courbet-desperate-rooted/raw.jpg',
       relevance: '',
     },
     {
@@ -3161,6 +3441,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-jacob-wrestling-rooted/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-jacob-wrestling-rooted/raw.jpg',
       relevance: '',
     },
     {
@@ -3173,6 +3455,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-peasant-wedding-roots/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-peasant-wedding-roots/raw.jpg',
       relevance: '',
     },
   ],
@@ -3187,6 +3470,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/friedrich-woman-rising-sun/print.webp',
+      rawSrc: '/images/devotional-prints/friedrich-woman-rising-sun/raw.jpg',
       relevance: '',
     },
     {
@@ -3199,6 +3483,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/millet-angelus-rooted/print.webp',
+      rawSrc: '/images/devotional-prints/millet-angelus-rooted/raw.jpg',
       relevance: '',
     },
     {
@@ -3211,6 +3496,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/courbet-desperate-rooted/print.webp',
+      rawSrc: '/images/devotional-prints/courbet-desperate-rooted/raw.jpg',
       relevance: '',
     },
   ],
@@ -3225,6 +3511,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-peasant-wedding-roots/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-peasant-wedding-roots/raw.jpg',
       relevance: '',
     },
     {
@@ -3237,6 +3524,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/friedrich-oak-snow/print.webp',
+      rawSrc: '/images/devotional-prints/friedrich-oak-snow/raw.jpg',
       relevance: '',
     },
     {
@@ -3249,6 +3537,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/raw.jpg',
       relevance: '',
     },
   ],
@@ -3263,6 +3553,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-via-sacra-rooted/print.webp',
+      rawSrc: '/images/devotional-prints/arch-via-sacra-rooted/raw.jpg',
       relevance: '',
     },
     {
@@ -3275,6 +3566,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/grunewald-resurrection-rooted/print.webp',
+      rawSrc: '/images/devotional-prints/grunewald-resurrection-rooted/raw.jpg',
       relevance: '',
     },
     {
@@ -3287,6 +3579,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print.webp',
+      rawSrc: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/raw.jpg',
       relevance: '',
     },
   ],
@@ -3301,6 +3594,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-areopagus-mars-hill/print.webp',
+      rawSrc: '/images/devotional-prints/arch-areopagus-mars-hill/raw.jpg',
       relevance: '',
     },
     {
@@ -3313,6 +3607,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/raphael-paul-preaching-athens/print.webp',
+      rawSrc: '/images/devotional-prints/raphael-paul-preaching-athens/raw.jpg',
       relevance: '',
     },
     {
@@ -3325,6 +3620,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-antonia-fortress-site/print.webp',
+      rawSrc: '/images/devotional-prints/arch-antonia-fortress-site/raw.jpg',
       relevance: '',
     },
   ],
@@ -3339,6 +3635,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-antonia-fortress-site/print.webp',
+      rawSrc: '/images/devotional-prints/arch-antonia-fortress-site/raw.jpg',
       relevance: '',
     },
     {
@@ -3351,6 +3648,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/carracci-stoning-stephen/print.webp',
+      rawSrc: '/images/devotional-prints/carracci-stoning-stephen/raw.jpg',
       relevance: '',
     },
     {
@@ -3363,6 +3661,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-areopagus-mars-hill/print.webp',
+      rawSrc: '/images/devotional-prints/arch-areopagus-mars-hill/raw.jpg',
       relevance: '',
     },
   ],
@@ -3377,6 +3676,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-beautiful-gate-temple/print.webp',
+      rawSrc: '/images/devotional-prints/arch-beautiful-gate-temple/raw.jpg',
       relevance: '',
     },
     {
@@ -3389,6 +3689,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/raphael-healing-lame-man-2/print.webp',
+      rawSrc: '/images/devotional-prints/raphael-healing-lame-man-2/raw.jpg',
       relevance: '',
     },
     {
@@ -3401,6 +3702,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-mamertine-prison-cell/print.webp',
+      rawSrc: '/images/devotional-prints/arch-mamertine-prison-cell/raw.jpg',
       relevance: '',
     },
   ],
@@ -3415,6 +3717,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-mamertine-prison-cell/print.webp',
+      rawSrc: '/images/devotional-prints/arch-mamertine-prison-cell/raw.jpg',
       relevance: '',
     },
     {
@@ -3427,6 +3730,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-apostle-peter-prison/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-apostle-peter-prison/raw.jpg',
       relevance: '',
     },
     {
@@ -3439,6 +3744,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-beautiful-gate-temple/print.webp',
+      rawSrc: '/images/devotional-prints/arch-beautiful-gate-temple/raw.jpg',
       relevance: '',
     },
   ],
@@ -3453,6 +3759,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/caravaggio-incredulity-thomas/print.webp',
+      rawSrc: '/images/devotional-prints/caravaggio-incredulity-thomas/raw.jpg',
       relevance: '',
     },
     {
@@ -3465,6 +3772,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/friedrich-wanderer-fog/print.webp',
+      rawSrc: '/images/devotional-prints/friedrich-wanderer-fog/raw.jpg',
       relevance: '',
     },
     {
@@ -3477,6 +3785,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/lippi-music-making-angels/print.webp',
+      rawSrc: '/images/devotional-prints/lippi-music-making-angels/raw.jpg',
       relevance: '',
     },
   ],
@@ -3491,6 +3800,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ephesus-library-celsus/print.webp',
+      rawSrc: '/images/devotional-prints/arch-ephesus-library-celsus/raw.jpg',
       relevance: '',
     },
     {
@@ -3503,6 +3813,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/raphael-school-athens-standing/print.webp',
+      rawSrc:
+        '/images/devotional-prints/raphael-school-athens-standing/raw.jpg',
       relevance: '',
     },
     {
@@ -3515,6 +3827,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-library-celsus-ephesus-2/print.webp',
+      rawSrc: '/images/devotional-prints/arch-library-celsus-ephesus-2/raw.jpg',
       relevance: '',
     },
   ],
@@ -3529,6 +3842,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-philippi-ruins-greece/print.webp',
+      rawSrc: '/images/devotional-prints/arch-philippi-ruins-greece/raw.jpg',
       relevance: '',
     },
     {
@@ -3541,6 +3855,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-apostle-paul-standing/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-apostle-paul-standing/raw.jpg',
       relevance: '',
     },
     {
@@ -3553,6 +3869,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-mamertine-prison-paul/print.webp',
+      rawSrc: '/images/devotional-prints/arch-mamertine-prison-paul/raw.jpg',
       relevance: '',
     },
   ],
@@ -3567,6 +3884,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-library-celsus-ephesus-2/print.webp',
+      rawSrc: '/images/devotional-prints/arch-library-celsus-ephesus-2/raw.jpg',
       relevance: '',
     },
     {
@@ -3579,6 +3897,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/raphael-apostle-paul-preaching/print.webp',
+      rawSrc:
+        '/images/devotional-prints/raphael-apostle-paul-preaching/raw.jpg',
       relevance: '',
     },
     {
@@ -3591,6 +3911,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ephesus-library-celsus/print.webp',
+      rawSrc: '/images/devotional-prints/arch-ephesus-library-celsus/raw.jpg',
       relevance: '',
     },
   ],
@@ -3605,6 +3926,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/lippi-music-making-angels/print.webp',
+      rawSrc: '/images/devotional-prints/lippi-music-making-angels/raw.jpg',
       relevance: '',
     },
     {
@@ -3617,6 +3939,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/vermeer-girl-pearl-standing/print.webp',
+      rawSrc: '/images/devotional-prints/vermeer-girl-pearl-standing/raw.jpg',
       relevance: '',
     },
     {
@@ -3629,6 +3952,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/raphael-school-athens-standing/print.webp',
+      rawSrc:
+        '/images/devotional-prints/raphael-school-athens-standing/raw.jpg',
       relevance: '',
     },
   ],
@@ -3643,6 +3968,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/friedrich-wanderer-fog/print.webp',
+      rawSrc: '/images/devotional-prints/friedrich-wanderer-fog/raw.jpg',
       relevance: '',
     },
     {
@@ -3655,6 +3981,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/caravaggio-incredulity-thomas/print.webp',
+      rawSrc: '/images/devotional-prints/caravaggio-incredulity-thomas/raw.jpg',
       relevance: '',
     },
     {
@@ -3667,6 +3994,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/raphael-apostle-paul-preaching/print.webp',
+      rawSrc:
+        '/images/devotional-prints/raphael-apostle-paul-preaching/raw.jpg',
       relevance: '',
     },
   ],
@@ -3681,6 +4010,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-mamertine-prison-paul/print.webp',
+      rawSrc: '/images/devotional-prints/arch-mamertine-prison-paul/raw.jpg',
       relevance: '',
     },
     {
@@ -3693,6 +4023,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-michelangelo-david-standing/print.webp',
+      rawSrc:
+        '/images/devotional-prints/sculpt-michelangelo-david-standing/raw.jpg',
       relevance: '',
     },
     {
@@ -3705,6 +4037,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-philippi-ruins-greece/print.webp',
+      rawSrc: '/images/devotional-prints/arch-philippi-ruins-greece/raw.jpg',
       relevance: '',
     },
   ],
@@ -3719,6 +4052,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-gethsemane-olive-trees/print.webp',
+      rawSrc: '/images/devotional-prints/arch-gethsemane-olive-trees/raw.jpg',
       relevance: '',
     },
     {
@@ -3731,6 +4065,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/mantegna-agony-in-garden/print.webp',
+      rawSrc: '/images/devotional-prints/mantegna-agony-in-garden/raw.jpg',
       relevance: '',
     },
     {
@@ -3743,6 +4078,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-canterbury-cathedral-nave/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-canterbury-cathedral-nave/raw.jpg',
       relevance: '',
     },
   ],
@@ -3757,6 +4094,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-storm-sea-galilee/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-storm-sea-galilee/raw.jpg',
       relevance: '',
     },
     {
@@ -3769,6 +4107,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/el-greco-agony-garden/print.webp',
+      rawSrc: '/images/devotional-prints/el-greco-agony-garden/raw.jpg',
       relevance: '',
     },
     {
@@ -3781,6 +4120,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/mantegna-agony-in-garden/print.webp',
+      rawSrc: '/images/devotional-prints/mantegna-agony-in-garden/raw.jpg',
       relevance: '',
     },
   ],
@@ -3795,6 +4135,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/rembrandt-abraham-isaac/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-abraham-isaac/raw.jpg',
       relevance: '',
     },
     {
@@ -3807,6 +4148,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/reni-massacre-innocents/print.webp',
+      rawSrc: '/images/devotional-prints/reni-massacre-innocents/raw.jpg',
       relevance: '',
     },
     {
@@ -3819,6 +4161,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/el-greco-agony-garden/print.webp',
+      rawSrc: '/images/devotional-prints/el-greco-agony-garden/raw.jpg',
       relevance: '',
     },
   ],
@@ -3833,6 +4176,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-via-dolorosa-arch/print.webp',
+      rawSrc: '/images/devotional-prints/arch-via-dolorosa-arch/raw.jpg',
       relevance: '',
     },
     {
@@ -3845,6 +4189,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-michelangelo-pieta/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-michelangelo-pieta/raw.jpg',
       relevance: '',
     },
     {
@@ -3857,6 +4202,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/chardin-grace-before-meal/print.webp',
+      rawSrc: '/images/devotional-prints/chardin-grace-before-meal/raw.jpg',
       relevance: '',
     },
   ],
@@ -3871,6 +4217,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-canterbury-cathedral-nave/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-canterbury-cathedral-nave/raw.jpg',
       relevance: '',
     },
     {
@@ -3883,6 +4231,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/palmer-magic-apple-tree/print.webp',
+      rawSrc: '/images/devotional-prints/palmer-magic-apple-tree/raw.jpg',
       relevance: '',
     },
     {
@@ -3895,6 +4244,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-gethsemane-olive-trees/print.webp',
+      rawSrc: '/images/devotional-prints/arch-gethsemane-olive-trees/raw.jpg',
       relevance: '',
     },
   ],
@@ -3909,6 +4259,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/chardin-grace-before-meal/print.webp',
+      rawSrc: '/images/devotional-prints/chardin-grace-before-meal/raw.jpg',
       relevance: '',
     },
     {
@@ -3921,6 +4272,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-bernini-saint-teresa/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-bernini-saint-teresa/raw.jpg',
       relevance: '',
     },
     {
@@ -3933,6 +4285,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-via-dolorosa-arch/print.webp',
+      rawSrc: '/images/devotional-prints/arch-via-dolorosa-arch/raw.jpg',
       relevance: '',
     },
   ],
@@ -3947,6 +4300,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-cenaculum-upper-room/print.webp',
+      rawSrc: '/images/devotional-prints/arch-cenaculum-upper-room/raw.jpg',
       relevance: '',
     },
     {
@@ -3959,6 +4313,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/duccio-pentecost-1308/print.webp',
+      rawSrc: '/images/devotional-prints/duccio-pentecost-1308/raw.jpg',
       relevance: '',
     },
     {
@@ -3971,6 +4326,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-hagia-sophia-apse/print.webp',
+      rawSrc: '/images/devotional-prints/arch-hagia-sophia-apse/raw.jpg',
       relevance: '',
     },
   ],
@@ -3985,6 +4341,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-hagia-sophia-apse/print.webp',
+      rawSrc: '/images/devotional-prints/arch-hagia-sophia-apse/raw.jpg',
       relevance: '',
     },
     {
@@ -3997,6 +4354,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/el-greco-pentecost/print.webp',
+      rawSrc: '/images/devotional-prints/el-greco-pentecost/raw.jpg',
       relevance: '',
     },
     {
@@ -4009,6 +4367,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-cenaculum-upper-room/print.webp',
+      rawSrc: '/images/devotional-prints/arch-cenaculum-upper-room/raw.jpg',
       relevance: '',
     },
   ],
@@ -4023,6 +4382,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/raphael-healing-lame-man/print.webp',
+      rawSrc: '/images/devotional-prints/raphael-healing-lame-man/raw.jpg',
       relevance: '',
     },
     {
@@ -4035,6 +4395,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-peasant-wedding-2/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-peasant-wedding-2/raw.jpg',
       relevance: '',
     },
     {
@@ -4047,6 +4408,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/duccio-pentecost-1308/print.webp',
+      rawSrc: '/images/devotional-prints/duccio-pentecost-1308/raw.jpg',
       relevance: '',
     },
   ],
@@ -4061,6 +4423,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-mamertine-prison-rome/print.webp',
+      rawSrc: '/images/devotional-prints/arch-mamertine-prison-rome/raw.jpg',
       relevance: '',
     },
     {
@@ -4073,6 +4436,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/rubens-saint-peter-tribute/print.webp',
+      rawSrc: '/images/devotional-prints/rubens-saint-peter-tribute/raw.jpg',
       relevance: '',
     },
     {
@@ -4085,6 +4449,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-road-to-gaza-ancient/print.webp',
+      rawSrc: '/images/devotional-prints/arch-road-to-gaza-ancient/raw.jpg',
       relevance: '',
     },
   ],
@@ -4099,6 +4464,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-road-to-gaza-ancient/print.webp',
+      rawSrc: '/images/devotional-prints/arch-road-to-gaza-ancient/raw.jpg',
       relevance: '',
     },
     {
@@ -4111,6 +4477,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/rembrandt-philip-baptizing-ethiopian/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-philip-baptizing-ethiopian/raw.jpg',
       relevance: '',
     },
     {
@@ -4123,6 +4491,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-mamertine-prison-rome/print.webp',
+      rawSrc: '/images/devotional-prints/arch-mamertine-prison-rome/raw.jpg',
       relevance: '',
     },
   ],
@@ -4137,6 +4506,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-rodin-thinker/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-rodin-thinker/raw.jpg',
       relevance: '',
     },
     {
@@ -4149,6 +4519,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/wright-alchemist-patience/print.webp',
+      rawSrc: '/images/devotional-prints/wright-alchemist-patience/raw.jpg',
       relevance: '',
     },
     {
@@ -4161,6 +4532,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-annunciation-draw-near/print.webp',
+      rawSrc:
+        '/images/devotional-prints/angelico-annunciation-draw-near/raw.jpg',
       relevance: '',
     },
   ],
@@ -4175,6 +4548,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-jacob-wrestling-belief/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-jacob-wrestling-belief/raw.jpg',
       relevance: '',
     },
     {
@@ -4187,6 +4562,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bosch-ship-fools-tongue/print.webp',
+      rawSrc: '/images/devotional-prints/bosch-ship-fools-tongue/raw.jpg',
       relevance: '',
     },
     {
@@ -4199,6 +4575,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/print.webp',
+      rawSrc:
+        '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/raw.jpg',
       relevance: '',
     },
   ],
@@ -4213,6 +4591,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-hospital-innocents-belief/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-hospital-innocents-belief/raw.jpg',
       relevance: '',
     },
     {
@@ -4225,6 +4605,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-works-mercy-belief/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-works-mercy-belief/raw.jpg',
       relevance: '',
     },
     {
@@ -4237,6 +4618,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-annunciation-draw-near/print.webp',
+      rawSrc:
+        '/images/devotional-prints/angelico-annunciation-draw-near/raw.jpg',
       relevance: '',
     },
   ],
@@ -4251,6 +4634,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bosch-ship-fools-tongue/print.webp',
+      rawSrc: '/images/devotional-prints/bosch-ship-fools-tongue/raw.jpg',
       relevance: '',
     },
     {
@@ -4263,6 +4647,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-works-mercy-belief/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-works-mercy-belief/raw.jpg',
       relevance: '',
     },
     {
@@ -4275,6 +4660,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/guercino-doubting-thomas-2/print.webp',
+      rawSrc: '/images/devotional-prints/guercino-doubting-thomas-2/raw.jpg',
       relevance: '',
     },
   ],
@@ -4289,6 +4675,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-annunciation-draw-near/print.webp',
+      rawSrc:
+        '/images/devotional-prints/angelico-annunciation-draw-near/raw.jpg',
       relevance: '',
     },
     {
@@ -4301,6 +4689,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/guercino-doubting-thomas-2/print.webp',
+      rawSrc: '/images/devotional-prints/guercino-doubting-thomas-2/raw.jpg',
       relevance: '',
     },
     {
@@ -4313,6 +4702,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-hospital-innocents-belief/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-hospital-innocents-belief/raw.jpg',
       relevance: '',
     },
   ],
@@ -4327,6 +4718,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/print.webp',
+      rawSrc:
+        '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/raw.jpg',
       relevance: '',
     },
     {
@@ -4339,6 +4732,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/wright-alchemist-patience/print.webp',
+      rawSrc: '/images/devotional-prints/wright-alchemist-patience/raw.jpg',
       relevance: '',
     },
     {
@@ -4351,6 +4745,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-jacob-wrestling-belief/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-jacob-wrestling-belief/raw.jpg',
       relevance: '',
     },
   ],
@@ -4365,6 +4761,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-lascaux-cave-paintings/print.webp',
+      rawSrc: '/images/devotional-prints/arch-lascaux-cave-paintings/raw.jpg',
       relevance: '',
     },
     {
@@ -4377,6 +4774,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/cole-voyage-life-childhood/print.webp',
+      rawSrc: '/images/devotional-prints/cole-voyage-life-childhood/raw.jpg',
       relevance: '',
     },
     {
@@ -4389,6 +4787,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-church-annunciation-nazareth/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-church-annunciation-nazareth/raw.jpg',
       relevance: '',
     },
   ],
@@ -4403,6 +4803,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/artifact-rosetta-stone/print.webp',
+      rawSrc: '/images/devotional-prints/artifact-rosetta-stone/raw.jpg',
       relevance: '',
     },
     {
@@ -4415,6 +4816,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/raphael-school-of-athens/print.webp',
+      rawSrc: '/images/devotional-prints/raphael-school-of-athens/raw.jpg',
       relevance: '',
     },
     {
@@ -4427,6 +4829,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-judean-desert-engraving/print.webp',
+      rawSrc: '/images/devotional-prints/arch-judean-desert-engraving/raw.jpg',
       relevance: '',
     },
   ],
@@ -4441,6 +4844,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-annunciation-logos/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-annunciation-logos/raw.jpg',
       relevance: '',
     },
     {
@@ -4453,6 +4857,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-church-annunciation-nazareth/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-church-annunciation-nazareth/raw.jpg',
       relevance: '',
     },
     {
@@ -4465,6 +4871,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/caravaggio-saint-john-baptist/print.webp',
+      rawSrc: '/images/devotional-prints/caravaggio-saint-john-baptist/raw.jpg',
       relevance: '',
     },
   ],
@@ -4479,6 +4886,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-old-man-praying/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-old-man-praying/raw.jpg',
       relevance: '',
     },
     {
@@ -4491,6 +4899,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/vermeer-woman-pearl-necklace/print.webp',
+      rawSrc: '/images/devotional-prints/vermeer-woman-pearl-necklace/raw.jpg',
       relevance: '',
     },
     {
@@ -4503,6 +4912,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-lascaux-cave-paintings/print.webp',
+      rawSrc: '/images/devotional-prints/arch-lascaux-cave-paintings/raw.jpg',
       relevance: '',
     },
   ],
@@ -4517,6 +4927,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-judean-desert-engraving/print.webp',
+      rawSrc: '/images/devotional-prints/arch-judean-desert-engraving/raw.jpg',
       relevance: '',
     },
     {
@@ -4529,6 +4940,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/caravaggio-john-wilderness/print.webp',
+      rawSrc: '/images/devotional-prints/caravaggio-john-wilderness/raw.jpg',
       relevance: '',
     },
     {
@@ -4541,6 +4953,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-annunciation-logos/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-annunciation-logos/raw.jpg',
       relevance: '',
     },
   ],
@@ -4555,6 +4968,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-capernaum-synagogue-ruins/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-capernaum-synagogue-ruins/raw.jpg',
       relevance: '',
     },
     {
@@ -4567,6 +4982,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/millet-man-with-hoe/print.webp',
+      rawSrc: '/images/devotional-prints/millet-man-with-hoe/raw.jpg',
       relevance: '',
     },
     {
@@ -4579,6 +4995,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ancient-bread-oven-israel/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-ancient-bread-oven-israel/raw.jpg',
       relevance: '',
     },
   ],
@@ -4593,6 +5011,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/courbet-stone-breakers-work/print.webp',
+      rawSrc: '/images/devotional-prints/courbet-stone-breakers-work/raw.jpg',
       relevance: '',
     },
     {
@@ -4605,6 +5024,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/millet-sower-work/print.webp',
+      rawSrc: '/images/devotional-prints/millet-sower-work/raw.jpg',
       relevance: '',
     },
     {
@@ -4617,6 +5037,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/millet-man-with-hoe/print.webp',
+      rawSrc: '/images/devotional-prints/millet-man-with-hoe/raw.jpg',
       relevance: '',
     },
   ],
@@ -4631,6 +5052,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/veronese-feast-cana-hunger/print.webp',
+      rawSrc: '/images/devotional-prints/veronese-feast-cana-hunger/raw.jpg',
       relevance: '',
     },
     {
@@ -4643,6 +5065,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/millet-sower-work/print.webp',
+      rawSrc: '/images/devotional-prints/millet-sower-work/raw.jpg',
       relevance: '',
     },
     {
@@ -4655,6 +5078,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-supper-emmaus/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-supper-emmaus/raw.jpg',
       relevance: '',
     },
   ],
@@ -4669,6 +5093,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ancient-bread-oven-israel/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-ancient-bread-oven-israel/raw.jpg',
       relevance: '',
     },
     {
@@ -4681,6 +5107,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-supper-emmaus/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-supper-emmaus/raw.jpg',
       relevance: '',
     },
     {
@@ -4693,6 +5120,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-capernaum-synagogue-ruins/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-capernaum-synagogue-ruins/raw.jpg',
       relevance: '',
     },
   ],
@@ -4707,6 +5136,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/chardin-still-life-bread/print.webp',
+      rawSrc: '/images/devotional-prints/chardin-still-life-bread/raw.jpg',
       relevance: '',
     },
     {
@@ -4719,6 +5149,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-tabgha-mosaic-fish/print.webp',
+      rawSrc: '/images/devotional-prints/arch-tabgha-mosaic-fish/raw.jpg',
       relevance: '',
     },
     {
@@ -4731,6 +5162,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/courbet-stone-breakers-work/print.webp',
+      rawSrc: '/images/devotional-prints/courbet-stone-breakers-work/raw.jpg',
       relevance: '',
     },
   ],
@@ -4745,6 +5177,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-tabgha-mosaic-fish/print.webp',
+      rawSrc: '/images/devotional-prints/arch-tabgha-mosaic-fish/raw.jpg',
       relevance: '',
     },
     {
@@ -4757,6 +5190,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/tissot-feeding-five-thousand/print.webp',
+      rawSrc: '/images/devotional-prints/tissot-feeding-five-thousand/raw.jpg',
       relevance: '',
     },
     {
@@ -4769,6 +5203,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/chardin-still-life-bread/print.webp',
+      rawSrc: '/images/devotional-prints/chardin-still-life-bread/raw.jpg',
       relevance: '',
     },
   ],
@@ -4783,6 +5218,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-trajan-market-ruins/print.webp',
+      rawSrc: '/images/devotional-prints/arch-trajan-market-ruins/raw.jpg',
       relevance: '',
     },
     {
@@ -4795,6 +5231,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/steen-rhetoricians-window/print.webp',
+      rawSrc: '/images/devotional-prints/steen-rhetoricians-window/raw.jpg',
       relevance: '',
     },
     {
@@ -4807,6 +5244,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-westminster-cloister/print.webp',
+      rawSrc: '/images/devotional-prints/arch-westminster-cloister/raw.jpg',
       relevance: '',
     },
   ],
@@ -4821,6 +5259,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-westminster-cloister/print.webp',
+      rawSrc: '/images/devotional-prints/arch-westminster-cloister/raw.jpg',
       relevance: '',
     },
     {
@@ -4833,6 +5272,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/vermeer-christ-martha-mary/print.webp',
+      rawSrc: '/images/devotional-prints/vermeer-christ-martha-mary/raw.jpg',
       relevance: '',
     },
     {
@@ -4845,6 +5285,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/durer-saint-jerome-study/print.webp',
+      rawSrc: '/images/devotional-prints/durer-saint-jerome-study/raw.jpg',
       relevance: '',
     },
   ],
@@ -4859,6 +5300,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-capernaum-synagogue/print.webp',
+      rawSrc: '/images/devotional-prints/arch-capernaum-synagogue/raw.jpg',
       relevance: '',
     },
     {
@@ -4871,6 +5313,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/durer-saint-jerome-study/print.webp',
+      rawSrc: '/images/devotional-prints/durer-saint-jerome-study/raw.jpg',
       relevance: '',
     },
     {
@@ -4883,6 +5326,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-cave-elijah-carmel/print.webp',
+      rawSrc: '/images/devotional-prints/arch-cave-elijah-carmel/raw.jpg',
       relevance: '',
     },
   ],
@@ -4897,6 +5341,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/friedrich-monk-by-sea/print.webp',
+      rawSrc: '/images/devotional-prints/friedrich-monk-by-sea/raw.jpg',
       relevance: '',
     },
     {
@@ -4909,6 +5354,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-ghiberti-gates-detail/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-ghiberti-gates-detail/raw.jpg',
       relevance: '',
     },
     {
@@ -4921,6 +5367,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/steen-rhetoricians-window/print.webp',
+      rawSrc: '/images/devotional-prints/steen-rhetoricians-window/raw.jpg',
       relevance: '',
     },
   ],
@@ -4935,6 +5382,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-ghiberti-gates-detail/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-ghiberti-gates-detail/raw.jpg',
       relevance: '',
     },
     {
@@ -4947,6 +5395,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/friedrich-monk-by-sea/print.webp',
+      rawSrc: '/images/devotional-prints/friedrich-monk-by-sea/raw.jpg',
       relevance: '',
     },
     {
@@ -4959,6 +5408,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/vermeer-christ-martha-mary/print.webp',
+      rawSrc: '/images/devotional-prints/vermeer-christ-martha-mary/raw.jpg',
       relevance: '',
     },
   ],
@@ -4973,6 +5423,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-cave-elijah-carmel/print.webp',
+      rawSrc: '/images/devotional-prints/arch-cave-elijah-carmel/raw.jpg',
       relevance: '',
     },
     {
@@ -4985,6 +5436,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-capernaum-synagogue/print.webp',
+      rawSrc: '/images/devotional-prints/arch-capernaum-synagogue/raw.jpg',
       relevance: '',
     },
     {
@@ -4997,6 +5449,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-trajan-market-ruins/print.webp',
+      rawSrc: '/images/devotional-prints/arch-trajan-market-ruins/raw.jpg',
       relevance: '',
     },
   ],
@@ -5011,6 +5464,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-tower-babel/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-tower-babel/raw.jpg',
       relevance: '',
     },
     {
@@ -5023,6 +5477,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/caravaggio-ecce-homo/print.webp',
+      rawSrc: '/images/devotional-prints/caravaggio-ecce-homo/raw.jpg',
       relevance: '',
     },
     {
@@ -5035,6 +5490,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-straight-street-damascus/print.webp',
+      rawSrc: '/images/devotional-prints/arch-straight-street-damascus/raw.jpg',
       relevance: '',
     },
   ],
@@ -5049,6 +5505,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/ge-what-is-truth/print.webp',
+      rawSrc: '/images/devotional-prints/ge-what-is-truth/raw.jpg',
       relevance: '',
     },
     {
@@ -5061,6 +5518,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/caravaggio-ecce-homo/print.webp',
+      rawSrc: '/images/devotional-prints/caravaggio-ecce-homo/raw.jpg',
       relevance: '',
     },
     {
@@ -5073,6 +5531,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/daumier-third-class-truth/print.webp',
+      rawSrc: '/images/devotional-prints/daumier-third-class-truth/raw.jpg',
       relevance: '',
     },
   ],
@@ -5087,6 +5546,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-christ-pilgrim/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-christ-pilgrim/raw.jpg',
       relevance: '',
     },
     {
@@ -5099,6 +5559,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-straight-street-damascus/print.webp',
+      rawSrc: '/images/devotional-prints/arch-straight-street-damascus/raw.jpg',
       relevance: '',
     },
     {
@@ -5111,6 +5572,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-old-bailey-london/print.webp',
+      rawSrc: '/images/devotional-prints/arch-old-bailey-london/raw.jpg',
       relevance: '',
     },
   ],
@@ -5125,6 +5587,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/daumier-third-class-truth/print.webp',
+      rawSrc: '/images/devotional-prints/daumier-third-class-truth/raw.jpg',
       relevance: '',
     },
     {
@@ -5137,6 +5600,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-themis-justice/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-themis-justice/raw.jpg',
       relevance: '',
     },
     {
@@ -5149,6 +5613,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-tower-babel/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-tower-babel/raw.jpg',
       relevance: '',
     },
   ],
@@ -5163,6 +5628,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-old-bailey-london/print.webp',
+      rawSrc: '/images/devotional-prints/arch-old-bailey-london/raw.jpg',
       relevance: '',
     },
     {
@@ -5175,6 +5641,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/vermeer-the-geographer/print.webp',
+      rawSrc: '/images/devotional-prints/vermeer-the-geographer/raw.jpg',
       relevance: '',
     },
     {
@@ -5187,6 +5654,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-christ-pilgrim/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-christ-pilgrim/raw.jpg',
       relevance: '',
     },
   ],
@@ -5201,6 +5669,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/durer-self-portrait-imago-dei/print.webp',
+      rawSrc: '/images/devotional-prints/durer-self-portrait-imago-dei/raw.jpg',
       relevance: '',
     },
     {
@@ -5213,6 +5682,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-winged-victory-samothrace/print.webp',
+      rawSrc:
+        '/images/devotional-prints/sculpt-winged-victory-samothrace/raw.jpg',
       relevance: '',
     },
     {
@@ -5225,6 +5696,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/courbet-stone-breakers-valued/print.webp',
+      rawSrc: '/images/devotional-prints/courbet-stone-breakers-valued/raw.jpg',
       relevance: '',
     },
   ],
@@ -5239,6 +5711,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/courbet-stone-breakers-valued/print.webp',
+      rawSrc: '/images/devotional-prints/courbet-stone-breakers-valued/raw.jpg',
       relevance: '',
     },
     {
@@ -5251,6 +5724,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/daumier-third-class-valued/print.webp',
+      rawSrc: '/images/devotional-prints/daumier-third-class-valued/raw.jpg',
       relevance: '',
     },
     {
@@ -5263,6 +5737,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/cassatt-mother-child/print.webp',
+      rawSrc: '/images/devotional-prints/cassatt-mother-child/raw.jpg',
       relevance: '',
     },
   ],
@@ -5277,6 +5752,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-titus-reading/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-titus-reading/raw.jpg',
       relevance: '',
     },
     {
@@ -5289,6 +5765,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/vermeer-girl-pearl-earring/print.webp',
+      rawSrc: '/images/devotional-prints/vermeer-girl-pearl-earring/raw.jpg',
       relevance: '',
     },
     {
@@ -5301,6 +5778,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/daumier-third-class-valued/print.webp',
+      rawSrc: '/images/devotional-prints/daumier-third-class-valued/raw.jpg',
       relevance: '',
     },
   ],
@@ -5315,6 +5793,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'linocut',
       src: '/images/devotional-prints/blake-glad-day-albion/print.webp',
+      rawSrc: '/images/devotional-prints/blake-glad-day-albion/raw.jpg',
       relevance: '',
     },
     {
@@ -5327,6 +5806,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/michelangelo-creation-adam-hands/print.webp',
+      rawSrc:
+        '/images/devotional-prints/michelangelo-creation-adam-hands/raw.jpg',
       relevance: '',
     },
     {
@@ -5339,6 +5820,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-self-portrait-63/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-self-portrait-63/raw.jpg',
       relevance: '',
     },
   ],
@@ -5353,6 +5835,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/cassatt-mother-child/print.webp',
+      rawSrc: '/images/devotional-prints/cassatt-mother-child/raw.jpg',
       relevance: '',
     },
     {
@@ -5365,6 +5848,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-self-portrait-valued/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-self-portrait-valued/raw.jpg',
       relevance: '',
     },
     {
@@ -5377,6 +5862,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'linocut',
       src: '/images/devotional-prints/blake-glad-day-albion/print.webp',
+      rawSrc: '/images/devotional-prints/blake-glad-day-albion/raw.jpg',
       relevance: '',
     },
   ],
@@ -5391,6 +5877,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-san-thome-basilica/print.webp',
+      rawSrc: '/images/devotional-prints/arch-san-thome-basilica/raw.jpg',
       relevance: '',
     },
     {
@@ -5403,6 +5890,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-thomas-apostle/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-thomas-apostle/raw.jpg',
       relevance: '',
     },
     {
@@ -5415,6 +5903,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-maria-laach-choir-stalls/print.webp',
+      rawSrc: '/images/devotional-prints/arch-maria-laach-choir-stalls/raw.jpg',
       relevance: '',
     },
   ],
@@ -5429,6 +5918,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-jacob-wrestling-angel/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-jacob-wrestling-angel/raw.jpg',
       relevance: '',
     },
     {
@@ -5441,6 +5932,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bosch-ship-fools/print.webp',
+      rawSrc: '/images/devotional-prints/bosch-ship-fools/raw.jpg',
       relevance: '',
     },
     {
@@ -5453,6 +5945,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-works-mercy/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-works-mercy/raw.jpg',
       relevance: '',
     },
   ],
@@ -5467,6 +5960,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ospedale-innocenti/print.webp',
+      rawSrc: '/images/devotional-prints/arch-ospedale-innocenti/raw.jpg',
       relevance: '',
     },
     {
@@ -5479,6 +5973,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-works-mercy/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-works-mercy/raw.jpg',
       relevance: '',
     },
     {
@@ -5491,6 +5986,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-annunciation-believe/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-annunciation-believe/raw.jpg',
       relevance: '',
     },
   ],
@@ -5505,6 +6001,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bosch-ship-fools/print.webp',
+      rawSrc: '/images/devotional-prints/bosch-ship-fools/raw.jpg',
       relevance: '',
     },
     {
@@ -5517,6 +6014,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/guercino-doubting-thomas/print.webp',
+      rawSrc: '/images/devotional-prints/guercino-doubting-thomas/raw.jpg',
       relevance: '',
     },
     {
@@ -5529,6 +6027,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-san-thome-basilica/print.webp',
+      rawSrc: '/images/devotional-prints/arch-san-thome-basilica/raw.jpg',
       relevance: '',
     },
   ],
@@ -5543,6 +6042,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-annunciation-believe/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-annunciation-believe/raw.jpg',
       relevance: '',
     },
     {
@@ -5555,6 +6055,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-maria-laach-choir-stalls/print.webp',
+      rawSrc: '/images/devotional-prints/arch-maria-laach-choir-stalls/raw.jpg',
       relevance: '',
     },
     {
@@ -5567,6 +6068,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ospedale-innocenti/print.webp',
+      rawSrc: '/images/devotional-prints/arch-ospedale-innocenti/raw.jpg',
       relevance: '',
     },
   ],
@@ -5581,6 +6083,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-bourdelle-beethoven/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-bourdelle-beethoven/raw.jpg',
       relevance: '',
     },
     {
@@ -5593,6 +6096,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/wright-the-alchemist/print.webp',
+      rawSrc: '/images/devotional-prints/wright-the-alchemist/raw.jpg',
       relevance: '',
     },
     {
@@ -5605,6 +6109,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/guercino-doubting-thomas/print.webp',
+      rawSrc: '/images/devotional-prints/guercino-doubting-thomas/raw.jpg',
       relevance: '',
     },
   ],
@@ -5619,6 +6124,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/moreau-salome-dancing/print.webp',
+      rawSrc: '/images/devotional-prints/moreau-salome-dancing/raw.jpg',
       relevance: '',
     },
     {
@@ -5631,6 +6137,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-rodin-prodigal-son-sin/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-rodin-prodigal-son-sin/raw.jpg',
       relevance: '',
     },
     {
@@ -5643,6 +6150,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/murillo-return-prodigal/print.webp',
+      rawSrc: '/images/devotional-prints/murillo-return-prodigal/raw.jpg',
       relevance: '',
     },
   ],
@@ -5657,6 +6165,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/durer-prodigal-son-swine/print.webp',
+      rawSrc: '/images/devotional-prints/durer-prodigal-son-swine/raw.jpg',
       relevance: '',
     },
     {
@@ -5669,6 +6178,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-prodigal-son-return/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-prodigal-son-return/raw.jpg',
       relevance: '',
     },
     {
@@ -5681,6 +6191,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-last-judgment-detail/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-last-judgment-detail/raw.jpg',
       relevance: '',
     },
   ],
@@ -5695,6 +6206,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/velazquez-christ-crucified-sin/print.webp',
+      rawSrc:
+        '/images/devotional-prints/velazquez-christ-crucified-sin/raw.jpg',
       relevance: '',
     },
     {
@@ -5707,6 +6220,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-prodigal-son-return/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-prodigal-son-return/raw.jpg',
       relevance: '',
     },
     {
@@ -5719,6 +6233,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-prodigal-son-tavern/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-prodigal-son-tavern/raw.jpg',
       relevance: '',
     },
   ],
@@ -5733,6 +6248,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-last-judgment-detail/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-last-judgment-detail/raw.jpg',
       relevance: '',
     },
     {
@@ -5745,6 +6261,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/murillo-return-prodigal/print.webp',
+      rawSrc: '/images/devotional-prints/murillo-return-prodigal/raw.jpg',
       relevance: '',
     },
     {
@@ -5757,6 +6274,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/durer-prodigal-son-swine/print.webp',
+      rawSrc: '/images/devotional-prints/durer-prodigal-son-swine/raw.jpg',
       relevance: '',
     },
   ],
@@ -5771,6 +6289,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-self-portrait-old/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-self-portrait-old/raw.jpg',
       relevance: '',
     },
     {
@@ -5783,6 +6302,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-prodigal-son-tavern/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-prodigal-son-tavern/raw.jpg',
       relevance: '',
     },
     {
@@ -5795,6 +6315,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/moreau-salome-dancing/print.webp',
+      rawSrc: '/images/devotional-prints/moreau-salome-dancing/raw.jpg',
       relevance: '',
     },
   ],
@@ -5809,6 +6330,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-via-dolorosa-jerusalem/print.webp',
+      rawSrc: '/images/devotional-prints/arch-via-dolorosa-jerusalem/raw.jpg',
       relevance: '',
     },
     {
@@ -5821,6 +6343,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/rembrandt-christ-cross-etching/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-christ-cross-etching/raw.jpg',
       relevance: '',
     },
     {
@@ -5833,6 +6357,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-santa-croce-interior/print.webp',
+      rawSrc: '/images/devotional-prints/arch-santa-croce-interior/raw.jpg',
       relevance: '',
     },
   ],
@@ -5847,6 +6372,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ancient-quarry-golgotha/print.webp',
+      rawSrc: '/images/devotional-prints/arch-ancient-quarry-golgotha/raw.jpg',
       relevance: '',
     },
     {
@@ -5859,6 +6385,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/courbet-stone-breakers-cross/print.webp',
+      rawSrc: '/images/devotional-prints/courbet-stone-breakers-cross/raw.jpg',
       relevance: '',
     },
     {
@@ -5871,6 +6398,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-noli-me-tangere/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-noli-me-tangere/raw.jpg',
       relevance: '',
     },
   ],
@@ -5885,6 +6413,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-santa-croce-interior/print.webp',
+      rawSrc: '/images/devotional-prints/arch-santa-croce-interior/raw.jpg',
       relevance: '',
     },
     {
@@ -5897,6 +6426,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/van-dyck-christ-cross/print.webp',
+      rawSrc: '/images/devotional-prints/van-dyck-christ-cross/raw.jpg',
       relevance: '',
     },
     {
@@ -5909,6 +6439,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-garden-tomb-exterior-2/print.webp',
+      rawSrc: '/images/devotional-prints/arch-garden-tomb-exterior-2/raw.jpg',
       relevance: '',
     },
   ],
@@ -5923,6 +6454,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/grunewald-crucifixion-isenheim/print.webp',
+      rawSrc:
+        '/images/devotional-prints/grunewald-crucifixion-isenheim/raw.jpg',
       relevance: '',
     },
     {
@@ -5935,6 +6468,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-michelangelo-pieta-cross/print.webp',
+      rawSrc:
+        '/images/devotional-prints/sculpt-michelangelo-pieta-cross/raw.jpg',
       relevance: '',
     },
     {
@@ -5947,6 +6482,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-via-dolorosa-jerusalem/print.webp',
+      rawSrc: '/images/devotional-prints/arch-via-dolorosa-jerusalem/raw.jpg',
       relevance: '',
     },
   ],
@@ -5961,6 +6497,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-colosseum-arena-floor/print.webp',
+      rawSrc: '/images/devotional-prints/arch-colosseum-arena-floor/raw.jpg',
       relevance: '',
     },
     {
@@ -5973,6 +6510,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-noli-me-tangere/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-noli-me-tangere/raw.jpg',
       relevance: '',
     },
     {
@@ -5985,6 +6523,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ancient-quarry-golgotha/print.webp',
+      rawSrc: '/images/devotional-prints/arch-ancient-quarry-golgotha/raw.jpg',
       relevance: '',
     },
   ],
@@ -5999,6 +6538,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-garden-tomb-exterior-2/print.webp',
+      rawSrc: '/images/devotional-prints/arch-garden-tomb-exterior-2/raw.jpg',
       relevance: '',
     },
     {
@@ -6011,6 +6551,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/grunewald-resurrection-isenheim/print.webp',
+      rawSrc:
+        '/images/devotional-prints/grunewald-resurrection-isenheim/raw.jpg',
       relevance: '',
     },
     {
@@ -6023,6 +6565,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-colosseum-arena-floor/print.webp',
+      rawSrc: '/images/devotional-prints/arch-colosseum-arena-floor/raw.jpg',
       relevance: '',
     },
   ],
@@ -6037,6 +6580,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/goya-sleep-reason-monsters/print.webp',
+      rawSrc: '/images/devotional-prints/goya-sleep-reason-monsters/raw.jpg',
       relevance: '',
     },
     {
@@ -6049,6 +6593,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/durer-prodigal-swine-cage/print.webp',
+      rawSrc: '/images/devotional-prints/durer-prodigal-swine-cage/raw.jpg',
       relevance: '',
     },
     {
@@ -6061,6 +6606,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-return-prodigal-grace/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-return-prodigal-grace/raw.jpg',
       relevance: '',
     },
   ],
@@ -6075,6 +6622,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/durer-prodigal-swine-cage/print.webp',
+      rawSrc: '/images/devotional-prints/durer-prodigal-swine-cage/raw.jpg',
       relevance: '',
     },
     {
@@ -6087,6 +6635,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/goya-sleep-reason-monsters/print.webp',
+      rawSrc: '/images/devotional-prints/goya-sleep-reason-monsters/raw.jpg',
       relevance: '',
     },
     {
@@ -6099,6 +6648,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-apostle-paul-galatians/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-apostle-paul-galatians/raw.jpg',
       relevance: '',
     },
   ],
@@ -6113,6 +6664,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-return-prodigal-grace/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-return-prodigal-grace/raw.jpg',
       relevance: '',
     },
     {
@@ -6125,6 +6678,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-thorvaldsen-christ-grace/print.webp',
+      rawSrc:
+        '/images/devotional-prints/sculpt-thorvaldsen-christ-grace/raw.jpg',
       relevance: '',
     },
     {
@@ -6137,6 +6692,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/van-eyck-ghent-adoration-lamb/print.webp',
+      rawSrc: '/images/devotional-prints/van-eyck-ghent-adoration-lamb/raw.jpg',
       relevance: '',
     },
   ],
@@ -6151,6 +6707,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-galatia-ancient-road/print.webp',
+      rawSrc: '/images/devotional-prints/arch-galatia-ancient-road/raw.jpg',
       relevance: '',
     },
     {
@@ -6163,6 +6720,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/van-eyck-ghent-adoration-lamb/print.webp',
+      rawSrc: '/images/devotional-prints/van-eyck-ghent-adoration-lamb/raw.jpg',
       relevance: '',
     },
     {
@@ -6175,6 +6733,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-annunciation-faith-worth/print.webp',
+      rawSrc:
+        '/images/devotional-prints/angelico-annunciation-faith-worth/raw.jpg',
       relevance: '',
     },
   ],
@@ -6189,6 +6749,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-annunciation-faith-worth/print.webp',
+      rawSrc:
+        '/images/devotional-prints/angelico-annunciation-faith-worth/raw.jpg',
       relevance: '',
     },
     {
@@ -6201,6 +6763,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-apostle-paul-galatians/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-apostle-paul-galatians/raw.jpg',
       relevance: '',
     },
     {
@@ -6213,6 +6777,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-galatia-ancient-road/print.webp',
+      rawSrc: '/images/devotional-prints/arch-galatia-ancient-road/raw.jpg',
       relevance: '',
     },
   ],
@@ -6227,6 +6792,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-jordan-river-wilderness/print.webp',
+      rawSrc: '/images/devotional-prints/arch-jordan-river-wilderness/raw.jpg',
       relevance: '',
     },
     {
@@ -6239,6 +6805,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/tissot-saint-john-baptist/print.webp',
+      rawSrc: '/images/devotional-prints/tissot-saint-john-baptist/raw.jpg',
       relevance: '',
     },
     {
@@ -6251,6 +6818,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ancient-olive-press/print.webp',
+      rawSrc: '/images/devotional-prints/arch-ancient-olive-press/raw.jpg',
       relevance: '',
     },
   ],
@@ -6265,6 +6833,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-shepherds-field-chapel/print.webp',
+      rawSrc: '/images/devotional-prints/arch-shepherds-field-chapel/raw.jpg',
       relevance: '',
     },
     {
@@ -6277,6 +6846,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/tanner-the-annunciation/print.webp',
+      rawSrc: '/images/devotional-prints/tanner-the-annunciation/raw.jpg',
       relevance: '',
     },
     {
@@ -6289,6 +6859,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-yardenit-jordan-site/print.webp',
+      rawSrc: '/images/devotional-prints/arch-yardenit-jordan-site/raw.jpg',
       relevance: '',
     },
   ],
@@ -6303,6 +6874,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/rembrandt-rich-young-ruler/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-rich-young-ruler/raw.jpg',
       relevance: '',
     },
     {
@@ -6315,6 +6887,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-rodin-burghers-calais/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-rodin-burghers-calais/raw.jpg',
       relevance: '',
     },
     {
@@ -6327,6 +6900,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/courbet-stone-breakers/print.webp',
+      rawSrc: '/images/devotional-prints/courbet-stone-breakers/raw.jpg',
       relevance: '',
     },
   ],
@@ -6341,6 +6915,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ancient-olive-press/print.webp',
+      rawSrc: '/images/devotional-prints/arch-ancient-olive-press/raw.jpg',
       relevance: '',
     },
     {
@@ -6353,6 +6928,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/rembrandt-workers-vineyard/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-workers-vineyard/raw.jpg',
       relevance: '',
     },
     {
@@ -6365,6 +6941,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-jordan-river-wilderness/print.webp',
+      rawSrc: '/images/devotional-prints/arch-jordan-river-wilderness/raw.jpg',
       relevance: '',
     },
   ],
@@ -6379,6 +6956,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/courbet-stone-breakers/print.webp',
+      rawSrc: '/images/devotional-prints/courbet-stone-breakers/raw.jpg',
       relevance: '',
     },
     {
@@ -6391,6 +6969,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'halftone',
       src: '/images/devotional-prints/daumier-good-samaritan/print.webp',
+      rawSrc: '/images/devotional-prints/daumier-good-samaritan/raw.jpg',
       relevance: '',
     },
     {
@@ -6403,6 +6982,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/rembrandt-baptism-christ/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-baptism-christ/raw.jpg',
       relevance: '',
     },
   ],
@@ -6417,6 +6997,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-yardenit-jordan-site/print.webp',
+      rawSrc: '/images/devotional-prints/arch-yardenit-jordan-site/raw.jpg',
       relevance: '',
     },
     {
@@ -6429,6 +7010,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/rembrandt-baptism-christ/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-baptism-christ/raw.jpg',
       relevance: '',
     },
     {
@@ -6441,6 +7023,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-shepherds-field-chapel/print.webp',
+      rawSrc: '/images/devotional-prints/arch-shepherds-field-chapel/raw.jpg',
       relevance: '',
     },
   ],
@@ -6455,6 +7038,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-church-nativity-bethlehem/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-church-nativity-bethlehem/raw.jpg',
       relevance: '',
     },
     {
@@ -6467,6 +7052,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/botticelli-mystical-nativity/print.webp',
+      rawSrc: '/images/devotional-prints/botticelli-mystical-nativity/raw.jpg',
       relevance: '',
     },
     {
@@ -6479,6 +7065,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-transfiguration/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-transfiguration/raw.jpg',
       relevance: '',
     },
   ],
@@ -6493,6 +7080,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/lotto-adoration-christ-child/print.webp',
+      rawSrc: '/images/devotional-prints/lotto-adoration-christ-child/raw.jpg',
       relevance: '',
     },
     {
@@ -6505,6 +7093,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/sculpt-donatello-marble-david/print.webp',
+      rawSrc: '/images/devotional-prints/sculpt-donatello-marble-david/raw.jpg',
       relevance: '',
     },
     {
@@ -6517,6 +7106,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-holy-sepulchre-dome-int/print.webp',
+      rawSrc: '/images/devotional-prints/arch-holy-sepulchre-dome-int/raw.jpg',
       relevance: '',
     },
   ],
@@ -6531,6 +7121,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-temple-mount-engraving/print.webp',
+      rawSrc: '/images/devotional-prints/arch-temple-mount-engraving/raw.jpg',
       relevance: '',
     },
     {
@@ -6543,6 +7134,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/rembrandt-raising-lazarus/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-raising-lazarus/raw.jpg',
       relevance: '',
     },
     {
@@ -6555,6 +7147,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-garden-tomb-exterior/print.webp',
+      rawSrc: '/images/devotional-prints/arch-garden-tomb-exterior/raw.jpg',
       relevance: '',
     },
   ],
@@ -6569,6 +7162,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-holy-sepulchre-dome-int/print.webp',
+      rawSrc: '/images/devotional-prints/arch-holy-sepulchre-dome-int/raw.jpg',
       relevance: '',
     },
     {
@@ -6581,6 +7175,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/velazquez-christ-crucified/print.webp',
+      rawSrc: '/images/devotional-prints/velazquez-christ-crucified/raw.jpg',
       relevance: '',
     },
     {
@@ -6593,6 +7188,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-church-nativity-bethlehem/print.webp',
+      rawSrc:
+        '/images/devotional-prints/arch-church-nativity-bethlehem/raw.jpg',
       relevance: '',
     },
   ],
@@ -6607,6 +7204,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-garden-tomb-exterior/print.webp',
+      rawSrc: '/images/devotional-prints/arch-garden-tomb-exterior/raw.jpg',
       relevance: '',
     },
     {
@@ -6619,6 +7217,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/veronese-the-resurrection/print.webp',
+      rawSrc: '/images/devotional-prints/veronese-the-resurrection/raw.jpg',
       relevance: '',
     },
     {
@@ -6631,6 +7230,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-basilica-tabor/print.webp',
+      rawSrc: '/images/devotional-prints/arch-basilica-tabor/raw.jpg',
       relevance: '',
     },
   ],
@@ -6645,6 +7245,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-basilica-tabor/print.webp',
+      rawSrc: '/images/devotional-prints/arch-basilica-tabor/raw.jpg',
       relevance: '',
     },
     {
@@ -6657,6 +7258,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/raphael-transfiguration/print.webp',
+      rawSrc: '/images/devotional-prints/raphael-transfiguration/raw.jpg',
       relevance: '',
     },
     {
@@ -6669,6 +7271,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/angelico-transfiguration/print.webp',
+      rawSrc: '/images/devotional-prints/angelico-transfiguration/raw.jpg',
       relevance: '',
     },
   ],
@@ -6683,6 +7286,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/rembrandt-stoning-stephen-1625/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-stoning-stephen-1625/raw.jpg',
       relevance: '',
     },
     {
@@ -6695,6 +7300,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/raphael-conversion-paul/print.webp',
+      rawSrc: '/images/devotional-prints/raphael-conversion-paul/raw.jpg',
       relevance: '',
     },
     {
@@ -6707,6 +7313,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/rembrandt-philip-ethiopian-2/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-philip-ethiopian-2/raw.jpg',
       relevance: '',
     },
   ],
@@ -6721,6 +7328,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-damascus-road-ancient/print.webp',
+      rawSrc: '/images/devotional-prints/arch-damascus-road-ancient/raw.jpg',
       relevance: '',
     },
     {
@@ -6733,6 +7341,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/raphael-conversion-paul/print.webp',
+      rawSrc: '/images/devotional-prints/raphael-conversion-paul/raw.jpg',
       relevance: '',
     },
     {
@@ -6745,6 +7354,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-pentecost-expansion/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-pentecost-expansion/raw.jpg',
       relevance: '',
     },
   ],
@@ -6759,6 +7369,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ancient-gaza-road-negev/print.webp',
+      rawSrc: '/images/devotional-prints/arch-ancient-gaza-road-negev/raw.jpg',
       relevance: '',
     },
     {
@@ -6771,6 +7382,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/rembrandt-philip-ethiopian-2/print.webp',
+      rawSrc: '/images/devotional-prints/rembrandt-philip-ethiopian-2/raw.jpg',
       relevance: '',
     },
     {
@@ -6783,6 +7395,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-amphitheater-caesarea/print.webp',
+      rawSrc: '/images/devotional-prints/arch-amphitheater-caesarea/raw.jpg',
       relevance: '',
     },
   ],
@@ -6797,6 +7410,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-amphitheater-caesarea/print.webp',
+      rawSrc: '/images/devotional-prints/arch-amphitheater-caesarea/raw.jpg',
       relevance: '',
     },
     {
@@ -6809,6 +7423,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'mezzotint',
       src: '/images/devotional-prints/van-dyck-martyrdom-sebastian/print.webp',
+      rawSrc: '/images/devotional-prints/van-dyck-martyrdom-sebastian/raw.jpg',
       relevance: '',
     },
     {
@@ -6821,6 +7436,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-ancient-gaza-road-negev/print.webp',
+      rawSrc: '/images/devotional-prints/arch-ancient-gaza-road-negev/raw.jpg',
       relevance: '',
     },
   ],
@@ -6835,6 +7451,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/bruegel-pentecost-expansion/print.webp',
+      rawSrc: '/images/devotional-prints/bruegel-pentecost-expansion/raw.jpg',
       relevance: '',
     },
     {
@@ -6847,6 +7464,8 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'woodcut',
       src: '/images/devotional-prints/rembrandt-stoning-saint-stephen/print.webp',
+      rawSrc:
+        '/images/devotional-prints/rembrandt-stoning-saint-stephen/raw.jpg',
       relevance: '',
     },
     {
@@ -6859,6 +7478,7 @@ export const DEVOTIONAL_ARTWORKS: Record<string, ArtworkEntry[]> = {
       license: 'Public Domain (pre-1928)',
       printStyle: 'etching',
       src: '/images/devotional-prints/arch-damascus-road-ancient/print.webp',
+      rawSrc: '/images/devotional-prints/arch-damascus-road-ancient/raw.jpg',
       relevance: '',
     },
   ],
@@ -6875,6 +7495,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/aivazovsky-ninth-wave/print.webp',
+    rawSrc: '/images/devotional-prints/aivazovsky-ninth-wave/raw.jpg',
     relevance: '',
   },
   'aivazovsky-ninth-wave-rooted': {
@@ -6887,6 +7508,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print.webp',
+    rawSrc: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/raw.jpg',
     relevance: '',
   },
   'allston-elijah-desert': {
@@ -6899,6 +7521,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/allston-elijah-desert/print.webp',
+    rawSrc: '/images/devotional-prints/allston-elijah-desert/raw.jpg',
     relevance: '',
   },
   'allston-elijah-desert-present': {
@@ -6911,6 +7534,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/allston-elijah-desert-present/print.webp',
+    rawSrc: '/images/devotional-prints/allston-elijah-desert-present/raw.jpg',
     relevance: '',
   },
   'angelico-annunciation-believe': {
@@ -6923,6 +7547,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/angelico-annunciation-believe/print.webp',
+    rawSrc: '/images/devotional-prints/angelico-annunciation-believe/raw.jpg',
     relevance: '',
   },
   'angelico-annunciation-draw-near': {
@@ -6935,6 +7560,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/angelico-annunciation-draw-near/print.webp',
+    rawSrc: '/images/devotional-prints/angelico-annunciation-draw-near/raw.jpg',
     relevance: '',
   },
   'angelico-annunciation-faith-worth': {
@@ -6947,6 +7573,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/angelico-annunciation-faith-worth/print.webp',
+    rawSrc:
+      '/images/devotional-prints/angelico-annunciation-faith-worth/raw.jpg',
     relevance: '',
   },
   'angelico-annunciation-logos': {
@@ -6959,6 +7587,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/angelico-annunciation-logos/print.webp',
+    rawSrc: '/images/devotional-prints/angelico-annunciation-logos/raw.jpg',
     relevance: '',
   },
   'angelico-annunciation-present': {
@@ -6971,6 +7600,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/angelico-annunciation-present/print.webp',
+    rawSrc: '/images/devotional-prints/angelico-annunciation-present/raw.jpg',
     relevance: '',
   },
   'angelico-christ-pilgrim': {
@@ -6983,6 +7613,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/angelico-christ-pilgrim/print.webp',
+    rawSrc: '/images/devotional-prints/angelico-christ-pilgrim/raw.jpg',
     relevance: '',
   },
   'angelico-last-judgment-detail': {
@@ -6995,6 +7626,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/angelico-last-judgment-detail/print.webp',
+    rawSrc: '/images/devotional-prints/angelico-last-judgment-detail/raw.jpg',
     relevance: '',
   },
   'angelico-noli-me-tangere': {
@@ -7007,6 +7639,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/angelico-noli-me-tangere/print.webp',
+    rawSrc: '/images/devotional-prints/angelico-noli-me-tangere/raw.jpg',
     relevance: '',
   },
   'angelico-noli-me-tangere-2': {
@@ -7019,6 +7652,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/angelico-noli-me-tangere-2/print.webp',
+    rawSrc: '/images/devotional-prints/angelico-noli-me-tangere-2/raw.jpg',
     relevance: '',
   },
   'angelico-transfiguration': {
@@ -7031,6 +7665,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/angelico-transfiguration/print.webp',
+    rawSrc: '/images/devotional-prints/angelico-transfiguration/raw.jpg',
     relevance: '',
   },
   'arch-alhambra-gardens-granada': {
@@ -7043,6 +7678,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-alhambra-gardens-granada/print.webp',
+    rawSrc: '/images/devotional-prints/arch-alhambra-gardens-granada/raw.jpg',
     relevance: '',
   },
   'arch-amphitheater-caesarea': {
@@ -7055,6 +7691,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-amphitheater-caesarea/print.webp',
+    rawSrc: '/images/devotional-prints/arch-amphitheater-caesarea/raw.jpg',
     relevance: '',
   },
   'arch-ancient-bread-oven-israel': {
@@ -7067,6 +7704,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-ancient-bread-oven-israel/print.webp',
+    rawSrc: '/images/devotional-prints/arch-ancient-bread-oven-israel/raw.jpg',
     relevance: '',
   },
   'arch-ancient-gaza-road-negev': {
@@ -7079,6 +7717,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-ancient-gaza-road-negev/print.webp',
+    rawSrc: '/images/devotional-prints/arch-ancient-gaza-road-negev/raw.jpg',
     relevance: '',
   },
   'arch-ancient-olive-press': {
@@ -7091,6 +7730,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-ancient-olive-press/print.webp',
+    rawSrc: '/images/devotional-prints/arch-ancient-olive-press/raw.jpg',
     relevance: '',
   },
   'arch-ancient-olive-trees-gethsemane': {
@@ -7103,6 +7743,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/print.webp',
+    rawSrc:
+      '/images/devotional-prints/arch-ancient-olive-trees-gethsemane/raw.jpg',
     relevance: '',
   },
   'arch-ancient-quarry-golgotha': {
@@ -7115,6 +7757,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-ancient-quarry-golgotha/print.webp',
+    rawSrc: '/images/devotional-prints/arch-ancient-quarry-golgotha/raw.jpg',
     relevance: '',
   },
   'arch-antioch-ancient-ruins': {
@@ -7127,6 +7770,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-antioch-ancient-ruins/print.webp',
+    rawSrc: '/images/devotional-prints/arch-antioch-ancient-ruins/raw.jpg',
     relevance: '',
   },
   'arch-antonia-fortress-site': {
@@ -7139,6 +7783,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-antonia-fortress-site/print.webp',
+    rawSrc: '/images/devotional-prints/arch-antonia-fortress-site/raw.jpg',
     relevance: '',
   },
   'arch-arch-constantine': {
@@ -7151,6 +7796,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-arch-constantine/print.webp',
+    rawSrc: '/images/devotional-prints/arch-arch-constantine/raw.jpg',
     relevance: '',
   },
   'arch-arch-titus-relief': {
@@ -7163,6 +7809,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-arch-titus-relief/print.webp',
+    rawSrc: '/images/devotional-prints/arch-arch-titus-relief/raw.jpg',
     relevance: '',
   },
   'arch-areopagus-mars-hill': {
@@ -7175,6 +7822,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-areopagus-mars-hill/print.webp',
+    rawSrc: '/images/devotional-prints/arch-areopagus-mars-hill/raw.jpg',
     relevance: '',
   },
   'arch-babylon-gate': {
@@ -7187,6 +7835,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/arch-babylon-gate/print.webp',
+    rawSrc: '/images/devotional-prints/arch-babylon-gate/raw.jpg',
     relevance: '',
   },
   'arch-baptistery-florence': {
@@ -7199,6 +7848,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-baptistery-florence/print.webp',
+    rawSrc: '/images/devotional-prints/arch-baptistery-florence/raw.jpg',
     relevance: '',
   },
   'arch-basilica-tabor': {
@@ -7211,6 +7861,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-basilica-tabor/print.webp',
+    rawSrc: '/images/devotional-prints/arch-basilica-tabor/raw.jpg',
     relevance: '',
   },
   'arch-beautiful-gate-temple': {
@@ -7223,6 +7874,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-beautiful-gate-temple/print.webp',
+    rawSrc: '/images/devotional-prints/arch-beautiful-gate-temple/raw.jpg',
     relevance: '',
   },
   'arch-benedictine-abbey-humility': {
@@ -7235,6 +7887,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-benedictine-abbey-humility/print.webp',
+    rawSrc: '/images/devotional-prints/arch-benedictine-abbey-humility/raw.jpg',
     relevance: '',
   },
   'arch-bethlehem-field-jesse': {
@@ -7247,6 +7900,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-bethlehem-field-jesse/print.webp',
+    rawSrc: '/images/devotional-prints/arch-bethlehem-field-jesse/raw.jpg',
     relevance: '',
   },
   'arch-byzantine-churches-samaria': {
@@ -7259,6 +7913,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-byzantine-churches-samaria/print.webp',
+    rawSrc: '/images/devotional-prints/arch-byzantine-churches-samaria/raw.jpg',
     relevance: '',
   },
   'arch-canterbury-cathedral-nave': {
@@ -7271,6 +7926,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-canterbury-cathedral-nave/print.webp',
+    rawSrc: '/images/devotional-prints/arch-canterbury-cathedral-nave/raw.jpg',
     relevance: '',
   },
   'arch-capernaum-house-church': {
@@ -7283,6 +7939,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-capernaum-house-church/print.webp',
+    rawSrc: '/images/devotional-prints/arch-capernaum-house-church/raw.jpg',
     relevance: '',
   },
   'arch-capernaum-synagogue': {
@@ -7295,6 +7952,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-capernaum-synagogue/print.webp',
+    rawSrc: '/images/devotional-prints/arch-capernaum-synagogue/raw.jpg',
     relevance: '',
   },
   'arch-capernaum-synagogue-ruins': {
@@ -7307,6 +7965,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-capernaum-synagogue-ruins/print.webp',
+    rawSrc: '/images/devotional-prints/arch-capernaum-synagogue-ruins/raw.jpg',
     relevance: '',
   },
   'arch-cappadocia-dark-church': {
@@ -7319,6 +7978,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/arch-cappadocia-dark-church/print.webp',
+    rawSrc: '/images/devotional-prints/arch-cappadocia-dark-church/raw.jpg',
     relevance: '',
   },
   'arch-catacombs-good-shepherd': {
@@ -7331,6 +7991,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-catacombs-good-shepherd/print.webp',
+    rawSrc: '/images/devotional-prints/arch-catacombs-good-shepherd/raw.jpg',
     relevance: '',
   },
   'arch-catacombs-priscilla-early': {
@@ -7343,6 +8004,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-catacombs-priscilla-early/print.webp',
+    rawSrc: '/images/devotional-prints/arch-catacombs-priscilla-early/raw.jpg',
     relevance: '',
   },
   'arch-cave-elijah-carmel': {
@@ -7355,6 +8017,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-cave-elijah-carmel/print.webp',
+    rawSrc: '/images/devotional-prints/arch-cave-elijah-carmel/raw.jpg',
     relevance: '',
   },
   'arch-cave-elijah-carmel-2': {
@@ -7367,6 +8030,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-cave-elijah-carmel-2/print.webp',
+    rawSrc: '/images/devotional-prints/arch-cave-elijah-carmel-2/raw.jpg',
     relevance: '',
   },
   'arch-cenaculum-upper-room': {
@@ -7379,6 +8043,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-cenaculum-upper-room/print.webp',
+    rawSrc: '/images/devotional-prints/arch-cenaculum-upper-room/raw.jpg',
     relevance: '',
   },
   'arch-chartres-cathedral-exterior': {
@@ -7391,6 +8056,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-chartres-cathedral-exterior/print.webp',
+    rawSrc:
+      '/images/devotional-prints/arch-chartres-cathedral-exterior/raw.jpg',
     relevance: '',
   },
   'arch-chartres-cathedral-roots': {
@@ -7403,6 +8070,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-chartres-cathedral-roots/print.webp',
+    rawSrc: '/images/devotional-prints/arch-chartres-cathedral-roots/raw.jpg',
     relevance: '',
   },
   'arch-chartres-labyrinth': {
@@ -7415,6 +8083,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-chartres-labyrinth/print.webp',
+    rawSrc: '/images/devotional-prints/arch-chartres-labyrinth/raw.jpg',
     relevance: '',
   },
   'arch-church-annunciation-nazareth': {
@@ -7427,6 +8096,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-church-annunciation-nazareth/print.webp',
+    rawSrc:
+      '/images/devotional-prints/arch-church-annunciation-nazareth/raw.jpg',
     relevance: '',
   },
   'arch-church-nativity-bethlehem': {
@@ -7439,6 +8110,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-church-nativity-bethlehem/print.webp',
+    rawSrc: '/images/devotional-prints/arch-church-nativity-bethlehem/raw.jpg',
     relevance: '',
   },
   'arch-cluny-abbey-ruins': {
@@ -7451,6 +8123,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-cluny-abbey-ruins/print.webp',
+    rawSrc: '/images/devotional-prints/arch-cluny-abbey-ruins/raw.jpg',
     relevance: '',
   },
   'arch-colosseum-arena-floor': {
@@ -7463,6 +8136,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-colosseum-arena-floor/print.webp',
+    rawSrc: '/images/devotional-prints/arch-colosseum-arena-floor/raw.jpg',
     relevance: '',
   },
   'arch-colosseum-ruins': {
@@ -7475,6 +8149,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-colosseum-ruins/print.webp',
+    rawSrc: '/images/devotional-prints/arch-colosseum-ruins/raw.jpg',
     relevance: '',
   },
   'arch-corinth-temple-apollo': {
@@ -7487,6 +8162,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-corinth-temple-apollo/print.webp',
+    rawSrc: '/images/devotional-prints/arch-corinth-temple-apollo/raw.jpg',
     relevance: '',
   },
   'arch-damascus-gate-jerusalem': {
@@ -7499,6 +8175,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-damascus-gate-jerusalem/print.webp',
+    rawSrc: '/images/devotional-prints/arch-damascus-gate-jerusalem/raw.jpg',
     relevance: '',
   },
   'arch-damascus-road-ancient': {
@@ -7511,6 +8188,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-damascus-road-ancient/print.webp',
+    rawSrc: '/images/devotional-prints/arch-damascus-road-ancient/raw.jpg',
     relevance: '',
   },
   'arch-dome-rock-interior': {
@@ -7523,6 +8201,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-dome-rock-interior/print.webp',
+    rawSrc: '/images/devotional-prints/arch-dome-rock-interior/raw.jpg',
     relevance: '',
   },
   'arch-dura-europos-house-church': {
@@ -7535,6 +8214,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-dura-europos-house-church/print.webp',
+    rawSrc: '/images/devotional-prints/arch-dura-europos-house-church/raw.jpg',
     relevance: '',
   },
   'arch-egyptian-granary': {
@@ -7547,6 +8227,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-egyptian-granary/print.webp',
+    rawSrc: '/images/devotional-prints/arch-egyptian-granary/raw.jpg',
     relevance: '',
   },
   'arch-ephesus-library-celsus': {
@@ -7559,6 +8240,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-ephesus-library-celsus/print.webp',
+    rawSrc: '/images/devotional-prints/arch-ephesus-library-celsus/raw.jpg',
     relevance: '',
   },
   'arch-ephesus-temple-artemis': {
@@ -7571,6 +8253,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-ephesus-temple-artemis/print.webp',
+    rawSrc: '/images/devotional-prints/arch-ephesus-temple-artemis/raw.jpg',
     relevance: '',
   },
   'arch-fontenay-cloister': {
@@ -7583,6 +8266,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-fontenay-cloister/print.webp',
+    rawSrc: '/images/devotional-prints/arch-fontenay-cloister/raw.jpg',
     relevance: '',
   },
   'arch-forum-romanum': {
@@ -7595,6 +8279,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-forum-romanum/print.webp',
+    rawSrc: '/images/devotional-prints/arch-forum-romanum/raw.jpg',
     relevance: '',
   },
   'arch-galatia-ancient-road': {
@@ -7607,6 +8292,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-galatia-ancient-road/print.webp',
+    rawSrc: '/images/devotional-prints/arch-galatia-ancient-road/raw.jpg',
     relevance: '',
   },
   'arch-garden-tomb-exterior': {
@@ -7619,6 +8305,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-garden-tomb-exterior/print.webp',
+    rawSrc: '/images/devotional-prints/arch-garden-tomb-exterior/raw.jpg',
     relevance: '',
   },
   'arch-garden-tomb-exterior-2': {
@@ -7631,6 +8318,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-garden-tomb-exterior-2/print.webp',
+    rawSrc: '/images/devotional-prints/arch-garden-tomb-exterior-2/raw.jpg',
     relevance: '',
   },
   'arch-garden-tomb-jerusalem': {
@@ -7643,6 +8331,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-garden-tomb-jerusalem/print.webp',
+    rawSrc: '/images/devotional-prints/arch-garden-tomb-jerusalem/raw.jpg',
     relevance: '',
   },
   'arch-gethsemane-end-ourselves': {
@@ -7655,6 +8344,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-gethsemane-end-ourselves/print.webp',
+    rawSrc: '/images/devotional-prints/arch-gethsemane-end-ourselves/raw.jpg',
     relevance: '',
   },
   'arch-gethsemane-olive-trees': {
@@ -7667,6 +8357,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-gethsemane-olive-trees/print.webp',
+    rawSrc: '/images/devotional-prints/arch-gethsemane-olive-trees/raw.jpg',
     relevance: '',
   },
   'arch-hagia-sophia-apse': {
@@ -7679,6 +8370,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-hagia-sophia-apse/print.webp',
+    rawSrc: '/images/devotional-prints/arch-hagia-sophia-apse/raw.jpg',
     relevance: '',
   },
   'arch-hagia-sophia-dome': {
@@ -7691,6 +8383,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-hagia-sophia-dome/print.webp',
+    rawSrc: '/images/devotional-prints/arch-hagia-sophia-dome/raw.jpg',
     relevance: '',
   },
   'arch-holy-sepulchre-dome': {
@@ -7703,6 +8396,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-holy-sepulchre-dome/print.webp',
+    rawSrc: '/images/devotional-prints/arch-holy-sepulchre-dome/raw.jpg',
     relevance: '',
   },
   'arch-holy-sepulchre-dome-int': {
@@ -7715,6 +8409,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-holy-sepulchre-dome-int/print.webp',
+    rawSrc: '/images/devotional-prints/arch-holy-sepulchre-dome-int/raw.jpg',
     relevance: '',
   },
   'arch-hospital-innocents-belief': {
@@ -7727,6 +8422,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-hospital-innocents-belief/print.webp',
+    rawSrc: '/images/devotional-prints/arch-hospital-innocents-belief/raw.jpg',
     relevance: '',
   },
   'arch-jabbok-ford': {
@@ -7739,6 +8435,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-jabbok-ford/print.webp',
+    rawSrc: '/images/devotional-prints/arch-jabbok-ford/raw.jpg',
     relevance: '',
   },
   'arch-jabbok-river-ford': {
@@ -7751,6 +8448,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-jabbok-river-ford/print.webp',
+    rawSrc: '/images/devotional-prints/arch-jabbok-river-ford/raw.jpg',
     relevance: '',
   },
   'arch-jaffa-gate-1900': {
@@ -7763,6 +8461,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-jaffa-gate-1900/print.webp',
+    rawSrc: '/images/devotional-prints/arch-jaffa-gate-1900/raw.jpg',
     relevance: '',
   },
   'arch-jordan-river-wilderness': {
@@ -7775,6 +8474,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-jordan-river-wilderness/print.webp',
+    rawSrc: '/images/devotional-prints/arch-jordan-river-wilderness/raw.jpg',
     relevance: '',
   },
   'arch-judean-desert-engraving': {
@@ -7787,6 +8487,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-judean-desert-engraving/print.webp',
+    rawSrc: '/images/devotional-prints/arch-judean-desert-engraving/raw.jpg',
     relevance: '',
   },
   'arch-lalibela-rock-church': {
@@ -7799,6 +8500,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-lalibela-rock-church/print.webp',
+    rawSrc: '/images/devotional-prints/arch-lalibela-rock-church/raw.jpg',
     relevance: '',
   },
   'arch-laodicea-ruins': {
@@ -7811,6 +8513,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-laodicea-ruins/print.webp',
+    rawSrc: '/images/devotional-prints/arch-laodicea-ruins/raw.jpg',
     relevance: '',
   },
   'arch-lascaux-cave-paintings': {
@@ -7823,6 +8526,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-lascaux-cave-paintings/print.webp',
+    rawSrc: '/images/devotional-prints/arch-lascaux-cave-paintings/raw.jpg',
     relevance: '',
   },
   'arch-library-celsus-ephesus-2': {
@@ -7835,6 +8539,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-library-celsus-ephesus-2/print.webp',
+    rawSrc: '/images/devotional-prints/arch-library-celsus-ephesus-2/raw.jpg',
     relevance: '',
   },
   'arch-lithostrotos-praetorium': {
@@ -7847,6 +8552,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-lithostrotos-praetorium/print.webp',
+    rawSrc: '/images/devotional-prints/arch-lithostrotos-praetorium/raw.jpg',
     relevance: '',
   },
   'arch-mamertine-prison-cell': {
@@ -7859,6 +8565,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-mamertine-prison-cell/print.webp',
+    rawSrc: '/images/devotional-prints/arch-mamertine-prison-cell/raw.jpg',
     relevance: '',
   },
   'arch-mamertine-prison-paul': {
@@ -7871,6 +8578,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-mamertine-prison-paul/print.webp',
+    rawSrc: '/images/devotional-prints/arch-mamertine-prison-paul/raw.jpg',
     relevance: '',
   },
   'arch-mamertine-prison-rome': {
@@ -7883,6 +8591,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-mamertine-prison-rome/print.webp',
+    rawSrc: '/images/devotional-prints/arch-mamertine-prison-rome/raw.jpg',
     relevance: '',
   },
   'arch-maria-laach-choir-stalls': {
@@ -7895,6 +8604,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-maria-laach-choir-stalls/print.webp',
+    rawSrc: '/images/devotional-prints/arch-maria-laach-choir-stalls/raw.jpg',
     relevance: '',
   },
   'arch-masada-fortress-ruins': {
@@ -7907,6 +8617,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-masada-fortress-ruins/print.webp',
+    rawSrc: '/images/devotional-prints/arch-masada-fortress-ruins/raw.jpg',
     relevance: '',
   },
   'arch-masada-ruins': {
@@ -7919,6 +8630,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-masada-ruins/print.webp',
+    rawSrc: '/images/devotional-prints/arch-masada-ruins/raw.jpg',
     relevance: '',
   },
   'arch-megiddo-armageddon': {
@@ -7931,6 +8643,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/arch-megiddo-armageddon/print.webp',
+    rawSrc: '/images/devotional-prints/arch-megiddo-armageddon/raw.jpg',
     relevance: '',
   },
   'arch-monastery-sinai-burning-bush': {
@@ -7943,6 +8656,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-monastery-sinai-burning-bush/print.webp',
+    rawSrc:
+      '/images/devotional-prints/arch-monastery-sinai-burning-bush/raw.jpg',
     relevance: '',
   },
   'arch-mont-saint-michel-cloister': {
@@ -7955,6 +8670,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-mont-saint-michel-cloister/print.webp',
+    rawSrc: '/images/devotional-prints/arch-mont-saint-michel-cloister/raw.jpg',
     relevance: '',
   },
   'arch-mount-athos-hermit': {
@@ -7967,6 +8683,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-mount-athos-hermit/print.webp',
+    rawSrc: '/images/devotional-prints/arch-mount-athos-hermit/raw.jpg',
     relevance: '',
   },
   'arch-mount-nebo-view': {
@@ -7979,6 +8696,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-mount-nebo-view/print.webp',
+    rawSrc: '/images/devotional-prints/arch-mount-nebo-view/raw.jpg',
     relevance: '',
   },
   'arch-mount-of-olives-old': {
@@ -7991,6 +8709,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-mount-of-olives-old/print.webp',
+    rawSrc: '/images/devotional-prints/arch-mount-of-olives-old/raw.jpg',
     relevance: '',
   },
   'arch-mount-sinai-chapel': {
@@ -8003,6 +8722,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-mount-sinai-chapel/print.webp',
+    rawSrc: '/images/devotional-prints/arch-mount-sinai-chapel/raw.jpg',
     relevance: '',
   },
   'arch-nazareth-village-old': {
@@ -8015,6 +8735,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-nazareth-village-old/print.webp',
+    rawSrc: '/images/devotional-prints/arch-nazareth-village-old/raw.jpg',
     relevance: '',
   },
   'arch-nineveh-gates': {
@@ -8027,6 +8748,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/arch-nineveh-gates/print.webp',
+    rawSrc: '/images/devotional-prints/arch-nineveh-gates/raw.jpg',
     relevance: '',
   },
   'arch-old-bailey-london': {
@@ -8039,6 +8761,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-old-bailey-london/print.webp',
+    rawSrc: '/images/devotional-prints/arch-old-bailey-london/raw.jpg',
     relevance: '',
   },
   'arch-ospedale-innocenti': {
@@ -8051,6 +8774,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-ospedale-innocenti/print.webp',
+    rawSrc: '/images/devotional-prints/arch-ospedale-innocenti/raw.jpg',
     relevance: '',
   },
   'arch-palatine-hill-ruins': {
@@ -8063,6 +8787,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-palatine-hill-ruins/print.webp',
+    rawSrc: '/images/devotional-prints/arch-palatine-hill-ruins/raw.jpg',
     relevance: '',
   },
   'arch-pantheon-dome-oculus': {
@@ -8075,6 +8800,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-pantheon-dome-oculus/print.webp',
+    rawSrc: '/images/devotional-prints/arch-pantheon-dome-oculus/raw.jpg',
     relevance: '',
   },
   'arch-patmos-monastery-john': {
@@ -8087,6 +8813,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/arch-patmos-monastery-john/print.webp',
+    rawSrc: '/images/devotional-prints/arch-patmos-monastery-john/raw.jpg',
     relevance: '',
   },
   'arch-philippi-ruins-greece': {
@@ -8099,6 +8826,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-philippi-ruins-greece/print.webp',
+    rawSrc: '/images/devotional-prints/arch-philippi-ruins-greece/raw.jpg',
     relevance: '',
   },
   'arch-pool-siloam': {
@@ -8111,6 +8839,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-pool-siloam/print.webp',
+    rawSrc: '/images/devotional-prints/arch-pool-siloam/raw.jpg',
     relevance: '',
   },
   'arch-qumran-caves': {
@@ -8123,6 +8852,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-qumran-caves/print.webp',
+    rawSrc: '/images/devotional-prints/arch-qumran-caves/raw.jpg',
     relevance: '',
   },
   'arch-ravenna-good-shepherd-mosaic': {
@@ -8135,6 +8865,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/print.webp',
+    rawSrc:
+      '/images/devotional-prints/arch-ravenna-good-shepherd-mosaic/raw.jpg',
     relevance: '',
   },
   'arch-road-to-gaza-ancient': {
@@ -8147,6 +8879,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-road-to-gaza-ancient/print.webp',
+    rawSrc: '/images/devotional-prints/arch-road-to-gaza-ancient/raw.jpg',
     relevance: '',
   },
   'arch-roman-forum-chaos': {
@@ -8159,6 +8892,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-roman-forum-chaos/print.webp',
+    rawSrc: '/images/devotional-prints/arch-roman-forum-chaos/raw.jpg',
     relevance: '',
   },
   'arch-roman-slave-market': {
@@ -8171,6 +8905,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-roman-slave-market/print.webp',
+    rawSrc: '/images/devotional-prints/arch-roman-slave-market/raw.jpg',
     relevance: '',
   },
   'arch-san-thome-basilica': {
@@ -8183,6 +8918,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-san-thome-basilica/print.webp',
+    rawSrc: '/images/devotional-prints/arch-san-thome-basilica/raw.jpg',
     relevance: '',
   },
   'arch-san-vitale-ravenna': {
@@ -8195,6 +8931,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-san-vitale-ravenna/print.webp',
+    rawSrc: '/images/devotional-prints/arch-san-vitale-ravenna/raw.jpg',
     relevance: '',
   },
   'arch-sanhedrin-tomb-jerusalem': {
@@ -8207,6 +8944,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-sanhedrin-tomb-jerusalem/print.webp',
+    rawSrc: '/images/devotional-prints/arch-sanhedrin-tomb-jerusalem/raw.jpg',
     relevance: '',
   },
   'arch-sant-apollinare-mosaic': {
@@ -8219,6 +8957,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-sant-apollinare-mosaic/print.webp',
+    rawSrc: '/images/devotional-prints/arch-sant-apollinare-mosaic/raw.jpg',
     relevance: '',
   },
   'arch-sant-apollinare-nave': {
@@ -8231,6 +8970,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-sant-apollinare-nave/print.webp',
+    rawSrc: '/images/devotional-prints/arch-sant-apollinare-nave/raw.jpg',
     relevance: '',
   },
   'arch-santa-croce-interior': {
@@ -8243,6 +8983,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-santa-croce-interior/print.webp',
+    rawSrc: '/images/devotional-prints/arch-santa-croce-interior/raw.jpg',
     relevance: '',
   },
   'arch-santa-sabina-rome': {
@@ -8255,6 +8996,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-santa-sabina-rome/print.webp',
+    rawSrc: '/images/devotional-prints/arch-santa-sabina-rome/raw.jpg',
     relevance: '',
   },
   'arch-scriptorium-medieval': {
@@ -8267,6 +9009,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-scriptorium-medieval/print.webp',
+    rawSrc: '/images/devotional-prints/arch-scriptorium-medieval/raw.jpg',
     relevance: '',
   },
   'arch-shepherds-field-chapel': {
@@ -8279,6 +9022,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-shepherds-field-chapel/print.webp',
+    rawSrc: '/images/devotional-prints/arch-shepherds-field-chapel/raw.jpg',
     relevance: '',
   },
   'arch-stonehenge-engraving': {
@@ -8291,6 +9035,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-stonehenge-engraving/print.webp',
+    rawSrc: '/images/devotional-prints/arch-stonehenge-engraving/raw.jpg',
     relevance: '',
   },
   'arch-straight-street-damascus': {
@@ -8303,6 +9048,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-straight-street-damascus/print.webp',
+    rawSrc: '/images/devotional-prints/arch-straight-street-damascus/raw.jpg',
     relevance: '',
   },
   'arch-tabgha-loaves-mosaic': {
@@ -8315,6 +9061,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-tabgha-loaves-mosaic/print.webp',
+    rawSrc: '/images/devotional-prints/arch-tabgha-loaves-mosaic/raw.jpg',
     relevance: '',
   },
   'arch-tabgha-mosaic-fish': {
@@ -8327,6 +9074,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-tabgha-mosaic-fish/print.webp',
+    rawSrc: '/images/devotional-prints/arch-tabgha-mosaic-fish/raw.jpg',
     relevance: '',
   },
   'arch-temple-mount-engraving': {
@@ -8339,6 +9087,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-temple-mount-engraving/print.webp',
+    rawSrc: '/images/devotional-prints/arch-temple-mount-engraving/raw.jpg',
     relevance: '',
   },
   'arch-trajan-market-ruins': {
@@ -8351,6 +9100,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-trajan-market-ruins/print.webp',
+    rawSrc: '/images/devotional-prints/arch-trajan-market-ruins/raw.jpg',
     relevance: '',
   },
   'arch-upper-room-cenaculum': {
@@ -8363,6 +9113,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-upper-room-cenaculum/print.webp',
+    rawSrc: '/images/devotional-prints/arch-upper-room-cenaculum/raw.jpg',
     relevance: '',
   },
   'arch-upper-room-spirit': {
@@ -8375,6 +9126,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-upper-room-spirit/print.webp',
+    rawSrc: '/images/devotional-prints/arch-upper-room-spirit/raw.jpg',
     relevance: '',
   },
   'arch-via-dolorosa-arch': {
@@ -8387,6 +9139,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-via-dolorosa-arch/print.webp',
+    rawSrc: '/images/devotional-prints/arch-via-dolorosa-arch/raw.jpg',
     relevance: '',
   },
   'arch-via-dolorosa-jerusalem': {
@@ -8399,6 +9152,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-via-dolorosa-jerusalem/print.webp',
+    rawSrc: '/images/devotional-prints/arch-via-dolorosa-jerusalem/raw.jpg',
     relevance: '',
   },
   'arch-via-sacra-rome': {
@@ -8411,6 +9165,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-via-sacra-rome/print.webp',
+    rawSrc: '/images/devotional-prints/arch-via-sacra-rome/raw.jpg',
     relevance: '',
   },
   'arch-via-sacra-rooted': {
@@ -8423,6 +9178,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-via-sacra-rooted/print.webp',
+    rawSrc: '/images/devotional-prints/arch-via-sacra-rooted/raw.jpg',
     relevance: '',
   },
   'arch-western-wall-19c': {
@@ -8435,6 +9191,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-western-wall-19c/print.webp',
+    rawSrc: '/images/devotional-prints/arch-western-wall-19c/raw.jpg',
     relevance: '',
   },
   'arch-westminster-cloister': {
@@ -8447,6 +9204,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-westminster-cloister/print.webp',
+    rawSrc: '/images/devotional-prints/arch-westminster-cloister/raw.jpg',
     relevance: '',
   },
   'arch-yardenit-jordan-site': {
@@ -8459,6 +9217,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/arch-yardenit-jordan-site/print.webp',
+    rawSrc: '/images/devotional-prints/arch-yardenit-jordan-site/raw.jpg',
     relevance: '',
   },
   'artifact-ancient-oil-lamp': {
@@ -8471,6 +9230,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/artifact-ancient-oil-lamp/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-ancient-oil-lamp/raw.jpg',
     relevance: '',
   },
   'artifact-arch-titus-menorah': {
@@ -8483,6 +9243,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/artifact-arch-titus-menorah/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-arch-titus-menorah/raw.jpg',
     relevance: '',
   },
   'artifact-armenian-gospel-1262': {
@@ -8495,6 +9256,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/artifact-armenian-gospel-1262/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-armenian-gospel-1262/raw.jpg',
     relevance: '',
   },
   'artifact-babylonian-creation-tablet': {
@@ -8507,6 +9269,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/artifact-babylonian-creation-tablet/print.webp',
+    rawSrc:
+      '/images/devotional-prints/artifact-babylonian-creation-tablet/raw.jpg',
     relevance: '',
   },
   'artifact-book-of-kells-chi-rho': {
@@ -8519,6 +9283,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/artifact-book-of-kells-chi-rho/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-book-of-kells-chi-rho/raw.jpg',
     relevance: '',
   },
   'artifact-cyrus-cylinder': {
@@ -8531,6 +9296,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/artifact-cyrus-cylinder/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-cyrus-cylinder/raw.jpg',
     relevance: '',
   },
   'artifact-dead-sea-scroll-isaiah': {
@@ -8543,6 +9309,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/artifact-dead-sea-scroll-isaiah/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-dead-sea-scroll-isaiah/raw.jpg',
     relevance: '',
   },
   'artifact-dead-sea-scrolls': {
@@ -8555,6 +9322,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/artifact-dead-sea-scrolls/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-dead-sea-scrolls/raw.jpg',
     relevance: '',
   },
   'artifact-hezekiah-seal': {
@@ -8567,6 +9335,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/artifact-hezekiah-seal/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-hezekiah-seal/raw.jpg',
     relevance: '',
   },
   'artifact-lachish-reliefs': {
@@ -8579,6 +9348,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/artifact-lachish-reliefs/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-lachish-reliefs/raw.jpg',
     relevance: '',
   },
   'artifact-lindisfarne-carpet-page': {
@@ -8591,6 +9361,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/artifact-lindisfarne-carpet-page/print.webp',
+    rawSrc:
+      '/images/devotional-prints/artifact-lindisfarne-carpet-page/raw.jpg',
     relevance: '',
   },
   'artifact-menorah-relief': {
@@ -8603,6 +9375,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/artifact-menorah-relief/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-menorah-relief/raw.jpg',
     relevance: '',
   },
   'artifact-moabite-stone-mesha': {
@@ -8615,6 +9388,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/artifact-moabite-stone-mesha/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-moabite-stone-mesha/raw.jpg',
     relevance: '',
   },
   'artifact-pilate-stone': {
@@ -8627,6 +9401,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/artifact-pilate-stone/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-pilate-stone/raw.jpg',
     relevance: '',
   },
   'artifact-psalter-illuminated': {
@@ -8639,6 +9414,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/artifact-psalter-illuminated/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-psalter-illuminated/raw.jpg',
     relevance: '',
   },
   'artifact-psalter-speech-scrolls': {
@@ -8651,6 +9427,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/artifact-psalter-speech-scrolls/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-psalter-speech-scrolls/raw.jpg',
     relevance: '',
   },
   'artifact-roman-denarius-tiberius': {
@@ -8663,6 +9440,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/artifact-roman-denarius-tiberius/print.webp',
+    rawSrc:
+      '/images/devotional-prints/artifact-roman-denarius-tiberius/raw.jpg',
     relevance: '',
   },
   'artifact-rosetta-stone': {
@@ -8675,6 +9454,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/artifact-rosetta-stone/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-rosetta-stone/raw.jpg',
     relevance: '',
   },
   'artifact-siloam-inscription': {
@@ -8687,6 +9467,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/artifact-siloam-inscription/print.webp',
+    rawSrc: '/images/devotional-prints/artifact-siloam-inscription/raw.jpg',
     relevance: '',
   },
   'artifact-sumerian-creation-tablet': {
@@ -8699,6 +9480,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/artifact-sumerian-creation-tablet/print.webp',
+    rawSrc:
+      '/images/devotional-prints/artifact-sumerian-creation-tablet/raw.jpg',
     relevance: '',
   },
   'artifact-torah-scroll-historical': {
@@ -8711,6 +9494,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/artifact-torah-scroll-historical/print.webp',
+    rawSrc:
+      '/images/devotional-prints/artifact-torah-scroll-historical/raw.jpg',
     relevance: '',
   },
   'artifact-winchester-bible-genesis': {
@@ -8723,6 +9508,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/artifact-winchester-bible-genesis/print.webp',
+    rawSrc:
+      '/images/devotional-prints/artifact-winchester-bible-genesis/raw.jpg',
     relevance: '',
   },
   'bassano-adoration-shepherds': {
@@ -8735,6 +9522,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/bassano-adoration-shepherds/print.webp',
+    rawSrc: '/images/devotional-prints/bassano-adoration-shepherds/raw.jpg',
     relevance: '',
   },
   'bassano-christ-driving-merchants': {
@@ -8747,6 +9535,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/bassano-christ-driving-merchants/print.webp',
+    rawSrc:
+      '/images/devotional-prints/bassano-christ-driving-merchants/raw.jpg',
     relevance: '',
   },
   'bellini-pieta': {
@@ -8759,6 +9549,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/bellini-pieta/print.webp',
+    rawSrc: '/images/devotional-prints/bellini-pieta/raw.jpg',
     relevance: '',
   },
   'bellini-transfiguration': {
@@ -8771,6 +9562,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/bellini-transfiguration/print.webp',
+    rawSrc: '/images/devotional-prints/bellini-transfiguration/raw.jpg',
     relevance: '',
   },
   'blake-glad-day-albion': {
@@ -8783,6 +9575,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'linocut',
     src: '/images/devotional-prints/blake-glad-day-albion/print.webp',
+    rawSrc: '/images/devotional-prints/blake-glad-day-albion/raw.jpg',
     relevance: '',
   },
   'blake-great-red-dragon': {
@@ -8795,6 +9588,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/blake-great-red-dragon/print.webp',
+    rawSrc: '/images/devotional-prints/blake-great-red-dragon/raw.jpg',
     relevance: '',
   },
   'blake-job-morning-stars': {
@@ -8807,6 +9601,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/blake-job-morning-stars/print.webp',
+    rawSrc: '/images/devotional-prints/blake-job-morning-stars/raw.jpg',
     relevance: '',
   },
   'blake-job-restored': {
@@ -8819,6 +9614,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/blake-job-restored/print.webp',
+    rawSrc: '/images/devotional-prints/blake-job-restored/raw.jpg',
     relevance: '',
   },
   'blake-whore-babylon': {
@@ -8831,6 +9627,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/blake-whore-babylon/print.webp',
+    rawSrc: '/images/devotional-prints/blake-whore-babylon/raw.jpg',
     relevance: '',
   },
   'bocklin-sacred-wood': {
@@ -8843,6 +9640,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/bocklin-sacred-wood/print.webp',
+    rawSrc: '/images/devotional-prints/bocklin-sacred-wood/raw.jpg',
     relevance: '',
   },
   'bosch-conjurer-false-gospel': {
@@ -8855,6 +9653,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/bosch-conjurer-false-gospel/print.webp',
+    rawSrc: '/images/devotional-prints/bosch-conjurer-false-gospel/raw.jpg',
     relevance: '',
   },
   'bosch-garden-hell-panel': {
@@ -8867,6 +9666,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bosch-garden-hell-panel/print.webp',
+    rawSrc: '/images/devotional-prints/bosch-garden-hell-panel/raw.jpg',
     relevance: '',
   },
   'bosch-ship-fools': {
@@ -8879,6 +9679,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bosch-ship-fools/print.webp',
+    rawSrc: '/images/devotional-prints/bosch-ship-fools/raw.jpg',
     relevance: '',
   },
   'bosch-ship-fools-tongue': {
@@ -8891,6 +9692,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bosch-ship-fools-tongue/print.webp',
+    rawSrc: '/images/devotional-prints/bosch-ship-fools-tongue/raw.jpg',
     relevance: '',
   },
   'bosch-the-conjurer': {
@@ -8903,6 +9705,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bosch-the-conjurer/print.webp',
+    rawSrc: '/images/devotional-prints/bosch-the-conjurer/raw.jpg',
     relevance: '',
   },
   'botticelli-annunciation-uffizi': {
@@ -8915,6 +9718,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/botticelli-annunciation-uffizi/print.webp',
+    rawSrc: '/images/devotional-prints/botticelli-annunciation-uffizi/raw.jpg',
     relevance: '',
   },
   'botticelli-lamentation-christ': {
@@ -8927,6 +9731,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/botticelli-lamentation-christ/print.webp',
+    rawSrc: '/images/devotional-prints/botticelli-lamentation-christ/raw.jpg',
     relevance: '',
   },
   'botticelli-mystic-nativity': {
@@ -8939,6 +9744,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/botticelli-mystic-nativity/print.webp',
+    rawSrc: '/images/devotional-prints/botticelli-mystic-nativity/raw.jpg',
     relevance: '',
   },
   'botticelli-mystical-nativity': {
@@ -8951,6 +9757,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/botticelli-mystical-nativity/print.webp',
+    rawSrc: '/images/devotional-prints/botticelli-mystical-nativity/raw.jpg',
     relevance: '',
   },
   'bouguereau-difficult-lesson': {
@@ -8963,6 +9770,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/bouguereau-difficult-lesson/print.webp',
+    rawSrc: '/images/devotional-prints/bouguereau-difficult-lesson/raw.jpg',
     relevance: '',
   },
   'bouguereau-pieta': {
@@ -8975,6 +9783,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/bouguereau-pieta/print.webp',
+    rawSrc: '/images/devotional-prints/bouguereau-pieta/raw.jpg',
     relevance: '',
   },
   'bouguereau-pieta-paris': {
@@ -8987,6 +9796,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/bouguereau-pieta-paris/print.webp',
+    rawSrc: '/images/devotional-prints/bouguereau-pieta-paris/raw.jpg',
     relevance: '',
   },
   'bouguereau-youth': {
@@ -8999,6 +9809,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/bouguereau-youth/print.webp',
+    rawSrc: '/images/devotional-prints/bouguereau-youth/raw.jpg',
     relevance: '',
   },
   'bouts-gathering-manna': {
@@ -9011,6 +9822,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/bouts-gathering-manna/print.webp',
+    rawSrc: '/images/devotional-prints/bouts-gathering-manna/raw.jpg',
     relevance: '',
   },
   'bouts-last-supper-altarpiece': {
@@ -9023,6 +9835,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/bouts-last-supper-altarpiece/print.webp',
+    rawSrc: '/images/devotional-prints/bouts-last-supper-altarpiece/raw.jpg',
     relevance: '',
   },
   'bouts-last-supper-leuven': {
@@ -9035,6 +9848,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bouts-last-supper-leuven/print.webp',
+    rawSrc: '/images/devotional-prints/bouts-last-supper-leuven/raw.jpg',
     relevance: '',
   },
   'brown-jesus-washing-feet': {
@@ -9047,6 +9861,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/brown-jesus-washing-feet/print.webp',
+    rawSrc: '/images/devotional-prints/brown-jesus-washing-feet/raw.jpg',
     relevance: '',
   },
   'brown-work': {
@@ -9059,6 +9874,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/brown-work/print.webp',
+    rawSrc: '/images/devotional-prints/brown-work/raw.jpg',
     relevance: '',
   },
   'brown-work-shared': {
@@ -9071,6 +9887,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/brown-work-shared/print.webp',
+    rawSrc: '/images/devotional-prints/brown-work-shared/raw.jpg',
     relevance: '',
   },
   'bruegel-carnival-lent': {
@@ -9083,6 +9900,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bruegel-carnival-lent/print.webp',
+    rawSrc: '/images/devotional-prints/bruegel-carnival-lent/raw.jpg',
     relevance: '',
   },
   'bruegel-peasant-wedding': {
@@ -9095,6 +9913,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bruegel-peasant-wedding/print.webp',
+    rawSrc: '/images/devotional-prints/bruegel-peasant-wedding/raw.jpg',
     relevance: '',
   },
   'bruegel-peasant-wedding-2': {
@@ -9107,6 +9926,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bruegel-peasant-wedding-2/print.webp',
+    rawSrc: '/images/devotional-prints/bruegel-peasant-wedding-2/raw.jpg',
     relevance: '',
   },
   'bruegel-peasant-wedding-roots': {
@@ -9119,6 +9939,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bruegel-peasant-wedding-roots/print.webp',
+    rawSrc: '/images/devotional-prints/bruegel-peasant-wedding-roots/raw.jpg',
     relevance: '',
   },
   'bruegel-pentecost-expansion': {
@@ -9131,6 +9952,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bruegel-pentecost-expansion/print.webp',
+    rawSrc: '/images/devotional-prints/bruegel-pentecost-expansion/raw.jpg',
     relevance: '',
   },
   'bruegel-tower-babel': {
@@ -9143,6 +9965,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bruegel-tower-babel/print.webp',
+    rawSrc: '/images/devotional-prints/bruegel-tower-babel/raw.jpg',
     relevance: '',
   },
   'bruegel-tower-babel-1563': {
@@ -9155,6 +9978,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bruegel-tower-babel-1563/print.webp',
+    rawSrc: '/images/devotional-prints/bruegel-tower-babel-1563/raw.jpg',
     relevance: '',
   },
   'bruegel-works-mercy': {
@@ -9167,6 +9991,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bruegel-works-mercy/print.webp',
+    rawSrc: '/images/devotional-prints/bruegel-works-mercy/raw.jpg',
     relevance: '',
   },
   'bruegel-works-mercy-belief': {
@@ -9179,6 +10004,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bruegel-works-mercy-belief/print.webp',
+    rawSrc: '/images/devotional-prints/bruegel-works-mercy-belief/raw.jpg',
     relevance: '',
   },
   'brueghel-garden-eden-elder': {
@@ -9191,6 +10017,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/brueghel-garden-eden-elder/print.webp',
+    rawSrc: '/images/devotional-prints/brueghel-garden-eden-elder/raw.jpg',
     relevance: '',
   },
   'brueghel-garden-eden-young': {
@@ -9203,6 +10030,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/brueghel-garden-eden-young/print.webp',
+    rawSrc: '/images/devotional-prints/brueghel-garden-eden-young/raw.jpg',
     relevance: '',
   },
   'burnand-peter-john-running': {
@@ -9215,6 +10043,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/burnand-peter-john-running/print.webp',
+    rawSrc: '/images/devotional-prints/burnand-peter-john-running/raw.jpg',
     relevance: '',
   },
   'burne-jones-annunciation': {
@@ -9227,6 +10056,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/burne-jones-annunciation/print.webp',
+    rawSrc: '/images/devotional-prints/burne-jones-annunciation/raw.jpg',
     relevance: '',
   },
   'burne-jones-star-bethlehem': {
@@ -9239,6 +10069,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/burne-jones-star-bethlehem/print.webp',
+    rawSrc: '/images/devotional-prints/burne-jones-star-bethlehem/raw.jpg',
     relevance: '',
   },
   'campi-still-life-vine': {
@@ -9251,6 +10082,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/campi-still-life-vine/print.webp',
+    rawSrc: '/images/devotional-prints/campi-still-life-vine/raw.jpg',
     relevance: '',
   },
   'campin-annunciation-merode': {
@@ -9263,6 +10095,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/campin-annunciation-merode/print.webp',
+    rawSrc: '/images/devotional-prints/campin-annunciation-merode/raw.jpg',
     relevance: '',
   },
   'campin-merode-altarpiece': {
@@ -9275,6 +10108,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/campin-merode-altarpiece/print.webp',
+    rawSrc: '/images/devotional-prints/campin-merode-altarpiece/raw.jpg',
     relevance: '',
   },
   'caravaggio-calling-matthew': {
@@ -9287,6 +10121,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/caravaggio-calling-matthew/print.webp',
+    rawSrc: '/images/devotional-prints/caravaggio-calling-matthew/raw.jpg',
     relevance: '',
   },
   'caravaggio-david-goliath': {
@@ -9299,6 +10134,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/caravaggio-david-goliath/print.webp',
+    rawSrc: '/images/devotional-prints/caravaggio-david-goliath/raw.jpg',
     relevance: '',
   },
   'caravaggio-david-goliath-hero': {
@@ -9311,6 +10147,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/caravaggio-david-goliath-hero/print.webp',
+    rawSrc: '/images/devotional-prints/caravaggio-david-goliath-hero/raw.jpg',
     relevance: '',
   },
   'caravaggio-ecce-homo': {
@@ -9323,6 +10160,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/caravaggio-ecce-homo/print.webp',
+    rawSrc: '/images/devotional-prints/caravaggio-ecce-homo/raw.jpg',
     relevance: '',
   },
   'caravaggio-incredulity-thomas': {
@@ -9335,6 +10173,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/caravaggio-incredulity-thomas/print.webp',
+    rawSrc: '/images/devotional-prints/caravaggio-incredulity-thomas/raw.jpg',
     relevance: '',
   },
   'caravaggio-john-wilderness': {
@@ -9347,6 +10186,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/caravaggio-john-wilderness/print.webp',
+    rawSrc: '/images/devotional-prints/caravaggio-john-wilderness/raw.jpg',
     relevance: '',
   },
   'caravaggio-nativity': {
@@ -9359,6 +10199,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/caravaggio-nativity/print.webp',
+    rawSrc: '/images/devotional-prints/caravaggio-nativity/raw.jpg',
     relevance: '',
   },
   'caravaggio-saint-john-baptist': {
@@ -9371,6 +10212,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/caravaggio-saint-john-baptist/print.webp',
+    rawSrc: '/images/devotional-prints/caravaggio-saint-john-baptist/raw.jpg',
     relevance: '',
   },
   'carneo-good-shepherd': {
@@ -9383,6 +10225,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/carneo-good-shepherd/print.webp',
+    rawSrc: '/images/devotional-prints/carneo-good-shepherd/raw.jpg',
     relevance: '',
   },
   'carracci-pieta-1603': {
@@ -9395,6 +10238,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/carracci-pieta-1603/print.webp',
+    rawSrc: '/images/devotional-prints/carracci-pieta-1603/raw.jpg',
     relevance: '',
   },
   'carracci-stoning-stephen': {
@@ -9407,6 +10251,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/carracci-stoning-stephen/print.webp',
+    rawSrc: '/images/devotional-prints/carracci-stoning-stephen/raw.jpg',
     relevance: '',
   },
   'cassatt-mother-child': {
@@ -9419,6 +10264,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/cassatt-mother-child/print.webp',
+    rawSrc: '/images/devotional-prints/cassatt-mother-child/raw.jpg',
     relevance: '',
   },
   'chardin-grace-anointed': {
@@ -9431,6 +10277,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/chardin-grace-anointed/print.webp',
+    rawSrc: '/images/devotional-prints/chardin-grace-anointed/raw.jpg',
     relevance: '',
   },
   'chardin-grace-at-table': {
@@ -9443,6 +10290,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/chardin-grace-at-table/print.webp',
+    rawSrc: '/images/devotional-prints/chardin-grace-at-table/raw.jpg',
     relevance: '',
   },
   'chardin-grace-before-meal': {
@@ -9455,6 +10303,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/chardin-grace-before-meal/print.webp',
+    rawSrc: '/images/devotional-prints/chardin-grace-before-meal/raw.jpg',
     relevance: '',
   },
   'chardin-grace-table': {
@@ -9467,6 +10316,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/chardin-grace-table/print.webp',
+    rawSrc: '/images/devotional-prints/chardin-grace-table/raw.jpg',
     relevance: '',
   },
   'chardin-still-life-arts': {
@@ -9479,6 +10329,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/chardin-still-life-arts/print.webp',
+    rawSrc: '/images/devotional-prints/chardin-still-life-arts/raw.jpg',
     relevance: '',
   },
   'chardin-still-life-bread': {
@@ -9491,6 +10342,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/chardin-still-life-bread/print.webp',
+    rawSrc: '/images/devotional-prints/chardin-still-life-bread/raw.jpg',
     relevance: '',
   },
   'chardin-still-life-stillness': {
@@ -9503,6 +10355,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/chardin-still-life-stillness/print.webp',
+    rawSrc: '/images/devotional-prints/chardin-still-life-stillness/raw.jpg',
     relevance: '',
   },
   'church-twilight-wilderness': {
@@ -9515,6 +10368,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/church-twilight-wilderness/print.webp',
+    rawSrc: '/images/devotional-prints/church-twilight-wilderness/raw.jpg',
     relevance: '',
   },
   'cimabue-crucifix-assisi': {
@@ -9527,6 +10381,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/cimabue-crucifix-assisi/print.webp',
+    rawSrc: '/images/devotional-prints/cimabue-crucifix-assisi/raw.jpg',
     relevance: '',
   },
   'clausen-stone-pickers': {
@@ -9539,6 +10394,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/clausen-stone-pickers/print.webp',
+    rawSrc: '/images/devotional-prints/clausen-stone-pickers/raw.jpg',
     relevance: '',
   },
   'cole-expulsion-eden': {
@@ -9551,6 +10407,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/cole-expulsion-eden/print.webp',
+    rawSrc: '/images/devotional-prints/cole-expulsion-eden/raw.jpg',
     relevance: '',
   },
   'cole-mount-etna-sunrise': {
@@ -9563,6 +10420,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/cole-mount-etna-sunrise/print.webp',
+    rawSrc: '/images/devotional-prints/cole-mount-etna-sunrise/raw.jpg',
     relevance: '',
   },
   'cole-sunny-morning-hudson': {
@@ -9575,6 +10433,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/cole-sunny-morning-hudson/print.webp',
+    rawSrc: '/images/devotional-prints/cole-sunny-morning-hudson/raw.jpg',
     relevance: '',
   },
   'cole-voyage-life-childhood': {
@@ -9587,6 +10446,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/cole-voyage-life-childhood/print.webp',
+    rawSrc: '/images/devotional-prints/cole-voyage-life-childhood/raw.jpg',
     relevance: '',
   },
   'coleman-storm-king-hudson': {
@@ -9599,6 +10459,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/coleman-storm-king-hudson/print.webp',
+    rawSrc: '/images/devotional-prints/coleman-storm-king-hudson/raw.jpg',
     relevance: '',
   },
   'corot-lake-ville-davray': {
@@ -9611,6 +10472,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/corot-lake-ville-davray/print.webp',
+    rawSrc: '/images/devotional-prints/corot-lake-ville-davray/raw.jpg',
     relevance: '',
   },
   'cortona-god-creating-animals': {
@@ -9623,6 +10485,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/cortona-god-creating-animals/print.webp',
+    rawSrc: '/images/devotional-prints/cortona-god-creating-animals/raw.jpg',
     relevance: '',
   },
   'courbet-desperate-man-end': {
@@ -9635,6 +10498,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/courbet-desperate-man-end/print.webp',
+    rawSrc: '/images/devotional-prints/courbet-desperate-man-end/raw.jpg',
     relevance: '',
   },
   'courbet-desperate-rooted': {
@@ -9647,6 +10511,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/courbet-desperate-rooted/print.webp',
+    rawSrc: '/images/devotional-prints/courbet-desperate-rooted/raw.jpg',
     relevance: '',
   },
   'courbet-stone-breakers': {
@@ -9659,6 +10524,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/courbet-stone-breakers/print.webp',
+    rawSrc: '/images/devotional-prints/courbet-stone-breakers/raw.jpg',
     relevance: '',
   },
   'courbet-stone-breakers-cross': {
@@ -9671,6 +10537,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/courbet-stone-breakers-cross/print.webp',
+    rawSrc: '/images/devotional-prints/courbet-stone-breakers-cross/raw.jpg',
     relevance: '',
   },
   'courbet-stone-breakers-valued': {
@@ -9683,6 +10550,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/courbet-stone-breakers-valued/print.webp',
+    rawSrc: '/images/devotional-prints/courbet-stone-breakers-valued/raw.jpg',
     relevance: '',
   },
   'courbet-stone-breakers-work': {
@@ -9695,6 +10563,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/courbet-stone-breakers-work/print.webp',
+    rawSrc: '/images/devotional-prints/courbet-stone-breakers-work/raw.jpg',
     relevance: '',
   },
   'courbet-the-desperate-man': {
@@ -9707,6 +10576,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/courbet-the-desperate-man/print.webp',
+    rawSrc: '/images/devotional-prints/courbet-the-desperate-man/raw.jpg',
     relevance: '',
   },
   'cranach-adam-eve': {
@@ -9719,6 +10589,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/cranach-adam-eve/print.webp',
+    rawSrc: '/images/devotional-prints/cranach-adam-eve/raw.jpg',
     relevance: '',
   },
   'cranach-adam-eve-paradise': {
@@ -9731,6 +10602,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/cranach-adam-eve-paradise/print.webp',
+    rawSrc: '/images/devotional-prints/cranach-adam-eve-paradise/raw.jpg',
     relevance: '',
   },
   'cranach-david-bathsheba': {
@@ -9743,6 +10615,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/cranach-david-bathsheba/print.webp',
+    rawSrc: '/images/devotional-prints/cranach-david-bathsheba/raw.jpg',
     relevance: '',
   },
   'cranach-law-gospel': {
@@ -9755,6 +10628,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/cranach-law-gospel/print.webp',
+    rawSrc: '/images/devotional-prints/cranach-law-gospel/raw.jpg',
     relevance: '',
   },
   'dahl-ship-storm': {
@@ -9767,6 +10641,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/dahl-ship-storm/print.webp',
+    rawSrc: '/images/devotional-prints/dahl-ship-storm/raw.jpg',
     relevance: '',
   },
   'danby-sixth-seal': {
@@ -9779,6 +10654,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/danby-sixth-seal/print.webp',
+    rawSrc: '/images/devotional-prints/danby-sixth-seal/raw.jpg',
     relevance: '',
   },
   'daumier-good-samaritan': {
@@ -9791,6 +10667,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/daumier-good-samaritan/print.webp',
+    rawSrc: '/images/devotional-prints/daumier-good-samaritan/raw.jpg',
     relevance: '',
   },
   'daumier-third-class-carriage': {
@@ -9803,6 +10680,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/daumier-third-class-carriage/print.webp',
+    rawSrc: '/images/devotional-prints/daumier-third-class-carriage/raw.jpg',
     relevance: '',
   },
   'daumier-third-class-chaos': {
@@ -9815,6 +10693,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/daumier-third-class-chaos/print.webp',
+    rawSrc: '/images/devotional-prints/daumier-third-class-chaos/raw.jpg',
     relevance: '',
   },
   'daumier-third-class-truth': {
@@ -9827,6 +10706,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/daumier-third-class-truth/print.webp',
+    rawSrc: '/images/devotional-prints/daumier-third-class-truth/raw.jpg',
     relevance: '',
   },
   'daumier-third-class-valued': {
@@ -9839,6 +10719,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/daumier-third-class-valued/print.webp',
+    rawSrc: '/images/devotional-prints/daumier-third-class-valued/raw.jpg',
     relevance: '',
   },
   'daumier-washerwoman': {
@@ -9851,6 +10732,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/daumier-washerwoman/print.webp',
+    rawSrc: '/images/devotional-prints/daumier-washerwoman/raw.jpg',
     relevance: '',
   },
   'defrance-almsgiving': {
@@ -9863,6 +10745,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/defrance-almsgiving/print.webp',
+    rawSrc: '/images/devotional-prints/defrance-almsgiving/raw.jpg',
     relevance: '',
   },
   'del-sarto-last-supper': {
@@ -9875,6 +10758,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/del-sarto-last-supper/print.webp',
+    rawSrc: '/images/devotional-prints/del-sarto-last-supper/raw.jpg',
     relevance: '',
   },
   'delacroix-jacob-angel-saint-sulpice': {
@@ -9887,6 +10771,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/delacroix-jacob-angel-saint-sulpice/print.webp',
+    rawSrc:
+      '/images/devotional-prints/delacroix-jacob-angel-saint-sulpice/raw.jpg',
     relevance: '',
   },
   'delacroix-lament-jeremiah': {
@@ -9899,6 +10785,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/delacroix-lament-jeremiah/print.webp',
+    rawSrc: '/images/devotional-prints/delacroix-lament-jeremiah/raw.jpg',
     relevance: '',
   },
   'delacroix-pieta-saint-denis': {
@@ -9911,6 +10798,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/delacroix-pieta-saint-denis/print.webp',
+    rawSrc: '/images/devotional-prints/delacroix-pieta-saint-denis/raw.jpg',
     relevance: '',
   },
   'dore-absalom': {
@@ -9923,6 +10811,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-absalom/print.webp',
+    rawSrc: '/images/devotional-prints/dore-absalom/raw.jpg',
     relevance: '',
   },
   'dore-adam-eve-garden': {
@@ -9935,6 +10824,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-adam-eve-garden/print.webp',
+    rawSrc: '/images/devotional-prints/dore-adam-eve-garden/raw.jpg',
     relevance: '',
   },
   'dore-agony-garden': {
@@ -9947,6 +10837,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/dore-agony-garden/print.webp',
+    rawSrc: '/images/devotional-prints/dore-agony-garden/raw.jpg',
     relevance: '',
   },
   'dore-cain-abel': {
@@ -9959,6 +10850,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-cain-abel/print.webp',
+    rawSrc: '/images/devotional-prints/dore-cain-abel/raw.jpg',
     relevance: '',
   },
   'dore-creation-light': {
@@ -9971,6 +10863,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-creation-light/print.webp',
+    rawSrc: '/images/devotional-prints/dore-creation-light/raw.jpg',
     relevance: '',
   },
   'dore-daniel-furnace': {
@@ -9983,6 +10876,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-daniel-furnace/print.webp',
+    rawSrc: '/images/devotional-prints/dore-daniel-furnace/raw.jpg',
     relevance: '',
   },
   'dore-daniel-lions': {
@@ -9995,6 +10889,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/dore-daniel-lions/print.webp',
+    rawSrc: '/images/devotional-prints/dore-daniel-lions/raw.jpg',
     relevance: '',
   },
   'dore-david-goliath-engraving': {
@@ -10007,6 +10902,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-david-goliath-engraving/print.webp',
+    rawSrc: '/images/devotional-prints/dore-david-goliath-engraving/raw.jpg',
     relevance: '',
   },
   'dore-david-psalms': {
@@ -10019,6 +10915,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-david-psalms/print.webp',
+    rawSrc: '/images/devotional-prints/dore-david-psalms/raw.jpg',
     relevance: '',
   },
   'dore-destruction-pharaoh': {
@@ -10031,6 +10928,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-destruction-pharaoh/print.webp',
+    rawSrc: '/images/devotional-prints/dore-destruction-pharaoh/raw.jpg',
     relevance: '',
   },
   'dore-divine-comedy-inferno': {
@@ -10043,6 +10941,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/dore-divine-comedy-inferno/print.webp',
+    rawSrc: '/images/devotional-prints/dore-divine-comedy-inferno/raw.jpg',
     relevance: '',
   },
   'dore-elijah-chariot': {
@@ -10055,6 +10954,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-elijah-chariot/print.webp',
+    rawSrc: '/images/devotional-prints/dore-elijah-chariot/raw.jpg',
     relevance: '',
   },
   'dore-entry-jerusalem': {
@@ -10067,6 +10967,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-entry-jerusalem/print.webp',
+    rawSrc: '/images/devotional-prints/dore-entry-jerusalem/raw.jpg',
     relevance: '',
   },
   'dore-esther-king': {
@@ -10079,6 +10980,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-esther-king/print.webp',
+    rawSrc: '/images/devotional-prints/dore-esther-king/raw.jpg',
     relevance: '',
   },
   'dore-ezekiel-bones': {
@@ -10091,6 +10993,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-ezekiel-bones/print.webp',
+    rawSrc: '/images/devotional-prints/dore-ezekiel-bones/raw.jpg',
     relevance: '',
   },
   'dore-ezekiel-dry-bones-dore': {
@@ -10103,6 +11006,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/dore-ezekiel-dry-bones-dore/print.webp',
+    rawSrc: '/images/devotional-prints/dore-ezekiel-dry-bones-dore/raw.jpg',
     relevance: '',
   },
   'dore-fall-babylon': {
@@ -10115,6 +11019,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-fall-babylon/print.webp',
+    rawSrc: '/images/devotional-prints/dore-fall-babylon/raw.jpg',
     relevance: '',
   },
   'dore-fall-jericho': {
@@ -10127,6 +11032,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-fall-jericho/print.webp',
+    rawSrc: '/images/devotional-prints/dore-fall-jericho/raw.jpg',
     relevance: '',
   },
   'dore-gethsemane': {
@@ -10139,6 +11045,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-gethsemane/print.webp',
+    rawSrc: '/images/devotional-prints/dore-gethsemane/raw.jpg',
     relevance: '',
   },
   'dore-isaiah-angels': {
@@ -10151,6 +11058,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-isaiah-angels/print.webp',
+    rawSrc: '/images/devotional-prints/dore-isaiah-angels/raw.jpg',
     relevance: '',
   },
   'dore-isaiah-vision': {
@@ -10163,6 +11071,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-isaiah-vision/print.webp',
+    rawSrc: '/images/devotional-prints/dore-isaiah-vision/raw.jpg',
     relevance: '',
   },
   'dore-jacob-angels-ladder': {
@@ -10175,6 +11084,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/dore-jacob-angels-ladder/print.webp',
+    rawSrc: '/images/devotional-prints/dore-jacob-angels-ladder/raw.jpg',
     relevance: '',
   },
   'dore-jonah': {
@@ -10187,6 +11097,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-jonah/print.webp',
+    rawSrc: '/images/devotional-prints/dore-jonah/raw.jpg',
     relevance: '',
   },
   'dore-joseph-sold-brothers': {
@@ -10199,6 +11110,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-joseph-sold-brothers/print.webp',
+    rawSrc: '/images/devotional-prints/dore-joseph-sold-brothers/raw.jpg',
     relevance: '',
   },
   'dore-last-supper': {
@@ -10211,6 +11123,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-last-supper/print.webp',
+    rawSrc: '/images/devotional-prints/dore-last-supper/raw.jpg',
     relevance: '',
   },
   'dore-moses-nebo': {
@@ -10223,6 +11136,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-moses-nebo/print.webp',
+    rawSrc: '/images/devotional-prints/dore-moses-nebo/raw.jpg',
     relevance: '',
   },
   'dore-new-jerusalem': {
@@ -10235,6 +11149,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-new-jerusalem/print.webp',
+    rawSrc: '/images/devotional-prints/dore-new-jerusalem/raw.jpg',
     relevance: '',
   },
   'dore-noah-ark-animals': {
@@ -10247,6 +11162,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-noah-ark-animals/print.webp',
+    rawSrc: '/images/devotional-prints/dore-noah-ark-animals/raw.jpg',
     relevance: '',
   },
   'dore-noah-dove': {
@@ -10259,6 +11175,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-noah-dove/print.webp',
+    rawSrc: '/images/devotional-prints/dore-noah-dove/raw.jpg',
     relevance: '',
   },
   'dore-ruth-gleaning': {
@@ -10271,6 +11188,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-ruth-gleaning/print.webp',
+    rawSrc: '/images/devotional-prints/dore-ruth-gleaning/raw.jpg',
     relevance: '',
   },
   'dore-samson-pillars': {
@@ -10283,6 +11201,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-samson-pillars/print.webp',
+    rawSrc: '/images/devotional-prints/dore-samson-pillars/raw.jpg',
     relevance: '',
   },
   'dore-sermon-mount': {
@@ -10295,6 +11214,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-sermon-mount/print.webp',
+    rawSrc: '/images/devotional-prints/dore-sermon-mount/raw.jpg',
     relevance: '',
   },
   'dore-solomon-temple': {
@@ -10307,6 +11227,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-solomon-temple/print.webp',
+    rawSrc: '/images/devotional-prints/dore-solomon-temple/raw.jpg',
     relevance: '',
   },
   'dore-tower-babel': {
@@ -10319,6 +11240,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-tower-babel/print.webp',
+    rawSrc: '/images/devotional-prints/dore-tower-babel/raw.jpg',
     relevance: '',
   },
   'dore-walking-water': {
@@ -10331,6 +11253,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/dore-walking-water/print.webp',
+    rawSrc: '/images/devotional-prints/dore-walking-water/raw.jpg',
     relevance: '',
   },
   'duccio-entry-jerusalem': {
@@ -10343,6 +11266,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/duccio-entry-jerusalem/print.webp',
+    rawSrc: '/images/devotional-prints/duccio-entry-jerusalem/raw.jpg',
     relevance: '',
   },
   'duccio-pentecost-1308': {
@@ -10355,6 +11279,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/duccio-pentecost-1308/print.webp',
+    rawSrc: '/images/devotional-prints/duccio-pentecost-1308/raw.jpg',
     relevance: '',
   },
   'durer-adam-eve-engraving': {
@@ -10367,6 +11292,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/durer-adam-eve-engraving/print.webp',
+    rawSrc: '/images/devotional-prints/durer-adam-eve-engraving/raw.jpg',
     relevance: '',
   },
   'durer-four-horsemen': {
@@ -10379,6 +11305,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/durer-four-horsemen/print.webp',
+    rawSrc: '/images/devotional-prints/durer-four-horsemen/raw.jpg',
     relevance: '',
   },
   'durer-four-horsemen-woodcut': {
@@ -10391,6 +11318,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/durer-four-horsemen-woodcut/print.webp',
+    rawSrc: '/images/devotional-prints/durer-four-horsemen-woodcut/raw.jpg',
     relevance: '',
   },
   'durer-knight-death-devil': {
@@ -10403,6 +11331,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/durer-knight-death-devil/print.webp',
+    rawSrc: '/images/devotional-prints/durer-knight-death-devil/raw.jpg',
     relevance: '',
   },
   'durer-melancholia-engraving': {
@@ -10415,6 +11344,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/durer-melancholia-engraving/print.webp',
+    rawSrc: '/images/devotional-prints/durer-melancholia-engraving/raw.jpg',
     relevance: '',
   },
   'durer-prodigal-son-engr': {
@@ -10427,6 +11357,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/durer-prodigal-son-engr/print.webp',
+    rawSrc: '/images/devotional-prints/durer-prodigal-son-engr/raw.jpg',
     relevance: '',
   },
   'durer-prodigal-son-swine': {
@@ -10439,6 +11370,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/durer-prodigal-son-swine/print.webp',
+    rawSrc: '/images/devotional-prints/durer-prodigal-son-swine/raw.jpg',
     relevance: '',
   },
   'durer-prodigal-son-swine-end': {
@@ -10451,6 +11383,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/durer-prodigal-son-swine-end/print.webp',
+    rawSrc: '/images/devotional-prints/durer-prodigal-son-swine-end/raw.jpg',
     relevance: '',
   },
   'durer-prodigal-swine-cage': {
@@ -10463,6 +11396,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/durer-prodigal-swine-cage/print.webp',
+    rawSrc: '/images/devotional-prints/durer-prodigal-swine-cage/raw.jpg',
     relevance: '',
   },
   'durer-saint-jerome-study': {
@@ -10475,6 +11409,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/durer-saint-jerome-study/print.webp',
+    rawSrc: '/images/devotional-prints/durer-saint-jerome-study/raw.jpg',
     relevance: '',
   },
   'durer-self-portrait-1500': {
@@ -10487,6 +11422,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/durer-self-portrait-1500/print.webp',
+    rawSrc: '/images/devotional-prints/durer-self-portrait-1500/raw.jpg',
     relevance: '',
   },
   'durer-self-portrait-imago-dei': {
@@ -10499,6 +11435,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/durer-self-portrait-imago-dei/print.webp',
+    rawSrc: '/images/devotional-prints/durer-self-portrait-imago-dei/raw.jpg',
     relevance: '',
   },
   'el-greco-agony-garden': {
@@ -10511,6 +11448,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/el-greco-agony-garden/print.webp',
+    rawSrc: '/images/devotional-prints/el-greco-agony-garden/raw.jpg',
     relevance: '',
   },
   'el-greco-burial-count-orgaz': {
@@ -10523,6 +11461,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/el-greco-burial-count-orgaz/print.webp',
+    rawSrc: '/images/devotional-prints/el-greco-burial-count-orgaz/raw.jpg',
     relevance: '',
   },
   'el-greco-disrobing-christ': {
@@ -10535,6 +11474,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/el-greco-disrobing-christ/print.webp',
+    rawSrc: '/images/devotional-prints/el-greco-disrobing-christ/raw.jpg',
     relevance: '',
   },
   'el-greco-espolio': {
@@ -10547,6 +11487,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/el-greco-espolio/print.webp',
+    rawSrc: '/images/devotional-prints/el-greco-espolio/raw.jpg',
     relevance: '',
   },
   'el-greco-holy-family': {
@@ -10559,6 +11500,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/el-greco-holy-family/print.webp',
+    rawSrc: '/images/devotional-prints/el-greco-holy-family/raw.jpg',
     relevance: '',
   },
   'el-greco-pentecost': {
@@ -10571,6 +11513,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/el-greco-pentecost/print.webp',
+    rawSrc: '/images/devotional-prints/el-greco-pentecost/raw.jpg',
     relevance: '',
   },
   'el-greco-pentecost-anointed': {
@@ -10583,6 +11526,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/el-greco-pentecost-anointed/print.webp',
+    rawSrc: '/images/devotional-prints/el-greco-pentecost-anointed/raw.jpg',
     relevance: '',
   },
   'el-greco-portrait-man': {
@@ -10595,6 +11539,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/el-greco-portrait-man/print.webp',
+    rawSrc: '/images/devotional-prints/el-greco-portrait-man/raw.jpg',
     relevance: '',
   },
   'el-greco-resurrection': {
@@ -10607,6 +11552,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/el-greco-resurrection/print.webp',
+    rawSrc: '/images/devotional-prints/el-greco-resurrection/raw.jpg',
     relevance: '',
   },
   'el-greco-resurrection-prado': {
@@ -10619,6 +11565,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/el-greco-resurrection-prado/print.webp',
+    rawSrc: '/images/devotional-prints/el-greco-resurrection-prado/raw.jpg',
     relevance: '',
   },
   'friedrich-monk-by-sea': {
@@ -10631,6 +11578,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/friedrich-monk-by-sea/print.webp',
+    rawSrc: '/images/devotional-prints/friedrich-monk-by-sea/raw.jpg',
     relevance: '',
   },
   'friedrich-monk-sea-end': {
@@ -10643,6 +11591,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/friedrich-monk-sea-end/print.webp',
+    rawSrc: '/images/devotional-prints/friedrich-monk-sea-end/raw.jpg',
     relevance: '',
   },
   'friedrich-oak-snow': {
@@ -10655,6 +11604,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/friedrich-oak-snow/print.webp',
+    rawSrc: '/images/devotional-prints/friedrich-oak-snow/raw.jpg',
     relevance: '',
   },
   'friedrich-wanderer-fog': {
@@ -10667,6 +11617,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/friedrich-wanderer-fog/print.webp',
+    rawSrc: '/images/devotional-prints/friedrich-wanderer-fog/raw.jpg',
     relevance: '',
   },
   'friedrich-woman-rising-sun': {
@@ -10679,6 +11630,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/friedrich-woman-rising-sun/print.webp',
+    rawSrc: '/images/devotional-prints/friedrich-woman-rising-sun/raw.jpg',
     relevance: '',
   },
   'ge-golgotha': {
@@ -10691,6 +11643,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/ge-golgotha/print.webp',
+    rawSrc: '/images/devotional-prints/ge-golgotha/raw.jpg',
     relevance: '',
   },
   'ge-last-supper-russian': {
@@ -10703,6 +11656,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/ge-last-supper-russian/print.webp',
+    rawSrc: '/images/devotional-prints/ge-last-supper-russian/raw.jpg',
     relevance: '',
   },
   'ge-what-is-truth': {
@@ -10715,6 +11669,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/ge-what-is-truth/print.webp',
+    rawSrc: '/images/devotional-prints/ge-what-is-truth/raw.jpg',
     relevance: '',
   },
   'geertgen-nativity-night': {
@@ -10727,6 +11682,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/geertgen-nativity-night/print.webp',
+    rawSrc: '/images/devotional-prints/geertgen-nativity-night/raw.jpg',
     relevance: '',
   },
   'gerard-david-baptism-christ': {
@@ -10739,6 +11695,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/gerard-david-baptism-christ/print.webp',
+    rawSrc: '/images/devotional-prints/gerard-david-baptism-christ/raw.jpg',
     relevance: '',
   },
   'gerome-golgotha': {
@@ -10751,6 +11708,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/gerome-golgotha/print.webp',
+    rawSrc: '/images/devotional-prints/gerome-golgotha/raw.jpg',
     relevance: '',
   },
   'gerome-prayer-egypt': {
@@ -10763,6 +11721,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/gerome-prayer-egypt/print.webp',
+    rawSrc: '/images/devotional-prints/gerome-prayer-egypt/raw.jpg',
     relevance: '',
   },
   'ghirlandaio-calling-apostles': {
@@ -10775,6 +11734,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/ghirlandaio-calling-apostles/print.webp',
+    rawSrc: '/images/devotional-prints/ghirlandaio-calling-apostles/raw.jpg',
     relevance: '',
   },
   'giotto-kiss-judas-arena': {
@@ -10787,6 +11747,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/giotto-kiss-judas-arena/print.webp',
+    rawSrc: '/images/devotional-prints/giotto-kiss-judas-arena/raw.jpg',
     relevance: '',
   },
   'goya-last-communion-calasanz': {
@@ -10799,6 +11760,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/goya-last-communion-calasanz/print.webp',
+    rawSrc: '/images/devotional-prints/goya-last-communion-calasanz/raw.jpg',
     relevance: '',
   },
   'goya-sleep-reason-monsters': {
@@ -10811,6 +11773,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/goya-sleep-reason-monsters/print.webp',
+    rawSrc: '/images/devotional-prints/goya-sleep-reason-monsters/raw.jpg',
     relevance: '',
   },
   'grunewald-annunciation-isenheim': {
@@ -10823,6 +11786,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/grunewald-annunciation-isenheim/print.webp',
+    rawSrc: '/images/devotional-prints/grunewald-annunciation-isenheim/raw.jpg',
     relevance: '',
   },
   'grunewald-crucifixion-isenheim': {
@@ -10835,6 +11799,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/grunewald-crucifixion-isenheim/print.webp',
+    rawSrc: '/images/devotional-prints/grunewald-crucifixion-isenheim/raw.jpg',
     relevance: '',
   },
   'grunewald-resurrection-isenheim': {
@@ -10847,6 +11812,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/grunewald-resurrection-isenheim/print.webp',
+    rawSrc: '/images/devotional-prints/grunewald-resurrection-isenheim/raw.jpg',
     relevance: '',
   },
   'grunewald-resurrection-rooted': {
@@ -10859,6 +11825,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/grunewald-resurrection-rooted/print.webp',
+    rawSrc: '/images/devotional-prints/grunewald-resurrection-rooted/raw.jpg',
     relevance: '',
   },
   'guercino-doubting-thomas': {
@@ -10871,6 +11838,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/guercino-doubting-thomas/print.webp',
+    rawSrc: '/images/devotional-prints/guercino-doubting-thomas/raw.jpg',
     relevance: '',
   },
   'guercino-doubting-thomas-2': {
@@ -10883,6 +11851,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/guercino-doubting-thomas-2/print.webp',
+    rawSrc: '/images/devotional-prints/guercino-doubting-thomas-2/raw.jpg',
     relevance: '',
   },
   'guercino-god-father-angels': {
@@ -10895,6 +11864,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/guercino-god-father-angels/print.webp',
+    rawSrc: '/images/devotional-prints/guercino-god-father-angels/raw.jpg',
     relevance: '',
   },
   'hammershoi-five-portraits': {
@@ -10907,6 +11877,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/hammershoi-five-portraits/print.webp',
+    rawSrc: '/images/devotional-prints/hammershoi-five-portraits/raw.jpg',
     relevance: '',
   },
   'hammershoi-interior-peace': {
@@ -10919,6 +11890,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/hammershoi-interior-peace/print.webp',
+    rawSrc: '/images/devotional-prints/hammershoi-interior-peace/raw.jpg',
     relevance: '',
   },
   'hammershoi-interior-still': {
@@ -10931,6 +11903,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/hammershoi-interior-still/print.webp',
+    rawSrc: '/images/devotional-prints/hammershoi-interior-still/raw.jpg',
     relevance: '',
   },
   'hammershoi-interior-strandgade': {
@@ -10943,6 +11916,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/hammershoi-interior-strandgade/print.webp',
+    rawSrc: '/images/devotional-prints/hammershoi-interior-strandgade/raw.jpg',
     relevance: '',
   },
   'hammershoi-interior-sunbeam-floor': {
@@ -10955,6 +11929,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/hammershoi-interior-sunbeam-floor/print.webp',
+    rawSrc:
+      '/images/devotional-prints/hammershoi-interior-sunbeam-floor/raw.jpg',
     relevance: '',
   },
   'hammershoi-interior-woman': {
@@ -10967,6 +11943,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/hammershoi-interior-woman/print.webp',
+    rawSrc: '/images/devotional-prints/hammershoi-interior-woman/raw.jpg',
     relevance: '',
   },
   'hammershoi-sunbeam-strandgade': {
@@ -10979,6 +11956,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/hammershoi-sunbeam-strandgade/print.webp',
+    rawSrc: '/images/devotional-prints/hammershoi-sunbeam-strandgade/raw.jpg',
     relevance: '',
   },
   'holbein-dead-christ': {
@@ -10991,6 +11969,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/holbein-dead-christ/print.webp',
+    rawSrc: '/images/devotional-prints/holbein-dead-christ/raw.jpg',
     relevance: '',
   },
   'holbein-dead-christ-tomb': {
@@ -11003,6 +11982,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/holbein-dead-christ-tomb/print.webp',
+    rawSrc: '/images/devotional-prints/holbein-dead-christ-tomb/raw.jpg',
     relevance: '',
   },
   'holbein-meyer-madonna': {
@@ -11015,6 +11995,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/holbein-meyer-madonna/print.webp',
+    rawSrc: '/images/devotional-prints/holbein-meyer-madonna/raw.jpg',
     relevance: '',
   },
   'hooch-interior-woman-window': {
@@ -11027,6 +12008,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/hooch-interior-woman-window/print.webp',
+    rawSrc: '/images/devotional-prints/hooch-interior-woman-window/raw.jpg',
     relevance: '',
   },
   'hugo-portinari-adoration': {
@@ -11039,6 +12021,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/hugo-portinari-adoration/print.webp',
+    rawSrc: '/images/devotional-prints/hugo-portinari-adoration/raw.jpg',
     relevance: '',
   },
   'hugo-portinari-triptych': {
@@ -11051,6 +12034,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/hugo-portinari-triptych/print.webp',
+    rawSrc: '/images/devotional-prints/hugo-portinari-triptych/raw.jpg',
     relevance: '',
   },
   'hunt-finding-saviour-temple': {
@@ -11063,6 +12047,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/hunt-finding-saviour-temple/print.webp',
+    rawSrc: '/images/devotional-prints/hunt-finding-saviour-temple/raw.jpg',
     relevance: '',
   },
   'hunt-finding-temple': {
@@ -11075,6 +12060,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/hunt-finding-temple/print.webp',
+    rawSrc: '/images/devotional-prints/hunt-finding-temple/raw.jpg',
     relevance: '',
   },
   'hunt-light-world': {
@@ -11087,6 +12073,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/hunt-light-world/print.webp',
+    rawSrc: '/images/devotional-prints/hunt-light-world/raw.jpg',
     relevance: '',
   },
   'hunt-scapegoat': {
@@ -11099,6 +12086,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/hunt-scapegoat/print.webp',
+    rawSrc: '/images/devotional-prints/hunt-scapegoat/raw.jpg',
     relevance: '',
   },
   'hunt-scapegoat-lever': {
@@ -11111,6 +12099,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/hunt-scapegoat-lever/print.webp',
+    rawSrc: '/images/devotional-prints/hunt-scapegoat-lever/raw.jpg',
     relevance: '',
   },
   'hunt-shadow-death': {
@@ -11123,6 +12112,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/hunt-shadow-death/print.webp',
+    rawSrc: '/images/devotional-prints/hunt-shadow-death/raw.jpg',
     relevance: '',
   },
   'icon-pantocrator-sinai': {
@@ -11135,6 +12125,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/icon-pantocrator-sinai/print.webp',
+    rawSrc: '/images/devotional-prints/icon-pantocrator-sinai/raw.jpg',
     relevance: '',
   },
   'icon-resurrection-anastasis': {
@@ -11147,6 +12138,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/icon-resurrection-anastasis/print.webp',
+    rawSrc: '/images/devotional-prints/icon-resurrection-anastasis/raw.jpg',
     relevance: '',
   },
   'icon-transfiguration-theophanes': {
@@ -11159,6 +12151,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/icon-transfiguration-theophanes/print.webp',
+    rawSrc: '/images/devotional-prints/icon-transfiguration-theophanes/raw.jpg',
     relevance: '',
   },
   'icon-vladimirskaya': {
@@ -11171,6 +12164,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/icon-vladimirskaya/print.webp',
+    rawSrc: '/images/devotional-prints/icon-vladimirskaya/raw.jpg',
     relevance: '',
   },
   'ivanov-appearance-christ-people': {
@@ -11183,6 +12177,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/ivanov-appearance-christ-people/print.webp',
+    rawSrc: '/images/devotional-prints/ivanov-appearance-christ-people/raw.jpg',
     relevance: '',
   },
   'ivanov-christ-people': {
@@ -11195,6 +12190,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/ivanov-christ-people/print.webp',
+    rawSrc: '/images/devotional-prints/ivanov-christ-people/raw.jpg',
     relevance: '',
   },
   'juanes-last-supper': {
@@ -11207,6 +12203,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/juanes-last-supper/print.webp',
+    rawSrc: '/images/devotional-prints/juanes-last-supper/raw.jpg',
     relevance: '',
   },
   'leighton-elijah': {
@@ -11219,6 +12216,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/leighton-elijah/print.webp',
+    rawSrc: '/images/devotional-prints/leighton-elijah/raw.jpg',
     relevance: '',
   },
   'leighton-elijah-desert': {
@@ -11231,6 +12229,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/leighton-elijah-desert/print.webp',
+    rawSrc: '/images/devotional-prints/leighton-elijah-desert/raw.jpg',
     relevance: '',
   },
   'lhermitte-reapers-pay': {
@@ -11243,6 +12242,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/lhermitte-reapers-pay/print.webp',
+    rawSrc: '/images/devotional-prints/lhermitte-reapers-pay/raw.jpg',
     relevance: '',
   },
   'lhermitte-the-harvest': {
@@ -11255,6 +12255,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/lhermitte-the-harvest/print.webp',
+    rawSrc: '/images/devotional-prints/lhermitte-the-harvest/raw.jpg',
     relevance: '',
   },
   'lippi-annunciation': {
@@ -11267,6 +12268,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/lippi-annunciation/print.webp',
+    rawSrc: '/images/devotional-prints/lippi-annunciation/raw.jpg',
     relevance: '',
   },
   'lippi-annunciation-munich': {
@@ -11279,6 +12281,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/lippi-annunciation-munich/print.webp',
+    rawSrc: '/images/devotional-prints/lippi-annunciation-munich/raw.jpg',
     relevance: '',
   },
   'lippi-music-making-angels': {
@@ -11291,6 +12294,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/lippi-music-making-angels/print.webp',
+    rawSrc: '/images/devotional-prints/lippi-music-making-angels/raw.jpg',
     relevance: '',
   },
   'lorenzetti-presentation-temple': {
@@ -11303,6 +12307,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/lorenzetti-presentation-temple/print.webp',
+    rawSrc: '/images/devotional-prints/lorenzetti-presentation-temple/raw.jpg',
     relevance: '',
   },
   'lotto-adoration-christ-child': {
@@ -11315,6 +12320,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/lotto-adoration-christ-child/print.webp',
+    rawSrc: '/images/devotional-prints/lotto-adoration-christ-child/raw.jpg',
     relevance: '',
   },
   'lucas-van-leyden-adam-eve': {
@@ -11327,6 +12333,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/lucas-van-leyden-adam-eve/print.webp',
+    rawSrc: '/images/devotional-prints/lucas-van-leyden-adam-eve/raw.jpg',
     relevance: '',
   },
   'mantegna-agony-in-garden': {
@@ -11339,6 +12346,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/mantegna-agony-in-garden/print.webp',
+    rawSrc: '/images/devotional-prints/mantegna-agony-in-garden/raw.jpg',
     relevance: '',
   },
   'martin-belshazzar': {
@@ -11351,6 +12359,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/martin-belshazzar/print.webp',
+    rawSrc: '/images/devotional-prints/martin-belshazzar/raw.jpg',
     relevance: '',
   },
   'martin-deluge': {
@@ -11363,6 +12372,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/martin-deluge/print.webp',
+    rawSrc: '/images/devotional-prints/martin-deluge/raw.jpg',
     relevance: '',
   },
   'martin-destruction-sodom': {
@@ -11375,6 +12385,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/martin-destruction-sodom/print.webp',
+    rawSrc: '/images/devotional-prints/martin-destruction-sodom/raw.jpg',
     relevance: '',
   },
   'martin-great-day': {
@@ -11387,6 +12398,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/martin-great-day/print.webp',
+    rawSrc: '/images/devotional-prints/martin-great-day/raw.jpg',
     relevance: '',
   },
   'martin-joshua-sun': {
@@ -11399,6 +12411,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/martin-joshua-sun/print.webp',
+    rawSrc: '/images/devotional-prints/martin-joshua-sun/raw.jpg',
     relevance: '',
   },
   'martin-last-judgment': {
@@ -11411,6 +12424,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/martin-last-judgment/print.webp',
+    rawSrc: '/images/devotional-prints/martin-last-judgment/raw.jpg',
     relevance: '',
   },
   'martini-annunciation-siena': {
@@ -11423,6 +12437,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/martini-annunciation-siena/print.webp',
+    rawSrc: '/images/devotional-prints/martini-annunciation-siena/raw.jpg',
     relevance: '',
   },
   'masaccio-expulsion-eden': {
@@ -11435,6 +12450,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/masaccio-expulsion-eden/print.webp',
+    rawSrc: '/images/devotional-prints/masaccio-expulsion-eden/raw.jpg',
     relevance: '',
   },
   'masaccio-tribute-money': {
@@ -11447,6 +12463,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/masaccio-tribute-money/print.webp',
+    rawSrc: '/images/devotional-prints/masaccio-tribute-money/raw.jpg',
     relevance: '',
   },
   'memling-adoration-magi': {
@@ -11459,6 +12476,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/memling-adoration-magi/print.webp',
+    rawSrc: '/images/devotional-prints/memling-adoration-magi/raw.jpg',
     relevance: '',
   },
   'memling-last-judgment': {
@@ -11471,6 +12489,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/memling-last-judgment/print.webp',
+    rawSrc: '/images/devotional-prints/memling-last-judgment/raw.jpg',
     relevance: '',
   },
   'michelangelo-creation-adam-2': {
@@ -11483,6 +12502,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/michelangelo-creation-adam-2/print.webp',
+    rawSrc: '/images/devotional-prints/michelangelo-creation-adam-2/raw.jpg',
     relevance: '',
   },
   'michelangelo-creation-adam-hands': {
@@ -11495,6 +12515,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/michelangelo-creation-adam-hands/print.webp',
+    rawSrc:
+      '/images/devotional-prints/michelangelo-creation-adam-hands/raw.jpg',
     relevance: '',
   },
   'michelangelo-creation-of-adam': {
@@ -11507,6 +12529,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/michelangelo-creation-of-adam/print.webp',
+    rawSrc: '/images/devotional-prints/michelangelo-creation-of-adam/raw.jpg',
     relevance: '',
   },
   'millais-christ-carpenter': {
@@ -11519,6 +12542,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/millais-christ-carpenter/print.webp',
+    rawSrc: '/images/devotional-prints/millais-christ-carpenter/raw.jpg',
     relevance: '',
   },
   'millais-christ-parents': {
@@ -11531,6 +12555,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/millais-christ-parents/print.webp',
+    rawSrc: '/images/devotional-prints/millais-christ-parents/raw.jpg',
     relevance: '',
   },
   'millet-angelus-orsay': {
@@ -11543,6 +12568,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/millet-angelus-orsay/print.webp',
+    rawSrc: '/images/devotional-prints/millet-angelus-orsay/raw.jpg',
     relevance: '',
   },
   'millet-angelus-rhythm': {
@@ -11555,6 +12581,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/millet-angelus-rhythm/print.webp',
+    rawSrc: '/images/devotional-prints/millet-angelus-rhythm/raw.jpg',
     relevance: '',
   },
   'millet-angelus-rooted': {
@@ -11567,6 +12594,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/millet-angelus-rooted/print.webp',
+    rawSrc: '/images/devotional-prints/millet-angelus-rooted/raw.jpg',
     relevance: '',
   },
   'millet-gleaners-orsay': {
@@ -11579,6 +12607,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/millet-gleaners-orsay/print.webp',
+    rawSrc: '/images/devotional-prints/millet-gleaners-orsay/raw.jpg',
     relevance: '',
   },
   'millet-man-hoe-getty': {
@@ -11591,6 +12620,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/millet-man-hoe-getty/print.webp',
+    rawSrc: '/images/devotional-prints/millet-man-hoe-getty/raw.jpg',
     relevance: '',
   },
   'millet-man-with-hoe': {
@@ -11603,6 +12633,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/millet-man-with-hoe/print.webp',
+    rawSrc: '/images/devotional-prints/millet-man-with-hoe/raw.jpg',
     relevance: '',
   },
   'millet-man-with-hoe-anointed': {
@@ -11615,6 +12646,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/millet-man-with-hoe-anointed/print.webp',
+    rawSrc: '/images/devotional-prints/millet-man-with-hoe-anointed/raw.jpg',
     relevance: '',
   },
   'millet-sower-work': {
@@ -11627,6 +12659,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/millet-sower-work/print.webp',
+    rawSrc: '/images/devotional-prints/millet-sower-work/raw.jpg',
     relevance: '',
   },
   'millet-sunday-barbizon': {
@@ -11639,6 +12672,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/millet-sunday-barbizon/print.webp',
+    rawSrc: '/images/devotional-prints/millet-sunday-barbizon/raw.jpg',
     relevance: '',
   },
   'millet-the-angelus': {
@@ -11651,6 +12685,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/millet-the-angelus/print.webp',
+    rawSrc: '/images/devotional-prints/millet-the-angelus/raw.jpg',
     relevance: '',
   },
   'millet-the-gleaners': {
@@ -11663,6 +12698,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/millet-the-gleaners/print.webp',
+    rawSrc: '/images/devotional-prints/millet-the-gleaners/raw.jpg',
     relevance: '',
   },
   'monet-water-lilies-creation': {
@@ -11675,6 +12711,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/monet-water-lilies-creation/print.webp',
+    rawSrc: '/images/devotional-prints/monet-water-lilies-creation/raw.jpg',
     relevance: '',
   },
   'monticelli-garden-tuileries': {
@@ -11687,6 +12724,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/monticelli-garden-tuileries/print.webp',
+    rawSrc: '/images/devotional-prints/monticelli-garden-tuileries/raw.jpg',
     relevance: '',
   },
   'moreau-elijah': {
@@ -11699,6 +12737,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/moreau-elijah/print.webp',
+    rawSrc: '/images/devotional-prints/moreau-elijah/raw.jpg',
     relevance: '',
   },
   'moreau-job-doubt': {
@@ -11711,6 +12750,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/moreau-job-doubt/print.webp',
+    rawSrc: '/images/devotional-prints/moreau-job-doubt/raw.jpg',
     relevance: '',
   },
   'moreau-job-end': {
@@ -11723,6 +12763,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/moreau-job-end/print.webp',
+    rawSrc: '/images/devotional-prints/moreau-job-end/raw.jpg',
     relevance: '',
   },
   'moreau-job-suffering': {
@@ -11735,6 +12776,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/moreau-job-suffering/print.webp',
+    rawSrc: '/images/devotional-prints/moreau-job-suffering/raw.jpg',
     relevance: '',
   },
   'moreau-job-trials': {
@@ -11747,6 +12789,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/moreau-job-trials/print.webp',
+    rawSrc: '/images/devotional-prints/moreau-job-trials/raw.jpg',
     relevance: '',
   },
   'moreau-salome-dancing': {
@@ -11759,6 +12802,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/moreau-salome-dancing/print.webp',
+    rawSrc: '/images/devotional-prints/moreau-salome-dancing/raw.jpg',
     relevance: '',
   },
   'mosaic-palatine-pantocrator': {
@@ -11771,6 +12815,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/mosaic-palatine-pantocrator/print.webp',
+    rawSrc: '/images/devotional-prints/mosaic-palatine-pantocrator/raw.jpg',
     relevance: '',
   },
   'mosaic-ravenna-christos': {
@@ -11783,6 +12828,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/mosaic-ravenna-christos/print.webp',
+    rawSrc: '/images/devotional-prints/mosaic-ravenna-christos/raw.jpg',
     relevance: '',
   },
   'ms-hours-duc-berry': {
@@ -11795,6 +12841,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/ms-hours-duc-berry/print.webp',
+    rawSrc: '/images/devotional-prints/ms-hours-duc-berry/raw.jpg',
     relevance: '',
   },
   'ms-hours-duc-nativity': {
@@ -11807,6 +12854,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/ms-hours-duc-nativity/print.webp',
+    rawSrc: '/images/devotional-prints/ms-hours-duc-nativity/raw.jpg',
     relevance: '',
   },
   'ms-lindisfarne-chi-rho': {
@@ -11819,6 +12867,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/ms-lindisfarne-chi-rho/print.webp',
+    rawSrc: '/images/devotional-prints/ms-lindisfarne-chi-rho/raw.jpg',
     relevance: '',
   },
   'munch-anxiety': {
@@ -11831,6 +12880,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/munch-anxiety/print.webp',
+    rawSrc: '/images/devotional-prints/munch-anxiety/raw.jpg',
     relevance: '',
   },
   'murillo-angels-kitchen': {
@@ -11843,6 +12893,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/murillo-angels-kitchen/print.webp',
+    rawSrc: '/images/devotional-prints/murillo-angels-kitchen/raw.jpg',
     relevance: '',
   },
   'murillo-good-shepherd-boy': {
@@ -11855,6 +12906,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/murillo-good-shepherd-boy/print.webp',
+    rawSrc: '/images/devotional-prints/murillo-good-shepherd-boy/raw.jpg',
     relevance: '',
   },
   'murillo-loaves-fishes': {
@@ -11867,6 +12919,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/murillo-loaves-fishes/print.webp',
+    rawSrc: '/images/devotional-prints/murillo-loaves-fishes/raw.jpg',
     relevance: '',
   },
   'murillo-mystic-marriage-catherine': {
@@ -11879,6 +12932,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/murillo-mystic-marriage-catherine/print.webp',
+    rawSrc:
+      '/images/devotional-prints/murillo-mystic-marriage-catherine/raw.jpg',
     relevance: '',
   },
   'murillo-return-prodigal': {
@@ -11891,6 +12946,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/murillo-return-prodigal/print.webp',
+    rawSrc: '/images/devotional-prints/murillo-return-prodigal/raw.jpg',
     relevance: '',
   },
   'murillo-return-prodigal-son': {
@@ -11903,6 +12959,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/murillo-return-prodigal-son/print.webp',
+    rawSrc: '/images/devotional-prints/murillo-return-prodigal-son/raw.jpg',
     relevance: '',
   },
   'nesterov-vision-bartholomew': {
@@ -11915,6 +12972,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/nesterov-vision-bartholomew/print.webp',
+    rawSrc: '/images/devotional-prints/nesterov-vision-bartholomew/raw.jpg',
     relevance: '',
   },
   'palmer-magic-apple-tree': {
@@ -11927,6 +12985,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/palmer-magic-apple-tree/print.webp',
+    rawSrc: '/images/devotional-prints/palmer-magic-apple-tree/raw.jpg',
     relevance: '',
   },
   'perugino-crucifixion': {
@@ -11939,6 +12998,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/perugino-crucifixion/print.webp',
+    rawSrc: '/images/devotional-prints/perugino-crucifixion/raw.jpg',
     relevance: '',
   },
   'perugino-delivery-keys': {
@@ -11951,6 +13011,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/perugino-delivery-keys/print.webp',
+    rawSrc: '/images/devotional-prints/perugino-delivery-keys/raw.jpg',
     relevance: '',
   },
   'piero-baptism-christ': {
@@ -11963,6 +13024,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/piero-baptism-christ/print.webp',
+    rawSrc: '/images/devotional-prints/piero-baptism-christ/raw.jpg',
     relevance: '',
   },
   'piero-resurrection': {
@@ -11975,6 +13037,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/piero-resurrection/print.webp',
+    rawSrc: '/images/devotional-prints/piero-resurrection/raw.jpg',
     relevance: '',
   },
   'pontormo-two-friends': {
@@ -11987,6 +13050,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/pontormo-two-friends/print.webp',
+    rawSrc: '/images/devotional-prints/pontormo-two-friends/raw.jpg',
     relevance: '',
   },
   'poussin-stoning-saint-stephen': {
@@ -11999,6 +13063,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/poussin-stoning-saint-stephen/print.webp',
+    rawSrc: '/images/devotional-prints/poussin-stoning-saint-stephen/raw.jpg',
     relevance: '',
   },
   'poussin-stoning-stephen-1625': {
@@ -12011,6 +13076,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/poussin-stoning-stephen-1625/print.webp',
+    rawSrc: '/images/devotional-prints/poussin-stoning-stephen-1625/raw.jpg',
     relevance: '',
   },
   'poynter-israel-egypt': {
@@ -12023,6 +13089,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/poynter-israel-egypt/print.webp',
+    rawSrc: '/images/devotional-prints/poynter-israel-egypt/raw.jpg',
     relevance: '',
   },
   'poynter-visit-queen-sheba': {
@@ -12035,6 +13102,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/poynter-visit-queen-sheba/print.webp',
+    rawSrc: '/images/devotional-prints/poynter-visit-queen-sheba/raw.jpg',
     relevance: '',
   },
   'provost-adoration-kings': {
@@ -12047,6 +13115,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/provost-adoration-kings/print.webp',
+    rawSrc: '/images/devotional-prints/provost-adoration-kings/raw.jpg',
     relevance: '',
   },
   'raphael-apostle-paul-preaching': {
@@ -12059,6 +13128,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/raphael-apostle-paul-preaching/print.webp',
+    rawSrc: '/images/devotional-prints/raphael-apostle-paul-preaching/raw.jpg',
     relevance: '',
   },
   'raphael-conversion-paul': {
@@ -12071,6 +13141,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/raphael-conversion-paul/print.webp',
+    rawSrc: '/images/devotional-prints/raphael-conversion-paul/raw.jpg',
     relevance: '',
   },
   'raphael-god-father-school': {
@@ -12083,6 +13154,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/raphael-god-father-school/print.webp',
+    rawSrc: '/images/devotional-prints/raphael-god-father-school/raw.jpg',
     relevance: '',
   },
   'raphael-healing-lame-man': {
@@ -12095,6 +13167,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/raphael-healing-lame-man/print.webp',
+    rawSrc: '/images/devotional-prints/raphael-healing-lame-man/raw.jpg',
     relevance: '',
   },
   'raphael-healing-lame-man-2': {
@@ -12107,6 +13180,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/raphael-healing-lame-man-2/print.webp',
+    rawSrc: '/images/devotional-prints/raphael-healing-lame-man-2/raw.jpg',
     relevance: '',
   },
   'raphael-paul-preaching-athens': {
@@ -12119,6 +13193,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/raphael-paul-preaching-athens/print.webp',
+    rawSrc: '/images/devotional-prints/raphael-paul-preaching-athens/raw.jpg',
     relevance: '',
   },
   'raphael-school-athens-standing': {
@@ -12131,6 +13206,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/raphael-school-athens-standing/print.webp',
+    rawSrc: '/images/devotional-prints/raphael-school-athens-standing/raw.jpg',
     relevance: '',
   },
   'raphael-school-of-athens': {
@@ -12143,6 +13219,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/raphael-school-of-athens/print.webp',
+    rawSrc: '/images/devotional-prints/raphael-school-of-athens/raw.jpg',
     relevance: '',
   },
   'raphael-transfiguration': {
@@ -12155,6 +13232,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/raphael-transfiguration/print.webp',
+    rawSrc: '/images/devotional-prints/raphael-transfiguration/raw.jpg',
     relevance: '',
   },
   'rembrandt-abraham-isaac': {
@@ -12167,6 +13245,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/rembrandt-abraham-isaac/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-abraham-isaac/raw.jpg',
     relevance: '',
   },
   'rembrandt-adam-eve-etching': {
@@ -12179,6 +13258,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/rembrandt-adam-eve-etching/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-adam-eve-etching/raw.jpg',
     relevance: '',
   },
   'rembrandt-apostle-paul-galatians': {
@@ -12191,6 +13271,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-apostle-paul-galatians/print.webp',
+    rawSrc:
+      '/images/devotional-prints/rembrandt-apostle-paul-galatians/raw.jpg',
     relevance: '',
   },
   'rembrandt-apostle-paul-standing': {
@@ -12203,6 +13285,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-apostle-paul-standing/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-apostle-paul-standing/raw.jpg',
     relevance: '',
   },
   'rembrandt-apostle-paul-writing': {
@@ -12215,6 +13298,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-apostle-paul-writing/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-apostle-paul-writing/raw.jpg',
     relevance: '',
   },
   'rembrandt-apostle-peter-prison': {
@@ -12227,6 +13311,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-apostle-peter-prison/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-apostle-peter-prison/raw.jpg',
     relevance: '',
   },
   'rembrandt-baptism-christ': {
@@ -12239,6 +13324,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/rembrandt-baptism-christ/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-baptism-christ/raw.jpg',
     relevance: '',
   },
   'rembrandt-belshazzar': {
@@ -12251,6 +13337,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-belshazzar/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-belshazzar/raw.jpg',
     relevance: '',
   },
   'rembrandt-christ-cross-etching': {
@@ -12263,6 +13350,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/rembrandt-christ-cross-etching/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-christ-cross-etching/raw.jpg',
     relevance: '',
   },
   'rembrandt-david-bathsheba': {
@@ -12275,6 +13363,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-david-bathsheba/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-david-bathsheba/raw.jpg',
     relevance: '',
   },
   'rembrandt-descent-cross': {
@@ -12287,6 +13376,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-descent-cross/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-descent-cross/raw.jpg',
     relevance: '',
   },
   'rembrandt-esther-feast': {
@@ -12299,6 +13389,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-esther-feast/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-esther-feast/raw.jpg',
     relevance: '',
   },
   'rembrandt-holy-family': {
@@ -12311,6 +13402,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-holy-family/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-holy-family/raw.jpg',
     relevance: '',
   },
   'rembrandt-jacob-wrestling-angel': {
@@ -12323,6 +13415,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-jacob-wrestling-angel/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-jacob-wrestling-angel/raw.jpg',
     relevance: '',
   },
   'rembrandt-jacob-wrestling-belief': {
@@ -12335,6 +13428,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-jacob-wrestling-belief/print.webp',
+    rawSrc:
+      '/images/devotional-prints/rembrandt-jacob-wrestling-belief/raw.jpg',
     relevance: '',
   },
   'rembrandt-jacob-wrestling-rooted': {
@@ -12347,6 +13442,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-jacob-wrestling-rooted/print.webp',
+    rawSrc:
+      '/images/devotional-prints/rembrandt-jacob-wrestling-rooted/raw.jpg',
     relevance: '',
   },
   'rembrandt-jeremiah': {
@@ -12359,6 +13456,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-jeremiah/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-jeremiah/raw.jpg',
     relevance: '',
   },
   'rembrandt-joseph-coat-brothers': {
@@ -12371,6 +13469,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-joseph-coat-brothers/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-joseph-coat-brothers/raw.jpg',
     relevance: '',
   },
   'rembrandt-moses-tablets': {
@@ -12383,6 +13482,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-moses-tablets/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-moses-tablets/raw.jpg',
     relevance: '',
   },
   'rembrandt-old-man-praying': {
@@ -12395,6 +13495,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-old-man-praying/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-old-man-praying/raw.jpg',
     relevance: '',
   },
   'rembrandt-peter-denies': {
@@ -12407,6 +13508,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-peter-denies/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-peter-denies/raw.jpg',
     relevance: '',
   },
   'rembrandt-philip-baptizing-ethiopian': {
@@ -12419,6 +13521,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/rembrandt-philip-baptizing-ethiopian/print.webp',
+    rawSrc:
+      '/images/devotional-prints/rembrandt-philip-baptizing-ethiopian/raw.jpg',
     relevance: '',
   },
   'rembrandt-philip-ethiopian-2': {
@@ -12431,6 +13535,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/rembrandt-philip-ethiopian-2/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-philip-ethiopian-2/raw.jpg',
     relevance: '',
   },
   'rembrandt-prodigal-son-return': {
@@ -12443,6 +13548,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-prodigal-son-return/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-prodigal-son-return/raw.jpg',
     relevance: '',
   },
   'rembrandt-prodigal-son-tavern': {
@@ -12455,6 +13561,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-prodigal-son-tavern/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-prodigal-son-tavern/raw.jpg',
     relevance: '',
   },
   'rembrandt-raising-lazarus': {
@@ -12467,6 +13574,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-raising-lazarus/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-raising-lazarus/raw.jpg',
     relevance: '',
   },
   'rembrandt-rest-egypt': {
@@ -12479,6 +13587,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-rest-egypt/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-rest-egypt/raw.jpg',
     relevance: '',
   },
   'rembrandt-return-prodigal-end': {
@@ -12491,6 +13600,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-return-prodigal-end/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-return-prodigal-end/raw.jpg',
     relevance: '',
   },
   'rembrandt-return-prodigal-grace': {
@@ -12503,6 +13613,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-return-prodigal-grace/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-return-prodigal-grace/raw.jpg',
     relevance: '',
   },
   'rembrandt-return-prodigal-son': {
@@ -12515,6 +13626,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-return-prodigal-son/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-return-prodigal-son/raw.jpg',
     relevance: '',
   },
   'rembrandt-rich-young-ruler': {
@@ -12527,6 +13639,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/rembrandt-rich-young-ruler/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-rich-young-ruler/raw.jpg',
     relevance: '',
   },
   'rembrandt-samuel-anointing-david': {
@@ -12539,6 +13652,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-samuel-anointing-david/print.webp',
+    rawSrc:
+      '/images/devotional-prints/rembrandt-samuel-anointing-david/raw.jpg',
     relevance: '',
   },
   'rembrandt-saul-david': {
@@ -12551,6 +13666,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-saul-david/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-saul-david/raw.jpg',
     relevance: '',
   },
   'rembrandt-scholar-study': {
@@ -12563,6 +13679,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/rembrandt-scholar-study/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-scholar-study/raw.jpg',
     relevance: '',
   },
   'rembrandt-self-portrait-63': {
@@ -12575,6 +13692,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-self-portrait-63/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-self-portrait-63/raw.jpg',
     relevance: '',
   },
   'rembrandt-self-portrait-old': {
@@ -12587,6 +13705,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-self-portrait-old/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-self-portrait-old/raw.jpg',
     relevance: '',
   },
   'rembrandt-self-portrait-two-circles': {
@@ -12599,6 +13718,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-self-portrait-two-circles/print.webp',
+    rawSrc:
+      '/images/devotional-prints/rembrandt-self-portrait-two-circles/raw.jpg',
     relevance: '',
   },
   'rembrandt-self-portrait-valued': {
@@ -12611,6 +13732,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-self-portrait-valued/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-self-portrait-valued/raw.jpg',
     relevance: '',
   },
   'rembrandt-simeon-temple': {
@@ -12623,6 +13745,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-simeon-temple/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-simeon-temple/raw.jpg',
     relevance: '',
   },
   'rembrandt-stoning-saint-stephen': {
@@ -12635,6 +13758,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/rembrandt-stoning-saint-stephen/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-stoning-saint-stephen/raw.jpg',
     relevance: '',
   },
   'rembrandt-stoning-stephen-1625': {
@@ -12647,6 +13771,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/rembrandt-stoning-stephen-1625/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-stoning-stephen-1625/raw.jpg',
     relevance: '',
   },
   'rembrandt-storm-sea-galilee': {
@@ -12659,6 +13784,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-storm-sea-galilee/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-storm-sea-galilee/raw.jpg',
     relevance: '',
   },
   'rembrandt-supper-emmaus': {
@@ -12671,6 +13797,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-supper-emmaus/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-supper-emmaus/raw.jpg',
     relevance: '',
   },
   'rembrandt-susanna-elders': {
@@ -12683,6 +13810,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/rembrandt-susanna-elders/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-susanna-elders/raw.jpg',
     relevance: '',
   },
   'rembrandt-thomas-apostle': {
@@ -12695,6 +13823,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-thomas-apostle/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-thomas-apostle/raw.jpg',
     relevance: '',
   },
   'rembrandt-titus-reading': {
@@ -12707,6 +13836,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-titus-reading/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-titus-reading/raw.jpg',
     relevance: '',
   },
   'rembrandt-woman-adultery': {
@@ -12719,6 +13849,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-woman-adultery/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-woman-adultery/raw.jpg',
     relevance: '',
   },
   'rembrandt-workers-vineyard': {
@@ -12731,6 +13862,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/rembrandt-workers-vineyard/print.webp',
+    rawSrc: '/images/devotional-prints/rembrandt-workers-vineyard/raw.jpg',
     relevance: '',
   },
   'reni-annunciation-shepherds': {
@@ -12743,6 +13875,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/reni-annunciation-shepherds/print.webp',
+    rawSrc: '/images/devotional-prints/reni-annunciation-shepherds/raw.jpg',
     relevance: '',
   },
   'reni-good-shepherd': {
@@ -12755,6 +13888,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/reni-good-shepherd/print.webp',
+    rawSrc: '/images/devotional-prints/reni-good-shepherd/raw.jpg',
     relevance: '',
   },
   'reni-good-shepherd-day1': {
@@ -12767,6 +13901,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/reni-good-shepherd-day1/print.webp',
+    rawSrc: '/images/devotional-prints/reni-good-shepherd-day1/raw.jpg',
     relevance: '',
   },
   'reni-massacre-innocents': {
@@ -12779,6 +13914,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/reni-massacre-innocents/print.webp',
+    rawSrc: '/images/devotional-prints/reni-massacre-innocents/raw.jpg',
     relevance: '',
   },
   'repin-resurrection-jairus': {
@@ -12791,6 +13927,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/repin-resurrection-jairus/print.webp',
+    rawSrc: '/images/devotional-prints/repin-resurrection-jairus/raw.jpg',
     relevance: '',
   },
   'rossetti-beata-beatrix': {
@@ -12803,6 +13940,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/rossetti-beata-beatrix/print.webp',
+    rawSrc: '/images/devotional-prints/rossetti-beata-beatrix/raw.jpg',
     relevance: '',
   },
   'rossetti-ecce-ancilla': {
@@ -12815,6 +13953,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/rossetti-ecce-ancilla/print.webp',
+    rawSrc: '/images/devotional-prints/rossetti-ecce-ancilla/raw.jpg',
     relevance: '',
   },
   'rubens-anointing-christ-feet': {
@@ -12827,6 +13966,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/rubens-anointing-christ-feet/print.webp',
+    rawSrc: '/images/devotional-prints/rubens-anointing-christ-feet/raw.jpg',
     relevance: '',
   },
   'rubens-descent-cross': {
@@ -12839,6 +13979,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rubens-descent-cross/print.webp',
+    rawSrc: '/images/devotional-prints/rubens-descent-cross/raw.jpg',
     relevance: '',
   },
   'rubens-elevation-cross': {
@@ -12851,6 +13992,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/rubens-elevation-cross/print.webp',
+    rawSrc: '/images/devotional-prints/rubens-elevation-cross/raw.jpg',
     relevance: '',
   },
   'rubens-last-supper': {
@@ -12863,6 +14005,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rubens-last-supper/print.webp',
+    rawSrc: '/images/devotional-prints/rubens-last-supper/raw.jpg',
     relevance: '',
   },
   'rubens-saint-peter-tribute': {
@@ -12875,6 +14018,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/rubens-saint-peter-tribute/print.webp',
+    rawSrc: '/images/devotional-prints/rubens-saint-peter-tribute/raw.jpg',
     relevance: '',
   },
   'rubens-samson-delilah': {
@@ -12887,6 +14031,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rubens-samson-delilah/print.webp',
+    rawSrc: '/images/devotional-prints/rubens-samson-delilah/raw.jpg',
     relevance: '',
   },
   'rubens-washing-of-feet': {
@@ -12899,6 +14044,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/rubens-washing-of-feet/print.webp',
+    rawSrc: '/images/devotional-prints/rubens-washing-of-feet/raw.jpg',
     relevance: '',
   },
   'rublev-trinity-icon': {
@@ -12911,6 +14057,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/rublev-trinity-icon/print.webp',
+    rawSrc: '/images/devotional-prints/rublev-trinity-icon/raw.jpg',
     relevance: '',
   },
   'sassetta-journey-magi': {
@@ -12923,6 +14070,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/sassetta-journey-magi/print.webp',
+    rawSrc: '/images/devotional-prints/sassetta-journey-magi/raw.jpg',
     relevance: '',
   },
   'scheffer-temptation-christ': {
@@ -12935,6 +14083,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/scheffer-temptation-christ/print.webp',
+    rawSrc: '/images/devotional-prints/scheffer-temptation-christ/raw.jpg',
     relevance: '',
   },
   'sculpt-bernini-angel-cross': {
@@ -12947,6 +14096,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-bernini-angel-cross/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-bernini-angel-cross/raw.jpg',
     relevance: '',
   },
   'sculpt-bernini-david': {
@@ -12959,6 +14109,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-bernini-david/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-bernini-david/raw.jpg',
     relevance: '',
   },
   'sculpt-bernini-saint-teresa': {
@@ -12971,6 +14122,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-bernini-saint-teresa/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-bernini-saint-teresa/raw.jpg',
     relevance: '',
   },
   'sculpt-bourdelle-beethoven': {
@@ -12983,6 +14135,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-bourdelle-beethoven/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-bourdelle-beethoven/raw.jpg',
     relevance: '',
   },
   'sculpt-bourdelle-beethoven-endure': {
@@ -12995,6 +14148,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/print.webp',
+    rawSrc:
+      '/images/devotional-prints/sculpt-bourdelle-beethoven-endure/raw.jpg',
     relevance: '',
   },
   'sculpt-donatello-marble-david': {
@@ -13007,6 +14162,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-donatello-marble-david/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-donatello-marble-david/raw.jpg',
     relevance: '',
   },
   'sculpt-donatello-saint-george': {
@@ -13019,6 +14175,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-donatello-saint-george/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-donatello-saint-george/raw.jpg',
     relevance: '',
   },
   'sculpt-ghiberti-gates-detail': {
@@ -13031,6 +14188,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-ghiberti-gates-detail/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-ghiberti-gates-detail/raw.jpg',
     relevance: '',
   },
   'sculpt-ghiberti-gates-moses': {
@@ -13043,6 +14201,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-ghiberti-gates-moses/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-ghiberti-gates-moses/raw.jpg',
     relevance: '',
   },
   'sculpt-ghiberti-gates-paradise-manna': {
@@ -13055,6 +14214,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/print.webp',
+    rawSrc:
+      '/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna/raw.jpg',
     relevance: '',
   },
   'sculpt-ghiberti-gates-solomon': {
@@ -13067,6 +14228,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-ghiberti-gates-solomon/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-ghiberti-gates-solomon/raw.jpg',
     relevance: '',
   },
   'sculpt-laocoon-sons': {
@@ -13079,6 +14241,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-laocoon-sons/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-laocoon-sons/raw.jpg',
     relevance: '',
   },
   'sculpt-michelangelo-awakening-slave': {
@@ -13091,6 +14254,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-michelangelo-awakening-slave/print.webp',
+    rawSrc:
+      '/images/devotional-prints/sculpt-michelangelo-awakening-slave/raw.jpg',
     relevance: '',
   },
   'sculpt-michelangelo-david-standing': {
@@ -13103,6 +14268,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-michelangelo-david-standing/print.webp',
+    rawSrc:
+      '/images/devotional-prints/sculpt-michelangelo-david-standing/raw.jpg',
     relevance: '',
   },
   'sculpt-michelangelo-moses': {
@@ -13115,6 +14282,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-michelangelo-moses/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-michelangelo-moses/raw.jpg',
     relevance: '',
   },
   'sculpt-michelangelo-pieta': {
@@ -13127,6 +14295,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-michelangelo-pieta/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-michelangelo-pieta/raw.jpg',
     relevance: '',
   },
   'sculpt-michelangelo-pieta-cross': {
@@ -13139,6 +14308,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-michelangelo-pieta-cross/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-michelangelo-pieta-cross/raw.jpg',
     relevance: '',
   },
   'sculpt-michelangelo-pieta-end': {
@@ -13151,6 +14321,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-michelangelo-pieta-end/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-michelangelo-pieta-end/raw.jpg',
     relevance: '',
   },
   'sculpt-rodin-burghers-calais': {
@@ -13163,6 +14334,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-rodin-burghers-calais/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-rodin-burghers-calais/raw.jpg',
     relevance: '',
   },
   'sculpt-rodin-prodigal-son': {
@@ -13175,6 +14347,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-rodin-prodigal-son/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-rodin-prodigal-son/raw.jpg',
     relevance: '',
   },
   'sculpt-rodin-prodigal-son-sin': {
@@ -13187,6 +14360,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-rodin-prodigal-son-sin/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-rodin-prodigal-son-sin/raw.jpg',
     relevance: '',
   },
   'sculpt-rodin-thinker': {
@@ -13199,6 +14373,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-rodin-thinker/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-rodin-thinker/raw.jpg',
     relevance: '',
   },
   'sculpt-sluter-well-moses': {
@@ -13211,6 +14386,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/sculpt-sluter-well-moses/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-sluter-well-moses/raw.jpg',
     relevance: '',
   },
   'sculpt-themis-justice': {
@@ -13223,6 +14399,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-themis-justice/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-themis-justice/raw.jpg',
     relevance: '',
   },
   'sculpt-thorvaldsen-christ': {
@@ -13235,6 +14412,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-thorvaldsen-christ/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-thorvaldsen-christ/raw.jpg',
     relevance: '',
   },
   'sculpt-thorvaldsen-christ-grace': {
@@ -13247,6 +14425,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-thorvaldsen-christ-grace/print.webp',
+    rawSrc: '/images/devotional-prints/sculpt-thorvaldsen-christ-grace/raw.jpg',
     relevance: '',
   },
   'sculpt-winged-victory-samothrace': {
@@ -13259,6 +14438,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/sculpt-winged-victory-samothrace/print.webp',
+    rawSrc:
+      '/images/devotional-prints/sculpt-winged-victory-samothrace/raw.jpg',
     relevance: '',
   },
   'siemiradzki-neros-torches': {
@@ -13271,6 +14452,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/siemiradzki-neros-torches/print.webp',
+    rawSrc: '/images/devotional-prints/siemiradzki-neros-torches/raw.jpg',
     relevance: '',
   },
   'siemiradzki-torches-nero': {
@@ -13283,6 +14465,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/siemiradzki-torches-nero/print.webp',
+    rawSrc: '/images/devotional-prints/siemiradzki-torches-nero/raw.jpg',
     relevance: '',
   },
   'signorelli-resurrection-dead': {
@@ -13295,6 +14478,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/signorelli-resurrection-dead/print.webp',
+    rawSrc: '/images/devotional-prints/signorelli-resurrection-dead/raw.jpg',
     relevance: '',
   },
   'sloan-sunday-women': {
@@ -13307,6 +14491,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/sloan-sunday-women/print.webp',
+    rawSrc: '/images/devotional-prints/sloan-sunday-women/raw.jpg',
     relevance: '',
   },
   'steen-merry-family': {
@@ -13319,6 +14504,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/steen-merry-family/print.webp',
+    rawSrc: '/images/devotional-prints/steen-merry-family/raw.jpg',
     relevance: '',
   },
   'steen-merry-family-chaos': {
@@ -13331,6 +14517,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/steen-merry-family-chaos/print.webp',
+    rawSrc: '/images/devotional-prints/steen-merry-family-chaos/raw.jpg',
     relevance: '',
   },
   'steen-rhetoricians-window': {
@@ -13343,6 +14530,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/steen-rhetoricians-window/print.webp',
+    rawSrc: '/images/devotional-prints/steen-rhetoricians-window/raw.jpg',
     relevance: '',
   },
   'surikov-boyarynya-morozova': {
@@ -13355,6 +14543,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/surikov-boyarynya-morozova/print.webp',
+    rawSrc: '/images/devotional-prints/surikov-boyarynya-morozova/raw.jpg',
     relevance: '',
   },
   'tanner-daniel-lions': {
@@ -13367,6 +14556,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tanner-daniel-lions/print.webp',
+    rawSrc: '/images/devotional-prints/tanner-daniel-lions/raw.jpg',
     relevance: '',
   },
   'tanner-the-annunciation': {
@@ -13379,6 +14569,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tanner-the-annunciation/print.webp',
+    rawSrc: '/images/devotional-prints/tanner-the-annunciation/raw.jpg',
     relevance: '',
   },
   'tiepolo-abraham-angels': {
@@ -13391,6 +14582,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tiepolo-abraham-angels/print.webp',
+    rawSrc: '/images/devotional-prints/tiepolo-abraham-angels/raw.jpg',
     relevance: '',
   },
   'tiepolo-finding-moses': {
@@ -13403,6 +14595,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tiepolo-finding-moses/print.webp',
+    rawSrc: '/images/devotional-prints/tiepolo-finding-moses/raw.jpg',
     relevance: '',
   },
   'tintoretto-creation-animals': {
@@ -13415,6 +14608,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tintoretto-creation-animals/print.webp',
+    rawSrc: '/images/devotional-prints/tintoretto-creation-animals/raw.jpg',
     relevance: '',
   },
   'tintoretto-last-supper-san-giorgio': {
@@ -13427,6 +14621,8 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tintoretto-last-supper-san-giorgio/print.webp',
+    rawSrc:
+      '/images/devotional-prints/tintoretto-last-supper-san-giorgio/raw.jpg',
     relevance: '',
   },
   'tintoretto-paradise-doges': {
@@ -13439,6 +14635,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tintoretto-paradise-doges/print.webp',
+    rawSrc: '/images/devotional-prints/tintoretto-paradise-doges/raw.jpg',
     relevance: '',
   },
   'tissot-aaron-priesthood': {
@@ -13451,6 +14648,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-aaron-priesthood/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-aaron-priesthood/raw.jpg',
     relevance: '',
   },
   'tissot-abraham-mamre': {
@@ -13463,6 +14661,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-abraham-mamre/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-abraham-mamre/raw.jpg',
     relevance: '',
   },
   'tissot-anointing-saul': {
@@ -13475,6 +14674,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-anointing-saul/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-anointing-saul/raw.jpg',
     relevance: '',
   },
   'tissot-cain-abel': {
@@ -13487,6 +14687,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tissot-cain-abel/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-cain-abel/raw.jpg',
     relevance: '',
   },
   'tissot-calling-first-disciples': {
@@ -13499,6 +14700,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-calling-first-disciples/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-calling-first-disciples/raw.jpg',
     relevance: '',
   },
   'tissot-christ-appears-apostles': {
@@ -13511,6 +14713,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-christ-appears-apostles/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-christ-appears-apostles/raw.jpg',
     relevance: '',
   },
   'tissot-crucifixion': {
@@ -13523,6 +14726,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tissot-crucifixion/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-crucifixion/raw.jpg',
     relevance: '',
   },
   'tissot-daniel-lions': {
@@ -13535,6 +14739,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tissot-daniel-lions/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-daniel-lions/raw.jpg',
     relevance: '',
   },
   'tissot-daughter-jairus': {
@@ -13547,6 +14752,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tissot-daughter-jairus/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-daughter-jairus/raw.jpg',
     relevance: '',
   },
   'tissot-david-ark-dance': {
@@ -13559,6 +14765,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-david-ark-dance/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-david-ark-dance/raw.jpg',
     relevance: '',
   },
   'tissot-death-moses': {
@@ -13571,6 +14778,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tissot-death-moses/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-death-moses/raw.jpg',
     relevance: '',
   },
   'tissot-elijah-fiery-chariot': {
@@ -13583,6 +14791,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tissot-elijah-fiery-chariot/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-elijah-fiery-chariot/raw.jpg',
     relevance: '',
   },
   'tissot-feeding-five-thousand': {
@@ -13595,6 +14804,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-feeding-five-thousand/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-feeding-five-thousand/raw.jpg',
     relevance: '',
   },
   'tissot-gathering-manna': {
@@ -13607,6 +14817,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-gathering-manna/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-gathering-manna/raw.jpg',
     relevance: '',
   },
   'tissot-jacob-dream': {
@@ -13619,6 +14830,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tissot-jacob-dream/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-jacob-dream/raw.jpg',
     relevance: '',
   },
   'tissot-jesus-mary-magdalene': {
@@ -13631,6 +14843,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-jesus-mary-magdalene/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-jesus-mary-magdalene/raw.jpg',
     relevance: '',
   },
   'tissot-jesus-samaritan-woman': {
@@ -13643,6 +14856,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-jesus-samaritan-woman/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-jesus-samaritan-woman/raw.jpg',
     relevance: '',
   },
   'tissot-jesus-temple-12': {
@@ -13655,6 +14869,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-jesus-temple-12/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-jesus-temple-12/raw.jpg',
     relevance: '',
   },
   'tissot-jordan-priests': {
@@ -13667,6 +14882,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-jordan-priests/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-jordan-priests/raw.jpg',
     relevance: '',
   },
   'tissot-joseph-brothers-egypt2': {
@@ -13679,6 +14895,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-joseph-brothers-egypt2/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-joseph-brothers-egypt2/raw.jpg',
     relevance: '',
   },
   'tissot-joseph-pharaoh': {
@@ -13691,6 +14908,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-joseph-pharaoh/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-joseph-pharaoh/raw.jpg',
     relevance: '',
   },
   'tissot-joseph-pit': {
@@ -13703,6 +14921,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tissot-joseph-pit/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-joseph-pit/raw.jpg',
     relevance: '',
   },
   'tissot-joseph-prisoners': {
@@ -13715,6 +14934,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-joseph-prisoners/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-joseph-prisoners/raw.jpg',
     relevance: '',
   },
   'tissot-joseph-revealed': {
@@ -13727,6 +14947,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tissot-joseph-revealed/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-joseph-revealed/raw.jpg',
     relevance: '',
   },
   'tissot-marriage-cana': {
@@ -13739,6 +14960,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-marriage-cana/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-marriage-cana/raw.jpg',
     relevance: '',
   },
   'tissot-nathan-david': {
@@ -13751,6 +14973,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-nathan-david/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-nathan-david/raw.jpg',
     relevance: '',
   },
   'tissot-noah-ark': {
@@ -13763,6 +14986,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/tissot-noah-ark/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-noah-ark/raw.jpg',
     relevance: '',
   },
   'tissot-nt-jesus-before-pilate': {
@@ -13775,6 +14999,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/tissot-nt-jesus-before-pilate/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-nt-jesus-before-pilate/raw.jpg',
     relevance: '',
   },
   'tissot-nt-raising-lazarus': {
@@ -13787,6 +15012,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-nt-raising-lazarus/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-nt-raising-lazarus/raw.jpg',
     relevance: '',
   },
   'tissot-nt-sermon-mount': {
@@ -13799,6 +15025,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/tissot-nt-sermon-mount/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-nt-sermon-mount/raw.jpg',
     relevance: '',
   },
   'tissot-ot-moses-serpent': {
@@ -13811,6 +15038,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/tissot-ot-moses-serpent/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-ot-moses-serpent/raw.jpg',
     relevance: '',
   },
   'tissot-ot-tower-babel': {
@@ -13823,6 +15051,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/tissot-ot-tower-babel/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-ot-tower-babel/raw.jpg',
     relevance: '',
   },
   'tissot-peter-keys': {
@@ -13835,6 +15064,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-peter-keys/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-peter-keys/raw.jpg',
     relevance: '',
   },
   'tissot-pilate-washes-hands': {
@@ -13847,6 +15077,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-pilate-washes-hands/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-pilate-washes-hands/raw.jpg',
     relevance: '',
   },
   'tissot-prodigal-return2': {
@@ -13859,6 +15090,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-prodigal-return2/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-prodigal-return2/raw.jpg',
     relevance: '',
   },
   'tissot-prodigal-son-city': {
@@ -13871,6 +15103,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/tissot-prodigal-son-city/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-prodigal-son-city/raw.jpg',
     relevance: '',
   },
   'tissot-queen-sheba': {
@@ -13883,6 +15116,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-queen-sheba/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-queen-sheba/raw.jpg',
     relevance: '',
   },
   'tissot-rachel-well': {
@@ -13895,6 +15129,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-rachel-well/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-rachel-well/raw.jpg',
     relevance: '',
   },
   'tissot-red-sea-crossing': {
@@ -13907,6 +15142,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-red-sea-crossing/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-red-sea-crossing/raw.jpg',
     relevance: '',
   },
   'tissot-rich-man-lazarus': {
@@ -13919,6 +15155,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tissot-rich-man-lazarus/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-rich-man-lazarus/raw.jpg',
     relevance: '',
   },
   'tissot-saint-john-baptist': {
@@ -13931,6 +15168,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-saint-john-baptist/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-saint-john-baptist/raw.jpg',
     relevance: '',
   },
   'tissot-tabernacle-ark': {
@@ -13943,6 +15181,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-tabernacle-ark/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-tabernacle-ark/raw.jpg',
     relevance: '',
   },
   'tissot-ten-lepers': {
@@ -13955,6 +15194,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/tissot-ten-lepers/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-ten-lepers/raw.jpg',
     relevance: '',
   },
   'tissot-ten-virgins': {
@@ -13967,6 +15207,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tissot-ten-virgins/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-ten-virgins/raw.jpg',
     relevance: '',
   },
   'tissot-the-tabernacle': {
@@ -13979,6 +15220,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-the-tabernacle/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-the-tabernacle/raw.jpg',
     relevance: '',
   },
   'tissot-walking-water': {
@@ -13991,6 +15233,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tissot-walking-water/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-walking-water/raw.jpg',
     relevance: '',
   },
   'tissot-water-from-rock': {
@@ -14003,6 +15246,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/tissot-water-from-rock/print.webp',
+    rawSrc: '/images/devotional-prints/tissot-water-from-rock/raw.jpg',
     relevance: '',
   },
   'turner-evening-deluge': {
@@ -14015,6 +15259,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/turner-evening-deluge/print.webp',
+    rawSrc: '/images/devotional-prints/turner-evening-deluge/raw.jpg',
     relevance: '',
   },
   'van-dyck-christ-cross': {
@@ -14027,6 +15272,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/van-dyck-christ-cross/print.webp',
+    rawSrc: '/images/devotional-prints/van-dyck-christ-cross/raw.jpg',
     relevance: '',
   },
   'van-dyck-martyrdom-sebastian': {
@@ -14039,6 +15285,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/van-dyck-martyrdom-sebastian/print.webp',
+    rawSrc: '/images/devotional-prints/van-dyck-martyrdom-sebastian/raw.jpg',
     relevance: '',
   },
   'van-eyck-annunciation': {
@@ -14051,6 +15298,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/van-eyck-annunciation/print.webp',
+    rawSrc: '/images/devotional-prints/van-eyck-annunciation/raw.jpg',
     relevance: '',
   },
   'van-eyck-annunciation-dc': {
@@ -14063,6 +15311,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/van-eyck-annunciation-dc/print.webp',
+    rawSrc: '/images/devotional-prints/van-eyck-annunciation-dc/raw.jpg',
     relevance: '',
   },
   'van-eyck-ghent-adoration-lamb': {
@@ -14075,6 +15324,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/van-eyck-ghent-adoration-lamb/print.webp',
+    rawSrc: '/images/devotional-prints/van-eyck-ghent-adoration-lamb/raw.jpg',
     relevance: '',
   },
   'van-eyck-ghent-lamb-detail': {
@@ -14087,6 +15337,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/van-eyck-ghent-lamb-detail/print.webp',
+    rawSrc: '/images/devotional-prints/van-eyck-ghent-lamb-detail/raw.jpg',
     relevance: '',
   },
   'van-weyden-descent-cross': {
@@ -14099,6 +15350,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/van-weyden-descent-cross/print.webp',
+    rawSrc: '/images/devotional-prints/van-weyden-descent-cross/raw.jpg',
     relevance: '',
   },
   'van-weyden-last-judgment': {
@@ -14111,6 +15363,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/van-weyden-last-judgment/print.webp',
+    rawSrc: '/images/devotional-prints/van-weyden-last-judgment/raw.jpg',
     relevance: '',
   },
   'vasnetsov-baptism-fresco': {
@@ -14123,6 +15376,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'risograph',
     src: '/images/devotional-prints/vasnetsov-baptism-fresco/print.webp',
+    rawSrc: '/images/devotional-prints/vasnetsov-baptism-fresco/raw.jpg',
     relevance: '',
   },
   'velazquez-adoration-magi': {
@@ -14135,6 +15389,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/velazquez-adoration-magi/print.webp',
+    rawSrc: '/images/devotional-prints/velazquez-adoration-magi/raw.jpg',
     relevance: '',
   },
   'velazquez-christ-crucified': {
@@ -14147,6 +15402,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/velazquez-christ-crucified/print.webp',
+    rawSrc: '/images/devotional-prints/velazquez-christ-crucified/raw.jpg',
     relevance: '',
   },
   'velazquez-christ-crucified-sin': {
@@ -14159,6 +15415,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/velazquez-christ-crucified-sin/print.webp',
+    rawSrc: '/images/devotional-prints/velazquez-christ-crucified-sin/raw.jpg',
     relevance: '',
   },
   'velazquez-joseph-coat': {
@@ -14171,6 +15428,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/velazquez-joseph-coat/print.webp',
+    rawSrc: '/images/devotional-prints/velazquez-joseph-coat/raw.jpg',
     relevance: '',
   },
   'vermeer-christ-martha-mary': {
@@ -14183,6 +15441,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/vermeer-christ-martha-mary/print.webp',
+    rawSrc: '/images/devotional-prints/vermeer-christ-martha-mary/raw.jpg',
     relevance: '',
   },
   'vermeer-girl-pearl-earring': {
@@ -14195,6 +15454,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/vermeer-girl-pearl-earring/print.webp',
+    rawSrc: '/images/devotional-prints/vermeer-girl-pearl-earring/raw.jpg',
     relevance: '',
   },
   'vermeer-girl-pearl-standing': {
@@ -14207,6 +15467,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/vermeer-girl-pearl-standing/print.webp',
+    rawSrc: '/images/devotional-prints/vermeer-girl-pearl-standing/raw.jpg',
     relevance: '',
   },
   'vermeer-the-geographer': {
@@ -14219,6 +15480,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/vermeer-the-geographer/print.webp',
+    rawSrc: '/images/devotional-prints/vermeer-the-geographer/raw.jpg',
     relevance: '',
   },
   'vermeer-woman-pearl-necklace': {
@@ -14231,6 +15493,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/vermeer-woman-pearl-necklace/print.webp',
+    rawSrc: '/images/devotional-prints/vermeer-woman-pearl-necklace/raw.jpg',
     relevance: '',
   },
   'vermeer-woman-reading-chaos': {
@@ -14243,6 +15506,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/vermeer-woman-reading-chaos/print.webp',
+    rawSrc: '/images/devotional-prints/vermeer-woman-reading-chaos/raw.jpg',
     relevance: '',
   },
   'vermeer-woman-reading-letter': {
@@ -14255,6 +15519,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/vermeer-woman-reading-letter/print.webp',
+    rawSrc: '/images/devotional-prints/vermeer-woman-reading-letter/raw.jpg',
     relevance: '',
   },
   'veronese-feast-cana': {
@@ -14267,6 +15532,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/veronese-feast-cana/print.webp',
+    rawSrc: '/images/devotional-prints/veronese-feast-cana/raw.jpg',
     relevance: '',
   },
   'veronese-feast-cana-hunger': {
@@ -14279,6 +15545,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/veronese-feast-cana-hunger/print.webp',
+    rawSrc: '/images/devotional-prints/veronese-feast-cana-hunger/raw.jpg',
     relevance: '',
   },
   'veronese-supper-emmaus-louvre': {
@@ -14291,6 +15558,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/veronese-supper-emmaus-louvre/print.webp',
+    rawSrc: '/images/devotional-prints/veronese-supper-emmaus-louvre/raw.jpg',
     relevance: '',
   },
   'veronese-the-resurrection': {
@@ -14303,6 +15571,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/veronese-the-resurrection/print.webp',
+    rawSrc: '/images/devotional-prints/veronese-the-resurrection/raw.jpg',
     relevance: '',
   },
   'veronese-wedding-cana-louvre': {
@@ -14315,6 +15584,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/veronese-wedding-cana-louvre/print.webp',
+    rawSrc: '/images/devotional-prints/veronese-wedding-cana-louvre/raw.jpg',
     relevance: '',
   },
   'watteau-gilles-pierrot': {
@@ -14327,6 +15597,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'halftone',
     src: '/images/devotional-prints/watteau-gilles-pierrot/print.webp',
+    rawSrc: '/images/devotional-prints/watteau-gilles-pierrot/raw.jpg',
     relevance: '',
   },
   'watts-good-samaritan': {
@@ -14339,6 +15610,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/watts-good-samaritan/print.webp',
+    rawSrc: '/images/devotional-prints/watts-good-samaritan/raw.jpg',
     relevance: '',
   },
   'watts-hope-1886': {
@@ -14351,6 +15623,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/watts-hope-1886/print.webp',
+    rawSrc: '/images/devotional-prints/watts-hope-1886/raw.jpg',
     relevance: '',
   },
   'watts-hope-end': {
@@ -14363,6 +15636,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/watts-hope-end/print.webp',
+    rawSrc: '/images/devotional-prints/watts-hope-end/raw.jpg',
     relevance: '',
   },
   'watts-hope-tate': {
@@ -14375,6 +15649,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/watts-hope-tate/print.webp',
+    rawSrc: '/images/devotional-prints/watts-hope-tate/raw.jpg',
     relevance: '',
   },
   'watts-love-and-death': {
@@ -14387,6 +15662,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/watts-love-and-death/print.webp',
+    rawSrc: '/images/devotional-prints/watts-love-and-death/raw.jpg',
     relevance: '',
   },
   'watts-love-death': {
@@ -14399,6 +15675,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/watts-love-death/print.webp',
+    rawSrc: '/images/devotional-prints/watts-love-death/raw.jpg',
     relevance: '',
   },
   'west-death-pale-horse': {
@@ -14411,6 +15688,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/west-death-pale-horse/print.webp',
+    rawSrc: '/images/devotional-prints/west-death-pale-horse/raw.jpg',
     relevance: '',
   },
   'west-moses-law': {
@@ -14423,6 +15701,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/west-moses-law/print.webp',
+    rawSrc: '/images/devotional-prints/west-moses-law/raw.jpg',
     relevance: '',
   },
   'weyden-deposition-prado': {
@@ -14435,6 +15714,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/weyden-deposition-prado/print.webp',
+    rawSrc: '/images/devotional-prints/weyden-deposition-prado/raw.jpg',
     relevance: '',
   },
   'weyden-last-judgment-beaune': {
@@ -14447,6 +15727,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'woodcut',
     src: '/images/devotional-prints/weyden-last-judgment-beaune/print.webp',
+    rawSrc: '/images/devotional-prints/weyden-last-judgment-beaune/raw.jpg',
     relevance: '',
   },
   'wright-alchemist-patience': {
@@ -14459,6 +15740,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/wright-alchemist-patience/print.webp',
+    rawSrc: '/images/devotional-prints/wright-alchemist-patience/raw.jpg',
     relevance: '',
   },
   'wright-philosopher-orrery': {
@@ -14471,6 +15753,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/wright-philosopher-orrery/print.webp',
+    rawSrc: '/images/devotional-prints/wright-philosopher-orrery/raw.jpg',
     relevance: '',
   },
   'wright-the-alchemist': {
@@ -14483,6 +15766,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/wright-the-alchemist/print.webp',
+    rawSrc: '/images/devotional-prints/wright-the-alchemist/raw.jpg',
     relevance: '',
   },
   'zurbaran-agnus-dei': {
@@ -14495,6 +15779,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/zurbaran-agnus-dei/print.webp',
+    rawSrc: '/images/devotional-prints/zurbaran-agnus-dei/raw.jpg',
     relevance: '',
   },
   'zurbaran-saint-francis': {
@@ -14507,6 +15792,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/zurbaran-saint-francis/print.webp',
+    rawSrc: '/images/devotional-prints/zurbaran-saint-francis/raw.jpg',
     relevance: '',
   },
   'zurbaran-saint-peter-apostle': {
@@ -14519,6 +15805,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'etching',
     src: '/images/devotional-prints/zurbaran-saint-peter-apostle/print.webp',
+    rawSrc: '/images/devotional-prints/zurbaran-saint-peter-apostle/raw.jpg',
     relevance: '',
   },
   'zurbaran-saint-serapion': {
@@ -14531,6 +15818,7 @@ export const ALL_ARTWORKS: Record<string, ArtworkEntry> = {
     license: 'Public Domain (pre-1928)',
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/zurbaran-saint-serapion/print.webp',
+    rawSrc: '/images/devotional-prints/zurbaran-saint-serapion/raw.jpg',
     relevance: '',
   },
 }

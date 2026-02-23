@@ -5,6 +5,37 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## SA-020: Card Redesign + Homepage/Series Overhaul + Soul Audit Matching Fix (2026-02-23)
+
+### What Changed
+
+- **Three card variants**: BrowseSeriesCard now supports large (Ref → Title → Image → Keywords → Action), medium (Image → Ref → Title → Keywords → Action), and small (Title → Keywords → Action, no image) via `variant` prop. Keyword pills from `series.keywords[]` replace description paragraphs.
+- **Homepage redesign**: Merged two hero panels into single 2-column layout (illustration left, audit right). Added 4 ChatGPT-style prompt pills. Featured series converted to horizontal rail with large cards (limited to 6). FAQ padding increased. Buttons auto-width (not full-width).
+- **Series page 3-view system**: Compact centered header with view toggle (Rails / Grid / List). Grid and List views support topic + reading time filtering with filter chips. Search input in grid/list modes. Featured rail uses large cards, theme rails use medium cards.
+- **Soul Audit matching fix**: Moved `parseAuditIntentWithBrain()` before `buildAuditOptions()` so AI-extracted themes influence candidate ranking. Added `aiThemes` parameter threading with weight 4 scoring. Added 10 biblical topic triggers to `expandSemanticHints()` (prophet, psalm, gospel, paul, genesis, exodus, wisdom, suffering, resurrection, jesus).
+- **Soul Audit option cards**: AI primary options render as large card variant with blue woodprint thumbnail and keyword pills. Curated prefab options render as small text-only variant.
+- **Devotional raw images**: Added `rawSrc` field to ArtworkEntry. DevotionalArtwork and ArtworkLightbox now use `rawSrc` (museum photos / raw.jpg). Card thumbnails continue using `src` (blue woodprint / print.webp).
+
+### Files
+
+- `scripts/generate-artwork-manifest.mjs` — added `rawSrc` field detection and serialization
+- `src/data/artwork-manifest.ts` — regenerated with rawSrc for all 639 artworks
+- `src/app/page.tsx` — merged hero layout, prompt pills, featured rail, inline buttons
+- `src/app/series/page.tsx` — 3-view system (rails/grid/list), compact header, filtering
+- `src/app/soul-audit/results/page.tsx` — large/small card variants for AI/curated options
+- `src/app/api/soul-audit/submit/route.ts` — moved AI intent before candidate selection
+- `src/app/globals.css` — card variant CSS, homepage hero, series page toolbar/views, audit card styles
+- `src/components/BrowseSeriesCard.tsx` — variant prop system (large/medium/small)
+- `src/components/SeriesRailSection.tsx` — cardVariant prop passthrough
+- `src/components/SeriesHero.tsx` — thumbnail class update
+- `src/components/DevotionalArtwork.tsx` — use rawSrc for reading context
+- `src/components/ArtworkLightbox.tsx` — use rawSrc for gallery
+- `src/lib/soul-audit/curation-engine.ts` — aiThemes scoring, biblical topic triggers
+- `src/lib/soul-audit/matching.ts` — aiThemes parameter threading
+- `docs/feature-prds/F-052.md` — outcomes log updated
+
+---
+
 ## F-052: Blue Woodprint Remap — 639 Artworks, Single Image Source (2026-02-23)
 
 ### What Changed

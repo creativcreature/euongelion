@@ -7,6 +7,8 @@ import { SERIES_HERO } from '@/data/artwork-manifest'
 import { scriptureLeadPartsFromFramework } from '@/lib/scripture-reference'
 import { typographer } from '@/lib/typographer'
 
+export type CardVariant = 'large' | 'medium' | 'small'
+
 interface BrowseSeriesCardProps {
   slug: string
   progress?: {
@@ -15,25 +17,21 @@ interface BrowseSeriesCardProps {
     currentDay?: number
     total?: number
   }
-}
-
-function formatSeriesPreview(introduction: string): string {
-  const combined = typographer(introduction).replace(/\s+/g, ' ').trim()
-  const words = combined.split(' ').filter(Boolean)
-  if (words.length <= 30) return combined
-  return `${words.slice(0, 28).join(' ')}...`
+  variant?: CardVariant
 }
 
 export default function BrowseSeriesCard({
   slug,
   progress,
+  variant = 'medium',
 }: BrowseSeriesCardProps) {
   const series = SERIES_DATA[slug]
   if (!series) return null
 
-  const hero = SERIES_HERO[slug]
+  const hero = variant !== 'small' ? SERIES_HERO[slug] : undefined
   const dayCount = series.days.length
   const scripture = scriptureLeadPartsFromFramework(series.framework)
+  const keywords = (series.keywords ?? []).slice(0, 3)
 
   // Progress bar: percentage of days completed
   const total = progress?.total ?? dayCount
@@ -53,53 +51,91 @@ export default function BrowseSeriesCard({
       ? 'CONTINUE'
       : 'START SERIES'
 
+  const thumbnail = hero && (
+    <div className="series-card-thumbnail" aria-hidden="true">
+      <Image
+        src={hero.src}
+        alt=""
+        width={600}
+        height={450}
+        className="series-card-thumbnail-img"
+        loading="lazy"
+        sizes="(max-width: 767px) 84vw, 33vw"
+      />
+    </div>
+  )
+
+  const scriptureBlock = (
+    <div className="mock-scripture-lead">
+      <p className="mock-scripture-lead-reference">
+        {typographer(scripture.reference || 'Scripture')}
+      </p>
+      {scripture.snippet && (
+        <p className="mock-scripture-lead-snippet">
+          {typographer(scripture.snippet)}
+        </p>
+      )}
+    </div>
+  )
+
+  const keywordPills = keywords.length > 0 && (
+    <p className="series-card-keywords">{keywords.join(' \u2022 ')}</p>
+  )
+
   return (
     <Link
       href={`/series/${slug}`}
-      className={`mock-featured-card${hero ? ' series-card-hero' : ''}`}
+      className="mock-featured-card"
+      data-variant={variant}
       aria-label={`${series.title}: ${series.question}`}
     >
-      {/* Full-bleed hero image layer */}
-      {hero && (
-        <div className="series-card-hero-image" aria-hidden="true">
-          <Image
-            src={hero.src}
-            alt=""
-            fill
-            sizes="(max-width: 767px) 84vw, 33vw"
-            className="series-card-img"
-            loading="lazy"
-          />
-          <div className="series-card-scrim" />
-        </div>
+      {/* Large: Ref → Title → Image → Keywords → Action */}
+      {variant === 'large' && (
+        <>
+          {scriptureBlock}
+          <h3>{series.title}.</h3>
+          {thumbnail}
+          {keywordPills}
+          <div className="mock-featured-actions">
+            <span className="mock-series-start text-label">{actionLabel}</span>
+            <span className="mock-featured-days text-label">
+              {dayCount} {dayCount === 1 ? 'DAY' : 'DAYS'}
+            </span>
+          </div>
+        </>
       )}
 
-      {/* Card content — above the image */}
-      <div className={hero ? 'series-card-content' : undefined}>
-        <div className="mock-scripture-lead">
-          <p className="mock-scripture-lead-reference">
-            {typographer(scripture.reference || 'Scripture')}
-          </p>
-          {scripture.snippet && (
-            <p className="mock-scripture-lead-snippet">
-              {typographer(scripture.snippet)}
-            </p>
-          )}
-        </div>
-        <h3>{series.title}.</h3>
-        <p>{series.question}</p>
-        <p className="mock-featured-preview">
-          {formatSeriesPreview(series.introduction)}
-        </p>
-        <div className="mock-featured-actions">
-          <span className="mock-series-start text-label">{actionLabel}</span>
-          <span className="mock-featured-days text-label">
-            {dayCount} {dayCount === 1 ? 'DAY' : 'DAYS'}
-          </span>
-        </div>
-      </div>
+      {/* Medium: Image → Ref → Title → Keywords → Action */}
+      {variant === 'medium' && (
+        <>
+          {thumbnail}
+          {scriptureBlock}
+          <h3>{series.title}.</h3>
+          {keywordPills}
+          <div className="mock-featured-actions">
+            <span className="mock-series-start text-label">{actionLabel}</span>
+            <span className="mock-featured-days text-label">
+              {dayCount} {dayCount === 1 ? 'DAY' : 'DAYS'}
+            </span>
+          </div>
+        </>
+      )}
 
-      {/* Apple TV-style progress bar */}
+      {/* Small: Title → Keywords → Action (no image) */}
+      {variant === 'small' && (
+        <>
+          <h3>{series.title}.</h3>
+          {keywordPills}
+          <div className="mock-featured-actions">
+            <span className="mock-series-start text-label">{actionLabel}</span>
+            <span className="mock-featured-days text-label">
+              {dayCount} {dayCount === 1 ? 'DAY' : 'DAYS'}
+            </span>
+          </div>
+        </>
+      )}
+
+      {/* Progress bar */}
       {progressPercent > 0 && (
         <div
           className="series-progress-bar"
