@@ -28,6 +28,6 @@ describe('Screen-reader landmark contract', () => {
     )
     expect(header).toContain('<time')
     expect(header).toContain('className="mock-topbar-date"')
-    expect(header).toContain('dateTime={now.toISOString()}')
+    expect(header).toContain("dateTime={now?.toISOString() ?? ''}")
   })
 })

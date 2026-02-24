@@ -26,8 +26,8 @@ const index = read(INDEX)
 const ids = [...registry.matchAll(/\bF-\d{3}\b/g)].map((m) => m[0])
 const uniqueIds = Array.from(new Set(ids)).sort()
 
-if (uniqueIds.length !== 52) {
-  fail(`Expected 52 feature IDs in registry, found ${uniqueIds.length}`)
+if (uniqueIds.length !== 54) {
+  fail(`Expected 54 feature IDs in registry, found ${uniqueIds.length}`)
 }
 
 for (const id of uniqueIds) {

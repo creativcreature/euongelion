@@ -5,6 +5,15 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-055: Fix devotional page hydration mismatch (2026-02-24)
+
+- **Critical fix**: All devotional pages were permanently stuck on "Loading: Preparing your devotional" due to a React 19 hydration mismatch in the shell header's `<time>` element (`new Date()` differs between SSR and client).
+- **Root cause**: `useState(() => new Date())` in `EuangelionShellHeader` produced different timestamps server-side vs client-side. React 19 threw a hard hydration error, preventing the component tree from mounting and blocking all `useEffect` hooks (including the devotional JSON fetch).
+- **Fix**: Deferred date to client-side `useEffect` with `null` initial state. Added `suppressHydrationWarning` to the `<time>` element.
+- **CSP dev fix**: Added `'unsafe-eval'` to Content-Security-Policy in development mode only for Next.js Fast Refresh compatibility.
+
+---
+
 ## F-054 SA-021: Token-saving strategy for generative devotionals (2026-02-24)
 
 - **Deterministic Sabbath/Review**: Day 6 (sabbath) and Day 7 (review) now use deterministic template builders by default, eliminating 2 LLM calls per plan. LLM versions preserved behind `GENERATIVE_SABBATH_REVIEW=true` flag.

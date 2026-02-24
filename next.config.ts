@@ -11,12 +11,15 @@ const nextConfig: NextConfig = {
     '/api/soul-audit/*': ['./content/series-json/**/*.json'],
   },
   async headers() {
+    const isDev = process.env.NODE_ENV === 'development'
     const csp = [
       "default-src 'self'",
       "base-uri 'self'",
       "frame-ancestors 'none'",
       "object-src 'none'",
-      "script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com",
+      isDev
+        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com"
+        : "script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data:",

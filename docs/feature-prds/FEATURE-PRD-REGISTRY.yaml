@@ -563,3 +563,21 @@ features:
     prd: docs/feature-prds/F-053.md
     methodology_refs:
       - M00
+  - id: F-054
+    category: Cost Governance
+    feature: Token-saving strategy for generative devotionals
+    slug: token-saving-strategy
+    baseline_score: 0
+    status: done
+    prd: docs/feature-prds/F-054.md
+    methodology_refs:
+      - M00
+  - id: F-055
+    category: Bugfix
+    feature: Fix devotional page hydration mismatch
+    slug: fix-devotional-hydration-mismatch
+    baseline_score: 0
+    status: done
+    prd: docs/feature-prds/F-055.md
+    methodology_refs:
+      - M00

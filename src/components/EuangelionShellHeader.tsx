@@ -91,7 +91,9 @@ export default function EuangelionShellHeader({
   const mastheadRef = useRef<HTMLElement | null>(null)
 
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
-  const [now, setNow] = useState(() => new Date())
+  // Use null initial state to avoid hydration mismatch from Date.now()
+  // differing between server and client renders
+  const [now, setNow] = useState<Date | null>(null)
   const [mobileTopbarIndex, setMobileTopbarIndex] = useState(0)
   const [authLoading, setAuthLoading] = useState(true)
   const [authenticated, setAuthenticated] = useState(false)
@@ -101,7 +103,7 @@ export default function EuangelionShellHeader({
 
   const mobileTickerItems = useMemo(
     () => [
-      formatMastheadDate(now),
+      now ? formatMastheadDate(now) : '',
       'Daily Devotionals for the Hungry Soul',
     ],
     [now],
@@ -112,6 +114,7 @@ export default function EuangelionShellHeader({
   }, [theme])
 
   useEffect(() => {
+    setNow(new Date())
     const timer = window.setInterval(() => setNow(new Date()), 30_000)
     return () => window.clearInterval(timer)
   }, [])
@@ -119,7 +122,6 @@ export default function EuangelionShellHeader({
   useEffect(() => {
     clearGlobalScrollLocks()
   }, [])
-
 
   useEffect(() => {
     let cancelled = false
@@ -353,9 +355,7 @@ export default function EuangelionShellHeader({
             >
               {item.label}
             </Link>
-            {index < NAV_ITEMS.length - 1 && (
-              <span aria-hidden="true">|</span>
-            )}
+            {index < NAV_ITEMS.length - 1 && <span aria-hidden="true">|</span>}
           </span>
         )
       })}
@@ -369,10 +369,11 @@ export default function EuangelionShellHeader({
           <div className="mock-topbar-desktop-row">
             <time
               className="mock-topbar-date"
-              dateTime={now.toISOString()}
+              dateTime={now?.toISOString() ?? ''}
               aria-live="polite"
+              suppressHydrationWarning
             >
-              {formatMastheadDate(now)}
+              {now ? formatMastheadDate(now) : '\u00A0'}
             </time>
             <div className="mock-topbar-center-slot">
               {navDocked ? (
@@ -507,9 +508,7 @@ export default function EuangelionShellHeader({
           aria-hidden={navDocked ? true : undefined}
         >
           <div className="mock-nav-desktop">{renderNavLinks(NAV_ITEMS)}</div>
-          <div className="mock-nav-mobile">
-            {renderMobileNav()}
-          </div>
+          <div className="mock-nav-mobile">{renderMobileNav()}</div>
         </nav>
       </header>
     </div>
