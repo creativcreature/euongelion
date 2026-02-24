@@ -34,4 +34,31 @@ export const brainFlags = {
     toNumber(process.env.PLATFORM_AI_BUDGET_MONTHLY_USD, 100),
   ),
   nearLimitThreshold: toNumber(process.env.CHAT_NEAR_LIMIT_THRESHOLD, 0.8),
+
+  // ─── Token Optimization Flags ────────────────────────────────────
+  // Defaults are cost-optimized. Set to true for premium/higher quality.
+
+  /** Use LLM for Sabbath/Review days (default: false = deterministic templates) */
+  generativeSabbathReview: toBool(process.env.GENERATIVE_SABBATH_REVIEW, false),
+
+  /** Use LLM for intent parsing (default: false = deterministic keyword parser) */
+  llmIntentParsing: toBool(process.env.LLM_INTENT_PARSING, false),
+
+  /** Use LLM doc reranking in polishing (default: false = keyword ordering) */
+  llmDocReranking: toBool(process.env.LLM_DOC_RERANKING, false),
+
+  /** Cache outline generation results (default: true) */
+  outlineCacheEnabled: toBool(process.env.OUTLINE_CACHE_ENABLED, true),
+
+  /** Max reference chunks per devotional day (default: 4, was 6-12) */
+  maxReferenceChunksPerDay: Math.max(
+    2,
+    Math.round(toNumber(process.env.MAX_REFERENCE_CHUNKS_PER_DAY, 4)),
+  ),
+
+  /** Max characters per reference chunk in LLM context (default: 1200) */
+  maxChunkCharsInContext: Math.max(
+    400,
+    Math.round(toNumber(process.env.MAX_CHUNK_CHARS_IN_CONTEXT, 1200)),
+  ),
 }

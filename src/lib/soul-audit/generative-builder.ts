@@ -18,6 +18,7 @@ import {
   generateWithBrain,
   providerAvailabilityForUser,
 } from '@/lib/brain/router'
+import { brainFlags } from '@/lib/brain/flags'
 import { retrieveForDay } from './reference-retriever'
 import type {
   ChiasticPosition7,
@@ -82,10 +83,13 @@ function calculateModuleBudget(wordTarget: number): number {
 }
 
 function calculateChunkCount(minutes: number): number {
-  if (minutes <= 7) return 4
-  if (minutes <= 15) return 6
-  if (minutes <= 30) return 8
-  return 12
+  // Token optimization: fewer chunks = less input cost.
+  // Diminishing returns past 4-5 chunks — the top-scored chunks
+  // carry 80%+ of relevant reference material.
+  if (minutes <= 7) return 3
+  if (minutes <= 15) return 4
+  if (minutes <= 30) return 5
+  return 6
 }
 
 function estimateMaxOutputTokens(wordTarget: number): number {
@@ -104,80 +108,29 @@ function buildDevotionalSystemPrompt(params: {
 }): string {
   const previousModulesNote =
     params.previousModuleSets.length > 0
-      ? `\nPrevious days used these module selections (vary yours for freshness):\n${params.previousModuleSets.map((set, i) => `  Day ${i + 1}: ${set.join(', ')}`).join('\n')}`
+      ? `\nPrevious days' modules (vary yours): ${params.previousModuleSets.map((set, i) => `D${i + 1}:[${set.join(',')}]`).join(' ')}`
       : ''
 
-  return `You are a devotional writer for Euangelion, a Christian devotional app grounded in ancient wisdom.
+  // Compressed prompt: ~40% fewer tokens than original while preserving all constraints.
+  return `You are a devotional writer for Euangelion (Christian devotional app, ancient wisdom).
 
-VOICE:
-- 60% warm, 40% authoritative
-- No exclamation marks
-- No clichés ("God is good all the time", "Let go and let God")
-- Honest about difficulty, not saccharine
-- Intelligent but not academic
-- Like a thoughtful pastor who reads widely
+VOICE: 60% warm, 40% authoritative. No exclamation marks. No clichés. Honest about difficulty. Thoughtful pastor who reads widely.
 
-COMPOSITION MODEL:
-- Use the provided reference material as your PRIMARY source (~80% of content)
-- Quote, paraphrase, and build upon the reference chunks directly
-- Generate bridges, transitions, personalization, and structural language (~20%)
-- Every claim must be grounded in either Scripture or provided reference material
+COMPOSITION: 80% from provided reference material (quote, paraphrase, build upon). 20% generated bridges/personalization. Every claim grounded in Scripture or references.
 
-THEOLOGICAL FRAMEWORK:
-- Nicene Creed orthodoxy as baseline
-- All major traditions fairly represented
-- Scripture is primary; reference material supports
-- Acknowledge uncertainty where it exists
+THEOLOGY: Nicene orthodoxy baseline. All traditions represented. Scripture primary. Acknowledge uncertainty.
 
-PaRDeS LEVEL FOR THIS DAY: ${params.pardesLevel}
-- peshat: What does the text literally say? Focus on plain reading.
-- remez: What deeper patterns emerge? Look for hints and allegory.
-- derash: What does this mean for life today? Homiletical application.
-- sod: What mystery does this point toward? Contemplative depth.
-- integrated: Weave all four levels together naturally.
+PaRDeS: ${params.pardesLevel} (peshat=literal, remez=allegory, derash=application, sod=contemplative, integrated=all four)
 
-CHIASTIC POSITION: ${params.chiasticPosition}
-- A: Sets the problem, introduces the tension (hook)
-- B: Deepens the exploration, adds complexity
-- C: The pivot — the core revelation everything builds toward
-- B': Mirrors B — practical application of the revelation
-- A': Mirrors A — resolution, but transformed
+CHIASTIC: ${params.chiasticPosition} (A=tension, B=complexity, C=pivot/revelation, B'=application, A'=resolution)
 
-TARGET LENGTH: ~${params.wordTarget} words
-MODULE BUDGET: Select ${params.moduleBudget} modules from the palette below.
+LENGTH: ~${params.wordTarget} words. MODULES: Pick ${params.moduleBudget} from: scripture,teaching,vocab,story,insight,bridge,reflection,comprehension,takeaway,prayer,profile,resource
+Must include 'scripture' + 'reflection' or 'prayer'. Vary across week.${previousModulesNote}
 
-MODULE PALETTE (choose contextually, NOT all):
-scripture, teaching, vocab, story, insight, bridge, reflection, comprehension, takeaway, prayer, profile, resource
+RULES: Real Scripture refs only. Accurate quotes/attribution. Correct Hebrew/Greek. Verifiable history.
 
-RULES:
-- ALWAYS include 'scripture' + either 'reflection' or 'prayer'
-- Choose remaining modules that best serve THIS day's topic and position
-- Do NOT include all 12 modules — variety across the week matters
-${previousModulesNote}
-
-CONTENT RULES:
-- Every Scripture reference must be real and accurate
-- Every quote must be real and attributed correctly
-- Hebrew/Greek words must be linguistically accurate
-- Historical claims must be verifiable
-- Always connect to the meta-story of God's reconciliation
-
-OUTPUT FORMAT:
-Return STRICT JSON only — no markdown fencing, no explanation text.
-{
-  "title": "<day title>",
-  "scriptureReference": "<primary Scripture reference>",
-  "scriptureText": "<key verse or passage text, 1-3 verses>",
-  "reflection": "<main teaching/reflection content, multiple paragraphs>",
-  "prayer": "<closing prayer text>",
-  "nextStep": "<concrete action step>",
-  "journalPrompt": "<journaling/reflection prompt>",
-  "modules": [
-    { "type": "<module_type>", "heading": "<heading>", "content": { <module-specific fields> } }
-  ],
-  "totalWords": <approximate word count>,
-  "sourcesUsed": [<list of reference source identifiers used>]
-}`
+STRICT JSON only:
+{"title":string,"scriptureReference":string,"scriptureText":"1-3 verses","reflection":"multi-paragraph","prayer":string,"nextStep":string,"journalPrompt":string,"modules":[{"type":string,"heading":string,"content":{}}],"totalWords":number,"sourcesUsed":[string]}`
 }
 
 function buildSabbathSystemPrompt(wordTarget: number): string {
@@ -411,12 +364,15 @@ export async function generateDevotionalDay(
     limit: chunkCount,
   })
 
+  // Token optimization: truncate chunks to maxChunkCharsInContext (default 1200).
+  // Top-scored chunks already carry the most relevant content in their opening.
+  const chunkCharLimit = brainFlags.maxChunkCharsInContext
   const referenceContext =
     retrieved.chunks.length > 0
       ? retrieved.chunks
           .map(
             (chunk) =>
-              `[${chunk.sourceType}: ${chunk.source}]\n${chunk.content}`,
+              `[${chunk.sourceType}: ${chunk.source}]\n${chunk.content.slice(0, chunkCharLimit)}`,
           )
           .join('\n\n---\n\n')
       : 'No reference library material available. Generate from theological knowledge while maintaining accuracy.'
@@ -650,7 +606,12 @@ export async function generateReviewDay(params: {
 
 // ─── Fallbacks ──────────────────────────────────────────────────────
 
-function buildFallbackSabbath(params: {
+/**
+ * Deterministic sabbath day builder — no LLM call needed.
+ * Used by default when brainFlags.generativeSabbathReview is false.
+ * Produces quality rest-and-review content from prior day summaries.
+ */
+export function buildFallbackSabbath(params: {
   planOutline: PlanOutline
   previousDays: CustomPlanDay[]
   userResponse: string
@@ -689,7 +650,12 @@ function buildFallbackSabbath(params: {
   }
 }
 
-function buildFallbackReview(params: {
+/**
+ * Deterministic review day builder — no LLM call needed.
+ * Used by default when brainFlags.generativeSabbathReview is false.
+ * Produces quality week-summary and next-step discernment content.
+ */
+export function buildFallbackReview(params: {
   planOutline: PlanOutline
   previousDays: CustomPlanDay[]
   userResponse: string

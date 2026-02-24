@@ -31,7 +31,10 @@ import {
   generateDevotionalDay,
   generateSabbathDay,
   generateReviewDay,
+  buildFallbackSabbath,
+  buildFallbackReview,
 } from '@/lib/soul-audit/generative-builder'
+import { brainFlags } from '@/lib/brain/flags'
 import { reconstructPlanOutline } from '@/lib/soul-audit/outline-generator'
 import type { CustomPlanDay } from '@/types/soul-audit'
 
@@ -232,19 +235,38 @@ export async function POST(request: NextRequest) {
       let generatedDay: CustomPlanDay
 
       if (dayOutline.dayType === 'sabbath') {
-        generatedDay = await generateSabbathDay({
-          planOutline,
-          previousDays: readyDays,
-          userResponse: run.response_text,
-          devotionalLengthMinutes: DEFAULT_DEVOTIONAL_LENGTH_MINUTES,
-        })
+        // Token optimization: use deterministic builder by default (saves 1 LLM call).
+        // Sabbath explicitly has "no new teaching" — summaries don't need LLM.
+        if (brainFlags.generativeSabbathReview) {
+          generatedDay = await generateSabbathDay({
+            planOutline,
+            previousDays: readyDays,
+            userResponse: run.response_text,
+            devotionalLengthMinutes: DEFAULT_DEVOTIONAL_LENGTH_MINUTES,
+          })
+        } else {
+          generatedDay = buildFallbackSabbath({
+            planOutline,
+            previousDays: readyDays,
+            userResponse: run.response_text,
+          })
+        }
       } else if (dayOutline.dayType === 'review') {
-        generatedDay = await generateReviewDay({
-          planOutline,
-          previousDays: readyDays,
-          userResponse: run.response_text,
-          devotionalLengthMinutes: DEFAULT_DEVOTIONAL_LENGTH_MINUTES,
-        })
+        // Token optimization: deterministic builder by default (saves 1 LLM call).
+        if (brainFlags.generativeSabbathReview) {
+          generatedDay = await generateReviewDay({
+            planOutline,
+            previousDays: readyDays,
+            userResponse: run.response_text,
+            devotionalLengthMinutes: DEFAULT_DEVOTIONAL_LENGTH_MINUTES,
+          })
+        } else {
+          generatedDay = buildFallbackReview({
+            planOutline,
+            previousDays: readyDays,
+            userResponse: run.response_text,
+          })
+        }
       } else {
         const result = await generateDevotionalDay({
           dayOutline,

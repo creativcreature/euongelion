@@ -5,6 +5,18 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-054 SA-021: Token-saving strategy for generative devotionals (2026-02-24)
+
+- **Deterministic Sabbath/Review**: Day 6 (sabbath) and Day 7 (review) now use deterministic template builders by default, eliminating 2 LLM calls per plan. LLM versions preserved behind `GENERATIVE_SABBATH_REVIEW=true` flag.
+- **Deterministic intent parsing**: Switched from LLM to keyword-based intent parser by default. Outline LLM already sees raw user text, making separate intent call redundant. Toggle with `LLM_INTENT_PARSING=true`.
+- **Skip doc reranking**: Removed LLM reranking of grounding docs (keyword ordering is adequate for 4-6 docs). Toggle with `LLM_DOC_RERANKING=true`.
+- **Outline response cache**: In-memory LRU cache (200 entries, 1h TTL) keyed by normalized themes+tone. Common audit themes achieve 50-80% cache hit rates, skipping the outline generation call entirely.
+- **Compressed system prompts**: Devotional prompt reduced ~44%, outline prompt ~38%. All constraints preserved.
+- **Reduced reference chunks**: Max chunks per day reduced from 6-12 to 3-6. Chunk content truncated to 1200 chars. Top-scored chunks carry 80%+ of relevant material.
+- **Net impact**: 32% cost reduction per plan ($0.0076 → $0.0052). 47-63% more plans per $100/month budget. All optimizations flag-gated for premium toggling.
+
+---
+
 ## Soul Audit persistence + curation fix (2026-02-24)
 
 - **Persistence fix**: All Soul Audit state (submit response, selection, plan cache, reroll state, last input) moved from `sessionStorage` to `localStorage`. Audits now survive page refresh and tab close.

@@ -29,8 +29,14 @@ import {
   generateWithBrain,
   providerAvailabilityForUser,
 } from '@/lib/brain/router'
+import { brainFlags } from '@/lib/brain/flags'
 import { retrieveFromIndex } from '@/lib/brain/rag-index'
 import { generatePlanOutlines } from '@/lib/soul-audit/outline-generator'
+import {
+  buildOutlineCacheKey,
+  getOutlineFromCache,
+  setOutlineInCache,
+} from '@/lib/soul-audit/outline-cache'
 import { createRunToken, verifyRunToken } from '@/lib/soul-audit/run-token'
 import {
   bumpSessionAuditCount,
@@ -217,6 +223,12 @@ function sanitizeOptionSet(
 
 async function parseAuditIntentWithBrain(input: string) {
   const fallback = parseAuditIntent(input)
+
+  // Token optimization: use deterministic parser by default.
+  // The outline LLM already sees the raw user text and naturally understands
+  // nuance — the separate LLM intent parse adds cost but little quality.
+  if (!brainFlags.llmIntentParsing) return fallback
+
   const availability = providerAvailabilityForUser({ userKeys: undefined })
   const hasProvider = availability.some((entry) => entry.available)
   if (!hasProvider) return fallback
@@ -304,6 +316,10 @@ async function rerankGroundingDocsWithBrain(params: {
   docs: Array<{ id: string; title: string; content: string }>
 }): Promise<Array<{ id: string; title: string; content: string }>> {
   if (params.docs.length <= 3) return params.docs
+
+  // Token optimization: skip LLM reranking by default.
+  // Keyword-scored ordering from retrieveFromIndex is adequate for 4-6 docs.
+  if (!brainFlags.llmDocReranking) return params.docs
 
   try {
     const generation = await generateWithBrain({
@@ -633,18 +649,38 @@ export async function POST(request: NextRequest) {
 
     let generativeResult: Awaited<ReturnType<typeof generatePlanOutlines>> =
       null
-    try {
-      generativeResult = await generatePlanOutlines({
-        responseText: effectiveResponseText,
-        intent: precomputedIntent,
-      })
-    } catch (generativeError) {
-      console.warn(
-        `[soul-audit:submit] Generative outline path failed:`,
-        generativeError instanceof Error
-          ? generativeError.message
-          : generativeError,
-      )
+
+    // Token optimization: check outline cache before calling LLM.
+    const outlineCacheKey = buildOutlineCacheKey(precomputedIntent)
+    if (brainFlags.outlineCacheEnabled) {
+      const cached = getOutlineFromCache(outlineCacheKey)
+      if (cached) {
+        console.info(
+          `[soul-audit:submit] Outline cache HIT — reusing ${cached.options.length} cached outlines`,
+        )
+        generativeResult = cached
+      }
+    }
+
+    if (!generativeResult) {
+      try {
+        generativeResult = await generatePlanOutlines({
+          responseText: effectiveResponseText,
+          intent: precomputedIntent,
+        })
+
+        // Cache successful results
+        if (generativeResult && brainFlags.outlineCacheEnabled) {
+          setOutlineInCache(outlineCacheKey, generativeResult)
+        }
+      } catch (generativeError) {
+        console.warn(
+          `[soul-audit:submit] Generative outline path failed:`,
+          generativeError instanceof Error
+            ? generativeError.message
+            : generativeError,
+        )
+      }
     }
 
     if (
