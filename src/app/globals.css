@@ -4058,12 +4058,19 @@ html.reduce-motion *::after {
 /* Keyword pills */
 .series-card-keywords {
   font-family: var(--font-family-ui);
-  font-size: var(--mock-type-0);
+  font-size: calc(var(--mock-type-0) * 0.82);
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--mock-muted);
   text-transform: uppercase;
   margin: 0;
+  /* Fixed single-line height so thumbnail aligns across cards */
+  line-height: 1.4;
+  min-height: 1.4em;
+  max-height: 1.4em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .series-card-badge {
@@ -4112,6 +4119,13 @@ html.reduce-motion *::after {
   font-family: var(--font-family-serif);
   font-size: var(--mock-type-4);
   line-height: 0.9;
+  /* Fixed 2-line height so thumbnail aligns across cards */
+  min-height: 1.8em;
+  max-height: 1.8em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .mock-featured-card p {
@@ -4149,7 +4163,7 @@ html.reduce-motion *::after {
   font-size: clamp(1.18rem, 1.12vw, 1.36rem) !important;
   line-height: 1.22 !important;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

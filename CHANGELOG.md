@@ -5,6 +5,15 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-052 SA-020: Card alignment + raw image optimization (2026-02-24)
+
+- **Card image alignment**: Title fixed to 2-line height, keywords fixed to single-line height — thumbnail images now align consistently across cards in a rail regardless of text length.
+- **Raw image optimization**: Converted 642 raw.jpg → raw.webp (full-size, quality 82). 281 MB → 202 MB (28% reduction). Manifest and generate script updated to raw.webp paths.
+- **Keywords font reduced**: 0.82× base size for visual hierarchy.
+- **Scripture 3-line clamp**: Increased from 2 to 3 lines to prevent clipping.
+
+---
+
 ## F-052 SA-020: Continue Reading rail fix + dark mode image cleanup (2026-02-24)
 
 - **Continue Reading padding**: Single-item Continue Reading rail no longer stretches to full viewport width. Pads to ≥3 items with keyword-matched suggested series. Suggested cards show "SUGGESTED" badge.
