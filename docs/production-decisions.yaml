@@ -1,5 +1,5 @@
 version: 1
-updated_at: 2026-02-18
+updated_at: 2026-02-23
 
 decisions:
   - id: SA-001
@@ -40,6 +40,12 @@ decisions:
     title: auth-required-for-persistent-save-state-actions
   - id: SA-019
     title: artwork-image-layer-full-bleed-heroes-inline-lightbox
+  - id: SA-020
+    title: generative-engine-80-20-rag-composition
+  - id: SA-021
+    title: 7-day-plan-structure-5-devotional-sabbath-review
+  - id: SA-022
+    title: cascading-progressive-day-generation
 
 contracts:
   required_files:
@@ -52,10 +58,13 @@ contracts:
     - src/app/api/annotations/route.ts
     - src/app/api/bookmarks/route.ts
     - src/lib/soul-audit/curated-builder.ts
+    - src/lib/soul-audit/generative-builder.ts
+    - src/lib/soul-audit/outline-generator.ts
+    - src/lib/soul-audit/reference-retriever.ts
     - src/lib/soul-audit/schedule.ts
-  submit_route_forbidden_tokens:
-    - customPlan
-    - customDevotional
+    - src/app/api/soul-audit/generate-next/route.ts
+    - src/app/api/soul-audit/generation-status/route.ts
+  submit_route_forbidden_tokens: []
   required_submit_tokens:
     - options
     - auditRunId
@@ -83,7 +92,7 @@ contracts:
   non_wakeup_shell_forbidden_tokens:
     - newspaper-home
   policy_split:
-    - ai_primary:3
+    - ai_primary_or_ai_generative:3
     - curated_prefab:2
     - total:5
   required_tracking_docs:

@@ -33,7 +33,7 @@ export interface AuditSelectionRecord {
   id: string
   audit_run_id: string
   option_id: string
-  option_kind: 'ai_primary' | 'curated_prefab'
+  option_kind: 'ai_primary' | 'ai_generative' | 'curated_prefab'
   series_slug: string
   plan_token: string | null
   created_at: string
@@ -94,7 +94,7 @@ export interface AuditTelemetryRecord {
   id: string
   audit_run_id: string
   session_token: string
-  strategy: 'curated_candidates'
+  strategy: 'curated_candidates' | 'generative_outlines'
   split_valid: boolean
   ai_primary_count: number
   curated_prefab_count: number
@@ -565,7 +565,7 @@ export async function getConsentWithFallback(
 export async function saveSelection(params: {
   runId: string
   optionId: string
-  optionKind: 'ai_primary' | 'curated_prefab'
+  optionKind: 'ai_primary' | 'ai_generative' | 'curated_prefab'
   seriesSlug: string
   planToken: string | null
 }): Promise<AuditSelectionRecord> {

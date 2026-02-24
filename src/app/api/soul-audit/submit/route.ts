@@ -17,8 +17,12 @@ import {
 } from '@/lib/soul-audit/constants'
 import {
   buildAuditOptions,
+  fallbackCandidateForSeries,
+  getPrefabSlugs,
+  makeOption,
   sanitizeAuditInput,
 } from '@/lib/soul-audit/matching'
+import { getCuratedDayCandidates } from '@/lib/soul-audit/curation-engine'
 import { parseAuditIntent } from '@/lib/brain/intent-parser'
 import { duplicateCheck, rememberFingerprint } from '@/lib/brain/dedupe'
 import {
@@ -26,6 +30,7 @@ import {
   providerAvailabilityForUser,
 } from '@/lib/brain/router'
 import { retrieveFromIndex } from '@/lib/brain/rag-index'
+import { generatePlanOutlines } from '@/lib/soul-audit/outline-generator'
 import { createRunToken, verifyRunToken } from '@/lib/soul-audit/run-token'
 import {
   bumpSessionAuditCount,
@@ -65,15 +70,15 @@ function extractMatchedTermsFromReasoning(reasoning: string): string[] {
 }
 
 function hasExpectedOptionSplit(options: Array<{ kind: string }>): boolean {
-  const aiPrimaryCount = options.filter(
-    (option) => option.kind === 'ai_primary',
+  const aiCount = options.filter(
+    (option) => option.kind === 'ai_primary' || option.kind === 'ai_generative',
   ).length
   const curatedPrefabCount = options.filter(
     (option) => option.kind === 'curated_prefab',
   ).length
   return (
     options.length === SOUL_AUDIT_OPTION_SPLIT.total &&
-    aiPrimaryCount === SOUL_AUDIT_OPTION_SPLIT.aiPrimary &&
+    aiCount === SOUL_AUDIT_OPTION_SPLIT.aiPrimary &&
     curatedPrefabCount === SOUL_AUDIT_OPTION_SPLIT.curatedPrefab
   )
 }
@@ -243,7 +248,7 @@ Schema:
         },
       ],
       context: {
-        task: 'audit_option_polish',
+        task: 'audit_intent_parse',
         mode: 'auto',
         maxOutputTokens: 500,
       },
@@ -601,10 +606,67 @@ export async function POST(request: NextRequest) {
     const precomputedIntent = await parseAuditIntentWithBrain(
       effectiveResponseText,
     )
-    let options = buildAuditOptions(effectiveResponseText, optionVariantSeed, [
-      ...precomputedIntent.themes,
-      ...precomputedIntent.intentTags,
-    ])
+
+    // --- Generative outline path (preferred) ---
+    // Try to generate 3 unique plan outlines via LLM.
+    // Falls back to curated matching if generation fails.
+    let options: AuditOptionPreview[]
+    let submissionStrategy: 'generative_outlines' | 'curated_candidates' =
+      'curated_candidates'
+
+    let generativeResult: Awaited<ReturnType<typeof generatePlanOutlines>> =
+      null
+    try {
+      generativeResult = await generatePlanOutlines({
+        responseText: effectiveResponseText,
+        intent: precomputedIntent,
+      })
+    } catch {
+      // Fall through to curated matching
+    }
+
+    if (
+      generativeResult &&
+      generativeResult.options.length >= SOUL_AUDIT_OPTION_SPLIT.aiPrimary
+    ) {
+      // Generative path: 3 ai_generative + 2 curated_prefab
+      const aiOptions = generativeResult.options.slice(
+        0,
+        SOUL_AUDIT_OPTION_SPLIT.aiPrimary,
+      )
+      const aiSlugs = aiOptions.map((o) => o.slug)
+      const prefabSlugs = getPrefabSlugs(aiSlugs)
+      const prefabOptions = prefabSlugs
+        .map((slug, index) => {
+          const candidate =
+            getCuratedDayCandidates().find(
+              (item) => item.seriesSlug === slug,
+            ) ?? fallbackCandidateForSeries(slug)
+          if (!candidate) return null
+          return makeOption({
+            candidate,
+            kind: 'curated_prefab',
+            rank: aiOptions.length + index + 1,
+            confidence: Math.max(0.35, 0.75 - index * 0.1),
+            input: effectiveResponseText,
+            variantSeed: optionVariantSeed,
+          })
+        })
+        .filter((option): option is AuditOptionPreview => Boolean(option))
+
+      options = [...aiOptions, ...prefabOptions].slice(
+        0,
+        SOUL_AUDIT_OPTION_SPLIT.total,
+      )
+      submissionStrategy = 'generative_outlines'
+    } else {
+      // Fallback: curated matching (existing path)
+      options = buildAuditOptions(effectiveResponseText, optionVariantSeed, [
+        ...precomputedIntent.themes,
+        ...precomputedIntent.intentTags,
+      ])
+    }
+
     if (!hasExpectedOptionSplit(options)) {
       return jsonError({
         error:
@@ -614,11 +676,16 @@ export async function POST(request: NextRequest) {
         requestId,
       })
     }
-    options = await polishAiOptionsWithBrain(
-      effectiveResponseText,
-      options,
-      precomputedIntent,
-    )
+
+    // Polish only curated-matched AI options (ai_primary).
+    // ai_generative options already have quality copy from outline generation.
+    if (submissionStrategy === 'curated_candidates') {
+      options = await polishAiOptionsWithBrain(
+        effectiveResponseText,
+        options,
+        precomputedIntent,
+      )
+    }
     options = sanitizeOptionSet(options)
 
     const { run, options: persistedOptions } = await createAuditRun({
@@ -685,7 +752,8 @@ export async function POST(request: NextRequest) {
     }
 
     const aiPrimary = responseOptions.filter(
-      (option) => option.kind === 'ai_primary',
+      (option) =>
+        option.kind === 'ai_primary' || option.kind === 'ai_generative',
     )
     const curatedPrefab = responseOptions.filter(
       (option) => option.kind === 'curated_prefab',
@@ -708,12 +776,10 @@ export async function POST(request: NextRequest) {
             ).toFixed(4),
           )
         : 0
-    const strategy = 'curated_candidates'
-
     await saveAuditTelemetry({
       runId: run.id,
       sessionToken,
-      strategy,
+      strategy: submissionStrategy,
       splitValid: hasExpectedOptionSplit(responseOptions),
       aiPrimaryCount: aiPrimary.length,
       curatedPrefabCount: curatedPrefab.length,

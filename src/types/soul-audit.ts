@@ -16,12 +16,14 @@ export interface AuditMatch {
   } | null
 }
 
-export type AuditOptionKind = 'ai_primary' | 'curated_prefab'
+export type AuditOptionKind = 'ai_primary' | 'ai_generative' | 'curated_prefab'
 
 export interface AuditOptionPreview extends AuditMatch {
   id: string
   kind: AuditOptionKind
   rank: number
+  /** For ai_generative options: the plan blueprint for day-by-day generation. */
+  planOutline?: PlanOutlinePreview
 }
 
 export interface CrisisResource {
@@ -88,7 +90,10 @@ export interface SoulAuditSelectRequest {
   timezoneOffsetMinutes?: number
 }
 
-export type SoulAuditSelectionKind = 'ai_primary' | 'curated_prefab'
+export type SoulAuditSelectionKind =
+  | 'ai_primary'
+  | 'ai_generative'
+  | 'curated_prefab'
 
 export type PlanStartPolicy =
   | 'monday_cycle'
@@ -120,6 +125,10 @@ export interface SoulAuditSelectResponse {
   seriesSlug?: string
   planDays?: CustomPlanDay[]
   onboardingMeta?: PlanOnboardingMeta
+  /** For generative plans: indicates if more days are still being generated. */
+  generationStatus?: 'complete' | 'partial' | 'generating'
+  /** Plan type for client-side routing decisions. */
+  planType?: PlanType
 }
 
 export interface DevotionalDayEndnote {
@@ -129,6 +138,111 @@ export interface DevotionalDayEndnote {
 }
 
 export type ChiasticPosition = 'A' | 'B' | 'C' | "B'" | "A'"
+
+/** Extended chiastic positions for 7-day generative plans. */
+export type ChiasticPosition7 = ChiasticPosition | 'Sabbath' | 'Review'
+
+/** Day types in a 7-day generative plan. */
+export type PlanDayType = 'devotional' | 'sabbath' | 'review' | 'onboarding'
+
+/** Generation status for progressively-delivered plan days. */
+export type DayGenerationStatus = 'ready' | 'pending' | 'generating' | 'failed'
+
+/** Plan type distinguishes curated-matching from generative plans. */
+export type PlanType = 'curated' | 'generative'
+
+/**
+ * DevotionalModule — one content block in a generated devotional.
+ * The 12 types are a palette, not a checklist. Module selection is contextual.
+ */
+export type DevotionalModuleType =
+  | 'scripture'
+  | 'teaching'
+  | 'vocab'
+  | 'story'
+  | 'insight'
+  | 'bridge'
+  | 'reflection'
+  | 'comprehension'
+  | 'takeaway'
+  | 'prayer'
+  | 'profile'
+  | 'resource'
+
+export interface DevotionalModule {
+  type: DevotionalModuleType
+  heading: string
+  content: Record<string, unknown>
+}
+
+/**
+ * Composition report — transparency for the 80/20 ratio.
+ * Tracks how much content came from reference library vs LLM generation.
+ */
+export interface CompositionReport {
+  referencePercentage: number
+  generatedPercentage: number
+  sources: string[]
+}
+
+/**
+ * PlanOutline — a 7-day plan blueprint generated at submit time.
+ * Stored with the option and used to drive day-by-day generation at select time.
+ */
+export interface PlanDayOutline {
+  day: number
+  dayType: PlanDayType
+  chiasticPosition: ChiasticPosition7
+  title: string
+  scriptureReference: string
+  topicFocus: string
+  pardesLevel:
+    | 'peshat'
+    | 'remez'
+    | 'derash'
+    | 'sod'
+    | 'integrated'
+    | 'sabbath'
+    | 'review'
+  suggestedModules?: DevotionalModuleType[]
+}
+
+export interface PlanOutline {
+  id: string
+  angle: string
+  title: string
+  question: string
+  reasoning: string
+  scriptureAnchor: string
+  dayOutlines: PlanDayOutline[]
+  referenceSeeds: string[]
+}
+
+export interface PlanOutlinePreview {
+  angle: string
+  dayOutlines: Array<{
+    day: number
+    dayType: PlanDayType
+    title: string
+    scriptureReference: string
+    topicFocus: string
+  }>
+}
+
+/**
+ * GenerationStatusResponse — poll endpoint for progressive delivery.
+ */
+export interface GenerationStatusResponse {
+  planToken: string
+  totalDays: number
+  completedDays: number
+  currentlyGenerating?: number
+  status: 'complete' | 'generating' | 'partial_failure'
+  days: Array<{
+    day: number
+    status: DayGenerationStatus
+  }>
+}
 
 export interface CustomDevotional {
   title: string
@@ -143,6 +257,7 @@ export interface CustomDevotional {
 
 export interface CustomPlanDay {
   day: number
+  dayType?: PlanDayType
   title: string
   scriptureReference: string
   scriptureText: string
@@ -150,8 +265,18 @@ export interface CustomPlanDay {
   prayer: string
   nextStep: string
   journalPrompt: string
-  chiasticPosition?: ChiasticPosition
+  chiasticPosition?: ChiasticPosition | ChiasticPosition7
   endnotes?: DevotionalDayEndnote[]
+  /** Contextual module array (3-10 modules, not always 12). */
+  modules?: DevotionalModule[]
+  /** Actual word count of the generated content. */
+  totalWords?: number
+  /** User's slider setting (minutes) when this day was generated. */
+  targetLengthMinutes?: number
+  /** Progressive delivery status. */
+  generationStatus?: DayGenerationStatus
+  /** 80/20 composition transparency. */
+  compositionReport?: CompositionReport
 }
 
 export interface CustomPlan {

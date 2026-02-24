@@ -18,6 +18,8 @@ import {
   MissingCuratedModuleError,
   MissingReferenceGroundingError,
 } from '@/lib/soul-audit/curated-builder'
+import { generateDevotionalDay } from '@/lib/soul-audit/generative-builder'
+import { reconstructPlanOutline } from '@/lib/soul-audit/outline-generator'
 import {
   createPlan,
   getAllPlanDays,
@@ -36,6 +38,7 @@ import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import { crisisRequirement } from '@/lib/soul-audit/crisis'
 import { SERIES_DATA } from '@/data/series'
 import type {
+  CustomPlanDay,
   SoulAuditSelectRequest,
   SoulAuditSelectResponse,
 } from '@/types/soul-audit'
@@ -285,16 +288,16 @@ export async function POST(request: NextRequest) {
 
     const existingSelection = await getSelectionWithFallback(runId)
     if (existingSelection) {
-      const existingPlan =
+      const isAiWithPlan =
         existingSelection.plan_token &&
-        existingSelection.option_kind === 'ai_primary'
-          ? await getPlanInstanceWithFallback(existingSelection.plan_token)
-          : null
-      const existingPlanDays =
-        existingSelection.plan_token &&
-        existingSelection.option_kind === 'ai_primary'
-          ? await getAllPlanDays(existingSelection.plan_token)
-          : []
+        (existingSelection.option_kind === 'ai_primary' ||
+          existingSelection.option_kind === 'ai_generative')
+      const existingPlan = isAiWithPlan
+        ? await getPlanInstanceWithFallback(existingSelection.plan_token!)
+        : null
+      const existingPlanDays = isAiWithPlan
+        ? await getAllPlanDays(existingSelection.plan_token!)
+        : []
       const existingInitialDay = getInitialPlanDayNumber(existingPlanDays)
       const existingAiRoute = existingSelection.plan_token
         ? buildAiResultsRoute(existingSelection.plan_token, existingInitialDay)
@@ -302,6 +305,8 @@ export async function POST(request: NextRequest) {
       const existingPlanDayContent = existingPlanDays
         .map((day) => day.content)
         .sort((a, b) => a.day - b.day)
+      const isExistingGenerative =
+        existingSelection.option_kind === 'ai_generative'
       const existingPayload: SoulAuditSelectResponse = {
         ok: true,
         auditRunId: runId,
@@ -312,13 +317,17 @@ export async function POST(request: NextRequest) {
             : existingAiRoute,
         planToken: existingSelection.plan_token ?? undefined,
         seriesSlug: existingSelection.series_slug,
-        planDays:
-          existingSelection.option_kind === 'ai_primary'
-            ? existingPlanDayContent
-            : undefined,
+        planDays: isAiWithPlan ? existingPlanDayContent : undefined,
         onboardingMeta: existingPlan
           ? toOnboardingMeta(existingPlan)
           : undefined,
+        ...(isExistingGenerative
+          ? {
+              generationStatus:
+                existingPlanDayContent.length >= 7 ? 'complete' : 'partial',
+              planType: 'generative' as const,
+            }
+          : {}),
       }
       return withCurrentRouteCookie(
         withRequestIdHeaders(
@@ -367,6 +376,148 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // ─── ai_generative: Generate Day 1 synchronously, rest progressively ───
+    if (option.kind === 'ai_generative') {
+      // Reconstruct the PlanOutline from the option's planOutline preview + stored data
+      const outlinePreview = option.planOutline
+      if (!outlinePreview || !outlinePreview.dayOutlines?.length) {
+        return jsonError({
+          error:
+            'This generative pathway is missing its plan outline. Please choose another option or retry.',
+          code: 'GENERATIVE_OUTLINE_MISSING',
+          status: 422,
+          requestId,
+        })
+      }
+
+      // Reconstruct full PlanOutline from the stored preview
+      const planOutline = reconstructPlanOutline({
+        id: option.slug,
+        title: option.title,
+        question: option.question,
+        reasoning: option.reasoning,
+        preview: outlinePreview,
+      })
+
+      const day1Outline = planOutline.dayOutlines[0]
+      if (!day1Outline) {
+        return jsonError({
+          error: 'Generative plan has no day outlines.',
+          code: 'GENERATIVE_DAY_OUTLINE_MISSING',
+          status: 422,
+          requestId,
+        })
+      }
+
+      // Generate Day 1 synchronously
+      let day1: CustomPlanDay
+      try {
+        const result = await generateDevotionalDay({
+          dayOutline: day1Outline,
+          planOutline,
+          userResponse: run.response_text,
+          // TODO(F-053): Replace with user's slider preference once stored on plan instance
+          devotionalLengthMinutes: 10,
+        })
+        day1 = result.day
+      } catch {
+        return jsonError({
+          error:
+            'Unable to generate your first devotional day right now. Please try again or choose another option.',
+          code: 'GENERATIVE_DAY1_FAILED',
+          status: 500,
+          requestId,
+        })
+      }
+
+      // Create pending placeholders for Days 2-7
+      const pendingDays: CustomPlanDay[] = planOutline.dayOutlines
+        .slice(1)
+        .map((outline) => ({
+          day: outline.day,
+          dayType: outline.dayType,
+          title: outline.title,
+          scriptureReference: outline.scriptureReference,
+          scriptureText: '',
+          reflection: '',
+          prayer: '',
+          nextStep: '',
+          journalPrompt: '',
+          chiasticPosition: outline.chiasticPosition,
+          generationStatus: 'pending' as const,
+        }))
+
+      const allDays = [day1, ...pendingDays]
+
+      const timezone =
+        sanitizeTimezone(body.timezone) ??
+        sanitizeTimezone(request.headers.get('x-timezone')) ??
+        Intl.DateTimeFormat().resolvedOptions().timeZone ??
+        'UTC'
+      const offsetMinutes =
+        normalizeTimezoneOffsetMinutes(body.timezoneOffsetMinutes) ??
+        normalizeTimezoneOffsetMinutes(
+          request.headers.get('x-timezone-offset'),
+        ) ??
+        0
+
+      const schedule = resolveStartPolicy(new Date(), offsetMinutes)
+
+      const plan = await createPlan({
+        runId,
+        sessionToken,
+        seriesSlug: option.slug,
+        timezone,
+        timezoneOffsetMinutes: offsetMinutes,
+        startPolicy: schedule.startPolicy,
+        startedAt: schedule.startedAt,
+        cycleStartAt: schedule.cycleStartAt,
+        onboardingVariant: schedule.onboardingVariant,
+        onboardingDays: schedule.onboardingDays,
+        days: allDays,
+      })
+
+      await saveSelection({
+        runId,
+        optionId: option.id,
+        optionKind: 'ai_generative',
+        seriesSlug: option.slug,
+        planToken: plan.token,
+      })
+
+      const generativePayload: SoulAuditSelectResponse = {
+        ok: true,
+        auditRunId: runId,
+        selectionType: 'ai_generative',
+        route: buildAiResultsRoute(plan.token, 1),
+        planToken: plan.token,
+        seriesSlug: option.slug,
+        planDays: allDays,
+        onboardingMeta: toOnboardingMeta({
+          startPolicy: schedule.startPolicy,
+          onboardingVariant: schedule.onboardingVariant,
+          onboardingDays: schedule.onboardingDays,
+          cycleStartAt: schedule.cycleStartAt,
+          timezone,
+          timezoneOffsetMinutes: offsetMinutes,
+        }),
+        generationStatus: 'partial',
+        planType: 'generative',
+      }
+
+      // Warm cache path for immediate UI fetches.
+      getAllPlanDays(plan.token)
+
+      return withCurrentRouteCookie(
+        withRequestIdHeaders(
+          NextResponse.json(generativePayload, { status: 200 }),
+          requestId,
+        ),
+        generativePayload.route,
+      )
+    }
+
+    // ─── ai_primary: Curated-first plan (existing path) ───
     const curationSeed =
       option.preview &&
       typeof option.preview === 'object' &&

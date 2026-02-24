@@ -554,3 +554,12 @@ features:
     prd: docs/feature-prds/F-052.md
     methodology_refs:
       - M00
+  - id: F-053
+    category: Devotional Engine
+    feature: Generative 80/20 RAG composition engine
+    slug: generative-80-20-rag-engine
+    baseline_score: 0
+    status: done
+    prd: docs/feature-prds/F-053.md
+    methodology_refs:
+      - M00

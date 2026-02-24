@@ -445,7 +445,7 @@ export type AuditOption = {
   id: string
   audit_run_id: string
   slug: string
-  kind: 'ai_primary' | 'curated_prefab'
+  kind: 'ai_primary' | 'ai_generative' | 'curated_prefab'
   rank: number
   title: string
   question: string
@@ -459,7 +459,7 @@ export type AuditOptionInsert = {
   id: string
   audit_run_id: string
   slug: string
-  kind: 'ai_primary' | 'curated_prefab'
+  kind: 'ai_primary' | 'ai_generative' | 'curated_prefab'
   rank: number
   title: string
   question: string
@@ -497,7 +497,7 @@ export type AuditSelection = {
   id: string
   audit_run_id: string
   option_id: string
-  option_kind: 'ai_primary' | 'curated_prefab'
+  option_kind: 'ai_primary' | 'ai_generative' | 'curated_prefab'
   series_slug: string
   plan_token: string | null
   created_at: string
@@ -507,7 +507,7 @@ export type AuditSelectionInsert = {
   id?: string
   audit_run_id: string
   option_id: string
-  option_kind: 'ai_primary' | 'curated_prefab'
+  option_kind: 'ai_primary' | 'ai_generative' | 'curated_prefab'
   series_slug: string
   plan_token?: string | null
   created_at?: string

@@ -55,3 +55,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-049 | iOS               | Shell readiness                                  | 4/10     | done   | [F-049.md](./F-049.md) |
 | F-050 | iOS               | App Store submission readiness                   | 4/10     | done   | [F-050.md](./F-050.md) |
 | F-052 | Visual / Content  | Artwork image layer (heroes + inline + lightbox) | 0/10     | done   | [F-052.md](./F-052.md) |
+| F-053 | Devotional Engine | Generative 80/20 RAG composition engine          | 0/10     | done   | [F-053.md](./F-053.md) |

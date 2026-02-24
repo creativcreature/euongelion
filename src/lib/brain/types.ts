@@ -9,6 +9,9 @@ export type GenerationTaskType =
   | 'chat_response'
   | 'chat_response_open_web'
   | 'audit_option_polish'
+  | 'audit_intent_parse'
+  | 'audit_outline_generate'
+  | 'devotional_day_generate'
   | 'devotional_refinement'
 
 export type ChatRetrievalMode = 'closed' | 'open_web'

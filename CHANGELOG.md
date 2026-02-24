@@ -5,6 +5,44 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-053 SA-020/21/22: Generative 80/20 RAG Composition Engine (2026-02-23)
+
+### What Changed
+
+- **Generative devotional engine**: Soul Audit now generates fully unique 7-day devotional plans on the fly instead of matching to pre-built series. 80% of content comes from the 13GB reference library via RAG retrieval, 20% is AI-generated bridging and personalization.
+- **Plan outline generation**: Submit route generates 3 unique plan outlines via LLM, each approaching the user's topic from a different angle. Replaces curated matching for AI options.
+- **7-day plan structure**: 5 devotional days following chiastic arc (A-B-C-B'-A') + Day 6 sabbath/review + Day 7 next-week discernment. Each day assigned PaRDeS level and chiastic position.
+- **Contextual module selection**: 12 module types are a palette (3-10 per day). LLM selects modules based on topic, chiastic position, and length budget. Always includes scripture + reflection/prayer.
+- **Progressive day delivery**: Day 1 generated synchronously at selection. Days 2-7 generated via cascading `/api/soul-audit/generate-next` calls with progress bar in results page.
+- **Enhanced reference retrieval**: New chunked corpus builder splits reference files into 200-800 word chunks for semantic retrieval. Two-pass scoring: keyword matching then source priority ranking.
+- **Composition transparency**: Each generated day includes composition report (reference % vs generated %, source list) displayed in results page.
+- **Graceful fallback**: If generative path fails, system falls back to curated-first matching. Curated prefab options continue routing to series pages.
+- **New option kind**: `ai_generative` alongside `ai_primary` and `curated_prefab`. Results page renders both with appropriate card styling and CTA text.
+
+### New Files
+
+- `src/lib/soul-audit/reference-retriever.ts` -- chunked corpus + two-pass retrieval
+- `src/lib/soul-audit/outline-generator.ts` -- 3 unique plan outlines via LLM
+- `src/lib/soul-audit/generative-builder.ts` -- 80/20 RAG day generation
+- `src/app/api/soul-audit/generate-next/route.ts` -- cascading generation endpoint
+- `src/app/api/soul-audit/generation-status/route.ts` -- progressive delivery poll endpoint
+- `docs/feature-prds/F-053.md` -- feature PRD
+
+### Modified Files
+
+- `src/types/soul-audit.ts` -- generative engine types
+- `src/types/database.ts` -- ai_generative kind
+- `src/app/api/soul-audit/submit/route.ts` -- generative outline path + fallback
+- `src/app/api/soul-audit/select/route.ts` -- ai_generative handler
+- `src/app/soul-audit/results/page.tsx` -- progressive generation UX
+- `src/lib/soul-audit/matching.ts` -- exported utilities
+- `src/lib/soul-audit/repository.ts` -- telemetry strategy type
+- `docs/production-decisions.yaml` -- SA-020/21/22 decisions
+- `docs/feature-prds/FEATURE-PRD-INDEX.md` -- F-053 entry
+- `docs/feature-prds/FEATURE-PRD-REGISTRY.yaml` -- F-053 entry
+
+---
+
 ## SA-020: Card Redesign + Homepage/Series Overhaul + Soul Audit Matching Fix (2026-02-23)
 
 ### What Changed

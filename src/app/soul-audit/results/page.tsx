@@ -29,6 +29,7 @@ import { SERIES_HERO } from '@/data/artwork-manifest'
 import type {
   CrisisResource,
   CustomPlanDay,
+  GenerationStatusResponse,
   PlanOnboardingMeta,
   SoulAuditConsentResponse,
   SoulAuditSelectResponse,
@@ -75,7 +76,7 @@ const LEGACY_FRAGMENT_TITLE_PATTERN = /^want learn\b/i
 type SavedAuditOption = {
   id: string
   auditRunId: string
-  kind: 'ai_primary' | 'curated_prefab'
+  kind: 'ai_primary' | 'ai_generative' | 'curated_prefab'
   title: string
   question: string
   reasoning: string
@@ -175,6 +176,19 @@ function onboardingDescription(meta: PlanOnboardingMeta | null): string | null {
     return 'You started on Friday. This focused primer prepares your next step before Monday.'
   }
   return 'You started on the weekend. This bridge day keeps momentum until Monday.'
+}
+
+function extractModuleText(content: Record<string, unknown>): string {
+  // Module content may be { text: "..." } or { prompt: "..." } or nested
+  if (typeof content.text === 'string') return content.text
+  if (typeof content.prompt === 'string') return content.prompt
+  if (typeof content.passage === 'string') return content.passage
+  if (typeof content.body === 'string') return content.body
+  // Fallback: join all string values
+  const parts = Object.values(content).filter(
+    (v): v is string => typeof v === 'string',
+  )
+  return parts.join('\n\n')
 }
 
 function isFullPlanDay(value: unknown): value is CustomPlanDay {
@@ -381,6 +395,11 @@ export default function SoulAuditResultsPage() {
   const [guestTheme, setGuestTheme] = useState<GuestOnboardingTheme>('dark')
   const [guestTextScale, setGuestTextScale] =
     useState<GuestOnboardingTextScale>('default')
+  const [isGenerativePlan, setIsGenerativePlan] = useState(
+    () => initialSelection?.planType === 'generative',
+  )
+  const [generationProgress, setGenerationProgress] =
+    useState<GenerationStatusResponse | null>(null)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -458,6 +477,9 @@ export default function SoulAuditResultsPage() {
     const fromStorage = loadSelectionResult()
     if (!fromStorage) return
     setSelection(fromStorage)
+    if (fromStorage.planType === 'generative') {
+      setIsGenerativePlan(true)
+    }
     if (fromStorage.onboardingMeta) {
       setPlanOnboardingMeta(fromStorage.onboardingMeta)
     }
@@ -483,6 +505,21 @@ export default function SoulAuditResultsPage() {
   )
   const optionSelectionReady = Boolean(!submitting && crisisRequirementsMet)
   const rerollsRemaining = rerollUsed ? 0 : 1
+
+  const loadGenerativePlanStatus = useCallback(
+    async (token: string): Promise<GenerationStatusResponse | null> => {
+      try {
+        const response = await fetch(
+          `/api/soul-audit/generation-status?planToken=${encodeURIComponent(token)}`,
+        )
+        if (!response.ok) return null
+        return (await response.json()) as GenerationStatusResponse
+      } catch {
+        return null
+      }
+    },
+    [],
+  )
 
   const loadPlan = useCallback(async (token: string) => {
     setLoadingPlan(true)
@@ -580,8 +617,99 @@ export default function SoulAuditResultsPage() {
     if (cachedPlanDays.length > 0) {
       setPlanDays(cachedPlanDays)
     }
-    void loadPlan(planToken)
-  }, [loadPlan, planToken])
+    if (isGenerativePlan) {
+      // For generative plans, load status instead of day-by-day API
+      void loadGenerativePlanStatus(planToken).then((status) => {
+        if (status) setGenerationProgress(status)
+      })
+    } else {
+      void loadPlan(planToken)
+    }
+  }, [isGenerativePlan, loadGenerativePlanStatus, loadPlan, planToken])
+
+  // Cascading generation for generative plans: generates Days 2-7 in background
+  useEffect(() => {
+    if (!planToken || !isGenerativePlan) return
+    // If selection indicates all days are already complete, skip
+    if (selection?.generationStatus === 'complete') return
+
+    // Capture for closure safety — early return above guarantees non-null
+    const token = planToken
+    let cancelled = false
+
+    async function cascadeGeneration() {
+      // Initial status check
+      const initialStatus = await loadGenerativePlanStatus(token)
+      if (cancelled || !initialStatus) return
+      setGenerationProgress(initialStatus)
+      if (
+        initialStatus.status === 'complete' ||
+        initialStatus.status === 'partial_failure'
+      ) {
+        return
+      }
+
+      // Keep generating pending days
+      while (!cancelled) {
+        const genRes = await fetch('/api/soul-audit/generate-next', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ planToken }),
+        })
+
+        if (cancelled) break
+        if (!genRes.ok) {
+          // Check if we are done or hit an error
+          const status = await loadGenerativePlanStatus(token)
+          if (status) setGenerationProgress(status)
+          break
+        }
+
+        const genPayload = (await genRes.json()) as {
+          generatedDay?: CustomPlanDay
+          nextPendingDay?: number | null
+          status?: string
+        }
+        if (cancelled) break
+
+        // Add the newly generated day to planDays state
+        if (genPayload.generatedDay && isFullPlanDay(genPayload.generatedDay)) {
+          const newDay = genPayload.generatedDay
+          setPlanDays((prev) => {
+            const existing = prev.filter((d) => d.day !== newDay.day)
+            const updated = [...existing, newDay].sort((a, b) => a.day - b.day)
+            persistPlanDays(token, updated)
+            return updated
+          })
+        }
+
+        // Poll status to update progress
+        const status = await loadGenerativePlanStatus(token)
+        if (cancelled) break
+        if (status) {
+          setGenerationProgress(status)
+          if (
+            status.status === 'complete' ||
+            status.status === 'partial_failure'
+          ) {
+            break
+          }
+        }
+
+        if (genPayload.nextPendingDay === null) break
+      }
+    }
+
+    void cascadeGeneration()
+    return () => {
+      cancelled = true
+    }
+  }, [
+    isGenerativePlan,
+    loadGenerativePlanStatus,
+    planToken,
+    selection?.generationStatus,
+  ])
 
   useEffect(() => {
     if (!planToken) return
@@ -618,6 +746,7 @@ export default function SoulAuditResultsPage() {
         title: string
         scriptureReference?: string
         locked: boolean
+        generationStatus?: 'ready' | 'pending' | 'generating' | 'failed'
       }
     >()
 
@@ -627,6 +756,7 @@ export default function SoulAuditResultsPage() {
         title: day.title,
         scriptureReference: day.scriptureReference,
         locked: false,
+        generationStatus: day.generationStatus ?? 'ready',
       })
     }
 
@@ -640,8 +770,33 @@ export default function SoulAuditResultsPage() {
       })
     }
 
+    // For generative plans, include pending days from generation progress
+    if (isGenerativePlan && generationProgress) {
+      for (const dayStatus of generationProgress.days) {
+        if (byDay.has(dayStatus.day)) {
+          const existing = byDay.get(dayStatus.day)!
+          existing.generationStatus = dayStatus.status as
+            | 'ready'
+            | 'pending'
+            | 'generating'
+            | 'failed'
+        } else {
+          byDay.set(dayStatus.day, {
+            day: dayStatus.day,
+            title: `Day ${dayStatus.day}`,
+            locked: false,
+            generationStatus: dayStatus.status as
+              | 'ready'
+              | 'pending'
+              | 'generating'
+              | 'failed',
+          })
+        }
+      }
+    }
+
     return Array.from(byDay.values()).sort((a, b) => a.day - b.day)
-  }, [lockedDayPreviews, planDays])
+  }, [generationProgress, isGenerativePlan, lockedDayPreviews, planDays])
 
   const currentDayNumber = useMemo(() => {
     if (planDays.length === 0) return null
@@ -661,6 +816,30 @@ export default function SoulAuditResultsPage() {
       : null
   const daySectionAnchors = useMemo<ReaderSectionAnchor[]>(() => {
     if (!selectedPlanDay) return []
+    // For generative plans with modules, build anchors from module types
+    if (selectedPlanDay.modules && selectedPlanDay.modules.length > 0) {
+      const anchors: ReaderSectionAnchor[] = []
+      const seen = new Set<string>()
+      for (const mod of selectedPlanDay.modules) {
+        if (
+          ['scripture', 'reflection', 'prayer'].includes(mod.type) &&
+          !seen.has(mod.type)
+        ) {
+          seen.add(mod.type)
+          anchors.push({
+            id: `day-${selectedPlanDay.day}-${mod.type}`,
+            label: mod.type.toUpperCase(),
+          })
+        }
+      }
+      if (selectedPlanDay.nextStep) {
+        anchors.push({
+          id: `day-${selectedPlanDay.day}-practice`,
+          label: 'NEXT STEP',
+        })
+      }
+      return anchors
+    }
     return [
       { id: `day-${selectedPlanDay.day}-scripture`, label: 'SCRIPTURE' },
       { id: `day-${selectedPlanDay.day}-reflection`, label: 'REFLECTION' },
@@ -845,6 +1024,9 @@ export default function SoulAuditResultsPage() {
       }
 
       setSelection(selectionPayload)
+      if (selectionPayload.planType === 'generative') {
+        setIsGenerativePlan(true)
+      }
       if (selectionPayload.onboardingMeta) {
         setPlanOnboardingMeta(selectionPayload.onboardingMeta)
       }
@@ -1026,7 +1208,7 @@ export default function SoulAuditResultsPage() {
 
   function saveOptionForLater(option: {
     id: string
-    kind: 'ai_primary' | 'curated_prefab'
+    kind: 'ai_primary' | 'ai_generative' | 'curated_prefab'
     title: string
     question: string
     reasoning: string
@@ -1498,7 +1680,9 @@ export default function SoulAuditResultsPage() {
                   <section className="mb-6">
                     <div className="mb-4 flex items-center justify-between">
                       <p className="text-label vw-small text-gold">
-                        3 PRIMARY AI OPTIONS
+                        {displayOptions.some((o) => o.kind === 'ai_generative')
+                          ? '3 AI GENERATED PATHS'
+                          : '3 PRIMARY AI OPTIONS'}
                       </p>
                       <p className="vw-small text-muted">
                         {submitResult.remainingAudits} audits remaining this
@@ -1514,12 +1698,19 @@ export default function SoulAuditResultsPage() {
                     )}
                     <div className="grid gap-4 md:grid-cols-3">
                       {displayOptions
-                        .filter((option) => option.kind === 'ai_primary')
+                        .filter(
+                          (option) =>
+                            option.kind === 'ai_primary' ||
+                            option.kind === 'ai_generative',
+                        )
                         .map((option) => {
                           const hero = SERIES_HERO[option.slug]
                           const series = SERIES_DATA[option.slug]
                           const keywords = (series?.keywords ?? []).slice(0, 3)
-                          const dayCount = series?.days.length ?? 0
+                          const isGenerative = option.kind === 'ai_generative'
+                          const dayCount = isGenerative
+                            ? 7
+                            : (series?.days.length ?? 0)
 
                           return (
                             <article
@@ -1539,7 +1730,7 @@ export default function SoulAuditResultsPage() {
                                 }`}
                                 aria-disabled={!optionSelectionReady}
                               >
-                                {/* Ref → Title → Image → Keywords → Action */}
+                                {/* Ref -> Title -> Image -> Keywords -> Action */}
                                 {option.preview?.verse && (
                                   <div className="mock-scripture-lead audit-option-pad">
                                     <p className="mock-scripture-lead-reference">
@@ -1574,7 +1765,9 @@ export default function SoulAuditResultsPage() {
                                 <div className="mock-featured-actions audit-option-pad">
                                   <span className="mock-series-start text-label">
                                     {optionSelectionReady
-                                      ? 'BUILD THIS PATH'
+                                      ? isGenerative
+                                        ? 'GENERATE THIS PATH'
+                                        : 'BUILD THIS PATH'
                                       : 'UNAVAILABLE'}
                                   </span>
                                   {dayCount > 0 && (
@@ -1827,11 +2020,16 @@ export default function SoulAuditResultsPage() {
                     <div className="flex flex-wrap gap-2">
                       {railDays.map((day) => {
                         const isSelected = day.day === selectedDayNumber
+                        const isPending =
+                          day.generationStatus === 'pending' ||
+                          day.generationStatus === 'generating'
+                        const isFailed = day.generationStatus === 'failed'
                         return (
                           <button
                             key={`top-day-${day.day}`}
                             type="button"
                             onClick={() => switchToDay(day.day)}
+                            disabled={isPending}
                             className="text-label vw-small border px-3 py-2"
                             style={{
                               borderColor: isSelected
@@ -1840,11 +2038,17 @@ export default function SoulAuditResultsPage() {
                               background: isSelected
                                 ? 'var(--color-active)'
                                 : 'transparent',
-                              opacity: day.locked ? 0.72 : 1,
+                              opacity: day.locked || isPending ? 0.72 : 1,
                             }}
                           >
                             DAY {day.day}
-                            {day.locked ? ' · LOCKED' : ''}
+                            {day.locked
+                              ? ' \u00B7 LOCKED'
+                              : isPending
+                                ? ' \u00B7 BUILDING'
+                                : isFailed
+                                  ? ' \u00B7 FAILED'
+                                  : ''}
                           </button>
                         )
                       })}
@@ -1864,11 +2068,16 @@ export default function SoulAuditResultsPage() {
                       <div className="grid gap-2">
                         {railDays.map((day) => {
                           const isSelected = day.day === selectedDayNumber
+                          const isPending =
+                            day.generationStatus === 'pending' ||
+                            day.generationStatus === 'generating'
+                          const isFailed = day.generationStatus === 'failed'
                           return (
                             <button
                               key={`rail-day-${day.day}`}
                               type="button"
                               className="border px-3 py-2 text-left"
+                              disabled={isPending}
                               style={{
                                 borderColor: isSelected
                                   ? 'var(--color-border-strong)'
@@ -1876,18 +2085,26 @@ export default function SoulAuditResultsPage() {
                                 background: isSelected
                                   ? 'var(--color-active)'
                                   : 'transparent',
-                                opacity: day.locked ? 0.72 : 1,
+                                opacity: day.locked || isPending ? 0.72 : 1,
                               }}
                               onClick={() => switchToDay(day.day)}
                             >
                               <p className="text-label vw-small text-gold">
                                 DAY {day.day}
-                                {day.locked ? ' · LOCKED' : ''}
+                                {day.locked
+                                  ? ' \u00B7 LOCKED'
+                                  : isPending
+                                    ? ' \u00B7 BUILDING'
+                                    : isFailed
+                                      ? ' \u00B7 FAILED'
+                                      : ''}
                               </p>
                               <p className="vw-small text-secondary">
-                                {typographer(day.title)}
+                                {isPending
+                                  ? 'Generating content...'
+                                  : typographer(day.title)}
                               </p>
-                              {day.scriptureReference && (
+                              {!isPending && day.scriptureReference && (
                                 <p className="vw-small text-muted">
                                   {day.scriptureReference}
                                 </p>
@@ -1944,11 +2161,35 @@ export default function SoulAuditResultsPage() {
                   </aside>
 
                   <div className="devotional-reader-stage">
-                    {loadingPlan && (
+                    {loadingPlan && !isGenerativePlan && (
                       <p className="vw-body mb-6 text-secondary">
                         Building your day-by-day devotional path...
                       </p>
                     )}
+
+                    {isGenerativePlan &&
+                      generationProgress &&
+                      generationProgress.status !== 'complete' && (
+                        <div className="mb-6">
+                          <p className="vw-small text-secondary">
+                            Generating your personalized devotional plan:{' '}
+                            {generationProgress.completedDays} of{' '}
+                            {generationProgress.totalDays} days ready.
+                          </p>
+                          <div
+                            className="mt-2 h-1.5 w-full overflow-hidden rounded-full"
+                            style={{ background: 'var(--color-border)' }}
+                          >
+                            <div
+                              className="h-full rounded-full transition-all duration-500"
+                              style={{
+                                width: `${(generationProgress.completedDays / generationProgress.totalDays) * 100}%`,
+                                background: 'var(--color-gold)',
+                              }}
+                            />
+                          </div>
+                        </div>
+                      )}
 
                     {lockedMessages.length > 0 && (
                       <div className="mb-6 space-y-2">
@@ -1979,6 +2220,11 @@ export default function SoulAuditResultsPage() {
                         >
                           <p className="text-label vw-small mb-2 text-gold">
                             DAY {selectedPlanDay.day}
+                            {selectedPlanDay.dayType === 'sabbath'
+                              ? ' \u00B7 SABBATH'
+                              : selectedPlanDay.dayType === 'review'
+                                ? ' \u00B7 REVIEW'
+                                : ''}
                           </p>
                           <h2 className="vw-heading-md mb-2">
                             {typographer(selectedPlanDay.title)}
@@ -1986,39 +2232,81 @@ export default function SoulAuditResultsPage() {
                           <p className="vw-small mb-4 text-muted">
                             {selectedPlanDay.scriptureReference}
                           </p>
-                          <p
-                            id={`day-${selectedPlanDay.day}-scripture`}
-                            className="scripture-block vw-body mb-4 text-secondary"
-                          >
-                            {typographer(selectedPlanDay.scriptureText)}
-                          </p>
-                          <p
-                            id={`day-${selectedPlanDay.day}-reflection`}
-                            className="vw-body mb-4 text-secondary type-prose"
-                          >
-                            {typographer(selectedPlanDay.reflection)}
-                          </p>
-                          <p
-                            id={`day-${selectedPlanDay.day}-prayer`}
-                            className="text-serif-italic vw-body mb-4 text-secondary type-prose"
-                          >
-                            {typographer(selectedPlanDay.prayer)}
-                          </p>
+
+                          {/* Render modules if present (generative plans) */}
+                          {selectedPlanDay.modules &&
+                          selectedPlanDay.modules.length > 0 ? (
+                            <div className="space-y-4">
+                              {selectedPlanDay.modules.map((mod, idx) => (
+                                <div
+                                  key={`mod-${selectedPlanDay.day}-${mod.type}-${idx}`}
+                                  id={
+                                    mod.type === 'scripture'
+                                      ? `day-${selectedPlanDay.day}-scripture`
+                                      : mod.type === 'reflection'
+                                        ? `day-${selectedPlanDay.day}-reflection`
+                                        : mod.type === 'prayer'
+                                          ? `day-${selectedPlanDay.day}-prayer`
+                                          : undefined
+                                  }
+                                >
+                                  {mod.heading && (
+                                    <p className="text-label vw-small mb-1 text-gold">
+                                      {mod.heading.toUpperCase()}
+                                    </p>
+                                  )}
+                                  <div className="vw-body text-secondary type-prose">
+                                    {typographer(
+                                      extractModuleText(mod.content),
+                                    )}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          ) : (
+                            <>
+                              <p
+                                id={`day-${selectedPlanDay.day}-scripture`}
+                                className="scripture-block vw-body mb-4 text-secondary"
+                              >
+                                {typographer(selectedPlanDay.scriptureText)}
+                              </p>
+                              <p
+                                id={`day-${selectedPlanDay.day}-reflection`}
+                                className="vw-body mb-4 text-secondary type-prose"
+                              >
+                                {typographer(selectedPlanDay.reflection)}
+                              </p>
+                              <p
+                                id={`day-${selectedPlanDay.day}-prayer`}
+                                className="text-serif-italic vw-body mb-4 text-secondary type-prose"
+                              >
+                                {typographer(selectedPlanDay.prayer)}
+                              </p>
+                            </>
+                          )}
+
                           <div
                             id={`day-${selectedPlanDay.day}-practice`}
-                            className="grid gap-4 md:grid-cols-2"
+                            className="mt-4 grid gap-4 md:grid-cols-2"
                           >
-                            <p className="vw-small text-secondary">
-                              <strong className="text-gold">NEXT STEP: </strong>
-                              {typographer(selectedPlanDay.nextStep)}
-                            </p>
-                            <p
-                              id={`day-${selectedPlanDay.day}-journal`}
-                              className="vw-small text-secondary"
-                            >
-                              <strong className="text-gold">JOURNAL: </strong>
-                              {typographer(selectedPlanDay.journalPrompt)}
-                            </p>
+                            {selectedPlanDay.nextStep && (
+                              <p className="vw-small text-secondary">
+                                <strong className="text-gold">
+                                  NEXT STEP:{' '}
+                                </strong>
+                                {typographer(selectedPlanDay.nextStep)}
+                              </p>
+                            )}
+                            {selectedPlanDay.journalPrompt && (
+                              <p
+                                id={`day-${selectedPlanDay.day}-journal`}
+                                className="vw-small text-secondary"
+                              >
+                                <strong className="text-gold">JOURNAL: </strong>
+                                {typographer(selectedPlanDay.journalPrompt)}
+                              </p>
+                            )}
                           </div>
                           <div className="mt-4 flex flex-wrap items-center gap-3">
                             <button
@@ -2039,6 +2327,30 @@ export default function SoulAuditResultsPage() {
                               Highlight any line to save a favorite verse.
                             </span>
                           </div>
+                          {selectedPlanDay.compositionReport && (
+                            <div
+                              className="mt-4 border-t pt-3"
+                              style={{ borderColor: 'var(--color-border)' }}
+                            >
+                              <p className="vw-small text-muted">
+                                {
+                                  selectedPlanDay.compositionReport
+                                    .referencePercentage
+                                }
+                                % reference material{' \u00B7 '}
+                                {
+                                  selectedPlanDay.compositionReport
+                                    .generatedPercentage
+                                }
+                                % generated{' \u00B7 '}
+                                {
+                                  selectedPlanDay.compositionReport.sources
+                                    .length
+                                }{' '}
+                                sources
+                              </p>
+                            </div>
+                          )}
                           {(selectedPlanDay.endnotes?.length ?? 0) > 0 && (
                             <div className="mt-5 border-t pt-4">
                               <p className="text-label vw-small mb-2 text-gold">
@@ -2056,6 +2368,56 @@ export default function SoulAuditResultsPage() {
                           )}
                         </article>
                       </>
+                    ) : selectedRailDay &&
+                      (selectedRailDay.generationStatus === 'pending' ||
+                        selectedRailDay.generationStatus === 'generating') ? (
+                      <article
+                        style={{
+                          border: '1px solid var(--color-border)',
+                          padding: '1.5rem',
+                        }}
+                      >
+                        <p className="text-label vw-small mb-2 text-gold">
+                          DAY {selectedRailDay.day} \u00B7 BUILDING
+                        </p>
+                        <h2 className="vw-heading-md mb-2">
+                          Generating your devotional...
+                        </h2>
+                        <div className="space-y-3">
+                          <div
+                            className="h-4 animate-pulse rounded"
+                            style={{
+                              background: 'var(--color-border)',
+                              width: '80%',
+                            }}
+                          />
+                          <div
+                            className="h-4 animate-pulse rounded"
+                            style={{
+                              background: 'var(--color-border)',
+                              width: '65%',
+                            }}
+                          />
+                          <div
+                            className="h-4 animate-pulse rounded"
+                            style={{
+                              background: 'var(--color-border)',
+                              width: '90%',
+                            }}
+                          />
+                        </div>
+                        <p className="vw-small mt-4 text-muted">
+                          Each day is built from reference material and
+                          personalized to your reflection. This can take up to
+                          90 seconds.
+                        </p>
+                        {generationProgress && (
+                          <p className="vw-small mt-2 text-muted">
+                            {generationProgress.completedDays} of{' '}
+                            {generationProgress.totalDays} days complete
+                          </p>
+                        )}
+                      </article>
                     ) : selectedRailDay?.locked ? (
                       <article
                         style={{

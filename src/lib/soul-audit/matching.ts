@@ -270,7 +270,9 @@ function parseFramework(seriesFramework: string): {
   }
 }
 
-function fallbackCandidateForSeries(slug: string): CuratedDayCandidate | null {
+export function fallbackCandidateForSeries(
+  slug: string,
+): CuratedDayCandidate | null {
   const series = SERIES_DATA[slug]
   if (!series) return null
   const dayOne = [...series.days].sort((a, b) => a.day - b.day)[0]
@@ -409,7 +411,7 @@ function chooseSeriesMetadataFallbackPrimary(input: string): Array<{
   }))
 }
 
-function makeOption(params: {
+export function makeOption(params: {
   candidate: CuratedDayCandidate
   kind: AuditOptionKind
   rank: number
@@ -467,7 +469,7 @@ function makeOption(params: {
   }
 }
 
-function getPrefabSlugs(primarySlugs: string[]): string[] {
+export function getPrefabSlugs(primarySlugs: string[]): string[] {
   const countsBySeries = new Map<string, Set<number>>()
   for (const candidate of getCuratedDayCandidates()) {
     if (!countsBySeries.has(candidate.seriesSlug)) {
