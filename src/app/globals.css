@@ -4055,11 +4055,6 @@ html.reduce-motion *::after {
   object-position: center 25%;
 }
 
-/* Dark mode: invert blue woodprint for dark backgrounds */
-.dark .series-card-thumbnail-img {
-  filter: invert(1);
-}
-
 /* Keyword pills */
 .series-card-keywords {
   font-family: var(--font-family-ui);
@@ -4069,6 +4064,14 @@ html.reduce-motion *::after {
   color: var(--mock-muted);
   text-transform: uppercase;
   margin: 0;
+}
+
+.series-card-badge {
+  display: inline-block;
+  font-size: calc(var(--mock-type-0) * 0.85);
+  letter-spacing: 0.06em;
+  color: var(--mock-accent, hsl(38 70% 55%));
+  margin: 0 0 0.15em;
 }
 
 /* ─── End series card thumbnail ────────────────────────────────── */
@@ -5681,11 +5684,6 @@ html.reduce-motion *::after {
   object-position: center 30%;
 }
 
-/* Dark mode: invert blue woodprint for dark backgrounds */
-.dark .devotional-artwork-img {
-  filter: invert(1);
-}
-
 .devotional-artwork figcaption {
   padding: 0.5rem 0 0;
 }
@@ -5868,11 +5866,6 @@ html.reduce-motion *::after {
 
 .lightbox-img {
   object-fit: contain;
-}
-
-/* Dark mode: invert blue woodprint for dark backgrounds */
-.dark .lightbox-img {
-  filter: invert(1);
 }
 
 .lightbox-attribution {

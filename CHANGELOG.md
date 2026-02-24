@@ -5,6 +5,13 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-052 SA-020: Continue Reading rail fix + dark mode image cleanup (2026-02-24)
+
+- **Continue Reading padding**: Single-item Continue Reading rail no longer stretches to full viewport width. Pads to ≥3 items with keyword-matched suggested series. Suggested cards show "SUGGESTED" badge.
+- **Dark mode image inversion removed**: Removed all `filter: invert(1)` dark mode rules from series thumbnails, devotional artwork, and lightbox images. Artwork now renders naturally in both modes.
+
+---
+
 ## F-053 SA-020/21/22: Generative 80/20 RAG Composition Engine (2026-02-23)
 
 ### What Changed

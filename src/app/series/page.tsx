@@ -19,6 +19,49 @@ import {
 type ViewMode = 'rails' | 'grid' | 'list'
 
 /**
+ * Find related series by keyword overlap, excluding already-used slugs.
+ * Returns up to `limit` slugs sorted by descending keyword match score.
+ */
+function getSuggestedSeries(
+  anchorSlugs: string[],
+  excludeSlugs: Set<string>,
+  limit: number,
+): string[] {
+  // Collect all keywords from anchor series
+  const anchorKeywords = new Set<string>()
+  for (const slug of anchorSlugs) {
+    const series = SERIES_DATA[slug]
+    if (series) {
+      for (const kw of series.keywords) anchorKeywords.add(kw.toLowerCase())
+    }
+  }
+  if (anchorKeywords.size === 0) return []
+
+  // Score every candidate by keyword overlap
+  const scored: Array<{ slug: string; score: number }> = []
+  for (const slug of ALL_SERIES_ORDER) {
+    if (excludeSlugs.has(slug)) continue
+    const series = SERIES_DATA[slug]
+    if (!series) continue
+    let score = 0
+    for (const kw of series.keywords) {
+      if (anchorKeywords.has(kw.toLowerCase())) score++
+    }
+    // Bonus: same pathway as any anchor series
+    for (const aSlug of anchorSlugs) {
+      if (SERIES_DATA[aSlug]?.pathway === series.pathway) {
+        score += 0.5
+        break
+      }
+    }
+    if (score > 0) scored.push({ slug, score })
+  }
+
+  scored.sort((a, b) => b.score - a.score)
+  return scored.slice(0, limit).map((s) => s.slug)
+}
+
+/**
  * Series Browse Page — 3-view system
  *
  * Rails (default): Featured rail → Continue Reading → Theme rails → Wake-Up Originals
@@ -65,6 +108,34 @@ export default function SeriesBrowsePage() {
       return p?.inProgress && !p?.completed
     })
   }, [progressMap])
+
+  // Pad Continue Reading to ≥3 items with suggested/related series
+  const { paddedSlugs: continueRailSlugs, badgeSlugs: continueBadges } =
+    useMemo(() => {
+      const MIN_ITEMS = 3
+      if (continueReadingSlugs.length >= MIN_ITEMS) {
+        return {
+          paddedSlugs: continueReadingSlugs,
+          badgeSlugs: new Map<string, string>(),
+        }
+      }
+
+      const excludeSet = new Set(continueReadingSlugs)
+      const needed = MIN_ITEMS - continueReadingSlugs.length
+      const suggested = getSuggestedSeries(
+        continueReadingSlugs,
+        excludeSet,
+        needed,
+      )
+
+      const badges = new Map<string, string>()
+      for (const slug of suggested) badges.set(slug, 'SUGGESTED')
+
+      return {
+        paddedSlugs: [...continueReadingSlugs, ...suggested],
+        badgeSlugs: badges,
+      }
+    }, [continueReadingSlugs])
 
   // Filtered slugs for grid/list views
   const filteredSlugs = useMemo(() => {
@@ -237,15 +308,16 @@ export default function SeriesBrowsePage() {
               cardVariant="large"
             />
 
-            {/* Continue Reading — only if in-progress */}
+            {/* Continue Reading — padded with suggested series to ≥3 items */}
             {continueReadingSlugs.length > 0 && (
               <SeriesRailSection
                 label="Continue Reading"
                 subtitle="Pick up where you left off"
-                slugs={continueReadingSlugs}
+                slugs={continueRailSlugs}
                 layout="rail"
                 progress={progressMap}
                 className="browse-continue-section"
+                badgeSlugs={continueBadges}
               />
             )}
 

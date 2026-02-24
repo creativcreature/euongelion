@@ -18,12 +18,15 @@ interface BrowseSeriesCardProps {
     total?: number
   }
   variant?: CardVariant
+  /** Optional badge label (e.g. "SUGGESTED") shown above card title */
+  badge?: string
 }
 
 export default function BrowseSeriesCard({
   slug,
   progress,
   variant = 'medium',
+  badge,
 }: BrowseSeriesCardProps) {
   const series = SERIES_DATA[slug]
   if (!series) return null
@@ -93,6 +96,9 @@ export default function BrowseSeriesCard({
       {variant === 'large' && (
         <>
           {scriptureBlock}
+          {badge && (
+            <span className="series-card-badge text-label">{badge}</span>
+          )}
           <h3>{series.title}.</h3>
           {thumbnail}
           {keywordPills}
@@ -110,6 +116,9 @@ export default function BrowseSeriesCard({
         <>
           {thumbnail}
           {scriptureBlock}
+          {badge && (
+            <span className="series-card-badge text-label">{badge}</span>
+          )}
           <h3>{series.title}.</h3>
           {keywordPills}
           <div className="mock-featured-actions">
@@ -124,6 +133,9 @@ export default function BrowseSeriesCard({
       {/* Small: Title → Keywords → Action (no image) */}
       {variant === 'small' && (
         <>
+          {badge && (
+            <span className="series-card-badge text-label">{badge}</span>
+          )}
           <h3>{series.title}.</h3>
           {keywordPills}
           <div className="mock-featured-actions">

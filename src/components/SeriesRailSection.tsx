@@ -18,6 +18,8 @@ interface SeriesRailSectionProps {
   >
   className?: string
   cardVariant?: CardVariant
+  /** Map of slug → badge label (e.g. "SUGGESTED") for overlay badges */
+  badgeSlugs?: Map<string, string>
 }
 
 function progressWithTotal(
@@ -41,6 +43,7 @@ export default function SeriesRailSection({
   progress = {},
   className = '',
   cardVariant = 'medium',
+  badgeSlugs,
 }: SeriesRailSectionProps) {
   if (!slugs.length) return null
 
@@ -60,6 +63,7 @@ export default function SeriesRailSection({
                 slug={slug}
                 progress={progressWithTotal(slug, progress)}
                 variant={cardVariant}
+                badge={badgeSlugs?.get(slug)}
               />
             ),
           }))}
