@@ -5,6 +5,14 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit persistence + curation fix (2026-02-24)
+
+- **Persistence fix**: All Soul Audit state (submit response, selection, plan cache, reroll state, last input) moved from `sessionStorage` to `localStorage`. Audits now survive page refresh and tab close.
+- **LLM diagnostics**: Added provider availability logging to submit route and outline generator. Console now clearly reports which providers are available, which strategy is used (generative vs curated), and what the parsed intent looks like.
+- **Fallback curation improvement**: Series metadata fallback now uses semantic hint expansion (same as primary curated ranking) so short inputs like "prayer" or "anxiety" match relevant series instead of returning generic results. Combined series keywords into haystack for broader coverage.
+
+---
+
 ## F-052 SA-020: Devotional image improvements (2026-02-24)
 
 - **Full-color images everywhere**: All preview thumbnails (browse cards, SeriesHero, Soul Audit) switched from print.webp (blue woodprint) to raw.webp (full-color museum photos).

@@ -361,7 +361,12 @@ export async function generatePlanOutlines(
   // Check provider availability
   const availability = providerAvailabilityForUser({ userKeys: undefined })
   const hasProvider = availability.some((entry) => entry.available)
-  if (!hasProvider) return null
+  if (!hasProvider) {
+    console.warn(
+      `[outline-generator] No LLM provider available — skipping generative outlines. Providers: ${availability.map((p) => `${p.provider}=${p.available ? 'ok' : (p as { reason?: string }).reason || 'no key'}`).join(', ')}`,
+    )
+    return null
+  }
 
   // Retrieve reference seeds for grounding the outline
   let referenceSeedText = ''

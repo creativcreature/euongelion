@@ -3,6 +3,7 @@ import { clampScriptureSnippet } from '@/lib/scripture-reference'
 import type { AuditOptionKind, AuditOptionPreview } from '@/types/soul-audit'
 import { PREFAB_FALLBACK_SLUGS, SOUL_AUDIT_OPTION_SPLIT } from './constants'
 import {
+  expandSemanticHints,
   getCuratedDayCandidates,
   rankCandidatesForInput,
   type CuratedDayCandidate,
@@ -378,13 +379,23 @@ function chooseSeriesMetadataFallbackPrimary(input: string): Array<{
   confidence: number
   matched: string[]
 }> {
-  const terms = extractInputThemeTerms(input)
+  // Use semantic hint expansion (same as rankCandidatesForInput) so
+  // short inputs like "prayer" or "anxiety" match relevant series.
+  const expanded = expandSemanticHints(input)
+  const terms = extractInputThemeTerms(expanded)
   const scored = ALL_SERIES_ORDER.map((slug) => {
     const candidate = fallbackCandidateForSeries(slug)
     if (!candidate) return null
 
     const haystack = candidate.searchText
-    const matches = terms.filter((term) => haystack.includes(term)).slice(0, 3)
+    // Also match against series keywords for broader coverage.
+    const seriesKeywords = (SERIES_DATA[slug]?.keywords ?? [])
+      .join(' ')
+      .toLowerCase()
+    const combinedHaystack = `${haystack} ${seriesKeywords}`
+    const matches = terms
+      .filter((term) => combinedHaystack.includes(term))
+      .slice(0, 5)
     const score =
       matches.length * 3 +
       (SERIES_DATA[slug]?.pathway === 'Awake' ? 0.3 : 0) +

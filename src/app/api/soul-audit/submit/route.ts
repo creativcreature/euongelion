@@ -602,9 +602,26 @@ export async function POST(request: NextRequest) {
     const inputGuidance = getLowContextGuidance(effectiveResponseText)
     const optionVariantSeed = createOptionVariantSeed()
 
+    // Log provider availability for debugging curation quality.
+    const providerStatus = providerAvailabilityForUser({ userKeys: undefined })
+    const availableProviders = providerStatus.filter((p) => p.available)
+    const unavailableProviders = providerStatus.filter((p) => !p.available)
+    if (availableProviders.length === 0) {
+      console.warn(
+        `[soul-audit:submit] No LLM providers available. All providers: ${unavailableProviders.map((p) => `${p.provider}=${p.reason || 'no key'}`).join(', ')}. Falling back to deterministic keyword matching.`,
+      )
+    } else {
+      console.info(
+        `[soul-audit:submit] LLM providers available: ${availableProviders.map((p) => `${p.provider}(${p.using})`).join(', ')}`,
+      )
+    }
+
     // Parse intent FIRST so AI-extracted themes influence candidate selection.
     const precomputedIntent = await parseAuditIntentWithBrain(
       effectiveResponseText,
+    )
+    console.info(
+      `[soul-audit:submit] Parsed intent — focus: "${precomputedIntent.reflectionFocus}", themes: [${precomputedIntent.themes.join(', ')}], tone: ${precomputedIntent.tone}`,
     )
 
     // --- Generative outline path (preferred) ---
@@ -621,14 +638,22 @@ export async function POST(request: NextRequest) {
         responseText: effectiveResponseText,
         intent: precomputedIntent,
       })
-    } catch {
-      // Fall through to curated matching
+    } catch (generativeError) {
+      console.warn(
+        `[soul-audit:submit] Generative outline path failed:`,
+        generativeError instanceof Error
+          ? generativeError.message
+          : generativeError,
+      )
     }
 
     if (
       generativeResult &&
       generativeResult.options.length >= SOUL_AUDIT_OPTION_SPLIT.aiPrimary
     ) {
+      console.info(
+        `[soul-audit:submit] Generative path succeeded — ${generativeResult.options.length} outlines generated`,
+      )
       // Generative path: 3 ai_generative + 2 curated_prefab
       const aiOptions = generativeResult.options.slice(
         0,
@@ -660,11 +685,17 @@ export async function POST(request: NextRequest) {
       )
       submissionStrategy = 'generative_outlines'
     } else {
+      console.info(
+        `[soul-audit:submit] Using curated matching fallback (generative ${generativeResult ? 'returned insufficient options' : 'returned null/failed'})`,
+      )
       // Fallback: curated matching (existing path)
       options = buildAuditOptions(effectiveResponseText, optionVariantSeed, [
         ...precomputedIntent.themes,
         ...precomputedIntent.intentTags,
       ])
+      console.info(
+        `[soul-audit:submit] Curated matching produced ${options.length} options: [${options.map((o) => `${o.kind}:${o.slug}`).join(', ')}]`,
+      )
     }
 
     if (!hasExpectedOptionSplit(options)) {
