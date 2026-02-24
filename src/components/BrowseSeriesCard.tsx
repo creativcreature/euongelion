@@ -4,8 +4,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { SERIES_DATA } from '@/data/series'
 import { SERIES_HERO } from '@/data/artwork-manifest'
-import { scriptureLeadPartsFromFramework } from '@/lib/scripture-reference'
+import {
+  scriptureLeadPartsFromFramework,
+  clampScriptureSnippet,
+} from '@/lib/scripture-reference'
 import { typographer } from '@/lib/typographer'
+
+/** Max snippet length for card scripture preview (~2 visual lines) */
+const CARD_SNIPPET_MAX = 220
 
 export type CardVariant = 'large' | 'medium' | 'small'
 
@@ -33,7 +39,17 @@ export default function BrowseSeriesCard({
 
   const hero = variant !== 'small' ? SERIES_HERO[slug] : undefined
   const dayCount = series.days.length
-  const scripture = scriptureLeadPartsFromFramework(series.framework)
+  const scripture = scriptureLeadPartsFromFramework(series.framework, {
+    maxSnippetLength: CARD_SNIPPET_MAX,
+  })
+  // Build a 2-line preview: scripture snippet + series question (with ellipsis)
+  const scripturePreviewText = (() => {
+    const parts: string[] = []
+    if (scripture.snippet) parts.push(scripture.snippet)
+    if (series.question) parts.push(series.question)
+    const joined = parts.join(' ')
+    return joined ? clampScriptureSnippet(joined, CARD_SNIPPET_MAX) : ''
+  })()
   const keywords = (series.keywords ?? []).slice(0, 3)
 
   // Progress bar: percentage of days completed
@@ -73,9 +89,9 @@ export default function BrowseSeriesCard({
       <p className="mock-scripture-lead-reference">
         {typographer(scripture.reference || 'Scripture')}
       </p>
-      {scripture.snippet && (
+      {scripturePreviewText && (
         <p className="mock-scripture-lead-snippet">
-          {typographer(scripture.snippet)}
+          {typographer(scripturePreviewText)}
         </p>
       )}
     </div>
@@ -92,16 +108,16 @@ export default function BrowseSeriesCard({
       data-variant={variant}
       aria-label={`${series.title}: ${series.question}`}
     >
-      {/* Large: Ref → Title → Image → Keywords → Action */}
+      {/* Large: Badge → Title → Keywords → Image → Scripture → Action */}
       {variant === 'large' && (
         <>
-          {scriptureBlock}
           {badge && (
             <span className="series-card-badge text-label">{badge}</span>
           )}
           <h3>{series.title}.</h3>
-          {thumbnail}
           {keywordPills}
+          {thumbnail}
+          {scriptureBlock}
           <div className="mock-featured-actions">
             <span className="mock-series-start text-label">{actionLabel}</span>
             <span className="mock-featured-days text-label">
@@ -111,16 +127,16 @@ export default function BrowseSeriesCard({
         </>
       )}
 
-      {/* Medium: Image → Ref → Title → Keywords → Action */}
+      {/* Medium: Badge → Title → Keywords → Image → Scripture → Action */}
       {variant === 'medium' && (
         <>
-          {thumbnail}
-          {scriptureBlock}
           {badge && (
             <span className="series-card-badge text-label">{badge}</span>
           )}
           <h3>{series.title}.</h3>
           {keywordPills}
+          {thumbnail}
+          {scriptureBlock}
           <div className="mock-featured-actions">
             <span className="mock-series-start text-label">{actionLabel}</span>
             <span className="mock-featured-days text-label">
@@ -130,7 +146,7 @@ export default function BrowseSeriesCard({
         </>
       )}
 
-      {/* Small: Title → Keywords → Action (no image) */}
+      {/* Small: Badge → Title → Keywords → Action (no image) */}
       {variant === 'small' && (
         <>
           {badge && (

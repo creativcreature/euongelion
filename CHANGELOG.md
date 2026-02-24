@@ -9,6 +9,8 @@ Format: Reverse chronological, grouped by sprint/date.
 
 - **Continue Reading padding**: Single-item Continue Reading rail no longer stretches to full viewport width. Pads to ≥3 items with keyword-matched suggested series. Suggested cards show "SUGGESTED" badge.
 - **Dark mode image inversion removed**: Removed all `filter: invert(1)` dark mode rules from series thumbnails, devotional artwork, and lightbox images. Artwork now renders naturally in both modes.
+- **Card layout reorder**: Card info order changed to Title → Keywords → Image → Scripture → Action (all variants).
+- **Scripture preview expanded**: 2-line clamped preview (~220 chars) combining framework snippet + series question with ellipsis.
 
 ---
 

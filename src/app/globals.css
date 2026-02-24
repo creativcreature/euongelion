@@ -4148,6 +4148,10 @@ html.reduce-motion *::after {
   color: var(--mock-ink) !important;
   font-size: clamp(1.18rem, 1.12vw, 1.36rem) !important;
   line-height: 1.22 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .mock-featured-day {
