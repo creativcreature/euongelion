@@ -4617,6 +4617,14 @@ html.reduce-motion *::after {
   gap: 0.62rem;
 }
 
+.mock-series-meta-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-bottom: var(--mock-stroke) solid var(--mock-line);
+}
+
 .mock-series-progress-head {
   display: flex;
   align-items: baseline;
@@ -5675,16 +5683,18 @@ html.reduce-motion *::after {
    ═══════════════════════════════════════════════════════════════════ */
 
 .devotional-artwork {
-  margin: 0;
+  max-width: 85%;
+  margin: 1.5rem auto;
   padding: 0;
 }
 
 .devotional-artwork-frame {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   cursor: pointer;
   border: 1px solid var(--color-border);
+  border-radius: 2px;
   transition: transform 0.2s ease;
 }
 
@@ -5699,16 +5709,26 @@ html.reduce-motion *::after {
 
 .devotional-artwork-img {
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 25%;
 }
 
 .devotional-artwork figcaption {
-  padding: 0.5rem 0 0;
+  padding: 0.6rem 0 0;
+}
+
+@media (max-width: 767px) {
+  .devotional-artwork {
+    max-width: 92%;
+  }
 }
 
 /* ─── Artwork Attribution ───────────────────────────────────────── */
 
 .artwork-attribution-compact {
+  margin: 0;
+}
+
+.artwork-attribution-compact-line {
   margin: 0;
   font-family: var(--font-family-ui);
   font-size: clamp(0.72rem, 0.3vw + 0.68rem, 0.82rem);
@@ -5719,6 +5739,15 @@ html.reduce-motion *::after {
 
 .artwork-attribution-title {
   font-style: italic;
+}
+
+.artwork-attribution-relevance-inline {
+  margin: 0.25rem 0 0;
+  font-family: var(--font-family-serif);
+  font-style: italic;
+  font-size: clamp(0.78rem, 0.25vw + 0.72rem, 0.88rem);
+  line-height: 1.4;
+  color: var(--color-text-secondary);
 }
 
 .artwork-attribution-full {

@@ -1747,7 +1747,7 @@ export default function SoulAuditResultsPage() {
                                     aria-hidden="true"
                                   >
                                     <Image
-                                      src={hero.src}
+                                      src={hero.rawSrc}
                                       alt=""
                                       width={600}
                                       height={450}

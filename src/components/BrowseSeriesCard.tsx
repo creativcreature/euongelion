@@ -73,7 +73,7 @@ export default function BrowseSeriesCard({
   const thumbnail = hero && (
     <div className="series-card-thumbnail" aria-hidden="true">
       <Image
-        src={hero.src}
+        src={hero.rawSrc}
         alt=""
         width={600}
         height={450}

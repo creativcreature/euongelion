@@ -27,7 +27,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'etching',
     src: '/images/devotional-prints/campi-still-life-vine/print.webp',
     rawSrc: '/images/devotional-prints/campi-still-life-vine/raw.webp',
-    relevance: '',
+    relevance:
+      'Campi\u2019s ripe vine and heavy fruit hold the quiet gravity of remaining where life flows.',
   },
   anointed: {
     slug: 'rembrandt-samuel-anointing-david',
@@ -41,7 +42,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     src: '/images/devotional-prints/rembrandt-samuel-anointing-david/print.webp',
     rawSrc:
       '/images/devotional-prints/rembrandt-samuel-anointing-david/raw.webp',
-    relevance: '',
+    relevance:
+      'Rembrandt catches the oil mid-descent\u2009\u2014\u2009the moment before a shepherd becomes a king.',
   },
   'coming-to-the-end-of-ourselves': {
     slug: 'courbet-desperate-man-end',
@@ -54,7 +56,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/courbet-desperate-man-end/print.webp',
     rawSrc: '/images/devotional-prints/courbet-desperate-man-end/raw.webp',
-    relevance: '',
+    relevance:
+      'Courbet stares back at himself with the look of a man who has run out of answers.',
   },
   community: {
     slug: 'brown-work',
@@ -67,7 +70,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'woodcut',
     src: '/images/devotional-prints/brown-work/print.webp',
     rawSrc: '/images/devotional-prints/brown-work/raw.webp',
-    relevance: '',
+    relevance:
+      'Brown paints labor as communion — every figure bound to the others by shared work.',
   },
   'genesis-two-stories-of-creation': {
     slug: 'raphael-god-father-school',
@@ -80,7 +84,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'etching',
     src: '/images/devotional-prints/raphael-god-father-school/print.webp',
     rawSrc: '/images/devotional-prints/raphael-god-father-school/raw.webp',
-    relevance: '',
+    relevance:
+      'Raphael’s God hovers with paternal calm over a world still taking shape beneath him.',
   },
   'hearing-god-in-the-noise': {
     slug: 'bosch-garden-hell-panel',
@@ -93,7 +98,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bosch-garden-hell-panel/print.webp',
     rawSrc: '/images/devotional-prints/bosch-garden-hell-panel/raw.webp',
-    relevance: '',
+    relevance:
+      'Bosch renders distraction as damnation — a soundscape you have to escape to hear anything true.',
   },
   hope: {
     slug: 'grunewald-resurrection-isenheim',
@@ -107,7 +113,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     src: '/images/devotional-prints/grunewald-resurrection-isenheim/print.webp',
     rawSrc:
       '/images/devotional-prints/grunewald-resurrection-isenheim/raw.webp',
-    relevance: '',
+    relevance:
+      'Grünewald’s risen Christ tears through darkness with a body that still carries its wounds.',
   },
   identity: {
     slug: 'courbet-the-desperate-man',
@@ -120,7 +127,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/courbet-the-desperate-man/print.webp',
     rawSrc: '/images/devotional-prints/courbet-the-desperate-man/raw.webp',
-    relevance: '',
+    relevance:
+      'Courbet’s wild-eyed self-portrait asks the question every identity crisis begins with: who is this?',
   },
   'in-the-beginning-week-1': {
     slug: 'tintoretto-creation-animals',
@@ -133,7 +141,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/tintoretto-creation-animals/print.webp',
     rawSrc: '/images/devotional-prints/tintoretto-creation-animals/raw.webp',
-    relevance: '',
+    relevance:
+      'Tintoretto’s God flings creatures into being with the urgency of a first week.',
   },
   kingdom: {
     slug: 'bosch-the-conjurer',
@@ -146,7 +155,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bosch-the-conjurer/print.webp',
     rawSrc: '/images/devotional-prints/bosch-the-conjurer/raw.webp',
-    relevance: '',
+    relevance:
+      'Bosch’s conjurer inverts expectation — the crowd watches the trick while missing the theft.',
   },
   'once-saved-always-saved': {
     slug: 'brueghel-garden-eden-young',
@@ -159,7 +169,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'etching',
     src: '/images/devotional-prints/brueghel-garden-eden-young/print.webp',
     rawSrc: '/images/devotional-prints/brueghel-garden-eden-young/raw.webp',
-    relevance: '',
+    relevance:
+      'Brueghel’s Eden is lush and undisturbed, the way assurance feels before the question arrives.',
   },
   peace: {
     slug: 'vermeer-woman-reading-letter',
@@ -172,7 +183,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'etching',
     src: '/images/devotional-prints/vermeer-woman-reading-letter/print.webp',
     rawSrc: '/images/devotional-prints/vermeer-woman-reading-letter/raw.webp',
-    relevance: '',
+    relevance:
+      'Vermeer’s reader stands in borrowed light, absorbed in a stillness the room seems to protect.',
   },
   'present-in-the-chaos': {
     slug: 'bruegel-carnival-lent',
@@ -185,7 +197,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bruegel-carnival-lent/print.webp',
     rawSrc: '/images/devotional-prints/bruegel-carnival-lent/raw.webp',
-    relevance: '',
+    relevance:
+      'Bruegel’s carnival collides with Lent — God hides somewhere between the revelry and the fast.',
   },
   provision: {
     slug: 'tissot-gathering-manna',
@@ -198,7 +211,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-gathering-manna/print.webp',
     rawSrc: '/images/devotional-prints/tissot-gathering-manna/raw.webp',
-    relevance: '',
+    relevance:
+      'Tissot’s figures reach for bread that appeared from nowhere, palms open and unashamed.',
   },
   rooted: {
     slug: 'aivazovsky-ninth-wave-rooted',
@@ -211,7 +225,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/print.webp',
     rawSrc: '/images/devotional-prints/aivazovsky-ninth-wave-rooted/raw.webp',
-    relevance: '',
+    relevance:
+      'Aivazovsky’s survivors cling to wreckage while dawn insists the storm is not the final word.',
   },
   'signs-boldness-opposition-integrity': {
     slug: 'raphael-paul-preaching-athens',
@@ -224,7 +239,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'woodcut',
     src: '/images/devotional-prints/raphael-paul-preaching-athens/print.webp',
     rawSrc: '/images/devotional-prints/raphael-paul-preaching-athens/raw.webp',
-    relevance: '',
+    relevance:
+      'Raphael’s Paul speaks to marble philosophers who are not yet sure they want to listen.',
   },
   'standing-strong': {
     slug: 'caravaggio-incredulity-thomas',
@@ -237,7 +253,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/caravaggio-incredulity-thomas/print.webp',
     rawSrc: '/images/devotional-prints/caravaggio-incredulity-thomas/raw.webp',
-    relevance: '',
+    relevance:
+      'Caravaggio lets Thomas push his finger into the wound — faith earned through honest doubt.',
   },
   'surrender-to-gods-will': {
     slug: 'mantegna-agony-in-garden',
@@ -250,7 +267,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'etching',
     src: '/images/devotional-prints/mantegna-agony-in-garden/print.webp',
     rawSrc: '/images/devotional-prints/mantegna-agony-in-garden/raw.webp',
-    relevance: '',
+    relevance:
+      'Mantegna’s Christ kneels on stone that is harder than any prayer he has ever prayed.',
   },
   'the-blueprint-of-community': {
     slug: 'duccio-pentecost-1308',
@@ -263,7 +281,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'woodcut',
     src: '/images/devotional-prints/duccio-pentecost-1308/print.webp',
     rawSrc: '/images/devotional-prints/duccio-pentecost-1308/raw.webp',
-    relevance: '',
+    relevance:
+      'Duccio’s upper room glows with a fire that turns a scattered group into a body.',
   },
   'the-nature-of-belief': {
     slug: 'angelico-annunciation-draw-near',
@@ -277,7 +296,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     src: '/images/devotional-prints/angelico-annunciation-draw-near/print.webp',
     rawSrc:
       '/images/devotional-prints/angelico-annunciation-draw-near/raw.webp',
-    relevance: '',
+    relevance:
+      'Fra Angelico paints belief as a woman who does not flinch when the impossible speaks.',
   },
   'the-word-before-words': {
     slug: 'cole-voyage-life-childhood',
@@ -290,7 +310,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'etching',
     src: '/images/devotional-prints/cole-voyage-life-childhood/print.webp',
     rawSrc: '/images/devotional-prints/cole-voyage-life-childhood/raw.webp',
-    relevance: '',
+    relevance:
+      'Cole’s infant drifts from a cave into golden light — a word before language, a life before story.',
   },
   'the-work-of-god': {
     slug: 'rembrandt-supper-emmaus',
@@ -303,7 +324,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-supper-emmaus/print.webp',
     rawSrc: '/images/devotional-prints/rembrandt-supper-emmaus/raw.webp',
-    relevance: '',
+    relevance:
+      'Rembrandt seats the stranger at a common table and lets the bread do the revealing.',
   },
   'too-busy-for-god': {
     slug: 'steen-rhetoricians-window',
@@ -316,7 +338,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'woodcut',
     src: '/images/devotional-prints/steen-rhetoricians-window/print.webp',
     rawSrc: '/images/devotional-prints/steen-rhetoricians-window/raw.webp',
-    relevance: '',
+    relevance:
+      'Steen’s window-leaners perform for each other while the hours pass uncounted and unprayed.',
   },
   truth: {
     slug: 'bruegel-tower-babel',
@@ -329,7 +352,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'woodcut',
     src: '/images/devotional-prints/bruegel-tower-babel/print.webp',
     rawSrc: '/images/devotional-prints/bruegel-tower-babel/raw.webp',
-    relevance: '',
+    relevance:
+      'Bruegel stacks the tower higher while its builders lose the ability to understand one another.',
   },
   valued: {
     slug: 'durer-self-portrait-imago-dei',
@@ -342,7 +366,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'etching',
     src: '/images/devotional-prints/durer-self-portrait-imago-dei/print.webp',
     rawSrc: '/images/devotional-prints/durer-self-portrait-imago-dei/raw.webp',
-    relevance: '',
+    relevance:
+      'Dürer paints himself with the gravity of someone who knows he bears a likeness not his own.',
   },
   'what-does-it-mean-to-believe': {
     slug: 'rembrandt-thomas-apostle',
@@ -355,7 +380,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/rembrandt-thomas-apostle/print.webp',
     rawSrc: '/images/devotional-prints/rembrandt-thomas-apostle/raw.webp',
-    relevance: '',
+    relevance:
+      'Rembrandt’s Thomas carries the face of a man who needs to touch what he cannot yet trust.',
   },
   'what-happens-when-you-repeatedly-sin': {
     slug: 'moreau-salome-dancing',
@@ -368,7 +394,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/moreau-salome-dancing/print.webp',
     rawSrc: '/images/devotional-prints/moreau-salome-dancing/raw.webp',
-    relevance: '',
+    relevance:
+      'Moreau’s Salomé dances in gold — repetition has made the grotesque look beautiful to Herod.',
   },
   'what-is-carrying-a-cross': {
     slug: 'rembrandt-christ-cross-etching',
@@ -381,7 +408,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'etching',
     src: '/images/devotional-prints/rembrandt-christ-cross-etching/print.webp',
     rawSrc: '/images/devotional-prints/rembrandt-christ-cross-etching/raw.webp',
-    relevance: '',
+    relevance:
+      'Rembrandt’s crossbeam presses down on shoulders that chose not to set it down.',
   },
   'what-is-christianity': {
     slug: 'goya-sleep-reason-monsters',
@@ -394,7 +422,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'mezzotint',
     src: '/images/devotional-prints/goya-sleep-reason-monsters/print.webp',
     rawSrc: '/images/devotional-prints/goya-sleep-reason-monsters/raw.webp',
-    relevance: '',
+    relevance:
+      'Goya warns that when reason sleeps, what rises is not freedom but monsters.',
   },
   'what-is-the-gospel': {
     slug: 'tissot-saint-john-baptist',
@@ -407,7 +436,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'etching',
     src: '/images/devotional-prints/tissot-saint-john-baptist/print.webp',
     rawSrc: '/images/devotional-prints/tissot-saint-john-baptist/raw.webp',
-    relevance: '',
+    relevance:
+      'Tissot’s Baptist stands at the river where announcement becomes invitation.',
   },
   'why-jesus': {
     slug: 'botticelli-mystical-nativity',
@@ -420,7 +450,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'etching',
     src: '/images/devotional-prints/botticelli-mystical-nativity/print.webp',
     rawSrc: '/images/devotional-prints/botticelli-mystical-nativity/raw.webp',
-    relevance: '',
+    relevance:
+      'Botticelli’s nativity breaks heaven open — angels dance because something irreversible has begun.',
   },
   'witness-under-pressure-expansion': {
     slug: 'rembrandt-stoning-stephen-1625',
@@ -433,7 +464,8 @@ export const SERIES_HERO: Record<string, ArtworkEntry> = {
     printStyle: 'woodcut',
     src: '/images/devotional-prints/rembrandt-stoning-stephen-1625/print.webp',
     rawSrc: '/images/devotional-prints/rembrandt-stoning-stephen-1625/raw.webp',
-    relevance: '',
+    relevance:
+      'Rembrandt’s stones are mid-air — Stephen looks up while the crowd refuses to.',
   },
 }
 

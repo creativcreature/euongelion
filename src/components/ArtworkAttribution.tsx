@@ -19,25 +19,34 @@ export default function ArtworkAttribution({
 }: ArtworkAttributionProps) {
   if (variant === 'compact') {
     return (
-      <p
+      <div
         className={`artwork-attribution artwork-attribution-compact ${className}`}
       >
-        <span className="artwork-attribution-title">
-          &ldquo;{artwork.title}&rdquo;
-        </span>
-        {artwork.artist && artwork.artist !== 'Unknown' && (
-          <>
-            {' '}
-            &mdash;{' '}
-            <span className="artwork-attribution-artist">{artwork.artist}</span>
-          </>
+        <p className="artwork-attribution-compact-line">
+          <span className="artwork-attribution-title">
+            &ldquo;{artwork.title}&rdquo;
+          </span>
+          {artwork.artist && artwork.artist !== 'Unknown' && (
+            <>
+              {' '}
+              &mdash;{' '}
+              <span className="artwork-attribution-artist">
+                {artwork.artist}
+              </span>
+            </>
+          )}
+          {artwork.year && (
+            <>
+              , <span className="artwork-attribution-year">{artwork.year}</span>
+            </>
+          )}
+        </p>
+        {artwork.relevance && (
+          <p className="artwork-attribution-relevance-inline">
+            {artwork.relevance}
+          </p>
         )}
-        {artwork.year && (
-          <>
-            , <span className="artwork-attribution-year">{artwork.year}</span>
-          </>
-        )}
-      </p>
+      </div>
     )
   }
 

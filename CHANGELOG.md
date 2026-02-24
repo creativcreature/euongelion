@@ -5,6 +5,15 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-052 SA-020: Devotional image improvements (2026-02-24)
+
+- **Full-color images everywhere**: All preview thumbnails (browse cards, SeriesHero, Soul Audit) switched from print.webp (blue woodprint) to raw.webp (full-color museum photos).
+- **Contained devotional artwork**: Inline artwork inset to 85% width (92% mobile) with 3:2 cinematic aspect ratio, replacing full-bleed 4:3.
+- **Artwork relevance text**: Compact attribution now shows why each artwork was chosen. 32 SERIES_HERO entries populated with literary relevance descriptions.
+- **Series detail hero image**: Individual series pages now show the hero image in the meta sidebar, matching the browse card.
+
+---
+
 ## F-052 SA-020: Card alignment + raw image optimization (2026-02-24)
 
 - **Card image alignment**: Title fixed to 2-line height, keywords fixed to single-line height — thumbnail images now align consistently across cards in a rail regardless of text length.

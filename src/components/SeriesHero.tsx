@@ -116,10 +116,10 @@ export default function SeriesHero({
       className={`relative w-full overflow-hidden ${SIZE_CLASSES[size]} ${className}`}
       style={{ background: gradient.bg }}
     >
-      {/* Real image if available — blue woodprint from manifest */}
+      {/* Real image if available — full-color from manifest */}
       {heroImage && manifestHero && !series?.heroImage ? (
         <Image
-          src={manifestHero.src}
+          src={manifestHero.rawSrc}
           alt={series?.title || ''}
           fill
           className="object-cover series-card-thumbnail-img"

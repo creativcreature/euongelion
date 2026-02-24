@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -7,6 +8,7 @@ import ShareButton from '@/components/ShareButton'
 import SiteFooter from '@/components/SiteFooter'
 import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
+import { SERIES_HERO } from '@/data/artwork-manifest'
 import type { SeriesInfo } from '@/data/series'
 import type { DayScriptureByDayNumber } from '@/lib/soul-audit/series-day-scripture'
 
@@ -24,6 +26,7 @@ export default function SeriesPageClient({
   const { isRead, getSeriesProgress, canRead } = useProgress()
   const seriesProgress = getSeriesProgress(slug)
   const dayCount = series.days.length
+  const hero = SERIES_HERO[slug]
   const isWake = silo === 'wake'
   const brandWord = isWake ? 'WAKE UP' : 'EUANGELION'
   const headerTone = isWake ? 'wake' : 'default'
@@ -58,6 +61,19 @@ export default function SeriesPageClient({
           </article>
 
           <aside className="mock-panel mock-series-meta">
+            {hero && (
+              <div className="mock-series-meta-hero">
+                <Image
+                  src={hero.rawSrc}
+                  alt={`${hero.title} by ${hero.artist}`}
+                  width={600}
+                  height={450}
+                  className="series-card-thumbnail-img"
+                  loading="eager"
+                  sizes="(max-width: 767px) 100vw, 38vw"
+                />
+              </div>
+            )}
             <p className="text-label mock-kicker">
               {series.title.toUpperCase()}
             </p>
