@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
@@ -69,6 +69,23 @@ const SAVED_OPTIONS_KEY = 'soul-audit-saved-options-v1'
 const LAST_AUDIT_INPUT_SESSION_KEY = 'soul-audit-last-input'
 const REROLL_USED_SESSION_KEY = 'soul-audit-reroll-used'
 const GUEST_SIGNUP_GATE_KEY = 'soul-audit-guest-signup-gate-v1'
+
+// Cascade generation constants
+const CASCADE_MAX_RETRIES = 2
+const CASCADE_RETRY_DELAY_MS = 2000
+const CASCADE_REQUEST_TIMEOUT_MS = 60_000
+const CASCADE_MAX_ALREADY_GENERATING = 12
+const CASCADE_MAX_CONSECUTIVE_FAILURES = 4
+const CASCADE_STATUS_CHECK_TIMEOUT_MS = 10_000
+
+/** Response shape from POST /api/soul-audit/generate-next */
+interface GenerateNextPayload {
+  generatedDay?: CustomPlanDay
+  nextPendingDay?: number | null
+  status?: 'complete' | 'partial' | 'already_generating'
+  totalDays?: number
+  completedDays?: number
+}
 const LEGACY_BURDEN_FRAMING_PATTERN =
   /\b(you named this burden|because you named)\b/i
 const LEGACY_FRAGMENT_TITLE_PATTERN = /^want learn\b/i
@@ -507,10 +524,14 @@ export default function SoulAuditResultsPage() {
   const rerollsRemaining = rerollUsed ? 0 : 1
 
   const loadGenerativePlanStatus = useCallback(
-    async (token: string): Promise<GenerationStatusResponse | null> => {
+    async (
+      token: string,
+      signal?: AbortSignal,
+    ): Promise<GenerationStatusResponse | null> => {
       try {
         const response = await fetch(
           `/api/soul-audit/generation-status?planToken=${encodeURIComponent(token)}`,
+          signal ? { signal } : undefined,
         )
         if (!response.ok) return null
         return (await response.json()) as GenerationStatusResponse
@@ -627,20 +648,100 @@ export default function SoulAuditResultsPage() {
     }
   }, [isGenerativePlan, loadGenerativePlanStatus, loadPlan, planToken])
 
-  // Cascading generation for generative plans: generates Days 2-7 in background
+  // Ref-stable cascade generation for generative plans: generates Days 2-7.
+  // Uses ref for cancellation so React effect cleanup on re-renders doesn't
+  // kill the generation loop. Includes retry + skip on persistent failure.
+  const cascadeStartedRef = useRef(false)
+  const cascadeCancelledRef = useRef(false)
+
   useEffect(() => {
     if (!planToken || !isGenerativePlan) return
-    // If selection indicates all days are already complete, skip
     if (selection?.generationStatus === 'complete') return
+    if (cascadeStartedRef.current) return
 
-    // Capture for closure safety — early return above guarantees non-null
+    cascadeStartedRef.current = true
+    cascadeCancelledRef.current = false
     const token = planToken
-    let cancelled = false
+    // Effect-level controller: aborted on cleanup to cancel all in-flight
+    // fetches when the component unmounts or deps change.
+    const effectController = new AbortController()
+    const effectSignal = effectController.signal
+
+    async function generateOneDay(): Promise<{
+      generatedDay?: CustomPlanDay
+      nextPendingDay?: number | null
+      status?: string
+      done: boolean
+    }> {
+      // Per-request controller for the 60s timeout. Separate from the
+      // effect-level controller so a single timeout doesn't kill the
+      // entire cascade. Effect cleanup aborts the effect controller which
+      // the cascadeCancelledRef check handles.
+      const reqController = new AbortController()
+      const timeoutId = setTimeout(
+        () => reqController.abort(),
+        CASCADE_REQUEST_TIMEOUT_MS,
+      )
+      // If the effect is cleaned up, also abort this request.
+      const onEffectAbort = () => reqController.abort()
+      effectSignal.addEventListener('abort', onEffectAbort, { once: true })
+
+      try {
+        const genRes = await fetch('/api/soul-audit/generate-next', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ planToken: token }),
+          signal: reqController.signal,
+        })
+        clearTimeout(timeoutId)
+        effectSignal.removeEventListener('abort', onEffectAbort)
+
+        if (!genRes.ok) {
+          return { done: false }
+        }
+
+        const payload = (await genRes.json()) as GenerateNextPayload
+
+        if (payload.status === 'complete' || payload.status === 'already_generating') {
+          return { ...payload, done: payload.status === 'complete' }
+        }
+
+        return { ...payload, done: payload.nextPendingDay === null }
+      } catch {
+        clearTimeout(timeoutId)
+        effectSignal.removeEventListener('abort', onEffectAbort)
+        if (effectSignal.aborted) return { done: true }
+        // After timeout, the server-side request may still complete.
+        // Check status with its own timeout to avoid unbounded hang.
+        try {
+          const statusController = new AbortController()
+          const statusTimeout = setTimeout(
+            () => statusController.abort(),
+            CASCADE_STATUS_CHECK_TIMEOUT_MS,
+          )
+          const onAbort = () => statusController.abort()
+          effectSignal.addEventListener('abort', onAbort, { once: true })
+          try {
+            const status = await loadGenerativePlanStatus(
+              token,
+              statusController.signal,
+            )
+            if (status?.status === 'complete') return { done: true }
+          } finally {
+            clearTimeout(statusTimeout)
+            effectSignal.removeEventListener('abort', onAbort)
+          }
+        } catch {
+          // Status check failed too — treat as generic failure
+        }
+        return { done: false }
+      }
+    }
 
     async function cascadeGeneration() {
       // Initial status check
-      const initialStatus = await loadGenerativePlanStatus(token)
-      if (cancelled || !initialStatus) return
+      const initialStatus = await loadGenerativePlanStatus(token, effectSignal)
+      if (cascadeCancelledRef.current || !initialStatus) return
       setGenerationProgress(initialStatus)
       if (
         initialStatus.status === 'complete' ||
@@ -649,67 +750,120 @@ export default function SoulAuditResultsPage() {
         return
       }
 
-      // Keep generating pending days
-      while (!cancelled) {
-        const genRes = await fetch('/api/soul-audit/generate-next', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ planToken }),
-        })
+      let consecutiveFailures = 0
+      let alreadyGeneratingCount = 0
 
-        if (cancelled) break
-        if (!genRes.ok) {
-          // Check if we are done or hit an error
-          const status = await loadGenerativePlanStatus(token)
-          if (status) setGenerationProgress(status)
-          break
+      while (!cascadeCancelledRef.current) {
+        let succeeded = false
+
+        for (let attempt = 0; attempt <= CASCADE_MAX_RETRIES; attempt++) {
+          if (cascadeCancelledRef.current) return
+
+          const result = await generateOneDay()
+          if (cascadeCancelledRef.current) return
+
+          if (result.generatedDay && isFullPlanDay(result.generatedDay)) {
+            const newDay = result.generatedDay
+            setPlanDays((prev) => {
+              const existing = prev.filter((d) => d.day !== newDay.day)
+              return [...existing, newDay].sort(
+                (a, b) => a.day - b.day,
+              )
+            })
+            // Persist outside the state updater — updater functions must be pure.
+            // We rebuild the merged array here since we can't read state synchronously.
+            const cached = loadPlanDays(token)
+            const merged = [
+              ...cached.filter((d) => d.day !== newDay.day),
+              newDay,
+            ].sort((a, b) => a.day - b.day)
+            persistPlanDays(token, merged)
+            succeeded = true
+            consecutiveFailures = 0
+            // Note: alreadyGeneratingCount is NOT reset on success — it tracks
+            // total "stuck lock" signals across the entire cascade to prevent
+            // unbounded polling if the lock repeatedly cycles.
+          }
+
+          if (result.done) {
+            // All days generated
+            const finalStatus = await loadGenerativePlanStatus(token, effectSignal)
+            if (finalStatus) setGenerationProgress(finalStatus)
+            return
+          }
+
+          if (result.status === 'already_generating') {
+            alreadyGeneratingCount++
+            if (alreadyGeneratingCount >= CASCADE_MAX_ALREADY_GENERATING) {
+              // Server lock appears stuck — stop polling
+              break
+            }
+            // Another request is handling it — wait and poll again
+            await new Promise((r) => setTimeout(r, CASCADE_RETRY_DELAY_MS))
+            consecutiveFailures = 0
+            succeeded = true
+            break
+          }
+
+          if (succeeded) break
+
+          // Failed — retry with backoff
+          if (attempt < CASCADE_MAX_RETRIES) {
+            await new Promise((r) =>
+              setTimeout(r, CASCADE_RETRY_DELAY_MS * (attempt + 1)),
+            )
+          }
         }
 
-        const genPayload = (await genRes.json()) as {
-          generatedDay?: CustomPlanDay
-          nextPendingDay?: number | null
-          status?: string
-        }
-        if (cancelled) break
+        if (alreadyGeneratingCount >= CASCADE_MAX_ALREADY_GENERATING) break
 
-        // Add the newly generated day to planDays state
-        if (genPayload.generatedDay && isFullPlanDay(genPayload.generatedDay)) {
-          const newDay = genPayload.generatedDay
-          setPlanDays((prev) => {
-            const existing = prev.filter((d) => d.day !== newDay.day)
-            const updated = [...existing, newDay].sort((a, b) => a.day - b.day)
-            persistPlanDays(token, updated)
-            return updated
-          })
+        if (!succeeded) {
+          consecutiveFailures++
+          if (consecutiveFailures >= CASCADE_MAX_CONSECUTIVE_FAILURES) {
+            // Too many failures in a row — stop but don't crash
+            break
+          }
+          // Wait before next attempt
+          await new Promise((r) => setTimeout(r, CASCADE_RETRY_DELAY_MS))
         }
 
-        // Poll status to update progress
-        const status = await loadGenerativePlanStatus(token)
-        if (cancelled) break
+        // Update progress
+        const status = await loadGenerativePlanStatus(token, effectSignal)
+        if (cascadeCancelledRef.current) return
         if (status) {
           setGenerationProgress(status)
           if (
             status.status === 'complete' ||
             status.status === 'partial_failure'
           ) {
-            break
+            return
           }
         }
+      }
 
-        if (genPayload.nextPendingDay === null) break
+      // Cascade stopped due to failure circuit-breakers — surface to user.
+      if (!cascadeCancelledRef.current) {
+        const finalStatus = await loadGenerativePlanStatus(token, effectSignal)
+        if (finalStatus) setGenerationProgress(finalStatus)
+        if (
+          !finalStatus ||
+          (finalStatus.status !== 'complete' &&
+            finalStatus.status !== 'partial_failure')
+        ) {
+          setError(
+            'Some devotional days could not be generated. You can read the days that are ready.',
+          )
+        }
       }
     }
 
     void cascadeGeneration()
     return () => {
-      cancelled = true
+      cascadeCancelledRef.current = true
+      cascadeStartedRef.current = false
+      effectController.abort()
     }
-  }, [
-    isGenerativePlan,
-    loadGenerativePlanStatus,
-    planToken,
-    selection?.generationStatus,
-  ])
+  }, [isGenerativePlan, loadGenerativePlanStatus, planToken, selection?.generationStatus])
 
   useEffect(() => {
     if (!planToken) return

@@ -28,6 +28,7 @@ const curationState = vi.hoisted(() => ({
 vi.mock('@/lib/soul-audit/curation-engine', () => ({
   getCuratedDayCandidates: () => curationState.candidates,
   rankCandidatesForInput: () => curationState.ranked,
+  expandSemanticHints: (input: string) => input,
 }))
 
 import { buildAuditOptions } from '@/lib/soul-audit/matching'

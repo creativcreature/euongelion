@@ -22,13 +22,13 @@ describe('LCP/CLS stability contract', () => {
     expect(home).toContain('priority')
   })
 
-  it('uses block font-display for Industry weights to reduce layout shifts', () => {
+  it('uses swap font-display for Industry weights to avoid invisible text', () => {
     const industryFaceBlocks = css.match(
       /@font-face\s*\{[\s\S]*?font-family:\s*'Industry';[\s\S]*?\}/g,
     )
     expect(industryFaceBlocks?.length).toBeGreaterThanOrEqual(3)
     industryFaceBlocks?.forEach((block) => {
-      expect(block).toContain('font-display: block;')
+      expect(block).toContain('font-display: swap;')
     })
   })
 })

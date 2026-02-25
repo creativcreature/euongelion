@@ -58,6 +58,11 @@ STRUCTURE per plan:
 - Day 6: Sabbath rest/review (no new teaching)
 - Day 7: Week review + next-week discernment
 
+PERSONALIZATION (non-negotiable):
+- Each plan angle MUST directly address the user's specific situation — not generic spiritual growth
+- topicFocus for each day must connect to the user's specific words/situation
+- Generic spiritual growth plans are rejected
+
 REQUIREMENTS:
 - Each plan: unique angle, title (max 72 chars, natural language), question (18-42 words), reasoning (18-40 words), scriptureAnchor
 - REAL Scripture references only (e.g. "Isaiah 6:1-8")
@@ -387,9 +392,10 @@ export async function generatePlanOutlines(
       context: {
         task: 'audit_outline_generate',
         mode: 'auto',
-        // Reduced from 3000: compressed JSON schema + tighter prompting
-        // still fits 3 outlines × 7 days comfortably.
-        maxOutputTokens: 2400,
+        // 4500 tokens: 3 outlines × (~1200 tokens each including 7 days
+        // + metadata fields + JSON structural overhead).
+        // Previous 2400 budget caused truncation → parser rejection.
+        maxOutputTokens: 4500,
       },
     })
 

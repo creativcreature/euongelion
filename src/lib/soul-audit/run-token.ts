@@ -1,4 +1,11 @@
-import { createHmac, timingSafeEqual } from 'crypto'
+import {
+  base64UrlDecode,
+  base64UrlEncode,
+  hmacFingerprintSession,
+  hmacSign,
+  resolveTokenSecret,
+  safeEqualHex,
+} from './token-utils'
 import type { AuditOptionPreview } from '@/types/soul-audit'
 
 const RUN_TOKEN_VERSION = 1
@@ -18,72 +25,16 @@ type VerifiedRunToken = Omit<RunTokenPayload, 'version'> & {
   sessionBound: boolean
 }
 
-function base64UrlEncode(input: string): string {
-  return Buffer.from(input, 'utf8')
-    .toString('base64')
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=+$/g, '')
-}
-
-function base64UrlDecode(input: string): string {
-  const padded = input
-    .replace(/-/g, '+')
-    .replace(/_/g, '/')
-    .padEnd(Math.ceil(input.length / 4) * 4, '=')
-  return Buffer.from(padded, 'base64').toString('utf8')
-}
-
 function tokenSecret(): string {
-  const secret = process.env.SOUL_AUDIT_RUN_TOKEN_SECRET
-  if (secret && secret.trim().length >= 32) {
-    return secret
-  }
-
-  // Derive a fallback secret from available service key so submit doesn't crash.
-  // Production should always set SOUL_AUDIT_RUN_TOKEN_SECRET explicitly.
-  const fallbackSource = process.env.SUPABASE_SERVICE_ROLE_KEY
-  if (fallbackSource && fallbackSource.length >= 32) {
-    if (process.env.NODE_ENV !== 'production') {
-      console.warn(
-        '[run-token] SOUL_AUDIT_RUN_TOKEN_SECRET not set — deriving fallback from SUPABASE_SERVICE_ROLE_KEY',
-      )
-    }
-    return createHmac('sha256', 'euangelion-run-token-fallback')
-      .update(fallbackSource)
-      .digest('hex')
-  }
-
-  // Last resort — deterministic but environment-bound secret.
-  // This only prevents a hard crash; tokens are not cryptographically strong.
-  if (process.env.NODE_ENV !== 'production') {
-    console.warn(
-      '[run-token] No suitable secret available — using ephemeral fallback',
-    )
-  }
-  return createHmac('sha256', 'euangelion-ephemeral')
-    .update(process.pid.toString() + (process.env.VERCEL_URL || 'local'))
-    .digest('hex')
+  return resolveTokenSecret('run-token')
 }
 
 function fingerprintSession(sessionToken: string): string {
-  return createHmac('sha256', tokenSecret())
-    .update(`session:${sessionToken}`)
-    .digest('hex')
+  return hmacFingerprintSession(tokenSecret(), sessionToken)
 }
 
-function signEncodedPayload(encodedPayload: string): string {
-  return createHmac('sha256', tokenSecret())
-    .update(encodedPayload)
-    .digest('hex')
-}
-
-function safeEqualHex(a: string, b: string): boolean {
-  if (a.length !== b.length) return false
-  const aBuf = Buffer.from(a, 'hex')
-  const bBuf = Buffer.from(b, 'hex')
-  if (aBuf.length !== bBuf.length) return false
-  return timingSafeEqual(aBuf, bBuf)
+function sign(encodedPayload: string): string {
+  return hmacSign(tokenSecret(), encodedPayload)
 }
 
 export function createRunToken(params: {
@@ -104,7 +55,7 @@ export function createRunToken(params: {
   }
 
   const encodedPayload = base64UrlEncode(JSON.stringify(payload))
-  const signature = signEncodedPayload(encodedPayload)
+  const signature = sign(encodedPayload)
   return `${encodedPayload}.${signature}`
 }
 
@@ -119,7 +70,7 @@ export function verifyRunToken(params: {
   const [encodedPayload, signature] = token.split('.')
   if (!encodedPayload || !signature) return null
 
-  const expectedSignature = signEncodedPayload(encodedPayload)
+  const expectedSignature = sign(encodedPayload)
   if (!safeEqualHex(signature, expectedSignature)) return null
 
   try {

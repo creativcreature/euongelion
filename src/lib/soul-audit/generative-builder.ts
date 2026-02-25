@@ -127,6 +127,12 @@ CHIASTIC: ${params.chiasticPosition} (A=tension, B=complexity, C=pivot/revelatio
 LENGTH: ~${params.wordTarget} words. MODULES: Pick ${params.moduleBudget} from: scripture,teaching,vocab,story,insight,bridge,reflection,comprehension,takeaway,prayer,profile,resource
 Must include 'scripture' + 'reflection' or 'prayer'. Vary across week.${previousModulesNote}
 
+PERSONALIZATION (mandatory):
+- Each day MUST reference the user's specific language, situation, or emotion from their reflection
+- Quote or paraphrase at least one phrase from their reflection in the teaching
+- Apply Scripture to their exact circumstance, not abstractly
+- If they mentioned a specific struggle, name it in the teaching and address it directly
+
 RULES: Real Scripture refs only. Accurate quotes/attribution. Correct Hebrew/Greek. Verifiable history.
 
 STRICT JSON only:
@@ -141,6 +147,10 @@ This is Day 6 of a 7-day plan. NO new teaching. Instead:
 - Guided review questions tied to the user's original reflection
 - Rest practices and contemplative exercises
 - Lighter modules: scripture callback, reflection, prayer
+
+PERSONALIZATION: Reference the user's original reflection in your review.
+Connect the week's journey back to what they specifically shared.
+The user should feel this sabbath was written for their situation.
 
 VOICE: Gentle, restful, inviting stillness. No urgency.
 TARGET LENGTH: ~${wordTarget} words
@@ -169,6 +179,9 @@ This is Day 7 of a 7-day plan. Purpose:
 - Brief week summary and integration
 - 2-3 suggestions for next week (new audit, prefab series, or continue theme)
 - Forward-looking discernment prompt
+
+PERSONALIZATION: Your next-step suggestions must reflect the user's specific
+situation, not generic spiritual advice. Name their circumstance.
 
 VOICE: Encouraging, forward-looking, empowering.
 TARGET LENGTH: ~${wordTarget} words
@@ -391,12 +404,17 @@ export async function generateDevotionalDay(
   })
 
   const userMessage = [
+    `THE USER'S SITUATION (this shapes everything — your teaching MUST address this specific person):`,
+    `---BEGIN USER REFLECTION---`,
+    params.userResponse,
+    `---END USER REFLECTION---`,
+    '',
+    `DAY PLAN:`,
     `Day ${params.dayOutline.day}: "${params.dayOutline.title}"`,
     `Scripture: ${params.dayOutline.scriptureReference}`,
     `Topic focus: ${params.dayOutline.topicFocus}`,
     `Plan angle: ${params.planOutline.angle}`,
     `Plan title: ${params.planOutline.title}`,
-    `User's reflection: "${params.userResponse}"`,
     '',
     `REFERENCE MATERIAL (use as primary source — quote, paraphrase, build upon):`,
     referenceContext,
@@ -479,9 +497,13 @@ export async function generateSabbathDay(params: {
   const systemPrompt = buildSabbathSystemPrompt(wordTarget)
 
   const userMessage = [
+    `THE USER'S SITUATION (ground your sabbath review in their specific journey):`,
+    `---BEGIN USER REFLECTION---`,
+    params.userResponse,
+    `---END USER REFLECTION---`,
+    '',
     `Plan: "${params.planOutline.title}"`,
     `Angle: ${params.planOutline.angle}`,
-    `User's original reflection: "${params.userResponse}"`,
     '',
     'Days 1-5 summary:',
     daySummaries,
@@ -553,9 +575,13 @@ export async function generateReviewDay(params: {
   const systemPrompt = buildReviewSystemPrompt(wordTarget)
 
   const userMessage = [
+    `THE USER'S SITUATION (your review must connect back to what they originally shared):`,
+    `---BEGIN USER REFLECTION---`,
+    params.userResponse,
+    `---END USER REFLECTION---`,
+    '',
     `Plan: "${params.planOutline.title}"`,
     `Angle: ${params.planOutline.angle}`,
-    `User's original reflection: "${params.userResponse}"`,
     '',
     'Week summary:',
     daySummaries,

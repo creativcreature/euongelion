@@ -1,4 +1,11 @@
-import { createHmac, timingSafeEqual } from 'crypto'
+import {
+  base64UrlDecode,
+  base64UrlEncode,
+  hmacFingerprintSession,
+  hmacSign,
+  resolveTokenSecret,
+  safeEqualHex,
+} from './token-utils'
 
 const CONSENT_TOKEN_VERSION = 1
 const CONSENT_TOKEN_MAX_AGE_MS = 30 * 60 * 1000
@@ -17,50 +24,16 @@ type VerifiedConsentToken = Omit<ConsentTokenPayload, 'version'> & {
   sessionBound: boolean
 }
 
-function base64UrlEncode(input: string): string {
-  return Buffer.from(input, 'utf8')
-    .toString('base64')
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=+$/g, '')
-}
-
-function base64UrlDecode(input: string): string {
-  const padded = input
-    .replace(/-/g, '+')
-    .replace(/_/g, '/')
-    .padEnd(Math.ceil(input.length / 4) * 4, '=')
-  return Buffer.from(padded, 'base64').toString('utf8')
-}
-
 function tokenSecret(): string {
-  const secret = process.env.SOUL_AUDIT_RUN_TOKEN_SECRET
-  if (!secret || secret.trim().length < 32) {
-    throw new Error(
-      'SOUL_AUDIT_RUN_TOKEN_SECRET is required and must be at least 32 characters.',
-    )
-  }
-  return secret
+  return resolveTokenSecret('consent-token')
 }
 
 function fingerprintSession(sessionToken: string): string {
-  return createHmac('sha256', tokenSecret())
-    .update(`session:${sessionToken}`)
-    .digest('hex')
+  return hmacFingerprintSession(tokenSecret(), sessionToken)
 }
 
 function sign(encodedPayload: string): string {
-  return createHmac('sha256', tokenSecret())
-    .update(encodedPayload)
-    .digest('hex')
-}
-
-function safeEqualHex(a: string, b: string): boolean {
-  if (a.length !== b.length) return false
-  const aBuf = Buffer.from(a, 'hex')
-  const bBuf = Buffer.from(b, 'hex')
-  if (aBuf.length !== bBuf.length) return false
-  return timingSafeEqual(aBuf, bBuf)
+  return hmacSign(tokenSecret(), encodedPayload)
 }
 
 export function createConsentToken(params: {

@@ -916,6 +916,82 @@ export async function getAllPlanDaysWithFallback(
   return fetched
 }
 
+/**
+ * Update a plan day's content both in-memory and in Supabase.
+ * Critical for Vercel production where each serverless invocation
+ * has isolated memory — without Supabase persistence, generated
+ * days are lost between requests.
+ */
+export async function updatePlanDayContent(
+  planToken: string,
+  dayNumber: number,
+  content: CustomPlanDay,
+): Promise<void> {
+  const store = getStore()
+  const days = store.planDaysByToken.get(planToken) ?? []
+  let record = days.find((d) => d.day_number === dayNumber)
+
+  if (record) {
+    record.content = content
+  } else {
+    // Day record not in memory — create and track it.
+    record = {
+      id: randomUUID(),
+      plan_token: planToken,
+      day_number: dayNumber,
+      content,
+      created_at: new Date().toISOString(),
+    }
+    days.push(record)
+    days.sort((a, b) => a.day_number - b.day_number)
+    store.planDaysByToken.set(planToken, days)
+  }
+
+  // Persist to Supabase so other serverless instances see the update.
+  // Upsert keyed on PK (id): safe because getAllPlanDaysWithFallback
+  // populates memory from Supabase before this function is called,
+  // ensuring record.id matches the Supabase row.
+  await safeUpsert('devotional_plan_days', {
+    id: record.id,
+    plan_token: planToken,
+    day_number: dayNumber,
+    content,
+    created_at: record.created_at,
+  })
+}
+
+/**
+ * Check whether a day is still pending in Supabase before generating.
+ * This provides cross-instance guard on Vercel: if another invocation
+ * already generated this day (content->>'generationStatus' is 'ready'),
+ * we skip regenerating it.
+ *
+ * Returns true if the day is pending (safe to generate) or if Supabase
+ * is unavailable (fail-open, relying on in-memory lock).
+ */
+export async function isDayStillPending(
+  planToken: string,
+  dayNumber: number,
+): Promise<boolean> {
+  const supabase = maybeSupabase()
+  if (!supabase) return true // No Supabase — rely on in-memory lock
+
+  try {
+    const { data, error } = (await (supabase as any)
+      .from('devotional_plan_days')
+      .select('id')
+      .eq('plan_token', planToken)
+      .eq('day_number', dayNumber)
+      .filter('content->>generationStatus', 'eq', 'pending')
+      .maybeSingle()) as { data: { id: string } | null; error: unknown }
+
+    if (error) return true // Fail-open
+    return data !== null // Row exists with pending status
+  } catch {
+    return true // Fail-open
+  }
+}
+
 export async function upsertMockAccountSession(params: {
   sessionToken: string
   mode: 'anonymous' | 'mock_account'

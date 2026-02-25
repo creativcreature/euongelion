@@ -24,12 +24,12 @@ describe('Soul Audit run-recovery contract', () => {
       "const REROLL_USED_SESSION_KEY = 'soul-audit-reroll-used'",
     )
     expect(home).toContain(
-      'sessionStorage.setItem(LAST_AUDIT_INPUT_SESSION_KEY, trimmed)',
+      'localStorage.setItem(LAST_AUDIT_INPUT_SESSION_KEY, trimmed)',
     )
     expect(home).toContain(
-      'sessionStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)',
+      'localStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)',
     )
-    expect(home).toContain('sessionStorage.removeItem(REROLL_USED_SESSION_KEY)')
+    expect(home).toContain('localStorage.removeItem(REROLL_USED_SESSION_KEY)')
   })
 
   it('recovers expired runs from session-backed last input in results flow', () => {
@@ -44,7 +44,7 @@ describe('Soul Audit run-recovery contract', () => {
     expect(results).toContain('Reload Options')
     expect(results).toContain('setRerollUsed(false)')
     expect(results).toContain(
-      'sessionStorage.removeItem(REROLL_USED_SESSION_KEY)',
+      'localStorage.removeItem(REROLL_USED_SESSION_KEY)',
     )
     expect(results).toContain('!submitResult?.runToken')
     expect(results).toContain(
