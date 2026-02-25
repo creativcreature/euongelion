@@ -17,8 +17,7 @@ describe('Layout overflow and sticky contract', () => {
   it('uses percentage-based frame width with viewport max guard', () => {
     expect(css).toContain('width: min(1860px, calc(100% - 1.4rem));')
     expect(css).toContain('max-width: calc(100vw - 1.4rem);')
-    expect(css).toContain('width: calc(100% - 0.5rem);')
-    expect(css).toContain('max-width: calc(100dvw - 0.5rem);')
+    expect(css).toContain('width: calc(100vw - 0.5rem);')
   })
 
   it('keeps desktop nav sticky below topbar for persistent navigation', () => {

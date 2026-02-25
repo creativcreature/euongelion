@@ -177,7 +177,7 @@ export async function POST(request: NextRequest) {
       requestId,
       error,
       method: request.method,
-      path: request.nextUrl.pathname,
+      path: request.nextUrl?.pathname ?? new URL(request.url).pathname,
       clientKey,
     })
     return jsonError({

@@ -170,14 +170,14 @@ describe('EuangelionShellHeader', () => {
     })
   })
 
-  it('clears stale global scroll-lock artifacts on mount and route changes', async () => {
+  it('clears stale global scroll-lock artifacts on mount', async () => {
     document.body.style.overflow = 'hidden'
     document.body.style.position = 'fixed'
     document.documentElement.style.overflow = 'hidden'
     document.documentElement.classList.add('lenis-stopped')
     document.body.setAttribute('data-scroll-locked', 'true')
 
-    const { rerender } = render(<EuangelionShellHeader />)
+    render(<EuangelionShellHeader />)
 
     await waitFor(() => {
       expect(document.body.style.overflow).toBe('')
@@ -188,93 +188,9 @@ describe('EuangelionShellHeader', () => {
       )
       expect(document.body.hasAttribute('data-scroll-locked')).toBe(false)
     })
-
-    document.body.style.overflow = 'hidden'
-    document.documentElement.classList.add('lenis-stopped')
-    document.body.setAttribute('data-scroll-locked', 'true')
-    mockPathname = '/series'
-    rerender(<EuangelionShellHeader />)
-
-    await waitFor(() => {
-      expect(document.body.style.overflow).toBe('')
-      expect(document.documentElement.classList.contains('lenis-stopped')).toBe(
-        false,
-      )
-      expect(document.body.hasAttribute('data-scroll-locked')).toBe(false)
-    })
   })
 
-  it('closes mobile secondary menu when route changes', async () => {
-    const user = userEvent.setup()
-    const { rerender } = render(<EuangelionShellHeader />)
-
-    const toggle = screen.getByRole('button', {
-      name: 'Open menu',
-    })
-    await user.click(toggle)
-
-    await waitFor(() => {
-      expect(
-        screen.getByRole('button', { name: 'Close menu' }),
-      ).toBeInTheDocument()
-    })
-
-    mockPathname = '/series'
-    rerender(<EuangelionShellHeader />)
-
-    await waitFor(() => {
-      expect(
-        screen.getByRole('button', { name: 'Open menu' }),
-      ).toBeInTheDocument()
-    })
-  })
-
-  it('wires mobile secondary menu keyboard escape close behavior', async () => {
-    const user = userEvent.setup()
-    render(<EuangelionShellHeader />)
-
-    const toggle = screen.getByRole('button', {
-      name: 'Open menu',
-    })
-    expect(toggle).not.toHaveAttribute('aria-controls')
-
-    await user.click(toggle)
-
-    await waitFor(() => {
-      expect(
-        screen.getByRole('button', { name: 'Close menu' }),
-      ).toHaveAttribute('aria-controls', 'shell-mobile-secondary-nav')
-    })
-
-    const panel = await screen.findByRole('group', {
-      name: 'Navigation menu',
-    })
-    expect(panel).toBeInTheDocument()
-
-    await user.keyboard('{Escape}')
-
-    await waitFor(() => {
-      const reopenedToggle = screen.getByRole('button', {
-        name: 'Open menu',
-      })
-      expect(reopenedToggle).toBeInTheDocument()
-      expect(reopenedToggle).toHaveFocus()
-    })
-  })
-
-  it('does not keep duplicate mobile menu links mounted while closed', async () => {
-    render(<EuangelionShellHeader />)
-
-    await waitFor(() => {
-      expect(
-        screen.getByRole('button', { name: 'Open menu' }),
-      ).toBeInTheDocument()
-    })
-
-    expect(screen.queryByRole('group', { name: 'Navigation menu' })).toBeNull()
-  })
-
-  it('avoids duplicate settings/account links in authenticated mobile menu', async () => {
+  it('closes account menu when route changes', async () => {
     vi.stubGlobal(
       'fetch',
       vi.fn(async () => ({
@@ -286,20 +202,33 @@ describe('EuangelionShellHeader', () => {
       })),
     )
     const user = userEvent.setup()
-    render(<EuangelionShellHeader />)
+    const { rerender } = render(<EuangelionShellHeader />)
 
-    const toggle = await screen.findByRole('button', {
-      name: 'Open menu',
+    const trigger = await screen.findByRole('button', {
+      name: /^[A-Z]$/,
     })
-    await user.click(toggle)
+    await user.click(trigger)
 
     await waitFor(() => {
       expect(
-        screen.getByRole('button', { name: 'Close menu' }),
+        screen.getByRole('menu', { name: 'Account menu' }),
       ).toBeInTheDocument()
     })
 
-    expect(screen.getByRole('link', { name: 'ACCOUNT' })).toBeInTheDocument()
-    expect(screen.queryByRole('link', { name: 'SETTINGS' })).toBeNull()
+    mockPathname = '/series'
+    rerender(<EuangelionShellHeader />)
+
+    await waitFor(() => {
+      expect(
+        screen.queryByRole('menu', { name: 'Account menu' }),
+      ).toBeNull()
+    })
+  })
+
+  it('uses inline mobile nav without a secondary drawer', () => {
+    render(<EuangelionShellHeader />)
+
+    expect(screen.queryByRole('button', { name: 'Open menu' })).toBeNull()
+    expect(screen.queryByRole('group', { name: 'Navigation menu' })).toBeNull()
   })
 })

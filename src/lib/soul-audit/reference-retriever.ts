@@ -12,27 +12,26 @@
 
 import fs from 'fs'
 import path from 'path'
+import {
+  type BaseChunk,
+  type CollectFilesOptions,
+  type ReferenceSourceType,
+  chunkText,
+  collectFiles,
+  detectSourceType,
+  extractKeywords,
+  extractScriptureRefs,
+  sourcePriority,
+  wordCount,
+} from './reference-utils'
+
+// Re-export the canonical source type for consumers
+export type { ReferenceSourceType } from './reference-utils'
 
 // ─── Types ──────────────────────────────────────────────────────────
 
-export type ReferenceSourceType =
-  | 'commentary'
-  | 'bible'
-  | 'lexicon'
-  | 'dictionary'
-  | 'theology'
-
-export interface ReferenceChunk {
-  id: string
-  source: string
-  sourceType: ReferenceSourceType
-  title: string
-  content: string
+export interface ReferenceChunk extends BaseChunk {
   normalized: string
-  keywords: string[]
-  scriptureRefs: string[]
-  priority: number
-  wordCount: number
 }
 
 export interface RetrievalRequest {
@@ -64,242 +63,222 @@ const CHUNK_MIN_WORDS = 40
 const CHUNK_MAX_WORDS = 800
 const CHUNK_TARGET_WORDS = 400
 
-const STOP_WORDS = new Set([
-  'about',
-  'after',
-  'again',
-  'against',
-  'because',
-  'before',
-  'being',
-  'between',
-  'could',
-  'doing',
-  'every',
-  'first',
-  'from',
-  'have',
-  'just',
-  'more',
-  'should',
-  'their',
-  'there',
-  'these',
-  'they',
-  'this',
-  'through',
-  'what',
-  'when',
-  'where',
-  'with',
-  'would',
-  'your',
-  'that',
-  'than',
-  'then',
-  'them',
-  'also',
-  'been',
-  'were',
-  'will',
-  'into',
-  'only',
-  'other',
-  'some',
-  'such',
-  'each',
-  'which',
-  'does',
-  'most',
-  'very',
+// Devotional JSON indexing limits
+const DEVOTIONAL_MAX_CHUNKS = 2_000
+const DEVOTIONAL_MIN_TEXT_LENGTH = 60
+const DEVOTIONAL_REFLECTION_MIN_WORDS = 20
+
+const VALID_SOURCE_TYPES = new Set<ReferenceSourceType>([
+  'commentary',
+  'bible',
+  'lexicon',
+  'dictionary',
+  'theology',
 ])
 
-// ─── Scripture reference detection ──────────────────────────────────
-
-const SCRIPTURE_REF_PATTERN =
-  /\b(?:(?:1|2|3|I|II|III)\s+)?(?:Gen(?:esis)?|Exod(?:us)?|Lev(?:iticus)?|Num(?:bers)?|Deut(?:eronomy)?|Josh(?:ua)?|Judg(?:es)?|Ruth|(?:1|2)\s*Sam(?:uel)?|(?:1|2)\s*Kgs?|(?:1|2)\s*Chr(?:on)?|Ezra|Neh(?:emiah)?|Esth(?:er)?|Job|Ps(?:alm)?s?|Prov(?:erbs)?|Eccl(?:es)?|Song|Isa(?:iah)?|Jer(?:emiah)?|Lam(?:entations)?|Ezek(?:iel)?|Dan(?:iel)?|Hos(?:ea)?|Joel|Amos|Obad(?:iah)?|Jon(?:ah)?|Mic(?:ah)?|Nah(?:um)?|Hab(?:akkuk)?|Zeph(?:aniah)?|Hag(?:gai)?|Zech(?:ariah)?|Mal(?:achi)?|Matt(?:hew)?|Mark|Luke|John|Acts|Rom(?:ans)?|(?:1|2)\s*Cor(?:inthians)?|Gal(?:atians)?|Eph(?:esians)?|Phil(?:ippians)?|Col(?:ossians)?|(?:1|2)\s*Thess(?:alonians)?|(?:1|2)\s*Tim(?:othy)?|Tit(?:us)?|Phlm|Philemon|Heb(?:rews)?|Jas|James|(?:1|2)\s*Pet(?:er)?|(?:1|2|3)\s*Jn|Jude|Rev(?:elation)?)\s+\d+(?:[:.]\d+)?(?:\s*[-–]\s*\d+)?/gi
-
-function extractScriptureRefs(text: string): string[] {
-  const matches = text.match(SCRIPTURE_REF_PATTERN) || []
-  return [...new Set(matches.map((m) => m.trim()))]
+const COLLECT_OPTIONS: CollectFilesOptions = {
+  skipSegments: SKIP_SEGMENTS,
+  allowedExtensions: ALLOWED_EXTENSIONS,
+  maxFiles: MAX_FILES,
+  maxFileBytes: MAX_FILE_BYTES,
 }
 
-// ─── Source type detection ──────────────────────────────────────────
-
-function detectSourceType(filePath: string): ReferenceSourceType {
-  const lower = filePath.toLowerCase()
-  if (
-    lower.includes(`${path.sep}commentaries${path.sep}`) ||
-    lower.includes('/commentaries/')
-  )
-    return 'commentary'
-  if (
-    lower.includes(`${path.sep}bibles${path.sep}`) ||
-    lower.includes('/bibles/')
-  )
-    return 'bible'
-  if (
-    lower.includes(`${path.sep}lexicons${path.sep}`) ||
-    lower.includes('/lexicons/')
-  )
-    return 'lexicon'
-  if (
-    lower.includes(`${path.sep}dictionaries${path.sep}`) ||
-    lower.includes('/dictionaries/')
-  )
-    return 'dictionary'
-  return 'theology'
+const CHUNKING_OPTIONS = {
+  minWords: CHUNK_MIN_WORDS,
+  maxWords: CHUNK_MAX_WORDS,
+  targetWords: CHUNK_TARGET_WORDS,
 }
 
-function sourcePriority(sourceType: ReferenceSourceType): number {
-  switch (sourceType) {
-    case 'commentary':
-      return 5
-    case 'bible':
-      return 4
-    case 'lexicon':
-      return 3
-    case 'dictionary':
-      return 3
-    case 'theology':
-      return 2
-  }
+// ─── Helpers ────────────────────────────────────────────────────────
+
+/** Extend base chunks with the normalized field used for scoring. */
+function addNormalized(base: BaseChunk[]): ReferenceChunk[] {
+  return base.map((chunk) => ({
+    ...chunk,
+    normalized: chunk.content.toLowerCase(),
+  }))
 }
 
-// ─── Keyword extraction ─────────────────────────────────────────────
+// ─── Devotional JSON indexing ────────────────────────────────────────
 
-function extractKeywords(text: string): string[] {
-  return Array.from(
-    new Set(
-      text
-        .toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, ' ')
-        .split(/\s+/)
-        .map((w) => w.trim())
-        .filter((w) => w.length >= 3 && !STOP_WORDS.has(w)),
-    ),
-  ).slice(0, 30)
+interface DevotionalModule {
+  type: string
+  body?: string
+  content?: string
+  passage?: string
+  reference?: string
+  heading?: string
+  keyInsight?: string
+  meaning?: string
+  rootMeaning?: string
+  usageNote?: string
+  word?: string
+  transliteration?: string
+  prompt?: string
+  additionalQuestions?: string[]
+  ancientTruth?: string
+  modernApplication?: string
+  connectionPoint?: string
 }
 
-function wordCount(text: string): number {
-  return text.split(/\s+/).filter((w) => w.length > 0).length
+interface DevotionalJson {
+  day?: number
+  title?: string
+  anchorVerse?: string
+  theme?: string
+  scriptureReference?: string
+  modules?: DevotionalModule[]
 }
 
-// ─── File collection ────────────────────────────────────────────────
+/**
+ * Extract high-quality reference chunks from the deployed devotional JSONs.
+ * These 176 files (3.4MB) are always available on Vercel in public/devotionals/.
+ * Each file produces 2-6 chunks from teaching, insight, story, vocab, and scripture modules.
+ */
+function indexDevotionalJsons(): ReferenceChunk[] {
+  const devotionalsDir = path.join(process.cwd(), 'public', 'devotionals')
+  if (!fs.existsSync(devotionalsDir)) return []
 
-function shouldSkipPath(target: string): boolean {
-  const segments = target.split(path.sep)
-  return segments.some((s) => SKIP_SEGMENTS.has(s))
-}
-
-function collectFiles(dir: string, acc: string[]): void {
-  if (!fs.existsSync(dir)) return
-  if (shouldSkipPath(dir)) return
-  if (acc.length >= MAX_FILES) return
-
-  let entries: fs.Dirent[] = []
+  let entries: string[] = []
   try {
-    entries = fs.readdirSync(dir, { withFileTypes: true })
+    entries = fs.readdirSync(devotionalsDir).filter((f) => f.endsWith('.json'))
   } catch {
-    return
+    return []
   }
 
-  for (const entry of entries) {
-    if (acc.length >= MAX_FILES) break
-    const full = path.join(dir, entry.name)
-    if (shouldSkipPath(full)) continue
+  const chunks: ReferenceChunk[] = []
 
-    if (entry.isDirectory()) {
-      collectFiles(full, acc)
-      continue
-    }
+  for (const filename of entries) {
+    if (chunks.length >= DEVOTIONAL_MAX_CHUNKS) break
 
-    const ext = path.extname(entry.name).toLowerCase()
-    if (!ALLOWED_EXTENSIONS.has(ext)) continue
-
+    const filePath = path.join(devotionalsDir, filename)
+    // Guard against path traversal from filenames like "../../../etc/passwd"
+    if (!filePath.startsWith(devotionalsDir + path.sep)) continue
+    let raw: string
     try {
-      const stat = fs.statSync(full)
-      if (stat.size > MAX_FILE_BYTES) continue
+      raw = fs.readFileSync(filePath, 'utf8')
     } catch {
       continue
     }
 
-    acc.push(full)
-  }
-}
-
-// ─── Chunking ───────────────────────────────────────────────────────
-
-function isHeadingLine(line: string): boolean {
-  return /^#{1,4}\s/.test(line) || /^[A-Z][A-Z\s]{4,}$/.test(line.trim())
-}
-
-function chunkText(
-  text: string,
-  source: string,
-  sourceType: ReferenceSourceType,
-): ReferenceChunk[] {
-  const chunks: ReferenceChunk[] = []
-  const lines = text.split('\n')
-  const priority = sourcePriority(sourceType)
-  const relSource = path.relative(process.cwd(), source)
-
-  let currentLines: string[] = []
-  let currentTitle = path.basename(source, path.extname(source))
-  let currentWords = 0
-
-  const flushChunk = () => {
-    if (currentWords < CHUNK_MIN_WORDS) return
-
-    const content = currentLines.join('\n').trim()
-    if (!content) return
-
-    const normalized = content.toLowerCase()
-    chunks.push({
-      id: `ref:${relSource}:${chunks.length}`,
-      source: relSource,
-      sourceType,
-      title: currentTitle.slice(0, 120),
-      content: content.slice(0, CHUNK_MAX_WORDS * 8), // ~8 chars per word safety
-      normalized,
-      keywords: extractKeywords(content),
-      scriptureRefs: extractScriptureRefs(content),
-      priority,
-      wordCount: currentWords,
-    })
-  }
-
-  for (const line of lines) {
-    const trimmed = line.trim()
-
-    // Section boundary: heading line or significant blank after long content
-    if (isHeadingLine(trimmed) && currentWords >= CHUNK_MIN_WORDS) {
-      flushChunk()
-      currentLines = []
-      currentWords = 0
-      currentTitle = trimmed.replace(/^#+\s*/, '').slice(0, 120)
+    let data: DevotionalJson
+    try {
+      data = JSON.parse(raw) as DevotionalJson
+    } catch {
+      continue
     }
 
-    currentLines.push(line)
-    currentWords += wordCount(trimmed)
+    if (!data.modules || !Array.isArray(data.modules)) continue
 
-    // Target size reached — flush at next natural break
-    if (currentWords >= CHUNK_TARGET_WORDS && trimmed === '') {
-      flushChunk()
-      currentLines = []
-      currentWords = 0
+    const fileId = filename.replace('.json', '')
+    const dayTitle = data.title || fileId
+    const scriptureRef = data.scriptureReference || data.anchorVerse || ''
+    const typeCounters: Record<string, number> = {}
+
+    for (const mod of data.modules) {
+      // Guard against non-object or typeless entries in modules array
+      if (!mod || typeof mod !== 'object' || typeof mod.type !== 'string')
+        continue
+
+      // Extract text content from module.
+      // Bridge modules use ancientTruth/modernApplication/connectionPoint
+      // instead of body/content/passage — must check both field families.
+      const text = mod.body || mod.content || mod.passage || ''
+      const bridgeText = [
+        mod.ancientTruth,
+        mod.modernApplication,
+        mod.connectionPoint,
+      ]
+        .filter(Boolean)
+        .join('\n\n')
+      const effectiveText = text || bridgeText
+      if (!effectiveText || effectiveText.length < DEVOTIONAL_MIN_TEXT_LENGTH)
+        continue
+
+      // Build a rich chunk that includes module metadata
+      const parts: string[] = []
+      if (mod.heading) parts.push(mod.heading)
+      parts.push(effectiveText)
+      if (mod.keyInsight) parts.push(`Key insight: ${mod.keyInsight}`)
+      if (mod.meaning) parts.push(`Meaning: ${mod.meaning}`)
+      if (mod.rootMeaning) parts.push(mod.rootMeaning)
+      if (mod.usageNote) parts.push(mod.usageNote)
+      // Only add bridge fields if they weren't already the primary text
+      if (text && mod.ancientTruth)
+        parts.push(`Ancient truth: ${mod.ancientTruth}`)
+      if (text && mod.modernApplication)
+        parts.push(`Modern application: ${mod.modernApplication}`)
+
+      const content = parts.join('\n\n')
+      const wc = wordCount(content)
+      if (wc < CHUNK_MIN_WORDS) continue
+
+      const normalized = content.toLowerCase()
+      const sourceType: ReferenceSourceType =
+        mod.type === 'scripture'
+          ? 'bible'
+          : mod.type === 'vocab'
+            ? 'lexicon'
+            : mod.type === 'teaching' || mod.type === 'insight'
+              ? 'commentary'
+              : 'theology'
+
+      // Unique ID: counter prevents collision when a file has multiple modules
+      // of the same type (31/175 devotional files do).
+      const typeIndex = typeCounters[mod.type] ?? 0
+      typeCounters[mod.type] = typeIndex + 1
+
+      chunks.push({
+        id: `devotional:${fileId}:${mod.type}:${typeIndex}`,
+        source: `public/devotionals/${filename}`,
+        sourceType,
+        title: `${dayTitle} — ${mod.heading || mod.type}`,
+        content: content.slice(0, CHUNK_MAX_WORDS * 8),
+        normalized,
+        keywords: extractKeywords(content),
+        scriptureRefs: extractScriptureRefs(
+          `${scriptureRef} ${mod.reference || ''} ${content}`,
+        ),
+        priority: sourcePriority(sourceType),
+        wordCount: wc,
+      })
     }
 
-    // Hard limit
-    if (currentWords >= CHUNK_MAX_WORDS) {
-      flushChunk()
-      currentLines = []
-      currentWords = 0
+    // Also index reflection prompts as lightweight chunks for topical matching
+    const reflectionMods = data.modules.filter(
+      (m) =>
+        m &&
+        typeof m === 'object' &&
+        m.type === 'reflection' &&
+        m.prompt,
+    )
+    for (let ri = 0; ri < reflectionMods.length; ri++) {
+      const ref = reflectionMods[ri]
+      const questions = [
+        ref.prompt,
+        ...(ref.additionalQuestions || []),
+      ].filter(Boolean)
+      const content = `${dayTitle}\n${data.theme || ''}\n${questions.join('\n')}`
+      const wc = wordCount(content)
+      if (wc < DEVOTIONAL_REFLECTION_MIN_WORDS) continue
+
+      chunks.push({
+        id: `devotional:${fileId}:reflection:${ri}`,
+        source: `public/devotionals/${filename}`,
+        sourceType: 'theology',
+        title: `${dayTitle} — Reflection`,
+        content,
+        normalized: content.toLowerCase(),
+        keywords: extractKeywords(content),
+        scriptureRefs: extractScriptureRefs(
+          `${scriptureRef} ${content}`,
+        ),
+        priority: 1, // Lightweight topical signal, not a primary source
+        wordCount: wc,
+      })
     }
   }
 
-  // Final chunk
-  flushChunk()
   return chunks
 }
 
@@ -310,8 +289,21 @@ let cachedCorpus: ReferenceChunk[] | null = null
 export function buildChunkedCorpus(root: string): ReferenceChunk[] {
   if (cachedCorpus) return cachedCorpus
 
+  // Detect whether the reference library root actually exists and has files.
+  // On Vercel, content/reference/ is gitignored so this will be false.
+  let referenceLibraryAvailable = false
+  if (fs.existsSync(root)) {
+    try {
+      referenceLibraryAvailable = fs.readdirSync(root).length > 0
+    } catch {
+      // Directory exists but isn't readable — treat as unavailable.
+    }
+  }
+
   const files: string[] = []
-  collectFiles(root, files)
+  if (referenceLibraryAvailable) {
+    collectFiles(root, files, COLLECT_OPTIONS)
+  }
 
   const corpus: ReferenceChunk[] = []
 
@@ -337,8 +329,55 @@ export function buildChunkedCorpus(root: string): ReferenceChunk[] {
       }
     }
 
-    const fileChunks = chunkText(text, file, sourceType)
+    const fileChunks = addNormalized(
+      chunkText(text, file, sourceType, CHUNKING_OPTIONS),
+    )
     for (const chunk of fileChunks) {
+      if (corpus.length >= MAX_CHUNKS) break
+      corpus.push(chunk)
+    }
+  }
+
+  // Load pre-built reference index if available (generated at build time
+  // from content/reference/ which is too large to deploy to Vercel directly).
+  // Only needed when the live reference library isn't available.
+  if (!referenceLibraryAvailable) {
+    const indexPath = path.join(process.cwd(), 'public', 'reference-index.json')
+    try {
+      if (fs.existsSync(indexPath)) {
+        const raw = fs.readFileSync(indexPath, 'utf8')
+        const indexed = JSON.parse(raw) as ReferenceChunk[]
+        if (Array.isArray(indexed)) {
+          for (const chunk of indexed) {
+            if (corpus.length >= MAX_CHUNKS) break
+            // Validate required fields — scoring reads priority, wordCount, sourceType
+            if (!chunk || typeof chunk.content !== 'string' || !chunk.id)
+              continue
+            if (!VALID_SOURCE_TYPES.has(chunk.sourceType as ReferenceSourceType))
+              continue
+            // Reconstruct derived/optional fields if missing from the index
+            if (typeof chunk.priority !== 'number') chunk.priority = 2
+            if (typeof chunk.wordCount !== 'number')
+              chunk.wordCount = chunk.content.split(/\s+/).filter(Boolean).length
+            if (!chunk.scriptureRefs) chunk.scriptureRefs = []
+            if (!chunk.normalized) chunk.normalized = chunk.content.toLowerCase()
+            if (!chunk.keywords) chunk.keywords = extractKeywords(chunk.content)
+            corpus.push(chunk)
+          }
+        }
+      }
+    } catch {
+      // Index may not exist or may be corrupt — continue
+    }
+  }
+
+  // When the reference library is empty or sparse (e.g. on Vercel),
+  // index the deployed devotional JSONs as high-quality reference material.
+  // These 176 files cover all 32 series and provide curated teaching,
+  // scripture, vocabulary, and theological content.
+  if (!referenceLibraryAvailable) {
+    const devotionalChunks = indexDevotionalJsons()
+    for (const chunk of devotionalChunks) {
       if (corpus.length >= MAX_CHUNKS) break
       corpus.push(chunk)
     }

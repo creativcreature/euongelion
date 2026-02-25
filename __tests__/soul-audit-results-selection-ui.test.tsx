@@ -17,7 +17,22 @@ vi.mock('next/navigation', () => ({
 }))
 
 vi.mock('@/stores/soulAuditStore', () => ({
-  useSoulAuditStore: () => ({ lastInput: 'I need clarity.' }),
+  useSoulAuditStore: () => ({ lastInput: 'I need clarity.', auditCount: 1 }),
+}))
+
+vi.mock('@/stores/settingsStore', () => ({
+  useSettingsStore: (selector: (state: Record<string, unknown>) => unknown) =>
+    selector({
+      sabbathDay: 'sunday',
+      textScale: 'default',
+      setSabbathDay: () => {},
+      setTextScale: () => {},
+    }),
+}))
+
+vi.mock('@/stores/uiStore', () => ({
+  useUIStore: (selector: (state: Record<string, unknown>) => unknown) =>
+    selector({ theme: 'dark', setTheme: () => {} }),
 }))
 
 vi.mock('@/components/Breadcrumbs', () => ({
@@ -117,15 +132,16 @@ describe('Soul Audit results selection consent UX', () => {
         },
       },
     })
-    window.sessionStorage.removeItem('soul-audit-submit-v2')
-    window.sessionStorage.removeItem('soul-audit-selection-v2')
-    window.sessionStorage.removeItem('soul-audit-last-input')
-    window.sessionStorage.removeItem('soul-audit-reroll-used')
-    window.sessionStorage.setItem(
+    window.localStorage.removeItem('soul-audit-submit-v2')
+    window.localStorage.removeItem('soul-audit-selection-v2')
+    window.localStorage.removeItem('soul-audit-last-input')
+    window.localStorage.removeItem('soul-audit-reroll-used')
+    window.localStorage.setItem(
       'soul-audit-submit-v2',
       JSON.stringify(submitPayload),
     )
-    window.sessionStorage.removeItem('soul-audit-selection-v2')
+    window.localStorage.removeItem('soul-audit-selection-v2')
+    window.localStorage.setItem('soul-audit-guest-signup-gate-v1', 'seen')
     document.cookie =
       'euangelion_site_consent=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'
   })
@@ -140,6 +156,10 @@ describe('Soul Audit results selection consent UX', () => {
     const user = userEvent.setup()
     const fetchMock = vi
       .fn()
+      .mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({ authenticated: false, user: null }),
+      })
       .mockResolvedValueOnce({
         ok: true,
         json: async () => ({
