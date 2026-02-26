@@ -91,7 +91,7 @@ describe('GET /api/soul-audit/current', () => {
     const payload = (await response.json()) as {
       hasCurrent: boolean
       route: string
-      selectionType: 'ai_primary' | 'curated_prefab'
+      selectionType: 'ai_primary' | 'ai_generative' | 'curated_prefab'
     }
 
     expect(payload.hasCurrent).toBe(true)
@@ -117,13 +117,13 @@ describe('GET /api/soul-audit/current', () => {
     const payload = (await response.json()) as {
       hasCurrent: boolean
       route: string
-      selectionType: 'ai_primary' | 'curated_prefab'
+      selectionType: 'ai_primary' | 'ai_generative' | 'curated_prefab'
     }
 
     expect(payload.hasCurrent).toBe(true)
     expect(payload.selectionType).toBe('ai_primary')
     expect(payload.route).toBe(
-      '/soul-audit/results?planToken=new-plan-token&day=0',
+      '/soul-audit/plan/new-plan-token?day=0',
     )
   })
 

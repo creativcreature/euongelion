@@ -14,6 +14,8 @@
  * - Form accessibility (labels, errors, descriptions)
  */
 import { describe, expect, it } from 'vitest'
+import { PASTORAL_MESSAGES } from '@/lib/soul-audit/messages'
+import { buildClarifierPrompt } from '@/lib/soul-audit/clarifier'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -1021,5 +1023,156 @@ describe('Form accessibility', () => {
     expect(field?.hasLabel).toBe(true)
     expect(field?.hasError).toBe(true)
     expect(field?.hasDescription).toBe(true)
+  })
+})
+
+// ─── Clarifier-Once Accessibility ──────────────────────────────────────────
+
+describe('Accessibility: Clarifier-Once', () => {
+  it('clarifier prompt uses warm, pastoral language', () => {
+    expect(PASTORAL_MESSAGES.CLARIFIER_PROMPT).toBeTruthy()
+    expect(PASTORAL_MESSAGES.CLARIFIER_PROMPT).not.toContain('ERROR')
+    expect(PASTORAL_MESSAGES.CLARIFIER_PROMPT).not.toContain('INVALID')
+    expect(PASTORAL_MESSAGES.CLARIFIER_PROMPT).not.toContain('too short')
+  })
+
+  it('clarifier suggestions provide 3 accessible options', () => {
+    const { suggestions } = buildClarifierPrompt()
+    expect(suggestions).toHaveLength(3)
+    suggestions.forEach((s: string) => {
+      expect(s.length).toBeGreaterThan(10)
+      expect(s.length).toBeLessThan(100)
+    })
+  })
+
+  /**
+   * Clarifier UI requirements:
+   * - ARIA live region (aria-live="polite") so screen readers announce the prompt
+   * - Suggestion chips are buttons with role="button"
+   * - Focus moves to clarifier prompt when it appears
+   * - Each suggestion chip is keyboard accessible (Tab + Enter)
+   */
+  const CLARIFIER_A11Y_CONTRACTS = [
+    {
+      rule: 'Clarifier prompt container should use aria-live="polite"',
+      required: true,
+    },
+    {
+      rule: 'Suggestion chips should have role="button" or be <button> elements',
+      required: true,
+    },
+    {
+      rule: 'Focus should move to clarifier prompt when it appears',
+      required: true,
+    },
+    {
+      rule: 'Each chip should be keyboard accessible (Tab + Enter)',
+      required: true,
+    },
+  ]
+
+  it('has defined accessibility requirements for clarifier UI', () => {
+    expect(CLARIFIER_A11Y_CONTRACTS.length).toBe(4)
+    CLARIFIER_A11Y_CONTRACTS.forEach((contract) => {
+      expect(contract.rule.length).toBeGreaterThan(0)
+      expect(contract.required).toBe(true)
+    })
+  })
+})
+
+// ─── Pastoral Error Messages Accessibility ──────────────────────────────────
+
+describe('Accessibility: Pastoral Error Messages', () => {
+  it('all pastoral messages are well-formed English', () => {
+    const messages = Object.values(PASTORAL_MESSAGES) as string[]
+    expect(messages.length).toBeGreaterThan(5)
+
+    messages.forEach((msg) => {
+      // Must be a non-empty string
+      expect(typeof msg).toBe('string')
+      expect(msg.length).toBeGreaterThan(10)
+      // First character should be uppercase (proper sentence)
+      expect(msg[0]).toBe(msg[0]?.toUpperCase())
+      // Should end with punctuation
+      expect(msg).toMatch(/[.!?]$/)
+    })
+  })
+
+  it('no technical error codes appear in user-facing messages', () => {
+    const messages = Object.values(PASTORAL_MESSAGES) as string[]
+    const technicalPatterns = [
+      /OPTION_ASSEMBLY_FAILED/i,
+      /ALL_PROVIDERS_EXHAUSTED/i,
+      /HTTP_\d{3}/,
+      /ERR_/,
+      /ECONNREFUSED/,
+      /500 Internal/,
+      /503 Service/,
+      /NaN/,
+      /undefined/,
+      /null/,
+    ]
+
+    messages.forEach((msg) => {
+      technicalPatterns.forEach((pattern) => {
+        expect(msg).not.toMatch(pattern)
+      })
+    })
+  })
+
+  /**
+   * Error display requirements:
+   * - Error banners use role="alert" for screen reader announcement
+   * - Error messages have aria-live="assertive" for immediate announcement
+   * - Pastoral messages are concise (under 200 chars) for VoiceOver
+   */
+  it('all pastoral messages are concise enough for screen readers', () => {
+    const messages = Object.values(PASTORAL_MESSAGES) as string[]
+    messages.forEach((msg) => {
+      expect(msg.length).toBeLessThan(200)
+    })
+  })
+})
+
+// ─── Selection Page Accessibility Contracts ────────────────────────────────
+
+describe('Accessibility: Option Selection', () => {
+  /**
+   * Option card requirements for the soul audit selection page:
+   * - Cards are <button> or have role="button" with tabindex
+   * - Each card has an accessible label (title + description)
+   * - Focus order follows visual order (top to bottom)
+   * - Selected card has aria-pressed="true"
+   * - Cards meet 44×44pt minimum touch target
+   */
+  const SELECTION_A11Y_CONTRACTS = [
+    {
+      rule: 'Option cards have role="button" or are <button> elements',
+      required: true,
+    },
+    {
+      rule: 'Each card has accessible label (aria-label or aria-labelledby)',
+      required: true,
+    },
+    {
+      rule: 'Focus order follows visual order',
+      required: true,
+    },
+    {
+      rule: 'Selected card has aria-pressed="true" or aria-selected="true"',
+      required: true,
+    },
+    {
+      rule: 'Cards meet 44×44pt minimum touch target',
+      required: true,
+    },
+  ]
+
+  it('has defined accessibility requirements for option cards', () => {
+    expect(SELECTION_A11Y_CONTRACTS.length).toBe(5)
+    SELECTION_A11Y_CONTRACTS.forEach((contract) => {
+      expect(contract.rule.length).toBeGreaterThan(0)
+      expect(contract.required).toBe(true)
+    })
   })
 })

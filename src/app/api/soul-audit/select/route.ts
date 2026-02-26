@@ -143,7 +143,7 @@ function getInitialPlanDayNumber(
 }
 
 function buildAiResultsRoute(planToken: string, day: number): string {
-  return `/soul-audit/results?planToken=${planToken}&day=${day}`
+  return `/soul-audit/plan/${planToken}?day=${day}`
 }
 
 export async function POST(request: NextRequest) {
@@ -630,7 +630,7 @@ export async function POST(request: NextRequest) {
       }),
     }
 
-    // Warm cache path for immediate UI fetches.
+    // Warm in-memory cache for immediate UI fetches.
     getAllPlanDays(plan.token)
 
     return withCurrentRouteCookie(
@@ -646,7 +646,7 @@ export async function POST(request: NextRequest) {
       requestId,
       error,
       method: request.method,
-      path: request.nextUrl.pathname,
+      path: request.nextUrl?.pathname ?? '/api/soul-audit/select',
       clientKey,
     })
     return jsonError({

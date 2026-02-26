@@ -138,30 +138,41 @@ describe('Soul Audit results selection consent UX', () => {
 
   it('does not gate option selection on site-cookie state and proceeds to devotional routing', async () => {
     const user = userEvent.setup()
-    const fetchMock = vi
-      .fn()
-      .mockResolvedValueOnce({
-        ok: true,
-        json: async () => ({
+    const fetchMock = vi.fn(async (url: string) => {
+      if (url === '/api/auth/session') {
+        return {
           ok: true,
-          auditRunId: 'run_test',
-          essentialAccepted: true,
-          analyticsOptIn: false,
-          crisisAcknowledged: false,
-          consentToken: 'consent-token-1',
-        }),
-      })
-      .mockResolvedValueOnce({
-        ok: true,
-        json: async () => ({
+          json: async () => ({ authenticated: false, user: null }),
+        }
+      }
+      if (url === '/api/soul-audit/consent') {
+        return {
           ok: true,
-          auditRunId: 'run_test',
-          selectionType: 'ai_primary',
-          route: '/soul-audit/results?planToken=plan-token-1&day=1',
-          planToken: 'plan-token-1',
-          planDays: [],
-        }),
-      })
+          json: async () => ({
+            ok: true,
+            auditRunId: 'run_test',
+            essentialAccepted: true,
+            analyticsOptIn: false,
+            crisisAcknowledged: false,
+            consentToken: 'consent-token-1',
+          }),
+        }
+      }
+      if (url === '/api/soul-audit/select') {
+        return {
+          ok: true,
+          json: async () => ({
+            ok: true,
+            auditRunId: 'run_test',
+            selectionType: 'ai_primary',
+            route: '/soul-audit/plan/plan-token-1?day=1',
+            planToken: 'plan-token-1',
+            planDays: [],
+          }),
+        }
+      }
+      return { ok: true, json: async () => ({}) }
+    })
     vi.stubGlobal('fetch', fetchMock)
 
     render(<SoulAuditResultsPage />)
@@ -170,7 +181,7 @@ describe('Soul Audit results selection consent UX', () => {
 
     await waitFor(() => {
       expect(pushMock).toHaveBeenCalledWith(
-        '/soul-audit/results?planToken=plan-token-1&day=1',
+        '/soul-audit/plan/plan-token-1?day=1',
       )
     })
 

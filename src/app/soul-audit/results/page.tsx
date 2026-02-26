@@ -217,14 +217,14 @@ function isPlanPreview(value: unknown): value is PlanDayPreview {
 
 function loadSubmitResult(): SoulAuditSubmitResponseV2 | null {
   if (typeof window === 'undefined') return null
-  const raw = localStorage.getItem('soul-audit-submit-v2')
+  const raw = sessionStorage.getItem('soul-audit-submit-v2')
   if (!raw) return null
   try {
     const parsed = JSON.parse(raw) as SoulAuditSubmitResponseV2
     if (parsed.version !== 'v2') return null
     if (hasLegacyAuditOptionCopy(parsed)) {
-      localStorage.removeItem('soul-audit-submit-v2')
-      localStorage.removeItem('soul-audit-selection-v2')
+      sessionStorage.removeItem('soul-audit-submit-v2')
+      sessionStorage.removeItem('soul-audit-selection-v2')
       return null
     }
     return parsed
@@ -235,7 +235,7 @@ function loadSubmitResult(): SoulAuditSubmitResponseV2 | null {
 
 function loadSelectionResult(): SoulAuditSelectResponse | null {
   if (typeof window === 'undefined') return null
-  const raw = localStorage.getItem('soul-audit-selection-v2')
+  const raw = sessionStorage.getItem('soul-audit-selection-v2')
   if (!raw) return null
   try {
     const parsed = JSON.parse(raw) as SoulAuditSelectResponse
@@ -287,7 +287,7 @@ function loadSavedAuditOptions(): SavedAuditOption[] {
 
 function loadLastAuditInput(): string | null {
   if (typeof window === 'undefined') return null
-  const raw = window.localStorage.getItem(LAST_AUDIT_INPUT_SESSION_KEY)
+  const raw = window.sessionStorage.getItem(LAST_AUDIT_INPUT_SESSION_KEY)
   if (!raw) return null
   const normalized = raw.trim()
   return normalized.length > 0 ? normalized : null
@@ -404,7 +404,7 @@ export default function SoulAuditResultsPage() {
   useEffect(() => {
     if (typeof window === 'undefined') return
     setRerollUsed(
-      window.localStorage.getItem(REROLL_USED_SESSION_KEY) === 'true',
+      window.sessionStorage.getItem(REROLL_USED_SESSION_KEY) === 'true',
     )
     setSavedOptions(loadSavedAuditOptions())
   }, [])
@@ -464,7 +464,7 @@ export default function SoulAuditResultsPage() {
   useEffect(() => {
     if (!lastInput) return
     setLastAuditInput(lastInput)
-    window.localStorage.setItem(LAST_AUDIT_INPUT_SESSION_KEY, lastInput)
+    window.sessionStorage.setItem(LAST_AUDIT_INPUT_SESSION_KEY, lastInput)
   }, [lastInput])
 
   useEffect(() => {
@@ -1030,7 +1030,7 @@ export default function SoulAuditResultsPage() {
       if (selectionPayload.onboardingMeta) {
         setPlanOnboardingMeta(selectionPayload.onboardingMeta)
       }
-      localStorage.setItem(
+      sessionStorage.setItem(
         'soul-audit-selection-v2',
         JSON.stringify(selectionPayload),
       )
@@ -1127,9 +1127,9 @@ export default function SoulAuditResultsPage() {
       setExpandedReasoningOptionId(null)
       setRerollUsed(true)
 
-      localStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
-      localStorage.removeItem('soul-audit-selection-v2')
-      localStorage.setItem(REROLL_USED_SESSION_KEY, 'true')
+      sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
+      sessionStorage.removeItem('soul-audit-selection-v2')
+      sessionStorage.setItem(REROLL_USED_SESSION_KEY, 'true')
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Unable to reroll options.')
     } finally {
@@ -1186,9 +1186,9 @@ export default function SoulAuditResultsPage() {
       setCrisisAcknowledged(false)
       setExpandedReasoningOptionId(null)
       setRerollUsed(false)
-      localStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
-      localStorage.removeItem('soul-audit-selection-v2')
-      localStorage.removeItem(REROLL_USED_SESSION_KEY)
+      sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
+      sessionStorage.removeItem('soul-audit-selection-v2')
+      sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
       return true
     } catch (err) {
       if (!silent) {
@@ -1335,11 +1335,11 @@ export default function SoulAuditResultsPage() {
   async function handleResetAudit() {
     setSelectionInlineError(null)
     setError(null)
-    localStorage.removeItem('soul-audit-result')
-    localStorage.removeItem('soul-audit-submit-v2')
-    localStorage.removeItem('soul-audit-selection-v2')
-    localStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)
-    localStorage.removeItem(REROLL_USED_SESSION_KEY)
+    sessionStorage.removeItem('soul-audit-result')
+    sessionStorage.removeItem('soul-audit-submit-v2')
+    sessionStorage.removeItem('soul-audit-selection-v2')
+    sessionStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)
+    sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
 
     try {
       await fetch('/api/soul-audit/reset', { method: 'POST' })
@@ -2472,10 +2472,10 @@ export default function SoulAuditResultsPage() {
                     <button
                       type="button"
                       onClick={() => {
-                        localStorage.removeItem('soul-audit-submit-v2')
-                        localStorage.removeItem('soul-audit-selection-v2')
-                        localStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)
-                        localStorage.removeItem(REROLL_USED_SESSION_KEY)
+                        sessionStorage.removeItem('soul-audit-submit-v2')
+                        sessionStorage.removeItem('soul-audit-selection-v2')
+                        sessionStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)
+                        sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
                         void fetch('/api/soul-audit/reset', {
                           method: 'POST',
                         }).catch(() => {})

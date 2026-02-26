@@ -3,7 +3,7 @@
   "version": "0.7.0",
   "private": true,
   "engines": {
-    "node": ">=20.10 <25"
+    "node": ">=22.0.0 <23"
   },
   "scripts": {
     "dev": "next dev --port 3333",
@@ -24,6 +24,7 @@
     "verify:folder-structure": "node scripts/check-folder-structure-integrity.mjs",
     "verify:appstore-gate": "node scripts/check-appstore-gate.mjs",
     "verify:ios-readiness": "node scripts/check-ios-readiness.mjs",
+    "verify:one-pass": "npm run type-check && npm run lint && npm test",
     "test": "vitest run",
     "test:watch": "vitest",
     "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",

@@ -4,11 +4,11 @@
  * Generates 3 unique 7-day plan outlines for the Soul Audit submit flow.
  * Each outline approaches the user's topic from a different angle.
  *
- * Replaces curated series matching (buildAuditOptions) for AI options.
+ * These outlines become the ai_generative options presented to the user.
  * Curated_prefab options continue to use the existing matching.ts path.
  *
- * Fallback: if outline generation fails, the submit route falls back to
- * the existing buildAuditOptions() curated matching path.
+ * If outline generation fails, the submit route returns an honest error
+ * (no curated fallback — all providers must be exhausted first).
  */
 
 import {
@@ -36,6 +36,9 @@ export interface OutlineGeneratorParams {
     scriptureAnchors: string[]
     tone: string
     intentTags: string[]
+    disposition?: string
+    faithBackground?: string
+    depthPreference?: string
   }
   devotionalLengthMinutes?: number
 }
@@ -372,6 +375,15 @@ export async function generatePlanOutlines(
     `Tone: ${params.intent.tone}`,
     `Scripture anchors: ${params.intent.scriptureAnchors.join(', ') || 'none specified'}`,
     `Intent tags: ${params.intent.intentTags.join(', ') || 'none'}`,
+    params.intent.disposition
+      ? `Disposition: ${params.intent.disposition} (seeker=exploring faith, returning=reconnecting, scholarly=academic depth, pastoral=hurting/in crisis)`
+      : '',
+    params.intent.faithBackground && params.intent.faithBackground !== 'unspecified'
+      ? `Faith background: ${params.intent.faithBackground}`
+      : '',
+    params.intent.depthPreference
+      ? `Depth preference: ${params.intent.depthPreference} (introductory=accessible basics, intermediate=growing deeper, deep-study=scholarly rigor)`
+      : '',
     `Target length per day: ${lengthMinutes} minutes (~${lengthMinutes * 150} words)`,
     referenceSeedText
       ? `\nReference library seeds (use these to ground your plan in real sources):\n${referenceSeedText}`

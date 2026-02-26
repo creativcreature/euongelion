@@ -40,6 +40,9 @@ export interface GenerativeDayParams {
   devotionalLengthMinutes: number
   previousDaysModules?: DevotionalModuleType[][]
   excludeChunkIds?: string[]
+  disposition?: string
+  faithBackground?: string
+  depthPreference?: string
 }
 
 export interface GenerativeDayResult {
@@ -105,17 +108,46 @@ function buildDevotionalSystemPrompt(params: {
   pardesLevel: string
   chiasticPosition: ChiasticPosition7
   previousModuleSets: DevotionalModuleType[][]
+  disposition?: string
+  depthPreference?: string
+  faithBackground?: string
 }): string {
   const previousModulesNote =
     params.previousModuleSets.length > 0
       ? `\nPrevious days' modules (vary yours): ${params.previousModuleSets.map((set, i) => `D${i + 1}:[${set.join(',')}]`).join(' ')}`
       : ''
 
+  // Steer voice/depth based on user disposition and depth preference
+  const voiceNotes: string[] = []
+  if (params.disposition === 'pastoral') {
+    voiceNotes.push('TONE: Extra gentle, validating. Acknowledge pain before teaching. Shorter sentences.')
+  } else if (params.disposition === 'scholarly') {
+    voiceNotes.push('TONE: More academic rigor. Include original-language notes, historical context, cross-references.')
+  } else if (params.disposition === 'seeker') {
+    voiceNotes.push('TONE: Welcoming, no insider jargon. Define theological terms. Gentle invitations, not assumptions.')
+  } else if (params.disposition === 'returning') {
+    voiceNotes.push('TONE: Warm re-welcome. Reference familiar concepts without condescension. Acknowledge the journey back.')
+  }
+
+  if (params.depthPreference === 'deep-study') {
+    voiceNotes.push('DEPTH: Scholarly — include Hebrew/Greek word studies, historical-critical context, theological nuance.')
+  } else if (params.depthPreference === 'introductory') {
+    voiceNotes.push('DEPTH: Accessible — plain language, short paragraphs, concrete examples. No assumed biblical literacy.')
+  }
+
+  if (params.faithBackground === 'other-faith') {
+    voiceNotes.push('CONTEXT: Reader comes from another faith tradition. Be respectful and bridge-building, not polemical.')
+  } else if (params.faithBackground === 'curious') {
+    voiceNotes.push('CONTEXT: Reader is spiritually curious but not religious. Avoid churchy language. Lead with questions.')
+  }
+
+  const taxonomyBlock = voiceNotes.length > 0 ? `\n${voiceNotes.join('\n')}\n` : ''
+
   // Compressed prompt: ~40% fewer tokens than original while preserving all constraints.
   return `You are a devotional writer for Euangelion (Christian devotional app, ancient wisdom).
 
 VOICE: 60% warm, 40% authoritative. No exclamation marks. No clichés. Honest about difficulty. Thoughtful pastor who reads widely.
-
+${taxonomyBlock}
 COMPOSITION: 80% from provided reference material (quote, paraphrase, build upon). 20% generated bridges/personalization. Every claim grounded in Scripture or references.
 
 THEOLOGY: Nicene orthodoxy baseline. All traditions represented. Scripture primary. Acknowledge uncertainty.
@@ -388,6 +420,9 @@ export async function generateDevotionalDay(
     pardesLevel: params.dayOutline.pardesLevel,
     chiasticPosition: params.dayOutline.chiasticPosition,
     previousModuleSets: params.previousDaysModules || [],
+    disposition: params.disposition,
+    depthPreference: params.depthPreference,
+    faithBackground: params.faithBackground,
   })
 
   const userMessage = [

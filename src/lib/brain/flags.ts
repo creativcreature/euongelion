@@ -13,6 +13,16 @@ function toNumber(value: string | undefined, fallback: number): number {
 }
 
 export const brainFlags = {
+  // ─── Soul Audit Controls ──────────────────────────────────────────
+
+  /** Emergency kill switch — disables Soul Audit entirely */
+  soulAuditEnabled: toBool(process.env.SOUL_AUDIT_ENABLED, true),
+
+  /** Enable clarifier-once for vague inputs */
+  clarifierEnabled: toBool(process.env.CLARIFIER_ENABLED, true),
+
+  // ─── Brain Router ─────────────────────────────────────────────────
+
   brainRouterEnabled: toBool(process.env.BRAIN_ROUTER_ENABLED, true),
   brainSwitchUiEnabled: toBool(process.env.BRAIN_SWITCH_UI_ENABLED, true),
   openWebModeEnabled: toBool(process.env.OPEN_WEB_MODE_ENABLED, true),
