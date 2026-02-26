@@ -544,6 +544,24 @@ export default function EuangelionShellHeader({
                 ACCOUNT
               </Link>
             )}
+            {!authLoading && !authenticated && (
+              <>
+                <Link
+                  href={`/auth/sign-in?redirect=${redirectPath}`}
+                  className="mock-nav-item"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  SIGN IN
+                </Link>
+                <Link
+                  href={`/auth/sign-up?redirect=${redirectPath}`}
+                  className="mock-nav-item"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  SIGN UP
+                </Link>
+              </>
+            )}
           </div>
         )}
 

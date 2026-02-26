@@ -5,6 +5,15 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Fix 4 production bugs: audit validation, mobile menu, guest flow (2026-02-26)
+
+- **Bug fix**: `isSafeAuditOptionId` regex rejected all `ai_generative` option IDs (3-segment format `kind:slug:rank`) — regex only accepted the 4-segment format used by `ai_primary`. This caused "Invalid auditRunId or optionId format" on every AI audit selection.
+- **Bug fix**: Mobile hamburger menu was trapped behind the date ticker — absolutely-positioned ticker items (`inset: 0`) covered the toggle button. Fixed with `position: relative; z-index: 2` on toggle + explicit grid column layout.
+- **Bug fix**: Guest users had no way to sign up after dismissing the initial guest gate on mobile — the mobile nav panel only showed ACCOUNT for authenticated users. Added SIGN IN / SIGN UP links for unauthenticated users.
+- **Note**: "Guest cannot view devotional" was caused by the same regex bug — fixing the option ID validation unblocks the entire guest selection → devotional flow.
+
+---
+
 ## F-056: Audit hardening — security, timeout, error semantics (2026-02-26)
 
 - **Security**: Clarifier session fingerprint now uses `timingSafeEqual` (was plain `!==` on hex strings).

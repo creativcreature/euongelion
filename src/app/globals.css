@@ -3645,6 +3645,8 @@ html.reduce-motion *::after {
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
+  position: relative;
+  z-index: 2;
   min-height: 1.9rem;
   padding: 0.12rem 0.5rem;
   border: var(--mock-stroke, 1px) solid
@@ -5283,8 +5285,8 @@ html.reduce-motion *::after {
 
   .mock-topbar-mobile-row {
     display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    justify-items: center;
     position: relative;
     min-height: var(--mock-h-topbar);
     padding: 0.28rem var(--mock-pad-x);
