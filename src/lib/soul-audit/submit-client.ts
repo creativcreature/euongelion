@@ -8,7 +8,9 @@ export type SoulAuditSubmitResult =
   | SoulAuditSubmitResponseV2
   | SoulAuditClarifierResponse
 
-const DEFAULT_SUBMIT_TIMEOUT_MS = 15_000
+// LLM outline generation (3 outlines × 7 days) takes 30-60s on Anthropic.
+// 90s gives headroom for slow providers without false client-side timeouts.
+const DEFAULT_SUBMIT_TIMEOUT_MS = 90_000
 
 export type SoulAuditSubmitErrorCode = 'timeout' | 'offline' | 'server'
 
@@ -27,8 +29,11 @@ export function isClarifierResponse(
   result: SoulAuditSubmitResult,
 ): result is SoulAuditClarifierResponse {
   return (
-    'clarifierRequired' in result && result.clarifierRequired === true &&
-    !('auditRunId' in result && (result as SoulAuditSubmitResponseV2).auditRunId)
+    'clarifierRequired' in result &&
+    result.clarifierRequired === true &&
+    !(
+      'auditRunId' in result && (result as SoulAuditSubmitResponseV2).auditRunId
+    )
   )
 }
 

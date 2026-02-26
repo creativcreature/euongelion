@@ -163,7 +163,11 @@ export function verifyClarifierToken(params: {
   const expectedSig = signPayload(encoded)
   const sigBuf = Buffer.from(signature, 'hex')
   const expectedBuf = Buffer.from(expectedSig, 'hex')
-  if (sigBuf.length !== expectedBuf.length || !timingSafeEqual(sigBuf, expectedBuf)) return null
+  if (
+    sigBuf.length !== expectedBuf.length ||
+    !timingSafeEqual(sigBuf, expectedBuf)
+  )
+    return null
 
   try {
     const decoded = JSON.parse(
@@ -173,7 +177,13 @@ export function verifyClarifierToken(params: {
     if (decoded.version !== CLARIFIER_TOKEN_VERSION) return null
 
     const fingerprint = fingerprintSession(params.sessionToken)
-    if (decoded.sessionFingerprint !== fingerprint) return null
+    const fpBuf = Buffer.from(decoded.sessionFingerprint, 'hex')
+    const expectedFpBuf = Buffer.from(fingerprint, 'hex')
+    if (
+      fpBuf.length !== expectedFpBuf.length ||
+      !timingSafeEqual(fpBuf, expectedFpBuf)
+    )
+      return null
 
     const issuedAt = new Date(decoded.issuedAt).getTime()
     if (!Number.isFinite(issuedAt)) return null

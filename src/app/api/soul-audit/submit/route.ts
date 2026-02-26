@@ -441,7 +441,11 @@ export async function POST(request: NextRequest) {
     if (
       brainFlags.clarifierEnabled &&
       !rerollRequested &&
-      needsClarification(responseText, precomputedIntent.themes, hasClarifierResponse)
+      needsClarification(
+        responseText,
+        precomputedIntent.themes,
+        hasClarifierResponse,
+      )
     ) {
       const { prompt, suggestions } = buildClarifierPrompt()
       const clarifierTokenValue = createClarifierToken({
@@ -540,9 +544,8 @@ export async function POST(request: NextRequest) {
     const prefabOptions = prefabSlugs
       .map((slug, index) => {
         const candidate =
-          getCuratedDayCandidates().find(
-            (item) => item.seriesSlug === slug,
-          ) ?? fallbackCandidateForSeries(slug)
+          getCuratedDayCandidates().find((item) => item.seriesSlug === slug) ??
+          fallbackCandidateForSeries(slug)
         if (!candidate) return null
         return makeOption({
           candidate,
@@ -569,8 +572,6 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // ai_generative options already have quality copy from outline generation.
-    options = sanitizeOptionSet(options)
     const slowGeneration = Date.now() - generationStart > 8_000
 
     const { run, options: persistedOptions } = await createAuditRun({

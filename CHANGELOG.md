@@ -5,6 +5,16 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-056: Audit hardening — security, timeout, error semantics (2026-02-26)
+
+- **Security**: Clarifier session fingerprint now uses `timingSafeEqual` (was plain `!==` on hex strings).
+- **Bug fix**: Client-side submit timeout increased from 15s to 90s — LLM generation takes 30-60s, every request was falsely timing out.
+- **Error semantics**: Provider/network failures in `generatePlanOutlines()` now rethrow (503) instead of being swallowed as null (422).
+- **Optimization**: Removed redundant double-call to `sanitizeOptionSet()` in submit route.
+- **Lockfile sync**: `package-lock.json` engines field aligned with `package.json`.
+
+---
+
 ## F-056: Fix Soul Audit generation pipeline (2026-02-25)
 
 - **Critical fix**: Soul Audit submit was returning `OPTION_ASSEMBLY_FAILED` for every request — no AI-generated devotional outlines were being produced.

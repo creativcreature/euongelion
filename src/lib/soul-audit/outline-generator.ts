@@ -543,6 +543,8 @@ export async function generatePlanOutlines(
       `[outline-generator] Generation failed:`,
       error instanceof Error ? error.message : error,
     )
-    return null
+    // Rethrow provider/network errors so the submit route can distinguish
+    // "all providers down" (503) from "parse failure" (422 — returns null above).
+    throw error
   }
 }
