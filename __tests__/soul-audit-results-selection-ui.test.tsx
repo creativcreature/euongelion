@@ -113,34 +113,40 @@ describe('Soul Audit results selection consent UX', () => {
   beforeEach(() => {
     pushMock.mockReset()
     replaceMock.mockReset()
-    const localStorageStore: Record<string, string> = {}
+    const storageStore: Record<string, string> = {}
+    const makeMockStorage = () => ({
+      getItem: (key: string) => storageStore[key] ?? null,
+      setItem: (key: string, value: string) => {
+        storageStore[key] = String(value)
+      },
+      removeItem: (key: string) => {
+        delete storageStore[key]
+      },
+      clear: () => {
+        Object.keys(storageStore).forEach((key) => {
+          delete storageStore[key]
+        })
+      },
+    })
     Object.defineProperty(window, 'localStorage', {
       configurable: true,
       writable: true,
-      value: {
-        getItem: (key: string) => localStorageStore[key] ?? null,
-        setItem: (key: string, value: string) => {
-          localStorageStore[key] = String(value)
-        },
-        removeItem: (key: string) => {
-          delete localStorageStore[key]
-        },
-        clear: () => {
-          Object.keys(localStorageStore).forEach((key) => {
-            delete localStorageStore[key]
-          })
-        },
-      },
+      value: makeMockStorage(),
     })
-    window.localStorage.removeItem('soul-audit-submit-v2')
-    window.localStorage.removeItem('soul-audit-selection-v2')
-    window.localStorage.removeItem('soul-audit-last-input')
-    window.localStorage.removeItem('soul-audit-reroll-used')
-    window.localStorage.setItem(
+    Object.defineProperty(window, 'sessionStorage', {
+      configurable: true,
+      writable: true,
+      value: makeMockStorage(),
+    })
+    window.sessionStorage.removeItem('soul-audit-submit-v2')
+    window.sessionStorage.removeItem('soul-audit-selection-v2')
+    window.sessionStorage.removeItem('soul-audit-last-input')
+    window.sessionStorage.removeItem('soul-audit-reroll-used')
+    window.sessionStorage.setItem(
       'soul-audit-submit-v2',
       JSON.stringify(submitPayload),
     )
-    window.localStorage.removeItem('soul-audit-selection-v2')
+    window.sessionStorage.removeItem('soul-audit-selection-v2')
     window.localStorage.setItem('soul-audit-guest-signup-gate-v1', 'seen')
     document.cookie =
       'euangelion_site_consent=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'
@@ -154,34 +160,41 @@ describe('Soul Audit results selection consent UX', () => {
 
   it('does not gate option selection on site-cookie state and proceeds to devotional routing', async () => {
     const user = userEvent.setup()
-    const fetchMock = vi
-      .fn()
-      .mockResolvedValueOnce({
-        ok: true,
-        json: async () => ({ authenticated: false, user: null }),
-      })
-      .mockResolvedValueOnce({
-        ok: true,
-        json: async () => ({
+    const fetchMock = vi.fn(async (url: string) => {
+      if (url === '/api/auth/session') {
+        return {
           ok: true,
-          auditRunId: 'run_test',
-          essentialAccepted: true,
-          analyticsOptIn: false,
-          crisisAcknowledged: false,
-          consentToken: 'consent-token-1',
-        }),
-      })
-      .mockResolvedValueOnce({
-        ok: true,
-        json: async () => ({
+          json: async () => ({ authenticated: false, user: null }),
+        }
+      }
+      if (url === '/api/soul-audit/consent') {
+        return {
           ok: true,
-          auditRunId: 'run_test',
-          selectionType: 'ai_primary',
-          route: '/soul-audit/results?planToken=plan-token-1&day=1',
-          planToken: 'plan-token-1',
-          planDays: [],
-        }),
-      })
+          json: async () => ({
+            ok: true,
+            auditRunId: 'run_test',
+            essentialAccepted: true,
+            analyticsOptIn: false,
+            crisisAcknowledged: false,
+            consentToken: 'consent-token-1',
+          }),
+        }
+      }
+      if (url === '/api/soul-audit/select') {
+        return {
+          ok: true,
+          json: async () => ({
+            ok: true,
+            auditRunId: 'run_test',
+            selectionType: 'ai_primary',
+            route: '/soul-audit/plan/plan-token-1?day=1',
+            planToken: 'plan-token-1',
+            planDays: [],
+          }),
+        }
+      }
+      return { ok: true, json: async () => ({}) }
+    })
     vi.stubGlobal('fetch', fetchMock)
 
     render(<SoulAuditResultsPage />)
@@ -190,7 +203,7 @@ describe('Soul Audit results selection consent UX', () => {
 
     await waitFor(() => {
       expect(pushMock).toHaveBeenCalledWith(
-        '/soul-audit/results?planToken=plan-token-1&day=1',
+        '/soul-audit/plan/plan-token-1?day=1',
       )
     })
 

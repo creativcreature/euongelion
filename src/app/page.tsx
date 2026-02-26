@@ -215,14 +215,16 @@ export default function Home() {
     setIsSubmitting(true)
     setError(null)
 
+    // Persist input before fetch — survives browser crash or timeout
+    sessionStorage.setItem(LAST_AUDIT_INPUT_SESSION_KEY, trimmed)
+
     try {
       const data = (await submitSoulAuditResponse({
         response: trimmed,
       })) as SoulAuditSubmitResponseV2
-      localStorage.setItem(LAST_AUDIT_INPUT_SESSION_KEY, trimmed)
-      localStorage.setItem('soul-audit-submit-v2', JSON.stringify(data))
-      localStorage.removeItem('soul-audit-selection-v2')
-      localStorage.removeItem(REROLL_USED_SESSION_KEY)
+      sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(data))
+      sessionStorage.removeItem('soul-audit-selection-v2')
+      sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
       recordAudit(trimmed, data)
       setLastFailedSubmission(null)
       router.push('/soul-audit/results')

@@ -15,8 +15,8 @@ import {
   MAX_AUDITS_PER_CYCLE,
   SOUL_AUDIT_OPTION_SPLIT,
 } from '@/lib/soul-audit/constants'
+import { PASTORAL_MESSAGES } from '@/lib/soul-audit/messages'
 import {
-  buildAuditOptions,
   fallbackCandidateForSeries,
   getPrefabSlugs,
   makeOption,
@@ -24,13 +24,11 @@ import {
 } from '@/lib/soul-audit/matching'
 import { getCuratedDayCandidates } from '@/lib/soul-audit/curation-engine'
 import { parseAuditIntent } from '@/lib/brain/intent-parser'
-import { duplicateCheck, rememberFingerprint } from '@/lib/brain/dedupe'
 import {
   generateWithBrain,
   providerAvailabilityForUser,
 } from '@/lib/brain/router'
 import { brainFlags } from '@/lib/brain/flags'
-import { retrieveFromIndex } from '@/lib/brain/rag-index'
 import { generatePlanOutlines } from '@/lib/soul-audit/outline-generator'
 import {
   buildOutlineCacheKey,
@@ -38,6 +36,11 @@ import {
   setOutlineInCache,
 } from '@/lib/soul-audit/outline-cache'
 import { createRunToken, verifyRunToken } from '@/lib/soul-audit/run-token'
+import {
+  needsClarification,
+  buildClarifierPrompt,
+  createClarifierToken,
+} from '@/lib/soul-audit/clarifier'
 import {
   bumpSessionAuditCount,
   createAuditRun,
@@ -47,6 +50,7 @@ import {
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import type {
   AuditOptionPreview,
+  SoulAuditClarifierResponse,
   SoulAuditSubmitResponseV2,
 } from '@/types/soul-audit'
 
@@ -55,11 +59,11 @@ interface SubmitBody {
   rerollForRunId?: string
   runToken?: string
   clarifierResponse?: string
+  clarifierToken?: string
 }
 
 const MAX_SUBMIT_BODY_BYTES = 8_192
 const MAX_SUBMITS_PER_MINUTE = 12
-const AI_OPTION_DUPLICATE_SCOPE = 'soul-audit-ai-options'
 
 function extractMatchedTermsFromReasoning(reasoning: string): string[] {
   const match = reasoning.match(/\(([^)]+)\)/)
@@ -96,7 +100,7 @@ function getLowContextGuidance(input: string): string | null {
     .filter((token) => token.length > 0)
   if (words.length > 3) return null
 
-  return 'We built options from a short input. Add one more sentence for more precise curation.'
+  return PASTORAL_MESSAGES.INPUT_TOO_SHORT
 }
 
 function createOptionVariantSeed(): number {
@@ -107,15 +111,6 @@ function createOptionVariantSeed(): number {
   } catch {
     return Date.now() >>> 0
   }
-}
-
-type AiPolishPayload = {
-  title?: string
-  question?: string
-  reasoning?: string
-  paragraph?: string
-  verse?: string
-  verseText?: string
 }
 
 type AiIntentPayload = {
@@ -136,22 +131,8 @@ type AiIntentPayload = {
   intentTags?: string[]
 }
 
-const DISALLOWED_BURDEN_FRAMING_PATTERN =
-  /\b(you named this burden|because you named)\b/i
 const TELEGRAPHIC_TITLE_PATTERN =
   /^(want|need|learn|help|start|daily)\b(?:\s+\w+){0,2}\s*[:\-]/i
-
-function parseAiPolishPayload(raw: string): AiPolishPayload | null {
-  const trimmed = raw.trim()
-  if (!trimmed) return null
-  const fenced = trimmed.replace(/^```(?:json)?\s*/i, '').replace(/```$/i, '')
-  try {
-    const parsed = JSON.parse(fenced) as AiPolishPayload
-    return typeof parsed === 'object' && parsed ? parsed : null
-  } catch {
-    return null
-  }
-}
 
 function parseAiIntentPayload(raw: string): AiIntentPayload | null {
   const trimmed = raw.trim()
@@ -177,10 +158,6 @@ function normalizeLegacyFraming(value: string): string {
     )
     .replace(/\s+/g, ' ')
     .trim()
-}
-
-function hasDisallowedFraming(value: string): boolean {
-  return DISALLOWED_BURDEN_FRAMING_PATTERN.test(value)
 }
 
 function isLowQualityTitle(value: string): boolean {
@@ -304,212 +281,30 @@ Schema:
               .filter(Boolean)
               .slice(0, 8)
           : fallback.intentTags,
+      // Taxonomy fields always come from deterministic parser — LLM doesn't add value here
+      disposition: fallback.disposition,
+      faithBackground: fallback.faithBackground,
+      depthPreference: fallback.depthPreference,
     }
   } catch {
     return fallback
   }
 }
 
-async function rerankGroundingDocsWithBrain(params: {
-  reflectionFocus: string
-  optionQuestion: string
-  docs: Array<{ id: string; title: string; content: string }>
-}): Promise<Array<{ id: string; title: string; content: string }>> {
-  if (params.docs.length <= 3) return params.docs
-
-  // Token optimization: skip LLM reranking by default.
-  // Keyword-scored ordering from retrieveFromIndex is adequate for 4-6 docs.
-  if (!brainFlags.llmDocReranking) return params.docs
-
-  try {
-    const generation = await generateWithBrain({
-      system:
-        'Rank candidate grounding snippets for a devotional pathway. Return JSON array of document ids in best-first order. No extra text.',
-      messages: [
-        {
-          role: 'user',
-          content: [
-            `Reflection focus: ${params.reflectionFocus}`,
-            `Option question: ${params.optionQuestion}`,
-            'Candidates:',
-            ...params.docs.map(
-              (doc) =>
-                `- ${doc.id}: ${doc.title} :: ${doc.content.slice(0, 220)}`,
-            ),
-          ].join('\n'),
-        },
-      ],
-      context: {
-        task: 'audit_option_polish',
-        mode: 'auto',
-        maxOutputTokens: 220,
-      },
-    })
-    const cleaned = generation.output
-      .trim()
-      .replace(/^```(?:json)?\s*/i, '')
-      .replace(/```$/i, '')
-    const parsed = JSON.parse(cleaned) as string[]
-    if (!Array.isArray(parsed) || parsed.length === 0) return params.docs
-    const rank = new Map(parsed.map((id, index) => [String(id), index]))
-    return [...params.docs].sort((a, b) => {
-      const aRank = rank.has(a.id) ? rank.get(a.id)! : Number.MAX_SAFE_INTEGER
-      const bRank = rank.has(b.id) ? rank.get(b.id)! : Number.MAX_SAFE_INTEGER
-      return aRank - bRank
-    })
-  } catch {
-    return params.docs
-  }
-}
-
-function clampWords(value: string, minWords: number, maxWords: number): string {
-  const words = value.replace(/\s+/g, ' ').trim().split(' ').filter(Boolean)
-  if (words.length === 0) return value
-  if (words.length > maxWords) return `${words.slice(0, maxWords).join(' ')}...`
-  if (words.length < minWords) return value
-  return words.join(' ')
-}
-
-async function polishAiOptionsWithBrain(
-  responseText: string,
-  options: AuditOptionPreview[],
-  precomputedIntent?: Awaited<ReturnType<typeof parseAuditIntentWithBrain>>,
-): Promise<AuditOptionPreview[]> {
-  const aiIndices = options
-    .map((option, index) => ({ option, index }))
-    .filter(({ option }) => option.kind === 'ai_primary')
-
-  if (aiIndices.length === 0) return options
-
-  const available = providerAvailabilityForUser({ userKeys: undefined }).some(
-    (entry) => entry.available,
-  )
-  if (!available) return options
-
-  const intent =
-    precomputedIntent ?? (await parseAuditIntentWithBrain(responseText))
-  const next = [...options]
-
-  for (const { option, index } of aiIndices) {
-    const retrievedDocs = retrieveFromIndex({
-      query: `${intent.reflectionFocus} ${option.slug} ${option.question}`,
-      feature: 'audit',
-      sourceTypes: ['curated', 'reference'],
-      limit: 6,
-    })
-    const groundingDocs = await rerankGroundingDocsWithBrain({
-      reflectionFocus: intent.reflectionFocus,
-      optionQuestion: option.question,
-      docs: retrievedDocs,
-    })
-    const groundingPrompt = groundingDocs
-      .map((doc) => `- ${doc.title}: ${doc.content.slice(0, 260)}`)
-      .join('\n')
-
-    const systemPrompt = `You generate one Soul Audit pathway option for Euangelion.\nRules:\n- Return strict JSON object only.\n- Keep title <= 72 chars.\n- Keep question between 18 and 42 words.\n- Keep reasoning between 18 and 40 words.\n- Keep paragraph between 70 and 130 words.\n- Use grounded language from provided module context.\n- Never use these phrases: "You named this burden" or "Because you named".\n- Do not force negative framing when the user intent is growth or learning.\n- Titles must be complete natural language phrases, never keyword fragments (forbidden example: "Want Learn: ...").\nSchema: {\"title\":string,\"question\":string,\"reasoning\":string,\"paragraph\":string,\"verse\"?:string,\"verseText\"?:string}\n\nGrounding context:\n${groundingPrompt}`
-
-    let candidate = option
-    let accepted = false
-
-    for (let attempt = 0; attempt < 2; attempt += 1) {
-      try {
-        const generation = await generateWithBrain({
-          system: systemPrompt,
-          messages: [
-            {
-              role: 'user',
-              content: `Reflection focus: ${intent.reflectionFocus}\nThemes: ${intent.themes.join(', ')}\nTone: ${intent.tone}\nCurrent option title: ${option.title}\nCurrent option question: ${option.question}\nCurrent preview: ${option.preview?.paragraph || ''}`,
-            },
-          ],
-          context: {
-            task: 'audit_option_polish',
-            mode: 'auto',
-            maxOutputTokens: 900,
-          },
-        })
-
-        const parsed = parseAiPolishPayload(generation.output)
-        if (!parsed) continue
-
-        const title = normalizeLegacyFraming(
-          (parsed.title || option.title).trim(),
-        ).slice(0, 90)
-        const question = clampWords(
-          normalizeLegacyFraming((parsed.question || option.question).trim()),
-          18,
-          42,
-        )
-        const reasoning = clampWords(
-          normalizeLegacyFraming((parsed.reasoning || option.reasoning).trim()),
-          18,
-          40,
-        )
-        const paragraph = clampWords(
-          normalizeLegacyFraming(
-            (parsed.paragraph || option.preview?.paragraph || '').trim(),
-          ),
-          70,
-          130,
-        )
-
-        if (
-          isLowQualityTitle(title) ||
-          hasDisallowedFraming(title) ||
-          hasDisallowedFraming(question) ||
-          hasDisallowedFraming(reasoning) ||
-          hasDisallowedFraming(paragraph)
-        ) {
-          continue
-        }
-
-        const duplicate = await duplicateCheck({
-          scope: AI_OPTION_DUPLICATE_SCOPE,
-          title,
-          body: paragraph,
-        })
-        if (duplicate.duplicate) continue
-
-        candidate = {
-          ...option,
-          title,
-          question,
-          reasoning,
-          preview: option.preview
-            ? {
-                ...option.preview,
-                verse: (parsed.verse || option.preview.verse || 'Scripture')
-                  .trim()
-                  .slice(0, 120),
-                verseText: (parsed.verseText || option.preview.verseText || '')
-                  .trim()
-                  .slice(0, 260),
-                paragraph,
-              }
-            : option.preview,
-        }
-        await rememberFingerprint({
-          scope: AI_OPTION_DUPLICATE_SCOPE,
-          title: candidate.title,
-          body: candidate.preview?.paragraph || candidate.question,
-        })
-        accepted = true
-        break
-      } catch {
-        // Keep deterministic option if generation fails.
-      }
-    }
-
-    if (accepted) {
-      next[index] = candidate
-    }
-  }
-
-  return next
-}
-
 export async function POST(request: NextRequest) {
   const requestId = createRequestId()
   const clientKey = getClientKey(request)
+
+  // Emergency kill switch — disables Soul Audit entirely.
+  if (!brainFlags.soulAuditEnabled) {
+    return jsonError({
+      error: PASTORAL_MESSAGES.SOUL_AUDIT_DISABLED,
+      code: 'SOUL_AUDIT_DISABLED',
+      status: 503,
+      requestId,
+    })
+  }
+
   try {
     const parsed = await readJsonWithLimit<SubmitBody>({
       request,
@@ -532,7 +327,7 @@ export async function POST(request: NextRequest) {
     })
     if (!limiter.ok) {
       return jsonError({
-        error: 'Too many audit submissions. Please retry shortly.',
+        error: PASTORAL_MESSAGES.RATE_LIMITED,
         status: 429,
         requestId,
         rateLimit: limiter,
@@ -553,7 +348,7 @@ export async function POST(request: NextRequest) {
 
     if (!effectiveResponseText) {
       return jsonError({
-        error: 'Write at least one word so we can continue.',
+        error: PASTORAL_MESSAGES.INPUT_EMPTY,
         status: 400,
         requestId,
       })
@@ -561,7 +356,7 @@ export async function POST(request: NextRequest) {
 
     if (effectiveResponseText.length > 2000) {
       return jsonError({
-        error: 'Please keep your response under 2000 characters.',
+        error: PASTORAL_MESSAGES.INPUT_TOO_LONG,
         status: 400,
         requestId,
       })
@@ -569,7 +364,7 @@ export async function POST(request: NextRequest) {
 
     if (rerollRequested && !isSafeAuditRunId(rerollForRunId)) {
       return jsonError({
-        error: 'Invalid reroll audit run id.',
+        error: PASTORAL_MESSAGES.INVALID_REROLL_ID,
         status: 400,
         requestId,
       })
@@ -586,7 +381,7 @@ export async function POST(request: NextRequest) {
 
     if (rerollRequested && !rerollVerified) {
       return jsonError({
-        error: 'Reroll request could not be verified.',
+        error: PASTORAL_MESSAGES.REROLL_VERIFY_FAILED,
         status: 403,
         requestId,
       })
@@ -596,8 +391,7 @@ export async function POST(request: NextRequest) {
       effectiveResponseText !== sanitizeAuditInput(rerollVerified.responseText)
     ) {
       return jsonError({
-        error:
-          'Reroll can only use the original audit response. Start a new audit to use different input.',
+        error: PASTORAL_MESSAGES.REROLL_MISMATCH,
         code: 'REROLL_RESPONSE_MISMATCH',
         status: 409,
         requestId,
@@ -607,7 +401,7 @@ export async function POST(request: NextRequest) {
     const currentCount = getSessionAuditCount(sessionToken)
     if (!rerollVerified && currentCount >= MAX_AUDITS_PER_CYCLE) {
       return jsonError({
-        error: 'You have reached the audit limit for this cycle.',
+        error: PASTORAL_MESSAGES.AUDIT_LIMIT,
         code: 'AUDIT_LIMIT_REACHED',
         status: 429,
         requestId,
@@ -618,13 +412,13 @@ export async function POST(request: NextRequest) {
     const inputGuidance = getLowContextGuidance(effectiveResponseText)
     const optionVariantSeed = createOptionVariantSeed()
 
-    // Log provider availability for debugging curation quality.
+    // Log provider availability for debugging.
     const providerStatus = providerAvailabilityForUser({ userKeys: undefined })
     const availableProviders = providerStatus.filter((p) => p.available)
     const unavailableProviders = providerStatus.filter((p) => !p.available)
     if (availableProviders.length === 0) {
       console.warn(
-        `[soul-audit:submit] No LLM providers available. All providers: ${unavailableProviders.map((p) => `${p.provider}=${p.reason || 'no key'}`).join(', ')}. Falling back to deterministic keyword matching.`,
+        `[soul-audit:submit] No LLM providers available. All providers: ${unavailableProviders.map((p) => `${p.provider}=${p.reason || 'no key'}`).join(', ')}. Outline generation will likely fail.`,
       )
     } else {
       console.info(
@@ -637,15 +431,47 @@ export async function POST(request: NextRequest) {
       effectiveResponseText,
     )
     console.info(
-      `[soul-audit:submit] Parsed intent — focus: "${precomputedIntent.reflectionFocus}", themes: [${precomputedIntent.themes.join(', ')}], tone: ${precomputedIntent.tone}`,
+      `[soul-audit:submit] Parsed intent — focus: "${precomputedIntent.reflectionFocus}", themes: [${precomputedIntent.themes.join(', ')}], tone: ${precomputedIntent.tone}, disposition: ${precomputedIntent.disposition}, depth: ${precomputedIntent.depthPreference}`,
     )
 
-    // --- Generative outline path (preferred) ---
-    // Try to generate 3 unique plan outlines via LLM.
-    // Falls back to curated matching if generation fails.
+    // --- Clarifier-once gate ---
+    // When input is too vague (<=3 words, no themes), ask ONE follow-up
+    // before generating options. Skip for rerolls and when disabled.
+    const hasClarifierResponse = Boolean(clarifierResponse)
+    if (
+      brainFlags.clarifierEnabled &&
+      !rerollRequested &&
+      needsClarification(
+        responseText,
+        precomputedIntent.themes,
+        hasClarifierResponse,
+      )
+    ) {
+      const { prompt, suggestions } = buildClarifierPrompt()
+      const clarifierTokenValue = createClarifierToken({
+        originalInput: responseText,
+        sessionToken,
+      })
+
+      const clarifierPayload: SoulAuditClarifierResponse = {
+        clarifierRequired: true,
+        clarifierPrompt: prompt,
+        clarifierOptions: suggestions,
+        clarifierToken: clarifierTokenValue,
+      }
+
+      return withRequestIdHeaders(
+        NextResponse.json(clarifierPayload, { status: 200 }),
+        requestId,
+      )
+    }
+
+    // --- Generative outline path (required) ---
+    // Generate 3 unique plan outlines via LLM. No curated fallback.
+    // If generation fails, return honest error to user.
+    const generationStart = Date.now()
     let options: AuditOptionPreview[]
-    let submissionStrategy: 'generative_outlines' | 'curated_candidates' =
-      'curated_candidates'
+    const submissionStrategy = 'generative_outlines' as const
 
     let generativeResult: Awaited<ReturnType<typeof generatePlanOutlines>> =
       null
@@ -674,86 +500,79 @@ export async function POST(request: NextRequest) {
           setOutlineInCache(outlineCacheKey, generativeResult)
         }
       } catch (generativeError) {
-        console.warn(
+        console.error(
           `[soul-audit:submit] Generative outline path failed:`,
           generativeError instanceof Error
             ? generativeError.message
             : generativeError,
         )
+        return jsonError({
+          error: PASTORAL_MESSAGES.ALL_PROVIDERS_DOWN,
+          code: 'ALL_PROVIDERS_EXHAUSTED',
+          status: 503,
+          requestId,
+        })
       }
     }
 
     if (
-      generativeResult &&
-      generativeResult.options.length >= SOUL_AUDIT_OPTION_SPLIT.aiPrimary
+      !generativeResult ||
+      generativeResult.options.length < SOUL_AUDIT_OPTION_SPLIT.aiPrimary
     ) {
-      console.info(
-        `[soul-audit:submit] Generative path succeeded — ${generativeResult.options.length} outlines generated`,
+      console.error(
+        `[soul-audit:submit] Generative path returned insufficient options (${generativeResult?.options.length ?? 0} < ${SOUL_AUDIT_OPTION_SPLIT.aiPrimary})`,
       )
-      // Generative path: 3 ai_generative + 2 curated_prefab
-      const aiOptions = generativeResult.options.slice(
-        0,
-        SOUL_AUDIT_OPTION_SPLIT.aiPrimary,
-      )
-      const aiSlugs = aiOptions.map((o) => o.slug)
-      const prefabSlugs = getPrefabSlugs(aiSlugs)
-      const prefabOptions = prefabSlugs
-        .map((slug, index) => {
-          const candidate =
-            getCuratedDayCandidates().find(
-              (item) => item.seriesSlug === slug,
-            ) ?? fallbackCandidateForSeries(slug)
-          if (!candidate) return null
-          return makeOption({
-            candidate,
-            kind: 'curated_prefab',
-            rank: aiOptions.length + index + 1,
-            confidence: Math.max(0.35, 0.75 - index * 0.1),
-            input: effectiveResponseText,
-            variantSeed: optionVariantSeed,
-          })
-        })
-        .filter((option): option is AuditOptionPreview => Boolean(option))
-
-      options = [...aiOptions, ...prefabOptions].slice(
-        0,
-        SOUL_AUDIT_OPTION_SPLIT.total,
-      )
-      submissionStrategy = 'generative_outlines'
-    } else {
-      console.info(
-        `[soul-audit:submit] Using curated matching fallback (generative ${generativeResult ? 'returned insufficient options' : 'returned null/failed'})`,
-      )
-      // Fallback: curated matching (existing path)
-      options = buildAuditOptions(effectiveResponseText, optionVariantSeed, [
-        ...precomputedIntent.themes,
-        ...precomputedIntent.intentTags,
-      ])
-      console.info(
-        `[soul-audit:submit] Curated matching produced ${options.length} options: [${options.map((o) => `${o.kind}:${o.slug}`).join(', ')}]`,
-      )
-    }
-
-    if (!hasExpectedOptionSplit(options)) {
       return jsonError({
-        error:
-          'Unable to curate grounded AI options right now. Please retry in a moment.',
+        error: PASTORAL_MESSAGES.OPTION_ASSEMBLY_FAILED,
         code: 'OPTION_ASSEMBLY_FAILED',
         status: 422,
         requestId,
       })
     }
 
-    // Polish only curated-matched AI options (ai_primary).
-    // ai_generative options already have quality copy from outline generation.
-    if (submissionStrategy === 'curated_candidates') {
-      options = await polishAiOptionsWithBrain(
-        effectiveResponseText,
-        options,
-        precomputedIntent,
-      )
+    console.info(
+      `[soul-audit:submit] Generative path succeeded — ${generativeResult.options.length} outlines generated`,
+    )
+
+    // Generative path: 3 ai_generative + 2 curated_prefab
+    const aiOptions = generativeResult.options.slice(
+      0,
+      SOUL_AUDIT_OPTION_SPLIT.aiPrimary,
+    )
+    const aiSlugs = aiOptions.map((o) => o.slug)
+    const prefabSlugs = getPrefabSlugs(aiSlugs)
+    const prefabOptions = prefabSlugs
+      .map((slug, index) => {
+        const candidate =
+          getCuratedDayCandidates().find((item) => item.seriesSlug === slug) ??
+          fallbackCandidateForSeries(slug)
+        if (!candidate) return null
+        return makeOption({
+          candidate,
+          kind: 'curated_prefab',
+          rank: aiOptions.length + index + 1,
+          confidence: Math.max(0.35, 0.75 - index * 0.1),
+          input: effectiveResponseText,
+          variantSeed: optionVariantSeed,
+        })
+      })
+      .filter((option): option is AuditOptionPreview => Boolean(option))
+
+    options = [...aiOptions, ...prefabOptions].slice(
+      0,
+      SOUL_AUDIT_OPTION_SPLIT.total,
+    )
+
+    if (!hasExpectedOptionSplit(options)) {
+      return jsonError({
+        error: PASTORAL_MESSAGES.OPTION_ASSEMBLY_FAILED,
+        code: 'OPTION_ASSEMBLY_FAILED',
+        status: 422,
+        requestId,
+      })
     }
-    options = sanitizeOptionSet(options)
+
+    const slowGeneration = Date.now() - generationStart > 8_000
 
     const { run, options: persistedOptions } = await createAuditRun({
       sessionToken,
@@ -781,18 +600,23 @@ export async function POST(request: NextRequest) {
 
     if (!hasExpectedOptionSplit(responseOptions)) {
       return jsonError({
-        error: 'Unable to assemble a stable devotional option split.',
+        error: PASTORAL_MESSAGES.OPTION_SPLIT_INVALID,
         code: 'OPTION_SPLIT_INVALID',
         status: 500,
         requestId,
       })
     }
 
+    // Strip planOutline from options in the run token to keep it compact.
+    // The token is only used for reroll verification (responseText + session binding).
+    const tokenOptions = responseOptions.map(
+      ({ planOutline: _po, ...rest }) => rest,
+    )
     const runToken = createRunToken({
       auditRunId: run.id,
       responseText: effectiveResponseText,
       crisisDetected,
-      options: responseOptions,
+      options: tokenOptions as AuditOptionPreview[],
       sessionToken,
     })
 
@@ -805,6 +629,7 @@ export async function POST(request: NextRequest) {
       requiresEssentialConsent: true,
       analyticsOptInDefault: false,
       consentAccepted: false,
+      slowGeneration,
       clarifierRequired: false,
       clarifierPrompt: null,
       clarifierOptions: [],
@@ -869,7 +694,7 @@ export async function POST(request: NextRequest) {
       clientKey,
     })
     return jsonError({
-      error: 'Unable to process soul audit right now.',
+      error: PASTORAL_MESSAGES.GENERIC_ERROR,
       status: 500,
       requestId,
     })

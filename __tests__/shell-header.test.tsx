@@ -225,10 +225,11 @@ describe('EuangelionShellHeader', () => {
     })
   })
 
-  it('uses inline mobile nav without a secondary drawer', () => {
+  it('renders a mobile menu toggle for narrow viewports', () => {
     render(<EuangelionShellHeader />)
 
-    expect(screen.queryByRole('button', { name: 'Open menu' })).toBeNull()
-    expect(screen.queryByRole('group', { name: 'Navigation menu' })).toBeNull()
+    expect(
+      screen.queryByRole('button', { name: 'Open menu' }),
+    ).toBeInTheDocument()
   })
 })

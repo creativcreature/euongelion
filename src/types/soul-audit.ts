@@ -47,6 +47,8 @@ export interface SoulAuditSubmitResponseV2 {
   requiresEssentialConsent: true
   analyticsOptInDefault: false
   consentAccepted: boolean
+  /** True when generation took >8s — lets client show a slow-gen message. */
+  slowGeneration?: boolean
   clarifierRequired?: boolean
   clarifierPrompt?: string | null
   clarifierOptions?: string[]
@@ -62,6 +64,18 @@ export interface SoulAuditSubmitResponseV2 {
       total: number
     }
   }
+}
+
+/**
+ * Returned by /api/soul-audit/submit when clarifier-once is triggered.
+ * The client shows the prompt + suggestions, then re-submits with
+ * the user's clarifier response appended.
+ */
+export interface SoulAuditClarifierResponse {
+  clarifierRequired: true
+  clarifierPrompt: string
+  clarifierOptions: string[]
+  clarifierToken: string
 }
 
 export interface SoulAuditConsentRequest {

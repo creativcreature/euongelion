@@ -4,11 +4,11 @@
  * Generates 3 unique 7-day plan outlines for the Soul Audit submit flow.
  * Each outline approaches the user's topic from a different angle.
  *
- * Replaces curated series matching (buildAuditOptions) for AI options.
+ * These outlines become the ai_generative options presented to the user.
  * Curated_prefab options continue to use the existing matching.ts path.
  *
- * Fallback: if outline generation fails, the submit route falls back to
- * the existing buildAuditOptions() curated matching path.
+ * If outline generation fails, the submit route returns an honest error
+ * (no curated fallback — all providers must be exhausted first).
  */
 
 import {
@@ -36,6 +36,9 @@ export interface OutlineGeneratorParams {
     scriptureAnchors: string[]
     tone: string
     intentTags: string[]
+    disposition?: string
+    faithBackground?: string
+    depthPreference?: string
   }
   devotionalLengthMinutes?: number
 }
@@ -90,58 +93,159 @@ function parseOutlineResponse(raw: string): PlanOutline[] | null {
     .replace(/```$/i, '')
     .trim()
 
-  try {
-    const parsed = JSON.parse(cleaned) as unknown
-    if (!Array.isArray(parsed) || parsed.length === 0) return null
+  const parsed = tryParseJsonArray(cleaned)
+  if (!parsed || parsed.length === 0) return null
 
-    const outlines: PlanOutline[] = []
+  const outlines: PlanOutline[] = []
 
-    for (const item of parsed.slice(0, 3)) {
-      if (typeof item !== 'object' || !item) continue
-      const obj = item as Record<string, unknown>
-      if (!obj.angle || !obj.title || !obj.dayOutlines) continue
-      if (!Array.isArray(obj.dayOutlines) || obj.dayOutlines.length < 7)
-        continue
-
-      const dayOutlines: PlanDayOutline[] = (
-        obj.dayOutlines as Array<Record<string, unknown>>
+  for (const [itemIndex, item] of parsed.slice(0, 3).entries()) {
+    if (typeof item !== 'object' || !item) {
+      console.warn(
+        `[outline-generator] Outline ${itemIndex}: not an object, skipping`,
       )
-        .slice(0, 7)
-        .map((day, index) => ({
-          day: index + 1,
-          dayType: validateDayType(day.dayType as string, index),
-          chiasticPosition: validateChiasticPosition(
-            day.chiasticPosition as string,
-            index,
-          ),
-          title: String(day.title || `Day ${index + 1}`).slice(0, 120),
-          scriptureReference: String(
-            day.scriptureReference || 'Scripture',
-          ).slice(0, 120),
-          topicFocus: String(day.topicFocus || '').slice(0, 200),
-          pardesLevel: validatePardesLevel(day.pardesLevel as string, index),
-          suggestedModules: validateModules(day.suggestedModules),
-        }))
+      continue
+    }
+    const obj = item as Record<string, unknown>
+    if (!obj.angle || !obj.title || !obj.dayOutlines) {
+      console.warn(
+        `[outline-generator] Outline ${itemIndex}: missing required field — angle=${!!obj.angle}, title=${!!obj.title}, dayOutlines=${!!obj.dayOutlines}`,
+      )
+      continue
+    }
+    if (!Array.isArray(obj.dayOutlines) || obj.dayOutlines.length < 7) {
+      console.warn(
+        `[outline-generator] Outline ${itemIndex}: dayOutlines invalid — isArray=${Array.isArray(obj.dayOutlines)}, length=${Array.isArray(obj.dayOutlines) ? obj.dayOutlines.length : 'N/A'}`,
+      )
+      continue
+    }
 
-      outlines.push({
-        id: generateOutlineId(),
-        angle: String(obj.angle).slice(0, 200),
-        title: String(obj.title).slice(0, 90),
-        question: String(obj.question || '').slice(0, 300),
-        reasoning: String(obj.reasoning || '').slice(0, 300),
-        scriptureAnchor: String(obj.scriptureAnchor || 'Scripture').slice(
+    const dayOutlines: PlanDayOutline[] = (
+      obj.dayOutlines as Array<Record<string, unknown>>
+    )
+      .slice(0, 7)
+      .map((day, index) => ({
+        day: index + 1,
+        dayType: validateDayType(day.dayType as string, index),
+        chiasticPosition: validateChiasticPosition(
+          day.chiasticPosition as string,
+          index,
+        ),
+        title: String(day.title || `Day ${index + 1}`).slice(0, 120),
+        scriptureReference: String(day.scriptureReference || 'Scripture').slice(
           0,
           120,
         ),
-        dayOutlines,
-        referenceSeeds: [],
-      })
-    }
+        topicFocus: String(day.topicFocus || '').slice(0, 200),
+        pardesLevel: validatePardesLevel(day.pardesLevel as string, index),
+        suggestedModules: validateModules(day.suggestedModules),
+      }))
 
-    return outlines.length > 0 ? outlines : null
+    outlines.push({
+      id: generateOutlineId(),
+      angle: String(obj.angle).slice(0, 200),
+      title: String(obj.title).slice(0, 90),
+      question: String(obj.question || '').slice(0, 300),
+      reasoning: String(obj.reasoning || '').slice(0, 300),
+      scriptureAnchor: String(obj.scriptureAnchor || 'Scripture').slice(0, 120),
+      dayOutlines,
+      referenceSeeds: [],
+    })
+  }
+
+  return outlines.length > 0 ? outlines : null
+}
+
+/**
+ * Try to parse a JSON array. If parsing fails (truncated LLM output),
+ * attempt to salvage complete objects by finding the last `},` boundary
+ * and closing the array.
+ */
+function tryParseJsonArray(text: string): unknown[] | null {
+  // First: try parsing as-is
+  try {
+    const result = JSON.parse(text) as unknown
+    if (Array.isArray(result) && result.length > 0) return result
+    console.warn(
+      `[outline-generator] Parsed JSON is not a non-empty array. Type: ${typeof result}, isArray: ${Array.isArray(result)}`,
+    )
+    return null
   } catch {
+    // JSON is likely truncated — try to salvage
+  }
+
+  // Find the last complete top-level object boundary: `}\n  ,` or `}\n]`
+  // Walk backwards from the end to find a `}` that closes a top-level object.
+  const lastCompleteEnd = findLastCompleteObjectEnd(text)
+  if (lastCompleteEnd < 0) {
+    console.warn(
+      `[outline-generator] JSON parse failed and no salvageable objects found. First 500 chars: ${text.slice(0, 500)}`,
+    )
     return null
   }
+
+  const salvaged = text.slice(0, lastCompleteEnd + 1) + '\n]'
+  try {
+    const result = JSON.parse(salvaged) as unknown
+    if (Array.isArray(result) && result.length > 0) {
+      console.info(
+        `[outline-generator] Salvaged ${result.length} outline(s) from truncated JSON (${text.length} → ${salvaged.length} chars)`,
+      )
+      return result
+    }
+    return null
+  } catch (salvageError) {
+    console.warn(
+      `[outline-generator] JSON salvage also failed: ${salvageError instanceof Error ? salvageError.message : salvageError}. First 500 chars: ${text.slice(0, 500)}`,
+    )
+    return null
+  }
+}
+
+/**
+ * Find the position of the `}` that ends the last complete top-level object
+ * in a JSON array string. Returns -1 if none found.
+ *
+ * Strategy: track brace depth from the opening `[`. Each time depth returns
+ * to 1 (i.e., back at the array level), that `}` ends a complete object.
+ */
+function findLastCompleteObjectEnd(text: string): number {
+  let depth = 0
+  let inString = false
+  let escape = false
+  let lastObjectEnd = -1
+
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i]
+
+    if (escape) {
+      escape = false
+      continue
+    }
+
+    if (ch === '\\' && inString) {
+      escape = true
+      continue
+    }
+
+    if (ch === '"') {
+      inString = !inString
+      continue
+    }
+
+    if (inString) continue
+
+    if (ch === '[' || ch === '{') {
+      depth++
+    } else if (ch === ']' || ch === '}') {
+      depth--
+      // depth === 1 means we just closed a top-level object inside the array
+      if (depth === 1 && ch === '}') {
+        lastObjectEnd = i
+      }
+    }
+  }
+
+  return lastObjectEnd
 }
 
 function validateDayType(value: string, dayIndex: number): PlanDayType {
@@ -377,6 +481,16 @@ export async function generatePlanOutlines(
     `Tone: ${params.intent.tone}`,
     `Scripture anchors: ${params.intent.scriptureAnchors.join(', ') || 'none specified'}`,
     `Intent tags: ${params.intent.intentTags.join(', ') || 'none'}`,
+    params.intent.disposition
+      ? `Disposition: ${params.intent.disposition} (seeker=exploring faith, returning=reconnecting, scholarly=academic depth, pastoral=hurting/in crisis)`
+      : '',
+    params.intent.faithBackground &&
+    params.intent.faithBackground !== 'unspecified'
+      ? `Faith background: ${params.intent.faithBackground}`
+      : '',
+    params.intent.depthPreference
+      ? `Depth preference: ${params.intent.depthPreference} (introductory=accessible basics, intermediate=growing deeper, deep-study=scholarly rigor)`
+      : '',
     `Target length per day: ${lengthMinutes} minutes (~${lengthMinutes * 150} words)`,
     referenceSeedText
       ? `\nReference library seeds (use these to ground your plan in real sources):\n${referenceSeedText}`
@@ -392,15 +506,27 @@ export async function generatePlanOutlines(
       context: {
         task: 'audit_outline_generate',
         mode: 'auto',
-        // 4500 tokens: 3 outlines × (~1200 tokens each including 7 days
-        // + metadata fields + JSON structural overhead).
-        // Previous 2400 budget caused truncation → parser rejection.
-        maxOutputTokens: 4500,
+        // 3 outlines × 7 days of structured JSON typically runs 4000-6000 tokens.
+        // 8192 gives comfortable headroom for verbose LLM responses.
+        maxOutputTokens: 8192,
       },
     })
 
+    console.info(
+      `[outline-generator] LLM response (${generation.provider}, ${generation.outputTokens} tokens): ${generation.output.slice(0, 200)}...`,
+    )
+
     const outlines = parseOutlineResponse(generation.output)
-    if (!outlines || outlines.length === 0) return null
+    if (!outlines || outlines.length === 0) {
+      console.warn(
+        `[outline-generator] Failed to parse outlines from LLM response (${generation.output.length} chars). First 300 chars: ${generation.output.slice(0, 300)}`,
+      )
+      return null
+    }
+
+    console.info(
+      `[outline-generator] Parsed ${outlines.length} outlines: ${outlines.map((o) => `"${o.title}"`).join(', ')}`,
+    )
 
     // Attach reference seeds from user intent
     const seededOutlines = outlines.map((outline) => ({
@@ -417,7 +543,13 @@ export async function generatePlanOutlines(
       options,
       strategy: 'generative_outlines',
     }
-  } catch {
-    return null
+  } catch (error) {
+    console.error(
+      `[outline-generator] Generation failed:`,
+      error instanceof Error ? error.message : error,
+    )
+    // Rethrow provider/network errors so the submit route can distinguish
+    // "all providers down" (503) from "parse failure" (422 — returns null above).
+    throw error
   }
 }

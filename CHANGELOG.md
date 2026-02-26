@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-056: Audit hardening — security, timeout, error semantics (2026-02-26)
+
+- **Security**: Clarifier session fingerprint now uses `timingSafeEqual` (was plain `!==` on hex strings).
+- **Bug fix**: Client-side submit timeout increased from 15s to 90s — LLM generation takes 30-60s, every request was falsely timing out.
+- **Error semantics**: Provider/network failures in `generatePlanOutlines()` now rethrow (503) instead of being swallowed as null (422).
+- **Optimization**: Removed redundant double-call to `sanitizeOptionSet()` in submit route.
+- **Lockfile sync**: `package-lock.json` engines field aligned with `package.json`.
+
+---
+
+## F-056: Fix Soul Audit generation pipeline (2026-02-25)
+
+- **Critical fix**: Soul Audit submit was returning `OPTION_ASSEMBLY_FAILED` for every request — no AI-generated devotional outlines were being produced.
+- **Root cause 1**: Invalid Anthropic model name `claude-3-5-sonnet-latest` (retired) returned 404. Changed to `claude-sonnet-4-6`.
+- **Root cause 2**: dotenv v17 won't overwrite existing env vars. Shell-exported `ANTHROPIC_API_KEY=""` shadowed the `.env.local` value, making the provider appear unavailable. Added `firstNonEmptyEnv()` helper + `GEMINI_API_KEY` fallback for Google provider.
+- **Root cause 3**: `maxOutputTokens: 2400` truncated LLM output mid-JSON (3 outlines x 7 days needs ~4000-6000 tokens). Increased to 8192. Added `tryParseJsonArray()` with JSON salvaging to recover complete outlines from truncated responses.
+- **Diagnostic logging**: Generation pipeline now logs provider availability, LLM response stats, parse results, and detailed errors.
+- **Verified**: 1047/1047 tests pass, live submit returns 3 AI-generated plan outlines + 2 curated prefabs.
+
+---
+
 ## F-055: Fix devotional page hydration mismatch (2026-02-24)
 
 - **Critical fix**: All devotional pages were permanently stuck on "Loading: Preparing your devotional" due to a React 19 hydration mismatch in the shell header's `<time>` element (`new Date()` differs between SSR and client).

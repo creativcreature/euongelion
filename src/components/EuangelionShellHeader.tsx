@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -88,6 +88,7 @@ export default function EuangelionShellHeader({
   const previousPathnameRef = useRef(pathname)
   const accountMenuRef = useRef<HTMLDivElement | null>(null)
   const accountTriggerRef = useRef<HTMLButtonElement | null>(null)
+  const mobileToggleRef = useRef<HTMLButtonElement | null>(null)
   const mastheadRef = useRef<HTMLElement | null>(null)
 
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
@@ -99,6 +100,7 @@ export default function EuangelionShellHeader({
   const [authenticated, setAuthenticated] = useState(false)
   const [userEmail, setUserEmail] = useState<string | null>(null)
   const [accountMenuOpen, setAccountMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [navDocked, setNavDocked] = useState(false)
 
   const mobileTickerItems = useMemo(
@@ -108,6 +110,11 @@ export default function EuangelionShellHeader({
     ],
     [now],
   )
+
+  const closeMobileMenu = useCallback(() => {
+    setMobileMenuOpen(false)
+    mobileToggleRef.current?.focus()
+  }, [])
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')
@@ -119,9 +126,10 @@ export default function EuangelionShellHeader({
     return () => window.clearInterval(timer)
   }, [])
 
+  // Clear scroll-lock artifacts on mount and route changes
   useEffect(() => {
     clearGlobalScrollLocks()
-  }, [])
+  }, [pathname])
 
   useEffect(() => {
     let cancelled = false
@@ -182,6 +190,19 @@ export default function EuangelionShellHeader({
       document.removeEventListener('keydown', closeOnEscape)
     }
   }, [accountMenuOpen])
+
+  // Close mobile menu on Escape
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key !== 'Escape') return
+      closeMobileMenu()
+    }
+
+    document.addEventListener('keydown', handleEscape)
+    return () => document.removeEventListener('keydown', handleEscape)
+  }, [mobileMenuOpen, closeMobileMenu])
 
   useEffect(() => {
     const spans = Array.from(
@@ -287,10 +308,12 @@ export default function EuangelionShellHeader({
     }
   }, [])
 
+  // Close menus and clear scroll locks on route change
   useEffect(() => {
     if (previousPathnameRef.current === pathname) return
     previousPathnameRef.current = pathname
     setAccountMenuOpen(false)
+    setMobileMenuOpen(false)
   }, [pathname])
 
   const toggleTheme = () => {
@@ -486,8 +509,43 @@ export default function EuangelionShellHeader({
                 {item}
               </span>
             ))}
+            <button
+              type="button"
+              ref={mobileToggleRef}
+              className="mock-mobile-menu-toggle text-label"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-controls={
+                mobileMenuOpen ? 'shell-mobile-secondary-nav' : undefined
+              }
+              onClick={() =>
+                setMobileMenuOpen((current) => !current)
+              }
+            >
+              {mobileMenuOpen ? '\u2715' : '\u2630'}
+            </button>
           </div>
         </div>
+
+        {/* Mobile secondary nav panel — unmounted when closed */}
+        {mobileMenuOpen && (
+          <div
+            id="shell-mobile-secondary-nav"
+            className="mock-mobile-secondary-nav"
+            role="group"
+            aria-label="Navigation menu"
+          >
+            {renderNavLinks(NAV_ITEMS)}
+            {!authLoading && authenticated && (
+              <Link
+                href="/account"
+                className="mock-nav-item"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                ACCOUNT
+              </Link>
+            )}
+          </div>
+        )}
 
         <section className="mock-masthead-block" ref={mastheadRef}>
           <h1 className="text-masthead mock-masthead-word">

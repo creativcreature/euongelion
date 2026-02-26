@@ -16,7 +16,7 @@ interface RateLimitBucket {
 const SAFE_SLUG_RE = /^[a-z0-9-]{1,120}$/
 const SAFE_AUDIT_RUN_ID_RE = /^[a-f0-9-]{36}$/i
 const SAFE_AUDIT_OPTION_ID_RE =
-  /^(ai_primary|curated_prefab):[a-z0-9-]{1,120}:[0-9]{1,2}:[0-9]{1,2}$/i
+  /^(ai_primary|ai_generative|curated_prefab):[a-z0-9-]{1,120}:[0-9]{1,2}:[0-9]{1,2}$/i
 const SAFE_TIMEZONE_RE = /^[A-Za-z_]+(?:\/[A-Za-z0-9._+-]+)+$/
 
 let redisClient: Redis | null = null

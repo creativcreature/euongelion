@@ -23,8 +23,7 @@ const NVIDIA_API_URL =
   'https://integrate.api.nvidia.com/v1/chat/completions'
 
 const OPENAI_MODEL = process.env.OPENAI_CHAT_MODEL || 'gpt-5-nano'
-const ANTHROPIC_MODEL =
-  process.env.ANTHROPIC_CHAT_MODEL || 'claude-3-5-sonnet-latest'
+const ANTHROPIC_MODEL = process.env.ANTHROPIC_CHAT_MODEL || 'claude-sonnet-4-6'
 const GOOGLE_MODEL = process.env.GOOGLE_CHAT_MODEL || 'gemini-2.0-flash-lite'
 const MINIMAX_MODEL = process.env.MINIMAX_CHAT_MODEL || 'MiniMax-M2'
 const NVIDIA_MODEL =
@@ -86,6 +85,15 @@ type ProviderCredentials = {
   userKey?: string
 }
 
+/** Return the first non-empty env var value, or undefined. */
+function firstNonEmptyEnv(...names: string[]): string | undefined {
+  for (const name of names) {
+    const value = process.env[name]?.trim()
+    if (value && value.length > 0) return value
+  }
+  return undefined
+}
+
 function providerCredentials(
   provider: Exclude<BrainProviderId, 'auto'>,
   userKeys?: Partial<Record<Exclude<BrainProviderId, 'auto'>, string>>,
@@ -93,23 +101,22 @@ function providerCredentials(
   switch (provider) {
     case 'openai':
       return {
-        platformKey:
-          process.env.ANTHROPIC_API_KEY || process.env.OPENAI_API_KEY,
+        platformKey: firstNonEmptyEnv('ANTHROPIC_API_KEY', 'OPENAI_API_KEY'),
         userKey: userKeys?.openai,
       }
     case 'google':
       return {
-        platformKey: process.env.GOOGLE_API_KEY,
+        platformKey: firstNonEmptyEnv('GOOGLE_API_KEY', 'GEMINI_API_KEY'),
         userKey: userKeys?.google,
       }
     case 'minimax':
       return {
-        platformKey: process.env.MINIMAX_API_KEY,
+        platformKey: firstNonEmptyEnv('MINIMAX_API_KEY'),
         userKey: userKeys?.minimax,
       }
     case 'nvidia_kimi':
       return {
-        platformKey: process.env.NVIDIA_KIMI_API_KEY,
+        platformKey: firstNonEmptyEnv('NVIDIA_KIMI_API_KEY'),
         userKey: userKeys?.nvidia_kimi,
       }
   }

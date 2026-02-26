@@ -30,7 +30,7 @@ function normalizeCurrentRoute(value: string | undefined): string | null {
 type CurrentCandidate = {
   route: string
   createdAt: string
-  selectionType: 'ai_primary' | 'curated_prefab'
+  selectionType: 'ai_primary' | 'ai_generative' | 'curated_prefab'
   planToken?: string
   seriesSlug?: string
 }
@@ -55,7 +55,7 @@ function getInitialPlanDayNumber(
 }
 
 function aiRoute(planToken: string, planDays: Array<{ day_number: number }>) {
-  return `/soul-audit/results?planToken=${planToken}&day=${getInitialPlanDayNumber(
+  return `/soul-audit/plan/${planToken}?day=${getInitialPlanDayNumber(
     planDays,
   )}`
 }
@@ -97,7 +97,8 @@ export async function GET() {
       })
     }
   } else if (
-    latestSelection?.option_kind === 'ai_primary' &&
+    (latestSelection?.option_kind === 'ai_primary' ||
+      latestSelection?.option_kind === 'ai_generative') &&
     latestSelection.plan_token
   ) {
     const plan = await getPlanInstanceWithFallback(latestSelection.plan_token)
@@ -108,7 +109,7 @@ export async function GET() {
       candidates.push({
         route: aiRoute(latestSelection.plan_token, planDays),
         createdAt: latestSelection.created_at,
-        selectionType: 'ai_primary',
+        selectionType: latestSelection.option_kind,
         planToken: latestSelection.plan_token,
         seriesSlug: latestSelection.series_slug,
       })

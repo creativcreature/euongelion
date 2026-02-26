@@ -114,7 +114,7 @@ export async function GET(request: NextRequest) {
       requestId,
       error,
       method: request.method,
-      path: request.nextUrl?.pathname ?? new URL(request.url).pathname,
+      path: request.nextUrl?.pathname ?? '/api/soul-audit/generation-status',
       clientKey,
     })
     return jsonError({

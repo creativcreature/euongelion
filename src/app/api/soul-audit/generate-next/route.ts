@@ -362,7 +362,7 @@ export async function POST(request: NextRequest) {
       requestId,
       error,
       method: request.method,
-      path: request.nextUrl?.pathname ?? new URL(request.url).pathname,
+      path: request.nextUrl?.pathname ?? '/api/soul-audit/generate-next',
       clientKey,
     })
     return jsonError({

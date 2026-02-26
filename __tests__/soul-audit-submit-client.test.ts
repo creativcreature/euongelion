@@ -3,6 +3,7 @@ import {
   SoulAuditSubmitError,
   submitSoulAuditResponse,
 } from '@/lib/soul-audit/submit-client'
+import { PASTORAL_MESSAGES } from '@/lib/soul-audit/messages'
 
 describe('submitSoulAuditResponse', () => {
   afterEach(() => {
@@ -45,39 +46,50 @@ describe('submitSoulAuditResponse', () => {
     ).rejects.toEqual(new SoulAuditSubmitError('server', 'Rate limit reached.'))
   })
 
-  it('retries once with enriched text for retryable no-options errors', async () => {
-    const payload = {
-      auditRunId: 'run_retry_ok',
-      options: [{ id: 'x' }],
-    }
-    const fetchMock = vi
-      .fn()
-      .mockResolvedValueOnce({
-        ok: false,
-        json: async () => ({
-          error:
-            'We could not assemble devotional options from your response yet. Add one more sentence and try again.',
-          code: 'NO_CURATED_OPTIONS',
-        }),
-      })
-      .mockResolvedValueOnce({
-        ok: true,
-        json: async () => payload,
-      })
+  it('does not retry or modify user input on server error', async () => {
+    const fetchMock = vi.fn().mockResolvedValue({
+      ok: false,
+      json: async () => ({
+        error: PASTORAL_MESSAGES.ALL_PROVIDERS_DOWN,
+        code: 'ALL_PROVIDERS_EXHAUSTED',
+      }),
+    })
 
     vi.stubGlobal('fetch', fetchMock)
 
     await expect(
       submitSoulAuditResponse({ response: 'money' }),
-    ).resolves.toEqual(payload)
+    ).rejects.toEqual(
+      new SoulAuditSubmitError('server', PASTORAL_MESSAGES.ALL_PROVIDERS_DOWN),
+    )
 
-    expect(fetchMock).toHaveBeenCalledTimes(2)
-    const secondCall = fetchMock.mock.calls[1]?.[1] as RequestInit | undefined
-    expect(typeof secondCall?.body).toBe('string')
-    const secondPayload = JSON.parse(String(secondCall?.body)) as {
+    // Must only make a single request — no retry, no enrichment
+    expect(fetchMock).toHaveBeenCalledTimes(1)
+    const callArgs = fetchMock.mock.calls[0] as unknown as [string, RequestInit]
+    const body = JSON.parse(String(callArgs[1]?.body)) as { response: string }
+    expect(body.response).toBe('money')
+  })
+
+  it('includes clarifierResponse when provided', async () => {
+    const payload = { auditRunId: 'run_456', options: [] }
+    const fetchMock = vi.fn(async () => ({
+      ok: true,
+      json: async () => payload,
+    }))
+    vi.stubGlobal('fetch', fetchMock)
+
+    await submitSoulAuditResponse({
+      response: 'help',
+      clarifierResponse: 'I am going through a hard season',
+    })
+
+    const callArgs = fetchMock.mock.calls[0] as unknown as [string, RequestInit]
+    const body = JSON.parse(String(callArgs[1]?.body)) as {
       response: string
+      clarifierResponse: string
     }
-    expect(secondPayload.response).toContain('I need guidance for this season.')
+    expect(body.response).toBe('help')
+    expect(body.clarifierResponse).toBe('I am going through a hard season')
   })
 
   it('returns timeout error when submit exceeds timeout window', async () => {
@@ -102,10 +114,7 @@ describe('submitSoulAuditResponse', () => {
         timeoutMs: 1,
       }),
     ).rejects.toEqual(
-      new SoulAuditSubmitError(
-        'timeout',
-        'Soul Audit timed out. Please check your connection and retry.',
-      ),
+      new SoulAuditSubmitError('timeout', PASTORAL_MESSAGES.TIMEOUT),
     )
   })
 
@@ -119,10 +128,20 @@ describe('submitSoulAuditResponse', () => {
     await expect(
       submitSoulAuditResponse({ response: 'too much on my plate today' }),
     ).rejects.toEqual(
-      new SoulAuditSubmitError(
-        'offline',
-        'You are offline. Reconnect to generate your devotional options.',
-      ),
+      new SoulAuditSubmitError('offline', PASTORAL_MESSAGES.OFFLINE),
+    )
+  })
+
+  it('returns generic error for unknown failures', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => Promise.reject(new Error('NetworkError'))),
+    )
+
+    await expect(
+      submitSoulAuditResponse({ response: 'testing' }),
+    ).rejects.toEqual(
+      new SoulAuditSubmitError('server', PASTORAL_MESSAGES.GENERIC_ERROR),
     )
   })
 })
