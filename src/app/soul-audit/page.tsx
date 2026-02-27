@@ -185,7 +185,7 @@ export default function SoulAuditPage() {
                   </p>
 
                   <p className="vw-small mt-6 text-center text-muted">
-                    This usually takes 30\u201360 seconds.
+                    This usually takes 30{'\u2013'}60 seconds.
                   </p>
 
                   {/* Inline keyframes */}
