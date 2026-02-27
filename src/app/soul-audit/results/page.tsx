@@ -1126,6 +1126,7 @@ export default function SoulAuditResultsPage() {
           : 'Option selection is currently unavailable.',
       )
       setError(null)
+      setSelectingOptionId(null)
       return
     }
 
