@@ -62,7 +62,7 @@ interface SubmitBody {
   clarifierToken?: string
 }
 
-const MAX_SUBMIT_BODY_BYTES = 8_192
+const MAX_SUBMIT_BODY_BYTES = 32_768
 const MAX_SUBMITS_PER_MINUTE = 12
 
 function extractMatchedTermsFromReasoning(reasoning: string): string[] {
@@ -607,16 +607,11 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // Strip planOutline from options in the run token to keep it compact.
-    // The token is only used for reroll verification (responseText + session binding).
-    const tokenOptions = responseOptions.map(
-      ({ planOutline: _po, ...rest }) => rest,
-    )
     const runToken = createRunToken({
       auditRunId: run.id,
       responseText: effectiveResponseText,
       crisisDetected,
-      options: tokenOptions as AuditOptionPreview[],
+      options: responseOptions,
       sessionToken,
     })
 
