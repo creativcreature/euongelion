@@ -13,6 +13,14 @@ import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
 
 const emptySubscribe = () => () => {}
 
+const GATHERING_MESSAGES = [
+  'Reading your reflection\u2026',
+  'Searching Scripture\u2026',
+  'Building three paths\u2026',
+  'Shaping your options\u2026',
+  'Almost ready\u2026',
+]
+
 export default function SoulAuditPage() {
   const [response, setResponse] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -35,6 +43,21 @@ export default function SoulAuditPage() {
     .split(/\s+/)
     .filter((token) => token.length > 0).length
   const showLowContextHint = shortInputWordCount > 0 && shortInputWordCount <= 3
+
+  // Cycling status messages while LLM generates options
+  const [gatheringIdx, setGatheringIdx] = useState(0)
+  useEffect(() => {
+    if (!isSubmitting) {
+      setGatheringIdx(0)
+      return
+    }
+    const id = setInterval(() => {
+      setGatheringIdx((prev) =>
+        prev < GATHERING_MESSAGES.length - 1 ? prev + 1 : prev,
+      )
+    }, 6_000)
+    return () => clearInterval(id)
+  }, [isSubmitting])
 
   useEffect(() => {
     textareaRef.current?.focus()
@@ -133,7 +156,51 @@ export default function SoulAuditPage() {
             </FadeIn>
 
             <FadeIn delay={0.4} y={16}>
-              {limitReached ? (
+              {isSubmitting ? (
+                /* ── Gathering-options loader ── */
+                <div className="flex flex-col items-center py-16" role="status" aria-live="polite">
+                  {/* Animated dot cluster */}
+                  <div className="mb-10 flex items-center gap-2">
+                    {[0, 1, 2].map((i) => (
+                      <span
+                        key={i}
+                        className="inline-block h-2 w-2 rounded-full"
+                        style={{
+                          backgroundColor: 'var(--color-gold)',
+                          animation: `gatherDot 1.4s ease-in-out ${i * 0.2}s infinite`,
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Cycling status message */}
+                  <p
+                    key={gatheringIdx}
+                    className="text-serif-italic vw-body-lg text-center text-secondary"
+                    style={{
+                      animation: 'fadeInUp 0.5s ease-out',
+                    }}
+                  >
+                    {GATHERING_MESSAGES[gatheringIdx]}
+                  </p>
+
+                  <p className="vw-small mt-6 text-center text-muted">
+                    This usually takes 30\u201360 seconds.
+                  </p>
+
+                  {/* Inline keyframes */}
+                  <style>{`
+                    @keyframes gatherDot {
+                      0%, 100% { opacity: 0.3; transform: scale(0.85); }
+                      50%      { opacity: 1;   transform: scale(1.15); }
+                    }
+                    @keyframes fadeInUp {
+                      from { opacity: 0; transform: translateY(8px); }
+                      to   { opacity: 1; transform: translateY(0); }
+                    }
+                  `}</style>
+                </div>
+              ) : limitReached ? (
                 <div className="py-8 text-center">
                   <p className="text-serif-italic vw-body-lg mb-8 text-secondary">
                     {typographer(
@@ -229,7 +296,7 @@ export default function SoulAuditPage() {
                       transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
                     }}
                   >
-                    {isSubmitting ? 'Listening...' : 'Continue'}
+                    Continue
                   </button>
 
                   <p className="vw-small mt-8 text-center text-muted">

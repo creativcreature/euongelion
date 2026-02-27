@@ -359,6 +359,9 @@ export default function SoulAuditResultsPage() {
   const [siteConsent, setSiteConsent] = useState<SiteConsent | null>(null)
   const [crisisAcknowledged, setCrisisAcknowledged] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [selectingOptionId, setSelectingOptionId] = useState<string | null>(
+    null,
+  )
   const [error, setError] = useState<string | null>(null)
   const [selectionInlineError, setSelectionInlineError] = useState<
     string | null
@@ -1114,6 +1117,7 @@ export default function SoulAuditResultsPage() {
   async function submitConsentAndSelectInternal(optionId: string) {
     if (!submitResult) return
     setSelectionInlineError(null)
+    setSelectingOptionId(optionId)
 
     if (!crisisRequirementsMet) {
       setSelectionInlineError(
@@ -1122,6 +1126,7 @@ export default function SoulAuditResultsPage() {
           : 'Option selection is currently unavailable.',
       )
       setError(null)
+      setSelectingOptionId(null)
       return
     }
 
@@ -1213,6 +1218,7 @@ export default function SoulAuditResultsPage() {
       setError(message)
     } finally {
       setSubmitting(false)
+      setSelectingOptionId(null)
     }
   }
 
@@ -1869,7 +1875,7 @@ export default function SoulAuditResultsPage() {
                           return (
                             <article
                               key={option.id}
-                              className="audit-option-card audit-option-card-large group relative overflow-hidden text-left"
+                              className={`audit-option-card audit-option-card-large group relative overflow-hidden text-left${submitting && selectingOptionId === option.id ? ' animate-pulse' : ''}`}
                             >
                               <button
                                 type="button"
@@ -1918,11 +1924,16 @@ export default function SoulAuditResultsPage() {
                                 )}
                                 <div className="mock-featured-actions audit-option-pad">
                                   <span className="mock-series-start text-label">
-                                    {optionSelectionReady
-                                      ? isGenerative
-                                        ? 'GENERATE THIS PATH'
-                                        : 'BUILD THIS PATH'
-                                      : 'UNAVAILABLE'}
+                                    {submitting &&
+                                    selectingOptionId === option.id
+                                      ? 'GENERATING\u2026'
+                                      : optionSelectionReady
+                                        ? isGenerative
+                                          ? 'GENERATE THIS PATH'
+                                          : 'BUILD THIS PATH'
+                                        : submitting
+                                          ? 'PLEASE WAIT'
+                                          : 'UNAVAILABLE'}
                                   </span>
                                   {dayCount > 0 && (
                                     <span className="mock-featured-days text-label">
@@ -1983,7 +1994,7 @@ export default function SoulAuditResultsPage() {
                           return (
                             <article
                               key={option.id}
-                              className="audit-option-card audit-option-card-small group relative overflow-hidden text-left"
+                              className={`audit-option-card audit-option-card-small group relative overflow-hidden text-left${submitting && selectingOptionId === option.id ? ' animate-pulse' : ''}`}
                             >
                               <button
                                 type="button"
@@ -2009,9 +2020,14 @@ export default function SoulAuditResultsPage() {
                                 )}
                                 <div className="mock-featured-actions">
                                   <span className="mock-series-start text-label">
-                                    {optionSelectionReady
-                                      ? 'OPEN SERIES'
-                                      : 'UNAVAILABLE'}
+                                    {submitting &&
+                                    selectingOptionId === option.id
+                                      ? 'LOADING\u2026'
+                                      : optionSelectionReady
+                                        ? 'OPEN SERIES'
+                                        : submitting
+                                          ? 'PLEASE WAIT'
+                                          : 'UNAVAILABLE'}
                                   </span>
                                   {dayCount > 0 && (
                                     <span className="mock-featured-days text-label">
