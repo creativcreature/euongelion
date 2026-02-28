@@ -822,8 +822,20 @@ export default function SoulAuditResultsPage() {
           const result = await generateOneDay()
           if (cascadeCancelledRef.current) return
 
+          // Debug: log every cascade response
+          console.log('[cascade] result:', JSON.stringify({
+            status: result.status,
+            done: result.done,
+            hasDay: !!result.generatedDay,
+            dayNum: result.generatedDay?.day,
+            dayStatus: result.generatedDay?.generationStatus,
+            isFullDay: result.generatedDay ? isFullPlanDay(result.generatedDay) : null,
+            nextPending: result.nextPendingDay,
+          }))
+
           if (result.generatedDay && isFullPlanDay(result.generatedDay)) {
             const newDay = result.generatedDay
+            console.log('[cascade] Storing day', newDay.day, 'with', newDay.reflection?.length, 'chars reflection')
             setPlanDays((prev) => {
               const existing = prev.filter((d) => d.day !== newDay.day)
               return [...existing, newDay].sort((a, b) => a.day - b.day)
@@ -835,6 +847,7 @@ export default function SoulAuditResultsPage() {
               ...cached.filter((d) => d.day !== newDay.day),
               newDay,
             ].sort((a, b) => a.day - b.day)
+            console.log('[cascade] Persisted', merged.length, 'days. Ready:', merged.filter(d => d.generationStatus === 'ready' || !d.generationStatus).length)
             persistPlanDays(token, merged)
             succeeded = true
             consecutiveFailures = 0
@@ -845,6 +858,7 @@ export default function SoulAuditResultsPage() {
 
           if (result.done) {
             // All days generated
+            console.log('[cascade] Done! Exiting cascade loop.')
             const finalStatus = await loadGenerativePlanStatus(
               token,
               effectSignal,
@@ -855,8 +869,10 @@ export default function SoulAuditResultsPage() {
 
           if (result.status === 'already_generating') {
             alreadyGeneratingCount++
+            console.log('[cascade] already_generating count:', alreadyGeneratingCount, '/', CASCADE_MAX_ALREADY_GENERATING)
             if (alreadyGeneratingCount >= CASCADE_MAX_ALREADY_GENERATING) {
               // Server lock appears stuck — stop polling
+              console.log('[cascade] Too many already_generating — breaking')
               break
             }
             // Another request is handling it — wait and poll again
