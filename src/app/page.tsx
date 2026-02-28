@@ -187,7 +187,7 @@ export default function Home() {
     sessionStorage.removeItem('soul-audit-selection-v2')
 
     try {
-      const response = await fetch('/api/soul-audit/reset', {
+      const response = await fetch('/api/soul-audit/manage', {
         method: 'POST',
       })
       if (!response.ok) {

@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-// Allow up to 120s for LLM option generation (requires Vercel Pro).
-export const maxDuration = 120
-
 import { crisisRequirement, detectCrisis } from '@/lib/soul-audit/crisis'
 import {
   createRequestId,
@@ -21,24 +18,11 @@ import {
 } from '@/lib/soul-audit/constants'
 import { PASTORAL_MESSAGES } from '@/lib/soul-audit/messages'
 import {
-  fallbackCandidateForSeries,
-  getPrefabSlugs,
-  makeOption,
+  buildAuditOptions,
   sanitizeAuditInput,
 } from '@/lib/soul-audit/matching'
-import { getCuratedDayCandidates } from '@/lib/soul-audit/curation-engine'
 import { parseAuditIntent } from '@/lib/brain/intent-parser'
-import {
-  generateWithBrain,
-  providerAvailabilityForUser,
-} from '@/lib/brain/router'
 import { brainFlags } from '@/lib/brain/flags'
-import { generatePlanOutlines } from '@/lib/soul-audit/outline-generator'
-import {
-  buildOutlineCacheKey,
-  getOutlineFromCache,
-  setOutlineInCache,
-} from '@/lib/soul-audit/outline-cache'
 import { createRunToken, verifyRunToken } from '@/lib/soul-audit/run-token'
 import {
   needsClarification,
@@ -85,7 +69,7 @@ function extractMatchedTermsFromReasoning(reasoning: string): string[] {
 
 function hasExpectedOptionSplit(options: Array<{ kind: string }>): boolean {
   const aiCount = options.filter(
-    (option) => option.kind === 'ai_primary' || option.kind === 'ai_generative',
+    (option) => option.kind === 'ai_primary',
   ).length
   const curatedPrefabCount = options.filter(
     (option) => option.kind === 'curated_prefab',
@@ -117,47 +101,17 @@ function createOptionVariantSeed(): number {
   }
 }
 
-type AiIntentPayload = {
-  intentType?:
-    | 'learning'
-    | 'guidance'
-    | 'confession'
-    | 'lament'
-    | 'anxiety'
-    | 'gratitude'
-    | 'mixed'
-  confidence?: number
-  reflectionFocus?: string
-  reflectionLine?: string
-  tone?: 'lament' | 'hope' | 'confession' | 'anxiety' | 'guidance' | 'mixed'
-  themes?: string[]
-  scriptureAnchors?: string[]
-  intentTags?: string[]
-}
-
 const TELEGRAPHIC_TITLE_PATTERN =
   /^(want|need|learn|help|start|daily)\b(?:\s+\w+){0,2}\s*[:\-]/i
-
-function parseAiIntentPayload(raw: string): AiIntentPayload | null {
-  const trimmed = raw.trim()
-  if (!trimmed) return null
-  const fenced = trimmed.replace(/^```(?:json)?\s*/i, '').replace(/```$/i, '')
-  try {
-    const parsed = JSON.parse(fenced) as AiIntentPayload
-    return typeof parsed === 'object' && parsed ? parsed : null
-  } catch {
-    return null
-  }
-}
 
 function normalizeLegacyFraming(value: string): string {
   return value
     .replace(
-      /you named this burden:\s*["“]?([^"”]+)["”]?\s*/gi,
+      /you named this burden:\s*["\u201C]?([^"\u201D]+)["\u201D]?\s*/gi,
       'You shared this reflection: "$1". ',
     )
     .replace(
-      /because you named\s*["“]?([^"”]+)["”]?\s*/gi,
+      /because you named\s*["\u201C]?([^"\u201D]+)["\u201D]?\s*/gi,
       'Because you shared this reflection, ',
     )
     .replace(/\s+/g, ' ')
@@ -200,99 +154,6 @@ function sanitizeOptionSet(
   options: AuditOptionPreview[],
 ): AuditOptionPreview[] {
   return options.map(sanitizeOptionCopy)
-}
-
-async function parseAuditIntentWithBrain(input: string) {
-  const fallback = parseAuditIntent(input)
-
-  // Token optimization: use deterministic parser by default.
-  // The outline LLM already sees the raw user text and naturally understands
-  // nuance — the separate LLM intent parse adds cost but little quality.
-  if (!brainFlags.llmIntentParsing) return fallback
-
-  const availability = providerAvailabilityForUser({ userKeys: undefined })
-  const hasProvider = availability.some((entry) => entry.available)
-  if (!hasProvider) return fallback
-
-  const systemPrompt = `You classify Soul Audit user reflections for Euangelion.
-Rules:
-- Return strict JSON only.
-- Do not label every reflection as a problem; positive intent is valid.
-- If user expresses growth intent (example: "I want to learn to pray"), keep it constructive.
-Schema:
-{
-  "intentType":"learning|guidance|confession|lament|anxiety|gratitude|mixed",
-  "confidence":number,
-  "reflectionFocus":string,
-  "reflectionLine":string,
-  "tone":"lament|hope|confession|anxiety|guidance|mixed",
-  "themes":string[],
-  "scriptureAnchors":string[],
-  "intentTags":string[]
-}`
-
-  try {
-    const generation = await generateWithBrain({
-      system: systemPrompt,
-      messages: [
-        {
-          role: 'user',
-          content: input,
-        },
-      ],
-      context: {
-        task: 'audit_intent_parse',
-        mode: 'auto',
-        maxOutputTokens: 500,
-      },
-    })
-
-    const parsed = parseAiIntentPayload(generation.output)
-    if (!parsed) return fallback
-
-    return {
-      reflectionFocus:
-        (parsed.reflectionFocus || '').trim().slice(0, 160) ||
-        fallback.reflectionFocus,
-      themes:
-        Array.isArray(parsed.themes) && parsed.themes.length > 0
-          ? parsed.themes
-              .map((value) => String(value).trim().toLowerCase())
-              .filter(Boolean)
-              .slice(0, 6)
-          : fallback.themes,
-      scriptureAnchors:
-        Array.isArray(parsed.scriptureAnchors) &&
-        parsed.scriptureAnchors.length > 0
-          ? parsed.scriptureAnchors
-              .map((value) => String(value).trim())
-              .filter(Boolean)
-              .slice(0, 4)
-          : fallback.scriptureAnchors,
-      tone:
-        parsed.tone === 'lament' ||
-        parsed.tone === 'hope' ||
-        parsed.tone === 'confession' ||
-        parsed.tone === 'anxiety' ||
-        parsed.tone === 'guidance' ||
-        parsed.tone === 'mixed'
-          ? parsed.tone
-          : fallback.tone,
-      intentTags:
-        Array.isArray(parsed.intentTags) && parsed.intentTags.length > 0
-          ? parsed.intentTags
-              .map((value) => String(value).trim().toLowerCase())
-              .filter(Boolean)
-              .slice(0, 8)
-          : fallback.intentTags,
-      // Taxonomy fields always come from deterministic parser — LLM doesn't add value here
-      disposition: fallback.disposition,
-      faithBackground: fallback.faithBackground,
-      depthPreference: fallback.depthPreference,
-    }
-  } catch {
-    return fallback
-  }
 }
 
 export async function POST(request: NextRequest) {
@@ -416,24 +277,8 @@ export async function POST(request: NextRequest) {
     const inputGuidance = getLowContextGuidance(effectiveResponseText)
     const optionVariantSeed = createOptionVariantSeed()
 
-    // Log provider availability for debugging.
-    const providerStatus = providerAvailabilityForUser({ userKeys: undefined })
-    const availableProviders = providerStatus.filter((p) => p.available)
-    const unavailableProviders = providerStatus.filter((p) => !p.available)
-    if (availableProviders.length === 0) {
-      console.warn(
-        `[soul-audit:submit] No LLM providers available. All providers: ${unavailableProviders.map((p) => `${p.provider}=${p.reason || 'no key'}`).join(', ')}. Outline generation will likely fail.`,
-      )
-    } else {
-      console.info(
-        `[soul-audit:submit] LLM providers available: ${availableProviders.map((p) => `${p.provider}(${p.using})`).join(', ')}`,
-      )
-    }
-
-    // Parse intent FIRST so AI-extracted themes influence candidate selection.
-    const precomputedIntent = await parseAuditIntentWithBrain(
-      effectiveResponseText,
-    )
+    // Deterministic intent parsing — no LLM call.
+    const precomputedIntent = parseAuditIntent(effectiveResponseText)
     console.info(
       `[soul-audit:submit] Parsed intent — focus: "${precomputedIntent.reflectionFocus}", themes: [${precomputedIntent.themes.join(', ')}], tone: ${precomputedIntent.tone}, disposition: ${precomputedIntent.disposition}, depth: ${precomputedIntent.depthPreference}`,
     )
@@ -470,101 +315,13 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // --- Generative outline path (required) ---
-    // Generate 3 unique plan outlines via LLM. No curated fallback.
-    // If generation fails, return honest error to user.
-    const generationStart = Date.now()
-    let options: AuditOptionPreview[]
-    const submissionStrategy = 'generative_outlines' as const
-
-    let generativeResult: Awaited<ReturnType<typeof generatePlanOutlines>> =
-      null
-
-    // Token optimization: check outline cache before calling LLM.
-    const outlineCacheKey = buildOutlineCacheKey(precomputedIntent)
-    if (brainFlags.outlineCacheEnabled) {
-      const cached = getOutlineFromCache(outlineCacheKey)
-      if (cached) {
-        console.info(
-          `[soul-audit:submit] Outline cache HIT — reusing ${cached.options.length} cached outlines`,
-        )
-        generativeResult = cached
-      }
-    }
-
-    if (!generativeResult) {
-      try {
-        generativeResult = await generatePlanOutlines({
-          responseText: effectiveResponseText,
-          intent: precomputedIntent,
-        })
-
-        // Cache successful results
-        if (generativeResult && brainFlags.outlineCacheEnabled) {
-          setOutlineInCache(outlineCacheKey, generativeResult)
-        }
-      } catch (generativeError) {
-        console.error(
-          `[soul-audit:submit] Generative outline path failed:`,
-          generativeError instanceof Error
-            ? generativeError.message
-            : generativeError,
-        )
-        return jsonError({
-          error: PASTORAL_MESSAGES.ALL_PROVIDERS_DOWN,
-          code: 'ALL_PROVIDERS_EXHAUSTED',
-          status: 503,
-          requestId,
-        })
-      }
-    }
-
-    if (
-      !generativeResult ||
-      generativeResult.options.length < SOUL_AUDIT_OPTION_SPLIT.aiPrimary
-    ) {
-      console.error(
-        `[soul-audit:submit] Generative path returned insufficient options (${generativeResult?.options.length ?? 0} < ${SOUL_AUDIT_OPTION_SPLIT.aiPrimary})`,
-      )
-      return jsonError({
-        error: PASTORAL_MESSAGES.OPTION_ASSEMBLY_FAILED,
-        code: 'OPTION_ASSEMBLY_FAILED',
-        status: 422,
-        requestId,
-      })
-    }
-
-    console.info(
-      `[soul-audit:submit] Generative path succeeded — ${generativeResult.options.length} outlines generated`,
-    )
-
-    // Generative path: 3 ai_generative + 2 curated_prefab
-    const aiOptions = generativeResult.options.slice(
-      0,
-      SOUL_AUDIT_OPTION_SPLIT.aiPrimary,
-    )
-    const aiSlugs = aiOptions.map((o) => o.slug)
-    const prefabSlugs = getPrefabSlugs(aiSlugs)
-    const prefabOptions = prefabSlugs
-      .map((slug, index) => {
-        const candidate =
-          getCuratedDayCandidates().find((item) => item.seriesSlug === slug) ??
-          fallbackCandidateForSeries(slug)
-        if (!candidate) return null
-        return makeOption({
-          candidate,
-          kind: 'curated_prefab',
-          rank: aiOptions.length + index + 1,
-          confidence: Math.max(0.35, 0.75 - index * 0.1),
-          input: effectiveResponseText,
-          variantSeed: optionVariantSeed,
-        })
-      })
-      .filter((option): option is AuditOptionPreview => Boolean(option))
-
-    options = [...aiOptions, ...prefabOptions].slice(
-      0,
-      SOUL_AUDIT_OPTION_SPLIT.total,
+    // --- Curated assembly path (zero LLM calls) ---
+    // Rank all 167 curated candidates via keyword scoring + semantic
+    // expansion, then assemble 3 ai_primary + 2 curated_prefab options.
+    const options = buildAuditOptions(
+      effectiveResponseText,
+      optionVariantSeed,
+      precomputedIntent.themes,
     )
 
     if (!hasExpectedOptionSplit(options)) {
@@ -575,8 +332,6 @@ export async function POST(request: NextRequest) {
         requestId,
       })
     }
-
-    const slowGeneration = Date.now() - generationStart > 8_000
 
     const { run, options: persistedOptions } = await createAuditRun({
       sessionToken,
@@ -628,7 +383,6 @@ export async function POST(request: NextRequest) {
       requiresEssentialConsent: true,
       analyticsOptInDefault: false,
       consentAccepted: false,
-      slowGeneration,
       clarifierRequired: false,
       clarifierPrompt: null,
       clarifierOptions: [],
@@ -643,8 +397,7 @@ export async function POST(request: NextRequest) {
     }
 
     const aiPrimary = responseOptions.filter(
-      (option) =>
-        option.kind === 'ai_primary' || option.kind === 'ai_generative',
+      (option) => option.kind === 'ai_primary',
     )
     const curatedPrefab = responseOptions.filter(
       (option) => option.kind === 'curated_prefab',
@@ -670,7 +423,7 @@ export async function POST(request: NextRequest) {
     await saveAuditTelemetry({
       runId: run.id,
       sessionToken,
-      strategy: submissionStrategy,
+      strategy: 'curated_assembly',
       splitValid: hasExpectedOptionSplit(responseOptions),
       aiPrimaryCount: aiPrimary.length,
       curatedPrefabCount: curatedPrefab.length,

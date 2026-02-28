@@ -58,12 +58,9 @@ contracts:
     - src/app/api/annotations/route.ts
     - src/app/api/bookmarks/route.ts
     - src/lib/soul-audit/curated-builder.ts
-    - src/lib/soul-audit/generative-builder.ts
-    - src/lib/soul-audit/outline-generator.ts
     - src/lib/soul-audit/reference-retriever.ts
     - src/lib/soul-audit/schedule.ts
-    - src/app/api/soul-audit/generate-next/route.ts
-    - src/app/api/soul-audit/generation-status/route.ts
+    - src/app/api/soul-audit/manage/route.ts
   submit_route_forbidden_tokens: []
   required_submit_tokens:
     - options
@@ -92,7 +89,7 @@ contracts:
   non_wakeup_shell_forbidden_tokens:
     - newspaper-home
   policy_split:
-    - ai_primary_or_ai_generative:3
+    - ai_primary:3
     - curated_prefab:2
     - total:5
   required_tracking_docs:
