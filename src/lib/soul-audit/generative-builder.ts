@@ -96,8 +96,12 @@ function calculateChunkCount(minutes: number): number {
 }
 
 function estimateMaxOutputTokens(wordTarget: number): number {
-  // ~1.3 tokens per word for English, plus JSON overhead
-  return Math.min(8000, Math.max(1500, Math.round(wordTarget * 1.5)))
+  // ~1.3 tokens per word for English text, BUT the output is a JSON object
+  // containing the text plus module structures, field names, brackets, and
+  // quotation marks. Previous multiplier (1.5) consistently truncated the
+  // response mid-JSON for 10-minute devotionals (~1500 words → 2250 tokens).
+  // Using 3× the word target with a 4096 floor gives adequate headroom.
+  return Math.min(16000, Math.max(4096, Math.round(wordTarget * 3)))
 }
 
 // ─── System Prompts ─────────────────────────────────────────────────
@@ -495,9 +499,15 @@ export async function generateDevotionalDay(
 
   const parsed = parseGeneratedDay(generation.output)
   if (!parsed) {
-    const preview = (generation.output || '').slice(0, 400)
+    const preview = (generation.output || '').slice(0, 200)
+    console.error(
+      `[generative-builder] Parse failure for day ${params.dayOutline.day}.`,
+      `Provider: ${generation.provider}.`,
+      `Output length: ${(generation.output || '').length} chars.`,
+      `Preview: ${preview}`,
+    )
     throw new Error(
-      `Failed to parse generated devotional for day ${params.dayOutline.day}. Provider: ${generation.provider}. Output preview: ${preview}`,
+      `Failed to parse generated devotional for day ${params.dayOutline.day}`,
     )
   }
 

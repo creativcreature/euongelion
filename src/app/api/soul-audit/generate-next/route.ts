@@ -451,10 +451,8 @@ export async function POST(request: NextRequest) {
       path: request.nextUrl?.pathname ?? '/api/soul-audit/generate-next',
       clientKey,
     })
-    const debugMsg =
-      error instanceof Error ? error.message : String(error)
     return jsonError({
-      error: `Unable to generate next devotional day right now. [debug: ${debugMsg.slice(0, 300)}]`,
+      error: 'Unable to generate next devotional day right now.',
       status: 500,
       requestId,
     })
