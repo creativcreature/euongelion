@@ -72,10 +72,10 @@ const GUEST_SIGNUP_GATE_KEY = 'soul-audit-guest-signup-gate-v1'
 
 // Cascade generation constants
 const CASCADE_MAX_RETRIES = 2
-const CASCADE_RETRY_DELAY_MS = 2000
-const CASCADE_REQUEST_TIMEOUT_MS = 60_000
-const CASCADE_MAX_ALREADY_GENERATING = 30
-const CASCADE_MAX_CONSECUTIVE_FAILURES = 4
+const CASCADE_RETRY_DELAY_MS = 3000
+const CASCADE_REQUEST_TIMEOUT_MS = 150_000
+const CASCADE_MAX_ALREADY_GENERATING = 40
+const CASCADE_MAX_CONSECUTIVE_FAILURES = 5
 const CASCADE_STATUS_CHECK_TIMEOUT_MS = 10_000
 
 /** Response shape from POST /api/soul-audit/generate-next */
@@ -733,6 +733,10 @@ export default function SoulAuditResultsPage() {
         effectSignal.removeEventListener('abort', onEffectAbort)
 
         if (!genRes.ok) {
+          // 429 = rate limited — wait before retrying (don't burn retries)
+          if (genRes.status === 429) {
+            return { status: 'rate_limited' as const, done: false }
+          }
           return { done: false }
         }
 
@@ -867,6 +871,14 @@ export default function SoulAuditResultsPage() {
             }
             // Another request is handling it — wait and poll again
             await new Promise((r) => setTimeout(r, CASCADE_RETRY_DELAY_MS))
+            consecutiveFailures = 0
+            succeeded = true
+            break
+          }
+
+          if (result.status === 'rate_limited') {
+            // Rate limited — wait a full minute before retrying
+            await new Promise((r) => setTimeout(r, 15_000))
             consecutiveFailures = 0
             succeeded = true
             break

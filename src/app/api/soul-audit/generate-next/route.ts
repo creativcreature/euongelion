@@ -71,7 +71,7 @@ interface GenerateNextBody {
 
 // Plan outline + 7 days of pending content can be ~50KB
 const MAX_BODY_BYTES = 128_000
-const MAX_GENERATES_PER_MINUTE = 10
+const MAX_GENERATES_PER_MINUTE = 30
 // TODO(F-053): Replace with user's slider preference once stored on plan instance
 const DEFAULT_DEVOTIONAL_LENGTH_MINUTES = 10
 
