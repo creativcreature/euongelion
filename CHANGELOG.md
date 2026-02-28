@@ -5,12 +5,13 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
-## F-059: Create missing Soul Audit Supabase tables (2026-02-28)
+## F-059: Create missing Soul Audit Supabase tables + client fallback (2026-02-28)
 
 - **Critical fix**: Cascade day generation stuck at 0/7 days forever. Users waited 30+ minutes seeing "BUILDING" on all days.
-- **Root cause**: The Soul Audit tables (`audit_runs`, `audit_options`, `devotional_plan_instances`, `devotional_plan_days`, etc.) were never created in Supabase. Only the original series/devotionals schema existed (migrations 001-008). `safeInsert` silently swallowed all "relation does not exist" errors, so data only lived in one serverless instance's memory and was lost between requests.
-- **Fix**: Migration 009 creates all 10 missing tables with indices, foreign keys, and RLS. Replaced silent `catch { // no-op }` in safeInsert/safeUpsert with `console.error` logging.
-- **Action required**: Run `database/migrations/009_create_soul_audit_tables.sql` in Supabase SQL editor before cascade generation will work.
+- **Root cause**: The Soul Audit tables were never created in Supabase. `safeInsert` silently swallowed all errors, so data only lived in one serverless instance's memory.
+- **Fix (SA-023)**: Migration 009 creates all 10 missing tables. Replaced silent catches with `console.error` logging.
+- **Fix (SA-024)**: Client-side context fallback — `generate-next` now accepts `planOutline`, `optionMeta`, `userResponse`, and `currentDays` in the request body. When Supabase lookups return null, the server uses client-supplied data. The cascade client reads fresh from sessionStorage/localStorage each call.
+- **Result**: Cascade generation works even before the Supabase migration is run. Running the migration adds cross-instance persistence.
 
 ---
 

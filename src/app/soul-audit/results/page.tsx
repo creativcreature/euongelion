@@ -690,10 +690,37 @@ export default function SoulAuditResultsPage() {
       effectSignal.addEventListener('abort', onEffectAbort, { once: true })
 
       try {
+        // Build client-side context for the server fallback path.
+        // When Supabase tables are unavailable, the server needs this
+        // data to resolve the plan outline and generate content.
+        const currentDays = loadPlanDays(token)
+        const storedSubmitResult = loadSubmitResult()
+        const storedSelection = loadSelectionResult()
+        const userResponse = loadLastAuditInput() || lastAuditInput || ''
+
+        // Find the selected option by matching seriesSlug → option.slug
+        const selectedOption = storedSubmitResult?.options.find(
+          (o) => o.slug === storedSelection?.seriesSlug,
+        )
+
         const genRes = await fetch('/api/soul-audit/generate-next', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ planToken: token }),
+          body: JSON.stringify({
+            planToken: token,
+            // Client-side context for Supabase-less fallback
+            ...(selectedOption?.planOutline && {
+              planOutline: selectedOption.planOutline,
+              optionMeta: {
+                slug: selectedOption.slug,
+                title: selectedOption.title,
+                question: selectedOption.question,
+                reasoning: selectedOption.reasoning,
+              },
+            }),
+            ...(userResponse && { userResponse }),
+            ...(currentDays.length > 0 && { currentDays }),
+          }),
           signal: reqController.signal,
         })
         clearTimeout(timeoutId)
@@ -705,7 +732,10 @@ export default function SoulAuditResultsPage() {
 
         const payload = (await genRes.json()) as GenerateNextPayload
 
-        if (payload.status === 'complete' || payload.status === 'already_generating') {
+        if (
+          payload.status === 'complete' ||
+          payload.status === 'already_generating'
+        ) {
           return { ...payload, done: payload.status === 'complete' }
         }
 
@@ -769,9 +799,7 @@ export default function SoulAuditResultsPage() {
             const newDay = result.generatedDay
             setPlanDays((prev) => {
               const existing = prev.filter((d) => d.day !== newDay.day)
-              return [...existing, newDay].sort(
-                (a, b) => a.day - b.day,
-              )
+              return [...existing, newDay].sort((a, b) => a.day - b.day)
             })
             // Persist outside the state updater — updater functions must be pure.
             // We rebuild the merged array here since we can't read state synchronously.
@@ -790,7 +818,10 @@ export default function SoulAuditResultsPage() {
 
           if (result.done) {
             // All days generated
-            const finalStatus = await loadGenerativePlanStatus(token, effectSignal)
+            const finalStatus = await loadGenerativePlanStatus(
+              token,
+              effectSignal,
+            )
             if (finalStatus) setGenerationProgress(finalStatus)
             return
           }
@@ -866,7 +897,12 @@ export default function SoulAuditResultsPage() {
       cascadeStartedRef.current = false
       effectController.abort()
     }
-  }, [isGenerativePlan, loadGenerativePlanStatus, planToken, selection?.generationStatus])
+  }, [
+    isGenerativePlan,
+    loadGenerativePlanStatus,
+    planToken,
+    selection?.generationStatus,
+  ])
 
   useEffect(() => {
     if (!planToken) return

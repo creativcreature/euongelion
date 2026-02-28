@@ -3,9 +3,16 @@
  *
  * Cascading day generation for generative plans.
  * Client calls this after selecting an ai_generative option to progressively
- * generate Days 2-7 one at a time. Each call generates the next pending day.
+ * generate days one at a time. Each call generates the next pending day.
  *
- * Body: { planToken: string }
+ * Body: {
+ *   planToken: string,
+ *   // Client-side context (used when Supabase tables don't have the data):
+ *   planOutline?: PlanOutlinePreview,
+ *   optionMeta?: { slug, title, question, reasoning },
+ *   userResponse?: string,
+ *   currentDays?: CustomPlanDay[],
+ * }
  * Returns the newly generated day + updated generation status.
  */
 
@@ -38,13 +45,28 @@ import {
 } from '@/lib/soul-audit/generative-builder'
 import { brainFlags } from '@/lib/brain/flags'
 import { reconstructPlanOutline } from '@/lib/soul-audit/outline-generator'
-import type { CustomPlanDay } from '@/types/soul-audit'
+import type {
+  CustomPlanDay,
+  PlanOutline,
+  PlanOutlinePreview,
+} from '@/types/soul-audit'
 
 interface GenerateNextBody {
   planToken?: string
+  // Client-side context fallback — used when Supabase tables are unavailable
+  planOutline?: PlanOutlinePreview
+  optionMeta?: {
+    slug: string
+    title: string
+    question: string
+    reasoning: string
+  }
+  userResponse?: string
+  currentDays?: CustomPlanDay[]
 }
 
-const MAX_BODY_BYTES = 2_048
+// Plan outline + 7 days of pending content can be ~50KB
+const MAX_BODY_BYTES = 128_000
 const MAX_GENERATES_PER_MINUTE = 10
 // TODO(F-053): Replace with user's slider preference once stored on plan instance
 const DEFAULT_DEVOTIONAL_LENGTH_MINUTES = 10
@@ -67,6 +89,62 @@ function acquireLock(planToken: string): boolean {
 
 function releaseLock(planToken: string) {
   generationLocks.delete(planToken)
+}
+
+/**
+ * Try to resolve the plan outline from Supabase records.
+ * Returns null if any required piece is missing (tables don't exist, etc.).
+ */
+async function resolveOutlineFromSupabase(auditRunId: string): Promise<{
+  planOutline: PlanOutline
+  userResponse: string
+} | null> {
+  try {
+    const selection = await getSelectionWithFallback(auditRunId)
+    if (!selection) return null
+
+    const run = await getAuditRunWithFallback(auditRunId)
+    if (!run) return null
+
+    const options = await getAuditOptionsWithFallback(auditRunId)
+    const option = options.find((o) => o.id === selection.option_id)
+    if (!option?.planOutline) return null
+
+    const planOutline = reconstructPlanOutline({
+      id: option.slug,
+      title: option.title,
+      question: option.question,
+      reasoning: option.reasoning,
+      preview: option.planOutline,
+    })
+
+    return { planOutline, userResponse: run.response_text }
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Resolve plan outline from the client-supplied body.
+ * This is the fallback when Supabase tables don't exist yet.
+ */
+function resolveOutlineFromBody(
+  body: GenerateNextBody,
+): { planOutline: PlanOutline; userResponse: string } | null {
+  if (!body.planOutline || !body.optionMeta || !body.userResponse) return null
+
+  try {
+    const planOutline = reconstructPlanOutline({
+      id: body.optionMeta.slug,
+      title: body.optionMeta.title,
+      question: body.optionMeta.question,
+      reasoning: body.optionMeta.reasoning,
+      preview: body.planOutline,
+    })
+    return { planOutline, userResponse: body.userResponse }
+  } catch {
+    return null
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -102,7 +180,8 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    const planToken = String(parsed.data.planToken || '').trim()
+    const body = parsed.data
+    const planToken = String(body.planToken || '').trim()
     if (!planToken) {
       return jsonError({
         error: 'planToken is required.',
@@ -111,17 +190,11 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // Verify plan exists and belongs to session
+    // Try Supabase first for plan instance verification
     const planInstance = await getPlanInstanceWithFallback(planToken)
-    if (!planInstance) {
-      return jsonError({
-        error: 'Plan not found.',
-        status: 404,
-        requestId,
-      })
-    }
 
-    if (planInstance.session_token !== sessionToken) {
+    // If Supabase has the plan, verify session ownership
+    if (planInstance && planInstance.session_token !== sessionToken) {
       return jsonError({
         error: 'Plan access denied.',
         status: 403,
@@ -146,11 +219,29 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-      // Get existing plan days
-      const existingDays = await getAllPlanDaysWithFallback(planToken)
-      const existingDayContent = existingDays
-        .map((d) => d.content)
-        .sort((a, b) => a.day - b.day)
+      // Get existing plan days — try Supabase first, fall back to client data
+      let existingDayContent: CustomPlanDay[]
+
+      const supabaseDays = await getAllPlanDaysWithFallback(planToken)
+      if (supabaseDays.length > 0) {
+        existingDayContent = supabaseDays
+          .map((d) => d.content)
+          .sort((a, b) => a.day - b.day)
+      } else if (
+        Array.isArray(body.currentDays) &&
+        body.currentDays.length > 0
+      ) {
+        // Supabase has no days — use client-supplied day state
+        existingDayContent = [...body.currentDays].sort((a, b) => a.day - b.day)
+      } else {
+        // Neither Supabase nor client has day data
+        return jsonError({
+          error: 'No plan days found. Please start a new Soul Audit.',
+          code: 'NO_PLAN_DAYS',
+          status: 404,
+          requestId,
+        })
+      }
 
       // Find the next pending day
       const nextPendingDay = existingDayContent.find(
@@ -165,9 +256,8 @@ export async function POST(request: NextRequest) {
               status: 'complete',
               message: 'All days have been generated.',
               totalDays: existingDayContent.length,
-              completedDays: existingDayContent.filter(
-                (d) => isDayReady(d),
-              ).length,
+              completedDays: existingDayContent.filter((d) => isDayReady(d))
+                .length,
             },
             { status: 200 },
           ),
@@ -178,16 +268,17 @@ export async function POST(request: NextRequest) {
       // Cross-instance guard: verify the day is still pending in Supabase
       // before spending tokens on LLM generation. Another Vercel instance
       // may have already generated this day.
-      const stillPending = await isDayStillPending(planToken, nextPendingDay.day)
+      const stillPending = await isDayStillPending(
+        planToken,
+        nextPendingDay.day,
+      )
       if (!stillPending) {
         // Day was already generated by another instance — re-fetch status
         const refreshedDays = await getAllPlanDaysWithFallback(planToken)
         const refreshedContent = refreshedDays
           .map((d) => d.content)
           .sort((a, b) => a.day - b.day)
-        const completed = refreshedContent.filter(
-          (d) => isDayReady(d),
-        ).length
+        const completed = refreshedContent.filter((d) => isDayReady(d)).length
         const next = refreshedContent.find(
           (d) => d.generationStatus === 'pending',
         )
@@ -209,48 +300,29 @@ export async function POST(request: NextRequest) {
         )
       }
 
-      // Get the audit run + option to reconstruct the plan outline
-      const selection = await getSelectionWithFallback(
-        planInstance.audit_run_id,
-      )
-      if (!selection) {
-        return jsonError({
-          error: 'Selection not found for this plan.',
-          status: 404,
-          requestId,
-        })
+      // Resolve plan outline + user response.
+      // Strategy: try Supabase first, fall back to client-supplied context.
+      let resolved: { planOutline: PlanOutline; userResponse: string } | null =
+        null
+
+      if (planInstance) {
+        resolved = await resolveOutlineFromSupabase(planInstance.audit_run_id)
       }
 
-      const run = await getAuditRunWithFallback(planInstance.audit_run_id)
-      if (!run) {
-        return jsonError({
-          error: 'Audit run not found.',
-          status: 404,
-          requestId,
-        })
+      if (!resolved) {
+        resolved = resolveOutlineFromBody(body)
       }
 
-      const options = await getAuditOptionsWithFallback(
-        planInstance.audit_run_id,
-      )
-      const option = options.find((o) => o.id === selection.option_id)
-      if (!option?.planOutline) {
+      if (!resolved) {
         return jsonError({
-          error: 'Plan outline not found on the selected option.',
+          error: 'Plan outline not available. Please start a new Soul Audit.',
           code: 'OUTLINE_MISSING',
           status: 422,
           requestId,
         })
       }
 
-      // Reconstruct PlanOutline from stored preview
-      const planOutline = reconstructPlanOutline({
-        id: option.slug,
-        title: option.title,
-        question: option.question,
-        reasoning: option.reasoning,
-        preview: option.planOutline,
-      })
+      const { planOutline, userResponse } = resolved
 
       const dayOutline = planOutline.dayOutlines.find(
         (d) => d.day === nextPendingDay.day,
@@ -264,9 +336,7 @@ export async function POST(request: NextRequest) {
       }
 
       // Collect ready days for context
-      const readyDays = existingDayContent.filter(
-        (d) => isDayReady(d),
-      )
+      const readyDays = existingDayContent.filter((d) => isDayReady(d))
       const previousModules = readyDays
         .filter((d) => d.modules)
         .map((d) => d.modules!.map((m) => m.type))
@@ -278,43 +348,40 @@ export async function POST(request: NextRequest) {
       let generatedDay: CustomPlanDay
 
       if (dayOutline.dayType === 'sabbath') {
-        // Token optimization: use deterministic builder by default (saves 1 LLM call).
-        // Sabbath explicitly has "no new teaching" — summaries don't need LLM.
         if (brainFlags.generativeSabbathReview) {
           generatedDay = await generateSabbathDay({
             planOutline,
             previousDays: readyDays,
-            userResponse: run.response_text,
+            userResponse,
             devotionalLengthMinutes: DEFAULT_DEVOTIONAL_LENGTH_MINUTES,
           })
         } else {
           generatedDay = buildFallbackSabbath({
             planOutline,
             previousDays: readyDays,
-            userResponse: run.response_text,
+            userResponse,
           })
         }
       } else if (dayOutline.dayType === 'review') {
-        // Token optimization: deterministic builder by default (saves 1 LLM call).
         if (brainFlags.generativeSabbathReview) {
           generatedDay = await generateReviewDay({
             planOutline,
             previousDays: readyDays,
-            userResponse: run.response_text,
+            userResponse,
             devotionalLengthMinutes: DEFAULT_DEVOTIONAL_LENGTH_MINUTES,
           })
         } else {
           generatedDay = buildFallbackReview({
             planOutline,
             previousDays: readyDays,
-            userResponse: run.response_text,
+            userResponse,
           })
         }
       } else {
         const result = await generateDevotionalDay({
           dayOutline,
           planOutline,
-          userResponse: run.response_text,
+          userResponse,
           devotionalLengthMinutes: DEFAULT_DEVOTIONAL_LENGTH_MINUTES,
           previousDaysModules: previousModules,
           excludeChunkIds: usedChunkIds,
@@ -323,19 +390,18 @@ export async function POST(request: NextRequest) {
       }
 
       // Persist generated day to both in-memory store and Supabase.
-      // Supabase persistence is critical for Vercel where each serverless
-      // invocation has isolated memory.
+      // If Supabase tables exist, this persists for cross-instance access.
+      // If not, at least in-memory is updated for same-instance calls.
       await updatePlanDayContent(planToken, nextPendingDay.day, generatedDay)
 
-      // Calculate updated status
-      const updatedDays = await getAllPlanDaysWithFallback(planToken)
-      const updatedContent = updatedDays
-        .map((d) => d.content)
-        .sort((a, b) => a.day - b.day)
-      const completedCount = updatedContent.filter(
-        (d) => isDayReady(d),
+      // Calculate updated status from current knowledge
+      const updatedDayContent = existingDayContent.map((d) =>
+        d.day === nextPendingDay.day ? generatedDay : d,
+      )
+      const completedCount = updatedDayContent.filter((d) =>
+        isDayReady(d),
       ).length
-      const totalCount = updatedContent.length
+      const totalCount = updatedDayContent.length
 
       return withRequestIdHeaders(
         NextResponse.json(
@@ -346,7 +412,7 @@ export async function POST(request: NextRequest) {
             totalDays: totalCount,
             completedDays: completedCount,
             nextPendingDay:
-              updatedContent.find((d) => d.generationStatus === 'pending')
+              updatedDayContent.find((d) => d.generationStatus === 'pending')
                 ?.day ?? null,
           },
           { status: 200 },
