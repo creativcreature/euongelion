@@ -74,7 +74,7 @@ const GUEST_SIGNUP_GATE_KEY = 'soul-audit-guest-signup-gate-v1'
 const CASCADE_MAX_RETRIES = 2
 const CASCADE_RETRY_DELAY_MS = 2000
 const CASCADE_REQUEST_TIMEOUT_MS = 60_000
-const CASCADE_MAX_ALREADY_GENERATING = 12
+const CASCADE_MAX_ALREADY_GENERATING = 30
 const CASCADE_MAX_CONSECUTIVE_FAILURES = 4
 const CASCADE_STATUS_CHECK_TIMEOUT_MS = 10_000
 
@@ -669,6 +669,12 @@ export default function SoulAuditResultsPage() {
     // fetches when the component unmounts or deps change.
     const effectController = new AbortController()
     const effectSignal = effectController.signal
+    // Debounce flag: cleared by cleanup if the effect re-fires quickly
+    // (e.g. when submitConsentAndSelectInternal sets state then router.push
+    // causes navigation — the first effect fires but is immediately cleaned
+    // up, so the cascade never actually starts. The second effect fires
+    // after navigation settles and runs the cascade.)
+    let startCancelled = false
 
     async function generateOneDay(): Promise<{
       generatedDay?: CustomPlanDay
@@ -822,20 +828,8 @@ export default function SoulAuditResultsPage() {
           const result = await generateOneDay()
           if (cascadeCancelledRef.current) return
 
-          // Debug: log every cascade response
-          console.log('[cascade] result:', JSON.stringify({
-            status: result.status,
-            done: result.done,
-            hasDay: !!result.generatedDay,
-            dayNum: result.generatedDay?.day,
-            dayStatus: result.generatedDay?.generationStatus,
-            isFullDay: result.generatedDay ? isFullPlanDay(result.generatedDay) : null,
-            nextPending: result.nextPendingDay,
-          }))
-
           if (result.generatedDay && isFullPlanDay(result.generatedDay)) {
             const newDay = result.generatedDay
-            console.log('[cascade] Storing day', newDay.day, 'with', newDay.reflection?.length, 'chars reflection')
             setPlanDays((prev) => {
               const existing = prev.filter((d) => d.day !== newDay.day)
               return [...existing, newDay].sort((a, b) => a.day - b.day)
@@ -847,7 +841,6 @@ export default function SoulAuditResultsPage() {
               ...cached.filter((d) => d.day !== newDay.day),
               newDay,
             ].sort((a, b) => a.day - b.day)
-            console.log('[cascade] Persisted', merged.length, 'days. Ready:', merged.filter(d => d.generationStatus === 'ready' || !d.generationStatus).length)
             persistPlanDays(token, merged)
             succeeded = true
             consecutiveFailures = 0
@@ -858,7 +851,6 @@ export default function SoulAuditResultsPage() {
 
           if (result.done) {
             // All days generated
-            console.log('[cascade] Done! Exiting cascade loop.')
             const finalStatus = await loadGenerativePlanStatus(
               token,
               effectSignal,
@@ -869,10 +861,8 @@ export default function SoulAuditResultsPage() {
 
           if (result.status === 'already_generating') {
             alreadyGeneratingCount++
-            console.log('[cascade] already_generating count:', alreadyGeneratingCount, '/', CASCADE_MAX_ALREADY_GENERATING)
             if (alreadyGeneratingCount >= CASCADE_MAX_ALREADY_GENERATING) {
               // Server lock appears stuck — stop polling
-              console.log('[cascade] Too many already_generating — breaking')
               break
             }
             // Another request is handling it — wait and poll again
@@ -934,8 +924,17 @@ export default function SoulAuditResultsPage() {
       }
     }
 
-    void cascadeGeneration()
+    // Debounce: delay cascade start by 500ms so that if the effect is
+    // quickly torn down (e.g. router.push right after state changes in
+    // submitConsentAndSelectInternal), the cascade never fires and the
+    // server-side lock is never acquired. The next effect run (after
+    // navigation settles) starts cleanly.
+    const debounceTimer = setTimeout(() => {
+      if (!startCancelled) void cascadeGeneration()
+    }, 500)
     return () => {
+      startCancelled = true
+      clearTimeout(debounceTimer)
       cascadeCancelledRef.current = true
       cascadeStartedRef.current = false
       effectController.abort()
