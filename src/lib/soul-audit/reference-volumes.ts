@@ -167,6 +167,55 @@ function buildReferenceCorpus(root: string): ReferenceCorpusLine[] {
     }
   }
 
+  // When content/reference/ is unavailable (Vercel), load from the
+  // pre-built reference-index.json which contains verified theological
+  // chunks from the local reference library.
+  if (corpus.length === 0) {
+    const indexPath = path.join(process.cwd(), 'public', 'reference-index.json')
+    try {
+      if (fs.existsSync(indexPath)) {
+        const raw = fs.readFileSync(indexPath, 'utf8')
+        const indexed = JSON.parse(raw) as Array<{
+          id?: string
+          source?: string
+          sourceType?: string
+          content?: string
+          priority?: number
+          wordCount?: number
+          author?: string
+        }>
+        if (Array.isArray(indexed)) {
+          for (const chunk of indexed) {
+            if (corpus.length >= MAX_CORPUS_LINES) break
+            if (!chunk?.content || typeof chunk.content !== 'string') continue
+
+            // Split chunk content into lines for line-based scoring
+            const lines = chunk.content.split('\n')
+            let acceptedFromChunk = 0
+            for (const rawLine of lines) {
+              if (acceptedFromChunk >= MAX_LINES_PER_FILE) break
+              if (corpus.length >= MAX_CORPUS_LINES) break
+
+              const trimmed = rawLine.replace(/\s+/g, ' ').trim()
+              if (!lineLooksUsable(trimmed)) continue
+
+              corpus.push({
+                source: chunk.source || 'reference-index',
+                sourcePriority:
+                  typeof chunk.priority === 'number' ? chunk.priority : 3,
+                text: trimmed,
+                normalized: trimmed.toLowerCase(),
+              })
+              acceptedFromChunk += 1
+            }
+          }
+        }
+      }
+    } catch {
+      // Index may not exist or may be corrupt — continue with empty corpus
+    }
+  }
+
   cachedCorpus = corpus
   return corpus
 }

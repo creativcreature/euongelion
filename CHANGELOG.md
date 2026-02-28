@@ -5,6 +5,18 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-057: Fix RAG pipeline — deploy verified reference-index.json (2026-02-28)
+
+- **Critical fix**: Devotionals on production had zero real theological reference grounding. The 80/20 RAG contract was violated — content was 100% LLM hallucination.
+- **Root cause**: `public/reference-index.json` was gitignored and never created. `content/reference/` (13GB) was also gitignored. The system silently fell back to indexing the app's own devotional JSONs as "reference material" (circular self-referencing).
+- **Fix**: Built and deployed `reference-index.json` with 2,404 verified chunks from Augustine, Calvin, Luther, Edwards, Tozer, Brother Lawrence, Thomas à Kempis, and Douglass.
+- **Fix**: Removed devotional self-referencing fallback from `reference-retriever.ts`.
+- **Fix**: Added reference-index.json fallback to `reference-volumes.ts` so curated-builder gets real commentary witnesses on Vercel.
+- **Fix**: Added degradation warning log and explicit Scripture-grounding constraint in `generative-builder.ts`.
+- **Data issue identified**: ~35 of 52 reference library .txt files contain wrong Gutenberg downloads (novels instead of theology). Only 9 files verified correct.
+
+---
+
 ## Fix 4 production bugs: audit validation, mobile menu, guest flow (2026-02-26)
 
 - **Bug fix**: `isSafeAuditOptionId` regex rejected all `ai_generative` option IDs (3-segment format `kind:slug:rank`) — regex only accepted the 4-segment format used by `ai_primary`. This caused "Invalid auditRunId or optionId format" on every AI audit selection.

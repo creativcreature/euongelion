@@ -246,18 +246,13 @@ function indexDevotionalJsons(): ReferenceChunk[] {
 
     // Also index reflection prompts as lightweight chunks for topical matching
     const reflectionMods = data.modules.filter(
-      (m) =>
-        m &&
-        typeof m === 'object' &&
-        m.type === 'reflection' &&
-        m.prompt,
+      (m) => m && typeof m === 'object' && m.type === 'reflection' && m.prompt,
     )
     for (let ri = 0; ri < reflectionMods.length; ri++) {
       const ref = reflectionMods[ri]
-      const questions = [
-        ref.prompt,
-        ...(ref.additionalQuestions || []),
-      ].filter(Boolean)
+      const questions = [ref.prompt, ...(ref.additionalQuestions || [])].filter(
+        Boolean,
+      )
       const content = `${dayTitle}\n${data.theme || ''}\n${questions.join('\n')}`
       const wc = wordCount(content)
       if (wc < DEVOTIONAL_REFLECTION_MIN_WORDS) continue
@@ -270,9 +265,7 @@ function indexDevotionalJsons(): ReferenceChunk[] {
         content,
         normalized: content.toLowerCase(),
         keywords: extractKeywords(content),
-        scriptureRefs: extractScriptureRefs(
-          `${scriptureRef} ${content}`,
-        ),
+        scriptureRefs: extractScriptureRefs(`${scriptureRef} ${content}`),
         priority: 1, // Lightweight topical signal, not a primary source
         wordCount: wc,
       })
@@ -353,14 +346,19 @@ export function buildChunkedCorpus(root: string): ReferenceChunk[] {
             // Validate required fields — scoring reads priority, wordCount, sourceType
             if (!chunk || typeof chunk.content !== 'string' || !chunk.id)
               continue
-            if (!VALID_SOURCE_TYPES.has(chunk.sourceType as ReferenceSourceType))
+            if (
+              !VALID_SOURCE_TYPES.has(chunk.sourceType as ReferenceSourceType)
+            )
               continue
             // Reconstruct derived/optional fields if missing from the index
             if (typeof chunk.priority !== 'number') chunk.priority = 2
             if (typeof chunk.wordCount !== 'number')
-              chunk.wordCount = chunk.content.split(/\s+/).filter(Boolean).length
+              chunk.wordCount = chunk.content
+                .split(/\s+/)
+                .filter(Boolean).length
             if (!chunk.scriptureRefs) chunk.scriptureRefs = []
-            if (!chunk.normalized) chunk.normalized = chunk.content.toLowerCase()
+            if (!chunk.normalized)
+              chunk.normalized = chunk.content.toLowerCase()
             if (!chunk.keywords) chunk.keywords = extractKeywords(chunk.content)
             corpus.push(chunk)
           }
@@ -371,17 +369,12 @@ export function buildChunkedCorpus(root: string): ReferenceChunk[] {
     }
   }
 
-  // When the reference library is empty or sparse (e.g. on Vercel),
-  // index the deployed devotional JSONs as high-quality reference material.
-  // These 176 files cover all 32 series and provide curated teaching,
-  // scripture, vocabulary, and theological content.
-  if (!referenceLibraryAvailable) {
-    const devotionalChunks = indexDevotionalJsons()
-    for (const chunk of devotionalChunks) {
-      if (corpus.length >= MAX_CHUNKS) break
-      corpus.push(chunk)
-    }
-  }
+  // REMOVED: Devotional self-referencing fallback.
+  // Previously, when the reference library was unavailable, this indexed
+  // the app's own devotional JSONs as "reference material" — creating a
+  // circular self-reference that violated the 80/20 composition contract.
+  // The reference-index.json (built from verified theological sources)
+  // is now the sole reference source on Vercel.
 
   cachedCorpus = corpus
   return corpus

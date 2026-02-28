@@ -120,28 +120,45 @@ function buildDevotionalSystemPrompt(params: {
   // Steer voice/depth based on user disposition and depth preference
   const voiceNotes: string[] = []
   if (params.disposition === 'pastoral') {
-    voiceNotes.push('TONE: Extra gentle, validating. Acknowledge pain before teaching. Shorter sentences.')
+    voiceNotes.push(
+      'TONE: Extra gentle, validating. Acknowledge pain before teaching. Shorter sentences.',
+    )
   } else if (params.disposition === 'scholarly') {
-    voiceNotes.push('TONE: More academic rigor. Include original-language notes, historical context, cross-references.')
+    voiceNotes.push(
+      'TONE: More academic rigor. Include original-language notes, historical context, cross-references.',
+    )
   } else if (params.disposition === 'seeker') {
-    voiceNotes.push('TONE: Welcoming, no insider jargon. Define theological terms. Gentle invitations, not assumptions.')
+    voiceNotes.push(
+      'TONE: Welcoming, no insider jargon. Define theological terms. Gentle invitations, not assumptions.',
+    )
   } else if (params.disposition === 'returning') {
-    voiceNotes.push('TONE: Warm re-welcome. Reference familiar concepts without condescension. Acknowledge the journey back.')
+    voiceNotes.push(
+      'TONE: Warm re-welcome. Reference familiar concepts without condescension. Acknowledge the journey back.',
+    )
   }
 
   if (params.depthPreference === 'deep-study') {
-    voiceNotes.push('DEPTH: Scholarly — include Hebrew/Greek word studies, historical-critical context, theological nuance.')
+    voiceNotes.push(
+      'DEPTH: Scholarly — include Hebrew/Greek word studies, historical-critical context, theological nuance.',
+    )
   } else if (params.depthPreference === 'introductory') {
-    voiceNotes.push('DEPTH: Accessible — plain language, short paragraphs, concrete examples. No assumed biblical literacy.')
+    voiceNotes.push(
+      'DEPTH: Accessible — plain language, short paragraphs, concrete examples. No assumed biblical literacy.',
+    )
   }
 
   if (params.faithBackground === 'other-faith') {
-    voiceNotes.push('CONTEXT: Reader comes from another faith tradition. Be respectful and bridge-building, not polemical.')
+    voiceNotes.push(
+      'CONTEXT: Reader comes from another faith tradition. Be respectful and bridge-building, not polemical.',
+    )
   } else if (params.faithBackground === 'curious') {
-    voiceNotes.push('CONTEXT: Reader is spiritually curious but not religious. Avoid churchy language. Lead with questions.')
+    voiceNotes.push(
+      'CONTEXT: Reader is spiritually curious but not religious. Avoid churchy language. Lead with questions.',
+    )
   }
 
-  const taxonomyBlock = voiceNotes.length > 0 ? `\n${voiceNotes.join('\n')}\n` : ''
+  const taxonomyBlock =
+    voiceNotes.length > 0 ? `\n${voiceNotes.join('\n')}\n` : ''
 
   // Compressed prompt: ~40% fewer tokens than original while preserving all constraints.
   return `You are a devotional writer for Euangelion (Christian devotional app, ancient wisdom).
@@ -412,6 +429,17 @@ export async function generateDevotionalDay(
   // Token optimization: truncate chunks to maxChunkCharsInContext (default 1200).
   // Top-scored chunks already carry the most relevant content in their opening.
   const chunkCharLimit = brainFlags.maxChunkCharsInContext
+  // Enforce the 80/20 contract: reference material MUST be present.
+  // If retrieval returned zero chunks, the reference-index.json is missing
+  // or corrupted — log a warning so this is visible in Vercel logs.
+  if (retrieved.chunks.length === 0) {
+    console.warn(
+      `[generative-builder] WARNING: Zero reference chunks retrieved for day ${params.dayOutline.day} (${params.dayOutline.title}). ` +
+        `Reference index may be missing from public/reference-index.json. ` +
+        `Composition will be degraded — no 80/20 grounding available.`,
+    )
+  }
+
   const referenceContext =
     retrieved.chunks.length > 0
       ? retrieved.chunks
@@ -420,7 +448,7 @@ export async function generateDevotionalDay(
               `[${chunk.sourceType}: ${chunk.source}]\n${chunk.content.slice(0, chunkCharLimit)}`,
           )
           .join('\n\n---\n\n')
-      : 'No reference library material available. Generate from theological knowledge while maintaining accuracy.'
+      : 'NOTICE: Reference library retrieval returned zero results. You MUST still ground all claims in Scripture and verifiable theological sources. Cite chapter and verse for every claim. Do NOT fabricate quotes or attribute statements to specific theologians without certainty.'
 
   const referenceChunkWords = retrieved.chunks.reduce(
     (sum, c) => sum + c.wordCount,
