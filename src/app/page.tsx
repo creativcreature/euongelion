@@ -183,6 +183,8 @@ export default function Home() {
     localStorage.removeItem('soul-audit-selection-v2')
     localStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)
     localStorage.removeItem(REROLL_USED_SESSION_KEY)
+    sessionStorage.removeItem('soul-audit-submit-v2')
+    sessionStorage.removeItem('soul-audit-selection-v2')
 
     try {
       const response = await fetch('/api/soul-audit/reset', {

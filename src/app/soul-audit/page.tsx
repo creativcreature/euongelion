@@ -71,6 +71,8 @@ export default function SoulAuditPage() {
     localStorage.removeItem('soul-audit-result')
     localStorage.removeItem('soul-audit-submit-v2')
     localStorage.removeItem('soul-audit-selection-v2')
+    sessionStorage.removeItem('soul-audit-submit-v2')
+    sessionStorage.removeItem('soul-audit-selection-v2')
 
     try {
       const response = await fetch('/api/soul-audit/reset', {
@@ -109,8 +111,8 @@ export default function SoulAuditPage() {
       const data = (await submitSoulAuditResponse({
         response: trimmedResponse,
       })) as SoulAuditSubmitResponseV2
-      localStorage.setItem('soul-audit-submit-v2', JSON.stringify(data))
-      localStorage.removeItem('soul-audit-selection-v2')
+      sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(data))
+      sessionStorage.removeItem('soul-audit-selection-v2')
       recordAudit(trimmedResponse, data)
       setLastFailedSubmission(null)
       router.push('/soul-audit/results')
