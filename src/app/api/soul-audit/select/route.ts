@@ -18,7 +18,6 @@ import {
   MissingCuratedModuleError,
   MissingReferenceGroundingError,
 } from '@/lib/soul-audit/curated-builder'
-import { generateDevotionalDay } from '@/lib/soul-audit/generative-builder'
 import { reconstructPlanOutline } from '@/lib/soul-audit/outline-generator'
 import {
   createPlan,
@@ -376,9 +375,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // ─── ai_generative: Generate Day 1 synchronously, rest progressively ───
+    // ─── ai_generative: Return immediately, generate all days progressively ───
+    // F-058: No synchronous LLM call at selection time. All days start as
+    // "pending" and the cascade generator (generate-next) handles them.
+    // This prevents Vercel function timeouts that caused GENERATIVE_DAY1_FAILED.
     if (option.kind === 'ai_generative') {
-      // Reconstruct the PlanOutline from the option's planOutline preview + stored data
       const outlinePreview = option.planOutline
       if (!outlinePreview || !outlinePreview.dayOutlines?.length) {
         return jsonError({
@@ -390,7 +391,6 @@ export async function POST(request: NextRequest) {
         })
       }
 
-      // Reconstruct full PlanOutline from the stored preview
       const planOutline = reconstructPlanOutline({
         id: option.slug,
         title: option.title,
@@ -399,8 +399,7 @@ export async function POST(request: NextRequest) {
         preview: outlinePreview,
       })
 
-      const day1Outline = planOutline.dayOutlines[0]
-      if (!day1Outline) {
+      if (!planOutline.dayOutlines.length) {
         return jsonError({
           error: 'Generative plan has no day outlines.',
           code: 'GENERATIVE_DAY_OUTLINE_MISSING',
@@ -409,31 +408,10 @@ export async function POST(request: NextRequest) {
         })
       }
 
-      // Generate Day 1 synchronously
-      let day1: CustomPlanDay
-      try {
-        const result = await generateDevotionalDay({
-          dayOutline: day1Outline,
-          planOutline,
-          userResponse: run.response_text,
-          // TODO(F-053): Replace with user's slider preference once stored on plan instance
-          devotionalLengthMinutes: 10,
-        })
-        day1 = result.day
-      } catch {
-        return jsonError({
-          error:
-            'Unable to generate your first devotional day right now. Please try again or choose another option.',
-          code: 'GENERATIVE_DAY1_FAILED',
-          status: 500,
-          requestId,
-        })
-      }
-
-      // Create pending placeholders for Days 2-7
-      const pendingDays: CustomPlanDay[] = planOutline.dayOutlines
-        .slice(1)
-        .map((outline) => ({
+      // All days start as pending — cascade generation handles each one
+      // via /api/soul-audit/generate-next using real RAG references.
+      const allDays: CustomPlanDay[] = planOutline.dayOutlines.map(
+        (outline) => ({
           day: outline.day,
           dayType: outline.dayType,
           title: outline.title,
@@ -445,9 +423,8 @@ export async function POST(request: NextRequest) {
           journalPrompt: '',
           chiasticPosition: outline.chiasticPosition,
           generationStatus: 'pending' as const,
-        }))
-
-      const allDays = [day1, ...pendingDays]
+        }),
+      )
 
       const timezone =
         sanitizeTimezone(body.timezone) ??

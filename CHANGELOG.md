@@ -5,6 +5,15 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-058: Fix select timeout — async day generation (2026-02-28)
+
+- **Critical fix**: Selecting an AI-generated devotional path timed out on Vercel, showing "Unable to generate your first devotional day right now" error every time.
+- **Root cause**: `select/route.ts` called `generateDevotionalDay()` synchronously during the selection HTTP request — a 15-30s LLM call that exceeded Vercel's function timeout.
+- **Fix**: Removed synchronous Day 1 generation from selection. All 7 days start as "pending" and the cascade generator (`generate-next`) handles them progressively after page load.
+- **Result**: Selection completes in <500ms. Day 1 generates within ~15-20s of page load via cascade with real RAG references.
+
+---
+
 ## F-057: Fix RAG pipeline — deploy verified reference-index.json (2026-02-28)
 
 - **Critical fix**: Devotionals on production had zero real theological reference grounding. The 80/20 RAG contract was violated — content was 100% LLM hallucination.
