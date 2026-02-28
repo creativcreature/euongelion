@@ -51,6 +51,10 @@ import type {
   PlanOutlinePreview,
 } from '@/types/soul-audit'
 
+// Allow up to 120s for LLM generation (requires Vercel Pro).
+// Without this, Vercel Hobby defaults to 10s which kills every LLM call.
+export const maxDuration = 120
+
 interface GenerateNextBody {
   planToken?: string
   // Client-side context fallback — used when Supabase tables are unavailable
@@ -79,11 +83,16 @@ function isDayReady(d: CustomPlanDay): boolean {
 // In-memory lock for same-instance concurrency prevention.
 // Cross-instance protection is handled by isDayStillPending() which
 // checks Supabase for the day's generationStatus before generating.
-const generationLocks = new Map<string, boolean>()
+// Stores a timestamp so stale locks auto-expire (e.g. if Vercel kills
+// the function mid-generation, the finally block never runs).
+const LOCK_TTL_MS = 90_000
+const generationLocks = new Map<string, number>()
 
 function acquireLock(planToken: string): boolean {
-  if (generationLocks.get(planToken)) return false
-  generationLocks.set(planToken, true)
+  const existing = generationLocks.get(planToken)
+  if (existing && Date.now() - existing < LOCK_TTL_MS) return false
+  // Either no lock or stale lock — acquire
+  generationLocks.set(planToken, Date.now())
   return true
 }
 

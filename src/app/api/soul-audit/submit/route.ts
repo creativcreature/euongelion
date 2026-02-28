@@ -1,4 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
+
+// Allow up to 120s for LLM option generation (requires Vercel Pro).
+export const maxDuration = 120
+
 import { crisisRequirement, detectCrisis } from '@/lib/soul-audit/crisis'
 import {
   createRequestId,
