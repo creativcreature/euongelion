@@ -169,16 +169,18 @@ async function safeInsert(table: string, values: object) {
   if (!supabase) return
 
   try {
-    // Keep runtime resilient if migrations are pending in an environment.
-    await (
-      supabase as unknown as {
-        from: (name: string) => { insert: (value: object) => Promise<unknown> }
-      }
+    const result = await (supabase as any).from(table).insert(values)
+    if (result.error) {
+      console.error(
+        `[safeInsert] ${table} failed:`,
+        result.error.message ?? result.error,
+      )
+    }
+  } catch (err) {
+    console.error(
+      `[safeInsert] ${table} threw:`,
+      err instanceof Error ? err.message : err,
     )
-      .from(table)
-      .insert(values)
-  } catch {
-    // no-op
   }
 }
 
@@ -187,15 +189,18 @@ async function safeUpsert(table: string, values: object) {
   if (!supabase) return
 
   try {
-    await (
-      supabase as unknown as {
-        from: (name: string) => { upsert: (value: object) => Promise<unknown> }
-      }
+    const result = await (supabase as any).from(table).upsert(values)
+    if (result.error) {
+      console.error(
+        `[safeUpsert] ${table} failed:`,
+        result.error.message ?? result.error,
+      )
+    }
+  } catch (err) {
+    console.error(
+      `[safeUpsert] ${table} threw:`,
+      err instanceof Error ? err.message : err,
     )
-      .from(table)
-      .upsert(values)
-  } catch {
-    // no-op
   }
 }
 
