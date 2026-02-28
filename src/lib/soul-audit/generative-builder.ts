@@ -495,8 +495,9 @@ export async function generateDevotionalDay(
 
   const parsed = parseGeneratedDay(generation.output)
   if (!parsed) {
+    const preview = (generation.output || '').slice(0, 400)
     throw new Error(
-      `Failed to parse generated devotional for day ${params.dayOutline.day}`,
+      `Failed to parse generated devotional for day ${params.dayOutline.day}. Provider: ${generation.provider}. Output preview: ${preview}`,
     )
   }
 
