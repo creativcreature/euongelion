@@ -772,8 +772,35 @@ export default function SoulAuditResultsPage() {
     }
 
     async function cascadeGeneration() {
-      // Initial status check
-      const initialStatus = await loadGenerativePlanStatus(token, effectSignal)
+      // Initial status check — try server first, fall back to local plan state.
+      // The generation-status API may return 404 when Supabase tables don't
+      // exist. The cascade must NOT die in that case — construct a synthetic
+      // status from the client's local planDays (which came from the select
+      // response and are stored in localStorage).
+      let initialStatus = await loadGenerativePlanStatus(token, effectSignal)
+
+      if (!initialStatus) {
+        // Build synthetic status from local plan days
+        const localDays = loadPlanDays(token)
+        if (localDays.length > 0) {
+          const completed = localDays.filter(
+            (d) =>
+              d.generationStatus === 'ready' ||
+              d.generationStatus === undefined,
+          ).length
+          initialStatus = {
+            planToken: token,
+            totalDays: localDays.length,
+            completedDays: completed,
+            status: completed >= localDays.length ? 'complete' : 'generating',
+            days: localDays.map((d) => ({
+              day: d.day,
+              status: d.generationStatus || 'ready',
+            })),
+          }
+        }
+      }
+
       if (cascadeCancelledRef.current || !initialStatus) return
       setGenerationProgress(initialStatus)
       if (

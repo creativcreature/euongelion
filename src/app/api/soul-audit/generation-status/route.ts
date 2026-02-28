@@ -54,12 +54,25 @@ export async function GET(request: NextRequest) {
     }
 
     const planInstance = await getPlanInstanceWithFallback(planToken)
+
+    // When Supabase tables don't exist, planInstance is null because the
+    // in-memory store is empty on this serverless instance. Instead of 404,
+    // return a "generating" status so the cascade client doesn't abort.
     if (!planInstance) {
-      return jsonError({
-        error: 'Plan not found.',
-        status: 404,
+      const payload: GenerationStatusResponse = {
+        planToken,
+        totalDays: 7,
+        completedDays: 0,
+        status: 'generating',
+        days: Array.from({ length: 7 }, (_, i) => ({
+          day: i + 1,
+          status: 'pending' as const,
+        })),
+      }
+      return withRequestIdHeaders(
+        NextResponse.json(payload, { status: 200 }),
         requestId,
-      })
+      )
     }
 
     if (planInstance.session_token !== sessionToken) {

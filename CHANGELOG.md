@@ -11,6 +11,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - **Root cause**: The Soul Audit tables were never created in Supabase. `safeInsert` silently swallowed all errors, so data only lived in one serverless instance's memory.
 - **Fix (SA-023)**: Migration 009 creates all 10 missing tables. Replaced silent catches with `console.error` logging.
 - **Fix (SA-024)**: Client-side context fallback — `generate-next` now accepts `planOutline`, `optionMeta`, `userResponse`, and `currentDays` in the request body. When Supabase lookups return null, the server uses client-supplied data. The cascade client reads fresh from sessionStorage/localStorage each call.
+- **Fix (SA-025)**: Root cause — cascade died before even trying to generate. `generation-status` returned 404 (Supabase tables missing) → cascade's initial status check got null → `if (!initialStatus) return` killed the entire loop. Fixed: cascade now constructs synthetic status from local planDays when the API fails. Also fixed `generation-status` to return a "generating" status instead of 404 when Supabase tables are absent.
 - **Result**: Cascade generation works even before the Supabase migration is run. Running the migration adds cross-instance persistence.
 
 ---
