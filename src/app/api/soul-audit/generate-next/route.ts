@@ -235,16 +235,32 @@ export async function POST(request: NextRequest) {
       let usingClientData = false
 
       const supabaseDays = await getAllPlanDaysWithFallback(planToken)
-      if (supabaseDays.length > 0) {
-        existingDayContent = supabaseDays
-          .map((d) => d.content)
-          .sort((a, b) => a.day - b.day)
-      } else if (
-        Array.isArray(body.currentDays) &&
-        body.currentDays.length > 0
-      ) {
+      const supabaseContent =
+        supabaseDays.length > 0
+          ? supabaseDays.map((d) => d.content).sort((a, b) => a.day - b.day)
+          : []
+      const clientDays =
+        Array.isArray(body.currentDays) && body.currentDays.length > 0
+          ? [...body.currentDays].sort((a, b) => a.day - b.day)
+          : []
+
+      if (supabaseContent.length > 0 && clientDays.length > supabaseContent.length) {
+        // Partial in-memory/Supabase data (e.g. only the generated day) but
+        // client has the full 7-day set. Merge: prefer server data (may have
+        // generated content) but fill in pending days from the client.
+        const serverDayNumbers = new Set(supabaseContent.map((d) => d.day))
+        const missingClientDays = clientDays.filter(
+          (d) => !serverDayNumbers.has(d.day),
+        )
+        existingDayContent = [...supabaseContent, ...missingClientDays].sort(
+          (a, b) => a.day - b.day,
+        )
+        usingClientData = true
+      } else if (supabaseContent.length > 0) {
+        existingDayContent = supabaseContent
+      } else if (clientDays.length > 0) {
         // Supabase has no days — use client-supplied day state
-        existingDayContent = [...body.currentDays].sort((a, b) => a.day - b.day)
+        existingDayContent = clientDays
         usingClientData = true
       } else {
         // Neither Supabase nor client has day data
