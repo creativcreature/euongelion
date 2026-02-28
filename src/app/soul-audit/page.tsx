@@ -75,7 +75,7 @@ export default function SoulAuditPage() {
     sessionStorage.removeItem('soul-audit-selection-v2')
 
     try {
-      const response = await fetch('/api/soul-audit/reset', {
+      const response = await fetch('/api/soul-audit/manage', {
         method: 'POST',
       })
       if (!response.ok) {
@@ -160,7 +160,11 @@ export default function SoulAuditPage() {
             <FadeIn delay={0.4} y={16}>
               {isSubmitting ? (
                 /* ── Gathering-options loader ── */
-                <div className="flex flex-col items-center py-16" role="status" aria-live="polite">
+                <div
+                  className="flex flex-col items-center py-16"
+                  role="status"
+                  aria-live="polite"
+                >
                   {/* Animated dot cluster */}
                   <div className="mb-10 flex items-center gap-2">
                     {[0, 1, 2].map((i) => (

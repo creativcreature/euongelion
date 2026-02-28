@@ -57,9 +57,6 @@ export const brainFlags = {
   /** Use LLM doc reranking in polishing (default: false = keyword ordering) */
   llmDocReranking: toBool(process.env.LLM_DOC_RERANKING, false),
 
-  /** Cache outline generation results (default: true) */
-  outlineCacheEnabled: toBool(process.env.OUTLINE_CACHE_ENABLED, true),
-
   /** Max reference chunks per devotional day (default: 4, was 6-12) */
   maxReferenceChunksPerDay: Math.max(
     2,

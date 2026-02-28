@@ -5,6 +5,19 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Soul Audit Overhaul: Zero-LLM Curated Assembly Engine (2026-02-28)
+
+- **Phase 1 — Remove LLM bottleneck**: Replaced `generatePlanOutlines()` (30-60s LLM) with `buildAuditOptions()` (keyword scoring, <1s). Deleted 7 cascade infrastructure files (~2,146 lines).
+- **Phase 2 — Extend to 7 days**: Plans now include 5 devotional days (chiastic A-B-C-B'-A') + Sabbath (day 6) + Review (day 7).
+- **Phase 3 — Module-level assembly**: Each day includes 5-7 structured content blocks (scripture, teaching, bridge, reflection, insight, prayer, takeaway).
+- **Phase 4 — Deeper personalization**: Extended bridge snippets (180->280 chars), prayer lines (120->200 chars), and journal prompts with thematic user-response connections.
+- **Phase 5 — Repository cleanup**: Removed dead types, orphaned `outlineCacheEnabled` flag, dead test mocks. Updated production contracts.
+- **Phase 6 — Decompose results page**: 2281->1580 lines + 7 focused components (AuditOptionCard, CrisisResourceBanner, GuestSignupGate, PlanDayContent, PlanDayRail, AuditRerollSection, SavedPathsList).
+- **Phase 7 — API consolidation**: 7->5 soul-audit routes. Merged reset+archive into `/api/soul-audit/manage`. Deleted deprecated bridge route.
+- **Result**: Submit->options in <1s. Select->plan in <1s. Zero LLM calls. ~2,500 lines dead code removed. 1045 tests passing.
+
+---
+
 ## F-059: Create missing Soul Audit Supabase tables + client fallback (2026-02-28)
 
 - **Critical fix**: Cascade day generation stuck at 0/7 days forever. Users waited 30+ minutes seeing "BUILDING" on all days.

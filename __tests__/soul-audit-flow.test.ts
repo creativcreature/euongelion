@@ -1,72 +1,9 @@
 import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
-import { createMockOutlineResult } from './helpers/mock-outlines'
-
-// Mock outline generator to return test outlines (no real LLM in tests).
-vi.mock('@/lib/soul-audit/outline-generator', () => ({
-  generatePlanOutlines: vi.fn(async () => createMockOutlineResult()),
-  reconstructPlanOutline: vi.fn((params: Record<string, unknown>) => ({
-    id: params.id ?? 'test-outline',
-    angle: 'Through Hope',
-    title: params.title ?? 'Test Plan',
-    question: params.question ?? 'Test question',
-    reasoning: params.reasoning ?? 'Test reasoning',
-    scriptureAnchor: 'Psalm 23:1',
-    dayOutlines: (
-      params.preview as { dayOutlines?: Array<Record<string, unknown>> }
-    )?.dayOutlines?.map(
-      (d: Record<string, unknown>, i: number) => ({
-        day: d.day ?? i + 1,
-        dayType: d.dayType ?? 'devotional',
-        chiasticPosition: 'A',
-        title: d.title ?? `Day ${i + 1}`,
-        scriptureReference: d.scriptureReference ?? 'Psalm 23:1',
-        topicFocus: d.topicFocus ?? 'Trust',
-        pardesLevel: 'peshat',
-        suggestedModules: ['scripture', 'teaching', 'reflection'],
-      }),
-    ) ?? [],
-    referenceSeeds: ['commentary/psalms'],
-  })),
-}))
-
-// Mock generative builder to return a test devotional day (no real LLM).
-vi.mock('@/lib/soul-audit/generative-builder', () => ({
-  generateDevotionalDay: vi.fn(
-    async (params: { dayOutline: { day: number; title: string; scriptureReference: string; topicFocus: string; chiasticPosition?: string } }) => ({
-      day: {
-        day: params.dayOutline.day,
-        dayType: 'devotional',
-        title: params.dayOutline.title,
-        scriptureReference: params.dayOutline.scriptureReference,
-        scriptureText: 'The Lord is my shepherd; I shall not want.',
-        reflection: 'A test reflection on trust and surrender.',
-        prayer: 'Lord, guide us today.',
-        nextStep: 'Take a moment to be still.',
-        journalPrompt: 'What does trust look like for you today?',
-        chiasticPosition: params.dayOutline.chiasticPosition ?? 'A',
-        modules: [
-          { type: 'scripture', heading: 'Scripture', content: {} },
-          { type: 'teaching', heading: 'Teaching', content: {} },
-          { type: 'reflection', heading: 'Reflection', content: {} },
-        ],
-        totalWords: 450,
-        targetLengthMinutes: 10,
-        generationStatus: 'ready',
-        compositionReport: {
-          referencePercentage: 80,
-          generatedPercentage: 20,
-          sources: ['commentary/psalms'],
-        },
-      },
-      usedChunkIds: ['chunk-1'],
-    }),
-  ),
-}))
 
 import { POST as submitHandler } from '@/app/api/soul-audit/submit/route'
 import { POST as consentHandler } from '@/app/api/soul-audit/consent/route'
 import { POST as selectHandler } from '@/app/api/soul-audit/select/route'
-import { POST as resetHandler } from '@/app/api/soul-audit/reset/route'
+import { POST as resetHandler } from '@/app/api/soul-audit/manage/route'
 import { GET as activeDaysHandler } from '@/app/api/daily-bread/active-days/route'
 import {
   getLatestSelectionForSessionWithFallback,
@@ -129,7 +66,7 @@ describe('Soul Audit staged flow', () => {
     expect(Array.isArray(payload.options)).toBe(true)
     expect((payload.options as unknown[]).length).toBe(5)
     const aiGenerative = (payload.options as Array<{ kind: string }>).filter(
-      (option) => option.kind === 'ai_generative',
+      (option) => option.kind === 'ai_primary',
     ).length
     const curatedPrefab = (payload.options as Array<{ kind: string }>).filter(
       (option) => option.kind === 'curated_prefab',
@@ -137,7 +74,7 @@ describe('Soul Audit staged flow', () => {
     expect(aiGenerative).toBe(3)
     expect(curatedPrefab).toBe(2)
     const aiTitles = (payload.options as Array<{ kind: string; title: string }>)
-      .filter((option) => option.kind === 'ai_generative')
+      .filter((option) => option.kind === 'ai_primary')
       .map((option) => option.title)
     expect(aiTitles.every((title) => title.trim().length > 0)).toBe(true)
     expect(payload).not.toHaveProperty('customPlan')
@@ -212,8 +149,7 @@ describe('Soul Audit staged flow', () => {
     expect(Array.isArray(payload.options)).toBe(true)
     expect(payload.options).toHaveLength(5)
     expect(
-      payload.options?.filter((option) => option.kind === 'ai_generative')
-        .length,
+      payload.options?.filter((option) => option.kind === 'ai_primary').length,
     ).toBe(3)
     expect(
       payload.options?.filter((option) => option.kind === 'curated_prefab')
@@ -328,7 +264,7 @@ describe('Soul Audit staged flow', () => {
     expect(typeof consentPayload.consentToken).toBe('string')
 
     const aiOptions = submitPayload.options.filter(
-      (option) => option.kind === 'ai_generative',
+      (option) => option.kind === 'ai_primary',
     )
     expect(aiOptions.length).toBeGreaterThan(0)
 
@@ -384,9 +320,11 @@ describe('Soul Audit staged flow', () => {
       throw new Error('Expected selection payload to be defined')
     }
     expect(selectionPayload.ok).toBe(true)
-    expect(selectionPayload.selectionType).toBe('ai_generative')
+    expect(selectionPayload.selectionType).toBe('ai_primary')
     expect(selectionPayload.planToken).toBeTruthy()
-    expect(selectionPayload.route).toMatch(/\/soul-audit\/plan\/[^/?]+\?day=\d+/)
+    expect(selectionPayload.route).toMatch(
+      /\/soul-audit\/plan\/[^/?]+\?day=\d+/,
+    )
   })
 
   it('prefab option routes to series overview after consent + selection', async () => {
@@ -771,7 +709,7 @@ describe('Soul Audit clarifier-once', () => {
     // Since brainFlags caches at import time, this test verifies the code path exists
 
     // When clarifier is disabled, even vague input goes straight to generation
-    // Note: With our mock, this will succeed because outline-generator is mocked
+    // With curated assembly, even vague input returns instant options
     const res = await submitHandler(
       postJson('http://localhost/api/soul-audit/submit', {
         response: 'help',

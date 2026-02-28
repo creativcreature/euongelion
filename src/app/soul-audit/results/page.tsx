@@ -1,7 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import Image from 'next/image'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -10,10 +9,15 @@ import SiteFooter from '@/components/SiteFooter'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import DevotionalStickiesLayer from '@/components/DevotionalStickiesLayer'
 import ScrollProgress from '@/components/ScrollProgress'
-import ReaderTimeline, {
-  type ReaderSectionAnchor,
-} from '@/components/ReaderTimeline'
+import { type ReaderSectionAnchor } from '@/components/ReaderTimeline'
 import FadeIn from '@/components/motion/FadeIn'
+import AuditOptionCard from '@/components/soul-audit/AuditOptionCard'
+import AuditRerollSection from '@/components/soul-audit/AuditRerollSection'
+import CrisisResourceBanner from '@/components/soul-audit/CrisisResourceBanner'
+import GuestSignupGate from '@/components/soul-audit/GuestSignupGate'
+import PlanDayContent from '@/components/soul-audit/PlanDayContent'
+import PlanDayRail from '@/components/soul-audit/PlanDayRail'
+import SavedPathsList from '@/components/soul-audit/SavedPathsList'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { useUIStore } from '@/stores/uiStore'
@@ -22,14 +26,9 @@ import {
   readSiteConsentFromDocument,
   type SiteConsent,
 } from '@/lib/site-consent'
-import { clampScriptureSnippet } from '@/lib/scripture-reference'
 import { typographer } from '@/lib/typographer'
-import { SERIES_DATA } from '@/data/series'
-import { SERIES_HERO } from '@/data/artwork-manifest'
 import type {
-  CrisisResource,
   CustomPlanDay,
-  GenerationStatusResponse,
   PlanOnboardingMeta,
   SoulAuditConsentResponse,
   SoulAuditSelectResponse,
@@ -70,22 +69,6 @@ const LAST_AUDIT_INPUT_SESSION_KEY = 'soul-audit-last-input'
 const REROLL_USED_SESSION_KEY = 'soul-audit-reroll-used'
 const GUEST_SIGNUP_GATE_KEY = 'soul-audit-guest-signup-gate-v1'
 
-// Cascade generation constants
-const CASCADE_MAX_RETRIES = 2
-const CASCADE_RETRY_DELAY_MS = 3000
-const CASCADE_REQUEST_TIMEOUT_MS = 150_000
-const CASCADE_MAX_ALREADY_GENERATING = 40
-const CASCADE_MAX_CONSECUTIVE_FAILURES = 5
-const CASCADE_STATUS_CHECK_TIMEOUT_MS = 10_000
-
-/** Response shape from POST /api/soul-audit/generate-next */
-interface GenerateNextPayload {
-  generatedDay?: CustomPlanDay
-  nextPendingDay?: number | null
-  status?: 'complete' | 'partial' | 'already_generating'
-  totalDays?: number
-  completedDays?: number
-}
 const LEGACY_BURDEN_FRAMING_PATTERN =
   /\b(you named this burden|because you named)\b/i
 const LEGACY_FRAGMENT_TITLE_PATTERN = /^want learn\b/i
@@ -146,16 +129,6 @@ function sanitizeLegacyDisplayText(value: string): string {
     .trim()
 }
 
-function formatShortDate(value: string): string {
-  const date = new Date(value)
-  if (Number.isNaN(date.getTime())) return value
-  return date.toLocaleDateString('en-US', {
-    month: 'short',
-    day: '2-digit',
-    year: 'numeric',
-  })
-}
-
 function formatCycleStart(value: string, timezone?: string): string {
   const date = new Date(value)
   if (Number.isNaN(date.getTime())) return value
@@ -193,19 +166,6 @@ function onboardingDescription(meta: PlanOnboardingMeta | null): string | null {
     return 'You started on Friday. This focused primer prepares your next step before Monday.'
   }
   return 'You started on the weekend. This bridge day keeps momentum until Monday.'
-}
-
-function extractModuleText(content: Record<string, unknown>): string {
-  // Module content may be { text: "..." } or { prompt: "..." } or nested
-  if (typeof content.text === 'string') return content.text
-  if (typeof content.prompt === 'string') return content.prompt
-  if (typeof content.passage === 'string') return content.passage
-  if (typeof content.body === 'string') return content.body
-  // Fallback: join all string values
-  const parts = Object.values(content).filter(
-    (v): v is string => typeof v === 'string',
-  )
-  return parts.join('\n\n')
 }
 
 function isFullPlanDay(value: unknown): value is CustomPlanDay {
@@ -315,30 +275,6 @@ function persistSavedAuditOptions(options: SavedAuditOption[]) {
   window.localStorage.setItem(SAVED_OPTIONS_KEY, JSON.stringify(options))
 }
 
-function resolveVerseSnippet(
-  verseText?: string | null,
-  paragraph?: string | null,
-): string {
-  if (typeof verseText === 'string' && verseText.trim().length > 0) {
-    return clampScriptureSnippet(verseText)
-  }
-  if (typeof paragraph === 'string' && paragraph.trim().length > 0) {
-    return clampScriptureSnippet(paragraph)
-  }
-  return ''
-}
-
-function crisisResourceHref(resource: CrisisResource): string | null {
-  const normalized = resource.contact.toLowerCase()
-  if (normalized.includes('741741')) {
-    return 'sms:741741?body=HOME'
-  }
-  if (normalized.includes('988')) {
-    return 'tel:988'
-  }
-  return null
-}
-
 export default function SoulAuditResultsPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -415,12 +351,6 @@ export default function SoulAuditResultsPage() {
   const [guestTheme, setGuestTheme] = useState<GuestOnboardingTheme>('dark')
   const [guestTextScale, setGuestTextScale] =
     useState<GuestOnboardingTextScale>('default')
-  const [isGenerativePlan, setIsGenerativePlan] = useState(
-    () => initialSelection?.planType === 'generative',
-  )
-  const [generationProgress, setGenerationProgress] =
-    useState<GenerationStatusResponse | null>(null)
-
   useEffect(() => {
     if (typeof window === 'undefined') return
     setRerollUsed(
@@ -497,9 +427,6 @@ export default function SoulAuditResultsPage() {
     const fromStorage = loadSelectionResult()
     if (!fromStorage) return
     setSelection(fromStorage)
-    if (fromStorage.planType === 'generative') {
-      setIsGenerativePlan(true)
-    }
     if (fromStorage.onboardingMeta) {
       setPlanOnboardingMeta(fromStorage.onboardingMeta)
     }
@@ -525,25 +452,6 @@ export default function SoulAuditResultsPage() {
   )
   const optionSelectionReady = Boolean(!submitting && crisisRequirementsMet)
   const rerollsRemaining = rerollUsed ? 0 : 1
-
-  const loadGenerativePlanStatus = useCallback(
-    async (
-      token: string,
-      signal?: AbortSignal,
-    ): Promise<GenerationStatusResponse | null> => {
-      try {
-        const response = await fetch(
-          `/api/soul-audit/generation-status?planToken=${encodeURIComponent(token)}`,
-          signal ? { signal } : undefined,
-        )
-        if (!response.ok) return null
-        return (await response.json()) as GenerationStatusResponse
-      } catch {
-        return null
-      }
-    },
-    [],
-  )
 
   const loadPlan = useCallback(async (token: string) => {
     setLoadingPlan(true)
@@ -641,322 +549,8 @@ export default function SoulAuditResultsPage() {
     if (cachedPlanDays.length > 0) {
       setPlanDays(cachedPlanDays)
     }
-    if (isGenerativePlan) {
-      // For generative plans, load status instead of day-by-day API
-      void loadGenerativePlanStatus(planToken).then((status) => {
-        if (status) setGenerationProgress(status)
-      })
-    } else {
-      void loadPlan(planToken)
-    }
-  }, [isGenerativePlan, loadGenerativePlanStatus, loadPlan, planToken])
-
-  // Ref-stable cascade generation for generative plans: generates Days 2-7.
-  // Uses ref for cancellation so React effect cleanup on re-renders doesn't
-  // kill the generation loop. Includes retry + skip on persistent failure.
-  const cascadeStartedRef = useRef(false)
-  const cascadeCancelledRef = useRef(false)
-
-  useEffect(() => {
-    if (!planToken || !isGenerativePlan) return
-    if (selection?.generationStatus === 'complete') return
-    if (cascadeStartedRef.current) return
-
-    cascadeStartedRef.current = true
-    cascadeCancelledRef.current = false
-    const token = planToken
-    // Effect-level controller: aborted on cleanup to cancel all in-flight
-    // fetches when the component unmounts or deps change.
-    const effectController = new AbortController()
-    const effectSignal = effectController.signal
-    // Debounce flag: cleared by cleanup if the effect re-fires quickly
-    // (e.g. when submitConsentAndSelectInternal sets state then router.push
-    // causes navigation — the first effect fires but is immediately cleaned
-    // up, so the cascade never actually starts. The second effect fires
-    // after navigation settles and runs the cascade.)
-    let startCancelled = false
-
-    async function generateOneDay(): Promise<{
-      generatedDay?: CustomPlanDay
-      nextPendingDay?: number | null
-      status?: string
-      done: boolean
-    }> {
-      // Per-request controller for the 60s timeout. Separate from the
-      // effect-level controller so a single timeout doesn't kill the
-      // entire cascade. Effect cleanup aborts the effect controller which
-      // the cascadeCancelledRef check handles.
-      const reqController = new AbortController()
-      const timeoutId = setTimeout(
-        () => reqController.abort(),
-        CASCADE_REQUEST_TIMEOUT_MS,
-      )
-      // If the effect is cleaned up, also abort this request.
-      const onEffectAbort = () => reqController.abort()
-      effectSignal.addEventListener('abort', onEffectAbort, { once: true })
-
-      try {
-        // Build client-side context for the server fallback path.
-        // When Supabase tables are unavailable, the server needs this
-        // data to resolve the plan outline and generate content.
-        const currentDays = loadPlanDays(token)
-        const storedSubmitResult = loadSubmitResult()
-        const storedSelection = loadSelectionResult()
-        const userResponse = loadLastAuditInput() || lastAuditInput || ''
-
-        // Find the selected option by matching seriesSlug → option.slug
-        const selectedOption = storedSubmitResult?.options.find(
-          (o) => o.slug === storedSelection?.seriesSlug,
-        )
-
-        const genRes = await fetch('/api/soul-audit/generate-next', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            planToken: token,
-            // Client-side context for Supabase-less fallback
-            ...(selectedOption?.planOutline && {
-              planOutline: selectedOption.planOutline,
-              optionMeta: {
-                slug: selectedOption.slug,
-                title: selectedOption.title,
-                question: selectedOption.question,
-                reasoning: selectedOption.reasoning,
-              },
-            }),
-            ...(userResponse && { userResponse }),
-            ...(currentDays.length > 0 && { currentDays }),
-          }),
-          signal: reqController.signal,
-        })
-        clearTimeout(timeoutId)
-        effectSignal.removeEventListener('abort', onEffectAbort)
-
-        if (!genRes.ok) {
-          // 429 = rate limited — wait before retrying (don't burn retries)
-          if (genRes.status === 429) {
-            return { status: 'rate_limited' as const, done: false }
-          }
-          return { done: false }
-        }
-
-        const payload = (await genRes.json()) as GenerateNextPayload
-
-        if (
-          payload.status === 'complete' ||
-          payload.status === 'already_generating'
-        ) {
-          return { ...payload, done: payload.status === 'complete' }
-        }
-
-        return { ...payload, done: payload.nextPendingDay === null }
-      } catch {
-        clearTimeout(timeoutId)
-        effectSignal.removeEventListener('abort', onEffectAbort)
-        if (effectSignal.aborted) return { done: true }
-        // After timeout, the server-side request may still complete.
-        // Check status with its own timeout to avoid unbounded hang.
-        try {
-          const statusController = new AbortController()
-          const statusTimeout = setTimeout(
-            () => statusController.abort(),
-            CASCADE_STATUS_CHECK_TIMEOUT_MS,
-          )
-          const onAbort = () => statusController.abort()
-          effectSignal.addEventListener('abort', onAbort, { once: true })
-          try {
-            const status = await loadGenerativePlanStatus(
-              token,
-              statusController.signal,
-            )
-            if (status?.status === 'complete') return { done: true }
-          } finally {
-            clearTimeout(statusTimeout)
-            effectSignal.removeEventListener('abort', onAbort)
-          }
-        } catch {
-          // Status check failed too — treat as generic failure
-        }
-        return { done: false }
-      }
-    }
-
-    async function cascadeGeneration() {
-      // Initial status check — try server first, fall back to local plan state.
-      // The generation-status API may return 404 when Supabase tables don't
-      // exist. The cascade must NOT die in that case — construct a synthetic
-      // status from the client's local planDays (which came from the select
-      // response and are stored in localStorage).
-      let initialStatus = await loadGenerativePlanStatus(token, effectSignal)
-
-      if (!initialStatus) {
-        // Build synthetic status from local plan days
-        const localDays = loadPlanDays(token)
-        if (localDays.length > 0) {
-          const completed = localDays.filter(
-            (d) =>
-              d.generationStatus === 'ready' ||
-              d.generationStatus === undefined,
-          ).length
-          initialStatus = {
-            planToken: token,
-            totalDays: localDays.length,
-            completedDays: completed,
-            status: completed >= localDays.length ? 'complete' : 'generating',
-            days: localDays.map((d) => ({
-              day: d.day,
-              status: d.generationStatus || 'ready',
-            })),
-          }
-        }
-      }
-
-      if (cascadeCancelledRef.current || !initialStatus) return
-      setGenerationProgress(initialStatus)
-      if (
-        initialStatus.status === 'complete' ||
-        initialStatus.status === 'partial_failure'
-      ) {
-        return
-      }
-
-      let consecutiveFailures = 0
-      let alreadyGeneratingCount = 0
-
-      while (!cascadeCancelledRef.current) {
-        let succeeded = false
-
-        for (let attempt = 0; attempt <= CASCADE_MAX_RETRIES; attempt++) {
-          if (cascadeCancelledRef.current) return
-
-          const result = await generateOneDay()
-          if (cascadeCancelledRef.current) return
-
-          if (result.generatedDay && isFullPlanDay(result.generatedDay)) {
-            const newDay = result.generatedDay
-            setPlanDays((prev) => {
-              const existing = prev.filter((d) => d.day !== newDay.day)
-              return [...existing, newDay].sort((a, b) => a.day - b.day)
-            })
-            // Persist outside the state updater — updater functions must be pure.
-            // We rebuild the merged array here since we can't read state synchronously.
-            const cached = loadPlanDays(token)
-            const merged = [
-              ...cached.filter((d) => d.day !== newDay.day),
-              newDay,
-            ].sort((a, b) => a.day - b.day)
-            persistPlanDays(token, merged)
-            succeeded = true
-            consecutiveFailures = 0
-            // Note: alreadyGeneratingCount is NOT reset on success — it tracks
-            // total "stuck lock" signals across the entire cascade to prevent
-            // unbounded polling if the lock repeatedly cycles.
-          }
-
-          if (result.done) {
-            // All days generated
-            const finalStatus = await loadGenerativePlanStatus(
-              token,
-              effectSignal,
-            )
-            if (finalStatus) setGenerationProgress(finalStatus)
-            return
-          }
-
-          if (result.status === 'already_generating') {
-            alreadyGeneratingCount++
-            if (alreadyGeneratingCount >= CASCADE_MAX_ALREADY_GENERATING) {
-              // Server lock appears stuck — stop polling
-              break
-            }
-            // Another request is handling it — wait and poll again
-            await new Promise((r) => setTimeout(r, CASCADE_RETRY_DELAY_MS))
-            consecutiveFailures = 0
-            succeeded = true
-            break
-          }
-
-          if (result.status === 'rate_limited') {
-            // Rate limited — wait a full minute before retrying
-            await new Promise((r) => setTimeout(r, 15_000))
-            consecutiveFailures = 0
-            succeeded = true
-            break
-          }
-
-          if (succeeded) break
-
-          // Failed — retry with backoff
-          if (attempt < CASCADE_MAX_RETRIES) {
-            await new Promise((r) =>
-              setTimeout(r, CASCADE_RETRY_DELAY_MS * (attempt + 1)),
-            )
-          }
-        }
-
-        if (alreadyGeneratingCount >= CASCADE_MAX_ALREADY_GENERATING) break
-
-        if (!succeeded) {
-          consecutiveFailures++
-          if (consecutiveFailures >= CASCADE_MAX_CONSECUTIVE_FAILURES) {
-            // Too many failures in a row — stop but don't crash
-            break
-          }
-          // Wait before next attempt
-          await new Promise((r) => setTimeout(r, CASCADE_RETRY_DELAY_MS))
-        }
-
-        // Update progress
-        const status = await loadGenerativePlanStatus(token, effectSignal)
-        if (cascadeCancelledRef.current) return
-        if (status) {
-          setGenerationProgress(status)
-          if (
-            status.status === 'complete' ||
-            status.status === 'partial_failure'
-          ) {
-            return
-          }
-        }
-      }
-
-      // Cascade stopped due to failure circuit-breakers — surface to user.
-      if (!cascadeCancelledRef.current) {
-        const finalStatus = await loadGenerativePlanStatus(token, effectSignal)
-        if (finalStatus) setGenerationProgress(finalStatus)
-        if (
-          !finalStatus ||
-          (finalStatus.status !== 'complete' &&
-            finalStatus.status !== 'partial_failure')
-        ) {
-          setError(
-            'Some devotional days could not be generated. You can read the days that are ready.',
-          )
-        }
-      }
-    }
-
-    // Debounce: delay cascade start by 500ms so that if the effect is
-    // quickly torn down (e.g. router.push right after state changes in
-    // submitConsentAndSelectInternal), the cascade never fires and the
-    // server-side lock is never acquired. The next effect run (after
-    // navigation settles) starts cleanly.
-    const debounceTimer = setTimeout(() => {
-      if (!startCancelled) void cascadeGeneration()
-    }, 500)
-    return () => {
-      startCancelled = true
-      clearTimeout(debounceTimer)
-      cascadeCancelledRef.current = true
-      cascadeStartedRef.current = false
-      effectController.abort()
-    }
-  }, [
-    isGenerativePlan,
-    loadGenerativePlanStatus,
-    planToken,
-    selection?.generationStatus,
-  ])
+    void loadPlan(planToken)
+  }, [loadPlan, planToken])
 
   useEffect(() => {
     if (!planToken) return
@@ -964,7 +558,7 @@ export default function SoulAuditResultsPage() {
 
     async function loadArchive() {
       try {
-        const response = await fetch('/api/soul-audit/archive', {
+        const response = await fetch('/api/soul-audit/manage', {
           cache: 'no-store',
         })
         if (!response.ok) return
@@ -993,7 +587,6 @@ export default function SoulAuditResultsPage() {
         title: string
         scriptureReference?: string
         locked: boolean
-        generationStatus?: 'ready' | 'pending' | 'generating' | 'failed'
       }
     >()
 
@@ -1003,7 +596,6 @@ export default function SoulAuditResultsPage() {
         title: day.title,
         scriptureReference: day.scriptureReference,
         locked: false,
-        generationStatus: day.generationStatus ?? 'ready',
       })
     }
 
@@ -1017,33 +609,8 @@ export default function SoulAuditResultsPage() {
       })
     }
 
-    // For generative plans, include pending days from generation progress
-    if (isGenerativePlan && generationProgress) {
-      for (const dayStatus of generationProgress.days) {
-        if (byDay.has(dayStatus.day)) {
-          const existing = byDay.get(dayStatus.day)!
-          existing.generationStatus = dayStatus.status as
-            | 'ready'
-            | 'pending'
-            | 'generating'
-            | 'failed'
-        } else {
-          byDay.set(dayStatus.day, {
-            day: dayStatus.day,
-            title: `Day ${dayStatus.day}`,
-            locked: false,
-            generationStatus: dayStatus.status as
-              | 'ready'
-              | 'pending'
-              | 'generating'
-              | 'failed',
-          })
-        }
-      }
-    }
-
     return Array.from(byDay.values()).sort((a, b) => a.day - b.day)
-  }, [generationProgress, isGenerativePlan, lockedDayPreviews, planDays])
+  }, [lockedDayPreviews, planDays])
 
   const currentDayNumber = useMemo(() => {
     if (planDays.length === 0) return null
@@ -1273,9 +840,6 @@ export default function SoulAuditResultsPage() {
       }
 
       setSelection(selectionPayload)
-      if (selectionPayload.planType === 'generative') {
-        setIsGenerativePlan(true)
-      }
       if (selectionPayload.onboardingMeta) {
         setPlanOnboardingMeta(selectionPayload.onboardingMeta)
       }
@@ -1592,7 +1156,7 @@ export default function SoulAuditResultsPage() {
     sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
 
     try {
-      await fetch('/api/soul-audit/reset', { method: 'POST' })
+      await fetch('/api/soul-audit/manage', { method: 'POST' })
     } catch {
       // continue local reset
     }
@@ -1685,66 +1249,12 @@ export default function SoulAuditResultsPage() {
             {!planToken && submitResult && (
               <>
                 {submitResult.crisis.required && (
-                  <FadeIn>
-                    <section
-                      className="mb-6 rounded-none border p-6"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      <div>
-                        <p className="text-label vw-small mb-2 text-gold">
-                          CRISIS SUPPORT
-                        </p>
-                        <p className="vw-small mb-2 text-secondary">
-                          {typographer(submitResult.crisis.prompt)}
-                        </p>
-                        <div className="grid gap-2">
-                          {submitResult.crisis.resources.map((resource) => {
-                            const href = crisisResourceHref(resource)
-                            return (
-                              <p
-                                key={resource.name}
-                                className="vw-small text-secondary"
-                              >
-                                <span className="text-label vw-small text-gold">
-                                  {resource.name}:
-                                </span>{' '}
-                                {href ? (
-                                  <a
-                                    href={href}
-                                    className="link-highlight"
-                                    rel="noreferrer"
-                                  >
-                                    {resource.contact}
-                                  </a>
-                                ) : (
-                                  resource.contact
-                                )}
-                              </p>
-                            )
-                          })}
-                        </div>
-                        <a
-                          href="tel:988"
-                          className="text-label vw-small link-highlight mt-3 inline-block"
-                        >
-                          I NEED IMMEDIATE HELP NOW
-                        </a>
-                        <label className="flex items-start gap-3">
-                          <input
-                            type="checkbox"
-                            checked={crisisAcknowledged}
-                            onChange={(e) =>
-                              setCrisisAcknowledged(e.target.checked)
-                            }
-                          />
-                          <span className="vw-small">
-                            I acknowledge the crisis resources above before
-                            continuing to devotional options.
-                          </span>
-                        </label>
-                      </div>
-                    </section>
-                  </FadeIn>
+                  <CrisisResourceBanner
+                    prompt={submitResult.crisis.prompt}
+                    resources={submitResult.crisis.resources}
+                    acknowledged={crisisAcknowledged}
+                    onAcknowledgeChange={setCrisisAcknowledged}
+                  />
                 )}
 
                 {selectionInlineError && (
@@ -1761,178 +1271,25 @@ export default function SoulAuditResultsPage() {
                 )}
 
                 {guestGateOpen && (
-                  <FadeIn>
-                    <section
-                      className="mb-6 rounded-sm bg-surface-raised p-5"
-                      style={{ border: '1px solid var(--color-border)' }}
-                      aria-live="polite"
-                    >
-                      {guestGateStep === 'signup' ? (
-                        <div className="grid gap-4">
-                          <p className="text-label vw-small text-gold">
-                            SAVE YOUR FIRST AUDIT
-                          </p>
-                          <p className="vw-small text-secondary">
-                            Create an account before entering your devotional so
-                            this first path is saved across devices.
-                          </p>
-                          <div className="flex flex-wrap gap-3">
-                            <button
-                              type="button"
-                              className="text-label vw-small px-5 py-2"
-                              style={{
-                                border: '1px solid var(--color-border)',
-                              }}
-                              onClick={redirectToSignUpFromGuestGate}
-                            >
-                              Sign up now
-                            </button>
-                            <button
-                              type="button"
-                              className="text-label vw-small px-5 py-2"
-                              style={{
-                                border: '1px solid var(--color-border)',
-                              }}
-                              onClick={() => setGuestGateStep('onboarding')}
-                            >
-                              Continue as guest
-                            </button>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="grid gap-4">
-                          <p className="text-label vw-small text-gold">
-                            QUICK GUEST SETUP
-                          </p>
-                          <p className="vw-small text-secondary">
-                            Choose a Sabbath day and reading defaults before
-                            entering this devotional.
-                          </p>
-                          <div className="grid gap-3">
-                            <p className="text-label vw-small text-gold">
-                              Sabbath day
-                            </p>
-                            <div className="flex flex-wrap gap-2">
-                              {(['saturday', 'sunday'] as const).map((day) => (
-                                <button
-                                  key={day}
-                                  type="button"
-                                  className="text-label vw-small px-4 py-2"
-                                  style={{
-                                    border: '1px solid var(--color-border)',
-                                    background:
-                                      guestSabbathDay === day
-                                        ? 'var(--color-fg)'
-                                        : 'transparent',
-                                    color:
-                                      guestSabbathDay === day
-                                        ? 'var(--color-bg)'
-                                        : 'var(--color-text-primary)',
-                                  }}
-                                  onClick={() => setGuestSabbathDay(day)}
-                                >
-                                  {day[0].toUpperCase() + day.slice(1)}
-                                </button>
-                              ))}
-                            </div>
-                          </div>
-                          <div className="grid gap-3">
-                            <p className="text-label vw-small text-gold">
-                              Theme
-                            </p>
-                            <div className="flex flex-wrap gap-2">
-                              {(['dark', 'light', 'system'] as const).map(
-                                (theme) => (
-                                  <button
-                                    key={theme}
-                                    type="button"
-                                    className="text-label vw-small px-4 py-2"
-                                    style={{
-                                      border: '1px solid var(--color-border)',
-                                      background:
-                                        guestTheme === theme
-                                          ? 'var(--color-fg)'
-                                          : 'transparent',
-                                      color:
-                                        guestTheme === theme
-                                          ? 'var(--color-bg)'
-                                          : 'var(--color-text-primary)',
-                                    }}
-                                    onClick={() => setGuestTheme(theme)}
-                                  >
-                                    {theme[0].toUpperCase() + theme.slice(1)}
-                                  </button>
-                                ),
-                              )}
-                            </div>
-                          </div>
-                          <div className="grid gap-3">
-                            <p className="text-label vw-small text-gold">
-                              Text size
-                            </p>
-                            <div className="flex flex-wrap gap-2">
-                              {(['default', 'large', 'xlarge'] as const).map(
-                                (scale) => (
-                                  <button
-                                    key={scale}
-                                    type="button"
-                                    className="text-label vw-small px-4 py-2"
-                                    style={{
-                                      border: '1px solid var(--color-border)',
-                                      background:
-                                        guestTextScale === scale
-                                          ? 'var(--color-fg)'
-                                          : 'transparent',
-                                      color:
-                                        guestTextScale === scale
-                                          ? 'var(--color-bg)'
-                                          : 'var(--color-text-primary)',
-                                    }}
-                                    onClick={() => setGuestTextScale(scale)}
-                                  >
-                                    {scale === 'xlarge'
-                                      ? 'XLarge'
-                                      : scale[0].toUpperCase() + scale.slice(1)}
-                                  </button>
-                                ),
-                              )}
-                            </div>
-                          </div>
-                          <div className="flex flex-wrap gap-3 pt-2">
-                            <button
-                              type="button"
-                              className="text-label vw-small px-5 py-2"
-                              style={{
-                                border: '1px solid var(--color-border)',
-                              }}
-                              onClick={handleGuestSoftOnboardingContinue}
-                            >
-                              Continue to devotional
-                            </button>
-                            <button
-                              type="button"
-                              className="text-label vw-small px-5 py-2"
-                              style={{
-                                border: '1px solid var(--color-border)',
-                              }}
-                              onClick={() => setGuestGateStep('signup')}
-                            >
-                              Back
-                            </button>
-                          </div>
-                        </div>
-                      )}
-                    </section>
-                  </FadeIn>
+                  <GuestSignupGate
+                    step={guestGateStep}
+                    sabbathDay={guestSabbathDay}
+                    theme={guestTheme}
+                    textScale={guestTextScale}
+                    onStepChange={setGuestGateStep}
+                    onSabbathDayChange={setGuestSabbathDay}
+                    onThemeChange={setGuestTheme}
+                    onTextScaleChange={setGuestTextScale}
+                    onContinue={handleGuestSoftOnboardingContinue}
+                    onSignUp={redirectToSignUpFromGuestGate}
+                  />
                 )}
 
                 <FadeIn>
                   <section className="mb-6">
                     <div className="mb-4 flex items-center justify-between">
                       <p className="text-label vw-small text-gold">
-                        {displayOptions.some((o) => o.kind === 'ai_generative')
-                          ? '3 AI GENERATED PATHS'
-                          : '3 PRIMARY AI OPTIONS'}
+                        3 PRIMARY AI OPTIONS
                       </p>
                       <p className="vw-small text-muted">
                         {submitResult.remainingAudits} audits remaining this
@@ -1948,122 +1305,29 @@ export default function SoulAuditResultsPage() {
                     )}
                     <div className="grid gap-4 md:grid-cols-3">
                       {displayOptions
-                        .filter(
-                          (option) =>
-                            option.kind === 'ai_primary' ||
-                            option.kind === 'ai_generative',
-                        )
-                        .map((option) => {
-                          const hero = SERIES_HERO[option.slug]
-                          const series = SERIES_DATA[option.slug]
-                          const keywords = (series?.keywords ?? []).slice(0, 3)
-                          const isGenerative = option.kind === 'ai_generative'
-                          const dayCount = isGenerative
-                            ? 7
-                            : (series?.days.length ?? 0)
-
-                          return (
-                            <article
-                              key={option.id}
-                              className={`audit-option-card audit-option-card-large group relative overflow-hidden text-left${submitting && selectingOptionId === option.id ? ' animate-pulse' : ''}`}
-                            >
-                              <button
-                                type="button"
-                                disabled={!optionSelectionReady}
-                                onClick={() =>
-                                  void submitConsentAndSelect(option.id)
-                                }
-                                className={`w-full text-left ${
-                                  optionSelectionReady
-                                    ? 'cursor-pointer'
-                                    : 'is-disabled'
-                                }`}
-                                aria-disabled={!optionSelectionReady}
-                              >
-                                {/* Ref -> Title -> Image -> Keywords -> Action */}
-                                {option.preview?.verse && (
-                                  <div className="mock-scripture-lead audit-option-pad">
-                                    <p className="mock-scripture-lead-reference">
-                                      {typographer(option.preview.verse)}
-                                    </p>
-                                  </div>
-                                )}
-                                <h3 className="audit-option-title audit-option-pad">
-                                  {option.title}.
-                                </h3>
-                                {hero && (
-                                  <div
-                                    className="series-card-thumbnail"
-                                    aria-hidden="true"
-                                  >
-                                    <Image
-                                      src={hero.rawSrc}
-                                      alt=""
-                                      width={600}
-                                      height={450}
-                                      className="series-card-thumbnail-img"
-                                      loading="lazy"
-                                      sizes="(max-width: 767px) 84vw, 33vw"
-                                    />
-                                  </div>
-                                )}
-                                {keywords.length > 0 && (
-                                  <p className="series-card-keywords audit-option-pad">
-                                    {keywords.join(' \u2022 ')}
-                                  </p>
-                                )}
-                                <div className="mock-featured-actions audit-option-pad">
-                                  <span className="mock-series-start text-label">
-                                    {submitting &&
-                                    selectingOptionId === option.id
-                                      ? 'GENERATING\u2026'
-                                      : optionSelectionReady
-                                        ? isGenerative
-                                          ? 'GENERATE THIS PATH'
-                                          : 'BUILD THIS PATH'
-                                        : submitting
-                                          ? 'PLEASE WAIT'
-                                          : 'UNAVAILABLE'}
-                                  </span>
-                                  {dayCount > 0 && (
-                                    <span className="mock-featured-days text-label">
-                                      {dayCount}{' '}
-                                      {dayCount === 1 ? 'DAY' : 'DAYS'}
-                                    </span>
-                                  )}
-                                </div>
-                              </button>
-                              <div className="audit-option-meta audit-option-pad">
-                                <button
-                                  type="button"
-                                  className="audit-option-meta-link link-highlight mr-4"
-                                  onClick={() => saveOptionForLater(option)}
-                                >
-                                  Save for later
-                                </button>
-                                <button
-                                  type="button"
-                                  className="audit-option-meta-link link-highlight"
-                                  onClick={() =>
-                                    setExpandedReasoningOptionId((current) =>
-                                      current === option.id ? null : option.id,
-                                    )
-                                  }
-                                >
-                                  {expandedReasoningOptionId === option.id
-                                    ? 'Hide reasoning'
-                                    : 'Why this path?'}
-                                </button>
-                                {expandedReasoningOptionId === option.id && (
-                                  <p className="audit-option-support mt-2 text-secondary">
-                                    {typographer(option.reasoning)}
-                                  </p>
-                                )}
-                              </div>
-                              <span className="audit-option-underline" />
-                            </article>
-                          )
-                        })}
+                        .filter((option) => option.kind === 'ai_primary')
+                        .map((option) => (
+                          <AuditOptionCard
+                            key={option.id}
+                            option={option}
+                            variant="large"
+                            disabled={!optionSelectionReady}
+                            loading={
+                              submitting && selectingOptionId === option.id
+                            }
+                            submitting={submitting}
+                            expandedReasoning={
+                              expandedReasoningOptionId === option.id
+                            }
+                            onSelect={(id) => void submitConsentAndSelect(id)}
+                            onSave={saveOptionForLater}
+                            onToggleReasoning={(id) =>
+                              setExpandedReasoningOptionId((current) =>
+                                current === id ? null : id,
+                              )
+                            }
+                          />
+                        ))}
                     </div>
                   </section>
                 </FadeIn>
@@ -2076,194 +1340,47 @@ export default function SoulAuditResultsPage() {
                     <div className="grid gap-4 md:grid-cols-2">
                       {displayOptions
                         .filter((option) => option.kind === 'curated_prefab')
-                        .map((option) => {
-                          const series = SERIES_DATA[option.slug]
-                          const keywords = (series?.keywords ?? []).slice(0, 3)
-                          const dayCount = series?.days.length ?? 0
-
-                          return (
-                            <article
-                              key={option.id}
-                              className={`audit-option-card audit-option-card-small group relative overflow-hidden text-left${submitting && selectingOptionId === option.id ? ' animate-pulse' : ''}`}
-                            >
-                              <button
-                                type="button"
-                                disabled={!optionSelectionReady}
-                                onClick={() =>
-                                  void submitConsentAndSelect(option.id)
-                                }
-                                className={`w-full text-left ${
-                                  optionSelectionReady
-                                    ? 'cursor-pointer'
-                                    : 'is-disabled'
-                                }`}
-                                aria-disabled={!optionSelectionReady}
-                              >
-                                {/* Small variant: Title → Keywords → Action */}
-                                <h3 className="audit-option-title">
-                                  {option.title}.
-                                </h3>
-                                {keywords.length > 0 && (
-                                  <p className="series-card-keywords">
-                                    {keywords.join(' \u2022 ')}
-                                  </p>
-                                )}
-                                <div className="mock-featured-actions">
-                                  <span className="mock-series-start text-label">
-                                    {submitting &&
-                                    selectingOptionId === option.id
-                                      ? 'LOADING\u2026'
-                                      : optionSelectionReady
-                                        ? 'OPEN SERIES'
-                                        : submitting
-                                          ? 'PLEASE WAIT'
-                                          : 'UNAVAILABLE'}
-                                  </span>
-                                  {dayCount > 0 && (
-                                    <span className="mock-featured-days text-label">
-                                      {dayCount}{' '}
-                                      {dayCount === 1 ? 'DAY' : 'DAYS'}
-                                    </span>
-                                  )}
-                                </div>
-                              </button>
-                              <div className="audit-option-meta">
-                                <button
-                                  type="button"
-                                  className="audit-option-meta-link link-highlight mr-4"
-                                  onClick={() => saveOptionForLater(option)}
-                                >
-                                  Save for later
-                                </button>
-                                <button
-                                  type="button"
-                                  className="audit-option-meta-link link-highlight"
-                                  onClick={() =>
-                                    setExpandedReasoningOptionId((current) =>
-                                      current === option.id ? null : option.id,
-                                    )
-                                  }
-                                >
-                                  {expandedReasoningOptionId === option.id
-                                    ? 'Hide reasoning'
-                                    : 'Why this path?'}
-                                </button>
-                                {expandedReasoningOptionId === option.id && (
-                                  <p className="audit-option-support mt-2 text-secondary">
-                                    {typographer(option.reasoning)}
-                                  </p>
-                                )}
-                              </div>
-                              <span className="audit-option-underline" />
-                            </article>
-                          )
-                        })}
+                        .map((option) => (
+                          <AuditOptionCard
+                            key={option.id}
+                            option={option}
+                            variant="small"
+                            disabled={!optionSelectionReady}
+                            loading={
+                              submitting && selectingOptionId === option.id
+                            }
+                            submitting={submitting}
+                            expandedReasoning={
+                              expandedReasoningOptionId === option.id
+                            }
+                            onSelect={(id) => void submitConsentAndSelect(id)}
+                            onSave={saveOptionForLater}
+                            onToggleReasoning={(id) =>
+                              setExpandedReasoningOptionId((current) =>
+                                current === id ? null : id,
+                              )
+                            }
+                          />
+                        ))}
                     </div>
                   </section>
                 </FadeIn>
 
-                {savedOptions.length > 0 && (
-                  <FadeIn>
-                    <section
-                      className="mb-7 border p-4"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      <div className="flex flex-wrap items-center justify-between gap-2">
-                        <p className="text-label vw-small text-gold">
-                          SAVED PATHS
-                        </p>
-                        {hasStaleSavedOptions && (
-                          <button
-                            type="button"
-                            className="text-label vw-small link-highlight"
-                            onClick={cleanSavedOptions}
-                          >
-                            Monthly clean house
-                          </button>
-                        )}
-                      </div>
-                      <div className="mt-3 grid gap-2">
-                        {savedOptions.slice(0, 6).map((saved) => {
-                          const verseSnippet = resolveVerseSnippet(
-                            saved.verseText,
-                            saved.paragraph,
-                          )
+                <SavedPathsList
+                  savedOptions={savedOptions}
+                  hasStaleOptions={hasStaleSavedOptions}
+                  message={savedOptionsMessage}
+                  onRemove={removeSavedOption}
+                  onClean={cleanSavedOptions}
+                />
 
-                          return (
-                            <div
-                              key={`saved-option-${saved.id}`}
-                              className="border px-3 py-2"
-                              style={{ borderColor: 'var(--color-border)' }}
-                            >
-                              <div className="flex flex-wrap items-center justify-between gap-2">
-                                {saved.verse && (
-                                  <p className="audit-option-verse w-full">
-                                    {typographer(saved.verse)}
-                                  </p>
-                                )}
-                                {verseSnippet && (
-                                  <p className="audit-option-verse-snippet w-full">
-                                    {typographer(verseSnippet)}
-                                  </p>
-                                )}
-                                <p className="audit-option-title text-gold">
-                                  {saved.title}
-                                </p>
-                                <button
-                                  type="button"
-                                  className="audit-option-meta-link link-highlight"
-                                  onClick={() => removeSavedOption(saved.id)}
-                                >
-                                  Remove
-                                </button>
-                              </div>
-                              <p className="audit-option-support mt-1 text-secondary">
-                                {typographer(saved.question)}
-                              </p>
-                            </div>
-                          )
-                        })}
-                      </div>
-                      {savedOptionsMessage && (
-                        <p className="vw-small mt-2 text-muted">
-                          {savedOptionsMessage}
-                        </p>
-                      )}
-                    </section>
-                  </FadeIn>
-                )}
-
-                <FadeIn>
-                  <section
-                    className="mb-7 border p-4"
-                    style={{ borderColor: 'var(--color-border)' }}
-                  >
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <p className="text-label vw-small text-gold">REROLL</p>
-                      <p className="vw-small text-muted">
-                        {rerollsRemaining}/1 left
-                      </p>
-                    </div>
-                    <div className="mt-3 flex flex-wrap items-center gap-3">
-                      <button
-                        type="button"
-                        className="cta-major text-label vw-small px-4 py-2 disabled:opacity-50"
-                        onClick={() => void rerollOptions()}
-                        disabled={rerollUsed || isRerolling || submitting}
-                        title="Reroll discards the current five options and gives you one new set."
-                      >
-                        {isRerolling
-                          ? 'Rerolling...'
-                          : rerollUsed
-                            ? 'Reroll Used'
-                            : 'Reroll Options'}
-                      </button>
-                      <p className="vw-small text-secondary">
-                        One reroll per audit run.
-                      </p>
-                    </div>
-                  </section>
-                </FadeIn>
+                <AuditRerollSection
+                  rerollsRemaining={rerollsRemaining}
+                  rerollUsed={rerollUsed}
+                  isRerolling={isRerolling}
+                  submitting={submitting}
+                  onReroll={() => void rerollOptions()}
+                />
               </>
             )}
 
@@ -2280,16 +1397,11 @@ export default function SoulAuditResultsPage() {
                     <div className="flex flex-wrap gap-2">
                       {railDays.map((day) => {
                         const isSelected = day.day === selectedDayNumber
-                        const isPending =
-                          day.generationStatus === 'pending' ||
-                          day.generationStatus === 'generating'
-                        const isFailed = day.generationStatus === 'failed'
                         return (
                           <button
                             key={`top-day-${day.day}`}
                             type="button"
                             onClick={() => switchToDay(day.day)}
-                            disabled={isPending}
                             className="text-label vw-small border px-3 py-2"
                             style={{
                               borderColor: isSelected
@@ -2298,17 +1410,11 @@ export default function SoulAuditResultsPage() {
                               background: isSelected
                                 ? 'var(--color-active)'
                                 : 'transparent',
-                              opacity: day.locked || isPending ? 0.72 : 1,
+                              opacity: day.locked ? 0.72 : 1,
                             }}
                           >
                             DAY {day.day}
-                            {day.locked
-                              ? ' \u00B7 LOCKED'
-                              : isPending
-                                ? ' \u00B7 BUILDING'
-                                : isFailed
-                                  ? ' \u00B7 FAILED'
-                                  : ''}
+                            {day.locked ? ' \u00B7 LOCKED' : ''}
                           </button>
                         )
                       })}
@@ -2317,139 +1423,20 @@ export default function SoulAuditResultsPage() {
                 )}
 
                 <section className="md:grid md:grid-cols-[280px_minmax(0,1fr)] md:gap-8">
-                  <aside className="mb-6 md:mb-0">
-                    <div
-                      className="shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      <p className="text-label vw-small mb-3 text-gold">
-                        DEVOTIONAL TIMELINE
-                      </p>
-                      <div className="grid gap-2">
-                        {railDays.map((day) => {
-                          const isSelected = day.day === selectedDayNumber
-                          const isPending =
-                            day.generationStatus === 'pending' ||
-                            day.generationStatus === 'generating'
-                          const isFailed = day.generationStatus === 'failed'
-                          return (
-                            <button
-                              key={`rail-day-${day.day}`}
-                              type="button"
-                              className="border px-3 py-2 text-left"
-                              disabled={isPending}
-                              style={{
-                                borderColor: isSelected
-                                  ? 'var(--color-border-strong)'
-                                  : 'var(--color-border)',
-                                background: isSelected
-                                  ? 'var(--color-active)'
-                                  : 'transparent',
-                                opacity: day.locked || isPending ? 0.72 : 1,
-                              }}
-                              onClick={() => switchToDay(day.day)}
-                            >
-                              <p className="text-label vw-small text-gold">
-                                DAY {day.day}
-                                {day.locked
-                                  ? ' \u00B7 LOCKED'
-                                  : isPending
-                                    ? ' \u00B7 BUILDING'
-                                    : isFailed
-                                      ? ' \u00B7 FAILED'
-                                      : ''}
-                              </p>
-                              <p className="vw-small text-secondary">
-                                {isPending
-                                  ? 'Generating content...'
-                                  : typographer(day.title)}
-                              </p>
-                              {!isPending && day.scriptureReference && (
-                                <p className="vw-small text-muted">
-                                  {day.scriptureReference}
-                                </p>
-                              )}
-                            </button>
-                          )
-                        })}
-                      </div>
-
-                      {daySectionAnchors.length > 0 && (
-                        <div
-                          className="mt-5 border-t pt-4"
-                          style={{ borderColor: 'var(--color-border)' }}
-                        >
-                          <p className="text-label vw-small mb-3 text-gold">
-                            SECTION TIMELINE
-                          </p>
-                          <ReaderTimeline anchors={daySectionAnchors} />
-                        </div>
-                      )}
-
-                      <div
-                        className="mt-5 border-t pt-4"
-                        style={{ borderColor: 'var(--color-border)' }}
-                      >
-                        <p className="text-label vw-small mb-3 text-gold">
-                          ARCHIVE
-                        </p>
-                        {archiveForRail.length === 0 ? (
-                          <p className="vw-small text-muted">
-                            No previous AI devotional plans yet.
-                          </p>
-                        ) : (
-                          <div className="grid gap-2">
-                            {archiveForRail.slice(0, 6).map((plan) => (
-                              <Link
-                                key={`archive-${plan.planToken}`}
-                                href={plan.route}
-                                className="block border px-3 py-2 text-secondary"
-                                style={{ borderColor: 'var(--color-border)' }}
-                              >
-                                <p className="text-label vw-small text-gold">
-                                  PLAN
-                                </p>
-                                <p className="vw-small">
-                                  {formatShortDate(plan.createdAt)}
-                                </p>
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </aside>
+                  <PlanDayRail
+                    railDays={railDays}
+                    selectedDayNumber={selectedDayNumber}
+                    daySectionAnchors={daySectionAnchors}
+                    archivePlans={archiveForRail}
+                    onSwitchDay={switchToDay}
+                  />
 
                   <div className="devotional-reader-stage">
-                    {loadingPlan && !isGenerativePlan && (
+                    {loadingPlan && (
                       <p className="vw-body mb-6 text-secondary">
                         Building your day-by-day devotional path...
                       </p>
                     )}
-
-                    {isGenerativePlan &&
-                      generationProgress &&
-                      generationProgress.status !== 'complete' && (
-                        <div className="mb-6">
-                          <p className="vw-small text-secondary">
-                            Generating your personalized devotional plan:{' '}
-                            {generationProgress.completedDays} of{' '}
-                            {generationProgress.totalDays} days ready.
-                          </p>
-                          <div
-                            className="mt-2 h-1.5 w-full overflow-hidden rounded-full"
-                            style={{ background: 'var(--color-border)' }}
-                          >
-                            <div
-                              className="h-full rounded-full transition-all duration-500"
-                              style={{
-                                width: `${(generationProgress.completedDays / generationProgress.totalDays) * 100}%`,
-                                background: 'var(--color-gold)',
-                              }}
-                            />
-                          </div>
-                        </div>
-                      )}
 
                     {lockedMessages.length > 0 && (
                       <div className="mb-6 space-y-2">
@@ -2471,213 +1458,13 @@ export default function SoulAuditResultsPage() {
                             devotionalSlug={selectedPlanDaySlug}
                           />
                         )}
-                        <article
-                          key={`plan-day-${selectedPlanDay.day}`}
-                          style={{
-                            border: '1px solid var(--color-border)',
-                            padding: '1.5rem',
-                          }}
-                        >
-                          <p className="text-label vw-small mb-2 text-gold">
-                            DAY {selectedPlanDay.day}
-                            {selectedPlanDay.dayType === 'sabbath'
-                              ? ' \u00B7 SABBATH'
-                              : selectedPlanDay.dayType === 'review'
-                                ? ' \u00B7 REVIEW'
-                                : ''}
-                          </p>
-                          <h2 className="vw-heading-md mb-2">
-                            {typographer(selectedPlanDay.title)}
-                          </h2>
-                          <p className="vw-small mb-4 text-muted">
-                            {selectedPlanDay.scriptureReference}
-                          </p>
-
-                          {/* Render modules if present (generative plans) */}
-                          {selectedPlanDay.modules &&
-                          selectedPlanDay.modules.length > 0 ? (
-                            <div className="space-y-4">
-                              {selectedPlanDay.modules.map((mod, idx) => (
-                                <div
-                                  key={`mod-${selectedPlanDay.day}-${mod.type}-${idx}`}
-                                  id={
-                                    mod.type === 'scripture'
-                                      ? `day-${selectedPlanDay.day}-scripture`
-                                      : mod.type === 'reflection'
-                                        ? `day-${selectedPlanDay.day}-reflection`
-                                        : mod.type === 'prayer'
-                                          ? `day-${selectedPlanDay.day}-prayer`
-                                          : undefined
-                                  }
-                                >
-                                  {mod.heading && (
-                                    <p className="text-label vw-small mb-1 text-gold">
-                                      {mod.heading.toUpperCase()}
-                                    </p>
-                                  )}
-                                  <div className="vw-body text-secondary type-prose">
-                                    {typographer(
-                                      extractModuleText(mod.content),
-                                    )}
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          ) : (
-                            <>
-                              <p
-                                id={`day-${selectedPlanDay.day}-scripture`}
-                                className="scripture-block vw-body mb-4 text-secondary"
-                              >
-                                {typographer(selectedPlanDay.scriptureText)}
-                              </p>
-                              <p
-                                id={`day-${selectedPlanDay.day}-reflection`}
-                                className="vw-body mb-4 text-secondary type-prose"
-                              >
-                                {typographer(selectedPlanDay.reflection)}
-                              </p>
-                              <p
-                                id={`day-${selectedPlanDay.day}-prayer`}
-                                className="text-serif-italic vw-body mb-4 text-secondary type-prose"
-                              >
-                                {typographer(selectedPlanDay.prayer)}
-                              </p>
-                            </>
-                          )}
-
-                          <div
-                            id={`day-${selectedPlanDay.day}-practice`}
-                            className="mt-4 grid gap-4 md:grid-cols-2"
-                          >
-                            {selectedPlanDay.nextStep && (
-                              <p className="vw-small text-secondary">
-                                <strong className="text-gold">
-                                  NEXT STEP:{' '}
-                                </strong>
-                                {typographer(selectedPlanDay.nextStep)}
-                              </p>
-                            )}
-                            {selectedPlanDay.journalPrompt && (
-                              <p
-                                id={`day-${selectedPlanDay.day}-journal`}
-                                className="vw-small text-secondary"
-                              >
-                                <strong className="text-gold">JOURNAL: </strong>
-                                {typographer(selectedPlanDay.journalPrompt)}
-                              </p>
-                            )}
-                          </div>
-                          <div className="mt-4 flex flex-wrap items-center gap-3">
-                            <button
-                              type="button"
-                              className="text-label vw-small link-highlight"
-                              disabled={bookmarkingDay === selectedPlanDay.day}
-                              onClick={() =>
-                                void savePlanDayBookmark(selectedPlanDay)
-                              }
-                            >
-                              {savedDay === selectedPlanDay.day
-                                ? 'BOOKMARK SAVED'
-                                : bookmarkingDay === selectedPlanDay.day
-                                  ? 'SAVING...'
-                                  : 'SAVE BOOKMARK'}
-                            </button>
-                            <span className="vw-small text-muted">
-                              Highlight any line to save a favorite verse.
-                            </span>
-                          </div>
-                          {selectedPlanDay.compositionReport && (
-                            <div
-                              className="mt-4 border-t pt-3"
-                              style={{ borderColor: 'var(--color-border)' }}
-                            >
-                              <p className="vw-small text-muted">
-                                {
-                                  selectedPlanDay.compositionReport
-                                    .referencePercentage
-                                }
-                                % reference material{' \u00B7 '}
-                                {
-                                  selectedPlanDay.compositionReport
-                                    .generatedPercentage
-                                }
-                                % generated{' \u00B7 '}
-                                {
-                                  selectedPlanDay.compositionReport.sources
-                                    .length
-                                }{' '}
-                                sources
-                              </p>
-                            </div>
-                          )}
-                          {(selectedPlanDay.endnotes?.length ?? 0) > 0 && (
-                            <div className="mt-5 border-t pt-4">
-                              <p className="text-label vw-small mb-2 text-gold">
-                                ENDNOTES
-                              </p>
-                              {selectedPlanDay.endnotes?.map((note) => (
-                                <p
-                                  key={`${selectedPlanDay.day}-endnote-${note.id}`}
-                                  className="vw-small text-muted"
-                                >
-                                  [{note.id}] {note.source} — {note.note}
-                                </p>
-                              ))}
-                            </div>
-                          )}
-                        </article>
+                        <PlanDayContent
+                          day={selectedPlanDay}
+                          bookmarkingDay={bookmarkingDay}
+                          savedDay={savedDay}
+                          onBookmark={(day) => void savePlanDayBookmark(day)}
+                        />
                       </>
-                    ) : selectedRailDay &&
-                      (selectedRailDay.generationStatus === 'pending' ||
-                        selectedRailDay.generationStatus === 'generating') ? (
-                      <article
-                        style={{
-                          border: '1px solid var(--color-border)',
-                          padding: '1.5rem',
-                        }}
-                      >
-                        <p className="text-label vw-small mb-2 text-gold">
-                          DAY {selectedRailDay.day} \u00B7 BUILDING
-                        </p>
-                        <h2 className="vw-heading-md mb-2">
-                          Generating your devotional...
-                        </h2>
-                        <div className="space-y-3">
-                          <div
-                            className="h-4 animate-pulse rounded"
-                            style={{
-                              background: 'var(--color-border)',
-                              width: '80%',
-                            }}
-                          />
-                          <div
-                            className="h-4 animate-pulse rounded"
-                            style={{
-                              background: 'var(--color-border)',
-                              width: '65%',
-                            }}
-                          />
-                          <div
-                            className="h-4 animate-pulse rounded"
-                            style={{
-                              background: 'var(--color-border)',
-                              width: '90%',
-                            }}
-                          />
-                        </div>
-                        <p className="vw-small mt-4 text-muted">
-                          Each day is built from reference material and
-                          personalized to your reflection. This can take up to
-                          90 seconds.
-                        </p>
-                        {generationProgress && (
-                          <p className="vw-small mt-2 text-muted">
-                            {generationProgress.completedDays} of{' '}
-                            {generationProgress.totalDays} days complete
-                          </p>
-                        )}
-                      </article>
                     ) : selectedRailDay?.locked ? (
                       <article
                         style={{
@@ -2736,7 +1523,7 @@ export default function SoulAuditResultsPage() {
                         sessionStorage.removeItem('soul-audit-selection-v2')
                         sessionStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)
                         sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
-                        void fetch('/api/soul-audit/reset', {
+                        void fetch('/api/soul-audit/manage', {
                           method: 'POST',
                         }).catch(() => {})
                         router.push('/soul-audit')
