@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react'
-import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { cleanup, render, screen } from '@testing-library/react'
+import { afterAll, describe, it, expect, beforeEach, vi } from 'vitest'
 import Page from '@/app/page'
 
 vi.mock('next/navigation', () => ({
@@ -70,6 +70,12 @@ beforeEach(() => {
       dispatchEvent: () => false,
     }),
   })
+})
+
+// Flush React scheduler work before jsdom tears down `window`.
+afterAll(async () => {
+  cleanup()
+  await new Promise((r) => setTimeout(r, 0))
 })
 
 describe('Smoke Test', () => {

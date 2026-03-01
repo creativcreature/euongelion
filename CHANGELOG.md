@@ -5,6 +5,10 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## SA-034: Fix smoke test CI flake (2026-03-01)
+
+- **Tests**: Flush React scheduler work before jsdom teardown to prevent `window is not defined` unhandled error in CI.
+
 ## F-060: Composer fix — reference library integration (2026-03-01)
 
 - **Composer**: `buildDeterministicDay()` now assembles devotional content from reference library chunks (Augustine, commentaries, theology) instead of serving raw curated module text.
