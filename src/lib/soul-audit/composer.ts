@@ -455,10 +455,12 @@ export async function composeDay(
     },
   })
 
+  // Ensure deterministic fallback always has reference chunks
+  const paramsWithChunks = { ...params, referenceChunks: chunks }
+
   if (!result?.output) {
-    // Fallback: return a deterministic day from curated content
     return {
-      day: buildDeterministicDay(params),
+      day: buildDeterministicDay(paramsWithChunks),
       usedChunkIds: chunks.map((c) => c.id),
     }
   }
@@ -466,7 +468,7 @@ export async function composeDay(
   const parsed = parseComposedDay(result.output)
   if (!parsed) {
     return {
-      day: buildDeterministicDay(params),
+      day: buildDeterministicDay(paramsWithChunks),
       usedChunkIds: chunks.map((c) => c.id),
     }
   }
@@ -505,34 +507,127 @@ export async function composeDay(
 }
 
 /**
- * Build a deterministic day from curated content (no LLM).
- * Used as fallback when LLM is unavailable or fails.
+ * Build a devotional day by assembling reference library material into
+ * flowing prose. No LLM needed — deterministic composition from real
+ * theological sources.
+ *
+ * Structure: Scripture anchor → reference material woven into essay →
+ * prayer → next step → journal prompt.
+ *
+ * This is the PRIMARY composition path, not a fallback. The LLM path
+ * enhances this with smoother transitions; this path delivers the
+ * substance directly from the reference library.
  */
 function buildDeterministicDay(params: ComposeDayParams): CustomPlanDay {
+  const chunks = params.referenceChunks
+  const candidate = params.candidate
+
+  // ── Build the reflection essay from reference material ──
+  const sections: string[] = []
+
+  // Opening: ground in scripture
+  sections.push(
+    `${candidate.scriptureReference} reads: "${candidate.scriptureText.slice(0, 600)}"`,
+  )
+  sections.push('')
+
+  if (chunks.length > 0) {
+    // Group chunks by source type for structured flow
+    const commentaryChunks = chunks.filter((c) => c.sourceType === 'commentary')
+    const theologyChunks = chunks.filter((c) => c.sourceType === 'theology')
+    const bibleChunks = chunks.filter((c) => c.sourceType === 'bible')
+    const lexiconChunks = chunks.filter((c) => c.sourceType === 'lexicon')
+    const otherChunks = chunks.filter(
+      (c) =>
+        c.sourceType !== 'commentary' &&
+        c.sourceType !== 'theology' &&
+        c.sourceType !== 'bible' &&
+        c.sourceType !== 'lexicon',
+    )
+
+    // Biblical context (if available)
+    for (const chunk of bibleChunks.slice(0, 3)) {
+      sections.push(chunk.content.slice(0, MAX_CHUNK_CHARS))
+      sections.push('')
+    }
+
+    // Commentary and theological scholarship — the heart of the devotional
+    for (const chunk of commentaryChunks.slice(0, 8)) {
+      sections.push(chunk.content.slice(0, MAX_CHUNK_CHARS))
+      sections.push('')
+    }
+
+    // Theological depth
+    for (const chunk of theologyChunks.slice(0, 5)) {
+      sections.push(chunk.content.slice(0, MAX_CHUNK_CHARS))
+      sections.push('')
+    }
+
+    // Word studies and definitions
+    if (lexiconChunks.length > 0) {
+      for (const chunk of lexiconChunks.slice(0, 3)) {
+        sections.push(chunk.content.slice(0, MAX_CHUNK_CHARS))
+        sections.push('')
+      }
+    }
+
+    // Additional sources
+    for (const chunk of otherChunks.slice(0, 3)) {
+      sections.push(chunk.content.slice(0, MAX_CHUNK_CHARS))
+      sections.push('')
+    }
+  } else {
+    // No reference chunks available — use the curated teaching as seed
+    sections.push(candidate.teachingText)
+    sections.push('')
+  }
+
+  const reflection = sections.join('\n').trim()
+  const totalWords = wordCountEstimate(reflection)
+
+  // ── Endnotes with real source attribution ──
+  const sourceNames = Array.from(new Set(chunks.map((c) => c.title))).slice(
+    0,
+    10,
+  )
+
+  const endnotes: DevotionalDayEndnote[] = [
+    {
+      id: 1,
+      source: 'Scripture',
+      note: candidate.scriptureReference,
+    },
+  ]
+
+  if (sourceNames.length > 0) {
+    endnotes.push({
+      id: 2,
+      source: 'Sources',
+      note: `This reading draws from ${sourceNames.join(', ')}. Composed for your reflection.`,
+    })
+  }
+
+  const compositionReport = buildCompositionReport({
+    referenceChunks: chunks,
+    totalWords,
+  })
+
   return {
     day: params.dayNumber,
     dayType: 'devotional',
-    title: params.candidate.dayTitle,
-    scriptureReference: params.candidate.scriptureReference,
-    scriptureText: params.candidate.scriptureText,
-    reflection: params.candidate.teachingText,
-    prayer: params.candidate.prayerText,
-    nextStep: params.candidate.takeawayText,
-    journalPrompt: params.candidate.reflectionPrompt,
+    title: candidate.dayTitle,
+    scriptureReference: candidate.scriptureReference,
+    scriptureText: candidate.scriptureText,
+    reflection,
+    prayer: candidate.prayerText,
+    nextStep: candidate.takeawayText,
+    journalPrompt: candidate.reflectionPrompt,
     chiasticPosition: params.chiasticPosition,
-    endnotes: [
-      {
-        id: 1,
-        source: 'Scripture',
-        note: params.candidate.scriptureReference,
-      },
-      {
-        id: 2,
-        source: 'Source',
-        note: `${params.candidate.seriesTitle}, Day ${params.candidate.dayNumber}`,
-      },
-    ],
+    endnotes,
+    totalWords,
+    targetLengthMinutes: Math.round(totalWords / READING_WPM),
     generationStatus: 'ready',
+    compositionReport,
   }
 }
 

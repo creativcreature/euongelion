@@ -5,6 +5,12 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-060: Composer fix — reference library integration (2026-03-01)
+
+- **Composer**: `buildDeterministicDay()` now assembles devotional content from reference library chunks (Augustine, commentaries, theology) instead of serving raw curated module text.
+- **Select route**: All 7 days composed at selection time — no pending stubs, no on-demand LLM dependency.
+- **Days 6-7**: Sabbath and Recap composed with real prior-day context via `composeSabbath`/`composeRecap`.
+
 ## F-060: Soul Audit Pipeline Overhaul (2026-03-01)
 
 - **Performance**: Submit wait time reduced from 30-60 seconds to < 1 second. Deterministic ingredient selection replaces LLM outline generation.

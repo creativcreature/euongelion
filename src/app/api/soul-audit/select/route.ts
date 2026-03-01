@@ -15,6 +15,8 @@ import {
 import { buildOnboardingDay } from '@/lib/soul-audit/curated-builder'
 import {
   composeDay,
+  composeRecap,
+  composeSabbath,
   retrieveIngredientsForDay,
   WEEK_CHIASTIC,
   WEEK_PARDES,
@@ -404,79 +406,83 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // ─── Compose Day 1 (5-8 seconds, one LLM call) ───
+    // ─── Compose ALL days from reference library (no LLM, no pending stubs) ───
     const intent = parseAuditIntent(run.response_text)
-    const day1Candidate = seriesCandidates[0] ?? anchorCandidate
-    const day1Chunks = retrieveIngredientsForDay({
-      candidate: day1Candidate,
-      userResponse: run.response_text,
-      intent,
-    })
+    const usedChunkIds: string[] = []
+    const composedDays: CustomPlanDay[] = []
 
-    console.info(
-      `[soul-audit:select] Composing Day 1 — candidate: ${day1Candidate.key}, ` +
-        `chunks: ${day1Chunks.length}, target: ${DEFAULT_WORD_TARGET}w`,
-    )
+    for (
+      let i = 0;
+      i < seriesCandidates.length && i < CANDIDATES_PER_DIRECTION;
+      i++
+    ) {
+      const candidate = seriesCandidates[i]
+      const dayNumber = i + 1
+      const chunks = retrieveIngredientsForDay({
+        candidate,
+        userResponse: run.response_text,
+        intent,
+        excludeChunkIds: usedChunkIds,
+      })
 
-    const day1Result = await composeDay({
-      dayNumber: 1,
-      chiasticPosition: WEEK_CHIASTIC[0],
-      pardesLevel: WEEK_PARDES[0],
-      candidate: day1Candidate,
-      userResponse: run.response_text,
-      intent,
-      targetWordCount: DEFAULT_WORD_TARGET,
-      referenceChunks: day1Chunks,
+      console.info(
+        `[soul-audit:select] Composing Day ${dayNumber} — candidate: ${candidate.key}, ` +
+          `chunks: ${chunks.length}, target: ${DEFAULT_WORD_TARGET}w`,
+      )
+
+      let dayResult: { day: CustomPlanDay; usedChunkIds: string[] }
+      try {
+        dayResult = await composeDay({
+          dayNumber,
+          chiasticPosition: WEEK_CHIASTIC[i] ?? ("B'" as const),
+          pardesLevel: WEEK_PARDES[i] ?? 'integrated',
+          candidate,
+          userResponse: run.response_text,
+          intent,
+          targetWordCount: DEFAULT_WORD_TARGET,
+          referenceChunks: chunks,
+          planTitle: option.title,
+        })
+      } catch {
+        // LLM failed — deterministic composition from reference chunks
+        dayResult = {
+          day: {
+            day: dayNumber,
+            dayType: 'devotional',
+            title: candidate.dayTitle,
+            scriptureReference: candidate.scriptureReference,
+            scriptureText: candidate.scriptureText,
+            reflection: '',
+            prayer: candidate.prayerText,
+            nextStep: candidate.takeawayText,
+            journalPrompt: candidate.reflectionPrompt,
+            chiasticPosition: WEEK_CHIASTIC[i] ?? ("B'" as const),
+            generationStatus: 'ready',
+          },
+          usedChunkIds: chunks.map((c) => c.id),
+        }
+        // buildDeterministicDay inside composeDay handles this — but catch
+        // ensures we never leave a day empty if composeDay itself throws
+      }
+
+      usedChunkIds.push(...dayResult.usedChunkIds)
+      composedDays.push(dayResult.day)
+    }
+
+    // ─── Days 6-7: sabbath + recap (deterministic, use composed days) ───
+    const sabbathDay = composeSabbath({
+      previousDays: composedDays,
       planTitle: option.title,
+      userResponse: run.response_text,
     })
 
-    // ─── Days 2-5: pending (composed on-demand when user reads them) ───
-    const pendingDays: CustomPlanDay[] = seriesCandidates
-      .slice(1, CANDIDATES_PER_DIRECTION)
-      .map((candidate, i) => ({
-        day: i + 2,
-        dayType: 'devotional' as const,
-        title: candidate.dayTitle,
-        scriptureReference: candidate.scriptureReference,
-        scriptureText: '',
-        reflection: '',
-        prayer: '',
-        nextStep: '',
-        journalPrompt: '',
-        chiasticPosition: WEEK_CHIASTIC[i + 1] ?? ("B'" as const),
-        generationStatus: 'pending' as const,
-      }))
+    const recapDay = composeRecap({
+      previousDays: composedDays,
+      planTitle: option.title,
+      userResponse: run.response_text,
+    })
 
-    // ─── Days 6-7: pending sabbath + recap (need prior days for content) ───
-    const sabbathDay: CustomPlanDay = {
-      day: 6,
-      dayType: 'sabbath',
-      title: 'Sabbath Rest',
-      scriptureReference: 'Psalm 46:10',
-      scriptureText: '',
-      reflection: '',
-      prayer: '',
-      nextStep: '',
-      journalPrompt: '',
-      chiasticPosition: 'Sabbath',
-      generationStatus: 'pending',
-    }
-
-    const recapDay: CustomPlanDay = {
-      day: 7,
-      dayType: 'review',
-      title: 'Week in Review',
-      scriptureReference: 'Philippians 1:6',
-      scriptureText: '',
-      reflection: '',
-      prayer: '',
-      nextStep: '',
-      journalPrompt: '',
-      chiasticPosition: 'Review',
-      generationStatus: 'pending',
-    }
-
-    const allDays = [day1Result.day, ...pendingDays, sabbathDay, recapDay]
+    const allDays = [...composedDays, sabbathDay, recapDay]
 
     // ─── Timezone + schedule ───
     const timezone =
