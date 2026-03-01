@@ -1,131 +1,33 @@
 'use client'
 
-import { useState, useRef, useEffect, useSyncExternalStore } from 'react'
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import FadeIn from '@/components/motion/FadeIn'
-import { submitSoulAuditResponse } from '@/lib/soul-audit/submit-client'
-import { useSoulAuditStore } from '@/stores/soulAuditStore'
+import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
 import { typographer } from '@/lib/typographer'
-import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
-
-const emptySubscribe = () => () => {}
-
-const GATHERING_MESSAGES = [
-  'Reading your reflection\u2026',
-  'Searching Scripture\u2026',
-  'Building three paths\u2026',
-  'Shaping your options\u2026',
-  'Almost ready\u2026',
-]
 
 export default function SoulAuditPage() {
-  const [response, setResponse] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-  const [lastFailedSubmission, setLastFailedSubmission] = useState<
-    string | null
-  >(null)
-  const textareaRef = useRef<HTMLTextAreaElement>(null)
-  const router = useRouter()
-  const hydrated = useSyncExternalStore(
-    emptySubscribe,
-    () => true,
-    () => false,
-  )
-  const { auditCount, recordAudit, hasReachedLimit, resetAudit } =
-    useSoulAuditStore()
-  const limitReached = hydrated && hasReachedLimit()
-  const shortInputWordCount = response
-    .trim()
-    .split(/\s+/)
-    .filter((token) => token.length > 0).length
-  const showLowContextHint = shortInputWordCount > 0 && shortInputWordCount <= 3
+  const {
+    text: response,
+    setText: setResponse,
+    isSubmitting,
+    error,
+    lastFailedSubmission,
+    submit: submitResponse,
+    reset: handleResetAudit,
+    hydrated,
+    auditCount,
+    limitReached,
+    showLowContextHint,
+  } = useSoulAuditSubmit()
 
-  // Cycling status messages while LLM generates options
-  const [gatheringIdx, setGatheringIdx] = useState(0)
-  useEffect(() => {
-    if (!isSubmitting) {
-      setGatheringIdx(0)
-      return
-    }
-    const id = setInterval(() => {
-      setGatheringIdx((prev) =>
-        prev < GATHERING_MESSAGES.length - 1 ? prev + 1 : prev,
-      )
-    }, 6_000)
-    return () => clearInterval(id)
-  }, [isSubmitting])
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
     textareaRef.current?.focus()
   }, [])
-
-  const handleResetAudit = async () => {
-    resetAudit()
-    setError(null)
-    setResponse('')
-    setLastFailedSubmission(null)
-    localStorage.removeItem('soul-audit-result')
-    localStorage.removeItem('soul-audit-submit-v2')
-    localStorage.removeItem('soul-audit-selection-v2')
-
-    try {
-      const response = await fetch('/api/soul-audit/reset', {
-        method: 'POST',
-      })
-      if (!response.ok) {
-        throw new Error('Unable to reset server audit state.')
-      }
-    } catch {
-      setError(
-        'Local audit state was reset, but server reset failed. Please try once more.',
-      )
-    }
-  }
-
-  async function submitResponse(raw: string) {
-    const trimmedResponse = raw.trim()
-    const charCount = trimmedResponse.length
-
-    if (limitReached) {
-      setError('You\u2019ve explored enough. Time to dive in.')
-      setLastFailedSubmission(null)
-      return
-    }
-
-    if (charCount === 0) {
-      setError('Take your time. When you\u2019re ready, just write what comes.')
-      setLastFailedSubmission(null)
-      return
-    }
-
-    setIsSubmitting(true)
-    setError(null)
-
-    try {
-      const data = (await submitSoulAuditResponse({
-        response: trimmedResponse,
-      })) as SoulAuditSubmitResponseV2
-      localStorage.setItem('soul-audit-submit-v2', JSON.stringify(data))
-      localStorage.removeItem('soul-audit-selection-v2')
-      recordAudit(trimmedResponse, data)
-      setLastFailedSubmission(null)
-      router.push('/soul-audit/results')
-    } catch (err) {
-      setError(
-        err instanceof Error ? err.message : 'Something broke. Try again.',
-      )
-      setLastFailedSubmission(trimmedResponse)
-      setIsSubmitting(false)
-    }
-  }
-
-  async function handleSubmit() {
-    await submitResponse(response)
-  }
 
   return (
     <div className="mock-home">
@@ -134,7 +36,6 @@ export default function SoulAuditPage() {
 
         <section className="shell-content-pad flex min-h-[calc(100vh-120px)] flex-col items-center justify-center px-2">
           <div className="w-full max-w-2xl">
-            {/* Line-Level Contrast: sans label above, serif italic question below */}
             <FadeIn y={0}>
               <p className="text-label vw-small mb-6 text-center text-gold type-caption">
                 SOUL AUDIT
@@ -157,9 +58,11 @@ export default function SoulAuditPage() {
 
             <FadeIn delay={0.4} y={16}>
               {isSubmitting ? (
-                /* ── Gathering-options loader ── */
-                <div className="flex flex-col items-center py-16" role="status" aria-live="polite">
-                  {/* Animated dot cluster */}
+                <div
+                  className="flex flex-col items-center py-16"
+                  role="status"
+                  aria-live="polite"
+                >
                   <div className="mb-10 flex items-center gap-2">
                     {[0, 1, 2].map((i) => (
                       <span
@@ -173,30 +76,14 @@ export default function SoulAuditPage() {
                     ))}
                   </div>
 
-                  {/* Cycling status message */}
-                  <p
-                    key={gatheringIdx}
-                    className="text-serif-italic vw-body-lg text-center text-secondary"
-                    style={{
-                      animation: 'fadeInUp 0.5s ease-out',
-                    }}
-                  >
-                    {GATHERING_MESSAGES[gatheringIdx]}
+                  <p className="text-serif-italic vw-body-lg text-center text-secondary">
+                    Building your paths...
                   </p>
 
-                  <p className="vw-small mt-6 text-center text-muted">
-                    This usually takes 30{'\u2013'}60 seconds.
-                  </p>
-
-                  {/* Inline keyframes */}
                   <style>{`
                     @keyframes gatherDot {
                       0%, 100% { opacity: 0.3; transform: scale(0.85); }
                       50%      { opacity: 1;   transform: scale(1.15); }
-                    }
-                    @keyframes fadeInUp {
-                      from { opacity: 0; transform: translateY(8px); }
-                      to   { opacity: 1; transform: translateY(0); }
                     }
                   `}</style>
                 </div>
@@ -243,7 +130,6 @@ export default function SoulAuditPage() {
                     value={response}
                     onChange={(e) => {
                       setResponse(e.target.value)
-                      setError(null)
                     }}
                     placeholder="Lately, I've been..."
                     rows={6}
@@ -289,7 +175,7 @@ export default function SoulAuditPage() {
                   )}
 
                   <button
-                    onClick={handleSubmit}
+                    onClick={() => void submitResponse(response)}
                     disabled={isSubmitting}
                     className="cta-major text-label vw-small w-full px-10 py-5 disabled:opacity-50"
                     style={{
@@ -301,7 +187,7 @@ export default function SoulAuditPage() {
 
                   <p className="vw-small mt-8 text-center text-muted">
                     {typographer(
-                      'This is between you and the page. We will show five options first, then build the full 5-day plan after you choose.',
+                      'This is between you and the page. We will show three matched paths, then build the full 5-day plan after you choose.',
                     )}
                   </p>
                 </div>

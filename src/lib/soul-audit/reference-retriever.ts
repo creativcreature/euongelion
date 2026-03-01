@@ -1,13 +1,14 @@
 /**
  * reference-retriever.ts
  *
- * Enhanced reference library retrieval for generative devotional composition.
+ * Enhanced reference library retrieval for devotional composition.
  * Chunks reference files into 200-800 word passages and provides two-pass
- * retrieval: fast keyword scoring + optional LLM reranking.
+ * retrieval: fast keyword scoring + source diversity enforcement.
  *
- * Designed for the 80/20 composition model:
+ * Designed for the 80/15/5 composition model:
  *   80% reference material (commentaries, lexicons, bibles, theology)
- *   20% LLM-generated bridging, personalization, transitions
+ *   15% LLM-generated connecting tissue, transitions
+ *   5% pre-existing devotional module anchors
  */
 
 import fs from 'fs'
@@ -420,10 +421,35 @@ function scoreChunk(
 }
 
 /**
+ * Enforce source diversity: no more than maxPerSource chunks from
+ * any single source file. Prevents over-representation of one commentary.
+ */
+function enforceDiversity(
+  scored: Array<{ chunk: ReferenceChunk; score: number }>,
+  limit: number,
+  maxPerSource: number,
+): Array<{ chunk: ReferenceChunk; score: number }> {
+  const result: Array<{ chunk: ReferenceChunk; score: number }> = []
+  const countBySource = new Map<string, number>()
+
+  for (const entry of scored) {
+    if (result.length >= limit) break
+    const sourceKey = entry.chunk.source
+    const count = countBySource.get(sourceKey) ?? 0
+    if (count >= maxPerSource) continue
+    countBySource.set(sourceKey, count + 1)
+    result.push(entry)
+  }
+
+  return result
+}
+
+/**
  * Retrieve reference chunks for a devotional day.
  *
- * Two-pass: keyword scoring (all chunks) → return top N.
- * LLM reranking is done externally if needed.
+ * Two-pass: keyword scoring (all chunks) → diversity enforcement → return top N.
+ * Default limit is 20 chunks (supports 80% reference composition target).
+ * Source diversity ensures no single source dominates the results.
  */
 export function retrieveForDay(params: RetrievalRequest): RetrievalResult {
   const root = path.join(process.cwd(), 'content', 'reference')
@@ -452,7 +478,7 @@ export function retrieveForDay(params: RetrievalRequest): RetrievalResult {
   )
   const themeKeywords = params.themes.filter((t) => t.length >= 3)
 
-  const scored = corpus
+  const allScored = corpus
     .filter((chunk) => !excludeSet.has(chunk.id))
     .map((chunk) => ({
       chunk,
@@ -460,7 +486,11 @@ export function retrieveForDay(params: RetrievalRequest): RetrievalResult {
     }))
     .filter((entry) => entry.score > 0)
     .sort((a, b) => b.score - a.score)
-    .slice(0, params.limit)
+
+  // Enforce source diversity: max 4 chunks from any single source file.
+  // This prevents one large commentary from monopolizing the results.
+  const maxPerSource = Math.max(3, Math.ceil(params.limit / 5))
+  const scored = enforceDiversity(allScored, params.limit, maxPerSource)
 
   // Coverage report
   const allChunkContent = scored.map((s) => s.chunk.normalized).join(' ')

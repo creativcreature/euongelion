@@ -11,15 +11,6 @@ describe('Soul Audit consent gate contract', () => {
     'results',
     'page.tsx',
   )
-  const consentRoutePath = path.join(
-    process.cwd(),
-    'src',
-    'app',
-    'api',
-    'soul-audit',
-    'consent',
-    'route.ts',
-  )
   const selectRoutePath = path.join(
     process.cwd(),
     'src',
@@ -44,7 +35,6 @@ describe('Soul Audit consent gate contract', () => {
   )
 
   const results = fs.readFileSync(resultsPath, 'utf8')
-  const consentRoute = fs.readFileSync(consentRoutePath, 'utf8')
   const selectRoute = fs.readFileSync(selectRoutePath, 'utf8')
   const providers = fs.readFileSync(providersPath, 'utf8')
   const banner = fs.readFileSync(bannerPath, 'utf8')
@@ -62,16 +52,13 @@ describe('Soul Audit consent gate contract', () => {
     expect(analytics).toContain('readSiteConsentFromDocument')
   })
 
-  it('returns required-action metadata for essential consent gates in APIs', () => {
-    expect(consentRoute).toContain('ESSENTIAL_CONSENT_REQUIRED')
-    expect(consentRoute).toContain('requiredActions')
+  it('returns required-action metadata for essential consent gates in select API', () => {
+    // Consent is now inline in select (no separate consent route)
     expect(selectRoute).toContain('ESSENTIAL_CONSENT_REQUIRED')
     expect(selectRoute).toContain('requiredActions')
   })
 
-  it('returns crisis detail metadata for crisis acknowledgement gates in APIs', () => {
-    expect(consentRoute).toContain('CRISIS_ACK_REQUIRED')
-    expect(consentRoute).toContain('crisisRequirement(true)')
+  it('returns crisis detail metadata for crisis acknowledgement gates in select API', () => {
     expect(selectRoute).toContain('CRISIS_ACK_REQUIRED')
     expect(selectRoute).toContain('crisisRequirement(true)')
   })

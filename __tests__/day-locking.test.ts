@@ -28,9 +28,9 @@ afterEach(() => {
 })
 
 describe('day locking toggle', () => {
-  it('defaults to off when env is not set', () => {
+  it('defaults to on when env is not set', () => {
     delete process.env.DAY_LOCKING_DEFAULT
-    expect(getDefaultDayLockingEnabled()).toBe(false)
+    expect(getDefaultDayLockingEnabled()).toBe(true)
   })
 
   it('respects cookie overrides', () => {

@@ -15,8 +15,8 @@ function normalizeToggle(value: string | null | undefined): boolean | null {
 export function getDefaultDayLockingEnabled(): boolean {
   const fromEnv = normalizeToggle(process.env.DAY_LOCKING_DEFAULT)
   if (fromEnv !== null) return fromEnv
-  // Default OFF so testing flow is frictionless unless explicitly enabled.
-  return false
+  // Default ON — days unlock at 7 AM local time per the Monday cycle.
+  return true
 }
 
 export function isDayLockingEnabledForRequest(

@@ -107,19 +107,21 @@ const helperTargetsSubmitRoute = submitClient.includes('/api/soul-audit/submit')
 
 const homeDirectSubmit = homePage.includes('/api/soul-audit/submit')
 const homeHelperSubmit = homePage.includes('submitSoulAuditResponse(')
-if (!homeDirectSubmit && !homeHelperSubmit) {
+const homeHookSubmit = homePage.includes('useSoulAuditSubmit')
+if (!homeDirectSubmit && !homeHelperSubmit && !homeHookSubmit) {
   fail('src/app/page.tsx must submit to /api/soul-audit/submit')
 }
-if (homeHelperSubmit && !helperTargetsSubmitRoute) {
+if ((homeHelperSubmit || homeHookSubmit) && !helperTargetsSubmitRoute) {
   fail('submit helper must submit to /api/soul-audit/submit')
 }
 
 const soulAuditDirectSubmit = soulAuditPage.includes('/api/soul-audit/submit')
 const soulAuditHelperSubmit = soulAuditPage.includes('submitSoulAuditResponse(')
-if (!soulAuditDirectSubmit && !soulAuditHelperSubmit) {
+const soulAuditHookSubmit = soulAuditPage.includes('useSoulAuditSubmit')
+if (!soulAuditDirectSubmit && !soulAuditHelperSubmit && !soulAuditHookSubmit) {
   fail('src/app/soul-audit/page.tsx must submit to /api/soul-audit/submit')
 }
-if (soulAuditHelperSubmit && !helperTargetsSubmitRoute) {
+if ((soulAuditHelperSubmit || soulAuditHookSubmit) && !helperTargetsSubmitRoute) {
   fail('submit helper must submit to /api/soul-audit/submit')
 }
 

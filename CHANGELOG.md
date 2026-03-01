@@ -5,6 +5,20 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-060: Soul Audit Pipeline Overhaul (2026-03-01)
+
+- **Performance**: Submit wait time reduced from 30-60 seconds to < 1 second. Deterministic ingredient selection replaces LLM outline generation.
+- **Architecture**: New `ingredient-selector.ts` (keyword scoring) and `composer.ts` (focused LLM composition per day, 5-8s).
+- **Consent**: Folded into select route as inline `essentialAccepted` field. Separate consent endpoint deleted.
+- **Entry points**: Unified via `useSoulAuditSubmit` shared hook. Duplicate submit logic in homepage and /soul-audit page removed.
+- **Results page**: Decomposed from 2,775-line monolith into focused components: `OptionCard`, `CrisisGate`, `DayContent`, `helpers.ts`.
+- **Plan reader**: Moved to dedicated page at `/soul-audit/plan/[planToken]` (was embedded in results page).
+- **Day gating**: Re-enabled (default on). Days unlock at 7 AM per Monday cycle.
+- **Deleted**: `outline-generator.ts`, `outline-cache.ts`, `generative-builder.ts`, cascade routes, `useGenerationStatus`, `Navigation.tsx`, consent route, deprecated bridge route.
+- **Net change**: -3,800 lines. All 1039 tests passing.
+
+---
+
 ## F-059: Create missing Soul Audit Supabase tables + client fallback (2026-02-28)
 
 - **Critical fix**: Cascade day generation stuck at 0/7 days forever. Users waited 30+ minutes seeing "BUILDING" on all days.

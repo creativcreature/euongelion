@@ -12,20 +12,26 @@ import {
   takeRateLimit,
   withRequestIdHeaders,
 } from '@/lib/api-security'
+import { buildOnboardingDay } from '@/lib/soul-audit/curated-builder'
 import {
-  buildCuratedFirstPlan,
-  buildOnboardingDay,
-  MissingCuratedModuleError,
-  MissingReferenceGroundingError,
-} from '@/lib/soul-audit/curated-builder'
-import { reconstructPlanOutline } from '@/lib/soul-audit/outline-generator'
+  composeDay,
+  retrieveIngredientsForDay,
+  WEEK_CHIASTIC,
+  WEEK_PARDES,
+} from '@/lib/soul-audit/composer'
+import {
+  findCandidateBySeed,
+  getCuratedDayCandidates,
+  rankCandidatesForInput,
+} from '@/lib/soul-audit/curation-engine'
+import { parseAuditIntent } from '@/lib/brain/intent-parser'
 import {
   createPlan,
   getAllPlanDays,
   getAuditOptionsWithFallback,
-  getPlanInstanceWithFallback,
   getAuditRunWithFallback,
   getConsentWithFallback,
+  getPlanInstanceWithFallback,
   getSelectionWithFallback,
   saveConsent,
   saveSelection,
@@ -35,7 +41,6 @@ import { verifyConsentToken } from '@/lib/soul-audit/consent-token'
 import { verifyRunToken } from '@/lib/soul-audit/run-token'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import { crisisRequirement } from '@/lib/soul-audit/crisis'
-import { SERIES_DATA } from '@/data/series'
 import type {
   CustomPlanDay,
   SoulAuditSelectRequest,
@@ -46,6 +51,10 @@ const MAX_SELECT_BODY_BYTES = 32_768
 const MAX_SELECT_REQUESTS_PER_MINUTE = 30
 const CURRENT_ROUTE_COOKIE = 'euangelion_current_route'
 const CURRENT_ROUTE_MAX_AGE = 30 * 24 * 60 * 60
+const CANDIDATES_PER_DIRECTION = 5
+const DEFAULT_WORD_TARGET = 4500
+
+// ─── Helpers ─────────────────────────────────────────────────────────
 
 function toOnboardingMeta(
   plan:
@@ -114,23 +123,8 @@ function withCurrentRouteCookie(response: NextResponse, route: string) {
   return response
 }
 
-function curatedSelectionRoute(seriesSlug: string): string {
-  const firstDay = SERIES_DATA[seriesSlug]?.days?.[0]
-  if (firstDay?.slug) {
-    return `/devotional/${firstDay.slug}`
-  }
-  return `/series/${seriesSlug}`
-}
-
 function getInitialPlanDayNumber(
-  days: Array<
-    | {
-        day: number
-      }
-    | {
-        day_number: number
-      }
-  >,
+  days: Array<{ day: number } | { day_number: number }>,
 ): number {
   const dayNumbers = days
     .map((day) => ('day' in day ? day.day : day.day_number))
@@ -144,6 +138,8 @@ function getInitialPlanDayNumber(
 function buildAiResultsRoute(planToken: string, day: number): string {
   return `/soul-audit/plan/${planToken}?day=${day}`
 }
+
+// ─── POST Handler ────────────────────────────────────────────────────
 
 export async function POST(request: NextRequest) {
   const requestId = createRequestId()
@@ -198,6 +194,7 @@ export async function POST(request: NextRequest) {
 
     const sessionToken = await getOrCreateAuditSessionToken()
 
+    // ─── Run verification ───
     let run = await getAuditRunWithFallback(runId)
     const verifiedToken = verifyRunToken({
       token: body.runToken,
@@ -240,8 +237,10 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // ─── Consent verification (inline or via token) ───
     let consent = await getConsentWithFallback(runId)
     if (!consent) {
+      // Try consentToken first (legacy path)
       const verifiedConsent = verifyConsentToken({
         token: body.consentToken,
         expectedRunId: runId,
@@ -256,6 +255,16 @@ export async function POST(request: NextRequest) {
           crisisAcknowledged: verifiedConsent.crisisAcknowledged,
         })
       }
+    }
+    if (!consent && body.essentialAccepted) {
+      // Inline consent — accepted as part of selection (no separate consent step)
+      consent = await saveConsent({
+        runId,
+        sessionToken,
+        essentialAccepted: true,
+        analyticsOptIn: Boolean(body.analyticsOptIn),
+        crisisAcknowledged: Boolean(body.crisisAcknowledged),
+      })
     }
 
     if (!consent?.essential_accepted) {
@@ -285,48 +294,36 @@ export async function POST(request: NextRequest) {
       })
     }
 
+    // ─── Idempotency: return existing selection if already made ───
     const existingSelection = await getSelectionWithFallback(runId)
     if (existingSelection) {
-      const isAiWithPlan =
-        existingSelection.plan_token &&
-        (existingSelection.option_kind === 'ai_primary' ||
-          existingSelection.option_kind === 'ai_generative')
-      const existingPlan = isAiWithPlan
+      const hasPlan = !!existingSelection.plan_token
+      const existingPlan = hasPlan
         ? await getPlanInstanceWithFallback(existingSelection.plan_token!)
         : null
-      const existingPlanDays = isAiWithPlan
+      const existingPlanDays = hasPlan
         ? await getAllPlanDays(existingSelection.plan_token!)
         : []
       const existingInitialDay = getInitialPlanDayNumber(existingPlanDays)
-      const existingAiRoute = existingSelection.plan_token
+      const existingRoute = existingSelection.plan_token
         ? buildAiResultsRoute(existingSelection.plan_token, existingInitialDay)
         : '/soul-audit/results'
-      const existingPlanDayContent = existingPlanDays
-        .map((day) => day.content)
-        .sort((a, b) => a.day - b.day)
-      const isExistingGenerative =
-        existingSelection.option_kind === 'ai_generative'
+
       const existingPayload: SoulAuditSelectResponse = {
         ok: true,
         auditRunId: runId,
         selectionType: existingSelection.option_kind,
-        route:
-          existingSelection.option_kind === 'curated_prefab'
-            ? curatedSelectionRoute(existingSelection.series_slug)
-            : existingAiRoute,
+        route: existingRoute,
         planToken: existingSelection.plan_token ?? undefined,
         seriesSlug: existingSelection.series_slug,
-        planDays: isAiWithPlan ? existingPlanDayContent : undefined,
+        planDays: hasPlan
+          ? existingPlanDays
+              .map((day) => day.content)
+              .sort((a, b) => a.day - b.day)
+          : undefined,
         onboardingMeta: existingPlan
           ? toOnboardingMeta(existingPlan)
           : undefined,
-        ...(isExistingGenerative
-          ? {
-              generationStatus:
-                existingPlanDayContent.length >= 7 ? 'complete' : 'partial',
-              planType: 'generative' as const,
-            }
-          : {}),
       }
       return withCurrentRouteCookie(
         withRequestIdHeaders(
@@ -337,6 +334,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // ─── Find selected option ───
     const options = await getAuditOptionsWithFallback(runId)
     const fallbackOptions = verifiedToken?.options ?? []
     const option = [...options, ...fallbackOptions].find(
@@ -350,151 +348,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    if (option.kind === 'curated_prefab') {
-      await saveSelection({
-        runId,
-        optionId: option.id,
-        optionKind: option.kind,
-        seriesSlug: option.slug,
-        planToken: null,
-      })
-
-      const payload: SoulAuditSelectResponse = {
-        ok: true,
-        auditRunId: runId,
-        selectionType: 'curated_prefab',
-        route: curatedSelectionRoute(option.slug),
-        seriesSlug: option.slug,
-      }
-      return withCurrentRouteCookie(
-        withRequestIdHeaders(
-          NextResponse.json(payload, { status: 200 }),
-          requestId,
-        ),
-        payload.route,
-      )
-    }
-
-    // ─── ai_generative: Return immediately, generate all days progressively ───
-    // F-058: No synchronous LLM call at selection time. All days start as
-    // "pending" and the cascade generator (generate-next) handles them.
-    // This prevents Vercel function timeouts that caused GENERATIVE_DAY1_FAILED.
-    if (option.kind === 'ai_generative') {
-      const outlinePreview = option.planOutline
-      if (!outlinePreview || !outlinePreview.dayOutlines?.length) {
-        return jsonError({
-          error:
-            'This generative pathway is missing its plan outline. Please choose another option or retry.',
-          code: 'GENERATIVE_OUTLINE_MISSING',
-          status: 422,
-          requestId,
-        })
-      }
-
-      const planOutline = reconstructPlanOutline({
-        id: option.slug,
-        title: option.title,
-        question: option.question,
-        reasoning: option.reasoning,
-        preview: outlinePreview,
-      })
-
-      if (!planOutline.dayOutlines.length) {
-        return jsonError({
-          error: 'Generative plan has no day outlines.',
-          code: 'GENERATIVE_DAY_OUTLINE_MISSING',
-          status: 422,
-          requestId,
-        })
-      }
-
-      // All days start as pending — cascade generation handles each one
-      // via /api/soul-audit/generate-next using real RAG references.
-      const allDays: CustomPlanDay[] = planOutline.dayOutlines.map(
-        (outline) => ({
-          day: outline.day,
-          dayType: outline.dayType,
-          title: outline.title,
-          scriptureReference: outline.scriptureReference,
-          scriptureText: '',
-          reflection: '',
-          prayer: '',
-          nextStep: '',
-          journalPrompt: '',
-          chiasticPosition: outline.chiasticPosition,
-          generationStatus: 'pending' as const,
-        }),
-      )
-
-      const timezone =
-        sanitizeTimezone(body.timezone) ??
-        sanitizeTimezone(request.headers.get('x-timezone')) ??
-        Intl.DateTimeFormat().resolvedOptions().timeZone ??
-        'UTC'
-      const offsetMinutes =
-        normalizeTimezoneOffsetMinutes(body.timezoneOffsetMinutes) ??
-        normalizeTimezoneOffsetMinutes(
-          request.headers.get('x-timezone-offset'),
-        ) ??
-        0
-
-      const schedule = resolveStartPolicy(new Date(), offsetMinutes)
-
-      const plan = await createPlan({
-        runId,
-        sessionToken,
-        seriesSlug: option.slug,
-        timezone,
-        timezoneOffsetMinutes: offsetMinutes,
-        startPolicy: schedule.startPolicy,
-        startedAt: schedule.startedAt,
-        cycleStartAt: schedule.cycleStartAt,
-        onboardingVariant: schedule.onboardingVariant,
-        onboardingDays: schedule.onboardingDays,
-        days: allDays,
-      })
-
-      await saveSelection({
-        runId,
-        optionId: option.id,
-        optionKind: 'ai_generative',
-        seriesSlug: option.slug,
-        planToken: plan.token,
-      })
-
-      const generativePayload: SoulAuditSelectResponse = {
-        ok: true,
-        auditRunId: runId,
-        selectionType: 'ai_generative',
-        route: buildAiResultsRoute(plan.token, 1),
-        planToken: plan.token,
-        seriesSlug: option.slug,
-        planDays: allDays,
-        onboardingMeta: toOnboardingMeta({
-          startPolicy: schedule.startPolicy,
-          onboardingVariant: schedule.onboardingVariant,
-          onboardingDays: schedule.onboardingDays,
-          cycleStartAt: schedule.cycleStartAt,
-          timezone,
-          timezoneOffsetMinutes: offsetMinutes,
-        }),
-        generationStatus: 'partial',
-        planType: 'generative',
-      }
-
-      // Warm cache path for immediate UI fetches.
-      getAllPlanDays(plan.token)
-
-      return withCurrentRouteCookie(
-        withRequestIdHeaders(
-          NextResponse.json(generativePayload, { status: 200 }),
-          requestId,
-        ),
-        generativePayload.route,
-      )
-    }
-
-    // ─── ai_primary: Curated-first plan (existing path) ───
+    // ─── Resolve curation seed → anchor candidate ───
     const curationSeed =
       option.preview &&
       typeof option.preview === 'object' &&
@@ -506,38 +360,125 @@ export async function POST(request: NextRequest) {
         ? option.preview.curationSeed
         : null
 
-    let planDays
-    try {
-      planDays = buildCuratedFirstPlan({
-        seriesSlug: option.slug,
-        userResponse: run.response_text,
-        anchorSeed: curationSeed,
-      })
-    } catch (error) {
-      if (
-        error instanceof MissingCuratedModuleError ||
-        error instanceof MissingReferenceGroundingError
-      ) {
-        return jsonError({
-          error:
-            'This AI pathway could not be curated with grounded modules right now. Please choose another AI option or retry in a moment.',
-          code: 'AI_PATHWAY_GROUNDING_UNAVAILABLE',
-          status: 422,
-          requestId,
-        })
-      } else {
-        throw error
-      }
-    }
-
-    if (!Array.isArray(planDays) || planDays.length === 0) {
+    if (!curationSeed) {
       return jsonError({
-        error: 'Unable to start devotional plan right now.',
-        status: 500,
+        error:
+          'This option is missing curation data. Please choose another option or retry.',
+        code: 'CURATION_SEED_MISSING',
+        status: 422,
         requestId,
       })
     }
 
+    const anchorCandidate = findCandidateBySeed(curationSeed)
+    if (!anchorCandidate) {
+      return jsonError({
+        error:
+          'Curated content for this direction could not be found. Please choose another option or retry.',
+        code: 'ANCHOR_CANDIDATE_NOT_FOUND',
+        status: 422,
+        requestId,
+      })
+    }
+
+    // ─── Gather candidates for Days 1-5 ───
+    const allCandidates = getCuratedDayCandidates()
+    const seriesCandidates = allCandidates
+      .filter((c) => c.seriesSlug === anchorCandidate.seriesSlug)
+      .sort((a, b) => a.dayNumber - b.dayNumber)
+      .slice(0, CANDIDATES_PER_DIRECTION)
+
+    // Supplement from ranked candidates if series has fewer than 5 days
+    if (seriesCandidates.length < CANDIDATES_PER_DIRECTION) {
+      const intent = parseAuditIntent(run.response_text)
+      const ranked = rankCandidatesForInput({
+        input: run.response_text,
+        aiThemes: intent.themes,
+      })
+      const usedKeys = new Set(seriesCandidates.map((c) => c.key))
+      for (const entry of ranked) {
+        if (seriesCandidates.length >= CANDIDATES_PER_DIRECTION) break
+        if (usedKeys.has(entry.candidate.key)) continue
+        seriesCandidates.push(entry.candidate)
+        usedKeys.add(entry.candidate.key)
+      }
+    }
+
+    // ─── Compose Day 1 (5-8 seconds, one LLM call) ───
+    const intent = parseAuditIntent(run.response_text)
+    const day1Candidate = seriesCandidates[0] ?? anchorCandidate
+    const day1Chunks = retrieveIngredientsForDay({
+      candidate: day1Candidate,
+      userResponse: run.response_text,
+      intent,
+    })
+
+    console.info(
+      `[soul-audit:select] Composing Day 1 — candidate: ${day1Candidate.key}, ` +
+        `chunks: ${day1Chunks.length}, target: ${DEFAULT_WORD_TARGET}w`,
+    )
+
+    const day1Result = await composeDay({
+      dayNumber: 1,
+      chiasticPosition: WEEK_CHIASTIC[0],
+      pardesLevel: WEEK_PARDES[0],
+      candidate: day1Candidate,
+      userResponse: run.response_text,
+      intent,
+      targetWordCount: DEFAULT_WORD_TARGET,
+      referenceChunks: day1Chunks,
+      planTitle: option.title,
+    })
+
+    // ─── Days 2-5: pending (composed on-demand when user reads them) ───
+    const pendingDays: CustomPlanDay[] = seriesCandidates
+      .slice(1, CANDIDATES_PER_DIRECTION)
+      .map((candidate, i) => ({
+        day: i + 2,
+        dayType: 'devotional' as const,
+        title: candidate.dayTitle,
+        scriptureReference: candidate.scriptureReference,
+        scriptureText: '',
+        reflection: '',
+        prayer: '',
+        nextStep: '',
+        journalPrompt: '',
+        chiasticPosition: WEEK_CHIASTIC[i + 1] ?? ("B'" as const),
+        generationStatus: 'pending' as const,
+      }))
+
+    // ─── Days 6-7: pending sabbath + recap (need prior days for content) ───
+    const sabbathDay: CustomPlanDay = {
+      day: 6,
+      dayType: 'sabbath',
+      title: 'Sabbath Rest',
+      scriptureReference: 'Psalm 46:10',
+      scriptureText: '',
+      reflection: '',
+      prayer: '',
+      nextStep: '',
+      journalPrompt: '',
+      chiasticPosition: 'Sabbath',
+      generationStatus: 'pending',
+    }
+
+    const recapDay: CustomPlanDay = {
+      day: 7,
+      dayType: 'review',
+      title: 'Week in Review',
+      scriptureReference: 'Philippians 1:6',
+      scriptureText: '',
+      reflection: '',
+      prayer: '',
+      nextStep: '',
+      journalPrompt: '',
+      chiasticPosition: 'Review',
+      generationStatus: 'pending',
+    }
+
+    const allDays = [day1Result.day, ...pendingDays, sabbathDay, recapDay]
+
+    // ─── Timezone + schedule ───
     const timezone =
       sanitizeTimezone(body.timezone) ??
       sanitizeTimezone(request.headers.get('x-timezone')) ??
@@ -551,19 +492,22 @@ export async function POST(request: NextRequest) {
       0
 
     const schedule = resolveStartPolicy(new Date(), offsetMinutes)
+
+    // Mid-week onboarding: prepend an onboarding day if needed
     const daysForPlan =
-      schedule.startPolicy === 'wed_sun_onboarding' && planDays[0]
+      schedule.startPolicy === 'wed_sun_onboarding' && allDays[0]
         ? [
             buildOnboardingDay({
               userResponse: run.response_text,
-              firstDay: planDays[0],
+              firstDay: allDays[0],
               variant: schedule.onboardingVariant,
               onboardingDays: schedule.onboardingDays,
             }),
-            ...planDays,
+            ...allDays,
           ]
-        : planDays
+        : allDays
 
+    // ─── Create plan + save selection ───
     const plan = await createPlan({
       runId,
       sessionToken,
@@ -581,10 +525,13 @@ export async function POST(request: NextRequest) {
     await saveSelection({
       runId,
       optionId: option.id,
-      optionKind: option.kind,
+      optionKind: 'ai_primary',
       seriesSlug: option.slug,
       planToken: plan.token,
     })
+
+    // Warm cache for immediate UI fetches
+    getAllPlanDays(plan.token)
 
     const payload: SoulAuditSelectResponse = {
       ok: true,
@@ -606,9 +553,6 @@ export async function POST(request: NextRequest) {
         timezoneOffsetMinutes: offsetMinutes,
       }),
     }
-
-    // Warm in-memory cache for immediate UI fetches.
-    getAllPlanDays(plan.token)
 
     return withCurrentRouteCookie(
       withRequestIdHeaders(

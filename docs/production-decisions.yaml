@@ -50,7 +50,6 @@ decisions:
 contracts:
   required_files:
     - src/app/api/soul-audit/submit/route.ts
-    - src/app/api/soul-audit/consent/route.ts
     - src/app/api/soul-audit/select/route.ts
     - src/app/api/devotional-plan/[token]/day/[n]/route.ts
     - src/app/api/mock-account/session/route.ts
@@ -58,12 +57,10 @@ contracts:
     - src/app/api/annotations/route.ts
     - src/app/api/bookmarks/route.ts
     - src/lib/soul-audit/curated-builder.ts
-    - src/lib/soul-audit/generative-builder.ts
-    - src/lib/soul-audit/outline-generator.ts
+    - src/lib/soul-audit/composer.ts
+    - src/lib/soul-audit/ingredient-selector.ts
     - src/lib/soul-audit/reference-retriever.ts
     - src/lib/soul-audit/schedule.ts
-    - src/app/api/soul-audit/generate-next/route.ts
-    - src/app/api/soul-audit/generation-status/route.ts
   submit_route_forbidden_tokens: []
   required_submit_tokens:
     - options

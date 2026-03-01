@@ -20,21 +20,6 @@ vi.mock('@/stores/soulAuditStore', () => ({
   useSoulAuditStore: () => ({ lastInput: 'I need clarity.', auditCount: 1 }),
 }))
 
-vi.mock('@/stores/settingsStore', () => ({
-  useSettingsStore: (selector: (state: Record<string, unknown>) => unknown) =>
-    selector({
-      sabbathDay: 'sunday',
-      textScale: 'default',
-      setSabbathDay: () => {},
-      setTextScale: () => {},
-    }),
-}))
-
-vi.mock('@/stores/uiStore', () => ({
-  useUIStore: (selector: (state: Record<string, unknown>) => unknown) =>
-    selector({ theme: 'dark', setTheme: () => {} }),
-}))
-
 vi.mock('@/components/Breadcrumbs', () => ({
   default: () => <nav aria-label="Breadcrumbs">Breadcrumbs</nav>,
 }))
@@ -45,22 +30,6 @@ vi.mock('@/components/EuangelionShellHeader', () => ({
 
 vi.mock('@/components/SiteFooter', () => ({
   default: () => <footer>Footer</footer>,
-}))
-
-vi.mock('@/components/TextHighlightTrigger', () => ({
-  default: () => null,
-}))
-
-vi.mock('@/components/DevotionalStickiesLayer', () => ({
-  default: () => null,
-}))
-
-vi.mock('@/components/ScrollProgress', () => ({
-  default: () => null,
-}))
-
-vi.mock('@/components/ReaderTimeline', () => ({
-  default: () => null,
 }))
 
 vi.mock('@/components/motion/FadeIn', () => ({
@@ -138,16 +107,10 @@ describe('Soul Audit results selection consent UX', () => {
       writable: true,
       value: makeMockStorage(),
     })
-    window.sessionStorage.removeItem('soul-audit-submit-v2')
-    window.sessionStorage.removeItem('soul-audit-selection-v2')
-    window.sessionStorage.removeItem('soul-audit-last-input')
-    window.sessionStorage.removeItem('soul-audit-reroll-used')
     window.sessionStorage.setItem(
       'soul-audit-submit-v2',
       JSON.stringify(submitPayload),
     )
-    window.sessionStorage.removeItem('soul-audit-selection-v2')
-    window.localStorage.setItem('soul-audit-guest-signup-gate-v1', 'seen')
     document.cookie =
       'euangelion_site_consent=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'
   })
@@ -161,25 +124,6 @@ describe('Soul Audit results selection consent UX', () => {
   it('does not gate option selection on site-cookie state and proceeds to devotional routing', async () => {
     const user = userEvent.setup()
     const fetchMock = vi.fn(async (url: string) => {
-      if (url === '/api/auth/session') {
-        return {
-          ok: true,
-          json: async () => ({ authenticated: false, user: null }),
-        }
-      }
-      if (url === '/api/soul-audit/consent') {
-        return {
-          ok: true,
-          json: async () => ({
-            ok: true,
-            auditRunId: 'run_test',
-            essentialAccepted: true,
-            analyticsOptIn: false,
-            crisisAcknowledged: false,
-            consentToken: 'consent-token-1',
-          }),
-        }
-      }
       if (url === '/api/soul-audit/select') {
         return {
           ok: true,
@@ -207,13 +151,16 @@ describe('Soul Audit results selection consent UX', () => {
       )
     })
 
+    // No cookie-consent error should appear
     expect(
       screen.queryByText(
         /Cookie consent required\. Use the cookie notice at the bottom to continue\./i,
       ),
     ).toBeNull()
+
+    // Consent is inline — select is called directly (no separate consent API call)
     const calledRoutes = fetchMock.mock.calls.map(([url]) => String(url))
-    expect(calledRoutes).toContain('/api/soul-audit/consent')
     expect(calledRoutes).toContain('/api/soul-audit/select')
+    expect(calledRoutes).not.toContain('/api/soul-audit/consent')
   })
 })

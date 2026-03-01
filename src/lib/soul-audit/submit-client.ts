@@ -8,9 +8,8 @@ export type SoulAuditSubmitResult =
   | SoulAuditSubmitResponseV2
   | SoulAuditClarifierResponse
 
-// LLM outline generation (3 outlines × 7 days) takes 30-60s on Anthropic.
-// 90s gives headroom for slow providers without false client-side timeouts.
-const DEFAULT_SUBMIT_TIMEOUT_MS = 90_000
+// Ingredient selection is deterministic (< 1s). 15s gives generous headroom.
+const DEFAULT_SUBMIT_TIMEOUT_MS = 15_000
 
 export type SoulAuditSubmitErrorCode = 'timeout' | 'offline' | 'server'
 

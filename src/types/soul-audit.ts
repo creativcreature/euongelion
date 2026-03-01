@@ -100,6 +100,10 @@ export interface SoulAuditSelectRequest {
   optionId: string
   runToken?: string
   consentToken?: string
+  /** Inline consent — accepted as part of selection (no separate consent step). */
+  essentialAccepted?: boolean
+  analyticsOptIn?: boolean
+  crisisAcknowledged?: boolean
   timezone?: string
   timezoneOffsetMinutes?: number
 }

@@ -91,7 +91,7 @@ export const useSettingsStore = create<SettingsState>()(
       googleApiKey: '',
       minimaxApiKey: '',
       nvidiaKimiApiKey: '',
-      dayLockingEnabled: false,
+      dayLockingEnabled: true,
       textScale: 'default',
       reduceMotion: false,
       highContrast: false,

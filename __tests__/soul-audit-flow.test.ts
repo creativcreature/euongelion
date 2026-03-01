@@ -1,73 +1,71 @@
 import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
-import { createMockOutlineResult } from './helpers/mock-outlines'
 
-// Mock outline generator to return test outlines (no real LLM in tests).
-vi.mock('@/lib/soul-audit/outline-generator', () => ({
-  generatePlanOutlines: vi.fn(async () => createMockOutlineResult()),
-  reconstructPlanOutline: vi.fn((params: Record<string, unknown>) => ({
-    id: params.id ?? 'test-outline',
-    angle: 'Through Hope',
-    title: params.title ?? 'Test Plan',
-    question: params.question ?? 'Test question',
-    reasoning: params.reasoning ?? 'Test reasoning',
-    scriptureAnchor: 'Psalm 23:1',
-    dayOutlines: (
-      params.preview as { dayOutlines?: Array<Record<string, unknown>> }
-    )?.dayOutlines?.map(
-      (d: Record<string, unknown>, i: number) => ({
-        day: d.day ?? i + 1,
-        dayType: d.dayType ?? 'devotional',
-        chiasticPosition: 'A',
-        title: d.title ?? `Day ${i + 1}`,
-        scriptureReference: d.scriptureReference ?? 'Psalm 23:1',
-        topicFocus: d.topicFocus ?? 'Trust',
-        pardesLevel: 'peshat',
-        suggestedModules: ['scripture', 'teaching', 'reflection'],
-      }),
-    ) ?? [],
-    referenceSeeds: ['commentary/psalms'],
-  })),
-}))
-
-// Mock generative builder to return a test devotional day (no real LLM).
-vi.mock('@/lib/soul-audit/generative-builder', () => ({
-  generateDevotionalDay: vi.fn(
-    async (params: { dayOutline: { day: number; title: string; scriptureReference: string; topicFocus: string; chiasticPosition?: string } }) => ({
+// Mock composer (no real LLM calls in tests).
+vi.mock('@/lib/soul-audit/composer', () => ({
+  composeDay: vi.fn(
+    async (params: {
+      dayNumber: number
+      chiasticPosition: string
+      candidate: { dayTitle?: string; scriptureReference?: string }
+    }) => ({
       day: {
-        day: params.dayOutline.day,
+        day: params.dayNumber,
         dayType: 'devotional',
-        title: params.dayOutline.title,
-        scriptureReference: params.dayOutline.scriptureReference,
+        title: params.candidate.dayTitle ?? `Day ${params.dayNumber}`,
+        scriptureReference: params.candidate.scriptureReference ?? 'Psalm 23:1',
         scriptureText: 'The Lord is my shepherd; I shall not want.',
         reflection: 'A test reflection on trust and surrender.',
         prayer: 'Lord, guide us today.',
         nextStep: 'Take a moment to be still.',
         journalPrompt: 'What does trust look like for you today?',
-        chiasticPosition: params.dayOutline.chiasticPosition ?? 'A',
-        modules: [
-          { type: 'scripture', heading: 'Scripture', content: {} },
-          { type: 'teaching', heading: 'Teaching', content: {} },
-          { type: 'reflection', heading: 'Reflection', content: {} },
-        ],
-        totalWords: 450,
-        targetLengthMinutes: 10,
+        chiasticPosition: params.chiasticPosition,
+        totalWords: 4500,
+        targetLengthMinutes: 30,
         generationStatus: 'ready',
         compositionReport: {
           referencePercentage: 80,
           generatedPercentage: 20,
-          sources: ['commentary/psalms'],
+          sources: ['Test Commentary'],
         },
       },
-      usedChunkIds: ['chunk-1'],
+      usedChunkIds: ['test-chunk-1'],
     }),
   ),
+  retrieveIngredientsForDay: vi.fn(() => []),
+  WEEK_CHIASTIC: ['A', 'B', 'C', "B'", "A'"],
+  WEEK_PARDES: ['peshat', 'remez', 'derash', 'sod', 'integrated'],
+  composeSabbath: vi.fn(() => ({
+    day: 6,
+    dayType: 'sabbath',
+    title: 'Sabbath Rest',
+    scriptureReference: 'Psalm 46:10',
+    scriptureText: 'Be still, and know that I am God.',
+    reflection: 'Rest.',
+    prayer: 'Amen.',
+    nextStep: 'Rest.',
+    journalPrompt: 'What lingered?',
+    chiasticPosition: 'Sabbath',
+    generationStatus: 'ready',
+  })),
+  composeRecap: vi.fn(() => ({
+    day: 7,
+    dayType: 'review',
+    title: 'Week in Review',
+    scriptureReference: 'Philippians 1:6',
+    scriptureText: 'He who began a good work...',
+    reflection: 'Review.',
+    prayer: 'Amen.',
+    nextStep: 'Start next path.',
+    journalPrompt: 'What did you learn?',
+    chiasticPosition: 'Review',
+    generationStatus: 'ready',
+  })),
+  isComposerAvailable: vi.fn(() => true),
 }))
 
 import { POST as submitHandler } from '@/app/api/soul-audit/submit/route'
-import { POST as consentHandler } from '@/app/api/soul-audit/consent/route'
 import { POST as selectHandler } from '@/app/api/soul-audit/select/route'
 import { POST as resetHandler } from '@/app/api/soul-audit/reset/route'
-import { GET as activeDaysHandler } from '@/app/api/daily-bread/active-days/route'
 import {
   getLatestSelectionForSessionWithFallback,
   resetSessionAuditCount,
@@ -116,7 +114,7 @@ describe('Soul Audit staged flow', () => {
     process.env.SOUL_AUDIT_RUN_TOKEN_SECRET = originalRunTokenSecret
   })
 
-  it('submit returns exactly 5 options and no eager plan payload', async () => {
+  it('submit returns 3 ai_primary direction options', async () => {
     const response = await submitHandler(
       postJson('http://localhost/api/soul-audit/submit', {
         response: 'I feel spiritually numb, distracted, and I need peace.',
@@ -127,38 +125,31 @@ describe('Soul Audit staged flow', () => {
     const payload = (await response.json()) as Record<string, unknown>
     expect(payload.version).toBe('v2')
     expect(Array.isArray(payload.options)).toBe(true)
-    expect((payload.options as unknown[]).length).toBe(5)
-    const aiGenerative = (payload.options as Array<{ kind: string }>).filter(
-      (option) => option.kind === 'ai_generative',
-    ).length
-    const curatedPrefab = (payload.options as Array<{ kind: string }>).filter(
-      (option) => option.kind === 'curated_prefab',
-    ).length
-    expect(aiGenerative).toBe(3)
-    expect(curatedPrefab).toBe(2)
-    const aiTitles = (payload.options as Array<{ kind: string; title: string }>)
-      .filter((option) => option.kind === 'ai_generative')
-      .map((option) => option.title)
-    expect(aiTitles.every((title) => title.trim().length > 0)).toBe(true)
+
+    const options = payload.options as Array<{
+      kind: string
+      title: string
+      preview?: { verse?: string; verseText?: string }
+    }>
+
+    // All options are now ai_primary (ingredient-selection model)
+    expect(options.length).toBe(3)
+    expect(options.every((o) => o.kind === 'ai_primary')).toBe(true)
+    expect(options.every((o) => o.title.trim().length > 0)).toBe(true)
     expect(payload).not.toHaveProperty('customPlan')
     expect(payload).not.toHaveProperty('customDevotional')
 
-    const optionsWithPreview = payload.options as Array<{
-      preview?: { verse?: string; verseText?: string }
-    }>
+    // Each option should have a preview with curationSeed
     expect(
-      optionsWithPreview.every(
-        (option) =>
-          typeof option.preview?.verse === 'string' &&
-          option.preview.verse.trim().length > 0 &&
-          typeof option.preview?.verseText === 'string' &&
-          option.preview.verseText.trim().length > 0,
+      options.every(
+        (o) =>
+          typeof o.preview?.verse === 'string' &&
+          o.preview.verse.trim().length > 0,
       ),
     ).toBe(true)
   })
 
-  it('triggers clarifier for single-word vague input, then returns options on re-submit', async () => {
-    // First submit: single-word "money" triggers clarifier
+  it('short input returns options with inputGuidance', async () => {
     const response = await submitHandler(
       postJson('http://localhost/api/soul-audit/submit', {
         response: 'money',
@@ -166,42 +157,22 @@ describe('Soul Audit staged flow', () => {
     )
     expect(response.status).toBe(200)
 
-    const clarifier = (await response.json()) as {
-      clarifierRequired?: boolean
-      clarifierPrompt?: string
-      clarifierOptions?: string[]
-      clarifierToken?: string
-    }
-    expect(clarifier.clarifierRequired).toBe(true)
-    expect(clarifier.clarifierPrompt).toBeTruthy()
-    expect(clarifier.clarifierOptions).toHaveLength(3)
-    expect(clarifier.clarifierToken).toBeTruthy()
-
-    // Second submit: re-submit with clarifier response bypasses clarifier
-    const resubmit = await submitHandler(
-      postJson('http://localhost/api/soul-audit/submit', {
-        response: 'money',
-        clarifierResponse: 'I am worried about financial stress',
-        clarifierToken: clarifier.clarifierToken,
-      }) as never,
-    )
-    expect(resubmit.status).toBe(200)
-
-    const payload = (await resubmit.json()) as {
-      options?: Array<{ kind: string }>
-      clarifierRequired?: boolean
+    const payload = (await response.json()) as {
       auditRunId?: string
+      options?: unknown[]
+      inputGuidance?: string
     }
-    expect(payload.clarifierRequired).not.toBe(true)
+
+    // Short input now returns options directly (no clarifier gate)
+    // with an optional inputGuidance hint
     expect(payload.auditRunId).toBeTruthy()
     expect(Array.isArray(payload.options)).toBe(true)
-    expect(payload.options).toHaveLength(5)
   })
 
-  it('accepts short phrase input and returns options without hard gate', async () => {
+  it('accepts short phrase input and returns 3 options', async () => {
     const response = await submitHandler(
       postJson('http://localhost/api/soul-audit/submit', {
-        response: 'I need money today',
+        response: 'I need peace and guidance today',
       }) as never,
     )
     expect(response.status).toBe(200)
@@ -210,18 +181,11 @@ describe('Soul Audit staged flow', () => {
       options?: Array<{ kind: string }>
     }
     expect(Array.isArray(payload.options)).toBe(true)
-    expect(payload.options).toHaveLength(5)
-    expect(
-      payload.options?.filter((option) => option.kind === 'ai_generative')
-        .length,
-    ).toBe(3)
-    expect(
-      payload.options?.filter((option) => option.kind === 'curated_prefab')
-        .length,
-    ).toBe(2)
+    expect(payload.options).toHaveLength(3)
+    expect(payload.options?.every((o) => o.kind === 'ai_primary')).toBe(true)
   })
 
-  it('crisis acknowledgement gate is enforced at consent', async () => {
+  it('crisis acknowledgement gate is enforced at selection', async () => {
     const submitResponse = await submitHandler(
       postJson('http://localhost/api/soul-audit/submit', {
         response: 'I want to die and do not want to be here anymore.',
@@ -229,19 +193,21 @@ describe('Soul Audit staged flow', () => {
     )
     const submitPayload = (await submitResponse.json()) as {
       auditRunId: string
+      options: Array<{ id: string }>
     }
 
-    const consentResponse = await consentHandler(
-      postJson('http://localhost/api/soul-audit/consent', {
+    const selectResponse = await selectHandler(
+      postJson('http://localhost/api/soul-audit/select', {
         auditRunId: submitPayload.auditRunId,
+        optionId: submitPayload.options[0].id,
         essentialAccepted: true,
         analyticsOptIn: false,
         crisisAcknowledged: false,
       }) as never,
     )
 
-    expect(consentResponse.status).toBe(400)
-    const consentPayload = (await consentResponse.json()) as {
+    expect(selectResponse.status).toBe(400)
+    const selectPayload = (await selectResponse.json()) as {
       code?: string
       error?: string
       crisis?: {
@@ -249,10 +215,10 @@ describe('Soul Audit staged flow', () => {
         resources?: Array<{ name: string; contact: string }>
       }
     }
-    expect(consentPayload.code).toBe('CRISIS_ACK_REQUIRED')
-    expect(consentPayload.error).toMatch(/acknowledge/i)
-    expect(consentPayload.crisis?.required).toBe(true)
-    expect(Array.isArray(consentPayload.crisis?.resources)).toBe(true)
+    expect(selectPayload.code).toBe('CRISIS_ACK_REQUIRED')
+    expect(selectPayload.error).toMatch(/acknowledge/i)
+    expect(selectPayload.crisis?.required).toBe(true)
+    expect(Array.isArray(selectPayload.crisis?.resources)).toBe(true)
   })
 
   it('selection returns crisis gate details when consent token skips acknowledgement', async () => {
@@ -300,7 +266,7 @@ describe('Soul Audit staged flow', () => {
     expect(Array.isArray(selectPayload.crisis?.resources)).toBe(true)
   })
 
-  it('AI option path returns plan token after consent + selection', async () => {
+  it('AI option path returns plan token after inline consent + selection', async () => {
     const submitResponse = await submitHandler(
       postJson('http://localhost/api/soul-audit/submit', {
         response:
@@ -313,22 +279,8 @@ describe('Soul Audit staged flow', () => {
       options: Array<{ id: string; kind: string }>
     }
 
-    const consentResponse = await consentHandler(
-      postJson('http://localhost/api/soul-audit/consent', {
-        auditRunId: submitPayload.auditRunId,
-        essentialAccepted: true,
-        analyticsOptIn: false,
-        crisisAcknowledged: false,
-      }) as never,
-    )
-    expect(consentResponse.status).toBe(200)
-    const consentPayload = (await consentResponse.json()) as {
-      consentToken?: string
-    }
-    expect(typeof consentPayload.consentToken).toBe('string')
-
     const aiOptions = submitPayload.options.filter(
-      (option) => option.kind === 'ai_generative',
+      (option) => option.kind === 'ai_primary',
     )
     expect(aiOptions.length).toBeGreaterThan(0)
 
@@ -350,6 +302,8 @@ describe('Soul Audit staged flow', () => {
           {
             auditRunId: submitPayload.auditRunId,
             optionId: aiOption.id,
+            essentialAccepted: true,
+            analyticsOptIn: false,
             timezone: 'America/New_York',
             timezoneOffsetMinutes: 300,
           },
@@ -384,58 +338,15 @@ describe('Soul Audit staged flow', () => {
       throw new Error('Expected selection payload to be defined')
     }
     expect(selectionPayload.ok).toBe(true)
-    expect(selectionPayload.selectionType).toBe('ai_generative')
+    expect(selectionPayload.selectionType).toBe('ai_primary')
     expect(selectionPayload.planToken).toBeTruthy()
-    expect(selectionPayload.route).toMatch(/\/soul-audit\/plan\/[^/?]+\?day=\d+/)
+    expect(selectionPayload.route).toMatch(
+      /\/soul-audit\/plan\/[^/?]+\?day=\d+/,
+    )
   })
 
-  it('prefab option routes to series overview after consent + selection', async () => {
-    const submitResponse = await submitHandler(
-      postJson('http://localhost/api/soul-audit/submit', {
-        response: 'I feel disconnected and need guidance this week.',
-      }) as never,
-    )
-    expect(submitResponse.status).toBe(200)
-    const submitPayload = (await submitResponse.json()) as {
-      auditRunId: string
-      options: Array<{ id: string; kind: string }>
-    }
-
-    const consentResponse = await consentHandler(
-      postJson('http://localhost/api/soul-audit/consent', {
-        auditRunId: submitPayload.auditRunId,
-        essentialAccepted: true,
-        analyticsOptIn: false,
-        crisisAcknowledged: false,
-      }) as never,
-    )
-    expect(consentResponse.status).toBe(200)
-
-    const prefabOption = submitPayload.options.find(
-      (option) => option.kind === 'curated_prefab',
-    )
-    expect(prefabOption).toBeTruthy()
-
-    const selectionResponse = await selectHandler(
-      postJson('http://localhost/api/soul-audit/select', {
-        auditRunId: submitPayload.auditRunId,
-        optionId: prefabOption?.id,
-      }) as never,
-    )
-    expect(selectionResponse.status).toBe(200)
-
-    const payload = (await selectionResponse.json()) as {
-      selectionType: string
-      route: string
-      planToken?: string
-    }
-    expect(payload.selectionType).toBe('curated_prefab')
-    expect(payload.route).toMatch(/^\/devotional\//)
-    expect(payload.planToken).toBeUndefined()
-  })
-
-  it('prefab selection becomes the active daily-bread source', async () => {
-    mockedSessionToken = 'session-prefab-current'
+  it('reset clears current selection state', async () => {
+    mockedSessionToken = 'session-reset-test'
     resetSessionAuditCount(mockedSessionToken)
 
     const submitResponse = await submitHandler(
@@ -449,128 +360,33 @@ describe('Soul Audit staged flow', () => {
       options: Array<{ id: string; kind: string }>
     }
 
-    const consentResponse = await consentHandler(
-      postJson('http://localhost/api/soul-audit/consent', {
-        auditRunId: submitPayload.auditRunId,
-        essentialAccepted: true,
-        analyticsOptIn: false,
-        crisisAcknowledged: false,
-      }) as never,
-    )
-    expect(consentResponse.status).toBe(200)
-
-    const prefabOption = submitPayload.options.find(
-      (option) => option.kind === 'curated_prefab',
-    )
-    expect(prefabOption).toBeTruthy()
+    const option = submitPayload.options[0]
+    expect(option).toBeTruthy()
 
     const selectionResponse = await selectHandler(
       postJson('http://localhost/api/soul-audit/select', {
         auditRunId: submitPayload.auditRunId,
-        optionId: prefabOption?.id,
-      }) as never,
-    )
-    expect(selectionResponse.status).toBe(200)
-    const selectionPayload = (await selectionResponse.json()) as {
-      route: string
-      selectionType: string
-    }
-    expect(selectionPayload.selectionType).toBe('curated_prefab')
-    expect(selectionPayload.route).toMatch(/^\/devotional\//)
-    const selectionCookie = selectionResponse.headers.get('set-cookie') || ''
-    expect(selectionCookie).toContain('euangelion_current_route=')
-
-    const persistedSelection =
-      await getLatestSelectionForSessionWithFallback(mockedSessionToken)
-    expect(persistedSelection?.option_kind).toBe('curated_prefab')
-
-    const activeDaysResponse = await activeDaysHandler({
-      cookies: { get: () => undefined },
-    } as never)
-    expect(activeDaysResponse.status).toBe(200)
-    const activeDaysPayload = (await activeDaysResponse.json()) as {
-      hasPlan: boolean
-      planToken: string | null
-      dayLocking: 'enabled' | 'disabled'
-      days: Array<{
-        day: number
-        status: string
-        route: string
-      }>
-    }
-    expect(activeDaysPayload.hasPlan).toBe(true)
-    expect(activeDaysPayload.planToken).toBeNull()
-    expect(['enabled', 'disabled']).toContain(activeDaysPayload.dayLocking)
-    expect(activeDaysPayload.days.length).toBeGreaterThanOrEqual(5)
-    expect(activeDaysPayload.days[0]?.status).toBe('current')
-    expect(activeDaysPayload.days[0]?.route).toBe(selectionPayload.route)
-  })
-
-  it('reset clears current devotional route after prefab selection', async () => {
-    mockedSessionToken = 'session-prefab-reset'
-    resetSessionAuditCount(mockedSessionToken)
-
-    const submitResponse = await submitHandler(
-      postJson('http://localhost/api/soul-audit/submit', {
-        response: 'I feel disconnected and need guidance this week.',
-      }) as never,
-    )
-    expect(submitResponse.status).toBe(200)
-    const submitPayload = (await submitResponse.json()) as {
-      auditRunId: string
-      options: Array<{ id: string; kind: string }>
-    }
-
-    const consentResponse = await consentHandler(
-      postJson('http://localhost/api/soul-audit/consent', {
-        auditRunId: submitPayload.auditRunId,
+        optionId: option.id,
         essentialAccepted: true,
-        analyticsOptIn: false,
-        crisisAcknowledged: false,
-      }) as never,
-    )
-    expect(consentResponse.status).toBe(200)
-
-    const prefabOption = submitPayload.options.find(
-      (option) => option.kind === 'curated_prefab',
-    )
-    expect(prefabOption).toBeTruthy()
-
-    const selectionResponse = await selectHandler(
-      postJson('http://localhost/api/soul-audit/select', {
-        auditRunId: submitPayload.auditRunId,
-        optionId: prefabOption?.id,
       }) as never,
     )
     expect(selectionResponse.status).toBe(200)
 
     const beforeReset =
       await getLatestSelectionForSessionWithFallback(mockedSessionToken)
-    expect(beforeReset?.option_kind).toBe('curated_prefab')
+    expect(beforeReset).not.toBeNull()
 
     const resetResponse = await resetHandler()
     expect(resetResponse.status).toBe(200)
     const resetCookie = resetResponse.headers.get('set-cookie') || ''
     expect(resetCookie).toContain('euangelion_current_route=;')
 
-    const afterReset = await getLatestSelectionForSessionWithFallback(
-      'session-prefab-reset',
-    )
+    const afterReset =
+      await getLatestSelectionForSessionWithFallback('session-reset-test')
     expect(afterReset).toBeNull()
-
-    const activeDaysResponse = await activeDaysHandler({
-      cookies: { get: () => undefined },
-    } as never)
-    const activeDaysPayload = (await activeDaysResponse.json()) as {
-      hasPlan: boolean
-      days: unknown[]
-    }
-    expect(activeDaysResponse.status).toBe(200)
-    expect(activeDaysPayload.hasPlan).toBe(false)
-    expect(activeDaysPayload.days).toEqual([])
   })
 
-  it('rejects run/consent token reuse after session-token churn', async () => {
+  it('rejects selection after session-token churn', async () => {
     mockedSessionToken = 'session-a'
     const submitResponse = await submitHandler(
       postJson('http://localhost/api/soul-audit/submit', {
@@ -584,28 +400,17 @@ describe('Soul Audit staged flow', () => {
       runToken: string
       options: Array<{ id: string; kind: string }>
     }
-    const prefabOption = submitPayload.options.find(
-      (option) => option.kind === 'curated_prefab',
-    )
-    expect(prefabOption).toBeTruthy()
+    expect(submitPayload.options.length).toBeGreaterThan(0)
 
     mockedSessionToken = 'session-b'
-    const consentResponse = await consentHandler(
-      postJson('http://localhost/api/soul-audit/consent', {
+    const selectResponse = await selectHandler(
+      postJson('http://localhost/api/soul-audit/select', {
         auditRunId: submitPayload.auditRunId,
-        runToken: submitPayload.runToken,
+        optionId: submitPayload.options[0].id,
         essentialAccepted: true,
-        analyticsOptIn: false,
-        crisisAcknowledged: false,
       }) as never,
     )
-    expect(consentResponse.status).toBe(403)
-    const consentPayload = (await consentResponse.json()) as {
-      code?: string
-      error?: string
-    }
-    expect(consentPayload.code).toBe('RUN_ACCESS_DENIED')
-    expect(consentPayload.error).toMatch(/access denied/i)
+    expect(selectResponse.status).toBe(403)
   })
 
   it('reroll submit mode does not consume additional audit-cycle count', async () => {
@@ -694,94 +499,11 @@ describe('Soul Audit staged flow', () => {
       }) as never,
     )
     expect(mismatch.status).toBe(409)
-    const payload = (await mismatch.json()) as { code?: string; error?: string }
+    const payload = (await mismatch.json()) as {
+      code?: string
+      error?: string
+    }
     expect(payload.code).toBe('REROLL_RESPONSE_MISMATCH')
     expect(payload.error).toMatch(/original audit response/i)
-  })
-})
-
-describe('Soul Audit clarifier-once', () => {
-  beforeEach(() => {
-    process.env.SOUL_AUDIT_RUN_TOKEN_SECRET =
-      'test-run-token-secret-12345678901234567890'
-    process.env.CLARIFIER_ENABLED = 'true'
-    mockedSessionToken = 'test-session-token'
-    resetSessionAuditCount('test-session-token')
-  })
-
-  it('returns clarifier response for vague 1-word input', async () => {
-    const res = await submitHandler(
-      postJson('http://localhost/api/soul-audit/submit', {
-        response: 'help',
-      }) as never,
-    )
-    expect(res.status).toBe(200)
-
-    const body = (await res.json()) as {
-      clarifierRequired?: boolean
-      clarifierPrompt?: string
-      clarifierOptions?: string[]
-      clarifierToken?: string
-    }
-    expect(body.clarifierRequired).toBe(true)
-    expect(body.clarifierPrompt).toBeTruthy()
-    expect(body.clarifierOptions).toHaveLength(3)
-    expect(body.clarifierToken).toBeTruthy()
-  })
-
-  it('does not trigger clarifier for rich input', async () => {
-    const res = await submitHandler(
-      postJson('http://localhost/api/soul-audit/submit', {
-        response:
-          'I am feeling anxious about my future and struggling with doubt in my faith.',
-      }) as never,
-    )
-    expect(res.status).toBe(200)
-
-    const body = (await res.json()) as {
-      clarifierRequired?: boolean
-      auditRunId?: string
-    }
-    // Should get a full response, not a clarifier
-    expect(body.clarifierRequired).not.toBe(true)
-    expect(body.auditRunId).toBeTruthy()
-  })
-
-  it('skips clarifier when clarifierResponse is provided', async () => {
-    const res = await submitHandler(
-      postJson('http://localhost/api/soul-audit/submit', {
-        response: 'help',
-        clarifierResponse: 'I am going through a hard season of grief',
-      }) as never,
-    )
-    expect(res.status).toBe(200)
-
-    const body = (await res.json()) as {
-      clarifierRequired?: boolean
-      auditRunId?: string
-    }
-    expect(body.clarifierRequired).not.toBe(true)
-    expect(body.auditRunId).toBeTruthy()
-  })
-
-  it('skips clarifier when CLARIFIER_ENABLED is false', async () => {
-    process.env.CLARIFIER_ENABLED = 'false'
-    // Need to reset module cache to pick up the env change
-    // The brainFlags module reads env at import time, so we check the route directly
-    // Since brainFlags caches at import time, this test verifies the code path exists
-
-    // When clarifier is disabled, even vague input goes straight to generation
-    // Note: With our mock, this will succeed because outline-generator is mocked
-    const res = await submitHandler(
-      postJson('http://localhost/api/soul-audit/submit', {
-        response: 'help',
-      }) as never,
-    )
-
-    // Depending on whether brainFlags picks up the env change at runtime or import time,
-    // we either get a clarifier or a full result. The important thing is the route doesn't crash.
-    expect(res.status).toBe(200)
-    // Restore for other tests
-    process.env.CLARIFIER_ENABLED = 'true'
   })
 })

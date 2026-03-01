@@ -1,22 +1,16 @@
 'use client'
 
-import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import SeriesRailSection from '@/components/SeriesRailSection'
-import { useSoulAuditStore } from '@/stores/soulAuditStore'
-import { submitSoulAuditResponse } from '@/lib/soul-audit/submit-client'
+import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
 import { MAX_AUDITS_PER_CYCLE } from '@/lib/soul-audit/constants'
 import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES } from '@/data/series'
-import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
-
-const emptySubscribe = () => () => {}
-const LAST_AUDIT_INPUT_SESSION_KEY = 'soul-audit-last-input'
-const REROLL_USED_SESSION_KEY = 'soul-audit-reroll-used'
 
 const HOW_STEPS = [
   {
@@ -26,7 +20,7 @@ const HOW_STEPS = [
   },
   {
     title: '2. Read it.',
-    body: 'Review five matched devotional paths and choose where to begin.',
+    body: 'Review three matched devotional paths and choose where to begin.',
     image: '/images/illustrations/euangelion-homepage-engraving-10.svg',
   },
   {
@@ -60,28 +54,27 @@ const FAQ_ITEMS = [
 
 export default function Home() {
   const router = useRouter()
-  const [auditText, setAuditText] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-  const [lastFailedSubmission, setLastFailedSubmission] = useState<
-    string | null
-  >(null)
+  const {
+    text: auditText,
+    setText: setAuditText,
+    isSubmitting,
+    error,
+    setError,
+    lastFailedSubmission,
+    submit: submitAudit,
+    reset: handleResetAudit,
+    hydrated,
+    auditCount,
+    limitReached,
+    showLowContextHint,
+  } = useSoulAuditSubmit()
+
   const [faqIndex, setFaqIndex] = useState(0)
   const [activeFaqQuestion, setActiveFaqQuestion] = useState<string | null>(
     null,
   )
   const [resumeRoute, setResumeRoute] = useState<string | null>(null)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
-  // Carousel state removed — free scroll only
-
-  const hydrated = useSyncExternalStore(
-    emptySubscribe,
-    () => true,
-    () => false,
-  )
-  const { auditCount, recordAudit, hasReachedLimit, resetAudit } =
-    useSoulAuditStore()
-  const limitReached = hydrated && hasReachedLimit()
 
   const featuredSlugs = useMemo(() => {
     const seeded = [...FEATURED_SERIES, ...ALL_SERIES_ORDER]
@@ -96,11 +89,6 @@ export default function Home() {
     [faqIndex],
   )
   const faqItemsToRender = isMobileViewport ? FAQ_ITEMS : faqWindow
-  const auditWordCount = auditText
-    .trim()
-    .split(/\s+/)
-    .filter((token) => token.length > 0).length
-  const showLowContextHint = auditWordCount > 0 && auditWordCount <= 3
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -172,72 +160,6 @@ export default function Home() {
     return () => media.removeEventListener('change', syncViewport)
   }, [])
 
-  const handleResetAudit = async () => {
-    resetAudit()
-    setError(null)
-    setResumeRoute(null)
-    setAuditText('')
-    setLastFailedSubmission(null)
-    localStorage.removeItem('soul-audit-result')
-    localStorage.removeItem('soul-audit-submit-v2')
-    localStorage.removeItem('soul-audit-selection-v2')
-    localStorage.removeItem(LAST_AUDIT_INPUT_SESSION_KEY)
-    localStorage.removeItem(REROLL_USED_SESSION_KEY)
-
-    try {
-      const response = await fetch('/api/soul-audit/reset', {
-        method: 'POST',
-      })
-      if (!response.ok) {
-        throw new Error('Unable to reset server audit state.')
-      }
-    } catch {
-      setError(
-        'Local audit state was reset, but server reset failed. Please try once more.',
-      )
-    }
-  }
-
-  async function submitAudit(raw: string) {
-    if (limitReached) {
-      setError('You\u2019ve explored enough. Time to dive in.')
-      setLastFailedSubmission(null)
-      return
-    }
-
-    const trimmed = raw.trim()
-    if (trimmed.length === 0) {
-      setError('Write what is real for you right now and try again.')
-      setLastFailedSubmission(null)
-      return
-    }
-
-    setIsSubmitting(true)
-    setError(null)
-
-    // Persist input before fetch — survives browser crash or timeout
-    sessionStorage.setItem(LAST_AUDIT_INPUT_SESSION_KEY, trimmed)
-
-    try {
-      const data = (await submitSoulAuditResponse({
-        response: trimmed,
-      })) as SoulAuditSubmitResponseV2
-      sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(data))
-      sessionStorage.removeItem('soul-audit-selection-v2')
-      sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
-      recordAudit(trimmed, data)
-      setLastFailedSubmission(null)
-      router.push('/soul-audit/results')
-    } catch (err) {
-      setError(
-        err instanceof Error ? err.message : 'Something broke. Try again.',
-      )
-      setLastFailedSubmission(trimmed)
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
   return (
     <div className="mock-home mock-homepage">
       <main id="main-content" className="mock-paper">
@@ -303,7 +225,7 @@ export default function Home() {
                   aria-label="What are you wrestling with today?"
                 />
 
-                {/* Sample prompt pills — like ChatGPT */}
+                {/* Sample prompt pills */}
                 <div className="homepage-prompt-pills">
                   {[
                     'I feel anxious about my future',
@@ -516,6 +438,7 @@ export default function Home() {
           </Link>
         </section>
 
+        {/* Bottom CTA — link to hero rather than duplicate textarea */}
         <section className="mock-cta">
           <p className="text-label mock-kicker">READY TO BEGIN?</p>
           {resumeRoute ? (
@@ -539,55 +462,9 @@ export default function Home() {
                 You do not need certainty before you begin. You need a next
                 step. You need grace.
               </p>
-
-              <textarea
-                value={auditText}
-                onChange={(e) => {
-                  setAuditText(e.target.value)
-                  setError(null)
-                }}
-                placeholder="Write your paragraph here..."
-                rows={3}
-                disabled={isSubmitting}
-                className="mock-textarea"
-                aria-label="Start with one honest sentence"
-              />
-              {showLowContextHint && (
-                <p className="mock-footnote">
-                  Add one more sentence for more precise curation.
-                </p>
-              )}
-
-              <button
-                type="button"
-                className="mock-btn text-label"
-                onClick={() => void submitAudit(auditText)}
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'BUILDING YOUR PLAN...' : 'GET MY DEVOTION'}
-              </button>
-              <p className="mock-footnote">
-                No account required. Start immediately.
-              </p>
-              {error && <p className="mock-error">{error}</p>}
-              {lastFailedSubmission && !isSubmitting && (
-                <button
-                  type="button"
-                  className="mock-reset-btn text-label"
-                  onClick={() => void submitAudit(lastFailedSubmission)}
-                >
-                  Retry Last Submit
-                </button>
-              )}
-              {hydrated && auditCount > 0 && (
-                <button
-                  type="button"
-                  className="mock-reset-btn text-label"
-                  onClick={() => void handleResetAudit()}
-                >
-                  Reset Audit
-                </button>
-              )}
+              <a href="#start-audit" className="mock-btn text-label">
+                START YOUR SOUL AUDIT
+              </a>
             </>
           )}
         </section>
