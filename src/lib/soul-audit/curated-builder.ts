@@ -1,5 +1,9 @@
 import { SERIES_DATA } from '@/data/series'
-import type { CustomPlanDay, DevotionalDayEndnote } from '@/types/soul-audit'
+import type {
+  CustomPlanDay,
+  DevotionalDayEndnote,
+  DevotionalModule,
+} from '@/types/soul-audit'
 import {
   findCandidateBySeed,
   getCuratedDayCandidates,
@@ -10,13 +14,9 @@ import {
 import { retrieveReferenceHits, type ReferenceHit } from './reference-volumes'
 import type { OnboardingVariant } from './schedule'
 
-const CHIASTIC_POSITIONS: Array<'A' | 'B' | 'C' | "B'" | "A'"> = [
-  'A',
-  'B',
-  'C',
-  "B'",
-  "A'",
-]
+const CHIASTIC_POSITIONS: Array<
+  'A' | 'B' | 'C' | "B'" | "A'" | 'Sabbath' | 'Review'
+> = ['A', 'B', 'C', "B'", "A'", 'Sabbath', 'Review']
 
 export class MissingCuratedModuleError extends Error {
   constructor(slug: string, day: number, moduleType: string) {
@@ -77,14 +77,14 @@ function personalizedBridge(
   userResponse: string,
   day: CuratedDayCandidate,
 ): string {
-  const snippet = userResponse.trim().slice(0, 180)
+  const snippet = userResponse.trim().slice(0, 280)
   const themes = focusPhrase(userResponse)
   const base = `Today in "${day.dayTitle}", take one concrete step with what you just read: ${day.takeawayText}`
   if (!snippet && !themes) return base
   if (!snippet) {
     return `${base}\n\nBring your current tension around ${themes} honestly before God today.`
   }
-  return `${base}\n\nFrom what you shared ("${snippet}"), bring that exact tension honestly before God today.`
+  return `${base}\n\nYou wrote: "${snippet}"\n\nThat is not background noise — it is the raw material God works with. Bring that exact tension honestly before him today through ${day.scriptureReference}.`
 }
 
 function expandedReflection(
@@ -115,11 +115,11 @@ function expandedReflection(
 }
 
 function personalizedPrayerLine(userResponse: string): string {
-  const snippet = userResponse.trim().slice(0, 120)
+  const snippet = userResponse.trim().slice(0, 200)
   if (!snippet) {
     return 'Help me walk this faithfully, one step at a time.'
   }
-  return `You know what I am carrying ("${snippet}"). Meet me in it and lead me in truth.`
+  return `You know what I am carrying — "${snippet}". I do not need to explain it to you. Meet me in it and lead me in truth.`
 }
 
 function expandedPrayer(
@@ -143,10 +143,104 @@ function expandedNextStep(day: CuratedDayCandidate): string {
   return `${base} Then choose one concrete action you can complete before the day ends, and set a specific hour to do it.`
 }
 
-function expandedJournalPrompt(day: CuratedDayCandidate): string {
+function expandedJournalPrompt(
+  day: CuratedDayCandidate,
+  userResponse?: string,
+): string {
   const base = toLine(day.reflectionPrompt)
   if (!base) return ''
-  return `${base}\nWhat resistance do you notice in yourself, and what would faithful obedience look like in one sentence?\nWhich exact phrase from Scripture will you carry into today?`
+  const themes = userResponse ? focusPhrase(userResponse) : ''
+  const thematicLine = themes
+    ? `\nHow does ${day.scriptureReference} speak to what you named about ${themes}?`
+    : ''
+  return `${base}${thematicLine}\nWhat resistance do you notice in yourself, and what would faithful obedience look like in one sentence?\nWhich exact phrase from Scripture will you carry into today?`
+}
+
+function buildModules(params: {
+  candidate: CuratedDayCandidate
+  userResponse: string
+  referenceHits: ReferenceHit[]
+}): DevotionalModule[] {
+  const modules: DevotionalModule[] = []
+  const { candidate, userResponse, referenceHits } = params
+
+  // 1. Scripture module — always first
+  modules.push({
+    type: 'scripture',
+    heading: candidate.scriptureReference,
+    content: {
+      reference: candidate.scriptureReference,
+      text: candidate.scriptureText,
+    },
+  })
+
+  // 2. Teaching module — core exposition
+  if (candidate.teachingText) {
+    modules.push({
+      type: 'teaching',
+      heading: 'Teaching',
+      content: { body: candidate.teachingText },
+    })
+  }
+
+  // 3. Bridge module — personalized connection to user's words
+  const themes = focusPhrase(userResponse)
+  if (themes) {
+    modules.push({
+      type: 'bridge',
+      heading: 'Your Connection',
+      content: {
+        connectionPoint: `What you shared points to ${themes}. This passage speaks directly to that tension.`,
+        modernApplication: personalizedBridge(userResponse, candidate),
+      },
+    })
+  }
+
+  // 4. Reflection module
+  if (candidate.reflectionPrompt) {
+    modules.push({
+      type: 'reflection',
+      heading: 'Reflection',
+      content: { prompt: candidate.reflectionPrompt },
+    })
+  }
+
+  // 5. Insight module — reference library grounding (when available)
+  if (referenceHits.length > 0) {
+    modules.push({
+      type: 'insight',
+      heading: 'Commentary Witness',
+      content: {
+        sources: referenceHits.map((hit) => ({
+          source: hit.source,
+          excerpt: hit.excerpt,
+        })),
+      },
+    })
+  }
+
+  // 6. Prayer module
+  if (candidate.prayerText) {
+    modules.push({
+      type: 'prayer',
+      heading: 'Prayer',
+      content: { text: expandedPrayer(userResponse, candidate) },
+    })
+  }
+
+  // 7. Takeaway module
+  if (candidate.takeawayText) {
+    modules.push({
+      type: 'takeaway',
+      heading: 'Next Step',
+      content: {
+        commitment: expandedNextStep(candidate),
+        action: candidate.takeawayText,
+      },
+    })
+  }
+
+  return modules
 }
 
 function buildEndnotes(params: {
@@ -182,9 +276,10 @@ function buildEndnotes(params: {
   return notes
 }
 
-function parseFrameworkFromSeries(
-  framework: string | undefined,
-): { reference: string; text: string } {
+function parseFrameworkFromSeries(framework: string | undefined): {
+  reference: string
+  text: string
+} {
   if (!framework) return { reference: '', text: '' }
   const referenceMatch = framework.match(
     /(?:scripture|reference|verse)[:\s]*["']?([^"'\n]+)/i,
@@ -196,9 +291,7 @@ function parseFrameworkFromSeries(
   }
 }
 
-function metadataFallbackCandidate(
-  slug: string,
-): CuratedDayCandidate | null {
+function metadataFallbackCandidate(slug: string): CuratedDayCandidate | null {
   const series = SERIES_DATA[slug]
   if (!series) return null
   const dayOne = [...series.days].sort((a, b) => a.day - b.day)[0]
@@ -218,11 +311,13 @@ function metadataFallbackCandidate(
       series.introduction?.slice(0, 300) ||
       series.context?.slice(0, 300) ||
       '',
-    teachingText: [series.introduction, series.context]
-      .filter(Boolean)
-      .join('\n\n')
-      .slice(0, 2000) || series.title,
-    reflectionPrompt: series.question || `What does ${series.title} stir in you?`,
+    teachingText:
+      [series.introduction, series.context]
+        .filter(Boolean)
+        .join('\n\n')
+        .slice(0, 2000) || series.title,
+    reflectionPrompt:
+      series.question || `What does ${series.title} stir in you?`,
     prayerText: `Lord, meet me in this season and guide my next faithful step in ${series.title}.`,
     takeawayText: `Take one concrete action from ${series.title} before today ends.`,
     searchText: [slug, series.title, series.question, series.introduction]
@@ -286,14 +381,109 @@ function selectPlanCandidates(params: {
   }
 
   if (selected.length === 0) {
-    throw new MissingCuratedModuleError(
-      params.seriesSlug,
-      1,
-      'day',
-    )
+    throw new MissingCuratedModuleError(params.seriesSlug, 1, 'day')
   }
 
   return selected.slice(0, 5)
+}
+
+function buildSabbathDay(
+  devotionalDays: CustomPlanDay[],
+  userResponse: string,
+): CustomPlanDay {
+  const scriptureRefs = devotionalDays
+    .map((d) => d.scriptureReference)
+    .filter(Boolean)
+  const anchorRef = scriptureRefs[0] || 'Genesis 2:2-3'
+  const allRefs = scriptureRefs.join('; ')
+  const themes = focusPhrase(userResponse)
+  const thematicLine = themes
+    ? `This week you brought ${themes} before God.`
+    : 'This week you brought honest questions before God.'
+
+  return {
+    day: 6,
+    dayType: 'sabbath',
+    chiasticPosition: 'Sabbath',
+    title: 'Sabbath Rest',
+    scriptureReference: anchorRef,
+    scriptureText:
+      'And on the seventh day God finished his work that he had done, and he rested on the seventh day from all his work that he had done.',
+    reflection: [
+      `${thematicLine} Today is not for striving — it is for receiving.`,
+      `Return to the passages that moved you most this week (${allRefs}). Read them slowly, without analysis. Let the text read you.`,
+      'Sabbath is not earned. It is given. You do not need to produce anything today.',
+      'Sit with whatever phrase stayed with you longest this week. Write it down. Carry it into silence.',
+    ].join('\n\n'),
+    prayer: [
+      'Lord of rest, I stop. I am not the engine of my own transformation.',
+      `You have met me this week through ${allRefs}. Let what you planted take root in stillness.`,
+      'Give me the courage to stop fixing and start receiving. Amen.',
+    ].join('\n\n'),
+    nextStep:
+      'Do not add a task. Instead, remove one. Create space in your day for silence, even five minutes.',
+    journalPrompt:
+      'Which moment this week felt most like God speaking directly to you?\nWhat are you still carrying that you can set down today?',
+    endnotes: [
+      { id: 1, source: 'Scripture', note: anchorRef },
+      {
+        id: 2,
+        source: 'Week Scripture',
+        note: `Week references: ${allRefs}`,
+      },
+      { id: 3, source: 'Day Type', note: 'Sabbath rest day — no striving.' },
+    ],
+  }
+}
+
+function buildReviewDay(
+  devotionalDays: CustomPlanDay[],
+  userResponse: string,
+): CustomPlanDay {
+  const titles = devotionalDays.map((d) => `Day ${d.day}: ${d.title}`)
+  const scriptureRefs = devotionalDays
+    .map((d) => d.scriptureReference)
+    .filter(Boolean)
+  const anchorRef = scriptureRefs[scriptureRefs.length - 1] || 'Psalm 119:105'
+  const themes = focusPhrase(userResponse)
+  const thematicLine = themes
+    ? `You began this week wrestling with ${themes}.`
+    : 'You began this week with an honest question.'
+
+  return {
+    day: 7,
+    dayType: 'review',
+    chiasticPosition: 'Review',
+    title: 'Week in Review',
+    scriptureReference: anchorRef,
+    scriptureText: 'Your word is a lamp to my feet and a light to my path.',
+    reflection: [
+      `${thematicLine} Look at the arc of your week:`,
+      titles.join('\n'),
+      '',
+      'What pattern do you see? Where did God show up in ways you did not expect?',
+      "The chiastic structure of your week (A-B-C-B'-A') mirrors how Scripture often works: the center reveals, the bookends confirm.",
+      'Name one thing that shifted in you this week — not what you learned, but how you changed.',
+    ].join('\n'),
+    prayer: [
+      'God of the long arc, thank you for meeting me in every day of this week.',
+      'Seal what you started. Where I resisted, soften me. Where I opened, deepen me.',
+      'Send me into the next week with the courage of someone who has been honestly met. Amen.',
+    ].join('\n\n'),
+    nextStep:
+      'Write one sentence summarizing what God did in you this week. Share it with someone, or keep it as a milestone marker for your next audit.',
+    journalPrompt:
+      'If you could keep only one insight from this entire week, what would it be?\nWhat will you do differently starting tomorrow because of what you received this week?',
+    endnotes: [
+      { id: 1, source: 'Scripture', note: anchorRef },
+      { id: 2, source: 'Day Type', note: 'Week review and integration day.' },
+      {
+        id: 3,
+        source: 'Week Arc',
+        note: `${devotionalDays.length} devotional days + Sabbath + Review.`,
+      },
+    ],
+  }
 }
 
 export function buildCuratedFirstPlan(params: {
@@ -303,7 +493,7 @@ export function buildCuratedFirstPlan(params: {
 }): CustomPlanDay[] {
   const selectedDays = selectPlanCandidates(params)
 
-  return selectedDays.map((candidate, index) => {
+  const devotionalDays = selectedDays.map((candidate, index) => {
     const dayNumber = index + 1
     // Reference grounding is optional — the 13GB reference library is
     // gitignored and not deployed to Vercel. When absent, the plan still
@@ -322,13 +512,14 @@ export function buildCuratedFirstPlan(params: {
 
     const nextStep =
       expandedNextStep(candidate) ||
-      'Choose one concrete action from today\'s reading you can complete before the day ends, and set a specific hour to do it.'
+      "Choose one concrete action from today's reading you can complete before the day ends, and set a specific hour to do it."
     const journalPrompt =
-      expandedJournalPrompt(candidate) ||
-      'What is one phrase from today\'s Scripture that speaks to where you are right now?\nWhat resistance do you notice in yourself, and what would faithful obedience look like in one sentence?'
+      expandedJournalPrompt(candidate, params.userResponse) ||
+      "What is one phrase from today's Scripture that speaks to where you are right now?\nWhat resistance do you notice in yourself, and what would faithful obedience look like in one sentence?"
 
     return {
       day: dayNumber,
+      dayType: 'devotional' as const,
       chiasticPosition: CHIASTIC_POSITIONS[index],
       title: candidate.dayTitle,
       scriptureReference: candidate.scriptureReference,
@@ -337,12 +528,23 @@ export function buildCuratedFirstPlan(params: {
       prayer,
       nextStep,
       journalPrompt,
+      modules: buildModules({
+        candidate,
+        userResponse: params.userResponse,
+        referenceHits,
+      }),
       endnotes: buildEndnotes({
         candidate,
         referenceHits,
       }),
     }
   })
+
+  // Append Sabbath (day 6) and Review (day 7) to complete the 7-day arc.
+  const sabbath = buildSabbathDay(devotionalDays, params.userResponse)
+  const review = buildReviewDay(devotionalDays, params.userResponse)
+
+  return [...devotionalDays, sabbath, review]
 }
 
 export function buildOnboardingDay(params: {

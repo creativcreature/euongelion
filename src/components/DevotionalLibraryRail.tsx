@@ -324,7 +324,7 @@ export default function DevotionalLibraryRail({
           fetch('/api/daily-bread/active-days', { cache: 'no-store' }),
           fetch('/api/bookmarks', { cache: 'no-store' }),
           fetch('/api/annotations', { cache: 'no-store' }),
-          fetch('/api/soul-audit/archive', { cache: 'no-store' }),
+          fetch('/api/soul-audit/manage', { cache: 'no-store' }),
         ])
 
       const [activeDaysJson, bookmarksJson, annotationsJson, archiveJson] =

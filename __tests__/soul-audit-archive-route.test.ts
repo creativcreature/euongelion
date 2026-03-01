@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { GET as archiveHandler } from '@/app/api/soul-audit/archive/route'
+import { GET as archiveHandler } from '@/app/api/soul-audit/manage/route'
 
 let sessionToken = 'archive-session'
 let planInstances: Array<{

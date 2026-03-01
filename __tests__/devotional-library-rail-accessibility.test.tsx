@@ -75,7 +75,7 @@ describe('DevotionalLibraryRail accessibility', () => {
           return mockJsonResponse({ annotations: [] })
         }
 
-        if (url.includes('/api/soul-audit/archive')) {
+        if (url.includes('/api/soul-audit/manage')) {
           return mockJsonResponse({ archive: [] })
         }
 

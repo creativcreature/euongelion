@@ -19,7 +19,7 @@ vi.mock('@/lib/soul-audit/session', () => ({
   rotateAuditSessionToken,
 }))
 
-import { POST as resetHandler } from '@/app/api/soul-audit/reset/route'
+import { POST as resetHandler } from '@/app/api/soul-audit/manage/route'
 
 describe('POST /api/soul-audit/reset', () => {
   beforeEach(() => {

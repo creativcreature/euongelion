@@ -34,7 +34,7 @@ vi.mock('@/lib/soul-audit/composer', () => ({
 
 import { POST as submitHandler } from '@/app/api/soul-audit/submit/route'
 import { POST as selectHandler } from '@/app/api/soul-audit/select/route'
-import { POST as resetHandler } from '@/app/api/soul-audit/reset/route'
+import { POST as resetHandler } from '@/app/api/soul-audit/manage/route'
 import { GET as planDayHandler } from '@/app/api/devotional-plan/[token]/day/[n]/route'
 import {
   getLatestSelectionForSessionWithFallback,
