@@ -5,6 +5,13 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## SA-035: Fix three production bugs in composer pipeline (2026-03-01)
+
+- **Bug 1 — LLM throw kills fallback**: `generateWithBrain()` throws on failure, but `composeDay()` had no try-catch. The `buildDeterministicDay()` fallback never fired. Now wrapped in try-catch.
+- **Bug 2 — Empty reflection catch block**: Select route's outer catch created days with `reflection: ''` instead of calling `buildDeterministicDay()`. Removed — `composeDay()` handles failures internally.
+- **Bug 3 — Vercel timeout**: 5 sequential LLM calls (15-30s each) exceeded Vercel's 60s function limit. Select route now calls `buildDeterministicDay()` directly — instant, zero LLM, no timeout.
+- **Result**: Every devotional day is now assembled from 15-20 real reference library chunks (Augustine, Calvin, Luther, etc.) with zero LLM dependency at selection time.
+
 ## SA-034: Fix smoke test CI flake (2026-03-01)
 
 - **Tests**: Flush React scheduler work before jsdom teardown to prevent `window is not defined` unhandled error in CI.

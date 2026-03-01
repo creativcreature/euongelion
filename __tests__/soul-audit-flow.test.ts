@@ -1,67 +1,71 @@
 import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
 
 // Mock composer (no real LLM calls in tests).
-vi.mock('@/lib/soul-audit/composer', () => ({
-  composeDay: vi.fn(
-    async (params: {
-      dayNumber: number
-      chiasticPosition: string
-      candidate: { dayTitle?: string; scriptureReference?: string }
-    }) => ({
-      day: {
-        day: params.dayNumber,
-        dayType: 'devotional',
-        title: params.candidate.dayTitle ?? `Day ${params.dayNumber}`,
-        scriptureReference: params.candidate.scriptureReference ?? 'Psalm 23:1',
-        scriptureText: 'The Lord is my shepherd; I shall not want.',
-        reflection: 'A test reflection on trust and surrender.',
-        prayer: 'Lord, guide us today.',
-        nextStep: 'Take a moment to be still.',
-        journalPrompt: 'What does trust look like for you today?',
-        chiasticPosition: params.chiasticPosition,
-        totalWords: 4500,
-        targetLengthMinutes: 30,
-        generationStatus: 'ready',
-        compositionReport: {
-          referencePercentage: 80,
-          generatedPercentage: 20,
-          sources: ['Test Commentary'],
-        },
-      },
-      usedChunkIds: ['test-chunk-1'],
-    }),
-  ),
-  retrieveIngredientsForDay: vi.fn(() => []),
-  WEEK_CHIASTIC: ['A', 'B', 'C', "B'", "A'"],
-  WEEK_PARDES: ['peshat', 'remez', 'derash', 'sod', 'integrated'],
-  composeSabbath: vi.fn(() => ({
-    day: 6,
-    dayType: 'sabbath',
-    title: 'Sabbath Rest',
-    scriptureReference: 'Psalm 46:10',
-    scriptureText: 'Be still, and know that I am God.',
-    reflection: 'Rest.',
-    prayer: 'Amen.',
-    nextStep: 'Rest.',
-    journalPrompt: 'What lingered?',
-    chiasticPosition: 'Sabbath',
+vi.mock('@/lib/soul-audit/composer', () => {
+  const makeDayFromParams = (params: {
+    dayNumber: number
+    chiasticPosition: string
+    candidate: { dayTitle?: string; scriptureReference?: string }
+  }) => ({
+    day: params.dayNumber,
+    dayType: 'devotional',
+    title: params.candidate.dayTitle ?? `Day ${params.dayNumber}`,
+    scriptureReference: params.candidate.scriptureReference ?? 'Psalm 23:1',
+    scriptureText: 'The Lord is my shepherd; I shall not want.',
+    reflection: 'A test reflection on trust and surrender.',
+    prayer: 'Lord, guide us today.',
+    nextStep: 'Take a moment to be still.',
+    journalPrompt: 'What does trust look like for you today?',
+    chiasticPosition: params.chiasticPosition,
+    totalWords: 4500,
+    targetLengthMinutes: 30,
     generationStatus: 'ready',
-  })),
-  composeRecap: vi.fn(() => ({
-    day: 7,
-    dayType: 'review',
-    title: 'Week in Review',
-    scriptureReference: 'Philippians 1:6',
-    scriptureText: 'He who began a good work...',
-    reflection: 'Review.',
-    prayer: 'Amen.',
-    nextStep: 'Start next path.',
-    journalPrompt: 'What did you learn?',
-    chiasticPosition: 'Review',
-    generationStatus: 'ready',
-  })),
-  isComposerAvailable: vi.fn(() => true),
-}))
+    compositionReport: {
+      referencePercentage: 80,
+      generatedPercentage: 20,
+      sources: ['Test Commentary'],
+    },
+  })
+  return {
+    buildDeterministicDay: vi.fn(makeDayFromParams),
+    composeDay: vi.fn(
+      async (params: Parameters<typeof makeDayFromParams>[0]) => ({
+        day: makeDayFromParams(params),
+        usedChunkIds: ['test-chunk-1'],
+      }),
+    ),
+    retrieveIngredientsForDay: vi.fn(() => []),
+    WEEK_CHIASTIC: ['A', 'B', 'C', "B'", "A'"],
+    WEEK_PARDES: ['peshat', 'remez', 'derash', 'sod', 'integrated'],
+    composeSabbath: vi.fn(() => ({
+      day: 6,
+      dayType: 'sabbath',
+      title: 'Sabbath Rest',
+      scriptureReference: 'Psalm 46:10',
+      scriptureText: 'Be still, and know that I am God.',
+      reflection: 'Rest.',
+      prayer: 'Amen.',
+      nextStep: 'Rest.',
+      journalPrompt: 'What lingered?',
+      chiasticPosition: 'Sabbath',
+      generationStatus: 'ready',
+    })),
+    composeRecap: vi.fn(() => ({
+      day: 7,
+      dayType: 'review',
+      title: 'Week in Review',
+      scriptureReference: 'Philippians 1:6',
+      scriptureText: 'He who began a good work...',
+      reflection: 'Review.',
+      prayer: 'Amen.',
+      nextStep: 'Start next path.',
+      journalPrompt: 'What did you learn?',
+      chiasticPosition: 'Review',
+      generationStatus: 'ready',
+    })),
+    isComposerAvailable: vi.fn(() => true),
+  }
+})
 
 import { POST as submitHandler } from '@/app/api/soul-audit/submit/route'
 import { POST as selectHandler } from '@/app/api/soul-audit/select/route'

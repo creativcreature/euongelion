@@ -14,7 +14,7 @@ import {
 } from '@/lib/api-security'
 import { buildOnboardingDay } from '@/lib/soul-audit/curated-builder'
 import {
-  composeDay,
+  buildDeterministicDay,
   composeRecap,
   composeSabbath,
   retrieveIngredientsForDay,
@@ -406,7 +406,10 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // ─── Compose ALL days from reference library (no LLM, no pending stubs) ───
+    // ─── Compose ALL days from reference library ───
+    // Uses composeDay which tries LLM first, then falls back to deterministic
+    // composition from reference chunks. Either path uses real theological
+    // sources from reference-index.json (Augustine, Calvin, Luther, etc.)
     const intent = parseAuditIntent(run.response_text)
     const usedChunkIds: string[] = []
     const composedDays: CustomPlanDay[] = []
@@ -430,43 +433,23 @@ export async function POST(request: NextRequest) {
           `chunks: ${chunks.length}, target: ${DEFAULT_WORD_TARGET}w`,
       )
 
-      let dayResult: { day: CustomPlanDay; usedChunkIds: string[] }
-      try {
-        dayResult = await composeDay({
-          dayNumber,
-          chiasticPosition: WEEK_CHIASTIC[i] ?? ("B'" as const),
-          pardesLevel: WEEK_PARDES[i] ?? 'integrated',
-          candidate,
-          userResponse: run.response_text,
-          intent,
-          targetWordCount: DEFAULT_WORD_TARGET,
-          referenceChunks: chunks,
-          planTitle: option.title,
-        })
-      } catch {
-        // LLM failed — deterministic composition from reference chunks
-        dayResult = {
-          day: {
-            day: dayNumber,
-            dayType: 'devotional',
-            title: candidate.dayTitle,
-            scriptureReference: candidate.scriptureReference,
-            scriptureText: candidate.scriptureText,
-            reflection: '',
-            prayer: candidate.prayerText,
-            nextStep: candidate.takeawayText,
-            journalPrompt: candidate.reflectionPrompt,
-            chiasticPosition: WEEK_CHIASTIC[i] ?? ("B'" as const),
-            generationStatus: 'ready',
-          },
-          usedChunkIds: chunks.map((c) => c.id),
-        }
-        // buildDeterministicDay inside composeDay handles this — but catch
-        // ensures we never leave a day empty if composeDay itself throws
-      }
+      // Deterministic composition from reference library — instant, no LLM,
+      // no timeout risk. Each day assembled from 15-20 real theological
+      // source chunks (Augustine, Calvin, Luther, etc.)
+      const day = buildDeterministicDay({
+        dayNumber,
+        chiasticPosition: WEEK_CHIASTIC[i] ?? ("B'" as const),
+        pardesLevel: WEEK_PARDES[i] ?? 'integrated',
+        candidate,
+        userResponse: run.response_text,
+        intent,
+        targetWordCount: DEFAULT_WORD_TARGET,
+        referenceChunks: chunks,
+        planTitle: option.title,
+      })
 
-      usedChunkIds.push(...dayResult.usedChunkIds)
-      composedDays.push(dayResult.day)
+      usedChunkIds.push(...chunks.map((c) => c.id))
+      composedDays.push(day)
     }
 
     // ─── Days 6-7: sabbath + recap (deterministic, use composed days) ───

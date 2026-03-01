@@ -443,20 +443,30 @@ export async function composeDay(
     chiasticPosition: params.chiasticPosition,
   })
 
-  const maxTokens = estimateMaxOutputTokens(wordTarget)
-
-  const result = await generateWithBrain({
-    system: systemPrompt,
-    messages: [{ role: 'user', content: userPrompt }],
-    context: {
-      task: 'devotional_day_generate',
-      mode: 'auto',
-      maxOutputTokens: maxTokens,
-    },
-  })
-
-  // Ensure deterministic fallback always has reference chunks
+  // Deterministic fallback params — always have reference chunks
   const paramsWithChunks = { ...params, referenceChunks: chunks }
+
+  // Try LLM composition. If it throws (provider failure, timeout, etc.)
+  // fall back to deterministic composition from reference chunks.
+  let result: { output?: string } | null = null
+  try {
+    const maxTokens = estimateMaxOutputTokens(wordTarget)
+    result = await generateWithBrain({
+      system: systemPrompt,
+      messages: [{ role: 'user', content: userPrompt }],
+      context: {
+        task: 'devotional_day_generate',
+        mode: 'auto',
+        maxOutputTokens: maxTokens,
+      },
+    })
+  } catch {
+    // LLM unavailable — deterministic composition from reference library
+    return {
+      day: buildDeterministicDay(paramsWithChunks),
+      usedChunkIds: chunks.map((c) => c.id),
+    }
+  }
 
   if (!result?.output) {
     return {
@@ -518,7 +528,7 @@ export async function composeDay(
  * enhances this with smoother transitions; this path delivers the
  * substance directly from the reference library.
  */
-function buildDeterministicDay(params: ComposeDayParams): CustomPlanDay {
+export function buildDeterministicDay(params: ComposeDayParams): CustomPlanDay {
   const chunks = params.referenceChunks
   const candidate = params.candidate
 
