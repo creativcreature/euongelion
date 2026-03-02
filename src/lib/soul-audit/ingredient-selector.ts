@@ -1,46 +1,34 @@
 /**
  * ingredient-selector.ts
  *
- * Replaces the 30-60 second LLM outline generation with deterministic
- * ingredient scoring. Produces 3 thematic directions from existing curated
- * modules and reference chunks in < 1 second. Zero LLM calls.
+ * RAG-first direction selection for Soul Audit.
  *
- * Each direction includes real content previews (scripture, teaching excerpt)
- * so the user sees substance before committing.
+ * This selector does NOT rely on pre-authored devotional modules.
+ * It builds three thematic directions from:
+ * - user reflection intent
+ * - scripture anchors
+ * - reference library retrieval (RAG)
  */
 
-import { SERIES_DATA } from '@/data/series'
 import {
   parseAuditIntent,
   type ParsedAuditIntent,
 } from '@/lib/brain/intent-parser'
 import {
-  getCuratedDayCandidates,
   rankCandidatesForInput,
   type CuratedDayCandidate,
-  type CurationSeed,
 } from './curation-engine'
-
-// ─── Types ──────────────────────────────────────────────────────────
+import { retrieveForDay } from './reference-retriever'
 
 export interface IngredientDirection {
-  /** Stable identifier for this direction. */
   id: string
-  /** Rank among directions (1 = recommended). */
   rank: number
-  /** Display title for this direction. */
   title: string
-  /** Opening question connecting user's words to this direction. */
   question: string
-  /** Why this direction was selected, referencing matched keywords. */
   reasoning: string
-  /** Primary scripture anchor for this direction. */
   scriptureAnchor: string
-  /** Series slug that anchors this direction. */
-  seriesSlug: string
-  /** Confidence score (0-1). */
+  directionSlug: string
   confidence: number
-  /** Real Day 1 preview with actual content. */
   day1Preview: {
     title: string
     scriptureReference: string
@@ -48,237 +36,208 @@ export interface IngredientDirection {
     teachingExcerpt: string
     reflectionPrompt: string
   }
-  /** Pre-selected candidates for Days 1-5 (used at select time). */
-  candidates: CuratedDayCandidate[]
-  /** Curation seed for the anchor candidate. */
-  curationSeed: CurationSeed
-  /** Keywords that matched from user's input. */
   matchedKeywords: string[]
+  referenceSourceHints: string[]
 }
 
 export interface IngredientSelectionResult {
-  /** The 3 thematic directions, rank-ordered. */
   directions: IngredientDirection[]
-  /** Parsed intent from user's reflection. */
   intent: ParsedAuditIntent
-  /** Strategy used for selection. */
   strategy: 'ingredient_selection'
 }
 
-// ─── Constants ──────────────────────────────────────────────────────
+type DirectionLens = {
+  slug: string
+  label: string
+  focusTerms: string[]
+  pardes: 'peshat' | 'remez' | 'derash' | 'integrated'
+  chiastic: 'A' | 'B' | 'C'
+}
 
 const DIRECTION_COUNT = 3
-const CANDIDATES_PER_DIRECTION = 5
-const MIN_SERIES_DAYS_FOR_DIRECTION = 3
-
-// ─── Helpers ────────────────────────────────────────────────────────
+const MAX_PREVIEW_WORDS = 65
 
 function collapseWhitespace(value: string): string {
   return value.replace(/\s+/g, ' ').trim()
 }
 
-function extractCoreBurden(input: string, maxLength = 64): string {
-  const normalized = collapseWhitespace(input)
-  if (!normalized) return ''
+function toHeadline(value: string): string {
+  const cleaned = collapseWhitespace(value).toLowerCase()
+  if (!cleaned) return 'Focused Direction'
+  return cleaned
+    .split(' ')
+    .map((token) => token.charAt(0).toUpperCase() + token.slice(1))
+    .join(' ')
+}
 
-  const clause =
-    normalized
-      .split(/[.!?;]/)
-      .map((part) => collapseWhitespace(part))
-      .find(Boolean) ?? normalized
+function slugify(value: string): string {
+  return collapseWhitespace(value)
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 48)
+}
 
-  const stripped = collapseWhitespace(
-    clause.replace(
-      /\b(i|im|i'm|ive|i've|just|really|maybe|kind|sort|that|this|feel)\b/gi,
-      ' ',
+function extractKeywords(input: string): string[] {
+  return Array.from(
+    new Set(
+      input
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, ' ')
+        .split(/\s+/)
+        .map((token) => token.trim())
+        .filter((token) => token.length >= 4),
     ),
-  )
-
-  const source = stripped.length >= 12 ? stripped : clause
-  if (source.length <= maxLength) return source
-
-  const words = source.split(' ')
-  let output = ''
-  for (const word of words) {
-    const next = `${output} ${word}`.trim()
-    if (next.length > maxLength) break
-    output = next
-  }
-  return output || source.slice(0, maxLength).trimEnd()
+  ).slice(0, 12)
 }
 
-function buildDirectionTitle(
-  candidate: CuratedDayCandidate,
-  input: string,
-): string {
-  const burden = extractCoreBurden(input, 40)
-  const seriesTitle =
-    SERIES_DATA[candidate.seriesSlug]?.title ?? candidate.seriesTitle
-
-  if (burden.length >= 12) {
-    return `${seriesTitle}: ${candidate.dayTitle}`
-  }
-
-  return `${seriesTitle}: ${candidate.dayTitle}`
+function takeWords(text: string, maxWords: number): string {
+  const words = collapseWhitespace(text).split(' ').filter(Boolean)
+  if (words.length <= maxWords) return words.join(' ')
+  return `${words.slice(0, maxWords).join(' ')}...`
 }
 
-function buildDirectionQuestion(
-  candidate: CuratedDayCandidate,
-  input: string,
-): string {
-  const focus = extractCoreBurden(input, 84)
-  if (!focus) return candidate.reflectionPrompt
-  return `As you reflect on "${focus}", ${candidate.reflectionPrompt}`
-}
-
-function buildDirectionReasoning(
-  candidate: CuratedDayCandidate,
-  matched: string[],
-): string {
-  const seriesTitle =
-    SERIES_DATA[candidate.seriesSlug]?.title ?? candidate.seriesTitle
-
-  if (matched.length >= 2) {
-    return `Your words connect to themes of ${matched.slice(0, 3).join(', ')} — this path through ${seriesTitle} addresses those directly with ${candidate.scriptureReference}.`
+function pickScripture(intent: ParsedAuditIntent, index: number): string {
+  if (intent.scriptureAnchors.length > 0) {
+    return intent.scriptureAnchors[index % intent.scriptureAnchors.length]
   }
 
-  if (matched.length === 1) {
-    return `Your reflection touches on ${matched[0]} — ${seriesTitle} grounds this in ${candidate.scriptureReference} and walks through it over 5 days.`
-  }
-
-  return `${seriesTitle} offers a focused 5-day path grounded in ${candidate.scriptureReference}, moving from honest questions to faithful next steps.`
+  const fallbacks = ['Psalm 119:105', 'Philippians 4:6-7', 'Romans 8:1']
+  return fallbacks[index % fallbacks.length]
 }
 
-// ─── Core Selection ─────────────────────────────────────────────────
+function pickModuleAnchor(params: {
+  ranked: Array<{ candidate: CuratedDayCandidate; score: number }>
+  usedSeries: Set<string>
+  fallbackIndex: number
+}): CuratedDayCandidate | null {
+  for (const entry of params.ranked) {
+    if (params.usedSeries.has(entry.candidate.seriesSlug)) continue
+    params.usedSeries.add(entry.candidate.seriesSlug)
+    return entry.candidate
+  }
 
-/**
- * Select 3 thematic directions from curated candidates.
- * Each direction is anchored in a different series to provide genuine variety.
- * Returns candidates pre-selected for each direction so select-time
- * can compose immediately without re-scoring.
- */
-function selectDirections(
-  input: string,
+  const fallback = params.ranked[params.fallbackIndex]?.candidate ?? null
+  if (fallback) params.usedSeries.add(fallback.seriesSlug)
+  return fallback
+}
+
+function buildLenses(
   intent: ParsedAuditIntent,
-): IngredientDirection[] {
-  const allCandidates = getCuratedDayCandidates()
+  keywords: string[],
+): DirectionLens[] {
+  const primary = intent.themes[0] || keywords[0] || 'faithful endurance'
+  const secondary = intent.themes[1] || keywords[1] || 'clarity in uncertainty'
+  const tertiary = intent.themes[2] || keywords[2] || 'renewed hope'
 
-  // Count days per series to filter for series with enough content
-  const dayCountBySeries = new Map<string, number>()
-  for (const candidate of allCandidates) {
-    dayCountBySeries.set(
-      candidate.seriesSlug,
-      (dayCountBySeries.get(candidate.seriesSlug) ?? 0) + 1,
-    )
-  }
-
-  const eligibleSeries = new Set<string>()
-  for (const [slug, count] of dayCountBySeries) {
-    if (count >= MIN_SERIES_DAYS_FOR_DIRECTION) {
-      eligibleSeries.add(slug)
-    }
-  }
-
-  // Rank all candidates using the existing scoring engine
-  const ranked = rankCandidatesForInput({
-    input,
-    aiThemes: intent.themes,
-  }).filter(
-    (entry) =>
-      eligibleSeries.size === 0 ||
-      eligibleSeries.has(entry.candidate.seriesSlug),
-  )
-
-  if (ranked.length === 0) return []
-
-  const topScore = Math.max(1, ranked[0]?.score ?? 1)
-  const directions: IngredientDirection[] = []
-  const usedSeries = new Set<string>()
-
-  for (const entry of ranked) {
-    if (directions.length >= DIRECTION_COUNT) break
-    if (usedSeries.has(entry.candidate.seriesSlug)) continue
-
-    const anchor = entry.candidate
-    usedSeries.add(anchor.seriesSlug)
-
-    // Gather up to 5 candidates from the same series for this direction
-    const seriesCandidates = ranked
-      .filter((r) => r.candidate.seriesSlug === anchor.seriesSlug)
-      .sort((a, b) => a.candidate.dayNumber - b.candidate.dayNumber)
-      .slice(0, CANDIDATES_PER_DIRECTION)
-      .map((r) => r.candidate)
-
-    // If the series doesn't have enough curated days, supplement from
-    // top-ranked candidates in other series (excluding already-used)
-    if (seriesCandidates.length < CANDIDATES_PER_DIRECTION) {
-      const supplemented = new Set(seriesCandidates.map((c) => c.key))
-      for (const r of ranked) {
-        if (seriesCandidates.length >= CANDIDATES_PER_DIRECTION) break
-        if (supplemented.has(r.candidate.key)) continue
-        seriesCandidates.push(r.candidate)
-        supplemented.add(r.candidate.key)
-      }
-    }
-
-    const confidence = Math.min(entry.score / topScore, 1)
-    const matched = entry.matches.slice(0, 5)
-    const rank = directions.length + 1
-
-    directions.push({
-      id: `ai_primary:${anchor.seriesSlug}:${anchor.dayNumber}:${rank}`,
-      rank,
-      title: buildDirectionTitle(anchor, input),
-      question: buildDirectionQuestion(anchor, input),
-      reasoning: buildDirectionReasoning(anchor, matched),
-      scriptureAnchor: anchor.scriptureReference,
-      seriesSlug: anchor.seriesSlug,
-      confidence,
-      day1Preview: {
-        title: seriesCandidates[0]?.dayTitle ?? anchor.dayTitle,
-        scriptureReference:
-          seriesCandidates[0]?.scriptureReference ?? anchor.scriptureReference,
-        scriptureText: (
-          seriesCandidates[0]?.scriptureText ?? anchor.scriptureText
-        ).slice(0, 400),
-        teachingExcerpt: (
-          seriesCandidates[0]?.teachingText ?? anchor.teachingText
-        ).slice(0, 320),
-        reflectionPrompt:
-          seriesCandidates[0]?.reflectionPrompt ?? anchor.reflectionPrompt,
-      },
-      candidates: seriesCandidates,
-      curationSeed: {
-        seriesSlug: anchor.seriesSlug,
-        dayNumber: anchor.dayNumber,
-        candidateKey: anchor.key,
-      },
-      matchedKeywords: matched,
-    })
-  }
-
-  return directions
+  return [
+    {
+      slug: slugify(`grounded-${primary}`) || 'grounded-direction',
+      label: 'Grounded Reading',
+      focusTerms: [primary, ...intent.themes].slice(0, 4),
+      pardes: 'peshat' as const,
+      chiastic: 'A' as const,
+    },
+    {
+      slug: slugify(`historical-${secondary}`) || 'historical-direction',
+      label: 'Historical Witness',
+      focusTerms: [secondary, primary, ...keywords].slice(0, 4),
+      pardes: 'remez' as const,
+      chiastic: 'B' as const,
+    },
+    {
+      slug: slugify(`integrated-${tertiary}`) || 'integrated-direction',
+      label: 'Integrated Practice',
+      focusTerms: [tertiary, secondary, ...intent.themes].slice(0, 4),
+      pardes: 'derash' as const,
+      chiastic: 'C' as const,
+    },
+  ].slice(0, DIRECTION_COUNT)
 }
 
-// ─── Public API ─────────────────────────────────────────────────────
-
-/**
- * Select ingredients for a Soul Audit submission.
- *
- * Replaces `generatePlanOutlines()` (30-60 seconds, LLM) with
- * deterministic keyword scoring (< 1 second, zero LLM calls).
- *
- * Returns 3 thematic directions, each with:
- * - Real Day 1 preview (scripture, teaching, reflection)
- * - Pre-selected candidates for Days 1-5
- * - Reasoning explaining why this direction was chosen
- */
 export function selectIngredients(
   responseText: string,
 ): IngredientSelectionResult {
   const intent = parseAuditIntent(responseText)
+  const keywords = extractKeywords(responseText)
+  const lenses = buildLenses(intent, keywords)
+  const rankedCandidates = rankCandidatesForInput({
+    input: responseText,
+    aiThemes: intent.themes,
+  })
+  const usedSeries = new Set<string>()
 
-  const directions = selectDirections(responseText, intent)
+  const directions: IngredientDirection[] = lenses.map((lens, index) => {
+    const rank = index + 1
+    const moduleAnchor = pickModuleAnchor({
+      ranked: rankedCandidates,
+      usedSeries,
+      fallbackIndex: index,
+    })
+    const scripture =
+      moduleAnchor?.scriptureReference || pickScripture(intent, index)
+    const retrieval = retrieveForDay({
+      themes: Array.from(new Set([...intent.themes, ...lens.focusTerms])),
+      scriptureAnchors: [scripture],
+      topic: `${responseText} ${lens.focusTerms.join(' ')}`,
+      limit: 15,
+      chiasticPosition: lens.chiastic,
+      pardesLevel: lens.pardes,
+    })
+
+    const topChunk = retrieval.chunks[0]
+    const sourceHints = Array.from(
+      new Set(retrieval.chunks.map((chunk) => chunk.title)),
+    ).slice(0, 4)
+
+    const focusPhrase = lens.focusTerms.slice(0, 2).join(' and ')
+    const teachingExcerpt = topChunk
+      ? takeWords(topChunk.content, MAX_PREVIEW_WORDS)
+      : takeWords(
+          moduleAnchor?.teachingText ||
+            `A reference-grounded reading on ${focusPhrase}.`,
+          MAX_PREVIEW_WORDS,
+        )
+
+    const scriptureText =
+      moduleAnchor?.scriptureText ||
+      (topChunk
+        ? takeWords(topChunk.content, 40)
+        : `Read ${scripture} slowly and mark the phrase that resists you and the phrase that restores you.`)
+
+    const confidenceRaw =
+      retrieval.totalScore / Math.max(1, retrieval.chunks.length * 8)
+    const confidence = Number(
+      Math.max(0.45, Math.min(0.99, confidenceRaw)).toFixed(3),
+    )
+
+    return {
+      id: `ai_primary:${lens.slug}:${rank}`,
+      rank,
+      title: `${lens.label}: ${toHeadline(focusPhrase || lens.label)}`,
+      question:
+        moduleAnchor?.reflectionPrompt ||
+        `What if this week focused on ${focusPhrase || 'faithful attention'} through ${scripture}?`,
+      reasoning:
+        sourceHints.length > 0
+          ? `Matched themes (${lens.focusTerms.slice(0, 3).join(', ')}) against reference witnesses including ${sourceHints.slice(0, 2).join(' and ')} with curated module anchors.`
+          : `Matched themes (${lens.focusTerms.slice(0, 3).join(', ')}) and built a reference-first direction with curated anchors.`,
+      scriptureAnchor: scripture,
+      directionSlug: lens.slug,
+      confidence,
+      day1Preview: {
+        title: `${toHeadline(focusPhrase || lens.label)} — Day 1`,
+        scriptureReference: scripture,
+        scriptureText,
+        teachingExcerpt,
+        reflectionPrompt: `Where does ${scripture} confront or clarify ${focusPhrase || 'your current burden'}?`,
+      },
+      matchedKeywords: lens.focusTerms,
+      referenceSourceHints: sourceHints,
+    }
+  })
 
   return {
     directions,

@@ -77,14 +77,10 @@ function personalizedBridge(
   userResponse: string,
   day: CuratedDayCandidate,
 ): string {
-  const snippet = userResponse.trim().slice(0, 280)
   const themes = focusPhrase(userResponse)
   const base = `Today in "${day.dayTitle}", take one concrete step with what you just read: ${day.takeawayText}`
-  if (!snippet && !themes) return base
-  if (!snippet) {
-    return `${base}\n\nBring your current tension around ${themes} honestly before God today.`
-  }
-  return `${base}\n\nYou wrote: "${snippet}"\n\nThat is not background noise — it is the raw material God works with. Bring that exact tension honestly before him today through ${day.scriptureReference}.`
+  if (!themes) return base
+  return `${base}\n\nThe tension around ${themes} is not background noise — it is the raw material God works with. Bring that honestly before him today through ${day.scriptureReference}.`
 }
 
 function expandedReflection(
@@ -106,7 +102,7 @@ function expandedReflection(
           .join('\n\n')
       : 'Stay with the text slowly. Let the Scripture name what you are carrying before you try to fix it.'
   const thematicLine = themes
-    ? `What you shared points to ${themes}. Read for where this passage addresses that directly.`
+    ? `The themes of ${themes} run through this passage. Read for where it addresses that directly.`
     : 'Read for the phrase that most clearly speaks to your present season.'
   return ensureMinimumLength(
     `${scriptureAnchor}\n\n${day.teachingText}\n\n${reflectionPromptLine}\n\n${thematicLine}\n\n${bridge}\n\n${contextualNote}`,
@@ -115,11 +111,11 @@ function expandedReflection(
 }
 
 function personalizedPrayerLine(userResponse: string): string {
-  const snippet = userResponse.trim().slice(0, 200)
-  if (!snippet) {
+  const themes = focusPhrase(userResponse)
+  if (!themes) {
     return 'Help me walk this faithfully, one step at a time.'
   }
-  return `You know what I am carrying — "${snippet}". I do not need to explain it to you. Meet me in it and lead me in truth.`
+  return `You already know the weight of ${themes}. I do not need to explain it to you. Meet me in it and lead me in truth.`
 }
 
 function expandedPrayer(
@@ -151,7 +147,7 @@ function expandedJournalPrompt(
   if (!base) return ''
   const themes = userResponse ? focusPhrase(userResponse) : ''
   const thematicLine = themes
-    ? `\nHow does ${day.scriptureReference} speak to what you named about ${themes}?`
+    ? `\nHow does ${day.scriptureReference} speak to the tension around ${themes}?`
     : ''
   return `${base}${thematicLine}\nWhat resistance do you notice in yourself, and what would faithful obedience look like in one sentence?\nWhich exact phrase from Scripture will you carry into today?`
 }
@@ -188,9 +184,9 @@ function buildModules(params: {
   if (themes) {
     modules.push({
       type: 'bridge',
-      heading: 'Your Connection',
+      heading: 'Pastoral Connection',
       content: {
-        connectionPoint: `What you shared points to ${themes}. This passage speaks directly to that tension.`,
+        connectionPoint: `The themes of ${themes} run through this passage. It speaks directly to that tension.`,
         modernApplication: personalizedBridge(userResponse, candidate),
       },
     })
@@ -398,8 +394,8 @@ function buildSabbathDay(
   const allRefs = scriptureRefs.join('; ')
   const themes = focusPhrase(userResponse)
   const thematicLine = themes
-    ? `This week you brought ${themes} before God.`
-    : 'This week you brought honest questions before God.'
+    ? `This week the themes of ${themes} have been before God.`
+    : 'This week honest questions have been before God.'
 
   return {
     day: 6,
@@ -447,8 +443,8 @@ function buildReviewDay(
   const anchorRef = scriptureRefs[scriptureRefs.length - 1] || 'Psalm 119:105'
   const themes = focusPhrase(userResponse)
   const thematicLine = themes
-    ? `You began this week wrestling with ${themes}.`
-    : 'You began this week with an honest question.'
+    ? `This week began with the tension of ${themes}.`
+    : 'This week began with an honest question.'
 
   return {
     day: 7,
@@ -553,7 +549,6 @@ export function buildOnboardingDay(params: {
   variant: OnboardingVariant
   onboardingDays: number
 }): CustomPlanDay {
-  const snippet = params.userResponse.trim().slice(0, 180)
   const firstDayTitle = params.firstDay.title
   const variantLabel =
     params.variant === 'wednesday_3_day'
@@ -576,14 +571,17 @@ export function buildOnboardingDay(params: {
       ? `Read this onboarding day now, then return daily for your ${params.onboardingDays}-day rhythm primer. Full cycle unlock begins Monday at 7:00 AM local time.`
       : 'Read this onboarding day now. Full cycle unlock begins Monday at 7:00 AM local time.'
 
+  const themes = focusPhrase(params.userResponse)
+  const thematicOpener = themes
+    ? `The season of ${themes} brought you here. `
+    : ''
+
   return {
     day: 0,
     title: `Onboarding: ${variantLabel}`,
     scriptureReference: params.firstDay.scriptureReference,
     scriptureText: params.firstDay.scriptureText,
-    reflection: snippet
-      ? `You shared: "${snippet}". ${intro}\n\nYour full 5-day curated path is already prepared. Start with this orientation and move into Day 1 with honesty.\n\nYour first day is "${firstDayTitle}".`
-      : `${intro}\n\nYour full 5-day curated path is already prepared. Start with this orientation and move into Day 1 with honesty.\n\nYour first day is "${firstDayTitle}".`,
+    reflection: `${thematicOpener}${intro}\n\nYour full 5-day curated path is already prepared. Start with this orientation and move into Day 1 with honesty.\n\nYour first day is "${firstDayTitle}".`,
     prayer:
       'Lord Jesus, steady my pace as I begin this path. Give me courage to be honest and faithful in each next step.',
     nextStep: `${nextStep} Keep this same daily reading window to build consistency.`,

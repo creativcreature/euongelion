@@ -38,7 +38,9 @@ export interface RetrievalRequest {
   scriptureAnchors: string[]
   topic: string
   excludeChunkIds?: string[]
-  limit: number
+  limit?: number
+  chiasticPosition?: 'A' | 'B' | 'C' | "B'" | "A'" | 'Sabbath' | 'Review'
+  pardesLevel?: 'peshat' | 'remez' | 'derash' | 'sod' | 'integrated'
 }
 
 export interface RetrievalResult {
@@ -61,6 +63,9 @@ const MAX_CHUNKS = 50_000
 const CHUNK_MIN_WORDS = 40
 const CHUNK_MAX_WORDS = 800
 const CHUNK_TARGET_WORDS = 400
+const MIN_RETRIEVAL_LIMIT = 15
+const DEFAULT_RETRIEVAL_LIMIT = 20
+const MAX_RETRIEVAL_LIMIT = 25
 
 const VALID_SOURCE_TYPES = new Set<ReferenceSourceType>([
   'commentary',
@@ -83,6 +88,59 @@ const CHUNKING_OPTIONS = {
   targetWords: CHUNK_TARGET_WORDS,
 }
 
+const CHIASTIC_HINTS: Record<
+  NonNullable<RetrievalRequest['chiasticPosition']>,
+  string[]
+> = {
+  A: ['opening', 'beginning', 'tension', 'question', 'context'],
+  B: ['struggle', 'conflict', 'complexity', 'testing', 'wilderness'],
+  C: ['pivot', 'center', 'revelation', 'cross', 'resurrection'],
+  "B'": ['application', 'practice', 'response', 'obedience', 'embody'],
+  "A'": ['resolution', 'assurance', 'hope', 'peace', 'completion'],
+  Sabbath: ['rest', 'stillness', 'silence', 'sabbath', 'delight'],
+  Review: ['summary', 'recap', 'remember', 'review', 'integrate'],
+}
+
+const PARDES_HINTS: Record<
+  NonNullable<RetrievalRequest['pardesLevel']>,
+  string[]
+> = {
+  peshat: ['literal', 'plain', 'context', 'grammar', 'historical'],
+  remez: ['symbol', 'pattern', 'typology', 'hint', 'allusion'],
+  derash: ['application', 'ethics', 'practice', 'obedience', 'formation'],
+  sod: ['mystery', 'contemplation', 'prayer', 'wonder', 'presence'],
+  integrated: ['synthesis', 'integrated', 'whole', 'thread', 'together'],
+}
+
+const PARDES_SOURCE_BONUS: Record<
+  NonNullable<RetrievalRequest['pardesLevel']>,
+  Partial<Record<ReferenceSourceType, number>>
+> = {
+  peshat: {
+    bible: 2,
+    commentary: 2,
+  },
+  remez: {
+    theology: 2,
+    commentary: 1,
+  },
+  derash: {
+    commentary: 2,
+    theology: 1,
+  },
+  sod: {
+    theology: 2,
+    lexicon: 1,
+  },
+  integrated: {
+    bible: 1,
+    commentary: 1,
+    theology: 1,
+    lexicon: 1,
+    dictionary: 1,
+  },
+}
+
 // ─── Helpers ────────────────────────────────────────────────────────
 
 /** Extend base chunks with the normalized field used for scoring. */
@@ -91,6 +149,21 @@ function addNormalized(base: BaseChunk[]): ReferenceChunk[] {
     ...chunk,
     normalized: chunk.content.toLowerCase(),
   }))
+}
+
+function clampRetrievalLimit(limit: number | undefined): number {
+  const requested =
+    typeof limit === 'number' && Number.isFinite(limit)
+      ? Math.round(limit)
+      : DEFAULT_RETRIEVAL_LIMIT
+  return Math.max(MIN_RETRIEVAL_LIMIT, Math.min(MAX_RETRIEVAL_LIMIT, requested))
+}
+
+function isDisallowedDevotionalSource(source: string): boolean {
+  const normalized = source.replace(/\\/g, '/').toLowerCase()
+  return /content\/(approved|final|series-json)|devotional|wake-up|wakeup/.test(
+    normalized,
+  )
 }
 
 // ─── Corpus building ────────────────────────────────────────────────
@@ -129,6 +202,7 @@ export function buildChunkedCorpus(root: string): ReferenceChunk[] {
     }
 
     const sourceType = detectSourceType(file)
+    if (isDisallowedDevotionalSource(file)) continue
 
     // JSON files: try to extract text content
     if (file.endsWith('.json')) {
@@ -164,6 +238,7 @@ export function buildChunkedCorpus(root: string): ReferenceChunk[] {
             // Validate required fields — scoring reads priority, wordCount, sourceType
             if (!chunk || typeof chunk.content !== 'string' || !chunk.id)
               continue
+            if (isDisallowedDevotionalSource(chunk.source)) continue
             if (
               !VALID_SOURCE_TYPES.has(chunk.sourceType as ReferenceSourceType)
             )
@@ -212,6 +287,9 @@ function scoreChunk(
   queryKeywords: string[],
   scriptureKeywords: string[],
   themeKeywords: string[],
+  chiasticKeywords: string[],
+  pardesKeywords: string[],
+  pardesLevel: RetrievalRequest['pardesLevel'],
 ): number {
   let score = 0
 
@@ -230,8 +308,23 @@ function scoreChunk(
     if (chunk.normalized.includes(theme.toLowerCase())) score += 4
   }
 
+  // Chiastic position relevance (supports day-level/week-level arc)
+  for (const hint of chiasticKeywords) {
+    if (chunk.normalized.includes(hint)) score += 2
+  }
+
+  // PaRDeS-level relevance (supports interpretation progression)
+  for (const hint of pardesKeywords) {
+    if (chunk.normalized.includes(hint)) score += 2
+  }
+
   // Source priority boost
   score += chunk.priority
+
+  // PaRDeS source weighting (bias source types by interpretation layer)
+  if (pardesLevel) {
+    score += PARDES_SOURCE_BONUS[pardesLevel][chunk.sourceType] ?? 0
+  }
 
   // Deterministic tiebreaker
   score += (chunk.id.charCodeAt(chunk.id.length - 1) % 83) / 1000
@@ -271,6 +364,7 @@ function enforceDiversity(
  * Source diversity ensures no single source dominates the results.
  */
 export function retrieveForDay(params: RetrievalRequest): RetrievalResult {
+  const limit = clampRetrievalLimit(params.limit)
   const root = path.join(process.cwd(), 'content', 'reference')
   const corpus = buildChunkedCorpus(root)
 
@@ -296,20 +390,34 @@ export function retrieveForDay(params: RetrievalRequest): RetrievalResult {
       .filter((w) => w.length >= 2),
   )
   const themeKeywords = params.themes.filter((t) => t.length >= 3)
+  const chiasticKeywords = params.chiasticPosition
+    ? CHIASTIC_HINTS[params.chiasticPosition]
+    : []
+  const pardesKeywords = params.pardesLevel
+    ? PARDES_HINTS[params.pardesLevel]
+    : []
 
   const allScored = corpus
     .filter((chunk) => !excludeSet.has(chunk.id))
     .map((chunk) => ({
       chunk,
-      score: scoreChunk(chunk, queryKeywords, scriptureKeywords, themeKeywords),
+      score: scoreChunk(
+        chunk,
+        queryKeywords,
+        scriptureKeywords,
+        themeKeywords,
+        chiasticKeywords,
+        pardesKeywords,
+        params.pardesLevel,
+      ),
     }))
     .filter((entry) => entry.score > 0)
     .sort((a, b) => b.score - a.score)
 
   // Enforce source diversity: max 4 chunks from any single source file.
   // This prevents one large commentary from monopolizing the results.
-  const maxPerSource = Math.max(3, Math.ceil(params.limit / 5))
-  const scored = enforceDiversity(allScored, params.limit, maxPerSource)
+  const maxPerSource = Math.max(3, Math.ceil(limit / 5))
+  const scored = enforceDiversity(allScored, limit, maxPerSource)
 
   // Coverage report
   const allChunkContent = scored.map((s) => s.chunk.normalized).join(' ')

@@ -233,7 +233,7 @@ function buildAiReasoning(params: {
   }
 
   if (snippet) {
-    return `Built from curated modules in ${params.candidate.seriesTitle}, tuned to what you shared ("${snippet}").`
+    return `Built from curated modules in ${params.candidate.seriesTitle}, tuned to the reflection focus ("${snippet}").`
   }
 
   return `Built from curated modules in ${params.candidate.seriesTitle} for this season.`

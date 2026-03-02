@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "next dev --port 3333",
     "generate:artwork-manifest": "node scripts/generate-artwork-manifest.mjs",
+    "generate:reference-index": "tsx scripts/build-reference-index.ts",
+    "expand:reference-index": "tsx scripts/expand-reference-index.ts",
     "build": "node scripts/check-node-version.mjs && node scripts/generate-artwork-manifest.mjs && next build --webpack",
     "start": "next start --port 3333",
     "ios:sync": "npx cap sync ios",

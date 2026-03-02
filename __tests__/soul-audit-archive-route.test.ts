@@ -59,14 +59,12 @@ describe('GET /api/soul-audit/archive', () => {
     }
 
     expect(payload.ok).toBe(true)
-    expect(payload.archive[0]?.route).toBe(
-      '/soul-audit/results?planToken=plan-abc',
-    )
+    expect(payload.archive[0]?.route).toBe('/soul-audit/plan/plan-abc')
     expect(payload.archive[0]?.days[0]?.route).toBe(
-      '/soul-audit/results?planToken=plan-abc&day=1',
+      '/soul-audit/plan/plan-abc?day=1',
     )
     expect(payload.archive[0]?.days[1]?.route).toBe(
-      '/soul-audit/results?planToken=plan-abc&day=2',
+      '/soul-audit/plan/plan-abc?day=2',
     )
   })
 })

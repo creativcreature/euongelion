@@ -25,7 +25,7 @@ const HOW_STEPS = [
   },
   {
     title: '3. Now Walk It Out.',
-    body: 'Get your curated 5-day plan and take one faithful step each day.',
+    body: 'Get your reference-grounded 5-day plan and take one faithful step each day.',
     image: '/images/illustrations/euangelion-homepage-engraving-11.svg',
   },
 ]

@@ -183,7 +183,7 @@ export async function POST(request: NextRequest) {
       .slice(0, DIRECTION_COUNT)
       .map((direction) => ({
         id: direction.id,
-        slug: direction.seriesSlug,
+        slug: direction.directionSlug,
         kind: 'ai_primary' as const,
         rank: direction.rank,
         title: direction.title,
@@ -194,7 +194,6 @@ export async function POST(request: NextRequest) {
           verse: direction.scriptureAnchor,
           verseText: direction.day1Preview.scriptureText,
           paragraph: direction.day1Preview.teachingExcerpt,
-          curationSeed: direction.curationSeed,
         },
       }))
 

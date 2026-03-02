@@ -70,11 +70,7 @@ const submitPayload: SoulAuditSubmitResponseV2 = {
   policy: {
     noAccountRequired: true,
     maxAuditsPerCycle: 3,
-    optionSplit: {
-      aiPrimary: 3,
-      curatedPrefab: 2,
-      total: 5,
-    },
+    directionCount: 3,
   },
 }
 

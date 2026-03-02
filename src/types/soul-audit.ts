@@ -54,11 +54,7 @@ export interface SoulAuditSubmitResponseV2 {
   policy: {
     noAccountRequired: true
     maxAuditsPerCycle: number
-    optionSplit: {
-      aiPrimary: number
-      curatedPrefab: number
-      total: number
-    }
+    directionCount: number
   }
 }
 
@@ -100,6 +96,11 @@ export interface SoulAuditSelectRequest {
   essentialAccepted?: boolean
   analyticsOptIn?: boolean
   crisisAcknowledged?: boolean
+  devotionalDepthPreference?:
+    | 'short_5_7'
+    | 'medium_20_30'
+    | 'long_45_60'
+    | 'variable'
   timezone?: string
   timezoneOffsetMinutes?: number
 }
@@ -182,6 +183,7 @@ export interface DevotionalModule {
 export interface CompositionReport {
   referencePercentage: number
   generatedPercentage: number
+  modulePercentage?: number
   sources: string[]
 }
 

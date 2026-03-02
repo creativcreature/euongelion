@@ -15,7 +15,7 @@ const CURRENT_ROUTE_MAX_AGE = 30 * 24 * 60 * 60
 function normalizeCurrentRoute(value: string | undefined): string | null {
   if (!value) return null
 
-  if (/^\/soul-audit\/results\?planToken=[a-f0-9-]+(&day=\d+)?$/i.test(value)) {
+  if (/^\/soul-audit\/plan\/[a-f0-9-]+(\?day=\d+)?$/i.test(value)) {
     return value
   }
   if (/^\/series\/[a-z0-9-]+$/i.test(value)) {

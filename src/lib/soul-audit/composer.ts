@@ -6,11 +6,11 @@
  *
  * Source balance (non-negotiable):
  *   80% reference library — commentary chunks, theological scholarship
- *   15% LLM-generated — connecting tissue, transitions, structural coherence
- *   5% pre-existing devotional modules — scripture texts, prayer anchors
+ *   15% generated connecting tissue — transitions and structural coherence
+ *   5% module anchors — scripture/prayer/reflection seeds from curated modules
  *
  * The LLM receives pre-selected ingredients and weaves them into flowing
- * prose. It composes from curated material, not from its training data.
+ * prose. It composes from RAG references with a light curated-module anchor.
  *
  * Fractal chiastic structure:
  *   Day-level: A-B-C-B'-A' within each day's content
@@ -29,7 +29,6 @@ import type {
   CustomPlanDay,
   DevotionalDayEndnote,
 } from '@/types/soul-audit'
-import type { CuratedDayCandidate } from './curation-engine'
 import type { ParsedAuditIntent } from '@/lib/brain/intent-parser'
 
 // ─── Types ──────────────────────────────────────────────────────────
@@ -41,8 +40,8 @@ export interface ComposeDayParams {
   chiasticPosition: ChiasticPosition
   /** PaRDeS interpretation level for this day. */
   pardesLevel: 'peshat' | 'remez' | 'derash' | 'sod' | 'integrated'
-  /** The curated candidate anchoring this day's content. */
-  candidate: CuratedDayCandidate
+  /** The day seed anchoring this composition. */
+  candidate: CompositionSeed
   /** User's original reflection text. */
   userResponse: string
   /** Parsed intent from the user's reflection. */
@@ -62,10 +61,26 @@ export interface ComposeDayResult {
   usedChunkIds: string[]
 }
 
+export interface CompositionSeed {
+  key: string
+  seriesSlug: string
+  seriesTitle: string
+  sourcePath: string
+  dayNumber: number
+  dayTitle: string
+  scriptureReference: string
+  scriptureText: string
+  teachingText: string
+  reflectionPrompt: string
+  prayerText: string
+  takeawayText: string
+  searchText: string
+}
+
 // ─── Constants ──────────────────────────────────────────────────────
 
 const READING_WPM = 150
-const MIN_WORD_TARGET = 1200
+const MIN_WORD_TARGET = 4000
 const MAX_WORD_TARGET = 6000
 
 /** Chiastic positions for a 5-day devotional arc. */
@@ -85,6 +100,9 @@ const DEFAULT_CHUNK_LIMIT = 20
 
 /** Maximum chars per reference chunk in the prompt context. */
 const MAX_CHUNK_CHARS = 1200
+const REFERENCE_RATIO = 0.8
+const GENERATED_RATIO = 0.15
+const MODULE_RATIO = 0.05
 
 // ─── Length Calculations ─────────────────────────────────────────────
 
@@ -99,6 +117,13 @@ function estimateMaxOutputTokens(wordTarget: number): number {
 
 function wordCountEstimate(text: string): number {
   return text.split(/\s+/).filter(Boolean).length
+}
+
+function takeWordBudget(text: string, budget: number): string {
+  if (budget <= 0) return ''
+  const words = text.split(/\s+/).filter(Boolean)
+  if (words.length <= budget) return text.trim()
+  return `${words.slice(0, budget).join(' ').trim()}...`
 }
 
 // ─── Prompt Building ────────────────────────────────────────────────
@@ -160,10 +185,10 @@ function buildComposerSystemPrompt(params: {
 
 VOICE: 60% warm, 40% authoritative. No exclamation marks. No clichés. Honest about difficulty. A thoughtful pastor-scholar who reads widely and writes with care.
 ${taxonomyBlock}
-SOURCE BALANCE (non-negotiable):
+SOURCE GROUNDING (non-negotiable):
 - 80% of your output must come DIRECTLY from the provided reference material. Quote, paraphrase, integrate, and build upon these sources. Every substantial theological claim must be grounded in a provided reference excerpt or Scripture.
-- 15% is your connecting tissue: transitions, structural coherence, interpretive framing. This generated text must be derived FROM the reference material, not from your training data.
-- 5% comes from the provided curated module anchors (scripture text, prayer, reflection prompt). These are your skeleton.
+- 15% may be connective tissue: transitions, structural coherence, interpretive framing. This generated text must be derived FROM the reference material, not from your training data.
+- 5% comes from the provided module anchors (scripture/prayer/reflection seed lines). Use them sparingly as scaffolding, not as copied devotional body text.
 - Do NOT generate theological content from your training data. If the references don't cover a point, acknowledge the gap rather than filling it with ungrounded claims.
 
 THEOLOGY: Nicene orthodoxy baseline. All traditions represented fairly. Scripture is primary authority. Acknowledge genuine uncertainty. No prosperity gospel, no manipulation.
@@ -200,7 +225,7 @@ RULES: Real Scripture references only. Accurate quotes and attribution. Correct 
 }
 
 function buildComposerUserPrompt(params: {
-  candidate: CuratedDayCandidate
+  candidate: CompositionSeed
   userResponse: string
   referenceChunks: ReferenceChunk[]
   pardesLevel: string
@@ -212,19 +237,19 @@ function buildComposerUserPrompt(params: {
   parts.push(`USER'S REFLECTION (use as interpretive lens — do NOT quote back):
 ${params.userResponse.slice(0, 500)}`)
 
-  // Curated module anchors (the 5% skeleton)
+  // Day anchors (5% scaffolding from curated module seeds)
   parts.push(`
-CURATED ANCHORS (5% — your structural skeleton):
+DAY ANCHORS (5% scaffolding only):
 Scripture: ${params.candidate.scriptureReference}
 Scripture text: ${params.candidate.scriptureText.slice(0, 600)}
 Reflection prompt: ${params.candidate.reflectionPrompt}
 Prayer anchor: ${params.candidate.prayerText.slice(0, 400)}
 Takeaway: ${params.candidate.takeawayText}`)
 
-  // Reference material (the 80% — the substance)
+  // Reference material (the substance)
   if (params.referenceChunks.length > 0) {
     parts.push(`
-REFERENCE MATERIAL (80% — integrate these as the substance of your devotional):`)
+REFERENCE MATERIAL (primary source basis of the devotional):`)
 
     for (let i = 0; i < params.referenceChunks.length; i++) {
       const chunk = params.referenceChunks[i]
@@ -252,27 +277,10 @@ function buildCompositionReport(params: {
   referenceChunks: ReferenceChunk[]
   totalWords: number
 }): CompositionReport {
-  const referenceWords = params.referenceChunks.reduce(
-    (sum, chunk) => sum + chunk.wordCount,
-    0,
-  )
-
-  // Estimate: reference material constitutes ~80% when available
-  const referencePercentage =
-    params.referenceChunks.length > 0
-      ? Math.min(
-          85,
-          Math.max(
-            60,
-            Math.round(
-              (referenceWords /
-                Math.max(1, params.totalWords + referenceWords)) *
-                100,
-            ),
-          ),
-        )
-      : 0
-  const generatedPercentage = 100 - referencePercentage
+  const hasReference = params.referenceChunks.length > 0
+  const referencePercentage = hasReference ? 80 : 0
+  const generatedPercentage = hasReference ? 15 : 95
+  const modulePercentage = 5
 
   const sources = Array.from(
     new Set(params.referenceChunks.map((chunk) => chunk.title)),
@@ -281,6 +289,7 @@ function buildCompositionReport(params: {
   return {
     referencePercentage,
     generatedPercentage,
+    modulePercentage,
     sources,
   }
 }
@@ -320,7 +329,7 @@ function buildEndnotes(params: {
   notes.push({
     id: notes.length + 1,
     source: 'Composition',
-    note: 'Curated content from verified theological sources, composed with interpretive framing.',
+    note: 'Composed from reference witnesses with 80/15/5 balance (reference/transitions/module anchors).',
   })
 
   return notes
@@ -404,7 +413,7 @@ function parseComposedDay(raw: string): ParsedComposition | null {
  * Compose a single devotional day from pre-selected ingredients.
  *
  * One LLM call, 5-8 seconds. Produces 4,000-6,000 words of flowing
- * prose grounded in 80% reference material.
+ * prose grounded in RAG reference material with light module anchors.
  */
 export async function composeDay(
   params: ComposeDayParams,
@@ -420,6 +429,8 @@ export async function composeDay(
       topic: `${params.userResponse} ${params.candidate.teachingText}`,
       excludeChunkIds: params.excludeChunkIds,
       limit: DEFAULT_CHUNK_LIMIT,
+      chiasticPosition: params.chiasticPosition,
+      pardesLevel: params.pardesLevel,
     })
     chunks = retrieval.chunks
   }
@@ -482,10 +493,17 @@ export async function composeDay(
       usedChunkIds: chunks.map((c) => c.id),
     }
   }
+  const actualWords = wordCountEstimate(parsed.reflection)
+  if (actualWords < MIN_WORD_TARGET || actualWords > MAX_WORD_TARGET) {
+    return {
+      day: buildDeterministicDay(paramsWithChunks),
+      usedChunkIds: chunks.map((c) => c.id),
+    }
+  }
 
   const compositionReport = buildCompositionReport({
     referenceChunks: chunks,
-    totalWords: parsed.totalWords,
+    totalWords: actualWords,
   })
 
   const endnotes = buildEndnotes({
@@ -507,7 +525,7 @@ export async function composeDay(
       journalPrompt: parsed.journalPrompt,
       chiasticPosition: params.chiasticPosition,
       endnotes,
-      totalWords: parsed.totalWords,
+      totalWords: actualWords,
       targetLengthMinutes: Math.round(wordTarget / READING_WPM),
       generationStatus: 'ready',
       compositionReport,
@@ -531,68 +549,71 @@ export async function composeDay(
 export function buildDeterministicDay(params: ComposeDayParams): CustomPlanDay {
   const chunks = params.referenceChunks
   const candidate = params.candidate
+  const wordTarget = clampWordTarget(params.targetWordCount)
+  const referenceWordBudget = Math.round(wordTarget * REFERENCE_RATIO)
+  const generatedWordBudget = Math.round(wordTarget * GENERATED_RATIO)
+  const moduleWordBudget = Math.round(wordTarget * MODULE_RATIO)
 
-  // ── Build the reflection essay from reference material ──
-  const sections: string[] = []
-
-  // Opening: ground in scripture
-  sections.push(
-    `${candidate.scriptureReference} reads: "${candidate.scriptureText.slice(0, 600)}"`,
+  const generatedOpen = takeWordBudget(
+    [
+      `${candidate.scriptureReference} frames this day with patient attention to what is true, difficult, and finally hopeful.`,
+      `The arc follows ${params.chiasticPosition} in the week-level chiasm and ${params.pardesLevel} in interpretive focus.`,
+      'Read the witnesses below as one coherent conversation rather than isolated notes.',
+    ].join(' '),
+    Math.round(generatedWordBudget / 2),
   )
-  sections.push('')
+  const moduleAnchor = takeWordBudget(
+    [
+      candidate.scriptureText,
+      candidate.reflectionPrompt,
+      candidate.prayerText,
+      candidate.takeawayText,
+    ].join(' '),
+    moduleWordBudget,
+  )
+  const generatedClose = takeWordBudget(
+    [
+      'Hold the center of this day and return to the opening question with changed understanding.',
+      'Let the text lead into prayerful obedience rather than analysis alone.',
+    ].join(' '),
+    Math.round(generatedWordBudget / 2),
+  )
 
-  if (chunks.length > 0) {
-    // Group chunks by source type for structured flow
-    const commentaryChunks = chunks.filter((c) => c.sourceType === 'commentary')
-    const theologyChunks = chunks.filter((c) => c.sourceType === 'theology')
-    const bibleChunks = chunks.filter((c) => c.sourceType === 'bible')
-    const lexiconChunks = chunks.filter((c) => c.sourceType === 'lexicon')
-    const otherChunks = chunks.filter(
+  const orderedChunks = [
+    ...chunks.filter((c) => c.sourceType === 'bible'),
+    ...chunks.filter((c) => c.sourceType === 'commentary'),
+    ...chunks.filter((c) => c.sourceType === 'theology'),
+    ...chunks.filter((c) => c.sourceType === 'lexicon'),
+    ...chunks.filter(
       (c) =>
+        c.sourceType !== 'bible' &&
         c.sourceType !== 'commentary' &&
         c.sourceType !== 'theology' &&
-        c.sourceType !== 'bible' &&
         c.sourceType !== 'lexicon',
+    ),
+  ]
+  const referenceSections: string[] = []
+  let referenceWords = 0
+  for (const chunk of orderedChunks) {
+    if (referenceWords >= referenceWordBudget) break
+    const remaining = referenceWordBudget - referenceWords
+    const excerpt = takeWordBudget(
+      chunk.content.slice(0, MAX_CHUNK_CHARS),
+      remaining,
     )
-
-    // Biblical context (if available)
-    for (const chunk of bibleChunks.slice(0, 3)) {
-      sections.push(chunk.content.slice(0, MAX_CHUNK_CHARS))
-      sections.push('')
-    }
-
-    // Commentary and theological scholarship — the heart of the devotional
-    for (const chunk of commentaryChunks.slice(0, 8)) {
-      sections.push(chunk.content.slice(0, MAX_CHUNK_CHARS))
-      sections.push('')
-    }
-
-    // Theological depth
-    for (const chunk of theologyChunks.slice(0, 5)) {
-      sections.push(chunk.content.slice(0, MAX_CHUNK_CHARS))
-      sections.push('')
-    }
-
-    // Word studies and definitions
-    if (lexiconChunks.length > 0) {
-      for (const chunk of lexiconChunks.slice(0, 3)) {
-        sections.push(chunk.content.slice(0, MAX_CHUNK_CHARS))
-        sections.push('')
-      }
-    }
-
-    // Additional sources
-    for (const chunk of otherChunks.slice(0, 3)) {
-      sections.push(chunk.content.slice(0, MAX_CHUNK_CHARS))
-      sections.push('')
-    }
-  } else {
-    // No reference chunks available — use the curated teaching as seed
-    sections.push(candidate.teachingText)
-    sections.push('')
+    if (!excerpt) continue
+    referenceSections.push(excerpt)
+    referenceWords += wordCountEstimate(excerpt)
   }
 
-  const reflection = sections.join('\n').trim()
+  const sections = [
+    generatedOpen,
+    moduleAnchor,
+    ...referenceSections,
+    generatedClose,
+  ].filter((section) => section.length > 0)
+
+  const reflection = sections.join('\n\n').trim()
   const totalWords = wordCountEstimate(reflection)
 
   // ── Endnotes with real source attribution ──
@@ -642,7 +663,7 @@ export function buildDeterministicDay(params: ComposeDayParams): CustomPlanDay {
 }
 
 /**
- * Compose a Sabbath rest day (Day 6). Deterministic — no LLM needed.
+ * Compose a Sabbath rest day (Day 7 — Sunday). Deterministic — no LLM needed.
  * Minimal content + contemplative elements. No new teaching.
  */
 export function composeSabbath(params: {
@@ -661,7 +682,7 @@ export function composeSabbath(params: {
     .join(', ')
 
   return {
-    day: 6,
+    day: 7,
     dayType: 'sabbath',
     title: 'Sabbath Rest',
     scriptureReference: keyPassage,
@@ -693,7 +714,7 @@ export function composeSabbath(params: {
 }
 
 /**
- * Compose a Recap day (Day 7). Deterministic — no LLM needed.
+ * Compose a Recap day (Day 6 — Saturday). Deterministic — no LLM needed.
  * Summary of week's insights + guided reflection questions.
  */
 export function composeRecap(params: {
@@ -715,7 +736,7 @@ export function composeRecap(params: {
     keyScriptures[Math.floor(keyScriptures.length / 2)] || 'Philippians 1:6'
 
   return {
-    day: 7,
+    day: 6,
     dayType: 'review',
     title: 'Week in Review',
     scriptureReference: anchorScripture,
@@ -758,9 +779,11 @@ export function composeRecap(params: {
  * Returns 15-25 chunks, excluding previously used IDs.
  */
 export function retrieveIngredientsForDay(params: {
-  candidate: CuratedDayCandidate
+  candidate: CompositionSeed
   userResponse: string
   intent: ParsedAuditIntent
+  chiasticPosition?: ChiasticPosition
+  pardesLevel?: 'peshat' | 'remez' | 'derash' | 'sod' | 'integrated'
   excludeChunkIds?: string[]
   limit?: number
 }): ReferenceChunk[] {
@@ -770,6 +793,8 @@ export function retrieveIngredientsForDay(params: {
     topic: `${params.userResponse} ${params.candidate.teachingText} ${params.candidate.reflectionPrompt}`,
     excludeChunkIds: params.excludeChunkIds,
     limit: params.limit ?? DEFAULT_CHUNK_LIMIT,
+    chiasticPosition: params.chiasticPosition,
+    pardesLevel: params.pardesLevel,
   })
 
   return result.chunks

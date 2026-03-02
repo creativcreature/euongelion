@@ -13,6 +13,7 @@ import {
   withRequestIdHeaders,
 } from '@/lib/api-security'
 import { buildOnboardingDay } from '@/lib/soul-audit/curated-builder'
+import { parseAuditIntent } from '@/lib/brain/intent-parser'
 import {
   buildDeterministicDay,
   composeDay,
@@ -23,11 +24,13 @@ import {
   WEEK_PARDES,
 } from '@/lib/soul-audit/composer'
 import {
-  findCandidateBySeed,
-  getCuratedDayCandidates,
+  selectIngredients,
+  type IngredientDirection,
+} from '@/lib/soul-audit/ingredient-selector'
+import {
   rankCandidatesForInput,
+  type CuratedDayCandidate,
 } from '@/lib/soul-audit/curation-engine'
-import { parseAuditIntent } from '@/lib/brain/intent-parser'
 import {
   createPlan,
   getAllPlanDays,
@@ -55,7 +58,28 @@ const MAX_SELECT_REQUESTS_PER_MINUTE = 30
 const CURRENT_ROUTE_COOKIE = 'euangelion_current_route'
 const CURRENT_ROUTE_MAX_AGE = 30 * 24 * 60 * 60
 const CANDIDATES_PER_DIRECTION = 5
-const DEFAULT_WORD_TARGET = 4500
+
+type RagCandidate = {
+  key: string
+  seriesSlug: string
+  seriesTitle: string
+  sourcePath: string
+  dayNumber: number
+  dayTitle: string
+  scriptureReference: string
+  scriptureText: string
+  teachingText: string
+  reflectionPrompt: string
+  prayerText: string
+  takeawayText: string
+  searchText: string
+}
+
+type DevotionalDepthPreference =
+  | 'short_5_7'
+  | 'medium_20_30'
+  | 'long_45_60'
+  | 'variable'
 
 // ─── Helpers ─────────────────────────────────────────────────────────
 
@@ -140,6 +164,100 @@ function getInitialPlanDayNumber(
 
 function buildAiResultsRoute(planToken: string, day: number): string {
   return `/soul-audit/plan/${planToken}?day=${day}`
+}
+
+function normalizeDepthPreference(
+  value: unknown,
+): DevotionalDepthPreference | null {
+  if (
+    value === 'short_5_7' ||
+    value === 'medium_20_30' ||
+    value === 'long_45_60' ||
+    value === 'variable'
+  ) {
+    return value
+  }
+  return null
+}
+
+function wordTargetForDepth(params: {
+  intentDepth: 'introductory' | 'intermediate' | 'deep-study'
+  preference: DevotionalDepthPreference | null
+}): number {
+  const preference = params.preference
+  if (preference === 'short_5_7') return 4000
+  if (preference === 'medium_20_30') return 5000
+  if (preference === 'long_45_60') return 6000
+
+  if (params.intentDepth === 'introductory') return 4000
+  if (params.intentDepth === 'deep-study') return 6000
+  return 5000
+}
+
+function buildRagCandidates(params: {
+  runId: string
+  responseText: string
+  intent: ReturnType<typeof parseAuditIntent>
+  direction: IngredientDirection
+  moduleAnchors: CuratedDayCandidate[]
+}): RagCandidate[] {
+  const scripturePlan = Array.from(
+    new Set([
+      params.direction.scriptureAnchor,
+      ...params.intent.scriptureAnchors,
+      'Psalm 119:105',
+      'Philippians 4:6-7',
+      'Romans 8:1',
+      'James 1:5',
+      'Psalm 46:10',
+    ]),
+  )
+
+  return Array.from({ length: CANDIDATES_PER_DIRECTION }, (_, index) => {
+    const dayNumber = index + 1
+    const scriptureReference =
+      scripturePlan[index % scripturePlan.length] ?? scripturePlan[0]
+    const chiastic = WEEK_CHIASTIC[index] ?? "A'"
+    const pardes = WEEK_PARDES[index] ?? 'integrated'
+    const focus =
+      params.direction.matchedKeywords[
+        index % Math.max(1, params.direction.matchedKeywords.length)
+      ] ??
+      params.intent.themes[index % Math.max(1, params.intent.themes.length)] ??
+      'faithful endurance'
+    const moduleAnchor =
+      params.moduleAnchors[index % Math.max(1, params.moduleAnchors.length)] ??
+      null
+    const scripture = moduleAnchor?.scriptureReference || scriptureReference
+
+    return {
+      key: `rag:${params.runId}:${params.direction.directionSlug}:${dayNumber}`,
+      seriesSlug: moduleAnchor?.seriesSlug || params.direction.directionSlug,
+      seriesTitle: moduleAnchor?.seriesTitle || params.direction.title,
+      sourcePath: moduleAnchor?.sourcePath || 'reference-rag',
+      dayNumber,
+      dayTitle: moduleAnchor?.dayTitle || `Day ${dayNumber}: ${focus}`,
+      scriptureReference: scripture,
+      scriptureText:
+        moduleAnchor?.scriptureText ||
+        (dayNumber === 1
+          ? params.direction.day1Preview.scriptureText
+          : `Read ${scripture} slowly. Mark one phrase that names the tension and one phrase that names the promise.`),
+      teachingText:
+        moduleAnchor?.teachingText ||
+        `RAG-composed day (${chiastic}, ${pardes}) grounded in reference witnesses around ${focus}.`,
+      reflectionPrompt:
+        moduleAnchor?.reflectionPrompt ||
+        `Where does ${scripture} challenge or clarify ${focus}?`,
+      prayerText:
+        moduleAnchor?.prayerText ||
+        'Lord, form truth and courage in me as I read, reflect, and obey.',
+      takeawayText:
+        moduleAnchor?.takeawayText ||
+        'Write one concrete act of obedience from today’s reading and complete it before the day ends.',
+      searchText: `${params.responseText} ${focus} ${scripture}`.toLowerCase(),
+    }
+  })
 }
 
 // ─── POST Handler ────────────────────────────────────────────────────
@@ -351,70 +469,54 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // ─── Resolve curation seed → anchor candidate ───
-    const curationSeed =
-      option.preview &&
-      typeof option.preview === 'object' &&
-      option.preview.curationSeed &&
-      typeof option.preview.curationSeed === 'object' &&
-      typeof option.preview.curationSeed.seriesSlug === 'string' &&
-      typeof option.preview.curationSeed.dayNumber === 'number' &&
-      typeof option.preview.curationSeed.candidateKey === 'string'
-        ? option.preview.curationSeed
-        : null
+    // ─── Resolve selected RAG direction (no pre-authored devotional dependency) ───
+    const intent = parseAuditIntent(run.response_text)
+    const resolvedDirections = selectIngredients(run.response_text).directions
+    const selectedDirection =
+      resolvedDirections.find((direction) => direction.id === option.id) ??
+      resolvedDirections.find(
+        (direction) =>
+          direction.directionSlug === option.slug &&
+          direction.rank === option.rank,
+      ) ??
+      null
 
-    if (!curationSeed) {
+    if (!selectedDirection) {
       return jsonError({
         error:
-          'This option is missing curation data. Please choose another option or retry.',
-        code: 'CURATION_SEED_MISSING',
+          'This direction could not be reconstructed from your reflection. Please retry submission.',
+        code: 'DIRECTION_RECONSTRUCTION_FAILED',
         status: 422,
         requestId,
       })
     }
 
-    const anchorCandidate = findCandidateBySeed(curationSeed)
-    if (!anchorCandidate) {
-      return jsonError({
-        error:
-          'Curated content for this direction could not be found. Please choose another option or retry.',
-        code: 'ANCHOR_CANDIDATE_NOT_FOUND',
-        status: 422,
-        requestId,
-      })
-    }
-
-    // ─── Gather candidates for Days 1-5 ───
-    const allCandidates = getCuratedDayCandidates()
-    const seriesCandidates = allCandidates
-      .filter((c) => c.seriesSlug === anchorCandidate.seriesSlug)
-      .sort((a, b) => a.dayNumber - b.dayNumber)
+    const moduleAnchors = rankCandidatesForInput({
+      input: `${run.response_text} ${selectedDirection.matchedKeywords.join(' ')}`,
+      aiThemes: intent.themes,
+    })
+      .map((entry) => entry.candidate)
       .slice(0, CANDIDATES_PER_DIRECTION)
 
-    // Supplement from ranked candidates if series has fewer than 5 days
-    if (seriesCandidates.length < CANDIDATES_PER_DIRECTION) {
-      const intent = parseAuditIntent(run.response_text)
-      const ranked = rankCandidatesForInput({
-        input: run.response_text,
-        aiThemes: intent.themes,
-      })
-      const usedKeys = new Set(seriesCandidates.map((c) => c.key))
-      for (const entry of ranked) {
-        if (seriesCandidates.length >= CANDIDATES_PER_DIRECTION) break
-        if (usedKeys.has(entry.candidate.key)) continue
-        seriesCandidates.push(entry.candidate)
-        usedKeys.add(entry.candidate.key)
-      }
-    }
+    const seriesCandidates = buildRagCandidates({
+      runId,
+      responseText: run.response_text,
+      intent,
+      direction: selectedDirection,
+      moduleAnchors,
+    })
 
     // ─── Compose days from reference library ───
     // Day 1: LLM-composed (one call, 5-8s) — produces flowing prose from
     //   reference chunks. Falls back to deterministic if LLM unavailable.
     // Days 2-5: Deterministic (instant) — stored with reference chunks,
     //   can be LLM-upgraded later when user navigates to them.
-    const intent = parseAuditIntent(run.response_text)
     const usedChunkIds: string[] = []
     const composedDays: CustomPlanDay[] = []
+    const targetWordCount = wordTargetForDepth({
+      intentDepth: intent.depthPreference,
+      preference: normalizeDepthPreference(body.devotionalDepthPreference),
+    })
 
     for (
       let i = 0;
@@ -427,12 +529,25 @@ export async function POST(request: NextRequest) {
         candidate,
         userResponse: run.response_text,
         intent,
+        chiasticPosition: WEEK_CHIASTIC[i] ?? "B'",
+        pardesLevel: WEEK_PARDES[i] ?? 'integrated',
         excludeChunkIds: usedChunkIds,
+        limit: 20,
       })
+
+      if (chunks.length === 0 && process.env.NODE_ENV !== 'test') {
+        return jsonError({
+          error:
+            'Reference library is unavailable right now. Please retry in a moment.',
+          code: 'REFERENCE_LIBRARY_UNAVAILABLE',
+          status: 503,
+          requestId,
+        })
+      }
 
       console.info(
         `[soul-audit:select] Composing Day ${dayNumber} — candidate: ${candidate.key}, ` +
-          `chunks: ${chunks.length}, target: ${DEFAULT_WORD_TARGET}w`,
+          `chunks: ${chunks.length}, target: ${targetWordCount}w`,
       )
 
       const dayParams = {
@@ -442,9 +557,9 @@ export async function POST(request: NextRequest) {
         candidate,
         userResponse: run.response_text,
         intent,
-        targetWordCount: DEFAULT_WORD_TARGET,
+        targetWordCount,
         referenceChunks: chunks,
-        planTitle: option.title,
+        planTitle: selectedDirection.title,
       }
 
       if (dayNumber === 1) {
@@ -461,20 +576,20 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // ─── Days 6-7: sabbath + recap (deterministic, use composed days) ───
-    const sabbathDay = composeSabbath({
-      previousDays: composedDays,
-      planTitle: option.title,
-      userResponse: run.response_text,
-    })
-
+    // ─── Days 6-7: recap (Sat) + sabbath (Sun), deterministic ───
     const recapDay = composeRecap({
       previousDays: composedDays,
-      planTitle: option.title,
+      planTitle: selectedDirection.title,
       userResponse: run.response_text,
     })
 
-    const allDays = [...composedDays, sabbathDay, recapDay]
+    const sabbathDay = composeSabbath({
+      previousDays: composedDays,
+      planTitle: selectedDirection.title,
+      userResponse: run.response_text,
+    })
+
+    const allDays = [...composedDays, recapDay, sabbathDay]
 
     // ─── Timezone + schedule ───
     const timezone =
@@ -509,7 +624,7 @@ export async function POST(request: NextRequest) {
     const plan = await createPlan({
       runId,
       sessionToken,
-      seriesSlug: option.slug,
+      seriesSlug: selectedDirection.directionSlug,
       timezone,
       timezoneOffsetMinutes: offsetMinutes,
       startPolicy: schedule.startPolicy,
@@ -524,7 +639,7 @@ export async function POST(request: NextRequest) {
       runId,
       optionId: option.id,
       optionKind: 'ai_primary',
-      seriesSlug: option.slug,
+      seriesSlug: selectedDirection.directionSlug,
       planToken: plan.token,
     })
 
@@ -540,7 +655,7 @@ export async function POST(request: NextRequest) {
         getInitialPlanDayNumber(daysForPlan),
       ),
       planToken: plan.token,
-      seriesSlug: option.slug,
+      seriesSlug: selectedDirection.directionSlug,
       planDays: daysForPlan,
       onboardingMeta: toOnboardingMeta({
         startPolicy: schedule.startPolicy,

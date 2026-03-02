@@ -30,6 +30,12 @@ import {
 } from '@/components/soul-audit/helpers'
 import type { CustomPlanDay, PlanOnboardingMeta } from '@/types/soul-audit'
 
+function dayLabel(dayNumber: number, locked: boolean): string {
+  if (dayNumber === 6) return `DAY 6 · RECAP${locked ? ' · LOCKED' : ''}`
+  if (dayNumber === 7) return `DAY 7 · SABBATH${locked ? ' · LOCKED' : ''}`
+  return `DAY ${dayNumber}${locked ? ' · LOCKED' : ''}`
+}
+
 export default function PlanReaderPage() {
   const params = useParams()
   const searchParams = useSearchParams()
@@ -69,7 +75,7 @@ export default function PlanReaderPage() {
 
       try {
         const cachedPlanDays = loadPlanDays(token)
-        const requests = [1, 2, 3, 4, 5].map(async (day) => {
+        const requests = [1, 2, 3, 4, 5, 6, 7].map(async (day) => {
           const response = await fetch(
             `/api/devotional-plan/${token}/day/${day}?preview=1`,
           )
@@ -452,8 +458,7 @@ export default function PlanReaderPage() {
                           opacity: day.locked ? 0.72 : 1,
                         }}
                       >
-                        DAY {day.day}
-                        {day.locked ? ' \u00B7 LOCKED' : ''}
+                        {dayLabel(day.day, day.locked)}
                       </button>
                     )
                   })}
@@ -493,8 +498,7 @@ export default function PlanReaderPage() {
                           onClick={() => switchToDay(day.day)}
                         >
                           <p className="text-label vw-small text-gold">
-                            DAY {day.day}
-                            {day.locked ? ' \u00B7 LOCKED' : ''}
+                            {dayLabel(day.day, day.locked)}
                           </p>
                           <p className="vw-small text-secondary">
                             {typographer(day.title)}
@@ -592,7 +596,7 @@ export default function PlanReaderPage() {
                     }}
                   >
                     <p className="text-label vw-small mb-2 text-gold">
-                      DAY {selectedRailDay.day} · LOCKED
+                      {dayLabel(selectedRailDay.day, true)}
                     </p>
                     <h2 className="vw-heading-md mb-2">
                       {typographer(selectedRailDay.title)}

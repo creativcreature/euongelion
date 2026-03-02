@@ -102,11 +102,11 @@ export function sanitizeLegacyDisplayText(value: string): string {
   return value
     .replace(
       /you named this burden:\s*[""\u201C]?([^""\u201D]+)[""\u201D]?\s*/gi,
-      'You shared this reflection: "$1". ',
+      'Reflection focus: "$1". ',
     )
     .replace(
       /because you named\s*[""\u201C]?([^""\u201D]+)[""\u201D]?\s*/gi,
-      'Because you shared this reflection, ',
+      'Given this reflection focus, ',
     )
     .replace(/\s+/g, ' ')
     .trim()
@@ -157,15 +157,15 @@ export function onboardingDescription(
 ): string | null {
   if (!meta || meta.startPolicy !== 'wed_sun_onboarding') return null
   if (meta.onboardingVariant === 'wednesday_3_day') {
-    return 'You started on Wednesday. Use this 3-day primer to build rhythm before the full Monday cycle.'
+    return 'Starting mid-week. This 3-day primer builds rhythm before the full Monday cycle.'
   }
   if (meta.onboardingVariant === 'thursday_2_day') {
-    return 'You started on Thursday. Use this 2-day primer to settle your pace before Monday.'
+    return 'Starting Thursday. This 2-day primer settles the pace before Monday.'
   }
   if (meta.onboardingVariant === 'friday_1_day') {
-    return 'You started on Friday. This focused primer prepares your next step before Monday.'
+    return 'Starting Friday. This focused primer prepares the next step before Monday.'
   }
-  return 'You started on the weekend. This bridge day keeps momentum until Monday.'
+  return 'Starting on the weekend. This bridge day keeps momentum until Monday.'
 }
 
 // ---------------------------------------------------------------------------

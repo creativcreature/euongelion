@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
@@ -9,6 +10,7 @@ import FadeIn from '@/components/motion/FadeIn'
 import CrisisGate from '@/components/soul-audit/CrisisGate'
 import OptionCard from '@/components/soul-audit/OptionCard'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
+import { useSettingsStore } from '@/stores/settingsStore'
 import {
   SITE_CONSENT_UPDATED_EVENT,
   readSiteConsentFromDocument,
@@ -35,6 +37,9 @@ import type {
 export default function SoulAuditResultsPage() {
   const router = useRouter()
   const { lastInput } = useSoulAuditStore()
+  const devotionalDepthPreference = useSettingsStore(
+    (state) => state.devotionalDepthPreference,
+  )
 
   // --- Core state ---
   const [submitResult, setSubmitResult] =
@@ -53,6 +58,11 @@ export default function SoulAuditResultsPage() {
     string | null
   >(null)
 
+  // --- Guided reveal state ---
+  // Start showing only the recommended path (index 0).
+  // User can progressively reveal more.
+  const [revealedCount, setRevealedCount] = useState(1)
+
   // --- Reroll state ---
   const [rerollUsed, setRerollUsed] = useState(false)
   const [isRerolling, setIsRerolling] = useState(false)
@@ -68,6 +78,14 @@ export default function SoulAuditResultsPage() {
 
   // --- Site consent (for analytics opt-in) ---
   const [siteConsent, setSiteConsent] = useState<SiteConsent | null>(null)
+
+  // --- Active plan / pastoral nudge ---
+  const [activePlanRoute, setActivePlanRoute] = useState<string | null>(null)
+  const [showSwitchConfirm, setShowSwitchConfirm] = useState(false)
+  const [pendingSelectOptionId, setPendingSelectOptionId] = useState<
+    string | null
+  >(null)
+  const switchConfirmedRef = useRef(false)
 
   // --- Init effects ---
   useEffect(() => {
@@ -95,6 +113,20 @@ export default function SoulAuditResultsPage() {
     sync()
     window.addEventListener(SITE_CONSENT_UPDATED_EVENT, sync)
     return () => window.removeEventListener(SITE_CONSENT_UPDATED_EVENT, sync)
+  }, [])
+
+  // Check for active plan (pastoral nudge before mid-week switching)
+  useEffect(() => {
+    fetch('/api/soul-audit/current')
+      .then((res) => res.json())
+      .then((data: { hasCurrent?: boolean; route?: string }) => {
+        if (data.hasCurrent && data.route) {
+          setActivePlanRoute(data.route)
+        }
+      })
+      .catch(() => {
+        // no-op — proceed without active plan check
+      })
   }, [])
 
   // Redirect to /soul-audit if there's no submit result
@@ -131,8 +163,29 @@ export default function SoulAuditResultsPage() {
   )
 
   // --- Handlers ---
+  function confirmSwitch() {
+    switchConfirmedRef.current = true
+    setShowSwitchConfirm(false)
+    if (pendingSelectOptionId) {
+      void handleSelect(pendingSelectOptionId)
+    }
+  }
+
+  function cancelSwitch() {
+    setShowSwitchConfirm(false)
+    setPendingSelectOptionId(null)
+  }
+
   async function handleSelect(optionId: string) {
     if (!submitResult) return
+
+    // Pastoral nudge: if user has an active plan, confirm before switching
+    if (activePlanRoute && !switchConfirmedRef.current) {
+      setPendingSelectOptionId(optionId)
+      setShowSwitchConfirm(true)
+      return
+    }
+
     if (!crisisRequirementsMet) {
       setSelectionInlineError(
         submitResult.crisis.required && !crisisAcknowledged
@@ -163,6 +216,7 @@ export default function SoulAuditResultsPage() {
           essentialAccepted: true,
           analyticsOptIn: Boolean(siteConsent?.analyticsOptIn),
           crisisAcknowledged,
+          devotionalDepthPreference,
           timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
           timezoneOffsetMinutes: new Date().getTimezoneOffset(),
         }),
@@ -244,6 +298,7 @@ export default function SoulAuditResultsPage() {
       setCrisisAcknowledged(false)
       setExpandedReasoningOptionId(null)
       setRerollUsed(true)
+      setRevealedCount(1) // Reset to show only recommended
 
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
       sessionStorage.removeItem('soul-audit-selection-v2')
@@ -299,6 +354,7 @@ export default function SoulAuditResultsPage() {
       setCrisisAcknowledged(false)
       setExpandedReasoningOptionId(null)
       setRerollUsed(false)
+      setRevealedCount(1)
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
       sessionStorage.removeItem('soul-audit-selection-v2')
       sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
@@ -317,34 +373,37 @@ export default function SoulAuditResultsPage() {
     }
   }
 
-  function saveOptionForLater(option: AuditOptionPreview) {
-    if (!submitResult) return
-    const nextEntry: SavedAuditOption = {
-      id: option.id,
-      auditRunId: submitResult.auditRunId,
-      kind: option.kind,
-      title: option.title,
-      question: option.question,
-      reasoning: option.reasoning,
-      verse: option.preview?.verse,
-      verseText: option.preview?.verseText,
-      paragraph: option.preview?.paragraph,
-      savedAt: new Date().toISOString(),
-    }
-
-    setSavedOptions((current) => {
-      if (current.some((entry) => entry.id === nextEntry.id)) {
-        setSavedOptionsMessage('Already saved.')
-        window.setTimeout(() => setSavedOptionsMessage(null), 1600)
-        return current
+  const saveOptionForLater = useCallback(
+    (option: AuditOptionPreview) => {
+      if (!submitResult) return
+      const nextEntry: SavedAuditOption = {
+        id: option.id,
+        auditRunId: submitResult.auditRunId,
+        kind: option.kind,
+        title: option.title,
+        question: option.question,
+        reasoning: option.reasoning,
+        verse: option.preview?.verse,
+        verseText: option.preview?.verseText,
+        paragraph: option.preview?.paragraph,
+        savedAt: new Date().toISOString(),
       }
-      const next = [nextEntry, ...current].slice(0, 24)
-      persistSavedAuditOptions(next)
-      setSavedOptionsMessage('Saved for later.')
-      window.setTimeout(() => setSavedOptionsMessage(null), 1600)
-      return next
-    })
-  }
+
+      setSavedOptions((current) => {
+        if (current.some((entry) => entry.id === nextEntry.id)) {
+          setSavedOptionsMessage('Already saved.')
+          window.setTimeout(() => setSavedOptionsMessage(null), 1600)
+          return current
+        }
+        const next = [nextEntry, ...current].slice(0, 24)
+        persistSavedAuditOptions(next)
+        setSavedOptionsMessage('Saved for later.')
+        window.setTimeout(() => setSavedOptionsMessage(null), 1600)
+        return next
+      })
+    },
+    [submitResult],
+  )
 
   function removeSavedOption(id: string) {
     setSavedOptions((current) => {
@@ -398,12 +457,20 @@ export default function SoulAuditResultsPage() {
     )
   }
 
+  // Filter to AI primary directions only
+  const directions = displayOptions.filter(
+    (option) => option.kind === 'ai_primary',
+  )
+  const recommended = directions[0]
+  const alternatives = directions.slice(1)
+  const hasMoreToReveal = revealedCount < directions.length
+
   return (
     <div className="mock-home">
       <main id="main-content" className="mock-paper">
         <EuangelionShellHeader />
         <section className="mock-panel">
-          <div className="mx-auto w-full max-w-6xl shell-content-pad">
+          <div className="mx-auto w-full max-w-3xl shell-content-pad">
             <Breadcrumbs
               className="mb-7"
               items={[
@@ -417,10 +484,12 @@ export default function SoulAuditResultsPage() {
               <header className="mb-10 text-center">
                 <p className="text-label vw-small mb-4 text-gold">SOUL AUDIT</p>
                 <h1 className="vw-heading-md">
-                  {typographer('Choose your devotional path.')}
+                  {typographer('A path was found for you.')}
                 </h1>
                 <p className="vw-small mt-3 text-secondary">
-                  Tap a card to continue. Each option is clickable.
+                  {revealedCount === 1
+                    ? 'This is the direction that best matches your reflection.'
+                    : `${revealedCount} directions available. Choose where to begin.`}
                 </p>
               </header>
             </FadeIn>
@@ -434,6 +503,47 @@ export default function SoulAuditResultsPage() {
               />
             </FadeIn>
 
+            {/* Pastoral nudge: active plan warning */}
+            {showSwitchConfirm && activePlanRoute && (
+              <FadeIn>
+                <div
+                  className="mb-8 border p-5"
+                  style={{ borderColor: 'var(--color-border)' }}
+                >
+                  <p className="text-label vw-small mb-3 text-gold">
+                    ACTIVE PLAN
+                  </p>
+                  <p className="vw-body mb-4 text-secondary">
+                    {typographer(
+                      'You have a devotional path in progress. Starting a new path now will create a separate plan.',
+                    )}
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <button
+                      type="button"
+                      className="cta-major text-label vw-small px-4 py-2"
+                      onClick={confirmSwitch}
+                    >
+                      Continue with new path
+                    </button>
+                    <Link
+                      href={activePlanRoute}
+                      className="text-label vw-small link-highlight px-4 py-2"
+                    >
+                      Return to my plan
+                    </Link>
+                    <button
+                      type="button"
+                      className="text-label vw-small link-highlight"
+                      onClick={cancelSwitch}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </FadeIn>
+            )}
+
             {selectionInlineError && (
               <FadeIn>
                 <div className="soul-audit-selection-error mb-6" role="alert">
@@ -444,50 +554,85 @@ export default function SoulAuditResultsPage() {
               </FadeIn>
             )}
 
-            {/* 3 AI options */}
-            <FadeIn>
-              <section className="mb-6">
-                <div className="mb-4 flex items-center justify-between">
-                  <p className="text-label vw-small text-gold">
-                    3 MATCHED PATHS
+            {!optionSelectionReady && (
+              <p className="vw-small mb-4 text-secondary">
+                {submitResult.crisis.required && !crisisAcknowledged
+                  ? 'Acknowledge crisis resources to unlock option selection.'
+                  : 'Option selection is currently unavailable.'}
+              </p>
+            )}
+
+            {/* Recommended path (always visible) */}
+            {recommended && (
+              <FadeIn>
+                <section className="mb-8">
+                  <p className="text-label vw-small mb-3 text-gold">
+                    RECOMMENDED
                   </p>
-                  <p className="vw-small text-muted">
-                    {submitResult.remainingAudits} audits remaining this cycle
-                  </p>
+                  <OptionCard
+                    option={recommended}
+                    isSelecting={
+                      submitting && selectingOptionId === recommended.id
+                    }
+                    disabled={!optionSelectionReady}
+                    expandedReasoning={
+                      expandedReasoningOptionId === recommended.id ||
+                      revealedCount === 1
+                    }
+                    onSelect={(id) => void handleSelect(id)}
+                    onSave={saveOptionForLater}
+                    onToggleReasoning={(id) =>
+                      setExpandedReasoningOptionId((current) =>
+                        current === id ? null : id,
+                      )
+                    }
+                  />
+                </section>
+              </FadeIn>
+            )}
+
+            {/* "Explore another direction" button */}
+            {hasMoreToReveal && (
+              <FadeIn>
+                <div className="mb-8 text-center">
+                  <button
+                    type="button"
+                    className="text-label vw-small link-highlight border border-[var(--color-border)] px-6 py-3"
+                    onClick={() =>
+                      setRevealedCount((count) =>
+                        Math.min(count + 1, directions.length),
+                      )
+                    }
+                  >
+                    Explore another direction
+                  </button>
                 </div>
-                {!optionSelectionReady && (
-                  <p className="vw-small mb-4 text-secondary">
-                    {submitResult.crisis.required && !crisisAcknowledged
-                      ? 'Acknowledge crisis resources to unlock option selection.'
-                      : 'Option selection is currently unavailable.'}
+              </FadeIn>
+            )}
+
+            {/* Alternative paths (revealed progressively) */}
+            {alternatives.slice(0, revealedCount - 1).map((option, index) => (
+              <FadeIn key={option.id}>
+                <section className="mb-8">
+                  <p className="text-label vw-small mb-3 text-gold">
+                    {index === 0 ? 'ALTERNATIVE' : 'ANOTHER DIRECTION'}
                   </p>
-                )}
-                <div className="grid gap-4 md:grid-cols-3">
-                  {displayOptions
-                    .filter((option) => option.kind === 'ai_primary')
-                    .map((option) => (
-                      <OptionCard
-                        key={option.id}
-                        option={option}
-                        isSelecting={
-                          submitting && selectingOptionId === option.id
-                        }
-                        disabled={!optionSelectionReady}
-                        expandedReasoning={
-                          expandedReasoningOptionId === option.id
-                        }
-                        onSelect={(id) => void handleSelect(id)}
-                        onSave={saveOptionForLater}
-                        onToggleReasoning={(id) =>
-                          setExpandedReasoningOptionId((current) =>
-                            current === id ? null : id,
-                          )
-                        }
-                      />
-                    ))}
-                </div>
-              </section>
-            </FadeIn>
+                  <OptionCard
+                    option={option}
+                    isSelecting={submitting && selectingOptionId === option.id}
+                    disabled={!optionSelectionReady}
+                    expandedReasoning={expandedReasoningOptionId === option.id}
+                    onSelect={(id) => void handleSelect(id)}
+                    onSave={saveOptionForLater}
+                    onToggleReasoning={(id) =>
+                      setExpandedReasoningOptionId((current) =>
+                        current === id ? null : id,
+                      )
+                    }
+                  />
+                </section>
+              </FadeIn>
+            ))}
 
             {/* Saved paths */}
             {savedOptions.length > 0 && (
@@ -621,8 +766,15 @@ export default function SoulAuditResultsPage() {
               </div>
             )}
 
+            {/* Remaining audits info */}
+            <div className="mt-6 text-center">
+              <p className="vw-small text-muted">
+                {submitResult.remainingAudits} audits remaining this cycle
+              </p>
+            </div>
+
             {/* Reset + nav */}
-            <div className="mt-10 text-center">
+            <div className="mt-6 text-center">
               <button
                 type="button"
                 className="mock-reset-btn text-label"
