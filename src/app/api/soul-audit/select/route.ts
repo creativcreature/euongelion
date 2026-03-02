@@ -15,7 +15,6 @@ import {
 import { buildOnboardingDay } from '@/lib/soul-audit/curated-builder'
 import { parseAuditIntent } from '@/lib/brain/intent-parser'
 import {
-  buildDeterministicDay,
   composeDay,
   composeRecap,
   composeSabbath,
@@ -539,18 +538,11 @@ export async function POST(request: NextRequest) {
         planTitle: selectedDirection.title,
       }
 
-      if (dayNumber === 1) {
-        // Day 1: LLM-composed — the user reads this immediately.
-        // composeDay tries LLM first, falls back to deterministic.
-        const result = await composeDay(dayParams)
-        usedChunkIds.push(...result.usedChunkIds)
-        composedDays.push(result.day)
-      } else {
-        // Days 2-5: deterministic from reference chunks (instant).
-        const day = buildDeterministicDay(dayParams)
-        usedChunkIds.push(...chunks.map((c) => c.id))
-        composedDays.push(day)
-      }
+      // Days 1-5: composed from RAG witnesses with structural constraints.
+      // composeDay uses the composer model and falls back only if unavailable.
+      const result = await composeDay(dayParams)
+      usedChunkIds.push(...result.usedChunkIds)
+      composedDays.push(result.day)
     }
 
     // ─── Days 6-7: recap (Sat) + sabbath (Sun), deterministic ───

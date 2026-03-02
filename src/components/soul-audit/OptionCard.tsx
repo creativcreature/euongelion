@@ -37,12 +37,7 @@ export default function OptionCard({
   const dayCount = series?.days.length ?? 0
   const scriptureReference = option.preview?.verse?.trim() || 'Scripture'
   const scriptureSnippet = clampScriptureSnippet(
-    [
-      option.preview?.verseText?.trim() ?? '',
-      option.preview?.paragraph?.trim() ?? option.question,
-    ]
-      .filter(Boolean)
-      .join(' '),
+    option.preview?.verseText?.trim() || '',
     220,
   )
 
@@ -56,7 +51,8 @@ export default function OptionCard({
         data-variant="large"
         aria-disabled={disabled}
       >
-        <h3>{option.title}.</h3>
+        <h3>{option.title}</h3>
+        <p className="audit-option-question">{typographer(option.question)}</p>
         {keywords.length > 0 && (
           <p className="series-card-keywords">{keywords.join(' \u2022 ')}</p>
         )}
@@ -80,6 +76,11 @@ export default function OptionCard({
           {scriptureSnippet && (
             <p className="mock-scripture-lead-snippet">
               {typographer(scriptureSnippet)}
+            </p>
+          )}
+          {!scriptureSnippet && option.preview?.paragraph && (
+            <p className="mock-scripture-lead-snippet">
+              {typographer(option.preview.paragraph)}
             </p>
           )}
         </div>

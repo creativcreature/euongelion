@@ -125,6 +125,23 @@ const STOPWORDS = new Set([
   'your',
 ])
 
+const SCRIPTURE_FOCUS_TEXT: Record<string, string> = {
+  'Philippians 4:6-7':
+    'Do not be anxious about anything, but in everything, by prayer and petition, with thanksgiving, present your requests to God.',
+  'Psalm 34:18':
+    'The Lord is close to the brokenhearted and saves those who are crushed in spirit.',
+  'Proverbs 3:5-6':
+    'Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.',
+  '1 John 1:9':
+    'If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.',
+  'Psalm 119:105': 'Your word is a lamp to my feet and a light to my path.',
+  'Romans 8:1':
+    'There is now no condemnation for those who are in Christ Jesus.',
+  'Psalm 46:10': 'Be still, and know that I am God.',
+  'James 1:5':
+    'If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault.',
+}
+
 function collapseWhitespace(value: string): string {
   return value.replace(/\s+/g, ' ').trim()
 }
@@ -187,6 +204,10 @@ function firstSentence(text: string, maxWords: number): string {
   return takeWords(sentence, maxWords).replace(/[.!?]+$/g, '')
 }
 
+function trimPunctuation(value: string): string {
+  return value.replace(/[.!?]+$/g, '').trim()
+}
+
 function pickScripture(
   intent: ParsedAuditIntent,
   index: number,
@@ -222,6 +243,39 @@ function pickDistinctSeedChunks(chunks: ReferenceChunk[]): ReferenceChunk[] {
   }
 
   return picked
+}
+
+function resolveScriptureText(
+  scripture: string,
+  chunks: ReferenceChunk[],
+  seedChunk: ReferenceChunk | null,
+): string {
+  const exact = SCRIPTURE_FOCUS_TEXT[scripture]
+  if (exact) return exact
+
+  const bibleChunk =
+    chunks.find((chunk) => chunk.sourceType === 'bible') ??
+    (seedChunk?.sourceType === 'bible' ? seedChunk : null)
+  if (bibleChunk) {
+    return firstSentence(bibleChunk.content, 34)
+  }
+
+  return `Read ${scripture} slowly and note one phrase of truth, one phrase of comfort, and one phrase calling for action.`
+}
+
+function buildPreviewSummary(params: {
+  topicLabel: string
+  pathwayLabel: string
+  scripture: string
+  sourceHints: string[]
+}): string {
+  const sourceNote =
+    params.sourceHints.length > 0
+      ? `with witnesses such as ${params.sourceHints.slice(0, 2).join(' and ')}`
+      : 'with historical and theological witnesses from the reference library'
+  return collapseWhitespace(
+    `This pathway frames ${params.topicLabel} through ${params.pathwayLabel}, anchored in ${params.scripture}, ${sourceNote}.`,
+  )
 }
 
 function buildDirectionSeeds(params: {
@@ -350,15 +404,6 @@ export function selectIngredients(
     ).slice(0, 4)
 
     const focusPhrase = seed.focusTerms.slice(0, 2).join(' ')
-    const sourceLead = topChunk ? firstSentence(topChunk.content, 18) : ''
-
-    const teachingExcerpt = topChunk
-      ? takeWords(topChunk.content, MAX_PREVIEW_WORDS)
-      : takeWords(responseText, MAX_PREVIEW_WORDS)
-
-    const scriptureText = topChunk
-      ? takeWords(topChunk.content, 40)
-      : `Read ${scripture} slowly and mark the phrase that names your current question and the phrase that names the promise.`
 
     const confidenceRaw =
       retrieval.totalScore / Math.max(1, retrieval.chunks.length * 8)
@@ -384,20 +429,36 @@ export function selectIngredients(
       extractUserKeywords(sourceHints[0] ?? '').slice(0, 2).join(' ') ||
       seed.focusTerms[0] ||
       titleTopic
+    const titleTopicLabel = toHeadline(titleTopic)
+    const titlePathwayLabel = toHeadline(titlePathway)
+    const statementTitle = `This path explores ${trimPunctuation(titleTopicLabel)} through ${trimPunctuation(titlePathwayLabel)}.`
+    const previewQuestion = `How might ${scripture} reshape ${trimPunctuation(titleTopicLabel).toLowerCase()} through ${trimPunctuation(titlePathwayLabel).toLowerCase()} this week?`
+    const scriptureText = resolveScriptureText(
+      scripture,
+      retrieval.chunks,
+      seed.seedChunk,
+    )
+    const teachingExcerpt = takeWords(
+      buildPreviewSummary({
+        topicLabel: trimPunctuation(titleTopicLabel).toLowerCase(),
+        pathwayLabel: trimPunctuation(titlePathwayLabel).toLowerCase(),
+        scripture,
+        sourceHints,
+      }),
+      MAX_PREVIEW_WORDS,
+    )
 
     return {
       id: `ai_primary:${seed.slug}:${rank}`,
       rank,
-      title: `${toHeadline(titleTopic)}: ${toHeadline(titlePathway)}`,
-      question: sourceLead
-        ? `${toHeadline(titlePathway)} from ${scripture}: ${sourceLead}`
-        : `${toHeadline(titlePathway)} through ${scripture}`,
+      title: statementTitle,
+      question: previewQuestion,
       reasoning: `Matched input terms (${reasoningTerms}) against ${reasoningSources}.`,
       scriptureAnchor: scripture,
       directionSlug: seed.slug,
       confidence,
       day1Preview: {
-        title: `${toHeadline(titleTopic)} — ${toHeadline(titlePathway)} (Day 1)`,
+        title: `Day 1 focuses on ${trimPunctuation(titlePathwayLabel)}.`,
         scriptureReference: scripture,
         scriptureText,
         teachingExcerpt,

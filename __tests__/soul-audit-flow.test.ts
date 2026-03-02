@@ -70,6 +70,7 @@ vi.mock('@/lib/soul-audit/composer', () => {
 import { POST as submitHandler } from '@/app/api/soul-audit/submit/route'
 import { POST as selectHandler } from '@/app/api/soul-audit/select/route'
 import { POST as resetHandler } from '@/app/api/soul-audit/manage/route'
+import { GET as planDayHandler } from '@/app/api/devotional-plan/[token]/day/[n]/route'
 import {
   getLatestSelectionForSessionWithFallback,
   resetSessionAuditCount,
@@ -377,6 +378,73 @@ describe('Soul Audit staged flow', () => {
     expect(selectionPayload.planToken).toBeTruthy()
     expect(selectionPayload.route).toMatch(
       /\/soul-audit\/plan\/[^/?]+\?day=\d+/,
+    )
+  })
+
+  it('selected devotional can be loaded from the plan day endpoint', async () => {
+    const submitResponse = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        response: 'I need clarity, wisdom, and peace in this season.',
+      }) as never,
+    )
+    expect(submitResponse.status).toBe(200)
+    const submitPayload = (await submitResponse.json()) as {
+      auditRunId: string
+      options: Array<{ id: string }>
+    }
+
+    const selectionResponse = await selectHandler(
+      postJson('http://localhost/api/soul-audit/select', {
+        auditRunId: submitPayload.auditRunId,
+        optionId: submitPayload.options[0].id,
+        essentialAccepted: true,
+        analyticsOptIn: false,
+      }) as never,
+    )
+    expect(selectionResponse.status).toBe(200)
+    const selectionPayload = (await selectionResponse.json()) as {
+      planToken?: string
+      route?: string
+    }
+    expect(typeof selectionPayload.planToken).toBe('string')
+    expect(typeof selectionPayload.route).toBe('string')
+
+    const route = new URL(
+      selectionPayload.route ?? '/soul-audit/plan/unknown?day=1',
+      'http://localhost',
+    )
+    const dayNumber = Number.parseInt(route.searchParams.get('day') || '1', 10)
+    expect(Number.isFinite(dayNumber)).toBe(true)
+    const tokenFromRoute =
+      route.pathname.split('/').filter(Boolean).at(-1) ??
+      selectionPayload.planToken ??
+      'unknown'
+
+    const dayResponse = await planDayHandler(
+      {
+        url: `http://localhost/api/devotional-plan/${tokenFromRoute}/day/${dayNumber}`,
+        cookies: {
+          get() {
+            return undefined
+          },
+        },
+      } as never,
+      {
+        params: Promise.resolve({ token: tokenFromRoute, n: String(dayNumber) }),
+      } as never,
+    )
+
+    expect(dayResponse.status).toBe(200)
+    const dayPayload = (await dayResponse.json()) as {
+      locked?: boolean
+      day?: { title?: string; scriptureReference?: string } | null
+    }
+    expect(dayPayload.locked).toBe(false)
+    expect(typeof dayPayload.day?.title).toBe('string')
+    expect(dayPayload.day?.title?.trim().length).toBeGreaterThan(0)
+    expect(typeof dayPayload.day?.scriptureReference).toBe('string')
+    expect(dayPayload.day?.scriptureReference?.trim().length).toBeGreaterThan(
+      0,
     )
   })
 
