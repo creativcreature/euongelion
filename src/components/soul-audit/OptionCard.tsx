@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { typographer } from '@/lib/typographer'
 import { SERIES_DATA } from '@/data/series'
 import { SERIES_HERO } from '@/data/artwork-manifest'
+import { clampScriptureSnippet } from '@/lib/scripture-reference'
 import type { AuditOptionPreview } from '@/types/soul-audit'
 
 interface OptionCardProps {
@@ -34,26 +35,31 @@ export default function OptionCard({
   const series = SERIES_DATA[option.slug]
   const keywords = (series?.keywords ?? []).slice(0, 3)
   const dayCount = series?.days.length ?? 0
+  const scriptureReference = option.preview?.verse?.trim() || 'Scripture'
+  const scriptureSnippet = clampScriptureSnippet(
+    [
+      option.preview?.verseText?.trim() ?? '',
+      option.preview?.paragraph?.trim() ?? option.question,
+    ]
+      .filter(Boolean)
+      .join(' '),
+    220,
+  )
 
   return (
-    <article
-      className={`audit-option-card audit-option-card-large group relative overflow-hidden text-left${isSelecting ? ' animate-pulse' : ''}`}
-    >
+    <article className={`group relative${isSelecting ? ' animate-pulse' : ''}`}>
       <button
         type="button"
         disabled={disabled}
         onClick={() => onSelect(option.id)}
-        className={`w-full text-left ${disabled ? 'is-disabled' : 'cursor-pointer'}`}
+        className={`mock-featured-card w-full text-left ${disabled ? 'is-disabled' : 'cursor-pointer'}`}
+        data-variant="large"
         aria-disabled={disabled}
       >
-        {option.preview?.verse && (
-          <div className="mock-scripture-lead audit-option-pad">
-            <p className="mock-scripture-lead-reference">
-              {typographer(option.preview.verse)}
-            </p>
-          </div>
+        <h3>{option.title}.</h3>
+        {keywords.length > 0 && (
+          <p className="series-card-keywords">{keywords.join(' \u2022 ')}</p>
         )}
-        <h3 className="audit-option-title audit-option-pad">{option.title}.</h3>
         {hero && (
           <div className="series-card-thumbnail" aria-hidden="true">
             <Image
@@ -67,12 +73,17 @@ export default function OptionCard({
             />
           </div>
         )}
-        {keywords.length > 0 && (
-          <p className="series-card-keywords audit-option-pad">
-            {keywords.join(' \u2022 ')}
+        <div className="mock-scripture-lead">
+          <p className="mock-scripture-lead-reference">
+            {typographer(scriptureReference)}
           </p>
-        )}
-        <div className="mock-featured-actions audit-option-pad">
+          {scriptureSnippet && (
+            <p className="mock-scripture-lead-snippet">
+              {typographer(scriptureSnippet)}
+            </p>
+          )}
+        </div>
+        <div className="mock-featured-actions">
           <span className="mock-series-start text-label">
             {isSelecting
               ? 'BUILDING\u2026'
@@ -87,7 +98,10 @@ export default function OptionCard({
           )}
         </div>
       </button>
-      <div className="audit-option-meta audit-option-pad">
+      <div
+        className="audit-option-meta px-5 py-3"
+        style={{ borderTop: '1px solid var(--color-border)' }}
+      >
         <button
           type="button"
           className="audit-option-meta-link link-highlight mr-4"
@@ -108,7 +122,6 @@ export default function OptionCard({
           </p>
         )}
       </div>
-      <span className="audit-option-underline" />
     </article>
   )
 }
