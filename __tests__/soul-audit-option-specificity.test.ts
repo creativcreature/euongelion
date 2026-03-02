@@ -25,11 +25,11 @@ const CASES = [
 ] as const
 
 describe('Soul Audit option specificity', () => {
-  it('anchors direction copy to user language while keeping scripture-first previews', () => {
+  it('anchors direction copy to user language while keeping scripture-first previews', async () => {
     const input =
       'My rent is overdue, parenting exhaustion is crushing me, and layoff anxiety keeps me awake.'
 
-    const { directions } = selectIngredients(input)
+    const { directions } = await selectIngredients(input)
     expect(directions).toHaveLength(3)
 
     const copy = directions
@@ -57,9 +57,9 @@ describe('Soul Audit option specificity', () => {
 
   it(
     'keeps option cards directly relevant across common prompt types',
-    () => {
+    async () => {
       for (const testCase of CASES) {
-        const { directions } = selectIngredients(testCase.input)
+        const { directions } = await selectIngredients(testCase.input)
         expect(directions).toHaveLength(3)
         expect(
           new Set(directions.map((direction) => direction.title)).size,

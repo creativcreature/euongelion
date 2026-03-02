@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import {
+  createRequestId,
+  withRequestIdHeaders,
+} from '@/lib/api-security'
+import {
   getAllPlanDaysWithFallback,
   getLatestPlanInstanceForSessionWithFallback,
   getLatestSelectionForSessionWithFallback,
@@ -61,6 +65,7 @@ function aiRoute(planToken: string, planDays: Array<{ day_number: number }>) {
 }
 
 export async function GET() {
+  const requestId = createRequestId()
   const cookieStore = await cookies()
   const routeFromCookie = normalizeCurrentRoute(
     cookieStore.get(CURRENT_ROUTE_COOKIE)?.value,
@@ -123,6 +128,7 @@ export async function GET() {
     const response = NextResponse.json(
       {
         ok: true,
+        requestId,
         hasCurrent: true,
         route: current.route,
         selectionType: current.selectionType,
@@ -140,12 +146,13 @@ export async function GET() {
         path: '/',
       })
     }
-    return response
+    return withRequestIdHeaders(response, requestId)
   }
 
   const response = NextResponse.json(
     {
       ok: true,
+      requestId,
       hasCurrent: false,
     },
     { status: 200 },
@@ -153,5 +160,5 @@ export async function GET() {
   if (routeFromCookie) {
     response.cookies.delete(CURRENT_ROUTE_COOKIE)
   }
-  return response
+  return withRequestIdHeaders(response, requestId)
 }

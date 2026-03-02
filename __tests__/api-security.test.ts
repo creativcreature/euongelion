@@ -95,7 +95,7 @@ describe('API security helpers', () => {
     const response = new Response(JSON.stringify({ ok: true }), { status: 200 })
     const next = withRequestIdHeaders(response, requestId)
     expect(next.headers.get('X-Request-Id')).toBe(requestId)
-    expect(next.headers.get('Cache-Control')).toBe('no-store')
+    expect(next.headers.get('Cache-Control')).toContain('no-store')
   })
 
   it('returns standardized error payload with request id and headers', async () => {

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { crisisRequirement, detectCrisis } from '@/lib/soul-audit/crisis'
 import {
   createRequestId,
+  getDeploymentFingerprint,
   getClientKey,
   getRequestPath,
   isSafeAuditRunId,
@@ -164,19 +165,47 @@ export async function POST(request: NextRequest) {
     const priorRuns = await listAuditRunsForSessionWithFallback(sessionToken)
     const usedDirectionSlugs = new Set<string>()
     const usedDirectionTitles = new Set<string>()
+    const usedScriptureAnchors = new Set<string>()
     for (const run of priorRuns) {
       const priorOptions = await getAuditOptionsWithFallback(run.id)
       for (const option of priorOptions) {
         if (option.slug) usedDirectionSlugs.add(option.slug)
         if (option.title) usedDirectionTitles.add(option.title)
+        if (option.preview?.verse) usedScriptureAnchors.add(option.preview.verse)
       }
     }
 
-    // ─── Instant ingredient selection (< 1 second, zero LLM calls) ───
-    const { directions, intent } = selectIngredients(responseText, {
-      excludeDirectionSlugs: Array.from(usedDirectionSlugs),
-      excludeDirectionTitles: Array.from(usedDirectionTitles),
-    })
+    // ─── RAG-grounded direction selection (strict, input-specific) ───
+    let selection: Awaited<ReturnType<typeof selectIngredients>> | null = null
+    try {
+      selection = await selectIngredients(responseText, {
+        excludeDirectionSlugs: Array.from(usedDirectionSlugs),
+        excludeDirectionTitles: Array.from(usedDirectionTitles),
+        excludeScriptureAnchors: Array.from(usedScriptureAnchors),
+      })
+    } catch (selectionError) {
+      const code =
+        selectionError instanceof Error
+          ? selectionError.message
+          : 'DIRECTION_SELECTION_FAILED'
+      return jsonError({
+        error:
+          'Could not generate input-specific pathways from the reference library. Please retry.',
+        code,
+        status: 503,
+        requestId,
+      })
+    }
+    if (!selection) {
+      return jsonError({
+        error:
+          'Could not generate input-specific pathways from the reference library. Please retry.',
+        code: 'DIRECTION_SELECTION_FAILED',
+        status: 503,
+        requestId,
+      })
+    }
+    const { directions, intent } = selection
 
     console.info(
       `[soul-audit:submit] Ingredient selection — ${directions.length} directions, ` +
@@ -279,6 +308,8 @@ export async function POST(request: NextRequest) {
     const payload = {
       version: 'v2' as const,
       auditRunId: run.id,
+      requestId,
+      deploymentFingerprint: getDeploymentFingerprint(),
       runToken,
       ...(inputGuidance ? { inputGuidance } : {}),
       remainingAudits: Math.max(0, MAX_AUDITS_PER_CYCLE - nextCount),
@@ -287,6 +318,15 @@ export async function POST(request: NextRequest) {
       consentAccepted: false,
       crisis: crisisRequirement(crisisDetected),
       options: responseOptions,
+      diagnostics: {
+        retrievalStrategy: 'contextual-hybrid-bm25-rrf',
+        optionEvidence: directions.slice(0, DIRECTION_COUNT).map((direction) => ({
+          optionId: direction.id,
+          scriptureAnchor: direction.scriptureAnchor,
+          matchedKeywords: direction.matchedKeywords.slice(0, 8),
+          sourceHints: direction.referenceSourceHints.slice(0, 5),
+        })),
+      },
       policy: {
         noAccountRequired: true as const,
         maxAuditsPerCycle: MAX_AUDITS_PER_CYCLE,

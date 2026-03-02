@@ -1,4 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
+import {
+  createRequestId,
+  jsonError,
+  withRequestIdHeaders,
+} from '@/lib/api-security'
 import { isDayLockingEnabledForRequest } from '@/lib/day-locking'
 import {
   type DevotionalPlanInstanceRecord,
@@ -99,34 +104,47 @@ export async function GET(
   request: NextRequest,
   context: { params: Promise<{ token: string; n: string }> },
 ) {
+  const requestId = createRequestId()
+  const respond = (payload: Record<string, unknown>, status = 200) =>
+    withRequestIdHeaders(
+      NextResponse.json({ requestId, ...payload }, { status }),
+      requestId,
+    )
+
   try {
     const { token, n } = await context.params
     const dayNumber = Number.parseInt(n, 10)
     const previewRequested =
       new URL(request.url).searchParams.get('preview') === '1'
     if (!token || !Number.isFinite(dayNumber)) {
-      return NextResponse.json(
-        { error: 'Invalid token or day.' },
-        { status: 400 },
-      )
+      return jsonError({
+        error: 'Invalid token or day.',
+        status: 400,
+        requestId,
+      })
     }
 
     const instance = await getPlanInstanceWithFallback(token)
     if (!instance) {
-      return NextResponse.json({ error: 'Plan not found.' }, { status: 404 })
+      return jsonError({
+        error: 'Plan not found.',
+        status: 404,
+        requestId,
+      })
     }
 
     const dayLockingEnabled = isDayLockingEnabledForRequest(request)
     if (!dayLockingEnabled) {
       const unlockedDay = await resolvePlanDayContent(token, dayNumber)
       if (!unlockedDay) {
-        return NextResponse.json(
-          { error: 'Plan day not found.' },
-          { status: 404 },
-        )
+        return jsonError({
+          error: 'Plan day not found.',
+          status: 404,
+          requestId,
+        })
       }
 
-      return NextResponse.json(
+      return respond(
         {
           locked: false,
           archived: false,
@@ -135,7 +153,6 @@ export async function GET(
           policy: instance.start_policy,
           schedule: scheduleMeta(instance, false),
         },
-        { status: 200 },
       )
     }
 
@@ -150,7 +167,7 @@ export async function GET(
     if (!unlock.unlocked) {
       if (previewRequested && dayNumber > 0) {
         const previewDay = await resolvePlanDayContent(token, dayNumber)
-        return NextResponse.json(
+        return respond(
           {
             locked: true,
             archived: false,
@@ -167,11 +184,10 @@ export async function GET(
             policy: instance.start_policy,
             schedule: scheduleMeta(instance, true),
           },
-          { status: 200 },
         )
       }
 
-      return NextResponse.json(
+      return respond(
         {
           locked: true,
           message: unlock.message,
@@ -179,13 +195,13 @@ export async function GET(
           day: dayNumber,
           schedule: scheduleMeta(instance, true),
         },
-        { status: 423 },
+        423,
       )
     }
 
     if (unlock.onboarding && dayNumber === 0) {
       const onboardingPlanDay = await getPlanDayWithFallback(token, 0)
-      return NextResponse.json(
+      return respond(
         {
           locked: false,
           archived: false,
@@ -194,19 +210,19 @@ export async function GET(
           policy: instance.start_policy,
           schedule: scheduleMeta(instance, true),
         },
-        { status: 200 },
       )
     }
 
     const planDay = await resolvePlanDayContent(token, dayNumber)
     if (!planDay) {
-      return NextResponse.json(
-        { error: 'Plan day not found.' },
-        { status: 404 },
-      )
+      return jsonError({
+        error: 'Plan day not found.',
+        status: 404,
+        requestId,
+      })
     }
 
-    return NextResponse.json(
+    return respond(
       {
         locked: false,
         archived: unlock.archived,
@@ -215,13 +231,13 @@ export async function GET(
         policy: instance.start_policy,
         schedule: scheduleMeta(instance, true),
       },
-      { status: 200 },
     )
   } catch (error) {
     console.error('Plan day fetch error:', error)
-    return NextResponse.json(
-      { error: 'Unable to load plan day right now.' },
-      { status: 500 },
-    )
+    return jsonError({
+      error: 'Unable to load plan day right now.',
+      status: 500,
+      requestId,
+    })
   }
 }

@@ -311,7 +311,6 @@ export default function DevotionalChat({
     googleApiKey,
     minimaxApiKey,
     nvidiaKimiApiKey,
-    updateMessage,
   ])
 
   const sendMessage = useCallback(async () => {
@@ -506,6 +505,7 @@ export default function DevotionalChat({
     googleApiKey,
     minimaxApiKey,
     nvidiaKimiApiKey,
+    updateMessage,
   ])
 
   const latestAssistantMessage = [...contextMessages]

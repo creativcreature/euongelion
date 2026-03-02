@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import {
   createRequestId,
+  getDeploymentFingerprint,
   getClientKey,
   isSafeAuditOptionId,
   isSafeAuditRunId,
@@ -22,10 +23,7 @@ import {
   WEEK_CHIASTIC,
   WEEK_PARDES,
 } from '@/lib/soul-audit/composer'
-import {
-  selectIngredients,
-  type IngredientDirection,
-} from '@/lib/soul-audit/ingredient-selector'
+import { type IngredientDirection } from '@/lib/soul-audit/ingredient-selector'
 import {
   createPlan,
   getAllPlanDays,
@@ -195,17 +193,47 @@ function buildRagCandidates(params: {
   intent: ReturnType<typeof parseAuditIntent>
   direction: IngredientDirection
 }): RagCandidate[] {
+  const baseThemes =
+    params.direction.matchedKeywords.length > 0
+      ? params.direction.matchedKeywords
+      : params.intent.themes
+  const scriptureRetrieval = retrieveIngredientsForDay({
+    candidate: {
+      key: `scripture-plan:${params.runId}:${params.direction.directionSlug}`,
+      seriesSlug: params.direction.directionSlug,
+      seriesTitle: params.direction.title,
+      sourcePath: 'reference-rag',
+      dayNumber: 1,
+      dayTitle: params.direction.title,
+      scriptureReference: params.direction.scriptureAnchor,
+      scriptureText: params.direction.day1Preview.scriptureText,
+      teachingText: params.direction.day1Preview.teachingExcerpt,
+      reflectionPrompt: params.direction.day1Preview.reflectionPrompt,
+      prayerText: params.direction.reasoning,
+      takeawayText: params.direction.question,
+      searchText: params.responseText,
+    },
+    userResponse: params.responseText,
+    intent: params.intent,
+    chiasticPosition: 'A',
+    pardesLevel: 'peshat',
+    limit: 25,
+  })
   const scripturePlan = Array.from(
-    new Set([
-      params.direction.scriptureAnchor,
-      ...params.intent.scriptureAnchors,
-      'Psalm 119:105',
-      'Philippians 4:6-7',
-      'Romans 8:1',
-      'James 1:5',
-      'Psalm 46:10',
-    ]),
+    new Set(
+      [
+        params.direction.scriptureAnchor,
+        ...params.intent.scriptureAnchors,
+        ...scriptureRetrieval.flatMap((chunk) => chunk.scriptureRefs ?? []),
+      ]
+        .map((ref) => ref.trim())
+        .filter((ref) => ref.length > 0),
+    ),
   )
+
+  if (scripturePlan.length === 0) {
+    throw new Error('SCRIPTURE_PLAN_EMPTY')
+  }
 
   return Array.from({ length: CANDIDATES_PER_DIRECTION }, (_, index) => {
     const dayNumber = index + 1
@@ -214,11 +242,7 @@ function buildRagCandidates(params: {
     const chiastic = WEEK_CHIASTIC[index] ?? "A'"
     const pardes = WEEK_PARDES[index] ?? 'integrated'
     const focus =
-      params.direction.matchedKeywords[
-        index % Math.max(1, params.direction.matchedKeywords.length)
-      ] ??
-      params.intent.themes[index % Math.max(1, params.intent.themes.length)] ??
-      'faithful endurance'
+      baseThemes[index % Math.max(1, baseThemes.length)] ?? 'faithful study'
     const scripture = scriptureReference
 
     return {
@@ -232,7 +256,7 @@ function buildRagCandidates(params: {
       scriptureText:
         dayNumber === 1
           ? params.direction.day1Preview.scriptureText
-          : `Read ${scripture} slowly. Mark one phrase that names the tension and one phrase that names the promise.`,
+          : '',
       teachingText: `RAG-composed day (${chiastic}, ${pardes}) grounded in reference witnesses around ${focus}.`,
       reflectionPrompt: `Where does ${scripture} challenge or clarify ${focus}?`,
       prayerText:
@@ -417,6 +441,8 @@ export async function POST(request: NextRequest) {
       const existingPayload: SoulAuditSelectResponse = {
         ok: true,
         auditRunId: runId,
+        requestId,
+        deploymentFingerprint: getDeploymentFingerprint(),
         selectionType: existingSelection.option_kind,
         route: existingRoute,
         planToken: existingSelection.plan_token ?? undefined,
@@ -453,23 +479,41 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // ─── Resolve selected RAG direction (no pre-authored devotional dependency) ───
+    // ─── Resolve selected RAG direction from persisted option payload ───
     const intent = parseAuditIntent(run.response_text)
-    const resolvedDirections = selectIngredients(run.response_text).directions
-    const selectedDirection =
-      resolvedDirections.find((direction) => direction.id === option.id) ??
-      resolvedDirections.find(
-        (direction) =>
-          direction.directionSlug === option.slug &&
-          direction.rank === option.rank,
-      ) ??
-      null
+    const keywordPool = [
+      ...intent.themes,
+      ...run.response_text
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, ' ')
+        .split(/\s+/)
+        .filter((token) => token.length >= 3)
+        .slice(0, 8),
+    ]
+    const selectedDirection: IngredientDirection = {
+      id: option.id,
+      rank: option.rank,
+      title: option.title,
+      question: option.question,
+      reasoning: option.reasoning,
+      scriptureAnchor: option.preview?.verse?.trim() ?? '',
+      directionSlug: option.slug,
+      confidence: option.confidence,
+      day1Preview: {
+        title: option.title,
+        scriptureReference: option.preview?.verse?.trim() ?? '',
+        scriptureText: option.preview?.verseText?.trim() ?? '',
+        teachingExcerpt: option.preview?.paragraph?.trim() ?? '',
+        reflectionPrompt: option.question,
+      },
+      matchedKeywords: Array.from(new Set(keywordPool)),
+      referenceSourceHints: [],
+    }
 
-    if (!selectedDirection) {
+    if (!selectedDirection.scriptureAnchor) {
       return jsonError({
-        error:
-          'This direction could not be reconstructed from your reflection. Please retry submission.',
-        code: 'DIRECTION_RECONSTRUCTION_FAILED',
+        error: 'Selected option is missing scripture focus. Please retry.',
+        code: 'DIRECTION_SCRIPTURE_MISSING',
         status: 422,
         requestId,
       })
@@ -539,10 +583,31 @@ export async function POST(request: NextRequest) {
       }
 
       // Days 1-5: composed from RAG witnesses with structural constraints.
-      // composeDay uses the composer model and falls back only if unavailable.
-      const result = await composeDay(dayParams)
-      usedChunkIds.push(...result.usedChunkIds)
-      composedDays.push(result.day)
+      // If composition cannot be grounded/completed, fail clearly.
+      try {
+        const result = await composeDay(dayParams)
+        usedChunkIds.push(...result.usedChunkIds)
+        composedDays.push(result.day)
+      } catch (error) {
+        const code =
+          error instanceof Error ? error.message : 'COMPOSER_UNAVAILABLE'
+        if (code === 'REFERENCE_LIBRARY_UNAVAILABLE') {
+          return jsonError({
+            error:
+              'Reference library is unavailable right now. Please retry in a moment.',
+            code,
+            status: 503,
+            requestId,
+          })
+        }
+        return jsonError({
+          error:
+            'Unable to compose a new devotional path from references right now. Please retry shortly.',
+          code: 'COMPOSER_UNAVAILABLE',
+          status: 503,
+          requestId,
+        })
+      }
     }
 
     // ─── Days 6-7: recap (Sat) + sabbath (Sun), deterministic ───
@@ -618,6 +683,8 @@ export async function POST(request: NextRequest) {
     const payload: SoulAuditSelectResponse = {
       ok: true,
       auditRunId: runId,
+      requestId,
+      deploymentFingerprint: getDeploymentFingerprint(),
       selectionType: 'ai_primary',
       route: buildAiResultsRoute(
         plan.token,

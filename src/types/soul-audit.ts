@@ -39,6 +39,8 @@ export interface CrisisRequirement {
 export interface SoulAuditSubmitResponseV2 {
   version: 'v2'
   auditRunId: string
+  requestId?: string
+  deploymentFingerprint?: string
   runToken: string
   inputGuidance?: string
   remainingAudits: number
@@ -51,6 +53,15 @@ export interface SoulAuditSubmitResponseV2 {
   clarifierToken?: string | null
   crisis: CrisisRequirement
   options: AuditOptionPreview[]
+  diagnostics?: {
+    retrievalStrategy?: string
+    optionEvidence?: Array<{
+      optionId: string
+      scriptureAnchor: string
+      matchedKeywords: string[]
+      sourceHints: string[]
+    }>
+  }
   policy: {
     noAccountRequired: true
     maxAuditsPerCycle: number
@@ -134,6 +145,8 @@ export interface PlanOnboardingMeta {
 export interface SoulAuditSelectResponse {
   ok: boolean
   auditRunId: string
+  requestId?: string
+  deploymentFingerprint?: string
   selectionType: SoulAuditSelectionKind
   route: string
   planToken?: string

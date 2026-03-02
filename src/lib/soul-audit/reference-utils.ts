@@ -28,6 +28,8 @@ export interface BaseChunk {
   sourceType: ReferenceSourceType
   title: string
   content: string
+  contextualSummary?: string
+  contextualizedContent?: string
   keywords: string[]
   scriptureRefs: string[]
   priority: number
@@ -218,6 +220,49 @@ export function isHeadingLine(line: string): boolean {
   return /^#{1,4}\s/.test(line) || /^[A-Z][A-Z\s]{4,}$/.test(line.trim())
 }
 
+function sourceLabelFromPath(source: string): string {
+  const normalized = source.replace(/\\/g, '/')
+  const parts = normalized.split('/').filter(Boolean)
+  if (parts.length < 2) return normalized
+  return parts.slice(Math.max(0, parts.length - 2)).join('/')
+}
+
+export function buildContextualSummary(chunk: {
+  source: string
+  sourceType: ReferenceSourceType
+  title: string
+  scriptureRefs?: string[]
+  keywords?: string[]
+}): string {
+  const sourceLabel = sourceLabelFromPath(chunk.source)
+  const scripture =
+    (chunk.scriptureRefs ?? [])
+      .map((ref) => ref.replace(/\s+/g, ' ').trim())
+      .filter(Boolean)
+      .slice(0, 3)
+      .join('; ') || 'none explicit'
+  const themes =
+    (chunk.keywords ?? [])
+      .map((keyword) => keyword.trim())
+      .filter((keyword) => keyword.length >= 3)
+      .slice(0, 6)
+      .join(', ') || 'general theological context'
+
+  return `Context: ${chunk.sourceType} source "${sourceLabel}" section "${chunk.title}". Themes: ${themes}. Scripture anchors: ${scripture}.`
+}
+
+export function buildContextualizedContent(chunk: {
+  source: string
+  sourceType: ReferenceSourceType
+  title: string
+  content: string
+  scriptureRefs?: string[]
+  keywords?: string[]
+}): string {
+  const summary = buildContextualSummary(chunk)
+  return `${summary}\n\n${chunk.content}`
+}
+
 // ─── File collection ────────────────────────────────────────────────
 
 export interface CollectFilesOptions {
@@ -309,15 +354,34 @@ export function chunkText(
 
     const content = currentLines.join('\n').trim()
     if (!content) return
+    const slicedContent = content.slice(0, options.maxWords * 8)
+    const keywords = extractKeywords(content)
+    const scriptureRefs = extractScriptureRefs(content)
+    const title = currentTitle.slice(0, 120)
 
     chunks.push({
       id: `ref:${relSource}:${chunks.length}`,
       source: relSource,
       sourceType,
-      title: currentTitle.slice(0, 120),
-      content: content.slice(0, options.maxWords * 8),
-      keywords: extractKeywords(content),
-      scriptureRefs: extractScriptureRefs(content),
+      title,
+      content: slicedContent,
+      contextualSummary: buildContextualSummary({
+        source: relSource,
+        sourceType,
+        title,
+        scriptureRefs,
+        keywords,
+      }),
+      contextualizedContent: buildContextualizedContent({
+        source: relSource,
+        sourceType,
+        title,
+        content: slicedContent,
+        scriptureRefs,
+        keywords,
+      }),
+      keywords,
+      scriptureRefs,
       priority,
       wordCount: currentWords,
     })

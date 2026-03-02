@@ -139,7 +139,9 @@ function buildChunks(files: string[]): BaseChunk[] {
       if (!chunk.keywords || chunk.keywords.length === 0) {
         chunk.keywords = extractKeywords(chunk.content)
       }
-      built.push(chunk)
+      const slimChunk: BaseChunk = { ...chunk }
+      delete slimChunk.contextualizedContent
+      built.push(slimChunk)
     }
   }
 

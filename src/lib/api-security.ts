@@ -110,6 +110,28 @@ function serializeError(error: unknown): SerializedError {
   }
 }
 
+function cleanFingerprintPart(value: string | undefined): string | null {
+  if (!value) return null
+  const trimmed = value.trim()
+  if (!trimmed) return null
+  return trimmed.replace(/[^a-zA-Z0-9._:-]/g, '').slice(0, 80) || null
+}
+
+export function getDeploymentFingerprint(): string {
+  const commit =
+    cleanFingerprintPart(process.env.VERCEL_GIT_COMMIT_SHA) ||
+    cleanFingerprintPart(process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA) ||
+    cleanFingerprintPart(process.env.GIT_COMMIT_SHA) ||
+    'unknown'
+  const deployment =
+    cleanFingerprintPart(process.env.VERCEL_DEPLOYMENT_ID) ||
+    cleanFingerprintPart(process.env.VERCEL_URL) ||
+    cleanFingerprintPart(process.env.VERCEL_GIT_COMMIT_REF) ||
+    'local'
+
+  return `${commit.slice(0, 12)}:${deployment.slice(0, 24)}`
+}
+
 export function createRequestId(): string {
   try {
     return crypto.randomUUID()
@@ -317,8 +339,21 @@ export function withRequestIdHeaders<T extends Response>(
   requestId: string,
 ): T {
   response.headers.set('X-Request-Id', requestId)
+  response.headers.set('X-Deployment-Fingerprint', getDeploymentFingerprint())
   if (!response.headers.has('Cache-Control')) {
-    response.headers.set('Cache-Control', 'no-store')
+    response.headers.set(
+      'Cache-Control',
+      'no-store, no-cache, must-revalidate, max-age=0',
+    )
+  }
+  if (!response.headers.has('Pragma')) {
+    response.headers.set('Pragma', 'no-cache')
+  }
+  if (!response.headers.has('Expires')) {
+    response.headers.set('Expires', '0')
+  }
+  if (!response.headers.has('Surrogate-Control')) {
+    response.headers.set('Surrogate-Control', 'no-store')
   }
   return response
 }
@@ -334,6 +369,7 @@ export function jsonError(params: {
   const payload: Record<string, unknown> = {
     error: params.error,
     requestId: params.requestId,
+    deploymentFingerprint: getDeploymentFingerprint(),
   }
 
   if (params.code) {

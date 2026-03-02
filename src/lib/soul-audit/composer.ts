@@ -419,6 +419,7 @@ export async function composeDay(
   params: ComposeDayParams,
 ): Promise<ComposeDayResult> {
   const wordTarget = clampWordTarget(params.targetWordCount)
+  const strictComposer = process.env.SOUL_AUDIT_STRICT_COMPOSER !== 'off'
 
   // Retrieve reference chunks if not pre-supplied
   let chunks = params.referenceChunks
@@ -433,6 +434,15 @@ export async function composeDay(
       pardesLevel: params.pardesLevel,
     })
     chunks = retrieval.chunks
+  }
+  if (chunks.length === 0) {
+    if (strictComposer) {
+      throw new Error('REFERENCE_LIBRARY_UNAVAILABLE')
+    }
+    return {
+      day: buildDeterministicDay({ ...params, referenceChunks: chunks }),
+      usedChunkIds: [],
+    }
   }
 
   const systemPrompt = buildComposerSystemPrompt({
@@ -472,7 +482,7 @@ export async function composeDay(
       },
     })
   } catch {
-    // LLM unavailable — deterministic composition from reference library
+    if (strictComposer) throw new Error('COMPOSER_UNAVAILABLE')
     return {
       day: buildDeterministicDay(paramsWithChunks),
       usedChunkIds: chunks.map((c) => c.id),
@@ -480,6 +490,7 @@ export async function composeDay(
   }
 
   if (!result?.output) {
+    if (strictComposer) throw new Error('COMPOSER_EMPTY_OUTPUT')
     return {
       day: buildDeterministicDay(paramsWithChunks),
       usedChunkIds: chunks.map((c) => c.id),
@@ -488,6 +499,7 @@ export async function composeDay(
 
   const parsed = parseComposedDay(result.output)
   if (!parsed) {
+    if (strictComposer) throw new Error('COMPOSER_PARSE_FAILED')
     return {
       day: buildDeterministicDay(paramsWithChunks),
       usedChunkIds: chunks.map((c) => c.id),
@@ -495,6 +507,7 @@ export async function composeDay(
   }
   const actualWords = wordCountEstimate(parsed.reflection)
   if (actualWords < MIN_WORD_TARGET || actualWords > MAX_WORD_TARGET) {
+    if (strictComposer) throw new Error('COMPOSER_LENGTH_OUT_OF_RANGE')
     return {
       day: buildDeterministicDay(paramsWithChunks),
       usedChunkIds: chunks.map((c) => c.id),

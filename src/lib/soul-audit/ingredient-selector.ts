@@ -1,13 +1,15 @@
 /**
  * ingredient-selector.ts
  *
- * RAG-first direction selection for Soul Audit.
+ * Strict RAG-first direction selection for Soul Audit.
  *
- * Directions are constructed from:
- * 1) terms extracted from the user's raw input
- * 2) reference chunks retrieved with those exact terms
+ * Production behavior:
+ * - Uses user input + retrieved reference chunks as the only source context
+ * - Uses LLM composition to generate 3 unique pathway cards
+ * - No deterministic fallback path in production
  *
- * No pre-authored devotional modules are used in this selector.
+ * Test behavior:
+ * - Deterministic builder allowed for offline test execution
  */
 
 import {
@@ -15,9 +17,11 @@ import {
   type ParsedAuditIntent,
 } from '@/lib/brain/intent-parser'
 import {
-  retrieveForDay,
-  type ReferenceChunk,
-} from './reference-retriever'
+  generateWithBrain,
+  providerAvailabilityForUser,
+} from '@/lib/brain/router'
+import { retrieveForDay, type ReferenceChunk } from './reference-retriever'
+import { extractScriptureRefs } from './reference-utils'
 
 export interface IngredientDirection {
   id: string
@@ -48,23 +52,29 @@ export interface IngredientSelectionResult {
 export interface IngredientSelectionOptions {
   excludeDirectionSlugs?: string[]
   excludeDirectionTitles?: string[]
+  excludeScriptureAnchors?: string[]
 }
 
-type DirectionSeed = {
-  slug: string
-  focusTerms: string[]
-  chiastic: 'A' | 'B' | 'C'
-  pardes: 'peshat' | 'remez' | 'derash'
-  seedChunk: ReferenceChunk | null
+type GeneratedPath = {
+  title: string
+  question: string
+  reasoning: string
+  scriptureReference: string
+  scriptureText: string
+  teachingExcerpt: string
+  focusTerms?: string[]
+  sourceHints?: string[]
+  slug?: string
 }
 
 const DIRECTION_COUNT = 3
-const MAX_PREVIEW_WORDS = 65
-const CHIASTIC_BY_RANK: Array<'A' | 'B' | 'C'> = ['A', 'B', 'C']
-const PARDES_BY_RANK: Array<'peshat' | 'remez' | 'derash'> = [
-  'peshat',
-  'remez',
-  'derash',
+const MAX_CONTEXT_CHUNKS = 18
+const MAX_CHUNK_CHARS = 900
+const MAX_PREVIEW_WORDS = 70
+const TEST_SCRIPTURE_POOL = [
+  'Psalm 34:18',
+  'Philippians 4:6-7',
+  'James 1:5',
 ]
 
 const STOPWORDS = new Set([
@@ -80,7 +90,6 @@ const STOPWORDS = new Set([
   'for',
   'from',
   'have',
-  'help',
   'how',
   'i',
   'in',
@@ -88,19 +97,13 @@ const STOPWORDS = new Set([
   'is',
   'it',
   'its',
-  'just',
-  'learn',
-  'lately',
   'me',
   'my',
   'of',
   'on',
   'or',
   'our',
-  'please',
-  'really',
   'so',
-  'teach',
   'that',
   'the',
   'their',
@@ -110,9 +113,6 @@ const STOPWORDS = new Set([
   'this',
   'those',
   'to',
-  'today',
-  'very',
-  'want',
   'was',
   'we',
   'what',
@@ -126,25 +126,60 @@ const STOPWORDS = new Set([
   'your',
 ])
 
-const SCRIPTURE_FOCUS_TEXT: Record<string, string> = {
-  'Philippians 4:6-7':
-    'Do not be anxious about anything, but in everything, by prayer and petition, with thanksgiving, present your requests to God.',
-  'Psalm 34:18':
-    'The Lord is close to the brokenhearted and saves those who are crushed in spirit.',
-  'Proverbs 3:5-6':
-    'Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.',
-  '1 John 1:9':
-    'If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.',
-  'Psalm 119:105': 'Your word is a lamp to my feet and a light to my path.',
-  'Romans 8:1':
-    'There is now no condemnation for those who are in Christ Jesus.',
-  'Psalm 46:10': 'Be still, and know that I am God.',
-  'James 1:5':
-    'If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault.',
-}
+const NOISY_TERMS = new Set([
+  'thou',
+  'thee',
+  'thy',
+  'thine',
+  'unto',
+  'hath',
+  'doth',
+  'saith',
+  'wouldest',
+  'whosoever',
+  'thereof',
+  'herein',
+  'wherein',
+  'whereof',
+  'nay',
+  'ye',
+  'shall',
+])
 
 function collapseWhitespace(value: string): string {
   return value.replace(/\s+/g, ' ').trim()
+}
+
+function tokenize(input: string): string[] {
+  return input
+    .toLowerCase()
+    .replace(/[^a-z0-9'\s-]/g, ' ')
+    .split(/\s+/)
+    .map((token) => token.replace(/^'+|'+$/g, ''))
+    .filter(Boolean)
+}
+
+function isUsableTerm(term: string): boolean {
+  if (!term) return false
+  if (term.length < 3 || term.length > 28) return false
+  if (!/^[a-z][a-z0-9-]*$/.test(term)) return false
+  if (STOPWORDS.has(term) || NOISY_TERMS.has(term)) return false
+  return true
+}
+
+function extractUserKeywords(input: string): string[] {
+  const tokens = tokenize(input).filter(isUsableTerm)
+  return Array.from(new Set(tokens)).slice(0, 12)
+}
+
+function uniqueTerms(values: string[]): string[] {
+  return Array.from(
+    new Set(
+      values
+        .map((value) => collapseWhitespace(value).toLowerCase())
+        .filter(isUsableTerm),
+    ),
+  )
 }
 
 function toHeadline(value: string): string {
@@ -166,30 +201,15 @@ function slugify(value: string): string {
     .slice(0, 48)
 }
 
-function tokenize(input: string): string[] {
-  return input
-    .toLowerCase()
-    .replace(/[^a-z0-9'\s-]/g, ' ')
-    .split(/\s+/)
-    .map((token) => token.replace(/^'+|'+$/g, ''))
-    .filter(Boolean)
+function normalizeTitle(value: string): string {
+  return collapseWhitespace(value).toLowerCase()
 }
 
-function extractUserKeywords(input: string): string[] {
-  const raw = tokenize(input).filter((token) => token.length >= 3)
-  const filtered = raw.filter((token) => !STOPWORDS.has(token))
-  const chosen = filtered.length > 0 ? filtered : raw
-  return Array.from(new Set(chosen)).slice(0, 12)
-}
-
-function uniqueTerms(values: string[]): string[] {
-  return Array.from(
-    new Set(
-      values
-        .map((value) => collapseWhitespace(value).toLowerCase())
-        .filter((value) => value.length >= 3 && !STOPWORDS.has(value)),
-    ),
-  )
+function normalizeScriptureRef(value: string): string {
+  return collapseWhitespace(value)
+    .replace(/\s+/g, ' ')
+    .replace(/\s*:\s*/g, ':')
+    .trim()
 }
 
 function takeWords(text: string, maxWords: number): string {
@@ -202,300 +222,453 @@ function firstSentence(text: string, maxWords: number): string {
   const normalized = collapseWhitespace(text)
   if (!normalized) return ''
   const sentence = normalized.split(/(?<=[.!?])\s+/)[0] ?? normalized
-  return takeWords(sentence, maxWords).replace(/[.!?]+$/g, '')
+  return takeWords(sentence, maxWords)
 }
 
-function trimPunctuation(value: string): string {
-  return value.replace(/[.!?]+$/g, '').trim()
+function isProductionStrictMode(): boolean {
+  if (process.env.NODE_ENV === 'test') return false
+  return process.env.SOUL_AUDIT_STRICT_OPTIONS !== 'off'
 }
 
-function normalizeTitle(value: string): string {
-  return collapseWhitespace(value).toLowerCase()
-}
+function rankScriptureCandidates(params: {
+  responseText: string
+  intent: ParsedAuditIntent
+  chunks: ReferenceChunk[]
+}): string[] {
+  const scores = new Map<string, number>()
 
-function pickScripture(
-  intent: ParsedAuditIntent,
-  index: number,
-  seedChunk: ReferenceChunk | null,
-): string {
-  const chunkScripture = seedChunk?.scriptureRefs?.[0]
-  if (chunkScripture) return chunkScripture
-
-  if (intent.scriptureAnchors.length > 0) {
-    return intent.scriptureAnchors[index % intent.scriptureAnchors.length]
+  const bump = (reference: string, points: number) => {
+    const normalized = normalizeScriptureRef(reference)
+    if (!normalized) return
+    scores.set(normalized, (scores.get(normalized) ?? 0) + points)
   }
 
-  const fallbacks = ['Psalm 119:105', 'Philippians 4:6-7', 'Romans 8:1']
-  return fallbacks[index % fallbacks.length]
-}
-
-function pickDistinctSeedChunks(chunks: ReferenceChunk[]): ReferenceChunk[] {
-  const picked: ReferenceChunk[] = []
-  const seenTitles = new Set<string>()
-
-  for (const chunk of chunks) {
-    if (picked.length >= DIRECTION_COUNT) break
-    const titleKey = collapseWhitespace(chunk.title || '').toLowerCase()
-    if (titleKey && seenTitles.has(titleKey)) continue
-    if (titleKey) seenTitles.add(titleKey)
-    picked.push(chunk)
+  for (const reference of extractScriptureRefs(params.responseText)) {
+    bump(reference, 16)
   }
 
-  for (const chunk of chunks) {
-    if (picked.length >= DIRECTION_COUNT) break
-    if (picked.some((selected) => selected.id === chunk.id)) continue
-    picked.push(chunk)
+  for (const reference of params.intent.scriptureAnchors) {
+    bump(reference, 10)
   }
 
-  return picked
+  params.chunks.forEach((chunk, index) => {
+    const depthWeight = Math.max(1, 8 - Math.floor(index / 3))
+    for (const reference of chunk.scriptureRefs ?? []) {
+      bump(reference, depthWeight)
+    }
+  })
+
+  return Array.from(scores.entries())
+    .sort((a, b) => b[1] - a[1])
+    .map(([reference]) => reference)
+    .slice(0, 24)
 }
 
-function resolveScriptureText(
-  scripture: string,
-  chunks: ReferenceChunk[],
-  seedChunk: ReferenceChunk | null,
-): string {
-  const exact = SCRIPTURE_FOCUS_TEXT[scripture]
-  if (exact) return exact
-
-  const bibleChunk =
-    chunks.find((chunk) => chunk.sourceType === 'bible') ??
-    (seedChunk?.sourceType === 'bible' ? seedChunk : null)
-  if (bibleChunk) {
-    return firstSentence(bibleChunk.content, 34)
-  }
-
-  return `Read ${scripture} slowly and note one phrase of truth, one phrase of comfort, and one phrase calling for action.`
+function buildGenerationContext(chunks: ReferenceChunk[]): string {
+  return chunks
+    .slice(0, MAX_CONTEXT_CHUNKS)
+    .map((chunk, index) => {
+      const refs = (chunk.scriptureRefs ?? []).slice(0, 4).join('; ')
+      const content = chunk.content.slice(0, MAX_CHUNK_CHARS)
+      return [
+        `[${index + 1}] ${chunk.sourceType.toUpperCase()} | ${chunk.title}`,
+        refs ? `Scripture refs: ${refs}` : 'Scripture refs: none listed',
+        `Excerpt: ${content}`,
+      ].join('\n')
+    })
+    .join('\n\n')
 }
 
-function buildPreviewSummary(params: {
-  topicLabel: string
-  pathwayLabel: string
-  scripture: string
-  sourceHints: string[]
-}): string {
-  const sourceNote =
-    params.sourceHints.length > 0
-      ? `with witnesses such as ${params.sourceHints.slice(0, 2).join(' and ')}`
-      : 'with historical and theological witnesses from the reference library'
-  return collapseWhitespace(
-    `This pathway frames ${params.topicLabel} through ${params.pathwayLabel}, anchored in ${params.scripture}, ${sourceNote}.`,
-  )
+function buildSystemPrompt(): string {
+  return `You generate Soul Audit pathway cards.
+
+NON-NEGOTIABLE RULES:
+- Build all copy from USER INPUT + PROVIDED RAG REFERENCES only.
+- Do not use canned themes, canned titles, canned scripture defaults, or fallback devotional templates.
+- Do not frame everything as burden/suffering unless the user input explicitly indicates it.
+- Return exactly 3 pathways, each meaningfully distinct.
+- Each title must be a full sentence (9-18 words) and must end with a period.
+- Each pathway must include a real scripture focus with the scripture text written out.
+- Scripture references must come from the provided ALLOWED SCRIPTURE REFERENCES list.
+- Pathways must directly answer the user's ask (teaching ask, emotional ask, discipleship ask, etc.).
+- Do not echo raw user input as the title.
+
+OUTPUT JSON ONLY:
+{
+  "paths": [
+    {
+      "title": "Full sentence title.",
+      "question": "One question that engages the user's ask.",
+      "reasoning": "One concise reason this path fits, citing source titles.",
+      "scriptureReference": "Book Chapter:Verse[-Verse]",
+      "scriptureText": "Write the scripture text explicitly.",
+      "teachingExcerpt": "2-4 sentence preview written from references.",
+      "focusTerms": ["term1", "term2", "term3"],
+      "sourceHints": ["Source title 1", "Source title 2"],
+      "slug": "optional-slug"
+    }
+  ]
+}`
 }
 
-function buildDirectionSeeds(params: {
+function buildUserPrompt(params: {
   responseText: string
   userKeywords: string[]
-  seedChunks: ReferenceChunk[]
-  excludeDirectionSlugs?: string[]
-}): DirectionSeed[] {
-  const { responseText, userKeywords, seedChunks } = params
-  const baseKeywords =
-    userKeywords.length > 0 ? userKeywords : extractUserKeywords(responseText)
-  const expansionPool = uniqueTerms(
-    seedChunks.flatMap((chunk) => [
-      ...(chunk.keywords ?? []),
-      ...extractUserKeywords(chunk.title),
-      ...extractUserKeywords(takeWords(chunk.content, 120)),
-    ]),
-  ).filter((term) => !baseKeywords.includes(term))
+  chunks: ReferenceChunk[]
+  scriptureCandidates: string[]
+  excludeDirectionSlugs: string[]
+  excludeDirectionTitles: string[]
+  excludeScriptureAnchors: string[]
+}): string {
+  const allowedRefs = params.scriptureCandidates
+    .slice(0, 16)
+    .map((reference) => `- ${reference}`)
+    .join('\n')
 
-  const seeds: DirectionSeed[] = []
-  const excludedSlugs = new Set(
-    (params.excludeDirectionSlugs ?? []).map((slug) => slugify(slug)),
-  )
-  const usedSlugs = new Set<string>(excludedSlugs)
+  const excludedSlugs = params.excludeDirectionSlugs
+    .slice(0, 40)
+    .map((value) => `- ${value}`)
+    .join('\n')
 
-  for (let i = 0; i < DIRECTION_COUNT; i++) {
-    const seedChunk = seedChunks[i] ?? seedChunks[0] ?? null
-    const chunkTerms = seedChunk
-      ? uniqueTerms([
-          ...(seedChunk.keywords ?? []),
-          ...extractUserKeywords(seedChunk.title),
-        ])
-      : []
-    const rotated = [...baseKeywords.slice(i), ...baseKeywords.slice(0, i)]
-    const expansionTerms = [
-      expansionPool[(i * 2) % Math.max(1, expansionPool.length)],
-      expansionPool[(i * 2 + 1) % Math.max(1, expansionPool.length)],
-      expansionPool[(i * 2 + 2) % Math.max(1, expansionPool.length)],
-    ].filter((term): term is string => Boolean(term))
+  const excludedTitles = params.excludeDirectionTitles
+    .slice(0, 40)
+    .map((value) => `- ${value}`)
+    .join('\n')
 
-    let focusTerms = uniqueTerms([
-      ...baseKeywords,
-      ...rotated.slice(0, 4),
-      ...chunkTerms,
-      ...expansionTerms,
-    ]).slice(0, 8)
+  const excludedScriptures = params.excludeScriptureAnchors
+    .slice(0, 40)
+    .map((value) => `- ${value}`)
+    .join('\n')
 
-    if (focusTerms.length === 0) {
-      focusTerms = baseKeywords.slice(0, 3)
-    }
-    if (baseKeywords[0] && !focusTerms.includes(baseKeywords[0])) {
-      focusTerms = uniqueTerms([baseKeywords[0], ...focusTerms]).slice(0, 8)
-    }
-
-    let slugBasis = focusTerms.slice(0, 4).join(' ')
-    let slug = slugify(slugBasis) || `direction-${i + 1}`
-    let uniquenessAttempt = 0
-    while (usedSlugs.has(slug) && uniquenessAttempt < 6) {
-      const uniquenessTerm =
-        expansionPool[(i * 3 + uniquenessAttempt) % Math.max(1, expansionPool.length)] ??
-        chunkTerms[uniquenessAttempt] ??
-        baseKeywords[(i + uniquenessAttempt) % Math.max(1, baseKeywords.length)] ??
-        String(i + 1)
-      focusTerms = uniqueTerms([baseKeywords[0] ?? '', uniquenessTerm, ...focusTerms]).slice(0, 8)
-      slugBasis = focusTerms.slice(0, 4).join(' ')
-      slug = slugify(slugBasis) || `direction-${i + 1}-${uniquenessAttempt + 1}`
-      uniquenessAttempt += 1
-    }
-    if (usedSlugs.has(slug)) {
-      slug = `${slug}-${i + 1}`
-    }
-    usedSlugs.add(slug)
-
-    seeds.push({
-      slug,
-      focusTerms,
-      chiastic: CHIASTIC_BY_RANK[i] ?? 'C',
-      pardes: PARDES_BY_RANK[i] ?? 'derash',
-      seedChunk,
-    })
-  }
-
-  return seeds
+  return [
+    `USER INPUT:\n${params.responseText.slice(0, 1000)}`,
+    `USER KEYWORDS:\n${params.userKeywords.join(', ') || '(none extracted)'}`,
+    `ALLOWED SCRIPTURE REFERENCES (must choose from this list):\n${allowedRefs || '(none provided)'}`,
+    `DO NOT REUSE THESE DIRECTION SLUGS:\n${excludedSlugs || '(none)'}`,
+    `DO NOT REUSE THESE TITLES:\n${excludedTitles || '(none)'}`,
+    `DO NOT REUSE THESE SCRIPTURE REFERENCES:\n${excludedScriptures || '(none)'}`,
+    `REFERENCE LIBRARY CONTEXT:\n${buildGenerationContext(params.chunks)}`,
+  ].join('\n\n')
 }
 
-export function selectIngredients(
+function parseGeneratedPaths(raw: string): GeneratedPath[] | null {
+  try {
+    const cleaned = raw
+      .replace(/^```json?\s*\n?/i, '')
+      .replace(/\n?```\s*$/i, '')
+      .trim()
+    const parsed = JSON.parse(cleaned) as { paths?: unknown }
+    if (!Array.isArray(parsed.paths)) return null
+
+    const result: GeneratedPath[] = []
+    for (const item of parsed.paths) {
+      if (!item || typeof item !== 'object') continue
+      const record = item as Record<string, unknown>
+      const title = typeof record.title === 'string' ? record.title : ''
+      const question = typeof record.question === 'string' ? record.question : ''
+      const reasoning =
+        typeof record.reasoning === 'string' ? record.reasoning : ''
+      const scriptureReference =
+        typeof record.scriptureReference === 'string'
+          ? record.scriptureReference
+          : ''
+      const scriptureText =
+        typeof record.scriptureText === 'string' ? record.scriptureText : ''
+      const teachingExcerpt =
+        typeof record.teachingExcerpt === 'string'
+          ? record.teachingExcerpt
+          : ''
+      const focusTerms = Array.isArray(record.focusTerms)
+        ? (record.focusTerms as unknown[])
+            .filter((value): value is string => typeof value === 'string')
+            .slice(0, 8)
+        : []
+      const sourceHints = Array.isArray(record.sourceHints)
+        ? (record.sourceHints as unknown[])
+            .filter((value): value is string => typeof value === 'string')
+            .slice(0, 6)
+        : []
+      const slug = typeof record.slug === 'string' ? record.slug : undefined
+
+      result.push({
+        title,
+        question,
+        reasoning,
+        scriptureReference,
+        scriptureText,
+        teachingExcerpt,
+        focusTerms,
+        sourceHints,
+        slug,
+      })
+    }
+
+    return result
+  } catch {
+    return null
+  }
+}
+
+function enforceSentenceTitle(title: string): string {
+  const normalized = collapseWhitespace(title)
+  if (!normalized) return ''
+  return /[.!?]$/.test(normalized) ? normalized : `${normalized}.`
+}
+
+function confidenceFromCoverage(params: {
+  baseRetrievalScore: number
+  chunkCount: number
+}): number {
+  const raw =
+    params.baseRetrievalScore / Math.max(1, params.chunkCount * 7.5)
+  return Number(Math.max(0.5, Math.min(0.99, raw)).toFixed(3))
+}
+
+async function generatePathsFromRag(params: {
+  responseText: string
+  intent: ParsedAuditIntent
+  userKeywords: string[]
+  baseChunks: ReferenceChunk[]
+  scriptureCandidates: string[]
+  excludeDirectionSlugs: string[]
+  excludeDirectionTitles: string[]
+  excludeScriptureAnchors: string[]
+}): Promise<GeneratedPath[]> {
+  const availability = providerAvailabilityForUser({
+    platformKeysEnabled: true,
+  })
+  const hasProvider = availability.some((entry) => entry.available)
+  if (!hasProvider) {
+    throw new Error('OPTION_COMPOSER_UNAVAILABLE')
+  }
+
+  const system = buildSystemPrompt()
+  const user = buildUserPrompt({
+    responseText: params.responseText,
+    userKeywords: params.userKeywords,
+    chunks: params.baseChunks,
+    scriptureCandidates: params.scriptureCandidates,
+    excludeDirectionSlugs: params.excludeDirectionSlugs,
+    excludeDirectionTitles: params.excludeDirectionTitles,
+    excludeScriptureAnchors: params.excludeScriptureAnchors,
+  })
+
+  const generated = await generateWithBrain({
+    system,
+    messages: [{ role: 'user', content: user }],
+    context: {
+      task: 'audit_option_polish',
+      mode: 'auto',
+      maxOutputTokens: 1800,
+      qualityFloor: 0.35,
+    },
+  })
+
+  if (!generated.output || generated.output.trim().length === 0) {
+    throw new Error('OPTION_COMPOSER_EMPTY_OUTPUT')
+  }
+
+  const paths = parseGeneratedPaths(generated.output)
+  if (!paths || paths.length < DIRECTION_COUNT) {
+    throw new Error('OPTION_COMPOSER_PARSE_FAILED')
+  }
+
+  return paths.slice(0, DIRECTION_COUNT)
+}
+
+function deterministicPathsForTests(params: {
+  responseText: string
+  userKeywords: string[]
+  baseChunks: ReferenceChunk[]
+  scriptureCandidates: string[]
+}): GeneratedPath[] {
+  const keywords = params.userKeywords
+  const focus = keywords.length > 0 ? keywords : ['scripture', 'formation', 'wisdom']
+  const scriptures = params.scriptureCandidates
+  const sourceHints = Array.from(new Set(params.baseChunks.map((chunk) => chunk.title))).slice(0, 6)
+
+  return Array.from({ length: DIRECTION_COUNT }, (_, index) => {
+    const theme = focus[index % focus.length] ?? `focus-${index + 1}`
+    const angle = focus[(index + 1) % focus.length] ?? theme
+    const scriptureReference = scriptures[index % Math.max(1, scriptures.length)] ?? ''
+    return {
+      title: `This pathway gives a focused study of ${theme} through ${angle} in Scripture.`,
+      question: `What changes when ${scriptureReference || 'this scripture focus'} reframes ${theme} this week?`,
+      reasoning: sourceHints[0]
+        ? `Built from reference witnesses including ${sourceHints.slice(0, 2).join(' and ')}.`
+        : 'Built from retrieved reference witnesses.',
+      scriptureReference,
+      scriptureText: `Scripture focus for this pathway: ${scriptureReference || 'reference unavailable in test mode'}.`,
+      teachingExcerpt: firstSentence(
+        params.baseChunks[index]?.content ||
+          `This pathway addresses ${theme} with direct theological grounding and practical application.`,
+        MAX_PREVIEW_WORDS,
+      ),
+      focusTerms: uniqueTerms([theme, angle, ...focus.slice(0, 3)]),
+      sourceHints,
+      slug: `${theme}-${angle}-${index + 1}`,
+    }
+  })
+}
+
+export async function selectIngredients(
   responseText: string,
   options: IngredientSelectionOptions = {},
-): IngredientSelectionResult {
+): Promise<IngredientSelectionResult> {
   const intent = parseAuditIntent(responseText)
   const userKeywords = extractUserKeywords(responseText)
-  const topicKeywords = userKeywords.slice(0, 2)
-  const topicLabel = topicKeywords.join(' ')
 
   const baseRetrieval = retrieveForDay({
-    themes: userKeywords,
+    themes: uniqueTerms([...intent.themes, ...userKeywords]).slice(0, 10),
     scriptureAnchors: intent.scriptureAnchors,
     topic: responseText,
     limit: 25,
   })
 
-  const seedChunks = pickDistinctSeedChunks(baseRetrieval.chunks)
-  const seeds = buildDirectionSeeds({
+  if (baseRetrieval.chunks.length === 0) {
+    throw new Error('REFERENCE_LIBRARY_UNAVAILABLE')
+  }
+
+  const strict = isProductionStrictMode()
+  const scriptureCandidates = rankScriptureCandidates({
     responseText,
-    userKeywords,
-    seedChunks,
-    excludeDirectionSlugs: options.excludeDirectionSlugs,
-  })
-  const usedTitleSet = new Set(
-    (options.excludeDirectionTitles ?? []).map((title) =>
-      normalizeTitle(title),
-    ),
-  )
+    intent,
+    chunks: baseRetrieval.chunks,
+  }).filter((reference) => reference.length > 0)
 
-  const directions: IngredientDirection[] = seeds.map((seed, index) => {
-    const rank = index + 1
-    const scripture = pickScripture(intent, index, seed.seedChunk)
+  if (!strict && scriptureCandidates.length < DIRECTION_COUNT) {
+    for (const reference of TEST_SCRIPTURE_POOL) {
+      if (!scriptureCandidates.includes(reference)) {
+        scriptureCandidates.push(reference)
+      }
+      if (scriptureCandidates.length >= DIRECTION_COUNT) break
+    }
+  }
 
-    const retrieval = retrieveForDay({
-      themes: seed.focusTerms,
-      scriptureAnchors: [scripture],
-      topic: `${responseText} ${seed.focusTerms.join(' ')} ${seed.seedChunk?.title ?? ''}`,
-      limit: 20,
-      chiasticPosition: seed.chiastic,
-      pardesLevel: seed.pardes,
-    })
+  if (strict && scriptureCandidates.length < DIRECTION_COUNT) {
+    throw new Error('SCRIPTURE_CANDIDATES_INSUFFICIENT')
+  }
 
-    const topChunk = retrieval.chunks[0] ?? seed.seedChunk
+  const excludeDirectionSlugs = (options.excludeDirectionSlugs ?? []).map((value) => slugify(value))
+  const excludeDirectionTitles = (options.excludeDirectionTitles ?? []).map((value) => normalizeTitle(value))
+  const excludeScriptureAnchors = (options.excludeScriptureAnchors ?? []).map((value) => normalizeScriptureRef(value))
+
+  const rawPaths = strict
+    ? await generatePathsFromRag({
+        responseText,
+        intent,
+        userKeywords,
+        baseChunks: baseRetrieval.chunks,
+        scriptureCandidates,
+        excludeDirectionSlugs,
+        excludeDirectionTitles,
+        excludeScriptureAnchors,
+      })
+    : deterministicPathsForTests({
+        responseText,
+        userKeywords,
+        baseChunks: baseRetrieval.chunks,
+        scriptureCandidates,
+      })
+
+  const usedTitles = new Set(excludeDirectionTitles)
+  const usedSlugs = new Set(excludeDirectionSlugs)
+  const usedScriptures = new Set(excludeScriptureAnchors)
+
+  const directions: IngredientDirection[] = []
+
+  for (const raw of rawPaths) {
+    let title = enforceSentenceTitle(raw.title)
+    const question = collapseWhitespace(raw.question)
+    const reasoning = collapseWhitespace(raw.reasoning)
+    const scriptureAnchor = normalizeScriptureRef(raw.scriptureReference)
+    const scriptureText = collapseWhitespace(raw.scriptureText)
+    const teachingExcerpt = takeWords(collapseWhitespace(raw.teachingExcerpt), MAX_PREVIEW_WORDS)
+
+    if (!title || !question || !reasoning || !scriptureAnchor || !scriptureText || !teachingExcerpt) {
+      if (strict) throw new Error('OPTION_COMPOSER_MISSING_FIELDS')
+      continue
+    }
+
+    let normalizedTitle = normalizeTitle(title)
+    if (usedTitles.has(normalizedTitle)) {
+      if (strict) throw new Error('OPTION_COMPOSER_DUPLICATE_TITLE')
+      let variantCounter = 1
+      const baseTitle = title.replace(/[.!?]+$/g, '')
+      do {
+        title = `${baseTitle} Path ${variantCounter}.`
+        normalizedTitle = normalizeTitle(title)
+        variantCounter += 1
+      } while (usedTitles.has(normalizedTitle) && variantCounter < 20)
+    }
+
+    if (strict && usedScriptures.has(scriptureAnchor)) {
+      throw new Error('OPTION_COMPOSER_DUPLICATE_SCRIPTURE')
+    }
+
+    if (strict && !scriptureCandidates.includes(scriptureAnchor)) {
+      throw new Error('OPTION_COMPOSER_INVALID_SCRIPTURE')
+    }
+
+    let directionSlug = slugify(raw.slug || title || scriptureAnchor)
+    if (!directionSlug) directionSlug = `path-${directions.length + 1}`
+    let slugAttempt = 1
+    while (usedSlugs.has(directionSlug)) {
+      directionSlug = `${directionSlug}-${slugAttempt}`
+      slugAttempt += 1
+    }
+
     const sourceHints = Array.from(
-      new Set(retrieval.chunks.map((chunk) => chunk.title)),
-    ).slice(0, 4)
+      new Set((raw.sourceHints ?? []).map((value) => collapseWhitespace(value)).filter(Boolean)),
+    ).slice(0, 5)
+    if (strict && sourceHints.length === 0) {
+      throw new Error('OPTION_COMPOSER_MISSING_SOURCES')
+    }
 
-    const focusPhrase = seed.focusTerms.slice(0, 2).join(' ')
+    const matchedKeywords = uniqueTerms([
+      ...userKeywords,
+      ...(raw.focusTerms ?? []),
+      ...intent.themes,
+      ...extractUserKeywords(title),
+      ...extractUserKeywords(question),
+    ]).slice(0, 8)
 
-    const confidenceRaw =
-      retrieval.totalScore / Math.max(1, retrieval.chunks.length * 8)
-    const confidence = Number(
-      Math.max(0.45, Math.min(0.99, confidenceRaw)).toFixed(3),
-    )
-
-    const reasoningTerms = seed.focusTerms.slice(0, 3).join(', ')
-    const reasoningSources =
-      sourceHints.length > 0
-        ? sourceHints.slice(0, 2).join(' and ')
-        : topChunk?.title || 'retrieved witnesses'
-    const pathwayTerms = seed.focusTerms
-      .filter((term) => !topicKeywords.includes(term))
-      .slice(0, 2)
-      .join(' ')
-    const titleTopic =
-      topicLabel ||
-      seed.focusTerms.slice(0, 2).join(' ') ||
-      collapseWhitespace(responseText).slice(0, 60)
-    const titlePathway =
-      pathwayTerms ||
-      extractUserKeywords(sourceHints[0] ?? '').slice(0, 2).join(' ') ||
-      seed.focusTerms[0] ||
-      titleTopic
-    const titleTopicLabel = toHeadline(titleTopic)
-    const titlePathwayLabel = toHeadline(titlePathway)
-    const statementTitleBase = `This pathway explores ${trimPunctuation(titlePathwayLabel).toLowerCase()} to address ${trimPunctuation(titleTopicLabel).toLowerCase()}.`
-    const previewQuestion = `How might ${scripture} reshape ${trimPunctuation(titleTopicLabel).toLowerCase()} through ${trimPunctuation(titlePathwayLabel).toLowerCase()} this week?`
-    const scriptureText = resolveScriptureText(
-      scripture,
-      retrieval.chunks,
-      seed.seedChunk,
-    )
-    const teachingExcerpt = takeWords(
-      buildPreviewSummary({
-        topicLabel: trimPunctuation(titleTopicLabel).toLowerCase(),
-        pathwayLabel: trimPunctuation(titlePathwayLabel).toLowerCase(),
-        scripture,
-        sourceHints,
+    directions.push({
+      id: `ai_primary:${directionSlug}:${directions.length + 1}`,
+      rank: directions.length + 1,
+      title,
+      question,
+      reasoning,
+      scriptureAnchor,
+      directionSlug,
+      confidence: confidenceFromCoverage({
+        baseRetrievalScore: baseRetrieval.totalScore,
+        chunkCount: baseRetrieval.chunks.length,
       }),
-      MAX_PREVIEW_WORDS,
-    )
-
-    const sourceTag = sourceHints[0]
-      ? trimPunctuation(firstSentence(sourceHints[0], 6))
-      : ''
-    const titleVariants = [
-      statementTitleBase,
-      `${statementTitleBase} Scripture focus: ${scripture}.`,
-      sourceTag
-        ? `${statementTitleBase} Informed by ${sourceTag}.`
-        : `${statementTitleBase} Informed by trusted reference witnesses.`,
-    ]
-    const statementTitle =
-      titleVariants.find((title) => !usedTitleSet.has(normalizeTitle(title))) ??
-      `${statementTitleBase} Path ${rank}.`
-    usedTitleSet.add(normalizeTitle(statementTitle))
-
-    return {
-      id: `ai_primary:${seed.slug}:${rank}`,
-      rank,
-      title: statementTitle,
-      question: previewQuestion,
-      reasoning: `Matched input terms (${reasoningTerms}) against ${reasoningSources}.`,
-      scriptureAnchor: scripture,
-      directionSlug: seed.slug,
-      confidence,
       day1Preview: {
-        title: `Day 1 focuses on ${trimPunctuation(titlePathwayLabel)}.`,
-        scriptureReference: scripture,
+        title: `Day 1 studies ${toHeadline(matchedKeywords.slice(0, 2).join(' ') || 'this pathway')} in context.`,
+        scriptureReference: scriptureAnchor,
         scriptureText,
         teachingExcerpt,
-        reflectionPrompt: `How does ${scripture} speak into ${focusPhrase || collapseWhitespace(responseText).slice(0, 90)}?`,
+        reflectionPrompt: `What does ${scriptureAnchor} illuminate about ${matchedKeywords.slice(0, 3).join(', ')} today?`,
       },
-      matchedKeywords: seed.focusTerms,
+      matchedKeywords,
       referenceSourceHints: sourceHints,
-    }
-  })
+    })
+
+    usedTitles.add(normalizedTitle)
+    usedSlugs.add(directionSlug)
+    usedScriptures.add(scriptureAnchor)
+
+    if (directions.length >= DIRECTION_COUNT) break
+  }
+
+  if (strict && directions.length < DIRECTION_COUNT) {
+    throw new Error('OPTION_COMPOSER_INSUFFICIENT_VALID_PATHS')
+  }
 
   return {
-    directions,
+    directions: directions.slice(0, DIRECTION_COUNT),
     intent,
     strategy: 'ingredient_selection',
   }

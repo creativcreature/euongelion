@@ -1,3 +1,5 @@
+import { extractScriptureRefs } from '@/lib/soul-audit/reference-utils'
+
 export type Disposition = 'seeker' | 'returning' | 'scholarly' | 'pastoral'
 export type FaithBackground =
   | 'christian'
@@ -36,9 +38,20 @@ const STOP_WORDS = new Set([
 const THEME_KEYWORDS: Record<string, string[]> = {
   anxiety: ['anxiety', 'afraid', 'fear', 'panic', 'worry'],
   grief: ['grief', 'loss', 'sorrow', 'mourning'],
+  sadness: ['sad', 'down', 'heavy', 'numb', 'lonely', 'discouraged'],
   purpose: ['purpose', 'calling', 'direction', 'meaning'],
   sin: ['sin', 'guilt', 'shame', 'repent'],
   trust: ['trust', 'faith', 'doubt', 'believe'],
+  prophets: [
+    'prophet',
+    'prophets',
+    'prophetic',
+    'isaiah',
+    'jeremiah',
+    'ezekiel',
+    'amos',
+    'hosea',
+  ],
   relationships: ['marriage', 'family', 'friend', 'relationship'],
 }
 
@@ -208,13 +221,15 @@ function inferTone(input: string): ParsedAuditIntent['tone'] {
 }
 
 function inferScriptureAnchors(input: string): string[] {
-  const anchors: string[] = []
+  const anchors: string[] = extractScriptureRefs(input).slice(0, 3)
   if (/anxiety|fear|panic|worry/i.test(input)) anchors.push('Philippians 4:6-7')
   if (/grief|sorrow|loss/i.test(input)) anchors.push('Psalm 34:18')
   if (/purpose|direction|calling/i.test(input)) anchors.push('Proverbs 3:5-6')
   if (/sin|shame|guilt|repent/i.test(input)) anchors.push('1 John 1:9')
-  if (anchors.length === 0) anchors.push('Psalm 119:105')
-  return anchors.slice(0, 2)
+  if (/prophet|prophets|prophetic/i.test(input)) anchors.push('Jeremiah 1:5')
+  if (/genesis|creation|created/i.test(input)) anchors.push('Genesis 1:1')
+  if (/paul|apostle paul/i.test(input)) anchors.push('Acts 9:15')
+  return Array.from(new Set(anchors.map((value) => collapseWhitespace(value)))).slice(0, 3)
 }
 
 function inferFromKeywords<T extends string>(

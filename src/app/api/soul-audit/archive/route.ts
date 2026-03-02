@@ -1,11 +1,17 @@
 import { NextResponse } from 'next/server'
 import {
+  createRequestId,
+  jsonError,
+  withRequestIdHeaders,
+} from '@/lib/api-security'
+import {
   getAllPlanDaysWithFallback,
   listPlanInstancesForSessionWithFallback,
 } from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 
 export async function GET() {
+  const requestId = createRequestId()
   try {
     const sessionToken = await getOrCreateAuditSessionToken()
     const plans = await listPlanInstancesForSessionWithFallback(sessionToken)
@@ -27,12 +33,16 @@ export async function GET() {
       }),
     )
 
-    return NextResponse.json({ ok: true, archive }, { status: 200 })
+    return withRequestIdHeaders(
+      NextResponse.json({ ok: true, requestId, archive }, { status: 200 }),
+      requestId,
+    )
   } catch (error) {
     console.error('Archive load error:', error)
-    return NextResponse.json(
-      { error: 'Unable to load archived devotional plans.' },
-      { status: 500 },
-    )
+    return jsonError({
+      error: 'Unable to load archived devotional plans.',
+      status: 500,
+      requestId,
+    })
   }
 }

@@ -2,7 +2,7 @@
 /**
  * build-reference-index.ts
  *
- * Pre-indexes content/reference/ (commentaries, theology) into a compact JSON
+ * Pre-indexes content/reference/ (commentaries, theology, bibles) into a compact JSON
  * file at public/reference-index.json. This file IS deployed to Vercel, giving
  * the generative devotional pipeline access to reference library material on
  * production where content/reference/ is gitignored and unavailable.
@@ -31,14 +31,13 @@ const SKIP_SEGMENTS = new Set([
   '.git',
   'stepbible-data',
   'node_modules',
-  'bibles',
   'lexicons',
 ])
 
 /** Files that are documentation/metadata, not theological source material. */
 const SKIP_FILENAMES = new Set(['README.md', 'readme.md', 'CHANGELOG.md'])
-const ALLOWED_EXTENSIONS = new Set(['.md', '.markdown', '.txt'])
-const MAX_FILE_BYTES = 4 * 1024 * 1024
+const ALLOWED_EXTENSIONS = new Set(['.md', '.markdown', '.txt', '.xml'])
+const MAX_FILE_BYTES = 20 * 1024 * 1024
 const MAX_FILES = 300
 const MAX_CHUNKS = 8_000
 
@@ -61,6 +60,30 @@ const CHUNKING_OPTIONS = {
 type IndexedChunk = BaseChunk
 
 // ─── Main ───────────────────────────────────────────────────────────
+
+function shouldIncludeFile(file: string): boolean {
+  const sourceType = detectSourceType(file)
+  if (sourceType !== 'bible') return true
+  const basename = path.basename(file).toLowerCase()
+  // Keep the deployed index primarily English for retrieval quality.
+  return (
+    basename.startsWith('eng-') ||
+    basename.startsWith('heb-leningrad') ||
+    basename === 'readme.md'
+  )
+}
+
+function normalizeSourceText(file: string, text: string): string {
+  if (!file.toLowerCase().endsWith('.xml')) return text
+  return text
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
+    .replace(/\s+/g, ' ')
+    .trim()
+}
 
 function main() {
   const referenceRoot = path.join(process.cwd(), 'content', 'reference')
@@ -88,6 +111,7 @@ function main() {
     // Skip documentation files
     const basename = path.basename(file)
     if (SKIP_FILENAMES.has(basename)) continue
+    if (!shouldIncludeFile(file)) continue
 
     let text = ''
     try {
@@ -95,6 +119,7 @@ function main() {
     } catch {
       continue
     }
+    text = normalizeSourceText(file, text)
 
     const sourceType = detectSourceType(file)
     const fileChunks = chunkText(text, file, sourceType, CHUNKING_OPTIONS)
@@ -106,8 +131,10 @@ function main() {
 
     for (const chunk of fileChunks) {
       if (isMetadataChunk(chunk.content)) continue
+      const slimChunk: BaseChunk = { ...chunk }
+      delete slimChunk.contextualizedContent
       const existing = chunksByAuthor.get(authorKey) || []
-      existing.push(chunk)
+      existing.push(slimChunk)
       chunksByAuthor.set(authorKey, existing)
     }
   }
