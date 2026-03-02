@@ -545,7 +545,7 @@ export async function selectIngredients(
     }
   }
 
-  if (strict && scriptureCandidates.length < DIRECTION_COUNT) {
+  if (strict && scriptureCandidates.length === 0) {
     throw new Error('SCRIPTURE_CANDIDATES_INSUFFICIENT')
   }
 
@@ -592,7 +592,6 @@ export async function selectIngredients(
 
     let normalizedTitle = normalizeTitle(title)
     if (usedTitles.has(normalizedTitle)) {
-      if (strict) throw new Error('OPTION_COMPOSER_DUPLICATE_TITLE')
       let variantCounter = 1
       const baseTitle = title.replace(/[.!?]+$/g, '')
       do {
@@ -602,11 +601,10 @@ export async function selectIngredients(
       } while (usedTitles.has(normalizedTitle) && variantCounter < 20)
     }
 
-    if (strict && usedScriptures.has(scriptureAnchor)) {
-      throw new Error('OPTION_COMPOSER_DUPLICATE_SCRIPTURE')
-    }
+    // Scripture overlap across audits is allowed when the same biblical theme
+    // remains most relevant; uniqueness is enforced primarily by pathway framing.
 
-    if (strict && !scriptureCandidates.includes(scriptureAnchor)) {
+    if (strict && scriptureCandidates.length > 0 && !scriptureCandidates.includes(scriptureAnchor)) {
       throw new Error('OPTION_COMPOSER_INVALID_SCRIPTURE')
     }
 

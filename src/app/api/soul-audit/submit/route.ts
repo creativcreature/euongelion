@@ -165,13 +165,11 @@ export async function POST(request: NextRequest) {
     const priorRuns = await listAuditRunsForSessionWithFallback(sessionToken)
     const usedDirectionSlugs = new Set<string>()
     const usedDirectionTitles = new Set<string>()
-    const usedScriptureAnchors = new Set<string>()
     for (const run of priorRuns) {
       const priorOptions = await getAuditOptionsWithFallback(run.id)
       for (const option of priorOptions) {
         if (option.slug) usedDirectionSlugs.add(option.slug)
         if (option.title) usedDirectionTitles.add(option.title)
-        if (option.preview?.verse) usedScriptureAnchors.add(option.preview.verse)
       }
     }
 
@@ -181,20 +179,34 @@ export async function POST(request: NextRequest) {
       selection = await selectIngredients(responseText, {
         excludeDirectionSlugs: Array.from(usedDirectionSlugs),
         excludeDirectionTitles: Array.from(usedDirectionTitles),
-        excludeScriptureAnchors: Array.from(usedScriptureAnchors),
       })
     } catch (selectionError) {
-      const code =
+      const firstCode =
         selectionError instanceof Error
           ? selectionError.message
           : 'DIRECTION_SELECTION_FAILED'
-      return jsonError({
-        error:
-          'Could not generate input-specific pathways from the reference library. Please retry.',
-        code,
-        status: 503,
-        requestId,
-      })
+      // Retry once with relaxed historical exclusions. This avoids dead-end
+      // errors (e.g. duplicate scripture across audits) while still composing
+      // from live retrieval context for the current input.
+      try {
+        selection = await selectIngredients(responseText, {
+          excludeDirectionSlugs: [],
+          excludeDirectionTitles: [],
+          excludeScriptureAnchors: [],
+        })
+      } catch (retryError) {
+        const retryCode =
+          retryError instanceof Error
+            ? retryError.message
+            : 'DIRECTION_SELECTION_FAILED'
+        return jsonError({
+          error:
+            'Could not generate input-specific pathways from the reference library. Please retry.',
+          code: retryCode || firstCode,
+          status: 503,
+          requestId,
+        })
+      }
     }
     if (!selection) {
       return jsonError({
