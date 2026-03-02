@@ -253,7 +253,13 @@ function rankScriptureCandidates(params: {
 
   params.chunks.forEach((chunk, index) => {
     const depthWeight = Math.max(1, 8 - Math.floor(index / 3))
-    for (const reference of chunk.scriptureRefs ?? []) {
+    const discoveredRefs = new Set<string>([
+      ...(chunk.scriptureRefs ?? []),
+      ...extractScriptureRefs(chunk.title ?? ''),
+      ...extractScriptureRefs(chunk.content ?? ''),
+      ...extractScriptureRefs(chunk.contextualSummary ?? ''),
+    ])
+    for (const reference of discoveredRefs) {
       bump(reference, depthWeight)
     }
   })
