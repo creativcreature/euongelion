@@ -177,6 +177,19 @@ export async function POST(request: NextRequest) {
       })
     }
 
+    if (
+      process.env.NODE_ENV !== 'test' &&
+      directions.every((direction) => direction.referenceSourceHints.length === 0)
+    ) {
+      return jsonError({
+        error:
+          'Reference library is unavailable right now. Please retry in a moment.',
+        code: 'REFERENCE_LIBRARY_UNAVAILABLE',
+        status: 503,
+        requestId,
+      })
+    }
+
     // Map directions to the existing AuditOptionPreview format for
     // backward compatibility with the repository and client.
     const options: AuditOptionPreview[] = directions

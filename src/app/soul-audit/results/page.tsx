@@ -61,7 +61,7 @@ export default function SoulAuditResultsPage() {
   // --- Guided reveal state ---
   // Start showing only the recommended path (index 0).
   // User can progressively reveal more.
-  const [revealedCount, setRevealedCount] = useState(1)
+  const [revealedCount, setRevealedCount] = useState(3)
 
   // --- Reroll state ---
   const [rerollUsed, setRerollUsed] = useState(false)
@@ -298,7 +298,7 @@ export default function SoulAuditResultsPage() {
       setCrisisAcknowledged(false)
       setExpandedReasoningOptionId(null)
       setRerollUsed(true)
-      setRevealedCount(1) // Reset to show only recommended
+      setRevealedCount(3)
 
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
       sessionStorage.removeItem('soul-audit-selection-v2')
@@ -354,7 +354,7 @@ export default function SoulAuditResultsPage() {
       setCrisisAcknowledged(false)
       setExpandedReasoningOptionId(null)
       setRerollUsed(false)
-      setRevealedCount(1)
+      setRevealedCount(3)
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
       sessionStorage.removeItem('soul-audit-selection-v2')
       sessionStorage.removeItem(REROLL_USED_SESSION_KEY)

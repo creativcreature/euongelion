@@ -225,8 +225,9 @@ export function buildChunkedCorpus(root: string): ReferenceChunk[] {
 
   // Load pre-built reference index if available (generated at build time
   // from content/reference/ which is too large to deploy to Vercel directly).
-  // Only needed when the live reference library isn't available.
-  if (!referenceLibraryAvailable) {
+  // Only needed when the live reference library isn't available OR
+  // when the mounted library produced no usable chunks.
+  if (!referenceLibraryAvailable || files.length === 0 || corpus.length === 0) {
     const indexPath = path.join(process.cwd(), 'public', 'reference-index.json')
     try {
       if (fs.existsSync(indexPath)) {
@@ -292,20 +293,30 @@ function scoreChunk(
   pardesLevel: RetrievalRequest['pardesLevel'],
 ): number {
   let score = 0
+  let semanticHit = false
 
   // Keyword matches (topic + general)
   for (const kw of queryKeywords) {
-    if (chunk.normalized.includes(kw)) score += 2
+    if (chunk.normalized.includes(kw)) {
+      score += 2
+      semanticHit = true
+    }
   }
 
   // Scripture matches (higher weight)
   for (const kw of scriptureKeywords) {
-    if (chunk.normalized.includes(kw)) score += 3
+    if (chunk.normalized.includes(kw)) {
+      score += 3
+      semanticHit = true
+    }
   }
 
   // Theme matches (highest weight — AI-extracted themes)
   for (const theme of themeKeywords) {
-    if (chunk.normalized.includes(theme.toLowerCase())) score += 4
+    if (chunk.normalized.includes(theme.toLowerCase())) {
+      score += 4
+      semanticHit = true
+    }
   }
 
   // Chiastic position relevance (supports day-level/week-level arc)
@@ -317,6 +328,9 @@ function scoreChunk(
   for (const hint of pardesKeywords) {
     if (chunk.normalized.includes(hint)) score += 2
   }
+
+  // Drop unrelated chunks so retrieval stays ask-relevant.
+  if (!semanticHit) return 0
 
   // Source priority boost
   score += chunk.priority
