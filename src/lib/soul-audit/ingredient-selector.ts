@@ -581,7 +581,7 @@ export async function selectIngredients(
     let title = enforceSentenceTitle(raw.title)
     const question = collapseWhitespace(raw.question)
     const reasoning = collapseWhitespace(raw.reasoning)
-    const scriptureAnchor = normalizeScriptureRef(raw.scriptureReference)
+    let scriptureAnchor = normalizeScriptureRef(raw.scriptureReference)
     const scriptureText = collapseWhitespace(raw.scriptureText)
     const teachingExcerpt = takeWords(collapseWhitespace(raw.teachingExcerpt), MAX_PREVIEW_WORDS)
 
@@ -602,9 +602,22 @@ export async function selectIngredients(
     }
 
     // Scripture overlap across audits is allowed when the same biblical theme
-    // remains most relevant; uniqueness is enforced primarily by pathway framing.
+    // remains most relevant, but prefer unique anchors within the current set.
+    if (usedScriptures.has(scriptureAnchor)) {
+      const replacement = scriptureCandidates
+        .map((reference) => normalizeScriptureRef(reference))
+        .find((reference) => reference && !usedScriptures.has(reference))
+      if (replacement) scriptureAnchor = replacement
+    }
 
-    if (strict && scriptureCandidates.length > 0 && !scriptureCandidates.includes(scriptureAnchor)) {
+    const normalizedScriptureCandidates = scriptureCandidates.map((reference) =>
+      normalizeScriptureRef(reference),
+    )
+    if (
+      strict &&
+      normalizedScriptureCandidates.length > 0 &&
+      !normalizedScriptureCandidates.includes(scriptureAnchor)
+    ) {
       throw new Error('OPTION_COMPOSER_INVALID_SCRIPTURE')
     }
 

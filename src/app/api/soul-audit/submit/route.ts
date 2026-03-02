@@ -165,11 +165,13 @@ export async function POST(request: NextRequest) {
     const priorRuns = await listAuditRunsForSessionWithFallback(sessionToken)
     const usedDirectionSlugs = new Set<string>()
     const usedDirectionTitles = new Set<string>()
+    const usedScriptureAnchors = new Set<string>()
     for (const run of priorRuns) {
       const priorOptions = await getAuditOptionsWithFallback(run.id)
       for (const option of priorOptions) {
         if (option.slug) usedDirectionSlugs.add(option.slug)
         if (option.title) usedDirectionTitles.add(option.title)
+        if (option.preview?.verse) usedScriptureAnchors.add(option.preview.verse)
       }
     }
 
@@ -179,6 +181,7 @@ export async function POST(request: NextRequest) {
       selection = await selectIngredients(responseText, {
         excludeDirectionSlugs: Array.from(usedDirectionSlugs),
         excludeDirectionTitles: Array.from(usedDirectionTitles),
+        excludeScriptureAnchors: Array.from(usedScriptureAnchors),
       })
     } catch (selectionError) {
       const firstCode =
