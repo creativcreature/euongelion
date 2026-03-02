@@ -573,7 +573,8 @@ export async function selectIngredients(
 
   const usedTitles = new Set(excludeDirectionTitles)
   const usedSlugs = new Set(excludeDirectionSlugs)
-  const usedScriptures = new Set(excludeScriptureAnchors)
+  const priorScriptures = new Set(excludeScriptureAnchors)
+  const usedScriptures = new Set<string>()
 
   const directions: IngredientDirection[] = []
 
@@ -603,10 +604,18 @@ export async function selectIngredients(
 
     // Scripture overlap across audits is allowed when the same biblical theme
     // remains most relevant, but prefer unique anchors within the current set.
-    if (usedScriptures.has(scriptureAnchor)) {
-      const replacement = scriptureCandidates
+    if (usedScriptures.has(scriptureAnchor) || priorScriptures.has(scriptureAnchor)) {
+      const normalizedPool = scriptureCandidates
         .map((reference) => normalizeScriptureRef(reference))
-        .find((reference) => reference && !usedScriptures.has(reference))
+        .filter(Boolean)
+      const preferredReplacement = normalizedPool.find(
+        (reference) =>
+          !usedScriptures.has(reference) && !priorScriptures.has(reference),
+      )
+      const fallbackReplacement = normalizedPool.find(
+        (reference) => !usedScriptures.has(reference),
+      )
+      const replacement = preferredReplacement || fallbackReplacement
       if (replacement) scriptureAnchor = replacement
     }
 
