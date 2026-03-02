@@ -15,6 +15,7 @@ import {
 import { buildOnboardingDay } from '@/lib/soul-audit/curated-builder'
 import {
   buildDeterministicDay,
+  composeDay,
   composeRecap,
   composeSabbath,
   retrieveIngredientsForDay,
@@ -406,10 +407,11 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // ─── Compose ALL days from reference library ───
-    // Uses composeDay which tries LLM first, then falls back to deterministic
-    // composition from reference chunks. Either path uses real theological
-    // sources from reference-index.json (Augustine, Calvin, Luther, etc.)
+    // ─── Compose days from reference library ───
+    // Day 1: LLM-composed (one call, 5-8s) — produces flowing prose from
+    //   reference chunks. Falls back to deterministic if LLM unavailable.
+    // Days 2-5: Deterministic (instant) — stored with reference chunks,
+    //   can be LLM-upgraded later when user navigates to them.
     const intent = parseAuditIntent(run.response_text)
     const usedChunkIds: string[] = []
     const composedDays: CustomPlanDay[] = []
@@ -433,10 +435,7 @@ export async function POST(request: NextRequest) {
           `chunks: ${chunks.length}, target: ${DEFAULT_WORD_TARGET}w`,
       )
 
-      // Deterministic composition from reference library — instant, no LLM,
-      // no timeout risk. Each day assembled from 15-20 real theological
-      // source chunks (Augustine, Calvin, Luther, etc.)
-      const day = buildDeterministicDay({
+      const dayParams = {
         dayNumber,
         chiasticPosition: WEEK_CHIASTIC[i] ?? ("B'" as const),
         pardesLevel: WEEK_PARDES[i] ?? 'integrated',
@@ -446,10 +445,20 @@ export async function POST(request: NextRequest) {
         targetWordCount: DEFAULT_WORD_TARGET,
         referenceChunks: chunks,
         planTitle: option.title,
-      })
+      }
 
-      usedChunkIds.push(...chunks.map((c) => c.id))
-      composedDays.push(day)
+      if (dayNumber === 1) {
+        // Day 1: LLM-composed — the user reads this immediately.
+        // composeDay tries LLM first, falls back to deterministic.
+        const result = await composeDay(dayParams)
+        usedChunkIds.push(...result.usedChunkIds)
+        composedDays.push(result.day)
+      } else {
+        // Days 2-5: deterministic from reference chunks (instant).
+        const day = buildDeterministicDay(dayParams)
+        usedChunkIds.push(...chunks.map((c) => c.id))
+        composedDays.push(day)
+      }
     }
 
     // ─── Days 6-7: sabbath + recap (deterministic, use composed days) ───

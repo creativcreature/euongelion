@@ -1,0 +1,16 @@
+.claude/
+.git/
+.next/
+node_modules/
+__tests__/
+docs/
+database/
+ios/
+user-references/
+soul-audit-docs/
+content/reference/
+content/approved/
+content/final/
+content/series-html/
+content/EUANGELION-IMAGE-LIBRARY.xlsx
+*.log

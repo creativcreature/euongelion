@@ -39,6 +39,12 @@ content/reference/stepbible-data/
 # Artwork source files (blue woodprint generated from these)
 public/images/devotional-prints/*/raw.jpg
 
+# Claude Code local files (agents/ and skills/ ARE tracked)
+.claude/launch.json
+.claude/settings.local.json
+.claude/worktrees/
+.claude/plans/
+
 # OS
 .DS_Store
 Thumbs.db

@@ -5,6 +5,14 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## SA-037: LLM-compose Day 1, clean dead code, gitignore hygiene (2026-03-01)
+
+- **Day 1 LLM composition**: Select route now uses `composeDay()` for Day 1 (LLM-composed flowing prose, 5-8s). Days 2-5 remain deterministic. Fixes the raw chunk dump problem where devotionals read like a quote database export.
+- **Dead code cleanup**: Removed 175-line `indexDevotionalJsons()` and 3 unused constants from reference-retriever.ts.
+- **Lint cleanup**: Removed 3 unused imports. 0 errors, 2 pre-existing hook warnings.
+- **Gitignore**: Added `.claude/launch.json`, `.claude/settings.local.json`, `.claude/worktrees/`, `.claude/plans/`. Committed `.vercelignore`.
+- **Deleted**: 6 stale worktrees, obsolete SQL migration, SA-025 patch file.
+
 ## SA-036: Filter metadata chunks, expand reference library (2026-03-01)
 
 - **Metadata filter**: New `isMetadataChunk()` in reference-utils.ts filters document headers, TOCs, expansion protocols, PG/CCEL boilerplate, and placeholder text from reference index.

@@ -21,10 +21,7 @@ import {
   collectFiles,
   detectSourceType,
   extractKeywords,
-  extractScriptureRefs,
   isMetadataChunk,
-  sourcePriority,
-  wordCount,
 } from './reference-utils'
 
 // Re-export the canonical source type for consumers
@@ -65,11 +62,6 @@ const CHUNK_MIN_WORDS = 40
 const CHUNK_MAX_WORDS = 800
 const CHUNK_TARGET_WORDS = 400
 
-// Devotional JSON indexing limits
-const DEVOTIONAL_MAX_CHUNKS = 2_000
-const DEVOTIONAL_MIN_TEXT_LENGTH = 60
-const DEVOTIONAL_REFLECTION_MIN_WORDS = 20
-
 const VALID_SOURCE_TYPES = new Set<ReferenceSourceType>([
   'commentary',
   'bible',
@@ -99,182 +91,6 @@ function addNormalized(base: BaseChunk[]): ReferenceChunk[] {
     ...chunk,
     normalized: chunk.content.toLowerCase(),
   }))
-}
-
-// ─── Devotional JSON indexing ────────────────────────────────────────
-
-interface DevotionalModule {
-  type: string
-  body?: string
-  content?: string
-  passage?: string
-  reference?: string
-  heading?: string
-  keyInsight?: string
-  meaning?: string
-  rootMeaning?: string
-  usageNote?: string
-  word?: string
-  transliteration?: string
-  prompt?: string
-  additionalQuestions?: string[]
-  ancientTruth?: string
-  modernApplication?: string
-  connectionPoint?: string
-}
-
-interface DevotionalJson {
-  day?: number
-  title?: string
-  anchorVerse?: string
-  theme?: string
-  scriptureReference?: string
-  modules?: DevotionalModule[]
-}
-
-/**
- * Extract high-quality reference chunks from the deployed devotional JSONs.
- * These 176 files (3.4MB) are always available on Vercel in public/devotionals/.
- * Each file produces 2-6 chunks from teaching, insight, story, vocab, and scripture modules.
- */
-function indexDevotionalJsons(): ReferenceChunk[] {
-  const devotionalsDir = path.join(process.cwd(), 'public', 'devotionals')
-  if (!fs.existsSync(devotionalsDir)) return []
-
-  let entries: string[] = []
-  try {
-    entries = fs.readdirSync(devotionalsDir).filter((f) => f.endsWith('.json'))
-  } catch {
-    return []
-  }
-
-  const chunks: ReferenceChunk[] = []
-
-  for (const filename of entries) {
-    if (chunks.length >= DEVOTIONAL_MAX_CHUNKS) break
-
-    const filePath = path.join(devotionalsDir, filename)
-    // Guard against path traversal from filenames like "../../../etc/passwd"
-    if (!filePath.startsWith(devotionalsDir + path.sep)) continue
-    let raw: string
-    try {
-      raw = fs.readFileSync(filePath, 'utf8')
-    } catch {
-      continue
-    }
-
-    let data: DevotionalJson
-    try {
-      data = JSON.parse(raw) as DevotionalJson
-    } catch {
-      continue
-    }
-
-    if (!data.modules || !Array.isArray(data.modules)) continue
-
-    const fileId = filename.replace('.json', '')
-    const dayTitle = data.title || fileId
-    const scriptureRef = data.scriptureReference || data.anchorVerse || ''
-    const typeCounters: Record<string, number> = {}
-
-    for (const mod of data.modules) {
-      // Guard against non-object or typeless entries in modules array
-      if (!mod || typeof mod !== 'object' || typeof mod.type !== 'string')
-        continue
-
-      // Extract text content from module.
-      // Bridge modules use ancientTruth/modernApplication/connectionPoint
-      // instead of body/content/passage — must check both field families.
-      const text = mod.body || mod.content || mod.passage || ''
-      const bridgeText = [
-        mod.ancientTruth,
-        mod.modernApplication,
-        mod.connectionPoint,
-      ]
-        .filter(Boolean)
-        .join('\n\n')
-      const effectiveText = text || bridgeText
-      if (!effectiveText || effectiveText.length < DEVOTIONAL_MIN_TEXT_LENGTH)
-        continue
-
-      // Build a rich chunk that includes module metadata
-      const parts: string[] = []
-      if (mod.heading) parts.push(mod.heading)
-      parts.push(effectiveText)
-      if (mod.keyInsight) parts.push(`Key insight: ${mod.keyInsight}`)
-      if (mod.meaning) parts.push(`Meaning: ${mod.meaning}`)
-      if (mod.rootMeaning) parts.push(mod.rootMeaning)
-      if (mod.usageNote) parts.push(mod.usageNote)
-      // Only add bridge fields if they weren't already the primary text
-      if (text && mod.ancientTruth)
-        parts.push(`Ancient truth: ${mod.ancientTruth}`)
-      if (text && mod.modernApplication)
-        parts.push(`Modern application: ${mod.modernApplication}`)
-
-      const content = parts.join('\n\n')
-      const wc = wordCount(content)
-      if (wc < CHUNK_MIN_WORDS) continue
-
-      const normalized = content.toLowerCase()
-      const sourceType: ReferenceSourceType =
-        mod.type === 'scripture'
-          ? 'bible'
-          : mod.type === 'vocab'
-            ? 'lexicon'
-            : mod.type === 'teaching' || mod.type === 'insight'
-              ? 'commentary'
-              : 'theology'
-
-      // Unique ID: counter prevents collision when a file has multiple modules
-      // of the same type (31/175 devotional files do).
-      const typeIndex = typeCounters[mod.type] ?? 0
-      typeCounters[mod.type] = typeIndex + 1
-
-      chunks.push({
-        id: `devotional:${fileId}:${mod.type}:${typeIndex}`,
-        source: `public/devotionals/${filename}`,
-        sourceType,
-        title: `${dayTitle} — ${mod.heading || mod.type}`,
-        content: content.slice(0, CHUNK_MAX_WORDS * 8),
-        normalized,
-        keywords: extractKeywords(content),
-        scriptureRefs: extractScriptureRefs(
-          `${scriptureRef} ${mod.reference || ''} ${content}`,
-        ),
-        priority: sourcePriority(sourceType),
-        wordCount: wc,
-      })
-    }
-
-    // Also index reflection prompts as lightweight chunks for topical matching
-    const reflectionMods = data.modules.filter(
-      (m) => m && typeof m === 'object' && m.type === 'reflection' && m.prompt,
-    )
-    for (let ri = 0; ri < reflectionMods.length; ri++) {
-      const ref = reflectionMods[ri]
-      const questions = [ref.prompt, ...(ref.additionalQuestions || [])].filter(
-        Boolean,
-      )
-      const content = `${dayTitle}\n${data.theme || ''}\n${questions.join('\n')}`
-      const wc = wordCount(content)
-      if (wc < DEVOTIONAL_REFLECTION_MIN_WORDS) continue
-
-      chunks.push({
-        id: `devotional:${fileId}:reflection:${ri}`,
-        source: `public/devotionals/${filename}`,
-        sourceType: 'theology',
-        title: `${dayTitle} — Reflection`,
-        content,
-        normalized: content.toLowerCase(),
-        keywords: extractKeywords(content),
-        scriptureRefs: extractScriptureRefs(`${scriptureRef} ${content}`),
-        priority: 1, // Lightweight topical signal, not a primary source
-        wordCount: wc,
-      })
-    }
-  }
-
-  return chunks
 }
 
 // ─── Corpus building ────────────────────────────────────────────────
