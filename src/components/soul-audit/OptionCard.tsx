@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { typographer } from '@/lib/typographer'
 import { SERIES_DATA } from '@/data/series'
 import { SERIES_HERO } from '@/data/artwork-manifest'
-import { clampScriptureSnippet } from '@/lib/scripture-reference'
 import type { AuditOptionPreview } from '@/types/soul-audit'
 
 interface OptionCardProps {
@@ -36,10 +35,7 @@ export default function OptionCard({
   const keywords = (series?.keywords ?? []).slice(0, 3)
   const dayCount = series?.days.length ?? 0
   const scriptureReference = option.preview?.verse?.trim() || 'Scripture'
-  const scriptureSnippet = clampScriptureSnippet(
-    option.preview?.verseText?.trim() || '',
-    220,
-  )
+  const scriptureSnippet = option.preview?.verseText?.trim() || ''
 
   return (
     <article className={`group relative${isSelecting ? ' animate-pulse' : ''}`}>
@@ -70,6 +66,9 @@ export default function OptionCard({
           </div>
         )}
         <div className="mock-scripture-lead">
+          <p className="audit-option-support text-secondary">
+            WEEKLY SCRIPTURE FOCUS
+          </p>
           <p className="mock-scripture-lead-reference">
             {typographer(scriptureReference)}
           </p>

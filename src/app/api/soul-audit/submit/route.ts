@@ -163,16 +163,19 @@ export async function POST(request: NextRequest) {
 
     const priorRuns = await listAuditRunsForSessionWithFallback(sessionToken)
     const usedDirectionSlugs = new Set<string>()
+    const usedDirectionTitles = new Set<string>()
     for (const run of priorRuns) {
       const priorOptions = await getAuditOptionsWithFallback(run.id)
       for (const option of priorOptions) {
         if (option.slug) usedDirectionSlugs.add(option.slug)
+        if (option.title) usedDirectionTitles.add(option.title)
       }
     }
 
     // ─── Instant ingredient selection (< 1 second, zero LLM calls) ───
     const { directions, intent } = selectIngredients(responseText, {
       excludeDirectionSlugs: Array.from(usedDirectionSlugs),
+      excludeDirectionTitles: Array.from(usedDirectionTitles),
     })
 
     console.info(

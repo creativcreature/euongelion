@@ -47,6 +47,7 @@ export interface IngredientSelectionResult {
 
 export interface IngredientSelectionOptions {
   excludeDirectionSlugs?: string[]
+  excludeDirectionTitles?: string[]
 }
 
 type DirectionSeed = {
@@ -206,6 +207,10 @@ function firstSentence(text: string, maxWords: number): string {
 
 function trimPunctuation(value: string): string {
   return value.replace(/[.!?]+$/g, '').trim()
+}
+
+function normalizeTitle(value: string): string {
+  return collapseWhitespace(value).toLowerCase()
 }
 
 function pickScripture(
@@ -384,6 +389,11 @@ export function selectIngredients(
     seedChunks,
     excludeDirectionSlugs: options.excludeDirectionSlugs,
   })
+  const usedTitleSet = new Set(
+    (options.excludeDirectionTitles ?? []).map((title) =>
+      normalizeTitle(title),
+    ),
+  )
 
   const directions: IngredientDirection[] = seeds.map((seed, index) => {
     const rank = index + 1
@@ -431,7 +441,7 @@ export function selectIngredients(
       titleTopic
     const titleTopicLabel = toHeadline(titleTopic)
     const titlePathwayLabel = toHeadline(titlePathway)
-    const statementTitle = `This path explores ${trimPunctuation(titleTopicLabel)} through ${trimPunctuation(titlePathwayLabel)}.`
+    const statementTitleBase = `This pathway explores ${trimPunctuation(titlePathwayLabel).toLowerCase()} to address ${trimPunctuation(titleTopicLabel).toLowerCase()}.`
     const previewQuestion = `How might ${scripture} reshape ${trimPunctuation(titleTopicLabel).toLowerCase()} through ${trimPunctuation(titlePathwayLabel).toLowerCase()} this week?`
     const scriptureText = resolveScriptureText(
       scripture,
@@ -447,6 +457,21 @@ export function selectIngredients(
       }),
       MAX_PREVIEW_WORDS,
     )
+
+    const sourceTag = sourceHints[0]
+      ? trimPunctuation(firstSentence(sourceHints[0], 6))
+      : ''
+    const titleVariants = [
+      statementTitleBase,
+      `${statementTitleBase} Scripture focus: ${scripture}.`,
+      sourceTag
+        ? `${statementTitleBase} Informed by ${sourceTag}.`
+        : `${statementTitleBase} Informed by trusted reference witnesses.`,
+    ]
+    const statementTitle =
+      titleVariants.find((title) => !usedTitleSet.has(normalizeTitle(title))) ??
+      `${statementTitleBase} Path ${rank}.`
+    usedTitleSet.add(normalizeTitle(statementTitle))
 
     return {
       id: `ai_primary:${seed.slug}:${rank}`,
