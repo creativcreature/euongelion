@@ -189,6 +189,37 @@ describe('Soul Audit staged flow', () => {
     expect(payload.options?.every((o) => o.kind === 'ai_primary')).toBe(true)
   })
 
+  it('returns 9 unique pathways across 3 audits for the same input', async () => {
+    mockedSessionToken = 'session-unique-pathways'
+    resetSessionAuditCount(mockedSessionToken)
+
+    const seenSlugs = new Set<string>()
+    for (let attempt = 0; attempt < 3; attempt += 1) {
+      const response = await submitHandler(
+        postJson('http://localhost/api/soul-audit/submit', {
+          response: "I'm sad",
+        }) as never,
+      )
+      expect(response.status).toBe(200)
+
+      const payload = (await response.json()) as {
+        options?: Array<{ slug?: string; title?: string }>
+      }
+      expect(Array.isArray(payload.options)).toBe(true)
+      expect(payload.options).toHaveLength(3)
+
+      for (const option of payload.options ?? []) {
+        expect(typeof option.slug).toBe('string')
+        const slug = String(option.slug || '').trim()
+        expect(slug.length).toBeGreaterThan(0)
+        expect(seenSlugs.has(slug)).toBe(false)
+        seenSlugs.add(slug)
+      }
+    }
+
+    expect(seenSlugs.size).toBe(9)
+  })
+
   it('crisis acknowledgement gate is enforced at selection', async () => {
     const submitResponse = await submitHandler(
       postJson('http://localhost/api/soul-audit/submit', {

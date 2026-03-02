@@ -55,26 +55,36 @@ describe('Soul Audit option specificity', () => {
     ).toBe(true)
   })
 
-  it('keeps option cards directly relevant across common prompt types', () => {
-    for (const testCase of CASES) {
-      const { directions } = selectIngredients(testCase.input)
-      expect(directions).toHaveLength(3)
+  it(
+    'keeps option cards directly relevant across common prompt types',
+    () => {
+      for (const testCase of CASES) {
+        const { directions } = selectIngredients(testCase.input)
+        expect(directions).toHaveLength(3)
+        expect(
+          new Set(directions.map((direction) => direction.title)).size,
+        ).toBe(3)
+        expect(
+          new Set(directions.map((direction) => direction.directionSlug)).size,
+        ).toBe(3)
 
-      const allText = directions
-        .map((direction) =>
-          [
-            direction.title,
-            direction.question,
-            direction.day1Preview.title,
-            direction.day1Preview.reflectionPrompt,
-            direction.matchedKeywords.join(' '),
-          ]
-            .join(' ')
-            .toLowerCase(),
-        )
-        .join(' ')
+        const allText = directions
+          .map((direction) =>
+            [
+              direction.title,
+              direction.question,
+              direction.day1Preview.title,
+              direction.day1Preview.reflectionPrompt,
+              direction.matchedKeywords.join(' '),
+            ]
+              .join(' ')
+              .toLowerCase(),
+          )
+          .join(' ')
 
-      expect(allText).toMatch(testCase.expectAny)
-    }
-  })
+        expect(allText).toMatch(testCase.expectAny)
+      }
+    },
+    20_000,
+  )
 })

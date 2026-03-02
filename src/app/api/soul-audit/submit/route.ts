@@ -19,7 +19,9 @@ import { createRunToken, verifyRunToken } from '@/lib/soul-audit/run-token'
 import {
   bumpSessionAuditCount,
   createAuditRun,
+  getAuditOptionsWithFallback,
   getSessionAuditCount,
+  listAuditRunsForSessionWithFallback,
   saveAuditTelemetry,
 } from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
@@ -159,8 +161,19 @@ export async function POST(request: NextRequest) {
     const crisisDetected = detectCrisis(responseText)
     const inputGuidance = getLowContextGuidance(responseText)
 
+    const priorRuns = await listAuditRunsForSessionWithFallback(sessionToken)
+    const usedDirectionSlugs = new Set<string>()
+    for (const run of priorRuns) {
+      const priorOptions = await getAuditOptionsWithFallback(run.id)
+      for (const option of priorOptions) {
+        if (option.slug) usedDirectionSlugs.add(option.slug)
+      }
+    }
+
     // ─── Instant ingredient selection (< 1 second, zero LLM calls) ───
-    const { directions, intent } = selectIngredients(responseText)
+    const { directions, intent } = selectIngredients(responseText, {
+      excludeDirectionSlugs: Array.from(usedDirectionSlugs),
+    })
 
     console.info(
       `[soul-audit:submit] Ingredient selection — ${directions.length} directions, ` +

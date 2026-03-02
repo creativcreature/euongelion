@@ -3,18 +3,21 @@
  *
  * RAG-first direction selection for Soul Audit.
  *
- * This selector does NOT rely on pre-authored devotional modules.
- * It builds three thematic directions from:
- * - user reflection intent
- * - scripture anchors
- * - reference library retrieval (RAG)
+ * Directions are constructed from:
+ * 1) terms extracted from the user's raw input
+ * 2) reference chunks retrieved with those exact terms
+ *
+ * No pre-authored devotional modules are used in this selector.
  */
 
 import {
   parseAuditIntent,
   type ParsedAuditIntent,
 } from '@/lib/brain/intent-parser'
-import { retrieveForDay } from './reference-retriever'
+import {
+  retrieveForDay,
+  type ReferenceChunk,
+} from './reference-retriever'
 
 export interface IngredientDirection {
   id: string
@@ -42,54 +45,84 @@ export interface IngredientSelectionResult {
   strategy: 'ingredient_selection'
 }
 
-type DirectionLens = {
+export interface IngredientSelectionOptions {
+  excludeDirectionSlugs?: string[]
+}
+
+type DirectionSeed = {
   slug: string
   focusTerms: string[]
-  pardes: 'peshat' | 'remez' | 'derash' | 'integrated'
   chiastic: 'A' | 'B' | 'C'
+  pardes: 'peshat' | 'remez' | 'derash'
+  seedChunk: ReferenceChunk | null
 }
 
 const DIRECTION_COUNT = 3
 const MAX_PREVIEW_WORDS = 65
-const WEAK_TERMS = new Set([
-  'want',
-  'need',
-  'feel',
-  'feels',
-  'felt',
-  'learn',
-  'about',
-  'today',
-  'lately',
-  'just',
-  'really',
-  'very',
-  'with',
+const CHIASTIC_BY_RANK: Array<'A' | 'B' | 'C'> = ['A', 'B', 'C']
+const PARDES_BY_RANK: Array<'peshat' | 'remez' | 'derash'> = [
+  'peshat',
+  'remez',
+  'derash',
+]
+
+const STOPWORDS = new Set([
+  'a',
+  'an',
+  'and',
+  'are',
+  'as',
+  'at',
+  'be',
+  'been',
+  'but',
+  'for',
   'from',
+  'have',
+  'help',
+  'how',
+  'i',
+  'in',
   'into',
+  'is',
+  'it',
+  'its',
+  'just',
+  'learn',
+  'lately',
+  'me',
+  'my',
+  'of',
+  'on',
+  'or',
+  'our',
+  'please',
+  'really',
+  'so',
+  'teach',
   'that',
-  'this',
+  'the',
+  'their',
+  'them',
   'these',
+  'they',
+  'this',
   'those',
+  'to',
+  'today',
+  'very',
+  'want',
+  'was',
+  'we',
   'what',
   'when',
   'where',
   'which',
   'who',
-  'whom',
+  'why',
+  'with',
+  'you',
   'your',
-  'mine',
-  'our',
-  'their',
-  'keep',
-  'keeps',
-  'been',
-  'have',
-  'dont',
-  "don't",
-  'please',
-  'help',
-  'teach',
 ])
 
 function collapseWhitespace(value: string): string {
@@ -98,7 +131,7 @@ function collapseWhitespace(value: string): string {
 
 function toHeadline(value: string): string {
   const cleaned = collapseWhitespace(value).toLowerCase()
-  if (!cleaned) return 'Focused Direction'
+  if (!cleaned) return 'Reading Direction'
   return cleaned
     .split(' ')
     .map((token) => token.charAt(0).toUpperCase() + token.slice(1))
@@ -115,17 +148,30 @@ function slugify(value: string): string {
     .slice(0, 48)
 }
 
-function extractKeywords(input: string): string[] {
+function tokenize(input: string): string[] {
+  return input
+    .toLowerCase()
+    .replace(/[^a-z0-9'\s-]/g, ' ')
+    .split(/\s+/)
+    .map((token) => token.replace(/^'+|'+$/g, ''))
+    .filter(Boolean)
+}
+
+function extractUserKeywords(input: string): string[] {
+  const raw = tokenize(input).filter((token) => token.length >= 3)
+  const filtered = raw.filter((token) => !STOPWORDS.has(token))
+  const chosen = filtered.length > 0 ? filtered : raw
+  return Array.from(new Set(chosen)).slice(0, 12)
+}
+
+function uniqueTerms(values: string[]): string[] {
   return Array.from(
     new Set(
-      input
-        .toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, ' ')
-        .split(/\s+/)
-        .map((token) => token.trim())
-        .filter((token) => token.length >= 4 && !WEAK_TERMS.has(token)),
+      values
+        .map((value) => collapseWhitespace(value).toLowerCase())
+        .filter((value) => value.length >= 3 && !STOPWORDS.has(value)),
     ),
-  ).slice(0, 12)
+  )
 }
 
 function takeWords(text: string, maxWords: number): string {
@@ -134,11 +180,21 @@ function takeWords(text: string, maxWords: number): string {
   return `${words.slice(0, maxWords).join(' ')}...`
 }
 
-function removeTrailingPunctuation(value: string): string {
-  return value.replace(/[.!?]+$/g, '').trim()
+function firstSentence(text: string, maxWords: number): string {
+  const normalized = collapseWhitespace(text)
+  if (!normalized) return ''
+  const sentence = normalized.split(/(?<=[.!?])\s+/)[0] ?? normalized
+  return takeWords(sentence, maxWords).replace(/[.!?]+$/g, '')
 }
 
-function pickScripture(intent: ParsedAuditIntent, index: number): string {
+function pickScripture(
+  intent: ParsedAuditIntent,
+  index: number,
+  seedChunk: ReferenceChunk | null,
+): string {
+  const chunkScripture = seedChunk?.scriptureRefs?.[0]
+  if (chunkScripture) return chunkScripture
+
   if (intent.scriptureAnchors.length > 0) {
     return intent.scriptureAnchors[index % intent.scriptureAnchors.length]
   }
@@ -147,96 +203,162 @@ function pickScripture(intent: ParsedAuditIntent, index: number): string {
   return fallbacks[index % fallbacks.length]
 }
 
-function uniqueTerms(values: string[]): string[] {
-  return Array.from(
-    new Set(
-      values
-        .map((value) => collapseWhitespace(value).toLowerCase())
-        .filter((value) => value.length > 2 && !WEAK_TERMS.has(value)),
-    ),
-  )
+function pickDistinctSeedChunks(chunks: ReferenceChunk[]): ReferenceChunk[] {
+  const picked: ReferenceChunk[] = []
+  const seenTitles = new Set<string>()
+
+  for (const chunk of chunks) {
+    if (picked.length >= DIRECTION_COUNT) break
+    const titleKey = collapseWhitespace(chunk.title || '').toLowerCase()
+    if (titleKey && seenTitles.has(titleKey)) continue
+    if (titleKey) seenTitles.add(titleKey)
+    picked.push(chunk)
+  }
+
+  for (const chunk of chunks) {
+    if (picked.length >= DIRECTION_COUNT) break
+    if (picked.some((selected) => selected.id === chunk.id)) continue
+    picked.push(chunk)
+  }
+
+  return picked
 }
 
-function buildLenses(
-  intent: ParsedAuditIntent,
-  keywords: string[],
-): DirectionLens[] {
-  const termPool = uniqueTerms([
-    ...intent.themes,
-    ...keywords,
-    'faithful attention',
-    'wisdom',
-    'hope',
-    'restoration',
-  ])
-  const slots: Array<{
-    pardes: DirectionLens['pardes']
-    chiastic: DirectionLens['chiastic']
-  }> = [
-    { pardes: 'peshat', chiastic: 'A' },
-    { pardes: 'remez', chiastic: 'B' },
-    { pardes: 'derash', chiastic: 'C' },
-  ]
+function buildDirectionSeeds(params: {
+  responseText: string
+  userKeywords: string[]
+  seedChunks: ReferenceChunk[]
+  excludeDirectionSlugs?: string[]
+}): DirectionSeed[] {
+  const { responseText, userKeywords, seedChunks } = params
+  const baseKeywords =
+    userKeywords.length > 0 ? userKeywords : extractUserKeywords(responseText)
+  const expansionPool = uniqueTerms(
+    seedChunks.flatMap((chunk) => [
+      ...(chunk.keywords ?? []),
+      ...extractUserKeywords(chunk.title),
+      ...extractUserKeywords(takeWords(chunk.content, 120)),
+    ]),
+  ).filter((term) => !baseKeywords.includes(term))
 
-  return slots.map((slot, index) => {
-    const terms = [
-      termPool[index] ?? termPool[0] ?? 'faithful attention',
-      termPool[index + 1] ?? termPool[1] ?? 'wisdom',
-      termPool[index + 2] ?? termPool[2] ?? 'hope',
-      termPool[index + 3] ?? termPool[3] ?? 'restoration',
-    ]
-    return {
-      slug: slugify(`${terms[0]} ${terms[1]}`) || `direction-${index + 1}`,
-      focusTerms: uniqueTerms(terms).slice(0, 4),
-      pardes: slot.pardes,
-      chiastic: slot.chiastic,
+  const seeds: DirectionSeed[] = []
+  const excludedSlugs = new Set(
+    (params.excludeDirectionSlugs ?? []).map((slug) => slugify(slug)),
+  )
+  const usedSlugs = new Set<string>(excludedSlugs)
+
+  for (let i = 0; i < DIRECTION_COUNT; i++) {
+    const seedChunk = seedChunks[i] ?? seedChunks[0] ?? null
+    const chunkTerms = seedChunk
+      ? uniqueTerms([
+          ...(seedChunk.keywords ?? []),
+          ...extractUserKeywords(seedChunk.title),
+        ])
+      : []
+    const rotated = [...baseKeywords.slice(i), ...baseKeywords.slice(0, i)]
+    const expansionTerms = [
+      expansionPool[(i * 2) % Math.max(1, expansionPool.length)],
+      expansionPool[(i * 2 + 1) % Math.max(1, expansionPool.length)],
+      expansionPool[(i * 2 + 2) % Math.max(1, expansionPool.length)],
+    ].filter((term): term is string => Boolean(term))
+
+    let focusTerms = uniqueTerms([
+      ...baseKeywords,
+      ...rotated.slice(0, 4),
+      ...chunkTerms,
+      ...expansionTerms,
+    ]).slice(0, 8)
+
+    if (focusTerms.length === 0) {
+      focusTerms = baseKeywords.slice(0, 3)
     }
-  })
+    if (baseKeywords[0] && !focusTerms.includes(baseKeywords[0])) {
+      focusTerms = uniqueTerms([baseKeywords[0], ...focusTerms]).slice(0, 8)
+    }
+
+    let slugBasis = focusTerms.slice(0, 4).join(' ')
+    let slug = slugify(slugBasis) || `direction-${i + 1}`
+    let uniquenessAttempt = 0
+    while (usedSlugs.has(slug) && uniquenessAttempt < 6) {
+      const uniquenessTerm =
+        expansionPool[(i * 3 + uniquenessAttempt) % Math.max(1, expansionPool.length)] ??
+        chunkTerms[uniquenessAttempt] ??
+        baseKeywords[(i + uniquenessAttempt) % Math.max(1, baseKeywords.length)] ??
+        String(i + 1)
+      focusTerms = uniqueTerms([baseKeywords[0] ?? '', uniquenessTerm, ...focusTerms]).slice(0, 8)
+      slugBasis = focusTerms.slice(0, 4).join(' ')
+      slug = slugify(slugBasis) || `direction-${i + 1}-${uniquenessAttempt + 1}`
+      uniquenessAttempt += 1
+    }
+    if (usedSlugs.has(slug)) {
+      slug = `${slug}-${i + 1}`
+    }
+    usedSlugs.add(slug)
+
+    seeds.push({
+      slug,
+      focusTerms,
+      chiastic: CHIASTIC_BY_RANK[i] ?? 'C',
+      pardes: PARDES_BY_RANK[i] ?? 'derash',
+      seedChunk,
+    })
+  }
+
+  return seeds
 }
 
 export function selectIngredients(
   responseText: string,
+  options: IngredientSelectionOptions = {},
 ): IngredientSelectionResult {
   const intent = parseAuditIntent(responseText)
-  const keywords = extractKeywords(responseText)
-  const lenses = buildLenses(intent, keywords)
+  const userKeywords = extractUserKeywords(responseText)
+  const topicKeywords = userKeywords.slice(0, 2)
+  const topicLabel = topicKeywords.join(' ')
 
-  const directions: IngredientDirection[] = lenses.map((lens, index) => {
+  const baseRetrieval = retrieveForDay({
+    themes: userKeywords,
+    scriptureAnchors: intent.scriptureAnchors,
+    topic: responseText,
+    limit: 25,
+  })
+
+  const seedChunks = pickDistinctSeedChunks(baseRetrieval.chunks)
+  const seeds = buildDirectionSeeds({
+    responseText,
+    userKeywords,
+    seedChunks,
+    excludeDirectionSlugs: options.excludeDirectionSlugs,
+  })
+
+  const directions: IngredientDirection[] = seeds.map((seed, index) => {
     const rank = index + 1
-    const scripture = pickScripture(intent, index)
-    const focusTerms = uniqueTerms([
-      ...lens.focusTerms,
-      ...intent.themes,
-      ...keywords,
-    ]).slice(0, 6)
-    const focusPhrase = focusTerms.slice(0, 2).join(' and ')
+    const scripture = pickScripture(intent, index, seed.seedChunk)
+
     const retrieval = retrieveForDay({
-      themes: focusTerms,
+      themes: seed.focusTerms,
       scriptureAnchors: [scripture],
-      topic: `${responseText} ${focusTerms.join(' ')}`,
+      topic: `${responseText} ${seed.focusTerms.join(' ')} ${seed.seedChunk?.title ?? ''}`,
       limit: 20,
-      chiasticPosition: lens.chiastic,
-      pardesLevel: lens.pardes,
+      chiasticPosition: seed.chiastic,
+      pardesLevel: seed.pardes,
     })
 
-    const topChunk = retrieval.chunks[0]
+    const topChunk = retrieval.chunks[0] ?? seed.seedChunk
     const sourceHints = Array.from(
       new Set(retrieval.chunks.map((chunk) => chunk.title)),
     ).slice(0, 4)
 
+    const focusPhrase = seed.focusTerms.slice(0, 2).join(' ')
+    const sourceLead = topChunk ? firstSentence(topChunk.content, 18) : ''
+
     const teachingExcerpt = topChunk
       ? takeWords(topChunk.content, MAX_PREVIEW_WORDS)
-      : takeWords(
-          `A reference-grounded reading on ${focusPhrase || 'this reflection'}.`,
-          MAX_PREVIEW_WORDS,
-        )
-    const sourceLead = removeTrailingPunctuation(
-      topChunk ? takeWords(topChunk.content, 14) : focusPhrase,
-    )
+      : takeWords(responseText, MAX_PREVIEW_WORDS)
 
     const scriptureText = topChunk
       ? takeWords(topChunk.content, 40)
-      : `Read ${scripture} slowly and mark the phrase that resists you and the phrase that restores you.`
+      : `Read ${scripture} slowly and mark the phrase that names your current question and the phrase that names the promise.`
 
     const confidenceRaw =
       retrieval.totalScore / Math.max(1, retrieval.chunks.length * 8)
@@ -244,26 +366,44 @@ export function selectIngredients(
       Math.max(0.45, Math.min(0.99, confidenceRaw)).toFixed(3),
     )
 
+    const reasoningTerms = seed.focusTerms.slice(0, 3).join(', ')
+    const reasoningSources =
+      sourceHints.length > 0
+        ? sourceHints.slice(0, 2).join(' and ')
+        : topChunk?.title || 'retrieved witnesses'
+    const pathwayTerms = seed.focusTerms
+      .filter((term) => !topicKeywords.includes(term))
+      .slice(0, 2)
+      .join(' ')
+    const titleTopic =
+      topicLabel ||
+      seed.focusTerms.slice(0, 2).join(' ') ||
+      collapseWhitespace(responseText).slice(0, 60)
+    const titlePathway =
+      pathwayTerms ||
+      extractUserKeywords(sourceHints[0] ?? '').slice(0, 2).join(' ') ||
+      seed.focusTerms[0] ||
+      titleTopic
+
     return {
-      id: `ai_primary:${lens.slug}:${rank}`,
+      id: `ai_primary:${seed.slug}:${rank}`,
       rank,
-      title: `${toHeadline(focusPhrase || 'Focused Reading')} in ${scripture}`,
-      question: `${toHeadline(focusPhrase || 'This Reflection')}: ${sourceLead || scripture}`,
-      reasoning:
-        sourceHints.length > 0
-          ? `Matched themes (${focusTerms.slice(0, 3).join(', ')}) against reference witnesses including ${sourceHints.slice(0, 2).join(' and ')}.`
-          : `Matched themes (${focusTerms.slice(0, 3).join(', ')}) and built a reference-first direction.`,
+      title: `${toHeadline(titleTopic)}: ${toHeadline(titlePathway)}`,
+      question: sourceLead
+        ? `${toHeadline(titlePathway)} from ${scripture}: ${sourceLead}`
+        : `${toHeadline(titlePathway)} through ${scripture}`,
+      reasoning: `Matched input terms (${reasoningTerms}) against ${reasoningSources}.`,
       scriptureAnchor: scripture,
-      directionSlug: lens.slug,
+      directionSlug: seed.slug,
       confidence,
       day1Preview: {
-        title: `${toHeadline(focusPhrase || 'Focused Reading')} — Day 1`,
+        title: `${toHeadline(titleTopic)} — ${toHeadline(titlePathway)} (Day 1)`,
         scriptureReference: scripture,
         scriptureText,
         teachingExcerpt,
-        reflectionPrompt: `Where does ${scripture} confront or clarify ${focusPhrase || 'this reflection'}?`,
+        reflectionPrompt: `How does ${scripture} speak into ${focusPhrase || collapseWhitespace(responseText).slice(0, 90)}?`,
       },
-      matchedKeywords: focusTerms,
+      matchedKeywords: seed.focusTerms,
       referenceSourceHints: sourceHints,
     }
   })
