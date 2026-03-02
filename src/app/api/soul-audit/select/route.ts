@@ -28,10 +28,6 @@ import {
   type IngredientDirection,
 } from '@/lib/soul-audit/ingredient-selector'
 import {
-  rankCandidatesForInput,
-  type CuratedDayCandidate,
-} from '@/lib/soul-audit/curation-engine'
-import {
   createPlan,
   getAllPlanDays,
   getAuditOptionsWithFallback,
@@ -199,7 +195,6 @@ function buildRagCandidates(params: {
   responseText: string
   intent: ReturnType<typeof parseAuditIntent>
   direction: IngredientDirection
-  moduleAnchors: CuratedDayCandidate[]
 }): RagCandidate[] {
   const scripturePlan = Array.from(
     new Set([
@@ -225,35 +220,25 @@ function buildRagCandidates(params: {
       ] ??
       params.intent.themes[index % Math.max(1, params.intent.themes.length)] ??
       'faithful endurance'
-    const moduleAnchor =
-      params.moduleAnchors[index % Math.max(1, params.moduleAnchors.length)] ??
-      null
-    const scripture = moduleAnchor?.scriptureReference || scriptureReference
+    const scripture = scriptureReference
 
     return {
       key: `rag:${params.runId}:${params.direction.directionSlug}:${dayNumber}`,
-      seriesSlug: moduleAnchor?.seriesSlug || params.direction.directionSlug,
-      seriesTitle: moduleAnchor?.seriesTitle || params.direction.title,
-      sourcePath: moduleAnchor?.sourcePath || 'reference-rag',
+      seriesSlug: params.direction.directionSlug,
+      seriesTitle: params.direction.title,
+      sourcePath: 'reference-rag',
       dayNumber,
-      dayTitle: moduleAnchor?.dayTitle || `Day ${dayNumber}: ${focus}`,
+      dayTitle: `Day ${dayNumber}: ${focus}`,
       scriptureReference: scripture,
       scriptureText:
-        moduleAnchor?.scriptureText ||
-        (dayNumber === 1
+        dayNumber === 1
           ? params.direction.day1Preview.scriptureText
-          : `Read ${scripture} slowly. Mark one phrase that names the tension and one phrase that names the promise.`),
-      teachingText:
-        moduleAnchor?.teachingText ||
-        `RAG-composed day (${chiastic}, ${pardes}) grounded in reference witnesses around ${focus}.`,
-      reflectionPrompt:
-        moduleAnchor?.reflectionPrompt ||
-        `Where does ${scripture} challenge or clarify ${focus}?`,
+          : `Read ${scripture} slowly. Mark one phrase that names the tension and one phrase that names the promise.`,
+      teachingText: `RAG-composed day (${chiastic}, ${pardes}) grounded in reference witnesses around ${focus}.`,
+      reflectionPrompt: `Where does ${scripture} challenge or clarify ${focus}?`,
       prayerText:
-        moduleAnchor?.prayerText ||
         'Lord, form truth and courage in me as I read, reflect, and obey.',
       takeawayText:
-        moduleAnchor?.takeawayText ||
         'Write one concrete act of obedience from today’s reading and complete it before the day ends.',
       searchText: `${params.responseText} ${focus} ${scripture}`.toLowerCase(),
     }
@@ -491,19 +476,11 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    const moduleAnchors = rankCandidatesForInput({
-      input: `${run.response_text} ${selectedDirection.matchedKeywords.join(' ')}`,
-      aiThemes: intent.themes,
-    })
-      .map((entry) => entry.candidate)
-      .slice(0, CANDIDATES_PER_DIRECTION)
-
     const seriesCandidates = buildRagCandidates({
       runId,
       responseText: run.response_text,
       intent,
       direction: selectedDirection,
-      moduleAnchors,
     })
 
     // ─── Compose days from reference library ───

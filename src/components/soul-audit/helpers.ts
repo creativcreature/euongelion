@@ -71,8 +71,8 @@ export const REROLL_USED_SESSION_KEY = 'soul-audit-reroll-used'
 // Legacy text sanitization
 // ---------------------------------------------------------------------------
 
-const LEGACY_BURDEN_FRAMING_PATTERN =
-  /\b(you named this burden|because you named)\b/i
+const LEGACY_DIRECT_QUOTE_PATTERN =
+  /\b(you named this [a-z]+|because you named)\b/i
 const LEGACY_FRAGMENT_TITLE_PATTERN = /^want learn\b/i
 
 function containsLegacyAuditLanguage(
@@ -80,7 +80,7 @@ function containsLegacyAuditLanguage(
 ): boolean {
   if (!value) return false
   return (
-    LEGACY_BURDEN_FRAMING_PATTERN.test(value) ||
+    LEGACY_DIRECT_QUOTE_PATTERN.test(value) ||
     LEGACY_FRAGMENT_TITLE_PATTERN.test(value.trim())
   )
 }
@@ -101,7 +101,7 @@ export function hasLegacyAuditOptionCopy(
 export function sanitizeLegacyDisplayText(value: string): string {
   return value
     .replace(
-      /you named this burden:\s*[""\u201C]?([^""\u201D]+)[""\u201D]?\s*/gi,
+      /you named this [^:]{1,24}:\s*[""\u201C]?([^""\u201D]+)[""\u201D]?\s*/gi,
       'Reflection focus: "$1". ',
     )
     .replace(

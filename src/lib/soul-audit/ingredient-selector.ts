@@ -14,10 +14,6 @@ import {
   parseAuditIntent,
   type ParsedAuditIntent,
 } from '@/lib/brain/intent-parser'
-import {
-  rankCandidatesForInput,
-  type CuratedDayCandidate,
-} from './curation-engine'
 import { retrieveForDay } from './reference-retriever'
 
 export interface IngredientDirection {
@@ -48,7 +44,6 @@ export interface IngredientSelectionResult {
 
 type DirectionLens = {
   slug: string
-  label: string
   focusTerms: string[]
   pardes: 'peshat' | 'remez' | 'derash' | 'integrated'
   chiastic: 'A' | 'B' | 'C'
@@ -56,6 +51,46 @@ type DirectionLens = {
 
 const DIRECTION_COUNT = 3
 const MAX_PREVIEW_WORDS = 65
+const WEAK_TERMS = new Set([
+  'want',
+  'need',
+  'feel',
+  'feels',
+  'felt',
+  'learn',
+  'about',
+  'today',
+  'lately',
+  'just',
+  'really',
+  'very',
+  'with',
+  'from',
+  'into',
+  'that',
+  'this',
+  'these',
+  'those',
+  'what',
+  'when',
+  'where',
+  'which',
+  'who',
+  'whom',
+  'your',
+  'mine',
+  'our',
+  'their',
+  'keep',
+  'keeps',
+  'been',
+  'have',
+  'dont',
+  "don't",
+  'please',
+  'help',
+  'teach',
+])
 
 function collapseWhitespace(value: string): string {
   return value.replace(/\s+/g, ' ').trim()
@@ -88,7 +123,7 @@ function extractKeywords(input: string): string[] {
         .replace(/[^a-z0-9\s-]/g, ' ')
         .split(/\s+/)
         .map((token) => token.trim())
-        .filter((token) => token.length >= 4),
+        .filter((token) => token.length >= 4 && !WEAK_TERMS.has(token)),
     ),
   ).slice(0, 12)
 }
@@ -97,6 +132,10 @@ function takeWords(text: string, maxWords: number): string {
   const words = collapseWhitespace(text).split(' ').filter(Boolean)
   if (words.length <= maxWords) return words.join(' ')
   return `${words.slice(0, maxWords).join(' ')}...`
+}
+
+function removeTrailingPunctuation(value: string): string {
+  return value.replace(/[.!?]+$/g, '').trim()
 }
 
 function pickScripture(intent: ParsedAuditIntent, index: number): string {
@@ -108,53 +147,51 @@ function pickScripture(intent: ParsedAuditIntent, index: number): string {
   return fallbacks[index % fallbacks.length]
 }
 
-function pickModuleAnchor(params: {
-  ranked: Array<{ candidate: CuratedDayCandidate; score: number }>
-  usedSeries: Set<string>
-  fallbackIndex: number
-}): CuratedDayCandidate | null {
-  for (const entry of params.ranked) {
-    if (params.usedSeries.has(entry.candidate.seriesSlug)) continue
-    params.usedSeries.add(entry.candidate.seriesSlug)
-    return entry.candidate
-  }
-
-  const fallback = params.ranked[params.fallbackIndex]?.candidate ?? null
-  if (fallback) params.usedSeries.add(fallback.seriesSlug)
-  return fallback
+function uniqueTerms(values: string[]): string[] {
+  return Array.from(
+    new Set(
+      values
+        .map((value) => collapseWhitespace(value).toLowerCase())
+        .filter((value) => value.length > 2 && !WEAK_TERMS.has(value)),
+    ),
+  )
 }
 
 function buildLenses(
   intent: ParsedAuditIntent,
   keywords: string[],
 ): DirectionLens[] {
-  const primary = intent.themes[0] || keywords[0] || 'faithful endurance'
-  const secondary = intent.themes[1] || keywords[1] || 'clarity in uncertainty'
-  const tertiary = intent.themes[2] || keywords[2] || 'renewed hope'
+  const termPool = uniqueTerms([
+    ...intent.themes,
+    ...keywords,
+    'faithful attention',
+    'wisdom',
+    'hope',
+    'restoration',
+  ])
+  const slots: Array<{
+    pardes: DirectionLens['pardes']
+    chiastic: DirectionLens['chiastic']
+  }> = [
+    { pardes: 'peshat', chiastic: 'A' },
+    { pardes: 'remez', chiastic: 'B' },
+    { pardes: 'derash', chiastic: 'C' },
+  ]
 
-  return [
-    {
-      slug: slugify(`grounded-${primary}`) || 'grounded-direction',
-      label: 'Grounded Reading',
-      focusTerms: [primary, ...intent.themes].slice(0, 4),
-      pardes: 'peshat' as const,
-      chiastic: 'A' as const,
-    },
-    {
-      slug: slugify(`historical-${secondary}`) || 'historical-direction',
-      label: 'Historical Witness',
-      focusTerms: [secondary, primary, ...keywords].slice(0, 4),
-      pardes: 'remez' as const,
-      chiastic: 'B' as const,
-    },
-    {
-      slug: slugify(`integrated-${tertiary}`) || 'integrated-direction',
-      label: 'Integrated Practice',
-      focusTerms: [tertiary, secondary, ...intent.themes].slice(0, 4),
-      pardes: 'derash' as const,
-      chiastic: 'C' as const,
-    },
-  ].slice(0, DIRECTION_COUNT)
+  return slots.map((slot, index) => {
+    const terms = [
+      termPool[index] ?? termPool[0] ?? 'faithful attention',
+      termPool[index + 1] ?? termPool[1] ?? 'wisdom',
+      termPool[index + 2] ?? termPool[2] ?? 'hope',
+      termPool[index + 3] ?? termPool[3] ?? 'restoration',
+    ]
+    return {
+      slug: slugify(`${terms[0]} ${terms[1]}`) || `direction-${index + 1}`,
+      focusTerms: uniqueTerms(terms).slice(0, 4),
+      pardes: slot.pardes,
+      chiastic: slot.chiastic,
+    }
+  })
 }
 
 export function selectIngredients(
@@ -163,26 +200,21 @@ export function selectIngredients(
   const intent = parseAuditIntent(responseText)
   const keywords = extractKeywords(responseText)
   const lenses = buildLenses(intent, keywords)
-  const rankedCandidates = rankCandidatesForInput({
-    input: responseText,
-    aiThemes: intent.themes,
-  })
-  const usedSeries = new Set<string>()
 
   const directions: IngredientDirection[] = lenses.map((lens, index) => {
     const rank = index + 1
-    const moduleAnchor = pickModuleAnchor({
-      ranked: rankedCandidates,
-      usedSeries,
-      fallbackIndex: index,
-    })
-    const scripture =
-      moduleAnchor?.scriptureReference || pickScripture(intent, index)
+    const scripture = pickScripture(intent, index)
+    const focusTerms = uniqueTerms([
+      ...lens.focusTerms,
+      ...intent.themes,
+      ...keywords,
+    ]).slice(0, 6)
+    const focusPhrase = focusTerms.slice(0, 2).join(' and ')
     const retrieval = retrieveForDay({
-      themes: Array.from(new Set([...intent.themes, ...lens.focusTerms])),
+      themes: focusTerms,
       scriptureAnchors: [scripture],
-      topic: `${responseText} ${lens.focusTerms.join(' ')}`,
-      limit: 15,
+      topic: `${responseText} ${focusTerms.join(' ')}`,
+      limit: 20,
       chiasticPosition: lens.chiastic,
       pardesLevel: lens.pardes,
     })
@@ -192,20 +224,19 @@ export function selectIngredients(
       new Set(retrieval.chunks.map((chunk) => chunk.title)),
     ).slice(0, 4)
 
-    const focusPhrase = lens.focusTerms.slice(0, 2).join(' and ')
     const teachingExcerpt = topChunk
       ? takeWords(topChunk.content, MAX_PREVIEW_WORDS)
       : takeWords(
-          moduleAnchor?.teachingText ||
-            `A reference-grounded reading on ${focusPhrase}.`,
+          `A reference-grounded reading on ${focusPhrase || 'this reflection'}.`,
           MAX_PREVIEW_WORDS,
         )
+    const sourceLead = removeTrailingPunctuation(
+      topChunk ? takeWords(topChunk.content, 14) : focusPhrase,
+    )
 
-    const scriptureText =
-      moduleAnchor?.scriptureText ||
-      (topChunk
-        ? takeWords(topChunk.content, 40)
-        : `Read ${scripture} slowly and mark the phrase that resists you and the phrase that restores you.`)
+    const scriptureText = topChunk
+      ? takeWords(topChunk.content, 40)
+      : `Read ${scripture} slowly and mark the phrase that resists you and the phrase that restores you.`
 
     const confidenceRaw =
       retrieval.totalScore / Math.max(1, retrieval.chunks.length * 8)
@@ -216,25 +247,23 @@ export function selectIngredients(
     return {
       id: `ai_primary:${lens.slug}:${rank}`,
       rank,
-      title: `${lens.label}: ${toHeadline(focusPhrase || lens.label)}`,
-      question:
-        moduleAnchor?.reflectionPrompt ||
-        `What if this week focused on ${focusPhrase || 'faithful attention'} through ${scripture}?`,
+      title: `${toHeadline(focusPhrase || 'Focused Reading')} in ${scripture}`,
+      question: `${toHeadline(focusPhrase || 'This Reflection')}: ${sourceLead || scripture}`,
       reasoning:
         sourceHints.length > 0
-          ? `Matched themes (${lens.focusTerms.slice(0, 3).join(', ')}) against reference witnesses including ${sourceHints.slice(0, 2).join(' and ')} with curated module anchors.`
-          : `Matched themes (${lens.focusTerms.slice(0, 3).join(', ')}) and built a reference-first direction with curated anchors.`,
+          ? `Matched themes (${focusTerms.slice(0, 3).join(', ')}) against reference witnesses including ${sourceHints.slice(0, 2).join(' and ')}.`
+          : `Matched themes (${focusTerms.slice(0, 3).join(', ')}) and built a reference-first direction.`,
       scriptureAnchor: scripture,
       directionSlug: lens.slug,
       confidence,
       day1Preview: {
-        title: `${toHeadline(focusPhrase || lens.label)} — Day 1`,
+        title: `${toHeadline(focusPhrase || 'Focused Reading')} — Day 1`,
         scriptureReference: scripture,
         scriptureText,
         teachingExcerpt,
-        reflectionPrompt: `Where does ${scripture} confront or clarify ${focusPhrase || 'your current burden'}?`,
+        reflectionPrompt: `Where does ${scripture} confront or clarify ${focusPhrase || 'this reflection'}?`,
       },
-      matchedKeywords: lens.focusTerms,
+      matchedKeywords: focusTerms,
       referenceSourceHints: sourceHints,
     }
   })

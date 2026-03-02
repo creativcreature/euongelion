@@ -44,7 +44,7 @@ export default function SoulAuditPage() {
 
             <FadeIn delay={0.15} y={12}>
               <h1 className="vw-heading-md mb-6 text-center">
-                {typographer('What are you wrestling with today?')}
+                {typographer('What would you like to explore today?')}
               </h1>
             </FadeIn>
 
@@ -134,7 +134,7 @@ export default function SoulAuditPage() {
                     placeholder="Lately, I've been..."
                     rows={6}
                     disabled={isSubmitting}
-                    aria-label="What are you wrestling with today?"
+                    aria-label="What would you like to explore today?"
                     className="mb-6 w-full resize-none bg-surface-raised p-6 text-serif-italic vw-body-lg text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
                     style={{
                       border: '1px solid var(--color-border)',
