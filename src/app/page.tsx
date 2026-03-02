@@ -204,7 +204,7 @@ export default function Home() {
               <>
                 <p className="text-label mock-kicker">SOUL AUDIT</p>
                 <h1 className="mock-title mock-homepage-prompt-title">
-                  What would you like to explore today?
+                  What are you wrestling with?
                 </h1>
                 <p className="mock-subcopy">
                   {typographer(
@@ -222,7 +222,7 @@ export default function Home() {
                   rows={3}
                   disabled={isSubmitting}
                   className="mock-textarea"
-                  aria-label="What would you like to explore today?"
+                  aria-label="What are you wrestling with?"
                 />
 
                 {/* Sample prompt pills */}
