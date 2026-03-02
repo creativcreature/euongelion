@@ -115,6 +115,62 @@ export function wordCount(text: string): number {
 }
 
 /**
+ * Detect whether a chunk is metadata/scaffolding rather than theological content.
+ * Filters out document headers, table-of-contents entries, expansion protocols,
+ * version control tables, and placeholder text that should never appear in
+ * devotional output.
+ */
+export function isMetadataChunk(content: string): boolean {
+  // Short chunks with metadata markers are almost always scaffolding
+  const lower = content.toLowerCase()
+  const wc = wordCount(content)
+
+  // Document control / version tables
+  if (/\|\s*version\s*\|\s*date\s*\|/i.test(content)) return true
+  if (/document control/i.test(content) && wc < 150) return true
+  if (/expansion protocol/i.test(content)) return true
+
+  // Placeholder / scaffold text
+  if (/to be expanded as content is created/i.test(content)) return true
+  if (/how to use this document/i.test(content)) return true
+  if (/quality over quantity.*only verified/i.test(content)) return true
+  if (/source-verified/i.test(content) && /citation format/i.test(content))
+    return true
+
+  // File headers that are just metadata
+  if (/^#\s+euongelion/im.test(content) && wc < 100) return true
+
+  // Project Gutenberg / CCEL boilerplate headers
+  if (/project gutenberg e?book/i.test(content) && wc < 150) return true
+  if (
+    /^\s*_{3,}/m.test(content) &&
+    /title:/i.test(content) &&
+    /creator/i.test(content) &&
+    wc < 150
+  )
+    return true
+
+  // Bullet-point-only index sections (no prose, just references)
+  if (wc < 100) {
+    const lines = content.split('\n').filter((l) => l.trim().length > 0)
+    const bulletLines = lines.filter((l) => /^\s*[-*]\s/.test(l))
+    if (bulletLines.length > lines.length * 0.6) return true
+  }
+
+  // Verification notes section
+  if (
+    /quotes requiring attribution/i.test(lower) &&
+    /attribution.*disputed/i.test(lower)
+  )
+    return true
+
+  // PART 4: VERIFICATION NOTES and similar metadata sections
+  if (/## PART \d+:\s*VE/i.test(content)) return true
+
+  return false
+}
+
+/**
  * Detect reference source type from file path.
  * Uses both platform-native path.sep and forward slashes for cross-platform safety.
  */

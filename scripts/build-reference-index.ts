@@ -20,6 +20,7 @@ import {
   chunkText,
   collectFiles,
   detectSourceType,
+  isMetadataChunk,
 } from '../src/lib/soul-audit/reference-utils'
 
 // ─── Build-specific constants ────────────────────────────────────────
@@ -33,10 +34,13 @@ const SKIP_SEGMENTS = new Set([
   'bibles',
   'lexicons',
 ])
+
+/** Files that are documentation/metadata, not theological source material. */
+const SKIP_FILENAMES = new Set(['README.md', 'readme.md', 'CHANGELOG.md'])
 const ALLOWED_EXTENSIONS = new Set(['.md', '.markdown', '.txt'])
 const MAX_FILE_BYTES = 4 * 1024 * 1024
 const MAX_FILES = 300
-const MAX_CHUNKS = 5_000
+const MAX_CHUNKS = 8_000
 
 const COLLECT_OPTIONS = {
   skipSegments: SKIP_SEGMENTS,
@@ -77,10 +81,13 @@ function main() {
   collectFiles(referenceRoot, files, COLLECT_OPTIONS)
   console.log(`Found ${files.length} files to index`)
 
-  const allChunks: IndexedChunk[] = []
+  // First pass: collect all chunks grouped by author/source directory
+  const chunksByAuthor = new Map<string, IndexedChunk[]>()
 
   for (const file of files) {
-    if (allChunks.length >= MAX_CHUNKS) break
+    // Skip documentation files
+    const basename = path.basename(file)
+    if (SKIP_FILENAMES.has(basename)) continue
 
     let text = ''
     try {
@@ -92,10 +99,34 @@ function main() {
     const sourceType = detectSourceType(file)
     const fileChunks = chunkText(text, file, sourceType, CHUNKING_OPTIONS)
 
+    // Determine author key from path (e.g. "commentaries/augustine")
+    const relPath = path.relative(referenceRoot, file)
+    const parts = relPath.split(path.sep)
+    const authorKey = parts.length >= 2 ? `${parts[0]}/${parts[1]}` : relPath
+
     for (const chunk of fileChunks) {
-      if (allChunks.length >= MAX_CHUNKS) break
-      allChunks.push(chunk)
+      if (isMetadataChunk(chunk.content)) continue
+      const existing = chunksByAuthor.get(authorKey) || []
+      existing.push(chunk)
+      chunksByAuthor.set(authorKey, existing)
     }
+  }
+
+  // Second pass: distribute chunks across authors to ensure diversity.
+  // Cap each author at MAX_PER_AUTHOR to prevent any one source from
+  // dominating the index.
+  const MAX_PER_AUTHOR = Math.max(
+    200,
+    Math.floor(MAX_CHUNKS / chunksByAuthor.size),
+  )
+
+  const allChunks: IndexedChunk[] = []
+  for (const [authorKey, chunks] of chunksByAuthor.entries()) {
+    const capped = chunks.slice(0, MAX_PER_AUTHOR)
+    console.log(
+      `  ${authorKey}: ${capped.length} chunks (of ${chunks.length} total)`,
+    )
+    allChunks.push(...capped)
   }
 
   // Stats

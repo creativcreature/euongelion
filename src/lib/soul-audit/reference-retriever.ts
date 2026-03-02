@@ -22,6 +22,7 @@ import {
   detectSourceType,
   extractKeywords,
   extractScriptureRefs,
+  isMetadataChunk,
   sourcePriority,
   wordCount,
 } from './reference-utils'
@@ -351,6 +352,8 @@ export function buildChunkedCorpus(root: string): ReferenceChunk[] {
               !VALID_SOURCE_TYPES.has(chunk.sourceType as ReferenceSourceType)
             )
               continue
+            // Skip metadata/scaffolding chunks (document headers, TOCs, etc.)
+            if (isMetadataChunk(chunk.content)) continue
             // Reconstruct derived/optional fields if missing from the index
             if (typeof chunk.priority !== 'number') chunk.priority = 2
             if (typeof chunk.wordCount !== 'number')

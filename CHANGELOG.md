@@ -5,6 +5,19 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## SA-036: Filter metadata chunks, expand reference library (2026-03-01)
+
+- **Metadata filter**: New `isMetadataChunk()` in reference-utils.ts filters document headers, TOCs, expansion protocols, PG/CCEL boilerplate, and placeholder text from reference index.
+- **Build script**: Added per-author chunk cap for source diversity. Skips README.md and other non-theological files.
+- **New public domain sources added** (all pre-1929, verified):
+  - G.K. Chesterton: _Orthodoxy_, _The Everlasting Man_, _Heretics_
+  - Blaise Pascal: _Pensees_
+  - John Bunyan: _The Pilgrim's Progress_, _Grace Abounding_
+  - John Owen: _Of the Mortification of Sin in Believers_
+  - E.M. Bounds: _Power Through Prayer_
+  - Hannah Whitall Smith: _The Christian's Secret of a Happy Life_
+- **Index expanded**: 2,404 chunks → 5,271 chunks across 19 sources, 2M+ words. Zero metadata leaks.
+
 ## SA-035: Fix three production bugs in composer pipeline (2026-03-01)
 
 - **Bug 1 — LLM throw kills fallback**: `generateWithBrain()` throws on failure, but `composeDay()` had no try-catch. The `buildDeterministicDay()` fallback never fired. Now wrapped in try-catch.
