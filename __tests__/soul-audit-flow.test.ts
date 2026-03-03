@@ -326,6 +326,7 @@ describe('Soul Audit staged flow', () => {
           selectionType?: string
           planToken?: string
           route?: string
+          planDays?: Array<{ day: number }>
           code?: string
         }
       | undefined
@@ -355,6 +356,7 @@ describe('Soul Audit staged flow', () => {
         selectionType?: string
         planToken?: string
         route?: string
+        planDays?: Array<{ day: number }>
         code?: string
       }
 
@@ -379,6 +381,9 @@ describe('Soul Audit staged flow', () => {
     expect(selectionPayload.route).toMatch(
       /\/soul-audit\/plan\/[^/?]+\?day=\d+/,
     )
+    expect(Array.isArray(selectionPayload.planDays)).toBe(true)
+    const planDayNumbers = (selectionPayload.planDays ?? []).map((d) => d.day)
+    expect(planDayNumbers).toEqual(expect.arrayContaining([1, 2, 3, 4, 5, 6, 7]))
   })
 
   it('selected devotional can be loaded from the plan day endpoint', async () => {

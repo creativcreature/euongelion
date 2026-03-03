@@ -76,6 +76,37 @@ const TEST_SCRIPTURE_POOL = [
   'Philippians 4:6-7',
   'James 1:5',
 ]
+const THEMATIC_SCRIPTURE_EXPANSIONS: Record<string, string[]> = {
+  prophets: [
+    'Jeremiah 1:5',
+    'Isaiah 6:8',
+    'Ezekiel 2:3',
+    'Amos 3:7',
+    'Hosea 6:1',
+    'Micah 6:8',
+  ],
+  prophet: [
+    'Jeremiah 1:5',
+    'Isaiah 6:8',
+    'Ezekiel 2:3',
+    'Amos 3:7',
+    'Hosea 6:1',
+    'Micah 6:8',
+  ],
+  paul: ['Acts 9:15', 'Acts 15:10', 'Galatians 2:16', 'Romans 1:1'],
+  genesis: ['Genesis 1:1', 'Genesis 12:1-3', 'Genesis 15:6'],
+  sadness: ['Psalm 34:18', 'Psalm 42:11', '2 Corinthians 1:3-4'],
+  sad: ['Psalm 34:18', 'Psalm 42:11', '2 Corinthians 1:3-4'],
+  grief: ['Psalm 34:18', 'John 11:35', '2 Corinthians 1:3-4'],
+  wisdom: ['James 1:5', 'Proverbs 3:5-6', 'Proverbs 9:10', 'Colossians 3:16'],
+  guidance: ['James 1:5', 'Proverbs 3:5-6', 'Psalm 119:105', 'Isaiah 30:21'],
+  clarity: ['James 1:5', 'Psalm 119:105', '1 Corinthians 14:33', 'John 8:12'],
+  decision: ['James 1:5', 'Proverbs 3:5-6', 'Psalm 32:8', 'Romans 12:2'],
+  discernment: ['Hebrews 5:14', 'Philippians 1:9-10', 'Romans 12:2', 'James 1:5'],
+  peace: ['Philippians 4:6-7', 'John 14:27', 'Isaiah 26:3', 'Psalm 46:10'],
+  trust: ['Proverbs 3:5-6', 'Psalm 56:3', 'Isaiah 41:10', 'Jeremiah 17:7'],
+  anxiety: ['Philippians 4:6-7', '1 Peter 5:7', 'Matthew 6:34', 'Psalm 94:19'],
+}
 
 const STOPWORDS = new Set([
   'a',
@@ -267,7 +298,47 @@ function rankScriptureCandidates(params: {
   return Array.from(scores.entries())
     .sort((a, b) => b[1] - a[1])
     .map(([reference]) => reference)
-    .slice(0, 24)
+    .slice(0, 60)
+}
+
+function expandScriptureCandidates(params: {
+  responseText: string
+  intent: ParsedAuditIntent
+  userKeywords: string[]
+  baseCandidates: string[]
+}): string[] {
+  const pool = new Set(
+    params.baseCandidates
+      .map((reference) => normalizeScriptureRef(reference))
+      .filter(Boolean),
+  )
+  const queryTerms = new Set(
+    uniqueTerms([
+      ...params.intent.themes,
+      ...params.userKeywords,
+      ...tokenize(params.responseText).filter((token) => token.length >= 3),
+    ]),
+  )
+
+  for (const [term, references] of Object.entries(THEMATIC_SCRIPTURE_EXPANSIONS)) {
+    if (!queryTerms.has(term)) continue
+    for (const reference of references) {
+      const normalized = normalizeScriptureRef(reference)
+      if (normalized) pool.add(normalized)
+    }
+  }
+
+  for (const reference of params.intent.scriptureAnchors) {
+    const normalized = normalizeScriptureRef(reference)
+    if (normalized) pool.add(normalized)
+  }
+
+  for (const reference of extractScriptureRefs(params.responseText)) {
+    const normalized = normalizeScriptureRef(reference)
+    if (normalized) pool.add(normalized)
+  }
+
+  return Array.from(pool)
 }
 
 function buildGenerationContext(chunks: ReferenceChunk[]): string {
@@ -327,7 +398,7 @@ function buildUserPrompt(params: {
   excludeScriptureAnchors: string[]
 }): string {
   const allowedRefs = params.scriptureCandidates
-    .slice(0, 16)
+    .slice(0, 24)
     .map((reference) => `- ${reference}`)
     .join('\n')
 
@@ -536,23 +607,29 @@ export async function selectIngredients(
   }
 
   const strict = isProductionStrictMode()
-  const scriptureCandidates = rankScriptureCandidates({
+  const scriptureCandidates = expandScriptureCandidates({
     responseText,
     intent,
-    chunks: baseRetrieval.chunks,
+    userKeywords,
+    baseCandidates: rankScriptureCandidates({
+      responseText,
+      intent,
+      chunks: baseRetrieval.chunks,
+    }),
   }).filter((reference) => reference.length > 0)
 
   if (!strict && scriptureCandidates.length < DIRECTION_COUNT) {
     for (const reference of TEST_SCRIPTURE_POOL) {
-      if (!scriptureCandidates.includes(reference)) {
-        scriptureCandidates.push(reference)
+      const normalized = normalizeScriptureRef(reference)
+      if (normalized && !scriptureCandidates.includes(normalized)) {
+        scriptureCandidates.push(normalized)
       }
       if (scriptureCandidates.length >= DIRECTION_COUNT) break
     }
   }
 
-  if (strict && scriptureCandidates.length === 0) {
-    throw new Error('SCRIPTURE_CANDIDATES_INSUFFICIENT')
+  if (strict && scriptureCandidates.length < DIRECTION_COUNT) {
+    throw new Error('SCRIPTURE_POOL_INSUFFICIENT')
   }
 
   const excludeDirectionSlugs = (options.excludeDirectionSlugs ?? []).map((value) => slugify(value))
@@ -571,16 +648,19 @@ export async function selectIngredients(
         excludeScriptureAnchors,
       })
     : deterministicPathsForTests({
-        responseText,
-        userKeywords,
-        baseChunks: baseRetrieval.chunks,
-        scriptureCandidates,
-      })
+      responseText,
+      userKeywords,
+      baseChunks: baseRetrieval.chunks,
+      scriptureCandidates,
+    })
 
   const usedTitles = new Set(excludeDirectionTitles)
   const usedSlugs = new Set(excludeDirectionSlugs)
   const priorScriptures = new Set(excludeScriptureAnchors)
   const usedScriptures = new Set<string>()
+  const normalizedScripturePool = Array.from(
+    new Set(scriptureCandidates.map((reference) => normalizeScriptureRef(reference))),
+  ).filter(Boolean)
 
   const directions: IngredientDirection[] = []
 
@@ -611,29 +691,31 @@ export async function selectIngredients(
     // Scripture overlap across audits is allowed when the same biblical theme
     // remains most relevant, but prefer unique anchors within the current set.
     if (usedScriptures.has(scriptureAnchor) || priorScriptures.has(scriptureAnchor)) {
-      const normalizedPool = scriptureCandidates
-        .map((reference) => normalizeScriptureRef(reference))
-        .filter(Boolean)
-      const preferredReplacement = normalizedPool.find(
+      const preferredReplacement = normalizedScripturePool.find(
         (reference) =>
           !usedScriptures.has(reference) && !priorScriptures.has(reference),
       )
-      const fallbackReplacement = normalizedPool.find(
+      const fallbackReplacement = normalizedScripturePool.find(
         (reference) => !usedScriptures.has(reference),
       )
       const replacement = preferredReplacement || fallbackReplacement
       if (replacement) scriptureAnchor = replacement
     }
 
-    const normalizedScriptureCandidates = scriptureCandidates.map((reference) =>
-      normalizeScriptureRef(reference),
-    )
     if (
       strict &&
-      normalizedScriptureCandidates.length > 0 &&
-      !normalizedScriptureCandidates.includes(scriptureAnchor)
+      normalizedScripturePool.length > 0 &&
+      !normalizedScripturePool.includes(scriptureAnchor)
     ) {
-      throw new Error('OPTION_COMPOSER_INVALID_SCRIPTURE')
+      const replacement = normalizedScripturePool.find(
+        (reference) =>
+          !usedScriptures.has(reference) && !priorScriptures.has(reference),
+      )
+      if (replacement) {
+        scriptureAnchor = replacement
+      } else {
+        throw new Error('OPTION_COMPOSER_INVALID_SCRIPTURE')
+      }
     }
 
     let directionSlug = slugify(raw.slug || title || scriptureAnchor)
@@ -691,6 +773,19 @@ export async function selectIngredients(
 
   if (strict && directions.length < DIRECTION_COUNT) {
     throw new Error('OPTION_COMPOSER_INSUFFICIENT_VALID_PATHS')
+  }
+  if (strict) {
+    const uniqueScriptures = new Set(
+      directions.map((direction) =>
+        normalizeScriptureRef(direction.scriptureAnchor),
+      ),
+    ).size
+    if (normalizedScripturePool.length < DIRECTION_COUNT) {
+      throw new Error('SCRIPTURE_POOL_INSUFFICIENT')
+    }
+    if (uniqueScriptures < DIRECTION_COUNT) {
+      throw new Error('OPTION_COMPOSER_SCRIPTURE_DIVERSITY_FAILED')
+    }
   }
 
   return {

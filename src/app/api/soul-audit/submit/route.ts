@@ -48,6 +48,19 @@ function getLowContextGuidance(input: string): string | null {
   return PASTORAL_MESSAGES.INPUT_TOO_SHORT
 }
 
+function selectionErrorMessage(code: string): string {
+  if (
+    code === 'SCRIPTURE_POOL_INSUFFICIENT' ||
+    code === 'SCRIPTURE_CANDIDATES_INSUFFICIENT'
+  ) {
+    return 'We could not find enough distinct Scripture anchors in the reference library for this request. Please retry with a more specific focus.'
+  }
+  if (code === 'OPTION_COMPOSER_SCRIPTURE_DIVERSITY_FAILED') {
+    return 'We could not compose three distinct Scripture-centered pathways for this request. Please retry.'
+  }
+  return 'Could not generate input-specific pathways from the reference library. Please retry.'
+}
+
 export async function POST(request: NextRequest) {
   const requestId = createRequestId()
   const clientKey = getClientKey(request)
@@ -203,8 +216,7 @@ export async function POST(request: NextRequest) {
             ? retryError.message
             : 'DIRECTION_SELECTION_FAILED'
         return jsonError({
-          error:
-            'Could not generate input-specific pathways from the reference library. Please retry.',
+          error: selectionErrorMessage(retryCode || firstCode),
           code: retryCode || firstCode,
           status: 503,
           requestId,

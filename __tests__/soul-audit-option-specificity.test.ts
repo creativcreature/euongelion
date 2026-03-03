@@ -87,4 +87,16 @@ describe('Soul Audit option specificity', () => {
     },
     20_000,
   )
+
+  it('uses distinct scripture anchors for prophets pathways when pool is sufficient', async () => {
+    const { directions } = await selectIngredients(
+      'I want to learn about prophets',
+    )
+    expect(directions).toHaveLength(3)
+
+    const scriptures = directions.map((direction) =>
+      direction.scriptureAnchor.trim(),
+    )
+    expect(new Set(scriptures).size).toBe(3)
+  })
 })

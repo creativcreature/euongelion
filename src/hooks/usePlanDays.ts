@@ -7,7 +7,7 @@
  * selection page and the reader page can share plan-loading logic.
  *
  * Responsibilities:
- * - Fetch days 1-5 (+ day 0 for onboarding) from /api/devotional-plan/[token]/day/[n]
+ * - Fetch days 1-7 (+ day 0 for onboarding) from /api/devotional-plan/[token]/day/[n]
  * - Separate unlocked days from locked previews
  * - Cache plan days in sessionStorage for offline resilience
  * - Provide loading/error state
@@ -95,7 +95,7 @@ export function usePlanDays(): UsePlanDaysResult {
 
     try {
       const cachedPlanDays = loadCachedPlanDays(token)
-      const requests = [1, 2, 3, 4, 5].map(async (day) => {
+      const requests = [1, 2, 3, 4, 5, 6, 7].map(async (day) => {
         const response = await fetch(
           `/api/devotional-plan/${token}/day/${day}?preview=1`,
         )

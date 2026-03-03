@@ -225,6 +225,8 @@ function inferScriptureAnchors(input: string): string[] {
   if (/anxiety|fear|panic|worry/i.test(input)) anchors.push('Philippians 4:6-7')
   if (/grief|sorrow|loss/i.test(input)) anchors.push('Psalm 34:18')
   if (/purpose|direction|calling/i.test(input)) anchors.push('Proverbs 3:5-6')
+  if (/wisdom|clarity|discern|decision|guidance|understand/i.test(input))
+    anchors.push('James 1:5')
   if (/sin|shame|guilt|repent/i.test(input)) anchors.push('1 John 1:9')
   if (/prophet|prophets|prophetic/i.test(input)) anchors.push('Jeremiah 1:5')
   if (/genesis|creation|created/i.test(input)) anchors.push('Genesis 1:1')

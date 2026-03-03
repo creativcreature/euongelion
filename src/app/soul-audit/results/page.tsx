@@ -21,6 +21,7 @@ import {
   loadSubmitResult,
   loadLastAuditInput,
   loadSavedAuditOptions,
+  persistPlanDays,
   persistSavedAuditOptions,
   resolveVerseSnippet,
   sanitizeLegacyDisplayText,
@@ -246,6 +247,9 @@ export default function SoulAuditResultsPage() {
       }
 
       sessionStorage.setItem('soul-audit-selection-v2', JSON.stringify(payload))
+      if (payload.planToken && Array.isArray(payload.planDays)) {
+        persistPlanDays(payload.planToken, payload.planDays)
+      }
       router.push(payload.route)
     } catch (err) {
       const message =
