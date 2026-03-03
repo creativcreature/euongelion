@@ -277,6 +277,11 @@ async function callOpenAI(params: {
   messages: BrainMessage[]
   maxOutputTokens: number
 }): Promise<string> {
+  const tokenField =
+    OPENAI_MODEL.startsWith('gpt-5') || OPENAI_MODEL.startsWith('o')
+      ? { max_completion_tokens: params.maxOutputTokens }
+      : { max_tokens: params.maxOutputTokens }
+
   const response = await fetch(OPENAI_API_URL, {
     method: 'POST',
     headers: {
@@ -289,7 +294,7 @@ async function callOpenAI(params: {
         { role: 'system', content: params.system },
         ...params.messages,
       ],
-      max_tokens: params.maxOutputTokens,
+      ...tokenField,
     }),
   })
 
