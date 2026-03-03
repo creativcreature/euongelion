@@ -8,8 +8,9 @@ export type SoulAuditSubmitResult =
   | SoulAuditSubmitResponseV2
   | SoulAuditClarifierResponse
 
-// Ingredient selection is deterministic (< 1s). 15s gives generous headroom.
-const DEFAULT_SUBMIT_TIMEOUT_MS = 15_000
+// Live provider latency can spike; keep enough headroom to avoid false client
+// timeout failures while still surfacing real outages.
+const DEFAULT_SUBMIT_TIMEOUT_MS = 45_000
 
 export type SoulAuditSubmitErrorCode = 'timeout' | 'offline' | 'server'
 
@@ -50,10 +51,11 @@ export async function submitSoulAuditResponse(params: {
   timeoutMs?: number
 }): Promise<SoulAuditSubmitResult> {
   const timeoutMs = Math.max(1, params.timeoutMs ?? DEFAULT_SUBMIT_TIMEOUT_MS)
-  const controller = new AbortController()
-  const timeout = setTimeout(() => controller.abort(), timeoutMs)
 
-  try {
+  async function runOnce(timeoutBudgetMs: number): Promise<SoulAuditSubmitResult> {
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), timeoutBudgetMs)
+
     const body: Record<string, string> = {
       response: params.response,
     }
@@ -64,26 +66,50 @@ export async function submitSoulAuditResponse(params: {
       body.clarifierToken = params.clarifierToken
     }
 
-    const response = await fetch('/api/soul-audit/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-      signal: controller.signal,
-    })
+    try {
+      const response = await fetch('/api/soul-audit/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+        signal: controller.signal,
+      })
 
-    if (!response.ok) {
-      const payload = (await response.json().catch(() => ({
-        error: PASTORAL_MESSAGES.GENERIC_ERROR,
-      }))) as { error?: string } | undefined
+      if (!response.ok) {
+        const payload = (await response.json().catch(() => ({
+          error: PASTORAL_MESSAGES.GENERIC_ERROR,
+        }))) as { error?: string } | undefined
 
-      throw new SoulAuditSubmitError(
-        'server',
-        String(payload?.error || PASTORAL_MESSAGES.GENERIC_ERROR),
+        throw new SoulAuditSubmitError(
+          'server',
+          String(payload?.error || PASTORAL_MESSAGES.GENERIC_ERROR),
+        )
+      }
+
+      return (await response.json()) as SoulAuditSubmitResult
+    } finally {
+      clearTimeout(timeout)
+    }
+  }
+
+  try {
+    return await runOnce(timeoutMs)
+  } catch (error) {
+    // Retry once on timeout/infra transient before surfacing the error.
+    const shouldRetryTimeout = isAbortLike(error) && timeoutMs >= 10_000
+    const shouldRetryServer =
+      error instanceof SoulAuditSubmitError &&
+      error.code === 'server' &&
+      /Could not generate input-specific pathways|Service unavailable|retry/i.test(
+        error.message,
       )
+    if (shouldRetryTimeout || shouldRetryServer) {
+      try {
+        return await runOnce(timeoutMs + 20_000)
+      } catch (retryError) {
+        error = retryError
+      }
     }
 
-    return (await response.json()) as SoulAuditSubmitResult
-  } catch (error) {
     if (error instanceof SoulAuditSubmitError) {
       throw error
     }
@@ -97,7 +123,5 @@ export async function submitSoulAuditResponse(params: {
     }
 
     throw new SoulAuditSubmitError('server', PASTORAL_MESSAGES.GENERIC_ERROR)
-  } finally {
-    clearTimeout(timeout)
   }
 }

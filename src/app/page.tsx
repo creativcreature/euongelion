@@ -25,7 +25,7 @@ const HOW_STEPS = [
   },
   {
     title: '3. Now Walk It Out.',
-    body: 'Get your reference-grounded 5-day plan and take one faithful step each day.',
+    body: 'Get your reference-grounded 7-day plan and take one faithful step each day.',
     image: '/images/illustrations/euangelion-homepage-engraving-11.svg',
   },
 ]
@@ -43,7 +43,7 @@ const FAQ_ITEMS = [
   },
   {
     question: 'Do I need to sign up first?',
-    answer: 'No account required. Start immediately with a custom 5-day plan.',
+    answer: 'No account required. Start immediately with a custom 7-day plan.',
   },
   {
     question: 'What if I miss a day?',

@@ -5,8 +5,9 @@
  *
  * Production behavior:
  * - Uses user input + retrieved reference chunks as the only source context
- * - Uses LLM composition to generate 3 unique pathway cards
- * - No deterministic fallback path in production
+ * - Prefers LLM composition for 3 unique pathway cards
+ * - Falls back to deterministic RAG-only card composition when providers
+ *   are transiently unavailable (never prefab/static cards)
  *
  * Test behavior:
  * - Deterministic builder allowed for offline test execution
@@ -259,6 +260,16 @@ function firstSentence(text: string, maxWords: number): string {
 function isProductionStrictMode(): boolean {
   if (process.env.NODE_ENV === 'test') return false
   return process.env.SOUL_AUDIT_STRICT_OPTIONS !== 'off'
+}
+
+function isComposerTransientFailure(error: unknown): boolean {
+  const code = error instanceof Error ? error.message : String(error || '')
+  return (
+    code === 'OPTION_COMPOSER_UNAVAILABLE' ||
+    code === 'OPTION_COMPOSER_EMPTY_OUTPUT' ||
+    code === 'OPTION_COMPOSER_PARSE_FAILED' ||
+    code.includes('All brain providers failed quality/call checks.')
+  )
 }
 
 function rankScriptureCandidates(params: {
@@ -636,8 +647,10 @@ export async function selectIngredients(
   const excludeDirectionTitles = (options.excludeDirectionTitles ?? []).map((value) => normalizeTitle(value))
   const excludeScriptureAnchors = (options.excludeScriptureAnchors ?? []).map((value) => normalizeScriptureRef(value))
 
-  const rawPaths = strict
-    ? await generatePathsFromRag({
+  let rawPaths: GeneratedPath[]
+  if (strict) {
+    try {
+      rawPaths = await generatePathsFromRag({
         responseText,
         intent,
         userKeywords,
@@ -647,12 +660,25 @@ export async function selectIngredients(
         excludeDirectionTitles,
         excludeScriptureAnchors,
       })
-    : deterministicPathsForTests({
+    } catch (error) {
+      if (!isComposerTransientFailure(error)) {
+        throw error
+      }
+      rawPaths = deterministicPathsForTests({
+        responseText,
+        userKeywords,
+        baseChunks: baseRetrieval.chunks,
+        scriptureCandidates,
+      })
+    }
+  } else {
+    rawPaths = deterministicPathsForTests({
       responseText,
       userKeywords,
       baseChunks: baseRetrieval.chunks,
       scriptureCandidates,
     })
+  }
 
   const usedTitles = new Set(excludeDirectionTitles)
   const usedSlugs = new Set(excludeDirectionSlugs)

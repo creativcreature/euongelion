@@ -137,7 +137,10 @@ export default function SoulAuditPage() {
                     aria-label="What would you like to explore today?"
                     className="mb-6 w-full resize-none bg-surface-raised p-6 text-serif-italic vw-body-lg text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
                     style={{
-                      border: '1px solid var(--color-border)',
+                      border:
+                        '2px solid color-mix(in srgb, var(--color-text-primary) 24%, var(--color-border) 76%)',
+                      background:
+                        'color-mix(in srgb, var(--color-surface-raised) 86%, white 14%)',
                       lineHeight: 1.8,
                       transition:
                         'border-color 300ms cubic-bezier(0, 0, 0.2, 1)',
@@ -187,7 +190,7 @@ export default function SoulAuditPage() {
 
                   <p className="vw-small mt-8 text-center text-muted">
                     {typographer(
-                      'This is between you and the page. We will show three matched paths, then build the full 5-day plan after you choose.',
+                      'This is between you and the page. We will show three matched paths, then build the full 7-day plan after you choose.',
                     )}
                   </p>
                 </div>

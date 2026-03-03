@@ -10,8 +10,9 @@ const emptySubscribe = () => () => {}
 const LAST_AUDIT_INPUT_SESSION_KEY = 'soul-audit-last-input'
 const REROLL_USED_SESSION_KEY = 'soul-audit-reroll-used'
 
-// With ingredient selection (< 1s), 15s is generous headroom.
-const SUBMIT_TIMEOUT_MS = 15_000
+// Keep in sync with submit-client default; avoids false front-end failures
+// during transient provider slowness.
+const SUBMIT_TIMEOUT_MS = 45_000
 
 export function useSoulAuditSubmit() {
   const router = useRouter()
