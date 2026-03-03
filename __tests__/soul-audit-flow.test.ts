@@ -190,6 +190,22 @@ describe('Soul Audit staged flow', () => {
     expect(payload.options?.every((o) => o.kind === 'ai_primary')).toBe(true)
   })
 
+  it('accepts legacy text field payload and returns options', async () => {
+    const response = await submitHandler(
+      postJson('http://localhost/api/soul-audit/submit', {
+        text: 'I want to learn about Genesis',
+      }) as never,
+    )
+    expect(response.status).toBe(200)
+
+    const payload = (await response.json()) as {
+      options?: Array<{ kind: string }>
+    }
+    expect(Array.isArray(payload.options)).toBe(true)
+    expect(payload.options).toHaveLength(3)
+    expect(payload.options?.every((o) => o.kind === 'ai_primary')).toBe(true)
+  })
+
   it('returns 9 unique pathways across 3 audits for the same input', async () => {
     mockedSessionToken = 'session-unique-pathways'
     resetSessionAuditCount(mockedSessionToken)

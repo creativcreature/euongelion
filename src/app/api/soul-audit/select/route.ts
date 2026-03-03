@@ -16,6 +16,7 @@ import {
 import { buildOnboardingDay } from '@/lib/soul-audit/curated-builder'
 import { parseAuditIntent } from '@/lib/brain/intent-parser'
 import {
+  buildDeterministicDay,
   composeDay,
   composeRecap,
   composeSabbath,
@@ -527,10 +528,10 @@ export async function POST(request: NextRequest) {
     })
 
     // ─── Compose days from reference library ───
-    // Day 1: LLM-composed (one call, 5-8s) — produces flowing prose from
-    //   reference chunks. Falls back to deterministic if LLM unavailable.
-    // Days 2-5: Deterministic (instant) — stored with reference chunks,
-    //   can be LLM-upgraded later when user navigates to them.
+    // Day 1: LLM-composed from retrieved references.
+    // Days 2-5: Deterministic composition from retrieved references.
+    // This keeps selection fast/reliable while still producing fully
+    // RAG-grounded, non-prefab day content.
     const usedChunkIds: string[] = []
     const composedDays: CustomPlanDay[] = []
     const targetWordCount = wordTargetForDepth({
@@ -582,32 +583,37 @@ export async function POST(request: NextRequest) {
         planTitle: selectedDirection.title,
       }
 
-      // Days 1-5: composed from RAG witnesses with structural constraints.
-      // If composition cannot be grounded/completed, fail clearly.
-      try {
-        const result = await composeDay(dayParams)
-        usedChunkIds.push(...result.usedChunkIds)
-        composedDays.push(result.day)
-      } catch (error) {
-        const code =
-          error instanceof Error ? error.message : 'COMPOSER_UNAVAILABLE'
-        if (code === 'REFERENCE_LIBRARY_UNAVAILABLE') {
-          return jsonError({
-            error:
-              'Reference library is unavailable right now. Please retry in a moment.',
-            code,
-            status: 503,
-            requestId,
-          })
+      if (dayNumber === 1) {
+        // Day 1 uses the LLM composer for a high-fidelity opening essay.
+        // If the provider fails, degrade to deterministic RAG composition
+        // instead of failing the entire selection flow.
+        try {
+          const result = await composeDay(dayParams)
+          usedChunkIds.push(...result.usedChunkIds)
+          composedDays.push(result.day)
+        } catch (error) {
+          const code =
+            error instanceof Error ? error.message : 'COMPOSER_UNAVAILABLE'
+          if (code === 'REFERENCE_LIBRARY_UNAVAILABLE') {
+            return jsonError({
+              error:
+                'Reference library is unavailable right now. Please retry in a moment.',
+              code,
+              status: 503,
+              requestId,
+            })
+          }
+          console.warn(
+            `[soul-audit:select] Day 1 LLM composer unavailable (${code}); using deterministic RAG composition.`,
+          )
+          composedDays.push(buildDeterministicDay(dayParams))
+          usedChunkIds.push(...chunks.map((chunk) => chunk.id))
         }
-        return jsonError({
-          error:
-            'Unable to compose a new devotional path from references right now. Please retry shortly.',
-          code: 'COMPOSER_UNAVAILABLE',
-          status: 503,
-          requestId,
-        })
+        continue
       }
+
+      composedDays.push(buildDeterministicDay(dayParams))
+      usedChunkIds.push(...chunks.map((chunk) => chunk.id))
     }
 
     // ─── Days 6-7: recap (Sat) + sabbath (Sun), deterministic ───

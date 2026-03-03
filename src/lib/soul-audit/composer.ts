@@ -126,6 +126,18 @@ function takeWordBudget(text: string, budget: number): string {
   return `${words.slice(0, budget).join(' ').trim()}...`
 }
 
+function composedWordCount(parsed: ParsedComposition): number {
+  return wordCountEstimate(
+    [
+      parsed.scriptureText,
+      parsed.reflection,
+      parsed.prayer,
+      parsed.nextStep,
+      parsed.journalPrompt,
+    ].join(' '),
+  )
+}
+
 // ─── Prompt Building ────────────────────────────────────────────────
 
 function buildComposerSystemPrompt(params: {
@@ -213,7 +225,7 @@ OUTPUT FORMAT (strict JSON):
   "title": "Day title",
   "scriptureReference": "Book Chapter:Verse",
   "scriptureText": "1-3 key verses quoted",
-  "reflection": "The main devotional body — flowing prose, multi-paragraph, ~${Math.round(params.wordTarget * 0.7)} words. This is the essay.",
+  "reflection": "The main devotional body — flowing prose, multi-paragraph, ~${params.wordTarget} words. This is the essay.",
   "prayer": "A composed prayer grounded in the day's scripture and themes",
   "nextStep": "One concrete, actionable step the reader can take today",
   "journalPrompt": "A probing question for personal reflection",
@@ -350,6 +362,14 @@ interface ParsedComposition {
 }
 
 function parseComposedDay(raw: string): ParsedComposition | null {
+  function tryParse(text: string): Record<string, unknown> | null {
+    try {
+      return JSON.parse(text) as Record<string, unknown>
+    } catch {
+      return null
+    }
+  }
+
   try {
     // Strip markdown fences if present
     const cleaned = raw
@@ -357,7 +377,13 @@ function parseComposedDay(raw: string): ParsedComposition | null {
       .replace(/\n?```\s*$/i, '')
       .trim()
 
-    const parsed = JSON.parse(cleaned) as Record<string, unknown>
+    const parsedDirect = tryParse(cleaned)
+    const parsedFromSlice =
+      !parsedDirect && cleaned.includes('{') && cleaned.includes('}')
+        ? tryParse(cleaned.slice(cleaned.indexOf('{'), cleaned.lastIndexOf('}') + 1))
+        : null
+    const parsed = parsedDirect ?? parsedFromSlice
+    if (!parsed) return null
 
     const title =
       typeof parsed.title === 'string' ? parsed.title.slice(0, 120) : ''
@@ -505,8 +531,10 @@ export async function composeDay(
       usedChunkIds: chunks.map((c) => c.id),
     }
   }
-  const actualWords = wordCountEstimate(parsed.reflection)
-  if (actualWords < MIN_WORD_TARGET || actualWords > MAX_WORD_TARGET) {
+  const actualWords = composedWordCount(parsed)
+  const minAcceptedWords = Math.max(1800, Math.round(wordTarget * 0.5))
+  const maxAcceptedWords = Math.round(wordTarget * 1.35)
+  if (actualWords < minAcceptedWords || actualWords > maxAcceptedWords) {
     if (strictComposer) throw new Error('COMPOSER_LENGTH_OUT_OF_RANGE')
     return {
       day: buildDeterministicDay(paramsWithChunks),

@@ -31,6 +31,7 @@ import type { AuditOptionPreview } from '@/types/soul-audit'
 
 interface SubmitBody {
   response?: string
+  text?: string
   rerollForRunId?: string
   runToken?: string
 }
@@ -104,7 +105,9 @@ export async function POST(request: NextRequest) {
     }
 
     const body = parsed.data
-    const responseText = sanitizeAuditInput(body.response)
+    const responseText = sanitizeAuditInput(
+      typeof body.response === 'string' ? body.response : body.text,
+    )
     const rerollForRunId = String(body.rerollForRunId || '').trim()
     const rerollRequested = rerollForRunId.length > 0
     const providedRunToken =

@@ -101,7 +101,7 @@ function providerCredentials(
   switch (provider) {
     case 'openai':
       return {
-        platformKey: firstNonEmptyEnv('ANTHROPIC_API_KEY', 'OPENAI_API_KEY'),
+        platformKey: firstNonEmptyEnv('OPENAI_API_KEY', 'ANTHROPIC_API_KEY'),
         userKey: userKeys?.openai,
       }
     case 'google':
