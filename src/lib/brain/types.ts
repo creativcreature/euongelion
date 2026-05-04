@@ -60,6 +60,14 @@ export type BrainRouteContext = {
   qualityFloor?: number
   maxOutputTokens?: number
   platformKeysEnabled?: boolean
+  /**
+   * Optional AbortSignal forwarded to every provider's underlying fetch.
+   * Routes that need a wall-clock deadline (e.g. Cloudflare Workers' 30s
+   * limit) should construct an AbortController, pass `controller.signal`
+   * here, and start a `setTimeout(() => controller.abort(), 25_000)` to
+   * surface a clean DOMException('AbortError') instead of a silent kill.
+   */
+  signal?: AbortSignal
 }
 
 export interface OpenWebAcknowledgementState {

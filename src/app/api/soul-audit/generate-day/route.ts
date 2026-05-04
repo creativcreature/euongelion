@@ -23,7 +23,13 @@ import { validateInternalSecret } from '@/lib/internal-auth'
 import { loadReferenceIndex } from '@/lib/soul-audit/reference-index-loader'
 import { generateWithBrain } from '@/lib/brain/router'
 import { createAdminClient } from '@/lib/supabase/admin'
-import { createRequestId, logApiError } from '@/lib/api-security'
+import {
+  createRequestId,
+  isAbortError,
+  LLM_ROUTE_DEADLINE_MS,
+  logApiError,
+  withAbortDeadline,
+} from '@/lib/api-security'
 import type { BaseChunk } from '@/lib/soul-audit/reference-utils'
 import type { DayContent } from '@/types/soul-audit-plan'
 
@@ -326,7 +332,7 @@ async function updateJob(
   // soul_audit_jobs table exists in Supabase but is not yet in the
   // generated Database type. Cast to bypass the type-check until
   // the types are regenerated.
-   
+
   const { error } = await (supabase as any)
     .from('soul_audit_jobs')
     .update({ ...fields, updated_at: new Date().toISOString() })
@@ -420,17 +426,54 @@ export async function POST(request: NextRequest) {
       referenceChunks,
     })
 
-    // Step 7: Call LLM
-    const result = await generateWithBrain({
-      system: systemPrompt,
-      messages: [{ role: 'user', content: 'Generate the devotional day.' }],
-      context: {
-        task: 'devotional_day_generate',
-        mode: 'auto',
-        maxOutputTokens: 6000,
-        platformKeysEnabled: true,
-      },
-    })
+    // Step 7: Call LLM with a 25s wall-clock deadline so a slow provider
+    // surfaces a structured 504 here instead of being silently killed by
+    // the Workers 30s wall-clock cap and leaving generating_since set.
+    let result
+    try {
+      result = await withAbortDeadline(LLM_ROUTE_DEADLINE_MS, (signal) =>
+        generateWithBrain({
+          system: systemPrompt,
+          messages: [{ role: 'user', content: 'Generate the devotional day.' }],
+          context: {
+            task: 'devotional_day_generate',
+            mode: 'auto',
+            maxOutputTokens: 6000,
+            platformKeysEnabled: true,
+            signal,
+          },
+        }),
+      )
+    } catch (error) {
+      if (isAbortError(error)) {
+        logApiError({
+          scope: 'soul-audit-generate-day',
+          requestId,
+          error,
+          method: request.method,
+          path: '/api/soul-audit/generate-day',
+          context: {
+            reason: 'llm-deadline-exceeded',
+            dayNumber,
+            jobId,
+            deadlineMs: LLM_ROUTE_DEADLINE_MS,
+          },
+        })
+        await updateJob(jobId, {
+          status: 'error',
+          error: `Day ${dayNumber} generation took too long (${LLM_ROUTE_DEADLINE_MS}ms deadline).`,
+          generating_since: null,
+        }).catch(() => {})
+        return NextResponse.json(
+          {
+            error: `Day ${dayNumber} generation took too long.`,
+            requestId,
+          },
+          { status: 504 },
+        )
+      }
+      throw error
+    }
 
     // Step 8: Parse response
     let parsed: DayContent
@@ -462,7 +505,7 @@ export async function POST(request: NextRequest) {
     // The local Database type is missing used_chunk_ids and run_id columns
     // that exist in Supabase. Cast to bypass until types are regenerated.
     const supabase = createAdminClient()
-     
+
     const db = supabase as any
     const { error: upsertError } = await db.from('devotional_plan_days').upsert(
       {

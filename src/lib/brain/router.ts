@@ -351,6 +351,7 @@ async function callOpenAI(params: {
   system: string
   messages: BrainMessage[]
   maxOutputTokens: number
+  signal?: AbortSignal
 }): Promise<ProviderCallResult> {
   const tokenField =
     OPENAI_MODEL.startsWith('gpt-5') || OPENAI_MODEL.startsWith('o')
@@ -371,6 +372,7 @@ async function callOpenAI(params: {
       ],
       ...tokenField,
     }),
+    signal: params.signal,
   })
 
   if (!response.ok) {
@@ -456,6 +458,7 @@ async function callAnthropic(params: {
   messages: BrainMessage[]
   maxOutputTokens: number
   cacheableUserPrefix?: string
+  signal?: AbortSignal
 }): Promise<ProviderCallResult> {
   // Find the index of the first user message — the cacheable prefix
   // attaches there. If there is no user message (rare), the prefix is
@@ -495,6 +498,7 @@ async function callAnthropic(params: {
         'anthropic-version': '2023-06-01',
       },
       body: requestBody,
+      signal: params.signal,
     })
 
     if (response.ok) break
@@ -576,6 +580,7 @@ async function callGoogle(params: {
   system: string
   messages: BrainMessage[]
   maxOutputTokens: number
+  signal?: AbortSignal
 }): Promise<ProviderCallResult> {
   const response = await fetch(
     `${GOOGLE_API_URL}/${GOOGLE_MODEL}:generateContent?key=${encodeURIComponent(params.apiKey)}`,
@@ -597,6 +602,7 @@ async function callGoogle(params: {
           maxOutputTokens: params.maxOutputTokens,
         },
       }),
+      signal: params.signal,
     },
   )
 
@@ -638,6 +644,7 @@ async function callOpenAiCompatible(params: {
   system: string
   messages: BrainMessage[]
   maxOutputTokens: number
+  signal?: AbortSignal
 }): Promise<ProviderCallResult> {
   const response = await fetch(params.apiUrl, {
     method: 'POST',
@@ -653,6 +660,7 @@ async function callOpenAiCompatible(params: {
       ],
       max_tokens: params.maxOutputTokens,
     }),
+    signal: params.signal,
   })
 
   if (!response.ok) {
@@ -722,6 +730,7 @@ async function executeProvider(params: {
     params.request.cacheableUserPrefix,
   )
 
+  const signal = params.request.context.signal
   if (params.provider === 'openai') {
     result = isAnthropicKey(params.apiKey)
       ? await callAnthropic({
@@ -730,12 +739,14 @@ async function executeProvider(params: {
           messages: params.request.messages,
           maxOutputTokens,
           cacheableUserPrefix: params.request.cacheableUserPrefix,
+          signal,
         })
       : await callOpenAI({
           apiKey: params.apiKey,
           system: params.request.system,
           messages: collapsedMessages,
           maxOutputTokens,
+          signal,
         })
   } else if (params.provider === 'google') {
     result = await callGoogle({
@@ -743,6 +754,7 @@ async function executeProvider(params: {
       system: params.request.system,
       messages: collapsedMessages,
       maxOutputTokens,
+      signal,
     })
   } else if (params.provider === 'minimax') {
     result = await callOpenAiCompatible({
@@ -752,6 +764,7 @@ async function executeProvider(params: {
       system: params.request.system,
       messages: collapsedMessages,
       maxOutputTokens,
+      signal,
     })
   } else {
     result = await callOpenAiCompatible({
@@ -761,6 +774,7 @@ async function executeProvider(params: {
       system: params.request.system,
       messages: collapsedMessages,
       maxOutputTokens,
+      signal,
     })
   }
 

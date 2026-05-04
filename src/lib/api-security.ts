@@ -28,13 +28,22 @@ function getRedisClient(): Redis | null {
   if (redisClient) return redisClient
   const url = process.env.UPSTASH_REDIS_REST_URL
   const token = process.env.UPSTASH_REDIS_REST_TOKEN
-  if (!url || !token) return null
+  if (
+    !url ||
+    !token ||
+    url === 'missing' ||
+    token === 'missing' ||
+    !url.startsWith('https://')
+  ) {
+    return null
+  }
 
-  redisClient = new Redis({
-    url,
-    token,
-  })
-  return redisClient
+  try {
+    redisClient = new Redis({ url, token })
+    return redisClient
+  } catch {
+    return null
+  }
 }
 
 function nowMs() {
@@ -119,14 +128,13 @@ function cleanFingerprintPart(value: string | undefined): string | null {
 
 export function getDeploymentFingerprint(): string {
   const commit =
-    cleanFingerprintPart(process.env.VERCEL_GIT_COMMIT_SHA) ||
-    cleanFingerprintPart(process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA) ||
+    cleanFingerprintPart(process.env.CF_PAGES_COMMIT_SHA) ||
     cleanFingerprintPart(process.env.GIT_COMMIT_SHA) ||
     'unknown'
   const deployment =
-    cleanFingerprintPart(process.env.VERCEL_DEPLOYMENT_ID) ||
-    cleanFingerprintPart(process.env.VERCEL_URL) ||
-    cleanFingerprintPart(process.env.VERCEL_GIT_COMMIT_REF) ||
+    cleanFingerprintPart(process.env.CF_PAGES_URL) ||
+    cleanFingerprintPart(process.env.CF_PAGES_BRANCH) ||
+    cleanFingerprintPart(process.env.NEXT_PUBLIC_APP_URL) ||
     'local'
 
   return `${commit.slice(0, 12)}:${deployment.slice(0, 24)}`
@@ -429,4 +437,50 @@ export function withRateLimitHeaders<T extends Response>(
 
 export function getRequestMethod(request: NextRequest | Request): string {
   return request.method.toUpperCase()
+}
+
+/**
+ * Default wall-clock budget for an LLM-touching API route on Cloudflare
+ * Workers. Workers caps requests at 30s; we keep ~5s of headroom so the
+ * route can return a structured 504 instead of being silently killed.
+ */
+export const LLM_ROUTE_DEADLINE_MS = 25_000
+
+/**
+ * Run an async block under a wall-clock deadline. The provided callback
+ * receives an `AbortSignal` it should pass to `fetch()` (and on through
+ * `BrainRouteContext.signal`) so any pending request is cancelled when
+ * the deadline fires.
+ *
+ * On timeout, throws an `Error` whose `name === 'AbortError'`. Callers
+ * are expected to map that into a 504 user-facing response.
+ *
+ * Always clears the timer in a finally block so successful runs don't
+ * leak a setTimeout handle.
+ */
+export async function withAbortDeadline<T>(
+  deadlineMs: number,
+  fn: (signal: AbortSignal) => Promise<T>,
+): Promise<T> {
+  const controller = new AbortController()
+  const timer = setTimeout(() => {
+    controller.abort()
+  }, deadlineMs)
+  try {
+    return await fn(controller.signal)
+  } finally {
+    clearTimeout(timer)
+  }
+}
+
+/**
+ * True when an error is the one withAbortDeadline raises on timeout.
+ * Native `fetch` aborts surface as DOMException('AbortError') in
+ * browsers / undici / Workers; on Node 20+ runtimes you also get a
+ * plain Error with name === 'AbortError'.
+ */
+export function isAbortError(error: unknown): boolean {
+  if (!error || typeof error !== 'object') return false
+  const candidate = error as { name?: unknown }
+  return candidate.name === 'AbortError'
 }

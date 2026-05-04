@@ -5,6 +5,44 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-04 / Phase 10C-P0: AbortController deadline on LLM routes (2026-05-04)
+
+LLM-touching routes had no wall-clock guard. A slow Anthropic call
+(now with 3 retries up to 1+2 = 3s of backoff plus per-attempt latency)
+risked silent kill by Cloudflare's 30s wall-clock cap, leaving
+`generating_since` set on the job row and the user staring at "Generation
+stalled" with no surfaced error.
+
+- `src/lib/api-security.ts`: new `withAbortDeadline(deadlineMs, fn)`
+  helper. Constructs an `AbortController`, schedules a timeout to abort
+  it, awaits the inner work, clears the timer in finally. Plus
+  `LLM_ROUTE_DEADLINE_MS` (25_000 — 5s headroom under the Workers cap)
+  and `isAbortError(err)` for clean error detection.
+- `src/lib/brain/types.ts`: `BrainRouteContext` gains optional
+  `signal?: AbortSignal`.
+- `src/lib/brain/router.ts`: every provider call (`callOpenAI`,
+  `callAnthropic`, `callGoogle`, `callOpenAiCompatible`) now accepts
+  an optional `signal` and forwards it to `fetch()`. `executeProvider`
+  reads `request.context.signal` and plumbs it through. The Anthropic
+  retry loop's pending fetch and the inter-attempt `sleep` are both
+  cancelled by an external abort.
+- `src/app/api/soul-audit/generate-day/route.ts`: wrapped the
+  `generateWithBrain` call with `withAbortDeadline(LLM_ROUTE_DEADLINE_MS, …)`.
+  On timeout, logs via `logApiError` (scope `soul-audit-generate-day`,
+  context `reason: 'llm-deadline-exceeded'`), updates the job row to
+  `status: error` with a deadline-aware message, and returns a
+  structured 504 with `requestId`.
+- `__tests__/llm-route-deadline.test.ts`: 8 tests covering the
+  fast-resolve path, the deadline-fires-first path, the signal-passing
+  contract, the no-leak finally, and the `isAbortError` predicate.
+
+Other LLM-touching routes (submit, select, chat) intentionally left
+for a future pass — each has slightly different orchestration and
+needs its own per-call vs per-orchestration deadline decision. The
+generate-day route was the highest-value first target (longest LLM
+call, single LLM call per request, internal-only so no client UX
+regression risk).
+
 ## OVERNIGHT-2026-05-04 / Phase 10B-P0: Anthropic retry on 429/5xx (2026-05-04)
 
 `callAnthropic` previously gave up on the first non-2xx response and
