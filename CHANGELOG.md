@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-04 / Phase 10B-P0: Real token counting from response.usage (2026-05-04)
+
+The router was using `estimateInputTokens` / `estimateOutputTokens`
+(1.5×-words heuristics) for every accounting decision (cost reporting,
+quality scoring downstream, /usage page display). Replaced the estimates
+with real usage stats parsed from each provider's response.
+
+- `src/lib/brain/router.ts`: introduced internal `ProviderUsage` and
+  `ProviderCallResult` types. Each provider call function (`callOpenAI`,
+  `callAnthropic`, `callGoogle`, `callOpenAiCompatible`) now returns
+  `{ text, usage? }`. Each parses the relevant usage fields:
+  - Anthropic: `usage.{input_tokens, output_tokens, cache_creation_input_tokens, cache_read_input_tokens}`
+  - OpenAI: `usage.{prompt_tokens, completion_tokens}`
+  - Google: `usageMetadata.{promptTokenCount, candidatesTokenCount}`
+  - MiniMax/NVIDIA: `usage.{prompt_tokens, completion_tokens}`
+- `executeProvider` prefers real usage when present, falls back to the
+  existing word-based estimates when the provider response omits
+  usage metadata. No public-API change to `ProviderExecutionResult`;
+  the `inputTokens`/`outputTokens` fields just become accurate for
+  every provider that returns the data.
+- `__tests__/provider-token-counting.test.ts`: 4 tests covering
+  Anthropic, Google, MiniMax (BYO), and the estimate-fallback path.
+
+External consumers (`/api/chat`, `/usage` page, `usage-ledger`) get
+more accurate cost tracking and token totals automatically — no
+caller changes required.
+
 ## OVERNIGHT-2026-05-04 / Phase 10C: Structured error logging on JSON parse (2026-05-04)
 
 The two soul-audit POST routes silently swallowed JSON parse errors,
@@ -148,6 +175,61 @@ to any new work, blocking all commits on branch `revamp/overnight-2026-05-04`.
 
 Behavior is preserved exactly. Documented under "Meta-fixes" in
 `docs/overnight-followups.md` so the founder can reverse either change.
+
+## BRAND-001: Brand Bible v1.0 + workstream documentation (2026-05-02 → 2026-05-04)
+
+Three-day workstream synthesizing the Euangelion brand from drifting half-built state into a single canonical operating reference.
+
+**New deliverables:**
+
+- `docs/brand/BRAND-BIBLE.md` — 16-chapter, ~25k-word Brand Bible v1.0 with 12+ ready-to-use Claude prompt templates
+- `docs/brand/ASSET-MANIFEST.md` — priority-ordered ~140-asset production list driving Gate 3 + Phase 3
+- `docs/portfolio/CURRENT-STATE-LEDGER.md` — tactical foundation for the bible (Gate 0 output)
+- `docs/portfolio/PHASE-1-VISUAL-ANALYSIS.md` — source-site teardown + Euangelion comparison + reference-image-language codification
+- `docs/portfolio/BRAND-BIBLE-PROCESS.md` — methodology + chronology + decisions ledger + lessons-learned
+- `docs/portfolio/BRAND-BIBLE-CASE-STUDY.md` — narrative case study for portfolio use
+- `BIBLE-LICENSING/README.md` + `drafts/letter-HCCP.md` + `status-log.md` — translation licensing strategy + draft permission letters
+
+**Brand decisions locked (selected):**
+
+- **Tagline:** "Good News for you, daily." (atmospheric: "Daily bread for the hungry soul.")
+- **Spelling migration:** EUONGELION → EUANGELION across 219 files / 1,282 corrections / 32 intentional preservations (cookie keys, GitHub repo path)
+- **Translation primary:** Berean Standard Bible (BSB, public domain) — unblocks AI-pipeline scale
+- **Wordmark system:** 7-variant rotation (6 hand-generated SVGs + Industry constant) + animated transition + variants pinned to specific surfaces
+- **Lamb mark:** Seven-eyed Lamb of Revelation 5:6, 7 treatments, full-body + head-only versions, NOT in site header
+- **Color palette:** Cobalt Triad (Cream `#F0ECE6` + Navy Ink `#11182A` + Cobalt `#1F2A8D`) — production-true; legacy Warm Triad documented as historical lineage only
+- **Typography:** Instrument Serif (display + body + scripture) + Industry (UI) + Poppins (Greek anchor)
+- **Pricing tiers:** Free (all prefabs + 1 AI generation/month) + Paid (unlimited AI plans). BYO API key dropped.
+- **Print system:** 11 locked formats anchored on Mini Gospel Magazine + 10 parking-lot formats
+
+**Methodology:** Five-gate model (Gate 0 Ledger → Gate 1 scope interview → Phase 1 analysis → Gate 2 13-section brand interview → Phase 2 bible draft → Gate 3 mockup test → Phase 3 batch generation → Gate 5 verification) with strict citation discipline and source-of-truth protocol.
+
+**Pending:** Gate 3 (mockup pipeline test, 3–5 sample images) → Phase 3 (full batch generation, ~140 assets) → Gate 5 (verification pass).
+
+---
+
+## SA-039: Reference library fs→fetch migration verified (2026-03-07)
+
+- **Verification**: Full reference library (5,114 chunks, 15.6 MB) loads correctly on Cloudflare Workers via ASSETS binding.
+- **Submit test**: `/api/soul-audit/submit` returns 3 options each with `sourceHints` — proving BM25 retrieval from reference-index.json works end-to-end on Workers.
+- **Brain/RAG**: `buildCanonicalRagIndex()` and `getCanonicalRagIndex()` converted to async, reference fallback works.
+- **All 15 curl tests pass** on Workers preview (8787).
+
+## SA-038: Soul Audit async job architecture for Cloudflare Workers (2026-03-06)
+
+- **Architecture**: Replaced synchronous 7-day generation (Vercel timeout) with async job-based system. Client polls `/select/status` which fires `/generate-day` per day via fire-and-forget.
+- **New routes**: `/api/soul-audit/generate-day` (internal, secret-protected), `/api/soul-audit/select/status` (CORS, polling), `/api/soul-audit/complete-day` (session-authenticated).
+- **New table**: `soul_audit_jobs` with columns: id, session_id, run_id, plan_id, status, progress, current_day, theme, scripture_anchor, user_input, timezone, error, generating_since.
+- **Select route rewrite**: Creates job + plan in single request, returns jobId for polling. Idempotent — reuses existing active job if one exists.
+- **Status route**: Detects stalled jobs (120s timeout), handles pending→generating transition, fires generate-day with correct field names matching GenerateDayRequest interface.
+- **Generate-day route**: Internal-only (X-Internal-Secret), composes one day at a time with BM25 reference retrieval + LLM composition, saves to Supabase, advances job progress.
+- **Daily Bread page**: Server component with 4 states — EmptyState (no session), HoldingState (before Monday unlock), DailyBreadView (active plan), CompletionState (all 5 days done).
+- **GenerationProgress component**: Client-side polling UI with animated progress messages, handles error/stalled states.
+- **Bug fixes**: Session cookie mismatch in complete-day (was using wrong cookie), pending job handling in status route (jobs start as pending not generating), field name alignment in fire-and-forget payload.
+- **Types**: 19-field DayContent, JobRecord, PlanRecord, PlanDayRecord, DayScheduleEntry — all aligned to actual DB column names.
+- **Constants**: USING_QUEUE_FALLBACK=true, STALL_TIMEOUT_MS=120000, GENERATING_LOCK_TIMEOUT_MS=60000, INTERACTIVE_ROTATION map.
+- **Security**: generate-day returns 403 without valid X-Internal-Secret header.
+- **11/11 curl tests pass**, full audit against 1200-line plan confirmed 100% compliance.
 
 ## SA-037: LLM-compose Day 1, clean dead code, gitignore hygiene (2026-03-01)
 
@@ -499,7 +581,7 @@ Behavior is preserved exactly. Documented under "Meta-fixes" in
 - **middleware.ts removed**: Next.js 16 uses `proxy.ts` — coexisting `middleware.ts` was causing ALL Vercel deployments to fail with 0ms build errors (`Both middleware file and proxy file detected`)
 - **Vercel deployment restored**: Manual `vercel --prod` succeeded — 476 static pages, 32 series, production live at euangelion.app
 - **Git identity canonicalized**: email `chrisparker21@gmail.com`, name `creativcreature`, gh account `creativcreature`
-- **CLAUDE.md rewritten**: Corrected all account references (GitHub `creativcreature/euongelion`, Vercel `james-projects-5d824c1e/euongelion`), added proxy.ts note, updated content counts (175 devotionals, 32 series)
+- **CLAUDE.md rewritten**: Corrected all account references (GitHub `creativcreature/euongelion`, Vercel `james-projects-5d824c1e/euangelion`), added proxy.ts note, updated content counts (175 devotionals, 32 series)
 - **COMMIT-AND-DEPLOY-GUIDE.md** created at project root — full walkthrough of 11 pre-commit hooks, commit-msg requirements, account verification, and deployment flow
 
 ### Files

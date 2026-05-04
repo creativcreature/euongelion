@@ -70,6 +70,24 @@ export type BrainGenerationRequest = {
  */
 const ANTHROPIC_CACHE_MIN_CHARS = 4096
 
+/**
+ * Real usage stats from a provider response. When undefined, the caller
+ * falls back to estimateInputTokens/estimateOutputTokens.
+ */
+type ProviderUsage = {
+  inputTokens: number
+  outputTokens: number
+  /** Anthropic-only: tokens written into the prompt cache this call. */
+  cacheCreatedTokens?: number
+  /** Anthropic-only: tokens read out of the prompt cache this call. */
+  cacheReadTokens?: number
+}
+
+type ProviderCallResult = {
+  text: string
+  usage?: ProviderUsage
+}
+
 function normalizeProviderMode(mode: BrainProviderId): BrainProviderId {
   if (
     mode === 'openai' ||
@@ -295,7 +313,7 @@ async function callOpenAI(params: {
   system: string
   messages: BrainMessage[]
   maxOutputTokens: number
-}): Promise<string> {
+}): Promise<ProviderCallResult> {
   const tokenField =
     OPENAI_MODEL.startsWith('gpt-5') || OPENAI_MODEL.startsWith('o')
       ? { max_completion_tokens: params.maxOutputTokens }
@@ -326,8 +344,18 @@ async function callOpenAI(params: {
 
   const payload = (await response.json()) as {
     choices?: Array<{ message?: { content?: string } }>
+    usage?: { prompt_tokens?: number; completion_tokens?: number }
   }
-  return payload.choices?.[0]?.message?.content?.trim() || ''
+  const text = payload.choices?.[0]?.message?.content?.trim() || ''
+  const usage =
+    typeof payload.usage?.prompt_tokens === 'number' &&
+    typeof payload.usage?.completion_tokens === 'number'
+      ? {
+          inputTokens: payload.usage.prompt_tokens,
+          outputTokens: payload.usage.completion_tokens,
+        }
+      : undefined
+  return { text, usage }
 }
 
 type AnthropicTextBlock = {
@@ -390,7 +418,7 @@ async function callAnthropic(params: {
   messages: BrainMessage[]
   maxOutputTokens: number
   cacheableUserPrefix?: string
-}): Promise<string> {
+}): Promise<ProviderCallResult> {
   // Find the index of the first user message — the cacheable prefix
   // attaches there. If there is no user message (rare), the prefix is
   // inert.
@@ -440,14 +468,27 @@ async function callAnthropic(params: {
     }
   }
 
+  const text = (payload.content || [])
+    .filter((part) => part.type === 'text' && typeof part.text === 'string')
+    .map((part) => part.text?.trim() || '')
+    .join('\n')
+    .trim()
+
   // Surface cache hit/creation stats so we can observe whether prompt
   // caching is actually firing in production. Stays under the same
   // [composer] log namespace as related observability.
+  let usage: ProviderUsage | undefined
   if (payload.usage) {
     const created = payload.usage.cache_creation_input_tokens ?? 0
     const readFromCache = payload.usage.cache_read_input_tokens ?? 0
     const input = payload.usage.input_tokens ?? 0
     const output = payload.usage.output_tokens ?? 0
+    usage = {
+      inputTokens: input,
+      outputTokens: output,
+      cacheCreatedTokens: created,
+      cacheReadTokens: readFromCache,
+    }
     if (created > 0 || readFromCache > 0) {
       console.info(
         `[anthropic-cache] input=${input} output=${output} cache_created=${created} cache_read=${readFromCache}`,
@@ -455,12 +496,7 @@ async function callAnthropic(params: {
     }
   }
 
-  const text = (payload.content || [])
-    .filter((part) => part.type === 'text' && typeof part.text === 'string')
-    .map((part) => part.text?.trim() || '')
-    .join('\n')
-    .trim()
-  return text
+  return { text, usage }
 }
 
 async function callGoogle(params: {
@@ -468,7 +504,7 @@ async function callGoogle(params: {
   system: string
   messages: BrainMessage[]
   maxOutputTokens: number
-}): Promise<string> {
+}): Promise<ProviderCallResult> {
   const response = await fetch(
     `${GOOGLE_API_URL}/${GOOGLE_MODEL}:generateContent?key=${encodeURIComponent(params.apiKey)}`,
     {
@@ -501,6 +537,10 @@ async function callGoogle(params: {
 
   const payload = (await response.json()) as {
     candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>
+    usageMetadata?: {
+      promptTokenCount?: number
+      candidatesTokenCount?: number
+    }
   }
 
   const text =
@@ -508,7 +548,15 @@ async function callGoogle(params: {
       ?.map((part) => part.text || '')
       .join('\n')
       .trim() || ''
-  return text
+  const usage =
+    typeof payload.usageMetadata?.promptTokenCount === 'number' &&
+    typeof payload.usageMetadata?.candidatesTokenCount === 'number'
+      ? {
+          inputTokens: payload.usageMetadata.promptTokenCount,
+          outputTokens: payload.usageMetadata.candidatesTokenCount,
+        }
+      : undefined
+  return { text, usage }
 }
 
 async function callOpenAiCompatible(params: {
@@ -518,7 +566,7 @@ async function callOpenAiCompatible(params: {
   system: string
   messages: BrainMessage[]
   maxOutputTokens: number
-}): Promise<string> {
+}): Promise<ProviderCallResult> {
   const response = await fetch(params.apiUrl, {
     method: 'POST',
     headers: {
@@ -546,14 +594,23 @@ async function callOpenAiCompatible(params: {
     choices?: Array<{ message?: { content?: string } }>
     reply?: string
     output_text?: string
+    usage?: { prompt_tokens?: number; completion_tokens?: number }
   }
 
-  return (
+  const text =
     payload.choices?.[0]?.message?.content?.trim() ||
     payload.reply?.trim() ||
     payload.output_text?.trim() ||
     ''
-  )
+  const usage =
+    typeof payload.usage?.prompt_tokens === 'number' &&
+    typeof payload.usage?.completion_tokens === 'number'
+      ? {
+          inputTokens: payload.usage.prompt_tokens,
+          outputTokens: payload.usage.completion_tokens,
+        }
+      : undefined
+  return { text, usage }
 }
 
 /**
@@ -582,7 +639,7 @@ async function executeProvider(params: {
   request: BrainGenerationRequest
 }): Promise<ProviderExecutionResult> {
   const maxOutputTokens = params.request.context.maxOutputTokens || 1200
-  let output = ''
+  let result: ProviderCallResult = { text: '' }
 
   // For non-Anthropic providers we collapse cacheableUserPrefix into the
   // first user message so the prompt is byte-identical to what Anthropic
@@ -594,7 +651,7 @@ async function executeProvider(params: {
   )
 
   if (params.provider === 'openai') {
-    output = isAnthropicKey(params.apiKey)
+    result = isAnthropicKey(params.apiKey)
       ? await callAnthropic({
           apiKey: params.apiKey,
           system: params.request.system,
@@ -609,14 +666,14 @@ async function executeProvider(params: {
           maxOutputTokens,
         })
   } else if (params.provider === 'google') {
-    output = await callGoogle({
+    result = await callGoogle({
       apiKey: params.apiKey,
       system: params.request.system,
       messages: collapsedMessages,
       maxOutputTokens,
     })
   } else if (params.provider === 'minimax') {
-    output = await callOpenAiCompatible({
+    result = await callOpenAiCompatible({
       apiUrl: MINIMAX_API_URL,
       apiKey: params.apiKey,
       model: MINIMAX_MODEL,
@@ -625,7 +682,7 @@ async function executeProvider(params: {
       maxOutputTokens,
     })
   } else {
-    output = await callOpenAiCompatible({
+    result = await callOpenAiCompatible({
       apiUrl: NVIDIA_API_URL,
       apiKey: params.apiKey,
       model: NVIDIA_MODEL,
@@ -635,12 +692,23 @@ async function executeProvider(params: {
     })
   }
 
-  const messageConcat = [
-    params.request.system,
-    ...collapsedMessages.map((message) => message.content),
-  ].join('\n')
-  const inputTokens = estimateInputTokens(messageConcat)
-  const outputTokens = estimateOutputTokens(output)
+  const output = result.text
+  // Prefer real usage stats from the provider response. Fall back to the
+  // 1.5×-words estimate when the provider doesn't return usage (e.g. some
+  // OpenAI-compatible endpoints omit it on streaming or older models).
+  let inputTokens: number
+  let outputTokens: number
+  if (result.usage) {
+    inputTokens = result.usage.inputTokens
+    outputTokens = result.usage.outputTokens
+  } else {
+    const messageConcat = [
+      params.request.system,
+      ...collapsedMessages.map((message) => message.content),
+    ].join('\n')
+    inputTokens = estimateInputTokens(messageConcat)
+    outputTokens = estimateOutputTokens(output)
+  }
   const estimatedCostUsd = estimateCostUsd({
     provider: params.provider,
     inputTokens,
