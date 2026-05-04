@@ -119,3 +119,28 @@ OTP-in-email pairing remains deferred — pre-flight P0-3 confirmed
 Supabase default email transport, which would require either a
 Supabase template change (manual ops, not in-repo) or a custom email
 provider (substantial new infra).
+
+### 02:25 EDT — Phase 10A dead-code audit complete (docs-only commit)
+
+**Surprise:** the master plan's "47 lines of commented-out code in
+matching.ts and src/app/api/_ routes" doesn't exist on this branch.
+Grepped all of `src/` for the patterns `^\s_//\s\*(const|let|var|if|return|export|import|await|function)` —
+zero matches. SA-037 likely cleaned them already.
+
+**Analysis (per prompt instruction — analyze only, do NOT
+consolidate):**
+
+- **Dual-auth modules:** `src/lib/auth.ts` (root, 4 importers) and
+  `src/lib/auth/onboarding.ts` (4 importers) cover legitimately
+  different concerns. NOT a real duplication. However,
+  `src/lib/auth/rate-limit.ts` (Upstash) is **fully unused** — its
+  exports `oauthLimiter` and `magicLinkLimiter` have zero importers.
+  Magic-link rate limiting goes through `takeRateLimit` from
+  `src/lib/api-security.ts` instead. Recommendation in followups.
+- **Dual-consent systems:** `src/lib/site-consent.ts` (180-day cookie
+  banner) and `src/lib/soul-audit/consent-token.ts` (30-min HMAC
+  per-audit token) are NOT duplicates — they cover distinct surfaces.
+  Recommendation: keep both, document the distinction.
+
+Per the founder's "no file removal" hard guardrail, I did not delete
+`auth/rate-limit.ts` even though it's dead code.

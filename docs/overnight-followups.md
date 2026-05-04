@@ -139,3 +139,48 @@ bind data rows to `user_id`, that requires:
 - Audit RLS policies for each table
 
 That's substantial schema/policy work. Out of overnight scope.
+
+## Phase 10A — Dual-auth modules: analysis (consolidate later)
+
+Per the prompt's instruction (ANALYZE only — do NOT consolidate
+tonight). Three modules sit under `src/lib/auth*`:
+
+| Module                       | Lines | Imports     | Used by                                                                                                              |
+| ---------------------------- | ----- | ----------- | -------------------------------------------------------------------------------------------------------------------- |
+| `src/lib/auth.ts`            | 57    | 4 sites     | callback route, magic-link API, annotations API, bookmarks API. Exports getUser/sendMagicLink/onAuthSuccess/signOut. |
+| `src/lib/auth/onboarding.ts` | 224   | 4 sites     | callback route, /api/auth/onboarding, /onboarding page, OnboardingClient.                                            |
+| `src/lib/auth/rate-limit.ts` | 47    | **0 sites** | Exports `oauthLimiter` and `magicLinkLimiter` (Upstash) — neither is imported anywhere.                              |
+
+**Finding:** This is **not** a true "dual auth" duplication. The root
+`auth.ts` and the subfolder `auth/onboarding.ts` cover different
+concerns and coexist legitimately. The real issue is
+`auth/rate-limit.ts` — **fully unused dead code**.
+
+**Recommendation for follow-up (founder eyes):** delete
+`src/lib/auth/rate-limit.ts` once you confirm no future-roadmap work
+plans to wire it in. Magic-link rate limiting today goes through
+`takeRateLimit` from `src/lib/api-security.ts`, which already covers
+the use case `magicLinkLimiter` was meant for. **Tonight I did not
+delete this file** — the founder's hard guardrail says no file removal.
+
+If kept, document why (e.g., "planned for OAuth flow") in a comment
+at the top of the file.
+
+## Phase 10A — Dual-consent systems: analysis (consolidate not recommended)
+
+| Module                                | Purpose                                                           | TTL      | Used by                                       |
+| ------------------------------------- | ----------------------------------------------------------------- | -------- | --------------------------------------------- |
+| `src/lib/site-consent.ts`             | Site-wide GDPR/CCPA cookie consent (essential + analytics opt-in) | 180 days | Cookie banner + soul-audit results page       |
+| `src/lib/soul-audit/consent-token.ts` | HMAC-signed token tying a specific audit_run to recorded consent  | 30 min   | `/api/soul-audit/select` consent verification |
+
+**Finding:** These serve genuinely distinct purposes — one is the
+site-level cookie banner consent, the other is per-audit-run
+acknowledgement (essential + crisis-acknowledged) carried as a
+short-lived signed token through the submit→consent→select flow.
+They are **not redundant**.
+
+**Recommendation:** keep both. Document the distinction in a top-level
+comment in each file (currently neither file explicitly distinguishes
+itself from the other), and add a short section in
+`docs/PRODUCTION-SOURCE-OF-TRUTH.md` that names both consent surfaces
+so future engineers don't accidentally try to merge them.
