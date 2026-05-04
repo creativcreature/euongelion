@@ -5,6 +5,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-04 / Phase 10B-P0: Anthropic retry on 429/5xx (2026-05-04)
+
+`callAnthropic` previously gave up on the first non-2xx response and
+fell straight to the next provider in the fallback chain. Transient
+rate-limits (429) and server-side hiccups (5xx) wasted the Anthropic
+attempt unnecessarily.
+
+- `src/lib/brain/router.ts`: wrapped the Anthropic fetch in a 3-attempt
+  retry loop. Retries fire on 429 and 5xx only — 4xx other than 429
+  bubbles up immediately so the fallback chain takes over fast on real
+  client errors. Backoff is exponential (1s, 2s) unless the response
+  carries a `Retry-After` header, in which case its value (parsed as
+  seconds, clamped at 30s) overrides the schedule. Each retry logs
+  `[anthropic-retry] status=… attempt=… backoff_ms=…` for observability.
+- `__tests__/anthropic-retry-backoff.test.ts`: 4 tests covering the
+  recover-on-second-attempt 429 path, the give-up-after-3 503 path,
+  the no-retry-on-400 client-error path, and the Retry-After-seconds
+  honoring path.
+
+The provider-fallback chain is unchanged — when all 3 Anthropic
+attempts exhaust, the existing chain still moves on to the next
+provider (Google → MiniMax → NVIDIA per `sortClaudeFirstThenCheapest`).
+
 ## OVERNIGHT-2026-05-04 / Phase 10B-P0: Real token counting from response.usage (2026-05-04)
 
 The router was using `estimateInputTokens` / `estimateOutputTokens`

@@ -88,6 +88,44 @@ type ProviderCallResult = {
   usage?: ProviderUsage
 }
 
+/**
+ * Retry policy for Anthropic 429 (rate-limited) and 5xx (server-side
+ * transient) responses. Capped at MAX_ATTEMPTS total tries (1 initial +
+ * 2 retries) with exponential backoff (1s, 2s). When the server returns
+ * a `Retry-After` header, the value (in seconds) overrides the
+ * exponential schedule.
+ *
+ * The fallback chain in `generateWithBrain` continues to take over when
+ * all attempts fail — the retry loop is purely an inline buffer for
+ * transient failures.
+ */
+const ANTHROPIC_RETRY_MAX_ATTEMPTS = 3
+const ANTHROPIC_RETRY_BASE_BACKOFF_MS = 1000
+const ANTHROPIC_RETRYABLE_STATUS = (status: number): boolean =>
+  status === 429 || (status >= 500 && status < 600)
+
+function parseRetryAfterMs(headerValue: string | null): number | null {
+  if (!headerValue) return null
+  const trimmed = headerValue.trim()
+  if (!trimmed) return null
+  // RFC 7231: Retry-After can be a delta-seconds integer or an HTTP-date.
+  // Most providers send seconds; HTTP-date is rare. Be defensive.
+  const seconds = Number(trimmed)
+  if (Number.isFinite(seconds) && seconds >= 0) {
+    return Math.min(seconds * 1000, 30_000)
+  }
+  const date = Date.parse(trimmed)
+  if (!Number.isNaN(date)) {
+    return Math.max(0, Math.min(date - Date.now(), 30_000))
+  }
+  return null
+}
+
+async function sleep(ms: number): Promise<void> {
+  if (ms <= 0) return
+  await new Promise<void>((resolve) => setTimeout(resolve, ms))
+}
+
 function normalizeProviderMode(mode: BrainProviderId): BrainProviderId {
   if (
     mode === 'openai' ||
@@ -436,26 +474,60 @@ async function callAnthropic(params: {
     return { role: message.role, content: message.content }
   })
 
-  const response = await fetch(ANTHROPIC_API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': params.apiKey,
-      'anthropic-version': '2023-06-01',
-    },
-    body: JSON.stringify({
-      model: ANTHROPIC_MODEL,
-      system: buildAnthropicSystem(params.system),
-      max_tokens: params.maxOutputTokens,
-      messages,
-    }),
+  const requestBody = JSON.stringify({
+    model: ANTHROPIC_MODEL,
+    system: buildAnthropicSystem(params.system),
+    max_tokens: params.maxOutputTokens,
+    messages,
   })
 
-  if (!response.ok) {
-    const payload = await response.text().catch(() => '')
-    throw new Error(
-      `Anthropic request failed (${response.status}): ${payload.slice(0, 240)}`,
+  // Retry loop for 429 (rate-limited) and 5xx (server-side transient).
+  // Non-retriable failures (4xx other than 429, network throws) bubble
+  // up immediately so the fallback chain can take over.
+  let lastError: unknown = null
+  let response: Response | null = null
+  for (let attempt = 1; attempt <= ANTHROPIC_RETRY_MAX_ATTEMPTS; attempt++) {
+    response = await fetch(ANTHROPIC_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': params.apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: requestBody,
+    })
+
+    if (response.ok) break
+
+    if (!ANTHROPIC_RETRYABLE_STATUS(response.status)) {
+      const payload = await response.text().catch(() => '')
+      throw new Error(
+        `Anthropic request failed (${response.status}): ${payload.slice(0, 240)}`,
+      )
+    }
+
+    // Retriable. If this was the last attempt, throw with the status.
+    if (attempt === ANTHROPIC_RETRY_MAX_ATTEMPTS) {
+      const payload = await response.text().catch(() => '')
+      lastError = new Error(
+        `Anthropic request failed after ${attempt} attempts (${response.status}): ${payload.slice(0, 240)}`,
+      )
+      break
+    }
+
+    // Sleep then retry. Honor Retry-After header when present.
+    const retryAfterMs = parseRetryAfterMs(response.headers.get('Retry-After'))
+    const backoffMs =
+      retryAfterMs ?? ANTHROPIC_RETRY_BASE_BACKOFF_MS * Math.pow(2, attempt - 1)
+    console.info(
+      `[anthropic-retry] status=${response.status} attempt=${attempt} backoff_ms=${backoffMs}`,
     )
+    await sleep(backoffMs)
+  }
+
+  if (lastError) throw lastError
+  if (!response || !response.ok) {
+    throw new Error('Anthropic request failed: no successful response')
   }
 
   const payload = (await response.json()) as {
