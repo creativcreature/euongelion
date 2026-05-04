@@ -319,3 +319,79 @@ adapter is server-only; the badge is small).
 5. `git log --oneline cloudflare-migration..HEAD` — branch commit list.
 
 Goodnight.
+
+---
+
+## Continuation — Master plan items 1-4 (after morning summary)
+
+After the morning summary landed, founder said "follow the plan", so I
+continued through the master plan's next-priority items within the same
+guardrails (no new deps, env vars, wrangler bindings, DB migrations,
+folder/file removals). Four more commits landed:
+
+| #   | SHA       | Phase  | Title                                                       |
+| --- | --------- | ------ | ----------------------------------------------------------- |
+| 10  | `a2a1279` | 10B-P0 | real token counting from provider usage metadata            |
+| 11  | `a36018b` | 10B-P0 | Anthropic retry on 429/5xx with exponential backoff         |
+| 12  | `6c4d1b1` | 10C-P0 | AbortController deadline on LLM-touching generate-day route |
+| 13  | `6076e46` | 10B-P1 | X-Model-Used response header on chat route                  |
+
+### What changed
+
+- **Token counting (10B-P0):** every provider call function now returns
+  `{ text, usage? }` with real input/output token counts parsed from
+  the response (Anthropic, OpenAI, Google, MiniMax/NVIDIA). The
+  1.5×-words estimate becomes a fallback only. `/api/chat`, `/usage`
+  page, and `usage-ledger` get accurate cost tracking automatically.
+- **Retry+backoff (10B-P0):** `callAnthropic` retries 429 and 5xx up
+  to 3 attempts (1s + 2s exponential, or `Retry-After` header value
+  capped at 30s). 4xx other than 429 bubbles up immediately.
+  `[anthropic-retry]` console.info on every retry.
+- **AbortController (10C-P0):** new `withAbortDeadline(deadlineMs, fn)`
+  - `LLM_ROUTE_DEADLINE_MS = 25_000` (5s headroom under Workers' 30s
+    cap) + `isAbortError`. `BrainRouteContext` gains `signal?: AbortSignal`
+    plumbed through every provider call's `fetch()`. `generate-day` route
+    wraps its LLM call; on timeout returns 504 with structured log and
+    marks the job as error.
+- **X-Model-Used (10B-P1):** `withModelUsedHeader(response, provider)`
+  helper. `/api/chat` sets it on both SSE and JSON responses so callers
+  can see which provider answered after fallback.
+
+### What I deliberately did NOT touch (still in master plan but blocked
+
+by overnight constraints)
+
+- **Persist provider health to Cloudflare KV** — would require a new
+  `wrangler.jsonc` binding (forbidden).
+- **Reranker (Cohere/Voyage)** — would require a new dependency
+  (forbidden).
+- **Structured output via Tool Use** — fundamentally changes
+  `parseComposedDay`, deserves its own thoughtful pass.
+- **AbortController on submit/select/chat** — each has different
+  orchestration shape; needs per-call vs per-orchestration decision.
+  Generate-day was the highest-value first target (longest LLM call,
+  internal-only so no client UX regression risk).
+- **Reorder fallback chain to Haiku-first** — model-selection change
+  needs founder taste testing.
+
+### Test status after continuation
+
+- `npm run type-check`: ✅ clean.
+- `npm run lint`: ✅ 0 errors, 9 warnings (all pre-existing).
+- New tests: 4 (token counting) + 4 (retry+backoff) + 11 (deadline +
+  X-Model-Used) = 19 added in continuation. All pass.
+- Total new tests this session: 29 + 19 = **48**.
+- Total tests on branch: ~1088 (1069 + 19); same 6 pre-existing
+  failures as before, none introduced by continuation.
+
+### Files to read first (updated for continuation)
+
+The 4 continuation commits all live in `src/lib/brain/` and
+`src/lib/api-security.ts`. The most reviewable diff is the diff
+against the morning summary commit (`3310b2d`):
+
+```bash
+git log --oneline 3310b2d..HEAD       # the 4 continuation commits
+git diff 3310b2d..HEAD --stat         # files touched
+git diff 3310b2d..HEAD -- src/lib/brain/router.ts  # the bulk of the work
+```
