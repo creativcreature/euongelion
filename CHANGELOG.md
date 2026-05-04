@@ -5,6 +5,40 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-04 / Phase 10B: Anthropic prompt caching (2026-05-04)
+
+The composer's per-day Anthropic call sends 4–8 KB of stable reference
+chunks plus a multi-KB system prompt every request. With prompt caching
+those tokens cost $0.30/M instead of $3/M, and re-rolls / multi-day
+plans hit the cache repeatedly.
+
+- `src/lib/brain/router.ts`: extended `BrainGenerationRequest` with an
+  optional `cacheableUserPrefix`. `callAnthropic` now constructs a
+  structured `system` array and a structured first-user `content` array
+  with `cache_control: { type: 'ephemeral' }` whenever the corresponding
+  block exceeds 4096 chars (~1024 tokens, the Anthropic Sonnet
+  prompt-cache minimum). Below threshold the prefix is concatenated
+  the old way (no breakpoint emitted, identical semantics). Other
+  providers (OpenAI, Google, MiniMax, NVIDIA) silently see the prefix
+  concatenated in front of the first user message via
+  `concatCacheablePrefixIntoFirstUser`.
+- `src/lib/brain/router.ts`: added `[anthropic-cache] input=… output=…
+cache_created=… cache_read=…` `console.info` log after every Anthropic
+  call that returns cache stats. Quiet when no cache activity.
+- `src/lib/soul-audit/composer.ts`: split `buildComposerUserPrompt` into
+  `buildComposerUserPromptParts` returning `{ cacheablePrefix, dynamic }`.
+  The reference-material block is the cacheable prefix; user reflection,
+  day anchors, and the compose instruction are the dynamic suffix. The
+  call site passes both fields.
+- `__tests__/anthropic-prompt-cache.test.ts`: 6 tests covering string
+  vs structured-array shape, cache_control placement, threshold
+  behavior, log-line emission, and quiet-when-no-cache behavior.
+
+No SDK upgrade required — router uses raw `fetch` against the Anthropic
+REST API directly. Token counting, retry behavior, structured output,
+provider health persistence, and model selection all left untouched
+per Phase 10B scope.
+
 ## OVERNIGHT-2026-05-04 / Phase 3: Session migration on sign-in (2026-05-04)
 
 When a returning user signed in on a different device, their prior

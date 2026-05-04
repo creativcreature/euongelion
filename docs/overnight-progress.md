@@ -144,3 +144,38 @@ consolidate):**
 
 Per the founder's "no file removal" hard guardrail, I did not delete
 `auth/rate-limit.ts` even though it's dead code.
+
+### 02:34 EDT — Phase 10B Anthropic prompt-caching wired (next commit)
+
+Composer's per-day Anthropic call sends 4-8 KB of stable reference
+chunks plus a multi-KB system prompt every request. With prompt
+caching those tokens cost $0.30/M instead of $3/M.
+
+Implementation:
+
+- `src/lib/brain/router.ts` — `BrainGenerationRequest` gains an
+  optional `cacheableUserPrefix`. `callAnthropic` constructs structured
+  `system` (array with cache_control when > 4096 chars) and structured
+  first-user `content` (cached prefix block + uncached dynamic block
+  when the prefix > 4096 chars). Below threshold, the prefix is
+  concatenated as a string (no breakpoint, identical semantics).
+  Other providers receive the prefix concatenated in front of the
+  first user message via `concatCacheablePrefixIntoFirstUser`. Added
+  `[anthropic-cache] input=… output=… cache_created=… cache_read=…`
+  `console.info` log on every Anthropic call that returns cache stats.
+- `src/lib/soul-audit/composer.ts` — split `buildComposerUserPrompt`
+  into `buildComposerUserPromptParts` returning
+  `{ cacheablePrefix, dynamic }`. Reference material is the cacheable
+  prefix; user reflection + day anchors + compose instruction are
+  dynamic. Call site passes both fields.
+- `__tests__/anthropic-prompt-cache.test.ts` — 6 tests, all pass.
+
+**Surprise:** the 5 existing soul-audit-curation/flow/edge-cases tests
+fail with `PLAN_CREATE_FAILED` 500 errors — but those failures are
+pre-existing on `cloudflare-migration` baseline (verified by stashing
+my changes and rerunning). They likely need real Supabase env. Not a
+regression from Phase 10B. Logged but not blocked.
+
+No SDK upgrade needed — router uses raw `fetch` against Anthropic REST.
+Token counting / retry / structured output / provider-health /
+model-selection all left untouched per Phase 10B scope.

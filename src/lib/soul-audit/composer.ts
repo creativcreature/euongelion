@@ -236,51 +236,59 @@ OUTPUT FORMAT (strict JSON):
 RULES: Real Scripture references only. Accurate quotes and attribution. Correct Hebrew/Greek if used. Verifiable historical claims. No fabricated citations.`
 }
 
-function buildComposerUserPrompt(params: {
+/**
+ * Build the user prompt as TWO parts:
+ *
+ * - `cacheablePrefix`: the REFERENCE MATERIAL block. Stable for the
+ *   life of a single composition; large enough (when ≥1024 tokens) for
+ *   Anthropic's prompt-cache. Other providers will see it concatenated
+ *   in front of `dynamic` (router handles the collapse).
+ *
+ * - `dynamic`: per-request content (user reflection, day anchors, the
+ *   compose instruction). Always uncached.
+ */
+function buildComposerUserPromptParts(params: {
   candidate: CompositionSeed
   userResponse: string
   referenceChunks: ReferenceChunk[]
   pardesLevel: string
   chiasticPosition: ChiasticPosition
-}): string {
-  const parts: string[] = []
+}): { cacheablePrefix: string; dynamic: string } {
+  const cacheableParts: string[] = []
+  if (params.referenceChunks.length > 0) {
+    cacheableParts.push(
+      'REFERENCE MATERIAL (primary source basis of the devotional):',
+    )
+    for (let i = 0; i < params.referenceChunks.length; i++) {
+      const chunk = params.referenceChunks[i]
+      const content = chunk.content.slice(0, MAX_CHUNK_CHARS)
+      cacheableParts.push(`
+[${i + 1}. ${chunk.sourceType}: ${chunk.title}]
+${content}`)
+    }
+  } else {
+    cacheableParts.push(
+      'NOTE: No reference library chunks were available. Ground all claims directly in Scripture. Acknowledge this limitation — do not generate theological claims from training data.',
+    )
+  }
+  const cacheablePrefix = cacheableParts.join('\n')
 
-  // User's reflection (interpretive lens, not to be quoted)
-  parts.push(`USER'S REFLECTION (use as interpretive lens — do NOT quote back):
+  const dynamicParts: string[] = []
+  dynamicParts.push(`USER'S REFLECTION (use as interpretive lens — do NOT quote back):
 ${params.userResponse.slice(0, 500)}`)
-
-  // Day anchors (5% scaffolding from curated module seeds)
-  parts.push(`
+  dynamicParts.push(`
 DAY ANCHORS (5% scaffolding only):
 Scripture: ${params.candidate.scriptureReference}
 Scripture text: ${params.candidate.scriptureText.slice(0, 600)}
 Reflection prompt: ${params.candidate.reflectionPrompt}
 Prayer anchor: ${params.candidate.prayerText.slice(0, 400)}
 Takeaway: ${params.candidate.takeawayText}`)
-
-  // Reference material (the substance)
-  if (params.referenceChunks.length > 0) {
-    parts.push(`
-REFERENCE MATERIAL (primary source basis of the devotional):`)
-
-    for (let i = 0; i < params.referenceChunks.length; i++) {
-      const chunk = params.referenceChunks[i]
-      const content = chunk.content.slice(0, MAX_CHUNK_CHARS)
-      parts.push(`
-[${i + 1}. ${chunk.sourceType}: ${chunk.title}]
-${content}`)
-    }
-  } else {
-    parts.push(`
-NOTE: No reference library chunks were available. Ground all claims directly in Scripture. Acknowledge this limitation — do not generate theological claims from training data.`)
-  }
-
-  parts.push(`
+  dynamicParts.push(`
 COMPOSE a ${params.pardesLevel}-level devotional at chiastic position ${params.chiasticPosition}.
 Title the day based on: "${params.candidate.dayTitle}"
 Anchor in: ${params.candidate.scriptureReference}`)
 
-  return parts.join('\n')
+  return { cacheablePrefix, dynamic: dynamicParts.join('\n') }
 }
 
 // ─── Composition Report ─────────────────────────────────────────────
@@ -380,7 +388,9 @@ function parseComposedDay(raw: string): ParsedComposition | null {
     const parsedDirect = tryParse(cleaned)
     const parsedFromSlice =
       !parsedDirect && cleaned.includes('{') && cleaned.includes('}')
-        ? tryParse(cleaned.slice(cleaned.indexOf('{'), cleaned.lastIndexOf('}') + 1))
+        ? tryParse(
+            cleaned.slice(cleaned.indexOf('{'), cleaned.lastIndexOf('}') + 1),
+          )
         : null
     const parsed = parsedDirect ?? parsedFromSlice
     if (!parsed) return null
@@ -450,7 +460,7 @@ export async function composeDay(
   // Retrieve reference chunks if not pre-supplied
   let chunks = params.referenceChunks
   if (chunks.length === 0) {
-    const retrieval = retrieveForDay({
+    const retrieval = await retrieveForDay({
       themes: params.intent.themes,
       scriptureAnchors: [params.candidate.scriptureReference],
       topic: `${params.userResponse} ${params.candidate.teachingText}`,
@@ -482,7 +492,7 @@ export async function composeDay(
     faithBackground: params.intent.faithBackground,
   })
 
-  const userPrompt = buildComposerUserPrompt({
+  const userPromptParts = buildComposerUserPromptParts({
     candidate: params.candidate,
     userResponse: params.userResponse,
     referenceChunks: chunks,
@@ -500,7 +510,11 @@ export async function composeDay(
     const maxTokens = estimateMaxOutputTokens(wordTarget)
     result = await generateWithBrain({
       system: systemPrompt,
-      messages: [{ role: 'user', content: userPrompt }],
+      messages: [{ role: 'user', content: userPromptParts.dynamic }],
+      // Reference chunks are stable for this composition; sent as a
+      // separate cacheable block on Anthropic. Other providers see them
+      // concatenated in front of the user message (router handles it).
+      cacheableUserPrefix: userPromptParts.cacheablePrefix,
       context: {
         task: 'devotional_day_generate',
         mode: 'auto',
@@ -819,7 +833,7 @@ export function composeRecap(params: {
  * Retrieve reference chunks for a specific day's composition.
  * Returns 15-25 chunks, excluding previously used IDs.
  */
-export function retrieveIngredientsForDay(params: {
+export async function retrieveIngredientsForDay(params: {
   candidate: CompositionSeed
   userResponse: string
   intent: ParsedAuditIntent
@@ -827,8 +841,8 @@ export function retrieveIngredientsForDay(params: {
   pardesLevel?: 'peshat' | 'remez' | 'derash' | 'sod' | 'integrated'
   excludeChunkIds?: string[]
   limit?: number
-}): ReferenceChunk[] {
-  const result = retrieveForDay({
+}): Promise<ReferenceChunk[]> {
+  const result = await retrieveForDay({
     themes: params.intent.themes,
     scriptureAnchors: [params.candidate.scriptureReference],
     topic: `${params.userResponse} ${params.candidate.teachingText} ${params.candidate.reflectionPrompt}`,

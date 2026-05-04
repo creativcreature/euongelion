@@ -49,7 +49,26 @@ export type BrainGenerationRequest = {
   system: string
   messages: BrainMessage[]
   context: BrainRouteContext
+  /**
+   * Anthropic-only prompt-cache hint. When provided, this prefix is sent
+   * as a separate cacheable content block IN FRONT of the first
+   * user-role message (Anthropic's `cache_control: { type: 'ephemeral' }`).
+   *
+   * For other providers, the prefix is silently concatenated in front of
+   * the first user message's `content` so they receive identical
+   * semantic input. Size threshold for the cache breakpoint is enforced
+   * inside `callAnthropic`; below threshold the prefix is concatenated
+   * as if for any other provider.
+   */
+  cacheableUserPrefix?: string
 }
+
+/**
+ * Anthropic prompt-caching minimum is ~1024 tokens (Sonnet) / 2048 (Haiku).
+ * 4096 chars ≈ 1024 tokens for English prose; we use that as the threshold
+ * below which we won't bother emitting a cache_control breakpoint.
+ */
+const ANTHROPIC_CACHE_MIN_CHARS = 4096
 
 function normalizeProviderMode(mode: BrainProviderId): BrainProviderId {
   if (
@@ -311,12 +330,84 @@ async function callOpenAI(params: {
   return payload.choices?.[0]?.message?.content?.trim() || ''
 }
 
+type AnthropicTextBlock = {
+  type: 'text'
+  text: string
+  cache_control?: { type: 'ephemeral' }
+}
+
+type AnthropicMessage = {
+  role: 'user' | 'assistant'
+  content: string | AnthropicTextBlock[]
+}
+
+/**
+ * Build the Anthropic `system` field. Returns a string when caching is not
+ * worthwhile, or a [text-block] array with `cache_control` when the system
+ * prompt is large enough to clear the prompt-cache minimum.
+ */
+function buildAnthropicSystem(system: string): string | AnthropicTextBlock[] {
+  if (system.length < ANTHROPIC_CACHE_MIN_CHARS) return system
+  return [
+    {
+      type: 'text',
+      text: system,
+      cache_control: { type: 'ephemeral' },
+    },
+  ]
+}
+
+/**
+ * Build Anthropic message content for the FIRST user message. When a
+ * cacheableUserPrefix is provided AND large enough, the prefix is sent
+ * as a separate cached block followed by the dynamic content. Otherwise
+ * the prefix is concatenated and the message stays a plain string.
+ */
+function buildAnthropicFirstUserContent(
+  message: BrainMessage,
+  cacheableUserPrefix: string | undefined,
+): string | AnthropicTextBlock[] {
+  if (!cacheableUserPrefix) return message.content
+  if (cacheableUserPrefix.length < ANTHROPIC_CACHE_MIN_CHARS) {
+    return `${cacheableUserPrefix}\n\n${message.content}`
+  }
+  return [
+    {
+      type: 'text',
+      text: cacheableUserPrefix,
+      cache_control: { type: 'ephemeral' },
+    },
+    {
+      type: 'text',
+      text: message.content,
+    },
+  ]
+}
+
 async function callAnthropic(params: {
   apiKey: string
   system: string
   messages: BrainMessage[]
   maxOutputTokens: number
+  cacheableUserPrefix?: string
 }): Promise<string> {
+  // Find the index of the first user message — the cacheable prefix
+  // attaches there. If there is no user message (rare), the prefix is
+  // inert.
+  const firstUserIndex = params.messages.findIndex((m) => m.role === 'user')
+  const messages: AnthropicMessage[] = params.messages.map((message, idx) => {
+    if (idx === firstUserIndex) {
+      return {
+        role: message.role,
+        content: buildAnthropicFirstUserContent(
+          message,
+          params.cacheableUserPrefix,
+        ),
+      }
+    }
+    return { role: message.role, content: message.content }
+  })
+
   const response = await fetch(ANTHROPIC_API_URL, {
     method: 'POST',
     headers: {
@@ -326,12 +417,9 @@ async function callAnthropic(params: {
     },
     body: JSON.stringify({
       model: ANTHROPIC_MODEL,
-      system: params.system,
+      system: buildAnthropicSystem(params.system),
       max_tokens: params.maxOutputTokens,
-      messages: params.messages.map((message) => ({
-        role: message.role,
-        content: message.content,
-      })),
+      messages,
     }),
   })
 
@@ -344,7 +432,29 @@ async function callAnthropic(params: {
 
   const payload = (await response.json()) as {
     content?: Array<{ type?: string; text?: string }>
+    usage?: {
+      input_tokens?: number
+      output_tokens?: number
+      cache_creation_input_tokens?: number
+      cache_read_input_tokens?: number
+    }
   }
+
+  // Surface cache hit/creation stats so we can observe whether prompt
+  // caching is actually firing in production. Stays under the same
+  // [composer] log namespace as related observability.
+  if (payload.usage) {
+    const created = payload.usage.cache_creation_input_tokens ?? 0
+    const readFromCache = payload.usage.cache_read_input_tokens ?? 0
+    const input = payload.usage.input_tokens ?? 0
+    const output = payload.usage.output_tokens ?? 0
+    if (created > 0 || readFromCache > 0) {
+      console.info(
+        `[anthropic-cache] input=${input} output=${output} cache_created=${created} cache_read=${readFromCache}`,
+      )
+    }
+  }
+
   const text = (payload.content || [])
     .filter((part) => part.type === 'text' && typeof part.text === 'string')
     .map((part) => part.text?.trim() || '')
@@ -446,6 +556,25 @@ async function callOpenAiCompatible(params: {
   )
 }
 
+/**
+ * For non-Anthropic providers, the cacheable user prefix is silently
+ * concatenated in front of the first user message so the semantic input
+ * stays identical across providers.
+ */
+function concatCacheablePrefixIntoFirstUser(
+  messages: BrainMessage[],
+  cacheableUserPrefix: string | undefined,
+): BrainMessage[] {
+  if (!cacheableUserPrefix) return messages
+  const firstUserIndex = messages.findIndex((m) => m.role === 'user')
+  if (firstUserIndex === -1) return messages
+  return messages.map((message, idx) =>
+    idx === firstUserIndex
+      ? { ...message, content: `${cacheableUserPrefix}\n\n${message.content}` }
+      : message,
+  )
+}
+
 async function executeProvider(params: {
   provider: Exclude<BrainProviderId, 'auto'>
   apiKey: string
@@ -455,6 +584,15 @@ async function executeProvider(params: {
   const maxOutputTokens = params.request.context.maxOutputTokens || 1200
   let output = ''
 
+  // For non-Anthropic providers we collapse cacheableUserPrefix into the
+  // first user message so the prompt is byte-identical to what Anthropic
+  // would have seen. (callAnthropic itself separates the prefix back out
+  // when emitting the structured content with cache_control.)
+  const collapsedMessages = concatCacheablePrefixIntoFirstUser(
+    params.request.messages,
+    params.request.cacheableUserPrefix,
+  )
+
   if (params.provider === 'openai') {
     output = isAnthropicKey(params.apiKey)
       ? await callAnthropic({
@@ -462,18 +600,19 @@ async function executeProvider(params: {
           system: params.request.system,
           messages: params.request.messages,
           maxOutputTokens,
+          cacheableUserPrefix: params.request.cacheableUserPrefix,
         })
       : await callOpenAI({
           apiKey: params.apiKey,
           system: params.request.system,
-          messages: params.request.messages,
+          messages: collapsedMessages,
           maxOutputTokens,
         })
   } else if (params.provider === 'google') {
     output = await callGoogle({
       apiKey: params.apiKey,
       system: params.request.system,
-      messages: params.request.messages,
+      messages: collapsedMessages,
       maxOutputTokens,
     })
   } else if (params.provider === 'minimax') {
@@ -482,7 +621,7 @@ async function executeProvider(params: {
       apiKey: params.apiKey,
       model: MINIMAX_MODEL,
       system: params.request.system,
-      messages: params.request.messages,
+      messages: collapsedMessages,
       maxOutputTokens,
     })
   } else {
@@ -491,14 +630,14 @@ async function executeProvider(params: {
       apiKey: params.apiKey,
       model: NVIDIA_MODEL,
       system: params.request.system,
-      messages: params.request.messages,
+      messages: collapsedMessages,
       maxOutputTokens,
     })
   }
 
   const messageConcat = [
     params.request.system,
-    ...params.request.messages.map((message) => message.content),
+    ...collapsedMessages.map((message) => message.content),
   ].join('\n')
   const inputTokens = estimateInputTokens(messageConcat)
   const outputTokens = estimateOutputTokens(output)
