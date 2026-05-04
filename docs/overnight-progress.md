@@ -63,3 +63,23 @@ short comment pointing at `normalizeModule` which does the actual flatten.
 The two type definitions exist in parallel (`Module` in `src/types/index.ts`
 vs `DevotionalModule` in `src/types/soul-audit.ts`). Unifying them is
 out of scope tonight — flagged for follow-up.
+
+### 02:17 EDT — Phase 2 active-plan visibility committed (next commit)
+
+Built `useActivePlan` hook (module-cached fetch with invalidation event)
+and `ActivePlanBadge` component (header + tile variants). Mounted in:
+
+- `EuangelionShellHeader.tsx` — desktop topbar actions, and at the top of
+  the mobile secondary nav (so it's the first thing visible after tap).
+- `src/app/series/page.tsx` — large tile above rails/grid/list views.
+
+`/api/soul-audit/current` extended to return `seriesTitle` and
+`dayNumber` so the badge can label without client-side `SERIES_DATA`
+bundling.
+
+5 new unit tests pass (loading state, header variant, tile variant,
+RESUME fallback when dayNumber missing, fetch-error path). Existing
+shell-header (6 tests) and series-page-client tests pass — no
+regressions.
+
+Plan-management UI in `/settings` deliberately deferred per Phase 2 scope.

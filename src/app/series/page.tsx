@@ -6,6 +6,7 @@ import SiteFooter from '@/components/SiteFooter'
 import FadeIn from '@/components/motion/FadeIn'
 import SeriesRailSection from '@/components/SeriesRailSection'
 import BrowseSeriesCard from '@/components/BrowseSeriesCard'
+import ActivePlanBadge from '@/components/ActivePlanBadge'
 import { useProgress } from '@/hooks/useProgress'
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 import {
@@ -195,6 +196,18 @@ export default function SeriesBrowsePage() {
             </p>
           </FadeIn>
         </header>
+
+        {/* Active-plan tile — renders only when user has a current plan */}
+        <section
+          aria-label="Continue reading"
+          style={{
+            maxWidth: 720,
+            margin: '0 auto 2rem',
+            padding: '0 1.5rem',
+          }}
+        >
+          <ActivePlanBadge variant="tile" />
+        </section>
 
         {/* View toggle + search bar */}
         <div className="series-toolbar">

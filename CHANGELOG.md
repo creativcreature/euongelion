@@ -5,6 +5,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-04 / Phase 2: Active-plan visibility (2026-05-04)
+
+The Soul Audit plan was invisible everywhere except `/` and `/daily-bread`,
+which produced the founder's "series disappears after navigating away"
+sensation. Surfaced it in the global header and on `/series`.
+
+- `src/hooks/useActivePlan.ts` — new client hook that fetches
+  `/api/soul-audit/current` once per navigation, caches the result at
+  module scope to deduplicate, and re-fetches on a new
+  `soulAuditPlanChanged` window event.
+- `src/components/ActivePlanBadge.tsx` — new component with two variants:
+  `header` (compact "DAY N · Series Title") and `tile` (larger card for
+  surface pages). Hides entirely when no active plan or while loading.
+- `src/components/EuangelionShellHeader.tsx` — mounted the header-variant
+  badge in the desktop topbar actions row and at the top of the mobile
+  secondary nav panel.
+- `src/app/series/page.tsx` — mounted the tile-variant above the existing
+  rails/grid/list views.
+- `src/app/api/soul-audit/current/route.ts` — added `seriesTitle` and
+  `dayNumber` to the response so the client doesn't need to bundle
+  `SERIES_DATA` for the badge label.
+- `__tests__/active-plan-badge.test.tsx` — 5 unit tests, all pass.
+
 ## OVERNIGHT-2026-05-04 / Phase 1: AI plan reader adapter (2026-05-04)
 
 The AI-composed Soul Audit reader was rendering each day as three bare

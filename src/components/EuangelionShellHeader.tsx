@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import ActivePlanBadge from './ActivePlanBadge'
 
 const NAV_ITEMS = [
   { href: '/', label: 'HOME' },
@@ -413,6 +414,7 @@ export default function EuangelionShellHeader({
               )}
             </div>
             <div className="mock-topbar-actions">
+              <ActivePlanBadge variant="header" />
               <button
                 type="button"
                 className="mock-mode-toggle text-label"
@@ -517,9 +519,7 @@ export default function EuangelionShellHeader({
               aria-controls={
                 mobileMenuOpen ? 'shell-mobile-secondary-nav' : undefined
               }
-              onClick={() =>
-                setMobileMenuOpen((current) => !current)
-              }
+              onClick={() => setMobileMenuOpen((current) => !current)}
             >
               {mobileMenuOpen ? '\u2715' : '\u2630'}
             </button>
@@ -534,6 +534,7 @@ export default function EuangelionShellHeader({
             role="group"
             aria-label="Navigation menu"
           >
+            <ActivePlanBadge variant="header" className="mock-nav-item" />
             {renderNavLinks(NAV_ITEMS)}
             {!authLoading && authenticated && (
               <Link

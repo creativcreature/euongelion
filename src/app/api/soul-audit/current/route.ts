@@ -1,9 +1,6 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-import {
-  createRequestId,
-  withRequestIdHeaders,
-} from '@/lib/api-security'
+import { createRequestId, withRequestIdHeaders } from '@/lib/api-security'
 import {
   getAllPlanDaysWithFallback,
   getLatestPlanInstanceForSessionWithFallback,
@@ -37,6 +34,10 @@ type CurrentCandidate = {
   selectionType: 'ai_primary' | 'ai_generative' | 'curated_prefab'
   planToken?: string
   seriesSlug?: string
+  /** Series title resolved from SERIES_DATA when seriesSlug is curated. */
+  seriesTitle?: string
+  /** Active day number (parsed from plan day rows for AI plans). */
+  dayNumber?: number
 }
 
 function curatedSelectionRoute(seriesSlug: string): string {
@@ -87,6 +88,8 @@ export async function GET() {
         selectionType: 'ai_primary',
         planToken: latestPlan.plan_token,
         seriesSlug: latestPlan.series_slug,
+        seriesTitle: SERIES_DATA[latestPlan.series_slug]?.title,
+        dayNumber: getInitialPlanDayNumber(planDays),
       })
     }
   }
@@ -99,6 +102,8 @@ export async function GET() {
         createdAt: latestSelection.created_at,
         selectionType: 'curated_prefab',
         seriesSlug: latestSelection.series_slug,
+        seriesTitle: series.title,
+        dayNumber: 1,
       })
     }
   } else if (
@@ -117,6 +122,8 @@ export async function GET() {
         selectionType: latestSelection.option_kind,
         planToken: latestSelection.plan_token,
         seriesSlug: latestSelection.series_slug,
+        seriesTitle: SERIES_DATA[latestSelection.series_slug]?.title,
+        dayNumber: getInitialPlanDayNumber(planDays),
       })
     }
   }
@@ -134,6 +141,8 @@ export async function GET() {
         selectionType: current.selectionType,
         planToken: current.planToken,
         seriesSlug: current.seriesSlug,
+        seriesTitle: current.seriesTitle,
+        dayNumber: current.dayNumber,
       },
       { status: 200 },
     )
