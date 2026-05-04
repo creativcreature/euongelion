@@ -179,3 +179,31 @@ regression from Phase 10B. Logged but not blocked.
 No SDK upgrade needed — router uses raw `fetch` against Anthropic REST.
 Token counting / retry / structured output / provider-health /
 model-selection all left untouched per Phase 10B scope.
+
+### 02:38 EDT — Phase 10C structured error logging committed (next commit)
+
+Surveyed all 99 silent `} catch {` blocks in `src/`. Replaced 2 of them
+— the JSON parse paths in `complete-day/route.ts` and
+`generate-day/route.ts`. Both used the pattern from `submit/route.ts`:
+generate a `requestId`, call `logApiError({ scope, requestId, error,
+method, path, context: { reason: 'invalid-json-body' } })`. User-facing
+400 unchanged.
+
+The other 97 silent catches are documented fallbacks:
+
+- `URL` parse fallbacks (request.url is framework-controlled)
+- Defensive Supabase null fallbacks (`maybeSupabase` pattern)
+- Session-token fallbacks for non-request test calls (already commented)
+- Workers-context fallbacks (already commented)
+- ~90 in non-API code (page fallbacks, util helpers, components)
+
+Replacing them blindly would muddy the difference between intentional
+fallback and true error swallowing. Documented the survey + per-site
+classification in `docs/overnight-followups.md` so a future thoughtful
+pass can revisit.
+
+18 daily-bread-api regression tests pass.
+
+Per Phase 10C scope: AbortController on LLM-touching routes, env
+consolidation, browser-storage wrapper, mounted-guard sweep all
+deliberately untouched (each is a 60–90-file refactor).

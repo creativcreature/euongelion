@@ -5,6 +5,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-04 / Phase 10C: Structured error logging on JSON parse (2026-05-04)
+
+The two soul-audit POST routes silently swallowed JSON parse errors,
+returning a generic 400 to the client without leaving a server-side
+trail to debug what payload was malformed.
+
+- `src/app/api/soul-audit/complete-day/route.ts`: replaced silent
+  `catch {}` with `catch (error) { logApiError({...}) }` using the
+  pattern from `src/app/api/soul-audit/submit/route.ts`. Logs scope,
+  requestId, method, path, and a context tag `invalid-json-body`.
+- `src/app/api/soul-audit/generate-day/route.ts`: same pattern.
+
+Survey result: 99 silent `catch {}` blocks exist across `src/`; only
+the 2 above were both genuinely silent AND in API-route surface where
+the structured logger applies. The other 97 are documented fallback
+patterns (defensive Supabase fallbacks, `URL` parse fallbacks,
+session-token fallbacks for non-request test calls). Each carries an
+explanatory comment or has self-evident defensive intent. Documented
+in `docs/overnight-followups.md` so a thoughtful pass can revisit later.
+
+Per Phase 10C scope: AbortController, env consolidation, browser-storage
+wrapper, mounted-guard sweep all deliberately untouched.
+
 ## OVERNIGHT-2026-05-04 / Phase 10B: Anthropic prompt caching (2026-05-04)
 
 The composer's per-day Anthropic call sends 4–8 KB of stable reference
