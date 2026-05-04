@@ -5,6 +5,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-04 / Phase 1: AI plan reader adapter (2026-05-04)
+
+The AI-composed Soul Audit reader was rendering each day as three bare
+`<p>` tags because the composer left `CustomPlanDay.modules` empty and
+the renderer's rich `ModuleRenderer` dispatch was unreachable. Fixed by
+adding an adapter that maps composer flat fields into a `DevotionalModule[]`
+shape the renderer understands.
+
+- `src/lib/soul-audit/ai-plan-to-reader.ts` — new. Exports
+  `aiPlanDayToReader(day)` (scripture + teaching + prayer modules) and
+  `resolveDayModules(day)` (prefer native, fall back to adapter).
+- `src/components/soul-audit/PlanDayContent.tsx` — replaced inline
+  basic-text rendering with `ModuleRenderer` dispatch.
+- `src/components/soul-audit/DayContent.tsx` — same.
+- `__tests__/ai-plan-to-reader.test.ts` — 10 unit tests covering shape,
+  paragraph preservation, empty-field handling, type-union compliance,
+  and `resolveDayModules` precedence.
+
+`nextStep` and `journalPrompt` continue to render in the existing bottom
+section to keep behavior consistent with the curated reader (deviation
+documented in `docs/overnight-followups.md`).
+
 ## OVERNIGHT-2026-05-04: tsconfig + lint baseline meta-fix (2026-05-04)
 
 Pre-commit hook was failing on baseline `tsconfig`/`lint` errors unrelated

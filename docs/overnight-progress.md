@@ -22,3 +22,44 @@ Founder offline until 7pm 2026-05-04. Hard stop 16h from start.
 - Email provider: `supabase.auth.signInWithOtp` (Supabase default). No Resend/Postmark/SES integration. OTP-in-email pairing therefore correctly deferred per prompt.
 - Findings: `docs/overnight-preflights.md`.
 - No code changes; nothing to commit yet.
+
+### 02:05 EDT — Phase 0 meta-fixes committed (904060e)
+
+Pre-commit hook was failing on baseline `tsconfig` + `lint` errors that
+predate any overnight work. Surgical fixes:
+
+- `tsconfig.json` — added `user-references` and `wakeup-mag` to `exclude`.
+- `src/components/soul-audit/GenerationProgress.tsx:99` — eslint-disable
+  for the existing fire-and-poll pattern with pointer to followups.
+
+Also encountered: a stray `src/middleware.ts` reappeared in the working
+tree (CLAUDE.md forbids it; Next.js 16 uses `proxy.ts`). Unstaged and
+removed. `src/proxy.ts` is missing from working tree (founder's pending
+working state — left as-is per anti-sprawl).
+
+Type-check ✓, lint 0 errors / 12 pre-existing warnings, all verify:\* ✓.
+
+### 02:11 EDT — Phase 1 reader adapter committed (next commit)
+
+Built `aiPlanDayToReader` adapter and wired both `PlanDayContent.tsx`
+and `DayContent.tsx` to dispatch through `ModuleRenderer`. Adapter emits
+3 modules (scripture, teaching, prayer) — the three flat fields that
+previously rendered as bare `<p>` tags. `nextStep` / `journalPrompt`
+continue rendering in the existing bottom section (consistency with
+curated path; documented in followups).
+
+- `src/lib/soul-audit/ai-plan-to-reader.ts` — new file, two exports.
+- `src/components/soul-audit/PlanDayContent.tsx` — wired `ModuleRenderer`.
+- `src/components/soul-audit/DayContent.tsx` — same.
+- `__tests__/ai-plan-to-reader.test.ts` — 10 unit tests, all pass.
+
+Type-check ✓, lint clean on touched files, focused vitest run ✓
+(10 new + 1 existing soul-audit results-selection test pass).
+
+Surprise: TS rejected passing `DevotionalModule` (nested-content shape)
+directly to `ModuleRenderer` (flat-content shape). Resolved with an
+`as unknown as Record<string, unknown>` cast at the call site, with a
+short comment pointing at `normalizeModule` which does the actual flatten.
+The two type definitions exist in parallel (`Module` in `src/types/index.ts`
+vs `DevotionalModule` in `src/types/soul-audit.ts`). Unifying them is
+out of scope tonight — flagged for follow-up.

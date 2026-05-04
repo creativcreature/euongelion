@@ -1,6 +1,8 @@
 'use client'
 
+import ModuleRenderer from '@/components/ModuleRenderer'
 import { typographer } from '@/lib/typographer'
+import { resolveDayModules } from '@/lib/soul-audit/ai-plan-to-reader'
 import type { CustomPlanDay } from '@/types/soul-audit'
 
 type PlanDayContentProps = {
@@ -8,17 +10,6 @@ type PlanDayContentProps = {
   bookmarkingDay: number | null
   savedDay: number | null
   onBookmark: (day: CustomPlanDay) => void
-}
-
-function extractModuleText(content: Record<string, unknown>): string {
-  if (typeof content.text === 'string') return content.text
-  if (typeof content.prompt === 'string') return content.prompt
-  if (typeof content.passage === 'string') return content.passage
-  if (typeof content.body === 'string') return content.body
-  const parts = Object.values(content).filter(
-    (v): v is string => typeof v === 'string',
-  )
-  return parts.join('\n\n')
 }
 
 export default function PlanDayContent({
@@ -46,55 +37,62 @@ export default function PlanDayContent({
       <h2 className="vw-heading-md mb-2">{typographer(day.title)}</h2>
       <p className="vw-small mb-4 text-muted">{day.scriptureReference}</p>
 
-      {/* Render modules if present */}
-      {day.modules && day.modules.length > 0 ? (
-        <div className="space-y-4">
-          {day.modules.map((mod, idx) => (
-            <div
-              key={`mod-${day.day}-${mod.type}-${idx}`}
-              id={
-                mod.type === 'scripture'
-                  ? `day-${day.day}-scripture`
-                  : mod.type === 'reflection'
-                    ? `day-${day.day}-reflection`
-                    : mod.type === 'prayer'
-                      ? `day-${day.day}-prayer`
-                      : undefined
-              }
-            >
-              {mod.heading && (
-                <p className="text-label vw-small mb-1 text-gold">
-                  {mod.heading.toUpperCase()}
-                </p>
-              )}
-              <div className="vw-body text-secondary type-prose">
-                {typographer(extractModuleText(mod.content))}
+      {/*
+        Modules render via ModuleRenderer dispatch. Curated content arrives
+        with `day.modules` populated; AI-composed plans use the adapter
+        (resolveDayModules) so the same rich pipeline runs end to end.
+      */}
+      {(() => {
+        const modules = resolveDayModules(day)
+        if (modules.length === 0) {
+          return (
+            <>
+              <p
+                id={`day-${day.day}-scripture`}
+                className="scripture-block vw-body mb-4 text-secondary"
+              >
+                {typographer(day.scriptureText)}
+              </p>
+              <p
+                id={`day-${day.day}-reflection`}
+                className="vw-body mb-4 text-secondary type-prose"
+              >
+                {typographer(day.reflection)}
+              </p>
+              <p
+                id={`day-${day.day}-prayer`}
+                className="text-serif-italic vw-body mb-4 text-secondary type-prose"
+              >
+                {typographer(day.prayer)}
+              </p>
+            </>
+          )
+        }
+        return (
+          <div className="space-y-4">
+            {modules.map((mod, idx) => (
+              <div
+                key={`mod-${day.day}-${mod.type}-${idx}`}
+                id={
+                  mod.type === 'scripture'
+                    ? `day-${day.day}-scripture`
+                    : mod.type === 'reflection'
+                      ? `day-${day.day}-reflection`
+                      : mod.type === 'prayer'
+                        ? `day-${day.day}-prayer`
+                        : undefined
+                }
+              >
+                {/* DevotionalModule has a nested `content` object;
+                    ModuleRenderer.normalizeModule flattens it. */}
+                <ModuleRenderer
+                  module={mod as unknown as Record<string, unknown>}
+                />
               </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <>
-          <p
-            id={`day-${day.day}-scripture`}
-            className="scripture-block vw-body mb-4 text-secondary"
-          >
-            {typographer(day.scriptureText)}
-          </p>
-          <p
-            id={`day-${day.day}-reflection`}
-            className="vw-body mb-4 text-secondary type-prose"
-          >
-            {typographer(day.reflection)}
-          </p>
-          <p
-            id={`day-${day.day}-prayer`}
-            className="text-serif-italic vw-body mb-4 text-secondary type-prose"
-          >
-            {typographer(day.prayer)}
-          </p>
-        </>
-      )}
+            ))}
+          </div>
+        )
+      })()}
 
       <div
         id={`day-${day.day}-practice`}
