@@ -82,3 +82,60 @@ refactor outside Phase 1's scope (anti-sprawl rule G).
 
 **Recommendation:** delete `extractModuleText` from `helpers.ts` once you
 confirm nothing imports it from outside `src/` (e.g. tests, scripts).
+
+## Phase 3 — Schema discrepancy and re-framing
+
+The original prompt instruction for Phase 3 was:
+
+> Update `src/lib/session.ts` `linkSessionToUser()` to perform the
+> additional UPDATEs: `devotional_plan_instances`, `soul_audit_runs`,
+> `soul_audit_jobs`, `bookmarks`, `journal_entries`, `consent_token` —
+> set `user_id` where `session_token` matches and `user_id` is null.
+
+A pre-flight grep against `src/types/database.ts` revealed several
+discrepancies between the prompt and the actual cloudflare-migration
+schema:
+
+- `audit_runs` (not `soul_audit_runs`)
+- `consent_records` (not `consent_token` — that name is used for the
+  HMAC-signed JWT cookie, not a DB table)
+- `session_bookmarks` (not `bookmarks` — there IS a separate `bookmarks`
+  table referenced in `src/types/database.ts:725`, but the soul-audit
+  flow uses `session_bookmarks`)
+- `journal_entries` does not exist as a table at all
+- `soul_audit_jobs.session_id` (not `session_token`)
+
+**Most importantly:** the data tables (`audit_runs`,
+`devotional_plan_instances`, `consent_records`, `annotations`,
+`session_bookmarks`, `soul_audit_jobs`) do **not** have a `user_id`
+column at all. They are keyed by `session_token` (or `session_id` for
+soul_audit_jobs). Only `user_sessions` has a `user_id` column.
+
+Setting `user_id` on those tables is therefore impossible without a
+schema migration, and the prompt explicitly forbids DB migrations.
+
+**What I implemented instead:** session-token consolidation. When
+`linkSessionToUser` runs, it now:
+
+1. Sets `user_sessions.user_id` on the current row (existing behavior).
+2. Looks up any OTHER `user_sessions` rows for this user (typical case:
+   user signed in once on a phone, now signing in on a laptop).
+3. For each prior session_token, runs UPDATE on the 6 session-keyed
+   tables to migrate the references to the current session_token.
+
+This solves Fault Line 6 the way it was actually intended — making the
+returning signed-in user see the plans/bookmarks/audit history they
+created on prior sessions — without requiring schema changes.
+
+**Recommendation for follow-up:** if the long-term goal is genuinely to
+bind data rows to `user_id`, that requires:
+
+- A migration adding `user_id uuid references auth.users(id) null`
+  to each of the 6 tables
+- Backfill (run the new migration script that copies the user_id from
+  user_sessions for each session_token already migrated)
+- Update repository.ts queries to read by user_id when present and
+  fall back to session_token for anonymous reads
+- Audit RLS policies for each table
+
+That's substantial schema/policy work. Out of overnight scope.

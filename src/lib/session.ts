@@ -135,13 +135,120 @@ export async function updateSession(
 }
 
 /**
- * Link an anonymous session to an authenticated user
+ * Tables keyed by `session_token` that should follow a user across devices.
+ * Each entry is `[table, columnName]`; most use `session_token`, but
+ * `soul_audit_jobs` uses `session_id`.
+ */
+const SESSION_KEYED_TABLES: ReadonlyArray<readonly [string, string]> = [
+  ['devotional_plan_instances', 'session_token'],
+  ['audit_runs', 'session_token'],
+  ['consent_records', 'session_token'],
+  ['annotations', 'session_token'],
+  ['session_bookmarks', 'session_token'],
+  ['soul_audit_jobs', 'session_id'],
+]
+
+/**
+ * Migrate all session-keyed data rows from `fromToken` to `toToken`.
+ * Used when consolidating a returning user's prior anonymous sessions
+ * into the session they signed in on.
+ *
+ * Each UPDATE runs through the admin client (RLS-bypass) and tolerates
+ * Supabase being unavailable (mirrors the safe* pattern in repository.ts).
+ * Returns the count of UPDATEs attempted (not row counts — Supabase REST
+ * UPDATE responses don't reliably surface affected_rows).
+ */
+export async function migrateSessionData(
+  fromToken: string,
+  toToken: string,
+): Promise<{ updatesAttempted: number }> {
+  if (!fromToken || !toToken || fromToken === toToken) {
+    return { updatesAttempted: 0 }
+  }
+
+  let supabase
+  try {
+    supabase = createAdminClient()
+  } catch {
+    return { updatesAttempted: 0 }
+  }
+
+  let updatesAttempted = 0
+  for (const [table, column] of SESSION_KEYED_TABLES) {
+    try {
+      const result = await (
+        supabase as unknown as {
+          from: (t: string) => {
+            update: (v: object) => {
+              eq: (c: string, v: string) => Promise<{ error: unknown }>
+            }
+          }
+        }
+      )
+        .from(table)
+        .update({ [column]: toToken })
+        .eq(column, fromToken)
+      updatesAttempted += 1
+      const error = (result as { error?: unknown }).error
+      if (error) {
+        console.error(
+          `[migrateSessionData] ${table}.${column} ${fromToken} → ${toToken} failed:`,
+          error,
+        )
+      }
+    } catch (err) {
+      console.error(
+        `[migrateSessionData] ${table}.${column} threw:`,
+        err instanceof Error ? err.message : err,
+      )
+    }
+  }
+  return { updatesAttempted }
+}
+
+/**
+ * Link an anonymous session to an authenticated user.
+ *
+ * Beyond setting `user_sessions.user_id` on the current row (which has
+ * always worked), this also consolidates any prior anonymous sessions
+ * the user has under a different cookie — typically because they signed
+ * in once on phone and now on laptop. For each prior anonymous session
+ * tied to this user_id, all session-keyed data rows are migrated to
+ * the current `session_token` so the returning user sees their plans,
+ * bookmarks, audit history, etc. instead of an empty surface.
+ *
+ * Schema note: data tables (devotional_plan_instances, audit_runs,
+ * consent_records, annotations, session_bookmarks, soul_audit_jobs)
+ * do NOT have a `user_id` column — they are keyed by `session_token`
+ * (or `session_id` for soul_audit_jobs). Migration therefore moves the
+ * session reference, not a user_id.
  */
 export async function linkSessionToUser(
   sessionId: string,
   userId: string,
 ): Promise<UserSession | null> {
-  return updateSession(sessionId, { user_id: userId } as Partial<UserSession>)
+  const linked = await updateSession(sessionId, {
+    user_id: userId,
+  } as Partial<UserSession>)
+  if (!linked) return null
+
+  const supabase = createAdminClient()
+  // Find any OTHER user_sessions that already belong to this user (e.g.
+  // prior sign-ins on different devices). Their data needs to follow the
+  // user to the current session.
+  const { data: priorSessions, error: priorError } = await supabase
+    .from('user_sessions')
+    .select('session_token')
+    .eq('user_id', userId)
+    .neq('id', sessionId)
+  if (priorError || !priorSessions) return linked
+
+  for (const prior of priorSessions as Array<{ session_token: string }>) {
+    if (!prior.session_token) continue
+    await migrateSessionData(prior.session_token, linked.session_token)
+  }
+
+  return linked
 }
 
 /**

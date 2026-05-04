@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-04 / Phase 3: Session migration on sign-in (2026-05-04)
+
+When a returning user signed in on a different device, their prior
+anonymous plans, bookmarks, audit runs, etc. were orphaned because the
+data was bound to a different `session_token`. Phase 3 consolidates
+prior sessions under the current one when a user signs in.
+
+- `src/lib/session.ts`: extended `linkSessionToUser` to look up other
+  `user_sessions` rows belonging to this user and migrate the
+  session-keyed data tables (`devotional_plan_instances`, `audit_runs`,
+  `consent_records`, `annotations`, `session_bookmarks`,
+  `soul_audit_jobs`) from each prior session_token to the current one.
+  Also exported a standalone `migrateSessionData(from, to)` for testing
+  and reuse.
+- `__tests__/session-migration.test.ts`: 8 unit tests covering shape,
+  per-table column mapping (`session_id` vs `session_token`),
+  multi-prior-session migration, no-op cases, and prior-lookup error
+  resilience.
+
+Schema discrepancy noted in `docs/overnight-followups.md`: the prompt
+asked to set `user_id` on the data tables, but those tables do not
+have a `user_id` column. The implemented approach (session_token
+consolidation) achieves the same user-facing outcome — returning
+signed-in users see all their prior data — without requiring a DB
+migration (explicitly disallowed tonight).
+
 ## OVERNIGHT-2026-05-04 / Phase 2: Active-plan visibility (2026-05-04)
 
 The Soul Audit plan was invisible everywhere except `/` and `/daily-bread`,

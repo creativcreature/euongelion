@@ -83,3 +83,39 @@ shell-header (6 tests) and series-page-client tests pass — no
 regressions.
 
 Plan-management UI in `/settings` deliberately deferred per Phase 2 scope.
+
+### 02:23 EDT — Phase 3 session migration on sign-in committed (next commit)
+
+Re-framed Phase 3 against the actual schema. The prompt assumed data
+tables had a `user_id` column to set; they don't. The data is
+`session_token`-keyed. Implemented the equivalent fix: cross-device
+session-token consolidation.
+
+`linkSessionToUser(sessionId, userId)` now:
+
+1. Sets `user_sessions.user_id` on the current row (existing behavior).
+2. Looks up other `user_sessions` rows for this user_id.
+3. For each prior session_token, runs UPDATE on the 6 session-keyed
+   tables to migrate references to the current session_token.
+
+Tables migrated: `devotional_plan_instances`, `audit_runs`,
+`consent_records`, `annotations`, `session_bookmarks`,
+`soul_audit_jobs` (which uses `session_id`, not `session_token` —
+captured in the helper).
+
+Also added a top-level `migrateSessionData(from, to)` export so future
+flows (e.g. account linking, data export validation) can reuse the
+migration without going through linkSessionToUser.
+
+8 unit tests pass (full table coverage, soul_audit_jobs column-name
+correctness, no-op cases, multi-prior-session migration, error
+resilience). 30 regression tests in auth-consent-session.test.ts and
+auth-onboarding-state.test.ts also pass.
+
+Schema discrepancy and the long-term recommendation (genuine `user_id`
+columns + RLS audit) documented in `docs/overnight-followups.md`.
+
+OTP-in-email pairing remains deferred — pre-flight P0-3 confirmed
+Supabase default email transport, which would require either a
+Supabase template change (manual ops, not in-repo) or a custom email
+provider (substantial new infra).
