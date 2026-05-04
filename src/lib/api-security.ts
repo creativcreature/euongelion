@@ -484,3 +484,23 @@ export function isAbortError(error: unknown): boolean {
   const candidate = error as { name?: unknown }
   return candidate.name === 'AbortError'
 }
+
+/**
+ * Set `X-Model-Used` on a response so callers can see which provider
+ * actually served their request (after any router fallbacks fired).
+ * Useful when debugging "why does this output look different from
+ * yesterday" — was it Anthropic, did it fall back to Google, etc.
+ *
+ * The value is a short stable string like "anthropic", "openai",
+ * "google", "minimax", or "nvidia_kimi" mirroring `BrainProviderId`.
+ * Returns the same response for chaining.
+ */
+export function withModelUsedHeader<T extends Response>(
+  response: T,
+  provider: string | undefined | null,
+): T {
+  if (provider) {
+    response.headers.set('X-Model-Used', String(provider))
+  }
+  return response
+}

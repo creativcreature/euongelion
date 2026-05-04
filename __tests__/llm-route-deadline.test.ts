@@ -3,6 +3,7 @@ import {
   isAbortError,
   LLM_ROUTE_DEADLINE_MS,
   withAbortDeadline,
+  withModelUsedHeader,
 } from '@/lib/api-security'
 
 describe('LLM_ROUTE_DEADLINE_MS', () => {
@@ -70,6 +71,33 @@ describe('withAbortDeadline', () => {
     expect(clearSpy).toHaveBeenCalled()
     setSpy.mockRestore()
     clearSpy.mockRestore()
+  })
+})
+
+describe('withModelUsedHeader', () => {
+  it('sets the X-Model-Used header when a provider name is given', () => {
+    const response = new Response(null, { status: 200 })
+    withModelUsedHeader(response, 'anthropic')
+    expect(response.headers.get('X-Model-Used')).toBe('anthropic')
+  })
+
+  it('does not set the header when provider is null/undefined/empty', () => {
+    const r1 = new Response(null, { status: 200 })
+    withModelUsedHeader(r1, null)
+    expect(r1.headers.get('X-Model-Used')).toBeNull()
+
+    const r2 = new Response(null, { status: 200 })
+    withModelUsedHeader(r2, undefined)
+    expect(r2.headers.get('X-Model-Used')).toBeNull()
+
+    const r3 = new Response(null, { status: 200 })
+    withModelUsedHeader(r3, '')
+    expect(r3.headers.get('X-Model-Used')).toBeNull()
+  })
+
+  it('returns the same response instance for chaining', () => {
+    const response = new Response(null, { status: 200 })
+    expect(withModelUsedHeader(response, 'google')).toBe(response)
   })
 })
 

@@ -5,6 +5,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-04 / Phase 10B-P1: X-Model-Used response header (2026-05-04)
+
+When the brain router falls back from Anthropic → Google → MiniMax →
+NVIDIA, the client previously had no way to see which provider actually
+served their reply. Surfaced the provider on the response.
+
+- `src/lib/api-security.ts`: new `withModelUsedHeader(response, provider)`
+  helper that sets `X-Model-Used: <provider>` when a provider name is
+  given, no-ops otherwise. Returns the same response for chaining.
+- `src/app/api/chat/route.ts`: wrapped both response paths (SSE
+  streaming + JSON) with `withModelUsedHeader(…, generation.provider)`
+  so the chat client can read which provider answered (after fallback).
+- `__tests__/llm-route-deadline.test.ts`: 3 additional tests covering
+  the header-set, no-op-on-empty, and chainable-return contracts.
+
+Useful for debugging "why does this output look different from
+yesterday" — was it Anthropic, did it fall back to Google, etc. Stable
+short string values mirror `BrainProviderId` (`openai`, `google`,
+`minimax`, `nvidia_kimi`).
+
 ## OVERNIGHT-2026-05-04 / Phase 10C-P0: AbortController deadline on LLM routes (2026-05-04)
 
 LLM-touching routes had no wall-clock guard. A slow Anthropic call

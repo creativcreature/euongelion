@@ -8,6 +8,7 @@ import {
   sanitizeOptionalText,
   sanitizeSingleLine,
   takeRateLimit,
+  withModelUsedHeader,
   withRequestIdHeaders,
 } from '@/lib/api-security'
 import { createClient } from '@/lib/supabase/server'
@@ -274,8 +275,8 @@ function docsToSourceCards(docs: RagDoc[]): SourceCard[] {
   }))
 }
 
-function findDevotionalDocs(slug: string): RagDoc[] {
-  const index = getCanonicalRagIndex(false)
+async function findDevotionalDocs(slug: string): Promise<RagDoc[]> {
+  const index = await getCanonicalRagIndex(false)
   return index.docs.filter(
     (doc) =>
       doc.sourceType === 'devotional' &&
@@ -284,17 +285,17 @@ function findDevotionalDocs(slug: string): RagDoc[] {
   )
 }
 
-function buildClosedContextPacket(params: {
+async function buildClosedContextPacket(params: {
   query: string
   devotionalSlug?: string
   highlightedText?: string
-}): ContextPacket {
+}): Promise<ContextPacket> {
   const sourceCards: SourceCard[] = []
   const promptParts: string[] = []
 
   let devotionalDocs: RagDoc[] = []
   if (params.devotionalSlug) {
-    devotionalDocs = findDevotionalDocs(params.devotionalSlug)
+    devotionalDocs = await findDevotionalDocs(params.devotionalSlug)
     if (devotionalDocs.length > 0) {
       sourceCards.push(...docsToSourceCards(devotionalDocs.slice(0, 4)))
       promptParts.push(
@@ -306,7 +307,7 @@ function buildClosedContextPacket(params: {
     }
   }
 
-  const referenceDocs = retrieveFromIndex({
+  const referenceDocs = await retrieveFromIndex({
     query: params.query,
     feature: 'chat',
     sourceTypes: ['reference', 'curated', 'devotional'],
@@ -666,13 +667,13 @@ export async function POST(request: NextRequest) {
         sourceType: 'open_web',
       }))
 
-      contextPacket = buildClosedContextPacket({
+      contextPacket = await buildClosedContextPacket({
         query,
         devotionalSlug: devotionalSlug || undefined,
         highlightedText: highlightedText || undefined,
       })
     } else {
-      contextPacket = buildClosedContextPacket({
+      contextPacket = await buildClosedContextPacket({
         query,
         devotionalSlug: devotionalSlug || undefined,
         highlightedText: highlightedText || undefined,
@@ -873,12 +874,15 @@ export async function POST(request: NextRequest) {
           'X-Request-Id': requestId,
         },
       })
-      return response
+      return withModelUsedHeader(response, generation.provider)
     }
 
-    return withRequestIdHeaders(
-      NextResponse.json(payload, { status: 200 }),
-      requestId,
+    return withModelUsedHeader(
+      withRequestIdHeaders(
+        NextResponse.json(payload, { status: 200 }),
+        requestId,
+      ),
+      generation.provider,
     )
   } catch (error) {
     logApiError({
