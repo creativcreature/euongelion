@@ -5,6 +5,62 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-05 / Phase 10.6 + 10C-P2 + pricing spec (2026-05-05)
+
+Three additions, all additive, no behavior changes:
+
+**Per-route dynamic og:image generation (Phase 10.6 closeout)**
+
+- `src/app/series/[slug]/opengraph-image.tsx` (new): per-series OG
+  card for the canonical `/series/[slug]` surface, mirroring the
+  existing `/wake-up/series/[slug]/opengraph-image.tsx` shape but
+  with main-product framing (cobalt background, gold accents,
+  pathway tag). 1200×630, image/png. Verified live: HTTP 200 +
+  `content-type: image/png` against the running dev server.
+- `src/app/devotional/[slug]/opengraph-image.tsx` (new): same
+  treatment for canonical devotional URLs. Surfaces series number,
+  day number as architectural background element, day title, series
+  question, pathway tag.
+
+When `/series/identity` or `/devotional/sleep-day-1` is shared on
+social, the OG card now surfaces real per-content metadata instead
+of falling back to the global site card.
+
+**JSDoc on `src/lib/api-security.ts` (Phase 10C-P2)**
+
+`api-security.ts` is the shared security + observability primitives
+for every API route. 17 public exports, 0 JSDoc blocks.
+
+- Added top-of-file overview explaining the four functional areas
+  (rate limiting, body parsing, input validation, error responses,
+  wall-clock guards), the regex defaults, and the
+  Upstash-vs-in-memory rate-limit caveat.
+- JSDoc on `isSafeSlug`, `isSafeAuditRunId`, `isSafeAuditOptionId`,
+  `sanitizeTimezone`, `normalizeTimezoneOffsetMinutes`,
+  `sanitizeSingleLine`, `sanitizeOptionalText`, and most importantly
+  `sanitizeSafeRedirectPath` (the open-redirect guard — its bullet
+  list of what gets rejected is now visible in IDE tooltips at every
+  call site).
+
+**`/pricing` page copy + IA spec (Phase 3.10 follow-up)**
+
+`docs/copy-specs/pricing-page-spec.md` (new): a complete copy + IA
+spec for the `/pricing` page that doesn't exist yet. Master plan
+flagged "Stripe wired but no surface" as the worst of all worlds;
+this captures the locked Section 0.2 pricing into a deliverable
+spec the founder can hand to engineering when ready.
+
+Includes: 3 hero copy candidates with recommendation, two-column
+free/paid comparison with exact wording, Founding Member section
+with engineering notes for the 500-counter, donation tier card,
+6 canonical FAQ answers, engineering notes (Stripe wiring already
+exists per master plan Gap closure 6, components needed, tracking,
+JSON-LD), and 5 open questions for the founder.
+
+Test status: type-check + lint clean across all 3 changes; 9
+api-security regression tests pass; HTTP 200 verified on both new
+OG routes against the running dev server.
+
 ## OVERNIGHT-2026-05-05 / Phase 10C-P2: JSDoc on repository.ts ambiguous helpers (2026-05-05)
 
 `src/lib/soul-audit/repository.ts` had 46 public functions and 2 JSDoc

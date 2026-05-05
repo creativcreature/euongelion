@@ -1,3 +1,41 @@
+/**
+ * api-security.ts — shared security + observability primitives for
+ * every API route under `src/app/api/`.
+ *
+ * ## What lives here
+ *
+ * - **Rate limiting** (`takeRateLimit`) — Upstash Redis sliding window
+ *   when configured, in-memory fallback otherwise. Both cases return
+ *   the same `{ ok, retryAfterSeconds, limit, remaining, ... }` shape.
+ * - **Body parsing** (`readJsonWithLimit`) — JSON parsing with a hard
+ *   byte cap so malformed/huge bodies surface a clean 413/400 instead
+ *   of a runtime crash.
+ * - **Input validation** (`isSafeSlug`, `isSafeAuditRunId`,
+ *   `isSafeAuditOptionId`, `sanitizeTimezone`,
+ *   `normalizeTimezoneOffsetMinutes`, `sanitizeSafeRedirectPath`) —
+ *   strict-regex guards. Anything not matching the regex is rejected
+ *   (returns null/false). Used at every API boundary.
+ * - **Error responses** (`jsonError`, `logApiError`,
+ *   `withRequestIdHeaders`, `withRateLimitHeaders`,
+ *   `withModelUsedHeader`) — typed-shape error JSON with `requestId` +
+ *   `deploymentFingerprint` + optional `code` + `details`. Logging is
+ *   structured so production logs are queryable.
+ * - **Wall-clock guards** (`withAbortDeadline`, `LLM_ROUTE_DEADLINE_MS`,
+ *   `isAbortError`) — used by LLM-touching routes to surface a clean
+ *   504 instead of being silently killed by Cloudflare's 30s wall-clock.
+ *
+ * ## Defaults to know
+ *
+ * - **Slug regex** allows lowercase, digits, dash, 1–120 chars.
+ * - **Audit run id** must be a UUID v4 (case-insensitive 36-char hex+dash).
+ * - **Audit option id** is `<kind>:<slug>(:<day>):<rank>` where kind is
+ *   one of `ai_primary | ai_generative | curated_prefab`.
+ * - **Redirect-path sanitizer** prevents open-redirect by enforcing
+ *   `^/[^/]` (relative-only, no protocol-relative `//foo` shenanigans).
+ * - **In-memory rate limit** is per-isolate; not safe across multiple
+ *   Cloudflare Workers regions. Use Upstash for cross-region accuracy.
+ */
+
 import { NextResponse, type NextRequest } from 'next/server'
 import { createHash } from 'crypto'
 import { Redis } from '@upstash/redis'
@@ -270,18 +308,40 @@ export async function readJsonWithLimit<T>(params: {
   }
 }
 
+/**
+ * Strict slug validator: lowercase letters, digits, dash, 1–120 chars.
+ * Used for series slugs, devotional day slugs, etc. Use at every API
+ * boundary that accepts a slug from a request body or URL parameter.
+ */
 export function isSafeSlug(value: string): boolean {
   return SAFE_SLUG_RE.test(value)
 }
 
+/**
+ * UUID v4 shape check (case-insensitive 36-char hex+dash). Trims first
+ * because some clients pad with whitespace. Use before passing the run
+ * id to repository.ts queries.
+ */
 export function isSafeAuditRunId(value: string): boolean {
   return SAFE_AUDIT_RUN_ID_RE.test(value.trim())
 }
 
+/**
+ * Audit option id shape: `<kind>:<slug>(:<day>):<rank>`.
+ * - `ai_generative` IDs use 3 segments: kind:slug:rank.
+ * - `ai_primary` and `curated_prefab` IDs use 4 segments: kind:slug:day:rank.
+ * Rejects anything else (e.g. tampered IDs, prototype-pollution attempts).
+ */
 export function isSafeAuditOptionId(value: string): boolean {
   return SAFE_AUDIT_OPTION_ID_RE.test(value.trim())
 }
 
+/**
+ * IANA timezone validator: `Continent/City` or longer paths. Returns
+ * the trimmed value when valid, `null` when not. Does NOT verify the
+ * timezone actually exists in the runtime — only the shape. Pair with
+ * `Intl.DateTimeFormat` to confirm liveness.
+ */
 export function sanitizeTimezone(value: unknown): string | null {
   if (typeof value !== 'string') return null
   const trimmed = value.trim()
@@ -289,6 +349,12 @@ export function sanitizeTimezone(value: unknown): string | null {
   return trimmed
 }
 
+/**
+ * Coerce a UTC-offset-minutes value (number or numeric string) to an
+ * integer in the range [-840, 840] (= ±14 hours, the IANA-allowed
+ * maximum). Returns `null` on anything outside this range or on
+ * non-numeric input.
+ */
 export function normalizeTimezoneOffsetMinutes(value: unknown): number | null {
   const parsed =
     typeof value === 'number'
@@ -323,6 +389,19 @@ export function sanitizeOptionalText(
   return cleaned.length > 0 ? cleaned : null
 }
 
+/**
+ * Open-redirect guard. Returns the path only when it:
+ * - is a string
+ * - starts with `/`
+ * - is NOT protocol-relative (`//evil.example`)
+ * - does NOT contain a scheme separator (`://`)
+ * - is ≤ 240 chars
+ *
+ * Any deviation returns `undefined` — caller should default to a
+ * known safe path. Use for ANY user-supplied redirect destination
+ * (`?redirect=`, `?next=`, etc.) before issuing a 302 or sending it
+ * to OAuth.
+ */
 export function sanitizeSafeRedirectPath(value: unknown): string | undefined {
   if (typeof value !== 'string') return undefined
   const trimmed = value.trim()
