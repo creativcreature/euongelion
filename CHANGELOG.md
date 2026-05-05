@@ -5,6 +5,38 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-05 / Phase 10C-P2: JSDoc on repository.ts ambiguous helpers (2026-05-05)
+
+`src/lib/soul-audit/repository.ts` had 46 public functions and 2 JSDoc
+blocks. Master plan flagged this as a P2 cleanup. Rather than churn
+out 44 templated docs, focused on the genuinely-ambiguous ones —
+where the function name doesn't tell you about fallback semantics,
+mutation atomicity, or the in-memory-vs-Supabase tier distinction.
+
+- Top-of-file overview block explaining the two-tier persistence
+  model (Supabase canonical + in-memory fallback), the
+  `*WithFallback` convention, when functions return null vs throw,
+  and the link to `migrateSessionData` for cross-device consolidation.
+- JSDoc on `maybeSupabase` (returns null on unavailability — not an
+  error) and `safeInsert` (swallows errors, expects caller to ALSO
+  write to in-memory).
+- JSDoc on `getAuditRun` vs `getAuditRunWithFallback` distinguishing
+  the cache-only vs cache+fallback contracts (same pattern applies
+  to all other paired helpers; this is the canonical example).
+- JSDoc on `listAuditRunsForSession*` family covering merge semantics
+  - cache hydration as a side effect.
+- JSDoc on `getSessionAuditCount` / `bumpSessionAuditCount` /
+  `resetSessionAuditCount` covering the in-memory-only counter, the
+  3-audit cycle limit it gates, the call-after-create pattern to
+  prevent retry quota burn, and the no-cross-isolate-locking caveat.
+
+The other ~40 functions are obvious from their names (`createAuditRun`,
+`saveSelection`, `getConsent`, etc.) and the top-of-file conventions
+section now explains the universal pattern.
+
+Test status: type-check + lint clean, 27 regression tests pass
+(daily-bread-api + api-security).
+
 ## OVERNIGHT-2026-05-05 / Phase 10.6: RSS feed + canonical URLs (2026-05-05)
 
 Closes the remaining Phase 10.6 items flagged in `docs/overnight-followups.md`:

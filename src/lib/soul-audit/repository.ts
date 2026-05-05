@@ -1,3 +1,44 @@
+/**
+ * repository.ts — persistence layer for the Soul Audit + plan flow.
+ *
+ * ## Persistence model
+ *
+ * Two-tier storage:
+ *
+ * 1. **Supabase (canonical).** Every record is written through
+ *    `safeInsert` / `safeUpdate` / `safeUpsert` / `safeSelectMany`
+ *    helpers that route to the admin client. These helpers tolerate
+ *    Supabase being unavailable (no env vars, network failure,
+ *    transient 5xx) — they log a warning and resolve to `undefined`
+ *    or an empty result instead of throwing.
+ *
+ * 2. **In-memory module cache (fallback).** The same data is mirrored
+ *    in module-level Maps so reads still succeed even when Supabase
+ *    is unreachable. This is the "fallback" referred to in every
+ *    `*WithFallback` exported helper.
+ *
+ * ## The `*WithFallback` convention
+ *
+ * Functions ending in `WithFallback` first check the in-memory cache,
+ * then attempt a Supabase read, and merge results. Use these as the
+ * default in API routes. The non-WithFallback variants (`getAuditRun`,
+ * `getConsent`, etc.) are cache-only and used for fast per-request
+ * decisions where a fallback would be wasted overhead.
+ *
+ * ## When functions return null vs throw
+ *
+ * - Never throw on Supabase unavailability — silently fall back.
+ * - Throw only on **programmer errors** (missing required field,
+ *   crypto.randomUUID failure, etc.).
+ * - Return `null` when an entity isn't found in either tier.
+ *
+ * ## Session migration
+ *
+ * Tables here are keyed by `session_token` (or `session_id` for
+ * `soul_audit_jobs`). Cross-device consolidation on sign-in lives in
+ * `src/lib/session.ts` — see `migrateSessionData`.
+ */
+
 import { randomUUID } from 'crypto'
 import { createAdminClient } from '@/lib/supabase/admin'
 import type {
@@ -153,6 +194,12 @@ function getStore(): RuntimeStore {
   return global.__euangelionSoulAuditStore__
 }
 
+/**
+ * Returns the Supabase admin client when both env vars are configured
+ * AND `createAdminClient()` succeeds, otherwise `null`. All `safeXxx`
+ * helpers below treat a `null` return as "Supabase is unavailable —
+ * fall back to in-memory only" rather than as an error.
+ */
 function maybeSupabase() {
   if (
     !process.env.NEXT_PUBLIC_SUPABASE_URL ||
@@ -167,6 +214,12 @@ function maybeSupabase() {
   }
 }
 
+/**
+ * Insert a row, swallowing both Supabase-unavailability AND
+ * downstream errors. The error is logged via console.error with the
+ * table name. Caller is expected to ALSO write to the in-memory
+ * fallback store so reads still succeed.
+ */
 async function safeInsert(table: string, values: object) {
   const supabase = maybeSupabase()
   if (!supabase) return
@@ -304,10 +357,24 @@ async function safeSelectMany<T>(
   }
 }
 
+/**
+ * Per-session audit cycle counter. The submit route enforces
+ * MAX_AUDITS_PER_CYCLE (3) by reading this and returning 429 when
+ * the count would exceed the limit. Counter is **in-memory only** —
+ * NOT persisted to Supabase — and resets on Worker isolate restart.
+ * The cycle window is conceptual (not time-bounded by this counter
+ * itself); reset happens via {@link resetSessionAuditCount} when a
+ * new session/cycle starts.
+ */
 export function getSessionAuditCount(sessionToken: string): number {
   return getStore().sessionAuditCounts.get(sessionToken) ?? 0
 }
 
+/**
+ * Increment + return the new count atomically (single-isolate atomic
+ * — there is no cross-isolate locking). Call AFTER the audit run is
+ * created so retried requests don't burn cycle quota.
+ */
 export function bumpSessionAuditCount(sessionToken: string): number {
   const store = getStore()
   const next = (store.sessionAuditCounts.get(sessionToken) ?? 0) + 1
@@ -315,6 +382,11 @@ export function bumpSessionAuditCount(sessionToken: string): number {
   return next
 }
 
+/**
+ * Reset to zero (used by `clearSessionAuditState`). Does not delete
+ * the entry — sets it to 0 so subsequent {@link getSessionAuditCount}
+ * still returns 0 without a fallback round-trip.
+ */
 export function resetSessionAuditCount(sessionToken: string): void {
   getStore().sessionAuditCounts.set(sessionToken, 0)
 }
@@ -459,10 +531,23 @@ export function getAuditTelemetry(runId: string): AuditTelemetryRecord | null {
   return getStore().telemetryByRun.get(runId) ?? null
 }
 
+/**
+ * In-memory cache lookup only. Returns `null` when the run isn't in
+ * the per-isolate cache (does NOT fall back to Supabase). Use this
+ * inside hot paths where missing-cache is expected and a network
+ * fallback would be wasted overhead. For canonical reads use
+ * {@link getAuditRunWithFallback}.
+ */
 export function getAuditRun(runId: string): AuditRunRecord | null {
   return getStore().runs.get(runId) ?? null
 }
 
+/**
+ * Cache-first read with Supabase fallback. Returns `null` only when
+ * the run is missing from BOTH the in-memory cache and Supabase.
+ * Hydrates the cache on Supabase hit so subsequent calls in the same
+ * isolate are free.
+ */
 export async function getAuditRunWithFallback(
   runId: string,
 ): Promise<AuditRunRecord | null> {
@@ -478,6 +563,10 @@ export async function getAuditRunWithFallback(
   return fetched
 }
 
+/**
+ * In-memory cache lookup only. See {@link getAuditRun} for the cache-vs-
+ * fallback distinction.
+ */
 export function listAuditRunsForSession(
   sessionToken: string,
 ): AuditRunRecord[] {
@@ -486,6 +575,12 @@ export function listAuditRunsForSession(
   )
 }
 
+/**
+ * Cache + Supabase merged read. Returned runs are deduplicated by id
+ * with Supabase results winning conflicts (so a cached row with stale
+ * data is overwritten by the latest persisted version). Cache is
+ * hydrated as a side effect.
+ */
 export async function listAuditRunsForSessionWithFallback(
   sessionToken: string,
 ): Promise<AuditRunRecord[]> {
