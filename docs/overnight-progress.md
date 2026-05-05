@@ -395,3 +395,87 @@ git log --oneline 3310b2d..HEAD       # the 4 continuation commits
 git diff 3310b2d..HEAD --stat         # files touched
 git diff 3310b2d..HEAD -- src/lib/brain/router.ts  # the bulk of the work
 ```
+
+---
+
+## Continuation 2 — Master plan items 5-8 (2026-05-05, after "keep going")
+
+After "keep going until you need me", I extended the LLM-deadline
+guard to the remaining LLM-touching public routes, swept mounted
+guards on async hooks, and finished the partial jsonError adoption
+from earlier commits. Four more commits landed:
+
+| #   | SHA       | Phase  | Title                                             |
+| --- | --------- | ------ | ------------------------------------------------- |
+| 15  | `3857714` | 10C-P0 | extend LLM deadline to submit + chat routes       |
+| 16  | `3e4de4a` | 10C-P1 | mounted-guard sweep on async useEffect hooks      |
+| 17  | `4c1261a` | 10C-P1 | jsonError adoption on complete-day + generate-day |
+| 18  | (next)    | 10.7   | docs reconciliation gap flagged in followups      |
+
+### What changed
+
+- **Submit + chat AbortController (10C-P0):** `IngredientSelectionOptions`
+  now accepts an optional `signal?: AbortSignal` plumbed through
+  `generatePathsFromRag` to `generateWithBrain`. `submit` route wraps
+  both strict + relaxed-retry attempts in one
+  `withAbortDeadline(LLM_ROUTE_DEADLINE_MS, …)`; on timeout returns
+  504 `LLM_DEADLINE_EXCEEDED`. `chat` route does the same — SSE
+  streaming downstream is unaffected since it chunks the static
+  result post-LLM. `select` deliberately not touched (no direct LLM
+  call — jobs fire-and-forget to `generate-day`, which was already
+  deadline-guarded). The original Phase 10C-P0 LLM-deadline scope
+  is now fully complete.
+- **Mounted-guard sweep (10C-P1):** master plan estimated ~15 hooks;
+  stricter scan found exactly **2 real targets** (the other ~13 were
+  GSAP context setups already covered by `ctx.revert()` cleanup).
+  Both fixed with the canonical `let cancelled = false` pattern.
+  Codebase is in much better shape than the master plan estimated.
+- **jsonError adoption (10C-P1):** `complete-day` and `generate-day`
+  were partially updated by an earlier overnight commit (`a6fd1b5`).
+  Finished the job so all error responses on these two routes carry
+  `requestId`, `deploymentFingerprint`, and a typed `code`. Codes
+  added: `INVALID_JSON_BODY`, `INVALID_FIELDS`, `PLAN_NOT_FOUND`,
+  `COMPLETE_DAY_DB_FAILURE`, `INTERNAL_SECRET_REQUIRED`,
+  `LLM_DEADLINE_EXCEEDED`. The 11 internal-error sites in
+  `generate-day` (each tied to a distinct DB write step) intentionally
+  left for a later focused pass.
+- **Docs reconciliation gap (10.7):** flagged the divergence between
+  `PRODUCTION-SOURCE-OF-TRUTH.md` (anchored to the OLD 80/20
+  curated/generation model) and the master plan's Section 0 locked
+  decisions (founder-approved 2026-05-03, materially different
+  product model + pricing + retention + theology framing). Did NOT
+  edit the SOT doc unilaterally — it's the founder's authoritative
+  product-intent doc and rewriting it during an autonomous session
+  would be high-risk. Captured the full reconciliation list in
+  `docs/overnight-followups.md` for the founder to action.
+
+### What I deliberately did NOT touch (in the second continuation)
+
+- **Magic constants → centralised module** — already largely done in
+  `src/lib/soul-audit/constants.ts`; remaining inline constants are
+  single-file scope (e.g. `MAX_PREVIEW_WORDS = 70` in ingredient-selector).
+- **Standardise jsonError on remaining 13 API routes** — substantial
+  per-route risk surface (each has its own error-shape contract,
+  some with Stripe webhook semantics). Would need a focused pass.
+- **PRODUCTION-SOURCE-OF-TRUTH unilateral rewrite** — explicitly
+  deferred per the reasoning above. Captured in followups.
+
+### Test status after continuation 2
+
+- `npm run type-check`: ✅ clean.
+- `npm run lint`: ✅ 0 errors, 9 warnings (all pre-existing).
+- No new test files added in continuation 2 (the changes were either
+  covered by existing test infrastructure — `llm-route-deadline.test.ts`
+  for the deadline helper — or behavior-preserving with regression
+  validation against existing suites).
+- Regression sweep: 39 chat tests + 11 deadline tests + 9
+  api-security tests + 18 daily-bread-api tests + 3 mounted-guard
+  component tests = **80 regression-relevant tests pass**.
+
+### Branch totals after continuation 2
+
+- **18 commits** on `revamp/overnight-2026-05-04`.
+- **48 new tests** added across overnight + continuation 1 (no new
+  tests needed in continuation 2).
+- All pre-existing test failures still pre-existing (none caused by
+  my work).

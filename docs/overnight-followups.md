@@ -226,3 +226,47 @@ comment in each file (currently neither file explicitly distinguishes
 itself from the other), and add a short section in
 `docs/PRODUCTION-SOURCE-OF-TRUTH.md` that names both consent surfaces
 so future engineers don't accidentally try to merge them.
+
+## Phase 10.7 — PRODUCTION-SOURCE-OF-TRUTH reconciliation gap
+
+`docs/PRODUCTION-SOURCE-OF-TRUTH.md` (last updated 2026-02-18) still
+encodes the **old** product model:
+
+> Construction target is **80% curated and 20% generation-assisted polish**.
+
+The master plan's Section 0 locked decisions (founder-approved
+2026-05-03) shift this materially:
+
+- **Section 0.1**: tier-based curated-first. Free tier = 3 curated
+  matches with 80–100-word AI rationales. Paid tier = same 3 + 1
+  fully GENERATE-d 7-day plan. Free GENERATE taste = 1 per quarter.
+- **Section 0.2**: $7/mo, $77/yr, lifetime tier rejected, BYOK
+  rejected, founding-member badge for first 500 paid annual.
+- **Section 0.3**: free-tier soft rate limit of 4 audits per
+  calendar month.
+- **Section 0.4**: human-created public-domain works used **verbatim**
+  (no rewriting, no modernising, no re-paragraphing). 52-series
+  catalog floor at launch (already exceeded — 65 series, 176
+  devotionals on cloudflare-migration).
+- **Section 0.6**: Wake-Up Magazine remains a separate funnel surface
+  (NOT collapsed into a unified library).
+- **Section 0.7**: 30-day anonymous data retention from last activity.
+  Hard delete, not soft delete.
+- **Section 0.8**: theology framing = historic / creedal Christian,
+  ecumenical (Apostles' + Nicene Creed centre).
+
+**Why I did NOT update SOT unilaterally:** PRODUCTION-SOURCE-OF-TRUTH
+is the founder's authoritative product-intent document. Editing it
+without founder review during an autonomous overnight session would
+be high-risk — I'd be silently rewriting "what the product is."
+
+**Recommended next step for founder:** sit with the master plan
+Section 0 + the current SOT, decide what wording you want, and update
+SOT in one focused pass. The decisions themselves are already in
+`/Users/meltmac/.claude/plans/users-meltmac-documents-app-projects-ex-quiet-robin.md`
+Section 0.1–0.13. Should also update:
+
+- `docs/production-decisions.yaml` — new SA-NNN entries for each Section 0 lock
+- `docs/PRODUCTION-FEATURE-SCORECARD.md` — re-score F-052/F-053/F-054/F-055 against the locked model
+- `docs/PRODUCTION-COMPACTION-HANDOFF.md` — refresh so next compaction loads the locked decisions first
+- `CLAUDE.md` — link to the master plan as an additional spine doc
