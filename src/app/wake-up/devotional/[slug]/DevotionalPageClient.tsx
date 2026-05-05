@@ -134,11 +134,13 @@ export default function DevotionalPageClient({
   }, [isRead, slug])
 
   useEffect(() => {
+    let cancelled = false
     async function loadDevotional() {
       try {
         const response = await fetch(`/devotionals/${slug}.json`)
         if (!response.ok) throw new Error('Devotional not found')
         const data = (await response.json()) as Devotional
+        if (cancelled) return
         setDevotional(data)
 
         if (seriesSlug) {
@@ -146,13 +148,17 @@ export default function DevotionalPageClient({
           zustandStartSeries(seriesSlug)
         }
       } catch {
+        if (cancelled) return
         setDevotional(null)
       } finally {
-        setLoading(false)
+        if (!cancelled) setLoading(false)
       }
     }
 
     void loadDevotional()
+    return () => {
+      cancelled = true
+    }
   }, [slug, seriesSlug, zustandStartSeries])
 
   async function saveBookmark(title: string) {

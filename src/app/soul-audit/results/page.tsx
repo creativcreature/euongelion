@@ -118,9 +118,11 @@ export default function SoulAuditResultsPage() {
 
   // Check for active plan (pastoral nudge before mid-week switching)
   useEffect(() => {
+    let cancelled = false
     fetch('/api/soul-audit/current')
       .then((res) => res.json())
       .then((data: { hasCurrent?: boolean; route?: string }) => {
+        if (cancelled) return
         if (data.hasCurrent && data.route) {
           setActivePlanRoute(data.route)
         }
@@ -128,6 +130,9 @@ export default function SoulAuditResultsPage() {
       .catch(() => {
         // no-op — proceed without active plan check
       })
+    return () => {
+      cancelled = true
+    }
   }, [])
 
   // Redirect to /soul-audit if there's no submit result

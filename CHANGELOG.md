@@ -5,6 +5,30 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-05 / Phase 10C-P1: Mounted-guard sweep on async useEffects (2026-05-05)
+
+Master plan flagged ~15 async `useEffect` hooks doing `setState` after
+unmount as a potential source of React warnings + stale state writes.
+Stricter scan (await/.then + `set[A-Z]` + no `mounted`/`cancelled`/
+`AbortController`/`disposed` guard) found exactly **2 real targets**;
+the other ~13 candidates were either GSAP context setups (already
+covered by `ctx.revert()` cleanup), `disposed` flag patterns, or
+non-React `setLocalStorage` / `setItem` calls.
+
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx:136` —
+  added `let cancelled = false` guard around the async devotional
+  fetch. `setDevotional` and `setLoading` now skip when the component
+  has unmounted mid-fetch. Cleanup function returns the cancellation.
+- `src/app/soul-audit/results/page.tsx:120` — same pattern around the
+  `/api/soul-audit/current` fetch chain.
+
+The codebase is in much better shape than the master plan estimated.
+The pattern was already adopted in most async hooks.
+
+Test status: focused vitest pass on
+`devotional-library-rail-accessibility.test.tsx` and
+`soul-audit-results-selection-ui.test.tsx` (both green).
+
 ## OVERNIGHT-2026-05-05 / Phase 10C-P0: AbortController on submit + chat (2026-05-05)
 
 Extended the `withAbortDeadline` deadline guard to the two remaining
