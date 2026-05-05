@@ -562,3 +562,94 @@ commit.
    entry has the canonical summary.
 
 Goodnight. Again.
+
+---
+
+## Continuation 3 — Phase 10.6 SEO + Phase 10C-P2 JSDoc (2026-05-05, after second "lets go")
+
+After "lets go", I closed out the master plan's Phase 10.6 (SEO +
+discoverability) and the Phase 10C-P2 JSDoc cleanup. Five more commits
+landed:
+
+| #   | SHA       | Phase  | Title                                                           |
+| --- | --------- | ------ | --------------------------------------------------------------- |
+| 19  | (this)    | docs   | this update                                                     |
+| 20  | `683f0fb` | 10C-P2 | JSDoc on repository.ts ambiguous helpers                        |
+| 21  | `499d05d` | 10.6   | RSS feed for Wake-Up + self-canonical URLs on devotional routes |
+| 22  | `d6312d1` | 10.6   | Schema.org structured data on homepage + series pages           |
+
+(Numbering continued from continuation 2's 18.)
+
+### What changed in continuation 3
+
+- **Schema.org structured data (10.6):** `WebSite` + `SearchAction` +
+  `FAQPage` JSON-LD on homepage; `CreativeWorkSeries` with `hasPart`
+  enumeration on both `/series/[slug]` and `/wake-up/series/[slug]`.
+  Devotional pages already had `Article` + `BreadcrumbList`. Crawlers
+  can now render rich results: sitelinks search box, FAQ rich
+  snippet, multi-day series collection cards.
+- **RSS feed for Wake-Up Magazine (10.6):** new `/wake-up/feed.xml`
+  RSS 2.0 route. Surfaces the 7 Wake-Up Originals series with title,
+  link, description, hero-image enclosure, pathway category. Self-link
+  via `<atom:link>`, daily revalidate, XML escaping. Auto-discovery
+  via `<link rel="alternate" type="application/rss+xml">` in the
+  `/wake-up` page head. Sitemap surfaces the feed URL too. 5 unit
+  tests cover Content-Type, item count vs SERIES_DATA, escaping,
+  and per-item canonical URLs.
+- **Self-canonical URLs (10.6):** both `/devotional/[slug]` and
+  `/wake-up/devotional/[slug]` now declare explicit
+  `alternates.canonical` (self) plus `openGraph.url`. Same content
+  on both routes — until the founder picks one as THE canonical
+  surface (master plan Section 0.6 keeps Wake-Up as a separate funnel
+  surface), each route declares itself canonical so Google doesn't
+  pick a weird URL parameter.
+- **JSDoc on `repository.ts` ambiguous helpers (10C-P2):** 46 public
+  functions had only 2 JSDoc blocks. Added top-of-file overview
+  (two-tier persistence model, `*WithFallback` convention,
+  return-null vs throw rules) plus targeted docs on `maybeSupabase`,
+  `safeInsert`, `getAuditRun` vs `getAuditRunWithFallback` (canonical
+  example), `listAuditRunsForSession*` family, and the
+  `getSessionAuditCount` mutator family (in-memory-only counter,
+  3-audit cycle gate, no-cross-isolate-locking caveat). The other
+  ~40 functions are obvious from their names; the universal patterns
+  are now documented in the file header.
+
+### What I deliberately did NOT touch (in continuation 3)
+
+- **`/pricing` page** — high-stakes product surface; copy + design
+  needs founder taste decisions. Captured for follow-up.
+- **Dynamic og:image generation per-series** — needs `next/og` runtime
+  verification on Workers (OpenNext adapter). Captured in followups.
+- **Founder canonical-surface decision** — which of `/devotional` vs
+  `/wake-up/devotional` should be THE canonical for Google. Documented
+  in followups Phase 10.6 section.
+- **Standardise jsonError on remaining 13 routes** — per-route risk
+  surface (Stripe webhook semantics in particular).
+
+### Final test status
+
+- `npm run type-check`: ✅ clean.
+- `npm run lint`: ✅ 0 errors, 9 warnings (all pre-existing).
+- `npx vitest run`: **1093 / 1099 tests pass**.
+  6 pre-existing failures (5 PLAN_CREATE_FAILED + 1
+  ConsentAwareAnalytics) — none introduced by overnight work,
+  all documented in `docs/overnight-blockers.md`.
+- Tests added across the entire session: **53** (overnight 29 +
+  continuation 1 19 + continuation 3 5).
+
+### Final branch totals
+
+- **23 commits** on `revamp/overnight-2026-05-04` (off `cloudflare-migration` HEAD `1b96475`).
+- **49 files changed**, +5212 / -335 lines.
+- Branch never pushed, never merged, never deployed.
+- Working-tree state preserved untouched (founder's 237 pending files
+  left exactly as you left them at session start).
+
+### Stopping for real now
+
+I keep finding small valuable pieces of work (RSS feed, JSDoc, etc.)
+but the diminishing returns are real. Every remaining master-plan
+item either needs your decisions, your dashboard access, your
+specific copy taste, or carries per-file risk too high for an
+autonomous session. The branch is in a clean reviewable state.
+See you at 7pm.
