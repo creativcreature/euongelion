@@ -2,12 +2,15 @@ import { NextRequest, NextResponse } from 'next/server'
 import {
   createRequestId,
   getClientKey,
+  isAbortError,
   jsonError,
+  LLM_ROUTE_DEADLINE_MS,
   logApiError,
   readJsonWithLimit,
   sanitizeOptionalText,
   sanitizeSingleLine,
   takeRateLimit,
+  withAbortDeadline,
   withModelUsedHeader,
   withRequestIdHeaders,
 } from '@/lib/api-security'
@@ -749,21 +752,53 @@ export async function POST(request: NextRequest) {
             .join('\n')}`
         : `You are Euangelion's biblical study assistant.\n\nRules:\n- Use only supplied local context (devotional + references).\n- If context is insufficient, say so plainly.\n- Keep responses substantial and practical (3-6 paragraphs).\n- Cite specific scripture references when relevant.\n\nContext:\n${contextPacket.prompt}`
 
-    const generation = await generateWithBrain({
-      system: systemPrompt,
-      messages,
-      context: {
-        task:
-          retrievalMode === 'open_web'
-            ? 'chat_response_open_web'
-            : 'chat_response',
-        mode,
-        userKeys,
-        qualityFloor: brainFlags.qualityFloor,
-        maxOutputTokens: 1600,
-        platformKeysEnabled: !platformHalted,
-      },
-    })
+    let generation
+    try {
+      // The LLM call blocks until full output; SSE streaming downstream
+      // chunks the static result, so a wall-clock deadline only cuts
+      // off slow LLM responses (not the client stream).
+      generation = await withAbortDeadline(LLM_ROUTE_DEADLINE_MS, (signal) =>
+        generateWithBrain({
+          system: systemPrompt,
+          messages,
+          context: {
+            task:
+              retrievalMode === 'open_web'
+                ? 'chat_response_open_web'
+                : 'chat_response',
+            mode,
+            userKeys,
+            qualityFloor: brainFlags.qualityFloor,
+            maxOutputTokens: 1600,
+            platformKeysEnabled: !platformHalted,
+            signal,
+          },
+        }),
+      )
+    } catch (error) {
+      if (isAbortError(error)) {
+        logApiError({
+          scope: 'chat',
+          requestId,
+          error,
+          method: request.method,
+          path: requestPath,
+          clientKey,
+          context: {
+            reason: 'llm-deadline-exceeded',
+            deadlineMs: LLM_ROUTE_DEADLINE_MS,
+            mode,
+          },
+        })
+        return jsonError({
+          error: 'Reply took too long. Please retry.',
+          code: 'LLM_DEADLINE_EXCEEDED',
+          status: 504,
+          requestId,
+        })
+      }
+      throw error
+    }
 
     const responseTextBase =
       generation.output ||

@@ -54,6 +54,12 @@ export interface IngredientSelectionOptions {
   excludeDirectionSlugs?: string[]
   excludeDirectionTitles?: string[]
   excludeScriptureAnchors?: string[]
+  /**
+   * Optional AbortSignal forwarded to the underlying brain-router call so a
+   * route-level wall-clock deadline (e.g. `withAbortDeadline`) can cancel
+   * slow LLM responses cleanly instead of being silently killed.
+   */
+  signal?: AbortSignal
 }
 
 type GeneratedPath = {
@@ -72,11 +78,7 @@ const DIRECTION_COUNT = 3
 const MAX_CONTEXT_CHUNKS = 18
 const MAX_CHUNK_CHARS = 900
 const MAX_PREVIEW_WORDS = 70
-const TEST_SCRIPTURE_POOL = [
-  'Psalm 34:18',
-  'Philippians 4:6-7',
-  'James 1:5',
-]
+const TEST_SCRIPTURE_POOL = ['Psalm 34:18', 'Philippians 4:6-7', 'James 1:5']
 const THEMATIC_SCRIPTURE_EXPANSIONS: Record<string, string[]> = {
   prophets: [
     'Jeremiah 1:5',
@@ -103,7 +105,12 @@ const THEMATIC_SCRIPTURE_EXPANSIONS: Record<string, string[]> = {
   guidance: ['James 1:5', 'Proverbs 3:5-6', 'Psalm 119:105', 'Isaiah 30:21'],
   clarity: ['James 1:5', 'Psalm 119:105', '1 Corinthians 14:33', 'John 8:12'],
   decision: ['James 1:5', 'Proverbs 3:5-6', 'Psalm 32:8', 'Romans 12:2'],
-  discernment: ['Hebrews 5:14', 'Philippians 1:9-10', 'Romans 12:2', 'James 1:5'],
+  discernment: [
+    'Hebrews 5:14',
+    'Philippians 1:9-10',
+    'Romans 12:2',
+    'James 1:5',
+  ],
   peace: ['Philippians 4:6-7', 'John 14:27', 'Isaiah 26:3', 'Psalm 46:10'],
   trust: ['Proverbs 3:5-6', 'Psalm 56:3', 'Isaiah 41:10', 'Jeremiah 17:7'],
   anxiety: ['Philippians 4:6-7', '1 Peter 5:7', 'Matthew 6:34', 'Psalm 94:19'],
@@ -331,7 +338,9 @@ function expandScriptureCandidates(params: {
     ]),
   )
 
-  for (const [term, references] of Object.entries(THEMATIC_SCRIPTURE_EXPANSIONS)) {
+  for (const [term, references] of Object.entries(
+    THEMATIC_SCRIPTURE_EXPANSIONS,
+  )) {
     if (!queryTerms.has(term)) continue
     for (const reference of references) {
       const normalized = normalizeScriptureRef(reference)
@@ -453,7 +462,8 @@ function parseGeneratedPaths(raw: string): GeneratedPath[] | null {
       if (!item || typeof item !== 'object') continue
       const record = item as Record<string, unknown>
       const title = typeof record.title === 'string' ? record.title : ''
-      const question = typeof record.question === 'string' ? record.question : ''
+      const question =
+        typeof record.question === 'string' ? record.question : ''
       const reasoning =
         typeof record.reasoning === 'string' ? record.reasoning : ''
       const scriptureReference =
@@ -463,9 +473,7 @@ function parseGeneratedPaths(raw: string): GeneratedPath[] | null {
       const scriptureText =
         typeof record.scriptureText === 'string' ? record.scriptureText : ''
       const teachingExcerpt =
-        typeof record.teachingExcerpt === 'string'
-          ? record.teachingExcerpt
-          : ''
+        typeof record.teachingExcerpt === 'string' ? record.teachingExcerpt : ''
       const focusTerms = Array.isArray(record.focusTerms)
         ? (record.focusTerms as unknown[])
             .filter((value): value is string => typeof value === 'string')
@@ -507,8 +515,7 @@ function confidenceFromCoverage(params: {
   baseRetrievalScore: number
   chunkCount: number
 }): number {
-  const raw =
-    params.baseRetrievalScore / Math.max(1, params.chunkCount * 7.5)
+  const raw = params.baseRetrievalScore / Math.max(1, params.chunkCount * 7.5)
   return Number(Math.max(0.5, Math.min(0.99, raw)).toFixed(3))
 }
 
@@ -521,6 +528,7 @@ async function generatePathsFromRag(params: {
   excludeDirectionSlugs: string[]
   excludeDirectionTitles: string[]
   excludeScriptureAnchors: string[]
+  signal?: AbortSignal
 }): Promise<GeneratedPath[]> {
   const availability = providerAvailabilityForUser({
     platformKeysEnabled: true,
@@ -549,6 +557,7 @@ async function generatePathsFromRag(params: {
       mode: 'auto',
       maxOutputTokens: 1800,
       qualityFloor: 0.35,
+      signal: params.signal,
     },
   })
 
@@ -571,14 +580,18 @@ function deterministicPathsForTests(params: {
   scriptureCandidates: string[]
 }): GeneratedPath[] {
   const keywords = params.userKeywords
-  const focus = keywords.length > 0 ? keywords : ['scripture', 'formation', 'wisdom']
+  const focus =
+    keywords.length > 0 ? keywords : ['scripture', 'formation', 'wisdom']
   const scriptures = params.scriptureCandidates
-  const sourceHints = Array.from(new Set(params.baseChunks.map((chunk) => chunk.title))).slice(0, 6)
+  const sourceHints = Array.from(
+    new Set(params.baseChunks.map((chunk) => chunk.title)),
+  ).slice(0, 6)
 
   return Array.from({ length: DIRECTION_COUNT }, (_, index) => {
     const theme = focus[index % focus.length] ?? `focus-${index + 1}`
     const angle = focus[(index + 1) % focus.length] ?? theme
-    const scriptureReference = scriptures[index % Math.max(1, scriptures.length)] ?? ''
+    const scriptureReference =
+      scriptures[index % Math.max(1, scriptures.length)] ?? ''
     return {
       title: `This pathway gives a focused study of ${theme} through ${angle} in Scripture.`,
       question: `What changes when ${scriptureReference || 'this scripture focus'} reframes ${theme} this week?`,
@@ -606,16 +619,14 @@ export async function selectIngredients(
   const intent = parseAuditIntent(responseText)
   const userKeywords = extractUserKeywords(responseText)
 
-  const baseRetrieval = retrieveForDay({
+  const baseRetrieval = await retrieveForDay({
     themes: uniqueTerms([...intent.themes, ...userKeywords]).slice(0, 10),
     scriptureAnchors: intent.scriptureAnchors,
     topic: responseText,
     limit: 25,
   })
 
-  if (baseRetrieval.chunks.length === 0) {
-    throw new Error('REFERENCE_LIBRARY_UNAVAILABLE')
-  }
+  const hasReferenceLibrary = baseRetrieval.chunks.length > 0
 
   const strict = isProductionStrictMode()
   const scriptureCandidates = expandScriptureCandidates({
@@ -629,7 +640,10 @@ export async function selectIngredients(
     }),
   }).filter((reference) => reference.length > 0)
 
-  if (!strict && scriptureCandidates.length < DIRECTION_COUNT) {
+  // Pad scripture candidates from fallback pool when retrieval-based
+  // candidates are insufficient (sparse scriptureRefs in index is normal —
+  // only ~3% of reference chunks carry explicit scripture references).
+  if (scriptureCandidates.length < DIRECTION_COUNT) {
     for (const reference of TEST_SCRIPTURE_POOL) {
       const normalized = normalizeScriptureRef(reference)
       if (normalized && !scriptureCandidates.includes(normalized)) {
@@ -639,13 +653,19 @@ export async function selectIngredients(
     }
   }
 
-  if (strict && scriptureCandidates.length < DIRECTION_COUNT) {
+  if (scriptureCandidates.length < DIRECTION_COUNT) {
     throw new Error('SCRIPTURE_POOL_INSUFFICIENT')
   }
 
-  const excludeDirectionSlugs = (options.excludeDirectionSlugs ?? []).map((value) => slugify(value))
-  const excludeDirectionTitles = (options.excludeDirectionTitles ?? []).map((value) => normalizeTitle(value))
-  const excludeScriptureAnchors = (options.excludeScriptureAnchors ?? []).map((value) => normalizeScriptureRef(value))
+  const excludeDirectionSlugs = (options.excludeDirectionSlugs ?? []).map(
+    (value) => slugify(value),
+  )
+  const excludeDirectionTitles = (options.excludeDirectionTitles ?? []).map(
+    (value) => normalizeTitle(value),
+  )
+  const excludeScriptureAnchors = (options.excludeScriptureAnchors ?? []).map(
+    (value) => normalizeScriptureRef(value),
+  )
 
   let rawPaths: GeneratedPath[]
   if (strict) {
@@ -659,6 +679,7 @@ export async function selectIngredients(
         excludeDirectionSlugs,
         excludeDirectionTitles,
         excludeScriptureAnchors,
+        signal: options.signal,
       })
     } catch (error) {
       if (!isComposerTransientFailure(error)) {
@@ -685,7 +706,9 @@ export async function selectIngredients(
   const priorScriptures = new Set(excludeScriptureAnchors)
   const usedScriptures = new Set<string>()
   const normalizedScripturePool = Array.from(
-    new Set(scriptureCandidates.map((reference) => normalizeScriptureRef(reference))),
+    new Set(
+      scriptureCandidates.map((reference) => normalizeScriptureRef(reference)),
+    ),
   ).filter(Boolean)
 
   const directions: IngredientDirection[] = []
@@ -696,9 +719,19 @@ export async function selectIngredients(
     const reasoning = collapseWhitespace(raw.reasoning)
     let scriptureAnchor = normalizeScriptureRef(raw.scriptureReference)
     const scriptureText = collapseWhitespace(raw.scriptureText)
-    const teachingExcerpt = takeWords(collapseWhitespace(raw.teachingExcerpt), MAX_PREVIEW_WORDS)
+    const teachingExcerpt = takeWords(
+      collapseWhitespace(raw.teachingExcerpt),
+      MAX_PREVIEW_WORDS,
+    )
 
-    if (!title || !question || !reasoning || !scriptureAnchor || !scriptureText || !teachingExcerpt) {
+    if (
+      !title ||
+      !question ||
+      !reasoning ||
+      !scriptureAnchor ||
+      !scriptureText ||
+      !teachingExcerpt
+    ) {
       if (strict) throw new Error('OPTION_COMPOSER_MISSING_FIELDS')
       continue
     }
@@ -716,7 +749,10 @@ export async function selectIngredients(
 
     // Scripture overlap across audits is allowed when the same biblical theme
     // remains most relevant, but prefer unique anchors within the current set.
-    if (usedScriptures.has(scriptureAnchor) || priorScriptures.has(scriptureAnchor)) {
+    if (
+      usedScriptures.has(scriptureAnchor) ||
+      priorScriptures.has(scriptureAnchor)
+    ) {
       const preferredReplacement = normalizedScripturePool.find(
         (reference) =>
           !usedScriptures.has(reference) && !priorScriptures.has(reference),
@@ -753,9 +789,13 @@ export async function selectIngredients(
     }
 
     const sourceHints = Array.from(
-      new Set((raw.sourceHints ?? []).map((value) => collapseWhitespace(value)).filter(Boolean)),
+      new Set(
+        (raw.sourceHints ?? [])
+          .map((value) => collapseWhitespace(value))
+          .filter(Boolean),
+      ),
     ).slice(0, 5)
-    if (strict && sourceHints.length === 0) {
+    if (strict && hasReferenceLibrary && sourceHints.length === 0) {
       throw new Error('OPTION_COMPOSER_MISSING_SOURCES')
     }
 

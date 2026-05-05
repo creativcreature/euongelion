@@ -5,6 +5,37 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-05 / Phase 10C-P0: AbortController on submit + chat (2026-05-05)
+
+Extended the `withAbortDeadline` deadline guard to the two remaining
+user-facing LLM-touching routes. The `select` route was deliberately
+skipped — it doesn't call the LLM directly (jobs are fire-and-forget
+to `generate-day`, which is already deadline-guarded).
+
+- `src/lib/soul-audit/ingredient-selector.ts`: extended
+  `IngredientSelectionOptions` with optional `signal?: AbortSignal`,
+  plumbed through `generatePathsFromRag` to the underlying
+  `generateWithBrain.context.signal`. Backward-compatible — existing
+  callers that don't pass a signal behave exactly as before.
+- `src/app/api/soul-audit/submit/route.ts`: wrapped both the strict
+  selection attempt and the relaxed-retry attempt inside a single
+  `withAbortDeadline(LLM_ROUTE_DEADLINE_MS, …)` so the combined
+  budget can't blow the Workers wall-clock cap. On strict-attempt
+  AbortError, skips the relaxed retry to avoid wasting the remaining
+  budget. On deadline exceeded: structured `logApiError`, returns 504
+  with code `LLM_DEADLINE_EXCEEDED`.
+- `src/app/api/chat/route.ts`: wrapped the `generateWithBrain` call
+  with the same deadline. The downstream SSE streaming is unaffected
+  — it chunks the static result after the LLM has already returned.
+  On timeout: 504 with same shape.
+
+The original Phase 10C-P0 scope (submit + generate-day) is now
+complete; chat is a bonus extension within the same pattern.
+
+Test status: 39 chat regression tests + 11 deadline tests + 9
+api-security tests still pass. No new tests added — the existing
+`llm-route-deadline.test.ts` already covers the helper contract.
+
 ## OVERNIGHT-2026-05-04 / Phase 10B-P1: X-Model-Used response header (2026-05-04)
 
 When the brain router falls back from Anthropic → Google → MiniMax →

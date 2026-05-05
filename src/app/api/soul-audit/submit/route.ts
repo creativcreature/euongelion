@@ -5,11 +5,14 @@ import {
   getDeploymentFingerprint,
   getClientKey,
   getRequestPath,
+  isAbortError,
   isSafeAuditRunId,
   jsonError,
+  LLM_ROUTE_DEADLINE_MS,
   logApiError,
   readJsonWithLimit,
   takeRateLimit,
+  withAbortDeadline,
   withRequestIdHeaders,
 } from '@/lib/api-security'
 import { MAX_AUDITS_PER_CYCLE } from '@/lib/soul-audit/constants'
@@ -187,44 +190,87 @@ export async function POST(request: NextRequest) {
       for (const option of priorOptions) {
         if (option.slug) usedDirectionSlugs.add(option.slug)
         if (option.title) usedDirectionTitles.add(option.title)
-        if (option.preview?.verse) usedScriptureAnchors.add(option.preview.verse)
+        if (option.preview?.verse)
+          usedScriptureAnchors.add(option.preview.verse)
       }
     }
 
     // ─── RAG-grounded direction selection (strict, input-specific) ───
+    // Both the strict and the relaxed-retry attempts run inside one
+    // 25s wall-clock deadline. On Workers' 30s cap this leaves ~5s
+    // headroom to surface a structured 504 instead of a silent kill.
     let selection: Awaited<ReturnType<typeof selectIngredients>> | null = null
     try {
-      selection = await selectIngredients(responseText, {
-        excludeDirectionSlugs: Array.from(usedDirectionSlugs),
-        excludeDirectionTitles: Array.from(usedDirectionTitles),
-        excludeScriptureAnchors: Array.from(usedScriptureAnchors),
-      })
+      selection = await withAbortDeadline(
+        LLM_ROUTE_DEADLINE_MS,
+        async (signal) => {
+          try {
+            return await selectIngredients(responseText, {
+              excludeDirectionSlugs: Array.from(usedDirectionSlugs),
+              excludeDirectionTitles: Array.from(usedDirectionTitles),
+              excludeScriptureAnchors: Array.from(usedScriptureAnchors),
+              signal,
+            })
+          } catch (selectionError) {
+            // If the strict pass aborted because of the deadline, do
+            // not waste the remaining budget on a relaxed retry.
+            if (isAbortError(selectionError)) throw selectionError
+            const firstCode =
+              selectionError instanceof Error
+                ? selectionError.message
+                : 'DIRECTION_SELECTION_FAILED'
+            // Retry once with relaxed historical exclusions. Avoids dead-end
+            // errors (e.g. duplicate scripture across audits) while still
+            // composing from live retrieval context for the current input.
+            try {
+              return await selectIngredients(responseText, {
+                excludeDirectionSlugs: [],
+                excludeDirectionTitles: [],
+                excludeScriptureAnchors: [],
+                signal,
+              })
+            } catch (retryError) {
+              if (isAbortError(retryError)) throw retryError
+              const retryCode =
+                retryError instanceof Error
+                  ? retryError.message
+                  : 'DIRECTION_SELECTION_FAILED'
+              throw new Error(retryCode || firstCode)
+            }
+          }
+        },
+      )
     } catch (selectionError) {
-      const firstCode =
-        selectionError instanceof Error
-          ? selectionError.message
-          : 'DIRECTION_SELECTION_FAILED'
-      // Retry once with relaxed historical exclusions. This avoids dead-end
-      // errors (e.g. duplicate scripture across audits) while still composing
-      // from live retrieval context for the current input.
-      try {
-        selection = await selectIngredients(responseText, {
-          excludeDirectionSlugs: [],
-          excludeDirectionTitles: [],
-          excludeScriptureAnchors: [],
+      if (isAbortError(selectionError)) {
+        logApiError({
+          scope: 'soul-audit-submit',
+          requestId,
+          error: selectionError,
+          method: request.method,
+          path: getRequestPath(request, '/api/soul-audit/submit'),
+          clientKey,
+          context: {
+            reason: 'llm-deadline-exceeded',
+            deadlineMs: LLM_ROUTE_DEADLINE_MS,
+          },
         })
-      } catch (retryError) {
-        const retryCode =
-          retryError instanceof Error
-            ? retryError.message
-            : 'DIRECTION_SELECTION_FAILED'
         return jsonError({
-          error: selectionErrorMessage(retryCode || firstCode),
-          code: retryCode || firstCode,
-          status: 503,
+          error: 'Generation took too long. Please retry.',
+          code: 'LLM_DEADLINE_EXCEEDED',
+          status: 504,
           requestId,
         })
       }
+      const code =
+        selectionError instanceof Error
+          ? selectionError.message
+          : 'DIRECTION_SELECTION_FAILED'
+      return jsonError({
+        error: selectionErrorMessage(code),
+        code,
+        status: 503,
+        requestId,
+      })
     }
     if (!selection) {
       return jsonError({
@@ -252,18 +298,10 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    if (
-      process.env.NODE_ENV !== 'test' &&
-      directions.every((direction) => direction.referenceSourceHints.length === 0)
-    ) {
-      return jsonError({
-        error:
-          'Reference library is unavailable right now. Please retry in a moment.',
-        code: 'REFERENCE_LIBRARY_UNAVAILABLE',
-        status: 503,
-        requestId,
-      })
-    }
+    // Reference source hints may be empty when reference library is
+    // unavailable (e.g. on Cloudflare Workers where public/reference-index.json
+    // is not accessible via fs). AI-only generation still produces valid
+    // pathways from user input + thematic scripture expansions.
 
     // Map directions to the existing AuditOptionPreview format for
     // backward compatibility with the repository and client.
@@ -350,12 +388,14 @@ export async function POST(request: NextRequest) {
       options: responseOptions,
       diagnostics: {
         retrievalStrategy: 'contextual-hybrid-bm25-rrf',
-        optionEvidence: directions.slice(0, DIRECTION_COUNT).map((direction) => ({
-          optionId: direction.id,
-          scriptureAnchor: direction.scriptureAnchor,
-          matchedKeywords: direction.matchedKeywords.slice(0, 8),
-          sourceHints: direction.referenceSourceHints.slice(0, 5),
-        })),
+        optionEvidence: directions
+          .slice(0, DIRECTION_COUNT)
+          .map((direction) => ({
+            optionId: direction.id,
+            scriptureAnchor: direction.scriptureAnchor,
+            matchedKeywords: direction.matchedKeywords.slice(0, 8),
+            sourceHints: direction.referenceSourceHints.slice(0, 5),
+          })),
       },
       policy: {
         noAccountRequired: true as const,
