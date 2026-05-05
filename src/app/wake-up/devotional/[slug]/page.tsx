@@ -24,13 +24,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const { series, day } = meta
 
+  // Self-canonical. The same content is also reachable via
+  // /devotional/[slug]; until the founder picks one canonical surface
+  // (see docs/overnight-followups.md Phase 10.6 — canonical URL audit),
+  // each route declares itself canonical so Google does not pick
+  // something weird (e.g., a tracking URL parameter).
   return {
     title: `Day ${day.day}: ${day.title}`,
     description: `${series.title} — ${series.question}`,
+    alternates: {
+      canonical: `/wake-up/devotional/${slug}`,
+    },
     openGraph: {
       title: `Day ${day.day}: ${day.title} | ${series.title}`,
       description: series.question,
       type: 'article',
+      url: `https://euangelion.app/wake-up/devotional/${slug}`,
     },
   }
 }

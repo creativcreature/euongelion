@@ -5,6 +5,37 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-05 / Phase 10.6: RSS feed + canonical URLs (2026-05-05)
+
+Closes the remaining Phase 10.6 items flagged in `docs/overnight-followups.md`:
+
+- `src/app/wake-up/feed.xml/route.ts`: new RSS 2.0 feed for Wake-Up
+  Magazine. Surfaces the 7 Wake-Up Originals series as feed items
+  (title, link, description, hero-image enclosure where present, the
+  pathway tag as a category). Daily revalidate cadence. Self-link via
+  `<atom:link>` for proper RSS-reader discovery.
+- `src/app/wake-up/page.tsx`: added Next.js `metadata.alternates.types`
+  for `application/rss+xml` so feed readers and browsers auto-discover
+  the feed via `<link rel="alternate">` in the head.
+- `src/app/sitemap.ts`: added the feed URL so crawlers find it.
+- `src/app/devotional/[slug]/page.tsx`: explicit `alternates.canonical`
+  (self) plus `openGraph.url`. The same content is also reachable via
+  `/wake-up/devotional/[slug]`; until the founder picks one canonical
+  surface (master plan Section 0.6 keeps Wake-Up as a separate funnel
+  surface — could go either way), each route now declares itself
+  canonical so Google doesn't pick a weird URL parameter as canonical.
+- `src/app/wake-up/devotional/[slug]/page.tsx`: same self-canonical
+  pattern with the wake-up URL.
+- `__tests__/wake-up-rss-feed.test.ts`: 5 tests covering Content-Type,
+  atom:link self-reference, item count, XML escaping, and per-item
+  canonical URLs.
+
+The deeper canonical-URL question (which of the two routes should be
+THE canonical for Google ranking) is documented in
+`docs/overnight-followups.md` Phase 10.6 — this requires a founder
+product decision and shouldn't be made unilaterally during an
+autonomous session.
+
 ## OVERNIGHT-2026-05-05 / Phase 10.6: Schema.org structured data (2026-05-05)
 
 Existing JSON-LD coverage on this branch: devotional pages already have

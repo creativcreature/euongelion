@@ -25,6 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/wake-up/feed.xml`,
+      lastModified: now,
+      changeFrequency: 'daily',
+      priority: 0.5,
+    },
+    {
       url: `${baseUrl}/series`,
       lastModified: now,
       changeFrequency: 'weekly',

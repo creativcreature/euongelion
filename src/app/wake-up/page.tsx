@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
@@ -5,6 +6,23 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { scriptureLeadPartsFromFramework } from '@/lib/scripture-reference'
 import { typographer } from '@/lib/typographer'
 import { WAKEUP_SERIES_ORDER, SERIES_DATA } from '@/data/series'
+
+// Surface the Wake-Up RSS feed for auto-discovery by feed readers.
+// Browsers and RSS clients pick up `<link rel="alternate"
+// type="application/rss+xml">` from the head when loading the page.
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/wake-up',
+    types: {
+      'application/rss+xml': [
+        {
+          url: '/wake-up/feed.xml',
+          title: 'Euangelion Wake-Up Magazine',
+        },
+      ],
+    },
+  },
+}
 
 const HOW_STEPS = [
   {
