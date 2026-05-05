@@ -653,3 +653,93 @@ item either needs your decisions, your dashboard access, your
 specific copy taste, or carries per-file risk too high for an
 autonomous session. The branch is in a clean reviewable state.
 See you at 7pm.
+
+---
+
+## Continuation 4 — og:image, JSDoc, /pricing copy spec (2026-05-05)
+
+After "please continue", three more additions. All additive, no
+behavior surface changes:
+
+| #   | SHA       | Phase                | Title                                                           |
+| --- | --------- | -------------------- | --------------------------------------------------------------- |
+| 25  | `4b27f90` | 10.6 + 10C-P2 + spec | per-route og:image + JSDoc on api-security + /pricing copy spec |
+
+(One commit bundles three small but distinct improvements.)
+
+### What changed in continuation 4
+
+- **Per-route dynamic og:image (Phase 10.6 closeout):**
+  `src/app/series/[slug]/opengraph-image.tsx` and
+  `src/app/devotional/[slug]/opengraph-image.tsx` give the canonical
+  surfaces their own OG cards (cobalt + gold framing). HTTP 200 +
+  `image/png` verified live against the running dev server. When a
+  series or devotional URL is shared on social, the OG card now
+  surfaces real per-content metadata instead of falling back to the
+  global site card.
+- **JSDoc on `src/lib/api-security.ts` (Phase 10C-P2):** top-of-file
+  overview + per-function docs on every input-validation and
+  sanitisation helper. Most important addition is the
+  `sanitizeSafeRedirectPath` doc — its bullet list of what gets
+  rejected (no `//`, no `://`, etc.) is now visible in IDE tooltips
+  at every call site.
+- **`/pricing` copy + IA spec (Phase 3.10 follow-up):**
+  `docs/copy-specs/pricing-page-spec.md` (new). Master plan flagged
+  "Stripe wired but no surface" as the worst of all worlds. This
+  captures the locked Section 0.2 pricing model into a complete copy
+  - IA spec the founder can hand to engineering when ready. Includes
+    3 hero copy candidates with recommendation, two-column free/paid
+    comparison with exact wording, Founding Member section with
+    engineering notes for the 500-counter, donation tier card, 6
+    canonical FAQ answers, engineering notes (Stripe wiring already
+    exists per master plan Gap closure 6), and 5 open questions for
+    the founder.
+
+### What I deliberately did NOT touch (continuation 4)
+
+- **`/pricing` page implementation** — the spec is enough; ship the
+  page when copy taste is settled.
+- **Founding Member counter wiring** — engineering notes captured in
+  the spec; needs Stripe query + caching strategy decision.
+- **`PRODUCTION-SOURCE-OF-TRUTH.md` rewrite to match Section 0** —
+  still high-stakes for an autonomous session; still flagged in
+  followups.
+
+### Branch totals after continuation 4
+
+- **26 commits** on `revamp/overnight-2026-05-04`.
+- **53 new tests** added across the entire session; all pass.
+- **Pre-existing failures unchanged** (6 — none introduced).
+
+### What's actually left in the master plan
+
+After 26 commits closing out Phases 0–3, 10A–10C, 10.6, and pieces of
+3.10, the genuinely-remaining master-plan items are all categorically
+"founder needed":
+
+1. **Phase 0.5 — rationale generation pipeline** (free-tier model
+   needs the AI to write 80–100-word rationales per match;
+   substantial new code shape — needs founder shape decisions on
+   prompt + UI)
+2. **Phase 4 — IA reorganisation** (Today / Library / Discover / You)
+3. **Phase 5 — async runtime for paid GENERATE** (needs Cloudflare
+   Queues + Durable Objects — forbidden new bindings)
+4. **Phase 6 — RAG reranker** (needs Cohere/Voyage SDK — forbidden
+   new dep)
+5. **Phase 7 — privacy + safety hardening** (encryption at rest, data
+   export, account deletion cascade — substantial)
+6. **Phase 8 — notifications + retention loop**
+7. **Phase 9 — catalog growth + contributor guidelines**
+8. **Phase 10.5 — Stripe alignment audit** (needs Stripe dashboard
+   access)
+9. **Phase 10.7 — PRODUCTION-SOURCE-OF-TRUTH reconciliation**
+10. **Era 3 image generation** (deferred to v1.5)
+11. **iOS Capacitor shell** (deferred to v1.5)
+
+Of these, the smallest defensible "next session" task is Phase 10.5
+(Stripe alignment) — read `src/lib/billing/catalog.ts`, list current
+products, and write a delta against the locked Section 0.2 pricing.
+That can land in a focused 30-minute pass when you have the dashboard
+open beside you.
+
+Goodnight. _Really_ this time.
