@@ -5,6 +5,38 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-05 / Phase 10.6: Schema.org structured data (2026-05-05)
+
+Existing JSON-LD coverage on this branch: devotional pages already have
+`Article` + `BreadcrumbList`; series pages had `BreadcrumbList` only;
+homepage had none. Added the missing structured-data layers so search
+engines can render rich results (sitelinks search box, FAQ rich snippet,
+multi-day series collection cards).
+
+- `src/app/page.tsx`: added two `<script type="application/ld+json">`
+  tags at the root of the homepage:
+  - `WebSite` schema with a `SearchAction` `potentialAction` so Google
+    can render the sitelinks search box pointing at `/series?q=...`.
+  - `FAQPage` schema mapping the existing `FAQ_ITEMS` constant into
+    `Question` / `Answer` pairs. Static — no extra source of truth.
+- `src/app/series/[slug]/page.tsx`: added `CreativeWorkSeries` schema
+  alongside the existing `BreadcrumbList`. Includes title, description,
+  numberOfEpisodes, hero image, publisher org, and a `hasPart`
+  enumeration of each day's `CreativeWork` (with day position + URL).
+  Also fixed the breadcrumb leaf to set `item` URL.
+- `src/app/wake-up/series/[slug]/page.tsx`: same `CreativeWorkSeries`
+  shape on the Wake-Up surface for parity, with breadcrumb upgraded
+  from "Series" trail to "Wake-Up Magazine" trail and `hasPart` URLs
+  pointing at `/wake-up/devotional/...`.
+
+Sitemap was already comprehensive (static pages + 65 series × 2 routes
+
+- 176 devotionals × 2 routes). No sitemap changes required.
+
+Test status: 3 series-related regression tests pass; type-check + lint
+clean across all 3 touched files. No new tests added — the structured
+data is a thin static-shape transform with no behavior surface to test.
+
 ## OVERNIGHT-2026-05-05 / Phase 10C-P1: jsonError adoption on complete-day + generate-day (2026-05-05)
 
 `complete-day` and `generate-day` were partially updated by an earlier

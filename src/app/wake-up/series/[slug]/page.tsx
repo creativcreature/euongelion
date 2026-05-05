@@ -41,6 +41,8 @@ export default async function SeriesPage({ params }: Props) {
     dayNumbers: series.days.map((day) => day.day),
   })
 
+  const seriesUrl = `https://euangelion.app/wake-up/series/${slug}`
+
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -54,11 +56,44 @@ export default async function SeriesPage({ params }: Props) {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Series',
-        item: 'https://euangelion.app/series',
+        name: 'Wake-Up Magazine',
+        item: 'https://euangelion.app/wake-up',
       },
-      { '@type': 'ListItem', position: 3, name: series.title },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: series.title,
+        item: seriesUrl,
+      },
     ],
+  }
+
+  // Mirrors the main /series/[slug] CreativeWorkSeries shape so the
+  // Wake-Up surface is equally crawler-friendly. See series/[slug]/page.tsx.
+  const seriesJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWorkSeries',
+    name: series.title,
+    headline: series.title,
+    description: series.introduction || series.question,
+    url: seriesUrl,
+    numberOfEpisodes: series.days.length,
+    inLanguage: 'en',
+    genre: 'Christian devotional',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Euangelion',
+      url: 'https://euangelion.app',
+    },
+    image: series.heroImage
+      ? `https://euangelion.app${series.heroImage}`
+      : undefined,
+    hasPart: series.days.map((day) => ({
+      '@type': 'CreativeWork',
+      position: day.day,
+      name: day.title,
+      url: `https://euangelion.app/wake-up/devotional/${day.slug}`,
+    })),
   }
 
   return (
@@ -66,6 +101,10 @@ export default async function SeriesPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(seriesJsonLd) }}
       />
       <SeriesPageClient
         slug={slug}

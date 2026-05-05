@@ -160,8 +160,52 @@ export default function Home() {
     return () => media.removeEventListener('change', syncViewport)
   }, [])
 
+  // Schema.org JSON-LD: declare the site (with sitelinks search box)
+  // and surface the on-page FAQ as structured data so search engines
+  // can render rich results. Static — does not depend on hydration.
+  const siteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Euangelion',
+    url: 'https://euangelion.app',
+    description:
+      'Daily bread for the cluttered, hungry soul. Ancient wisdom, modern design.',
+    inLanguage: 'en',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Euangelion',
+      url: 'https://euangelion.app',
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://euangelion.app/series?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  }
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ_ITEMS.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  }
+
   return (
     <div className="mock-home mock-homepage">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <main id="main-content" className="mock-paper">
         <EuangelionShellHeader />
 

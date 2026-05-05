@@ -40,6 +40,8 @@ export default async function SeriesPage({ params }: Props) {
     dayNumbers: series.days.map((day) => day.day),
   })
 
+  const seriesUrl = `https://euangelion.app/series/${slug}`
+
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -56,8 +58,43 @@ export default async function SeriesPage({ params }: Props) {
         name: 'Series',
         item: 'https://euangelion.app/series',
       },
-      { '@type': 'ListItem', position: 3, name: series.title },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: series.title,
+        item: seriesUrl,
+      },
     ],
+  }
+
+  // Schema.org CreativeWorkSeries describes the series itself so search
+  // engines can render it as a multi-day reading collection (vs. a
+  // single article). hasPart enumerates each day so day-level pages can
+  // surface in sitelinks.
+  const seriesJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWorkSeries',
+    name: series.title,
+    headline: series.title,
+    description: series.introduction || series.question,
+    url: seriesUrl,
+    numberOfEpisodes: series.days.length,
+    inLanguage: 'en',
+    genre: 'Christian devotional',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Euangelion',
+      url: 'https://euangelion.app',
+    },
+    image: series.heroImage
+      ? `https://euangelion.app${series.heroImage}`
+      : undefined,
+    hasPart: series.days.map((day) => ({
+      '@type': 'CreativeWork',
+      position: day.day,
+      name: day.title,
+      url: `https://euangelion.app/devotional/${day.slug}`,
+    })),
   }
 
   return (
@@ -65,6 +102,10 @@ export default async function SeriesPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(seriesJsonLd) }}
       />
       <SeriesPageClient
         slug={slug}

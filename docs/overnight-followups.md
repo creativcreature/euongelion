@@ -270,3 +270,42 @@ Section 0.1–0.13. Should also update:
 - `docs/PRODUCTION-FEATURE-SCORECARD.md` — re-score F-052/F-053/F-054/F-055 against the locked model
 - `docs/PRODUCTION-COMPACTION-HANDOFF.md` — refresh so next compaction loads the locked decisions first
 - `CLAUDE.md` — link to the master plan as an additional spine doc
+
+## Phase 10.6 — SEO follow-ups not yet landed
+
+Phase 10.6 commit `<TBD>` added Schema.org JSON-LD on homepage + both
+series-detail surfaces. Three master-plan items remain pending:
+
+### 1. Dynamic og:image generation per series + per devotional
+
+Master plan said: "Dynamic og:image generation for series detail pages
+(use `next/og` or Workers ImageResponse)" composing per-series OG cards
+with title, hero artwork, byline. Existing `opengraph-image.tsx` files
+already exist in `src/app/opengraph-image.tsx`,
+`src/app/wake-up/devotional/[slug]/opengraph-image.tsx`, and
+`src/app/wake-up/series/[slug]/opengraph-image.tsx` — but `/series/[slug]`
+and `/devotional/[slug]` (the main, non-Wake-Up routes) do NOT have
+their own. Adding them is straightforward but needs a Workers-runtime
+check that `next/og` ImageResponse works on the Cloudflare adapter
+(it requires the Edge runtime, which OpenNext maps differently).
+
+**Recommended next step:** spike `opengraph-image.tsx` in
+`src/app/series/[slug]/` with a copy of the wake-up version and verify
+on a Workers preview before duplicating to all surfaces.
+
+### 2. RSS feed for Wake-Up Magazine
+
+Lightweight, common ask for content products. Build at
+`src/app/wake-up/feed.xml/route.ts` returning an RSS 2.0 feed of
+the 7 Wake-Up series with their day titles, scripture refs, and
+content excerpts.
+
+### 3. Canonical-URL audit
+
+`/devotional/[slug]` vs `/wake-up/devotional/[slug]` may serve the same
+content. If they do, one needs a `<link rel="canonical">` pointing at
+the other (or robots noindex). Also need to confirm `generateMetadata`
+sets `alternates.canonical` consistently.
+
+**Status:** structurally documented in master plan; not blocking; can
+land any time as a small focused PR.
