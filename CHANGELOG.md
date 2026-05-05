@@ -5,6 +5,30 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-05 / Phase 10C-P1: jsonError adoption on complete-day + generate-day (2026-05-05)
+
+`complete-day` and `generate-day` were partially updated by an earlier
+overnight commit (`a6fd1b5`) — they got `createRequestId`/`logApiError`
+on the JSON-parse path but kept ad-hoc `NextResponse.json({error}, {status})`
+on every other error response. Finished the adoption so all error
+responses on these two routes carry `requestId`, `deploymentFingerprint`,
+and a typed `code` discriminator.
+
+- `src/app/api/soul-audit/complete-day/route.ts`: 4 ad-hoc error sites
+  → `jsonError({...})`. Codes: `INVALID_JSON_BODY`, `INVALID_FIELDS`,
+  `PLAN_NOT_FOUND`, `COMPLETE_DAY_DB_FAILURE`. The DB-failure path
+  also adds `logApiError` (was previously plain `console.error`).
+- `src/app/api/soul-audit/generate-day/route.ts`: 4 ad-hoc error
+  sites including the deadline-exceeded path I added in commit
+  `6c4d1b1`. Codes: `INTERNAL_SECRET_REQUIRED`, `INVALID_JSON_BODY`,
+  `INVALID_FIELDS`, `LLM_DEADLINE_EXCEEDED`. The other 11 internal
+  error sites (each tied to a distinct DB write step) intentionally
+  left for a later focused pass — each has its own job-state side
+  effect that needs careful per-site testing.
+
+Test status: type-check + lint clean; 18 daily-bread-api regression
+tests pass.
+
 ## OVERNIGHT-2026-05-05 / Phase 10C-P1: Mounted-guard sweep on async useEffects (2026-05-05)
 
 Master plan flagged ~15 async `useEffect` hooks doing `setState` after

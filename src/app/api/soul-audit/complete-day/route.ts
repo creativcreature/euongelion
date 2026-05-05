@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { cookies } from 'next/headers'
 import { AUDIT_SESSION_COOKIE } from '@/lib/soul-audit/session'
-import { createRequestId, logApiError } from '@/lib/api-security'
+import { createRequestId, jsonError, logApiError } from '@/lib/api-security'
 import type { DayScheduleEntry } from '@/types/soul-audit-plan'
 
 interface CompleteBody {
@@ -16,7 +16,11 @@ export async function POST(request: NextRequest) {
   const cookieStore = await cookies()
   const sessionToken = cookieStore.get(AUDIT_SESSION_COOKIE)?.value ?? null
   if (!sessionToken) {
-    return NextResponse.json({ error: 'Session required.' }, { status: 401 })
+    return jsonError({
+      error: 'Session required.',
+      status: 401,
+      requestId,
+    })
   }
 
   // ─── Parse body ───────────────────────────────────────────────────
@@ -32,10 +36,12 @@ export async function POST(request: NextRequest) {
       path: '/api/soul-audit/complete-day',
       context: { reason: 'invalid-json-body' },
     })
-    return NextResponse.json(
-      { error: 'Invalid request body.' },
-      { status: 400 },
-    )
+    return jsonError({
+      error: 'Invalid request body.',
+      status: 400,
+      requestId,
+      code: 'INVALID_JSON_BODY',
+    })
   }
 
   const planId = String(body.planId || '').trim()
@@ -47,15 +53,17 @@ export async function POST(request: NextRequest) {
     dayNumber < 1 ||
     dayNumber > 7
   ) {
-    return NextResponse.json(
-      { error: 'planId (string) and dayNumber (1-7) are required.' },
-      { status: 400 },
-    )
+    return jsonError({
+      error: 'planId (string) and dayNumber (1-7) are required.',
+      status: 400,
+      requestId,
+      code: 'INVALID_FIELDS',
+    })
   }
 
   // `schedule` and `completed_at` columns are not yet in the generated
   // DB types. Cast the client so TypeScript does not block the query.
-   
+
   const supabase = createAdminClient() as any
 
   // ─── Verify plan belongs to this session ──────────────────────────
@@ -67,10 +75,12 @@ export async function POST(request: NextRequest) {
     .single()
 
   if (planError || !plan) {
-    return NextResponse.json(
-      { error: 'Plan not found or access denied.' },
-      { status: 403 },
-    )
+    return jsonError({
+      error: 'Plan not found or access denied.',
+      status: 403,
+      requestId,
+      code: 'PLAN_NOT_FOUND',
+    })
   }
 
   // ─── Mark day as complete ─────────────────────────────────────────
@@ -81,14 +91,24 @@ export async function POST(request: NextRequest) {
     .eq('day_number', dayNumber)
 
   if (updateError) {
-    console.error(
-      `[complete-day] Failed to mark day ${dayNumber} complete for plan ${planId}:`,
-      updateError,
-    )
-    return NextResponse.json(
-      { error: 'Failed to mark day as complete.' },
-      { status: 500 },
-    )
+    logApiError({
+      scope: 'soul-audit-complete-day',
+      requestId,
+      error: updateError,
+      method: request.method,
+      path: '/api/soul-audit/complete-day',
+      context: {
+        reason: 'mark-day-complete-failed',
+        planId,
+        dayNumber,
+      },
+    })
+    return jsonError({
+      error: 'Failed to mark day as complete.',
+      status: 500,
+      requestId,
+      code: 'COMPLETE_DAY_DB_FAILURE',
+    })
   }
 
   // ─── Find next day unlock time ────────────────────────────────────

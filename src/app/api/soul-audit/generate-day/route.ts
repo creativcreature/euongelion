@@ -26,6 +26,7 @@ import { createAdminClient } from '@/lib/supabase/admin'
 import {
   createRequestId,
   isAbortError,
+  jsonError,
   LLM_ROUTE_DEADLINE_MS,
   logApiError,
   withAbortDeadline,
@@ -351,7 +352,12 @@ export async function POST(request: NextRequest) {
   const requestId = createRequestId()
   // Step 1: Validate internal secret
   if (!validateInternalSecret(request)) {
-    return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+    return jsonError({
+      error: 'Forbidden',
+      status: 403,
+      requestId,
+      code: 'INTERNAL_SECRET_REQUIRED',
+    })
   }
 
   // Step 2: Parse JSON body
@@ -367,7 +373,12 @@ export async function POST(request: NextRequest) {
       path: '/api/soul-audit/generate-day',
       context: { reason: 'invalid-json-body' },
     })
-    return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 })
+    return jsonError({
+      error: 'Invalid JSON body',
+      status: 400,
+      requestId,
+      code: 'INVALID_JSON_BODY',
+    })
   }
 
   const {
@@ -386,10 +397,12 @@ export async function POST(request: NextRequest) {
   } = body
 
   if (!jobId || !planId || !runId || !dayNumber || !userInput) {
-    return NextResponse.json(
-      { error: 'Missing required fields' },
-      { status: 400 },
-    )
+    return jsonError({
+      error: 'Missing required fields',
+      status: 400,
+      requestId,
+      code: 'INVALID_FIELDS',
+    })
   }
 
   const contentDays = totalContentDays || 5
@@ -464,13 +477,12 @@ export async function POST(request: NextRequest) {
           error: `Day ${dayNumber} generation took too long (${LLM_ROUTE_DEADLINE_MS}ms deadline).`,
           generating_since: null,
         }).catch(() => {})
-        return NextResponse.json(
-          {
-            error: `Day ${dayNumber} generation took too long.`,
-            requestId,
-          },
-          { status: 504 },
-        )
+        return jsonError({
+          error: `Day ${dayNumber} generation took too long.`,
+          status: 504,
+          requestId,
+          code: 'LLM_DEADLINE_EXCEEDED',
+        })
       }
       throw error
     }
