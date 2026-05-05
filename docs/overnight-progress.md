@@ -479,3 +479,86 @@ from earlier commits. Four more commits landed:
   tests needed in continuation 2).
 - All pre-existing test failures still pre-existing (none caused by
   my work).
+
+---
+
+## Stopping Point — 2026-05-05 00:43 EDT
+
+I'm stopping here. Why this is a natural stopping point and not me
+giving up:
+
+1. **The biggest-value master-plan items have landed.** Phases 0/1/2/3
+   from the overnight prompt + Phase 10 Tracks A/B/C from the master
+   plan are substantially complete within the founder's hard
+   guardrails (no new deps, no new env vars, no new wrangler bindings,
+   no DB migrations, no folder/file removals).
+
+2. **Remaining work needs the founder.** Concretely:
+
+   | Task                                    | Why it needs you                                                                                              |
+   | --------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+   | IA reorganisation                       | Founder decisions on Wake-Up funnel, /library surface                                                         |
+   | Reranker (Cohere/Voyage)                | New dependency — forbidden by guardrail                                                                       |
+   | Provider health KV persistence          | New `wrangler.jsonc` binding — forbidden                                                                      |
+   | Structured output via Tool Use          | Rewrites `parseComposedDay`; risky without your eyes on the JSON contract change                              |
+   | Phase 0.5 rationale generation pipeline | Founder shape decisions on UI / copy / cost ceiling                                                           |
+   | PRODUCTION-SOURCE-OF-TRUTH update       | Your authoritative product-intent doc; rewriting unilaterally during an autonomous session would be high-risk |
+   | Stripe alignment                        | Needs Stripe dashboard access                                                                                 |
+   | Email provider decision                 | Either Supabase template ops or new provider dep                                                              |
+   | Era 3 image generation                  | Brand-bible Chapter 7 prompt scaffolding hasn't begun                                                         |
+   | iOS Capacitor v1.5                      | Apple IAP collision decision                                                                                  |
+
+3. **Mechanical sweeps remaining are high-risk-per-route.** Examples
+   I considered and skipped:
+   - Standardise `jsonError` on the remaining 13 API routes — each
+     has its own error-shape contract; some are Stripe webhook
+     routes where shape changes have third-party semantics.
+   - Centralised env config (88-file refactor) — high blast radius
+     on a working production app.
+   - Browser-storage wrapper (62-file refactor) — similar.
+   - Structured output via Tool Use — fundamentally rewrites the
+     LLM contract; needs your taste-testing on the output shape.
+
+   Each of these is more honestly **"a focused future task"** than
+   "more overnight value." Pushing through them autonomously would
+   trade safety for surface area.
+
+### Final branch totals
+
+- **18 commits** on `revamp/overnight-2026-05-04` (off `cloudflare-migration` HEAD `1b96475`).
+- **39 files changed**, +4587 / -331 lines.
+- **48 new tests** added; all pass.
+- **6 pre-existing test failures** (5 PLAN_CREATE_FAILED that need
+  real Supabase env + 1 ConsentAwareAnalytics test against your
+  pending working-tree placeholder). All documented in
+  `docs/overnight-blockers.md`. None introduced by overnight work.
+- **Type-check clean. Lint 0 errors / 9 pre-existing warnings.**
+- **All `verify:*` gates pass on every commit.**
+
+### Branch never:
+
+- Pushed to remote.
+- Merged to main.
+- Deployed.
+
+### Working-tree state preserved
+
+Your 237 unrelated working-tree files are exactly as you left them
+at session start (including the pending `BRAND-001` CHANGELOG entry,
+the simplified `ConsentAwareAnalytics.tsx` placeholder, and the
+deleted `src/proxy.ts`). I never staged any of them in any overnight
+commit.
+
+### What to read first at 7pm
+
+1. This file — the running journal.
+2. `docs/overnight-followups.md` — every deliberate deferral with
+   recommendation. The Phase 10.7 PRODUCTION-SOURCE-OF-TRUTH
+   reconciliation section is the most important — it's a coordinated
+   doc-update opportunity that needs your judgment.
+3. `docs/overnight-blockers.md` — what was blocked or skipped.
+4. `git log --oneline cloudflare-migration..HEAD` — the commit list.
+5. For any specific phase: the corresponding F-PRD outcomes-log
+   entry has the canonical summary.
+
+Goodnight. Again.
