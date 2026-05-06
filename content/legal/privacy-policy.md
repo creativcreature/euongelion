@@ -5,7 +5,7 @@
 
 ## Introduction
 
-EUONGELION ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our devotional application and related services (collectively, the "Service").
+EUANGELION ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our devotional application and related services (collectively, the "Service").
 
 Please read this privacy policy carefully. By using the Service, you agree to the collection and use of information in accordance with this policy.
 
@@ -84,7 +84,7 @@ You have the right to:
 
 ### How to Exercise Your Rights
 
-To exercise any of these rights, contact us at privacy@euongelion.com.
+To exercise any of these rights, contact us at privacy@euangelion.com.
 
 ### Notification Preferences
 
@@ -128,7 +128,7 @@ Our Service may contain links to third-party websites or services. We are not re
 
 ## Progressive Web App (PWA)
 
-As a PWA, EUONGELION stores data locally on your device:
+As a PWA, EUANGELION stores data locally on your device:
 
 - **Service Worker:** Caches content for offline access.
 - **IndexedDB:** Stores reading progress and preferences locally.
@@ -150,10 +150,10 @@ Your continued use of the Service after changes become effective constitutes acc
 
 If you have questions about this Privacy Policy or our privacy practices, please contact us:
 
-- **Email:** privacy@euongelion.com
-- **Address:** EUONGELION, [Address to be added]
+- **Email:** privacy@euangelion.com
+- **Address:** EUANGELION, [Address to be added]
 
-For data protection inquiries in the EU, you may also contact our Data Protection Officer at dpo@euongelion.com.
+For data protection inquiries in the EU, you may also contact our Data Protection Officer at dpo@euangelion.com.
 
 ## Additional Information for EU Users
 
@@ -180,3 +180,43 @@ California residents have additional rights under the California Consumer Privac
 - Right to non-discrimination for exercising privacy rights
 
 We do not sell personal information as defined by the CCPA.
+
+## Your Privacy Controls (Available in Settings)
+
+You can exercise the rights above directly from the **Settings → Your Account Data** section once you are signed in. Two controls are provided:
+
+### Export My Data
+
+A self-service export of every record we hold about you, downloaded as a single JSON file. The export includes:
+
+- Your profile (email, display name, preferences, Founding Member status if applicable)
+- Every devotional plan you have ever created, including the AI-composed days
+- All bookmarks, journal entries, and audit reflections
+- Consent records and selection history
+
+The export does NOT include operational logs, anonymous performance telemetry, or Stripe billing receipts (export those from your Stripe billing portal directly). The file is generated on demand and is not retained after download — request a fresh export any time you need the latest snapshot.
+
+### Delete My Account
+
+Permanent, irreversible deletion of your account and all associated data. The deletion cascades across:
+
+- Your authentication record
+- Your profile
+- All devotional plans, plan days, and citations
+- All bookmarks, journal entries, audit reflections, and consent records
+- All session tokens you have ever held
+
+To prevent accidental or malicious deletion, the control requires:
+
+1. The exact confirmation phrase `DELETE MY ACCOUNT`, and
+2. Your registered email address typed into the form
+
+Deletion is processed immediately. There is no recovery window.
+
+If a partial failure is reported (rare — we surface it explicitly in the response), please contact us at privacy@euangelion.app and we will manually complete the cleanup.
+
+## Retention
+
+Anonymous session data — reflection text submitted before sign-in — is retained for **30 days from last activity**, after which it is hard-deleted automatically. Authenticated user data is retained until you delete your account using the control above. We never retain Soul Audit reflection text after a hard delete.
+
+We never share Soul Audit reflection text with third-party analytics providers. Reflection text is processed by Anthropic for AI composition and is sent under their zero-data-retention contract.

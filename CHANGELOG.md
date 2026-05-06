@@ -5,6 +5,103 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-06 / Phase 7: Privacy hardening — data export + account deletion (2026-05-06)
+
+GDPR/CCPA-grade self-service controls per master plan Section 3.9.
+Pairs naturally with the security review you flagged for the
+/pricing launch — the same authenticated-user surface needs both.
+
+**HELPERS (new)**
+
+- `src/lib/privacy/data-export.ts`: `exportUserData(userId)` gathers
+  every row a user owns across all session-token-keyed and
+  user-id-keyed tables into a structured JSON document. Tables
+  covered: users, audit_runs, audit_options, consent_records,
+  audit_selections, devotional_plan_instances, devotional_plan_days
+  (joined by plan_token), devotional_day_citations, annotations,
+  session_bookmarks, mock_account_sessions, bookmarks, user_progress,
+  soul_audit_responses. Records partial failures into the result
+  rather than throwing — the user gets a usable export even if one
+  table is briefly unavailable. `formatExportForDownload(result)`
+  produces `[body, filename]` ready for the route handler.
+- `src/lib/privacy/account-deletion.ts`:
+  `deleteUserAccount(userId)` runs a deterministic cascade:
+  A. Resolve all session_tokens for this user.
+  B. Pull plan_tokens BEFORE deleting devotional_plan_instances.
+  C. Delete from each session-token-keyed table.
+  D. Delete devotional_plan_days + devotional_day_citations by
+  plan_token.
+  E. Delete from user_sessions.
+  F. Call supabase.auth.admin.deleteUser() — the FK
+  `public.users.id REFERENCES auth.users(id) ON DELETE CASCADE`
+  drops the public.users row, which cascades to bookmarks,
+  user_progress, soul_audit_responses.
+  Idempotent. Never throws. Records partial failures into the result.
+
+**API ROUTES (new)**
+
+- `src/app/api/user/data-export/route.ts`: GET, auth-required, rate
+  limited 5/hour. Returns the export as a downloadable JSON file
+  (Content-Disposition: attachment, filename includes user id +
+  date). User id always comes from the verified session — never from
+  a query param.
+- `src/app/api/user/delete-account/route.ts`: POST, auth-required,
+  rate limited 3/day. Body MUST include both:
+  - `confirm: "DELETE MY ACCOUNT"` (exact phrase)
+  - `userEmail` matching the signed-in session email
+    Double confirmation prevents an XSS that steals a session cookie
+    from triggering deletion without ALSO knowing the user's email.
+    After the cascade, the user is signed out. Returns the deletion
+    result so the user can see partial-failure tables (if any).
+
+**SETTINGS UI (extended)**
+
+- `src/app/settings/page.tsx`:
+  - New auth-state hydration via `/api/auth/session` (cancellation-
+    safe).
+  - New "YOUR ACCOUNT DATA" section (between existing privacy
+    controls and Testing Toggles):
+    - "Export My Data" button — calls /api/user/data-export, streams
+      the file download.
+    - "Delete My Account" button — opens an inline danger-zone form
+      requiring exact confirmation phrase + email match, both
+      validated client-side before the POST is sent. On success,
+      redirects to / after a 1.5s message.
+
+**PRIVACY POLICY (extended)**
+
+- `content/legal/privacy-policy.md`: added "Your Privacy Controls
+  (Available in Settings)" section documenting both controls,
+  retention timing (30 days for anonymous, until-delete for
+  authenticated), and the never-shares-reflection-text-with-third-
+  party-analytics promise.
+
+**TESTS**
+
+- `__tests__/privacy-data-export.test.ts` (new, 5 tests): empty
+  user, multi-session gathering, user-id-keyed rows, partial
+  failures, filename format.
+- `__tests__/privacy-account-deletion.test.ts` (new, 6 tests):
+  happy-path cascade, partial failure on one table, auth.users
+  delete failure, idempotency, multi-session counting, completed-
+  after-started invariant.
+
+Test status: type-check + lint clean across all 8 touched files;
+34/34 related tests pass (2 new privacy suites + founding-member +
+api-security regression).
+
+**WHAT'S STILL OPEN**
+
+- Encryption at rest (pgsodium on `audit_runs.response_text`) —
+  separate workstream needing Supabase ops decision.
+- Anonymous-data 30-day cleanup cron — needs Cloudflare Cron Trigger
+  binding (forbidden by anti-sprawl); document for next session.
+- Audit which third-party services receive request payloads
+  (Sentry, etc.) — separate verification pass.
+
+Decisions: SA-007 (Section 0.7 30-day retention), SA-014
+Feature: F-002
+
 ## OVERNIGHT-2026-05-05 / Phase 3.10b: /pricing page + Founding Member infrastructure (2026-05-05)
 
 Built end-to-end against master plan Section 0.2 (founder-locked

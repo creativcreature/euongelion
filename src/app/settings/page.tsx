@@ -133,6 +133,21 @@ export default function SettingsPage() {
   const [privacyExportBusy, setPrivacyExportBusy] = useState(false)
   const [privacyMessage, setPrivacyMessage] = useState<string | null>(null)
   const [privacyError, setPrivacyError] = useState<string | null>(null)
+  // Account-data section: real signed-in user export + delete (Phase 7
+  // privacy hardening). Distinct from the mock-account export above.
+  const [accountEmail, setAccountEmail] = useState<string | null>(null)
+  const [accountAuthed, setAccountAuthed] = useState(false)
+  const [accountExportBusy, setAccountExportBusy] = useState(false)
+  const [accountDeleteOpen, setAccountDeleteOpen] = useState(false)
+  const [accountDeleteConfirm, setAccountDeleteConfirm] = useState('')
+  const [accountDeleteEmail, setAccountDeleteEmail] = useState('')
+  const [accountDeleteBusy, setAccountDeleteBusy] = useState(false)
+  const [accountDeleteError, setAccountDeleteError] = useState<string | null>(
+    null,
+  )
+  const [accountDeleteMessage, setAccountDeleteMessage] = useState<
+    string | null
+  >(null)
   const brainSyncTimerRef = useRef<number | null>(null)
 
   const hydrated = useHydrated()
@@ -304,6 +319,86 @@ export default function SettingsPage() {
     }
   }
 
+  // Phase 7 — real signed-in user data export. Hits
+  // /api/user/data-export which streams a JSON download.
+  async function exportSignedInAccountData() {
+    setAccountExportBusy(true)
+    setAccountDeleteError(null)
+    setAccountDeleteMessage(null)
+    try {
+      const response = await fetch('/api/user/data-export', {
+        cache: 'no-store',
+        credentials: 'include',
+      })
+      if (!response.ok) {
+        const payload = await response
+          .json()
+          .catch(() => ({ error: `Server returned ${response.status}` }))
+        throw new Error(
+          (payload as { error?: string }).error ||
+            'Unable to export your data.',
+        )
+      }
+      const blob = await response.blob()
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `euangelion-data-export-${new Date()
+        .toISOString()
+        .slice(0, 10)}.json`
+      a.click()
+      URL.revokeObjectURL(url)
+      setAccountDeleteMessage('Data export downloaded.')
+    } catch (error) {
+      setAccountDeleteError(
+        error instanceof Error ? error.message : 'Unable to export your data.',
+      )
+    } finally {
+      setAccountExportBusy(false)
+    }
+  }
+
+  // Phase 7 — real signed-in user account deletion. Requires the
+  // exact phrase "DELETE MY ACCOUNT" + the user's own email.
+  async function confirmDeleteAccount() {
+    setAccountDeleteBusy(true)
+    setAccountDeleteError(null)
+    setAccountDeleteMessage(null)
+    try {
+      const response = await fetch('/api/user/delete-account', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          confirm: accountDeleteConfirm.trim(),
+          userEmail: accountDeleteEmail.trim().toLowerCase(),
+        }),
+      })
+      const payload = await response.json().catch(() => ({}))
+      if (!response.ok) {
+        throw new Error(
+          (payload as { error?: string }).error ||
+            'Account deletion failed. Please try again.',
+        )
+      }
+      setAccountDeleteMessage(
+        'Account deleted. Signing out — you will be redirected to the home page.',
+      )
+      // Refresh to clear any client state and pick up the cleared session.
+      window.setTimeout(() => {
+        window.location.assign('/')
+      }, 1500)
+    } catch (error) {
+      setAccountDeleteError(
+        error instanceof Error
+          ? error.message
+          : 'Account deletion failed. Please try again.',
+      )
+    } finally {
+      setAccountDeleteBusy(false)
+    }
+  }
+
   useEffect(() => {
     let mounted = true
     async function loadBilling() {
@@ -385,6 +480,34 @@ export default function SettingsPage() {
     if (!hydrated || typeof document === 'undefined') return
     document.cookie = serializeDayLockingCookie(dayLockingEnabled)
   }, [dayLockingEnabled, hydrated])
+
+  // Account-data section: hydrate auth state from /api/auth/session so
+  // we know whether to surface the data-export and delete-account
+  // controls. Cancellation-safe.
+  useEffect(() => {
+    if (!hydrated) return
+    let cancelled = false
+    void (async () => {
+      try {
+        const res = await fetch('/api/auth/session', {
+          credentials: 'include',
+        })
+        if (!res.ok) return
+        const data = (await res.json()) as {
+          authenticated?: boolean
+          user?: { email?: string | null } | null
+        }
+        if (cancelled) return
+        setAccountAuthed(Boolean(data.authenticated))
+        setAccountEmail(data.user?.email ?? null)
+      } catch {
+        // Silent — UI degrades to "Sign in to use these controls."
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
+  }, [hydrated])
 
   useEffect(() => {
     if (!hydrated) return
@@ -1161,6 +1284,192 @@ export default function SettingsPage() {
             {privacyMessage && (
               <p className="vw-small mt-4 text-gold" aria-live="polite">
                 {privacyMessage}
+              </p>
+            )}
+          </div>
+
+          {/* Account data — Phase 7 privacy hardening (real signed-in user) */}
+          <div
+            className="mb-8 pb-8"
+            style={{ borderBottom: '1px solid var(--color-border)' }}
+          >
+            <h2 className="text-label vw-small mb-4 text-gold">
+              YOUR ACCOUNT DATA
+            </h2>
+            <p className="vw-small mb-6 text-secondary">
+              Export everything we have about you, or delete your account
+              entirely. These controls operate on your <em>signed-in</em>{' '}
+              account — distinct from the mock-account export above.
+            </p>
+
+            {!accountAuthed && hydrated && (
+              <p className="vw-small mb-6 text-muted">
+                Sign in to use these controls.
+              </p>
+            )}
+
+            {accountAuthed && (
+              <>
+                <div className="mb-6 flex flex-wrap items-center gap-4">
+                  <button
+                    type="button"
+                    onClick={() => void exportSignedInAccountData()}
+                    disabled={accountExportBusy || accountDeleteBusy}
+                    className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-30"
+                    style={{
+                      backgroundColor: 'var(--color-surface)',
+                      border: '1px solid var(--color-border)',
+                      color: 'var(--color-text-secondary)',
+                    }}
+                  >
+                    {accountExportBusy
+                      ? 'Building your export...'
+                      : 'Export My Data'}
+                  </button>
+                  <p className="vw-small text-muted">
+                    Downloads a JSON file with your profile, plans, journal,
+                    bookmarks, and audit reflections.
+                  </p>
+                </div>
+
+                <div className="mt-4">
+                  <p className="text-label vw-small mb-3 text-gold">
+                    DANGER ZONE
+                  </p>
+                  {!accountDeleteOpen && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setAccountDeleteOpen(true)
+                        setAccountDeleteError(null)
+                        setAccountDeleteMessage(null)
+                      }}
+                      className="px-6 py-3 text-label vw-small transition-theme"
+                      style={{
+                        backgroundColor: 'transparent',
+                        border: '1px solid var(--color-error, #b94f4f)',
+                        color: 'var(--color-error, #b94f4f)',
+                      }}
+                    >
+                      Delete My Account
+                    </button>
+                  )}
+                  {accountDeleteOpen && (
+                    <div
+                      className="mt-3 rounded border p-4"
+                      style={{
+                        borderColor: 'var(--color-error, #b94f4f)',
+                      }}
+                    >
+                      <p className="vw-small mb-3 text-secondary">
+                        This <strong>cannot be undone</strong>. Your profile,
+                        all devotional plans, journal entries, bookmarks, and
+                        audit reflections will be permanently removed.
+                      </p>
+                      <p className="vw-small mb-4 text-secondary">
+                        To confirm, type{' '}
+                        <code className="text-gold">DELETE MY ACCOUNT</code> and
+                        your email address (
+                        {accountEmail || 'your account email'}) below.
+                      </p>
+                      <label className="block mb-3">
+                        <span className="text-label vw-small mb-1 block text-gold">
+                          CONFIRMATION PHRASE
+                        </span>
+                        <input
+                          type="text"
+                          value={accountDeleteConfirm}
+                          onChange={(e) =>
+                            setAccountDeleteConfirm(e.target.value)
+                          }
+                          placeholder="DELETE MY ACCOUNT"
+                          autoComplete="off"
+                          className="w-full px-3 py-2 vw-small"
+                          style={{
+                            backgroundColor: 'var(--color-surface)',
+                            border: '1px solid var(--color-border)',
+                            color: 'var(--color-text-primary)',
+                          }}
+                        />
+                      </label>
+                      <label className="block mb-4">
+                        <span className="text-label vw-small mb-1 block text-gold">
+                          YOUR EMAIL
+                        </span>
+                        <input
+                          type="email"
+                          value={accountDeleteEmail}
+                          onChange={(e) =>
+                            setAccountDeleteEmail(e.target.value)
+                          }
+                          placeholder={accountEmail || 'you@example.com'}
+                          autoComplete="off"
+                          className="w-full px-3 py-2 vw-small"
+                          style={{
+                            backgroundColor: 'var(--color-surface)',
+                            border: '1px solid var(--color-border)',
+                            color: 'var(--color-text-primary)',
+                          }}
+                        />
+                      </label>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <button
+                          type="button"
+                          onClick={() => void confirmDeleteAccount()}
+                          disabled={
+                            accountDeleteBusy ||
+                            accountDeleteConfirm.trim() !==
+                              'DELETE MY ACCOUNT' ||
+                            accountDeleteEmail.trim().toLowerCase() !==
+                              (accountEmail || '').trim().toLowerCase()
+                          }
+                          className="px-6 py-3 text-label vw-small disabled:opacity-30"
+                          style={{
+                            backgroundColor: 'var(--color-error, #b94f4f)',
+                            border: '1px solid var(--color-error, #b94f4f)',
+                            color: 'var(--color-bg, #fff)',
+                          }}
+                        >
+                          {accountDeleteBusy
+                            ? 'Deleting...'
+                            : 'Permanently Delete My Account'}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setAccountDeleteOpen(false)
+                            setAccountDeleteConfirm('')
+                            setAccountDeleteEmail('')
+                          }}
+                          disabled={accountDeleteBusy}
+                          className="px-6 py-3 text-label vw-small disabled:opacity-30"
+                          style={{
+                            backgroundColor: 'transparent',
+                            border: '1px solid var(--color-border)',
+                            color: 'var(--color-text-secondary)',
+                          }}
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
+
+            {accountDeleteError && (
+              <p
+                className="vw-small mt-4"
+                style={{ color: 'var(--color-error)' }}
+                aria-live="assertive"
+              >
+                {accountDeleteError}
+              </p>
+            )}
+            {accountDeleteMessage && (
+              <p className="vw-small mt-4 text-gold" aria-live="polite">
+                {accountDeleteMessage}
               </p>
             )}
           </div>
