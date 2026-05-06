@@ -2,8 +2,10 @@ import Stripe from 'stripe'
 import { NextRequest, NextResponse } from 'next/server'
 import { randomUUID } from 'node:crypto'
 import { sanitizeCheckoutSessionId } from '@/lib/billing/flash'
-import { isStripeConfigured } from '@/lib/billing/catalog'
+import { isStripeConfigured, getPlanById } from '@/lib/billing/catalog'
 import { resolveBillingLifecycle } from '@/lib/billing/lifecycle'
+import { claimFoundingMemberSlot } from '@/lib/billing/founding-member'
+import { createAdminClient } from '@/lib/supabase/admin'
 import {
   getClientKey,
   takeRateLimit,
@@ -127,6 +129,45 @@ export async function GET(request: NextRequest) {
         : null,
     })
 
+    // Founding Member claim: when an annual subscription has just gone
+    // active and we can resolve the buyer to an authenticated user
+    // (matched by customer_email against auth.users), attempt to
+    // claim a slot. Idempotent — re-polling the same session never
+    // double-claims. Silent on failure so it never blocks the
+    // success-page redirect.
+    let foundingMemberClaimed = false
+    if (lifecycle.premiumActive && subscription) {
+      const planId = subscription.metadata?.plan_id as string | undefined
+      const plan = planId ? getPlanById(planId) : null
+      const buyerEmail =
+        typeof session.customer_details?.email === 'string'
+          ? session.customer_details.email
+          : typeof session.customer_email === 'string'
+            ? session.customer_email
+            : null
+
+      if (plan?.awardsFoundingMember && buyerEmail) {
+        try {
+          const supabase = createAdminClient()
+          const { data: userRow } = await supabase
+            .from('users')
+            .select('id')
+            .eq('email', buyerEmail.toLowerCase())
+            .maybeSingle()
+          const userId = (userRow as { id?: string } | null)?.id ?? null
+          if (userId) {
+            const result = await claimFoundingMemberSlot(userId)
+            foundingMemberClaimed = result.claimed
+          }
+        } catch (claimError) {
+          console.error(
+            '[billing-lifecycle] Founding Member claim attempt failed:',
+            claimError instanceof Error ? claimError.message : claimError,
+          )
+        }
+      }
+    }
+
     return jsonWithRequestId(
       {
         ok: true,
@@ -134,6 +175,7 @@ export async function GET(request: NextRequest) {
         billingStatus: lifecycle.billingStatus,
         premiumActive: lifecycle.premiumActive,
         subscriptionStatus: lifecycle.subscriptionStatus,
+        foundingMemberClaimed,
       },
       { status: 200, requestId },
     )

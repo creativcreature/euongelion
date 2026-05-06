@@ -5,6 +5,111 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-05 / Phase 3.10b: /pricing page + Founding Member infrastructure (2026-05-05)
+
+Built end-to-end against master plan Section 0.2 (founder-locked
+2026-05-03) + founder direction 2026-05-05 (interactive session).
+
+**NOT-YET-SHIPPED status** per founder direction: the page exists at
+`/pricing` but is intentionally:
+
+- `robots: { index: false, follow: false }` — search engines won't surface it
+- excluded from `src/app/sitemap.ts` (no sitemap entry)
+- not linked from header / footer / any nav
+- reachable only by typing the URL directly
+
+The page becomes discoverable when the founder OK's it after the
+security review. The Founding Member counter, Stripe wiring, and
+checkout buttons are real — they just aren't called by anything the
+user can click on the live site.
+
+**Schema changes (NOT YET APPLIED to production)**
+
+- `database/migrations/010_add_founding_member.sql` (new): adds
+  `founding_member_at TIMESTAMPTZ` column to `public.users`, a
+  partial index, and a CHECK trigger backstop enforcing the 500 cap
+  at the DB level. The DB trigger is defense-in-depth; the
+  application also enforces 500 via conditional UPDATE.
+- `src/types/database.ts`: `User`/`UserInsert`/`UserUpdate` extended
+  with `founding_member_at: string | null`.
+
+**Pricing model — code now matches Section 0.2**
+
+- `src/lib/billing/catalog.ts`: 4 tiers — premium_monthly $7/mo,
+  premium_annual $77/yr (awards Founding Member),
+  premium_2year $140 (one-time, 24 months access),
+  premium_3year $200 (one-time, 36 months access). Each plan now
+  carries `effectiveMonthlyLabel`, `billingType`, `termMonths`,
+  `savingsLabel`, `awardsFoundingMember`.
+- `src/types/billing.ts`: `BillingPlanId` extended to all 4 tiers,
+  new `StripePriceIdEnv` union, new `FoundingMemberCount` type, new
+  `foundingMember` + `foundingMemberAt` fields on
+  `BillingEntitlementsResponse.entitlements`.
+- 'lifetime' kept on `subscriptionTier` enum (legacy compat) but
+  marked deprecated in JSDoc.
+
+**Founding Member helper — race-condition-safe**
+
+- `src/lib/billing/founding-member.ts` (new):
+  - `readFoundingMemberAt(userId)` — read the badge timestamp
+  - `getFoundingMemberCount()` — public count, cached 60s
+  - `claimFoundingMemberSlot(userId)` — atomic conditional UPDATE,
+    returns `{claimed, claimedAt}` or `{claimed:false, reason}`.
+    Idempotent. Concurrency-safe via the
+    `is('founding_member_at', null)` filter — only one of N
+    concurrent writers wins the slot.
+
+**API routes**
+
+- `src/app/api/billing/founding-member-count/route.ts` (new):
+  rate-limited GET returning `{ ok, count: { claimed, total, full } }`
+  for the page counter.
+- `src/app/api/billing/lifecycle/route.ts`: extended to claim a
+  Founding Member slot when the lifecycle resolves to active,
+  the plan is `premium_annual`, and the buyer email matches a row
+  in `public.users`. Silent on failure (never blocks the success
+  redirect). Adds `foundingMemberClaimed: boolean` to the response.
+- `src/app/api/billing/entitlements/route.ts`: extended to include
+  `foundingMember` + `foundingMemberAt` in the response.
+
+**Page UI — minimal hero + standard comparison + counter + FAQ**
+
+- `src/app/pricing/page.tsx` (new): server component, revalidate
+  60s. Sections in order: minimal hero with `<details>` expand for
+  the longer copy, free-vs-paid two-column comparison, all 4 paid
+  tier cards, Founding Member counter with progress bar, donation
+  tier card, FAQ accordion (6 questions), quiet footer link row.
+  Uses existing `EuangelionShellHeader` + `SiteFooter` +
+  `Breadcrumbs` for shell consistency. No `'use client'` — all
+  interactivity via native `<details>` for better SEO + no JS cost.
+
+**Tests**
+
+- `__tests__/founding-member.test.ts` (new): 14 tests covering
+  read on null/holding/missing/failure paths, count on empty/some/full/
+  failure paths, and claim on fresh/already_held/user_not_found/
+  cap_reached/idempotent paths.
+
+Test status: type-check + lint clean across all 9 touched files;
+61/61 tests pass across the 8 related test files (founding-member,
+api-security, llm-route-deadline, prompt-cache, retry-backoff,
+token-counting, RSS, session-migration).
+
+**What's still gated**
+
+- Migration 010 must be applied to the live Supabase before the
+  page works correctly (counter will show 0/500 silently until then;
+  claim attempts will fail silently).
+- Stripe Prices for monthly/annual/2yr/3yr need to be created in the
+  dashboard and the env vars wired (see
+  `docs/copy-specs/stripe-alignment-audit-2026-05-05.md`).
+- Page itself stays gated until founder approves post-security
+  review. Removing `robots: noindex` + adding to sitemap + linking
+  from nav are the three switches to flip when ready.
+
+Decisions: SA-002 (Section 0.2 implementation)
+Feature: F-002 (governance), F-021 (billing surface)
+
 ## OVERNIGHT-2026-05-05 / Phase 10.5: Stripe alignment audit + composer.ts overview (2026-05-05)
 
 **Phase 10.5 Stripe alignment audit (read-only)**

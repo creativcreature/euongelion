@@ -1,5 +1,5 @@
 /**
- * EUONGELION Database Types
+ * EUANGELION Database Types
  * TypeScript interfaces matching the Supabase database schema
  */
 
@@ -53,6 +53,14 @@ export type User = Timestamps & {
   subscription_tier: SubscriptionTier
   onboarding_completed: boolean
   preferences: UserPreferences
+  /**
+   * Founding Member program (master plan Section 0.2).
+   * NULL = not a founding member. ISO timestamp = claimed at this time.
+   * Set ONCE by the Stripe lifecycle webhook on first annual
+   * subscription. Persists permanently — never unset, even on cancel.
+   * See `database/migrations/010_add_founding_member.sql`.
+   */
+  founding_member_at: string | null
 }
 
 export type UserPreferences = {
@@ -71,6 +79,7 @@ export type UserInsert = {
   subscription_tier?: SubscriptionTier
   onboarding_completed?: boolean
   preferences?: UserPreferences
+  founding_member_at?: string | null
 }
 
 export type UserUpdate = {
@@ -79,6 +88,7 @@ export type UserUpdate = {
   subscription_tier?: SubscriptionTier
   onboarding_completed?: boolean
   preferences?: UserPreferences
+  founding_member_at?: string | null
 }
 
 // =============================================================================

@@ -9,6 +9,7 @@ import {
   withRequestIdHeaders,
 } from '@/lib/api-security'
 import { resolveEntitlementSnapshot } from '@/lib/billing/entitlements'
+import { readFoundingMemberAt } from '@/lib/billing/founding-member'
 import type { BillingEntitlementsResponse } from '@/types/billing'
 
 const MAX_REQUESTS_PER_MINUTE = 60
@@ -49,6 +50,13 @@ export async function GET(request: NextRequest) {
       ownedStickerPacks: userMetadata.owned_sticker_packs,
     })
 
+    // Founding Member status: read from public.users.founding_member_at
+    // (set ONCE by the Stripe lifecycle webhook on first annual
+    // subscription, never unset). When the user isn't authenticated or
+    // the column lookup fails, default to non-founding so we never
+    // falsely claim status.
+    const foundingMemberAt = await readFoundingMemberAt(user?.id ?? null)
+
     const payload: BillingEntitlementsResponse = {
       ok: true,
       requestId,
@@ -56,6 +64,8 @@ export async function GET(request: NextRequest) {
       entitlements: {
         subscriptionTier: snapshot.subscriptionTier,
         premiumActive: snapshot.premiumActive,
+        foundingMember: foundingMemberAt !== null,
+        foundingMemberAt,
         ownedThemes: snapshot.ownedThemes,
         ownedStickerPacks: snapshot.ownedStickerPacks,
         features: snapshot.features,
