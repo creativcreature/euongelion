@@ -16,6 +16,39 @@
  *   Day-level: A-B-C-B'-A' within each day's content
  *   Week-level: Days 1-5 follow A-B-C-B'-A' across the week
  *   PaRDeS: Each day at an assigned interpretation level
+ *
+ * ## Brain-router integration (overnight 2026-05-04)
+ *
+ * The single LLM call goes through `generateWithBrain` and benefits
+ * from the following infrastructure that was wired during the overnight
+ * pass — the composer doesn't need to know about any of it but the
+ * effects show up in production telemetry:
+ *
+ * - **Anthropic prompt caching** — the system prompt block and the
+ *   reference-chunk prefix are sent with `cache_control: { type:
+ *   'ephemeral' }` so repeat compositions for the same week pay
+ *   $0.30/M for cached tokens instead of $3/M. The composer routes
+ *   the stable bytes through `cacheableUserPrefix` on
+ *   `BrainGenerationRequest`. See `composer.ts` calls to
+ *   `generateWithBrain` for the exact split.
+ * - **Real token counting** — the `result.inputTokens` and
+ *   `result.outputTokens` returned to the composer are now real
+ *   measurements from the provider's `usage` field, not 1.5×-words
+ *   estimates. Cost reporting on `/usage` page is accurate as a
+ *   result.
+ * - **429/5xx retry with backoff** — `callAnthropic` retries
+ *   transient failures up to 3 attempts with exponential backoff
+ *   (1s, 2s) or `Retry-After` if present. The composer surfaces a
+ *   structured error only after all attempts exhaust.
+ * - **AbortController deadline** — when called from
+ *   `/api/soul-audit/generate-day`, the route wraps `generateWithBrain`
+ *   with a 25s deadline so a slow provider surfaces a clean 504
+ *   instead of being silently killed by Cloudflare's 30s wall-clock.
+ *
+ * If you change the prompt structure, preserve the
+ * "stable prefix → dynamic suffix" separation so the cacheable
+ * portion stays cacheable. See `cacheableUserPrefix` field in
+ * `BrainGenerationRequest`.
  */
 
 import {

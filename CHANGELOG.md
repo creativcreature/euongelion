@@ -5,6 +5,51 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-05 / Phase 10.5: Stripe alignment audit + composer.ts overview (2026-05-05)
+
+**Phase 10.5 Stripe alignment audit (read-only)**
+
+`docs/copy-specs/stripe-alignment-audit-2026-05-05.md` (new): a delta
+audit between what `src/lib/billing/catalog.ts` defines today and what
+master plan Section 0.2 demands. Use as a pre-written checklist when
+sitting down with the Stripe dashboard.
+
+Findings:
+
+- Monthly price wrong: code says **$4.99/mo**, locked says **$7/mo**
+  (+40%)
+- Annual price wrong: code says **$39.99/yr**, locked says **$77/yr**
+  (+92%)
+- Missing: 2-year prepay tier ($140 — figure to confirm)
+- Missing: 3-year prepay tier ($200 — figure to confirm)
+- Missing: donation tier (one-time $25/$100/$250/$500)
+- `'lifetime'` still in `BillingEntitlementsResponse.subscriptionTier`
+  type union — Section 0.2 explicitly REJECTED lifetime
+- iOS productId scaffolding still present (RevenueCat) — per master
+  plan Section 0.13 Gap closure 5, iOS deferred to v1.5+; harmless
+  but worth a tagging comment
+
+The audit includes a concrete pre-launch checklist (Stripe dashboard
+work + env vars + code changes) ordered by dependency. Webhook
+lifecycle audit (Section 0.13 Gap closure 6 follow-up) intentionally
+deferred to a separate focused pass.
+
+No code changes. Pure read-only documentation pass.
+
+**`src/lib/soul-audit/composer.ts` top-of-file overview extension**
+
+Added a "Brain-router integration" section to the existing top-of-file
+JSDoc covering the four overnight-pass infrastructure additions
+(prompt caching with `cacheableUserPrefix`, real token counting via
+`response.usage`, 429/5xx retry+backoff in `callAnthropic`, and
+`AbortController` deadline from `generate-day` route). Plus a guidance
+note on preserving the "stable prefix → dynamic suffix" separation
+when modifying prompt structure so the cacheable portion stays
+cacheable.
+
+All other public exports already had per-function JSDoc — no further
+documentation work needed in this file.
+
 ## OVERNIGHT-2026-05-05 / Phase 10.6 + 10C-P2 + pricing spec (2026-05-05)
 
 Three additions, all additive, no behavior changes:
