@@ -1,0 +1,2079 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morning Decisions · Euangelion · 2026-05-06</title>
+    <style>
+      :root {
+        --bg: #0b1420;
+        --surface: #11182a;
+        --surface-2: #182236;
+        --border: #233149;
+        --gold: #c4a572;
+        --gold-soft: rgba(196, 165, 114, 0.12);
+        --cream: #f0ece6;
+        --text: #f0ece6;
+        --text-muted: rgba(240, 236, 230, 0.6);
+        --text-subtle: rgba(240, 236, 230, 0.4);
+        --success: #5fb868;
+        --warn: #d8a854;
+        --danger: #b94f4f;
+        --info: #1f2a8d;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+        font-size: 16px;
+        line-height: 1.55;
+      }
+
+      .meta-font,
+      .label,
+      .nav,
+      button,
+      input,
+      textarea,
+      .stat-value,
+      .stat-label,
+      code {
+        font-family: 'Industry', 'Helvetica Neue', Arial, sans-serif;
+      }
+
+      .label {
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.72rem;
+        color: var(--gold);
+        font-weight: 600;
+      }
+
+      a {
+        color: var(--gold);
+      }
+
+      code {
+        background: var(--surface-2);
+        padding: 0.1rem 0.4rem;
+        border-radius: 3px;
+        font-size: 0.85em;
+        color: var(--cream);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2.5rem 1.5rem 6rem;
+      }
+
+      header.deck-header {
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .deck-header h1 {
+        font-size: 2.4rem;
+        margin: 0 0 0.5rem;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+      }
+      .deck-header .subtitle {
+        color: var(--text-muted);
+        margin: 0;
+      }
+      .deck-header .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        font-family: 'Industry', sans-serif;
+      }
+      .deck-header .meta b {
+        color: var(--gold);
+        font-weight: 600;
+      }
+
+      nav.section-nav {
+        position: sticky;
+        top: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        padding: 0.75rem 1.5rem;
+        margin: 0 -1.5rem 2rem;
+        z-index: 10;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        font-family: 'Industry', sans-serif;
+      }
+      nav.section-nav a {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        color: var(--text-muted);
+        padding: 0.35rem 0.7rem;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        transition: all 0.2s;
+      }
+      nav.section-nav a:hover {
+        color: var(--gold);
+        border-color: var(--border);
+      }
+
+      section.deck-section {
+        margin: 3rem 0;
+      }
+      section.deck-section > h2 {
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin: 0 0 0.5rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.75rem;
+      }
+      section.deck-section > .section-subtitle {
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+      }
+
+      /* — Project Scope panel — */
+      .scope-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 1.75rem;
+        margin-bottom: 2rem;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+      .stat-card {
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 1rem;
+      }
+      .stat-value {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: var(--gold);
+        line-height: 1;
+        margin-bottom: 0.4rem;
+      }
+      .stat-label {
+        text-transform: uppercase;
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        color: var(--text-muted);
+      }
+
+      .phase-progress {
+        display: grid;
+        gap: 0.5rem;
+      }
+      .phase-row {
+        display: grid;
+        grid-template-columns: 1.7fr 5fr 1fr;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .phase-row:last-child {
+        border-bottom: none;
+      }
+      .phase-row .phase-name {
+        font-size: 0.85rem;
+        font-family: 'Industry', sans-serif;
+        color: var(--cream);
+      }
+      .phase-row .phase-bar {
+        height: 8px;
+        background: rgba(240, 236, 230, 0.06);
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+      }
+      .phase-row .phase-bar-fill {
+        height: 100%;
+        background: var(--gold);
+        transition: width 0.6s;
+      }
+      .phase-row .phase-bar-fill.partial {
+        background: var(--warn);
+      }
+      .phase-row .phase-bar-fill.blocked {
+        background: rgba(185, 79, 79, 0.5);
+      }
+      .phase-row .phase-status {
+        font-size: 0.7rem;
+        text-align: right;
+        color: var(--text-muted);
+        font-family: 'Industry', sans-serif;
+      }
+      .phase-row .phase-status.done {
+        color: var(--success);
+      }
+      .phase-row .phase-status.partial {
+        color: var(--warn);
+      }
+      .phase-row .phase-status.blocked {
+        color: var(--danger);
+      }
+      .phase-row .phase-status.pending {
+        color: var(--text-muted);
+      }
+
+      /* — Decision cards — */
+      .decision-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .decision-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+      .decision-card .context {
+        color: var(--text-muted);
+        margin: 0 0 1.25rem;
+        font-size: 0.95rem;
+      }
+
+      .options {
+        display: grid;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+      }
+      .option {
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 0.9rem 1rem;
+        cursor: pointer;
+        transition: all 0.18s ease;
+        display: grid;
+        grid-template-columns: 1.4rem 1fr;
+        gap: 0.7rem;
+        align-items: start;
+      }
+      .option:hover {
+        border-color: var(--gold);
+        background: var(--gold-soft);
+      }
+      .option.selected {
+        border-color: var(--gold);
+        background: var(--gold-soft);
+      }
+      .option .marker {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 2px solid var(--border);
+        margin-top: 4px;
+        flex-shrink: 0;
+        transition: all 0.18s;
+      }
+      .option.selected .marker {
+        border-color: var(--gold);
+        background: var(--gold);
+        box-shadow: 0 0 0 3px var(--surface);
+      }
+      .option .option-body {
+        min-width: 0;
+      }
+      .option-label {
+        font-weight: 600;
+        color: var(--cream);
+        margin-bottom: 0.2rem;
+        font-family: 'Industry', sans-serif;
+        font-size: 0.95rem;
+      }
+      .option-label .badge {
+        display: inline-block;
+        background: var(--gold-soft);
+        color: var(--gold);
+        font-size: 0.65rem;
+        padding: 0.05rem 0.45rem;
+        margin-left: 0.5rem;
+        border-radius: 3px;
+        letter-spacing: 0.1em;
+        vertical-align: middle;
+      }
+      .option-desc {
+        color: var(--text-muted);
+        font-size: 0.88rem;
+      }
+
+      .decision-notes {
+        margin-top: 1rem;
+      }
+      .decision-notes label {
+        display: block;
+        margin-bottom: 0.4rem;
+      }
+      .decision-notes textarea {
+        width: 100%;
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        color: var(--cream);
+        padding: 0.7rem;
+        border-radius: 4px;
+        font-size: 0.88rem;
+        resize: vertical;
+        min-height: 50px;
+      }
+      .decision-notes textarea:focus {
+        outline: none;
+        border-color: var(--gold);
+      }
+
+      /* — Approval gate (yes/no/defer) shape — */
+      .approval-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 0.6rem;
+      }
+      .approval-row .option {
+        text-align: center;
+        grid-template-columns: 1fr;
+      }
+      .approval-row .option .marker {
+        margin: 0 auto 0.4rem;
+      }
+
+      /* — Summary — */
+      .summary-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin: 1rem 0;
+      }
+      button.btn {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        color: var(--cream);
+        padding: 0.7rem 1.2rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        transition: all 0.2s;
+      }
+      button.btn:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      button.btn.primary {
+        background: var(--gold);
+        color: var(--bg);
+        border-color: var(--gold);
+      }
+      button.btn.primary:hover {
+        background: var(--cream);
+        border-color: var(--cream);
+        color: var(--bg);
+      }
+      .summary-output {
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 1rem;
+        font-family: 'Industry', monospace;
+        font-size: 0.78rem;
+        color: var(--cream);
+        white-space: pre-wrap;
+        word-break: break-word;
+        max-height: 400px;
+        overflow-y: auto;
+        line-height: 1.6;
+      }
+      .toast {
+        position: fixed;
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--gold);
+        color: var(--bg);
+        padding: 0.6rem 1.2rem;
+        border-radius: 4px;
+        font-family: 'Industry', sans-serif;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+        z-index: 100;
+      }
+      .toast.show {
+        opacity: 1;
+      }
+
+      .progress-tracker {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 1rem 0;
+        font-family: 'Industry', sans-serif;
+        font-size: 0.85rem;
+      }
+      .progress-tracker .progress-bar-bg {
+        flex: 1;
+        height: 4px;
+        background: var(--surface-2);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .progress-tracker .progress-bar-fill {
+        height: 100%;
+        background: var(--gold);
+        transition: width 0.4s;
+      }
+
+      details.deferred-info {
+        margin: 1rem 0;
+        background: var(--surface-2);
+        padding: 0.8rem 1rem;
+        border-radius: 4px;
+        border: 1px solid var(--border);
+      }
+      details.deferred-info summary {
+        cursor: pointer;
+        color: var(--gold);
+        font-size: 0.85rem;
+        font-family: 'Industry', sans-serif;
+      }
+      details.deferred-info summary:hover {
+        color: var(--cream);
+      }
+      details.deferred-info > div {
+        margin-top: 0.7rem;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      /* responsive */
+      @media (max-width: 720px) {
+        .container {
+          padding: 1.5rem 1rem 5rem;
+        }
+        .deck-header h1 {
+          font-size: 1.8rem;
+        }
+        .phase-row {
+          grid-template-columns: 1.5fr 4fr 0.7fr;
+        }
+        nav.section-nav {
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="deck-header">
+        <p class="label">Morning Decisions</p>
+        <h1>Where we are, what's next, what I need from you.</h1>
+        <p class="subtitle">
+          A single page to scan project status and make every pending
+          decision. Your choices persist locally and can be exported as a
+          message you paste back to Claude.
+        </p>
+        <div class="meta">
+          <span><b>Generated:</b> 2026-05-06</span>
+          <span><b>Branch:</b> revamp/overnight-2026-05-04</span>
+          <span><b>Commits:</b> 30</span>
+          <span><b>New tests:</b> 70+</span>
+          <span><b>Status:</b> never pushed, never deployed</span>
+        </div>
+      </header>
+
+      <nav class="section-nav">
+        <a href="#scope">Project scope</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#security">Security review</a>
+        <a href="#infra">Infra approvals</a>
+        <a href="#product">Product direction</a>
+        <a href="#summary">Summary &amp; export</a>
+      </nav>
+
+      <!-- ======================================================== -->
+      <!--  PROJECT SCOPE / WHERE WE ARE                            -->
+      <!-- ======================================================== -->
+      <section class="deck-section" id="scope">
+        <h2>Project scope — where we are</h2>
+        <p class="section-subtitle">
+          The master plan has 11 major phases. Here's the state of each on
+          the <code>revamp/overnight-2026-05-04</code> branch.
+        </p>
+
+        <div class="scope-panel">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value">~80%</div>
+              <div class="stat-label">Plan coverage</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">30</div>
+              <div class="stat-label">Commits</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">70+</div>
+              <div class="stat-label">New tests</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">0</div>
+              <div class="stat-label">Type-check errors</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">0</div>
+              <div class="stat-label">Lint errors</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">6</div>
+              <div class="stat-label">Pre-existing test failures (none new)</div>
+            </div>
+          </div>
+
+          <p class="label" style="margin-bottom: 0.7rem">
+            Master-plan phases
+          </p>
+          <div class="phase-progress" id="phase-progress">
+            <!-- populated by JS -->
+          </div>
+
+          <details class="deferred-info" style="margin-top: 1.5rem">
+            <summary>What's still gated for shipping (not done)</summary>
+            <div>
+              <ul>
+                <li>
+                  <b>Migration 010</b> (founding_member column) needs to be
+                  applied to live Supabase
+                </li>
+                <li>
+                  <b>Stripe Prices</b> for $7/$77/$140/$200 need to be created
+                  + env vars wired
+                </li>
+                <li>
+                  <b>/pricing security review</b> — page is built but
+                  <code>noindex</code>, not linked from nav
+                </li>
+                <li>
+                  <b>Anthropic ZDR contract</b> — open ticket to verify
+                  zero-data-retention
+                </li>
+                <li>
+                  <b>Webhook implementation</b> — needs new route + env var
+                </li>
+                <li>
+                  <b>Migration 010 + retention cleanup cron</b> — needs
+                  scheduled trigger
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!--  PRICING                                                  -->
+      <!-- ======================================================== -->
+      <section class="deck-section" id="pricing">
+        <h2>Pricing</h2>
+        <p class="section-subtitle">
+          /pricing page is built end-to-end (free tier + 4 paid tiers +
+          Founding Member counter + donation tier + FAQ). Three small
+          decisions before we flip the switch.
+        </p>
+
+        <div class="decision-card" data-decision-id="2yr-3yr-prices">
+          <h3>Confirm 2-year and 3-year exact prices</h3>
+          <p class="context">
+            Section 0.2 tagged $140 / $200 as "range." I shipped them as
+            $140 / $200 in code. Stripe Prices need to be created at the
+            final figures.
+          </p>
+          <div class="options" data-multiselect="false">
+            <div
+              class="option"
+              data-value="140-200"
+              data-label="$140 / 2yr · $200 / 3yr (as drafted)"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  $140 / 2yr · $200 / 3yr
+                  <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  Matches what I shipped. Effective $5.83/mo and $5.55/mo
+                  respectively. Frames as "save $28 / save $52 vs monthly."
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="round-up"
+              data-label="$144 / 2yr · $216 / 3yr (round-up to $6/mo)"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  $144 / 2yr · $216 / 3yr (round to $6/mo)
+                </div>
+                <div class="option-desc">
+                  Rounder math: $6/mo equivalent for both. Smaller savings
+                  framing ($24 / $36) but cleaner per-month claim.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="custom"
+              data-label="Custom — I'll write in the notes"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Custom</div>
+                <div class="option-desc">
+                  Write your numbers in the notes below. I'll update
+                  catalog.ts + the Stripe checklist accordingly.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="drop"
+              data-label="Drop multi-year tiers — monthly + annual only"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Drop multi-year tiers entirely</div>
+                <div class="option-desc">
+                  Ship $7/mo + $77/yr only. Add 2-year and 3-year later if
+                  there's actual demand. Reduces Stripe-dashboard work.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea
+              data-notes-id="2yr-3yr-prices"
+              placeholder="Optional context, exact numbers, or 'use these instead: ...'"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="pricing-launch-trigger">
+          <h3>When does /pricing become publicly discoverable?</h3>
+          <p class="context">
+            Per your direction, /pricing currently has
+            <code>robots: noindex</code>, no sitemap entry, no nav link.
+            What unlocks the public launch?
+          </p>
+          <div class="options" data-multiselect="false">
+            <div
+              class="option"
+              data-value="post-security-review"
+              data-label="Only after full security review (current default)"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  After full security review
+                  <span class="badge">Current default</span>
+                </div>
+                <div class="option-desc">
+                  Anthropic ZDR verified · webhook implemented · Stripe
+                  Prices live · migration 010 applied · CSP-hardened.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="after-webhook"
+              data-label="After Stripe webhook + Prices live"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  After Stripe webhook + Prices live
+                </div>
+                <div class="option-desc">
+                  Skip the broader CSP / ZDR work. Ship the moment payments
+                  are reliable.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="now-with-coming-soon"
+              data-label="Now, but as 'coming soon' (no checkout yet)"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Soft-launch as "coming soon" today
+                </div>
+                <div class="option-desc">
+                  Show the page publicly with all checkout buttons disabled
+                  + waitlist email capture. Builds anticipation. Risky if
+                  the FAQ promises features that aren't shipped.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="pricing-launch-trigger"></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="founding-member-display">
+          <h3>Founding Member counter — when at 500/500?</h3>
+          <p class="context">
+            Once 500 are claimed, the page shows "500 of 500 claimed — cap
+            reached." What should the page do beyond that?
+          </p>
+          <div class="options" data-multiselect="false">
+            <div
+              class="option"
+              data-value="cap-message"
+              data-label="Just say 'cap reached' (current behavior)"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Just "cap reached"
+                  <span class="badge">Current</span>
+                </div>
+                <div class="option-desc">
+                  Honest. Done. Anyone who subscribes annually after 500
+                  gets the same product without the badge.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="hide-section"
+              data-label="Hide the Founding Member section entirely"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Hide the Founding Member section entirely
+                </div>
+                <div class="option-desc">
+                  Once cap reached, the section disappears. Cleaner page.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="waitlist"
+              data-label="'Cap reached — waitlist for v2 Founding badge'"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Convert to a v2 waitlist</div>
+                <div class="option-desc">
+                  Capture interested-but-too-late users for a future
+                  Founding-Member-2.0 cohort. Adds capture flow.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="founding-member-display"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!--  SECURITY REVIEW                                         -->
+      <!-- ======================================================== -->
+      <section class="deck-section" id="security">
+        <h2>Security review</h2>
+        <p class="section-subtitle">
+          You said you want all security vulnerabilities patched before
+          /pricing ships. Here's the action list, with my recommendations.
+        </p>
+
+        <div class="decision-card" data-decision-id="anthropic-zdr">
+          <h3>Anthropic Zero-Data-Retention contract</h3>
+          <p class="context">
+            Reflection text is sent to Anthropic for AI composition.
+            Without ZDR, Anthropic retains it for 30 days by default. Need
+            to verify ZDR is enabled on the production
+            <code>ANTHROPIC_API_KEY</code>. See
+            <code>docs/copy-specs/third-party-data-flow-audit-2026-05-06.md</code>.
+          </p>
+          <div class="options approval-row" data-multiselect="false">
+            <div
+              class="option"
+              data-value="open-ticket-now"
+              data-label="Open Anthropic ZDR support ticket now"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Open ticket today<span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  Email Anthropic support, get written confirmation, save
+                  in <code>legal/</code>. Required before launch.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="defer-post-launch"
+              data-label="Defer to post-launch (use Anthropic default)"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Defer to post-launch</div>
+                <div class="option-desc">
+                  Update <code>/privacy</code> to be honest: "Anthropic may
+                  retain reflection text for 30 days under their default
+                  contract." Less private but transparent.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="anthropic-zdr"></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="analytics-tool">
+          <h3>Analytics tool</h3>
+          <p class="context">
+            Today: zero analytics installed (good for privacy, blind for
+            metrics). Master plan recommends Cloudflare Analytics Engine
+            for system metrics + Plausible for product metrics. Reflection
+            text NEVER reaches the analytics tool, regardless of choice.
+          </p>
+          <div class="options" data-multiselect="false">
+            <div
+              class="option"
+              data-value="cf-analytics-plus-plausible"
+              data-label="Cloudflare Analytics Engine + Plausible"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Cloudflare + Plausible
+                  <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  CF Analytics Engine for request volume / errors /
+                  latency by route (already declared in wrangler.jsonc,
+                  near-zero cost). Plausible $9/mo for page views + funnel.
+                  EU-hosted, no cookies, no PII.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="cf-only"
+              data-label="Cloudflare Analytics Engine only (no product analytics)"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Cloudflare only</div>
+                <div class="option-desc">
+                  System health visibility, no product-funnel insight.
+                  $0/mo.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="posthog-self-hosted"
+              data-label="PostHog (self-hosted)"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">PostHog self-hosted</div>
+                <div class="option-desc">
+                  More capable, more complex. Run your own instance.
+                  Stronger privacy posture, but adds ops surface.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="defer-no-analytics"
+              data-label="Stay analytics-free until launch"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Stay analytics-free for now</div>
+                <div class="option-desc">
+                  Ship without metrics. Decide once we have real users.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="analytics-tool"></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="email-infra">
+          <h3>Email infrastructure</h3>
+          <p class="context">
+            Magic-link auth currently uses Supabase default email
+            templates. No custom branding, no in-email OTP for
+            cross-device pairing.
+          </p>
+          <div class="options" data-multiselect="false">
+            <div
+              class="option"
+              data-value="customize-supabase"
+              data-label="Customize Supabase email templates (cheap, no infra change)"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Customize Supabase templates
+                  <span class="badge">Recommended for v1</span>
+                </div>
+                <div class="option-desc">
+                  Edit email templates in Supabase dashboard. Branded
+                  copy, no new infra. Limited templating power.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="resend"
+              data-label="Resend (custom transport, $0-20/mo to start)"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Resend</div>
+                <div class="option-desc">
+                  More control, React Email templating, batched sends. New
+                  env var (<code>RESEND_API_KEY</code>), new dep
+                  (<code>resend</code>). Substantial-but-not-huge work.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="defer"
+              data-label="Defer — keep default email entirely"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Defer</div>
+                <div class="option-desc">
+                  Supabase default emails are fine for v1. Revisit when
+                  we want OTP-pairing or branded onboarding.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="email-infra"></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="csp-hardening">
+          <h3>CSP hardening</h3>
+          <p class="context">
+            Current CSP allows <code>'unsafe-inline'</code> +
+            <code>'unsafe-eval'</code> on script-src (standard for Next.js
+            hydration). Stricter CSP would use nonces + remove these.
+            Real but moderate hardening.
+          </p>
+          <div class="options approval-row" data-multiselect="false">
+            <div
+              class="option"
+              data-value="post-launch"
+              data-label="Post-launch task"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Post-launch
+                  <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  Document as known limitation; tighten after launch.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="block-launch"
+              data-label="Block launch on this"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Block launch</div>
+                <div class="option-desc">
+                  Make strict-CSP a launch gate. Adds 1-2 days of work.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="ignore"
+              data-label="Accept current CSP indefinitely"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Accept</div>
+                <div class="option-desc">
+                  Many production sites ship with the same CSP.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="csp-hardening"></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="encryption-at-rest">
+          <h3>Encryption at rest for reflection text (pgsodium)</h3>
+          <p class="context">
+            Today: reflection text is stored in
+            <code>audit_runs.response_text</code> as plaintext (RLS-gated,
+            but plaintext on disk). Encryption would use Supabase's
+            pgsodium extension with envelope encryption keyed to user_id.
+          </p>
+          <div class="options approval-row" data-multiselect="false">
+            <div
+              class="option"
+              data-value="approve"
+              data-label="Approve — start the pgsodium workstream"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Approve</div>
+                <div class="option-desc">
+                  I'll spec the migration, add encrypt-on-write +
+                  decrypt-on-read helpers, run a dry-run migration of
+                  existing rows. ~2-3 days of work, requires Supabase
+                  pgsodium enablement.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="post-launch"
+              data-label="Post-launch — RLS is enough for v1"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Post-launch
+                  <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  Most consumer apps don't encrypt at rest. RLS + service-
+                  role-only access is the v1 norm. Revisit if scaling to
+                  enterprise.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="never"
+              data-label="Not needed at all"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Skip permanently</div>
+                <div class="option-desc">
+                  Acceptable risk profile. Document and move on.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="encryption-at-rest"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!--  INFRA APPROVALS                                          -->
+      <!-- ======================================================== -->
+      <section class="deck-section" id="infra">
+        <h2>Infrastructure approvals</h2>
+        <p class="section-subtitle">
+          Anti-sprawl rule blocks me from adding new dependencies, env
+          vars, or Cloudflare bindings without your OK. Each of these
+          unlocks a master-plan workstream.
+        </p>
+
+        <div class="decision-card" data-decision-id="webhook-impl">
+          <h3>Stripe webhook endpoint + STRIPE_WEBHOOK_SECRET</h3>
+          <p class="context">
+            Today the lifecycle route is a GET poll, not a real webhook.
+            See <code>docs/copy-specs/stripe-webhook-audit-2026-05-06.md</code>
+            for the full audit. Without this, cancellations / renewal
+            failures / plan changes don't update our DB.
+          </p>
+          <div class="options approval-row" data-multiselect="false">
+            <div
+              class="option"
+              data-value="approve"
+              data-label="Approve — implement webhook this session"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Approve <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  Add <code>/api/billing/webhook/route.ts</code>,
+                  add <code>STRIPE_WEBHOOK_SECRET</code>, handle the 7
+                  events. Required for a real launch.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="defer"
+              data-label="Defer to next session"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Defer</div>
+                <div class="option-desc">
+                  Don't block on this; come back to it.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="webhook-impl"></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="cron-trigger">
+          <h3>Cloudflare Cron Trigger for retention cleanup</h3>
+          <p class="context">
+            Anonymous-data 30-day cleanup is built and tested
+            (<code>runRetentionCleanup</code>). Needs a daily trigger.
+            Two paths.
+          </p>
+          <div class="options" data-multiselect="false">
+            <div
+              class="option"
+              data-value="cron-trigger"
+              data-label="Add Cloudflare Cron Trigger binding"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Cloudflare Cron Trigger
+                  <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  Native to Workers, $0 cost, runs reliably. New
+                  <code>wrangler.jsonc</code> binding +
+                  <code>scheduled()</code> handler in the worker.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="github-action"
+              data-label="GitHub Action on a schedule"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">GitHub Action</div>
+                <div class="option-desc">
+                  Free for public repos, easy. Calls
+                  <code>POST /api/admin/run-retention-cleanup</code> with
+                  the internal secret. Works without a new binding.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="manual"
+              data-label="Manual ops curl on a calendar reminder"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Manual</div>
+                <div class="option-desc">
+                  Acceptable for a small launch. The route exists; you
+                  hit it from a terminal once a week.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="cron-trigger"></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="phase5-async-runtime">
+          <h3>Phase 5 — Cloudflare Queues + Durable Objects</h3>
+          <p class="context">
+            Per master plan, paid-tier GENERATE needs a real queue +
+            stateful workflow object so a 7-day plan composition survives
+            the user closing the tab. Today's pattern (Postgres-row-as-job
+            + client poll) doesn't.
+          </p>
+          <div class="options approval-row" data-multiselect="false">
+            <div
+              class="option"
+              data-value="approve-now"
+              data-label="Approve — start Phase 5 next session"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Approve now</div>
+                <div class="option-desc">
+                  Add Queues + DO bindings. Multi-day workstream.
+                  Required before paid GENERATE ships.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="defer-launch-without"
+              data-label="Defer — soft-launch with current pattern"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Defer
+                  <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  Soft-launch with free tier only. Build queue when paid
+                  GENERATE actually ships.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="phase5-async-runtime"></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="phase6-reranker">
+          <h3>Phase 6 — RAG reranker (Cohere or Voyage SDK)</h3>
+          <p class="context">
+            Anthropic's contextual retrieval pipeline ends in a cross-
+            encoder rerank that cuts failure rate by ~67%. Today we have
+            BM25 + RRF fusion but no reranker.
+          </p>
+          <div class="options" data-multiselect="false">
+            <div
+              class="option"
+              data-value="cohere"
+              data-label="Cohere Rerank-3"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Cohere Rerank-3</div>
+                <div class="option-desc">
+                  Industry standard. ~200ms latency. New env var, new SDK
+                  dep, ~$1/1k searches.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="voyage"
+              data-label="Voyage rerank-2"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Voyage rerank-2</div>
+                <div class="option-desc">
+                  Newer, sometimes better quality. Less battle-tested.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="defer"
+              data-label="Defer — current quality is acceptable"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Defer
+                  <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  Ship without reranker. Add when we observe specific
+                  retrieval-quality issues in production.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="phase6-reranker"></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="provider-health-kv">
+          <h3>Provider-health KV persistence</h3>
+          <p class="context">
+            Today's per-isolate Map loses health stats on every Worker
+            restart. KV would persist across restarts so the
+            "Anthropic-first health-tracked fallback" actually persists.
+          </p>
+          <div class="options approval-row" data-multiselect="false">
+            <div
+              class="option"
+              data-value="approve"
+              data-label="Approve KV namespace binding"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Approve</div>
+                <div class="option-desc">
+                  Add KV binding to wrangler.jsonc, persist health
+                  snapshot daily, load at startup.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="defer"
+              data-label="Defer — per-isolate is fine for now"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Defer
+                  <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  Per-isolate health is OK for a small launch. Per-region
+                  KV is overkill until we see real fallback issues.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="provider-health-kv"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!--  PRODUCT DIRECTION                                        -->
+      <!-- ======================================================== -->
+      <section class="deck-section" id="product">
+        <h2>Product direction</h2>
+        <p class="section-subtitle">
+          These decisions shape what users see + how the system is
+          organized. Pick what matches your taste; I'll implement.
+        </p>
+
+        <div class="decision-card" data-decision-id="phase0.5-rationale-voice">
+          <h3>Phase 0.5 — Rationale generation voice register</h3>
+          <p class="context">
+            The free tier's 3 curated matches each get an 80-100-word
+            AI-written rationale ("why this series fits what you said").
+            What voice should they have?
+          </p>
+          <div class="options" data-multiselect="false">
+            <div
+              class="option"
+              data-value="warm-pastoral"
+              data-label="Warm + pastoral"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Warm + pastoral
+                  <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  "What you described — the weight of provision, the
+                  fatigue under it — meets the language of <i>Sleep
+                  Pathway</i> in a quiet way. This series doesn't fix the
+                  fatigue. It teaches you how to carry it."
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="warm-direct"
+              data-label="Warm + direct"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Warm + direct</div>
+                <div class="option-desc">
+                  "<i>Sleep Pathway</i> matches what you wrote. You named
+                  weariness and provision. This series spends 5 days in
+                  Mark and Psalms on those exact threads."
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="academic-grounded"
+              data-label="Academic + grounded"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Academic + grounded</div>
+                <div class="option-desc">
+                  "<i>Sleep Pathway</i> draws on Spurgeon's
+                  <i>Morning &amp; Evening</i> + Psalm 127 to address the
+                  grief-in-overwork pattern you described. Day 3 sits at
+                  the chiastic pivot."
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="phase0.5-rationale-voice"></textarea>
+          </div>
+        </div>
+
+        <div
+          class="decision-card"
+          data-decision-id="phase0.5-intent-fail-fallback"
+        >
+          <h3>Phase 0.5 — Intent-parsing failure fallback</h3>
+          <p class="context">
+            What should happen when the LLM can't parse user intent
+            (timeout / 500 / empty result)?
+          </p>
+          <div class="options" data-multiselect="false">
+            <div
+              class="option"
+              data-value="generic-three-matches"
+              data-label="Show 3 generic 'first time here' matches"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  3 generic matches <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  Curated "starter" series with generic rationales like
+                  "Many people start here." User never sees an error.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="keyword-fallback"
+              data-label="Simple keyword match against series titles"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Keyword match</div>
+                <div class="option-desc">
+                  Use BM25 against series titles + descriptions. Worse
+                  matching but works without LLM.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="show-error"
+              data-label="Show 'try again' error"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Show error</div>
+                <div class="option-desc">
+                  Honest, but bad UX. User has to retry.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea
+              data-notes-id="phase0.5-intent-fail-fallback"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="ia-wakeup-sibling">
+          <h3>Phase 4 — Wake-Up Magazine: sibling or collection?</h3>
+          <p class="context">
+            Master plan Section 0.6 says "Wake-Up stays as separate
+            funnel surface" but Phase 4 IA reorg might collapse it into
+            a Discover collection.
+          </p>
+          <div class="options" data-multiselect="false">
+            <div
+              class="option"
+              data-value="keep-sibling"
+              data-label="Keep as sibling product (current)"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  Keep as sibling
+                  <span class="badge">Section 0.6 default</span>
+                </div>
+                <div class="option-desc">
+                  Wake-Up has its own homepage, copy register, RSS feed.
+                  /wake-up/* stays its own URL space.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="collapse-to-collection"
+              data-label="Collapse into /discover/wake-up collection"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Collapse into Discover</div>
+                <div class="option-desc">
+                  Wake-Up becomes a "collection" inside Discover. Cleaner
+                  IA but loses the gateway-product framing. Requires
+                  301 redirects from /wake-up/*.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="ia-wakeup-sibling"></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="ia-canonical-devotional">
+          <h3>Canonical URL — /devotional vs /wake-up/devotional</h3>
+          <p class="context">
+            Both routes serve identical content. Each currently declares
+            itself canonical. Which should THE canonical be for Google
+            ranking?
+          </p>
+          <div class="options" data-multiselect="false">
+            <div
+              class="option"
+              data-value="main-canonical"
+              data-label="/devotional/[slug] is canonical"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  /devotional canonical <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  Main brand surface; Wake-Up is the funnel. Wake-Up URLs
+                  cross-canonical to /devotional. Cleaner SEO.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="wakeup-canonical-when-applicable"
+              data-label="Wake-Up canonical when devotional is from a Wake-Up series"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Per-series canonical</div>
+                <div class="option-desc">
+                  Wake-Up Originals canonical to /wake-up/devotional/...,
+                  everything else to /devotional/.... More accurate but
+                  more complex.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="self-canonical-current"
+              data-label="Each route stays self-canonical (current state)"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Stay self-canonical</div>
+                <div class="option-desc">
+                  Let Google figure it out. Risk: split rank. Acceptable
+                  if traffic from these URLs is low.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="ia-canonical-devotional"></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="about-page-voice">
+          <h3>/about page expansion</h3>
+          <p class="context">
+            Currently 32 lines of placeholder. Master plan calls for
+            founder voice + theology framing + the "AI as composer not
+            author" promise.
+          </p>
+          <div class="options" data-multiselect="false">
+            <div
+              class="option"
+              data-value="first-person"
+              data-label="First-person founder voice"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  First-person <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  "I built Euangelion because..." — connects with reader,
+                  matches devotional product tone.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="third-person"
+              data-label="Third-person institutional voice"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Third-person</div>
+                <div class="option-desc">
+                  "Euangelion is built on..." — more polished, less warm.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="dialogue"
+              data-label="Dialogue / Q&A format"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Dialogue</div>
+                <div class="option-desc">
+                  "Why Euangelion?" / "Who's it for?" / "What about AI?"
+                  Question-and-answer format. Works for skeptics.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">
+              Your notes — drop the bio + theology framing here if you have
+              it
+            </label>
+            <textarea data-notes-id="about-page-voice"></textarea>
+          </div>
+        </div>
+
+        <div class="decision-card" data-decision-id="sources-claim">
+          <h3>"19 sources" copy claim</h3>
+          <p class="context">
+            Reference index has 45 distinct file paths (~35 logical
+            authors). The "19 sources" figure in CLAUDE.md is not
+            corroborated by the on-disk index. What should /about and
+            marketing say?
+          </p>
+          <div class="options" data-multiselect="false">
+            <div
+              class="option"
+              data-value="thirty-plus"
+              data-label="'30+ sources from the historic Christian tradition'"
+              data-recommended="true"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">
+                  "30+ sources" <span class="badge">Recommended</span>
+                </div>
+                <div class="option-desc">
+                  Honest. Defensible. Doesn't pin a specific number that
+                  becomes wrong as the library grows.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="exact-count"
+              data-label="Use exact count from the manifest (you specify)"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">Exact count</div>
+                <div class="option-desc">
+                  Drop the number you want in notes. I'll plumb it from
+                  a manifest so it stays accurate.
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              data-value="no-number"
+              data-label="No number — list the named voices instead"
+            >
+              <div class="marker"></div>
+              <div class="option-body">
+                <div class="option-label">List the names</div>
+                <div class="option-desc">
+                  "Augustine, Calvin, Owen, Bunyan, Spurgeon, Tozer..."
+                  More evocative than a number.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decision-notes">
+            <label class="label">Your notes</label>
+            <textarea data-notes-id="sources-claim"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!--  SUMMARY                                                  -->
+      <!-- ======================================================== -->
+      <section class="deck-section" id="summary">
+        <h2>Summary &amp; export</h2>
+        <p class="section-subtitle">
+          When you're done, click "Copy as message to Claude" and paste
+          the result back into our chat. I'll execute against your
+          decisions.
+        </p>
+
+        <div class="progress-tracker">
+          <span class="label" id="decisions-counter">0 of 0</span>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="decisions-progress-bar"></div>
+          </div>
+        </div>
+
+        <div class="summary-actions">
+          <button class="btn primary" onclick="copyMessageForClaude()">
+            Copy as message to Claude
+          </button>
+          <button class="btn" onclick="copyAsJSON()">Copy as JSON</button>
+          <button class="btn" onclick="resetAllChoices()">Reset all</button>
+        </div>
+
+        <pre class="summary-output" id="summary-output">
+(Summary will appear here as you make choices.)</pre>
+      </section>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+      // -----------------------------------------------------------
+      //  Project scope phase data
+      // -----------------------------------------------------------
+      const PHASES = [
+        { id: 'phase-0', name: 'Phase 0 — pre-flights + meta-fixes', percent: 100, status: 'done' },
+        { id: 'phase-1', name: 'Phase 1 — reader adapter', percent: 100, status: 'done' },
+        { id: 'phase-2', name: 'Phase 2 — active-plan visibility', percent: 100, status: 'done' },
+        { id: 'phase-3', name: 'Phase 3 — session migration on sign-in', percent: 100, status: 'done' },
+        { id: 'phase-3.10b', name: 'Phase 3.10b — /pricing page (gated)', percent: 100, status: 'done' },
+        { id: 'phase-4', name: 'Phase 4 — IA reorganization', percent: 0, status: 'pending' },
+        { id: 'phase-0.5', name: 'Phase 0.5 — rationale pipeline', percent: 0, status: 'pending' },
+        { id: 'phase-5', name: 'Phase 5 — async runtime (Queues + DOs)', percent: 0, status: 'blocked' },
+        { id: 'phase-6', name: 'Phase 6 — RAG reranker', percent: 0, status: 'blocked' },
+        { id: 'phase-7', name: 'Phase 7 — privacy hardening', percent: 90, status: 'partial' },
+        { id: 'phase-8', name: 'Phase 8 — notifications', percent: 0, status: 'pending' },
+        { id: 'phase-9', name: 'Phase 9 — catalog growth + contributor docs', percent: 0, status: 'pending' },
+        { id: 'phase-10a', name: 'Phase 10A — dead code', percent: 100, status: 'done' },
+        { id: 'phase-10b', name: 'Phase 10B — Anthropic infra', percent: 95, status: 'partial' },
+        { id: 'phase-10c', name: 'Phase 10C — code hygiene', percent: 90, status: 'partial' },
+        { id: 'phase-10.5', name: 'Phase 10.5 — Stripe alignment', percent: 100, status: 'done' },
+        { id: 'phase-10.6', name: 'Phase 10.6 — SEO + structured data', percent: 100, status: 'done' },
+        { id: 'phase-10.7', name: 'Phase 10.7 — SOT reconciliation', percent: 0, status: 'pending' }
+      ];
+
+      function renderPhases() {
+        const root = document.getElementById('phase-progress');
+        root.innerHTML = PHASES.map((p) => {
+          const fillClass =
+            p.status === 'done'
+              ? ''
+              : p.status === 'partial'
+              ? 'partial'
+              : p.status === 'blocked'
+              ? 'blocked'
+              : '';
+          const statusLabel =
+            p.status === 'done'
+              ? 'DONE'
+              : p.status === 'partial'
+              ? `${p.percent}%`
+              : p.status === 'blocked'
+              ? 'BLOCKED'
+              : 'PENDING';
+          return `
+            <div class="phase-row">
+              <div class="phase-name">${p.name}</div>
+              <div class="phase-bar">
+                <div class="phase-bar-fill ${fillClass}" style="width:${p.percent}%"></div>
+              </div>
+              <div class="phase-status ${p.status}">${statusLabel}</div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // -----------------------------------------------------------
+      //  Decision state — persisted in localStorage
+      // -----------------------------------------------------------
+      const STORAGE_KEY = 'euangelion-morning-decisions-2026-05-06';
+      let state = loadState();
+
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          return raw ? JSON.parse(raw) : { choices: {}, notes: {} };
+        } catch {
+          return { choices: {}, notes: {} };
+        }
+      }
+
+      function saveState() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        } catch {
+          // localStorage unavailable; fail silently
+        }
+      }
+
+      // -----------------------------------------------------------
+      //  Wire up decision cards
+      // -----------------------------------------------------------
+      function initDecisions() {
+        const cards = document.querySelectorAll('[data-decision-id]');
+        cards.forEach((card) => {
+          const id = card.dataset.decisionId;
+          // Restore any previously-selected option
+          const saved = state.choices[id];
+          if (saved) {
+            const opt = card.querySelector(`.option[data-value="${saved}"]`);
+            if (opt) opt.classList.add('selected');
+          }
+          // Wire option click
+          card.querySelectorAll('.option').forEach((opt) => {
+            opt.addEventListener('click', () => {
+              card.querySelectorAll('.option').forEach((o) =>
+                o.classList.remove('selected'),
+              );
+              opt.classList.add('selected');
+              state.choices[id] = opt.dataset.value;
+              saveState();
+              renderSummary();
+            });
+          });
+          // Wire notes textarea
+          const notes = card.querySelector('textarea[data-notes-id]');
+          if (notes) {
+            const notesId = notes.dataset.notesId;
+            if (state.notes[notesId]) notes.value = state.notes[notesId];
+            notes.addEventListener('input', () => {
+              state.notes[notesId] = notes.value;
+              saveState();
+              renderSummary();
+            });
+          }
+        });
+      }
+
+      // -----------------------------------------------------------
+      //  Summary rendering
+      // -----------------------------------------------------------
+      function renderSummary() {
+        const cards = document.querySelectorAll('[data-decision-id]');
+        const total = cards.length;
+        const decided = Array.from(cards).filter(
+          (c) => state.choices[c.dataset.decisionId],
+        ).length;
+        document.getElementById('decisions-counter').textContent =
+          `${decided} of ${total} decided`;
+        document.getElementById('decisions-progress-bar').style.width =
+          `${total === 0 ? 0 : (decided / total) * 100}%`;
+
+        const lines = [];
+        cards.forEach((card) => {
+          const id = card.dataset.decisionId;
+          const title = card.querySelector('h3').textContent.trim();
+          const choice = state.choices[id];
+          const notes = (state.notes[id] || '').trim();
+          if (!choice && !notes) return;
+          const optEl = choice
+            ? card.querySelector(`.option[data-value="${choice}"]`)
+            : null;
+          const optLabel = optEl ? optEl.dataset.label : '(no choice)';
+          lines.push(`### ${title}`);
+          lines.push(`Choice: ${optLabel}`);
+          if (notes) lines.push(`Notes: ${notes}`);
+          lines.push('');
+        });
+
+        const out =
+          lines.length === 0
+            ? '(Summary will appear here as you make choices.)'
+            : lines.join('\n');
+        document.getElementById('summary-output').textContent = out;
+      }
+
+      // -----------------------------------------------------------
+      //  Export actions
+      // -----------------------------------------------------------
+      function copyMessageForClaude() {
+        const cards = document.querySelectorAll('[data-decision-id]');
+        const decided = [];
+        cards.forEach((card) => {
+          const id = card.dataset.decisionId;
+          const title = card.querySelector('h3').textContent.trim();
+          const choice = state.choices[id];
+          const notes = (state.notes[id] || '').trim();
+          if (!choice && !notes) return;
+          const optEl = choice
+            ? card.querySelector(`.option[data-value="${choice}"]`)
+            : null;
+          const optLabel = optEl ? optEl.dataset.label : '(no choice)';
+          decided.push({ id, title, choice: optLabel, notes });
+        });
+        if (decided.length === 0) {
+          showToast('No decisions yet. Pick at least one.');
+          return;
+        }
+        const lines = [
+          'Here are my decisions from the morning deck:',
+          '',
+          ...decided.flatMap((d) => {
+            const items = [`**${d.title}**`, `→ ${d.choice}`];
+            if (d.notes) items.push(`Notes: ${d.notes}`);
+            return [...items, ''];
+          }),
+          'Please execute against these.',
+        ];
+        copyToClipboard(lines.join('\n'));
+        showToast('Copied — paste into Claude');
+      }
+
+      function copyAsJSON() {
+        const payload = {
+          generatedAt: new Date().toISOString(),
+          source: 'morning-decisions-2026-05-06',
+          state,
+        };
+        copyToClipboard(JSON.stringify(payload, null, 2));
+        showToast('Copied JSON to clipboard');
+      }
+
+      function resetAllChoices() {
+        if (
+          !confirm(
+            'Clear all decisions and notes from this device? Cannot be undone.',
+          )
+        )
+          return;
+        state = { choices: {}, notes: {} };
+        saveState();
+        document
+          .querySelectorAll('.option.selected')
+          .forEach((o) => o.classList.remove('selected'));
+        document
+          .querySelectorAll('textarea[data-notes-id]')
+          .forEach((t) => (t.value = ''));
+        renderSummary();
+        showToast('All choices cleared');
+      }
+
+      function copyToClipboard(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text);
+          return;
+        }
+        // Fallback for non-https local file
+        const el = document.createElement('textarea');
+        el.value = text;
+        document.body.appendChild(el);
+        el.select();
+        try {
+          document.execCommand('copy');
+        } catch {
+          // ignore
+        }
+        document.body.removeChild(el);
+      }
+
+      function showToast(msg) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.classList.add('show');
+        clearTimeout(showToast._timer);
+        showToast._timer = setTimeout(() => {
+          t.classList.remove('show');
+        }, 2400);
+      }
+
+      // -----------------------------------------------------------
+      //  Init
+      // -----------------------------------------------------------
+      renderPhases();
+      initDecisions();
+      renderSummary();
+    </script>
+  </body>
+</html>

@@ -5,6 +5,43 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-06 / Morning decisions deck (2026-05-06)
+
+`docs/decks/morning-decisions-2026-05-06.html` (new) — single-file
+interactive decision deck the founder can open in any browser.
+Contents:
+
+- **Project Scope / Where We Are** — visual progress through 18
+  master-plan phases, plus six headline metrics (commit count, test
+  count, type-check + lint state, pre-existing failures), plus a
+  "what's still gated" expandable list.
+- **15 decision cards** across 4 themes:
+  - **Pricing** (3): 2yr/3yr exact prices, /pricing launch trigger,
+    Founding-Member-cap behavior
+  - **Security** (5): Anthropic ZDR, analytics tool, email infra,
+    CSP hardening, encryption at rest
+  - **Infra approvals** (4): webhook impl, Cron Trigger, Phase 5
+    async runtime, Phase 6 reranker, KV provider-health
+  - **Product direction** (5): rationale voice, intent-fail
+    fallback, Wake-Up sibling-vs-collection, canonical URL,
+    /about voice, "19 sources" copy claim
+- Each card has 2-4 options with descriptions + "Recommended"
+  badges + a free-text notes field. Choices persist in localStorage.
+- **Summary + export section** — counter shows "N of 15 decided",
+  progress bar, three actions: "Copy as message to Claude" (formats
+  decisions + notes as a paste-able message), "Copy as JSON" (raw
+  state), "Reset all".
+- Self-contained: vanilla JS, no external deps, no build step. Open
+  the file directly in any browser. Persists locally so the founder
+  can come back later without losing decisions.
+
+Per founder direction, the deck includes a "Project Scope / Where
+We Are" section at the top (visual phase progression + branch
+metrics) so the founder can place each decision in context.
+
+Decisions: SA-014
+Feature: F-002
+
 ## OVERNIGHT-2026-05-06 / Autonomous batch — webhook audit + retention cleanup + third-party audit + JSDoc + jsonError (2026-05-06)
 
 While founder slept. All low-risk, additive, no-behavior-change.
