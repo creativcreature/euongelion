@@ -743,3 +743,73 @@ That can land in a focused 30-minute pass when you have the dashboard
 open beside you.
 
 Goodnight. _Really_ this time.
+
+---
+
+## Continuation 5 — Phase 10.5 Stripe alignment audit (2026-05-05)
+
+After yet another "please continue", closed out **Phase 10.5** from the
+master plan (Section 0.13 Gap closure 6). Two artifacts:
+
+| #   | SHA       | Title                                                                                       |
+| --- | --------- | ------------------------------------------------------------------------------------------- |
+| 27  | `9a108a5` | Phase 10.5 Stripe alignment audit + composer.ts brain-router-integration overview extension |
+
+### What changed in continuation 5
+
+- **`docs/copy-specs/stripe-alignment-audit-2026-05-05.md` (new):**
+  read-only delta audit between `src/lib/billing/catalog.ts` and master
+  plan Section 0.2. Concrete findings:
+  - Monthly $4.99 → $7 (+40%)
+  - Annual $39.99 → $77 (+92%)
+  - Missing 2-year, 3-year, donation tiers
+  - `'lifetime'` enum still in type union (Section 0.2 rejected)
+  - iOS RevenueCat scaffolding still present (deferred to v1.5+)
+
+  Includes a Stripe-dashboard-ready pre-launch checklist ordered by
+  dependency (dashboard work → env vars → code changes). Webhook
+  lifecycle audit deferred to a separate focused pass.
+
+- **`src/lib/soul-audit/composer.ts` overview extension:** added a
+  "Brain-router integration" section to the existing top-of-file
+  JSDoc covering the four overnight-pass infrastructure additions
+  (prompt caching, real token counting, retry+backoff, AbortController)
+  - a guidance note on preserving the cacheable-prefix-vs-dynamic-suffix
+    separation when modifying prompts.
+
+### What's actually left now
+
+Genuinely-remaining master-plan items, all categorically "founder
+needed":
+
+1. Phase 0.5 — rationale generation pipeline (free-tier requires AI to
+   write 80–100-word rationales per match; needs founder shape decisions)
+2. Phase 4 — IA reorganisation (Today / Library / Discover / You)
+3. Phase 5 — async runtime for paid GENERATE (forbidden new bindings)
+4. Phase 6 — RAG reranker (forbidden new dep)
+5. Phase 7 — privacy + safety hardening (encryption at rest, data
+   export, account deletion cascade — substantial)
+6. Phase 8 — notifications + retention loop
+7. Phase 9 — catalog growth + contributor guidelines
+8. Phase 10.5 webhook audit follow-up — needs Stripe webhook event log
+9. Phase 10.7 — PRODUCTION-SOURCE-OF-TRUTH reconciliation
+10. Era 3 image generation (deferred to v1.5)
+11. iOS Capacitor shell (deferred to v1.5)
+
+Companion deliverable from continuation 4 (`/pricing` page itself)
+plus the Stripe alignment audit from continuation 5 fully scope a
+`/pricing` launch. The founder picks copy taste, takes the Stripe
+checklist to the dashboard, and ships.
+
+### Branch totals after continuation 5
+
+- **28 commits** on `revamp/overnight-2026-05-04`
+- **53 new tests** (unchanged from continuation 4); all pass
+- Type-check + lint clean
+- 6 pre-existing test failures unchanged
+- `docs/copy-specs/` now contains 2 founder-ready specs:
+  `pricing-page-spec.md` (UX) + `stripe-alignment-audit-2026-05-05.md`
+  (engineering checklist)
+
+Goodnight. _For real_ this time. The branch is in a state I could
+hand to a stranger and say "review this for the founder at 7pm."
