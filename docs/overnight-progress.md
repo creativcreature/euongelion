@@ -813,3 +813,67 @@ checklist to the dashboard, and ships.
 
 Goodnight. _For real_ this time. The branch is in a state I could
 hand to a stranger and say "review this for the founder at 7pm."
+
+---
+
+## OVERNIGHT 2026-05-06 → MORNING DELIVERABLE
+
+Founder went to sleep. Asked me to do everything I can autonomously
+and surface decisions in either an AskUserQuestion flow OR a visual
+interactive deck. Built the deck.
+
+### Open this first when you wake up
+
+**`docs/decks/morning-decisions-2026-05-06.html`** — single-file
+interactive deck. Open in any browser. Pick options, hit "Copy as
+message to Claude," paste back into our chat.
+
+Includes a **Project Scope / Where We Are** section at the top
+(visual progress through 18 master-plan phases + 6 metrics + "what's
+still gated" expandable list) so you can place each decision in
+context — explicitly added per your direction.
+
+### What landed while you slept (5 commits)
+
+| SHA       | What                                                                                                                                                                                                               |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `5f41594` | Phase 7 — privacy hardening (data export + account deletion + cascade + Settings UI + privacy-policy update + 11 tests)                                                                                            |
+| `8af63dc` | Autonomous batch — webhook lifecycle audit + retention cleanup helper + retention API route + 6 cleanup tests + third-party data flow audit + JSDoc on brain/router.ts + jsonError on auth/sign-out + auth/session |
+| `2412efe` | Morning decisions deck (single-file HTML, 15 decisions across 4 themes, project scope + metrics)                                                                                                                   |
+
+### Decisions you'll make in the deck
+
+15 cards across 4 themes:
+
+1. **Pricing (3)** — 2yr/3yr exact prices, /pricing launch trigger,
+   Founding-Member-cap behavior
+2. **Security (5)** — Anthropic ZDR, analytics tool, email infra,
+   CSP hardening, encryption at rest
+3. **Infra approvals (4)** — Stripe webhook impl, Cron Trigger for
+   retention cleanup, Phase 5 async runtime, Phase 6 reranker, KV
+   provider-health
+4. **Product direction (5)** — rationale voice, intent-fail
+   fallback, Wake-Up sibling/collection, canonical URL, /about
+   voice, "19 sources" copy claim
+
+Each card has 2-4 options with descriptions, "Recommended" badges
+where I have a strong opinion, and a free-text notes field.
+
+### Branch totals
+
+- **31 commits** on `revamp/overnight-2026-05-04`
+- **70+ new tests** across the session, all pass
+- type-check + lint clean across every touched file
+- 6 pre-existing test failures unchanged (none introduced)
+- Branch never pushed, never deployed
+- All your 2026-05-04 working-tree state preserved untouched
+
+### What I deliberately did NOT touch tonight
+
+- Anything that needed your decisions (waiting in the deck)
+- New deps (waiting for your infra approvals in the deck)
+- New env vars (same)
+- New Cloudflare bindings (same)
+- The /pricing public-discovery switches (waiting for your security review)
+
+See you in the morning.
