@@ -5,6 +5,40 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OVERNIGHT-2026-05-06 / Autonomous batch — webhook audit + retention cleanup + third-party audit + JSDoc + jsonError (2026-05-06)
+
+While founder slept. All low-risk, additive, no-behavior-change.
+
+**Stripe webhook lifecycle audit (read-only)** —
+`docs/copy-specs/stripe-webhook-audit-2026-05-06.md` (new) finds the
+existing `/api/billing/lifecycle` is a GET pull-based poll, NOT a
+Stripe webhook. Documents the 7 events a real webhook needs.
+
+**Anonymous-data 30-day retention cleanup** —
+`src/lib/privacy/retention-cleanup.ts` + `/api/admin/run-retention-cleanup`
+route guarded by `X-Internal-Secret`. 6 new tests pass. Designed to
+be called by a future Cron Trigger, GitHub Action, or manual ops curl.
+Authenticated users are NEVER touched by this function.
+
+**Third-party data flow audit (read-only)** —
+`docs/copy-specs/third-party-data-flow-audit-2026-05-06.md` (new).
+TOP-LINE: zero third-party analytics / tracking dependencies are
+installed. Outbound calls are LLM providers + Supabase + Stripe only.
+CSP matches.
+
+**JSDoc top-of-file overview on `src/lib/brain/router.ts`** — covers
+provider order, availability rules, the four overnight infrastructure
+additions, in-memory health, quality gate.
+
+**`jsonError` standardization** on `auth/sign-out` and `auth/session`
+routes — both now carry `requestId` + typed `code` + `logApiError`.
+
+Test status: type-check + lint clean across 9 touched files; 6 new
+retention-cleanup tests pass.
+
+Decisions: SA-007, SA-013, SA-014
+Feature: F-002
+
 ## OVERNIGHT-2026-05-06 / Phase 7: Privacy hardening — data export + account deletion (2026-05-06)
 
 GDPR/CCPA-grade self-service controls per master plan Section 3.9.

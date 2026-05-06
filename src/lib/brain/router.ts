@@ -1,3 +1,73 @@
+/**
+ * brain/router.ts — multi-provider LLM routing layer.
+ *
+ * The single entry point is `generateWithBrain(request)`. It picks
+ * a provider based on availability + the request's `mode`, calls
+ * the provider's API, runs a quality gate on the output, and either
+ * returns the result or falls through to the next provider. Result
+ * shape is `ProviderExecutionResult` (provider, output, real token
+ * counts, estimated cost, quality score).
+ *
+ * ## Provider order
+ *
+ * - `mode: 'auto'` (default) — uses
+ *   `sortClaudeFirstThenCheapest(availableProviders)`. Claude is
+ *   tried first because it's our quality anchor; subsequent
+ *   providers are sorted by cost-rank with health bias (recent
+ *   failures push a provider further down).
+ * - `mode: 'openai' | 'google' | 'minimax' | 'nvidia_kimi'` —
+ *   explicit single-provider mode; throws if that provider is
+ *   currently unavailable.
+ *
+ * ## Provider availability
+ *
+ * `providerAvailabilityForUser` enumerates the four providers and
+ * reports each as available / unavailable with a reason. High-cost
+ * providers (MiniMax, NVIDIA Kimi) are gated to BYO-key under the
+ * `allowHighCostOnPlatform` policy — anonymous users who haven't
+ * supplied their own keys won't see those providers.
+ *
+ * ## Infrastructure layered in (overnight 2026-05-04)
+ *
+ * - **Anthropic prompt caching** — `BrainGenerationRequest` accepts
+ *   an optional `cacheableUserPrefix` that gets emitted as a
+ *   separate `cache_control: { type: 'ephemeral' }` block in front
+ *   of the first user message. Other providers see the prefix
+ *   transparently concatenated. See `buildAnthropicFirstUserContent`.
+ * - **Real token counting** — every provider call returns
+ *   `{ text, usage? }` where usage carries real input/output token
+ *   counts when the provider includes them. `executeProvider`
+ *   prefers real usage; falls back to `estimateInputTokens` /
+ *   `estimateOutputTokens` when usage is absent.
+ * - **Anthropic 429/5xx retry** — `callAnthropic` retries up to 3
+ *   attempts with exponential backoff (1s, 2s) or `Retry-After`
+ *   header, whichever is longer. 4xx-other-than-429 bubbles up
+ *   immediately so the fallback chain takes over fast.
+ * - **AbortController plumbing** — `BrainRouteContext.signal` is
+ *   forwarded to every provider's underlying `fetch()` so
+ *   route-level wall-clock deadlines (see
+ *   `src/lib/api-security.ts:withAbortDeadline`) actually cancel
+ *   the in-flight request.
+ *
+ * ## In-memory provider health
+ *
+ * `providerHealth` is a per-isolate Map of recent
+ * success/failure/latency stats. Used by
+ * `sortClaudeFirstThenCheapest` to bias cheaper providers down
+ * when they're misbehaving. NOT persisted across isolate restarts —
+ * the master plan flagged Cloudflare KV persistence as a P0 item
+ * but it's still pending (forbidden by anti-sprawl until a new
+ * binding is approved).
+ *
+ * ## Quality gate
+ *
+ * `qualityScore(text)` returns a 0..1 score from length, scripture
+ * reference presence, and paragraph count. `request.context.qualityFloor`
+ * sets the threshold below which the result is rejected and the
+ * next provider tried. Default floor varies by task; composer.ts
+ * uses 0.6.
+ */
+
 import {
   estimateCostUsd,
   estimateInputTokens,
