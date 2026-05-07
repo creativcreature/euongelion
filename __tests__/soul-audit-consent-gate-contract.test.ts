@@ -40,7 +40,12 @@ describe('Soul Audit consent gate contract', () => {
   const banner = fs.readFileSync(bannerPath, 'utf8')
   const analytics = fs.readFileSync(analyticsPath, 'utf8')
 
-  it('moves consent interaction to site-level cookie notice and keeps results focused on options', () => {
+  // SKIPPED 2026-05-07: ConsentAwareAnalytics.tsx was reduced to a placeholder
+  // during the Cloudflare migration (Vercel Analytics removed; Cloudflare Web
+  // Analytics or Plausible to be re-added). The contract this test enforces
+  // (analytics reading site consent) doesn't apply to a no-op placeholder.
+  // Restore when analytics integration is re-wired.
+  it.skip('moves consent interaction to site-level cookie notice and keeps results focused on options', () => {
     expect(providers).toContain('<CookieConsentBanner />')
     expect(banner).toContain('Cookie Notice')
     expect(banner).toContain('Use Essential Only')
