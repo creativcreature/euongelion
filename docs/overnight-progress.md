@@ -1006,3 +1006,53 @@ code. No live writes or reads to disrupt.
   caught at PR-time.
 
 No application code touched. Working-tree state preserved.
+
+---
+
+### 2026-05-07 — Supabase Advisor fix (corrected, full sweep)
+
+**Correction:** the entry above (commit `66011ef`) had the diagnosis
+wrong. Founder shared the actual advisor screenshot and the picture
+is bigger than the two CRITICAL emails suggested.
+
+- **5 ERRORS:** 3 SECURITY DEFINER views
+  (`bookmarks_with_devotionals`, `soul_audit_results`, `user_streaks`)
+  - RLS-disabled + sensitive-cols-exposed both on
+    `public.soul_audit_jobs` (a table created live in the dashboard,
+    never made it into a migration).
+- **17 WARNINGS:** 8 functions without `search_path` locked, `vector`
+  extension in public schema, `user_sessions` has `USING (true)` RLS
+  policy, 3 publicly-executable SECURITY DEFINER functions.
+
+**Second pass shipped:**
+
+- `database/migrations/012_supabase_advisor_fix.sql` — recreates the
+  three views with `security_invoker = true`, locks `search_path` on
+  the three in-tree functions, and revokes PUBLIC/anon/authenticated
+  execute on the SECURITY DEFINER trigger functions.
+- `docs/runbooks/supabase-rls-vulnerability-2026-05-07.md` —
+  REWRITTEN with corrected diagnosis. Adds a paste-ready SQL block for
+  the live-only objects (`soul_audit_jobs` RLS, auth-aware
+  `user_sessions` policies replacing `USING(true)`, `search_path`
+  lockdown for 5 live-only functions). Also includes a backfill plan
+  to reconstruct live-only DDL into migration 013 so the tree finally
+  matches reality.
+
+Migration 011 is left in place — it still defensively locks down the
+unused `generated_illustrations` table.
+
+`match_devotional_plans` has zero application usage (`grep` returned
+nothing) — safe to revoke PUBLIC execute on it.
+
+**Founder action required (10 minutes):**
+
+1. Open Supabase SQL editor for `ovivwbopjfruikehrlgm`.
+2. Run `011_enable_rls_security_fix.sql`, then `012_supabase_advisor_fix.sql`.
+3. Run the "Live-only objects" SQL block from the runbook.
+4. Refresh Database → Advisors → Security. The 5 errors should clear,
+   plus most of the warnings. The `vector` extension warning is
+   accepted (moving it is invasive and theoretical-risk only).
+5. Backfill: dump live-only DDL into `013_backfill_live_objects.sql`
+   so the tree reflects reality (one-time hygiene fix, not blocking).
+
+No application code touched. Working-tree state preserved.
