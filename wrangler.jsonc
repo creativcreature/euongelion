@@ -3,10 +3,7 @@
   "main": ".open-next/worker.js",
   "name": "euangelion",
   "compatibility_date": "2025-05-05",
-  "compatibility_flags": [
-    "nodejs_compat",
-    "global_fetch_strictly_public"
-  ],
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
@@ -14,82 +11,67 @@
   "observability": {
     "enabled": true
   },
-  // KV namespace for cross-isolate provider health persistence.
-  // See src/lib/brain/health-store.ts. Gated by env
-  // BRAIN_HEALTH_KV_ENABLED=on so we can revert to per-isolate
-  // behavior in one env-var flip if the KV layer misbehaves.
-  // Per-environment: bind to a different namespace ID for preview
-  // vs. production. To create:
-  //   wrangler kv namespace create BRAIN_HEALTH_KV
-  //   wrangler kv namespace create BRAIN_HEALTH_KV --preview
-  // Then paste the IDs below.
-  "kv_namespaces": [
-    {
-      "binding": "BRAIN_HEALTH_KV",
-      "id": "REPLACE_WITH_PRODUCTION_KV_ID",
-      "preview_id": "REPLACE_WITH_PREVIEW_KV_ID"
-    }
-  ],
-  // Phase 5 async runtime scaffolding (paid GENERATE soul-audit
-  // composition). Forward-compatible bindings declared here; the
-  // OpenNext worker wrap that activates them is documented in
-  // docs/runbooks/phase5-async-runtime.md.
+  // ────────────────────────────────────────────────────────────────────
+  // Phase 5 / KV / Cron bindings — DECLARED IN CODE, INERT AT DEPLOY
+  // ────────────────────────────────────────────────────────────────────
+  // The morning batch added bindings for Cloudflare Queues + a
+  // PlanOrchestrator Durable Object + a BRAIN_HEALTH_KV namespace + a
+  // daily Cron Trigger. None of those work yet because the OpenNext-
+  // generated worker.js only exports `fetch` — it doesn't export the
+  // DO class, doesn't have a `scheduled()` handler, and doesn't have
+  // a `queue()` handler. Wrangler refuses to start the Worker when
+  // these bindings reference exports that don't exist.
   //
-  // Until the wrap lands:
-  //   - The Queue producer in src/lib/soul-audit/queue-producer.ts
-  //     is gated behind PHASE_5_ASYNC_ENABLED env. Off = existing
-  //     fire-and-forget pattern continues unchanged.
-  //   - The Durable Object class src/lib/soul-audit/plan-orchestrator.ts
-  //     compiles but is not exported from the worker entry.
-  //   - Bindings are declared so `wrangler deploy` won't error when
-  //     the wrap is added.
-  "queues": {
-    "producers": [
-      {
-        "binding": "SOUL_AUDIT_QUEUE",
-        "queue": "soul-audit-generation"
-      }
-    ],
-    "consumers": [
-      {
-        "queue": "soul-audit-generation",
-        "max_batch_size": 1,
-        "max_batch_timeout": 5,
-        "max_retries": 3,
-        "dead_letter_queue": "soul-audit-generation-dlq"
-      }
-    ]
-  },
-  "durable_objects": {
-    "bindings": [
-      {
-        "name": "PLAN_ORCHESTRATOR",
-        "class_name": "PlanOrchestrator"
-      }
-    ]
-  },
-  // Migrations array for Durable Object versioning. Required by
-  // Cloudflare on first deploy of a new DO class. Increment v1→v2
-  // when the DO storage shape changes incompatibly.
-  "migrations": [
-    {
-      "tag": "v1",
-      "new_classes": ["PlanOrchestrator"]
-    }
-  ],
+  // Activation steps live in:
+  //   docs/runbooks/phase5-async-runtime.md
+  //   docs/runbooks/retention-cleanup-cron.md
+  //
+  // Until the OpenNext worker-wrap step is done, all of these stay
+  // commented out so production deploys cleanly. The application
+  // code (queue producer, DO class, KV health store, cron handler)
+  // is all in src/ and gated behind env flags — the missing piece is
+  // exclusively the worker entry-point wrap.
+  //
+  // To activate (once the wrap is in place):
+  //   1. Create the KV namespaces and paste real IDs.
+  //   2. Create the queues with `wrangler queues create soul-audit-generation`.
+  //   3. Uncomment the four blocks below.
+  //   4. Deploy.
+  //
+  // "kv_namespaces": [
+  //   {
+  //     "binding": "BRAIN_HEALTH_KV",
+  //     "id": "REPLACE_WITH_PRODUCTION_KV_ID",
+  //     "preview_id": "REPLACE_WITH_PREVIEW_KV_ID"
+  //   }
+  // ],
+  // "queues": {
+  //   "producers": [
+  //     { "binding": "SOUL_AUDIT_QUEUE", "queue": "soul-audit-generation" }
+  //   ],
+  //   "consumers": [
+  //     {
+  //       "queue": "soul-audit-generation",
+  //       "max_batch_size": 1,
+  //       "max_batch_timeout": 5,
+  //       "max_retries": 3,
+  //       "dead_letter_queue": "soul-audit-generation-dlq"
+  //     }
+  //   ]
+  // },
+  // "durable_objects": {
+  //   "bindings": [
+  //     { "name": "PLAN_ORCHESTRATOR", "class_name": "PlanOrchestrator" }
+  //   ]
+  // },
+  // "migrations": [
+  //   { "tag": "v1", "new_classes": ["PlanOrchestrator"] }
+  // ],
+  // "triggers": { "crons": ["0 3 * * *"] },
+
   "workers_dev": true,
   "routes": [
     { "pattern": "euangelion.app/*", "zone_name": "euangelion.app" },
     { "pattern": "www.euangelion.app/*", "zone_name": "euangelion.app" }
-  ],
-  // Cron trigger for the 30-day anonymous-data retention cleanup
-  // (master plan Section 0.7 + founder direction 2026-05-07).
-  // Schedule: daily at 03:00 UTC.
-  // NOTE: until the OpenNext worker is wrapped with a `scheduled()`
-  // handler, this trigger fires but has no effect. The same cleanup
-  // runs via .github/workflows/retention-cleanup.yml in the meantime.
-  // See docs/runbooks/retention-cleanup-cron.md for the full setup.
-  "triggers": {
-    "crons": ["0 3 * * *"]
-  }
+  ]
 }
