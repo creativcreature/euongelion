@@ -32,19 +32,22 @@
   // is all in src/ and gated behind env flags — the missing piece is
   // exclusively the worker entry-point wrap.
   //
-  // To activate (once the wrap is in place):
-  //   1. Create the KV namespaces and paste real IDs.
-  //   2. Create the queues with `wrangler queues create soul-audit-generation`.
-  //   3. Uncomment the four blocks below.
-  //   4. Deploy.
+  // To activate Phase 5 (queue + DO + cron, once the wrap is in place):
+  //   1. Create the queues with `wrangler queues create soul-audit-generation`.
+  //   2. Uncomment the queues / durable_objects / migrations / triggers blocks below.
+  //   3. Deploy.
   //
-  // "kv_namespaces": [
-  //   {
-  //     "binding": "BRAIN_HEALTH_KV",
-  //     "id": "REPLACE_WITH_PRODUCTION_KV_ID",
-  //     "preview_id": "REPLACE_WITH_PREVIEW_KV_ID"
-  //   }
-  // ],
+  // KV namespaces ARE active (created 2026-05-07).
+  // BRAIN_HEALTH_KV stores cross-isolate provider health for the
+  // multi-provider LLM router (anthropic/openai/google/etc).
+  // Gated by env BRAIN_HEALTH_KV_ENABLED=on (off = in-memory only).
+  "kv_namespaces": [
+    {
+      "binding": "BRAIN_HEALTH_KV",
+      "id": "72370a0e4d334667839b50a1684c9904",
+      "preview_id": "8bdcc96bb99e49cb9ed803b44e28b92e"
+    }
+  ],
   // "queues": {
   //   "producers": [
   //     { "binding": "SOUL_AUDIT_QUEUE", "queue": "soul-audit-generation" }
