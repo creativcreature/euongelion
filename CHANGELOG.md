@@ -5,6 +5,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## MORNING-2026-05-07 / Phase 6: Cohere reranker (feature-flagged) (2026-05-07)
+
+Adds the cross-encoder rerank stage from Anthropic's contextual
+retrieval pipeline. ~67% reduction in retrieval failure rate per
+Anthropic's published measurements.
+
+- `src/lib/soul-audit/reranker.ts` (new): `rerankChunks(query, chunks, topN?)`
+  hits Cohere Rerank-3.5 via plain `fetch()` (no SDK dep). Returns
+  chunks reordered + truncated to topN. NEVER throws — degrades to
+  BM25-only on feature-off / missing-key / Cohere-failure.
+- `src/lib/soul-audit/composer.ts`: integrated between BM25/RRF
+  retrieval and composer-prompt assembly. Pulls BM25 top-25 then
+  reranks to top-8.
+- Feature-gated by `SOUL_AUDIT_RERANKER_ENABLED=on` so we can A/B
+  and revert in one env flip if quality regresses.
+- Cost at $2/1k searches: ~$2/mo at 1k audits, ~$21/mo at 10k.
+- Setup: `wrangler secret put COHERE_API_KEY` + `wrangler secret put SOUL_AUDIT_RERANKER_ENABLED` (value `on`).
+- 11 new tests cover feature-flag gating, missing key, empty input,
+  reorder, topN truncation, 5xx degradation, network failure.
+
+Decisions: SA-014
+Feature: F-002
+
 ## MORNING-2026-05-07 / Big batch: Stripe webhook + Cron Trigger + KV provider-health (2026-05-07)
 
 Three approved infra workstreams from the morning deck, landed in

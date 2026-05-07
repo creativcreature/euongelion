@@ -56,6 +56,7 @@ import {
   providerAvailabilityForUser,
 } from '@/lib/brain/router'
 import { retrieveForDay, type ReferenceChunk } from './reference-retriever'
+import { rerankChunks } from './reranker'
 import type {
   ChiasticPosition,
   CompositionReport,
@@ -503,6 +504,23 @@ export async function composeDay(
       pardesLevel: params.pardesLevel,
     })
     chunks = retrieval.chunks
+  }
+
+  // Optional Cohere reranker — gated by env SOUL_AUDIT_RERANKER_ENABLED.
+  // When enabled, takes the BM25/RRF top ~25 and reorders to top 8
+  // by cross-encoder relevance. When disabled or on failure,
+  // returns chunks unchanged (pass-through). NEVER throws.
+  if (chunks.length > 0) {
+    const rerankQuery =
+      `${params.userResponse} ${params.candidate.teachingText} ${params.candidate.scriptureReference}`.trim()
+    const reranked = await rerankChunks({
+      query: rerankQuery,
+      chunks,
+      topN: 8,
+    })
+    if (reranked.applied) {
+      chunks = reranked.chunks
+    }
   }
   if (chunks.length === 0) {
     if (strictComposer) {
