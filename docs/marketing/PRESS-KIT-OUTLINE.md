@@ -1,4 +1,4 @@
-# EUONGELION Press Kit
+# EUANGELION Press Kit
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -8,11 +8,11 @@
 
 ## Overview
 
-This press kit provides journalists, bloggers, podcasters, and media outlets with everything they need to cover EUONGELION's launch. All materials are designed for easy copy/paste and adaptation.
+This press kit provides journalists, bloggers, podcasters, and media outlets with everything they need to cover EUANGELION's launch. All materials are designed for easy copy/paste and adaptation.
 
 **Press Contact:** [press@wokegod.world]
 **Website:** wokegod.world
-**Social:** @euongelion (Instagram, Twitter)
+**Social:** @euangelion (Instagram, Twitter)
 
 ---
 
@@ -20,7 +20,7 @@ This press kit provides journalists, bloggers, podcasters, and media outlets wit
 
 | Element               | Detail                                                                |
 | --------------------- | --------------------------------------------------------------------- |
-| **Name**              | EUONGELION (pronounced: eu-ahn-GEL-ee-on)                             |
+| **Name**              | EUANGELION (pronounced: eu-ahn-GEL-ee-on)                             |
 | **Meaning**           | Greek for "good news" — the word early Christians used for the Gospel |
 | **What It Is**        | A daily devotional platform for the seeking heart                     |
 | **Launch Date**       | [TBD]                                                                 |
@@ -37,7 +37,7 @@ This press kit provides journalists, bloggers, podcasters, and media outlets wit
 
 ### The Short Version (100 words)
 
-EUONGELION was born from a simple observation: people are spiritually hungry but don't know where to eat. Church attendance is declining, but Google searches for "how to pray" are rising. The founder, a believer who has experienced both the richness of deep faith and the dryness of spiritual burnout, wanted to create something honest—content that meets people where they are without the slick marketing that makes skeptics roll their eyes. EUONGELION is the result: daily readings that are deep but not long, challenging but not judgmental, and accessible to anyone searching for something real.
+EUANGELION was born from a simple observation: people are spiritually hungry but don't know where to eat. Church attendance is declining, but Google searches for "how to pray" are rising. The founder, a believer who has experienced both the richness of deep faith and the dryness of spiritual burnout, wanted to create something honest—content that meets people where they are without the slick marketing that makes skeptics roll their eyes. EUANGELION is the result: daily readings that are deep but not long, challenging but not judgmental, and accessible to anyone searching for something real.
 
 ---
 
@@ -45,19 +45,19 @@ EUONGELION was born from a simple observation: people are spiritually hungry but
 
 _[For feature articles, profiles, or in-depth coverage]_
 
-The idea for EUONGELION came from a contradiction.
+The idea for EUANGELION came from a contradiction.
 
 On one hand, the data is clear: institutional religion is declining. Church attendance drops year over year. Fewer people identify as Christian. The "nones"—those claiming no religious affiliation—are the fastest-growing demographic in America.
 
 On the other hand, the hunger has never been stronger. Google searches for "how to pray" and "what is the meaning of life" spike every year. Meditation apps have millions of users. Podcasts about spirituality, even explicitly Christian ones, are thriving. People aren't less interested in transcendence—they're just less interested in institutions.
 
-The founder of EUONGELION saw this gap personally. As someone who grew up in the church, drifted in their twenties, and eventually found their way back, they understood what it felt like to be spiritually homeless. The desire was there. The vocabulary wasn't. The hunger existed, but the table felt locked.
+The founder of EUANGELION saw this gap personally. As someone who grew up in the church, drifted in their twenties, and eventually found their way back, they understood what it felt like to be spiritually homeless. The desire was there. The vocabulary wasn't. The hunger existed, but the table felt locked.
 
 What was missing? Honest content that didn't require a church membership to access. Deep teaching that respected the intelligence of seekers and skeptics. Something that said, "You're welcome here, mess and all"—and meant it.
 
-EUONGELION is an attempt to fill that gap.
+EUANGELION is an attempt to fill that gap.
 
-The name itself—Greek for "good news"—was chosen deliberately. It's the word Roman soldiers used to announce military victories: "euongelion! The battle is over. The king has won." Early Christians hijacked this word to describe what Jesus accomplished. The platform honors that heritage: a declaration that the war is over, even when it doesn't feel like it.
+The name itself—Greek for "good news"—was chosen deliberately. It's the word Roman soldiers used to announce military victories: "euangelion! The battle is over. The king has won." Early Christians hijacked this word to describe what Jesus accomplished. The platform honors that heritage: a declaration that the war is over, even when it doesn't feel like it.
 
 The content is designed around a few core principles:
 
@@ -71,7 +71,7 @@ The content is designed around a few core principles:
 
 The goal isn't to build another religious app. It's to extend a shepherd's reach—to find the lost sheep who are too far from any church to hear a sermon, too skeptical to walk through stained glass doors, or too burned out to keep going through the motions.
 
-EUONGELION is for them. And it's just getting started.
+EUANGELION is for them. And it's just getting started.
 
 ---
 
@@ -89,7 +89,7 @@ EUONGELION is for them. And it's just getting started.
 
 ---
 
-## What Makes EUONGELION Different
+## What Makes EUANGELION Different
 
 ### 1. No Accounts Required
 
@@ -97,7 +97,7 @@ Users can access all content without creating an account. No emails harvested. N
 
 ### 2. The Soul Audit
 
-Instead of asking users to self-categorize, EUONGELION opens with a simple question: "What are you wrestling with today?" Based on the honest response, the platform matches them with content that speaks to their current reality.
+Instead of asking users to self-categorize, EUANGELION opens with a simple question: "What are you wrestling with today?" Based on the honest response, the platform matches them with content that speaks to their current reality.
 
 ### 3. Deep Theological Content
 
@@ -145,7 +145,7 @@ _[Update with real data post-launch]_
 
 ## Target Audience
 
-EUONGELION is built for:
+EUANGELION is built for:
 
 **The Drifted** — Those who once had faith but slowly stopped showing up. Not dramatic leavers—just people who got busy, tired, distracted.
 
@@ -163,7 +163,7 @@ EUONGELION is built for:
 
 | Asset              | Description              | Format   | Download |
 | ------------------ | ------------------------ | -------- | -------- |
-| Logo (Full)        | EUONGELION wordmark      | SVG, PNG | [link]   |
+| Logo (Full)        | EUANGELION wordmark      | SVG, PNG | [link]   |
 | Logo (Icon)        | Condensed symbol         | SVG, PNG | [link]   |
 | Homepage           | Desktop and mobile views | PNG, JPG | [link]   |
 | Reading Experience | Sample devotional screen | PNG, JPG | [link]   |
@@ -210,17 +210,17 @@ EUONGELION is built for:
 
 For journalists and podcast hosts:
 
-1. Why the name "EUONGELION"? What does it mean?
+1. Why the name "EUANGELION"? What does it mean?
 
 2. Church attendance is declining. Why build a Christian platform now?
 
-3. How is EUONGELION different from other devotional apps?
+3. How is EUANGELION different from other devotional apps?
 
 4. What is the "Soul Audit" and how does it work?
 
 5. You don't require accounts. How do you sustain the platform financially?
 
-6. Who is EUONGELION for? Who is it not for?
+6. Who is EUANGELION for? Who is it not for?
 
 7. What's the PaRDeS framework and why does it matter?
 
@@ -228,7 +228,7 @@ For journalists and podcast hosts:
 
 9. What's your biggest challenge in reaching spiritually hungry but institutionally skeptical people?
 
-10. What does success look like for EUONGELION in one year? Five years?
+10. What does success look like for EUANGELION in one year? Five years?
 
 ---
 
@@ -238,14 +238,14 @@ For media outlets covering the launch:
 
 **Feature-Style:**
 
-- "EUONGELION: A Quiet Place for the Spiritually Homeless"
+- "EUANGELION: A Quiet Place for the Spiritually Homeless"
 - "The Devotional App That Doesn't Want Your Data—Just Your Honest Questions"
 - "Meet the Platform Trying to Reach the 'Nones' Without the Hype"
 
 **News-Style:**
 
 - "New Devotional Platform Launches with Privacy-First Approach"
-- "EUONGELION Offers Deep Theology Without Required Accounts"
+- "EUANGELION Offers Deep Theology Without Required Accounts"
 - "wokegod.world Goes Live with Free Daily Devotional Content"
 
 **Opinion/Essay-Style:**
@@ -274,10 +274,10 @@ For media outlets covering the launch:
 
 | Platform  | Handle      | Link   |
 | --------- | ----------- | ------ |
-| Instagram | @euongelion | [link] |
-| Twitter/X | @euongelion | [link] |
-| Facebook  | EUONGELION  | [link] |
-| TikTok    | @euongelion | [link] |
+| Instagram | @euangelion | [link] |
+| Twitter/X | @euangelion | [link] |
+| Facebook  | EUANGELION  | [link] |
+| TikTok    | @euangelion | [link] |
 
 ---
 
@@ -310,7 +310,7 @@ For verification of claims made in this press kit:
 - **Church attendance statistics:** Pew Research Center, Gallup
 - **Google search trends:** Google Trends (publicly available)
 - **PaRDeS framework:** Academic sources on Jewish hermeneutics
-- **Greek etymology of "euongelion":** Strong's Concordance, Thayer's Lexicon
+- **Greek etymology of "euangelion":** Strong's Concordance, Thayer's Lexicon
 
 ---
 

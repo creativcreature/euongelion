@@ -1,4 +1,4 @@
-# EUONGELION UI Messaging Guide
+# EUANGELION UI Messaging Guide
 
 **Version:** 1.0
 **Created:** January 17, 2026

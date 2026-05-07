@@ -24,6 +24,7 @@ import {
   extractKeywords,
   isMetadataChunk,
 } from './reference-utils'
+import { loadReferenceIndex } from './reference-index-loader'
 
 // Re-export the canonical source type for consumers
 export type { ReferenceSourceType } from './reference-utils'
@@ -291,18 +292,24 @@ function corpusSignature(corpus: ReferenceChunk[]): string {
 let cachedCorpus: ReferenceChunk[] | null = null
 let cachedBm25Index: Bm25Index | null = null
 
-export function buildChunkedCorpus(root: string): ReferenceChunk[] {
+export async function buildChunkedCorpus(root: string): Promise<ReferenceChunk[]> {
   if (cachedCorpus) return cachedCorpus
 
   // Detect whether the reference library root actually exists and has files.
-  // On Vercel, content/reference/ is gitignored so this will be false.
+  // On Vercel/Cloudflare Workers, content/reference/ is gitignored so this
+  // will be false. fs.existsSync may throw on some platforms (e.g. Workers
+  // with nodejs_compat), so wrap defensively.
   let referenceLibraryAvailable = false
-  if (fs.existsSync(root)) {
-    try {
-      referenceLibraryAvailable = fs.readdirSync(root).length > 0
-    } catch {
-      // Directory exists but isn't readable — treat as unavailable.
+  try {
+    if (fs.existsSync(root)) {
+      try {
+        referenceLibraryAvailable = fs.readdirSync(root).length > 0
+      } catch {
+        // Directory exists but isn't readable — treat as unavailable.
+      }
     }
+  } catch {
+    // fs.existsSync may throw on platforms without full Node.js fs support.
   }
 
   const files: string[] = []
@@ -344,64 +351,57 @@ export function buildChunkedCorpus(root: string): ReferenceChunk[] {
     }
   }
 
-  // Load pre-built reference index if available (generated at build time
-  // from content/reference/ which is too large to deploy to Vercel directly).
-  // Only needed when the live reference library isn't available OR
-  // when the mounted library produced no usable chunks.
+  // Load pre-built reference index (generated at build time from
+  // content/reference/ which is too large to deploy). Uses async loader
+  // that tries Cloudflare ASSETS binding → fs → self-fetch.
   if (!referenceLibraryAvailable || files.length === 0 || corpus.length === 0) {
-    const indexPath = path.join(process.cwd(), 'public', 'reference-index.json')
     try {
-      if (fs.existsSync(indexPath)) {
-        const raw = fs.readFileSync(indexPath, 'utf8')
-        const indexed = JSON.parse(raw) as BaseChunk[]
-        if (Array.isArray(indexed)) {
-          for (const rawChunk of indexed) {
-            if (corpus.length >= MAX_CHUNKS) break
-            if (!rawChunk || typeof rawChunk.content !== 'string' || !rawChunk.id) {
-              continue
-            }
-            if (isDisallowedDevotionalSource(rawChunk.source)) continue
-            if (
-              !VALID_SOURCE_TYPES.has(rawChunk.sourceType as ReferenceSourceType)
-            ) {
-              continue
-            }
-            if (isMetadataChunk(rawChunk.content)) continue
-
-            const chunk: BaseChunk = {
-              ...rawChunk,
-              priority: typeof rawChunk.priority === 'number' ? rawChunk.priority : 2,
-              wordCount:
-                typeof rawChunk.wordCount === 'number'
-                  ? rawChunk.wordCount
-                  : rawChunk.content.split(/\s+/).filter(Boolean).length,
-              scriptureRefs: Array.isArray(rawChunk.scriptureRefs)
-                ? rawChunk.scriptureRefs
-                : [],
-              keywords: Array.isArray(rawChunk.keywords)
-                ? rawChunk.keywords
-                : extractKeywords(rawChunk.content),
-              contextualSummary:
-                rawChunk.contextualSummary ||
-                buildContextualSummary({
-                  source: rawChunk.source,
-                  sourceType: rawChunk.sourceType,
-                  title: rawChunk.title,
-                  scriptureRefs: rawChunk.scriptureRefs,
-                  keywords: rawChunk.keywords,
-                }),
-              contextualizedContent:
-                rawChunk.contextualizedContent || contextAwareText(rawChunk),
-            }
-
-            corpus.push(
-              addNormalized([chunk])[0] as ReferenceChunk,
-            )
-          }
+      const indexed = await loadReferenceIndex()
+      for (const rawChunk of indexed) {
+        if (corpus.length >= MAX_CHUNKS) break
+        if (!rawChunk || typeof rawChunk.content !== 'string' || !rawChunk.id) {
+          continue
         }
+        if (isDisallowedDevotionalSource(rawChunk.source)) continue
+        if (
+          !VALID_SOURCE_TYPES.has(rawChunk.sourceType as ReferenceSourceType)
+        ) {
+          continue
+        }
+        if (isMetadataChunk(rawChunk.content)) continue
+
+        const chunk: BaseChunk = {
+          ...rawChunk,
+          priority: typeof rawChunk.priority === 'number' ? rawChunk.priority : 2,
+          wordCount:
+            typeof rawChunk.wordCount === 'number'
+              ? rawChunk.wordCount
+              : rawChunk.content.split(/\s+/).filter(Boolean).length,
+          scriptureRefs: Array.isArray(rawChunk.scriptureRefs)
+            ? rawChunk.scriptureRefs
+            : [],
+          keywords: Array.isArray(rawChunk.keywords)
+            ? rawChunk.keywords
+            : extractKeywords(rawChunk.content),
+          contextualSummary:
+            rawChunk.contextualSummary ||
+            buildContextualSummary({
+              source: rawChunk.source,
+              sourceType: rawChunk.sourceType,
+              title: rawChunk.title,
+              scriptureRefs: rawChunk.scriptureRefs,
+              keywords: rawChunk.keywords,
+            }),
+          contextualizedContent:
+            rawChunk.contextualizedContent || contextAwareText(rawChunk),
+        }
+
+        corpus.push(
+          addNormalized([chunk])[0] as ReferenceChunk,
+        )
       }
     } catch {
-      // Index may not exist or may be corrupt — continue
+      // Index loading failed — continue with empty corpus
     }
   }
 
@@ -734,10 +734,10 @@ function buildFallbackRanked(params: {
  * 2) BM25 lexical retrieval on contextualized chunk text
  * 3) rank fusion + diversity
  */
-export function retrieveForDay(params: RetrievalRequest): RetrievalResult {
+export async function retrieveForDay(params: RetrievalRequest): Promise<RetrievalResult> {
   const limit = clampRetrievalLimit(params.limit)
   const root = path.join(process.cwd(), 'content', 'reference')
-  const corpus = buildChunkedCorpus(root)
+  const corpus = await buildChunkedCorpus(root)
 
   if (corpus.length === 0) {
     return {
@@ -858,13 +858,13 @@ export function retrieveForDay(params: RetrievalRequest): RetrievalResult {
 /**
  * Get corpus stats for diagnostics.
  */
-export function getCorpusStats(): {
+export async function getCorpusStats(): Promise<{
   totalChunks: number
   bySourceType: Record<ReferenceSourceType, number>
   totalWords: number
-} {
+}> {
   const root = path.join(process.cwd(), 'content', 'reference')
-  const corpus = buildChunkedCorpus(root)
+  const corpus = await buildChunkedCorpus(root)
 
   const bySourceType: Record<ReferenceSourceType, number> = {
     commentary: 0,

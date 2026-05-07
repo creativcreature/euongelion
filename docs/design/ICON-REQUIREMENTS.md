@@ -1,4 +1,4 @@
-# EUONGELION Icon Requirements
+# EUANGELION Icon Requirements
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -295,14 +295,14 @@ Consider these icon sets for baseline, then customize as needed:
 
 ### Custom Icons Required
 
-These icons may need custom design as they are specific to EUONGELION:
+These icons may need custom design as they are specific to EUANGELION:
 
 | Icon              | Description                     | Notes                              |
 | ----------------- | ------------------------------- | ---------------------------------- |
 | **word-study**    | Hebrew Aleph or stylized letter | Represents original language study |
 | **breath-prayer** | Stylized breath/wind            | For breath prayer feature          |
 | **pardes**        | Four layers symbol              | For PaRDeS interpretation levels   |
-| **lamb**          | EUONGELION lamb mark            | Simplified version of logo         |
+| **lamb**          | EUANGELION lamb mark            | Simplified version of logo         |
 | **tehom**         | Deep water/void                 | For brand-specific use             |
 
 ---

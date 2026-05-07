@@ -46,7 +46,7 @@ This platform was born from a single verse:
 
 For years, those words felt impossible. But then something shifted. Not because life got easier. Because those words became real.
 
-**EUONGELION exists because that kind of encounter shouldn't be rare.**
+**EUANGELION exists because that kind of encounter shouldn't be rare.**
 
 ---
 

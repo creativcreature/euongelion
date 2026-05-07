@@ -1,8 +1,9 @@
+import { randomUUID } from 'crypto'
 import { NextRequest, NextResponse } from 'next/server'
 import {
   createRequestId,
-  getDeploymentFingerprint,
   getClientKey,
+  getDeploymentFingerprint,
   isSafeAuditOptionId,
   isSafeAuditRunId,
   jsonError,
@@ -13,268 +14,192 @@ import {
   takeRateLimit,
   withRequestIdHeaders,
 } from '@/lib/api-security'
-import { buildOnboardingDay } from '@/lib/soul-audit/curated-builder'
-import { parseAuditIntent } from '@/lib/brain/intent-parser'
+import { crisisRequirement } from '@/lib/soul-audit/crisis'
 import {
-  buildDeterministicDay,
-  composeDay,
-  composeRecap,
-  composeSabbath,
-  retrieveIngredientsForDay,
-  WEEK_CHIASTIC,
-  WEEK_PARDES,
-} from '@/lib/soul-audit/composer'
-import { type IngredientDirection } from '@/lib/soul-audit/ingredient-selector'
+  STALL_TIMEOUT_MS,
+  TOTAL_PLAN_DAYS,
+  USING_QUEUE_FALLBACK,
+} from '@/lib/soul-audit/constants'
+import { verifyConsentToken } from '@/lib/soul-audit/consent-token'
+import { buildSchedule, calculateStartDate } from '@/lib/soul-audit/plan-utils'
 import {
-  createPlan,
-  getAllPlanDays,
   getAuditOptionsWithFallback,
   getAuditRunWithFallback,
   getConsentWithFallback,
-  getPlanInstanceWithFallback,
   getSelectionWithFallback,
   saveConsent,
   saveSelection,
 } from '@/lib/soul-audit/repository'
-import { resolveStartPolicy } from '@/lib/soul-audit/schedule'
-import { verifyConsentToken } from '@/lib/soul-audit/consent-token'
 import { verifyRunToken } from '@/lib/soul-audit/run-token'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
-import { crisisRequirement } from '@/lib/soul-audit/crisis'
-import type {
-  CustomPlanDay,
-  SoulAuditSelectRequest,
-  SoulAuditSelectResponse,
-} from '@/types/soul-audit'
+import { createAdminClient } from '@/lib/supabase/admin'
+import type { JobRecord } from '@/types/soul-audit-plan'
+import type { SoulAuditSelectRequest } from '@/types/soul-audit'
+
+// ─── Constants ──────────────────────────────────────────────────────
 
 const MAX_SELECT_BODY_BYTES = 32_768
 const MAX_SELECT_REQUESTS_PER_MINUTE = 30
-const CURRENT_ROUTE_COOKIE = 'euangelion_current_route'
-const CURRENT_ROUTE_MAX_AGE = 30 * 24 * 60 * 60
-const CANDIDATES_PER_DIRECTION = 5
 
-type RagCandidate = {
-  key: string
-  seriesSlug: string
-  seriesTitle: string
-  sourcePath: string
-  dayNumber: number
-  dayTitle: string
-  scriptureReference: string
-  scriptureText: string
-  teachingText: string
-  reflectionPrompt: string
-  prayerText: string
-  takeawayText: string
-  searchText: string
-}
+// ─── Helpers ────────────────────────────────────────────────────────
 
-type DevotionalDepthPreference =
-  | 'short_5_7'
-  | 'medium_20_30'
-  | 'long_45_60'
-  | 'variable'
-
-// ─── Helpers ─────────────────────────────────────────────────────────
-
-function toOnboardingMeta(
-  plan:
-    | {
-        start_policy:
-          | 'monday_cycle'
-          | 'tuesday_archived_monday'
-          | 'wed_sun_onboarding'
-        onboarding_variant?:
-          | 'none'
-          | 'wednesday_3_day'
-          | 'thursday_2_day'
-          | 'friday_1_day'
-          | 'weekend_bridge'
-        onboarding_days?: number
-        cycle_start_at: string
-        timezone: string
-        timezone_offset_minutes: number
-      }
-    | {
-        startPolicy:
-          | 'monday_cycle'
-          | 'tuesday_archived_monday'
-          | 'wed_sun_onboarding'
-        onboardingVariant?:
-          | 'none'
-          | 'wednesday_3_day'
-          | 'thursday_2_day'
-          | 'friday_1_day'
-          | 'weekend_bridge'
-        onboardingDays?: number
-        cycleStartAt: string
-        timezone: string
-        timezoneOffsetMinutes: number
-      },
-) {
-  if ('start_policy' in plan) {
-    return {
-      startPolicy: plan.start_policy,
-      onboardingVariant: plan.onboarding_variant ?? 'none',
-      onboardingDays: plan.onboarding_days ?? 0,
-      cycleStartAt: plan.cycle_start_at,
-      timezone: plan.timezone,
-      timezoneOffsetMinutes: plan.timezone_offset_minutes,
-    }
-  }
-
-  return {
-    startPolicy: plan.startPolicy,
-    onboardingVariant: plan.onboardingVariant ?? 'none',
-    onboardingDays: plan.onboardingDays ?? 0,
-    cycleStartAt: plan.cycleStartAt,
-    timezone: plan.timezone,
-    timezoneOffsetMinutes: plan.timezoneOffsetMinutes,
-  }
-}
-
-function withCurrentRouteCookie(response: NextResponse, route: string) {
-  response.cookies.set(CURRENT_ROUTE_COOKIE, route, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
-    maxAge: CURRENT_ROUTE_MAX_AGE,
-    path: '/',
-  })
-  return response
-}
-
-function getInitialPlanDayNumber(
-  days: Array<{ day: number } | { day_number: number }>,
-): number {
-  const dayNumbers = days
-    .map((day) => ('day' in day ? day.day : day.day_number))
-    .filter((day): day is number => Number.isFinite(day))
-    .sort((a, b) => a - b)
-
-  if (dayNumbers.length === 0) return 1
-  return dayNumbers.includes(0) ? 0 : dayNumbers[0]
-}
-
-function buildAiResultsRoute(planToken: string, day: number): string {
-  return `/soul-audit/plan/${planToken}?day=${day}`
-}
-
-function normalizeDepthPreference(
-  value: unknown,
-): DevotionalDepthPreference | null {
+function maybeSupabase() {
   if (
-    value === 'short_5_7' ||
-    value === 'medium_20_30' ||
-    value === 'long_45_60' ||
-    value === 'variable'
+    !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    !process.env.SUPABASE_SERVICE_ROLE_KEY
   ) {
-    return value
+    return null
   }
-  return null
+  try {
+    return createAdminClient()
+  } catch {
+    return null
+  }
 }
 
-function wordTargetForDepth(params: {
-  intentDepth: 'introductory' | 'intermediate' | 'deep-study'
-  preference: DevotionalDepthPreference | null
-}): number {
-  const preference = params.preference
-  if (preference === 'short_5_7') return 4000
-  if (preference === 'medium_20_30') return 5000
-  if (preference === 'long_45_60') return 6000
+/**
+ * Look up an existing job row by run_id.
+ * Returns the first matching job or null.
+ */
+async function findJobByRunId(runId: string): Promise<JobRecord | null> {
+  const supabase = maybeSupabase()
+  if (!supabase) return null
 
-  if (params.intentDepth === 'introductory') return 4000
-  if (params.intentDepth === 'deep-study') return 6000
-  return 5000
+  try {
+    const { data, error } = await supabase
+      .from('soul_audit_jobs' as any)
+      .select('*')
+      .eq('run_id', runId)
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .maybeSingle()
+
+    if (error || !data) return null
+    return data as unknown as JobRecord
+  } catch {
+    return null
+  }
 }
 
-function buildRagCandidates(params: {
-  runId: string
-  responseText: string
-  intent: ReturnType<typeof parseAuditIntent>
-  direction: IngredientDirection
-}): RagCandidate[] {
-  const baseThemes =
-    params.direction.matchedKeywords.length > 0
-      ? params.direction.matchedKeywords
-      : params.intent.themes
-  const scriptureRetrieval = retrieveIngredientsForDay({
-    candidate: {
-      key: `scripture-plan:${params.runId}:${params.direction.directionSlug}`,
-      seriesSlug: params.direction.directionSlug,
-      seriesTitle: params.direction.title,
-      sourcePath: 'reference-rag',
-      dayNumber: 1,
-      dayTitle: params.direction.title,
-      scriptureReference: params.direction.scriptureAnchor,
-      scriptureText: params.direction.day1Preview.scriptureText,
-      teachingText: params.direction.day1Preview.teachingExcerpt,
-      reflectionPrompt: params.direction.day1Preview.reflectionPrompt,
-      prayerText: params.direction.reasoning,
-      takeawayText: params.direction.question,
-      searchText: params.responseText,
-    },
-    userResponse: params.responseText,
-    intent: params.intent,
-    chiasticPosition: 'A',
-    pardesLevel: 'peshat',
-    limit: 25,
-  })
-  const scripturePlan = Array.from(
-    new Set(
-      [
-        params.direction.scriptureAnchor,
-        ...params.intent.scriptureAnchors,
-        ...scriptureRetrieval.flatMap((chunk) => chunk.scriptureRefs ?? []),
-      ]
-        .map((ref) => ref.trim())
-        .filter((ref) => ref.length > 0),
-    ),
-  )
+/**
+ * Insert a new job row into soul_audit_jobs.
+ */
+async function insertJob(job: JobRecord): Promise<boolean> {
+  const supabase = maybeSupabase()
+  if (!supabase) return false
 
-  if (scripturePlan.length === 0) {
-    throw new Error('SCRIPTURE_PLAN_EMPTY')
-  }
+  try {
+    const { error } = await supabase
+      .from('soul_audit_jobs' as any)
+      .insert(job as any)
 
-  return Array.from({ length: CANDIDATES_PER_DIRECTION }, (_, index) => {
-    const dayNumber = index + 1
-    const scriptureReference =
-      scripturePlan[index % scripturePlan.length] ?? scripturePlan[0]
-    const chiastic = WEEK_CHIASTIC[index] ?? "A'"
-    const pardes = WEEK_PARDES[index] ?? 'integrated'
-    const focus =
-      baseThemes[index % Math.max(1, baseThemes.length)] ?? 'faithful study'
-    const scripture = scriptureReference
-
-    return {
-      key: `rag:${params.runId}:${params.direction.directionSlug}:${dayNumber}`,
-      seriesSlug: params.direction.directionSlug,
-      seriesTitle: params.direction.title,
-      sourcePath: 'reference-rag',
-      dayNumber,
-      dayTitle: `Day ${dayNumber}: ${focus}`,
-      scriptureReference: scripture,
-      scriptureText:
-        dayNumber === 1
-          ? params.direction.day1Preview.scriptureText
-          : '',
-      teachingText: `RAG-composed day (${chiastic}, ${pardes}) grounded in reference witnesses around ${focus}.`,
-      reflectionPrompt: `Where does ${scripture} challenge or clarify ${focus}?`,
-      prayerText:
-        'Lord, form truth and courage in me as I read, reflect, and obey.',
-      takeawayText:
-        'Write one concrete act of obedience from today’s reading and complete it before the day ends.',
-      searchText: `${params.responseText} ${focus} ${scripture}`.toLowerCase(),
+    if (error) {
+      console.error('[soul-audit:select] Job insert failed:', error.message)
+      return false
     }
-  })
+    return true
+  } catch (err) {
+    console.error(
+      '[soul-audit:select] Job insert threw:',
+      err instanceof Error ? err.message : err,
+    )
+    return false
+  }
 }
 
-// ─── POST Handler ────────────────────────────────────────────────────
+/**
+ * Insert a plan record into devotional_plan_instances.
+ * Uses existing column names: session_token, audit_run_id, plan_token.
+ */
+async function insertPlanInstance(params: {
+  id: string
+  planToken: string
+  auditRunId: string
+  sessionToken: string
+  seriesSlug: string
+  timezone: string
+  timezoneOffsetMinutes: number
+  startPolicy: string
+  startedAt: string
+  cycleStartAt: string
+  theme: string | null
+  scriptureAnchor: string | null
+  schedule: unknown
+  status: string
+}): Promise<boolean> {
+  const supabase = maybeSupabase()
+  if (!supabase) return false
+
+  try {
+    const { error } = await supabase
+      .from('devotional_plan_instances' as any)
+      .insert({
+        id: params.id,
+        plan_token: params.planToken,
+        audit_run_id: params.auditRunId,
+        session_token: params.sessionToken,
+        series_slug: params.seriesSlug,
+        timezone: params.timezone,
+        timezone_offset_minutes: params.timezoneOffsetMinutes,
+        start_policy: params.startPolicy,
+        started_at: params.startedAt,
+        cycle_start_at: params.cycleStartAt,
+        theme: params.theme,
+        scripture_anchor: params.scriptureAnchor,
+        schedule: params.schedule,
+        status: params.status,
+        created_at: new Date().toISOString(),
+      } as any)
+
+    if (error) {
+      console.error(
+        '[soul-audit:select] Plan instance insert failed:',
+        error.message,
+      )
+      return false
+    }
+    return true
+  } catch (err) {
+    console.error(
+      '[soul-audit:select] Plan instance insert threw:',
+      err instanceof Error ? err.message : err,
+    )
+    return false
+  }
+}
+
+/**
+ * Reset a stalled job back to pending so the /status endpoint can resume it.
+ */
+async function resetStalledJob(jobId: string): Promise<boolean> {
+  const supabase = maybeSupabase()
+  if (!supabase) return false
+
+  try {
+    const { error } = await supabase
+      .from('soul_audit_jobs' as any)
+      .update({
+        status: 'pending',
+        error: null,
+        generating_since: null,
+        updated_at: new Date().toISOString(),
+      } as any)
+      .eq('id', jobId)
+
+    return !error
+  } catch {
+    return false
+  }
+}
+
+// ─── POST Handler ───────────────────────────────────────────────────
 
 export async function POST(request: NextRequest) {
   const requestId = createRequestId()
   const clientKey = getClientKey(request)
+
   try {
+    // ─── Parse body ───
     const parsed = await readJsonWithLimit<SoulAuditSelectRequest>({
       request,
       maxBytes: MAX_SELECT_BODY_BYTES,
@@ -287,6 +212,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
+    // ─── Rate limit ───
     const limiter = await takeRateLimit({
       namespace: 'soul-audit-select',
       key: clientKey,
@@ -322,6 +248,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
+    // ─── Session ───
     const sessionToken = await getOrCreateAuditSessionToken()
 
     // ─── Run verification ───
@@ -370,7 +297,6 @@ export async function POST(request: NextRequest) {
     // ─── Consent verification (inline or via token) ───
     let consent = await getConsentWithFallback(runId)
     if (!consent) {
-      // Try consentToken first (legacy path)
       const verifiedConsent = verifyConsentToken({
         token: body.consentToken,
         expectedRunId: runId,
@@ -387,7 +313,6 @@ export async function POST(request: NextRequest) {
       }
     }
     if (!consent && body.essentialAccepted) {
-      // Inline consent — accepted as part of selection (no separate consent step)
       consent = await saveConsent({
         runId,
         sessionToken,
@@ -414,7 +339,8 @@ export async function POST(request: NextRequest) {
 
     if (run.crisis_detected && !consent.crisis_acknowledged) {
       return jsonError({
-        error: 'Crisis resource acknowledgement is required before continuing.',
+        error:
+          'Crisis resource acknowledgement is required before continuing.',
         code: 'CRISIS_ACK_REQUIRED',
         status: 400,
         requestId,
@@ -422,48 +348,6 @@ export async function POST(request: NextRequest) {
           crisis: crisisRequirement(true),
         },
       })
-    }
-
-    // ─── Idempotency: return existing selection if already made ───
-    const existingSelection = await getSelectionWithFallback(runId)
-    if (existingSelection) {
-      const hasPlan = !!existingSelection.plan_token
-      const existingPlan = hasPlan
-        ? await getPlanInstanceWithFallback(existingSelection.plan_token!)
-        : null
-      const existingPlanDays = hasPlan
-        ? await getAllPlanDays(existingSelection.plan_token!)
-        : []
-      const existingInitialDay = getInitialPlanDayNumber(existingPlanDays)
-      const existingRoute = existingSelection.plan_token
-        ? buildAiResultsRoute(existingSelection.plan_token, existingInitialDay)
-        : '/soul-audit/results'
-
-      const existingPayload: SoulAuditSelectResponse = {
-        ok: true,
-        auditRunId: runId,
-        requestId,
-        deploymentFingerprint: getDeploymentFingerprint(),
-        selectionType: existingSelection.option_kind,
-        route: existingRoute,
-        planToken: existingSelection.plan_token ?? undefined,
-        seriesSlug: existingSelection.series_slug,
-        planDays: hasPlan
-          ? existingPlanDays
-              .map((day) => day.content)
-              .sort((a, b) => a.day - b.day)
-          : undefined,
-        onboardingMeta: existingPlan
-          ? toOnboardingMeta(existingPlan)
-          : undefined,
-      }
-      return withCurrentRouteCookie(
-        withRequestIdHeaders(
-          NextResponse.json(existingPayload, { status: 200 }),
-          requestId,
-        ),
-        existingPayload.route,
-      )
     }
 
     // ─── Find selected option ───
@@ -480,38 +364,12 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // ─── Resolve selected RAG direction from persisted option payload ───
-    const intent = parseAuditIntent(run.response_text)
-    const keywordPool = [
-      ...intent.themes,
-      ...run.response_text
-        .toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, ' ')
-        .split(/\s+/)
-        .filter((token) => token.length >= 3)
-        .slice(0, 8),
-    ]
-    const selectedDirection: IngredientDirection = {
-      id: option.id,
-      rank: option.rank,
-      title: option.title,
-      question: option.question,
-      reasoning: option.reasoning,
-      scriptureAnchor: option.preview?.verse?.trim() ?? '',
-      directionSlug: option.slug,
-      confidence: option.confidence,
-      day1Preview: {
-        title: option.title,
-        scriptureReference: option.preview?.verse?.trim() ?? '',
-        scriptureText: option.preview?.verseText?.trim() ?? '',
-        teachingExcerpt: option.preview?.paragraph?.trim() ?? '',
-        reflectionPrompt: option.question,
-      },
-      matchedKeywords: Array.from(new Set(keywordPool)),
-      referenceSourceHints: [],
-    }
+    // Extract theme and scripture anchor from the selected option
+    const theme = option.title
+    const scriptureAnchor = option.preview?.verse?.trim() ?? ''
+    const userInput = run.response_text
 
-    if (!selectedDirection.scriptureAnchor) {
+    if (!scriptureAnchor) {
       return jsonError({
         error: 'Selected option is missing scripture focus. Please retry.',
         code: 'DIRECTION_SCRIPTURE_MISSING',
@@ -520,122 +378,10 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    const seriesCandidates = buildRagCandidates({
-      runId,
-      responseText: run.response_text,
-      intent,
-      direction: selectedDirection,
-    })
-
-    // ─── Compose days from reference library ───
-    // Day 1: LLM-composed from retrieved references.
-    // Days 2-5: Deterministic composition from retrieved references.
-    // This keeps selection fast/reliable while still producing fully
-    // RAG-grounded, non-prefab day content.
-    const usedChunkIds: string[] = []
-    const composedDays: CustomPlanDay[] = []
-    const targetWordCount = wordTargetForDepth({
-      intentDepth: intent.depthPreference,
-      preference: normalizeDepthPreference(body.devotionalDepthPreference),
-    })
-
-    for (
-      let i = 0;
-      i < seriesCandidates.length && i < CANDIDATES_PER_DIRECTION;
-      i++
-    ) {
-      const candidate = seriesCandidates[i]
-      const dayNumber = i + 1
-      const chunks = retrieveIngredientsForDay({
-        candidate,
-        userResponse: run.response_text,
-        intent,
-        chiasticPosition: WEEK_CHIASTIC[i] ?? "B'",
-        pardesLevel: WEEK_PARDES[i] ?? 'integrated',
-        excludeChunkIds: usedChunkIds,
-        limit: 20,
-      })
-
-      if (chunks.length === 0 && process.env.NODE_ENV !== 'test') {
-        return jsonError({
-          error:
-            'Reference library is unavailable right now. Please retry in a moment.',
-          code: 'REFERENCE_LIBRARY_UNAVAILABLE',
-          status: 503,
-          requestId,
-        })
-      }
-
-      console.info(
-        `[soul-audit:select] Composing Day ${dayNumber} — candidate: ${candidate.key}, ` +
-          `chunks: ${chunks.length}, target: ${targetWordCount}w`,
-      )
-
-      const dayParams = {
-        dayNumber,
-        chiasticPosition: WEEK_CHIASTIC[i] ?? ("B'" as const),
-        pardesLevel: WEEK_PARDES[i] ?? 'integrated',
-        candidate,
-        userResponse: run.response_text,
-        intent,
-        targetWordCount,
-        referenceChunks: chunks,
-        planTitle: selectedDirection.title,
-      }
-
-      if (dayNumber === 1) {
-        // Day 1 uses the LLM composer for a high-fidelity opening essay.
-        // If the provider fails, degrade to deterministic RAG composition
-        // instead of failing the entire selection flow.
-        try {
-          const result = await composeDay(dayParams)
-          usedChunkIds.push(...result.usedChunkIds)
-          composedDays.push(result.day)
-        } catch (error) {
-          const code =
-            error instanceof Error ? error.message : 'COMPOSER_UNAVAILABLE'
-          if (code === 'REFERENCE_LIBRARY_UNAVAILABLE') {
-            return jsonError({
-              error:
-                'Reference library is unavailable right now. Please retry in a moment.',
-              code,
-              status: 503,
-              requestId,
-            })
-          }
-          console.warn(
-            `[soul-audit:select] Day 1 LLM composer unavailable (${code}); using deterministic RAG composition.`,
-          )
-          composedDays.push(buildDeterministicDay(dayParams))
-          usedChunkIds.push(...chunks.map((chunk) => chunk.id))
-        }
-        continue
-      }
-
-      composedDays.push(buildDeterministicDay(dayParams))
-      usedChunkIds.push(...chunks.map((chunk) => chunk.id))
-    }
-
-    // ─── Days 6-7: recap (Sat) + sabbath (Sun), deterministic ───
-    const recapDay = composeRecap({
-      previousDays: composedDays,
-      planTitle: selectedDirection.title,
-      userResponse: run.response_text,
-    })
-
-    const sabbathDay = composeSabbath({
-      previousDays: composedDays,
-      planTitle: selectedDirection.title,
-      userResponse: run.response_text,
-    })
-
-    const allDays = [...composedDays, recapDay, sabbathDay]
-
-    // ─── Timezone + schedule ───
+    // ─── Timezone resolution ───
     const timezone =
       sanitizeTimezone(body.timezone) ??
       sanitizeTimezone(request.headers.get('x-timezone')) ??
-      Intl.DateTimeFormat().resolvedOptions().timeZone ??
       'UTC'
     const offsetMinutes =
       normalizeTimezoneOffsetMinutes(body.timezoneOffsetMinutes) ??
@@ -644,77 +390,209 @@ export async function POST(request: NextRequest) {
       ) ??
       0
 
-    const schedule = resolveStartPolicy(new Date(), offsetMinutes)
+    // ─── Idempotency: check for existing job ───
+    const existingJob = await findJobByRunId(runId)
 
-    // Mid-week onboarding: prepend an onboarding day if needed
-    const daysForPlan =
-      schedule.startPolicy === 'wed_sun_onboarding' && allDays[0]
-        ? [
-            buildOnboardingDay({
-              userResponse: run.response_text,
-              firstDay: allDays[0],
-              variant: schedule.onboardingVariant,
-              onboardingDays: schedule.onboardingDays,
-            }),
-            ...allDays,
-          ]
-        : allDays
+    if (existingJob) {
+      const now = Date.now()
+      const updatedAt = new Date(existingJob.updated_at).getTime()
+      const age = now - updatedAt
 
-    // ─── Create plan + save selection ───
-    const plan = await createPlan({
-      runId,
+      // ── complete: plan fully generated ──
+      if (existingJob.status === 'complete') {
+        return withRequestIdHeaders(
+          NextResponse.json(
+            {
+              ok: true,
+              auditRunId: runId,
+              requestId,
+              deploymentFingerprint: getDeploymentFingerprint(),
+              jobId: existingJob.id,
+              status: 'complete' as const,
+              planId: existingJob.plan_id,
+              route: '/daily-bread',
+            },
+            { status: 200 },
+          ),
+          requestId,
+        )
+      }
+
+      // ── generating + recent: still in progress ──
+      if (existingJob.status === 'generating' && age < STALL_TIMEOUT_MS) {
+        return withRequestIdHeaders(
+          NextResponse.json(
+            {
+              ok: true,
+              auditRunId: runId,
+              requestId,
+              deploymentFingerprint: getDeploymentFingerprint(),
+              jobId: existingJob.id,
+              status: 'generating' as const,
+              progress: existingJob.progress,
+              currentDay: existingJob.current_day,
+              totalDays: existingJob.total_days,
+              pollUrl: `/api/soul-audit/select/status?jobId=${existingJob.id}`,
+            },
+            { status: 200 },
+          ),
+          requestId,
+        )
+      }
+
+      // ── stalled: generating but no update for > STALL_TIMEOUT ──
+      if (
+        (existingJob.status === 'generating' && age >= STALL_TIMEOUT_MS) ||
+        existingJob.status === 'stalled'
+      ) {
+        console.warn(
+          `[soul-audit:select] Job ${existingJob.id} is stalled (age: ${Math.round(age / 1000)}s). ` +
+            `Resetting to pending for /status to resume.`,
+        )
+        await resetStalledJob(existingJob.id)
+
+        return withRequestIdHeaders(
+          NextResponse.json(
+            {
+              ok: true,
+              auditRunId: runId,
+              requestId,
+              deploymentFingerprint: getDeploymentFingerprint(),
+              jobId: existingJob.id,
+              status: 'pending' as const,
+              pollUrl: `/api/soul-audit/select/status?jobId=${existingJob.id}`,
+            },
+            { status: 200 },
+          ),
+          requestId,
+        )
+      }
+
+      // ── pending + recent: still waiting for /status to pick it up ──
+      if (existingJob.status === 'pending' && age < STALL_TIMEOUT_MS) {
+        return withRequestIdHeaders(
+          NextResponse.json(
+            {
+              ok: true,
+              auditRunId: runId,
+              requestId,
+              deploymentFingerprint: getDeploymentFingerprint(),
+              jobId: existingJob.id,
+              status: 'pending' as const,
+              pollUrl: `/api/soul-audit/select/status?jobId=${existingJob.id}`,
+            },
+            { status: 200 },
+          ),
+          requestId,
+        )
+      }
+
+      // ── error or stale pending: fall through to create new job ──
+      console.info(
+        `[soul-audit:select] Existing job ${existingJob.id} has status='${existingJob.status}'. Creating new job.`,
+      )
+    }
+
+    // ─── Calculate start date + build schedule ───
+    const nowUTC = new Date()
+    const { startDateUTC } = calculateStartDate(nowUTC, offsetMinutes)
+    const schedule = buildSchedule(startDateUTC, offsetMinutes)
+
+    // ─── Create plan instance ───
+    const planToken = randomUUID()
+    const planInstanceId = randomUUID()
+
+    const planInserted = await insertPlanInstance({
+      id: planInstanceId,
+      planToken,
+      auditRunId: runId,
       sessionToken,
-      seriesSlug: selectedDirection.directionSlug,
+      seriesSlug: option.slug,
       timezone,
       timezoneOffsetMinutes: offsetMinutes,
-      startPolicy: schedule.startPolicy,
-      startedAt: schedule.startedAt,
-      cycleStartAt: schedule.cycleStartAt,
-      onboardingVariant: schedule.onboardingVariant,
-      onboardingDays: schedule.onboardingDays,
-      days: daysForPlan,
+      startPolicy: 'monday_cycle',
+      startedAt: nowUTC.toISOString(),
+      cycleStartAt: startDateUTC.toISOString(),
+      theme,
+      scriptureAnchor,
+      schedule,
+      status: 'active',
     })
 
+    if (!planInserted) {
+      return jsonError({
+        error: 'Unable to create devotional plan. Please retry.',
+        code: 'PLAN_CREATE_FAILED',
+        status: 500,
+        requestId,
+      })
+    }
+
+    // ─── Create job ───
+    const jobId = randomUUID()
+    const jobNow = new Date().toISOString()
+    const job: JobRecord = {
+      id: jobId,
+      run_id: runId,
+      session_id: sessionToken,
+      plan_id: planToken,
+      status: 'pending',
+      progress: null,
+      current_day: null,
+      total_days: TOTAL_PLAN_DAYS,
+      theme,
+      scripture_anchor: scriptureAnchor,
+      user_input: userInput,
+      timezone,
+      timezone_offset_minutes: offsetMinutes,
+      error: null,
+      generating_since: null,
+      created_at: jobNow,
+      updated_at: jobNow,
+    }
+
+    const jobInserted = await insertJob(job)
+    if (!jobInserted) {
+      return jsonError({
+        error: 'Unable to create generation job. Please retry.',
+        code: 'JOB_CREATE_FAILED',
+        status: 500,
+        requestId,
+      })
+    }
+
+    // ─── Save selection ───
     await saveSelection({
       runId,
       optionId: option.id,
       optionKind: 'ai_primary',
-      seriesSlug: selectedDirection.directionSlug,
-      planToken: plan.token,
+      seriesSlug: option.slug,
+      planToken,
     })
 
-    // Warm cache for immediate UI fetches
-    getAllPlanDays(plan.token)
+    console.info(
+      `[soul-audit:select] Created job=${jobId}, plan=${planToken} for run=${runId}. ` +
+        `USING_QUEUE_FALLBACK=${USING_QUEUE_FALLBACK} — /status endpoint will drive generation.`,
+    )
 
-    const payload: SoulAuditSelectResponse = {
-      ok: true,
-      auditRunId: runId,
+    // With USING_QUEUE_FALLBACK=true, we do NOT fire generate-day from here.
+    // The client polls /status, which triggers generation on demand.
+
+    return withRequestIdHeaders(
+      NextResponse.json(
+        {
+          ok: true,
+          auditRunId: runId,
+          requestId,
+          deploymentFingerprint: getDeploymentFingerprint(),
+          jobId,
+          status: 'pending' as const,
+          planId: planToken,
+          pollUrl: `/api/soul-audit/select/status?jobId=${jobId}`,
+        },
+        { status: 200 },
+      ),
       requestId,
-      deploymentFingerprint: getDeploymentFingerprint(),
-      selectionType: 'ai_primary',
-      route: buildAiResultsRoute(
-        plan.token,
-        getInitialPlanDayNumber(daysForPlan),
-      ),
-      planToken: plan.token,
-      seriesSlug: selectedDirection.directionSlug,
-      planDays: daysForPlan,
-      onboardingMeta: toOnboardingMeta({
-        startPolicy: schedule.startPolicy,
-        onboardingVariant: schedule.onboardingVariant,
-        onboardingDays: schedule.onboardingDays,
-        cycleStartAt: schedule.cycleStartAt,
-        timezone,
-        timezoneOffsetMinutes: offsetMinutes,
-      }),
-    }
-
-    return withCurrentRouteCookie(
-      withRequestIdHeaders(
-        NextResponse.json(payload, { status: 200 }),
-        requestId,
-      ),
-      payload.route,
     )
   } catch (error) {
     logApiError({
@@ -722,7 +600,7 @@ export async function POST(request: NextRequest) {
       requestId,
       error,
       method: request.method,
-      path: request.nextUrl?.pathname ?? '/api/soul-audit/select',
+      path: new URL(request.url).pathname ?? '/api/soul-audit/select',
       clientKey,
     })
     return jsonError({

@@ -1,4 +1,4 @@
-# EUONGELION First Month Content Calendar
+# EUANGELION First Month Content Calendar
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -8,7 +8,7 @@
 
 ## Overview
 
-This document provides a complete, day-by-day content calendar for EUONGELION's first 30 days across all marketing channels. Each day includes specific actions for social media, email, partnerships, and internal activities.
+This document provides a complete, day-by-day content calendar for EUANGELION's first 30 days across all marketing channels. Each day includes specific actions for social media, email, partnerships, and internal activities.
 
 **Launch Day:** [INSERT DATE]
 
@@ -72,7 +72,7 @@ This document provides a complete, day-by-day content calendar for EUONGELION's 
 | Time     | Channel | Action                                              |
 | -------- | ------- | --------------------------------------------------- |
 | 9:00 AM  | IG      | Story: Sneak peek of reading experience             |
-| 12:00 PM | TW      | Tweet about the meaning of "euongelion"             |
+| 12:00 PM | TW      | Tweet about the meaning of "euangelion"             |
 | 3:00 PM  | FB      | Post: Share why we built this (founder perspective) |
 | All Day  | PTR     | Follow up with Day -7 partnership outreach          |
 | All Day  | INT     | Test all launch-day systems                         |
@@ -84,7 +84,7 @@ This document provides a complete, day-by-day content calendar for EUONGELION's 
 | Time     | Channel | Action                                         |
 | -------- | ------- | ---------------------------------------------- |
 | 9:00 AM  | IG      | Post: "εὐαγγέλιον" word card with explanation  |
-| 9:00 AM  | TW      | Thread: Etymology of "euongelion" (5 tweets)   |
+| 9:00 AM  | TW      | Thread: Etymology of "euangelion" (5 tweets)   |
 | 12:00 PM | LI      | Post: Why we're launching a faith platform now |
 | 3:00 PM  | FB      | Share Instagram word card post                 |
 | All Day  | INT     | Brief any early-access partners                |
@@ -98,7 +98,7 @@ This document provides a complete, day-by-day content calendar for EUONGELION's 
 | 7:00 AM  | EM      | Send "What to expect" email                       |
 | 9:00 AM  | IG      | Story: "4 days" countdown                         |
 | 9:00 AM  | TW      | Tweet: Preview of Soul Audit question             |
-| 12:00 PM | FB      | Post: What makes EUONGELION different (bullets)   |
+| 12:00 PM | FB      | Post: What makes EUANGELION different (bullets)   |
 | All Day  | PR      | Pitch to secondary media outlets                  |
 | All Day  | PTR     | Confirm launch-day shares with committed partners |
 
@@ -122,7 +122,7 @@ This document provides a complete, day-by-day content calendar for EUONGELION's 
 | -------- | ------- | --------------------------------------------- |
 | 9:00 AM  | IG      | Story: "2 days" countdown with excitement     |
 | 9:00 AM  | TW      | Tweet: "Almost time."                         |
-| 12:00 PM | FB      | Post: Who EUONGELION is for                   |
+| 12:00 PM | FB      | Post: Who EUANGELION is for                   |
 | 3:00 PM  | IG      | Post: Breath prayer preview                   |
 | All Day  | PTR     | Final confirmation with all launch partners   |
 | All Day  | INT     | Prepare all launch-day content for scheduling |
@@ -454,7 +454,7 @@ This document provides a complete, day-by-day content calendar for EUONGELION's 
 | -------- | ------- | -------------------------------- |
 | 9:00 AM  | IG      | Carousel: Why we built this (TH) |
 | 9:00 AM  | TW      | Thread: Our origin story (TH)    |
-| 12:00 PM | FB      | Post: The EUONGELION story       |
+| 12:00 PM | FB      | Post: The EUANGELION story       |
 
 ---
 

@@ -1,6 +1,6 @@
 # Testing Guide
 
-EUONGELION uses Vitest for unit and integration testing with React Testing Library.
+EUANGELION uses Vitest for unit and integration testing with React Testing Library.
 
 ## Overview
 

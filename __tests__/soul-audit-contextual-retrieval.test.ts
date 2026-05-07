@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest'
 import { retrieveForDay } from '@/lib/soul-audit/reference-retriever'
 
 describe('Soul Audit contextual retrieval', () => {
-  it('returns grounded chunks for a sparse emotional input', () => {
-    const result = retrieveForDay({
+  it('returns grounded chunks for a sparse emotional input', async () => {
+    const result = await retrieveForDay({
       themes: ['sadness'],
       scriptureAnchors: ['Psalm 34:18'],
       topic: 'I am sad and I need hope',
@@ -22,8 +22,8 @@ describe('Soul Audit contextual retrieval', () => {
     ).toBe(true)
   })
 
-  it('returns materially different top chunks for distinct asks', () => {
-    const prophets = retrieveForDay({
+  it('returns materially different top chunks for distinct asks', async () => {
+    const prophets = await retrieveForDay({
       themes: ['prophets'],
       scriptureAnchors: ['Jeremiah 1:5'],
       topic: 'Teach me about the prophets',
@@ -32,7 +32,7 @@ describe('Soul Audit contextual retrieval', () => {
       pardesLevel: 'peshat',
     })
 
-    const anxiety = retrieveForDay({
+    const anxiety = await retrieveForDay({
       themes: ['anxiety'],
       scriptureAnchors: ['Philippians 4:6-7'],
       topic: 'I feel anxious about my future',

@@ -5,13 +5,13 @@
 
 ## Agreement to Terms
 
-Welcome to EUONGELION. These Terms of Service ("Terms") govern your access to and use of the EUONGELION application, website, and related services (collectively, the "Service") operated by EUONGELION ("we," "us," or "our").
+Welcome to EUANGELION. These Terms of Service ("Terms") govern your access to and use of the EUANGELION application, website, and related services (collectively, the "Service") operated by EUANGELION ("we," "us," or "our").
 
 By accessing or using the Service, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the Service.
 
 ## Description of Service
 
-EUONGELION is a devotional application designed to support spiritual growth through:
+EUANGELION is a devotional application designed to support spiritual growth through:
 
 - Daily devotional content and Scripture readings
 - Hebrew and Greek word studies
@@ -177,7 +177,7 @@ Some jurisdictions do not allow exclusion of certain warranties or limitation of
 
 ## Indemnification
 
-You agree to indemnify and hold harmless EUONGELION and its officers, directors, employees, and agents from any claims, damages, or expenses arising from:
+You agree to indemnify and hold harmless EUANGELION and its officers, directors, employees, and agents from any claims, damages, or expenses arising from:
 
 - Your use of the Service
 - Your violation of these Terms
@@ -225,7 +225,7 @@ These Terms are governed by the laws of [Jurisdiction to be specified], without 
 
 ### Informal Resolution
 
-Before filing a formal dispute, you agree to attempt informal resolution by contacting us at legal@euongelion.com.
+Before filing a formal dispute, you agree to attempt informal resolution by contacting us at legal@euangelion.com.
 
 ### Arbitration
 
@@ -239,7 +239,7 @@ You may bring claims in small claims court if eligible. Either party may seek in
 
 ### Entire Agreement
 
-These Terms, along with our Privacy Policy and Cookie Policy, constitute the entire agreement between you and EUONGELION.
+These Terms, along with our Privacy Policy and Cookie Policy, constitute the entire agreement between you and EUANGELION.
 
 ### Severability
 
@@ -271,7 +271,7 @@ Continued use after changes constitutes acceptance of the new Terms.
 
 For questions about these Terms, please contact us:
 
-- **Email:** legal@euongelion.com
-- **Support:** support@euongelion.com
+- **Email:** legal@euangelion.com
+- **Support:** support@euangelion.com
 
-Thank you for using EUONGELION. We pray that our Service supports your spiritual journey.
+Thank you for using EUANGELION. We pray that our Service supports your spiritual journey.

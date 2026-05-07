@@ -17,8 +17,8 @@ BUCKET="reference-library"
 if [ -f "$PROJECT_DIR/app/.env.local" ]; then
   export $(grep -E "NEXT_PUBLIC_SUPABASE_URL|SUPABASE_SERVICE_ROLE_KEY" "$PROJECT_DIR/app/.env.local" | xargs)
   SUPABASE_URL="${NEXT_PUBLIC_SUPABASE_URL}"
-elif [ -f "$PROJECT_DIR/euongelion/.env.local" ]; then
-  export $(grep -E "NEXT_PUBLIC_SUPABASE_URL|SUPABASE_SERVICE_ROLE_KEY" "$PROJECT_DIR/euongelion/.env.local" | xargs)
+elif [ -f "$PROJECT_DIR/euangelion/.env.local" ]; then
+  export $(grep -E "NEXT_PUBLIC_SUPABASE_URL|SUPABASE_SERVICE_ROLE_KEY" "$PROJECT_DIR/euangelion/.env.local" | xargs)
   SUPABASE_URL="${NEXT_PUBLIC_SUPABASE_URL}"
 fi
 

@@ -1,9 +1,9 @@
-# EUONGELION Design System
+# EUANGELION Design System
 
 **Version:** 1.0
 **Last Updated:** January 2026
 
-A comprehensive design token system for the EUONGELION platform.
+A comprehensive design token system for the EUANGELION platform.
 
 ---
 
@@ -120,7 +120,7 @@ var(--color-accent)          /* Gold */
 ### Signature Combination
 
 ```css
-/* The EUONGELION signature look: Gold on Tehom */
+/* The EUANGELION signature look: Gold on Tehom */
 .signature {
   background: var(--color-tehom);
   color: var(--color-gold);
@@ -137,7 +137,7 @@ var(--color-accent)          /* Gold */
 | -------------------- | ---------------- | -------------------------- |
 | `--font-display`     | Monument Grotesk | Headings, UI               |
 | `--font-body`        | Monument Grotesk | Body text                  |
-| `--font-masthead`    | Editorial New    | "EUONGELION" wordmark only |
+| `--font-masthead`    | Editorial New    | "EUANGELION" wordmark only |
 | `--font-hebrew`      | SBL Hebrew       | Hebrew/Greek terms         |
 | `--font-handwritten` | Caveat           | Margin annotations         |
 | `--font-serif`       | EB Garamond      | Fallback serif             |
@@ -176,7 +176,7 @@ var(--color-accent)          /* Gold */
 </div>
 
 <!-- Masthead (wordmark only) -->
-<h1 class="masthead">EUONGELION</h1>
+<h1 class="masthead">EUANGELION</h1>
 
 <!-- Body text with optimal width -->
 <div class="prose">
@@ -238,7 +238,7 @@ No additional classes needed - dark is the default.
 function setTheme(theme) {
   document.documentElement.classList.add('no-transition')
   document.documentElement.setAttribute('data-theme', theme)
-  localStorage.setItem('euongelion-theme', theme)
+  localStorage.setItem('euangelion-theme', theme)
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
@@ -248,7 +248,7 @@ function setTheme(theme) {
 }
 
 // Initialize
-const savedTheme = localStorage.getItem('euongelion-theme') || 'dark'
+const savedTheme = localStorage.getItem('euangelion-theme') || 'dark'
 document.documentElement.setAttribute('data-theme', savedTheme)
 ```
 
@@ -452,7 +452,7 @@ const spacingLg = tokens.spacing.semantic.lg.$value // "40px"
 ### Don't
 
 - Mix serif + sans in body text
-- Use Kinfolk font for anything but "EUONGELION"
+- Use Kinfolk font for anything but "EUANGELION"
 - Make body text smaller than 18px
 - Use more than 2 weights in one section
 - Crowd text (needs breathing room)

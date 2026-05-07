@@ -1,4 +1,4 @@
-# EUONGELION Loading Patterns
+# EUANGELION Loading Patterns
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -12,7 +12,7 @@ Loading should feel contemplative, not anxious.
 
 In most modern applications, loading states communicate urgency: "We're working as fast as we can!" Spinning circles, bouncing dots, and progress bars all create a sense that the user should be waiting impatiently.
 
-EUONGELION rejects this paradigm.
+EUANGELION rejects this paradigm.
 
 Our loading states should communicate patience: "Take a breath. Something is coming." The tempo matches the contemplative nature of the content. Users should feel held by the interface, not rushed by it.
 
@@ -92,7 +92,7 @@ The primary loading indicator is a **breath pulse** - a gentle oscillation that 
 ```
 +--------------------------------------------------+
 |                                                  |
-|                  [EUONGELION]                    |
+|                  [EUANGELION]                    |
 |                   Logo Mark                      |
 |               (pulsing gently)                   |
 |                                                  |

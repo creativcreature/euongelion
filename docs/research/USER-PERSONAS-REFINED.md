@@ -9,7 +9,7 @@
 
 ## Overview
 
-These four personas represent EUONGELION's primary audience segments. Each persona is designed to be actionable for:
+These four personas represent EUANGELION's primary audience segments. Each persona is designed to be actionable for:
 
 - Content creation (what topics, what tone)
 - UX design (what frustrations to avoid, what features matter)
@@ -102,7 +102,7 @@ A woman in her mid-30s, professional but approachable. She's photographed in nat
 
 ### Journey Triggers
 
-**What brings Sarah to EUONGELION:**
+**What brings Sarah to EUANGELION:**
 
 - Friend shares a quote card on Instagram
 - Life crisis (health scare, job loss, relational conflict)
@@ -128,9 +128,9 @@ A woman in her mid-30s, professional but approachable. She's photographed in nat
 
 **10:30 PM:** Finally asleep.
 
-**EUONGELION Entry Point:** The 9:30 PM window. That moment of quiet reflection before sleep. Or the 8:30 AM commute. Content that speaks to the "is this all there is?" feeling.
+**EUANGELION Entry Point:** The 9:30 PM window. That moment of quiet reflection before sleep. Or the 8:30 AM commute. Content that speaks to the "is this all there is?" feeling.
 
-### How EUONGELION Serves Sarah
+### How EUANGELION Serves Sarah
 
 | Need                        | How We Meet It                                       |
 | --------------------------- | ---------------------------------------------------- |
@@ -258,7 +258,7 @@ A Black man in his late 20s, creative and thoughtful demeanor. He's photographed
 
 ### Journey Triggers
 
-**What brings Marcus to EUONGELION:**
+**What brings Marcus to EUANGELION:**
 
 - Friend from church days shares something that surprises him
 - Article on faith that actually engages his questions
@@ -284,9 +284,9 @@ A Black man in his late 20s, creative and thoughtful demeanor. He's photographed
 
 **11:00 PM:** Late night Wikipedia rabbit hole or Reddit browsing. This is when questions surface.
 
-**EUONGELION Entry Point:** The 11:00 PM rabbit hole. Or the lunch break. Content that feels like discovery, not preaching.
+**EUANGELION Entry Point:** The 11:00 PM rabbit hole. Or the lunch break. Content that feels like discovery, not preaching.
 
-### How EUONGELION Serves Marcus
+### How EUANGELION Serves Marcus
 
 | Need                      | How We Meet It                                    |
 | ------------------------- | ------------------------------------------------- |
@@ -415,7 +415,7 @@ A couple in their early 50s, photographed in their comfortable home. They look k
 
 ### Journey Triggers
 
-**What brings David & Linda to EUONGELION:**
+**What brings David & Linda to EUANGELION:**
 
 - Pastor mentions it in sermon
 - Child or grandchild shares a devotional
@@ -441,9 +441,9 @@ A couple in their early 50s, photographed in their comfortable home. They look k
 
 **10:00 PM:** Bed. Quick prayer. Sleep.
 
-**EUONGELION Entry Point:** Replace the 6:00 AM checkbox devotional with something that actually stirs them. Or the 9:30 PM reading time for Linda.
+**EUANGELION Entry Point:** Replace the 6:00 AM checkbox devotional with something that actually stirs them. Or the 9:30 PM reading time for Linda.
 
-### How EUONGELION Serves David & Linda
+### How EUANGELION Serves David & Linda
 
 | Need                           | How We Meet It                               |
 | ------------------------------ | -------------------------------------------- |
@@ -573,7 +573,7 @@ A man in his late 40s, photographed in a church office or study. Bookcases fille
 
 ### Journey Triggers
 
-**What brings Pastor James to EUONGELION:**
+**What brings Pastor James to EUANGELION:**
 
 - Trusted pastoral peer recommends it
 - Sees it mentioned at conference
@@ -603,9 +603,9 @@ A man in his late 40s, photographed in a church office or study. Bookcases fille
 
 **9:30 PM:** Finally quiet. Exhausted. Tries to read but falls asleep.
 
-**EUONGELION Entry Point:** The 5:30 AM slot—but not for sermon prep. For him. Or the rare Saturday afternoon. Content that feeds the feeder.
+**EUANGELION Entry Point:** The 5:30 AM slot—but not for sermon prep. For him. Or the rare Saturday afternoon. Content that feeds the feeder.
 
-### How EUONGELION Serves Pastor James
+### How EUANGELION Serves Pastor James
 
 | Need                   | How We Meet It                                  |
 | ---------------------- | ----------------------------------------------- |
@@ -718,7 +718,7 @@ Ask: "Where does this persona spend time?" "What messaging resonates with their 
 
 ## Appendix: Journey Map Entry Points
 
-### How Each Persona Discovers EUONGELION
+### How Each Persona Discovers EUANGELION
 
 ```
 SARAH (Drifted)

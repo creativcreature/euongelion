@@ -1,4 +1,4 @@
-# Welcome to EUONGELION
+# Welcome to EUANGELION
 
 ## Day 1: Why This Exists
 
@@ -32,7 +32,7 @@ That verse became a lifeline. And this platform exists to share it.
 
 ---
 
-### Why EUONGELION?
+### Why EUANGELION?
 
 There's a longer story—one we'll tell eventually. But the short version is this:
 
@@ -52,7 +52,7 @@ That's what this is. That's why it exists.
 
 ### What You've Found
 
-EUONGELION is daily bread for hungry souls.
+EUANGELION is daily bread for hungry souls.
 
 Each day, you'll receive a devotional. Not a quick verse with a chipper thought attached. Something deeper. Something that takes Scripture seriously—including the hard parts, the parts that don't fit on a coffee mug.
 
@@ -103,6 +103,6 @@ That's the invitation. Come as you are.
 
 ---
 
-_Day 1 of 5 — Welcome to EUONGELION_
+_Day 1 of 5 — Welcome to EUANGELION_
 
 _Tomorrow: How This Is Different_

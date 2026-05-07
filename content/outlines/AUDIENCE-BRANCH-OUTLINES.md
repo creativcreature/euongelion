@@ -1381,7 +1381,7 @@ Four tracks designed to meet specific audiences with tailored content:
 
 - The journey is lifelong; you've taken the first steps
 - What's ahead: deeper knowledge, greater transformation, wider impact
-- Recommendations: continue with EUONGELION series, find a mentor, stay in community
+- Recommendations: continue with EUANGELION series, find a mentor, stay in community
 - Benediction: May you grow in the grace and knowledge of our Lord Jesus Christ
 
 ---

@@ -2,15 +2,15 @@
 
 **Version:** 1.0
 **Created:** January 17, 2026
-**Purpose:** Deep competitive analysis to inform EUONGELION product decisions
+**Purpose:** Deep competitive analysis to inform EUANGELION product decisions
 
 ---
 
 ## Executive Summary
 
-This document provides an in-depth analysis of five leading devotional/Bible apps, examining their strengths, weaknesses, UX patterns, and how EUONGELION uniquely positions itself in the market. The goal is to learn from competitors without mimicking them, ensuring EUONGELION delivers a distinctive value proposition.
+This document provides an in-depth analysis of five leading devotional/Bible apps, examining their strengths, weaknesses, UX patterns, and how EUANGELION uniquely positions itself in the market. The goal is to learn from competitors without mimicking them, ensuring EUANGELION delivers a distinctive value proposition.
 
-**Key Finding:** Most competitors optimize for engagement metrics (streaks, badges, social sharing) at the expense of depth. EUONGELION's opportunity is to be the "slow food" of devotional apps—premium quality over quick consumption.
+**Key Finding:** Most competitors optimize for engagement metrics (streaks, badges, social sharing) at the expense of depth. EUANGELION's opportunity is to be the "slow food" of devotional apps—premium quality over quick consumption.
 
 ---
 
@@ -118,7 +118,7 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 
 ### UX Patterns to Learn From
 
-| Pattern                   | Implementation                     | Apply to EUONGELION                    |
+| Pattern                   | Implementation                     | Apply to EUANGELION                    |
 | ------------------------- | ---------------------------------- | -------------------------------------- |
 | **Verse of the Day**      | Simple, shareable daily touchpoint | Consider daily scripture card in email |
 | **Offline-First**         | Downloads for airplane mode        | Essential for credibility              |
@@ -128,7 +128,7 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 
 ### UX Patterns to Avoid
 
-| Pattern                   | Why It's Problematic         | EUONGELION Alternative                  |
+| Pattern                   | Why It's Problematic         | EUANGELION Alternative                  |
 | ------------------------- | ---------------------------- | --------------------------------------- |
 | **Streaks**               | Guilt-driven engagement      | No streaks—ever                         |
 | **Badge System**          | Trivializes spiritual growth | Progress acknowledged, not gamified     |
@@ -137,9 +137,9 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 | **Completion Checkboxes** | Reduces reading to task      | "Marked as read" subtle, not celebrated |
 | **Friend Activity Feed**  | Comparison trap              | Private journey, optional sharing       |
 
-### How EUONGELION Differs
+### How EUANGELION Differs
 
-| YouVersion                       | EUONGELION                                   |
+| YouVersion                       | EUANGELION                                   |
 | -------------------------------- | -------------------------------------------- |
 | 2,500+ plans from many sources   | Fewer than 50 series, single editorial voice |
 | 5-minute daily content           | 15-20 minute deep dives                      |
@@ -160,7 +160,7 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 - Escape from notification anxiety
 - Single-voice curation (vs. fragmented partners)
 
-**EUONGELION fills these gaps directly.**
+**EUANGELION fills these gaps directly.**
 
 ---
 
@@ -265,7 +265,7 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 
 ### UX Patterns to Learn From
 
-| Pattern                    | Implementation                     | Apply to EUONGELION                           |
+| Pattern                    | Implementation                     | Apply to EUANGELION                           |
 | -------------------------- | ---------------------------------- | --------------------------------------------- |
 | **Cohesive Aesthetic**     | Every screen feels on-brand        | Typography and color consistency              |
 | **Journaling Integration** | Prompts with space to write        | Reflection questions with optional journaling |
@@ -275,7 +275,7 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 
 ### UX Patterns to Avoid
 
-| Pattern                   | Why It's Problematic                      | EUONGELION Alternative                |
+| Pattern                   | Why It's Problematic                      | EUANGELION Alternative                |
 | ------------------------- | ----------------------------------------- | ------------------------------------- |
 | **Gendered Branding**     | Limits audience, feels exclusive          | Gender-neutral design and content     |
 | **Lifestyle Positioning** | Discipleship > aesthetics                 | Depth is the brand, not lifestyle     |
@@ -283,9 +283,9 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 | **Product Upselling**     | Feels commercial                          | Content is the product                |
 | **Avoiding Hard Topics**  | Doesn't serve seekers with real questions | Apologetics, hard doctrines addressed |
 
-### How EUONGELION Differs
+### How EUANGELION Differs
 
-| She Reads Truth                    | EUONGELION                               |
+| She Reads Truth                    | EUANGELION                               |
 | ---------------------------------- | ---------------------------------------- |
 | Lifestyle brand with devotionals   | Devotional platform, not a brand         |
 | 300-500 word reflections           | 3,000-4,000 word deep dives              |
@@ -409,7 +409,7 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 
 ### UX Patterns to Learn From
 
-| Pattern               | Implementation        | Apply to EUONGELION                 |
+| Pattern               | Implementation        | Apply to EUANGELION                 |
 | --------------------- | --------------------- | ----------------------------------- |
 | **Dark Mode Default** | Calming, premium feel | Dark mode as equal citizen          |
 | **Minimal Interface** | Removes distraction   | Reading mode with hidden navigation |
@@ -419,15 +419,15 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 
 ### UX Patterns to Avoid
 
-| Pattern          | Why It's Problematic       | EUONGELION Alternative                            |
+| Pattern          | Why It's Problematic       | EUANGELION Alternative                            |
 | ---------------- | -------------------------- | ------------------------------------------------- |
 | **Passive Only** | Doesn't require engagement | Interactive elements (breath prayers, reflection) |
 | **No Teaching**  | Assumes knowledge          | Word studies, explanations included               |
 | **Bible-Only**   | Limited value add          | Devotional essays are the value                   |
 
-### How EUONGELION Differs
+### How EUANGELION Differs
 
-| Dwell                  | EUONGELION                       |
+| Dwell                  | EUANGELION                       |
 | ---------------------- | -------------------------------- |
 | Audio-first            | Reading-first                    |
 | Bible text only        | Devotional essays + Scripture    |
@@ -553,7 +553,7 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 
 ### UX Patterns to Learn From
 
-| Pattern                 | Implementation                 | Apply to EUONGELION                 |
+| Pattern                 | Implementation                 | Apply to EUANGELION                 |
 | ----------------------- | ------------------------------ | ----------------------------------- |
 | **Time-Based Greeting** | "Good morning" personalization | Consider time-aware content serving |
 | **Kids Section**        | Separate content for children  | Future: family features             |
@@ -562,7 +562,7 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 
 ### UX Patterns to Avoid
 
-| Pattern                  | Why It's Problematic   | EUONGELION Alternative    |
+| Pattern                  | Why It's Problematic   | EUANGELION Alternative    |
 | ------------------------ | ---------------------- | ------------------------- |
 | **Celebrity Focus**      | Gimmick over substance | Anonymous, unified voice  |
 | **Wellness Positioning** | Dilutes Gospel         | Unashamedly Christian     |
@@ -570,9 +570,9 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 | **Feature Overload**     | Confused identity      | Focused on one thing      |
 | **Shallow Content**      | No transformation      | Deep, challenging content |
 
-### How EUONGELION Differs
+### How EUANGELION Differs
 
-| Pray.com                          | EUONGELION                      |
+| Pray.com                          | EUANGELION                      |
 | --------------------------------- | ------------------------------- |
 | Christian wellness app            | Christian discipleship platform |
 | Celebrity narrators               | Anonymous, unified voice        |
@@ -704,7 +704,7 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 
 ### UX Patterns to Learn From
 
-| Pattern                   | Implementation                    | Apply to EUONGELION                 |
+| Pattern                   | Implementation                    | Apply to EUANGELION                 |
 | ------------------------- | --------------------------------- | ----------------------------------- |
 | **Liturgical Awareness**  | Content matches church season     | Seasonal series, Christmas/Easter   |
 | **Dark Contemplative UI** | Premium, restful                  | Match in dark mode                  |
@@ -715,16 +715,16 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 
 ### UX Patterns to Avoid
 
-| Pattern                        | Why It's Problematic             | EUONGELION Alternative              |
+| Pattern                        | Why It's Problematic             | EUANGELION Alternative              |
 | ------------------------------ | -------------------------------- | ----------------------------------- |
 | **Audio-Only Focus**           | Not everyone learns by listening | Reading-first, audio optional later |
 | **Streak Challenges**          | Still guilt-inducing             | No streaks                          |
 | **Denominational Exclusivity** | Limits reach                     | Ecumenical within orthodoxy         |
 | **Assumed Knowledge**          | Alienates seekers                | Define terms, welcome beginners     |
 
-### How EUONGELION Differs
+### How EUANGELION Differs
 
-| Hallow                        | EUONGELION                                      |
+| Hallow                        | EUANGELION                                      |
 | ----------------------------- | ----------------------------------------------- |
 | Catholic-specific             | Protestant evangelical, ecumenically respectful |
 | Prayer and meditation focused | Teaching and devotional focused                 |
@@ -748,7 +748,7 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 
 ## Competitive Matrix Summary
 
-| Feature               | YouVersion    | SRT/HRT     | Dwell        | Pray.com    | Hallow        | EUONGELION    |
+| Feature               | YouVersion    | SRT/HRT     | Dwell        | Pray.com    | Hallow        | EUANGELION    |
 | --------------------- | ------------- | ----------- | ------------ | ----------- | ------------- | ------------- |
 | **Primary Mode**      | Read          | Read        | Listen       | Listen      | Listen        | Read          |
 | **Content Depth**     | Shallow       | Medium      | None         | Shallow     | Medium        | Deep          |
@@ -762,7 +762,7 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 
 ---
 
-## Strategic Implications for EUONGELION
+## Strategic Implications for EUANGELION
 
 ### Where We Can Win
 
@@ -813,7 +813,7 @@ This document provides an in-depth analysis of five leading devotional/Bible app
 
 ---
 
-## Action Items for EUONGELION
+## Action Items for EUANGELION
 
 ### Immediate (MVP)
 

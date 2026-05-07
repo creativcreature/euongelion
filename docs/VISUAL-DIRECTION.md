@@ -1,4 +1,4 @@
-# EUONGELION Visual Direction
+# EUANGELION Visual Direction
 
 > **Status:** ACTIVE - Founder-directed
 > **Date:** January 17, 2026

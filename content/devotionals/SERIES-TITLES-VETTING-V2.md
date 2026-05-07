@@ -10,7 +10,7 @@
 **Previous Score: 8.5/10**
 **Updated Score: 8.5/10 → Path to 10/10 identified**
 
-The research reveals significant **unmet needs** in the devotional space that EUONGELION can uniquely address. The titles are strong, but can be elevated by directly targeting the _real barriers_ people face.
+The research reveals significant **unmet needs** in the devotional space that EUANGELION can uniquely address. The titles are strong, but can be elevated by directly targeting the _real barriers_ people face.
 
 ---
 
@@ -20,7 +20,7 @@ The research reveals significant **unmet needs** in the devotional space that EU
 
 The **real struggles** (not the polished church answers):
 
-| Barrier               | What People Actually Say                                                         | Implication for EUONGELION                       |
+| Barrier               | What People Actually Say                                                         | Implication for EUANGELION                       |
 | --------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------ |
 | **ADHD/Focus**        | "My brain has a hard time focusing... the Bible can feel like a 50-pound weight" | Build for scattered attention, not concentration |
 | **Guilt Spiral**      | "I feel guilty if I don't do my devotions... then I avoid it more"               | Remove guilt, reframe the relationship           |
@@ -45,7 +45,7 @@ They're chemically wired for constant motion. Stillness feels dangerous. Rest tr
 
 ## What Devotionals Get Wrong
 
-| Common Problem             | What People Say                                                             | EUONGELION Opportunity              |
+| Common Problem             | What People Say                                                             | EUANGELION Opportunity              |
 | -------------------------- | --------------------------------------------------------------------------- | ----------------------------------- |
 | **Guilt-based**            | "You wake up and know if you don't do your devotions, you will feel guilty" | Permission-based, not obligation    |
 | **Oversimplified**         | "Just pray more" doesn't help anxiety                                       | Honest about complexity             |
@@ -99,7 +99,7 @@ From research on r/Deconstruction (~10K members) and exvangelical communities:
 
 **42% of adults have deconstructed the faith of their youth** — including 37% of current churchgoing Christians ([Barna](https://www.barna.com/trends/ex-christians-deconstructing/)).
 
-**EUONGELION Opportunity:** Many who deconstructed didn't leave God—they left a _version_ of God worth leaving. Reconstruction is trending.
+**EUANGELION Opportunity:** Many who deconstructed didn't leave God—they left a _version_ of God worth leaving. Reconstruction is trending.
 
 ---
 
@@ -107,7 +107,7 @@ From research on r/Deconstruction (~10K members) and exvangelical communities:
 
 ### Topics Underserved in Current Devotionals
 
-| Gap                                    | Search Volume                 | Current Coverage    | EUONGELION Titles Addressing  |
+| Gap                                    | Search Volume                 | Current Coverage    | EUANGELION Titles Addressing  |
 | -------------------------------------- | ----------------------------- | ------------------- | ----------------------------- |
 | **ADHD & Faith**                       | High (growing)                | Almost none         | ⚠️ Not directly addressed     |
 | **Can't slow down**                    | Very High                     | Minimal             | ✅ "Stop," "Running on Empty" |

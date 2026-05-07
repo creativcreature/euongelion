@@ -12,12 +12,12 @@ Two introductory tracks designed to welcome new users and set them up for succes
 
 | Track                         | Days | Purpose                                             |
 | ----------------------------- | ---- | --------------------------------------------------- |
-| Welcome to EUONGELION         | 5    | Introduce the platform and its distinctive approach |
+| Welcome to EUANGELION         | 5    | Introduce the platform and its distinctive approach |
 | How to Approach This Material | 5    | Equip users to engage content deeply                |
 
 ---
 
-## Track 1: Welcome to EUONGELION
+## Track 1: Welcome to EUANGELION
 
 **Days:** 5
 **Target:** All new users
@@ -41,8 +41,8 @@ Two introductory tracks designed to welcome new users and set them up for succes
 
 ### Day 2: Why This Exists
 
-**Key Question:** What makes EUONGELION different from other devotional apps?
-**Main Thesis:** Most devotional content treats Scripture like a fortune cookie—random verses for random days. EUONGELION treats Scripture like a unified story that deserves deep engagement.
+**Key Question:** What makes EUANGELION different from other devotional apps?
+**Main Thesis:** Most devotional content treats Scripture like a fortune cookie—random verses for random days. EUANGELION treats Scripture like a unified story that deserves deep engagement.
 **Scripture Focus:** 2 Timothy 3:16-17 — "All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness."
 **Content Direction:**
 
@@ -70,7 +70,7 @@ Two introductory tracks designed to welcome new users and set them up for succes
 ### Day 4: Grace for the Journey
 
 **Key Question:** What happens when I miss a day or fall behind?
-**Main Thesis:** EUONGELION is not about streaks, guilt, or performance metrics. You don't "fail" by missing a day. This is about relationship with God, not religious achievement.
+**Main Thesis:** EUANGELION is not about streaks, guilt, or performance metrics. You don't "fail" by missing a day. This is about relationship with God, not religious achievement.
 **Scripture Focus:** Romans 8:1 — "There is now no condemnation for those who are in Christ Jesus."
 **Content Direction:**
 
@@ -84,7 +84,7 @@ Two introductory tracks designed to welcome new users and set them up for succes
 ### Day 5: Finding Your Path
 
 **Key Question:** Where should I start my journey?
-**Main Thesis:** EUONGELION offers multiple pathways based on where you are—whether you're a new believer, a lifelong Christian, or someone still exploring. Your path is here.
+**Main Thesis:** EUANGELION offers multiple pathways based on where you are—whether you're a new believer, a lifelong Christian, or someone still exploring. Your path is here.
 **Scripture Focus:** Proverbs 3:5-6 — "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight."
 **Content Direction:**
 
@@ -141,7 +141,7 @@ Two introductory tracks designed to welcome new users and set them up for succes
 - The father's honest prayer: belief and unbelief coexisting
 - Biblical doubters: Thomas, John the Baptist, David in the Psalms
 - How to engage doubt: bring it to God, don't suppress it
-- EUONGELION welcomes questions; we don't fear them
+- EUANGELION welcomes questions; we don't fear them
 
 ---
 

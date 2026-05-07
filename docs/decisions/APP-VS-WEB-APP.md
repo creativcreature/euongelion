@@ -8,7 +8,7 @@
 
 ## 1. Executive Summary
 
-EUONGELION needs a delivery platform for its devotional content. This document evaluates four approaches: web-only (PWA), native apps, cross-platform (React Native), and a phased web-first strategy.
+EUANGELION needs a delivery platform for its devotional content. This document evaluates four approaches: web-only (PWA), native apps, cross-platform (React Native), and a phased web-first strategy.
 
 **Why This Decision Matters:**
 
@@ -267,7 +267,7 @@ What does ongoing engagement look like for each persona?
 
 ## 4. Accessibility Comparison
 
-EUONGELION values accessibility (WCAG 2.1 AA is in MVP scope). Here's how options compare:
+EUANGELION values accessibility (WCAG 2.1 AA is in MVP scope). Here's how options compare:
 
 | Factor                     | Web App (PWA)                  | Native App                     | Notes                    |
 | -------------------------- | ------------------------------ | ------------------------------ | ------------------------ |
@@ -283,7 +283,7 @@ EUONGELION values accessibility (WCAG 2.1 AA is in MVP scope). Here's how option
 
 **Accessibility Winner:** Web app for rapid iteration on a11y issues; native for deep OS integration.
 
-**For EUONGELION:** Web is better. Our content is primarily text-based. We need to fix a11y issues instantly, not wait for app store approval.
+**For EUANGELION:** Web is better. Our content is primarily text-based. We need to fix a11y issues instantly, not wait for app store approval.
 
 ---
 
@@ -387,7 +387,7 @@ Mapping decisions to our four personas:
 
 2. **Native apps are for habit, web is for discovery** - Users find content via web, may move to app for daily use.
 
-3. **Audio-first products need native** - Background playback requires app. Text-first (like EUONGELION) doesn't.
+3. **Audio-first products need native** - Background playback requires app. Text-first (like EUANGELION) doesn't.
 
 4. **Subscription models push toward native** - App store payments are easier than web payments. But we're free (for now).
 
@@ -411,7 +411,7 @@ Mapping decisions to our four personas:
 - Using AI assistance (Claude Code) further reduces development time
 - Supabase, Vercel have generous free tiers
 
-**For EUONGELION:**
+**For EUANGELION:**
 
 - Founder is doing development (with AI assistance)
 - Budget is constrained
@@ -467,8 +467,8 @@ Consider native apps when:
 
 ```json
 {
-  "name": "EUONGELION",
-  "short_name": "EUONGELION",
+  "name": "EUANGELION",
+  "short_name": "EUANGELION",
   "description": "Daily devotionals for the wandering soul",
   "start_url": "/",
   "display": "standalone",
@@ -513,7 +513,7 @@ Consider native apps when:
 
 **Install prompt copy:**
 
-> "Add EUONGELION to your home screen for easier access. No app store needed."
+> "Add EUANGELION to your home screen for easier access. No app store needed."
 
 #### 9.4 Offline Page
 
@@ -522,7 +522,7 @@ Simple, on-brand page shown when offline and page not cached:
 ```
 You're offline right now.
 
-EUONGELION needs a connection to load new content.
+EUANGELION needs a connection to load new content.
 
 When you're back online, pick up where you left off.
 
@@ -565,7 +565,7 @@ When you're back online, pick up where you left off.
 4. **Domain Confirmation:**
    - wokegod.world is current plan
    - Any concerns with PWA on this domain?
-   - Alternative: euongelion.app (available?)
+   - Alternative: euangelion.app (available?)
 
 ### Can Answer Later
 

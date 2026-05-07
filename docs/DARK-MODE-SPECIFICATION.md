@@ -1,4 +1,4 @@
-# EUONGELION Dark Mode Specification
+# EUANGELION Dark Mode Specification
 
 **Version:** 1.0
 **Created:** January 17, 2026
@@ -24,7 +24,7 @@
 
 ### Why Dark Mode Matters for a Devotional App
 
-Dark mode is not a concession to modern expectations. It is a continuation of the contemplative design philosophy that defines EUONGELION. The reading conditions matter as much as the typography.
+Dark mode is not a concession to modern expectations. It is a continuation of the contemplative design philosophy that defines EUANGELION. The reading conditions matter as much as the typography.
 
 **Nighttime Reading**
 
@@ -352,7 +352,7 @@ Images require special handling to maintain visual consistency across modes.
 ```css
 :root {
   /* ===========================================
-     EUONGELION Design Tokens - Light Mode Default
+     EUANGELION Design Tokens - Light Mode Default
      =========================================== */
 
   /* Foundation Colors */
@@ -950,7 +950,7 @@ This script:
 **NOT Recommended:**
 
 - Floating action button (too prominent for theme toggle)
-- Sidebar (EUONGELION does not use sidebars)
+- Sidebar (EUANGELION does not use sidebars)
 - Within content (breaks reading flow)
 
 ### 6.2 Toggle Component Specification
@@ -1570,4 +1570,4 @@ localStorage.removeItem('theme')
 **End of Document**
 
 _Prepared for Design Sprint: January 18, 2026_
-_Implementation-ready specification for EUONGELION dark mode theming_
+_Implementation-ready specification for EUANGELION dark mode theming_

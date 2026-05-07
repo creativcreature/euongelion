@@ -1,4 +1,4 @@
-# EUONGELION Security Checklist
+# EUANGELION Security Checklist
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -7,7 +7,7 @@
 
 ## Overview
 
-Comprehensive security checklist for EUONGELION. This document covers all security requirements for the MVP launch, organized by category with implementation guidance.
+Comprehensive security checklist for EUANGELION. This document covers all security requirements for the MVP launch, organized by category with implementation guidance.
 
 **Security Philosophy:** Protect user data with minimal collection. Be transparent about what we collect and why.
 

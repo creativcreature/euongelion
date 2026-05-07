@@ -12,17 +12,24 @@ let redisClient: Redis | null = null
 
 function getRedis(): Redis | null {
   if (redisClient) return redisClient
+  const url = process.env.UPSTASH_REDIS_REST_URL
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN
   if (
-    !process.env.UPSTASH_REDIS_REST_URL ||
-    !process.env.UPSTASH_REDIS_REST_TOKEN
+    !url ||
+    !token ||
+    url === 'missing' ||
+    token === 'missing' ||
+    !url.startsWith('https://')
   ) {
     return null
   }
-  redisClient = new Redis({
-    url: process.env.UPSTASH_REDIS_REST_URL,
-    token: process.env.UPSTASH_REDIS_REST_TOKEN,
-  })
-  return redisClient
+
+  try {
+    redisClient = new Redis({ url, token })
+    return redisClient
+  } catch {
+    return null
+  }
 }
 
 function normalize(text: string): string {

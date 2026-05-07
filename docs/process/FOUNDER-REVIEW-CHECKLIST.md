@@ -71,7 +71,7 @@ _________________________________________________________________
 
 ### Section 2: Brand Voice & Tone
 
-**Goal:** Content sounds like EUONGELION - intelligent, warm, honest, accessible.
+**Goal:** Content sounds like EUANGELION - intelligent, warm, honest, accessible.
 
 | Check | Criteria                                                                | Pass |
 | ----- | ----------------------------------------------------------------------- | ---- |
@@ -323,7 +323,7 @@ _________________________________________________________________
 | [ ]   | **Am I nitpicking or is there a real issue?** - Perfectionism check  |      |
 
 **The Ultimate Question:**
-If someone read only this devotional from EUONGELION, would they:
+If someone read only this devotional from EUANGELION, would they:
 
 - [ ] Want to read another?
 - [ ] Encounter God?

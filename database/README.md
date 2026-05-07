@@ -1,10 +1,10 @@
-# EUONGELION Database Schema
+# EUANGELION Database Schema
 
-This directory contains the Supabase database schema for the EUONGELION devotional platform.
+This directory contains the Supabase database schema for the EUANGELION devotional platform.
 
 ## Overview
 
-EUONGELION is a Christian devotional application that provides:
+EUANGELION is a Christian devotional application that provides:
 
 - Daily devotional content organized into series
 - User progress tracking with streaks
@@ -256,4 +256,4 @@ const { error } = await supabase.from('user_progress').upsert({
 
 ## License
 
-Proprietary - EUONGELION
+Proprietary - EUANGELION

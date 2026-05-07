@@ -1,6 +1,6 @@
 # State Management
 
-EUONGELION uses Zustand for client-side state management with TypeScript.
+EUANGELION uses Zustand for client-side state management with TypeScript.
 
 ## Overview
 

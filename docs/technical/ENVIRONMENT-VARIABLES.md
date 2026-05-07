@@ -1,4 +1,4 @@
-# EUONGELION Environment Variables
+# EUANGELION Environment Variables
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -7,7 +7,7 @@
 
 ## Overview
 
-Complete reference for all environment variables required to run EUONGELION. Variables are organized by service and include validation requirements.
+Complete reference for all environment variables required to run EUANGELION. Variables are organized by service and include validation requirements.
 
 **File Location:** `.env.local` (development), Vercel Environment Variables (production)
 
@@ -416,7 +416,7 @@ NEXT_TELEMETRY_DISABLED=1
 
 ```bash
 # ============================================
-# EUONGELION Development Environment
+# EUANGELION Development Environment
 # Copy this file to .env.local and fill in values
 # ============================================
 
@@ -457,7 +457,7 @@ NEXT_TELEMETRY_DISABLED=1
 
 ```bash
 # ============================================
-# EUONGELION Environment Variables
+# EUANGELION Environment Variables
 # Copy to .env.local and fill in your values
 # ============================================
 

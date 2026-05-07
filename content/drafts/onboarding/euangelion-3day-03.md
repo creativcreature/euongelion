@@ -66,7 +66,7 @@ May you discover that the war you've been fighting is already won. May peace tha
 
 May you encounter not just words about God, but God Himself.
 
-Welcome to EUONGELION.
+Welcome to EUANGELION.
 
 Welcome to the good news.
 

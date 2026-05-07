@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EUONGELION — Day 1: Why Are You Here?</title>
+  <title>EUANGELION — Day 1: What Is This Place?</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +14,12 @@
       --color-tehom: #1A1612;
       --color-scroll: #F7F3ED;
       --color-gold: #C19A6B;
-      --color-text-secondary: rgba(26, 22, 18, 0.65);
+      --color-text-secondary: rgba(26, 22, 18, 0.6);
       --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
       --font-masthead: 'Playfair Display', 'Didot', serif;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { font-size: 18px; }
 
     body {
@@ -32,8 +31,6 @@
       background: var(--color-scroll);
       -webkit-font-smoothing: antialiased;
     }
-
-    .page { max-width: 100%; }
 
     .container {
       max-width: 640px;
@@ -53,7 +50,6 @@
       font-size: 1.75rem;
       font-weight: 400;
       letter-spacing: 0.12em;
-      color: var(--color-tehom);
       text-transform: uppercase;
     }
 
@@ -64,7 +60,6 @@
     }
 
     .day-number {
-      font-family: var(--font-body);
       font-size: 6rem;
       font-weight: 100;
       line-height: 1;
@@ -86,56 +81,35 @@
       font-size: 2.5rem;
       font-weight: 700;
       line-height: 1.15;
-      color: var(--color-tehom);
     }
 
     /* Content */
     .content { padding: 2rem 0 4rem; }
-
     p { margin-bottom: 1.4em; }
-
     em { font-style: italic; }
-
     strong { font-weight: 600; }
 
     /* Section Headers */
     .section-header {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 600;
       line-height: 1.3;
-      color: var(--color-tehom);
       margin-top: 3rem;
       margin-bottom: 1.25rem;
       padding-bottom: 0.5rem;
       border-bottom: 2px solid var(--color-gold);
     }
 
-    /* Opener - larger, centered, impactful */
-    .opener {
+    /* Pronunciation */
+    .pronunciation {
       font-size: 1.25rem;
-      font-weight: 500;
+      font-style: italic;
       text-align: center;
-      margin: 2rem 0;
+      margin: 1.5rem 0;
       color: var(--color-tehom);
     }
 
-    .opener em {
-      display: block;
-      margin-top: 0.75rem;
-      font-size: 1.1rem;
-      color: var(--color-text-secondary);
-    }
-
-    /* Big Question */
-    .big-question {
-      font-size: 1.5rem;
-      font-weight: 700;
-      text-align: center;
-      margin: 2.5rem 0;
-      color: var(--color-tehom);
-    }
-
-    /* Blockquote / Scripture */
+    /* Blockquote */
     blockquote {
       margin: 2rem 0;
       padding: 1.5rem 1.75rem;
@@ -143,7 +117,6 @@
       border-left: 3px solid var(--color-gold);
       font-size: 1.05rem;
       line-height: 1.7;
-      color: var(--color-tehom);
     }
 
     blockquote cite {
@@ -154,49 +127,44 @@
       color: var(--color-text-secondary);
     }
 
+    /* Key statement */
+    .key-statement {
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 2rem 0;
+      padding: 1.25rem 1.5rem;
+      background: var(--color-tehom);
+      color: var(--color-scroll);
+    }
+
+    /* Bold paragraph */
+    .bold-para {
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+
+    /* Hebrew */
+    .hebrew-inline {
+      font-family: 'Times New Roman', serif;
+      font-size: 1.3em;
+      color: var(--color-gold);
+      direction: rtl;
+      display: inline;
+    }
+
     /* Divider */
     .divider {
       text-align: center;
       margin: 2.5rem 0;
       color: var(--color-gold);
-      font-size: 1rem;
       letter-spacing: 0.3em;
     }
 
-    /* List of maybes - poetic */
-    .maybe-list {
-      margin: 1.5rem 0;
-    }
-
-    .maybe-list p {
-      margin-bottom: 0.75em;
-    }
-
-    /* Key statement */
-    .key-statement {
-      font-size: 1.15rem;
-      font-weight: 600;
-      text-align: center;
-      margin: 2rem 0;
-      padding: 1.5rem;
-      background: var(--color-tehom);
-      color: var(--color-scroll);
-    }
-
-    /* Three lines */
-    .three-lines {
-      margin: 1.5rem 0;
-      text-align: left;
-    }
-
-    .three-lines p {
-      margin-bottom: 0.5em;
-    }
-
-    /* Interactive Element */
+    /* Interactive */
     .interactive {
       margin: 3rem 0;
-      padding: 2rem;
+      padding: 1.75rem;
       background: var(--color-tehom);
       color: var(--color-scroll);
       border-radius: 3px;
@@ -208,20 +176,14 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--color-gold);
-      margin-bottom: 0.75rem;
-    }
-
-    .interactive-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .breath-line {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       font-size: 1rem;
     }
 
@@ -239,13 +201,13 @@
     /* Reflection */
     .reflection {
       margin: 3rem 0;
-      padding: 1.75rem;
+      padding: 1.5rem;
       background: rgba(193, 154, 107, 0.06);
       border-radius: 3px;
     }
 
     .reflection-title {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       margin-bottom: 1rem;
     }
@@ -253,15 +215,17 @@
     .reflection ol {
       list-style: none;
       counter-reset: q;
+      margin: 0;
+      padding: 0;
     }
 
     .reflection li {
       counter-increment: q;
-      margin-bottom: 1rem;
-      padding-left: 2rem;
+      margin-bottom: 0.75rem;
+      padding-left: 1.75rem;
       position: relative;
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
 
     .reflection li::before {
@@ -274,34 +238,53 @@
 
     /* Footnotes */
     .footnotes {
-      margin-top: 4rem;
-      padding-top: 1.5rem;
+      margin-top: 3.5rem;
+      padding-top: 1.25rem;
       border-top: 1px solid rgba(26,22,18,0.1);
     }
 
     .footnotes-title {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--color-text-secondary);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .footnotes ol {
       list-style: none;
+      counter-reset: fn;
+      margin: 0;
+      padding: 0;
     }
 
     .footnotes li {
-      font-size: 0.85rem;
+      counter-increment: fn;
+      margin-bottom: 0.5rem;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 0.8rem;
       line-height: 1.5;
       color: var(--color-text-secondary);
     }
 
+    .footnotes li::before {
+      content: counter(fn) ".";
+      position: absolute;
+      left: 0;
+    }
+
+    sup {
+      font-size: 0.65em;
+      color: var(--color-gold);
+      font-weight: 600;
+    }
+
     /* Footer */
     .day-footer {
-      margin-top: 3rem;
-      padding: 1.5rem 0;
+      margin-top: 2.5rem;
+      padding: 1.25rem 0;
       text-align: center;
       border-top: 1px solid rgba(26,22,18,0.08);
     }
@@ -313,7 +296,7 @@
     }
 
     .day-next {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-style: italic;
       color: var(--color-text-secondary);
       margin-top: 0.25rem;
@@ -323,13 +306,15 @@
     @media print {
       html { font-size: 11pt; }
       body { background: white; }
-      .interactive { background: #f0f0f0; color: #1A1612; border: 1px solid #ccc; }
-      .interactive-label, .breath-direction { color: #666; }
+      .interactive, .key-statement {
+        background: #f0f0f0;
+        color: #1A1612;
+        border: 1px solid #ccc;
+      }
+      .interactive-label, .breath-direction { color: #555; }
       .breath-text { color: #333; }
-      .key-statement { background: #f0f0f0; color: #1A1612; border: 1px solid #ccc; }
     }
 
-    /* Mobile */
     @media (max-width: 600px) {
       html { font-size: 16px; }
       .day-number { font-size: 4.5rem; }
@@ -343,44 +328,30 @@
 
     <header class="masthead">
       <div class="container">
-        <h1 class="masthead-logo">EUONGELION</h1>
+        <h1 class="masthead-logo">EUANGELION</h1>
       </div>
     </header>
 
     <section class="hero">
       <div class="container">
         <div class="day-number">01</div>
-        <p class="series-label">Welcome to EUONGELION</p>
-        <h2 class="hero-title">Why Are You Here?</h2>
+        <p class="series-label">Welcome to EUANGELION</p>
+        <h2 class="hero-title">What Is This Place?</h2>
       </div>
     </section>
 
     <main class="content">
       <div class="container">
 
-        <p class="opener">That's not a rhetorical question.<em>Something brought you here.</em></p>
+        <h3 class="section-header">The Name You're Trying to Pronounce</h3>
 
-        <p>A link someone shared. A search at 2 AM. A name you couldn't pronounce but clicked anyway.</p>
+        <p class="pronunciation">Eu-on-GEL-ee-on.</p>
 
-        <p><em>Eu-on-GEL-ee-on.</em> It's Greek. It means <em>good news</em>.</p>
+        <p>It's Greek. It means <em>good news</em>—the kind that makes a messenger run across a battlefield, lungs burning, because the outcome of the war has shifted and everyone needs to know.<sup>1</sup></p>
 
-        <p>But before we get to the news, let's sit with the question:</p>
+        <p>This is where you've landed. Not an app. Not a program. Not another thing to add to your already overflowing life.</p>
 
-        <p class="big-question">Why are you here?</p>
-
-        <div class="divider">...</div>
-
-        <h3 class="section-header">Maybe You're Searching</h3>
-
-        <div class="maybe-list">
-          <p>Maybe faith used to make sense and now it doesn't.</p>
-          <p>Maybe you grew up in church and walked away.</p>
-          <p>Maybe you never believed but something keeps pulling at you—a question you can't dismiss, a longing you can't name.</p>
-        </div>
-
-        <p>Maybe you're exhausted. By the performance. By the noise. By trying to hold it all together while something inside is quietly falling apart.</p>
-
-        <p>If any of that resonates, you're in the right place.</p>
+        <p>A place where the news gets announced: the battle is over.</p>
 
         <div class="divider">...</div>
 
@@ -393,45 +364,60 @@
           <cite>— Philippians 4:6-7</cite>
         </blockquote>
 
-        <p>For years, those words felt impossible. <em>Don't be anxious?</em> Tell that to the racing thoughts. Tell that to the weight on your chest when everything looks fine on the outside.</p>
+        <p>For years, those words felt impossible. <em>Don't be anxious?</em> Tell that to the 3 AM thoughts. Tell that to the weight on your chest when everything looks fine on the outside.</p>
 
-        <p>But then something shifted. Not because life got easier. Because those words became real. Peace that doesn't make sense. Peace that guards you when nothing else can.</p>
+        <p>But then something shifted. Not because life got easier. Because those words became real—peace that doesn't make sense, peace that guards you when nothing else can.</p>
 
         <div class="key-statement">
-          EUONGELION exists because that kind of encounter shouldn't be rare.
+          EUANGELION exists because that kind of encounter shouldn't be rare.
         </div>
-
-        <p>Not just for the people who grew up knowing the right answers. Not just for the spiritually elite. For the lost. The wandering. The ones who sense there's more but don't know where to find it.</p>
-
-        <p>For you.</p>
 
         <div class="divider">...</div>
 
-        <h3 class="section-header">What We Believe About You</h3>
+        <h3 class="section-header">A Story: The Long Way Home</h3>
 
-        <p>You were made for relationship with God.</p>
+        <p>In 1972, a Japanese soldier named Hiroo Onoda emerged from the Philippine jungle. He had been hiding for <em>twenty-nine years</em>.</p>
 
-        <p>Not religion. Not performance. Not rule-following.</p>
+        <p>Sent to Lubang Island in 1944 with orders to never surrender, Onoda refused to believe the war had ended. Leaflets announcing Japan's surrender? Propaganda. Family members with loudspeakers? A trick. For nearly three decades, he lived in the mountains, convinced the battle was still raging.<sup>3</sup></p>
 
-        <p><em>Relationship.</em></p>
+        <p>It wasn't until his former commanding officer personally issued the order to stand down that Onoda finally surrendered.</p>
 
-        <p>The Scriptures tell one story from beginning to end: a God who relentlessly pursues the people He made. Not because they earned it. Because He is who He is.</p>
+        <p>He had been free for twenty-nine years. He just didn't know it.</p>
 
-        <div class="three-lines">
-          <p>If you've drifted, He's looking for you.</p>
-          <p>If you've doubted, He can handle your questions.</p>
-          <p>If you've never believed, the invitation stands.</p>
-        </div>
+        <p class="bold-para">Some of you have been living in a war that's already over.</p>
 
-        <p>We're not here to convince you. We're here to sow seeds. What grows is between you and God.</p>
+        <p>Fighting. Surviving. Convinced you have to earn God's favor, that you're not good enough, that the battle is still raging.</p>
+
+        <p>But the announcement has already been made. The <em>euangelion</em> has already been declared.</p>
+
+        <p>"It is finished."<sup>4</sup></p>
+
+        <p>You don't have to keep fighting. You just have to come out of the jungle.</p>
+
+        <div class="divider">...</div>
+
+        <h3 class="section-header">The Hebrew Word for "Restore"</h3>
+
+        <p>The Hebrew word <em>shuv</em> (<span class="hebrew-inline">שׁוּב</span>) means to return, to come back, to go home.<sup>5</sup></p>
+
+        <blockquote>
+          "He restores my soul."
+          <cite>— Psalm 23:3</cite>
+        </blockquote>
+
+        <p>That's the word—<em>shuv</em>. He brings your soul back home.</p>
+
+        <p>That's the invitation here. Not a productivity hack for your spiritual life. Not another thing to optimize.</p>
+
+        <p><em>Soul restoration.</em> Coming home to the God who's been waiting.</p>
 
         <div class="divider">...</div>
 
         <h3 class="section-header">What This Place Is</h3>
 
-        <p>EUONGELION is daily bread for people who want more than surface-level faith.</p>
+        <p>EUANGELION is daily bread for hungry souls.</p>
 
-        <p>Each day, you'll receive a devotional. Not a quick verse with a chipper thought attached. Something with substance. Something that takes Scripture seriously—the beautiful parts and the hard parts.</p>
+        <p>Each day, you'll receive a devotional—not a quick verse with a chipper thought attached. Something deeper. Something that takes Scripture seriously, including the hard parts.</p>
 
         <p>We go deep into the original Hebrew and Greek. We tell stories that make ancient truths tangible. We connect everything to Jesus. And we invite response, not just consumption.</p>
 
@@ -441,8 +427,6 @@
 
         <h3 class="section-header">An Invitation</h3>
 
-        <p>Before we close this first day, try something.</p>
-
         <p>Whatever you're carrying—the anxiety, the doubt, the question you can't answer—bring it.</p>
 
         <blockquote>
@@ -451,38 +435,45 @@
 
         <p>Not to fix. Not to solve. Just to bring.</p>
 
-        <p>That's the invitation. Come as you are.</p>
+        <p>The good news has been announced. The war is over.</p>
+
+        <p>Come home.</p>
 
         <div class="interactive">
           <p class="interactive-label">Breath Prayer</p>
-          <h4 class="interactive-title">Carry This With You</h4>
           <div class="breath-line">
             <span class="breath-direction">Inhale:</span>
-            <span class="breath-text">"I bring everything to You."</span>
+            <span class="breath-text">"Lord, I am here."</span>
           </div>
           <div class="breath-line">
             <span class="breath-direction">Exhale:</span>
-            <span class="breath-text">"Guard my heart and mind."</span>
+            <span class="breath-text">"Lead me home."</span>
           </div>
         </div>
 
         <div class="reflection">
           <h4 class="reflection-title">Reflection</h4>
           <ol>
-            <li>Why are you here—really? What were you searching for when you found this?</li>
-            <li>What would "peace that surpasses understanding" look like in your life right now?</li>
+            <li>What brought you here? What were you searching for?</li>
+            <li>Is there a "war" in your life that might already be finished?</li>
+            <li>What does "home" mean to you spiritually?</li>
           </ol>
         </div>
 
         <div class="footnotes">
           <h4 class="footnotes-title">Notes</h4>
           <ol>
+            <li>Friedrich, Gerhard. "εὐαγγέλιον." <em>Theological Dictionary of the New Testament</em>, vol. 2, 721-737. Eerdmans, 1964.</li>
             <li>Philippians 4:6-7 (ESV).</li>
+            <li>Onoda, Hiroo. <em>No Surrender: My Thirty-Year War</em>. Kodansha International, 1974.</li>
+            <li>John 19:30 (ESV).</li>
+            <li>Harris, R. Laird, et al. <em>Theological Wordbook of the Old Testament</em>. Moody Press, 1980. Entry 2340.</li>
+            <li>Psalm 23:3 (ESV).</li>
           </ol>
         </div>
 
         <footer class="day-footer">
-          <p class="day-progress">Day 1 of 5 — Welcome to EUONGELION</p>
+          <p class="day-progress">Day 1 of 5 — Welcome to EUANGELION</p>
           <p class="day-next">Tomorrow: How This Is Different</p>
         </footer>
 

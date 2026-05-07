@@ -54,7 +54,7 @@ For years, those words felt impossible. _Don't be anxious?_ Tell that to the 3 A
 
 But then something shifted. Not because life got easier. Because those words became real—peace that doesn't make sense, peace that guards you when nothing else can.
 
-**EUONGELION exists because that kind of encounter shouldn't be rare.**
+**EUANGELION exists because that kind of encounter shouldn't be rare.**
 
 ---
 

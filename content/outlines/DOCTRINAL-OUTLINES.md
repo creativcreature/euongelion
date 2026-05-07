@@ -174,7 +174,7 @@ Three foundational doctrinal tracks:
 ### Day 12: The PaRDeS Method: Four Levels
 
 **Key Question:** How did ancient Jews read Scripture in layers?
-**Main Thesis:** The PaRDeS method (Peshat, Remez, Derash, Sod) reveals multiple levels of meaning in Scripture—EUONGELION uses this framework.
+**Main Thesis:** The PaRDeS method (Peshat, Remez, Derash, Sod) reveals multiple levels of meaning in Scripture—EUANGELION uses this framework.
 **Scripture Focus:** Psalm 119:18 — "Open my eyes that I may see wonderful things in your law."
 **Content Direction:**
 
@@ -182,7 +182,7 @@ Three foundational doctrinal tracks:
 - Remez: Hint, deeper significance
 - Derash: Explore, practical application
 - Sod: Hidden, mystical meaning
-- How EUONGELION devotionals use this structure
+- How EUANGELION devotionals use this structure
 
 ---
 

@@ -482,19 +482,17 @@ function buildReviewDay(
   }
 }
 
-export function buildCuratedFirstPlan(params: {
+export async function buildCuratedFirstPlan(params: {
   seriesSlug: string
   userResponse: string
   anchorSeed?: CurationSeed | null
-}): CustomPlanDay[] {
+}): Promise<CustomPlanDay[]> {
   const selectedDays = selectPlanCandidates(params)
 
-  const devotionalDays = selectedDays.map((candidate, index) => {
+  const devotionalDays = await Promise.all(selectedDays.map(async (candidate, index) => {
     const dayNumber = index + 1
-    // Reference grounding is optional — the 13GB reference library is
-    // gitignored and not deployed to Vercel. When absent, the plan still
-    // builds with curated content and a fallback reflection paragraph.
-    const referenceHits = retrieveReferenceHits({
+    // Reference grounding uses pre-built index on Workers, live library on local dev.
+    const referenceHits = await retrieveReferenceHits({
       userResponse: params.userResponse,
       scriptureReference: candidate.scriptureReference,
       limit: 3,
@@ -534,7 +532,7 @@ export function buildCuratedFirstPlan(params: {
         referenceHits,
       }),
     }
-  })
+  }))
 
   // Append Sabbath (day 6) and Review (day 7) to complete the 7-day arc.
   const sabbath = buildSabbathDay(devotionalDays, params.userResponse)

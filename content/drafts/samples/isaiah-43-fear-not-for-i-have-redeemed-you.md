@@ -367,6 +367,6 @@ _Repeat slowly for five breaths. Let the words become a homecoming._
 
 ---
 
-_This devotional is part of the EUONGELION Deep Dive series._
+_This devotional is part of the EUANGELION Deep Dive series._
 
 _"The Word was already one story. Now we're helping people see it."_

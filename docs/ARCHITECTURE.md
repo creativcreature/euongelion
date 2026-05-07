@@ -1,10 +1,10 @@
 # Architecture
 
-This document describes the technical architecture of the EUONGELION platform.
+This document describes the technical architecture of the EUANGELION platform.
 
 ## System Overview
 
-EUONGELION is built as a Next.js 16+ application using the App Router, deployed on Vercel with Supabase as the database backend and Claude API for AI-powered content matching.
+EUANGELION is built as a Next.js 16+ application using the App Router, deployed on Vercel with Supabase as the database backend and Claude API for AI-powered content matching.
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -193,7 +193,7 @@ Return next steps
 RootLayout
 ├── ThemeProvider
 │   └── Navigation
-│       ├── Logo (EUONGELION)
+│       ├── Logo (EUANGELION)
 │       ├── MenuButton
 │       └── ThemeToggle
 │
@@ -308,7 +308,7 @@ ANTHROPIC_API_KEY=sk-ant-...
 
 # Optional
 NEXT_PUBLIC_SITE_URL=https://wokegod.world
-NEXT_PUBLIC_SITE_NAME=EUONGELION
+NEXT_PUBLIC_SITE_NAME=EUANGELION
 
 # Rate Limiting (Production)
 UPSTASH_REDIS_URL=https://...

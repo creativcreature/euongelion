@@ -1,6 +1,6 @@
 # Database Schema
 
-EUONGELION uses Supabase (PostgreSQL) with Row Level Security (RLS) enabled.
+EUANGELION uses Supabase (PostgreSQL) with Row Level Security (RLS) enabled.
 
 ## Overview
 

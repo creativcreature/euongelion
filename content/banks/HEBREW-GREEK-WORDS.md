@@ -1,4 +1,4 @@
-# EUONGELION Hebrew & Greek Word Bank
+# EUANGELION Hebrew & Greek Word Bank
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -8,7 +8,7 @@
 
 ## How to Use This Bank
 
-This word bank provides theological vocabulary studies for use in EUONGELION devotionals. Each entry includes:
+This word bank provides theological vocabulary studies for use in EUANGELION devotionals. Each entry includes:
 
 - Original language characters
 - Transliteration with pronunciation guide

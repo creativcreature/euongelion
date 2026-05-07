@@ -5,7 +5,8 @@
 - **URL:** euangelion.app
 - **Brand:** Euangelion (Greek: "Good News")
 - **GitHub:** creativcreature/euongelion (private)
-- **Vercel:** james-projects-5d824c1e/euongelion
+- **Hosting:** Cloudflare Workers (migrated from Vercel)
+- **Cloudflare account:** chrisparker21@gmail.com (Account ID: 15a3f83632fea316caa448503bb786f9)
 
 ## Tech Stack
 
@@ -13,7 +14,7 @@
 - **Styling:** Tailwind CSS v4, dark-first
 - **Database:** Supabase (PostgreSQL + RLS + Auth)
 - **Testing:** Vitest + React Testing Library
-- **Deploy:** Vercel (Pro for launch capacity)
+- **Deploy:** Cloudflare Workers via OpenNext (`npm run deploy`)
 - **CI:** GitHub Actions (build + lint + type-check + test)
 
 ## Commands
@@ -81,7 +82,7 @@ Three visual directions proposed (founder decision pending):
 ## Constraints
 
 - **Port 3333** — ports 3000-3005 are occupied
-- **Vercel route count** — current API surface exceeds Hobby limits; Pro is required pre-launch
+- **Cloudflare Workers free plan** — 10ms CPU time, 30s wall-clock per request. LLM-heavy routes may need paid plan ($5/mo) or architecture changes.
 - **Reference library** — 13GB in `content/reference/`, always gitignored
 - **WCAG 2.1 AA** minimum accessibility
 - **Performance:** LCP < 2.5s, FID < 100ms, CLS < 0.1
@@ -178,11 +179,21 @@ See `docs/MASTER-LOG.md` for all founder decisions across sessions.
 
 - **GitHub account:** `creativcreature`. This machine has multiple gh accounts — MUST switch first.
 - **GitHub repo:** `creativcreature/euongelion`
-- **Vercel team:** `james-projects-5d824c1e/euongelion`
 - **Git email:** Must be `chrisparker21@gmail.com`.
 - **Production URL:** `https://euangelion.app`
 - **Auto-deploy:** GitHub integration deploys on every push to `main`. No manual deploy needed.
-- **Env vars:** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_APP_URL` — set in Vercel project settings.
+
+**Cloudflare Workers (current hosting):**
+
+- **Cloudflare account:** `chrisparker21@gmail.com`
+- **Account ID:** `15a3f83632fea316caa448503bb786f9`
+- **Worker name:** `euangelion`
+- **Usage model:** `standard` (free tier — 10ms CPU, 30s wall-clock per request)
+- **Config:** `wrangler.jsonc`
+- **Deploy command:** `npm run deploy` (runs `opennextjs-cloudflare build && opennextjs-cloudflare deploy`)
+- **Routes:** `euangelion.app/*` and `www.euangelion.app/*`
+- **Secrets set:** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_APP_URL`, `ANTHROPIC_API_KEY`
+- **Slim reference index:** `public/reference-index-slim.json` (3.2 MB, used on Workers instead of full 15 MB index)
 
 **Before ANY push or deploy, run ALL of these:**
 
@@ -190,6 +201,7 @@ See `docs/MASTER-LOG.md` for all founder decisions across sessions.
 gh auth switch --user creativcreature  # This machine has multiple gh accounts — MUST switch first
 gh auth status                          # Confirm active account is creativcreature
 git config user.email                   # Confirm it says chrisparker21@gmail.com
+npx wrangler whoami                     # Confirm Cloudflare account is chrisparker21@gmail.com
 ```
 
 If any check fails, **STOP**. Do not push or deploy.
@@ -218,3 +230,16 @@ Biblical reference materials in Supabase Storage bucket `reference-library`. Loc
 ./scripts/upload-reference.sh            # Upload to Supabase
 ./scripts/upload-reference.sh commentaries  # Upload specific folder
 ```
+
+## Development Rules — Non-Negotiable
+
+1. **NO SILENT FALLBACKS.** If a feature fails, surface the error. Do not wrap it in try/catch and return empty data. Do not create "degraded mode" unless I explicitly ask for one. A broken feature should look broken, not silently missing.
+2. **NO SHORTCUTS ON CONTENT QUALITY.** The reference library, LLM composition, and scripture grounding are the product. Never truncate, skip, or stub these to save time or avoid errors. Fix the actual problem.
+3. **PRESENT TRADEOFFS, DON'T MAKE DECISIONS.** When there's a choice between cost/speed and quality, show me both options with what each gives up. Do not pick for me.
+4. **NO DEPLOY UNTIL VERIFIED LOCALLY.** Never push to production to "test if it works." Run locally, verify the output, then deploy.
+5. **WHEN SOMETHING BREAKS, DIAGNOSE FIRST.** Do not immediately start fixing. Show me what's wrong, why it's wrong, and what the fix options are. Then wait for my decision.
+6. **NEVER SET PLACEHOLDER VALUES.** No "missing" strings, no TODO stubs in production code, no empty implementations that look like they work. Either implement it fully or leave it out and tell me.
+7. **ASK BEFORE CREATING NEW FILES/INDEXES/WORKAROUNDS.** If the fix involves creating a new slimmed version, a new fallback path, or a new intermediate file — stop and ask me first. The "quick fix" usually becomes permanent technical debt.
+8. **FULL CONTENT, FULL QUALITY, FULL IMPLEMENTATION.** This is a devotional product grounded in real theology. Every devotional must use complete source text, real scripture, and polished LLM composition. There is no acceptable "lite" version.
+9. **TESTING MEANS TESTING IN THE WORKERS RUNTIME.** "npm run build" succeeding is NOT a test. Before ANY deploy: run `npm run preview`, hit every affected route with curl in the local Workers preview and confirm the actual response body is correct. If the feature involves AI generation, actually trigger a generation and show me the output. Show me the curl commands and their full responses. Only after I confirm the responses look correct do you deploy.
+10. **NEVER SAY "IT WORKS" BASED ON BUILD OUTPUT ALONE.** "It works" means you hit the endpoint, got the expected response, and showed it to me. Anything less is a guess.

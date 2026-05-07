@@ -1,4 +1,4 @@
-# EUONGELION Referral Program
+# EUANGELION Referral Program
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -8,7 +8,7 @@
 
 ## Overview
 
-The EUONGELION Referral Program encourages organic sharing by rewarding users who invite others to the platform. The program is designed to feel natural, not transactional—aligned with our mission of shepherding people to Jesus, not acquiring users.
+The EUANGELION Referral Program encourages organic sharing by rewarding users who invite others to the platform. The program is designed to feel natural, not transactional—aligned with our mission of shepherding people to Jesus, not acquiring users.
 
 **Core Philosophy:**
 Sharing should feel like helping a friend, not selling a product. Rewards are appreciation, not compensation.
@@ -83,7 +83,7 @@ wokegod.world/?ref=grace7xk
 | ------- | ------------------------- | ----------------------------------------------------------- |
 | 3       | **Early Access Badge**    | Visual badge on profile (if account created)                |
 | 5       | **Exclusive Content**     | Early access to new series before public release            |
-| 10      | **Shepherd's Guide**      | Downloadable PDF: How to Lead a Small Group with EUONGELION |
+| 10      | **Shepherd's Guide**      | Downloadable PDF: How to Lead a Small Group with EUANGELION |
 | 15      | **Founder's Circle**      | Direct email access to founder for feedback/suggestions     |
 | 25      | **Custom Series Request** | Submit a topic request prioritized in content queue         |
 | 50      | **Patron Recognition**    | Name included in annual Patron acknowledgment               |
@@ -96,7 +96,7 @@ wokegod.world/?ref=grace7xk
 
 **Philosophical Alignment:**
 
-- EUONGELION is about shepherding, not selling
+- EUANGELION is about shepherding, not selling
 - Cash incentives create transactional relationships
 - We want referrals from genuine belief, not commission-seeking
 
@@ -122,7 +122,7 @@ wokegod.world/?ref=grace7xk
 
 **Body:**
 
-> If EUONGELION meant something to you, consider sharing it.
+> If EUANGELION meant something to you, consider sharing it.
 >
 > Not for us. For them. The friend who's been searching. The family member who drifted. The colleague who asked that question once.
 >
@@ -156,7 +156,7 @@ wokegod.world/?ref=grace7xk
 
 **Version B (Story-Driven):**
 
-> Someone shared EUONGELION with you—or maybe you found it yourself.
+> Someone shared EUANGELION with you—or maybe you found it yourself.
 >
 > Either way, you're here. Someone else could be too.
 >
@@ -184,7 +184,7 @@ wokegod.world/?ref=grace7xk
 
 Hi,
 
-Good news. Someone you invited just completed Day 1 of EUONGELION.
+Good news. Someone you invited just completed Day 1 of EUANGELION.
 
 We don't know who (privacy, remember?)—but you do. You invited them. And they showed up.
 
@@ -200,7 +200,7 @@ Your referral link: [REFERRAL LINK]
 
 Grace and peace,
 
-The EUONGELION Team
+The EUANGELION Team
 
 ---
 
@@ -208,7 +208,7 @@ The EUONGELION Team
 
 **Subject:** You unlocked something
 
-**Preview Text:** Thank you for sharing EUONGELION.
+**Preview Text:** Thank you for sharing EUANGELION.
 
 ---
 
@@ -216,7 +216,7 @@ The EUONGELION Team
 
 Hi,
 
-Because you've shared EUONGELION with others, you've unlocked:
+Because you've shared EUANGELION with others, you've unlocked:
 
 **[REWARD NAME]**
 
@@ -233,7 +233,7 @@ Keep sharing. The lost sheep are still out there.
 
 Grace and peace,
 
-The EUONGELION Team
+The EUANGELION Team
 
 ---
 
@@ -277,7 +277,7 @@ The EUONGELION Team
 ```
 I've been reading something every day that's actually changing how I think about faith.
 
-It's called EUONGELION—daily readings that are deep but not long. Honest content for the seeking heart.
+It's called EUANGELION—daily readings that are deep but not long. Honest content for the seeking heart.
 
 No accounts required. Just content worth your time.
 
@@ -291,7 +291,7 @@ Check it out: [REFERRAL LINK]
 ```
 Found something worth sharing.
 
-EUONGELION: Daily readings for people who believe, used to believe, or want to believe but have questions.
+EUANGELION: Daily readings for people who believe, used to believe, or want to believe but have questions.
 
 Deep content. No accounts. Free.
 
@@ -305,7 +305,7 @@ Deep content. No accounts. Free.
 ```
 Hey—thought of you. I've been reading this daily devotional thing that's actually good. Deep but not long. No guilt trips.
 
-It's called EUONGELION. Here's the link if you want to check it out: [REFERRAL LINK]
+It's called EUANGELION. Here's the link if you want to check it out: [REFERRAL LINK]
 
 No pressure. Just wanted to share.
 ```
@@ -321,7 +321,7 @@ No pressure. Just wanted to share.
 ```
 Hey,
 
-I've been reading something daily that's been really good for me. It's called EUONGELION—short devotional readings with actual depth. Hebrew word studies, real stories, honest questions.
+I've been reading something daily that's been really good for me. It's called EUANGELION—short devotional readings with actual depth. Hebrew word studies, real stories, honest questions.
 
 I thought of you because [personalize: "I know you've been searching" / "we talked about faith stuff a while back" / "you might appreciate the approach"].
 
@@ -343,7 +343,7 @@ No pressure. Just wanted to share.
 **The Fine Print (But Readable):**
 
 1. **What This Is:**
-   The EUONGELION Referral Program rewards users who share the platform with others. Rewards are non-monetary appreciation, not compensation.
+   The EUANGELION Referral Program rewards users who share the platform with others. Rewards are non-monetary appreciation, not compensation.
 
 2. **How Credits Work:**
    - You earn credits when someone you invited completes specific actions (Day 1, series completion, account creation)
@@ -358,7 +358,7 @@ No pressure. Just wanted to share.
 4. **What's Not Allowed:**
    - Creating fake accounts to earn credits
    - Spam sharing or unsolicited mass messaging
-   - Misleading claims about EUONGELION
+   - Misleading claims about EUANGELION
    - Anything that violates our community values
 
 5. **Our Rights:**

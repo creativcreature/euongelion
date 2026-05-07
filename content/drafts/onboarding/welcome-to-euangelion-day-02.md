@@ -1,4 +1,4 @@
-# Welcome to EUONGELION
+# Welcome to EUANGELION
 
 ## Day 2: How This Is Different
 
@@ -137,6 +137,6 @@ The rest is between you and Him.
 
 ---
 
-_Day 2 of 5 — Welcome to EUONGELION_
+_Day 2 of 5 — Welcome to EUANGELION_
 
 _Tomorrow: How to Read Scripture_

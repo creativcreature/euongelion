@@ -8,7 +8,7 @@
 
 ## Purpose
 
-This document defines the optimal structure for EUONGELION's ~1,070 planned devotionals. It serves as the authoritative guide for:
+This document defines the optimal structure for EUANGELION's ~1,070 planned devotionals. It serves as the authoritative guide for:
 
 - Content creators writing devotionals
 - Technical architects building the platform
@@ -36,7 +36,7 @@ This document defines the optimal structure for EUONGELION's ~1,070 planned devo
 
 ### 1.1 The Two Content Formats
 
-EUONGELION uses **two distinct formats** that must be understood separately:
+EUANGELION uses **two distinct formats** that must be understood separately:
 
 #### Format A: Deep Dive Narrative Essay (~4,000 words)
 
@@ -971,7 +971,7 @@ Every module should carry metadata for filtering, search, and display logic.
 
 | Type              | Description                  | Example                                                |
 | ----------------- | ---------------------------- | ------------------------------------------------------ |
-| **prerequisite**  | Should be read before        | "Welcome to EUONGELION" before "How to Read the Bible" |
+| **prerequisite**  | Should be read before        | "Welcome to EUANGELION" before "How to Read the Bible" |
 | **sequel**        | Direct continuation          | Day 1 to Day 2 in a series                             |
 | **parallel**      | Same theme, different angle  | Two devotionals on "rest" from different books         |
 | **deeper-dive**   | More advanced treatment      | Basic prayer vs. advanced prayer disciplines           |
@@ -1067,7 +1067,7 @@ Not all content should be shared equally. Use these criteria:
 
 - Store character count for each shareable snippet
 - Include variants for different platforms
-- Account for attribution (e.g., "- EUONGELION")
+- Account for attribution (e.g., "- EUANGELION")
 
 **Auto-truncation rules:**
 
@@ -1415,7 +1415,7 @@ relevance_score =
 - 19 series in JSON format
 - ~110 days of devotionals
 - 12-module structure per day
-- Located in `/content/series-json/` and `/euongelion/content/series-json/`
+- Located in `/content/series-json/` and `/euangelion/content/series-json/`
 
 **Sample Analyzed: "Too Busy for God"**
 
@@ -1661,7 +1661,7 @@ Keywords that trigger content matching:
 
 ---
 
-_This document is the authoritative reference for EUONGELION content structure. All content creation, technical implementation, and design decisions should align with these specifications._
+_This document is the authoritative reference for EUANGELION content structure. All content creation, technical implementation, and design decisions should align with these specifications._
 
 _Last reviewed: January 17, 2026_
 _Next review: Before Phase 1 launch_

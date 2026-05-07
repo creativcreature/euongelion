@@ -17,7 +17,7 @@ Google's Learn Your Way transforms static educational content into personalized,
 
 Google built Learn Your Way on five learning science principles:
 
-| Principle                   | What It Means                               | EUONGELION Application                                                            |
+| Principle                   | What It Means                               | EUANGELION Application                                                            |
 | --------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------- |
 | **Inspire Active Learning** | Learners engage, don't just consume         | Games as teaching (Match, Order, Reveal), Reflection prompts, Interactive modules |
 | **Manage Cognitive Load**   | Don't overwhelm; chunk appropriately        | Day-gating (one day at a time), Module-based structure, Cinematic scroll pacing   |
@@ -34,7 +34,7 @@ Google built Learn Your Way on five learning science principles:
 **What Google Does:**
 Adapts reading level (Flesch-Kincaid) based on learner's reported grade while preserving content scope.
 
-**EUONGELION Application:**
+**EUANGELION Application:**
 
 - Our pathways already do this conceptually (Sleep = accessible, Shepherd = dense)
 - Could refine vocabulary complexity per pathway
@@ -49,7 +49,7 @@ Adapts reading level (Flesch-Kincaid) based on learner's reported grade while pr
 **What Google Does:**
 Learners select interests (sports, music, food). System embeds relevant analogies and examples. "Projectile motion" becomes basketball shots for one learner, guitar strings for another.
 
-**EUONGELION Application:**
+**EUANGELION Application:**
 
 - Could let users indicate their "season" or "struggle" (work stress, relationship pain, doubt, loss)
 - Examples in Teaching and Bridge modules could adapt
@@ -72,10 +72,10 @@ Same content, multiple formats:
 
 **Research basis:** "Forging mental connections between different representations strengthens conceptual understanding."
 
-**EUONGELION Application:**
+**EUANGELION Application:**
 We already have 21 modules — this IS multiple representation:
 
-| Google Format        | EUONGELION Equivalent           |
+| Google Format        | EUANGELION Equivalent           |
 | -------------------- | ------------------------------- |
 | Immersive text       | Teaching, Story, Bridge         |
 | Quizzes              | Comprehension, Match, Order     |
@@ -92,7 +92,7 @@ We already have 21 modules — this IS multiple representation:
 **What Google Does:**
 Students CHOOSE which representation to engage with. Not forced into one path.
 
-**EUONGELION Application:**
+**EUANGELION Application:**
 User mentioned wanting users to set up devotionals with preferred modules.
 
 **Approach (Without Overwhelm):**
@@ -110,7 +110,7 @@ User mentioned wanting users to set up devotionals with preferred modules.
 **What Google Does:**
 Quizzes identify knowledge gaps → guides learner to revisit struggling areas → true personalization.
 
-**EUONGELION Application:**
+**EUANGELION Application:**
 
 - Comprehension module results could surface related content
 - "Didn't quite get hevel? Here's another angle..."
@@ -135,7 +135,7 @@ Quizzes identify knowledge gaps → guides learner to revisit struggling areas �
 
 ---
 
-## Actionable Takeaways for EUONGELION
+## Actionable Takeaways for EUANGELION
 
 ### Immediate (MVP)
 

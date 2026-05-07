@@ -1,6 +1,6 @@
 # Authentication & Security
 
-This document covers the authentication flow and security measures in EUONGELION.
+This document covers the authentication flow and security measures in EUANGELION.
 
 ## Overview
 

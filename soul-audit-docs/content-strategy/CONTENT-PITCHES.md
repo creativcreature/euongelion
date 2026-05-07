@@ -7,7 +7,7 @@
 
 ## The Context
 
-Based on analysis from multiple agents, EUONGELION has:
+Based on analysis from multiple agents, EUANGELION has:
 
 **Strengths:**
 
@@ -62,14 +62,14 @@ These are real people with real questions. They type into Soul Audit and hit a d
 | Can We Trust the Bible?                   | 14   | Historicity, manuscripts, reliability                |
 | Faith and Science                         | 14   | Evolution, miracles, Christianity and science        |
 
-**Why This Matters for EUONGELION:**
+**Why This Matters for EUANGELION:**
 
 1. **Expands reach** — Currently cannot serve intellectually-driven seekers
 2. **Differentiates** — Most devotional apps are purely emotional; this adds intellectual rigor
 3. **Completes the journey** — Someone might start with apologetics and graduate to deeper devotion
 4. **Serves shepherds** — Pastors and leaders get resources for answering questions
 
-**Unique EUONGELION Advantage:**
+**Unique EUANGELION Advantage:**
 Apply the same PaRDeS + Chiasm structure to apologetics. Don't just argue—tell the story. Hebrew word studies illuminate apologetic points. Modern stories make abstract arguments concrete.
 
 **Sample Day: "Why Believe? Day 5 - Where Does Morality Come From?"**
@@ -120,7 +120,7 @@ A' (Return): Back at the dinner party. You don't need to win the argument.
 
 **Motivation:** BUILD SOMETHING THAT LASTS
 
-Beautiful devotionals without doctrinal foundation produce emotional Christians who don't know what they believe. They're susceptible to every wind of teaching. EUONGELION can produce more than feelings—it can produce rooted disciples.
+Beautiful devotionals without doctrinal foundation produce emotional Christians who don't know what they believe. They're susceptible to every wind of teaching. EUANGELION can produce more than feelings—it can produce rooted disciples.
 
 **The Problem:**
 
@@ -138,7 +138,7 @@ Beautiful devotionals without doctrinal foundation produce emotional Christians 
 | PaRDeS Explained      | 5    | Deep-dive on the four levels (makes the implicit explicit)       |
 | Hard Doctrines        | 9    | Predestination, hell, suffering, gifts, etc.                     |
 
-**Why This Matters for EUONGELION:**
+**Why This Matters for EUANGELION:**
 
 1. **Explains the distinctive** — PaRDeS is your method. If users don't understand it, they miss the value.
 2. **Prevents shallow faith** — Experience without understanding doesn't last
@@ -148,7 +148,7 @@ Beautiful devotionals without doctrinal foundation produce emotional Christians 
 **Sample Day: "How to Read the Bible Day 3 - What is PaRDeS?"**
 
 ```
-A (Hook): You've been reading EUONGELION for a week now. You notice something.
+A (Hook): You've been reading EUANGELION for a week now. You notice something.
    The devotionals seem to work on multiple levels. There's the plain meaning,
    but also hints, applications, mysteries. It's not random. It's a method
    called PaRDeS. Today you learn what it is.
@@ -188,7 +188,7 @@ A' (Return): Tomorrow, as you read, ask: What's the plain meaning? What hints
 - One-time generation cost: ~$25-35
 - Requires careful theological review
 
-**Priority:** HIGH — This explains what makes EUONGELION different.
+**Priority:** HIGH — This explains what makes EUANGELION different.
 
 ---
 
@@ -198,7 +198,7 @@ A' (Return): Tomorrow, as you read, ask: What's the plain meaning? What hints
 
 **Motivation:** TRANSFORMATION, NOT JUST INFORMATION
 
-EUONGELION promises to help people "seek God daily." But seeking requires practices. Reading is one practice; there are others. Without teaching disciplines, you produce informed spectators, not transformed practitioners.
+EUANGELION promises to help people "seek God daily." But seeking requires practices. Reading is one practice; there are others. Without teaching disciplines, you produce informed spectators, not transformed practitioners.
 
 **The Problem:**
 
@@ -218,7 +218,7 @@ EUONGELION promises to help people "seek God daily." But seeking requires practi
 | The Listening Life                    | 14   | Hearing God, discernment, silence     |
 | Digital Sabbath                       | 6    | Faith in the attention economy        |
 
-**Why This Matters for EUONGELION:**
+**Why This Matters for EUANGELION:**
 
 1. **Delivers transformation** — Information without practice changes nothing
 2. **Creates sustainability** — Rhythms prevent burnout
@@ -305,7 +305,7 @@ A' (Return): Today's practice is simple: Set a timer for 5 minutes. Sit quietly.
 
 **Total:** 223 devotionals, ~892,000 words, ~$115 generation cost
 
-This would give EUONGELION:
+This would give EUANGELION:
 
 - 365 Through-the-Bible (core)
 - 223 supplementary content (these three pitches)

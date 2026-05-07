@@ -1,4 +1,4 @@
-# DECISION: 365-Day Bible Reading Plan for EUONGELION
+# DECISION: 365-Day Bible Reading Plan for EUANGELION
 
 **Status:** PENDING FOUNDER DECISION
 **Created:** January 17, 2026
@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-The "Through-the-Bible" series is the **core spine** of EUONGELION content (365 devotionals, ~4,000 words each). This document presents options for:
+The "Through-the-Bible" series is the **core spine** of EUANGELION content (365 devotionals, ~4,000 words each). This document presents options for:
 
 1. **Reading plan philosophy** - What are we actually trying to accomplish?
 2. **Plan structure** - How do we sequence Scripture across 365 days?
@@ -38,7 +38,7 @@ This isn't just a logistics question. It's a **theological and pedagogical** que
 - **Assumption:** Completeness equals faithfulness
 - **Reality:** ~1,189 chapters / 365 days = 3.25 chapters/day average
 - **Challenge:** Some chapters (Levitical laws, genealogies, minor prophets) are difficult to make compelling
-- **EUONGELION fit:** Poor. A 4,000-word essay on Numbers 7's repetitive offerings would be painful.
+- **EUANGELION fit:** Poor. A 4,000-word essay on Numbers 7's repetitive offerings would be painful.
 
 #### PHILOSOPHY B: The Whole Story
 
@@ -47,7 +47,7 @@ This isn't just a logistics question. It's a **theological and pedagogical** que
 - **Assumption:** The Bible is ONE story; readers need the whole arc, not every detail
 - **Reality:** ~365 key passages selected to carry the narrative
 - **Challenge:** Requires careful curation; some favorite passages may be skipped
-- **EUONGELION fit:** Good. Aligns with "meta-story" emphasis in DEVOTIONAL-STRATEGY.md
+- **EUANGELION fit:** Good. Aligns with "meta-story" emphasis in DEVOTIONAL-STRATEGY.md
 
 #### PHILOSOPHY C: The Essential Bible
 
@@ -56,13 +56,13 @@ This isn't just a logistics question. It's a **theological and pedagogical** que
 - **Assumption:** Better to know 100 passages deeply than 1,189 chapters shallowly
 - **Reality:** ~150-200 essential passages, repeated themes, spiral learning
 - **Challenge:** Not really "through the Bible" in any traditional sense
-- **EUONGELION fit:** Mixed. Fits "deep not wide" philosophy but doesn't deliver the promised 365-day scope.
+- **EUANGELION fit:** Mixed. Fits "deep not wide" philosophy but doesn't deliver the promised 365-day scope.
 
 ### RECOMMENDATION: Philosophy B - The Whole Story
 
 **Reasoning:**
 
-- Honors the meta-story thread central to EUONGELION identity
+- Honors the meta-story thread central to EUANGELION identity
 - Allows Deep Dive format to shine (one passage, fully explored)
 - Still delivers "through the Bible" promise to users
 - Avoids the "Leviticus death march" problem
@@ -194,9 +194,9 @@ This isn't just a logistics question. It's a **theological and pedagogical** que
 
 **Pros:**
 
-- Christological from Day 1 (aligns with EUONGELION's "Christ connection" requirement)
+- Christological from Day 1 (aligns with EUANGELION's "Christ connection" requirement)
 - Shows how OT points to Christ and NT flows from Christ
-- Unique approach - differentiator for EUONGELION
+- Unique approach - differentiator for EUANGELION
 - Never far from Jesus
 
 **Cons:**
@@ -233,7 +233,7 @@ This isn't just a logistics question. It's a **theological and pedagogical** que
 
 **Cons:**
 
-- **CRITICAL PROBLEM:** EUONGELION's Deep Dive format is ONE 4,000-word essay. Four readings = what gets the deep dive?
+- **CRITICAL PROBLEM:** EUANGELION's Deep Dive format is ONE 4,000-word essay. Four readings = what gets the deep dive?
 - Users must track four places in Scripture
 - Connections may feel forced
 - Doesn't tell the story linearly
@@ -293,7 +293,7 @@ This isn't just a logistics question. It's a **theological and pedagogical** que
 
 **Cons:**
 
-- No rest (contradicts EUONGELION's Sabbath emphasis?)
+- No rest (contradicts EUANGELION's Sabbath emphasis?)
 - Missing a day = behind forever
 - Burnout risk
 
@@ -362,7 +362,7 @@ This isn't just a logistics question. It's a **theological and pedagogical** que
 
 **Reasoning:**
 
-- Honors the Sabbath principle EUONGELION teaches
+- Honors the Sabbath principle EUANGELION teaches
 - Provides grace for real life
 - 312 passages is still substantial
 - Sunday reflection could include weekly summary, journaling prompts, and a breath prayer
@@ -452,7 +452,7 @@ This isn't just a logistics question. It's a **theological and pedagogical** que
 
 ## 5. Draft Plan Outlines
 
-Based on the above analysis, the two most EUONGELION-aligned options are:
+Based on the above analysis, the two most EUANGELION-aligned options are:
 
 - **Option A: Chronological** (strong narrative, slight complexity)
 - **Option F: Narrative Arc** (curated highlights, high engagement)

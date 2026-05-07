@@ -1,4 +1,4 @@
-# EUONGELION — MVP Scope
+# EUANGELION — MVP Scope
 
 **Version:** 1.1
 **Last Updated:** January 16, 2026

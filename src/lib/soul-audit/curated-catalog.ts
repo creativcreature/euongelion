@@ -207,11 +207,21 @@ function normalizeSeries(
 }
 
 function scanSeriesFromDirectory(absDir: string): CuratedSeries[] {
-  if (!fs.existsSync(absDir)) return []
-  const files = fs
-    .readdirSync(absDir)
-    .filter((file) => file.endsWith('.json'))
-    .sort()
+  try {
+    if (!fs.existsSync(absDir)) return []
+  } catch {
+    return []
+  }
+  let fileList: string[]
+  try {
+    fileList = fs
+      .readdirSync(absDir)
+      .filter((file) => file.endsWith('.json'))
+      .sort()
+  } catch {
+    return []
+  }
+  const files = fileList
 
   const seriesList: CuratedSeries[] = []
   for (const file of files) {

@@ -1,4 +1,4 @@
-# EUONGELION Email Launch Sequence
+# EUANGELION Email Launch Sequence
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -44,7 +44,7 @@ Hi,
 
 We've been quiet lately. Working on something.
 
-In seven days, we're launching EUONGELION.
+In seven days, we're launching EUANGELION.
 
 **What is it?**
 
@@ -68,7 +68,7 @@ More details coming soon.
 
 Grace and peace,
 
-The EUONGELION Team
+The EUANGELION Team
 
 wokegod.world (coming soon)
 
@@ -96,7 +96,7 @@ Hi,
 
 Four days until launch. Here's what you're getting into.
 
-**How EUONGELION works:**
+**How EUANGELION works:**
 
 1. **The Soul Audit**
 
@@ -140,7 +140,7 @@ We'll be in your inbox that morning.
 
 Grace and peace,
 
-The EUONGELION Team
+The EUANGELION Team
 
 ---
 
@@ -156,7 +156,7 @@ The EUONGELION Team
 
 **Subject Line:** Tomorrow
 
-**Preview Text:** EUONGELION goes live in the morning.
+**Preview Text:** EUANGELION goes live in the morning.
 
 ---
 
@@ -164,7 +164,7 @@ The EUONGELION Team
 
 Hi,
 
-Tomorrow morning, EUONGELION goes live.
+Tomorrow morning, EUANGELION goes live.
 
 No long email today. Just a few things:
 
@@ -184,7 +184,7 @@ See you in the morning.
 
 Grace and peace,
 
-The EUONGELION Team
+The EUANGELION Team
 
 ---
 
@@ -200,7 +200,7 @@ The EUONGELION Team
 
 **Subject Line:** We're live
 
-**Preview Text:** EUONGELION is here. Start when you're ready.
+**Preview Text:** EUANGELION is here. Start when you're ready.
 
 ---
 
@@ -210,7 +210,7 @@ Hi,
 
 Today is the day.
 
-**EUONGELION is live.** [wokegod.world](https://wokegod.world)
+**EUANGELION is live.** [wokegod.world](https://wokegod.world)
 
 ---
 
@@ -246,9 +246,9 @@ But if something brought you this far, maybe today is the day.
 
 Grace and peace,
 
-The EUONGELION Team
+The EUANGELION Team
 
-P.S. — If EUONGELION lands with you, consider sharing it with someone else. Not for us. For them.
+P.S. — If EUANGELION lands with you, consider sharing it with someone else. Not for us. For them.
 
 ---
 
@@ -312,7 +312,7 @@ Send them the link. That's it.
 
 Grace and peace,
 
-The EUONGELION Team
+The EUANGELION Team
 
 ---
 
@@ -328,7 +328,7 @@ The EUONGELION Team
 
 **Subject Line:** Still with us?
 
-**Preview Text:** One week of EUONGELION. What's shifting?
+**Preview Text:** One week of EUANGELION. What's shifting?
 
 ---
 
@@ -336,7 +336,7 @@ The EUONGELION Team
 
 Hi,
 
-It's been almost a week since EUONGELION launched.
+It's been almost a week since EUANGELION launched.
 
 Some of you have read every day. Some of you read once and haven't come back yet. Both are okay.
 
@@ -380,7 +380,7 @@ But if something keeps bringing you back to these emails... maybe that's worth p
 
 Grace and peace,
 
-The EUONGELION Team
+The EUANGELION Team
 
 ---
 
@@ -404,7 +404,7 @@ The EUONGELION Team
 
 Hi,
 
-It's been one week since EUONGELION launched.
+It's been one week since EUANGELION launched.
 
 If you've been reading, you've been part of something meaningful. Thank you.
 
@@ -416,7 +416,7 @@ Today, we're asking for your help.
 
 Not a polished testimonial. Just your honest experience.
 
-- What brought you to EUONGELION?
+- What brought you to EUANGELION?
 - What's landed for you this week?
 - Has anything shifted in how you think about faith, Scripture, or prayer?
 
@@ -457,9 +457,9 @@ Thank you for being part of week one. It's just the beginning.
 
 Grace and peace,
 
-The EUONGELION Team
+The EUANGELION Team
 
-P.S. — If you want to support EUONGELION beyond sharing, we'll have more to announce soon. For now, the best thing you can do is tell someone.
+P.S. — If you want to support EUANGELION beyond sharing, we'll have more to announce soon. For now, the best thing you can do is tell someone.
 
 ---
 
@@ -481,7 +481,7 @@ For A/B testing or personalization:
 | T-7   | Something's coming    | We've been building something | In 7 days          |
 | T-3   | What to expect        | How this works                | 4 days away        |
 | T-1   | Tomorrow              | Tomorrow is the day           | One more sleep     |
-| T-0   | We're live            | It's here                     | EUONGELION is live |
+| T-0   | We're live            | It's here                     | EUANGELION is live |
 | T+1   | How was it?           | Day 2 is ready                | Still with us?     |
 | T+3   | Still with us?        | One week in                   | What's shifting?   |
 | T+7   | Share your experience | We need your help             | Tell us your story |
@@ -555,7 +555,7 @@ Consider creating alternate versions for:
 **Tone Markers:**
 
 - Sign-off: "Grace and peace" (not "Blessings" or "God bless")
-- Signature: "The EUONGELION Team" (humble, collective)
+- Signature: "The EUANGELION Team" (humble, collective)
 - Never use exclamation points in subject lines
 
 ---

@@ -1,4 +1,4 @@
-# EUONGELION Animation Principles
+# EUANGELION Animation Principles
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -12,7 +12,7 @@
 
 Animation in a devotional context is not decoration. It is breath.
 
-When a user opens EUONGELION, they are stepping out of the noise of their day and into a space designed for reflection. Animation should mark that threshold. It should signal: _slow down, you're somewhere different now._
+When a user opens EUANGELION, they are stepping out of the noise of their day and into a space designed for reflection. Animation should mark that threshold. It should signal: _slow down, you're somewhere different now._
 
 The goal is not to impress or entertain. It is to create a sense of intentionality, to make the digital experience feel crafted and considered rather than cheap and reactive. When the Sistine Chapel ceiling was painted, every brushstroke served the sacred. Our animations serve the same purpose in a digital medium.
 
@@ -31,7 +31,7 @@ Our target is the middle: animation that _serves_ the content rather than compet
 
 Most modern interfaces optimize for speed. Everything is instant, snappy, responsive. This creates a sense of efficiency but also a sense of anxiety. The interface is _fast_ because you should be fast too.
 
-EUONGELION rejects this framing.
+EUANGELION rejects this framing.
 
 Our pacing is intentionally **slower than industry standard** but not sluggish. We aim for a tempo that feels like a deep breath rather than a quick inhale. The user should feel like they have permission to take their time.
 
@@ -307,7 +307,7 @@ Loading should feel contemplative, not anxious.
 
 ### Text Reveal Patterns
 
-Typography is the hero of the EUONGELION aesthetic. When text reveals, it should feel like words appearing on a page, not code executing.
+Typography is the hero of the EUANGELION aesthetic. When text reveals, it should feel like words appearing on a page, not code executing.
 
 **Body Text:**
 
@@ -589,7 +589,7 @@ Never. Not even once. Not even muted. User initiates media consumption.
 
 ---
 
-## Summary: The EUONGELION Animation Ethos
+## Summary: The EUANGELION Animation Ethos
 
 | Principle                     | Application                                        |
 | ----------------------------- | -------------------------------------------------- |

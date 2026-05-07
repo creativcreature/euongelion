@@ -1,10 +1,13 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
+  images: {
+    unoptimized: true,
+  },
   turbopack: {
     root: __dirname,
   },
-  // Include curated series JSON files in Vercel serverless function bundles.
+  // Include curated series JSON files in serverless function bundles.
   // These are read at runtime via fs.readFileSync (dynamic paths) so the
   // output file tracer cannot discover them automatically.
   outputFileTracingIncludes: {

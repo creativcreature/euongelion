@@ -124,7 +124,7 @@ The following decisions were made during the January 17, 2026 design session:
 
 ## Executive Summary
 
-The Soul Audit is EUONGELION's signature intake experience - the first meaningful interaction a user has with the platform. It sets the tone for everything that follows and determines which devotional series a user will begin.
+The Soul Audit is EUANGELION's signature intake experience - the first meaningful interaction a user has with the platform. It sets the tone for everything that follows and determines which devotional series a user will begin.
 
 This document presents OPTIONS for you to choose. Each section includes trade-offs to help you decide.
 
@@ -138,7 +138,7 @@ The Soul Audit is the mechanism by which users are matched to the right devotion
 
 ### Why It Matters
 
-- **First impression:** This is the user's first experience of EUONGELION's voice
+- **First impression:** This is the user's first experience of EUANGELION's voice
 - **Trust establishment:** How we ask reveals what we value
 - **Match quality:** Better input = better series matching = higher engagement
 - **Brand differentiator:** No other devotional app does this with this level of intentionality
@@ -178,7 +178,7 @@ The Soul Audit is the mechanism by which users are matched to the right devotion
 - Rich data - user can share what's actually relevant
 - Memorable - differentiated from every quiz-based app
 - Respects user intelligence - doesn't force them into boxes
-- Aligns with EUONGELION's "Deep Not Wide" philosophy
+- Aligns with EUANGELION's "Deep Not Wide" philosophy
 
 **Cons:**
 
@@ -286,7 +286,7 @@ The Soul Audit is the mechanism by which users are matched to the right devotion
 
 **Reasoning:**
 
-1. **Brand alignment:** EUONGELION is positioned as "Deep Not Wide" - the single question embodies this
+1. **Brand alignment:** EUANGELION is positioned as "Deep Not Wide" - the single question embodies this
 2. **Differentiation:** Every other app uses quizzes. This is memorable.
 3. **Data quality:** Open responses reveal more than checkbox selections
 4. **Pastoral tone:** Sets the expectation for the entire platform experience
@@ -626,7 +626,7 @@ Based on `/content/series-json/`:
 >
 > When you're ready, we have words of hope waiting for you.
 >
-> [ Continue to EUONGELION ] [ I need help now → Resources ]
+> [ Continue to EUANGELION ] [ I need help now → Resources ]
 
 **DECISION NEEDED:** Confirm crisis response approach and copy tone.
 
@@ -835,4 +835,4 @@ After founder decisions, engineering will need to:
 
 ---
 
-_The Soul Audit is where EUONGELION's pastoral heart meets its technical implementation. The decisions made here will shape how every user experiences the platform from their very first moment._
+_The Soul Audit is where EUANGELION's pastoral heart meets its technical implementation. The decisions made here will shape how every user experiences the platform from their very first moment._

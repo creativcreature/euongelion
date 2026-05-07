@@ -8,7 +8,7 @@
 
 ## Purpose
 
-This checklist ensures everything is verified and ready before EUONGELION goes live at wokegod.world. Complete every item before announcing launch.
+This checklist ensures everything is verified and ready before EUANGELION goes live at wokegod.world. Complete every item before announcing launch.
 
 ---
 
@@ -41,7 +41,7 @@ LAUNCH DECISION: [ ] GO  [ ] NO-GO
 
 | Content | Required                                  | Loaded      | Verified |
 | ------- | ----------------------------------------- | ----------- | -------- |
-| [ ]     | Onboarding series (Welcome to EUONGELION) | \_\_\_ days | [ ]      |
+| [ ]     | Onboarding series (Welcome to EUANGELION) | \_\_\_ days | [ ]      |
 | [ ]     | How to Approach This Material             | \_\_\_ days | [ ]      |
 | [ ]     | Common Misconceptions                     | \_\_\_ days | [ ]      |
 | [ ]     | Questions Everyone Asks                   | \_\_\_ days | [ ]      |
@@ -507,7 +507,7 @@ LAUNCH DECISION: [ ] GO  [ ] NO-GO
 LAUNCH SIGN-OFF
 ===============
 
-Project: EUONGELION
+Project: EUANGELION
 Launch Date: _______________
 Launch Time: _______________
 

@@ -1,4 +1,4 @@
-# EUONGELION — Success Metrics
+# EUANGELION — Success Metrics
 
 **Version:** 1.0
 **Last Updated:** January 16, 2026

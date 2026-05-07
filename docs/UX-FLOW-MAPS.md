@@ -1,4 +1,4 @@
-# EUONGELION UX Flow Maps
+# EUANGELION UX Flow Maps
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -7,7 +7,7 @@
 
 ## Document Purpose
 
-This document maps every user journey in the EUONGELION platform. Each flow includes:
+This document maps every user journey in the EUANGELION platform. Each flow includes:
 
 - Decision points and branches
 - Emotional states at each step
@@ -713,7 +713,7 @@ Content unlocks progressively to encourage daily engagement without overwhelming
 
 ### Overview
 
-The Soul Audit is EUONGELION's signature intake experience. It matches users to the right series based on their current spiritual state.
+The Soul Audit is EUANGELION's signature intake experience. It matches users to the right series based on their current spiritual state.
 
 ### Entry Points
 
@@ -941,7 +941,7 @@ The Soul Audit is EUONGELION's signature intake experience. It matches users to 
 
 ### Overview
 
-The heart of EUONGELION. A cinematic, scroll-based experience that reveals content progressively.
+The heart of EUANGELION. A cinematic, scroll-based experience that reveals content progressively.
 
 ### Entry to Devotional
 
@@ -1336,7 +1336,7 @@ The heart of EUONGELION. A cinematic, scroll-based experience that reveals conte
 
     1. NAVIGATION (Header)
        ┌─────────────────────────────────────────────┐
-       │  EUONGELION    ☰ Menu     ◐ Theme          │
+       │  EUANGELION    ☰ Menu     ◐ Theme          │
        └─────────────────────────────────────────────┘
        │
        └──► Menu opens overlay with:
@@ -1824,7 +1824,7 @@ What users can share, how they share, and what recipients see.
        ─────────────────────────────────────────────────────────────────────
        URL: wokegod.world/celebration/[unique-id]
 
-       "I completed 'Too Busy for God' on EUONGELION"
+       "I completed 'Too Busy for God' on EUANGELION"
 ```
 
 ### Share UI Components
@@ -1850,7 +1850,7 @@ What users can share, how they share, and what recipients see.
     │   │   ▓   it's about Who you start trusting."           ▓   │    │
     │   │   ▓                                                 ▓   │    │
     │   │   ▓              — Too Busy for God, Day 3          ▓   │    │
-    │   │   ▓                  EUONGELION                     ▓   │    │
+    │   │   ▓                  EUANGELION                     ▓   │    │
     │   │   ▓                                                 ▓   │    │
     │   │   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   │    │
     │   │                                                         │    │
@@ -1884,7 +1884,7 @@ What users can share, how they share, and what recipients see.
     │                                                                     │
     │   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   │
     │   ▓                                                             ▓   │
-    │   ▓   EUONGELION                                                ▓   │
+    │   ▓   EUANGELION                                                ▓   │
     │   ▓                                                             ▓   │
     │   ▓   ──────────────────────────────────────────────            ▓   │
     │   ▓                                                             ▓   │
@@ -1919,7 +1919,7 @@ What users can share, how they share, and what recipients see.
     │   ▓                                                             ▓   │
     │   ▓   ──────────────────────────────────────────────            ▓   │
     │   ▓                                                             ▓   │
-    │   ▓   Too Busy for God · EUONGELION                             ▓   │
+    │   ▓   Too Busy for God · EUANGELION                             ▓   │
     │   ▓                                                             ▓   │
     │   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   │
     │                                                                     │
@@ -2342,5 +2342,5 @@ What users can share, how they share, and what recipients see.
 _For technical implementation details, see:_
 
 - `/docs/SPRINT-PLAN.md` - Development roadmap
-- `/.claude/skills/euongelion-platform/references/user-flows.md` - Technical flow specs
+- `/.claude/skills/euangelion-platform/references/user-flows.md` - Technical flow specs
 - `/.claude/skills/wokegod-brand/references/` - Design system details

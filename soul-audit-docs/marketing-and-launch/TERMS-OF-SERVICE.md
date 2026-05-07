@@ -3,13 +3,13 @@
 **Effective Date:** [Insert Date]
 **Last Updated:** [Insert Date]
 
-**wokeGod LLC** ("EUONGELION," "we," "us," or "our")
+**wokeGod LLC** ("EUANGELION," "we," "us," or "our")
 
 ---
 
 ## The Plain English Summary
 
-EUONGELION is a devotional platform to help you grow closer to God. By using it, you agree to:
+EUANGELION is a devotional platform to help you grow closer to God. By using it, you agree to:
 
 - Be at least 13 years old
 - Use the service respectfully
@@ -22,17 +22,17 @@ The full terms are below. They are written to be readable, but they are legally 
 
 ## 1. Accepting These Terms
 
-By creating an account or using EUONGELION, you agree to these Terms of Service and our Privacy Policy.
+By creating an account or using EUANGELION, you agree to these Terms of Service and our Privacy Policy.
 
 If you do not agree, do not use the service.
 
 ---
 
-## 2. Who Can Use EUONGELION
+## 2. Who Can Use EUANGELION
 
 **Age Requirement**
 
-- You must be at least 13 years old to use EUONGELION
+- You must be at least 13 years old to use EUANGELION
 - If you are under 18, you represent that a parent or guardian has reviewed and agreed to these terms on your behalf
 
 **Account Responsibility**
@@ -43,7 +43,7 @@ If you do not agree, do not use the service.
 
 ---
 
-## 3. What EUONGELION Is (And Is Not)
+## 3. What EUANGELION Is (And Is Not)
 
 **What We Are**
 
@@ -98,7 +98,7 @@ If you do not agree, do not use the service.
 
 **Do:**
 
-- Use EUONGELION for personal spiritual growth
+- Use EUANGELION for personal spiritual growth
 - Share it with friends and family
 - Provide honest feedback
 
@@ -120,7 +120,7 @@ Violation may result in account termination.
 
 **Our Marks**
 
-- "EUONGELION," "wokeGod," the wokeGod logo, and related branding are our trademarks
+- "EUANGELION," "wokeGod," the wokeGod logo, and related branding are our trademarks
 - Do not use them without written permission
 
 **Third-Party Content**
@@ -269,7 +269,7 @@ If you are in crisis, please reach out for help:
 
 - International Association for Suicide Prevention: https://www.iasp.info/resources/Crisis_Centres/
 
-EUONGELION is not equipped to provide crisis support. Please contact trained professionals.
+EUANGELION is not equipped to provide crisis support. Please contact trained professionals.
 
 ---
 

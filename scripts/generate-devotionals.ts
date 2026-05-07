@@ -45,7 +45,7 @@ interface SeriesConfig {
 // Chiastic structure labels
 const CHIASTIC_POSITIONS = ['A', 'B', 'C', "B'", "A'"] as const
 
-const SYSTEM_PROMPT = `You are a devotional writer for EUONGELION, a Christian devotional platform.
+const SYSTEM_PROMPT = `You are a devotional writer for EUANGELION, a Christian devotional platform.
 
 VOICE:
 - 60% warm, 40% authoritative

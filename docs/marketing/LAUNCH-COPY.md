@@ -1,4 +1,4 @@
-# EUONGELION Launch Copy
+# EUANGELION Launch Copy
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -8,10 +8,10 @@
 
 ## Overview
 
-This document contains all launch announcement copy for EUONGELION's debut at wokegod.world. Each section includes three versions for A/B testing. Voice is warm, inviting, never salesy. We meet people where they are.
+This document contains all launch announcement copy for EUANGELION's debut at wokegod.world. Each section includes three versions for A/B testing. Voice is warm, inviting, never salesy. We meet people where they are.
 
 **Core Launch Message:**
-EUONGELION is now live. A quiet place for the seeking heart. Daily readings that meet you where you are.
+EUANGELION is now live. A quiet place for the seeking heart. Daily readings that meet you where you are.
 
 ---
 
@@ -25,7 +25,7 @@ EUONGELION is now live. A quiet place for the seeking heart. Daily readings that
 
 **Subtext:**
 
-> EUONGELION is live. Daily readings for the cluttered, hungry soul. No accounts. No tracking. Just content worth your time.
+> EUANGELION is live. Daily readings for the cluttered, hungry soul. No accounts. No tracking. Just content worth your time.
 
 **CTA:**
 
@@ -57,7 +57,7 @@ EUONGELION is now live. A quiet place for the seeking heart. Daily readings that
 
 **Subtext:**
 
-> EUONGELION is a quiet place for anyone looking for something real. Honest content. No performance required.
+> EUANGELION is a quiet place for anyone looking for something real. Honest content. No performance required.
 
 **CTA:**
 
@@ -73,7 +73,7 @@ _For existing subscribers or warm contacts._
 
 **Subject Line:** We built something for you.
 
-**Preview Text:** EUONGELION is live. Daily readings for the seeking heart.
+**Preview Text:** EUANGELION is live. Daily readings for the seeking heart.
 
 **Body:**
 
@@ -83,7 +83,7 @@ We've been quiet for a while. Building something.
 
 Today, it's ready.
 
-EUONGELION is a daily devotional platform for people who believe, used to believe, or want to believe but have questions. It's honest content for the cluttered, hungry soul.
+EUANGELION is a daily devotional platform for people who believe, used to believe, or want to believe but have questions. It's honest content for the cluttered, hungry soul.
 
 **What you'll find:**
 
@@ -100,7 +100,7 @@ Start when you're ready. We'll be here.
 ---
 
 Grace and peace,
-The EUONGELION Team
+The EUANGELION Team
 
 ---
 
@@ -108,7 +108,7 @@ The EUONGELION Team
 
 **Subject Line:** It's time.
 
-**Preview Text:** After months of work, EUONGELION is live.
+**Preview Text:** After months of work, EUANGELION is live.
 
 **Body:**
 
@@ -120,7 +120,7 @@ Not the kind that shouts. Not the slick, marketed Christianity that makes skepti
 
 Today, that question has an answer.
 
-**EUONGELION is live.**
+**EUANGELION is live.**
 
 Daily readings. Deep but not long. For the person who drifted, the person who's stuck, the person who leads others but hasn't been led in years.
 
@@ -136,7 +136,7 @@ See you there.
 
 ### Version C (Minimalist)
 
-**Subject Line:** EUONGELION is live.
+**Subject Line:** EUANGELION is live.
 
 **Preview Text:** Start where you are.
 
@@ -156,7 +156,7 @@ Start where you are.
 
 ---
 
-The EUONGELION Team
+The EUANGELION Team
 
 ---
 
@@ -173,7 +173,7 @@ _Image: Dark background, gold text, "Something to hold onto is here."_
 **Caption:**
 
 ```
-Today, EUONGELION is live.
+Today, EUANGELION is live.
 
 Daily readings for people who believe, used to believe, or want to believe but have questions.
 
@@ -183,7 +183,7 @@ Just honest content for the seeking heart.
 
 wokegod.world — link in bio.
 
-#DailyDevotional #Faith #EUONGELION
+#DailyDevotional #Faith #EUANGELION
 ```
 
 ---
@@ -212,7 +212,7 @@ wokegod.world
 
 **Version C**
 
-_Image: Typographic treatment of "euongelion" with pronunciation guide_
+_Image: Typographic treatment of "euangelion" with pronunciation guide_
 
 **Caption:**
 
@@ -229,7 +229,7 @@ Daily readings for the seeking heart.
 
 wokegod.world
 
-#EUONGELION #Faith #GoodNews
+#EUANGELION #Faith #GoodNews
 ```
 
 ---
@@ -318,7 +318,7 @@ What's landed? What surprised you?
 
 Drop a comment or DM. Your words might be exactly what someone else needs to hear.
 
-#EUONGELION #Faith
+#EUANGELION #Faith
 ```
 
 ---
@@ -330,7 +330,7 @@ _Image: Clean brand image with "One week in."_
 **Caption:**
 
 ```
-If EUONGELION has meant something to you this week, we have a request:
+If EUANGELION has meant something to you this week, we have a request:
 
 Tell someone.
 
@@ -370,7 +370,7 @@ Share in the comments. Honest answers only.
 **Version A**
 
 ```
-EUONGELION is live.
+EUANGELION is live.
 
 Daily readings for people who believe, used to believe, or want to believe but have questions.
 
@@ -461,7 +461,7 @@ wokegod.world
 **Version A**
 
 ```
-One week of EUONGELION.
+One week of EUANGELION.
 
 What's landed? What surprised you?
 
@@ -473,7 +473,7 @@ Reply with your honest answer. Your words might be what someone else needs.
 **Version B**
 
 ```
-If EUONGELION meant something to you this week, tell someone.
+If EUANGELION meant something to you this week, tell someone.
 
 Not for us. For them.
 
@@ -505,7 +505,7 @@ Honest replies only.
 ```
 Today, we're launching something we've been building for a while.
 
-EUONGELION is a daily devotional platform for people who believe, used to believe, or want to believe but have questions.
+EUANGELION is a daily devotional platform for people who believe, used to believe, or want to believe but have questions.
 
 What makes it different:
 - Short daily readings (5 minutes, not 50)
@@ -530,7 +530,7 @@ Not slick. Not marketed. Something that meets people where they actually are.
 
 Today, we have an answer.
 
-EUONGELION is live. Daily readings for the cluttered, hungry soul.
+EUANGELION is live. Daily readings for the cluttered, hungry soul.
 
 wokegod.world
 ```
@@ -542,7 +542,7 @@ wokegod.world
 ```
 For those who believe. Or want to. Or used to.
 
-EUONGELION is live.
+EUANGELION is live.
 
 A quiet place to start. Honest content for the seeking heart.
 
@@ -556,7 +556,7 @@ wokegod.world
 **Version A**
 
 ```
-Day 2 of EUONGELION is ready.
+Day 2 of EUANGELION is ready.
 
 If you started yesterday—welcome back.
 If you haven't started—today is a good day to begin.
@@ -599,7 +599,7 @@ wokegod.world
 **Version A**
 
 ```
-It's been one week since EUONGELION launched.
+It's been one week since EUANGELION launched.
 
 Some of you have been reading every day. Some of you just found us. Either way—we want to hear from you.
 
@@ -615,7 +615,7 @@ Drop a comment below. Your experience might be exactly what someone else needs t
 ```
 One week in.
 
-If EUONGELION has meant something to you—would you consider sharing it?
+If EUANGELION has meant something to you—would you consider sharing it?
 
 Not for metrics. For the person in your life who needs exactly what you found.
 
@@ -645,7 +645,7 @@ Share your honest answer in the comments.
 **Version A**
 
 ```
-Today, we're launching EUONGELION.
+Today, we're launching EUANGELION.
 
 It's a daily devotional platform for professionals and leaders who are spiritually hungry but time-poor.
 
@@ -670,7 +670,7 @@ Busyness isn't just a schedule problem. It's a spiritual one.
 
 When your calendar rules your heart, something's wrong.
 
-We built EUONGELION for people who know this but don't know what to do about it.
+We built EUANGELION for people who know this but don't know what to do about it.
 
 Daily readings. 5 minutes. Deep content. No pressure.
 
@@ -684,7 +684,7 @@ wokegod.world
 ```
 We launched something today.
 
-EUONGELION is daily devotional content for people who believe, used to believe, or want to believe but have questions.
+EUANGELION is daily devotional content for people who believe, used to believe, or want to believe but have questions.
 
 If that describes someone you know—or you—here's the link.
 
@@ -698,7 +698,7 @@ wokegod.world
 **Version A**
 
 ```
-Day 2 of EUONGELION is live.
+Day 2 of EUANGELION is live.
 
 If you started yesterday—the next reading is ready.
 
@@ -741,7 +741,7 @@ wokegod.world
 **Version A**
 
 ```
-One week of EUONGELION.
+One week of EUANGELION.
 
 For those of you who've been reading—what's landed?
 
@@ -753,7 +753,7 @@ I'd love to hear what's resonated. Your experience might help someone else decid
 **Version B**
 
 ```
-If EUONGELION has been meaningful this week, I have one request:
+If EUANGELION has been meaningful this week, I have one request:
 
 Think about who in your network needs it.
 
@@ -783,7 +783,7 @@ Comment with your honest answer.
 | Element              | Version A (Recommended)                       | Version B                           | Version C                            |
 | -------------------- | --------------------------------------------- | ----------------------------------- | ------------------------------------ |
 | **Website Headline** | Something to hold onto is here                | We're live                          | You're welcome here                  |
-| **Email Subject**    | We built something for you                    | It's time                           | EUONGELION is live                   |
+| **Email Subject**    | We built something for you                    | It's time                           | EUANGELION is live                   |
 | **Core Value Prop**  | Daily readings for the cluttered, hungry soul | A quiet place for the seeking heart | Honest content for the seeking heart |
 | **CTA Style**        | Start Reading                                 | Begin                               | Explore                              |
 

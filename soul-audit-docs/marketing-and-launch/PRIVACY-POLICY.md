@@ -3,7 +3,7 @@
 **Effective Date:** [Insert Date]
 **Last Updated:** [Insert Date]
 
-**wokeGod LLC** ("EUONGELION," "we," "us," or "our")
+**wokeGod LLC** ("EUANGELION," "we," "us," or "our")
 
 ---
 
@@ -171,13 +171,13 @@ We do not use:
 
 ## Children's Privacy
 
-EUONGELION is not intended for children under 13. We do not knowingly collect information from children under 13. If you believe a child under 13 has provided us data, contact us immediately and we will delete it.
+EUANGELION is not intended for children under 13. We do not knowingly collect information from children under 13. If you believe a child under 13 has provided us data, contact us immediately and we will delete it.
 
 ---
 
 ## International Users
 
-Our servers are located in the United States. If you are accessing EUONGELION from outside the US, your data will be transferred to and processed in the US.
+Our servers are located in the United States. If you are accessing EUANGELION from outside the US, your data will be transferred to and processed in the US.
 
 **For EU/UK Users (GDPR)**
 

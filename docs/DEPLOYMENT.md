@@ -1,10 +1,10 @@
 # Deployment Guide
 
-This document covers deploying EUONGELION to production.
+This document covers deploying EUANGELION to production.
 
 ## Overview
 
-EUONGELION is designed to deploy on Vercel with Supabase as the backend. This guide covers the complete deployment process.
+EUANGELION is designed to deploy on Vercel with Supabase as the backend. This guide covers the complete deployment process.
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ ANTHROPIC_API_KEY=sk-ant-your-api-key
 
 # Site Configuration (Optional)
 NEXT_PUBLIC_SITE_URL=https://wokegod.world
-NEXT_PUBLIC_SITE_NAME=EUONGELION
+NEXT_PUBLIC_SITE_NAME=EUANGELION
 
 # Rate Limiting - Production Only (Optional)
 UPSTASH_REDIS_URL=https://your-redis.upstash.io

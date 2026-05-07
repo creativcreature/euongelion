@@ -1,4 +1,4 @@
-# EUONGELION: Three Visual Directions
+# EUANGELION: Three Visual Directions
 
 > **Status:** REQUIRES FOUNDER DECISION
 > **Date:** January 18, 2026
@@ -8,7 +8,7 @@
 
 ## Context
 
-This document presents three distinct visual directions for EUONGELION imagery. Each direction is rooted in your brand DNA ("Ancient depth, modern clarity") but expresses it differently. These are not templates—they're aesthetic philosophies that would guide all image creation.
+This document presents three distinct visual directions for EUANGELION imagery. Each direction is rooted in your brand DNA ("Ancient depth, modern clarity") but expresses it differently. These are not templates—they're aesthetic philosophies that would guide all image creation.
 
 **Your stated preferences to honor:**
 

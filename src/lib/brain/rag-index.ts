@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
+import { loadReferenceIndex } from '@/lib/soul-audit/reference-index-loader'
 
 type RagFeature = 'chat' | 'audit'
 type RagSourceType = 'curated' | 'reference' | 'devotional'
@@ -143,63 +144,94 @@ function buildCuratedDocs(): RagDoc[] {
   return docs
 }
 
-function buildReferenceDocs(): RagDoc[] {
+async function buildReferenceDocs(): Promise<RagDoc[]> {
+  // Try live reference library (local dev only — content/reference/ is gitignored)
   const root = path.join(process.cwd(), 'content', 'reference')
-  if (!fs.existsSync(root)) return []
+  let hasLiveLibrary = false
+  try {
+    hasLiveLibrary = fs.existsSync(root)
+  } catch {
+    // fs.existsSync may throw on Workers
+  }
 
-  const files: string[] = []
-  const allowedExt = new Set(['.md', '.txt', '.json'])
-  const MAX_FILES = 120
+  if (hasLiveLibrary) {
+    const files: string[] = []
+    const allowedExt = new Set(['.md', '.txt', '.json'])
+    const MAX_FILES = 120
 
-  const walk = (dir: string) => {
-    if (files.length >= MAX_FILES) return
-    let entries: fs.Dirent[] = []
-    try {
-      entries = fs.readdirSync(dir, { withFileTypes: true })
-    } catch {
-      return
-    }
-    for (const entry of entries) {
-      if (files.length >= MAX_FILES) break
-      const full = path.join(dir, entry.name)
-      if (entry.isDirectory()) {
-        walk(full)
-        continue
+    const walk = (dir: string) => {
+      if (files.length >= MAX_FILES) return
+      let entries: fs.Dirent[] = []
+      try {
+        entries = fs.readdirSync(dir, { withFileTypes: true })
+      } catch {
+        return
       }
-      const ext = path.extname(entry.name).toLowerCase()
-      if (!allowedExt.has(ext)) continue
-      files.push(full)
+      for (const entry of entries) {
+        if (files.length >= MAX_FILES) break
+        const full = path.join(dir, entry.name)
+        if (entry.isDirectory()) {
+          walk(full)
+          continue
+        }
+        const ext = path.extname(entry.name).toLowerCase()
+        if (!allowedExt.has(ext)) continue
+        files.push(full)
+      }
+    }
+
+    walk(root)
+
+    if (files.length > 0) {
+      const docs = files
+        .map<RagDoc | null>((file, index) => {
+          try {
+            const raw = fs.readFileSync(file, 'utf8')
+            const content = collapseWhitespace(raw.slice(0, 16_000))
+            if (!content) return null
+            const relativePath = path.relative(process.cwd(), file)
+            return {
+              id: `reference:file:${index + 1}:${normalizeIdPart(relativePath)}`,
+              feature: 'chat' as const,
+              sourceType: 'reference' as const,
+              moduleType: 'index',
+              title: path.basename(file),
+              content,
+              sourcePath: relativePath,
+            }
+          } catch {
+            return null
+          }
+        })
+        .filter((doc): doc is RagDoc => doc !== null)
+
+      return docs
     }
   }
 
-  walk(root)
-
-  const docs = files
-    .map<RagDoc | null>((file, index) => {
-      try {
-        const raw = fs.readFileSync(file, 'utf8')
-        const content =
-          path.extname(file).toLowerCase() === '.json'
-            ? collapseWhitespace(raw.slice(0, 16_000))
-            : collapseWhitespace(raw.slice(0, 16_000))
+  // Fallback: load from pre-built reference index (Workers/Vercel)
+  try {
+    const indexed = await loadReferenceIndex()
+    return indexed
+      .slice(0, 120)
+      .map<RagDoc | null>((chunk, index) => {
+        if (!chunk?.content || typeof chunk.content !== 'string') return null
+        const content = collapseWhitespace(chunk.content.slice(0, 16_000))
         if (!content) return null
-        const relativePath = path.relative(process.cwd(), file)
         return {
-          id: `reference:file:${index + 1}:${normalizeIdPart(relativePath)}`,
+          id: `reference:index:${index + 1}:${normalizeIdPart(chunk.source || 'ref')}`,
           feature: 'chat' as const,
           sourceType: 'reference' as const,
           moduleType: 'index',
-          title: path.basename(file),
+          title: chunk.title || path.basename(chunk.source || 'reference'),
           content,
-          sourcePath: relativePath,
+          sourcePath: chunk.source || 'reference-index.json',
         }
-      } catch {
-        return null
-      }
-    })
-    .filter((doc): doc is RagDoc => doc !== null)
-
-  return docs
+      })
+      .filter((doc): doc is RagDoc => doc !== null)
+  } catch {
+    return []
+  }
 }
 
 function buildDevotionalDocs(): RagDoc[] {
@@ -214,13 +246,14 @@ function buildDevotionalDocs(): RagDoc[] {
   return files.flatMap((file) => parseDevotionalFile(path.join(dir, file)))
 }
 
-export function buildCanonicalRagIndex(): {
+export async function buildCanonicalRagIndex(): Promise<{
   docs: RagDoc[]
   builtAt: string
-} {
+}> {
+  const referenceDocs = await buildReferenceDocs()
   const docs = [
     ...buildCuratedDocs(),
-    ...buildReferenceDocs(),
+    ...referenceDocs,
     ...buildDevotionalDocs(),
   ]
   return {
@@ -229,12 +262,12 @@ export function buildCanonicalRagIndex(): {
   }
 }
 
-export function getCanonicalRagIndex(forceRebuild = false): {
+export async function getCanonicalRagIndex(forceRebuild = false): Promise<{
   docs: RagDoc[]
   builtAt: string
-} {
+}> {
   if (!cache || forceRebuild) {
-    cache = buildCanonicalRagIndex()
+    cache = await buildCanonicalRagIndex()
   }
   return cache
 }
@@ -247,18 +280,18 @@ function tokenize(value: string): string[] {
     .filter((token) => token.length > 2)
 }
 
-export function retrieveFromIndex(params: {
+export async function retrieveFromIndex(params: {
   query: string
   feature: RagFeature
   sourceTypes?: RagSourceType[]
   moduleTypes?: string[]
   limit?: number
-}): RagDoc[] {
+}): Promise<RagDoc[]> {
   const limit = params.limit || 8
   const queryTokens = new Set(tokenize(params.query))
   if (queryTokens.size === 0) return []
 
-  const { docs } = getCanonicalRagIndex(false)
+  const { docs } = await getCanonicalRagIndex(false)
   const filtered = docs.filter((doc) => {
     if (doc.feature !== params.feature) return false
     if (params.sourceTypes && !params.sourceTypes.includes(doc.sourceType)) {

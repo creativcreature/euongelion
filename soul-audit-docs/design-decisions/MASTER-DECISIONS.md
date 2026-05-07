@@ -1,4 +1,4 @@
-# EUONGELION Master Decision Document
+# EUANGELION Master Decision Document
 
 > **Last Updated:** January 17, 2026
 > **Status:** Active
@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-This document consolidates all strategic and tactical decisions made for the EUONGELION project across eight major categories. It serves as the single source of truth for project direction and should be referenced before making any implementation decisions.
+This document consolidates all strategic and tactical decisions made for the EUANGELION project across eight major categories. It serves as the single source of truth for project direction and should be referenced before making any implementation decisions.
 
 | Category            | Decisions | Status   |
 | ------------------- | --------- | -------- |
@@ -107,7 +107,7 @@ Weekly Format:
 | 4   | **Install Prompt**     | Midway through first devotional | Phase 1  |
 | 5   | **Offline Support**    | Cache last devotional           | Phase 1  |
 |     |                        | Full offline capability         | Phase 2  |
-| 6   | **Domain**             | `wokegodworld.com/euongelion`   | Phase 1  |
+| 6   | **Domain**             | `wokegodworld.com/euangelion`   | Phase 1  |
 | 7   | **Audio Content**      | Text-only                       | Phase 1  |
 |     |                        | Audio added                     | Phase 2  |
 
@@ -260,7 +260,7 @@ Hosting:      Vercel
 Auth:         Multi-method (email, magic link, social)
 Database:     TBD
 CDN:          Vercel Edge
-Domain:       wokegodworld.com/euongelion
+Domain:       wokegodworld.com/euangelion
 ```
 
 ---

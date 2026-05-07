@@ -241,7 +241,7 @@ Every devotional should:
 
 ## Citation Requirements
 
-**All EUONGELION content must use endnote citations.**
+**All EUANGELION content must use endnote citations.**
 
 - Superscript numbers in text¹²³
 - Full citations at end of each devotional

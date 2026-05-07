@@ -1,4 +1,4 @@
-# EUONGELION — Core Philosophy
+# EUANGELION — Core Philosophy
 
 **Version:** 1.0
 **Last Updated:** January 16, 2026
@@ -13,7 +13,7 @@ This is the root. Everything else serves this.
 
 ---
 
-## What EUONGELION Is
+## What EUANGELION Is
 
 ### For Individuals
 

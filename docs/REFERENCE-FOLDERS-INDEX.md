@@ -73,7 +73,7 @@ See `content/reference/lexicons/README.md` for detailed usage notes.
 
 ## Legacy — All Broken Symlinks Now Replaced
 
-All four broken symlinks from the deleted `euongelion-old` backup have been replaced with real directories:
+All four broken symlinks from the deleted `euangelion-old` backup have been replaced with real directories:
 
 - `content/reference/bibles/` ← now real
 - `content/reference/lexicons/` ← now real

@@ -9,11 +9,11 @@
 
 ## Executive Summary
 
-This document presents four pricing model options for EUONGELION, with analysis of each approach's implications for sustainability, growth, audience reach, and mission alignment.
+This document presents four pricing model options for EUANGELION, with analysis of each approach's implications for sustainability, growth, audience reach, and mission alignment.
 
 **The goal:** Find a pricing model that sustains the platform while removing barriers for lost sheep finding their way home.
 
-**Key Tension:** EUONGELION's target audience (the drifted, the seeking, the struggling) may have financial constraints or may not be ready to pay for spiritual content. Yet quality content requires sustainable funding.
+**Key Tension:** EUANGELION's target audience (the drifted, the seeking, the struggling) may have financial constraints or may not be ready to pay for spiritual content. Yet quality content requires sustainable funding.
 
 ---
 
@@ -225,7 +225,7 @@ This document presents four pricing model options for EUONGELION, with analysis 
 **Donation Integration Points:**
 
 1. End of series: "This content was free. Consider supporting."
-2. Settings page: "Support EUONGELION"
+2. Settings page: "Support EUANGELION"
 3. Occasional (rare) in-content prompts
 4. Email follow-ups after engagement milestones
 
@@ -268,7 +268,7 @@ This document presents four pricing model options for EUONGELION, with analysis 
 **What TO Say:**
 
 - "This content is free because someone believed you should have access."
-- "If EUONGELION has been meaningful, consider supporting the mission."
+- "If EUANGELION has been meaningful, consider supporting the mission."
 - "Pay what you can. Give what you're able. No pressure."
 - "Your gift makes this possible for others who can't afford to pay."
 
@@ -415,7 +415,7 @@ This document presents four pricing model options for EUONGELION, with analysis 
 
 1. **What is the funding situation?**
    - Is there existing budget/runway?
-   - Can wokeGod support EUONGELION's costs?
+   - Can wokeGod support EUANGELION's costs?
    - Are there potential church partners or donors?
 
 2. **What is the growth priority?**
@@ -444,7 +444,7 @@ This document presents four pricing model options for EUONGELION, with analysis 
 **Rationale:**
 
 1. **Mission First**
-   - EUONGELION's audience includes seekers, the drifted, and the struggling
+   - EUANGELION's audience includes seekers, the drifted, and the struggling
    - These groups may not pay for spiritual content they're unsure about
    - Removing financial barriers aligns with "lost sheep finding their way home"
 
@@ -542,7 +542,7 @@ Date: _________________
 
 ### If Option A (Completely Free)
 
-> "EUONGELION is free. Forever. Because the good news has always been a gift."
+> "EUANGELION is free. Forever. Because the good news has always been a gift."
 
 ### If Option B (Freemium)
 

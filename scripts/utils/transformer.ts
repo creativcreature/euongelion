@@ -101,7 +101,7 @@ export class DataTransformer {
       is_published: options.setPublished ?? false,
       is_featured: false,
       sort_order: 0,
-      author: options.defaultAuthor || 'EUONGELION Team',
+      author: options.defaultAuthor || 'EUANGELION Team',
     }
 
     // Validation
@@ -171,7 +171,7 @@ export class DataTransformer {
       is_premium: false,
       is_published: options.setPublished ?? false,
       is_featured: false,
-      author: options.defaultAuthor || 'EUONGELION Team',
+      author: options.defaultAuthor || 'EUANGELION Team',
       published_at: options.setPublished ? new Date().toISOString() : null,
     }
 
@@ -249,7 +249,7 @@ export class DataTransformer {
         (fm.isPublished as boolean) || options.setPublished || false,
       is_featured: false,
       author:
-        (fm.author as string) || options.defaultAuthor || 'EUONGELION Team',
+        (fm.author as string) || options.defaultAuthor || 'EUANGELION Team',
       published_at:
         (fm.publishedAt as string) ||
         (options.setPublished ? new Date().toISOString() : null),

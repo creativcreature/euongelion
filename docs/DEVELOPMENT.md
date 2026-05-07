@@ -1,6 +1,6 @@
 # Development Guide
 
-This document covers setting up a local development environment for EUONGELION.
+This document covers setting up a local development environment for EUANGELION.
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ This document covers setting up a local development environment for EUONGELION.
 
 ```bash
 git clone <repository-url>
-cd EUONGELION-STARTUP
+cd EUANGELION-STARTUP
 ```
 
 ### 2. Install Dependencies
@@ -46,7 +46,7 @@ ANTHROPIC_API_KEY=your-api-key
 
 # Optional
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
-NEXT_PUBLIC_SITE_NAME=EUONGELION Dev
+NEXT_PUBLIC_SITE_NAME=EUANGELION Dev
 ```
 
 ### 4. Start Development Server

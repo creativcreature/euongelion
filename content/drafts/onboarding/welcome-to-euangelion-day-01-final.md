@@ -1,4 +1,4 @@
-# Welcome to EUONGELION
+# Welcome to EUANGELION
 
 ## Day 1: What Is This Place?
 
@@ -26,7 +26,7 @@ For years, those words felt impossible. _Don't be anxious?_ Tell that to the 3 A
 
 But then something shifted. Not because life got easier. Because those words became real—peace that doesn't make sense, peace that guards you when nothing else can.
 
-**EUONGELION exists because that kind of encounter shouldn't be rare.**
+**EUANGELION exists because that kind of encounter shouldn't be rare.**
 
 ---
 
@@ -44,7 +44,7 @@ He had been free for twenty-nine years. He just didn't know it.
 
 Fighting. Surviving. Convinced you have to earn God's favor, that you're not good enough, that the battle is still raging.
 
-But the announcement has already been made. The _euongelion_ has already been declared.
+But the announcement has already been made. The _euangelion_ has already been declared.
 
 "It is finished."⁴
 
@@ -68,7 +68,7 @@ _Soul restoration._ Coming home to the God who's been waiting.
 
 ### What This Place Is
 
-EUONGELION is daily bread for hungry souls.
+EUANGELION is daily bread for hungry souls.
 
 Each day, you'll receive a devotional—not a quick verse with a chipper thought attached. Something deeper. Something that takes Scripture seriously, including the hard parts.
 
@@ -118,6 +118,6 @@ Come home.
 
 ---
 
-_Day 1 of 5 — Welcome to EUONGELION_
+_Day 1 of 5 — Welcome to EUANGELION_
 
 _Tomorrow: How This Is Different_

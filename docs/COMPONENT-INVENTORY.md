@@ -1,7 +1,7 @@
-# EUONGELION Component Inventory
+# EUANGELION Component Inventory
 
 **Source:** `onboarding-welcome.html` wireframe template
-**Purpose:** Comprehensive catalog of UI components for the EUONGELION devotional platform
+**Purpose:** Comprehensive catalog of UI components for the EUANGELION devotional platform
 **Status:** Planning Document - Component Specifications
 
 ---
@@ -242,7 +242,7 @@
 
 **Usage Locations:**
 
-- Welcome page (EUONGELION pronunciation)
+- Welcome page (EUANGELION pronunciation)
 - Word study sections in devotionals
 - Glossary entries
 

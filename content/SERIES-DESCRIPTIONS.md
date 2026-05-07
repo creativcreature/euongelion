@@ -1,4 +1,4 @@
-# EUONGELION Series Descriptions
+# EUANGELION Series Descriptions
 
 **Marketing-Ready Copy for All Planned Series**
 
@@ -21,7 +21,7 @@ _Last Updated: January 17, 2026_
 
 ## Onboarding Series
 
-### Welcome to EUONGELION
+### Welcome to EUANGELION
 
 **Duration:** 5 days
 **Category:** Onboarding
@@ -29,7 +29,7 @@ _Last Updated: January 17, 2026_
 
 **Tagline:** The war is over. The King has won. You just need to hear the news.
 
-**Description:** This is your introduction to EUONGELION - not another devotional app, but a path home. Discover what makes this different: deep Hebrew and Greek word studies, compelling stories, and daily encounters with Scripture that respect your intelligence while nourishing your soul.
+**Description:** This is your introduction to EUANGELION - not another devotional app, but a path home. Discover what makes this different: deep Hebrew and Greek word studies, compelling stories, and daily encounters with Scripture that respect your intelligence while nourishing your soul.
 
 **You'll explore:**
 
@@ -40,7 +40,7 @@ _Last Updated: January 17, 2026_
 
 **This series is for you if:**
 
-- You're new to EUONGELION and want to understand how it works
+- You're new to EUANGELION and want to understand how it works
 - You've tried devotional apps before but found them shallow
 - You want permission to engage faith at your own pace
 - You're curious what makes this approach different
@@ -1228,7 +1228,7 @@ _These 19 series have been converted from the original Substack content and are 
 
 - You've never read the whole Bible and want to
 - You want a structured year-long devotional commitment
-- You're ready for the most comprehensive EUONGELION experience
+- You're ready for the most comprehensive EUANGELION experience
 - You want to understand how the whole Bible fits together
 
 ---

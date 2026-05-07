@@ -1,4 +1,4 @@
-# Welcome to EUONGELION
+# Welcome to EUANGELION
 
 ## Day 4: What to Expect
 
@@ -141,6 +141,6 @@ So come messy. It's allowed.
 
 ---
 
-_Day 4 of 5 — Welcome to EUONGELION_
+_Day 4 of 5 — Welcome to EUANGELION_
 
 _Tomorrow: Your Journey Begins_

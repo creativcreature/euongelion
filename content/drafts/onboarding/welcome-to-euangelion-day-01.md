@@ -1,4 +1,4 @@
-# Welcome to EUONGELION
+# Welcome to EUANGELION
 
 ## Day 1: What Is This Place?
 
@@ -16,7 +16,7 @@ Not "good advice." Not "good vibes." Not "good luck."
 
 _Good news._
 
-The kind of news that changes everything. The kind that makes a messenger run across a battlefield, lungs burning, legs failing, because the outcome of the war has shifted and everyone needs to know. That's what _euongelion_ meant in the ancient world—the announcement that the battle is over, the king has won, and everything is about to change.¹
+The kind of news that changes everything. The kind that makes a messenger run across a battlefield, lungs burning, legs failing, because the outcome of the war has shifted and everyone needs to know. That's what _euangelion_ meant in the ancient world—the announcement that the battle is over, the king has won, and everything is about to change.¹
 
 This is where you've landed. Not an app. Not a program. Not another thing to add to your already overflowing life.
 
@@ -52,7 +52,7 @@ And He's been waiting for you to come home.
 
 ### What This Place Is
 
-EUONGELION is daily bread for hungry souls.
+EUANGELION is daily bread for hungry souls.
 
 That phrase—_daily bread_—comes from the prayer Jesus taught His followers:
 
@@ -112,7 +112,7 @@ Here's why that story matters:
 
 Some of you have been living in a war that's already over.
 
-You've been hiding, fighting, surviving—convinced that you have to earn God's favor, that you're not good enough, that the battle is still raging. But the announcement has already been made. The _euongelion_ has already been declared.
+You've been hiding, fighting, surviving—convinced that you have to earn God's favor, that you're not good enough, that the battle is still raging. But the announcement has already been made. The _euangelion_ has already been declared.
 
 "It is finished."⁷
 
@@ -295,6 +295,6 @@ _Lord, I am here. Lead me home._
 
 ---
 
-_Day 1 of 5 — Welcome to EUONGELION_
+_Day 1 of 5 — Welcome to EUANGELION_
 
 _Tomorrow: How This Is Different_

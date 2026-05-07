@@ -8,7 +8,7 @@
 
 ## Purpose
 
-This document defines what to monitor, alert thresholds, escalation procedures, and rollback criteria for the first 48 hours after EUONGELION launch.
+This document defines what to monitor, alert thresholds, escalation procedures, and rollback criteria for the first 48 hours after EUANGELION launch.
 
 ---
 
@@ -453,7 +453,7 @@ We are [investigating/aware of/resolving] an issue affecting [specific functiona
 
 We are actively working on a resolution and will provide updates as we have them.
 
-—EUONGELION Team
+—EUANGELION Team
 ```
 
 ### Resolution Notice

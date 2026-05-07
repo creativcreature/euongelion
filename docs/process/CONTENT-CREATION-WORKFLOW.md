@@ -8,7 +8,7 @@
 
 ## Overview
 
-This document defines the complete workflow for creating EUONGELION devotional content from initial concept through publication. Every devotional follows this 6-stage pipeline to ensure theological accuracy, brand consistency, and production quality.
+This document defines the complete workflow for creating EUANGELION devotional content from initial concept through publication. Every devotional follows this 6-stage pipeline to ensure theological accuracy, brand consistency, and production quality.
 
 ---
 
@@ -127,7 +127,7 @@ Ready for drafting: [ ] YES [ ] NO
 
 ### Purpose
 
-Generate initial devotional content following the EUONGELION template and style guide.
+Generate initial devotional content following the EUANGELION template and style guide.
 
 ### Inputs
 
@@ -143,7 +143,7 @@ Generate initial devotional content following the EUONGELION template and style 
 ### File Naming
 
 `[series-slug]-day-[##].md`
-Example: `welcome-to-euongelion-day-01.md`
+Example: `welcome-to-euangelion-day-01.md`
 
 ### Activities
 
@@ -167,7 +167,7 @@ Example: `welcome-to-euongelion-day-01.md`
 
 #### 2.3 Follow Style Guide
 
-- [ ] Match EUONGELION voice (intelligent but accessible)
+- [ ] Match EUANGELION voice (intelligent but accessible)
 - [ ] Avoid churchy cliches
 - [ ] Be honest about hard things
 - [ ] Respect reader's intelligence
@@ -265,7 +265,7 @@ Founder reviews draft for theological accuracy, voice consistency, and overall q
 
 #### 3.2 Voice/Tone Check
 
-- [ ] Matches EUONGELION brand voice
+- [ ] Matches EUANGELION brand voice
 - [ ] Intelligent but not academic
 - [ ] Warm but not saccharine
 - [ ] Honest but not harsh
@@ -394,7 +394,7 @@ VERIFICATION
 [ ] Citations verified and corrected
 
 FINAL SIGN-OFF
-[ ] Content meets EUONGELION quality bar
+[ ] Content meets EUANGELION quality bar
 [ ] Approved for production formatting
 [ ] No outstanding concerns
 
@@ -453,11 +453,11 @@ Convert approved markdown to production-ready JSON format with all metadata.
 
 ```json
 {
-  "id": "welcome-to-euongelion-day-01",
-  "series_id": "welcome-to-euongelion",
+  "id": "welcome-to-euangelion-day-01",
+  "series_id": "welcome-to-euangelion",
   "day_number": 1,
   "title": "What Is This Place?",
-  "subtitle": "An introduction to EUONGELION",
+  "subtitle": "An introduction to EUANGELION",
   "scripture_primary": {
     "reference": "Zephaniah 3:17",
     "text": "The Lord your God is in your midst...",

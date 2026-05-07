@@ -1,4 +1,4 @@
-# EUONGELION Site Architecture Preparation
+# EUANGELION Site Architecture Preparation
 
 **For:** Architecture Sprint (January 19, 2026)
 **Version:** 1.0
@@ -23,7 +23,7 @@ This document prepares for the architecture sprint in 2 days. It catalogues ever
 | `/`              | Landing page with Soul Audit | Static shell + Client interactive | HIGH - Primary entry point |
 | `/series`        | Browse all series            | ISR (hourly)                      | HIGH - Discoverability     |
 | `/series/[slug]` | Series detail/preview        | ISR (hourly)                      | HIGH - Shareable, indexed  |
-| `/about`         | About EUONGELION/wokeGod     | Static                            | MEDIUM - Trust building    |
+| `/about`         | About EUANGELION/wokeGod     | Static                            | MEDIUM - Trust building    |
 | `/privacy`       | Privacy Policy               | Static                            | LOW - Legal requirement    |
 | `/terms`         | Terms of Service             | Static                            | LOW - Legal requirement    |
 
@@ -54,7 +54,7 @@ This document prepares for the architecture sprint in 2 days. It catalogues ever
 
 3. **Print/download route?** Does print-friendly view need its own route (`/daily-bread/print`) or is it CSS-only?
 
-4. **Onboarding flow pages?** The onboarding content (Welcome to EUONGELION) - does it get its own routing pattern or is it just another series?
+4. **Onboarding flow pages?** The onboarding content (Welcome to EUANGELION) - does it get its own routing pattern or is it just another series?
 
 ---
 
@@ -1047,9 +1047,9 @@ Permissions-Policy: camera=(), microphone=(), geolocation=()
 - `/docs/MVP-SCOPE.md` - Feature scope
 - `/docs/VISION.md` - Mission and vision
 - `/docs/SPRINT-PLAN.md` - 4-week timeline
-- `/.claude/skills/euongelion-platform/references/database.md` - Schema
-- `/.claude/skills/euongelion-platform/references/api-routes.md` - API details
-- `/.claude/skills/euongelion-platform/references/architecture.md` - File structure
+- `/.claude/skills/euangelion-platform/references/database.md` - Schema
+- `/.claude/skills/euangelion-platform/references/api-routes.md` - API details
+- `/.claude/skills/euangelion-platform/references/architecture.md` - File structure
 
 **External References:**
 

@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { loadReferenceIndex } from './reference-index-loader'
 
 export interface ReferenceHit {
   source: string
@@ -129,7 +130,7 @@ function sourcePriority(relativeSource: string): number {
   return 1
 }
 
-function buildReferenceCorpus(root: string): ReferenceCorpusLine[] {
+async function buildReferenceCorpus(root: string): Promise<ReferenceCorpusLine[]> {
   if (cachedCorpus) return cachedCorpus
 
   const files = listReferenceFiles(root)
@@ -167,52 +168,37 @@ function buildReferenceCorpus(root: string): ReferenceCorpusLine[] {
     }
   }
 
-  // When content/reference/ is unavailable (Vercel), load from the
-  // pre-built reference-index.json which contains verified theological
-  // chunks from the local reference library.
+  // When content/reference/ is unavailable (Workers/Vercel), load from
+  // the pre-built reference-index.json via async loader (ASSETS → fs → fetch).
   if (corpus.length === 0) {
-    const indexPath = path.join(process.cwd(), 'public', 'reference-index.json')
     try {
-      if (fs.existsSync(indexPath)) {
-        const raw = fs.readFileSync(indexPath, 'utf8')
-        const indexed = JSON.parse(raw) as Array<{
-          id?: string
-          source?: string
-          sourceType?: string
-          content?: string
-          priority?: number
-          wordCount?: number
-          author?: string
-        }>
-        if (Array.isArray(indexed)) {
-          for (const chunk of indexed) {
-            if (corpus.length >= MAX_CORPUS_LINES) break
-            if (!chunk?.content || typeof chunk.content !== 'string') continue
+      const indexed = await loadReferenceIndex()
+      for (const chunk of indexed) {
+        if (corpus.length >= MAX_CORPUS_LINES) break
+        if (!chunk?.content || typeof chunk.content !== 'string') continue
 
-            // Split chunk content into lines for line-based scoring
-            const lines = chunk.content.split('\n')
-            let acceptedFromChunk = 0
-            for (const rawLine of lines) {
-              if (acceptedFromChunk >= MAX_LINES_PER_FILE) break
-              if (corpus.length >= MAX_CORPUS_LINES) break
+        // Split chunk content into lines for line-based scoring
+        const lines = chunk.content.split('\n')
+        let acceptedFromChunk = 0
+        for (const rawLine of lines) {
+          if (acceptedFromChunk >= MAX_LINES_PER_FILE) break
+          if (corpus.length >= MAX_CORPUS_LINES) break
 
-              const trimmed = rawLine.replace(/\s+/g, ' ').trim()
-              if (!lineLooksUsable(trimmed)) continue
+          const trimmed = rawLine.replace(/\s+/g, ' ').trim()
+          if (!lineLooksUsable(trimmed)) continue
 
-              corpus.push({
-                source: chunk.source || 'reference-index',
-                sourcePriority:
-                  typeof chunk.priority === 'number' ? chunk.priority : 3,
-                text: trimmed,
-                normalized: trimmed.toLowerCase(),
-              })
-              acceptedFromChunk += 1
-            }
-          }
+          corpus.push({
+            source: chunk.source || 'reference-index',
+            sourcePriority:
+              typeof chunk.priority === 'number' ? chunk.priority : 3,
+            text: trimmed,
+            normalized: trimmed.toLowerCase(),
+          })
+          acceptedFromChunk += 1
         }
       }
     } catch {
-      // Index may not exist or may be corrupt — continue with empty corpus
+      // Index loading failed — continue with empty corpus
     }
   }
 
@@ -245,13 +231,13 @@ function deterministicScore(line: ReferenceCorpusLine): number {
   return stable.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0)
 }
 
-export function retrieveReferenceHits(params: {
+export async function retrieveReferenceHits(params: {
   userResponse: string
   scriptureReference: string
   limit?: number
-}): ReferenceHit[] {
+}): Promise<ReferenceHit[]> {
   const root = path.join(process.cwd(), 'content', 'reference')
-  const corpus = buildReferenceCorpus(root)
+  const corpus = await buildReferenceCorpus(root)
   const limit = params.limit ?? 3
   if (corpus.length === 0) return []
 

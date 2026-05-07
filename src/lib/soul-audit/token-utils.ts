@@ -77,7 +77,7 @@ export function resolveTokenSecret(namespace: string): string {
     )
   }
   return createHmac('sha256', `euangelion-${namespace}-ephemeral`)
-    .update(process.pid.toString() + (process.env.VERCEL_URL || 'local'))
+    .update(Date.now().toString() + (process.env.NEXT_PUBLIC_APP_URL || 'local'))
     .digest('hex')
 }
 

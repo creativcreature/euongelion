@@ -1,4 +1,4 @@
-# Welcome to EUONGELION
+# Welcome to EUANGELION
 
 ## Day 1: Why Are You Here?
 
@@ -38,7 +38,7 @@ For years, those words felt impossible. _Don't be anxious?_ Tell that to the rac
 
 But then something shifted. Not because life got easier. Because those words became real. Peace that doesn't make sense. Peace that guards you when nothing else can.
 
-**EUONGELION exists because that kind of encounter shouldn't be rare.**
+**EUANGELION exists because that kind of encounter shouldn't be rare.**
 
 Not just for the people who grew up knowing the right answers. Not just for the spiritually elite. For the lost. The wandering. The ones who sense there's more but don't know where to find it.
 
@@ -66,7 +66,7 @@ We're not here to convince you. We're here to sow seeds. What grows is between y
 
 ### What This Place Is
 
-EUONGELION is daily bread for people who want more than surface-level faith.
+EUANGELION is daily bread for people who want more than surface-level faith.
 
 Each day, you'll receive a devotional. Not a quick verse with a chipper thought attached. Something with substance. Something that takes Scripture seriously—the beautiful parts and the hard parts.
 
@@ -110,6 +110,6 @@ That's the invitation. Come as you are.
 
 ---
 
-_Day 1 of 5 — Welcome to EUONGELION_
+_Day 1 of 5 — Welcome to EUANGELION_
 
 _Tomorrow: How This Is Different_

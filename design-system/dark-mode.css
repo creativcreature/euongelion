@@ -1,8 +1,8 @@
 /**
- * EUONGELION Dark Mode Styles
+ * EUANGELION Dark Mode Styles
  * Version: 1.0
  *
- * Dark mode is the DEFAULT theme for EUONGELION (tehom background).
+ * Dark mode is the DEFAULT theme for EUANGELION (tehom background).
  * This file provides light mode overrides and theme switching utilities.
  *
  * Usage:
@@ -178,7 +178,7 @@ html.no-transition * {
    ============================================ */
 
 /*
- * The signature EUONGELION look: Gold on Tehom.
+ * The signature EUANGELION look: Gold on Tehom.
  * "Your Hermes orange, your Tiffany blue"
  */
 
@@ -291,7 +291,7 @@ html.no-transition * {
  *   document.documentElement.setAttribute('data-theme', theme);
  *
  *   // Store preference
- *   localStorage.setItem('euongelion-theme', theme);
+ *   localStorage.setItem('euangelion-theme', theme);
  *
  *   // Re-enable transitions after paint
  *   requestAnimationFrame(() => {
@@ -302,6 +302,6 @@ html.no-transition * {
  * }
  *
  * // Initialize theme from storage or default to dark
- * const savedTheme = localStorage.getItem('euongelion-theme') || 'dark';
+ * const savedTheme = localStorage.getItem('euangelion-theme') || 'dark';
  * document.documentElement.setAttribute('data-theme', savedTheme);
  */

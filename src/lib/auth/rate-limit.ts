@@ -1,21 +1,47 @@
 import { Ratelimit } from '@upstash/ratelimit'
 import { Redis } from '@upstash/redis'
 
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL!,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
-})
+function getRedis(): Redis | null {
+  const url = process.env.UPSTASH_REDIS_REST_URL
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN
+  if (
+    !url ||
+    !token ||
+    url === 'missing' ||
+    token === 'missing' ||
+    !url.startsWith('https://')
+  ) {
+    return null
+  }
 
-export const oauthLimiter = new Ratelimit({
-  redis,
+  try {
+    return new Redis({ url, token })
+  } catch {
+    return null
+  }
+}
+
+const redis = getRedis()
+
+function createLimiter(params: {
+  limiter: ReturnType<typeof Ratelimit.slidingWindow>
+  prefix: string
+}): Ratelimit | null {
+  if (!redis) return null
+  return new Ratelimit({
+    redis,
+    limiter: params.limiter,
+    prefix: params.prefix,
+    analytics: true,
+  })
+}
+
+export const oauthLimiter = createLimiter({
   limiter: Ratelimit.slidingWindow(10, '15 m'),
   prefix: 'rl:oauth',
-  analytics: true,
 })
 
-export const magicLinkLimiter = new Ratelimit({
-  redis,
+export const magicLinkLimiter = createLimiter({
   limiter: Ratelimit.slidingWindow(5, '15 m'),
   prefix: 'rl:magic-link',
-  analytics: true,
 })

@@ -23,6 +23,28 @@
 # Vercel
 .vercel
 
+# Cloudflare / OpenNext
+.open-next
+.wrangler/
+
+# Playwright / Claude MCP local caches
+.playwright-mcp/
+
+# Archives (one-off zips, never commit)
+*.zip
+
+# Reference vaults — large, founder local-only
+BIBLE-LICENSING/
+Brand\ Guidelines/
+BrandBrain/
+docs/brand/
+docs/portfolio/
+user-references/
+wakeup-mag/
+
+# Generated AI image batches (multi-GB, regenerated on demand)
+public/images/generated-*/
+
 # Reference library (13GB — stored in Supabase Storage)
 content/reference/bibles/
 content/reference/commentaries/

@@ -1,4 +1,4 @@
--- EUONGELION Seed Data
+-- EUANGELION Seed Data
 -- Sample data structure for development and testing
 -- Run this after all migrations have been applied
 
@@ -20,7 +20,7 @@ INSERT INTO public.series (id, name, slug, description, short_description, durat
     TRUE,
     TRUE,
     1,
-    'EUONGELION Team'
+    'EUANGELION Team'
 ),
 (
     '550e8400-e29b-41d4-a716-446655440002',
@@ -35,7 +35,7 @@ INSERT INTO public.series (id, name, slug, description, short_description, durat
     TRUE,
     FALSE,
     2,
-    'EUONGELION Team'
+    'EUANGELION Team'
 ),
 (
     '550e8400-e29b-41d4-a716-446655440003',
@@ -50,7 +50,7 @@ INSERT INTO public.series (id, name, slug, description, short_description, durat
     TRUE,
     FALSE,
     3,
-    'EUONGELION Team'
+    'EUANGELION Team'
 ),
 (
     '550e8400-e29b-41d4-a716-446655440004',
@@ -65,7 +65,7 @@ INSERT INTO public.series (id, name, slug, description, short_description, durat
     TRUE,
     TRUE,
     4,
-    'EUONGELION Team'
+    'EUANGELION Team'
 );
 
 -- =============================================================================
@@ -94,7 +94,7 @@ INSERT INTO public.devotionals (id, series_id, title, slug, subtitle, content, s
     'Write "I am chosen" on a sticky note and place it somewhere you''ll see it multiple times today. Each time you see it, take a moment to thank God for choosing you.',
     FALSE,
     TRUE,
-    'EUONGELION Team',
+    'EUANGELION Team',
     NOW()
 ),
 (
@@ -118,7 +118,7 @@ INSERT INTO public.devotionals (id, series_id, title, slug, subtitle, content, s
     'Write down one thing you''ve been holding against yourself. Then, in an act of faith, cross it out and write "FORGIVEN" over it. Keep this as a reminder of God''s complete forgiveness.',
     FALSE,
     TRUE,
-    'EUONGELION Team',
+    'EUANGELION Team',
     NOW()
 ),
 (
@@ -142,7 +142,7 @@ INSERT INTO public.devotionals (id, series_id, title, slug, subtitle, content, s
     'Identify one area of your life where you''ve been acting from your old identity. Make one specific choice today that reflects your new identity in Christ.',
     FALSE,
     TRUE,
-    'EUONGELION Team',
+    'EUANGELION Team',
     NOW()
 );
 

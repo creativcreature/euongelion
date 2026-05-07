@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-**Get EUONGELION running in 4 weeks**
+**Get EUANGELION running in 4 weeks**
 
 ---
 
@@ -10,13 +10,13 @@
 
 ```bash
 # 1. Create Next.js project
-npx create-next-app@latest euongelion --typescript --tailwind --app
+npx create-next-app@latest euangelion --typescript --tailwind --app
 
 # 2. Enter project
-cd euongelion
+cd euangelion
 
 # 3. Add skills (copy from this package)
-cp -r /path/to/EUONGELION-CLAUDE-CODE-PACKAGE/.claude ./
+cp -r /path/to/EUANGELION-CLAUDE-CODE-PACKAGE/.claude ./
 
 # 4. Install dependencies
 npm install @supabase/supabase-js @anthropic-ai/sdk date-fns date-fns-tz
@@ -219,7 +219,7 @@ ANTHROPIC_API_KEY=sk-ant-...
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin https://github.com/you/euongelion.git
+git remote add origin https://github.com/you/euangelion.git
 git push -u origin main
 
 # 2. Deploy to Vercel

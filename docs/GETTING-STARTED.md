@@ -40,7 +40,7 @@ You should see a version number.
 ### Create a new Next.js project:
 
 ```bash
-npx create-next-app@latest euongelion --typescript --tailwind --app
+npx create-next-app@latest euangelion --typescript --tailwind --app
 ```
 
 This will ask you some questions. Just press Enter to accept the defaults.
@@ -48,7 +48,7 @@ This will ask you some questions. Just press Enter to accept the defaults.
 ### Go into your project:
 
 ```bash
-cd euongelion
+cd euangelion
 ```
 
 ### Add the agent files:
@@ -57,13 +57,13 @@ Copy the `.claude` folder from this package into your project:
 
 ```bash
 # If you unzipped the package to your Downloads folder:
-cp -r ~/Downloads/EUONGELION-STARTUP/.claude ./
+cp -r ~/Downloads/EUANGELION-STARTUP/.claude ./
 ```
 
 Your project should now look like this:
 
 ```
-euongelion/
+euangelion/
 ├── .claude/           ← This is new
 │   ├── agents/
 │   └── skills/
@@ -87,7 +87,7 @@ You'll see something like:
 
 ```
 Claude Code v1.x.x
-Working directory: /Users/you/euongelion
+Working directory: /Users/you/euangelion
 Type a message...
 ```
 
@@ -116,7 +116,7 @@ Claude will read the file and explain.
 ### Make something:
 
 ```
-You: Read .claude/agents/ARCHITECT.md, then create a simple homepage in app/page.tsx that says "Welcome to EUONGELION"
+You: Read .claude/agents/ARCHITECT.md, then create a simple homepage in app/page.tsx that says "Welcome to EUANGELION"
 ```
 
 Claude will:
@@ -206,7 +206,7 @@ You: Create a new file components/Button.tsx with a basic button component
 ### Editing files:
 
 ```
-You: In app/page.tsx, change the heading from "Welcome" to "EUONGELION"
+You: In app/page.tsx, change the heading from "Welcome" to "EUANGELION"
 ```
 
 ### Running terminal commands:
@@ -313,7 +313,7 @@ Copy and paste these one at a time:
 2. You: What is my current project structure?
 
 3. You: Create a simple landing page in app/page.tsx with:
-   - A centered heading "EUONGELION"
+   - A centered heading "EUANGELION"
    - A subheading "Daily Bread for the cluttered, hungry soul"
    - A button that says "Begin"
 

@@ -20,7 +20,7 @@ This folder contains AI-generated devotionals that need founder review.
 [series-slug]-day-[##].md
 ```
 
-Example: `welcome-to-euongelion-day-01.md`
+Example: `welcome-to-euangelion-day-01.md`
 
 ## What Happens Next
 
@@ -32,7 +32,7 @@ Example: `welcome-to-euongelion-day-01.md`
 ## Review Checklist
 
 - [ ] Theological accuracy
-- [ ] EUONGELION voice (honest, warm, intelligent)
+- [ ] EUANGELION voice (honest, warm, intelligent)
 - [ ] Citations verified
 - [ ] Hebrew/Greek accurate
 - [ ] Christ connection clear

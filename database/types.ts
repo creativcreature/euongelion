@@ -1,5 +1,5 @@
 /**
- * EUONGELION Database Types
+ * EUANGELION Database Types
  * TypeScript interfaces matching the Supabase database schema
  */
 

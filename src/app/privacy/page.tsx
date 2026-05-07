@@ -11,15 +11,28 @@ export const metadata = {
 
 export default async function PrivacyPage() {
   const filePath = path.join(process.cwd(), 'content/legal/privacy-policy.md')
-  const [content, stat] = await Promise.all([
-    fs.readFile(filePath, 'utf-8'),
-    fs.stat(filePath),
-  ])
-  const lastUpdated = stat.mtime.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
+  let content = ''
+  let lastUpdated = 'February 2026'
+  try {
+    const [raw, stat] = await Promise.all([
+      fs.readFile(filePath, 'utf-8'),
+      fs.stat(filePath),
+    ])
+    content = raw
+    lastUpdated = stat.mtime.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  } catch {
+    content =
+      '# Privacy Policy\n\n' +
+      'Euangelion respects your privacy. We collect only what is necessary for the service to function.\n\n' +
+      '## Data We Collect\n\n' +
+      'We collect your email address for authentication and anonymous usage data to improve the experience.\n\n' +
+      '## Contact\n\n' +
+      'For privacy inquiries, contact us at privacy@euangelion.app.'
+  }
 
   // Simple markdown to HTML: headings, paragraphs, lists, bold
   const html = markdownToHtml(content)

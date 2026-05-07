@@ -1,4 +1,4 @@
-# EUONGELION — Sprint Plan
+# EUANGELION — Sprint Plan
 
 **Version:** 1.0
 **Last Updated:** January 16, 2026

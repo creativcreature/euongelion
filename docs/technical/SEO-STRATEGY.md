@@ -1,4 +1,4 @@
-# EUONGELION SEO Strategy
+# EUANGELION SEO Strategy
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -7,7 +7,7 @@
 
 ## Overview
 
-SEO strategy for EUONGELION devotional platform. Focus on discoverability for seekers searching for spiritual content, Bible study resources, and devotional materials.
+SEO strategy for EUANGELION devotional platform. Focus on discoverability for seekers searching for spiritual content, Bible study resources, and devotional materials.
 
 **Primary Goals:**
 
@@ -32,7 +32,7 @@ SEO strategy for EUONGELION devotional platform. Focus on discoverability for se
 #### Homepage
 
 ```
-EUONGELION | Daily Devotionals for the Spiritually Curious
+EUANGELION | Daily Devotionals for the Spiritually Curious
 ```
 
 - Character count: 54
@@ -41,7 +41,7 @@ EUONGELION | Daily Devotionals for the Spiritually Curious
 #### Series Browse
 
 ```
-Devotional Series | Guided Bible Studies | EUONGELION
+Devotional Series | Guided Bible Studies | EUANGELION
 ```
 
 - Character count: 52
@@ -50,18 +50,18 @@ Devotional Series | Guided Bible Studies | EUONGELION
 #### Series Detail
 
 ```
-{Series Title} | {Day Count}-Day Devotional | EUONGELION
+{Series Title} | {Day Count}-Day Devotional | EUANGELION
 ```
 
 Examples:
 
-- `Fear Not | 5-Day Devotional Series | EUONGELION` (47 chars)
-- `The Good News | 7-Day Gospel Journey | EUONGELION` (49 chars)
+- `Fear Not | 5-Day Devotional Series | EUANGELION` (47 chars)
+- `The Good News | 7-Day Gospel Journey | EUANGELION` (49 chars)
 
 #### About Page
 
 ```
-About EUONGELION | Daily Devotionals by wokeGod
+About EUANGELION | Daily Devotionals by wokeGod
 ```
 
 - Character count: 46
@@ -70,14 +70,14 @@ About EUONGELION | Daily Devotionals by wokeGod
 #### Legal Pages
 
 ```
-Privacy Policy | EUONGELION
-Terms of Service | EUONGELION
+Privacy Policy | EUANGELION
+Terms of Service | EUANGELION
 ```
 
 #### 404 Page
 
 ```
-Page Not Found | EUONGELION
+Page Not Found | EUANGELION
 ```
 
 ---
@@ -128,7 +128,7 @@ Fear Not: A 5-day journey through anxiety and trust. Discover Hebrew word studie
 #### About Page
 
 ```
-EUONGELION is a daily devotional platform by wokeGod. We create deep, beautiful Bible study content for seekers, skeptics, and those finding their way back to faith.
+EUANGELION is a daily devotional platform by wokeGod. We create deep, beautiful Bible study content for seekers, skeptics, and those finding their way back to faith.
 ```
 
 - Character count: 165
@@ -140,7 +140,7 @@ EUONGELION is a daily devotional platform by wokeGod. We create deep, beautiful 
 ### Standard OG Tags (All Pages)
 
 ```html
-<meta property="og:site_name" content="EUONGELION" />
+<meta property="og:site_name" content="EUANGELION" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="website" />
 ```
@@ -152,7 +152,7 @@ EUONGELION is a daily devotional platform by wokeGod. We create deep, beautiful 
 ```html
 <meta
   property="og:title"
-  content="EUONGELION | Daily Devotionals for the Spiritually Curious"
+  content="EUANGELION | Daily Devotionals for the Spiritually Curious"
 />
 <meta
   property="og:description"
@@ -164,7 +164,7 @@ EUONGELION is a daily devotional platform by wokeGod. We create deep, beautiful 
 <meta property="og:image:height" content="630" />
 <meta
   property="og:image:alt"
-  content="EUONGELION - Daily devotionals for the spiritually curious"
+  content="EUANGELION - Daily devotionals for the spiritually curious"
 />
 ```
 
@@ -189,7 +189,7 @@ EUONGELION is a daily devotional platform by wokeGod. We create deep, beautiful 
 <meta property="og:image:height" content="630" />
 <meta
   property="og:image:alt"
-  content="{Series Title} - EUONGELION devotional series"
+  content="{Series Title} - EUANGELION devotional series"
 />
 <meta property="article:author" content="wokeGod" />
 <meta property="article:section" content="Devotional" />
@@ -234,7 +234,7 @@ EUONGELION is a daily devotional platform by wokeGod. We create deep, beautiful 
 Layout:
 ┌─────────────────────────────────────────────┐
 │                                             │
-│     EUONGELION                              │
+│     EUANGELION                              │
 │     ──────────                              │
 │                                             │
 │     Daily devotionals for the               │
@@ -249,7 +249,7 @@ Colors:
 - Accent: God is Gold (#C19A6B)
 
 Typography:
-- "EUONGELION": Playfair Display, 72pt
+- "EUANGELION": Playfair Display, 72pt
 - Tagline: DM Sans, 32pt
 ```
 
@@ -265,7 +265,7 @@ Layout:
 │     [Visual: Caravaggio-style image         │
 │      representing series theme]             │
 │                                             │
-│                            EUONGELION       │
+│                            EUANGELION       │
 └─────────────────────────────────────────────┘
 
 Typography:
@@ -337,7 +337,7 @@ Use `summary_large_image` for visual impact
 #### Homepage
 
 ```html
-<meta name="twitter:title" content="EUONGELION | Daily Devotionals" />
+<meta name="twitter:title" content="EUANGELION | Daily Devotionals" />
 <meta
   name="twitter:description"
   content="Deep Bible study with Hebrew word studies, modern stories, and daily reflection. Start your journey."
@@ -345,7 +345,7 @@ Use `summary_large_image` for visual impact
 <meta name="twitter:image" content="https://wokegod.world/og/home.png" />
 <meta
   name="twitter:image:alt"
-  content="EUONGELION - Daily devotionals for the spiritually curious"
+  content="EUANGELION - Daily devotionals for the spiritually curious"
 />
 ```
 
@@ -388,7 +388,7 @@ Use `summary_large_image` for visual impact
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "EUONGELION",
+  "name": "EUANGELION",
   "url": "https://wokegod.world",
   "description": "Daily devotionals for the spiritually curious",
   "publisher": {
@@ -413,7 +413,7 @@ Use `summary_large_image` for visual impact
   "description": "{Series subtitle or core_theme}",
   "provider": {
     "@type": "Organization",
-    "name": "EUONGELION",
+    "name": "EUANGELION",
     "url": "https://wokegod.world"
   },
   "numberOfCredits": "{day_count}",
@@ -444,7 +444,7 @@ Use `summary_large_image` for visual impact
   },
   "publisher": {
     "@type": "Organization",
-    "name": "EUONGELION",
+    "name": "EUANGELION",
     "logo": {
       "@type": "ImageObject",
       "url": "https://wokegod.world/logo.png"
@@ -509,8 +509,8 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   metadataBase: new URL('https://wokegod.world'),
   title: {
-    default: 'EUONGELION | Daily Devotionals for the Spiritually Curious',
-    template: '%s | EUONGELION',
+    default: 'EUANGELION | Daily Devotionals for the Spiritually Curious',
+    template: '%s | EUANGELION',
   },
   description:
     'Discover daily devotionals with deep Bible study, Hebrew word studies, and modern stories. Start your journey today.',
@@ -528,13 +528,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'EUONGELION',
+    siteName: 'EUANGELION',
     images: [
       {
         url: '/og/home.png',
         width: 1200,
         height: 630,
-        alt: 'EUONGELION - Daily devotionals for the spiritually curious',
+        alt: 'EUANGELION - Daily devotionals for the spiritually curious',
       },
     ],
   },
@@ -595,7 +595,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: `/og/series/${series.slug}.png`,
           width: 1200,
           height: 630,
-          alt: `${series.title} - EUONGELION devotional series`,
+          alt: `${series.title} - EUANGELION devotional series`,
         },
       ],
     },
@@ -636,7 +636,7 @@ export default function SeriesPage({ series }) {
     description: series.subtitle,
     provider: {
       '@type': 'Organization',
-      name: 'EUONGELION',
+      name: 'EUANGELION',
     },
     numberOfCredits: series.day_count,
   };
@@ -735,7 +735,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 ## robots.txt
 
 ```txt
-# robots.txt for EUONGELION
+# robots.txt for EUANGELION
 # https://wokegod.world/robots.txt
 
 User-agent: *

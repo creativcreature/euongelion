@@ -1,4 +1,4 @@
-# Welcome to EUONGELION
+# Welcome to EUANGELION
 
 ## Day 3: How to Read Scripture
 
@@ -137,6 +137,6 @@ Don't worry about learning the languages. Just know they're there, and we'll sho
 
 ---
 
-_Day 3 of 5 — Welcome to EUONGELION_
+_Day 3 of 5 — Welcome to EUANGELION_
 
 _Tomorrow: What to Expect_

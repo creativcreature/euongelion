@@ -5,7 +5,7 @@
 
 ## Introduction
 
-This Cookie Policy explains how EUONGELION ("we," "our," or "us") uses cookies and similar technologies when you use our devotional application and website (collectively, the "Service").
+This Cookie Policy explains how EUANGELION ("we," "our," or "us") uses cookies and similar technologies when you use our devotional application and website (collectively, the "Service").
 
 By using the Service, you consent to the use of cookies as described in this policy.
 
@@ -86,7 +86,7 @@ These cookies help us monitor and improve Service performance.
 
 ## Progressive Web App Storage
 
-As a PWA, EUONGELION uses additional browser storage technologies:
+As a PWA, EUANGELION uses additional browser storage technologies:
 
 ### Service Worker Cache
 
@@ -146,7 +146,7 @@ You can manage cookies through your browser settings:
 
 ### In-App Settings
 
-Within the EUONGELION app, you can:
+Within the EUANGELION app, you can:
 
 - Disable analytics cookies in Settings > Privacy
 - Clear local data in Settings > Storage
@@ -185,7 +185,7 @@ You can withdraw consent at any time:
 
 - Through browser cookie settings
 - Through in-app privacy settings
-- By contacting us at privacy@euongelion.com
+- By contacting us at privacy@euangelion.com
 
 ## Data Protection
 
@@ -261,8 +261,8 @@ See browser documentation for detailed cookie management:
 
 For questions about this Cookie Policy or our use of cookies:
 
-- **Email:** privacy@euongelion.com
-- **Support:** support@euongelion.com
+- **Email:** privacy@euangelion.com
+- **Support:** support@euangelion.com
 
 ## Related Policies
 

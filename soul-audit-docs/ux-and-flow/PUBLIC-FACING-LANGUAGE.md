@@ -1,4 +1,4 @@
-# EUONGELION Public-Facing Language Guide
+# EUANGELION Public-Facing Language Guide
 
 **Version:** 1.0
 **Last Updated:** January 16, 2026
@@ -8,7 +8,7 @@
 
 ## Overview
 
-This document provides ready-to-use copy for EUONGELION's user-facing experience. Every phrase here has been crafted to meet people where they are without categorizing them, to be honest without being harsh, and to invite without manipulating.
+This document provides ready-to-use copy for EUANGELION's user-facing experience. Every phrase here has been crafted to meet people where they are without categorizing them, to be honest without being harsh, and to invite without manipulating.
 
 **Core Principle:** Users should feel _met_, not _sorted_.
 
@@ -434,7 +434,7 @@ When content is time-locked, we need to explain why without being preachy.
 
 ### About Page / What This Is
 
-> **EUONGELION is a place to read, reflect, and return to what matters.**
+> **EUANGELION is a place to read, reflect, and return to what matters.**
 >
 > We make honest content for people who believe, used to believe, or want to believe but have questions. No accounts required. No tracking. No pressure to perform.
 >

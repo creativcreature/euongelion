@@ -1,4 +1,4 @@
-# EUONGELION Reflection Question Bank
+# EUANGELION Reflection Question Bank
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026

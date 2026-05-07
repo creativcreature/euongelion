@@ -1,10 +1,10 @@
-# EUONGELION
+# EUANGELION
 
 **A modern devotional platform that meets people where they are spiritually.**
 
 ## Overview
 
-EUONGELION is a Progressive Web App (PWA) designed to deliver personalized devotional content through an innovative "Soul Audit" matching system. The platform guides users through 5-day devotional series using a rich module system with 21 different content types.
+EUANGELION is a Progressive Web App (PWA) designed to deliver personalized devotional content through an innovative "Soul Audit" matching system. The platform guides users through 5-day devotional series using a rich module system with 21 different content types.
 
 ## Key Features
 
@@ -32,7 +32,7 @@ EUONGELION is a Progressive Web App (PWA) designed to deliver personalized devot
 ## Project Structure
 
 ```
-EUONGELION-STARTUP/
+EUANGELION-STARTUP/
 ├── app/                    # Next.js application
 │   ├── api/               # API routes
 │   ├── components/        # React components
@@ -64,7 +64,7 @@ EUONGELION-STARTUP/
 1. **Clone and install dependencies**
 
    ```bash
-   cd euongelion
+   cd euangelion
    npm install
    ```
 
@@ -112,7 +112,7 @@ EUONGELION-STARTUP/
 
 ## The Vision
 
-EUONGELION ("good news" in Greek) aims to make deep theological content accessible to everyone. Through the Soul Audit, users receive content tailored to their current life circumstances and spiritual journey. The chiastic structure and PaRDeS framework ensure that every devotional has depth while remaining approachable.
+EUANGELION ("good news" in Greek) aims to make deep theological content accessible to everyone. Through the Soul Audit, users receive content tailored to their current life circumstances and spiritual journey. The chiastic structure and PaRDeS framework ensure that every devotional has depth while remaining approachable.
 
 ### Three Pathways
 
@@ -134,7 +134,7 @@ Typography emphasizes architectural sans-serif with Hebrew text support for word
 
 ## License
 
-Proprietary - EUONGELION / wokeGod
+Proprietary - EUANGELION / wokeGod
 
 ---
 

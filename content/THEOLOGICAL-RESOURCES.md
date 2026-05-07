@@ -8,7 +8,7 @@
 
 ## Citation Standard
 
-**All EUONGELION content must use endnote citations.**
+**All EUANGELION content must use endnote citations.**
 
 Format: Superscript numbers in text¹ with full citations at end of article.
 

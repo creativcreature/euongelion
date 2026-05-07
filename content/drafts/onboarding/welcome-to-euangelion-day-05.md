@@ -1,4 +1,4 @@
-# Welcome to EUONGELION
+# Welcome to EUANGELION
 
 ## Day 5: Your Journey Begins
 
@@ -88,7 +88,7 @@ You're part of a community you'll never fully see. People across time zones and 
 
 We don't know where this leads. We don't know what God will do in you. But we believe He's doing _something_—because He always is.
 
-Welcome to EUONGELION.
+Welcome to EUANGELION.
 
 Welcome to the good news.
 
@@ -125,6 +125,6 @@ Welcome home.
 
 ---
 
-_Day 5 of 5 — Welcome to EUONGELION_
+_Day 5 of 5 — Welcome to EUANGELION_
 
 _Your journey begins Monday._

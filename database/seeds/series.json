@@ -1,5 +1,5 @@
 {
-  "description": "EUONGELION Series Seed Data",
+  "description": "EUANGELION Series Seed Data",
   "version": "1.0.0",
   "series": [
     {
@@ -17,7 +17,7 @@
       "is_published": true,
       "is_featured": true,
       "sort_order": 1,
-      "author": "EUONGELION Team"
+      "author": "EUANGELION Team"
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440002",
@@ -34,7 +34,7 @@
       "is_published": true,
       "is_featured": false,
       "sort_order": 2,
-      "author": "EUONGELION Team"
+      "author": "EUANGELION Team"
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440003",
@@ -51,7 +51,7 @@
       "is_published": true,
       "is_featured": false,
       "sort_order": 3,
-      "author": "EUONGELION Team"
+      "author": "EUANGELION Team"
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440004",
@@ -68,7 +68,7 @@
       "is_published": true,
       "is_featured": true,
       "sort_order": 4,
-      "author": "EUONGELION Team"
+      "author": "EUANGELION Team"
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440005",
@@ -93,7 +93,7 @@
       "is_published": true,
       "is_featured": false,
       "sort_order": 5,
-      "author": "EUONGELION Team"
+      "author": "EUANGELION Team"
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440006",
@@ -110,7 +110,7 @@
       "is_published": true,
       "is_featured": true,
       "sort_order": 6,
-      "author": "EUONGELION Team"
+      "author": "EUANGELION Team"
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440007",
@@ -133,7 +133,7 @@
       "is_published": true,
       "is_featured": false,
       "sort_order": 7,
-      "author": "EUONGELION Team"
+      "author": "EUANGELION Team"
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440008",
@@ -150,7 +150,7 @@
       "is_published": true,
       "is_featured": false,
       "sort_order": 8,
-      "author": "EUONGELION Team"
+      "author": "EUANGELION Team"
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440009",
@@ -174,7 +174,7 @@
       "is_published": true,
       "is_featured": false,
       "sort_order": 9,
-      "author": "EUONGELION Team"
+      "author": "EUANGELION Team"
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440010",
@@ -197,7 +197,7 @@
       "is_published": true,
       "is_featured": false,
       "sort_order": 10,
-      "author": "EUONGELION Team"
+      "author": "EUANGELION Team"
     }
   ]
 }

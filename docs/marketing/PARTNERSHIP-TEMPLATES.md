@@ -1,4 +1,4 @@
-# EUONGELION Partnership Outreach Templates
+# EUANGELION Partnership Outreach Templates
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -42,7 +42,7 @@ Each category includes an initial outreach email, follow-up template, and partne
 - [ORGANIZATION/MINISTRY NAME] — Their organization
 - [SPECIFIC WORK REFERENCE] — Something they created you admire
 - [YOUR NAME] — Sender's name
-- [LAUNCH DATE] — When EUONGELION goes live
+- [LAUNCH DATE] — When EUANGELION goes live
 
 ---
 
@@ -58,11 +58,11 @@ Hi [PASTOR/LEADER NAME],
 
 I'm reaching out because I've seen the work [CHURCH NAME] does, and I think there might be a way we can support it.
 
-I'm part of the team behind EUONGELION (wokegod.world)—a free daily devotional platform launching [LAUNCH DATE]. It's designed for people who believe, used to believe, or want to believe but have questions.
+I'm part of the team behind EUANGELION (wokegod.world)—a free daily devotional platform launching [LAUNCH DATE]. It's designed for people who believe, used to believe, or want to believe but have questions.
 
 **Why I'm writing you:**
 
-Churches do incredible work with the people who show up. But there are others—the ones who drifted, the skeptical spouse, the college student who stopped coming—who aren't walking through your doors. EUONGELION is designed to meet those people where they are.
+Churches do incredible work with the people who show up. But there are others—the ones who drifted, the skeptical spouse, the college student who stopped coming—who aren't walking through your doors. EUANGELION is designed to meet those people where they are.
 
 **What we offer:**
 
@@ -75,14 +75,14 @@ Churches do incredible work with the people who show up. But there are others—
 
 We're not trying to replace church. We're trying to extend your reach to people you can't currently access.
 
-**Would you be open to a 15-minute call to explore how EUONGELION might serve your congregation?**
+**Would you be open to a 15-minute call to explore how EUANGELION might serve your congregation?**
 
 If not, no pressure. But if you know someone in your community who's drifted—feel free to share wokegod.world with them. That's what it's for.
 
 Grace and peace,
 
 [YOUR NAME]
-EUONGELION Team
+EUANGELION Team
 
 ---
 
@@ -96,7 +96,7 @@ Hi [PASTOR/LEADER NAME],
 
 Just floating this back to the top. I know you're busy—shepherding a congregation is demanding work.
 
-Quick recap: EUONGELION is a free daily devotional platform launching [LAUNCH DATE]. Deep content. No accounts required. Designed for the spiritually hungry who aren't currently connected to a church.
+Quick recap: EUANGELION is a free daily devotional platform launching [LAUNCH DATE]. Deep content. No accounts required. Designed for the spiritually hungry who aren't currently connected to a church.
 
 If a brief conversation would be helpful, I'm happy to connect. If not, no worries—just wanted to make sure this didn't get buried.
 
@@ -108,7 +108,7 @@ Grace and peace,
 
 ### Partnership Proposal (After Initial Call)
 
-**Subject:** EUONGELION Partnership Outline
+**Subject:** EUANGELION Partnership Outline
 
 ---
 
@@ -116,7 +116,7 @@ Hi [PASTOR/LEADER NAME],
 
 Great speaking with you. Here's a summary of what we discussed:
 
-**EUONGELION Church Partnership Overview**
+**EUANGELION Church Partnership Overview**
 
 **What We Offer:**
 
@@ -137,13 +137,13 @@ Great speaking with you. Here's a summary of what we discussed:
 
 **What We Ask:**
 
-1. Mention EUONGELION to your congregation (bulletin, announcement, email)
+1. Mention EUANGELION to your congregation (bulletin, announcement, email)
 2. Share specific series when they align with your teaching
 3. Provide feedback on content that works (or doesn't) for your community
 
 **No Financial Obligation:**
 
-EUONGELION is free for churches and congregations. We're funded by donations and partnerships, not user fees.
+EUANGELION is free for churches and congregations. We're funded by donations and partnerships, not user fees.
 
 **Next Steps:**
 
@@ -163,7 +163,7 @@ Grace and peace,
 
 ### Initial Outreach
 
-**Subject:** Potential collaboration — EUONGELION
+**Subject:** Potential collaboration — EUANGELION
 
 ---
 
@@ -173,16 +173,16 @@ I've followed [MINISTRY NAME]'s work for a while now—especially [SPECIFIC WORK
 
 I'm reaching out because we're building something that might complement your mission.
 
-EUONGELION is a free daily devotional platform launching [LAUNCH DATE]. It's designed for people who believe, used to believe, or want to believe but have questions. Deep content. No accounts required. Accessible to anyone with internet access.
+EUANGELION is a free daily devotional platform launching [LAUNCH DATE]. It's designed for people who believe, used to believe, or want to believe but have questions. Deep content. No accounts required. Accessible to anyone with internet access.
 
 **Why [MINISTRY NAME]?**
 
-Your audience [describe overlap—e.g., "includes young adults navigating faith questions" or "serves people in recovery who need daily spiritual grounding"]. EUONGELION is built for exactly those people.
+Your audience [describe overlap—e.g., "includes young adults navigating faith questions" or "serves people in recovery who need daily spiritual grounding"]. EUANGELION is built for exactly those people.
 
 **What collaboration might look like:**
 
 - We provide free content your community can access
-- You share EUONGELION with your audience as a recommended resource
+- You share EUANGELION with your audience as a recommended resource
 - We potentially create custom series aligned with your specific focus areas
 
 No strings attached. We're not selling anything. Just looking for ways to extend reach to people who are spiritually hungry.
@@ -194,13 +194,13 @@ Either way, thank you for the work you do.
 Grace and peace,
 
 [YOUR NAME]
-EUONGELION Team
+EUANGELION Team
 
 ---
 
 ### Follow-Up (7 days later)
 
-**Subject:** Re: Potential collaboration — EUONGELION
+**Subject:** Re: Potential collaboration — EUANGELION
 
 ---
 
@@ -208,7 +208,7 @@ Hi [MINISTRY LEADER NAME],
 
 Floating this back up. I know ministry work keeps you busy.
 
-Short version: EUONGELION is a free devotional platform launching [LAUNCH DATE]. We think there might be synergy with [MINISTRY NAME]'s audience.
+Short version: EUANGELION is a free devotional platform launching [LAUNCH DATE]. We think there might be synergy with [MINISTRY NAME]'s audience.
 
 Happy to chat if helpful. If not, no pressure—just wanted to make sure this found you.
 
@@ -220,7 +220,7 @@ Grace and peace,
 
 ### Partnership Proposal (After Initial Call)
 
-**Subject:** EUONGELION x [MINISTRY NAME] Partnership Outline
+**Subject:** EUANGELION x [MINISTRY NAME] Partnership Outline
 
 ---
 
@@ -233,7 +233,7 @@ Following up on our conversation. Here's what we discussed:
 **What We Offer [MINISTRY NAME]:**
 
 1. **Content for Your Community**
-   - Free access to all EUONGELION content for your audience
+   - Free access to all EUANGELION content for your audience
    - Recommended series curated for your specific community needs
    - Option to create co-branded landing page
 
@@ -247,13 +247,13 @@ Following up on our conversation. Here's what we discussed:
 
 **What We Ask:**
 
-1. Share EUONGELION with your community via your existing channels
+1. Share EUANGELION with your community via your existing channels
 2. Provide feedback on what content resonates (or doesn't)
 3. Consider testimonial/endorsement if the content serves your people well
 
 **No Cost:**
 
-This partnership is free. EUONGELION is funded by donations, not partnerships.
+This partnership is free. EUANGELION is funded by donations, not partnerships.
 
 **Next Steps:**
 
@@ -283,7 +283,7 @@ I've been following your content for a while—especially [SPECIFIC WORK REFEREN
 
 I'm reaching out because we're launching something that aligns with what you already talk about.
 
-EUONGELION (wokegod.world) is a free daily devotional platform launching [LAUNCH DATE]. It's designed for people who believe, used to believe, or want to believe but have questions.
+EUANGELION (wokegod.world) is a free daily devotional platform launching [LAUNCH DATE]. It's designed for people who believe, used to believe, or want to believe but have questions.
 
 **What makes it different:**
 
@@ -294,7 +294,7 @@ EUONGELION (wokegod.world) is a free daily devotional platform launching [LAUNCH
 
 **Why I'm reaching out:**
 
-Your audience trusts you. If EUONGELION is the kind of thing you'd genuinely recommend—not because we asked, but because it's good—I'd love to get your eyes on it before launch.
+Your audience trusts you. If EUANGELION is the kind of thing you'd genuinely recommend—not because we asked, but because it's good—I'd love to get your eyes on it before launch.
 
 No obligation. No affiliate setup. Just a genuine invitation to explore and share if it resonates.
 
@@ -305,7 +305,7 @@ Either way, keep doing what you're doing. It matters.
 Grace and peace,
 
 [YOUR NAME]
-EUONGELION Team
+EUANGELION Team
 
 ---
 
@@ -319,7 +319,7 @@ Hi [INFLUENCER NAME],
 
 Just checking if this landed. I know creators get a lot of pitches—this isn't one of those.
 
-Quick version: EUONGELION is a free devotional platform with deep theological content. I think it might resonate with your audience, and I'd love to get your honest take.
+Quick version: EUANGELION is a free devotional platform with deep theological content. I think it might resonate with your audience, and I'd love to get your honest take.
 
 No strings attached. Just an invitation.
 
@@ -331,13 +331,13 @@ Grace and peace,
 
 ### Partnership Proposal (After Interest Expressed)
 
-**Subject:** EUONGELION — What working together could look like
+**Subject:** EUANGELION — What working together could look like
 
 ---
 
 Hi [INFLUENCER NAME],
 
-Thanks for your interest in EUONGELION. Here's what collaboration might look like:
+Thanks for your interest in EUANGELION. Here's what collaboration might look like:
 
 **What We Offer:**
 
@@ -346,7 +346,7 @@ Thanks for your interest in EUONGELION. Here's what collaboration might look lik
    - First look at new content and series
 
 2. **Shareable Content**
-   - Custom graphics featuring EUONGELION content you can share
+   - Custom graphics featuring EUANGELION content you can share
    - Pull quotes, Scripture cards, word studies—all branded and ready
 
 3. **Affiliate/Ambassador Program (Optional)**
@@ -369,7 +369,7 @@ Thanks for your interest in EUONGELION. Here's what collaboration might look lik
 - Paid endorsement without genuine belief
 - Anything that compromises your integrity
 
-If EUONGELION isn't for your audience, no hard feelings. We only want genuine recommendations.
+If EUANGELION isn't for your audience, no hard feelings. We only want genuine recommendations.
 
 Let me know what interests you most.
 
@@ -393,7 +393,7 @@ I've been listening to [PODCAST NAME]—especially the episode on [SPECIFIC EPIS
 
 I'm reaching out because we're launching something your audience might find valuable.
 
-EUONGELION (wokegod.world) is a free daily devotional platform launching [LAUNCH DATE]. It's designed for people who believe, used to believe, or want to believe but have questions.
+EUANGELION (wokegod.world) is a free daily devotional platform launching [LAUNCH DATE]. It's designed for people who believe, used to believe, or want to believe but have questions.
 
 **What makes it different:**
 
@@ -406,14 +406,14 @@ EUONGELION (wokegod.world) is a free daily devotional platform launching [LAUNCH
 
 1. **If you're open to guests:** I'd love to discuss the intersection of [relevant topic to their podcast] and how we're approaching faith content differently. Not a promo—a genuine conversation.
 
-2. **If you're not taking guests:** No worries. I just wanted to make sure you knew about EUONGELION in case it's something you'd organically mention to your audience.
+2. **If you're not taking guests:** No worries. I just wanted to make sure you knew about EUANGELION in case it's something you'd organically mention to your audience.
 
 Either way, keep making [PODCAST NAME]. It matters.
 
 Grace and peace,
 
 [YOUR NAME]
-EUONGELION Team
+EUANGELION Team
 
 ---
 
@@ -427,7 +427,7 @@ Hi [HOST NAME],
 
 Floating this back up. Totally understand if you're booked or not taking guests—just wanted to make sure it found you.
 
-Short version: EUONGELION is a free devotional platform with deep theological content. Would love to be a guest if there's fit, or just wanted you to have it as a resource for your audience.
+Short version: EUANGELION is a free devotional platform with deep theological content. Would love to be a guest if there's fit, or just wanted you to have it as a resource for your audience.
 
 Grace and peace,
 
@@ -437,7 +437,7 @@ Grace and peace,
 
 ### Pre-Interview Prep (If Booked)
 
-**Subject:** EUONGELION — Pre-interview info
+**Subject:** EUANGELION — Pre-interview info
 
 ---
 
@@ -447,7 +447,7 @@ Looking forward to our conversation on [DATE]. Here's some background to help wi
 
 **Quick Facts:**
 
-- EUONGELION = Greek for "good news" (the Gospel)
+- EUANGELION = Greek for "good news" (the Gospel)
 - Daily devotional platform — free, no accounts required
 - Target audience: People who believe, used to believe, or want to believe but have questions
 - Content: Hebrew/Greek word studies, historical context, real stories, reflection questions
@@ -465,13 +465,13 @@ Looking forward to our conversation on [DATE]. Here's some background to help wi
 - The founder story (why we built this)
 - How the platform works (Soul Audit, day-gating, etc.)
 - Theological approach and content philosophy
-- What success looks like for EUONGELION
+- What success looks like for EUANGELION
 
 **What I'd Prefer to Avoid:**
 
 - Debate-style conversations about specific doctrines
 - Culture war topics
-- Anything that positions EUONGELION as anti-church
+- Anything that positions EUANGELION as anti-church
 
 **Materials I Can Provide:**
 
@@ -491,7 +491,7 @@ Grace and peace,
 
 ### Initial Outreach
 
-**Subject:** Your book + EUONGELION
+**Subject:** Your book + EUANGELION
 
 ---
 
@@ -501,7 +501,7 @@ I recently read [BOOK TITLE], and [specific thing that resonated]. It's stayed w
 
 I'm reaching out because we're building something that shares your concern for [theme from their work].
 
-EUONGELION (wokegod.world) is a free daily devotional platform launching [LAUNCH DATE]. It's designed for people who believe, used to believe, or want to believe but have questions.
+EUANGELION (wokegod.world) is a free daily devotional platform launching [LAUNCH DATE]. It's designed for people who believe, used to believe, or want to believe but have questions.
 
 **What makes it different:**
 
@@ -512,7 +512,7 @@ EUONGELION (wokegod.world) is a free daily devotional platform launching [LAUNCH
 
 **Why I'm writing you:**
 
-Your work reaches people who are asking hard questions. EUONGELION is built for the same audience—people who want depth, not platitudes.
+Your work reaches people who are asking hard questions. EUANGELION is built for the same audience—people who want depth, not platitudes.
 
 **What I'm proposing:**
 
@@ -520,18 +520,18 @@ Your work reaches people who are asking hard questions. EUONGELION is built for 
 - If the content resonates, perhaps a mention to your audience
 - If there's a series aligned with your book's themes, we could explore collaboration
 
-No pressure. I just wanted you to know about EUONGELION in case it's something you'd naturally recommend.
+No pressure. I just wanted you to know about EUANGELION in case it's something you'd naturally recommend.
 
 Grace and peace,
 
 [YOUR NAME]
-EUONGELION Team
+EUANGELION Team
 
 ---
 
 ### Follow-Up (7 days later)
 
-**Subject:** Re: Your book + EUONGELION
+**Subject:** Re: Your book + EUANGELION
 
 ---
 
@@ -539,7 +539,7 @@ Hi [AUTHOR NAME],
 
 Following up briefly. I know authors get a lot of outreach—this isn't a pitch for promotion.
 
-Just wanted to make sure you knew about EUONGELION: free devotional content designed for spiritually hungry skeptics and seekers. The same audience you write for.
+Just wanted to make sure you knew about EUANGELION: free devotional content designed for spiritually hungry skeptics and seekers. The same audience you write for.
 
 If early access would be helpful, let me know. If not, no worries—keep writing. What you do matters.
 
@@ -551,7 +551,7 @@ Grace and peace,
 
 ### Partnership Proposal (After Interest Expressed)
 
-**Subject:** EUONGELION x [AUTHOR NAME] — Potential collaboration
+**Subject:** EUANGELION x [AUTHOR NAME] — Potential collaboration
 
 ---
 
@@ -576,7 +576,7 @@ Thanks for your interest. Here's what collaboration might look like:
 
 **What We Ask:**
 
-1. Explore EUONGELION and provide honest feedback
+1. Explore EUANGELION and provide honest feedback
 2. If it resonates, share with your audience via newsletter, social, or book promotion
 3. Consider endorsement/testimonial if genuinely helpful
 
@@ -609,7 +609,7 @@ Grace and peace,
 
 **If They Say No:**
 
-> "Thank you for letting me know. If anything changes, we'd love to connect in the future. In the meantime, if EUONGELION ever seems relevant to share with your audience, the door is always open. Grace and peace."
+> "Thank you for letting me know. If anything changes, we'd love to connect in the future. In the meantime, if EUANGELION ever seems relevant to share with your audience, the door is always open. Grace and peace."
 
 **If They Don't Respond:**
 

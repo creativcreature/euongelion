@@ -140,7 +140,9 @@ export function isMetadataChunk(content: string): boolean {
     return true
 
   // File headers that are just metadata
-  if (/^#\s+euongelion/im.test(content) && wc < 100) return true
+  // Matches both "euangelion" (canonical) and the legacy "euongelion" spelling
+  // that may still appear in unindexed reference-library headings.
+  if (/^#\s+eu[oa]ngelion/im.test(content) && wc < 100) return true
 
   // Project Gutenberg / CCEL boilerplate headers
   if (/project gutenberg e?book/i.test(content) && wc < 150) return true

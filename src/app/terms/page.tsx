@@ -11,15 +11,28 @@ export const metadata = {
 
 export default async function TermsPage() {
   const filePath = path.join(process.cwd(), 'content/legal/terms-of-service.md')
-  const [content, stat] = await Promise.all([
-    fs.readFile(filePath, 'utf-8'),
-    fs.stat(filePath),
-  ])
-  const lastUpdated = stat.mtime.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
+  let content = ''
+  let lastUpdated = 'February 2026'
+  try {
+    const [raw, stat] = await Promise.all([
+      fs.readFile(filePath, 'utf-8'),
+      fs.stat(filePath),
+    ])
+    content = raw
+    lastUpdated = stat.mtime.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  } catch {
+    content =
+      '# Terms of Service\n\n' +
+      'By using Euangelion, you agree to use the platform respectfully and in good faith.\n\n' +
+      '## Acceptable Use\n\n' +
+      'Content is provided for personal spiritual growth. Commercial redistribution is not permitted.\n\n' +
+      '## Contact\n\n' +
+      'For questions about these terms, contact us at support@euangelion.app.'
+  }
 
   const html = markdownToHtml(content)
 

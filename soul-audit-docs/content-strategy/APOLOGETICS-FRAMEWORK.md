@@ -2,7 +2,7 @@
 
 **Version:** 1.0
 **Last Updated:** January 16, 2026
-**Purpose:** Define apologetics content areas for EUONGELION
+**Purpose:** Define apologetics content areas for EUANGELION
 
 ---
 
@@ -289,7 +289,7 @@ Apologetics content must be:
 - **Evangelistic:** The goal is relationship with Christ, not winning debates
 - **Pastoral:** Remember the person behind the question
 
-### Structure (Following EUONGELION template)
+### Structure (Following EUANGELION template)
 
 Each apologetics devotional follows the standard structure:
 

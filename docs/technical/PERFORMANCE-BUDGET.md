@@ -1,4 +1,4 @@
-# EUONGELION Performance Budget
+# EUANGELION Performance Budget
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -7,7 +7,7 @@
 
 ## Overview
 
-Performance budget defining target metrics, bundle sizes, and optimization strategies for EUONGELION. These budgets ensure a fast, accessible experience across all devices and network conditions.
+Performance budget defining target metrics, bundle sizes, and optimization strategies for EUANGELION. These budgets ensure a fast, accessible experience across all devices and network conditions.
 
 **Philosophy:** The devotional reading experience should feel immediate and immersive. Performance is a feature.
 

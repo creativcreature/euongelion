@@ -1,4 +1,4 @@
-# EUONGELION Devotional Series Ideas
+# EUANGELION Devotional Series Ideas
 
 **Version:** 1.1
 **Last Updated:** January 16, 2026 - Added 8 titles, revised 10 for clarity based on search trend vetting

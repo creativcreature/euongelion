@@ -430,7 +430,7 @@ This audit evaluates the existing HTML samples against WCAG 2.1 Level AA require
 <h3 class="interactive-title">Carry This With You</h3>
 
 <!-- Better: Ensure logical hierarchy -->
-<h1>EUONGELION - Day 1: The Announcement</h1>
+<h1>EUANGELION - Day 1: The Announcement</h1>
 <h2>The Word: Euangelion</h2>
 <h2>Why This Exists</h2>
 <h2>Scripture</h2>
@@ -726,7 +726,7 @@ The following CSS can be added to all HTML files to address the critical and hig
 
 ```css
 /* ==========================================
-   EUONGELION Accessibility Enhancements
+   EUANGELION Accessibility Enhancements
    Add this to all HTML files
    ========================================== */
 
@@ -872,7 +872,7 @@ Use this template structure for all pages:
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[Day Title] - EUONGELION</title>
+    <title>[Day Title] - EUANGELION</title>
     <!-- ... other head content ... -->
   </head>
   <body>
@@ -882,7 +882,7 @@ Use this template structure for all pages:
     <!-- Header with landmark -->
     <header role="banner">
       <nav aria-label="Site navigation">
-        <span class="masthead-logo">EUONGELION</span>
+        <span class="masthead-logo">EUANGELION</span>
         <span class="masthead-meta" aria-label="Day 1 of 3">Day 1 of 3</span>
       </nav>
     </header>
@@ -946,7 +946,7 @@ Use this template structure for all pages:
 
     <!-- Footer -->
     <footer role="contentinfo">
-      <p>Day 1 of 3 - EUONGELION</p>
+      <p>Day 1 of 3 - EUANGELION</p>
       <p>Tomorrow: The Long Way Home</p>
     </footer>
   </body>

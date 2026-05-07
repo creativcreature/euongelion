@@ -1,4 +1,4 @@
-# EUONGELION — Vision
+# EUANGELION — Vision
 
 **Version:** 1.0
 **Last Updated:** January 16, 2026

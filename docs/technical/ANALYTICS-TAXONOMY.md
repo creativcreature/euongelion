@@ -1,4 +1,4 @@
-# EUONGELION Analytics Taxonomy
+# EUANGELION Analytics Taxonomy
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -7,7 +7,7 @@
 
 ## Overview
 
-Complete event tracking plan for EUONGELION. This document defines every trackable event, its properties, naming conventions, and how events connect into conversion funnels.
+Complete event tracking plan for EUANGELION. This document defines every trackable event, its properties, naming conventions, and how events connect into conversion funnels.
 
 **Primary Tool:** Vercel Analytics (MVP) or Plausible (privacy-respecting alternative)
 **Implementation:** Custom events via `@vercel/analytics` or Plausible script

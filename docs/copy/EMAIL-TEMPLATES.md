@@ -1,4 +1,4 @@
-# EUONGELION Email Templates
+# EUANGELION Email Templates
 
 **Version:** 1.0
 **Created:** January 17, 2026
@@ -26,35 +26,35 @@ Avoid: exclamation points, urgency language, guilt, gamification, casual greetin
 
 **Subject Line Options:**
 
-1. Your link to EUONGELION
-2. Sign in to EUONGELION
-3. Your EUONGELION access link
+1. Your link to EUANGELION
+2. Sign in to EUANGELION
+3. Your EUANGELION access link
 
 **Preview Text:** This link expires in 15 minutes.
 
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 Here is your sign-in link.
 
-[Sign In to EUONGELION]
+[Sign In to EUANGELION]
 
 This link will expire in 15 minutes. If you didn't request this, you can safely ignore this email.
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-You're receiving this because you requested a sign-in link at euongelion.com.
-EUONGELION is a wokeGod project.
+You're receiving this because you requested a sign-in link at euangelion.com.
+EUANGELION is a wokeGod project.
 ```
 
-**CTA Button Text:** Sign In to EUONGELION
+**CTA Button Text:** Sign In to EUANGELION
 
-**Footer:** You're receiving this because you requested a sign-in link at euongelion.com. EUONGELION is a wokeGod project.
+**Footer:** You're receiving this because you requested a sign-in link at euangelion.com. EUANGELION is a wokeGod project.
 
 ---
 
@@ -66,14 +66,14 @@ EUONGELION is a wokeGod project.
 2. Verify your email change
 3. Your email update request
 
-**Preview Text:** Please confirm this change to your EUONGELION account.
+**Preview Text:** Please confirm this change to your EUANGELION account.
 
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
-You've requested to change your email address for your EUONGELION account.
+You've requested to change your email address for your EUANGELION account.
 
 New email: [new_email@example.com]
 
@@ -84,17 +84,17 @@ If this was you, please confirm the change below:
 If you didn't request this, please ignore this email. Your account will remain unchanged.
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
 This confirmation link expires in 24 hours.
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** Confirm Email Change
 
-**Footer:** This confirmation link expires in 24 hours. EUONGELION is a wokeGod project.
+**Footer:** This confirmation link expires in 24 hours. EUANGELION is a wokeGod project.
 
 ---
 
@@ -104,14 +104,14 @@ EUONGELION is a wokeGod project.
 
 1. Reset your password
 2. Your password reset request
-3. EUONGELION password reset
+3. EUANGELION password reset
 
 **Preview Text:** Use this link to set a new password.
 
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 You've requested to reset your password.
 
@@ -120,16 +120,16 @@ You've requested to reset your password.
 This link will expire in 1 hour. If you didn't request a password reset, you can safely ignore this email. Your password will remain unchanged.
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** Reset Password
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -145,7 +145,7 @@ _Sent immediately upon account creation_
 
 **Subject Line Options:**
 
-1. Welcome to EUONGELION
+1. Welcome to EUANGELION
 2. You're here.
 3. The door is open
 
@@ -154,13 +154,13 @@ _Sent immediately upon account creation_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 Welcome.
 
 You've just joined a community of people who believe the Bible is worth reading slowly. Not skimming. Not speed-reading. Actually dwelling in it.
 
-EUONGELION is a daily devotional unlike anything else. We go deep into Hebrew and Greek words. We tell stories that make you stop. We take the ancient text seriously—and we take you seriously.
+EUANGELION is a daily devotional unlike anything else. We go deep into Hebrew and Greek words. We tell stories that make you stop. We take the ancient text seriously—and we take you seriously.
 
 Here's what happens next:
 
@@ -175,17 +175,17 @@ Here's what happens next:
 You're not behind. You're here. That's enough.
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
 Questions? Just reply to this email.
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** Begin Your First Day
 
-**Footer:** Questions? Just reply to this email. EUONGELION is a wokeGod project.
+**Footer:** Questions? Just reply to this email. EUANGELION is a wokeGod project.
 
 ---
 
@@ -204,7 +204,7 @@ _Sent morning of Day 2_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 Day 2.
 
@@ -233,17 +233,17 @@ Every devotional includes citations and footnotes. This is theology grounded in 
 [Continue to Day 2]
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
 Questions? Just reply.
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** Continue to Day 2
 
-**Footer:** Questions? Just reply. EUONGELION is a wokeGod project.
+**Footer:** Questions? Just reply. EUANGELION is a wokeGod project.
 
 ---
 
@@ -262,7 +262,7 @@ _Sent morning of Day 4_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 Day 4.
 
@@ -289,16 +289,16 @@ In a few days, you'll encounter something different. We observe a rhythm of rest
 [Continue to Day 4]
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** Continue to Day 4
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -317,13 +317,13 @@ _Sent morning of Day 6_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 Day 6.
 
 Tomorrow is the Sabbath.
 
-In the rhythm of EUONGELION, one day each week is set apart. There's no new content on the Sabbath. No push to consume. No emails nudging you forward.
+In the rhythm of EUANGELION, one day each week is set apart. There's no new content on the Sabbath. No push to consume. No emails nudging you forward.
 
 This isn't a bug. It's a feature.
 
@@ -331,7 +331,7 @@ This isn't a bug. It's a feature.
 
 The Hebrew word *shabbat* means to cease—to stop striving. God rested on the seventh day, not because He was tired, but because He was finished. The work was complete.
 
-We've built this rest into EUONGELION because we believe spiritual formation includes non-doing. Not everything is meant to be accomplished.
+We've built this rest into EUANGELION because we believe spiritual formation includes non-doing. Not everything is meant to be accomplished.
 
 **Tomorrow**
 
@@ -342,16 +342,16 @@ We'll resume together on Day 8.
 [Finish Day 6]
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** Finish Day 6
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -370,7 +370,7 @@ _Sent morning of Day 7 (Sabbath)_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 Sabbath.
 
@@ -387,16 +387,16 @@ You might:
 We'll see you tomorrow with Day 8.
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** None (No CTA for rest day)
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -417,7 +417,7 @@ _Only sent to users who enable daily reminders_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 [Series Name] — Day [X]
 
@@ -431,12 +431,12 @@ Today's reading is ready when you are.
 
 You're receiving this because you enabled daily reminders.
 To change this, visit your settings.
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** Continue Reading
 
-**Footer:** You're receiving this because you enabled daily reminders. To change this, visit your settings. EUONGELION is a wokeGod project.
+**Footer:** You're receiving this because you enabled daily reminders. To change this, visit your settings. EUANGELION is a wokeGod project.
 
 ---
 
@@ -455,7 +455,7 @@ _Sent upon completing a series_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 You've completed [Series Name].
 
@@ -476,16 +476,16 @@ When you're ready, your next series is waiting. There's no rush. Let this one se
 [Explore Your Next Series]
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** Explore Your Next Series
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -504,7 +504,7 @@ _Sent when a new series is recommended or becomes available_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 A new series.
 
@@ -520,16 +520,16 @@ There's no obligation to start now. The series will be here when you're ready.
 [Begin Series]
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** Begin Series
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -548,7 +548,7 @@ _Sent after 7 consecutive days of engagement_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 Seven days.
 
@@ -559,16 +559,16 @@ We don't believe in streaks or badges. We're not going to give you points. But w
 Keep going. Or rest. Both are good.
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** None (Acknowledgment, not action)
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -587,7 +587,7 @@ _Sent after 30 days of engagement_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 Thirty days.
 
@@ -602,16 +602,16 @@ Day and night. Not perfectly—but persistently.
 You're becoming someone who gives attention to ancient words. That changes a person. Slowly. Quietly. But it changes them.
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** None
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -630,7 +630,7 @@ _Sent after 100 days of engagement_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 One hundred days.
 
@@ -643,16 +643,16 @@ A hundred days of word studies, of stories, of sitting with Scripture—that tra
 Thank you for being here. For staying. For trusting this process.
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** None
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -673,7 +673,7 @@ _Sent after 3 days of no activity_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 It's been a few days.
 
@@ -686,16 +686,16 @@ When you're ready—today, next week, whenever—we'll be here.
 [Return to Your Reading]
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** Return to Your Reading
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -714,7 +714,7 @@ _Sent after 7 days of no activity_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 A week has passed.
 
@@ -729,16 +729,16 @@ But if there's a part of you that wants to return—even for one day—we're her
 Or, if you'd like, you can pause your account and come back later. No explanation needed.
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** Continue Where You Left Off
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -757,7 +757,7 @@ _Sent after 30 days of no activity—the final re-engagement attempt_
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 It's been a month.
 
@@ -769,21 +769,21 @@ If, someday, you find yourself hungry for this again—for the Hebrew words, for
 
 No restart. No penalty. Just an open door.
 
-[Return to EUONGELION]
+[Return to EUANGELION]
 
 You're always welcome.
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
-**CTA Button Text:** Return to EUONGELION
+**CTA Button Text:** Return to EUANGELION
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -795,14 +795,14 @@ EUONGELION is a wokeGod project.
 
 1. Your account has been deleted
 2. Account deletion complete
-3. EUONGELION account removed
+3. EUANGELION account removed
 
 **Preview Text:** Your data has been removed.
 
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 Your account has been deleted.
 
@@ -817,16 +817,16 @@ This action is permanent and cannot be undone.
 If this was a mistake, you're welcome to create a new account at any time. We'd be glad to see you again.
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** None
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -835,7 +835,7 @@ EUONGELION is a wokeGod project.
 **Subject Line Options:**
 
 1. Your data export is ready
-2. Download your EUONGELION data
+2. Download your EUANGELION data
 3. Your data is available
 
 **Preview Text:** Download your data within 7 days.
@@ -843,7 +843,7 @@ EUONGELION is a wokeGod project.
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 Your data export is ready.
 
@@ -862,16 +862,16 @@ Your export includes:
 If you didn't request this export, please contact us immediately.
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** Download Your Data
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -888,7 +888,7 @@ EUONGELION is a wokeGod project.
 **Body:**
 
 ```
-EUONGELION
+EUANGELION
 
 We've updated our policies.
 
@@ -906,19 +906,19 @@ You can read the full updated documents here:
 
 If you have questions, reply to this email. We're here.
 
-Your continued use of EUONGELION after [date] indicates acceptance of these changes. If you don't agree, you can delete your account at any time through your settings.
+Your continued use of EUANGELION after [date] indicates acceptance of these changes. If you don't agree, you can delete your account at any time through your settings.
 
 Grace and peace,
-EUONGELION
+EUANGELION
 
 ---
 
-EUONGELION is a wokeGod project.
+EUANGELION is a wokeGod project.
 ```
 
 **CTA Button Text:** None (links inline)
 
-**Footer:** EUONGELION is a wokeGod project.
+**Footer:** EUANGELION is a wokeGod project.
 
 ---
 
@@ -929,7 +929,7 @@ EUONGELION is a wokeGod project.
 - **Background:** Scroll White (#F7F3ED)
 - **Text:** Tehom Black (#1A1612)
 - **Accents:** God is Gold (#C19A6B) — use sparingly
-- **Logo:** Small, top-left, EUONGELION wordmark only
+- **Logo:** Small, top-left, EUANGELION wordmark only
 - **Max width:** 600px
 - **Fonts:** System fonts (no custom fonts in email)
 - **Images:** Minimal or none
@@ -951,10 +951,10 @@ All emails end with:
 
 ```
 Grace and peace,
-EUONGELION
+EUANGELION
 ```
 
-Never "The EUONGELION Team" or "Your friends at EUONGELION."
+Never "The EUANGELION Team" or "Your friends at EUANGELION."
 
 ### Footer Standard
 
@@ -962,7 +962,7 @@ All emails include:
 
 - Explanation of why they're receiving the email
 - Link to unsubscribe (where applicable)
-- "EUONGELION is a wokeGod project."
+- "EUANGELION is a wokeGod project."
 
 ---
 
@@ -986,5 +986,5 @@ Before sending any email:
 
 **End of Document**
 
-_Prepared for: EUONGELION MVP_
+_Prepared for: EUANGELION MVP_
 _Last Updated: January 17, 2026_

@@ -8,7 +8,7 @@
 
 ## Purpose
 
-This document defines anticipated support ticket categories, provides example scenarios, and supplies response templates for consistent, efficient support. All support responses should reflect the EUONGELION voice: warm, intelligent, and genuinely helpful.
+This document defines anticipated support ticket categories, provides example scenarios, and supplies response templates for consistent, efficient support. All support responses should reflect the EUANGELION voice: warm, intelligent, and genuinely helpful.
 
 ---
 
@@ -93,7 +93,7 @@ I'll dig into our logs and get you sorted.
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -127,7 +127,7 @@ Let me know if you hit any other snags!
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -161,7 +161,7 @@ Hope that helps!
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -203,7 +203,7 @@ With that info, I can dig deeper or escalate to our engineering team.
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -239,7 +239,7 @@ I'm flagging this for our engineering team and will follow up once we have more 
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -286,7 +286,7 @@ I'll make sure our team sees this.
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -321,7 +321,7 @@ If you'd like to discuss this more, I'm happy to point you toward some deeper re
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -355,7 +355,7 @@ We genuinely appreciate you taking the time to let us know. People who care abou
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -391,7 +391,7 @@ Thanks for helping us serve you better!
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -423,11 +423,11 @@ Once you confirm, I'll process the deletion within 48 hours and send you confirm
 
 Before you go - if there's something we could have done better, I'd genuinely love to hear it. No pressure, but feedback helps us improve.
 
-Whatever you decide, thank you for giving EUONGELION a try.
+Whatever you decide, thank you for giving EUANGELION a try.
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -463,7 +463,7 @@ Once verified, I'll update your email and send a fresh login link to your new ad
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -503,7 +503,7 @@ I'll review our records and get back to you within 24 hours with an explanation 
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -529,13 +529,13 @@ This message just made my day - and I know it'll encourage the whole team.
 
 [Acknowledge specific thing they mentioned if applicable]
 
-Hearing that EUONGELION is helping you grow closer to God is literally why we do this. We pour a lot of thought and prayer into every devotional, and knowing it's landing means everything.
+Hearing that EUANGELION is helping you grow closer to God is literally why we do this. We pour a lot of thought and prayer into every devotional, and knowing it's landing means everything.
 
 Thank you for taking the time to write. And thank you for sharing with your [small group/friends/family] - that kind of word-of-mouth is how we grow.
 
 Keep seeking Him,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -570,7 +570,7 @@ Thanks for helping us get better.
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -606,7 +606,7 @@ Keep the ideas coming!
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -642,7 +642,7 @@ If you'd like to discuss this further, I'm happy to continue the conversation. W
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---
@@ -664,7 +664,7 @@ Hi [Name],
 
 Great question! Here's where we stand:
 
-**EUONGELION is non-denominational** - we're not affiliated with any particular church or tradition. Our content is grounded in historic Christian orthodoxy (the things Christians have believed across time and traditions).
+**EUANGELION is non-denominational** - we're not affiliated with any particular church or tradition. Our content is grounded in historic Christian orthodoxy (the things Christians have believed across time and traditions).
 
 **What we believe:**
 - The authority of Scripture
@@ -682,7 +682,7 @@ Does that help? Happy to clarify further.
 
 Grace and peace,
 [Your name]
-EUONGELION Support
+EUANGELION Support
 ```
 
 ---

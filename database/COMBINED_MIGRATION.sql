@@ -1,5 +1,5 @@
 -- ============================================================================
--- EUONGELION Complete Database Migration
+-- EUANGELION Complete Database Migration
 -- ============================================================================
 -- Instructions:
 -- 1. Go to your Supabase Dashboard: https://supabase.com/dashboard/project/ovivwbopjfruikehrlgm

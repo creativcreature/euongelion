@@ -1,6 +1,6 @@
-# Contributing to EUONGELION
+# Contributing to EUANGELION
 
-Thank you for your interest in contributing to EUONGELION. This guide will help you get started.
+Thank you for your interest in contributing to EUANGELION. This guide will help you get started.
 
 ## Code of Conduct
 
@@ -23,8 +23,8 @@ Thank you for your interest in contributing to EUONGELION. This guide will help 
 1. **Fork and clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/euongelion.git
-   cd euongelion
+   git clone https://github.com/your-username/euangelion.git
+   cd euangelion
    ```
 
 2. **Install dependencies**
@@ -291,4 +291,4 @@ Contributors are recognized in:
 - Release notes
 - Project documentation
 
-Thank you for contributing to EUONGELION!
+Thank you for contributing to EUANGELION!

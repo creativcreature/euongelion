@@ -1,4 +1,4 @@
-# EUONGELION Social Shareability Framework
+# EUANGELION Social Shareability Framework
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
@@ -8,11 +8,11 @@
 
 ## Overview
 
-EUONGELION content is designed for depth. But depth doesn't spread without distillation. This framework ensures every devotional contains shareable units that work in isolation AND point back to the full experience.
+EUANGELION content is designed for depth. But depth doesn't spread without distillation. This framework ensures every devotional contains shareable units that work in isolation AND point back to the full experience.
 
 **Core Tension:** Create content that stands alone on social platforms while maintaining the integrity and context of deeper theological teaching.
 
-**Goal:** Users encounter EUONGELION first through a shareable moment, then discover the fuller devotional experience.
+**Goal:** Users encounter EUANGELION first through a shareable moment, then discover the fuller devotional experience.
 
 ---
 
@@ -279,7 +279,7 @@ The same word for all three.
 
 #### Groups Strategy
 
-- Create EUONGELION Discussion group (optional, future)
+- Create EUANGELION Discussion group (optional, future)
 - Partner with existing faith-focused groups
 - Provide shareable discussion guides for small groups
 
@@ -335,7 +335,7 @@ The same word for all three.
 - Series overview ("5 Days on Rest")
 - Theological concept breakdowns
 - Chiastic structure visualizations
-- "How to use EUONGELION" guides
+- "How to use EUANGELION" guides
 
 #### Board Strategy
 
@@ -377,7 +377,7 @@ The same word for all three.
 
 ### Visual Identity on Social
 
-All social cards maintain EUONGELION brand identity while optimizing for each platform's requirements.
+All social cards maintain EUANGELION brand identity while optimizing for each platform's requirements.
 
 ---
 
@@ -443,7 +443,7 @@ All social cards maintain EUONGELION brand identity while optimizing for each pl
 |                                  |
 |            - Attribution        |
 |                                  |
-|  [EUONGELION logo]              |
+|  [EUANGELION logo]              |
 +----------------------------------+
 ```
 
@@ -469,7 +469,7 @@ All social cards maintain EUONGELION brand identity while optimizing for each pl
 |        - Book Chapter:Verse     |
 |             (Translation)        |
 |                                  |
-|  [EUONGELION logo]              |
+|  [EUANGELION logo]              |
 +----------------------------------+
 ```
 
@@ -493,7 +493,7 @@ All social cards maintain EUONGELION brand identity while optimizing for each pl
 |                                  |
 |     Vapor. Breath. Fleeting.     |
 |                                  |
-|  [EUONGELION logo]              |
+|  [EUANGELION logo]              |
 +----------------------------------+
 ```
 
@@ -520,7 +520,7 @@ All social cards maintain EUONGELION brand identity while optimizing for each pl
 |           [Gold line]            |
 |        sit with this.           |
 |                                  |
-|  [EUONGELION logo]              |
+|  [EUANGELION logo]              |
 +----------------------------------+
 ```
 
@@ -544,7 +544,7 @@ All social cards maintain EUONGELION brand identity while optimizing for each pl
 |         Breathe out:            |
 |      I am not alone.            |
 |                                  |
-|  [EUONGELION logo]              |
+|  [EUANGELION logo]              |
 +----------------------------------+
 ```
 
@@ -577,7 +577,7 @@ All social cards maintain EUONGELION brand identity while optimizing for each pl
 
 - Center the logo
 - Make logo compete with content
-- Use full "EUONGELION" wordmark (use symbol only)
+- Use full "EUANGELION" wordmark (use symbol only)
 
 ---
 
@@ -845,7 +845,7 @@ Add your own words:
 **Every Shared Link Includes:**
 
 ```
-euongelion.com/series/[slug]?
+euangelion.com/series/[slug]?
   utm_source=[platform]
   &utm_medium=share
   &utm_content=[shareable_id]
@@ -895,7 +895,7 @@ The devotional voice is contemplative, deep, unhurried. Social voice maintains b
 - Be warm but not saccharine
 - Ask genuine questions
 - Acknowledge tension and doubt
-- Use "we" not "EUONGELION says"
+- Use "we" not "EUANGELION says"
 - Let content speak without over-explaining
 
 **DON'T:**
@@ -977,7 +977,7 @@ Understanding this word changes everything about Ecclesiastes.
 
 **Core Hashtag Categories:**
 
-1. **Brand:** #EUONGELION (use sparingly, build recognition)
+1. **Brand:** #EUANGELION (use sparingly, build recognition)
 
 2. **Format:** #DailyDevotional, #ScriptureCard, #HebrewWordStudy
 
@@ -1332,7 +1332,7 @@ Every key sentence should:
 
 ### What Success Looks Like
 
-Social success for EUONGELION isn't vanity metrics. It's building a path from social encounter to devotional engagement.
+Social success for EUANGELION isn't vanity metrics. It's building a path from social encounter to devotional engagement.
 
 ---
 

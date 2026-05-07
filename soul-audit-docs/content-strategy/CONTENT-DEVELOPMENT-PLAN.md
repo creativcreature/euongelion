@@ -74,7 +74,7 @@ This document defines:
 **Founder Review Checklist:**
 
 - [ ] Theological accuracy
-- [ ] Tone matches EUONGELION voice
+- [ ] Tone matches EUANGELION voice
 - [ ] Citations verified
 - [ ] Hebrew/Greek accurate
 - [ ] Story resonates
@@ -137,7 +137,7 @@ _Users need these before engaging with anything else_
 
 | Series                            | Days | Purpose                                   | Status |
 | --------------------------------- | ---- | ----------------------------------------- | ------ |
-| **Welcome to EUONGELION**         | 5    | Platform intro, how to use, first steps   | NEW    |
+| **Welcome to EUANGELION**         | 5    | Platform intro, how to use, first steps   | NEW    |
 | **How to Approach This Material** | 5    | Setting expectations, posture for reading | NEW    |
 | **How to Read the Bible**         | 15   | Literary genres, interpretation, PaRDeS   | NEW    |
 | **Common Misconceptions**         | 10   | Breaking false assumptions about faith    | NEW    |
@@ -453,7 +453,7 @@ At this pace:
 - Are controversial topics handled with nuance?
 - Are citations from reputable sources?
 
-### Gate 2: EUONGELION Voice
+### Gate 2: EUANGELION Voice
 
 - Is it honest without being harsh?
 - Is it intelligent without being academic?
@@ -477,11 +477,11 @@ At this pace:
 
 ## Onboarding Content Detail
 
-### Series: "Welcome to EUONGELION" (5 days)
+### Series: "Welcome to EUANGELION" (5 days)
 
 **Day 1: What Is This Place?**
 
-- What EUONGELION means (good news)
+- What EUANGELION means (good news)
 - The vision: People seeking God daily
 - Not an app, not a program—a path home
 
@@ -616,7 +616,7 @@ At this pace:
 [series-slug]-day-[##].md
 
 Examples:
-welcome-to-euongelion-day-01.md
+welcome-to-euangelion-day-01.md
 how-to-read-the-bible-day-07.md
 why-believe-day-15.md
 genesis-two-stories-day-03.md
@@ -629,7 +629,7 @@ For review status, use folder location (not filename).
 ## Next Steps
 
 1. **Create folder structure** in `/content/`
-2. **Generate first batch:** Welcome to EUONGELION (3 days)
+2. **Generate first batch:** Welcome to EUANGELION (3 days)
 3. **Founder reviews** and provides feedback
 4. **Iterate** on voice/tone until dialed in
 5. **Scale** to remaining onboarding content

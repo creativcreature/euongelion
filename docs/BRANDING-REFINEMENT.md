@@ -1,4 +1,4 @@
-# EUONGELION Brand Refinement
+# EUANGELION Brand Refinement
 
 **Version:** 1.0
 **Created:** January 17, 2026
@@ -81,7 +81,7 @@ Alternative expressions:
 
 ## 2. BRAND PERSONALITY
 
-### If EUONGELION Were a Person
+### If EUANGELION Were a Person
 
 **Demographics:**
 
@@ -116,7 +116,7 @@ The Wise Mentor who was once a seeker. Think: a seminary professor who teaches f
 | Warm ←——————→ Cool                                 |
 | :------------------------------------------------- | ------------: |
 | Approachable                                       | Authoritative |
-| **EUONGELION sits at 60% warm, 40% authoritative** |
+| **EUANGELION sits at 60% warm, 40% authoritative** |
 
 **Voice Qualities:**
 
@@ -126,7 +126,7 @@ The Wise Mentor who was once a seeker. Think: a seminary professor who teaches f
 - **Reverent, not stuffy** — Awe without pretension
 - **Direct, not aggressive** — Clear statements, no hedging or preaching
 
-### What EUONGELION Would Say
+### What EUANGELION Would Say
 
 **Would Say:**
 
@@ -147,7 +147,7 @@ The Wise Mentor who was once a seeker. Think: a seminary professor who teaches f
 - "Your best life starts now!"
 - Anything with an exclamation point in every sentence
 
-### How EUONGELION Makes People Feel
+### How EUANGELION Makes People Feel
 
 **First Encounter:**
 "This feels different. It's beautiful but not pretentious. Serious but not cold. I want to stay here."
@@ -299,7 +299,7 @@ Size: 48-64px (desktop), 32-40px (mobile)
 Weight: Regular
 Tracking: +20 (loose)
 Case: ALL CAPS
-Use: "EUONGELION" wordmark only—nowhere else
+Use: "EUANGELION" wordmark only—nowhere else
 ```
 
 **Level 2: DAY NUMBER**
@@ -566,7 +566,7 @@ html {
 
 **Primary Mark:**
 
-- "EUONGELION" wordmark in Editorial New
+- "EUANGELION" wordmark in Editorial New
 - All caps, letterspaced
 - Used in site header, email header
 
@@ -586,7 +586,7 @@ html {
 **1. Primary Horizontal (Default)**
 
 ```
-EUONGELION
+EUANGELION
 [lamb mark to left, optional]
 ```
 
@@ -594,13 +594,13 @@ EUONGELION
 
 ```
 [lamb mark]
-EUONGELION
+EUANGELION
 ```
 
 **3. Wordmark Only**
 
 ```
-EUONGELION
+EUANGELION
 [no lamb, for tight spaces]
 ```
 
@@ -613,7 +613,7 @@ EUONGELION
 **5. With Tagline**
 
 ```
-EUONGELION
+EUANGELION
 Daily bread for hungry souls
 ```
 
@@ -645,7 +645,7 @@ Daily bread for hungry souls
 **Partner Lock-ups:**
 
 - "A wokeGod project" may appear beneath
-- Never equal size—EUONGELION always dominant
+- Never equal size—EUANGELION always dominant
 - Consistent spacing rules apply
 
 **Prohibited Modifications:**
@@ -879,10 +879,10 @@ Daily bread for hungry souls
 
 ## 9. COMPETITIVE POSITIONING
 
-### What Makes EUONGELION Different
+### What Makes EUANGELION Different
 
 **From YouVersion/Bible App:**
-| YouVersion | EUONGELION |
+| YouVersion | EUANGELION |
 |------------|------------|
 | Many plans, shallow coverage | Few series, deep essays |
 | 5-minute time investment | 15-20 minute immersion |
@@ -891,7 +891,7 @@ Daily bread for hungry souls
 | Mass market, accessible | Hungry souls, depth-seekers |
 
 **From She Reads Truth / He Reads Truth:**
-| SRT/HRT | EUONGELION |
+| SRT/HRT | EUANGELION |
 |---------|------------|
 | Aesthetic lifestyle brand | Sacred, architectural restraint |
 | Pink/millennial palette | Tehom/Scroll/Gold restraint |
@@ -900,7 +900,7 @@ Daily bread for hungry souls
 | Products/subscription model | Content as the product |
 
 **From Dwell / Pray.com:**
-| Dwell/Pray | EUONGELION |
+| Dwell/Pray | EUANGELION |
 |------------|------------|
 | Audio-first, listening | Reading-first, studying |
 | Passive consumption | Active engagement (reflection, journaling) |
@@ -1089,7 +1089,7 @@ No one else combines:
 
 ## 11. MOOD BOARD DESCRIPTION
 
-### What a EUONGELION Mood Board Would Include
+### What a EUANGELION Mood Board Would Include
 
 **Color Palette Samples:**
 

@@ -46,7 +46,7 @@ export async function GET() {
       })
     }
 
-    const index = getCanonicalRagIndex(false)
+    const index = await getCanonicalRagIndex(false)
     return withRequestIdHeaders(
       NextResponse.json(
         {
@@ -80,7 +80,7 @@ export async function POST() {
       })
     }
 
-    const index = getCanonicalRagIndex(true)
+    const index = await getCanonicalRagIndex(true)
     return withRequestIdHeaders(
       NextResponse.json(
         {

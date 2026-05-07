@@ -1,5 +1,5 @@
 /**
- * EUONGELION Typography System
+ * EUANGELION Typography System
  * Version: 1.0
  *
  * Typography as architecture: Sans serif confidence, editorial restraint.
@@ -217,7 +217,7 @@ p,
    SPECIAL TYPOGRAPHY ELEMENTS
    ============================================ */
 
-/* Masthead - EUONGELION wordmark only */
+/* Masthead - EUANGELION wordmark only */
 .masthead {
   font-family: var(--font-masthead);
   font-size: var(--text-5xl); /* 48px desktop */

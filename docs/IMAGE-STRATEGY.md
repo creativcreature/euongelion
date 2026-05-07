@@ -1,8 +1,8 @@
-# EUONGELION Image Strategy
+# EUANGELION Image Strategy
 
 **Version:** 1.0
 **Last Updated:** January 17, 2026
-**Purpose:** Complete visual image strategy for the EUONGELION devotional platform
+**Purpose:** Complete visual image strategy for the EUANGELION devotional platform
 
 ---
 
@@ -10,7 +10,7 @@
 
 **Poster meets newspaper. Museum meets manuscript.**
 
-Images in EUONGELION exist to:
+Images in EUANGELION exist to:
 
 1. Create contemplative stillness
 2. Support theological weight
@@ -131,7 +131,7 @@ The visual approach is **editorial, not evangelical.** Think gallery exhibition 
 **Specifications:**
 
 - 1200 x 630px (standard OG ratio)
-- EUONGELION wordmark (Kinfolk serif, top-center)
+- EUANGELION wordmark (Kinfolk serif, top-center)
 - Day/series title (Monument Grotesk Bold)
 - Background: Tehom Black or Hero image with 60% dark overlay
 - Text: Scroll White (#F7F3ED)
@@ -140,7 +140,7 @@ The visual approach is **editorial, not evangelical.** Think gallery exhibition 
 
 ```
 ┌─────────────────────────────────┐
-│          EUONGELION             │
+│          EUANGELION             │
 │                                 │
 │      "Series or Day Title"      │
 │                                 │

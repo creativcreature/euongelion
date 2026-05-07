@@ -135,7 +135,7 @@ git config user.name    # Should be: creativcreature
 | Git email | `chrisparker21@gmail.com` |
 | Git name | `creativcreature` |
 | GitHub repo | `creativcreature/euongelion` |
-| Vercel team | `james-projects-5d824c1e/euongelion` |
+| Vercel team | `james-projects-5d824c1e/euangelion` |
 | Production URL | `https://euangelion.app` |
 
 ---
