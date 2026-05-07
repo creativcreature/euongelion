@@ -345,3 +345,24 @@ Implemented in commit `<TBD>` — single line change in
 Wake-Up stays as a sibling product (separate funnel, RSS feed,
 `/wake-up/*` URL space) but its devotional URLs send Google to the
 main brand surface for ranking consolidation.
+
+---
+
+## CI: enforce RLS on every new public.\* table (raised 2026-05-07)
+
+**Trigger:** Supabase Security Advisor flagged `generated_illustrations`
+(migration 008) as `rls_disabled_in_public` + `sensitive_columns_exposed`.
+Migration 008 was the only one in the tree that forgot to call
+`ALTER TABLE … ENABLE ROW LEVEL SECURITY`.
+
+**Proposed check** (`scripts/verify-rls.sh`, wire into `npm run verify:rls`):
+
+```bash
+# For every CREATE TABLE in database/migrations/*.sql, verify a paired
+# ENABLE ROW LEVEL SECURITY exists for the same table name.
+```
+
+**Why deferred:** the immediate vulnerability is patched in migration 011. CI hardening is a separate workstream and needs founder sign-off
+on tone (block PR vs warn) before shipping.
+
+**File raised:** `docs/runbooks/supabase-rls-vulnerability-2026-05-07.md`.

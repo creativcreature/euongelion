@@ -957,3 +957,52 @@ The branch is in a state I could hand to a new engineer and they
 could productively continue.
 
 Done.
+
+---
+
+### 2026-05-07 — Supabase Security Advisor fix (RLS on generated_illustrations)
+
+**Founder forwarded the two CRITICAL Supabase advisor emails:**
+
+- 2026-04-27 — `sensitive_columns_exposed`
+- 2026-05-03 — `rls_disabled_in_public`
+
+**Diagnosis** — audited every migration in `database/migrations/`:
+
+The only public table without RLS enabled is `generated_illustrations`
+(migration 008). Every other public table — including all 10 soul-
+audit tables in 009 — properly enables RLS at create time. The
+sensitive-column advisor is almost certainly firing on the same
+table's `prompt` / `asset_url` text columns.
+
+Confirmed `grep -rn "generated_illustrations" src/` returns no hits
+— the table is an orphan from Sprint 4, never wired into application
+code. No live writes or reads to disrupt.
+
+**Fix shipped:**
+
+- `database/migrations/011_enable_rls_security_fix.sql` —
+  `ALTER TABLE public.generated_illustrations ENABLE ROW LEVEL SECURITY`
+  - defensive `REVOKE ALL … FROM anon` and `FROM authenticated`.
+    No anon/authenticated policies (matches migration 009 pattern).
+- `docs/runbooks/supabase-rls-vulnerability-2026-05-07.md` —
+  full diagnosis, application steps (SQL editor or `supabase db push`),
+  verification query, and a fallback query the founder can run if the
+  advisor still flags anything else after applying.
+
+**Founder action required (5 minutes):**
+
+1. Open the Supabase SQL editor for project `ovivwbopjfruikehrlgm`.
+2. Paste contents of `database/migrations/011_enable_rls_security_fix.sql`
+   and run.
+3. Refresh the Database → Advisors → Security panel. Both findings
+   should clear.
+
+**Followup queued in `docs/overnight-followups.md`:**
+
+- Add a CI check `npm run verify:rls` that fails when any new
+  `CREATE TABLE public.*` migration ships without a paired
+  `ENABLE ROW LEVEL SECURITY`. This vulnerability would have been
+  caught at PR-time.
+
+No application code touched. Working-tree state preserved.
