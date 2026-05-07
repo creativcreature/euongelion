@@ -1,0 +1,48 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "euangelion",
+  "compatibility_date": "2025-05-05",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  // KV namespace for cross-isolate provider health persistence.
+  // See src/lib/brain/health-store.ts. Gated by env
+  // BRAIN_HEALTH_KV_ENABLED=on so we can revert to per-isolate
+  // behavior in one env-var flip if the KV layer misbehaves.
+  // Per-environment: bind to a different namespace ID for preview
+  // vs. production. To create:
+  //   wrangler kv namespace create BRAIN_HEALTH_KV
+  //   wrangler kv namespace create BRAIN_HEALTH_KV --preview
+  // Then paste the IDs below.
+  "kv_namespaces": [
+    {
+      "binding": "BRAIN_HEALTH_KV",
+      "id": "REPLACE_WITH_PRODUCTION_KV_ID",
+      "preview_id": "REPLACE_WITH_PREVIEW_KV_ID"
+    }
+  ],
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "euangelion.app/*", "zone_name": "euangelion.app" },
+    { "pattern": "www.euangelion.app/*", "zone_name": "euangelion.app" }
+  ],
+  // Cron trigger for the 30-day anonymous-data retention cleanup
+  // (master plan Section 0.7 + founder direction 2026-05-07).
+  // Schedule: daily at 03:00 UTC.
+  // NOTE: until the OpenNext worker is wrapped with a `scheduled()`
+  // handler, this trigger fires but has no effect. The same cleanup
+  // runs via .github/workflows/retention-cleanup.yml in the meantime.
+  // See docs/runbooks/retention-cleanup-cron.md for the full setup.
+  "triggers": {
+    "crons": ["0 3 * * *"]
+  }
+}

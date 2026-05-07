@@ -1,0 +1,58 @@
+name: Retention Cleanup (anonymous data)
+
+# Daily cron at 03:00 UTC. Hits POST /api/admin/run-retention-cleanup
+# with the X-Internal-Secret header. The route runs the
+# `runRetentionCleanup` helper which cascade-deletes anonymous
+# sessions older than 30 days from last_active_at.
+#
+# Authenticated user data is NEVER touched by this workflow. Only
+# rows where user_sessions.user_id IS NULL.
+#
+# This workflow is the WORKING implementation today. The
+# `triggers.crons` declaration in wrangler.jsonc is forward-compatible
+# with a future OpenNext-wrapped scheduled() handler — when that
+# lands, this workflow can be deleted.
+#
+# Required secrets (set via GitHub repo Settings → Secrets and variables → Actions):
+#   - INTERNAL_ROUTE_SECRET — must match the value in the Worker's
+#     env (wrangler secret put INTERNAL_ROUTE_SECRET).
+#
+# Manual trigger: Actions tab → Retention Cleanup → Run workflow.
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # daily 03:00 UTC
+  workflow_dispatch: {} # allow manual trigger
+
+permissions:
+  contents: read
+
+jobs:
+  run-cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Trigger cleanup endpoint
+        env:
+          INTERNAL_SECRET: ${{ secrets.INTERNAL_ROUTE_SECRET }}
+          BASE_URL: https://euangelion.app
+        run: |
+          set -euo pipefail
+          if [ -z "$INTERNAL_SECRET" ]; then
+            echo "::error::INTERNAL_ROUTE_SECRET is not configured"
+            exit 1
+          fi
+          response_file=$(mktemp)
+          status=$(curl --silent --output "$response_file" --write-out '%{http_code}' \
+            -X POST "$BASE_URL/api/admin/run-retention-cleanup" \
+            -H "X-Internal-Secret: $INTERNAL_SECRET" \
+            -H "Content-Type: application/json" \
+            -d '{}')
+          echo "Status: $status"
+          echo "Body:"
+          cat "$response_file"
+          echo
+          if [ "$status" != "200" ]; then
+            echo "::error::Cleanup endpoint returned $status"
+            exit 1
+          fi

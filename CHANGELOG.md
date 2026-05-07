@@ -5,6 +5,83 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## MORNING-2026-05-07 / Big batch: Stripe webhook + Cron Trigger + KV provider-health (2026-05-07)
+
+Three approved infra workstreams from the morning deck, landed in
+one batch (each is internally consistent so testing them together
+gives stronger regression confidence than separate commits).
+
+**STRIPE WEBHOOK** (founder direction "approve")
+
+- `src/app/api/billing/webhook/route.ts` (new): POST endpoint with
+  HMAC signature verification via `stripe.webhooks.constructEvent`.
+  Reads raw body BEFORE parsing (critical for HMAC). Handles 7
+  events: subscription.created/updated/deleted, invoice.paid,
+  invoice.payment_failed, checkout.session.completed (acknowledged;
+  primary handling stays with the GET poll), charge.refunded
+  (acknowledged; future workstream).
+- `src/lib/billing/webhook-handlers.ts` (new): per-event handler
+  module. Each handler resolves user by Stripe customer email,
+  updates `users.subscription_tier`, attempts Founding Member
+  claim where applicable. Idempotent. Founding Member badge NEVER
+  cleared on cancellation (per founder direction).
+- Setup steps for the founder: create webhook in Stripe dashboard
+  pointing at `https://euangelion.app/api/billing/webhook`,
+  subscribe to the 7 events, then `wrangler secret put STRIPE_WEBHOOK_SECRET`.
+- `__tests__/billing-webhook-handlers.test.ts` (new): 11 tests
+  cover happy paths, status mapping, FM claim gating, FM badge
+  preservation on cancel, dunning-not-tier-change, invoice line
+  detection.
+
+**CLOUDFLARE CRON TRIGGER** (founder direction "cron-trigger")
+
+- `wrangler.jsonc`: added `triggers.crons: ["0 3 * * *"]` (daily
+  03:00 UTC). The trigger fires today but is a no-op until the
+  OpenNext-generated worker is wrapped with a `scheduled()`
+  handler — that wrap is documented in the runbook below as a
+  small focused PR (modifying the deploy pipeline carries deploy-
+  failure risk; not done autonomously).
+- `.github/workflows/retention-cleanup.yml` (new): WORKING
+  alternative TODAY. Daily 03:00 UTC + manual `workflow_dispatch`
+  trigger. Hits `POST /api/admin/run-retention-cleanup` with the
+  internal secret. Setup: add repo secret `INTERNAL_ROUTE_SECRET`
+  matching the Worker secret.
+- `docs/runbooks/retention-cleanup-cron.md` (new): full runbook
+  covering both paths, setup steps, verification SQL, manual
+  trigger, and migration path from GitHub Action → Cron Trigger
+  when the OpenNext wrap lands.
+
+**KV PROVIDER-HEALTH PERSISTENCE** (founder direction "approve")
+
+- `wrangler.jsonc`: added `kv_namespaces` binding for
+  `BRAIN_HEALTH_KV`. Setup: `wrangler kv namespace create BRAIN_HEALTH_KV`
+  - same with `--preview`, paste IDs in place of REPLACE*WITH*\*.
+- `src/lib/brain/health-store.ts` (new): `loadProviderHealth` +
+  `persistProviderHealth` + `healthStoreEnabled` feature-flag
+  check. Single key (`BRAIN_HEALTH_V1`) holds all 4 providers
+  (low-cardinality, cheaper than per-provider keys). Never throws
+  — KV unavailability + parse errors return null silently.
+- `src/lib/brain/router.ts`: lazy hydration on first
+  `generateWithBrain` call per isolate (await the load once,
+  populate the in-memory Map). Throttled write-through on every
+  `recordProviderHealth` call (max one persist per 30s per isolate
+  to avoid KV-op burn).
+- Gated by env `BRAIN_HEALTH_KV_ENABLED=on` so we can revert to
+  per-isolate behavior in one env-var flip if KV misbehaves.
+- `__tests__/brain-health-store.test.ts` (new): 10 tests cover
+  feature-flag gating, missing/invalid KV state, write-through,
+  and silent-failure semantics.
+
+Test status: type-check + lint clean across all 9 touched files;
+21/21 webhook + KV tests pass. All Anthropic prompt-cache /
+retry-backoff / token-counting regression tests still pass.
+
+WHAT'S NEXT IN THE QUEUE: Cohere reranker (next), then Phase 5
+async runtime (largest remaining workstream).
+
+Decisions: SA-014
+Feature: F-002
+
 ## MORNING-2026-05-07 / Trivial fixes from morning deck (2026-05-07)
 
 Founder returned with 17 of 19 deck decisions made + clarifying

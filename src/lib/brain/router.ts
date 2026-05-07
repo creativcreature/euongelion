@@ -75,6 +75,12 @@ import {
   providerBaseCostRank,
 } from './cost'
 import { brainFlags } from './flags'
+import {
+  healthStoreEnabled,
+  loadProviderHealth,
+  persistProviderHealth,
+  type ProviderHealthSnapshot,
+} from './health-store'
 import type {
   BrainProviderId,
   BrainRouteContext,
@@ -109,6 +115,55 @@ const providerHealth = new Map<
   Exclude<BrainProviderId, 'auto'>,
   ProviderHealthState
 >()
+
+/**
+ * One-time hydration from KV. Only fires on the first
+ * generateWithBrain call per isolate and only when the KV-backed
+ * health store is enabled. Failure is silent — we keep the empty
+ * in-memory map.
+ */
+let healthHydrated = false
+let healthHydrationPromise: Promise<void> | null = null
+async function ensureHealthHydrated(): Promise<void> {
+  if (healthHydrated || !healthStoreEnabled()) {
+    healthHydrated = true
+    return
+  }
+  if (healthHydrationPromise) return healthHydrationPromise
+  healthHydrationPromise = (async () => {
+    const snapshot = await loadProviderHealth()
+    if (snapshot) {
+      for (const [provider, state] of Object.entries(snapshot)) {
+        providerHealth.set(provider as Exclude<BrainProviderId, 'auto'>, state)
+      }
+    }
+    healthHydrated = true
+  })()
+  return healthHydrationPromise
+}
+
+/**
+ * Throttled write-through to KV. We persist at most once every
+ * `HEALTH_PERSIST_THROTTLE_MS` per isolate so we don't burn KV ops
+ * (~1 write per LLM call would be wasteful). On-disk precision
+ * lags by at most this interval — acceptable for a routing-bias
+ * heuristic.
+ */
+const HEALTH_PERSIST_THROTTLE_MS = 30_000
+let lastHealthPersistAt = 0
+function maybePersistHealth(): void {
+  if (!healthStoreEnabled()) return
+  const now = Date.now()
+  if (now - lastHealthPersistAt < HEALTH_PERSIST_THROTTLE_MS) return
+  lastHealthPersistAt = now
+  // Convert Map → snapshot object for storage
+  const snapshot: Partial<ProviderHealthSnapshot> = {}
+  for (const [provider, state] of providerHealth.entries()) {
+    snapshot[provider] = state
+  }
+  // Fire-and-forget; failures are silent inside the helper
+  void persistProviderHealth(snapshot as ProviderHealthSnapshot)
+}
 
 export type BrainMessage = {
   role: 'user' | 'assistant'
@@ -414,6 +469,8 @@ function recordProviderHealth(params: {
     failures: current.failures + (params.success ? 0 : 1),
     avgLatencyMs: nextLatency,
   })
+  // Throttled fire-and-forget write to KV. Never throws.
+  maybePersistHealth()
 }
 
 async function callOpenAI(params: {
@@ -885,6 +942,11 @@ async function executeProvider(params: {
 export async function generateWithBrain(
   request: BrainGenerationRequest,
 ): Promise<ProviderExecutionResult> {
+  // Lazy hydrate per-isolate health from KV when the feature flag is
+  // on. No-op when off. Awaiting it is cheap on subsequent calls
+  // (just a boolean check).
+  await ensureHealthHydrated()
+
   const mode = normalizeProviderMode(request.context.mode)
   const qualityFloor =
     typeof request.context.qualityFloor === 'number'
