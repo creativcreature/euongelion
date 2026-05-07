@@ -5,6 +5,52 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## MORNING-2026-05-07 / Phase 5 async runtime scaffolding (2026-05-07)
+
+Bindings + types + Durable Object class + queue producer + runbook
+shipped. Activation requires the OpenNext worker-wrap step (same
+blocker as the Cron Trigger runbook). Existing fire-and-forget
+`/select` flow UNCHANGED — works exactly as before.
+
+- `src/lib/soul-audit/queue-types.ts` (new): `SoulAuditQueueMessage`
+  shape (compose_full_plan + compose_one_day variants),
+  `PlanOrchestrationState` (DO storage shape).
+- `src/lib/soul-audit/plan-orchestrator.ts` (new): `PlanOrchestrator`
+  Durable Object class. HTTP API: GET / reads state, POST /update
+  applies partial update, POST /reset wipes. Single-key storage,
+  cached on construction, atomic via blockConcurrencyWhile.
+- `src/lib/soul-audit/queue-producer.ts` (new):
+  `enqueueComposeFullPlan(payload)` gated by `PHASE_5_ASYNC_ENABLED=on`.
+  No-op when disabled. Returns `{ enqueued, reason? }` so caller can
+  log path taken. NEVER throws.
+- `wrangler.jsonc`: declared queue producer + consumer (max_batch_size 1,
+  max_retries 3, DLQ), durable_objects binding for PLAN_ORCHESTRATOR,
+  v1 migration marker.
+- `docs/runbooks/phase5-async-runtime.md` (new): full design + the
+  9-step activation checklist (create queue → wrap worker → write
+  consumer → update select → smoke test → deploy). Cost analysis:
+  < $5/mo at 10k audits/mo.
+- `__tests__/phase5-async-runtime.test.ts` (new): 10 tests cover
+  asyncRuntimeEnabled gating, enqueue happy path, no-binding,
+  send-failure, DO state read/write/reset/404 paths.
+
+WHAT'S NOT SHIPPED (waiting on the OpenNext-wrap activation work):
+
+- queue-consumer.ts (the queue() handler that dispatches messages
+  to composer)
+- /api/soul-audit/select integration (still uses fire-and-forget)
+- /api/soul-audit/select/status integration (still polls DB)
+- Worker entry override (esbuild step + main override)
+
+All four are documented step-by-step in the runbook.
+
+Test status: type-check + lint clean across 5 touched files;
+10/10 Phase 5 tests pass; reranker / webhook / KV / brain regression
+all intact.
+
+Decisions: SA-014
+Feature: F-002
+
 ## MORNING-2026-05-07 / Phase 6: Cohere reranker (feature-flagged) (2026-05-07)
 
 Adds the cross-encoder rerank stage from Anthropic's contextual

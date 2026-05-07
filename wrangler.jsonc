@@ -30,6 +30,53 @@
       "preview_id": "REPLACE_WITH_PREVIEW_KV_ID"
     }
   ],
+  // Phase 5 async runtime scaffolding (paid GENERATE soul-audit
+  // composition). Forward-compatible bindings declared here; the
+  // OpenNext worker wrap that activates them is documented in
+  // docs/runbooks/phase5-async-runtime.md.
+  //
+  // Until the wrap lands:
+  //   - The Queue producer in src/lib/soul-audit/queue-producer.ts
+  //     is gated behind PHASE_5_ASYNC_ENABLED env. Off = existing
+  //     fire-and-forget pattern continues unchanged.
+  //   - The Durable Object class src/lib/soul-audit/plan-orchestrator.ts
+  //     compiles but is not exported from the worker entry.
+  //   - Bindings are declared so `wrangler deploy` won't error when
+  //     the wrap is added.
+  "queues": {
+    "producers": [
+      {
+        "binding": "SOUL_AUDIT_QUEUE",
+        "queue": "soul-audit-generation"
+      }
+    ],
+    "consumers": [
+      {
+        "queue": "soul-audit-generation",
+        "max_batch_size": 1,
+        "max_batch_timeout": 5,
+        "max_retries": 3,
+        "dead_letter_queue": "soul-audit-generation-dlq"
+      }
+    ]
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "PLAN_ORCHESTRATOR",
+        "class_name": "PlanOrchestrator"
+      }
+    ]
+  },
+  // Migrations array for Durable Object versioning. Required by
+  // Cloudflare on first deploy of a new DO class. Increment v1→v2
+  // when the DO storage shape changes incompatibly.
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["PlanOrchestrator"]
+    }
+  ],
   "workers_dev": true,
   "routes": [
     { "pattern": "euangelion.app/*", "zone_name": "euangelion.app" },
