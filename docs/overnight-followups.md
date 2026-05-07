@@ -309,3 +309,39 @@ sets `alternates.canonical` consistently.
 
 **Status:** structurally documented in master plan; not blocking; can
 land any time as a small focused PR.
+
+## CSP hardening — DEFERRED post-launch (founder direction 2026-05-07)
+
+The current Content-Security-Policy header allows `'unsafe-inline'` and
+`'unsafe-eval'` on `script-src` (standard for Next.js hydration) and
+`img-src https:` (any HTTPS image). Hardening would use per-request
+nonces, drop `unsafe-eval`, and tighten `img-src` to a specific
+allowlist.
+
+**Why deferred:** the third-party data flow audit
+(`docs/copy-specs/third-party-data-flow-audit-2026-05-06.md`) confirmed
+zero analytics/tracker injection points today. XSS attack surface is
+already small. Address after launch when traffic justifies the work.
+
+**When to revisit:** after a real user base exists, OR before any
+enterprise customer review, OR if a new third-party script is added
+that increases injection surface.
+
+**Implementation when needed:** ~1-2 days. Add nonce generation in
+`proxy.ts` (or new middleware), update `next.config.ts` script handling
+to use nonces, fix any inline-script regressions, drop
+`'unsafe-inline'` + `'unsafe-eval'` from script-src, narrow `img-src`
+to `'self' data: https://euangelion.app`.
+
+## Canonical URL — RESOLVED (founder direction 2026-05-07)
+
+Per the morning deck: `/devotional/[slug]` is THE canonical surface.
+Wake-Up devotional URLs now cross-canonical to it (rather than each
+route being self-canonical).
+
+Implemented in commit `<TBD>` — single line change in
+`src/app/wake-up/devotional/[slug]/page.tsx` `generateMetadata`.
+
+Wake-Up stays as a sibling product (separate funnel, RSS feed,
+`/wake-up/*` URL space) but its devotional URLs send Google to the
+main brand surface for ranking consolidation.

@@ -292,10 +292,15 @@ export default async function PricingPage() {
             </p>
           </section>
 
-          {/* Founding Member */}
-          <section className="mb-12">
-            <FoundingMemberCounter count={foundingMemberCount} />
-          </section>
+          {/* Founding Member — hidden entirely once cap is reached.
+              Founder direction 2026-05-07: prefer disappearance to a
+              "cap reached" message that lingers as a missed-opportunity
+              signal. */}
+          {!foundingMemberCount.full && (
+            <section className="mb-12">
+              <FoundingMemberCounter count={foundingMemberCount} />
+            </section>
+          )}
 
           {/* Donation */}
           <section className="mb-12">

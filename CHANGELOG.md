@@ -5,6 +5,42 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## MORNING-2026-05-07 / Trivial fixes from morning deck (2026-05-07)
+
+Founder returned with 17 of 19 deck decisions made + clarifying
+questions on CSP and canonical URL (both resolved in chat). This
+commit applies the four trivial fixes that needed no follow-up
+research:
+
+- **Canonical URL — RESOLVED** —
+  `src/app/wake-up/devotional/[slug]/page.tsx` now sets
+  `alternates.canonical` + `openGraph.url` to `/devotional/[slug]`
+  (cross-canonical), instead of self-canonical. Wake-Up stays as a
+  sibling product but its devotional URLs send Google to the main
+  brand surface. SEO ranking accrues to one URL instead of being
+  split.
+- **Founding Member section — hide once cap reached** —
+  `src/app/pricing/page.tsx` wraps the `<FoundingMemberCounter />`
+  in `{!foundingMemberCount.full && (...)}`. Once 500/500 is
+  reached, the section disappears entirely instead of showing a
+  "cap reached" lingering signal.
+- **`/about` page — third-person + 30+ sources framing** —
+  `src/app/about/page.tsx` rewritten from 32-line placeholder to
+  6-section page (What it is, How it works, What grounds the
+  writing, What it believes, What it costs, Privacy). Voice is
+  third-person institutional per founder direction
+  ("Euangelion and me are separate site-wise"). Source claim is
+  "30+ historic Christian voices" rather than the unverified
+  "19 sources" figure.
+- **CSP hardening — DEFERRED** post-launch documented in
+  `docs/overnight-followups.md` with revisit triggers (real user
+  base, enterprise customer review, or new third-party script).
+
+Test status: type-check + lint clean across all 4 touched files.
+
+Decisions: SA-013, SA-014
+Feature: F-002
+
 ## OVERNIGHT-2026-05-06 / Morning decisions deck (2026-05-06)
 
 `docs/decks/morning-decisions-2026-05-06.html` (new) — single-file
