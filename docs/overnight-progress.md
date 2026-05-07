@@ -877,3 +877,83 @@ where I have a strong opinion, and a free-text notes field.
 - The /pricing public-discovery switches (waiting for your security review)
 
 See you in the morning.
+
+---
+
+## MORNING 2026-05-07 — full execution of the deck
+
+Founder returned with 17 of 19 deck choices made + clarifying
+questions on CSP and canonical URL (both resolved in chat). They
+asked me to "run the whole thing as far as you can go" — I executed
+the entire approved set in sequence.
+
+### Five commits this morning
+
+| SHA       | What                                                                               |
+| --------- | ---------------------------------------------------------------------------------- |
+| `5d5e0f1` | Trivial fixes (canonical URL, founding-member hide, /about rewrite, CSP defer doc) |
+| `af20282` | Big batch — Stripe webhook + Cron Trigger + KV provider-health                     |
+| `b2f1463` | Phase 6 Cohere reranker (feature-flagged)                                          |
+| `ed46a7e` | Phase 5 async runtime scaffolding (Queue + Durable Object + producer)              |
+| (this)    | Morning summary update                                                             |
+
+### What's NOW running on the branch
+
+**Active in-code (no founder action needed beyond merge):**
+
+- Wake-Up devotional URLs cross-canonical to /devotional/[slug]
+- /pricing Founding Member section auto-hides at 500/500 cap
+- /about page expanded with third-person voice + "30+ sources"
+- Stripe webhook route + 7 event handlers (HMAC verified, idempotent)
+- Anonymous-data retention cleanup helper + admin route + GitHub Action
+- KV-backed provider health (gated by env)
+- Cohere reranker integrated in composer (gated by env)
+- Phase 5 async runtime scaffolding (gated by env)
+
+**Founder action items (each is small, mechanical):**
+
+- Stripe dashboard: create webhook → copy signing secret → `wrangler secret put STRIPE_WEBHOOK_SECRET`
+- `wrangler kv namespace create BRAIN_HEALTH_KV` (production + preview) → paste IDs in wrangler.jsonc → `wrangler secret put BRAIN_HEALTH_KV_ENABLED` value 'on'
+- GitHub repo: add secret `INTERNAL_ROUTE_SECRET` matching the Worker secret (enables retention cleanup workflow)
+- `wrangler secret put COHERE_API_KEY` + `wrangler secret put SOUL_AUDIT_RERANKER_ENABLED` value 'on' (activates reranker)
+- Anthropic ZDR ticket — email drafted in chat, send to support@anthropic.com
+
+**Documented but not autonomously activated** (each needs founder verifying the deploy pipeline):
+
+- OpenNext worker-wrap (activates Cron Trigger AND Phase 5 simultaneously) — full 9-step checklist in `docs/runbooks/phase5-async-runtime.md`
+- /api/soul-audit/select integration with Phase 5 queue producer
+- Stripe Prices for $7/$77/$140/$200 in dashboard
+
+### Branch totals after this morning
+
+- **36 commits** on `revamp/overnight-2026-05-04`
+- ~32 new tests this morning (11 webhook + 6 retention + 10 KV + 11 reranker + 10 Phase 5)
+- type-check + lint clean across every touched file
+- 6 pre-existing test failures unchanged (none introduced)
+- Branch never pushed, never deployed
+- Working-tree state preserved untouched
+
+### Founder open question
+
+**Supabase vulnerability email** — I asked for the email content
+in chat. Without it I can't address the specific advisory. Initial
+defensive sweep showed all my recent admin-client usage is auth-
+gated correctly. When you share the email, I'll address it specifically.
+
+### What's left in the master plan
+
+- **Phase 5 activation** — worker-wrap + queue-consumer.ts + /select
+  integration + status endpoint integration. Documented step-by-step.
+- **Stripe webhook activation** — create endpoint in Stripe dashboard.
+- **Phase 0.5 rationale generation pipeline** — voice approved
+  (warm-pastoral); needs implementation. Substantial new code.
+- **Phase 4 IA reorg** — Wake-Up sibling decision locked; Today/Library/
+  Discover/You restructure pending.
+- **Phase 10.7 SOT reconciliation**.
+- **Apply migration 010** to live Supabase.
+- **Stripe Price creation** in dashboard.
+
+The branch is in a state I could hand to a new engineer and they
+could productively continue.
+
+Done.
