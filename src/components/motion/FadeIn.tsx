@@ -50,6 +50,13 @@ export default function FadeIn({
           y,
           duration,
           delay,
+          // CRITICAL: do NOT apply the "from" state on mount. Without this,
+          // the element sits at opacity: 0 until ScrollTrigger fires; in
+          // React 19 StrictMode dev (useEffect runs twice) the second
+          // invocation gets stuck at opacity 0 forever — invisible but
+          // clickable. immediateRender: false defers state-setting until
+          // the ScrollTrigger callback actually runs.
+          immediateRender: false,
           ease: GSAP_CONFIG.ease.smooth,
           scrollTrigger: {
             trigger: ref.current,
@@ -66,7 +73,12 @@ export default function FadeIn({
   return (
     <Tag
       ref={ref as React.Ref<HTMLDivElement>}
-      className={className}
+      // .fade-in-section is a defense-in-depth CSS class that forces
+      // opacity: 1 by default. GSAP overrides during animation. If the
+      // ScrollTrigger ever fails to fire (StrictMode double-mount,
+      // future React patterns, hot-reload), the element remains visible
+      // instead of stuck-invisible.
+      className={`fade-in-section ${className}`}
       style={style}
     >
       {children}

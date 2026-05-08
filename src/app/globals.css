@@ -41,6 +41,20 @@
   font-display: optional;
 }
 
+/* ============================================
+   FadeIn safety net — ALWAYS visible by default
+   ============================================
+   The GSAP scroll-trigger fade-in (src/components/motion/FadeIn.tsx)
+   sets opacity: 0 then animates to 1. In React 19 StrictMode (dev),
+   useEffect runs twice; the second instance can get stuck at the "from"
+   state if ScrollTrigger fires only for the first. This rule guarantees
+   the element starts visible regardless of GSAP behavior. GSAP can
+   override mid-animation as designed.
+   ============================================ */
+.fade-in-section {
+  opacity: 1;
+}
+
 @theme {
   /* ============================================
      COLOR TOKENS — Cobalt Triad (canonical per docs/brand/BRAND-BIBLE.md §4.1)
