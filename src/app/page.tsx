@@ -16,19 +16,49 @@ const HOW_STEPS = [
   {
     title: '1. Name it.',
     body: 'Name what is real without polishing it. Honest words are enough.',
-    image: '/images/illustrations/euangelion-homepage-engraving-09.svg',
+    image: '/images/site/homepage/steps/step-1-name.webp',
   },
   {
     title: '2. Read it.',
     body: 'Review three matched devotional paths and choose where to begin.',
-    image: '/images/illustrations/euangelion-homepage-engraving-10.svg',
+    image: '/images/site/homepage/steps/step-2-read.webp',
   },
   {
     title: '3. Now Walk It Out.',
     body: 'Get your reference-grounded 7-day plan and take one faithful step each day.',
-    image: '/images/illustrations/euangelion-homepage-engraving-11.svg',
+    image: '/images/site/homepage/steps/step-3-walk.webp',
   },
 ]
+
+/**
+ * Homepage hero rotation — 6 brand-aligned generated images. One is picked
+ * per pageload via simple deterministic-by-day rotation (avoids hydration
+ * mismatch from Math.random and keeps daily visits fresh without disorienting
+ * mid-session changes). All paths under /images/site/homepage/hero/ are
+ * tracked WebPs (~200-280 KB each, vs the legacy SVG engraving).
+ *
+ * Source candidates were picked from the consolidated library (see
+ * docs/image-library-index-2026-05-08.md) for tall-narrow composition
+ * survival in the 228px-wide hero column.
+ */
+const HOMEPAGE_HEROES = [
+  '/images/site/homepage/hero/hero-pillar-light.webp',
+  '/images/site/homepage/hero/hero-prophet.webp',
+  '/images/site/homepage/hero/hero-shepherd-carry.webp',
+  '/images/site/homepage/hero/hero-cypress.webp',
+  '/images/site/homepage/hero/hero-jacob-ladder.webp',
+  '/images/site/homepage/hero/hero-pilgrim.webp',
+] as const
+
+function pickHomepageHero(): string {
+  // Deterministic-by-day rotation. UTC day-of-year mod hero count.
+  // Same image renders for all visits within a UTC day — no hydration
+  // mismatch between server and client, no jarring mid-session swaps.
+  const now = new Date()
+  const start = Date.UTC(now.getUTCFullYear(), 0, 0)
+  const dayOfYear = Math.floor((now.getTime() - start) / 86_400_000)
+  return HOMEPAGE_HEROES[dayOfYear % HOMEPAGE_HEROES.length] ?? HOMEPAGE_HEROES[0]
+}
 
 const FAQ_ITEMS = [
   {
@@ -212,10 +242,10 @@ export default function Home() {
         <section className="homepage-hero" id="start-audit">
           <div className="homepage-hero-art" aria-hidden="true">
             <Image
-              src="/images/illustrations/euangelion-homepage-engraving-04.svg"
+              src={pickHomepageHero()}
               alt=""
               fill
-              sizes="(max-width: 900px) 100vw, 190px"
+              sizes="(max-width: 900px) 100vw, 228px"
               priority
             />
           </div>
