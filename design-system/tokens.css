@@ -29,24 +29,24 @@
    * Primary background in dark mode, text in light mode
    * Character: Slightly warm (brown undertones), ancient leather feel
    */
-  --color-tehom: #1a1612;
-  --color-tehom-rgb: 26, 22, 18;
+  --color-tehom: #0a1320;
+  --color-tehom-rgb: 10, 19, 32;
 
   /**
    * Scroll White - Rest, parchment, breathing room
    * Primary text in dark mode, background in light mode
    * Character: Warm but not yellow, expensive paper stock
    */
-  --color-scroll: #f7f3ed;
-  --color-scroll-rgb: 247, 243, 237;
+  --color-scroll: #efe5d8;
+  --color-scroll-rgb: 239, 229, 216;
 
   /**
    * God is Gold (Gilead Gold) - Glory, divine emphasis
    * Highlights, Scripture emphasis, Hebrew terms, signature moments
    * Character: Warm amber, illuminated manuscripts
    */
-  --color-gold: #c19a6b;
-  --color-gold-rgb: 193, 154, 107;
+  --color-gold: #1f2a8d;
+  --color-gold-rgb: 31, 42, 141;
 
   /* ============================================
      COLOR TOKENS - THE INTENTIONAL THREE (Rare)
@@ -57,8 +57,8 @@
    * Use for: Sacrifice themes, crucifixion, Old Testament weight
    * When: Content is literally about blood/sacrifice/cross
    */
-  --color-burgundy: #6b2c2c;
-  --color-burgundy-rgb: 107, 44, 44;
+  --color-burgundy: #8e3f3f;
+  --color-burgundy-rgb: 142, 63, 63;
   --color-burgundy-light: #b85555; /* Dark mode lifted */
 
   /**
@@ -66,18 +66,18 @@
    * Use for: Wilderness, creation, struggle, humility
    * When: Content about wrestling with God, creation, dust
    */
-  --color-olive: #6b6b4f;
-  --color-olive-rgb: 107, 107, 79;
-  --color-olive-light: #9d9d7a; /* Dark mode lifted */
+  --color-olive: #6f8f4f;
+  --color-olive-rgb: 111, 143, 79;
+  --color-olive-light: #9dc07a; /* Dark mode lifted */
 
   /**
    * Shalom Blue - Peace, Spirit, water
    * Use for: Jesus' words, Holy Spirit, baptism, peace
    * When: Content about peace, Spirit, water themes
    */
-  --color-shalom-blue: #4a5f6b;
-  --color-shalom-blue-rgb: 74, 95, 107;
-  --color-shalom-blue-light: #7a9aab; /* Dark mode lifted */
+  --color-shalom-blue: #4d9fb0;
+  --color-shalom-blue-rgb: 77, 159, 176;
+  --color-shalom-blue-light: #7ac0d5; /* Dark mode lifted */
 
   /* ============================================
      SEMANTIC COLOR TOKENS (Dark Mode Default)
@@ -110,7 +110,7 @@
   /* Feedback colors */
   --color-success: #4a6b4f;
   --color-warning: #6b5a4a;
-  --color-error: #6b2c2c;
+  --color-error: #8e3f3f;
   --color-info: var(--color-shalom-blue);
 
   /* ============================================

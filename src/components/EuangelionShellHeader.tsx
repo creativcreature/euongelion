@@ -574,7 +574,11 @@ export default function EuangelionShellHeader({
           </h1>
           {tone !== 'wake' && (
             <p className="mock-masthead-pronunciation text-label">
-              EU•AN•GE•LION (YOO-AN-GEL-EE-ON) • GREEK: &quot;GOOD
+              EU•AN•GE•LION (YOO-AN-GEL-EE-ON) ·{' '}
+              <span lang="grc" className="mock-masthead-greek">
+                εὐαγγέλιον
+              </span>{' '}
+              — Good News
             </p>
           )}
         </section>

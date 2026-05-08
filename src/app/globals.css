@@ -43,21 +43,38 @@
 
 @theme {
   /* ============================================
-     COLOR TOKENS — The Bold Three (Foundation)
+     COLOR TOKENS — Cobalt Triad (canonical per docs/brand/BRAND-BIBLE.md §4.1)
+     ============================================
+     Light mode:  Newspaper Cream #F0ECE6 · Navy Ink   #11182A · Cobalt #1F2A8D
+     Dark mode:   Deep Navy       #0A1320 · Cream Ink  #EFE5D8 · Cobalt #2236A2
+
+     The legacy variable names (--color-tehom / --color-scroll / --color-gold)
+     are preserved for backwards compatibility — every consumer keeps working
+     while we migrate to canonical names (--color-deep-navy / --color-cream-ink
+     / --color-cobalt). The values themselves are now brand-bible-correct.
+     Migration tracker: docs/overnight-followups.md.
      ============================================ */
-  --color-tehom: #0f1b2e;
-  --color-scroll: #fff8ec;
-  --color-gold: #1f4f82;
 
-  /* Theological Accents (rare, intentional use) */
-  --color-burgundy: #8e3f3f;
-  --color-olive: #6f8f4f;
-  --color-shalom: #4d9fb0;
+  /* Foundation — dark mode defaults (root). Light mode overrides further down. */
+  --color-tehom: #0a1320;          /* alias: --color-deep-navy */
+  --color-scroll: #efe5d8;         /* alias: --color-cream-ink */
+  --color-gold: #1f2a8d;           /* alias: --color-cobalt — name "gold" is legacy */
+  --color-deep-navy: #0a1320;      /* canonical name */
+  --color-cream-ink: #efe5d8;      /* canonical name */
+  --color-cobalt: #1f2a8d;         /* canonical name */
+  --color-cobalt-lifted: #2236a2;  /* dark-mode-lifted cobalt */
+  --color-newspaper-cream: #f0ece6; /* light-mode bg */
+  --color-navy-ink: #11182a;       /* light-mode fg */
 
-  /* RGB channels for rgba() usage */
-  --color-tehom-rgb: 15, 27, 46;
-  --color-scroll-rgb: 255, 248, 236;
-  --color-gold-rgb: 31, 79, 130;
+  /* Theological Accents — sacred, rare, intentional use */
+  --color-burgundy: #8e3f3f;       /* covenant burgundy — sacrifice, cross */
+  --color-olive: #6f8f4f;          /* gethsemane olive — wilderness, wrestling */
+  --color-shalom: #4d9fb0;         /* shalom blue — peace, spirit, water */
+
+  /* RGB channels for rgba() usage (kept in sync with new hex values) */
+  --color-tehom-rgb: 10, 19, 32;
+  --color-scroll-rgb: 239, 229, 216;
+  --color-gold-rgb: 31, 42, 141;
 
   /* ============================================
      SEMANTIC COLOR TOKENS (Dark mode default)
@@ -68,21 +85,21 @@
 
   /* Text hierarchy */
   --color-text-primary: var(--color-scroll);
-  --color-text-secondary: rgba(247, 243, 237, 0.7);
-  --color-text-tertiary: rgba(247, 243, 237, 0.5);
-  --color-text-muted: rgba(247, 243, 237, 0.4);
+  --color-text-secondary: rgba(239, 229, 216, 0.7);
+  --color-text-tertiary: rgba(239, 229, 216, 0.5);
+  --color-text-muted: rgba(239, 229, 216, 0.4);
 
   /* UI elements */
-  --color-border: rgba(247, 243, 237, 0.1);
-  --color-border-strong: rgba(247, 243, 237, 0.2);
-  --color-surface: rgba(247, 243, 237, 0.05);
-  --color-surface-raised: rgba(247, 243, 237, 0.08);
-  --color-overlay: rgba(26, 22, 18, 0.8);
+  --color-border: rgba(239, 229, 216, 0.1);
+  --color-border-strong: rgba(239, 229, 216, 0.2);
+  --color-surface: rgba(239, 229, 216, 0.05);
+  --color-surface-raised: rgba(239, 229, 216, 0.08);
+  --color-overlay: rgba(10, 19, 32, 0.8);
 
   /* Interactive states */
-  --color-hover: rgba(247, 243, 237, 0.1);
-  --color-active: rgba(247, 243, 237, 0.15);
-  --color-focus-ring: rgba(31, 79, 130, 0.36);
+  --color-hover: rgba(239, 229, 216, 0.1);
+  --color-active: rgba(239, 229, 216, 0.15);
+  --color-focus-ring: rgba(31, 42, 141, 0.36);
 
   /* Feedback colors */
   --color-success: #5fa067;
@@ -130,11 +147,11 @@
   /* ============================================
      SHADOWS (warm-tinted from Tehom)
      ============================================ */
-  --shadow-sm: 0 2px 4px rgba(15, 27, 46, 0.14);
-  --shadow-md: 0 4px 8px rgba(15, 27, 46, 0.18);
-  --shadow-lg: 0 8px 16px rgba(15, 27, 46, 0.24);
-  --shadow-xl: 0 16px 32px rgba(15, 27, 46, 0.3);
-  --shadow-focus: 0 0 0 3px rgba(31, 79, 130, 0.4);
+  --shadow-sm: 0 2px 4px rgba(10, 19, 32, 0.14);
+  --shadow-md: 0 4px 8px rgba(10, 19, 32, 0.18);
+  --shadow-lg: 0 8px 16px rgba(10, 19, 32, 0.24);
+  --shadow-xl: 0 16px 32px rgba(10, 19, 32, 0.3);
+  --shadow-focus: 0 0 0 3px rgba(31, 42, 141, 0.4);
 
   /* ============================================
      TRANSITION TOKENS
@@ -169,9 +186,9 @@
   /* ============================================
      EXTENDED SHADOWS
      ============================================ */
-  --shadow-xs: 0 1px 2px rgba(15, 27, 46, 0.16);
-  --shadow-2xl: 0 24px 48px rgba(15, 27, 46, 0.38);
-  --shadow-inner: inset 0 2px 4px rgba(15, 27, 46, 0.14);
+  --shadow-xs: 0 1px 2px rgba(10, 19, 32, 0.16);
+  --shadow-2xl: 0 24px 48px rgba(10, 19, 32, 0.38);
+  --shadow-inner: inset 0 2px 4px rgba(10, 19, 32, 0.14);
   --shadow-glow: none;
   --shadow-vignette: inset 0 0 100px rgba(8, 14, 26, 0.45);
 
@@ -232,19 +249,20 @@
    LIGHT MODE OVERRIDES
    ============================================ */
 :root:not(.dark) {
-  --color-bg: #fffdf8;
-  --color-fg: #121d30;
-  --color-text-primary: #121d30;
-  --color-text-secondary: rgba(18, 29, 48, 0.76);
-  --color-text-tertiary: rgba(18, 29, 48, 0.58);
-  --color-text-muted: rgba(18, 29, 48, 0.44);
-  --color-border: rgba(18, 29, 48, 0.14);
-  --color-border-strong: rgba(18, 29, 48, 0.24);
+  /* Cobalt Triad — light mode (per BRAND-BIBLE.md §4.1) */
+  --color-bg: #f0ece6; /* Newspaper Cream */
+  --color-fg: #11182a; /* Navy Ink */
+  --color-text-primary: #11182a;
+  --color-text-secondary: rgba(17, 24, 42, 0.76);
+  --color-text-tertiary: rgba(17, 24, 42, 0.58);
+  --color-text-muted: rgba(17, 24, 42, 0.44);
+  --color-border: rgba(17, 24, 42, 0.14);
+  --color-border-strong: rgba(17, 24, 42, 0.24);
   --color-surface: rgba(226, 177, 91, 0.08);
   --color-surface-raised: rgba(77, 159, 176, 0.1);
   --color-overlay: rgba(255, 253, 248, 0.84);
-  --color-hover: rgba(18, 29, 48, 0.06);
-  --color-active: rgba(18, 29, 48, 0.12);
+  --color-hover: rgba(17, 24, 42, 0.06);
+  --color-active: rgba(17, 24, 42, 0.12);
 }
 
 @layer base {
@@ -350,17 +368,17 @@
   /* High contrast mode */
   @media (prefers-contrast: high) {
     .dark {
-      --color-text-secondary: rgba(247, 243, 237, 0.85);
-      --color-text-tertiary: rgba(247, 243, 237, 0.75);
-      --color-border: rgba(247, 243, 237, 0.3);
-      --color-border-strong: rgba(247, 243, 237, 0.5);
+      --color-text-secondary: rgba(239, 229, 216, 0.85);
+      --color-text-tertiary: rgba(239, 229, 216, 0.75);
+      --color-border: rgba(239, 229, 216, 0.3);
+      --color-border-strong: rgba(239, 229, 216, 0.5);
     }
 
     :root:not(.dark) {
-      --color-text-secondary: rgba(26, 22, 18, 0.85);
-      --color-text-tertiary: rgba(26, 22, 18, 0.75);
-      --color-border: rgba(26, 22, 18, 0.3);
-      --color-border-strong: rgba(26, 22, 18, 0.5);
+      --color-text-secondary: rgba(10, 19, 32, 0.85);
+      --color-text-tertiary: rgba(10, 19, 32, 0.75);
+      --color-border: rgba(10, 19, 32, 0.3);
+      --color-border-strong: rgba(10, 19, 32, 0.5);
     }
   }
 
@@ -385,19 +403,19 @@ html[data-text-scale='xlarge'] {
 }
 
 html[data-high-contrast='on']:not(.dark) {
-  --color-text-secondary: rgba(26, 22, 18, 0.9);
-  --color-text-tertiary: rgba(26, 22, 18, 0.82);
-  --color-text-muted: rgba(26, 22, 18, 0.74);
-  --color-border: rgba(26, 22, 18, 0.36);
-  --color-border-strong: rgba(26, 22, 18, 0.58);
+  --color-text-secondary: rgba(10, 19, 32, 0.9);
+  --color-text-tertiary: rgba(10, 19, 32, 0.82);
+  --color-text-muted: rgba(10, 19, 32, 0.74);
+  --color-border: rgba(10, 19, 32, 0.36);
+  --color-border-strong: rgba(10, 19, 32, 0.58);
 }
 
 html.dark[data-high-contrast='on'] {
-  --color-text-secondary: rgba(247, 243, 237, 0.9);
-  --color-text-tertiary: rgba(247, 243, 237, 0.84);
-  --color-text-muted: rgba(247, 243, 237, 0.76);
-  --color-border: rgba(247, 243, 237, 0.36);
-  --color-border-strong: rgba(247, 243, 237, 0.58);
+  --color-text-secondary: rgba(239, 229, 216, 0.9);
+  --color-text-tertiary: rgba(239, 229, 216, 0.84);
+  --color-text-muted: rgba(239, 229, 216, 0.76);
+  --color-border: rgba(239, 229, 216, 0.36);
+  --color-border-strong: rgba(239, 229, 216, 0.58);
 }
 
 html[data-reading-comfort='on'] p,
@@ -424,15 +442,15 @@ html.reduce-motion *::after {
   background:
     repeating-linear-gradient(
       0deg,
-      rgba(18, 29, 48, 0.02) 0,
-      rgba(18, 29, 48, 0.02) 1px,
+      rgba(17, 24, 42, 0.02) 0,
+      rgba(17, 24, 42, 0.02) 1px,
       transparent 1px,
       transparent 10px
     ),
     repeating-linear-gradient(
       90deg,
-      rgba(18, 29, 48, 0.012) 0,
-      rgba(18, 29, 48, 0.012) 1px,
+      rgba(17, 24, 42, 0.012) 0,
+      rgba(17, 24, 42, 0.012) 1px,
       transparent 1px,
       transparent 8px
     ),
@@ -2582,7 +2600,7 @@ html.reduce-motion *::after {
     transform: translateY(-3px);
     border-color: var(--color-border-strong) !important;
     background-color: var(--color-hover);
-    box-shadow: 0 6px 14px rgba(15, 27, 46, 0.08);
+    box-shadow: 0 6px 14px rgba(10, 19, 32, 0.08);
   }
   .audit-option-card.is-disabled:hover,
   .audit-option-card.is-disabled:focus-visible {
@@ -3514,6 +3532,17 @@ html.reduce-motion *::after {
   letter-spacing: 0.08em;
   line-height: 1.16;
   text-transform: uppercase;
+}
+
+/* Greek anchor (εὐαγγέλιον) per brand bible §3.2 — keep lowercase,
+   render in serif italic with cobalt accent. (Brand bible specs Poppins
+   but it's not loaded here yet — TODO: load Poppins via next/font and
+   switch font-family below.) */
+.mock-masthead-greek {
+  text-transform: none;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
 }
 
 .mock-masthead-sub {
