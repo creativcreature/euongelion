@@ -11,19 +11,22 @@ import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
 import { MAX_AUDITS_PER_CYCLE } from '@/lib/soul-audit/constants'
 import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES } from '@/data/series'
-import { BIBLE_365_SERIES } from '@/data/bible-365'
 
 /**
- * Compute today's day-of-year (UTC) → Bible-365 day metadata.
- * Returns the day stub from BIBLE_365_SERIES.days. Used by the
- * homepage TODAY hero to point at the right devotional.
+ * Homepage TODAY content (founder direction 2026-05-08): use the
+ * existing "What Is the Gospel?" Day 1 devotional as a static feature
+ * until the Bible-365 plan is fully written. Daily rotation across
+ * Bible-365 days is queued for after content fills in.
  */
-function getTodayBible365Day() {
-  const now = new Date()
-  const start = Date.UTC(now.getUTCFullYear(), 0, 0)
-  const dayOfYear = Math.floor((now.getTime() - start) / 86_400_000)
-  const idx = Math.max(0, Math.min(BIBLE_365_SERIES.days.length - 1, dayOfYear - 1))
-  return BIBLE_365_SERIES.days[idx]
+const HOMEPAGE_TODAY = {
+  slug: 'what-is-the-gospel-day-1',
+  series: 'what-is-the-gospel',
+  kicker: 'TODAY · WHAT IS THE GOSPEL? · DAY 1',
+  title: 'A Voice in the Wilderness',
+  scripture: 'Mark 1:1, 3',
+  teaser:
+    'The beginning of the good news about Jesus the Messiah — a voice calling in the wilderness, “Prepare the way for the Lord.”',
+  heroSrc: '/images/site/homepage/hero/hero-gospel.webp',
 }
 
 const HOW_STEPS = [
@@ -45,33 +48,14 @@ const HOW_STEPS = [
 ]
 
 /**
- * Homepage hero rotation — 6 single-ink/halftone symbolic images from the
- * curated brand-aesthetic subset (sym-* prefix). Per founder direction
- * 2026-05-08: site uses ONLY single-ink/halftone/limited-palette imagery
- * (newsletter aesthetic). No realistic narrative illustrations.
- *
- * Picked deterministically per UTC day-of-year so the same image renders
- * for all visits within a UTC day (no hydration mismatch, no jarring
- * mid-session swaps). All paths are unmodified library files (only
- * PNG→WebP encoding for size; no Pillow treatment).
+ * Homepage hero — static for now (no rotation). Per founder direction
+ * 2026-05-08: pin TODAY content to "what-is-the-gospel-day-1" until
+ * the Bible-365 plan is fully written. Daily rotation queued for after
+ * content fills in. Hero art uses the obj-* sandals-style aesthetic
+ * (single-ink object photography) — see HOMEPAGE_TODAY.heroSrc.
  */
-const HOMEPAGE_HEROES = [
-  '/images/site/homepage/hero/hero-dove.webp',
-  '/images/site/homepage/hero/hero-burning-bush.webp',
-  '/images/site/homepage/hero/hero-anchor.webp',
-  '/images/site/homepage/hero/hero-cross-hill.webp',
-  '/images/site/homepage/hero/hero-empty-tomb.webp',
-  '/images/site/homepage/hero/hero-shepherd-crook.webp',
-] as const
-
 function pickHomepageHero(): string {
-  // Deterministic-by-day rotation. UTC day-of-year mod hero count.
-  // Same image renders for all visits within a UTC day — no hydration
-  // mismatch between server and client, no jarring mid-session swaps.
-  const now = new Date()
-  const start = Date.UTC(now.getUTCFullYear(), 0, 0)
-  const dayOfYear = Math.floor((now.getTime() - start) / 86_400_000)
-  return HOMEPAGE_HEROES[dayOfYear % HOMEPAGE_HEROES.length] ?? HOMEPAGE_HEROES[0]
+  return HOMEPAGE_TODAY.heroSrc
 }
 
 const FAQ_ITEMS = [
@@ -283,37 +267,29 @@ export default function Home() {
           </div>
 
           <div className="homepage-bible365-hero-main">
-            {(() => {
-              const today = getTodayBible365Day()
-              return (
-                <>
-                  <p className="text-label mock-kicker">
-                    TODAY \u00b7 DAY {today.day} OF BIBLE 365
-                  </p>
-                  <h1 className="mock-title mock-homepage-prompt-title">
-                    {typographer(today.title)}
-                  </h1>
-                  <p className="mock-subcopy">
-                    {typographer(
-                      'A 365-day canonical-chronological reading. Each day stands alone \u2014 hop in today and meet Scripture where you are.',
-                    )}
-                  </p>
+            <p className="text-label mock-kicker">{HOMEPAGE_TODAY.kicker}</p>
+            <p className="text-label" style={{ opacity: 0.7, margin: '0 0 0.2rem' }}>
+              {HOMEPAGE_TODAY.scripture}
+            </p>
+            <h1 className="mock-title mock-homepage-prompt-title">
+              {typographer(HOMEPAGE_TODAY.title)}
+            </h1>
+            <p className="mock-subcopy">
+              {typographer(HOMEPAGE_TODAY.teaser)}
+            </p>
 
-                  <Link
-                    href={`/devotional/${today.slug}`}
-                    className="mock-btn mock-btn-inline text-label"
-                  >
-                    READ TODAY&rsquo;S DEVOTIONAL
-                  </Link>
-                  <Link
-                    href="/series/bible-365"
-                    className="text-label homepage-bible365-browse-link"
-                  >
-                    Browse the 365-day plan \u2192
-                  </Link>
-                </>
-              )
-            })()}
+            <Link
+              href={`/devotional/${HOMEPAGE_TODAY.slug}`}
+              className="mock-btn mock-btn-inline text-label"
+            >
+              READ TODAY&rsquo;S DEVOTIONAL
+            </Link>
+            <Link
+              href="/series/bible-365"
+              className="text-label homepage-bible365-browse-link"
+            >
+              Or browse the 365-day plan \u2192
+            </Link>
           </div>
         </section>
 

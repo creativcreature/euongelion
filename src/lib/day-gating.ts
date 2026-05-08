@@ -23,6 +23,21 @@ export interface DayGateResult {
  * @param sabbathDay - 'saturday' | 'sunday' — the user's Sabbath preference
  */
 export function isDayUnlocked(
+  // FOUNDER OVERRIDE 2026-05-08: day-locking globally disabled until
+  // founder re-enables. All devotionals reachable without per-day
+  // unlock pacing. Restore the original logic by reverting this commit
+  // OR by deleting the early-return below.
+  _dayIndex: number,
+  _seriesStartDate: string | null,
+  _sabbathDay: 'saturday' | 'sunday' = 'sunday',
+  _dayLockingEnabled = true,
+): DayGateResult {
+  return { unlocked: true, message: '' }
+}
+
+// Reference implementation kept for restoration. To re-enable day pacing,
+// rename this back to isDayUnlocked + delete the override above.
+function _isDayUnlockedOriginal(
   dayIndex: number,
   seriesStartDate: string | null,
   sabbathDay: 'saturday' | 'sunday' = 'sunday',
