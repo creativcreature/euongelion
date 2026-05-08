@@ -26,7 +26,19 @@ export default function SeriesPageClient({
   const { isRead, getSeriesProgress, canRead } = useProgress()
   const seriesProgress = getSeriesProgress(slug)
   const dayCount = series.days.length
-  const hero = SERIES_HERO[slug]
+  // Prefer the new generated hero from series.heroImage (populated by Stage 2
+  // of the 2026-05-07 image migration). Fall back to the legacy artist-print
+  // entry from SERIES_HERO if no heroImage is set on the series.
+  const generatedHero = series.heroImage
+    ? {
+        src: series.heroImage,
+        rawSrc: series.heroImage,
+        title: series.title,
+        artist: 'Generated',
+      }
+    : null
+  const manifestHero = SERIES_HERO[slug]
+  const hero = generatedHero ?? manifestHero
   const isWake = silo === 'wake'
   const brandWord = isWake ? 'WAKE UP' : 'EUANGELION'
   const headerTone = isWake ? 'wake' : 'default'

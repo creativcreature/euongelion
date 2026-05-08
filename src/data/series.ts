@@ -17,6 +17,7 @@ export interface SeriesInfo {
 export const SERIES_DATA: Record<string, SeriesInfo> = {
   identity: {
     title: 'Identity Crisis',
+    heroImage: '/images/site/series/identity.webp',
     question: 'When everything that defined you is shaken, who are you?',
     introduction:
       'Your country, your job, your security—all unstable. So who are you, really? This 5-day journey explores what remains when the labels fall away.',
@@ -63,6 +64,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   peace: {
     title: 'Peace',
+    heroImage: '/images/site/series/peace.webp',
     question: "What if peace isn't found by controlling your circumstances?",
     introduction:
       "You've tried to control everything. And you're exhausted. This 5-day journey explores a different kind of peace—one that doesn't depend on your circumstances.",
@@ -92,6 +94,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   community: {
     title: 'Community',
+    heroImage: '/images/site/series/community.webp',
     question: 'Who are your people when systems fail?',
     introduction:
       'Institutions are failing. Networks are transactional. 29% are frequently lonely. This 5-day journey explores covenant community—the kind that remains when everything else collapses.',
@@ -125,6 +128,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   kingdom: {
     title: 'Kingdom',
+    heroImage: '/images/site/series/kingdom.webp',
     question: "What if the kingdom you're looking for is already here?",
     introduction:
       "You've been searching for refuge in politics, economics, and curated spirituality. You're exhausted. This 5-day journey reveals the kingdom that's been here all along.",
@@ -155,6 +159,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   provision: {
     title: 'Provision',
+    heroImage: '/images/site/series/provision.webp',
     question:
       "What if provision isn't about having enough, but sharing what you have?",
     introduction:
@@ -191,6 +196,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   truth: {
     title: 'Truth',
+    heroImage: '/images/site/series/truth.webp',
     question: "How do you know what's real when misinformation is everywhere?",
     introduction:
       "Deepfakes. AI-generated content. Partisan bubbles. You can't trust anything. This 5-day journey moves from information overload to knowing the one who is true.",
@@ -220,6 +226,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   hope: {
     title: 'Hope',
+    heroImage: '/images/site/series/hope.webp',
     question: "What if hope isn't optimism, but faithfulness in the dark?",
     introduction:
       '57% are pessimistic about 2026. Optimism is dead. Toxic positivity fails. This 5-day journey explores resurrection hope—the kind that enters darkness instead of denying it.',
@@ -255,6 +262,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
 
   'too-busy-for-god': {
     title: 'Too Busy for God',
+    heroImage: '/images/site/series/too-busy-for-god.webp',
     question:
       "What are you so busy doing that you're missing the One who gave you life?",
     introduction:
@@ -282,6 +290,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'hearing-god-in-the-noise': {
     title: 'Hearing God in the Noise',
+    heroImage: '/images/site/series/hearing-god-in-the-noise.webp',
     question:
       "How do you recognize Jesus' voice amid all the noise around you?",
     introduction:
@@ -309,6 +318,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'abiding-in-his-presence': {
     title: 'Abiding in His Presence',
+    heroImage: '/images/site/series/abiding-in-his-presence.webp',
     question:
       "What's the difference between visiting God and dwelling with Him?",
     introduction:
@@ -337,6 +347,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'surrender-to-gods-will': {
     title: "Surrender to God's Will",
+    heroImage: '/images/site/series/surrender-to-gods-will.webp',
     question:
       "What does it truly mean to pray 'not my will, but yours be done'?",
     introduction:
@@ -363,6 +374,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'in-the-beginning-week-1': {
     title: 'In the Beginning',
+    heroImage: '/images/site/series/in-the-beginning-week-1.webp',
     question:
       "How does God's creative word in Genesis connect to Christ as the living Word?",
     introduction:
@@ -389,6 +401,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'what-is-the-gospel': {
     title: 'What is the Gospel?',
+    heroImage: '/images/site/series/what-is-the-gospel.webp',
     question:
       "Why does the 'good news' begin so abruptly, and who are these first characters of faith?",
     introduction:
@@ -415,6 +428,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'why-jesus': {
     title: 'Why Jesus?',
+    heroImage: '/images/site/series/why-jesus.webp',
     question:
       'Why is Jesus necessary, and what makes Him different from every other religious figure?',
     introduction:
@@ -441,6 +455,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'what-does-it-mean-to-believe': {
     title: 'What Does It Mean to Believe?',
+    heroImage: '/images/site/series/what-does-it-mean-to-believe.webp',
     question:
       'What is the difference between believing facts about Jesus and actually believing in Him?',
     introduction:
@@ -466,6 +481,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'what-is-carrying-a-cross': {
     title: 'What Is Carrying a Cross?',
+    heroImage: '/images/site/series/what-is-carrying-a-cross.webp',
     question:
       'What does it actually cost to follow Jesus, and why would anyone choose to pay that price?',
     introduction:
@@ -491,6 +507,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'once-saved-always-saved': {
     title: 'Once Saved, Always Saved?',
+    heroImage: '/images/site/series/once-saved-always-saved.webp',
     question:
       'If salvation is by grace through faith, what role does ongoing faithfulness play?',
     introduction:
@@ -516,6 +533,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'what-happens-when-you-repeatedly-sin': {
     title: 'What Happens When You Repeatedly Sin?',
+    heroImage: '/images/site/series/what-happens-when-you-repeatedly-sin.webp',
     question:
       "Does repeatedly falling into the same sin mean you're not really saved?",
     introduction:
@@ -542,6 +560,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'the-nature-of-belief': {
     title: 'The Nature of Belief',
+    heroImage: '/images/site/series/the-nature-of-belief.webp',
     question:
       'How can you maintain consistent faith when facing difficult circumstances?',
     introduction:
@@ -567,6 +586,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'the-work-of-god': {
     title: 'The Work of God',
+    heroImage: '/images/site/series/the-work-of-god.webp',
     question:
       'What does it mean to be truly satisfied, and how does Jesus fulfill our deepest hunger?',
     introduction:
@@ -592,6 +612,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'the-word-before-words': {
     title: 'The Word Before Words',
+    heroImage: '/images/site/series/the-word-before-words.webp',
     question:
       'What if the Gospel was not merely predicted in Genesis, but actively present from the very first verse?',
     introduction:
@@ -618,6 +639,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'genesis-two-stories-of-creation': {
     title: 'Genesis: Two Stories of Creation?',
+    heroImage: '/images/site/series/genesis-two-stories-of-creation.webp',
     question:
       'Are the two creation accounts in Genesis contradictory, or do they reveal complementary truths?',
     introduction:
@@ -643,6 +665,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'the-blueprint-of-community': {
     title: 'The Blueprint of Community',
+    heroImage: '/images/site/series/the-blueprint-of-community.webp',
     question:
       'What does authentic Christian community look like, and how can we build it?',
     introduction:
@@ -668,6 +691,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'signs-boldness-opposition-integrity': {
     title: 'Signs, Boldness & Integrity',
+    heroImage: '/images/site/series/signs-boldness-opposition-integrity.webp',
     question:
       'What does it look like to follow the risen Christ publicly rather than privately?',
     introduction:
@@ -693,6 +717,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'witness-under-pressure-expansion': {
     title: 'Witness Under Pressure',
+    heroImage: '/images/site/series/witness-under-pressure-expansion.webp',
     question:
       'What happens when following Jesus begins to cost something real?',
     introduction:
@@ -723,6 +748,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
 
   anointed: {
     title: 'Anointed',
+    heroImage: '/images/site/series/anointed.webp',
     question:
       'What does it mean to be chosen, set apart, and empowered by God?',
     introduction:
@@ -748,6 +774,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'coming-to-the-end-of-ourselves': {
     title: 'Coming to the End of Ourselves',
+    heroImage: '/images/site/series/coming-to-the-end-of-ourselves.webp',
     question:
       'What happens when you reach the place where your own strength runs out?',
     introduction:
@@ -774,6 +801,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   valued: {
     title: 'Valued',
+    heroImage: '/images/site/series/valued.webp',
     question:
       'Where does your worth come from when the world says you have none?',
     introduction:
@@ -799,6 +827,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   rooted: {
     title: 'Rooted',
+    heroImage: '/images/site/series/rooted.webp',
     question:
       'How do you hold onto faith when everything around you is trying to tear it out?',
     introduction:
@@ -824,6 +853,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'present-in-the-chaos': {
     title: 'Present in the Chaos',
+    heroImage: '/images/site/series/present-in-the-chaos.webp',
     question:
       "How do you find God's presence when your life is moving too fast to stop?",
     introduction:
@@ -850,6 +880,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
   'standing-strong': {
     title: 'Standing Strong',
+    heroImage: '/images/site/series/standing-strong.webp',
     question:
       'How do you move from doubt to unshakeable faith in a world that constantly tests your convictions?',
     introduction:
@@ -881,6 +912,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
 
   'what-is-christianity': {
     title: 'What is Christianity?',
+    heroImage: '/images/site/series/what-is-christianity.webp',
     question:
       'What is Christianity when you strip away the bumper stickers, the politics, and the performance?',
     introduction:
