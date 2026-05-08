@@ -1056,3 +1056,99 @@ nothing) — safe to revoke PUBLIC execute on it.
    so the tree reflects reality (one-time hygiene fix, not blocking).
 
 No application code touched. Working-tree state preserved.
+
+---
+
+### 2026-05-08 — Site-wide image + brand migration (Stages A, 0, 1, 2, 3, 4)
+
+Multi-stage swap of every surfaced site image to the new generated library
+(Gemini + Vertex batches, ~1,260 unique candidates after consolidation).
+Plus a brand-foundation cleanup (Cobalt Triad migration + Greek anchor)
+and the archive of the legacy artist-print library out of the served tree.
+
+**Stage A — Library consolidation** (`scripts/consolidate-image-library.mjs`)
+- Walked both batches (`generated-2026-05-04/` Gemini + `generated-2026-05-04-vertex/` Vertex)
+- Excluded `_DISCARD_*` photorealistic rejects (641 files)
+- Deduped by filename (Gemini-preferred when both batches contain the same prompt)
+- 4,558 scanned → 1,404 unique canonical filenames + 3,154 regional/run variants tracked in `variants[]`
+- Artifacts: `docs/image-library-catalog-2026-05-08.json` (1.7 MB, machine-readable),
+  `docs/image-library-index-2026-05-08.md` (120 KB, founder-readable, paged by surface)
+- Per-surface counts: 71 hero · 118 chapter-header · 244 devotional · 250 decorative · 119 logo · 602 poster
+- Library staging at `public/images/library/` (gitignored, 2.2 GB)
+
+**Stage 0 — Brand foundation cleanup** (per `docs/brand/BRAND-BIBLE.md` §4.1)
+- Cobalt Triad migration in `src/app/globals.css` + `design-system/tokens.{json,css}`:
+  - `--color-tehom`: `#0f1b2e` → `#0a1320` (Deep Navy)
+  - `--color-scroll`: `#fff8ec` → `#efe5d8` (Cream Ink)
+  - `--color-gold`: `#1f4f82` → `#1f2a8d` (Cobalt — name "gold" preserved as legacy alias)
+  - Light-mode bg: `#fffdf8` → `#f0ece6` (Newspaper Cream)
+  - Light-mode fg: `#121d30` → `#11182a` (Navy Ink)
+  - 46 rgba() references updated to canonical RGB across both files
+  - Sacred accents in tokens.json updated to brand-bible values (Burgundy/Olive/Shalom)
+  - Added canonical-name aliases (`--color-deep-navy`, `--color-cream-ink`, `--color-cobalt`, etc.)
+- Greek anchor in masthead (`src/components/EuangelionShellHeader.tsx`):
+  - Was: truncated `EU•AN•GE•LION (YOO-AN-GEL-EE-ON) • GREEK: "GOOD`
+  - Now: `EU•AN•GE•LION (YOO-AN-GEL-EE-ON) · εὐαγγέλιον — Good News`
+  - Greek glyphs render in serif italic with Cobalt accent + `lang="grc"` attribute
+
+**Stage 1 — Homepage hero rotation** (`src/app/page.tsx` + `public/images/site/homepage/`)
+- Was: hardcoded SVG engraving (`euangelion-homepage-engraving-04.svg`) + 3 SVG step icons
+- Now: 6-image rotation cycling daily via deterministic UTC day-of-year mod 6
+  (no hydration mismatch from Math.random; same image renders within a UTC day)
+- 3 step icons swapped to brand-aligned WebPs from the library
+- Source PNGs converted to WebP at quality 80 — 9 files, 1.8 MB total (vs 17 MB raw)
+
+**Stage 2 — 32 series heroes** (`scripts/apply-series-hero-mapping.mjs` + `src/data/series.ts`)
+- Populates `heroImage` on every series (32 total — was 22 mapped to artist prints, 10 unmapped)
+- Each picked from `library/{hero,chapter-header}/`, converted to WebP at quality 80
+- 32 files, 8.7 MB total (avg 270 KB)
+- `SeriesHero.tsx` already preferred `series.heroImage` over `SERIES_HERO[slug].src` —
+  populating activates the swap with no component change
+- Patched `wake-up/series/[slug]/SeriesPageClient.tsx` to also prefer `series.heroImage`
+  over the legacy SERIES_HERO entry (Wake-Up was direct-importing manifest)
+
+**Stage 3 — Devotional inline art sweep** (`scripts/build-devotional-art-mapping.mjs` + `src/data/site-devotional-art.ts`)
+- New `SITE_DEVOTIONAL_ART` map keyed by devotional slug
+- For each of 175 devotionals, theme-matched against 362 library candidates
+  (devotional + chapter-header surfaces) via keyword scoring + light shuffle
+  for tie-breaking + mild penalty for over-reuse
+- 350 total picks across 266 unique library files (avg 1.3 reuses per file)
+- 266 WebPs at `public/images/site/devotional/` (69 MB)
+- `DevotionalPageClient` patched to prefer `SITE_DEVOTIONAL_ART[slug]` over
+  legacy `DEVOTIONAL_ARTWORKS[slug]` (artist prints)
+
+**Stage 4 — Archive devotional-prints + cleanup**
+- `git mv public/images/devotional-prints → archive/devotional-prints`
+  (1924 tracked files preserved in git history; ~150 MB)
+- Local `raw.jpg` files (642 × ~1 MB, gitignored) untouched on founder's disk
+- `archive/` lives outside `public/` so Cloudflare Workers no longer serves
+  the artist-print URLs (404 after deploy)
+- `src/data/artwork-manifest.ts` reset to empty maps (consumers all have
+  fallback-to-empty paths now that the new library is in place)
+- `scripts/generate-artwork-manifest.mjs` patched to no-op when
+  `public/images/devotional-prints/` is absent (don't crash npm build pipeline)
+- `public/images/site/README.md` written — full inventory + how to add/swap
+
+**Live deployments (in order):**
+- Stage A: no deploy (organizational only)
+- Stage 0: `56a49879-d548-43be-88cb-e250c4e64259`
+- Stage 1: `4c20a3f0-7954-4cd2-b05b-038ce6ea5037`
+- Stage 2: `80cf1a25-0218-4fe1-87d5-6f05b041b2a9`
+- Stage 3: `02bb873a-043b-445e-b831-f3cf88a1d8fe`
+- Stage 4: (in flight at time of writing)
+
+**Total impact:**
+- ~310 new WebPs added under `public/images/site/` (about 80 MB)
+- ~1924 artist-print files moved to archive (~150 MB out of served tree)
+- Net deploy bundle: ~70 MB smaller despite adding the full new library
+- 7 new commits, all CI green, all deploys verified live before next stage
+
+**Followups (queued, not blocking):**
+- Lamb mark fix (`scripts/lamb-eyes-overlay.py` + 7-eye overlay) — separate workstream
+- Wordmark 7-variant rotation animation (brand bible §3.1) — feature pass
+- Dark-mode-as-default decision (brand bible §4.2) — UX call
+- Per-devotional founder review of art picks (mappings auto-generated; founder
+  can adjust `src/data/site-devotional-art.ts` manually or re-run the script
+  with edited scoring)
+- Optional: load Poppins via next/font for the masthead Greek anchor
+  (currently uses Instrument Serif italic — works but not 100% brand-bible spec)
