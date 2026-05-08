@@ -28,45 +28,49 @@ const LIBRARY_DIR = path.join(ROOT, 'public/images/library')
 const SERIES_DIR = path.join(ROOT, 'public/images/site/series')
 const SERIES_TS = path.join(ROOT, 'src/data/series.ts')
 
-// slug → library filename (relative to public/images/library/<surface>/)
+// FOUNDER CURATION RULE (2026-05-08):
+// Each series gets ONE single-ink/halftone symbol from the curated
+// brand-aesthetic subset (sym-*, obj-*, brand-*, element-*). No
+// realistic narrative illustrations. Files are used as-generated
+// (no Pillow treatment). All sources live in public/images/library/decorative/.
 const MAPPING = {
   // 7 Wake-Up Magazine series (originals)
-  'identity':                              { surface: 'chapter-header', file: 'figure-prophet-wilderness.png' },
-  'peace':                                 { surface: 'chapter-header', file: 'fruit-03-peace-dove-boat.png' },
-  'community':                             { surface: 'chapter-header', file: 'community-circle-prayer.png' },
-  'kingdom':                               { surface: 'hero',           file: 'banner-jerusalem-walls-dusk.png' },
-  'provision':                             { surface: 'hero',           file: 'banner-flock-distant-shepherd.png' },
-  'truth':                                 { surface: 'hero',           file: 'gospel2-02-sermon-mount-wide.png' },
-  'hope':                                  { surface: 'hero',           file: 'banner-stone-tomb-dawn.png' },
+  'identity':                              { surface: 'decorative', file: 'sym-doorway-arched-linocut.png' },
+  'peace':                                 { surface: 'decorative', file: 'sym-dove-flight-linocut.png' },
+  'community':                             { surface: 'decorative', file: 'sym-bread-wine-table.png' },
+  'kingdom':                               { surface: 'decorative', file: 'sym-keys-kingdom.png' },
+  'provision':                             { surface: 'decorative', file: 'sym-manna-falling-stamped.png' },
+  'truth':                                 { surface: 'decorative', file: 'sym-open-scroll.png' },
+  'hope':                                  { surface: 'decorative', file: 'sym-anchor-hope-linocut.png' },
 
   // Substack series (4 expansion days each)
-  'too-busy-for-god':                      { surface: 'hero',           file: 'atmos-fog-hills-dawn.png' },
-  'hearing-god-in-the-noise':              { surface: 'chapter-header', file: 'elijah-ravens-brook.png' },
-  'abiding-in-his-presence':               { surface: 'hero',           file: 'banner-vineyard-rows.png' },
-  'surrender-to-gods-will':                { surface: 'hero',           file: 'gospel3-02-last-supper-flat.png' },
+  'too-busy-for-god':                      { surface: 'decorative', file: 'obj-oil-lamp-wick-burning.png' },
+  'hearing-god-in-the-noise':              { surface: 'decorative', file: 'sym-shofar-rams-horn-linocut.png' },
+  'abiding-in-his-presence':               { surface: 'decorative', file: 'sym-vine-grapes-linocut.png' },
+  'surrender-to-gods-will':                { surface: 'decorative', file: 'obj-cup-trembling-stone.png' },
 
   // New series — gospel/doctrine
-  'in-the-beginning-week-1':               { surface: 'hero',           file: 'atmos-desert-noon-banner.png' },
-  'what-is-the-gospel':                    { surface: 'hero',           file: 'gospel2-01-calling-disciples-shore.png' },
-  'why-jesus':                             { surface: 'hero',           file: 'banner-river-jordan.png' },
-  'what-does-it-mean-to-believe':          { surface: 'hero',           file: 'gospel2-04-walking-water-banner.png' },
-  'what-is-carrying-a-cross':              { surface: 'hero',           file: 'gospel3-07-golgotha-crosses.png' },
-  'once-saved-always-saved':               { surface: 'hero',           file: 'banner-vineyard-rows.png' },
-  'what-happens-when-you-repeatedly-sin':  { surface: 'chapter-header', file: 'cultural-1st-century-jewish-synagogue.png' },
-  'the-nature-of-belief':                  { surface: 'chapter-header', file: 'figure-mother-child-doorway.png' },
-  'the-work-of-god':                       { surface: 'hero',           file: 'gospel2-09-cleansing-temple.png' },
-  'the-word-before-words':                 { surface: 'hero',           file: 'atmos-fog-hills-dawn.png' },
-  'genesis-two-stories-of-creation':       { surface: 'hero',           file: 'atmos-desert-noon-banner.png' },
-  'the-blueprint-of-community':            { surface: 'chapter-header', file: 'community-feast-long-table.png' },
-  'signs-boldness-opposition-integrity':   { surface: 'chapter-header', file: 'cultural-1st-century-jewish-synagogue.png' },
-  'witness-under-pressure-expansion':      { surface: 'hero',           file: 'banner-temple-ruins-dusk.png' },
-  'anointed':                              { surface: 'hero',           file: 'banner-flock-distant-shepherd.png' },
-  'coming-to-the-end-of-ourselves':        { surface: 'hero',           file: 'banner-wilderness-cave.png' },
-  'valued':                                { surface: 'chapter-header', file: 'figure-mother-child-doorway.png' },
-  'rooted':                                { surface: 'hero',           file: 'atmos-olive-grove-sunset.png' },
-  'present-in-the-chaos':                  { surface: 'hero',           file: 'atmos-stormy-sea-ultrawide.png' },
-  'standing-strong':                       { surface: 'hero',           file: 'banner-stone-tomb-dawn.png' },
-  'what-is-christianity':                  { surface: 'hero',           file: 'banner-river-jordan.png' },
+  'in-the-beginning-week-1':               { surface: 'decorative', file: 'sym-burning-bush-brushed.png' },
+  'what-is-the-gospel':                    { surface: 'decorative', file: 'sym-cross-on-hill.png' },
+  'why-jesus':                             { surface: 'decorative', file: 'sym-cross-simple-linocut.png' },
+  'what-does-it-mean-to-believe':          { surface: 'decorative', file: 'sym-fish-linocut.png' },
+  'what-is-carrying-a-cross':              { surface: 'decorative', file: 'sym-cross-burgundy-linocut.png' },
+  'once-saved-always-saved':               { surface: 'decorative', file: 'sym-shield-faith-linocut.png' },
+  'what-happens-when-you-repeatedly-sin':  { surface: 'decorative', file: 'sym-water-pouring-brushed.png' },
+  'the-nature-of-belief':                  { surface: 'decorative', file: 'sym-fish-terracotta-linocut.png' },
+  'the-work-of-god':                       { surface: 'decorative', file: 'obj-clay-bowl-bread-water.png' },
+  'the-word-before-words':                 { surface: 'decorative', file: 'sym-scroll-open-etched.png' },
+  'genesis-two-stories-of-creation':       { surface: 'decorative', file: 'sym-noahs-ark-linocut.png' },
+  'the-blueprint-of-community':            { surface: 'decorative', file: 'sym-temple-columns-pair-linocut.png' },
+  'signs-boldness-opposition-integrity':   { surface: 'decorative', file: 'sym-flame-single-linocut.png' },
+  'witness-under-pressure-expansion':      { surface: 'decorative', file: 'obj-bronze-trumpet-curved.png' },
+  'anointed':                              { surface: 'decorative', file: 'obj-oil-flask-amber-glass.png' },
+  'coming-to-the-end-of-ourselves':        { surface: 'decorative', file: 'sym-empty-chalice.png' },
+  'valued':                                { surface: 'decorative', file: 'sym-pomegranate-cut-linocut.png' },
+  'rooted':                                { surface: 'decorative', file: 'sym-fig-branch-linocut.png' },
+  'present-in-the-chaos':                  { surface: 'decorative', file: 'sym-waves-three-stacked-linocut.png' },
+  'standing-strong':                       { surface: 'decorative', file: 'sym-stone-tablets-flat.png' },
+  'what-is-christianity':                  { surface: 'decorative', file: 'sym-fishes-bread-basket.png' },
 }
 
 function ensureDir(dir) {

@@ -31,23 +31,23 @@ const HOW_STEPS = [
 ]
 
 /**
- * Homepage hero rotation — 6 brand-aligned generated images. One is picked
- * per pageload via simple deterministic-by-day rotation (avoids hydration
- * mismatch from Math.random and keeps daily visits fresh without disorienting
- * mid-session changes). All paths under /images/site/homepage/hero/ are
- * tracked WebPs (~200-280 KB each, vs the legacy SVG engraving).
+ * Homepage hero rotation — 6 single-ink/halftone symbolic images from the
+ * curated brand-aesthetic subset (sym-* prefix). Per founder direction
+ * 2026-05-08: site uses ONLY single-ink/halftone/limited-palette imagery
+ * (newsletter aesthetic). No realistic narrative illustrations.
  *
- * Source candidates were picked from the consolidated library (see
- * docs/image-library-index-2026-05-08.md) for tall-narrow composition
- * survival in the 228px-wide hero column.
+ * Picked deterministically per UTC day-of-year so the same image renders
+ * for all visits within a UTC day (no hydration mismatch, no jarring
+ * mid-session swaps). All paths are unmodified library files (only
+ * PNG→WebP encoding for size; no Pillow treatment).
  */
 const HOMEPAGE_HEROES = [
-  '/images/site/homepage/hero/hero-pillar-light.webp',
-  '/images/site/homepage/hero/hero-prophet.webp',
-  '/images/site/homepage/hero/hero-shepherd-carry.webp',
-  '/images/site/homepage/hero/hero-cypress.webp',
-  '/images/site/homepage/hero/hero-jacob-ladder.webp',
-  '/images/site/homepage/hero/hero-pilgrim.webp',
+  '/images/site/homepage/hero/hero-dove.webp',
+  '/images/site/homepage/hero/hero-burning-bush.webp',
+  '/images/site/homepage/hero/hero-anchor.webp',
+  '/images/site/homepage/hero/hero-cross-hill.webp',
+  '/images/site/homepage/hero/hero-empty-tomb.webp',
+  '/images/site/homepage/hero/hero-shepherd-crook.webp',
 ] as const
 
 function pickHomepageHero(): string {
