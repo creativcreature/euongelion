@@ -34,6 +34,13 @@ function extractSeriesSlugFromDevotional(devSlug) {
 // ─── Read all artwork.json files ────────────────────────────────────
 function loadAllArtworks() {
   const artworks = []
+  // After the 2026-05-08 image archive, public/images/devotional-prints/
+  // no longer exists in the served tree (moved to archive/devotional-prints/).
+  // Return an empty manifest gracefully instead of failing the build.
+  if (!existsSync(PRINTS_DIR)) {
+    console.log(`[generate-artwork-manifest] ${PRINTS_DIR} not found — emitting empty manifest`)
+    return artworks
+  }
   const dirs = readdirSync(PRINTS_DIR).sort()
 
   for (const dir of dirs) {
