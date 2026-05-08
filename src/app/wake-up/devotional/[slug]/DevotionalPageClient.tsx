@@ -25,6 +25,7 @@ import { useProgressStore } from '@/stores/progressStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { SERIES_DATA } from '@/data/series'
 import { DEVOTIONAL_ARTWORKS } from '@/data/artwork-manifest'
+import { SITE_DEVOTIONAL_ART } from '@/data/site-devotional-art'
 import type { Devotional, Module, Panel } from '@/types'
 
 const DevotionalChat = dynamic(() => import('@/components/DevotionalChat'), {
@@ -107,8 +108,13 @@ export default function DevotionalPageClient({
     }))
   }, [modules, panels])
 
-  // Artwork images for this devotional
-  const artworks = useMemo(() => DEVOTIONAL_ARTWORKS[slug] || [], [slug])
+  // Artwork images for this devotional. Prefer the new generated library
+  // (Stage 3 of the 2026-05-07 image-swap migration) when populated, fall
+  // back to the legacy artist-print mapping when no generated entries exist.
+  const artworks = useMemo(
+    () => SITE_DEVOTIONAL_ART[slug] ?? DEVOTIONAL_ARTWORKS[slug] ?? [],
+    [slug],
+  )
   const lightbox = useLightbox(artworks)
 
   // Calculate where to insert artwork between content sections
