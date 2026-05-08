@@ -1,0 +1,38 @@
+{
+  "day": 76,
+  "title": "Boaz the redeemer",
+  "teaser": "Day 76 of Bible 365 — Ruth 4",
+  "framework": "Ruth 4 — The kinsman who restores",
+  "scriptureReference": "Ruth 4",
+  "chiastic_position": "deeper",
+  "pardesLevel": "peshat",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "BIBLE 365 · DAY 76"
+    },
+    {
+      "number": 2,
+      "heading": "TODAY’S PASSAGE",
+      "type": "text",
+      "content": "**Ruth 4**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Ruth 4 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
+      "wordCount": 50
+    },
+    {
+      "number": 3,
+      "heading": "WHY THIS PASSAGE",
+      "type": "text",
+      "content": "Today’s pivot: The kinsman who restores. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our Kinsman-Redeemer (Heb 2:14-15).",
+      "wordCount": 45
+    },
+    {
+      "number": 4,
+      "heading": "A PRAYER",
+      "type": "text",
+      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
+      "wordCount": 40
+    }
+  ],
+  "isPlaceholder": true
+}

@@ -1,0 +1,38 @@
+{
+  "day": 300,
+  "title": "Luke: The Inclusive Christ — Day 6 — Deeper Dive",
+  "teaser": "Day 300 of Bible 365 — Luke 1-12",
+  "framework": "Luke 1-12 — Luke: The Inclusive Christ",
+  "scriptureReference": "Luke 1-12",
+  "chiastic_position": "deeper",
+  "pardesLevel": "peshat",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "BIBLE 365 · DAY 300"
+    },
+    {
+      "number": 2,
+      "heading": "TODAY’S PASSAGE",
+      "type": "text",
+      "content": "**Luke 1-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 1-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
+      "wordCount": 50
+    },
+    {
+      "number": 3,
+      "heading": "WHY THIS PASSAGE",
+      "type": "text",
+      "content": "Today’s pivot: Luke: The Inclusive Christ. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ for the lowly (Luke 1:52).",
+      "wordCount": 45
+    },
+    {
+      "number": 4,
+      "heading": "A PRAYER",
+      "type": "text",
+      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
+      "wordCount": 40
+    }
+  ],
+  "isPlaceholder": true
+}

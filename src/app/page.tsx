@@ -11,6 +11,20 @@ import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
 import { MAX_AUDITS_PER_CYCLE } from '@/lib/soul-audit/constants'
 import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES } from '@/data/series'
+import { BIBLE_365_SERIES } from '@/data/bible-365'
+
+/**
+ * Compute today's day-of-year (UTC) → Bible-365 day metadata.
+ * Returns the day stub from BIBLE_365_SERIES.days. Used by the
+ * homepage TODAY hero to point at the right devotional.
+ */
+function getTodayBible365Day() {
+  const now = new Date()
+  const start = Date.UTC(now.getUTCFullYear(), 0, 0)
+  const dayOfYear = Math.floor((now.getTime() - start) / 86_400_000)
+  const idx = Math.max(0, Math.min(BIBLE_365_SERIES.days.length - 1, dayOfYear - 1))
+  return BIBLE_365_SERIES.days[idx]
+}
 
 const HOW_STEPS = [
   {
@@ -239,8 +253,26 @@ export default function Home() {
       <main id="main-content" className="mock-paper">
         <EuangelionShellHeader />
 
-        <section className="homepage-hero" id="start-audit">
-          <div className="homepage-hero-art" aria-hidden="true">
+        {/* TODAY hero \u2014 Bible-365 daily devotional surface (per founder
+            redesign 2026-05-08 + BrandBrain "homepage daily devotional"
+            spec). Active-plan resume banner takes precedence when present. */}
+        {resumeRoute && (
+          <section className="homepage-resume-banner" aria-label="Your active devotional plan">
+            <p className="text-label mock-kicker">YOUR PLAN</p>
+            <p className="mock-body">
+              You have a devotional waiting. Pick up where you left off.
+            </p>
+            <Link
+              href={resumeRoute}
+              className="mock-btn mock-btn-inline text-label"
+            >
+              CONTINUE MY DEVOTIONAL
+            </Link>
+          </section>
+        )}
+
+        <section className="homepage-bible365-hero" id="today-devotional">
+          <div className="homepage-bible365-hero-art" aria-hidden="true">
             <Image
               src={pickHomepageHero()}
               alt=""
@@ -250,126 +282,140 @@ export default function Home() {
             />
           </div>
 
-          <div className="homepage-hero-main">
-            {resumeRoute ? (
-              <>
-                <p className="text-label mock-kicker">MY DEVOTIONAL</p>
-                <h2 className="mock-title mock-homepage-prompt-title">
-                  You have a devotional waiting.
-                </h2>
-                <p className="mock-subcopy">
-                  Continue where you left off. Your current path is ready.
-                </p>
-                <Link
-                  href={resumeRoute}
-                  className="mock-btn mock-btn-inline text-label"
-                >
-                  CONTINUE MY DEVOTIONAL
-                </Link>
-                <button
-                  type="button"
-                  className="mock-reset-btn text-label"
-                  onClick={() => void handleResetAudit()}
-                >
-                  Reset Audit
-                </button>
-              </>
-            ) : (
-              <>
-                <p className="text-label mock-kicker">SOUL AUDIT</p>
-                <h1 className="mock-title mock-homepage-prompt-title">
-                  What are you wrestling with?
-                </h1>
-                <p className="mock-subcopy">
-                  {typographer(
-                    'Name what is real and get matched to a focused devotional path for the season you are actually in.',
-                  )}
-                </p>
-
-                <textarea
-                  value={auditText}
-                  onChange={(e) => {
-                    setAuditText(e.target.value)
-                    setError(null)
-                  }}
-                  placeholder="Write your paragraph here..."
-                  rows={3}
-                  disabled={isSubmitting}
-                  className="mock-textarea"
-                  aria-label="What are you wrestling with?"
-                />
-
-                {/* Sample prompt pills */}
-                <div className="homepage-prompt-pills">
-                  {[
-                    'I feel anxious about my future',
-                    'I want to learn about the prophets',
-                    'I keep falling into the same sin',
-                    'I don\u2019t know what I believe',
-                  ].map((pill) => (
-                    <button
-                      key={pill}
-                      type="button"
-                      className="homepage-prompt-pill text-label"
-                      onClick={() => {
-                        setAuditText(pill)
-                        setError(null)
-                      }}
-                      disabled={isSubmitting}
-                    >
-                      {pill}
-                    </button>
-                  ))}
-                </div>
-
-                {showLowContextHint && (
-                  <p className="mock-footnote">
-                    Add one more sentence for more precise curation.
+          <div className="homepage-bible365-hero-main">
+            {(() => {
+              const today = getTodayBible365Day()
+              return (
+                <>
+                  <p className="text-label mock-kicker">
+                    TODAY \u00b7 DAY {today.day} OF BIBLE 365
                   </p>
-                )}
+                  <h1 className="mock-title mock-homepage-prompt-title">
+                    {typographer(today.title)}
+                  </h1>
+                  <p className="mock-subcopy">
+                    {typographer(
+                      'A 365-day canonical-chronological reading. Each day stands alone \u2014 hop in today and meet Scripture where you are.',
+                    )}
+                  </p>
 
-                <button
-                  type="button"
-                  className="mock-btn mock-btn-inline text-label"
-                  onClick={() => void submitAudit(auditText)}
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'BUILDING YOUR PLAN...' : 'GET MY DEVOTION'}
-                </button>
-                <p className="mock-footnote">
-                  No account required. Start immediately.
-                </p>
-                {hydrated && auditCount > 0 && !limitReached && (
-                  <p className="mock-footnote">
-                    Audit {auditCount + 1} of {MAX_AUDITS_PER_CYCLE}
-                  </p>
-                )}
-                {hydrated && limitReached && (
-                  <p className="mock-footnote">
-                    All {MAX_AUDITS_PER_CYCLE} audits used. Reset to start
-                    fresh.
-                  </p>
-                )}
-                <button
-                  type="button"
-                  className="mock-reset-btn text-label"
-                  onClick={() => void handleResetAudit()}
-                >
-                  Reset Audit
-                </button>
-                {error && <p className="mock-error">{error}</p>}
-                {lastFailedSubmission && !isSubmitting && (
-                  <button
-                    type="button"
-                    className="mock-reset-btn text-label"
-                    onClick={() => void submitAudit(lastFailedSubmission)}
+                  <Link
+                    href={`/devotional/${today.slug}`}
+                    className="mock-btn mock-btn-inline text-label"
                   >
-                    Retry Last Submit
-                  </button>
-                )}
-              </>
-            )}
+                    READ TODAY&rsquo;S DEVOTIONAL
+                  </Link>
+                  <Link
+                    href="/series/bible-365"
+                    className="text-label homepage-bible365-browse-link"
+                  >
+                    Browse the 365-day plan \u2192
+                  </Link>
+                </>
+              )
+            })()}
           </div>
+        </section>
+
+        {/* Trust signal row */}
+        <section className="homepage-trust-row" aria-label="Quick reassurance">
+          <p className="text-label">
+            FREE \u00b7 NO ACCOUNT REQUIRED \u00b7 5\u20137 MIN DAILY \u00b7 365 DAYS \u00b7 HOP IN ANY DAY
+          </p>
+        </section>
+
+        {/* Soul Audit \u2014 moved BELOW the Bible-365 hero per redesign */}
+        <section className="homepage-soul-audit" id="start-audit">
+          <p className="text-label mock-kicker">SOUL AUDIT</p>
+          <h2 className="mock-title mock-homepage-prompt-title">
+            Or, find a path tailored to where you are.
+          </h2>
+          <p className="mock-subcopy">
+            {typographer(
+              'Name what is real, and get matched to a focused devotional path for the season you are actually in.',
+            )}
+          </p>
+
+          <textarea
+            value={auditText}
+            onChange={(e) => {
+              setAuditText(e.target.value)
+              setError(null)
+            }}
+            placeholder="Write your paragraph here..."
+            rows={3}
+            disabled={isSubmitting}
+            className="mock-textarea"
+            aria-label="What are you wrestling with?"
+          />
+
+          {/* Sample prompt pills */}
+          <div className="homepage-prompt-pills">
+            {[
+              'I feel anxious about my future',
+              'I want to learn about the prophets',
+              'I keep falling into the same sin',
+              'I don\u2019t know what I believe',
+            ].map((pill) => (
+              <button
+                key={pill}
+                type="button"
+                className="homepage-prompt-pill text-label"
+                onClick={() => {
+                  setAuditText(pill)
+                  setError(null)
+                }}
+                disabled={isSubmitting}
+              >
+                {pill}
+              </button>
+            ))}
+          </div>
+
+          {showLowContextHint && (
+            <p className="mock-footnote">
+              Add one more sentence for more precise curation.
+            </p>
+          )}
+
+          <button
+            type="button"
+            className="mock-btn mock-btn-inline text-label"
+            onClick={() => void submitAudit(auditText)}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'BUILDING YOUR PLAN...' : 'GET MATCHED'}
+          </button>
+          <p className="mock-footnote">
+            No account required. Start immediately.
+          </p>
+          {hydrated && auditCount > 0 && !limitReached && (
+            <p className="mock-footnote">
+              Audit {auditCount + 1} of {MAX_AUDITS_PER_CYCLE}
+            </p>
+          )}
+          {hydrated && limitReached && (
+            <p className="mock-footnote">
+              All {MAX_AUDITS_PER_CYCLE} audits used. Reset to start fresh.
+            </p>
+          )}
+          <button
+            type="button"
+            className="mock-reset-btn text-label"
+            onClick={() => void handleResetAudit()}
+          >
+            Reset Audit
+          </button>
+          {error && <p className="mock-error">{error}</p>}
+          {lastFailedSubmission && !isSubmitting && (
+            <button
+              type="button"
+              className="mock-reset-btn text-label"
+              onClick={() => void submitAudit(lastFailedSubmission)}
+            >
+              Retry Last Submit
+            </button>
+          )}
         </section>
 
         <section className="mock-section-center">

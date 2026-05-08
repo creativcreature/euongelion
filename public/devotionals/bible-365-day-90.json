@@ -1,0 +1,38 @@
+{
+  "day": 90,
+  "title": "My God, why?",
+  "teaser": "Day 90 of Bible 365 — Psalm 22",
+  "framework": "Psalm 22 — Lament heard from the cross",
+  "scriptureReference": "Psalm 22",
+  "chiastic_position": "deeper",
+  "pardesLevel": "peshat",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "BIBLE 365 · DAY 90"
+    },
+    {
+      "number": 2,
+      "heading": "TODAY’S PASSAGE",
+      "type": "text",
+      "content": "**Psalm 22**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Psalm 22 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
+      "wordCount": 50
+    },
+    {
+      "number": 3,
+      "heading": "WHY THIS PASSAGE",
+      "type": "text",
+      "content": "Today’s pivot: Lament heard from the cross. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ quoted this from the cross (Mark 15:34).",
+      "wordCount": 45
+    },
+    {
+      "number": 4,
+      "heading": "A PRAYER",
+      "type": "text",
+      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
+      "wordCount": 40
+    }
+  ],
+  "isPlaceholder": true
+}

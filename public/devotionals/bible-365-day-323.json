@@ -1,0 +1,38 @@
+{
+  "day": 323,
+  "title": "John: Garden, Cross, Resurrection — Day 1 — Hook",
+  "teaser": "Day 323 of Bible 365 — John 15-21",
+  "framework": "John 15-21 — John: Garden, Cross, Resurrection",
+  "scriptureReference": "John 15-21",
+  "chiastic_position": "hook",
+  "pardesLevel": "peshat",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "BIBLE 365 · DAY 323"
+    },
+    {
+      "number": 2,
+      "heading": "TODAY’S PASSAGE",
+      "type": "text",
+      "content": "**John 15-21**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 15-21 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
+      "wordCount": 50
+    },
+    {
+      "number": 3,
+      "heading": "WHY THIS PASSAGE",
+      "type": "text",
+      "content": "Today’s pivot: John: Garden, Cross, Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ risen indeed (1 Cor 15:20).",
+      "wordCount": 45
+    },
+    {
+      "number": 4,
+      "heading": "A PRAYER",
+      "type": "text",
+      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
+      "wordCount": 40
+    }
+  ],
+  "isPlaceholder": true
+}

@@ -1,0 +1,38 @@
+{
+  "day": 47,
+  "title": "Sinai trembles",
+  "teaser": "Day 47 of Bible 365 — Exodus 19",
+  "framework": "Exodus 19 — Holy God meets His people",
+  "scriptureReference": "Exodus 19",
+  "chiastic_position": "resolution",
+  "pardesLevel": "peshat",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "BIBLE 365 · DAY 47"
+    },
+    {
+      "number": 2,
+      "heading": "TODAY’S PASSAGE",
+      "type": "text",
+      "content": "**Exodus 19**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus 19 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
+      "wordCount": 50
+    },
+    {
+      "number": 3,
+      "heading": "WHY THIS PASSAGE",
+      "type": "text",
+      "content": "Today’s pivot: Holy God meets His people. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Mount Zion not Sinai (Heb 12:18-24).",
+      "wordCount": 45
+    },
+    {
+      "number": 4,
+      "heading": "A PRAYER",
+      "type": "text",
+      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
+      "wordCount": 40
+    }
+  ],
+  "isPlaceholder": true
+}

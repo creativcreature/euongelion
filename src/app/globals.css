@@ -42,6 +42,231 @@
 }
 
 /* ============================================
+   Homepage redesign 2026-05-08 — Bible-365 daily hero + trust + Soul Audit
+   ============================================ */
+.homepage-resume-banner {
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.8rem 1rem;
+  background: color-mix(in srgb, var(--mock-blue, #1f2a8d) 8%, var(--mock-paper, white) 92%);
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+.homepage-bible365-hero {
+  display: grid;
+  grid-template-columns: 228px minmax(0, 1fr);
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  min-height: var(--mock-h-hero, 356px);
+}
+.homepage-bible365-hero-art {
+  position: relative;
+  overflow: hidden;
+  border-right: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  min-height: var(--mock-h-hero, 356px);
+  background: var(--mock-paper, white);
+}
+.dark .homepage-bible365-hero-art {
+  background: var(--mock-ink, black);
+}
+.homepage-bible365-hero-art img {
+  object-fit: contain;
+  padding: 1.5rem;
+  filter: contrast(1.05);
+}
+.homepage-bible365-hero-main {
+  padding: 1.4rem 1.6rem 1.4rem;
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+}
+.homepage-bible365-browse-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--mock-blue, currentColor);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.homepage-trust-row {
+  text-align: center;
+  padding: 0.7rem 1rem;
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  background: color-mix(in srgb, var(--mock-blue, #1f2a8d) 4%, var(--mock-paper, white) 96%);
+  letter-spacing: 0.06em;
+}
+.homepage-soul-audit {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.6rem 1.6rem 2rem;
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  max-width: var(--mock-frame-max, 1860px);
+  margin: 0 auto;
+}
+.homepage-soul-audit .mock-textarea {
+  margin-top: 0.6rem;
+}
+.homepage-soul-audit .homepage-prompt-pills {
+  margin-top: 0.6rem;
+}
+.homepage-soul-audit .mock-btn-inline {
+  justify-self: start;
+  margin-top: 0.6rem;
+}
+@media (max-width: 760px) {
+  .homepage-bible365-hero {
+    grid-template-columns: 1fr;
+  }
+  .homepage-bible365-hero-art {
+    min-height: 200px;
+    border-right: 0;
+    border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  }
+}
+
+/* ============================================
+   Bible-365 series page (calendar view)
+   ============================================ */
+.bible365-hero {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+.bible365-hero h1 {
+  margin: 0;
+  max-width: 52rem;
+}
+.bible365-progress-strip {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  max-width: 52rem;
+}
+.bible365-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--color-surface, rgba(0, 0, 0, 0.08));
+  border: 1px solid var(--mock-line, currentColor);
+}
+.bible365-progress-fill {
+  height: 100%;
+  background: var(--mock-blue, #1f2a8d);
+  transition: width 320ms ease;
+}
+.bible365-hop-in-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+.bible365-hop-in-row .mock-btn-inline[data-variant='secondary'] {
+  background: transparent;
+  color: var(--mock-blue, currentColor);
+  border: 1.5px solid var(--mock-line, currentColor);
+}
+.bible365-search-row {
+  padding-top: 1.4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+.bible365-search-input {
+  width: 100%;
+  max-width: 52rem;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid var(--mock-line, currentColor);
+  background: transparent;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1, 1.1rem);
+  color: inherit;
+}
+.bible365-search-input:focus {
+  outline: 2px solid var(--mock-blue, currentColor);
+  outline-offset: 1px;
+}
+.bible365-calendar,
+.bible365-search-results {
+  padding-top: 1.4rem;
+  padding-bottom: 3rem;
+}
+.bible365-month-block {
+  margin-bottom: 2.4rem;
+}
+.bible365-month-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  border-bottom: 1.5px solid var(--mock-line, currentColor);
+  padding-bottom: 0.4rem;
+  margin: 0 0 0.9rem;
+}
+.bible365-month-name {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-3, 2.4rem);
+  line-height: 1;
+}
+.bible365-day-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0;
+  border-top: 1.5px solid var(--mock-line, currentColor);
+  border-left: 1.5px solid var(--mock-line, currentColor);
+}
+.bible365-day-cell {
+  border-right: 1.5px solid var(--mock-line, currentColor);
+  border-bottom: 1.5px solid var(--mock-line, currentColor);
+  background: var(--mock-paper, transparent);
+  transition: background 180ms ease;
+}
+.bible365-day-cell[data-status='today'] {
+  background: color-mix(in srgb, var(--mock-blue, #1f2a8d) 18%, var(--mock-paper, white) 82%);
+}
+.bible365-day-cell[data-status='read'] {
+  opacity: 0.55;
+}
+.bible365-day-cell[data-status='upcoming'] {
+  opacity: 0.85;
+}
+.bible365-day-cell:hover {
+  background: color-mix(in srgb, var(--mock-blue, #1f2a8d) 8%, var(--mock-paper, white) 92%);
+}
+.bible365-day-link {
+  display: block;
+  padding: 0.7rem 0.8rem;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+.bible365-day-num {
+  margin: 0;
+  letter-spacing: 0.07em;
+}
+.bible365-day-date {
+  margin: 0.1rem 0 0.4rem;
+  opacity: 0.7;
+}
+.bible365-day-title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-family-serif);
+  font-size: 1rem;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.bible365-day-status {
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--mock-blue, currentColor);
+}
+.bible365-day-cell[data-status='read'] .bible365-day-status {
+  color: var(--mock-muted, currentColor);
+}
+
+/* ============================================
    FadeIn safety net — ALWAYS visible by default
    ============================================
    The GSAP scroll-trigger fade-in (src/components/motion/FadeIn.tsx)

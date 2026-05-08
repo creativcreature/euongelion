@@ -1,0 +1,38 @@
+{
+  "day": 315,
+  "title": "John: The Word + I Ams — Day 7 — Sabbath",
+  "teaser": "Day 315 of Bible 365 — John 1-7",
+  "framework": "John 1-7 — John: The Word + I Ams",
+  "scriptureReference": "John 1-7",
+  "chiastic_position": "sabbath",
+  "pardesLevel": "peshat",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "BIBLE 365 · DAY 315"
+    },
+    {
+      "number": 2,
+      "heading": "TODAY’S PASSAGE",
+      "type": "text",
+      "content": "**John 1-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 1-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
+      "wordCount": 50
+    },
+    {
+      "number": 3,
+      "heading": "WHY THIS PASSAGE",
+      "type": "text",
+      "content": "Today’s pivot: John: The Word + I Ams. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the I AM.",
+      "wordCount": 45
+    },
+    {
+      "number": 4,
+      "heading": "A PRAYER",
+      "type": "text",
+      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
+      "wordCount": 40
+    }
+  ],
+  "isPlaceholder": true
+}

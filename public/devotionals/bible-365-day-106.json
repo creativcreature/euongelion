@@ -1,0 +1,38 @@
+{
+  "day": 106,
+  "title": "Divided Kingdom — Day 1 — Hook",
+  "teaser": "Day 106 of Bible 365 — 1 Kings 12-16",
+  "framework": "1 Kings 12-16 — Divided Kingdom",
+  "scriptureReference": "1 Kings 12-16",
+  "chiastic_position": "hook",
+  "pardesLevel": "peshat",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "BIBLE 365 · DAY 106"
+    },
+    {
+      "number": 2,
+      "heading": "TODAY’S PASSAGE",
+      "type": "text",
+      "content": "**1 Kings 12-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 12-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
+      "wordCount": 50
+    },
+    {
+      "number": 3,
+      "heading": "WHY THIS PASSAGE",
+      "type": "text",
+      "content": "Today’s pivot: Divided Kingdom. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the divided heart (Eph 2:14).",
+      "wordCount": 45
+    },
+    {
+      "number": 4,
+      "heading": "A PRAYER",
+      "type": "text",
+      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
+      "wordCount": 40
+    }
+  ],
+  "isPlaceholder": true
+}

@@ -19,8 +19,11 @@ export interface SeriesRail {
   slugs: string[]
 }
 
-// Featured editorial spotlight (asymmetric grid: 1 large + 2 stacked)
+// Featured editorial spotlight (asymmetric grid: 1 large + 2 stacked).
+// Bible-365 leads — the year-long reading plan is the primary daily
+// devotional surface (per founder direction 2026-05-08).
 export const FEATURED_SERIES_SLUGS = [
+  'bible-365',
   'identity',
   'too-busy-for-god',
   'why-jesus',

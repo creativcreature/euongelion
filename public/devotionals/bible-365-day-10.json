@@ -1,0 +1,38 @@
+{
+  "day": 10,
+  "title": "The covenant rainbow",
+  "teaser": "Day 10 of Bible 365 — Genesis 8:20-9:17",
+  "framework": "Genesis 8:20-9:17 — God binds Himself by promise",
+  "scriptureReference": "Genesis 8:20-9:17",
+  "chiastic_position": "pivot",
+  "pardesLevel": "peshat",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "BIBLE 365 · DAY 10"
+    },
+    {
+      "number": 2,
+      "heading": "TODAY’S PASSAGE",
+      "type": "text",
+      "content": "**Genesis 8:20-9:17**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 8:20-9:17 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
+      "wordCount": 50
+    },
+    {
+      "number": 3,
+      "heading": "WHY THIS PASSAGE",
+      "type": "text",
+      "content": "Today’s pivot: God binds Himself by promise. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: The new covenant in His blood (Luke 22).",
+      "wordCount": 45
+    },
+    {
+      "number": 4,
+      "heading": "A PRAYER",
+      "type": "text",
+      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
+      "wordCount": 40
+    }
+  ],
+  "isPlaceholder": true
+}

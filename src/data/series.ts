@@ -1013,8 +1013,16 @@ export const NEW_SERIES_ORDER = [
   'what-is-christianity',
 ] as const
 
-// All 32 series combined (7 Wake-Up + 18 Substack + 7 new)
+// Bible-365 — the year-long canonical-chronological reading plan.
+// Imported from auto-generated bible-365.ts; merged into SERIES_DATA below
+// so all existing series-aware code (rendering, routing, JSON-LD) picks
+// it up automatically.
+import { BIBLE_365_SERIES } from './bible-365'
+SERIES_DATA['bible-365'] = BIBLE_365_SERIES
+
+// All series combined (7 Wake-Up + 18 Substack + 7 new + bible-365)
 export const ALL_SERIES_ORDER = [
+  'bible-365',
   ...WAKEUP_SERIES_ORDER,
   ...SUBSTACK_SERIES_ORDER,
   ...NEW_SERIES_ORDER,
@@ -1032,8 +1040,11 @@ export const DEVOTIONAL_SERIES = WAKEUP_SERIES_ORDER.map((slug, i) => ({
   isCenter: slug === 'kingdom',
 }))
 
-// Featured series for landing page (curated selection)
+// Featured series for landing page (curated selection).
+// Bible-365 is featured FIRST per founder direction (2026-05-08) — the
+// daily devotional surface flows from this plan.
 export const FEATURED_SERIES = [
+  'bible-365',
   'identity',
   'too-busy-for-god',
   'why-jesus',

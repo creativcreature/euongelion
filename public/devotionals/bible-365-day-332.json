@@ -1,0 +1,38 @@
+{
+  "day": 332,
+  "title": "Acts: Pentecost + Spread — Day 3 — Pivot",
+  "teaser": "Day 332 of Bible 365 — Acts 1-10",
+  "framework": "Acts 1-10 — Acts: Pentecost + Spread",
+  "scriptureReference": "Acts 1-10",
+  "chiastic_position": "pivot",
+  "pardesLevel": "peshat",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "BIBLE 365 · DAY 332"
+    },
+    {
+      "number": 2,
+      "heading": "TODAY’S PASSAGE",
+      "type": "text",
+      "content": "**Acts 1-10**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Acts 1-10 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
+      "wordCount": 50
+    },
+    {
+      "number": 3,
+      "heading": "WHY THIS PASSAGE",
+      "type": "text",
+      "content": "Today’s pivot: Acts: Pentecost + Spread. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit.",
+      "wordCount": 45
+    },
+    {
+      "number": 4,
+      "heading": "A PRAYER",
+      "type": "text",
+      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
+      "wordCount": 40
+    }
+  ],
+  "isPlaceholder": true
+}

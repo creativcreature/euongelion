@@ -1,0 +1,38 @@
+{
+  "day": 45,
+  "title": "Manna in the morning",
+  "teaser": "Day 45 of Bible 365 — Exodus 16",
+  "framework": "Exodus 16 — Daily dependence",
+  "scriptureReference": "Exodus 16",
+  "chiastic_position": "pivot",
+  "pardesLevel": "peshat",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "BIBLE 365 · DAY 45"
+    },
+    {
+      "number": 2,
+      "heading": "TODAY’S PASSAGE",
+      "type": "text",
+      "content": "**Exodus 16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus 16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
+      "wordCount": 50
+    },
+    {
+      "number": 3,
+      "heading": "WHY THIS PASSAGE",
+      "type": "text",
+      "content": "Today’s pivot: Daily dependence. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the bread of life (John 6:51).",
+      "wordCount": 45
+    },
+    {
+      "number": 4,
+      "heading": "A PRAYER",
+      "type": "text",
+      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
+      "wordCount": 40
+    }
+  ],
+  "isPlaceholder": true
+}

@@ -1,0 +1,38 @@
+{
+  "day": 60,
+  "title": "Balaam’s blessing",
+  "teaser": "Day 60 of Bible 365 — Numbers 22-24",
+  "framework": "Numbers 22-24 — God redirects curses",
+  "scriptureReference": "Numbers 22-24",
+  "chiastic_position": "application",
+  "pardesLevel": "peshat",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "BIBLE 365 · DAY 60"
+    },
+    {
+      "number": 2,
+      "heading": "TODAY’S PASSAGE",
+      "type": "text",
+      "content": "**Numbers 22-24**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Numbers 22-24 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
+      "wordCount": 50
+    },
+    {
+      "number": 3,
+      "heading": "WHY THIS PASSAGE",
+      "type": "text",
+      "content": "Today’s pivot: God redirects curses. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ became a curse for us (Gal 3:13).",
+      "wordCount": 45
+    },
+    {
+      "number": 4,
+      "heading": "A PRAYER",
+      "type": "text",
+      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
+      "wordCount": 40
+    }
+  ],
+  "isPlaceholder": true
+}

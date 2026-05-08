@@ -1,0 +1,38 @@
+{
+  "day": 58,
+  "title": "Korah’s rebellion",
+  "teaser": "Day 58 of Bible 365 — Numbers 16",
+  "framework": "Numbers 16 — Disputing God’s appointment",
+  "scriptureReference": "Numbers 16",
+  "chiastic_position": "building",
+  "pardesLevel": "peshat",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "BIBLE 365 · DAY 58"
+    },
+    {
+      "number": 2,
+      "heading": "TODAY’S PASSAGE",
+      "type": "text",
+      "content": "**Numbers 16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Numbers 16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
+      "wordCount": 50
+    },
+    {
+      "number": 3,
+      "heading": "WHY THIS PASSAGE",
+      "type": "text",
+      "content": "Today’s pivot: Disputing God’s appointment. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our true high priest (Heb 5).",
+      "wordCount": 45
+    },
+    {
+      "number": 4,
+      "heading": "A PRAYER",
+      "type": "text",
+      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
+      "wordCount": 40
+    }
+  ],
+  "isPlaceholder": true
+}

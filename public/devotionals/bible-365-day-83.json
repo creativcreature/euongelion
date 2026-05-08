@@ -1,0 +1,38 @@
+{
+  "day": 83,
+  "title": "David vs Goliath",
+  "teaser": "Day 83 of Bible 365 — 1 Samuel 17",
+  "framework": "1 Samuel 17 — Trust over armor",
+  "scriptureReference": "1 Samuel 17",
+  "chiastic_position": "deeper",
+  "pardesLevel": "peshat",
+  "panels": [
+    {
+      "number": 1,
+      "type": "cover",
+      "content": "BIBLE 365 · DAY 83"
+    },
+    {
+      "number": 2,
+      "heading": "TODAY’S PASSAGE",
+      "type": "text",
+      "content": "**1 Samuel 17**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Samuel 17 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
+      "wordCount": 50
+    },
+    {
+      "number": 3,
+      "heading": "WHY THIS PASSAGE",
+      "type": "text",
+      "content": "Today’s pivot: Trust over armor. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our greater David (Rev 19:11-16).",
+      "wordCount": 45
+    },
+    {
+      "number": 4,
+      "heading": "A PRAYER",
+      "type": "text",
+      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
+      "wordCount": 40
+    }
+  ],
+  "isPlaceholder": true
+}
