@@ -45,6 +45,12 @@ wakeup-mag/
 # Generated AI image batches (multi-GB, regenerated on demand)
 public/images/generated-*/
 
+# Image library staging tree (deduped from generated batches via
+# scripts/consolidate-image-library.mjs — staging, not served).
+# The catalog (docs/image-library-catalog-*.json) and index doc
+# (docs/image-library-index-*.md) ARE tracked.
+public/images/library/
+
 # Reference library (13GB — stored in Supabase Storage)
 content/reference/bibles/
 content/reference/commentaries/
