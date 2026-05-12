@@ -1,31 +1,10 @@
-import { promises as fs } from 'fs'
-import path from 'path'
 import type { Metadata } from 'next'
 import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
 import DevotionalPageClient from './DevotionalPageClient'
-import type { Devotional } from '@/types'
+import { getDevotionalTeaser } from '@/data/devotional-teasers'
 
-async function readDevotionalJson(slug: string): Promise<Devotional | null> {
-  try {
-    const file = path.join(
-      process.cwd(),
-      'public',
-      'devotionals',
-      `${slug}.json`,
-    )
-    const raw = await fs.readFile(file, 'utf-8')
-    return JSON.parse(raw) as Devotional
-  } catch {
-    return null
-  }
-}
-
-async function readDevotionalTeaser(slug: string): Promise<string | null> {
-  const data = await readDevotionalJson(slug)
-  if (!data) return null
-  const teaser = (data as unknown as { teaser?: unknown }).teaser
-  return typeof teaser === 'string' && teaser.trim().length > 0 ? teaser : null
-}
+// Audit T2 (HOMEPAGE-AUDIT-2026-05-11): build-time teaser index. See
+// the same comment in src/app/devotional/[slug]/page.tsx.
 
 export const revalidate = 3600
 
@@ -55,10 +34,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? day.title
     : `Day ${day.day}: ${day.title}`
 
-  // Use the day's teaser (from public/devotionals/[slug].json) for the
-  // description so each day in a series has its own meta description —
-  // series.question is identical across all days and Google dedupes it.
-  const dayTeaser = await readDevotionalTeaser(slug)
+  // Use the day's teaser (build-time index) for the description so
+  // each day in a series has its own meta description — series.question
+  // is identical across all days and Google dedupes it.
+  const dayTeaser = getDevotionalTeaser(slug)
   const description = dayTeaser ?? `${series.title} — ${series.question}`
 
   // Cross-canonical to the main /devotional/[slug] route per founder
@@ -96,13 +75,8 @@ export default async function DevotionalPage({ params }: Props) {
   const { slug } = await params
   const meta = findDevotionalMeta(slug)
 
-  // Audit C1 — server-side read so the prose ships in the SSR HTML.
-  const devotionalData = meta ? await readDevotionalJson(slug) : null
-  const dayTeaser = devotionalData
-    ? (((devotionalData as unknown as { teaser?: unknown }).teaser as
-        | string
-        | undefined) ?? null)
-    : null
+  // Audit T2 — build-time teaser index for JSON-LD Article description.
+  const dayTeaser = meta ? getDevotionalTeaser(slug) : null
 
   const jsonLd = meta
     ? [
