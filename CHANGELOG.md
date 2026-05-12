@@ -24,6 +24,32 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
+- T9 / T10 / T12 / T13 / T14 / T16: SEO + UX + AI-crawler pass
+  - T9: SIGN IN / SIGN UP buttons demoted to plain text links in the
+    nav (`src/app/globals.css`). The newspaper framing puts the
+    masthead first; account chrome no longer competes with it.
+  - T10: Devotional reading-complete button text changed from
+    "MARK COMPLETE" / "SAVE BOOKMARK" to "MARK READ" / "BOOKMARK".
+    Editorial language; ends the task-app vibe.
+  - T11 SKIPPED: devotional inline section labels are driven by
+    per-devotional JSON module.heading fields. 175 JSON rewrites
+    require founder content review; out of scope overnight.
+  - T12: `public/llms.txt` shipped with explicit AI-crawler guidance
+    and an opt-in stance for both indexing and training. Replaces
+    the previous SPA-404-with-noindex behavior.
+  - T13: `src/app/robots.ts` now emits per-AI-bot rules (GPTBot,
+    ClaudeBot, anthropic-ai, Google-Extended, CCBot, cohere-ai,
+    PerplexityBot, ChatGPT-User, Claude-Web) instead of a silent
+    allow-all wildcard. Stance remains opt-in.
+  - T14: "chiastic arc" jargon removed from the Wake-Up section
+    intro (`src/app/wake-up/page.tsx`). Replaced with "builds toward
+    a turning point, then reflects on what it means." The technical
+    term stays in the internal LLM composer prompt where the
+    chiastic structure is genuinely the contract.
+  - T16: `docs/decisions/TAGLINE-CANDIDATES-2026-05-11.md` saved
+    with five candidate replacements for "Daily Devotionals for the
+    Hungry Soul." No production tagline change made overnight —
+    awaits founder selection.
 - T3 / T4 / T5 / T6 / T7 / T8 / T15: Homepage editorial pass
   - Stable, screen-reader-only `<h1>` at the top of `<main>`; the daily
     devotional title demoted to `<h2>`. Anchors page identity in

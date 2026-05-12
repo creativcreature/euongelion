@@ -89,7 +89,7 @@ export default function WakeUpPage() {
           <h2 className="mock-title-center">Three steps.</h2>
           <p className="mock-subcopy-center">
             {typographer(
-              'Each series follows a chiastic arc\u2014building toward a revelation, then reflecting back. Ancient structure. Modern questions.',
+              'Each series builds toward a turning point, then reflects on what it means. Ancient structure. Modern questions.',
             )}
           </p>
         </section>

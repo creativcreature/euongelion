@@ -540,8 +540,8 @@ export default function DevotionalPageClient({
                   >
                     <p className="vw-small text-secondary">
                       {isCompleted
-                        ? 'Completed. Return anytime to read again.'
-                        : 'Finished reading? Mark this day complete.'}
+                        ? 'Finished. Return anytime to re-read.'
+                        : 'Finished reading? Mark this day read.'}
                     </p>
                     <div className="mt-4 flex flex-wrap items-center gap-3">
                       {!isCompleted && (
@@ -556,7 +556,7 @@ export default function DevotionalPageClient({
                             )
                           }}
                         >
-                          MARK COMPLETE
+                          MARK READ
                         </button>
                       )}
                       <button
@@ -564,7 +564,7 @@ export default function DevotionalPageClient({
                         className="text-label vw-small link-highlight"
                         onClick={() => void saveBookmark(devotional.title)}
                       >
-                        SAVE BOOKMARK
+                        BOOKMARK
                       </button>
                     </div>
                   </section>
