@@ -29,7 +29,13 @@ const HOMEPAGE_TODAY = {
   scripture: 'Mark 1:1, 3',
   teaser:
     'The beginning of the good news about Jesus the Messiah — a voice calling in the wilderness, “Prepare the way for the Lord.”',
-  heroSrc: '/images/site/homepage/hero/hero-gospel.webp',
+  // Audit Manus Conversion §7 (HOMEPAGE-AUDIT-2026-05-11): swap the
+  // previous hero (flagged as "barren / desolate / evokes the problem,
+  // not the solution") for the sunburst banner — evokes heaven/divine
+  // light without literal cloud imagery (which would read as
+  // wellness-app, not Christian newspaper). 1536x672, banner-format,
+  // dark-mode safe, sits full-width above the hero text block.
+  heroSrc: '/images/site/devotional/brand-sunburst-banner.webp',
 }
 
 const HOW_STEPS = [
@@ -292,7 +298,7 @@ export default function Home() {
               src={pickHomepageHero()}
               alt={`Illustration accompanying ${HOMEPAGE_TODAY.title}`}
               fill
-              sizes="(max-width: 900px) 100vw, 228px"
+              sizes="100vw"
               priority
             />
           </div>
@@ -335,7 +341,79 @@ export default function Home() {
           </p>
         </section>
 
-        {/* Soul Audit \u2014 moved BELOW the Bible-365 hero per redesign */}
+        {/* Audit Manus \u00a72 (HOMEPAGE-AUDIT-2026-05-11): show the whole
+            paper at a glance before asking the reader to do anything.
+            Wake-Up + Bible-365 + All Series mini-cards form the section
+            index of the publication. */}
+        <section
+          className="homepage-section-index"
+          aria-label="Sections of the paper"
+        >
+          <Link href="/wake-up" className="homepage-section-card">
+            <p className="text-label vw-small text-gold">WAKE-UP</p>
+            <p className="vw-body">
+              Seven questions for the searching. Five days each.
+            </p>
+            <p className="vw-small text-secondary">
+              For readers who arrive uncertain, skeptical, or numb.
+            </p>
+          </Link>
+          <Link href="/series/bible-365" className="homepage-section-card">
+            <p className="text-label vw-small text-gold">BIBLE 365</p>
+            <p className="vw-body">
+              A canonical-chronological plan you can join any day.
+            </p>
+            <p className="vw-small text-secondary">
+              No prior reading required. Hop in today; the thread holds.
+            </p>
+          </Link>
+          <Link href="/series" className="homepage-section-card">
+            <p className="text-label vw-small text-gold">ALL SERIES</p>
+            <p className="vw-body">
+              32 reading paths organized by what you&rsquo;re wrestling with.
+            </p>
+            <p className="vw-small text-secondary">
+              When you&rsquo;re hurting \u00b7 overwhelmed \u00b7 new to faith
+              \u00b7 going deeper.
+            </p>
+          </Link>
+        </section>
+
+        {/* Audit Manus \u00a72 \u2014 Zone 2 Featured Series rail moved UP so the
+            strongest headlines on the site (Identity Crisis, Too Busy
+            for God, Why Jesus?) sit above the Soul Audit / How-It-Works
+            block, not buried below it. */}
+        <SeriesRailSection
+          label="Featured Series"
+          subtitle="Plans for what people actually wrestle with."
+          slugs={featuredSlugs}
+          layout="rail"
+          cardVariant="large"
+        />
+
+        <section className="mock-more-row mock-series-more-row">
+          <Link href="/series" className="mock-btn text-label">
+            BROWSE EVERY PLAN
+          </Link>
+          <p className="mock-footnote">
+            No account required. Start immediately.
+          </p>
+        </section>
+
+        {/* Audit T6 \u2014 Editorial colophon trust strip. Now sits between
+            Zone 2 (Section Index + Featured Series) and Zone 3 (Soul
+            Audit + How-It-Works + FAQ). Editorial form, no metric
+            numbers, no SaaS testimonials. */}
+        <section className="homepage-trust-row" aria-label="What grounds this">
+          <p className="text-label">
+            ANCHORED IN THE APOSTLES&rsquo; AND NICENE CREEDS \u00b7 VOICES FROM
+            AUGUSTINE, \u00c0 KEMPIS, SPURGEON, TOZER, AND MORE
+          </p>
+        </section>
+
+        {/* Audit Manus \u00a72 \u2014 Zone 3 Invitation. Soul Audit moved BELOW
+            the Section Index per the audit's three-zone model. It's a
+            tool, not the headline. */}
         <section className="homepage-soul-audit" id="start-audit">
           <p className="text-label mock-kicker">SOUL AUDIT</p>
           <h2 className="mock-title mock-homepage-prompt-title">
@@ -431,17 +509,6 @@ export default function Home() {
           )}
         </section>
 
-        {/* Audit T6 — Editorial colophon trust strip. Surfaces the
-            theological grounding (creeds + historical voices) that
-            currently lives only on the About page. Editorial form, not
-            SaaS testimonials. No metric numbers. */}
-        <section className="homepage-trust-row" aria-label="What grounds this">
-          <p className="text-label">
-            ANCHORED IN THE APOSTLES&rsquo; AND NICENE CREEDS · VOICES FROM
-            AUGUSTINE, À KEMPIS, SPURGEON, TOZER, AND MORE
-          </p>
-        </section>
-
         <section className="mock-section-center">
           <p className="text-label mock-kicker">HERE&rsquo;S HOW IT WORKS</p>
           <h2 className="mock-title-center">
@@ -477,23 +544,6 @@ export default function Home() {
               </article>
             )
           })}
-        </section>
-
-        <SeriesRailSection
-          label="Featured Series"
-          subtitle="Plans for what people actually wrestle with."
-          slugs={featuredSlugs}
-          layout="rail"
-          cardVariant="large"
-        />
-
-        <section className="mock-more-row mock-series-more-row">
-          <Link href="/series" className="mock-btn text-label">
-            BROWSE EVERY PLAN
-          </Link>
-          <p className="mock-footnote">
-            No account required. Start immediately.
-          </p>
         </section>
 
         <section className="mock-faq-row">

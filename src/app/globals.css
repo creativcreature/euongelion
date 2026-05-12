@@ -55,32 +55,38 @@
   );
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
 }
+/* Audit (post-restructure 2026-05-12): hero is now a full-width
+   banner image above the text block, not a 228px side column. Image
+   is 1536x672 (~2.3:1). Aspect ratio preserved on desktop with a
+   max-height cap; mobile uses the same aspect ratio at full width. */
 .homepage-bible365-hero {
-  display: grid;
-  grid-template-columns: 228px minmax(0, 1fr);
+  display: block;
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
-  min-height: var(--mock-h-hero, 356px);
 }
 .homepage-bible365-hero-art {
   position: relative;
   overflow: hidden;
-  border-right: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
-  min-height: var(--mock-h-hero, 356px);
+  width: 100%;
+  aspect-ratio: 1536 / 672;
+  max-height: 420px;
   background: var(--mock-paper, white);
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
 }
 .dark .homepage-bible365-hero-art {
   background: var(--mock-ink, black);
 }
 .homepage-bible365-hero-art img {
-  object-fit: contain;
-  padding: 1.5rem;
+  object-fit: cover;
+  object-position: center;
   filter: contrast(1.05);
 }
 .homepage-bible365-hero-main {
-  padding: 1.4rem 1.6rem 1.4rem;
+  padding: 1.6rem 1.6rem 1.4rem;
   display: grid;
   align-content: start;
   gap: 0.6rem;
+  max-width: var(--mock-frame-max, 1860px);
+  margin: 0 auto;
 }
 .homepage-bible365-browse-link {
   display: inline-block;
@@ -119,14 +125,9 @@
   margin-top: 0.6rem;
 }
 @media (max-width: 760px) {
-  .homepage-bible365-hero {
-    grid-template-columns: 1fr;
-  }
   .homepage-bible365-hero-art {
-    min-height: 200px;
-    border-right: 0;
-    border-bottom: var(--mock-stroke, 1.5px) solid
-      var(--mock-line, currentColor);
+    aspect-ratio: 16 / 9;
+    max-height: 260px;
   }
 }
 
@@ -3886,6 +3887,50 @@ html.reduce-motion *::after {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+}
+
+/* Audit Manus §2 (HOMEPAGE-AUDIT-2026-05-11): homepage Section Index
+   strip. Three cards (Wake-Up / Bible 365 / All Series) that let a
+   first-time visitor see the whole paper at a glance before being
+   asked to do anything. */
+.homepage-section-index {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  padding: 0 var(--mock-pad-x, 0.95rem);
+  margin: 1.5rem auto 1.5rem;
+  max-width: 72rem;
+}
+@media (min-width: 720px) {
+  .homepage-section-index {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+.homepage-section-card {
+  display: block;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+.homepage-section-card:hover,
+.homepage-section-card:focus-visible {
+  border-color: var(--color-border-strong, var(--color-border));
+  transform: translateY(-1px);
+  background: var(--color-surface-raised, transparent);
+}
+.homepage-section-card p {
+  margin: 0;
+}
+.homepage-section-card p + p {
+  margin-top: 0.45rem;
 }
 
 /* Audit Manus §3 (HOMEPAGE-AUDIT-2026-05-11): editorial curation
