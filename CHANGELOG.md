@@ -24,6 +24,25 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
+- T3 / T4 / T5 / T6 / T7 / T8 / T15: Homepage editorial pass
+  - Stable, screen-reader-only `<h1>` at the top of `<main>`; the daily
+    devotional title demoted to `<h2>`. Anchors page identity in
+    search-engine indexing instead of letting it rotate with content.
+  - "TODAY" kicker dropped (rotation isn't built yet) — now reads
+    "FEATURED ·"; hero CTA changed from "READ TODAY'S DEVOTIONAL" to
+    "BEGIN THIS DEVOTIONAL".
+  - Copy rewrites per audit §6.2: trust signal row, Soul Audit
+    headline + subcopy + placeholder, sample pill #2, How-It-Works
+    kicker + heading + step bodies, Featured Series subtitle,
+    secondary CTA label, FAQ headings.
+  - Editorial colophon trust strip added between Soul Audit and
+    How-It-Works ("Anchored in the Apostles' and Nicene Creeds.
+    Voices from Augustine, à Kempis, Spurgeon, Tozer, and more.").
+  - Reset Audit button now renders only when `auditCount > 0`;
+    relabeled "Start a new audit".
+  - Real alt text on hero `<Image>` and step `<Image>` components.
+  - Organization JSON-LD added to the homepage `<script>` block
+    (sameAs intentionally empty until founder confirms socials).
 - T2: Devotional meta description uses the day's `teaser`
   - `src/app/devotional/[slug]/page.tsx`: read
     `public/devotionals/[slug].json` server-side in

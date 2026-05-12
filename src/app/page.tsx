@@ -21,7 +21,10 @@ import { ALL_SERIES_ORDER, FEATURED_SERIES } from '@/data/series'
 const HOMEPAGE_TODAY = {
   slug: 'what-is-the-gospel-day-1',
   series: 'what-is-the-gospel',
-  kicker: 'TODAY · WHAT IS THE GOSPEL? · DAY 1',
+  // Audit T4 (HOMEPAGE-AUDIT-2026-05-11): drop the "TODAY" kicker until
+  // daily rotation actually ships. Calling it FEATURED stops promising
+  // a daily heartbeat the product doesn't deliver yet.
+  kicker: 'FEATURED · WHAT IS THE GOSPEL? · DAY 1',
   title: 'A Voice in the Wilderness',
   scripture: 'Mark 1:1, 3',
   teaser:
@@ -37,12 +40,12 @@ const HOW_STEPS = [
   },
   {
     title: '2. Read it.',
-    body: 'Review three matched devotional paths and choose where to begin.',
+    body: 'See three plans matched to what you said. Choose one.',
     image: '/images/site/homepage/steps/step-2-read.webp',
   },
   {
-    title: '3. Now Walk It Out.',
-    body: 'Get your reference-grounded 7-day plan and take one faithful step each day.',
+    title: '3. Walk it out.',
+    body: 'Read your 7-day plan. Take one honest step a day.',
     image: '/images/site/homepage/steps/step-3-walk.webp',
   },
 ]
@@ -211,6 +214,21 @@ export default function Home() {
     },
   }
 
+  // Audit T15 — Organization schema gives Google + AI search a clean
+  // entity for "Euangelion." sameAs intentionally empty until the
+  // founder confirms canonical social handles.
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Euangelion',
+    url: 'https://euangelion.app',
+    logo: 'https://euangelion.app/icons/icon-512.png',
+    description:
+      'Daily bread for the cluttered, hungry soul. Ancient wisdom, modern design.',
+    sameAs: [] as string[],
+    foundingDate: '2026',
+  }
+
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -232,16 +250,29 @@ export default function Home() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <main id="main-content" className="mock-paper">
+        {/* Audit T3: stable, screen-reader-only H1 anchors page identity
+            for search engines. The visible H2 below is the daily devotional
+            title, which is a rotating field. */}
+        <h1 className="sr-only">
+          Euangelion — A daily newspaper of the Gospel
+        </h1>
         <EuangelionShellHeader />
 
         {/* TODAY hero \u2014 Bible-365 daily devotional surface (per founder
             redesign 2026-05-08 + BrandBrain "homepage daily devotional"
             spec). Active-plan resume banner takes precedence when present. */}
         {resumeRoute && (
-          <section className="homepage-resume-banner" aria-label="Your active devotional plan">
+          <section
+            className="homepage-resume-banner"
+            aria-label="Your active devotional plan"
+          >
             <p className="text-label mock-kicker">YOUR PLAN</p>
             <p className="mock-body">
               You have a devotional waiting. Pick up where you left off.
@@ -256,10 +287,10 @@ export default function Home() {
         )}
 
         <section className="homepage-bible365-hero" id="today-devotional">
-          <div className="homepage-bible365-hero-art" aria-hidden="true">
+          <div className="homepage-bible365-hero-art" aria-hidden="false">
             <Image
               src={pickHomepageHero()}
-              alt=""
+              alt={`Illustration accompanying ${HOMEPAGE_TODAY.title}`}
               fill
               sizes="(max-width: 900px) 100vw, 228px"
               priority
@@ -268,21 +299,24 @@ export default function Home() {
 
           <div className="homepage-bible365-hero-main">
             <p className="text-label mock-kicker">{HOMEPAGE_TODAY.kicker}</p>
-            <p className="text-label" style={{ opacity: 0.7, margin: '0 0 0.2rem' }}>
+            <p
+              className="text-label"
+              style={{ opacity: 0.7, margin: '0 0 0.2rem' }}
+            >
               {HOMEPAGE_TODAY.scripture}
             </p>
-            <h1 className="mock-title mock-homepage-prompt-title">
+            {/* Audit T3: demoted from H1 to H2. The stable H1 lives at
+                the top of <main> (screen-reader-only). */}
+            <h2 className="mock-title mock-homepage-prompt-title">
               {typographer(HOMEPAGE_TODAY.title)}
-            </h1>
-            <p className="mock-subcopy">
-              {typographer(HOMEPAGE_TODAY.teaser)}
-            </p>
+            </h2>
+            <p className="mock-subcopy">{typographer(HOMEPAGE_TODAY.teaser)}</p>
 
             <Link
               href={`/devotional/${HOMEPAGE_TODAY.slug}`}
               className="mock-btn mock-btn-inline text-label"
             >
-              READ TODAY&rsquo;S DEVOTIONAL
+              BEGIN THIS DEVOTIONAL
             </Link>
             <Link
               href="/series/bible-365"
@@ -296,7 +330,8 @@ export default function Home() {
         {/* Trust signal row */}
         <section className="homepage-trust-row" aria-label="Quick reassurance">
           <p className="text-label">
-            FREE \u00b7 NO ACCOUNT REQUIRED \u00b7 5\u20137 MIN DAILY \u00b7 365 DAYS \u00b7 HOP IN ANY DAY
+            FREE \u00b7 NO ACCOUNT \u00b7 5\u20137 MIN A DAY \u00b7 START ANY
+            DAY
           </p>
         </section>
 
@@ -304,11 +339,11 @@ export default function Home() {
         <section className="homepage-soul-audit" id="start-audit">
           <p className="text-label mock-kicker">SOUL AUDIT</p>
           <h2 className="mock-title mock-homepage-prompt-title">
-            Or, find a path tailored to where you are.
+            Or \u2014 start where you actually are.
           </h2>
           <p className="mock-subcopy">
             {typographer(
-              'Name what is real, and get matched to a focused devotional path for the season you are actually in.',
+              "Tell us what's actually going on. We'll match you to a 7-day path.",
             )}
           </p>
 
@@ -318,7 +353,7 @@ export default function Home() {
               setAuditText(e.target.value)
               setError(null)
             }}
-            placeholder="Write your paragraph here..."
+            placeholder="What's been weighing on you?"
             rows={3}
             disabled={isSubmitting}
             className="mock-textarea"
@@ -329,7 +364,7 @@ export default function Home() {
           <div className="homepage-prompt-pills">
             {[
               'I feel anxious about my future',
-              'I want to learn about the prophets',
+              'I\u2019m doubting everything I thought I believed',
               'I keep falling into the same sin',
               'I don\u2019t know what I believe',
             ].map((pill) => (
@@ -375,13 +410,15 @@ export default function Home() {
               All {MAX_AUDITS_PER_CYCLE} audits used. Reset to start fresh.
             </p>
           )}
-          <button
-            type="button"
-            className="mock-reset-btn text-label"
-            onClick={() => void handleResetAudit()}
-          >
-            Reset Audit
-          </button>
+          {hydrated && auditCount > 0 && (
+            <button
+              type="button"
+              className="mock-reset-btn text-label"
+              onClick={() => void handleResetAudit()}
+            >
+              Start a new audit
+            </button>
+          )}
           {error && <p className="mock-error">{error}</p>}
           {lastFailedSubmission && !isSubmitting && (
             <button
@@ -394,38 +431,57 @@ export default function Home() {
           )}
         </section>
 
+        {/* Audit T6 — Editorial colophon trust strip. Surfaces the
+            theological grounding (creeds + historical voices) that
+            currently lives only on the About page. Editorial form, not
+            SaaS testimonials. No metric numbers. */}
+        <section className="homepage-trust-row" aria-label="What grounds this">
+          <p className="text-label">
+            ANCHORED IN THE APOSTLES&rsquo; AND NICENE CREEDS · VOICES FROM
+            AUGUSTINE, À KEMPIS, SPURGEON, TOZER, AND MORE
+          </p>
+        </section>
+
         <section className="mock-section-center">
-          <p className="text-label mock-kicker">WHAT ARE YOU EVEN DOING?</p>
-          <h2 className="mock-title-center">How this works.</h2>
+          <p className="text-label mock-kicker">HERE&rsquo;S HOW IT WORKS</p>
+          <h2 className="mock-title-center">
+            Three steps. Five minutes a day.
+          </h2>
           <p className="mock-subcopy-center">
-            Simple flow. Honest input. Focused output that meets where you are.
+            Honest input. Focused output that meets where you are.
           </p>
         </section>
 
         <section className="mock-steps-grid">
-          {HOW_STEPS.map((step) => (
-            <article key={step.title} className="mock-step-card">
-              <div className="mock-step-image-wrap" aria-hidden="true">
-                <div className="mock-step-image">
-                  <Image
-                    src={step.image}
-                    alt=""
-                    fill
-                    sizes="(max-width: 900px) 100vw, 320px"
-                  />
+          {HOW_STEPS.map((step) => {
+            // Strip the leading "1. " from the title to produce a clean alt.
+            const altText = step.title
+              .replace(/^\d+\.\s*/, '')
+              .replace(/\.$/, '')
+            return (
+              <article key={step.title} className="mock-step-card">
+                <div className="mock-step-image-wrap">
+                  <div className="mock-step-image">
+                    <Image
+                      src={step.image}
+                      alt={altText}
+                      fill
+                      sizes="(max-width: 900px) 100vw, 320px"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="mock-step-copy">
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
-              </div>
-            </article>
-          ))}
+                <div className="mock-step-copy">
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
+                </div>
+              </article>
+            )
+          })}
         </section>
 
         <SeriesRailSection
           label="Featured Series"
-          subtitle="Curated reading paths for common spiritual seasons and questions."
+          subtitle="Plans for what people actually wrestle with."
           slugs={featuredSlugs}
           layout="rail"
           cardVariant="large"
@@ -433,7 +489,7 @@ export default function Home() {
 
         <section className="mock-more-row mock-series-more-row">
           <Link href="/series" className="mock-btn text-label">
-            MORE DEVOTIONALS
+            BROWSE EVERY PLAN
           </Link>
           <p className="mock-footnote">
             No account required. Start immediately.
@@ -443,14 +499,12 @@ export default function Home() {
         <section className="mock-faq-row">
           <article className="mock-faq-lead">
             <h3>
-              {isMobileViewport
-                ? 'Frequently asked questions.'
-                : 'Questions before you begin?'}
+              {isMobileViewport ? 'Before you begin.' : 'Before you begin.'}
             </h3>
             <p>
               {isMobileViewport
-                ? 'Everything you need to know before you start.'
-                : 'Honest answers, clear expectations, no pressure.'}
+                ? 'Honest answers, no pressure.'
+                : 'Honest answers, no pressure.'}
             </p>
           </article>
 
