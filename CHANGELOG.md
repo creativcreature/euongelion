@@ -24,6 +24,25 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
+- ROUND 3 (2026-05-12): Manus newspaper-audit follow-ups
+  - Wake-Up added to primary nav (EuangelionShellHeader.tsx).
+    Discoverable from every page; previously buried below homepage fold.
+  - Soul Audit page (/soul-audit) now explains what happens next + the
+    privacy commitment in a 3-sentence preface above the textarea.
+    Was asking for vulnerability with no context.
+  - SiteFooter rebalanced: mission + creedal/voices colophon lead;
+    Product + Company columns compressed from 4 to 2; legal links
+    demoted to a single quiet inline row. Removed "newsletter coming
+    soon" until ESP integration ships.
+  - Wake-Up page (/wake-up) adds a 2-card editorial curation row
+    above the 7-series grid: "Start here if you're new" (Identity
+    Crisis) + "Relevant to this season" (Peace). Removes the audit's
+    "all 7 series presented as equal options with no curation"
+    finding.
+  - C1 (full SSR for devotional prose) attempted again — same
+    `b.replace is not a function` crash on `too-busy-for-god-day-6`.
+    Reverted; deferred to paired debug.
+
 - T2 RUNTIME FIX (post-deploy, 2026-05-12):
   The first T2 implementation used `fs.readFile(public/devotionals/...)`
   which silently fails in the Cloudflare Workers runtime — public/\* is

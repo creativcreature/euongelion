@@ -49,9 +49,20 @@ export default function SoulAuditPage() {
             </FadeIn>
 
             <FadeIn delay={0.3} y={8}>
-              <p className="vw-body mb-12 text-center text-secondary type-prose">
+              <p className="vw-body mb-6 text-center text-secondary type-prose">
                 {typographer(
                   'You don\u2019t have to have it figured out. Just start writing.',
+                )}
+              </p>
+            </FadeIn>
+
+            {/* Audit Manus \u00a77 (HOMEPAGE-AUDIT-2026-05-11): explain what
+                happens next + privacy. Previously the Soul Audit page
+                asked for vulnerability without context. */}
+            <FadeIn delay={0.35} y={6}>
+              <p className="vw-small mb-12 text-center text-muted type-prose">
+                {typographer(
+                  'Write a few sentences. We\u2019ll match you to three reading paths from our library and tell you why each one fits. No account required. Your reflection is treated as therapy-intake-grade sensitive \u2014 private, never shared, never used to train AI.',
                 )}
               </p>
             </FadeIn>

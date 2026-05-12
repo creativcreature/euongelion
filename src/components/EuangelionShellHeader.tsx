@@ -5,8 +5,12 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import ActivePlanBadge from './ActivePlanBadge'
 
+// Audit Manus §3 (HOMEPAGE-AUDIT-2026-05-11): Wake-Up is the publication's
+// most accessible evangelistic entry point for the unchurched reader and
+// belongs in the primary nav. Was previously buried below the homepage fold.
 const NAV_ITEMS = [
   { href: '/', label: 'HOME' },
+  { href: '/wake-up', label: 'WAKE-UP' },
   { href: '/soul-audit', label: 'SOUL AUDIT' },
   { href: '/daily-bread', label: 'DAILY BREAD' },
   { href: '/series', label: 'SERIES' },

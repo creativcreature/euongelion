@@ -3884,8 +3884,72 @@ html.reduce-motion *::after {
 
 .mock-site-footer-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+}
+
+/* Audit Manus §3 (HOMEPAGE-AUDIT-2026-05-11): editorial curation
+   cards above the Wake-Up series grid. "Start here if you're new" +
+   "Relevant to this season." */
+.wakeup-curation-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0 var(--mock-pad-x, 0.95rem);
+  margin: 0 auto 2rem;
+  max-width: 60rem;
+}
+@media (min-width: 720px) {
+  .wakeup-curation-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.wakeup-curation-card {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1.25rem 1.4rem;
+  background: var(--color-surface-raised, transparent);
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+.wakeup-curation-card:hover {
+  border-color: var(--color-border-strong, var(--color-border));
+  transform: translateY(-1px);
+}
+
+/* Audit Manus §9 (HOMEPAGE-AUDIT-2026-05-11): mission line above the
+   columns, legal links demoted to a single quiet inline row. */
+.mock-site-footer-mission {
+  max-width: 56rem;
+  margin: 0 auto 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: var(--mock-stroke, 1px) solid
+    var(--mock-line, var(--color-border));
+  text-align: center;
+}
+.mock-site-footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.3rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+.mock-site-footer-legal a {
+  text-decoration: none;
+  opacity: 0.72;
+  transition: opacity 0.15s ease;
+}
+.mock-site-footer-legal a:hover,
+.mock-site-footer-legal a:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+@media (max-width: 600px) {
+  .mock-site-footer-legal {
+    justify-content: flex-start;
+  }
 }
 
 .mock-site-footer h2 {

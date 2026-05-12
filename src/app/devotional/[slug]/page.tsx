@@ -150,10 +150,11 @@ export default async function DevotionalPage({ params }: Props) {
           />
         ))}
       {/* NOTE: initialDevotional intentionally NOT passed. Audit C1 is
-          deferred to supervised work — passing the JSON through the
-          server/client boundary broke prerendering on one specific
-          devotional (too-busy-for-god-day-6) with a runtime error in
-          the production build. Needs paired investigation. */}
+          deferred — passing the JSON through the server/client boundary
+          broke prerendering on too-busy-for-god-day-6 with a runtime
+          "b.replace is not a function" error. Needs paired investigation
+          to pin down which deeply-nested object field the renderer
+          dereferences as a string. */}
       <DevotionalPageClient slug={slug} silo="euangelion" />
     </>
   )

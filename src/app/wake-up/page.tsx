@@ -126,6 +126,46 @@ export default function WakeUpPage() {
           </p>
         </section>
 
+        {/* Audit Manus §3 (HOMEPAGE-AUDIT-2026-05-11): the series grid
+            previously presented all 7 as equal options with no editorial
+            curation. Add a "Start here if you're new" recommendation
+            that surfaces the most accessible entry for a skeptical
+            reader. */}
+        <section className="wakeup-curation-row">
+          <article className="wakeup-curation-card">
+            <p className="text-label vw-small text-gold">
+              EDITOR’S PICK · START HERE IF YOU’RE NEW
+            </p>
+            <h3 className="vw-heading-sm mt-2">Identity Crisis</h3>
+            <p className="vw-small text-secondary mt-1">
+              When everything that defined you is shaken, who are you? A 5-day
+              path for the skeptical, the searching, and the spiritually numb.
+            </p>
+            <Link
+              href="/wake-up/series/identity"
+              className="text-label vw-small link-highlight mt-3 inline-block"
+            >
+              Start the path →
+            </Link>
+          </article>
+          <article className="wakeup-curation-card">
+            <p className="text-label vw-small text-gold">
+              RELEVANT TO THIS SEASON
+            </p>
+            <h3 className="vw-heading-sm mt-2">Peace</h3>
+            <p className="vw-small text-secondary mt-1">
+              What if peace isn’t found by controlling your circumstances? 5
+              days through Mark and the storm-stilled boat.
+            </p>
+            <Link
+              href="/wake-up/series/peace"
+              className="text-label vw-small link-highlight mt-3 inline-block"
+            >
+              Start the path →
+            </Link>
+          </article>
+        </section>
+
         <section className="mock-featured-grid mock-wakeup-series-grid">
           {WAKEUP_SERIES_ORDER.map((slug) => {
             const info = SERIES_DATA[slug]
