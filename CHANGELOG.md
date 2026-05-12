@@ -24,6 +24,19 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
+- ROUND 5 (2026-05-12): Hero image — Church "Twilight in the Wilderness"
+  Founder direction: heaven/clouds + header width, after rejecting
+  the shepherd's crook and sunburst-banner attempts ("there are
+  literally a bunch of headers"). Surveyed
+  archive/devotional-prints/ (643 entries) — found Frederic Edwin
+  Church, Twilight in the Wilderness (1860). Luminist painting with
+  a dramatic glowing sky, clouds, twilight horizon. Bonus:
+  thematically matches "A Voice in the Wilderness" daily title.
+  - Copied: archive/devotional-prints/church-twilight-wilderness/
+    print.webp -> public/images/site/homepage/hero/
+    church-twilight-wilderness.webp (1200x750, ~1.6:1, 254 KB)
+  - Also staged cole-mount-etna-sunrise.webp as a future alternate.
+  - aspect-ratio: 1536/672 -> 1200/750; max-height 420 -> 480px.
 - ROUND 4 (2026-05-12): Homepage restructure (founder: "the homepage needs to be addressed")
   - Hero image swapped from hero-gospel.webp (Conversion auditor:
     "barren / desolate / evokes the problem, not the solution") to

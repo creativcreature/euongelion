@@ -67,8 +67,9 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 1536 / 672;
-  max-height: 420px;
+  /* Matches the 1200x750 Church "Twilight in the Wilderness" hero. */
+  aspect-ratio: 1200 / 750;
+  max-height: 480px;
   background: var(--mock-paper, white);
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
 }

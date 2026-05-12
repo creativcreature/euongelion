@@ -29,13 +29,14 @@ const HOMEPAGE_TODAY = {
   scripture: 'Mark 1:1, 3',
   teaser:
     'The beginning of the good news about Jesus the Messiah — a voice calling in the wilderness, “Prepare the way for the Lord.”',
-  // Audit Manus Conversion §7 (HOMEPAGE-AUDIT-2026-05-11): swap the
-  // previous hero (flagged as "barren / desolate / evokes the problem,
-  // not the solution") for the sunburst banner — evokes heaven/divine
-  // light without literal cloud imagery (which would read as
-  // wellness-app, not Christian newspaper). 1536x672, banner-format,
-  // dark-mode safe, sits full-width above the hero text block.
-  heroSrc: '/images/site/devotional/brand-sunburst-banner.webp',
+  // Founder direction 2026-05-12: "use something like heaven or clouds
+  // for the image not the shepherd. needs to be header width."
+  // Frederic Edwin Church, "Twilight in the Wilderness" (1860) — a
+  // luminist painting of a dramatic, glowing sky over wilderness.
+  // Literal heaven/cloud imagery + classical art register (not stock
+  // photography). 1200x750, ~1.6:1 landscape, served full-width as
+  // the page header banner. Sourced from archive/devotional-prints/.
+  heroSrc: '/images/site/homepage/hero/church-twilight-wilderness.webp',
 }
 
 const HOW_STEPS = [
