@@ -24,6 +24,17 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
+- ROUND 8 (2026-05-12): Hero — uncropped, fully responsive
+  Founder direction: "do not crop the image. image should fit the
+  screen responsively." The prior CSS had:
+  - max-height: 460px (desktop) — cropped the image vertically at
+    wider viewports because object-fit:cover trimmed the top/bottom
+    when the container was shorter than the natural aspect height.
+  - aspect-ratio: 16/9 + max-height: 260px (mobile) — forced a
+    different aspect than the image, also cropping.
+    New behavior: container aspect-ratio 1584/672 at every breakpoint,
+    no max-height, object-fit: contain. The full image displays on any
+    screen size, scaled proportionally to viewport width.
 - ROUND 7 (2026-05-12): Hero image — the empty-tomb Riso (founder's pasted pick)
   Founder pasted the exact image and pointed at
   public/images/library/hero/Generated Image May 12, 2026 - 9_12AM.jpg.
