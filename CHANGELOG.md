@@ -24,6 +24,21 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
+- ROUND 6 (2026-05-12): Hero image — atmos-stormy-sea-ultrawide
+  Founder direction: "look for a literal header" + pointed me at
+  `public/images/generated-2026-05-04/hero/`. That dir exists on
+  main but didn't exist in the audit worktree — which is why I
+  missed it through rounds 1-5. The folder is literally named
+  `hero/` and contains banner-format AI-generated print artworks.
+  - Copied atmos-stormy-sea-ultrawide.png (2.1 MB) from the primary
+    checkout to public/images/site/homepage/hero/ and converted to
+    WebP @ q=85 (392 KB, 81% size cut).
+  - Image: 1536x672, halftone stormy sea + clouds + moon breaking
+    through. Literal hero asset, banner format, heaven/clouds
+    subject. Thematic pair with "A Voice in the Wilderness"
+    (Mark 4:35-41).
+  - .homepage-bible365-hero-art aspect-ratio: 1200/750 -> 1536/672;
+    max-height 480 -> 460px.
 - ROUND 5 (2026-05-12): Hero image — Church "Twilight in the Wilderness"
   Founder direction: heaven/clouds + header width, after rejecting
   the shepherd's crook and sunburst-banner attempts ("there are
