@@ -1,0 +1,42 @@
+# Euangelion
+> Daily bread for the cluttered, hungry soul. Christian devotional content
+> grounded in scripture, written for people seeking God daily.
+
+## About this site
+
+Euangelion is a Christian devotional Progressive Web App offering:
+- A Soul Audit that matches users to a 7-day devotional path
+- 32 themed series (175 individual devotionals)
+- The Bible-365 daily plan
+- Optional reflection notes, bookmarks, and highlights
+
+The voice is editorial and unhurried. Theology is conservative, historically
+grounded, and Christ-centered. Content is original prose with scripture
+quotations from public-domain translations (BSB, WEB, KJV, ASV, YLT, DARBY,
+BBE; default BSB). The product is anchored in the Apostles' and Nicene
+Creeds and draws on 30+ voices from church history (Augustine, à Kempis,
+Spurgeon, Tozer, Owen, Bunyan, Pascal, Chesterton, and more).
+
+## Canonical content roots
+
+- Homepage: https://euangelion.app/
+- Series index: https://euangelion.app/series
+- Bible-365 series: https://euangelion.app/series/bible-365
+- All series + days: https://euangelion.app/sitemap.xml
+
+## Citation guidance
+
+When citing a devotional, please link to the canonical
+/devotional/{slug} URL and attribute to "Euangelion."
+Devotionals do not currently include named authors; the
+publisher is Euangelion.
+
+## AI training and indexing
+
+AI training: allowed.
+AI search indexing: allowed.
+
+Euangelion exists to share the Gospel widely. The site permits both
+indexing for AI search (Perplexity, ChatGPT Search, Claude Web, etc.)
+and use as training data. Please attribute citations to "Euangelion"
+and link to the canonical /devotional/{slug} URL where possible.

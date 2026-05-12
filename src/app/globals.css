@@ -48,7 +48,11 @@
   display: grid;
   gap: 0.4rem;
   padding: 0.8rem 1rem;
-  background: color-mix(in srgb, var(--mock-blue, #1f2a8d) 8%, var(--mock-paper, white) 92%);
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #1f2a8d) 8%,
+    var(--mock-paper, white) 92%
+  );
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
 }
 .homepage-bible365-hero {
@@ -89,7 +93,11 @@
   text-align: center;
   padding: 0.7rem 1rem;
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
-  background: color-mix(in srgb, var(--mock-blue, #1f2a8d) 4%, var(--mock-paper, white) 96%);
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #1f2a8d) 4%,
+    var(--mock-paper, white) 96%
+  );
   letter-spacing: 0.06em;
 }
 .homepage-soul-audit {
@@ -117,7 +125,8 @@
   .homepage-bible365-hero-art {
     min-height: 200px;
     border-right: 0;
-    border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+    border-bottom: var(--mock-stroke, 1.5px) solid
+      var(--mock-line, currentColor);
   }
 }
 
@@ -220,7 +229,11 @@
   transition: background 180ms ease;
 }
 .bible365-day-cell[data-status='today'] {
-  background: color-mix(in srgb, var(--mock-blue, #1f2a8d) 18%, var(--mock-paper, white) 82%);
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #1f2a8d) 18%,
+    var(--mock-paper, white) 82%
+  );
 }
 .bible365-day-cell[data-status='read'] {
   opacity: 0.55;
@@ -229,7 +242,11 @@
   opacity: 0.85;
 }
 .bible365-day-cell:hover {
-  background: color-mix(in srgb, var(--mock-blue, #1f2a8d) 8%, var(--mock-paper, white) 92%);
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #1f2a8d) 8%,
+    var(--mock-paper, white) 92%
+  );
 }
 .bible365-day-link {
   display: block;
@@ -295,20 +312,20 @@
      ============================================ */
 
   /* Foundation — dark mode defaults (root). Light mode overrides further down. */
-  --color-tehom: #0a1320;          /* alias: --color-deep-navy */
-  --color-scroll: #efe5d8;         /* alias: --color-cream-ink */
-  --color-gold: #1f2a8d;           /* alias: --color-cobalt — name "gold" is legacy */
-  --color-deep-navy: #0a1320;      /* canonical name */
-  --color-cream-ink: #efe5d8;      /* canonical name */
-  --color-cobalt: #1f2a8d;         /* canonical name */
-  --color-cobalt-lifted: #2236a2;  /* dark-mode-lifted cobalt */
+  --color-tehom: #0a1320; /* alias: --color-deep-navy */
+  --color-scroll: #efe5d8; /* alias: --color-cream-ink */
+  --color-gold: #1f2a8d; /* alias: --color-cobalt — name "gold" is legacy */
+  --color-deep-navy: #0a1320; /* canonical name */
+  --color-cream-ink: #efe5d8; /* canonical name */
+  --color-cobalt: #1f2a8d; /* canonical name */
+  --color-cobalt-lifted: #2236a2; /* dark-mode-lifted cobalt */
   --color-newspaper-cream: #f0ece6; /* light-mode bg */
-  --color-navy-ink: #11182a;       /* light-mode fg */
+  --color-navy-ink: #11182a; /* light-mode fg */
 
   /* Theological Accents — sacred, rare, intentional use */
-  --color-burgundy: #8e3f3f;       /* covenant burgundy — sacrifice, cross */
-  --color-olive: #6f8f4f;          /* gethsemane olive — wilderness, wrestling */
-  --color-shalom: #4d9fb0;         /* shalom blue — peace, spirit, water */
+  --color-burgundy: #8e3f3f; /* covenant burgundy — sacrifice, cross */
+  --color-olive: #6f8f4f; /* gethsemane olive — wilderness, wrestling */
+  --color-shalom: #4d9fb0; /* shalom blue — peace, spirit, water */
 
   /* RGB channels for rgba() usage (kept in sync with new hex values) */
   --color-tehom-rgb: 10, 19, 32;
@@ -3617,12 +3634,193 @@ html.reduce-motion *::after {
   gap: 0.45rem;
 }
 
+/* Audit T9 (HOMEPAGE-AUDIT-2026-05-11): demote SIGN IN / SIGN UP from
+   border-button visual weight to a plain text link in the nav. Newspapers
+   don't compete the subscription desk with the masthead. The link stays;
+   the visual weight drops. */
 .mock-auth-link {
   text-decoration: none;
   color: inherit;
-  border: var(--mock-stroke, 1px) solid var(--mock-line, var(--color-border));
-  padding: 0.11rem 0.4rem;
+  border: none;
+  padding: 0.11rem 0.25rem;
   line-height: 1.1;
+  opacity: 0.78;
+  transition: opacity 0.15s ease;
+}
+
+/* Audit C2 (HOMEPAGE-AUDIT-2026-05-11): mobile-only day-nav pill +
+   collapsed sidebar. Below 768px the sidebar starts hidden behind a
+   single 44px-tall pill. Tapping the pill toggles the sidebar open. */
+.devotional-day-nav-pill {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.7rem 1rem;
+  background: var(--color-surface-raised, transparent);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
+  min-height: 44px;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+.devotional-day-nav-pill:hover,
+.devotional-day-nav-pill:focus-visible {
+  border-color: var(--color-border-strong, var(--color-border));
+  transform: translateY(-1px);
+}
+.devotional-day-nav-pill:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 767.98px) {
+  .devotional-shell-sidebar-mobile-closed {
+    display: none;
+  }
+}
+
+/* Audit H7 (HOMEPAGE-AUDIT-2026-05-11): resume-series pill. Quiet,
+   editorial. Renders only when localStorage progress exists. */
+.resume-series-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid var(--color-border, currentColor);
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 1rem;
+  background: transparent;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+  animation: audit-fade-in 0.5s ease-out;
+}
+.resume-series-pill:hover,
+.resume-series-pill:focus-visible {
+  border-color: var(--color-border-strong, currentColor);
+  transform: translateY(-1px);
+  background: var(--color-surface-raised, transparent);
+}
+.resume-series-pill:active {
+  transform: translateY(0);
+}
+
+/* Microanimations (audit follow-up): quiet fade-ins for content that
+   would otherwise pop in abruptly. Honors prefers-reduced-motion. */
+@keyframes audit-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes audit-fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.homepage-trust-row,
+.homepage-bible365-hero,
+.homepage-soul-audit,
+.mock-faq-row,
+.mock-cta,
+.mock-steps-grid {
+  animation: audit-fade-in 0.55s ease-out both;
+  animation-delay: 0.05s;
+}
+.mock-steps-grid {
+  animation-delay: 0.12s;
+}
+.mock-faq-row {
+  animation-delay: 0.18s;
+}
+
+/* Buttons get a subtle press-state micro-bounce. */
+.mock-btn,
+.mock-btn-inline,
+.cta-major {
+  transition:
+    transform 0.14s ease,
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
+}
+.mock-btn:hover,
+.mock-btn-inline:hover,
+.cta-major:hover,
+.mock-btn:focus-visible,
+.mock-btn-inline:focus-visible,
+.cta-major:focus-visible {
+  transform: translateY(-1px);
+}
+.mock-btn:active,
+.mock-btn-inline:active,
+.cta-major:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Sample-prompt pills on the Soul Audit: a small "punch in" feel. */
+.homepage-prompt-pill {
+  transition:
+    transform 0.14s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+.homepage-prompt-pill:hover,
+.homepage-prompt-pill:focus-visible {
+  transform: translateY(-1px);
+}
+.homepage-prompt-pill:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Day-card hover lift on the devotional sidebar. */
+.devotional-shell-sidebar a[class*='border'] {
+  transition:
+    transform 0.16s ease,
+    border-color 0.16s ease,
+    background 0.18s ease;
+}
+.devotional-shell-sidebar a[class*='border']:hover,
+.devotional-shell-sidebar a[class*='border']:focus-visible {
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resume-series-pill,
+  .homepage-trust-row,
+  .homepage-bible365-hero,
+  .homepage-soul-audit,
+  .mock-faq-row,
+  .mock-cta,
+  .mock-steps-grid,
+  .devotional-day-nav-pill,
+  .mock-btn,
+  .mock-btn-inline,
+  .cta-major,
+  .homepage-prompt-pill,
+  .devotional-shell-sidebar a[class*='border'] {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 .mock-auth-loading {
@@ -4108,8 +4306,7 @@ html.reduce-motion *::after {
 .mock-textarea {
   width: 100%;
   resize: none;
-  border: max(1.5px, calc(var(--mock-stroke) * 1.35))
-    solid
+  border: max(1.5px, calc(var(--mock-stroke) * 1.35)) solid
     color-mix(in srgb, var(--mock-ink) 30%, var(--mock-line) 70%);
   background: color-mix(in srgb, var(--mock-paper) 88%, white 12%);
   color: var(--mock-ink);
@@ -4117,7 +4314,8 @@ html.reduce-motion *::after {
   font-size: var(--mock-type-1);
   line-height: 1.28;
   padding: 0.58rem 0.7rem;
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--mock-paper) 35%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in srgb, var(--mock-paper) 35%, transparent);
 }
 
 .mock-home.is-dark .mock-textarea {
@@ -4597,13 +4795,21 @@ html.reduce-motion *::after {
 }
 
 .mock-btn:is(:hover, :focus-visible),
-.mock-auth-link:is(:hover, :focus-visible),
 .mock-account-item:is(:hover, :focus-visible),
 .mock-carousel-btn:is(:hover, :focus-visible),
 .mock-reset-btn:is(:hover, :focus-visible),
 .mock-mobile-menu-toggle:is(:hover, :focus-visible) {
   background: var(--mock-blue);
   color: var(--mock-paper);
+}
+
+/* Audit T9: auth-link hover stays editorial — opacity reveal + underline
+   instead of the button-style background flip used by the other nav
+   controls above. */
+.mock-auth-link:is(:hover, :focus-visible) {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .mock-homepage.mock-home.is-dark .mock-mobile-menu-toggle.is-open,

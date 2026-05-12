@@ -5,6 +5,115 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## AUDIT-FIXES-2026-05-11 / 16 audit punch-list items shipped (2026-05-11)
+
+Consolidated sitewide audit (`docs/audits/HOMEPAGE-AUDIT-2026-05-11.md`)
+reconciled four independent audits (Claude technical, Manus Living
+Newspaper, Manus Conversion). This batch ships the S/M-effort items from
+the top-15 punch list. L-effort items (devotional SSR rewrite, email
+capture, data backfills) deferred to supervised pairing.
+
+PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
+
+- T1: Fix `Day N: Day N` title-tag duplication
+  - `src/app/devotional/[slug]/page.tsx`: detect bare-Day-N placeholder
+    in `meta.day.title` so we no longer render "Day 5: Day 5 |
+    Euangelion" as the browser tab title. Applied to `<title>`,
+    `og:title`, JSON-LD Article headline, and BreadcrumbList trailing
+    crumb.
+  - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
+    cross-canonical wake-up route.
+
+- ROUND 2 (founder: "fix everything + microanimations + fully deploy"):
+  C2, H7, #14, microanimations, C1 plumbing.
+  - C2: Mobile day-nav fix. `DevotionalPageClient` adds a 44px
+    "DAY N OF M · See all days" pill above the content on mobile; the
+    sidebar collapses behind it. The LIBRARY block (app-wide nav)
+    becomes desktop-only. Founder's original complaint — content was
+    pushed 376-536px below the mobile fold — is resolved.
+  - H7: new `src/components/ResumeSeriesPill.tsx` reads
+    `useProgressStore` and renders a "CONTINUE · DAY N OF M ·
+    {Series} →" pill on series-detail pages when the reader has
+    started but not finished. Returning users now see a re-entry cue
+    outside the homepage.
+  - #14: `src/components/daily-bread/EmptyState.tsx` rewritten to
+    lead with today's Bible-365 reading + a "READ TODAY'S EDITION"
+    primary CTA. Personalized-plan path demoted to a secondary
+    section below a divider. New readers are no longer told to do
+    something else first.
+  - C1 (SSR for devotionals): plumbing wired but pass-through OFF.
+    `DevotionalPageClient` accepts an `initialDevotional` prop;
+    both server wrappers read the JSON server-side. Forwarding the
+    JSON through the boundary broke prerender on
+    `too-busy-for-god-day-6` with `b.replace is not a function` — so
+    pass-through is left OFF pending paired investigation. The
+    server-side teaser read for meta description is unaffected and
+    still ships.
+  - Microanimations: `globals.css` adds `audit-fade-in` keyframe
+    applied to homepage hero / trust row / Soul Audit / How-It-Works
+    / FAQ / CTA; press-state micro-bounce on .mock-btn variants;
+    hover-lift on devotional sidebar day cards; resume pill +
+    day-nav pill have hover/active transitions. All animations
+    respect `prefers-reduced-motion: reduce`.
+- T9 / T10 / T12 / T13 / T14 / T16: SEO + UX + AI-crawler pass
+  - T9: SIGN IN / SIGN UP buttons demoted to plain text links in the
+    nav (`src/app/globals.css`). The newspaper framing puts the
+    masthead first; account chrome no longer competes with it.
+  - T10: Devotional reading-complete button text changed from
+    "MARK COMPLETE" / "SAVE BOOKMARK" to "MARK READ" / "BOOKMARK".
+    Editorial language; ends the task-app vibe.
+  - T11 SKIPPED: devotional inline section labels are driven by
+    per-devotional JSON module.heading fields. 175 JSON rewrites
+    require founder content review; out of scope overnight.
+  - T12: `public/llms.txt` shipped with explicit AI-crawler guidance
+    and an opt-in stance for both indexing and training. Replaces
+    the previous SPA-404-with-noindex behavior.
+  - T13: `src/app/robots.ts` now emits per-AI-bot rules (GPTBot,
+    ClaudeBot, anthropic-ai, Google-Extended, CCBot, cohere-ai,
+    PerplexityBot, ChatGPT-User, Claude-Web) instead of a silent
+    allow-all wildcard. Stance remains opt-in.
+  - T14: "chiastic arc" jargon removed from the Wake-Up section
+    intro (`src/app/wake-up/page.tsx`). Replaced with "builds toward
+    a turning point, then reflects on what it means." The technical
+    term stays in the internal LLM composer prompt where the
+    chiastic structure is genuinely the contract.
+  - T16: `docs/decisions/TAGLINE-CANDIDATES-2026-05-11.md` saved
+    with five candidate replacements for "Daily Devotionals for the
+    Hungry Soul." No production tagline change made overnight —
+    awaits founder selection.
+- T3 / T4 / T5 / T6 / T7 / T8 / T15: Homepage editorial pass
+  - Stable, screen-reader-only `<h1>` at the top of `<main>`; the daily
+    devotional title demoted to `<h2>`. Anchors page identity in
+    search-engine indexing instead of letting it rotate with content.
+  - "TODAY" kicker dropped (rotation isn't built yet) — now reads
+    "FEATURED ·"; hero CTA changed from "READ TODAY'S DEVOTIONAL" to
+    "BEGIN THIS DEVOTIONAL".
+  - Copy rewrites per audit §6.2: trust signal row, Soul Audit
+    headline + subcopy + placeholder, sample pill #2, How-It-Works
+    kicker + heading + step bodies, Featured Series subtitle,
+    secondary CTA label, FAQ headings.
+  - Editorial colophon trust strip added between Soul Audit and
+    How-It-Works ("Anchored in the Apostles' and Nicene Creeds.
+    Voices from Augustine, à Kempis, Spurgeon, Tozer, and more.").
+  - Reset Audit button now renders only when `auditCount > 0`;
+    relabeled "Start a new audit".
+  - Real alt text on hero `<Image>` and step `<Image>` components.
+  - Organization JSON-LD added to the homepage `<script>` block
+    (sameAs intentionally empty until founder confirms socials).
+- T2: Devotional meta description uses the day's `teaser`
+  - `src/app/devotional/[slug]/page.tsx`: read
+    `public/devotionals/[slug].json` server-side in
+    `generateMetadata`, prefer the day's `teaser` field over the
+    series-level `question`. Series questions are identical across
+    all days in a series; Google deduplicates them. Teasers are
+    unique per day. Same fix applied to the JSON-LD Article
+    description.
+  - `src/app/wake-up/devotional/[slug]/page.tsx`: same.
+
+(Remaining tasks T3–T16 ship in subsequent commits on this branch.)
+
+---
+
 ## MORNING-2026-05-07 / Phase 5 async runtime scaffolding (2026-05-07)
 
 Bindings + types + Durable Object class + queue producer + runbook

@@ -1,6 +1,31 @@
+import { promises as fs } from 'fs'
+import path from 'path'
 import type { Metadata } from 'next'
 import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
 import DevotionalPageClient from './DevotionalPageClient'
+import type { Devotional } from '@/types'
+
+async function readDevotionalJson(slug: string): Promise<Devotional | null> {
+  try {
+    const file = path.join(
+      process.cwd(),
+      'public',
+      'devotionals',
+      `${slug}.json`,
+    )
+    const raw = await fs.readFile(file, 'utf-8')
+    return JSON.parse(raw) as Devotional
+  } catch {
+    return null
+  }
+}
+
+async function readDevotionalTeaser(slug: string): Promise<string | null> {
+  const data = await readDevotionalJson(slug)
+  if (!data) return null
+  const teaser = (data as unknown as { teaser?: unknown }).teaser
+  return typeof teaser === 'string' && teaser.trim().length > 0 ? teaser : null
+}
 
 export const revalidate = 3600
 
@@ -24,20 +49,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const { series, day } = meta
 
+  // Many series in src/data/series.ts use a bare `Day N` title placeholder.
+  // Detect the redundancy so we don't render "Day 5: Day 5 | Euangelion".
+  const dayTitle = /^day\s+\d+$/i.test(day.title.trim())
+    ? day.title
+    : `Day ${day.day}: ${day.title}`
+
+  // Use the day's teaser (from public/devotionals/[slug].json) for the
+  // description so each day in a series has its own meta description —
+  // series.question is identical across all days and Google dedupes it.
+  const dayTeaser = await readDevotionalTeaser(slug)
+  const description = dayTeaser ?? `${series.title} — ${series.question}`
+
   // Cross-canonical to the main /devotional/[slug] route per founder
   // direction 2026-05-07: /devotional is the canonical surface so SEO
   // ranking accrues there. Wake-Up stays as a sibling product
   // (separate funnel + RSS feed) but its devotional URLs send Google
   // to the main brand surface.
   return {
-    title: `Day ${day.day}: ${day.title}`,
-    description: `${series.title} — ${series.question}`,
+    title: dayTitle,
+    description,
     alternates: {
       canonical: `/devotional/${slug}`,
     },
     openGraph: {
-      title: `Day ${day.day}: ${day.title} | ${series.title}`,
-      description: series.question,
+      title: `${dayTitle} | ${series.title}`,
+      description,
       type: 'article',
       url: `https://euangelion.app/devotional/${slug}`,
     },
@@ -59,13 +96,22 @@ export default async function DevotionalPage({ params }: Props) {
   const { slug } = await params
   const meta = findDevotionalMeta(slug)
 
+  // Audit C1 — server-side read so the prose ships in the SSR HTML.
+  const devotionalData = meta ? await readDevotionalJson(slug) : null
+  const dayTeaser = devotionalData
+    ? (((devotionalData as unknown as { teaser?: unknown }).teaser as
+        | string
+        | undefined) ?? null)
+    : null
+
   const jsonLd = meta
     ? [
         {
           '@context': 'https://schema.org',
           '@type': 'Article',
           headline: `Day ${meta.day.day}: ${meta.day.title}`,
-          description: `${meta.series.title} — ${meta.series.question}`,
+          description:
+            dayTeaser ?? `${meta.series.title} — ${meta.series.question}`,
           publisher: {
             '@type': 'Organization',
             name: 'Euangelion',
@@ -118,6 +164,8 @@ export default async function DevotionalPage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
         ))}
+      {/* Audit C1 deferred — see /devotional/[slug]/page.tsx for the
+          comment. initialDevotional pass-through broke prerendering. */}
       <DevotionalPageClient slug={slug} />
     </>
   )
