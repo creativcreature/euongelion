@@ -24,6 +24,37 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
+- ROUND 2 (founder: "fix everything + microanimations + fully deploy"):
+  C2, H7, #14, microanimations, C1 plumbing.
+  - C2: Mobile day-nav fix. `DevotionalPageClient` adds a 44px
+    "DAY N OF M · See all days" pill above the content on mobile; the
+    sidebar collapses behind it. The LIBRARY block (app-wide nav)
+    becomes desktop-only. Founder's original complaint — content was
+    pushed 376-536px below the mobile fold — is resolved.
+  - H7: new `src/components/ResumeSeriesPill.tsx` reads
+    `useProgressStore` and renders a "CONTINUE · DAY N OF M ·
+    {Series} →" pill on series-detail pages when the reader has
+    started but not finished. Returning users now see a re-entry cue
+    outside the homepage.
+  - #14: `src/components/daily-bread/EmptyState.tsx` rewritten to
+    lead with today's Bible-365 reading + a "READ TODAY'S EDITION"
+    primary CTA. Personalized-plan path demoted to a secondary
+    section below a divider. New readers are no longer told to do
+    something else first.
+  - C1 (SSR for devotionals): plumbing wired but pass-through OFF.
+    `DevotionalPageClient` accepts an `initialDevotional` prop;
+    both server wrappers read the JSON server-side. Forwarding the
+    JSON through the boundary broke prerender on
+    `too-busy-for-god-day-6` with `b.replace is not a function` — so
+    pass-through is left OFF pending paired investigation. The
+    server-side teaser read for meta description is unaffected and
+    still ships.
+  - Microanimations: `globals.css` adds `audit-fade-in` keyframe
+    applied to homepage hero / trust row / Soul Audit / How-It-Works
+    / FAQ / CTA; press-state micro-bounce on .mock-btn variants;
+    hover-lift on devotional sidebar day cards; resume pill +
+    day-nav pill have hover/active transitions. All animations
+    respect `prefers-reduced-motion: reduce`.
 - T9 / T10 / T12 / T13 / T14 / T16: SEO + UX + AI-crawler pass
   - T9: SIGN IN / SIGN UP buttons demoted to plain text links in the
     nav (`src/app/globals.css`). The newspaper framing puts the

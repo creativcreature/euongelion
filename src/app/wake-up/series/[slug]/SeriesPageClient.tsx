@@ -6,6 +6,7 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButton from '@/components/ShareButton'
 import SiteFooter from '@/components/SiteFooter'
+import ResumeSeriesPill from '@/components/ResumeSeriesPill'
 import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
 import { SERIES_HERO } from '@/data/artwork-manifest'
@@ -59,6 +60,11 @@ export default function SeriesPageClient({
             { label: series.title.toUpperCase() },
           ]}
         />
+
+        {/* Audit H7: surface the resume cue for returning users. */}
+        <div className="mock-breadcrumb-row">
+          <ResumeSeriesPill seriesSlug={slug} />
+        </div>
 
         <section className="mock-series-hero-grid">
           <article className="mock-panel mock-series-copy">

@@ -3,8 +3,9 @@ import path from 'path'
 import type { Metadata } from 'next'
 import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
 import DevotionalPageClient from './DevotionalPageClient'
+import type { Devotional } from '@/types'
 
-async function readDevotionalTeaser(slug: string): Promise<string | null> {
+async function readDevotionalJson(slug: string): Promise<Devotional | null> {
   try {
     const file = path.join(
       process.cwd(),
@@ -13,13 +14,17 @@ async function readDevotionalTeaser(slug: string): Promise<string | null> {
       `${slug}.json`,
     )
     const raw = await fs.readFile(file, 'utf-8')
-    const data = JSON.parse(raw) as { teaser?: unknown }
-    return typeof data.teaser === 'string' && data.teaser.trim().length > 0
-      ? data.teaser
-      : null
+    return JSON.parse(raw) as Devotional
   } catch {
     return null
   }
+}
+
+async function readDevotionalTeaser(slug: string): Promise<string | null> {
+  const data = await readDevotionalJson(slug)
+  if (!data) return null
+  const teaser = (data as unknown as { teaser?: unknown }).teaser
+  return typeof teaser === 'string' && teaser.trim().length > 0 ? teaser : null
 }
 
 export const revalidate = 3600
@@ -91,13 +96,22 @@ export default async function DevotionalPage({ params }: Props) {
   const { slug } = await params
   const meta = findDevotionalMeta(slug)
 
+  // Audit C1 — server-side read so the prose ships in the SSR HTML.
+  const devotionalData = meta ? await readDevotionalJson(slug) : null
+  const dayTeaser = devotionalData
+    ? (((devotionalData as unknown as { teaser?: unknown }).teaser as
+        | string
+        | undefined) ?? null)
+    : null
+
   const jsonLd = meta
     ? [
         {
           '@context': 'https://schema.org',
           '@type': 'Article',
           headline: `Day ${meta.day.day}: ${meta.day.title}`,
-          description: `${meta.series.title} — ${meta.series.question}`,
+          description:
+            dayTeaser ?? `${meta.series.title} — ${meta.series.question}`,
           publisher: {
             '@type': 'Organization',
             name: 'Euangelion',
@@ -150,6 +164,8 @@ export default async function DevotionalPage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
         ))}
+      {/* Audit C1 deferred — see /devotional/[slug]/page.tsx for the
+          comment. initialDevotional pass-through broke prerendering. */}
       <DevotionalPageClient slug={slug} />
     </>
   )

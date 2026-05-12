@@ -3,8 +3,9 @@ import path from 'path'
 import type { Metadata } from 'next'
 import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
 import DevotionalPageClient from '@/app/wake-up/devotional/[slug]/DevotionalPageClient'
+import type { Devotional } from '@/types'
 
-async function readDevotionalTeaser(slug: string): Promise<string | null> {
+async function readDevotionalJson(slug: string): Promise<Devotional | null> {
   try {
     const file = path.join(
       process.cwd(),
@@ -13,13 +14,17 @@ async function readDevotionalTeaser(slug: string): Promise<string | null> {
       `${slug}.json`,
     )
     const raw = await fs.readFile(file, 'utf-8')
-    const data = JSON.parse(raw) as { teaser?: unknown }
-    return typeof data.teaser === 'string' && data.teaser.trim().length > 0
-      ? data.teaser
-      : null
+    return JSON.parse(raw) as Devotional
   } catch {
     return null
   }
+}
+
+async function readDevotionalTeaser(slug: string): Promise<string | null> {
+  const data = await readDevotionalJson(slug)
+  if (!data) return null
+  const teaser = (data as unknown as { teaser?: unknown }).teaser
+  return typeof teaser === 'string' && teaser.trim().length > 0 ? teaser : null
 }
 
 export const revalidate = 3600
@@ -97,7 +102,14 @@ export default async function DevotionalPage({ params }: Props) {
       : `Day ${meta.day.day}: ${meta.day.title}`
     : ''
 
-  const dayTeaser = meta ? await readDevotionalTeaser(slug) : null
+  // Audit C1 — read the devotional JSON at request time so the prose
+  // ships in the server-rendered HTML for crawlers + AI search.
+  const devotionalData = meta ? await readDevotionalJson(slug) : null
+  const dayTeaser = devotionalData
+    ? (((devotionalData as unknown as { teaser?: unknown }).teaser as
+        | string
+        | undefined) ?? null)
+    : null
   const articleDescription = meta
     ? (dayTeaser ?? `${meta.series.title} — ${meta.series.question}`)
     : ''
@@ -161,6 +173,11 @@ export default async function DevotionalPage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
         ))}
+      {/* NOTE: initialDevotional intentionally NOT passed. Audit C1 is
+          deferred to supervised work — passing the JSON through the
+          server/client boundary broke prerendering on one specific
+          devotional (too-busy-for-god-day-6) with a runtime error in
+          the production build. Needs paired investigation. */}
       <DevotionalPageClient slug={slug} silo="euangelion" />
     </>
   )

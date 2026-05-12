@@ -47,13 +47,26 @@ function getDayIndexFromSlug(slug: string): number {
 export default function DevotionalPageClient({
   slug,
   silo = 'wake',
+  initialDevotional = null,
 }: {
   slug: string
   silo?: 'wake' | 'euangelion'
+  // Audit C1 (HOMEPAGE-AUDIT-2026-05-11): plumbing for SSR is in place
+  // but the server wrappers do NOT currently pass initialDevotional —
+  // doing so broke prerender on too-busy-for-god-day-6 with a runtime
+  // serialization error. Left as a typed entry point so the supervised
+  // pairing work can finish wiring it without re-touching the prop API.
+  initialDevotional?: Devotional | null
 }) {
-  const [devotional, setDevotional] = useState<Devotional | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [devotional, setDevotional] = useState<Devotional | null>(
+    initialDevotional,
+  )
+  const [loading, setLoading] = useState(initialDevotional === null)
   const [isCompleted, setIsCompleted] = useState(false)
+  // Audit C2 (HOMEPAGE-AUDIT-2026-05-11): on mobile, the day-nav + library
+  // sidebar pushed content ~500-1300px below the fold. Collapse it behind
+  // a single pill. Desktop ignores this state (CSS forces it visible).
+  const [isDayNavOpenMobile, setIsDayNavOpenMobile] = useState(false)
 
   const router = useRouter()
   const { isRead, markComplete, canRead } = useProgress()
@@ -140,6 +153,16 @@ export default function DevotionalPageClient({
   }, [isRead, slug])
 
   useEffect(() => {
+    // Audit C1: skip the client fetch when SSR already gave us the data.
+    // Still kick off the seriesStarted lifecycle so progress tracking works.
+    if (devotional !== null) {
+      if (seriesSlug) {
+        startSeries(seriesSlug)
+        zustandStartSeries(seriesSlug)
+      }
+      return
+    }
+
     let cancelled = false
     async function loadDevotional() {
       try {
@@ -165,6 +188,7 @@ export default function DevotionalPageClient({
     return () => {
       cancelled = true
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug, seriesSlug, zustandStartSeries])
 
   async function saveBookmark(title: string) {
@@ -329,8 +353,31 @@ export default function DevotionalPageClient({
             </div>
           </header>
 
+          {/* Audit C2: Mobile-only day-nav pill. Renders only below md:
+              where the sidebar would otherwise push the content below
+              the fold. Tapping it expands the existing sidebar markup. */}
+          {seriesDays && seriesDays.length > 0 && (
+            <button
+              type="button"
+              className="devotional-day-nav-pill md:hidden"
+              aria-expanded={isDayNavOpenMobile}
+              aria-controls="devotional-day-nav-mobile"
+              onClick={() => setIsDayNavOpenMobile((v) => !v)}
+            >
+              <span className="text-label vw-small text-gold">
+                DAY {currentDayNum} OF {totalDays}
+              </span>
+              <span className="vw-small text-secondary">
+                {isDayNavOpenMobile ? 'Hide series index ▴' : 'See all days ▾'}
+              </span>
+            </button>
+          )}
+
           <section className="devotional-shell-grid md:grid md:grid-cols-[260px_minmax(0,1fr)] md:gap-8">
-            <aside className="devotional-shell-sidebar-wrap mb-6 md:mb-0">
+            <aside
+              id="devotional-day-nav-mobile"
+              className={`devotional-shell-sidebar-wrap mb-6 md:mb-0 ${isDayNavOpenMobile ? '' : 'devotional-shell-sidebar-mobile-closed'}`}
+            >
               <div
                 className="devotional-shell-sidebar shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
                 style={{ borderColor: 'var(--color-border)' }}
@@ -408,8 +455,11 @@ export default function DevotionalPageClient({
                   </div>
                 )}
 
+                {/* Audit C2: LIBRARY is app-wide nav, not reading chrome.
+                    Hide on mobile entirely (it pushed content well below
+                    the fold). Keep visible on desktop. */}
                 <div
-                  className="border-t pt-4"
+                  className="hidden border-t pt-4 md:block"
                   style={{ borderColor: 'var(--color-border)' }}
                 >
                   <p className="text-label vw-small mb-3 text-gold">LIBRARY</p>

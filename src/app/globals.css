@@ -3648,6 +3648,181 @@ html.reduce-motion *::after {
   transition: opacity 0.15s ease;
 }
 
+/* Audit C2 (HOMEPAGE-AUDIT-2026-05-11): mobile-only day-nav pill +
+   collapsed sidebar. Below 768px the sidebar starts hidden behind a
+   single 44px-tall pill. Tapping the pill toggles the sidebar open. */
+.devotional-day-nav-pill {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.7rem 1rem;
+  background: var(--color-surface-raised, transparent);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
+  min-height: 44px;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+.devotional-day-nav-pill:hover,
+.devotional-day-nav-pill:focus-visible {
+  border-color: var(--color-border-strong, var(--color-border));
+  transform: translateY(-1px);
+}
+.devotional-day-nav-pill:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 767.98px) {
+  .devotional-shell-sidebar-mobile-closed {
+    display: none;
+  }
+}
+
+/* Audit H7 (HOMEPAGE-AUDIT-2026-05-11): resume-series pill. Quiet,
+   editorial. Renders only when localStorage progress exists. */
+.resume-series-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid var(--color-border, currentColor);
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 1rem;
+  background: transparent;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+  animation: audit-fade-in 0.5s ease-out;
+}
+.resume-series-pill:hover,
+.resume-series-pill:focus-visible {
+  border-color: var(--color-border-strong, currentColor);
+  transform: translateY(-1px);
+  background: var(--color-surface-raised, transparent);
+}
+.resume-series-pill:active {
+  transform: translateY(0);
+}
+
+/* Microanimations (audit follow-up): quiet fade-ins for content that
+   would otherwise pop in abruptly. Honors prefers-reduced-motion. */
+@keyframes audit-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes audit-fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.homepage-trust-row,
+.homepage-bible365-hero,
+.homepage-soul-audit,
+.mock-faq-row,
+.mock-cta,
+.mock-steps-grid {
+  animation: audit-fade-in 0.55s ease-out both;
+  animation-delay: 0.05s;
+}
+.mock-steps-grid {
+  animation-delay: 0.12s;
+}
+.mock-faq-row {
+  animation-delay: 0.18s;
+}
+
+/* Buttons get a subtle press-state micro-bounce. */
+.mock-btn,
+.mock-btn-inline,
+.cta-major {
+  transition:
+    transform 0.14s ease,
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
+}
+.mock-btn:hover,
+.mock-btn-inline:hover,
+.cta-major:hover,
+.mock-btn:focus-visible,
+.mock-btn-inline:focus-visible,
+.cta-major:focus-visible {
+  transform: translateY(-1px);
+}
+.mock-btn:active,
+.mock-btn-inline:active,
+.cta-major:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Sample-prompt pills on the Soul Audit: a small "punch in" feel. */
+.homepage-prompt-pill {
+  transition:
+    transform 0.14s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+.homepage-prompt-pill:hover,
+.homepage-prompt-pill:focus-visible {
+  transform: translateY(-1px);
+}
+.homepage-prompt-pill:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Day-card hover lift on the devotional sidebar. */
+.devotional-shell-sidebar a[class*='border'] {
+  transition:
+    transform 0.16s ease,
+    border-color 0.16s ease,
+    background 0.18s ease;
+}
+.devotional-shell-sidebar a[class*='border']:hover,
+.devotional-shell-sidebar a[class*='border']:focus-visible {
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resume-series-pill,
+  .homepage-trust-row,
+  .homepage-bible365-hero,
+  .homepage-soul-audit,
+  .mock-faq-row,
+  .mock-cta,
+  .mock-steps-grid,
+  .devotional-day-nav-pill,
+  .mock-btn,
+  .mock-btn-inline,
+  .cta-major,
+  .homepage-prompt-pill,
+  .devotional-shell-sidebar a[class*='border'] {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 .mock-auth-loading {
   color: var(--color-text-muted);
   min-width: 1rem;
