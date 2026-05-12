@@ -36,7 +36,7 @@ const HOMEPAGE_TODAY = {
   // Literal heaven/cloud imagery + classical art register (not stock
   // photography). 1200x750, ~1.6:1 landscape, served full-width as
   // the page header banner. Sourced from archive/devotional-prints/.
-  heroSrc: '/images/site/homepage/hero/church-twilight-wilderness.webp',
+  heroSrc: '/images/site/homepage/hero/atmos-stormy-sea-ultrawide.webp',
 }
 
 const HOW_STEPS = [
