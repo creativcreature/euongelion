@@ -24,6 +24,23 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
+- ROUND 4 (2026-05-12): Homepage restructure (founder: "the homepage needs to be addressed")
+  - Hero image swapped from hero-gospel.webp (Conversion auditor:
+    "barren / desolate / evokes the problem, not the solution") to
+    brand-sunburst-banner.webp. Sunburst rays evoke heaven /
+    divine light without literal cloud photography.
+  - Hero is now full-width banner above the text block (was a 228px
+    art column + text column grid). aspect-ratio: 1536/672 desktop,
+    16/9 mobile. Editorial newspaper feel.
+  - Three-zone restructure per Manus §2: Featured Series rail moved
+    UP above Soul Audit; Soul Audit moved DOWN to Zone 3
+    (Invitation). The series headlines that the audit called "the
+    strongest on the site" now sit above the fold, not buried below
+    the Soul Audit + How-It-Works block.
+  - New Section Index strip (Zone 2): three cards — Wake-Up / Bible
+    365 / All Series — between the trust row and the Featured
+    Series rail. A first-time visitor sees the whole paper at a
+    glance before being asked to do anything.
 - ROUND 3 (2026-05-12): Manus newspaper-audit follow-ups
   - Wake-Up added to primary nav (EuangelionShellHeader.tsx).
     Discoverable from every page; previously buried below homepage fold.
