@@ -5,6 +5,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## AUDIT-FIXES-2026-05-11 / 16 audit punch-list items shipped (2026-05-11)
+
+Consolidated sitewide audit (`docs/audits/HOMEPAGE-AUDIT-2026-05-11.md`)
+reconciled four independent audits (Claude technical, Manus Living
+Newspaper, Manus Conversion). This batch ships the S/M-effort items from
+the top-15 punch list. L-effort items (devotional SSR rewrite, email
+capture, data backfills) deferred to supervised pairing.
+
+PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
+
+- T1: Fix `Day N: Day N` title-tag duplication
+  - `src/app/devotional/[slug]/page.tsx`: detect bare-Day-N placeholder
+    in `meta.day.title` so we no longer render "Day 5: Day 5 |
+    Euangelion" as the browser tab title. Applied to `<title>`,
+    `og:title`, JSON-LD Article headline, and BreadcrumbList trailing
+    crumb.
+  - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
+    cross-canonical wake-up route.
+
+(Remaining tasks T2–T16 ship in subsequent commits on this branch.)
+
+---
+
 ## MORNING-2026-05-07 / Phase 5 async runtime scaffolding (2026-05-07)
 
 Bindings + types + Durable Object class + queue producer + runbook

@@ -22,19 +22,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const meta = findDevotionalMeta(slug)
   if (!meta) return { title: 'Devotional Not Found' }
 
+  // Many series in src/data/series.ts use a bare `Day N` title placeholder.
+  // Detect the redundancy so we don't render "Day 5: Day 5 | Euangelion".
+  const dayTitle = /^day\s+\d+$/i.test(meta.day.title.trim())
+    ? meta.day.title
+    : `Day ${meta.day.day}: ${meta.day.title}`
+
   // Self-canonical. The same content is also reachable via
   // /wake-up/devotional/[slug]; until the founder picks one canonical
   // surface (see docs/overnight-followups.md Phase 10.6 — canonical
   // URL audit), each route declares itself canonical so Google does
   // not pick something weird (e.g., a tracking URL parameter).
   return {
-    title: `Day ${meta.day.day}: ${meta.day.title}`,
+    title: dayTitle,
     description: `${meta.series.title} — ${meta.series.question}`,
     alternates: {
       canonical: `/devotional/${slug}`,
     },
     openGraph: {
-      title: `Day ${meta.day.day}: ${meta.day.title} | ${meta.series.title}`,
+      title: `${dayTitle} | ${meta.series.title}`,
       description: meta.series.question,
       type: 'article',
       url: `https://euangelion.app/devotional/${slug}`,
@@ -57,12 +63,18 @@ export default async function DevotionalPage({ params }: Props) {
   const { slug } = await params
   const meta = findDevotionalMeta(slug)
 
+  const dayHeadline = meta
+    ? /^day\s+\d+$/i.test(meta.day.title.trim())
+      ? meta.day.title
+      : `Day ${meta.day.day}: ${meta.day.title}`
+    : ''
+
   const jsonLd = meta
     ? [
         {
           '@context': 'https://schema.org',
           '@type': 'Article',
-          headline: `Day ${meta.day.day}: ${meta.day.title}`,
+          headline: dayHeadline,
           description: `${meta.series.title} — ${meta.series.question}`,
           publisher: {
             '@type': 'Organization',
@@ -99,7 +111,7 @@ export default async function DevotionalPage({ params }: Props) {
             {
               '@type': 'ListItem',
               position: 4,
-              name: `Day ${meta.day.day}: ${meta.day.title}`,
+              name: dayHeadline,
             },
           ],
         },

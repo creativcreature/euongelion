@@ -24,19 +24,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const { series, day } = meta
 
+  // Many series in src/data/series.ts use a bare `Day N` title placeholder.
+  // Detect the redundancy so we don't render "Day 5: Day 5 | Euangelion".
+  const dayTitle = /^day\s+\d+$/i.test(day.title.trim())
+    ? day.title
+    : `Day ${day.day}: ${day.title}`
+
   // Cross-canonical to the main /devotional/[slug] route per founder
   // direction 2026-05-07: /devotional is the canonical surface so SEO
   // ranking accrues there. Wake-Up stays as a sibling product
   // (separate funnel + RSS feed) but its devotional URLs send Google
   // to the main brand surface.
   return {
-    title: `Day ${day.day}: ${day.title}`,
+    title: dayTitle,
     description: `${series.title} — ${series.question}`,
     alternates: {
       canonical: `/devotional/${slug}`,
     },
     openGraph: {
-      title: `Day ${day.day}: ${day.title} | ${series.title}`,
+      title: `${dayTitle} | ${series.title}`,
       description: series.question,
       type: 'article',
       url: `https://euangelion.app/devotional/${slug}`,
