@@ -1,6 +1,26 @@
+import { promises as fs } from 'fs'
+import path from 'path'
 import type { Metadata } from 'next'
 import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
 import DevotionalPageClient from '@/app/wake-up/devotional/[slug]/DevotionalPageClient'
+
+async function readDevotionalTeaser(slug: string): Promise<string | null> {
+  try {
+    const file = path.join(
+      process.cwd(),
+      'public',
+      'devotionals',
+      `${slug}.json`,
+    )
+    const raw = await fs.readFile(file, 'utf-8')
+    const data = JSON.parse(raw) as { teaser?: unknown }
+    return typeof data.teaser === 'string' && data.teaser.trim().length > 0
+      ? data.teaser
+      : null
+  } catch {
+    return null
+  }
+}
 
 export const revalidate = 3600
 
@@ -28,6 +48,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? meta.day.title
     : `Day ${meta.day.day}: ${meta.day.title}`
 
+  // Prefer the day's own teaser (from public/devotionals/[slug].json) over
+  // the series-level question. Series-level descriptions are identical for
+  // every day in a series; Google deduplicates them. The teaser is unique
+  // per day and is what actually drives long-tail search.
+  const dayTeaser = await readDevotionalTeaser(slug)
+  const description =
+    dayTeaser ?? `${meta.series.title} — ${meta.series.question}`
+
   // Self-canonical. The same content is also reachable via
   // /wake-up/devotional/[slug]; until the founder picks one canonical
   // surface (see docs/overnight-followups.md Phase 10.6 — canonical
@@ -35,13 +63,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // not pick something weird (e.g., a tracking URL parameter).
   return {
     title: dayTitle,
-    description: `${meta.series.title} — ${meta.series.question}`,
+    description,
     alternates: {
       canonical: `/devotional/${slug}`,
     },
     openGraph: {
       title: `${dayTitle} | ${meta.series.title}`,
-      description: meta.series.question,
+      description,
       type: 'article',
       url: `https://euangelion.app/devotional/${slug}`,
     },
@@ -69,13 +97,18 @@ export default async function DevotionalPage({ params }: Props) {
       : `Day ${meta.day.day}: ${meta.day.title}`
     : ''
 
+  const dayTeaser = meta ? await readDevotionalTeaser(slug) : null
+  const articleDescription = meta
+    ? (dayTeaser ?? `${meta.series.title} — ${meta.series.question}`)
+    : ''
+
   const jsonLd = meta
     ? [
         {
           '@context': 'https://schema.org',
           '@type': 'Article',
           headline: dayHeadline,
-          description: `${meta.series.title} — ${meta.series.question}`,
+          description: articleDescription,
           publisher: {
             '@type': 'Organization',
             name: 'Euangelion',

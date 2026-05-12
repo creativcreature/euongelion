@@ -24,7 +24,17 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
-(Remaining tasks T2–T16 ship in subsequent commits on this branch.)
+- T2: Devotional meta description uses the day's `teaser`
+  - `src/app/devotional/[slug]/page.tsx`: read
+    `public/devotionals/[slug].json` server-side in
+    `generateMetadata`, prefer the day's `teaser` field over the
+    series-level `question`. Series questions are identical across
+    all days in a series; Google deduplicates them. Teasers are
+    unique per day. Same fix applied to the JSON-LD Article
+    description.
+  - `src/app/wake-up/devotional/[slug]/page.tsx`: same.
+
+(Remaining tasks T3–T16 ship in subsequent commits on this branch.)
 
 ---
 

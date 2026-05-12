@@ -1,6 +1,26 @@
+import { promises as fs } from 'fs'
+import path from 'path'
 import type { Metadata } from 'next'
 import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
 import DevotionalPageClient from './DevotionalPageClient'
+
+async function readDevotionalTeaser(slug: string): Promise<string | null> {
+  try {
+    const file = path.join(
+      process.cwd(),
+      'public',
+      'devotionals',
+      `${slug}.json`,
+    )
+    const raw = await fs.readFile(file, 'utf-8')
+    const data = JSON.parse(raw) as { teaser?: unknown }
+    return typeof data.teaser === 'string' && data.teaser.trim().length > 0
+      ? data.teaser
+      : null
+  } catch {
+    return null
+  }
+}
 
 export const revalidate = 3600
 
@@ -30,6 +50,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? day.title
     : `Day ${day.day}: ${day.title}`
 
+  // Use the day's teaser (from public/devotionals/[slug].json) for the
+  // description so each day in a series has its own meta description —
+  // series.question is identical across all days and Google dedupes it.
+  const dayTeaser = await readDevotionalTeaser(slug)
+  const description = dayTeaser ?? `${series.title} — ${series.question}`
+
   // Cross-canonical to the main /devotional/[slug] route per founder
   // direction 2026-05-07: /devotional is the canonical surface so SEO
   // ranking accrues there. Wake-Up stays as a sibling product
@@ -37,13 +63,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // to the main brand surface.
   return {
     title: dayTitle,
-    description: `${series.title} — ${series.question}`,
+    description,
     alternates: {
       canonical: `/devotional/${slug}`,
     },
     openGraph: {
       title: `${dayTitle} | ${series.title}`,
-      description: series.question,
+      description,
       type: 'article',
       url: `https://euangelion.app/devotional/${slug}`,
     },
