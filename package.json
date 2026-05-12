@@ -11,7 +11,7 @@
     "generate:reference-index": "tsx scripts/build-reference-index.ts",
     "render:wakeup-handout": "node wakeup-mag/print/handouts/scripts/render-pocket-handout.mjs",
     "expand:reference-index": "tsx scripts/expand-reference-index.ts",
-    "build": "node scripts/check-node-version.mjs && node scripts/generate-artwork-manifest.mjs && next build --webpack",
+    "build": "node scripts/check-node-version.mjs && node scripts/generate-artwork-manifest.mjs && node scripts/generate-devotional-teasers.mjs && next build --webpack",
     "start": "next start --port 3333",
     "ios:sync": "npx cap sync ios",
     "ios:open": "npx cap open ios",

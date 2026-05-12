@@ -24,6 +24,20 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
+- T2 RUNTIME FIX (post-deploy, 2026-05-12):
+  The first T2 implementation used `fs.readFile(public/devotionals/...)`
+  which silently fails in the Cloudflare Workers runtime — public/\* is
+  bound as ASSETS, not on the Worker FS. Replaced with a build-time
+  teaser index.
+  - `scripts/generate-devotional-teasers.mjs` (new): scans
+    public/devotionals/\*.json and emits src/data/devotional-teasers.ts
+    (534 entries). Wired into `npm run build`.
+  - `src/data/devotional-teasers.ts` (generated): `Record<slug, teaser>`
+    - `getDevotionalTeaser(slug)`. Pure data; runtime-agnostic.
+  - Both devotional `page.tsx` files now import the index instead of
+    reading the JSON server-side.
+  - Verified live: peace-day-3 description is the day teaser, not the
+    series question.
 - ROUND 2 (founder: "fix everything + microanimations + fully deploy"):
   C2, H7, #14, microanimations, C1 plumbing.
   - C2: Mobile day-nav fix. `DevotionalPageClient` adds a 44px

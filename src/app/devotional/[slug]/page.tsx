@@ -1,31 +1,12 @@
-import { promises as fs } from 'fs'
-import path from 'path'
 import type { Metadata } from 'next'
 import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
 import DevotionalPageClient from '@/app/wake-up/devotional/[slug]/DevotionalPageClient'
-import type { Devotional } from '@/types'
+import { getDevotionalTeaser } from '@/data/devotional-teasers'
 
-async function readDevotionalJson(slug: string): Promise<Devotional | null> {
-  try {
-    const file = path.join(
-      process.cwd(),
-      'public',
-      'devotionals',
-      `${slug}.json`,
-    )
-    const raw = await fs.readFile(file, 'utf-8')
-    return JSON.parse(raw) as Devotional
-  } catch {
-    return null
-  }
-}
-
-async function readDevotionalTeaser(slug: string): Promise<string | null> {
-  const data = await readDevotionalJson(slug)
-  if (!data) return null
-  const teaser = (data as unknown as { teaser?: unknown }).teaser
-  return typeof teaser === 'string' && teaser.trim().length > 0 ? teaser : null
-}
+// Audit T2 (HOMEPAGE-AUDIT-2026-05-11): read teasers from the build-
+// time generated index. Earlier `fs.readFile(public/devotionals/...)`
+// silently failed on Cloudflare Workers because public/ files are
+// bound as ASSETS, not on the Worker filesystem.
 
 export const revalidate = 3600
 
@@ -53,11 +34,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? meta.day.title
     : `Day ${meta.day.day}: ${meta.day.title}`
 
-  // Prefer the day's own teaser (from public/devotionals/[slug].json) over
-  // the series-level question. Series-level descriptions are identical for
-  // every day in a series; Google deduplicates them. The teaser is unique
-  // per day and is what actually drives long-tail search.
-  const dayTeaser = await readDevotionalTeaser(slug)
+  // Prefer the day's own teaser (build-time index from
+  // public/devotionals/[slug].json) over the series-level question.
+  // Series-level descriptions are identical for every day in a series;
+  // Google deduplicates them. The teaser is unique per day.
+  const dayTeaser = getDevotionalTeaser(slug)
   const description =
     dayTeaser ?? `${meta.series.title} — ${meta.series.question}`
 
@@ -102,14 +83,9 @@ export default async function DevotionalPage({ params }: Props) {
       : `Day ${meta.day.day}: ${meta.day.title}`
     : ''
 
-  // Audit C1 — read the devotional JSON at request time so the prose
-  // ships in the server-rendered HTML for crawlers + AI search.
-  const devotionalData = meta ? await readDevotionalJson(slug) : null
-  const dayTeaser = devotionalData
-    ? (((devotionalData as unknown as { teaser?: unknown }).teaser as
-        | string
-        | undefined) ?? null)
-    : null
+  // Audit T2 — pull the per-day teaser from the build-time index for
+  // the JSON-LD Article description as well.
+  const dayTeaser = meta ? getDevotionalTeaser(slug) : null
   const articleDescription = meta
     ? (dayTeaser ?? `${meta.series.title} — ${meta.series.question}`)
     : ''
