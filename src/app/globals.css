@@ -67,8 +67,8 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  /* Matches the 1536x672 atmos-stormy-sea-ultrawide hero. */
-  aspect-ratio: 1536 / 672;
+  /* Matches the 1584x672 header.webp hero (blue+red duotone empty tomb). */
+  aspect-ratio: 1584 / 672;
   max-height: 460px;
   background: var(--mock-paper, white);
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);

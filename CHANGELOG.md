@@ -24,6 +24,15 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
+- ROUND 7 (2026-05-12): Hero image — the empty-tomb Riso (founder's pasted pick)
+  Founder pasted the exact image and pointed at
+  public/images/library/hero/Generated Image May 12, 2026 - 9_12AM.jpg.
+  1584x672, blue + cream + red duotone Risograph print: rock face
+  with stone rolled aside and brilliant sun bursting from the empty
+  tomb opening. Resurrection imagery.
+  - JPEG (1.1 MB) -> WebP @ q=88 (439 KB) at
+    public/images/site/homepage/hero/header.webp
+  - .homepage-bible365-hero-art aspect-ratio: 1536/672 -> 1584/672.
 - ROUND 6 (2026-05-12): Hero image — atmos-stormy-sea-ultrawide
   Founder direction: "look for a literal header" + pointed me at
   `public/images/generated-2026-05-04/hero/`. That dir exists on
