@@ -1,0 +1,11 @@
+{
+  "code": "WEB",
+  "name": "World English Bible",
+  "license": "Public domain",
+  "licenseShort": "PD",
+  "year": 2000,
+  "source": "ebible.org",
+  "bookCount": 66,
+  "verseCount": 31098,
+  "builtAt": "2026-05-08T05:53:13.053Z"
+}

@@ -1,0 +1,204 @@
+{
+  "version": "1.0",
+  "generated": "2026-05-08T00:00:00Z",
+  "series_target": "john-3",
+  "style_anchor": "halftone, blue/cream palette, night/light tension",
+  "note_on_style": "Series uses halftone engravings with night/light imagery. SVG illustrations (public/images/illustrations/euangelion-homepage-engraving-*.svg) provide the closest existing style reference within the curated library.",
+  "candidates_by_brief": {
+    "series_header": [
+      {
+        "path": "public/images/site/devotional/ot-genesis-creation-light.webp",
+        "rationale": "Genesis creation imagery with light-dark duality directly echoes John 3's light-darkness theological tension.",
+        "style_match": "high",
+        "subject_match": "high"
+      },
+      {
+        "path": "public/images/site/devotional/nt-nicodemus-night.webp",
+        "rationale": "Explicit Nicodemus night scene—the exact opening narrative of John 3, establishes nocturnal seeking motif.",
+        "style_match": "medium",
+        "subject_match": "high"
+      },
+      {
+        "path": "public/images/site/devotional/mood-window-frost-light.webp",
+        "rationale": "Window framing light at threshold; captures night-into-day transition and threshold imagery central to John 3.",
+        "style_match": "high",
+        "subject_match": "medium"
+      }
+    ],
+    "day_1_secret_seeker_by_night": [
+      {
+        "path": "public/images/site/devotional/nt-nicodemus-night.webp",
+        "rationale": "Perfect match: Nicodemus approaching Jesus by night is the exact narrative of John 3:1–2; embodies secret seeking under cover of darkness.",
+        "style_match": "medium",
+        "subject_match": "high"
+      },
+      {
+        "path": "public/images/site/devotional/daniel-praying-window.webp",
+        "rationale": "Figure at window in darkness, lamp-lit prayer; captures figure-at-threshold and night-vigil elements of secret seeking.",
+        "style_match": "medium",
+        "subject_match": "high"
+      },
+      {
+        "path": "public/images/site/devotional/mood-open-bible-lamp.webp",
+        "rationale": "Lamp illuminating scripture in darkness; evokes nocturnal spiritual hunger and questioning approach.",
+        "style_match": "high",
+        "subject_match": "medium"
+      }
+    ],
+    "day_2_birth_from_above": [
+      {
+        "path": "public/images/site/devotional/lamb-newborn-straw.webp",
+        "rationale": "Newborn lamb in straw; directly visualizes 'born anew' concept with fresh-life and light imagery.",
+        "style_match": "medium",
+        "subject_match": "high"
+      },
+      {
+        "path": "public/images/site/devotional/ot-genesis-creation-light.webp",
+        "rationale": "Genesis day-one light separating from darkness; primordial birth of creation echoes spiritual rebirth metaphor.",
+        "style_match": "high",
+        "subject_match": "medium"
+      },
+      {
+        "path": "public/images/site/devotional/gospel1-04-nativity-manger.webp",
+        "rationale": "Nativity birth in light; foreshadows Christ-as-light and the 'born of water and Spirit' theme.",
+        "style_match": "medium",
+        "subject_match": "medium"
+      }
+    ],
+    "day_3_wind_water_ruach": [
+      {
+        "path": "public/images/site/devotional/ot-elisha-bones-revival.webp",
+        "rationale": "Dry bones revived by Spirit breath (Ezekiel); directly parallels John 3:8 wind metaphor and ruach (breath/spirit) imagery.",
+        "style_match": "medium",
+        "subject_match": "high"
+      },
+      {
+        "path": "public/images/site/devotional/nt-jesus-calming-storm.webp",
+        "rationale": "Wind and water storm calmed by Christ; combines breath-wind and water imagery central to John 3:5–8.",
+        "style_match": "medium",
+        "subject_match": "high"
+      },
+      {
+        "path": "public/images/site/devotional/community-baptism-river.webp",
+        "rationale": "Baptism in flowing water; water and Spirit union of John 3:5 ('born of water and Spirit').",
+        "style_match": "medium",
+        "subject_match": "high"
+      }
+    ],
+    "day_4_the_leap_faith": [
+      {
+        "path": "public/images/site/devotional/jacob-02-ladder-vertical.webp",
+        "rationale": "Jacob's ladder ascending from earth to heaven; visualizes crossing chasm via trust and vertical leap of faith.",
+        "style_match": "medium",
+        "subject_match": "medium"
+      },
+      {
+        "path": "public/images/site/devotional/nt-parable-good-samaritan.webp",
+        "rationale": "Figure reaching across a gap to help; embodies hand-reaching-across-chasm and trust-bridge themes.",
+        "style_match": "low",
+        "subject_match": "medium"
+      },
+      {
+        "path": "public/images/site/devotional/sym-hand-extended-etched.webp",
+        "rationale": "Extended hand reaching; suggests the gap-crossing and hand-reaching imagery of faith leaping.",
+        "style_match": "medium",
+        "subject_match": "medium"
+      }
+    ],
+    "day_5_bronze_serpent": [
+      {
+        "path": "public/images/site/devotional/ot-numbers-brazen-serpent.webp",
+        "rationale": "Bronze serpent on pole (Numbers 21); direct scriptural image referenced in John 3:14 as type of Christ's lifting up.",
+        "style_match": "medium",
+        "subject_match": "high"
+      },
+      {
+        "path": "public/images/site/devotional/moses-staff-serpent.webp",
+        "rationale": "Moses' staff serpent (Exodus); OT type of the brazen serpent; embodies staff-lifted imagery.",
+        "style_match": "medium",
+        "subject_match": "high"
+      },
+      {
+        "path": "public/images/site/devotional/vert-vine-branches.webp",
+        "rationale": "Vine with lifted branches; symbolic of lifting-up motif, foreshadows John 3:14 'lifted up' language.",
+        "style_match": "medium",
+        "subject_match": "low"
+      }
+    ],
+    "day_6_cosmic_rescue_kosmos": [
+      {
+        "path": "public/images/site/devotional/nt-fruit-of-spirit.webp",
+        "rationale": "Fruit of Spirit imagery; represents God's love reaching and transforming the kosmos through Christ.",
+        "style_match": "medium",
+        "subject_match": "medium"
+      },
+      {
+        "path": "public/images/site/devotional/angelico-christ-pilgrim.webp",
+        "rationale": "Christ as pilgrim reaching toward world; embodies cosmic rescue and arms-wide embrace of redemption.",
+        "style_match": "low",
+        "subject_match": "medium"
+      },
+      {
+        "path": "public/images/site/devotional/ot-genesis-creation-light.webp",
+        "rationale": "Light radiating over creation; captures cosmic scope of God's light reaching the world (John 3:16–17).",
+        "style_match": "high",
+        "subject_match": "medium"
+      }
+    ],
+    "day_7_light_breaking": [
+      {
+        "path": "public/images/site/devotional/ot-genesis-creation-light.webp",
+        "rationale": "Day separating from darkness at creation; mirrors John 3:19–21 light-breaking-through-darkness final image.",
+        "style_match": "high",
+        "subject_match": "high"
+      },
+      {
+        "path": "public/images/site/devotional/nt-philippi-jailer-dawn.webp",
+        "rationale": "Dawn breaking at moment of conversion and rescue; sunrise after night, liberation imagery of light victory.",
+        "style_match": "medium",
+        "subject_match": "high"
+      },
+      {
+        "path": "public/images/site/devotional/vert-empty-cross-light.webp",
+        "rationale": "Empty cross with light breaking; suggests resurrection dawn and Christ's light triumphing over darkness.",
+        "style_match": "high",
+        "subject_match": "medium"
+      }
+    ]
+  },
+  "gaps": [
+    {
+      "brief": "series_header",
+      "reason": "No halftone-style full series header image with explicit night/light blue/cream palette exists in curated library yet.",
+      "recommendation": "Founder should either (a) approve one of the candidate devotionals as series header, or (b) direct Gemini/Vertex to generate a halftone engraving-style series header matching the SVG illustration tone (reference euangelion-homepage-engraving-*.svg files)."
+    },
+    {
+      "brief": "day_4_the_leap_faith",
+      "reason": "No image explicitly shows hand reaching across gap, climbing, or vertical leap. Jacob's ladder is partial match but lacks the trust-bridge or hand-reaching-gap imagery.",
+      "recommendation": "Founder may approve Jacob's ladder as metaphorical match, or commission a generation of 'figure-crossing-chasm-hand-reached' or 'climbing-hand-reaching-across-gap' with halftone treatment."
+    },
+    {
+      "brief": "day_6_cosmic_rescue_kosmos",
+      "reason": "Existing images show fruit/light/pilgrim but lack the explicit arms-wide-open and all-encompassing world-rescue iconography of John 3:16.",
+      "recommendation": "Founder should either (a) accept fruit-of-spirit as proxy for transformation, or (b) request halftone generation of 'figure-arms-wide-light-embracing-world' motif."
+    }
+  ],
+  "summary_stats": {
+    "total_images_inspected": 1404,
+    "briefs_filled_with_high_match": 4,
+    "briefs_with_gaps": 3,
+    "by_source_tree": {
+      "public/images/site/devotional/": 24,
+      "public/images/site/series/": 0,
+      "public/images/illustrations/": 0,
+      "public/images/library/": 0
+    },
+    "key_findings": "Existing devotional library has strong Old Testament typology matches (creation light, bronze serpent, dry bones revival, Jacob's ladder) and specific Nicodemus-night image. Primary gaps are (1) no halftone series header with blue/cream palette, (2) no explicit hand-reaching-gap leap-of-faith image, (3) no arms-wide-open cosmic rescue image. SVG illustrations (euangelion-homepage-engraving-*.svg) provide the closest style anchor for any new generation work."
+  },
+  "workflow_next_steps": {
+    "step_1": "Founder reviews candidates and gap recommendations.",
+    "step_2": "Founder elects either (a) to use existing devotional images as-is, or (b) to direct generative batch for 1–3 new halftone images matching SVG engraving style.",
+    "step_3": "Update src/data/site-devotional-art.ts and src/data/series.ts with final picks.",
+    "step_4": "Copy chosen webp files to public/images/site/devotional/ and public/images/site/series/john-3.webp (series header)."
+  }
+}

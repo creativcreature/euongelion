@@ -52,23 +52,12 @@ function convertToWebp(srcPng, dstWebp) {
 console.log('━━━ Stage 3: Devotional art mapping ━━━')
 console.log()
 
-// Load catalog
+// Load catalog (only need devotional + chapter-header surfaces)
 const catalog = JSON.parse(fs.readFileSync(CATALOG_PATH, 'utf8'))
-
-// FOUNDER CURATION RULE (2026-05-08):
-// Restrict to brand-aesthetic single-ink/halftone/limited-palette
-// imagery only. Per the founder's reference (cracked-earth blue-halftone
-// scapegoat), the site uses ONLY the decorative single-ink subset of
-// the library — sym-*, obj-*, brand-*, element-* prefixes. Realistic
-// narrative illustrations (story-*, parable-*, gen-*, ed-*, plus all
-// of devotional/, chapter-header/, hero/, poster/) are EXCLUDED entirely.
-// No Pillow treatment is applied — files are used as-generated.
-const BRAND_AESTHETIC_PREFIXES = /^(sym|obj|brand|element)[-_]/
-const candidates = catalog.entries.filter(
-  (e) => e.surface === 'decorative' && BRAND_AESTHETIC_PREFIXES.test(e.filename)
+const candidates = catalog.entries.filter((e) =>
+  e.surface === 'devotional' || e.surface === 'chapter-header'
 )
-console.log(`Library curation: ${catalog.entries.length} total → ${candidates.length} brand-aesthetic candidates`)
-console.log(`  prefixes kept: sym-*, obj-*, brand-*, element-* (single-ink, halftone, limited palette)`)
+console.log(`Library candidates: ${candidates.length} (devotional + chapter-header)`)
 
 // Load all devotionals
 const devFiles = fs.readdirSync(DEVOTIONAL_DIR)
@@ -90,50 +79,18 @@ function devKeywords(dev) {
       if (t.length >= 4) tokens.add(t)
     }
   }
-  // Add slug keywords (heavily weighted later via multi-counting)
+  // Add slug keywords
   if (dev.slug) {
     for (const t of dev.slug.toLowerCase().split('-')) {
       if (t.length >= 3 && !/^\d+$/.test(t)) tokens.add(t)
     }
   }
-  // Pull biblical book + character names from scripture anchor
-  // (e.g. "Matthew 6:33" → ["matthew", "matt"])
-  const sr = (dev.scriptureReference || dev.anchorVerse || '')
-  const bookMatch = sr.match(/^([1-3]?\s*[A-Za-z]+)/)
-  if (bookMatch) {
-    const book = bookMatch[1].toLowerCase().replace(/\s+/g, '')
-    tokens.add(book)
-    // Common name expansions (matt → matthew, ex → exodus, gen → genesis)
-    const expansions = {
-      gen: 'genesis', ex: 'exodus', lev: 'leviticus', num: 'numbers',
-      deut: 'deuteronomy', josh: 'joshua', judg: 'judges', sam: 'samuel',
-      ki: 'kings', chron: 'chronicles', neh: 'nehemiah', esth: 'esther',
-      ps: 'psalm', prov: 'proverbs', eccl: 'ecclesiastes',
-      song: 'songs', isa: 'isaiah', jer: 'jeremiah', lam: 'lamentations',
-      ezek: 'ezekiel', dan: 'daniel', hos: 'hosea',
-      matt: 'matthew', mk: 'mark', lk: 'luke', jn: 'john',
-      rom: 'romans', cor: 'corinthians', gal: 'galatians',
-      eph: 'ephesians', phil: 'philippians', col: 'colossians',
-      thess: 'thessalonians', tim: 'timothy', tit: 'titus',
-      heb: 'hebrews', jas: 'james', pet: 'peter', rev: 'revelation',
-    }
-    for (const [k, v] of Object.entries(expansions)) {
-      if (book.startsWith(k)) tokens.add(v)
-    }
-  }
   return tokens
 }
 
-// Heavier weight for tokens that appear in BOTH the slug (high-signal)
-// AND the candidate filename. Slug tokens count 3×, generic title/scripture
-// tokens count 1×. This pushes contextually-specific matches above generic
-// ones (avoids "vine" matching every devotional that mentions "wine").
-function score(devKw, candKw, devSlugTokens) {
+function score(devKw, candKw) {
   let s = 0
-  for (const k of candKw) {
-    if (devSlugTokens.has(k)) s += 3
-    else if (devKw.has(k)) s += 1
-  }
+  for (const k of candKw) if (devKw.has(k)) s++
   return s
 }
 
@@ -154,17 +111,9 @@ for (const file of devFiles) {
   const slug = dev.slug || file.replace(/\.json$/, '')
   const devKw = devKeywords({ ...dev, slug })
 
-  // Build the slug-token set (for high-weight scoring)
-  const slugTokens = new Set(
-    slug.toLowerCase().split('-').filter((t) => t.length >= 3 && !/^\d+$/.test(t))
-  )
-
-  // Score every candidate. A specific match (slug token in candidate
-  // filename) outweighs a generic title/keyword match by 3×, so a
-  // devotional about "vineyard" gets `banner-vineyard-rows.png` over
-  // `banner-stone-tomb-dawn.png` even if both have one weak match.
+  // Score every candidate
   const scored = candidates.map((c) => {
-    const baseScore = score(devKw, new Set(c.keywords), slugTokens)
+    const baseScore = score(devKw, new Set(c.keywords))
     const usagePenalty = (useCounts[c.filename] || 0) * 0.5
     return { ...c, score: baseScore - usagePenalty }
   }).sort((a, b) => b.score - a.score)
@@ -174,60 +123,14 @@ for (const file of devFiles) {
   for (let i = 0; i < slug.length; i++) seed = ((seed * 31) + slug.charCodeAt(i)) | 0
   const rand = seededRand(Math.abs(seed) || 1)
 
-  // Pick strategy:
-  //   1. If any candidate has score > 0 (keyword overlap), prefer those.
-  //   2. ALWAYS fill PICKS_PER_DEVOTIONAL slots — fall back to a
-  //      deterministic round-robin from the full curated set when
-  //      scoring exhausts. Curated set is small (~134); every devotional
-  //      will get its full pick count even with no thematic match.
-  //   3. Top-scored slot is deterministic (no shuffle); remaining slots
-  //      shuffle within a window for variety.
+  // From the top 8 scoring candidates, randomly pick PICKS_PER_DEVOTIONAL
+  const topPool = scored.slice(0, Math.max(8, PICKS_PER_DEVOTIONAL))
   const picks = []
-  const pickedFilenames = new Set()
-  const scoredPool = scored.filter((c) => c.score > 0).slice(0, 12)
-
-  // Slot 1: top-scored if available
-  if (scoredPool.length > 0) {
-    const top = scoredPool.shift()
-    picks.push(top)
-    pickedFilenames.add(top.filename)
-    useCounts[top.filename] = (useCounts[top.filename] || 0) + 1
-  }
-
-  // Remaining slots from scored pool with shuffle
-  while (picks.length < PICKS_PER_DEVOTIONAL && scoredPool.length > 0) {
-    const window = scoredPool.slice(0, 5)
-    const idx = Math.floor(rand() * window.length)
-    const pick = window[idx]
+  while (picks.length < PICKS_PER_DEVOTIONAL && topPool.length > 0) {
+    const idx = Math.floor(rand() * topPool.length)
+    const pick = topPool.splice(idx, 1)[0]
     picks.push(pick)
-    pickedFilenames.add(pick.filename)
-    scoredPool.splice(scoredPool.indexOf(pick), 1)
     useCounts[pick.filename] = (useCounts[pick.filename] || 0) + 1
-  }
-
-  // Fallback: fill from the FULL curated subset, sorted by use-count
-  // (least-used first) + deterministic shuffle for tie-breaking. This
-  // keeps the brand aesthetic consistent — every slot gets a sym/obj/
-  // brand/element pick even when no keyword match scored.
-  if (picks.length < PICKS_PER_DEVOTIONAL) {
-    const fallbackPool = candidates
-      .filter((c) => !pickedFilenames.has(c.filename))
-      .map((c) => ({
-        ...c,
-        useCount: useCounts[c.filename] || 0,
-        // Deterministic per-devotional jitter for tie-breaking
-        jitter: rand(),
-      }))
-      .sort((a, b) => {
-        if (a.useCount !== b.useCount) return a.useCount - b.useCount
-        return a.jitter - b.jitter
-      })
-    while (picks.length < PICKS_PER_DEVOTIONAL && fallbackPool.length > 0) {
-      const pick = fallbackPool.shift()
-      picks.push(pick)
-      pickedFilenames.add(pick.filename)
-      useCounts[pick.filename] = (useCounts[pick.filename] || 0) + 1
-    }
   }
 
   mapping[slug] = picks.map((p) => ({ ...p, devSlug: slug }))

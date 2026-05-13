@@ -5,6 +5,11 @@ import {
   loadRememberedProviderKeys,
   saveRememberedProviderKeys,
 } from '@/lib/brain/key-storage'
+import {
+  DEFAULT_BIBLE_TRANSLATION,
+  isBibleTranslationCode,
+  type BibleTranslationCode,
+} from '@/lib/bible'
 
 type SabbathDay = 'saturday' | 'sunday'
 type BrainMode = 'auto' | 'openai' | 'google' | 'minimax' | 'nvidia_kimi'
@@ -15,7 +20,7 @@ type DevotionalDepthPreference =
   | 'variable'
 type KeyStorageMode = 'session_only' | 'remember_encrypted'
 
-type BibleTranslation = 'NIV' | 'ESV' | 'NASB' | 'KJV' | 'NLT' | 'MSG'
+type BibleTranslation = BibleTranslationCode
 type TextScale = 'default' | 'large' | 'xlarge'
 
 interface SettingsState {
@@ -79,7 +84,7 @@ async function syncRememberedKeys(state: SettingsState): Promise<void> {
 export const useSettingsStore = create<SettingsState>()(
   persist(
     (set, get) => ({
-      bibleTranslation: 'NIV',
+      bibleTranslation: DEFAULT_BIBLE_TRANSLATION,
       sabbathDay: 'sunday',
       defaultBrainMode: 'auto',
       openWebDefaultEnabled: false,
@@ -182,6 +187,9 @@ export const useSettingsStore = create<SettingsState>()(
       }),
       onRehydrateStorage: () => (state) => {
         if (!state) return
+        if (!isBibleTranslationCode(state.bibleTranslation)) {
+          state.bibleTranslation = DEFAULT_BIBLE_TRANSLATION
+        }
         if (state.keyStorageMode === 'remember_encrypted') {
           void state.hydrateRememberedProviderKeys()
         }

@@ -5,6 +5,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R12 / Parallel-agent sweep — Bible corpus + 7 new module types + transliteration (2026-05-13)
+
+Founder asked to merge everything possible from sibling agent worktrees. Brings in only what builds clean against current main; defers stale or conflicting work.
+
+- **strange-wu — Bible translation pipeline.** `public/bibles/` (30 MB, 7 free translations: BSB / WEB / KJV / ASV / YLT / DARBY / BBE), `src/lib/bible/` with `getVerse` + `parseReference`, 3 Vitest test files, `scripts/build-bible-corpus.ts` (rebuild from ebible.org), new `/credits` translation-licensing page, onboarding + settings now expose translation preference. Foundation for the future `/read` reader.
+- **gallant-swirles — module type system expansion.** Module type grew 12 → 21: `hero-card`, `video`, `inline-image`, `journey`, `cta`, `recap`, `sabbath`. 7 new module components, `ModuleRenderer.tsx` routes each, 2 new routes (`/about/translations`, `/series/[slug]/deep-dive`), `content/AUTHORING-SPEC.md`, series briefs + deep-dives content folders. `TeachingModule` gains opt-in Markdown rendering for bold / italic / blockquote / links.
+- **brave-chandrasekhar (additive only).** `ScriptureModule.tsx` now pairs transliteration line whenever Hebrew/Greek appears (project rule: original-language never alone). `public/series-pdf/` + `scripts/build-series-pdf.py` ship the series PDF tooling.
+
+Skipped (conflict or incomplete):
+
+- brave's `saved-and-faithing` series entry (only 1/7 days published; would dangle 6 broken links)
+- brave's `site-devotional-art.ts` reshuffle (founder already curated different set)
+- lucid-benz / friendly-ptolemy / serene-albattani (Feb 2026 branches — too stale; Soul Audit code has been rewritten since)
+
+PRD: `docs/feature-prds/F-061.md` (Round 12). Decision: SA-013.
+
+Verification: `npm run type-check` clean, `npm run build` green (542 prerendered devotional paths), no Worker-runtime hazards (build-time indexes only, no fs reads from public/).
+
+---
+
 ## LIBRARY-001 / Save + Start devotional, /library page, Daily Bread inline reader (2026-05-13)
 
 Adds authenticated-user control over the active devotional. Two CTAs on

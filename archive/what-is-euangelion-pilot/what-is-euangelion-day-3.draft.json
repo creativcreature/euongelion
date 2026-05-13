@@ -1,0 +1,187 @@
+{
+  "day": 3,
+  "chiasm_position": "C",
+  "title": "The Messenger and the Message Are the Same Person",
+  "teaser": "Other faiths have a teacher who delivers a message. Christianity is structurally different. The messenger and the message are the same person.",
+  "anchorVerse": "1 Corinthians 15:1-8",
+  "theme": "The good news is not a doctrine Jesus taught. Jesus is the good news.",
+  "framework": "Chiastic pivot — the central thesis the rest of the series turns on.",
+  "scriptureReference": "1 Corinthians 15:1-8",
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "1 Corinthians 15:1-8",
+      "translation": "BSB",
+      "emphasis": [
+        "as of first importance",
+        "Christ died for our sins",
+        "He was buried",
+        "He was raised on the third day",
+        "He appeared"
+      ],
+      "passage": "Now, brothers, I want to remind you of the gospel I preached to you, which you received, and in which you stand firm. By this gospel you are saved, if you hold firmly to the word I preached to you. Otherwise, you have believed in vain. For what I received I passed on to you as of first importance: that Christ died for our sins according to the Scriptures, that He was buried, that He was raised on the third day according to the Scriptures, and that He appeared to Cephas and then to the Twelve. After that, He appeared to more than five hundred brothers at once, most of whom are still living, though some have fallen asleep. Then He appeared to James, then to all the apostles. And last of all He appeared to me also, as to one of untimely birth.",
+      "display": "block"
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "εὐαγγέλιον",
+      "transliteration": "euangelion",
+      "pronunciation": "yoo-ang-ghel'-ee-on",
+      "strongsNumber": "G2098",
+      "definition": "Good news; a public announcement that something has happened.",
+      "rootMeaning": "A compound of eu- (good) and angelos (messenger). Literally: a good message.",
+      "usage": "Outside the Bible, this word named a herald's report — a battle won, a king enthroned, an emperor's son born. Mark borrows the imperial register and applies it to Jesus. Paul uses it 60 times across his letters; in 1 Corinthians 15 it carries the early church's compressed summary of what had happened in Christ.",
+      "usageNote": "On Day 1 the etymology was the lesson. Today the lesson is what fills the word — the four-line creedal formula in verses 3-5. The word itself is the same word a Roman herald would have used. The content the church poured into it is unlike anything a Roman herald ever announced.",
+      "relatedWords": [
+        {
+          "word": "παραλαμβάνω",
+          "transliteration": "paralambano",
+          "note": "the verb Paul uses for 'received' in v. 3 — a technical word for receiving fixed oral tradition"
+        },
+        {
+          "word": "παραδίδωμι",
+          "transliteration": "paradidomi",
+          "note": "the matching verb for 'passed on' — together they bracket Paul's phrase as quoted material"
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "A Sentence That Sounds Like a Definition",
+      "body": "Read the first line again. \"Now, brothers, I want to remind you of the gospel I preached to you.\" If you have ever opened a textbook, you know what comes next. A definition. Maybe a thesis statement. Some opening claim that organizes everything that follows.\n\nThat is what Paul's sentence sounds like. The good news. Here is what it is. Here are its parts. Sit up, take notes.\n\nAnd then the next sentence comes, and it is not a definition at all. It is a story. A short one. Four lines. A man died. A man was buried. A man was raised. A man appeared.\n\nThat is the gospel. The whole thing. Not three principles. Not seven habits. Not a worldview, not a philosophy of life, not a way of seeing the world. A person, and four things that happened to that person.\n\nIf you have grown up around church language, this might slide past you so smoothly you miss what just happened. If you have not, the strangeness of it might catch in your throat. We were promised a definition. We were given a name and a sequence of events.\n\nWelcome back to the middle of this series. Whatever you are bringing with you today — whether you have done all of Day 1 and 2, or whether you skipped ahead, or whether you are here despite suspecting that the whole project is a polite waste of an adult mind — you are reading the most theologically loaded passage in the whole series. The center. The hinge.\n\nWe are going to take it slow.\n\nThe word for what Paul does in these verses is something the early church called the kerygma — a Greek word meaning \"the proclamation,\" the announcement-that-something-has-happened core of what they passed on. Not the teaching of Jesus. Not the ethics of Jesus. Not even, primarily, the meaning of Jesus. Just: this happened.\n\nA man, His death, His burial, His rising, His being seen. By Peter, who denied Him. By the Twelve, who fled. By five hundred at once, most still alive when Paul wrote and most therefore askable. By James, who had not believed before. By Paul himself, who had been hunting the church when Jesus showed up on the road to Damascus and stopped him in his tracks.\n\nIf you wanted to write a piece of religious literature that would survive the next twenty centuries, you would not begin like this. You would begin with a doctrine. Or a moral law. Or a vision of the universe. You would not begin with a list of names of people who claimed to have seen a dead man walking around.\n\nUnless, of course, that was the thing that had actually happened. Unless the writer had no choice."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "derash",
+      "heading": "The Oldest Words in the New Testament",
+      "body": "1 Corinthians is older than you might think. Paul wrote it from the city of Ephesus around AD 53 or 54 — roughly twenty years after the events it describes. The Christian movement is, at this point, perhaps a generation old. There is no New Testament yet. There are no gospels yet, or if there are early forms of them, they are not the four we now have. There is just a network of small assemblies in Mediterranean cities, holding what they have been told and arguing with one another about what it means.\n\nWhat Paul writes in chapter 15, verses 3 through 5, is not Paul's own composition. He says so himself. \"For what I received I passed on to you as of first importance.\" The verbs are technical. \"Received\" (paralambano) and \"passed on\" (paradidomi) are the standard rabbinic vocabulary for the careful transmission of fixed oral tradition. Paul is signaling, in language his Jewish contemporaries would recognize, that what follows is quoted, not improvised.\n\nThe four lines that follow have a clear shape:\n\nthat Christ died for our sins according to the Scriptures,\nthat He was buried,\nthat He was raised on the third day according to the Scriptures,\nand that He appeared to Cephas and then to the Twelve.\n\nThe rhythm is unmistakable. Two pairs. Two verbs of humiliation (died, buried), two verbs of vindication (raised, appeared). Each pair anchored — the first to a sin we share and the Scriptures we read, the second to a day we can name and a witness who can be questioned. The Greek behind the structure is even tighter than the English, governed by a four-fold \"that\" (hoti) clause. It is a creed. A small one. A pocket-sized confession that you could memorize on a road and recite under arrest.\n\nMost New Testament scholars — across confessional lines, including those who do not personally believe a word of it — agree that this fragment was not composed by Paul. It comes to him as a unit. He is repeating it from somewhere earlier. The standard estimate is that this creedal formula was crystallized within five years of the crucifixion, possibly within the first two. It may have been composed in Aramaic before being translated into the Greek we now have. Some of the names in the list — Cephas, the Aramaic form of Peter — preserve the older tongue.\n\nWhat this means, plainly: the four lines you just read are the earliest fixed-form summary of what the Christian movement believed had happened. Older than any gospel. Older than most of Paul's letters. Older than the church's break with the synagogue. Older than the moment anyone wrote anything down.\n\nWithin a handful of years of the death of Jesus, this is what the people who had been there were saying about Him.\n\nNot \"Jesus taught us to love our enemies.\" Not \"Jesus showed us the path to enlightenment.\" Not \"Jesus was a wise rabbi whose moral teachings deserve our consideration.\" Those things are true and the church would say them and keep saying them. But they were not the announcement.\n\nThe announcement was an obituary that ended in resurrection.\n\nThis is the news. This is the euangelion. This is what the runners were running with."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "When Paul wrote 1 Corinthians, the word euangelion had a public, secular life. It named a herald's announcement — a battlefield victory, an emperor's accession, the birth of a son to the imperial house. The Greek world used it for any public news of decisive change.",
+      "modernApplication": "Most worldviews on offer at the moment are still, at heart, teachings. A teacher delivers a message. The message can be detached from the teacher and held on its own. The Buddhist Eightfold Path is true (or claimed true) whether or not the historical Buddha is. Stoic ethics are true whether or not Marcus Aurelius is. Cognitive-behavioral therapy works whether or not Aaron Beck is.",
+      "connection": "The structure of all of those is the same: a person points at a truth, and the truth stands without the person. Detach Buddha from the Eightfold Path and you still have an Eightfold Path. Detach Marcus from the Meditations and you still have the Meditations. Detach Beck from CBT and you still have CBT.",
+      "question": "Detach Jesus from the gospel — what is left?",
+      "answer": "Read the four lines again. There is no extractable doctrine that survives the removal of the person. Take Jesus out of \"Christ died for our sins\" and there is no sentence. Take Him out of \"He was buried, He was raised, He appeared\" and there is no story. The euangelion does not point at Jesus. The euangelion is Jesus.",
+      "newTestamentEcho": "This is why John, writing thirty years after Paul, opens his gospel with \"In the beginning was the Word\" — and then six verses later writes, \"and the Word became flesh, and dwelt among us.\" The Word — the message itself — is a person who walks into the world. Same claim. Different vocabulary."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "sod",
+      "heading": "The Messenger and the Message Are the Same Person",
+      "body": "This is the center of the series. If only one paragraph of these seven days lands, let it be this one.\n\nIn nearly every other framework a thoughtful adult will encounter, the architecture is the same. There is a human being who teaches. There is a body of teaching. The teaching can be lifted from the teacher and carried home alone. You do not need the Buddha to use the Eightfold Path. You do not need Confucius to value filial piety. You do not need Socrates to think clearly about the unexamined life. Their lives commend their teachings; their teachings do not require their lives.\n\nThe Christian claim, structurally, is something else. It is not an improvement on this pattern. It is a different pattern. The thing being announced — the euangelion — is a person. Not a person's words. The person Himself, and what happened to that person.\n\nFour lines, again: died, buried, raised, appeared. Take Jesus out and there is no announcement, because the announcement is what He did and what was done to Him. The teaching is inseparable from the teacher because the teaching is the teacher.\n\nThe most concise statement of this comes from Jesus' own mouth, in John 14:6: \"I am the way, and the truth, and the life.\" Read it slowly. He does not say I show the way, or I teach the truth, or I will explain the life. He says I am all three. The mode of access is identity, not instruction. He is what is on offer.\n\nAthanasius, an Egyptian theologian writing around the year 318 — when the church was still arguing internally about whether Jesus was God in the fullest sense or merely a being sent by God — put the structural claim in nine words: \"God became man so that man might become god.\" The lowercase second \"god\" is not a typo and not a heresy. The word Athanasius reached for was theosis — sharing in God's own life as creatures restored to what they were made for. Not becoming God ontologically, which would be the wrong reading and is not what Athanasius meant. He meant: human beings were made for participation in the life of God, and that participation was reopened when God Himself put on a human body and walked into the room — so that His life could begin to flow through ours.\n\nIn plain terms, without the church vocabulary: the trouble with the human situation is not, fundamentally, that we lack the right information. It is not that humanity needs a better lecture. The trouble is that something has gone wrong inside the species, and the wrong thing cannot be fixed by knowing more. It can only be fixed if something or Someone enters from outside — not just to deliver advice, but to do the fixing in person. Athanasius is saying: that is what happened. God came in.\n\nThis is also why the four-line creed is shaped the way it is. \"Christ died for our sins.\" The preposition is for. Not about, not regarding, not as a moral example concerning. He died on behalf of, in the place of, into the very sin He was rescuing the species from. \"He was buried.\" The death was real. There was a corpse. There was a tomb. \"He was raised.\" The same body that had been dead was no longer dead. \"He appeared.\" To named, locatable people. Not as a feeling. Not as an inner sense. As Himself.\n\nIf any single piece of this is removed, the gospel is no longer the gospel. Remove the death and there is nothing for which to be grateful. Remove the burial and the death was theatrical, not real. Remove the resurrection and Christianity becomes a long memorial service for a wise man. Remove the appearances and the resurrection becomes wishful thinking.\n\nWhat is being announced is not a doctrine. It is a series of events that happened to a person, and that person is the news.\n\nThe word the early church kept reaching for, when they tried to compress this, was kerygma — the proclamation. Plain, public, factual in form. Not \"here is a system to consider\" but \"here is what happened, decide what to do with it.\" That register is foreign to most of the spirituality on offer in our cultural moment, which tends toward principles, practices, and self-actualization frameworks. The Christian announcement does not fit any of those categories. A herald is running down the road. He is shouting a name and four verbs.\n\nThe second-century theologian Irenaeus would later put it this way: God did not send a teaching, God sent Himself. Athanasius is making the same claim. So is John. So is Paul, in compressed form, in these four lines.\n\nAnd this is why \"believing the gospel\" cannot, finally, mean assenting to a worldview. It can only mean trusting a person — the person who is the message. Christianity is not, in the end, an idea you adopt. It is a person you meet, or refuse to meet, or wait to see if He is real before deciding."
+    },
+    {
+      "type": "scripture",
+      "reference": "John 14:6",
+      "translation": "ASV",
+      "emphasis": [
+        "I am the way, and the truth, and the life",
+        "no one cometh unto the Father, but by me"
+      ],
+      "passage": "Jesus saith unto him, I am the way, and the truth, and the life: no one cometh unto the Father, but by me.",
+      "display": "block"
+    },
+    {
+      "type": "insight",
+      "text": "The good news is not a doctrine Jesus taught. Jesus is the good news.",
+      "body": "Hold that. Read it twice. The whole series turns on it.",
+      "content": "The good news is not a doctrine Jesus taught. Jesus is the good news."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "heading": "What Receiving a Person Looks Like",
+      "body": "If the message is a person, then receiving the message is going to look strange. It will not look like passing an exam. It will not look like adopting a worldview. It will not look like signing a doctrinal statement, though that has its place later. It will look like the way human beings receive other human beings: trust, attention, and the slow accumulation of relationship.\n\nThis matters because most of us, when we encounter Christianity, encounter it as a curriculum. There are things to learn. There are positions to take. There is a vocabulary to acquire. There are people who have done all of that and seem to be in possession of something we are not, and we feel either drawn to imitate them or, more often, quietly disqualified from ever catching up.\n\nThe creed in 1 Corinthians 15 has none of that energy. There is no curriculum here. There is a person, and there are four things that happened to Him, and the only response on the table is whether we will receive what He is offering — Himself.\n\nMartin Luther, writing in 1522 in a long preface to his German translation of the Letter to the Romans, put the contrast as sharply as anyone has ever put it. He had spent years inside a religious system that taught the human being to climb, to perform, to earn, to demonstrate. He came out the other side with this:\n\n\"The law says, 'Do this,' and it is never done. Grace says, 'Believe in this,' and everything is already done.\"\n\nRead that twice as well.\n\nThe law — by which Luther meant any command that comes to us with the structure of \"perform this and you will be acceptable\" — is, on the human side of the equation, exhausting. We have noticed. The novel that opens with a character desperate to be good and ends with that character broken by the desperation is not a Christian invention. The half-step between New Year's resolution and self-loathing is not a Christian invention. We know how this story goes. Whatever the standard, we fall short of it. The only people who do not are the people who have not looked closely.\n\nGrace, in Luther's reading, is structurally different. It does not arrive with a command. It arrives with a verb in the past tense. \"It is finished.\" Whatever needed doing has already been done by Someone Else, on a Friday afternoon roughly two thousand years ago, on a hill outside an occupied Roman city. The work the human being is invited to do, accordingly, is not to perform. It is to receive.\n\nThis is what Reformation Christians began to call sola fide — \"by faith alone.\" The slogan can sound like sectarian shorthand, but the underlying claim is exact. If the gospel is a person and what He has done, then the only posture that fits is the posture of receiving a gift. Adding our own work to it does not reinforce the gift. It defaces it. The hand cannot simultaneously be open to receive and closed in the act of producing.\n\nThis is also why the early church was so insistent that faith — Greek pistis, often translated belief — was not primarily an intellectual operation. Pistis in the first-century Roman world named the bond between a soldier and his commander, between a client and his patron, between a wife and her husband. It meant trust, allegiance, fidelity. It was a relational word, not a head word. To have faith in Jesus, in this register, is to throw your weight on Him and walk forward.\n\nFor a reader who may be coming to this with a long history of religious harm — and many readers are — this distinction matters enormously. Whatever was done to you in the name of religion, if it told you that your job was to perform until you became acceptable, that was not what these four lines say. These four lines say the work is already done and the only available human response is to come and receive what was finished without you.\n\nThis does not mean nothing changes after. It changes everything after. Trees that have been planted by living rivers tend to bear fruit. Lives that have actually received this kind of news tend to look, slowly and unevenly, like the news. But the bearing of fruit is not the price of admission. It is what happens after admission has already been granted.\n\nFor the sleeper, the drifter, the deconstructing, the never-was — and for the lifelong Christian who has somehow forgotten — the offer is the same. It is not graded. It does not require pre-existing belief. It requires only the willingness to come closer and find out whether the person at the center of the announcement is, in fact, real, and in fact alive, and in fact looking for you."
+    },
+    {
+      "type": "interactive",
+      "interaction_type": "physical",
+      "title": "A Posture of Receiving",
+      "prompt": "If you are somewhere private, try this. If you are not, hold it in your imagination.\n\nClose your hands into fists. Tight. Tighter. Notice what they feel like — the tension in the forearm, the small ache across the knuckles. This is the hand of producing. The hand that has been told its job is to make something of itself, to earn its place in the room, to deserve what it is given. Most of us know this hand well. Many of us have spent years not noticing how rarely we set it down.\n\nNow, slowly, open them. Palms up. Fingers loose. Feel the difference. This is the hand of receiving. It cannot grasp. It cannot demand. It can only be given to.\n\nThe gospel, when it is heard well, is heard with this hand. Not with the closed fist of the person trying to earn it. With the open palm of the person willing to be given to.\n\nSit for a breath or two with the open hand. Notice if anything in you resists the posture. Notice if anything in you eases.\n\nThis is not a magical gesture. It is a small, embodied way of remembering that what is on offer in the announcement is a gift, and gifts are received, not produced.",
+      "follow_up": "Some readers find that the closed-fist posture is what they have been doing in their religion for years and have not had words for until now. If that is you, the open hand is not a demand. It is a permission."
+    },
+    {
+      "type": "reflection",
+      "prompt": "When you read the four-line summary — He died, He was buried, He was raised, He appeared — what part of you responds, and how?",
+      "additionalQuestions": [
+        "Which is harder to consider: that those events might be true, or that they might be true and that the person at the center of them might be looking for you?",
+        "If the gospel really is a person and not a worldview, what does that change about how you might approach Him? What does it change about how you have been approached, if anyone has tried to give you the news before?",
+        "Is your default posture closer to the closed fist or the open hand right now? What would it cost you to switch?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "heading": "On the Road, Reading",
+      "body": "On Day 1, the picture was a runner. A herald, ancient, breathless, carrying news from a battlefield to a city that had not yet heard. That image was meant to wake up the word euangelion before the religious associations buried it. A herald does not lecture. A herald shouts a name and a verb. Something has happened. Look up.\n\nClose your eyes for a second and put yourself back inside that picture. The herald has done his job. The news has reached the city gates. People are stopping in the streets. Some are dropping what they were carrying. Some are arguing. Some are walking back into their houses to think.\n\nWhere are you in that street?\n\nYou have heard, as of today, the most compressed and the oldest version of the news the Christian movement has ever passed on. Twenty years after the events it describes, less than a generation, four lines that fit on a stone. A man, a death, a burial, a rising, a list of witnesses. And, two days later in the calendar of this series, a person who said about Himself: I am the way, the truth, the life.\n\nIf the herald is right, none of this is an idea. It is a sequence of things that happened, to a person who is somehow still on the move. The runner is still running, twenty centuries down the road. He has reached you.\n\nWhat to do with that is not a thing to settle today. We are halfway through the series and the chiasm now starts to turn back. Tomorrow we will look at what receiving the news actually changes. The day after, we will follow a man on a desert road who is reading scripture and asking, simply, what is to prevent me. None of those days will press you for a decision. The Bible itself, when it tells the story of the news arriving, almost never presses people that way.\n\nWhat the Bible does is keep showing the news to people who did not earn it and were not expecting it.\n\nIt showed up to a fisherman who had denied knowing Jesus a few hours earlier. It showed up to a tax collector who had been collaborating with an occupying army. It showed up to a woman at a well in the middle of the day, carrying the kind of relational history that made her come for water at the time when no one else would. It showed up to a man on the road to Damascus who was, at that exact moment, hunting members of the church to drag them to prison. It is showing up, today, on whatever road you are on.\n\nIt is not your job today to know what to do with that. It is your job today to know that the door is the kind of door it is. The door is a person. The opening of the door is a Friday afternoon and a Sunday morning. The handle is, almost embarrassingly, just trust.\n\nIf you are tired of climbing — if you are tired of trying to be acceptable, tired of trying to know enough, tired of spiritual books and self-improvement and the whole industry of becoming — the news of these four lines is for tired people first. That is the order, when you read the gospels. The healthy did not come. The exhausted did. \n\nYou do not have to know yet what you believe. You only have to know that the runner has reached the gate, and the news he is carrying has the shape of a person, and the person has a name."
+    },
+    {
+      "type": "prayer",
+      "title": "A Prayer for the Center of the Week",
+      "posture": "permissive",
+      "prayerText": "Jesus, if You are real — if the four lines are real, if the runner has actually reached me — I am here.\n\nI do not have a tidy confession to make today. I have a body that is tired, a mind that is suspicious of pretty stories, and a small willingness to find out.\n\nIf You are who Paul says You are, please come closer. If You are who You said You were — the way, the truth, the life — please show me the small piece of that I can hold.\n\nI am not promising anything I cannot keep. I am only opening my hands.\n\nAmen.",
+      "prayerType": "permissive",
+      "scripture_echo": "1 Corinthians 15:3-5"
+    },
+    {
+      "type": "takeaway",
+      "title": "The Center of the Series",
+      "commitment": "Today I will hold one sentence: the good news is not a doctrine Jesus taught — Jesus is the good news. Whatever else I do, I will let that sentence sit.",
+      "leavingAtCross": [
+        "The pressure to figure out a worldview before I can come closer to the person at the center of it.",
+        "The closed-fist posture of trying to earn what is offered as a gift.",
+        "The assumption that Christianity is a teaching I have to master before I can meet the Teacher."
+      ],
+      "receivingFromCross": [
+        "Permission to receive a person before understanding a system.",
+        "The four-line creed as a small, portable summary of what is on offer.",
+        "An open-handed posture that does not have to perform to be welcome."
+      ],
+      "content": "Today I will hold one sentence: the good news is not a doctrine Jesus taught — Jesus is the good news. Whatever else I do, I will let that sentence sit."
+    },
+    {
+      "type": "resource",
+      "title": "Sources for Today's Reading",
+      "intro": "The two voices quoted in today's reading, with full citations and brief context.",
+      "resources": [
+        {
+          "title": "Athanasius of Alexandria, On the Incarnation",
+          "author": "Athanasius",
+          "year": "circa 318 AD",
+          "citation": "Athanasius of Alexandria, On the Incarnation of the Word, §54. Standard English: trans. John Behr, Popular Patristics Series, St. Vladimir's Seminary Press, 2011. Public domain editions also widely available.",
+          "quote": "God became man so that man might become god.",
+          "context": "Athanasius wrote this short book in his twenties, before the Council of Nicaea, while the church was still working out the language for what had happened in the incarnation. The lowercase second 'god' refers to theosis — being made fully alive in God's life — not ontological equality with God. The Eastern Orthodox tradition has carried this language forward ever since."
+        },
+        {
+          "title": "Martin Luther, Preface to the Letter of St. Paul to the Romans (1522)",
+          "author": "Martin Luther",
+          "year": "1522",
+          "citation": "Martin Luther, Preface to the Letter of St. Paul to the Romans, in Luther's Works, vol. 35: Word and Sacrament I, ed. E. Theodore Bachmann, Fortress Press, 1960. Originally written as a preface to Luther's German translation of the New Testament.",
+          "quote": "The law says, 'Do this,' and it is never done. Grace says, 'Believe in this,' and everything is already done.",
+          "context": "Luther wrote this preface to introduce ordinary German readers to the Letter to the Romans — the same letter that, in his account, had unlocked his own theological breakthrough a few years earlier. The sentence is the most concise summary in his writing of what the Reformation meant by sola fide, faith alone."
+        },
+        {
+          "title": "1 Corinthians 15:1-8 (Berean Standard Bible)",
+          "citation": "Berean Standard Bible (CC0), 2023. The BSB is a public-domain modern English translation, chosen for today's reading because the Pauline argument requires clarity rather than poetic cadence.",
+          "context": "The four-line creedal formula in verses 3-5 is widely held by New Testament scholars to be an oral tradition predating Paul, likely formulated within five years of the crucifixion."
+        },
+        {
+          "title": "John 14:6 (American Standard Version)",
+          "citation": "American Standard Version, 1901. Public domain. The ASV's word-for-word literal style preserves the structure of the Greek 'I am' formula.",
+          "context": "Paired with the C-module teaching as the structural claim from Jesus' own mouth: the way, the truth, the life are not three things He pointed at but three things He said He is."
+        }
+      ]
+    }
+  ],
+  "panels": [],
+  "totalWords": 0
+}

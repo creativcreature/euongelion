@@ -20,6 +20,13 @@ import InteractiveModule from './modules/InteractiveModule'
 import MatchModule from './modules/MatchModule'
 import OrderModule from './modules/OrderModule'
 import RevealModule from './modules/RevealModule'
+import RecapModule from './modules/RecapModule'
+import SabbathModule from './modules/SabbathModule'
+import HeroCardModule from './modules/HeroCardModule'
+import VideoModule from './modules/VideoModule'
+import InlineImageModule from './modules/InlineImageModule'
+import JourneyModule from './modules/JourneyModule'
+import CtaModule from './modules/CtaModule'
 
 /**
  * Normalizes a module from either flat or nested Substack format.
@@ -152,6 +159,20 @@ export default function ModuleRenderer({
       return <OrderModule module={normalized} />
     case 'reveal':
       return <RevealModule module={normalized} />
+    case 'recap':
+      return <RecapModule module={normalized} />
+    case 'sabbath':
+      return <SabbathModule module={normalized} />
+    case 'hero-card':
+      return <HeroCardModule module={normalized} />
+    case 'video':
+      return <VideoModule module={normalized} />
+    case 'inline-image':
+      return <InlineImageModule module={normalized} />
+    case 'journey':
+      return <JourneyModule module={normalized} />
+    case 'cta':
+      return <CtaModule module={normalized} />
     default:
       return null
   }

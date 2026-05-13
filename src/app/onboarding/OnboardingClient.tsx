@@ -11,6 +11,7 @@ import type {
   TextScalePreference,
   ThemePreference,
 } from '@/lib/auth/onboarding'
+import { BIBLE_TRANSLATION_CODES, BIBLE_TRANSLATIONS } from '@/lib/bible'
 
 interface OnboardingClientProps {
   finalRedirect: string
@@ -340,12 +341,14 @@ export default function OnboardingClient({
               }}
               aria-label="Default Bible translation"
             >
-              <option value="NIV">NIV (New International Version)</option>
-              <option value="ESV">ESV (English Standard Version)</option>
-              <option value="NASB">NASB (New American Standard Bible)</option>
-              <option value="KJV">KJV (King James Version)</option>
-              <option value="NLT">NLT (New Living Translation)</option>
-              <option value="MSG">MSG (The Message)</option>
+              {BIBLE_TRANSLATION_CODES.map((code) => {
+                const meta = BIBLE_TRANSLATIONS[code]
+                return (
+                  <option key={code} value={code}>
+                    {meta.short} ({meta.name}) · {meta.licenseShort}
+                  </option>
+                )
+              })}
             </select>
           </div>
 

@@ -1,15 +1,14 @@
 import type { User } from '@supabase/supabase-js'
+import {
+  BIBLE_TRANSLATION_CODES,
+  DEFAULT_BIBLE_TRANSLATION,
+  type BibleTranslationCode,
+} from '@/lib/bible'
 
 export type ThemePreference = 'dark' | 'light' | 'system'
 export type TextScalePreference = 'default' | 'large' | 'xlarge'
 export type SabbathDayPreference = 'saturday' | 'sunday'
-export type BibleTranslationPreference =
-  | 'NIV'
-  | 'ESV'
-  | 'NASB'
-  | 'KJV'
-  | 'NLT'
-  | 'MSG'
+export type BibleTranslationPreference = BibleTranslationCode
 export type DevotionalDepthPreference =
   | 'short_5_7'
   | 'medium_20_30'
@@ -40,7 +39,7 @@ export const DEFAULT_ONBOARDING_PREFERENCES: OnboardingPreferences = {
   theme: 'dark',
   textScale: 'default',
   sabbathDay: 'sunday',
-  bibleTranslation: 'NIV',
+  bibleTranslation: DEFAULT_BIBLE_TRANSLATION,
   defaultBrainMode: 'auto',
   openWebDefaultEnabled: false,
   devotionalDepthPreference: 'short_5_7',
@@ -83,14 +82,11 @@ function toTranslation(
   value: unknown,
   fallback: BibleTranslationPreference,
 ): BibleTranslationPreference {
-  return value === 'NIV' ||
-    value === 'ESV' ||
-    value === 'NASB' ||
-    value === 'KJV' ||
-    value === 'NLT' ||
-    value === 'MSG'
-    ? value
-    : fallback
+  if (typeof value !== 'string') return fallback
+  if ((BIBLE_TRANSLATION_CODES as readonly string[]).includes(value)) {
+    return value as BibleTranslationPreference
+  }
+  return fallback
 }
 
 function toBrainMode(

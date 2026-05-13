@@ -55,7 +55,7 @@ export interface DayMeta {
   slug: string
 }
 
-// Module types (21 total — 12 MVP + 9 additional)
+// Module types (28 total — 12 MVP + 9 additional + 2 v1.1 7-day extension + 5 v1.2 multi-mode/deep-dive)
 export type ModuleType =
   | 'scripture'
   | 'vocab'
@@ -78,6 +78,13 @@ export type ModuleType =
   | 'match'
   | 'order'
   | 'reveal'
+  | 'recap'
+  | 'sabbath'
+  | 'hero-card'
+  | 'video'
+  | 'inline-image'
+  | 'journey'
+  | 'cta'
 
 export interface Module {
   type: ModuleType
@@ -125,6 +132,7 @@ export interface Module {
   connectionToTheme?: string
   historicalContext?: string
   fascinatingFact?: string
+  markdown?: boolean // opt-in: render content as Markdown (bold/italic/blockquote/links)
   greekParallel?: {
     concepts?: Array<{ term: string; greek: string; meaning: string }>
   }
@@ -241,6 +249,57 @@ export interface Module {
     text: string
   }>
   summary?: string
+
+  // Recap (Day 6 of 7-day series — review without new teaching)
+  intro?: string
+  days?: Array<{
+    day: number
+    title: string
+    key_insight: string
+    anchor_verse?: string
+  }>
+  integration_question?: string
+  transition_to_sabbath?: string
+
+  // Sabbath (Day 7 of 7-day series — silence, presence)
+  scripture_anchor?: {
+    reference: string
+    translation: string
+    text: string
+  }
+  invitation?: string
+  no_modules_after?: boolean
+
+  // Hero card (top of every daily and the deep dive — eyebrow + day label + display title + halftone)
+  eyebrow?: string
+  dayLabel?: string
+  displayTitle?: string
+  heroImage?: string
+  heroImageAlt?: string
+  heroVariant?: 'series' | 'storytime' | 'deep-dive'
+
+  // Video (inline embed — YouTube or Vimeo)
+  videoProvider?: 'youtube' | 'vimeo'
+  videoId?: string
+  videoTitle?: string
+  videoCaption?: string
+  videoAttribution?: string
+
+  // Inline image (editorial halftone, distinct from `art` and `visual`)
+  inlineImageSrc?: string
+  inlineImageAlt?: string
+  inlineImageCaption?: string
+  inlineImageWidth?: 'narrow' | 'wide' | 'bleed'
+
+  // Journey ("This Week's Journey" — yesterday/today/tomorrow with auto-link)
+  journeyYesterday?: { day: number; title: string; slug: string }
+  journeyToday?: { day: number; title: string }
+  journeyTomorrow?: { day: number; title: string; slug: string }
+
+  // CTA ("Continue to Deep Dive →" or similar)
+  ctaLabel?: string
+  ctaHref?: string
+  ctaSubtext?: string
 }
 
 // Chat types

@@ -26,10 +26,15 @@ import {
   sanitizeCheckoutSessionId,
 } from '@/lib/billing/flash'
 import type { BillingConfigResponse, BillingPlan } from '@/types/billing'
+import {
+  BIBLE_TRANSLATION_CODES,
+  BIBLE_TRANSLATIONS,
+  type BibleTranslationCode,
+} from '@/lib/bible'
 
 type Theme = 'dark' | 'light' | 'system'
 type SabbathDay = 'saturday' | 'sunday'
-type BibleTranslation = 'NIV' | 'ESV' | 'NASB' | 'KJV' | 'NLT' | 'MSG'
+type BibleTranslation = BibleTranslationCode
 type TextScale = 'default' | 'large' | 'xlarge'
 type BrainMode = 'auto' | 'openai' | 'google' | 'minimax' | 'nvidia_kimi'
 type MockMode = 'anonymous' | 'mock_account'
@@ -850,8 +855,20 @@ export default function SettingsPage() {
             <h2 className="text-label vw-small mb-4 text-gold">
               BIBLE TRANSLATION
             </h2>
-            <p className="vw-small mb-6 text-secondary">
-              Default translation shown in Scripture passages.
+            <p className="vw-small mb-2 text-secondary">
+              Preferred translation for AI-generated devotionals when that
+              feature ships. All seven options are public domain or
+              CC0-dedicated.
+            </p>
+            <p className="vw-small mb-6 text-muted">
+              See{' '}
+              <Link
+                href="/credits"
+                className="underline decoration-dotted underline-offset-2"
+              >
+                Credits & Translations
+              </Link>{' '}
+              for full attribution.
             </p>
             <select
               value={bibleTranslation}
@@ -864,13 +881,16 @@ export default function SettingsPage() {
                 border: '1px solid var(--color-border)',
                 appearance: 'none',
               }}
+              aria-label="Default Bible translation"
             >
-              <option value="NIV">NIV (New International Version)</option>
-              <option value="ESV">ESV (English Standard Version)</option>
-              <option value="NASB">NASB (New American Standard Bible)</option>
-              <option value="KJV">KJV (King James Version)</option>
-              <option value="NLT">NLT (New Living Translation)</option>
-              <option value="MSG">MSG (The Message)</option>
+              {BIBLE_TRANSLATION_CODES.map((code) => {
+                const meta = BIBLE_TRANSLATIONS[code]
+                return (
+                  <option key={code} value={code}>
+                    {meta.short} ({meta.name}) · {meta.licenseShort}
+                  </option>
+                )
+              })}
             </select>
           </div>
 
