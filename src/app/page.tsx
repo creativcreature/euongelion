@@ -37,6 +37,11 @@ const HOMEPAGE_TODAY = {
   // photography). 1200x750, ~1.6:1 landscape, served full-width as
   // the page header banner. Sourced from archive/devotional-prints/.
   heroSrc: '/images/site/homepage/hero/header-v2.webp',
+  // Founder direction 2026-05-13 (correction): the featured devotional
+  // card next to "A Voice in the Wilderness" should NOT reuse the wide
+  // banner — it should use the series' own hero image. The
+  // what-is-the-gospel series image is a 1248×832 landscape.
+  featuredArt: '/images/site/series/what-is-the-gospel.webp',
 }
 
 const HOW_STEPS = [
@@ -349,7 +354,7 @@ export default function Home() {
         >
           <div className="homepage-featured-devotional-art">
             <Image
-              src={pickHomepageHero()}
+              src={HOMEPAGE_TODAY.featuredArt}
               alt={`Illustration accompanying ${HOMEPAGE_TODAY.title}`}
               fill
               sizes="(max-width: 900px) 100vw, 66vw"

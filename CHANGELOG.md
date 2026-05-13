@@ -5,6 +5,17 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R16 / Hero frame fix + featured devotional series image (2026-05-13)
+
+Two corrections to R14:
+
+1. **Hero banner stays inside the paper frame.** R14 used a `100vw` breakout that pushed the hero past the `.mock-paper` borders on both sides. Founder direction: the image must fill the box that everything else is in, not break out of it. Reverted `.homepage-hero-banner` to `width: 100%; max-width: var(--mock-frame-max); margin: 0 auto` so the hero is full width WITHIN the paper, no inner gutters, no breakout.
+2. **Featured devotional uses the series image.** The card next to "A Voice in the Wilderness" was reusing the wide banner. Now uses `/images/site/series/what-is-the-gospel.webp` (1248 × 832, 3:2) — the series' own hero. New `HOMEPAGE_TODAY.featuredArt` field in `src/app/page.tsx`. `.homepage-featured-devotional-art` aspect-ratio updated from 3358 / 1840 to 1248 / 832.
+
+PRD: `docs/feature-prds/F-061.md` (Round 16). Decision: SA-013.
+
+---
+
 ## F-061 R15 / Header tagline update (2026-05-13)
 
 Founder updated the masthead tagline. `src/components/EuangelionShellHeader.tsx` line 115 (mobile ticker) + line 417 (desktop top-bar center copy) now read **"The Good News, for You. Every Day."** in place of "Daily Devotionals for the Hungry Soul."
