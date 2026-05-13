@@ -5,6 +5,38 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R18 / Strip non-compliant site images — library-first reuse, no generation (2026-05-13)
+
+Founder ruled: every image on the site must be (a) blue-majority OR have heavily noticeable print quality, (b) NO text except Hebrew/Greek, (c) contextually relevant — no arbitrary image use. Critical correction this round: we have ~8,500 generated images already on disk, organized into a curated 1,404-entry library under `public/images/library/`. **Always check the library first; generation is the last resort.**
+
+This round did NOT generate any new images. All 9 series replacements were pulled from `public/images/library/poster/`.
+
+**Audit of `public/images/site/series/` (33 images):** 24 already compliant Riso linocuts / poster prints. 9 flagged as non-compliant — all 9 swapped from the curated library:
+
+| Series                            | Was                        | Now (library/poster/)                                                                                     |
+| --------------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `what-is-the-gospel`              | photo of cross             | `nt-temptation-wilderness.png` (Mark 1 wilderness, lone figure — perfect for "A Voice in the Wilderness") |
+| `bible-365`                       | photo of scroll            | `frag-holding-scroll.png` (hands holding lit scroll)                                                      |
+| `truth`                           | photo of scroll            | `brand-pillar-light-vertical.png` (pillar of light)                                                       |
+| `kingdom`                         | photo of keys              | `atmos-empty-throne-hall.png` (throne hall, blue Riso)                                                    |
+| `community`                       | photo of bread + cup       | `nt-pentecost-wind-room.png` (gathered believers in upper room, blue Riso)                                |
+| `coming-to-the-end-of-ourselves`  | photo of chalice           | `frag-folded-hands-rest.png` (folded hands at rest on book)                                               |
+| `provision`                       | "MANNA" text               | `ot-manna-morning.png` (Israelites gathering manna at dawn, no text)                                      |
+| `what-is-christianity`            | "John 6." text             | `nt-loaves-fishes-basket.png` (loaves & fishes, John 6 context)                                           |
+| `genesis-two-stories-of-creation` | Noah's Ark (wrong context) | `ot-eden-river-dawn.png` (Eden river at dawn — actually about creation)                                   |
+
+**Audit of `public/images/site/devotional/` (134 images):** unique-color heuristic flagged 1 photo suspect; visual verification confirmed it's actually a Riso. The full devotional inline set passes the spec.
+
+**Tooling added:**
+
+- `scripts/find-library-images.mjs` — keyword + surface search over `docs/image-library-catalog-2026-05-08.json`. Use it before generating ANY new image: `node scripts/find-library-images.mjs <keyword>... [--surface=poster|devotional|hero|chapter-header|decorative|logo] [--limit=N]`.
+- `CLAUDE.md` — new top-level "Image Library — Always Check First (NON-NEGOTIABLE)" section locking in the library-first rule, the inventory map, and the style spec (Riso/halftone duotone, cobalt + cream + crimson, no text except Hebrew/Greek, no arbitrary image use).
+- Cross-project memory (`~/.claude/projects/-Users-meltmac.../memory/feedback_no_arbitrary_image_use.md`) — applies to every future project.
+
+PRD: `docs/feature-prds/F-061.md` (Round 18). Decision: SA-013.
+
+---
+
 ## F-061 R17 / Soul-Audit copy + mode-flip + larger "What is this place?" (2026-05-13)
 
 Three founder corrections:

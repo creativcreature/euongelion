@@ -165,6 +165,37 @@ npm run verify:ios-readiness
 npm run build
 ```
 
+## Image Library — Always Check First (NON-NEGOTIABLE)
+
+This project has ~8,500 generated images already on disk. **Always check the library before generating a new image.** Generation is the last resort.
+
+**Inventory (as of 2026-05-13):**
+
+| Path                                         | Files | Purpose                                                      |
+| -------------------------------------------- | ----- | ------------------------------------------------------------ |
+| `public/images/library/`                     | 1,405 | Canonical curated set, 6 surfaces (see below)                |
+| `public/images/library/poster/`              | 602   | **Riso/halftone duotone, blue-majority — the brand style**   |
+| `public/images/library/devotional/`          | ~250  | Inline devotional art (painterly, religious, varied periods) |
+| `public/images/library/hero/`                | ~100  | Wide hero banners                                            |
+| `public/images/library/chapter-header/`      | ~150  | Section / chapter headers                                    |
+| `public/images/library/decorative/`          | ~150  | Borders, ornaments, decorative inserts                       |
+| `public/images/library/logo/`                | ~150  | Logo variants                                                |
+| `public/images/generated-2026-05-04/`        | 803   | Raw outputs from the May 4 batch (canonical originals)       |
+| `public/images/generated-2026-05-04-vertex/` | 4,368 | Vertex AI batch from May 4 (multiple regions / models)       |
+| `archive/devotional-prints/`                 | 1,923 | Historical print-style artwork archive (643 dirs)            |
+
+**Canonical manifest:** `docs/image-library-catalog-2026-05-08.json` (1.7 MB, 1,404 entries with keywords + surface tags). When picking an image, search this manifest by keyword first.
+
+**Rules (HARD):**
+
+1. **No arbitrary image use.** Every image must have a clear contextual reason for being in its slot. If you can't justify the choice in one sentence, find a different image or leave the slot empty.
+2. **Manifest first, generation last.** Before generating any new image: grep `docs/image-library-catalog-2026-05-08.json` for relevant keywords; render the top 3-5 candidates; pick the best fit. Only generate when zero candidates fit.
+3. **Style spec (current brand direction, 2026-05-13):** Two-color risograph / screen-print aesthetic with heavy Ben-Day halftone dots visible across all tones. Strict duotone — deep cobalt / ultramarine blue + cream / off-white paper, with one spot color accent (crimson red) used sparingly. Slight misregistration, paper grain, ink saturation variance. High horizon, negative space, single subject off-center. **No grays — every shadow is dot density.** **No text** on images (Hebrew / Greek script is allowed because it is content, not decoration). The `library/poster/` subdir is the gold standard for this style.
+4. **Real photographs are forbidden** on user-facing surfaces. Strip any photograph the moment it's identified.
+5. **When you reassign an image,** update the catalog entry's `assignedTo` field (or add it if missing) so future sessions know which library images are already in use vs available. Re-running `npm run generate:artwork-manifest` should NEVER overwrite manual assignments — confirm the script preserves them or update the script first.
+
+When in doubt about an image choice, surface it to the founder before shipping ("Using X for slot Y because Z — better fit available?").
+
 ## Current Status
 
 See `CHANGELOG.md` for full history and current sprint checklist.
