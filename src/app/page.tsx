@@ -111,6 +111,11 @@ export default function Home() {
   const [activeFaqQuestion, setActiveFaqQuestion] = useState<string | null>(
     null,
   )
+  // Auto-rotate highlight across desktop FAQ row. Hover overrides the
+  // highlight to the card under cursor; releasing hover resumes rotation.
+  // First card (index 0 of the visible window) starts highlighted.
+  const [faqAutoIndex, setFaqAutoIndex] = useState(0)
+  const [faqHoverIndex, setFaqHoverIndex] = useState<number | null>(null)
   const [resumeRoute, setResumeRoute] = useState<string | null>(null)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
 
@@ -145,6 +150,16 @@ export default function Home() {
       setActiveFaqQuestion(null)
     }
   }, [isMobileViewport])
+
+  // Auto-rotate FAQ highlight every 4s on desktop. Pause while hovered.
+  useEffect(() => {
+    if (isMobileViewport) return
+    if (faqHoverIndex !== null) return
+    const id = window.setInterval(() => {
+      setFaqAutoIndex((prev) => (prev + 1) % 3)
+    }, 4000)
+    return () => window.clearInterval(id)
+  }, [isMobileViewport, faqHoverIndex])
 
   useEffect(() => {
     let cancelled = false
@@ -293,8 +308,15 @@ export default function Home() {
           </section>
         )}
 
-        <section className="homepage-bible365-hero" id="today-devotional">
-          <div className="homepage-bible365-hero-art" aria-hidden="false">
+        {/* Founder direction 2026-05-13: split the prior single hero
+            into three blocks — full-bleed banner image, a "What is
+            this place?" intro section, then the featured devotional
+            with image-left / text-right (2/3 + 1/3). */}
+        <section
+          className="homepage-hero-banner"
+          aria-label="Euangelion home banner"
+        >
+          <div className="homepage-hero-banner-art">
             <Image
               src={pickHomepageHero()}
               alt={`Illustration accompanying ${HOMEPAGE_TODAY.title}`}
@@ -303,8 +325,38 @@ export default function Home() {
               priority
             />
           </div>
+        </section>
 
-          <div className="homepage-bible365-hero-main">
+        <section
+          className="homepage-what-is-this"
+          aria-label="What is this place?"
+        >
+          <p className="text-label mock-kicker">WHAT IS THIS PLACE?</p>
+          <h2 className="mock-title-center">
+            A daily newspaper of the Gospel.
+          </h2>
+          <p className="mock-subcopy-center">
+            {typographer(
+              "Five-to-seven minutes a day. Ancient wisdom, modern design, no engagement bait. Whatever you're carrying, there's a passage already waiting for it.",
+            )}
+          </p>
+        </section>
+
+        <section
+          className="homepage-featured-devotional"
+          id="today-devotional"
+          aria-label="Today's featured devotional"
+        >
+          <div className="homepage-featured-devotional-art">
+            <Image
+              src={pickHomepageHero()}
+              alt={`Illustration accompanying ${HOMEPAGE_TODAY.title}`}
+              fill
+              sizes="(max-width: 900px) 100vw, 66vw"
+            />
+          </div>
+
+          <div className="homepage-featured-devotional-main">
             <p className="text-label mock-kicker">{HOMEPAGE_TODAY.kicker}</p>
             <p
               className="text-label"
@@ -511,7 +563,7 @@ export default function Home() {
           )}
         </section>
 
-        <section className="mock-section-center">
+        <section className="homepage-howitworks">
           <p className="text-label mock-kicker">HERE&rsquo;S HOW IT WORKS</p>
           <h2 className="mock-title-center">
             Three steps. Five minutes a day.
@@ -521,7 +573,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="mock-steps-grid">
+        <section className="mock-steps-grid homepage-howitworks-grid">
           {HOW_STEPS.map((step) => {
             // Strip the leading "1. " from the title to produce a clean alt.
             const altText = step.title
@@ -604,14 +656,23 @@ export default function Home() {
               )
             }
 
+            // Desktop: auto-rotate highlight across the 3 visible cards.
+            // Hover takes precedence — when the user hovers any card, that
+            // one is highlighted instead. Releasing hover resumes rotation.
+            const highlightIdx = faqHoverIndex ?? faqAutoIndex
+            const isHighlighted = idx === highlightIdx
             return (
               <button
                 type="button"
                 key={`${item.question}-${idx}`}
                 id={cardId}
-                className="mock-faq-card"
-                aria-expanded={false}
+                className={`mock-faq-card ${isHighlighted ? 'is-active' : ''}`}
+                aria-expanded={isHighlighted}
                 aria-controls={answerId}
+                onMouseEnter={() => setFaqHoverIndex(idx)}
+                onMouseLeave={() => setFaqHoverIndex(null)}
+                onFocus={() => setFaqHoverIndex(idx)}
+                onBlur={() => setFaqHoverIndex(null)}
               >
                 <p className="mock-faq-question">{item.question}</p>
                 <p id={answerId} className="mock-faq-answer">

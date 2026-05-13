@@ -5,6 +5,23 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R14 / Homepage edit batch — eight founder corrections (2026-05-13)
+
+Founder walked the live homepage in scroll order and listed eight changes. Shipped together:
+
+1. **Hero banner edge-to-edge.** Hero image is now its own block (`.homepage-hero-banner`) using the `width: 100vw + left: 50% + margin-left: -50vw` breakout pattern so it spans the full viewport regardless of the `.mock-paper` frame and `.mock-home` outer padding.
+2. **"What is this place?" section** inserted above the featured devotional (`.homepage-what-is-this`). Centered kicker / display title / one-line description — first-time visitors land on an introduction before being offered a plan.
+3. **Featured devotional split** out of the hero. New section `.homepage-featured-devotional` is a 2 / 1 grid: image left, copy right. Stacks on mobile.
+4. **Featured Series rail.** `.print-rail-viewport` and `.browse-rail-viewport-wrap` now force `overflow-y: hidden` so the hover-lift transform on cards can't produce a vertical scrollbar. `.mock-featured-card` border changed from top + right only to a full four-side border so individual cards read as complete cards.
+5. **Soul Audit** (`.homepage-soul-audit`) reflowed: centered text, blue background, light text. Textarea / pills / primary button restyled to read against the blue.
+6. **"Here's how it works" section** (`.homepage-howitworks` + `.homepage-howitworks-grid`) gets the same blue / light treatment. Step cards' borders rebalanced for the new background.
+7. **FAQ auto-rotation.** Desktop FAQ row auto-rotates the highlighted question every 4 seconds. First question is highlighted on load. Hovering (or keyboard-focusing) any card pauses rotation and moves the highlight to that card; releasing hover resumes rotation. Rotation is desktop-only — mobile keeps the existing tap-to-expand pattern.
+8. **Footer rebalance + WokeGod LLC copyright.** Footer grid grew from two columns to three: Read / About / Resources (new — Translations, Credits & Licensing, Sitemap, AI Crawler Stance). Copyright updated to "EUANGELION is a product of WokeGod LLC. Copyright © 2026 WokeGod LLC. All rights reserved."
+
+PRD: `docs/feature-prds/F-061.md` (Round 14). Decision: SA-013.
+
+---
+
 ## F-061 R13b / Hero cache-bust — rename header.webp → header-v2.webp (2026-05-13)
 
 R13 deployed the new bytes successfully (verified at origin + CF edge via cache-busted curl: `2400 × 658 VP8`, 465 KB), but the URL `/images/site/homepage/hero/header.webp` was unchanged, so browsers continued serving the old image from disk cache. Renaming the asset is the simplest reliable fix.

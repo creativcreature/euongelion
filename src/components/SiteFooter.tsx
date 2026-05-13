@@ -14,6 +14,7 @@ const PRODUCT_LINKS = [
   { href: '/soul-audit', label: 'Soul Audit' },
   { href: '/wake-up', label: 'Wake-Up' },
   { href: '/series', label: 'Series' },
+  { href: '/library', label: 'My Library' },
 ]
 
 const COMPANY_LINKS = [
@@ -21,6 +22,13 @@ const COMPANY_LINKS = [
   { href: '/donation-disclosure', label: 'Donation Transparency' },
   { href: '/support', label: 'Contact & Support' },
   { href: '/help', label: 'Help Center' },
+]
+
+const RESOURCES_LINKS = [
+  { href: '/about/translations', label: 'Translations' },
+  { href: '/credits', label: 'Credits & Licensing' },
+  { href: '/sitemap.xml', label: 'Sitemap' },
+  { href: '/llms.txt', label: 'AI Crawler Stance' },
 ]
 
 const LEGAL_LINKS = [
@@ -69,10 +77,14 @@ export default function SiteFooter() {
       <div className="mock-site-footer-grid">
         <FooterColumn title="Read" links={PRODUCT_LINKS} />
         <FooterColumn title="About" links={COMPANY_LINKS} />
+        <FooterColumn title="Resources" links={RESOURCES_LINKS} />
       </div>
 
       <div className="mock-site-footer-meta">
-        <p className="vw-small text-muted">EUANGELION © 2026</p>
+        <p className="vw-small text-muted">
+          EUANGELION is a product of WokeGod LLC. Copyright © 2026 WokeGod LLC.
+          All rights reserved.
+        </p>
         <p className="vw-small text-muted mock-site-footer-legal">
           {LEGAL_LINKS.map((link, idx) => (
             <span key={link.href}>
