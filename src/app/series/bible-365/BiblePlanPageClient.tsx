@@ -10,8 +10,18 @@ import type { SeriesInfo } from '@/data/series'
 import { typographer } from '@/lib/typographer'
 
 const MONTH_NAMES = [
-  'January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December',
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ]
 
 // Day-of-year → month + day-of-month for 2026 (non-leap year).
@@ -32,9 +42,13 @@ function todayDayOfYearUTC(): number {
   return Math.floor((now.getTime() - start) / 86_400_000)
 }
 
-export default function BiblePlanPageClient({ series }: { series: SeriesInfo }) {
+export default function BiblePlanPageClient({
+  series,
+}: {
+  series: SeriesInfo
+}) {
   const { isRead } = useProgress()
-  const todayDoy = useMemo(todayDayOfYearUTC, [])
+  const todayDoy = useMemo(() => todayDayOfYearUTC(), [])
   const [searchQuery, setSearchQuery] = useState('')
 
   const totalDays = series.days.length
@@ -46,7 +60,10 @@ export default function BiblePlanPageClient({ series }: { series: SeriesInfo }) 
 
   // Group all 365 days by month (1-12)
   const daysByMonth = useMemo(() => {
-    const grouped: Array<typeof series.days> = Array.from({ length: 12 }, () => [])
+    const grouped: Array<typeof series.days> = Array.from(
+      { length: 12 },
+      () => [],
+    )
     for (const day of series.days) {
       const { month } = dayToMonthAndDate(day.day)
       grouped[month].push(day)
@@ -58,8 +75,9 @@ export default function BiblePlanPageClient({ series }: { series: SeriesInfo }) 
   const filteredDays = useMemo(() => {
     if (!searchQuery.trim()) return series.days
     const q = searchQuery.toLowerCase().trim()
-    return series.days.filter((d) =>
-      d.title.toLowerCase().includes(q) || d.slug.toLowerCase().includes(q)
+    return series.days.filter(
+      (d) =>
+        d.title.toLowerCase().includes(q) || d.slug.toLowerCase().includes(q),
     )
   }, [series.days, searchQuery])
 
@@ -90,7 +108,10 @@ export default function BiblePlanPageClient({ series }: { series: SeriesInfo }) 
           </p>
 
           {/* Progress strip */}
-          <div className="bible365-progress-strip" aria-label={`Read ${readCount} of ${totalDays} days`}>
+          <div
+            className="bible365-progress-strip"
+            aria-label={`Read ${readCount} of ${totalDays} days`}
+          >
             <div className="bible365-progress-bar">
               <div
                 className="bible365-progress-fill"
@@ -141,7 +162,8 @@ export default function BiblePlanPageClient({ series }: { series: SeriesInfo }) 
           />
           {searchQuery.trim() && (
             <p className="text-label" style={{ marginTop: '0.5rem' }}>
-              {filteredDays.length} {filteredDays.length === 1 ? 'day' : 'days'} match
+              {filteredDays.length} {filteredDays.length === 1 ? 'day' : 'days'}{' '}
+              match
             </p>
           )}
         </section>
@@ -151,21 +173,38 @@ export default function BiblePlanPageClient({ series }: { series: SeriesInfo }) 
           <section className="bible365-search-results shell-content-pad">
             <ul className="bible365-day-grid">
               {filteredDays.map((day) => (
-                <DayCard key={day.slug} day={day} todayDoy={todayDoy} isRead={isRead} />
+                <DayCard
+                  key={day.slug}
+                  day={day}
+                  todayDoy={todayDoy}
+                  isRead={isRead}
+                />
               ))}
             </ul>
           </section>
         ) : (
-          <section id="calendar" className="bible365-calendar shell-content-pad">
+          <section
+            id="calendar"
+            className="bible365-calendar shell-content-pad"
+          >
             {daysByMonth.map((monthDays, monthIdx) => (
               <div key={monthIdx} className="bible365-month-block">
                 <h2 className="bible365-month-heading">
-                  <span className="text-label">MONTH {String(monthIdx + 1).padStart(2, '0')}</span>
-                  <span className="bible365-month-name">{MONTH_NAMES[monthIdx]}</span>
+                  <span className="text-label">
+                    MONTH {String(monthIdx + 1).padStart(2, '0')}
+                  </span>
+                  <span className="bible365-month-name">
+                    {MONTH_NAMES[monthIdx]}
+                  </span>
                 </h2>
                 <ul className="bible365-day-grid">
                   {monthDays.map((day) => (
-                    <DayCard key={day.slug} day={day} todayDoy={todayDoy} isRead={isRead} />
+                    <DayCard
+                      key={day.slug}
+                      day={day}
+                      todayDoy={todayDoy}
+                      isRead={isRead}
+                    />
                   ))}
                 </ul>
               </div>
@@ -191,9 +230,18 @@ function DayCard({
   const isPast = day.day < todayDoy
   const completed = isRead(day.slug)
   const { month, date } = dayToMonthAndDate(day.day)
-  const status = completed ? 'READ' : isToday ? 'TODAY' : isPast ? 'CATCH UP' : 'UPCOMING'
+  const status = completed
+    ? 'READ'
+    : isToday
+      ? 'TODAY'
+      : isPast
+        ? 'CATCH UP'
+        : 'UPCOMING'
   return (
-    <li className="bible365-day-cell" data-status={status.toLowerCase().replace(' ', '-')}>
+    <li
+      className="bible365-day-cell"
+      data-status={status.toLowerCase().replace(' ', '-')}
+    >
       <Link href={`/devotional/${day.slug}`} className="bible365-day-link">
         <p className="text-label bible365-day-num">DAY {day.day}</p>
         <p className="text-label bible365-day-date">

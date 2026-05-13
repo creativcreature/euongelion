@@ -1,0 +1,372 @@
+'use client'
+
+import { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import ModuleRenderer from '@/components/ModuleRenderer'
+import Toast from '@/components/Toast'
+import { useDevotionalLibraryStore } from '@/stores/devotionalLibraryStore'
+import { SERIES_DATA } from '@/data/series'
+import { typographer } from '@/lib/typographer'
+import type { Devotional, Module, Panel } from '@/types'
+
+interface CuratedActiveViewProps {
+  seriesSlug: string
+  currentDay: number
+  source: string
+  startedAt: string
+}
+
+/**
+ * Daily Bread surface for a manually-started (or archive-restarted)
+ * curated series. Renders today's reading inline using the same
+ * modules / panels pipeline as the dedicated reader, plus prev/next
+ * navigation and pause-this-devotional controls.
+ *
+ * The Soul Audit pipeline isn't involved here — we read the day's
+ * JSON straight from /public/devotionals/<slug>.json.
+ */
+export default function CuratedActiveView({
+  seriesSlug,
+  currentDay,
+  source,
+  startedAt,
+}: CuratedActiveViewProps) {
+  const router = useRouter()
+  const series = SERIES_DATA[seriesSlug]
+  const clearActive = useDevotionalLibraryStore((s) => s.clearActive)
+  const save = useDevotionalLibraryStore((s) => s.save)
+  const unsave = useDevotionalLibraryStore((s) => s.unsave)
+  const saved = useDevotionalLibraryStore((s) => s.saved)
+  const refresh = useDevotionalLibraryStore((s) => s.refresh)
+  const hydrate = useDevotionalLibraryStore((s) => s.hydrate)
+
+  const [devotional, setDevotional] = useState<Devotional | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [activeDay, setActiveDay] = useState(currentDay)
+  const [toast, setToast] = useState<string | null>(null)
+  const [busy, setBusy] = useState(false)
+
+  useEffect(() => {
+    void hydrate()
+  }, [hydrate])
+
+  useEffect(() => {
+    setActiveDay(currentDay)
+  }, [currentDay, seriesSlug])
+
+  const totalDays = series?.days.length ?? 0
+  const safeDay = useMemo(
+    () => Math.max(1, Math.min(activeDay, totalDays || activeDay)),
+    [activeDay, totalDays],
+  )
+  const day = series?.days[safeDay - 1] ?? series?.days[0] ?? null
+  const prevDay = safeDay > 1 ? series?.days[safeDay - 2] : null
+  const nextDay =
+    safeDay < (series?.days.length ?? 0) ? series?.days[safeDay] : null
+
+  useEffect(() => {
+    if (!day) return
+    let cancelled = false
+    setLoading(true)
+    fetch(`/devotionals/${day.slug}.json`)
+      .then((r) => {
+        if (!r.ok) throw new Error('not found')
+        return r.json() as Promise<Devotional>
+      })
+      .then((data) => {
+        if (cancelled) return
+        setDevotional(data)
+      })
+      .catch(() => {
+        if (cancelled) return
+        setDevotional(null)
+      })
+      .finally(() => {
+        if (cancelled) return
+        setLoading(false)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [day])
+
+  const isSaved = day ? saved.some((s) => s.devotionalSlug === day.slug) : false
+
+  const handleSave = useCallback(async () => {
+    if (!day || busy) return
+    setBusy(true)
+    try {
+      if (isSaved) {
+        const result = await unsave(day.slug)
+        if (result.ok) setToast('Removed from your library.')
+      } else {
+        const result = await save(day.slug)
+        if (result.ok) setToast('Saved to your library.')
+      }
+    } finally {
+      setBusy(false)
+    }
+  }, [day, isSaved, save, unsave, busy])
+
+  const handlePause = useCallback(async () => {
+    setBusy(true)
+    try {
+      const result = await clearActive()
+      if (result.ok) {
+        setToast('Paused. You can resume it from your library.')
+        router.refresh()
+      }
+    } finally {
+      setBusy(false)
+    }
+  }, [clearActive, router])
+
+  const handleAdvance = useCallback(async () => {
+    if (!nextDay) return
+    setActiveDay(safeDay + 1)
+    await refresh()
+  }, [nextDay, safeDay, refresh])
+
+  if (!series || !day) {
+    return (
+      <section
+        className="devotional-shell-panel border px-6 py-8"
+        style={{ borderColor: 'var(--color-border)' }}
+      >
+        <p className="text-label vw-small text-gold mb-2">UNKNOWN SERIES</p>
+        <h1 className="vw-heading-md mb-3">
+          We couldn&rsquo;t find the series in your active slot.
+        </h1>
+        <Link
+          href="/library"
+          className="cta-major text-label vw-small mt-4 inline-block px-5 py-2"
+        >
+          OPEN LIBRARY
+        </Link>
+      </section>
+    )
+  }
+
+  const startedDate = new Date(startedAt).toLocaleDateString()
+  const modules = (devotional as (Devotional & { modules?: Module[] }) | null)
+    ?.modules
+  const panels = devotional?.panels
+
+  return (
+    <section className="curated-active-view" aria-label="Today's devotional">
+      <header
+        className="devotional-shell-panel border px-6 py-5 mb-5"
+        style={{ borderColor: 'var(--color-border)' }}
+      >
+        <p className="text-label vw-small text-gold mb-1">
+          YOUR ACTIVE DEVOTIONAL
+        </p>
+        <h1 className="vw-heading-md mb-1">{series.title}</h1>
+        <p className="vw-small text-secondary">
+          Day {safeDay} of {totalDays} ·{' '}
+          {source === 'manual_start' ? 'started' : 'restarted'} {startedDate}
+        </p>
+
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <button
+            type="button"
+            className="text-label vw-small link-highlight"
+            onClick={() => void handleSave()}
+            disabled={busy}
+            aria-pressed={isSaved}
+          >
+            {isSaved ? 'SAVED' : 'SAVE THIS DEVOTIONAL'}
+          </button>
+          <Link
+            href={`/devotional/${day.slug}`}
+            className="text-label vw-small link-highlight"
+          >
+            OPEN FULL READER
+          </Link>
+          <Link
+            href={`/series/${seriesSlug}`}
+            className="text-label vw-small link-highlight"
+          >
+            VIEW WHOLE SERIES
+          </Link>
+          <button
+            type="button"
+            className="text-label vw-small link-highlight"
+            onClick={() => void handlePause()}
+            disabled={busy}
+          >
+            PAUSE THIS DEVOTIONAL
+          </button>
+        </div>
+      </header>
+
+      {series.days.length > 1 && (
+        <nav
+          className="curated-active-day-strip mb-5"
+          aria-label="Day navigation"
+        >
+          <div className="flex flex-wrap items-center gap-2">
+            {series.days.map((d) => (
+              <button
+                key={d.slug}
+                type="button"
+                className={`text-label vw-small px-3 py-1 border ${d.day === safeDay ? 'is-active' : ''}`}
+                style={{
+                  borderColor:
+                    d.day === safeDay
+                      ? 'var(--color-border-strong, var(--color-border))'
+                      : 'var(--color-border)',
+                  background:
+                    d.day === safeDay
+                      ? 'var(--color-active, transparent)'
+                      : 'transparent',
+                }}
+                onClick={() => setActiveDay(d.day)}
+                aria-current={d.day === safeDay ? 'true' : undefined}
+              >
+                DAY {d.day}
+              </button>
+            ))}
+          </div>
+        </nav>
+      )}
+
+      <article
+        className="devotional-shell-panel border px-6 py-6 mb-5"
+        style={{ borderColor: 'var(--color-border)' }}
+      >
+        <p className="text-label vw-small text-gold mb-2">DAY {day.day}</p>
+        {loading ? (
+          <p className="vw-body text-secondary">
+            Loading today&rsquo;s reading…
+          </p>
+        ) : !devotional ? (
+          <div>
+            <p className="vw-body text-secondary mb-3">
+              We couldn&rsquo;t load this day&rsquo;s reading. It may not have
+              been published yet.
+            </p>
+            <Link
+              href={`/devotional/${day.slug}`}
+              className="cta-major text-label vw-small inline-block px-5 py-2"
+            >
+              TRY THE FULL READER
+            </Link>
+          </div>
+        ) : (
+          <>
+            {devotional.scriptureReference && (
+              <p className="text-label vw-small text-gold mb-2">
+                {devotional.scriptureReference}
+              </p>
+            )}
+            <h2 className="vw-heading-sm mb-3">
+              {typographer(devotional.title)}
+            </h2>
+            {devotional.teaser && (
+              <p className="vw-body text-secondary mb-5">
+                {typographer(devotional.teaser)}
+              </p>
+            )}
+
+            <div className="space-y-5">
+              {modules
+                ? modules.map((module, index) => (
+                    <article
+                      key={index}
+                      className="devotional-shell-panel border px-5 py-5"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      <ModuleRenderer module={module} />
+                    </article>
+                  ))
+                : panels?.slice(1).map((panel) => (
+                    <Fragment key={panel.number}>
+                      <article
+                        className="devotional-shell-panel border px-5 py-5"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        <PanelInline panel={panel} />
+                      </article>
+                    </Fragment>
+                  ))}
+            </div>
+          </>
+        )}
+      </article>
+
+      <nav
+        className="curated-active-prevnext grid gap-4 md:grid-cols-2"
+        aria-label="Day navigation"
+      >
+        {prevDay ? (
+          <button
+            type="button"
+            className="devotional-shell-panel block border px-5 py-4 text-left"
+            style={{ borderColor: 'var(--color-border)' }}
+            onClick={() => setActiveDay(prevDay.day)}
+          >
+            <p className="text-label vw-small text-gold">&larr; PREVIOUS</p>
+            <p className="vw-body text-secondary">{prevDay.title}</p>
+          </button>
+        ) : (
+          <div
+            className="devotional-shell-panel border px-5 py-4"
+            style={{ borderColor: 'var(--color-border)', opacity: 0.5 }}
+          />
+        )}
+
+        {nextDay ? (
+          <button
+            type="button"
+            className="devotional-shell-panel block border px-5 py-4 text-right"
+            style={{ borderColor: 'var(--color-border)' }}
+            onClick={() => void handleAdvance()}
+          >
+            <p className="text-label vw-small text-gold">NEXT &rarr;</p>
+            <p className="vw-body text-secondary">{nextDay.title}</p>
+          </button>
+        ) : (
+          <div
+            className="devotional-shell-panel border px-5 py-4"
+            style={{ borderColor: 'var(--color-border)', opacity: 0.5 }}
+          />
+        )}
+      </nav>
+
+      <Toast
+        message={toast ?? ''}
+        visible={Boolean(toast)}
+        onClose={() => setToast(null)}
+      />
+    </section>
+  )
+}
+
+function PanelInline({ panel }: { panel: Panel }) {
+  return (
+    <article>
+      {panel.heading && (
+        <p className="text-label vw-small mb-3 text-gold">{panel.heading}</p>
+      )}
+      {panel.content.split('\n\n').map((paragraph, i) => {
+        const trimmed = paragraph.trim()
+        const isScripture = trimmed.startsWith('“') && trimmed.endsWith('”')
+        return (
+          <p
+            key={i}
+            className={`vw-body mb-4 ${isScripture ? 'text-serif-italic' : 'text-secondary'} type-prose`}
+            style={{ whiteSpace: 'pre-line' }}
+          >
+            {paragraph
+              .split('**')
+              .map((part, j) =>
+                j % 2 === 1 ? <strong key={j}>{part}</strong> : part,
+              )}
+          </p>
+        )
+      })}
+    </article>
+  )
+}

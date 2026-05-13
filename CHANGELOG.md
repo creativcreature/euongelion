@@ -5,6 +5,107 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## LIBRARY-001 / Save + Start devotional, /library page, Daily Bread inline reader (2026-05-13)
+
+Adds authenticated-user control over the active devotional. Two CTAs on
+every devotional reader — "Save this Devotional" (bookmark) and "Start
+this Devotional" (set parent series as the active slot). Daily Bread
+now renders that active series **fully inline** with day-strip nav,
+prev/next, and pause controls. New `/library` page surfaces saved,
+paused, and completed series.
+
+Plan: `~/.claude/plans/i-need-the-devotionals-graceful-wombat.md`.
+Branch: `claude/objective-leakey-d3d455`.
+
+- Data model — migration `013_create_active_series.sql`:
+  - `active_series` — one row per user (PK = user_id enforces single
+    active at the DB level), `current_day`, `source`
+    (manual_start | soul_audit | restart_from_archive).
+  - `scheduled_series_swap` — queued "Start on Monday" replacement,
+    promoted lazily on the next `/daily-bread` load after starts_at.
+  - `archived_series` — paused / completed series the user can
+    resume from `furthest_day_reached` or restart from Day 1.
+  - All three tables enable RLS with the standard `auth.uid() = user_id`
+    pattern. Save state reuses the existing `session_bookmarks` table.
+
+- API — new routes following the bookmarks pattern (`getUser` → 401 +
+  `AUTH_REQUIRED`, `jsonError`, rate limits, request-id headers):
+  - `GET/PUT/DELETE /api/devotionals/active` — PUT returns 409
+    `CONFIRM_REQUIRED` when another series is active and the request
+    omits `confirm:true`. PUT accepts `mode: replace_now | queue_monday`
+    and the user's UTC-offset minutes for next-Monday calculation.
+  - `GET /api/devotionals/archive` — list paused + completed.
+  - `POST /api/devotionals/archive/restart` — promote an archived
+    series back to active (at Day 1 or at the furthest reached day).
+  - `GET/POST/DELETE /api/devotionals/saved` — Save/unsave.
+
+- Repository — `src/lib/library/repository.ts` — Supabase-canonical with
+  in-memory module fallback (matches soul-audit/repository.ts pattern).
+  Includes `nextMondayStartsAt(now, utcOffsetMinutes)` and
+  `promoteScheduledSwapIfDue(userId)` (archives current, promotes
+  queued, clears swap).
+
+- Client state — `src/stores/devotionalLibraryStore.ts` — Zustand store
+  with optimistic Save/unsave, `start()` that auto-handles the 409
+  confirm-required path, and an `auth-required` event channel so the
+  SignInIntentModal can capture the original intent and replay it after
+  magic-link sign-in.
+
+- UI components:
+  - `DevotionalActions` mounts on every reader page (`/devotional/[slug]`
+    - `/wake-up/devotional/[slug]`) — Save toggle, Start CTA, contextual
+      "Open in Daily Bread" / "Queued for Monday DD" labels.
+  - `PastoralSwitchModal` — three-choice pastoral copy ("Start on
+    Monday", "Replace today", "Cancel") mirroring the existing nudge
+    on `/soul-audit/results`. The displaced series moves to archive
+    automatically so it stays restorable.
+  - `SignInIntentModal` — magic-link form that captures the user's
+    intent (save / start / queue / restart-archive) and replays via
+    the existing `/auth/callback?redirect=` round-trip.
+
+- Daily Bread surface — `src/app/daily-bread/page.tsx` now consults
+  `active_series` first (manually-started/restarted curated series
+  take precedence). When set, `CuratedActiveView` renders the full
+  devotional inline using the same `ModuleRenderer` / panel pipeline
+  as the reader — not a link card. Includes day-strip nav, prev/next
+  navigation, Save, Pause-this-devotional, and Open-full-reader.
+  Falls through to the existing Soul Audit plan resolution when no
+  manual active is set. Wrapped in try/catch so missing Supabase env
+  in a dev/preview env doesn't break the page.
+
+- Scheduled-swap banner — appears on `/daily-bread` whenever a queued
+  swap exists, with a "Cancel" link that deletes the queued row.
+
+- `/library` page — Active / Saved / Paused / Completed sections.
+  Saved items show their parent series and offer "Activate Series"
+  (which routes through the same PastoralSwitchModal). Paused items
+  offer "Resume at Day N" or "Restart from Day 1." Completed offer
+  "Read Again."
+
+- Nav — `LIBRARY` link added to the primary nav and to the account
+  drop-down menu in `EuangelionShellHeader`.
+
+- Styles — appended `.devotional-actions-bar`, `.library-modal-*`,
+  `.library-page`, `.library-card`, `.daily-bread-swap-banner` to
+  `src/app/globals.css`.
+
+Verified locally: `npm run type-check` clean. `npm run lint` clean for
+all new files (one pre-existing error in `BiblePlanPageClient.tsx` is
+unrelated). All four new API endpoints return well-formed 401
+`AUTH_REQUIRED` responses for anonymous callers. `/library` and
+`/daily-bread` hydrate and render correctly in the local dev preview.
+
+NOT YET DONE — requires follow-up:
+
+- Apply migration 013 to Supabase production.
+- End-to-end signed-in flow verification — the worktree dev preview
+  has a pre-existing Turbopack + `generateStaticParams` + Suspense
+  hang that prevents the reader from hydrating locally (confirmed by
+  reproducing on a clean stash of all changes). Verify from the main
+  checkout or a deploy preview.
+
+---
+
 ## AUDIT-FIXES-2026-05-11 / 16 audit punch-list items shipped (2026-05-11)
 
 Consolidated sitewide audit (`docs/audits/HOMEPAGE-AUDIT-2026-05-11.md`)

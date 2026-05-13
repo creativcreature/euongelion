@@ -46,6 +46,8 @@ decisions:
     title: 7-day-plan-structure-5-devotional-sabbath-review
   - id: SA-022
     title: cascading-progressive-day-generation
+  - id: SA-023
+    title: user-controlled-active-devotional-and-library
 
 contracts:
   required_files:
