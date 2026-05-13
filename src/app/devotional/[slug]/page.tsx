@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
 import DevotionalPageClient from '@/app/wake-up/devotional/[slug]/DevotionalPageClient'
-import { getDevotionalTeaser } from '@/data/devotional-teasers'
+import {
+  getDevotionalTeaser,
+  getDevotionalTitle,
+} from '@/data/devotional-teasers'
 
 // Audit T2 (HOMEPAGE-AUDIT-2026-05-11): read teasers from the build-
 // time generated index. Earlier `fs.readFile(public/devotionals/...)`
@@ -28,11 +31,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const meta = findDevotionalMeta(slug)
   if (!meta) return { title: 'Devotional Not Found' }
 
-  // Many series in src/data/series.ts use a bare `Day N` title placeholder.
-  // Detect the redundancy so we don't render "Day 5: Day 5 | Euangelion".
-  const dayTitle = /^day\s+\d+$/i.test(meta.day.title.trim())
-    ? meta.day.title
-    : `Day ${meta.day.day}: ${meta.day.title}`
+  // Audit Manus §5 (Updated 2026-05-13): prefer the devotional's
+  // actual headline (from its JSON) over the bare "Day N" placeholder
+  // stored in series.ts. The page <title> becomes the article
+  // headline ("A Voice in the Wilderness") instead of "Day 1" — fixes
+  // SEO + shareability.
+  const jsonTitle = getDevotionalTitle(slug)
+  const isBareDayPlaceholder = /^day\s+\d+$/i.test(meta.day.title.trim())
+  const dayTitle = jsonTitle
+    ? jsonTitle
+    : isBareDayPlaceholder
+      ? meta.day.title
+      : `Day ${meta.day.day}: ${meta.day.title}`
 
   // Prefer the day's own teaser (build-time index from
   // public/devotionals/[slug].json) over the series-level question.

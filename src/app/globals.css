@@ -67,12 +67,21 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  /* Founder direction 2026-05-12: do not crop. Image scales fully
-     responsively at its native 1584/672 aspect ratio across every
-     viewport. No max-height cap. */
+  /* Founder direction 2026-05-12: do not crop. Image scales at its
+     native 1584/672 aspect across every viewport.
+     Audit follow-up 2026-05-13 (Manus §2): on desktop, cap max-width
+     so the image is shorter and the "A Voice in the Wilderness"
+     headline lifts above the fold. Mobile stays full-width. */
+  max-width: 1080px;
+  margin: 0 auto;
   aspect-ratio: 1584 / 672;
   background: var(--mock-paper, white);
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+@media (max-width: 760px) {
+  .homepage-bible365-hero-art {
+    max-width: 100%;
+  }
 }
 .dark .homepage-bible365-hero-art {
   background: var(--mock-ink, black);

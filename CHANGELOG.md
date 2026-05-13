@@ -166,6 +166,33 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
+- ROUND 11 (2026-05-13): Updated-audit follow-up batch
+  Six items from the updated Manus newspaper audit + homepage_notes.md:
+  - SIGN IN / SIGN UP demoted to a user-icon button + popover
+    (matches the authenticated avatar-menu pattern). The two inline
+    text links on the masthead top bar are gone.
+  - "Chiastic" scrubbed from user-facing strings: bible-365.ts
+    framework rewritten ("weekly rhythm: hook → turning point →
+    application → sabbath"), GenerationProgress.tsx + curated-
+    builder.ts plain-languaged. Internal LLM-prompt / type-system
+    chiastic refs unchanged (audit asked for user-facing copy only).
+  - Hero height: .homepage-bible365-hero-art capped at max-width
+    1080px (centered) on desktop, full-width on mobile. Image stays
+    uncropped at native 1584/672 aspect; headline lifts up the page.
+  - Section Index cards rewritten as editorial teasers — concrete
+    series titles + editor's-pick framing instead of nav copy.
+  - Closing CTA now leads with READ TODAY'S DEVOTIONAL (primary
+    button to hero slug); Soul Audit demoted to a quiet secondary
+    text link. Audit said the final invitation should be to read.
+  - Article page title metadata uses the devotional headline.
+    generate-devotional-teasers.mjs extended to extract titles too;
+    540 titles indexed in DEVOTIONAL_TITLES. generateMetadata in
+    both devotional page wrappers prefers the JSON title over the
+    "Day N" placeholder in series.ts.
+    Rebased onto origin/main twice during the batch to absorb PR #15
+    (decode \uXXXX literals) and PR #16 (feat(library) — Daily Bread
+    inline reader) from parallel agents. Both already on main.
+
 - ROUND 10 (2026-05-13): All series previews show image thumbnails
   Founder follow-up to round 9: "the series cards on series page
   should have images as well. all series previews should have image

@@ -492,19 +492,61 @@ export default function EuangelionShellHeader({
                   )}
                 </div>
               ) : (
-                <div className="mock-auth-links">
-                  <Link
-                    href={`/auth/sign-in?redirect=${redirectPath}`}
-                    className="mock-auth-link"
+                /* Audit Manus §1 (HOMEPAGE-AUDIT-2026-05-11): the audit
+                   flagged inline SIGN IN / SIGN UP links as competing
+                   with the masthead. Demoted to a single user-icon
+                   button matching the authenticated avatar-menu
+                   pattern. Click opens a quiet popover with both
+                   links. */
+                <div className="mock-account-wrap" ref={accountMenuRef}>
+                  <button
+                    type="button"
+                    className="mock-account-trigger"
+                    ref={accountTriggerRef}
+                    aria-haspopup="menu"
+                    aria-expanded={accountMenuOpen}
+                    aria-label="Sign in or sign up"
+                    onClick={() => setAccountMenuOpen((current) => !current)}
                   >
-                    SIGN IN
-                  </Link>
-                  <Link
-                    href={`/auth/sign-up?redirect=${redirectPath}`}
-                    className="mock-auth-link"
-                  >
-                    SIGN UP
-                  </Link>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </button>
+                  {accountMenuOpen && (
+                    <div
+                      className="mock-account-menu"
+                      role="menu"
+                      aria-label="Account"
+                    >
+                      <Link
+                        href={`/auth/sign-in?redirect=${redirectPath}`}
+                        role="menuitem"
+                        className="mock-account-item"
+                        onClick={() => setAccountMenuOpen(false)}
+                      >
+                        Sign in
+                      </Link>
+                      <Link
+                        href={`/auth/sign-up?redirect=${redirectPath}`}
+                        role="menuitem"
+                        className="mock-account-item"
+                        onClick={() => setAccountMenuOpen(false)}
+                      >
+                        Sign up
+                      </Link>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
