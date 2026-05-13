@@ -379,7 +379,7 @@ export default function SeriesBrowsePage() {
           </section>
         )}
 
-        {/* ─── List view — filterable, small cards (no images) ────── */}
+        {/* ─── List view — filterable, small cards with thumbnails ── */}
         {viewMode === 'list' && (
           <section className="series-list-view">
             <div className="series-list-results">

@@ -24,6 +24,18 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
+- ROUND 10 (2026-05-13): All series previews show image thumbnails
+  Founder follow-up to round 9: "the series cards on series page
+  should have images as well. all series previews should have image
+  previews." The /series page's LIST view used variant="small"
+  cards that explicitly skipped the thumbnail.
+  - BrowseSeriesCard.tsx: getSeriesHero(slug) now resolved for every
+    variant. The small-variant JSX renders {thumbnail} between badge
+    and title.
+  - src/app/series/page.tsx: stale "(no images)" comment updated.
+  - Verified locally: 33/33 small cards in list view render
+    thumbnails.
+
 - ROUND 9 (2026-05-12): Soul Audit prompt + series-card thumbnails + every-devotional-image
   Founder direction: (1) Soul Audit asks "What are you wrestling
   with"; (2) every devotional should have an image; (3) the main
