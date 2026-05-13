@@ -5,6 +5,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## TYPO-FIX-2026-05-13 / Decode literal `\uXXXX` escapes leaking into homepage JSX (2026-05-13)
+
+Founder report: visible `·` and `—` strings appearing as raw
+text on the live homepage instead of rendering as `·` (interpunct),
+`—` (em-dash), `–` (en-dash), `→` (right arrow), `À` (À-grave), and
+`§` (section sign).
+
+Root cause: in `src/app/page.tsx`, several user-facing strings sat as
+JSX text content rather than inside JS string literals. TypeScript only
+interprets `\uXXXX` as a Unicode escape inside `'...'`, `"..."`, or
+template literals — JSX text is treated as opaque, so the 6-character
+sequence rendered verbatim. Likely introduced by AI-generated copy
+(which routinely escapes non-ASCII as `\uXXXX` in JSON output) being
+pasted directly into JSX without re-decoding.
+
+Repo-wide audit confirmed the bug was isolated to one file: every
+other `\uXXXX` occurrence across 13 other files (components, hooks,
+lib, other pages) sits inside `'...'` JS string literals or regex
+char classes where TS parses them correctly. JSON devotional content
+under `public/devotionals/` stores actual Unicode characters (clean).
+
+- `src/app/page.tsx`: 18 substitutions — 11 in user-visible JSX text
+  (trust strip, section-index card, colophon strip, soul-audit
+  heading, Bible-365 browse link), 7 in `{/* ... */}` source comments
+  cleaned for consistency. JS string literals on lines 446/448 left
+  alone (already correct at runtime).
+
+Verified live in dev server at `localhost:3333`:
+
+- Trust row: `FREE · NO ACCOUNT · 5–7 MIN A DAY · START ANY DAY`
+- Section card: `When you're hurting · overwhelmed · new to faith · going deeper.`
+- Colophon: `ANCHORED IN THE APOSTLES' AND NICENE CREEDS · VOICES FROM AUGUSTINE, À KEMPIS, SPURGEON, TOZER, AND MORE`
+- Soul Audit H2: `Or — start where you actually are.`
+- Bible-365 browse link: `Or browse the 365-day plan →`
+- Runtime DOM check confirmed zero literal `\uXXXX` substrings remain
+  anywhere in `document.body.innerText`.
+
+Branch: `claude/epic-mendeleev-9d71c1`.
+
+---
+
 ## AUDIT-FIXES-2026-05-11 / 16 audit punch-list items shipped (2026-05-11)
 
 Consolidated sitewide audit (`docs/audits/HOMEPAGE-AUDIT-2026-05-11.md`)
