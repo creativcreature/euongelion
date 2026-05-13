@@ -84,20 +84,17 @@
    blocks — full-bleed banner, then "What is this place?" intro, then
    the featured-devotional card with image-left / text-right.  ===== */
 
-/* (1) Full-bleed hero banner. Breaks out of the .mock-paper frame
-   (which has a max-width via the 1860px frame and an outer .mock-home
-   padding of 0.7rem). Uses the standard `width: 100vw + left: 50%`
-   breakout pattern so the image sits truly edge-to-edge regardless
-   of the parent's content padding. */
+/* (1) Hero banner — full width INSIDE the .mock-paper frame, not
+   beyond it. Founder direction 2026-05-13 (corrected): the image
+   should fill the box that everything is in, edge-to-edge of the
+   paper itself, with no inner gutters. The previous 100vw breakout
+   went past the frame on both sides, which read wrong. */
 .homepage-hero-banner {
   display: block;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: var(--mock-frame-max, 1860px);
+  margin: 0 auto;
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
   background: var(--mock-ink, black);
 }
@@ -149,9 +146,11 @@
 .homepage-featured-devotional-art {
   position: relative;
   width: 100%;
-  /* Aspect ratio matches the banner image — same source until daily
-     rotation ships. Container stretches; image covers without crop. */
-  aspect-ratio: 3358 / 1840;
+  /* Founder direction 2026-05-13: featured card uses the
+     what-is-the-gospel series image (1248×832, 3:2). Aspect ratio
+     follows the source so the image is not cropped at typical
+     viewports. */
+  aspect-ratio: 1248 / 832;
   min-height: 280px;
   overflow: hidden;
   background: var(--mock-ink, black);
@@ -175,7 +174,7 @@
     border-right: 0;
     border-bottom: var(--mock-stroke, 1.5px) solid
       var(--mock-line, currentColor);
-    aspect-ratio: 3358 / 1700;
+    aspect-ratio: 1248 / 832;
     min-height: 0;
   }
 }
