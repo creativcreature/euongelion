@@ -106,6 +106,47 @@ NOT YET DONE — requires follow-up:
 
 ---
 
+## TYPO-FIX-2026-05-13 / Decode literal `\uXXXX` escapes leaking into homepage JSX (2026-05-13)
+
+Founder report: visible `·` and `—` strings appearing as raw
+text on the live homepage instead of rendering as `·` (interpunct),
+`—` (em-dash), `–` (en-dash), `→` (right arrow), `À` (À-grave), and
+`§` (section sign).
+
+Root cause: in `src/app/page.tsx`, several user-facing strings sat as
+JSX text content rather than inside JS string literals. TypeScript only
+interprets `\uXXXX` as a Unicode escape inside `'...'`, `"..."`, or
+template literals — JSX text is treated as opaque, so the 6-character
+sequence rendered verbatim. Likely introduced by AI-generated copy
+(which routinely escapes non-ASCII as `\uXXXX` in JSON output) being
+pasted directly into JSX without re-decoding.
+
+Repo-wide audit confirmed the bug was isolated to one file: every
+other `\uXXXX` occurrence across 13 other files (components, hooks,
+lib, other pages) sits inside `'...'` JS string literals or regex
+char classes where TS parses them correctly. JSON devotional content
+under `public/devotionals/` stores actual Unicode characters (clean).
+
+- `src/app/page.tsx`: 18 substitutions — 11 in user-visible JSX text
+  (trust strip, section-index card, colophon strip, soul-audit
+  heading, Bible-365 browse link), 7 in `{/* ... */}` source comments
+  cleaned for consistency. JS string literals on lines 446/448 left
+  alone (already correct at runtime).
+
+Verified live in dev server at `localhost:3333`:
+
+- Trust row: `FREE · NO ACCOUNT · 5–7 MIN A DAY · START ANY DAY`
+- Section card: `When you're hurting · overwhelmed · new to faith · going deeper.`
+- Colophon: `ANCHORED IN THE APOSTLES' AND NICENE CREEDS · VOICES FROM AUGUSTINE, À KEMPIS, SPURGEON, TOZER, AND MORE`
+- Soul Audit H2: `Or — start where you actually are.`
+- Bible-365 browse link: `Or browse the 365-day plan →`
+- Runtime DOM check confirmed zero literal `\uXXXX` substrings remain
+  anywhere in `document.body.innerText`.
+
+Branch: `claude/epic-mendeleev-9d71c1`.
+
+---
+
 ## AUDIT-FIXES-2026-05-11 / 16 audit punch-list items shipped (2026-05-11)
 
 Consolidated sitewide audit (`docs/audits/HOMEPAGE-AUDIT-2026-05-11.md`)
@@ -124,6 +165,38 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
     crumb.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
+
+- ROUND 10 (2026-05-13): All series previews show image thumbnails
+  Founder follow-up to round 9: "the series cards on series page
+  should have images as well. all series previews should have image
+  previews." The /series page's LIST view used variant="small"
+  cards that explicitly skipped the thumbnail.
+  - BrowseSeriesCard.tsx: getSeriesHero(slug) now resolved for every
+    variant. The small-variant JSX renders {thumbnail} between badge
+    and title.
+  - src/app/series/page.tsx: stale "(no images)" comment updated.
+  - Verified locally: 33/33 small cards in list view render
+    thumbnails.
+
+- ROUND 9 (2026-05-12): Soul Audit prompt + series-card thumbnails + every-devotional-image
+  Founder direction: (1) Soul Audit asks "What are you wrestling
+  with"; (2) every devotional should have an image; (3) the main
+  series image should show as the thumbnail for series cards
+  throughout the site.
+  - Soul Audit textarea placeholder: "What's been weighing on you?"
+    -> "What are you wrestling with?" (matches aria-label + the
+    approved PUBLIC-FACING-LANGUAGE phrasing).
+  - src/lib/series-hero.ts (new): getSeriesHero(slug) prefers the
+    auto-generated SERIES_HERO manifest entry but falls back to
+    series.heroImage from SERIES_DATA. Wired into BrowseSeriesCard,
+    soul-audit/OptionCard, and soul-audit/AuditOptionCard.
+  - DevotionalPageClient artworks memo now has a 3-tier fallback:
+    SITE_DEVOTIONAL_ART -> DEVOTIONAL_ARTWORKS -> series hero. The
+    third tier covers the 365 Bible-365 days that previously rendered
+    no per-day image.
+  - Verified locally: homepage Featured Series thumbnails render
+    /images/site/series/\*.webp; /devotional/bible-365-day-100
+    renders bible-365.webp series hero (was blank before).
 
 - ROUND 8 (2026-05-12): Hero — uncropped, fully responsive
   Founder direction: "do not crop the image. image should fit the
