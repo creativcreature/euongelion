@@ -1,0 +1,191 @@
+{
+  "day": 1,
+  "chiasm_position": "A",
+  "title": "A Word You Already Know in a Language You Don't",
+  "teaser": "Euangelion was not a religious word. It was a herald's word — the kind of announcement carried from a battlefield to a city. Mark borrows it on purpose.",
+  "anchorVerse": "Mark 1:1",
+  "theme": "Before the gospel was a religion, the gospel was an announcement. The first word of the first written gospel is a public-square word, deliberately chosen. Mark is making a political claim before he makes a theological one.",
+  "framework": "Chiastic hook — opens the series by waking up an old word the reader thinks they already know.",
+  "scriptureReference": "Mark 1:1",
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Mark 1:1",
+      "translation": "BSB",
+      "emphasis": [
+        "the beginning of the gospel",
+        "Jesus Christ",
+        "the Son of God"
+      ],
+      "passage": "This is the beginning of the gospel of Jesus Christ, the Son of God.",
+      "display": "block"
+    },
+    {
+      "type": "scripture",
+      "reference": "Mark 1:14-15",
+      "translation": "BSB",
+      "emphasis": [
+        "proclaimed the gospel of God",
+        "The time is fulfilled",
+        "the kingdom of God is near",
+        "Repent and believe in the gospel"
+      ],
+      "passage": "After the arrest of John, Jesus went into Galilee and proclaimed the gospel of God. 'The time is fulfilled,' He said, 'and the kingdom of God is near. Repent and believe in the gospel!'",
+      "display": "block"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "A Word You Think You Already Know",
+      "body": "There is a word at the top of this page you have probably heard a thousand times. Gospel.\n\nDepending on where you grew up, the word may carry a particular kind of weight. A church on a hot Sunday. A street preacher. A song your grandmother used to sing. A book on a shelf you have not opened. A thing your friends believe and you, mostly, do not. For some people the word lands warmly. For others it lands with a small flinch. For most of us, somewhere in between, it has been smoothed by repetition into something that no longer means very much.\n\nIf that is roughly where you are with the word — fond of it, allergic to it, indifferent to it, tired of it — you are exactly the kind of reader these next seven days were written for. The series will not ask you to believe anything before you have looked at it. It will only ask you to slow down with one word for a week.\n\nThat word, in its original language, is not gospel. It is something stranger.\n\nThe Greek word is euangelion. You can sound it out: yoo-ang-ghel-ee-on. Five syllables. The first part means good. The second part is the same root that gives us our English word angel — but in plain Greek, before the religious associations, it just meant a messenger or a message. So euangelion, taken apart, means a good message. A good announcement. The kind of news a runner carries when something has actually happened.\n\nMark — the man who wrote the gospel of Mark, the shortest and probably the earliest of the four gospels — opens his book with that word. \"This is the beginning of the gospel of Jesus Christ, the Son of God.\" The first time a Christian book was ever written down, this is how it started. With a word that did not yet sound religious. A word a Roman crowd would have heard a hundred times in the streets before it was ever attached to Jesus.\n\nWe are going to spend today inside that word. Not the religious word it became. The plain, public word it was when Mark borrowed it.\n\nWelcome to the start of the series. The Old Testament has been waiting for this word. The New Testament opens with it. Today we sit at the beginning of the moment everything in the Bible turns toward."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "εὐαγγέλιον",
+      "transliteration": "euangelion",
+      "pronunciation": "yoo-ang-ghel'-ee-on",
+      "strongsNumber": "G2098",
+      "definition": "Good news. A public announcement that something significant has happened.",
+      "rootMeaning": "A compound word. Eu- (εὖ) means 'good, well.' Angelos (ἄγγελος) means 'messenger,' and the related noun angelia means 'message, announcement.' Put together: a good message, a good announcement. The English word 'angel' comes from the same root, but in plain pre-Christian Greek angelos just meant any messenger — human or divine.",
+      "usage": "Outside the Bible, in the everyday Greek of the Roman Empire, euangelion was a public-square word. It named the kind of announcement a herald carried from a battlefield, an imperial palace, or a senate. A battle won, a king enthroned, a son born to a Caesar. It was not religious vocabulary. It was civic news.",
+      "usageNote": "The clearest surviving example is the Priene Calendar Inscription, carved around 9 BC in the Greek city of Priene (in modern western Turkey). It celebrates the birthday of Augustus and calls it 'the beginning of euangelion for the world.' The exact phrase Mark uses to open his gospel had already been used for the birth of an emperor, decades before a fisherman from Galilee was ever announced with the same word.",
+      "relatedWords": [
+        {
+          "word": "ἄγγελος",
+          "transliteration": "angelos",
+          "note": "messenger, the source of our English word 'angel' — but in ordinary Greek it meant any sent person, not necessarily a heavenly one"
+        },
+        {
+          "word": "εὐαγγελίζω",
+          "transliteration": "euangelizo",
+          "note": "the verb form — 'to announce good news,' the action a herald performs when he runs into the city with the message"
+        },
+        {
+          "word": "κῆρυξ",
+          "transliteration": "kerux",
+          "note": "the herald himself — the runner, the announcer, the public voice that carries the euangelion to people who have not yet heard"
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "derash",
+      "heading": "The Word Mark Reached For On Purpose",
+      "body": "Mark wrote his gospel, by traditional reckoning, in Rome. The decade was the AD 60s — possibly during, possibly just after, the persecution under Nero, who blamed Christians for the great fire of Rome in AD 64. The early church historian Eusebius, writing in the early 300s, preserves an even older tradition: that Mark composed his account from the preaching of Peter, who had been with Jesus from the beginning and was now an old man telling the story to a Roman audience that had not been there.\n\nThis matters because Mark's audience was not Galilean villagers. It was Greek-speaking residents of the imperial capital. People for whom Caesar was a daily fact and the emperor's herald was a familiar figure. People who knew, in their bones, what the word euangelion sounded like in public use.\n\nIn that world, euangelion was civic vocabulary, not religious vocabulary. It meant the kind of announcement that traveled at running speed. A general had won a battle on the eastern frontier; a herald sprinted into the forum with the news. The empress had given birth to a son; criers stood at the city gates. A new emperor had taken the throne; stone inscriptions in dozens of cities declared the dawn of his reign. Each of these was, in plain Greek, a euangelion.\n\nThe Priene Calendar Inscription, mentioned in today's vocabulary module, is the cleanest surviving example. Carved around 9 BC, it celebrates the birthday of Augustus — the first Roman emperor — and uses precisely the same vocabulary the New Testament will later use of Jesus. The birthday of Augustus, the inscription says, was the beginning of euangelion for the world. Those exact phrases, in those exact Greek words, were chiseled into stone across the eastern Mediterranean before any of the four gospels were written.\n\nWhich means that when Mark sits down in Rome in the 60s and writes, in Greek, \"This is the beginning of the euangelion of Jesus Christ, the Son of God,\" he is not inventing religious language. He is reaching, on purpose, into the political vocabulary of his own world and applying it to a man from Galilee who had been executed by the Roman state.\n\nTo the Roman ear, \"good news\" had a king attached to it, and the king was Caesar. To take that phrase and apply it to a crucified provincial preacher was not a quiet theological move. It was a public claim. A second king has been announced. A different empire has begun. The herald is already running.\n\nMark is doing this deliberately. He could have called his book a teaching, or a wisdom, or a way. Greek had perfectly serviceable words for all of those. He picked the word the empire used for its own most significant news — and turned it, on the first line of his book, into the announcement of someone else.\n\nThis is what is meant by saying Mark is making a political claim before he is making a theological one. The theology will come; it is loaded into every page of what follows. But the very first move is to plant a flag in public language. Whatever this is, it belongs in the same category as imperial news. It is not a private inner experience. It is not a self-help framework. It is, in shape, an announcement that something has happened in the public world, and the world is not the same after.\n\nThe word at the top of Mark's first page is the word for that kind of news. We will spend the next four days finding out what the news actually contains."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "In the Roman world Mark was writing in, euangelion was a herald's word. Stone inscriptions across the eastern empire used it for the birth of an emperor, the accession of a new Caesar, the victory of a Roman army. It was vocabulary for news a runner carried at full speed because the city needed to know.",
+      "modernApplication": "The phrase 'good news' has had a different career in English. It has become a wrapper for almost anything — a sale at a department store, a cheerful update on a friend's day, the line at the top of a press release. The phrase has been used so often, in so many low-stakes ways, that the word can no longer carry much weight on its own.",
+      "connection": "When the same phrase shows up in a religious context, the wear is even harder to feel. 'The good news of Jesus,' for many readers, sits in the same emotional category as 'good news from the dentist.' A polite phrase. A churchy phrase. A phrase domesticated by repetition until it no longer sounds like news.",
+      "question": "What if the word, in its original life, was the kind of word a runner shouted in a street?",
+      "answer": "It was. A herald, breathless, arriving in a city that had not yet heard. The whole crowd stopping. Carts pulled to the side of the road. Conversations cut short. A single sentence announced — not explained, not argued, just announced — and afterward the city moved through the rest of its day inside that announcement.",
+      "newTestamentEcho": "That is the register Mark is reaching for when he sets the word as the first noun of the first sentence of the first written gospel. He is asking his reader, then and now, to hear the word the way it was meant to be heard before religion smoothed it down. As running news. As the kind of announcement that stops a city."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "sod",
+      "heading": "A Political Claim Before It Is a Theological One",
+      "body": "Hold the picture for a moment. A herald running into a Roman city in the AD 60s. Sandals on stone. A dust cloud at his back. He stops in the forum, lungs heaving, and shouts a sentence. The crowd hears the first word — euangelion — and instinctively turns toward him. They know what kind of word that is. It is the word that comes attached to a king.\n\nNow imagine what the herald says next. He does not name Caesar. He names a different man entirely. A Galilean. A teacher. A man who was executed under Pontius Pilate, hung on a Roman cross outside Jerusalem about thirty years earlier. The herald says: this man is the Son of God. He is the king. The new age has already begun.\n\nThat is, roughly, what the first sentence of Mark is doing.\n\nTo a first-century Roman ear, every category in the announcement was already taken. 'Son of God' was the emperor — Augustus had been called divi filius, the son of the deified Julius Caesar, and that title had been carried by every emperor since. 'Good news' was imperial news. 'Lord' — kyrios, the word the New Testament uses constantly for Jesus — was a standard title for Caesar. To redirect those phrases onto a crucified Jew from a backwater province was not a quiet adjustment to Roman piety. It was a public, audible claim that the world had a different king than it thought it did.\n\nThe New Testament scholar N.T. Wright has worked to recover this dimension of the gospel for modern readers, who have inherited a quieter, more privatized version of the same word. In his book Simply Jesus (2011), Wright puts it this way: 'The gospel is not about going to heaven when you die. It is about God's kingdom coming on earth as it is in heaven.' Wright is not denying the personal dimension. He is restoring the public dimension the modern usage has often lost. The first preachers of the gospel were not, in the first instance, telling individuals how to secure a private afterlife. They were announcing — in the language of imperial news — that a new king had arrived and his reign had begun.\n\nThis is also why, in Mark 1:14-15, the word kingdom appears immediately. The very first thing Mark records Jesus saying in public is this: the time is fulfilled, the kingdom of God is near, repent and believe the euangelion. Every word is loaded. The time — the long waiting of Israel and the world — has reached its climax. The kingdom — God's actual reign, breaking into history — is at hand. The right response is not assent to a doctrine. It is to turn around and trust the news. That is what the Greek word for repent — metanoia — actually means. A word for a body, not just a mind: the moment a person realizes they have been walking the wrong direction and turns around.\n\nMost of us, when we hear the word gospel today, hear it as a piece of religious instruction. Believe these things and your inner life will improve. Adopt this worldview. Accept this teaching and your eternal destination will be secured. Some of those framings have a thread of truth in them. None of them is what Mark is doing in his opening line.\n\nMark is announcing. He is not arguing for a religion. He is using the public vocabulary of his world to deliver a piece of news. The structure of his first sentence is the structure of a herald's report. Something has happened. A man has arrived. The world has a new king. Read the rest of the book and you will see whether the announcement holds up.\n\nAnd here is the first hint of something the rest of the series will land on. The runner is not carrying a doctrine. The runner is carrying a person. Mark does not say 'this is the beginning of the gospel of repentance' or 'the gospel of forgiveness.' He says 'the gospel of Jesus Christ.' The genitive in the Greek — the of-construction — is loaded. The good news is not about a teaching that Jesus offered. The good news is Jesus, and what He has done, and what He is doing now. The herald is not carrying a sermon. The herald is announcing a person."
+    },
+    {
+      "type": "interactive",
+      "interaction_type": "breath",
+      "title": "Good News, Has Come",
+      "prompt": "Slow the reading down for a minute. The day has been heavy on history and Greek; let the body in.\n\nSit somewhere you can feel your weight in the chair. Set the phone or tablet down so your hands are not gripping it. Close your eyes if it is safe to do so.\n\nBreathe in slowly through your nose, four counts, and as you do — silently — say the words good news. Hold the breath for a single count at the top. Then breathe out slowly through your mouth, four counts, and silently say the words has come. Good news, in. Has come, out.\n\nDo this six times. No more, unless you want to. The point is not to manufacture an experience. The point is to let one announcement settle into the body that has been carrying it. The runner has reached the city. The announcement has arrived. Whatever else is or is not true today, sit for six breaths inside the shape of that.",
+      "follow_up": "If your mind drifts, that is normal. Just come back to the words on the next breath. Good news, in. Has come, out."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "heading": "What This Changes For the Reader Holding the Page",
+      "body": "If the gospel is the kind of word it actually is — running news, the announcement that a new king has shown up — then a few quiet things shift for the person reading the page.\n\nThe first shift is about what is being asked of you. Religion, in many of its inherited forms, asks the human being to climb. Practices to perform, beliefs to hold, behaviors to demonstrate. The human is the one moving, and the goal is somewhere up the slope. What Mark's opening line announces is structurally the opposite. The movement has already happened. Someone else has come down the slope, into the city, into history, into a particular street on a particular Friday afternoon. The news the herald is shouting is not a list of things you must now do. It is a report of something that has already been done.\n\nThis is, even before the rest of the series unpacks it, a kind of relief. The reader who has been climbing — and many of us have been climbing for years, in religious or secular forms — does not have to keep climbing in order for the news to be the news. The herald runs into the city the way it actually is, with the announcement the way it actually is, and waits to see what the city will do with it.\n\nThe second shift is about what the announcement actually contains. Mark's opening sentence already gives us the shape. The announcement is not a doctrine. It is not a moral system. It is not a worldview. It is a person and a sequence of events. \"The gospel of Jesus Christ, the Son of God.\" The of in the middle of that phrase carries the whole Christian claim. The good news is not a teaching that came from Jesus, the way the Eightfold Path came from the Buddha or the Republic came from Plato. The good news is Jesus. The herald is announcing Him.\n\nThis is what the rest of the series will turn on. Day 3 — the center of the chiasm — will state it bluntly: the messenger and the message are the same person. The teacher is the teaching. That is not a slogan; it is a structural claim, and we will defend it when we get there.\n\nFor today: the runner is not carrying a manual. The runner is carrying a name. The first noun in Mark's opening is not 'belief' or 'doctrine' or 'principle.' It is gospel — running news. The next named noun is Jesus.\n\nThe third shift is about what you are being asked to do today. Honestly: very little. Mark does not demand a decision. He sets a frame. The frame is news, not philosophy. The frame is a person, not a system. The frame is something done, not something to do. Whatever you bring to this page — skepticism, curiosity, fatigue, a long history with religion that did not go well, no history with religion at all — the frame is large enough to hold you while you look at what is in it.\n\nThis is also why the end of this series will close in invitation rather than demand. The Bible itself, when it tells the story of the news arriving in someone's life, almost never closes the door behind them. It opens a door and waits to see if the person walks through it. We will follow one such person at the end of this week — an Ethiopian official on a desert road, reading the prophet Isaiah, on his way home, not yet sure. The runner reaches him, too.\n\nFor today, the work is small. Hold the announcement loosely. Let the strangeness of the original word breathe. The gospel is not, in its first life, a religious word. It is a runner's word. The kind of word that cuts through a marketplace because something has happened that the marketplace needs to know.\n\nTomorrow we go back further. Before Mark, before Rome, before Greek. The same announcement was being shouted by watchmen on city walls hundreds of years before Jesus was born."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Before today, what was the word 'gospel' carrying for you — fondness, suspicion, fatigue, indifference, something else?",
+      "additionalQuestions": [
+        "If you let yourself hear euangelion the way Mark's first readers might have heard it — as a herald's word, the kind of news a runner carries from a battlefield to a city — does anything in the word feel different to you than it did an hour ago?",
+        "What would it mean, for you, if the gospel turned out to be a piece of news about something that has already happened, rather than a list of things you are being asked to do?",
+        "Where in your life right now are you tired of climbing? What might it be like to read the rest of this series with that part of you in mind?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "heading": "The Runner Has Reached the Gate",
+      "body": "Picture the herald one more time before we close.\n\nIt is late afternoon in a city that has been going about its ordinary day. Carts in the street. A market closing down. Smoke from cooking fires. The kind of evening that does not expect news.\n\nA runner appears at the city gate. He has been running for miles. His tunic is dark with sweat, his sandals are coated in dust, his lungs are working hard. He stops in the open square, hands on his knees, and when he can speak, he speaks one sentence. Not an essay. Not a sermon. A herald does not lecture. He shouts a name and a verb. Something has happened. Look up.\n\nThat is the word at the top of Mark's first page. That is what euangelion was, in the world Mark wrote into. A piece of news so significant that a man would run himself ragged to deliver it.\n\nThe news the runner is carrying is the rest of Mark's book. The whole gospel of Mark is the unpacking of the first word of his first sentence. We will read pieces of it across this week. Not all of it. We will move slowly, on purpose, because the word has been smoothed by twenty centuries of repetition and needs to be heard fresh.\n\nWhat we have done today is small. We have looked at one Greek word in the company of a man who picked it on purpose. We have stood at the city gate and listened to the herald's first sentence. We have not yet heard the whole announcement. We do not have to today. The herald has reached the gate. The announcement has arrived.\n\nIf you have done nothing else today but read these pages and breathed for six breaths and let one strange Greek word sit in your mouth, you have done the day's work. There is no quiz. There is only a word, and a runner, and the rest of the week.\n\nTomorrow we go further back. Before Mark, before Rome, before the Greek language. Isaiah, hundreds of years earlier, in Hebrew, with watchmen on city walls scanning the horizon for someone running with news. The same word, in a different tongue, in an older mouth. We will sit with him.\n\nFor now, close the page. Let the herald stand at the gate, lungs heaving, sentence not yet finished. He will be there tomorrow when you come back."
+    },
+    {
+      "type": "prayer",
+      "title": "A Prayer for the Beginning of the Week",
+      "posture": "permissive",
+      "prayerText": "God — if You are who Mark says You are, if You sent the runner, if the announcement is real — I am here at the start of a series I am not sure about.\n\nI did not come today with a tidy belief. I came with a worn-out word and the willingness to hear it again, slowly, in a language I do not speak.\n\nIf the gospel is news rather than a demand — if there is a herald running and the news is about a person, not my performance — let the news arrive in me at the speed it can arrive. I am not promising to receive it well. I am promising to keep reading.\n\nIf You are real, please come closer. I am at the gate. I am listening. Amen.",
+      "prayerType": "permissive",
+      "scripture_echo": "Mark 1:1, 14-15"
+    },
+    {
+      "type": "takeaway",
+      "title": "The Beginning of the Announcement",
+      "commitment": "Today I will hold one sentence: the gospel began as running news, not a religious word. Whatever else I do, I will let that sit.",
+      "leavingAtCross": [
+        "The assumption that 'gospel' means a private religious instruction I have already heard.",
+        "The pressure to feel something on Day 1.",
+        "The idea that I have to know what I believe before I keep reading."
+      ],
+      "receivingFromCross": [
+        "Permission to hear an old word fresh, in its original public-square register.",
+        "A picture of a herald at the gate — running news, not a sermon.",
+        "Six slow breaths inside one short phrase: good news, has come."
+      ],
+      "content": "Today I will hold one sentence: the gospel began as running news, not a religious word. Whatever else I do, I will let that sit."
+    },
+    {
+      "type": "resource",
+      "title": "Sources for Today's Reading",
+      "intro": "The voices and texts behind today's reading, with full citations.",
+      "resources": [
+        {
+          "title": "N.T. Wright, Simply Jesus",
+          "author": "N.T. Wright",
+          "year": "2011",
+          "citation": "N.T. Wright, Simply Jesus: A New Vision of Who He Was, What He Did, and Why He Matters (New York: HarperOne, 2011), p. 217.",
+          "quote": "The gospel is not about going to heaven when you die. It is about God's kingdom coming on earth as it is in heaven.",
+          "context": "Wright is a New Testament scholar who has worked to restore the public, kingdom-shaped dimension of the gospel for modern readers."
+        },
+        {
+          "title": "The Priene Calendar Inscription",
+          "year": "circa 9 BC",
+          "citation": "Inscription from Priene (modern western Turkey). Greek text in W. Dittenberger, Orientis Graeci Inscriptiones Selectae (OGIS) 458. Scholarly discussion: Craig A. Evans, 'Mark's Incipit and the Priene Calendar Inscription,' Journal of Greco-Roman Christianity and Judaism 1 (2000): 67-81.",
+          "context": "A stone inscription decreeing a new calendar beginning on Augustus's birthday, calling it 'the beginning of euangelion for the world.' The clearest surviving example of the imperial register Mark borrows."
+        },
+        {
+          "title": "Eusebius of Caesarea, Ecclesiastical History",
+          "author": "Eusebius",
+          "year": "circa 325 AD",
+          "citation": "Eusebius of Caesarea, Ecclesiastical History, Book 3, Chapter 39. Trans. Paul L. Maier (Grand Rapids: Kregel, 2007).",
+          "context": "Preserves the early tradition, attributed to Papias of Hierapolis, that Mark composed his gospel from the preaching of Peter in Rome."
+        },
+        {
+          "title": "Mark 1:1, 14-15 (Berean Standard Bible)",
+          "citation": "Berean Standard Bible (CC0), 2023. Public domain modern English translation.",
+          "context": "Mark is the earliest of the four gospels, written in Rome in the AD 60s."
+        },
+        {
+          "title": "εὐαγγέλιον — Strong's G2098",
+          "citation": "Strong's Greek Lexicon, G2098. Compound of εὖ (good) and ἄγγελος (messenger). 76 NT occurrences; eight in Mark.",
+          "context": "Pre-Christian Greek usage documented across imperial inscriptions and papyri for public proclamations of significant events."
+        }
+      ]
+    }
+  ],
+  "panels": [],
+  "totalWords": 0
+}

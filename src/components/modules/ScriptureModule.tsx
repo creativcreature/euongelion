@@ -79,9 +79,20 @@ export default function ScriptureModule({ module }: { module: Module }) {
       )}
 
       {/* Greek/Hebrew original — shared across variants */}
+      {/* Transliteration is paired with the original-language line whenever
+          the original appears, per the project rule: Hebrew/Greek must
+          never appear without transliteration alongside it. */}
       {module.greekOriginal && (
         <p className="mt-6 text-serif-italic vw-small text-muted">
           {module.greekOriginal}
+        </p>
+      )}
+      {module.greekOriginal && module.transliteration && (
+        <p
+          className="mt-2 vw-small italic"
+          style={{ color: 'var(--color-gold)', opacity: 0.85 }}
+        >
+          {module.transliteration}
         </p>
       )}
       {module.hebrewOriginal && (
@@ -92,6 +103,16 @@ export default function ScriptureModule({ module }: { module: Module }) {
           {module.hebrewOriginal}
         </p>
       )}
+      {module.hebrewOriginal &&
+        !module.greekOriginal &&
+        module.transliteration && (
+          <p
+            className="mt-2 vw-small italic"
+            style={{ color: 'var(--color-gold)', opacity: 0.85 }}
+          >
+            {module.transliteration}
+          </p>
+        )}
 
       {/* Scripture context */}
       {module.scriptureContext && (

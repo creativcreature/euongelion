@@ -1,0 +1,11 @@
+{
+  "code": "BSB",
+  "name": "Berean Standard Bible",
+  "license": "Public domain (CC0 1.0 Universal)",
+  "licenseShort": "CC0",
+  "year": 2022,
+  "source": "bereanbible.com",
+  "bookCount": 66,
+  "verseCount": 31086,
+  "builtAt": "2026-05-08T05:53:29.700Z"
+}

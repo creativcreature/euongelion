@@ -1,0 +1,162 @@
+{
+  "day": 5,
+  "chiasm_position": "A-prime",
+  "title": "An Open Road, Not an Altar Call",
+  "teaser": "Most gospel announcements in the Bible end with a question and an open road. So does this week.",
+  "anchorVerse": "Acts 8:26-39",
+  "theme": "The series closes the way the Bible itself closes most gospel announcements — with a question, a stranger on the road, and an open door.",
+  "framework": "Chiastic A-prime — echoes Day 1's herald imagery; closes the week in invitation, not coercion.",
+  "scriptureReference": "Acts 8:26-39",
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Acts 8:26",
+      "translation": "BSB",
+      "emphasis": ["Get up and go south", "the desert road"],
+      "passage": "Now an angel of the Lord said to Philip, \"Get up and go south to the desert road that goes down from Jerusalem to Gaza.\"",
+      "display": "block"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "A Strange Set of Instructions",
+      "body": "Read that one verse again. An angel of the Lord told a man named Philip to get up and walk south, into the desert, on a road that ran from Jerusalem to Gaza.\n\nThat is the whole instruction. There is no name to look for. No address. No reason given. Just: get up, go south, walk into the empty place between two cities.\n\nWhatever you may think about angels, notice the shape of the order. A holy person is told to walk into the desert, and the reader knows something is going to happen, because the desert is where things happen in this kind of book. Philip did not know that. He only had the instruction. Get up. Go south. Walk down the desert road.\n\nWelcome to the last full day of this week's reading. On Day 1 we sat with a Greek word — euangelion — that began its life as a herald's announcement, the kind a runner carried from a battlefield to a city that had not yet heard. On Day 2 we found the same word had a Hebrew shadow behind it — besorah — already humming through Isaiah long before the New Testament borrowed it. On Day 3 we said the thing this whole series turns on: the messenger and the message are the same person. On Day 4 we said what receiving such a person looks like. Open hands, not closed fists. Trust, not performance.\n\nToday we close.\n\nIf you have been waiting for the day when this series finally hands you a card to sign, a prayer to repeat after me, a conclusion to come to — you can let that wait go. That is not how this week is going to end.\n\nThe Bible itself almost never ends gospel announcements that way. It ends them in conversation. It ends them on a road. It ends them with a question that the person hearing the news asks, not the one delivering it.\n\nThat is what happened to Philip in the desert. He went where he was told. He had no idea what was waiting. What was waiting turned out to be a chariot, a stranger, and a scroll opened to the exact place a stranger could not understand alone.\n\nThe news, when it travels, almost always travels like this. Not in a stadium. Not in a sales pitch. In a small conversation, on a quiet road, between two people who did not plan the meeting."
+    },
+    {
+      "type": "scripture",
+      "reference": "Acts 8:27-28, 30-31",
+      "translation": "BSB",
+      "emphasis": [
+        "an Ethiopian eunuch",
+        "reading Isaiah the prophet",
+        "Do you understand what you are reading?",
+        "How can I, unless someone guides me?"
+      ],
+      "passage": "So he started out, and on his way he met an Ethiopian eunuch, a court official in charge of the entire treasury of Candace, queen of the Ethiopians. He had gone to Jerusalem to worship, and on his return was sitting in his chariot reading Isaiah the prophet. So Philip ran up and heard the man reading Isaiah the prophet. \"Do you understand what you are reading?\" Philip asked. \"How can I,\" he said, \"unless someone guides me?\" And he invited Philip to come up and sit with him.",
+      "display": "block"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "derash",
+      "heading": "Who the Reader on the Road Actually Was",
+      "body": "It helps to know who this man is, because the way Luke (the writer of Acts) introduces him is doing several things at once.\n\nThe text calls him a court official of the Kandake of the Ethiopians. Kandake — sometimes anglicized as Candace — is not a name. It is a title, like Pharaoh or Caesar. It refers to the queen-mother of the kingdom of Cush, in what is now northern Sudan. He is in charge of her treasury, which makes him roughly the chief financial officer of an entire monarchy. He is wealthy, educated, politically significant — the kind of person, in his world, expected to have answers, not questions.\n\nHe is also a eunuch, which Luke states twice in the same sentence as if to be sure the reader notices. The detail carries a specific weight. By the older religious law of Israel, a eunuch could not enter the assembly of the Lord. Deuteronomy 23:1 made that explicit. The man was, by the older standard, structurally outside.\n\nAnd yet — and this is the detail you might miss — he had just been to Jerusalem to worship. He had traveled in a chariot, from somewhere in Cush, almost certainly knowing he would not be permitted into the inner courts when he arrived. He went anyway.\n\nWhat was he doing on the road home? Reading Isaiah.\n\nReading the same prophet who, in the same scroll, had said something the rest of the law had not said: \"Let no eunuch complain, 'I am only a dry tree.' For this is what the Lord says: To the eunuchs who keep my Sabbaths and hold fast to my covenant — I will give them within my temple a memorial and a name better than sons and daughters; an everlasting name that will never be cut off.\"\n\nThat is Isaiah 56 — precisely the kind of passage you carry home in a chariot if you have just been turned away from the place you traveled to reach.\n\nThe man on the desert road was not a curious tourist. He was a person who had every reason to assume he was outside, reading the one section of his own scriptures that suggested he might not be.\n\nThis is who Philip ran up to. Not a debate with a hostile philosopher. Not a confrontation with a Roman official. A small question between two travelers — Do you understand what you are reading? — and an answer that carries the entire posture of the gospel inside it: How can I, unless someone guides me?\n\nThe news, in the Bible, almost always lands here. On the side of someone unsure if they were welcome. On the side of someone willing to admit they could use a guide."
+    },
+    {
+      "type": "scripture",
+      "reference": "Isaiah 53:7-8",
+      "translation": "WEB",
+      "emphasis": [
+        "led to the slaughter",
+        "he didn't open his mouth",
+        "cut off out of the land of the living"
+      ],
+      "passage": "He was oppressed, yet when he was afflicted he didn't open his mouth. As a lamb that is led to the slaughter, and as a sheep that before its shearers is silent, so he didn't open his mouth. He was taken away by oppression and judgment; and as for his generation, who considered that he was cut off out of the land of the living and stricken for the disobedience of my people?",
+      "display": "block"
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The eunuch was reading Isaiah 53 — a prophetic poem written some seven hundred years earlier about a figure called the Servant: a man led like a lamb to the slaughter, silent before his accusers, cut off out of the land of the living. The text does not name him.",
+      "modernApplication": "If you read Isaiah 53 cold, the question the eunuch asked is the obvious question: who is the prophet talking about? An ordinary scholar might have offered three or four candidates — a king of Judah, the prophet himself, the nation of Israel personified. None quite fit. The poem stayed unsolved.",
+      "connection": "Then a stranger ran up beside the chariot and offered an answer. Acts 8:35 says, in one short sentence, \"Then Philip began with this very Scripture and told him the good news about Jesus.\" The euangelion, in Philip's mouth, is not a sales pitch. It is a reading. He tells him whose face it had always been.",
+      "question": "The whole conversation we have been having for five days — what is the good news, why does it sound like a person, why is the messenger and the message the same — has now been compressed into a single conversation between two strangers in a chariot.",
+      "answer": "Philip did not deliver a worldview. He read a poem with the man. The lamb in Isaiah 53 is the same lamb in 1 Corinthians 15.",
+      "newTestamentEcho": "When the eunuch finally responds, he does not respond with a confession or a doctrinal statement. He responds with a question. \"Look, here is water! What is there to prevent me from being baptized?\" A man who has just understood whose face was in the poem asks whether anything is in his way."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "sod",
+      "heading": "A Heart Shaped for Something It Has Not Yet Found",
+      "body": "There is a sentence Augustine wrote, around the year 397 in north Africa, in a book called the Confessions, that has outlasted almost every other line he ever put on a page. He had been every kind of man before he wrote it — a teacher, a skeptic, a follower of one fashionable philosophy after another. He came to belief late, exhausted, and slowly. The line, in Henry Chadwick's translation, reads:\n\n\"You have made us for yourself, O Lord, and our hearts are restless until they rest in you.\"\n\nFour clauses. That is all of it.\n\nNotice what Augustine is claiming, because it is unusual. He is not claiming that human beings are all secretly religious. He is not claiming that everyone, deep down, believes in God. He is claiming something stranger and more specific. He is claiming that the human heart has a shape — made on purpose, made for something — and that until the something the shape was made for is found, the heart will not rest. It will run from one promise to the next. It will fall in love and put the weight of an infinite hunger onto a person who was not built to carry it. It will, eventually, sit down in a chariot somewhere in the desert and read a scroll alone because nothing else has worked.\n\nThe restlessness, Augustine says, is not the problem. The restlessness is the evidence.\n\nFor a reader who has come this far with arms folded — and there is nothing wrong with folded arms — that is worth holding for a moment. The fact that nothing has yet satisfied is not a sign that you are spiritually broken. It is a sign that the shape inside you is real and is for something specific. You have been searching, in some form, for the thing that fits.\n\nThe man in the chariot was searching when Philip ran up. He was searching educated, wealthy, with the political pull to fetch any teacher he wanted. None of it had worked, and he was reading, alone, a passage that had been waiting seven hundred years for someone to tell him whose face it was.\n\nThe good news, in the Bible, almost never finds people who were not already looking. It finds them looking in the wrong place, or with the wrong tools, or at the right place without the language to read it. But it finds them looking. The eunuch was looking. Augustine was looking. Paul was looking, even when he thought he was hunting.\n\nIf you are still reading on Day 5, something inside you has been looking too. You may have come because the homepage said the word and you wanted to know what it meant. You may have come because something hurts. You may have come because you used to believe and the belief broke. Whatever the reason, the searching is not nothing.\n\nThe Christian claim is that the searching is the shape, and the shape is for a person, and the person ran up to a chariot once on a desert road and asked the man in it whether he understood what he was reading. The same person, twenty centuries later, knows where you are sitting.\n\nNothing in this week has been designed to coerce you into a decision today. The Bible itself almost never tells the story that way. It tells the story of people already on a road — and into that pre-existing motion, the news arrived. Not as pressure. As a stranger asking a question.\n\nThe chariot is moving. The road is open."
+    },
+    {
+      "type": "interactive",
+      "interaction_type": "art",
+      "title": "An Image for What Is Happening",
+      "prompt": "Sometime today, when you have a quiet five minutes, do this.\n\nFind an image that names what is happening inside you right now. It does not have to be religious. It might be a painting you saw once in a museum. It might be a photograph from your camera roll that you have looked at more than is reasonable. It might be a memory of a place — a window, a road at dusk, a kitchen table with one chair.\n\nOpen it, or call it up in your mind. Look at it for a few breaths. Ask yourself, gently: what does this image know about me that I have not said out loud?\n\nIf words come, write them down. If they do not, do not manufacture them. The image is enough.\n\nWe have spent five days on words. But the news that landed in the eunuch became, almost immediately, a body in water. The euangelion makes its way out of language eventually. Sometimes it makes its way in through an image first.",
+      "follow_up": "If nothing comes today, that is also fine. The exercise will keep. Some images take days to arrive."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "heading": "What Being on the Road Looks Like, Today",
+      "body": "If anything has shifted in you this week — even a hairline crack of curiosity — the question that follows is not which prayer to say but what road you are on, today, and what reading is in your hands.\n\nThe eunuch's reading was a literal scroll, opened to a passage seven centuries old. Yours, today, is whatever is currently in your hands. A book. A podcast. A conversation you keep replaying. A sermon you walked out of. There is always a reading happening. You are always somewhere on a road, with something open in your hands, with the search in motion whether you have named it or not.\n\nThe shape of being on this road, in the days after a series like this one closes, is not dramatic. It looks ordinary. A few suggestions, gently, none of them obligatory:\n\nFirst, keep reading. The four short lines from 1 Corinthians 15 we sat with on Day 3 are a portable summary you can carry without owning a Bible. If you do want to open more — if the curiosity has moved an inch — start with one of the four short books at the front of the New Testament that tell the story of Jesus directly. Mark is the shortest. Read slowly. Skip what does not yet make sense. Underline what does.\n\nSecond, do not perform. The closed-fist posture of trying to earn what is offered as a gift is the one thing this week has tried, gently, to set down. If you find yourself building a religious to-do list, notice what you are doing and let yourself off the hook. The euangelion is not a curriculum.\n\nThird, talk to someone. Not because you need to convert anyone, and not because you need to be converted yourself. But because the people in this story almost never travel the road alone. Philip ran up. The eunuch invited him to sit. If there is one person in your life who has held some kind of faith without weaponizing it, they are someone you can sit with. If there is no such person yet, that is also fine. The road is long.\n\nFourth, hold the door open. The most important thing about the eunuch's question is not its answer. It is that he asked. Look, here is water. What is there to prevent me. He noticed his circumstances and named the smallest possible step in front of him.\n\nWhatever the equivalent is for you — sitting in a quiet space tomorrow morning, reading one chapter of Mark this weekend, asking a friend a question you have not asked, simply praying the permissive prayer at the bottom of this reading and seeing if anyone is on the other end — name it small. Then leave the door open and see what walks through.\n\nThe Bible, in this story, ends the conversation by saying the eunuch went on his way rejoicing. That is the closing image of Acts 8. Not a triumphal procession. Not a sermon to a stadium. One man in a chariot, going home, with something in him he did not have when he started the trip."
+    },
+    {
+      "type": "reflection",
+      "prompt": "When you read the eunuch's question — \"What is there to prevent me?\" — what comes up in you?",
+      "additionalQuestions": [
+        "If you had to name what road you are on, in plain language and without religious vocabulary, what would you say?",
+        "What is currently in your hands, in the way the scroll was in the eunuch's? A book, a memory, a conversation, a question you have not been able to put down — what is the reading in your life right now?",
+        "If something in this week has moved an inch, what is the smallest possible next step you could take? Not a decision. A step."
+      ],
+      "invitationType": "permissive-rest"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "heading": "The Herald, the Road, and You",
+      "body": "On Day 1, the picture was a runner. A herald in the ancient world, breathless, carrying news from a battlefield to a city that had not yet heard. We sat with a Greek word — euangelion — that, before any church got hold of it, named the announcement that runner was carrying. Good news, in the most literal possible sense. Something had happened. The waiting was over.\n\nFive days later, the picture has moved.\n\nThe runner has reached you. You have spent five days reading the message he was carrying. You have seen its Hebrew shadow in Isaiah. You have seen its compressed creedal form in 1 Corinthians 15. You have seen its named center in the person of Jesus. You have seen, today, what it looked like the first time it landed on a real human being, in the form of a small conversation between two strangers.\n\nThe runner has done his job. What happens next is not the runner's part of the story. It is yours.\n\nNotice that the Bible, when it tells stories like this one, almost never closes them with a high-pressure decision. The eunuch is not asked to repeat a prayer. He is not asked to sign a card. He is not asked to walk down an aisle. He notices water on the side of the road and he asks a question. \"What is there to prevent me?\" The whole posture is asking, not performing.\n\nWhatever your honest answer is, today, is the right answer. If your answer is, plenty is in the way — I do not believe this, the people who have used this language to hurt me are still loud in my head — that is a real answer and the road is still open. None of it puts you outside this story.\n\nIf your answer is, surprisingly little, actually — if something this week has cracked open and the door looks closer than it used to — that is also a real answer. The next step is the same as the eunuch's. Notice the water. Ask the question.\n\nThis series has been called What is Euangelion? because the word, before church language buried it, was a herald's announcement of something that had already happened. The gift of the word, recovered, is that it is not, finally, about whether you have decided. It is about whether something has happened, and whether the thing that happened reaches you.\n\nGood news has come.\n\nThat is the breath we started the week with on Day 1, and the breath we are ending the week with on Day 5. Not a command. Not a campaign. An announcement.\n\nThe runner has reached the gate. The chariot is on the road. The water is on the side of the road. The conversation, if you want it, has already started."
+    },
+    {
+      "type": "prayer",
+      "title": "A Prayer for the End of the Week",
+      "posture": "permissive",
+      "prayerText": "Jesus — if You are real — this is where I am.\n\nI have read the words this week. Some landed. Some did not. I do not have a tidy confession to make and I am not pretending to have one.\n\nIf the road is open, please keep it open. If You are who Philip said You were on a desert road two thousand years ago, find me where I am sitting today.\n\nI am not promising what I cannot keep. I am only saying — if You are listening — that I would like to keep reading, and to see what comes next.\n\nAmen.",
+      "prayerType": "permissive",
+      "scripture_echo": "Acts 8:36"
+    },
+    {
+      "type": "takeaway",
+      "title": "The End of the Week",
+      "commitment": "I will sit with what I have read this week. I will let it work on me without forcing a conclusion. The road is long, and I do not have to settle it today.",
+      "leavingAtCross": [
+        "The pressure to land on a final position by the end of a five-day reading.",
+        "The assumption that the gospel arrives as a sales close rather than as an announcement.",
+        "The fear that not being sure yet means being outside."
+      ],
+      "receivingFromCross": [
+        "Permission to remain on the road and keep reading.",
+        "The eunuch's small question — 'What is there to prevent me?' — as a posture I can borrow.",
+        "An open hand, a quiet pace, and a prayer that does not require certainty."
+      ],
+      "content": "I will sit with what I have read this week. I will let it work on me without forcing a conclusion."
+    },
+    {
+      "type": "resource",
+      "title": "Sources for Today's Reading",
+      "intro": "Augustine quoted today, with full citation. Plus a pointer to the two days that close out this week.",
+      "resources": [
+        {
+          "title": "Augustine of Hippo, Confessions, Book I, Chapter 1",
+          "author": "Augustine of Hippo",
+          "year": "circa 397-400 AD",
+          "citation": "Augustine of Hippo, Confessions, trans. Henry Chadwick (Oxford: Oxford University Press, 1991), Book I, Chapter 1.",
+          "quote": "You have made us for yourself, O Lord, and our hearts are restless until they rest in you.",
+          "context": "Augustine wrote the Confessions in his early forties, looking back at decades of skepticism and slow conversion. The line is the second sentence of the book, framing everything that follows."
+        },
+        {
+          "title": "Acts 8:26-39 (Berean Standard Bible)",
+          "citation": "Berean Standard Bible (CC0), 2023. Public-domain modern English.",
+          "context": "Tradition (Eusebius, Ecclesiastical History, Book 2) credits this eunuch with founding the Ethiopian church on his return."
+        },
+        {
+          "title": "Isaiah 53:7-8 (World English Bible)",
+          "citation": "World English Bible (public domain).",
+          "context": "Isaiah 53 is the fourth and longest of the Servant Songs. The early church read this passage as a direct prophetic description of Jesus' crucifixion."
+        },
+        {
+          "title": "The rest of this week",
+          "citation": "Internal navigation note.",
+          "context": "Day 6 is a short recap — one section per teaching day, no new teaching. Day 7 is Sabbath — one scripture, one prayer, one invitation to close the app and sit."
+        }
+      ]
+    }
+  ],
+  "panels": [],
+  "totalWords": 0
+}
