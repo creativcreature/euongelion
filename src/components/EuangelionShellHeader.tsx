@@ -112,7 +112,7 @@ export default function EuangelionShellHeader({
   const mobileTickerItems = useMemo(
     () => [
       now ? formatMastheadDate(now) : '',
-      'Daily Devotionals for the Hungry Soul',
+      'The Good News, for You. Every Day.',
     ],
     [now],
   )
@@ -414,7 +414,7 @@ export default function EuangelionShellHeader({
                 </nav>
               ) : (
                 <p className="mock-topbar-center-copy">
-                  Daily Devotionals for the Hungry Soul
+                  The Good News, for You. Every Day.
                 </p>
               )}
             </div>

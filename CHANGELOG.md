@@ -5,6 +5,14 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R15 / Header tagline update (2026-05-13)
+
+Founder updated the masthead tagline. `src/components/EuangelionShellHeader.tsx` line 115 (mobile ticker) + line 417 (desktop top-bar center copy) now read **"The Good News, for You. Every Day."** in place of "Daily Devotionals for the Hungry Soul."
+
+PRD: `docs/feature-prds/F-061.md` (Round 15). Decision: SA-013.
+
+---
+
 ## F-061 R14 / Homepage edit batch — eight founder corrections (2026-05-13)
 
 Founder walked the live homepage in scroll order and listed eight changes. Shipped together:
