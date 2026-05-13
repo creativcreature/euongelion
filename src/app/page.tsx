@@ -432,7 +432,7 @@ export default function Home() {
               setAuditText(e.target.value)
               setError(null)
             }}
-            placeholder="What's been weighing on you?"
+            placeholder="What are you wrestling with?"
             rows={3}
             disabled={isSubmitting}
             className="mock-textarea"

@@ -24,6 +24,26 @@ PRD: F-061. Branch: `claude/audit-fixes-2026-05-11`.
   - `src/app/wake-up/devotional/[slug]/page.tsx`: same fix on the
     cross-canonical wake-up route.
 
+- ROUND 9 (2026-05-12): Soul Audit prompt + series-card thumbnails + every-devotional-image
+  Founder direction: (1) Soul Audit asks "What are you wrestling
+  with"; (2) every devotional should have an image; (3) the main
+  series image should show as the thumbnail for series cards
+  throughout the site.
+  - Soul Audit textarea placeholder: "What's been weighing on you?"
+    -> "What are you wrestling with?" (matches aria-label + the
+    approved PUBLIC-FACING-LANGUAGE phrasing).
+  - src/lib/series-hero.ts (new): getSeriesHero(slug) prefers the
+    auto-generated SERIES_HERO manifest entry but falls back to
+    series.heroImage from SERIES_DATA. Wired into BrowseSeriesCard,
+    soul-audit/OptionCard, and soul-audit/AuditOptionCard.
+  - DevotionalPageClient artworks memo now has a 3-tier fallback:
+    SITE_DEVOTIONAL_ART -> DEVOTIONAL_ARTWORKS -> series hero. The
+    third tier covers the 365 Bible-365 days that previously rendered
+    no per-day image.
+  - Verified locally: homepage Featured Series thumbnails render
+    /images/site/series/\*.webp; /devotional/bible-365-day-100
+    renders bible-365.webp series hero (was blank before).
+
 - ROUND 8 (2026-05-12): Hero — uncropped, fully responsive
   Founder direction: "do not crop the image. image should fit the
   screen responsively." The prior CSS had:

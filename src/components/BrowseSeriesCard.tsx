@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { SERIES_DATA } from '@/data/series'
-import { SERIES_HERO } from '@/data/artwork-manifest'
+import { getSeriesHero } from '@/lib/series-hero'
 import {
   scriptureLeadPartsFromFramework,
   clampScriptureSnippet,
@@ -37,7 +37,7 @@ export default function BrowseSeriesCard({
   const series = SERIES_DATA[slug]
   if (!series) return null
 
-  const hero = variant !== 'small' ? SERIES_HERO[slug] : undefined
+  const hero = variant !== 'small' ? getSeriesHero(slug) : undefined
   const dayCount = series.days.length
   const scripture = scriptureLeadPartsFromFramework(series.framework, {
     maxSnippetLength: CARD_SNIPPET_MAX,

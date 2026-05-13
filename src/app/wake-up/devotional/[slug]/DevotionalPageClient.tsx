@@ -26,6 +26,7 @@ import { useSettingsStore } from '@/stores/settingsStore'
 import { SERIES_DATA } from '@/data/series'
 import { DEVOTIONAL_ARTWORKS } from '@/data/artwork-manifest'
 import { SITE_DEVOTIONAL_ART } from '@/data/site-devotional-art'
+import { getSeriesHero } from '@/lib/series-hero'
 import type { Devotional, Module, Panel } from '@/types'
 
 const DevotionalChat = dynamic(() => import('@/components/DevotionalChat'), {
@@ -121,13 +122,23 @@ export default function DevotionalPageClient({
     }))
   }, [modules, panels])
 
-  // Artwork images for this devotional. Prefer the new generated library
-  // (Stage 3 of the 2026-05-07 image-swap migration) when populated, fall
-  // back to the legacy artist-print mapping when no generated entries exist.
-  const artworks = useMemo(
-    () => SITE_DEVOTIONAL_ART[slug] ?? DEVOTIONAL_ARTWORKS[slug] ?? [],
-    [slug],
-  )
+  // Artwork images for this devotional. Resolution order:
+  // 1. SITE_DEVOTIONAL_ART[slug] — Stage-3 generated library (175 slugs)
+  // 2. DEVOTIONAL_ARTWORKS[slug] — legacy artist-print mapping
+  // 3. Series hero — guarantees every devotional has at least one image
+  //    (founder direction 2026-05-12: "all devotionals should have
+  //    images"). Critical for the 365 Bible-365 days that have no
+  //    per-day curated artwork yet.
+  const artworks = useMemo(() => {
+    const explicit =
+      SITE_DEVOTIONAL_ART[slug] ?? DEVOTIONAL_ARTWORKS[slug] ?? []
+    if (explicit.length > 0) return explicit
+    if (seriesSlug) {
+      const seriesHero = getSeriesHero(seriesSlug)
+      if (seriesHero) return [seriesHero]
+    }
+    return []
+  }, [slug, seriesSlug])
   const lightbox = useLightbox(artworks)
 
   // Calculate where to insert artwork between content sections
