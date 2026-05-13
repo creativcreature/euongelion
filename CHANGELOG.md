@@ -5,6 +5,18 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R17 / Soul-Audit copy + mode-flip + larger "What is this place?" (2026-05-13)
+
+Three founder corrections:
+
+1. **Soul Audit copy.** Replaced the orphaned "Or — start where you actually are." headline with a description that actually explains what the Soul Audit does: "A 7-day plan, written for what you actually carry." Subcopy rewritten to describe the mechanism (one honest sentence in → a personalized seven-day path of real scripture and ancient voices, ~3 min setup, 5-7 min/day).
+2. **Soul Audit color mode flip.** Light mode now reads as a normal paper card (cream background, dark text) — blends with the page instead of doubling down on contrast. The blue/cream pop treatment is now scoped to `.dark .homepage-soul-audit` only. Same flip applied to `.homepage-howitworks` and its steps grid for visual consistency between the two adjacent blocks.
+3. **"What is this place?" section taller.** Vertical padding doubled (1.5rem → 3rem top, 1.6rem → 3.4rem bottom) and gap increased (0.45 → 0.7rem) so the intro statement breathes.
+
+PRD: `docs/feature-prds/F-061.md` (Round 17). Decision: SA-013.
+
+---
+
 ## F-061 R16 / Hero frame fix + featured devotional series image (2026-05-13)
 
 Two corrections to R14:

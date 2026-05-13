@@ -476,11 +476,11 @@ export default function Home() {
         <section className="homepage-soul-audit" id="start-audit">
           <p className="text-label mock-kicker">SOUL AUDIT</p>
           <h2 className="mock-title mock-homepage-prompt-title">
-            Or — start where you actually are.
+            A 7-day plan, written for what you actually carry.
           </h2>
           <p className="mock-subcopy">
             {typographer(
-              "Tell us what's actually going on. We'll match you to a 7-day path.",
+              "Tell us — in one honest sentence — what you're wrestling with. The Soul Audit reads that, then assembles a personalized seven-day path: real scripture, ancient voices, no canned answers, no signup, no engagement bait. About three minutes to set up; five to seven minutes a day to walk.",
             )}
           </p>
 
