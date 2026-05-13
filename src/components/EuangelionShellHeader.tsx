@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   { href: '/wake-up', label: 'WAKE-UP' },
   { href: '/soul-audit', label: 'SOUL AUDIT' },
   { href: '/daily-bread', label: 'DAILY BREAD' },
+  { href: '/library', label: 'LIBRARY' },
   { href: '/series', label: 'SERIES' },
 ]
 const MOBILE_TICKER_INTERVAL_MS = 6200
@@ -454,6 +455,14 @@ export default function EuangelionShellHeader({
                         onClick={() => setAccountMenuOpen(false)}
                       >
                         Daily Bread
+                      </Link>
+                      <Link
+                        href="/library"
+                        role="menuitem"
+                        className="mock-account-item"
+                        onClick={() => setAccountMenuOpen(false)}
+                      >
+                        Library
                       </Link>
                       <Link
                         href="/settings"

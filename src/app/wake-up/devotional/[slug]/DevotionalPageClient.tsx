@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import DevotionalActions from '@/components/devotional/DevotionalActions'
 import ScrollProgress from '@/components/ScrollProgress'
 import ReaderTimeline from '@/components/ReaderTimeline'
 import ModuleRenderer from '@/components/ModuleRenderer'
@@ -363,6 +364,12 @@ export default function DevotionalPageClient({
               />
             </div>
           </header>
+
+          <DevotionalActions
+            devotionalSlug={slug}
+            seriesSlug={seriesSlug}
+            redirectPath={`${devotionalRoutePrefix}/${slug}`}
+          />
 
           {/* Audit C2: Mobile-only day-nav pill. Renders only below md:
               where the sidebar would otherwise push the content below
