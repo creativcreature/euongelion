@@ -37,7 +37,10 @@ export default function BrowseSeriesCard({
   const series = SERIES_DATA[slug]
   if (!series) return null
 
-  const hero = variant !== 'small' ? getSeriesHero(slug) : undefined
+  // Founder direction 2026-05-12: "all series previews should have
+  // image previews." Previously the `small` variant skipped the
+  // thumbnail; now every variant renders the hero image.
+  const hero = getSeriesHero(slug)
   const dayCount = series.days.length
   const scripture = scriptureLeadPartsFromFramework(series.framework, {
     maxSnippetLength: CARD_SNIPPET_MAX,
@@ -146,12 +149,13 @@ export default function BrowseSeriesCard({
         </>
       )}
 
-      {/* Small: Badge → Title → Keywords → Action (no image) */}
+      {/* Small: Badge → Image → Title → Keywords → Action */}
       {variant === 'small' && (
         <>
           {badge && (
             <span className="series-card-badge text-label">{badge}</span>
           )}
+          {thumbnail}
           <h3>{series.title}.</h3>
           {keywordPills}
           <div className="mock-featured-actions">
