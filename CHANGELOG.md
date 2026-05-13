@@ -5,6 +5,20 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R13b / Hero cache-bust — rename header.webp → header-v2.webp (2026-05-13)
+
+R13 deployed the new bytes successfully (verified at origin + CF edge via cache-busted curl: `2400 × 658 VP8`, 465 KB), but the URL `/images/site/homepage/hero/header.webp` was unchanged, so browsers continued serving the old image from disk cache. Renaming the asset is the simplest reliable fix.
+
+- `git mv public/images/site/homepage/hero/header.webp → header-v2.webp`
+- `src/app/page.tsx:39` `heroSrc` updated
+- `src/app/globals.css` comment updated to reference the new path
+
+Verified in `npm run preview` (wrangler :8788): rendered HTML emits `/images/site/homepage/hero/header-v2.webp`, that path returns 200 image/webp, the old `/header.webp` returns 404.
+
+PRD: `docs/feature-prds/F-061.md` (Round 13b). Decision: SA-013.
+
+---
+
 ## F-061 R13 / Homepage hero — new banner image (2026-05-13)
 
 Founder supplied a new homepage header image at `public/images/edit/homepageheader.jpg` (3358 × 920, 995 KB JPEG) with the instruction to replace the current hero and optimize for the site.

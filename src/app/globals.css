@@ -69,7 +69,7 @@
   width: 100%;
   /* Founder direction 2026-05-13: replaced hero image with a new
      wider banner (native 3358/920 ≈ 3.65:1). Image is encoded as
-     header.webp at 2400x658. Image scales at its native aspect across
+     header-v2.webp at 2400x658. Image scales at its native aspect across
      every viewport — do not crop. The wider ratio naturally yields a
      shorter hero, lifting the headline higher above the fold than the
      prior 1584/672 image. */
