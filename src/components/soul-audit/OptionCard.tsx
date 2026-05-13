@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { typographer } from '@/lib/typographer'
 import { SERIES_DATA } from '@/data/series'
-import { SERIES_HERO } from '@/data/artwork-manifest'
+import { getSeriesHero } from '@/lib/series-hero'
 import type { AuditOptionPreview } from '@/types/soul-audit'
 
 interface OptionCardProps {
@@ -30,7 +30,7 @@ export default function OptionCard({
   onSave,
   onToggleReasoning,
 }: OptionCardProps) {
-  const hero = SERIES_HERO[option.slug]
+  const hero = getSeriesHero(option.slug)
   const series = SERIES_DATA[option.slug]
   const keywords = (series?.keywords ?? []).slice(0, 3)
   const dayCount = series?.days.length ?? 0
