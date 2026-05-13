@@ -67,14 +67,15 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  /* Founder direction 2026-05-12: do not crop. Image scales at its
-     native 1584/672 aspect across every viewport.
-     Audit follow-up 2026-05-13 (Manus §2): on desktop, cap max-width
-     so the image is shorter and the "A Voice in the Wilderness"
-     headline lifts above the fold. Mobile stays full-width. */
-  max-width: 1080px;
+  /* Founder direction 2026-05-13: replaced hero image with a new
+     wider banner (native 3358/920 ≈ 3.65:1). Image is encoded as
+     header.webp at 2400x658. Image scales at its native aspect across
+     every viewport — do not crop. The wider ratio naturally yields a
+     shorter hero, lifting the headline higher above the fold than the
+     prior 1584/672 image. */
+  max-width: var(--mock-frame-max, 1860px);
   margin: 0 auto;
-  aspect-ratio: 1584 / 672;
+  aspect-ratio: 3358 / 920;
   background: var(--mock-paper, white);
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
 }
@@ -135,10 +136,11 @@
   justify-self: start;
   margin-top: 0.6rem;
 }
-/* Audit (2026-05-12): mobile no longer overrides the aspect-ratio.
-   The natural 1584/672 ratio is preserved at every breakpoint so the
-   full image displays without cropping. On a 375px phone the hero is
-   ~159px tall; on a 1440px desktop it's ~611px tall. */
+/* 2026-05-13: hero image swapped to a wider 3358/920 banner.
+   Natural aspect preserved at every breakpoint — image never crops.
+   On a 375px phone the hero is ~103px tall; on a 1440px desktop ~395px
+   tall — significantly shorter than the prior 1584/672, which lifts
+   the headline meaningfully higher above the fold. */
 
 /* ============================================
    Bible-365 series page (calendar view)

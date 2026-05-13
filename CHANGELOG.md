@@ -5,6 +5,20 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R13 / Homepage hero — new banner image (2026-05-13)
+
+Founder supplied a new homepage header image at `public/images/edit/homepageheader.jpg` (3358 × 920, 995 KB JPEG) with the instruction to replace the current hero and optimize for the site.
+
+- Encoded as WebP at 2400 × 658 with `cwebp -q 82 -resize 2400 0`, output 465 KB. Native aspect 3358 / 920 ≈ 3.65 : 1 preserved (no crop).
+- Overwrote `public/images/site/homepage/hero/header.webp` (the path `pickHomepageHero()` reads in `src/app/page.tsx:39`).
+- Updated `.homepage-bible365-hero-art` in `src/app/globals.css`: aspect-ratio swapped from `1584 / 672` (2.36 : 1) to `3358 / 920` (3.65 : 1) so the container matches the new image without letterboxing. Max-width raised back to the full `--mock-frame-max` (1860 px) — the wider aspect already keeps the hero shorter than the prior cap of 1080 px.
+- New on-page hero heights: ~103 px on a 375 px phone, ~395 px on a 1440 px desktop (vs. prior ~159 px / ~611 px). Headline lifts higher above the fold at every breakpoint.
+- Preview-verified locally: served image bytes confirm `2400 × 658 VP8` from the Workers preview, homepage + key routes all return 200.
+
+PRD: `docs/feature-prds/F-061.md` (Round 13). Decision: SA-013.
+
+---
+
 ## F-061 R12 / Parallel-agent sweep — Bible corpus + 7 new module types + transliteration (2026-05-13)
 
 Founder asked to merge everything possible from sibling agent worktrees. Brings in only what builds clean against current main; defers stale or conflicting work.
