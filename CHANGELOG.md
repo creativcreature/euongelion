@@ -5,6 +5,19 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R20 / Homepage reorder + mode-flip reversed + legal moved below masthead (2026-05-13)
+
+Four founder-directed changes:
+
+1. **Free-account bar moved up** — `FREE · NO ACCOUNT · 5–7 MIN A DAY · START ANY DAY` trust row now sits directly after the "What is this place?" section.
+2. **3 starter sections moved up + intentional language** — Wake-Up / Bible 365 / All Series cards now live below the trust bar inside a new `.homepage-starters` section with kicker "GET STARTED HERE", title **"Three honest places to begin."**, and subhead "Pick the one that meets you where you are. Every day stands alone — there is no wrong door." Featured devotional pushes down below this block.
+3. **Soul Audit + How It Works mode-flip REVERSED** — light mode = blue/cream pop; dark mode = paper card. This reverses R17's flip.
+4. **Legal block moved below the masthead** — copyright + Terms · Privacy · Cookie Policy · Community Guidelines · Content Disclaimer no longer in `SiteFooter`. New `.homepage-bottom-legal` section renders directly after `.mock-bottom-brand`.
+
+PRD: `docs/feature-prds/F-061.md` (Round 20). Decision: SA-013.
+
+---
+
 ## F-061 R19 / Featured devotional rotated to Too Busy for God + shorter card (2026-05-13)
 
 Founder direction:
