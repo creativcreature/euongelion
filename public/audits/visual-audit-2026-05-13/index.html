@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Euangelion — Visual Audit, Distribution Playbook & Ship Plan · 13 May 2026</title>
+<meta name="description" content="A full visual audit of euangelion.app measured against awwwards-tier editorial sites, plus a Substack-style distribution playbook and an ordered ship plan." />
+
+<link rel="preload" href="/fonts/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/InstrumentSerif-Italic.woff2"  as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/IndustryTest-Book.otf"  as="font" type="font/otf" crossorigin />
+<link rel="preload" href="/fonts/IndustryTest-Demi.otf"  as="font" type="font/otf" crossorigin />
+<link rel="preload" href="/fonts/IndustryTest-Bold.otf"  as="font" type="font/otf" crossorigin />
+
+<style>
+@font-face { font-family: 'Instrument Serif'; src: url('/fonts/InstrumentSerif-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Instrument Serif'; src: url('/fonts/InstrumentSerif-Italic.woff2')  format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Industry Test';    src: url('/fonts/IndustryTest-Book.otf') format('opentype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Industry Test';    src: url('/fonts/IndustryTest-Demi.otf') format('opentype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Industry Test';    src: url('/fonts/IndustryTest-Bold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: swap; }
+
+:root {
+  --paper: #f5eee3;
+  --ink: #11182a;
+  --blue: #1f2a8d;
+  --line: #2e3880;
+  --line-soft: rgba(46,56,128,0.35);
+  --muted: rgba(17,24,42,0.78);
+  --crimson: #c4192e;
+  --frame: 1200px;
+  --pad: clamp(1rem, 2.4vw, 1.6rem);
+  --rhythm: clamp(1.4rem, 2.4vw, 2.2rem);
+  --breath: clamp(2.4rem, 5vw, 4rem);
+  --hairline: 1.5px solid var(--line);
+  --hairline-soft: 1px solid var(--line-soft);
+  --sans: 'Industry Test', 'Helvetica Neue', system-ui, sans-serif;
+  --serif: 'Instrument Serif', 'Georgia', serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1.06rem, 1.12vw, 1.2rem);
+  line-height: 1.55;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--blue); color: #f3eadb; }
+
+/* Frame + page furniture */
+.page {
+  max-width: var(--frame);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  border-left: var(--hairline);
+  border-right: var(--hairline);
+  min-height: 100vh;
+  background: var(--paper);
+}
+.folio {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--paper);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.55rem var(--pad);
+  margin: 0 calc(-1 * var(--pad));
+  border-bottom: var(--hairline);
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.folio a { color: inherit; text-decoration: none; }
+.folio a:hover { color: var(--blue); }
+.folio-left, .folio-right { display: flex; gap: 0.9rem; align-items: center; flex-wrap: wrap; }
+.folio-right { justify-content: flex-end; }
+.folio-center { text-align: center; }
+
+/* Masthead (cover) */
+.cover {
+  padding: clamp(2rem, 6vw, 4rem) 0 clamp(2.4rem, 5vw, 3rem);
+  border-bottom: var(--hairline);
+}
+.eyebrow {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin: 0 0 0.6rem;
+  color: var(--blue);
+}
+.cover h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7.5vw, 6.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.7rem;
+  text-wrap: balance;
+}
+.cover h1 em { font-style: italic; }
+.cover-dek {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  line-height: 1.4;
+  margin: 0;
+  max-width: 60ch;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+.cover-meta {
+  margin-top: clamp(1.6rem, 3vw, 2.2rem);
+  padding-top: 1rem;
+  border-top: var(--hairline-soft);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.6rem 1.4rem;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.cover-meta dt { font-weight: 700; color: var(--blue); }
+.cover-meta dd { margin: 0.1rem 0 0; font-weight: 400; color: var(--ink); letter-spacing: 0.1em; }
+
+/* Section header */
+section { padding: var(--breath) 0; border-bottom: var(--hairline); }
+section:last-of-type { border-bottom: 0; }
+.section-head { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: clamp(1.4rem, 3vw, 2rem); }
+.section-head .num {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--crimson);
+}
+.section-head h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 4.6vw, 3.6rem);
+  line-height: 0.96;
+  letter-spacing: -0.018em;
+  margin: 0;
+  text-wrap: balance;
+}
+.section-head h2 em { font-style: italic; }
+.section-head .dek {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.45;
+  max-width: 68ch;
+  color: var(--muted);
+  margin: 0.4rem 0 0;
+}
+
+/* Body prose */
+.prose { max-width: 68ch; }
+.prose p { margin: 0 0 1.05em; }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { color: var(--blue); font-weight: 600; }
+.prose em { font-style: italic; }
+.prose a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.prose a:hover { text-decoration-thickness: 2px; }
+.lead {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--ink);
+  border-left: 2px solid var(--blue);
+  padding-left: 1rem;
+  margin: 1rem 0 1.6rem;
+}
+
+/* Column layout */
+.cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.4rem, 3vw, 2.4rem); }
+.cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2vw, 1.6rem); }
+@media (max-width: 760px) { .cols-2, .cols-3 { grid-template-columns: 1fr; } }
+
+/* Cards / panels */
+.card {
+  background: transparent;
+  border: var(--hairline);
+  padding: clamp(1rem, 1.6vw, 1.4rem);
+  display: flex; flex-direction: column; gap: 0.55rem;
+}
+.card .kicker {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin: 0;
+}
+.card h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-wrap: balance;
+}
+.card p { margin: 0; }
+.card .footnote { font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: auto; }
+.card.dark { background: var(--blue); color: #f3eadb; border-color: var(--blue); }
+.card.dark .kicker, .card.dark .footnote { color: #f3eadb; }
+
+/* Banner (full-bleed inside frame) */
+.banner {
+  background: var(--blue);
+  color: #f3eadb;
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  margin: clamp(1.4rem, 3vw, 2.2rem) 0;
+  border-top: var(--hairline);
+  border-bottom: var(--hairline);
+}
+.banner .lead { color: #f3eadb; border-left-color: #f3eadb; }
+.banner .eyebrow { color: #f3eadb; }
+.banner h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 2.6vw, 2.2rem); line-height: 1; margin: 0 0 0.5rem; }
+
+/* Numbered findings list */
+.findings { list-style: none; padding: 0; margin: 0; counter-reset: f; }
+.findings > li {
+  counter-increment: f;
+  display: grid;
+  grid-template-columns: clamp(36px, 4vw, 56px) 1fr;
+  gap: 0.9rem;
+  padding: 1rem 0;
+  border-bottom: var(--hairline-soft);
+  align-items: baseline;
+}
+.findings > li:last-child { border-bottom: 0; }
+.findings > li::before {
+  content: counter(f, decimal-leading-zero);
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--crimson);
+}
+.findings .title { font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 1.4vw, 1.25rem); line-height: 1.25; display: block; margin-bottom: 0.18rem; color: var(--ink); }
+.findings .body  { font-size: 1rem; line-height: 1.5; color: var(--muted); }
+
+/* Table */
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.tbl caption {
+  text-align: left;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 0.4rem;
+}
+.tbl th, .tbl td {
+  padding: 0.55rem 0.7rem 0.55rem 0;
+  border-bottom: var(--hairline-soft);
+  vertical-align: top;
+  text-align: left;
+}
+.tbl th {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue);
+  border-bottom: var(--hairline);
+}
+.tbl td.num { font-feature-settings: 'tnum' 1; color: var(--blue); font-weight: 600; width: 2.4rem; }
+.tbl tr:last-child td { border-bottom: 0; }
+
+/* Capture figures */
+figure { margin: 0 0 var(--rhythm); }
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: var(--hairline);
+  background: #ddd6c4;
+  box-shadow: 0 1px 0 var(--paper), 0 0 0 var(--hairline);
+}
+figcaption {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+  color: var(--blue);
+}
+figcaption em { font-style: italic; letter-spacing: 0; text-transform: none; color: var(--muted); }
+
+/* Pull quote */
+.pullquote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1.25;
+  text-align: center;
+  margin: clamp(1.4rem, 3vw, 2rem) auto;
+  max-width: 26ch;
+  padding: 1.2rem 1rem;
+  border-top: var(--hairline);
+  border-bottom: var(--hairline);
+  position: relative;
+}
+.pullquote::before {
+  content: '“';
+  font-family: var(--serif);
+  font-size: 3em;
+  line-height: 0.3;
+  color: var(--crimson);
+  position: absolute;
+  top: 0.55em;
+  left: -0.05em;
+  opacity: 0.18;
+}
+
+/* Severity pills */
+.pill {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid currentColor;
+  margin-right: 0.4rem;
+  display: inline-block;
+  vertical-align: 0.1em;
+}
+.pill-crit { color: var(--crimson); }
+.pill-high { color: var(--blue); }
+.pill-med  { color: var(--muted); }
+.pill-low  { color: var(--muted); opacity: 0.7; }
+
+/* Closing */
+.signoff {
+  display: grid;
+  gap: 0.6rem;
+  padding: clamp(1.6rem, 4vw, 2.4rem) 0;
+  border-top: var(--hairline);
+  border-bottom: var(--hairline);
+  text-align: center;
+}
+.signoff .ornament { font-family: var(--serif); font-size: 1.8rem; color: var(--crimson); }
+.signoff h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.05; margin: 0; max-width: 22ch; margin-inline: auto; text-wrap: balance; }
+.signoff p { margin: 0 auto; max-width: 56ch; font-style: italic; color: var(--muted); }
+
+/* Masthead bottom */
+.masthead-bottom {
+  text-align: center;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: clamp(3rem, 12vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: -0.005em;
+  padding: 1.6rem 0 0.4rem;
+  color: var(--blue);
+}
+.colophon {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.6rem 0 1.4rem;
+  color: var(--muted);
+}
+
+/* TOC */
+.toc { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.4rem 1.2rem; padding-top: 0.8rem; }
+.toc a {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: var(--hairline-soft);
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+.toc a:hover { color: var(--blue); }
+.toc a .nm { color: var(--crimson); font-weight: 700; }
+
+/* Smooth anchor offset */
+section[id] { scroll-margin-top: 56px; }
+
+/* Effort tag */
+.eff {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+/* Footer */
+footer { padding: clamp(1.4rem, 3vw, 2rem) 0; font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; text-align: center; color: var(--muted); border-top: var(--hairline); }
+
+/* Mobile niceties */
+@media (max-width: 640px) {
+  .folio { font-size: 0.58rem; letter-spacing: 0.14em; }
+  .folio-left a:not(:first-child), .folio-right a:not(:last-child) { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="folio" role="banner">
+    <div class="folio-left">
+      <a href="#cover">Euangelion</a>
+      <a href="#findings">Findings</a>
+      <a href="#measure">Benchmark</a>
+      <a href="#polish">Polish</a>
+      <a href="#innovate">Innovate</a>
+      <a href="#share">Share</a>
+      <a href="#ship">Ship</a>
+    </div>
+    <div class="folio-center">Visual Audit · Vol I · No. 1</div>
+    <div class="folio-right">
+      <a href="https://euangelion.app" target="_blank" rel="noopener">euangelion.app ↗</a>
+      <span>13 May 2026</span>
+    </div>
+  </header>
+
+  <!-- ───────────────────────────── COVER ───────────────────────────── -->
+  <section id="cover" class="cover">
+    <p class="eyebrow">A Founder’s Audit · Visual, Editorial, Distribution</p>
+    <h1>How <em>Euangelion</em> ships from “technically live” to <em>worth opening every day.</em></h1>
+    <p class="cover-dek">
+      A complete visual audit of the live product, measured against awwwards-tier editorial sites — NYT Magazine 2026,
+      ProPublica, Read.cv, Apple, Lectio 365, BibleProject — followed by a Substack-style distribution playbook and an ordered
+      sprint plan to make this the daily devotional people actually share.
+    </p>
+    <dl class="cover-meta">
+      <div><dt>For</dt><dd>Chris Parker, Founder</dd></div>
+      <div><dt>From</dt><dd>Claude · Opus 4.7 (1M)</dd></div>
+      <div><dt>Date</dt><dd>13 May 2026</dd></div>
+      <div><dt>Scope</dt><dd>Homepage, /series, devotional reader, Soul Audit</dd></div>
+      <div><dt>Action</dt><dd>Read‑only audit · no code changes</dd></div>
+      <div><dt>Anchor</dt><dd>Site of the Day (awwwards)</dd></div>
+    </dl>
+  </section>
+
+  <!-- ───────────────────────────── TOC ───────────────────────────── -->
+  <section id="toc">
+    <div class="section-head">
+      <span class="num">Contents</span>
+      <h2>What this report covers.</h2>
+      <p class="dek">Eight sections. Read cover-to-cover, or jump to the section you need. The roadmap (§8) is the punch list.</p>
+    </div>
+    <nav class="toc" aria-label="Contents">
+      <a href="#findings"><span class="nm">01</span><span>Executive verdict</span></a>
+      <a href="#live"><span class="nm">02</span><span>The site, today</span></a>
+      <a href="#measure"><span class="nm">03</span><span>How it measures vs. the best</span></a>
+      <a href="#polish"><span class="nm">04</span><span>Craft polish — 56 details</span></a>
+      <a href="#innovate"><span class="nm">05</span><span>Innovation territory</span></a>
+      <a href="#share"><span class="nm">06</span><span>Shareability today</span></a>
+      <a href="#distribute"><span class="nm">07</span><span>Distribution playbook</span></a>
+      <a href="#ship"><span class="nm">08</span><span>Roadmap to ship</span></a>
+      <a href="#decisions"><span class="nm">09</span><span>Decision queue</span></a>
+    </nav>
+  </section>
+
+  <!-- ───────────────────────────── 1. EXECUTIVE VERDICT ───────────────────────────── -->
+  <section id="findings">
+    <div class="section-head">
+      <span class="num">§01 · Executive verdict</span>
+      <h2>The site is <em>almost</em> there. Five moves close the gap.</h2>
+      <p class="dek">A Steve Jobs reduction. The hard part — voice, content discipline, a typestack worth winning Site of the Day — is done. The remaining gap is publication craft and one missing primitive (share).</p>
+    </div>
+
+    <div class="prose">
+      <p class="lead">
+        Euangelion has the rare problem of being too close to great. The voice is rare. The content discipline is rare. The Riso/halftone register is genuinely differentiated. And yet — by the awwwards-tier bar the founder has asked for, the site is roughly 80% there. The remaining 20% is craft you can do in three sprints, plus the social spine the product currently has none of.
+      </p>
+      <p>Read this section if you only read one. The other eight back it up.</p>
+    </div>
+
+    <div class="cols-2" style="margin-top: var(--rhythm);">
+      <div>
+        <span class="eyebrow">What is working</span>
+        <ol class="findings">
+          <li>
+            <div>
+              <span class="title">A real editorial voice.</span>
+              <span class="body">“Daily bread for the cluttered, hungry soul” is on-tone. Section copy reads like an editor wrote it, not a marketer. <em>Keep this. Defend it.</em></span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span class="title">A typestack people would cite.</span>
+              <span class="body">Instrument Serif + Industry Test is the right pair. Both are restrained, both have personality, both are free. The pair alone gets you on awwwards’ shortlist if the rest holds.</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span class="title">A coherent visual register.</span>
+              <span class="body">After the round 18 image purge, every surface reads as <em>printed broadsheet</em>. The 9 photographs that broke the spell are gone; the 24 compliant linocuts already pulling weight are stronger for it.</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span class="title">No engagement bait.</span>
+              <span class="body">No streaks, no badges, no “3-day challenge.” In the contemplative-Christian category, this is a moat. Lectio 365 won this register; Hallow burned it. Euangelion is on the right side.</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div>
+        <span class="eyebrow">What’s holding it back</span>
+        <ol class="findings">
+          <li>
+            <div>
+              <span class="title">Publication furniture is missing.</span>
+              <span class="body"><span class="pill pill-high">High</span>No folios, no edition numbers, no datelines at the top of reading. The 2026 NYT Magazine redesign moved page furniture <em>above</em> the title for exactly this register. We don’t even have it.</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span class="title">One token lies.</span>
+              <span class="body"><span class="pill pill-crit">Critical</span><code>--color-gold</code> resolves to <code>#1f2a8d</code> (cobalt). Every reference to “gold” in docs is wrong. Drop caps and focus rings inherit a broken assumption. Pick one and rewrite the cascade.</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span class="title">No share primitive.</span>
+              <span class="body"><span class="pill pill-crit">Critical</span>Substack’s entire growth engine is Notes/Restack and per-post OG cards. Euangelion has neither dynamic OG images per devotional nor an in-app share affordance. <em>The whole social plan is downstream of this missing API.</em></span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span class="title">Reading chrome doesn’t fade.</span>
+              <span class="body"><span class="pill pill-high">High</span>Apple, Read.cv, The Pudding — every winner clears chrome once the reader starts scrolling. We stay chrome-up. The page should become the page.</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span class="title">Day-nav blocks the reader on mobile.</span>
+              <span class="body"><span class="pill pill-high">High</span>The day picker eats above-the-fold real estate on the devotional page. Push it to a thumb-zone pill that hides on scroll-down, returns on scroll-up.</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="banner" aria-label="The five moves">
+      <p class="eyebrow">Top five moves · in order</p>
+      <h3>Do these five things and Euangelion ships from “live” to Site-of-the-Day-ready.</h3>
+      <ol class="findings" style="counter-reset: f;">
+        <li><div><span class="title">Resolve the gold/cobalt token cascade.</span><span class="body" style="color:#f3eadb;opacity:0.92">Rename <code>--color-gold</code> or restore the amber hex. Audit every doc that says “gold.” Effort: <span class="eff">S</span>.</span></div></li>
+        <li><div><span class="title">Add publication furniture: folios, datelines, edition labels.</span><span class="body" style="color:#f3eadb;opacity:0.92">Above every devotional: <code>EUANGELION · VOL I · DAY 047 · 13 MAY 2026</code> in Industry small caps. Mirrors NYT Mag 2026. Effort: <span class="eff">S</span>.</span></div></li>
+        <li><div><span class="title">Ship the share primitive.</span><span class="body" style="color:#f3eadb;opacity:0.92">Per-devotional dynamic OG image API + per-devotional shareable short URL + native share-sheet button. Without this, no distribution plan is viable. Effort: <span class="eff">M</span>.</span></div></li>
+        <li><div><span class="title">Ship the verse card.</span><span class="body" style="color:#f3eadb;opacity:0.92">The atomic unit of devotional virality (YouVersion proved it). <code>/api/verse-card?ref=Mark+1:3&amp;trans=BSB</code> renders a branded single-verse PNG. Effort: <span class="eff">M</span>.</span></div></li>
+        <li><div><span class="title">Move day-nav off-fold + clear chrome on scroll.</span><span class="body" style="color:#f3eadb;opacity:0.92">Floating bottom-edge thumb pill on mobile; the masthead fades past 80vh. Reader becomes the reader. Effort: <span class="eff">M</span>.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────── 2. THE SITE TODAY ───────────────────────────── -->
+  <section id="live">
+    <div class="section-head">
+      <span class="num">§02 · The site, today</span>
+      <h2>Captured at 1440 and 375. Notes against each.</h2>
+      <p class="dek">Live captures of the production site (euangelion.app) at desktop and mobile. The frames below are what an awwwards judge would open with. Read each caption.</p>
+    </div>
+
+    <div class="cols-2">
+      <figure>
+        <img src="captures/home-desktop.jpeg" alt="Homepage on a 1440px desktop viewport" loading="lazy" />
+        <figcaption>Homepage · 1440 × Desktop · <em>Hero band lands. Trust strip + starters strong. Featured devotional now surfaces SERIES (Too Busy for God), not a single day — the right move shipped today.</em></figcaption>
+      </figure>
+      <figure>
+        <img src="captures/home-mobile.jpeg" alt="Homepage on a 375px mobile viewport" loading="lazy" />
+        <figcaption>Homepage · 375 × Mobile · <em>Mobile rhythm now compresses the hero to ~103px tall. Headline lifts above the fold. Soul Audit pop in blue reads correctly.</em></figcaption>
+      </figure>
+    </div>
+
+    <div class="cols-2">
+      <figure>
+        <img src="captures/series-desktop.jpeg" alt="/series browse page on desktop" loading="lazy" />
+        <figcaption>/series · 1440 × Desktop · <em>33 series cards now reading as a coherent set after the round-18 image purge. The four-side border fix lands.</em></figcaption>
+      </figure>
+      <figure>
+        <img src="captures/devotional-desktop.jpeg" alt="Devotional reader on desktop" loading="lazy" />
+        <figcaption>Devotional reader · 1440 × Desktop · <em>Hero artwork holds. Day-nav and breadcrumbs read like product chrome, not publication furniture — opportunity §04.</em></figcaption>
+      </figure>
+    </div>
+
+    <div class="cols-2">
+      <figure>
+        <img src="captures/devotional-mobile.jpeg" alt="Devotional reader on mobile" loading="lazy" />
+        <figcaption>Devotional reader · 375 × Mobile · <em>This is where the founder’s “day-nav pushes reading off the screen” fires. First module sits ~700px below the fold.</em></figcaption>
+      </figure>
+      <figure>
+        <img src="captures/soul-audit-mobile.jpeg" alt="Soul Audit page on mobile" loading="lazy" />
+        <figcaption>/soul-audit · 375 × Mobile · <em>The standalone audit page is currently minimal. There’s room to make this a feature surface that explains the audit before requesting a confession.</em></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────── 3. BENCHMARK ───────────────────────────── -->
+  <section id="measure">
+    <div class="section-head">
+      <span class="num">§03 · How it measures against the best</span>
+      <h2>The bar is the <em>2026 NYT Magazine redesign,</em> ProPublica, Read.cv, Lectio 365 — and quietly, Apple.</h2>
+      <p class="dek">Patterns recurring across every awwwards-tier editorial site. Each row is something the best are doing that Euangelion either hasn’t adopted or is doing partially.</p>
+    </div>
+
+    <div class="prose">
+      <p class="lead">
+        Awwwards’ 2025–26 trend toward confident minimalism and oversized type-only mastheads — Neimil, the NYT Magazine 2026 cover system, Read.cv’s chromeless reader — is the wave Euangelion is already riding. It just hasn’t pushed the dial all the way.
+      </p>
+    </div>
+
+    <table class="tbl">
+      <caption>Patterns from the winners</caption>
+      <thead>
+        <tr><th>Pattern</th><th>Where it lives</th><th>What Euangelion is doing</th><th>The move</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Page furniture at the top</strong></td>
+          <td>NYT Mag 2026, Are.na</td>
+          <td>Below or absent</td>
+          <td>Folio + dateline + edition strip above each reading</td>
+        </tr>
+        <tr>
+          <td><strong>Oversized type-only masthead state</strong></td>
+          <td>Neimil, NYT Mag, Site-of-the-Day 2025</td>
+          <td>Hero is image-led</td>
+          <td>Push Instrument Serif to 8–12rem in at least one viewport state</td>
+        </tr>
+        <tr>
+          <td><strong>50–70 character body measure</strong></td>
+          <td>ProPublica</td>
+          <td>Holds on desktop; drifts on wide zooms</td>
+          <td>Audit every module renderer for <code>max-w-prose</code></td>
+        </tr>
+        <tr>
+          <td><strong>Real small caps</strong> (not <code>uppercase</code>)</td>
+          <td>NYT Mag, A24</td>
+          <td><code>text-transform: uppercase</code> everywhere</td>
+          <td><code>font-variant-caps: all-small-caps</code> on Industry Test labels</td>
+        </tr>
+        <tr>
+          <td><strong>Chromeless reader after 200px scroll</strong></td>
+          <td>Read.cv, Apple, Pudding</td>
+          <td>Masthead stays sticky</td>
+          <td>Fade chrome to 0 on scroll-down, restore on scroll-up</td>
+        </tr>
+        <tr>
+          <td><strong>One idea per viewport</strong></td>
+          <td>apple.com</td>
+          <td>Modules stack densely in a single column</td>
+          <td>Give each reader module its own viewport pacing</td>
+        </tr>
+        <tr>
+          <td><strong>2-ink Riso duotone images</strong></td>
+          <td>It’s Nice That, Print magazines</td>
+          <td>Mixed — 24 compliant linocuts + a few legacy painterly assets</td>
+          <td>Crimson as second spot color in image set; halftone grain @ 30–45 LPI</td>
+        </tr>
+        <tr>
+          <td><strong>One-thing-per-day discipline</strong></td>
+          <td>Lectio 365</td>
+          <td>Homepage now has “Three honest places to begin” + featured series</td>
+          <td>Hold; do not regress toward feeds or carousels</td>
+        </tr>
+        <tr>
+          <td><strong>Gift / share-with-friction model</strong></td>
+          <td>NYT, The Atlantic gift links</td>
+          <td>None — everything is already free, but no “send” affordance</td>
+          <td>“Sarah sent you this” deep-link with named referrer landing</td>
+        </tr>
+        <tr>
+          <td><strong>Per-article OG image</strong></td>
+          <td>Substack, NYT, Apple News</td>
+          <td>Only the root OG image exists</td>
+          <td><code>/devotional/[slug]/opengraph-image</code> route, branded per day</td>
+        </tr>
+        <tr>
+          <td><strong>Reject engagement bait</strong></td>
+          <td>Lectio 365 (yes), Hallow (no)</td>
+          <td>Aligned — no streaks, badges, gamified pushes</td>
+          <td>Hold the line. Don’t add later under growth pressure.</td>
+        </tr>
+        <tr>
+          <td><strong>Modular reading components</strong></td>
+          <td>ProPublica CMS framework</td>
+          <td>Already shipped (21 module types after gallant-swirles)</td>
+          <td>Tighten typographic recipe per module; one spec each</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pullquote">Euangelion has the content and the typestack to win Site of the Day. The gap is publication furniture and viewport rhythm.</div>
+  </section>
+
+  <!-- ───────────────────────────── 4. POLISH ───────────────────────────── -->
+  <section id="polish">
+    <div class="section-head">
+      <span class="num">§04 · Craft polish — fifty-six details</span>
+      <h2>Where Steve Jobs would stop, lean in, and ask <em>“what about this?”</em></h2>
+      <p class="dek">A close read of the codebase against awwwards-tier expectations. Each item is shippable; effort is marked S/M/L. The Top 15 at the bottom is what to ship first.</p>
+    </div>
+
+    <h3 class="eyebrow" style="margin-top:1rem">Typography (1–15)</h3>
+    <ol class="findings">
+      <li><div><span class="title">Drop cap rests on <code>::first-letter</code>.</span><span class="body"><span class="pill pill-high">High</span><code>::first-letter</code> breaks on punctuation, quotes, em-dashes. Replace with a real <code>&lt;span class="dropcap"&gt;</code> wrapper inserted by a tiny React component. Same visual; predictable across content. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">No optical tracking ramp on Instrument Serif display.</span><span class="body"><span class="pill pill-med">Medium</span>Display flat at <code>-0.02em</code>. At ≥48px the counters in <em>a, e, s</em> close up. Stepped: <code>-0.025em</code> @ 96–160px, <code>-0.015em</code> @ 48–80px, <code>0</code> @ body. Add <code>font-optical-sizing: auto</code> on html. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">No true small caps anywhere.</span><span class="body"><span class="pill pill-high">High</span><code>text-transform: uppercase</code> on section headers is 100% the wrong move for a sacred-minimalist register. Use <code>font-variant-caps: all-small-caps</code> on Industry Test labels. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Hanging punctuation declared, not enforced.</span><span class="body"><code>hanging-punctuation: first last</code> is Safari-only. Add a <code>.punct-pull</code> span around opening quotes in Scripture for Chrome/Firefox. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Oldstyle vs lining numerals inverted on day numerals.</span><span class="body">Body uses oldstyle (correct). <code>.day-number</code> at 160px hero also inherits oldstyle — “Day 7” gets a descending 7. Set <code>lining-nums tabular-nums</code> on architectural numerals. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Two pull-quote versions exist.</span><span class="body"><code>.pull-quote</code> (legacy, dumb quotes, 50% gold) and <code>.pull-quote-enhanced</code> (10%, smart quotes). Pick the enhanced. Delete the legacy. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">No alternate ampersand.</span><span class="body"><span class="pill pill-high">High</span>Instrument Serif has a beautiful <code>salt 1</code> ampersand. A single <code>.amp</code> utility — <code>font-feature-settings: "salt" 1; font-style: italic</code> — buys editorial credibility. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">No measure cap on reader body.</span><span class="body">680px is set, but module renderers don’t all apply <code>max-w-prose</code>. On wide zooms, lines drift past 75ch. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Baseline grid declared but unenforced.</span><span class="body"><code>.baseline-grid</code> exists; nothing uses it. Apply to <code>&lt;article&gt;</code> in the reader. Every spacing should be a multiple of 8px from one <code>--baseline</code> token. <span class="eff">Effort: M</span></span></div></li>
+      <li><div><span class="title">Hebrew works — Greek doesn’t.</span><span class="body">No SBL Hebrew or SBL/GFS Greek <code>.woff2</code> in <code>/public/fonts/</code>. Hebrew falls to system fallback. Ship SBL Hebrew + GFS Didot Polytonic. <code>font-display: optional</code>. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Transliteration lacks macrons/underdots.</span><span class="body">Currently italic Latin only. Use proper Unicode (ā, ḥ, š, ō) — never “sh” or “aa.” Show macrons on stressed Greek. <span class="eff">Effort: S — but a content pass</span></span></div></li>
+      <li><div><span class="title">Italic-as-syntax is undefined.</span><span class="body">Italic is doing four jobs (original language, book titles, emphasis, MixedHeadline flow). Codify: italic = original-language layer; emphasis = small caps + tracking; titles = roman in <code>&lt;cite&gt;</code>. <span class="eff">Effort: M (content audit)</span></span></div></li>
+      <li><div><span class="title">No footnote / margin-sidenote system.</span><span class="body"><span class="pill pill-high">High</span>Tufte-style margin sidenotes on desktop, numbered footnotes on mobile. One CSS-only component, huge editorial gain — perfect for theology grounding. <span class="eff">Effort: M</span></span></div></li>
+      <li><div><span class="title">No <code>text-wrap: balance</code> / <code>pretty</code>.</span><span class="body">Free wins. Add <code>balance</code> to all h1/h2/h3, <code>pretty</code> to <code>.prose p</code>. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Wordmark doesn’t scale up.</span><span class="body">Current masthead serif sits at ~4–6rem. Push to 8–12rem in at least one state for the “type-only awwwards cover” move. <span class="eff">Effort: S</span></span></div></li>
+    </ol>
+
+    <h3 class="eyebrow">Color (16–20)</h3>
+    <ol class="findings" style="counter-reset:f 15;">
+      <li><div><span class="title">Duotone broken by greys.</span><span class="body"><span class="pill pill-high">High</span>Text hierarchy uses <code>rgba(scroll, 0.7/0.5/0.4)</code> — mathematically grey. Newspapers don’t use opacity; they use ink density. Replace tertiary text with a true second ink (desaturated cobalt or warm grey via <code>oklch</code>). <span class="eff">Effort: M</span></span></div></li>
+      <li><div><span class="title"><code>--color-gold</code> is cobalt.</span><span class="body"><span class="pill pill-crit">Critical</span>Resolve the naming/value conflict. Audit every reference to “gold” in docs (MEMORY.md, CLAUDE.md, brand-voice). <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Crimson accent isn’t actually crimson.</span><span class="body"><code>--color-burgundy: #8e3f3f</code> is brown-red, not Riso crimson. Reserve burgundy for blood/Communion content; add a true crimson (<code>#c4192e</code> / <code>#dc2626</code>) for editorial moments. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Dark mode is inverted, not re-cast.</span><span class="body">Real editorial dark mode cools the warm cream and warms the cobalt slightly (cobalt looks navy on black). Swap via <code>oklch()</code>, not RGB. <span class="eff">Effort: M</span></span></div></li>
+      <li><div><span class="title">Tertiary text fails WCAG AA at small sizes.</span><span class="body"><code>rgba(scroll, 0.5)</code> measures ~3.8:1 on tehom. Lift to 0.65 or restrict tertiary to ≥18px. <span class="eff">Effort: S</span></span></div></li>
+    </ol>
+
+    <h3 class="eyebrow">Layout & rhythm (21–25)</h3>
+    <ol class="findings" style="counter-reset:f 20;">
+      <li><div><span class="title">Page furniture missing.</span><span class="body"><span class="pill pill-crit">Critical</span>No folios, no edition labels, no datelines, no continued-on marks. For a printed-newspaper aesthetic, non-negotiable. Top: <code>EUANGELION · VOL.I · NO.[day] · [date]</code> in Industry small caps. Bottom: <code>— end of reading —</code> ornament. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Column rules too pale.</span><span class="body"><code>.columns-prose</code> uses <code>1px solid var(--color-border)</code>. Make it <code>0.5px solid currentColor</code> at 25% opacity so it prints. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Section pacing is uniform.</span><span class="body">Real editorial design compresses fast (TOC, credits) then opens dramatically (lead). Codify three tokens: <code>--rhythm-compressed: 16px</code>, <code>--rhythm-default: 32px</code>, <code>--rhythm-breath: 96px</code>. <span class="eff">Effort: M</span></span></div></li>
+      <li><div><span class="title">Marginalia layer unused.</span><span class="body"><span class="pill pill-high">High</span><code>.annotation</code> style exists, nothing uses it. Reserve the desktop right margin for cross-references, liturgical date, original-language notes. The single biggest editorial differentiator vs YouVersion. <span class="eff">Effort: M</span></span></div></li>
+      <li><div><span class="title">Kicker/dek/colophon hierarchy missing.</span><span class="body">Most pages: title → body. Editorial: kicker → dek (italic lead) → body → colophon (closing credit + edition tag). CSS exists; wire it through. <span class="eff">Effort: M</span></span></div></li>
+    </ol>
+
+    <h3 class="eyebrow">Motion & interaction (26–32)</h3>
+    <ol class="findings" style="counter-reset:f 25;">
+      <li><div><span class="title">Reading chrome doesn’t fade.</span><span class="body"><span class="pill pill-high">High</span>Header stays sticky during reading. <code>useScroll</code> → past 80vh, fade mast to <code>0</code> over 200ms; reverse on scroll-up. <span class="eff">Effort: M</span></span></div></li>
+      <li><div><span class="title">No page transition between days.</span><span class="body">Crossfade + <code>y: 16→0</code>, 240ms cubic-bezier(0.16,1,0.3,1) on day-to-day. Reuse existing framer-motion infrastructure. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Link hover has no microinteraction.</span><span class="body">Body links: 1px underline thickens to 2px on hover, 100ms tween. Right now flat <code>underline</code>. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">No cursor treatment.</span><span class="body">On desktop, hover an artwork or pullquote → swap cursor to a small SVG (gold fleuron or italic ampersand). One CSS line. Distinctive. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Generic loading state.</span><span class="body"><code>app/loading.tsx</code> should be a designed page, not a spinner. Pulsing ornament + “Loading the reading…” in Industry Book. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">No haptic feedback on iOS PWA.</span><span class="body"><code>navigator.vibrate(10)</code> on Mark Read / Day Done. Subtle, ritual-reinforcing. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Touch targets unaudited.</span><span class="body">Bottom nav, day-nav, “next module” arrow — measure against 44pt minimum. Founder already flagged day pagination. <span class="eff">Effort: S</span></span></div></li>
+    </ol>
+
+    <h3 class="eyebrow">Mobile reading (33–36)</h3>
+    <ol class="findings" style="counter-reset:f 32;">
+      <li><div><span class="title">Masthead doesn’t reflow.</span><span class="body">At 375px the masthead should compress to “E.” monogram + dateline, not shrink the wordmark. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Day-nav blocks reading.</span><span class="body"><span class="pill pill-crit">Critical</span>Founder-flagged. Thumb-zone bottom-edge pill: <code>← Day 6 · 7 · Day 8 →</code>, floats above iOS safe-area, 44pt tall, hides on scroll-down. <span class="eff">Effort: M</span></span></div></li>
+      <li><div><span class="title">No reading-progress rule.</span><span class="body">1px gold (or crimson) rule at top of viewport that fills as you scroll. <code>ScrollProgress.tsx</code> exists — verify wiring. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">No brightness/sepia toggle in reader.</span><span class="body">Tri-toggle: cream / sepia / dark. Three classes on <code>&lt;html&gt;</code>, three palettes. Night-reader benefits enormously. <span class="eff">Effort: M</span></span></div></li>
+    </ol>
+
+    <h3 class="eyebrow">Content as design (37–40)</h3>
+    <ol class="findings" style="counter-reset:f 36;">
+      <li><div><span class="title">No author colophon.</span><span class="body">Every devotional ends with a 4-line colophon: writer, editor, date composed, scripture translation. Treat like a movie credit. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">No “About this passage” inline.</span><span class="body">Collapsible note above scripture: book, author, date written, audience. Likely already in <code>content/</code>. <span class="eff">Effort: M</span></span></div></li>
+      <li><div><span class="title">No cross-reference marginalia.</span><span class="body">When a devotional cites another verse, show it in the right margin (desktop) or behind long-press (mobile). Don’t make the reader leave. <span class="eff">Effort: M</span></span></div></li>
+      <li><div><span class="title">No liturgical calendar context.</span><span class="body">“Today is the 4th Sunday of Easter” in the dateline. One JSON field on the devotional; renders as overline. <span class="eff">Effort: S</span></span></div></li>
+    </ol>
+
+    <h3 class="eyebrow">Performance + accessibility + SEO (41–56)</h3>
+    <ol class="findings" style="counter-reset:f 40;">
+      <li><div><span class="title">Industry Test is <code>.otf</code>.</span><span class="body">Convert to <code>.woff2</code> with <code>fonttools subset</code>. ~80KB saved per page. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title"><code>font-display: swap</code> missing.</span><span class="body">Only set on (unused) Google Fonts imports. Add to every <code>@font-face</code> in <code>globals.css</code>. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">LCP candidate flagged.</span><span class="body">Verify homepage hero image has <code>priority</code> + <code>sizes="100vw"</code>. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">CLS risk on devotional artwork.</span><span class="body">Verify every <code>&lt;Image&gt;</code> in <code>DevotionalArtwork.tsx</code> has intrinsic <code>width</code>/<code>height</code>. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">No critical CSS inlined.</span><span class="body">Tailwind v4 ships full sheet. Extract <code>:root</code> token block + reset into inline <code>&lt;style&gt;</code> in <code>layout.tsx</code>. <span class="eff">Effort: M</span></span></div></li>
+      <li><div><span class="title">No skip-link.</span><span class="body"><code>&lt;a href="#main" className="sr-only focus:not-sr-only"&gt;Skip to reading&lt;/a&gt;</code> as first child of <code>&lt;body&gt;</code>. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Focus rings inconsistent.</span><span class="body">Currently <code>outline: 2px solid var(--color-gold)</code> — but gold is cobalt. Audit. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title"><code>prefers-reduced-motion</code> partial.</span><span class="body">Verify <code>EditorialMotionSystem.tsx</code> bails out on reduced-motion. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">Heading hierarchy unaudited.</span><span class="body">Devotional reader: spot-check h1→h2→h3 with no skips. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">No per-article OG image.</span><span class="body"><span class="pill pill-crit">Critical</span><code>/devotional/[slug]/opengraph-image.tsx</code> generated per day with day number + scripture reference. This is half the share story. <span class="eff">Effort: M</span></span></div></li>
+      <li><div><span class="title">No <code>Article</code> JSON-LD per devotional.</span><span class="body">Add Article schema with <code>author</code>, <code>datePublished</code>, <code>mainEntityOfPage</code>, <code>isBasedOn</code> (scripture reference). <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">No <code>CollectionPage</code> JSON-LD per series.</span><span class="body">List days as <code>hasPart</code>. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title"><code>BreadcrumbList</code> JSON-LD missing.</span><span class="body"><code>Breadcrumbs.tsx</code> exists; verify it emits structured data. <span class="eff">Effort: S</span></span></div></li>
+      <li><div><span class="title">FAQ JSON-LD on homepage.</span><span class="body">Homepage already has FAQ_ITEMS — wrap in <code>FAQPage</code> schema. (Already shipped per round 18 — verify.) <span class="eff">Effort: verified</span></span></div></li>
+      <li><div><span class="title">robots.txt per-bot.</span><span class="body">Allow GPTBot, ClaudeBot, PerplexityBot explicitly. Block AhrefsBot/SemrushBot unless doing SEO work. (Verify against round-18 work.) <span class="eff">Effort: verified</span></span></div></li>
+      <li><div><span class="title">No internal-linking density audit.</span><span class="body">Cross-link series from devotional days; link each day in series.ts to its sibling days; link “Related Series” at bottom of reader. <span class="eff">Effort: M</span></span></div></li>
+    </ol>
+
+    <div class="banner">
+      <p class="eyebrow">Top 15 Highest-Leverage Polishes · in order</p>
+      <h3>Start here. Two sprints.</h3>
+      <ol class="findings" style="counter-reset:f">
+        <li><div><span class="title">Resolve <code>--color-gold</code> token cascade.</span><span class="body" style="color:#f3eadb;opacity:0.92">Everything else inherits from this. <span class="eff" style="color:#f3eadb">Effort: S</span></span></div></li>
+        <li><div><span class="title">Real <code>&lt;span class="dropcap"&gt;</code> replacing <code>::first-letter</code>.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: S</span></span></div></li>
+        <li><div><span class="title">Optical tracking ramp on Instrument Serif display.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: S</span></span></div></li>
+        <li><div><span class="title">Real small caps on section headers.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: S</span></span></div></li>
+        <li><div><span class="title">Alternate ampersand utility.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: S</span></span></div></li>
+        <li><div><span class="title">Folio + dateline + edition label page furniture.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: S</span></span></div></li>
+        <li><div><span class="title">Mobile day-nav thumb pill.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: M</span></span></div></li>
+        <li><div><span class="title">Tufte-style margin sidenotes for theology footnotes.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: M</span></span></div></li>
+        <li><div><span class="title">Ship SBL Hebrew + GFS Greek properly.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: S</span></span></div></li>
+        <li><div><span class="title">True crimson spot color separate from burgundy.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: S</span></span></div></li>
+        <li><div><span class="title">Per-devotional OG image route.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: M</span></span></div></li>
+        <li><div><span class="title">Article + BreadcrumbList + FAQPage JSON-LD.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: S</span></span></div></li>
+        <li><div><span class="title">Reading-chrome fade on scroll.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: M</span></span></div></li>
+        <li><div><span class="title">Cream / sepia / dark tri-toggle in reader.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: M</span></span></div></li>
+        <li><div><span class="title">Convert <code>.otf</code> Industry to <code>.woff2</code>.</span><span class="body" style="color:#f3eadb;opacity:0.92"><span class="eff" style="color:#f3eadb">Effort: S</span></span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────── 5. INNOVATION ───────────────────────────── -->
+  <section id="innovate">
+    <div class="section-head">
+      <span class="num">§05 · Innovation territory</span>
+      <h2>What could make Euangelion <em>genuinely novel</em> in the contemplative-Christian category.</h2>
+      <p class="dek">Twelve ideas, ordered easy → moonshot. The first three are a two-week “innovation sprint” that reinforces the editorial register without adding account/social complexity.</p>
+    </div>
+
+    <table class="tbl">
+      <caption>Innovation territory · build queue</caption>
+      <thead>
+        <tr><th style="width:2rem">#</th><th>Idea</th><th>Value</th><th style="width:3rem">Effort</th><th style="width:5rem">Yes-confidence</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">01</td><td><strong>Shareable verse card (PNG export)</strong></td><td>One-tap “save image” of today’s anchor verse, branded, IG-ready. The atomic unit of devotional virality.</td><td>S</td><td>95%</td></tr>
+        <tr><td class="num">02</td><td><strong>Today in the church year</strong></td><td>Sidebar shows liturgical season + saint of the day. Pure content; no infra.</td><td>S</td><td>90%</td></tr>
+        <tr><td class="num">03</td><td><strong>Read-aloud audio (browser TTS)</strong></td><td>Tap to listen; ambient drone behind the voice. Free via Web Speech API; quality is the bet.</td><td>S</td><td>80%</td></tr>
+        <tr><td class="num">04</td><td><strong>iMessage / Apple Watch daily verse</strong></td><td>Push the anchor verse at the user’s chosen hour. Cloudflare cron + APN.</td><td>M</td><td>85%</td></tr>
+        <tr><td class="num">05</td><td><strong>Translate this verse inline</strong></td><td>Tap any verse → expand BSB/KJV/Greek side-by-side. Corpus already planned per memory.</td><td>M</td><td>90%</td></tr>
+        <tr><td class="num">06</td><td><strong>Marginalia between friends</strong></td><td>Two users on the same plan see each other’s underlines + notes. Quiet, opt-in.</td><td>M</td><td>70%</td></tr>
+        <tr><td class="num">07</td><td><strong>Weekly broadsheet podcast</strong></td><td>A 12-minute audio cut from the week’s seven readings, one voice. Content rebrand, no infra.</td><td>M</td><td>75%</td></tr>
+        <tr><td class="num">08</td><td><strong>Reading partner mode</strong></td><td>“Walking with [name] · they’re on Day 4.” Gentle accountability. No leaderboard ever.</td><td>M</td><td>70%</td></tr>
+        <tr><td class="num">09</td><td><strong>AI-composed companion image per day</strong></td><td>Pre-generated Riso print-style art per devotional. Pipeline exists per memory.</td><td>L</td><td>80%</td></tr>
+        <tr><td class="num">10</td><td><strong>Printed weekly broadsheet (mailed)</strong></td><td>Folded 4-page Riso of the week, $5/mo. Gorgeous; hard ops; cult product.</td><td>L</td><td>65%</td></tr>
+        <tr><td class="num">11</td><td><strong>Liturgical year-as-OS</strong></td><td>Entire app reskins seasonally — Advent purple, Lent ash, Eastertide gold. A calendar that changes the product.</td><td>L</td><td>60%</td></tr>
+        <tr><td class="num">12</td><td><strong>Confession-as-input → reading-as-output</strong></td><td>Safe-space text intake; what you type becomes a private reading plan; nothing logged.</td><td>L</td><td>55%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="pullquote">Three ideas ship in two weeks: verse card, church-year sidebar, translate-inline. None adds accounts. All reinforce the editorial register.</div>
+  </section>
+
+  <!-- ───────────────────────────── 6. SHAREABILITY ───────────────────────────── -->
+  <section id="share">
+    <div class="section-head">
+      <span class="num">§06 · Shareability, today</span>
+      <h2>The product is silent in every group chat it could be in.</h2>
+      <p class="dek">The honest read: nothing about Euangelion today is built for the iMessage → friend forward → friend opens flow. Substack’s entire growth engine is downstream of that flow. So is YouVersion’s 600M-install moat.</p>
+    </div>
+
+    <div class="cols-2">
+      <div>
+        <span class="eyebrow">What’s missing</span>
+        <ol class="findings">
+          <li><div><span class="title">No dynamic OG image per devotional.</span><span class="body">Only root OG image. Every shared URL unfurls identically. Substack auto-generates a card per post; we don’t.</span></div></li>
+          <li><div><span class="title">No iMessage / WhatsApp square card.</span><span class="body">Emit both <code>1200×630</code> (X/web) and <code>1200×1200</code> (iMessage). Most reading apps miss this.</span></div></li>
+          <li><div><span class="title">No verse card export.</span><span class="body">YouVersion ships “Verse Images” — pick a background, overlay a verse, share to OS sheet. It is the atomic unit of devotional virality.</span></div></li>
+          <li><div><span class="title">No native share-sheet button on a devotional.</span><span class="body"><code>navigator.share({title, text, url})</code> is one line. Should be inline after the Scripture module.</span></div></li>
+          <li><div><span class="title">No “Sarah sent you this” deep-link.</span><span class="body">Gift-link analog. Names the sender on a custom landing, offers the next 7 days, converts visitors to readers at materially higher rates (NYT, Atlantic, Hearst data).</span></div></li>
+          <li><div><span class="title">No RSS feed.</span><span class="body">30-min ship. Powers cross-post to Substack/Beehiiv via importers and lets Apple News auto-ingest.</span></div></li>
+          <li><div><span class="title">No referral counter.</span><span class="body">Beehiiv’s data: +17% subscriber growth on average from referral milestones. Build optional, opt-in.</span></div></li>
+          <li><div><span class="title">No “Restack” equivalent in-app.</span><span class="body">Substack’s viral primitive is one user signal-boosting another. Without an analog, Euangelion has no in-network growth loop.</span></div></li>
+        </ol>
+      </div>
+
+      <div>
+        <span class="eyebrow">What’s already strong</span>
+        <ol class="findings">
+          <li><div><span class="title">Per-page metadata.</span><span class="body">Title + description per devotional were fixed in R11/R18. The skeleton is in place; the image layer is missing.</span></div></li>
+          <li><div><span class="title">Schema.org JSON-LD scaffold.</span><span class="body">WebSite + Organization + FAQPage already emit. Article + BreadcrumbList + CollectionPage are easy follow-ons.</span></div></li>
+          <li><div><span class="title">llms.txt + per-bot robots.txt.</span><span class="body">AI distribution is opted-in cleanly. We are findable by GPT, Claude, Perplexity.</span></div></li>
+          <li><div><span class="title">No paywall.</span><span class="body">Euangelion has the rare advantage that the content is free. So a “gift link” here doesn’t bypass anything — it carries a sender’s name.</span></div></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="banner">
+      <p class="eyebrow">The two primitives that unlock everything</p>
+      <h3>Dynamic OG image API + verse-card generator. Build these two first.</h3>
+      <p class="lead" style="margin-top:0.6rem">
+        Every other distribution lever — Substack cross-post, Reels, Pinterest, Threads, iMessage forwards, gift links — pulls from these two endpoints. They are <em>infrastructure for content</em>, not content. One sprint each.
+      </p>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────── 7. DISTRIBUTION PLAYBOOK ───────────────────────────── -->
+  <section id="distribute">
+    <div class="section-head">
+      <span class="num">§07 · Distribution playbook</span>
+      <h2>Solo-founder publish-to-distribute rhythm, modeled after Substack + YouVersion + Tyler Staton.</h2>
+      <p class="dek">A sustainable cadence for a founder who is also building the product. Daily auto-generates from the devotional; founder time is one weekly digest + one monthly reflection.</p>
+    </div>
+
+    <table class="tbl">
+      <caption>Cadence</caption>
+      <thead>
+        <tr><th>Rhythm</th><th>Output</th><th>Source</th><th>Time</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Daily</strong></td><td>1 verse card (IG + X + Threads) · 1 typographic pull-quote tweet</td><td>Auto-generated from devotional JSON at publish</td><td>0 min (automated)</td></tr>
+        <tr><td><strong>3 × week</strong></td><td>1 × 30–60s Reel/TikTok — voice-over of one paragraph + slow-pan over devotional artwork</td><td>Phone-shot, founder voice</td><td>~15 min/each</td></tr>
+        <tr><td><strong>Weekly</strong></td><td>Substack/email digest · 7 days + founder reflection · auto-cross-posts as Notes restack-bait</td><td>Founder write</td><td>~90 min</td></tr>
+        <tr><td><strong>Monthly</strong></td><td>1 “behind the build” post (Substack + LinkedIn)</td><td>Founder write</td><td>~2 hrs</td></tr>
+        <tr><td><strong>Per series launch</strong></td><td>1 X thread + 1 Reel + 1 Pinterest board (8–12 verse cards) + 1 audiogram</td><td>Founder produce</td><td>~half-day</td></tr>
+      </tbody>
+    </table>
+
+    <div class="cols-2" style="margin-top: var(--rhythm);">
+      <div>
+        <span class="eyebrow">Distribution surfaces · ordered</span>
+        <ol class="findings">
+          <li><div><span class="title">Substack as the mirror.</span><span class="body">Cross-post weekly digest to a Substack mirror (<code>euangelion.substack.com</code>). Notes/Restack is the viral primitive — writers boost writers. Plant a few quote-Notes per week to seed.</span></div></li>
+          <li><div><span class="title">Instagram Reels — Tyler Staton model.</span><span class="body">3×/week, phone-shot, contemplative-tone, voice-over over the day’s artwork. The contemplative-Christian niche has space for an editorial voice that isn’t Hallow’s pop production.</span></div></li>
+          <li><div><span class="title">Threads + X.</span><span class="body">Daily auto-quote from the devotional. One day = one tweet. Founder amplifies with one weekly thread (digest preview).</span></div></li>
+          <li><div><span class="title">Pinterest — the sleeper.</span><span class="body">Verse cards compound for years on Pinterest. Big devotional boards run 10× longer click-tail than IG. Build a board per series.</span></div></li>
+          <li><div><span class="title">TikTok — secondary.</span><span class="body">Same Reels content, re-cut vertical. Phiture’s Hallow case study: UGC + creative-testing → installs +300% in 3–5 weeks.</span></div></li>
+          <li><div><span class="title">Apple News.</span><span class="body">Once RSS ships, submit. Free distribution to ~125M iOS users; quiet, but high-quality audience.</span></div></li>
+        </ol>
+      </div>
+
+      <div>
+        <span class="eyebrow">Technical primitives to build (queue)</span>
+        <ol class="findings">
+          <li><div><span class="title">Dynamic OG image API.</span><span class="body"><code>/api/og/[slug]</code> via <code>next/og ImageResponse</code> on Cloudflare Workers. Title in Instrument Serif, day ornament, EUANGELION wordmark, series eyebrow. Edge-cached.</span></div></li>
+          <li><div><span class="title">Dual-ratio OG emission.</span><span class="body">Emit both 1200×630 + 1200×1200 <code>og:image</code> tags so iMessage gets the square it prefers.</span></div></li>
+          <li><div><span class="title">Per-day short URL.</span><span class="body"><code>/d/&lt;slug&gt;</code>. Clean unfurl + named-referrer landing ("Sarah sent you this").</span></div></li>
+          <li><div><span class="title">Verse Card Generator.</span><span class="body"><code>/api/verse-card?ref=Mark+1:3&amp;trans=BSB</code> renders a single-verse PNG. Ship before any social automation.</span></div></li>
+          <li><div><span class="title">Native share-sheet.</span><span class="body"><code>navigator.share()</code> on every devotional and verse. Inline “Send to a friend” after Scripture module.</span></div></li>
+          <li><div><span class="title">RSS feed.</span><span class="body"><code>/rss.xml</code>. 30-min ship. Powers Substack/Beehiiv import + Apple News.</span></div></li>
+          <li><div><span class="title">Audiogram pipeline.</span><span class="body">When daily TTS audio ships, generate a square MP4 with waveform + verse text via ffmpeg server-side.</span></div></li>
+          <li><div><span class="title">Restack-equivalent feed.</span><span class="body">An “Amen” or “Echo” feed where users share a verse + one-line reflection. Visible to followers only. The only in-product viral loop the contemplative space hasn’t over-engineered.</span></div></li>
+          <li><div><span class="title">Beehiiv-style referral counter.</span><span class="body">Per-user share link; milestone unlocks (early access to next series, custom prayer journal).</span></div></li>
+          <li><div><span class="title">Substack/Beehiiv cross-post.</span><span class="body">One-click “publish this devotional to my mirror.” Feeds the Notes restack loop.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────── 8. ROADMAP ───────────────────────────── -->
+  <section id="ship">
+    <div class="section-head">
+      <span class="num">§08 · Roadmap to ship — three sprints + an innovation sprint</span>
+      <h2>What to build, in order, to move from <em>live</em> to <em>worth opening every day.</em></h2>
+      <p class="dek">Each sprint is sized at ~2 weeks for a solo founder. Innovation sprint is parallel and optional.</p>
+    </div>
+
+    <div class="cols-3">
+      <article class="card dark">
+        <p class="kicker">Sprint A · Polish</p>
+        <h3>Editorial craft pass.</h3>
+        <p>Resolve the gold/cobalt token cascade. Real <code>&lt;span class="dropcap"&gt;</code>. Optical tracking ramp. Real small caps. Alternate ampersand. Folio + dateline + edition above each devotional. <code>text-wrap: balance/pretty</code> everywhere. <code>.otf</code> → <code>.woff2</code>.</p>
+        <p class="footnote">Effort: ~10 days · Risk: low · Unlock: site clears the awwwards visual bar</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Sprint B · Reader</p>
+        <h3>Reading experience finish.</h3>
+        <p>Mobile day-nav thumb pill. Reading-chrome fade past 80vh. Cream / sepia / dark tri-toggle. Tufte margin sidenotes. Crossfade page transition between days. Skip-link + focus-ring audit. Per-module measure cap.</p>
+        <p class="footnote">Effort: ~10 days · Risk: low-med · Unlock: the reader becomes the reader</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Sprint C · Share</p>
+        <h3>Distribution primitives.</h3>
+        <p>Dynamic OG image API (per devotional). Dual-ratio OG emission. Per-day short URL. <strong>Verse Card Generator</strong>. Native share-sheet inline. RSS feed. Article + BreadcrumbList + CollectionPage JSON-LD per surface. “Sarah sent you this” gift-link landing.</p>
+        <p class="footnote">Effort: ~14 days · Risk: med · Unlock: every URL pasted into iMessage becomes an ad</p>
+      </article>
+    </div>
+
+    <div class="cols-3" style="margin-top: var(--rhythm);">
+      <article class="card">
+        <p class="kicker">Sprint D · Innovation (parallel)</p>
+        <h3>Three demos in two weeks.</h3>
+        <p>Verse card export (lives downstream of Sprint C). Today-in-the-church-year sidebar. Translate-this-verse inline (BSB / KJV / Greek). These three demo “innovation” without adding accounts or social.</p>
+        <p class="footnote">Effort: ~10 days · Risk: low · Unlock: a story to tell about <em>why</em> Euangelion is novel</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Sprint E · Audio</p>
+        <h3>Voice as content.</h3>
+        <p>Read-aloud (Web Speech API + ambient pad). Weekly podcast cut from seven daily readings. Audiogram pipeline (ffmpeg on Workers). Submit to Apple Podcasts + Spotify.</p>
+        <p class="footnote">Effort: ~14 days · Risk: med-high · Unlock: a second discovery channel</p>
+      </article>
+
+      <article class="card dark">
+        <p class="kicker">Sprint F · Print</p>
+        <h3>The mailed broadsheet.</h3>
+        <p>Folded 4-page Riso of the week’s readings, $5/mo. Print-shop relationship + fulfillment. Slow, expensive, cult-forming. Defer until product-market fit is solid.</p>
+        <p class="footnote">Effort: ~30+ days · Risk: high · Unlock: a physical artifact that people frame</p>
+      </article>
+    </div>
+
+    <div class="banner" style="margin-top: var(--rhythm);">
+      <p class="eyebrow">If you only do two sprints</p>
+      <h3>Sprint A and Sprint C. The visual bar plus the share spine.</h3>
+      <p class="lead" style="margin-top:0.4rem">Sprint A makes Euangelion <em>look</em> like an awwwards site. Sprint C makes it <em>spread</em> like one. Sprint B is the most important, but you can hold it for a follow-on once readers exist.</p>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────── 9. DECISIONS ───────────────────────────── -->
+  <section id="decisions">
+    <div class="section-head">
+      <span class="num">§09 · Decision queue</span>
+      <h2>Questions only the founder can answer. Each unblocks a sprint.</h2>
+      <p class="dek">Answers go in <code>docs/MASTER-LOG.md</code> and inform the production-decisions registry.</p>
+    </div>
+
+    <ol class="findings">
+      <li><div><span class="title">Gold or cobalt?</span><span class="body">The brand has drifted to cobalt as the dominant ink. Should we retire the “gold” token name entirely (rename to <code>--color-cobalt</code>) or restore a real amber-gold hex for accents (drop caps, focus rings, pulled quotes)? <em>Unblocks Sprint A finding #1.</em></span></div></li>
+      <li><div><span class="title">Crimson position.</span><span class="body">Keep burgundy <code>#8e3f3f</code> exclusively for Communion/blood content, add a Riso crimson <code>#c4192e</code> for editorial accents — agreed? <em>Unblocks Sprint A.</em></span></div></li>
+      <li><div><span class="title">Substack mirror — yes or no?</span><span class="body">Cross-post weekly digest to <code>euangelion.substack.com</code> for the Restack loop. The decision is whether you’re comfortable being a Substack writer in parallel to running Euangelion. <em>Unblocks the distribution playbook.</em></span></div></li>
+      <li><div><span class="title">Share defaults.</span><span class="body">When a reader shares a devotional, what does the default tweet/text say? Suggested: <code>“Today’s reading: [TITLE]. From Euangelion.”</code> + URL + verse card image. <em>Unblocks Sprint C.</em></span></div></li>
+      <li><div><span class="title">Founder voice — who narrates?</span><span class="body">Read-aloud audio quality depends on a single voice. Yours, a partner’s, or a paid VO actor? <em>Unblocks Sprint E.</em></span></div></li>
+      <li><div><span class="title">Newsletter ESP.</span><span class="body">Substack, Beehiiv, or Ghost for the weekly digest? Substack maximizes restack-loop; Beehiiv maximizes referral-loop; Ghost maximizes design-control. Pick one. <em>Unblocks Sprint C/D.</em></span></div></li>
+      <li><div><span class="title">Marginalia: ship or defer?</span><span class="body">Margin sidenotes are the single biggest editorial differentiator — but only if there’s margin content to write. Author has to write per-day marginalia or accept it’s feature-by-feature opt-in. <em>Unblocks Sprint B.</em></span></div></li>
+      <li><div><span class="title">Liturgical calendar — Western or shared?</span><span class="body">If we add “today in the church year,” which calendar? Western Christian, Eastern, BCP, RCL? <em>Unblocks Innovation #2.</em></span></div></li>
+      <li><div><span class="title">Restack / Echo feed — accounts required?</span><span class="body">The strongest viral primitive (in-app re-share with reflection) requires user accounts. Today the product is account-optional. Trade-off worth discussing. <em>Unblocks Sprint C/D.</em></span></div></li>
+      <li><div><span class="title">Mailed broadsheet — bet or future?</span><span class="body">$5/mo cult product or expensive distraction? Decision can wait, but the print pipeline runs ~12 weeks from yes to first mailed artifact, so know early. <em>Unblocks Sprint F.</em></span></div></li>
+    </ol>
+  </section>
+
+  <!-- ───────────────────────────── SIGNOFF ───────────────────────────── -->
+  <section id="signoff" style="border-bottom:0">
+    <div class="signoff">
+      <div class="ornament">❦</div>
+      <h2>Euangelion is closer than it knows.</h2>
+      <p>
+        The hardest thing about building an editorial-register, voice-first, no-engagement-bait product is having
+        the discipline to refuse the dozen patterns that would make it succeed faster <em>and</em> uglier. That work
+        is done. What’s left is craft + share. Two sprints. Then the site you’re imagining is the site that exists.
+      </p>
+      <p style="margin-top: 0.6rem;font-style: normal;">— With care, your Claude assistant</p>
+    </div>
+
+    <div class="masthead-bottom">EUANGELION</div>
+    <div class="colophon">Visual Audit · Vol I · No. 1 · 13 May 2026 · euangelion.app</div>
+  </section>
+
+  <footer>
+    Read-only audit. No production code was changed to produce this report. Sources for the research that informed this audit are linked throughout. The companion PRs (#11–#28) are public on the repository.
+  </footer>
+</div>
+</body>
+</html>
