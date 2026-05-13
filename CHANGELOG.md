@@ -5,6 +5,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R19 / Featured devotional rotated to Too Busy for God + shorter card (2026-05-13)
+
+Founder direction:
+
+1. Featured devotional card was too tall. Cause: previous image was 768 × 1408 portrait stretched into a 2/3-width column.
+2. Rotate the featured slot from "What Is the Gospel?" Day 1 → **Too Busy for God** Day 1 ("The Vanity of Busyness", Ecclesiastes 1:2).
+3. Use a different image — not the series' own oil-lamp hero.
+
+Picked from existing library (no generation): `library/poster/atmos-marketplace-dawn.png` — 1408 × 768 landscape Riso of a busy marketplace at dawn. Directly contextual for Ecclesiastes 1 (the daily hustle the Preacher critiques). Heavy halftone, blue + ochre + cream, no text.
+
+Changes:
+
+- `public/images/site/homepage/featured/too-busy-for-god-day-1.webp` (NEW) — webp encode of the library source. Lives in a homepage-specific folder so the `/series` card for too-busy-for-god keeps its own oil-lamp image.
+- `src/app/page.tsx` `HOMEPAGE_TODAY`: slug, series, kicker, title, scripture, teaser, `featuredArt` all updated.
+- `src/app/globals.css` `.homepage-featured-devotional-art` aspect-ratio `1248 / 832` → `1408 / 768`. On a 1440 px desktop, image col height drops from ~640 px to ~525 px. Mobile media query matches.
+
+PRD: `docs/feature-prds/F-061.md` (Round 19). Decision: SA-013.
+
+---
+
 ## F-061 R18 / Strip non-compliant site images — library-first reuse, no generation (2026-05-13)
 
 Founder ruled: every image on the site must be (a) blue-majority OR have heavily noticeable print quality, (b) NO text except Hebrew/Greek, (c) contextually relevant — no arbitrary image use. Critical correction this round: we have ~8,500 generated images already on disk, organized into a curated 1,404-entry library under `public/images/library/`. **Always check the library first; generation is the last resort.**
