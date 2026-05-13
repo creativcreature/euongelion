@@ -5,6 +5,24 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R21 / Featured slot surfaces SERIES, not Day 1 + secondary link explains Bible 365 (2026-05-13)
+
+Founder direction: the featured piece on the homepage should be the SERIES as a whole, not an individual devotional. The card now leads with series-level information.
+
+Changes in `src/app/page.tsx`:
+
+- `HOMEPAGE_TODAY` reworked to be series-centric. Day fields are kept only as fallback (`daySlug`, `dayTitle`).
+- Title: `"The Vanity of Busyness"` → `"Too Busy for God"` (the series name)
+- Kicker: `"FEATURED · TOO BUSY FOR GOD · DAY 1"` → `"FEATURED SERIES · 5 DAYS · LUKE 10:38–42"`
+- Scripture line: `"Ecclesiastes 1:2"` → `"Luke 10:38–42 · Martha & Mary"` (the series framework anchor)
+- Teaser rewritten to surface the SERIES question + a beat of the introduction: _"What are you so busy doing that you're missing the One who gave you life? Your calendar is full but your soul is empty — five honest days on what happens when busyness becomes a barrier to His presence."_
+- Primary CTA: `BEGIN THIS DEVOTIONAL` → **`BEGIN THIS SERIES`**, linking to `/series/too-busy-for-god` (was `/devotional/too-busy-for-god-day-1`)
+- Secondary link rewritten to actually explain why Bible 365 is relevant: _"Want the longer arc? Bible 365 walks the whole Scripture story — 52 weeks, five to seven minutes a day, every day standing alone →"_
+
+PRD: `docs/feature-prds/F-061.md` (Round 21). Decision: SA-013.
+
+---
+
 ## F-061 R20 / Homepage reorder + mode-flip reversed + legal moved below masthead (2026-05-13)
 
 Four founder-directed changes:
