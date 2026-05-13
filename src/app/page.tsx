@@ -272,7 +272,7 @@ export default function Home() {
         </h1>
         <EuangelionShellHeader />
 
-        {/* TODAY hero \u2014 Bible-365 daily devotional surface (per founder
+        {/* TODAY hero — Bible-365 daily devotional surface (per founder
             redesign 2026-05-08 + BrandBrain "homepage daily devotional"
             spec). Active-plan resume banner takes precedence when present. */}
         {resumeRoute && (
@@ -329,7 +329,7 @@ export default function Home() {
               href="/series/bible-365"
               className="text-label homepage-bible365-browse-link"
             >
-              Or browse the 365-day plan \u2192
+              Or browse the 365-day plan →
             </Link>
           </div>
         </section>
@@ -337,12 +337,11 @@ export default function Home() {
         {/* Trust signal row */}
         <section className="homepage-trust-row" aria-label="Quick reassurance">
           <p className="text-label">
-            FREE \u00b7 NO ACCOUNT \u00b7 5\u20137 MIN A DAY \u00b7 START ANY
-            DAY
+            FREE · NO ACCOUNT · 5–7 MIN A DAY · START ANY DAY
           </p>
         </section>
 
-        {/* Audit Manus \u00a72 (HOMEPAGE-AUDIT-2026-05-11): show the whole
+        {/* Audit Manus §2 (HOMEPAGE-AUDIT-2026-05-11): show the whole
             paper at a glance before asking the reader to do anything.
             Wake-Up + Bible-365 + All Series mini-cards form the section
             index of the publication. */}
@@ -374,13 +373,13 @@ export default function Home() {
               32 reading paths organized by what you&rsquo;re wrestling with.
             </p>
             <p className="vw-small text-secondary">
-              When you&rsquo;re hurting \u00b7 overwhelmed \u00b7 new to faith
-              \u00b7 going deeper.
+              When you&rsquo;re hurting · overwhelmed · new to faith · going
+              deeper.
             </p>
           </Link>
         </section>
 
-        {/* Audit Manus \u00a72 \u2014 Zone 2 Featured Series rail moved UP so the
+        {/* Audit Manus §2 — Zone 2 Featured Series rail moved UP so the
             strongest headlines on the site (Identity Crisis, Too Busy
             for God, Why Jesus?) sit above the Soul Audit / How-It-Works
             block, not buried below it. */}
@@ -401,24 +400,24 @@ export default function Home() {
           </p>
         </section>
 
-        {/* Audit T6 \u2014 Editorial colophon trust strip. Now sits between
+        {/* Audit T6 — Editorial colophon trust strip. Now sits between
             Zone 2 (Section Index + Featured Series) and Zone 3 (Soul
             Audit + How-It-Works + FAQ). Editorial form, no metric
             numbers, no SaaS testimonials. */}
         <section className="homepage-trust-row" aria-label="What grounds this">
           <p className="text-label">
-            ANCHORED IN THE APOSTLES&rsquo; AND NICENE CREEDS \u00b7 VOICES FROM
-            AUGUSTINE, \u00c0 KEMPIS, SPURGEON, TOZER, AND MORE
+            ANCHORED IN THE APOSTLES&rsquo; AND NICENE CREEDS · VOICES FROM
+            AUGUSTINE, À KEMPIS, SPURGEON, TOZER, AND MORE
           </p>
         </section>
 
-        {/* Audit Manus \u00a72 \u2014 Zone 3 Invitation. Soul Audit moved BELOW
+        {/* Audit Manus §2 — Zone 3 Invitation. Soul Audit moved BELOW
             the Section Index per the audit's three-zone model. It's a
             tool, not the headline. */}
         <section className="homepage-soul-audit" id="start-audit">
           <p className="text-label mock-kicker">SOUL AUDIT</p>
           <h2 className="mock-title mock-homepage-prompt-title">
-            Or \u2014 start where you actually are.
+            Or — start where you actually are.
           </h2>
           <p className="mock-subcopy">
             {typographer(
