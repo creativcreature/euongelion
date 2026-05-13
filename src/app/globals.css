@@ -152,12 +152,14 @@
 .homepage-featured-devotional-art {
   position: relative;
   width: 100%;
-  /* Founder direction 2026-05-13: featured card uses the
-     what-is-the-gospel series image (1248×832, 3:2). Aspect ratio
-     follows the source so the image is not cropped at typical
-     viewports. */
-  aspect-ratio: 1248 / 832;
-  min-height: 280px;
+  /* Founder direction 2026-05-13 (revised): featured card switched to
+     the too-busy-for-god marketplace-dawn Riso (1408×768 landscape,
+     ~16:9). The wider aspect keeps the card from getting too tall
+     when stretched into the 2/3-width image column. On a 1440px
+     desktop, image col ≈ 960px wide → ~525px tall (down from ~640px
+     under the prior 3:2 aspect). */
+  aspect-ratio: 1408 / 768;
+  min-height: 240px;
   overflow: hidden;
   background: var(--mock-ink, black);
   border-right: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
@@ -180,7 +182,7 @@
     border-right: 0;
     border-bottom: var(--mock-stroke, 1.5px) solid
       var(--mock-line, currentColor);
-    aspect-ratio: 1248 / 832;
+    aspect-ratio: 1408 / 768;
     min-height: 0;
   }
 }

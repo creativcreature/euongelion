@@ -13,35 +13,30 @@ import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES } from '@/data/series'
 
 /**
- * Homepage TODAY content (founder direction 2026-05-08): use the
- * existing "What Is the Gospel?" Day 1 devotional as a static feature
- * until the Bible-365 plan is fully written. Daily rotation across
- * Bible-365 days is queued for after content fills in.
+ * Homepage TODAY content. Founder direction 2026-05-13: rotate the
+ * featured devotional from "What Is the Gospel?" Day 1 → "Too Busy
+ * for God" Day 1 ("The Vanity of Busyness", Ecclesiastes 1:2). Uses
+ * a dedicated featured-slot image (1408×768 marketplace-dawn Riso)
+ * so the card stays landscape and the section is not too tall.
  */
 const HOMEPAGE_TODAY = {
-  slug: 'what-is-the-gospel-day-1',
-  series: 'what-is-the-gospel',
-  // Audit T4 (HOMEPAGE-AUDIT-2026-05-11): drop the "TODAY" kicker until
-  // daily rotation actually ships. Calling it FEATURED stops promising
-  // a daily heartbeat the product doesn't deliver yet.
-  kicker: 'FEATURED · WHAT IS THE GOSPEL? · DAY 1',
-  title: 'A Voice in the Wilderness',
-  scripture: 'Mark 1:1, 3',
+  slug: 'too-busy-for-god-day-1',
+  series: 'too-busy-for-god',
+  kicker: 'FEATURED · TOO BUSY FOR GOD · DAY 1',
+  title: 'The Vanity of Busyness',
+  scripture: 'Ecclesiastes 1:2',
   teaser:
-    'The beginning of the good news about Jesus the Messiah — a voice calling in the wilderness, “Prepare the way for the Lord.”',
-  // Founder direction 2026-05-12: "use something like heaven or clouds
-  // for the image not the shepherd. needs to be header width."
-  // Frederic Edwin Church, "Twilight in the Wilderness" (1860) — a
-  // luminist painting of a dramatic, glowing sky over wilderness.
-  // Literal heaven/cloud imagery + classical art register (not stock
-  // photography). 1200x750, ~1.6:1 landscape, served full-width as
-  // the page header banner. Sourced from archive/devotional-prints/.
+    'Vanity of vanities — busyness without God is vapor. A first honest look at the hurry that fills a life and leaves it.',
+  // Homepage hero banner (full-bleed at top of page). Founder-supplied
+  // Riso empty-tomb image. Unchanged by this rotation.
   heroSrc: '/images/site/homepage/hero/header-v2.webp',
-  // Founder direction 2026-05-13 (correction): the featured devotional
-  // card next to "A Voice in the Wilderness" should NOT reuse the wide
-  // banner — it should use the series' own hero image. The
-  // what-is-the-gospel series image is a 1248×832 landscape.
-  featuredArt: '/images/site/series/what-is-the-gospel.webp',
+  // Featured-devotional card art. Lives at a homepage-specific path
+  // (NOT site/series/) because it is purpose-cast for the featured
+  // slot — the series card on /series uses its own oil-lamp image.
+  // Source: library/poster/atmos-marketplace-dawn.png (1408×768
+  // landscape Riso of a busy marketplace at dawn — directly contextual
+  // for Ecclesiastes 1: the daily hustle the Preacher critiques).
+  featuredArt: '/images/site/homepage/featured/too-busy-for-god-day-1.webp',
 }
 
 const HOW_STEPS = [
