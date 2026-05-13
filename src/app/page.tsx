@@ -13,29 +13,32 @@ import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES } from '@/data/series'
 
 /**
- * Homepage TODAY content. Founder direction 2026-05-13: rotate the
- * featured devotional from "What Is the Gospel?" Day 1 → "Too Busy
- * for God" Day 1 ("The Vanity of Busyness", Ecclesiastes 1:2). Uses
- * a dedicated featured-slot image (1408×768 marketplace-dawn Riso)
- * so the card stays landscape and the section is not too tall.
+ * Homepage featured SERIES content. Founder direction 2026-05-13: the
+ * featured slot now surfaces the SERIES as a whole, not an individual
+ * devotional. Title is the series title; copy is the series question
+ * + a beat of introduction; CTA opens the series page (where the
+ * reader sees all days and starts). Day-level data lives in
+ * `daySlug` / `dayTitle` only as fallback context.
  */
 const HOMEPAGE_TODAY = {
-  slug: 'too-busy-for-god-day-1',
   series: 'too-busy-for-god',
-  kicker: 'FEATURED · TOO BUSY FOR GOD · DAY 1',
-  title: 'The Vanity of Busyness',
-  scripture: 'Ecclesiastes 1:2',
+  daySlug: 'too-busy-for-god-day-1',
+  dayTitle: 'The Vanity of Busyness',
+  kicker: 'FEATURED SERIES · 5 DAYS · LUKE 10:38–42',
+  title: 'Too Busy for God',
+  // Series-level scripture anchor (the framework verse).
+  scripture: 'Luke 10:38–42 · Martha & Mary',
+  // Surfaces the series QUESTION (what the reader actually carries),
+  // then one beat of the introduction. Series-level copy, not Day 1's.
   teaser:
-    'Vanity of vanities — busyness without God is vapor. A first honest look at the hurry that fills a life and leaves it.',
+    "What are you so busy doing that you're missing the One who gave you life? Your calendar is full but your soul is empty — five honest days on what happens when busyness becomes a barrier to His presence.",
   // Homepage hero banner (full-bleed at top of page). Founder-supplied
   // Riso empty-tomb image. Unchanged by this rotation.
   heroSrc: '/images/site/homepage/hero/header-v2.webp',
-  // Featured-devotional card art. Lives at a homepage-specific path
-  // (NOT site/series/) because it is purpose-cast for the featured
-  // slot — the series card on /series uses its own oil-lamp image.
-  // Source: library/poster/atmos-marketplace-dawn.png (1408×768
-  // landscape Riso of a busy marketplace at dawn — directly contextual
-  // for Ecclesiastes 1: the daily hustle the Preacher critiques).
+  // Featured-card art. Lives at a homepage-specific path so the
+  // /series card for too-busy-for-god keeps its own oil-lamp hero.
+  // library/poster/atmos-marketplace-dawn.png (1408×768 landscape
+  // Riso — busy marketplace at dawn, direct contextual fit).
   featuredArt: '/images/site/homepage/featured/too-busy-for-god-day-1.webp',
 }
 
@@ -432,16 +435,20 @@ export default function Home() {
             <p className="mock-subcopy">{typographer(HOMEPAGE_TODAY.teaser)}</p>
 
             <Link
-              href={`/devotional/${HOMEPAGE_TODAY.slug}`}
+              href={`/series/${HOMEPAGE_TODAY.series}`}
               className="mock-btn mock-btn-inline text-label"
             >
-              BEGIN THIS DEVOTIONAL
+              BEGIN THIS SERIES
             </Link>
+            {/* Founder direction 2026-05-13: the secondary link should
+                actually EXPLAIN why Bible-365 is relevant, not just
+                point at it. */}
             <Link
               href="/series/bible-365"
               className="text-label homepage-bible365-browse-link"
             >
-              Or browse the 365-day plan →
+              Want the longer arc? Bible 365 walks the whole Scripture story —
+              52 weeks, five to seven minutes a day, every day standing alone →
             </Link>
           </div>
         </section>
@@ -744,7 +751,7 @@ export default function Home() {
                 step. You need grace.
               </p>
               <Link
-                href={`/devotional/${HOMEPAGE_TODAY.slug}`}
+                href={`/devotional/${HOMEPAGE_TODAY.daySlug}`}
                 className="mock-btn text-label"
               >
                 READ TODAY&rsquo;S DEVOTIONAL
