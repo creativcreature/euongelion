@@ -31,13 +31,8 @@ const RESOURCES_LINKS = [
   { href: '/llms.txt', label: 'AI Crawler Stance' },
 ]
 
-const LEGAL_LINKS = [
-  { href: '/terms', label: 'Terms' },
-  { href: '/privacy', label: 'Privacy' },
-  { href: '/cookie-policy', label: 'Cookie Policy' },
-  { href: '/community-guidelines', label: 'Community Guidelines' },
-  { href: '/content-disclaimer', label: 'Content Disclaimer' },
-]
+// LEGAL_LINKS moved to <BottomLegal /> in src/app/page.tsx — they now
+// render BELOW the EUANGELION masthead per founder direction 2026-05-13.
 
 function FooterColumn({
   title,
@@ -78,23 +73,6 @@ export default function SiteFooter() {
         <FooterColumn title="Read" links={PRODUCT_LINKS} />
         <FooterColumn title="About" links={COMPANY_LINKS} />
         <FooterColumn title="Resources" links={RESOURCES_LINKS} />
-      </div>
-
-      <div className="mock-site-footer-meta">
-        <p className="vw-small text-muted">
-          EUANGELION is a product of WokeGod LLC. Copyright © 2026 WokeGod LLC.
-          All rights reserved.
-        </p>
-        <p className="vw-small text-muted mock-site-footer-legal">
-          {LEGAL_LINKS.map((link, idx) => (
-            <span key={link.href}>
-              {idx > 0 && <span aria-hidden="true"> · </span>}
-              <Link href={link.href} className="link-highlight">
-                {link.label}
-              </Link>
-            </span>
-          ))}
-        </p>
       </div>
     </footer>
   )

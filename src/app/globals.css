@@ -138,6 +138,34 @@
   margin-top: 0.2rem;
 }
 
+/* Founder direction 2026-05-13: "Get started here" block. Sits
+   between the FREE · NO ACCOUNT trust row and the featured devotional.
+   Wraps the existing 3-card .homepage-section-index with editorial
+   kicker / title / subhead so the cards have intentional framing. */
+.homepage-starters {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.6rem 1.4rem 1.8rem;
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  max-width: var(--mock-frame-max, 1860px);
+  margin: 0 auto;
+}
+.homepage-starters-head {
+  display: grid;
+  gap: 0.4rem;
+  justify-items: center;
+  text-align: center;
+}
+.homepage-starters-head .mock-title-center {
+  max-width: 22ch;
+}
+.homepage-starters-head .mock-subcopy-center {
+  max-width: 58ch;
+}
+.homepage-starters .homepage-section-index {
+  margin-top: 0.4rem;
+}
+
 /* (3) Featured devotional — 2/3 image (left) + 1/3 text (right) on
    desktop. Stacks on mobile. */
 .homepage-featured-devotional {
@@ -225,12 +253,11 @@
   );
   letter-spacing: 0.06em;
 }
-/* Founder direction 2026-05-13 (revised):
-   - LIGHT mode: Soul Audit reads like a standard light card — paper
-     background, dark text. Blends with the editorial feel of the page.
-   - DARK mode: Soul Audit pops as a blue/cream card (what was previously
-     the light-mode treatment). This way each mode has a section that
-     contrasts the page, not one that doubles down.
+/* Founder direction 2026-05-13 (final): mode-flip REVERSED.
+   - LIGHT mode page → Soul Audit pops as a blue/cream dark-mode card.
+   - DARK mode page → Soul Audit reads as a light paper card with dark
+     text (typical "light mode" appearance) so it contrasts the navy
+     page background instead of doubling down on it.
    Same flip applied to "Here's how it works." */
 .homepage-soul-audit {
   display: grid;
@@ -240,8 +267,14 @@
   padding: 2rem 1.6rem 2.2rem;
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
   margin: 0;
-  background: var(--mock-paper, #f5eee3);
-  color: var(--mock-ink, #11182a);
+  background: var(--mock-blue, #1f2a8d);
+  color: #f3eadb;
+}
+.homepage-soul-audit .mock-kicker,
+.homepage-soul-audit .mock-title,
+.homepage-soul-audit .mock-subcopy,
+.homepage-soul-audit .mock-footnote {
+  color: #f3eadb;
 }
 .homepage-soul-audit .mock-subcopy {
   max-width: 56ch;
@@ -249,101 +282,139 @@
 .homepage-soul-audit .mock-textarea {
   margin-top: 0.6rem;
   width: min(56rem, 100%);
+  background: color-mix(in srgb, #f3eadb 96%, transparent);
+  color: var(--mock-blue, #1f2a8d);
+  border-color: #f3eadb;
 }
 .homepage-soul-audit .homepage-prompt-pills {
   margin-top: 0.6rem;
   justify-content: center;
 }
+.homepage-soul-audit .homepage-prompt-pill {
+  border-color: color-mix(in srgb, #f3eadb 70%, transparent);
+  color: #f3eadb;
+}
+.homepage-soul-audit .homepage-prompt-pill:hover,
+.homepage-soul-audit .homepage-prompt-pill:focus-visible {
+  background: color-mix(in srgb, #f3eadb 14%, transparent);
+}
 .homepage-soul-audit .mock-btn-inline {
   justify-self: center;
   margin-top: 0.8rem;
+  background: #f3eadb;
+  color: var(--mock-blue, #1f2a8d);
+  border-color: #f3eadb;
+}
+.homepage-soul-audit .mock-btn-inline:hover,
+.homepage-soul-audit .mock-btn-inline:focus-visible {
+  background: #fff;
+  color: var(--mock-blue, #1f2a8d);
+}
+.homepage-soul-audit .mock-reset-btn {
+  color: color-mix(in srgb, #f3eadb 88%, transparent);
 }
 
-/* DARK mode flip — the blue/cream pop now lives here. */
+/* DARK mode flip — paper card on the navy page. */
 .dark .homepage-soul-audit {
-  background: var(--mock-blue, #1f2a8d);
-  color: #f3eadb;
+  background: var(--mock-paper, #f5eee3);
+  color: var(--mock-ink, #11182a);
 }
 .dark .homepage-soul-audit .mock-kicker,
 .dark .homepage-soul-audit .mock-title,
 .dark .homepage-soul-audit .mock-subcopy,
 .dark .homepage-soul-audit .mock-footnote {
-  color: #f3eadb;
+  color: var(--mock-ink, #11182a);
 }
 .dark .homepage-soul-audit .mock-textarea {
-  background: color-mix(in srgb, #f3eadb 96%, transparent);
-  color: var(--mock-blue, #1f2a8d);
-  border-color: #f3eadb;
+  background: transparent;
+  color: var(--mock-ink, #11182a);
+  border-color: var(--mock-ink, #11182a);
 }
 .dark .homepage-soul-audit .homepage-prompt-pill {
-  border-color: color-mix(in srgb, #f3eadb 70%, transparent);
-  color: #f3eadb;
+  border-color: color-mix(in srgb, var(--mock-ink) 60%, transparent);
+  color: var(--mock-ink, #11182a);
 }
 .dark .homepage-soul-audit .homepage-prompt-pill:hover,
 .dark .homepage-soul-audit .homepage-prompt-pill:focus-visible {
-  background: color-mix(in srgb, #f3eadb 14%, transparent);
+  background: color-mix(in srgb, var(--mock-ink) 10%, transparent);
 }
 .dark .homepage-soul-audit .mock-btn-inline {
-  background: #f3eadb;
-  color: var(--mock-blue, #1f2a8d);
-  border-color: #f3eadb;
+  background: var(--mock-ink, #11182a);
+  color: var(--mock-paper, #f5eee3);
+  border-color: var(--mock-ink, #11182a);
 }
 .dark .homepage-soul-audit .mock-btn-inline:hover,
 .dark .homepage-soul-audit .mock-btn-inline:focus-visible {
-  background: #fff;
-  color: var(--mock-blue, #1f2a8d);
+  background: #000;
+  color: var(--mock-paper, #f5eee3);
 }
 .dark .homepage-soul-audit .mock-reset-btn {
-  color: color-mix(in srgb, #f3eadb 88%, transparent);
+  color: color-mix(in srgb, var(--mock-ink) 80%, transparent);
 }
 
 /* "Here's how it works" — same mode-flip as Soul Audit. Light mode
-   = paper card (blends with the page). Dark mode = blue/cream pop. */
+   = blue/cream pop. Dark mode = paper card. */
 .homepage-howitworks {
-  background: var(--mock-paper, #f5eee3);
-  color: var(--mock-ink, #11182a);
+  background: var(--mock-blue, #1f2a8d);
+  color: #f3eadb;
   text-align: center;
   padding: 1.6rem 1.4rem 0.75rem;
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
 }
+.homepage-howitworks .mock-kicker,
+.homepage-howitworks .mock-title-center,
+.homepage-howitworks .mock-subcopy-center {
+  color: #f3eadb;
+}
 .homepage-howitworks-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  background: var(--mock-paper, #f5eee3);
+  background: var(--mock-blue, #1f2a8d);
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
 }
 .homepage-howitworks-grid .mock-step-card {
   background: transparent;
+  color: #f3eadb;
+  border-right-color: color-mix(in srgb, #f3eadb 35%, transparent);
+}
+.homepage-howitworks-grid .mock-step-card:last-child {
+  border-right: 0;
+}
+.homepage-howitworks-grid .mock-step-card h3 {
+  color: #f3eadb;
+}
+.homepage-howitworks-grid .mock-step-card p {
+  color: color-mix(in srgb, #f3eadb 88%, transparent);
+}
+.homepage-howitworks-grid .mock-step-image-wrap {
+  border-right-color: color-mix(in srgb, #f3eadb 35%, transparent);
 }
 
-/* DARK mode flip for How It Works. */
+/* DARK mode flip for How It Works — paper card. */
 .dark .homepage-howitworks {
-  background: var(--mock-blue, #1f2a8d);
-  color: #f3eadb;
+  background: var(--mock-paper, #f5eee3);
+  color: var(--mock-ink, #11182a);
 }
 .dark .homepage-howitworks .mock-kicker,
 .dark .homepage-howitworks .mock-title-center,
 .dark .homepage-howitworks .mock-subcopy-center {
-  color: #f3eadb;
+  color: var(--mock-ink, #11182a);
 }
 .dark .homepage-howitworks-grid {
-  background: var(--mock-blue, #1f2a8d);
+  background: var(--mock-paper, #f5eee3);
 }
 .dark .homepage-howitworks-grid .mock-step-card {
-  color: #f3eadb;
-  border-right-color: color-mix(in srgb, #f3eadb 35%, transparent);
-}
-.dark .homepage-howitworks-grid .mock-step-card:last-child {
-  border-right: 0;
+  color: var(--mock-ink, #11182a);
+  border-right-color: color-mix(in srgb, var(--mock-ink) 35%, transparent);
 }
 .dark .homepage-howitworks-grid .mock-step-card h3 {
-  color: #f3eadb;
+  color: var(--mock-ink, #11182a);
 }
 .dark .homepage-howitworks-grid .mock-step-card p {
-  color: color-mix(in srgb, #f3eadb 88%, transparent);
+  color: color-mix(in srgb, var(--mock-ink) 78%, transparent);
 }
 .dark .homepage-howitworks-grid .mock-step-image-wrap {
-  border-right-color: color-mix(in srgb, #f3eadb 35%, transparent);
+  border-right-color: color-mix(in srgb, var(--mock-ink) 35%, transparent);
 }
 @media (max-width: 760px) {
   .homepage-howitworks-grid {
@@ -5375,6 +5446,28 @@ html.reduce-motion *::after {
 
 .mock-bottom-brand .mock-masthead-word {
   margin: 0;
+}
+
+/* Founder direction 2026-05-13: legal block sits below the EUANGELION
+   masthead. Quiet, single-row links + copyright. */
+.homepage-bottom-legal {
+  display: grid;
+  gap: 0.45rem;
+  justify-items: center;
+  text-align: center;
+  padding: 0.9rem 1rem 1.2rem;
+  border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+.homepage-bottom-legal p {
+  margin: 0;
+  max-width: 70ch;
+  line-height: 1.5;
+}
+.homepage-bottom-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 0.1rem;
 }
 
 .mock-topbar-mobile-row {

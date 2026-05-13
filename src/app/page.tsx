@@ -342,6 +342,66 @@ export default function Home() {
           </p>
         </section>
 
+        {/* Trust signal row — founder direction 2026-05-13: moved
+            UP, sits right after "What is this place?" so first-time
+            visitors see the no-friction promise before being offered
+            any plan. */}
+        <section className="homepage-trust-row" aria-label="Quick reassurance">
+          <p className="text-label">
+            FREE · NO ACCOUNT · 5–7 MIN A DAY · START ANY DAY
+          </p>
+        </section>
+
+        {/* Starter row — "Get started here." Three honest places to
+            begin. Moved up from below the featured devotional so the
+            visitor has direction immediately after the trust bar. */}
+        <section
+          className="homepage-starters"
+          aria-label="Three places to start"
+        >
+          <div className="homepage-starters-head">
+            <p className="text-label mock-kicker">GET STARTED HERE</p>
+            <h2 className="mock-title-center">Three honest places to begin.</h2>
+            <p className="mock-subcopy-center">
+              Pick the one that meets you where you are. Every day stands alone
+              — there is no wrong door.
+            </p>
+          </div>
+
+          <div className="homepage-section-index">
+            <Link href="/wake-up" className="homepage-section-card">
+              <p className="text-label vw-small text-gold">WAKE-UP</p>
+              <p className="vw-body">
+                Identity Crisis · Too Busy for God · Why Jesus?
+              </p>
+              <p className="vw-small text-secondary">
+                Seven honest 5-day paths for the searching. Editor&rsquo;s pick
+                today: Identity Crisis.
+              </p>
+            </Link>
+            <Link href="/series/bible-365" className="homepage-section-card">
+              <p className="text-label vw-small text-gold">BIBLE 365</p>
+              <p className="vw-body">
+                The throughline of Scripture, one day at a time.
+              </p>
+              <p className="vw-small text-secondary">
+                Genesis, Mark, Psalms — every day stands alone. Hop in today;
+                the thread holds.
+              </p>
+            </Link>
+            <Link href="/series" className="homepage-section-card">
+              <p className="text-label vw-small text-gold">ALL SERIES</p>
+              <p className="vw-body">
+                32 paths through what people actually carry.
+              </p>
+              <p className="vw-small text-secondary">
+                Anxiety · doubt · grief · the daily grind · the question of
+                Jesus.
+              </p>
+            </Link>
+          </div>
+        </section>
+
         <section
           className="homepage-featured-devotional"
           id="today-devotional"
@@ -384,53 +444,6 @@ export default function Home() {
               Or browse the 365-day plan →
             </Link>
           </div>
-        </section>
-
-        {/* Trust signal row */}
-        <section className="homepage-trust-row" aria-label="Quick reassurance">
-          <p className="text-label">
-            FREE · NO ACCOUNT · 5–7 MIN A DAY · START ANY DAY
-          </p>
-        </section>
-
-        {/* Audit Manus §2 (Updated 2026-05-13): prior copy read like
-            navigation ("Seven questions for the searching"). Audit
-            wanted EDITORIAL TEASERS — a reason to click *today*.
-            Cards now lead with specific headlines from inside each
-            section. */}
-        <section
-          className="homepage-section-index"
-          aria-label="Sections of the paper"
-        >
-          <Link href="/wake-up" className="homepage-section-card">
-            <p className="text-label vw-small text-gold">WAKE-UP</p>
-            <p className="vw-body">
-              Identity Crisis · Too Busy for God · Why Jesus?
-            </p>
-            <p className="vw-small text-secondary">
-              Seven honest 5-day paths for the searching. Editor&rsquo;s pick
-              today: Identity Crisis.
-            </p>
-          </Link>
-          <Link href="/series/bible-365" className="homepage-section-card">
-            <p className="text-label vw-small text-gold">BIBLE 365</p>
-            <p className="vw-body">
-              The throughline of Scripture, one day at a time.
-            </p>
-            <p className="vw-small text-secondary">
-              Genesis, Mark, Psalms — every day stands alone. Hop in today; the
-              thread holds.
-            </p>
-          </Link>
-          <Link href="/series" className="homepage-section-card">
-            <p className="text-label vw-small text-gold">ALL SERIES</p>
-            <p className="vw-body">
-              32 paths through what people actually carry.
-            </p>
-            <p className="vw-small text-secondary">
-              Anxiety · doubt · grief · the daily grind · the question of Jesus.
-            </p>
-          </Link>
         </section>
 
         {/* Audit Manus §2 — Zone 2 Featured Series rail moved UP so the
@@ -758,6 +771,40 @@ export default function Home() {
               EUANGELION
             </span>
           </h2>
+        </section>
+
+        {/* Founder direction 2026-05-13: legal block lives BELOW the
+            masthead, not inside the SiteFooter. Copyright + legal
+            link row. */}
+        <section
+          className="homepage-bottom-legal"
+          aria-label="Copyright and legal"
+        >
+          <p className="vw-small text-muted">
+            EUANGELION is a product of WokeGod LLC. Copyright © 2026 WokeGod
+            LLC. All rights reserved.
+          </p>
+          <p className="vw-small text-muted homepage-bottom-legal-links">
+            <Link href="/terms" className="link-highlight">
+              Terms
+            </Link>
+            <span aria-hidden="true"> · </span>
+            <Link href="/privacy" className="link-highlight">
+              Privacy
+            </Link>
+            <span aria-hidden="true"> · </span>
+            <Link href="/cookie-policy" className="link-highlight">
+              Cookie Policy
+            </Link>
+            <span aria-hidden="true"> · </span>
+            <Link href="/community-guidelines" className="link-highlight">
+              Community Guidelines
+            </Link>
+            <span aria-hidden="true"> · </span>
+            <Link href="/content-disclaimer" className="link-highlight">
+              Content Disclaimer
+            </Link>
+          </p>
         </section>
       </main>
     </div>
