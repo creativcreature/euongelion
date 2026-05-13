@@ -458,7 +458,7 @@ function buildReviewDay(
       titles.join('\n'),
       '',
       'What pattern do you see? Where did God show up in ways you did not expect?',
-      "The chiastic structure of your week (A-B-C-B'-A') mirrors how Scripture often works: the center reveals, the bookends confirm.",
+      'The shape of your week — hook, turning point, return — mirrors how Scripture often works: the center reveals, the bookends confirm.',
       'Name one thing that shifted in you this week — not what you learned, but how you changed.',
     ].join('\n'),
     prayer: [
@@ -489,50 +489,52 @@ export async function buildCuratedFirstPlan(params: {
 }): Promise<CustomPlanDay[]> {
   const selectedDays = selectPlanCandidates(params)
 
-  const devotionalDays = await Promise.all(selectedDays.map(async (candidate, index) => {
-    const dayNumber = index + 1
-    // Reference grounding uses pre-built index on Workers, live library on local dev.
-    const referenceHits = await retrieveReferenceHits({
-      userResponse: params.userResponse,
-      scriptureReference: candidate.scriptureReference,
-      limit: 3,
-    })
-    const reflection = expandedReflection(
-      params.userResponse,
-      candidate,
-      referenceHits,
-    )
-    const prayer = expandedPrayer(params.userResponse, candidate)
-
-    const nextStep =
-      expandedNextStep(candidate) ||
-      "Choose one concrete action from today's reading you can complete before the day ends, and set a specific hour to do it."
-    const journalPrompt =
-      expandedJournalPrompt(candidate, params.userResponse) ||
-      "What is one phrase from today's Scripture that speaks to where you are right now?\nWhat resistance do you notice in yourself, and what would faithful obedience look like in one sentence?"
-
-    return {
-      day: dayNumber,
-      dayType: 'devotional' as const,
-      chiasticPosition: CHIASTIC_POSITIONS[index],
-      title: candidate.dayTitle,
-      scriptureReference: candidate.scriptureReference,
-      scriptureText: candidate.scriptureText,
-      reflection,
-      prayer,
-      nextStep,
-      journalPrompt,
-      modules: buildModules({
-        candidate,
+  const devotionalDays = await Promise.all(
+    selectedDays.map(async (candidate, index) => {
+      const dayNumber = index + 1
+      // Reference grounding uses pre-built index on Workers, live library on local dev.
+      const referenceHits = await retrieveReferenceHits({
         userResponse: params.userResponse,
-        referenceHits,
-      }),
-      endnotes: buildEndnotes({
+        scriptureReference: candidate.scriptureReference,
+        limit: 3,
+      })
+      const reflection = expandedReflection(
+        params.userResponse,
         candidate,
         referenceHits,
-      }),
-    }
-  }))
+      )
+      const prayer = expandedPrayer(params.userResponse, candidate)
+
+      const nextStep =
+        expandedNextStep(candidate) ||
+        "Choose one concrete action from today's reading you can complete before the day ends, and set a specific hour to do it."
+      const journalPrompt =
+        expandedJournalPrompt(candidate, params.userResponse) ||
+        "What is one phrase from today's Scripture that speaks to where you are right now?\nWhat resistance do you notice in yourself, and what would faithful obedience look like in one sentence?"
+
+      return {
+        day: dayNumber,
+        dayType: 'devotional' as const,
+        chiasticPosition: CHIASTIC_POSITIONS[index],
+        title: candidate.dayTitle,
+        scriptureReference: candidate.scriptureReference,
+        scriptureText: candidate.scriptureText,
+        reflection,
+        prayer,
+        nextStep,
+        journalPrompt,
+        modules: buildModules({
+          candidate,
+          userResponse: params.userResponse,
+          referenceHits,
+        }),
+        endnotes: buildEndnotes({
+          candidate,
+          referenceHits,
+        }),
+      }
+    }),
+  )
 
   // Append Sabbath (day 6) and Review (day 7) to complete the 7-day arc.
   const sabbath = buildSabbathDay(devotionalDays, params.userResponse)

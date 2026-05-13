@@ -27,7 +27,7 @@ const BREATHING_MESSAGES = [
   'Gathering scripture and commentary...',
   'Composing your devotional path...',
   'Grounding each day in real theology...',
-  'Weaving the chiastic structure...',
+  'Weaving the weekly rhythm...',
   'Almost there...',
 ]
 

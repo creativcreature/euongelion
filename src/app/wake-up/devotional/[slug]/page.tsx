@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
 import DevotionalPageClient from './DevotionalPageClient'
-import { getDevotionalTeaser } from '@/data/devotional-teasers'
+import {
+  getDevotionalTeaser,
+  getDevotionalTitle,
+} from '@/data/devotional-teasers'
 
 // Audit T2 (HOMEPAGE-AUDIT-2026-05-11): build-time teaser index. See
 // the same comment in src/app/devotional/[slug]/page.tsx.
@@ -28,11 +31,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const { series, day } = meta
 
-  // Many series in src/data/series.ts use a bare `Day N` title placeholder.
-  // Detect the redundancy so we don't render "Day 5: Day 5 | Euangelion".
-  const dayTitle = /^day\s+\d+$/i.test(day.title.trim())
-    ? day.title
-    : `Day ${day.day}: ${day.title}`
+  // Audit Manus §5 (Updated 2026-05-13): prefer the devotional's
+  // actual headline from its JSON over the bare "Day N" placeholder.
+  const jsonTitle = getDevotionalTitle(slug)
+  const isBareDayPlaceholder = /^day\s+\d+$/i.test(day.title.trim())
+  const dayTitle = jsonTitle
+    ? jsonTitle
+    : isBareDayPlaceholder
+      ? day.title
+      : `Day ${day.day}: ${day.title}`
 
   // Use the day's teaser (build-time index) for the description so
   // each day in a series has its own meta description — series.question

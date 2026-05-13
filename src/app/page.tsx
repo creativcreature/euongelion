@@ -341,10 +341,11 @@ export default function Home() {
           </p>
         </section>
 
-        {/* Audit Manus §2 (HOMEPAGE-AUDIT-2026-05-11): show the whole
-            paper at a glance before asking the reader to do anything.
-            Wake-Up + Bible-365 + All Series mini-cards form the section
-            index of the publication. */}
+        {/* Audit Manus §2 (Updated 2026-05-13): prior copy read like
+            navigation ("Seven questions for the searching"). Audit
+            wanted EDITORIAL TEASERS — a reason to click *today*.
+            Cards now lead with specific headlines from inside each
+            section. */}
         <section
           className="homepage-section-index"
           aria-label="Sections of the paper"
@@ -352,29 +353,30 @@ export default function Home() {
           <Link href="/wake-up" className="homepage-section-card">
             <p className="text-label vw-small text-gold">WAKE-UP</p>
             <p className="vw-body">
-              Seven questions for the searching. Five days each.
+              Identity Crisis · Too Busy for God · Why Jesus?
             </p>
             <p className="vw-small text-secondary">
-              For readers who arrive uncertain, skeptical, or numb.
+              Seven honest 5-day paths for the searching. Editor&rsquo;s pick
+              today: Identity Crisis.
             </p>
           </Link>
           <Link href="/series/bible-365" className="homepage-section-card">
             <p className="text-label vw-small text-gold">BIBLE 365</p>
             <p className="vw-body">
-              A canonical-chronological plan you can join any day.
+              The throughline of Scripture, one day at a time.
             </p>
             <p className="vw-small text-secondary">
-              No prior reading required. Hop in today; the thread holds.
+              Genesis, Mark, Psalms — every day stands alone. Hop in today; the
+              thread holds.
             </p>
           </Link>
           <Link href="/series" className="homepage-section-card">
             <p className="text-label vw-small text-gold">ALL SERIES</p>
             <p className="vw-body">
-              32 reading paths organized by what you&rsquo;re wrestling with.
+              32 paths through what people actually carry.
             </p>
             <p className="vw-small text-secondary">
-              When you&rsquo;re hurting · overwhelmed · new to faith · going
-              deeper.
+              Anxiety · doubt · grief · the daily grind · the question of Jesus.
             </p>
           </Link>
         </section>
@@ -655,15 +657,34 @@ export default function Home() {
             </>
           ) : (
             <>
+              {/* Audit Manus §2 (Updated 2026-05-13): the closing CTA
+                  used to funnel to the Soul Audit tool. Now the primary
+                  invitation is to READ — the Soul Audit is a quiet
+                  secondary link for readers who want a personalized
+                  path. */}
               <h2 className="mock-cta-headline">
-                Start with one honest sentence.
+                Start with one honest sentence — or with today&rsquo;s page.
               </h2>
               <p className="mock-subcopy-center">
                 You do not need certainty before you begin. You need a next
                 step. You need grace.
               </p>
-              <a href="#start-audit" className="mock-btn text-label">
-                START YOUR SOUL AUDIT
+              <Link
+                href={`/devotional/${HOMEPAGE_TODAY.slug}`}
+                className="mock-btn text-label"
+              >
+                READ TODAY&rsquo;S DEVOTIONAL
+              </Link>
+              <a
+                href="#start-audit"
+                className="text-label vw-small"
+                style={{
+                  display: 'inline-block',
+                  marginTop: '0.75rem',
+                  opacity: 0.78,
+                }}
+              >
+                Or — start the Soul Audit →
               </a>
             </>
           )}
