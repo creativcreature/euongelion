@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Toast from '@/components/Toast'
@@ -11,11 +11,27 @@ import {
   useDevotionalLibraryStore,
   type LibraryIntent,
 } from '@/stores/devotionalLibraryStore'
-import { SERIES_DATA } from '@/data/series'
 
-interface DevotionalActionsProps {
-  devotionalSlug: string
-  seriesSlug: string | null
+/**
+ * Series-level start action.
+ *
+ * Mirrors DevotionalActions but operates on the series as a whole.
+ * Founder direction 2026-05-14: "I should be able to start a series
+ * just like starting a devotional." Renders at the top of the
+ * /series/[slug] page so the start CTA isn't buried behind clicking
+ * into Day 1 first.
+ *
+ * Differences from DevotionalActions:
+ *   - No "save this devotional" button — saves are per-day, not
+ *     per-series. Save lives inside the reader.
+ *   - currentDay always 1 (the series page starts the whole arc).
+ *   - On success, navigates to /daily-bread (same as the devotional
+ *     bar's replace_now path).
+ */
+
+interface SeriesActionsProps {
+  seriesSlug: string
+  seriesTitle: string
   /** Used by the sign-in flow to bring the user back here after auth. */
   redirectPath: string
 }
@@ -29,19 +45,16 @@ function formatStartsAt(iso: string): string {
   })
 }
 
-export default function DevotionalActions({
-  devotionalSlug,
+export default function SeriesActions({
   seriesSlug,
+  seriesTitle,
   redirectPath,
-}: DevotionalActionsProps) {
+}: SeriesActionsProps) {
   const router = useRouter()
   const hydrate = useDevotionalLibraryStore((s) => s.hydrate)
   const hydrated = useDevotionalLibraryStore((s) => s.hydrated)
   const active = useDevotionalLibraryStore((s) => s.active)
   const scheduledSwap = useDevotionalLibraryStore((s) => s.scheduledSwap)
-  const saved = useDevotionalLibraryStore((s) => s.saved)
-  const save = useDevotionalLibraryStore((s) => s.save)
-  const unsave = useDevotionalLibraryStore((s) => s.unsave)
   const start = useDevotionalLibraryStore((s) => s.start)
 
   const [switchModalOpen, setSwitchModalOpen] = useState(false)
@@ -62,65 +75,24 @@ export default function DevotionalActions({
     return off
   }, [])
 
-  const isSaved = useMemo(
-    () => saved.some((s) => s.devotionalSlug === devotionalSlug),
-    [saved, devotionalSlug],
-  )
-
-  const newSeriesTitle = seriesSlug
-    ? (SERIES_DATA[seriesSlug]?.title ?? seriesSlug)
-    : 'this devotional'
-
-  const isActiveSameSeries =
-    active !== null && seriesSlug !== null && active.seriesSlug === seriesSlug
-
+  const isActiveSameSeries = active !== null && active.seriesSlug === seriesSlug
   const isQueuedSameSeries =
-    scheduledSwap !== null &&
-    seriesSlug !== null &&
-    scheduledSwap.seriesSlug === seriesSlug
-
-  const handleSave = useCallback(async () => {
-    if (busy) return
-    setBusy(true)
-    try {
-      if (isSaved) {
-        const result = await unsave(devotionalSlug)
-        if (result.ok) setToast('Removed from your library.')
-      } else {
-        const result = await save(devotionalSlug)
-        if (result.ok) setToast('Saved to your library.')
-      }
-    } finally {
-      setBusy(false)
-    }
-  }, [busy, isSaved, save, unsave, devotionalSlug])
-
-  // 2026-05-14: derive the day-number from the devotional slug so
-  // "Start this devotional" pins the active series to THIS day, not
-  // day 1. Slug shape: "<series>-day-<N>". Matches the same regex
-  // DevotionalPageClient uses (getDayIndexFromSlug).
-  const dayFromSlug = useMemo(() => {
-    const m = devotionalSlug.match(/-day-(\d+)$/)
-    if (!m) return 1
-    const n = Number.parseInt(m[1], 10)
-    return Number.isFinite(n) && n >= 1 ? n : 1
-  }, [devotionalSlug])
+    scheduledSwap !== null && scheduledSwap.seriesSlug === seriesSlug
 
   const performStart = useCallback(
     async (mode: 'replace_now' | 'queue_monday', confirm: boolean) => {
-      if (!seriesSlug) return
       setBusy(true)
       try {
         const result = await start(seriesSlug, mode, {
           confirm,
-          currentDay: dayFromSlug,
+          currentDay: 1,
         })
         if (result.ok) {
           setSwitchModalOpen(false)
           if (mode === 'queue_monday') {
-            setToast(`Queued — ${newSeriesTitle} begins Monday.`)
+            setToast(`Queued — ${seriesTitle} begins Monday.`)
           } else {
-            setToast(`Switched to ${newSeriesTitle}.`)
+            setToast(`Started ${seriesTitle}.`)
             router.push('/daily-bread')
           }
           return
@@ -132,41 +104,33 @@ export default function DevotionalActions({
         setBusy(false)
       }
     },
-    [seriesSlug, start, newSeriesTitle, router, dayFromSlug],
+    [seriesSlug, seriesTitle, start, router],
   )
 
   const handleStartClick = useCallback(async () => {
-    if (!seriesSlug) return
     if (isActiveSameSeries) {
       router.push('/daily-bread')
       return
     }
-    // First attempt without confirm — server tells us if we need to ask.
     await performStart('replace_now', false)
-  }, [seriesSlug, isActiveSameSeries, performStart, router])
+  }, [isActiveSameSeries, performStart, router])
 
   const handleSignInClose = useCallback(() => {
     setSignInOpen(false)
     setPendingIntent(null)
   }, [])
 
-  if (!seriesSlug) {
-    // No parent series mapping (shouldn't normally happen — but guard).
-    return null
-  }
-
-  const saveLabel = isSaved ? 'SAVED' : 'SAVE THIS DEVOTIONAL'
   const startLabel = isActiveSameSeries
     ? 'OPEN IN DAILY BREAD'
     : isQueuedSameSeries
       ? `QUEUED FOR ${scheduledSwap ? formatStartsAt(scheduledSwap.startsAt).toUpperCase() : 'MONDAY'}`
-      : 'START THIS DEVOTIONAL'
+      : 'START THIS SERIES'
 
   return (
     <section
-      className="devotional-actions-bar mb-6 border px-5 py-4"
+      className="series-actions-bar mb-6 border px-5 py-4"
       style={{ borderColor: 'var(--color-border)' }}
-      aria-label="Devotional library actions"
+      aria-label="Series library actions"
     >
       <div className="flex flex-wrap items-center gap-3">
         <button
@@ -184,15 +148,6 @@ export default function DevotionalActions({
         >
           {startLabel}
         </button>
-        <button
-          type="button"
-          className="text-label vw-small link-highlight px-2 py-1"
-          onClick={handleSave}
-          disabled={busy}
-          aria-pressed={isSaved}
-        >
-          {saveLabel}
-        </button>
         {hydrated && active && active.seriesSlug !== seriesSlug && (
           <p className="vw-small text-secondary">
             Currently active:{' '}
@@ -208,7 +163,7 @@ export default function DevotionalActions({
         open={switchModalOpen}
         currentSeriesTitle={active?.seriesTitle ?? null}
         currentDayNumber={active?.currentDay}
-        newSeriesTitle={newSeriesTitle}
+        newSeriesTitle={seriesTitle}
         onQueueMonday={() => void performStart('queue_monday', true)}
         onReplaceToday={() => void performStart('replace_now', true)}
         onCancel={() => setSwitchModalOpen(false)}

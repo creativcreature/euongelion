@@ -40,6 +40,7 @@ export default function CuratedActiveView({
   const saved = useDevotionalLibraryStore((s) => s.saved)
   const refresh = useDevotionalLibraryStore((s) => s.refresh)
   const hydrate = useDevotionalLibraryStore((s) => s.hydrate)
+  const bumpActiveDay = useDevotionalLibraryStore((s) => s.bumpActiveDay)
 
   const [devotional, setDevotional] = useState<Devotional | null>(null)
   const [loading, setLoading] = useState(true)
@@ -54,6 +55,28 @@ export default function CuratedActiveView({
   useEffect(() => {
     setActiveDay(currentDay)
   }, [currentDay, seriesSlug])
+
+  // 2026-05-14: persist activeDay back to active_series whenever the
+  // reader navigates day-to-day. Without this, server-side
+  // current_day stays at the value set when the series was started
+  // (often day 1), so a reload jumps back. Fire-and-forget — the
+  // store handles optimistic update + rollback.
+  useEffect(() => {
+    if (activeDay === currentDay) return
+    void bumpActiveDay(activeDay)
+  }, [activeDay, currentDay, bumpActiveDay])
+
+  // Daily Bread style parity 2026-05-14: surface the same folio +
+  // headline + rhythm reader the dedicated /devotional route uses,
+  // so today's reading reads as a publication, not a card. Mount-only
+  // flag for the CSS layer that enables the 2-col rhythm grid.
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    document.body.classList.add('rhythm-enabled')
+    return () => {
+      document.body.classList.remove('rhythm-enabled')
+    }
+  }, [])
 
   const totalDays = series?.days.length ?? 0
   const safeDay = useMemo(

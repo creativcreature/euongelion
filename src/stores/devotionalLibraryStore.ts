@@ -85,7 +85,7 @@ interface LibraryState {
   start: (
     seriesSlug: string,
     mode: StartMode,
-    options?: { confirm?: boolean },
+    options?: { confirm?: boolean; currentDay?: number },
   ) => Promise<
     | { ok: true; mode: StartMode }
     | {
@@ -107,6 +107,16 @@ interface LibraryState {
 
   clearActive: () => Promise<{ ok: boolean; needsAuth?: boolean }>
   clearScheduledSwap: () => Promise<{ ok: boolean; needsAuth?: boolean }>
+
+  /**
+   * 2026-05-14: bump current_day on the existing active series. Fire-
+   * and-forget from CuratedActiveView's day nav so a reload returns to
+   * the same day the reader navigated to. Optimistic — store updates
+   * `active.currentDay` immediately, rolls back on non-2xx.
+   */
+  bumpActiveDay: (
+    currentDay: number,
+  ) => Promise<{ ok: boolean; needsAuth?: boolean }>
 }
 
 const INTENT_EVENT = 'euangelion:auth-required-intent'
@@ -254,6 +264,9 @@ export const useDevotionalLibraryStore = create<LibraryState>()((set, get) => ({
         mode,
         confirm: options.confirm ?? false,
         timezoneOffsetMinutes: tzOffset,
+        // 2026-05-14: pin the day the user actually started from.
+        // Omitted → server defaults to day 1 (back-compat).
+        currentDay: options.currentDay,
       }),
     })
     if (result.status === 401) {
@@ -313,6 +326,26 @@ export const useDevotionalLibraryStore = create<LibraryState>()((set, get) => ({
     if (result.status === 401) return { ok: false, needsAuth: true }
     if (!result.ok) return { ok: false }
     await get().refresh()
+    return { ok: true }
+  },
+
+  bumpActiveDay: async (currentDay) => {
+    const prev = get().active
+    if (!prev) return { ok: false }
+    // Optimistic — feels instant; rolls back on failure.
+    set({ active: { ...prev, currentDay } })
+    const result = await jsonFetch('/api/devotionals/active', {
+      method: 'PATCH',
+      body: JSON.stringify({ currentDay }),
+    })
+    if (result.status === 401) {
+      set({ active: prev })
+      return { ok: false, needsAuth: true }
+    }
+    if (!result.ok) {
+      set({ active: prev })
+      return { ok: false }
+    }
     return { ok: true }
   },
 }))

@@ -5,6 +5,31 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R27 / Daily Bread state fix + series-level Start action (2026-05-13)
+
+**Founder report:** "Starting a devotional still doesn't properly populate Daily Bread."
+
+### Root cause
+
+Two state-persistence breaks in the active-series flow, plus one UX gap:
+
+1. **`replaceActiveSeries` always wrote `current_day: 1`.** Starting from `/devotional/peace-day-3` would server-side pin Day 1, so Daily Bread reloaded to Day 1 every time. Now `PUT /api/devotionals/active` accepts an optional `currentDay`, clamps it to the series bounds, and passes it through.
+2. **CuratedActiveView's day navigator was client-only.** Navigating day-to-day inside Daily Bread changed local React state but never wrote back to the server. New `PATCH /api/devotionals/active { currentDay }` + new `updateActiveSeriesDay` repo helper (preserves `started_at`/`source` instead of clobbering them like `setActiveSeries` would) + new `bumpActiveDay` store action with optimistic update + rollback. CuratedActiveView fires it on every day change.
+3. **`/series/[slug]` had no Start action.** Added `SeriesActions` component (mirrors `DevotionalActions` but at series level — no Save, hardcoded `currentDay: 1`) and mounted it on the series page so the user can start an arc without drilling into Day 1 first.
+
+Also pulls in `react-markdown` which `TeachingModule.tsx` + `deep-dive/page.tsx` import — was missing from this branch and was 500ing every devotional page on render.
+
+### Verified locally
+
+- `PATCH /api/devotionals/active` → 401 (auth required) when unauthenticated; reaches handler, doesn't 500.
+- `PUT` + `GET` likewise return clean 401s.
+- `/wake-up/series/peace` renders `START THIS SERIES` button (SeriesActions).
+- `/devotional/peace-day-3` renders `START THIS DEVOTIONAL`; intercepted click captures POST body `{"seriesSlug":"peace","mode":"replace_now","confirm":false,"timezoneOffsetMinutes":-240,"currentDay":3}` — the `currentDay: 3` is the fix.
+
+PRD: `docs/feature-prds/F-061.md` (Round 27). Decision: SA-013.
+
+---
+
 ## F-061 R12 / Parallel-agent sweep — Bible corpus + 7 new module types + transliteration (2026-05-13)
 
 Founder asked to merge everything possible from sibling agent worktrees. Brings in only what builds clean against current main; defers stale or conflicting work.

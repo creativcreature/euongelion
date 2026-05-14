@@ -7,6 +7,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButton from '@/components/ShareButton'
 import SiteFooter from '@/components/SiteFooter'
 import ResumeSeriesPill from '@/components/ResumeSeriesPill'
+import SeriesActions from '@/components/devotional/SeriesActions'
 import { typographer } from '@/lib/typographer'
 import { useProgress } from '@/hooks/useProgress'
 import { SERIES_HERO } from '@/data/artwork-manifest'
@@ -64,6 +65,20 @@ export default function SeriesPageClient({
         {/* Audit H7: surface the resume cue for returning users. */}
         <div className="mock-breadcrumb-row">
           <ResumeSeriesPill seriesSlug={slug} />
+        </div>
+
+        {/* Founder direction 2026-05-14: start the series from the
+            series page itself, not just from inside a day. Matches
+            the DevotionalActions pattern. Routes through the same
+            active-series API; reaches sign-in modal on auth gate. */}
+        <div className="mock-breadcrumb-row">
+          <SeriesActions
+            seriesSlug={slug}
+            seriesTitle={series.title}
+            redirectPath={
+              isWake ? `/wake-up/series/${slug}` : `/series/${slug}`
+            }
+          />
         </div>
 
         <section className="mock-series-hero-grid">

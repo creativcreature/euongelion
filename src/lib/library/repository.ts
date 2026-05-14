@@ -202,6 +202,28 @@ export async function setActiveSeries(params: {
   return row
 }
 
+/**
+ * 2026-05-14: bump current_day on the existing active_series row
+ * without resetting `started_at` / `source` (which `setActiveSeries`
+ * would clobber). Returns the updated row, or null if nothing was
+ * active.
+ */
+export async function updateActiveSeriesDay(
+  userId: string,
+  currentDay: number,
+): Promise<ActiveSeriesRecord | null> {
+  const existing = await getActiveSeries(userId)
+  if (!existing) return null
+  const next: ActiveSeriesRecord = {
+    ...existing,
+    current_day: currentDay,
+    last_opened_at: new Date().toISOString(),
+  }
+  getStore().activeByUser.set(userId, next)
+  await supabaseUpsert('active_series', next, 'user_id')
+  return next
+}
+
 export async function touchActiveSeries(userId: string): Promise<void> {
   const existing = await getActiveSeries(userId)
   if (!existing) return
@@ -423,6 +445,14 @@ export async function replaceActiveSeries(params: {
   userId: string
   seriesSlug: string
   source: ActiveSeriesSource
+  /**
+   * 2026-05-14: bookmark the day the user actually started from
+   * (not always day 1). Fixes the "reloaded Daily Bread shows a
+   * different day than the one I started on" bug. Caller is
+   * responsible for clamping to a valid 1..N range; this layer
+   * defaults to 1 when omitted to preserve backward compat.
+   */
+  currentDay?: number
 }): Promise<ActiveSeriesRecord> {
   const current = await getActiveSeries(params.userId)
   if (current && current.series_slug !== params.seriesSlug) {
@@ -439,7 +469,7 @@ export async function replaceActiveSeries(params: {
   return setActiveSeries({
     userId: params.userId,
     seriesSlug: params.seriesSlug,
-    currentDay: 1,
+    currentDay: params.currentDay ?? 1,
     source: params.source,
   })
 }
