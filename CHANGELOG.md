@@ -5,6 +5,50 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R31 / Site image audit — swap 14 photo-style images to approved riso (2026-05-14)
+
+**Founder direction:** "No photo style images allowed — comb the site after finishing the above tasks. Do not generate images, find images in the approved mostly blue riso style."
+
+### Audit method
+
+Read every in-use image in `public/images/site/devotional/` and `public/images/site/homepage/` via the multimodal Read tool. Classified each as:
+
+- ✓ Riso/halftone duotone (cobalt + cream + crimson/ochre/burgundy) — keep
+- ❌ Photoreal / realistic photo — must swap
+- ⚠ Borderline (sepia engraving, non-blue palette, embedded text) — swap to be safe
+
+### 14 photo-style offenders swapped (all in `src/data/site-devotional-art.ts`)
+
+| Removed (photo)                | Replaced with (riso)              |
+| ------------------------------ | --------------------------------- |
+| `sym-cross-on-hill`            | `sym-cross-simple-linocut`        |
+| `sym-empty-chalice`            | `sym-chalice-cup-linocut`         |
+| `sym-fishes-bread-basket`      | `sym-bread-loaf-solo-linocut`     |
+| `sym-hands-cupped-light`       | `sym-hand-extended-etched`        |
+| `sym-incense-censer-swung`     | `sym-censer-hanging-etched`       |
+| `sym-keys-kingdom`             | `sym-key-skeleton-etched`         |
+| `sym-manna-falling-stamped` \* | `sym-bread-loaf-solo-linocut`     |
+| `sym-manna-jar`                | `sym-pitcher-clay-linocut`        |
+| `sym-oil-lamp-burning`         | `sym-oil-lamp-clay-linocut`       |
+| `sym-open-scroll`              | `sym-scroll-open-etched`          |
+| `sym-trumpet-shofar-flat` \*   | `obj-bronze-trumpet-curved`       |
+| `sym-water-jar-overflowing`    | `sym-pitcher-clay-linocut`        |
+| `sym-wheat-sheaf`              | `sym-fig-branch-linocut`          |
+| `sym-bread-wine-table`         | `sym-bread-loaf-burgundy-linocut` |
+
+\*`sym-manna-falling-stamped` also violated the "no text except Hebrew/Greek" rule (stamped the word "MANNA"). `sym-trumpet-shofar-flat` used an off-brand olive/black palette instead of cobalt blue.
+
+### Outcome
+
+- All 14 problem `slug` / `src` / `rawSrc` / title references updated. 0 remaining references to the photo-style files in `src/`.
+- Total swap touches: ~ 95 entries in `src/data/site-devotional-art.ts` (several offenders were used across multiple devotional slugs).
+- Type-check clean. The orphaned .webp files remain in `public/images/site/devotional/` for now — not deleted, since they're cheap to host and may be re-purposed if re-curated.
+- Series cards (`public/images/site/series/*.webp`), homepage hero (`hero/header.webp`), homepage step images (`steps/step-*.webp`), and all `obj-*` + `brand-*` + `element-*` decoration images audited and confirmed riso-style.
+
+PRD: `docs/feature-prds/F-061.md` (Round 31). Decision: SA-013.
+
+---
+
 ## F-061 R30 / Devotional 2-column zig-zag rhythm reader (2026-05-14)
 
 **Founder direction:** drop the sidebar + 2/3-1/3 split; render the reader as 2 equal columns where modules alternate left/right as the user scrolls, with full-width breaks for big moments (scripture, inline images, art).
