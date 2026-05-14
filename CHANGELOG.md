@@ -5,6 +5,22 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R28 / Daily Bread visual parity with /devotional reader (2026-05-13)
+
+**Founder report:** "Daily bread should be the same style as regular unactive devotionals, same width etc."
+
+Before: `CuratedActiveView` rendered its own card-like layout inside a generic `mock-panel` container — different width, different header chrome, different module-panel padding, no breadcrumbs.
+
+After: `CuratedActiveView` now owns the same outer container (`devotional-shell-main shell-content-pad mx-auto max-w-6xl`), the same header panel (scriptureRef + DAY N OF M + serif headline + teaser + BACK + SHARE), and the same module panels (`devotional-shell-panel border px-6 py-6`) as `/devotional/[slug]`. Breadcrumbs added (HOME / DAILY BREAD / SERIES / TITLE).
+
+Daily-Bread-specific affordances (Save / Open Full Reader / Pause) fold into the same actions row as BACK + SHARE. Day-strip renders between the header and the body using the same border-styled pills as before. Prev / next panels use matching padding (`px-6 py-5`).
+
+Daily Bread `Shell` gains an `unwrap` prop so it skips the `mock-panel` container for the active state (CuratedActiveView owns its own); other states (`EmptyState`, `HoldingState`, `CompletionState`, `DailyBreadView`) continue to use `mock-panel`.
+
+PRD: `docs/feature-prds/F-061.md` (Round 28). Decision: SA-013.
+
+---
+
 ## F-061 R27 / Daily Bread state fix + series-level Start action (2026-05-13)
 
 **Founder report:** "Starting a devotional still doesn't properly populate Daily Bread."

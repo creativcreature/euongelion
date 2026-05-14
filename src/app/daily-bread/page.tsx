@@ -30,8 +30,12 @@ export default async function DailyBreadPage() {
   // to the existing Soul Audit resolution path.
   const userActive = await resolveUserActiveSeries()
   if (userActive) {
+    // CuratedActiveView owns its own devotional-shell-main container
+    // (same width / chrome as the dedicated /devotional/[slug]
+    // reader). Skip the mock-panel wrapper Shell uses for the other
+    // states to avoid double-wrapping.
     return (
-      <Shell>
+      <Shell unwrap>
         <ScheduledSwapBanner />
         <CuratedActiveView
           seriesSlug={userActive.series_slug}
@@ -116,12 +120,22 @@ async function resolveUserActiveSeries() {
   }
 }
 
-function Shell({ children }: { children: React.ReactNode }) {
+function Shell({
+  children,
+  unwrap = false,
+}: {
+  children: React.ReactNode
+  unwrap?: boolean
+}) {
   return (
     <div className="mock-home">
       <main id="main-content" className="mock-paper">
         <EuangelionShellHeader />
-        <section className="mock-panel">{children}</section>
+        {unwrap ? (
+          children
+        ) : (
+          <section className="mock-panel">{children}</section>
+        )}
         <SiteFooter />
         <section className="mock-bottom-brand">
           <h2 className="text-masthead mock-masthead-word">
