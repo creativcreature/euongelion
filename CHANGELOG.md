@@ -5,6 +5,34 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R33 / Image density bump on non-substack devotionals from archive/devotional-prints (2026-05-14)
+
+**Founder direction:** "Add more images overall — current density is too low. Substack originals are exempt from this audit (they stay as-is)."
+
+### Changes
+
+- **New `scripts/bump-devotional-art-density.ts`** — reads `archive/devotional-prints/*/artwork.json`, copies each artwork's `print.webp` into `public/images/devotional-prints/<artwork-slug>.webp`, then merges the entries into `SITE_DEVOTIONAL_ART[devotionalSlug]` based on the `devotionalSlugs[]` tagging inside each `artwork.json`.
+- **Substack-aware**: loads `SUBSTACK_SOURCES` slug keys and skips all 93 substack devotional slugs. Substack devotionals continue to render with their original substack header image only (R32).
+- **Capped at +4 per slug** so a single devotional doesn't become all images. Existing entries are preserved (additive only).
+- **291 new `print.webp` files** copied into `public/images/devotional-prints/` (~88 MB on disk). These are duotone vintage editorial prints from the curated archive — federal blue / sepia / burgundy palette on cream.
+- **78 non-substack devotional slugs touched, 134 new artwork entries added.** New density distribution: 97 slugs at 2 images (largely substack + non-substack without archive matches), 22 slugs at 3, 56 slugs at 4. Average across all 175 devotionals up from 2.00 → 2.77; non-substack average ~3.6.
+
+### Verified locally
+
+- `/devotional/anointed-day-2` (non-substack curated): 4 devotional images, including 2 new prints `arch-upper-room-spirit.webp` + `el-greco-pentecost-anointed.webp` directly from the archive.
+- `/devotional/too-busy-for-god-day-1` (substack): substack banner preserved, 0 new prints injected (correctly skipped).
+- `npm run type-check` clean.
+
+### Deferred for the next session
+
+- Per-image relevance audit ("specifically referential to surrounding text"). The script picks images via the `devotionalSlugs[]` tagging in `artwork.json` which is editorial-but-imperfect. A pass through each non-substack devotional checking image-to-passage fit is a separate editorial task.
+- Pull-quote floater (`.rhythm-floater-left/right`) authoring. CSS hooks exist from R30. Surfacing them requires marking specific modules as "floats next to its sibling text" in the JSON — a content-side change.
+- Full library photoreal audit. R31 caught 14 photo-style images in the `site/devotional/` surface. The wider `public/images/library/` + `archive/devotional-prints/` libraries weren't combed yet — that's another R31-style pass.
+
+PRD: `docs/feature-prds/F-061.md` (Round 33). Decision: SA-013.
+
+---
+
 ## F-061 R32 / Substack original-link CTAs + substack image header (2026-05-14)
 
 **Founder direction:**
