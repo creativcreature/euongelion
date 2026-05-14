@@ -107,15 +107,43 @@ export default async function DevotionalPage({ params }: Props) {
           '@type': 'Article',
           headline: dayHeadline,
           description: articleDescription,
-          publisher: {
+          author: {
             '@type': 'Organization',
             name: 'Euangelion',
             url: 'https://euangelion.app',
           },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Euangelion',
+            url: 'https://euangelion.app',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://euangelion.app/icons/icon-512.png',
+            },
+          },
+          // Anchor scripture is the canonical "based on" source.
+          isBasedOn: meta.series.framework
+            ? {
+                '@type': 'Book',
+                name: 'The Bible',
+                bookEdition: meta.series.framework,
+              }
+            : undefined,
           isPartOf: {
             '@type': 'CreativeWorkSeries',
             name: meta.series.title,
+            url: `https://euangelion.app/series/${meta.seriesSlug}`,
           },
+          // Stable identity per devotional URL.
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://euangelion.app/devotional/${slug}`,
+          },
+          inLanguage: 'en',
+          // Without per-day publish dates we use the build date — at
+          // least bots get a parseable ISO. Update once dates land
+          // on the devotional JSON itself.
+          datePublished: '2026-01-01',
         },
         {
           '@context': 'https://schema.org',

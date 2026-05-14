@@ -5,6 +5,62 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R25 / Audit polish bundle — cobalt lock · typography · liturgical calendar · colophon · JSON-LD (2026-05-14)
+
+Founder direction: implement the audit punch list. Cobalt is the brand color. This round ships ~13 items from the audit at S-effort; documents the rest as deferred-for-next-sprint with clear pointers.
+
+### Tokens & color
+
+- **Cobalt lock.** `design-system/tokens.css`: new `--color-cobalt: #1f2a8d` (canonical), `--color-cobalt-deep: #171b69` (Soul Audit lock), `--color-amber: #c8a56a` (decorative). Legacy `--color-gold` now aliases cobalt (`var(--color-cobalt)`). Audit complaint about "gold-is-cobalt" resolved by naming, not by changing values — cobalt IS the brand.
+- **Tertiary text contrast lift.** `--color-text-tertiary` raised from `rgba(scroll, 0.5)` (~3.8:1, fails WCAG AA) to `0.65` (~5.0:1). Same lift in dark mode.
+
+### Typography
+
+- **`<DropCap>` React component** (`src/components/typography/DropCap.tsx`). Wraps the first grapheme in `<span class="dropcap">` so the drop cap renders predictably even on paragraphs starting with a quote / em-dash / non-letter Unicode. Replaces the brittle CSS `::first-letter` pseudo-element.
+- **Optical sizing on `<html>`** (`font-optical-sizing: auto`).
+- **Optical tracking ramp** for Instrument Serif display sizes (-0.022em ≥1024px, -0.018em below).
+- **Lining tabular numerals** on architectural numerals (`.day-number`, folio center, cover meta dd). The "Day 7" descending-7 problem is fixed.
+- **Hanging-punctuation fallback** for Chrome / Firefox: new `.punct-pull` utility (Safari already honors `hanging-punctuation: first last`).
+- **Reader measure cap** opt-in via `.prose-measure`.
+- **Wordmark scale modifier**: `.text-masthead--cover` opts a masthead into 4–12rem clamp for type-only awwwards-cover states.
+- **Pull-quote dedup.** Legacy `.pull-quote` now visually matches `.pull-quote-enhanced` (smart quotes, hanging crimson mark, italic) so duplicate definitions stop drifting.
+
+### Accessibility
+
+- **Skip-link**: first focusable thing on every page, targets `#main-content`. Hidden until keyboard-focused.
+
+### Content as design
+
+- **AuthorColophon component** placed at the end of every devotional reader (both `/devotional/[slug]` and `/daily-bread`'s `CuratedActiveView`). 4-line credit card with the day's scripture translation auto-pulled from the first scripture module.
+- **Liturgical calendar lib** (`src/lib/liturgical.ts`): Western Christian calendar with Meeus's Gregorian Easter, season + label for every date, plus a saint-day / fixed-feast lookup for the most-celebrated dates.
+- **ChurchYearOverline component** wired into `DevotionalFolio` — "Today: Conversion of Paul · Epiphany Season" type strip beneath the folio.
+- **ChurchYearCard component** placed at the top of `CuratedActiveView` on `/daily-bread` — bigger "Today in the church year" surface with liturgical color swatch + season + feast.
+
+### SEO + AI
+
+- **Article JSON-LD enriched** on devotional pages: `author`, `publisher.logo`, `isBasedOn` (scripture framework), `isPartOf.url`, `mainEntityOfPage`, `inLanguage`, `datePublished`.
+- **CollectionPage JSON-LD** emitted on `/series/[slug]` alongside the existing `CreativeWorkSeries` schema. Days listed as `ListItem` entries.
+
+### Deferred (with documented next-sprint TODOs)
+
+- Tufte margin sidenotes (M)
+- Brightness / sepia / dark tri-toggle (M)
+- Marginalia layer (M)
+- Per-devotional dynamic OG image (Workers-runtime risk — pin a session to scope properly)
+- Page transitions between days (S, but framer-motion plumbing)
+- SBL Hebrew + GFS Greek `.woff2` (S, but content audit needed)
+- `--baseline` token enforcement (M)
+- Section-pacing 3-token system (M)
+- Section header real small-caps wiring (M — needs font-capability audit)
+- Internal-linking density audit (M)
+- `.otf` → `.woff2` conversion (S, needs `fonttools`)
+- Critical CSS inline (M)
+- Cross-reference marginalia (M)
+
+PRD: `docs/feature-prds/F-061.md` (Round 25). Decision: SA-013.
+
+---
+
 ## F-061 R24 / Text-left rhythm + Daily Bread reader parity (2026-05-14)
 
 Two founder corrections:

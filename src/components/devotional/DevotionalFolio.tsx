@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, type CSSProperties } from 'react'
+import ChurchYearOverline from './ChurchYearOverline'
 
 /**
  * Page furniture for the devotional reader (audit batch 2026-05-13).
@@ -83,7 +84,7 @@ export default function DevotionalFolio({
 
   return (
     <header
-      className={`devotional-folio ${className ?? ''}`}
+      className={`devotional-folio devotional-folio--with-overline ${className ?? ''}`}
       style={style}
       aria-label="Devotional edition"
     >
@@ -105,6 +106,9 @@ export default function DevotionalFolio({
           // (a <time> element) so the hydration boundary is stable.
           <time aria-hidden="true">&nbsp;</time>
         )}
+      </span>
+      <span className="devotional-folio-overline">
+        <ChurchYearOverline />
       </span>
     </header>
   )

@@ -15,6 +15,8 @@ import DevotionalHeadline from '@/components/devotional/DevotionalHeadline'
 import DevotionalRhythm, {
   type RhythmImage,
 } from '@/components/devotional/DevotionalRhythm'
+import AuthorColophon from '@/components/devotional/AuthorColophon'
+import ChurchYearCard from '@/components/devotional/ChurchYearCard'
 import type { Devotional, Module, Panel } from '@/types'
 
 interface CuratedActiveViewProps {
@@ -321,6 +323,10 @@ export default function CuratedActiveView({
         </article>
       ) : (
         <>
+          {/* "Today in the church year" — small sidebar above the folio.
+              Pure-content liturgical surface; no infra. */}
+          <ChurchYearCard />
+
           {/* Folio strip — same page furniture the dedicated reader uses. */}
           {series && (
             <DevotionalFolio
@@ -372,6 +378,14 @@ export default function CuratedActiveView({
                   </Fragment>
                 ))}
           </DevotionalRhythm>
+
+          {/* Author colophon — 4-line credit at the close of the reading. */}
+          <AuthorColophon
+            translation={
+              modules?.find((m) => m.type === 'scripture')?.translation ??
+              undefined
+            }
+          />
         </>
       )}
 

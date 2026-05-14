@@ -41,11 +41,21 @@
   --color-scroll-rgb: 239, 229, 216;
 
   /**
-   * God is Gold (Gilead Gold) - Glory, divine emphasis
-   * Highlights, Scripture emphasis, Hebrew terms, signature moments
-   * Character: Warm amber, illuminated manuscripts
+   * Founder direction 2026-05-14: COBALT IS THE COLOR.
+   * The brand's primary "accent" ink is cobalt navy. The legacy
+   * `--color-gold` name predates that decision; rather than rename
+   * every consumer, we alias it to cobalt. The real amber accent
+   * lives at `--color-amber`. Document this in CLAUDE.md.
    */
-  --color-gold: #1f2a8d;
+  --color-cobalt: #1f2a8d; /* canonical */
+  --color-cobalt-rgb: 31, 42, 141;
+  --color-cobalt-deep: #171b69; /* navy lock used on Soul Audit + How-It-Works bands */
+  --color-amber: #c8a56a; /* decorative — drop caps, focus rings, signatures */
+  --color-amber-rgb: 200, 165, 106;
+
+  /* Legacy alias retained — every reference to "gold" in the codebase
+     resolves to cobalt. Safe to phase out one file at a time. */
+  --color-gold: var(--color-cobalt);
   --color-gold-rgb: 31, 42, 141;
 
   /* ============================================
