@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R30 / Devotional 2-column zig-zag rhythm reader (2026-05-14)
+
+**Founder direction:** drop the sidebar + 2/3-1/3 split; render the reader as 2 equal columns where modules alternate left/right as the user scrolls, with full-width breaks for big moments (scripture, inline images, art).
+
+### Changes
+
+- Dropped the desktop 260px series-index sidebar on `/devotional/[slug]` and `/wake-up/devotional/[slug]`. Sidebar content (IN THIS SERIES + TIMELINE) moves to a 2-col footer block after the reader. LIBRARY links removed (redundant with main nav). Mobile day-nav pill preserved.
+- New `.devotional-rhythm-stage` CSS — a column of half-width modules that alternate left/right, with full-width breaks for designated module types. Mobile (<768px) collapses to single-column full-width.
+- New `src/lib/devotional-rhythm.ts` exports `getRhythmPosition(type, halfIndex)` returning `'left' | 'right' | 'full'`. Full-width types: `scripture`, `art`, `hero-card`, `video`, `inline-image`, `journey`, `recap`, `sabbath`, `cta`, `interactive`. Everything else alternates; full-width breaks don't reset alternation.
+- `DevotionalPageClient.tsx` + `CuratedActiveView.tsx` both use the rhythm — Daily Bread parity (R28) holds.
+- CSS hooks `.rhythm-floater-left` / `.rhythm-floater-right` ship for future pullquote-as-floater work; no module currently emits them.
+
+### Verified locally
+
+- 1280×900: stage width 1161px; full items 1161px; half items 555px at left 59px or 666px. Visible zig-zag across teaching → vocab → takeaway → reflection, with scripture + inline-image full-width breaks.
+- 393px mobile: everything collapses to single column.
+
+PRD: `docs/feature-prds/F-061.md` (Round 30). Decision: SA-013.
+
+---
+
 ## F-061 R29 / Typography pass: no full italic paragraphs + Hebrew/Greek parens transliteration (2026-05-13)
 
 **Founder report:**

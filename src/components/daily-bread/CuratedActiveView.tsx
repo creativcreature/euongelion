@@ -10,6 +10,7 @@ import Toast from '@/components/Toast'
 import { useDevotionalLibraryStore } from '@/stores/devotionalLibraryStore'
 import { SERIES_DATA } from '@/data/series'
 import { typographer } from '@/lib/typographer'
+import { getRhythmPosition } from '@/lib/devotional-rhythm'
 import type { Devotional, Module, Panel } from '@/types'
 
 interface CuratedActiveViewProps {
@@ -310,34 +311,44 @@ export default function CuratedActiveView({
           </Link>
         </section>
       ) : (
-        <div className="space-y-6">
+        <div className="devotional-rhythm-stage">
           {modules
-            ? modules.map((module, index) => (
-                <article
-                  key={index}
-                  className="devotional-shell-panel border px-6 py-6"
-                  style={{ borderColor: 'var(--color-border)' }}
-                >
-                  <ModuleRenderer module={module} />
-                </article>
-              ))
-            : panels?.slice(1).map((panel, index) => (
-                <Fragment key={panel.number}>
-                  <article
-                    className="devotional-shell-panel border px-6 py-6"
-                    style={{ borderColor: 'var(--color-border)' }}
-                  >
-                    {index > 0 && (
-                      <div
-                        className="mb-6 border-t"
-                        style={{ borderColor: 'var(--color-border)' }}
-                        aria-hidden="true"
-                      />
-                    )}
-                    <PanelInline panel={panel} />
-                  </article>
-                </Fragment>
-              ))}
+            ? (() => {
+                let halfIndex = 0
+                return modules.map((module, index) => {
+                  const pos = getRhythmPosition(module.type, halfIndex)
+                  if (pos !== 'full') halfIndex += 1
+                  return (
+                    <article
+                      key={index}
+                      className={`devotional-rhythm-item pos-${pos} devotional-shell-panel border px-6 py-6`}
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      <ModuleRenderer module={module} />
+                    </article>
+                  )
+                })
+              })()
+            : panels?.slice(1).map((panel, index) => {
+                const pos: 'left' | 'right' = index % 2 === 0 ? 'left' : 'right'
+                return (
+                  <Fragment key={panel.number}>
+                    <article
+                      className={`devotional-rhythm-item pos-${pos} devotional-shell-panel border px-6 py-6`}
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      {index > 0 && (
+                        <div
+                          className="mb-6 border-t"
+                          style={{ borderColor: 'var(--color-border)' }}
+                          aria-hidden="true"
+                        />
+                      )}
+                      <PanelInline panel={panel} />
+                    </article>
+                  </Fragment>
+                )
+              })}
         </div>
       )}
 

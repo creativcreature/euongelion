@@ -5625,6 +5625,84 @@ html.reduce-motion *::after {
   position: relative;
 }
 
+/* ─────────────────────────────────────────────────────────────
+ * Devotional 2-column zig-zag rhythm (mobile-first)
+ *
+ * Founder direction (R30): drop the sidebar, split the reader
+ * into two equal columns, alternate modules between them as the
+ * user scrolls — only ONE column shows content at any given
+ * scroll row; occasional full-width breaks (images, pull-quotes,
+ * scripture) interrupt the pattern.
+ *
+ * Mobile (< 768px): everything is single-column full-width. The
+ * alternation only kicks in at md and above.
+ * ───────────────────────────────────────────────────────────── */
+.devotional-rhythm-stage {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 4vw, 4rem);
+}
+
+.devotional-rhythm-item {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .devotional-rhythm-stage {
+    gap: clamp(3rem, 5vw, 5rem);
+  }
+
+  .devotional-rhythm-item.pos-left,
+  .devotional-rhythm-item.pos-right {
+    width: calc(50% - clamp(1rem, 2vw, 2rem));
+  }
+
+  .devotional-rhythm-item.pos-left {
+    align-self: flex-start;
+  }
+
+  .devotional-rhythm-item.pos-right {
+    align-self: flex-end;
+  }
+
+  .devotional-rhythm-item.pos-full {
+    width: 100%;
+  }
+
+  /* Pull-quote that floats next to body text — sits in the
+     opposite half-column from its sibling. The sibling text
+     module that hosts it must use .pos-left / .pos-right.
+     The pull-quote uses .rhythm-floater + a direction modifier. */
+  .devotional-rhythm-item.rhythm-floater-right {
+    width: calc(50% - clamp(1rem, 2vw, 2rem));
+    align-self: flex-end;
+    margin-top: calc(-1 * clamp(3rem, 5vw, 5rem));
+  }
+
+  .devotional-rhythm-item.rhythm-floater-left {
+    width: calc(50% - clamp(1rem, 2vw, 2rem));
+    align-self: flex-start;
+    margin-top: calc(-1 * clamp(3rem, 5vw, 5rem));
+  }
+}
+
+/* Footer (post-reader) section for IN THIS SERIES + TIMELINE
+   that used to live in the desktop sidebar. */
+.devotional-rhythm-footer {
+  margin-top: clamp(4rem, 7vw, 7rem);
+  padding-top: clamp(2rem, 4vw, 4rem);
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+@media (min-width: 768px) {
+  .devotional-rhythm-footer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .reader-stickies-layer {
   position: absolute;
   inset: 0;

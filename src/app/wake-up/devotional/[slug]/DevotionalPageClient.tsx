@@ -28,6 +28,7 @@ import { SERIES_DATA } from '@/data/series'
 import { DEVOTIONAL_ARTWORKS } from '@/data/artwork-manifest'
 import { SITE_DEVOTIONAL_ART } from '@/data/site-devotional-art'
 import { getSeriesHero } from '@/lib/series-hero'
+import { getRhythmPosition } from '@/lib/devotional-rhythm'
 import type { Devotional, Module, Panel } from '@/types'
 
 const DevotionalChat = dynamic(() => import('@/components/DevotionalChat'), {
@@ -391,21 +392,211 @@ export default function DevotionalPageClient({
             </button>
           )}
 
-          <section className="devotional-shell-grid md:grid md:grid-cols-[260px_minmax(0,1fr)] md:gap-8">
-            <aside
-              id="devotional-day-nav-mobile"
-              className={`devotional-shell-sidebar-wrap mb-6 md:mb-0 ${isDayNavOpenMobile ? '' : 'devotional-shell-sidebar-mobile-closed'}`}
-            >
+          {/* R30: Mobile-only collapsible day-nav. On md+ the series
+              index moves to the footer below the reader, freeing the
+              full width for the 2-column rhythm. */}
+          <div
+            id="devotional-day-nav-mobile"
+            className={`md:hidden mb-6 ${isDayNavOpenMobile ? '' : 'devotional-shell-sidebar-mobile-closed'}`}
+          >
+            {seriesDays && seriesDays.length > 0 && (
               <div
-                className="devotional-shell-sidebar shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
+                className="border-subtle bg-surface-raised p-4"
                 style={{ borderColor: 'var(--color-border)' }}
               >
+                <p className="text-label vw-small mb-3 text-gold">
+                  IN THIS SERIES
+                </p>
+                <div className="grid gap-2">
+                  {seriesDays.map((day) => {
+                    const check = canRead(day.slug)
+                    const isLocked = !check.canRead && day.slug !== slug
+                    const isCurrent = day.slug === slug
+
+                    if (isLocked) {
+                      return (
+                        <div
+                          key={day.slug}
+                          className="border px-3 py-2"
+                          style={{
+                            borderColor: 'var(--color-border)',
+                            opacity: 0.58,
+                          }}
+                        >
+                          <p className="text-label vw-small text-gold">
+                            DAY {day.day} • LOCKED
+                          </p>
+                          <p className="vw-small text-secondary">{day.title}</p>
+                        </div>
+                      )
+                    }
+
+                    return (
+                      <Link
+                        key={day.slug}
+                        href={`${devotionalRoutePrefix}/${day.slug}`}
+                        className="block border px-3 py-2"
+                        style={{
+                          borderColor: isCurrent
+                            ? 'var(--color-border-strong)'
+                            : 'var(--color-border)',
+                          background: isCurrent
+                            ? 'var(--color-active)'
+                            : 'transparent',
+                        }}
+                      >
+                        <p className="text-label vw-small text-gold">
+                          DAY {day.day}
+                        </p>
+                        <p className="vw-small text-secondary">{day.title}</p>
+                      </Link>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <section>
+            <div className="devotional-reader-stage">
+              {!dayGate.unlocked ? (
+                <section
+                  className="devotional-shell-panel border px-6 py-8"
+                  style={{ borderColor: 'var(--color-border)' }}
+                >
+                  <p className="vw-body text-secondary">
+                    {typographer(dayGate.message)}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => router.back()}
+                    className="cta-major text-label vw-small mt-6 px-5 py-2"
+                  >
+                    BACK TO SERIES
+                  </button>
+                </section>
+              ) : (
+                <>
+                  <DevotionalStickiesLayer devotionalSlug={slug} />
+                  <div className="devotional-rhythm-stage">
+                    {modules
+                      ? (() => {
+                          let halfIndex = 0
+                          return modules.map((module, index) => {
+                            const pos = getRhythmPosition(
+                              module.type,
+                              halfIndex,
+                            )
+                            if (pos !== 'full') halfIndex += 1
+                            return (
+                              <Fragment key={index}>
+                                <article
+                                  id={`devotional-section-${index + 1}`}
+                                  className={`devotional-rhythm-item pos-${pos} devotional-shell-panel border px-6 py-6`}
+                                  style={{ borderColor: 'var(--color-border)' }}
+                                >
+                                  <ModuleRenderer module={module} />
+                                </article>
+                                {artworkByPosition.has(index) && (
+                                  <div className="devotional-rhythm-item pos-full">
+                                    <DevotionalArtwork
+                                      artwork={artworkByPosition.get(index)!}
+                                      onOpenLightbox={() =>
+                                        lightbox.open(
+                                          artworkByPosition.get(index)!.slug,
+                                        )
+                                      }
+                                    />
+                                  </div>
+                                )}
+                              </Fragment>
+                            )
+                          })
+                        })()
+                      : (() => {
+                          let halfIndex = 0
+                          return panels?.slice(1).map((panel, index) => {
+                            const pos: 'left' | 'right' =
+                              halfIndex % 2 === 0 ? 'left' : 'right'
+                            halfIndex += 1
+                            return (
+                              <Fragment key={panel.number}>
+                                <article
+                                  id={`devotional-section-${index + 1}`}
+                                  className={`devotional-rhythm-item pos-${pos} devotional-shell-panel border px-6 py-6`}
+                                  style={{ borderColor: 'var(--color-border)' }}
+                                >
+                                  <PanelComponent panel={panel} />
+                                </article>
+                                {artworkByPosition.has(index) && (
+                                  <div className="devotional-rhythm-item pos-full">
+                                    <DevotionalArtwork
+                                      artwork={artworkByPosition.get(index)!}
+                                      onOpenLightbox={() =>
+                                        lightbox.open(
+                                          artworkByPosition.get(index)!.slug,
+                                        )
+                                      }
+                                    />
+                                  </div>
+                                )}
+                              </Fragment>
+                            )
+                          })
+                        })()}
+                  </div>
+
+                  <section
+                    className="devotional-shell-panel mt-6 border px-6 py-5"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    <p className="vw-small text-secondary">
+                      {isCompleted
+                        ? 'Finished. Return anytime to re-read.'
+                        : 'Finished reading? Mark this day read.'}
+                    </p>
+                    <div className="mt-4 flex flex-wrap items-center gap-3">
+                      {!isCompleted && (
+                        <button
+                          type="button"
+                          className="cta-major text-label vw-small px-5 py-2"
+                          onClick={() => {
+                            markComplete(slug, timeSpent)
+                            setIsCompleted(true)
+                            window.dispatchEvent(
+                              new CustomEvent('libraryUpdated'),
+                            )
+                          }}
+                        >
+                          MARK READ
+                        </button>
+                      )}
+                      <button
+                        type="button"
+                        className="text-label vw-small link-highlight"
+                        onClick={() => void saveBookmark(devotional.title)}
+                      >
+                        BOOKMARK
+                      </button>
+                    </div>
+                  </section>
+                </>
+              )}
+            </div>
+
+            {/* R30 footer: series-index + timeline that used to live
+                in the desktop sidebar. Now lives after the reader so
+                the reader can use the full 2-column width. md+ only;
+                mobile already has the day-nav pill at the top. */}
+            {(seriesDays && seriesDays.length > 0) ||
+            timelineAnchors.length > 0 ? (
+              <div className="devotional-rhythm-footer hidden md:grid">
                 {seriesDays && seriesDays.length > 0 && (
-                  <>
+                  <div>
                     <p className="text-label vw-small mb-3 text-gold">
                       IN THIS SERIES
                     </p>
-                    <div className="mb-5 grid gap-2">
+                    <div className="grid gap-2">
                       {seriesDays.map((day) => {
                         const check = canRead(day.slug)
                         const isLocked = !check.canRead && day.slug !== slug
@@ -455,14 +646,11 @@ export default function DevotionalPageClient({
                         )
                       })}
                     </div>
-                  </>
+                  </div>
                 )}
 
                 {timelineAnchors.length > 0 && (
-                  <div
-                    className="border-t pt-4"
-                    style={{ borderColor: 'var(--color-border)' }}
-                  >
+                  <div>
                     <p className="text-label vw-small mb-3 text-gold">
                       TIMELINE
                     </p>
@@ -472,173 +660,8 @@ export default function DevotionalPageClient({
                     />
                   </div>
                 )}
-
-                {/* Audit C2: LIBRARY is app-wide nav, not reading chrome.
-                    Hide on mobile entirely (it pushed content well below
-                    the fold). Keep visible on desktop. */}
-                <div
-                  className="hidden border-t pt-4 md:block"
-                  style={{ borderColor: 'var(--color-border)' }}
-                >
-                  <p className="text-label vw-small mb-3 text-gold">LIBRARY</p>
-                  <div className="grid gap-2">
-                    <Link
-                      href="/daily-bread?tab=today"
-                      className="block border px-3 py-2 text-secondary"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Today + 7 Days
-                    </Link>
-                    <Link
-                      href="/daily-bread?tab=archive"
-                      className="block border px-3 py-2 text-secondary"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Archived Pages
-                    </Link>
-                    <Link
-                      href="/daily-bread?tab=bookmarks"
-                      className="block border px-3 py-2 text-secondary"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Bookmarks
-                    </Link>
-                    <Link
-                      href="/daily-bread?tab=notes"
-                      className="block border px-3 py-2 text-secondary"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Notes
-                    </Link>
-                    <Link
-                      href="/daily-bread?tab=highlights"
-                      className="block border px-3 py-2 text-secondary"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Highlights
-                    </Link>
-                    <Link
-                      href="/daily-bread?tab=chat-history"
-                      className="block border px-3 py-2 text-secondary"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Chat History
-                    </Link>
-                  </div>
-                </div>
               </div>
-            </aside>
-
-            <div className="devotional-reader-stage">
-              {!dayGate.unlocked ? (
-                <section
-                  className="devotional-shell-panel border px-6 py-8"
-                  style={{ borderColor: 'var(--color-border)' }}
-                >
-                  <p className="vw-body text-secondary">
-                    {typographer(dayGate.message)}
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => router.back()}
-                    className="cta-major text-label vw-small mt-6 px-5 py-2"
-                  >
-                    BACK TO SERIES
-                  </button>
-                </section>
-              ) : (
-                <>
-                  <DevotionalStickiesLayer devotionalSlug={slug} />
-                  <div className="space-y-6">
-                    {modules
-                      ? modules.map((module, index) => (
-                          <Fragment key={index}>
-                            <article
-                              id={`devotional-section-${index + 1}`}
-                              className="devotional-shell-panel border px-6 py-6"
-                              style={{ borderColor: 'var(--color-border)' }}
-                            >
-                              <ModuleRenderer module={module} />
-                            </article>
-                            {artworkByPosition.has(index) && (
-                              <DevotionalArtwork
-                                artwork={artworkByPosition.get(index)!}
-                                onOpenLightbox={() =>
-                                  lightbox.open(
-                                    artworkByPosition.get(index)!.slug,
-                                  )
-                                }
-                              />
-                            )}
-                          </Fragment>
-                        ))
-                      : panels?.slice(1).map((panel, index) => (
-                          <Fragment key={panel.number}>
-                            <article
-                              id={`devotional-section-${index + 1}`}
-                              className="devotional-shell-panel border px-6 py-6"
-                              style={{ borderColor: 'var(--color-border)' }}
-                            >
-                              {index > 0 && (
-                                <div
-                                  className="mb-6 border-t"
-                                  style={{ borderColor: 'var(--color-border)' }}
-                                  aria-hidden="true"
-                                />
-                              )}
-                              <PanelComponent panel={panel} />
-                            </article>
-                            {artworkByPosition.has(index) && (
-                              <DevotionalArtwork
-                                artwork={artworkByPosition.get(index)!}
-                                onOpenLightbox={() =>
-                                  lightbox.open(
-                                    artworkByPosition.get(index)!.slug,
-                                  )
-                                }
-                              />
-                            )}
-                          </Fragment>
-                        ))}
-                  </div>
-
-                  <section
-                    className="devotional-shell-panel mt-6 border px-6 py-5"
-                    style={{ borderColor: 'var(--color-border)' }}
-                  >
-                    <p className="vw-small text-secondary">
-                      {isCompleted
-                        ? 'Finished. Return anytime to re-read.'
-                        : 'Finished reading? Mark this day read.'}
-                    </p>
-                    <div className="mt-4 flex flex-wrap items-center gap-3">
-                      {!isCompleted && (
-                        <button
-                          type="button"
-                          className="cta-major text-label vw-small px-5 py-2"
-                          onClick={() => {
-                            markComplete(slug, timeSpent)
-                            setIsCompleted(true)
-                            window.dispatchEvent(
-                              new CustomEvent('libraryUpdated'),
-                            )
-                          }}
-                        >
-                          MARK READ
-                        </button>
-                      )}
-                      <button
-                        type="button"
-                        className="text-label vw-small link-highlight"
-                        onClick={() => void saveBookmark(devotional.title)}
-                      >
-                        BOOKMARK
-                      </button>
-                    </div>
-                  </section>
-                </>
-              )}
-            </div>
+            ) : null}
           </section>
 
           {(prevDay || nextDay) && (
