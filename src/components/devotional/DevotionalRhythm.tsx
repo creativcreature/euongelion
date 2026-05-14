@@ -80,8 +80,11 @@ export default function DevotionalRhythm({
     return chunkInto(moduleList, images.length).map((chunk, i) => ({
       image: images[i] ?? images[images.length - 1],
       modules: chunk,
-      // Alternate: block 0 → image left, block 1 → image right, ...
-      side: (i % 2 === 0 ? 'left' : 'right') as 'left' | 'right',
+      // Founder direction 2026-05-14: text-left / image-right on
+      // every block (no alternation). The reading column stays in
+      // a consistent position so the eye doesn't reset between
+      // chapters.
+      side: 'right' as 'left' | 'right',
     }))
   }, [enabled, images, moduleList])
 

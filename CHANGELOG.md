@@ -5,6 +5,23 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R24 / Text-left rhythm + Daily Bread reader parity (2026-05-14)
+
+Two founder corrections:
+
+1. **Rhythm reader: text-left / image-right on every block.** The previous implementation alternated (block 1 = image left, block 2 = image right). Founder wants the reading column in a consistent position. `DevotionalRhythm.tsx` `side` field now hardcoded to `'right'` for every block. CSS for `[data-image-side="right"]` already existed (it was used by alternate blocks); now applies to all.
+
+2. **Daily Bread reader styled to match the dedicated /devotional route.** `CuratedActiveView` (the component that renders today's reading on `/daily-bread` when a curated series is active) now uses the same `DevotionalFolio` + `DevotionalHeadline` + `DevotionalRhythm` pipeline. The reader on Daily Bread reads as a publication, not a card.
+
+Files:
+
+- `src/components/devotional/DevotionalRhythm.tsx` — single-line change locking `side: 'right'`.
+- `src/components/daily-bread/CuratedActiveView.tsx` — imports + hooks for folio/headline/rhythm, `body.rhythm-enabled` effect on mount, JSX restructured to wrap modules in the rhythm.
+
+PRD: `docs/feature-prds/F-061.md` (Round 24). Decision: SA-013.
+
+---
+
 ## F-061 R23-hotfix / Devotionals not loading — missing react-markdown dep + hydration mismatches (2026-05-14)
 
 Founder report: "devotionals are no longer loading."
