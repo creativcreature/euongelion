@@ -5,6 +5,14 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R26 / Homepage featured rail: 7 cards (was 6) (2026-05-14)
+
+Founder direction: bump the homepage featured-series rail from 6 → 7 cards. `featuredSlugs` slice cap raised in `src/app/page.tsx:128`. Surfaces one more series from `FEATURED_SERIES` / `ALL_SERIES_ORDER` without changing the underlying data.
+
+PRD: `docs/feature-prds/F-061.md` (Round 26). Decision: SA-013.
+
+---
+
 ## F-061 R25 / Audit polish bundle — cobalt lock · typography · liturgical calendar · colophon · JSON-LD (2026-05-14)
 
 Founder direction: implement the audit punch list. Cobalt is the brand color. This round ships ~13 items from the audit at S-effort; documents the rest as deferred-for-next-sprint with clear pointers.

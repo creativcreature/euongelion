@@ -123,9 +123,12 @@ export default function Home() {
   const [isMobileViewport, setIsMobileViewport] = useState(false)
 
   const featuredSlugs = useMemo(() => {
+    // Founder direction 2026-05-14: 7 cards on the homepage rail
+    // (was 6). Surfaces one more series from FEATURED_SERIES /
+    // ALL_SERIES_ORDER without changing the underlying data.
     const seeded = [...FEATURED_SERIES, ...ALL_SERIES_ORDER]
     const deduped = Array.from(new Set(seeded))
-    return deduped.slice(0, 6)
+    return deduped.slice(0, 7)
   }, [])
   const faqWindow = useMemo(
     () =>
