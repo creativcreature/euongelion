@@ -5,6 +5,39 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R32 / Substack original-link CTAs + substack image header (2026-05-14)
+
+**Founder direction:**
+
+- "Do not rewrite the devotional or change their ordering on page. Scripture is always the lead."
+- "Ensure that ALL substack tagged devotionals have a link to the original substack article and a CTA in the series header as well as in the individual devotional pages."
+- "Pull in the images from the original devotionals on substack — the links etc are in the substack information in the site folders somewhere."
+- "Every single substack devotional content needs to match the substack original — using the original images. The original images are header style so you may need to restyle the substack devotionals specifically to accommodate."
+
+### Changes
+
+- **New `scripts/build-substack-sources.ts`** — one-shot build script that scans `content/series-html/*.html`, sorts by `post_id` ascending (publication order), maps the Nth HTML for each substack series to that series' Day N, and extracts the first `substack-post-media.s3.amazonaws.com` image URL.
+- **New `src/data/substack-sources.ts`** — auto-generated mapping of 93 substack devotional slugs → `{ substackUrl, substackImage }`. Covers 16 of 18 substack series (`signs-boldness-opposition-integrity` and `witness-under-pressure-expansion` have no HTML candidates yet — these slugs simply won't show the CTA + banner until their HTML lands).
+- **Series page (`SeriesPageClient.tsx`)** — new "READ THE ORIGINAL ON SUBSTACK ↗" CTA, rendered only when the series' first day has a substack source. Sits in the breadcrumb row below the existing SeriesActions block.
+- **Devotional page (`DevotionalPageClient.tsx`)** — substack-sourced devotional slugs now render the original substack header image as a banner (`.devotional-substack-banner`) directly under the breadcrumbs, plus a "READ ON SUBSTACK ↗" CTA in the existing actions row beside BACK TO SERIES + SHARE.
+- **Substack devotionals skip the 2-col rhythm.** Founder direction: do not change ordering on page. When `SUBSTACK_SOURCES[slug]` exists, the modules / panels render full-width sequentially in original publication order (`space-y-6` instead of `.devotional-rhythm-stage`). Curated (non-substack) devotionals continue to use the R30 zig-zag rhythm.
+- **`CuratedActiveView.tsx` (Daily Bread)** mirrors the same logic so substack devotionals shown in Daily Bread also render full-width sequential.
+
+### Verified locally
+
+- `/devotional/too-busy-for-god-day-1`: substack banner img with `substack-post-media.s3.amazonaws.com/.../dd8251b1-..._1536x1024.png`; 1 "READ ON SUBSTACK" CTA pointing at `https://wokegod.substack.com/p/too-busy-for-god`; flat `space-y-6` stack (no rhythm).
+- `/devotional/peace-day-3` (curated wake-up series): no banner, 2-col rhythm intact with 8 items alternating left / full / right.
+- Type-check clean.
+
+### Deferred
+
+- 2 of 18 substack series have no HTML files in `content/series-html/` yet (`signs-boldness-opposition-integrity`, `witness-under-pressure-expansion`). They render normally with no substack CTA / banner until their HTML is pulled in.
+- Images are hot-linked from `substack-post-media.s3.amazonaws.com`. Substack-hosted assets are stable in practice but a future round could download them locally for offline use / Cloudflare cache.
+
+PRD: `docs/feature-prds/F-061.md` (Round 32). Decision: SA-013.
+
+---
+
 ## F-061 R31 / Site image audit — swap 14 photo-style images to approved riso (2026-05-14)
 
 **Founder direction:** "No photo style images allowed — comb the site after finishing the above tasks. Do not generate images, find images in the approved mostly blue riso style."

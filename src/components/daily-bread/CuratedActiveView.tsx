@@ -11,6 +11,7 @@ import { useDevotionalLibraryStore } from '@/stores/devotionalLibraryStore'
 import { SERIES_DATA } from '@/data/series'
 import { typographer } from '@/lib/typographer'
 import { getRhythmPosition } from '@/lib/devotional-rhythm'
+import { SUBSTACK_SOURCES } from '@/data/substack-sources'
 import type { Devotional, Module, Panel } from '@/types'
 
 interface CuratedActiveViewProps {
@@ -311,13 +312,20 @@ export default function CuratedActiveView({
           </Link>
         </section>
       ) : (
-        <div className="devotional-rhythm-stage">
+        <div
+          className={
+            SUBSTACK_SOURCES[day.slug] ? 'space-y-6' : 'devotional-rhythm-stage'
+          }
+        >
           {modules
             ? (() => {
+                const isSubstack = !!SUBSTACK_SOURCES[day.slug]
                 let halfIndex = 0
                 return modules.map((module, index) => {
-                  const pos = getRhythmPosition(module.type, halfIndex)
-                  if (pos !== 'full') halfIndex += 1
+                  const pos = isSubstack
+                    ? 'full'
+                    : getRhythmPosition(module.type, halfIndex)
+                  if (!isSubstack && pos !== 'full') halfIndex += 1
                   return (
                     <article
                       key={index}
@@ -330,7 +338,12 @@ export default function CuratedActiveView({
                 })
               })()
             : panels?.slice(1).map((panel, index) => {
-                const pos: 'left' | 'right' = index % 2 === 0 ? 'left' : 'right'
+                const isSubstack = !!SUBSTACK_SOURCES[day.slug]
+                const pos: 'left' | 'right' | 'full' = isSubstack
+                  ? 'full'
+                  : index % 2 === 0
+                    ? 'left'
+                    : 'right'
                 return (
                   <Fragment key={panel.number}>
                     <article

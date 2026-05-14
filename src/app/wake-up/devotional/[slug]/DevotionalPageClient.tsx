@@ -29,6 +29,7 @@ import { DEVOTIONAL_ARTWORKS } from '@/data/artwork-manifest'
 import { SITE_DEVOTIONAL_ART } from '@/data/site-devotional-art'
 import { getSeriesHero } from '@/lib/series-hero'
 import { getRhythmPosition } from '@/lib/devotional-rhythm'
+import { SUBSTACK_SOURCES } from '@/data/substack-sources'
 import type { Devotional, Module, Panel } from '@/types'
 
 const DevotionalChat = dynamic(() => import('@/components/DevotionalChat'), {
@@ -323,6 +324,22 @@ export default function DevotionalPageClient({
             ]}
           />
 
+          {/* R32: Substack devotionals get a header banner with the
+              original article's image — pulled directly from the
+              substack post via the auto-generated SUBSTACK_SOURCES
+              map. Substack images are header-style horizontal
+              banners. */}
+          {SUBSTACK_SOURCES[slug]?.substackImage && (
+            <figure className="devotional-substack-banner mb-7">
+              <img
+                src={SUBSTACK_SOURCES[slug]!.substackImage!}
+                alt={`Original cover image: ${devotional.title}`}
+                loading="eager"
+                className="w-full h-auto"
+              />
+            </figure>
+          )}
+
           <header
             className="devotional-shell-panel devotional-shell-block mb-8 border px-6 py-6"
             style={{ borderColor: 'var(--color-border)' }}
@@ -363,6 +380,16 @@ export default function DevotionalPageClient({
                 title={devotional.title}
                 text={`${devotional.title} — Euangelion`}
               />
+              {SUBSTACK_SOURCES[slug]?.substackUrl && (
+                <a
+                  href={SUBSTACK_SOURCES[slug]!.substackUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-label vw-small link-highlight"
+                >
+                  READ ON SUBSTACK ↗
+                </a>
+              )}
             </div>
           </header>
 
@@ -478,16 +505,28 @@ export default function DevotionalPageClient({
               ) : (
                 <>
                   <DevotionalStickiesLayer devotionalSlug={slug} />
-                  <div className="devotional-rhythm-stage">
+                  {/* R32: substack-sourced devotionals render in
+                      original order, full-width, no zig-zag rhythm.
+                      Founder direction: do not rewrite or change
+                      ordering on page; scripture is always the
+                      lead. Curated (non-substack) devotionals
+                      continue to use the 2-col rhythm from R30. */}
+                  <div
+                    className={
+                      SUBSTACK_SOURCES[slug]
+                        ? 'space-y-6'
+                        : 'devotional-rhythm-stage'
+                    }
+                  >
                     {modules
                       ? (() => {
+                          const isSubstack = !!SUBSTACK_SOURCES[slug]
                           let halfIndex = 0
                           return modules.map((module, index) => {
-                            const pos = getRhythmPosition(
-                              module.type,
-                              halfIndex,
-                            )
-                            if (pos !== 'full') halfIndex += 1
+                            const pos = isSubstack
+                              ? 'full'
+                              : getRhythmPosition(module.type, halfIndex)
+                            if (!isSubstack && pos !== 'full') halfIndex += 1
                             return (
                               <Fragment key={index}>
                                 <article
@@ -514,11 +553,15 @@ export default function DevotionalPageClient({
                           })
                         })()
                       : (() => {
+                          const isSubstack = !!SUBSTACK_SOURCES[slug]
                           let halfIndex = 0
                           return panels?.slice(1).map((panel, index) => {
-                            const pos: 'left' | 'right' =
-                              halfIndex % 2 === 0 ? 'left' : 'right'
-                            halfIndex += 1
+                            const pos: 'left' | 'right' | 'full' = isSubstack
+                              ? 'full'
+                              : halfIndex % 2 === 0
+                                ? 'left'
+                                : 'right'
+                            if (!isSubstack) halfIndex += 1
                             return (
                               <Fragment key={panel.number}>
                                 <article
