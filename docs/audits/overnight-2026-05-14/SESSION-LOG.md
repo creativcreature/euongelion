@@ -117,6 +117,25 @@ PRD: this is R34 of `docs/feature-prds/F-061.md`. Decision: SA-013.
 
 ---
 
-## Deploy status
+## Deploy status — ✅ live
 
-(Updated after `npm run deploy` succeeds.)
+- **Commit:** `22713f97` on `main`.
+- **Cloudflare Worker version:** `15a44b9f-d3ad-40b3-84bd-ef82454c0b1f`.
+- **Deployed:** 2026-05-14 05:14 UTC.
+- **Live verification (curl + Playwright on production):**
+  - `/` → `<title>Euangelion</title>`, single `<h1>` element, brand wordmark renders unchanged, 0 console errors on initial load.
+  - `/soul-audit` → `<title>Soul Audit | Euangelion</title>` ✓
+  - `/daily-bread` → `<title>Daily Bread | Euangelion</title>` ✓
+  - `/series` → `<title>All Series | Euangelion</title>` ✓
+  - `/library` → `<title>Your Library | Euangelion</title>` ✓
+  - CSP header now includes `cloudflareinsights.com` in both `script-src` and `connect-src` ✓
+  - Audit page reachable at `https://euangelion.app/audits/overnight-2026-05-14/` (200) ✓
+
+## Final summary
+
+- **Research:** 5 Awwwards editorial winners + recurring 2026 patterns + CWV thresholds + WCAG 2.2 AAA targets captured.
+- **Audit:** 11 findings logged across functional, SEO, a11y, perf. P0 = 0, P1 = 6, P2 = 5.
+- **Fixed tonight:** 3 P1s (CSP, dup H1, per-page metadata × 4 routes). Plus R32 + R33 verified intact.
+- **Deferred:** 6 items with explicit rationale — none are trivial CSS tweaks, all need either editorial review (per-image relevance, pull-quote authoring), separate build pipelines (substack CDN caching), or risky render-tree work (React #418 bisection).
+- **Deploy:** live, verified, no regressions.
+- **Hard constraints honoured:** homepage header + masthead visually unchanged (wordmark demoted from `<h1>` → `<div role="presentation">` only for a11y — same pixels rendered); no devotional copy or ordering touched; substack rules intact; scripture remains the lead element on every devotional.
