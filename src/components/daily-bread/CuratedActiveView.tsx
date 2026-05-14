@@ -7,7 +7,14 @@ import ModuleRenderer from '@/components/ModuleRenderer'
 import Toast from '@/components/Toast'
 import { useDevotionalLibraryStore } from '@/stores/devotionalLibraryStore'
 import { SERIES_DATA } from '@/data/series'
-import { typographer } from '@/lib/typographer'
+import { getSeriesHero } from '@/lib/series-hero'
+import { SITE_DEVOTIONAL_ART } from '@/data/site-devotional-art'
+import { DEVOTIONAL_ARTWORKS } from '@/data/artwork-manifest'
+import DevotionalFolio from '@/components/devotional/DevotionalFolio'
+import DevotionalHeadline from '@/components/devotional/DevotionalHeadline'
+import DevotionalRhythm, {
+  type RhythmImage,
+} from '@/components/devotional/DevotionalRhythm'
 import type { Devotional, Module, Panel } from '@/types'
 
 interface CuratedActiveViewProps {
@@ -55,6 +62,18 @@ export default function CuratedActiveView({
     setActiveDay(currentDay)
   }, [currentDay, seriesSlug])
 
+  // Daily Bread style parity 2026-05-14: surface the same folio +
+  // headline + rhythm reader the dedicated /devotional route uses,
+  // so today's reading reads as a publication, not a card. Mount-only
+  // flag for the CSS layer that enables the 2-col rhythm grid.
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    document.body.classList.add('rhythm-enabled')
+    return () => {
+      document.body.classList.remove('rhythm-enabled')
+    }
+  }, [])
+
   const totalDays = series?.days.length ?? 0
   const safeDay = useMemo(
     () => Math.max(1, Math.min(activeDay, totalDays || activeDay)),
@@ -64,6 +83,44 @@ export default function CuratedActiveView({
   const prevDay = safeDay > 1 ? series?.days[safeDay - 2] : null
   const nextDay =
     safeDay < (series?.days.length ?? 0) ? series?.days[safeDay] : null
+
+  // Headline / rhythm imagery — same resolution order as the
+  // dedicated reader. Curated artwork for this day → series hero
+  // fallback. Hoisted above the early-return guard so React's
+  // rules-of-hooks aren't violated. Memos read from `day?.slug`
+  // safely; when day is null they yield empty arrays / nulls and
+  // the JSX below renders the loading/error path.
+  const daySlugForImages = day?.slug ?? ''
+  const computedDayArtworks = useMemo(() => {
+    const explicit =
+      SITE_DEVOTIONAL_ART[daySlugForImages] ??
+      DEVOTIONAL_ARTWORKS[daySlugForImages] ??
+      []
+    if (explicit.length > 0) return explicit
+    const seriesHero = getSeriesHero(seriesSlug)
+    return seriesHero ? [seriesHero] : []
+  }, [daySlugForImages, seriesSlug])
+  const computedRhythmImages = useMemo<RhythmImage[]>(
+    () =>
+      computedDayArtworks.map((a) => ({
+        src: a.src,
+        alt: a.title || 'Devotional artwork',
+        caption: a.title || undefined,
+      })),
+    [computedDayArtworks],
+  )
+  const computedHeadlineImage = useMemo(() => {
+    const seriesHero = getSeriesHero(seriesSlug)
+    return seriesHero ?? computedDayArtworks[0] ?? null
+  }, [seriesSlug, computedDayArtworks])
+  const computedModules = (
+    devotional as (Devotional & { modules?: Module[] }) | null
+  )?.modules
+  const modulesScripture = useMemo(() => {
+    if (!computedModules) return undefined
+    const scriptureMod = computedModules.find((m) => m.type === 'scripture')
+    return scriptureMod?.reference ?? undefined
+  }, [computedModules])
 
   useEffect(() => {
     if (!day) return
@@ -152,6 +209,9 @@ export default function CuratedActiveView({
   const modules = (devotional as (Devotional & { modules?: Module[] }) | null)
     ?.modules
   const panels = devotional?.panels
+  const headlineScripture = modulesScripture
+  const rhythmImages = computedRhythmImages
+  const headlineImage = computedHeadlineImage
 
   return (
     <section className="curated-active-view" aria-label="Today's devotional">
@@ -232,69 +292,88 @@ export default function CuratedActiveView({
         </nav>
       )}
 
-      <article
-        className="devotional-shell-panel border px-6 py-6 mb-5"
-        style={{ borderColor: 'var(--color-border)' }}
-      >
-        <p className="text-label vw-small text-gold mb-2">DAY {day.day}</p>
-        {loading ? (
+      {loading ? (
+        <article
+          className="devotional-shell-panel border px-6 py-6 mb-5"
+          style={{ borderColor: 'var(--color-border)' }}
+        >
+          <p className="text-label vw-small text-gold mb-2">DAY {day.day}</p>
           <p className="vw-body text-secondary">
             Loading today&rsquo;s reading…
           </p>
-        ) : !devotional ? (
-          <div>
-            <p className="vw-body text-secondary mb-3">
-              We couldn&rsquo;t load this day&rsquo;s reading. It may not have
-              been published yet.
-            </p>
-            <Link
-              href={`/devotional/${day.slug}`}
-              className="cta-major text-label vw-small inline-block px-5 py-2"
-            >
-              TRY THE FULL READER
-            </Link>
-          </div>
-        ) : (
-          <>
-            {devotional.scriptureReference && (
-              <p className="text-label vw-small text-gold mb-2">
-                {devotional.scriptureReference}
-              </p>
-            )}
-            <h2 className="vw-heading-sm mb-3">
-              {typographer(devotional.title)}
-            </h2>
-            {devotional.teaser && (
-              <p className="vw-body text-secondary mb-5">
-                {typographer(devotional.teaser)}
-              </p>
-            )}
+        </article>
+      ) : !devotional ? (
+        <article
+          className="devotional-shell-panel border px-6 py-6 mb-5"
+          style={{ borderColor: 'var(--color-border)' }}
+        >
+          <p className="text-label vw-small text-gold mb-2">DAY {day.day}</p>
+          <p className="vw-body text-secondary mb-3">
+            We couldn&rsquo;t load this day&rsquo;s reading. It may not have
+            been published yet.
+          </p>
+          <Link
+            href={`/devotional/${day.slug}`}
+            className="cta-major text-label vw-small inline-block px-5 py-2"
+          >
+            TRY THE FULL READER
+          </Link>
+        </article>
+      ) : (
+        <>
+          {/* Folio strip — same page furniture the dedicated reader uses. */}
+          {series && (
+            <DevotionalFolio
+              seriesTitle={series.title}
+              dayNumber={day.day}
+              totalDays={series.days.length}
+            />
+          )}
 
-            <div className="space-y-5">
-              {modules
-                ? modules.map((module, index) => (
+          {/* Headline hero — homepage-style 2/3 image + 1/3 text. */}
+          {headlineImage && (
+            <DevotionalHeadline
+              imageSrc={headlineImage.src}
+              imageAlt={headlineImage.title || devotional.title}
+              eyebrow={
+                series
+                  ? `${series.title} · ${series.days.length} Days`
+                  : undefined
+              }
+              scripture={headlineScripture}
+              title={devotional.title}
+            />
+          )}
+
+          {/* Rhythm reader — text-left / image-right alternating chapter
+              blocks, same as the dedicated reader. */}
+          <DevotionalRhythm
+            images={rhythmImages}
+            enabled={rhythmImages.length > 0}
+          >
+            {modules
+              ? modules.map((module, index) => (
+                  <article
+                    key={index}
+                    className="devotional-shell-panel border px-5 py-5"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    <ModuleRenderer module={module} />
+                  </article>
+                ))
+              : panels?.slice(1).map((panel) => (
+                  <Fragment key={panel.number}>
                     <article
-                      key={index}
                       className="devotional-shell-panel border px-5 py-5"
                       style={{ borderColor: 'var(--color-border)' }}
                     >
-                      <ModuleRenderer module={module} />
+                      <PanelInline panel={panel} />
                     </article>
-                  ))
-                : panels?.slice(1).map((panel) => (
-                    <Fragment key={panel.number}>
-                      <article
-                        className="devotional-shell-panel border px-5 py-5"
-                        style={{ borderColor: 'var(--color-border)' }}
-                      >
-                        <PanelInline panel={panel} />
-                      </article>
-                    </Fragment>
-                  ))}
-            </div>
-          </>
-        )}
-      </article>
+                  </Fragment>
+                ))}
+          </DevotionalRhythm>
+        </>
+      )}
 
       <nav
         className="curated-active-prevnext grid gap-4 md:grid-cols-2"
