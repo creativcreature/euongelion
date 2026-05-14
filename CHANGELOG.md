@@ -5,6 +5,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R23-hotfix / Devotionals not loading — missing react-markdown dep + hydration mismatches (2026-05-14)
+
+Founder report: "devotionals are no longer loading."
+
+**Root cause (the real one):** `react-markdown` was imported by `src/components/modules/TeachingModule.tsx` and `src/app/series/[slug]/deep-dive/page.tsx` — added during the gallant-swirles sweep (PR #18) — but never installed. The dev server failed compilation with "Module not found"; the production build had been quietly shipping a broken bundle for devotional pages.
+
+**Co-conspirator:** `CookieConsentBanner` initialized `visible` via `typeof document` check, returning a different value on server vs client first render. That triggered React error #418 (hydration mismatch) which made the page "regenerate" client-side — visible as flash + slow load + occasional blank state.
+
+**Fixes:**
+
+1. `npm install react-markdown@^10.1.0`. Now in `package.json` deps. Both `TeachingModule` and `series/[slug]/deep-dive` resolve cleanly.
+2. `CookieConsentBanner.tsx` — `visible` now defaults to `false` on both server and client; resolved client-side via `useEffect` after mount. Standard React-19 hydration-safe pattern.
+3. `DevotionalFolio.tsx` — same pattern applied to the date. `new Date()` no longer runs in render; placeholder time element on SSR + first paint, real date set on mount.
+
+Verified in dev (`npm run dev`): devotional renders fully — folio, headline hero, 2 rhythm blocks, full module flow. The remaining `editorial-reveal-target` className diff is a pre-existing minor warning from `EditorialMotionSystem` (unrelated to this batch; not blocking render).
+
+PRD: `docs/feature-prds/F-061.md` (Round 23-hotfix).
+
+---
+
 ## F-061 R23 / Rhythm rebuild — alternating image-left/right blocks · Soul-Audit navy lock · sidebar tuck · stickies disabled (2026-05-14)
 
 Four corrections in one batch:
