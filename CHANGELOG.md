@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R23 / Rhythm rebuild — alternating image-left/right blocks · Soul-Audit navy lock · sidebar tuck · stickies disabled (2026-05-14)
+
+Four corrections in one batch:
+
+1. **Soul Audit + How-It-Works blue locked to deep navy `#171b69`.**
+   The previous lighter cobalt (`--mock-blue` → `#1f2a8d`) drifted between modes. New `--color-deep-navy` token is hardcoded in both `:root` and `.dark`, so the band reads identically in light and dark mode. Only the audit + howitworks bands take this lock; the rest of the page still uses `--mock-blue`.
+
+2. **Rhythm reader rebuilt as alternating image-left/right blocks.**
+   The previous implementation used one global sticky rail with an IntersectionObserver crossfade. The founder asked for the exact NYT-Magazine pattern: images on either side, two-column situation per block. Now each block is its own 2-col grid with a sticky image inside it; the image side flips per block via `[data-image-side]`. No more global rail. No more observer. Much simpler. Mobile collapses each block to single-column with image stacked above its text.
+
+3. **Devotional left sidebar tucked away on every breakpoint.**
+   The 260px day-nav sidebar was competing with reading content on desktop. Now it's hidden by default at every viewport and reveals as a drawer when the reader taps the "DAY N OF M" pill. Sidebar markup unchanged; just gated behind the existing toggle pill, which was previously mobile-only.
+
+4. **Floating sticky-notes layer disabled.**
+   `DevotionalStickiesLayer` now returns null unconditionally (guarded by an internal `STICKIES_FLOATING_LAYER = false` flag). Data layer (load / persist / add / delete) is preserved, ready for the next pattern. Documented recommended replacement: a floating "Notes ✎ (n)" pill bottom-right opening a side drawer; phase-2 Tufte-style margin sidenotes anchored to text positions.
+
+Files:
+
+- `src/app/globals.css` — `--color-deep-navy` token, audit/howitworks band pinned, full rhythm CSS rewrite (chapter blocks, alternation, sticky-per-block, mobile fallback)
+- `src/components/devotional/DevotionalRhythm.tsx` — rewritten for chunk-into-blocks pattern, no observer
+- `src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx` — sidebar toggle promoted to all breakpoints
+- `src/components/DevotionalStickiesLayer.tsx` — flag-gated to render null + replacement spec in JSDoc
+
+PRD: `docs/feature-prds/F-061.md` (Round 23). Decision: SA-013.
+
+---
+
 ## F-061 R22 / Audit batch — NYT-style reading rhythm + headline hero + folio strip + polish utilities (2026-05-13)
 
 Founder direction: implement the audit punch list, with a focus on the NYT Magazine reading rhythm (sticky image + scrolling text, image swaps as you scroll, format shifts). Homepage header image + masthead must stay unchanged. Build in a way that aspects can be scaled back.

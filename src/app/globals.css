@@ -12,10 +12,16 @@
 :root {
   --color-amber: #c8a56a;
   --color-crimson: #c4192e;
+  /* True navy cobalt — the dominant brand ink. Hardcoded so the
+     Soul Audit + How-It-Works bands read the SAME blue in both
+     light and dark mode. --mock-blue swaps between modes
+     (#1f2a8d ↔ #171b69); we don't want that drift on these bands. */
+  --color-deep-navy: #171b69;
 }
 .dark {
   --color-amber: #d8b878;
   --color-crimson: #e25868;
+  --color-deep-navy: #171b69;
 }
 .smcp {
   font-variant-caps: all-small-caps;
@@ -303,7 +309,10 @@ h3 {
   padding: 2rem 1.6rem 2.2rem;
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
   margin: 0;
-  background: var(--mock-blue, #1f2a8d);
+  /* Founder direction 2026-05-14: lock to the deep navy so the
+     band reads identically in light and dark mode (was drifting
+     to the lighter cobalt #1f2a8d in light mode via --mock-blue). */
+  background: var(--color-deep-navy, #171b69);
   color: #f3eadb;
 }
 .homepage-soul-audit .mock-kicker,
@@ -319,7 +328,7 @@ h3 {
   margin-top: 0.6rem;
   width: min(56rem, 100%);
   background: color-mix(in srgb, #f3eadb 96%, transparent);
-  color: var(--mock-blue, #1f2a8d);
+  color: var(--color-deep-navy, #171b69);
   border-color: #f3eadb;
 }
 .homepage-soul-audit .homepage-prompt-pills {
@@ -338,13 +347,13 @@ h3 {
   justify-self: center;
   margin-top: 0.8rem;
   background: #f3eadb;
-  color: var(--mock-blue, #1f2a8d);
+  color: var(--color-deep-navy, #171b69);
   border-color: #f3eadb;
 }
 .homepage-soul-audit .mock-btn-inline:hover,
 .homepage-soul-audit .mock-btn-inline:focus-visible {
   background: #fff;
-  color: var(--mock-blue, #1f2a8d);
+  color: var(--color-deep-navy, #171b69);
 }
 .homepage-soul-audit .mock-reset-btn {
   color: color-mix(in srgb, #f3eadb 88%, transparent);
@@ -389,9 +398,10 @@ h3 {
 }
 
 /* "Here's how it works" — same mode-flip as Soul Audit. Light mode
-   = blue/cream pop. Dark mode = paper card. */
+   = deep-navy/cream pop (locked to #171b69 so it matches the audit
+   band exactly). Dark mode = paper card. */
 .homepage-howitworks {
-  background: var(--mock-blue, #1f2a8d);
+  background: var(--color-deep-navy, #171b69);
   color: #f3eadb;
   text-align: center;
   padding: 1.6rem 1.4rem 0.75rem;
@@ -405,7 +415,7 @@ h3 {
 .homepage-howitworks-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  background: var(--mock-blue, #1f2a8d);
+  background: var(--color-deep-navy, #171b69);
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
 }
 .homepage-howitworks-grid .mock-step-card {
@@ -4033,6 +4043,20 @@ html.reduce-motion *::after {
   }
 }
 
+/* Founder direction 2026-05-14: the 260px day-nav sidebar competed
+   with the reading content on desktop. It now lives behind the
+   "DAY N OF M" pill at every breakpoint. When closed, the sidebar
+   is fully hidden and the reader gets the full content column. */
+.devotional-shell-grid.is-sidebar-closed .devotional-shell-sidebar-wrap {
+  display: none;
+}
+.devotional-shell-grid.is-sidebar-closed {
+  display: block;
+}
+.devotional-shell-grid.is-sidebar-open .devotional-shell-sidebar-wrap {
+  display: block;
+}
+
 /* Audit H7 (HOMEPAGE-AUDIT-2026-05-11): resume-series pill. Quiet,
    editorial. Renders only when localStorage progress exists. */
 .resume-series-pill {
@@ -7230,106 +7254,123 @@ html.reduce-motion *::after {
      observer disconnects, the rail hides, modules render normally.
    - Or: change `grid-template-columns` here to `1fr` to force the
      legacy single-column flow. */
+/* Rebuilt 2026-05-14: alternating-column NYT-style rhythm. Each
+   .rhythm-block is its OWN two-column grid; image side flips per
+   block via [data-image-side]. No global sticky rail, no observer. */
 .devotional-rhythm {
-  display: grid;
-  /* Rail narrower than text so the reader has comfortable measure
-     (~50–60ch). Adjust on wider viewports. */
-  grid-template-columns: minmax(220px, 1fr) minmax(0, 1.5fr);
-  gap: clamp(1.4rem, 2.6vw, 2.2rem);
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.4rem, 5vw, 4.4rem);
   position: relative;
 }
+
+.rhythm-block {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(0, 1.4fr);
+  gap: clamp(1.6rem, 3vw, 2.8rem);
+  align-items: start;
+}
 @media (min-width: 1280px) {
-  .devotional-rhythm {
-    grid-template-columns: minmax(280px, 1fr) minmax(0, 1.6fr);
+  .rhythm-block {
+    grid-template-columns: minmax(320px, 1fr) minmax(0, 1.5fr);
   }
 }
-/* The rail itself is the sticky element. align-self: start so it
-   doesn't try to fill the grid row (which is sized to the much
-   taller text column). The rail's own height is the viewport-aware
-   value below, and it sticks as the reader scrolls past it. */
-.devotional-rhythm-rail {
+/* Image-right blocks: image goes into column 2, text into column 1. */
+.rhythm-block[data-image-side='right'] .rhythm-block-image {
+  order: 2;
+}
+.rhythm-block[data-image-side='right'] .rhythm-block-text {
+  order: 1;
+}
+
+/* Each block's image is sticky WITHIN that block — it holds as the
+   block's text scrolls past, then releases as the next block enters. */
+.rhythm-block-image {
   position: sticky;
   top: clamp(1rem, 4vh, 3rem);
   align-self: start;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.rhythm-block-image-frame {
+  position: relative;
   width: 100%;
-  height: clamp(280px, calc(100vh - 6rem), 760px);
+  aspect-ratio: 1408 / 1700;
+  max-height: calc(100vh - clamp(2rem, 8vh, 5rem));
   border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
   overflow: hidden;
   background: var(--mock-ink, black);
 }
-/* Legacy `.devotional-rhythm-sticky` selector kept as a no-op fall
-   through so any cached DOM doesn't break. Safe to delete later. */
-.devotional-rhythm-sticky {
-  display: contents;
-}
-.devotional-rhythm-img-wrap {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 480ms cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity;
-}
-.devotional-rhythm-img-wrap.is-active {
-  opacity: 1;
-}
-.devotional-rhythm-img-wrap img {
+.rhythm-block-image-frame img {
   object-fit: cover;
   object-position: center;
-  width: 100%;
-  height: 100%;
 }
-.devotional-rhythm-caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0.6rem 0.9rem;
-  background: linear-gradient(
-    to top,
-    color-mix(in srgb, var(--mock-ink) 78%, transparent) 0%,
-    color-mix(in srgb, var(--mock-ink) 40%, transparent) 60%,
-    transparent 100%
-  );
+.rhythm-block-caption {
   font-family: var(--font-family-ui, system-ui), system-ui, sans-serif;
   font-weight: 600;
-  font-size: 0.62rem;
+  font-size: 0.66rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: color-mix(in srgb, white 92%, var(--mock-paper) 8%);
+  color: var(--color-text-secondary, currentColor);
+  margin: 0;
+  padding: 0;
 }
-.devotional-rhythm-text {
+
+.rhythm-block-text {
   display: block;
   min-width: 0;
 }
-.devotional-rhythm-text > * + * {
+.rhythm-block-text > * + * {
   margin-top: clamp(1.4rem, 3vw, 2.4rem);
 }
-/* Inline artwork that already lives in the module stream becomes
-   redundant inside the rhythm reader on desktop — the sticky rail is
-   showing the same image. Hide on desktop, restore on mobile so the
-   mobile flow keeps its inline artwork breaks. */
+
+/* Inline artwork breaks (the legacy DevotionalArtwork modules) are
+   redundant on desktop because each block already has its own
+   image. Hide on desktop; restore on mobile so the mobile flow
+   keeps the artwork rhythm. */
 @media (min-width: 1024px) {
   .devotional-rhythm .devotional-artwork-inline {
     display: none;
   }
 }
+
+/* Mobile: blocks collapse to single column. Image stacks above its
+   text. No alternation on mobile — the visual flip relies on
+   horizontal space that doesn't exist at 375–1023px. */
 @media (max-width: 1023px) {
   .devotional-rhythm {
-    grid-template-columns: 1fr;
-    gap: 0;
+    gap: clamp(1.8rem, 4vw, 3rem);
   }
-  .devotional-rhythm-rail {
-    display: none;
+  .rhythm-block {
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 2vw, 1.6rem);
+  }
+  .rhythm-block-image {
+    position: relative;
+    top: auto;
+  }
+  .rhythm-block-image-frame {
+    aspect-ratio: 1408 / 768;
+    max-height: none;
+  }
+  .rhythm-block[data-image-side='right'] .rhythm-block-image {
+    order: 1;
+  }
+  .rhythm-block[data-image-side='right'] .rhythm-block-text {
+    order: 2;
   }
 }
 
-/* Scale-back kill switch:
-   Drop the `.rhythm-enabled` class from <body> (or change the data
-   attribute the React component reads) and the rhythm CSS no-ops. */
+/* Scale-back kill switch: drop .rhythm-enabled on body and the
+   alternating layout collapses to a plain block flow. */
 body:not(.rhythm-enabled) .devotional-rhythm {
   display: block;
 }
-body:not(.rhythm-enabled) .devotional-rhythm-rail {
+body:not(.rhythm-enabled) .rhythm-block {
+  display: block;
+}
+body:not(.rhythm-enabled) .rhythm-block-image {
   display: none;
 }
