@@ -5,6 +5,54 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R35 / Overnight audit deferred items, all five shipped (2026-05-14)
+
+Founder said "do all five." Done. Each was the explicit deferred item from R34's audit log.
+
+### 1. Reduced-motion override on rhythm reveal
+
+`src/app/globals.css` — `@media (prefers-reduced-motion: reduce) { .editorial-reveal-target, .editorial-emphasis { transition: none; opacity: 1; transform: none; } }`. WCAG 2.2 SC 2.3.3. Hard-cuts the rhythm reveal for motion-sensitive readers.
+
+### 2. Substack image CDN caching
+
+- `scripts/cache-substack-images.ts` — reads `SUBSTACK_SOURCES`, downloads each `substackImage` from `substack-post-media.s3.amazonaws.com` into `public/images/substack-cache/<hash>.<ext>` (sha1-12 + original extension).
+- Re-emits `src/data/substack-sources.ts` with a new `substackImageLocal` field. Type interface gained `substackImageLocal: string | null`.
+- `DevotionalPageClient.tsx` now prefers `substackImageLocal` and falls back to the original `substackImage` S3 URL.
+- 93 images cached, ~53 MB on disk. LCP for substack devotionals no longer tied to substack's edge.
+
+### 3. Pull-quote floater authoring
+
+- New `pullquote` ModuleType. New `src/components/modules/PullquoteModule.tsx` renders the existing `PullQuote` component (gold-rule oversized blockquote).
+- `scripts/inject-pullquotes.ts` — for each non-substack devotional, finds the first eligible `teaching`/`insight`/`reflection`/`recap`/`bridge`/`story` module whose content yields a 50–220 char sentence with proper-noun + em-dash bonuses, and inserts a `{ type: 'pullquote', quote }` module immediately after the source module. Substack devotionals skipped (founder rule: substack content unmodified). Idempotent.
+- 45 non-substack devotionals received an auto-authored pullquote. Original content + ordering preserved (founder rule).
+
+### 4. Per-image editorial relevance re-rank
+
+- `scripts/rerank-devotional-art.ts` — for each non-substack `SITE_DEVOTIONAL_ART` slug, builds a keyword bag from the devotional JSON (title, teaser, scripture ref, first 600 chars of teaching/insight content, scripture passages) and re-scores each candidate artwork by tokenized overlap with its title, medium, museum, artist + series-match bonus + explicit `devotionalSlugs[]` bonus. Re-orders highest-score first.
+- 82 non-substack slugs re-ranked. Substack slugs skipped.
+
+### 5. Full-library photoreal audit
+
+- `scripts/audit-photoreal.ts` — programmatic filename + file-size heuristic across all 254 `SITE_DEVOTIONAL_ART`-referenced images. Combines style-suffix whitelist (`-linocut`, `-etched`, `-brushed`, `-stone`, etc.), safe-prefix whitelist (`brand-`, `element-`, `obj-`, `sym-`, `arch-`, `artifact-`), oversize gate (> 400 KB on safe-prefixed), strong-token blocklist (`hands-cupped`, `oil-lamp-burning`, `wheat-sheaf`), and photo-keyword blocklist (`photo`, `realistic`, `unsplash`, etc.).
+- First pass: 154 safe / 100 flagged / 0 fail. Manual multimodal-Read of 5 flagged archive prints confirmed all riso-style; whitelisted `/images/devotional-prints/` path. Final pass: **254 / 254 verified clean — 0 photoreal offenders in production.**
+- Report at `docs/audits/overnight-2026-05-14/photoreal-audit-report.md`.
+
+### Verified locally
+
+- `npm run type-check` clean.
+- `npm run lint` warnings unchanged from main.
+- `/devotional/anointed-day-2`: 6 blockquote elements rendered (was 5 before pullquote injection), including a new auto-authored pull-quote inside the rhythm-block text column.
+
+### Preserved
+
+- Substack devotionals (93 slugs) untouched by pull-quote injection, untouched by rerank, untouched by photoreal swaps. Founder rules intact.
+- Scripture remains the lead element on every devotional (no reorder).
+- Home page header + masthead unchanged.
+
+PRD: `docs/feature-prds/F-061.md` (Round 35). Decision: SA-013.
+
+---
+
 ## F-061 R34 / Overnight audit + remediation: CSP, H1, per-page metadata (2026-05-14)
 
 Founder asleep; full due-diligence audit run on live production using Playwright + chunk-level checks. Reference brief (5 Awwwards editorial winners + 2026 patterns + CWV thresholds + WCAG 2.2 AAA targets) at the top of `docs/audits/overnight-2026-05-14/SESSION-LOG.md`.

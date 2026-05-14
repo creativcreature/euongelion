@@ -27,6 +27,7 @@ import VideoModule from './modules/VideoModule'
 import InlineImageModule from './modules/InlineImageModule'
 import JourneyModule from './modules/JourneyModule'
 import CtaModule from './modules/CtaModule'
+import PullquoteModule from './modules/PullquoteModule'
 
 /**
  * Normalizes a module from either flat or nested Substack format.
@@ -173,6 +174,8 @@ export default function ModuleRenderer({
       return <JourneyModule module={normalized} />
     case 'cta':
       return <CtaModule module={normalized} />
+    case 'pullquote':
+      return <PullquoteModule module={normalized} />
     default:
       return null
   }

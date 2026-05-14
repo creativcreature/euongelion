@@ -85,6 +85,7 @@ export type ModuleType =
   | 'inline-image'
   | 'journey'
   | 'cta'
+  | 'pullquote'
 
 export interface Module {
   type: ModuleType

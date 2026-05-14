@@ -3060,6 +3060,21 @@ html.reduce-motion *::after {
     transform: translate3d(0, 0, 0);
   }
 
+  /* R35: WCAG 2.2 SC 2.3.3 (motion). Honour
+     prefers-reduced-motion: hard-cut the reveal so motion-sensitive
+     readers see content immediately and without translate-y. */
+  @media (prefers-reduced-motion: reduce) {
+    .editorial-reveal-target,
+    .editorial-emphasis {
+      transition: none !important;
+    }
+    .editorial-reveal-target.is-prepared,
+    .editorial-reveal-target.is-prepared .editorial-emphasis {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
   .editorial-emphasis {
     display: inline-block;
     transition:

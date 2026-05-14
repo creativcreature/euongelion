@@ -366,11 +366,19 @@ export default function DevotionalPageClient({
           />
 
           {/* R32: substack devotionals show the original article's
-              header image directly under the breadcrumbs. */}
-          {SUBSTACK_SOURCES[slug]?.substackImage && (
+              header image directly under the breadcrumbs. R35:
+              prefer the locally-cached copy in
+              public/images/substack-cache/<hash>.<ext> over the
+              substack S3 hot-link so LCP isn't tied to substack's
+              edge. */}
+          {(SUBSTACK_SOURCES[slug]?.substackImageLocal ||
+            SUBSTACK_SOURCES[slug]?.substackImage) && (
             <figure className="devotional-substack-banner mb-7">
               <img
-                src={SUBSTACK_SOURCES[slug]!.substackImage!}
+                src={
+                  SUBSTACK_SOURCES[slug]!.substackImageLocal ||
+                  SUBSTACK_SOURCES[slug]!.substackImage!
+                }
                 alt={`Original cover image: ${devotional.title}`}
                 loading="eager"
                 className="w-full h-auto"
