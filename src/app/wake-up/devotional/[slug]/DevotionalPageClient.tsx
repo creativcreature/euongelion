@@ -12,6 +12,7 @@ import DevotionalHeadline from '@/components/devotional/DevotionalHeadline'
 import DevotionalRhythm, {
   type RhythmImage,
 } from '@/components/devotional/DevotionalRhythm'
+import AuthorColophon from '@/components/devotional/AuthorColophon'
 import ScrollProgress from '@/components/ScrollProgress'
 import ReaderTimeline from '@/components/ReaderTimeline'
 import ModuleRenderer from '@/components/ModuleRenderer'
@@ -699,6 +700,14 @@ export default function DevotionalPageClient({
                           </Fragment>
                         ))}
                   </DevotionalRhythm>
+
+                  {/* Audit 2026-05-14: 4-line author colophon caps the reading. */}
+                  <AuthorColophon
+                    translation={
+                      modules?.find((m) => m.type === 'scripture')
+                        ?.translation ?? undefined
+                    }
+                  />
 
                   <section
                     className="devotional-shell-panel mt-6 border px-6 py-5"

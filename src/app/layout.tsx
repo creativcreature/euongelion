@@ -73,6 +73,11 @@ export default function RootLayout({
         />
       </head>
       <body className="newsprint-site antialiased">
+        {/* Audit a11y: skip-link must be the first focusable thing
+            on every page. Hidden until keyboard-focused. */}
+        <a href="#main-content" className="skip-link">
+          Skip to reading
+        </a>
         <Providers>{children}</Providers>
         <ServiceWorkerRegistration />
         <ConsentAwareAnalytics />

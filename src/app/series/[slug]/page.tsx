@@ -97,6 +97,35 @@ export default async function SeriesPage({ params }: Props) {
     })),
   }
 
+  // Audit batch 2026-05-14: emit a CollectionPage entity alongside
+  // CreativeWorkSeries. The two complement each other: CWS describes
+  // the series as a work; CollectionPage describes the URL as a
+  // collection-of-things-to-read. Both index well.
+  const collectionPageJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: series.title,
+    description: series.introduction || series.question,
+    url: seriesUrl,
+    inLanguage: 'en',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Euangelion',
+      url: 'https://euangelion.app',
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: series.days.length,
+      itemListOrder: 'Ascending',
+      itemListElement: series.days.map((day) => ({
+        '@type': 'ListItem',
+        position: day.day,
+        name: day.title,
+        url: `https://euangelion.app/devotional/${day.slug}`,
+      })),
+    },
+  }
+
   return (
     <>
       <script
@@ -106,6 +135,12 @@ export default async function SeriesPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(seriesJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(collectionPageJsonLd),
+        }}
       />
       <SeriesPageClient
         slug={slug}
