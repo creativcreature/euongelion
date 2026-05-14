@@ -7,6 +7,11 @@ import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import DevotionalActions from '@/components/devotional/DevotionalActions'
+import DevotionalFolio from '@/components/devotional/DevotionalFolio'
+import DevotionalHeadline from '@/components/devotional/DevotionalHeadline'
+import DevotionalRhythm, {
+  type RhythmImage,
+} from '@/components/devotional/DevotionalRhythm'
 import ScrollProgress from '@/components/ScrollProgress'
 import ReaderTimeline from '@/components/ReaderTimeline'
 import ModuleRenderer from '@/components/ModuleRenderer'
@@ -160,9 +165,45 @@ export default function DevotionalPageClient({
     return map
   }, [insertionPoints, artworks])
 
+  // Audit batch 2026-05-13: NYT-style sticky-image rhythm. The rail
+  // cycles through the same `artworks` array the inline breaks use,
+  // so a devotional with one curated image still gets one sticky
+  // image on desktop. Captioned with the artwork title when present.
+  const rhythmImages = useMemo<RhythmImage[]>(
+    () =>
+      artworks.map((a) => ({
+        src: a.src,
+        alt: a.title || 'Devotional artwork',
+        caption: a.title || undefined,
+      })),
+    [artworks],
+  )
+
+  // Headline hero source: prefer the series hero (already the
+  // canonical "what this series looks like" image). Falls back to
+  // the first available artwork if a series has none.
+  const headlineImage = useMemo(() => {
+    if (seriesSlug) {
+      const seriesHero = getSeriesHero(seriesSlug)
+      if (seriesHero) return seriesHero
+    }
+    return artworks[0] ?? null
+  }, [seriesSlug, artworks])
+
   useEffect(() => {
     setIsCompleted(isRead(slug))
   }, [isRead, slug])
+
+  // Audit batch 2026-05-13: enable the rhythm CSS layer on <body>
+  // while a devotional is open. Removing this class is the single-
+  // line scale-back path for the entire NYT-style reading rhythm.
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    document.body.classList.add('rhythm-enabled')
+    return () => {
+      document.body.classList.remove('rhythm-enabled')
+    }
+  }, [])
 
   useEffect(() => {
     // Audit C1: skip the client fetch when SSR already gave us the data.
@@ -549,7 +590,51 @@ export default function DevotionalPageClient({
               ) : (
                 <>
                   <DevotionalStickiesLayer devotionalSlug={slug} />
-                  <div className="space-y-6">
+
+                  {/* Audit 2026-05-13: editorial broadsheet folio strip.
+                      Sits above the title. Scale back: delete this block. */}
+                  {seriesSlug && SERIES_DATA[seriesSlug] && (
+                    <DevotionalFolio
+                      seriesTitle={SERIES_DATA[seriesSlug].title}
+                      dayNumber={dayIndex + 1}
+                      totalDays={seriesDays?.length}
+                    />
+                  )}
+
+                  {/* Audit 2026-05-13: homepage-style headline hero. Mirrors
+                      the featured-devotional 2/3-image + 1/3-text layout
+                      at the top of every devotional page. Scale back:
+                      delete this block. */}
+                  {headlineImage && devotional && (
+                    <DevotionalHeadline
+                      imageSrc={headlineImage.src}
+                      imageAlt={headlineImage.title || devotional.title}
+                      eyebrow={
+                        seriesSlug && SERIES_DATA[seriesSlug]
+                          ? `${SERIES_DATA[seriesSlug].title} · ${
+                              seriesDays?.length ?? '?'
+                            } Days`
+                          : undefined
+                      }
+                      scripture={
+                        // First Scripture module's reference, if any
+                        modules?.find((m) => m.type === 'scripture')
+                          ?.reference ?? undefined
+                      }
+                      title={devotional.title}
+                    />
+                  )}
+
+                  {/* Audit 2026-05-13: NYT-magazine-style sticky-image
+                      reading rhythm. Wraps the existing module flow with
+                      a sticky-image rail (desktop) + observer that swaps
+                      the active image as the reader scrolls. Mobile falls
+                      back to the legacy single-column flow with inline
+                      artwork breaks. Scale back: pass `enabled={false}`. */}
+                  <DevotionalRhythm
+                    images={rhythmImages}
+                    enabled={rhythmImages.length > 0}
+                  >
                     {modules
                       ? modules.map((module, index) => (
                           <Fragment key={index}>
@@ -561,14 +646,16 @@ export default function DevotionalPageClient({
                               <ModuleRenderer module={module} />
                             </article>
                             {artworkByPosition.has(index) && (
-                              <DevotionalArtwork
-                                artwork={artworkByPosition.get(index)!}
-                                onOpenLightbox={() =>
-                                  lightbox.open(
-                                    artworkByPosition.get(index)!.slug,
-                                  )
-                                }
-                              />
+                              <div className="devotional-artwork-inline">
+                                <DevotionalArtwork
+                                  artwork={artworkByPosition.get(index)!}
+                                  onOpenLightbox={() =>
+                                    lightbox.open(
+                                      artworkByPosition.get(index)!.slug,
+                                    )
+                                  }
+                                />
+                              </div>
                             )}
                           </Fragment>
                         ))
@@ -589,18 +676,20 @@ export default function DevotionalPageClient({
                               <PanelComponent panel={panel} />
                             </article>
                             {artworkByPosition.has(index) && (
-                              <DevotionalArtwork
-                                artwork={artworkByPosition.get(index)!}
-                                onOpenLightbox={() =>
-                                  lightbox.open(
-                                    artworkByPosition.get(index)!.slug,
-                                  )
-                                }
-                              />
+                              <div className="devotional-artwork-inline">
+                                <DevotionalArtwork
+                                  artwork={artworkByPosition.get(index)!}
+                                  onOpenLightbox={() =>
+                                    lightbox.open(
+                                      artworkByPosition.get(index)!.slug,
+                                    )
+                                  }
+                                />
+                              </div>
                             )}
                           </Fragment>
                         ))}
-                  </div>
+                  </DevotionalRhythm>
 
                   <section
                     className="devotional-shell-panel mt-6 border px-6 py-5"
