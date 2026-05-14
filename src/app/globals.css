@@ -7563,15 +7563,18 @@ html.reduce-motion *::after {
   position: relative;
 }
 
+/* R36: column proportions flipped per founder direction —
+   text column should be as wide as the images used to be; image
+   column should be as narrow as the text used to be. */
 .rhythm-block {
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) minmax(0, 1.4fr);
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 1fr);
   gap: clamp(1.6rem, 3vw, 2.8rem);
   align-items: start;
 }
 @media (min-width: 1280px) {
   .rhythm-block {
-    grid-template-columns: minmax(320px, 1fr) minmax(0, 1.5fr);
+    grid-template-columns: minmax(0, 1.5fr) minmax(320px, 1fr);
   }
 }
 /* Image-right blocks: image goes into column 2, text into column 1. */
