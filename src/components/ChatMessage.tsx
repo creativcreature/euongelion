@@ -81,7 +81,7 @@ export default function ChatMessage({
       >
         <p
           className={`vw-small leading-relaxed ${
-            isUser ? '' : 'text-serif-italic'
+            isUser ? '' : 'text-serif-quote'
           } text-secondary`}
           style={{ whiteSpace: 'pre-wrap' }}
         >

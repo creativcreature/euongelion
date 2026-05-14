@@ -39,10 +39,17 @@ export default function VocabModule({ module }: { module: Module }) {
         </p>
       </div>
       {(module.transliteration || module.pronunciation) && (
-        <p className="vw-small mb-8 text-muted">
-          {module.transliteration && <>/{module.transliteration}/</>}
+        <p
+          className="vw-small mb-8 text-muted oldstyle-nums"
+          style={{ fontFamily: 'var(--font-family-serif)' }}
+        >
+          {module.transliteration && <>({module.transliteration})</>}
           {module.pronunciation && (
-            <span className="ml-2">({module.pronunciation})</span>
+            <span className="ml-2 text-muted">
+              {module.transliteration
+                ? `· ${module.pronunciation}`
+                : module.pronunciation}
+            </span>
           )}
         </p>
       )}
@@ -57,7 +64,7 @@ export default function VocabModule({ module }: { module: Module }) {
         </p>
       )}
       {module.usageNote && (
-        <p className="vw-body mb-6 italic leading-relaxed text-muted">
+        <p className="vw-body mb-6 leading-relaxed text-muted">
           {typographer(module.usageNote)}
         </p>
       )}

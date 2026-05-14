@@ -63,7 +63,7 @@ export default function ResourceModule({ module }: { module: Module }) {
             {module.relatedScriptures!.map((s, i) => (
               <div key={i}>
                 <p className="vw-small text-muted mb-1">{s.reference}</p>
-                <p className="text-serif-italic vw-body leading-relaxed">
+                <p className="text-serif-quote vw-body leading-relaxed">
                   {typographer(s.text)}
                 </p>
               </div>

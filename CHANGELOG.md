@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R29 / Typography pass: no full italic paragraphs + Hebrew/Greek parens transliteration (2026-05-13)
+
+**Founder report:**
+
+1. "All hebrew scripture that is a vocab type word needs transliteration in parentheses under it."
+2. "Try not to make any full paragraphs in italics."
+3. "Text needs more attention to detail on all pages."
+
+### Changes
+
+- **New `text-serif-quote` utility.** Same serif + 1.6 line-height as `text-serif-italic` minus the italic style. For paragraph-level scripture, pull-quotes, and liturgical text. `text-serif-italic` is now reserved for single-word emphasis (foreign-language words, attribution).
+- **Sweep across 17 modules + 2 components.** Every `<p className="text-serif-italic ...">` (paragraph-level italic) swapped to `text-serif-quote`. Touched: `ArtModule`, `ChatMessage`, `ComprehensionModule`, `CuratedActiveView` (Daily Bread fallback Panel), `InsightModule`, `MatchModule`, `OrderModule`, `PrayerModule`, `RecapModule`, `ReflectionModule`, `ResourceModule`, `RevealModule`, `SabbathModule`, `ScriptureModule` (all 3 variants), `StoryModule`, `VisualModule`, `VocabModule`, `VoiceModule`. Spans (single-word italic emphasis) preserved.
+- **Vocab transliteration → parentheses under the word.** `VocabModule` previously rendered transliteration as `/transliteration/` (slashes). Now `(transliteration)` directly under the original word, no italic, serif. Pronunciation follows after a `·` separator. Specifically fixes Hebrew vocab (`בָּרַךְ` → `(Barak) · bah-RAHK`) per founder ask.
+- **Scripture transliteration → parentheses inline.** `ScriptureModule` previously rendered transliteration as its own italic gold paragraph below the original. Now `(transliteration)` directly under the original line, non-italic, muted.
+- **Drop italic on body labels.** `VocabModule.usageNote`, `PrayerModule.posture`, `ChronologyModule.event.significance` no longer apply `italic` to multi-line body paragraphs.
+
+### Verified locally
+
+- `npm run type-check` clean.
+- Hebrew vocab module: `(Barak) · bah-RAHK` renders directly under `בָּרַךְ` (non-italic serif).
+- Scripture passages on `/devotional/the-word-before-words-day-5`: 12 quote paragraphs all `fontStyle: normal` (was `italic`).
+- Span-level italics (single foreign-language words in ResourceModule, VocabModule word-by-word) preserved.
+
+PRD: `docs/feature-prds/F-061.md` (Round 29). Decision: SA-013.
+
+---
+
 ## F-061 R28 / Daily Bread visual parity with /devotional reader (2026-05-13)
 
 **Founder report:** "Daily bread should be the same style as regular unactive devotionals, same width etc."

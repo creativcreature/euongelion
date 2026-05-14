@@ -17,12 +17,12 @@ export default function StoryModule({ module }: { module: Module }) {
           i === 0 ? (
             <DropCap
               key={i}
-              className="text-serif-italic vw-body-lg leading-relaxed"
+              className="text-serif-quote vw-body-lg leading-relaxed"
             >
               {typographer(paragraph)}
             </DropCap>
           ) : (
-            <p key={i} className="text-serif-italic vw-body-lg leading-relaxed">
+            <p key={i} className="text-serif-quote vw-body-lg leading-relaxed">
               {typographer(paragraph)}
             </p>
           ),

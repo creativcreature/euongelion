@@ -78,7 +78,7 @@ export default function ComprehensionModule({ module }: { module: Module }) {
                 {module.forReflection.map((q, i) => (
                   <li
                     key={i}
-                    className="text-serif-italic vw-body-lg leading-relaxed"
+                    className="text-serif-quote vw-body-lg leading-relaxed"
                   >
                     {typographer(q)}
                   </li>

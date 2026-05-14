@@ -37,7 +37,7 @@ export default function ChronologyModule({ module }: { module: Module }) {
                 {typographer(event.description)}
               </p>
               {event.significance && (
-                <p className="vw-small mt-2 italic text-muted">
+                <p className="vw-small mt-2 text-muted">
                   {typographer(event.significance)}
                 </p>
               )}

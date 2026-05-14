@@ -78,21 +78,21 @@ export default function ScriptureModule({ module }: { module: Module }) {
         />
       )}
 
-      {/* Greek/Hebrew original — shared across variants */}
-      {/* Transliteration is paired with the original-language line whenever
-          the original appears, per the project rule: Hebrew/Greek must
-          never appear without transliteration alongside it. */}
+      {/* Greek/Hebrew original — shared across variants. Transliteration
+          is paired directly under the original line, in parentheses, per
+          the project rule: Hebrew/Greek must never appear without
+          transliteration alongside it. */}
       {module.greekOriginal && (
-        <p className="mt-6 text-serif-italic vw-small text-muted">
+        <p className="mt-6 text-serif-quote vw-small text-muted">
           {module.greekOriginal}
         </p>
       )}
       {module.greekOriginal && module.transliteration && (
         <p
-          className="mt-2 vw-small italic"
-          style={{ color: 'var(--color-gold)', opacity: 0.85 }}
+          className="mt-1 vw-small text-muted oldstyle-nums"
+          style={{ fontFamily: 'var(--font-family-serif)' }}
         >
-          {module.transliteration}
+          ({module.transliteration})
         </p>
       )}
       {module.hebrewOriginal && (
@@ -107,10 +107,10 @@ export default function ScriptureModule({ module }: { module: Module }) {
         !module.greekOriginal &&
         module.transliteration && (
           <p
-            className="mt-2 vw-small italic"
-            style={{ color: 'var(--color-gold)', opacity: 0.85 }}
+            className="mt-1 vw-small text-muted oldstyle-nums"
+            style={{ fontFamily: 'var(--font-family-serif)' }}
           >
-            {module.transliteration}
+            ({module.transliteration})
           </p>
         )}
 
@@ -144,7 +144,7 @@ function AsymmetricVariant({
           <p className="text-label vw-small mb-6 text-gold">{module.heading}</p>
         )}
         <blockquote>
-          <p className="text-serif-italic vw-body-lg leading-relaxed">
+          <p className="text-serif-quote vw-body-lg leading-relaxed">
             {highlightEmphasis(passage, module.emphasis)}
           </p>
         </blockquote>
@@ -205,7 +205,7 @@ function ScaleVariant({
 
       {/* Passage — the main event */}
       <blockquote style={{ maxWidth: '680px' }}>
-        <p className="text-serif-italic vw-heading-sm leading-relaxed">
+        <p className="text-serif-quote vw-heading-sm leading-relaxed">
           {highlightEmphasis(passage, module.emphasis)}
         </p>
       </blockquote>
@@ -262,7 +262,7 @@ function FullwidthVariant({
       )}
 
       <blockquote style={{ maxWidth: '720px' }}>
-        <p className="text-serif-italic vw-body-lg leading-loose">
+        <p className="text-serif-quote vw-body-lg leading-loose">
           {highlightEmphasis(passage, module.emphasis)}
         </p>
       </blockquote>

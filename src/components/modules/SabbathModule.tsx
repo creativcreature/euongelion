@@ -49,7 +49,7 @@ export default function SabbathModule({ module }: { module: Module }) {
           >
             PRAYER
           </p>
-          <p className="text-serif-italic vw-body leading-relaxed type-prose">
+          <p className="text-serif-quote vw-body leading-relaxed type-prose">
             {typographer(module.prayerText)}
           </p>
         </div>

@@ -83,7 +83,7 @@ export default function MatchModule({ module }: { module: Module }) {
       </div>
 
       {allMatched && (
-        <p className="mt-8 text-serif-italic vw-body text-gold text-center">
+        <p className="mt-8 text-serif-quote vw-body text-gold text-center">
           All matched.
         </p>
       )}

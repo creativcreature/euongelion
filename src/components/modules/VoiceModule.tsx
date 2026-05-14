@@ -21,7 +21,7 @@ export default function VoiceModule({ module }: { module: Module }) {
 
       <div className="mx-auto" style={{ maxWidth: '540px' }}>
         {module.prompt && (
-          <p className="text-serif-italic vw-body-lg leading-relaxed mb-8">
+          <p className="text-serif-quote vw-body-lg leading-relaxed mb-8">
             {typographer(module.prompt)}
           </p>
         )}

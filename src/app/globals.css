@@ -2107,10 +2107,22 @@ html.reduce-motion *::after {
     font-weight: 600;
   }
 
-  /* Serif italic: intro text, teasers */
+  /* Serif italic: short inline emphasis, single foreign-language
+     words. Do NOT use on full paragraphs — italicizing a whole
+     paragraph hurts readability. For multi-line scripture or quote
+     blocks, use .text-serif-quote instead. */
   .text-serif-italic {
     font-family: var(--font-family-serif) !important;
     font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* Serif quote: scripture passages, pull-quotes, paragraph-level
+     liturgical text. Same serif + leading as .text-serif-italic
+     but without italicizing the whole block. */
+  .text-serif-quote {
+    font-family: var(--font-family-serif) !important;
+    font-style: normal;
     line-height: 1.6;
   }
 

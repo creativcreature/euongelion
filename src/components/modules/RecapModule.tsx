@@ -47,7 +47,7 @@ export default function RecapModule({ module }: { module: Module }) {
           >
             SIT WITH THIS
           </p>
-          <p className="text-serif-italic vw-body-lg leading-relaxed type-prose">
+          <p className="text-serif-quote vw-body-lg leading-relaxed type-prose">
             {typographer(module.integration_question)}
           </p>
         </div>

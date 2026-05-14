@@ -401,7 +401,7 @@ function PanelInline({ panel }: { panel: Panel }) {
         return (
           <p
             key={i}
-            className={`vw-body mb-4 ${isScripture ? 'text-serif-italic' : 'text-secondary'} type-prose`}
+            className={`vw-body mb-4 ${isScripture ? 'text-serif-quote' : 'text-secondary'} type-prose`}
             style={{ whiteSpace: 'pre-line' }}
           >
             {paragraph

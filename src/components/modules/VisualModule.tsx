@@ -21,7 +21,7 @@ export default function VisualModule({ module }: { module: Module }) {
 
       {(module.imageCaption || module.imageAlt) && (
         <p
-          className="text-serif-italic vw-small mb-8 text-muted"
+          className="text-serif-quote vw-small mb-8 text-muted"
           style={{ maxWidth: '720px' }}
         >
           {typographer(module.imageCaption || module.imageAlt || '')}
@@ -31,7 +31,7 @@ export default function VisualModule({ module }: { module: Module }) {
       {module.content && (
         <div className="space-y-6" style={{ maxWidth: '640px' }}>
           {module.content.split('\n\n').map((paragraph, i) => (
-            <p key={i} className="text-serif-italic vw-body-lg leading-relaxed">
+            <p key={i} className="text-serif-quote vw-body-lg leading-relaxed">
               {typographer(paragraph)}
             </p>
           ))}
@@ -39,7 +39,7 @@ export default function VisualModule({ module }: { module: Module }) {
       )}
 
       {module.meditationPrompt && (
-        <p className="mt-10 text-serif-italic vw-body leading-relaxed text-gold">
+        <p className="mt-10 text-serif-quote vw-body leading-relaxed text-gold">
           {typographer(module.meditationPrompt)}
         </p>
       )}

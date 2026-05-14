@@ -106,7 +106,7 @@ export default function OrderModule({ module }: { module: Module }) {
           Check Order &rarr;
         </button>
       ) : (
-        <p className="mt-8 text-serif-italic vw-body text-center">
+        <p className="mt-8 text-serif-quote vw-body text-center">
           {isCorrect ? (
             <span className="text-gold">Correct order.</span>
           ) : (

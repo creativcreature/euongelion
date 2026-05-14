@@ -12,7 +12,7 @@ export default function InsightModule({ module }: { module: Module }) {
         <p className="text-label vw-small mb-6 text-gold">{module.heading}</p>
       )}
       {module.content && (
-        <p className="text-serif-italic vw-body-lg leading-relaxed mb-8 type-prose">
+        <p className="text-serif-quote vw-body-lg leading-relaxed mb-8 type-prose">
           {typographer(module.content)}
         </p>
       )}

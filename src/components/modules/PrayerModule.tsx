@@ -22,15 +22,13 @@ export default function PrayerModule({ module }: { module: Module }) {
           )}
         </div>
         {module.posture && (
-          <p className="mb-6 vw-small italic text-muted">
-            Posture: {module.posture}
-          </p>
+          <p className="mb-6 vw-small text-muted">Posture: {module.posture}</p>
         )}
         <div className="mx-auto space-y-6" style={{ maxWidth: '540px' }}>
           {paragraphs.map((paragraph, i) => (
             <p
               key={i}
-              className="text-serif-italic vw-body-lg leading-relaxed"
+              className="text-serif-quote vw-body-lg leading-relaxed"
               style={{ letterSpacing: '0.01em' }}
             >
               {typographer(paragraph)}
@@ -40,7 +38,7 @@ export default function PrayerModule({ module }: { module: Module }) {
         {module.breathPrayer && (
           <div className="mt-10">
             <p className="module-sublabel mb-3">BREATH PRAYER</p>
-            <p className="text-serif-italic vw-body-lg text-gold breathe-prayer">
+            <p className="text-serif-quote vw-body-lg text-gold breathe-prayer">
               {typographer(module.breathPrayer)}
             </p>
           </div>

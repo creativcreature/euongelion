@@ -19,7 +19,7 @@ export default function ArtModule({ module }: { module: Module }) {
           style={{ maxWidth: '720px' }}
         >
           {module.artwork.title && (
-            <p className="text-serif-italic vw-body">
+            <p className="text-serif-quote vw-body">
               {typographer(module.artwork.title)}
             </p>
           )}
@@ -45,7 +45,7 @@ export default function ArtModule({ module }: { module: Module }) {
 
       {module.reflectionPrompt && (
         <p
-          className="mt-10 text-serif-italic vw-body-lg leading-relaxed"
+          className="mt-10 text-serif-quote vw-body-lg leading-relaxed"
           style={{ maxWidth: '640px' }}
         >
           {typographer(module.reflectionPrompt)}

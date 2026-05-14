@@ -52,7 +52,7 @@ export default function RevealModule({ module }: { module: Module }) {
 
       {allRevealed && module.summary && (
         <div className="module-accent mt-10">
-          <p className="text-serif-italic vw-body-lg leading-relaxed">
+          <p className="text-serif-quote vw-body-lg leading-relaxed">
             {typographer(module.summary)}
           </p>
         </div>
