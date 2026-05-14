@@ -7,7 +7,9 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButton from '@/components/ShareButton'
 import SiteFooter from '@/components/SiteFooter'
 import ResumeSeriesPill from '@/components/ResumeSeriesPill'
+import SeriesActions from '@/components/devotional/SeriesActions'
 import { typographer } from '@/lib/typographer'
+import { SUBSTACK_SOURCES } from '@/data/substack-sources'
 import { useProgress } from '@/hooks/useProgress'
 import { SERIES_HERO } from '@/data/artwork-manifest'
 import type { SeriesInfo } from '@/data/series'
@@ -65,6 +67,38 @@ export default function SeriesPageClient({
         <div className="mock-breadcrumb-row">
           <ResumeSeriesPill seriesSlug={slug} />
         </div>
+
+        {/* R27: start the series from the series page itself. Routes
+            through the same active-series API as DevotionalActions;
+            reaches the sign-in modal on auth gate. */}
+        <div className="mock-breadcrumb-row">
+          <SeriesActions
+            seriesSlug={slug}
+            seriesTitle={series.title}
+            redirectPath={
+              isWake ? `/wake-up/series/${slug}` : `/series/${slug}`
+            }
+          />
+        </div>
+
+        {/* R32: substack series get a CTA back to the original. */}
+        {(() => {
+          const firstDay = series.days[0]
+          const src = firstDay ? SUBSTACK_SOURCES[firstDay.slug] : null
+          if (!src) return null
+          return (
+            <div className="mock-breadcrumb-row">
+              <a
+                href={src.substackUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-label vw-small link-highlight"
+              >
+                READ THE ORIGINAL ON SUBSTACK ↗
+              </a>
+            </div>
+          )
+        })()}
 
         <section className="mock-series-hero-grid">
           <article className="mock-panel mock-series-copy">

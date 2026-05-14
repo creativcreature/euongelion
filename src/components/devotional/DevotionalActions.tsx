@@ -95,12 +95,26 @@ export default function DevotionalActions({
     }
   }, [busy, isSaved, save, unsave, devotionalSlug])
 
+  // 2026-05-14: derive the day-number from the devotional slug so
+  // "Start this devotional" pins the active series to THIS day, not
+  // day 1. Slug shape: "<series>-day-<N>". Matches the same regex
+  // DevotionalPageClient uses (getDayIndexFromSlug).
+  const dayFromSlug = useMemo(() => {
+    const m = devotionalSlug.match(/-day-(\d+)$/)
+    if (!m) return 1
+    const n = Number.parseInt(m[1], 10)
+    return Number.isFinite(n) && n >= 1 ? n : 1
+  }, [devotionalSlug])
+
   const performStart = useCallback(
     async (mode: 'replace_now' | 'queue_monday', confirm: boolean) => {
       if (!seriesSlug) return
       setBusy(true)
       try {
-        const result = await start(seriesSlug, mode, { confirm })
+        const result = await start(seriesSlug, mode, {
+          confirm,
+          currentDay: dayFromSlug,
+        })
         if (result.ok) {
           setSwitchModalOpen(false)
           if (mode === 'queue_monday') {
@@ -118,7 +132,7 @@ export default function DevotionalActions({
         setBusy(false)
       }
     },
-    [seriesSlug, start, newSeriesTitle, router],
+    [seriesSlug, start, newSeriesTitle, router, dayFromSlug],
   )
 
   const handleStartClick = useCallback(async () => {

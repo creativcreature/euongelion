@@ -5,6 +5,52 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R27→R33 / Daily Bread state fix + series Start + substack integration + image density (2026-05-14)
+
+Bundled additive layer on top of main's existing structural work (R26 + #31/#33 rhythm + #32 react-markdown hotfix). **Preserves** main's `DevotionalRhythm` / `DevotionalFolio` / `DevotionalHeadline` / `AuthorColophon` components and main's reading layout; this round only adds new endpoints, new components, new data tables, and the substack overlay.
+
+### Daily Bread state fix (R27)
+
+- **`PUT /api/devotionals/active`** now accepts + clamps an optional `currentDay`; threads it through both `replace_now` and the `queue_monday` seed path. Fixes "starting Day 3 pinned server-side `current_day=1`."
+- **New `PATCH /api/devotionals/active { currentDay }`** with full auth + rate-limit pipeline.
+- **New `updateActiveSeriesDay` repo helper** that preserves `started_at`/`source` (vs. `setActiveSeries` which clobbers them).
+- **New `bumpActiveDay` action** on `useDevotionalLibraryStore` — optimistic update + rollback. Daily Bread fires it on every day-nav change so reload returns to the same day.
+- **`DevotionalActions`** now derives `currentDay` from the `-day-N` slug regex and passes it through `start()` so starting from `/devotional/<slug>-day-3` pins Day 3.
+
+### Series-level Start (R27)
+
+- **New `src/components/devotional/SeriesActions.tsx`** — mirrors `DevotionalActions` at series level (Start / Open in Daily Bread / Queued banner). No Save (saves are per-day). Hardcoded `currentDay: 1` since series page always starts the arc.
+- Wired into `SeriesPageClient.tsx` below `ResumeSeriesPill` so the founder can start a series without drilling into Day 1.
+
+### Substack original-link CTAs + substack image header (R32)
+
+- **New `scripts/build-substack-sources.ts`** — one-shot generator. Scans `content/series-html/*.html`, sorts by `post_id` ascending (publication order), maps Nth HTML for each substack series to that series' Day N, and extracts the first `substack-post-media.s3.amazonaws.com` image URL.
+- **New `src/data/substack-sources.ts`** — auto-generated map of 93 substack devotional slugs → `{ substackUrl, substackImage }`. Covers 16 of 18 substack series (`signs-boldness-opposition-integrity` and `witness-under-pressure-expansion` have no HTML yet — those render normally, no CTA/banner).
+- **`SeriesPageClient`**: "READ THE ORIGINAL ON SUBSTACK ↗" CTA in the breadcrumb row when Day 1 has a substack source.
+- **`DevotionalPageClient`**: substack header image rendered as `<figure className="devotional-substack-banner">` directly under the breadcrumbs (above the header panel). "READ ON SUBSTACK ↗" CTA folded into the existing BACK TO SERIES + SHARE row. Founder direction: "do not rewrite or change ordering on page; scripture is the lead." Substack devotional content + ordering preserved.
+
+### Image audit + density bump (R31 + R33)
+
+- **R31 sweep of 14 photoreal / off-palette / text-stamped `sym-*` images** in `src/data/site-devotional-art.ts`. Each swapped to an existing approved riso linocut/etched/brushed file. No new images generated.
+- **R33 density bump on non-substack devotionals.** New `scripts/bump-devotional-art-density.ts` reads `archive/devotional-prints/*/artwork.json`, copies each `print.webp` into `public/images/devotional-prints/<slug>.webp`, and appends entries into `SITE_DEVOTIONAL_ART` based on the `devotionalSlugs[]` tagging — substack-aware, capped at +4 per slug, additive only. Result: 78 non-substack slugs touched, 134 entries added, 291 new prints (~88 MB) copied to `public/`. Substack devotionals exempt and unchanged.
+
+### Verified locally (worktree preview)
+
+- `PATCH /api/devotionals/active` → 401 AUTH_REQUIRED when unauthenticated (handler reaches `getUser()`).
+- `/devotional/too-busy-for-god-day-1` (substack): banner from `substack-post-media.s3.amazonaws.com/.../dd8251b1-..._1536x1024.png`; 1 "READ ON SUBSTACK" CTA pointing at `https://wokegod.substack.com/p/too-busy-for-god`.
+- `/devotional/anointed-day-2` (non-substack curated): 4 devotional images, 2 new from the archive bump (`arch-upper-room-spirit`, `el-greco-pentecost-anointed`).
+- Type-check clean, lint warnings unchanged from main.
+
+### Deferred for the next session
+
+- Pull-quote-as-floater authoring (CSS hooks exist from main's #30/#31 rhythm work; no module currently emits them).
+- Per-image relevance editorial pass on the 78 newly-bumped slugs — automated by tag matching, not editorially curated.
+- Full-library photoreal audit beyond R31's 14 swaps in the `site/devotional/` surface. The wider `public/images/library/` + `archive/devotional-prints/` libraries weren't combed.
+
+PRD: `docs/feature-prds/F-061.md`. Decision: SA-013.
+
+---
+
 ## F-061 R26 / Homepage featured rail: 7 cards (was 6) (2026-05-14)
 
 Founder direction: bump the homepage featured-series rail from 6 → 7 cards. `featuredSlugs` slice cap raised in `src/app/page.tsx:128`. Surfaces one more series from `FEATURED_SERIES` / `ALL_SERIES_ORDER` without changing the underlying data.

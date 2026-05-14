@@ -11,6 +11,7 @@ import {
   replaceActiveSeries,
   setActiveSeries,
   setScheduledSwap,
+  updateActiveSeriesDay,
 } from '@/lib/library/repository'
 import { SERIES_DATA } from '@/data/series'
 import {
@@ -35,6 +36,13 @@ interface PutBody {
   mode?: StartMode
   confirm?: boolean
   timezoneOffsetMinutes?: number
+  /**
+   * 2026-05-14: pin the active day to where the user is reading
+   * (defaults to 1 server-side). Used by "Start this devotional"
+   * called from a /devotional/<slug>-day-N page so reload-state
+   * matches what the user was reading.
+   */
+  currentDay?: number
 }
 
 export async function GET() {
@@ -157,6 +165,13 @@ export async function PUT(request: NextRequest) {
     const mode: StartMode =
       body.mode === 'queue_monday' ? 'queue_monday' : 'replace_now'
 
+    // Clamp currentDay to series bounds. Defaults to 1.
+    const seriesDayCount = SERIES_DATA[seriesSlug]?.days.length ?? 1
+    const requestedDay = Number.isFinite(body.currentDay)
+      ? Math.floor(body.currentDay as number)
+      : 1
+    const clampedDay = Math.min(Math.max(requestedDay, 1), seriesDayCount)
+
     const existing = await getActiveSeries(user.id)
     const requiresConfirm =
       existing !== null && existing.series_slug !== seriesSlug
@@ -190,7 +205,7 @@ export async function PUT(request: NextRequest) {
         await setActiveSeries({
           userId: user.id,
           seriesSlug,
-          currentDay: 1,
+          currentDay: clampedDay,
           source: 'manual_start',
         })
       }
@@ -215,6 +230,7 @@ export async function PUT(request: NextRequest) {
       userId: user.id,
       seriesSlug,
       source: 'manual_start',
+      currentDay: clampedDay,
     })
     return withRequestIdHeaders(
       NextResponse.json(
@@ -237,6 +253,121 @@ export async function PUT(request: NextRequest) {
       requestId,
       error,
       method: 'PUT',
+      path: '/api/devotionals/active',
+      clientKey,
+    })
+    return jsonError({
+      error: 'Unable to update active devotional.',
+      status: 500,
+      requestId,
+    })
+  }
+}
+
+/**
+ * PATCH /api/devotionals/active
+ *
+ * Update the `current_day` on the user's active series record. Used
+ * by CuratedActiveView when the reader navigates day-to-day inside
+ * /daily-bread — without this, the client moves on but the server
+ * keeps returning the original day, causing the "Daily Bread reloads
+ * to a different day" bug (founder-reported 2026-05-14).
+ *
+ * Body: { currentDay: number }
+ * Returns: { ok: true, active: {...} } | error
+ */
+export async function PATCH(request: NextRequest) {
+  const requestId = createRequestId()
+  const clientKey = getClientKey(request)
+  try {
+    const user = await getUser()
+    if (!user) {
+      return jsonError({
+        error: 'Sign in is required to update your active devotional.',
+        code: 'AUTH_REQUIRED',
+        status: 401,
+        requestId,
+      })
+    }
+
+    const limiter = await takeRateLimit({
+      namespace: 'devotionals-active-patch',
+      key: clientKey,
+      limit: MAX_REQUESTS_PER_MINUTE,
+      windowMs: 60_000,
+    })
+    if (!limiter.ok) {
+      return jsonError({
+        error: 'Too many requests. Please retry shortly.',
+        status: 429,
+        requestId,
+        rateLimit: limiter,
+      })
+    }
+
+    const parsed = await readJsonWithLimit<{ currentDay?: number }>({
+      request,
+      maxBytes: MAX_BODY_BYTES,
+    })
+    if (!parsed.ok) {
+      return jsonError({
+        error: parsed.error,
+        status: parsed.status,
+        requestId,
+      })
+    }
+
+    const requestedDay = Number.isFinite(parsed.data.currentDay)
+      ? Math.floor(parsed.data.currentDay as number)
+      : null
+    if (requestedDay === null) {
+      return jsonError({
+        error: 'currentDay (integer ≥1) is required.',
+        status: 400,
+        requestId,
+      })
+    }
+
+    const existing = await getActiveSeries(user.id)
+    if (!existing) {
+      return jsonError({
+        error: 'No active series to update.',
+        status: 404,
+        requestId,
+      })
+    }
+    const seriesDayCount = SERIES_DATA[existing.series_slug]?.days.length ?? 1
+    const clampedDay = Math.min(Math.max(requestedDay, 1), seriesDayCount)
+
+    const updated = await updateActiveSeriesDay(user.id, clampedDay)
+    if (!updated) {
+      return jsonError({
+        error: 'No active series to update.',
+        status: 404,
+        requestId,
+      })
+    }
+
+    return withRequestIdHeaders(
+      NextResponse.json(
+        {
+          ok: true,
+          active: {
+            seriesSlug: updated.series_slug,
+            currentDay: updated.current_day,
+            source: updated.source,
+          },
+        },
+        { status: 200 },
+      ),
+      requestId,
+    )
+  } catch (error) {
+    logApiError({
+      scope: 'devotionals-active-patch',
+      requestId,
+      error,
+      method: 'PATCH',
       path: '/api/devotionals/active',
       clientKey,
     })

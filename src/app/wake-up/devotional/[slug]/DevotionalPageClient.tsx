@@ -34,6 +34,7 @@ import { SERIES_DATA } from '@/data/series'
 import { DEVOTIONAL_ARTWORKS } from '@/data/artwork-manifest'
 import { SITE_DEVOTIONAL_ART } from '@/data/site-devotional-art'
 import { getSeriesHero } from '@/lib/series-hero'
+import { SUBSTACK_SOURCES } from '@/data/substack-sources'
 import type { Devotional, Module, Panel } from '@/types'
 
 const DevotionalChat = dynamic(() => import('@/components/DevotionalChat'), {
@@ -364,6 +365,19 @@ export default function DevotionalPageClient({
             ]}
           />
 
+          {/* R32: substack devotionals show the original article's
+              header image directly under the breadcrumbs. */}
+          {SUBSTACK_SOURCES[slug]?.substackImage && (
+            <figure className="devotional-substack-banner mb-7">
+              <img
+                src={SUBSTACK_SOURCES[slug]!.substackImage!}
+                alt={`Original cover image: ${devotional.title}`}
+                loading="eager"
+                className="w-full h-auto"
+              />
+            </figure>
+          )}
+
           <header
             className="devotional-shell-panel devotional-shell-block mb-8 border px-6 py-6"
             style={{ borderColor: 'var(--color-border)' }}
@@ -404,6 +418,16 @@ export default function DevotionalPageClient({
                 title={devotional.title}
                 text={`${devotional.title} — Euangelion`}
               />
+              {SUBSTACK_SOURCES[slug]?.substackUrl && (
+                <a
+                  href={SUBSTACK_SOURCES[slug]!.substackUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-label vw-small link-highlight"
+                >
+                  READ ON SUBSTACK ↗
+                </a>
+              )}
             </div>
           </header>
 
