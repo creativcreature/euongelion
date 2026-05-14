@@ -21,12 +21,12 @@ const nextConfig: NextConfig = {
       "frame-ancestors 'none'",
       "object-src 'none'",
       isDev
-        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com"
-        : "script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com",
+        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com https://static.cloudflareinsights.com"
+        : "script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://static.cloudflareinsights.com",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data:",
-      "connect-src 'self' https://*.supabase.co https://api.anthropic.com https://generativelanguage.googleapis.com https://api.minimax.chat https://integrate.api.nvidia.com https://api.stripe.com",
+      "connect-src 'self' https://*.supabase.co https://api.anthropic.com https://generativelanguage.googleapis.com https://api.minimax.chat https://integrate.api.nvidia.com https://api.stripe.com https://cloudflareinsights.com",
       "frame-src 'self' https://challenges.cloudflare.com https://js.stripe.com https://hooks.stripe.com",
       "form-action 'self' https://checkout.stripe.com",
       'upgrade-insecure-requests',

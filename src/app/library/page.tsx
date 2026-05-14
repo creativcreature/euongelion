@@ -1,8 +1,23 @@
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import LibraryView from './LibraryView'
+import type { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
+  title: 'Your Library',
+  description:
+    'Saved, paused, and completed devotionals. Your active devotional lives on Daily Bread; everything else lives here.',
+  alternates: { canonical: '/library' },
+  openGraph: {
+    title: 'Your Library | Euangelion',
+    description:
+      'Saved, paused, and completed devotionals. Return any time to re-read.',
+    url: 'https://euangelion.app/library',
+    type: 'website',
+  },
+}
 
 export default function LibraryPage() {
   return (

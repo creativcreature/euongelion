@@ -15,8 +15,23 @@ import CompletionState from '@/components/daily-bread/CompletionState'
 import CuratedActiveView from '@/components/daily-bread/CuratedActiveView'
 import ScheduledSwapBanner from '@/components/daily-bread/ScheduledSwapBanner'
 import type { DayScheduleEntry } from '@/types/soul-audit-plan'
+import type { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
+  title: 'Daily Bread',
+  description:
+    'Your active devotional, plus today’s reading queued from your Soul Audit plan. One short, slow reading a day — scripture-led, no streak-shaming.',
+  alternates: { canonical: '/daily-bread' },
+  openGraph: {
+    title: 'Daily Bread | Euangelion',
+    description:
+      'Your active devotional and today’s reading, served warm. Scripture-led, no streak-shaming.',
+    url: 'https://euangelion.app/daily-bread',
+    type: 'website',
+  },
+}
 
 export default async function DailyBreadPage() {
   const cookieStore = await cookies()

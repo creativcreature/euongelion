@@ -621,12 +621,19 @@ export default function EuangelionShellHeader({
           </div>
         )}
 
-        <section className="mock-masthead-block" ref={mastheadRef}>
-          <h1 className="text-masthead mock-masthead-word">
+        <section
+          className="mock-masthead-block"
+          ref={mastheadRef}
+          aria-label="Euangelion"
+        >
+          {/* Brand wordmark. Was an h1; demoted to a div so each page
+              has a single content h1 (a11y, R34 overnight audit).
+              Visual + content unchanged. */}
+          <div className="text-masthead mock-masthead-word" role="presentation">
             <span className="js-shell-masthead-fit mock-masthead-text">
               {brandWord}
             </span>
-          </h1>
+          </div>
           {tone !== 'wake' && (
             <p className="mock-masthead-pronunciation text-label">
               EU•AN•GE•LION (YOO-AN-GEL-EE-ON) ·{' '}

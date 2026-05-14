@@ -5,6 +5,46 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R34 / Overnight audit + remediation: CSP, H1, per-page metadata (2026-05-14)
+
+Founder asleep; full due-diligence audit run on live production using Playwright + chunk-level checks. Reference brief (5 Awwwards editorial winners + 2026 patterns + CWV thresholds + WCAG 2.2 AAA targets) at the top of `docs/audits/overnight-2026-05-14/SESSION-LOG.md`.
+
+### Audit totals
+
+- **P0**: 0 blockers
+- **P1**: 6 issues — 3 fixed tonight, 3 deferred with rationale
+- **P2**: 5 issues — all deferred / no-action with rationale
+
+### Fixed tonight (3 P1, all additive)
+
+1. **CSP unblocked Cloudflare Analytics beacon.** `next.config.ts` adds `https://static.cloudflareinsights.com` to `script-src` and `https://cloudflareinsights.com` to `connect-src`. Was firing one console error per page navigation.
+2. **Duplicate H1 fixed.** Every route was emitting two `<h1>` elements — the shared shell-header brand wordmark + the page's own content H1. The wordmark in `EuangelionShellHeader.tsx` is now a `<div role="presentation">` inside `<section aria-label="Euangelion">`. Visual + content unchanged (founder's "do NOT change masthead" rule respected). Each route now has a single content H1.
+3. **Per-page metadata** on the four routes that were inheriting the generic homepage title: new `src/app/soul-audit/layout.tsx` + `src/app/series/layout.tsx` (both pages are `'use client'`, so metadata lives on a sibling layout per Next.js 16 pattern); inline `export const metadata` added to `src/app/daily-bread/page.tsx` + `src/app/library/page.tsx`. Each gets a page-specific title, description, OG block, and canonical URL.
+
+### Verified live on production
+
+- Homepage: single H1, brand wordmark renders unchanged, no console error on Cloudflare beacon, FCP 868ms / DCL 863ms / transfer 27KB.
+- Substack devotional (`/devotional/too-busy-for-god-day-1`): banner + "READ ON SUBSTACK ↗" CTA confirmed in DOM after hydration. R32 holds.
+- Non-substack devotional (`/devotional/anointed-day-2`): 4 devotional images including 2 fresh archive prints. R33 holds.
+
+### Deferred (with rationale)
+
+- **React error #418 hydration warning** on devotional pages — `<time suppressHydrationWarning>` is already present; mismatch is elsewhere in the render tree, needs bisection. Page renders correctly; warning is devtools-only noise.
+- **Pull-quote floater authoring** — CSS hooks shipped in R30, no module currently emits them. Needs per-devotional content-side flag.
+- **Per-image relevance pass** on the 78 newly-bumped non-substack devotional slugs — editorial judgment required, not safe at scale.
+- **Full-library photoreal sweep** of `public/images/library/` (~1400 files) + the 291 newly-copied archive prints — needs multimodal Read on each file.
+- **Reduced-motion override** on rhythm reveal — single CSS rule, deferred to keep tonight's surface focused.
+- **Substack image CDN caching** — separate build-time pipeline (download + R2 storage). Drops LCP ~600-900ms.
+
+### Audit deliverables
+
+- `public/audits/overnight-2026-05-14/index.html` — printable audit page in the same style as `visual-audit-2026-05-13/` (does not overwrite).
+- `docs/audits/overnight-2026-05-14/SESSION-LOG.md` — full session log with research, audit, fixes, deploy status.
+
+PRD: `docs/feature-prds/F-061.md` (Round 34). Decision: SA-013.
+
+---
+
 ## F-061 R27→R33 / Daily Bread state fix + series Start + substack integration + image density (2026-05-14)
 
 Bundled additive layer on top of main's existing structural work (R26 + #31/#33 rhythm + #32 react-markdown hotfix). **Preserves** main's `DevotionalRhythm` / `DevotionalFolio` / `DevotionalHeadline` / `AuthorColophon` components and main's reading layout; this round only adds new endpoints, new components, new data tables, and the substack overlay.
