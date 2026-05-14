@@ -412,13 +412,16 @@ export default function DevotionalPageClient({
             redirectPath={`${devotionalRoutePrefix}/${slug}`}
           />
 
-          {/* Audit C2: Mobile-only day-nav pill. Renders only below md:
-              where the sidebar would otherwise push the content below
-              the fold. Tapping it expands the existing sidebar markup. */}
+          {/* Audit 2026-05-14: the day-nav pill now runs at every
+              breakpoint. The 260px sidebar that used to occupy the
+              left column on desktop competes with reading content
+              (founder feedback). Now the sidebar is hidden by default
+              on every viewport and reveals as a drawer when the
+              reader taps the pill. */}
           {seriesDays && seriesDays.length > 0 && (
             <button
               type="button"
-              className="devotional-day-nav-pill md:hidden"
+              className="devotional-day-nav-pill"
               aria-expanded={isDayNavOpenMobile}
               aria-controls="devotional-day-nav-mobile"
               onClick={() => setIsDayNavOpenMobile((v) => !v)}
@@ -432,7 +435,13 @@ export default function DevotionalPageClient({
             </button>
           )}
 
-          <section className="devotional-shell-grid md:grid md:grid-cols-[260px_minmax(0,1fr)] md:gap-8">
+          <section
+            className={`devotional-shell-grid ${
+              isDayNavOpenMobile
+                ? 'is-sidebar-open md:grid md:grid-cols-[260px_minmax(0,1fr)] md:gap-8'
+                : 'is-sidebar-closed'
+            }`}
+          >
             <aside
               id="devotional-day-nav-mobile"
               className={`devotional-shell-sidebar-wrap mb-6 md:mb-0 ${isDayNavOpenMobile ? '' : 'devotional-shell-sidebar-mobile-closed'}`}

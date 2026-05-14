@@ -55,6 +55,30 @@ function fallbackPosition(index: number) {
   }
 }
 
+/**
+ * 2026-05-14: The floating, draggable sticky-notes overlay was
+ * removed per founder direction ("rethink the sticky note design").
+ *
+ * The original pattern was visually disruptive — yellow cards
+ * positioned via x,y percentages floating over the reading. Now
+ * the layer renders nothing on screen by default. Data layer is
+ * preserved (load / persist / add / delete still wired) so the
+ * NEXT pattern can plug in without re-doing storage.
+ *
+ * RECOMMENDED REPLACEMENT (next session):
+ *   - A floating "Notes ✎ (n)" pill, bottom-right of the reader.
+ *   - Tapping opens a side drawer panel listing the notes for this
+ *     devotional, newest first, with one tap to add a new one.
+ *   - Optional Phase 2: Tufte-style margin sidenotes anchored to
+ *     specific text positions (highlight passage → add note →
+ *     note pins to the right margin on desktop, behind a long-
+ *     press menu on mobile).
+ *
+ * To re-enable the legacy floating pattern temporarily, set
+ * STICKIES_FLOATING_LAYER = true below.
+ */
+const STICKIES_FLOATING_LAYER = false
+
 export default function DevotionalStickiesLayer({
   devotionalSlug,
 }: {
@@ -339,6 +363,7 @@ export default function DevotionalStickiesLayer({
     }
   }, [persistSticky, setNotePosition])
 
+  if (!STICKIES_FLOATING_LAYER) return null
   if (!isDesktop) return null
 
   return (
