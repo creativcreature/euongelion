@@ -14,10 +14,24 @@ import {
 export default function CookieConsentBanner() {
   const headingRef = useRef<HTMLHeadingElement | null>(null)
   const requiredPulseTimeoutRef = useRef<number | null>(null)
-  const [visible, setVisible] = useState(() =>
-    typeof document === 'undefined' ? false : !readSiteConsentFromDocument(),
-  )
+  // 2026-05-14 hydration fix: was initialized via `typeof document`
+  // which returns different visibility on server vs client first
+  // render, causing React #418 (banner in client tree, absent in
+  // server tree → entire reader tree regenerated, devotionals
+  // appeared "not loading"). Now starts hidden; useEffect resolves
+  // the real visibility after mount.
+  const [visible, setVisible] = useState(false)
   const [isRequiredAttention, setIsRequiredAttention] = useState(false)
+
+  // Resolve cookie-consent state client-side only (mount). Same
+  // escape-hatch pattern as the masthead time + folio date.
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    if (!readSiteConsentFromDocument()) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: client-only initial visibility to avoid React #418
+      setVisible(true)
+    }
+  }, [])
 
   useEffect(() => {
     if (!visible) return
