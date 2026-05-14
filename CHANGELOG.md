@@ -5,6 +5,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R22 / Audit batch — NYT-style reading rhythm + headline hero + folio strip + polish utilities (2026-05-13)
+
+Founder direction: implement the audit punch list, with a focus on the NYT Magazine reading rhythm (sticky image + scrolling text, image swaps as you scroll, format shifts). Homepage header image + masthead must stay unchanged. Build in a way that aspects can be scaled back.
+
+Reference: NYT Magazine, "Diane Keaton" (16 Dec 2025) for the sticky-image scroll rhythm. Pattern stripped to the bones — `position: sticky` + IntersectionObserver crossfade. No scroll-jacking, no parallax, no scroll-tied video.
+
+**New components** (`src/components/devotional/`):
+
+- `DevotionalFolio.tsx` — editorial broadsheet folio strip above the devotional title. Real small caps (font-variant-caps via `.smcp`), top + bottom hairlines. Format: `EUANGELION · TOO BUSY FOR GOD · DAY 01 / 05 · 13 MAY 2026`. Mirrors the 2026 NYT Magazine redesign that moved page furniture above the title.
+- `DevotionalHeadline.tsx` — homepage-style hero (2fr image + 1fr text) at the top of every devotional. Eyebrow + scripture line + headline title. Same visual grammar as the homepage featured-devotional card so the two surfaces read as one publication.
+- `DevotionalRhythm.tsx` — NYT-style sticky-image scroll rhythm. Desktop: sticky-image rail on the left + scrolling module flow on the right. IntersectionObserver swaps the active image (480ms crossfade) as the reader passes module bucket boundaries. Mobile (≤900px): rail collapses, modules flow single-column with inline artwork as before.
+
+**Polish utilities** (`src/app/globals.css`):
+
+- `--color-amber` (#c8a56a) — restored gold/amber as a real accent token, separate from the cobalt `--mock-blue`. Decorative + drop-cap + focus-ring use.
+- `--color-crimson` (#c4192e) — true Riso spot color, separate from `--color-burgundy` (#8e3f3f). Reserved for editorial accents (alerts, the audit-folio edition tag, future pull-quote marks).
+- `.smcp` utility — real small caps via `font-variant-caps: all-small-caps`, never `text-transform: uppercase`.
+- `.amp` utility — alternate italic ampersand via Instrument Serif `salt 1`.
+- `text-wrap: balance` on h1/h2/h3, `text-wrap: pretty` on `.prose p` and devotional copy. Free browser-level upgrade.
+- `font-display: swap` everywhere (was `block` / `optional` in spots — caused invisible-text-then-paint on iOS).
+
+**Integration** (`DevotionalPageClient.tsx`):
+
+- Imports the three new components.
+- Memos a `rhythmImages` array from existing `artworks` (no JSON content change).
+- Renders, in order: folio strip → headline hero → `DevotionalRhythm` wrapping the module flow.
+- Adds `body.rhythm-enabled` class on mount; removes on unmount. **Single-line kill switch.**
+
+**Scale-back paths** (cheapest → most aggressive):
+
+1. Pass `enabled={false}` to `DevotionalRhythm` — children render as a flat flow with no rail.
+2. Remove the `body.rhythm-enabled` class — CSS-level no-op for the rhythm + sticky rail.
+3. Force `grid-template-columns: 1fr` on `.devotional-rhythm` in `globals.css`.
+4. Delete any of the three components from `DevotionalPageClient` JSX — they are independent.
+
+Verified locally (wrangler :8788). All routes 200. Rhythm renders correctly on desktop with sticky image rail; mobile collapses to legacy flow with inline artwork breaks intact. Type-check + build clean.
+
+PRD: `docs/feature-prds/F-061.md` (Round 22). Decision: SA-013.
+
+---
+
 ## F-061 R21 / Featured slot surfaces SERIES, not Day 1 + secondary link explains Bible 365 (2026-05-13)
 
 Founder direction: the featured piece on the homepage should be the SERIES as a whole, not an individual devotional. The card now leads with series-level information.
