@@ -675,16 +675,14 @@ export default function Home() {
           )}
         </section>
 
+        {/* R41: FAQ now follows the CTA, so the framing shifts
+            from "before you begin" (pre-decision) to "still
+            wondering" (post-CTA reassurance for readers who
+            haven't clicked through yet). */}
         <section className="mock-faq-row">
           <article className="mock-faq-lead">
-            <h3>
-              {isMobileViewport ? 'Before you begin.' : 'Before you begin.'}
-            </h3>
-            <p>
-              {isMobileViewport
-                ? 'Honest answers, no pressure.'
-                : 'Honest answers, no pressure.'}
-            </p>
+            <h3>Still wondering?</h3>
+            <p>The questions readers ask before they start.</p>
           </article>
 
           {!isMobileViewport && (
