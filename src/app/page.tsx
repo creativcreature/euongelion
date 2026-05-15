@@ -623,6 +623,58 @@ export default function Home() {
           })}
         </section>
 
+        {/* R40: Bottom CTA moved ABOVE the FAQ per founder direction.
+            "Ready to begin" is the call-to-action; FAQ is supporting
+            content that lives below it. */}
+        <section className="mock-cta">
+          <p className="text-label mock-kicker">READY TO BEGIN?</p>
+          {resumeRoute ? (
+            <>
+              <h2 className="mock-cta-headline">
+                Your devotional is ready to continue.
+              </h2>
+              <p className="mock-subcopy-center">
+                Jump back into your current day and keep your rhythm.
+              </p>
+              <Link href={resumeRoute} className="mock-btn text-label">
+                CONTINUE MY DEVOTIONAL
+              </Link>
+            </>
+          ) : (
+            <>
+              {/* Audit Manus §2 (Updated 2026-05-13): the closing CTA
+                  used to funnel to the Soul Audit tool. Now the primary
+                  invitation is to READ — the Soul Audit is a quiet
+                  secondary link for readers who want a personalized
+                  path. */}
+              <h2 className="mock-cta-headline">
+                Start with one honest sentence — or with today&rsquo;s page.
+              </h2>
+              <p className="mock-subcopy-center">
+                You do not need certainty before you begin. You need a next
+                step. You need grace.
+              </p>
+              <Link
+                href={`/devotional/${HOMEPAGE_TODAY.daySlug}`}
+                className="mock-btn text-label"
+              >
+                READ TODAY&rsquo;S DEVOTIONAL
+              </Link>
+              <a
+                href="#start-audit"
+                className="text-label vw-small"
+                style={{
+                  display: 'inline-block',
+                  marginTop: '0.75rem',
+                  opacity: 0.78,
+                }}
+              >
+                Or — start the Soul Audit →
+              </a>
+            </>
+          )}
+        </section>
+
         <section className="mock-faq-row">
           <article className="mock-faq-lead">
             <h3>
@@ -722,56 +774,6 @@ export default function Home() {
           <Link href="/help#faq" className="mock-btn text-label">
             VIEW FULL FAQ
           </Link>
-        </section>
-
-        {/* Bottom CTA — link to hero rather than duplicate textarea */}
-        <section className="mock-cta">
-          <p className="text-label mock-kicker">READY TO BEGIN?</p>
-          {resumeRoute ? (
-            <>
-              <h2 className="mock-cta-headline">
-                Your devotional is ready to continue.
-              </h2>
-              <p className="mock-subcopy-center">
-                Jump back into your current day and keep your rhythm.
-              </p>
-              <Link href={resumeRoute} className="mock-btn text-label">
-                CONTINUE MY DEVOTIONAL
-              </Link>
-            </>
-          ) : (
-            <>
-              {/* Audit Manus §2 (Updated 2026-05-13): the closing CTA
-                  used to funnel to the Soul Audit tool. Now the primary
-                  invitation is to READ — the Soul Audit is a quiet
-                  secondary link for readers who want a personalized
-                  path. */}
-              <h2 className="mock-cta-headline">
-                Start with one honest sentence — or with today&rsquo;s page.
-              </h2>
-              <p className="mock-subcopy-center">
-                You do not need certainty before you begin. You need a next
-                step. You need grace.
-              </p>
-              <Link
-                href={`/devotional/${HOMEPAGE_TODAY.daySlug}`}
-                className="mock-btn text-label"
-              >
-                READ TODAY&rsquo;S DEVOTIONAL
-              </Link>
-              <a
-                href="#start-audit"
-                className="text-label vw-small"
-                style={{
-                  display: 'inline-block',
-                  marginTop: '0.75rem',
-                  opacity: 0.78,
-                }}
-              >
-                Or — start the Soul Audit →
-              </a>
-            </>
-          )}
         </section>
 
         <SiteFooter />
