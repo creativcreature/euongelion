@@ -531,29 +531,18 @@ h3 {
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
-/* R37: trust row promoted to cobalt-on-cream block.
-   - LIGHT mode: deep navy background + cream text (matches the
-     Soul Audit + Ready-to-Begin treatment).
-   - DARK mode: cream paper background + dark text (true inversion). */
+/* R38: trust row colors reverted to the pre-R37 tint per founder.
+   Subtle 4 % navy on paper, default text color — no inverted block. */
 .homepage-trust-row {
   text-align: center;
-  padding: 1rem 1rem;
+  padding: 0.7rem 1rem;
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
-  background: var(--color-deep-navy, #171b69);
-  color: #f3eadb;
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #1f2a8d) 4%,
+    var(--mock-paper, white) 96%
+  );
   letter-spacing: 0.06em;
-}
-.homepage-trust-row p,
-.homepage-trust-row .text-label {
-  color: #f3eadb;
-}
-.dark .homepage-trust-row {
-  background: var(--mock-paper, #f5eee3);
-  color: var(--mock-ink, #11182a);
-}
-.dark .homepage-trust-row p,
-.dark .homepage-trust-row .text-label {
-  color: var(--mock-ink, #11182a);
 }
 /* Founder direction 2026-05-13 (final): mode-flip REVERSED.
    - LIGHT mode page → Soul Audit pops as a blue/cream dark-mode card.
