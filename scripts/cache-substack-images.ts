@@ -1,14 +1,13 @@
 #!/usr/bin/env tsx
 /**
- * R35: cache substack header images locally so we serve them from
+ * R35 / R37: cache substack images locally so we serve them from
  * Cloudflare Workers Assets instead of hot-linking
  * substack-post-media.s3.amazonaws.com on every load.
  *
- * Reads src/data/substack-sources.ts, downloads each
- * substackImage URL into public/images/substack-cache/<hash>.<ext>,
- * and re-emits substack-sources.ts with substackImageLocal pointing
- * at the local path. Original substackImage URL is preserved so the
- * fallback still works if a build is run against a stale cache.
+ * R37 extension: cache EVERY image in each substack post (not just
+ * the header), and emit substackImagesLocal[] alongside the existing
+ * substackImageLocal. SUBSTACK_SOURCES gains an `images` shape; the
+ * DevotionalPageClient uses all of them in the rhythm rail.
  *
  * Idempotent: re-running skips files that already exist on disk.
  */
@@ -25,7 +24,9 @@ interface SubstackEntry {
   slug: string
   substackUrl: string
   substackImage: string | null
+  substackImages: string[]
   substackImageLocal?: string | null
+  substackImagesLocal?: string[]
 }
 
 function hashUrl(url: string): string {
@@ -57,14 +58,30 @@ async function downloadOne(url: string, dest: string): Promise<boolean> {
 function parseSources(): SubstackEntry[] {
   const txt = fs.readFileSync(SOURCES_TS, 'utf-8')
   const out: SubstackEntry[] = []
-  const re =
-    /['"]([a-z][a-z0-9-]+)['"]:\s*\{\s*substackUrl:\s*['"]([^'"]+)['"]\s*,\s*substackImage:\s*(?:['"]([^'"]+)['"]|(null))/g
-  let m: RegExpExecArray | null
-  while ((m = re.exec(txt)) !== null) {
+  // Match per-slug blocks; pull out substackUrl, substackImage,
+  // substackImages (the array). The blocks are well-formed
+  // multi-line. We look for the closing `},` boundary.
+  const blockRe = /['"]([a-z][a-z0-9-]+)['"]:\s*\{([\s\S]*?)\n\s*\},/g
+  let b: RegExpExecArray | null
+  while ((b = blockRe.exec(txt)) !== null) {
+    const slug = b[1]
+    const body = b[2]
+    const urlMatch = body.match(/substackUrl:\s*['"]([^'"]+)['"]/)
+    const imgMatch = body.match(/substackImage:\s*['"]([^'"]+)['"]/)
+    const imagesMatch = body.match(/substackImages:\s*\[([\s\S]*?)\]/)
+    const images: string[] = []
+    if (imagesMatch) {
+      const inner = imagesMatch[1]
+      const imRe = /['"]([^'"]+)['"]/g
+      let m: RegExpExecArray | null
+      while ((m = imRe.exec(inner)) !== null) images.push(m[1])
+    }
+    if (!urlMatch) continue
     out.push({
-      slug: m[1],
-      substackUrl: m[2],
-      substackImage: m[3] ?? null,
+      slug,
+      substackUrl: urlMatch[1],
+      substackImage: imgMatch ? imgMatch[1] : null,
+      substackImages: images.length > 0 ? images : imgMatch ? [imgMatch[1]] : [],
     })
   }
   return out
@@ -79,19 +96,21 @@ function emitSources(entries: SubstackEntry[]) {
     ` * scripts/cache-substack-images.ts.`,
     ` *`,
     ` * Maps each substack-sourced devotional slug → its canonical`,
-    ` * Substack post URL + the post's primary header image. We now`,
-    ` * cache the image locally under public/images/substack-cache/`,
-    ` * (R35) and prefer the local path; substackImage retains the`,
-    ` * substack-post-media S3 URL as a fallback in case the local`,
-    ` * file isn't deployed.`,
+    ` * Substack post URL + every image in the post (R37). Each image`,
+    ` * is cached locally under public/images/substack-cache/ so LCP`,
+    ` * isn't tied to substack's edge.`,
     ` *`,
-    ` * Do NOT edit by hand.`,
+    ` * Do NOT edit by hand. Re-run`,
+    ` * scripts/build-substack-sources.ts then`,
+    ` * scripts/cache-substack-images.ts to refresh.`,
     ` */`,
     ``,
     `export interface SubstackSource {`,
     `  substackUrl: string`,
     `  substackImage: string | null`,
+    `  substackImages: string[]`,
     `  substackImageLocal: string | null`,
+    `  substackImagesLocal: string[]`,
     `}`,
     ``,
     `export const SUBSTACK_SOURCES: Record<string, SubstackSource> = {`,
@@ -99,45 +118,72 @@ function emitSources(entries: SubstackEntry[]) {
   for (const e of sorted) {
     lines.push(`  ${JSON.stringify(e.slug)}: {`)
     lines.push(`    substackUrl: ${JSON.stringify(e.substackUrl)},`)
-    lines.push(`    substackImage: ${e.substackImage ? JSON.stringify(e.substackImage) : 'null'},`)
-    lines.push(`    substackImageLocal: ${e.substackImageLocal ? JSON.stringify(e.substackImageLocal) : 'null'},`)
+    lines.push(
+      `    substackImage: ${e.substackImage ? JSON.stringify(e.substackImage) : 'null'},`,
+    )
+    lines.push(`    substackImages: ${JSON.stringify(e.substackImages)},`)
+    lines.push(
+      `    substackImageLocal: ${e.substackImageLocal ? JSON.stringify(e.substackImageLocal) : 'null'},`,
+    )
+    lines.push(
+      `    substackImagesLocal: ${JSON.stringify(e.substackImagesLocal ?? [])},`,
+    )
     lines.push(`  },`)
   }
   lines.push(`}`, ``)
   fs.writeFileSync(SOURCES_TS, lines.join('\n'), 'utf-8')
 }
 
+async function cacheImage(url: string): Promise<string | null> {
+  const hash = hashUrl(url)
+  const ext = extFromUrl(url)
+  const filename = `${hash}.${ext}`
+  const dest = path.join(CACHE_DIR, filename)
+  const localPath = `/images/substack-cache/${filename}`
+  if (fs.existsSync(dest)) return localPath
+  const ok = await downloadOne(url, dest)
+  return ok ? localPath : null
+}
+
 async function main() {
   fs.mkdirSync(CACHE_DIR, { recursive: true })
   const entries = parseSources()
   console.log(`Loaded ${entries.length} substack entries.`)
+  let totalImages = 0
   let cached = 0
-  let skipped = 0
+  let alreadyOnDisk = 0
   let failed = 0
   for (const e of entries) {
-    if (!e.substackImage) continue
-    const hash = hashUrl(e.substackImage)
-    const ext = extFromUrl(e.substackImage)
-    const filename = `${hash}.${ext}`
-    const dest = path.join(CACHE_DIR, filename)
-    const localPath = `/images/substack-cache/${filename}`
-    if (fs.existsSync(dest)) {
-      e.substackImageLocal = localPath
-      skipped += 1
-      continue
+    const all = e.substackImages?.length ? e.substackImages : e.substackImage ? [e.substackImage] : []
+    const local: string[] = []
+    for (const url of all) {
+      totalImages += 1
+      const hash = hashUrl(url)
+      const ext = extFromUrl(url)
+      const filename = `${hash}.${ext}`
+      const dest = path.join(CACHE_DIR, filename)
+      if (fs.existsSync(dest)) {
+        local.push(`/images/substack-cache/${filename}`)
+        alreadyOnDisk += 1
+      } else {
+        const p = await cacheImage(url)
+        if (p) {
+          local.push(p)
+          cached += 1
+        } else {
+          local.push('')
+          failed += 1
+        }
+      }
     }
-    const ok = await downloadOne(e.substackImage, dest)
-    if (ok) {
-      e.substackImageLocal = localPath
-      cached += 1
-    } else {
-      e.substackImageLocal = null
-      failed += 1
-    }
+    e.substackImagesLocal = local
+    e.substackImageLocal = local[0] || null
   }
-  console.log(`Cached new: ${cached}; already on disk: ${skipped}; failed: ${failed}`)
+  console.log(
+    `Total images: ${totalImages}; newly cached: ${cached}; already on disk: ${alreadyOnDisk}; failed: ${failed}.`,
+  )
   emitSources(entries)
-  console.log(`Wrote ${SOURCES_TS} with ${entries.length} entries.`)
+  console.log(`Wrote ${SOURCES_TS}.`)
 }
 
 main().catch((e) => {

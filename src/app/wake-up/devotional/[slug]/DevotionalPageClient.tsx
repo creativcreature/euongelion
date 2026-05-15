@@ -171,15 +171,49 @@ export default function DevotionalPageClient({
   // cycles through the same `artworks` array the inline breaks use,
   // so a devotional with one curated image still gets one sticky
   // image on desktop. Captioned with the artwork title when present.
-  const rhythmImages = useMemo<RhythmImage[]>(
-    () =>
-      artworks.map((a) => ({
-        src: a.src,
-        alt: a.title || 'Devotional artwork',
-        caption: a.title || undefined,
-      })),
-    [artworks],
-  )
+  //
+  // R37: substack-sourced devotionals MUST use every image attached
+  // to the original substack post (founder direction). Override
+  // `rhythmImages` for substack slugs to include all
+  // substackImagesLocal / substackImages entries. Captions are
+  // intentionally specific to the substack post so each illustration
+  // reads as "from the Substack original," matching the founder's
+  // "specifically referential to the surrounding text" standard.
+  const rhythmImages = useMemo<RhythmImage[]>(() => {
+    const substackSrc = SUBSTACK_SOURCES[slug]
+    if (substackSrc) {
+      const urls = (substackSrc.substackImagesLocal ?? [])
+        .map((local, idx) => local || substackSrc.substackImages?.[idx] || '')
+        .filter(Boolean)
+      const sourceUrls =
+        urls.length > 0
+          ? urls
+          : substackSrc.substackImageLocal
+            ? [substackSrc.substackImageLocal]
+            : substackSrc.substackImage
+              ? [substackSrc.substackImage]
+              : []
+      if (sourceUrls.length > 0) {
+        const seriesTitle = (seriesSlug && SERIES_DATA[seriesSlug]?.title) || ''
+        return sourceUrls.map((src, i) => ({
+          src,
+          alt:
+            i === 0
+              ? `${devotional?.title ?? 'Devotional'} — original cover image`
+              : `${devotional?.title ?? 'Devotional'} — illustration ${i + 1} from the original Substack post`,
+          caption:
+            i === 0
+              ? `Original cover · ${seriesTitle || 'from the Substack post'}`
+              : `From the original Substack post · ${seriesTitle || ''}`.trim(),
+        }))
+      }
+    }
+    return artworks.map((a) => ({
+      src: a.src,
+      alt: a.title || 'Devotional artwork',
+      caption: a.title || undefined,
+    }))
+  }, [slug, artworks, seriesSlug, devotional?.title])
 
   // Headline hero source: prefer the series hero (already the
   // canonical "what this series looks like" image). Falls back to
@@ -411,27 +445,33 @@ export default function DevotionalPageClient({
               </p>
             )}
 
-            <div className="mt-5 flex flex-wrap items-center gap-3">
+            {/* R37: action row aligned on baseline. ShareButton
+                renders with an SVG icon that breaks items-center
+                alignment with plain text links. items-baseline +
+                a uniform leading-none on each action keeps all
+                three buttons sharing the same text baseline. */}
+            <div className="devotional-action-row mt-5 flex flex-wrap items-baseline gap-x-5 gap-y-2">
               <Link
                 href={
                   seriesSlug
                     ? `${seriesRoutePrefix}/${seriesSlug}`
                     : parentRoute
                 }
-                className="text-label vw-small link-highlight"
+                className="text-label vw-small link-highlight leading-none"
               >
                 BACK TO SERIES
               </Link>
               <ShareButton
                 title={devotional.title}
                 text={`${devotional.title} — Euangelion`}
+                className="leading-none"
               />
               {SUBSTACK_SOURCES[slug]?.substackUrl && (
                 <a
                   href={SUBSTACK_SOURCES[slug]!.substackUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-label vw-small link-highlight"
+                  className="text-label vw-small link-highlight leading-none"
                 >
                   READ ON SUBSTACK ↗
                 </a>

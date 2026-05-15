@@ -32,14 +32,15 @@ const HOMEPAGE_TODAY = {
   // then one beat of the introduction. Series-level copy, not Day 1's.
   teaser:
     "What are you so busy doing that you're missing the One who gave you life? Your calendar is full but your soul is empty — five honest days on what happens when busyness becomes a barrier to His presence.",
-  // Homepage hero banner (full-bleed at top of page). Founder-supplied
-  // Riso empty-tomb image. Unchanged by this rotation.
-  heroSrc: '/images/site/homepage/hero/header-v2.webp',
-  // Featured-card art. Lives at a homepage-specific path so the
-  // /series card for too-busy-for-god keeps its own oil-lamp hero.
-  // library/poster/atmos-marketplace-dawn.png (1408×768 landscape
-  // Riso — busy marketplace at dawn, direct contextual fit).
-  featuredArt: '/images/site/homepage/featured/too-busy-for-god-day-1.webp',
+  // Homepage hero banner (full-bleed at top of page). R37: per
+  // founder direction, replaced with the substack header image for
+  // too-busy-for-god (the original Substack post's cover image,
+  // cached locally at /images/substack-cache/<hash>.png).
+  heroSrc: '/images/substack-cache/33cd9f952103.png',
+  // Featured-card art. R37: same source as heroSrc — the substack
+  // header is now the single source of truth for "Too Busy for
+  // God" visuals on the homepage.
+  featuredArt: '/images/substack-cache/33cd9f952103.png',
 }
 
 const HOW_STEPS = [

@@ -39,6 +39,8 @@ interface HtmlFile {
 interface SourceEntry {
   substackUrl: string
   substackImage: string | null
+  /** R37: all images in the original substack post, in source order. */
+  substackImages: string[]
 }
 
 function parseSeriesTs(): {
@@ -117,6 +119,23 @@ function extractFirstImage(filePath: string): string | null {
   return m ? m[0] : null
 }
 
+/** R37: extract every substack-post-media image URL in source order, deduped. */
+function extractAllImages(filePath: string): string[] {
+  const html = fs.readFileSync(filePath, 'utf-8')
+  const re =
+    /https:\/\/substack-post-media\.s3\.amazonaws\.com\/public\/images\/[A-Za-z0-9._-]+\.(png|jpg|jpeg|webp)/gi
+  const seen = new Set<string>()
+  const out: string[] = []
+  let m: RegExpExecArray | null
+  while ((m = re.exec(html)) !== null) {
+    if (!seen.has(m[0])) {
+      seen.add(m[0])
+      out.push(m[0])
+    }
+  }
+  return out
+}
+
 function findCandidatesForSeries(
   seriesSlug: string,
   allFiles: HtmlFile[],
@@ -164,10 +183,12 @@ function buildMap() {
     for (let i = 0; i < days.length; i += 1) {
       const file = days[i]
       const slug = `${seriesSlug}-day-${i + 1}`
-      const image = extractFirstImage(file.fullPath)
+      const allImages = extractAllImages(file.fullPath)
+      const image = allImages[0] ?? extractFirstImage(file.fullPath)
       entries[slug] = {
         substackUrl: `${PUB}/p/${file.postSlug}`,
         substackImage: image,
+        substackImages: allImages,
       }
     }
     if (days.length < dayCount) {
@@ -201,6 +222,12 @@ function writeOutput(entries: Record<string, SourceEntry>) {
     `export interface SubstackSource {`,
     `  substackUrl: string`,
     `  substackImage: string | null`,
+    `  /** R37: all images in the source post, in order. Includes header. */`,
+    `  substackImages: string[]`,
+    `  /** R35: locally-cached header image path. */`,
+    `  substackImageLocal: string | null`,
+    `  /** R37: locally-cached paths for every image in substackImages. */`,
+    `  substackImagesLocal: string[]`,
     `}`,
     ``,
     `export const SUBSTACK_SOURCES: Record<string, SubstackSource> = {`,
@@ -209,9 +236,13 @@ function writeOutput(entries: Record<string, SourceEntry>) {
   for (const slug of slugs) {
     const e = entries[slug]
     const img = e.substackImage ? JSON.stringify(e.substackImage) : 'null'
+    const all = JSON.stringify(e.substackImages)
     lines.push(`  ${JSON.stringify(slug)}: {`)
     lines.push(`    substackUrl: ${JSON.stringify(e.substackUrl)},`)
     lines.push(`    substackImage: ${img},`)
+    lines.push(`    substackImages: ${all},`)
+    lines.push(`    substackImageLocal: null,`)
+    lines.push(`    substackImagesLocal: [],`)
     lines.push(`  },`)
   }
   lines.push(`}`, ``)

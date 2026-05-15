@@ -5,6 +5,43 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R37 / Substack image audit + homepage cobalt blocks + Daily Bread fixes + SW v50 (2026-05-15)
+
+Three-part founder brief: site-wide substack image audit, homepage cobalt theming, Daily Bread fixes.
+
+### 1. Site-wide substack image audit
+
+- `scripts/build-substack-sources.ts` now extracts EVERY substack-post-media image URL per HTML file (not just the first). Adds a `substackImages: string[]` field to each entry.
+- `scripts/cache-substack-images.ts` downloads each image to `public/images/substack-cache/<hash>.<ext>` and emits a parallel `substackImagesLocal: string[]`. Total: **183 images across 93 substack devotionals** (89 new tonight; 94 already cached). SUBSTACK_SOURCES type extended.
+- `DevotionalPageClient` rhythmImages override: substack devotionals now feed every cached substack image into the alternating-column rhythm rail, with specific captions ("Original cover · &lt;series&gt;" / "From the original Substack post · &lt;series&gt;"). Non-substack devotionals unchanged (still use SITE_DEVOTIONAL_ART).
+
+### 2. Home page
+
+- **Trust row** ("FREE · NO ACCOUNT · 5–7 MIN A DAY · START ANY DAY"): now cobalt-navy bg + cream text (light); cream bg + dark text (dark). True inversion.
+- **`.mock-cta` "READY TO BEGIN?"**: now matches Soul Audit treatment exactly — cobalt-navy + cream in light; cream + dark in dark. Inverted button styling, kicker color, helper-link color all flip.
+- **How-It-Works grid**: added `padding-bottom: clamp(1.4rem, 3vw, 2.4rem)` so the blue bottom border has more breathing room.
+- **Homepage hero `heroSrc` + `featuredArt`**: both repointed at `/images/substack-cache/33cd9f952103.png` — the Substack header for "Too Busy for God."
+- **Featured Series rail**: `getSeriesHero(slug)` now resolves substack-sourced series to their substack header image (via `SUBSTACK_SOURCES[<slug>-day-1]`). Substack series cards across the site now show the original substack cover.
+
+### 3. Daily Bread
+
+- **Default load**: `resolveUserActiveSeries()` no longer ignores `soul_audit`-sourced active series. Every `active_series` row is rendered regardless of source. Previously a Soul-Audit-started series fell through to a generic Bible-365 page (which showed "A Voice in the Wilderness").
+- **Width lock**: new `.daily-bread-shell-frame` outer container wraps ALL Daily Bread states (active, empty, holding, completion, plan) at `max-w-6xl` = 72rem with consistent padding. Was previously mixing `mock-panel` (narrow) and `devotional-shell-main` (max-w-6xl). Now full-width on desktop everywhere.
+- **Button alignment** on devotional header actions row: `items-center` → `items-baseline` so BACK TO SERIES / Share / READ ON SUBSTACK share a single text baseline. ShareButton inner SVG bumped to 14px and shifted `translateY(0.16em)` to sit on the baseline alongside text links. Added `leading-none` to action links.
+- **Stale cache**: bumped `SW_VERSION` v49 → v50 in both `ServiceWorkerRegistration.tsx` and `public/sw.js`. ServiceWorkerRegistration already auto-clears old caches + reloads the tab on a version mismatch, so v49 clients pick up v50 on next navigation without needing a manual hard refresh.
+
+### Verified locally
+
+- Homepage: trust-row + .mock-cta both render `rgb(23,27,105)` (deep navy) bg + cream text. Featured image src is `/images/substack-cache/33cd9f952103.png`.
+- Substack devotional (`/devotional/too-busy-for-god-day-2`): banner from substack cache, rhythm rail has 2 substack images with specific captions.
+- Type-check clean.
+
+Preserved: non-substack devotionals untouched. Scripture-first invariant intact. Home page brand masthead unchanged.
+
+PRD: `docs/feature-prds/F-061.md` (Round 37). Decision: SA-013.
+
+---
+
 ## F-061 R35 / Overnight audit deferred items, all five shipped (2026-05-14)
 
 Founder said "do all five." Done. Each was the explicit deferred item from R34's audit log.

@@ -1,5 +1,10 @@
 // Euangelion Service Worker
-const CACHE_NAME = 'euangelion-v49'
+// R37: bumped to v50 for the 2026-05-15 deploy. Keep in sync with
+// SW_VERSION in src/components/ServiceWorkerRegistration.tsx — when
+// the client sees a mismatched stored version it unregisters +
+// clears caches before re-registering, so users on the old build
+// pick up the new one without manual hard-refresh.
+const CACHE_NAME = 'euangelion-v50'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 

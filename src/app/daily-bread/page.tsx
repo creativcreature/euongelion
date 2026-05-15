@@ -123,7 +123,13 @@ async function resolveUserActiveSeries() {
     if (!user) return null
     await promoteScheduledSwapIfDue(user.id)
     const active = await getActiveSeries(user.id)
-    if (!active || active.source === 'soul_audit') return null
+    if (!active) return null
+    // R37: founder fix — Daily Bread should always render the
+    // user's `active_series` row, regardless of how it got there
+    // (manual start, soul_audit, archive-restart). Previously
+    // soul_audit-sourced rows were ignored and the page fell
+    // through to the generic plan view (which defaulted to "A
+    // Voice in the Wilderness"). Now every active selection wins.
     return active
   } catch (error) {
     console.error('[daily-bread] active_series read failed:', error)
@@ -131,12 +137,22 @@ async function resolveUserActiveSeries() {
   }
 }
 
+/**
+ * R37: founder direction — Daily Bread should render at a single
+ * consistent width across all states. Previously the active path
+ * was width-locked to `devotional-shell-main mx-auto max-w-6xl` by
+ * `CuratedActiveView`, while the empty / holding / completion /
+ * soul-audit-plan paths used the generic `mock-panel` (different
+ * width). Now Shell renders the SAME outer container for every
+ * state; full-width on desktop, capped at max-w-6xl to match the
+ * dedicated devotional reader.
+ */
 function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="mock-home">
       <main id="main-content" className="mock-paper">
         <EuangelionShellHeader />
-        <section className="mock-panel">{children}</section>
+        <section className="daily-bread-shell-frame">{children}</section>
         <SiteFooter />
         <section className="mock-bottom-brand">
           <h2 className="text-masthead mock-masthead-word">

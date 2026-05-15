@@ -3,19 +3,21 @@
  * scripts/cache-substack-images.ts.
  *
  * Maps each substack-sourced devotional slug → its canonical
- * Substack post URL + the post's primary header image. We now
- * cache the image locally under public/images/substack-cache/
- * (R35) and prefer the local path; substackImage retains the
- * substack-post-media S3 URL as a fallback in case the local
- * file isn't deployed.
+ * Substack post URL + every image in the post (R37). Each image
+ * is cached locally under public/images/substack-cache/ so LCP
+ * isn't tied to substack's edge.
  *
- * Do NOT edit by hand.
+ * Do NOT edit by hand. Re-run
+ * scripts/build-substack-sources.ts then
+ * scripts/cache-substack-images.ts to refresh.
  */
 
 export interface SubstackSource {
   substackUrl: string
   substackImage: string | null
+  substackImages: string[]
   substackImageLocal: string | null
+  substackImagesLocal: string[]
 }
 
 export const SUBSTACK_SOURCES: Record<string, SubstackSource> = {
@@ -23,616 +25,1348 @@ export const SUBSTACK_SOURCES: Record<string, SubstackSource> = {
     substackUrl: 'https://wokegod.substack.com/p/abiding-in-his-presence-16',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/746715a6-c62c-4f52-85b1-02b12ef255e8_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/746715a6-c62c-4f52-85b1-02b12ef255e8_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/97e0cb24-470b-44fa-b864-857b7356feda_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/0b5fe7ad3f85.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/0b5fe7ad3f85.jpg',
+      '/images/substack-cache/786c8f9d4385.jpg',
+    ],
   },
   'abiding-in-his-presence-day-2': {
     substackUrl: 'https://wokegod.substack.com/p/abiding-in-his-presence-26',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/685a4686-8ba6-48b2-8f93-d85def4b142a_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/685a4686-8ba6-48b2-8f93-d85def4b142a_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/1afec272-50c6-473f-9b58-aa3504f8c4d3_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/1d0b58f9995f.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/1d0b58f9995f.jpg',
+      '/images/substack-cache/9afbc739db8a.jpg',
+    ],
   },
   'abiding-in-his-presence-day-3': {
     substackUrl: 'https://wokegod.substack.com/p/abiding-in-his-presence-36',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/a1886067-91af-48ca-b45c-f0d47d00898b_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/a1886067-91af-48ca-b45c-f0d47d00898b_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/991a7472-385b-4a83-9331-3bbe7f247bec_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/9d6e9a96d9f1.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/9d6e9a96d9f1.jpg',
+      '/images/substack-cache/4cada2c9ce0a.jpg',
+    ],
   },
   'abiding-in-his-presence-day-4': {
     substackUrl: 'https://wokegod.substack.com/p/abiding-in-his-presence-46',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/d54582bc-7edd-4626-ae24-fb4325215c7c_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/d54582bc-7edd-4626-ae24-fb4325215c7c_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/3bacf373-fb23-45db-b2bf-f38381e121db_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/12981d6a5bc8.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/12981d6a5bc8.jpg',
+      '/images/substack-cache/fb61a7c6a034.jpg',
+    ],
   },
   'abiding-in-his-presence-day-5': {
     substackUrl: 'https://wokegod.substack.com/p/abiding-in-his-presence-56',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/3a8428e9-ddf7-4bf5-96ce-c4aae093e51c_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/3a8428e9-ddf7-4bf5-96ce-c4aae093e51c_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/f32dae80-0c0b-465e-bcf7-9103a05dcd31_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/9dabcb7af9ab.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/9dabcb7af9ab.jpg',
+      '/images/substack-cache/83b6e4e6a95e.jpg',
+    ],
   },
   'abiding-in-his-presence-day-6': {
     substackUrl: 'https://wokegod.substack.com/p/abiding-in-his-presence-66',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/1d41fc01-be2e-4633-b986-676c1f4d562a_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/1d41fc01-be2e-4633-b986-676c1f4d562a_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/a609a2f7-592b-4713-b06d-bb8c65aaf1fb_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/e0ba93d09e54.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/e0ba93d09e54.jpg',
+      '/images/substack-cache/c9f500b66846.jpg',
+    ],
   },
   'genesis-two-stories-of-creation-day-1': {
     substackUrl:
       'https://wokegod.substack.com/p/genesis-two-stories-of-creation-deep',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/8af00a3f-6af0-40fd-8c38-82597e74080b_1456x816.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/8af00a3f-6af0-40fd-8c38-82597e74080b_1456x816.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/c1c3e6e777d3.jpg',
+    substackImagesLocal: ['/images/substack-cache/c1c3e6e777d3.jpg'],
   },
   'genesis-two-stories-of-creation-day-2': {
     substackUrl:
       'https://wokegod.substack.com/p/genesis-two-stories-of-creation-day',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/25b012af-029b-49b4-b173-4b99fa44e6da_1456x816.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/25b012af-029b-49b4-b173-4b99fa44e6da_1456x816.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/ef7ae636-f113-473c-8ce6-272ba2cfb2be_1456x816.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/a36d7eff2ecc.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/a36d7eff2ecc.jpg',
+      '/images/substack-cache/edc0b6061139.jpg',
+    ],
   },
   'genesis-two-stories-of-creation-day-3': {
     substackUrl:
       'https://wokegod.substack.com/p/genesis-two-stories-of-creation-day-340',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/9c3bbc81-9536-458f-90f5-264d97f750ab_1456x816.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/9c3bbc81-9536-458f-90f5-264d97f750ab_1456x816.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/bbfb43ad-c73b-413b-bd32-243c8b02d2e3_1456x816.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/be3109e2f5cc.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/be3109e2f5cc.jpg',
+      '/images/substack-cache/b7b263a04031.jpg',
+    ],
   },
   'genesis-two-stories-of-creation-day-4': {
     substackUrl:
       'https://wokegod.substack.com/p/genesis-two-stories-of-creation-day-a70',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/749f993d-bc8e-4623-92dd-cf662a8d7c4d_1456x816.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/749f993d-bc8e-4623-92dd-cf662a8d7c4d_1456x816.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/54355463-7c59-4053-8871-0f9fa9a4677e_1456x816.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/c2665ad3a2fc.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/c2665ad3a2fc.jpg',
+      '/images/substack-cache/cdab4922c11a.jpg',
+    ],
   },
   'genesis-two-stories-of-creation-day-5': {
     substackUrl:
       'https://wokegod.substack.com/p/genesis-two-stories-of-creation-day-a0f',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/5a59d320-2589-4efa-a1f6-c1bc64a29986_1456x816.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/5a59d320-2589-4efa-a1f6-c1bc64a29986_1456x816.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/6e058d7b-5bba-49fa-b32b-4832a8b6e656_1456x816.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/1cd5bce800ea.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/1cd5bce800ea.jpg',
+      '/images/substack-cache/2dd9c0cdb084.jpg',
+    ],
   },
   'hearing-god-in-the-noise-day-1': {
     substackUrl: 'https://wokegod.substack.com/p/hearing-god-in-the-noise-16',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/19eff247-c038-487e-911e-b1781d49f05f_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/19eff247-c038-487e-911e-b1781d49f05f_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/e32c7bde-9453-43a0-95cb-59db42d92274_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/7688683f255e.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/7688683f255e.jpg',
+      '/images/substack-cache/f0d0bb513baf.jpg',
+    ],
   },
   'hearing-god-in-the-noise-day-2': {
     substackUrl: 'https://wokegod.substack.com/p/hearing-god-in-the-noise-26',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/081db1a9-9c7d-45e1-aac6-d10f63c3649d_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/081db1a9-9c7d-45e1-aac6-d10f63c3649d_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/50c15429-6a51-4496-b2eb-e8e8177de613_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/ffb49b740247.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/ffb49b740247.jpg',
+      '/images/substack-cache/9ac24895a02c.jpg',
+    ],
   },
   'hearing-god-in-the-noise-day-3': {
     substackUrl: 'https://wokegod.substack.com/p/hearing-god-in-the-noise-36',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/cf1314fd-7f90-4ffd-995a-f043d33a6eae_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/cf1314fd-7f90-4ffd-995a-f043d33a6eae_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/a20f0c54-3f04-4d13-9600-b1c01285edc6_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/adc0554c0bac.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/adc0554c0bac.jpg',
+      '/images/substack-cache/b4b40795744a.jpg',
+    ],
   },
   'hearing-god-in-the-noise-day-4': {
     substackUrl: 'https://wokegod.substack.com/p/hearing-god-in-the-noise-46',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/0f3d4abc-22c9-4ad4-87d7-56c3c7367cec_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/0f3d4abc-22c9-4ad4-87d7-56c3c7367cec_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/268114a7-968f-454c-aaca-b7b3d7b629d5_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/5aaaf6a0706c.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/5aaaf6a0706c.jpg',
+      '/images/substack-cache/ce5fe4550928.jpg',
+    ],
   },
   'hearing-god-in-the-noise-day-5': {
     substackUrl: 'https://wokegod.substack.com/p/hearing-god-in-the-noise-56',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/5d448ad3-766e-4841-8f44-6b04681bdabd_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/5d448ad3-766e-4841-8f44-6b04681bdabd_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/3e7fcdb2-2585-4e19-b8f0-ea1c9bd1d30c_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/0bd992fc30e2.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/0bd992fc30e2.jpg',
+      '/images/substack-cache/279c265a227a.jpg',
+    ],
   },
   'hearing-god-in-the-noise-day-6': {
     substackUrl: 'https://wokegod.substack.com/p/hearing-god-in-the-noise-66',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/e439cade-9745-4d60-a21e-488641299706_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/e439cade-9745-4d60-a21e-488641299706_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/5e996c37-1800-4ff4-90fd-4461445902d9_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/a8e04d77f2db.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/a8e04d77f2db.jpg',
+      '/images/substack-cache/1ac02aca151e.jpg',
+    ],
   },
   'in-the-beginning-week-1-day-1': {
     substackUrl:
       'https://wokegod.substack.com/p/in-the-beginning-week-1-the-god-who',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/ba6f67e4-c3d5-477c-a70c-0f4e71c4d3a1_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/ba6f67e4-c3d5-477c-a70c-0f4e71c4d3a1_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/f6bddc5c-c224-4fe9-b772-e9da0cd18f60_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/8889fd8a4147.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/8889fd8a4147.jpg',
+      '/images/substack-cache/f9b72e036079.jpg',
+    ],
   },
   'in-the-beginning-week-1-day-2': {
     substackUrl:
       'https://wokegod.substack.com/p/in-the-beginning-week-1-the-god-who-fac',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/7986068d-da42-44bd-b216-616b10ff24fa_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/7986068d-da42-44bd-b216-616b10ff24fa_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/7efe4859-966a-406f-9484-0fcb307a6919_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/24e920c138e3.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/24e920c138e3.jpg',
+      '/images/substack-cache/480ae6a4f381.jpg',
+    ],
   },
   'in-the-beginning-week-1-day-3': {
     substackUrl:
       'https://wokegod.substack.com/p/in-the-beginning-week-1-the-god-who-c09',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/8d96a660-025c-463a-9705-955566ea3120_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/8d96a660-025c-463a-9705-955566ea3120_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/b7fcd489-e370-42b6-ba85-d87e0964234a_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/999176acfdd5.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/999176acfdd5.jpg',
+      '/images/substack-cache/c1cce7dd49cf.jpg',
+    ],
   },
   'in-the-beginning-week-1-day-4': {
     substackUrl:
       'https://wokegod.substack.com/p/in-the-beginning-week-1-the-god-who-1fa',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/fc205f3a-c257-4052-8aab-f4676140dbea_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/fc205f3a-c257-4052-8aab-f4676140dbea_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/4596f507-6c5e-4013-b8ff-0fa6afee7666_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/4d03f10dd222.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/4d03f10dd222.jpg',
+      '/images/substack-cache/7bf610e55e84.jpg',
+    ],
   },
   'in-the-beginning-week-1-day-5': {
     substackUrl:
       'https://wokegod.substack.com/p/in-the-beginning-week-1-the-god-who-b48',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/afba881d-7e7a-4035-a494-1eb635025088_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/afba881d-7e7a-4035-a494-1eb635025088_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/e4c15e43-23f9-475c-a961-0c0be2fbdfdd_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/e28c219d540c.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/e28c219d540c.jpg',
+      '/images/substack-cache/f663184707ef.jpg',
+    ],
   },
   'in-the-beginning-week-1-day-6': {
     substackUrl:
       'https://wokegod.substack.com/p/in-the-beginning-week-1-the-god-who-143',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/21a9e2a3-12ea-4eca-97e5-93febf2fbc43_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/21a9e2a3-12ea-4eca-97e5-93febf2fbc43_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/65f2c804-cbea-4a86-9a35-0adc6c26a524_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/c8711d0c6442.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/c8711d0c6442.jpg',
+      '/images/substack-cache/01db0e901cc1.jpg',
+    ],
   },
   'once-saved-always-saved-day-1': {
     substackUrl:
       'https://wokegod.substack.com/p/once-saved-always-saved-day-16-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/e54688e1-3f24-43d5-8ddb-3250f7b62329_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/e54688e1-3f24-43d5-8ddb-3250f7b62329_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/3db75a3a-503d-4271-84ab-2463f0e06b5f_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/1d5c4a5a7bfe.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/1d5c4a5a7bfe.jpg',
+      '/images/substack-cache/00aaf3a8cd13.jpg',
+    ],
   },
   'once-saved-always-saved-day-2': {
     substackUrl:
       'https://wokegod.substack.com/p/once-saved-always-saved-day-26-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/bc19dd4a-8ab0-4d09-8f60-6f799fd42537_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/bc19dd4a-8ab0-4d09-8f60-6f799fd42537_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/a05286de-afd9-46df-b7bb-98feb88facd4_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/f869a8b1ce79.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/f869a8b1ce79.jpg',
+      '/images/substack-cache/a404b2e94451.jpg',
+    ],
   },
   'once-saved-always-saved-day-3': {
     substackUrl:
       'https://wokegod.substack.com/p/once-saved-always-saved-day-36-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/0666941f-85e6-40ae-8456-94feb7af300d_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/0666941f-85e6-40ae-8456-94feb7af300d_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/f0d0d0c8-c770-455d-909f-d4d61e2044ab_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/d04618158208.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/d04618158208.jpg',
+      '/images/substack-cache/4f1bf95136ca.jpg',
+    ],
   },
   'once-saved-always-saved-day-4': {
     substackUrl:
       'https://wokegod.substack.com/p/once-saved-always-saved-day-46-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/7b177908-a7c6-45cf-ad06-60e88b5ee4ed_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/7b177908-a7c6-45cf-ad06-60e88b5ee4ed_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/29bc0320-549d-4c99-9b3f-6acef267060b_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/7251daa813d6.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/7251daa813d6.jpg',
+      '/images/substack-cache/5bd4ef915d57.jpg',
+    ],
   },
   'once-saved-always-saved-day-5': {
     substackUrl:
       'https://wokegod.substack.com/p/once-saved-always-saved-day-56-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/10b9d737-2eb2-436f-95b4-38bbe9aeca9c_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/10b9d737-2eb2-436f-95b4-38bbe9aeca9c_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/1334a7bd-e5b3-47d9-9037-e97e3679658c_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/986d9827e190.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/986d9827e190.jpg',
+      '/images/substack-cache/05e20a87f3e1.jpg',
+    ],
   },
   'once-saved-always-saved-day-6': {
     substackUrl:
       'https://wokegod.substack.com/p/once-saved-always-saved-day-66-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/9d04c95b-70f3-44af-9e9d-85654580d375_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/9d04c95b-70f3-44af-9e9d-85654580d375_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/2c8b3d81-2140-4788-8599-b68a7b802404_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/0c84fde021da.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/0c84fde021da.jpg',
+      '/images/substack-cache/7fe461e9ec5d.jpg',
+    ],
   },
   'surrender-to-gods-will-day-1': {
     substackUrl: 'https://wokegod.substack.com/p/surrender-to-gods-will-16',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/643edb5a-36f3-484b-9584-269a78ad771e_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/643edb5a-36f3-484b-9584-269a78ad771e_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/b6d57e79-04e1-4ef6-aa73-c84d8a117666_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/981ba5732006.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/981ba5732006.jpg',
+      '/images/substack-cache/c148544363fc.jpg',
+    ],
   },
   'surrender-to-gods-will-day-2': {
     substackUrl: 'https://wokegod.substack.com/p/surrender-to-gods-will-26',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/f7dd4c88-ff87-4692-a7d1-0a46daa00a0a_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/f7dd4c88-ff87-4692-a7d1-0a46daa00a0a_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/eae20d7c-5988-432a-810d-25a26884f8d4_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/327323ced2ab.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/327323ced2ab.jpg',
+      '/images/substack-cache/b553c888d87b.jpg',
+    ],
   },
   'surrender-to-gods-will-day-3': {
     substackUrl: 'https://wokegod.substack.com/p/surrender-to-gods-will-36',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/8a87d929-43d0-4323-b57f-740c22deaadb_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/8a87d929-43d0-4323-b57f-740c22deaadb_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/6019210b-a5ef-4d7b-a363-897daccea9f4_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/8eb3602d3c50.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/8eb3602d3c50.jpg',
+      '/images/substack-cache/87cd45e89eab.jpg',
+    ],
   },
   'surrender-to-gods-will-day-4': {
     substackUrl: 'https://wokegod.substack.com/p/surrender-to-gods-will-46',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/a94d8c55-0293-4509-989e-2a3241c8887f_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/a94d8c55-0293-4509-989e-2a3241c8887f_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/4ace45ff-4742-4cb0-8f51-5e76e689ffb3_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/c8352b1d7894.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/c8352b1d7894.jpg',
+      '/images/substack-cache/5447a1057bed.jpg',
+    ],
   },
   'surrender-to-gods-will-day-5': {
     substackUrl: 'https://wokegod.substack.com/p/surrender-to-gods-will-56',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/a2a3b42b-017b-4e68-b141-b9f324aefd7c_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/a2a3b42b-017b-4e68-b141-b9f324aefd7c_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/d323b500-5eb7-4fa8-8a72-fec9612bb25a_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/9bd0c3465600.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/9bd0c3465600.jpg',
+      '/images/substack-cache/6862020ab8da.jpg',
+    ],
   },
   'surrender-to-gods-will-day-6': {
     substackUrl: 'https://wokegod.substack.com/p/surrender-to-gods-will-66',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/8f354d1d-0e8d-499d-8c2f-e037ec3768cc_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/8f354d1d-0e8d-499d-8c2f-e037ec3768cc_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/9a4d796c-de38-4ed7-9ec4-a7c0afad9a08_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/0087ca30f891.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/0087ca30f891.jpg',
+      '/images/substack-cache/43a45ac320a6.jpg',
+    ],
   },
   'the-blueprint-of-community-day-1': {
     substackUrl:
       'https://wokegod.substack.com/p/the-blueprint-of-community-deepdive',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/0ec295a9-8340-41d6-9a1f-802eb844ed78_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/0ec295a9-8340-41d6-9a1f-802eb844ed78_1530x857.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/fbaccfd8ad97.jpg',
+    substackImagesLocal: ['/images/substack-cache/fbaccfd8ad97.jpg'],
   },
   'the-blueprint-of-community-day-2': {
     substackUrl:
       'https://wokegod.substack.com/p/the-blueprint-of-community-day-15',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/023657f9-7d66-4dac-8522-5bf3db55fa71_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/023657f9-7d66-4dac-8522-5bf3db55fa71_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/00bc43ab-2c72-45e2-8bbd-66d1fb4d580f_1920x1024.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/e441b0465fb1.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/e441b0465fb1.jpg',
+      '/images/substack-cache/c5bcf26e88b9.jpg',
+    ],
   },
   'the-blueprint-of-community-day-3': {
     substackUrl:
       'https://wokegod.substack.com/p/the-blueprint-of-community-day-25',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/d421f8b6-5345-42c6-86f9-7d2cedc7e950_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/d421f8b6-5345-42c6-86f9-7d2cedc7e950_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/082eef66-ad1b-45f5-8cc6-eb6b7612bc5a_1920x1024.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/b9afdeff4945.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/b9afdeff4945.jpg',
+      '/images/substack-cache/0d1740209a4c.jpg',
+    ],
   },
   'the-blueprint-of-community-day-4': {
     substackUrl:
       'https://wokegod.substack.com/p/the-blueprint-of-community-day-35',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/67707546-f0c5-4a67-9161-fb6ae2364631_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/67707546-f0c5-4a67-9161-fb6ae2364631_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/d23ca171-a0ff-45f2-9fd4-44d36085a19d_1920x1024.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/b92e78151386.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/b92e78151386.jpg',
+      '/images/substack-cache/0e9a45a3263d.jpg',
+    ],
   },
   'the-blueprint-of-community-day-5': {
     substackUrl:
       'https://wokegod.substack.com/p/the-blueprint-of-community-day-45',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/abeaaa6a-d90c-41be-b227-3cc139056e72_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/abeaaa6a-d90c-41be-b227-3cc139056e72_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/5dcd66b5-d49d-406f-8102-47a6811cdbc6_1920x1024.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/f98558c6be79.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/f98558c6be79.jpg',
+      '/images/substack-cache/7d871b944b21.jpg',
+    ],
   },
   'the-nature-of-belief-day-1': {
     substackUrl:
       'https://wokegod.substack.com/p/the-nature-of-belief-day-16-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/0f13816b-34c9-434d-a01a-c077bf24a496_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/0f13816b-34c9-434d-a01a-c077bf24a496_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/567e63c2-2dfb-4bde-bf2c-b6bfdec289a3_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/a4693e80b14e.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/a4693e80b14e.jpg',
+      '/images/substack-cache/e2e842e83fb0.jpg',
+    ],
   },
   'the-nature-of-belief-day-2': {
     substackUrl:
       'https://wokegod.substack.com/p/the-nature-of-belief-day-26-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/9042faf4-87d7-4266-9ec9-d0be19ea6980_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/9042faf4-87d7-4266-9ec9-d0be19ea6980_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/ff635c4f-e942-49c9-8deb-d6f33ad7464d_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/e34f5299c541.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/e34f5299c541.jpg',
+      '/images/substack-cache/3fb7e3eaf3f7.jpg',
+    ],
   },
   'the-nature-of-belief-day-3': {
     substackUrl:
       'https://wokegod.substack.com/p/the-nature-of-belief-day-36-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/f8790dae-5adc-4945-aa0f-12c195e0a253_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/f8790dae-5adc-4945-aa0f-12c195e0a253_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/c8e7e29a-7af6-4c8f-8984-32a13c3ade89_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/37c65188c195.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/37c65188c195.jpg',
+      '/images/substack-cache/00b91ef19090.jpg',
+    ],
   },
   'the-nature-of-belief-day-4': {
     substackUrl:
       'https://wokegod.substack.com/p/the-nature-of-belief-day-46-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/f6fadbc5-927a-464f-908e-b87da3f9317d_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/f6fadbc5-927a-464f-908e-b87da3f9317d_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/7ff82318-5aba-45f0-b3dc-aaae40e1f3d3_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/78b4e8df92f2.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/78b4e8df92f2.jpg',
+      '/images/substack-cache/0287519f5b6e.jpg',
+    ],
   },
   'the-nature-of-belief-day-5': {
     substackUrl:
       'https://wokegod.substack.com/p/the-nature-of-belief-day-56-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/6246e6fb-b3e1-4e92-a072-8873b5d8bc34_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/6246e6fb-b3e1-4e92-a072-8873b5d8bc34_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/b510418d-7b29-4258-aa27-6e2783dad4d4_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/98361fdc168b.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/98361fdc168b.jpg',
+      '/images/substack-cache/483c3c63697f.jpg',
+    ],
   },
   'the-nature-of-belief-day-6': {
     substackUrl:
       'https://wokegod.substack.com/p/the-nature-of-belief-day-66-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/72d479f2-e370-494f-b5ee-b86dcbccd657_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/72d479f2-e370-494f-b5ee-b86dcbccd657_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/520664e6-ad04-46e1-ac7e-675f2cf900b8_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/1a93597281cc.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/1a93597281cc.jpg',
+      '/images/substack-cache/016d3c4ba289.jpg',
+    ],
   },
   'the-word-before-words-day-1': {
     substackUrl:
       'https://wokegod.substack.com/p/the-word-before-words-week-1-deep',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/7acaaa4d-4845-4b65-8f05-25836321d29b_1456x816.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/7acaaa4d-4845-4b65-8f05-25836321d29b_1456x816.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/220c7856-9d0a-466b-ac02-cbc2256367d7_1456x816.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/d65e0d9b324c.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/d65e0d9b324c.jpg',
+      '/images/substack-cache/5777850ffaa8.jpg',
+    ],
   },
   'the-word-before-words-day-2': {
     substackUrl: 'https://wokegod.substack.com/p/the-word-before-words-day-15',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/ccfa2fc2-75be-47f0-98dc-faa2add3c775_1456x816.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/ccfa2fc2-75be-47f0-98dc-faa2add3c775_1456x816.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/68dc828b-7b66-4bb6-ab83-152b8bc24484_1456x816.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/09d5f061ad75.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/09d5f061ad75.jpg',
+      '/images/substack-cache/34364a8dc9e6.jpg',
+    ],
   },
   'the-word-before-words-day-3': {
     substackUrl: 'https://wokegod.substack.com/p/the-word-before-words-day-25',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/c16f4ab5-4a0e-4024-ab06-70481e7246cf_1456x816.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/c16f4ab5-4a0e-4024-ab06-70481e7246cf_1456x816.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/02016345-27d6-4226-a152-d83148e927c5_1456x816.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/6d5deb705175.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/6d5deb705175.jpg',
+      '/images/substack-cache/4a95a978db84.jpg',
+    ],
   },
   'the-word-before-words-day-4': {
     substackUrl: 'https://wokegod.substack.com/p/the-word-before-words-day-35',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/33d2a9ec-0c0d-4b25-8e8b-807b44067441_1456x816.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/33d2a9ec-0c0d-4b25-8e8b-807b44067441_1456x816.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/c74b4ca2-e35b-4f64-a6e1-14ca565f7899_1456x816.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/55b2366529c6.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/55b2366529c6.jpg',
+      '/images/substack-cache/561fe7c26948.jpg',
+    ],
   },
   'the-word-before-words-day-5': {
     substackUrl: 'https://wokegod.substack.com/p/the-word-before-words-day-45',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/480531a6-a2df-4031-ab2e-17a64ea57933_1456x816.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/480531a6-a2df-4031-ab2e-17a64ea57933_1456x816.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/9e1e99e3-bcdf-495e-a6db-358b5f345a57_1456x816.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/3b5dcb2e36e3.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/3b5dcb2e36e3.jpg',
+      '/images/substack-cache/83233a4173f1.jpg',
+    ],
   },
   'the-work-of-god-day-1': {
     substackUrl:
       'https://wokegod.substack.com/p/the-work-of-god-day-16-week-88',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/6d4e918f-3250-4da6-b1b2-6d88de03f98a_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/6d4e918f-3250-4da6-b1b2-6d88de03f98a_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/30e09b9d-af9d-4eb5-a3e0-d079b943d32a_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/748b6cfac650.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/748b6cfac650.jpg',
+      '/images/substack-cache/3c53ea26de18.jpg',
+    ],
   },
   'the-work-of-god-day-2': {
     substackUrl:
       'https://wokegod.substack.com/p/the-work-of-god-day-26-week-88',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/49f7bf05-f838-4164-bd98-64b9eebebf34_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/49f7bf05-f838-4164-bd98-64b9eebebf34_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/bbf8d5b6-30c1-40eb-8af3-37dfe266006f_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/39284eeb19ba.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/39284eeb19ba.jpg',
+      '/images/substack-cache/5eaaac711873.jpg',
+    ],
   },
   'the-work-of-god-day-3': {
     substackUrl:
       'https://wokegod.substack.com/p/the-work-of-god-day-36-week-88',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/7ecbeb3a-87a9-4bc7-bdf2-7f9c6a623c00_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/7ecbeb3a-87a9-4bc7-bdf2-7f9c6a623c00_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/f1adbb4d-f5ad-4758-95b9-38f3222fad6c_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/b7725b39dce6.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/b7725b39dce6.jpg',
+      '/images/substack-cache/d9f8e49a2d60.jpg',
+    ],
   },
   'the-work-of-god-day-4': {
     substackUrl:
       'https://wokegod.substack.com/p/the-work-of-god-day-46-week-88',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/b49a8209-c274-4b92-970c-c75b837e519a_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/b49a8209-c274-4b92-970c-c75b837e519a_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/50920837-4756-44df-86d0-a9d695d8a840_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/7c319fd0f722.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/7c319fd0f722.jpg',
+      '/images/substack-cache/b3a57cc85276.jpg',
+    ],
   },
   'the-work-of-god-day-5': {
     substackUrl:
       'https://wokegod.substack.com/p/the-work-of-god-day-56-week-88',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/d0d36ecb-2184-49cf-9d5b-e82a073c41d2_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/d0d36ecb-2184-49cf-9d5b-e82a073c41d2_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/57e1f9d7-c12d-47c3-a0c2-10f8bd8683ac_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/b6706c708ee7.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/b6706c708ee7.jpg',
+      '/images/substack-cache/83a975d92582.jpg',
+    ],
   },
   'the-work-of-god-day-6': {
     substackUrl:
       'https://wokegod.substack.com/p/the-work-of-god-day-66-week-88',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/9bb9a736-4f60-46fa-acfc-7ca7f257ae73_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/9bb9a736-4f60-46fa-acfc-7ca7f257ae73_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/53690d38-b737-4110-aa4a-4ac92586fb35_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/356dee0b62a5.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/356dee0b62a5.jpg',
+      '/images/substack-cache/c47096594fc2.jpg',
+    ],
   },
   'too-busy-for-god-day-1': {
     substackUrl: 'https://wokegod.substack.com/p/too-busy-for-god',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/dd8251b1-ffc0-4b70-bbc0-1cdfabb1874f_1536x1024.png',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/dd8251b1-ffc0-4b70-bbc0-1cdfabb1874f_1536x1024.png',
+    ],
     substackImageLocal: '/images/substack-cache/33cd9f952103.png',
+    substackImagesLocal: ['/images/substack-cache/33cd9f952103.png'],
   },
   'too-busy-for-god-day-2': {
     substackUrl: 'https://wokegod.substack.com/p/too-busy-for-god-16',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/b98fdf66-1264-4ece-8da7-ad9553c20fd9_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/b98fdf66-1264-4ece-8da7-ad9553c20fd9_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/1e2a8a86-c81c-4f09-b948-2ac5342bd86e_1100x300.png',
+    ],
     substackImageLocal: '/images/substack-cache/d0ed47ec58f7.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/d0ed47ec58f7.jpg',
+      '/images/substack-cache/b0a442f86110.png',
+    ],
   },
   'too-busy-for-god-day-3': {
     substackUrl: 'https://wokegod.substack.com/p/too-busy-for-god-26',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/ac681c9a-d45c-4ab6-b2bd-c8341771ddda_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/ac681c9a-d45c-4ab6-b2bd-c8341771ddda_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/3ab1eda2-388d-4a00-96b8-48ba71a7aa7d_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/10629e7cd0b9.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/10629e7cd0b9.jpg',
+      '/images/substack-cache/6be35d21f97f.jpg',
+    ],
   },
   'too-busy-for-god-day-4': {
     substackUrl: 'https://wokegod.substack.com/p/too-busy-for-god-36',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/4241e747-21b7-4739-ae07-dd943d39592a_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/4241e747-21b7-4739-ae07-dd943d39592a_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/547332bd-1062-419b-b301-5f33ed9946c6_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/43939a27672e.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/43939a27672e.jpg',
+      '/images/substack-cache/0ceed04aa207.jpg',
+    ],
   },
   'too-busy-for-god-day-5': {
     substackUrl: 'https://wokegod.substack.com/p/too-busy-for-god-46',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/72afd803-48ae-47b1-84ae-8f9ba6a23aa3_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/72afd803-48ae-47b1-84ae-8f9ba6a23aa3_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/e4ffcc7e-59d1-47bb-8414-ccfa602b30ba_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/acfe8e4fc86d.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/acfe8e4fc86d.jpg',
+      '/images/substack-cache/4d2b516e195e.jpg',
+    ],
   },
   'too-busy-for-god-day-6': {
     substackUrl: 'https://wokegod.substack.com/p/too-busy-for-god-56',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/8fbbadfc-5856-4322-8905-d50980da8b00_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/8fbbadfc-5856-4322-8905-d50980da8b00_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/c8e59820-d0e9-4096-96f6-1dc6c4fd41e9_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/2ae799aec24a.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/2ae799aec24a.jpg',
+      '/images/substack-cache/387230f60d63.jpg',
+    ],
   },
   'what-does-it-mean-to-believe-day-1': {
     substackUrl:
       'https://wokegod.substack.com/p/what-does-it-mean-to-believe-day',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/b135f1d5-2b05-4082-afd1-ebcb65fd14fd_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/b135f1d5-2b05-4082-afd1-ebcb65fd14fd_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/0288172a-7267-4a01-af3a-3b92d0d2fc24_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/a85b73b6bcb3.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/a85b73b6bcb3.jpg',
+      '/images/substack-cache/97fd7e56f1a5.jpg',
+    ],
   },
   'what-does-it-mean-to-believe-day-2': {
     substackUrl:
       'https://wokegod.substack.com/p/what-does-it-mean-to-believe-day-221',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/1527cae0-24aa-4d00-bda2-917cda86ebb8_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/1527cae0-24aa-4d00-bda2-917cda86ebb8_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/ea639f25-29a3-4d6f-83f5-16556f17f18f_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/f287412f702e.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/f287412f702e.jpg',
+      '/images/substack-cache/5cdecaa89d3c.jpg',
+    ],
   },
   'what-does-it-mean-to-believe-day-3': {
     substackUrl:
       'https://wokegod.substack.com/p/what-does-it-mean-to-believe-day-5d9',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/60aacf11-41e2-489d-91ca-c8c22a21948f_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/60aacf11-41e2-489d-91ca-c8c22a21948f_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/fe164f91-97c6-44db-885c-70924b4bbd3a_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/18a2b50d4c60.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/18a2b50d4c60.jpg',
+      '/images/substack-cache/51acf91f74fd.jpg',
+    ],
   },
   'what-does-it-mean-to-believe-day-4': {
     substackUrl:
       'https://wokegod.substack.com/p/what-does-it-mean-to-believe-day-546',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/5f206c79-6472-40c9-8783-4b0c76eaf5d9_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/5f206c79-6472-40c9-8783-4b0c76eaf5d9_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/e791c8c4-eb34-470b-a481-eb3ad5fba82e_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/33e306972d90.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/33e306972d90.jpg',
+      '/images/substack-cache/2dd3f7c7dfd5.jpg',
+    ],
   },
   'what-does-it-mean-to-believe-day-5': {
     substackUrl:
       'https://wokegod.substack.com/p/what-does-it-mean-to-believe-day-400',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/453f387b-00d0-4853-a00b-cc5371cda505_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/453f387b-00d0-4853-a00b-cc5371cda505_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/23479d5a-f07f-4cd1-b992-3e490e7f3a1f_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/5357d16b9f72.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/5357d16b9f72.jpg',
+      '/images/substack-cache/ca683b2e38ba.jpg',
+    ],
   },
   'what-does-it-mean-to-believe-day-6': {
     substackUrl:
       'https://wokegod.substack.com/p/what-does-it-mean-to-believe-day-78f',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/e7eaa2b5-80d5-40d6-b54c-6a8b4785e6c3_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/e7eaa2b5-80d5-40d6-b54c-6a8b4785e6c3_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/938c64b7-23db-421f-b22a-f5c241d7abea_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/391be2db180a.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/391be2db180a.jpg',
+      '/images/substack-cache/91fc1ed87b37.jpg',
+    ],
   },
   'what-happens-when-you-repeatedly-sin-day-1': {
     substackUrl:
       'https://wokegod.substack.com/p/what-happens-when-you-repeatedly',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/d3f2b954-f844-415a-812c-4b4901d1a05c_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/d3f2b954-f844-415a-812c-4b4901d1a05c_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/df797b8a-a23b-410a-8d80-f1206a77ceb2_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/9037fbb52250.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/9037fbb52250.jpg',
+      '/images/substack-cache/ebb06d76c665.jpg',
+    ],
   },
   'what-happens-when-you-repeatedly-sin-day-2': {
     substackUrl:
       'https://wokegod.substack.com/p/what-happens-when-you-repeatedly-b38',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/5d10a30f-ba15-4101-8bbf-0def4d9efc7a_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/5d10a30f-ba15-4101-8bbf-0def4d9efc7a_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/2ebb185f-4dd9-4474-815c-ecb922dc664a_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/5e026b304568.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/5e026b304568.jpg',
+      '/images/substack-cache/ac7f8980e86e.jpg',
+    ],
   },
   'what-happens-when-you-repeatedly-sin-day-3': {
     substackUrl:
       'https://wokegod.substack.com/p/what-happens-when-you-repeatedly-d87',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/a369e2f1-a975-4e8a-8e69-32ec8fffa9ad_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/a369e2f1-a975-4e8a-8e69-32ec8fffa9ad_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/fd0fea07-ac56-4c47-9c08-e3fabbbd6f50_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/90759a875b0e.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/90759a875b0e.jpg',
+      '/images/substack-cache/6a95726e5fc4.jpg',
+    ],
   },
   'what-happens-when-you-repeatedly-sin-day-4': {
     substackUrl:
       'https://wokegod.substack.com/p/what-happens-when-you-repeatedly-02c',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/fd6368cf-d09c-4351-8846-23087f5b5e62_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/fd6368cf-d09c-4351-8846-23087f5b5e62_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/d1c31be6-9abe-4ffa-bc57-25fb5c3cb33f_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/a7e25ce78d23.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/a7e25ce78d23.jpg',
+      '/images/substack-cache/a41a54e97ad6.jpg',
+    ],
   },
   'what-happens-when-you-repeatedly-sin-day-5': {
     substackUrl:
       'https://wokegod.substack.com/p/what-happens-when-you-repeatedly-085',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/f1323b26-1064-4c11-a1ed-7d7a868aa5f0_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/f1323b26-1064-4c11-a1ed-7d7a868aa5f0_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/1cccb6af-bfd3-41d0-b962-cc5750ce8c00_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/5edc580f134f.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/5edc580f134f.jpg',
+      '/images/substack-cache/9c66ed43aef7.jpg',
+    ],
   },
   'what-happens-when-you-repeatedly-sin-day-6': {
     substackUrl:
       'https://wokegod.substack.com/p/what-happens-when-you-repeatedly-a90',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/a4daca96-a18e-403f-9252-089466f65ed9_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/a4daca96-a18e-403f-9252-089466f65ed9_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/99b40bd9-0101-482e-9e77-3f4ac830512a_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/49edb378430a.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/49edb378430a.jpg',
+      '/images/substack-cache/ecbc46745e55.jpg',
+    ],
   },
   'what-is-carrying-a-cross-day-1': {
     substackUrl:
       'https://wokegod.substack.com/p/what-is-carrying-a-cross-day-16-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/b39e16a7-b98d-4a22-8afd-9f6eaa6b13e0_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/b39e16a7-b98d-4a22-8afd-9f6eaa6b13e0_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/3f95eb49-2b06-4e70-9f68-6a1229a79e6d_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/6a7228e8a57e.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/6a7228e8a57e.jpg',
+      '/images/substack-cache/b3bdb4071b00.jpg',
+    ],
   },
   'what-is-carrying-a-cross-day-2': {
     substackUrl:
       'https://wokegod.substack.com/p/what-is-carrying-a-cross-day-26-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/d5ee3bc3-083d-482f-99a3-e32fd8fcc170_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/d5ee3bc3-083d-482f-99a3-e32fd8fcc170_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/676af949-62d7-4baf-bcc8-718e9e6fa982_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/b0e5ad8ddaa5.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/b0e5ad8ddaa5.jpg',
+      '/images/substack-cache/50c960e97eec.jpg',
+    ],
   },
   'what-is-carrying-a-cross-day-3': {
     substackUrl:
       'https://wokegod.substack.com/p/what-is-carrying-a-cross-day-36-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/2d7fcfa9-b4a7-47d9-8347-08c312974ef9_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/2d7fcfa9-b4a7-47d9-8347-08c312974ef9_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/b8aeac3f-5031-427f-b660-e82ac646bb6d_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/b7d8db41b4ff.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/b7d8db41b4ff.jpg',
+      '/images/substack-cache/466ee6a12ab2.jpg',
+    ],
   },
   'what-is-carrying-a-cross-day-4': {
     substackUrl:
       'https://wokegod.substack.com/p/what-is-carrying-a-cross-day-46-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/7cb54829-6393-420c-ad50-64b2d4da1d87_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/7cb54829-6393-420c-ad50-64b2d4da1d87_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/adcc4b75-b1c2-4614-af44-674b455e396c_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/ab9579c3d774.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/ab9579c3d774.jpg',
+      '/images/substack-cache/c23ae70a1516.jpg',
+    ],
   },
   'what-is-carrying-a-cross-day-5': {
     substackUrl:
       'https://wokegod.substack.com/p/what-is-carrying-a-cross-day-56-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/cc1d91a6-81ad-45c5-a7aa-5e532789d0ad_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/cc1d91a6-81ad-45c5-a7aa-5e532789d0ad_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/097f564d-e285-4b87-b3f8-4d135b5477a4_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/9cb91f09dfc7.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/9cb91f09dfc7.jpg',
+      '/images/substack-cache/e1e43a1457ba.jpg',
+    ],
   },
   'what-is-carrying-a-cross-day-6': {
     substackUrl:
       'https://wokegod.substack.com/p/what-is-carrying-a-cross-day-66-week',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/3bb8091a-8f1b-4857-9d6c-797e7d109c2f_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/3bb8091a-8f1b-4857-9d6c-797e7d109c2f_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/59339439-8630-4526-85f4-9409832723d3_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/ec120184a379.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/ec120184a379.jpg',
+      '/images/substack-cache/2b75cca76f49.jpg',
+    ],
   },
   'what-is-the-gospel-day-1': {
     substackUrl: 'https://wokegod.substack.com/p/what-is-the-gospel-week-18',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/ef2292f5-a172-44cb-891f-d326a151b329_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/ef2292f5-a172-44cb-891f-d326a151b329_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/e72ca549-8ea0-4983-bce8-eefd49604416_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/f03aa9a35cc9.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/f03aa9a35cc9.jpg',
+      '/images/substack-cache/a8d5d2719499.jpg',
+    ],
   },
   'what-is-the-gospel-day-2': {
     substackUrl:
       'https://wokegod.substack.com/p/what-is-the-gospel-day-26-week-28',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/09cd9751-9dbb-4df5-a5ee-43c06b15d38c_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/09cd9751-9dbb-4df5-a5ee-43c06b15d38c_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/94ba50bb-d132-41c4-8ad6-4d3d9d9908ce_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/c05d1b1a1294.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/c05d1b1a1294.jpg',
+      '/images/substack-cache/ecda18f60de1.jpg',
+    ],
   },
   'what-is-the-gospel-day-3': {
     substackUrl:
       'https://wokegod.substack.com/p/what-is-the-gospel-day-36-week-18',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/cf6afdb2-0317-4ecb-93ff-4a65f81e650d_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/cf6afdb2-0317-4ecb-93ff-4a65f81e650d_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/be736187-09e9-4d1b-af13-f32c9bd9c6c7_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/c132269b69b8.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/c132269b69b8.jpg',
+      '/images/substack-cache/b3492fee7730.jpg',
+    ],
   },
   'what-is-the-gospel-day-4': {
     substackUrl:
       'https://wokegod.substack.com/p/what-is-the-gospel-day-46-week-18',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/9344d783-1b62-4734-9791-67462128bb4b_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/9344d783-1b62-4734-9791-67462128bb4b_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/6eb00cc4-b321-4411-9557-1f1c0db56ea7_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/f221a7ff1a98.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/f221a7ff1a98.jpg',
+      '/images/substack-cache/fce2d4f71bae.jpg',
+    ],
   },
   'what-is-the-gospel-day-5': {
     substackUrl:
       'https://wokegod.substack.com/p/what-is-the-gospel-day-56-week-18',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/f48260fb-e627-4e04-8126-27f60ccaafab_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/f48260fb-e627-4e04-8126-27f60ccaafab_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/eaaf6669-eca4-4c63-aa94-b0029ee79c53_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/0e3083948df4.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/0e3083948df4.jpg',
+      '/images/substack-cache/04be96e34887.jpg',
+    ],
   },
   'what-is-the-gospel-day-6': {
     substackUrl:
       'https://wokegod.substack.com/p/what-is-the-gospel-day-66-week-18',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/39f947a0-71e6-42e9-bbca-59d0ef1ff016_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/39f947a0-71e6-42e9-bbca-59d0ef1ff016_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/d8569a69-ae24-4332-92dc-14e6cf51aa84_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/430701b5e0e6.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/430701b5e0e6.jpg',
+      '/images/substack-cache/24f129be50ad.jpg',
+    ],
   },
   'why-jesus-day-1': {
     substackUrl: 'https://wokegod.substack.com/p/why-jesus-day-16-week-18',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/ebcb3bac-4822-4510-b9f3-1c8b9db3d2ae_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/ebcb3bac-4822-4510-b9f3-1c8b9db3d2ae_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/3f95eb49-2b06-4e70-9f68-6a1229a79e6d_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/d141779ce5bd.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/d141779ce5bd.jpg',
+      '/images/substack-cache/b3bdb4071b00.jpg',
+    ],
   },
   'why-jesus-day-2': {
     substackUrl: 'https://wokegod.substack.com/p/why-jesus-day-26-week-18',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/22c29df9-0bc9-4425-8222-b5322ff91f51_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/22c29df9-0bc9-4425-8222-b5322ff91f51_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/544ab503-04ce-4057-afcc-e1056a0bc832_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/bd9bc88570e2.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/bd9bc88570e2.jpg',
+      '/images/substack-cache/faf79bdd49f2.jpg',
+    ],
   },
   'why-jesus-day-3': {
     substackUrl: 'https://wokegod.substack.com/p/why-jesus-day-36-week-18',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/9ddd0068-6c55-4ac2-8232-cc76db2f440f_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/9ddd0068-6c55-4ac2-8232-cc76db2f440f_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/4988a693-f247-4cae-b16d-6d1487b5fb49_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/6d64bf1e3a03.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/6d64bf1e3a03.jpg',
+      '/images/substack-cache/5e0301798366.jpg',
+    ],
   },
   'why-jesus-day-4': {
     substackUrl: 'https://wokegod.substack.com/p/why-jesus-day-46-week-18',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/1601ca56-c775-47b5-b855-5c8081fcce75_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/1601ca56-c775-47b5-b855-5c8081fcce75_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/5188f0e5-6ed4-417d-ab7a-3f4c5527663c_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/72f0621c6c43.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/72f0621c6c43.jpg',
+      '/images/substack-cache/0c55b609793e.jpg',
+    ],
   },
   'why-jesus-day-5': {
     substackUrl: 'https://wokegod.substack.com/p/why-jesus-day-56-week-18',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/a61c64eb-adfd-43b1-9f97-5866108b607f_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/a61c64eb-adfd-43b1-9f97-5866108b607f_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/00364fcb-da1a-4a08-834d-bf1c8886ff69_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/2761ee8f74ac.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/2761ee8f74ac.jpg',
+      '/images/substack-cache/d7ad61bad709.jpg',
+    ],
   },
   'why-jesus-day-6': {
     substackUrl: 'https://wokegod.substack.com/p/why-jesus-day-66-week-18',
     substackImage:
       'https://substack-post-media.s3.amazonaws.com/public/images/5428551f-fc1b-4ad6-8cc2-cd32a2be2b08_1530x857.jpeg',
+    substackImages: [
+      'https://substack-post-media.s3.amazonaws.com/public/images/5428551f-fc1b-4ad6-8cc2-cd32a2be2b08_1530x857.jpeg',
+      'https://substack-post-media.s3.amazonaws.com/public/images/e6538745-22da-4b0b-8117-9fb2d192afb9_1100x300.jpeg',
+    ],
     substackImageLocal: '/images/substack-cache/15bad213428e.jpg',
+    substackImagesLocal: [
+      '/images/substack-cache/15bad213428e.jpg',
+      '/images/substack-cache/4dab44593fdd.jpg',
+    ],
   },
 }

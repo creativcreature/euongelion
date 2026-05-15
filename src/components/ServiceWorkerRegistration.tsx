@@ -2,7 +2,10 @@
 
 import { useEffect } from 'react'
 
-const SW_VERSION = 'v49'
+// R37 (2026-05-15): bump on every deploy that ships UI changes so
+// returning users force-refresh into the new build without manually
+// reloading. v50 corresponds to the R37 deploy.
+const SW_VERSION = 'v50'
 const SW_VERSION_KEY = 'euangelion-sw-version'
 
 export default function ServiceWorkerRegistration() {

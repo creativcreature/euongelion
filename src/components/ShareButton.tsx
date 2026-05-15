@@ -71,10 +71,13 @@ export default function ShareButton({
         className={`animated-underline text-label vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)] ${className}`}
         aria-label={`Share ${title}`}
       >
-        <span className="flex items-center gap-2">
+        {/* R37: icon + label baseline-aligned. inline-flex keeps
+            the button on a text baseline so it sits flush with
+            sibling text links in items-baseline rows. */}
+        <span className="inline-flex items-baseline gap-2 leading-none">
           <svg
-            width="16"
-            height="16"
+            width="14"
+            height="14"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -82,6 +85,7 @@ export default function ShareButton({
             strokeLinecap="round"
             strokeLinejoin="round"
             aria-hidden="true"
+            style={{ transform: 'translateY(0.16em)' }}
           >
             <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
             <polyline points="16 6 12 2 8 6" />
