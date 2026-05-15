@@ -5,6 +5,19 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## F-061 R38 / Revert R37 hero swap + drop how-it-works bottom padding (2026-05-15)
+
+Founder correction to R37:
+
+1. **Top-of-page hero.** `HOMEPAGE_TODAY.heroSrc` reverted from the substack header back to `/images/site/homepage/hero/header-v2.webp` — the blue empty-tomb riso. R37 incorrectly applied the substack-header swap to this banner; founder's R37 direction was scoped to the Too Busy for God featured devotional block + series cards only. `featuredArt` and `getSeriesHero()` keep their R37 substack-header behavior (correctly scoped).
+2. **How-It-Works grid bottom padding removed.** R37 added `padding-bottom: clamp(1.4rem, 3vw, 2.4rem)` to `.homepage-howitworks-grid`. Founder now wants that gone; grid flush against the bottom blue border again.
+
+Verified locally at 1440×900: hero img = `hero/header-v2.webp`, featured card img = `substack-cache/33cd9f952103.png`, how-it-works grid `padding-bottom = 0px`.
+
+PRD: `docs/feature-prds/F-061.md` (Round 38). Decision: SA-013.
+
+---
+
 ## F-061 R37 / Substack image audit + homepage cobalt blocks + Daily Bread fixes + SW v50 (2026-05-15)
 
 Three-part founder brief: site-wide substack image audit, homepage cobalt theming, Daily Bread fixes.

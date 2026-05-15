@@ -677,9 +677,6 @@ h3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   background: var(--color-deep-navy, #171b69);
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
-  /* R37: more breathing room above the closing blue border under
-     the step cards. Was tight; founder wanted more space. */
-  padding-bottom: clamp(1.4rem, 3vw, 2.4rem);
 }
 .homepage-howitworks-grid .mock-step-card {
   background: transparent;
