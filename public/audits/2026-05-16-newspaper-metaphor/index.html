@@ -622,6 +622,809 @@ footer {
 .demo-ornaments span:nth-child(2) { color: var(--burgundy); }
 .demo-ornaments span:nth-child(3) { color: var(--gold); }
 
+/* ═══════════════════════════════════════════════
+   BENTO TILE MOCKUPS — each pitch card previews itself
+   ═══════════════════════════════════════════════ */
+.bento-mock {
+  margin: 0.5rem 0;
+  border: 1.5px solid var(--line);
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--serif);
+}
+.bento-mock .bm-tag {
+  position: absolute;
+  top: 0.34rem;
+  right: 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  text-transform: uppercase;
+  pointer-events: none;
+  background: var(--paper);
+  padding: 0.05rem 0.3rem;
+  border: 1px solid var(--line-soft);
+  z-index: 2;
+}
+.bento-mock .bm-kicker {
+  font-family: var(--sans);
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+  margin: 0;
+}
+.bento-mock .bm-rule {
+  border-top: 1.5px solid var(--ink);
+  margin: 0.3rem 0;
+}
+.bento-mock .bm-rule-thin {
+  border-top: 1px solid var(--line-soft);
+  margin: 0.3rem 0;
+}
+
+/* Lead Headline mockup — A1 story */
+.bm-lead {
+  padding: 0.7rem 0.8rem 0.8rem;
+  background:
+    linear-gradient(180deg, rgba(31,42,141,0.06) 0%, rgba(31,42,141,0) 70%),
+    radial-gradient(circle at 80% 30%, rgba(200,165,106,0.12) 0%, transparent 50%),
+    var(--paper);
+  min-height: 170px;
+}
+.bm-lead .bm-headline {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  line-height: 1.04;
+  margin: 0.2rem 0 0.35rem;
+}
+.bm-lead .bm-body {
+  font-family: var(--serif);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--muted);
+  margin: 0;
+}
+.bm-lead .bm-body::first-letter {
+  font-family: var(--serif);
+  font-size: 2.4em;
+  line-height: 0.86;
+  float: left;
+  padding: 0.04em 0.12em 0 0;
+  color: var(--cobalt);
+}
+
+/* Scripture mockup */
+.bm-scripture {
+  padding: 0.8rem;
+  background: var(--paper);
+  text-align: center;
+  justify-content: center;
+}
+.bm-scripture .bm-ref {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+}
+.bm-scripture .bm-verse {
+  font-family: var(--serif);
+  font-size: 1.06rem;
+  line-height: 1.3;
+  font-style: italic;
+  margin: 0.45rem 0 0.3rem;
+}
+.bm-scripture .bm-orig {
+  font-family: 'SBL Hebrew', 'Times New Roman', serif;
+  font-size: 1.3rem;
+  color: var(--cobalt);
+  letter-spacing: 0.04em;
+  direction: rtl;
+}
+.bm-scripture .bm-translit {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+/* Funnies bento mockup */
+.bm-funnies {
+  padding: 0;
+  background: var(--paper);
+  flex-direction: column;
+  min-height: 200px;
+}
+.bm-funnies .bm-funnies-head {
+  padding: 0.5rem 0.7rem 0.3rem;
+  border-bottom: 1.5px solid var(--ink);
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  display: flex;
+  justify-content: space-between;
+}
+.bm-funnies .bm-funnies-head em { color: var(--crimson); font-style: normal; }
+.bm-funnies .bm-funnies-art {
+  flex: 1;
+  background-image: url('/images/devotional-prints/watts-hope-1886.webp');
+  background-size: cover;
+  background-position: 50% 30%;
+  min-height: 110px;
+  filter: contrast(1.05);
+}
+.bm-funnies .bm-funnies-caption {
+  padding: 0.4rem 0.7rem 0.55rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.86rem;
+  line-height: 1.25;
+}
+
+/* Letters tile mockup */
+.bm-letters {
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+  justify-content: space-between;
+}
+.bm-letters .bm-letters-mast {
+  font-family: var(--sans);
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-style: italic;
+  font-weight: 700;
+}
+.bm-letters .bm-letters-q {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.25;
+  margin: 0.4rem 0 0.5rem;
+}
+.bm-letters .bm-letters-cta {
+  font-family: var(--sans);
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--cobalt);
+  border-top: 1px solid var(--line-soft);
+  padding-top: 0.35rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Opinion (pull-quote) mockup */
+.bm-opinion {
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+  justify-content: center;
+}
+.bm-opinion .bm-quote-mark {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  line-height: 0.4;
+  color: var(--gold);
+  font-style: italic;
+  height: 1.1em;
+}
+.bm-opinion .bm-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.04rem;
+  line-height: 1.32;
+  margin: 0.1rem 0 0.5rem;
+}
+.bm-opinion .bm-by {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Classifieds (all series anchor) */
+.bm-classifieds {
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+}
+.bm-classifieds .bm-cf-mast {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 800;
+  border-bottom: 1.5px solid var(--crimson);
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.4rem;
+}
+.bm-classifieds .bm-cf-list {
+  font-family: var(--serif);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  columns: 2;
+  column-gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bm-classifieds .bm-cf-list li { break-inside: avoid; }
+
+/* Editor's Desk mockup */
+.bm-editor {
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+}
+.bm-editor .bm-ed-mast {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+  border-bottom: 1px solid var(--line-soft);
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+.bm-editor .bm-ed-note {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  margin: 0 0 0.4rem;
+}
+.bm-editor .bm-ed-sig {
+  font-family: var(--serif);
+  font-size: 0.82rem;
+  color: var(--cobalt);
+}
+
+/* Almanac mockup */
+.bm-almanac {
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+}
+.bm-almanac .bm-al-h {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+}
+.bm-almanac .bm-al-day {
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  margin: 0.3rem 0 0.15rem;
+}
+.bm-almanac .bm-al-row {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0.1rem 0;
+}
+.bm-almanac .bm-al-feast { color: var(--burgundy); font-style: italic; font-family: var(--serif); }
+
+/* Weather report mockup */
+.bm-weather {
+  padding: 0.7rem 0.8rem;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(31,42,141,0.14) 0%, transparent 60%),
+    var(--paper);
+}
+.bm-weather .bm-w-icon {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--cobalt);
+}
+.bm-weather .bm-w-word {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  margin: 0.25rem 0 0.1rem;
+}
+.bm-weather .bm-w-sub {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* Obituaries mockup */
+.bm-obits {
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+  border-color: var(--ink);
+  border-width: 2.5px;
+}
+.bm-obits .bm-ob-mast {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
+  color: var(--ink);
+}
+.bm-obits .bm-ob-name {
+  font-family: var(--serif);
+  font-size: 1.04rem;
+  font-style: italic;
+  margin: 0.1rem 0;
+}
+.bm-obits .bm-ob-ref {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0.2rem 0 0;
+}
+
+/* Crossword mockup */
+.bm-crossword {
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+}
+.bm-crossword .bm-cw-h {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.bm-crossword .bm-cw-row {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0.1rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.bm-crossword .bm-cw-row .bm-cw-num {
+  font-family: var(--sans);
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--cobalt);
+  border: 1px solid var(--ink);
+  padding: 0 0.3rem;
+  letter-spacing: 0.08em;
+}
+.bm-crossword .bm-blank {
+  border-bottom: 1px solid var(--ink);
+  display: inline-block;
+  min-width: 4em;
+  height: 0.95em;
+}
+
+/* Marginalia mockup */
+.bm-marginalia {
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+}
+.bm-marginalia .bm-mg-h {
+  font-family: var(--sans);
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  font-style: italic;
+}
+.bm-marginalia .bm-mg-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.96rem;
+  line-height: 1.32;
+  margin: 0.45rem 0 0.4rem;
+  position: relative;
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--gold);
+}
+.bm-marginalia .bm-mg-by {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Sports — saints this week */
+.bm-sports {
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+}
+.bm-sports .bm-sp-h {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.35rem;
+}
+.bm-sports .bm-sp-row {
+  font-family: var(--serif);
+  font-size: 0.86rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.18rem 0;
+  border-bottom: 1px dotted var(--line-soft);
+}
+.bm-sports .bm-sp-row em {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: var(--burgundy);
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+/* Stock ticker mockup */
+.bm-ticker {
+  padding: 0;
+  background: var(--ink);
+  color: var(--paper);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-color: var(--ink);
+  flex-direction: row;
+}
+@keyframes bm-ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.bm-ticker .bm-tk-tape {
+  display: inline-flex;
+  gap: 1.6rem;
+  white-space: nowrap;
+  animation: bm-ticker-scroll 30s linear infinite;
+  padding-left: 1rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+}
+.bm-ticker .up { color: var(--gold); }
+.bm-ticker .dn { color: var(--crimson); }
+.bm-ticker .eq { color: rgba(240,236,230,0.6); }
+
+/* Travel map mockup */
+.bm-travel {
+  padding: 0.7rem 0.8rem;
+  background:
+    linear-gradient(180deg, rgba(31,42,141,0.05) 0%, transparent 60%),
+    var(--paper);
+}
+.bm-travel .bm-tr-h {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+}
+.bm-travel .bm-tr-map {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin: 0.4rem 0;
+  background:
+    linear-gradient(90deg, transparent 49.5%, var(--line-soft) 49.5%, var(--line-soft) 50.5%, transparent 50.5%),
+    linear-gradient(0deg, transparent 49.5%, var(--line-soft) 49.5%, var(--line-soft) 50.5%, transparent 50.5%),
+    radial-gradient(ellipse at 60% 40%, rgba(31,42,141,0.12) 0%, transparent 70%),
+    var(--paper);
+  background-size: 14px 14px, 14px 14px, 100% 100%, 100% 100%;
+}
+.bm-travel .bm-tr-pin {
+  position: absolute;
+  left: 58%;
+  top: 42%;
+  width: 10px;
+  height: 10px;
+  background: var(--crimson);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(196,25,46,0.18);
+}
+.bm-travel .bm-tr-place {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+.bm-travel .bm-tr-geo {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* Dear Abby mockup */
+.bm-abby {
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+}
+.bm-abby .bm-ab-h {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+.bm-abby .bm-ab-q {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.94rem;
+  line-height: 1.35;
+  margin: 0 0 0.3rem;
+}
+.bm-abby .bm-ab-q::before { content: "“"; color: var(--cobalt); font-size: 1.4em; line-height: 0; vertical-align: -0.2em; margin-right: 0.1em; }
+.bm-abby .bm-ab-a {
+  font-family: var(--serif);
+  font-size: 0.88rem;
+  line-height: 1.35;
+  border-top: 1px solid var(--line-soft);
+  padding-top: 0.3rem;
+}
+.bm-abby .bm-ab-a strong { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cobalt); font-weight: 700; }
+
+/* Jump-line mockup */
+.bm-jumpline {
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+  justify-content: space-between;
+  min-height: 130px;
+}
+.bm-jumpline .bm-jl-art {
+  flex: 1;
+  background:
+    linear-gradient(180deg, transparent 60%, rgba(31,42,141,0.1) 100%),
+    var(--paper-deep);
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 0.4rem;
+  position: relative;
+  font-family: var(--serif);
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--muted);
+  padding: 0.4rem 0.5rem;
+  line-height: 1.4;
+}
+.bm-jumpline .bm-jl-art::after {
+  content: "…";
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.5rem;
+  color: var(--ink);
+  font-size: 1rem;
+}
+.bm-jumpline .bm-jl-cont {
+  font-family: var(--sans);
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Grapevine mockup */
+.bm-grapevine {
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+}
+.bm-grapevine .bm-gv-h {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.bm-grapevine .bm-gv-item {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding: 0.32rem 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.bm-grapevine .bm-gv-item:last-child { border-bottom: 0; }
+.bm-grapevine .bm-gv-when {
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-right: 0.5em;
+  font-weight: 700;
+}
+
+/* Errata mockup */
+.bm-errata {
+  padding: 0.7rem 0.8rem;
+  background: rgba(196,25,46,0.05);
+  border-color: var(--crimson);
+}
+.bm-errata .bm-er-h {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 800;
+  border-bottom: 1px solid var(--crimson);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.4rem;
+}
+.bm-errata .bm-er-body {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════
+   ASSEMBLED BENTO MOCKUP — v1 picks composed
+   ═══════════════════════════════════════════════ */
+.bento-assembled-wrap {
+  margin: var(--rhythm) 0 calc(var(--rhythm) + 0.4rem);
+  border: 1.5px solid var(--cobalt);
+  background: var(--paper);
+  padding: 0.4rem;
+  position: relative;
+}
+.bento-assembled-wrap .bm-tag { top: -0.7rem; left: 0.6rem; right: auto; background: var(--cobalt); color: var(--paper); border-color: var(--cobalt); }
+.bento-assembled {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 0.4rem;
+  font-family: var(--serif);
+}
+.bento-assembled > .bm-slot {
+  border: 1.5px solid var(--line);
+  background: var(--paper);
+  padding: 0.5rem 0.7rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 80px;
+}
+.bento-assembled .slot-lead { grid-column: 1 / 8; grid-row: 1 / 3; min-height: 220px; padding: 0.8rem; background: linear-gradient(180deg, rgba(31,42,141,0.05) 0%, transparent 60%), var(--paper); }
+.bento-assembled .slot-lead .ba-kicker { font-family: var(--sans); font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson); font-weight: 800; }
+.bento-assembled .slot-lead .ba-headline { font-family: var(--serif); font-size: clamp(1.4rem, 2.4vw, 2.1rem); line-height: 1; margin: 0.3rem 0 0.4rem; }
+.bento-assembled .slot-lead .ba-body { font-size: 0.82rem; color: var(--muted); line-height: 1.42; margin: 0; }
+.bento-assembled .slot-lead .ba-body::first-letter { font-family: var(--serif); font-size: 2.4em; line-height: 0.86; float: left; padding: 0.04em 0.12em 0 0; color: var(--cobalt); }
+.bento-assembled .slot-lead .ba-jumpline { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--crimson); font-style: italic; margin-top: auto; padding-top: 0.4rem; }
+
+.bento-assembled .slot-scripture { grid-column: 8 / 13; grid-row: 1 / 2; min-height: 105px; text-align: center; justify-content: center; }
+.bento-assembled .slot-scripture .ba-ref { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cobalt); font-weight: 700; }
+.bento-assembled .slot-scripture .ba-orig { font-family: 'SBL Hebrew', 'Times New Roman', serif; font-size: 1.4rem; color: var(--cobalt); direction: rtl; margin: 0.3rem 0 0.15rem; }
+.bento-assembled .slot-scripture .ba-verse { font-style: italic; font-size: 0.88rem; line-height: 1.3; }
+
+.bento-assembled .slot-funnies { grid-column: 8 / 13; grid-row: 2 / 3; padding: 0; overflow: hidden; }
+.bento-assembled .slot-funnies .ba-fn-head { font-family: var(--sans); font-size: 0.54rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cobalt); font-weight: 800; padding: 0.35rem 0.6rem 0.2rem; border-bottom: 1.5px solid var(--ink); }
+.bento-assembled .slot-funnies .ba-fn-head em { color: var(--crimson); font-style: normal; }
+.bento-assembled .slot-funnies .ba-fn-art { flex: 1; background-image: url('/images/devotional-prints/watts-hope-1886.webp'); background-size: cover; background-position: 50% 30%; min-height: 60px; }
+.bento-assembled .slot-funnies .ba-fn-cap { padding: 0.3rem 0.6rem 0.4rem; font-family: var(--serif); font-style: italic; font-size: 0.78rem; line-height: 1.22; }
+
+.bento-assembled .slot-opinion { grid-column: 1 / 4; grid-row: 3 / 4; }
+.bento-assembled .slot-opinion .ba-q { font-style: italic; font-size: 0.9rem; line-height: 1.3; }
+.bento-assembled .slot-opinion .ba-by { font-family: var(--sans); font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; }
+
+.bento-assembled .slot-letters { grid-column: 4 / 8; grid-row: 3 / 4; }
+.bento-assembled .slot-letters .ba-l-mast { font-family: var(--sans); font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cobalt); font-style: italic; font-weight: 700; }
+.bento-assembled .slot-letters .ba-l-q { font-family: var(--serif); font-size: 0.9rem; line-height: 1.3; margin: 0.3rem 0 0.4rem; }
+.bento-assembled .slot-letters .ba-l-cta { font-family: var(--sans); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--crimson); font-weight: 700; margin-top: auto; }
+
+.bento-assembled .slot-classifieds { grid-column: 8 / 13; grid-row: 3 / 4; }
+.bento-assembled .slot-classifieds .ba-cl-mast { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson); font-weight: 800; border-bottom: 1px solid var(--crimson); padding-bottom: 0.18rem; margin-bottom: 0.25rem; }
+.bento-assembled .slot-classifieds ul { columns: 2; column-gap: 0.5rem; list-style: none; padding: 0; margin: 0; font-size: 0.78rem; line-height: 1.4; }
+
+@media (max-width: 780px) {
+  .bento-assembled .slot-lead { grid-column: 1 / 13; grid-row: 1 / 2; min-height: 180px; }
+  .bento-assembled .slot-scripture { grid-column: 1 / 13; grid-row: 2 / 3; }
+  .bento-assembled .slot-funnies { grid-column: 1 / 13; grid-row: 3 / 4; min-height: 170px; }
+  .bento-assembled .slot-opinion { grid-column: 1 / 13; grid-row: 4 / 5; }
+  .bento-assembled .slot-letters { grid-column: 1 / 13; grid-row: 5 / 6; }
+  .bento-assembled .slot-classifieds { grid-column: 1 / 13; grid-row: 6 / 7; }
+}
+
+/* ═══════════════════════════════════════════════
+   LTE A/B DEMO — Soul Audit kicker w/ + w/o sub-byline
+   ═══════════════════════════════════════════════ */
+.lte-ab {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1.5px solid var(--line);
+  margin: var(--rhythm) 0;
+  background: var(--paper);
+}
+.lte-ab > div { padding: 1.1rem 1.2rem 1.2rem; }
+.lte-ab .lte-a { border-right: 1.5px solid var(--line); }
+.lte-ab .lte-label {
+  font-family: var(--sans);
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+.lte-ab .lte-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.86rem;
+  color: var(--muted);
+  display: block;
+  margin: 0.4rem 0 0.1rem;
+}
+.lte-ab .lte-kicker-real {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+  margin: 0.3rem 0 0.5rem;
+}
+.lte-ab .lte-h {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  line-height: 1.04;
+  margin: 0 0 0.4rem;
+}
+.lte-ab .lte-input {
+  background: var(--paper-deep);
+  border: 1px solid var(--line-soft);
+  padding: 0.5rem 0.6rem;
+  font-family: var(--serif);
+  font-style: italic;
+  color: rgba(17,24,42,0.45);
+  font-size: 0.86rem;
+  margin: 0.4rem 0 0.4rem;
+}
+.lte-ab .lte-btn {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.7rem;
+  background: var(--cobalt);
+  color: var(--paper);
+  display: inline-block;
+  font-weight: 700;
+}
+@media (max-width: 720px) {
+  .lte-ab { grid-template-columns: 1fr; }
+  .lte-ab .lte-a { border-right: 0; border-bottom: 1.5px solid var(--line); }
+}
+
 /* Reduced motion: kill all animations */
 @media (prefers-reduced-motion: reduce) {
   .demo-stone-rock,
@@ -631,7 +1434,8 @@ footer {
   .demo-scripture,
   .demo-dust-stage .speck,
   .demo-folio,
-  .demo-bento .tile {
+  .demo-bento .tile,
+  .bm-ticker .bm-tk-tape {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
@@ -836,6 +1640,25 @@ footer {
   <p>Ship the LETTERS bento tile that funnels into Soul Audit; do <b>not</b> add a sub-kicker on Soul Audit itself.</p>
 </div>
 
+<p class="kicker" style="margin-top:1.4rem;">Live A/B · how each option actually looks</p>
+<div class="lte-ab">
+  <div class="lte-a">
+    <p class="lte-label">A · Leave alone (current)</p>
+    <p class="lte-kicker-real">SOUL AUDIT</p>
+    <h3 class="lte-h">What are you wrestling with today?</h3>
+    <div class="lte-input">Type a sentence. We&rsquo;ll meet you there.</div>
+    <span class="lte-btn">Submit &amp; Receive Plan</span>
+  </div>
+  <div class="lte-b">
+    <p class="lte-label">B · Add the LETTERS sub-byline</p>
+    <em class="lte-sub">Letters to the Editor</em>
+    <p class="lte-kicker-real">SOUL AUDIT</p>
+    <h3 class="lte-h">What are you wrestling with today?</h3>
+    <div class="lte-input">Type a sentence. We&rsquo;ll meet you there.</div>
+    <span class="lte-btn">Submit &amp; Receive Plan</span>
+  </div>
+</div>
+
 <div style="max-width: 540px; margin-top: 0.6rem;">
 <p class="kicker">Your call</p>
 <div class="decision" data-card="lte-kicker">
@@ -858,7 +1681,52 @@ footer {
 <section id="bento">
 <p class="kicker">04 · Bento</p>
 <h2>The front-page bento — every tile worth considering.</h2>
-<p class="lede">A broadsheet front page is intrinsically a bento. Lead headline dominates; op-ed runs narrow; comics box is small. Mark each tile.</p>
+<p class="lede">A broadsheet front page is intrinsically a bento. Lead headline dominates; op-ed runs narrow; comics box is small. Each card below shows the tile <b>as it would actually appear</b> — not a text description, an in-place mockup. Mark each one.</p>
+
+<p class="kicker" style="margin-top:1.6rem;">Live · how the seven v1 picks compose</p>
+<p style="color:var(--muted); font-size: 0.95rem;">Before the gamut: this is what the homepage front page would look like if you shipped the seven tiles I marked "Ship v1" together. Resize your browser — the grid collapses on phones to a stacked single-column edition.</p>
+
+<div class="bento-assembled-wrap">
+  <span class="bm-tag">Front-page bento · v1 picks composed</span>
+  <div class="bento-assembled">
+    <div class="bm-slot slot-lead">
+      <p class="ba-kicker">Today&rsquo;s Lead · Day 14 · Bible-in-a-Year</p>
+      <h4 class="ba-headline">Ecclesiastes asks the question your phone won&rsquo;t.</h4>
+      <p class="ba-body">There is a kind of busyness that looks like obedience but is actually fear of stillness. The Preacher names it <em>hevel</em> — breath, vapor — and refuses to flatter it. Today&rsquo;s reading sits with that refusal for eight short verses.</p>
+      <p class="ba-jumpline">Continued on page A12 →</p>
+    </div>
+    <div class="bm-slot slot-scripture">
+      <p class="ba-ref">Ecclesiastes 1 · 2</p>
+      <p class="ba-orig">הֲבֵ֤ל הֲבָלִים֙</p>
+      <p class="ba-verse">&ldquo;Vapor of vapors,&rdquo; says the Preacher.</p>
+    </div>
+    <div class="bm-slot slot-funnies">
+      <div class="ba-fn-head"><span>The Funnies</span><em>Daily ✷</em></div>
+      <div class="ba-fn-art" aria-hidden="true"></div>
+      <p class="ba-fn-cap">&ldquo;Hope: one string left, eyes blindfolded, still tuning.&rdquo;</p>
+    </div>
+    <div class="bm-slot slot-opinion">
+      <p class="ba-q">&ldquo;You must be emptied of that wherewith you are full.&rdquo;</p>
+      <p class="ba-by">— Augustine · Confessions VII</p>
+    </div>
+    <div class="bm-slot slot-letters">
+      <p class="ba-l-mast">Letters to the Editor</p>
+      <p class="ba-l-q">One honest sentence. We&rsquo;ll write back.</p>
+      <p class="ba-l-cta">→ Write a letter</p>
+    </div>
+    <div class="bm-slot slot-classifieds">
+      <p class="ba-cl-mast">Classifieds · all series</p>
+      <ul>
+        <li>Bible-in-a-Year</li>
+        <li>Wake-Up Magazine</li>
+        <li>The Lord&rsquo;s Prayer</li>
+        <li>Psalms of Ascent</li>
+        <li>Sermon on the Mount</li>
+        <li>Names of God</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <h3>Core tiles — the obvious ones.</h3>
 <div class="pitch-grid">
@@ -867,6 +1735,12 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Lead Headline</p><span class="pitch-effort m">M</span></div>
     <p class="pitch-headline">Today's featured devotional — big, anchored top-left.</p>
     <p class="pitch-body">Scripture pull + first 80 chars of teaser + riso art behind. Spans 8 cols × 4 rows on desktop. The A1 story.</p>
+    <div class="bento-mock bm-lead">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-kicker">Today&rsquo;s Lead · Day 14 · Bible-in-a-Year</p>
+      <h4 class="bm-headline">Ecclesiastes asks the question your phone won&rsquo;t.</h4>
+      <p class="bm-body">There is a kind of busyness that looks like obedience but is actually fear of stillness. The Preacher names it <em>hevel</em>.</p>
+    </div>
     <div class="pitch-meta"><span><b>gives up</b> the current oversized featured-devotional card</span><span><b>risk</b> none — replacement</span></div>
     <span class="pitch-ship yes">My pick: Ship v1</span>
     <div class="decision" data-card="bento-lead"><fieldset class="decision-tri" data-name="bento-lead"><legend>Decision</legend>
@@ -880,6 +1754,13 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Today's Scripture</p><span class="pitch-effort s">S</span></div>
     <p class="pitch-headline">Anchor verse with Hebrew or Greek inline.</p>
     <p class="pitch-body">Small tile. Reference + 6–10 words of translation + one original-language word in cobalt.</p>
+    <div class="bento-mock bm-scripture">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-ref">Psalm 46 · 10</p>
+      <p class="bm-orig">הַרְפּ֣וּ וּדְע֔וּ</p>
+      <p class="bm-translit">harpū ūdə&middot;ʿū</p>
+      <p class="bm-verse">&ldquo;Be still &mdash; and know.&rdquo;</p>
+    </div>
     <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> low</span></div>
     <span class="pitch-ship yes">My pick: Ship v1</span>
     <div class="decision" data-card="bento-scripture"><fieldset class="decision-tri" data-name="bento-scripture"><legend>Decision</legend>
@@ -893,6 +1774,12 @@ footer {
     <div class="pitch-head"><p class="pitch-name">The Funnies</p><span class="pitch-effort m">M</span></div>
     <p class="pitch-headline">A single panel. A quiet line under it.</p>
     <p class="pitch-body">Daily rotation through ~20 Peanuts-but-Jesus entries. Reuses existing archive prints. The headline new feature.</p>
+    <div class="bento-mock bm-funnies">
+      <span class="bm-tag">Mockup</span>
+      <div class="bm-funnies-head"><span>The Funnies</span><em>Daily ✷</em></div>
+      <div class="bm-funnies-art" aria-hidden="true"></div>
+      <p class="bm-funnies-caption">&ldquo;Hope: one string left, eyes blindfolded, still tuning.&rdquo;</p>
+    </div>
     <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> tone calibration</span></div>
     <span class="pitch-ship yes">My pick: Ship v1</span>
     <div class="decision" data-card="bento-funnies"><fieldset class="decision-tri" data-name="bento-funnies"><legend>Decision</legend>
@@ -906,6 +1793,12 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Letters</p><span class="pitch-effort s">S</span></div>
     <p class="pitch-headline">One honest sentence. Then we'll write back.</p>
     <p class="pitch-body">Tiny tile with a one-line CTA into Soul Audit. Renames the entry without touching the tool.</p>
+    <div class="bento-mock bm-letters">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-letters-mast">Letters to the Editor</p>
+      <p class="bm-letters-q">One honest sentence. Then we&rsquo;ll write back.</p>
+      <p class="bm-letters-cta"><span>→ Write a letter</span><span>Soul Audit</span></p>
+    </div>
     <div class="pitch-meta"><span><b>gives up</b> visual prominence of current Soul Audit kicker</span><span><b>risk</b> low</span></div>
     <span class="pitch-ship yes">My pick: Ship v1</span>
     <div class="decision" data-card="bento-letters"><fieldset class="decision-tri" data-name="bento-letters"><legend>Decision</legend>
@@ -919,6 +1812,12 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Opinion</p><span class="pitch-effort s">S</span></div>
     <p class="pitch-headline">Rotating pull-quote from the church fathers.</p>
     <p class="pitch-body">Tozer · Augustine · à Kempis · Spurgeon — one sentence, one attribution. Reuses public-domain text.</p>
+    <div class="bento-mock bm-opinion">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-quote-mark">&ldquo;</p>
+      <p class="bm-quote">You must be emptied of that wherewith you are full, that you may be filled with that whereof you are empty.</p>
+      <p class="bm-by">Augustine &middot; Confessions VII</p>
+    </div>
     <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> low — text-only</span></div>
     <span class="pitch-ship yes">My pick: Ship v1</span>
     <div class="decision" data-card="bento-opinion"><fieldset class="decision-tri" data-name="bento-opinion"><legend>Decision</legend>
@@ -932,6 +1831,20 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Classifieds</p><span class="pitch-effort s">S</span></div>
     <p class="pitch-headline">All Series → as a tiny anchor.</p>
     <p class="pitch-body">"See the rest of the paper" — functional bridge to /series. Bottom row.</p>
+    <div class="bento-mock bm-classifieds">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-cf-mast">Classifieds · all series</p>
+      <ul class="bm-cf-list">
+        <li>Bible-in-a-Year</li>
+        <li>Wake-Up Magazine</li>
+        <li>The Lord&rsquo;s Prayer</li>
+        <li>Psalms of Ascent</li>
+        <li>Sermon on the Mount</li>
+        <li>Names of God</li>
+        <li>Prophets &amp; Kings</li>
+        <li>Advent / Lent</li>
+      </ul>
+    </div>
     <div class="pitch-meta"><span><b>gives up</b> the standalone "BROWSE EVERY PLAN" button</span><span><b>risk</b> low</span></div>
     <span class="pitch-ship maybe">My pick: Maybe</span>
     <div class="decision" data-card="bento-classifieds"><fieldset class="decision-tri" data-name="bento-classifieds"><legend>Decision</legend>
@@ -945,6 +1858,12 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Editor's Desk</p><span class="pitch-effort m">M</span></div>
     <p class="pitch-headline">Founder note → Bible-365 bridge.</p>
     <p class="pitch-body">One sentence + a link into the long-arc Bible-in-a-Year plan. Stands in for the "longer read" beat below the featured devotional.</p>
+    <div class="bento-mock bm-editor">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-ed-mast">From the Editor&rsquo;s Desk</p>
+      <p class="bm-ed-note">We&rsquo;re seven weeks into Bible-in-a-Year. If you fell behind, today is the easiest day to come back &mdash; Ecclesiastes is short.</p>
+      <p class="bm-ed-sig">— Chris, editor</p>
+    </div>
     <div class="pitch-meta"><span><b>gives up</b> the current Bible-365 secondary link</span><span><b>risk</b> low</span></div>
     <span class="pitch-ship maybe">My pick: Maybe</span>
     <div class="decision" data-card="bento-editor"><fieldset class="decision-tri" data-name="bento-editor"><legend>Decision</legend>
@@ -958,6 +1877,14 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Almanac</p><span class="pitch-effort m">M</span></div>
     <p class="pitch-headline">Today on the liturgical calendar.</p>
     <p class="pitch-body">"Feast of the Ascension · Eastertide, Week VI · Wednesday." Needs a small lookup table. Tells the reader where today sits in the larger story.</p>
+    <div class="bento-mock bm-almanac">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-al-h">Almanac</p>
+      <p class="bm-al-day">Saturday · 16 May</p>
+      <p class="bm-al-row">Eastertide &middot; Week VI</p>
+      <p class="bm-al-row bm-al-feast">Feast of Brendan the Navigator</p>
+      <p class="bm-al-row">Sunrise 6:02 · Sunset 19:48</p>
+    </div>
     <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> calendar accuracy across traditions</span></div>
     <span class="pitch-ship maybe">My pick: Maybe</span>
     <div class="decision" data-card="bento-almanac"><fieldset class="decision-tri" data-name="bento-almanac"><legend>Decision</legend>
@@ -977,6 +1904,12 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Weather Report</p><span class="pitch-effort s">S</span></div>
     <p class="pitch-headline">"The emotional weather of today's verse."</p>
     <p class="pitch-body">One word + one phrase: <em>"Stormy. The boat is in the wind."</em> Maps every featured devotional to a weather card.</p>
+    <div class="bento-mock bm-weather">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-w-icon" aria-hidden="true">⛈</p>
+      <p class="bm-w-word">Stormy.</p>
+      <p class="bm-w-sub">The boat is in the wind</p>
+    </div>
     <div class="pitch-meta"><span><b>risk</b> could read cute or trivial</span></div>
     <span class="pitch-ship maybe">My pick: Maybe</span>
     <div class="decision" data-card="bento-weather"><fieldset class="decision-tri" data-name="bento-weather"><legend>Decision</legend>
@@ -990,6 +1923,12 @@ footer {
     <div class="pitch-head"><p class="pitch-name">The Obituaries</p><span class="pitch-effort m">M</span></div>
     <p class="pitch-headline">"What dies in this passage."</p>
     <p class="pitch-body">Single line naming what the passage asks the reader to put down. <em>"The need to be useful — Luke 10."</em> Risky tone; very Gospel-shaped.</p>
+    <div class="bento-mock bm-obits">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-ob-mast">Obituaries · what dies in today&rsquo;s passage</p>
+      <p class="bm-ob-name">The need to be useful.</p>
+      <p class="bm-ob-ref">Luke 10 &middot; Mary &amp; Martha</p>
+    </div>
     <div class="pitch-meta"><span><b>risk</b> high without careful authoring</span></div>
     <span class="pitch-ship maybe">My pick: Maybe</span>
     <div class="decision" data-card="bento-obits"><fieldset class="decision-tri" data-name="bento-obits"><legend>Decision</legend>
@@ -1003,6 +1942,13 @@ footer {
     <div class="pitch-head"><p class="pitch-name">The Crossword</p><span class="pitch-effort l">L</span></div>
     <p class="pitch-headline">A 3-word reflection grid.</p>
     <p class="pitch-body">Three blanks: <em>"Today I am ___ / God is ___ / The next step is ___."</em> Tile presents it as a tiny crossword box; the reader sees the prompt without writing.</p>
+    <div class="bento-mock bm-crossword">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-cw-h">Today&rsquo;s Crossword · 3 across</p>
+      <p class="bm-cw-row"><span class="bm-cw-num">1A</span> Today I am <span class="bm-blank"></span></p>
+      <p class="bm-cw-row"><span class="bm-cw-num">2A</span> God is <span class="bm-blank"></span></p>
+      <p class="bm-cw-row"><span class="bm-cw-num">3A</span> The next step is <span class="bm-blank"></span></p>
+    </div>
     <div class="pitch-meta"><span><b>risk</b> iconic shape, easy to fumble</span></div>
     <span class="pitch-ship maybe">My pick: Maybe</span>
     <div class="decision" data-card="bento-crossword"><fieldset class="decision-tri" data-name="bento-crossword"><legend>Decision</legend>
@@ -1016,6 +1962,12 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Marginalia</p><span class="pitch-effort xl">XL</span></div>
     <p class="pitch-headline">A wall of reader-submitted lines.</p>
     <p class="pitch-body">Tile shows one rotating quote from anonymous readers ("what stayed with me from Day 3"). Needs moderation, submission flow, anti-spam.</p>
+    <div class="bento-mock bm-marginalia">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-mg-h">Marginalia · from the readers</p>
+      <p class="bm-mg-quote">I read Day 3 in a hospital parking lot. Didn&rsquo;t cry. Got out and went in.</p>
+      <p class="bm-mg-by">— anon. &middot; Sermon on the Mount</p>
+    </div>
     <div class="pitch-meta"><span><b>risk</b> chicken-and-egg without a base</span></div>
     <span class="pitch-ship skip">My pick: Skip v1</span>
     <div class="decision" data-card="bento-marginalia"><fieldset class="decision-tri" data-name="bento-marginalia"><legend>Decision</legend>
@@ -1029,6 +1981,13 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Sports Page</p><span class="pitch-effort m">M</span></div>
     <p class="pitch-headline">"This week's saints."</p>
     <p class="pitch-body">Three saints commemorated this week, one line each. Anglican · Catholic · Eastern. Quiet history. Pairs with Almanac.</p>
+    <div class="bento-mock bm-sports">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-sp-h">Sports · this week&rsquo;s saints</p>
+      <p class="bm-sp-row"><span>Brendan the Navigator</span><em>Mon 12</em></p>
+      <p class="bm-sp-row"><span>Matthias the Apostle</span><em>Wed 14</em></p>
+      <p class="bm-sp-row"><span>Julian of Norwich</span><em>Thu 15</em></p>
+    </div>
     <div class="pitch-meta"><span><b>risk</b> tradition selection — pick one or hedge</span></div>
     <span class="pitch-ship maybe">My pick: Maybe</span>
     <div class="decision" data-card="bento-sports"><fieldset class="decision-tri" data-name="bento-sports"><legend>Decision</legend>
@@ -1042,6 +2001,25 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Stock Ticker</p><span class="pitch-effort s">S</span></div>
     <p class="pitch-headline">A scripture-reference marquee.</p>
     <p class="pitch-body">Thin horizontal strip: <em>PSALM 23 ↑ · LUKE 10 → · JOB 38 ↓</em> rotating slowly. Tongue-in-cheek, visually unmistakable.</p>
+    <div class="bento-mock bm-ticker">
+      <span class="bm-tag">Live mockup · scrolls</span>
+      <div class="bm-tk-tape">
+        <span><span class="up">PSALM 23 ↑</span></span>
+        <span><span class="eq">LUKE 10 →</span></span>
+        <span><span class="dn">JOB 38 ↓</span></span>
+        <span><span class="up">JOHN 14 ↑</span></span>
+        <span><span class="eq">ECC 1 →</span></span>
+        <span><span class="dn">LAM 3 ↓</span></span>
+        <span><span class="up">ROM 8 ↑</span></span>
+        <span><span class="up">PSALM 23 ↑</span></span>
+        <span><span class="eq">LUKE 10 →</span></span>
+        <span><span class="dn">JOB 38 ↓</span></span>
+        <span><span class="up">JOHN 14 ↑</span></span>
+        <span><span class="eq">ECC 1 →</span></span>
+        <span><span class="dn">LAM 3 ↓</span></span>
+        <span><span class="up">ROM 8 ↑</span></span>
+      </div>
+    </div>
     <div class="pitch-meta"><span><b>risk</b> motion fatigue — must respect reduced-motion</span></div>
     <span class="pitch-ship maybe">My pick: Maybe</span>
     <div class="decision" data-card="bento-ticker"><fieldset class="decision-tri" data-name="bento-ticker"><legend>Decision</legend>
@@ -1055,6 +2033,13 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Travel</p><span class="pitch-effort m">M</span></div>
     <p class="pitch-headline">"Where today's passage happened."</p>
     <p class="pitch-body">Tiny hand-drawn map dot + place name + 8 words of geography. <em>"Capernaum, north shore. Where most of the miracles cluster."</em></p>
+    <div class="bento-mock bm-travel">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-tr-h">Travel · where today happened</p>
+      <div class="bm-tr-map" aria-hidden="true"><span class="bm-tr-pin"></span></div>
+      <p class="bm-tr-place">Capernaum &middot; north shore.</p>
+      <p class="bm-tr-geo">Where most of the miracles cluster.</p>
+    </div>
     <div class="pitch-meta"><span><b>risk</b> needs per-passage map data</span></div>
     <span class="pitch-ship maybe">My pick: Maybe</span>
     <div class="decision" data-card="bento-travel"><fieldset class="decision-tri" data-name="bento-travel"><legend>Decision</legend>
@@ -1068,6 +2053,12 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Dear Abby</p><span class="pitch-effort l">L</span></div>
     <p class="pitch-headline">Anonymous Q from a reader · short A from the editor.</p>
     <p class="pitch-body"><em>"DEAR EDITOR — I can't pray when I'm angry. — A reader in Tulsa."</em> Three-sentence reply. Founder is the editor.</p>
+    <div class="bento-mock bm-abby">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-ab-h">Dear Editor</p>
+      <p class="bm-ab-q">I can&rsquo;t pray when I&rsquo;m angry. &mdash; a reader in Tulsa.</p>
+      <p class="bm-ab-a"><strong>Reply:</strong> Half the psalms are angry. Anger is prayer with the volume up.</p>
+    </div>
     <div class="pitch-meta"><span><b>risk</b> ongoing editorial commitment</span></div>
     <span class="pitch-ship skip">My pick: Skip v1</span>
     <div class="decision" data-card="bento-abby"><fieldset class="decision-tri" data-name="bento-abby"><legend>Decision</legend>
@@ -1081,6 +2072,11 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Jump-line</p><span class="pitch-effort s">S</span></div>
     <p class="pitch-headline">"Continued on page A12."</p>
     <p class="pitch-body">A tiny line at the bottom of the Lead Headline tile pointing to the deeper read. Pure typographic device.</p>
+    <div class="bento-mock bm-jumpline">
+      <span class="bm-tag">Mockup</span>
+      <div class="bm-jl-art">There is a kind of busyness that looks like obedience but is actually fear of stillness. The Preacher names it</div>
+      <p class="bm-jl-cont">Continued on page A12 →</p>
+    </div>
     <div class="pitch-meta"><span><b>risk</b> none</span></div>
     <span class="pitch-ship yes">My pick: Ship v1</span>
     <div class="decision" data-card="bento-jumpline"><fieldset class="decision-tri" data-name="bento-jumpline"><legend>Decision</legend>
@@ -1094,6 +2090,12 @@ footer {
     <div class="pitch-head"><p class="pitch-name">The Grapevine</p><span class="pitch-effort m">M</span></div>
     <p class="pitch-headline">"Coming soon — what's in the editorial calendar."</p>
     <p class="pitch-body">One or two upcoming series, one sentence each. Gives returning readers a reason to come back.</p>
+    <div class="bento-mock bm-grapevine">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-gv-h">The Grapevine · coming soon</p>
+      <p class="bm-gv-item"><span class="bm-gv-when">Jun 2</span>Psalms of Ascent &mdash; 15 days up the mountain.</p>
+      <p class="bm-gv-item"><span class="bm-gv-when">Jul 1</span>The Names of God &mdash; one a day for a month.</p>
+    </div>
     <div class="pitch-meta"><span><b>risk</b> low — content already in series.ts</span></div>
     <span class="pitch-ship maybe">My pick: Maybe</span>
     <div class="decision" data-card="bento-grapevine"><fieldset class="decision-tri" data-name="bento-grapevine"><legend>Decision</legend>
@@ -1107,6 +2109,11 @@ footer {
     <div class="pitch-head"><p class="pitch-name">Errata</p><span class="pitch-effort s">S</span></div>
     <p class="pitch-headline">"A correction. We were wrong about ___."</p>
     <p class="pitch-body">Tiny humility tile, ships only when there's something honest to put in it. Rare; integrity move.</p>
+    <div class="bento-mock bm-errata">
+      <span class="bm-tag">Mockup</span>
+      <p class="bm-er-h">Errata · with humility</p>
+      <p class="bm-er-body">In Tuesday&rsquo;s Lord&rsquo;s Prayer entry we attributed a line to Tertullian. It&rsquo;s Cyprian. The argument stands; the attribution doesn&rsquo;t. &mdash; the editor</p>
+    </div>
     <div class="pitch-meta"><span><b>risk</b> low — only renders when needed</span></div>
     <span class="pitch-ship maybe">My pick: Maybe</span>
     <div class="decision" data-card="bento-errata"><fieldset class="decision-tri" data-name="bento-errata"><legend>Decision</legend>
