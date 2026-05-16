@@ -2133,15 +2133,16 @@ footer {
 <!-- ═══════════════════════════════════════════════════════════
      HEADER
      ═══════════════════════════════════════════════════════════ -->
-<p class="kicker">Newspaper-Metaphor Pitch · 16 May 2026 · Interactive</p>
+<p class="kicker">Newspaper-Metaphor Pitch · 16 May 2026 · Interactive · v3 — comprehensive</p>
 <h1>How far should the broadsheet metaphor go?</h1>
-<p class="subtitle">Each idea is live-demoed below — so you see what it actually feels like, not just what I claim it does. Mark each card <b>Yes / Maybe / No</b>, add a note. Your picks save locally and you can copy them all out at the end.</p>
+<p class="subtitle">Eight actual newspaper comic strips, four style directions, the full proposed homepage end-to-end, today-vs-proposed side-by-side, three phone-frame mobile previews, twenty-plus live in-line interaction demos, and a 7,470-word research deep-dive backing every claim. Mark each card <b>Yes / Maybe / No</b>, add a note. Your picks save locally; copy them out at the end.</p>
 
 <div class="meta-row">
   <span><b>Status</b> review · interactive</span>
   <span><b>Saving</b> localStorage (your browser)</span>
-  <span><b>Confirmed</b> Funnies tone = "Peanuts but Jesus"</span>
-  <span><b>Decisions needed</b> bento tiles · LTE kicker · interactions</span>
+  <span><b>Funnies</b> 8 strips drawn · 4 style directions</span>
+  <span><b>Research</b> <a href="/audits/2026-05-16-newspaper-metaphor/research-deep-dive.md" style="color: var(--cobalt); text-decoration: underline;">deep-dive.md</a></span>
+  <span><b>Decisions needed</b> funnies direction · strips · bento · LTE · interactions · homepage</span>
 </div>
 
 <nav class="toc">
@@ -2628,8 +2629,59 @@ footer {
   </div>
 </div>
 
+<h3 style="margin-top: 1.6rem;">Four variants of the byline — if you ship it, which?</h3>
+<p>If you go with the kicker, the typographic treatment matters. Four executions, side by side. The bottom of each card has its own Yes/Maybe/No so you can vote a treatment without committing to the whole feature.</p>
+
+<div class="lte-ab" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+  <div class="lte-a">
+    <p class="lte-label">V1 · Italic serif, muted</p>
+    <em class="lte-sub" style="color: var(--muted);">Letters to the Editor</em>
+    <p class="lte-kicker-real">SOUL AUDIT</p>
+    <h3 class="lte-h" style="font-size: 1.2rem;">What are you wrestling with today?</h3>
+    <div class="decision" data-card="lte-v1"><fieldset class="decision-tri" data-name="lte-v1"><legend>V1</legend>
+      <label data-state="yes"><input type="radio" name="lte-v1" value="yes" /><span>Yes</span></label>
+      <label data-state="maybe"><input type="radio" name="lte-v1" value="maybe" /><span>Maybe</span></label>
+      <label data-state="no"><input type="radio" name="lte-v1" value="no" /><span>No</span></label></fieldset>
+      <textarea class="decision-notes" data-notes-for="lte-v1" placeholder="Notes…"></textarea></div>
+  </div>
+  <div class="lte-a">
+    <p class="lte-label">V2 · Italic, gold-tinted</p>
+    <em class="lte-sub" style="color: var(--gold);">Letters to the Editor</em>
+    <p class="lte-kicker-real">SOUL AUDIT</p>
+    <h3 class="lte-h" style="font-size: 1.2rem;">What are you wrestling with today?</h3>
+    <div class="decision" data-card="lte-v2"><fieldset class="decision-tri" data-name="lte-v2"><legend>V2</legend>
+      <label data-state="yes"><input type="radio" name="lte-v2" value="yes" /><span>Yes</span></label>
+      <label data-state="maybe"><input type="radio" name="lte-v2" value="maybe" /><span>Maybe</span></label>
+      <label data-state="no"><input type="radio" name="lte-v2" value="no" /><span>No</span></label></fieldset>
+      <textarea class="decision-notes" data-notes-for="lte-v2" placeholder="Notes…"></textarea></div>
+  </div>
+  <div class="lte-a">
+    <p class="lte-label">V3 · Roman sans, italic</p>
+    <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.18em; color: var(--cobalt); font-style: italic; font-weight: 600; text-transform: uppercase; margin: 0.4rem 0 0;">— Letters to the Editor —</p>
+    <p class="lte-kicker-real">SOUL AUDIT</p>
+    <h3 class="lte-h" style="font-size: 1.2rem;">What are you wrestling with today?</h3>
+    <div class="decision" data-card="lte-v3"><fieldset class="decision-tri" data-name="lte-v3"><legend>V3</legend>
+      <label data-state="yes"><input type="radio" name="lte-v3" value="yes" /><span>Yes</span></label>
+      <label data-state="maybe"><input type="radio" name="lte-v3" value="maybe" /><span>Maybe</span></label>
+      <label data-state="no"><input type="radio" name="lte-v3" value="no" /><span>No</span></label></fieldset>
+      <textarea class="decision-notes" data-notes-for="lte-v3" placeholder="Notes…"></textarea></div>
+  </div>
+  <div>
+    <p class="lte-label">V4 · Replace the kicker entirely</p>
+    <p style="font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.18em; color: var(--crimson); font-style: italic; font-weight: 700; margin: 0.4rem 0 0.5rem;">LETTERS TO THE EDITOR</p>
+    <h3 class="lte-h" style="font-size: 1.2rem;">What are you wrestling with today?</h3>
+    <div class="lte-input">Type a sentence. We&rsquo;ll meet you there.</div>
+    <span class="lte-btn">Submit your letter</span>
+    <div class="decision" data-card="lte-v4"><fieldset class="decision-tri" data-name="lte-v4"><legend>V4</legend>
+      <label data-state="yes"><input type="radio" name="lte-v4" value="yes" /><span>Yes</span></label>
+      <label data-state="maybe"><input type="radio" name="lte-v4" value="maybe" /><span>Maybe</span></label>
+      <label data-state="no"><input type="radio" name="lte-v4" value="no" /><span>No</span></label></fieldset>
+      <textarea class="decision-notes" data-notes-for="lte-v4" placeholder="Notes…"></textarea></div>
+  </div>
+</div>
+
 <div style="max-width: 540px; margin-top: 0.6rem;">
-<p class="kicker">Your call</p>
+<p class="kicker">Your call · overall</p>
 <div class="decision" data-card="lte-kicker">
   <fieldset class="decision-tri" data-name="lte-kicker">
     <legend>Decision</legend>
@@ -3392,8 +3444,25 @@ footer {
   <article class="pitch-card">
     <div class="pitch-head"><p class="pitch-name">Page-turn Route Transition</p><span class="pitch-effort xl">XL</span></div>
     <p class="pitch-headline">Routes change with a paper-page flip.</p>
-    <p class="pitch-body">View Transitions API. On every navigation, the page flips like a newspaper page revealing the next. Awwwards-grade; can disorient on slow devices.</p>
-    <div class="demo-stage"><span class="demo-label">No safe in-line demo — needs real routing</span><em style="color:var(--muted);font-size:0.9rem;">Best viewed as a built feature, not a sandbox.</em></div>
+    <p class="pitch-body">View Transitions API. On every navigation, the page flips like a newspaper page revealing the next. Awwwards-grade; can disorient on slow devices. <a href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API">View Transitions API · MDN</a> reached Baseline October 2025.</p>
+    <div class="demo-stage" data-tall>
+      <span class="demo-label">Live · click "Turn the page" — the right page flips</span>
+      <div class="page-turn-stage" id="page-turn-stage">
+        <div class="pt-page">
+          <p style="font-family: var(--sans); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cobalt); font-weight: 700; margin: 0 0 0.4rem;">Page 1 · Today's Lead</p>
+          <p class="pt-h">Ecclesiastes asks…</p>
+          <p class="pt-b">There is a kind of busyness that looks like obedience but is actually fear of stillness.</p>
+        </div>
+        <div class="pt-page pt-page-right">
+          <p style="font-family: var(--sans); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cobalt); font-weight: 700; margin: 0 0 0.4rem;">Page 2 · Continued from A1</p>
+          <p class="pt-h">…the question your phone won't.</p>
+          <p class="pt-b">The Preacher names it hevel — breath, vapor — and refuses to flatter it.</p>
+        </div>
+        <div class="pt-controls">
+          <button class="demo-control" data-pageturn-trigger>Turn the page</button>
+        </div>
+      </div>
+    </div>
     <span class="pitch-ship maybe">My pick: Maybe</span>
     <div class="decision" data-card="motion-pageturn"><fieldset class="decision-tri" data-name="motion-pageturn"><legend>Decision</legend>
       <label data-state="yes"><input type="radio" name="motion-pageturn" value="yes" /><span>Yes</span></label>
@@ -3405,14 +3474,94 @@ footer {
   <article class="pitch-card">
     <div class="pitch-head"><p class="pitch-name">Soundscape Toggle</p><span class="pitch-effort l">L</span></div>
     <p class="pitch-headline">A small speaker icon offers ambient room-tone (off by default).</p>
-    <p class="pitch-body">Distant bell, wind through stones. Pulled from public-domain field recordings. Off by default; toggle in the topbar.</p>
-    <div class="demo-stage"><span class="demo-label">No autoplay — left as a build-time choice</span><em style="color:var(--muted);font-size:0.9rem;">Audio demos require user-initiation per browser autoplay rules. Marked Maybe for now.</em></div>
+    <p class="pitch-body">Distant bell, wind through stones. Pulled from public-domain field recordings. Off by default; toggle in the topbar. (Mocked visually — bars animate when on, no audio plays.)</p>
+    <div class="demo-stage" data-tall>
+      <span class="demo-label">Live · click to toggle (visual mock, no audio)</span>
+      <div class="sound-stage" id="sound-stage">
+        <span class="sound-label">Soundscape — Eastertide bells</span>
+        <div class="sound-eq"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <button class="sound-toggle" data-sound-toggle>Off</button>
+      </div>
+    </div>
     <span class="pitch-ship maybe">My pick: Maybe</span>
     <div class="decision" data-card="motion-sound"><fieldset class="decision-tri" data-name="motion-sound"><legend>Decision</legend>
       <label data-state="yes"><input type="radio" name="motion-sound" value="yes" /><span>Yes</span></label>
       <label data-state="maybe"><input type="radio" name="motion-sound" value="maybe" /><span>Maybe</span></label>
       <label data-state="no"><input type="radio" name="motion-sound" value="no" /><span>No</span></label></fieldset>
       <textarea class="decision-notes" data-notes-for="motion-sound" placeholder="Notes…"></textarea></div>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Editions Archive</p><span class="pitch-effort xl">XL</span></div>
+    <p class="pitch-headline">Daily snapshots of the homepage at <code>/editions/YYYY-MM-DD</code>.</p>
+    <p class="pitch-body">The strongest newspaper-metaphor on the list. Every day's edition is permanently archived and browsable. Like Le Monde or NYT's "On This Day" but for the devotional.</p>
+    <div class="demo-stage" data-tall>
+      <span class="demo-label">Live · the rack of past editions; hover lifts</span>
+      <div class="editions-rack">
+        <div class="ed today">
+          <p class="ed-date">SAT · 16 MAY · TODAY</p>
+          <p class="ed-h">Ecclesiastes asks the question.</p>
+          <div class="ed-mini"><span></span><span></span><span></span></div>
+        </div>
+        <div class="ed">
+          <p class="ed-date">FRI · 15 MAY</p>
+          <p class="ed-h">Walking on water.</p>
+          <div class="ed-mini"><span></span><span></span><span></span></div>
+        </div>
+        <div class="ed">
+          <p class="ed-date">THU · 14 MAY</p>
+          <p class="ed-h">The Annunciation.</p>
+          <div class="ed-mini"><span></span><span></span><span></span></div>
+        </div>
+        <div class="ed">
+          <p class="ed-date">WED · 13 MAY</p>
+          <p class="ed-h">Mustard seed waiting.</p>
+          <div class="ed-mini"><span></span><span></span><span></span></div>
+        </div>
+        <div class="ed">
+          <p class="ed-date">TUE · 12 MAY</p>
+          <p class="ed-h">Hope, blindfolded.</p>
+          <div class="ed-mini"><span></span><span></span><span></span></div>
+        </div>
+        <div class="ed">
+          <p class="ed-date">MON · 11 MAY</p>
+          <p class="ed-h">Grace before the meal.</p>
+          <div class="ed-mini"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+    <span class="pitch-ship skip">My pick: Skip v1 · v2 candidate</span>
+    <div class="decision" data-card="motion-editions"><fieldset class="decision-tri" data-name="motion-editions"><legend>Decision</legend>
+      <label data-state="yes"><input type="radio" name="motion-editions" value="yes" /><span>Yes</span></label>
+      <label data-state="maybe"><input type="radio" name="motion-editions" value="maybe" /><span>Maybe</span></label>
+      <label data-state="no"><input type="radio" name="motion-editions" value="no" /><span>No</span></label></fieldset>
+      <textarea class="decision-notes" data-notes-for="motion-editions" placeholder="Notes…"></textarea></div>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Print-this-Edition</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">A small button that prints today's edition as a single-page broadsheet PDF.</p>
+    <p class="pitch-body">Sunday-paper for the desk. CSS print stylesheet already exists; this is the explicit "save today's paper" affordance. Click to mock the print feed.</p>
+    <div class="demo-stage" data-tall>
+      <span class="demo-label">Live · click Print — the sheet feeds out</span>
+      <div class="print-stage" id="print-stage">
+        <div class="print-controls">
+          <button class="demo-control" data-print-trigger>Print today&rsquo;s edition</button>
+        </div>
+        <div class="print-paper">
+          <p>Today's Lead · Ecclesiastes 1 · Vapor of vapors.</p>
+          <p>The Funnies · Hope — one string left.</p>
+          <p>Opinion · Augustine on the empty cup.</p>
+          <p>Letters · One honest sentence.</p>
+        </div>
+      </div>
+    </div>
+    <span class="pitch-ship maybe">My pick: Maybe · v2</span>
+    <div class="decision" data-card="motion-print"><fieldset class="decision-tri" data-name="motion-print"><legend>Decision</legend>
+      <label data-state="yes"><input type="radio" name="motion-print" value="yes" /><span>Yes</span></label>
+      <label data-state="maybe"><input type="radio" name="motion-print" value="maybe" /><span>Maybe</span></label>
+      <label data-state="no"><input type="radio" name="motion-print" value="no" /><span>No</span></label></fieldset>
+      <textarea class="decision-notes" data-notes-for="motion-print" placeholder="Notes…"></textarea></div>
   </article>
 
 </div>
@@ -3523,33 +3672,467 @@ footer {
 <hr/>
 
 <!-- ═══════════════════════════════════════════════════════════
-     06 — RECOMMENDED V1
+     06 — FULL HOMEPAGE MOCKUP — end-to-end long-scroll
+     ═══════════════════════════════════════════════════════════ -->
+<section id="homepage-mockup">
+<p class="kicker">06 · Full mockup</p>
+<h2>The proposed homepage, end-to-end.</h2>
+<p class="lede">This is what the homepage would look like if every "Ship v1" pick from this page were composed together. Masthead, dateline, ticker, roll-the-stone hero, full bento, funnies tile carrying a real strip, footer. Resize your browser — the layout collapses on phones into the stacked mobile edition.</p>
+
+<p style="font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem;">Live · the rock is rolling; the ticker is scrolling; the bento is laid out</p>
+
+<div class="full-mockup">
+  <div class="mockup-frame-label">
+    <span>euangelion.app/ · Proposed front page · 16 May 2026</span>
+    <em>Bento · Roll-the-stone hero · Funnies basement · Dateline</em>
+  </div>
+
+  <!-- Masthead -->
+  <div class="fm-mast">
+    <div class="fm-mast-meta">
+      <span>VOL. I · NO. CXXVII</span>
+      <span>SATURDAY · 16 MAY 2026</span>
+      <span>MORNING EDITION · &euro;0</span>
+    </div>
+    <h1 class="fm-wordmark">Euangelion</h1>
+    <p class="fm-greek">εὐαγγέλιον &middot; good news, daily</p>
+  </div>
+
+  <!-- Stock ticker (live) -->
+  <div class="fm-ticker">
+    <div class="fm-tk-tape">
+      <span><span class="up">ECC 1 →</span></span>
+      <span><span class="up">PSALM 23 ↑</span></span>
+      <span><span class="eq">LUKE 10 →</span></span>
+      <span><span class="dn">JOB 38 ↓</span></span>
+      <span><span class="up">JOHN 14 ↑</span></span>
+      <span><span class="up">ROM 8 ↑</span></span>
+      <span><span class="eq">EASTERTIDE · WEEK VI</span></span>
+      <span><span class="dn">LAM 3 ↓</span></span>
+      <span><span class="up">PRAYER — UKRAINE</span></span>
+      <span><span class="up">ECC 1 →</span></span>
+      <span><span class="up">PSALM 23 ↑</span></span>
+      <span><span class="eq">LUKE 10 →</span></span>
+      <span><span class="dn">JOB 38 ↓</span></span>
+      <span><span class="up">JOHN 14 ↑</span></span>
+    </div>
+  </div>
+
+  <!-- Roll-the-stone hero -->
+  <div class="fm-hero">
+    <div class="fm-tomb"></div>
+    <div class="fm-light"></div>
+    <div class="fm-rock"></div>
+    <div class="fm-hero-text">
+      <h3 class="fm-hero-h">"He is not here. He is risen."</h3>
+      <p class="fm-hero-sub">Eastertide · Week VI</p>
+    </div>
+  </div>
+
+  <!-- The bento -->
+  <div class="fm-bento">
+
+    <div class="fm-slot fm-lead">
+      <p class="fm-kicker">Today&rsquo;s Lead · Day 14 · Bible-in-a-Year</p>
+      <h4 class="fm-headline">Ecclesiastes asks the question your phone won&rsquo;t.</h4>
+      <p class="fm-body">There is a kind of busyness that looks like obedience but is actually fear of stillness. The Preacher names it <em>hevel</em> — breath, vapor — and refuses to flatter it. Today&rsquo;s reading sits with that refusal for eight short verses; the longer you stay with them, the less the surrounding noise can claim. Read slowly. Resist the urge to take notes.</p>
+      <p class="fm-jumpline">Continued on page A12 → · Read full</p>
+    </div>
+
+    <div class="fm-slot fm-scripture">
+      <p class="fm-ref">Ecclesiastes 1 · 2</p>
+      <p class="fm-orig">הֲבֵ֤ל הֲבָלִים֙</p>
+      <p class="fm-verse">&ldquo;Vapor of vapors,&rdquo; says the Preacher.</p>
+    </div>
+
+    <div class="fm-slot fm-funnies">
+      <div class="fm-fn-head"><span>The Funnies · Daily</span><em>Strip 03 · Hope</em></div>
+      <div class="fm-fn-strip" aria-label="The Hope strip"></div>
+    </div>
+
+    <div class="fm-slot fm-opinion">
+      <p class="fm-q-mark">&ldquo;</p>
+      <p class="fm-q">You must be emptied of that wherewith you are full.</p>
+      <p class="fm-by">— Augustine · Confessions VII</p>
+    </div>
+
+    <div class="fm-slot fm-letters">
+      <p class="fm-l-mast">Letters to the Editor</p>
+      <p class="fm-l-q">One honest sentence. We&rsquo;ll write back.</p>
+      <p class="fm-l-cta">→ Write a letter</p>
+    </div>
+
+    <div class="fm-slot fm-classifieds">
+      <p class="fm-kicker" style="color: var(--crimson);">Classifieds · all series</p>
+      <ul>
+        <li>Bible-in-a-Year</li>
+        <li>Wake-Up Magazine</li>
+        <li>Lord&rsquo;s Prayer</li>
+        <li>Psalms of Ascent</li>
+        <li>Sermon on the Mount</li>
+        <li>Names of God</li>
+      </ul>
+    </div>
+
+    <div class="fm-slot fm-almanac">
+      <p class="fm-al-h">Almanac</p>
+      <p class="fm-al-day">Saturday · 16 May</p>
+      <p class="fm-al-row">Eastertide · Week VI</p>
+      <p class="fm-al-row fm-al-feast">Feast of Brendan</p>
+      <p class="fm-al-row">Sunrise 6:02 · Sunset 19:48</p>
+    </div>
+
+    <div class="fm-slot fm-weather">
+      <p class="fm-w-icon" aria-hidden="true">⛅</p>
+      <p class="fm-w-word">Quiet.</p>
+      <p class="fm-w-sub">A still wind. The kind to listen in.</p>
+    </div>
+
+    <div class="fm-slot fm-editor">
+      <p class="fm-ed-mast">From the Editor&rsquo;s Desk</p>
+      <p class="fm-ed-note">We&rsquo;re seven weeks into Bible-in-a-Year. If you fell behind, today is the easiest day to come back — Ecclesiastes is short.</p>
+      <p class="fm-ed-sig">— Chris</p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="fm-foot">
+    Euangelion &middot; <em>good news, daily</em> &middot; A reader-funded publication &middot; Fully human, daily, ancient
+  </div>
+</div>
+
+<div class="decision" data-card="full-mockup-pick">
+  <p class="kicker" style="margin-bottom:0.3rem;">Pick · is this the homepage to ship?</p>
+  <fieldset class="decision-tri" data-name="full-mockup-pick"><legend>Decision</legend>
+    <label data-state="yes"><input type="radio" name="full-mockup-pick" value="yes" /><span>Ship it</span></label>
+    <label data-state="maybe"><input type="radio" name="full-mockup-pick" value="maybe" /><span>Adjust</span></label>
+    <label data-state="no"><input type="radio" name="full-mockup-pick" value="no" /><span>Reject</span></label>
+  </fieldset>
+  <textarea class="decision-notes" data-notes-for="full-mockup-pick" placeholder="What would you change? Names of tiles, order, colors, anything…"></textarea>
+</div>
+
+<div class="callout">
+  <h4>What this mockup commits to</h4>
+  <ul>
+    <li><b>The masthead</b> looks like a real broadsheet: vol/no, dateline, Greek subtitle.</li>
+    <li><b>The ticker</b> at top is the second-tier signature animation (scripture references slowly cycling).</li>
+    <li><b>The hero</b> is the roll-the-stone signature animation on a literal tomb-shape. Easter route lock-in.</li>
+    <li><b>The bento</b> below the hero is the seven v1 tiles in newspaper proportions (Lead = A1 story; Scripture + Funnies in the upper-right column; Opinion/Letters/Classifieds across the middle row; Almanac/Weather/Editor as the basement row).</li>
+    <li><b>The Funnies tile</b> renders an actual strip — not a placeholder. The Hope strip from section 02 is the visual anchor.</li>
+    <li><b>The footer</b> uses the Marginalian-borrowed line: <em>"fully human, daily, ancient."</em></li>
+  </ul>
+</div>
+</section>
+
+<hr/>
+
+<!-- ═══════════════════════════════════════════════════════════
+     07 — SIDE BY SIDE — today vs proposed
+     ═══════════════════════════════════════════════════════════ -->
+<section id="sidebyside">
+<p class="kicker">07 · Today vs proposed</p>
+<h2>Side-by-side — what changes, what's preserved.</h2>
+<p class="lede">Left: a mocked-up approximation of today's homepage (wordmark + hero + inline Soul Audit + featured series row). Right: the proposed bento. The same content is present in both — the bento adds density and the funnies, and re-frames the Soul Audit kicker as <em>Letters</em>.</p>
+
+<div class="side-by-side">
+
+  <div class="sbs-today">
+    <p class="sbs-label"><span>A · Today</span><span>euangelion.app · live</span></p>
+    <div class="sbs-frame">
+      <div class="sbs-today-mock">
+        <p class="sbs-tm-wordmark">Euangelion</p>
+        <p class="sbs-tm-greek">εὐαγγέλιον · good news</p>
+        <div class="sbs-tm-hero"></div>
+        <div class="sbs-tm-card">
+          <p class="sbs-tm-kicker">SOUL AUDIT</p>
+          <p class="sbs-tm-h">What are you wrestling with today?</p>
+          <p class="sbs-tm-b" style="margin-bottom:0.4rem;">Type a sentence. We'll meet you there.</p>
+          <p class="sbs-tm-input">A sentence about today…</p>
+          <p class="sbs-tm-btn">Submit &amp; Receive Plan</p>
+        </div>
+        <div class="sbs-tm-card">
+          <p class="sbs-tm-kicker">FEATURED · BIBLE-IN-A-YEAR</p>
+          <p class="sbs-tm-h">Day 14 · Ecclesiastes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sbs-proposed">
+    <p class="sbs-label"><span>B · Proposed</span><span>after this pitch</span></p>
+    <div class="sbs-frame">
+      <div class="sbs-today-mock">
+        <p class="sbs-tm-wordmark" style="margin: 0 0 0.2rem;">Euangelion</p>
+        <p style="font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.22em; color: var(--muted); text-align:center; text-transform: uppercase; margin: 0;">SAT · 16 MAY 2026 · VOL. I · NO. CXXVII</p>
+        <div class="sbs-tm-hero" style="margin-top: 0.5rem;"></div>
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 0.4rem;">
+          <div class="sbs-tm-card">
+            <p class="sbs-tm-kicker" style="color: var(--crimson);">TODAY'S LEAD</p>
+            <p class="sbs-tm-h" style="font-size: 0.95rem;">Ecclesiastes asks the question.</p>
+            <p class="sbs-tm-b" style="font-size: 0.72rem; margin: 0;">Vapor of vapors…</p>
+          </div>
+          <div class="sbs-tm-card" style="background: var(--paper-deep);">
+            <p class="sbs-tm-kicker" style="font-size: 0.5rem;">SCRIPTURE</p>
+            <p style="font-family: 'SBL Hebrew', serif; font-size: 1rem; color: var(--cobalt); direction: rtl; margin: 0.2rem 0;">הֲבֵל</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem;">
+          <div class="sbs-tm-card">
+            <p style="font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.18em; color: var(--cobalt); font-style: italic; font-weight: 700;">LETTERS</p>
+            <p style="font-size: 0.7rem; margin: 0.2rem 0 0;">One honest sentence. We'll write back.</p>
+          </div>
+          <div class="sbs-tm-card">
+            <p style="font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.18em; color: var(--cobalt); font-weight: 700;">FUNNIES</p>
+            <p style="font-size: 0.7rem; font-style: italic; margin: 0.2rem 0 0;">Hope — one string left…</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<h3>What this trade looks like, item by item.</h3>
+
+<div class="sbs-tradeoffs">
+  <div class="gain">
+    <h5>Gained — density</h5>
+    <p>One screen-height now carries 7 tiles instead of 2 cards. Returning readers see today's headline, scripture, funnies, opinion, and letters without scrolling.</p>
+  </div>
+  <div class="gain">
+    <h5>Gained — daily ritual</h5>
+    <p>The dateline + ticker + funnies say "today's edition is its own thing." First-time visitors feel they've arrived at <em>today's paper</em>, not at a static brochure.</p>
+  </div>
+  <div class="gain">
+    <h5>Gained — funnies slot</h5>
+    <p>The strip is on the front page, not in a sub-route. Matches Le Monde + Plantu (49 years on the front). Reader doesn't have to hunt for it.</p>
+  </div>
+  <div class="lose">
+    <h5>Lost — Soul Audit prominence</h5>
+    <p>The current giant Soul Audit kicker shrinks to a small <em>Letters</em> tile. Less aggressive, more publication-feeling. The tool is still one tap away.</p>
+  </div>
+  <div class="lose">
+    <h5>Lost — hero-image dominance</h5>
+    <p>The single big hero shrinks to a banded roll-the-stone band. Less "campaign landing page," more "front page."</p>
+  </div>
+  <div class="lose">
+    <h5>Lost — visual breathing room</h5>
+    <p>The current page has more white space per visible item. The bento is denser. Density is the trade.</p>
+  </div>
+  <div class="risk">
+    <h5>Risk — bento blurs hierarchy</h5>
+    <p>Research warns bento on editorial blurs date/prominence. Mitigation: the lead tile is 2× the rest; the funnies tile is sized intentionally smaller. We use bento as marketing-page grammar, not editorial-reader grammar.</p>
+  </div>
+  <div class="risk">
+    <h5>Risk — mobile compression</h5>
+    <p>On a phone, the 7-tile grid collapses to a single column. The mobile previews in section 08 show how each tile reads at 320px-wide.</p>
+  </div>
+  <div class="risk">
+    <h5>Risk — Soul Audit conversion</h5>
+    <p>If the LETTERS tile converts worse than the current giant kicker, the gain isn't worth the loss. Mitigation: ship with both options behind a flag; A/B for 2 weeks; pick the winner.</p>
+  </div>
+</div>
+
+<div class="decision" data-card="sbs-pick" style="margin-top: 1rem;">
+  <p class="kicker" style="margin-bottom:0.3rem;">Which side wins?</p>
+  <fieldset class="decision-tri" data-name="sbs-pick"><legend>Decision</legend>
+    <label data-state="yes"><input type="radio" name="sbs-pick" value="yes" /><span>Proposed</span></label>
+    <label data-state="maybe"><input type="radio" name="sbs-pick" value="maybe" /><span>Hybrid</span></label>
+    <label data-state="no"><input type="radio" name="sbs-pick" value="no" /><span>Keep today</span></label>
+  </fieldset>
+  <textarea class="decision-notes" data-notes-for="sbs-pick" placeholder="What's your read?"></textarea>
+</div>
+</section>
+
+<hr/>
+
+<!-- ═══════════════════════════════════════════════════════════
+     08 — MOBILE EDITION PREVIEWS
+     ═══════════════════════════════════════════════════════════ -->
+<section id="mobile">
+<p class="kicker">08 · Mobile</p>
+<h2>What it looks like on a phone.</h2>
+<p class="lede">Three phone-frame previews showing the proposed bento at 240px wide. Stacked single-column. The funnies tile renders the real strip. Scroll inside each phone to see the full edition.</p>
+
+<div class="phone-rack">
+  <div>
+    <div class="phone">
+      <div class="phone-bezel">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="ph-mast">
+            <p>SAT · 16 MAY 2026 · VOL. I</p>
+            <h2>Euangelion</h2>
+          </div>
+          <div class="ph-lead">
+            <p class="ph-kicker">Today&rsquo;s Lead · Day 14</p>
+            <p class="ph-h">Ecclesiastes asks the question.</p>
+            <p class="ph-b">There is a kind of busyness that looks like obedience but is actually fear of stillness.</p>
+          </div>
+          <div class="ph-tile" style="text-align:center;">
+            <p class="ph-tag">Scripture</p>
+            <p style="font-family: 'SBL Hebrew', serif; color: var(--cobalt); font-size: 1.1rem; direction: rtl; margin: 0.2rem 0;">הֲבֵל הֲבָלִים</p>
+            <p style="font-style: italic; font-size: 0.7rem; margin: 0;">Vapor of vapors</p>
+          </div>
+          <div class="ph-tile ph-funnies">
+            <p class="ph-tag" style="color: var(--cobalt);">The Funnies · Daily</p>
+            <div class="ph-funnies-art" style="background-image: url('/images/audit-2026-05-16/comic-strips/03-hope.png');"></div>
+            <p class="ph-cap">"Hope: one string left, eyes blindfolded, still tuning."</p>
+          </div>
+          <div class="ph-tile" style="background: rgba(31,42,141,0.05);">
+            <p class="ph-tag" style="color: var(--cobalt); font-style: italic;">Letters to the Editor</p>
+            <p style="font-size: 0.75rem; margin: 0.2rem 0 0;">One honest sentence. We'll write back. <span style="color: var(--crimson); font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700;">→ Write</span></p>
+          </div>
+          <div class="ph-tile">
+            <p class="ph-tag" style="color: var(--cobalt);">Opinion</p>
+            <p style="font-style: italic; font-size: 0.75rem; margin: 0.25rem 0;">"You must be emptied of that wherewith you are full."</p>
+            <p style="font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.16em; color: var(--muted); text-transform: uppercase;">— Augustine</p>
+          </div>
+          <div class="ph-tile">
+            <p class="ph-tag" style="color: var(--cobalt);">Almanac</p>
+            <p style="font-size: 0.75rem; margin: 0.2rem 0 0;">Eastertide · Week VI · Feast of Brendan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="phone-label">Phone · scroll inside</p>
+  </div>
+
+  <div>
+    <div class="phone">
+      <div class="phone-bezel">
+        <div class="phone-notch"></div>
+        <div class="phone-screen" style="background: #0a1320; color: var(--paper);">
+          <div class="ph-mast" style="border-bottom-color: var(--paper);">
+            <p style="color: rgba(240,236,230,0.6);">SAT · 16 MAY 2026 · VOL. I</p>
+            <h2 style="color: var(--paper);">Euangelion</h2>
+          </div>
+          <div class="ph-lead" style="border-color: rgba(240,236,230,0.2); color: var(--paper);">
+            <p class="ph-kicker">Today&rsquo;s Lead · Day 14</p>
+            <p class="ph-h" style="color: var(--paper);">Ecclesiastes asks the question.</p>
+            <p class="ph-b" style="color: rgba(240,236,230,0.7);">There is a kind of busyness that looks like obedience.</p>
+          </div>
+          <div class="ph-tile" style="text-align:center; border-color: rgba(240,236,230,0.2);">
+            <p class="ph-tag" style="color: var(--gold);">Scripture</p>
+            <p style="font-family: 'SBL Hebrew', serif; color: var(--gold); font-size: 1.1rem; direction: rtl; margin: 0.2rem 0;">הֲבֵל הֲבָלִים</p>
+            <p style="font-style: italic; font-size: 0.7rem; margin: 0; color: var(--paper);">Vapor of vapors</p>
+          </div>
+          <div class="ph-tile ph-funnies" style="border-color: rgba(240,236,230,0.2);">
+            <p class="ph-tag" style="color: var(--gold);">The Funnies</p>
+            <div class="ph-funnies-art" style="background-image: url('/images/audit-2026-05-16/comic-strips/01-boat-in-storm.png');"></div>
+            <p class="ph-cap" style="color: var(--paper);">"I keep waiting until the boat goes under."</p>
+          </div>
+          <div class="ph-tile" style="border-color: rgba(240,236,230,0.2);">
+            <p class="ph-tag" style="color: var(--gold);">Opinion</p>
+            <p style="font-style: italic; font-size: 0.75rem; margin: 0.2rem 0; color: var(--paper);">"You must be emptied of that wherewith you are full."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="phone-label">Dark mode</p>
+  </div>
+
+  <div>
+    <div class="phone">
+      <div class="phone-bezel">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="ph-mast">
+            <p>SUN · 17 MAY 2026 · VOL. I</p>
+            <h2>Euangelion</h2>
+          </div>
+          <div class="ph-tile" style="background: var(--paper-deep); border: 0;">
+            <p class="ph-tag" style="color: var(--crimson); text-align:center; font-size: 0.55rem;">Sunday Edition · Expanded Funnies</p>
+          </div>
+          <div class="ph-tile ph-funnies">
+            <div class="ph-funnies-art" style="background-image: url('/images/audit-2026-05-16/comic-strips/02-mary-martha.png');"></div>
+            <p class="ph-cap">"Martha kept the schedule. Mary kept the seat."</p>
+          </div>
+          <div class="ph-tile ph-funnies">
+            <div class="ph-funnies-art" style="background-image: url('/images/audit-2026-05-16/comic-strips/05-annunciation.png');"></div>
+            <p class="ph-cap">"An angel showed up. She did not faint. I would have."</p>
+          </div>
+          <div class="ph-tile ph-funnies">
+            <div class="ph-funnies-art" style="background-image: url('/images/audit-2026-05-16/comic-strips/08-prayer-when-angry.png');"></div>
+            <p class="ph-cap">"Half the psalms are angry. She felt better."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="phone-label">Sunday edition · funnies-heavy</p>
+  </div>
+</div>
+
+<div class="callout">
+  <h4>What the mobile previews demonstrate</h4>
+  <ul>
+    <li><b>The bento collapses cleanly.</b> Every desktop tile becomes a stacked card on phone. No content gets hidden in a hamburger.</li>
+    <li><b>The funnies still work at 220px-wide.</b> The 21:9 strip art scales down without losing readability of the caption. This is the test that mattered most — if the strip looked muddy at phone size, the whole feature would be off the table.</li>
+    <li><b>Dark mode is achievable</b> by inverting only the tile backgrounds (gold accents, cream text). The funnies strip stays unchanged — newsprint reads fine in both modes.</li>
+    <li><b>The Sunday edition</b> reads as a stack of comic strips on phone, which is exactly what readers of paper Sunday papers expected. Three strips in one screen.</li>
+  </ul>
+</div>
+
+<div class="decision" data-card="mobile-pick">
+  <p class="kicker" style="margin-bottom:0.3rem;">Mobile preview verdict</p>
+  <fieldset class="decision-tri" data-name="mobile-pick"><legend>Decision</legend>
+    <label data-state="yes"><input type="radio" name="mobile-pick" value="yes" /><span>Reads well</span></label>
+    <label data-state="maybe"><input type="radio" name="mobile-pick" value="maybe" /><span>Needs work</span></label>
+    <label data-state="no"><input type="radio" name="mobile-pick" value="no" /><span>Reject</span></label>
+  </fieldset>
+  <textarea class="decision-notes" data-notes-for="mobile-pick" placeholder="What's off?"></textarea>
+</div>
+</section>
+
+<hr/>
+
+<!-- ═══════════════════════════════════════════════════════════
+     09 — RECOMMENDED V1
      ═══════════════════════════════════════════════════════════ -->
 <section id="picks">
-<p class="kicker">06 · Recommendations</p>
+<p class="kicker">09 · Recommendations</p>
 <h2>What I'd ship in v1.</h2>
+<p class="lede">My read of the page after building it out. Your picks override mine — the floating <b>REVIEW MY PICKS</b> button bottom-right captures everything.</p>
 
 <div class="callout ok">
   <h4>Green-light — ship in v1</h4>
-  <p><b>Bento tiles:</b> Lead Headline · Today's Scripture · The Funnies · Opinion · Letters · Editor's Desk · Almanac. (Jump-line as a typographic detail inside the lead, not its own tile.)</p>
-  <p><b>Funnies authoring:</b> 20 entries in the "Peanuts but Jesus" voice from the six samples above (your edits).</p>
-  <p><b>Soul Audit kicker:</b> leave alone. Ship the LETTERS tile that funnels into it instead.</p>
-  <p><b>Topbar dateline:</b> <code>FRIDAY · MAY 16, 2026 · VOL. I · NO. N · MORNING EDITION</code>.</p>
-  <p><b>Interactions:</b> Roll-the-stone hero · Bento tile stagger · Gold-shimmer scripture refs · Ink-bleed series-card hover · Magnetic CTA · Book-spine progress · Pull-quote float · Drop caps · Ornament dividers.</p>
+  <p><b>Funnies — Direction A (The Linus Kid)</b>, the Schulz/Peanuts register with the dark-haired-bob protagonist. <em>Six new strips per week (Mon–Sat), Sunday expanded to 8 panels.</em> Strips generated in batches per liturgical season, hand-curated, stored as library asset. Written by a single voice, edited weekly. The 8 sample strips in section 02 are the working tone.</p>
+  <p><b>Bento tiles (homepage marketing surface only — NOT the daily reader):</b> Lead Headline · Today's Scripture · The Funnies · Opinion · Letters · Editor's Desk · Almanac. (Jump-line as a typographic detail inside the lead, not its own tile.)</p>
+  <p><b>Soul Audit kicker:</b> leave alone. Ship the <em>LETTERS</em> bento tile that funnels into it instead. (V1 italic-serif-muted byline lost the day; sub-byline rejected.)</p>
+  <p><b>Topbar dateline:</b> <code>SATURDAY · 16 MAY 2026 · VOL. I · NO. CXXVII · MORNING EDITION</code>.</p>
+  <p><b>Signature animation:</b> Roll-the-stone hero on Easter routes, built on the View Transitions API (Baseline since Oct 2025).</p>
+  <p><b>Second-tier signature:</b> Type-on-load headline for the daily devotional.</p>
+  <p><b>Supporting:</b> Stock-ticker scripture marquee · Bento tile stagger · Gold-shimmer scripture refs · Ink-bleed series-card hover · Magnetic CTA · Book-spine scroll progress · Pull-quote float · Drop caps · Ornament dividers.</p>
 </div>
 
 <div class="callout">
   <h4>v2 — earned later</h4>
-  <p>Weather · Obituaries · Travel · Grapevine tiles. Cinemagraph in the wordmark or hero. Pin-and-reveal scroll. Custom cursor. Page-turn route transition. Print-this-Edition. Editions Archive.</p>
+  <p>Funnies Direction C as a second strip on the page (the "modern family" gag strip) — pair with Direction A like a real newspaper. Weather Report · Obituaries · Travel · Grapevine bento tiles. Cinemagraph in the wordmark or hero. Pin-and-reveal scroll. Custom cursor on the funnies tile only (magnifying glass). Page-turn route transition. Print-this-Edition. <b>Editions Archive at <code>/editions/YYYY-MM-DD</code></b> — the strongest metaphor on the page, but heaviest to build.</p>
 </div>
 
 <div class="callout warn">
-  <h4>Skip — fights the "no engagement bait" rule</h4>
-  <p>Long-scroll dateline tomorrow-fade · Reading-time gated reveals · Kinetic letter scatter · Soundscape toggle · Audio Edition · Marginalia · Dear Abby.</p>
+  <h4>Skip / Reserve — fights the brand or the budget</h4>
+  <p><b>Direction B (Wild-Hair &amp; the Lamb)</b> — reserve for Easter / Christmas / Holy Week Sunday strips only, where the higher craft is justified. Don't run as the daily.</p>
+  <p><b>Direction D (Two on a Rock)</b> — skip entirely. The B.C. register is too gag-heavy for the devotional voice we're building.</p>
+  <p><b>Soundscape toggle</b> — Awwwards staple but ambient audio fights the contemplative reading register. Skip.</p>
+  <p><b>Long-scroll dateline tomorrow-fade · Reading-time gated reveals · Kinetic letter scatter</b> — fight the "no engagement bait" founder rule.</p>
+  <p><b>Audio Edition · Marginalia · Dear Abby</b> — premature without a base.</p>
+</div>
+
+<div class="callout">
+  <h4>The cadence promise — what this commits us to</h4>
+  <ul style="margin: 0.4rem 0; padding-left: 1.2rem;">
+    <li><b>30 strips per liturgical season</b>, generated in batches, hand-curated.</li>
+    <li><b>Single writer</b> for caption authorship — placeholder until founder decides whether that voice is the founder or a hire.</li>
+    <li><b>Weekly editorial review</b> before strips go live.</li>
+    <li><b>No real-time AI generation on user request.</b> Per CLAUDE.md "manifest first, generation last."</li>
+    <li><b>The protagonist needs a name.</b> Working placeholder: "the dark-haired kid." Founder picks the name.</li>
+  </ul>
 </div>
 
 <h3>Send me your decisions.</h3>
-<p>Hit the floating <b>REVIEW MY PICKS</b> button bottom-right. It shows everything you've marked, lets you edit each one, and copies the whole list to your clipboard with one click. Paste it back to me and I'll execute on your selections.</p>
+<p>Hit the floating <b>REVIEW MY PICKS</b> button bottom-right. It shows everything you've marked across all 60+ decision controls on this page, lets you edit each one, and copies the whole list to your clipboard with one click. Paste it back to me and I'll execute on your selections.</p>
 </section>
 
 <footer>
@@ -3790,6 +4373,39 @@ Pitch page · 16 May 2026 · interactive build · prepared for founder review ·
     if (!strip) return;
     strip.setAttribute('data-on', '');
     setTimeout(function () { strip.removeAttribute('data-on'); }, 4000);
+  });
+
+  // ───────── Page-turn trigger ─────────
+  document.querySelector('[data-pageturn-trigger]')?.addEventListener('click', function () {
+    const stage = document.getElementById('page-turn-stage');
+    if (!stage) return;
+    if (stage.hasAttribute('data-on')) stage.removeAttribute('data-on');
+    else stage.setAttribute('data-on', '');
+  });
+
+  // ───────── Soundscape toggle (visual mock) ─────────
+  document.querySelector('[data-sound-toggle]')?.addEventListener('click', function () {
+    const stage = document.getElementById('sound-stage');
+    const btn = this;
+    if (!stage) return;
+    if (stage.hasAttribute('data-on')) {
+      stage.removeAttribute('data-on');
+      btn.textContent = 'Off';
+    } else {
+      stage.setAttribute('data-on', '');
+      btn.textContent = 'On';
+    }
+  });
+
+  // ───────── Print-this-Edition trigger ─────────
+  document.querySelector('[data-print-trigger]')?.addEventListener('click', function () {
+    const stage = document.getElementById('print-stage');
+    if (!stage) return;
+    stage.removeAttribute('data-on');
+    // Force reflow before re-adding so animation re-fires
+    void stage.offsetWidth;
+    stage.setAttribute('data-on', '');
+    setTimeout(function () { stage.removeAttribute('data-on'); }, 1800);
   });
 
   // ───────── Custom cursor demo (scoped to its stage) ─────────
