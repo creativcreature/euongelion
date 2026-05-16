@@ -550,6 +550,10 @@ h3 {
      text (typical "light mode" appearance) so it contrasts the navy
      page background instead of doubling down on it.
    Same flip applied to "Here's how it works." */
+/* R42: founder reverted the deep-navy mode-flip on Soul Audit +
+   How-It-Works. Both sections now render on the page's default
+   paper / ink palette (no inverted block). Layout (padding, gap,
+   centering, max-width) preserved. */
 .homepage-soul-audit {
   display: grid;
   gap: 0.6rem;
@@ -558,17 +562,6 @@ h3 {
   padding: 2rem 1.6rem 2.2rem;
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
   margin: 0;
-  /* Founder direction 2026-05-14: lock to the deep navy so the
-     band reads identically in light and dark mode (was drifting
-     to the lighter cobalt #1f2a8d in light mode via --mock-blue). */
-  background: var(--color-deep-navy, #171b69);
-  color: #f3eadb;
-}
-.homepage-soul-audit .mock-kicker,
-.homepage-soul-audit .mock-title,
-.homepage-soul-audit .mock-subcopy,
-.homepage-soul-audit .mock-footnote {
-  color: #f3eadb;
 }
 .homepage-soul-audit .mock-subcopy {
   max-width: 56ch;
@@ -576,140 +569,29 @@ h3 {
 .homepage-soul-audit .mock-textarea {
   margin-top: 0.6rem;
   width: min(56rem, 100%);
-  background: color-mix(in srgb, #f3eadb 96%, transparent);
-  color: var(--color-deep-navy, #171b69);
-  border-color: #f3eadb;
 }
 .homepage-soul-audit .homepage-prompt-pills {
   margin-top: 0.6rem;
   justify-content: center;
 }
-.homepage-soul-audit .homepage-prompt-pill {
-  border-color: color-mix(in srgb, #f3eadb 70%, transparent);
-  color: #f3eadb;
-}
-.homepage-soul-audit .homepage-prompt-pill:hover,
-.homepage-soul-audit .homepage-prompt-pill:focus-visible {
-  background: color-mix(in srgb, #f3eadb 14%, transparent);
-}
 .homepage-soul-audit .mock-btn-inline {
   justify-self: center;
   margin-top: 0.8rem;
-  background: #f3eadb;
-  color: var(--color-deep-navy, #171b69);
-  border-color: #f3eadb;
-}
-.homepage-soul-audit .mock-btn-inline:hover,
-.homepage-soul-audit .mock-btn-inline:focus-visible {
-  background: #fff;
-  color: var(--color-deep-navy, #171b69);
-}
-.homepage-soul-audit .mock-reset-btn {
-  color: color-mix(in srgb, #f3eadb 88%, transparent);
 }
 
-/* DARK mode flip — paper card on the navy page. */
-.dark .homepage-soul-audit {
-  background: var(--mock-paper, #f5eee3);
-  color: var(--mock-ink, #11182a);
-}
-.dark .homepage-soul-audit .mock-kicker,
-.dark .homepage-soul-audit .mock-title,
-.dark .homepage-soul-audit .mock-subcopy,
-.dark .homepage-soul-audit .mock-footnote {
-  color: var(--mock-ink, #11182a);
-}
-.dark .homepage-soul-audit .mock-textarea {
-  background: transparent;
-  color: var(--mock-ink, #11182a);
-  border-color: var(--mock-ink, #11182a);
-}
-.dark .homepage-soul-audit .homepage-prompt-pill {
-  border-color: color-mix(in srgb, var(--mock-ink) 60%, transparent);
-  color: var(--mock-ink, #11182a);
-}
-.dark .homepage-soul-audit .homepage-prompt-pill:hover,
-.dark .homepage-soul-audit .homepage-prompt-pill:focus-visible {
-  background: color-mix(in srgb, var(--mock-ink) 10%, transparent);
-}
-.dark .homepage-soul-audit .mock-btn-inline {
-  background: var(--mock-ink, #11182a);
-  color: var(--mock-paper, #f5eee3);
-  border-color: var(--mock-ink, #11182a);
-}
-.dark .homepage-soul-audit .mock-btn-inline:hover,
-.dark .homepage-soul-audit .mock-btn-inline:focus-visible {
-  background: #000;
-  color: var(--mock-paper, #f5eee3);
-}
-.dark .homepage-soul-audit .mock-reset-btn {
-  color: color-mix(in srgb, var(--mock-ink) 80%, transparent);
-}
-
-/* "Here's how it works" — same mode-flip as Soul Audit. Light mode
-   = deep-navy/cream pop (locked to #171b69 so it matches the audit
-   band exactly). Dark mode = paper card. */
+/* R42: How-It-Works on default page palette (no inverted block). */
 .homepage-howitworks {
-  background: var(--color-deep-navy, #171b69);
-  color: #f3eadb;
   text-align: center;
   padding: 1.6rem 1.4rem 0.75rem;
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
 }
-.homepage-howitworks .mock-kicker,
-.homepage-howitworks .mock-title-center,
-.homepage-howitworks .mock-subcopy-center {
-  color: #f3eadb;
-}
 .homepage-howitworks-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  background: var(--color-deep-navy, #171b69);
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
-}
-.homepage-howitworks-grid .mock-step-card {
-  background: transparent;
-  color: #f3eadb;
-  border-right-color: color-mix(in srgb, #f3eadb 35%, transparent);
 }
 .homepage-howitworks-grid .mock-step-card:last-child {
   border-right: 0;
-}
-.homepage-howitworks-grid .mock-step-card h3 {
-  color: #f3eadb;
-}
-.homepage-howitworks-grid .mock-step-card p {
-  color: color-mix(in srgb, #f3eadb 88%, transparent);
-}
-.homepage-howitworks-grid .mock-step-image-wrap {
-  border-right-color: color-mix(in srgb, #f3eadb 35%, transparent);
-}
-
-/* DARK mode flip for How It Works — paper card. */
-.dark .homepage-howitworks {
-  background: var(--mock-paper, #f5eee3);
-  color: var(--mock-ink, #11182a);
-}
-.dark .homepage-howitworks .mock-kicker,
-.dark .homepage-howitworks .mock-title-center,
-.dark .homepage-howitworks .mock-subcopy-center {
-  color: var(--mock-ink, #11182a);
-}
-.dark .homepage-howitworks-grid {
-  background: var(--mock-paper, #f5eee3);
-}
-.dark .homepage-howitworks-grid .mock-step-card {
-  color: var(--mock-ink, #11182a);
-  border-right-color: color-mix(in srgb, var(--mock-ink) 35%, transparent);
-}
-.dark .homepage-howitworks-grid .mock-step-card h3 {
-  color: var(--mock-ink, #11182a);
-}
-.dark .homepage-howitworks-grid .mock-step-card p {
-  color: color-mix(in srgb, var(--mock-ink) 78%, transparent);
-}
-.dark .homepage-howitworks-grid .mock-step-image-wrap {
-  border-right-color: color-mix(in srgb, var(--mock-ink) 35%, transparent);
 }
 @media (max-width: 760px) {
   .homepage-howitworks-grid {
@@ -717,8 +599,6 @@ h3 {
   }
   .homepage-howitworks-grid .mock-step-card {
     border-right: 0;
-    border-bottom: var(--mock-stroke, 1.5px) solid
-      color-mix(in srgb, #f3eadb 35%, transparent);
   }
   .homepage-howitworks-grid .mock-step-card:last-child {
     border-bottom: 0;
@@ -5627,59 +5507,18 @@ html.reduce-motion *::after {
   cursor: pointer;
 }
 
+/* R42: "Ready to begin" block reverted to default page palette
+   per founder. Layout preserved; colors return to the paper / ink
+   defaults shared with the rest of the homepage. */
 .mock-cta {
   border-bottom: var(--mock-stroke) solid var(--mock-line);
   text-align: center;
   min-height: var(--mock-h-cta);
-  padding: 2rem 1.6rem 2.2rem;
+  padding: 0.85rem 1rem 1rem;
   display: grid;
   place-content: center;
   justify-items: center;
-  gap: 0.6rem;
-  /* R37: "Ready to begin" block now matches Soul Audit styling
-     exactly — deep navy in light mode, cream paper in dark mode. */
-  background: var(--color-deep-navy, #171b69);
-  color: #f3eadb;
-}
-.mock-cta .mock-kicker,
-.mock-cta .mock-cta-headline,
-.mock-cta .mock-subcopy-center {
-  color: #f3eadb;
-}
-.mock-cta .mock-btn {
-  background: #f3eadb;
-  color: var(--color-deep-navy, #171b69);
-  border-color: #f3eadb;
-}
-.mock-cta .mock-btn:hover,
-.mock-cta .mock-btn:focus-visible {
-  background: #fff;
-  color: var(--color-deep-navy, #171b69);
-}
-.mock-cta a:not(.mock-btn) {
-  color: color-mix(in srgb, #f3eadb 88%, transparent);
-}
-.dark .mock-cta {
-  background: var(--mock-paper, #f5eee3);
-  color: var(--mock-ink, #11182a);
-}
-.dark .mock-cta .mock-kicker,
-.dark .mock-cta .mock-cta-headline,
-.dark .mock-cta .mock-subcopy-center {
-  color: var(--mock-ink, #11182a);
-}
-.dark .mock-cta .mock-btn {
-  background: var(--color-deep-navy, #171b69);
-  color: #f3eadb;
-  border-color: var(--color-deep-navy, #171b69);
-}
-.dark .mock-cta .mock-btn:hover,
-.dark .mock-cta .mock-btn:focus-visible {
-  background: var(--mock-ink, #11182a);
-  color: #f3eadb;
-}
-.dark .mock-cta a:not(.mock-btn) {
-  color: color-mix(in srgb, var(--mock-ink, #11182a) 78%, transparent);
+  gap: 0.36rem;
 }
 
 .mock-cta-headline {
