@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Euangelion — Newspaper-Metaphor Pitch · 16 May 2026</title>
+<meta name="description" content="Research + ideas-gamut pitch for pushing the newspaper metaphor on the homepage. THE FUNNIES voice study, LETTERS sub-kicker pro/con, bento tile gamut, interaction + animation gamut. For founder review only — none of this is live elsewhere." />
+
+<link rel="preload" href="/fonts/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/InstrumentSerif-Italic.woff2"  as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/IndustryTest-Book.otf"  as="font" type="font/otf" crossorigin />
+<link rel="preload" href="/fonts/IndustryTest-Demi.otf"  as="font" type="font/otf" crossorigin />
+<link rel="preload" href="/fonts/IndustryTest-Bold.otf"  as="font" type="font/otf" crossorigin />
+
+<style>
+@font-face { font-family: 'Instrument Serif'; src: url('/fonts/InstrumentSerif-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Instrument Serif'; src: url('/fonts/InstrumentSerif-Italic.woff2')  format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Industry Test'; src: url('/fonts/IndustryTest-Book.otf') format('opentype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Industry Test'; src: url('/fonts/IndustryTest-Demi.otf') format('opentype'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Industry Test'; src: url('/fonts/IndustryTest-Bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
+
+:root {
+  --paper: #f0ece6;
+  --ink: #11182a;
+  --cobalt: #1f2a8d;
+  --line: #2e3880;
+  --line-soft: rgba(46,56,128,0.32);
+  --muted: rgba(17,24,42,0.78);
+  --crimson: #c4192e;
+  --burgundy: #7a1a26;
+  --gold: #c8a56a;
+  --frame: 1180px;
+  --pad: clamp(1rem, 2.4vw, 1.6rem);
+  --rhythm: clamp(1.2rem, 2.2vw, 2rem);
+  --breath: clamp(2.6rem, 5vw, 4.2rem);
+  --hairline: 1.5px solid var(--line);
+  --hairline-soft: 1px solid var(--line-soft);
+  --sans: 'Industry Test', 'Helvetica Neue', system-ui, sans-serif;
+  --serif: 'Instrument Serif', Georgia, serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1.04rem, 1.1vw, 1.18rem);
+  line-height: 1.55;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  padding: var(--breath) var(--pad);
+}
+.wrap { max-width: var(--frame); margin: 0 auto; }
+
+/* ───────── Typography ───────── */
+.kicker, .text-label {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--cobalt);
+  margin: 0 0 0.5rem;
+}
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.005em; }
+h1 { font-size: clamp(2.6rem, 5.2vw, 4.2rem); line-height: 0.98; margin: 0 0 0.5rem; }
+h2 { font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.04; margin: var(--breath) 0 0.4rem; }
+h3 { font-size: clamp(1.3rem, 1.8vw, 1.55rem); line-height: 1.18; margin: var(--rhythm) 0 0.3rem; }
+h4 { font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: var(--cobalt); margin: 1rem 0 0.3rem; }
+.subtitle { font-style: italic; color: var(--muted); font-size: clamp(1.05rem, 1.4vw, 1.3rem); max-width: 60ch; margin: 0; }
+p { margin: 0 0 1rem; max-width: 70ch; }
+.lede { font-size: clamp(1.1rem, 1.4vw, 1.35rem); font-style: italic; max-width: 64ch; }
+hr { border: 0; border-top: var(--hairline); margin: var(--breath) 0; opacity: 0.65; }
+.rule-soft { border: 0; border-top: var(--hairline-soft); margin: var(--rhythm) 0; }
+a { color: var(--cobalt); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--crimson); }
+code { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; background: rgba(31,42,141,0.07); padding: 0.05em 0.32em; border-radius: 2px; }
+pre { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; background: rgba(31,42,141,0.05); padding: 0.8rem 1rem; border-left: 3px solid var(--cobalt); overflow-x: auto; font-size: 0.84em; line-height: 1.55; }
+
+/* ───────── Meta strip ───────── */
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 3vw, 2.4rem);
+  border-top: var(--hairline);
+  border-bottom: var(--hairline);
+  padding: 0.7rem 0;
+  margin: 1rem 0 var(--breath);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.meta-row b { color: var(--cobalt); font-weight: 600; }
+
+/* ───────── Table of contents ───────── */
+nav.toc {
+  border-top: var(--hairline);
+  border-bottom: var(--hairline);
+  padding: 1rem 0;
+  margin: var(--breath) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem 2rem;
+  font-family: var(--sans);
+  font-size: 0.84rem;
+}
+nav.toc a { display: block; padding: 0.18rem 0; text-decoration: none; }
+nav.toc a:hover { color: var(--crimson); text-decoration: underline; }
+
+/* ───────── Callouts ───────── */
+.callout {
+  border-left: 3px solid var(--cobalt);
+  background: rgba(31,42,141,0.05);
+  padding: 0.9rem 1.1rem;
+  margin: 1.1rem 0;
+}
+.callout.warn { border-color: var(--crimson); background: rgba(196,25,46,0.06); }
+.callout.ok { border-color: #0a6e3c; background: rgba(10,110,60,0.06); }
+.callout h4 { margin-top: 0; }
+
+/* ───────── Funny panels (sample captions) ───────── */
+.funny-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0;
+  border-top: var(--hairline);
+  border-bottom: var(--hairline);
+  margin: var(--rhythm) 0;
+}
+.funny-card {
+  border-right: var(--hairline);
+  border-bottom: var(--hairline);
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.funny-card:last-child { border-right: 0; }
+.funny-card .funny-art {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  background: var(--paper);
+  border: var(--hairline-soft);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.funny-card .funny-art img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.funny-card .funny-caption {
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  line-height: 1.3;
+  font-style: italic;
+  color: var(--ink);
+  margin: 0;
+}
+.funny-card .funny-attribution {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+.funny-card .funny-kicker {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ───────── Pitch cards (bento + interactions) ───────── */
+.pitch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0;
+  border-top: var(--hairline);
+  border-left: var(--hairline);
+  margin: var(--rhythm) 0;
+}
+.pitch-card {
+  border-right: var(--hairline);
+  border-bottom: var(--hairline);
+  padding: 1rem 1.1rem 1.1rem;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.pitch-card .pitch-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.pitch-card .pitch-name {
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--cobalt);
+  margin: 0;
+}
+.pitch-card .pitch-effort {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.12rem 0.42rem;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+}
+.pitch-effort.s { color: #0a6e3c; }
+.pitch-effort.m { color: var(--cobalt); }
+.pitch-effort.l { color: var(--burgundy); }
+.pitch-effort.xl { color: var(--crimson); }
+.pitch-card .pitch-headline {
+  font-family: var(--serif);
+  font-size: 1.16rem;
+  line-height: 1.22;
+  margin: 0;
+  color: var(--ink);
+}
+.pitch-card .pitch-body {
+  font-family: var(--serif);
+  font-size: 0.96rem;
+  line-height: 1.45;
+  color: var(--muted);
+  margin: 0;
+}
+.pitch-card .pitch-meta {
+  border-top: var(--hairline-soft);
+  padding-top: 0.45rem;
+  margin-top: auto;
+  display: grid;
+  gap: 0.25rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.pitch-card .pitch-meta b { color: var(--cobalt); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.65rem; margin-right: 0.4em; }
+.pitch-card .pitch-ship {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 0.16rem 0.5rem;
+  border: 1.5px solid var(--ink);
+  align-self: flex-start;
+}
+.pitch-card .pitch-ship.yes { color: #0a6e3c; border-color: #0a6e3c; }
+.pitch-card .pitch-ship.maybe { color: var(--burgundy); border-color: var(--burgundy); }
+.pitch-card .pitch-ship.skip { color: var(--muted); border-color: var(--muted); }
+.pitch-card .pitch-sketch {
+  margin: 0.2rem 0;
+  border: var(--hairline-soft);
+  background: rgba(31,42,141,0.04);
+  padding: 0.4rem;
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  font-size: 0.7rem;
+  white-space: pre;
+  line-height: 1.35;
+  color: var(--ink);
+  overflow-x: auto;
+}
+.pitch-card .pitch-sketch svg { display: block; width: 100%; height: auto; }
+
+/* ───────── Pro/con split (LTE) ───────── */
+.proscon {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: var(--hairline);
+  border-bottom: var(--hairline);
+  margin: var(--rhythm) 0;
+}
+.proscon > div {
+  padding: 1rem 1.2rem;
+}
+.proscon .pros { border-right: var(--hairline); }
+.proscon h4 { margin-top: 0; }
+.proscon h4.pro-h { color: #0a6e3c; }
+.proscon h4.con-h { color: var(--crimson); }
+.proscon p { margin-bottom: 0.6rem; }
+@media (max-width: 720px) {
+  .proscon { grid-template-columns: 1fr; }
+  .proscon .pros { border-right: 0; border-bottom: var(--hairline); }
+}
+
+/* ───────── Section dividers ───────── */
+.section-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: var(--breath) 0 var(--rhythm);
+}
+.section-rule:after, .section-rule:before {
+  content: "";
+  flex: 1;
+  height: 0;
+  border-top: var(--hairline);
+}
+
+/* ───────── Footer ───────── */
+footer {
+  margin-top: var(--breath);
+  padding-top: var(--rhythm);
+  border-top: var(--hairline);
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ───────── Inline group helpers ───────── */
+ul, ol { padding-left: 1.2rem; max-width: 70ch; }
+li { margin-bottom: 0.3rem; }
+li::marker { color: var(--cobalt); }
+.col-block { max-width: 70ch; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ═══════════════════════════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════════════════════════ -->
+<p class="kicker">Newspaper-Metaphor Pitch · 16 May 2026</p>
+<h1>How far should the broadsheet metaphor go?</h1>
+<p class="subtitle">Research, sample captions, and a gamut of ideas — small touches through cinematic moments — for review. Nothing on this page is live on the rest of the site. Pick what lands. Mark what doesn't.</p>
+
+<div class="meta-row">
+  <span><b>Status</b> review only</span>
+  <span><b>Audience</b> founder</span>
+  <span><b>Confirmed</b> Funnies tone = "Peanuts but Jesus"</span>
+  <span><b>Decisions needed</b> bento tiles · LTE kicker · interactions</span>
+</div>
+
+<nav class="toc">
+  <a href="#brief">01 — Brief</a>
+  <a href="#funnies">02 — THE FUNNIES voice</a>
+  <a href="#letters">03 — LETTERS sub-kicker</a>
+  <a href="#bento">04 — Bento tile gamut</a>
+  <a href="#motion">05 — Interaction gamut</a>
+  <a href="#picks">06 — Recommended v1</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════
+     01 — BRIEF
+     ═══════════════════════════════════════════════════════════ -->
+<section id="brief">
+<p class="kicker">01</p>
+<h2>Brief.</h2>
+<p class="lede">Euangelion calls itself "a daily newspaper of the Gospel." The visual language already does broadsheet impressively well — masthead, dateline, kickers, folios, hairline rules, bottom-brand block. What's missing is the <em>front-page feeling</em>: density, surprise, a small daily ritual that says "today's edition is its own thing."</p>
+<p>Two anchors decided already: <b>add THE FUNNIES</b> (tone confirmed: <em>"Peanuts but Jesus"</em>) and <b>adopt a bento layout</b> (a broadsheet front page is, structurally, a bento). The founder also asked for interaction polish — cinemagraphs, scroll-driven reveals, Awwwards-tier feel — without sliding into gimmick.</p>
+<p>This page presents <b>six sample funnies captions to react to</b>, a <b>two-sided argument for the LETTERS TO THE EDITOR sub-kicker</b>, a <b>bento tile gamut</b> (the obvious + the wildcards), and an <b>interaction gamut</b> (subtle motion → page-turn dreams). Each card has effort, risk, and a ship-in-v1 call so the founder can move through it sequentially.</p>
+<p><em>Nothing on this page propagates anywhere else on the site. It is a review document.</em></p>
+</section>
+
+<hr/>
+
+<!-- ═══════════════════════════════════════════════════════════
+     02 — THE FUNNIES VOICE
+     ═══════════════════════════════════════════════════════════ -->
+<section id="funnies">
+<p class="kicker">02 · The Funnies</p>
+<h2>"Peanuts but Jesus" — calibrating the voice.</h2>
+<p class="lede">Schulz wrote 560+ Peanuts strips with religious content over fifty years. Linus was his spiritual voice. The voice was never preachy and never snarky — it held hope and skepticism in the same panel. That's the bar.</p>
+
+<div class="col-block">
+<h3>What "Peanuts but Jesus" means in practice.</h3>
+<ul>
+<li><b>Honest about hard things</b>, said by a small voice. Charlie-Brown energy: failure as the default state, grace as the surprise.</li>
+<li><b>One sentence, max two.</b> A panel doesn't argue. It observes.</li>
+<li><b>Reverent without sentimentality.</b> Sally asking "When we die, will we go to Heaven?" and Charlie answering "I like to think so" — that's the register. Not preachy. Not flippant.</li>
+<li><b>Never punching down.</b> Job's friends are fair game; Job isn't.</li>
+<li><b>Image leads, caption tags.</b> A single woodcut panel + one quiet line under it. No comic-strip word balloons, no multi-panel sequences in v1.</li>
+</ul>
+</div>
+
+<h3>Six sample captions — which voice lands?</h3>
+<p>Each panel reuses an existing print from <code>archive/devotional-prints/</code>. Pick the ones that feel right; cross out the ones that don't. These six span tones from quiet-philosophical to wry-confessional so we can find the center of gravity.</p>
+
+<div class="funny-grid">
+
+  <article class="funny-card">
+    <p class="funny-kicker">A · QUIET / PHILOSOPHICAL</p>
+    <div class="funny-art"><img src="/images/devotional-prints/arch-chartres-labyrinth.webp" alt="Chartres labyrinth print, cobalt halftone" loading="lazy" /></div>
+    <p class="funny-caption">"Some days I walk the same circle three times and call it a journey."</p>
+    <p class="funny-attribution">— anon. · after the Chartres labyrinth</p>
+  </article>
+
+  <article class="funny-card">
+    <p class="funny-kicker">B · CONFESSIONAL / CHARLIE-BROWN</p>
+    <div class="funny-art"><img src="/images/devotional-prints/aivazovsky-ninth-wave.webp" alt="Stormy seascape, cobalt and cream" loading="lazy" /></div>
+    <p class="funny-caption">"The disciples woke him before the boat went under. I keep waiting until the boat goes under."</p>
+    <p class="funny-attribution">Mark 4 · the storm</p>
+  </article>
+
+  <article class="funny-card">
+    <p class="funny-kicker">C · DRY / OBSERVATIONAL</p>
+    <div class="funny-art"><img src="/images/devotional-prints/vermeer-christ-martha-mary.webp" alt="Vermeer's Christ in the House of Martha and Mary" loading="lazy" /></div>
+    <p class="funny-caption">"Martha kept the schedule. Mary kept the seat."</p>
+    <p class="funny-attribution">Luke 10 · 38–42</p>
+  </article>
+
+  <article class="funny-card">
+    <p class="funny-kicker">D · LINUS-LIKE / HOPE WITH DOUBT</p>
+    <div class="funny-art"><img src="/images/devotional-prints/watts-hope-1886.webp" alt="Watts' Hope — blindfolded figure on a globe with a lyre" loading="lazy" /></div>
+    <p class="funny-caption">"Hope: one string left, eyes blindfolded, still tuning."</p>
+    <p class="funny-attribution">after G. F. Watts · 1886</p>
+  </article>
+
+  <article class="funny-card">
+    <p class="funny-kicker">E · ANGELS &amp; ORDINARY PEOPLE</p>
+    <div class="funny-art"><img src="/images/devotional-prints/angelico-annunciation-present.webp" alt="Fra Angelico Annunciation print" loading="lazy" /></div>
+    <p class="funny-caption">"An angel showed up. She did not faint. I would have fainted."</p>
+    <p class="funny-attribution">Luke 1 · 26–38</p>
+  </article>
+
+  <article class="funny-card">
+    <p class="funny-kicker">F · GRACE AT THE TABLE</p>
+    <div class="funny-art"><img src="/images/devotional-prints/chardin-grace-before-meal.webp" alt="Chardin's Grace Before a Meal" loading="lazy" /></div>
+    <p class="funny-caption">"She said grace before she knew what the meal would be."</p>
+    <p class="funny-attribution">after Chardin · c. 1740</p>
+  </article>
+
+</div>
+
+<h3>Image-selection criteria.</h3>
+<div class="col-block">
+<ol>
+<li><b>Always from the curated archive.</b> The 643 archive prints in <code>archive/devotional-prints/</code> are already brand-aligned (cobalt + cream + crimson halftone). No new generation.</li>
+<li><b>Single subject reads cleanly small.</b> Funnies tile is the smallest in the bento — anything busy gets visually lost. Vermeer, Chardin, single figures, single objects.</li>
+<li><b>No embedded text in the image.</b> The caption is the caption.</li>
+<li><b>Image should leave room for the caption to land.</b> A face mid-action, a figure walking — not a frozen idea diagram.</li>
+</ol>
+</div>
+
+<h3>Authoring scale.</h3>
+<p>20 entries to seed (≈ three weeks at one-a-day). Daily rotation via <code>daysSinceEpoch % funnies.length</code>. Adding more is one entry in <code>src/data/funnies.ts</code>; no schema change. The founder is the editorial voice; I write drafts, founder approves.</p>
+</section>
+
+<hr/>
+
+<!-- ═══════════════════════════════════════════════════════════
+     03 — LETTERS TO THE EDITOR
+     ═══════════════════════════════════════════════════════════ -->
+<section id="letters">
+<p class="kicker">03 · Soul Audit kicker</p>
+<h2>Should Soul Audit get a <em>LETTERS TO THE EDITOR</em> sub-kicker?</h2>
+<p class="lede">A small italic byline above the existing SOUL AUDIT kicker. Three-word change. Reinforces the newspaper voice — or quietly undermines a section that was just reverted to default styling.</p>
+
+<div class="proscon">
+  <div class="pros">
+    <h4 class="pro-h">PRO — Ship the sub-kicker.</h4>
+    <p><b>It doubles down on the metaphor where it matters.</b> Soul Audit is the section most exposed to "this is software" framing (textarea, prompt pills, submit button). Calling it LETTERS TO THE EDITOR reframes the same UI as <em>writing in to the paper</em> — closer to a confessional than a form.</p>
+    <p><b>It pairs the section with the bento LETTERS tile.</b> If we ship a LETTERS tile in the front-page bento that funnels here, the two pieces share a name and a behavior. Reader writes a letter; the editor (Soul Audit) reads it.</p>
+    <p><b>It's a three-word change, reversible in 30 seconds.</b> No content rewrite, no layout shift, no styling change. Pure copy.</p>
+  </div>
+  <div class="cons">
+    <h4 class="con-h">CON — Leave Soul Audit alone.</h4>
+    <p><b>The section just got reverted to default palette (R39, R42).</b> Adding another layer of theming right after stripping one creates a yo-yo signal. The section now wants to <em>recede</em> visually, not pop.</p>
+    <p><b>"SOUL AUDIT" is already a strong kicker.</b> It's named for what it does. Reframing it as a letter to the editor reads cute on a marketing page, then strains every time a returning user looks at it as an actual tool. Cuteness has a shelf life.</p>
+    <p><b>The metaphor is doing enough already.</b> Dateline, masthead, kickers, folios, bento, funnies — adding a sub-kicker here is the kind of detail that makes a page feel <em>over-themed</em>. Restraint is a feature.</p>
+  </div>
+</div>
+
+<div class="callout">
+  <h4>Recommendation</h4>
+  <p><b>Ship the LETTERS bento tile that funnels into Soul Audit; do NOT add a sub-kicker on Soul Audit itself.</b> The metaphor lands in the bento (small, framed, repeatable). The Soul Audit section stays the working tool. Two surfaces, two voices. The founder keeps the metaphor without paying a tax on the most-used CTA.</p>
+</div>
+</section>
+
+<hr/>
+
+<!-- ═══════════════════════════════════════════════════════════
+     04 — BENTO TILE GAMUT
+     ═══════════════════════════════════════════════════════════ -->
+<section id="bento">
+<p class="kicker">04 · Bento</p>
+<h2>The front-page bento — every tile worth considering.</h2>
+<p class="lede">A broadsheet front page is intrinsically a bento. The lead headline dominates. The op-ed runs narrow. The comics box is small. The classifieds are smaller. Every tile below is sized for the role it plays. Pick the ones that feel right; cross out the ones that don't.</p>
+
+<h3>Core tiles — the obvious ones.</h3>
+<div class="pitch-grid">
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Lead Headline</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">Today's featured devotional. Big, anchored top-left.</p>
+    <p class="pitch-body">Scripture pull + first 80 chars of teaser + riso art behind. Spans 8 cols × 4 rows on desktop. This is the front-page A1 story.</p>
+    <div class="pitch-meta"><span><b>gives up</b> the current oversized featured-devotional card</span><span><b>risk</b> none — replacement, not addition</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Today's Scripture</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">Anchor verse with Hebrew or Greek inline.</p>
+    <p class="pitch-body">Small tile. Reference + 6–10 words of translation + one original-language word in cobalt. Reuses ScriptureModule typography.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> low — verse rotates with featured</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">The Funnies</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">A single panel. A quiet line under it.</p>
+    <p class="pitch-body">Daily rotation through ~20 Peanuts-but-Jesus entries. Reuses existing archive prints. The headline new feature — the thing that makes the page <em>feel</em> like a paper.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> tone calibration; small corpus could feel thin</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Letters</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">One honest sentence. Then we'll write back.</p>
+    <p class="pitch-body">Tiny tile with a one-line CTA into Soul Audit. Renames the entry-point into the existing tool without touching the tool. Pairs with the LETTERS-section recommendation above.</p>
+    <div class="pitch-meta"><span><b>gives up</b> visual prominence of current Soul Audit kicker</span><span><b>risk</b> low — funnel, not replacement</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Opinion</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">Rotating pull-quote from the church fathers.</p>
+    <p class="pitch-body">Tozer / Augustine / à Kempis / Spurgeon — one sentence with attribution. Reuses public-domain text already cited in the colophon strip.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> low — text-only</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Classifieds</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">All Series → as a tiny anchor.</p>
+    <p class="pitch-body">"See the rest of the paper" — the functional bridge to /series. A small tile, set in the bottom row of the bento.</p>
+    <div class="pitch-meta"><span><b>gives up</b> the standalone "BROWSE EVERY PLAN" button below the featured rail</span><span><b>risk</b> low</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Editor's Desk</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">Founder note → Bible-365 bridge.</p>
+    <p class="pitch-body">Medium tile. One sentence in the founder's voice + a link into the long-arc Bible-in-a-Year plan. Stands in for the "if you want the longer read" beat that currently lives below the featured devotional.</p>
+    <div class="pitch-meta"><span><b>gives up</b> the current Bible-365 secondary link</span><span><b>risk</b> low — relocation</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Almanac</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">Today on the liturgical calendar.</p>
+    <p class="pitch-body">"Feast of the Ascension · Eastertide, Week VI · Wednesday." Needs a small lookup table (or a dependency on something like <code>liturgical-calendar</code>). Adds churchy texture; tells the reader where today sits in the larger story.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing — net new</span><span><b>risk</b> calendar accuracy across traditions</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+</div>
+
+<h3>Wildcards — ideas you may not have considered.</h3>
+<p>Some are real broadsheet sections reframed for a devotional paper. Some are cheekier. All are scalable down to a single tile.</p>
+
+<div class="pitch-grid">
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Weather Report</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">"The emotional weather of today's verse."</p>
+    <p class="pitch-body">One word + one phrase: <em>"Stormy. The boat is in the wind."</em> · <em>"Clear. Manna is on the ground."</em> Maps every featured devotional to a short weather-card. A small ritual every day.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> tone could read cute or trivial</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">The Obituaries</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">"What dies in this passage."</p>
+    <p class="pitch-body">Single line naming what the passage is asking the reader to put down. <em>"The need to be useful — Luke 10."</em> Risky tone but very Gospel-shaped (death-then-resurrection is the whole point).</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> high — could read morbid without careful authoring</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">The Crossword</p><span class="pitch-effort l">L</span></div>
+    <p class="pitch-headline">A 3-word reflection grid.</p>
+    <p class="pitch-body">Three blanks the reader fills in mentally: <em>"Today I am ___ / God is ___ / The next step is ___."</em> Tile presents it as a tiny crossword box; the reader doesn't have to write anything, just <em>see</em> the prompt.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> medium — crossword shape is iconic but easy to fumble</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Marginalia</p><span class="pitch-effort xl">XL</span></div>
+    <p class="pitch-headline">A wall of reader-submitted lines.</p>
+    <p class="pitch-body">Tile shows one rotating quote from anonymous readers ("what stayed with me from Day 3"). Massive — needs moderation, submission flow, anti-spam. Wait until there are readers.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> moderation cost; chicken-and-egg without a base</span></div>
+    <span class="pitch-ship skip">Skip v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Sports Page</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">"This week's saints."</p>
+    <p class="pitch-body">Three saints commemorated this week, one line each. Anglican / Catholic / Eastern calendar. Quiet history that doesn't need a click. Pairs well with Almanac.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> tradition selection — pick one or hedge</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Stock Ticker</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">A scripture-reference marquee.</p>
+    <p class="pitch-body">Thin horizontal strip: <em>"PSALM 23 ↑ · LUKE 10 → · JOB 38 ↓"</em> rotating slowly. Tongue-in-cheek but visually unmistakable. Pure decoration; functions as a top-of-page mood-setter.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> motion fatigue; respect <code>prefers-reduced-motion</code></span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Travel</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">"Where today's passage happened."</p>
+    <p class="pitch-body">Tiny tile: a hand-drawn map dot + place name + 8 words of geography. <em>"Capernaum, north shore. Where most of the miracles cluster."</em> Builds biblical-geography literacy without forcing a study.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> needs per-passage map data</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Dear Abby</p><span class="pitch-effort l">L</span></div>
+    <p class="pitch-headline">Anonymous Q from a reader · short A from the editor.</p>
+    <p class="pitch-body">A tiny advice column: <em>"DEAR EDITOR — I can't pray when I'm angry. — A reader in Tulsa."</em> Reply in 3 sentences. Founder is the editor. Needs intake form + editorial cadence.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> ongoing editorial commitment</span></div>
+    <span class="pitch-ship skip">Skip v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Jump-line</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">"Continued on page A12."</p>
+    <p class="pitch-body">A tiny line at the bottom of the Lead Headline tile pointing to the deeper read for that day. Pure typographic device — reproduces the broadsheet jump-line. Functionally a link; aesthetically a wink.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> none</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">The Grapevine</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">"Coming soon — what's in the editorial calendar."</p>
+    <p class="pitch-body">Tile names one or two upcoming series with a sentence each. Gives returning readers a reason to come back. The "next week" rail at the bottom of a Sunday paper.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> low — content already exists in series.ts</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Errata</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">"A correction. We were wrong about ___."</p>
+    <p class="pitch-body">A tiny humility tile, ships only when there's something honest to put in it. <em>"We mistranslated the Hebrew word for 'wait' on Tuesday. It is also 'hope.'"</em> Real broadsheet integrity move; rare.</p>
+    <div class="pitch-meta"><span><b>gives up</b> nothing</span><span><b>risk</b> low — only renders when needed</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">The Crossword (II)</p><span class="pitch-effort xl">XL</span></div>
+    <p class="pitch-headline">A real daily theological crossword.</p>
+    <p class="pitch-body">Massive lift — needs a puzzle engine, daily authoring, accessibility. Mentioned for completeness. Could be a Substack-style separate product, not a homepage tile.</p>
+    <div class="pitch-meta"><span><b>gives up</b> a lot of time</span><span><b>risk</b> ongoing authoring burden</span></div>
+    <span class="pitch-ship skip">Skip</span>
+  </article>
+
+</div>
+
+<h3>Suggested v1 bento composition.</h3>
+<div class="col-block">
+<p>The minimum that <em>feels</em> like a front page without overwhelming a first-time reader:</p>
+<ol>
+<li><b>Lead Headline</b> — anchor, 8 × 4</li>
+<li><b>Today's Scripture</b> — small, 4 × 2</li>
+<li><b>Opinion</b> — small, 4 × 2</li>
+<li><b>The Funnies</b> — small, 4 × 2</li>
+<li><b>Letters</b> — wide tag, 8 × 2</li>
+<li><b>Editor's Desk</b> — medium, 5 × 2</li>
+<li><b>Almanac</b> — narrow, 3 × 2</li>
+</ol>
+<p>That's 7 tiles, mobile-collapses to single column. Add Jump-line as a typographic detail inside the Lead Headline tile (not its own tile). Wildcards (Weather, Obituaries, Crossword, Marginalia, Sports, Travel, Grapevine, Errata) all stay in the data layer — they can be turned on as additional tiles in later rounds without restructuring the grid.</p>
+</div>
+</section>
+
+<hr/>
+
+<!-- ═══════════════════════════════════════════════════════════
+     05 — INTERACTION + ANIMATION GAMUT
+     ═══════════════════════════════════════════════════════════ -->
+<section id="motion">
+<p class="kicker">05 · Motion</p>
+<h2>Interaction + animation — small touches through cinematic moments.</h2>
+<p class="lede">Subtle motion is the 2026 baseline; CSS scroll-driven animations now ship in every browser without JS. Below: every idea worth distilling, ordered roughly by effort. The point is breadth — pick the few that fit. Each lists effort, risk, and a sketch of what it'd look like.</p>
+
+<h3>Group A — Founder-named candidates.</h3>
+<div class="pitch-grid">
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Roll-the-Stone Hero</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">As the reader scrolls, the stone slides off the tomb. Light comes through.</p>
+    <p class="pitch-body">The existing blue-tomb hero (<code>hero/header-v2.webp</code>) becomes the still frame. A second layer — the stone — translates X across the scroll-distance of the hero section. By the time the user passes the hero, the tomb is open.</p>
+    <p class="pitch-body">Pure CSS via <code>animation-timeline: view()</code>. No JS, no GSAP. Honours <code>prefers-reduced-motion</code> trivially. Needs the existing hero file split into <em>stone</em> + <em>tomb</em> layers; could be done in-CSS with mask or as two PNGs.</p>
+    <div class="pitch-sketch"><svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#1f2a8d" /><stop offset="1" stop-color="#0a1320" />
+</linearGradient>
+</defs>
+<rect x="0" y="0" width="200" height="60" fill="url(#g1)" />
+<path d="M30,55 Q60,18 100,18 Q140,18 170,55 Z" fill="#0a1320" stroke="#f0ece6" stroke-width="0.5"/>
+<circle cx="70" cy="42" r="14" fill="#3a3a3a" stroke="#f0ece6" stroke-width="0.8"/>
+<text x="100" y="14" fill="#f0ece6" font-family="monospace" font-size="6" text-anchor="middle">↓ scroll ↓</text>
+<text x="50" y="32" fill="#f0ece6" font-family="monospace" font-size="5" text-anchor="middle">stone</text>
+<path d="M120,46 Q130,48 140,52" fill="none" stroke="#c8a56a" stroke-width="1" stroke-dasharray="2 2"/>
+<text x="160" y="50" fill="#c8a56a" font-family="monospace" font-size="5" text-anchor="middle">light</text>
+</svg></div>
+    <div class="pitch-meta"><span><b>risk</b> reads cinematic; could read cute if the timing is off — needs careful easing</span><span><b>theology</b> first impression of the site = empty tomb. Strong.</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Cinemagraph · Brand Wordmark</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">A single letter in EUANGELION pulses like a heartbeat.</p>
+    <p class="pitch-body">Subtle. Very subtle. The "E" or the second "E" gets a 6-second opacity cycle from 100% to 92%. Almost subliminal. The page feels <em>breathing</em> without anything moving.</p>
+    <div class="pitch-meta"><span><b>risk</b> "logos shouldn't move" is a real heuristic — test it on the founder before committing</span><span><b>impl</b> 8 lines of CSS keyframes</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Cinemagraph · Hero Image</p><span class="pitch-effort l">L</span></div>
+    <p class="pitch-headline">Smoke / incense / wind drifts in one corner of the hero.</p>
+    <p class="pitch-body">Single-element loop a la NYT. Stone is still; the smoke moves. Needs a video asset (or a Lottie / SVG animation), not just CSS. Larger payload — gate on bandwidth.</p>
+    <div class="pitch-meta"><span><b>risk</b> file weight; LCP impact; needs <code>poster</code> fallback</span><span><b>impl</b> &lt;video autoplay muted loop playsinline&gt; with a poster image</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+</div>
+
+<h3>Group B — Subtle motion (small).</h3>
+<div class="pitch-grid">
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Ink-bleed Hover</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">Series cards bleed cobalt into cream on hover.</p>
+    <p class="pitch-body">A subtle radial-gradient transition on the card border. Reads like watercolour soaking into paper. 200ms ease.</p>
+    <div class="pitch-meta"><span><b>risk</b> none — pure CSS</span><span><b>impl</b> :hover { background: radial-gradient(...); }</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Magnetic CTA</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">The "READ TODAY'S DEVOTIONAL" button drifts toward the cursor.</p>
+    <p class="pitch-body">3–4 pixels of magnetic pull within a 100px radius. Classic Awwwards-tier micro-interaction. Needs ~25 lines of pointer JS.</p>
+    <div class="pitch-meta"><span><b>risk</b> doesn't work on touch (gracefully degrades)</span><span><b>impl</b> requestAnimationFrame + bounding-rect lerp</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Type-on-Load Headline</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">The lead headline types itself in once, then settles.</p>
+    <p class="pitch-body">First-paint only. A character-by-character reveal (~600ms total) tied to <code>view-timeline</code>. Doesn't repeat on scroll. Honours <code>prefers-reduced-motion</code>.</p>
+    <div class="pitch-meta"><span><b>risk</b> can read gimmicky; restrict to one element</span><span><b>impl</b> CSS @keyframes with clip-path inset</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Gold-shimmer Scripture Refs</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">Every <code>JOHN 14:27</code> pulses faintly gold on view.</p>
+    <p class="pitch-body">Quiet visual marker that scripture is the lead element. View-timeline-triggered animation: 1-second gold tint fade in/out when the reference enters the viewport.</p>
+    <div class="pitch-meta"><span><b>risk</b> may compete with text — keep saturation low</span><span><b>impl</b> CSS animation-timeline: view()</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Ambient Dust</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">Faint paper-dust particles drifting over the hero.</p>
+    <p class="pitch-body">10–15 cream-colored 1px particles slowly falling at varied speeds. Below 1% opacity. Adds <em>aliveness</em> without distraction. Pure CSS with @keyframes.</p>
+    <div class="pitch-meta"><span><b>risk</b> can look like JS-particle noise; keep count low + opacity lower</span><span><b>impl</b> 12 absolutely-positioned divs with random animation-delay</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Folio Tick</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">The folio strip on devotional pages "ticks" forward as you read.</p>
+    <p class="pitch-body">The "DAY 3 OF 5" indicator gets a 1-frame nudge when the next section enters the viewport. Tiny haptic-feel detail.</p>
+    <div class="pitch-meta"><span><b>risk</b> very subtle — could be invisible to most</span><span><b>impl</b> view-timeline + transform: translateY(-1px)</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+</div>
+
+<h3>Group C — Scroll storytelling (medium).</h3>
+<div class="pitch-grid">
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Pin-and-Reveal</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">The hero pins; the lead headline rises through it.</p>
+    <p class="pitch-body">Classic NYT scrollytelling: hero stays fixed for one viewport-height; lead headline scrolls up through the image; then both release together. Builds dramatic entry without changing routes.</p>
+    <div class="pitch-meta"><span><b>risk</b> mobile feels different; needs careful breakpoints</span><span><b>impl</b> position: sticky + animation-timeline: scroll()</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Long-scroll Dateline</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">The dateline fades to tomorrow's date when you've scrolled deep enough.</p>
+    <p class="pitch-body">After 4 viewport-heights of scroll, the topbar dateline ages forward by one day, then back. A meta-gesture: "you've spent a day's worth of reading." Whimsical but communicates engagement.</p>
+    <div class="pitch-meta"><span><b>risk</b> people may read it as a bug</span><span><b>impl</b> scroll-timeline tied to body-scroll progress</span></div>
+    <span class="pitch-ship skip">Skip — too clever</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Bento Tile Stagger</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">Bento tiles fade in one-by-one as the grid enters view.</p>
+    <p class="pitch-body">Each tile gets a 60ms staggered fade + 4px translate-up on first appearance. Standard editorial reveal. Reuses the existing <code>.editorial-reveal-target</code> machinery.</p>
+    <div class="pitch-meta"><span><b>risk</b> none — already in the system</span><span><b>impl</b> add the existing class to each tile</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+</div>
+
+<h3>Group D — Page-turn / publication metaphors (medium → large).</h3>
+<div class="pitch-grid">
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Book-spine Progress</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">A thin gilt rule in the gutter fills as you read.</p>
+    <p class="pitch-body">Replaces the existing ScrollProgress bar with a vertical hairline in the right gutter, gold, filling top-to-bottom. Reads like the spine of a book. Doesn't compete with content.</p>
+    <div class="pitch-meta"><span><b>risk</b> none — replacement</span><span><b>impl</b> position: fixed + scroll-timeline + transform-origin: top</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Page-turn Route Transition</p><span class="pitch-effort xl">XL</span></div>
+    <p class="pitch-headline">Routes change with a paper-page flip animation.</p>
+    <p class="pitch-body">View Transitions API (Chrome/Safari/Edge 2026). On every Link navigation, the current page flips like a paper page revealing the next. Awwwards-grade if it lands; can disorient on slow devices.</p>
+    <div class="pitch-meta"><span><b>risk</b> large; needs careful exemption for in-page anchors; mobile feel TBD</span><span><b>impl</b> document.startViewTransition + named view-transition CSS keyframes</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Ink-soak Transition</p><span class="pitch-effort l">L</span></div>
+    <p class="pitch-headline">Sections wash in with a cobalt watercolor bleed.</p>
+    <p class="pitch-body">Alternative to fade-in: each section enters with a cobalt liquid mask filling from one corner. Distinctive; could become the site's signature reveal.</p>
+    <div class="pitch-meta"><span><b>risk</b> heavy if overused; restrict to top-of-section bumpers</span><span><b>impl</b> SVG mask + scroll-timeline</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Off-the-Press Banner</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">"NEW EDITION" stamp ticker on a true rebuild.</p>
+    <p class="pitch-body">When the SW v-bump fires and the user gets a fresh build, a small "NEW EDITION" stamp animates across the topbar for 4 seconds. Communicates that the site itself is alive.</p>
+    <div class="pitch-meta"><span><b>risk</b> low — only fires on actual deploys</span><span><b>impl</b> hook into the existing v50 SW version-change handler</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+</div>
+
+<h3>Group E — Awwwards-tier patterns (mixed).</h3>
+<div class="pitch-grid">
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Custom Cursor (light)</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">A small cobalt ring follows the cursor; pulses on clickables.</p>
+    <p class="pitch-body">Awwwards staple. 12px ring, 200ms lerp, swells to 24px over interactive elements. Desktop only — touch devices skip.</p>
+    <div class="pitch-meta"><span><b>risk</b> some readers find it disorienting; offer a toggle</span><span><b>impl</b> pointer event listener + position: fixed div</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Soundscape Toggle</p><span class="pitch-effort l">L</span></div>
+    <p class="pitch-headline">A small speaker icon offers ambient room-tone (off by default).</p>
+    <p class="pitch-body">Distant bell, wind through stones, candle flicker. Pulled from public-domain field recordings. Off by default; the toggle lives in the topbar.</p>
+    <div class="pitch-meta"><span><b>risk</b> bandwidth + autoplay rules; restrict to user-initiated</span><span><b>impl</b> Web Audio API or hidden &lt;audio&gt; element</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Reading-time Reveals</p><span class="pitch-effort l">L</span></div>
+    <p class="pitch-headline">Sections appear after the reader has spent <em>X seconds</em> on the previous one.</p>
+    <p class="pitch-body">Less common than scroll-reveals. Forces a contemplative pace. Could feel paternal — but on a devotional site, slowing the reader is the goal.</p>
+    <div class="pitch-meta"><span><b>risk</b> friction; reader may bounce</span><span><b>impl</b> IntersectionObserver + timer per section</span></div>
+    <span class="pitch-ship skip">Skip — friction risk too high</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Sticky Devotional Sidebar</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">On devotional pages, a thin sidebar sticks: scripture ref + day · progress.</p>
+    <p class="pitch-body">Founder explicitly said don't touch the sidebar — listed for completeness only. Skip unless reopened.</p>
+    <div class="pitch-meta"><span><b>risk</b> violates the "don't touch sidebar" constraint</span><span><b>impl</b> n/a</span></div>
+    <span class="pitch-ship skip">Skip</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Page-flip Mode Toggle</p><span class="pitch-effort xl">XL</span></div>
+    <p class="pitch-headline">Light/dark mode toggle becomes a real page-flip.</p>
+    <p class="pitch-body">The "DARK MODE" / "LIGHT MODE" button in the topbar physically flips the page (3D transform). The other mode is the back of the page. Theatrical. May only land if the rest of the page leans into the metaphor too.</p>
+    <div class="pitch-meta"><span><b>risk</b> large; needs reduced-motion handling; mobile feel uncertain</span><span><b>impl</b> CSS 3D transforms + view-transition</span></div>
+    <span class="pitch-ship maybe">Maybe</span>
+  </article>
+
+</div>
+
+<h3>Group F — Typography / lettering moments.</h3>
+<div class="pitch-grid">
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Drop Caps</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">Every devotional opens with a serif drop-cap, 3 lines high.</p>
+    <p class="pitch-body">Already partly in the codebase; could be pushed further. Adds instant editorial weight to the first paragraph of every reading.</p>
+    <div class="pitch-meta"><span><b>risk</b> none</span><span><b>impl</b> p::first-letter</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Pull-quote Cross-column Float</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">Pull-quotes physically float into the gutter of the rhythm reader.</p>
+    <p class="pitch-body">Already authored in R35 as a content type; could get a stronger visual treatment — float beside the paragraph it interrupts, hanging in the image column. Already half-built.</p>
+    <div class="pitch-meta"><span><b>risk</b> low</span><span><b>impl</b> existing .rhythm-floater-* CSS hooks</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Kinetic Lead Headline</p><span class="pitch-effort m">M</span></div>
+    <p class="pitch-headline">The lead headline rearranges its letters on first paint.</p>
+    <p class="pitch-body">Characters scatter, then resolve into the headline as the page loads. Highly Awwwards-coded. Risk of feeling like a startup landing trick if not paired with a meditative pace.</p>
+    <div class="pitch-meta"><span><b>risk</b> doesn't fit "Peanuts but Jesus" calm</span><span><b>impl</b> CSS @keyframes per character span</span></div>
+    <span class="pitch-ship skip">Skip — too startup</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Ornamental Dingbats</p><span class="pitch-effort s">S</span></div>
+    <p class="pitch-headline">Section breaks use ☩ or ✠ or ❦ instead of <code>&lt;hr&gt;</code>.</p>
+    <p class="pitch-body">Already in the system as <code>OrnamentDivider</code>; could be applied more aggressively across the homepage and devotional reader. Editorial / liturgical at once.</p>
+    <div class="pitch-meta"><span><b>risk</b> none</span><span><b>impl</b> use existing OrnamentDivider component more</span></div>
+    <span class="pitch-ship yes">Ship v1</span>
+  </article>
+
+</div>
+
+<h3>Group G — Hardware-tier ambition (XL).</h3>
+<div class="pitch-grid">
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Editions Archive</p><span class="pitch-effort xl">XL</span></div>
+    <p class="pitch-headline">Yesterday's edition is still readable — like a paper archive.</p>
+    <p class="pitch-body"><code>/editions/2026-05-15/</code> shows the homepage as it was that day: same featured devotional, funnies, opinion, weather. Each day becomes its own archived front page. Build effort substantial; teaches the metaphor at the deepest level.</p>
+    <div class="pitch-meta"><span><b>risk</b> needs daily snapshot job + storage</span><span><b>impl</b> static-gen per day or KV-stored snapshots</span></div>
+    <span class="pitch-ship maybe">Maybe — phase 3</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Print-this-Edition</p><span class="pitch-effort l">L</span></div>
+    <p class="pitch-headline">A "print today's edition" button generates a single-page broadsheet PDF.</p>
+    <p class="pitch-body">Today's devotional + scripture + funnies + opinion as a single broadsheet PDF. For Sabbath reading, offline use, or the elderly. Print stylesheet exists; this would extend it to "broadsheet mode."</p>
+    <div class="pitch-meta"><span><b>risk</b> font + layout fidelity in print</span><span><b>impl</b> @media print + reagent-grade typography</span></div>
+    <span class="pitch-ship maybe">Maybe — phase 3</span>
+  </article>
+
+  <article class="pitch-card">
+    <div class="pitch-head"><p class="pitch-name">Audio Edition</p><span class="pitch-effort xl">XL</span></div>
+    <p class="pitch-headline">"Listen to today's edition" — a 5-minute spoken broadsheet.</p>
+    <p class="pitch-body">TTS-narrated today's devotional + scripture + funnies caption + opinion + almanac. One audio per day. Big lift; massive accessibility win; ties to morning-coffee ritual.</p>
+    <div class="pitch-meta"><span><b>risk</b> TTS quality must be high; needs review per day</span><span><b>impl</b> Eleven Labs / Anthropic-narration + cache</span></div>
+    <span class="pitch-ship skip">Skip v1</span>
+  </article>
+
+</div>
+</section>
+
+<hr/>
+
+<!-- ═══════════════════════════════════════════════════════════
+     06 — RECOMMENDED V1
+     ═══════════════════════════════════════════════════════════ -->
+<section id="picks">
+<p class="kicker">06 · Recommendations</p>
+<h2>What I'd ship in v1 — given your tastes.</h2>
+
+<div class="callout ok">
+  <h4>v1 — what to commit to (recommended)</h4>
+  <p><b>Bento tiles:</b> Lead Headline · Today's Scripture · The Funnies · Opinion · Letters · Editor's Desk · Almanac. Seven tiles. Jump-line as a typographic detail inside the lead, not its own tile.</p>
+  <p><b>Funnies authoring:</b> 20 entries in the "Peanuts but Jesus" voice, seeded from the six samples above (pending your edits). Daily rotation by date.</p>
+  <p><b>Soul Audit:</b> leave the kicker alone. Ship the LETTERS bento tile that funnels into it instead.</p>
+  <p><b>Topbar dateline:</b> upgrade to <code>FRIDAY · MAY 16, 2026 · VOL. I · NO. N · MORNING EDITION</code>.</p>
+  <p><b>Interactions:</b>
+    <em>Roll-the-stone hero on scroll</em> (founder's own — strong opening gesture);
+    <em>Bento tile stagger</em> (cheap, polished);
+    <em>Gold-shimmer scripture refs</em> (reinforces scripture-is-the-lead);
+    <em>Ink-bleed series card hover</em> (cheap, very on-brand);
+    <em>Magnetic CTA</em> on "READ TODAY'S DEVOTIONAL" (one classic Awwwards moment);
+    <em>Book-spine progress</em> in the gutter (replaces the existing scroll bar);
+    <em>Pull-quote cross-column float</em> (finishes the half-built R35 work);
+    <em>Drop caps + ornament dividers</em> (typographic weight, no risk).
+  </p>
+</div>
+
+<div class="callout">
+  <h4>v2 — earned later, after v1 lands</h4>
+  <p>Weather Report · The Obituaries · Travel · Grapevine tiles. Cinemagraph in the wordmark or hero. Pin-and-reveal scroll for the hero. Custom cursor. Page-turn route transition. Print-this-Edition. Editions Archive.</p>
+</div>
+
+<div class="callout warn">
+  <h4>Skip — the things that fight the founder's "no engagement bait" rule</h4>
+  <p>Long-scroll dateline tomorrow-fade · Reading-time gated reveals · Kinetic letter scatter on headline · Soundscape toggle (low value relative to build cost) · Audio Edition (premature) · Marginalia (chicken-and-egg) · Dear Abby (editorial burden).</p>
+</div>
+
+<h3>How to read this page.</h3>
+<p>Every card has an <em>effort badge</em> (S / M / L / XL) and a <em>ship-in-v1 tag</em>. The fastest way through: scan the green "Ship v1" tags, then the amber "Maybe" tags. The gray "Skip" tags are listed only so you know they were considered and ruled out. Mark up the page however you like and I'll execute on your selections.</p>
+</section>
+
+<footer>
+Pitch page · 16 May 2026 · prepared for founder review · author: Claude Opus 4.7 (1M ctx) · scope: review only, nothing here is live elsewhere on the site
+</footer>
+
+</div>
+</body>
+</html>
