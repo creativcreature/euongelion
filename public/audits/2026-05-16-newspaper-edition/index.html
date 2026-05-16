@@ -1,0 +1,2491 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Euangelion · Saturday Morning Edition · 16 May 2026</title>
+<meta name="description" content="Newspaper-edition specimen — every classic broadsheet element rendered as a working visual example. The Cobalt Triad on Newspaper Cream. Instrument Serif + Inter. Sat 16 May 2026, Vol. I, No. CXXVII." />
+
+<link rel="preload" href="/fonts/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/InstrumentSerif-Italic.woff2"  as="font" type="font/woff2" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+/* ───────────────────────────────────────────────────────────────
+   EUANGELION · NEWSPAPER-EDITION SPECIMEN
+   Cobalt Triad on Newspaper Cream · 60–30–10 · single-ink print logic
+   Instrument Serif (display + body) + Inter (labels + agate)
+   ─────────────────────────────────────────────────────────────── */
+
+@font-face { font-family: 'Instrument Serif'; src: url('/fonts/InstrumentSerif-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Instrument Serif'; src: url('/fonts/InstrumentSerif-Italic.woff2')  format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+
+:root {
+  /* Cobalt Triad on Newspaper Cream — 60 / 30 / 10 */
+  --paper:        #f1ece1;   /* 60 — Newspaper Cream */
+  --paper-deep:   #e6dfcd;
+  --paper-edge:   #d8d0bb;
+  --ink:          #11214a;   /* 30 — Cobalt main */
+  --ink-soft:     #1c2d63;
+  --cobalt:       #1f2a8d;
+  --cobalt-deep:  #0e1648;
+  --crimson:      #b9182a;   /* 10 — Crimson accent */
+  --crimson-soft: #d24559;
+  --gold:         #c8a56a;
+  --rule:         #11214a;
+  --rule-soft:    rgba(17, 33, 74, 0.30);
+  --rule-hair:    rgba(17, 33, 74, 0.18);
+
+  --serif:  'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --sans:   'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', system-ui, sans-serif;
+  --mono:   'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --frame:  1340px;
+  --pad:    clamp(0.9rem, 2vw, 1.6rem);
+  --col-gap: clamp(0.9rem, 1.6vw, 1.4rem);
+  --rule-1: 1px solid var(--rule);
+  --rule-2: 2px solid var(--rule);
+  --rule-3: 3px solid var(--rule);
+  --rule-double: 4px double var(--rule);
+  --rule-thick: 6px solid var(--rule);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background:
+    radial-gradient(ellipse at 12% 8%, rgba(17,33,74,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 88% 96%, rgba(185,24,42,0.03) 0%, transparent 50%),
+    var(--paper);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(0.98rem, 1.05vw, 1.12rem);
+  line-height: 1.46;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0 var(--pad) 4rem;
+}
+
+/* ───── Newspaper paper texture (faint) ───── */
+.paper {
+  position: relative;
+  background: var(--paper);
+}
+.paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(17,33,74,0.02) 1px, transparent 1px),
+    radial-gradient(rgba(185,24,42,0.015) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 1px;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+.paper > * { position: relative; z-index: 1; }
+
+/* ───── Container & broadsheet pages ───── */
+.broadsheet {
+  max-width: var(--frame);
+  margin: 0 auto;
+}
+
+/* Each "page" is its own broadsheet sheet */
+.page {
+  background: var(--paper);
+  border: 1px solid var(--paper-edge);
+  box-shadow: 0 0 0 1px rgba(17,33,74,0.05), 0 12px 40px rgba(17,33,74,0.08);
+  margin: 1.6rem auto;
+  padding: clamp(1.2rem, 2.4vw, 2.2rem);
+  position: relative;
+}
+.page + .page { margin-top: 2.6rem; }
+
+/* ───── Folio line (top-of-page strip) ───── */
+.folio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 600;
+  padding: 0.4rem 0 0.5rem;
+  border-bottom: var(--rule-1);
+  margin-bottom: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.folio .folio-paper { font-family: var(--serif); text-transform: none; letter-spacing: 0.02em; font-style: italic; font-size: 0.92rem; color: var(--cobalt); }
+.folio .folio-section { color: var(--crimson); font-weight: 700; }
+
+/* ───── Typography ───── */
+h1, h2, h3, h4, h5, h6 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.005em; margin: 0; line-height: 1.04; color: var(--ink); }
+.h-banner   { font-size: clamp(2.6rem, 6.8vw, 5.4rem); line-height: 0.92; letter-spacing: -0.015em; }
+.h-deck     { font-size: clamp(1.2rem, 1.9vw, 1.7rem); line-height: 1.16; font-style: italic; color: var(--ink-soft); font-weight: 400; margin-top: 0.4rem; }
+.h-section  { font-size: clamp(1.7rem, 2.6vw, 2.4rem); line-height: 1.04; }
+.h-story    { font-size: clamp(1.4rem, 2.1vw, 1.95rem); line-height: 1.06; }
+.h-sub      { font-size: clamp(1.05rem, 1.4vw, 1.3rem); line-height: 1.18; }
+.h-tile     { font-size: clamp(1.05rem, 1.3vw, 1.25rem); line-height: 1.14; }
+
+.kicker, .eyebrow {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 700;
+  margin: 0 0 0.32rem;
+}
+.kicker.cobalt { color: var(--cobalt); }
+.byline {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 600;
+  margin: 0.5rem 0 0.6rem;
+}
+.byline em { color: var(--cobalt); font-style: italic; text-transform: none; letter-spacing: 0.02em; font-weight: 400; }
+.dateline {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink);
+}
+.dateline::after { content: " — "; color: var(--ink-soft); }
+
+/* Body copy */
+p { margin: 0 0 0.75em; max-width: 64ch; }
+.story p { font-size: 1.04rem; line-height: 1.52; }
+.lede { font-size: clamp(1.08rem, 1.3vw, 1.22rem); font-style: italic; max-width: 56ch; }
+.story p.lede { font-style: italic; }
+
+/* Drop cap */
+.dropcap::first-letter {
+  font-family: var(--serif);
+  font-size: 4.6em;
+  line-height: 0.84;
+  float: left;
+  padding: 0.04em 0.12em 0 0;
+  color: var(--cobalt);
+  font-weight: 400;
+  font-style: normal;
+}
+.dropcap-3::first-letter { font-size: 3.4em; }
+
+/* Rules */
+.rule       { border-top: var(--rule-1); margin: 1rem 0; }
+.rule-2     { border-top: var(--rule-2); margin: 1rem 0; }
+.rule-3     { border-top: var(--rule-3); margin: 1rem 0; }
+.rule-double { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); height: 4px; margin: 1rem 0; }
+.rule-thick { border-top: var(--rule-thick); margin: 1rem 0; }
+
+/* Columns */
+.cols-2 { columns: 2; column-gap: var(--col-gap); column-rule: 1px solid var(--rule-soft); }
+.cols-3 { columns: 3; column-gap: var(--col-gap); column-rule: 1px solid var(--rule-soft); }
+.cols-4 { columns: 4; column-gap: var(--col-gap); column-rule: 1px solid var(--rule-soft); }
+.cols-2 p, .cols-3 p, .cols-4 p { break-inside: avoid-column; }
+.cols-2 p:first-child, .cols-3 p:first-child, .cols-4 p:first-child { margin-top: 0; }
+
+@media (max-width: 760px) {
+  .cols-3 { columns: 1; }
+  .cols-2 { columns: 1; }
+  .cols-4 { columns: 2; }
+}
+
+/* Pull quote */
+.pull-quote {
+  break-inside: avoid;
+  margin: 0.6rem 0;
+  padding: 0.9rem 1rem;
+  border-top: var(--rule-3);
+  border-bottom: var(--rule-3);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.3rem, 1.9vw, 1.7rem);
+  line-height: 1.18;
+  color: var(--ink);
+  text-align: left;
+}
+.pull-quote::before { content: "“"; font-family: var(--serif); font-size: 2.4em; line-height: 0.4; color: var(--gold); display: block; height: 0.6em; margin-bottom: 0.1em; }
+.pull-quote .pq-by {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-style: normal;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* Jump line */
+.jump-line {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--crimson);
+  font-style: italic;
+  text-align: right;
+  margin: 0.6rem 0 0;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--rule-soft);
+}
+.jump-line a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Photo + cutline */
+.photo-block { margin: 0 0 1rem; }
+.photo-block img { display: block; width: 100%; height: auto; border-bottom: var(--rule-1); }
+.cutline {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--ink);
+  padding: 0.4rem 0 0;
+  margin: 0;
+}
+.cutline .cutline-credit {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 700;
+  margin-left: 0.5em;
+}
+.cutline-bold { font-weight: 700; color: var(--ink); }
+
+/* Sidebar */
+.sidebar {
+  background: var(--paper-deep);
+  border: 1.5px solid var(--ink);
+  padding: 0.9rem 1rem 1rem;
+  margin: 0 0 1rem;
+  break-inside: avoid;
+}
+.sidebar h4 {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 800;
+  margin: 0 0 0.3rem;
+  border-bottom: 2px solid var(--crimson);
+  padding-bottom: 0.3rem;
+}
+.sidebar h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.1;
+  margin: 0.3rem 0 0.6rem;
+}
+.sidebar ul { margin: 0.4rem 0; padding-left: 1.1rem; font-size: 0.92rem; line-height: 1.45; }
+.sidebar p { font-size: 0.9rem; line-height: 1.45; margin-bottom: 0.5rem; }
+
+/* Generic ad */
+.house-ad {
+  border: 1.5px solid var(--ink);
+  padding: 0.9rem;
+  margin: 1rem 0;
+  text-align: center;
+  font-family: var(--serif);
+  background: var(--paper);
+}
+.house-ad .ha-rule { border-top: var(--rule-2); width: 30%; margin: 0.4rem auto; }
+.house-ad p { margin: 0.2rem 0; max-width: 100%; }
+
+/* Section divider strip */
+.section-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  margin: 1.4rem 0 1rem;
+  border-top: var(--rule-thick);
+  border-bottom: var(--rule-1);
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--ink);
+}
+.section-div .sd-name { color: var(--crimson); }
+.section-div .sd-note { font-family: var(--serif); text-transform: none; letter-spacing: 0.02em; font-weight: 400; font-style: italic; font-size: 0.9rem; color: var(--ink-soft); }
+
+/* Refer (front-page index) */
+.refer {
+  background: var(--paper-deep);
+  border-top: var(--rule-2);
+  border-bottom: var(--rule-1);
+  padding: 0.5rem 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+.refer .ref-h { color: var(--crimson); }
+.refer .ref-item a { color: var(--ink); text-decoration: none; }
+.refer .ref-item a:hover { color: var(--crimson); text-decoration: underline; }
+.refer .ref-page {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: var(--cobalt);
+  margin-left: 0.4em;
+}
+
+/* ===== NAMEPLATE / FLAG (page A1) ===== */
+.nameplate {
+  text-align: center;
+  border-top: var(--rule-3);
+  border-bottom: var(--rule-double);
+  padding: 1rem 0 0.8rem;
+  position: relative;
+  margin-bottom: 0.6rem;
+}
+.nameplate .ear-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 700;
+  padding: 0 0.3rem 0.5rem;
+}
+.nameplate .ear-row .ear-left,
+.nameplate .ear-row .ear-right { max-width: 30%; text-align: left; }
+.nameplate .ear-row .ear-right { text-align: right; }
+.nameplate h1.flag {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(3rem, 9vw, 6.4rem);
+  letter-spacing: -0.012em;
+  line-height: 0.92;
+  margin: 0.15em 0 0.05em;
+  color: var(--ink);
+}
+.nameplate .greek {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+  margin: 0 0 0.2rem;
+}
+.nameplate .meta-strip {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 0.5rem 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+.nameplate .meta-strip .crimson { color: var(--crimson); }
+
+/* Grids */
+.grid-12 { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--col-gap); }
+.grid-8 { display: grid; grid-template-columns: repeat(8, 1fr); gap: var(--col-gap); }
+.grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--col-gap); }
+@media (max-width: 860px) {
+  .grid-12, .grid-8, .grid-6 { grid-template-columns: 1fr; }
+  .grid-12 > [class*="span-"], .grid-8 > [class*="span-"], .grid-6 > [class*="span-"] { grid-column: auto; }
+}
+
+.span-2 { grid-column: span 2; }
+.span-3 { grid-column: span 3; }
+.span-4 { grid-column: span 4; }
+.span-5 { grid-column: span 5; }
+.span-6 { grid-column: span 6; }
+.span-7 { grid-column: span 7; }
+.span-8 { grid-column: span 8; }
+.span-9 { grid-column: span 9; }
+.span-12 { grid-column: span 12; }
+
+/* Toggle of all-caps */
+.caps { text-transform: uppercase; letter-spacing: 0.16em; font-family: var(--sans); font-weight: 600; font-size: 0.74rem; }
+
+/* Reading hierarchy small */
+.story h2 { margin-bottom: 0.3rem; }
+.story h3 { margin: 0.7em 0 0.3em; font-size: 1.1rem; }
+
+/* Editorial cartoon block */
+.cartoon-block { border: 1.5px solid var(--ink); padding: 0.5rem; background: var(--paper); }
+.cartoon-block img { display: block; width: 100%; height: auto; }
+.cartoon-block .cartoon-meta {
+  border-top: var(--rule-1);
+  padding-top: 0.3rem;
+  margin-top: 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Letters, advice column */
+.letter {
+  border-top: 1px solid var(--rule-soft);
+  padding: 0.6rem 0;
+}
+.letter:first-of-type { border-top: var(--rule-1); }
+.letter .letter-h {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 800;
+  margin: 0 0 0.2rem;
+}
+.letter p { font-size: 0.95rem; line-height: 1.5; margin: 0.2rem 0; }
+.letter .letter-by {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 700;
+  margin-top: 0.3rem;
+  font-style: italic;
+}
+.letter .editor-reply {
+  border-left: 3px solid var(--crimson);
+  padding: 0.4rem 0.8rem;
+  margin: 0.6rem 0 0.2rem;
+  background: rgba(185,24,42,0.05);
+}
+.letter .editor-reply .er-label {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 800;
+  margin: 0 0 0.2rem;
+}
+.letter .editor-reply p { font-style: italic; font-size: 0.9rem; }
+
+/* Errata */
+.errata {
+  background: rgba(185,24,42,0.06);
+  border: 1px solid var(--crimson);
+  padding: 0.6rem 0.8rem;
+  margin: 1rem 0;
+  font-size: 0.86rem;
+}
+.errata h4 {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 800;
+  margin: 0 0 0.3rem;
+  border-bottom: 1px solid var(--crimson);
+  padding-bottom: 0.2rem;
+}
+
+/* Bento grid */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(120px, auto);
+  gap: 1px;
+  background: var(--ink);
+  border: 1.5px solid var(--ink);
+  margin: 0 0 1rem;
+}
+.bento-tile {
+  background: var(--paper);
+  padding: 0.8rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  position: relative;
+}
+.bento-tile .bt-tag {
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 800;
+}
+.bento-tile .bt-h {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.1;
+}
+.bento-tile .bt-body {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+@media (max-width: 760px) {
+  .bento { grid-template-columns: 1fr; }
+  .bento-tile { grid-column: 1 / -1 !important; }
+}
+
+/* Classifieds */
+.classifieds .cl-cat {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 800;
+  border-bottom: 2px solid var(--crimson);
+  padding-bottom: 0.2rem;
+  margin: 0.8rem 0 0.4rem;
+}
+.classifieds .cl-entry {
+  font-size: 0.82rem;
+  line-height: 1.35;
+  margin: 0.3rem 0;
+  padding: 0.15rem 0;
+  border-bottom: 1px dotted var(--rule-soft);
+}
+.classifieds .cl-entry strong {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--ink);
+  display: inline-block;
+  margin-right: 0.4em;
+}
+.classifieds .cl-entry em { color: var(--cobalt); font-style: italic; }
+
+/* Obituaries */
+.obit {
+  border-top: 2px solid var(--ink);
+  padding: 0.7rem 0 0.8rem;
+  margin-bottom: 0.6rem;
+}
+.obit:first-of-type { border-top: var(--rule-thick); }
+.obit h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  margin: 0 0 0.2rem;
+}
+.obit .obit-years {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  color: var(--ink-soft);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.obit p { font-size: 0.88rem; line-height: 1.45; margin-bottom: 0.4rem; }
+.obit .obit-tag {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Weather */
+.weather {
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+  padding: 0 0 0.6rem;
+}
+.weather .w-h {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.45rem 0.7rem;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+}
+.weather .w-today {
+  padding: 0.6rem 0.8rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.8rem;
+  align-items: center;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.weather .w-icon { font-size: 2.4rem; line-height: 1; color: var(--cobalt); font-family: var(--serif); }
+.weather .w-today .w-word { font-family: var(--serif); font-size: 1.55rem; font-style: italic; line-height: 1; margin: 0; }
+.weather .w-today .w-sub { font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.12em; color: var(--ink-soft); text-transform: uppercase; margin: 0.2rem 0 0; }
+.weather table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.weather th, .weather td { padding: 0.32rem 0.7rem; text-align: left; border-bottom: 1px dotted var(--rule-soft); }
+.weather th { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cobalt); font-weight: 700; background: var(--paper-deep); }
+.weather td.w-cond { font-style: italic; }
+
+/* Stock ticker */
+.ticker {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.5rem 0.8rem;
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  border-top: var(--rule-2);
+  border-bottom: var(--rule-2);
+  margin: 1rem 0;
+}
+.ticker .tk-up   { color: var(--gold); }
+.ticker .tk-dn   { color: var(--crimson-soft); }
+.ticker .tk-flat { color: rgba(241,236,225,0.6); }
+.ticker .tk-arrow { font-family: var(--serif); font-size: 0.9em; margin-right: 0.2em; }
+
+.ticker-table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 0.82rem; }
+.ticker-table th, .ticker-table td { padding: 0.4rem 0.7rem; text-align: left; border-bottom: 1px solid var(--rule-soft); }
+.ticker-table th { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cobalt); font-weight: 700; background: var(--paper-deep); }
+.ticker-table .tt-ref { font-family: var(--serif); font-style: italic; font-size: 0.95rem; }
+.ticker-table .up { color: var(--gold); font-weight: 700; }
+.ticker-table .dn { color: var(--crimson); font-weight: 700; }
+.ticker-table .flat { color: var(--ink-soft); }
+
+/* Houses (horoscope replacement) */
+.houses {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: var(--rule-1);
+  border-left: var(--rule-1);
+}
+.houses .house {
+  border-right: var(--rule-1);
+  border-bottom: var(--rule-1);
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+  break-inside: avoid;
+}
+.houses .house .h-name {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--crimson);
+  margin: 0;
+}
+.houses .house .h-date {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  margin: 0 0 0.3rem;
+}
+.houses .house .h-ref {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: var(--cobalt);
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.houses .house .h-verse {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+@media (max-width: 860px) { .houses { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .houses { grid-template-columns: 1fr; } }
+
+/* Saints standings (sports replacement) */
+.standings { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 0.84rem; }
+.standings th, .standings td { padding: 0.4rem 0.7rem; text-align: left; border-bottom: 1px dotted var(--rule-soft); }
+.standings th { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cobalt); font-weight: 700; background: var(--paper-deep); border-bottom: var(--rule-1); }
+.standings tr.leader td { font-weight: 700; }
+.standings .tradition { color: var(--ink-soft); font-style: italic; }
+
+/* Crossword + word search */
+.puzzle-grid {
+  display: grid;
+  border-collapse: collapse;
+  background: var(--ink);
+  border: 2px solid var(--ink);
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1;
+  margin: 0 0 1rem;
+}
+.puzzle-grid .cell {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 0 0.18em;
+}
+.puzzle-grid .cell.black { background: var(--ink); }
+.puzzle-grid .cell .num {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  font-family: var(--sans);
+  font-size: 0.45em;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0;
+}
+.puzzle-grid .cell.solution { color: var(--cobalt); }
+
+.crossword-15 { grid-template-columns: repeat(15, 1fr); grid-template-rows: repeat(15, 1fr); }
+.wordsearch-12 { grid-template-columns: repeat(12, 1fr); grid-template-rows: repeat(12, 1fr); }
+.wordsearch-12 .cell { background: var(--paper); font-size: 0.95rem; }
+.wordsearch-12 .cell.highlight { color: var(--crimson); font-weight: 800; }
+
+.clue-list { font-family: var(--serif); font-size: 0.92rem; line-height: 1.4; }
+.clue-list h4 {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 800;
+  border-bottom: 2px solid var(--crimson);
+  padding-bottom: 0.2rem;
+  margin: 0.8rem 0 0.4rem;
+}
+.clue-list ol { padding-left: 1.6rem; margin: 0; }
+.clue-list ol li { padding: 0.1rem 0; }
+
+/* Comics block */
+.comic-strip-block {
+  border: 1.5px solid var(--ink);
+  padding: 0.5rem 0.5rem 0.6rem;
+  background: var(--paper);
+  margin: 1rem 0;
+}
+.comic-strip-block img { display: block; width: 100%; height: auto; }
+.comic-strip-block .csb-meta {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 700;
+  margin-top: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+}
+.comic-strip-block .csb-meta .csb-title { color: var(--cobalt); }
+.comic-strip-block .csb-meta .csb-artist { font-style: italic; text-transform: none; letter-spacing: 0.02em; font-family: var(--serif); }
+
+/* Sunday color block */
+.sunday-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  border: 2px solid var(--ink);
+  padding: 0.6rem;
+  background: var(--paper);
+  margin: 1rem 0;
+}
+.sunday-block img { display: block; width: 100%; height: auto; border: 1px solid var(--rule-soft); }
+.sunday-block .sb-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.sunday-block .sb-meta .sb-tag { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson); font-weight: 800; }
+.sunday-block .sb-meta h3 { font-family: var(--serif); font-size: 1.6rem; line-height: 1.1; }
+.sunday-block .sb-meta p { font-size: 0.94rem; line-height: 1.42; color: var(--ink-soft); }
+@media (max-width: 760px) { .sunday-block { grid-template-columns: 1fr; } }
+
+/* Display ad block */
+.display-ad {
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+  padding: 0.5rem;
+}
+.display-ad img { display: block; width: 100%; height: auto; }
+
+/* Subscription box */
+.sub-box {
+  border: 2px solid var(--crimson);
+  padding: 1rem 1.2rem;
+  background: rgba(185,24,42,0.04);
+  margin: 1rem 0;
+  text-align: center;
+}
+.sub-box h3 {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-style: italic;
+  margin: 0 0 0.4rem;
+  color: var(--ink);
+}
+.sub-box p { font-size: 0.94rem; max-width: 50ch; margin: 0.3rem auto; }
+.sub-box .sub-form {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+.sub-box .sub-input {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 0.5rem 0.7rem;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  min-width: 220px;
+}
+.sub-box .sub-btn {
+  background: var(--crimson);
+  color: var(--paper);
+  padding: 0.5rem 1rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 800;
+  border: 1px solid var(--crimson);
+  cursor: pointer;
+}
+
+/* Colophon */
+.colophon {
+  border-top: var(--rule-3);
+  border-bottom: var(--rule-3);
+  padding: 1rem 0;
+  margin: 2rem 0 1rem;
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-align: center;
+}
+.colophon h4 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--cobalt);
+  margin: 0 0 0.4rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.colophon .colophon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  text-align: left;
+  max-width: 720px;
+  margin: 0.8rem auto;
+}
+.colophon .colophon-grid h5 {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 800;
+  margin: 0 0 0.3rem;
+}
+.colophon .colophon-grid p { margin: 0; font-size: 0.78rem; line-height: 1.45; color: var(--ink); font-family: var(--serif); }
+
+/* Almanac */
+.almanac { font-size: 0.92rem; }
+.almanac .al-entry {
+  border-top: 1px dotted var(--rule-soft);
+  padding: 0.35rem 0;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0.7rem;
+}
+.almanac .al-entry:first-of-type { border-top: var(--rule-1); }
+.almanac .al-year {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--cobalt);
+  padding-top: 0.15rem;
+}
+
+/* Service listings */
+.services {
+  font-family: var(--serif);
+  font-size: 0.88rem;
+}
+.services .svc-row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 0.7rem;
+  padding: 0.32rem 0;
+  border-bottom: 1px dotted var(--rule-soft);
+}
+.services .svc-row:first-of-type { border-top: var(--rule-1); }
+.services .svc-time {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--crimson);
+}
+.services .svc-row em { color: var(--ink-soft); font-style: italic; }
+
+/* Travel column */
+.travel-img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  background: var(--paper-deep);
+  border: 1px solid var(--rule-soft);
+  position: relative;
+  margin: 0 0 0.5rem;
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(31,42,141,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 70%, rgba(200,165,106,0.12) 0%, transparent 60%),
+    repeating-linear-gradient(180deg, rgba(17,33,74,0.03) 0 2px, transparent 2px 4px),
+    var(--paper-deep);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.4rem;
+}
+
+/* Anatomy reference at top */
+.anatomy-ref {
+  border: 1.5px solid var(--cobalt);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1rem;
+  background: rgba(31,42,141,0.04);
+  font-size: 0.9rem;
+}
+.anatomy-ref h4 {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 800;
+  margin: 0 0 0.4rem;
+}
+.anatomy-ref p { margin: 0.3rem 0; max-width: none; }
+.anatomy-ref code { font-family: var(--mono); font-size: 0.85em; background: var(--paper-deep); padding: 0.05em 0.32em; border-radius: 2px; }
+.anatomy-ref a { color: var(--cobalt); }
+.anatomy-ref .anatomy-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.2rem 0.8rem;
+  margin-top: 0.6rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  color: var(--ink);
+}
+.anatomy-ref .anatomy-list span::before { content: "✓ "; color: var(--cobalt); font-weight: 800; margin-right: 0.2em; }
+
+/* Print styles */
+@media print {
+  body { background: white; padding: 0; }
+  .page { box-shadow: none; border: 0; page-break-after: always; }
+}
+</style>
+</head>
+<body>
+<div class="broadsheet">
+
+<!-- ───────────────────────────────────────────────────────────
+     ANATOMY REFERENCE (top of deliverable, not a newspaper element)
+     ─────────────────────────────────────────────────────────── -->
+<div class="anatomy-ref">
+  <h4>About this specimen · 2026-05-16</h4>
+  <p>This page is a single, end-to-end <em>worked example</em> of a mid-20th-century American broadsheet — every classic element fully rendered, not described. Brand: Cobalt Triad on Newspaper Cream, Instrument Serif + Inter, 60–30–10. Terminology and layout conventions from the <a href="/audits/2026-05-16-newspaper-edition/research-newspaper-anatomy.md">anatomy research</a> (Society for News Design, Poynter, Library of Congress Chronicling America, Tim Harrower's <em>Newspaper Designer's Handbook</em>). Comic-strip generation prompts: <a href="/audits/2026-05-16-newspaper-edition/comic-strip-prompts.md">comic-strip-prompts.md</a>. Section index: <a href="/audits/2026-05-16-newspaper-edition/README.md">README.md</a>. Companion (older) pitch document, which this page replaces: <a href="/audits/2026-05-16-newspaper-metaphor/">/2026-05-16-newspaper-metaphor/</a>.</p>
+  <div class="anatomy-list">
+    <span>Nameplate &middot; ear &middot; folio</span>
+    <span>Banner &middot; deck &middot; kicker</span>
+    <span>Byline &middot; dateline &middot; lede</span>
+    <span>Drop cap &middot; pull quote &middot; cutline</span>
+    <span>Jump line &middot; sidebar &middot; refer</span>
+    <span>Bento modular grid</span>
+    <span>Op-ed &middot; editor's note &middot; masthead</span>
+    <span>Editorial cartoon &middot; the Funnies &middot; Sunday color</span>
+    <span>Letters &middot; advice column &middot; errata</span>
+    <span>Classifieds &middot; obituaries &middot; service listings</span>
+    <span>Weather &middot; ticker &middot; twelve houses</span>
+    <span>Crossword &middot; word search</span>
+    <span>Sports/saints standings</span>
+    <span>Almanac &middot; travel &middot; infographic</span>
+    <span>Display ad &middot; subscription &middot; colophon</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE A1 — FRONT PAGE
+     Elements demonstrated: nameplate, ear, folio (implied), refer,
+     kicker, banner headline, deck, byline, dateline, lede, dropcap,
+     photo, cutline, pull quote, jump line, sidebar, refer
+     ═══════════════════════════════════════════════════════════ -->
+<section class="page paper" id="page-a1" aria-label="Page A1 — Front Page">
+
+  <!-- NAMEPLATE / FLAG with EARS -->
+  <header class="nameplate">
+    <div class="ear-row">
+      <div class="ear-left">
+        <em style="font-family: var(--serif); font-style: italic; text-transform: none; letter-spacing: 0.02em; font-size: 0.92rem; color: var(--cobalt);">"Good news, daily."</em>
+      </div>
+      <div class="ear-right">
+        Eastertide · Week VI · Quiet, with a still wind
+      </div>
+    </div>
+    <h1 class="flag">Euangelion</h1>
+    <p class="greek">εὐαγγέλιον · The Daily Devotional Broadsheet of the Gospel</p>
+    <div class="meta-strip">
+      <span>Vol. I &middot; No. CXXVII</span>
+      <span class="crimson">Saturday &middot; 16 May 2026</span>
+      <span>Morning Edition</span>
+      <span>Sixteen Pages &middot; One Section</span>
+      <span>Single Copy: by Grace</span>
+    </div>
+  </header>
+
+  <!-- FOLIO (top-of-page strip) -->
+  <div class="folio">
+    <span><span class="folio-section">A1</span> · Front Page</span>
+    <span class="folio-paper">Euangelion · The Daily Edition</span>
+    <span>Saturday Morning · 16 May 2026 · Eastertide</span>
+  </div>
+
+  <!-- REFER / FRONT-PAGE INDEX -->
+  <nav class="refer" aria-label="Inside this edition">
+    <span class="ref-h">Inside today</span>
+    <span class="ref-item"><a href="#page-a2">Editorial<span class="ref-page">A2</span></a></span>
+    <span class="ref-item"><a href="#page-a3">Feature<span class="ref-page">A3</span></a></span>
+    <span class="ref-item"><a href="#page-a4">Dear Editor<span class="ref-page">A4</span></a></span>
+    <span class="ref-item"><a href="#page-a5">Classifieds<span class="ref-page">A5</span></a></span>
+    <span class="ref-item"><a href="#page-a6">Twelve Houses<span class="ref-page">A6</span></a></span>
+    <span class="ref-item"><a href="#page-a7">Crossword<span class="ref-page">A7</span></a></span>
+    <span class="ref-item"><a href="#page-a8">The Funnies<span class="ref-page">A8</span></a></span>
+    <span class="ref-item"><a href="#page-a9">Colophon<span class="ref-page">A9</span></a></span>
+  </nav>
+
+  <!-- LEAD STORY zone -->
+  <div class="grid-12">
+
+    <!-- Banner + lead -->
+    <article class="story span-8">
+      <p class="kicker">Today&rsquo;s Lead &middot; Devotional &middot; Ecclesiastes 3 &middot; Day 134 of the Year</p>
+      <h2 class="h-banner">Be still. He has not gone anywhere.</h2>
+      <p class="h-deck">A field guide for the morning the urge is to run — and the right answer is to sit down at the same table you woke up at and wait.</p>
+      <p class="byline"><em>By</em> The Editors &middot; <em>Photograph by</em> Staff</p>
+      <p><span class="dateline">New Jerusalem</span>The phrase that opens the third chapter of Ecclesiastes — <em>"To everything there is a season, and a time to every purpose under heaven"</em> — is read most often as a poem about acceptance. Read it as a poem about <em>refusal</em> and the chapter becomes harder, and more useful. The Preacher is not consoling the reader. He is telling the reader that whatever is being lived through is one season among many, and that the soul's first instinct — to fix it, end it, sprint past it — is the very instinct that lengthens it.</p>
+
+      <!-- Photo with cutline (placed inside the story, top of column 2 if 2-col were active) -->
+      <figure class="photo-block">
+        <img src="/audits/2026-05-16-newspaper-edition/images/photos/lead-story-photo.png" alt="An elderly woman seated alone in the front pew of an empty clapboard church, hands folded over a worn Bible, eyes closed." loading="lazy" />
+        <figcaption class="cutline">
+          <span class="cutline-bold">SEATED THROUGH IT.</span> Mrs. Adela Renfrew, 86, of First Congregational in West Wickford, who has kept the same pew for sixty-one years — through two pastors who left in disgrace, one fire, the Korean draft, and the morning her husband did not wake up — was photographed at the 6:14 a.m. light on Wednesday. She had been there since 5:40. <span class="cutline-credit">Photograph · Staff</span>
+        </figcaption>
+      </figure>
+
+      <div class="cols-2" style="margin-top: 0.6rem;">
+        <p class="dropcap">She was not waiting for anything in particular. That is the part the camera could not catch and the part the Preacher in Ecclesiastes spent twelve chapters circling: the discipline of sitting in the same place when the room is not promising anything back. Her husband, Frank, taught civics at the high school across the road for thirty-two years and died on the morning of his retirement party in 2014. The pew was already old then. The pew is still where she goes.</p>
+
+        <p>The trouble with stillness in 2026 is that the marketplace has noticed it. Stillness now sells. There are eleven different applications on the average phone whose icons promise it, each with a notification system that interrupts the stillness in order to remind you to acquire more of it. The Preacher would have found this funny in the same way that the Preacher found everything funny, which is to say funny in the way a person laughs at a thing because the alternative is to break.</p>
+
+        <p>The honest report is that most readers of this newspaper will not become Mrs. Renfrew. The pew is not the move. The discipline she has — the small unmoved center — is portable, and that portability is the gift of the Christian morning practice we are trying, every day, to lay out on this front page. A chapter. Four verses sat with. A cup of coffee that gets cold because it was placed on the table to be steam, not to be drunk.</p>
+
+        <p>What the third chapter of Ecclesiastes actually contains, after the inventory of seasons, is a turn the reader can miss if they have heard the famous list too many times. The Preacher writes: <em>"He hath made every thing beautiful in his time: also he hath set the world in their heart, so that no man can find out the work that God maketh from the beginning to the end."</em> The world is set in the heart. The Hebrew is <em>ʿolām</em> — a word that means both "long duration" and, in later usage, "eternity." Whatever has been set in there is too large for one season to hold. That is the source of the restlessness. That is also the source of the rest.</p>
+
+        <!-- Pull quote -->
+        <blockquote class="pull-quote">
+          The trouble with stillness is that the marketplace has noticed it. The discipline the Preacher names is not for sale.
+          <span class="pq-by">— from today&rsquo;s lead</span>
+        </blockquote>
+
+        <p>Tomorrow's reading turns the corner into chapter four, which is darker and noisier. Today, the assignment is small and unfashionable. Sit in the same place for ten minutes. Read the same eight verses twice. Do not try to make them yield anything. The thing they are made out of — the <em>ʿolām</em> set in the heart — is not yielded; it is uncovered, and slowly, and never on schedule. The work is not to find the answer. The work is to be in the room when the answer arrives, in a form you may not recognize, and possibly after the coffee is cold.</p>
+
+        <p>Mrs. Renfrew, after the photograph was made, opened the Bible on her lap to the page she had been reading and read for another twenty minutes. We did not interrupt her. The light moved. The pew was the same.</p>
+      </div>
+
+      <p class="jump-line">Continued on page <a href="#page-a8">A8 · The Funnies</a> &middot; See <em>STILL</em>, A8</p>
+    </article>
+
+    <!-- Sidebar column -->
+    <aside class="span-4">
+      <aside class="sidebar" aria-labelledby="sidebar-h">
+        <h4>Sidebar</h4>
+        <h3 id="sidebar-h">Five ways to keep the hour</h3>
+        <p>If sitting still for ten minutes feels theatrical, the following five disciplines have been recommended in our reader mail over the last six months. None of them is a hack.</p>
+        <ul>
+          <li><strong>Read the same passage twice.</strong> The second time is the prayer. The first time was the introduction.</li>
+          <li><strong>Stay at the table after the cup is empty.</strong> Two minutes. The leaving is the noise; the staying is the practice.</li>
+          <li><strong>Put the phone in the next room.</strong> Not face-down. Not on silent. In the next room. This is a small physical fact and it is the thing that works.</li>
+          <li><strong>Name one thing you are afraid of.</strong> Out loud, once, to the empty kitchen. The naming is what loosens the grip.</li>
+          <li><strong>End with a single sentence.</strong> Yours. Not borrowed. Even if it is, <em>"I do not know what to ask for."</em></li>
+        </ul>
+      </aside>
+
+      <!-- Front-page display promo -->
+      <div class="house-ad" role="complementary" aria-label="Front-page promo">
+        <p class="caps" style="color: var(--crimson); margin: 0 0 0.3rem;">Saturday Promo</p>
+        <h3 style="font-family: var(--serif); font-style: italic; font-size: 1.5rem; line-height: 1.1; margin: 0 0 0.3rem;">The Sunday edition arrives tomorrow.</h3>
+        <div class="ha-rule"></div>
+        <p style="font-size: 0.88rem;">Expanded funnies. The week's reading reviewed. One long-form devotional by the editor. Delivered before sunrise to the inbox.</p>
+        <p style="font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cobalt); font-weight: 700; margin-top: 0.4rem;">→ Subscribe, A9</p>
+      </div>
+
+      <!-- Refer to the Sunday color comic -->
+      <div class="sidebar" style="background: var(--paper); border: 1.5px solid var(--crimson);">
+        <h4 style="color: var(--crimson); border-color: var(--crimson);">Refer</h4>
+        <h3 style="margin-bottom: 0.4rem;">Sunday color, A8.</h3>
+        <p style="font-size: 0.86rem;">This week's expanded color strip — <em>"The Boat in the Storm,"</em> eight panels of Mark 4 told in the modern register. Page A8.</p>
+      </div>
+    </aside>
+
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE A2 — EDITORIAL PAGE
+     Elements demonstrated: folio, masthead (staff box), editor's
+     note, op-ed, editorial cartoon, letters to the editor (with
+     editor's reply), errata
+     ═══════════════════════════════════════════════════════════ -->
+<section class="page paper" id="page-a2" aria-label="Page A2 — Editorial Page">
+
+  <div class="folio">
+    <span><span class="folio-section">A2</span> · Editorial &amp; Opinion</span>
+    <span class="folio-paper">Euangelion · The Daily Edition</span>
+    <span>Saturday · 16 May 2026</span>
+  </div>
+
+  <div class="section-div">
+    <span><span class="sd-name">Editorial</span> &middot; opinions, letters &amp; the daily cartoon</span>
+    <span class="sd-note">"Opposite the editorial," est. 1970 at the <em>New York Times</em>.</span>
+  </div>
+
+  <div class="grid-12">
+
+    <!-- Editor's Note + Masthead column -->
+    <div class="span-4">
+      <!-- MASTHEAD (staff box, distinct from front-page nameplate) -->
+      <aside class="sidebar" aria-labelledby="masthead-h">
+        <h4>Masthead</h4>
+        <h3 id="masthead-h" style="font-style: italic;">Euangelion</h3>
+        <p style="font-size: 0.84rem; line-height: 1.45;"><strong style="color: var(--cobalt);">Editor</strong> &middot; The Founder<br/>
+        <strong style="color: var(--cobalt);">Theological Editor</strong> &middot; a hire to be made<br/>
+        <strong style="color: var(--cobalt);">Designer</strong> &middot; The House<br/>
+        <strong style="color: var(--cobalt);">Comic Strip</strong> &middot; per the lineage (see colophon)<br/>
+        <strong style="color: var(--cobalt);">Photography</strong> &middot; The Witness Desk<br/>
+        <strong style="color: var(--cobalt);">Letters</strong> &middot; letters@euangelion.app<br/>
+        <strong style="color: var(--cobalt);">Subscriptions</strong> &middot; sub@euangelion.app</p>
+        <p style="font-size: 0.78rem; color: var(--ink-soft); font-style: italic; margin-top: 0.5rem;">A reader-funded daily devotional broadsheet, published Mon–Sat with an expanded Sunday edition. Ad-free. AI-supported. Fully human, daily, ancient.</p>
+      </aside>
+
+      <!-- EDITOR'S NOTE -->
+      <article class="story" aria-labelledby="ednote-h">
+        <p class="kicker">From the Editor&rsquo;s Desk</p>
+        <h2 id="ednote-h" class="h-story">Why we changed the paper.</h2>
+        <p class="byline"><em>By</em> The Editor</p>
+        <p>Yesterday's edition introduced a redesign that some of you noticed at once and some of you, judging from the mail, have not noticed at all. Both responses are correct. The redesign is meant to be the kind of change that, on a second cup of coffee, registers as <em>"oh, it was always like this"</em> — which is the highest compliment a redesign can earn.</p>
+        <p>The two changes worth naming: the front page is now organized like a real broadsheet, with a banner headline, a single lead devotional, and a daily comic strip in the basement; and the Soul Audit, formerly a button, is now a tile called <em>Letters to the Editor</em>. The tool is the same. The framing acknowledges that what you write to us is, in fact, a letter — and that we owe you a reply, in the long run, in the form of the devotional plan we build for you.</p>
+        <p>Letters are read by a human within twenty-four hours. The replies are written by a human, edited by another human, and only then assisted by the same composition tools that help us assemble each morning's edition. The order of operations matters.</p>
+      </article>
+    </div>
+
+    <!-- Op-Ed -->
+    <article class="story span-5" aria-labelledby="oped-h">
+      <p class="kicker">Op-Ed &middot; Opposite the Editorial</p>
+      <h2 id="oped-h" class="h-section">Against the velocity of certainty.</h2>
+      <p class="h-deck">A note on what the modern Christian conversation has lost by getting faster.</p>
+      <p class="byline"><em>By</em> A Guest Writer &middot; <em>contributing editor</em></p>
+
+      <div class="cols-2">
+        <p class="dropcap-3">The Christian internet, by which I mean the small loud archipelago of accounts and substacks and podcasts where most American believers under fifty now form their first opinions on most theological questions, has a settled rhythm. A claim is made, in twenty-eight seconds. Three responses are made, in forty seconds. By the next morning the claim has been adjudicated, a side has won, and an unrelated claim has taken its place. The cycle is not new. The speed is new, and the speed is doing something to the soul that no editorial has yet adequately named.</p>
+
+        <p>What the speed costs is not, primarily, accuracy. The internet is full of people fact-checking each other; that work, broadly, is done. What the speed costs is the kind of patience that doctrine requires to land. Augustine writes, in the seventh book of the <em>Confessions</em>, that he was "still being formed" by the questions he could not yet answer. He did not mean he was waiting to find the answer in a podcast. He meant that the question was the formation. Skipping it — claiming the answer too soon — removed the very pressure that the question was meant to apply.</p>
+
+        <p>The modern Christian conversation rewards the skip. The thirty-second answer wins the day. The slow believer, the one who is still being formed, loses the timeline and so loses the room.</p>
+
+        <p>What is asked of us, then — and the editor will forgive a guest writer for saying it bluntly — is to refuse the speed in our own practice even as we participate in the room. To read the question twice before answering. To allow that a believer is sometimes more theologically serious for not having an opinion yet than another believer is for having one. To return to the four-hundred-year-old hymn that already knew the answer that this morning's substack is in a hurry to invent.</p>
+
+        <p>This newspaper is one attempt at that refusal. It publishes once a day. It edits before it ships. It does not "take." It sits.</p>
+
+        <p>And it asks the reader to sit with it, in the not-quite-time-yet pace of a season that has not yet asked the next question.</p>
+      </div>
+    </article>
+
+    <!-- Editorial cartoon -->
+    <aside class="span-3" aria-labelledby="cartoon-h">
+      <p class="kicker cobalt">Editorial Cartoon &middot; The Daily</p>
+      <h3 id="cartoon-h" class="h-tile" style="margin-bottom: 0.4rem;">The Stillness Problem</h3>
+      <div class="cartoon-block">
+        <img src="/audits/2026-05-16-newspaper-edition/images/editorial/editorial-cartoon.png" alt="A single-panel editorial cartoon: a figure on a couch consumed by a glowing smartphone, with a 'BE STILL &amp; KNOW' needlepoint crooked on the wall behind, a sparrow on the windowsill, and a dusty Bible on a side table." loading="lazy" />
+        <div class="cartoon-meta">
+          <span>Pen &amp; ink &middot; cream newsprint</span>
+          <span style="font-family: var(--serif); font-style: italic; text-transform: none; letter-spacing: 0.02em;">— The Cartoonist</span>
+        </div>
+      </div>
+      <p style="font-size: 0.86rem; font-style: italic; color: var(--ink-soft); margin-top: 0.5rem;">The cartoon runs on this page every Saturday in the register of Herblock and Pat Oliphant — single point of view, no caption longer than five words, social rather than political subject.</p>
+    </aside>
+
+  </div>
+
+  <!-- LETTERS TO THE EDITOR + ERRATA row -->
+  <div class="rule-thick" style="margin-top: 2rem;"></div>
+
+  <div class="grid-12">
+
+    <div class="span-8">
+      <p class="kicker">Letters to the Editor</p>
+      <h2 class="h-section">"On stillness, on subscriptions, on the funny page."</h2>
+      <p class="h-deck">Selected from the past week's mail. Edited for length, never for tone.</p>
+
+      <div class="cols-2" style="margin-top: 0.6rem;">
+
+        <article class="letter">
+          <p class="letter-h">On the new funnies</p>
+          <p>The Wednesday strip — the one where the child kicks the stone all the way home and Jesus walks alongside without speaking — undid me. I am a pastor in a small Midwestern church. I read the strip aloud to my staff at our Thursday meeting. We sat with it for fifteen minutes. Then we returned to the agenda. The agenda felt shorter.</p>
+          <p class="letter-by">— Pastor B. F., Iowa</p>
+        </article>
+
+        <article class="letter">
+          <p class="letter-h">On the Soul Audit rename</p>
+          <p>Calling it Letters to the Editor is the right move. "Audit" had me feeling like the IRS was about to come for my interior life. "Letter" is the right word for what I was actually doing. I have written you three times this week.</p>
+          <p class="letter-by">— Reader in Oakland</p>
+          <div class="editor-reply">
+            <p class="er-label">Editor's reply</p>
+            <p>We have read all three. The Day 14 plan we sent on Tuesday was, in fact, the answer to the second letter; we owe you a separate reply to the third. It will arrive Monday. Thank you for the patience.</p>
+          </div>
+        </article>
+
+        <article class="letter">
+          <p class="letter-h">A correction-request</p>
+          <p>Last week's lead misspelled <em>"Capernaum"</em> as <em>"Cepernaum"</em> in the third paragraph. I noticed because my grandfather was a missionary in Galilee in the 1950s and the name still lives in his letters home. Small thing. But.</p>
+          <p class="letter-by">— J. R., Atlanta</p>
+        </article>
+
+        <article class="letter">
+          <p class="letter-h">On Mrs. Renfrew</p>
+          <p>The photograph on this morning's front page deserves a longer caption than you gave it. The hymn book on the pew next to her is open to "Be Thou My Vision." I know because I have sat in her church.</p>
+          <p class="letter-by">— A reader who used to live in West Wickford</p>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Errata -->
+    <aside class="span-4" aria-labelledby="errata-h">
+      <p class="kicker">Errata &middot; A Standing Column</p>
+      <h3 id="errata-h" class="h-tile" style="margin-bottom: 0.4rem;">We were wrong.</h3>
+
+      <div class="errata">
+        <h4>Correction · 13 May edition</h4>
+        <p>Tuesday's reflection on the Lord's Prayer attributed the phrase <em>"the bread of the morrow"</em> to Tertullian. The phrase is from Cyprian's <em>De Dominica Oratione</em>, circa A.D. 250. The argument stands; the attribution did not. — <em>the editor</em></p>
+      </div>
+
+      <div class="errata">
+        <h4>Correction · 14 May edition</h4>
+        <p>Wednesday's Almanac listed the Feast of Brendan as 15 May. The Anglican Calendar dates it 16 May; the Roman Catholic Martyrology, also 16 May. Mea culpa.</p>
+      </div>
+
+      <div class="errata">
+        <h4>Spelling · 11 May edition</h4>
+        <p><em>"Capernaum,"</em> not <em>"Cepernaum."</em> See the letter on this page from J. R. of Atlanta. The proofreader has been corrected with grace.</p>
+      </div>
+
+      <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--ink-soft); margin-top: 0.6rem; font-style: italic;">The Errata column runs Saturdays. We will never not run it. The integrity of the broadsheet depends on naming where we got it wrong.</p>
+    </aside>
+
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE A3 — FEATURE / MODULAR GRID
+     Elements demonstrated: folio, section divider, bento modular
+     grid, infographic, almanac / on this day
+     ═══════════════════════════════════════════════════════════ -->
+<section class="page paper" id="page-a3" aria-label="Page A3 — Feature">
+
+  <div class="folio">
+    <span><span class="folio-section">A3</span> · Feature</span>
+    <span class="folio-paper">Euangelion · The Daily Edition</span>
+    <span>Saturday · 16 May 2026</span>
+  </div>
+
+  <div class="section-div">
+    <span><span class="sd-name">Feature</span> &middot; the daily modular grid</span>
+    <span class="sd-note">A broadsheet bento: lead dominates, op-ed runs narrow, the comics box stays small.</span>
+  </div>
+
+  <!-- BENTO MODULAR GRID -->
+  <div class="bento" aria-label="Today's modular grid — 12 tiles">
+
+    <!-- Lead Headline tile (spans 8x2) -->
+    <article class="bento-tile" style="grid-column: span 8; grid-row: span 2; padding: 1.2rem 1.4rem;">
+      <p class="bt-tag" style="color: var(--crimson);">Today&rsquo;s Lead · Day 134</p>
+      <h3 class="bt-h" style="font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.02;">Be still. He has not gone anywhere.</h3>
+      <p class="bt-body dropcap-3" style="font-size: 1rem; line-height: 1.45; margin-top: 0.4rem;">There is a kind of busyness that looks like obedience but is actually fear of stillness. The Preacher named it <em>hevel</em> — breath, vapor — and refused to flatter it. Today's eight verses sit with that refusal.</p>
+      <p style="font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--crimson); font-weight: 700; font-style: italic; margin-top: auto;">Continued on page A1 →</p>
+    </article>
+
+    <!-- Today's Scripture -->
+    <article class="bento-tile" style="grid-column: span 4; grid-row: span 1; text-align: center; justify-content: center;">
+      <p class="bt-tag">Today&rsquo;s Scripture</p>
+      <p style="font-family: 'SBL Hebrew', 'Times New Roman', serif; font-size: 2rem; color: var(--cobalt); direction: rtl; margin: 0.2rem 0;">לַכֹּ֖ל זְמָ֑ן</p>
+      <p style="font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.16em; color: var(--ink-soft); text-transform: uppercase; margin: 0 0 0.4rem;">la-kkol z&middot;mān &middot; "to everything a season"</p>
+      <p style="font-family: var(--serif); font-style: italic; font-size: 1.02rem; line-height: 1.25; margin: 0;">Ecclesiastes 3 : 1</p>
+    </article>
+
+    <!-- Funnies (the strip itself, small) -->
+    <article class="bento-tile" style="grid-column: span 4; grid-row: span 1; padding: 0;">
+      <div style="padding: 0.5rem 0.7rem 0.25rem; border-bottom: 1.5px solid var(--ink); display: flex; justify-content: space-between;">
+        <span class="bt-tag" style="color: var(--cobalt);">The Funnies · Daily</span>
+        <span style="font-family: var(--serif); font-style: italic; font-size: 0.78rem; color: var(--crimson);">"The Walk Home"</span>
+      </div>
+      <div style="flex: 1; background-image: url('/audits/2026-05-16-newspaper-edition/images/comics/03-walking-home.png'); background-size: cover; background-position: center; min-height: 110px;"></div>
+    </article>
+
+    <!-- Opinion (pull-quote tile) -->
+    <article class="bento-tile" style="grid-column: span 3; grid-row: span 1; justify-content: center;">
+      <p style="font-family: var(--serif); font-size: 2.4rem; line-height: 0.5; color: var(--gold); font-style: italic; height: 0.7em;">&ldquo;</p>
+      <p style="font-family: var(--serif); font-style: italic; font-size: 1rem; line-height: 1.28; margin: 0;">You must be emptied of that wherewith you are full, that you may be filled with that whereof you are empty.</p>
+      <p style="font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); font-weight: 700; margin-top: 0.4rem;">— Augustine · <em style="text-transform: none; letter-spacing: 0.02em; font-style: italic;">Confessions VII</em></p>
+    </article>
+
+    <!-- Letters tile (funnels to Soul Audit) -->
+    <article class="bento-tile" style="grid-column: span 3; grid-row: span 1; background: rgba(31,42,141,0.04);">
+      <p style="font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; font-style: italic; color: var(--cobalt); font-weight: 700; margin: 0;">Letters to the Editor</p>
+      <h3 class="bt-h" style="font-style: italic; margin: 0.3rem 0;">One honest sentence. We&rsquo;ll write back.</h3>
+      <p style="font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--crimson); font-weight: 800; margin-top: auto;">→ Write a letter</p>
+    </article>
+
+    <!-- Almanac tile -->
+    <article class="bento-tile" style="grid-column: span 3; grid-row: span 1;">
+      <p class="bt-tag">Almanac</p>
+      <h4 style="font-family: var(--serif); font-size: 1.1rem; margin: 0.2rem 0 0.1rem;">Sat &middot; 16 May</h4>
+      <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--ink-soft); margin: 0;">Eastertide · Week VI</p>
+      <p style="font-family: var(--serif); font-style: italic; font-size: 0.96rem; color: var(--crimson); margin: 0.25rem 0 0;">Feast of Brendan the Navigator</p>
+      <p style="font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.06em; color: var(--ink-soft); margin: 0.25rem 0 0;">Sunrise 6:02 · Sunset 19:48</p>
+    </article>
+
+    <!-- Spiritual Weather tile -->
+    <article class="bento-tile" style="grid-column: span 3; grid-row: span 1; background: linear-gradient(180deg, rgba(31,42,141,0.08), var(--paper));">
+      <p class="bt-tag">Spiritual Climate</p>
+      <h4 style="font-family: var(--serif); font-style: italic; font-size: 1.6rem; margin: 0.25rem 0 0;">Quiet.</h4>
+      <p style="font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin: 0;">A still wind. The kind to listen in.</p>
+      <p style="font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.16em; color: var(--cobalt); font-weight: 700; text-transform: uppercase; margin-top: 0.3rem;">Extended forecast · A6</p>
+    </article>
+
+    <!-- This week's saints tile -->
+    <article class="bento-tile" style="grid-column: span 6; grid-row: span 1;">
+      <p class="bt-tag">This Week&rsquo;s Saints &middot; Standings</p>
+      <table style="width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 0.78rem; margin-top: 0.3rem;">
+        <tbody>
+          <tr><td style="padding: 0.16rem 0; font-family: var(--serif); font-style: italic; font-size: 0.94rem;">Brendan the Navigator</td><td style="text-align: right; color: var(--crimson); font-weight: 700;">Sat 16</td></tr>
+          <tr><td style="padding: 0.16rem 0; font-family: var(--serif); font-style: italic; font-size: 0.94rem;">Julian of Norwich</td><td style="text-align: right; color: var(--ink-soft);">Thu 14</td></tr>
+          <tr><td style="padding: 0.16rem 0; font-family: var(--serif); font-style: italic; font-size: 0.94rem;">Matthias the Apostle</td><td style="text-align: right; color: var(--ink-soft);">Wed 13</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- Classifieds preview tile -->
+    <article class="bento-tile" style="grid-column: span 6; grid-row: span 1;">
+      <p class="bt-tag" style="color: var(--crimson);">Classifieds &middot; today</p>
+      <ul style="columns: 2; column-gap: 0.5rem; list-style: none; padding: 0; margin: 0.3rem 0 0; font-family: var(--serif); font-size: 0.82rem; line-height: 1.4;">
+        <li>Calls · ministry openings</li>
+        <li>For Sale · used books</li>
+        <li>Personals · prayer requests</li>
+        <li>Lost &amp; Found · keys, hope</li>
+        <li>Notices · congregations</li>
+        <li>In Memoriam · obituaries</li>
+      </ul>
+      <p style="font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.16em; color: var(--cobalt); font-weight: 700; text-transform: uppercase; margin-top: auto;">Full listings, A5 →</p>
+    </article>
+
+  </div>
+
+  <div class="section-div" style="margin-top: 1.6rem;">
+    <span><span class="sd-name">Information Graphic</span> &middot; the liturgical year at a glance</span>
+    <span class="sd-note">Hand-drawn in the register of an early-1980s broadsheet info graphic.</span>
+  </div>
+
+  <!-- INFOGRAPHIC + caption + ALMANAC -->
+  <div class="grid-12">
+
+    <figure class="span-7" style="margin: 0;">
+      <img src="/audits/2026-05-16-newspaper-edition/images/infographics/liturgical-year-infographic.png" alt="A hand-drawn liturgical-year wheel infographic. Eight wedges: Advent, Christmas, Epiphany, Lent, Holy Week, Easter, Pentecost, Ordinary Time, with a central cross. A crimson 'TODAY: EASTERTIDE, WEEK VI' callout points to the Easter wedge." style="width: 100%; height: auto; display: block; border: 1.5px solid var(--ink);" loading="lazy" />
+      <figcaption class="cutline" style="border-top: var(--rule-1); padding: 0.5rem 0; margin: 0;">
+        <span class="cutline-bold">THE WHEEL OF THE YEAR.</span> The eight-wedge liturgical calendar tracks the church year from Advent through Ordinary Time. Where the year actually sits today — Eastertide, Week VI, with eight more weeks until Pentecost — is marked in crimson. The widest wedge, Ordinary Time, contains roughly thirty-three weeks; the smallest, Holy Week, contains seven days that hold more weight than the other fifty-one combined. <span class="cutline-credit">Illustration · Euangelion · 16 May 2026</span>
+      </figcaption>
+    </figure>
+
+    <!-- Almanac / On This Day -->
+    <aside class="span-5" aria-labelledby="almanac-h">
+      <p class="kicker">Almanac &middot; On This Day</p>
+      <h3 id="almanac-h" class="h-tile">16 May, through the centuries.</h3>
+
+      <div class="almanac">
+        <div class="al-entry">
+          <span class="al-year">577</span>
+          <span><strong>St. Brendan the Navigator</strong> dies at the monastery of Annaghdown, Ireland, after seven years' wandering by sea — his <em>Voyage of Saint Brendan</em> the Irish church's most-copied medieval manuscript.</span>
+        </div>
+        <div class="al-entry">
+          <span class="al-year">1532</span>
+          <span><strong>Thomas More</strong> resigns as Lord Chancellor of England rather than acknowledge Henry VIII's break with Rome. He will be executed three years later. Patron saint of statesmen, lawyers, and the difficult conscience.</span>
+        </div>
+        <div class="al-entry">
+          <span class="al-year">1843</span>
+          <span>The first <strong>Oregon Trail</strong> wagon train of nearly 1,000 settlers departs Independence, Missouri. The journey will take five months and will be the longest single migration in American history.</span>
+        </div>
+        <div class="al-entry">
+          <span class="al-year">1929</span>
+          <span>The first <strong>Academy Awards</strong> are held at the Hollywood Roosevelt Hotel. The ceremony lasts fifteen minutes. The Oscar for Best Picture goes to <em>Wings</em>.</span>
+        </div>
+        <div class="al-entry">
+          <span class="al-year">1975</span>
+          <span><strong>Junko Tabei</strong> becomes the first woman to reach the summit of Mount Everest. She climbed with a women-only Japanese expedition after their camp was destroyed by an avalanche twelve days earlier.</span>
+        </div>
+      </div>
+
+      <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--ink-soft); margin-top: 0.6rem; font-style: italic;">Compiled from the editor's commonplace book and verified against the Oxford Dictionary of Saints and Britannica.</p>
+    </aside>
+
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE A4 — LIFESTYLE
+     Elements demonstrated: folio, advice column ("Dear Abby"-style),
+     travel column, service / event listings (TV listings replacement)
+     ═══════════════════════════════════════════════════════════ -->
+<section class="page paper" id="page-a4" aria-label="Page A4 — Lifestyle">
+
+  <div class="folio">
+    <span><span class="folio-section">A4</span> · Lifestyle</span>
+    <span class="folio-paper">Euangelion · The Daily Edition</span>
+    <span>Saturday · 16 May 2026</span>
+  </div>
+
+  <div class="section-div">
+    <span><span class="sd-name">Lifestyle</span> &middot; advice, travel &amp; the service listings</span>
+    <span class="sd-note">Dear Editor runs daily; Travel runs Saturdays; Services listed for the next 24 hours.</span>
+  </div>
+
+  <div class="grid-12">
+
+    <!-- DEAR EDITOR ADVICE COLUMN -->
+    <article class="span-6" aria-labelledby="deareditor-h">
+      <p class="kicker">Dear Editor &middot; A Standing Daily Column</p>
+      <h2 id="deareditor-h" class="h-section">"I can&rsquo;t pray when I&rsquo;m angry."</h2>
+      <p class="h-deck">Two letters from readers, two replies from this desk. Names withheld; cities included by request.</p>
+      <p class="byline"><em>By</em> The Editor</p>
+
+      <article class="letter" style="margin-top: 0.6rem;">
+        <p class="letter-h">Dear Editor &middot; Tulsa</p>
+        <p>I can't pray when I'm angry. I sit down to do my morning reading and the prayer just stops in my throat. I read the verse, I close the book, and I am still angry. Last week was a bad week and most of my mornings looked like this. I am not interested in being told to "calm down first." That doesn't work. What do I do?</p>
+        <p class="letter-by">— A reader in Tulsa</p>
+        <div class="editor-reply">
+          <p class="er-label">Reply</p>
+          <p>The premise of your question is the answer: <em>"I can't pray when I'm angry."</em> Half the Psalms — David at the cave, the Sons of Korah at the gate, the unnamed Psalmist who in Psalm 137 prays a sentence so violent the lectionary still cannot read it on Sunday morning — are the work of believers who could not pray any other way. Anger is prayer with the volume up.</p>
+          <p>Pray the anger. Pray it out loud, in the kitchen, to no one but the empty room. The words do not have to be respectable. They have to be true. The respect comes later, after the anger has been seen.</p>
+          <p>If even the angry prayer will not come, the assignment for the morning is one verse, read once, and a single sentence written in the margin of your notebook: <em>"I am angry. I am still here."</em> That is enough. Tomorrow may be the same. The morning after that, the prayer that arrives may not be the one you were trying for, and may be the one that was needed.</p>
+        </div>
+      </article>
+
+      <article class="letter">
+        <p class="letter-h">Dear Editor &middot; Brooklyn</p>
+        <p>How do I tell my mother I no longer believe what she raised me to believe — without breaking her heart? She is 78. She thinks her job is unfinished if I don't believe what she believes. She is also dying.</p>
+        <p class="letter-by">— A reader in Brooklyn</p>
+        <div class="editor-reply">
+          <p class="er-label">Reply</p>
+          <p>You don't. Not on the timeline you are thinking of. The conversation you are describing — "Mom, I no longer believe what you taught me" — is a conversation about <em>you</em>. The conversation she needs from you, with the months she has left, is a conversation about <em>her</em>. About her own mother. About the day she met your father. About the prayer she has said every morning since 1972. Ask her what she would have done differently. Ask her what she is afraid of now. Listen.</p>
+          <p>It is not dishonest to leave the theological accounting for later. The accounting belongs to her God, not to you, and she has been on better terms with that God for longer than you have been alive. Trust the relationship she has with the One she taught you about. Then sit with her. Hold her hand. Pray with her when she asks, even if the prayer is not yours; the saying of it is the kindness.</p>
+          <p>After she dies — and not before — the work of telling the truth about your own belief will still be there. It will take the rest of your life. There is no rush.</p>
+        </div>
+      </article>
+
+      <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--ink-soft); margin-top: 0.6rem; font-style: italic;">Letters to <code style="font-family: var(--mono); background: var(--paper-deep); padding: 0.05em 0.32em;">deareditor@euangelion.app</code>. We publish two daily, six per week. Replies are written by the editor and reviewed by an outside pastor before printing.</p>
+    </article>
+
+    <!-- TRAVEL COLUMN -->
+    <article class="span-6" aria-labelledby="travel-h">
+      <p class="kicker">Travel &middot; Saturday Column</p>
+      <h2 id="travel-h" class="h-section">"Postcard from Capernaum."</h2>
+      <p class="h-deck">A small Galilean fishing town that holds two-thirds of the public ministry of Jesus.</p>
+      <p class="byline"><em>By</em> The Editor &middot; <em>filed from</em> the north shore</p>
+
+      <!-- Travel image (placeholder map-tone block) -->
+      <div class="travel-img" role="img" aria-label="Stylized map of the Sea of Galilee with Capernaum on the north shore">
+        <span>Sketch &middot; Sea of Galilee &middot; north shore</span>
+      </div>
+
+      <p class="dropcap-3">There is almost nothing left of it. Stand on the basalt foundations of the old synagogue — the one mentioned in Luke 7, where the centurion's servant was healed at a distance — and you can see the entire town in a single glance. A few stone walls about waist-high. The cleared outline of Peter's house. A modern church suspended on stilts above what archaeologists believe was the room where the paralyzed man was lowered through the roof. The lake is two hundred yards away. The fishing boats still come in at the same hour.</p>
+
+      <p>The conventional pilgrimage stops here, takes a photograph, reads the relevant passage from a guide, and moves on to the Mount of Beatitudes. The longer visit, recommended for the morning, is to walk down to the water at sunrise. There is a small public beach — the beach where the resurrection breakfast in John 21 is traditionally placed, charcoal fire and all. You sit on the basalt. The light comes up over the Golan to the east. The boats put out.</p>
+
+      <p>What hits you is the size. Capernaum is small. The radius of all this — the synagogue, Peter's house, the tax booth where Matthew was sitting when he was called — is about eight hundred feet. Three quarters of the public miracles in the Gospels happened inside a space you could walk across in four minutes. The kingdom did not need scale. The kingdom needed a small town with a lake and a few people who would come when they were called.</p>
+
+      <p>The bus back to Tiberias leaves at nine. You will not need the whole morning, and you will also need the whole morning. Take the morning.</p>
+
+      <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--ink-soft); margin-top: 0.6rem; font-style: italic;">Next Saturday: Pilgrimage notes from Iona. The week after: a small parish in Brittany.</p>
+    </article>
+
+  </div>
+
+  <div class="section-div" style="margin-top: 1.6rem;">
+    <span><span class="sd-name">Service Listings</span> &middot; the next twenty-four hours</span>
+    <span class="sd-note">The liturgical &amp; community schedule, replacing the legacy TV / radio listings column.</span>
+  </div>
+
+  <!-- SERVICE LISTINGS -->
+  <div class="grid-12">
+
+    <div class="span-4">
+      <p class="kicker cobalt">Saturday Evening &middot; 16 May</p>
+      <div class="services">
+        <div class="svc-row">
+          <span class="svc-time">17:30</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">Vigil Mass</strong> &middot; Most parishes &middot; <em>Eastertide propers</em></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-time">18:00</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">Evensong</strong> &middot; Cathedral Church of St. John the Divine, NYC &middot; <em>Boyce in A</em></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-time">19:30</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">Lectio Divina</strong> &middot; Iona Community Online &middot; <em>open to all</em></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-time">20:00</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">Vespers</strong> &middot; Mount Athos webcast &middot; <em>Greek &amp; English</em></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-time">21:30</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">Compline</strong> &middot; St. Mark's Cathedral, Seattle &middot; <em>plainsong, in candlelight</em></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="span-4">
+      <p class="kicker cobalt">Sunday Morning &middot; 17 May</p>
+      <div class="services">
+        <div class="svc-row">
+          <span class="svc-time">06:00</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">Lauds</strong> &middot; St. John's Abbey, Collegeville &middot; <em>monastic, broadcast</em></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-time">08:00</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">Rite I, Said</strong> &middot; Episcopal parishes &middot; <em>BCP 1979</em></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-time">10:00</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">Eucharist, Sung</strong> &middot; most denominations &middot; <em>Eastertide VI</em></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-time">10:30</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">Divine Liturgy</strong> &middot; Greek &amp; Russian Orthodox &middot; <em>St. John Chrysostom</em></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-time">11:00</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">Solemn Mass</strong> &middot; Roman Catholic parishes &middot; <em>Acts 1 / John 17</em></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="span-4">
+      <p class="kicker cobalt">This Week &middot; Notable Observances</p>
+      <div class="services">
+        <div class="svc-row">
+          <span class="svc-time">Sun 17</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">Sixth Sunday of Easter</strong> &middot; <em>"Rogation Sunday"</em> in some traditions</span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-time">Mon 18</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">Rogation Days begin</strong> &middot; <em>prayer for the fields, three days</em></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-time">Thu 21</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">Ascension Day</strong> &middot; <em>forty days after Easter, a holy day of obligation</em></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-time">Fri 22</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">St. Rita of Cascia</strong> &middot; <em>patron of the impossible</em></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-time">Sat 23</span>
+          <span><strong style="font-family: var(--sans); letter-spacing: 0.04em;">First evening of</strong> &middot; <em>preparation for Pentecost — eight days hence</em></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE A5 — CLASSIFIEDS + OBITUARIES
+     Elements demonstrated: folio, section divider, classifieds
+     (5 categories), obituaries / In Memoriam ("Saints Remembered")
+     ═══════════════════════════════════════════════════════════ -->
+<section class="page paper" id="page-a5" aria-label="Page A5 — Classifieds &amp; Obituaries">
+
+  <div class="folio">
+    <span><span class="folio-section">A5</span> · Classifieds &middot; Obituaries</span>
+    <span class="folio-paper">Euangelion · The Daily Edition</span>
+    <span>Saturday · 16 May 2026</span>
+  </div>
+
+  <div class="section-div">
+    <span><span class="sd-name">Classifieds</span> &middot; calls, for sale, personals, lost &amp; found, notices</span>
+    <span class="sd-note">"Help Wanted Male / Female" was abolished, by federal court order, in 1973. We have not brought it back.</span>
+  </div>
+
+  <div class="grid-12 classifieds">
+
+    <!-- CALLS / Help Wanted -->
+    <div class="span-4">
+      <p class="cl-cat">Calls &middot; ministry openings</p>
+
+      <div class="cl-entry">
+        <strong>Rector wanted</strong> <em>Small Episcopal parish, mountain town in NC. 80 active families. Stipend modest, housing provided, the people are kind. Looking for someone who preaches the lectionary, visits the homebound, and stays five years. Reply: <em>St. Andrew's, Black Mountain</em></em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>Music director, p/t</strong> <em>Lutheran (ELCA), Twin Cities suburb. Sunday morning + Wednesday rehearsal. Choir of 14. Hymns, anthems, organ &middot; piano. Stipend $18,000. Send a tape.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>Youth minister</strong> <em>Non-denominational, Phoenix area. 40 teenagers. Salaried full-time. Looking for someone with theological training and a real laugh. No "edgy" branding required.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>Chaplain, hospice</strong> <em>Ecumenical, suburban Atlanta. 30 hrs/wk. CPE required. The work is hard. The work is good.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>Sabbatical supply</strong> <em>Methodist church, downtown Seattle, needs three Sundays of preaching cover in July. $400 / Sunday + parsonage guestroom. Will provide pulpit notes.</em>
+      </div>
+    </div>
+
+    <!-- FOR SALE -->
+    <div class="span-4">
+      <p class="cl-cat">For Sale &middot; books, mostly</p>
+
+      <div class="cl-entry">
+        <strong>Eugene Peterson</strong> <em><em>Christ Plays in Ten Thousand Places</em>, hardcover, first edition, slight underlining in pencil throughout chapter four. $14. Will pay shipping.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>Common Worship</strong> <em>Daily Prayer, leather-bound, 2006 Church House edition. Nearly new. Wedding gift, used twice. $30 or trade for an out-of-print Merton.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>BCP 1928</strong> <em>Three copies, deaccessioned from parish library. Bindings tight, prayer for the President of the United States intact. $20 each. The parish lost the third pew last winter.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>Czech-made paten</strong> <em>silver, ca. 1890, 6" diameter, ecclesiastical hallmark intact. From a grandfather. Asking $220. Email for photograph.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>Twenty-year run</strong> <em>of <em>The Anglican Theological Review</em>, 1998–2018, almost complete. Free to anyone who will collect from Wichita Falls.</em>
+      </div>
+    </div>
+
+    <!-- PERSONALS / Prayer Requests -->
+    <div class="span-4">
+      <p class="cl-cat">Personals &middot; prayer requests</p>
+
+      <div class="cl-entry">
+        <strong>For Margaret</strong> <em>biopsy results expected Tuesday. She is not asking for anything, but ask anyway.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>For a marriage</strong> <em>twenty-three years, last legs. Both of them know it. Neither will name it. — anon.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>For a young father</strong> <em>laid off in March, still looking, his patience nearly spent. The boy turns four next week.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>For the city</strong> <em>where this paper is read by a woman who, having sent in the prayer request, is no longer sure why she sent it.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>For the editor's mother</strong> <em>who has been asking after a sister she has not spoken to since 1979. Pray for the phone call.</em>
+      </div>
+
+      <p style="font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.14em; color: var(--ink-soft); margin-top: 0.6rem; font-style: italic;">Prayer requests submitted at <code style="font-family: var(--mono); background: var(--paper-deep); padding: 0.05em 0.32em;">pray@euangelion.app</code> are anonymized and printed without further edit.</p>
+    </div>
+
+  </div>
+
+  <div class="grid-12" style="margin-top: 1rem;">
+
+    <!-- LOST & FOUND -->
+    <div class="span-6">
+      <p class="cl-cat">Lost &amp; Found</p>
+
+      <div class="cl-entry">
+        <strong>Lost &middot; faith</strong> <em>somewhere between the 2020 election and the third pandemic spring. Reward for sincere returns. Will accept partial. — reader, Dayton</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>Lost &middot; the habit of morning prayer</strong> <em>previously established for nineteen years. Missing since February. Believed irretrievable. Trying anyway.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>Found &middot; one hymnal</strong> <em>Methodist, 1989 edition, in pew 14, St. Luke's, Cambridge. Inscribed "for Helena, on her confirmation, 1992." Contact the parish office.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>Found &middot; an ordinary morning</strong> <em>after a long stretch of bad ones. The reader who reports it is keeping it.</em>
+      </div>
+    </div>
+
+    <!-- NOTICES -->
+    <div class="span-6">
+      <p class="cl-cat">Notices &middot; from the congregations</p>
+
+      <div class="cl-entry">
+        <strong>Bake sale</strong> <em>First Baptist, Asheville, Sat 23 May, 8 a.m. to noon. All proceeds to the food bank. The cinnamon rolls are made by a woman who claims to have, and may in fact have, the original recipe.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>Vacation Bible School</strong> <em>St. Paul's UMC, Tulsa, 15–19 June. Theme: "Five Loaves, Two Fish." Volunteer leaders welcome. Children 4–11.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>Adult catechism</strong> <em>Holy Trinity Roman Catholic, Brooklyn, beginning Wed 28 May, 7 p.m. Rite of Christian Initiation of Adults (RCIA). Eight months. Coffee provided.</em>
+      </div>
+
+      <div class="cl-entry">
+        <strong>Outdoor Eucharist</strong> <em>St. Mary's-by-the-Sea, Cape Cod, every Saturday 5:30 p.m. through Labor Day. Bring a chair. Bring a friend. Bread is on the table.</em>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-div" style="margin-top: 1.8rem;">
+    <span><span class="sd-name">Saints Remembered</span> &middot; obituaries &middot; <em>in memoriam</em></span>
+    <span class="sd-note">"Obituary" is from the medieval Latin <em>obitus</em> &mdash; "a going to meet." Reader-submitted; edited by the desk.</span>
+  </div>
+
+  <!-- OBITUARIES -->
+  <div class="grid-12">
+
+    <article class="obit span-4">
+      <p class="obit-tag">Saint Remembered</p>
+      <h3>Helen Wycoff Mathers</h3>
+      <p class="obit-years">1933 — 2026 &middot; Lincoln, Nebraska</p>
+      <p>Helen, of Lincoln, died at home on Wednesday morning, eight days short of her ninety-third birthday. She is survived by three children, eleven grandchildren, and a sister in Topeka with whom she had not spoken in forty-seven years over a disagreement none of the family any longer remembers.</p>
+      <p>She taught Sunday school at First Presbyterian for fifty-one years. Her last class, in 2020, met by telephone, one child at a time, because she did not trust the video screens. The class learned the Beatitudes by heart that year. They had not learned them by heart in any prior year.</p>
+      <p>She kept the same pew. She left the same tip. She forgave one specific person who never knew they had been forgiven. Memorial service at First Presbyterian, Lincoln, Saturday 23 May at 11 a.m. In lieu of flowers, the family asks for any small kindness, named or not, performed on her behalf.</p>
+    </article>
+
+    <article class="obit span-4">
+      <p class="obit-tag">Saint Remembered</p>
+      <h3>The Rev. Dr. Marcus B. Owens</h3>
+      <p class="obit-years">1942 — 2026 &middot; Boston, Massachusetts</p>
+      <p>Marcus, of Boston and previously of Selma, died on Tuesday morning after a brief illness, at home, with his wife of fifty-eight years reading the Twenty-third Psalm aloud in the room. He was eighty-three.</p>
+      <p>An AME pastor for forty-six years, a chaplain at MIT for the final twelve, and a marcher across the Edmund Pettus Bridge in 1965 at the age of twenty-two. He is most remembered for the gentleness of his preaching — never raised his voice in the pulpit, on principle, "because the gospel does not need to be shouted." He was wrong about exactly one thing, by his own count: the date of the Resurrection in a 1987 Easter sermon, off by a calendar year due to a typo in his notes. He corrected it the following Sunday, at length, with laughter.</p>
+      <p>Funeral at Charles Street AME, Boston, Friday 22 May at 10 a.m. The choir will sing "Wade in the Water." His pew is the one on the left side near the door.</p>
+    </article>
+
+    <article class="obit span-4">
+      <p class="obit-tag">Saint Remembered</p>
+      <h3>Tomoko "Tomi" Ito</h3>
+      <p class="obit-years">1948 — 2026 &middot; San Francisco, California</p>
+      <p>Tomi, of the Outer Sunset, died on Saturday at U.C.S.F., surrounded by her two daughters and the parish priest from Old St. Mary's who had been her friend for thirty years. She was seventy-seven.</p>
+      <p>Born in an Idaho internment camp, baptized in San Francisco in 1953, married in 1971 in the same parish where she was baptized and would later be buried. A research nurse at S.F. General for thirty-six years. She was the person other people went to when the diagnosis was bad. She was the person who waited with you in the corridor. She was the person who told you what the doctor meant, with both hands on yours, in plain words.</p>
+      <p>Rosary at St. Mary's, Tuesday 19 May at 7 p.m. Mass of Christian Burial, Wednesday 20 May at 10 a.m. The family asks that you bring an extra five dollars and put it, on her behalf, into the box outside the hospital chapel.</p>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE A6 — DATA PAGE
+     Elements demonstrated: folio, weather panel (spiritual climate),
+     stock ticker (scripture market), horoscope replacement (twelve
+     houses), sports page (this week's saints standings)
+     ═══════════════════════════════════════════════════════════ -->
+<section class="page paper" id="page-a6" aria-label="Page A6 — Data">
+
+  <div class="folio">
+    <span><span class="folio-section">A6</span> · Data &amp; The Daily Rundown</span>
+    <span class="folio-paper">Euangelion · The Daily Edition</span>
+    <span>Saturday · 16 May 2026</span>
+  </div>
+
+  <!-- STOCK TICKER strip at top, like a real broadsheet's market summary -->
+  <div class="ticker" aria-label="Today's scripture market summary">
+    <span><span class="tk-arrow tk-up">▲</span><span class="tk-up">PSALM 23</span></span>
+    <span><span class="tk-arrow tk-flat">▶</span><span class="tk-flat">LUKE 10</span></span>
+    <span><span class="tk-arrow tk-dn">▼</span><span class="tk-dn">JOB 38</span></span>
+    <span><span class="tk-arrow tk-up">▲</span><span class="tk-up">JOHN 14</span></span>
+    <span><span class="tk-arrow tk-flat">▶</span><span class="tk-flat">ECC 3</span></span>
+    <span><span class="tk-arrow tk-dn">▼</span><span class="tk-dn">LAM 3</span></span>
+    <span><span class="tk-arrow tk-up">▲</span><span class="tk-up">ROM 8</span></span>
+    <span><span class="tk-arrow tk-up">▲</span><span class="tk-up">PHIL 4</span></span>
+    <span><span class="tk-arrow tk-flat">▶</span><span class="tk-flat">PROV 3</span></span>
+    <span><span class="tk-arrow tk-up">▲</span><span class="tk-up">IS 40</span></span>
+  </div>
+
+  <div class="section-div">
+    <span><span class="sd-name">Spiritual Climate</span> &middot; the seven-day forecast</span>
+    <span class="sd-note">The internal weather of the Christian week. Compiled from the Daily Office &amp; the editor's mail.</span>
+  </div>
+
+  <div class="grid-12">
+
+    <!-- SPIRITUAL WEATHER -->
+    <div class="span-6">
+      <div class="weather">
+        <div class="w-h">
+          <span>Saturday &middot; 16 May</span>
+          <span style="color: var(--gold);">Eastertide</span>
+        </div>
+        <div class="w-today">
+          <div class="w-icon">☁︎</div>
+          <div>
+            <p class="w-word">Quiet.</p>
+            <p class="w-sub">A still wind. The kind to listen in. No precipitation. Low humidity.</p>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Climate</th>
+              <th>Reading</th>
+              <th>Risk</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Sun 17</td><td class="w-cond">Gathered &middot; bright</td><td>Ecclesiastes 4</td><td>Low</td></tr>
+            <tr><td>Mon 18</td><td class="w-cond">Heavy &middot; low fog</td><td>Lamentations 3</td><td>High</td></tr>
+            <tr><td>Tue 19</td><td class="w-cond">Clearing</td><td>Romans 8</td><td>Moderate</td></tr>
+            <tr><td>Wed 20</td><td class="w-cond">Still &middot; warm</td><td>John 14</td><td>Low</td></tr>
+            <tr><td>Thu 21</td><td class="w-cond">Bright &middot; <em style="color:var(--crimson);font-style:normal;">Ascension</em></td><td>Acts 1</td><td>Low</td></tr>
+            <tr><td>Fri 22</td><td class="w-cond">Variable</td><td>1 Peter 3</td><td>Moderate</td></tr>
+            <tr><td>Sat 23</td><td class="w-cond">Wind &middot; Pentecost approaches</td><td>Acts 2</td><td>Watch</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--ink-soft); margin-top: 0.6rem; font-style: italic;">"Spiritual climate" is a borrowed metaphor. It is not a science. The forecast is a service to the reader: a warning where the readings turn heavy (<em>Lamentations 3</em>, Monday) and an invitation where they lift (<em>Ascension</em>, Thursday). Plan the week accordingly.</p>
+    </div>
+
+    <!-- SCRIPTURE MARKET / extended ticker table -->
+    <div class="span-6">
+      <p class="kicker">Scripture Market &middot; this week's movers</p>
+      <h3 class="h-tile" style="margin-bottom: 0.4rem;">The week's readings, by movement.</h3>
+
+      <table class="ticker-table">
+        <thead>
+          <tr>
+            <th>Reference</th>
+            <th>Direction</th>
+            <th>Note</th>
+            <th>Day</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="tt-ref">Psalm 23</td><td class="up">▲ Higher</td><td>The shepherd, returning to the imagination after a hard week.</td><td>Tue</td></tr>
+          <tr><td class="tt-ref">Luke 10 : 38–42</td><td class="flat">▶ Flat</td><td>Mary &amp; Martha — held steady on the reading list for a fourth week.</td><td>Wed</td></tr>
+          <tr><td class="tt-ref">Job 38</td><td class="dn">▼ Lower</td><td>"Where wast thou…" — heavier than expected by reader mail.</td><td>Mon</td></tr>
+          <tr><td class="tt-ref">John 14 : 27</td><td class="up">▲ Higher</td><td>"My peace I give unto you" — the verse of the week.</td><td>Wed</td></tr>
+          <tr><td class="tt-ref">Ecclesiastes 3 : 1</td><td class="flat">▶ Flat</td><td>Today's lead. Always held.</td><td>Sat</td></tr>
+          <tr><td class="tt-ref">Lamentations 3 : 22-23</td><td class="dn">▼ Lower</td><td>Heavy chapter, expected to climb back Monday.</td><td>Mon</td></tr>
+          <tr><td class="tt-ref">Romans 8 : 28</td><td class="up">▲ Higher</td><td>Up sharply after the bad news from California.</td><td>Tue</td></tr>
+          <tr><td class="tt-ref">Philippians 4 : 8</td><td class="up">▲ Higher</td><td>"Whatsoever things are true…" — a steady riser.</td><td>Fri</td></tr>
+          <tr><td class="tt-ref">Isaiah 40 : 31</td><td class="up">▲ Higher</td><td>"They shall mount up with wings…" — strong week.</td><td>Thu</td></tr>
+        </tbody>
+      </table>
+
+      <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--ink-soft); margin-top: 0.6rem; font-style: italic;">"Movement" tracks the frequency a verse appears in the past week's reader mail. The metaphor is borrowed from the markets and means nothing about the verse itself — only about the season we are reading it in.</p>
+    </div>
+
+  </div>
+
+  <div class="section-div" style="margin-top: 1.6rem;">
+    <span><span class="sd-name">Twelve Houses</span> &middot; a daily scripture for every reader</span>
+    <span class="sd-note">Born of the horoscope slot, used here for daily Scripture by birth month. No prediction, no fate &mdash; one verse per house.</span>
+  </div>
+
+  <!-- TWELVE HOUSES (replaces horoscope) -->
+  <div class="houses" aria-label="Twelve houses — a Scripture for each">
+    <article class="house">
+      <p class="h-name">Aries · The Lamb</p>
+      <p class="h-date">21 Mar — 19 Apr</p>
+      <p class="h-ref">John 1 : 29</p>
+      <p class="h-verse">"Behold the Lamb of God, which taketh away the sin of the world."</p>
+    </article>
+    <article class="house">
+      <p class="h-name">Taurus · The Ox</p>
+      <p class="h-date">20 Apr — 20 May</p>
+      <p class="h-ref">1 Cor 9 : 9</p>
+      <p class="h-verse">"Thou shalt not muzzle the ox that treadeth out the corn."</p>
+    </article>
+    <article class="house">
+      <p class="h-name">Gemini · The Twin</p>
+      <p class="h-date">21 May — 20 Jun</p>
+      <p class="h-ref">John 20 : 28</p>
+      <p class="h-verse">"My Lord and my God." — Thomas the Twin, to the wounds.</p>
+    </article>
+    <article class="house">
+      <p class="h-name">Cancer · The Net</p>
+      <p class="h-date">21 Jun — 22 Jul</p>
+      <p class="h-ref">Luke 5 : 4</p>
+      <p class="h-verse">"Launch out into the deep, and let down your nets."</p>
+    </article>
+    <article class="house">
+      <p class="h-name">Leo · The Lion</p>
+      <p class="h-date">23 Jul — 22 Aug</p>
+      <p class="h-ref">Rev 5 : 5</p>
+      <p class="h-verse">"The Lion of the tribe of Judah hath prevailed."</p>
+    </article>
+    <article class="house">
+      <p class="h-name">Virgo · The Mother</p>
+      <p class="h-date">23 Aug — 22 Sep</p>
+      <p class="h-ref">Luke 1 : 38</p>
+      <p class="h-verse">"Behold the handmaid of the Lord; be it unto me according to thy word."</p>
+    </article>
+    <article class="house">
+      <p class="h-name">Libra · The Scales</p>
+      <p class="h-date">23 Sep — 22 Oct</p>
+      <p class="h-ref">Micah 6 : 8</p>
+      <p class="h-verse">"To do justly, and to love mercy, and to walk humbly with thy God."</p>
+    </article>
+    <article class="house">
+      <p class="h-name">Scorpio · The Serpent</p>
+      <p class="h-date">23 Oct — 21 Nov</p>
+      <p class="h-ref">Gen 3 : 15</p>
+      <p class="h-verse">"He shall bruise thy head, and thou shalt bruise his heel."</p>
+    </article>
+    <article class="house">
+      <p class="h-name">Sagittarius · The Arrow</p>
+      <p class="h-date">22 Nov — 21 Dec</p>
+      <p class="h-ref">Ps 127 : 4</p>
+      <p class="h-verse">"As arrows are in the hand of a mighty man; so are children of the youth."</p>
+    </article>
+    <article class="house">
+      <p class="h-name">Capricorn · The Goat</p>
+      <p class="h-date">22 Dec — 19 Jan</p>
+      <p class="h-ref">Matt 25 : 33</p>
+      <p class="h-verse">"He shall set the sheep on his right hand, but the goats on the left."</p>
+    </article>
+    <article class="house">
+      <p class="h-name">Aquarius · The Water</p>
+      <p class="h-date">20 Jan — 18 Feb</p>
+      <p class="h-ref">John 7 : 38</p>
+      <p class="h-verse">"Out of his belly shall flow rivers of living water."</p>
+    </article>
+    <article class="house">
+      <p class="h-name">Pisces · The Fish</p>
+      <p class="h-date">19 Feb — 20 Mar</p>
+      <p class="h-ref">Matt 4 : 19</p>
+      <p class="h-verse">"Follow me, and I will make you fishers of men."</p>
+    </article>
+  </div>
+
+  <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--ink-soft); margin-top: 0.8rem; font-style: italic;">The Twelve Houses replace the horoscope slot. The metaphor is borrowed from the zodiac calendar only as a way of dating birth months; the verses are matched by ancient symbol (Lamb, Ox, Twin, etc.), not by prediction. Choose your verse, read it twice, then close the paper.</p>
+
+  <div class="section-div" style="margin-top: 1.6rem;">
+    <span><span class="sd-name">This Week's Saints</span> &middot; standings &amp; commemorations</span>
+    <span class="sd-note">Replaces the legacy sports page. Calendar tradition listed at right.</span>
+  </div>
+
+  <table class="standings">
+    <thead>
+      <tr>
+        <th>Saint &middot; Servant</th>
+        <th>Date</th>
+        <th>Notable for</th>
+        <th class="tradition">Tradition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="leader">
+        <td>Brendan the Navigator</td>
+        <td>Sat 16 May</td>
+        <td>Seven years' wandering by curragh; abbot of Clonfert; <em>Navigatio Sancti Brendani</em></td>
+        <td class="tradition">Irish Catholic, Anglican</td>
+      </tr>
+      <tr>
+        <td>Julian of Norwich</td>
+        <td>Thu 14 May</td>
+        <td>Anchoress; first known woman to write a book in English; "All shall be well."</td>
+        <td class="tradition">Anglican, Catholic</td>
+      </tr>
+      <tr>
+        <td>Matthias the Apostle</td>
+        <td>Wed 13 May</td>
+        <td>Cast lots into apostleship after Judas; tradition holds martyrdom in Aethiopia</td>
+        <td class="tradition">Roman Catholic, Orthodox</td>
+      </tr>
+      <tr>
+        <td>Dymphna of Ireland</td>
+        <td>Fri 15 May</td>
+        <td>Patroness of the mentally ill, runaways, victims of incest</td>
+        <td class="tradition">Roman Catholic</td>
+      </tr>
+      <tr>
+        <td>Pachomius the Great</td>
+        <td>Fri 9 May</td>
+        <td>Founder of cenobitic monasticism in Upper Egypt, 4th c.</td>
+        <td class="tradition">Eastern Orthodox</td>
+      </tr>
+      <tr>
+        <td>Athanasius of Alexandria</td>
+        <td>Sat 2 May</td>
+        <td>"Against the world" — defender of Nicene Christology, exiled five times</td>
+        <td class="tradition">Coptic, Roman, Anglican</td>
+      </tr>
+      <tr>
+        <td>Catherine of Siena</td>
+        <td>Tue 29 Apr</td>
+        <td>Mystic, Doctor of the Church, the only woman to address a pope on his throne</td>
+        <td class="tradition">Roman Catholic</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--ink-soft); margin-top: 0.6rem; font-style: italic;">A standings table, after a sports page. Saints "lead" by week of commemoration; the tradition column tracks who actually observes each. When traditions diverge on a date (Athanasius is 2 May in the West, 18 January in the East) we list the Western date with a note.</p>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE A7 — PUZZLES
+     Elements demonstrated: folio, crossword (Margaret Farrar
+     180° symmetry, 13×13 grid), word search (12×12)
+     ═══════════════════════════════════════════════════════════ -->
+<section class="page paper" id="page-a7" aria-label="Page A7 — Puzzles">
+
+  <div class="folio">
+    <span><span class="folio-section">A7</span> · Puzzles</span>
+    <span class="folio-paper">Euangelion · The Daily Edition</span>
+    <span>Saturday · 16 May 2026</span>
+  </div>
+
+  <div class="section-div">
+    <span><span class="sd-name">Lectio Crossword</span> &middot; The Saturday Bible Puzzle</span>
+    <span class="sd-note">13×13 grid &middot; rotational symmetry preserved per Margaret Farrar's 1942 New York Times rules.</span>
+  </div>
+
+  <div class="grid-12">
+
+    <!-- CROSSWORD GRID -->
+    <div class="span-6">
+      <p class="kicker">Puzzle № 134 &middot; "Eastertide Verbs"</p>
+      <p style="font-family: var(--serif); font-style: italic; font-size: 0.96rem; margin: 0.2rem 0 0.6rem;">A small grid for a still morning. Solutions Sunday, A7.</p>
+
+      <div class="puzzle-grid crossword-15" style="grid-template-columns: repeat(13, 1fr); grid-template-rows: repeat(13, 1fr); max-width: 460px;" role="grid" aria-label="13 by 13 crossword grid">
+        <!-- Row 1 -->
+        <div class="cell"><span class="num">1</span></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"><span class="num">2</span></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"><span class="num">3</span></div><div class="cell"></div><div class="cell"></div>
+        <!-- Row 2 -->
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <!-- Row 3 -->
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"><span class="num">4</span></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"><span class="num">5</span></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <!-- Row 4 -->
+        <div class="cell"><span class="num">6</span></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"></div>
+        <!-- Row 5 -->
+        <div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"><span class="num">7</span></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"><span class="num">8</span></div><div class="cell"></div><div class="cell"></div>
+        <!-- Row 6 -->
+        <div class="cell black"></div><div class="cell"><span class="num">9</span></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"><span class="num">10</span></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div>
+        <!-- Row 7 -->
+        <div class="cell"><span class="num">11</span></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"><span class="num">12</span></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"><span class="num">13</span></div>
+        <!-- Row 8 -->
+        <div class="cell black"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <!-- Row 9 -->
+        <div class="cell"></div><div class="cell"></div><div class="cell"><span class="num">14</span></div><div class="cell"></div><div class="cell black"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"><span class="num">15</span></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <!-- Row 10 -->
+        <div class="cell"></div><div class="cell black"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"><span class="num">16</span></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <!-- Row 11 -->
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"></div>
+        <!-- Row 12 -->
+        <div class="cell"><span class="num">17</span></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"><span class="num">18</span></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <!-- Row 13 -->
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell black"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+      </div>
+
+      <p style="font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 700; margin-top: 0.5rem;">Avg. solve time: 14 min &middot; Difficulty: ☆ ☆ ☆ ☆ ☆</p>
+    </div>
+
+    <!-- CROSSWORD CLUES -->
+    <div class="span-6 clue-list">
+      <h4>Across</h4>
+      <ol>
+        <li>Garden where Christ prayed before his arrest (10)</li>
+        <li>A small word meaning "until now" — and an Easter exclamation (3)</li>
+        <li>The fruit Christ cursed for bearing no fruit (3)</li>
+        <li>"___ of God, that taketh away the sin of the world" (4)</li>
+        <li>The mother who sat at his feet, not at the kitchen sink (4)</li>
+        <li>Disciple who walked on water briefly (5)</li>
+        <li>The tomb stone is rolled ___ (4)</li>
+        <li>What Thomas needed: ___ (5)</li>
+        <li>What the angels announced: He is ___ (5)</li>
+        <li>What the empty tomb was not (5)</li>
+        <li>The hour Christ died: the ___ hour (5)</li>
+        <li>Country east of Israel; Naomi's place of exile (4)</li>
+        <li>"Be still, and know that I am ___" (3)</li>
+      </ol>
+
+      <h4 style="margin-top: 1.2rem;">Down</h4>
+      <ol>
+        <li>The wood the cross was made of, tradition says (5)</li>
+        <li>What the soldiers cast for his garments (4)</li>
+        <li>The Aramaic word from the cross: "My God, my God ___" (4)</li>
+        <li>The number of disciples on the road to Emmaus (3)</li>
+        <li>The hour the women came to the tomb: the ___ hour (5)</li>
+        <li>A Hebrew word meaning "behold!" (4)</li>
+        <li>The mother who anointed the feet (4)</li>
+        <li>What broke the bread at Emmaus, in his hands (4)</li>
+        <li>"He is not here, but is ___" (5)</li>
+        <li>The third hour, in Latin (5)</li>
+        <li>The wind of Pentecost, ten days hence (4)</li>
+        <li>Where the disciples were locked in fear (4)</li>
+        <li>The single word Mary heard from him in the garden: "___" (5)</li>
+      </ol>
+    </div>
+
+  </div>
+
+  <div class="section-div" style="margin-top: 2rem;">
+    <span><span class="sd-name">Word Search</span> &middot; "Twelve Apostles &amp; the Sea of Galilee"</span>
+    <span class="sd-note">12×12 grid &middot; words across, down, diagonal, forward only.</span>
+  </div>
+
+  <div class="grid-12">
+
+    <!-- WORD SEARCH GRID -->
+    <div class="span-7">
+      <div class="puzzle-grid wordsearch-12" style="max-width: 420px;" role="grid" aria-label="12 by 12 word search grid">
+        <!-- Row 1: PETER hidden across cols 2-6 -->
+        <div class="cell">M</div><div class="cell highlight">P</div><div class="cell highlight">E</div><div class="cell highlight">T</div><div class="cell highlight">E</div><div class="cell highlight">R</div><div class="cell">W</div><div class="cell">L</div><div class="cell">A</div><div class="cell">M</div><div class="cell">B</div><div class="cell">S</div>
+        <!-- Row 2: ANDREW hidden cols 1-6 -->
+        <div class="cell highlight">A</div><div class="cell highlight">N</div><div class="cell highlight">D</div><div class="cell highlight">R</div><div class="cell highlight">E</div><div class="cell highlight">W</div><div class="cell">U</div><div class="cell">F</div><div class="cell">I</div><div class="cell">S</div><div class="cell">H</div><div class="cell">E</div>
+        <!-- Row 3: JOHN diagonal start row 3 col 1 -->
+        <div class="cell highlight">J</div><div class="cell">M</div><div class="cell">N</div><div class="cell">B</div><div class="cell">G</div><div class="cell">A</div><div class="cell">L</div><div class="cell">I</div><div class="cell">L</div><div class="cell">E</div><div class="cell">E</div><div class="cell">R</div>
+        <!-- Row 4: continue JOHN diag -->
+        <div class="cell">Q</div><div class="cell highlight">O</div><div class="cell">F</div><div class="cell">B</div><div class="cell">P</div><div class="cell">T</div><div class="cell">H</div><div class="cell">O</div><div class="cell">M</div><div class="cell">A</div><div class="cell">S</div><div class="cell">M</div>
+        <!-- Row 5: continue JOHN diag -->
+        <div class="cell">N</div><div class="cell">E</div><div class="cell highlight">H</div><div class="cell">D</div><div class="cell">L</div><div class="cell">A</div><div class="cell">M</div><div class="cell">Y</div><div class="cell">A</div><div class="cell">T</div><div class="cell">B</div><div class="cell">A</div>
+        <!-- Row 6: continue JOHN diag — also MATTHEW across cols 4-10 -->
+        <div class="cell">R</div><div class="cell">K</div><div class="cell">A</div><div class="cell highlight">N</div><div class="cell highlight">M</div><div class="cell highlight">A</div><div class="cell highlight">T</div><div class="cell highlight">T</div><div class="cell highlight">H</div><div class="cell highlight">E</div><div class="cell highlight">W</div><div class="cell">T</div>
+        <!-- Row 7: -->
+        <div class="cell">S</div><div class="cell">B</div><div class="cell">O</div><div class="cell">A</div><div class="cell">T</div><div class="cell">U</div><div class="cell">D</div><div class="cell">B</div><div class="cell">L</div><div class="cell">A</div><div class="cell">L</div><div class="cell">T</div>
+        <!-- Row 8: JAMES across cols 3-7 -->
+        <div class="cell">P</div><div class="cell">N</div><div class="cell highlight">J</div><div class="cell highlight">A</div><div class="cell highlight">M</div><div class="cell highlight">E</div><div class="cell highlight">S</div><div class="cell">D</div><div class="cell">B</div><div class="cell">R</div><div class="cell">E</div><div class="cell">H</div>
+        <!-- Row 9: JUDAS down col 1 rows 9-13 -->
+        <div class="cell highlight">J</div><div class="cell">A</div><div class="cell">B</div><div class="cell">G</div><div class="cell">A</div><div class="cell">F</div><div class="cell">I</div><div class="cell">L</div><div class="cell">L</div><div class="cell">E</div><div class="cell">A</div><div class="cell">E</div>
+        <!-- Row 10 -->
+        <div class="cell highlight">U</div><div class="cell">L</div><div class="cell">A</div><div class="cell">M</div><div class="cell">P</div><div class="cell">S</div><div class="cell">E</div><div class="cell">A</div><div class="cell">M</div><div class="cell">R</div><div class="cell">B</div><div class="cell">W</div>
+        <!-- Row 11: PHILIP across cols 3-8 -->
+        <div class="cell highlight">D</div><div class="cell">A</div><div class="cell highlight">P</div><div class="cell highlight">H</div><div class="cell highlight">I</div><div class="cell highlight">L</div><div class="cell highlight">I</div><div class="cell highlight">P</div><div class="cell">N</div><div class="cell">B</div><div class="cell">O</div><div class="cell">A</div>
+        <!-- Row 12 -->
+        <div class="cell highlight">A</div><div class="cell">N</div><div class="cell">T</div><div class="cell">H</div><div class="cell">A</div><div class="cell">N</div><div class="cell">D</div><div class="cell">S</div><div class="cell">E</div><div class="cell">E</div><div class="cell">D</div><div class="cell">M</div>
+        <!-- Row 13 (only 12 rows in 12×12) — removed -->
+      </div>
+
+      <p style="font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 700; margin-top: 0.5rem;">10 hidden words &middot; forward, across, down, and one diagonal</p>
+    </div>
+
+    <!-- WORD LIST -->
+    <div class="span-5 clue-list">
+      <h4>Find these words</h4>
+      <ol style="columns: 2; column-gap: 1rem;">
+        <li>PETER &middot; <em style="font-style: italic; color: var(--cobalt); font-family: var(--serif);">the rock</em></li>
+        <li>ANDREW &middot; <em style="font-style: italic; color: var(--cobalt); font-family: var(--serif);">brother of Peter</em></li>
+        <li>JOHN &middot; <em style="font-style: italic; color: var(--cobalt); font-family: var(--serif);">the beloved &middot; diagonal</em></li>
+        <li>JAMES &middot; <em style="font-style: italic; color: var(--cobalt); font-family: var(--serif);">son of Zebedee</em></li>
+        <li>MATTHEW &middot; <em style="font-style: italic; color: var(--cobalt); font-family: var(--serif);">tax collector</em></li>
+        <li>PHILIP &middot; <em style="font-style: italic; color: var(--cobalt); font-family: var(--serif);">of Bethsaida</em></li>
+        <li>JUDAS &middot; <em style="font-style: italic; color: var(--cobalt); font-family: var(--serif);">vertical</em></li>
+        <li>THOMAS &middot; <em style="font-style: italic; color: var(--cobalt); font-family: var(--serif);">the twin</em></li>
+        <li>LAMB</li>
+        <li>BOAT</li>
+        <li>FISH</li>
+        <li>GALILEE</li>
+      </ol>
+
+      <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--ink-soft); margin-top: 0.8rem; font-style: italic;">Found in this grid: highlighted in crimson once the puzzle is rendered. Print readers solve with a pencil. Tomorrow's puzzle, theme: <em>"Names of God."</em></p>
+
+      <div class="sidebar" style="margin-top: 1rem;">
+        <h4>Solver's Note</h4>
+        <p style="font-size: 0.85rem;">The American crossword convention preserved here — symmetric black squares, all-caps fill, numbered start cells — was canonized by Margaret Farrar, who edited the New York Times crossword from its 1942 launch until her retirement in 1969. The rules she set in 1942 are the rules we follow today.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE A8 — THE FUNNIES
+     Elements demonstrated: folio, 3 daily strips with recurring
+     lead character (Jesus), 1 Sunday color expanded strip, jump
+     line for the "STILL" continuation from A1
+     ═══════════════════════════════════════════════════════════ -->
+<section class="page paper" id="page-a8" aria-label="Page A8 — The Funnies">
+
+  <div class="folio">
+    <span><span class="folio-section">A8</span> · The Funnies &middot; <em style="font-family: var(--serif); font-style: italic; letter-spacing: 0.02em; text-transform: none;">basement of the broadsheet</em></span>
+    <span class="folio-paper">Euangelion · The Daily Edition</span>
+    <span>Saturday · 16 May 2026</span>
+  </div>
+
+  <!-- JUMP from A1 -->
+  <article class="story" aria-label="Jump from A1 — STILL">
+    <p class="kicker">Continued from page <a href="#page-a1" style="color: var(--crimson);">A1</a> &middot; STILL</p>
+    <h2 class="h-story" style="font-size: 1.3rem; font-style: italic;">…The pew was the same.</h2>
+
+    <div class="cols-2">
+      <p>We left Mrs. Renfrew on the front page at 5:40 a.m., reading. By 7:00 she had moved to the parish kitchen and made coffee in the same percolator she has used since the second Eisenhower administration. By 7:30 she was at her own kitchen table, alone, the radio off. Her daughter calls every Saturday at nine. The hour between is the hour she keeps.</p>
+      <p>This is the smaller, less photogenic part of the practice that Ecclesiastes 3 actually names. The big moments — the season, the time, the purpose under heaven — are described in chapter 3 in the abstract. The thing that gets you through them, the small hour of unmoved kitchen, is in the rest of the book: scattered across chapter 2's gardens, chapter 4's two-are-better-than-one, chapter 9's eat-thy-bread-with-joy. The pew is the dramatic part. The kitchen is the practice.</p>
+      <p>The reader of this paper is not expected to keep Mrs. Renfrew's hours. The reader is expected to find the equivalent. A bench at the train station. A specific chair in a specific room. The car, in the parking lot of the building, before the meeting begins. The unmoved center is portable. It has to be discovered, not installed. It is the work of the morning, and the morning after that, and the morning after that.</p>
+    </div>
+
+    <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">&mdash; <em>end</em> — see tomorrow's edition for the Sunday lead.</p>
+  </article>
+
+  <hr class="rule-thick" style="margin: 1.6rem 0 1.2rem;" />
+
+  <div class="section-div">
+    <span><span class="sd-name">The Funnies</span> &middot; the daily strip &middot; Saturday triple</span>
+    <span class="sd-note">Recurring lead: Jesus in everyday devotional moments. Schulz/Watterson register. Reverent, never gag-driven.</span>
+  </div>
+
+  <!-- 3 DAILY STRIPS -->
+  <article class="comic-strip-block">
+    <img src="/audits/2026-05-16-newspaper-edition/images/comics/01-bus-stop.png" alt="A four-panel newspaper comic strip in Schulz/Watterson register: a tired commuter sits alone at a city bus stop; Jesus quietly arrives and sits beside him; they sit in silence; the bus pulls up. Bottom caption: 'SOMETIMES PRESENCE IS THE ENTIRE PRAYER.'" loading="lazy" />
+    <div class="csb-meta">
+      <span>Strip 01 &middot; <span class="csb-title">"The Bus Stop"</span></span>
+      <span class="csb-artist">— Mark 4 · "fear not"</span>
+    </div>
+  </article>
+
+  <article class="comic-strip-block">
+    <img src="/audits/2026-05-16-newspaper-edition/images/comics/02-late-email.png" alt="A four-panel comic strip: a woman drafts an apology email at 11:47 p.m., hesitates with cursor on Send, Jesus quietly stands behind her chair, she finally hits send. Bottom caption: 'HALF OF GRACE IS JUST CLICKING THE BUTTON.'" loading="lazy" />
+    <div class="csb-meta">
+      <span>Strip 02 &middot; <span class="csb-title">"The Late Email"</span></span>
+      <span class="csb-artist">— Matthew 5 &middot; "first, be reconciled"</span>
+    </div>
+  </article>
+
+  <article class="comic-strip-block">
+    <img src="/audits/2026-05-16-newspaper-edition/images/comics/03-walking-home.png" alt="A four-panel comic strip: a small child walks home alone with a backpack, kicks a stone, Jesus appears alongside also kicking the stone, the two walk together into the sunset. Bottom caption: 'HE WALKS ALL THE WAY HOME WITH US. EVEN ON THE BAD DAYS.'" loading="lazy" />
+    <div class="csb-meta">
+      <span>Strip 03 &middot; <span class="csb-title">"The Walk Home"</span></span>
+      <span class="csb-artist">— Luke 24 &middot; the Emmaus road</span>
+    </div>
+  </article>
+
+  <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--ink-soft); margin: 0.8rem 0 1rem; font-style: italic;">A new strip every weekday morning (Mon–Sat). Written and lettered by the editorial desk. Generated in batches per liturgical season, hand-curated, stored as a permanent library asset. Prompts available at <a href="/audits/2026-05-16-newspaper-edition/comic-strip-prompts.md" style="color: var(--cobalt);">comic-strip-prompts.md</a> &mdash; the reader can run them again.</p>
+
+  <!-- SUNDAY COLOR -->
+  <div class="section-div" style="margin-top: 1.4rem;">
+    <span><span class="sd-name">Sunday Color &middot; A Preview</span></span>
+    <span class="sd-note">Tomorrow's expanded strip: a full color Sunday in the 1970s CMYK halftone register.</span>
+  </div>
+
+  <article class="sunday-block" aria-label="Sunday color preview — The Boat in the Storm">
+    <img src="/audits/2026-05-16-newspaper-edition/images/comics/04-sunday-color.png" alt="A full-color eight-panel Sunday newspaper comic strip titled 'EUANGELION SUNDAY · THE BOAT IN THE STORM.' A young woman rows a small boat at dawn, Jesus asleep in the stern. Storm gathers. Boat tilts. Waves crash. She cries 'JESUS!' and 'WAKE UP!' He sits up, stands, and quietly commands 'PEACE. BE STILL.' The water flattens. They drift on calm water at sunset. Bottom caption: 'WHO IS THIS, THAT EVEN THE WIND AND WAVES OBEY?'" loading="lazy" />
+    <div class="sb-meta">
+      <p class="sb-tag">Sunday Edition &middot; 17 May 2026 &middot; first read of the week</p>
+      <h3>"The Boat in the Storm."</h3>
+      <p>Eight panels of Mark 4 told in the modern register. The Sunday strip runs in full color — cyan, magenta, yellow, black, with deliberate slight plate misregistration in the manner of a 1970s broadsheet color insert. A title panel sits above the eight story panels and reads "EUANGELION SUNDAY." Caption: <em>"Who is this, that even the wind and waves obey?"</em></p>
+      <p style="font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.14em; color: var(--ink-soft); font-style: italic; margin: 0.4rem 0 0;">The Sunday format adopts the 8-panel-with-title-banner convention used by King Features Syndicate for full-color Sunday strips beginning in the 1930s. The title panel is detachable — papers historically clipped it to fit non-standard column widths.</p>
+      <p style="font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.14em; color: var(--cobalt); text-transform: uppercase; font-weight: 700; margin: 0.6rem 0 0;">→ Returns in full color tomorrow morning, 06:00</p>
+    </div>
+  </article>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE A9 — BACK / CIRCULATION
+     Elements demonstrated: folio, display ad (in-character),
+     subscription / circulation box, colophon / footer
+     ═══════════════════════════════════════════════════════════ -->
+<section class="page paper" id="page-a9" aria-label="Page A9 — Back Cover &amp; Circulation">
+
+  <div class="folio">
+    <span><span class="folio-section">A9</span> · Back &amp; Circulation</span>
+    <span class="folio-paper">Euangelion · The Daily Edition</span>
+    <span>Saturday · 16 May 2026</span>
+  </div>
+
+  <div class="section-div">
+    <span><span class="sd-name">Display Advertisement</span> &middot; from the publisher</span>
+    <span class="sd-note">The in-character ad runs once per week, on the back page.</span>
+  </div>
+
+  <div class="grid-12">
+
+    <!-- DISPLAY AD -->
+    <div class="span-5">
+      <div class="display-ad">
+        <img src="/audits/2026-05-16-newspaper-edition/images/ads/in-character-ad.png" alt="A mid-century-style two-color newspaper display advertisement, cobalt blue and crimson on cream paper, with a hand-drawn illustration of a broken loaf of bread on a wooden table beside an open Bible, a cup of coffee, and an oil lamp. Headline reads 'MORNING BREAD FOR THE CLUTTERED, HUNGRY SOUL.' Body text: 'EUANGELION. DAILY DEVOTIONAL. SIX DAYS A WEEK. SUNDAYS EXPANDED.' Crimson box at bottom reads 'SUBSCRIBE TODAY.'" loading="lazy" />
+      </div>
+
+      <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--ink-soft); margin: 0.6rem 0 0; font-style: italic;">Hand-drawn in the woodcut/scratchboard register that was standard in pre-color-photo newspaper advertising. Two-color riso/screen-print: deep cobalt blue + cream off-white with one crimson red spot color. Heavy Ben-Day halftone dots throughout. Slight plate misregistration preserved. Brand palette: Cobalt Triad on Newspaper Cream, 60–30–10. The illustration carries the offer; the type carries the contract.</p>
+    </div>
+
+    <!-- SUBSCRIPTION / CIRCULATION BOX -->
+    <div class="span-7">
+
+      <div class="sub-box">
+        <p class="kicker" style="margin-bottom: 0.2rem;">Circulation &middot; Subscribe today</p>
+        <h3>"The paper at your door before the kettle is on."</h3>
+        <p>A daily devotional broadsheet delivered to the inbox at 5:55 a.m. local. Six days a week, with an expanded Sunday edition. Ad-free, fully human, daily, ancient.</p>
+
+        <div class="sub-form">
+          <input class="sub-input" type="email" placeholder="you@your-kitchen-table.com" aria-label="Subscription email" />
+          <button class="sub-btn" type="button">Subscribe</button>
+        </div>
+
+        <p style="font-size: 0.78rem; color: var(--ink-soft); font-style: italic; margin-top: 0.6rem;">Free for the first thirty days. After that, the price of one cup of coffee per month, or whatever you choose. We are a reader-funded paper.</p>
+      </div>
+
+      <!-- Circulation details -->
+      <div class="grid-12" style="margin-top: 1rem; gap: 0.6rem;">
+        <div class="span-6">
+          <p class="kicker">Where to read us</p>
+          <p style="font-size: 0.88rem;"><strong style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--cobalt);">Daily web edition</strong><br/><a href="https://euangelion.app" style="color: var(--ink);">euangelion.app</a> &middot; updated every morning at 06:00 ET</p>
+          <p style="font-size: 0.88rem;"><strong style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--cobalt);">Email edition</strong><br/>Subscribe above. Arrives in your inbox before sunrise.</p>
+          <p style="font-size: 0.88rem;"><strong style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--cobalt);">Print edition</strong><br/>Sunday only. A 16-page broadsheet shipped first-class to your address. Cost-plus-postage.</p>
+        </div>
+
+        <div class="span-6">
+          <p class="kicker">Where to write us</p>
+          <p style="font-size: 0.88rem; line-height: 1.5;">
+            <strong style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--cobalt);">Letters to the Editor</strong><br/>
+            <code style="font-family: var(--mono); font-size: 0.82rem;">letters@euangelion.app</code>
+          </p>
+          <p style="font-size: 0.88rem; line-height: 1.5;">
+            <strong style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--cobalt);">Dear Editor</strong><br/>
+            <code style="font-family: var(--mono); font-size: 0.82rem;">deareditor@euangelion.app</code>
+          </p>
+          <p style="font-size: 0.88rem; line-height: 1.5;">
+            <strong style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--cobalt);">Prayer Requests</strong><br/>
+            <code style="font-family: var(--mono); font-size: 0.82rem;">pray@euangelion.app</code>
+          </p>
+          <p style="font-size: 0.88rem; line-height: 1.5;">
+            <strong style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--cobalt);">Classifieds &amp; Notices</strong><br/>
+            <code style="font-family: var(--mono); font-size: 0.82rem;">classifieds@euangelion.app</code>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- COLOPHON -->
+  <footer class="colophon">
+    <h4>Euangelion</h4>
+    <p style="margin: 0 auto 0.4rem; max-width: 60ch; font-style: italic; font-family: var(--serif); font-size: 0.96rem; color: var(--ink);">"A daily newspaper of the Gospel." Fully human, daily, ancient. Reader-funded; ad-free; AI-supported but never AI-led.</p>
+
+    <div class="colophon-grid">
+      <div>
+        <h5>The Paper</h5>
+        <p>Vol. I &middot; No. CXXVII<br/>Founded in spring 2026<br/>Published Mon–Sat, with an expanded Sunday edition</p>
+      </div>
+
+      <div>
+        <h5>Composition</h5>
+        <p>Set in <strong>Instrument Serif</strong> for display &amp; body, <strong>Inter</strong> for labels &amp; agate. SBL Hebrew where the original language appears. Palette: <strong>Cobalt Triad on Newspaper Cream</strong>, 60–30–10.</p>
+      </div>
+
+      <div>
+        <h5>Press &amp; Plant</h5>
+        <p>Web-served from Cloudflare Workers. Printed editions on 35# offset newsprint. Static HTML, no JavaScript required to read the paper. Mobile, tablet, desktop, and printer-friendly.</p>
+      </div>
+
+      <div>
+        <h5>Acknowledgments</h5>
+        <p>Comic strip register owes a debt to Schulz, Hart, Keane, and Watterson. We are not them. Scripture in the public-domain BSB, WEB, KJV, ASV, YLT, DARBY, BBE. Liturgical calendar consulted against the Anglican &amp; Roman traditions.</p>
+      </div>
+
+      <div>
+        <h5>Sources for this specimen</h5>
+        <p><a href="/audits/2026-05-16-newspaper-edition/research-newspaper-anatomy.md" style="color: var(--cobalt);">research-newspaper-anatomy.md</a> &middot; 9,000 words of broadsheet anatomy citing Society for News Design, Poynter, the Library of Congress Chronicling America archive, and Tim Harrower's <em>Newspaper Designer's Handbook</em>.</p>
+      </div>
+
+      <div>
+        <h5>Re-run the funnies</h5>
+        <p><a href="/audits/2026-05-16-newspaper-edition/comic-strip-prompts.md" style="color: var(--cobalt);">comic-strip-prompts.md</a> &middot; All four strip prompts saved verbatim. To produce a new daily strip in the same register, paste a prompt into a Gemini Imagen session (aspect 21:9; for Sunday color, 4:5).</p>
+      </div>
+    </div>
+
+    <p style="margin: 1.2rem 0 0; font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft);">
+      © 2026 Euangelion &middot; All rights reserved &middot; Made by a human, in a kitchen, before the kettle was on
+    </p>
+    <p style="margin: 0.4rem 0 0; font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); font-style: italic;">
+      <em>"Soli Deo Gloria."</em> &middot; This specimen is a review artifact; the home page at <a href="https://euangelion.app" style="color: var(--cobalt);">euangelion.app</a> is the live product.
+    </p>
+  </footer>
+
+</section>
+
+</div>
+</body>
+</html>
