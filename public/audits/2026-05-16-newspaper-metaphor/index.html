@@ -1425,6 +1425,683 @@ footer {
   .lte-ab .lte-a { border-right: 0; border-bottom: 1.5px solid var(--line); }
 }
 
+/* ═══════════════════════════════════════════════
+   THE FUNNIES — comic strip display
+   ═══════════════════════════════════════════════ */
+.style-study {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 0;
+  border-top: var(--hairline);
+  border-left: var(--hairline);
+  margin: var(--rhythm) 0;
+}
+.style-study .style-card {
+  border-right: var(--hairline);
+  border-bottom: var(--hairline);
+  padding: 1rem 1.1rem 1.2rem;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.style-study .style-card[data-recommended] {
+  background: linear-gradient(180deg, rgba(31,42,141,0.04) 0%, var(--paper) 100%);
+}
+.style-study .style-card .style-name {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--cobalt);
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.style-study .style-card .style-tag {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  padding: 0.12rem 0.42rem;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+}
+.style-study .style-card .style-tag.rec { color: var(--green); }
+.style-study .style-card .style-tag.alt { color: var(--burgundy); }
+.style-study .style-card .style-img {
+  width: 100%;
+  background: var(--paper-deep);
+  border: 1px solid var(--line-soft);
+  aspect-ratio: 21/9;
+  overflow: hidden;
+}
+.style-study .style-card .style-img[data-square] { aspect-ratio: 1/1; max-width: 380px; }
+.style-study .style-card .style-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.style-study .style-card .style-body {
+  font-family: var(--serif);
+  font-size: 0.94rem;
+  line-height: 1.42;
+  color: var(--ink);
+  margin: 0;
+}
+.style-study .style-card .style-body em { color: var(--cobalt); font-style: italic; }
+.style-study .style-card .style-traits {
+  display: grid;
+  gap: 0.2rem;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.style-study .style-card .style-traits b { color: var(--cobalt); letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.6rem; margin-right: 0.4em; }
+
+.comic-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--rhythm);
+  margin: var(--rhythm) 0;
+}
+.comic-card {
+  border: var(--hairline);
+  background: var(--paper);
+  padding: 1rem 1.1rem 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 1.2rem;
+  align-items: start;
+}
+@media (max-width: 820px) { .comic-card { grid-template-columns: 1fr; } }
+.comic-card .comic-strip {
+  width: 100%;
+  background: var(--paper-deep);
+  border: 1px solid var(--line-soft);
+  overflow: hidden;
+}
+.comic-card .comic-strip img { width: 100%; height: auto; display: block; }
+.comic-card .comic-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.comic-card .comic-num {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 800;
+}
+.comic-card .comic-title {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  line-height: 1.1;
+  margin: 0;
+}
+.comic-card .comic-source {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0;
+}
+.comic-card .comic-rationale {
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════
+   RESEARCH + INSPIRATIONS section
+   ═══════════════════════════════════════════════ */
+.refs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0;
+  border-top: var(--hairline);
+  border-left: var(--hairline);
+  margin: var(--rhythm) 0;
+}
+.refs-grid .ref-card {
+  border-right: var(--hairline);
+  border-bottom: var(--hairline);
+  padding: 0.9rem 1rem;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.refs-grid .ref-card .ref-tag {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--cobalt);
+}
+.refs-grid .ref-card .ref-name {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  line-height: 1.2;
+  margin: 0;
+}
+.refs-grid .ref-card .ref-name a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.refs-grid .ref-card .ref-note {
+  font-family: var(--serif);
+  font-size: 0.88rem;
+  line-height: 1.42;
+  color: var(--muted);
+  margin: 0;
+}
+.refs-grid .ref-card .ref-take {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  color: var(--burgundy);
+  border-top: 1px solid var(--line-soft);
+  padding-top: 0.3rem;
+  margin-top: auto;
+}
+.refs-grid .ref-card .ref-take b {
+  color: var(--cobalt);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.58rem;
+  margin-right: 0.5em;
+}
+
+.findings-block {
+  border-left: 3px solid var(--cobalt);
+  background: rgba(31,42,141,0.03);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+}
+.findings-block h4 { color: var(--cobalt); margin-top: 0; font-family: var(--sans); }
+.findings-block p { margin: 0.4rem 0; }
+.findings-block ul { margin: 0.4rem 0; padding-left: 1.2rem; }
+
+/* ═══════════════════════════════════════════════
+   FULL HOMEPAGE MOCKUP — end-to-end long-scroll
+   ═══════════════════════════════════════════════ */
+.full-mockup {
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  margin: var(--rhythm) 0;
+  position: relative;
+  overflow: hidden;
+}
+.full-mockup .mockup-frame-label {
+  font-family: var(--sans);
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 0.35rem 0.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+.full-mockup .mockup-frame-label em { font-style: normal; color: var(--gold); }
+
+/* Masthead */
+.fm-mast {
+  text-align: center;
+  padding: 1.2rem 1rem 1rem;
+  border-bottom: 3px double var(--ink);
+}
+.fm-mast .fm-mast-meta {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+}
+.fm-mast h1.fm-wordmark {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 400;
+  font-style: italic;
+  margin: 0.3rem 0 0.2rem;
+  letter-spacing: -0.005em;
+}
+.fm-mast .fm-greek {
+  font-family: var(--serif);
+  font-size: 0.94rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Roll-the-stone hero */
+.fm-hero {
+  position: relative;
+  height: 240px;
+  background: linear-gradient(180deg, #1f2a8d 0%, #0a1320 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--paper);
+  overflow: hidden;
+}
+.fm-hero .fm-tomb { position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: 50%; height: 70%; background: #0a1320; clip-path: polygon(0% 100%, 18% 30%, 50% 8%, 82% 30%, 100% 100%); }
+.fm-hero .fm-light { position: absolute; left: 50%; bottom: 14%; width: 30%; height: 38%; transform: translateX(-50%); background: radial-gradient(ellipse at 50% 90%, rgba(200,165,106,0.7) 0%, transparent 65%); animation: fm-light-glow 5s ease-in-out infinite; }
+.fm-hero .fm-rock { position: absolute; left: 35%; bottom: 12%; width: 38px; height: 38px; background: #2a2a2a; border: 2px solid var(--paper); border-radius: 50%; box-shadow: inset -8px -8px 0 rgba(0,0,0,0.4); animation: fm-rock-roll 5s ease-in-out infinite alternate; }
+@keyframes fm-light-glow { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+@keyframes fm-rock-roll { 0% { transform: translateX(0) rotate(0deg); } 100% { transform: translateX(80px) rotate(40deg); } }
+.fm-hero .fm-hero-text { position: relative; z-index: 2; text-align: center; max-width: 80%; }
+.fm-hero .fm-hero-h { font-family: var(--serif); font-size: clamp(1.3rem, 2.4vw, 1.9rem); font-style: italic; margin: 0; line-height: 1.05; }
+.fm-hero .fm-hero-sub { font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-top: 0.4rem; }
+
+/* Stock ticker */
+.fm-ticker { padding: 0; background: var(--ink); color: var(--paper); height: 36px; display: flex; align-items: center; overflow: hidden; }
+.fm-ticker .fm-tk-tape { display: inline-flex; gap: 1.6rem; white-space: nowrap; animation: bm-ticker-scroll 30s linear infinite; padding-left: 1rem; font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em; }
+.fm-ticker .up { color: var(--gold); }
+.fm-ticker .dn { color: var(--crimson); }
+.fm-ticker .eq { color: rgba(240,236,230,0.6); }
+
+/* Bento grid layout */
+.fm-bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto auto auto;
+  gap: 1px;
+  background: var(--ink);
+  padding: 1px;
+}
+.fm-bento > .fm-slot {
+  background: var(--paper);
+  padding: 0.9rem 1rem;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fm-bento .fm-lead { grid-column: 1 / 8; grid-row: 1 / 3; min-height: 280px; }
+.fm-bento .fm-lead .fm-kicker { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson); font-weight: 800; }
+.fm-bento .fm-lead .fm-headline { font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1; margin: 0.4rem 0 0.6rem; }
+.fm-bento .fm-lead .fm-body { font-size: 0.92rem; line-height: 1.5; color: var(--muted); margin: 0; }
+.fm-bento .fm-lead .fm-body::first-letter { font-family: var(--serif); font-size: 3.2em; line-height: 0.86; float: left; padding: 0.04em 0.12em 0 0; color: var(--cobalt); }
+.fm-bento .fm-lead .fm-jumpline { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--crimson); font-style: italic; margin-top: auto; padding-top: 0.7rem; }
+
+.fm-bento .fm-scripture { grid-column: 8 / 13; grid-row: 1 / 2; text-align: center; justify-content: center; padding: 1rem; }
+.fm-bento .fm-scripture .fm-ref { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cobalt); font-weight: 700; }
+.fm-bento .fm-scripture .fm-orig { font-family: 'SBL Hebrew', serif; font-size: 1.6rem; color: var(--cobalt); direction: rtl; margin: 0.4rem 0 0.2rem; }
+.fm-bento .fm-scripture .fm-verse { font-family: var(--serif); font-style: italic; font-size: 0.95rem; line-height: 1.3; }
+
+.fm-bento .fm-funnies { grid-column: 8 / 13; grid-row: 2 / 3; padding: 0; overflow: hidden; }
+.fm-bento .fm-funnies .fm-fn-head { font-family: var(--sans); font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cobalt); font-weight: 800; padding: 0.4rem 0.7rem 0.25rem; border-bottom: 1.5px solid var(--ink); display: flex; justify-content: space-between; }
+.fm-bento .fm-funnies .fm-fn-head em { color: var(--crimson); font-style: normal; }
+.fm-bento .fm-funnies .fm-fn-strip { flex: 1; min-height: 100px; background-image: url('/images/audit-2026-05-16/comic-strips/03-hope.png'); background-size: cover; background-position: center; }
+
+.fm-bento .fm-opinion { grid-column: 1 / 5; grid-row: 3 / 4; justify-content: center; }
+.fm-bento .fm-opinion .fm-q-mark { font-family: var(--serif); font-size: 2.6rem; line-height: 0.4; color: var(--gold); font-style: italic; height: 1.1em; }
+.fm-bento .fm-opinion .fm-q { font-family: var(--serif); font-style: italic; font-size: 0.98rem; line-height: 1.3; margin: 0.2rem 0 0.4rem; }
+.fm-bento .fm-opinion .fm-by { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: auto; }
+
+.fm-bento .fm-letters { grid-column: 5 / 9; grid-row: 3 / 4; }
+.fm-bento .fm-letters .fm-l-mast { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cobalt); font-style: italic; font-weight: 700; }
+.fm-bento .fm-letters .fm-l-q { font-family: var(--serif); font-size: 1rem; line-height: 1.3; margin: 0.3rem 0 0.4rem; }
+.fm-bento .fm-letters .fm-l-cta { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--crimson); font-weight: 700; margin-top: auto; }
+
+.fm-bento .fm-classifieds { grid-column: 9 / 13; grid-row: 3 / 4; }
+.fm-bento .fm-classifieds .fm-cl-mast { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson); font-weight: 800; border-bottom: 1px solid var(--crimson); padding-bottom: 0.2rem; margin-bottom: 0.3rem; }
+.fm-bento .fm-classifieds ul { columns: 2; column-gap: 0.5rem; list-style: none; padding: 0; margin: 0; font-family: var(--serif); font-size: 0.84rem; line-height: 1.4; }
+
+.fm-bento .fm-almanac { grid-column: 1 / 5; grid-row: 4 / 5; }
+.fm-bento .fm-almanac .fm-al-h { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cobalt); font-weight: 700; }
+.fm-bento .fm-almanac .fm-al-day { font-family: var(--serif); font-size: 1.15rem; margin: 0.3rem 0 0.15rem; }
+.fm-bento .fm-almanac .fm-al-row { font-family: var(--sans); font-size: 0.7rem; color: var(--muted); margin: 0.1rem 0; }
+.fm-bento .fm-almanac .fm-al-feast { color: var(--burgundy); font-style: italic; font-family: var(--serif); }
+
+.fm-bento .fm-weather { grid-column: 5 / 9; grid-row: 4 / 5; background: linear-gradient(180deg, rgba(31,42,141,0.08), var(--paper)); }
+.fm-bento .fm-weather .fm-w-icon { font-size: 2.2rem; line-height: 1; color: var(--cobalt); }
+.fm-bento .fm-weather .fm-w-word { font-family: var(--serif); font-size: 1.5rem; font-style: italic; margin: 0.25rem 0 0.1rem; }
+.fm-bento .fm-weather .fm-w-sub { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; }
+
+.fm-bento .fm-editor { grid-column: 9 / 13; grid-row: 4 / 5; }
+.fm-bento .fm-editor .fm-ed-mast { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cobalt); font-weight: 700; border-bottom: 1px solid var(--line-soft); padding-bottom: 0.25rem; margin-bottom: 0.3rem; }
+.fm-bento .fm-editor .fm-ed-note { font-family: var(--serif); font-style: italic; font-size: 0.86rem; line-height: 1.4; margin: 0; }
+.fm-bento .fm-editor .fm-ed-sig { font-family: var(--serif); font-size: 0.78rem; color: var(--cobalt); margin-top: 0.3rem; }
+
+@media (max-width: 820px) {
+  .fm-bento .fm-lead { grid-column: 1 / 13; grid-row: 1 / 2; min-height: 220px; }
+  .fm-bento .fm-scripture { grid-column: 1 / 13; grid-row: 2 / 3; }
+  .fm-bento .fm-funnies { grid-column: 1 / 13; grid-row: 3 / 4; min-height: 160px; }
+  .fm-bento .fm-opinion { grid-column: 1 / 13; grid-row: 4 / 5; }
+  .fm-bento .fm-letters { grid-column: 1 / 13; grid-row: 5 / 6; }
+  .fm-bento .fm-classifieds { grid-column: 1 / 13; grid-row: 6 / 7; }
+  .fm-bento .fm-almanac { grid-column: 1 / 13; grid-row: 7 / 8; }
+  .fm-bento .fm-weather { grid-column: 1 / 13; grid-row: 8 / 9; }
+  .fm-bento .fm-editor { grid-column: 1 / 13; grid-row: 9 / 10; }
+}
+
+/* Footer */
+.fm-foot {
+  padding: 1rem 1rem 1.2rem;
+  border-top: 3px double var(--ink);
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.fm-foot em { font-style: italic; color: var(--cobalt); }
+
+/* ═══════════════════════════════════════════════
+   SIDE-BY-SIDE: today vs proposed
+   ═══════════════════════════════════════════════ */
+.side-by-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin: var(--rhythm) 0;
+}
+@media (max-width: 820px) { .side-by-side { grid-template-columns: 1fr; } }
+.side-by-side > div { border: var(--hairline); background: var(--paper); }
+.side-by-side .sbs-label {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+.side-by-side .sbs-today .sbs-label { background: var(--paper-deep); color: var(--muted); border-bottom: var(--hairline); }
+.side-by-side .sbs-proposed .sbs-label { background: var(--cobalt); color: var(--paper); }
+.sbs-frame { padding: 1rem; min-height: 380px; }
+
+/* Mocked "today" homepage approximation */
+.sbs-today-mock { display: flex; flex-direction: column; gap: 0.8rem; }
+.sbs-today-mock .sbs-tm-wordmark { font-family: var(--serif); font-size: 2.2rem; font-style: italic; text-align: center; margin: 0; }
+.sbs-today-mock .sbs-tm-greek { font-family: var(--serif); font-size: 0.9rem; font-style: italic; color: var(--muted); text-align: center; margin: 0; }
+.sbs-today-mock .sbs-tm-hero { aspect-ratio: 16/9; background: linear-gradient(180deg, #1f2a8d 0%, #0a1320 100%); position: relative; overflow: hidden; }
+.sbs-today-mock .sbs-tm-hero::after { content: "TODAY'S HERO IMAGE"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: rgba(240,236,230,0.5); font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.2em; }
+.sbs-today-mock .sbs-tm-card { padding: 0.7rem; border: 1px solid var(--line-soft); }
+.sbs-today-mock .sbs-tm-kicker { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.22em; color: var(--cobalt); font-weight: 700; }
+.sbs-today-mock .sbs-tm-h { font-family: var(--serif); font-size: 1.3rem; margin: 0.3rem 0 0.4rem; }
+.sbs-today-mock .sbs-tm-b { font-family: var(--serif); font-size: 0.85rem; color: var(--muted); margin: 0; }
+.sbs-today-mock .sbs-tm-input { background: var(--paper-deep); padding: 0.5rem; font-family: var(--serif); font-style: italic; color: rgba(17,24,42,0.45); font-size: 0.86rem; border: 1px solid var(--line-soft); }
+.sbs-today-mock .sbs-tm-btn { font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.4rem 0.7rem; background: var(--cobalt); color: var(--paper); align-self: flex-start; font-weight: 700; }
+
+.sbs-tradeoffs {
+  margin: 0.8rem 0 var(--breath);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  border-top: var(--hairline);
+  border-left: var(--hairline);
+}
+.sbs-tradeoffs > div {
+  border-right: var(--hairline);
+  border-bottom: var(--hairline);
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+  font-size: 0.86rem;
+}
+.sbs-tradeoffs h5 {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 0.3rem;
+}
+.sbs-tradeoffs .gain h5 { color: var(--green); }
+.sbs-tradeoffs .lose h5 { color: var(--crimson); }
+.sbs-tradeoffs .risk h5 { color: var(--burgundy); }
+
+/* ═══════════════════════════════════════════════
+   PHONE FRAME — mobile previews
+   ═══════════════════════════════════════════════ */
+.phone-rack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.6rem;
+  margin: var(--rhythm) 0;
+  justify-items: center;
+}
+.phone {
+  width: 240px;
+  background: var(--ink);
+  border-radius: 26px;
+  padding: 9px;
+  box-shadow: 0 16px 32px rgba(11,18,32,0.22);
+}
+.phone .phone-bezel {
+  background: var(--ink);
+  border-radius: 22px;
+  position: relative;
+}
+.phone .phone-notch {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 14px;
+  background: #000;
+  border-radius: 12px;
+  z-index: 4;
+}
+.phone .phone-screen {
+  background: var(--paper);
+  border-radius: 18px;
+  overflow: hidden;
+  height: 420px;
+  overflow-y: auto;
+  padding: 26px 6px 12px;
+  font-family: var(--serif);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+.phone .phone-label {
+  text-align: center;
+  margin-top: 0.6rem;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.phone-screen .ph-mast {
+  text-align: center;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.phone-screen .ph-mast h2 { font-family: var(--serif); font-size: 1.3rem; font-style: italic; margin: 0; }
+.phone-screen .ph-mast p { font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin: 0.2rem 0 0; }
+.phone-screen .ph-lead { padding: 0.4rem 0.4rem; border: 1px solid var(--line-soft); margin-bottom: 0.3rem; }
+.phone-screen .ph-lead .ph-kicker { font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.18em; color: var(--crimson); font-weight: 700; text-transform: uppercase; }
+.phone-screen .ph-lead .ph-h { font-family: var(--serif); font-size: 0.95rem; line-height: 1.1; margin: 0.2rem 0; }
+.phone-screen .ph-lead .ph-b { font-size: 0.68rem; color: var(--muted); line-height: 1.4; margin: 0; }
+.phone-screen .ph-tile { padding: 0.35rem 0.4rem; border: 1px solid var(--line-soft); margin-bottom: 0.3rem; }
+.phone-screen .ph-tile .ph-tag { font-family: var(--sans); font-size: 0.48rem; letter-spacing: 0.18em; color: var(--cobalt); font-weight: 700; text-transform: uppercase; }
+.phone-screen .ph-funnies-art { width: 100%; aspect-ratio: 21/9; background-size: cover; background-position: center; margin: 0.3rem 0; }
+.phone-screen .ph-cap { font-style: italic; font-size: 0.7rem; }
+
+/* ═══════════════════════════════════════════════
+   ROLL-THE-STONE big demo
+   ═══════════════════════════════════════════════ */
+.big-stone-stage {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(180deg, #1f2a8d, #0a1320);
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+.big-stone-stage .bs-tomb { position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: 56%; height: 70%; background: #0a1320; clip-path: polygon(0% 100%, 18% 30%, 50% 8%, 82% 30%, 100% 100%); }
+.big-stone-stage .bs-light { position: absolute; left: 50%; bottom: 14%; width: 32%; height: 38%; transform: translateX(-50%); background: radial-gradient(ellipse at 50% 90%, rgba(200,165,106,0.85) 0%, transparent 65%); }
+.big-stone-stage .bs-rock { position: absolute; left: 38%; bottom: 12%; width: 52px; height: 52px; background: #303030; border: 2px solid var(--paper); border-radius: 50%; box-shadow: inset -8px -8px 0 rgba(0,0,0,0.4); animation: bs-roll 6s ease-in-out infinite alternate; }
+@keyframes bs-roll { 0% { transform: translateX(0) rotate(0deg); opacity: 1; } 80% { opacity: 1; } 100% { transform: translateX(120px) rotate(72deg); opacity: 0; } }
+.big-stone-stage .bs-caption { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(240,236,230,0.7); z-index: 3; }
+
+/* ═══════════════════════════════════════════════
+   PAGE-TURN demo
+   ═══════════════════════════════════════════════ */
+.page-turn-stage {
+  position: relative;
+  height: 220px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--paper-deep);
+  border: 1px solid var(--line-soft);
+  overflow: hidden;
+  perspective: 1500px;
+}
+.page-turn-stage .pt-page {
+  background: var(--paper);
+  padding: 0.8rem;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  transition: transform 1.2s cubic-bezier(0.6, 0, 0.4, 1);
+  box-shadow: 1px 0 4px rgba(0,0,0,0.06);
+}
+.page-turn-stage .pt-page-right {
+  transform-origin: left center;
+}
+.page-turn-stage[data-on] .pt-page-right {
+  transform: rotateY(-180deg);
+}
+.page-turn-stage .pt-controls { position: absolute; bottom: 0.5rem; right: 0.6rem; z-index: 3; }
+.page-turn-stage .pt-h { font-family: var(--serif); font-size: 1.05rem; margin: 0 0 0.3rem; }
+.page-turn-stage .pt-b { font-family: var(--serif); font-size: 0.82rem; color: var(--muted); margin: 0; line-height: 1.4; }
+.page-turn-stage .pt-fold { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--line-soft); }
+
+/* ═══════════════════════════════════════════════
+   EDITIONS ARCHIVE demo
+   ═══════════════════════════════════════════════ */
+.editions-rack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.6rem;
+  margin: 0.6rem 0;
+}
+.editions-rack .ed {
+  border: 1.5px solid var(--line-soft);
+  background: var(--paper);
+  padding: 0.5rem 0.6rem;
+  cursor: pointer;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  font-family: var(--sans);
+}
+.editions-rack .ed:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,0.08); border-color: var(--cobalt); }
+.editions-rack .ed .ed-date { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cobalt); font-weight: 700; }
+.editions-rack .ed .ed-h { font-family: var(--serif); font-size: 0.94rem; line-height: 1.18; margin: 0.3rem 0 0.4rem; color: var(--ink); }
+.editions-rack .ed .ed-mini { display: flex; gap: 0.3rem; }
+.editions-rack .ed .ed-mini > span { flex: 1; height: 4px; background: var(--paper-deep); }
+.editions-rack .ed .ed-mini > span:first-child { background: var(--cobalt); }
+.editions-rack .ed.today { border-color: var(--crimson); }
+.editions-rack .ed.today .ed-date { color: var(--crimson); }
+
+/* ═══════════════════════════════════════════════
+   SOUNDSCAPE demo (visual-only mock)
+   ═══════════════════════════════════════════════ */
+.sound-stage {
+  position: relative;
+  height: 160px;
+  background: linear-gradient(180deg, #1f2a8d 0%, #0a1320 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.2rem;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.sound-stage .sound-toggle {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.4rem 0.7rem;
+  border: 1.5px solid var(--paper);
+  color: var(--paper);
+  background: transparent;
+  cursor: pointer;
+}
+.sound-stage[data-on] .sound-toggle { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+.sound-stage .sound-eq { display: flex; gap: 3px; align-items: flex-end; height: 60%; }
+.sound-stage .sound-eq span { width: 4px; background: var(--gold); border-radius: 1px; }
+.sound-stage[data-on] .sound-eq span { animation: sound-bar 1.2s ease-in-out infinite; }
+.sound-stage .sound-eq span:nth-child(1) { height: 30%; animation-delay: 0s; }
+.sound-stage .sound-eq span:nth-child(2) { height: 60%; animation-delay: 0.1s; }
+.sound-stage .sound-eq span:nth-child(3) { height: 45%; animation-delay: 0.2s; }
+.sound-stage .sound-eq span:nth-child(4) { height: 70%; animation-delay: 0.3s; }
+.sound-stage .sound-eq span:nth-child(5) { height: 35%; animation-delay: 0.4s; }
+.sound-stage .sound-eq span:nth-child(6) { height: 55%; animation-delay: 0.5s; }
+.sound-stage .sound-eq span:nth-child(7) { height: 40%; animation-delay: 0.6s; }
+@keyframes sound-bar { 0%, 100% { transform: scaleY(0.4); } 50% { transform: scaleY(1.4); } }
+.sound-stage .sound-label { font-family: var(--serif); font-style: italic; color: var(--paper); }
+.sound-stage[data-on] .sound-label { color: var(--gold); }
+
+/* ═══════════════════════════════════════════════
+   PRINT-THIS-EDITION demo
+   ═══════════════════════════════════════════════ */
+.print-stage {
+  position: relative;
+  height: 200px;
+  background: var(--paper-deep);
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line-soft);
+}
+.print-stage .print-controls { display: flex; gap: 0.5rem; }
+.print-stage .print-paper {
+  flex: 1;
+  background: var(--paper);
+  margin-top: 0.6rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  font-size: 0.62rem;
+  font-family: var(--serif);
+  padding: 0.4rem 0.5rem;
+  line-height: 1.3;
+  color: var(--muted);
+}
+.print-stage .print-paper::after {
+  content: "EUANGELION · DAILY EDITION · 16 MAY 2026";
+  position: absolute;
+  top: 0.3rem;
+  left: 0.4rem;
+  right: 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.2rem;
+}
+.print-stage .print-paper p { font-size: 0.62rem; line-height: 1.3; margin: 1.6rem 0 0.3rem; }
+.print-stage[data-on] .print-paper { animation: print-feed 1.5s ease-out forwards; }
+@keyframes print-feed { 0% { transform: translateY(-100%); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+
+/* ═══════════════════════════════════════════════
+   PHONE FRAME for funnies preview
+   ═══════════════════════════════════════════════ */
+.phone-screen .ph-funnies { padding: 0.35rem; }
+.phone-screen .ph-funnies-strip { width: 100%; }
+
 /* Reduced motion: kill all animations */
 @media (prefers-reduced-motion: reduce) {
   .demo-stone-rock,
@@ -1435,7 +2112,13 @@ footer {
   .demo-dust-stage .speck,
   .demo-folio,
   .demo-bento .tile,
-  .bm-ticker .bm-tk-tape {
+  .bm-ticker .bm-tk-tape,
+  .fm-ticker .fm-tk-tape,
+  .fm-hero .fm-rock,
+  .fm-hero .fm-light,
+  .big-stone-stage .bs-rock,
+  .sound-stage .sound-eq span,
+  .print-stage[data-on] .print-paper {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
@@ -1463,11 +2146,15 @@ footer {
 
 <nav class="toc">
   <a href="#brief">01 — Brief</a>
-  <a href="#funnies">02 — THE FUNNIES voice</a>
+  <a href="#research">01.5 — Research findings</a>
+  <a href="#funnies">02 — THE FUNNIES (8 strips + 4 styles)</a>
   <a href="#letters">03 — LETTERS sub-kicker</a>
   <a href="#bento">04 — Bento tile gamut</a>
   <a href="#motion">05 — Interaction gamut (live)</a>
-  <a href="#picks">06 — Recommended v1</a>
+  <a href="#homepage-mockup">06 — Full homepage mockup</a>
+  <a href="#sidebyside">07 — Today vs proposed</a>
+  <a href="#mobile">08 — Mobile editions</a>
+  <a href="#picks">09 — Recommended v1</a>
 </nav>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -1489,124 +2176,406 @@ footer {
 <hr/>
 
 <!-- ═══════════════════════════════════════════════════════════
+     01.5 — RESEARCH & INSPIRATIONS
+     ═══════════════════════════════════════════════════════════ -->
+<section id="research">
+<p class="kicker">01.5 · Research</p>
+<h2>What we studied before pitching anything.</h2>
+<p class="lede">Five topics, ~7,500 words of deep-dive, ~40 sources. The full document lives at <a href="/audits/2026-05-16-newspaper-metaphor/research-deep-dive.md">research-deep-dive.md</a>. Below: the load-bearing findings the rest of this page assumes.</p>
+
+<h3>Finding 1 — Christian newspaper comic strips already exist. We're not inventing.</h3>
+<div class="findings-block">
+  <h4>The lineage in numbers</h4>
+  <ul>
+    <li><b>Schulz · Peanuts</b> — <a href="https://www.beliefnet.com/entertainment/articles/religion-charlie-brown-and-charles-schultz.aspx">560 of ~17,800 strips with religious or biblical content</a>. Linus' Luke 2 reading on 1965 CBS still airs annually. Established by Stephen J. Lind in <a href="https://www.challies.com/book-reviews/a-charlie-brown-religion/"><em>A Charlie Brown Religion</em></a> (UP Mississippi, 2015).</li>
+    <li><b>Hart · B.C.</b> — daily strip from 1958–present; <a href="https://religionnews.com/2009/06/19/in-bc-comic-strip-artist-hart-had-a-heart-for-god1/">openly Christian from 1984</a>. The Easter 2001 menorah-to-cross strip drew ADL/AJC protest; Hart's later anthology <a href="https://www.amazon.com/Did-His-Way-Collection-Religious/dp/1404187391"><em>I Did It His Way</em></a> is the canonical book.</li>
+    <li><b>Keane · Family Circus</b> — Catholic, <a href="https://www.beliefnet.com/columnists/news/2011/11/family-circus-cartoonist-bil-keane-brought-quiet-faith-to-the-daily-comics-for-50-years">NCEA Elizabeth Ann Seton Award 1992</a>. The dotted-arc path of a wandering child is his most famous innovation.</li>
+    <li><b>Watterson · Calvin &amp; Hobbes</b> — not Christian per se, but <a href="https://commonreader.wustl.edu/bill-wattersons-wisdom-literature/">read as "Wisdom Literature"</a>. The deranged-snowmen captioned <em>"The Torment of Existence Weighed Against the Horror of Nonbeing"</em> is the canonical existential-strip example.</li>
+    <li><b>Modern Christian webcomics</b> — <a href="https://adam4d.com/">Adam4d</a> (apologetic, doctrinal), <a href="https://www.ivpress.com/coffee-with-jesus-ebook">Coffee with Jesus</a> by David Wilkie (clip-art mechanic, irreverent), <a href="https://www.cuylerblack.com/inherit-the-mirth-1">Inherit the Mirth</a> by Cuyler Black (<em>"The Far Side meets the Bible,"</em> single-panel, full-color), <a href="http://www.gospel.com/ministries/reverend-fun/">Reverend Fun</a> (1995–2015, 3,230 cartoons). Plus <a href="https://nakedpastor.com/">NakedPastor</a> as the deconstructionist counter-pole.</li>
+  </ul>
+</div>
+
+<h3>Finding 2 — Daily editorial cartoons belong on the front page of a serious paper.</h3>
+<div class="findings-block">
+  <h4>Le Monde + Plantu, 1972–2021</h4>
+  <p><a href="https://en.wikipedia.org/wiki/Le_Monde"><em>Le Monde's</em> front page sequence</a> — even on the digital edition — preserves: opinion column at left, current-affairs photograph, day's editorial in the center, <b>a cartoon by Plantu at the bottom of the page</b>. <em>Plantu was Le Monde's daily editorial cartoonist for 49 years.</em> The slot is part of the paper's identity. This is the most direct historical evidence that a daily strip belongs at the front, not buried.</p>
+</div>
+
+<h3>Finding 3 — The newspaper metaphor on the web doesn't require ten reporters.</h3>
+<div class="refs-grid">
+  <div class="ref-card">
+    <p class="ref-tag">NYT homepage</p>
+    <p class="ref-name"><a href="https://www.fastcompany.com/90129186/why-you-may-not-even-notice-the-new-york-times-major-homepage-redesign">Consolidated responsive layout</a></p>
+    <p class="ref-note">Still treats the <b>kicker</b> (tiny all-caps section label above the headline) as a sacred unit. <em>That's the move that says "newspaper" faster than any other.</em></p>
+    <p class="ref-take"><b>Use</b> kickers ruthlessly. We already do.</p>
+  </div>
+  <div class="ref-card">
+    <p class="ref-tag">Le Monde</p>
+    <p class="ref-name"><a href="https://en.wikipedia.org/wiki/Le_Monde">Plantu cartoon slot, 49 years on the front page</a></p>
+    <p class="ref-note">A daily editorial cartoon is part of a serious paper's identity. Plantu was Le Monde's voice from 1972 to 2021 — not buried, on the front.</p>
+    <p class="ref-take"><b>Use</b> the funnies slot at the bottom of the homepage — visible without scrolling on desktop, just below the fold on phone.</p>
+  </div>
+  <div class="ref-card">
+    <p class="ref-tag">The Guardian (2025 redesign)</p>
+    <p class="ref-name"><a href="https://www.creativeboom.com/news/the-guardians-2025-redesign-is-the-upgrade-its-readers-deserve/">Section-specific typography per rail</a></p>
+    <p class="ref-note">The 2025 redesign gave each section "its own visual identity" — addressing the <em>"everything looks the same"</em> problem of news websites.</p>
+    <p class="ref-take"><b>Permission</b> for our funnies tile, Bible-365 rail, and devotional reader to look genuinely different from each other.</p>
+  </div>
+  <div class="ref-card">
+    <p class="ref-tag">FT Story Playbook</p>
+    <p class="ref-name"><a href="https://source.opennews.org/articles/story-templates-financial-times-reusable/">Templated scrollytelling system</a></p>
+    <p class="ref-note">The FT preserves "above the fold / below the fold / the basement" vocabulary in its digital workflow. The "basement" is the bottom-of-page slot.</p>
+    <p class="ref-take"><b>Adopt</b> the basement metaphor. Funnies live in the basement of every day's edition.</p>
+  </div>
+  <div class="ref-card">
+    <p class="ref-tag">The Marginalian</p>
+    <p class="ref-name"><a href="https://www.themarginalian.org/">"Undistracted notes on the search for meaning, free, ad-free, AI-free, fully human since 2006"</a></p>
+    <p class="ref-note">Maria Popova's site — enormous serif body, slow scroll, single-column. Readers describe it as <em>"traversing through an online museum."</em> Closest cousin to euangelion's quiet-dense register.</p>
+    <p class="ref-take"><b>Borrow</b> the tone-disclaimer move. Our version: <em>"fully human, daily, ancient."</em></p>
+  </div>
+  <div class="ref-card">
+    <p class="ref-tag">Awwwards SOTY 2024-26</p>
+    <p class="ref-name"><a href="https://www.awwwards.com/annual-awards-2025/">Igloo Inc., Don't Board Me, Opal Tadpole</a></p>
+    <p class="ref-note">Honest read: top Awwwards winners do not skew editorial. They skew WebGL/3D promo sites. Editorial-feeling wins live in the <a href="https://www.awwwards.com/inspiration/editorial-layout">Editorial Layout collection</a>, not at SOTY.</p>
+    <p class="ref-take"><b>Reject</b> the Awwwards-WebGL register. Euangelion's metaphor is <em>typographic</em>, not <em>cinematic</em>. State this as a brand position.</p>
+  </div>
+</div>
+
+<h3>Finding 4 — Bento is a product-page pattern, not an editorial-page pattern.</h3>
+<div class="findings-block">
+  <h4>The critical line that decides where to use bento on our site</h4>
+  <blockquote style="border-left: 3px solid var(--cobalt); padding-left: 1rem; margin: 0.5rem 0; font-style: italic;">"A publication's homepage relies on strict hierarchy by date and prominence — modular layouts blur that signal rather than clarifying it. Long-form editorial sites and blogs rarely benefit from bento treatment, as readers expect linear flow…"</blockquote>
+  <p style="font-size: 0.85rem; color: var(--muted);">— <a href="https://landdding.com/blog/bento-grid-design-by-website-category-where-the-pattern-wins">Landdding · "Bento Grid by Website Category"</a></p>
+  <p><b>Implication:</b> use bento on the <em>marketing</em> homepage (the "what is euangelion" surface). Use column-and-rail typography on the <em>daily edition</em> (the actual devotional reader). Stating this constraint on the pitch page is itself a brand move.</p>
+  <p style="font-size: 0.9rem;">Quantitative evidence for the marketing-page bento: <a href="https://landdding.com/blog/bento-grid-design-by-website-category-where-the-pattern-wins">Landdding's 2025 analysis of 200 redesigned SaaS homepages</a> found <b>31% increased time-on-page</b> for bento feature sections vs. traditional stacked. Apple-influenced studies cite 35% lift. Bento earns its keep on marketing surfaces.</p>
+</div>
+
+<h3>Finding 5 — Commit to one signature animation, support it with one second-tier.</h3>
+<div class="findings-block">
+  <h4>The animation budget</h4>
+  <p>The research argues against animation everywhere. The pattern that wins is: <b>one signature animation</b> + <b>one second-tier signature</b> + everything else quiet.</p>
+  <ul>
+    <li><b>Signature:</b> the rolling stone on Easter. <a href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API">View Transitions API</a> reached Baseline Newly Available in October 2025 (Chrome 111+, Edge 111+, Firefox 133+, Safari 18+). The technical foundation is essentially free. The route <code>/easter</code> opens with the stone fixed on the viewport; scroll/tap rolls it aside; the page rebuilds behind it.</li>
+    <li><b>Second-tier:</b> type-on-load headline. FT, Bloomberg, and Reuters all use this for live "breaking news." For us: the daily devotional title types itself on load — once, then settles. Cursor blinks for one beat. Visually says "fresh, printed today."</li>
+    <li><b>Quiet ticker</b> at the very top with three items (today's verse, today's liturgical day, today's prayer concern). Slow motion. Never aggressive.</li>
+    <li><b>Book-spine progress</b> on the left edge instead of the standard top scroll bar. Cheap. High brand payoff.</li>
+    <li><b>Drop caps</b> with tiny gold/cobalt illumination behind each one. Medieval-manuscript register. Already half-shipped.</li>
+  </ul>
+</div>
+
+<div class="callout warn">
+  <h4>The constraint to declare on the pitch page</h4>
+  <p>The research is unambiguous on one point: <em>generated comic-strip art lives in batches, hand-curated, stored as a library asset. No real-time AI on user request. No daily-strip generation pipeline.</em> This matches the CLAUDE.md rule (<em>"manifest first, generation last"</em>) and protects the devotional seriousness of the content. Strips are generated once per liturgical season, ~30 at a time, hand-reviewed, and shipped.</p>
+</div>
+
+<div style="font-family: var(--sans); font-size: 0.78rem; color: var(--muted); padding: 0.6rem 0 0; border-top: var(--hairline-soft); margin-top: 1rem;">
+  Full source list (priority-ordered) in the <a href="/audits/2026-05-16-newspaper-metaphor/research-deep-dive.md">research deep-dive</a>. Top three: Lind's <em>A Charlie Brown Religion</em>, Hart's <em>I Did It His Way</em>, the <a href="https://schulzmuseum.org/the-biblical-job/">Charles M. Schulz Museum's Biblical Job page</a>.
+</div>
+</section>
+
+<hr/>
+
+<!-- ═══════════════════════════════════════════════════════════
      02 — THE FUNNIES VOICE
      ═══════════════════════════════════════════════════════════ -->
 <section id="funnies">
 <p class="kicker">02 · The Funnies</p>
-<h2>"Peanuts but Jesus" — six sample captions.</h2>
-<p class="lede">Schulz wrote 560+ Peanuts strips with religious content. Linus was his spiritual voice. The bar: hope held alongside doubt, never preachy, never snarky.</p>
+<h2>"Peanuts but Jesus" — built, not described.</h2>
+<p class="lede">Christians have always quietly preached the Gospel in eight inches of newsprint. Hart, Schulz, Keane, Watterson — four canonical strips with theological reach. Below: the lineage in their own visual register, three style directions for a Euangelion daily strip, and eight sample strips drawn fresh in the recommended direction.</p>
 
-<div class="col-block">
-<h3>What "Peanuts but Jesus" means in practice.</h3>
-<ul>
-<li><b>Honest about hard things</b>, said by a small voice. Failure as default; grace as surprise.</li>
-<li><b>One sentence, max two.</b> A panel observes; it doesn't argue.</li>
-<li><b>Image leads, caption tags.</b> A single woodcut + one quiet line under it. No word balloons.</li>
-<li><b>Never punching down.</b> Job's friends are fair game; Job isn't.</li>
-</ul>
+<h3>The lineage — four cartoonists who already did this.</h3>
+<p>Before pitching what our strip should be, here is what already exists. (Detailed deep-dive: <a href="/audits/2026-05-16-newspaper-metaphor/research-deep-dive.md">research-deep-dive.md</a>.)</p>
+
+<div class="refs-grid">
+  <div class="ref-card">
+    <p class="ref-tag">Schulz · Peanuts</p>
+    <p class="ref-name"><a href="https://www.beliefnet.com/entertainment/articles/religion-charlie-brown-and-charles-schultz.aspx">560 of 17,800 strips with religious content</a></p>
+    <p class="ref-note">Linus' Luke 2 recitation in <em>A Charlie Brown Christmas</em> (1965) is the most-watched explicit Gospel reading on American TV. Schulz fought CBS to keep it. <em>"If we don't do it, who will?"</em></p>
+    <p class="ref-take"><b>Take</b> the visual proportions — round head ≈ ⅓ body height, dot eyes, wobbly mouth, no nose. The face carries everything.</p>
+  </div>
+  <div class="ref-card">
+    <p class="ref-tag">Johnny Hart · B.C.</p>
+    <p class="ref-name"><a href="https://breakpoint.org/how-johnny-hart-taught-millions-about-easter-in-the-sunday-funny-papers/">The Easter Menorah strip (Apr 15 2001)</a></p>
+    <p class="ref-note">Hart converted in 1984; ran openly Christian Easter/Christmas strips for two decades. Visual restraint: a horizon line, a single rock, two figures, no backgrounds. <em>Less paint, more prayer.</em></p>
+    <p class="ref-take"><b>Take</b> the radical reduction — strip everything that isn't the emotional beat. Hart could draw a week's strips in hours because the form is so spare.</p>
+  </div>
+  <div class="ref-card">
+    <p class="ref-tag">Bil Keane · Family Circus</p>
+    <p class="ref-name"><a href="https://www.beliefnet.com/columnists/news/2011/11/family-circus-cartoonist-bil-keane-brought-quiet-faith-to-the-daily-comics-for-50-years">Catholic, NCEA Seton Award, 1992</a></p>
+    <p class="ref-note">"I don't set out to preach… since I feel religion is a natural part of family life, I show that in cartoons periodically." Innovations: the dotted-line path of a child wandering through a house; the "Not Me" ghost.</p>
+    <p class="ref-take"><b>Take</b> the circular single-panel format as a deliberate counterweight to broadsheet rectangles. Distinct from the prose around it.</p>
+  </div>
+  <div class="ref-card">
+    <p class="ref-tag">Bill Watterson · Calvin &amp; Hobbes</p>
+    <p class="ref-name"><a href="https://commonreader.wustl.edu/bill-wattersons-wisdom-literature/">"Bill Watterson's Wisdom Literature"</a></p>
+    <p class="ref-note">Not a Christian cartoonist per se, but the modern strip that most seriously sits with mortality, meaning, doubt. The deranged-snowmen series is captioned <em>"The Torment of Existence Weighed Against the Horror of Nonbeing."</em></p>
+    <p class="ref-take"><b>Take</b> the permission to hold hard things lightly. The final strip's line — <em>"Let's go exploring"</em> — is the affect a daily devotional newspaper wants.</p>
+  </div>
 </div>
 
-<h3>Which voice lands? Mark each one.</h3>
-<p>Each panel is one of the 643 existing archive prints. The six captions span tones from quiet-philosophical to dry-observational. Pick the ones that work.</p>
+<div class="callout">
+  <h4>The visual register, one sentence</h4>
+  <p><em>Three to four panels, ink line, Ben-Day halftone shading, all-caps hand lettering, no background — Schulz proportions, Hart restraint.</em></p>
+  <p style="font-size:0.86rem; color:var(--muted); margin-top:0.4rem;">Ben-Day dots are the printing technique invented in 1879 by Benjamin Henry Day Jr.; used in Sunday comics from 1893 onward when New York papers acquired color rotary web presses. Misregistration of ink plates "could even add to the charm of old comics" — which dovetails with the existing euangelion riso/halftone brand spec. <a href="https://en.wikipedia.org/wiki/Ben_Day_process">Wikipedia · Ben Day process</a>.</p>
+</div>
 
-<div class="funny-grid">
+<hr style="margin: var(--rhythm) 0;"/>
 
-  <article class="pitch-card funny-card">
-    <p class="funny-kicker">A · QUIET / PHILOSOPHICAL</p>
-    <div class="funny-art"><img src="/images/devotional-prints/arch-chartres-labyrinth.webp" alt="Chartres labyrinth" loading="lazy" /></div>
-    <p class="funny-caption">"Some days I walk the same circle three times and call it a journey."</p>
-    <p class="funny-attribution">— anon. · after the Chartres labyrinth</p>
-    <div class="decision" data-card="funnies-a">
-      <fieldset class="decision-tri" data-name="funnies-a">
-        <legend>Decision</legend>
-        <label data-state="yes"><input type="radio" name="funnies-a" value="yes" /><span>Yes</span></label>
-        <label data-state="maybe"><input type="radio" name="funnies-a" value="maybe" /><span>Maybe</span></label>
-        <label data-state="no"><input type="radio" name="funnies-a" value="no" /><span>No</span></label>
+<h3>Three style directions — pick the visual lane.</h3>
+<p>The research argues for <b>pairing two strips on one funnies page</b>, like a real newspaper: a serious daily (Direction A) + a gag daily (Direction C), with Direction B reserved for liturgical-holiday specials. Below each direction is a freshly-generated real strip in that style — these are <em>not</em> the existing devotional-print paintings; these are bespoke, drawn-for-this-pitch comic-strip art.</p>
+
+<div class="style-study">
+  <div class="style-card" data-recommended>
+    <p class="style-name">Direction A · The Linus Kid<span class="style-tag rec">My pick</span></p>
+    <div class="style-img"><img src="/images/audit-2026-05-16/comic-strips/01-boat-in-storm.png" alt="Schulz-style sample: The Boat in the Storm" loading="lazy" /></div>
+    <p class="style-body">A single recurring child — Schulz proportions, working-class hair, plain striped shirt — sits with the wrestle. No biblical costuming. No first-century setting. Theology lives in the caption, not the costume. <em>Highest emotional ceiling, lowest production cost.</em></p>
+    <div class="style-traits">
+      <span><b>Cast</b> One recurring kid (placeholder name: <em>Linus</em>) + a stuffed lamb</span>
+      <span><b>Cadence</b> 4-panel daily, expanded Sunday</span>
+      <span><b>Risk</b> Writer dependency — needs theological depth + comic timing</span>
+      <span><b>Visual debt</b> Peanuts</span>
+    </div>
+    <div class="decision" data-card="funnies-style-a">
+      <fieldset class="decision-tri" data-name="funnies-style-a"><legend>Pick this direction</legend>
+        <label data-state="yes"><input type="radio" name="funnies-style-a" value="yes" /><span>Yes</span></label>
+        <label data-state="maybe"><input type="radio" name="funnies-style-a" value="maybe" /><span>Maybe</span></label>
+        <label data-state="no"><input type="radio" name="funnies-style-a" value="no" /><span>No</span></label>
       </fieldset>
-      <textarea class="decision-notes" data-notes-for="funnies-a" placeholder="Notes…"></textarea>
+      <textarea class="decision-notes" data-notes-for="funnies-style-a" placeholder="Notes…"></textarea>
+    </div>
+  </div>
+
+  <div class="style-card">
+    <p class="style-name">Direction B · Wild-Hair &amp; the Lamb<span class="style-tag alt">Alt</span></p>
+    <div class="style-img"><img src="/images/audit-2026-05-16/funnies-options/style-b-calvin-hobbes.png" alt="Calvin-and-Hobbes-style sample" loading="lazy" /></div>
+    <p class="style-body">A small boy + a stuffed lamb that comes alive in his imagination — the lamb representing Jesus, calm and observing. <em>Watterson</em> register: more expressive line, dynamic poses, atmospheric backgrounds. <em>Higher craft ceiling, harder to sustain daily.</em></p>
+    <div class="style-traits">
+      <span><b>Cast</b> Wild-haired boy + Lamb (alive only to him)</span>
+      <span><b>Cadence</b> 4-panel daily, splash Sunday</span>
+      <span><b>Risk</b> Lamb-as-Jesus is theologically suggestive — needs careful framing</span>
+      <span><b>Visual debt</b> Calvin &amp; Hobbes</span>
+    </div>
+    <div class="decision" data-card="funnies-style-b">
+      <fieldset class="decision-tri" data-name="funnies-style-b"><legend>Pick this direction</legend>
+        <label data-state="yes"><input type="radio" name="funnies-style-b" value="yes" /><span>Yes</span></label>
+        <label data-state="maybe"><input type="radio" name="funnies-style-b" value="maybe" /><span>Maybe</span></label>
+        <label data-state="no"><input type="radio" name="funnies-style-b" value="no" /><span>No</span></label>
+      </fieldset>
+      <textarea class="decision-notes" data-notes-for="funnies-style-b" placeholder="Notes…"></textarea>
+    </div>
+  </div>
+
+  <div class="style-card">
+    <p class="style-name">Direction C · Family Circus<span class="style-tag alt">Alt</span></p>
+    <div class="style-img" data-square><img src="/images/audit-2026-05-16/funnies-options/style-c-family-circus.png" alt="Family-Circus-style sample" loading="lazy" /></div>
+    <p class="style-body">Circular one-panel format. A modern household, gentle ink-wash shading, a dad reading the Bible aloud while three kids drift in and out. <em>Most accessible to non-churched readers, lowest theological risk.</em> Reads as <em>bulletin</em> not <em>broadsheet</em> — which is its strength: it doesn't compete with the prose around it.</p>
+    <div class="style-traits">
+      <span><b>Cast</b> One household (parent + 2-3 kids)</span>
+      <span><b>Cadence</b> 1-panel daily, expanded Sunday</span>
+      <span><b>Risk</b> Closest to overdone — every Christian publication has tried this</span>
+      <span><b>Visual debt</b> Family Circus + Coffee with Jesus</span>
+    </div>
+    <div class="decision" data-card="funnies-style-c">
+      <fieldset class="decision-tri" data-name="funnies-style-c"><legend>Pick this direction</legend>
+        <label data-state="yes"><input type="radio" name="funnies-style-c" value="yes" /><span>Yes</span></label>
+        <label data-state="maybe"><input type="radio" name="funnies-style-c" value="maybe" /><span>Maybe</span></label>
+        <label data-state="no"><input type="radio" name="funnies-style-c" value="no" /><span>No</span></label>
+      </fieldset>
+      <textarea class="decision-notes" data-notes-for="funnies-style-c" placeholder="Notes…"></textarea>
+    </div>
+  </div>
+
+  <div class="style-card">
+    <p class="style-name">Direction D · The Two on a Rock<span class="style-tag alt">Alt</span></p>
+    <div class="style-img"><img src="/images/audit-2026-05-16/funnies-options/style-d-bc-johnny-hart.png" alt="B.C./Johnny-Hart-style sample" loading="lazy" /></div>
+    <p class="style-body">Two bald figures on a flat rock, single horizon, no setting. <em>B.C. by Johnny Hart</em> register: extreme reduction, daffynition wordplay, theological one-liners. <em>Easiest to produce, hardest to make emotionally serious.</em> Better as a side strip than the main one.</p>
+    <div class="style-traits">
+      <span><b>Cast</b> Two recurring figures (Wiley &amp; Peter as placeholders)</span>
+      <span><b>Cadence</b> 3-panel daily</span>
+      <span><b>Risk</b> Reads as one-joke if the writer isn't sharp</span>
+      <span><b>Visual debt</b> B.C. (1958–2007)</span>
+    </div>
+    <div class="decision" data-card="funnies-style-d">
+      <fieldset class="decision-tri" data-name="funnies-style-d"><legend>Pick this direction</legend>
+        <label data-state="yes"><input type="radio" name="funnies-style-d" value="yes" /><span>Yes</span></label>
+        <label data-state="maybe"><input type="radio" name="funnies-style-d" value="maybe" /><span>Maybe</span></label>
+        <label data-state="no"><input type="radio" name="funnies-style-d" value="no" /><span>No</span></label>
+      </fieldset>
+      <textarea class="decision-notes" data-notes-for="funnies-style-d" placeholder="Notes…"></textarea>
+    </div>
+  </div>
+</div>
+
+<div class="callout ok">
+  <h4>My recommendation</h4>
+  <p><b>Pair Direction A and Direction C on one funnies page</b>, like a real newspaper has two strips side by side. <em>The Linus Kid</em> carries the serious wrestle. <em>The Family</em> carries the gentle daily-life note. Reserve <em>Wild-Hair &amp; the Lamb</em> for Easter/Christmas Sunday strips where the audience is primed for higher craft. Skip <em>Two on a Rock</em> for v1.</p>
+  <p style="font-size:0.86rem; color:var(--muted); margin-top:0.4rem;">Why pair two? Because a real funnies page has two strips. One can be quiet; the other can be wry. Readers who don't connect with one might land on the other. Schulz himself ran 1 strip; Hart and Keane shared one slot on most papers — Euangelion can run two from day one.</p>
+</div>
+
+<hr style="margin: var(--breath) 0 var(--rhythm);"/>
+
+<h3>Eight sample strips — Direction A, freshly drawn.</h3>
+<p>Below: the actual proposed daily strip in the recommended visual register. Generated by AI in the Schulz/Peanuts line-art register, with the recurring dark-haired-bob protagonist Mary as the placeholder lead character. <b>Mark each one Yes / Maybe / No</b>. Caption text is editable; the visual register is the proposal.</p>
+
+<p style="font-size: 0.9rem; color: var(--muted); font-style: italic;">Cadence promise: Direction A would ship <b>six new strips per week</b> (Mon–Sat), written by a single voice. Sundays expand to 8-panel format with a title panel — matching the real newspaper rhythm. Strips are generated in batches per liturgical season, hand-curated, and stored as a permanent library asset. No real-time AI on user request.</p>
+
+<div class="comic-grid">
+
+  <article class="comic-card">
+    <div class="comic-strip"><img src="/images/audit-2026-05-16/comic-strips/01-boat-in-storm.png" alt="Boat in the Storm" loading="lazy" /></div>
+    <div class="comic-meta">
+      <p class="comic-num">Strip 01</p>
+      <h4 class="comic-title">The Boat in the Storm</h4>
+      <p class="comic-source">Mark 4 · 35–41</p>
+      <p class="comic-rationale">Charlie-Brown confessional voice. The lamb (silent stand-in for Christ) is calm; the protagonist isn't. The final caption — <em>"I keep waiting until the boat goes under"</em> — is the most quotable line in the set. Sets the voice for the whole strip.</p>
+      <div class="decision" data-card="funnies-01">
+        <fieldset class="decision-tri" data-name="funnies-01"><legend>Decision</legend>
+          <label data-state="yes"><input type="radio" name="funnies-01" value="yes" /><span>Yes</span></label>
+          <label data-state="maybe"><input type="radio" name="funnies-01" value="maybe" /><span>Maybe</span></label>
+          <label data-state="no"><input type="radio" name="funnies-01" value="no" /><span>No</span></label>
+        </fieldset>
+        <textarea class="decision-notes" data-notes-for="funnies-01" placeholder="Notes…"></textarea>
+      </div>
     </div>
   </article>
 
-  <article class="pitch-card funny-card">
-    <p class="funny-kicker">B · CONFESSIONAL / CHARLIE-BROWN</p>
-    <div class="funny-art"><img src="/images/devotional-prints/aivazovsky-ninth-wave.webp" alt="Stormy sea" loading="lazy" /></div>
-    <p class="funny-caption">"The disciples woke him before the boat went under. I keep waiting until the boat goes under."</p>
-    <p class="funny-attribution">Mark 4 · the storm</p>
-    <div class="decision" data-card="funnies-b">
-      <fieldset class="decision-tri" data-name="funnies-b">
-        <legend>Decision</legend>
-        <label data-state="yes"><input type="radio" name="funnies-b" value="yes" /><span>Yes</span></label>
-        <label data-state="maybe"><input type="radio" name="funnies-b" value="maybe" /><span>Maybe</span></label>
-        <label data-state="no"><input type="radio" name="funnies-b" value="no" /><span>No</span></label>
-      </fieldset>
-      <textarea class="decision-notes" data-notes-for="funnies-b" placeholder="Notes…"></textarea>
+  <article class="comic-card">
+    <div class="comic-strip"><img src="/images/audit-2026-05-16/comic-strips/02-mary-martha.png" alt="Mary and Martha" loading="lazy" /></div>
+    <div class="comic-meta">
+      <p class="comic-num">Strip 02</p>
+      <h4 class="comic-title">Mary kept the seat.</h4>
+      <p class="comic-source">Luke 10 · 38–42</p>
+      <p class="comic-rationale">Introduces a second character — Martha — for dialogue interplay. The kitchen + impossible dish-stack gag is Schulz-tier visual comedy. The final caption — <em>"Martha kept the schedule. Mary kept the seat"</em> — is the most epigrammatic line of the set; it reads aloud the way Lind says Schulz's best one-liners did.</p>
+      <div class="decision" data-card="funnies-02">
+        <fieldset class="decision-tri" data-name="funnies-02"><legend>Decision</legend>
+          <label data-state="yes"><input type="radio" name="funnies-02" value="yes" /><span>Yes</span></label>
+          <label data-state="maybe"><input type="radio" name="funnies-02" value="maybe" /><span>Maybe</span></label>
+          <label data-state="no"><input type="radio" name="funnies-02" value="no" /><span>No</span></label>
+        </fieldset>
+        <textarea class="decision-notes" data-notes-for="funnies-02" placeholder="Notes…"></textarea>
+      </div>
     </div>
   </article>
 
-  <article class="pitch-card funny-card">
-    <p class="funny-kicker">C · DRY / OBSERVATIONAL</p>
-    <div class="funny-art"><img src="/images/devotional-prints/vermeer-christ-martha-mary.webp" alt="Christ in the House of Martha and Mary" loading="lazy" /></div>
-    <p class="funny-caption">"Martha kept the schedule. Mary kept the seat."</p>
-    <p class="funny-attribution">Luke 10 · 38–42</p>
-    <div class="decision" data-card="funnies-c">
-      <fieldset class="decision-tri" data-name="funnies-c">
-        <legend>Decision</legend>
-        <label data-state="yes"><input type="radio" name="funnies-c" value="yes" /><span>Yes</span></label>
-        <label data-state="maybe"><input type="radio" name="funnies-c" value="maybe" /><span>Maybe</span></label>
-        <label data-state="no"><input type="radio" name="funnies-c" value="no" /><span>No</span></label>
-      </fieldset>
-      <textarea class="decision-notes" data-notes-for="funnies-c" placeholder="Notes…"></textarea>
+  <article class="comic-card">
+    <div class="comic-strip"><img src="/images/audit-2026-05-16/comic-strips/03-hope.png" alt="Hope" loading="lazy" /></div>
+    <div class="comic-meta">
+      <p class="comic-num">Strip 03</p>
+      <h4 class="comic-title">Hope — one string left.</h4>
+      <p class="comic-source">G.F. Watts 1886 · re-imagined</p>
+      <p class="comic-rationale">The Linus-est of the set. Hope as the lyre with one string remaining, eyes blindfolded, still tuning. The single small star in panel 2 carries the entire theology without preaching it. Reserve this for a slow week.</p>
+      <div class="decision" data-card="funnies-03">
+        <fieldset class="decision-tri" data-name="funnies-03"><legend>Decision</legend>
+          <label data-state="yes"><input type="radio" name="funnies-03" value="yes" /><span>Yes</span></label>
+          <label data-state="maybe"><input type="radio" name="funnies-03" value="maybe" /><span>Maybe</span></label>
+          <label data-state="no"><input type="radio" name="funnies-03" value="no" /><span>No</span></label>
+        </fieldset>
+        <textarea class="decision-notes" data-notes-for="funnies-03" placeholder="Notes…"></textarea>
+      </div>
     </div>
   </article>
 
-  <article class="pitch-card funny-card">
-    <p class="funny-kicker">D · LINUS-LIKE / HOPE WITH DOUBT</p>
-    <div class="funny-art"><img src="/images/devotional-prints/watts-hope-1886.webp" alt="Watts — Hope" loading="lazy" /></div>
-    <p class="funny-caption">"Hope: one string left, eyes blindfolded, still tuning."</p>
-    <p class="funny-attribution">after G. F. Watts · 1886</p>
-    <div class="decision" data-card="funnies-d">
-      <fieldset class="decision-tri" data-name="funnies-d">
-        <legend>Decision</legend>
-        <label data-state="yes"><input type="radio" name="funnies-d" value="yes" /><span>Yes</span></label>
-        <label data-state="maybe"><input type="radio" name="funnies-d" value="maybe" /><span>Maybe</span></label>
-        <label data-state="no"><input type="radio" name="funnies-d" value="no" /><span>No</span></label>
-      </fieldset>
-      <textarea class="decision-notes" data-notes-for="funnies-d" placeholder="Notes…"></textarea>
+  <article class="comic-card">
+    <div class="comic-strip"><img src="/images/audit-2026-05-16/comic-strips/04-labyrinth.png" alt="The Labyrinth" loading="lazy" /></div>
+    <div class="comic-meta">
+      <p class="comic-num">Strip 04</p>
+      <h4 class="comic-title">The same circle three times.</h4>
+      <p class="comic-source">Chartres labyrinth · contemplative tradition</p>
+      <p class="comic-rationale">A pure-visual gag: she walks the labyrinth, reaches the center, walks back out, and is right where she started. The caption — <em>"some days I walk the same circle three times and call it a journey"</em> — names the spiritual experience without naming the theology. Halftone pavement is the best ink-work in the set.</p>
+      <div class="decision" data-card="funnies-04">
+        <fieldset class="decision-tri" data-name="funnies-04"><legend>Decision</legend>
+          <label data-state="yes"><input type="radio" name="funnies-04" value="yes" /><span>Yes</span></label>
+          <label data-state="maybe"><input type="radio" name="funnies-04" value="maybe" /><span>Maybe</span></label>
+          <label data-state="no"><input type="radio" name="funnies-04" value="no" /><span>No</span></label>
+        </fieldset>
+        <textarea class="decision-notes" data-notes-for="funnies-04" placeholder="Notes…"></textarea>
+      </div>
     </div>
   </article>
 
-  <article class="pitch-card funny-card">
-    <p class="funny-kicker">E · ANGELS &amp; ORDINARY PEOPLE</p>
-    <div class="funny-art"><img src="/images/devotional-prints/angelico-annunciation-present.webp" alt="Fra Angelico Annunciation" loading="lazy" /></div>
-    <p class="funny-caption">"An angel showed up. She did not faint. I would have fainted."</p>
-    <p class="funny-attribution">Luke 1 · 26–38</p>
-    <div class="decision" data-card="funnies-e">
-      <fieldset class="decision-tri" data-name="funnies-e">
-        <legend>Decision</legend>
-        <label data-state="yes"><input type="radio" name="funnies-e" value="yes" /><span>Yes</span></label>
-        <label data-state="maybe"><input type="radio" name="funnies-e" value="maybe" /><span>Maybe</span></label>
-        <label data-state="no"><input type="radio" name="funnies-e" value="no" /><span>No</span></label>
-      </fieldset>
-      <textarea class="decision-notes" data-notes-for="funnies-e" placeholder="Notes…"></textarea>
+  <article class="comic-card">
+    <div class="comic-strip"><img src="/images/audit-2026-05-16/comic-strips/05-annunciation.png" alt="The Annunciation" loading="lazy" /></div>
+    <div class="comic-meta">
+      <p class="comic-num">Strip 05</p>
+      <h4 class="comic-title">She did not faint.</h4>
+      <p class="comic-source">Luke 1 · 26–38</p>
+      <p class="comic-rationale">The only strip in the set where the protagonist speaks — a single word, "OKAY." That restraint is the entire joke. The final caption acknowledges the reader's own response: <em>"I would have fainted."</em> Hope-with-doubt, voiced.</p>
+      <div class="decision" data-card="funnies-05">
+        <fieldset class="decision-tri" data-name="funnies-05"><legend>Decision</legend>
+          <label data-state="yes"><input type="radio" name="funnies-05" value="yes" /><span>Yes</span></label>
+          <label data-state="maybe"><input type="radio" name="funnies-05" value="maybe" /><span>Maybe</span></label>
+          <label data-state="no"><input type="radio" name="funnies-05" value="no" /><span>No</span></label>
+        </fieldset>
+        <textarea class="decision-notes" data-notes-for="funnies-05" placeholder="Notes…"></textarea>
+      </div>
     </div>
   </article>
 
-  <article class="pitch-card funny-card">
-    <p class="funny-kicker">F · GRACE AT THE TABLE</p>
-    <div class="funny-art"><img src="/images/devotional-prints/chardin-grace-before-meal.webp" alt="Chardin grace before a meal" loading="lazy" /></div>
-    <p class="funny-caption">"She said grace before she knew what the meal would be."</p>
-    <p class="funny-attribution">after Chardin · c. 1740</p>
-    <div class="decision" data-card="funnies-f">
-      <fieldset class="decision-tri" data-name="funnies-f">
-        <legend>Decision</legend>
-        <label data-state="yes"><input type="radio" name="funnies-f" value="yes" /><span>Yes</span></label>
-        <label data-state="maybe"><input type="radio" name="funnies-f" value="maybe" /><span>Maybe</span></label>
-        <label data-state="no"><input type="radio" name="funnies-f" value="no" /><span>No</span></label>
-      </fieldset>
-      <textarea class="decision-notes" data-notes-for="funnies-f" placeholder="Notes…"></textarea>
+  <article class="comic-card">
+    <div class="comic-strip"><img src="/images/audit-2026-05-16/comic-strips/06-grace-before-meal.png" alt="Grace Before the Meal" loading="lazy" /></div>
+    <div class="comic-meta">
+      <p class="comic-num">Strip 06</p>
+      <h4 class="comic-title">Grace before the meal.</h4>
+      <p class="comic-source">after Chardin · c. 1740</p>
+      <p class="comic-rationale">The quietest of the eight. An empty bowl. Grace anyway. The final panel's halftone window-glow is the one moment of "warmth" in the set. Lands on the fourth read, the way the best Schulz strips do.</p>
+      <div class="decision" data-card="funnies-06">
+        <fieldset class="decision-tri" data-name="funnies-06"><legend>Decision</legend>
+          <label data-state="yes"><input type="radio" name="funnies-06" value="yes" /><span>Yes</span></label>
+          <label data-state="maybe"><input type="radio" name="funnies-06" value="maybe" /><span>Maybe</span></label>
+          <label data-state="no"><input type="radio" name="funnies-06" value="no" /><span>No</span></label>
+        </fieldset>
+        <textarea class="decision-notes" data-notes-for="funnies-06" placeholder="Notes…"></textarea>
+      </div>
     </div>
   </article>
 
+  <article class="comic-card">
+    <div class="comic-strip"><img src="/images/audit-2026-05-16/comic-strips/07-mustard-seed.png" alt="The Mustard Seed" loading="lazy" /></div>
+    <div class="comic-meta">
+      <p class="comic-num">Strip 07</p>
+      <h4 class="comic-title">Jesus never mentioned how long to wait.</h4>
+      <p class="comic-source">Matthew 13 · 31–32</p>
+      <p class="comic-rationale">The most overtly named strip — "Jesus" appears in the caption. Charlie-Brown gag delivered straight: kid plants the seed, then stares at the dirt for a day waiting. The reader laughs first, then realizes that's their actual spiritual posture.</p>
+      <div class="decision" data-card="funnies-07">
+        <fieldset class="decision-tri" data-name="funnies-07"><legend>Decision</legend>
+          <label data-state="yes"><input type="radio" name="funnies-07" value="yes" /><span>Yes</span></label>
+          <label data-state="maybe"><input type="radio" name="funnies-07" value="maybe" /><span>Maybe</span></label>
+          <label data-state="no"><input type="radio" name="funnies-07" value="no" /><span>No</span></label>
+        </fieldset>
+        <textarea class="decision-notes" data-notes-for="funnies-07" placeholder="Notes…"></textarea>
+      </div>
+    </div>
+  </article>
+
+  <article class="comic-card">
+    <div class="comic-strip"><img src="/images/audit-2026-05-16/comic-strips/08-prayer-when-angry.png" alt="Prayer When Angry" loading="lazy" /></div>
+    <div class="comic-meta">
+      <p class="comic-num">Strip 08</p>
+      <h4 class="comic-title">Half the psalms are angry.</h4>
+      <p class="comic-source">Psalm 4 · Ephesians 4:26</p>
+      <p class="comic-rationale">The most theologically permissive strip — the reader is told it's <em>okay</em> to be mad at God. This is the line that distinguishes Euangelion's voice from the apologetic-defensive register (Adam4d) without falling into deconstruction-only (NakedPastor). Devotional, not polemical.</p>
+      <div class="decision" data-card="funnies-08">
+        <fieldset class="decision-tri" data-name="funnies-08"><legend>Decision</legend>
+          <label data-state="yes"><input type="radio" name="funnies-08" value="yes" /><span>Yes</span></label>
+          <label data-state="maybe"><input type="radio" name="funnies-08" value="maybe" /><span>Maybe</span></label>
+          <label data-state="no"><input type="radio" name="funnies-08" value="no" /><span>No</span></label>
+        </fieldset>
+        <textarea class="decision-notes" data-notes-for="funnies-08" placeholder="Notes…"></textarea>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<div class="callout">
+  <h4>What's reserved for a Sunday edition</h4>
+  <p>Real newspapers had two distinct comic formats: the <b>daily strip</b> (3-4 panels, weekday, fast) and the <b>Sunday strip</b> (full-page, 8-12 panels, title panel at top, deeper engagement). Euangelion would adopt both rhythms — matching <em>both</em> the Lord's-Day liturgical instinct and the newspaper-history instinct.</p>
+  <p style="font-size:0.86rem; margin-top: 0.4rem;">Sunday strip ideas held in reserve: Lazarus / "Come out" (four wordless panels), The Five Thousand ("five loaves. two fish. one kid."), Walking on Water ("as long as he looked — he walked"), The Narrow Gate. Each would be hand-curated, generated in batches per liturgical season.</p>
+</div>
+
+<div class="callout warn">
+  <h4>Sign the lineage, own the originality</h4>
+  <p>None of Peanuts, B.C., Family Circus, or Calvin &amp; Hobbes is in the public domain. Aesthetic <em>inspiration</em> is legal; visual <em>copying</em> is not. The defensible posture: <em>"We owe Schulz, Hart, Keane, and Watterson. We are not them."</em> The riso/halftone duotone brand spec (cobalt + cream + crimson) is already different enough from any single existing strip that the lineage is honored without infringement. The protagonist is a new character with no name yet — the founder names her.</p>
 </div>
 </section>
 
