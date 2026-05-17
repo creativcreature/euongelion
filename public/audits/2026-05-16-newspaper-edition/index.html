@@ -57,15 +57,16 @@
 html, body { margin: 0; }
 body {
   background:
-    radial-gradient(ellipse at 12% 8%, rgba(17,33,74,0.04) 0%, transparent 50%),
-    radial-gradient(ellipse at 88% 96%, rgba(185,24,42,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 12% 8%, rgba(17,33,74,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 88% 96%, rgba(185,24,42,0.04) 0%, transparent 50%),
     var(--paper);
   background-attachment: fixed;
   color: var(--ink);
   font-family: var(--serif);
-  font-size: clamp(0.98rem, 1.05vw, 1.12rem);
-  line-height: 1.46;
+  font-size: clamp(0.96rem, 1.02vw, 1.06rem);
+  line-height: 1.38;
   font-variant-numeric: oldstyle-nums proportional-nums;
+  font-feature-settings: "kern", "liga", "onum", "calt";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -101,13 +102,22 @@ body {
 /* Each "page" is its own broadsheet sheet */
 .page {
   background: var(--paper);
-  border: 1px solid var(--paper-edge);
-  box-shadow: 0 0 0 1px rgba(17,33,74,0.05), 0 12px 40px rgba(17,33,74,0.08);
-  margin: 1.6rem auto;
-  padding: clamp(1.2rem, 2.4vw, 2.2rem);
+  border: 0;
+  box-shadow: 0 0 0 1px rgba(17,33,74,0.08), 0 24px 60px rgba(17,33,74,0.15);
+  margin: 1.4rem auto;
+  padding: clamp(1.4rem, 2.6vw, 2.4rem);
   position: relative;
 }
-.page + .page { margin-top: 2.6rem; }
+.page::after {
+  /* a faint cream-edge gradient at the top of every page that mimics a fresh sheet of newsprint */
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(180deg, rgba(17,33,74,0.06) 0%, transparent 100%);
+  pointer-events: none;
+}
+.page + .page { margin-top: 2.4rem; }
 
 /* ───── Folio line (top-of-page strip) ───── */
 .folio {
@@ -115,91 +125,110 @@ body {
   justify-content: space-between;
   align-items: center;
   font-family: var(--sans);
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink);
-  font-weight: 600;
-  padding: 0.4rem 0 0.5rem;
+  font-weight: 700;
+  padding: 0.38rem 0 0.42rem;
+  border-top: var(--rule-3);
   border-bottom: var(--rule-1);
   margin-bottom: 1rem;
   gap: 1rem;
   flex-wrap: wrap;
 }
-.folio .folio-paper { font-family: var(--serif); text-transform: none; letter-spacing: 0.02em; font-style: italic; font-size: 0.92rem; color: var(--cobalt); }
-.folio .folio-section { color: var(--crimson); font-weight: 700; }
+.folio .folio-paper { font-family: var(--serif); text-transform: none; letter-spacing: 0.02em; font-style: italic; font-size: 0.96rem; color: var(--cobalt); font-weight: 400; }
+.folio .folio-section { color: var(--crimson); font-weight: 800; letter-spacing: 0.22em; }
 
 /* ───── Typography ───── */
-h1, h2, h3, h4, h5, h6 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.005em; margin: 0; line-height: 1.04; color: var(--ink); }
-.h-banner   { font-size: clamp(2.6rem, 6.8vw, 5.4rem); line-height: 0.92; letter-spacing: -0.015em; }
-.h-deck     { font-size: clamp(1.2rem, 1.9vw, 1.7rem); line-height: 1.16; font-style: italic; color: var(--ink-soft); font-weight: 400; margin-top: 0.4rem; }
-.h-section  { font-size: clamp(1.7rem, 2.6vw, 2.4rem); line-height: 1.04; }
-.h-story    { font-size: clamp(1.4rem, 2.1vw, 1.95rem); line-height: 1.06; }
-.h-sub      { font-size: clamp(1.05rem, 1.4vw, 1.3rem); line-height: 1.18; }
-.h-tile     { font-size: clamp(1.05rem, 1.3vw, 1.25rem); line-height: 1.14; }
+h1, h2, h3, h4, h5, h6 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.005em; margin: 0; line-height: 1.02; color: var(--ink); }
+.h-banner   { font-size: clamp(3.2rem, 8.4vw, 6.8rem); line-height: 0.88; letter-spacing: -0.026em; font-weight: 400; }
+.h-deck     { font-size: clamp(1.25rem, 2vw, 1.8rem); line-height: 1.16; font-style: italic; color: var(--ink-soft); font-weight: 400; margin-top: 0.4rem; }
+.h-section  { font-size: clamp(2rem, 3.2vw, 2.9rem); line-height: 1; letter-spacing: -0.018em; }
+.h-story    { font-size: clamp(1.6rem, 2.4vw, 2.2rem); line-height: 1.02; letter-spacing: -0.014em; }
+.h-sub      { font-size: clamp(1.1rem, 1.5vw, 1.4rem); line-height: 1.16; }
+.h-tile     { font-size: clamp(1.1rem, 1.35vw, 1.3rem); line-height: 1.1; letter-spacing: -0.006em; }
 
 .kicker, .eyebrow {
   font-family: var(--sans);
   font-size: 0.66rem;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--crimson);
-  font-weight: 700;
+  font-weight: 800;
   margin: 0 0 0.32rem;
+  display: inline-block;
+  padding-bottom: 0.18rem;
+  border-bottom: 2px solid var(--crimson);
 }
-.kicker.cobalt { color: var(--cobalt); }
+.kicker.cobalt { color: var(--cobalt); border-bottom-color: var(--cobalt); }
 .byline {
   font-family: var(--sans);
   font-size: 0.74rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink);
-  font-weight: 600;
+  font-weight: 700;
   margin: 0.5rem 0 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule-soft);
 }
 .byline em { color: var(--cobalt); font-style: italic; text-transform: none; letter-spacing: 0.02em; font-weight: 400; }
 .dateline {
   font-family: var(--sans);
   font-size: 0.74rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--ink);
 }
-.dateline::after { content: " — "; color: var(--ink-soft); }
+.dateline::after { content: " — "; color: var(--crimson); font-weight: 800; }
 
 /* Body copy */
-p { margin: 0 0 0.75em; max-width: 64ch; }
-.story p { font-size: 1.04rem; line-height: 1.52; }
-.lede { font-size: clamp(1.08rem, 1.3vw, 1.22rem); font-style: italic; max-width: 56ch; }
+p { margin: 0 0 0.55em; max-width: 60ch; hyphens: auto; }
+.story p { font-size: 0.98rem; line-height: 1.44; }
+.lede { font-size: clamp(1.1rem, 1.4vw, 1.3rem); font-style: italic; max-width: 56ch; line-height: 1.34; }
 .story p.lede { font-style: italic; }
 
 /* Drop cap */
 .dropcap::first-letter {
   font-family: var(--serif);
-  font-size: 4.6em;
-  line-height: 0.84;
+  font-size: 5.6em;
+  line-height: 0.78;
   float: left;
-  padding: 0.04em 0.12em 0 0;
+  padding: 0.04em 0.14em 0 0;
   color: var(--cobalt);
   font-weight: 400;
   font-style: normal;
+  shape-outside: margin-box;
 }
-.dropcap-3::first-letter { font-size: 3.4em; }
+.dropcap-3::first-letter { font-size: 4em; line-height: 0.82; }
 
 /* Rules */
-.rule       { border-top: var(--rule-1); margin: 1rem 0; }
-.rule-2     { border-top: var(--rule-2); margin: 1rem 0; }
-.rule-3     { border-top: var(--rule-3); margin: 1rem 0; }
-.rule-double { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); height: 4px; margin: 1rem 0; }
-.rule-thick { border-top: var(--rule-thick); margin: 1rem 0; }
+.rule       { border-top: var(--rule-1); margin: 0.8rem 0; }
+.rule-2     { border-top: var(--rule-2); margin: 0.8rem 0; }
+.rule-3     { border-top: var(--rule-3); margin: 0.8rem 0; }
+.rule-double { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); height: 4px; margin: 0.8rem 0; }
+.rule-thick { border-top: var(--rule-thick); margin: 0.8rem 0; }
 
-/* Columns */
-.cols-2 { columns: 2; column-gap: var(--col-gap); column-rule: 1px solid var(--rule-soft); }
-.cols-3 { columns: 3; column-gap: var(--col-gap); column-rule: 1px solid var(--rule-soft); }
-.cols-4 { columns: 4; column-gap: var(--col-gap); column-rule: 1px solid var(--rule-soft); }
+/* Columns — heavier rules between for newspaper density */
+.cols-2 { columns: 2; column-gap: var(--col-gap); column-rule: 1px solid var(--ink); }
+.cols-3 { columns: 3; column-gap: var(--col-gap); column-rule: 1px solid var(--ink); }
+.cols-4 { columns: 4; column-gap: var(--col-gap); column-rule: 1px solid var(--ink); }
 .cols-2 p, .cols-3 p, .cols-4 p { break-inside: avoid-column; }
 .cols-2 p:first-child, .cols-3 p:first-child, .cols-4 p:first-child { margin-top: 0; }
+
+/* Decorative dingbat ornament for between-paragraph use */
+.ornament {
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  color: var(--gold);
+  letter-spacing: 1.4em;
+  padding: 0.3rem 0 0.3rem 1.4em;
+  margin: 0.6rem auto;
+  break-inside: avoid;
+}
 
 @media (max-width: 760px) {
   .cols-3 { columns: 1; }
@@ -210,25 +239,28 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
 /* Pull quote */
 .pull-quote {
   break-inside: avoid;
-  margin: 0.6rem 0;
-  padding: 0.9rem 1rem;
-  border-top: var(--rule-3);
-  border-bottom: var(--rule-3);
+  margin: 1rem 0;
+  padding: 1.1rem 0 0.9rem;
+  border-top: var(--rule-thick);
+  border-bottom: var(--rule-thick);
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.3rem, 1.9vw, 1.7rem);
-  line-height: 1.18;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.1;
   color: var(--ink);
   text-align: left;
+  letter-spacing: -0.014em;
+  position: relative;
 }
-.pull-quote::before { content: "“"; font-family: var(--serif); font-size: 2.4em; line-height: 0.4; color: var(--gold); display: block; height: 0.6em; margin-bottom: 0.1em; }
+.pull-quote::before { content: "“"; font-family: var(--serif); font-size: 4em; line-height: 0.3; color: var(--gold); display: block; height: 0.7em; margin-bottom: 0.05em; font-style: italic; }
 .pull-quote .pq-by {
   font-family: var(--sans);
-  font-size: 0.66rem;
-  letter-spacing: 0.18em;
+  font-size: 0.64rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--crimson);
   font-style: normal;
+  font-weight: 700;
   margin-top: 0.5rem;
   display: block;
 }
@@ -236,68 +268,80 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
 /* Jump line */
 .jump-line {
   font-family: var(--sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--crimson);
   font-style: italic;
   text-align: right;
   margin: 0.6rem 0 0;
-  padding-top: 0.4rem;
-  border-top: 1px solid var(--rule-soft);
+  padding: 0.4rem 0 0.4rem;
+  border-top: 2px solid var(--crimson);
+  border-bottom: 1px solid var(--crimson);
 }
 .jump-line a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.jump-line a:hover { color: var(--ink); }
 
 /* Photo + cutline */
-.photo-block { margin: 0 0 1rem; }
-.photo-block img { display: block; width: 100%; height: auto; border-bottom: var(--rule-1); }
+.photo-block { margin: 0 0 1rem; border: 1px solid var(--ink); }
+.photo-block img { display: block; width: 100%; height: auto; border-bottom: 2px solid var(--ink); }
 .cutline {
   font-family: var(--sans);
   font-size: 0.78rem;
   line-height: 1.4;
   color: var(--ink);
-  padding: 0.4rem 0 0;
+  padding: 0.5rem 0.7rem 0.6rem;
   margin: 0;
+  background: var(--paper);
 }
 .cutline .cutline-credit {
   font-family: var(--sans);
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ink-soft);
-  font-weight: 700;
+  color: var(--crimson);
+  font-weight: 800;
   margin-left: 0.5em;
+  white-space: nowrap;
 }
-.cutline-bold { font-weight: 700; color: var(--ink); }
+.cutline-bold { font-weight: 800; color: var(--ink); text-transform: uppercase; letter-spacing: 0.06em; font-family: var(--sans); font-size: 0.74rem; }
 
 /* Sidebar */
 .sidebar {
   background: var(--paper-deep);
-  border: 1.5px solid var(--ink);
+  border-top: 4px solid var(--ink);
+  border-bottom: 4px solid var(--ink);
+  border-left: 1px solid var(--ink);
+  border-right: 1px solid var(--ink);
   padding: 0.9rem 1rem 1rem;
   margin: 0 0 1rem;
   break-inside: avoid;
+  position: relative;
 }
 .sidebar h4 {
   font-family: var(--sans);
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--crimson);
   font-weight: 800;
   margin: 0 0 0.3rem;
   border-bottom: 2px solid var(--crimson);
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.32rem;
 }
 .sidebar h3 {
   font-family: var(--serif);
-  font-size: 1.2rem;
-  line-height: 1.1;
+  font-size: 1.35rem;
+  line-height: 1.06;
   margin: 0.3rem 0 0.6rem;
+  letter-spacing: -0.012em;
 }
-.sidebar ul { margin: 0.4rem 0; padding-left: 1.1rem; font-size: 0.92rem; line-height: 1.45; }
-.sidebar p { font-size: 0.9rem; line-height: 1.45; margin-bottom: 0.5rem; }
+.sidebar ul { margin: 0.4rem 0; padding-left: 1.1rem; font-size: 0.92rem; line-height: 1.4; }
+.sidebar ul li { padding: 0.1rem 0; }
+.sidebar ul li::marker { color: var(--crimson); }
+.sidebar p { font-size: 0.92rem; line-height: 1.42; margin-bottom: 0.5rem; }
+.sidebar p strong { color: var(--cobalt); }
 
 /* Generic ad */
 .house-ad {
@@ -311,44 +355,56 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
 .house-ad .ha-rule { border-top: var(--rule-2); width: 30%; margin: 0.4rem auto; }
 .house-ad p { margin: 0.2rem 0; max-width: 100%; }
 
-/* Section divider strip */
+/* Section divider strip — heavier, more newspaper-like */
 .section-div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0;
-  margin: 1.4rem 0 1rem;
-  border-top: var(--rule-thick);
-  border-bottom: var(--rule-1);
+  padding: 0.6rem 0.5rem;
+  margin: 1.6rem 0 1.1rem;
+  border-top: 7px solid var(--ink);
+  border-bottom: var(--rule-2);
+  background:
+    linear-gradient(180deg, rgba(17,33,74,0.04) 0%, transparent 100%);
   font-family: var(--sans);
-  font-size: 0.74rem;
-  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   font-weight: 800;
   color: var(--ink);
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-.section-div .sd-name { color: var(--crimson); }
-.section-div .sd-note { font-family: var(--serif); text-transform: none; letter-spacing: 0.02em; font-weight: 400; font-style: italic; font-size: 0.9rem; color: var(--ink-soft); }
+.section-div .sd-name { color: var(--crimson); letter-spacing: 0.28em; }
+.section-div .sd-note { font-family: var(--serif); text-transform: none; letter-spacing: 0.02em; font-weight: 400; font-style: italic; font-size: 0.96rem; color: var(--ink-soft); }
+.section-div::before {
+  content: "✦";
+  font-family: var(--serif);
+  color: var(--crimson);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-right: 0.3rem;
+}
 
 /* Refer (front-page index) */
 .refer {
   background: var(--paper-deep);
-  border-top: var(--rule-2);
-  border-bottom: var(--rule-1);
-  padding: 0.5rem 0.7rem;
+  border-top: var(--rule-thick);
+  border-bottom: 2px solid var(--ink);
+  padding: 0.55rem 0.8rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem 1.4rem;
+  gap: 0.4rem 1.6rem;
   font-family: var(--sans);
   font-size: 0.74rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 700;
   margin: 0 0 1rem;
 }
-.refer .ref-h { color: var(--crimson); }
-.refer .ref-item a { color: var(--ink); text-decoration: none; }
-.refer .ref-item a:hover { color: var(--crimson); text-decoration: underline; }
+.refer .ref-h { color: var(--crimson); letter-spacing: 0.24em; font-weight: 800; padding-right: 0.6rem; border-right: 2px solid var(--ink); }
+.refer .ref-item a { color: var(--ink); text-decoration: none; transition: color 120ms; }
+.refer .ref-item a:hover { color: var(--crimson); }
 .refer .ref-page {
   font-family: var(--serif);
   font-style: italic;
@@ -357,62 +413,76 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
   letter-spacing: 0.02em;
   color: var(--cobalt);
   margin-left: 0.4em;
+  font-size: 0.96rem;
 }
 
 /* ===== NAMEPLATE / FLAG (page A1) ===== */
 .nameplate {
   text-align: center;
-  border-top: var(--rule-3);
-  border-bottom: var(--rule-double);
-  padding: 1rem 0 0.8rem;
+  border-top: 8px solid var(--ink);
+  border-bottom: 5px double var(--ink);
+  padding: 0.9rem 0 0.7rem;
   position: relative;
   margin-bottom: 0.6rem;
 }
 .nameplate .ear-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-family: var(--sans);
   font-size: 0.66rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink);
   font-weight: 700;
-  padding: 0 0.3rem 0.5rem;
+  padding: 0 0.4rem 0.7rem;
+  border-bottom: 1px solid var(--rule-soft);
+  margin-bottom: 0.4rem;
 }
 .nameplate .ear-row .ear-left,
-.nameplate .ear-row .ear-right { max-width: 30%; text-align: left; }
+.nameplate .ear-row .ear-right { max-width: 32%; text-align: left; }
 .nameplate .ear-row .ear-right { text-align: right; }
 .nameplate h1.flag {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(3rem, 9vw, 6.4rem);
-  letter-spacing: -0.012em;
-  line-height: 0.92;
-  margin: 0.15em 0 0.05em;
+  font-size: clamp(4.5rem, 13vw, 10.5rem);
+  letter-spacing: -0.024em;
+  line-height: 0.86;
+  margin: 0.1em 0 0.06em;
   color: var(--ink);
+  font-feature-settings: "kern", "dlig", "calt";
 }
 .nameplate .greek {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  font-size: clamp(1.05rem, 1.5vw, 1.4rem);
   color: var(--ink-soft);
-  letter-spacing: 0.04em;
-  margin: 0 0 0.2rem;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.3rem;
 }
 .nameplate .meta-strip {
   font-family: var(--sans);
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
+  font-size: 0.66rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--ink);
-  padding: 0.5rem 0 0;
+  padding: 0.55rem 0 0;
+  border-top: 1px solid var(--rule-soft);
+  margin-top: 0.5rem;
   display: flex;
   justify-content: center;
   gap: 1.4rem;
   flex-wrap: wrap;
 }
 .nameplate .meta-strip .crimson { color: var(--crimson); }
+.nameplate .meta-strip > span:not(:last-child)::after {
+  content: " ✦";
+  color: var(--gold);
+  margin-left: 0.7em;
+  font-family: var(--serif);
+  font-style: italic;
+}
 
 /* Grids */
 .grid-12 { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--col-gap); }
@@ -520,19 +590,21 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
   padding-bottom: 0.2rem;
 }
 
-/* Bento grid */
+/* Bento grid — heavier rules between tiles for newspaper density */
 .bento {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: minmax(120px, auto);
-  gap: 1px;
+  grid-auto-rows: minmax(130px, auto);
+  gap: 2px;
   background: var(--ink);
-  border: 1.5px solid var(--ink);
+  border: 3px solid var(--ink);
   margin: 0 0 1rem;
+  outline: 1px solid var(--ink);
+  outline-offset: 2px;
 }
 .bento-tile {
   background: var(--paper);
-  padding: 0.8rem 0.9rem;
+  padding: 0.85rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -540,21 +612,25 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
 }
 .bento-tile .bt-tag {
   font-family: var(--sans);
-  font-size: 0.58rem;
-  letter-spacing: 0.22em;
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--cobalt);
   font-weight: 800;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--rule-soft);
+  margin-bottom: 0.2rem;
 }
 .bento-tile .bt-h {
   font-family: var(--serif);
-  font-size: 1.2rem;
-  line-height: 1.1;
+  font-size: 1.3rem;
+  line-height: 1.05;
+  letter-spacing: -0.012em;
 }
 .bento-tile .bt-body {
   font-family: var(--serif);
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 0.94rem;
+  line-height: 1.38;
   color: var(--ink-soft);
 }
 @media (max-width: 760px) {
@@ -1005,36 +1081,35 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
   padding: 0.4rem;
 }
 
-/* Anatomy reference at top */
-.anatomy-ref {
-  border: 1.5px solid var(--cobalt);
-  padding: 0.9rem 1.1rem;
-  margin-bottom: 1rem;
-  background: rgba(31,42,141,0.04);
-  font-size: 0.9rem;
-}
-.anatomy-ref h4 {
+/* Specimen meta-note — collapsed disclosure at top, expanded version at bottom */
+.specimen-note {
+  margin: 0 0 1rem;
+  padding: 0.4rem 0.7rem;
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
   font-family: var(--sans);
-  font-size: 0.68rem;
-  letter-spacing: 0.22em;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--cobalt);
-  font-weight: 800;
-  margin: 0 0 0.4rem;
+  color: var(--ink-soft);
+  font-weight: 700;
 }
-.anatomy-ref p { margin: 0.3rem 0; max-width: none; }
-.anatomy-ref code { font-family: var(--mono); font-size: 0.85em; background: var(--paper-deep); padding: 0.05em 0.32em; border-radius: 2px; }
-.anatomy-ref a { color: var(--cobalt); }
-.anatomy-ref .anatomy-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.2rem 0.8rem;
-  margin-top: 0.6rem;
-  font-family: var(--sans);
-  font-size: 0.72rem;
+.specimen-note summary { cursor: pointer; list-style: none; }
+.specimen-note summary::-webkit-details-marker { display: none; }
+.specimen-note .sn-arrow { color: var(--crimson); margin-left: 0.4em; font-family: var(--serif); }
+.specimen-note[open] .sn-arrow { transform: rotate(180deg); display: inline-block; }
+.specimen-note-body {
+  padding: 0.6rem 0 0.2rem;
+  font-family: var(--serif);
+  font-size: 0.86rem;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 400;
+  line-height: 1.5;
   color: var(--ink);
 }
-.anatomy-ref .anatomy-list span::before { content: "✓ "; color: var(--cobalt); font-weight: 800; margin-right: 0.2em; }
+.specimen-note-body a { color: var(--cobalt); }
+.specimen-note-body code { font-family: var(--mono); font-size: 0.85em; background: var(--paper-deep); padding: 0.05em 0.32em; border-radius: 2px; }
 
 /* Print styles */
 @media print {
@@ -1046,30 +1121,13 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
 <body>
 <div class="broadsheet">
 
-<!-- ───────────────────────────────────────────────────────────
-     ANATOMY REFERENCE (top of deliverable, not a newspaper element)
-     ─────────────────────────────────────────────────────────── -->
-<div class="anatomy-ref">
-  <h4>About this specimen · 2026-05-16</h4>
-  <p>This page is a single, end-to-end <em>worked example</em> of a mid-20th-century American broadsheet — every classic element fully rendered, not described. Brand: Cobalt Triad on Newspaper Cream, Instrument Serif + Inter, 60–30–10. Terminology and layout conventions from the <a href="/audits/2026-05-16-newspaper-edition/research-newspaper-anatomy.md">anatomy research</a> (Society for News Design, Poynter, Library of Congress Chronicling America, Tim Harrower's <em>Newspaper Designer's Handbook</em>). Comic-strip generation prompts: <a href="/audits/2026-05-16-newspaper-edition/comic-strip-prompts.md">comic-strip-prompts.md</a>. Section index: <a href="/audits/2026-05-16-newspaper-edition/README.md">README.md</a>. Companion (older) pitch document, which this page replaces: <a href="/audits/2026-05-16-newspaper-metaphor/">/2026-05-16-newspaper-metaphor/</a>.</p>
-  <div class="anatomy-list">
-    <span>Nameplate &middot; ear &middot; folio</span>
-    <span>Banner &middot; deck &middot; kicker</span>
-    <span>Byline &middot; dateline &middot; lede</span>
-    <span>Drop cap &middot; pull quote &middot; cutline</span>
-    <span>Jump line &middot; sidebar &middot; refer</span>
-    <span>Bento modular grid</span>
-    <span>Op-ed &middot; editor's note &middot; masthead</span>
-    <span>Editorial cartoon &middot; the Funnies &middot; Sunday color</span>
-    <span>Letters &middot; advice column &middot; errata</span>
-    <span>Classifieds &middot; obituaries &middot; service listings</span>
-    <span>Weather &middot; ticker &middot; twelve houses</span>
-    <span>Crossword &middot; word search</span>
-    <span>Sports/saints standings</span>
-    <span>Almanac &middot; travel &middot; infographic</span>
-    <span>Display ad &middot; subscription &middot; colophon</span>
+<!-- Specimen meta-note (moved to bottom in v2; only a tiny back-link strip here) -->
+<details class="specimen-note">
+  <summary>About this specimen — every classic broadsheet element rendered as a worked example. <span class="sn-arrow">▾</span></summary>
+  <div class="specimen-note-body">
+    <p>A single, end-to-end <em>worked example</em> of a mid-20th-century American broadsheet — every classic element fully rendered, not described. Brand: Cobalt Triad on Newspaper Cream, Instrument Serif + Inter, 60–30–10. Terminology and layout conventions from the <a href="/audits/2026-05-16-newspaper-edition/research-newspaper-anatomy.md">anatomy research</a> (Society for News Design, Poynter, Library of Congress Chronicling America, Tim Harrower's <em>Newspaper Designer's Handbook</em>). Comic-strip generation prompts: <a href="/audits/2026-05-16-newspaper-edition/comic-strip-prompts.md">comic-strip-prompts.md</a>. Section index: <a href="/audits/2026-05-16-newspaper-edition/README.md">README.md</a>. Older companion pitch document: <a href="/audits/2026-05-16-newspaper-metaphor/">/2026-05-16-newspaper-metaphor/</a>.</p>
   </div>
-</div>
+</details>
 
 <!-- ═══════════════════════════════════════════════════════════
      PAGE A1 — FRONT PAGE
@@ -1133,7 +1191,7 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
 
       <!-- Photo with cutline (placed inside the story, top of column 2 if 2-col were active) -->
       <figure class="photo-block">
-        <img src="/audits/2026-05-16-newspaper-edition/images/photos/lead-story-photo.png" alt="An elderly woman seated alone in the front pew of an empty clapboard church, hands folded over a worn Bible, eyes closed." loading="lazy" />
+        <img src="/audits/2026-05-16-newspaper-edition/images/photos/lead-story-photo.png" alt="An elderly woman seated alone in the front pew of an empty clapboard church, hands folded over a worn Bible, eyes closed." />
         <figcaption class="cutline">
           <span class="cutline-bold">SEATED THROUGH IT.</span> Mrs. Adela Renfrew, 86, of First Congregational in West Wickford, who has kept the same pew for sixty-one years — through two pastors who left in disgrace, one fire, the Korean draft, and the morning her husband did not wake up — was photographed at the 6:14 a.m. light on Wednesday. She had been there since 5:40. <span class="cutline-credit">Photograph · Staff</span>
         </figcaption>
@@ -1273,7 +1331,7 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
       <p class="kicker cobalt">Editorial Cartoon &middot; The Daily</p>
       <h3 id="cartoon-h" class="h-tile" style="margin-bottom: 0.4rem;">The Stillness Problem</h3>
       <div class="cartoon-block">
-        <img src="/audits/2026-05-16-newspaper-edition/images/editorial/editorial-cartoon.png" alt="A single-panel editorial cartoon: a figure on a couch consumed by a glowing smartphone, with a 'BE STILL &amp; KNOW' needlepoint crooked on the wall behind, a sparrow on the windowsill, and a dusty Bible on a side table." loading="lazy" />
+        <img src="/audits/2026-05-16-newspaper-edition/images/editorial/editorial-cartoon.png" alt="A single-panel editorial cartoon: a figure on a couch consumed by a glowing smartphone, with a 'BE STILL &amp; KNOW' needlepoint crooked on the wall behind, a sparrow on the windowsill, and a dusty Bible on a side table." />
         <div class="cartoon-meta">
           <span>Pen &amp; ink &middot; cream newsprint</span>
           <span style="font-family: var(--serif); font-style: italic; text-transform: none; letter-spacing: 0.02em;">— The Cartoonist</span>
@@ -1468,7 +1526,7 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
   <div class="grid-12">
 
     <figure class="span-7" style="margin: 0;">
-      <img src="/audits/2026-05-16-newspaper-edition/images/infographics/liturgical-year-infographic.png" alt="A hand-drawn liturgical-year wheel infographic. Eight wedges: Advent, Christmas, Epiphany, Lent, Holy Week, Easter, Pentecost, Ordinary Time, with a central cross. A crimson 'TODAY: EASTERTIDE, WEEK VI' callout points to the Easter wedge." style="width: 100%; height: auto; display: block; border: 1.5px solid var(--ink);" loading="lazy" />
+      <img src="/audits/2026-05-16-newspaper-edition/images/infographics/liturgical-year-infographic.png" alt="A hand-drawn liturgical-year wheel infographic. Eight wedges: Advent, Christmas, Epiphany, Lent, Holy Week, Easter, Pentecost, Ordinary Time, with a central cross. A crimson 'TODAY: EASTERTIDE, WEEK VI' callout points to the Easter wedge." style="width: 100%; height: auto; display: block; border: 1.5px solid var(--ink);" />
       <figcaption class="cutline" style="border-top: var(--rule-1); padding: 0.5rem 0; margin: 0;">
         <span class="cutline-bold">THE WHEEL OF THE YEAR.</span> The eight-wedge liturgical calendar tracks the church year from Advent through Ordinary Time. Where the year actually sits today — Eastertide, Week VI, with eight more weeks until Pentecost — is marked in crimson. The widest wedge, Ordinary Time, contains roughly thirty-three weeks; the smallest, Holy Week, contains seven days that hold more weight than the other fifty-one combined. <span class="cutline-credit">Illustration · Euangelion · 16 May 2026</span>
       </figcaption>
@@ -2317,7 +2375,7 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
 
   <!-- 3 DAILY STRIPS -->
   <article class="comic-strip-block">
-    <img src="/audits/2026-05-16-newspaper-edition/images/comics/01-bus-stop.png" alt="A four-panel newspaper comic strip in Schulz/Watterson register: a tired commuter sits alone at a city bus stop; Jesus quietly arrives and sits beside him; they sit in silence; the bus pulls up. Bottom caption: 'SOMETIMES PRESENCE IS THE ENTIRE PRAYER.'" loading="lazy" />
+    <img src="/audits/2026-05-16-newspaper-edition/images/comics/01-bus-stop.png" alt="A four-panel newspaper comic strip in Schulz/Watterson register: a tired commuter sits alone at a city bus stop; Jesus quietly arrives and sits beside him; they sit in silence; the bus pulls up. Bottom caption: 'SOMETIMES PRESENCE IS THE ENTIRE PRAYER.'" />
     <div class="csb-meta">
       <span>Strip 01 &middot; <span class="csb-title">"The Bus Stop"</span></span>
       <span class="csb-artist">— Mark 4 · "fear not"</span>
@@ -2325,7 +2383,7 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
   </article>
 
   <article class="comic-strip-block">
-    <img src="/audits/2026-05-16-newspaper-edition/images/comics/02-late-email.png" alt="A four-panel comic strip: a woman drafts an apology email at 11:47 p.m., hesitates with cursor on Send, Jesus quietly stands behind her chair, she finally hits send. Bottom caption: 'HALF OF GRACE IS JUST CLICKING THE BUTTON.'" loading="lazy" />
+    <img src="/audits/2026-05-16-newspaper-edition/images/comics/02-late-email.png" alt="A four-panel comic strip: a woman drafts an apology email at 11:47 p.m., hesitates with cursor on Send, Jesus quietly stands behind her chair, she finally hits send. Bottom caption: 'HALF OF GRACE IS JUST CLICKING THE BUTTON.'" />
     <div class="csb-meta">
       <span>Strip 02 &middot; <span class="csb-title">"The Late Email"</span></span>
       <span class="csb-artist">— Matthew 5 &middot; "first, be reconciled"</span>
@@ -2333,7 +2391,7 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
   </article>
 
   <article class="comic-strip-block">
-    <img src="/audits/2026-05-16-newspaper-edition/images/comics/03-walking-home.png" alt="A four-panel comic strip: a small child walks home alone with a backpack, kicks a stone, Jesus appears alongside also kicking the stone, the two walk together into the sunset. Bottom caption: 'HE WALKS ALL THE WAY HOME WITH US. EVEN ON THE BAD DAYS.'" loading="lazy" />
+    <img src="/audits/2026-05-16-newspaper-edition/images/comics/03-walking-home.png" alt="A four-panel comic strip: a small child walks home alone with a backpack, kicks a stone, Jesus appears alongside also kicking the stone, the two walk together into the sunset. Bottom caption: 'HE WALKS ALL THE WAY HOME WITH US. EVEN ON THE BAD DAYS.'" />
     <div class="csb-meta">
       <span>Strip 03 &middot; <span class="csb-title">"The Walk Home"</span></span>
       <span class="csb-artist">— Luke 24 &middot; the Emmaus road</span>
@@ -2349,7 +2407,7 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
   </div>
 
   <article class="sunday-block" aria-label="Sunday color preview — The Boat in the Storm">
-    <img src="/audits/2026-05-16-newspaper-edition/images/comics/04-sunday-color.png" alt="A full-color eight-panel Sunday newspaper comic strip titled 'EUANGELION SUNDAY · THE BOAT IN THE STORM.' A young woman rows a small boat at dawn, Jesus asleep in the stern. Storm gathers. Boat tilts. Waves crash. She cries 'JESUS!' and 'WAKE UP!' He sits up, stands, and quietly commands 'PEACE. BE STILL.' The water flattens. They drift on calm water at sunset. Bottom caption: 'WHO IS THIS, THAT EVEN THE WIND AND WAVES OBEY?'" loading="lazy" />
+    <img src="/audits/2026-05-16-newspaper-edition/images/comics/04-sunday-color.png" alt="A full-color eight-panel Sunday newspaper comic strip titled 'EUANGELION SUNDAY · THE BOAT IN THE STORM.' A young woman rows a small boat at dawn, Jesus asleep in the stern. Storm gathers. Boat tilts. Waves crash. She cries 'JESUS!' and 'WAKE UP!' He sits up, stands, and quietly commands 'PEACE. BE STILL.' The water flattens. They drift on calm water at sunset. Bottom caption: 'WHO IS THIS, THAT EVEN THE WIND AND WAVES OBEY?'" />
     <div class="sb-meta">
       <p class="sb-tag">Sunday Edition &middot; 17 May 2026 &middot; first read of the week</p>
       <h3>"The Boat in the Storm."</h3>
@@ -2384,7 +2442,7 @@ p { margin: 0 0 0.75em; max-width: 64ch; }
     <!-- DISPLAY AD -->
     <div class="span-5">
       <div class="display-ad">
-        <img src="/audits/2026-05-16-newspaper-edition/images/ads/in-character-ad.png" alt="A mid-century-style two-color newspaper display advertisement, cobalt blue and crimson on cream paper, with a hand-drawn illustration of a broken loaf of bread on a wooden table beside an open Bible, a cup of coffee, and an oil lamp. Headline reads 'MORNING BREAD FOR THE CLUTTERED, HUNGRY SOUL.' Body text: 'EUANGELION. DAILY DEVOTIONAL. SIX DAYS A WEEK. SUNDAYS EXPANDED.' Crimson box at bottom reads 'SUBSCRIBE TODAY.'" loading="lazy" />
+        <img src="/audits/2026-05-16-newspaper-edition/images/ads/in-character-ad.png" alt="A mid-century-style two-color newspaper display advertisement, cobalt blue and crimson on cream paper, with a hand-drawn illustration of a broken loaf of bread on a wooden table beside an open Bible, a cup of coffee, and an oil lamp. Headline reads 'MORNING BREAD FOR THE CLUTTERED, HUNGRY SOUL.' Body text: 'EUANGELION. DAILY DEVOTIONAL. SIX DAYS A WEEK. SUNDAYS EXPANDED.' Crimson box at bottom reads 'SUBSCRIBE TODAY.'" />
       </div>
 
       <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--ink-soft); margin: 0.6rem 0 0; font-style: italic;">Hand-drawn in the woodcut/scratchboard register that was standard in pre-color-photo newspaper advertising. Two-color riso/screen-print: deep cobalt blue + cream off-white with one crimson red spot color. Heavy Ben-Day halftone dots throughout. Slight plate misregistration preserved. Brand palette: Cobalt Triad on Newspaper Cream, 60–30–10. The illustration carries the offer; the type carries the contract.</p>
