@@ -5,6 +5,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## UX AUDIT FIXES — tranche C: navigation & wayfinding (2026-06-10)
+
+- **No more dead nav links (F-011/M00 "no dead-ends"):** the reader "Library"
+  menu's five `/daily-bread?tab=…` links all silently landed on the default view
+  (`/daily-bread` never reads `?tab=`). Reduced to three links to real, distinct
+  surfaces: Today's Reading → `/daily-bread`, Your Library → `/library`,
+  Bookmarks → `/saved`.
+- **Label consistency:** footer "My Library" → "Library" (matches the nav +
+  account menu).
+- **Auth honesty/recovery:** sign-in error copy now names the likely cause
+  (expired/used magic link) + the fix; added an honest one-line value statement
+  under "Welcome back" (an account just syncs across devices; reading works
+  without one).
+
+> Larger IA consolidation (the four overlapping "my stuff" surfaces; the single
+> canonical reader URL to 301 to) is a deliberate founder decision, not changed
+> blindly — flagged for review.
+
+---
+
 ## UX AUDIT FIXES — tranche B: calm reading + feedback states (2026-06-10)
 
 - **No more silent failures (F-017/M00 §4):** Save / Start / Remove now surface

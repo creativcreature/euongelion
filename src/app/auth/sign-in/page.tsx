@@ -21,10 +21,12 @@ function normalizeRedirectPath(value: string | null): string {
 
 function authErrorMessage(code: string | null): string {
   if (!code) return ''
-  if (code === 'auth_failed') {
-    return 'Sign-in could not be completed. Please try again.'
+  if (code === 'link_expired') {
+    return 'That sign-in link expired or was already used. Request a fresh one below.'
   }
-  return 'Sign-in could not be completed. Please try again.'
+  // `auth_failed` and unknown codes are most commonly an expired or
+  // already-used magic link — name the likely cause and the fix.
+  return 'We couldn’t complete sign-in — your link may have expired or already been used. Request a fresh one below.'
 }
 
 function SignInForm() {
@@ -136,8 +138,12 @@ function SignInForm() {
       <h1 className="text-serif-italic vw-heading-md mb-3 text-center">
         Welcome back.
       </h1>
-      <p className="vw-body mb-8 text-center text-secondary">
+      <p className="vw-body mb-2 text-center text-secondary">
         Enter your email and we&apos;ll send you a magic link.
+      </p>
+      <p className="vw-small mb-8 text-center text-muted">
+        An account simply syncs your saved devotionals and progress across your
+        devices. You can keep reading without one.
       </p>
 
       {callbackError && (

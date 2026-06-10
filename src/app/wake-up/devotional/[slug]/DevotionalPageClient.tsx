@@ -603,20 +603,24 @@ export default function DevotionalPageClient({
                   style={{ borderColor: 'var(--color-border)' }}
                 >
                   <p className="text-label vw-small mb-3 text-gold">LIBRARY</p>
+                  {/* Only links that resolve to real, distinct surfaces. The
+                      previous Notes/Highlights/Chat-History/?tab= items all
+                      silently landed on the default Daily Bread view — removed
+                      until those views exist (see DevotionalLibraryRail). */}
                   <div className="grid gap-2">
                     <Link
-                      href="/daily-bread?tab=today"
+                      href="/daily-bread"
                       className="block border px-3 py-2 text-secondary"
                       style={{ borderColor: 'var(--color-border)' }}
                     >
-                      Today + 7 Days
+                      Today’s Reading
                     </Link>
                     <Link
-                      href="/daily-bread?tab=archive"
+                      href="/library"
                       className="block border px-3 py-2 text-secondary"
                       style={{ borderColor: 'var(--color-border)' }}
                     >
-                      Archived Pages
+                      Your Library
                     </Link>
                     <Link
                       href="/saved"
@@ -624,27 +628,6 @@ export default function DevotionalPageClient({
                       style={{ borderColor: 'var(--color-border)' }}
                     >
                       Bookmarks
-                    </Link>
-                    <Link
-                      href="/daily-bread?tab=notes"
-                      className="block border px-3 py-2 text-secondary"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Notes
-                    </Link>
-                    <Link
-                      href="/daily-bread?tab=highlights"
-                      className="block border px-3 py-2 text-secondary"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Highlights
-                    </Link>
-                    <Link
-                      href="/daily-bread?tab=chat-history"
-                      className="block border px-3 py-2 text-secondary"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Chat History
                     </Link>
                   </div>
                 </div>

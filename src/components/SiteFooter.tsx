@@ -14,7 +14,7 @@ const PRODUCT_LINKS = [
   { href: '/soul-audit', label: 'Soul Audit' },
   { href: '/wake-up', label: 'Wake-Up' },
   { href: '/series', label: 'Series' },
-  { href: '/library', label: 'My Library' },
+  { href: '/library', label: 'Library' },
 ]
 
 const COMPANY_LINKS = [
