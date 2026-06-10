@@ -8,7 +8,6 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import SeriesRailSection from '@/components/SeriesRailSection'
 import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
-import { MAX_AUDITS_PER_CYCLE } from '@/lib/soul-audit/constants'
 import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES } from '@/data/series'
 
@@ -510,37 +509,41 @@ export default function Home() {
             }}
             placeholder="What are you wrestling with?"
             rows={3}
+            maxLength={2000}
             disabled={isSubmitting}
             className="mock-textarea"
             aria-label="What are you wrestling with?"
           />
 
-          {/* Sample prompt pills */}
-          <div className="homepage-prompt-pills">
-            {[
-              'I feel anxious about my future',
-              'I\u2019m doubting everything I thought I believed',
-              'I keep falling into the same sin',
-              'I don\u2019t know what I believe',
-            ].map((pill) => (
-              <button
-                key={pill}
-                type="button"
-                className="homepage-prompt-pill text-label"
-                onClick={() => {
-                  setAuditText(pill)
-                  setError(null)
-                }}
-                disabled={isSubmitting}
-              >
-                {pill}
-              </button>
-            ))}
-          </div>
+          {/* Sample prompt pills — only shown while the field is empty, so a
+              tap can never overwrite what someone has already written. */}
+          {!auditText.trim() && (
+            <div className="homepage-prompt-pills">
+              {[
+                'I feel anxious about my future',
+                'I\u2019m doubting everything I thought I believed',
+                'I keep falling into the same sin',
+                'I don\u2019t know what I believe',
+              ].map((pill) => (
+                <button
+                  key={pill}
+                  type="button"
+                  className="homepage-prompt-pill text-label"
+                  onClick={() => {
+                    setAuditText(pill)
+                    setError(null)
+                  }}
+                  disabled={isSubmitting}
+                >
+                  {pill}
+                </button>
+              ))}
+            </div>
+          )}
 
           {showLowContextHint && (
             <p className="mock-footnote">
-              Add one more sentence for more precise curation.
+              Say a little more. Even one sentence helps.
             </p>
           )}
 
@@ -549,20 +552,25 @@ export default function Home() {
             className="mock-btn mock-btn-inline text-label"
             onClick={() => void submitAudit(auditText)}
             disabled={isSubmitting}
+            aria-busy={isSubmitting}
           >
-            {isSubmitting ? 'BUILDING YOUR PLAN...' : 'GET MATCHED'}
+            {isSubmitting ? 'FINDING YOUR PATHS…' : 'GET MATCHED'}
           </button>
-          <p className="mock-footnote">
-            No account required. Start immediately.
+          <p role="status" aria-live="polite" className="sr-only">
+            {isSubmitting
+              ? 'Reading what you wrote and matching three reading paths…'
+              : ''}
           </p>
-          {hydrated && auditCount > 0 && !limitReached && (
-            <p className="mock-footnote">
-              Audit {auditCount + 1} of {MAX_AUDITS_PER_CYCLE}
-            </p>
-          )}
+          <p className="mock-footnote">
+            Private and anonymous — never shared, never used to train AI. No
+            account required.
+          </p>
+          {/* No proactive "X of N" counter — it reads as a metered trial.
+              The cap still applies; we only surface it once it's reached. */}
           {hydrated && limitReached && (
             <p className="mock-footnote">
-              All {MAX_AUDITS_PER_CYCLE} audits used. Reset to start fresh.
+              You’ve explored a few directions already — start a fresh audit
+              whenever you’re ready.
             </p>
           )}
           {hydrated && auditCount > 0 && (

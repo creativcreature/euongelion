@@ -48,7 +48,7 @@ export function useSoulAuditSubmit() {
 
       const trimmed = raw.trim()
       if (trimmed.length === 0) {
-        setError('Write what is real for you right now and try again.')
+        setError("Take your time. When you're ready, just write what comes.")
         setLastFailedSubmission(null)
         return
       }

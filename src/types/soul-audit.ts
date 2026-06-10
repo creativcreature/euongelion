@@ -144,15 +144,27 @@ export interface PlanOnboardingMeta {
 
 export interface SoulAuditSelectResponse {
   ok: boolean
-  auditRunId: string
+  auditRunId?: string
   requestId?: string
   deploymentFingerprint?: string
-  selectionType: SoulAuditSelectionKind
-  route: string
+  selectionType?: SoulAuditSelectionKind
+  /**
+   * Synchronous / idempotent-complete branch: a plan already exists, navigate
+   * straight to `route`.
+   */
+  route?: string
   planToken?: string
   seriesSlug?: string
   planDays?: CustomPlanDay[]
   onboardingMeta?: PlanOnboardingMeta
+  /**
+   * Async generation branch (a NEW plan is being built): no `route` yet — poll
+   * `pollUrl` with `jobId` until status is `complete`, which yields the route.
+   */
+  jobId?: string
+  status?: 'pending' | 'generating' | 'complete'
+  planId?: string
+  pollUrl?: string
 }
 
 export interface DevotionalDayEndnote {

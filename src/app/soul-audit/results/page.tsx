@@ -8,6 +8,7 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import FadeIn from '@/components/motion/FadeIn'
 import CrisisGate from '@/components/soul-audit/CrisisGate'
+import GenerationProgress from '@/components/soul-audit/GenerationProgress'
 import OptionCard from '@/components/soul-audit/OptionCard'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { useSettingsStore } from '@/stores/settingsStore'
@@ -50,6 +51,13 @@ export default function SoulAuditResultsPage() {
   const [selectingOptionId, setSelectingOptionId] = useState<string | null>(
     null,
   )
+  // When a NEW plan is being generated, the select endpoint returns a job to
+  // poll (not a route). We hand off to GenerationProgress until it completes.
+  const [generationJob, setGenerationJob] = useState<{
+    jobId: string
+    pollUrl: string
+    optionId: string
+  } | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [selectionInlineError, setSelectionInlineError] = useState<
     string | null
@@ -145,7 +153,6 @@ export default function SoulAuditResultsPage() {
     !submitResult?.crisis.required || crisisAcknowledged,
   )
   const optionSelectionReady = Boolean(!submitting && crisisRequirementsMet)
-  const rerollsRemaining = rerollUsed ? 0 : 1
 
   const displayOptions = useMemo(() => {
     if (!submitResult) return []
@@ -242,7 +249,7 @@ export default function SoulAuditResultsPage() {
             setRunExpired(true)
           } else {
             throw new Error(
-              'Your audit run expired. Fresh options were reloaded. Select your path again.',
+              'These options expired — fresh ones were loaded. Choose your path again.',
             )
           }
         }
@@ -255,7 +262,23 @@ export default function SoulAuditResultsPage() {
       if (payload.planToken && Array.isArray(payload.planDays)) {
         persistPlanDays(payload.planToken, payload.planDays)
       }
-      router.push(payload.route)
+
+      if (payload.route) {
+        // Plan already exists (idempotent/complete) — go straight there.
+        router.push(payload.route)
+      } else if (payload.jobId && payload.pollUrl) {
+        // New plan is generating — hand off to the live progress UI, which
+        // polls the job and navigates to the plan when it's ready.
+        setGenerationJob({
+          jobId: payload.jobId,
+          pollUrl: payload.pollUrl,
+          optionId,
+        })
+      } else {
+        throw new Error(
+          'We started building your plan but lost track of it. Please try selecting again.',
+        )
+      }
     } catch (err) {
       const message =
         err instanceof Error ? err.message : 'Unable to complete selection.'
@@ -466,6 +489,30 @@ export default function SoulAuditResultsPage() {
     )
   }
 
+  // A new plan is being generated — show the live progress UI (it polls the
+  // job and navigates to the plan on completion).
+  if (generationJob) {
+    return (
+      <div className="mock-home">
+        <main id="main-content" className="mock-paper">
+          <EuangelionShellHeader />
+          <section className="mock-panel">
+            <GenerationProgress
+              jobId={generationJob.jobId}
+              pollUrl={generationJob.pollUrl}
+              onRestart={() => {
+                const optionId = generationJob.optionId
+                setGenerationJob(null)
+                void handleSelect(optionId)
+              }}
+            />
+          </section>
+          <SiteFooter />
+        </main>
+      </div>
+    )
+  }
+
   // Filter to AI primary directions only
   const directions = displayOptions.filter(
     (option) => option.kind === 'ai_primary',
@@ -493,12 +540,12 @@ export default function SoulAuditResultsPage() {
               <header className="mb-10 text-center">
                 <p className="text-label vw-small mb-4 text-gold">SOUL AUDIT</p>
                 <h1 className="vw-heading-md">
-                  {typographer('A path was found for you.')}
+                  {typographer('We found something for you.')}
                 </h1>
                 <p className="vw-small mt-3 text-secondary">
                   {revealedCount === 1
-                    ? 'This is the direction that best matches your reflection.'
-                    : `${revealedCount} directions available. Choose where to begin.`}
+                    ? 'This is the direction that best matches your reflection. It’s a starting point, not a prescription.'
+                    : 'Based on what you shared, here are a few directions. Choose where to begin — it’s a starting point, not a prescription.'}
                 </p>
               </header>
             </FadeIn>
@@ -658,7 +705,7 @@ export default function SoulAuditResultsPage() {
                         className="text-label vw-small link-highlight"
                         onClick={cleanSavedOptions}
                       >
-                        Monthly clean house
+                        Clear old paths
                       </button>
                     )}
                   </div>
@@ -719,9 +766,8 @@ export default function SoulAuditResultsPage() {
                 style={{ borderColor: 'var(--color-border)' }}
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-label vw-small text-gold">REROLL</p>
-                  <p className="vw-small text-muted">
-                    {rerollsRemaining}/1 left
+                  <p className="text-label vw-small text-gold">
+                    NOT QUITE RIGHT?
                   </p>
                 </div>
                 <div className="mt-3 flex flex-wrap items-center gap-3">
@@ -732,13 +778,15 @@ export default function SoulAuditResultsPage() {
                     disabled={rerollUsed || isRerolling || submitting}
                   >
                     {isRerolling
-                      ? 'Rerolling...'
+                      ? 'Finding new readings…'
                       : rerollUsed
-                        ? 'Reroll Used'
-                        : 'Reroll Options'}
+                        ? 'Already refreshed'
+                        : 'Show me different readings'}
                   </button>
                   <p className="vw-small text-secondary">
-                    One reroll per audit run.
+                    {rerollUsed
+                      ? 'These are your refreshed readings.'
+                      : 'You can refresh these once.'}
                   </p>
                 </div>
               </section>
@@ -761,7 +809,7 @@ export default function SoulAuditResultsPage() {
                       }
                       className="cta-major text-label vw-small px-5 py-2 disabled:opacity-50"
                     >
-                      {submitting ? 'Reloading...' : 'Reload Options'}
+                      {submitting ? 'Refreshing…' : 'Refresh options'}
                     </button>
                     <button
                       type="button"

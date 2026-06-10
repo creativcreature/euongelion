@@ -49,7 +49,7 @@ describe('Soul Audit run-recovery contract', () => {
     expect(helpers).toContain('function loadLastAuditInput(): string | null')
     // Results page has recovery logic
     expect(results).toContain('async function recoverExpiredRun(options?:')
-    expect(results).toContain('Reload Options')
+    expect(results).toContain('Refresh options')
     expect(results).toContain('setRerollUsed(false)')
     expect(results).toContain(
       'sessionStorage.removeItem(REROLL_USED_SESSION_KEY)',

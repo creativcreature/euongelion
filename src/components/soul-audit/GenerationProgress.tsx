@@ -17,6 +17,13 @@ interface StatusResponse {
 interface GenerationProgressProps {
   jobId: string
   pollUrl: string
+  /**
+   * Called when the user asks to recover from a terminal error/stall. If
+   * provided, this kicks a FRESH generation (re-select) rather than re-polling
+   * a job that already failed — re-polling a dead job just returns the same
+   * error. Falls back to re-polling only for the soft timeout case.
+   */
+  onRestart?: () => void
 }
 
 const POLL_INTERVAL_MS = 2500
@@ -34,6 +41,7 @@ const BREATHING_MESSAGES = [
 export default function GenerationProgress({
   jobId,
   pollUrl,
+  onRestart,
 }: GenerationProgressProps) {
   const router = useRouter()
   const [status, setStatus] = useState<StatusResponse | null>(null)
@@ -132,7 +140,11 @@ export default function GenerationProgress({
         <div>
           <p className="text-label vw-small mb-3 text-gold">GENERATION ERROR</p>
           <p className="vw-body mb-6 text-secondary">{error}</p>
-          <button type="button" className="cta-major" onClick={handleRetry}>
+          <button
+            type="button"
+            className="cta-major"
+            onClick={onRestart ?? handleRetry}
+          >
             RETRY
           </button>
           <p className="vw-small mt-4 text-muted">

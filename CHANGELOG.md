@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## UX AUDIT FIXES — tranche A: Soul Audit (2026-06-10)
+
+First tranche of a comprehensive UX audit (grounded in `AUDIENCE.md`/`PHILOSOPHY.md`/
+`SUCCESS-METRICS.md` + the M00 IA/self-service standards). This tranche fixes the
+Soul Audit entry + selection flow.
+
+- **Launch-blocker fixed (F-022):** selecting a path navigated to `undefined` for
+  first-time users — the async select contract returns `{jobId, pollUrl, status:
+'pending'}` (no `route`), but `results/page.tsx` pushed `payload.route`
+  unconditionally, and the built-but-unused `GenerationProgress` (poll + progress +
+  retry) was wired nowhere. Now the new-plan branch mounts `GenerationProgress`,
+  which polls the job and navigates on completion; retry re-submits a fresh job.
+- **Honesty/anti-manipulation copy:** button "BUILDING YOUR PLAN"→"FINDING YOUR
+  PATHS" (it matches options, doesn't build a plan, at that step); approved gentle
+  validation copy ("Take your time…"); removed slot-machine "reroll / X-of-1 left"
+  and the metered "Audit X of N" counter (cap still applies, just not surfaced as a
+  depleting meter); de-jargoned "Reload Options"→"Refresh options" and "Monthly
+  clean house"→"Clear old paths"; results header → plural-friendly "We found
+  something for you."
+- **Entry feedback/privacy:** therapy-grade privacy line now sits directly under the
+  homepage textarea; `aria-live` status + `aria-busy` on submit; textarea
+  `maxLength={2000}` (no more post-submission rejection of long, vulnerable input);
+  prompt pills only show on an empty field so a tap never overwrites typed text.
+
+---
+
 ## PERFORMANCE — load-weight pass (2026-06-10)
 
 Initial-page-load audit (assets, CSS, JS imports, font loading). **Quality-first:
