@@ -95,8 +95,13 @@ supabase/.temp/
 .env*.local
 
 # Design scratch / source art — never commit or deploy.
-# .psd files (67-79MB) exceed Cloudflare Workers' 25 MiB per-file asset limit
+# .psd files (67-83MB) exceed Cloudflare Workers' 25 MiB per-file asset limit
 # and would break the deploy if served from public/. These are editing sources,
-# not shipped assets.
+# not shipped assets. Relocated out of public/ to design-sources/.
 *.psd
 public/images/edit/
+design-sources/
+
+# Founder marketing/strategy scratch (not app assets; kept local)
+marketing/
+social-plan/
