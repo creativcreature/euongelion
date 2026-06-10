@@ -600,6 +600,15 @@ export default function EuangelionShellHeader({
                 ACCOUNT
               </Link>
             )}
+            {/* Mobile/desktop parity: Help lives in the desktop account menu but
+                was unreachable from the mobile menu (a mobile-first audience). */}
+            <Link
+              href="/help"
+              className="mock-nav-item"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              HELP
+            </Link>
             {!authLoading && !authenticated && (
               <>
                 <Link

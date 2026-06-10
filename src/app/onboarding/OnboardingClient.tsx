@@ -383,52 +383,12 @@ export default function OnboardingClient({
             </div>
           </div>
 
-          <div className="grid gap-3">
-            <p className="text-label vw-small text-gold">DEFAULT BRAIN</p>
-            <div className="flex flex-wrap gap-3">
-              {[
-                { label: 'Auto', value: 'auto' },
-                { label: 'OpenAI', value: 'openai' },
-                { label: 'Google', value: 'google' },
-                { label: 'MiniMax', value: 'minimax' },
-                { label: 'NVIDIA Kimi', value: 'nvidia_kimi' },
-              ].map((option) => (
-                <OptionButton
-                  key={option.value}
-                  active={prefs.defaultBrainMode === option.value}
-                  onClick={() =>
-                    setPrefs((prev) => ({
-                      ...prev,
-                      defaultBrainMode: option.value as
-                        | 'auto'
-                        | 'openai'
-                        | 'google'
-                        | 'minimax'
-                        | 'nvidia_kimi',
-                    }))
-                  }
-                >
-                  {option.label}
-                </OptionButton>
-              ))}
-            </div>
-            <label className="flex items-start gap-3">
-              <input
-                type="checkbox"
-                checked={prefs.openWebDefaultEnabled}
-                onChange={(event) =>
-                  setPrefs((prev) => ({
-                    ...prev,
-                    openWebDefaultEnabled: event.target.checked,
-                  }))
-                }
-              />
-              <span className="vw-small text-secondary">
-                Allow Open Web mode by default (you can still turn it off per
-                chat).
-              </span>
-            </label>
-          </div>
+          {/* The LLM-provider ("Default Brain") + Open-Web pickers were removed
+              from first-run onboarding — raw vendor names (OpenAI/Google/MiniMax/
+              NVIDIA Kimi) are implementation jargon that contradicts the
+              sacred-minimalism brand and the "AI as composer, not author" stance.
+              They remain available in Settings for advanced users; the defaults
+              still apply. */}
 
           <p className="vw-small text-secondary">
             These defaults can be changed anytime in Settings.

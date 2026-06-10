@@ -5,6 +5,21 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## UX AUDIT FIXES — tranche D: mobile parity + onboarding (2026-06-10)
+
+- **Mobile/desktop nav parity:** `Help` added to the mobile hamburger menu (was
+  desktop-account-menu only) for the mobile-first audience.
+- **Onboarding de-jargoned:** removed the raw LLM-vendor picker ("Default Brain":
+  OpenAI/Google/MiniMax/NVIDIA Kimi) + Open-Web checkbox from first-run onboarding
+  (implementation jargon vs. the sacred-minimalism / "AI as composer" stance);
+  still available in Settings.
+
+> Remaining UX-audit items (homepage CTA hierarchy, scripture-first mobile reorder,
+> EmptyState rotation, the single canonical reader URL) are intentionally folded
+> into the v3.0 elevation brief rather than done twice.
+
+---
+
 ## UX AUDIT FIXES — tranche C: navigation & wayfinding (2026-06-10)
 
 - **No more dead nav links (F-011/M00 "no dead-ends"):** the reader "Library"
