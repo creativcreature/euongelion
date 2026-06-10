@@ -39,7 +39,7 @@ const HOMEPAGE_TODAY = {
   heroSrc: '/images/site/homepage/hero/header-v2.webp',
   // Featured-card art (Too Busy for God featured devotional block).
   // Founder direction: use the Substack header image here.
-  featuredArt: '/images/substack-cache/33cd9f952103.png',
+  featuredArt: '/images/substack-cache/33cd9f952103.webp',
 }
 
 const HOW_STEPS = [

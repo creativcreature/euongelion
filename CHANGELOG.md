@@ -5,6 +5,35 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## PERFORMANCE — load-weight pass (2026-06-10)
+
+Initial-page-load audit (assets, CSS, JS imports, font loading). **Quality-first:
+no image or video was downscaled or visibly degraded** — only a perceptually-
+lossless format conversion + dead-weight removal.
+
+- **Images (uncompressed assets):** the homepage `featuredArt` was a **3.4 MB PNG**
+  shipping raw (`images: { unoptimized: true }`). Converted to WebP at its **full
+  native 1536×1024** resolution, q90 → **816 KB** (~4× smaller, visually identical).
+  The LCP hero and the 3 step images were **left at full original resolution** — an
+  earlier draft downscaled them but that risked softness on retina, so it was
+  reverted. No self-hosted video exists (`VideoModule` embeds YouTube/Vimeo).
+- **Font loading (eager → prioritized):** trimmed `<head>` font preloads from 5 → 3
+  (dropped the Industry Book/Demi UI-label weights; kept the two above-the-fold
+  serifs + the Industry-Bold masthead weight) so they stop contending with the LCP
+  image for early bandwidth. Fonts themselves unchanged.
+- **Unused CSS:** removed ~296 lines of verified-dead selector families
+  (`.mock-devotional-*` superseded reader layout, `.browse-card*` superseded cards),
+  preserving the live exceptions (`.mock-devotional-error-actions`, `.browse-rail-*`).
+- **Redundant JS / dead weight:** deleted unused `LenisProvider.tsx` (imported by
+  nothing; `lenis` now import-free) and 126 KB of unused `.ttf` fonts (only the
+  `.woff2` versions are referenced). gsap confirmed already lazy-loaded off the
+  homepage critical path; framer-motion kept (used by `DevotionalChat`).
+
+Net: ~2.7 MB off the homepage, 2 fewer render-blocking font requests, ~296 lines of
+dead CSS — with zero visual-quality change to any asset.
+
+---
+
 ## SITE AUDIT — reconciliation pass (2026-06-10)
 
 Full-site audit before deploy (real bugs, broken links, uncommitted work, test

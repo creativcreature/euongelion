@@ -853,8 +853,8 @@ export const SUBSTACK_SOURCES: Record<string, SubstackSource> = {
     substackImages: [
       'https://substack-post-media.s3.amazonaws.com/public/images/dd8251b1-ffc0-4b70-bbc0-1cdfabb1874f_1536x1024.png',
     ],
-    substackImageLocal: '/images/substack-cache/33cd9f952103.png',
-    substackImagesLocal: ['/images/substack-cache/33cd9f952103.png'],
+    substackImageLocal: '/images/substack-cache/33cd9f952103.webp',
+    substackImagesLocal: ['/images/substack-cache/33cd9f952103.webp'],
   },
   'too-busy-for-god-day-2': {
     substackUrl: 'https://wokegod.substack.com/p/too-busy-for-god-16',

@@ -50,20 +50,11 @@ export default function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        <link
-          rel="preload"
-          href="/fonts/IndustryTest-Book.otf"
-          as="font"
-          type="font/otf"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/IndustryTest-Demi.otf"
-          as="font"
-          type="font/otf"
-          crossOrigin="anonymous"
-        />
+        {/* Preload only LCP-critical fonts: the above-the-fold display serif
+            (Instrument Regular + Italic) + the Industry-Bold masthead weight.
+            The Industry Book/Demi UI-label weights load via @font-face on their
+            own — preloading them made 5 fonts compete with the LCP hero image
+            for early bandwidth. */}
         <link
           rel="preload"
           href="/fonts/IndustryTest-Bold.otf"
