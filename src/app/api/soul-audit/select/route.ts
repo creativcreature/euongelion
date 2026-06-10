@@ -108,6 +108,37 @@ async function insertJob(job: JobRecord): Promise<boolean> {
 }
 
 /**
+ * Archive any currently-active plan(s) for a session before a new plan is
+ * activated. Keeps "one active plan per session" so Daily Bread resolves
+ * deterministically to the most recently activated plan and stale plans do
+ * not accumulate as `active`.
+ */
+async function archivePriorActivePlans(sessionToken: string): Promise<void> {
+  const supabase = maybeSupabase()
+  if (!supabase) return
+
+  try {
+    const { error } = await supabase
+      .from('devotional_plan_instances' as any)
+      .update({ status: 'archived' } as any)
+      .eq('session_token', sessionToken)
+      .eq('status', 'active')
+
+    if (error) {
+      console.error(
+        '[soul-audit:select] Archiving prior active plans failed:',
+        error.message,
+      )
+    }
+  } catch (err) {
+    console.error(
+      '[soul-audit:select] Archiving prior active plans threw:',
+      err instanceof Error ? err.message : err,
+    )
+  }
+}
+
+/**
  * Insert a plan record into devotional_plan_instances.
  * Uses existing column names: session_token, audit_run_id, plan_token.
  */
@@ -339,8 +370,7 @@ export async function POST(request: NextRequest) {
 
     if (run.crisis_detected && !consent.crisis_acknowledged) {
       return jsonError({
-        error:
-          'Crisis resource acknowledgement is required before continuing.',
+        error: 'Crisis resource acknowledgement is required before continuing.',
         code: 'CRISIS_ACK_REQUIRED',
         status: 400,
         requestId,
@@ -501,6 +531,11 @@ export async function POST(request: NextRequest) {
     // ─── Create plan instance ───
     const planToken = randomUUID()
     const planInstanceId = randomUUID()
+
+    // Archive any prior active plan for this session so Daily Bread always
+    // resolves to the plan the user just activated (one active plan per
+    // session). Prevents stale plans from shadowing the new one.
+    await archivePriorActivePlans(sessionToken)
 
     const planInserted = await insertPlanInstance({
       id: planInstanceId,

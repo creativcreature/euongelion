@@ -5,6 +5,54 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## READING-EXPERIENCE OVERHAUL — tranche 1 (2026-06-09)
+
+Reading-experience fixes authored in a cowork sandbox on a stale branch
+(`reading-experience-overhaul`, ~30 days behind `main`) and **re-applied onto
+current `main`** — only the ~10 tranche files, not the stale 70-commit base.
+Companion docs: `docs/audits/READING-EXPERIENCE-AUDIT-2026-06-07.md` and
+`...-IMPLEMENTATION-PLAN-2026-06-07.md`. Verified via `type-check` + `lint` +
+governance checks + `next build` + OpenNext Workers `preview` (incl. anonymous
+`/api/bookmarks` POST/GET/DELETE) before deploy. No visual theme changed —
+masthead, color system, type, and image style untouched.
+
+**Daily Bread reader — navigation + completion flow** (`DailyBreadView.tsx`)
+
+- Replaced the non-clickable "Previously / Coming next" text with real
+  prev/next day navigation buttons.
+- Mark-complete no longer does `window.location.reload()` (which lost scroll
+  and motion state); it advances in-session and reconciles with server state
+  on next natural load.
+- Added a "Continue to Day N" affordance after completing a day.
+
+**Saving — anonymous bookmark saving (SA-018 amended) + a home for saved content**
+
+- `/api/bookmarks` POST and DELETE no longer require sign-in; they use the same
+  `user?.id ?? audit-session-token` model as GET. This is a **founder-authorized
+  amendment to locked decision SA-018** (2026-06-09): bookmarks are a lightweight
+  save-for-later action and now work for anonymous readers (keyed by the audit
+  session token, merged to the account on sign-in). This corrects an earlier
+  audit's framing — the gate was a deliberate decision, not a bug. Annotations
+  (notes/highlights/stickies) **remain sign-in-gated**. Synced
+  `production-decisions.yaml` (SA-018), `PRODUCTION-SOURCE-OF-TRUTH.md` #2,
+  `F-035`, and `save-state-auth-gate.test.ts`.
+- New `/saved` route + `SavedList` component to view and remove saved
+  devotionals — the previously dead `/daily-bread?tab=bookmarks` link now
+  points to `/saved`.
+
+**Plan activation hygiene** (`api/soul-audit/select/route.ts`)
+
+- Activating a new plan now archives any prior `active` plan for the session
+  (one active plan per session), so Daily Bread resolves deterministically to
+  the just-activated plan and stale plans stop accumulating.
+
+**Diagnosis correction:** an earlier audit draft claimed `fetchActivePlan`'s
+`.single()` would crash on multiple active plans. It does not (`.limit(1)`
+caps the result first). The real activation issues were stale-plan
+accumulation and the browse path never creating a plan.
+
+---
+
 ## F-061 R38 / Revert R37 hero swap + drop how-it-works bottom padding (2026-05-15)
 
 Founder correction to R37:

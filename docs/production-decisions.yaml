@@ -1,5 +1,5 @@
 version: 1
-updated_at: 2026-02-23
+updated_at: 2026-06-09
 
 decisions:
   - id: SA-001
@@ -37,7 +37,8 @@ decisions:
   - id: SA-017
     title: app-store-release-gate-must-pass-before-submission
   - id: SA-018
-    title: auth-required-for-persistent-save-state-actions
+    title: save-state-auth-model-anonymous-bookmarks-authed-annotations
+    note: 'Amended 2026-06-09 (founder-authorized); was auth-required-for-persistent-save-state-actions. Bookmarks (save-for-later) now allowed anonymously, keyed by audit session token and merged to the account on sign-in; annotations (notes/highlights/stickies) remain sign-in-gated. See F-035 and CHANGELOG 2026-06-09.'
   - id: SA-019
     title: artwork-image-layer-full-bleed-heroes-inline-lightbox
   - id: SA-020

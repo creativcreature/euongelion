@@ -30,15 +30,10 @@ export async function POST(request: NextRequest) {
   const requestId = createRequestId()
   const clientKey = getClientKey(request)
   try {
+    // Saving works for anonymous (session-keyed) users too — bookmark storage
+    // is keyed by session_token, matching the rest of the reading flow. A
+    // signed-in user's id takes precedence when present.
     const user = await getUser()
-    if (!user) {
-      return jsonError({
-        error: 'Sign in is required before saving bookmarks.',
-        code: 'AUTH_REQUIRED_SAVE_STATE',
-        status: 401,
-        requestId,
-      })
-    }
 
     const limiter = await takeRateLimit({
       namespace: 'bookmarks-post',
@@ -77,7 +72,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    const sessionToken = user.id
+    const sessionToken = user?.id ?? (await getOrCreateAuditSessionToken())
     const bookmark = await addBookmark({
       sessionToken,
       devotionalSlug,
@@ -136,14 +131,6 @@ export async function DELETE(request: NextRequest) {
   const clientKey = getClientKey(request)
   try {
     const user = await getUser()
-    if (!user) {
-      return jsonError({
-        error: 'Sign in is required before modifying bookmarks.',
-        code: 'AUTH_REQUIRED_SAVE_STATE',
-        status: 401,
-        requestId,
-      })
-    }
 
     const devotionalSlug = String(
       request.nextUrl.searchParams.get('devotionalSlug') || '',
@@ -156,7 +143,7 @@ export async function DELETE(request: NextRequest) {
       })
     }
 
-    const sessionToken = user.id
+    const sessionToken = user?.id ?? (await getOrCreateAuditSessionToken())
     await removeBookmark({
       sessionToken,
       devotionalSlug,

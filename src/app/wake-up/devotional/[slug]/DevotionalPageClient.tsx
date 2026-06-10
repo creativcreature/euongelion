@@ -620,7 +620,7 @@ export default function DevotionalPageClient({
                       Archived Pages
                     </Link>
                     <Link
-                      href="/daily-bread?tab=bookmarks"
+                      href="/saved"
                       className="block border px-3 py-2 text-secondary"
                       style={{ borderColor: 'var(--color-border)' }}
                     >

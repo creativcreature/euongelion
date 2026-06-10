@@ -97,16 +97,12 @@ function DaySelector({
             aria-current={isActive ? 'step' : undefined}
             aria-disabled={!unlocked}
           >
-            <span className="text-label block text-xs">
-              {entry.day}
-            </span>
+            <span className="text-label block text-xs">{entry.day}</span>
             {stateLabel && (
               <span
                 className="block text-[0.6rem] uppercase"
                 style={{
-                  color: completed
-                    ? 'var(--color-gold)'
-                    : 'var(--color-muted)',
+                  color: completed ? 'var(--color-gold)' : 'var(--color-muted)',
                 }}
               >
                 {stateLabel}
@@ -157,9 +153,7 @@ function TierSelector({
             >
               {tier.label.toUpperCase()}
             </span>
-            <span className="block text-[0.6rem] text-muted">
-              {tier.time}
-            </span>
+            <span className="block text-[0.6rem] text-muted">{tier.time}</span>
           </button>
         )
       })}
@@ -193,7 +187,10 @@ function SabbathView() {
         Today is a day of rest. No reading, no striving. Sit with what you have
         received this week. Let silence do its work.
       </p>
-      <p className="vw-body mt-6 text-secondary" style={{ fontStyle: 'italic' }}>
+      <p
+        className="vw-body mt-6 text-secondary"
+        style={{ fontStyle: 'italic' }}
+      >
         Be still, and know that I am God.
       </p>
       <p className="vw-small mt-2 text-muted">Psalm 46:10</p>
@@ -255,9 +252,7 @@ function DailyBreadTier({ content }: { content: DayContent }) {
           style={{ borderColor: 'var(--color-border)' }}
         >
           <p className="text-label vw-small mb-2 text-gold">
-            {content.interactiveElement.type
-              .replace(/_/g, ' ')
-              .toUpperCase()}
+            {content.interactiveElement.type.replace(/_/g, ' ').toUpperCase()}
           </p>
           <div
             className="vw-body text-secondary type-prose"
@@ -314,9 +309,7 @@ function GoDeeper({ content }: { content: DayContent }) {
       </section>
 
       <section>
-        <p className="text-label vw-small mb-2 text-gold">
-          CHRIST CONNECTION
-        </p>
+        <p className="text-label vw-small mb-2 text-gold">CHRIST CONNECTION</p>
         <div
           className="vw-body text-secondary type-prose"
           dangerouslySetInnerHTML={{
@@ -390,9 +383,7 @@ function GoDeeper({ content }: { content: DayContent }) {
           style={{ borderColor: 'var(--color-border)' }}
         >
           <p className="text-label vw-small mb-2 text-gold">
-            {content.interactiveElement.type
-              .replace(/_/g, ' ')
-              .toUpperCase()}
+            {content.interactiveElement.type.replace(/_/g, ' ').toUpperCase()}
           </p>
           <div
             className="vw-body text-secondary type-prose"
@@ -588,6 +579,9 @@ export default function DailyBreadView({
   const [activeTier, setActiveTier] = useState<Tier>('daily-bread')
   const [completing, setCompleting] = useState(false)
   const [completeError, setCompleteError] = useState<string | null>(null)
+  // Track days completed in this session so the reader can advance without a
+  // full page reload (server state remains authoritative on next load).
+  const [localCompleted, setLocalCompleted] = useState<Set<number>>(new Set())
 
   const selectedEntry = useMemo(
     () => schedule.find((e) => e.day === selectedDay),
@@ -599,10 +593,33 @@ export default function DailyBreadView({
     [plan, selectedDay],
   )
 
+  // Adjacent unlocked, non-sabbath days for real in-reader navigation
+  // (replaces the previous non-clickable "Previously / Coming next" text).
+  const { prevDay, nextDay } = useMemo(() => {
+    const days = schedule
+      .filter((e) => e.status !== 'sabbath' && isUnlocked(e))
+      .map((e) => e.day)
+      .sort((a, b) => a - b)
+    const idx = days.indexOf(selectedDay)
+    return {
+      prevDay: idx > 0 ? days[idx - 1] : null,
+      nextDay: idx >= 0 && idx < days.length - 1 ? days[idx + 1] : null,
+    }
+  }, [schedule, selectedDay])
+
   const isCurrentDayUnlocked = selectedEntry ? isUnlocked(selectedEntry) : false
   const isSabbath = selectedEntry?.status === 'sabbath'
-  const isCompleted = !!dayRecord?.completed_at
+  const isCompleted =
+    !!dayRecord?.completed_at || localCompleted.has(selectedDay)
   const content: DayContent | null = dayRecord?.content ?? null
+
+  const goToDay = useCallback((day: number) => {
+    setSelectedDay(day)
+    setCompleteError(null)
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }, [])
 
   const handleComplete = useCallback(async () => {
     if (completing || isCompleted || !dayRecord) return
@@ -624,8 +641,13 @@ export default function DailyBreadView({
         throw new Error(data.error || `Server returned ${res.status}`)
       }
 
-      // Force a page refresh to get updated plan state
-      window.location.reload()
+      // Mark complete in-session and advance to the next unlocked day if one
+      // is available — no full page reload (which previously lost scroll +
+      // motion state). Server state is reconciled on the next natural load.
+      setLocalCompleted((prev) => new Set(prev).add(selectedDay))
+      if (nextDay !== null) {
+        goToDay(nextDay)
+      }
     } catch (err) {
       setCompleteError(
         err instanceof Error ? err.message : 'Failed to mark day complete.',
@@ -633,7 +655,15 @@ export default function DailyBreadView({
     } finally {
       setCompleting(false)
     }
-  }, [completing, isCompleted, dayRecord, plan.plan_token, selectedDay])
+  }, [
+    completing,
+    isCompleted,
+    dayRecord,
+    plan.plan_token,
+    selectedDay,
+    nextDay,
+    goToDay,
+  ])
 
   return (
     <div className="mx-auto max-w-2xl px-5 py-8">
@@ -704,7 +734,10 @@ export default function DailyBreadView({
                 {completing ? 'MARKING COMPLETE...' : 'MARK DAY COMPLETE'}
               </button>
               {completeError && (
-                <p className="vw-small mt-2 text-center" style={{ color: 'var(--color-error, #ef4444)' }}>
+                <p
+                  className="vw-small mt-2 text-center"
+                  style={{ color: 'var(--color-error, #ef4444)' }}
+                >
                   {completeError}
                 </p>
               )}
@@ -719,10 +752,57 @@ export default function DailyBreadView({
               <p className="text-label vw-small text-gold">
                 DAY {selectedDay} COMPLETE
               </p>
-              <p className="vw-small mt-1 text-muted">
-                Well done. Return tomorrow for the next day.
-              </p>
+              {nextDay !== null ? (
+                <>
+                  <p className="vw-small mt-1 text-muted">
+                    Well done. Continue when you&rsquo;re ready.
+                  </p>
+                  <button
+                    type="button"
+                    className="cta-major mt-4"
+                    onClick={() => goToDay(nextDay)}
+                  >
+                    CONTINUE TO DAY {nextDay}
+                  </button>
+                </>
+              ) : (
+                <p className="vw-small mt-1 text-muted">
+                  Well done. Return tomorrow for the next day.
+                </p>
+              )}
             </div>
+          )}
+
+          {/* Real day-to-day navigation (replaces dead text links) */}
+          {(prevDay !== null || nextDay !== null) && (
+            <nav
+              className="mt-8 flex items-center justify-between gap-4 border-t pt-6"
+              style={{ borderColor: 'var(--color-border)' }}
+              aria-label="Day navigation"
+            >
+              {prevDay !== null ? (
+                <button
+                  type="button"
+                  className="link-highlight text-label vw-small"
+                  onClick={() => goToDay(prevDay)}
+                >
+                  &larr; DAY {prevDay}
+                </button>
+              ) : (
+                <span />
+              )}
+              {nextDay !== null ? (
+                <button
+                  type="button"
+                  className="link-highlight text-label vw-small"
+                  onClick={() => goToDay(nextDay)}
+                >
+                  DAY {nextDay} &rarr;
+                </button>
+              ) : (
+                <span />
+              )}
+            </nav>
           )}
         </>
       )}

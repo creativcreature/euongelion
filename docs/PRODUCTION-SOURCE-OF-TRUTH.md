@@ -17,7 +17,7 @@ Euangelion Soul Audit and Devotional Engine are curated-first and selection-firs
 ## Locked Product Decisions
 
 1. No-account core usage in testing phase remains enabled for landing, audit submit, and option review.
-2. Real auth is enabled. Persistent save-state actions require sign-in.
+2. Real auth is enabled. Bookmarks (save-for-later) are allowed anonymously, keyed by the audit session token and merged to the account on sign-in; annotations (notes, highlights, stickies) require sign-in. (SA-018, amended 2026-06-09 — founder-authorized.)
 3. Soul Audit returns exactly 5 choices:
 4. 3 primary AI-ranked options.
 5. 2 secondary curated prefab options.

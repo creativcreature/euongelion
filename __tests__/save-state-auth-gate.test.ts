@@ -31,21 +31,25 @@ function patchJson(url: string, body: Record<string, unknown>) {
   })
 }
 
+// Save-state auth model (SA-018, amended 2026-06-09):
+//   - Bookmarks ("save for later") are a LIGHTWEIGHT save-state action and are
+//     allowed anonymously, keyed by the audit session token (and merged to the
+//     account on sign-in). This matches the anonymous reading flow.
+//   - Annotations (notes / highlights / stickies) are richer authored content
+//     and still REQUIRE sign-in (return AUTH_REQUIRED_SAVE_STATE when anon).
 describe('save-state auth gate', () => {
   beforeEach(() => {
     mockedGetUser.mockReset()
   })
 
-  it('blocks bookmark writes for unauthenticated users', async () => {
+  it('allows bookmark writes for unauthenticated users (session-keyed)', async () => {
     mockedGetUser.mockResolvedValue(null)
     const response = await bookmarkPost(
       postJson('http://localhost/api/bookmarks', {
         devotionalSlug: 'identity-day-1',
       }) as never,
     )
-    expect(response.status).toBe(401)
-    const payload = (await response.json()) as { code?: string }
-    expect(payload.code).toBe('AUTH_REQUIRED_SAVE_STATE')
+    expect(response.status).toBe(200)
   })
 
   it('allows bookmark writes for authenticated users', async () => {
