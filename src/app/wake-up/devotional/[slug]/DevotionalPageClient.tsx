@@ -26,7 +26,7 @@ import { typographer } from '@/lib/typographer'
 import { startSeries } from '@/lib/progress'
 import { isDayUnlocked } from '@/lib/day-gating'
 import { calculateInsertionPoints } from '@/lib/artwork-placement'
-import { useProgress, useReadingTime } from '@/hooks/useProgress'
+import { useProgress } from '@/hooks/useProgress'
 import { useLightbox } from '@/hooks/useLightbox'
 import { useProgressStore } from '@/stores/progressStore'
 import { useSettingsStore } from '@/stores/settingsStore'
@@ -79,7 +79,6 @@ export default function DevotionalPageClient({
 
   const router = useRouter()
   const { isRead, markComplete, canRead } = useProgress()
-  const timeSpent = useReadingTime()
 
   const seriesSlug = getSeriesSlugFromDevotional(slug)
   const dayIndex = getDayIndexFromSlug(slug)
@@ -376,7 +375,7 @@ export default function DevotionalPageClient({
   return (
     <div className="mock-home">
       <main id="main-content" className="mock-paper">
-        <ScrollProgress showLabel />
+        <ScrollProgress />
         <EuangelionShellHeader brandWord={brandWord} tone={headerTone} />
 
         <section className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
@@ -796,7 +795,7 @@ export default function DevotionalPageClient({
                           type="button"
                           className="cta-major text-label vw-small px-5 py-2"
                           onClick={() => {
-                            markComplete(slug, timeSpent)
+                            markComplete(slug)
                             setIsCompleted(true)
                             window.dispatchEvent(
                               new CustomEvent('libraryUpdated'),

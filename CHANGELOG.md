@@ -5,6 +5,25 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## UX AUDIT FIXES — tranche B: calm reading + feedback states (2026-06-10)
+
+- **No more silent failures (F-017/M00 §4):** Save / Start / Remove now surface
+  success, sign-in-needed, AND error states (the `lastError` path was wired
+  nowhere); in-flight buttons read "SAVING…"/"STARTING…"; `/saved` shows a real
+  error+retry instead of a misleading "Nothing saved yet"; the Daily Bread
+  "content being prepared" day now offers Try-again / back / browse rather than
+  dead-ending.
+- **Anti-streak / calm reading (per SUCCESS-METRICS "what we don't measure"):**
+  removed the "X of Y days" completion scoreboard ("Journey Complete" → "You've
+  walked this series"); dropped auto-advance on mark-complete (the reader chooses
+  to continue); softened "Return tomorrow" to non-temporal; removed the scroll-%
+  completion label and the time-on-page capture.
+- **Reduced-motion (WCAG 2.1):** added a global `prefers-reduced-motion` reset
+  catching the JS-driven springs / hover-scale / scroll-behavior the
+  per-component rules missed.
+
+---
+
 ## UX AUDIT FIXES — tranche A: Soul Audit (2026-06-10)
 
 First tranche of a comprehensive UX audit (grounded in `AUDIENCE.md`/`PHILOSOPHY.md`/

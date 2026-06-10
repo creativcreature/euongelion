@@ -30,12 +30,14 @@ export default function SavedList() {
       setItems(Array.isArray(data.bookmarks) ? data.bookmarks : [])
       setError(null)
     } catch (err) {
+      // Do NOT collapse a load failure into items=[] — that would falsely show
+      // "Nothing saved yet" to a returning user who actually has saved items.
+      // Leave items as-is (null on first load) and surface a real error state.
       setError(
         err instanceof Error
           ? err.message
           : 'Unable to load saved devotionals.',
       )
-      setItems([])
     }
   }, [])
 
@@ -66,6 +68,32 @@ export default function SavedList() {
     }
   }, [])
 
+  // Load failed before we ever got a list — show a real error with a retry,
+  // not a misleading "nothing saved yet."
+  if (items === null && error) {
+    return (
+      <div className="mx-auto max-w-lg px-5 py-16 text-center">
+        <p className="text-label vw-small mb-3 text-gold">SAVED</p>
+        <h1 className="vw-heading-md mb-4">
+          We couldn’t load your saved items.
+        </h1>
+        <p className="vw-body mb-8 text-secondary">
+          This is usually a connection hiccup — your saved devotionals are safe.
+        </p>
+        <button
+          type="button"
+          className="cta-major"
+          onClick={() => {
+            setError(null)
+            void load()
+          }}
+        >
+          TRY AGAIN
+        </button>
+      </div>
+    )
+  }
+
   if (items === null) {
     return (
       <div className="mx-auto max-w-2xl px-5 py-16 text-center">
@@ -86,7 +114,6 @@ export default function SavedList() {
         <Link href="/series" className="cta-major">
           BROWSE SERIES
         </Link>
-        {error && <p className="vw-small mt-4 text-muted">{error}</p>}
       </div>
     )
   }
@@ -97,6 +124,12 @@ export default function SavedList() {
         <p className="text-label vw-small mb-1 text-gold">SAVED</p>
         <h1 className="vw-heading-md">Your saved devotionals</h1>
       </header>
+
+      {error && (
+        <p className="vw-small mb-4 text-gold" role="status">
+          {error}
+        </p>
+      )}
 
       <ul className="list-none space-y-3">
         {items.map((b) => (

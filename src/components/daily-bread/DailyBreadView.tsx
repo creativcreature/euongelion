@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback, useMemo } from 'react'
+import Link from 'next/link'
 import { marked } from 'marked'
 import { isUnlocked } from '@/lib/soul-audit/plan-utils'
 import type {
@@ -641,13 +642,11 @@ export default function DailyBreadView({
         throw new Error(data.error || `Server returned ${res.status}`)
       }
 
-      // Mark complete in-session and advance to the next unlocked day if one
-      // is available — no full page reload (which previously lost scroll +
-      // motion state). Server state is reconciled on the next natural load.
+      // Mark complete in-session only — no full page reload (which lost scroll
+      // + motion) and no auto-advance into the next day. The reader chooses to
+      // continue via the "Continue to Day N" affordance; we don't push more
+      // reading on them. Server state reconciles on the next natural load.
       setLocalCompleted((prev) => new Set(prev).add(selectedDay))
-      if (nextDay !== null) {
-        goToDay(nextDay)
-      }
     } catch (err) {
       setCompleteError(
         err instanceof Error ? err.message : 'Failed to mark day complete.',
@@ -655,15 +654,7 @@ export default function DailyBreadView({
     } finally {
       setCompleting(false)
     }
-  }, [
-    completing,
-    isCompleted,
-    dayRecord,
-    plan.plan_token,
-    selectedDay,
-    nextDay,
-    goToDay,
-  ])
+  }, [completing, isCompleted, dayRecord, plan.plan_token, selectedDay])
 
   return (
     <div className="mx-auto max-w-2xl px-5 py-8">
@@ -767,7 +758,7 @@ export default function DailyBreadView({
                 </>
               ) : (
                 <p className="vw-small mt-1 text-muted">
-                  Well done. Return tomorrow for the next day.
+                  Well done. Sit with this — it’s here whenever you return.
                 </p>
               )}
             </div>
@@ -807,12 +798,35 @@ export default function DailyBreadView({
         </>
       )}
 
-      {/* No content available */}
+      {/* No content available — never a dead-end: always offer a next action. */}
       {isCurrentDayUnlocked && !isSabbath && !content && (
         <div className="py-16 text-center">
-          <p className="vw-body text-secondary">
-            Content for this day is still being prepared.
+          <p className="vw-body mb-6 text-secondary">
+            This day isn’t ready just yet. Give it a moment and try again.
           </p>
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <button
+              type="button"
+              className="cta-major"
+              onClick={() => {
+                if (typeof window !== 'undefined') window.location.reload()
+              }}
+            >
+              TRY AGAIN
+            </button>
+            {prevDay !== null && (
+              <button
+                type="button"
+                className="link-highlight text-label vw-small"
+                onClick={() => goToDay(prevDay)}
+              >
+                &larr; BACK TO DAY {prevDay}
+              </button>
+            )}
+            <Link href="/series" className="link-highlight text-label vw-small">
+              BROWSE SERIES
+            </Link>
+          </div>
         </div>
       )}
     </div>

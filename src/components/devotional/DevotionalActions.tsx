@@ -86,9 +86,15 @@ export default function DevotionalActions({
       if (isSaved) {
         const result = await unsave(devotionalSlug)
         if (result.ok) setToast('Removed from your library.')
+        else if (result.needsAuth)
+          setToast('Sign in to manage your saved devotionals.')
+        else setToast('Couldn’t update your library — please try again.')
       } else {
         const result = await save(devotionalSlug)
         if (result.ok) setToast('Saved to your library.')
+        else if (result.needsAuth)
+          setToast('Sign in to keep this saved across devices.')
+        else setToast('Couldn’t save — please try again.')
       }
     } finally {
       setBusy(false)
@@ -127,6 +133,10 @@ export default function DevotionalActions({
         }
         if ('needsConfirm' in result && result.needsConfirm) {
           setSwitchModalOpen(true)
+        } else if ('needsAuth' in result && result.needsAuth) {
+          setToast('Sign in to start a series and keep your progress.')
+        } else {
+          setToast('Couldn’t start this series — please try again.')
         }
       } finally {
         setBusy(false)
@@ -155,12 +165,20 @@ export default function DevotionalActions({
     return null
   }
 
-  const saveLabel = isSaved ? 'SAVED' : 'SAVE THIS DEVOTIONAL'
-  const startLabel = isActiveSameSeries
-    ? 'OPEN IN DAILY BREAD'
-    : isQueuedSameSeries
-      ? `QUEUED FOR ${scheduledSwap ? formatStartsAt(scheduledSwap.startsAt).toUpperCase() : 'MONDAY'}`
-      : 'START THIS DEVOTIONAL'
+  const saveLabel = busy
+    ? isSaved
+      ? 'REMOVING…'
+      : 'SAVING…'
+    : isSaved
+      ? 'SAVED'
+      : 'SAVE THIS DEVOTIONAL'
+  const startLabel = busy
+    ? 'STARTING…'
+    : isActiveSameSeries
+      ? 'OPEN IN DAILY BREAD'
+      : isQueuedSameSeries
+        ? `QUEUED FOR ${scheduledSwap ? formatStartsAt(scheduledSwap.startsAt).toUpperCase() : 'MONDAY'}`
+        : 'START THIS DEVOTIONAL'
 
   return (
     <section

@@ -7280,3 +7280,18 @@ body:not(.rhythm-enabled) .rhythm-block {
 body:not(.rhythm-enabled) .rhythm-block-image {
   display: none;
 }
+
+/* Global reduced-motion safety net. Per-component blocks above handle specific
+   cases; this universal reset catches anything they miss (JS-driven springs,
+   hover-scale, scroll-behavior) so motion-sensitive readers get a calm, static
+   experience. WCAG 2.1 — and the calm/immersion value. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

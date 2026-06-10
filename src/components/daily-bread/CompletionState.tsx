@@ -6,15 +6,10 @@ interface CompletionStateProps {
 }
 
 export default function CompletionState({ plan }: CompletionStateProps) {
-  const completedCount = plan.devotional_plan_days.filter(
-    (d) => d.completed_at,
-  ).length
-  const totalDays = plan.devotional_plan_days.length
-
   return (
     <div className="mx-auto max-w-lg px-5 py-16 text-center">
       <p className="text-label vw-small mb-3 text-gold">DAILY BREAD</p>
-      <h1 className="vw-heading-md mb-4">Journey Complete</h1>
+      <h1 className="vw-heading-md mb-4">You’ve walked this series.</h1>
 
       {plan.theme && (
         <div
@@ -25,10 +20,6 @@ export default function CompletionState({ plan }: CompletionStateProps) {
           <p className="vw-body text-secondary">{plan.theme}</p>
         </div>
       )}
-
-      <p className="vw-body mb-2 text-secondary">
-        You completed {completedCount} of {totalDays} days.
-      </p>
 
       {plan.scripture_anchor && (
         <p className="vw-small mb-8 text-muted">{plan.scripture_anchor}</p>
