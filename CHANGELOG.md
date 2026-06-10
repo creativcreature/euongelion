@@ -5,6 +5,35 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## SITE AUDIT — reconciliation pass (2026-06-10)
+
+Full-site audit before deploy (real bugs, broken links, uncommitted work, test
+health). Resolved:
+
+- **Nav 404 fixed** (`EuangelionShellHeader.tsx`, F-011): the mobile menu
+  "ACCOUNT" link (signed-in users) pointed to a non-existent `/account` route —
+  a hard 404 on every tap. Repointed to `/settings`.
+- **Masthead CLS fixed** (`globals.css`, F-042): Industry-Bold (the preloaded
+  masthead weight) had drifted to `font-display: swap`; restored to `block` to
+  match the other Industry weights and the LCP/CLS contract.
+- **Test suite green** (was 7 red on `main`): reconciled stale assertions to
+  shipped product — series count 32→33 (Bible-365), masthead copy "The Good
+  News, for You. Every Day.", Bible-365 `endnotes` panel type, `next/image`
+  hero, and a missing `next/navigation` mock. De-flaked 4 compute-heavy Soul
+  Audit tests with a 20s vitest timeout (they pass in isolation; only brushed
+  the 5s default under full-suite parallelism).
+- **Deploy hygiene**: gitignored `public/images/edit/` + `*.psd` (67–79 MB
+  design sources that exceed Cloudflare's 25 MiB per-file asset limit and would
+  break the Workers deploy); discarded format-only generated drift in
+  `devotional-teasers.ts`.
+
+Known/deferred (intentionally not changed): the reader "Library" menu's
+`?tab=archive|notes|highlights|chat-history|today` links still resolve to the
+default Daily Bread view (`/daily-bread` doesn't read `?tab=`) — part of the
+staged reader-unification work, surfaced for a later pass.
+
+---
+
 ## READING-EXPERIENCE OVERHAUL — tranche 1 (2026-06-09)
 
 Reading-experience fixes authored in a cowork sandbox on a stale branch

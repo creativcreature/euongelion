@@ -593,7 +593,7 @@ export default function EuangelionShellHeader({
             {renderNavLinks(NAV_ITEMS)}
             {!authLoading && authenticated && (
               <Link
-                href="/account"
+                href="/settings"
                 className="mock-nav-item"
                 onClick={() => setMobileMenuOpen(false)}
               >

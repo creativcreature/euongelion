@@ -131,7 +131,7 @@ describe('EuangelionShellHeader', () => {
       'page',
     )
     expect(
-      screen.getAllByText('Daily Devotionals for the Hungry Soul').length,
+      screen.getAllByText('The Good News, for You. Every Day.').length,
     ).toBeGreaterThan(0)
     expect(container.querySelector('time.mock-topbar-date')).toBeTruthy()
   })
@@ -219,9 +219,7 @@ describe('EuangelionShellHeader', () => {
     rerender(<EuangelionShellHeader />)
 
     await waitFor(() => {
-      expect(
-        screen.queryByRole('menu', { name: 'Account menu' }),
-      ).toBeNull()
+      expect(screen.queryByRole('menu', { name: 'Account menu' })).toBeNull()
     })
   })
 

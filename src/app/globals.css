@@ -319,7 +319,10 @@ h3 {
   src: url('/fonts/IndustryTest-Bold.otf') format('opentype');
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  /* block (not swap): Industry-Bold is the preloaded masthead weight, so a
+     fallback swap reintroduces masthead CLS. Matches the other Industry
+     weights and the LCP/CLS contract test. */
+  font-display: block;
 }
 
 @font-face {

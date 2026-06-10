@@ -15,10 +15,12 @@ describe('LCP/CLS stability contract', () => {
     expect(layout).toContain('href="/fonts/IndustryTest-Bold.otf"')
   })
 
-  it('marks hero engraving image as high priority for LCP', () => {
-    expect(home).toContain(
-      'src="/images/illustrations/euangelion-homepage-engraving-04.svg"',
-    )
+  it('marks hero banner image as high priority for LCP', () => {
+    // The homepage hero is a next/image rendered via pickHomepageHero() inside
+    // the hero banner. The LCP contract is that it carries `priority` — we don't
+    // hard-code the filename, which would re-break on every cache-bust rename.
+    expect(home).toContain('homepage-hero-banner-art')
+    expect(home).toContain('pickHomepageHero()')
     expect(home).toContain('priority')
   })
 

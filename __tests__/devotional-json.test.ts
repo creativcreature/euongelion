@@ -47,9 +47,13 @@ describe('Devotional JSON Files', () => {
         expect(panel.number, `${slug}: panel missing number`).toBeDefined()
         expect(panel.type, `${slug}: panel missing type`).toBeTruthy()
         expect(panel.content, `${slug}: panel missing content`).toBeTruthy()
-        expect(['cover', 'text', 'text-with-image', 'prayer']).toContain(
-          panel.type,
-        )
+        expect([
+          'cover',
+          'text',
+          'text-with-image',
+          'prayer',
+          'endnotes',
+        ]).toContain(panel.type)
       }
     }
   })

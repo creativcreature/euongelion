@@ -86,7 +86,7 @@ describe('Smoke Test', () => {
     expect(euangelionElements.length).toBeGreaterThanOrEqual(1)
     // Masthead kicker copy is present.
     expect(
-      screen.getAllByText(/Daily Devotionals for the Hungry Soul/).length,
+      screen.getAllByText(/The Good News, for You\. Every Day\./).length,
     ).toBeGreaterThanOrEqual(1)
   })
 })
