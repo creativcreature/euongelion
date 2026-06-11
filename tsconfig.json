@@ -35,6 +35,7 @@
     "content",
     "database",
     "scripts",
+    "supabase",
     "user-references",
     "wakeup-mag"
   ]

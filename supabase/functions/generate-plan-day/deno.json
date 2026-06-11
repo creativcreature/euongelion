@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "@/lib/brain/router": "./brain-direct.ts",
+    "@opennextjs/cloudflare": "./opennext-stub.ts",
+    "@supabase/supabase-js": "npm:@supabase/supabase-js@2",
+    "@/": "../../../src/",
+    "fs": "node:fs",
+    "path": "node:path"
+  }
+}

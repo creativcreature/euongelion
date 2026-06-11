@@ -95,7 +95,16 @@ export default function GenerationProgress({
       const data: StatusResponse = await res.json()
       setStatus(data)
 
-      if (data.status === 'complete' && data.route) {
+      // Navigate the moment the server sends a route. With the self-chaining
+      // executor that's as soon as DAY 1 is saved (Day-1-first): the reader
+      // starts reading while days 2-7 keep setting in the background — they're
+      // date-gated anyway, so nothing the reader can reach is missing.
+      if (
+        data.route &&
+        (data.status === 'complete' ||
+          data.status === 'generating' ||
+          data.status === 'pending')
+      ) {
         stoppedRef.current = true
         if (intervalRef.current) clearInterval(intervalRef.current)
         router.push(data.route)

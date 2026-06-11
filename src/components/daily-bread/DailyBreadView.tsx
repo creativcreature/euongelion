@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useMemo } from 'react'
+import { useState, useCallback, useMemo, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { marked } from 'marked'
 import { isUnlocked } from '@/lib/soul-audit/plan-utils'
@@ -448,13 +448,144 @@ function GoDeeper({ content }: { content: DayContent }) {
   )
 }
 
-function DeepDive({ content }: { content: DayContent }) {
+const DEEPEN_POLL_MS = 6000
+const DEEPEN_MAX_POLLS = 40 // ~4 min ceiling for the ~2 min generation
+
+function DeepDive({
+  content,
+  planToken,
+  dayNumber,
+  onDeepDiveReady,
+}: {
+  content: DayContent
+  planToken: string
+  dayNumber: number
+  onDeepDiveReady: (dayNumber: number, content: DayContent) => void
+}) {
   const tier3 = content.tier3Extended
+  const [deepening, setDeepening] = useState(false)
+  const [deepenError, setDeepenError] = useState<string | null>(null)
+  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const pollCountRef = useRef(0)
+
+  useEffect(() => {
+    return () => {
+      if (pollRef.current) clearInterval(pollRef.current)
+    }
+  }, [])
+
+  const requestDeepDive = useCallback(async () => {
+    if (deepening) return
+    setDeepening(true)
+    setDeepenError(null)
+    pollCountRef.current = 0
+    try {
+      const res = await fetch(
+        `/api/devotional-plan/${planToken}/day/${dayNumber}/deepen`,
+        { method: 'POST' },
+      )
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        throw new Error(
+          data.error || `The press could not start (HTTP ${res.status}).`,
+        )
+      }
+      // Poll until the merged Deep Dive lands.
+      pollRef.current = setInterval(() => {
+        void (async () => {
+          pollCountRef.current += 1
+          try {
+            const poll = await fetch(
+              `/api/devotional-plan/${planToken}/day/${dayNumber}/deepen`,
+            )
+            if (poll.ok) {
+              const data = (await poll.json()) as {
+                ready: boolean
+                content?: DayContent
+              }
+              if (data.ready && data.content) {
+                if (pollRef.current) clearInterval(pollRef.current)
+                setDeepening(false)
+                onDeepDiveReady(dayNumber, data.content)
+                return
+              }
+            }
+          } catch {
+            // transient network hiccup — keep polling
+          }
+          if (pollCountRef.current >= DEEPEN_MAX_POLLS) {
+            if (pollRef.current) clearInterval(pollRef.current)
+            setDeepening(false)
+            setDeepenError(
+              'The Deep Dive is taking longer than usual. It keeps setting in the background — check back in a minute.',
+            )
+          }
+        })()
+      }, DEEPEN_POLL_MS)
+    } catch (err) {
+      setDeepening(false)
+      setDeepenError(
+        err instanceof Error ? err.message : 'Could not start the Deep Dive.',
+      )
+    }
+  }, [deepening, planToken, dayNumber, onDeepDiveReady])
 
   return (
     <div className="space-y-6">
       {/* Full Go Deeper content first */}
       <GoDeeper content={content} />
+
+      {/* The long-form Deep Dive reading (on-demand grounded weave) */}
+      {tier3?.deepDiveBody ? (
+        <section
+          className="border-t pt-6"
+          style={{ borderColor: 'var(--color-border)' }}
+        >
+          <p className="text-label vw-small mb-3 text-gold">THE DEEP DIVE</p>
+          <div
+            className="vw-body text-secondary type-prose"
+            dangerouslySetInnerHTML={{
+              __html: renderMarkdown(tier3.deepDiveBody),
+            }}
+          />
+        </section>
+      ) : (
+        <section
+          className="border-t pt-6 text-center"
+          style={{ borderColor: 'var(--color-border)' }}
+        >
+          <p className="text-label vw-small mb-2 text-gold">THE DEEP DIVE</p>
+          <p className="vw-body mb-1 text-secondary">
+            A long-form study of this day — the Hebrew and Greek opened from the
+            lexicons, the four levels of reading, the historic voices in full.
+          </p>
+          <p className="vw-small mb-4 text-muted">
+            Written fresh for this day when you ask — about two minutes.
+          </p>
+          {deepening ? (
+            <p role="status" aria-live="polite" className="vw-body text-gold">
+              Setting the Deep Dive… stay on this page or come back — it keeps
+              writing either way.
+            </p>
+          ) : (
+            <button
+              type="button"
+              className="cta-major"
+              onClick={() => void requestDeepDive()}
+            >
+              SET THE DEEP DIVE
+            </button>
+          )}
+          {deepenError && (
+            <p
+              className="vw-small mt-3"
+              style={{ color: 'var(--color-crimson, #c4192e)' }}
+            >
+              {deepenError}
+            </p>
+          )}
+        </section>
+      )}
 
       {/* Extended tier-3 content */}
       {tier3 && (
@@ -626,6 +757,9 @@ export default function DailyBreadView({
   // Track days completed in this session so the reader can advance without a
   // full page reload (server state remains authoritative on next load).
   const [localCompleted, setLocalCompleted] = useState<Set<number>>(new Set())
+  // Deep Dives generated this session — overrides the server-provided day
+  // content so the new long-form lands without a reload.
+  const [deepDives, setDeepDives] = useState<Record<number, DayContent>>({})
 
   const selectedEntry = useMemo(
     () => schedule.find((e) => e.day === selectedDay),
@@ -655,7 +789,15 @@ export default function DailyBreadView({
   const isSabbath = selectedEntry?.status === 'sabbath'
   const isCompleted =
     !!dayRecord?.completed_at || localCompleted.has(selectedDay)
-  const content: DayContent | null = dayRecord?.content ?? null
+  const content: DayContent | null =
+    deepDives[selectedDay] ?? dayRecord?.content ?? null
+
+  const handleDeepDiveReady = useCallback(
+    (day: number, updated: DayContent) => {
+      setDeepDives((prev) => ({ ...prev, [day]: updated }))
+    },
+    [],
+  )
 
   const goToDay = useCallback((day: number) => {
     setSelectedDay(day)
@@ -750,7 +892,14 @@ export default function DailyBreadView({
               <DailyBreadTier content={content} />
             )}
             {activeTier === 'go-deeper' && <GoDeeper content={content} />}
-            {activeTier === 'deep-dive' && <DeepDive content={content} />}
+            {activeTier === 'deep-dive' && (
+              <DeepDive
+                content={content}
+                planToken={plan.plan_token}
+                dayNumber={selectedDay}
+                onDeepDiveReady={handleDeepDiveReady}
+              />
+            )}
           </article>
 
           {/* Mark complete button */}

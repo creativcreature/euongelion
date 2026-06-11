@@ -43,6 +43,12 @@ export interface Tier3Extended {
   comprehensionQuestions: string[]
   characterProfile: CharacterProfile | null
   furtherResources: FurtherResource[]
+  /**
+   * The full long-form Deep Dive reading (~3,000-3,800 words, markdown),
+   * generated on demand by the grounded weave's `deepdive` mode and merged
+   * into the day's saved content. Optional: legacy days won't have it.
+   */
+  deepDiveBody?: string
 }
 
 export interface DayContent {

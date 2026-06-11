@@ -12,6 +12,80 @@
 
 **Verified end-to-end (dev, Sonnet):** an audit → "Day 1 grounded: 905w · 6 sources · 2 word studies · verified"; the day API serves the full 5,112-char grounded body (verbatim Psalm 34:18, word study _dakkâʼ_, Pascal/Luther quoted + attributed, Christ-centered). Standalone prototype (`/tmp/proto-weave.md`): `verification.ok: true`.
 
+## DECIDED + BUILT: off-request execution via Supabase Edge (2026-06-11)
+
+Founder chose **Supabase Edge Function (Sonnet)** from the fork below. Built:
+
+- **`src/lib/soul-audit/generation-runner.ts`** — runtime-agnostic orchestration
+  (weave → verification gate → upsert → job progress → recap/sabbath finalize →
+  continuity chain payload). Single source of truth for ALL executors.
+- **Three executors, one runner:**
+  1. `/api/soul-audit/generate-day` (Next route) — thin wrapper, deadline-bound;
+     dev default + documented fallback.
+  2. `scripts/dev-generator-server.mts` — local Node stand-in for the Edge fn
+     (same HTTP contract incl. self-chaining) so the whole architecture verifies
+     locally: `npx tsx scripts/dev-generator-server.mts` +
+     `SOUL_AUDIT_GENERATOR_URL=http://localhost:8799 npm run dev`.
+  3. `supabase/functions/generate-plan-day/` — Deno Edge entry. deno.json maps
+     `@/` → `../../../src/` (shared source), `@/lib/brain/router` →
+     `brain-direct.ts` (direct Anthropic; Sonnet default, retries), and
+     `@opennextjs/cloudflare` → stub (corpus loaders fall through to
+     self-fetch). Self-chains days via `EdgeRuntime.waitUntil`.
+- **Day-1-first:** `/select/status` returns the read route as soon as
+  `current_day >= 1` when `SOUL_AUDIT_GENERATOR_URL` is set (self-chaining mode
+  only — in-app chaining still needs polling); `GenerationProgress` navigates on
+  any served route. Later days are date-gated, so a partially-written edition is
+  never reader-visible.
+- **Deep Dive tier:** `POST/GET /api/devotional-plan/{token}/day/{n}/deepen`
+  (fire executor mode='deepdive' / poll readiness) + reader UI in the Deep Dive
+  tab ("SET THE DEEP DIVE" → ~2 min → long-form lands in
+  `tier3Extended.deepDiveBody` without reload). Idempotent (no duplicate spend),
+  explicit 503 when no executor configured.
+
+### Deploy runbook (Supabase Edge)
+
+```bash
+# one-time (founder credentials)
+supabase login
+supabase link --project-ref <project-ref>           # the euangelion project
+supabase secrets set INTERNAL_ROUTE_SECRET=<same value as the app env> \
+  ANTHROPIC_API_KEY=<sk-ant-...> \
+  NEXT_PUBLIC_APP_URL=https://euangelion.app \
+  SOUL_AUDIT_MODEL=claude-sonnet-4-6
+supabase functions deploy generate-plan-day --no-verify-jwt
+
+# app side (Cloudflare secret)
+npx wrangler secret put SOUL_AUDIT_GENERATOR_URL
+#   -> https://<project-ref>.supabase.co/functions/v1/generate-plan-day
+```
+
+Notes: `--no-verify-jwt` because auth is the shared `X-Internal-Secret` (the
+app also sends `Authorization: Bearer <service-role>` so verify-jwt mode works
+too). `NEXT_PUBLIC_APP_URL` lets the corpus loaders self-fetch
+`/bibles/*`, `/reference-index.json`, `/lexicon-*.json` from production assets —
+which means the **app must be deployed (with the lexicon indexes) before or
+with the function**. SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are auto-injected
+by the platform.
+
+### Verification status
+
+- Local e2e via the dev generator shim: see CHANGELOG entry for this date.
+- The Deno entry itself requires `supabase functions deploy` to exercise (no
+  supabase CLI/deno verified on this machine); the shared runner + HTTP contract
+  - chaining + Day-1-first are verified through the shim, so deploy-time risk is
+    confined to the Deno adapter layer (env shim, import map, Deno.serve).
+
+## BACKGROUND EXECUTION — the original fork (recorded 2026-06-11)
+
+A Sonnet reading is ~40s (warm, precomputed lexicon — the LLM itself is the cost, not the lexicon). The Cloudflare Workers free plan kills any single invocation at ~30s wall-clock, so generation MUST run off the request path. **But OpenNext 1.17 has NO supported hook for a custom Durable Object, Cron Trigger, or `scheduled` handler** — its generated `.open-next/worker.js` only re-exports OpenNext's own internal DOs, and `defineCloudflareConfig` exposes no option to add user DOs. So there is no clean, supported way to run a background job inside this app on Cloudflare. The options (a founder decision — cost/quality/effort tradeoffs):
+
+1. **Custom OpenNext worker-entry patch** — wrap `.open-next/worker.js` in a custom entry that re-exports it + a `PlanGeneratorDO`, and deploy via raw `wrangler deploy` (not `opennextjs-cloudflare deploy`). Keeps everything in one app, Sonnet quality, free. BUT unsupported/fragile; needs careful `npm run preview` verification and may break on OpenNext upgrades.
+2. **Supabase Edge Function for generation** — generation runs in a Deno Edge Function (free tier, ~150s+ timeout), triggered by `/select`, writing back to Supabase. Clean separation, no OpenNext fighting, Sonnet + deep-dive both fit. BUT the weave logic (getVerse/lexicon/reference/brain-router) must run in Deno and reach the corpus (self-fetch the public assets) — a port + verification effort.
+3. **Haiku for readings now, Sonnet later** — Haiku grounded readings (~25s) fit the 30s cap on the EXISTING per-day flow, shipping the closed-RAG quality TODAY with zero new infra; reserve Sonnet + the deep-dive for whichever background path is chosen later. Quality compromise on the daily reading (founder preferred Sonnet).
+4. **Cloudflare paid plan ($5/mo)** — unlocks Queues (clean background) + higher limits. Founder said can't pay.
+
+Recommendation: **(3) ship grounded-on-Haiku now** (huge quality win, zero infra risk) **while building (2) the Supabase Edge Function** for the Sonnet/deep-dive upgrade — it's the cleanest free path to full quality without fighting OpenNext.
+
 ## REMAINING (delivery infra — real Workers constraints, not yet built)
 
 1. **Free background generation + Day-1-first.** A Sonnet day is ~38s; the Workers free plan kills any single invocation (request + waitUntil) at ~30s wall-clock. So generation MUST move off the request path to a **Durable Object** (free-tier, CPU-bounded so the I/O wait is free) or a Cron Trigger. `/status` should return the read route as soon as Day 1 is saved; Days 2-7 continue in the DO (date-gated → ample slack). Verify in `npm run preview` (workerd supports DOs locally) before deploy.

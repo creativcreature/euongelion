@@ -9,7 +9,7 @@ import {
   USING_QUEUE_FALLBACK,
 } from '@/lib/soul-audit/constants'
 import { determineMetaStoryPosition } from '@/lib/soul-audit/plan-utils'
-import type { JobRecord, DayContent } from '@/types/soul-audit-plan'
+import type { JobRecord } from '@/types/soul-audit-plan'
 
 const ALLOWED_ORIGINS = [
   'http://localhost:3333',
@@ -52,7 +52,7 @@ export async function GET(request: NextRequest) {
 
   // soul_audit_jobs is not yet in the generated DB types, so we cast
   // the client to `any` for this table. The query still works at runtime.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   const supabase = createAdminClient() as any
 
   // ─── Fetch job record ──────────────────────────────────────────────
@@ -127,8 +127,7 @@ export async function GET(request: NextRequest) {
         const nextDay = state.lastSavedDay + 1
 
         // Determine context for the next day
-        const interactiveType =
-          INTERACTIVE_ROTATION[nextDay] ?? 'breath_prayer'
+        const interactiveType = INTERACTIVE_ROTATION[nextDay] ?? 'breath_prayer'
         const metaStoryPosition = determineMetaStoryPosition(
           record.scripture_anchor ?? '',
           record.theme ?? '',
@@ -136,33 +135,46 @@ export async function GET(request: NextRequest) {
 
         const selfUrl = new URL(request.url).origin
 
-        // Fire-and-forget: kick the generate-day route
-        // Field names must match GenerateDayRequest in generate-day/route.ts
+        // Executor resolution: when SOUL_AUDIT_GENERATOR_URL is set, the kick
+        // goes to the off-request executor (Supabase Edge function / local dev
+        // generator shim), which generates the day WITHOUT the Workers 30s cap
+        // and then SELF-CHAINS the remaining days. When unset, fall back to
+        // the in-app route, where /status polling drives day-by-day chaining.
+        const generatorUrl = process.env.SOUL_AUDIT_GENERATOR_URL
+        const executorUrl =
+          generatorUrl || `${selfUrl}/api/soul-audit/generate-day`
+        const executorHeaders: Record<string, string> = {
+          ...(internalFetchHeaders() as Record<string, string>),
+        }
+        if (generatorUrl && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+          // Supabase functions deployed with verify-jwt expect a bearer token.
+          executorHeaders.Authorization = `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`
+        }
+
+        // Fire-and-forget: kick the executor
+        // Field names must match GenerateDayJob in generation-runner.ts
         // Use waitUntil on Workers so the fetch survives after response is sent
-        const generatePromise = fetch(
-          `${selfUrl}/api/soul-audit/generate-day`,
-          {
-            method: 'POST',
-            headers: internalFetchHeaders(),
-            body: JSON.stringify({
-              jobId: record.id,
-              planId: planToken,
-              runId: record.run_id,
-              dayNumber: nextDay,
-              totalContentDays: 5,
-              theme: record.theme,
-              scriptureAnchor: record.scripture_anchor,
-              userInput: record.user_input,
-              timezone: record.timezone,
-              timezoneOffsetMinutes: record.timezone_offset_minutes,
-              usedChunkIds: state.usedChunkIds,
-              previousDaysSummary: state.previousDaysSummary,
-              interactiveElement: interactiveType,
-              metaStoryPosition,
-              sessionId: record.session_id,
-            }),
-          },
-        ).catch((err) => {
+        const generatePromise = fetch(executorUrl, {
+          method: 'POST',
+          headers: executorHeaders,
+          body: JSON.stringify({
+            jobId: record.id,
+            planId: planToken,
+            runId: record.run_id,
+            dayNumber: nextDay,
+            totalContentDays: 5,
+            theme: record.theme,
+            scriptureAnchor: record.scripture_anchor,
+            userInput: record.user_input,
+            timezone: record.timezone,
+            timezoneOffsetMinutes: record.timezone_offset_minutes,
+            usedChunkIds: state.usedChunkIds,
+            previousDaysSummary: state.previousDaysSummary,
+            interactiveElement: interactiveType,
+            metaStoryPosition,
+            sessionId: record.session_id,
+          }),
+        }).catch((err) => {
           console.error(
             `[select/status] Fire-and-forget generate-day failed for job ${record.id}:`,
             err,
@@ -171,9 +183,8 @@ export async function GET(request: NextRequest) {
 
         // On Cloudflare Workers, keep the fetch alive after response is sent
         try {
-          const { getCloudflareContext } = await import(
-            '@opennextjs/cloudflare'
-          )
+          const { getCloudflareContext } =
+            await import('@opennextjs/cloudflare')
           const { ctx } = await getCloudflareContext({ async: true })
           ctx.waitUntil(generatePromise)
         } catch {
@@ -181,6 +192,15 @@ export async function GET(request: NextRequest) {
         }
       }
     }
+
+    // Day-1-first: with a self-chaining executor configured, the reader can
+    // start as soon as Day 1 is saved — the executor finishes Days 2-7 in the
+    // background and the remaining days are date-gated anyway. Without the
+    // executor (in-app chaining), polling must continue, so no early route.
+    const dayOneReady =
+      !!process.env.SOUL_AUDIT_GENERATOR_URL &&
+      (record.current_day ?? 0) >= 1 &&
+      !!record.plan_id
 
     return NextResponse.json(
       {
@@ -190,15 +210,21 @@ export async function GET(request: NextRequest) {
         currentDay: record.current_day ?? 0,
         totalDays: 7,
         planId: record.plan_id,
-        route: null,
+        route: dayOneReady ? '/daily-bread' : null,
         error: null,
       },
       { status: 200, headers: cors },
     )
   }
 
-  // ─── Complete: include route ──────────────────────────────────────
-  const route = record.status === 'complete' ? '/daily-bread' : null
+  // ─── Complete (or Day-1-ready with a self-chaining executor): route ──
+  const dayOneReady =
+    !!process.env.SOUL_AUDIT_GENERATOR_URL &&
+    record.status === 'generating' &&
+    (record.current_day ?? 0) >= 1 &&
+    !!record.plan_id
+  const route =
+    record.status === 'complete' || dayOneReady ? '/daily-bread' : null
 
   return NextResponse.json(
     {

@@ -5,6 +5,37 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — off-request generation + Day-1-first + Deep Dive tier (2026-06-11)
+
+The delivery architecture for the grounded engine (SA-020, F-026, F-058): Sonnet's
+~40s readings cannot fit Cloudflare's free-plan request lifetime, so generation
+moves OFF the request path to a founder-chosen **Supabase Edge Function**, with
+the industry-standard progressive-delivery UX (first unit fast, rest in
+background — the Duolingo/Suno pattern; date-gating makes Days 2-7 latency
+invisible).
+
+- **`generation-runner.ts`** (new) — runtime-agnostic orchestration extracted from
+  the generate-day route (weave → verification gate → save → progress → recap/
+  sabbath finalize → continuity chain payload). ONE source of truth executed by
+  all three executors so behavior can't drift.
+- **Executors:** the Next route (thin wrapper, dev default); **`scripts/
+dev-generator-server.mts`** (new, local Edge-function stand-in with the same
+  HTTP contract + self-chaining — what makes the architecture verifiable on this
+  machine); **`supabase/functions/generate-plan-day/`** (new, Deno) — imports the
+  SHARED app source via import map, swaps the brain router for a direct-Anthropic
+  shim (Sonnet, retries), self-chains days via `EdgeRuntime.waitUntil`. Deploy
+  runbook in `docs/SOUL-AUDIT-GROUNDED-REBUILD-PLAN.md`.
+- **`/select/status`** — executor switch (`SOUL_AUDIT_GENERATOR_URL`) + **Day-1-
+  first**: returns the read route as soon as Day 1 is saved (self-chaining mode
+  only); `GenerationProgress` navigates immediately. The reader starts in ~40s
+  instead of ~3.5 min; the loader narrates only Day 1.
+- **Deep Dive tier (tiered-depth decision):** `deepen` endpoint (POST trigger /
+  GET readiness poll, idempotent, explicit 503 without executor) + reader UI —
+  "SET THE DEEP DIVE" in the Deep Dive tab generates the ~3,000-3,800-word
+  grounded long-form (full lexicon word studies, PaRDeS, voices) on demand and
+  lands it without reload (`tier3Extended.deepDiveBody`, additive type).
+- `plan-composition.ts` (new) — recap/sabbath composition shared by all executors.
+
 ## ELEVATION v3.0 — grounded engine: Workers-safe corpus loading (2026-06-11)
 
 Production-readiness for the grounded day engine (SA-020, F-026) — remove the two

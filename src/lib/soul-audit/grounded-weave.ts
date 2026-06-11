@@ -171,6 +171,9 @@ function verify(params: {
   scriptureText: string
   allowedAuthors: Set<string>
   studies: WordStudy[]
+  /** All text the model was given to weave from (source chunks + attributions
+   *  + scripture) — used to confirm a diacritic token is grounded. */
+  groundingText: string
 }): GroundedVerification {
   const issues: string[] = []
   const low = params.body.toLowerCase()
@@ -185,45 +188,42 @@ function verify(params: {
     }
   }
 
-  // 2. Any transliteration the body presents as a Hebrew/Greek word study must
-  //    come from the provided lexicon set (catch invented etymology).
+  // 2. Catch INVENTED scholarly-looking transliterations. A non-ASCII token
+  //    (carrying Latin diacritics: shâbar, dakkâ, lógos) is only suspect if it
+  //    is NOT one of the provided lexicon transliterations AND does not appear
+  //    anywhere in the grounding text. That second clause is what clears
+  //    legitimate diacritic words the model is allowed to use — quoted source
+  //    work titles (Pensées), author names (à Kempis), Scripture — while still
+  //    flagging a fabricated transliteration that exists in none of the inputs.
+  //    Pure-ASCII tokens (ordinary English like "beneath") are never candidates.
+  const stripDiacritics = (s: string) =>
+    s
+      .normalize('NFD')
+      .replace(/[̀-ͯ]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z]/g, '')
   const allowedXlit = new Set(
     params.studies.flatMap((w) => [
       w.xlit.toLowerCase(),
-      w.xlit.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(),
+      stripDiacritics(w.xlit),
     ]),
   )
-  // Look for "the Hebrew/Greek word X" or "X (transliteration)" patterns.
-  const wordClaim =
-    /\b(?:hebrew|greek)\b[^.]{0,40}?\b([a-zâêîôûáéíóúäëïöü']{3,})\b/gi
-  let m: RegExpExecArray | null
-  while ((m = wordClaim.exec(params.body)) !== null) {
-    const cand = m[1].normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
-    const common = new Set([
-      'word',
-      'words',
-      'text',
-      'term',
-      'verb',
-      'noun',
-      'root',
-      'language',
-      'scripture',
-      'bible',
-      'name',
-      'meaning',
-      'letters',
-      'letter',
-    ])
-    if (common.has(cand)) continue
-    if (allowedXlit.size === 0) {
-      issues.push(
-        `Hebrew/Greek word claim "${m[1]}" but no lexicon data was provided`,
-      )
-    } else if (
-      ![...allowedXlit].some((x) => x.includes(cand) || cand.includes(x))
-    ) {
-      issues.push(`possibly-ungrounded word claim: "${m[1]}"`)
+  const groundedTokens = new Set<string>()
+  for (const t of params.groundingText.match(/[\p{L}ʼʹ'’-]{2,}/gu) ?? []) {
+    const s = stripDiacritics(t)
+    if (s.length >= 3) groundedTokens.add(s)
+  }
+  const tokens = params.body.match(/[\p{L}ʼʹ'’-]{2,}/gu) ?? []
+  for (const tok of tokens) {
+    if (![...tok].some((c) => c.charCodeAt(0) > 127)) continue
+    const cand = stripDiacritics(tok)
+    if (cand.length < 3) continue // original-script / 1-char accents (à Kempis)
+    const inLexicon = [...allowedXlit].some(
+      (x) => x.includes(cand) || cand.includes(x),
+    )
+    const inGrounding = groundedTokens.has(cand)
+    if (!inLexicon && !inGrounding) {
+      issues.push(`possibly-ungrounded transliteration: "${tok}"`)
     }
   }
 
@@ -429,12 +429,20 @@ export async function generateGroundedDay(
   const body = (parsed.body ?? '').trim()
   if (!body) throw new Error('GROUNDED_WEAVE_EMPTY_BODY')
 
-  // 6) verification (closed-system guarantee)
+  // 6) verification (closed-system guarantee). The grounding text is every
+  //    input the model was given to weave from — source chunk contents +
+  //    their attributions + verbatim Scripture — so a diacritic token that
+  //    legitimately came from a quote/title clears, while a fabricated one does not.
+  const groundingText = [
+    verse.text,
+    ...sources.map((s) => `${s.attribution} ${s.content}`),
+  ].join(' ')
   const verification = verify({
     body,
     scriptureText: verse.text,
     allowedAuthors,
     studies,
+    groundingText,
   })
 
   // 7) map to DayContent (loosened: woven body + structurally-grounded metadata)
