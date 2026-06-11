@@ -5,6 +5,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Phase 3.1 inline WordNote primitive (2026-06-11)
+
+A grounded inline word-study primitive (SA-020/F-034). Bank IDs only — every
+definition is lexicon-verbatim; nothing is generated or invented:
+
+- **Bank (`scripts/build-wordnote-bank.mjs` → `public/wordnote-bank.json` +
+  `src/data/wordnote-bank.ts`):** 43 word-study notes whose word / transliteration /
+  gloss / source are lifted VERBATIM from the precomputed lexicon
+  (`public/lexicon-strongs.json`: Brown-Driver-Briggs / Strong's / Abbott-Smith).
+  A seed with no lexicon entry fails the build loudly (no fabrication). Includes
+  the brand's own word — _euangelion_ (εὐαγγέλιον), "good news."
+- **Component (`src/components/WordNote.tsx`):** a keyword carries a crimson dotted
+  underline (`--color-crimson`); activating it opens an accessible footnote card
+  (original word + transliteration + gloss + source). Button trigger with
+  `aria-expanded`/`aria-controls`, labelled note region, Escape + outside-click
+  close, focus returns to the trigger, no motion. An unknown bank id renders the
+  plain text — never a fabricated note.
+- **Loader + parser (`src/lib/wordnote.ts`, `src/lib/wordnote-markup.tsx`):** small
+  client-safe bank lookups + a `{{wn:id|surface}}` marker parser that integrates
+  into `ScriptureModule` (scripture context). Plain prose with no markers is
+  unchanged (passes through the typographer); nothing is auto-linked, so no word is
+  annotated out of context.
+- 10 tests (`__tests__/wordnote.test.tsx`) assert bank grounding, marker parsing,
+  the accessible card, and the no-fabrication fallback.
+
+Verified: `type-check` clean, `lint` 0 errors, 10 WordNote tests + full suite 1386
+passing. Next: emit markers from the grounded weave + curated content.
+
+---
+
 ## ELEVATION v3.0 — Phase 2: audio, web push, PWA offline, clippings (2026-06-11)
 
 The full Phase 2 reader/reliability layer (SA-013/SA-023, F-040/F-030). Everything

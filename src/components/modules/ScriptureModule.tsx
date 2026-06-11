@@ -3,6 +3,7 @@
 import type { Module } from '@/types'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { typographer } from '@/lib/typographer'
+import { renderWithWordNotes } from '@/lib/wordnote-markup'
 
 /**
  * Determine layout variant based on passage length.
@@ -114,10 +115,12 @@ export default function ScriptureModule({ module }: { module: Module }) {
           </p>
         )}
 
-      {/* Scripture context */}
+      {/* Scripture context — supports inline {{wn:id|surface}} WordNote markers,
+          each resolving to a lexicon-grounded word study. Plain prose is
+          unaffected (passes through the typographer). */}
       {module.scriptureContext && (
         <p className="mt-8 vw-body leading-relaxed text-secondary">
-          {typographer(module.scriptureContext)}
+          {renderWithWordNotes(module.scriptureContext)}
         </p>
       )}
     </div>

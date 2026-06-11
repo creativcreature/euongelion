@@ -1,0 +1,389 @@
+[
+  {
+    "id": "shalom",
+    "term": "peace",
+    "strong": "H7965",
+    "word": "שָׁלוֹם",
+    "xlit": "shâlôwm",
+    "gloss": "completeness; soundness; welfare; peace; safety; health; prosperity; quiet",
+    "source": "Brown-Driver-Briggs (Strong's H7965)"
+  },
+  {
+    "id": "chesed",
+    "term": "steadfast love",
+    "strong": "H2617",
+    "word": "חֶסֶד",
+    "xlit": "cheçed",
+    "gloss": "goodness; kindness; mercy; affection; love to God; piety; lovely appearance; lovingkindness",
+    "source": "Brown-Driver-Briggs (Strong's H2617)"
+  },
+  {
+    "id": "ruach",
+    "term": "spirit",
+    "strong": "H7307",
+    "word": "רוּחַ",
+    "xlit": "rûwach",
+    "gloss": "breath; wind; spirit; temper; disposition; spirit of God",
+    "source": "Brown-Driver-Briggs (Strong's H7307)"
+  },
+  {
+    "id": "nephesh",
+    "term": "soul",
+    "strong": "H5315",
+    "word": "נֶפֶשׁ",
+    "xlit": "nephesh",
+    "gloss": "soul; living being; life; self; person; desire; appetite; emotion",
+    "source": "Brown-Driver-Briggs (Strong's H5315)"
+  },
+  {
+    "id": "emunah",
+    "term": "faithfulness",
+    "strong": "H530",
+    "word": "אֱמוּנָה",
+    "xlit": "ʼĕmûwnâh",
+    "gloss": "firmness; steadfastness; fidelity; steadiness; faithfulness; trust",
+    "source": "Brown-Driver-Briggs (Strong's H530)"
+  },
+  {
+    "id": "bara",
+    "term": "create",
+    "strong": "H1254",
+    "word": "בָּרָא",
+    "xlit": "bârâʼ",
+    "gloss": "shape; create; fashion; be created; cut down; cut out",
+    "source": "Brown-Driver-Briggs (Strong's H1254)"
+  },
+  {
+    "id": "tehom",
+    "term": "the deep",
+    "strong": "H8415",
+    "word": "תְּהוֹם",
+    "xlit": "tᵉhôwm",
+    "gloss": "deep; sea; abyss; primaeval ocean; depth",
+    "source": "Brown-Driver-Briggs (Strong's H8415)"
+  },
+  {
+    "id": "kavod",
+    "term": "glory",
+    "strong": "H3519",
+    "word": "כָּבוֹד",
+    "xlit": "kâbôwd",
+    "gloss": "abundance; honour; glory; riches; splendor; dignity; reputation; my honour",
+    "source": "Brown-Driver-Briggs (Strong's H3519)"
+  },
+  {
+    "id": "torah",
+    "term": "instruction",
+    "strong": "H8451",
+    "word": "תּוֹרָה",
+    "xlit": "tôwrâh",
+    "gloss": "direction; instruction; law; custom; manner",
+    "source": "Brown-Driver-Briggs (Strong's H8451)"
+  },
+  {
+    "id": "berit",
+    "term": "covenant",
+    "strong": "H1285",
+    "word": "בְּרִית",
+    "xlit": "bᵉrîyth",
+    "gloss": "covenant; treaty; alliance; league; constitution; ordinance; agreement; pledge",
+    "source": "Brown-Driver-Briggs (Strong's H1285)"
+  },
+  {
+    "id": "qavah",
+    "term": "wait",
+    "strong": "H6960",
+    "word": "קָוָה",
+    "xlit": "qâvâh",
+    "gloss": "wait for; those waiting for; wait; look eagerly; for; lie in wait for",
+    "source": "Brown-Driver-Briggs (Strong's H6960)"
+  },
+  {
+    "id": "nacham",
+    "term": "comfort",
+    "strong": "H5162",
+    "word": "נָחַם",
+    "xlit": "nâcham",
+    "gloss": "be sorry; console oneself; moved to pity; have compassion; rue; suffer grief; repent; comfort oneself",
+    "source": "Brown-Driver-Briggs (Strong's H5162)"
+  },
+  {
+    "id": "yare",
+    "term": "fear",
+    "strong": "H3372",
+    "word": "יָרֵא",
+    "xlit": "yârêʼ",
+    "gloss": "fear; be afraid; stand in awe of; reverence; honour; be fearful; dreadful; cause astonishment and awe",
+    "source": "Brown-Driver-Briggs (Strong's H3372)"
+  },
+  {
+    "id": "yada",
+    "term": "know",
+    "strong": "H3045",
+    "word": "יָדַע",
+    "xlit": "yâdaʻ",
+    "gloss": "know; learn to know; perceive; perceive and see; find out and discern; discriminate; distinguish; know by experience",
+    "source": "Brown-Driver-Briggs (Strong's H3045)"
+  },
+  {
+    "id": "shema",
+    "term": "hear",
+    "strong": "H8085",
+    "word": "שָׁמַע",
+    "xlit": "shâmaʻ",
+    "gloss": "hear; be heard; be heard of; be regarded; obeyed; hearing was granted to their voice; he caused; to hear",
+    "source": "Brown-Driver-Briggs (Strong's H8085)"
+  },
+  {
+    "id": "tsedeq",
+    "term": "righteousness",
+    "strong": "H6664",
+    "word": "צֶדֶק",
+    "xlit": "tsedeq",
+    "gloss": "rightness; righteousness; what is right; just; normal; justness; justice; justification",
+    "source": "Brown-Driver-Briggs (Strong's H6664)"
+  },
+  {
+    "id": "emet",
+    "term": "truth",
+    "strong": "H571",
+    "word": "אֶמֶת",
+    "xlit": "ʼemeth",
+    "gloss": "firmness; faithfulness; reliability; sureness; stability; continuance; reliableness; truth",
+    "source": "Brown-Driver-Briggs (Strong's H571)"
+  },
+  {
+    "id": "raphah",
+    "term": "be still",
+    "strong": "H7503",
+    "word": "רָפָה",
+    "xlit": "râphâh",
+    "gloss": "sink; relax; sink down; drop; abate; withdraw; idle; let",
+    "source": "Brown-Driver-Briggs (Strong's H7503)"
+  },
+  {
+    "id": "shuv",
+    "term": "return",
+    "strong": "H7725",
+    "word": "שׁוּב",
+    "xlit": "shûwb",
+    "gloss": "turn back; return; come; go back; return unto; turn; apostatize; turn away",
+    "source": "Brown-Driver-Briggs (Strong's H7725)"
+  },
+  {
+    "id": "or",
+    "term": "light",
+    "strong": "H216",
+    "word": "אוֹר",
+    "xlit": "ʼôwr",
+    "gloss": "light; morning light; dawn; daylight; lightning; light of life; light of prosperity; light of instruction",
+    "source": "Brown-Driver-Briggs (Strong's H216)"
+  },
+  {
+    "id": "agape",
+    "term": "love",
+    "strong": "G26",
+    "word": "ἀγάπη",
+    "xlit": "agápē",
+    "gloss": "love; goodwill; esteem; love feasts",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G26)"
+  },
+  {
+    "id": "agapao",
+    "term": "to love",
+    "strong": "G25",
+    "word": "ἀγαπάω",
+    "xlit": "agapáō",
+    "gloss": "to love",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G25)"
+  },
+  {
+    "id": "charis",
+    "term": "grace",
+    "strong": "G5485",
+    "word": "χάρις",
+    "xlit": "cháris",
+    "gloss": "gracefulness, grace, loveliness; graciousness; grace, graciousness, kindness, goodwill, favour; favour, grace; thanks, gratitude; to be thankful",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G5485)"
+  },
+  {
+    "id": "pistis",
+    "term": "faith",
+    "strong": "G4102",
+    "word": "πίστις",
+    "xlit": "pístis",
+    "gloss": "faith; belief; trust; confidence; the faith; fidelity",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G4102)"
+  },
+  {
+    "id": "elpis",
+    "term": "hope",
+    "strong": "G1680",
+    "word": "ἐλπίς",
+    "xlit": "elpís",
+    "gloss": "expectation; hope",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G1680)"
+  },
+  {
+    "id": "logos",
+    "term": "word",
+    "strong": "G3056",
+    "word": "λόγος",
+    "xlit": "lógos",
+    "gloss": "a word; a saying; statement; declaration; the word of God; speech",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G3056)"
+  },
+  {
+    "id": "pneuma",
+    "term": "spirit",
+    "strong": "G4151",
+    "word": "πνεῦμα",
+    "xlit": "pneûma",
+    "gloss": "wind; breath; the spirit; in spirit; spirit; a spirit",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G4151)"
+  },
+  {
+    "id": "chara",
+    "term": "joy",
+    "strong": "G5479",
+    "word": "χαρά",
+    "xlit": "chará",
+    "gloss": "joy, delight",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G5479)"
+  },
+  {
+    "id": "eirene",
+    "term": "peace",
+    "strong": "G1515",
+    "word": "εἰρήνη",
+    "xlit": "eirḗnē",
+    "gloss": "peace",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G1515)"
+  },
+  {
+    "id": "metanoia",
+    "term": "repentance",
+    "strong": "G3341",
+    "word": "μετάνοια",
+    "xlit": "metánoia",
+    "gloss": "after-thought; change of mind; repentance",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G3341)"
+  },
+  {
+    "id": "hamartia",
+    "term": "sin",
+    "strong": "G266",
+    "word": "ἁμαρτία",
+    "xlit": "hamartía",
+    "gloss": "a missing the mark; guilt; sin; a fault, failure; a sinning, sin; a sinful deed",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G266)"
+  },
+  {
+    "id": "dikaiosyne",
+    "term": "righteousness",
+    "strong": "G1343",
+    "word": "δικαιοσύνη",
+    "xlit": "dikaiosýnē",
+    "gloss": "righteousness; teaching of; justice",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G1343)"
+  },
+  {
+    "id": "soteria",
+    "term": "salvation",
+    "strong": "G4991",
+    "word": "σωτηρία",
+    "xlit": "sōtēría",
+    "gloss": "deliverance, preservation, salvation, safety",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G4991)"
+  },
+  {
+    "id": "sozo",
+    "term": "to save",
+    "strong": "G4982",
+    "word": "σώζω",
+    "xlit": "sṓzō",
+    "gloss": "to save",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G4982)"
+  },
+  {
+    "id": "koinonia",
+    "term": "fellowship",
+    "strong": "G2842",
+    "word": "κοινωνία",
+    "xlit": "koinōnía",
+    "gloss": "fellowship; communion; contribution",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G2842)"
+  },
+  {
+    "id": "doxa",
+    "term": "glory",
+    "strong": "G1391",
+    "word": "δόξα",
+    "xlit": "dóxa",
+    "gloss": "expectation, judgment, opinion; opinion, estimation; repute; good opinion; reputation, praise, honour, glory; brightness, splendour, glory",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G1391)"
+  },
+  {
+    "id": "aletheia",
+    "term": "truth",
+    "strong": "G225",
+    "word": "ἀλήθεια",
+    "xlit": "alḗtheia",
+    "gloss": "truth; truthfulness, truth",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G225)"
+  },
+  {
+    "id": "makarios",
+    "term": "blessed",
+    "strong": "G3107",
+    "word": "μακάριος",
+    "xlit": "makários",
+    "gloss": "blessed; happy",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G3107)"
+  },
+  {
+    "id": "parakletos",
+    "term": "advocate",
+    "strong": "G3875",
+    "word": "παράκλητος",
+    "xlit": "paráklētos",
+    "gloss": "called to one's aid; an advocate; pleader; intercessor",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G3875)"
+  },
+  {
+    "id": "paraklesis",
+    "term": "comfort",
+    "strong": "G3874",
+    "word": "παράκλησις",
+    "xlit": "paráklēsis",
+    "gloss": "a calling to one's aid; summons; appeal; entreaty; exhortation; encouragement",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G3874)"
+  },
+  {
+    "id": "hupomone",
+    "term": "endurance",
+    "strong": "G5281",
+    "word": "ὑπομονή",
+    "xlit": "hypomonḗ",
+    "gloss": "a remaining behind; patient enduring, endurance",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G5281)"
+  },
+  {
+    "id": "kurios",
+    "term": "Lord",
+    "strong": "G2962",
+    "word": "κύριος",
+    "xlit": "kýrios",
+    "gloss": "having power; authority; lord; master",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G2962)"
+  },
+  {
+    "id": "euangelion",
+    "term": "good news",
+    "strong": "G2098",
+    "word": "εὐαγγέλιον",
+    "xlit": "euangélion",
+    "gloss": "a reward for good tidings; to make a thank-offering for good tidings; good tidings, good news; the gospel",
+    "source": "Abbott-Smith Manual Greek Lexicon (Strong's G2098)"
+  }
+]
