@@ -1,17 +1,24 @@
 // Euangelion Service Worker
-// R37: bumped to v50 for the 2026-05-15 deploy. Keep in sync with
-// SW_VERSION in src/components/ServiceWorkerRegistration.tsx — when
-// the client sees a mismatched stored version it unregisters +
-// clears caches before re-registering, so users on the old build
-// pick up the new one without manual hard-refresh.
-const CACHE_NAME = 'euangelion-v50'
+// R37: bumped to v50 for the 2026-05-15 deploy.
+// R38 (Phase 2.2 + 2.3): bumped to v51 — adds (a) cache-first-with-network-
+// update for opened devotional reading routes + their JSON so a reader can
+// re-open anything they've already opened while offline, (b) /today + /sunday
+// in precache, (c) web-push 'push' + 'notificationclick' handlers.
+// Keep CACHE_NAME in sync with SW_VERSION in
+// src/components/ServiceWorkerRegistration.tsx — when the client sees a
+// mismatched stored version it unregisters + clears caches before
+// re-registering, so users on the old build pick up the new one without a
+// manual hard-refresh.
+const CACHE_NAME = 'euangelion-v51'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 
-// Static assets to pre-cache
+// Static assets to pre-cache (the app shell + offline fallback).
 const PRECACHE_URLS = [
   '/',
   '/offline',
+  '/today',
+  '/sunday',
   '/daily-bread',
   '/series',
   '/soul-audit',
@@ -19,6 +26,45 @@ const PRECACHE_URLS = [
   '/settings',
   '/wake-up',
 ]
+
+// Reading routes that should survive offline once opened. A devotional the
+// reader has visited is the thing they most want back when the network drops,
+// so these use cache-first-with-network-update (instant from cache, quietly
+// refreshed in the background when online).
+function isReadingRoute(pathname) {
+  return (
+    pathname.startsWith('/wake-up/devotional/') ||
+    pathname === '/today' ||
+    pathname === '/sunday'
+  )
+}
+
+// Cache-first with background revalidation. Returns the cached copy
+// immediately when present; otherwise falls to the network and caches a
+// successful response. A background fetch keeps the cached copy fresh for
+// next time without blocking this navigation.
+function cacheFirstWithUpdate(request) {
+  return caches.match(request).then((cached) => {
+    const networkFetch = fetch(request)
+      .then((response) => {
+        if (response.ok) {
+          const clone = response.clone()
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone))
+        }
+        return response
+      })
+      .catch(() => cached)
+
+    // Serve cache instantly when we have it (and let the network update run
+    // in the background); otherwise wait on the network.
+    if (cached) {
+      // Fire-and-forget revalidation.
+      networkFetch.catch(() => {})
+      return cached
+    }
+    return networkFetch
+  })
+}
 
 // Install: pre-cache essential pages
 self.addEventListener('install', (event) => {
@@ -82,18 +128,22 @@ self.addEventListener('fetch', (event) => {
     return
   }
 
-  // Devotional JSON files: cache-first (they rarely change)
+  // Devotional JSON files: cache-first (they rarely change). When fetched
+  // client-side by an opened reading page, this keeps the reading available
+  // offline. Falls back to any cached copy if the network is gone.
   if (url.pathname.startsWith('/devotionals/') && url.pathname.endsWith('.json')) {
     event.respondWith(
       caches.match(request).then((cached) => {
         if (cached) return cached
-        return fetch(request).then((response) => {
-          if (response.ok) {
-            const clone = response.clone()
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone))
-          }
-          return response
-        })
+        return fetch(request)
+          .then((response) => {
+            if (response.ok) {
+              const clone = response.clone()
+              caches.open(CACHE_NAME).then((cache) => cache.put(request, clone))
+            }
+            return response
+          })
+          .catch(() => cached || new Response('', { status: 503 }))
       })
     )
     return
@@ -121,7 +171,21 @@ self.addEventListener('fetch', (event) => {
     return
   }
 
-  // Pages: network-first, fall back to cache, then offline page
+  // Reading routes (opened devotionals + /today + /sunday): cache-first with a
+  // background network update, so a reader can re-open what they've already
+  // opened even when fully offline. If neither cache nor network can satisfy a
+  // navigation, fall through to the cached offline page below.
+  if (request.headers.get('accept')?.includes('text/html') && isReadingRoute(url.pathname)) {
+    event.respondWith(
+      cacheFirstWithUpdate(request).then(
+        (response) =>
+          response || caches.match(request).then((cached) => cached || caches.match(OFFLINE_URL)),
+      ),
+    )
+    return
+  }
+
+  // Other pages: network-first, fall back to cache, then offline page.
   if (request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
       fetch(request)
@@ -138,4 +202,73 @@ self.addEventListener('fetch', (event) => {
     )
     return
   }
+})
+
+// ---------------------------------------------------------------------------
+// Web push (Phase 2.2). Opt-in only — a subscription exists here solely because
+// the user accepted the gentle PushOptIn prompt after finishing a reading.
+// The scheduled SEND (the daily cron) is intentionally NOT in this file; see
+// the contract comment at the top of src/app/api/push/subscribe/route.ts.
+// ---------------------------------------------------------------------------
+
+// Calm default nudge if a push arrives with no/invalid payload.
+const DEFAULT_PUSH_TITLE = 'Euangelion'
+const DEFAULT_PUSH_BODY = 'One quiet word for this morning is ready.'
+const PUSH_ICON = '/icons/icon-192.png'
+const PUSH_BADGE = '/icons/icon-192.png'
+
+self.addEventListener('push', (event) => {
+  let payload = {}
+  if (event.data) {
+    try {
+      payload = event.data.json()
+    } catch {
+      // Non-JSON payloads fall back to the calm default below.
+      payload = { body: event.data.text() }
+    }
+  }
+
+  const title =
+    typeof payload.title === 'string' && payload.title.trim()
+      ? payload.title
+      : DEFAULT_PUSH_TITLE
+  const body =
+    typeof payload.body === 'string' && payload.body.trim()
+      ? payload.body
+      : DEFAULT_PUSH_BODY
+  const url = typeof payload.url === 'string' && payload.url.trim() ? payload.url : '/today'
+
+  event.waitUntil(
+    self.registration.showNotification(title, {
+      body,
+      icon: PUSH_ICON,
+      badge: PUSH_BADGE,
+      tag: 'euangelion-daily',
+      renotify: false,
+      data: { url },
+    }),
+  )
+})
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close()
+  const targetUrl = event.notification.data?.url || '/today'
+
+  event.waitUntil(
+    self.clients
+      .matchAll({ type: 'window', includeUncontrolled: true })
+      .then((clientList) => {
+        // Focus an existing tab if one is open, otherwise open a new one.
+        for (const client of clientList) {
+          if ('focus' in client) {
+            client.navigate?.(targetUrl)
+            return client.focus()
+          }
+        }
+        if (self.clients.openWindow) {
+          return self.clients.openWindow(targetUrl)
+        }
+        return undefined
+      }),
+  )
 })

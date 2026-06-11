@@ -28,7 +28,7 @@ export default function OfflinePage() {
               className="text-serif-italic vw-body-lg mb-12 text-secondary"
               style={{ maxWidth: '50ch' }}
             >
-              Previously read devotionals are still available. When you
+              The readings you&rsquo;ve opened are still here. When you
               reconnect, everything will sync.
             </p>
             <Link

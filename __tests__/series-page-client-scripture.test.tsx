@@ -2,6 +2,21 @@ import { render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 import SeriesPageClient from '@/app/wake-up/series/[slug]/SeriesPageClient'
 
+// SeriesActions hydrates the devotional-library store on mount, which fetches
+// '/api/devotionals/active'. Node's global fetch rejects relative URLs ("Invalid
+// URL"), leaking an unhandled rejection. Stub fetch so the hydrate resolves
+// benignly and the test stays deterministic.
+vi.stubGlobal(
+  'fetch',
+  vi.fn(() =>
+    Promise.resolve({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve({}),
+    } as Response),
+  ),
+)
+
 // SeriesPageClient now renders <SeriesActions>, which calls useRouter().
 vi.mock('next/navigation', () => ({
   useRouter: () => ({ push: vi.fn(), replace: vi.fn(), prefetch: vi.fn() }),

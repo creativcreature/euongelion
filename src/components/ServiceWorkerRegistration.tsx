@@ -5,7 +5,9 @@ import { useEffect } from 'react'
 // R37 (2026-05-15): bump on every deploy that ships UI changes so
 // returning users force-refresh into the new build without manually
 // reloading. v50 corresponds to the R37 deploy.
-const SW_VERSION = 'v50'
+// R38 (Phase 2.2 + 2.3): v51 — offline reading-route caching + web-push
+// handlers in /sw.js. Must match CACHE_NAME there.
+const SW_VERSION = 'v51'
 const SW_VERSION_KEY = 'euangelion-sw-version'
 
 export default function ServiceWorkerRegistration() {

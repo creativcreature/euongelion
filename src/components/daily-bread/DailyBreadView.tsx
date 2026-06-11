@@ -3,6 +3,10 @@
 import { useState, useCallback, useMemo, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { marked } from 'marked'
+import AudioPlayer from '@/components/AudioPlayer'
+import ClipButton from '@/components/ClipButton'
+import PushOptIn from '@/components/PushOptIn'
+import { buildDayContentSegments } from '@/lib/audio/segments'
 import { isUnlocked } from '@/lib/soul-audit/plan-utils'
 import type {
   PlanWithDays,
@@ -792,6 +796,14 @@ export default function DailyBreadView({
   const content: DayContent | null =
     deepDives[selectedDay] ?? dayRecord?.content ?? null
 
+  // Audio Edition: read this day's real woven content aloud, one section
+  // at a time. Free, on-device (Web Speech). Built from the same content
+  // object the tiers render.
+  const audioSegments = useMemo(
+    () => (content ? buildDayContentSegments(content) : []),
+    [content],
+  )
+
   const handleDeepDiveReady = useCallback(
     (day: number, updated: DayContent) => {
       setDeepDives((prev) => ({ ...prev, [day]: updated }))
@@ -832,6 +844,12 @@ export default function DailyBreadView({
       // continue via the "Continue to Day N" affordance; we don't push more
       // reading on them. Server state reconciles on the next natural load.
       setLocalCompleted((prev) => new Set(prev).add(selectedDay))
+      // Signal the post-read push opt-in (inert until VAPID is configured).
+      try {
+        window.localStorage.setItem('euangelion:just-finished-reading', '1')
+      } catch {
+        // Storage unavailable (private mode) — no opt-in surfaced.
+      }
     } catch (err) {
       setCompleteError(
         err instanceof Error ? err.message : 'Failed to mark day complete.',
@@ -883,6 +901,17 @@ export default function DailyBreadView({
             <h1 className="vw-heading-md mb-2">{content.title}</h1>
           </header>
 
+          {/* Phase 2.1: Audio Edition — free, on-device read-aloud of this
+              day's real woven content. */}
+          {audioSegments.length > 0 && (
+            <AudioPlayer
+              title={content.title}
+              segments={audioSegments}
+              artworkSrc="/icons/icon-512.png"
+              className="mb-8"
+            />
+          )}
+
           {/* Tier selector */}
           <TierSelector activeTier={activeTier} onSelect={setActiveTier} />
 
@@ -901,6 +930,26 @@ export default function DailyBreadView({
               />
             )}
           </article>
+
+          {/* Phase 2.4: clip the current text selection to the local
+              commonplace book (device-only). */}
+          <div className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-2">
+            <ClipButton
+              sourceTitle={content.title}
+              planToken={plan.plan_token}
+              day={selectedDay}
+              sourceHref="/daily-bread"
+            />
+            <Link
+              href="/clippings"
+              className="text-label vw-small link-highlight leading-none"
+            >
+              CLIPPINGS
+            </Link>
+          </div>
+
+          {/* Phase 2.2: calm post-read push opt-in (inert until VAPID is set). */}
+          <PushOptIn />
 
           {/* Mark complete button */}
           {!isCompleted && !isSabbath && (

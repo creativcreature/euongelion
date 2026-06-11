@@ -17,6 +17,10 @@ import ScrollProgress from '@/components/ScrollProgress'
 import ReaderTimeline from '@/components/ReaderTimeline'
 import ModuleRenderer from '@/components/ModuleRenderer'
 import ShareButton from '@/components/ShareButton'
+import AudioPlayer from '@/components/AudioPlayer'
+import ClipButton from '@/components/ClipButton'
+import PushOptIn from '@/components/PushOptIn'
+import { buildModuleSegments, buildPanelSegments } from '@/lib/audio/segments'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import DevotionalStickiesLayer from '@/components/DevotionalStickiesLayer'
 import DevotionalArtwork from '@/components/DevotionalArtwork'
@@ -213,6 +217,20 @@ export default function DevotionalPageClient({
       caption: a.title || undefined,
     }))
   }, [slug, artworks, seriesSlug, devotional?.title])
+
+  // Audio Edition segments: read the REAL devotional text aloud, one
+  // section at a time. Prefer modules; fall back to the Wake-Up panel
+  // format. Built from the same data the page already renders.
+  const audioSegments = useMemo(() => {
+    if (!devotional) return []
+    if (modules && modules.length > 0) {
+      return buildModuleSegments(devotional.title, modules)
+    }
+    if (panels && panels.length > 0) {
+      return buildPanelSegments(devotional.title, panels)
+    }
+    return []
+  }, [devotional, modules, panels])
 
   // Headline hero source: prefer the series hero (already the
   // canonical "what this series looks like" image). Falls back to
@@ -655,6 +673,17 @@ export default function DevotionalPageClient({
                 <>
                   <DevotionalStickiesLayer devotionalSlug={slug} />
 
+                  {/* Phase 2.1: Audio Edition — free, on-device read-aloud of
+                      this devotional's real text, one section at a time. */}
+                  {audioSegments.length > 0 && (
+                    <AudioPlayer
+                      title={devotional.title}
+                      segments={audioSegments}
+                      artworkSrc="/icons/icon-512.png"
+                      className="devotional-shell-panel mb-6"
+                    />
+                  )}
+
                   {/* Audit 2026-05-13: editorial broadsheet folio strip.
                       Sits above the title. Scale back: delete this block. */}
                   {seriesSlug && SERIES_DATA[seriesSlug] && (
@@ -783,6 +812,16 @@ export default function DevotionalPageClient({
                             window.dispatchEvent(
                               new CustomEvent('libraryUpdated'),
                             )
+                            // Signal the post-read push opt-in (it stays inert
+                            // until VAPID is configured — see PushOptIn).
+                            try {
+                              window.localStorage.setItem(
+                                'euangelion:just-finished-reading',
+                                '1',
+                              )
+                            } catch {
+                              // Storage unavailable (private mode) — no opt-in.
+                            }
                           }}
                         >
                           MARK READ
@@ -795,7 +834,24 @@ export default function DevotionalPageClient({
                       >
                         BOOKMARK
                       </button>
+                      {/* Phase 2.4: clip the reader's current text selection
+                          to their local commonplace book (device-only). */}
+                      <ClipButton
+                        sourceTitle={devotional.title}
+                        sourceSlug={slug}
+                        sourceHref={`${devotionalRoutePrefix}/${slug}`}
+                      />
+                      <Link
+                        href="/clippings"
+                        className="text-label vw-small link-highlight leading-none"
+                      >
+                        CLIPPINGS
+                      </Link>
                     </div>
+                    {/* Phase 2.2: one calm daily-reading opt-in, post-read only.
+                        Renders nothing until VAPID is configured + the reader
+                        has finished a day. */}
+                    <PushOptIn />
                   </section>
                 </>
               )}

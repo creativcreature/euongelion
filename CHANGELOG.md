@@ -5,6 +5,46 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Phase 2: audio, web push, PWA offline, clippings (2026-06-11)
+
+The full Phase 2 reader/reliability layer (SA-013/SA-023, F-040/F-030). Everything
+free, no account, honest about what isn't configured yet:
+
+- **Audio edition (2.1, F-030):** a free, on-device TTS adapter — `TtsAdapter`
+  interface + `WebSpeechTtsAdapter` over the Web Speech API (no keys, no cost),
+  shaped so a server-TTS adapter can drop in later. `AudioPlayer` gives a calm
+  Listen/Pause/Stop control, a tappable section scrubber, and full Media Session
+  API wiring (lock-screen metadata + transport handlers), with an honest "Audio
+  isn't available in this browser" state. Mounted on BOTH catalog devotionals and
+  generated Soul-Audit days via a shared `src/lib/audio/segments.ts` extractor that
+  reads only real devotional text.
+- **PWA offline (2.3, F-040):** `sw.js` v50→v51 — cache-first-with-network-update
+  for opened reading routes (`/wake-up/devotional/*`, `/today`, `/sunday`) + their
+  JSON, so readings you've opened stay available offline; brand-styled `/offline`
+  fallback. Existing caching strategies preserved.
+- **Web push (2.2, F-040):** one calm post-read opt-in (`PushOptIn`), wired into
+  both readers and triggered only after a reader finishes a day. Honest no-op when
+  `NEXT_PUBLIC_VAPID_PUBLIC_KEY` is unset / unsupported / denied — it never fakes a
+  subscribe. `sw.js` push + notificationclick handlers; `/api/push/subscribe`
+  persists to Supabase (501 when VAPID unset). Migration
+  `015_create_push_subscriptions.sql` provided (not run). The scheduled daily
+  sender is documented as an out-of-scope contract — no fabricated sender.
+- **Clippings / local library (2.4, F-030):** a local-first commonplace book —
+  IndexedDB store (`src/lib/clippings.ts`, device-only, never networked),
+  `ClipButton` to save the current selection from either reader, and a `/clippings`
+  view with print, copy-all, and `.txt` export. Personal content never leaves the
+  device.
+- Test hygiene: stubbed `fetch` in `series-page-client-scripture.test.tsx` so a
+  store-hydrate relative-URL fetch no longer leaks an unhandled rejection (suite
+  exit 1 → 0).
+
+Verified: `type-check` clean, `lint` 0 errors, full suite 1386 passing.
+
+To activate push end-to-end: set `NEXT_PUBLIC_VAPID_PUBLIC_KEY` / `VAPID_PRIVATE_KEY`
+/ `VAPID_SUBJECT`, apply migration 015, and add the daily-send cron.
+
+---
+
 ## ELEVATION v3.0 — Phase 1A.4 Soul Audit cost rails (2026-06-11)
 
 Load-bearing cost control for the generative Soul Audit (SA-020/F-038). The founder
