@@ -5,6 +5,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — grounded engine: Workers-safe corpus loading (2026-06-11)
+
+Production-readiness for the grounded day engine (SA-020, F-026) — remove the two
+Cloudflare Workers blockers in the generation path:
+
+- **Lexicon precompute.** `lexicon.ts` parsed ~27MB of XML at runtime (fine in
+  dev, fatal under the free 10ms-CPU Workers limit). New `scripts/build-lexicon-index.mts`
+  precomputes two committed indexes (`public/lexicon-strongs.json` 1.93MB +
+  `public/lexicon-verses.json` 5.52MB); runtime now does pure JSON lookups (verified
+  byte-identical to the XML path across 34 verses/Strong's; XML kept only as a dev
+  fallback). `npm run build:lexicon-index` regenerates.
+- **`getVerse` Workers loading.** Was fs-only (`process.cwd()`), which fails on
+  Workers where `public/bibles/` lives behind the ASSETS binding, not the worker fs.
+  Now uses the same ASSETS → fs → self-fetch resolution as the reference-index loader,
+  so verbatim Scripture injection works in every environment (incl. a background
+  Durable Object).
+- **Pre-warn copy** on the results page: sets the "~a minute, written fresh" expectation
+  before the loader.
+
+Remaining for production: the background execution wrapper (Sonnet readings are ~40s,
+over the 30s request cap) — see `docs/SOUL-AUDIT-GROUNDED-REBUILD-PLAN.md`.
+
 ## ELEVATION v3.0 — grounded closed-RAG day generation (2026-06-11)
 
 The Soul Audit day engine is rebuilt as a CLOSED, grounded weave (SA-020, F-026):

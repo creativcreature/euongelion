@@ -22,9 +22,14 @@
 // guard so tsx scripts and verification harnesses can import it directly. The
 // structural protection is that nothing in a client bundle imports it.
 import { promises as fs } from 'node:fs'
+import fsSync from 'node:fs'
 import path from 'node:path'
 import { parseReference, type ParsedReference } from '../bible/parseReference'
-import { BIBLE_BOOK_META, type BibleBookId } from '../bible/books'
+import {
+  BIBLE_BOOK_META,
+  isSingleChapterBook,
+  type BibleBookId,
+} from '../bible/books'
 
 export interface WordStudy {
   word: string // original-language script, e.g. "שָׁבַר"
@@ -33,6 +38,212 @@ export interface WordStudy {
   gloss: string // grounded definition text from BDB/Strong's/Abbott-Smith
   source: string // attribution, e.g. "Brown-Driver-Briggs (Strong's H7665)"
   englishWord?: string // the English word in common translations this backs
+}
+
+// ---------------------------------------------------------------------------
+// Precomputed index (Workers-safe runtime path)
+// ---------------------------------------------------------------------------
+//
+// Parsing ~27 MB of lexicon XML at runtime blows the Cloudflare Workers free
+// plan's 10 ms CPU budget. To stay Workers-safe, `scripts/build-lexicon-index.mts`
+// precomputes a compact JSON index at BUILD time (committed to public/), and at
+// runtime we load that JSON and do pure map lookups — NO XML parsing.
+//
+// Two files, both keyed for direct lookup:
+//   public/lexicon-strongs.json  -> { [strong]: { word, xlit, gloss, source } }
+//   public/lexicon-verses.json   -> { [canonical]: VerseEntry[] }
+//
+// VerseEntry stores the verse-specific surface form that the XML path overlays
+// on top of the Strong's dictionary entry (see getHebrewVerseStudies /
+// getGreekVerseStudies): `w` = surface word, `x` = Greek verse translit
+// (fallback only), `e` = English gloss (Greek englishWord). Hebrew entries omit
+// `x`/`e`. The ordering of the array IS the ranked order the verse functions
+// produce, so the runtime just maps entries -> WordStudy in place.
+
+/** Strong's dictionary entry as stored in the precomputed index. */
+export interface PrecomputedStrongEntry {
+  word: string
+  xlit: string
+  gloss: string
+  source: string
+}
+
+/**
+ * One ranked content word of a verse — the in-memory representation the build
+ * helpers produce. The on-disk index stores the COMPACT TUPLE form below to
+ * shave per-field JSON key overhead across ~200k entries.
+ */
+export interface PrecomputedVerseEntry {
+  s: string // Strong's number, e.g. "H7665" / "G3056"
+  w: string // verse surface form, e.g. "שָׁבַר" / "λόγος"
+  x?: string // Greek-only: verse translit (xlit fallback)
+  e?: string // Greek-only: English gloss (englishWord)
+}
+
+/**
+ * Compact on-disk tuple: [sIdx, wIdx, eIdx?, x?].
+ *   sIdx / wIdx / eIdx all index into the verses file's shared string `pool`
+ *   (Strong's number / verse surface form / English gloss respectively).
+ *   Interning collapses ~200k repeated Strong's + surface strings down to
+ *   ~123k uniques and replaces them with small integers. eIdx is -1 when absent
+ *   but a translit follows. `x` (Greek verse translit, xlit fallback) is inlined
+ *   verbatim because it is vanishingly rare after build-time trimming.
+ */
+export type PrecomputedVerseTuple =
+  | [number, number]
+  | [number, number, number]
+  | [number, number, number, string]
+
+/** The verses index file: a shared string pool plus per-canonical tuples. */
+export interface PrecomputedVersesIndex {
+  pool: string[]
+  verses: Record<string, PrecomputedVerseTuple[]>
+}
+
+export type PrecomputedStrongsIndex = Record<string, PrecomputedStrongEntry>
+
+/**
+ * Build-time string interner. Returns a stable index for a string, appending to
+ * `pool` on first sight. Deterministic given a fixed insertion order.
+ */
+export class StringPool {
+  readonly pool: string[] = []
+  private readonly index = new Map<string, number>()
+  intern(value: string): number {
+    const existing = this.index.get(value)
+    if (existing !== undefined) return existing
+    const id = this.pool.length
+    this.pool.push(value)
+    this.index.set(value, id)
+    return id
+  }
+}
+
+/** Encode an in-memory entry into a pool-referencing tuple (build only). */
+export function entryToTuple(
+  e: PrecomputedVerseEntry,
+  pool: StringPool,
+): PrecomputedVerseTuple {
+  const sIdx = pool.intern(e.s)
+  const wIdx = pool.intern(e.w)
+  const eIdx = e.e ? pool.intern(e.e) : -1
+  if (e.x) return [sIdx, wIdx, eIdx, e.x]
+  if (eIdx !== -1) return [sIdx, wIdx, eIdx]
+  return [sIdx, wIdx]
+}
+
+function tupleToEntry(
+  t: PrecomputedVerseTuple,
+  pool: string[],
+): PrecomputedVerseEntry {
+  const entry: PrecomputedVerseEntry = {
+    s: pool[t[0]] ?? '',
+    w: pool[t[1]] ?? '',
+  }
+  const eIdx = t[2]
+  if (typeof eIdx === 'number' && eIdx !== -1) {
+    const eStr = pool[eIdx]
+    if (eStr) entry.e = eStr
+  }
+  const x = t[3]
+  if (typeof x === 'string' && x) entry.x = x
+  return entry
+}
+
+const STRONGS_INDEX_ASSET = 'lexicon-strongs.json'
+const VERSES_INDEX_ASSET = 'lexicon-verses.json'
+
+// When true (set by the verification harness / build), the runtime refuses the
+// XML fallback so we can prove the precomputed path alone is sufficient.
+let forcePrecomputed = false
+export function __setForcePrecomputed(value: boolean): void {
+  forcePrecomputed = value
+}
+
+let strongsIndex: PrecomputedStrongsIndex | null = null
+let strongsIndexPromise: Promise<PrecomputedStrongsIndex | null> | null = null
+let versesIndex: PrecomputedVersesIndex | null = null
+let versesIndexPromise: Promise<PrecomputedVersesIndex | null> | null = null
+
+/**
+ * Load a precomputed asset using the same three-strategy resolution the
+ * reference index uses (Cloudflare ASSETS -> fs -> self-fetch). Returns null
+ * when the asset cannot be found anywhere (dev without a build) so callers can
+ * fall back to the XML path; throws only on a genuine parse error.
+ */
+async function loadPrecomputedAsset<T>(assetName: string): Promise<T | null> {
+  // Strategy 1: Cloudflare ASSETS binding (production — no XML on disk there).
+  try {
+    const { getCloudflareContext } = await import('@opennextjs/cloudflare')
+    const { env } = await getCloudflareContext({ async: true })
+    if (env?.ASSETS) {
+      const res = await env.ASSETS.fetch(
+        new Request(`https://assets.local/${assetName}`),
+      )
+      if (res.ok) return (await res.json()) as T
+    }
+  } catch {
+    // Not on Cloudflare or ASSETS unavailable — fall through.
+  }
+
+  // Strategy 2: fs (local dev / build / tsx scripts).
+  try {
+    const filePath = path.join(process.cwd(), 'public', assetName)
+    if (fsSync.existsSync(filePath)) {
+      const raw = await fs.readFile(filePath, 'utf8')
+      return JSON.parse(raw) as T
+    }
+  } catch (err) {
+    // A present-but-corrupt index is a real error — surface it.
+    throw new Error(
+      `Precomputed lexicon asset is unreadable: ${assetName} (${(err as Error).message})`,
+    )
+  }
+
+  // Strategy 3: self-fetch (universal fallback).
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://euangelion.app'
+    const res = await fetch(`${baseUrl}/${assetName}`)
+    if (res.ok) return (await res.json()) as T
+  } catch {
+    // Network unavailable — fall through.
+  }
+
+  return null
+}
+
+async function loadStrongsIndex(): Promise<PrecomputedStrongsIndex | null> {
+  if (strongsIndex) return strongsIndex
+  if (!strongsIndexPromise) {
+    strongsIndexPromise = loadPrecomputedAsset<PrecomputedStrongsIndex>(
+      STRONGS_INDEX_ASSET,
+    ).then((data) => {
+      if (data) strongsIndex = data
+      return data
+    })
+  }
+  return strongsIndexPromise
+}
+
+async function loadVersesIndex(): Promise<PrecomputedVersesIndex | null> {
+  if (versesIndex) return versesIndex
+  if (!versesIndexPromise) {
+    versesIndexPromise = loadPrecomputedAsset<PrecomputedVersesIndex>(
+      VERSES_INDEX_ASSET,
+    ).then((data) => {
+      if (data) versesIndex = data
+      return data
+    })
+  }
+  return versesIndexPromise
+}
+
+/** Clear cached precomputed indexes (verification harness only). */
+export function __clearPrecomputedCache(): void {
+  strongsIndex = null
+  strongsIndexPromise = null
+  versesIndex = null
+  versesIndexPromise = null
 }
 
 const REFERENCE_ROOT = path.join(
@@ -55,7 +266,7 @@ const STEPBIBLE_ROOT = path.join(
 // ---------------------------------------------------------------------------
 
 // BibleBookId -> OSIS book code as used inside morphHB WLC files + WLC filename.
-const HEBREW_OSIS: Partial<Record<BibleBookId, string>> = {
+export const HEBREW_OSIS: Partial<Record<BibleBookId, string>> = {
   GEN: 'Gen',
   EXO: 'Exod',
   LEV: 'Lev',
@@ -98,7 +309,7 @@ const HEBREW_OSIS: Partial<Record<BibleBookId, string>> = {
 }
 
 // BibleBookId -> OSIS book code as used in STEPBible TAGNT row prefixes.
-const GREEK_OSIS: Partial<Record<BibleBookId, string>> = {
+export const GREEK_OSIS: Partial<Record<BibleBookId, string>> = {
   MAT: 'Mat',
   MRK: 'Mrk',
   LUK: 'Luk',
@@ -248,7 +459,9 @@ interface StrongHebrewEntry {
 let hebrewStrongIndex: Map<string, StrongHebrewEntry> | null = null
 let hebrewStrongPromise: Promise<Map<string, StrongHebrewEntry>> | null = null
 
-async function loadHebrewStrong(): Promise<Map<string, StrongHebrewEntry>> {
+export async function loadHebrewStrong(): Promise<
+  Map<string, StrongHebrewEntry>
+> {
   if (hebrewStrongIndex) return hebrewStrongIndex
   if (!hebrewStrongPromise) {
     hebrewStrongPromise = (async () => {
@@ -373,7 +586,7 @@ interface AbbottEntry {
 let abbottIndex: Map<string, AbbottEntry> | null = null
 let abbottPromise: Promise<Map<string, AbbottEntry>> | null = null
 
-async function loadAbbottSmith(): Promise<Map<string, AbbottEntry>> {
+export async function loadAbbottSmith(): Promise<Map<string, AbbottEntry>> {
   if (abbottIndex) return abbottIndex
   if (!abbottPromise) {
     abbottPromise = (async () => {
@@ -423,7 +636,9 @@ interface StrongGreekEntry {
 let greekStrongIndex: Map<string, StrongGreekEntry> | null = null
 let greekStrongPromise: Promise<Map<string, StrongGreekEntry>> | null = null
 
-async function loadGreekStrong(): Promise<Map<string, StrongGreekEntry>> {
+export async function loadGreekStrong(): Promise<
+  Map<string, StrongGreekEntry>
+> {
   if (greekStrongIndex) return greekStrongIndex
   if (!greekStrongPromise) {
     greekStrongPromise = (async () => {
@@ -513,7 +728,7 @@ function transliterateGreek(word: string): string {
 // Gloss assembly per language
 // ---------------------------------------------------------------------------
 
-async function buildHebrewStudy(
+export async function buildHebrewStudy(
   strong: string,
   englishWord?: string,
 ): Promise<WordStudy | null> {
@@ -551,7 +766,7 @@ async function buildHebrewStudy(
   }
 }
 
-async function buildGreekStudy(
+export async function buildGreekStudy(
   strong: string,
   fallbackWord: string,
   englishWord?: string,
@@ -600,6 +815,28 @@ export async function getWordStudyByStrong(
   if (!m) return null
   const canonical = `${m[1]}${m[2]}`
 
+  // Workers-safe path: pure lookup in the precomputed Strong's index.
+  const index = await loadStrongsIndex()
+  if (index) {
+    const entry = index[canonical]
+    if (!entry) return null
+    return {
+      word: entry.word,
+      xlit: entry.xlit,
+      strong: canonical,
+      gloss: entry.gloss,
+      source: entry.source,
+    }
+  }
+
+  if (forcePrecomputed) {
+    throw new Error(
+      'Precomputed lexicon index missing and forcePrecomputed is set. ' +
+        'Run `npm run build:lexicon-index` to generate public/lexicon-strongs.json.',
+    )
+  }
+
+  // Dev fallback: parse the XML lexica directly.
   if (canonical.startsWith('H')) {
     return buildHebrewStudy(canonical)
   }
@@ -778,6 +1015,36 @@ export async function getWordStudiesForVerse(
     throw new Error(`Could not parse Scripture reference: "${reference}"`)
   }
 
+  // Workers-safe path: look the canonical reference up in the precomputed
+  // verse index and overlay each entry's verse surface form on its Strong's
+  // dictionary entry — exactly what the XML path produces, no XML parsing.
+  const versesData = await loadVersesIndex()
+  if (versesData) {
+    const strongs = await loadStrongsIndex()
+    if (!strongs) {
+      throw new Error(
+        'Precomputed verse index present but Strong’s index missing. ' +
+          'Re-run `npm run build:lexicon-index`.',
+      )
+    }
+    const tuples = versesData.verses[parsed.canonical]
+    if (!tuples) {
+      throw new Error(
+        `No precomputed word studies for ${parsed.canonical}. ` +
+          'Verse may be untaggable (OT non-Hebrew / NT non-Greek) or outside corpus.',
+      )
+    }
+    return entriesToWordStudies(tuples, versesData.pool, strongs, max)
+  }
+
+  if (forcePrecomputed) {
+    throw new Error(
+      'Precomputed lexicon index missing and forcePrecomputed is set. ' +
+        'Run `npm run build:lexicon-index` to generate public/lexicon-verses.json.',
+    )
+  }
+
+  // Dev fallback: parse the XML corpora directly.
   const meta = BIBLE_BOOK_META[parsed.book]
   // Use the start verse; single-verse word study is the contract here.
   const chapter = parsed.startChapter
@@ -789,12 +1056,46 @@ export async function getWordStudiesForVerse(
   return getGreekVerseStudies(parsed, chapter, verse, max)
 }
 
-async function getHebrewVerseStudies(
+// Overlay precomputed verse tuples onto Strong's dictionary entries. Mirrors
+// the surface/xlit overrides the XML verse paths apply.
+function entriesToWordStudies(
+  tuples: PrecomputedVerseTuple[],
+  pool: string[],
+  strongs: PrecomputedStrongsIndex,
+  max: number,
+): WordStudy[] {
+  const out: WordStudy[] = []
+  for (const t of tuples) {
+    if (out.length >= max) break
+    const e = tupleToEntry(t, pool)
+    const dict = strongs[e.s]
+    if (!dict) continue
+    out.push({
+      word: e.w || dict.word,
+      xlit: dict.xlit || e.x || '',
+      strong: e.s,
+      gloss: dict.gloss,
+      source: dict.source,
+      ...(e.e ? { englishWord: e.e } : {}),
+    })
+  }
+  return out
+}
+
+// ---------------------------------------------------------------------------
+// XML-path verse studies (dev fallback) + build-time entry computation
+// ---------------------------------------------------------------------------
+
+// Compute the ranked, content-filtered, buildable Hebrew verse entries. Shared
+// by the dev-fallback study builder and the precomputed-index build script so
+// the precomputed order is byte-identical to runtime XML parsing. Returns null
+// for words whose Strong's study cannot be built (so they are excluded exactly
+// as the runtime loop excludes them).
+export async function computeHebrewVerseEntries(
   parsed: ParsedReference,
   chapter: number,
   verse: number,
-  max: number,
-): Promise<WordStudy[]> {
+): Promise<PrecomputedVerseEntry[]> {
   const osis = HEBREW_OSIS[parsed.book]
   if (!osis) {
     throw new Error(
@@ -804,12 +1105,7 @@ async function getHebrewVerseStudies(
 
   const bookXml = await loadHebrewBook(osis)
   const tagged = extractHebrewVerseWords(bookXml, osis, chapter, verse)
-  if (tagged.length === 0) {
-    throw new Error(
-      `No tagged Hebrew words found for ${parsed.canonical} ` +
-        `(WLC ${osis}.${chapter}.${verse}). Check versification.`,
-    )
-  }
+  if (tagged.length === 0) return []
 
   // Keep content words only, dedupe by Strong's (first surface form wins),
   // preserving verse order for the stable-sort tiebreak.
@@ -829,22 +1125,47 @@ async function getHebrewVerseStudies(
     .map((t, index) => ({ t, index, freq: freq.get(t.strong) ?? Infinity }))
     .sort((a, b) => a.freq - b.freq || a.index - b.index)
 
-  const results: WordStudy[] = []
+  const out: PrecomputedVerseEntry[] = []
   for (const { t } of ranked) {
-    if (results.length >= max) break
     const study = await buildHebrewStudy(t.strong)
     if (!study) continue
-    results.push({ ...study, word: t.word || study.word })
+    out.push({ s: t.strong, w: t.word || study.word })
   }
-  return results
+  return out
 }
 
-async function getGreekVerseStudies(
+async function getHebrewVerseStudies(
   parsed: ParsedReference,
   chapter: number,
   verse: number,
   max: number,
 ): Promise<WordStudy[]> {
+  const entries = await computeHebrewVerseEntries(parsed, chapter, verse)
+  if (entries.length === 0) {
+    const osis = HEBREW_OSIS[parsed.book]
+    throw new Error(
+      `No tagged Hebrew words found for ${parsed.canonical} ` +
+        `(WLC ${osis}.${chapter}.${verse}). Check versification.`,
+    )
+  }
+
+  const results: WordStudy[] = []
+  for (const e of entries) {
+    if (results.length >= max) break
+    const study = await buildHebrewStudy(e.s)
+    if (!study) continue
+    results.push({ ...study, word: e.w || study.word })
+  }
+  return results
+}
+
+// Compute the ranked, content-filtered, buildable Greek verse entries. Shared
+// by the dev-fallback study builder and the precomputed-index build script.
+export async function computeGreekVerseEntries(
+  parsed: ParsedReference,
+  chapter: number,
+  verse: number,
+): Promise<PrecomputedVerseEntry[]> {
   const osis = GREEK_OSIS[parsed.book]
   if (!osis) {
     throw new Error(
@@ -854,17 +1175,11 @@ async function getGreekVerseStudies(
 
   const fileText = await loadTagntFile(tagntFileForBook(osis))
   const tagged = extractGreekVerseWords(fileText, osis, chapter, verse)
-  if (tagged.length === 0) {
-    throw new Error(
-      `No tagged Greek words found for ${parsed.canonical} ` +
-        `(TAGNT ${osis}.${chapter}.${verse}).`,
-    )
-  }
+  if (tagged.length === 0) return []
 
-  const results: WordStudy[] = []
+  const out: PrecomputedVerseEntry[] = []
   const seen = new Set<string>()
   for (const t of tagged) {
-    if (results.length >= max) break
     if (seen.has(t.strong)) continue
     if (!isGreekContentMorph(t.morph)) continue
     const study = await buildGreekStudy(
@@ -874,11 +1189,164 @@ async function getGreekVerseStudies(
     )
     if (!study) continue
     seen.add(t.strong)
+    const entry: PrecomputedVerseEntry = {
+      s: t.strong,
+      w: t.word || study.word,
+    }
+    // `x` (verse translit) is the xlit fallback the runtime applies as
+    // `dictXlit || x`. The build script drops it when the dictionary xlit is
+    // non-empty (almost always) to keep the index small.
+    if (t.translit) entry.x = t.translit
+    if (t.english) entry.e = t.english
+    out.push(entry)
+  }
+  return out
+}
+
+async function getGreekVerseStudies(
+  parsed: ParsedReference,
+  chapter: number,
+  verse: number,
+  max: number,
+): Promise<WordStudy[]> {
+  const entries = await computeGreekVerseEntries(parsed, chapter, verse)
+  if (entries.length === 0) {
+    const osis = GREEK_OSIS[parsed.book]
+    throw new Error(
+      `No tagged Greek words found for ${parsed.canonical} ` +
+        `(TAGNT ${osis}.${chapter}.${verse}).`,
+    )
+  }
+
+  const results: WordStudy[] = []
+  for (const e of entries) {
+    if (results.length >= max) break
+    // `e.e` carries the verse English gloss the original path fed as englishWord.
+    const study = await buildGreekStudy(e.s, e.w, e.e)
+    if (!study) continue
     results.push({
       ...study,
-      word: t.word || study.word,
-      xlit: study.xlit || t.translit,
+      word: e.w || study.word,
+      xlit: study.xlit || e.x || '',
     })
   }
   return results
+}
+
+// ---------------------------------------------------------------------------
+// Build-time support (used only by scripts/build-lexicon-index.mts)
+// ---------------------------------------------------------------------------
+//
+// These exports let the build script reuse the EXACT parsing/ranking above so
+// the precomputed index is identical to runtime XML parsing. They read the XML
+// corpora and are never called on the request path.
+
+/** Iterate every OT book id that has a morphHB WLC mapping, with its OSIS code. */
+export function hebrewBookEntries(): Array<{
+  book: BibleBookId
+  osis: string
+}> {
+  return (Object.entries(HEBREW_OSIS) as Array<[BibleBookId, string]>).map(
+    ([book, osis]) => ({ book, osis }),
+  )
+}
+
+/** Iterate every NT book id that has a TAGNT mapping, with its OSIS code. */
+export function greekBookEntries(): Array<{ book: BibleBookId; osis: string }> {
+  return (Object.entries(GREEK_OSIS) as Array<[BibleBookId, string]>).map(
+    ([book, osis]) => ({ book, osis }),
+  )
+}
+
+/**
+ * Distinct English (KJV) verse addresses present in a WLC book, in file order.
+ * Mirrors extractHebrewVerseWords' addressing: a verse's English address is its
+ * <note>KJV:Bk.C.V</note> when present, else its osisID.
+ */
+export async function enumerateHebrewVerses(
+  osis: string,
+): Promise<Array<{ chapter: number; verse: number }>> {
+  const xml = await loadHebrewBook(osis)
+  const seen = new Set<string>()
+  const out: Array<{ chapter: number; verse: number }> = []
+  const verseRe = /<verse osisID="([^"]+)">([\s\S]*?)<\/verse>/g
+  let m: RegExpExecArray | null
+  while ((m = verseRe.exec(xml)) !== null) {
+    const osisId = m[1]
+    const body = m[2]
+    const noteMatch = body.match(/<note>KJV:([^<]+)<\/note>/)
+    const addr = noteMatch ? noteMatch[1].trim() : osisId
+    // addr is "Bk.C.V"; only keep ones in this book (KJV notes can point to a
+    // different book under remapping — those are reachable from that book's own
+    // enumeration, so skip cross-book here to avoid duplicates).
+    const parts = addr.split('.')
+    if (parts.length !== 3 || parts[0] !== osis) continue
+    const chapter = parseInt(parts[1], 10)
+    const verse = parseInt(parts[2], 10)
+    if (!Number.isFinite(chapter) || !Number.isFinite(verse)) continue
+    const key = `${chapter}.${verse}`
+    if (seen.has(key)) continue
+    seen.add(key)
+    out.push({ chapter, verse })
+  }
+  return out
+}
+
+/** Distinct verse addresses present in a TAGNT book, in file order. */
+export async function enumerateGreekVerses(
+  osis: string,
+): Promise<Array<{ chapter: number; verse: number }>> {
+  const fileText = await loadTagntFile(tagntFileForBook(osis))
+  const seen = new Set<string>()
+  const out: Array<{ chapter: number; verse: number }> = []
+  const prefix = `${osis}.`
+  const rowRe = new RegExp(
+    `^${osis.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\.(\\d+)\\.(\\d+)#`,
+  )
+  for (const line of fileText.split('\n')) {
+    if (!line.startsWith(prefix)) continue
+    const m = line.match(rowRe)
+    if (!m) continue
+    const chapter = parseInt(m[1], 10)
+    const verse = parseInt(m[2], 10)
+    const key = `${chapter}.${verse}`
+    if (seen.has(key)) continue
+    seen.add(key)
+    out.push({ chapter, verse })
+  }
+  return out
+}
+
+/**
+ * Canonical verse key matching what runtime getWordStudiesForVerse looks up:
+ * parseReference(...).canonical for the given book+chapter+verse. Returns null
+ * if the address does not parse (e.g. out-of-range verse from a stray KJV note).
+ */
+export function canonicalVerseKey(
+  book: BibleBookId,
+  chapter: number,
+  verse: number,
+): string | null {
+  const meta = BIBLE_BOOK_META[book]
+  const ref = isSingleChapterBook(book)
+    ? `${meta.name} ${verse}`
+    : `${meta.name} ${chapter}:${verse}`
+  const parsed = parseReference(ref)
+  return parsed ? parsed.canonical : null
+}
+
+/** Build a Strong's dictionary entry by number (for the precomputed strongs index). */
+export async function buildStrongEntry(
+  strong: string,
+): Promise<PrecomputedStrongEntry | null> {
+  const study = strong.startsWith('H')
+    ? await buildHebrewStudy(strong)
+    : await buildGreekStudy(strong, '')
+  if (!study) return null
+  return {
+    word: study.word,
+    xlit: study.xlit,
+    gloss: study.gloss,
+    source: study.source,
+  }
 }

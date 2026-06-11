@@ -64,6 +64,15 @@ content/reference/stepbible-data/
 # Without this file, devotionals on production have NO reference grounding.
 # public/reference-index.json  ← INTENTIONALLY NOT IGNORED
 
+# Build-generated lexicon index — MUST be committed (the source XML lexica under
+# content/reference/lexicons/ + stepbible-data/ are gitignored, so they are
+# unavailable on CI/Cloudflare Workers). Regenerate after a lexicon update with:
+#   npm run build:lexicon-index
+# Lets src/lib/soul-audit/lexicon.ts do pure JSON lookups at runtime instead of
+# parsing ~27 MB of XML (which blows the Workers 10 ms CPU budget).
+# public/lexicon-strongs.json  ← INTENTIONALLY NOT IGNORED
+# public/lexicon-verses.json   ← INTENTIONALLY NOT IGNORED
+
 # Artwork source files (blue woodprint generated from these)
 public/images/devotional-prints/*/raw.jpg
 

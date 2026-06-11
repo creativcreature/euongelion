@@ -43,20 +43,53 @@ async function loadBook(
   const cached = bookCache.get(cacheKey)
   if (cached) return cached
 
-  const filePath = path.join(
-    process.cwd(),
-    'public',
-    'bibles',
-    translation,
-    `${book}.json`,
-  )
+  const assetPath = `bibles/${translation}/${book}.json`
 
-  let raw: string
+  // Mirror the reference-index loader's resolution order so verbatim Scripture
+  // works in every environment, including a Cloudflare Durable Object / Worker
+  // where `public/` lives behind the ASSETS binding, not the worker fs.
+  let raw: string | null = null
+
+  // Strategy 1: Cloudflare ASSETS binding (production — no network hop).
   try {
-    raw = await fs.readFile(filePath, 'utf8')
-  } catch (err) {
+    const { getCloudflareContext } = await import('@opennextjs/cloudflare')
+    const { env } = await getCloudflareContext({ async: true })
+    const assets = (
+      env as { ASSETS?: { fetch: (u: string) => Promise<Response> } }
+    )?.ASSETS
+    if (assets) {
+      const res = await assets.fetch(`https://assets.local/${assetPath}`)
+      if (res.ok) raw = await res.text()
+    }
+  } catch {
+    // not on Cloudflare / ASSETS unavailable — fall through
+  }
+
+  // Strategy 2: local filesystem (dev / Node).
+  if (raw === null) {
+    try {
+      const filePath = path.join(process.cwd(), 'public', assetPath)
+      raw = await fs.readFile(filePath, 'utf8')
+    } catch {
+      // fs unavailable or file missing — fall through
+    }
+  }
+
+  // Strategy 3: self-fetch the public asset (universal fallback).
+  if (raw === null) {
+    try {
+      const baseUrl =
+        process.env.NEXT_PUBLIC_APP_URL || 'https://euangelion.app'
+      const res = await fetch(`${baseUrl}/${assetPath}`)
+      if (res.ok) raw = await res.text()
+    } catch {
+      // fall through to the error below
+    }
+  }
+
+  if (raw === null) {
     throw new Error(
-      `Bible corpus file missing: ${translation}/${book}.json (${(err as Error).message})`,
+      `Bible corpus file missing: ${translation}/${book}.json (tried ASSETS, fs, self-fetch)`,
     )
   }
 

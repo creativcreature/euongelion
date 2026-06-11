@@ -547,6 +547,11 @@ export default function SoulAuditResultsPage() {
                     ? 'This is the direction that best matches your reflection. It’s a starting point, not a prescription.'
                     : 'Based on what you shared, here are a few directions. Choose where to begin — it’s a starting point, not a prescription.'}
                 </p>
+                <p className="vw-small mt-2 text-muted">
+                  When you choose, we write your seven-day edition fresh —
+                  grounded in real Scripture and the historic voices. It takes
+                  about a minute; we’ll set it before your eyes.
+                </p>
               </header>
             </FadeIn>
 
