@@ -13,6 +13,9 @@ const REROLL_USED_SESSION_KEY = 'soul-audit-reroll-used'
 // Keep in sync with submit-client default; avoids false front-end failures
 // during transient provider slowness.
 const SUBMIT_TIMEOUT_MS = 45_000
+// Transparent re-attempts on a slow/failed options compose before surfacing an
+// error — the wait is embraced, not raced.
+const MAX_SUBMIT_RETRIES = 2
 
 export function useSoulAuditSubmit() {
   const router = useRouter()
@@ -59,25 +62,37 @@ export function useSoulAuditSubmit() {
       // Persist input before fetch — survives browser crash or timeout
       sessionStorage.setItem(LAST_AUDIT_INPUT_SESSION_KEY, trimmed)
 
-      try {
-        const data = (await submitSoulAuditResponse({
-          response: trimmed,
-          timeoutMs: SUBMIT_TIMEOUT_MS,
-        })) as SoulAuditSubmitResponseV2
-        sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(data))
-        sessionStorage.removeItem('soul-audit-selection-v2')
-        sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
-        recordAudit(trimmed, data)
-        setLastFailedSubmission(null)
-        router.push('/soul-audit/results')
-      } catch (err) {
-        setError(
-          err instanceof Error ? err.message : 'Something broke. Try again.',
-        )
-        setLastFailedSubmission(trimmed)
-      } finally {
-        setIsSubmitting(false)
+      // Composing options is a real generation that can brush the provider's
+      // latency ceiling. Don't punish that with a hard failure — transparently
+      // re-attempt a couple of times while the loader keeps running, so a slow
+      // press never shows the reader an error it can recover from on its own.
+      let attempt = 0
+      while (true) {
+        try {
+          const data = (await submitSoulAuditResponse({
+            response: trimmed,
+            timeoutMs: SUBMIT_TIMEOUT_MS,
+          })) as SoulAuditSubmitResponseV2
+          sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(data))
+          sessionStorage.removeItem('soul-audit-selection-v2')
+          sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
+          recordAudit(trimmed, data)
+          setLastFailedSubmission(null)
+          router.push('/soul-audit/results')
+          break
+        } catch (err) {
+          if (attempt < MAX_SUBMIT_RETRIES) {
+            attempt += 1
+            continue
+          }
+          setError(
+            err instanceof Error ? err.message : 'Something broke. Try again.',
+          )
+          setLastFailedSubmission(trimmed)
+          break
+        }
       }
+      setIsSubmitting(false)
     },
     [limitReached, recordAudit, router],
   )

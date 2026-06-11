@@ -5,6 +5,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — "hot off the press" generation loader (2026-06-10)
+
+The generation wait is now a deliberate, on-brand moment instead of a raced
+deadline (founder asked for this repeatedly; prior passes did the lazy thing).
+
+- **`GenerationProgress` rebuilt** as a newspaper press-room: masthead + crimson
+  rule + "SETTING YOUR EDITION", an animated galley proof setting type line-by-
+  line with an ink sweep, "A seven-day edition, being set for you", the REAL
+  server progress ("Composing day N of 7…") on a progress bar, and reassurance.
+  Reduced-motion safe. Verified with a live screenshot.
+- **Resilience:** a slow/errored generation unit transparently re-kicks behind
+  the loader (auto-retry) so the reader never sees "took too long"; the submit
+  options call retries transparently too.
+- **Known (next):** the edition still won't COMPLETE on Sonnet 4.6 — every day
+  errors at the 25s Workers-headroom deadline. The loader covers the wait, but a
+  too-slow model can't finish; the provider switch (Haiku) is required for
+  delivery and is the next task.
+
+---
+
 ## ELEVATION v3.0 — Soul Audit generation timeout fixed (2026-06-10)
 
 First task of the elevation rebuild (founder-authorized; cost-controlled spend).
