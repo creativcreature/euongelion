@@ -30,6 +30,7 @@ import {
 } from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import { selectIngredients } from '@/lib/soul-audit/ingredient-selector'
+import { takeSoulAuditDailyLimit } from '@/lib/soul-audit/rate-limit'
 import type { AuditOptionPreview } from '@/types/soul-audit'
 
 interface SubmitBody {
@@ -176,6 +177,34 @@ export async function POST(request: NextRequest) {
         status: 429,
         requestId,
       })
+    }
+
+    // ─── Per-day submit cap (cost control, shared across Worker + Edge) ───
+    // A rolling daily ceiling on Soul Audit submissions, keyed on the session
+    // token with a hashed-IP fallback so clearing the cookie cannot reset the
+    // quota. Rerolls reuse the original input and do NOT consume daily quota
+    // (mirrors the per-cycle counter above). 429 with honest copy on exceed.
+    if (!rerollVerified) {
+      const dailyLimit = await takeSoulAuditDailyLimit({
+        scope: 'submit',
+        sessionToken,
+        clientKey,
+      })
+      if (!dailyLimit.ok) {
+        return jsonError({
+          error: PASTORAL_MESSAGES.DAILY_SUBMIT_LIMIT,
+          code: 'DAILY_SUBMIT_LIMIT_REACHED',
+          status: 429,
+          requestId,
+          rateLimit: {
+            limit: dailyLimit.limit,
+            remaining: 0,
+            retryAfterSeconds: dailyLimit.retryAfterSeconds,
+            resetAtSeconds:
+              Math.ceil(Date.now() / 1000) + dailyLimit.retryAfterSeconds,
+          },
+        })
+      }
     }
 
     const crisisDetected = detectCrisis(responseText)

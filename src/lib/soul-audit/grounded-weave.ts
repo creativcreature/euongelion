@@ -90,6 +90,15 @@ export interface GroundedDayResult {
     scriptureTranslation: BibleTranslationCode
     wordStudyCount: number
     sourceCount: number
+    /**
+     * Real provider-reported token usage for THIS weave call, surfaced so the
+     * generation runner can write the cost ledger. These come from the actual
+     * Anthropic response (usage.input_tokens / output_tokens) via the brain
+     * router; the runner is the single place that persists them.
+     */
+    inputTokens: number
+    outputTokens: number
+    estimatedCostUsd: number
   }
 }
 
@@ -508,6 +517,11 @@ export async function generateGroundedDay(
       scriptureTranslation: translation,
       wordStudyCount: studies.length,
       sourceCount: sources.length,
+      // Real provider usage from this call (the brain router / edge shim both
+      // populate these from the Anthropic response). The runner ledgers them.
+      inputTokens: result.inputTokens,
+      outputTokens: result.outputTokens,
+      estimatedCostUsd: result.estimatedCostUsd,
     },
   }
 }

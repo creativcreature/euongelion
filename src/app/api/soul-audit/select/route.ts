@@ -32,6 +32,9 @@ import {
 } from '@/lib/soul-audit/repository'
 import { verifyRunToken } from '@/lib/soul-audit/run-token'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
+import { takeSoulAuditDailyLimit } from '@/lib/soul-audit/rate-limit'
+import { checkDailyBudget } from '@/lib/soul-audit/budget-cap'
+import { PASTORAL_MESSAGES } from '@/lib/soul-audit/messages'
 import { createAdminClient } from '@/lib/supabase/admin'
 import type { JobRecord } from '@/types/soul-audit-plan'
 import type { SoulAuditSelectRequest } from '@/types/soul-audit'
@@ -521,6 +524,47 @@ export async function POST(request: NextRequest) {
       console.info(
         `[soul-audit:select] Existing job ${existingJob.id} has status='${existingJob.status}'. Creating new job.`,
       )
+    }
+
+    // ─── Per-day plan cap (cost control) ───
+    // We only reach here when a BRAND-NEW plan + generation job is about to be
+    // created (idempotent re-selects of an in-flight/complete job returned
+    // above and do NOT consume quota). Cap new plans per day, session-keyed
+    // with a hashed-IP fallback. 429 + honest copy on exceed.
+    const planLimit = await takeSoulAuditDailyLimit({
+      scope: 'plan',
+      sessionToken,
+      clientKey,
+    })
+    if (!planLimit.ok) {
+      return jsonError({
+        error: PASTORAL_MESSAGES.DAILY_PLAN_LIMIT,
+        code: 'DAILY_PLAN_LIMIT_REACHED',
+        status: 429,
+        requestId,
+        rateLimit: {
+          limit: planLimit.limit,
+          remaining: 0,
+          retryAfterSeconds: planLimit.retryAfterSeconds,
+          resetAtSeconds:
+            Math.ceil(Date.now() / 1000) + planLimit.retryAfterSeconds,
+        },
+      })
+    }
+
+    // ─── Global daily budget pre-check ───
+    // Surface a paused state at SELECTION time when the day's spend ceiling is
+    // already hit, instead of starting a plan whose first generate-day would
+    // immediately fail. The runner re-checks before every LLM call (the real
+    // wall); this is the early, honest signal. Never canned content.
+    const budget = await checkDailyBudget()
+    if (!budget.ok) {
+      return jsonError({
+        error: PASTORAL_MESSAGES.GENERATION_PAUSED,
+        code: 'GENERATION_BUDGET_PAUSED',
+        status: 429,
+        requestId,
+      })
     }
 
     // ─── Calculate start date + build schedule ───

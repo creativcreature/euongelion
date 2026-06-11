@@ -5,6 +5,42 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Phase 1A.4 Soul Audit cost rails (2026-06-11)
+
+Load-bearing cost control for the generative Soul Audit (SA-020/F-038). The founder
+cannot absorb runaway LLM spend, so these are the hard rails — none serve canned
+content on failure (a paused generation says so, honestly):
+
+- **Rate limiting (`src/lib/soul-audit/rate-limit.ts`):** per-day caps on submissions
+  (`SOUL_AUDIT_MAX_SUBMITS_PER_DAY`, default 20) and plan generations
+  (`SOUL_AUDIT_MAX_PLANS_PER_DAY`, default 5), session-keyed with a hashed-IP
+  fallback, backed by a Supabase counter (atomic `soul_audit_bump_counter` RPC).
+  Over-limit → 429 with pastoral copy. Rerolls / idempotent re-selects exempt.
+- **Budget cap (`budget-cap.ts`, BLOCKING):** a global daily ceiling
+  (`SOUL_AUDIT_DAILY_COST_BUDGET` USD, default 25; optional
+  `SOUL_AUDIT_DAILY_TOKEN_BUDGET`). Checked before each generation; over-budget
+  surfaces an honest "generation paused for today" — never fake content.
+- **Cost ledger (`cost-ledger.ts`):** records every generation's real Anthropic
+  `usage` (input/output tokens) + correct Sonnet pricing
+  (`SOUL_AUDIT_INPUT/OUTPUT_USD_PER_MTOK`, default 3/15) to Supabase, and
+  accumulates the day's `global_spend`. Best-effort-but-LOUD: a ledger write
+  failure logs via telemetry but never breaks the user's devotional.
+- **Telemetry (`telemetry.ts`):** structured JSON events (generation_start/success/
+  fail, rate_limited, budget_exceeded, ledger_write_failed) to stdout; never throws.
+- Real token usage now flows `generateWithBrain` → `grounded-weave` meta →
+  `generation-runner` (budget pre-check + ledger write) → both the Next route and
+  the Edge function (which import the same runner). Migration
+  `database/migrations/014_soul_audit_cost_ledger.sql` provided — **NOT run**.
+
+Two follow-ups for the founder: (1) apply migration 014 + rebuild/redeploy the Edge
+bundle (`npm run build:edge-function`) so the budget enforces off-request; (2) decide
+fail-open (current — bounded by the per-minute burst limiter) vs fail-closed on a
+Supabase counter outage.
+
+Verified: `type-check` clean, `lint` 0 errors, full suite 1386 passing.
+
+---
+
 ## ELEVATION v3.0 — Phase 1.4 homepage consolidation (2026-06-11)
 
 Single clear action ladder on the homepage, tightened global nav (SA-013/F-007):

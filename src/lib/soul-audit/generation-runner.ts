@@ -14,6 +14,9 @@
 import { generateGroundedDay } from './grounded-weave'
 import { composeRecap, SABBATH_DAY } from './plan-composition'
 import { createAdminClient } from '@/lib/supabase/admin'
+import { checkDailyBudget, BUDGET_PAUSED_MESSAGE } from './budget-cap'
+import { recordGenerationUsage } from './cost-ledger'
+import { emitSoulAuditTelemetry } from './telemetry'
 import type { DayContent, Tier3Extended } from '@/types/soul-audit-plan'
 
 export interface GenerateDayJob {
@@ -81,12 +84,46 @@ export async function runGenerationDay(
 ): Promise<RunnerResult> {
   const { jobId, planId, runId, dayNumber } = job
   const contentDays = job.totalContentDays || 5
+  const startedAt = Date.now()
 
   try {
+    // ── BLOCKING budget cap ──────────────────────────────────────────────
+    // Check the day's accumulated LLM spend BEFORE making the (expensive)
+    // generation call. When the daily ceiling is reached, generation is
+    // paused with a clear, honest error — never canned/fabricated content.
+    // This runs in every executor (Worker route, dev shim, Edge function)
+    // because the runner is the shared source of truth.
+    const budget = await checkDailyBudget()
+    if (!budget.ok) {
+      emitSoulAuditTelemetry('budget_exceeded', {
+        dayNumber,
+        jobId,
+        planToken: planId,
+        sessionToken: job.sessionId,
+        reason: budget.reason,
+        observed: budget.spendUsd,
+        ceiling: budget.costCeilingUsd,
+      })
+      await updateJob(jobId, {
+        status: 'error',
+        error: BUDGET_PAUSED_MESSAGE,
+        generating_since: null,
+      }).catch(() => {})
+      return { ok: false, status: 429, error: BUDGET_PAUSED_MESSAGE }
+    }
+
     await updateJob(jobId, {
       status: 'generating',
       progress: `Composing day ${dayNumber} of 7...`,
       generating_since: new Date().toISOString(),
+    })
+
+    emitSoulAuditTelemetry('generation_start', {
+      mode: 'reading',
+      dayNumber,
+      jobId,
+      planToken: planId,
+      sessionToken: job.sessionId,
     })
 
     // Grounded closed-RAG weave (verbatim Scripture + real attributed quotes
@@ -121,12 +158,38 @@ export async function runGenerationDay(
       const isAbort =
         error instanceof Error &&
         (error.name === 'AbortError' || msg.includes('aborted'))
+      emitSoulAuditTelemetry('generation_fail', {
+        mode: 'reading',
+        dayNumber,
+        jobId,
+        planToken: planId,
+        sessionToken: job.sessionId,
+        durationMs: Date.now() - startedAt,
+        reason: `weave_failed: ${msg}`,
+      })
       return {
         ok: false,
         status: isAbort ? 504 : 500,
         error: `Day ${dayNumber} generation failed: ${msg}`,
       }
     }
+
+    // Cost ledger (OBSERVABILITY ONLY — best-effort-but-LOUD): the tokens were
+    // already spent the moment the weave call returned, so record usage here,
+    // BEFORE the verification gate, regardless of whether the day is accepted.
+    // recordGenerationUsage never throws: a ledger failure must never break the
+    // user's devotional, so we never let it short-circuit the path below.
+    await recordGenerationUsage({
+      model: weave.meta.model,
+      inputTokens: weave.meta.inputTokens,
+      outputTokens: weave.meta.outputTokens,
+      dayMode: 'reading',
+      sessionToken: job.sessionId,
+      jobId,
+      planToken: planId,
+      runId,
+      dayNumber,
+    })
 
     // Grounding gate — never save a day that smuggled in an ungrounded
     // citation; reject so the chain re-rolls it.
@@ -135,6 +198,18 @@ export async function runGenerationDay(
         `[generation-runner] Day ${dayNumber} failed grounding verification:`,
         weave.verification.issues.join('; '),
       )
+      emitSoulAuditTelemetry('generation_fail', {
+        mode: 'reading',
+        dayNumber,
+        jobId,
+        planToken: planId,
+        sessionToken: job.sessionId,
+        model: weave.meta.model,
+        inputTokens: weave.meta.inputTokens,
+        outputTokens: weave.meta.outputTokens,
+        durationMs: Date.now() - startedAt,
+        reason: 'grounding_verification_failed',
+      })
       await updateJob(jobId, {
         status: 'error',
         error: `Day ${dayNumber} failed grounding verification.`,
@@ -177,6 +252,18 @@ export async function runGenerationDay(
     await updateJob(jobId, {
       current_day: dayNumber,
       progress: `Day ${dayNumber} of 7 complete.`,
+    })
+
+    emitSoulAuditTelemetry('generation_success', {
+      mode: 'reading',
+      dayNumber,
+      jobId,
+      planToken: planId,
+      sessionToken: job.sessionId,
+      model: weave.meta.model,
+      inputTokens: weave.meta.inputTokens,
+      outputTokens: weave.meta.outputTokens,
+      durationMs: Date.now() - startedAt,
     })
 
     // Final content day → recap (6) + sabbath (7) + complete.
@@ -325,6 +412,7 @@ export type DeepDiveResult =
  */
 export async function runDeepDive(job: DeepDiveJob): Promise<DeepDiveResult> {
   const supabase = createAdminClient()
+  const startedAt = Date.now()
 
   const db = supabase as any
 
@@ -343,7 +431,29 @@ export async function runDeepDive(job: DeepDiveJob): Promise<DeepDiveResult> {
     }
   }
 
+  // BLOCKING budget cap — the deep dive is the single most expensive call
+  // (~3,500 words / up to 7000 output tokens), so it must respect the daily
+  // ceiling too. Paused, not faked. (Shared runner → enforced in every runtime.)
+  const budget = await checkDailyBudget()
+  if (!budget.ok) {
+    emitSoulAuditTelemetry('budget_exceeded', {
+      mode: 'deepdive',
+      dayNumber: job.dayNumber,
+      planToken: job.planId,
+      reason: budget.reason,
+      observed: budget.spendUsd,
+      ceiling: budget.costCeilingUsd,
+    })
+    return { ok: false, status: 429, error: BUDGET_PAUSED_MESSAGE }
+  }
+
   const existing = dayRow.content as unknown as DayContent
+
+  emitSoulAuditTelemetry('generation_start', {
+    mode: 'deepdive',
+    dayNumber: job.dayNumber,
+    planToken: job.planId,
+  })
 
   let weave
   try {
@@ -365,14 +475,42 @@ export async function runDeepDive(job: DeepDiveJob): Promise<DeepDiveResult> {
       `[generation-runner] Deep dive failed for day ${job.dayNumber}:`,
       msg,
     )
+    emitSoulAuditTelemetry('generation_fail', {
+      mode: 'deepdive',
+      dayNumber: job.dayNumber,
+      planToken: job.planId,
+      durationMs: Date.now() - startedAt,
+      reason: `weave_failed: ${msg}`,
+    })
     return { ok: false, status: 500, error: msg }
   }
+
+  // Cost ledger (observability, best-effort-but-LOUD): tokens were spent on the
+  // weave call above regardless of the verification outcome, so record first.
+  await recordGenerationUsage({
+    model: weave.meta.model,
+    inputTokens: weave.meta.inputTokens,
+    outputTokens: weave.meta.outputTokens,
+    dayMode: 'deepdive',
+    planToken: job.planId,
+    dayNumber: job.dayNumber,
+  })
 
   if (!weave.verification.ok) {
     console.error(
       `[generation-runner] Deep dive day ${job.dayNumber} failed grounding verification:`,
       weave.verification.issues.join('; '),
     )
+    emitSoulAuditTelemetry('generation_fail', {
+      mode: 'deepdive',
+      dayNumber: job.dayNumber,
+      planToken: job.planId,
+      model: weave.meta.model,
+      inputTokens: weave.meta.inputTokens,
+      outputTokens: weave.meta.outputTokens,
+      durationMs: Date.now() - startedAt,
+      reason: 'grounding_verification_failed',
+    })
     return { ok: false, status: 500, error: 'grounding verification failed' }
   }
 
@@ -406,5 +544,14 @@ export async function runDeepDive(job: DeepDiveJob): Promise<DeepDiveResult> {
   console.info(
     `[generation-runner] Deep dive saved for plan ${job.planId} day ${job.dayNumber}: ${weave.meta.words}w · ${weave.meta.sourceCount} sources · verified`,
   )
+  emitSoulAuditTelemetry('generation_success', {
+    mode: 'deepdive',
+    dayNumber: job.dayNumber,
+    planToken: job.planId,
+    model: weave.meta.model,
+    inputTokens: weave.meta.inputTokens,
+    outputTokens: weave.meta.outputTokens,
+    durationMs: Date.now() - startedAt,
+  })
   return { ok: true }
 }
