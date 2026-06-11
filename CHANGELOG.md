@@ -5,6 +5,25 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Soul Audit generation timeout fixed (2026-06-10)
+
+First task of the elevation rebuild (founder-authorized; cost-controlled spend).
+Phase 0 audit (`docs/ARCHITECTURE-AUDIT.md`) found the grounded-generation Soul
+Audit already ~80% live — the real bug was the day generation, not the pipeline.
+
+- **Root cause of the live "Day N generation took too long (25000ms deadline)":**
+  `generate-day` asked for a **3,000–4,000-word, 5-section chiastic PaRDeS essay**
+  at `maxOutputTokens: 6000` — uncompletable inside the 25s Workers-headroom
+  deadline (and the cost driver: ~$0.59/edition).
+- **Fix:** right-sized the day prompt to the brief's **600–900-word bespoke
+  edition** (same JSON schema/keys so the reader + validator are unaffected;
+  tight per-section targets; `maxOutputTokens: 2800`). Unblocks the flagship and
+  cuts per-day cost ~8×. RAG grounding, scripture/voice verbatim rules, and
+  validation untouched; no determinism or canned content added. Provider choice
+  deferred per founder (still on the configured model).
+
+---
+
 ## UX AUDIT FIXES — tranche D: mobile parity + onboarding (2026-06-10)
 
 - **Mobile/desktop nav parity:** `Help` added to the mobile hamburger menu (was

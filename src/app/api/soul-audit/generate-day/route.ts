@@ -168,42 +168,40 @@ YOUR ROLE: Assembler and polisher. 80% from reference material below. Weave into
 REFERENCE MATERIAL:
 ${refMaterial}
 
-SECTION A — THE HOOK (400-500 words, 8th grade)
-- Modern scene surfacing this person's tension
-- Meta-story: "Today we are in [${params.metaStoryPosition}]"
+A reader's daily edition — ONE tight, bespoke devotional of 600-900 words total
+that speaks directly to what THIS person wrote. Not an essay; a composed reading
+for a stolen five minutes. Use the same JSON keys, but keep every section short.
+
+hookA (≈120 words, 8th grade)
+- A modern scene that surfaces THIS person's specific tension (use their words).
 - Interactive: ${params.interactiveElement}
 
-SECTION B — THE TEXT (500-700 words, 12th grade)
-- Quote ${params.scriptureAnchor} in full
-- Historical/cultural context from reference material
-- PaRDeS Peshat: literal meaning
-- Also produce textBPreview: standalone 100-150 word summary for 5-minute readers
+textB (≈220 words, 12th grade)
+- Quote ${params.scriptureAnchor} in full (verbatim), then its plain meaning and
+  one beat of context — said toward this person's situation.
+- textBPreview: a standalone 80-120 word version for a 5-minute reader.
 
-SECTION C — THE CENTER (700-900 words, college)
-- Hebrew/Greek deep-dive: 2-3 words, transliteration, etymology, pictographic roots
-- PaRDeS Remez: hints, allusions
-- Reference source quote with FULL CONTEXT
+centerC (≈180 words, college)
+- ONE Hebrew/Greek word (transliteration + brief etymology), and the FIRST
+  reference-source quote (verbatim, attributed) brought to bear on their burden.
 
-SECTION B' — CHRIST CONNECTION (600-800 words, 12th grade)
-- NT fulfillment, PaRDeS Drash: practical wisdom
-- Second reference quote with context
+christConnectionBPrime (≈140 words, 12th grade)
+- The bridge to Christ; optionally a SECOND short reference quote (verbatim).
 
-SECTION A' — THE RETURN (400-600 words, 8th grade)
-- Return to opening, transformed. PaRDeS Sod: mystery
-- 3 specific reflection questions
-- Closing prayer (3-5 sentences)
-- Response invitation for ${params.interactiveElement}
+returnAPrime (≈120 words, 8th grade)
+- Return to the opening, transformed; lead into the questions and prayer.
 
-ENDNOTES: Min 3 sources. Academic: Author. *Title*. Publisher, Year. Chapter/Page.
-
-TIER 3 EXTENDED (separate fields):
-- extendedEtymology, crossReferences (3-5), journalingPrompts (2-3), comprehensionQuestions (2-3), characterProfile (if relevant, else null), furtherResources (2-3 real books)
+reflectionQuestions: 1-2 questions written to THEIR situation (not generic).
+prayer: 3-5 sentences, in their direction.
+endnotes: min 2 real sources. Format: Author. *Title*. Publisher, Year. Page.
+tier3Extended: keep MINIMAL — crossReferences (2-3) + one journaling prompt; set
+  the rest null. Do NOT pad it; the edition is the 600-900 word core.
 
 PREVIOUS DAYS: ${params.previousDaysSummary}
 
-FORBIDDEN: "In today's world..." / "Let's unpack..." / "It's important to note..." / generic language / ungrounded theology / three-part lists / rhetorical question → immediate answer
+FORBIDDEN: "In today's world..." / "Let's unpack..." / "It's important to note..." / generic language / ungrounded theology / three-part lists / rhetorical question → immediate answer / inventing Scripture or quotes.
 
-TARGET: 3,000-4,000 words.
+TARGET: 600-900 words total across hookA+textB+centerC+christConnectionBPrime+returnAPrime. Tight, not padded.
 
 RESPOND WITH ONLY A JSON OBJECT. No preamble, no markdown fences.
 Keys: title, hookA, textB, textBPreview, centerC, christConnectionBPrime, returnAPrime, scriptureReference, scriptureText, hebrewGreekStudy, interactiveElement, metaStoryPlacement, backwardLink, forwardLink, reflectionQuestions, prayer, endnotes, previousDaysSummaryForNext, tier3Extended`
@@ -451,7 +449,10 @@ export async function POST(request: NextRequest) {
           context: {
             task: 'devotional_day_generate',
             mode: 'auto',
-            maxOutputTokens: 6000,
+            // Right-sized to the 600-900 word edition (was 6000 → a 3-4k word
+            // essay that could never finish inside the 25s deadline). ~2800
+            // covers the core + minimal tier3 + JSON envelope with headroom.
+            maxOutputTokens: 2800,
             platformKeysEnabled: true,
             signal,
           },
