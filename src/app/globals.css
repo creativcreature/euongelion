@@ -7912,3 +7912,579 @@ body:not(.rhythm-enabled) .rhythm-block-image {
     margin-bottom: -0.4rem;
   }
 }
+
+/* ============================================
+   SUNDAY EDITION — Phase 3.2
+   Long-form weekly devotional surface.
+   Mobile-first, two-column on desktop (≥ 1024px).
+   ============================================ */
+
+/* Page wrapper — same newspaper frame as other reading surfaces */
+.sunday-page {
+  max-width: var(--mock-frame-max, 1860px);
+  margin: 0 auto;
+}
+
+/* ── Masthead header strip ─────────────────────────────────────── */
+.sunday-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  padding: 0.7rem var(--mock-pad-x, 1.2rem);
+  border-bottom: 2px solid var(--color-border-strong);
+  background: color-mix(
+    in srgb,
+    var(--color-cobalt, #1f2a8d) 5%,
+    var(--color-bg) 95%
+  );
+}
+
+.sunday-header-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.45em;
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.66rem, 0.9vw, 0.78rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.sunday-edition-label {
+  color: var(--color-cobalt, #1f2a8d);
+}
+
+.dark .sunday-edition-label {
+  color: var(--color-cobalt-lifted, #2236a2);
+}
+
+.sunday-header-sep {
+  opacity: 0.4;
+  font-weight: 400;
+}
+
+.sunday-week-label {
+  color: var(--color-text-primary);
+}
+
+.sunday-date-label {
+  color: var(--color-text-secondary);
+}
+
+.sunday-read-time {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.66rem, 0.9vw, 0.76rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+/* ── Article folio (series kicker + headline + dek + lead scripture) ── */
+.sunday-folio {
+  padding: clamp(1.6rem, 4vw, 3.4rem) var(--mock-pad-x, 1.2rem) 0;
+  max-width: 52rem;
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+.sunday-series-kicker {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.68rem, 0.9vw, 0.78rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-amber, #c8a56a);
+  margin: 0 0 0.8rem;
+}
+
+.sunday-series-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+  padding-bottom: 0.05em;
+}
+
+.sunday-series-link:hover,
+.sunday-series-link:focus-visible {
+  border-bottom-color: currentColor;
+}
+
+.sunday-headline {
+  font-family: var(--font-family-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  color: var(--color-text-primary);
+  margin: 0 0 0.6rem;
+  text-wrap: balance;
+}
+
+.sunday-dek {
+  font-family: var(--font-family-serif);
+  font-size: clamp(1.08rem, 1.6vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  max-width: 44ch;
+  margin: 0 0 1.4rem;
+}
+
+/* Lead scripture block inside the folio */
+.sunday-scripture--lead {
+  margin: 1.4rem 0 1.8rem;
+  border-left: 3px solid var(--color-cobalt, #1f2a8d);
+  padding: 0.4rem 0 0.4rem 1.2rem;
+}
+
+.dark .sunday-scripture--lead {
+  border-left-color: var(--color-cobalt-lifted, #2236a2);
+}
+
+/* ── Body area — two columns on desktop ──────────────────────────── */
+.sunday-body {
+  padding: clamp(1.4rem, 3vw, 2.6rem) var(--mock-pad-x, 1.2rem)
+    clamp(2rem, 4vw, 3.6rem);
+}
+
+.sunday-body-inner {
+  max-width: 68ch;
+  /* Single column on mobile and tablet (< 1024px) */
+}
+
+@media (min-width: 1024px) {
+  .sunday-body-inner {
+    max-width: none;
+    /* Two-column newspaper layout on desktop */
+    column-count: 2;
+    column-gap: clamp(2rem, 4vw, 3rem);
+    column-rule: 1px solid var(--color-border);
+  }
+
+  /* Ensure section headings and pull quotes break across columns cleanly */
+  .sunday-body-inner .sunday-teaching,
+  .sunday-body-inner .sunday-scripture,
+  .sunday-body-inner .sunday-reflection,
+  .sunday-body-inner .sunday-prayer,
+  .sunday-body-inner .sunday-vocab,
+  .sunday-body-inner .sunday-bridge {
+    break-inside: avoid;
+  }
+
+  /* Pull quotes span both columns for visual emphasis */
+  .sunday-body-inner .sunday-pull-quote--standalone {
+    column-span: all;
+  }
+}
+
+/* ── Module blocks ─────────────────────────────────────────────── */
+
+/* Body paragraphs */
+.sunday-body-para {
+  font-family: var(--font-family-serif);
+  font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+  line-height: 1.72;
+  color: var(--color-text-primary);
+  margin: 0 0 1.1em;
+  text-wrap: pretty;
+}
+
+/* Section headings within the body */
+.sunday-section-head {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.74rem, 0.95vw, 0.86rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin: 1.8em 0 0.7em;
+  padding-top: 1.4em;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Scripture block (inline, not the lead) */
+.sunday-scripture {
+  margin: 1.6em 0;
+}
+
+.sunday-scripture-text {
+  font-family: var(--font-family-serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+  line-height: 1.62;
+  color: var(--color-text-primary);
+  margin: 0 0 0.4em;
+  border-left: 2px solid var(--color-amber, #c8a56a);
+  padding-left: 1rem;
+}
+
+.sunday-scripture-ref {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.68rem, 0.88vw, 0.78rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-amber, #c8a56a);
+  margin: 0 0 0 1.1rem;
+}
+
+/* Pull quote — large display */
+.sunday-pull-quote {
+  margin: 1.6em 0;
+  border-top: 2px solid var(--color-border-strong);
+  border-bottom: 2px solid var(--color-border-strong);
+  padding: 1rem 0;
+}
+
+.sunday-pull-quote p {
+  font-family: var(--font-family-serif);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Reflection block */
+.sunday-reflection {
+  margin: 1.6em 0;
+  padding: 1rem 1.2rem;
+  background: color-mix(
+    in srgb,
+    var(--color-cobalt, #1f2a8d) 4%,
+    var(--color-bg) 96%
+  );
+  border-left: 3px solid var(--color-cobalt, #1f2a8d);
+}
+
+.dark .sunday-reflection {
+  background: color-mix(
+    in srgb,
+    var(--color-cobalt-lifted, #2236a2) 8%,
+    transparent 92%
+  );
+  border-left-color: var(--color-cobalt-lifted, #2236a2);
+}
+
+.sunday-reflection-head {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.66rem, 0.86vw, 0.76rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-cobalt, #1f2a8d);
+  margin: 0 0 0.6em;
+}
+
+.dark .sunday-reflection-head {
+  color: var(--color-cobalt-lifted, #2236a2);
+}
+
+/* Prayer block */
+.sunday-prayer {
+  margin: 1.6em 0;
+  padding: 0.9rem 1rem 0.9rem 1.2rem;
+  border: 1px solid var(--color-border);
+}
+
+.sunday-prayer-label {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.62rem, 0.8vw, 0.72rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-amber, #c8a56a);
+  margin: 0 0 0.6em;
+}
+
+/* Bridge (ancient ↔ modern) */
+.sunday-bridge {
+  margin: 1.6em 0;
+  display: grid;
+  gap: 0.9em;
+}
+
+.sunday-bridge-row {
+  display: grid;
+  gap: 0.3em;
+}
+
+.sunday-bridge-label {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.62rem, 0.8vw, 0.72rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+/* Vocab (Greek/Hebrew term) */
+.sunday-vocab {
+  margin: 1.6em 0;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1.5px solid var(--color-border);
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+.sunday-vocab-word {
+  font-family: var(--font-family-serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--color-amber, #c8a56a);
+  margin: 0 0 0.2em;
+  line-height: 1.2;
+}
+
+.sunday-vocab-transliteration {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.78rem, 1vw, 0.9rem);
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+  margin: 0 0 0.4em;
+}
+
+.sunday-vocab-def {
+  font-family: var(--font-family-serif);
+  font-size: clamp(0.92rem, 1.2vw, 1.04rem);
+  font-style: italic;
+  color: var(--color-text-primary);
+  margin: 0 0 0.6em;
+}
+
+/* ── Page footer ───────────────────────────────────────────────── */
+.sunday-footer {
+  padding: 1.4rem var(--mock-pad-x, 1.2rem) 2rem;
+  border-top: 2px solid var(--color-border-strong);
+  display: grid;
+  gap: 0.7rem;
+}
+
+.sunday-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.sunday-footer-share {
+  display: flex;
+  align-items: center;
+}
+
+.sunday-archive-link {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.68rem, 0.9vw, 0.78rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.sunday-archive-link:hover,
+.sunday-archive-link:focus-visible {
+  color: var(--color-text-primary);
+}
+
+.sunday-footer-note {
+  font-family: var(--font-family-serif);
+  font-size: clamp(0.86rem, 1.1vw, 0.96rem);
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+.sunday-inline-link {
+  color: var(--color-cobalt, #1f2a8d);
+  text-underline-offset: 0.22em;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.dark .sunday-inline-link {
+  color: var(--color-cobalt-lifted, #2236a2);
+}
+
+/* ── Archive page ──────────────────────────────────────────────── */
+.sunday-archive-page {
+  max-width: var(--mock-frame-max, 1860px);
+  margin: 0 auto;
+}
+
+.sunday-archive-header {
+  padding: 1.8rem var(--mock-pad-x, 1.2rem) 1.4rem;
+  border-bottom: 2px solid var(--color-border-strong);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.sunday-archive-breadcrumb {
+  margin-bottom: 0.4rem;
+}
+
+.sunday-archive-back {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.66rem, 0.88vw, 0.76rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.sunday-archive-back:hover,
+.sunday-archive-back:focus-visible {
+  color: var(--color-text-primary);
+}
+
+.sunday-archive-title {
+  font-family: var(--font-family-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  letter-spacing: -0.018em;
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.sunday-archive-subtitle {
+  font-family: var(--font-family-serif);
+  font-size: clamp(0.94rem, 1.3vw, 1.1rem);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Broadsheet grid — newspaper-style cells */
+.sunday-archive-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  border-top: 1.5px solid var(--color-border);
+  border-left: 1.5px solid var(--color-border);
+}
+
+.sunday-archive-item {
+  border-right: 1.5px solid var(--color-border);
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+.sunday-archive-item.is-current {
+  background: color-mix(
+    in srgb,
+    var(--color-cobalt, #1f2a8d) 5%,
+    var(--color-bg) 95%
+  );
+}
+
+.sunday-archive-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem 1.1rem 1.1rem;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  transition: background 160ms ease;
+  min-height: 120px;
+  box-sizing: border-box;
+}
+
+.sunday-archive-card:hover {
+  background: color-mix(
+    in srgb,
+    var(--color-cobalt, #1f2a8d) 6%,
+    var(--color-bg) 94%
+  );
+}
+
+.sunday-archive-card:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: -2px;
+}
+
+.sunday-archive-card-week {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.62rem, 0.8vw, 0.7rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+.sunday-archive-current-badge {
+  color: var(--color-cobalt, #1f2a8d);
+}
+
+.dark .sunday-archive-current-badge {
+  color: var(--color-cobalt-lifted, #2236a2);
+}
+
+.sunday-archive-card-date {
+  font-family: var(--font-family-ui);
+  font-size: clamp(0.64rem, 0.82vw, 0.72rem);
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+}
+
+.sunday-archive-card-series {
+  font-family: var(--font-family-serif);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+  margin-top: 0.2rem;
+}
+
+.sunday-archive-card-slug {
+  font-family: var(--font-family-serif);
+  font-size: clamp(0.82rem, 1vw, 0.92rem);
+  font-style: italic;
+  color: var(--color-text-tertiary);
+  margin-top: auto;
+  padding-top: 0.5rem;
+  text-transform: capitalize;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .sunday-header {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .sunday-folio {
+    padding-top: 1.6rem;
+  }
+
+  .sunday-headline {
+    font-size: clamp(1.9rem, 8vw, 2.8rem);
+  }
+
+  .sunday-archive-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .sunday-archive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .sunday-archive-card,
+  .sunday-series-link,
+  .sunday-archive-link,
+  .sunday-archive-back {
+    transition: none;
+  }
+}

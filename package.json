@@ -10,6 +10,7 @@
     "generate:artwork-manifest": "node scripts/generate-artwork-manifest.mjs",
     "generate:reference-index": "tsx scripts/build-reference-index.ts",
     "build:lexicon-index": "tsx scripts/build-lexicon-index.mts",
+    "build:voice-bank": "node scripts/build-voice-bank.mjs",
     "render:wakeup-handout": "node wakeup-mag/print/handouts/scripts/render-pocket-handout.mjs --input wakeup-mag/reference/HANDOUT.md",
     "expand:reference-index": "tsx scripts/expand-reference-index.ts",
     "build": "node scripts/check-node-version.mjs && node scripts/generate-artwork-manifest.mjs && node scripts/generate-devotional-teasers.mjs && next build --webpack",

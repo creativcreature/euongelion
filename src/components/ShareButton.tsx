@@ -3,10 +3,38 @@
 import { useState, useCallback } from 'react'
 import Toast from './Toast'
 
+/**
+ * Share button — Web Share API with copy-link fallback.
+ * No share counters, no platform-branded icons.
+ *
+ * PERSONAL-CONTENT SAFETY CONTRACT:
+ *   The `text` prop MUST contain only canonical Scripture (verbatim from the
+ *   devotional `passage` field) and/or series/page titles.
+ *
+ *   When used on a Soul Audit "Your Edition" generated-day page, callers
+ *   MUST pass only the anchor verse — NEVER the reader's situation text, the
+ *   composed prayer, or any AI-generated personal copy.  The shared URL
+ *   should be the public page URL (not the private generation endpoint).
+ *
+ *   Safe example for generated-day pages:
+ *     <ShareButton
+ *       title="Euangelion · Your Edition"
+ *       text={`"${anchorVerse}" — ${verseRef}`}
+ *       url={publicVerseUrl}
+ *     />
+ *
+ *   DO NOT pass:
+ *     text={userSituation}            // reader's personal text
+ *     text={composedDevotionalBody}   // AI-generated personal content
+ */
 interface ShareButtonProps {
   /** Title for share dialog */
   title: string
-  /** Text/description for share dialog */
+  /**
+   * Text/description for share dialog.
+   * MUST be canonical Scripture or series/page title only.
+   * MUST NOT be reader-submitted text or AI-generated personal content.
+   */
   text?: string
   /** URL to share (defaults to current page) */
   url?: string
@@ -15,10 +43,6 @@ interface ShareButtonProps {
   className?: string
 }
 
-/**
- * Share button — Web Share API with copy-link fallback.
- * Shows toast on successful copy.
- */
 export default function ShareButton({
   title,
   text,
@@ -30,19 +54,25 @@ export default function ShareButton({
 
   const handleShare = useCallback(async () => {
     const shareUrl = url || window.location.href
-    const shareData = {
+    const shareData: ShareData = {
       title,
-      text: text || `${title} on Euangelion`,
+      text: text ?? `${title} on Euangelion`,
       url: shareUrl,
     }
 
     // Try Web Share API first (mobile, some desktop)
-    if (typeof navigator !== 'undefined' && navigator.share) {
+    if (
+      typeof navigator !== 'undefined' &&
+      typeof navigator.share === 'function' &&
+      navigator.canShare?.(shareData) !== false
+    ) {
       try {
         await navigator.share(shareData)
         return
-      } catch {
-        // User cancelled or API failed — fall through to clipboard
+      } catch (err) {
+        // User cancelled (AbortError) — don't fall through to clipboard.
+        if (err instanceof Error && err.name === 'AbortError') return
+        // Other errors — fall through to clipboard.
       }
     }
 

@@ -5,6 +5,31 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Voice bank + Sunday Edition + share cards (2026-06-11)
+
+Wave 3 of the elevation brief — the curation source layer plus weekly edition and
+honest distribution. All grounded, no generation:
+
+- **Voice bank (Phase 1A, SA-020/F-026):** `content/voices/voice-bank.json` +
+  `public/voice-bank.json` — 450 **verbatim** historic-voice quotes (9 themes × 50),
+  every quote a verified substring of the local public-domain corpus, Gutenberg
+  fiction filtered out. Built by `scripts/build-voice-bank.mjs` (`npm run build:voice-bank`);
+  read via `src/lib/soul-audit/voice-bank.ts` (`getVoicesByTheme`, `getVoiceById`).
+  This is curation source material for the grounded weave — bank IDs only, never
+  invented attributions.
+- **Sunday Edition (Phase 3, SA-021):** `/sunday` (+ `/sunday/archive`) —
+  server-rendered weekly reading, deterministic ISO-week→slug rotation
+  (`src/lib/sunday-edition.ts`), duotone OG card, sitemap entries.
+- **Share cards (Phase 3, F-026):** shared duotone OG generator (`src/lib/og-card.tsx`,
+  Federal Ultramarine + Cream, Instrument Serif) upgrades the homepage + soul-audit
+  OG images and powers Sunday's. `ShareButton.tsx` uses the Web Share API with a
+  **personal-content safety contract** — generated/personal days share verse-only,
+  never the user's struggle text or composed body.
+
+Verified: `type-check` clean, `lint` clean on all wave-3 files, voice-bank.json = 450 entries.
+
+---
+
 ## ELEVATION v3.0 — Phase 1 foundation + crisis gate + eval harness (2026-06-11)
 
 Building out the full elevation brief (flagship Soul Audit already live). This tranche:
