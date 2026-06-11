@@ -361,6 +361,13 @@ inspector_port = 8083
 # The Deno major version to use.
 deno_version = 2
 
+# Soul Audit off-request generation (SA-020, F-026). Auth is the shared
+# X-Internal-Secret header (the app also sends a service-role bearer), so JWT
+# verification is off. See docs/SOUL-AUDIT-GROUNDED-REBUILD-PLAN.md.
+[functions.generate-plan-day]
+enabled = true
+verify_jwt = false
+
 # [edge_runtime.secrets]
 # secret_key = "env(SECRET_VALUE)"
 
