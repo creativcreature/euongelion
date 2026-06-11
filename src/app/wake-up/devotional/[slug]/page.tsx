@@ -5,10 +5,16 @@ import {
   getDevotionalTeaser,
   getDevotionalTitle,
 } from '@/data/devotional-teasers'
+import { fetchTodayDevotional } from '@/lib/today-devotional'
+import type { Devotional } from '@/types'
 
 // Audit T2 (HOMEPAGE-AUDIT-2026-05-11): build-time teaser index. See
 // the same comment in src/app/devotional/[slug]/page.tsx.
 
+// Phase 1.1 (2026-06-11): server-render devotional body so initial HTML
+// contains the full reading — no client-side LOADING placeholder.
+// fetchTodayDevotional uses fs.readFile in Node/dev and self-fetch on
+// Cloudflare Workers (same strategy as /today route).
 export const revalidate = 3600
 
 interface Props {
@@ -82,6 +88,12 @@ export default async function DevotionalPage({ params }: Props) {
   const { slug } = await params
   const meta = findDevotionalMeta(slug)
 
+  // Phase 1.1: load the full devotional JSON on the server so the
+  // initial HTML contains the reading body. fetchTodayDevotional
+  // handles both Node (fs.readFile) and Cloudflare Workers (self-fetch).
+  // On 404/error we pass null and the client renders its NOT FOUND state.
+  const initialDevotional: Devotional | null = await fetchTodayDevotional(slug)
+
   // Audit T2 — build-time teaser index for JSON-LD Article description.
   const dayTeaser = meta ? getDevotionalTeaser(slug) : null
 
@@ -145,9 +157,10 @@ export default async function DevotionalPage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
         ))}
-      {/* Audit C1 deferred — see /devotional/[slug]/page.tsx for the
-          comment. initialDevotional pass-through broke prerendering. */}
-      <DevotionalPageClient slug={slug} />
+      {/* Phase 1.1: pass server-fetched devotional so the body is in
+          the initial HTML. The client uses initialDevotional directly
+          (no fetch, loading=false from the start). */}
+      <DevotionalPageClient slug={slug} initialDevotional={initialDevotional} />
     </>
   )
 }

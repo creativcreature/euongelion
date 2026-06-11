@@ -6,11 +6,11 @@ export default function DevotionalLoading() {
       <main className="mock-paper">
         <EuangelionShellHeader brandWord="WAKE UP" tone="wake" />
         <section className="mock-section-center" style={{ minHeight: '320px' }}>
-          <p className="text-label mock-kicker">LOADING</p>
-          <h1 className="mock-title-center">Preparing your devotional.</h1>
-          <p className="mock-subcopy-center">
-            Bringing today&apos;s reading into view.
-          </p>
+          <p className="text-label mock-kicker">READING</p>
+          <h1 className="mock-title-center">
+            Opening this day&apos;s reading.
+          </h1>
+          <p className="mock-subcopy-center">One moment.</p>
         </section>
       </main>
     </div>

@@ -3,6 +3,7 @@
 import { useCallback, useState, useSyncExternalStore } from 'react'
 import { useRouter } from 'next/navigation'
 import { submitSoulAuditResponse } from '@/lib/soul-audit/submit-client'
+import { detectCrisis } from '@/lib/soul-audit/crisis-gate'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import type { SoulAuditSubmitResponseV2 } from '@/types/soul-audit'
 
@@ -25,6 +26,9 @@ export function useSoulAuditSubmit() {
   const [lastFailedSubmission, setLastFailedSubmission] = useState<
     string | null
   >(null)
+  // Crisis gate state — populated client-side BEFORE any network call.
+  // When truthy, the interstitial renders and the network call is suppressed.
+  const [crisisText, setCrisisText] = useState<string | null>(null)
 
   const hydrated = useSyncExternalStore(
     emptySubscribe,
@@ -41,21 +45,13 @@ export function useSoulAuditSubmit() {
     .filter((token) => token.length > 0).length
   const showLowContextHint = wordCount > 0 && wordCount <= 3
 
-  const submit = useCallback(
-    async (raw: string) => {
-      if (limitReached) {
-        setError('You\u2019ve explored enough. Time to dive in.')
-        setLastFailedSubmission(null)
-        return
-      }
-
-      const trimmed = raw.trim()
-      if (trimmed.length === 0) {
-        setError("Take your time. When you're ready, just write what comes.")
-        setLastFailedSubmission(null)
-        return
-      }
-
+  /**
+   * Inner: transmit the reflection text to the API.
+   * Only called after crisis check has passed (or been dismissed by user).
+   * No analytics/log calls fire here — the caller is responsible for that gate.
+   */
+  const doNetworkSubmit = useCallback(
+    async (trimmed: string) => {
       setIsSubmitting(true)
       setError(null)
 
@@ -94,14 +90,58 @@ export function useSoulAuditSubmit() {
       }
       setIsSubmitting(false)
     },
-    [limitReached, recordAudit, router],
+    [recordAudit, router],
   )
+
+  const submit = useCallback(
+    async (raw: string) => {
+      if (limitReached) {
+        setError('You’ve explored enough. Time to dive in.')
+        setLastFailedSubmission(null)
+        return
+      }
+
+      const trimmed = raw.trim()
+      if (trimmed.length === 0) {
+        setError("Take your time. When you're ready, just write what comes.")
+        setLastFailedSubmission(null)
+        return
+      }
+
+      // ── Crisis safety gate (client-side, deterministic, zero-network) ──
+      // Runs BEFORE any fetch. If triggered: show interstitial, stop here.
+      // The reflection text is NOT transmitted until/unless the user
+      // explicitly dismisses the interstitial and chooses to continue.
+      const crisisResult = detectCrisis(trimmed)
+      if (crisisResult.triggered) {
+        setCrisisText(trimmed)
+        return
+      }
+
+      await doNetworkSubmit(trimmed)
+    },
+    [limitReached, doNetworkSubmit],
+  )
+
+  /**
+   * Called from the interstitial's "Continue to a reading anyway" action.
+   * Dismisses the crisis gate and proceeds with the original text.
+   * The user has seen the resources; their choice to continue is respected.
+   */
+  const dismissCrisisAndContinue = useCallback(async () => {
+    const saved = crisisText
+    setCrisisText(null)
+    if (saved !== null) {
+      await doNetworkSubmit(saved)
+    }
+  }, [crisisText, doNetworkSubmit])
 
   const reset = useCallback(async () => {
     resetAudit()
     setError(null)
     setText('')
     setLastFailedSubmission(null)
+    setCrisisText(null)
     sessionStorage.removeItem('soul-audit-result')
     sessionStorage.removeItem('soul-audit-submit-v2')
     sessionStorage.removeItem('soul-audit-selection-v2')
@@ -136,5 +176,8 @@ export function useSoulAuditSubmit() {
     limitReached,
     wordCount,
     showLowContextHint,
+    /** Non-null when the crisis interstitial should be shown. */
+    crisisText,
+    dismissCrisisAndContinue,
   }
 }

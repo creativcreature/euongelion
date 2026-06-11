@@ -7,7 +7,9 @@ import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import SeriesRailSection from '@/components/SeriesRailSection'
+import CrisisInterstitial from '@/components/soul-audit/CrisisInterstitial'
 import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
+import { CRISIS_RESOURCES } from '@/lib/soul-audit/crisis-gate'
 import { typographer } from '@/lib/typographer'
 import { ALL_SERIES_ORDER, FEATURED_SERIES } from '@/data/series'
 
@@ -107,6 +109,8 @@ export default function Home() {
     auditCount,
     limitReached,
     showLowContextHint,
+    crisisText,
+    dismissCrisisAndContinue,
   } = useSoulAuditSubmit()
 
   const [faqIndex, setFaqIndex] = useState(0)
@@ -271,6 +275,13 @@ export default function Home() {
 
   return (
     <div className="mock-home mock-homepage">
+      {/* Crisis interstitial — shown before any network call when gate fires */}
+      {crisisText !== null && (
+        <CrisisInterstitial
+          resources={CRISIS_RESOURCES}
+          onContinue={() => void dismissCrisisAndContinue()}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
@@ -562,8 +573,8 @@ export default function Home() {
               : ''}
           </p>
           <p className="mock-footnote">
-            Private and anonymous — never shared, never used to train AI. No
-            account required.
+            Read once to compose your edition — never stored, never shared,
+            never used to train AI. No account required.
           </p>
           {/* No proactive "X of N" counter — it reads as a metered trial.
               The cap still applies; we only surface it once it's reached. */}

@@ -25,6 +25,7 @@ const COMPANY_LINKS = [
 ]
 
 const RESOURCES_LINKS = [
+  { href: '/how-we-write', label: 'How we write' },
   { href: '/about/translations', label: 'Translations' },
   { href: '/credits', label: 'Credits & Licensing' },
   { href: '/sitemap.xml', label: 'Sitemap' },

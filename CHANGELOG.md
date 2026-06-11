@@ -5,6 +5,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Phase 1 foundation + crisis gate + eval harness (2026-06-11)
+
+Building out the full elevation brief (flagship Soul Audit already live). This tranche:
+
+- **Devotional SSR (Phase 1.1, SA-004/F-040):** `/wake-up/devotional/[slug]` now
+  server-renders the full reading body in the initial HTML — the `initialDevotional`
+  prop is wired server-side (`fetchTodayDevotional`), killing the client "LOADING"
+  state. Verified by curl: `LOADING` count 0, scripture + Article/Breadcrumb JSON-LD
+  present. Interactive bits (save, progress, lightbox, chat) hydrate as progressive
+  enhancement, never gating the text.
+- **Today's Edition (Phase 1.2):** `/today` (+`/todays-edition` redirect) —
+  server-rendered one-tap reading, deterministic date→slug rotation over the
+  175-devotional catalog, Article JSON-LD, sitemap entries.
+- **How We Write (Phase 1.3):** `/how-we-write` — composer-not-author, creedal anchoring,
+  the 30+ historic voices, plain-language Soul-Audit-composition explainer, privacy-honest.
+  Linked from the site footer.
+- **Crisis safety gate (Phase 1A.1, SA-004):** `crisis-gate.ts` deterministic client-side
+  detector (988 / Crisis Text Line / findahelpline.com) runs BEFORE any network call;
+  `CrisisInterstitial.tsx` calm newsprint interstitial; wired into `useSoulAuditSubmit`
+  with zero network egress on trigger. 97 unit tests.
+- **Privacy-honest copy:** removed every "never leaves your device" implication; reflection
+  is "read once to compose your edition — never stored, never used to train AI, never shared"
+  (soul-audit, homepage, about).
+- **Eval harness (Phase 1A.7):** `__tests__/soul-audit-evals/` — 66 realistic reflections,
+  a pure-function rubric (scripture/source/structure/situational-relevance + stubbed LLM
+  voice check), 83-assertion crisis test (100% detection), budget-capped smoke suite that
+  skips without keys. `docs/PROMPT-CHANGELOG.md` created.
+
+---
+
 ## ELEVATION v3.0 — off-request generation + Day-1-first + Deep Dive tier (2026-06-11)
 
 The delivery architecture for the grounded engine (SA-020, F-026, F-058): Sonnet's

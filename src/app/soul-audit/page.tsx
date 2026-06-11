@@ -5,7 +5,9 @@ import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import FadeIn from '@/components/motion/FadeIn'
+import CrisisInterstitial from '@/components/soul-audit/CrisisInterstitial'
 import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
+import { CRISIS_RESOURCES } from '@/lib/soul-audit/crisis-gate'
 import { typographer } from '@/lib/typographer'
 
 export default function SoulAuditPage() {
@@ -21,6 +23,8 @@ export default function SoulAuditPage() {
     auditCount,
     limitReached,
     showLowContextHint,
+    crisisText,
+    dismissCrisisAndContinue,
   } = useSoulAuditSubmit()
 
   const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -31,6 +35,13 @@ export default function SoulAuditPage() {
 
   return (
     <div className="mock-home">
+      {/* Crisis interstitial — rendered over the page, zero network egress */}
+      {crisisText !== null && (
+        <CrisisInterstitial
+          resources={CRISIS_RESOURCES}
+          onContinue={() => void dismissCrisisAndContinue()}
+        />
+      )}
       <main id="main-content" className="mock-paper">
         <EuangelionShellHeader />
 
@@ -62,7 +73,7 @@ export default function SoulAuditPage() {
             <FadeIn delay={0.35} y={6}>
               <p className="vw-small mb-12 text-center text-muted type-prose">
                 {typographer(
-                  'Write a few sentences. We\u2019ll match you to three reading paths from our library and tell you why each one fits. No account required. Your reflection is treated as therapy-intake-grade sensitive \u2014 private, never shared, never used to train AI.',
+                  'Write a few sentences. We\u2019ll match you to three reading paths from our library and tell you why each one fits. No account required. Your reflection is read once to compose your edition \u2014 processed in the moment, never stored, never used to train AI, never shared.',
                 )}
               </p>
             </FadeIn>

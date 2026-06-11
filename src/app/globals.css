@@ -7295,3 +7295,620 @@ body:not(.rhythm-enabled) .rhythm-block-image {
     scroll-behavior: auto !important;
   }
 }
+
+/* ============================================
+   /today — Today's Edition
+   ============================================ */
+
+.today-edition-band {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding: 0.55rem var(--mock-pad-x, 0.95rem);
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #1f2a8d) 4%,
+    var(--mock-paper, white) 96%
+  );
+}
+
+.today-edition-label {
+  margin: 0;
+  font-size: var(--mock-type-0);
+}
+
+.today-edition-tagline {
+  margin: 0;
+  opacity: 0.72;
+}
+
+.today-reading-header {
+  padding: 1.6rem var(--mock-pad-x, 0.95rem) 1.2rem;
+  display: grid;
+  gap: 0.45rem;
+  max-width: 72ch;
+}
+
+.today-scripture-overline {
+  margin: 0;
+  color: var(--color-amber, #c8a56a);
+  font-size: var(--mock-type-0);
+}
+
+.today-series-kicker {
+  margin: 0;
+  opacity: 0.78;
+}
+
+.today-headline {
+  font-size: clamp(2rem, 3.5vw, 3.6rem);
+  line-height: 1;
+  margin: 0.2rem 0 0;
+}
+
+.today-teaser {
+  margin: 0.3rem 0 0;
+  max-width: 60ch;
+}
+
+.today-rule {
+  margin: 0;
+}
+
+.today-reading-body {
+  padding: 0 var(--mock-pad-x, 0.95rem);
+  max-width: 68ch;
+  /* Baseline grid: 8px line rhythm */
+  line-height: 1.58;
+}
+
+/* Sections within the reading body */
+.today-section {
+  padding: 1.4rem 0 0.2rem;
+  border-top: var(--mock-stroke, 1.5px) solid
+    color-mix(in srgb, var(--mock-line, currentColor) 28%, transparent);
+  margin-top: 1.2rem;
+}
+
+.today-section:first-child {
+  border-top: 0;
+  padding-top: 1.4rem;
+}
+
+.today-section-heading {
+  margin: 0 0 0.7rem;
+  font-size: var(--mock-type-0);
+  color: var(--color-text-secondary, var(--mock-muted));
+}
+
+.today-body {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.58;
+  margin: 0 0 0.85rem;
+  color: var(--color-text-primary, var(--mock-ink));
+}
+
+.today-body:last-child {
+  margin-bottom: 0;
+}
+
+/* Scripture block */
+.today-scripture {
+  margin: 1.4rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--color-amber, #c8a56a);
+  background: color-mix(
+    in srgb,
+    var(--color-amber, #c8a56a) 5%,
+    var(--mock-paper, white) 95%
+  );
+}
+
+.today-scripture-text {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-2);
+  line-height: 1.42;
+  font-style: italic;
+  margin: 0 0 0.6rem;
+  color: var(--color-text-primary, var(--mock-ink));
+}
+
+.today-scripture-ref {
+  display: block;
+  font-size: var(--mock-type-0);
+  color: var(--color-text-secondary, var(--mock-muted));
+  margin: 0;
+}
+
+/* Vocab / Hebrew word block */
+.today-vocab {
+  margin: 1.4rem 0;
+  padding: 0.9rem 1rem;
+  border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  display: grid;
+  gap: 0.3rem;
+}
+
+.today-vocab-word {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-3);
+  direction: rtl;
+  margin: 0;
+  line-height: 1.2;
+  color: var(--color-amber, #c8a56a);
+}
+
+.today-vocab-meaning {
+  margin: 0;
+  font-size: var(--mock-type-0);
+}
+
+.today-vocab-root {
+  margin: 0;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  color: var(--color-text-secondary, var(--mock-muted));
+}
+
+/* Reflection prompt */
+.today-reflection {
+  margin: 1.6rem 0;
+  padding: 1rem 0;
+  border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+
+.today-reflection-kicker {
+  margin: 0 0 0.5rem;
+  font-size: var(--mock-type-0);
+  color: var(--color-amber, #c8a56a);
+}
+
+.today-reflection-prompt {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-2);
+  font-style: italic;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Prayer block */
+.today-prayer {
+  margin: 1.6rem 0;
+  padding: 1rem 1.2rem;
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #1f2a8d) 6%,
+    var(--mock-paper, white) 94%
+  );
+  border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+
+.today-prayer-kicker {
+  margin: 0 0 0.5rem;
+  font-size: var(--mock-type-0);
+  color: var(--color-text-secondary, var(--mock-muted));
+}
+
+.today-prayer-text {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.55;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Takeaway */
+.today-takeaway {
+  margin: 1.6rem 0;
+  padding: 0.9rem 0;
+  border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+
+.today-takeaway-kicker {
+  margin: 0 0 0.4rem;
+  font-size: var(--mock-type-0);
+  color: var(--color-text-secondary, var(--mock-muted));
+}
+
+.today-takeaway-text {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Profile */
+.today-profile {
+  margin: 1.2rem 0;
+  padding: 0.8rem 1rem;
+  border: var(--mock-stroke, 1.5px) solid
+    color-mix(in srgb, var(--mock-line, currentColor) 36%, transparent);
+}
+
+.today-profile-name {
+  margin: 0 0 0.4rem;
+  font-size: var(--mock-type-0);
+}
+
+.today-profile-quote {
+  margin: 0;
+}
+
+.today-profile-quote p {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Navigation footer */
+.today-nav-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.4rem var(--mock-pad-x, 0.95rem);
+  border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  margin-top: 1.4rem;
+}
+
+.today-series-link {
+  text-decoration: none;
+  color: var(--mock-blue, currentColor);
+  border-bottom: 1px solid currentColor;
+}
+
+.today-series-link:hover {
+  opacity: 0.78;
+}
+
+/* Colophon */
+.today-colophon {
+  padding: 0.6rem var(--mock-pad-x, 0.95rem) 1rem;
+  border-top: var(--mock-stroke, 1.5px) solid
+    color-mix(in srgb, var(--mock-line, currentColor) 28%, transparent);
+}
+
+.today-colophon p {
+  margin: 0;
+  color: var(--color-text-secondary, var(--mock-muted));
+}
+
+/* Fallback state */
+.today-fallback {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* ============================================
+   /how-we-write — Editorial Transparency
+   ============================================ */
+
+.how-we-masthead {
+  display: grid;
+  gap: 0.65rem;
+  justify-items: center;
+  text-align: center;
+  padding: 2.4rem 1.4rem 2.6rem;
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+
+.how-we-masthead .mock-kicker {
+  margin-bottom: 0.3rem;
+}
+
+.how-we-display {
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  max-width: 16ch;
+}
+
+.how-we-dek {
+  max-width: 58ch;
+}
+
+.how-we-rule {
+  margin: 0;
+}
+
+/* Section container */
+.how-we-section {
+  padding: 2rem var(--mock-pad-x, 0.95rem) 1.8rem;
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  display: grid;
+  gap: 1.4rem;
+}
+
+.how-we-section-head {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.how-we-section-head .mock-kicker {
+  margin-bottom: 0.2rem;
+}
+
+.how-we-h2 {
+  font-size: clamp(1.8rem, 2.8vw, 3rem);
+  max-width: 26ch;
+  margin: 0;
+}
+
+/* Body column */
+.how-we-body-col {
+  max-width: 68ch;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.how-we-body {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.58;
+  margin: 0;
+  color: var(--color-text-primary, var(--mock-ink));
+}
+
+.how-we-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.how-we-list li {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.52;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.how-we-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-amber, #c8a56a);
+  font-weight: 300;
+}
+
+/* Creed cards */
+.how-we-creed-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 0.4rem;
+}
+
+.how-we-creed-card {
+  padding: 1rem 1.1rem;
+  border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.how-we-creed-name {
+  margin: 0;
+  font-size: var(--mock-type-0);
+  color: var(--color-amber, #c8a56a);
+}
+
+.how-we-creed-date {
+  margin: 0;
+  color: var(--color-text-secondary, var(--mock-muted));
+}
+
+.how-we-creed-body {
+  margin: 0;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.5;
+  color: var(--color-text-secondary, var(--mock-muted));
+}
+
+/* Voices grid */
+.how-we-voices-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0;
+  border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  border-left: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+
+.how-we-voice-item {
+  border-right: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  padding: 0.75rem 0.9rem;
+  display: grid;
+  gap: 0.15rem;
+  align-content: start;
+}
+
+.how-we-voice-name {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  margin: 0;
+  font-weight: 400;
+}
+
+.how-we-voice-dates {
+  margin: 0;
+  font-size: clamp(0.72rem, 0.8vw, 0.84rem);
+  color: var(--color-text-secondary, var(--mock-muted));
+}
+
+.how-we-voice-note {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-family-serif);
+  font-size: clamp(0.82rem, 0.9vw, 0.96rem);
+  color: var(--color-text-secondary, var(--mock-muted));
+  line-height: 1.35;
+}
+
+/* Soul Audit steps */
+.how-we-audit-steps {
+  display: grid;
+  gap: 0;
+  border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+
+.how-we-audit-step {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 0.6rem;
+  padding: 1rem 0;
+  border-bottom: var(--mock-stroke, 1.5px) solid
+    color-mix(in srgb, var(--mock-line, currentColor) 30%, transparent);
+  align-items: start;
+}
+
+.how-we-audit-step-num {
+  margin: 0;
+  font-size: var(--mock-type-0);
+  color: var(--color-amber, #c8a56a);
+  padding-top: 0.1em;
+}
+
+.how-we-audit-step-title {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  margin: 0 0 0.3rem;
+  font-weight: 400;
+}
+
+.how-we-audit-step-body {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.52;
+  margin: 0;
+  color: var(--color-text-secondary, var(--mock-muted));
+}
+
+/* Privacy block */
+.how-we-privacy-block {
+  margin-top: 1.4rem;
+  padding: 1.1rem 1.2rem;
+  border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  display: grid;
+  gap: 0.8rem;
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #1f2a8d) 3%,
+    var(--mock-paper, white) 97%
+  );
+}
+
+.how-we-privacy-kicker {
+  margin: 0;
+  font-size: var(--mock-type-0);
+  color: var(--color-text-secondary, var(--mock-muted));
+}
+
+.how-we-privacy-honest {
+  margin: 0;
+  color: var(--color-text-secondary, var(--mock-muted));
+}
+
+/* Closing */
+.how-we-closing {
+  padding: 2rem var(--mock-pad-x, 0.95rem) 2.4rem;
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  display: grid;
+  gap: 1.4rem;
+  max-width: 64ch;
+}
+
+.how-we-closing-quote {
+  margin: 0;
+  padding: 0.8rem 1.2rem;
+  border-left: 3px solid var(--color-amber, #c8a56a);
+}
+
+.how-we-closing-quote p {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-2);
+  font-style: italic;
+  line-height: 1.38;
+  margin: 0 0 0.5rem;
+}
+
+.how-we-closing-attr {
+  display: block;
+  font-size: var(--mock-type-0);
+  color: var(--color-text-secondary, var(--mock-muted));
+  margin: 0;
+}
+
+.how-we-closing-body {
+  color: var(--color-text-secondary, var(--mock-muted));
+}
+
+.how-we-closing-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.how-we-browse-link {
+  text-decoration: none;
+  color: var(--mock-blue, currentColor);
+  border-bottom: 1px solid currentColor;
+}
+
+.how-we-browse-link:hover {
+  opacity: 0.78;
+}
+
+/* Dark mode adjustments */
+.dark .today-scripture {
+  background: color-mix(
+    in srgb,
+    var(--color-amber, #c8a56a) 8%,
+    transparent 92%
+  );
+}
+
+.dark .today-prayer {
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #171b69) 18%,
+    transparent 82%
+  );
+}
+
+.dark .how-we-privacy-block {
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #171b69) 10%,
+    transparent 90%
+  );
+}
+
+/* Responsive: stack edition band on small screens */
+@media (max-width: 640px) {
+  .today-edition-band {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .how-we-creed-row {
+    grid-template-columns: 1fr;
+  }
+
+  .how-we-audit-step {
+    grid-template-columns: 1fr;
+  }
+
+  .how-we-audit-step-num {
+    margin-bottom: -0.4rem;
+  }
+}
