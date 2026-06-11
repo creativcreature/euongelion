@@ -5,16 +5,19 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import ActivePlanBadge from './ActivePlanBadge'
 
-// Audit Manus §3 (HOMEPAGE-AUDIT-2026-05-11): Wake-Up is the publication's
-// most accessible evangelistic entry point for the unchurched reader and
-// belongs in the primary nav. Was previously buried below the homepage fold.
+// Phase 1.4 — Global nav tightened to 5 top-level destinations. The
+// prior 6-item bar mixed discovery (Wake-Up, Series, Library) with
+// returning-user surfaces (Daily Bread) and read as a flat, undirected
+// list. The 5 highest-value destinations now lead with the one-tap
+// entry (TODAY); returning-user surfaces (Daily Bread, Library) live in
+// the ActivePlanBadge + account menu, and auth stays in the account
+// menu. Wake-Up is reachable from SERIES and the footer.
 const NAV_ITEMS = [
   { href: '/', label: 'HOME' },
-  { href: '/wake-up', label: 'WAKE-UP' },
+  { href: '/today', label: 'TODAY' },
   { href: '/soul-audit', label: 'SOUL AUDIT' },
-  { href: '/daily-bread', label: 'DAILY BREAD' },
-  { href: '/library', label: 'LIBRARY' },
   { href: '/series', label: 'SERIES' },
+  { href: '/how-we-write', label: 'HOW WE WRITE' },
 ]
 const MOBILE_TICKER_INTERVAL_MS = 6200
 const SCROLL_LOCK_CLASSES = [

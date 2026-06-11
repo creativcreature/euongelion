@@ -358,58 +358,55 @@ export default function Home() {
           </p>
         </section>
 
-        {/* Trust signal row — founder direction 2026-05-13: moved
-            UP, sits right after "What is this place?" so first-time
-            visitors see the no-friction promise before being offered
-            any plan. */}
+        {/* Trust signal row — founder direction 2026-05-13: sits right
+            after "What is this place?" so first-time visitors see the
+            no-friction promise before being offered any plan. */}
         <section className="homepage-trust-row" aria-label="Quick reassurance">
           <p className="text-label">
             FREE · NO ACCOUNT · 5–7 MIN A DAY · START ANY DAY
           </p>
         </section>
 
-        {/* Starter row — "Get started here." Three honest places to
-            begin. Moved up from below the featured devotional so the
-            visitor has direction immediately after the trust bar. */}
-        <section
-          className="homepage-starters"
-          aria-label="Three places to start"
-        >
-          <div className="homepage-starters-head">
-            <p className="text-label mock-kicker">GET STARTED HERE</p>
-            <h2 className="mock-title-center">Three honest places to begin.</h2>
+        {/* Phase 1.4 — Homepage consolidation. A single clear action
+            ladder replaces the prior three equal-weight "starter" cards.
+            ONE dominant entry (Today's reading), then a quieter secondary
+            (Soul Audit), then a tertiary (Browse the library). No two
+            CTAs of equal visual weight compete here. */}
+        <section className="homepage-action-ladder" aria-label="Where to begin">
+          {/* PRIMARY — the one-tap entry. Today's page is the dominant
+              CTA: server-rendered, no account, opens immediately. */}
+          <div className="homepage-primary-action">
+            <p className="text-label mock-kicker">START HERE</p>
+            <h2 className="mock-title-center">Read today&rsquo;s page.</h2>
             <p className="mock-subcopy-center">
-              Pick the one that meets you where you are. Every day stands alone
-              — there is no wrong door.
+              One passage, chosen for today. No setup, no account — just open it
+              and read.
             </p>
+            <Link
+              href="/today"
+              className="mock-btn homepage-primary-cta text-label"
+            >
+              READ TODAY&rsquo;S PAGE
+            </Link>
           </div>
 
-          <div className="homepage-section-index">
-            <Link href="/wake-up" className="homepage-section-card">
-              <p className="text-label vw-small text-gold">WAKE-UP</p>
-              <p className="vw-body">
-                Identity Crisis · Too Busy for God · Why Jesus?
-              </p>
+          {/* SECONDARY + TERTIARY — quieter alternatives, set as a pair
+              below the primary so neither rivals it. Soul Audit is the
+              personalized path; the library is the browse-everything door. */}
+          <div className="homepage-secondary-actions">
+            <Link
+              href="/soul-audit"
+              className="homepage-action-card homepage-action-card-secondary"
+            >
+              <p className="text-label vw-small">SOUL AUDIT</p>
+              <p className="vw-body">What are you wrestling with today?</p>
               <p className="vw-small text-secondary">
-                Seven honest 5-day paths for the searching. Editor&rsquo;s pick
-                today: Identity Crisis.
+                One honest sentence becomes a personalized seven-day plan.
               </p>
             </Link>
-            <Link href="/series/bible-365" className="homepage-section-card">
-              <p className="text-label vw-small text-gold">BIBLE 365</p>
-              <p className="vw-body">
-                The throughline of Scripture, one day at a time.
-              </p>
-              <p className="vw-small text-secondary">
-                Genesis, Mark, Psalms — every day stands alone. Hop in today;
-                the thread holds.
-              </p>
-            </Link>
-            <Link href="/series" className="homepage-section-card">
-              <p className="text-label vw-small text-gold">ALL SERIES</p>
-              <p className="vw-body">
-                32 paths through what people actually carry.
-              </p>
+            <Link href="/series" className="homepage-action-card">
+              <p className="text-label vw-small">BROWSE THE LIBRARY</p>
+              <p className="vw-body">32 plans through what people carry.</p>
               <p className="vw-small text-secondary">
                 Anxiety · doubt · grief · the daily grind · the question of
                 Jesus.
@@ -478,9 +475,13 @@ export default function Home() {
           cardVariant="large"
         />
 
+        {/* Phase 1.4: demoted from a full mock-btn to a quiet "see all"
+            link so the rail's browse affordance doesn't compete as a
+            third primary CTA. The library is already the tertiary action
+            in the top action ladder. */}
         <section className="mock-more-row mock-series-more-row">
-          <Link href="/series" className="mock-btn text-label">
-            BROWSE EVERY PLAN
+          <Link href="/series" className="homepage-see-all-link text-label">
+            Browse every plan →
           </Link>
           <p className="mock-footnote">
             No account required. Start immediately.
@@ -666,18 +667,19 @@ export default function Home() {
                   invitation is to READ — the Soul Audit is a quiet
                   secondary link for readers who want a personalized
                   path. */}
+              {/* Phase 1.4: closing CTA reinforces the SAME primary
+                  destination as the top-of-page action ladder — today's
+                  page (/today). The Soul Audit stays a quiet secondary
+                  link, not a competing button. */}
               <h2 className="mock-cta-headline">
-                Start with one honest sentence — or with today&rsquo;s page.
+                Start with today&rsquo;s page — or one honest sentence.
               </h2>
               <p className="mock-subcopy-center">
                 You do not need certainty before you begin. You need a next
                 step. You need grace.
               </p>
-              <Link
-                href={`/devotional/${HOMEPAGE_TODAY.daySlug}`}
-                className="mock-btn text-label"
-              >
-                READ TODAY&rsquo;S DEVOTIONAL
+              <Link href="/today" className="mock-btn text-label">
+                READ TODAY&rsquo;S PAGE
               </Link>
               <a
                 href="#start-audit"

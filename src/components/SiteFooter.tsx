@@ -9,11 +9,17 @@ import Link from 'next/link'
  * legal links compressed into a single quiet row at the bottom.
  */
 
+// Phase 1.4 — footer link hygiene: ensure the daily (/today) and weekly
+// (/sunday) editions are reachable from the footer now that the top nav
+// is tightened to 5 items. Daily Bread + Library remain here as the
+// returning-user surfaces dropped from the top nav.
 const PRODUCT_LINKS = [
-  { href: '/daily-bread', label: 'Daily Bread' },
+  { href: '/today', label: "Today's Edition" },
+  { href: '/sunday', label: 'Sunday Edition' },
   { href: '/soul-audit', label: 'Soul Audit' },
-  { href: '/wake-up', label: 'Wake-Up' },
   { href: '/series', label: 'Series' },
+  { href: '/wake-up', label: 'Wake-Up' },
+  { href: '/daily-bread', label: 'Daily Bread' },
   { href: '/library', label: 'Library' },
 ]
 

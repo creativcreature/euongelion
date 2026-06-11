@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Phase 1.4 homepage consolidation (2026-06-11)
+
+Single clear action ladder on the homepage, tightened global nav (SA-013/F-007):
+
+- **Homepage (`src/app/page.tsx`):** the three equal-weight starter cards are
+  replaced by one action ladder — a dominant primary CTA (**"READ TODAY'S PAGE"** →
+  `/today`), then quieter secondary/tertiary cards (Soul Audit → `/soul-audit`,
+  Browse the library → `/series`). The closing "ready to begin" CTA now points to
+  `/today` too; the series rail's full "browse every plan" button is demoted to a
+  quiet inline "see all" link so nothing competes with the primary path.
+- **Global nav (`EuangelionShellHeader.tsx`):** reduced 6 → 5 top-level items —
+  Home · Today · Soul Audit · Series · How We Write. Desktop sticky bar, mobile
+  hamburger, ActivePlanBadge, and the account menu (Settings/Sign-in/Daily
+  Bread/Library) unchanged; auth entry preserved. Daily Bread + Library move to the
+  account menu + footer as returning-user surfaces.
+- **Footer (`SiteFooter.tsx`):** link hygiene — `/today` + `/sunday` now reachable.
+- **Crisis + privacy preserved:** the CrisisInterstitial gate and the Soul Audit
+  privacy footnote ("Read once to compose your edition — never stored, never
+  shared…") are intact and unmodified.
+- Scoped CSS added under a commented block in `globals.css` using only existing
+  `--mock-*` tokens — no new colors/fonts; cards use `minmax(0,1fr)` (no overflow),
+  44px touch targets, `prefers-reduced-motion` guard.
+
+Verified: `type-check` clean, `lint` 0 errors, full suite 1386 passing.
+
+---
+
 ## ELEVATION v3.0 — Voice bank + Sunday Edition + share cards (2026-06-11)
 
 Wave 3 of the elevation brief — the curation source layer plus weekly edition and
