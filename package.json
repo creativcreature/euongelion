@@ -37,7 +37,8 @@
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
-    "prepare": "husky"
+    "prepare": "husky",
+    "build:edge-function": "node scripts/build-edge-function.mjs"
   },
   "dependencies": {
     "@capacitor/cli": "^8.1.0",
