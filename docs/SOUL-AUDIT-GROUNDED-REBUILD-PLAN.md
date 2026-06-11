@@ -67,13 +67,42 @@ which means the **app must be deployed (with the lexicon indexes) before or
 with the function**. SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are auto-injected
 by the platform.
 
-### Verification status
+### DEPLOYED + LIVE-VERIFIED (2026-06-11)
 
-- Local e2e via the dev generator shim: see CHANGELOG entry for this date.
-- The Deno entry itself requires `supabase functions deploy` to exercise (no
-  supabase CLI/deno verified on this machine); the shared runner + HTTP contract
-  - chaining + Day-1-first are verified through the shim, so deploy-time risk is
-    confined to the Deno adapter layer (env shim, import map, Deno.serve).
+Shipped to production. `origin/main` @ `c1b644e4`; Cloudflare Worker version
+`91131c97`; Supabase Edge function `generate-plan-day` live on project
+`ovivwbopjfruikehrlgm`.
+
+**Live end-to-end verification on euangelion.app** (grief reflection): options
+generated → grounded Day 1 (Sonnet, via the Edge function self-fetching the
+corpus) with verbatim Psalm 34:18 → Day-1-first redirect → background self-chain
+completed Days 2-7 (each ~930-980w, 6 real sources, grounded + verified).
+
+**Load-bearing production config — the two environments use DIFFERENT models:**
+
+| Env | Runs | `SOUL_AUDIT_MODEL` | Why |
+|---|---|---|---|
+| Cloudflare **Worker** | the **options** step (`/submit`) | **`claude-haiku-4-5-20251001`** | options run *on the worker* and must fit the 25s/30s request cap — Sonnet (~26s) 504s there |
+| Supabase **Edge fn** | the **day + deep-dive** generation | **`claude-sonnet-4-6`** | off-request, no cap — Sonnet's ~40s is fine |
+
+Other production secrets: Worker — `INTERNAL_ROUTE_SECRET`,
+`SOUL_AUDIT_GENERATOR_URL` (the Edge fn URL), `NEXT_PUBLIC_APP_URL`. Edge fn —
+`INTERNAL_ROUTE_SECRET` (same), `ANTHROPIC_API_KEY`, `NEXT_PUBLIC_SUPABASE_URL`,
+`NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_APP_URL`, `SOUL_AUDIT_MODEL`
+(`SUPABASE_URL`/`SERVICE_ROLE_KEY` auto-injected). `verify_jwt` ON (callers send
+a service-role bearer + `X-Internal-Secret`).
+
+**Known prod gaps (NOT regressions — unbuilt brief items):** `/devotional/[slug]`
+still client-renders "LOADING" (Phase 1.1 SSR); no `/today`, `/how-we-write`,
+audio, push, `<WordNote>`, Sunday Edition, share cards, voice-bank ≥300, eval
+harness. The deploy advanced the flagship Soul Audit, not the whole brief.
+
+### How the Deno layer was validated
+
+`supabase functions deploy` + live probes: 401 (no auth), 403 (bad secret), and a
+JSON 404 from `runDeepDive` for a fake plan (full graph loads, DB reached). Then
+the real audit above. The cross-project `@/` import is resolved at build time by
+`scripts/build-edge-function.mjs` (esbuild → self-contained `index.ts`).
 
 ## BACKGROUND EXECUTION — the original fork (recorded 2026-06-11)
 
