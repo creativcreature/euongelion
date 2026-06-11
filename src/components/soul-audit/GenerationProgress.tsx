@@ -28,22 +28,48 @@ interface GenerationProgressProps {
 const POLL_INTERVAL_MS = 2500
 const MAX_POLLS = 180 // ~7.5 min hard ceiling
 const MAX_AUTO_RETRIES = 2 // silently re-kick a stalled/errored job before surfacing anything
+const CRAFT_ROTATE_MS = 2600
+const TOTAL_DAYS = 7
 
 /**
- * The "press room." Composing a bespoke edition genuinely takes ~30–90s — so
- * we don't hide that behind a spinner or race a deadline; we make the wait a
- * deliberate, on-brand moment: the reader watches their seven-day edition being
- * set like type and pressed, hot off the press, written only for them.
+ * The seven-day edition, written one day at a time — and shown that way.
+ *
+ * Composing a bespoke edition genuinely takes ~30–90s, so we don't hide the
+ * wait behind a spinner. We make it a presentation: the reader watches their
+ * seven-day arc being set day by day, each day with its own line about what is
+ * being written, and underneath it the craft of that day cycles — searching the
+ * Scriptures, reading the commentaries, consulting the older voices. The stage
+ * advances on the SERVER's real progress, never a fake timer.
  */
-const STAGES = [
-  { at: 0, label: 'Reading what you wrote…' },
-  { at: 0, label: 'Gathering Scripture for your situation…' },
-  { at: 1, label: 'Consulting the voices — Augustine, à Kempis, Spurgeon…' },
-  { at: 1, label: 'Setting the type…' },
-  { at: 2, label: 'Weaving the seven-day arc…' },
-  { at: 3, label: 'Inking the press…' },
-  { at: 4, label: 'Pulling your edition…' },
+const DAY_THEMES = [
+  'Meeting you where you actually are.',
+  'Naming the thing, without flinching.',
+  'Bringing Scripture in close.',
+  'Listening for the older voices.',
+  'Where the light starts to break in.',
+  'Turning the ache into prayer.',
+  'What you carry forward.',
 ]
+
+const CRAFT_LINES = [
+  'Searching the Scriptures for your situation…',
+  'Reading the commentaries…',
+  'Consulting the voices — Augustine, à Kempis, Spurgeon…',
+  'Setting the type…',
+  'Reading it back, line by line…',
+]
+
+/** Derive the day currently being WRITTEN from real server state. */
+function deriveActiveDay(status: StatusResponse | null): number {
+  // The progress string ("Composing day N of 7…") names the day in progress.
+  const fromProgress = status?.progress?.match(/day\s+(\d+)/i)
+  if (fromProgress) {
+    return Math.min(Math.max(parseInt(fromProgress[1], 10), 1), TOTAL_DAYS)
+  }
+  // Otherwise current_day = completed days, so the next one is being written.
+  const completed = status?.currentDay ?? 0
+  return Math.min(completed + 1, TOTAL_DAYS)
+}
 
 export default function GenerationProgress({
   jobId,
@@ -53,9 +79,9 @@ export default function GenerationProgress({
   const router = useRouter()
   const [status, setStatus] = useState<StatusResponse | null>(null)
   const [stalledOut, setStalledOut] = useState(false)
-  const [stageIndex, setStageIndex] = useState(0)
+  const [craftIndex, setCraftIndex] = useState(0)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
-  const stageRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const craftRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const pollCountRef = useRef(0)
   const autoRetriesRef = useRef(0)
   const stoppedRef = useRef(false)
@@ -109,22 +135,22 @@ export default function GenerationProgress({
     // eslint-disable-next-line react-hooks/set-state-in-effect -- fire-and-poll; setState lands after the async fetch, not synchronously
     void poll()
     intervalRef.current = setInterval(() => void poll(), POLL_INTERVAL_MS)
-    stageRef.current = setInterval(
-      () => setStageIndex((i) => (i + 1) % STAGES.length),
-      3200,
+    craftRef.current = setInterval(
+      () => setCraftIndex((i) => (i + 1) % CRAFT_LINES.length),
+      CRAFT_ROTATE_MS,
     )
     return () => {
       stoppedRef.current = true
       if (intervalRef.current) clearInterval(intervalRef.current)
-      if (stageRef.current) clearInterval(stageRef.current)
+      if (craftRef.current) clearInterval(craftRef.current)
     }
   }, [poll])
 
-  const totalDays = status?.totalDays ?? 7
-  const currentDay = status?.currentDay ?? 0
-  const pct = totalDays > 0 ? Math.round((currentDay / totalDays) * 100) : 0
-  // Prefer the server's real progress line; otherwise rotate the press stages.
-  const stageLine = status?.progress?.trim() || STAGES[stageIndex].label
+  const completed = Math.min(status?.currentDay ?? 0, TOTAL_DAYS)
+  const activeDay = deriveActiveDay(status)
+  const pct = Math.round((completed / TOTAL_DAYS) * 100)
+  const dayTheme = DAY_THEMES[Math.min(activeDay - 1, DAY_THEMES.length - 1)]
+  const craftLine = CRAFT_LINES[craftIndex]
 
   if (stalledOut) {
     return (
@@ -151,54 +177,63 @@ export default function GenerationProgress({
   }
 
   return (
-    <div className="edition-press mx-auto max-w-xl px-5 py-14 text-center">
+    <div className="edition-press mx-auto max-w-xl px-5 py-12 text-center">
       <p className="text-label vw-small mb-1 text-secondary">EUANGELION</p>
       <div className="edition-press-rule mx-auto mb-5" aria-hidden="true" />
-      <p className="text-label vw-small mb-7 edition-press-kicker">
+      <p className="text-label vw-small mb-8 edition-press-kicker">
         SETTING YOUR EDITION
       </p>
 
-      {/* The galley proof — type being set, line by line, with an ink sweep. */}
-      <div
-        className="edition-press-galley mx-auto mb-8"
+      {/* The seven-day spread — one tile per day, set in sequence. */}
+      <ol
+        className="edition-press-days mx-auto mb-9"
         aria-hidden="true"
         role="presentation"
       >
-        <span className="edition-press-ink" />
-        {[0, 1, 2, 3, 4, 5].map((i) => (
-          <span
-            key={i}
-            className="edition-press-line"
-            style={{ animationDelay: `${i * 0.45}s` }}
-          />
-        ))}
-      </div>
+        {Array.from({ length: TOTAL_DAYS }, (_, i) => {
+          const day = i + 1
+          const state =
+            day < activeDay ? 'done' : day === activeDay ? 'active' : 'todo'
+          return (
+            <li
+              key={day}
+              className={`edition-press-day edition-press-day--${state}`}
+            >
+              <span className="edition-press-day-num">{day}</span>
+            </li>
+          )
+        })}
+      </ol>
 
-      <p className="vw-heading-sm text-serif-italic mb-1">
-        A seven-day edition,
+      {/* The active day — its number, its theme, and the craft of writing it. */}
+      <p className="vw-small text-label mb-1 text-muted">
+        DAY {activeDay} OF {TOTAL_DAYS}
       </p>
-      <p className="vw-body mb-6 text-secondary">being set for you.</p>
+      <p className="vw-heading-sm text-serif-italic mb-5">{dayTheme}</p>
 
-      {/* Real, polite progress for assistive tech + sighted readers. */}
-      <p role="status" aria-live="polite" className="vw-body mb-3 text-gold">
-        {stageLine}
+      <p
+        role="status"
+        aria-live="polite"
+        className="edition-press-craft vw-body mb-6 text-gold"
+      >
+        {craftLine}
       </p>
 
       <div
         className="edition-press-bar mx-auto mb-2"
         role="progressbar"
         aria-valuemin={0}
-        aria-valuemax={totalDays}
-        aria-valuenow={currentDay}
+        aria-valuemax={TOTAL_DAYS}
+        aria-valuenow={completed}
         aria-label="Edition progress"
       >
         <span className="edition-press-bar-fill" style={{ width: `${pct}%` }} />
       </div>
-      {currentDay > 0 && (
-        <p className="vw-small mb-6 text-muted">
-          Day {currentDay} of {totalDays} set
-        </p>
-      )}
+      <p className="vw-small mb-7 text-muted">
+        {completed > 0
+          ? `${completed} of ${TOTAL_DAYS} days set`
+          : 'Warming the press…'}
+      </p>
 
       <p className="vw-small text-muted">
         Written for you, today — about a minute. Stay with it; nothing here is
@@ -210,37 +245,61 @@ export default function GenerationProgress({
           width: 56px; height: 2px; background: var(--color-crimson, #c4192e);
         }
         .edition-press-kicker { color: var(--color-crimson, #c4192e); letter-spacing: 0.18em; }
-        .edition-press-galley {
-          position: relative; width: min(280px, 80%); padding: 18px 20px;
+
+        .edition-press-days {
+          display: flex; gap: 8px; justify-content: center; align-items: flex-end;
+          list-style: none; padding: 0; margin-inline: auto;
+        }
+        .edition-press-day {
+          position: relative; width: 34px; height: 46px;
           border: 1px solid var(--color-border);
-          display: flex; flex-direction: column; gap: 10px;
+          display: flex; align-items: center; justify-content: center;
           overflow: hidden;
+          transition: border-color 500ms ease, transform 500ms ease;
         }
-        .edition-press-line {
-          height: 7px; border-radius: 1px;
-          background: var(--color-text-primary, currentColor);
-          opacity: 0.16; transform-origin: left;
-          animation: edition-set 2.7s ease-in-out infinite;
+        .edition-press-day-num {
+          font-size: 0.72rem; letter-spacing: 0.04em;
+          color: var(--color-text-muted, currentColor); opacity: 0.5;
+          transition: color 500ms ease, opacity 500ms ease;
+          z-index: 1;
         }
-        .edition-press-line:nth-child(2n) { width: 92%; }
-        .edition-press-line:nth-child(3n) { width: 78%; }
-        .edition-press-line:last-child { width: 54%; }
-        @keyframes edition-set {
-          0%   { transform: scaleX(0); opacity: 0.06; }
-          45%  { transform: scaleX(1); opacity: 0.34; }
-          100% { transform: scaleX(1); opacity: 0.16; }
+        /* upcoming days: faint, waiting to be set */
+        .edition-press-day--todo { opacity: 0.55; }
+        /* completed days: inked and set */
+        .edition-press-day--done {
+          border-color: color-mix(in srgb, var(--color-gold) 55%, transparent);
+          background: color-mix(in srgb, var(--color-gold) 12%, transparent);
         }
-        .edition-press-ink {
-          position: absolute; left: 0; right: 0; top: 0; height: 22px;
-          background: linear-gradient(180deg, color-mix(in srgb, var(--color-gold) 28%, transparent) 0%, transparent 100%);
-          animation: edition-ink 2.7s ease-in-out infinite;
+        .edition-press-day--done .edition-press-day-num {
+          color: var(--color-gold); opacity: 1;
+        }
+        /* the day being written now: pulsing, with an ink sweep */
+        .edition-press-day--active {
+          border-color: var(--color-gold);
+          transform: translateY(-3px);
+          animation: edition-day-pulse 2.2s ease-in-out infinite;
+        }
+        .edition-press-day--active .edition-press-day-num {
+          color: var(--color-gold); opacity: 1;
+        }
+        .edition-press-day--active::after {
+          content: ''; position: absolute; left: 0; right: 0; top: 0; height: 60%;
+          background: linear-gradient(180deg, color-mix(in srgb, var(--color-gold) 32%, transparent) 0%, transparent 100%);
+          animation: edition-day-ink 2.2s ease-in-out infinite;
           pointer-events: none;
         }
-        @keyframes edition-ink {
-          0%   { transform: translateY(-24px); opacity: 0; }
-          50%  { opacity: 1; }
-          100% { transform: translateY(150px); opacity: 0; }
+        @keyframes edition-day-pulse {
+          0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-gold) 0%, transparent); }
+          50% { box-shadow: 0 0 14px 0 color-mix(in srgb, var(--color-gold) 32%, transparent); }
         }
+        @keyframes edition-day-ink {
+          0% { transform: translateY(-46px); opacity: 0; }
+          50% { opacity: 1; }
+          100% { transform: translateY(46px); opacity: 0; }
+        }
+
+        .edition-press-craft { min-height: 1.5em; transition: opacity 300ms ease; }
+
         .edition-press-bar {
           width: min(260px, 70%); height: 2px; background: var(--color-border);
           overflow: hidden;
@@ -249,10 +308,10 @@ export default function GenerationProgress({
           display: block; height: 100%; background: var(--color-gold);
           transition: width 700ms ease-out;
         }
+
         @media (prefers-reduced-motion: reduce) {
-          .edition-press-line, .edition-press-ink { animation: none; }
-          .edition-press-line { opacity: 0.24; transform: none; }
-          .edition-press-ink { display: none; }
+          .edition-press-day--active { animation: none; transform: none; }
+          .edition-press-day--active::after { display: none; }
         }
       `}</style>
     </div>

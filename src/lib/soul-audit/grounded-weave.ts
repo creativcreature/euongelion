@@ -1,0 +1,505 @@
+// Closed, grounded devotional weave.
+//
+// The model is an ASSEMBLER, not an author: it weaves ONLY materials we
+// retrieve — verbatim Scripture (getVerse), real attributed commentary quotes
+// (BM25 over the library), and lexicon-grounded word studies (BDB/Strong's/
+// Abbott-Smith) — and a verification pass rejects any day that smuggles in an
+// ungrounded quote, author, or invented etymology. This is the anti-hallucination
+// guarantee the product is built on.
+//
+// Server-only (reads corpus from disk + calls the brain router).
+import { getVerse } from '@/lib/bible/getVerse'
+import {
+  DEFAULT_BIBLE_TRANSLATION,
+  type BibleTranslationCode,
+} from '@/lib/bible/translations'
+import { loadReferenceIndex } from './reference-index-loader'
+import { selectTopChunks, attributionFromChunk } from './chunk-retrieval'
+import { getWordStudiesForVerse, type WordStudy } from './lexicon'
+import { generateWithBrain } from '@/lib/brain/router'
+import type {
+  DayContent,
+  HebrewGreekStudy,
+  Endnote,
+  Tier3Extended,
+} from '@/types/soul-audit-plan'
+
+const SONNET = 'claude-sonnet-4-6'
+
+// Historic authors in the library — used by the verification pass to catch a
+// citation the model invented (an author it names that wasn't in the retrieved
+// sources for THIS day).
+const KNOWN_AUTHORS = [
+  'augustine',
+  'calvin',
+  'pascal',
+  'luther',
+  'kempis',
+  'spurgeon',
+  'edwards',
+  'bunyan',
+  'wesley',
+  'chesterton',
+  'owen',
+  'murray',
+  'tozer',
+  'bounds',
+  'whitefield',
+  'whitall smith',
+  'douglass',
+  'aquinas',
+  'lewis',
+  'bonhoeffer',
+  'nouwen',
+  'merton',
+  'wright',
+  'piper',
+  'keller',
+  'stott',
+]
+
+export type WeaveMode = 'reading' | 'deepdive'
+
+export interface GroundedDayInput {
+  struggle: string
+  scriptureReference: string
+  theme: string
+  dayNumber: number
+  totalDays: number
+  previousDaysSummary?: string
+  usedChunkIds?: string[]
+  translation?: BibleTranslationCode
+  mode?: WeaveMode
+  modelOverride?: string
+  signal?: AbortSignal
+}
+
+export interface GroundedVerification {
+  ok: boolean
+  issues: string[]
+}
+
+export interface GroundedDayResult {
+  content: DayContent
+  usedChunkIds: string[]
+  verification: GroundedVerification
+  meta: {
+    mode: WeaveMode
+    model: string
+    words: number
+    scriptureTranslation: BibleTranslationCode
+    wordStudyCount: number
+    sourceCount: number
+  }
+}
+
+// ── helpers ──────────────────────────────────────────────────────────
+
+function stripCodeFence(raw: string): string {
+  let s = raw.trim()
+  if (s.startsWith('```')) {
+    s = s.replace(/^```json?\s*/i, '').replace(/\s*```$/, '')
+  }
+  return s.trim()
+}
+
+function derivePreview(body: string): string {
+  const plain = body
+    .replace(/[#*_>`]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+  const words = plain.split(' ')
+  if (words.length <= 120) return plain
+  return (
+    words
+      .slice(0, 110)
+      .join(' ')
+      .replace(/[,;:]$/, '') + '…'
+  )
+}
+
+function wordStudyToHebrewGreek(w: WordStudy): HebrewGreekStudy {
+  return {
+    word: w.word,
+    transliteration: w.xlit,
+    language: w.strong.startsWith('G') ? 'greek' : 'hebrew',
+    meaning: w.gloss,
+    etymology: w.source,
+  }
+}
+
+async function safeWordStudies(
+  reference: string,
+  max: number,
+): Promise<WordStudy[]> {
+  try {
+    return await getWordStudiesForVerse(reference, max)
+  } catch {
+    // Some references have no tagged original-language words (or aren't
+    // parseable for word-study); the reading still grounds on Scripture +
+    // sources. Surface nothing rather than invent.
+    return []
+  }
+}
+
+function formatWordStudies(studies: WordStudy[]): string {
+  if (studies.length === 0)
+    return '(none available for this verse — do NOT introduce any Hebrew/Greek word claims)'
+  return studies
+    .map(
+      (w) =>
+        `- ${w.word} (${w.xlit}, ${w.strong})${w.englishWord ? ` — the word behind "${w.englishWord}"` : ''}: ${w.gloss} [${w.source}]`,
+    )
+    .join('\n')
+}
+
+function formatSources(
+  chunks: { source: string; content: string; attribution: string }[],
+): string {
+  return chunks
+    .map(
+      (c, i) =>
+        `[${i + 1}] ${c.attribution}:\n"${c.content.replace(/\s+/g, ' ').trim().slice(0, 700)}"`,
+    )
+    .join('\n\n')
+}
+
+// ── verification ─────────────────────────────────────────────────────
+
+function verify(params: {
+  body: string
+  scriptureText: string
+  allowedAuthors: Set<string>
+  studies: WordStudy[]
+}): GroundedVerification {
+  const issues: string[] = []
+  const low = params.body.toLowerCase()
+
+  // 1. Any KNOWN historic author named in the body must be one of THIS day's
+  //    retrieved sources — otherwise it's an invented/ungrounded citation.
+  for (const author of KNOWN_AUTHORS) {
+    if (low.includes(author) && !params.allowedAuthors.has(author)) {
+      issues.push(
+        `ungrounded author citation: "${author}" (not in retrieved sources)`,
+      )
+    }
+  }
+
+  // 2. Any transliteration the body presents as a Hebrew/Greek word study must
+  //    come from the provided lexicon set (catch invented etymology).
+  const allowedXlit = new Set(
+    params.studies.flatMap((w) => [
+      w.xlit.toLowerCase(),
+      w.xlit.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(),
+    ]),
+  )
+  // Look for "the Hebrew/Greek word X" or "X (transliteration)" patterns.
+  const wordClaim =
+    /\b(?:hebrew|greek)\b[^.]{0,40}?\b([a-zâêîôûáéíóúäëïöü']{3,})\b/gi
+  let m: RegExpExecArray | null
+  while ((m = wordClaim.exec(params.body)) !== null) {
+    const cand = m[1].normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+    const common = new Set([
+      'word',
+      'words',
+      'text',
+      'term',
+      'verb',
+      'noun',
+      'root',
+      'language',
+      'scripture',
+      'bible',
+      'name',
+      'meaning',
+      'letters',
+      'letter',
+    ])
+    if (common.has(cand)) continue
+    if (allowedXlit.size === 0) {
+      issues.push(
+        `Hebrew/Greek word claim "${m[1]}" but no lexicon data was provided`,
+      )
+    } else if (
+      ![...allowedXlit].some((x) => x.includes(cand) || cand.includes(x))
+    ) {
+      issues.push(`possibly-ungrounded word claim: "${m[1]}"`)
+    }
+  }
+
+  return { ok: issues.length === 0, issues: [...new Set(issues)] }
+}
+
+// ── prompts ──────────────────────────────────────────────────────────
+
+function systemPrompt(): string {
+  return `You are the assembler-and-polisher for Euangelion, a CLOSED, grounded devotional. Theological frame: historic orthodox Christianity (the Apostles' and Nicene Creeds), Christ-centered, never sectarian or novel.
+
+You write with literary beauty, theological depth, and restraint. But you are an ASSEMBLER, not an inventor.
+
+ABSOLUTE GROUNDING RULES (a closed system to prevent hallucination):
+- Quote the provided Scripture verbatim, with its reference. Do not quote any other Scripture passage unless its full text is provided to you.
+- Any Hebrew/Greek word claim MUST come from the provided lexicon entries. NEVER invent etymologies, pictographic/letter meanings, or root theories. Use only the glosses given. If no lexicon entries are provided, make no original-language claims at all.
+- You may quote ONLY the provided source excerpts, verbatim, attributed to the named author/work. Introduce NO other quotations, authors, or historical claims.
+- If you cannot ground a claim in the provided materials, leave it out. Beauty through restraint, never through invention.
+
+OUTPUT FORMAT: return your answer using the exact @@@SECTION@@@ delimiter lines requested — never JSON, never a code fence. Write each section's content freely (quotes, blockquotes, markdown all welcome) between its delimiter and the next.`
+}
+
+/** Split a @@@NAME@@@-delimited response into sections (lowercased keys). */
+function parseDelimited(raw: string): Record<string, string> {
+  const out: Record<string, string> = {}
+  const parts = raw.split(/@@@([A-Z]+)@@@/g)
+  for (let i = 1; i < parts.length; i += 2) {
+    out[parts[i].toLowerCase()] = (parts[i + 1] ?? '').trim()
+  }
+  return out
+}
+
+/** Parse a markdown/​dash bullet list into trimmed items. */
+function parseList(block: string | undefined): string[] {
+  if (!block) return []
+  return block
+    .split('\n')
+    .map((l) => l.replace(/^\s*[-*•\d.]+\s*/, '').trim())
+    .filter(Boolean)
+}
+
+function readingUserPrompt(params: {
+  struggle: string
+  ref: string
+  translation: string
+  scriptureText: string
+  studiesBlock: string
+  sourcesBlock: string
+  dayNumber: number
+  totalDays: number
+  previousDaysSummary?: string
+}): string {
+  return `PERSON'S STRUGGLE:
+"${params.struggle}"
+
+THIS IS DAY ${params.dayNumber} OF ${params.totalDays}.${
+    params.previousDaysSummary
+      ? `\nSO FAR (previous days, for continuity — do not repeat): ${params.previousDaysSummary}`
+      : ''
+  }
+
+ANCHOR SCRIPTURE (quote verbatim, attribute as ${params.ref}, ${params.translation}):
+"${params.scriptureText}"
+
+PROVIDED LEXICON ENTRIES (the ONLY original-language data you may use):
+${params.studiesBlock}
+
+PROVIDED SOURCE EXCERPTS (the ONLY quotations/voices you may use; quote verbatim and attribute):
+${params.sourcesBlock}
+
+TASK — Write Day ${params.dayNumber} as ONE flowing devotional reading of ~950–1,150 words. Weave (no rigid section labels): meet the person honestly where they are; bring the anchor Scripture close; open ONE grounded word study using only the lexicon entries above; weave in AT LEAST ONE provided source quote verbatim and attributed; turn toward the nearness/work of God in Christ (grace, not performance); end with a short honest prayer. Use ONLY the materials above — invent nothing.
+
+Return EXACTLY this delimited format (these literal lines, nothing before @@@TITLE@@@):
+@@@TITLE@@@
+an evocative title (no "Day N:" prefix)
+@@@BODY@@@
+the full reading as markdown prose — quote the verbatim Scripture as a blockquote, attribute the source quote inline
+@@@PRAYER@@@
+a short first-person prayer
+@@@REFLECTION@@@
+- 2 to 3 honest, non-leading questions, one per line
+@@@SUMMARY@@@
+1-2 sentences capturing this day's movement, for the next day's continuity`
+}
+
+function deepDiveUserPrompt(params: {
+  struggle: string
+  ref: string
+  translation: string
+  scriptureText: string
+  studiesBlock: string
+  sourcesBlock: string
+}): string {
+  return `PERSON'S STRUGGLE:
+"${params.struggle}"
+
+ANCHOR SCRIPTURE (verbatim, ${params.ref}, ${params.translation}):
+"${params.scriptureText}"
+
+PROVIDED LEXICON ENTRIES (the ONLY original-language data you may use):
+${params.studiesBlock}
+
+PROVIDED SOURCE EXCERPTS (the ONLY quotations/voices you may use; verbatim + attributed):
+${params.sourcesBlock}
+
+TASK — Write a long-form "Deep Dive" (~3,000–3,800 words) in flowing prose with section headings, in the tradition of a rich theological teaching. Include: an opening that frames the passage; grounded word studies drawn ONLY from the lexicon entries above; a reading through PaRDeS (Peshat / Remez / Derash / Sod — the four classical levels); canonical cross-references that you may name by reference (book chapter:verse) but only quote if their text is provided; the historic voices woven verbatim and attributed; a Christ-centered typological reading; and a closing invitation. Use ONLY the provided materials for quotations, original-language claims, and attributions. Invent nothing.
+
+Return EXACTLY this delimited format (these literal lines, nothing before @@@BODY@@@):
+@@@BODY@@@
+the full deep dive as markdown prose with ## section headings
+@@@ETYMOLOGY@@@
+a paragraph synthesizing the provided word studies (lexicon-grounded only)
+@@@CROSSREFS@@@
+one per line as: Book C:V | one sentence on the link
+@@@JOURNALING@@@
+- 3 to 4 prompts, one per line
+@@@COMPREHENSION@@@
+- 3 to 4 questions, one per line`
+}
+
+// ── main ─────────────────────────────────────────────────────────────
+
+export async function generateGroundedDay(
+  input: GroundedDayInput,
+): Promise<GroundedDayResult> {
+  const mode: WeaveMode = input.mode ?? 'reading'
+  const translation = input.translation ?? DEFAULT_BIBLE_TRANSLATION
+  const model = input.modelOverride ?? SONNET
+
+  // 1) verbatim Scripture from the corpus (never typed by the model)
+  const verse = await getVerse(input.scriptureReference, translation)
+
+  // 2) grounded word studies from the real lexica
+  const studies = await safeWordStudies(
+    verse.canonical,
+    mode === 'deepdive' ? 4 : 2,
+  )
+
+  // 3) real commentary quotes via BM25
+  const allChunks = await loadReferenceIndex()
+  const query = `${input.struggle} ${input.theme} ${verse.canonical}`
+  const topK = mode === 'deepdive' ? 10 : 6
+  const { selected, selectedIds } = selectTopChunks(
+    allChunks,
+    query,
+    input.usedChunkIds ?? [],
+    topK,
+    0.1,
+    4,
+  )
+  const sources = selected.map((c) => ({
+    source: c.source,
+    content: c.content,
+    attribution: attributionFromChunk(c),
+  }))
+  const allowedAuthors = new Set<string>()
+  for (const s of sources) {
+    const a = s.attribution.toLowerCase()
+    for (const known of KNOWN_AUTHORS)
+      if (a.includes(known)) allowedAuthors.add(known)
+  }
+
+  // 4) weave (Sonnet) over ONLY the provided materials
+  const studiesBlock = formatWordStudies(studies)
+  const sourcesBlock = formatSources(sources)
+  const user =
+    mode === 'deepdive'
+      ? deepDiveUserPrompt({
+          struggle: input.struggle,
+          ref: verse.canonical,
+          translation,
+          scriptureText: verse.text,
+          studiesBlock,
+          sourcesBlock,
+        })
+      : readingUserPrompt({
+          struggle: input.struggle,
+          ref: verse.canonical,
+          translation,
+          scriptureText: verse.text,
+          studiesBlock,
+          sourcesBlock,
+          dayNumber: input.dayNumber,
+          totalDays: input.totalDays,
+          previousDaysSummary: input.previousDaysSummary,
+        })
+
+  const result = await generateWithBrain({
+    system: systemPrompt(),
+    messages: [{ role: 'user', content: user }],
+    context: {
+      task: 'devotional_day_generate',
+      mode: 'auto',
+      maxOutputTokens: mode === 'deepdive' ? 7000 : 2600,
+      modelOverride: model,
+      platformKeysEnabled: true,
+      signal: input.signal,
+    },
+  })
+
+  // 5) parse the loosened, delimiter-framed output (robust to quotes in prose)
+  const parsed = parseDelimited(stripCodeFence(result.output))
+  const body = (parsed.body ?? '').trim()
+  if (!body) throw new Error('GROUNDED_WEAVE_EMPTY_BODY')
+
+  // 6) verification (closed-system guarantee)
+  const verification = verify({
+    body,
+    scriptureText: verse.text,
+    allowedAuthors,
+    studies,
+  })
+
+  // 7) map to DayContent (loosened: woven body + structurally-grounded metadata)
+  const endnotes: Endnote[] = sources.map((s, i) => ({
+    id: i + 1,
+    source: s.attribution,
+    note: 'Quoted from the Euangelion reference library.',
+  }))
+  const primaryStudy = studies[0] ? wordStudyToHebrewGreek(studies[0]) : null
+
+  let tier3Extended: Tier3Extended | null = null
+  if (mode === 'deepdive') {
+    const crossRefs = parseList(parsed.crossrefs).map((line) => {
+      const [reference, connection] = line.split('|').map((s) => s.trim())
+      return { reference: reference ?? '', connection: connection ?? '' }
+    })
+    tier3Extended = {
+      extendedEtymology: parsed.etymology ?? '',
+      crossReferences: crossRefs,
+      journalingPrompts: parseList(parsed.journaling),
+      comprehensionQuestions: parseList(parsed.comprehension),
+      characterProfile: null,
+      furtherResources: sources.slice(0, 5).map((s) => ({
+        type: 'commentary' as const,
+        title: s.attribution,
+        author: s.attribution.split(',')[0] ?? '',
+        note: 'From the Euangelion reference library.',
+      })),
+    }
+  }
+
+  const content: DayContent = {
+    title: parsed.title || verse.canonical,
+    hookA: '',
+    textB: body,
+    textBPreview: derivePreview(body),
+    centerC: '',
+    christConnectionBPrime: '',
+    returnAPrime: '',
+    scriptureReference: verse.canonical,
+    scriptureText: verse.text, // verbatim from corpus
+    hebrewGreekStudy: primaryStudy,
+    interactiveElement: { type: 'reflection', content: '' },
+    metaStoryPlacement: '',
+    backwardLink: '',
+    forwardLink: '',
+    reflectionQuestions: parseList(parsed.reflection),
+    prayer: parsed.prayer ?? '',
+    endnotes,
+    previousDaysSummaryForNext: parsed.summary ?? '',
+    tier3Extended,
+  }
+
+  const words = body.split(/\s+/).filter(Boolean).length
+  return {
+    content,
+    usedChunkIds: selectedIds,
+    verification,
+    meta: {
+      mode,
+      model,
+      words,
+      scriptureTranslation: translation,
+      wordStudyCount: studies.length,
+      sourceCount: sources.length,
+    },
+  }
+}

@@ -5,6 +5,39 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — grounded closed-RAG day generation (2026-06-11)
+
+The Soul Audit day engine is rebuilt as a CLOSED, grounded weave (SA-020, F-026):
+the model assembles ONLY retrieved materials, and a verification pass rejects
+anything ungrounded — the founder's "curated, not generated" intent, now enforced
+structurally instead of by prompt instruction. Quality bar: the wokeGod "Genesis:
+Two Stories of Creation" deep dive, but with real sourced quotes and lexicon-grounded
+Hebrew/Greek instead of evocative-but-invented etymology.
+
+- **`src/lib/soul-audit/lexicon.ts`** (new) — real Hebrew/Greek word studies from
+  Brown-Driver-Briggs, Strong's, Abbott-Smith, morphHB, STEPBible (verse → grounded
+  glosses). Verified: Psalm 34:18 → _shabar_/_dakka_; John 1:1 → _logos_/_theos_.
+- **`src/lib/soul-audit/grounded-weave.ts`** (new) — `generateGroundedDay`: injects
+  verbatim Scripture via `getVerse`, retrieves real attributed quotes (BM25), grounds
+  word studies (lexicon), weaves via **Sonnet** in a delimiter format (fixes the
+  recurring malformed-JSON failure), and runs a **verification pass** that rejects
+  ungrounded authors/etymology before a day is allowed to save. `reading` (~1k words)
+  and `deepdive` (~3.5k words) modes.
+- **`src/lib/soul-audit/chunk-retrieval.ts`** (new) — shared BM25 retrieval + source
+  attribution (extracted from generate-day).
+- **`generate-day/route.ts`** — now calls the grounded weave (legacy 19-field
+  prompt/parser deleted); a grounding gate re-rolls any unverified day. This also
+  resolves the `textBPreview` parse loop and the intermittent scripture
+  reference/text swap (Scripture is now verbatim from the corpus, never the model's
+  memory).
+- **`DailyBreadView.tsx`** — renders the woven `textB`, skips empty legacy chiastic
+  fields, shows the lexicon word-study card.
+- Verified in dev on Sonnet: "Day 1 grounded: 905w · 6 sources · 2 word studies ·
+  verified"; the day API serves the full grounded body; standalone `verification.ok:
+true`. 59 soul-audit/daily-bread tests green.
+- Plan of record + remaining delivery infra (free background job, deep-dive UI,
+  Workers lexicon-precompute, Day-1-first): `docs/SOUL-AUDIT-GROUNDED-REBUILD-PLAN.md`.
+
 ## ELEVATION v3.0 — "hot off the press" generation loader (2026-06-10)
 
 The generation wait is now a deliberate, on-brand moment instead of a raced

@@ -586,6 +586,7 @@ async function callAnthropic(params: {
   maxOutputTokens: number
   cacheableUserPrefix?: string
   signal?: AbortSignal
+  model?: string
 }): Promise<ProviderCallResult> {
   // Find the index of the first user message — the cacheable prefix
   // attaches there. If there is no user message (rare), the prefix is
@@ -605,7 +606,7 @@ async function callAnthropic(params: {
   })
 
   const requestBody = JSON.stringify({
-    model: ANTHROPIC_MODEL,
+    model: params.model || ANTHROPIC_MODEL,
     system: buildAnthropicSystem(params.system),
     max_tokens: params.maxOutputTokens,
     messages,
@@ -867,6 +868,7 @@ async function executeProvider(params: {
           maxOutputTokens,
           cacheableUserPrefix: params.request.cacheableUserPrefix,
           signal,
+          model: params.request.context.modelOverride,
         })
       : await callOpenAI({
           apiKey: params.apiKey,

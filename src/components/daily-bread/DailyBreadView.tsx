@@ -214,13 +214,40 @@ function DailyBreadTier({ content }: { content: DayContent }) {
         />
       </section>
 
-      {/* Hook */}
+      {/* The woven reading (grounded body). Legacy days used hookA; the
+          grounded weave puts the full flowing reading in textB. */}
       <section>
         <div
           className="vw-body text-secondary type-prose"
-          dangerouslySetInnerHTML={{ __html: renderMarkdown(content.hookA) }}
+          dangerouslySetInnerHTML={{
+            __html: renderMarkdown(content.textB || content.hookA),
+          }}
         />
       </section>
+
+      {/* Grounded word study (lexicon-backed) */}
+      {content.hebrewGreekStudy && (
+        <section
+          className="border-t pt-4"
+          style={{ borderColor: 'var(--color-border)' }}
+        >
+          <p className="text-label vw-small mb-2 text-gold">
+            WORD STUDY ({content.hebrewGreekStudy.language.toUpperCase()})
+          </p>
+          <p className="vw-body text-secondary">
+            <strong>{content.hebrewGreekStudy.word}</strong>{' '}
+            <span className="text-muted">
+              ({content.hebrewGreekStudy.transliteration})
+            </span>
+          </p>
+          <p className="vw-small mt-1 text-secondary">
+            {content.hebrewGreekStudy.meaning}
+          </p>
+          <p className="vw-small mt-1 text-muted">
+            {content.hebrewGreekStudy.etymology}
+          </p>
+        </section>
+      )}
 
       {/* Reflection */}
       {content.reflectionQuestions.length > 0 && (
@@ -282,52 +309,68 @@ function GoDeeper({ content }: { content: DayContent }) {
         />
       </section>
 
-      {/* Full chiastic structure: A - B - C - B' - A' */}
-      <section>
-        <p className="text-label vw-small mb-2 text-gold">OPENING</p>
-        <div
-          className="vw-body text-secondary type-prose"
-          dangerouslySetInnerHTML={{ __html: renderMarkdown(content.hookA) }}
-        />
-      </section>
+      {/* Legacy days used the chiastic A-B-C-B'-A' fields; the grounded weave
+          puts one flowing reading in textB. Render whichever a day has, and
+          never show an empty labelled section. */}
+      {content.hookA && (
+        <section>
+          <p className="text-label vw-small mb-2 text-gold">OPENING</p>
+          <div
+            className="vw-body text-secondary type-prose"
+            dangerouslySetInnerHTML={{ __html: renderMarkdown(content.hookA) }}
+          />
+        </section>
+      )}
 
-      <section>
-        <p className="text-label vw-small mb-2 text-gold">TEACHING</p>
-        <div
-          className="vw-body text-secondary type-prose"
-          dangerouslySetInnerHTML={{ __html: renderMarkdown(content.textB) }}
-        />
-      </section>
+      {content.textB && (
+        <section>
+          <p className="text-label vw-small mb-2 text-gold">
+            {content.hookA ? 'TEACHING' : 'THE READING'}
+          </p>
+          <div
+            className="vw-body text-secondary type-prose"
+            dangerouslySetInnerHTML={{ __html: renderMarkdown(content.textB) }}
+          />
+        </section>
+      )}
 
-      <section>
-        <p className="text-label vw-small mb-2 text-gold">CENTER</p>
-        <div
-          className="vw-body text-secondary type-prose"
-          dangerouslySetInnerHTML={{
-            __html: renderMarkdown(content.centerC),
-          }}
-        />
-      </section>
+      {content.centerC && (
+        <section>
+          <p className="text-label vw-small mb-2 text-gold">CENTER</p>
+          <div
+            className="vw-body text-secondary type-prose"
+            dangerouslySetInnerHTML={{
+              __html: renderMarkdown(content.centerC),
+            }}
+          />
+        </section>
+      )}
 
-      <section>
-        <p className="text-label vw-small mb-2 text-gold">CHRIST CONNECTION</p>
-        <div
-          className="vw-body text-secondary type-prose"
-          dangerouslySetInnerHTML={{
-            __html: renderMarkdown(content.christConnectionBPrime),
-          }}
-        />
-      </section>
+      {content.christConnectionBPrime && (
+        <section>
+          <p className="text-label vw-small mb-2 text-gold">
+            CHRIST CONNECTION
+          </p>
+          <div
+            className="vw-body text-secondary type-prose"
+            dangerouslySetInnerHTML={{
+              __html: renderMarkdown(content.christConnectionBPrime),
+            }}
+          />
+        </section>
+      )}
 
-      <section>
-        <p className="text-label vw-small mb-2 text-gold">RETURN</p>
-        <div
-          className="vw-body text-secondary type-prose"
-          dangerouslySetInnerHTML={{
-            __html: renderMarkdown(content.returnAPrime),
-          }}
-        />
-      </section>
+      {content.returnAPrime && (
+        <section>
+          <p className="text-label vw-small mb-2 text-gold">RETURN</p>
+          <div
+            className="vw-body text-secondary type-prose"
+            dangerouslySetInnerHTML={{
+              __html: renderMarkdown(content.returnAPrime),
+            }}
+          />
+        </section>
+      )}
 
       {/* Hebrew/Greek study */}
       {content.hebrewGreekStudy && (

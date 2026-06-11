@@ -522,8 +522,13 @@ export function getRequestMethod(request: NextRequest | Request): string {
  * Default wall-clock budget for an LLM-touching API route on Cloudflare
  * Workers. Workers caps requests at 30s; we keep ~5s of headroom so the
  * route can return a structured 504 instead of being silently killed.
+ *
+ * Env-tunable (LLM_ROUTE_DEADLINE_MS) so the deadline can be raised in
+ * environments without the 30s Workers cap (local dev / a paid plan) when
+ * diagnosing true per-call latency. Defaults to the safe 25s Workers budget.
  */
-export const LLM_ROUTE_DEADLINE_MS = 25_000
+export const LLM_ROUTE_DEADLINE_MS =
+  Number(process.env.LLM_ROUTE_DEADLINE_MS) || 25_000
 
 /**
  * Run an async block under a wall-clock deadline. The provided callback

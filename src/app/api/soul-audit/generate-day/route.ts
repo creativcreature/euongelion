@@ -20,8 +20,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { validateInternalSecret } from '@/lib/internal-auth'
-import { loadReferenceIndex } from '@/lib/soul-audit/reference-index-loader'
-import { generateWithBrain } from '@/lib/brain/router'
+import { generateGroundedDay } from '@/lib/soul-audit/grounded-weave'
 import { createAdminClient } from '@/lib/supabase/admin'
 import {
   createRequestId,
@@ -31,7 +30,6 @@ import {
   logApiError,
   withAbortDeadline,
 } from '@/lib/api-security'
-import type { BaseChunk } from '@/lib/soul-audit/reference-utils'
 import type { DayContent } from '@/types/soul-audit-plan'
 
 // ─── Request shape ───────────────────────────────────────────────────
@@ -52,186 +50,6 @@ interface GenerateDayRequest {
   timezone: string
   timezoneOffsetMinutes: number
   sessionId: string // session_token
-}
-
-// ─── BM25 scoring ────────────────────────────────────────────────────
-
-function bm25Score(
-  query: string,
-  doc: string,
-  k1 = 1.5,
-  b = 0.75,
-  avgDl = 500,
-): number {
-  const queryTerms = query
-    .toLowerCase()
-    .split(/\s+/)
-    .filter((t) => t.length > 2)
-  const docTerms = doc.toLowerCase().split(/\s+/)
-  const dl = docTerms.length
-  const tf = new Map<string, number>()
-  for (const t of docTerms) tf.set(t, (tf.get(t) || 0) + 1)
-  let score = 0
-  for (const qt of queryTerms) {
-    const f = tf.get(qt) || 0
-    if (f === 0) continue
-    score += (f * (k1 + 1)) / (f + k1 * (1 - b + (b * dl) / avgDl))
-  }
-  return score
-}
-
-function applyDiversityPenalty(
-  scores: Map<string, number>,
-  usedChunkIds: string[],
-): Map<string, number> {
-  const penalized = new Map(scores)
-  for (const [id, score] of penalized) {
-    if (usedChunkIds.includes(id)) penalized.set(id, score * 0.3)
-  }
-  return penalized
-}
-
-function selectTopChunks(
-  chunks: BaseChunk[],
-  query: string,
-  usedChunkIds: string[],
-  topK: number,
-  minScore: number,
-  minRequired: number,
-): { selected: BaseChunk[]; selectedIds: string[] } {
-  // Score all chunks
-  const rawScores = new Map<string, number>()
-  for (const chunk of chunks) {
-    const text = [
-      chunk.title,
-      chunk.content,
-      chunk.contextualSummary ?? '',
-      chunk.keywords.join(' '),
-      chunk.scriptureRefs.join(' '),
-    ].join(' ')
-    rawScores.set(chunk.id, bm25Score(query, text))
-  }
-
-  // Apply diversity penalty for previously used chunks
-  const penalizedScores = applyDiversityPenalty(rawScores, usedChunkIds)
-
-  // Sort by penalized score descending
-  const sorted = [...penalizedScores.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .filter(([, score]) => score > minScore)
-    .slice(0, topK)
-
-  // If we don't meet minimum, relax the score threshold
-  if (sorted.length < minRequired) {
-    const relaxed = [...penalizedScores.entries()]
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, minRequired)
-    const relaxedIds = relaxed.map(([id]) => id)
-    const relaxedChunks = relaxedIds
-      .map((id) => chunks.find((c) => c.id === id))
-      .filter((c): c is BaseChunk => c !== undefined)
-    return { selected: relaxedChunks, selectedIds: relaxedIds }
-  }
-
-  const selectedIds = sorted.map(([id]) => id)
-  const selected = selectedIds
-    .map((id) => chunks.find((c) => c.id === id))
-    .filter((c): c is BaseChunk => c !== undefined)
-  return { selected, selectedIds }
-}
-
-// ─── LLM system prompt builder ───────────────────────────────────────
-
-function buildSystemPrompt(params: {
-  dayNumber: number
-  userInput: string
-  theme: string
-  scriptureAnchor: string
-  metaStoryPosition: string
-  interactiveElement: string
-  previousDaysSummary: string
-  referenceChunks: BaseChunk[]
-}): string {
-  const refMaterial = params.referenceChunks
-    .map(
-      (chunk) =>
-        `Source: ${chunk.source} / Title: ${chunk.title} / Content: ${chunk.content}`,
-    )
-    .join('\n\n')
-
-  return `You are composing Day ${params.dayNumber} of a 5-day devotional for someone who said: "${params.userInput}"
-
-Theme: ${params.theme} | Scripture: ${params.scriptureAnchor}
-
-YOUR ROLE: Assembler and polisher. 80% from reference material below. Weave into structure. Add Hebrew/Greek word study. Write modern story hook for this person's struggle. One cohesive essay.
-
-REFERENCE MATERIAL:
-${refMaterial}
-
-A reader's daily edition — ONE tight, bespoke devotional of 600-900 words total
-that speaks directly to what THIS person wrote. Not an essay; a composed reading
-for a stolen five minutes. Use the same JSON keys, but keep every section short.
-
-hookA (≈120 words, 8th grade)
-- A modern scene that surfaces THIS person's specific tension (use their words).
-- Interactive: ${params.interactiveElement}
-
-textB (≈220 words, 12th grade)
-- Quote ${params.scriptureAnchor} in full (verbatim), then its plain meaning and
-  one beat of context — said toward this person's situation.
-- textBPreview: a standalone 80-120 word version for a 5-minute reader.
-
-centerC (≈180 words, college)
-- ONE Hebrew/Greek word (transliteration + brief etymology), and the FIRST
-  reference-source quote (verbatim, attributed) brought to bear on their burden.
-
-christConnectionBPrime (≈140 words, 12th grade)
-- The bridge to Christ; optionally a SECOND short reference quote (verbatim).
-
-returnAPrime (≈120 words, 8th grade)
-- Return to the opening, transformed; lead into the questions and prayer.
-
-reflectionQuestions: 1-2 questions written to THEIR situation (not generic).
-prayer: 3-5 sentences, in their direction.
-endnotes: min 2 real sources. Format: Author. *Title*. Publisher, Year. Page.
-tier3Extended: keep MINIMAL — crossReferences (2-3) + one journaling prompt; set
-  the rest null. Do NOT pad it; the edition is the 600-900 word core.
-
-PREVIOUS DAYS: ${params.previousDaysSummary}
-
-FORBIDDEN: "In today's world..." / "Let's unpack..." / "It's important to note..." / generic language / ungrounded theology / three-part lists / rhetorical question → immediate answer / inventing Scripture or quotes.
-
-TARGET: 600-900 words total across hookA+textB+centerC+christConnectionBPrime+returnAPrime. Tight, not padded.
-
-RESPOND WITH ONLY A JSON OBJECT. No preamble, no markdown fences.
-Keys: title, hookA, textB, textBPreview, centerC, christConnectionBPrime, returnAPrime, scriptureReference, scriptureText, hebrewGreekStudy, interactiveElement, metaStoryPlacement, backwardLink, forwardLink, reflectionQuestions, prayer, endnotes, previousDaysSummaryForNext, tier3Extended`
-}
-
-// ─── LLM response parser ─────────────────────────────────────────────
-
-function parseLLMResponse(raw: string): DayContent {
-  let cleaned = raw.trim()
-  if (cleaned.startsWith('```'))
-    cleaned = cleaned.replace(/^```json?\n?/, '').replace(/\n?```$/, '')
-  const parsed = JSON.parse(cleaned)
-  const required = [
-    'title',
-    'hookA',
-    'textB',
-    'textBPreview',
-    'centerC',
-    'christConnectionBPrime',
-    'returnAPrime',
-    'scriptureReference',
-    'reflectionQuestions',
-    'prayer',
-    'endnotes',
-  ]
-  for (const f of required) {
-    if (parsed[f] === undefined || parsed[f] === null)
-      throw new Error(`Missing required field: ${f}`)
-  }
-  return parsed as DayContent
 }
 
 // ─── Recap Day 6 (deterministic) ────────────────────────────────────
@@ -390,8 +208,6 @@ export async function POST(request: NextRequest) {
     userInput,
     previousDaysSummary,
     usedChunkIds,
-    interactiveElement,
-    metaStoryPosition,
   } = body
 
   if (!jobId || !planId || !runId || !dayNumber || !userInput) {
@@ -413,49 +229,24 @@ export async function POST(request: NextRequest) {
       generating_since: new Date().toISOString(),
     })
 
-    // Step 4: Load reference index (module-cached)
-    const chunks = await loadReferenceIndex()
-
-    // Step 5: BM25 scoring with diversity penalty
-    const query = `${userInput} ${theme} ${scriptureAnchor}`
-    const { selected: referenceChunks, selectedIds: selectedChunkIds } =
-      selectTopChunks(chunks, query, usedChunkIds || [], 8, 0.1, 5)
-
-    console.info(
-      `[generate-day] Day ${dayNumber} — ${referenceChunks.length} reference chunks selected (${chunks.length} total)`,
-    )
-
-    // Step 6: Build LLM system prompt
-    const systemPrompt = buildSystemPrompt({
-      dayNumber,
-      userInput,
-      theme: theme || '',
-      scriptureAnchor: scriptureAnchor || '',
-      metaStoryPosition: metaStoryPosition || '',
-      interactiveElement: interactiveElement || '',
-      previousDaysSummary: previousDaysSummary || '',
-      referenceChunks,
-    })
-
-    // Step 7: Call LLM with a 25s wall-clock deadline so a slow provider
-    // surfaces a structured 504 here instead of being silently killed by
-    // the Workers 30s wall-clock cap and leaving generating_since set.
-    let result
+    // Step 4-7: Grounded closed-RAG weave — verbatim Scripture (getVerse) +
+    // real attributed quotes (BM25 over the library) + lexicon-grounded word
+    // studies, woven by Sonnet, with a verification pass that rejects any
+    // ungrounded citation. Replaces the legacy 19-field JSON envelope.
+    let weave
     try {
-      result = await withAbortDeadline(LLM_ROUTE_DEADLINE_MS, (signal) =>
-        generateWithBrain({
-          system: systemPrompt,
-          messages: [{ role: 'user', content: 'Generate the devotional day.' }],
-          context: {
-            task: 'devotional_day_generate',
-            mode: 'auto',
-            // Right-sized to the 600-900 word edition (was 6000 → a 3-4k word
-            // essay that could never finish inside the 25s deadline). ~2800
-            // covers the core + minimal tier3 + JSON envelope with headroom.
-            maxOutputTokens: 2800,
-            platformKeysEnabled: true,
-            signal,
-          },
+      weave = await withAbortDeadline(LLM_ROUTE_DEADLINE_MS, (signal) =>
+        generateGroundedDay({
+          struggle: userInput,
+          scriptureReference: scriptureAnchor || '',
+          theme: theme || '',
+          dayNumber,
+          totalDays: 7,
+          previousDaysSummary: previousDaysSummary || '',
+          usedChunkIds: usedChunkIds || [],
+          mode: 'reading',
+          modelOverride: process.env.SOUL_AUDIT_MODEL || undefined,
+          signal,
         }),
       )
     } catch (error) {
@@ -485,34 +276,46 @@ export async function POST(request: NextRequest) {
           code: 'LLM_DEADLINE_EXCEEDED',
         })
       }
-      throw error
-    }
-
-    // Step 8: Parse response
-    let parsed: DayContent
-    try {
-      parsed = parseLLMResponse(result.output)
-    } catch (parseError) {
-      const parseMessage =
-        parseError instanceof Error
-          ? parseError.message
-          : 'LLM response parse failed'
+      const msg =
+        error instanceof Error ? error.message : 'grounded weave failed'
       console.error(
-        `[generate-day] Parse failed for day ${dayNumber}:`,
-        parseMessage,
-        'Raw output (first 500 chars):',
-        result.output.slice(0, 500),
+        `[generate-day] Grounded weave failed for day ${dayNumber}:`,
+        msg,
       )
       await updateJob(jobId, {
         status: 'error',
-        error: `Day ${dayNumber} parse failed: ${parseMessage}`,
+        error: `Day ${dayNumber} generation failed: ${msg}`,
         generating_since: null,
-      })
+      }).catch(() => {})
       return NextResponse.json(
-        { error: `Day ${dayNumber} parse failed: ${parseMessage}` },
+        { error: `Day ${dayNumber} generation failed: ${msg}` },
         { status: 500 },
       )
     }
+
+    // Step 8: Grounding gate — never save a day that smuggled in an ungrounded
+    // citation; reject so the queue re-rolls it.
+    if (!weave.verification.ok) {
+      console.error(
+        `[generate-day] Day ${dayNumber} failed grounding verification:`,
+        weave.verification.issues.join('; '),
+      )
+      await updateJob(jobId, {
+        status: 'error',
+        error: `Day ${dayNumber} failed grounding verification.`,
+        generating_since: null,
+      })
+      return NextResponse.json(
+        { error: 'grounding verification failed' },
+        { status: 500 },
+      )
+    }
+
+    const parsed: DayContent = weave.content
+    const selectedChunkIds = weave.usedChunkIds
+    console.info(
+      `[generate-day] Day ${dayNumber} grounded: ${weave.meta.words}w · ${weave.meta.sourceCount} sources · ${weave.meta.wordStudyCount} word studies · ${weave.meta.model} · verified`,
+    )
 
     // Step 9: Upsert day into devotional_plan_days
     // The local Database type is missing used_chunk_ids and run_id columns

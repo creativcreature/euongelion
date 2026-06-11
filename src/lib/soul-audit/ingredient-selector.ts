@@ -557,6 +557,10 @@ async function generatePathsFromRag(params: {
       mode: 'auto',
       maxOutputTokens: 1800,
       qualityFloor: 0.35,
+      // Faster Haiku tier so options compose inside the Workers wall-clock
+      // window (Sonnet brushed the 25s deadline). Env-tunable.
+      modelOverride:
+        process.env.SOUL_AUDIT_MODEL || 'claude-haiku-4-5-20251001',
       signal: params.signal,
     },
   })

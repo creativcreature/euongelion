@@ -59,6 +59,12 @@ export type BrainRouteContext = {
   userKeys?: Partial<Record<Exclude<BrainProviderId, 'auto'>, string>>
   qualityFloor?: number
   maxOutputTokens?: number
+  /**
+   * Optional Anthropic model id override for this call (e.g. a faster Haiku
+   * tier for latency-bound Soul Audit composition that must finish inside the
+   * Workers wall-clock window). Defaults to ANTHROPIC_MODEL when unset.
+   */
+  modelOverride?: string
   platformKeysEnabled?: boolean
   /**
    * Optional AbortSignal forwarded to every provider's underlying fetch.
