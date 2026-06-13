@@ -3278,7 +3278,12 @@ async function generateGroundedDay(input) {
       words,
       scriptureTranslation: translation,
       wordStudyCount: studies.length,
-      sourceCount: sources.length
+      sourceCount: sources.length,
+      // Real provider usage from this call (the brain router / edge shim both
+      // populate these from the Anthropic response). The runner ledgers them.
+      inputTokens: result.inputTokens,
+      outputTokens: result.outputTokens,
+      estimatedCostUsd: result.estimatedCostUsd
     }
   };
 }
@@ -3418,6 +3423,264 @@ var init_admin = __esm({
   }
 });
 
+// src/lib/soul-audit/telemetry.ts
+function emitSoulAuditTelemetry(event, fields = {}) {
+  try {
+    const { sessionToken, ...rest } = fields;
+    const payload = {
+      scope: "soul-audit",
+      event,
+      ts: (/* @__PURE__ */ new Date()).toISOString(),
+      ...rest,
+      // Truncate the session token in logs — enough to correlate, not the full
+      // secret cookie value.
+      ...sessionToken ? { sessionToken: sessionToken.slice(0, 12) } : {}
+    };
+    const line = `[soul-audit:telemetry] ${JSON.stringify(payload)}`;
+    if (event === "generation_fail" || event === "rate_limited" || event === "budget_exceeded" || event === "ledger_write_failed") {
+      console.error(line);
+    } else {
+      console.info(line);
+    }
+  } catch {
+  }
+}
+var init_telemetry = __esm({
+  "src/lib/soul-audit/telemetry.ts"() {
+    "use strict";
+  }
+});
+
+// src/lib/soul-audit/budget-cap.ts
+function toFloat(value) {
+  if (value === void 0 || value.trim() === "") return null;
+  const n = Number(value);
+  return Number.isFinite(n) && n >= 0 ? n : null;
+}
+function dailyCostBudgetUsd() {
+  return toFloat(process.env.SOUL_AUDIT_DAILY_COST_BUDGET) ?? DEFAULT_DAILY_COST_BUDGET_USD;
+}
+function dailyTokenBudget() {
+  return toFloat(process.env.SOUL_AUDIT_DAILY_TOKEN_BUDGET);
+}
+function utcDay(now = /* @__PURE__ */ new Date()) {
+  return now.toISOString().slice(0, 10);
+}
+function maybeAdminClient() {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    return null;
+  }
+  try {
+    return createAdminClient();
+  } catch {
+    return null;
+  }
+}
+async function getDailySpend(now = /* @__PURE__ */ new Date()) {
+  const supabase = maybeAdminClient();
+  if (!supabase) {
+    return { spendUsd: 0, tokens: 0, degraded: true };
+  }
+  try {
+    const { data, error } = await supabase.from("soul_audit_daily_counters").select("spend_usd, input_tokens, output_tokens").eq("utc_day", utcDay(now)).eq("scope", "global_spend").eq("subject", "global").maybeSingle();
+    if (error) {
+      emitSoulAuditTelemetry("budget_exceeded", {
+        reason: `spend_read_error: ${error.message}`
+      });
+      return { spendUsd: 0, tokens: 0, degraded: true };
+    }
+    if (!data) return { spendUsd: 0, tokens: 0, degraded: false };
+    const spendUsd = Number(data.spend_usd ?? 0);
+    const tokens = Number(data.input_tokens ?? 0) + Number(data.output_tokens ?? 0);
+    return {
+      spendUsd: Number.isFinite(spendUsd) ? spendUsd : 0,
+      tokens: Number.isFinite(tokens) ? tokens : 0,
+      degraded: false
+    };
+  } catch (err) {
+    emitSoulAuditTelemetry("budget_exceeded", {
+      reason: `spend_read_threw: ${err instanceof Error ? err.message : String(err)}`
+    });
+    return { spendUsd: 0, tokens: 0, degraded: true };
+  }
+}
+async function checkDailyBudget(now = /* @__PURE__ */ new Date()) {
+  const costCeilingUsd = dailyCostBudgetUsd();
+  const tokenCeiling = dailyTokenBudget();
+  const spend = await getDailySpend(now);
+  if (spend.degraded) {
+    return {
+      ok: true,
+      spendUsd: spend.spendUsd,
+      tokens: spend.tokens,
+      costCeilingUsd,
+      tokenCeiling,
+      degraded: true
+    };
+  }
+  if (spend.spendUsd >= costCeilingUsd) {
+    emitSoulAuditTelemetry("budget_exceeded", {
+      reason: "cost_budget_exceeded",
+      observed: spend.spendUsd,
+      ceiling: costCeilingUsd
+    });
+    return {
+      ok: false,
+      reason: "cost_budget_exceeded",
+      spendUsd: spend.spendUsd,
+      tokens: spend.tokens,
+      costCeilingUsd,
+      tokenCeiling,
+      degraded: false
+    };
+  }
+  if (tokenCeiling !== null && spend.tokens >= tokenCeiling) {
+    emitSoulAuditTelemetry("budget_exceeded", {
+      reason: "token_budget_exceeded",
+      observed: spend.tokens,
+      ceiling: tokenCeiling
+    });
+    return {
+      ok: false,
+      reason: "token_budget_exceeded",
+      spendUsd: spend.spendUsd,
+      tokens: spend.tokens,
+      costCeilingUsd,
+      tokenCeiling,
+      degraded: false
+    };
+  }
+  return {
+    ok: true,
+    spendUsd: spend.spendUsd,
+    tokens: spend.tokens,
+    costCeilingUsd,
+    tokenCeiling,
+    degraded: false
+  };
+}
+var DEFAULT_DAILY_COST_BUDGET_USD, BUDGET_PAUSED_MESSAGE;
+var init_budget_cap = __esm({
+  "src/lib/soul-audit/budget-cap.ts"() {
+    "use strict";
+    init_admin();
+    init_telemetry();
+    DEFAULT_DAILY_COST_BUDGET_USD = 25;
+    BUDGET_PAUSED_MESSAGE = "Devotional generation is paused for today. We limit how much we generate each day so this stays free and sustainable \u2014 please come back tomorrow.";
+  }
+});
+
+// src/lib/soul-audit/cost-ledger.ts
+function toFloat2(value, fallback) {
+  const n = Number(value);
+  return Number.isFinite(n) && n >= 0 ? n : fallback;
+}
+function anthropicInputPerMillionUsd() {
+  return toFloat2(process.env.SOUL_AUDIT_INPUT_USD_PER_MTOK, 3);
+}
+function anthropicOutputPerMillionUsd() {
+  return toFloat2(process.env.SOUL_AUDIT_OUTPUT_USD_PER_MTOK, 15);
+}
+function estimateGenerationCostUsd(params) {
+  const input = Math.max(0, params.inputTokens) / 1e6 * anthropicInputPerMillionUsd();
+  const output = Math.max(0, params.outputTokens) / 1e6 * anthropicOutputPerMillionUsd();
+  return Number((input + output).toFixed(6));
+}
+function utcDay2(now = /* @__PURE__ */ new Date()) {
+  return now.toISOString().slice(0, 10);
+}
+function maybeAdminClient2() {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    return null;
+  }
+  try {
+    return createAdminClient();
+  } catch {
+    return null;
+  }
+}
+async function recordGenerationUsage(usage) {
+  const estimatedCostUsd = estimateGenerationCostUsd({
+    inputTokens: usage.inputTokens,
+    outputTokens: usage.outputTokens
+  });
+  const supabase = maybeAdminClient2();
+  if (!supabase) {
+    emitSoulAuditTelemetry("ledger_write_failed", {
+      model: usage.model,
+      dayNumber: usage.dayNumber,
+      mode: usage.dayMode,
+      inputTokens: usage.inputTokens,
+      outputTokens: usage.outputTokens,
+      estimatedCostUsd,
+      reason: "supabase_unconfigured"
+    });
+    return estimatedCostUsd;
+  }
+  const day = utcDay2();
+  try {
+    const { error } = await supabase.from("soul_audit_cost_ledger").insert({
+      utc_day: day,
+      session_token: usage.sessionToken ?? null,
+      job_id: usage.jobId ?? null,
+      plan_token: usage.planToken ?? null,
+      run_id: usage.runId ?? null,
+      day_number: usage.dayNumber ?? null,
+      day_mode: usage.dayMode,
+      model: usage.model,
+      input_tokens: Math.max(0, Math.round(usage.inputTokens)),
+      output_tokens: Math.max(0, Math.round(usage.outputTokens)),
+      estimated_cost_usd: estimatedCostUsd
+    });
+    if (error) {
+      emitSoulAuditTelemetry("ledger_write_failed", {
+        model: usage.model,
+        dayNumber: usage.dayNumber,
+        mode: usage.dayMode,
+        estimatedCostUsd,
+        reason: `ledger_insert_error: ${error.message}`
+      });
+    }
+  } catch (err) {
+    emitSoulAuditTelemetry("ledger_write_failed", {
+      model: usage.model,
+      dayNumber: usage.dayNumber,
+      mode: usage.dayMode,
+      estimatedCostUsd,
+      reason: `ledger_insert_threw: ${err instanceof Error ? err.message : String(err)}`
+    });
+  }
+  try {
+    const { error } = await supabase.rpc("soul_audit_bump_counter", {
+      p_utc_day: day,
+      p_scope: "global_spend",
+      p_subject: "global",
+      p_spend_delta: estimatedCostUsd,
+      p_input: Math.max(0, Math.round(usage.inputTokens)),
+      p_output: Math.max(0, Math.round(usage.outputTokens))
+    });
+    if (error) {
+      emitSoulAuditTelemetry("ledger_write_failed", {
+        reason: `spend_counter_error: ${error.message}`,
+        estimatedCostUsd
+      });
+    }
+  } catch (err) {
+    emitSoulAuditTelemetry("ledger_write_failed", {
+      reason: `spend_counter_threw: ${err instanceof Error ? err.message : String(err)}`,
+      estimatedCostUsd
+    });
+  }
+  return estimatedCostUsd;
+}
+var init_cost_ledger = __esm({
+  "src/lib/soul-audit/cost-ledger.ts"() {
+    "use strict";
+    init_admin();
+    init_telemetry();
+  }
+});
+
 // src/lib/soul-audit/generation-runner.ts
 var generation_runner_exports = {};
 __export(generation_runner_exports, {
@@ -3437,11 +3700,38 @@ async function updateJob(jobId, fields) {
 async function runGenerationDay(job) {
   const { jobId, planId, runId, dayNumber } = job;
   const contentDays = job.totalContentDays || 5;
+  const startedAt = Date.now();
   try {
+    const budget = await checkDailyBudget();
+    if (!budget.ok) {
+      emitSoulAuditTelemetry("budget_exceeded", {
+        dayNumber,
+        jobId,
+        planToken: planId,
+        sessionToken: job.sessionId,
+        reason: budget.reason,
+        observed: budget.spendUsd,
+        ceiling: budget.costCeilingUsd
+      });
+      await updateJob(jobId, {
+        status: "error",
+        error: BUDGET_PAUSED_MESSAGE,
+        generating_since: null
+      }).catch(() => {
+      });
+      return { ok: false, status: 429, error: BUDGET_PAUSED_MESSAGE };
+    }
     await updateJob(jobId, {
       status: "generating",
       progress: `Composing day ${dayNumber} of 7...`,
       generating_since: (/* @__PURE__ */ new Date()).toISOString()
+    });
+    emitSoulAuditTelemetry("generation_start", {
+      mode: "reading",
+      dayNumber,
+      jobId,
+      planToken: planId,
+      sessionToken: job.sessionId
     });
     let weave;
     try {
@@ -3470,17 +3760,49 @@ async function runGenerationDay(job) {
       }).catch(() => {
       });
       const isAbort = error instanceof Error && (error.name === "AbortError" || msg.includes("aborted"));
+      emitSoulAuditTelemetry("generation_fail", {
+        mode: "reading",
+        dayNumber,
+        jobId,
+        planToken: planId,
+        sessionToken: job.sessionId,
+        durationMs: Date.now() - startedAt,
+        reason: `weave_failed: ${msg}`
+      });
       return {
         ok: false,
         status: isAbort ? 504 : 500,
         error: `Day ${dayNumber} generation failed: ${msg}`
       };
     }
+    await recordGenerationUsage({
+      model: weave.meta.model,
+      inputTokens: weave.meta.inputTokens,
+      outputTokens: weave.meta.outputTokens,
+      dayMode: "reading",
+      sessionToken: job.sessionId,
+      jobId,
+      planToken: planId,
+      runId,
+      dayNumber
+    });
     if (!weave.verification.ok) {
       console.error(
         `[generation-runner] Day ${dayNumber} failed grounding verification:`,
         weave.verification.issues.join("; ")
       );
+      emitSoulAuditTelemetry("generation_fail", {
+        mode: "reading",
+        dayNumber,
+        jobId,
+        planToken: planId,
+        sessionToken: job.sessionId,
+        model: weave.meta.model,
+        inputTokens: weave.meta.inputTokens,
+        outputTokens: weave.meta.outputTokens,
+        durationMs: Date.now() - startedAt,
+        reason: "grounding_verification_failed"
+      });
       await updateJob(jobId, {
         status: "error",
         error: `Day ${dayNumber} failed grounding verification.`,
@@ -3519,6 +3841,17 @@ async function runGenerationDay(job) {
     await updateJob(jobId, {
       current_day: dayNumber,
       progress: `Day ${dayNumber} of 7 complete.`
+    });
+    emitSoulAuditTelemetry("generation_success", {
+      mode: "reading",
+      dayNumber,
+      jobId,
+      planToken: planId,
+      sessionToken: job.sessionId,
+      model: weave.meta.model,
+      inputTokens: weave.meta.inputTokens,
+      outputTokens: weave.meta.outputTokens,
+      durationMs: Date.now() - startedAt
     });
     if (dayNumber >= contentDays) {
       const { data: savedDays } = await db.from("devotional_plan_days").select("day_number, content").eq("plan_token", planId).order("day_number");
@@ -3622,6 +3955,7 @@ async function runGenerationDay(job) {
 }
 async function runDeepDive(job) {
   const supabase = createAdminClient();
+  const startedAt = Date.now();
   const db = supabase;
   const { data: dayRow, error: dayError } = await db.from("devotional_plan_days").select("day_number, content, used_chunk_ids").eq("plan_token", job.planId).eq("day_number", job.dayNumber).single();
   if (dayError || !dayRow) {
@@ -3631,7 +3965,24 @@ async function runDeepDive(job) {
       error: `Day ${job.dayNumber} not found for plan.`
     };
   }
+  const budget = await checkDailyBudget();
+  if (!budget.ok) {
+    emitSoulAuditTelemetry("budget_exceeded", {
+      mode: "deepdive",
+      dayNumber: job.dayNumber,
+      planToken: job.planId,
+      reason: budget.reason,
+      observed: budget.spendUsd,
+      ceiling: budget.costCeilingUsd
+    });
+    return { ok: false, status: 429, error: BUDGET_PAUSED_MESSAGE };
+  }
   const existing = dayRow.content;
+  emitSoulAuditTelemetry("generation_start", {
+    mode: "deepdive",
+    dayNumber: job.dayNumber,
+    planToken: job.planId
+  });
   let weave;
   try {
     weave = await generateGroundedDay({
@@ -3651,13 +4002,38 @@ async function runDeepDive(job) {
       `[generation-runner] Deep dive failed for day ${job.dayNumber}:`,
       msg
     );
+    emitSoulAuditTelemetry("generation_fail", {
+      mode: "deepdive",
+      dayNumber: job.dayNumber,
+      planToken: job.planId,
+      durationMs: Date.now() - startedAt,
+      reason: `weave_failed: ${msg}`
+    });
     return { ok: false, status: 500, error: msg };
   }
+  await recordGenerationUsage({
+    model: weave.meta.model,
+    inputTokens: weave.meta.inputTokens,
+    outputTokens: weave.meta.outputTokens,
+    dayMode: "deepdive",
+    planToken: job.planId,
+    dayNumber: job.dayNumber
+  });
   if (!weave.verification.ok) {
     console.error(
       `[generation-runner] Deep dive day ${job.dayNumber} failed grounding verification:`,
       weave.verification.issues.join("; ")
     );
+    emitSoulAuditTelemetry("generation_fail", {
+      mode: "deepdive",
+      dayNumber: job.dayNumber,
+      planToken: job.planId,
+      model: weave.meta.model,
+      inputTokens: weave.meta.inputTokens,
+      outputTokens: weave.meta.outputTokens,
+      durationMs: Date.now() - startedAt,
+      reason: "grounding_verification_failed"
+    });
     return { ok: false, status: 500, error: "grounding verification failed" };
   }
   const tier3 = {
@@ -3687,6 +4063,15 @@ async function runDeepDive(job) {
   console.info(
     `[generation-runner] Deep dive saved for plan ${job.planId} day ${job.dayNumber}: ${weave.meta.words}w \xB7 ${weave.meta.sourceCount} sources \xB7 verified`
   );
+  emitSoulAuditTelemetry("generation_success", {
+    mode: "deepdive",
+    dayNumber: job.dayNumber,
+    planToken: job.planId,
+    model: weave.meta.model,
+    inputTokens: weave.meta.inputTokens,
+    outputTokens: weave.meta.outputTokens,
+    durationMs: Date.now() - startedAt
+  });
   return { ok: true };
 }
 var init_generation_runner = __esm({
@@ -3695,6 +4080,9 @@ var init_generation_runner = __esm({
     init_grounded_weave();
     init_plan_composition();
     init_admin();
+    init_budget_cap();
+    init_cost_ledger();
+    init_telemetry();
   }
 });
 

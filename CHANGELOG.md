@@ -5,6 +5,14 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Edge bundle rebuilt with cost rails (2026-06-13)
+
+Regenerated `supabase/functions/generate-plan-day/index.ts` (esbuild) so the deployed
+off-request generator includes the Phase 1A.4 budget cap + cost ledger + telemetry.
+Deployed to Supabase project ovivwbopjfruikehrlgm. Source unchanged (entry.ts + shared src).
+
+---
+
 ## ELEVATION v3.0 — Phase 3.1 inline WordNote primitive (2026-06-11)
 
 A grounded inline word-study primitive (SA-020/F-034). Bank IDs only — every
