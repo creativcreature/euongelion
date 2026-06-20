@@ -5,6 +5,18 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Edge bundle rebuilt for Wave 1/2 engine changes (2026-06-13)
+
+Regenerated + redeployed the `generate-plan-day` Supabase edge bundle so prod
+off-request generation picks up the engine changes from Waves 1–2: WordNote marker
+emission (1D) and structured endnotes + the length/depth gate (2C) in
+`grounded-weave.ts` / `generation-runner.ts`. The edge function is a pre-bundled,
+self-contained copy of the shared runner, so engine edits require this rebuild to go
+live. Verified: bundle has 0 cross-project imports; edge fn boots clean on prod
+(401 no-auth / 403 bad-secret / JSON 404 on a fake-plan deep-dive = full graph loads).
+
+---
+
 ## ELEVATION v3.0 — Finish-line Wave 2: performance + reading-IA + engine depth (2026-06-13)
 
 Second finish-line wave — three disjoint streams, integrated + verified together:

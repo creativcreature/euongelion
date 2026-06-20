@@ -2217,6 +2217,403 @@ var init_lexicon = __esm({
   }
 });
 
+// src/data/wordnote-bank.ts
+var WORDNOTE_BANK;
+var init_wordnote_bank = __esm({
+  "src/data/wordnote-bank.ts"() {
+    "use strict";
+    WORDNOTE_BANK = [
+      {
+        id: "shalom",
+        term: "peace",
+        strong: "H7965",
+        word: "\u05E9\u05C1\u05B8\u05DC\u05D5\u05B9\u05DD",
+        xlit: "sh\xE2l\xF4wm",
+        gloss: "completeness; soundness; welfare; peace; safety; health; prosperity; quiet",
+        source: "Brown-Driver-Briggs (Strong's H7965)"
+      },
+      {
+        id: "chesed",
+        term: "steadfast love",
+        strong: "H2617",
+        word: "\u05D7\u05B6\u05E1\u05B6\u05D3",
+        xlit: "che\xE7ed",
+        gloss: "goodness; kindness; mercy; affection; love to God; piety; lovely appearance; lovingkindness",
+        source: "Brown-Driver-Briggs (Strong's H2617)"
+      },
+      {
+        id: "ruach",
+        term: "spirit",
+        strong: "H7307",
+        word: "\u05E8\u05D5\u05BC\u05D7\u05B7",
+        xlit: "r\xFBwach",
+        gloss: "breath; wind; spirit; temper; disposition; spirit of God",
+        source: "Brown-Driver-Briggs (Strong's H7307)"
+      },
+      {
+        id: "nephesh",
+        term: "soul",
+        strong: "H5315",
+        word: "\u05E0\u05B6\u05E4\u05B6\u05E9\u05C1",
+        xlit: "nephesh",
+        gloss: "soul; living being; life; self; person; desire; appetite; emotion",
+        source: "Brown-Driver-Briggs (Strong's H5315)"
+      },
+      {
+        id: "emunah",
+        term: "faithfulness",
+        strong: "H530",
+        word: "\u05D0\u05B1\u05DE\u05D5\u05BC\u05E0\u05B8\u05D4",
+        xlit: "\u02BC\u0115m\xFBwn\xE2h",
+        gloss: "firmness; steadfastness; fidelity; steadiness; faithfulness; trust",
+        source: "Brown-Driver-Briggs (Strong's H530)"
+      },
+      {
+        id: "bara",
+        term: "create",
+        strong: "H1254",
+        word: "\u05D1\u05BC\u05B8\u05E8\u05B8\u05D0",
+        xlit: "b\xE2r\xE2\u02BC",
+        gloss: "shape; create; fashion; be created; cut down; cut out",
+        source: "Brown-Driver-Briggs (Strong's H1254)"
+      },
+      {
+        id: "tehom",
+        term: "the deep",
+        strong: "H8415",
+        word: "\u05EA\u05BC\u05B0\u05D4\u05D5\u05B9\u05DD",
+        xlit: "t\u1D49h\xF4wm",
+        gloss: "deep; sea; abyss; primaeval ocean; depth",
+        source: "Brown-Driver-Briggs (Strong's H8415)"
+      },
+      {
+        id: "kavod",
+        term: "glory",
+        strong: "H3519",
+        word: "\u05DB\u05BC\u05B8\u05D1\u05D5\u05B9\u05D3",
+        xlit: "k\xE2b\xF4wd",
+        gloss: "abundance; honour; glory; riches; splendor; dignity; reputation; my honour",
+        source: "Brown-Driver-Briggs (Strong's H3519)"
+      },
+      {
+        id: "torah",
+        term: "instruction",
+        strong: "H8451",
+        word: "\u05EA\u05BC\u05D5\u05B9\u05E8\u05B8\u05D4",
+        xlit: "t\xF4wr\xE2h",
+        gloss: "direction; instruction; law; custom; manner",
+        source: "Brown-Driver-Briggs (Strong's H8451)"
+      },
+      {
+        id: "berit",
+        term: "covenant",
+        strong: "H1285",
+        word: "\u05D1\u05BC\u05B0\u05E8\u05B4\u05D9\u05EA",
+        xlit: "b\u1D49r\xEEyth",
+        gloss: "covenant; treaty; alliance; league; constitution; ordinance; agreement; pledge",
+        source: "Brown-Driver-Briggs (Strong's H1285)"
+      },
+      {
+        id: "qavah",
+        term: "wait",
+        strong: "H6960",
+        word: "\u05E7\u05B8\u05D5\u05B8\u05D4",
+        xlit: "q\xE2v\xE2h",
+        gloss: "wait for; those waiting for; wait; look eagerly; for; lie in wait for",
+        source: "Brown-Driver-Briggs (Strong's H6960)"
+      },
+      {
+        id: "nacham",
+        term: "comfort",
+        strong: "H5162",
+        word: "\u05E0\u05B8\u05D7\u05B7\u05DD",
+        xlit: "n\xE2cham",
+        gloss: "be sorry; console oneself; moved to pity; have compassion; rue; suffer grief; repent; comfort oneself",
+        source: "Brown-Driver-Briggs (Strong's H5162)"
+      },
+      {
+        id: "yare",
+        term: "fear",
+        strong: "H3372",
+        word: "\u05D9\u05B8\u05E8\u05B5\u05D0",
+        xlit: "y\xE2r\xEA\u02BC",
+        gloss: "fear; be afraid; stand in awe of; reverence; honour; be fearful; dreadful; cause astonishment and awe",
+        source: "Brown-Driver-Briggs (Strong's H3372)"
+      },
+      {
+        id: "yada",
+        term: "know",
+        strong: "H3045",
+        word: "\u05D9\u05B8\u05D3\u05B7\u05E2",
+        xlit: "y\xE2da\u02BB",
+        gloss: "know; learn to know; perceive; perceive and see; find out and discern; discriminate; distinguish; know by experience",
+        source: "Brown-Driver-Briggs (Strong's H3045)"
+      },
+      {
+        id: "shema",
+        term: "hear",
+        strong: "H8085",
+        word: "\u05E9\u05C1\u05B8\u05DE\u05B7\u05E2",
+        xlit: "sh\xE2ma\u02BB",
+        gloss: "hear; be heard; be heard of; be regarded; obeyed; hearing was granted to their voice; he caused; to hear",
+        source: "Brown-Driver-Briggs (Strong's H8085)"
+      },
+      {
+        id: "tsedeq",
+        term: "righteousness",
+        strong: "H6664",
+        word: "\u05E6\u05B6\u05D3\u05B6\u05E7",
+        xlit: "tsedeq",
+        gloss: "rightness; righteousness; what is right; just; normal; justness; justice; justification",
+        source: "Brown-Driver-Briggs (Strong's H6664)"
+      },
+      {
+        id: "emet",
+        term: "truth",
+        strong: "H571",
+        word: "\u05D0\u05B6\u05DE\u05B6\u05EA",
+        xlit: "\u02BCemeth",
+        gloss: "firmness; faithfulness; reliability; sureness; stability; continuance; reliableness; truth",
+        source: "Brown-Driver-Briggs (Strong's H571)"
+      },
+      {
+        id: "raphah",
+        term: "be still",
+        strong: "H7503",
+        word: "\u05E8\u05B8\u05E4\u05B8\u05D4",
+        xlit: "r\xE2ph\xE2h",
+        gloss: "sink; relax; sink down; drop; abate; withdraw; idle; let",
+        source: "Brown-Driver-Briggs (Strong's H7503)"
+      },
+      {
+        id: "shuv",
+        term: "return",
+        strong: "H7725",
+        word: "\u05E9\u05C1\u05D5\u05BC\u05D1",
+        xlit: "sh\xFBwb",
+        gloss: "turn back; return; come; go back; return unto; turn; apostatize; turn away",
+        source: "Brown-Driver-Briggs (Strong's H7725)"
+      },
+      {
+        id: "or",
+        term: "light",
+        strong: "H216",
+        word: "\u05D0\u05D5\u05B9\u05E8",
+        xlit: "\u02BC\xF4wr",
+        gloss: "light; morning light; dawn; daylight; lightning; light of life; light of prosperity; light of instruction",
+        source: "Brown-Driver-Briggs (Strong's H216)"
+      },
+      {
+        id: "agape",
+        term: "love",
+        strong: "G26",
+        word: "\u1F00\u03B3\u03AC\u03C0\u03B7",
+        xlit: "ag\xE1p\u0113",
+        gloss: "love; goodwill; esteem; love feasts",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G26)"
+      },
+      {
+        id: "agapao",
+        term: "to love",
+        strong: "G25",
+        word: "\u1F00\u03B3\u03B1\u03C0\u03AC\u03C9",
+        xlit: "agap\xE1\u014D",
+        gloss: "to love",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G25)"
+      },
+      {
+        id: "charis",
+        term: "grace",
+        strong: "G5485",
+        word: "\u03C7\u03AC\u03C1\u03B9\u03C2",
+        xlit: "ch\xE1ris",
+        gloss: "gracefulness, grace, loveliness; graciousness; grace, graciousness, kindness, goodwill, favour; favour, grace; thanks, gratitude; to be thankful",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G5485)"
+      },
+      {
+        id: "pistis",
+        term: "faith",
+        strong: "G4102",
+        word: "\u03C0\u03AF\u03C3\u03C4\u03B9\u03C2",
+        xlit: "p\xEDstis",
+        gloss: "faith; belief; trust; confidence; the faith; fidelity",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G4102)"
+      },
+      {
+        id: "elpis",
+        term: "hope",
+        strong: "G1680",
+        word: "\u1F10\u03BB\u03C0\u03AF\u03C2",
+        xlit: "elp\xEDs",
+        gloss: "expectation; hope",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G1680)"
+      },
+      {
+        id: "logos",
+        term: "word",
+        strong: "G3056",
+        word: "\u03BB\u03CC\u03B3\u03BF\u03C2",
+        xlit: "l\xF3gos",
+        gloss: "a word; a saying; statement; declaration; the word of God; speech",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G3056)"
+      },
+      {
+        id: "pneuma",
+        term: "spirit",
+        strong: "G4151",
+        word: "\u03C0\u03BD\u03B5\u1FE6\u03BC\u03B1",
+        xlit: "pne\xFBma",
+        gloss: "wind; breath; the spirit; in spirit; spirit; a spirit",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G4151)"
+      },
+      {
+        id: "chara",
+        term: "joy",
+        strong: "G5479",
+        word: "\u03C7\u03B1\u03C1\u03AC",
+        xlit: "char\xE1",
+        gloss: "joy, delight",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G5479)"
+      },
+      {
+        id: "eirene",
+        term: "peace",
+        strong: "G1515",
+        word: "\u03B5\u1F30\u03C1\u03AE\u03BD\u03B7",
+        xlit: "eir\u1E17n\u0113",
+        gloss: "peace",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G1515)"
+      },
+      {
+        id: "metanoia",
+        term: "repentance",
+        strong: "G3341",
+        word: "\u03BC\u03B5\u03C4\u03AC\u03BD\u03BF\u03B9\u03B1",
+        xlit: "met\xE1noia",
+        gloss: "after-thought; change of mind; repentance",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G3341)"
+      },
+      {
+        id: "hamartia",
+        term: "sin",
+        strong: "G266",
+        word: "\u1F01\u03BC\u03B1\u03C1\u03C4\u03AF\u03B1",
+        xlit: "hamart\xEDa",
+        gloss: "a missing the mark; guilt; sin; a fault, failure; a sinning, sin; a sinful deed",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G266)"
+      },
+      {
+        id: "dikaiosyne",
+        term: "righteousness",
+        strong: "G1343",
+        word: "\u03B4\u03B9\u03BA\u03B1\u03B9\u03BF\u03C3\u03CD\u03BD\u03B7",
+        xlit: "dikaios\xFDn\u0113",
+        gloss: "righteousness; teaching of; justice",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G1343)"
+      },
+      {
+        id: "soteria",
+        term: "salvation",
+        strong: "G4991",
+        word: "\u03C3\u03C9\u03C4\u03B7\u03C1\u03AF\u03B1",
+        xlit: "s\u014Dt\u0113r\xEDa",
+        gloss: "deliverance, preservation, salvation, safety",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G4991)"
+      },
+      {
+        id: "sozo",
+        term: "to save",
+        strong: "G4982",
+        word: "\u03C3\u03CE\u03B6\u03C9",
+        xlit: "s\u1E53z\u014D",
+        gloss: "to save",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G4982)"
+      },
+      {
+        id: "koinonia",
+        term: "fellowship",
+        strong: "G2842",
+        word: "\u03BA\u03BF\u03B9\u03BD\u03C9\u03BD\u03AF\u03B1",
+        xlit: "koin\u014Dn\xEDa",
+        gloss: "fellowship; communion; contribution",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G2842)"
+      },
+      {
+        id: "doxa",
+        term: "glory",
+        strong: "G1391",
+        word: "\u03B4\u03CC\u03BE\u03B1",
+        xlit: "d\xF3xa",
+        gloss: "expectation, judgment, opinion; opinion, estimation; repute; good opinion; reputation, praise, honour, glory; brightness, splendour, glory",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G1391)"
+      },
+      {
+        id: "aletheia",
+        term: "truth",
+        strong: "G225",
+        word: "\u1F00\u03BB\u03AE\u03B8\u03B5\u03B9\u03B1",
+        xlit: "al\u1E17theia",
+        gloss: "truth; truthfulness, truth",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G225)"
+      },
+      {
+        id: "makarios",
+        term: "blessed",
+        strong: "G3107",
+        word: "\u03BC\u03B1\u03BA\u03AC\u03C1\u03B9\u03BF\u03C2",
+        xlit: "mak\xE1rios",
+        gloss: "blessed; happy",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G3107)"
+      },
+      {
+        id: "parakletos",
+        term: "advocate",
+        strong: "G3875",
+        word: "\u03C0\u03B1\u03C1\u03AC\u03BA\u03BB\u03B7\u03C4\u03BF\u03C2",
+        xlit: "par\xE1kl\u0113tos",
+        gloss: "called to one's aid; an advocate; pleader; intercessor",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G3875)"
+      },
+      {
+        id: "paraklesis",
+        term: "comfort",
+        strong: "G3874",
+        word: "\u03C0\u03B1\u03C1\u03AC\u03BA\u03BB\u03B7\u03C3\u03B9\u03C2",
+        xlit: "par\xE1kl\u0113sis",
+        gloss: "a calling to one's aid; summons; appeal; entreaty; exhortation; encouragement",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G3874)"
+      },
+      {
+        id: "hupomone",
+        term: "endurance",
+        strong: "G5281",
+        word: "\u1F51\u03C0\u03BF\u03BC\u03BF\u03BD\u03AE",
+        xlit: "hypomon\u1E17",
+        gloss: "a remaining behind; patient enduring, endurance",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G5281)"
+      },
+      {
+        id: "kurios",
+        term: "Lord",
+        strong: "G2962",
+        word: "\u03BA\u03CD\u03C1\u03B9\u03BF\u03C2",
+        xlit: "k\xFDrios",
+        gloss: "having power; authority; lord; master",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G2962)"
+      },
+      {
+        id: "euangelion",
+        term: "good news",
+        strong: "G2098",
+        word: "\u03B5\u1F50\u03B1\u03B3\u03B3\u03AD\u03BB\u03B9\u03BF\u03BD",
+        xlit: "euang\xE9lion",
+        gloss: "a reward for good tidings; to make a thank-offering for good tidings; good tidings, good news; the gospel",
+        source: "Abbott-Smith Manual Greek Lexicon (Strong's G2098)"
+      }
+    ];
+  }
+});
+
 // src/lib/brain/cost.ts
 function estimateCostUsd(params) {
   const profile = COSTS[params.provider];
@@ -3023,6 +3420,101 @@ function formatSources(chunks) {
 "${c.content.replace(/\s+/g, " ").trim().slice(0, 700)}"`
   ).join("\n\n");
 }
+function escapeRegExp(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+function injectWordNoteMarkers(body, studies) {
+  if (!body || studies.length === 0) return { body, emittedIds: [] };
+  const seenIds = /* @__PURE__ */ new Set();
+  const candidates = [];
+  for (const study of studies) {
+    const entry = BANK_BY_STRONG.get((study.strong || "").toUpperCase());
+    if (!entry) continue;
+    if (seenIds.has(entry.id)) continue;
+    const term = (entry.term || "").trim();
+    if (!term) continue;
+    seenIds.add(entry.id);
+    candidates.push({ id: entry.id, term });
+  }
+  if (candidates.length === 0) return { body, emittedIds: [] };
+  const lines = body.split("\n");
+  const emittedIds = [];
+  candidates.sort((a, b) => b.term.length - a.term.length);
+  for (const { id, term } of candidates) {
+    const re = new RegExp(`\\b(${escapeRegExp(term)})\\b`, "i");
+    let marked = false;
+    for (let i = 0; i < lines.length && !marked; i++) {
+      const line = lines[i];
+      if (line.trimStart().startsWith(">")) continue;
+      if (line.includes("{{wn:")) {
+        if (re.test(line.replace(/\{\{wn:[^}]*\}\}/g, ""))) {
+        } else {
+          continue;
+        }
+      }
+      const m = line.match(re);
+      if (!m || m.index === void 0) continue;
+      const before = line.slice(0, m.index);
+      const openMarkers = (before.match(/\{\{wn:/g) || []).length;
+      const closeMarkers = (before.match(/\}\}/g) || []).length;
+      if (openMarkers > closeMarkers) continue;
+      const surface = m[1];
+      lines[i] = before + `{{wn:${id}|${surface}}}` + line.slice(m.index + surface.length);
+      emittedIds.push(id);
+      marked = true;
+    }
+  }
+  return { body: lines.join("\n"), emittedIds };
+}
+function countWords(s) {
+  return s.split(/\s+/).filter(Boolean).length;
+}
+function hasScriptureBlockquote(body, scriptureText) {
+  const quoteLines = body.split("\n").filter((l) => l.trimStart().startsWith(">")).map((l) => l.replace(/^\s*>+\s?/, "").trim()).filter(Boolean);
+  if (quoteLines.length === 0) return false;
+  const anchorWords = scriptureText.toLowerCase().replace(/[^a-z\s]/g, " ").split(/\s+/).filter((w) => w.length > 2);
+  if (anchorWords.length === 0) return quoteLines.length > 0;
+  const probe = anchorWords.slice(0, 3).join(" ");
+  const quoteWords = quoteLines.join(" ").toLowerCase().replace(/[^a-z\s]/g, " ").split(/\s+/).filter((w) => w.length > 2).join(" ");
+  return quoteWords.includes(probe);
+}
+function checkDepth(params) {
+  const issues = [];
+  const floor = DEPTH_FLOOR[params.mode];
+  const words = countWords(params.body);
+  if (words < floor.minWords) {
+    issues.push(
+      `thin generation: body has ${words} words, below the ${floor.minWords}-word ${params.mode} floor`
+    );
+  }
+  const proseParagraphs = params.body.split(/\n\s*\n/).map((p) => p.trim()).filter(
+    (p) => p && !p.split("\n").every((l) => l.trimStart().startsWith(">"))
+  );
+  if (proseParagraphs.length < 2) {
+    issues.push(
+      `incoherent structure: only ${proseParagraphs.length} prose paragraph(s) \u2014 expected multi-paragraph woven prose`
+    );
+  }
+  if (floor.requireScriptureQuote && !hasScriptureBlockquote(params.body, params.scriptureText)) {
+    issues.push(
+      "missing required element: anchor Scripture is not quoted verbatim as a blockquote"
+    );
+  }
+  if (floor.requirePrayer && countWords(params.prayer) < 8) {
+    issues.push(
+      "missing required element: closing prayer is absent or too short"
+    );
+  }
+  if (floor.minHeadings > 0) {
+    const headingCount = (params.body.match(/^#{1,6}\s+\S/gm) ?? []).length;
+    if (headingCount < floor.minHeadings) {
+      issues.push(
+        `thin deep dive: ${headingCount} section heading(s), below the ${floor.minHeadings} expected for long-form structure`
+      );
+    }
+  }
+  return issues;
+}
 function verify(params) {
   const issues = [];
   const low = params.body.toLowerCase();
@@ -3059,6 +3551,49 @@ function verify(params) {
     }
   }
   return { ok: issues.length === 0, issues: [...new Set(issues)] };
+}
+function buildStructuredEndnotes(params) {
+  const endnotes = [];
+  let id = 1;
+  const low = params.body.toLowerCase();
+  endnotes.push({
+    id: id++,
+    kind: "scripture",
+    source: `${params.scriptureReference} (${params.translation})`,
+    reference: params.scriptureReference,
+    note: "Anchor Scripture, quoted verbatim from the Euangelion corpus."
+  });
+  for (const s of params.sources) {
+    const attribution = (s.source || "").trim();
+    if (!attribution) continue;
+    const authorSegment = attribution.split(",")[0]?.trim() ?? "";
+    if (!authorSegment) continue;
+    const distinctive = authorSegment.split(/\s+/).map((w) => w.replace(/[^\p{L}]/gu, "")).filter((w) => w.length >= 4).sort((a, b) => b.length - a.length)[0];
+    if (!distinctive) continue;
+    if (!low.includes(distinctive.toLowerCase())) continue;
+    if (endnotes.some((e) => e.kind === "voice" && e.source === attribution)) {
+      continue;
+    }
+    const excerpt = s.content.replace(/\s+/g, " ").trim().slice(0, 240);
+    endnotes.push({
+      id: id++,
+      kind: "voice",
+      source: attribution,
+      reference: attribution,
+      note: excerpt ? `Quoted in this day's reading from the Euangelion reference library: "${excerpt}${s.content.length > 240 ? "\u2026" : ""}"` : "Quoted in this day's reading from the Euangelion reference library."
+    });
+  }
+  for (const w of params.studies) {
+    endnotes.push({
+      id: id++,
+      kind: "lexicon",
+      source: w.source,
+      // e.g. "Brown-Driver-Briggs (Strong's H7965)"
+      reference: w.strong,
+      note: `Word study of ${w.word} (${w.xlit}, ${w.strong}): ${w.gloss}.`
+    });
+  }
+  return endnotes;
 }
 function systemPrompt() {
   return `You are the assembler-and-polisher for Euangelion, a CLOSED, grounded devotional. Theological frame: historic orthodox Christianity (the Apostles' and Nicene Creeds), Christ-centered, never sectarian or novel.
@@ -3219,11 +3754,27 @@ async function generateGroundedDay(input) {
     studies,
     groundingText
   });
-  const endnotes = sources.map((s, i) => ({
-    id: i + 1,
-    source: s.attribution,
-    note: "Quoted from the Euangelion reference library."
-  }));
+  const depthIssues = checkDepth({
+    body,
+    prayer: (parsed.prayer ?? "").trim(),
+    mode,
+    scriptureText: verse.text
+  });
+  if (depthIssues.length > 0) {
+    verification.issues.push(...depthIssues);
+    verification.ok = false;
+  }
+  const { body: markedBody, emittedIds: wordNoteIds } = injectWordNoteMarkers(
+    body,
+    studies
+  );
+  const endnotes = buildStructuredEndnotes({
+    body,
+    scriptureReference: verse.canonical,
+    translation,
+    sources,
+    studies
+  });
   const primaryStudy = studies[0] ? wordStudyToHebrewGreek(studies[0]) : null;
   let tier3Extended = null;
   if (mode === "deepdive") {
@@ -3248,7 +3799,7 @@ async function generateGroundedDay(input) {
   const content = {
     title: parsed.title || verse.canonical,
     hookA: "",
-    textB: body,
+    textB: markedBody,
     textBPreview: derivePreview(body),
     centerC: "",
     christConnectionBPrime: "",
@@ -3278,7 +3829,9 @@ async function generateGroundedDay(input) {
       words,
       scriptureTranslation: translation,
       wordStudyCount: studies.length,
+      wordNoteCount: wordNoteIds.length,
       sourceCount: sources.length,
+      endnoteCount: endnotes.length,
       // Real provider usage from this call (the brain router / edge shim both
       // populate these from the Anthropic response). The runner ledgers them.
       inputTokens: result.inputTokens,
@@ -3287,7 +3840,7 @@ async function generateGroundedDay(input) {
     }
   };
 }
-var SONNET, KNOWN_AUTHORS;
+var SONNET, KNOWN_AUTHORS, BANK_BY_STRONG, DEPTH_FLOOR;
 var init_grounded_weave = __esm({
   "src/lib/soul-audit/grounded-weave.ts"() {
     "use strict";
@@ -3296,6 +3849,7 @@ var init_grounded_weave = __esm({
     init_reference_index_loader();
     init_chunk_retrieval();
     init_lexicon();
+    init_wordnote_bank();
     init_router();
     SONNET = "claude-sonnet-4-6";
     KNOWN_AUTHORS = [
@@ -3326,6 +3880,27 @@ var init_grounded_weave = __esm({
       "keller",
       "stott"
     ];
+    BANK_BY_STRONG = new Map(
+      WORDNOTE_BANK.map((e) => [e.strong.toUpperCase(), e])
+    );
+    DEPTH_FLOOR = {
+      reading: {
+        minWords: 600,
+        // A complete reading must quote the anchor Scripture as a blockquote and
+        // close with a prayer (both are required elements of the woven format).
+        requireScriptureQuote: true,
+        requirePrayer: true,
+        minHeadings: 0
+      },
+      deepdive: {
+        minWords: 1800,
+        requireScriptureQuote: false,
+        // deep dive may reference more than it quotes
+        requirePrayer: false,
+        minHeadings: 3
+        // the deep-dive prompt asks for ## section headings
+      }
+    };
   }
 });
 
@@ -3787,9 +4362,10 @@ async function runGenerationDay(job) {
       dayNumber
     });
     if (!weave.verification.ok) {
+      const issues = weave.verification.issues.join("; ");
       console.error(
-        `[generation-runner] Day ${dayNumber} failed grounding verification:`,
-        weave.verification.issues.join("; ")
+        `[generation-runner] Day ${dayNumber} failed verification (grounding/depth):`,
+        issues
       );
       emitSoulAuditTelemetry("generation_fail", {
         mode: "reading",
@@ -3801,18 +4377,22 @@ async function runGenerationDay(job) {
         inputTokens: weave.meta.inputTokens,
         outputTokens: weave.meta.outputTokens,
         durationMs: Date.now() - startedAt,
-        reason: "grounding_verification_failed"
+        reason: `verification_failed: ${issues}`
       });
       await updateJob(jobId, {
         status: "error",
-        error: `Day ${dayNumber} failed grounding verification.`,
+        error: `Day ${dayNumber} failed verification: ${issues}`,
         generating_since: null
       });
-      return { ok: false, status: 500, error: "grounding verification failed" };
+      return {
+        ok: false,
+        status: 500,
+        error: `verification failed: ${issues}`
+      };
     }
     const parsed = weave.content;
     console.info(
-      `[generation-runner] Day ${dayNumber} grounded: ${weave.meta.words}w \xB7 ${weave.meta.sourceCount} sources \xB7 ${weave.meta.wordStudyCount} word studies \xB7 ${weave.meta.model} \xB7 verified`
+      `[generation-runner] Day ${dayNumber} grounded: ${weave.meta.words}w \xB7 ${weave.meta.sourceCount} sources \xB7 ${weave.meta.wordStudyCount} word studies \xB7 ${weave.meta.endnoteCount} endnotes \xB7 ${weave.meta.model} \xB7 verified`
     );
     const supabase = createAdminClient();
     const db = supabase;
@@ -4020,9 +4600,10 @@ async function runDeepDive(job) {
     dayNumber: job.dayNumber
   });
   if (!weave.verification.ok) {
+    const issues = weave.verification.issues.join("; ");
     console.error(
-      `[generation-runner] Deep dive day ${job.dayNumber} failed grounding verification:`,
-      weave.verification.issues.join("; ")
+      `[generation-runner] Deep dive day ${job.dayNumber} failed verification (grounding/depth):`,
+      issues
     );
     emitSoulAuditTelemetry("generation_fail", {
       mode: "deepdive",
@@ -4032,9 +4613,9 @@ async function runDeepDive(job) {
       inputTokens: weave.meta.inputTokens,
       outputTokens: weave.meta.outputTokens,
       durationMs: Date.now() - startedAt,
-      reason: "grounding_verification_failed"
+      reason: `verification_failed: ${issues}`
     });
-    return { ok: false, status: 500, error: "grounding verification failed" };
+    return { ok: false, status: 500, error: `verification failed: ${issues}` };
   }
   const tier3 = {
     ...weave.content.tier3Extended ?? {
