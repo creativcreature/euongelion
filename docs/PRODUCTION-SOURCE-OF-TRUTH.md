@@ -65,7 +65,7 @@ Euangelion Soul Audit and Devotional Engine are curated-first and selection-firs
 1. Every feature has a canonical PRD in `docs/feature-prds/F-xxx.md`.
 2. Feature code changes must update the matching PRD outcomes log.
 3. Feature commit messages must reference both `SA-xxx` and `F-xxx`.
-4. Baseline scoring is capped at 6 until founder elevates.
+4. Baseline scoring cap lifted by founder on 2026-06-13; scores reflect honest, evidence-backed quality, never inflated.
 5. Founder is the only authority to assign 10/10.
 
 ## Folder Preservation Policy

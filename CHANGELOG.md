@@ -5,6 +5,20 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Founder lifted the scoring cap (2026-06-13)
+
+Founder authorized removing the artificial score cap (was "baseline capped at 6/10
+until founder elevates"). The scoring rule now reads: **scores reflect honest,
+evidence-backed current quality; scores must never be inflated; 10/10 still requires
+the full evidence matrix.** Updated in sync across the three gate-checked surfaces —
+`docs/production-decisions.yaml` (`scorecard_required_tokens`),
+`PRODUCTION-FEATURE-SCORECARD.md` (scoring rule), `PRODUCTION-SOURCE-OF-TRUTH.md`
+(#4). `verify:governance-alignment` OK (scorecard ↔ decisions tokens stay in sync).
+Founder remains the sole authority to assign 10/10; this lifts the _floor cap_, not
+the evidence bar.
+
+---
+
 ## ELEVATION v3.0 — Web push SENDING: send-daily-push edge fn (E2) (2026-06-13)
 
 Completes Phase 2.2 web push (SA-013 / F-040). Subscribing was already live; this

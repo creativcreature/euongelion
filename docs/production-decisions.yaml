@@ -74,8 +74,8 @@ contracts:
     - local corpus
     - devotional context
   scorecard_required_tokens:
-    - Founder scoring authority is capped at **5/10** baseline until founder elevation.
-    - Engineering implementation scores may exceed 5 with evidence.
+    - Founder lifted the scoring cap on 2026-06-13; scores reflect honest, evidence-backed current quality.
+    - Scores must never be inflated; 10/10 still requires the full evidence matrix.
   non_wakeup_shell_required_files:
     - src/app/settings/page.tsx
     - src/app/privacy/page.tsx

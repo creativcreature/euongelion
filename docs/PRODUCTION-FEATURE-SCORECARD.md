@@ -2,7 +2,7 @@
 
 Last Updated: 2026-06-13
 Owner: Product + Engineering
-Scoring Rule: Founder scoring authority is capped at **5/10** baseline until founder elevation. Engineering implementation scores may exceed 5 with evidence. Every row includes a path to verified 10/10.
+Scoring Rule: Founder lifted the scoring cap on 2026-06-13; scores reflect honest, evidence-backed current quality. Scores must never be inflated; 10/10 still requires the full evidence matrix. Every row includes a path to verified 10/10.
 
 ## Production Deploy Status (2026-06-13)
 
