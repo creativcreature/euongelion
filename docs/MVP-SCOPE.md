@@ -117,6 +117,15 @@ MVP serves people finding their way back to God — the drifted, the skeptical, 
 
 ## OUT (Phase 2+)
 
+> **SUPERSEDED (2026-06-13):** This file (v1.1) predates later locked decisions and
+> no longer reflects shipped scope. Several items listed below as OUT have since
+> been **built and are live**: **Offline mode / service worker** (PWA `sw.js`,
+> `/offline`), **Push notifications** (web push subscribe live; daily-send edge fn
+> deployed, pending the founder arming the cron), and **Payments / subscriptions**
+> (F-047/F-048). For authoritative current scope and contracts, defer to
+> `docs/PRODUCTION-SOURCE-OF-TRUTH.md` and `docs/production-decisions.yaml`, not this
+> MVP-era list.
+
 ### Take It With You
 
 | Feature               | Description                              |

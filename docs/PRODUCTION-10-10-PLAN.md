@@ -118,13 +118,40 @@ Still required for 10/10:
 | Category                        | Current | Target | Definition of 10/10                                                                         |
 | ------------------------------- | ------: | -----: | ------------------------------------------------------------------------------------------- |
 | Governance + Tracking           |       5 |     10 | Zero drift for 3 consecutive passes, full evidence chain in changelog + handoff             |
-| User Flow + Navigation          |       4 |     10 | All core routes predictable, sticky behavior deterministic, no dead-end states              |
+| User Flow + Navigation          |       6 |     10 | All core routes predictable, sticky behavior deterministic, no dead-end states              |
 | Typography + Motion             |       4 |     10 | Legible scale at all breakpoints, consistent fonts, calm micro-motion with PRM parity       |
-| Soul Audit + Curation Engine    |       4 |     10 | 3+2 split always, curated-first assembly, no full plan pre-selection, robust retries        |
-| Devotional Experience + Library |       4 |     10 | Daily home continuity, left rail parity, archive/bookmarks/notes/favorites always reachable |
+| Soul Audit + Curation Engine    |       5 |     10 | 3+2 split always, curated-first assembly, no full plan pre-selection, robust retries        |
+| Devotional Experience + Library |       5 |     10 | Daily home continuity, left rail parity, archive/bookmarks/notes/favorites always reachable |
 | Reliability + Security          |       5 |     10 | Abuse controls, validation, observability, and tested recovery for all critical APIs        |
 | Accessibility + Performance     |       4 |     10 | WCAG AA plus no-overflow plus stable LCP/CLS/INP across target devices                      |
-| Billing + iOS Readiness         |       3 |     10 | Subscription lifecycle complete and App Store submission packet production-ready            |
+| Billing + iOS Readiness         |       7 |     10 | Subscription lifecycle complete and App Store submission packet production-ready            |
+
+### Tracking Reconciliation (2026-06-13)
+
+To keep "where we really are" accurate, this section was reconciled against the
+canonical current ratings:
+
+1. **Category "Current" numbers now mirror the `PRODUCTION-FEATURE-SCORECARD.md`
+   rollup** (the canonical current-rating doc). Previously this table carried older,
+   lower Feb-14 figures (User Flow+Nav 4, Soul Audit 4, Devotional 4, Billing+iOS 3)
+   that disagreed with the scorecard (6/5/5/7); they now match.
+2. **The 2026-06-13 elevation deploy advanced specific features** — F-026/F-038
+   (grounded engine + cost rails), F-040 (SSR/offline/web push), F-007 (homepage),
+   F-034 (WordNote), F-030 (audio/clippings) — within the Soul Audit, Reliability,
+   Devotional, and Homepage categories, per each feature's `F-xxx.md` outcomes log.
+   Category-level numbers are **not** inflated for this: per the scoring rule,
+   category elevation toward 10 is **founder-gated** (founder authority capped at
+   5/10 baseline until the founder personally elevates with evidence).
+3. **Registry scope:** `FEATURE-PRD-REGISTRY.yaml` is a **gate-enforced frozen
+   54-feature canonical set** (`check-feature-prd-integrity.mjs` locks the count at
+   54 and enforces index↔registry parity). Remediation/overhaul PRDs **F-051 and
+   F-056–F-062** exist as files on disk and are tracked **outside** the 54 (via
+   `CHANGELOG.md` + their own files), not as drift. Current non-`done` among them:
+   **F-061 (In Progress)**, **F-062 (shipping)**.
+4. **"status: done" in the registry** means the PRD is authored and its
+   engineering-baseline acceptance criteria are met — it is **distinct** from the
+   scorecard's quality-to-10 rating and the founder-elevation cap. A feature can be
+   registry-"done" and still sit at 4–7/10 on quality.
 
 ## Real-World Pattern Mapping
 
