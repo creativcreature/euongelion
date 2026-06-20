@@ -16,6 +16,7 @@ import {
 import { loadReferenceIndex } from './reference-index-loader'
 import { selectTopChunks, attributionFromChunk } from './chunk-retrieval'
 import { getWordStudiesForVerse, type WordStudy } from './lexicon'
+import { WORDNOTE_BANK } from '@/data/wordnote-bank'
 import { generateWithBrain } from '@/lib/brain/router'
 import type {
   DayContent,
@@ -89,6 +90,8 @@ export interface GroundedDayResult {
     words: number
     scriptureTranslation: BibleTranslationCode
     wordStudyCount: number
+    /** How many inline `{{wn:id|surface}}` markers were emitted into the body. */
+    wordNoteCount: number
     sourceCount: number
     /**
      * Real provider-reported token usage for THIS weave call, surfaced so the
@@ -171,6 +174,113 @@ function formatSources(
         `[${i + 1}] ${c.attribution}:\n"${c.content.replace(/\s+/g, ' ').trim().slice(0, 700)}"`,
     )
     .join('\n\n')
+}
+
+// ── inline WordNote markers ──────────────────────────────────────────
+//
+// The reader's inline word-study primitive (WordNote) is opted into by content
+// emitting `{{wn:bankId|surface}}` markers (see src/lib/wordnote-markup.tsx).
+// The grounded weave must EMIT those markers so generated days carry the same
+// crimson-underlined lexicon notes the curated content does — but with the same
+// closed-system, zero-fabrication guarantee the rest of this file enforces.
+//
+// How fabrication is made impossible:
+//   1. We never ask the model to write a marker (it could invent a bank id).
+//      Markers are injected by THIS deterministic post-pass, after generation.
+//   2. A marker is emitted ONLY for a Strong's number that BOTH the verse's real
+//      lexicon studies (getWordStudiesForVerse) AND the shipped WORDNOTE_BANK
+//      contain. So every id we emit is a real bank entry whose gloss is verbatim
+//      lexicon text — verified again here against the bank before emission.
+//   3. We only wrap a surface word that actually appears in the prose (the
+//      bank entry's English `term`, e.g. "peace" / "grace"). If the word is not
+//      present, no marker is emitted (plain text stands).
+//   4. The verbatim Scripture blockquote is left untouched, so we never alter
+//      quoted Scripture; markers land only in the woven exposition.
+
+// strong (e.g. "H7965"/"G3056") -> bank entry, built once from the shipped bank.
+const BANK_BY_STRONG: Map<string, (typeof WORDNOTE_BANK)[number]> = new Map(
+  WORDNOTE_BANK.map((e) => [e.strong.toUpperCase(), e]),
+)
+
+/** Escape a literal string for safe use inside a RegExp. */
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+/**
+ * Inject `{{wn:id|surface}}` WordNote markers into the woven body for the
+ * verse's grounded word studies — but only for terms that resolve to a REAL
+ * bank entry (by Strong's number) and whose English term actually appears in
+ * the prose. Returns { body, emitted } where `emitted` lists the bank ids
+ * actually marked (for meta/observability). Never invents an id or a surface.
+ */
+export function injectWordNoteMarkers(
+  body: string,
+  studies: WordStudy[],
+): { body: string; emittedIds: string[] } {
+  if (!body || studies.length === 0) return { body, emittedIds: [] }
+
+  // Resolve each study's Strong's number to a real bank entry. De-dupe by id so
+  // we never emit the same note twice, and keep verse order (rarer words first).
+  const seenIds = new Set<string>()
+  const candidates: Array<{ id: string; term: string }> = []
+  for (const study of studies) {
+    const entry = BANK_BY_STRONG.get((study.strong || '').toUpperCase())
+    if (!entry) continue // no bank entry for this Strong's number → no marker
+    if (seenIds.has(entry.id)) continue
+    // Defensive re-check: the bank is the source of truth for the gloss; only a
+    // present, non-empty term is wrappable as surface text.
+    const term = (entry.term || '').trim()
+    if (!term) continue
+    seenIds.add(entry.id)
+    candidates.push({ id: entry.id, term })
+  }
+  if (candidates.length === 0) return { body, emittedIds: [] }
+
+  // Mask the verbatim Scripture blockquote(s) so a marker never lands inside
+  // quoted Scripture. Markdown blockquote lines start with ">". We only search
+  // the non-quoted exposition for surface words.
+  const lines = body.split('\n')
+  const emittedIds: string[] = []
+
+  // Longer terms first so a multi-word term ("steadfast love") wins over a
+  // single word it contains.
+  candidates.sort((a, b) => b.term.length - a.term.length)
+
+  for (const { id, term } of candidates) {
+    // Whole-word, case-insensitive, first occurrence in a NON-blockquote line
+    // that is not already inside a marker.
+    const re = new RegExp(`\\b(${escapeRegExp(term)})\\b`, 'i')
+    let marked = false
+    for (let i = 0; i < lines.length && !marked; i++) {
+      const line = lines[i]
+      if (line.trimStart().startsWith('>')) continue // verbatim Scripture
+      if (line.includes('{{wn:')) {
+        // Skip lines already carrying a marker to avoid nesting.
+        if (re.test(line.replace(/\{\{wn:[^}]*\}\}/g, ''))) {
+          // term also appears outside the existing marker on this line
+        } else {
+          continue
+        }
+      }
+      const m = line.match(re)
+      if (!m || m.index === undefined) continue
+      // Don't wrap if the match sits inside an existing marker on this line.
+      const before = line.slice(0, m.index)
+      const openMarkers = (before.match(/\{\{wn:/g) || []).length
+      const closeMarkers = (before.match(/\}\}/g) || []).length
+      if (openMarkers > closeMarkers) continue // inside a marker
+      const surface = m[1]
+      lines[i] =
+        before +
+        `{{wn:${id}|${surface}}}` +
+        line.slice(m.index + surface.length)
+      emittedIds.push(id)
+      marked = true
+    }
+  }
+
+  return { body: lines.join('\n'), emittedIds }
 }
 
 // ── verification ─────────────────────────────────────────────────────
@@ -454,6 +564,16 @@ export async function generateGroundedDay(
     groundingText,
   })
 
+  // 6b) Inject inline WordNote markers AFTER verification ran on the clean
+  //     prose. Markers reference ONLY real bank ids (resolved by Strong's
+  //     number from this verse's grounded lexicon studies) and only wrap a
+  //     surface word that actually appears — so nothing is fabricated and the
+  //     transliteration verification (above) was never asked to clear a marker.
+  const { body: markedBody, emittedIds: wordNoteIds } = injectWordNoteMarkers(
+    body,
+    studies,
+  )
+
   // 7) map to DayContent (loosened: woven body + structurally-grounded metadata)
   const endnotes: Endnote[] = sources.map((s, i) => ({
     id: i + 1,
@@ -486,7 +606,7 @@ export async function generateGroundedDay(
   const content: DayContent = {
     title: parsed.title || verse.canonical,
     hookA: '',
-    textB: body,
+    textB: markedBody,
     textBPreview: derivePreview(body),
     centerC: '',
     christConnectionBPrime: '',
@@ -516,6 +636,7 @@ export async function generateGroundedDay(
       words,
       scriptureTranslation: translation,
       wordStudyCount: studies.length,
+      wordNoteCount: wordNoteIds.length,
       sourceCount: sources.length,
       // Real provider usage from this call (the brain router / edge shim both
       // populate these from the Anthropic response). The runner ledgers them.

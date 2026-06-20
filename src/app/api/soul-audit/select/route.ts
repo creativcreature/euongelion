@@ -23,6 +23,13 @@ import {
 import { verifyConsentToken } from '@/lib/soul-audit/consent-token'
 import { buildSchedule, calculateStartDate } from '@/lib/soul-audit/plan-utils'
 import {
+  resolveStartPolicy,
+  withOnboardingDayZero,
+} from '@/lib/soul-audit/schedule'
+import { buildOnboardingDay } from '@/lib/soul-audit/curated-builder'
+import type { CustomPlanDay } from '@/types/soul-audit'
+import type { DayContent, DayScheduleEntry } from '@/types/soul-audit-plan'
+import {
   getAuditOptionsWithFallback,
   getAuditRunWithFallback,
   getConsentWithFallback,
@@ -154,6 +161,8 @@ async function insertPlanInstance(params: {
   timezone: string
   timezoneOffsetMinutes: number
   startPolicy: string
+  onboardingVariant: string
+  onboardingDays: number
   startedAt: string
   cycleStartAt: string
   theme: string | null
@@ -176,6 +185,8 @@ async function insertPlanInstance(params: {
         timezone: params.timezone,
         timezone_offset_minutes: params.timezoneOffsetMinutes,
         start_policy: params.startPolicy,
+        onboarding_variant: params.onboardingVariant,
+        onboarding_days: params.onboardingDays,
         started_at: params.startedAt,
         cycle_start_at: params.cycleStartAt,
         theme: params.theme,
@@ -196,6 +207,83 @@ async function insertPlanInstance(params: {
   } catch (err) {
     console.error(
       '[soul-audit:select] Plan instance insert threw:',
+      err instanceof Error ? err.message : err,
+    )
+    return false
+  }
+}
+
+/**
+ * Map an onboarding CustomPlanDay (reflection/prayer/scripture) into the
+ * DayContent shape the Daily Bread reader renders (textB = the woven body).
+ * Pure structural mapping — no invented content; the Scripture is the verbatim
+ * anchor carried from the selected (grounded) option.
+ */
+function onboardingDayToContent(day: CustomPlanDay): DayContent {
+  return {
+    title: day.title,
+    hookA: '',
+    textB: day.reflection ?? '',
+    textBPreview: (day.reflection ?? '').slice(0, 240),
+    centerC: '',
+    christConnectionBPrime: '',
+    returnAPrime: '',
+    scriptureReference: day.scriptureReference,
+    scriptureText: day.scriptureText,
+    hebrewGreekStudy: null,
+    interactiveElement: { type: 'reflection', content: '' },
+    metaStoryPlacement: '',
+    backwardLink: '',
+    forwardLink: '',
+    reflectionQuestions: day.journalPrompt
+      ? day.journalPrompt.split('\n').filter(Boolean)
+      : [],
+    prayer: day.prayer ?? '',
+    endnotes: (day.endnotes ?? []).map((n) => ({
+      id: n.id,
+      source: n.source,
+      note: n.note,
+    })),
+    previousDaysSummaryForNext: '',
+    tier3Extended: null,
+  }
+}
+
+/**
+ * Persist the onboarding day-0 row so a Wed-Sun starter has a readable
+ * devotional NOW, before the Monday cycle unlocks (SOURCE-OF-TRUTH #22).
+ * The Scripture is verbatim from the selected option (grounded); the body is
+ * the variant primer copy. Best-effort: a failure here must not block the plan.
+ */
+async function insertOnboardingDay(params: {
+  planToken: string
+  runId: string
+  content: DayContent
+}): Promise<boolean> {
+  const supabase = maybeSupabase()
+  if (!supabase) return false
+  try {
+    const { error } = await supabase.from('devotional_plan_days' as any).upsert(
+      {
+        plan_token: params.planToken,
+        day_number: 0,
+        content: params.content as unknown as Record<string, unknown>,
+        used_chunk_ids: [],
+        run_id: params.runId,
+      } as any,
+      { onConflict: 'plan_token,day_number' } as any,
+    )
+    if (error) {
+      console.error(
+        '[soul-audit:select] Onboarding day insert failed:',
+        error.message,
+      )
+      return false
+    }
+    return true
+  } catch (err) {
+    console.error(
+      '[soul-audit:select] Onboarding day insert threw:',
       err instanceof Error ? err.message : err,
     )
     return false
@@ -568,9 +656,25 @@ export async function POST(request: NextRequest) {
     }
 
     // ─── Calculate start date + build schedule ───
+    // Days 1-7 anchor on calculateStartDate (preserves Mon/Tue immediate-start
+    // semantics exactly: day 1 unlocked now). resolveStartPolicy then layers on
+    // the real start policy + onboarding variant (SOURCE-OF-TRUTH #19-22): a
+    // Wed-Sun start gets an onboarding day FIRST, with the full cycle gated to
+    // the next Monday at 7:00 AM local.
     const nowUTC = new Date()
     const { startDateUTC } = calculateStartDate(nowUTC, offsetMinutes)
-    const schedule = buildSchedule(startDateUTC, offsetMinutes)
+    const policy = resolveStartPolicy(nowUTC, offsetMinutes)
+    const isOnboarding = policy.startPolicy === 'wed_sun_onboarding'
+
+    const cycleSchedule = buildSchedule(startDateUTC, offsetMinutes)
+    // Wed-Sun: prepend an immediately-unlocked onboarding day-0 entry so the
+    // reader serves the primer NOW rather than the bare "Day 1 unlocks Monday"
+    // holding screen. Mon/Tue starts are unchanged (no day 0).
+    const schedule: DayScheduleEntry[] = withOnboardingDayZero({
+      cycleSchedule,
+      startPolicy: policy.startPolicy,
+      nowUtc: nowUTC,
+    })
 
     // ─── Create plan instance ───
     const planToken = randomUUID()
@@ -589,9 +693,11 @@ export async function POST(request: NextRequest) {
       seriesSlug: option.slug,
       timezone,
       timezoneOffsetMinutes: offsetMinutes,
-      startPolicy: 'monday_cycle',
+      startPolicy: policy.startPolicy,
+      onboardingVariant: policy.onboardingVariant,
+      onboardingDays: policy.onboardingDays,
       startedAt: nowUTC.toISOString(),
-      cycleStartAt: startDateUTC.toISOString(),
+      cycleStartAt: policy.cycleStartAt,
       theme,
       scriptureAnchor,
       schedule,
@@ -604,6 +710,34 @@ export async function POST(request: NextRequest) {
         code: 'PLAN_CREATE_FAILED',
         status: 500,
         requestId,
+      })
+    }
+
+    // ─── Onboarding day-0 (Wed-Sun starts only) ───
+    // Persist a readable onboarding devotional NOW, anchored on the selected
+    // option's verbatim Scripture (grounded — never canned catalog content).
+    // The full cycle (days 1-5) still generates and stays gated to Monday.
+    if (isOnboarding) {
+      const anchorDay: CustomPlanDay = {
+        day: 1,
+        title: theme,
+        scriptureReference: scriptureAnchor,
+        scriptureText: option.preview?.verseText?.trim() || scriptureAnchor,
+        reflection: '',
+        prayer: '',
+        nextStep: '',
+        journalPrompt: '',
+      }
+      const onboarding = buildOnboardingDay({
+        userResponse: userInput,
+        firstDay: anchorDay,
+        variant: policy.onboardingVariant,
+        onboardingDays: policy.onboardingDays,
+      })
+      await insertOnboardingDay({
+        planToken,
+        runId,
+        content: onboardingDayToContent(onboarding),
       })
     }
 

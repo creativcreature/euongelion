@@ -46,6 +46,7 @@ export default function OptionCard({
         className={`mock-featured-card w-full text-left ${disabled ? 'is-disabled' : 'cursor-pointer'}`}
         data-variant="large"
         aria-disabled={disabled}
+        aria-label={`Build this reading path: ${option.title}`}
       >
         <h3>{option.title}</h3>
         <p className="audit-option-question">{typographer(option.question)}</p>
@@ -106,6 +107,7 @@ export default function OptionCard({
           type="button"
           className="audit-option-meta-link link-highlight mr-4"
           onClick={() => onSave(option)}
+          aria-label={`Save "${option.title}" for later`}
         >
           Save for later
         </button>
@@ -113,11 +115,16 @@ export default function OptionCard({
           type="button"
           className="audit-option-meta-link link-highlight"
           onClick={() => onToggleReasoning(option.id)}
+          aria-expanded={expandedReasoning}
+          aria-controls={`option-reasoning-${option.id}`}
         >
           {expandedReasoning ? 'Hide reasoning' : 'Why this path?'}
         </button>
         {expandedReasoning && (
-          <p className="audit-option-support mt-2 text-secondary">
+          <p
+            id={`option-reasoning-${option.id}`}
+            className="audit-option-support mt-2 text-secondary"
+          >
             {typographer(option.reasoning)}
           </p>
         )}

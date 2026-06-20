@@ -3,6 +3,7 @@ import path from 'path'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
+import { retentionClarityRows } from '@/lib/privacy/retention'
 
 export const metadata = {
   title: 'Privacy Policy | Euangelion',
@@ -36,6 +37,7 @@ export default async function PrivacyPage() {
 
   // Simple markdown to HTML: headings, paragraphs, lists, bold
   const html = markdownToHtml(content)
+  const retentionRows = retentionClarityRows()
 
   return (
     <div className="mock-home min-h-screen">
@@ -49,6 +51,61 @@ export default async function PrivacyPage() {
           <p className="vw-small mb-8 text-muted">
             Last updated: {lastUpdated}
           </p>
+
+          {/* Retention clarity (F-037): what is stored, where, for how
+              long — visible per artifact type, sourced from the same
+              policy the backend enforces so copy cannot drift. */}
+          <section
+            aria-labelledby="retention-clarity-heading"
+            className="mb-12 pb-12"
+            style={{ borderBottom: '1px solid var(--color-border)' }}
+          >
+            <h2
+              id="retention-clarity-heading"
+              className="text-display vw-heading-md mb-2"
+            >
+              What we store, and for how long
+            </h2>
+            <p
+              className="vw-body mb-8 text-secondary"
+              style={{ maxWidth: '60ch' }}
+            >
+              Anonymous use stays anonymous. Here is exactly what each thing you
+              create is, where it lives, and when it is deleted.
+            </p>
+            <div className="grid gap-4">
+              {retentionRows.map((row) => (
+                <div
+                  key={row.id}
+                  className="p-5"
+                  style={{ border: '1px solid var(--color-border)' }}
+                >
+                  <p className="text-label vw-small mb-3 text-gold">
+                    {row.artifact}
+                  </p>
+                  <dl className="grid gap-2">
+                    <div>
+                      <dt className="text-label vw-small text-muted">WHAT</dt>
+                      <dd className="vw-small text-secondary">{row.what}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-label vw-small text-muted">WHERE</dt>
+                      <dd className="vw-small text-secondary">{row.where}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-label vw-small text-muted">
+                        HOW LONG
+                      </dt>
+                      <dd className="vw-small text-secondary">
+                        {row.retention}
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              ))}
+            </div>
+          </section>
+
           <div
             className="prose-legal"
             dangerouslySetInnerHTML={{ __html: html }}

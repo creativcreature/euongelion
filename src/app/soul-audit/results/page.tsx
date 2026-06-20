@@ -480,7 +480,9 @@ export default function SoulAuditResultsPage() {
           <EuangelionShellHeader />
           <section className="mock-panel">
             <div className="flex min-h-[40vh] items-center justify-center">
-              <p className="text-muted">Loading...</p>
+              <p className="text-muted" role="status" aria-live="polite">
+                Loading...
+              </p>
             </div>
           </section>
           <SiteFooter />
@@ -569,9 +571,14 @@ export default function SoulAuditResultsPage() {
               <FadeIn>
                 <div
                   className="mb-8 border p-5"
+                  role="alertdialog"
+                  aria-labelledby="audit-active-plan-label"
                   style={{ borderColor: 'var(--color-border)' }}
                 >
-                  <p className="text-label vw-small mb-3 text-gold">
+                  <p
+                    id="audit-active-plan-label"
+                    className="text-label vw-small mb-3 text-gold"
+                  >
                     ACTIVE PLAN
                   </p>
                   <p className="vw-body mb-4 text-secondary">
@@ -626,8 +633,14 @@ export default function SoulAuditResultsPage() {
             {/* Recommended path (always visible) */}
             {recommended && (
               <FadeIn>
-                <section className="mb-8">
-                  <p className="text-label vw-small mb-3 text-gold">
+                <section
+                  className="mb-8"
+                  aria-labelledby="audit-recommended-label"
+                >
+                  <p
+                    id="audit-recommended-label"
+                    className="text-label vw-small mb-3 text-gold"
+                  >
                     RECOMMENDED
                   </p>
                   <OptionCard
@@ -674,8 +687,14 @@ export default function SoulAuditResultsPage() {
             {/* Alternative paths (revealed progressively) */}
             {alternatives.slice(0, revealedCount - 1).map((option, index) => (
               <FadeIn key={option.id}>
-                <section className="mb-8">
-                  <p className="text-label vw-small mb-3 text-gold">
+                <section
+                  className="mb-8"
+                  aria-labelledby={`audit-alternative-label-${option.id}`}
+                >
+                  <p
+                    id={`audit-alternative-label-${option.id}`}
+                    className="text-label vw-small mb-3 text-gold"
+                  >
                     {index === 0 ? 'ALTERNATIVE' : 'ANOTHER DIRECTION'}
                   </p>
                   <OptionCard
@@ -700,10 +719,16 @@ export default function SoulAuditResultsPage() {
               <FadeIn>
                 <section
                   className="mb-7 border p-4"
+                  aria-labelledby="audit-saved-paths-label"
                   style={{ borderColor: 'var(--color-border)' }}
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2">
-                    <p className="text-label vw-small text-gold">SAVED PATHS</p>
+                    <p
+                      id="audit-saved-paths-label"
+                      className="text-label vw-small text-gold"
+                    >
+                      SAVED PATHS
+                    </p>
                     {hasStaleSavedOptions && (
                       <button
                         type="button"
@@ -744,6 +769,7 @@ export default function SoulAuditResultsPage() {
                               type="button"
                               className="audit-option-meta-link link-highlight"
                               onClick={() => removeSavedOption(saved.id)}
+                              aria-label={`Remove saved path: ${saved.title}`}
                             >
                               Remove
                             </button>
@@ -755,11 +781,13 @@ export default function SoulAuditResultsPage() {
                       )
                     })}
                   </div>
-                  {savedOptionsMessage && (
-                    <p className="vw-small mt-2 text-muted">
-                      {savedOptionsMessage}
-                    </p>
-                  )}
+                  <p
+                    className="vw-small mt-2 text-muted"
+                    role="status"
+                    aria-live="polite"
+                  >
+                    {savedOptionsMessage}
+                  </p>
                 </section>
               </FadeIn>
             )}
@@ -768,10 +796,14 @@ export default function SoulAuditResultsPage() {
             <FadeIn>
               <section
                 className="mb-7 border p-4"
+                aria-labelledby="audit-reroll-label"
                 style={{ borderColor: 'var(--color-border)' }}
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-label vw-small text-gold">
+                  <p
+                    id="audit-reroll-label"
+                    className="text-label vw-small text-gold"
+                  >
                     NOT QUITE RIGHT?
                   </p>
                 </div>
@@ -799,7 +831,7 @@ export default function SoulAuditResultsPage() {
 
             {/* Errors */}
             {error && (
-              <div className="mt-6 text-center">
+              <div className="mt-6 text-center" role="alert">
                 <p className="vw-body text-secondary">{error}</p>
                 {runExpired && (
                   <div className="mt-4 flex flex-wrap items-center justify-center gap-3">

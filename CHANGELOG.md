@@ -5,6 +5,46 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Finish-line Wave 1: craft + a11y + reliability + WordNote/onboarding (2026-06-13)
+
+First wave of the push from ~60% toward the engineering finish line — four parallel
+streams, integrated + verified together: `type-check` clean, `lint` 0 errors, 100
+files / 1402 tests pass, Workers build 1263/1263 pages 0 prerender errors.
+
+- **Typography + Motion lockdown (F-012–F-018):** tokenized font roles
+  (`.font-reading`/`.font-display` = Instrument Serif, `.font-ui` = Industry) so UI
+  labels never inherit serif; ratio-based type scale + line-length measures;
+  readability floor (~17px) at 375/390; reduced-motion parity closed (OS `@media` +
+  in-app `html.reduce-motion` now share one reset that also removes hover/focus
+  transforms); scroll-reveal restraint (boundary-only, body copy guarded); one shared
+  `.affordance` micro-interaction system. `globals.css` + `typography-craft.css` +
+  MixedHeadline/PullQuote.
+- **Accessibility (F-044/045/046):** ARIA disclosure semantics
+  (`aria-expanded`/`controls`) on audit option cards; named landmarks/regions (footer
+  nav groups, results sections via `aria-labelledby`, crisis region); `aria-live` on
+  async/toast/empty/error states; accessible names on icon/repeat buttons;
+  `aria-current` on the plan day rail.
+- **Reliability + data trust (F-039/F-036/F-037/F-040):** new
+  `src/lib/observability/api-failure.ts` (request-id + closed failure taxonomy,
+  structured JSON logging) across mock-account/bookmarks/annotations/chat/submit error
+  paths; route-aware recovery CTAs in `error.tsx`; improved offline banner + retry
+  (**not mounted** — honors the F-040 locked decision against a persistent
+  interrupting banner; code ready if the founder wants it); retention-clarity table
+  (per-artifact what/where/how-long) in settings + privacy; export schema-version
+  stamp + completeness guard.
+- **WordNote in generated days + onboarding gap (F-034/F-032):** the grounded weave
+  now emits `{{wn:id|surface}}` markers **deterministically post-generation** (never
+  model-emitted), validated against the lexicon-backed `wordnote-bank` (fabrication
+  impossible); new `MarkdownWithWordNotes` renders them in the Daily Bread reader
+  (closing the gap that ScriptureModule only covered the curated reader). Wed–Sun plan
+  starts now serve a Scripture-anchored onboarding day-0 immediately (SOURCE-OF-TRUTH
+  #22) instead of a bare holding screen; Mon/Tue immediate starts unchanged.
+
+Test fix: `soul-audit-results-selection-ui` selector made specific to the build
+button (1B added descriptive `aria-label`s to both the build + save buttons).
+
+---
+
 ## ELEVATION v3.0 — Founder lifted the scoring cap (2026-06-13)
 
 Founder authorized removing the artificial score cap (was "baseline capped at 6/10

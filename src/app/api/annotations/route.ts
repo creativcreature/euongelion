@@ -18,6 +18,7 @@ import {
   takeRateLimit,
   withRequestIdHeaders,
 } from '@/lib/api-security'
+import { logApiFailure } from '@/lib/observability/api-failure'
 
 interface AnnotationBody {
   annotationId?: string
@@ -116,8 +117,18 @@ export async function POST(request: NextRequest) {
       path: request.nextUrl.pathname,
       clientKey,
     })
+    logApiFailure({
+      scope: 'annotations-post',
+      requestId,
+      code: 'UPSTREAM_DB_ERROR',
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
     return jsonError({
       error: 'Unable to save annotation.',
+      code: 'ANNOTATION_SAVE_FAILED',
       status: 500,
       requestId,
     })
@@ -183,8 +194,18 @@ export async function GET(request: NextRequest) {
       path: request.nextUrl.pathname,
       clientKey,
     })
+    logApiFailure({
+      scope: 'annotations-get',
+      requestId,
+      code: 'UPSTREAM_DB_ERROR',
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
     return jsonError({
       error: 'Unable to fetch annotations.',
+      code: 'ANNOTATION_LIST_FAILED',
       status: 500,
       requestId,
     })
@@ -235,8 +256,18 @@ export async function DELETE(request: NextRequest) {
       path: request.nextUrl.pathname,
       clientKey,
     })
+    logApiFailure({
+      scope: 'annotations-delete',
+      requestId,
+      code: 'UPSTREAM_DB_ERROR',
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
     return jsonError({
       error: 'Unable to remove annotation.',
+      code: 'ANNOTATION_DELETE_FAILED',
       status: 500,
       requestId,
     })
@@ -323,8 +354,18 @@ export async function PATCH(request: NextRequest) {
       path: request.nextUrl.pathname,
       clientKey,
     })
+    logApiFailure({
+      scope: 'annotations-patch',
+      requestId,
+      code: 'UPSTREAM_DB_ERROR',
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
     return jsonError({
       error: 'Unable to update annotation.',
+      code: 'ANNOTATION_UPDATE_FAILED',
       status: 500,
       requestId,
     })

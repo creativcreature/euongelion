@@ -1,3 +1,5 @@
+import type { DayScheduleEntry } from '@/types/soul-audit-plan'
+
 type StartPolicy =
   | 'monday_cycle'
   | 'tuesday_archived_monday'
@@ -99,6 +101,31 @@ export function resolveStartPolicy(
     startedAt: nowUtc.toISOString(),
     cycleStartAt: toUtc(cycleStartLocal, offsetMinutes).toISOString(),
   }
+}
+
+/**
+ * Compose the full plan schedule from the days 1-7 cycle schedule and the
+ * resolved start policy (SOURCE-OF-TRUTH #19-22):
+ *   - monday_cycle / tuesday_archived_monday → unchanged (no onboarding day).
+ *   - wed_sun_onboarding → PREPEND an immediately-unlocked day-0 onboarding
+ *     entry so the reader serves the primer NOW; the days 1-7 cycle stays gated
+ *     to the next Monday at 7:00 AM local.
+ * Pure function — does not mutate the input cycle schedule.
+ */
+export function withOnboardingDayZero(params: {
+  cycleSchedule: DayScheduleEntry[]
+  startPolicy: StartPolicy
+  nowUtc: Date
+}): DayScheduleEntry[] {
+  if (params.startPolicy !== 'wed_sun_onboarding') return params.cycleSchedule
+  const nowIso = params.nowUtc.toISOString()
+  const dayZero: DayScheduleEntry = {
+    day: 0,
+    date: nowIso,
+    unlock_at: nowIso,
+    status: 'unlocked',
+  }
+  return [dayZero, ...params.cycleSchedule]
 }
 
 export function isPlanDayUnlocked(params: {

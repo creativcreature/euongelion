@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import {
+  createRequestId,
   getClientKey,
+  jsonError,
   readJsonWithLimit,
   takeRateLimit,
-  withRateLimitHeaders,
 } from '@/lib/api-security'
+import { logApiFailure } from '@/lib/observability/api-failure'
 import {
   getMockAccountSessionWithFallback,
   upsertMockAccountSession,
@@ -55,21 +57,31 @@ function responsePayload(params: { mode: Mode; analyticsOptIn: boolean }) {
 }
 
 export async function POST(request: NextRequest) {
+  const requestId = createRequestId()
+  const clientKey = getClientKey(request)
   try {
     const limiter = await takeRateLimit({
       namespace: 'mock-account-session',
-      key: getClientKey(request),
+      key: clientKey,
       limit: MAX_SESSION_REQUESTS_PER_MINUTE,
       windowMs: 60_000,
     })
     if (!limiter.ok) {
-      return withRateLimitHeaders(
-        NextResponse.json(
-          { error: 'Too many session requests. Please retry shortly.' },
-          { status: 429 },
-        ),
-        limiter,
-      )
+      logApiFailure({
+        scope: 'mock-account-session-post',
+        requestId,
+        code: 'RATE_LIMITED',
+        method: 'POST',
+        path: '/api/mock-account/session',
+        clientKey,
+      })
+      return jsonError({
+        error: 'Too many session requests. Please retry shortly.',
+        code: 'RATE_LIMITED',
+        status: 429,
+        requestId,
+        rateLimit: limiter,
+      })
     }
 
     const parsed = await readJsonWithLimit<Body>({
@@ -77,10 +89,21 @@ export async function POST(request: NextRequest) {
       maxBytes: MAX_SESSION_BODY_BYTES,
     })
     if (!parsed.ok) {
-      return NextResponse.json(
-        { error: parsed.error },
-        { status: parsed.status },
-      )
+      logApiFailure({
+        scope: 'mock-account-session-post',
+        requestId,
+        code: 'VALIDATION_BODY_INVALID',
+        method: 'POST',
+        path: '/api/mock-account/session',
+        clientKey,
+        context: { status: parsed.status },
+      })
+      return jsonError({
+        error: parsed.error,
+        code: 'BODY_INVALID',
+        status: parsed.status,
+        requestId,
+      })
     }
 
     const body = parsed.data
@@ -102,15 +125,26 @@ export async function POST(request: NextRequest) {
       }),
     )
   } catch (error) {
-    console.error('Mock account session error:', error)
-    return NextResponse.json(
-      { error: 'Unable to start mock account session.' },
-      { status: 500 },
-    )
+    logApiFailure({
+      scope: 'mock-account-session-post',
+      requestId,
+      code: 'INTERNAL_UNEXPECTED',
+      error,
+      method: 'POST',
+      path: '/api/mock-account/session',
+      clientKey,
+    })
+    return jsonError({
+      error: 'Unable to start mock account session.',
+      code: 'SESSION_START_FAILED',
+      status: 500,
+      requestId,
+    })
   }
 }
 
 export async function GET() {
+  const requestId = createRequestId()
   try {
     const sessionToken = await getOrCreateAuditSessionToken()
     const session = await getMockAccountSessionWithFallback(sessionToken)
@@ -123,10 +157,19 @@ export async function GET() {
       }),
     )
   } catch (error) {
-    console.error('Mock account session lookup error:', error)
-    return NextResponse.json(
-      { error: 'Unable to fetch mock account session.' },
-      { status: 500 },
-    )
+    logApiFailure({
+      scope: 'mock-account-session-get',
+      requestId,
+      code: 'INTERNAL_UNEXPECTED',
+      error,
+      method: 'GET',
+      path: '/api/mock-account/session',
+    })
+    return jsonError({
+      error: 'Unable to fetch mock account session.',
+      code: 'SESSION_LOOKUP_FAILED',
+      status: 500,
+      requestId,
+    })
   }
 }

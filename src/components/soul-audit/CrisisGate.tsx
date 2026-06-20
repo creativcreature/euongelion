@@ -20,9 +20,15 @@ export default function CrisisGate({
   return (
     <section
       className="mb-6 rounded-none border p-6"
+      aria-labelledby="crisis-gate-heading"
       style={{ borderColor: 'var(--color-border)' }}
     >
-      <p className="text-label vw-small mb-2 text-gold">CRISIS SUPPORT</p>
+      <p
+        id="crisis-gate-heading"
+        className="text-label vw-small mb-2 text-gold"
+      >
+        CRISIS SUPPORT
+      </p>
       <p className="vw-small mb-2 text-secondary">
         {typographer(crisis.prompt)}
       </p>

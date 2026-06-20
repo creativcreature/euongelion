@@ -139,7 +139,11 @@ describe('Soul Audit results selection consent UX', () => {
 
     render(<SoulAuditResultsPage />)
 
-    await user.click(screen.getByRole('button', { name: /Path Alpha/i }))
+    await user.click(
+      screen.getByRole('button', {
+        name: /Build this reading path: Path Alpha/i,
+      }),
+    )
 
     await waitFor(() => {
       expect(pushMock).toHaveBeenCalledWith(

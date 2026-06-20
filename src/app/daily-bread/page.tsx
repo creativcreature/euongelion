@@ -79,16 +79,34 @@ export default async function DailyBreadPage() {
   }
 
   const schedule = (plan.schedule || []) as DayScheduleEntry[]
-  const firstUnlock = schedule[0]?.unlock_at
-  if (firstUnlock && new Date(firstUnlock) > new Date()) {
-    return (
-      <Shell>
-        <HoldingState
-          theme={plan.theme || 'Your devotional plan'}
-          startDate={firstUnlock}
-        />
-      </Shell>
-    )
+
+  // SOURCE-OF-TRUTH #22: a Wed-Sun start serves an onboarding devotional FIRST
+  // (an immediately-unlocked day 0), then the full cycle unlocks Monday. When
+  // such a day-0 entry exists and its content row is present, render the reader
+  // now instead of the bare "Day 1 unlocks Monday" holding screen.
+  const onboardingEntry = schedule.find((e) => e.day === 0)
+  const onboardingReady =
+    !!onboardingEntry &&
+    !!onboardingEntry.unlock_at &&
+    new Date(onboardingEntry.unlock_at) <= new Date() &&
+    plan.devotional_plan_days.some((d) => d.day_number === 0)
+
+  if (!onboardingReady) {
+    // No onboarding day to serve: fall back to the holding screen when the
+    // first cycle day is still gated (Wed-Sun without a day-0 row, or any plan
+    // whose earliest entry is in the future).
+    const firstCycleEntry = schedule.find((e) => e.day >= 1)
+    const firstUnlock = firstCycleEntry?.unlock_at
+    if (firstUnlock && new Date(firstUnlock) > new Date()) {
+      return (
+        <Shell>
+          <HoldingState
+            theme={plan.theme || 'Your devotional plan'}
+            startDate={firstUnlock}
+          />
+        </Shell>
+      )
+    }
   }
 
   const contentDays = plan.devotional_plan_days.filter(

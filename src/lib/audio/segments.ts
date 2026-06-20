@@ -19,6 +19,7 @@ import type { DayContent } from '@/types/soul-audit-plan'
 function toSpeech(raw: string | undefined | null): string {
   if (!raw) return ''
   return raw
+    .replace(/\{\{wn:[a-z0-9-]+\|([^}]*)\}\}/g, '$1') // inline WordNote → surface word
     .replace(/<[^>]+>/g, ' ') // any stray HTML tags
     .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ') // images
     .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1') // links → label

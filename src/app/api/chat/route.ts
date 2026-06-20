@@ -14,6 +14,7 @@ import {
   withModelUsedHeader,
   withRequestIdHeaders,
 } from '@/lib/api-security'
+import { logApiFailure } from '@/lib/observability/api-failure'
 import { createClient } from '@/lib/supabase/server'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import { resolveEntitlementSnapshot } from '@/lib/billing/entitlements'
@@ -790,6 +791,16 @@ export async function POST(request: NextRequest) {
             mode,
           },
         })
+        logApiFailure({
+          scope: 'chat',
+          requestId,
+          code: 'TIMEOUT_DEADLINE_EXCEEDED',
+          error,
+          method: request.method,
+          path: requestPath,
+          clientKey,
+          context: { deadlineMs: LLM_ROUTE_DEADLINE_MS, mode },
+        })
         return jsonError({
           error: 'Reply took too long. Please retry.',
           code: 'LLM_DEADLINE_EXCEEDED',
@@ -928,12 +939,22 @@ export async function POST(request: NextRequest) {
       path: requestPath,
       clientKey,
     })
+    logApiFailure({
+      scope: 'chat',
+      requestId,
+      code: 'INTERNAL_UNEXPECTED',
+      error,
+      method: request.method,
+      path: requestPath,
+      clientKey,
+    })
 
     return jsonError({
       error:
         error instanceof Error
           ? error.message
           : 'Something went wrong. Please try again.',
+      code: 'CHAT_FAILED',
       status: 500,
       requestId,
     })

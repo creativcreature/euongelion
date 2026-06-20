@@ -17,6 +17,7 @@ import {
   takeRateLimit,
   withRequestIdHeaders,
 } from '@/lib/api-security'
+import { logApiFailure } from '@/lib/observability/api-failure'
 
 interface BookmarkBody {
   devotionalSlug?: string
@@ -92,8 +93,18 @@ export async function POST(request: NextRequest) {
       path: request.nextUrl.pathname,
       clientKey,
     })
+    logApiFailure({
+      scope: 'bookmarks-post',
+      requestId,
+      code: 'UPSTREAM_DB_ERROR',
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
     return jsonError({
       error: 'Unable to save bookmark.',
+      code: 'BOOKMARK_SAVE_FAILED',
       status: 500,
       requestId,
     })
@@ -118,8 +129,17 @@ export async function GET() {
       method: 'GET',
       path: '/api/bookmarks',
     })
+    logApiFailure({
+      scope: 'bookmarks-get',
+      requestId,
+      code: 'UPSTREAM_DB_ERROR',
+      error,
+      method: 'GET',
+      path: '/api/bookmarks',
+    })
     return jsonError({
       error: 'Unable to fetch bookmarks.',
+      code: 'BOOKMARK_LIST_FAILED',
       status: 500,
       requestId,
     })
@@ -162,8 +182,18 @@ export async function DELETE(request: NextRequest) {
       path: request.nextUrl.pathname,
       clientKey,
     })
+    logApiFailure({
+      scope: 'bookmarks-delete',
+      requestId,
+      code: 'UPSTREAM_DB_ERROR',
+      error,
+      method: request.method,
+      path: request.nextUrl.pathname,
+      clientKey,
+    })
     return jsonError({
       error: 'Unable to remove bookmark.',
+      code: 'BOOKMARK_DELETE_FAILED',
       status: 500,
       requestId,
     })

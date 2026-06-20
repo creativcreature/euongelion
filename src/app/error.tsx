@@ -1,9 +1,82 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
+
+type Recovery = {
+  kicker: string
+  heading: string
+  body: string
+  secondaryHref: string
+  secondaryLabel: string
+}
+
+/**
+ * Route-specific recovery copy (F-038: Help/recovery states). The root
+ * error boundary catches failures from routes that have no nearer
+ * `error.tsx`. A single generic "go home" dead-ends the user, so we
+ * branch on the current path to offer an action that keeps them inside
+ * the flow they were already in. The "Try Again" reset button is shown
+ * everywhere; only the secondary, route-aware escape hatch changes.
+ */
+function recoveryFor(pathname: string | null): Recovery {
+  const path = pathname || '/'
+
+  if (path.startsWith('/series') || path.startsWith('/library')) {
+    return {
+      kicker: 'SERIES UNAVAILABLE',
+      heading: "We couldn't open this series.",
+      body: 'The reading library is still here. Try again, or browse the full collection.',
+      secondaryHref: '/series',
+      secondaryLabel: 'Browse Series',
+    }
+  }
+
+  if (path.startsWith('/wake-up')) {
+    return {
+      kicker: 'WAKE UP UNAVAILABLE',
+      heading: "We couldn't load this Wake Up reading.",
+      body: 'Try again, or return to the Wake Up collection.',
+      secondaryHref: '/wake-up',
+      secondaryLabel: 'Browse Wake Up',
+    }
+  }
+
+  if (
+    path.startsWith('/daily-bread') ||
+    path.startsWith('/today') ||
+    path.startsWith('/my-devotional')
+  ) {
+    return {
+      kicker: "TODAY'S READING UNAVAILABLE",
+      heading: "We couldn't load today's reading.",
+      body: 'Your plan is safe. Try again, or open your saved readings.',
+      secondaryHref: '/saved',
+      secondaryLabel: 'Open Saved',
+    }
+  }
+
+  if (path.startsWith('/settings') || path.startsWith('/privacy')) {
+    return {
+      kicker: 'SETTINGS UNAVAILABLE',
+      heading: "We couldn't load this page.",
+      body: 'Your preferences are unchanged. Try again, or return home.',
+      secondaryHref: '/',
+      secondaryLabel: 'Go Home',
+    }
+  }
+
+  return {
+    kicker: 'SOMETHING BROKE',
+    heading: "This wasn't supposed to happen.",
+    body: "We hit an unexpected error. It's not you, we're working on it.",
+    secondaryHref: '/',
+    secondaryLabel: 'Go Home',
+  }
+}
 
 export default function Error({
   error,
@@ -12,6 +85,9 @@ export default function Error({
   error: Error & { digest?: string }
   reset: () => void
 }) {
+  const pathname = usePathname()
+  const recovery = useMemo(() => recoveryFor(pathname), [pathname])
+
   useEffect(() => {
     console.error(error)
   }, [error])
@@ -23,17 +99,16 @@ export default function Error({
         <section className="mock-panel shell-content-pad">
           <div className="flex min-h-[40vh] flex-col items-center justify-center px-6 text-center">
             <p className="text-label vw-small mb-6 text-gold">
-              SOMETHING BROKE
+              {recovery.kicker}
             </p>
             <h1 className="text-serif-italic vw-heading-md mb-6">
-              This wasn&apos;t supposed to happen.
+              {recovery.heading}
             </h1>
             <p
               className="vw-body mb-10 text-secondary"
               style={{ maxWidth: '40ch' }}
             >
-              We hit an unexpected error. It&apos;s not you, we&apos;re working
-              on it.
+              {recovery.body}
             </p>
             <div className="flex items-center gap-6">
               <button
@@ -43,12 +118,17 @@ export default function Error({
                 Try Again
               </button>
               <Link
-                href="/"
+                href={recovery.secondaryHref}
                 className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)]"
               >
-                Go Home
+                {recovery.secondaryLabel}
               </Link>
             </div>
+            {error.digest && (
+              <p className="vw-small mt-8 text-muted">
+                Reference: {error.digest}
+              </p>
+            )}
           </div>
         </section>
         <SiteFooter />

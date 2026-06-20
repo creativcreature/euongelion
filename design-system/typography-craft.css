@@ -8,6 +8,133 @@
  */
 
 /* ============================================
+   TYPOGRAPHY LOCKDOWN — canonical contract (F-012..F-015)
+   ============================================
+   Single source of truth for the two-typeface system + a ratio-based
+   hierarchy. Reading copy renders in Instrument Serif (--font-family-serif);
+   ALL UI / meta / nav / data labels render in Industry (--font-family-ui).
+   These tokens layer on TOP of the existing --mock-type-* scale (which
+   stays untouched so no current surface regresses) — new/audited surfaces
+   should adopt the .font-* + .ts-* + .measure-* utilities below so the
+   rule is enforced by class, never by ad-hoc inline font-family.
+
+   Tailwind v4 gotcha (project lesson): font-family must NOT live on base
+   element selectors inside @layer base — in v4 those compile outside the
+   layer and outrank @layer utilities. Every font-family below is therefore
+   a plain utility CLASS (no @layer base, no element selectors).
+   ============================================ */
+:root {
+  /* Ratio-based hierarchy cadence — Minor Third (1.2). Each step is the
+     previous step x 1.2, expressed as a fluid clamp so the cadence holds
+     from the 375/390 mobile floor up to desktop. --ts-base is the reading
+     body size; everything else is derived from it for predictable rhythm. */
+  --type-ratio: 1.2;
+
+  /* Readability floor: body never renders below ~1.0625rem (17px @ 16px
+     root) on the smallest phones, so long-form stays legible at 375/390.
+     The clamp MIN is the floor; it only grows from there. */
+  --ts-floor: 1.0625rem;
+
+  --ts-xs: clamp(0.78rem, 0.55vw + 0.66rem, 0.86rem); /* meta / captions */
+  --ts-sm: clamp(0.92rem, 0.5vw + 0.82rem, 1rem); /* small UI text */
+  --ts-base: clamp(var(--ts-floor), 0.42vw + 0.98rem, 1.18rem); /* body */
+  --ts-md: clamp(1.22rem, 0.7vw + 1.08rem, 1.42rem); /* lead / sub-head */
+  --ts-lg: clamp(1.46rem, 1.1vw + 1.2rem, 1.78rem); /* h3 */
+  --ts-xl: clamp(1.78rem, 1.9vw + 1.34rem, 2.45rem); /* h2 */
+  --ts-2xl: clamp(2.18rem, 3.1vw + 1.5rem, 3.4rem); /* h1 */
+  --ts-3xl: clamp(2.7rem, 5vw + 1.6rem, 4.6rem); /* display */
+
+  /* Line-height pairs to the cadence: tight on display, open on reading. */
+  --lh-display: 1.05;
+  --lh-heading: 1.14;
+  --lh-lead: 1.4;
+  --lh-body: 1.62;
+
+  /* Line-length (measure) constraints — comfortable reading column caps. */
+  --measure-reading: 68ch; /* default long-form prose */
+  --measure-tight: 56ch; /* dense reading blocks / Scripture */
+  --measure-wide: 78ch; /* roomy editorial intros */
+}
+
+/* ---- Font-role utilities (the enforcement surface) ---------------------
+   .font-ui      → Industry-class. Use on EVERY UI/meta/nav/label/data atom.
+   .font-reading → Instrument Serif. Use on body/lead/Scripture reading copy.
+   .font-display → Instrument Serif, display weight + tighter tracking.
+   These carry !important on font-family ONLY so they reliably beat the
+   serif-default <body> rule when applied to UI chrome (a label inside a
+   serif-defaulting container). Everything else stays overridable. */
+.font-ui {
+  font-family: var(--font-family-ui) !important;
+}
+.font-reading {
+  font-family: var(--font-family-serif) !important;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+}
+.font-display {
+  font-family: var(--font-family-serif) !important;
+  letter-spacing: -0.02em;
+}
+
+/* ---- Hierarchy-cadence utilities (ratio scale, F-015) ------------------
+   Pair size + line-height + measure in one class so cadence can't drift. */
+.ts-xs {
+  font-size: var(--ts-xs);
+  line-height: 1.4;
+}
+.ts-sm {
+  font-size: var(--ts-sm);
+  line-height: 1.5;
+}
+.ts-base {
+  font-size: var(--ts-base);
+  line-height: var(--lh-body);
+}
+.ts-md {
+  font-size: var(--ts-md);
+  line-height: var(--lh-lead);
+}
+.ts-lg {
+  font-size: var(--ts-lg);
+  line-height: var(--lh-heading);
+}
+.ts-xl {
+  font-size: var(--ts-xl);
+  line-height: var(--lh-heading);
+}
+.ts-2xl {
+  font-size: var(--ts-2xl);
+  line-height: var(--lh-display);
+}
+.ts-3xl {
+  font-size: var(--ts-3xl);
+  line-height: var(--lh-display);
+}
+
+/* ---- Line-length (measure) utilities (F-014/F-015) --------------------- */
+.measure {
+  max-width: var(--measure-reading);
+}
+.measure-tight {
+  max-width: var(--measure-tight);
+}
+.measure-wide {
+  max-width: var(--measure-wide);
+}
+
+/* ---- Readability floor (F-014) -----------------------------------------
+   Hard guarantee that reading copy never drops below the legible floor at
+   the 375/390 breakpoints. Opt-in via .reading-floor so existing tuned
+   surfaces are untouched; new/audited reading surfaces apply it. */
+@media (max-width: 400px) {
+  .reading-floor,
+  .reading-floor p,
+  .reading-floor li {
+    font-size: max(1em, var(--ts-floor));
+    line-height: var(--lh-body);
+  }
+}
+
+/* ============================================
    OPTICAL SIZING
    Headlines: tighter tracking, lighter weight
    Body: looser tracking, regular weight

@@ -18,22 +18,21 @@ export default function PullQuote({
         className="mx-auto mb-8"
         style={{
           height: '1px',
-          maxWidth: '800px',
+          maxWidth: 'var(--measure-reading)',
           background: 'var(--color-gold)',
           opacity: 0.2,
         }}
       />
 
       <blockquote
-        className="relative mx-auto"
-        style={{ maxWidth: '800px', paddingLeft: '0.5em' }}
+        className="font-reading relative mx-auto"
+        style={{ maxWidth: 'var(--measure-reading)', paddingLeft: '0.5em' }}
       >
         {/* Hanging quote mark */}
         <span
-          className="pointer-events-none absolute select-none"
+          className="font-display pointer-events-none absolute select-none"
           aria-hidden="true"
           style={{
-            fontFamily: 'var(--font-family-serif)',
             fontSize: 'clamp(6rem, 10vw, 8rem)',
             fontWeight: 400,
             lineHeight: 0.5,
@@ -48,10 +47,9 @@ export default function PullQuote({
 
         <p
           style={{
-            fontFamily: 'var(--font-family-serif)',
-            fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
+            fontSize: 'var(--ts-xl)',
             fontWeight: 700,
-            lineHeight: 1.3,
+            lineHeight: 'var(--lh-heading)',
           }}
         >
           {typographer(children)}
@@ -60,12 +58,11 @@ export default function PullQuote({
 
       {attribution && (
         <figcaption
-          className="mx-auto mt-4 text-right"
+          className="font-reading mx-auto mt-4 text-right"
           style={{
-            maxWidth: '800px',
-            fontFamily: 'var(--font-family-serif)',
+            maxWidth: 'var(--measure-reading)',
             fontStyle: 'italic',
-            fontSize: 'clamp(0.85rem, 1vw, 1rem)',
+            fontSize: 'var(--ts-sm)',
             color: 'var(--color-text-muted)',
           }}
         >
@@ -78,7 +75,7 @@ export default function PullQuote({
         className="mx-auto mt-8"
         style={{
           height: '1px',
-          maxWidth: '800px',
+          maxWidth: 'var(--measure-reading)',
           background: 'var(--color-gold)',
           opacity: 0.2,
         }}

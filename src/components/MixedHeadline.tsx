@@ -3,11 +3,17 @@ import type { ReactNode } from 'react'
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span'
 type HeadlineSize = 'xl' | 'lg' | 'md' | 'sm'
 
+/**
+ * Sizes are bound to the locked ratio-based type scale tokens
+ * (design-system/typography-craft.css → --ts-*) so the headline cadence
+ * matches the rest of the hierarchy instead of carrying its own clamps.
+ * Line-heights use the shared --lh-* tokens for the same reason.
+ */
 const sizeStyles: Record<HeadlineSize, React.CSSProperties> = {
-  xl: { fontSize: 'clamp(2.5rem, 6vw, 5rem)', lineHeight: 1.05 },
-  lg: { fontSize: 'clamp(1.875rem, 4vw, 3.5rem)', lineHeight: 1.1 },
-  md: { fontSize: 'clamp(1.5rem, 2.5vw, 2.5rem)', lineHeight: 1.2 },
-  sm: { fontSize: 'clamp(1.125rem, 1.5vw, 1.375rem)', lineHeight: 1.3 },
+  xl: { fontSize: 'var(--ts-3xl)', lineHeight: 'var(--lh-display)' },
+  lg: { fontSize: 'var(--ts-2xl)', lineHeight: 'var(--lh-display)' },
+  md: { fontSize: 'var(--ts-xl)', lineHeight: 'var(--lh-heading)' },
+  sm: { fontSize: 'var(--ts-lg)', lineHeight: 'var(--lh-heading)' },
 }
 
 /**
@@ -36,7 +42,9 @@ export default function MixedHeadline({
 }) {
   return (
     <Tag
-      className={`headline-mixed ${className}`}
+      // .font-display token-enforces Instrument Serif (display role) so the
+      // headline typeface no longer relies on an ambient serif cascade.
+      className={`headline-mixed font-display ${className}`}
       style={{ ...sizeStyles[size], ...style }}
     >
       {children}

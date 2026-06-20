@@ -6,6 +6,7 @@ import { marked } from 'marked'
 import AudioPlayer from '@/components/AudioPlayer'
 import ClipButton from '@/components/ClipButton'
 import PushOptIn from '@/components/PushOptIn'
+import MarkdownWithWordNotes from '@/components/daily-bread/MarkdownWithWordNotes'
 import { buildDayContentSegments } from '@/lib/audio/segments'
 import { isUnlocked } from '@/lib/soul-audit/plan-utils'
 import type {
@@ -77,10 +78,14 @@ function DaySelector({
         const record = getDayRecord(plan, entry.day)
         const completed = !!record?.completed_at
         const isSabbath = entry.status === 'sabbath'
+        // Day 0 is the Wed-Sun onboarding primer (served before the Monday
+        // cycle). Label it as a start, not a bare "0".
+        const isOnboarding = entry.day === 0
         const isActive = entry.day === selectedDay
 
         let stateLabel = ''
-        if (isSabbath) stateLabel = 'REST'
+        if (isOnboarding) stateLabel = completed ? 'DONE' : 'START'
+        else if (isSabbath) stateLabel = 'REST'
         else if (completed) stateLabel = 'DONE'
         else if (!unlocked) stateLabel = 'LOCKED'
 
@@ -102,7 +107,9 @@ function DaySelector({
             aria-current={isActive ? 'step' : undefined}
             aria-disabled={!unlocked}
           >
-            <span className="text-label block text-xs">{entry.day}</span>
+            <span className="text-label block text-xs">
+              {isOnboarding ? '0' : entry.day}
+            </span>
             {stateLabel && (
               <span
                 className="block text-[0.6rem] uppercase"
@@ -219,13 +226,13 @@ function DailyBreadTier({ content }: { content: DayContent }) {
       </section>
 
       {/* The woven reading (grounded body). Legacy days used hookA; the
-          grounded weave puts the full flowing reading in textB. */}
+          grounded weave puts the full flowing reading in textB and may embed
+          inline {{wn:id|surface}} WordNote markers, rendered here as interactive
+          lexicon notes. */}
       <section>
-        <div
+        <MarkdownWithWordNotes
           className="vw-body text-secondary type-prose"
-          dangerouslySetInnerHTML={{
-            __html: renderMarkdown(content.textB || content.hookA),
-          }}
+          markdown={content.textB || content.hookA}
         />
       </section>
 
@@ -331,9 +338,9 @@ function GoDeeper({ content }: { content: DayContent }) {
           <p className="text-label vw-small mb-2 text-gold">
             {content.hookA ? 'TEACHING' : 'THE READING'}
           </p>
-          <div
+          <MarkdownWithWordNotes
             className="vw-body text-secondary type-prose"
-            dangerouslySetInnerHTML={{ __html: renderMarkdown(content.textB) }}
+            markdown={content.textB}
           />
         </section>
       )}
@@ -546,11 +553,9 @@ function DeepDive({
           style={{ borderColor: 'var(--color-border)' }}
         >
           <p className="text-label vw-small mb-3 text-gold">THE DEEP DIVE</p>
-          <div
+          <MarkdownWithWordNotes
             className="vw-body text-secondary type-prose"
-            dangerouslySetInnerHTML={{
-              __html: renderMarkdown(tier3.deepDiveBody),
-            }}
+            markdown={tier3.deepDiveBody}
           />
         </section>
       ) : (
@@ -892,10 +897,10 @@ export default function DailyBreadView({
       {/* Content state */}
       {isCurrentDayUnlocked && !isSabbath && content && (
         <>
-          {/* Day title */}
+          {/* Day title — day 0 is the onboarding primer, not "DAY 0". */}
           <header className="mb-6">
             <p className="text-label vw-small mb-1 text-gold">
-              DAY {selectedDay}
+              {selectedDay === 0 ? 'ONBOARDING' : `DAY ${selectedDay}`}
               {isCompleted ? ' -- COMPLETED' : ''}
             </p>
             <h1 className="vw-heading-md mb-2">{content.title}</h1>

@@ -31,6 +31,7 @@ import {
   BIBLE_TRANSLATIONS,
   type BibleTranslationCode,
 } from '@/lib/bible'
+import { retentionClarityRows } from '@/lib/privacy/retention'
 
 type Theme = 'dark' | 'light' | 'system'
 type SabbathDay = 'saturday' | 'sunday'
@@ -63,6 +64,12 @@ type MockExportResponse = {
   ok?: boolean
   error?: string
   code?: string
+  schemaVersion?: string
+  completeness?: {
+    complete?: boolean
+    artifactTypes?: string[]
+    counts?: Record<string, number>
+  }
 }
 
 const emptySubscribe = () => () => {}
@@ -303,6 +310,14 @@ export default function SettingsPage() {
         throw new Error(payload.error || 'Unable to export data.')
       }
 
+      // Trust the server's explicit completeness flag — never hand the
+      // user a file the API itself flagged as partial. NO SILENT FALLBACK.
+      if (payload.completeness && payload.completeness.complete === false) {
+        throw new Error(
+          'Your export was incomplete and was not downloaded. Please retry.',
+        )
+      }
+
       const blob = new Blob([JSON.stringify(payload, null, 2)], {
         type: 'application/json',
       })
@@ -314,7 +329,11 @@ export default function SettingsPage() {
         .slice(0, 10)}.json`
       a.click()
       URL.revokeObjectURL(url)
-      setPrivacyMessage('Mock account export downloaded.')
+      setPrivacyMessage(
+        payload.schemaVersion
+          ? `Mock account export downloaded (schema ${payload.schemaVersion}).`
+          : 'Mock account export downloaded.',
+      )
     } catch (error) {
       setPrivacyError(
         error instanceof Error ? error.message : 'Unable to export data.',
@@ -1249,20 +1268,46 @@ export default function SettingsPage() {
               </p>
             </div>
 
-            <div className="mt-5 grid gap-2">
-              <p className="text-label vw-small text-gold">RETENTION</p>
-              {Object.entries(privacyRetentionSummary).map(([key, value]) => (
-                <p key={key} className="vw-small text-muted">
-                  {value}
-                </p>
-              ))}
+            <div className="mt-5 grid gap-3">
+              <p className="text-label vw-small text-gold">
+                RETENTION — WHAT WE STORE, AND FOR HOW LONG
+              </p>
+              <div className="grid gap-3">
+                {retentionClarityRows().map((row) => (
+                  <div
+                    key={row.id}
+                    className="p-3"
+                    style={{ border: '1px solid var(--color-border)' }}
+                  >
+                    <p className="vw-small mb-1 text-[var(--color-text-primary)]">
+                      {row.artifact}
+                    </p>
+                    <p className="vw-small text-muted">{row.what}</p>
+                    <p className="vw-small text-muted">Stored: {row.where}</p>
+                    <p className="vw-small text-muted">{row.retention}</p>
+                  </div>
+                ))}
+              </div>
+              {/* Live policy echoed from the API response so this UI proves
+                  the numbers it shows match the values the server returned. */}
               {privacyRetention && (
                 <p className="vw-small text-muted">
-                  Anonymous session: {privacyRetention.anonymousSessionDays}{' '}
-                  days. Trash restore window:{' '}
-                  {privacyRetention.trashRestoreWindowDays} days.
+                  Current policy in effect — anonymous session:{' '}
+                  {privacyRetention.anonymousSessionDays} days; trash restore
+                  window: {privacyRetention.trashRestoreWindowDays} days.
                 </p>
               )}
+              {Object.keys(privacyRetentionSummary).length === 0 && (
+                <p className="vw-small text-muted">
+                  Loading current retention policy from the server...
+                </p>
+              )}
+              <Link
+                href="/privacy#retention-clarity-heading"
+                className="text-label vw-small link-highlight"
+              >
+                Full retention &amp; privacy policy
+              </Link>
             </div>
 
             <div className="mt-5 flex flex-wrap items-center gap-4">

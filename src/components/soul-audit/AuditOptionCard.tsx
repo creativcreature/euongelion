@@ -62,6 +62,7 @@ export default function AuditOptionCard({
         onClick={() => onSelect(option.id)}
         className={`w-full text-left ${!disabled ? 'cursor-pointer' : 'is-disabled'}`}
         aria-disabled={disabled}
+        aria-label={`${ctaLabel.replace('…', '')}: ${option.title}`}
       >
         {isLarge && option.preview?.verse && (
           <div className="mock-scripture-lead audit-option-pad">
@@ -111,6 +112,7 @@ export default function AuditOptionCard({
           type="button"
           className="audit-option-meta-link link-highlight mr-4"
           onClick={() => onSave(option)}
+          aria-label={`Save "${option.title}" for later`}
         >
           Save for later
         </button>
@@ -118,11 +120,16 @@ export default function AuditOptionCard({
           type="button"
           className="audit-option-meta-link link-highlight"
           onClick={() => onToggleReasoning(option.id)}
+          aria-expanded={expandedReasoning}
+          aria-controls={`audit-option-reasoning-${option.id}`}
         >
           {expandedReasoning ? 'Hide reasoning' : 'Why this path?'}
         </button>
         {expandedReasoning && (
-          <p className="audit-option-support mt-2 text-secondary">
+          <p
+            id={`audit-option-reasoning-${option.id}`}
+            className="audit-option-support mt-2 text-secondary"
+          >
             {typographer(option.reasoning)}
           </p>
         )}

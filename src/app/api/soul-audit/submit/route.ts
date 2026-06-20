@@ -15,6 +15,7 @@ import {
   withAbortDeadline,
   withRequestIdHeaders,
 } from '@/lib/api-security'
+import { logApiFailure } from '@/lib/observability/api-failure'
 import { MAX_AUDITS_PER_CYCLE } from '@/lib/soul-audit/constants'
 import { PASTORAL_MESSAGES } from '@/lib/soul-audit/messages'
 import { sanitizeAuditInput } from '@/lib/soul-audit/matching'
@@ -283,6 +284,16 @@ export async function POST(request: NextRequest) {
             deadlineMs: LLM_ROUTE_DEADLINE_MS,
           },
         })
+        logApiFailure({
+          scope: 'soul-audit-submit',
+          requestId,
+          code: 'TIMEOUT_DEADLINE_EXCEEDED',
+          error: selectionError,
+          method: request.method,
+          path: getRequestPath(request, '/api/soul-audit/submit'),
+          clientKey,
+          context: { deadlineMs: LLM_ROUTE_DEADLINE_MS },
+        })
         return jsonError({
           error: 'Generation took too long. Please retry.',
           code: 'LLM_DEADLINE_EXCEEDED',
@@ -294,6 +305,16 @@ export async function POST(request: NextRequest) {
         selectionError instanceof Error
           ? selectionError.message
           : 'DIRECTION_SELECTION_FAILED'
+      logApiFailure({
+        scope: 'soul-audit-submit',
+        requestId,
+        code: 'UPSTREAM_MODEL_ERROR',
+        error: selectionError,
+        method: request.method,
+        path: getRequestPath(request, '/api/soul-audit/submit'),
+        clientKey,
+        context: { selectionCode: code },
+      })
       return jsonError({
         error: selectionErrorMessage(code),
         code,
@@ -446,8 +467,18 @@ export async function POST(request: NextRequest) {
       path: getRequestPath(request, '/api/soul-audit/submit'),
       clientKey,
     })
+    logApiFailure({
+      scope: 'soul-audit-submit',
+      requestId,
+      code: 'INTERNAL_UNEXPECTED',
+      error,
+      method: request.method,
+      path: getRequestPath(request, '/api/soul-audit/submit'),
+      clientKey,
+    })
     return jsonError({
       error: PASTORAL_MESSAGES.GENERIC_ERROR,
+      code: 'SOUL_AUDIT_SUBMIT_FAILED',
       status: 500,
       requestId,
     })

@@ -8611,3 +8611,139 @@ body:not(.rhythm-enabled) .rhythm-block-image {
     transition: none;
   }
 }
+
+/* ============================================================================
+   MOTION LOCKDOWN — canonical contract (F-016 / F-017 / F-018)
+   ============================================================================
+   Single, last-in-file block so it reliably outranks the scattered
+   per-component motion rules above. Three concerns:
+
+     1. F-017  Reduced-motion PARITY across BOTH motion signals:
+               (a) OS-level   @media (prefers-reduced-motion: reduce)
+               (b) in-app     html.reduce-motion  (Settings → Reduce motion,
+                              toggled in src/app/providers.tsx)
+               The two used to differ — the in-app reset (defined earlier in
+               this file) only zeroed *-duration, so CSS hover transforms,
+               keyframe autoplay, and scroll-behavior still fired when a user
+               turned the setting on. This reset is shared by both selectors
+               and additionally NEUTRALISES TRANSFORMS and stops infinite
+               autoplay animations — not just shortening their duration.
+
+     2. F-018  Scroll-reveal RESTRAINT: reveals are boundary-only. The
+               .reveal-boundary utility is the sanctioned reveal; running
+               body copy must never be reveal-animated (guarded below).
+
+     3. F-016  ONE shared link/button affordance: .affordance (+ .affordance
+               -underline) is the canonical hover/focus micro-interaction so
+               every interactive atom uses the same restrained lift + gold
+               underline, reduced-motion-safe by construction.
+   ========================================================================== */
+
+/* ---- 1. Reduced-motion parity (shared by OS + in-app signals) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html *,
+  html *::before,
+  html *::after {
+    /* Collapse — don't merely shorten — all motion. */
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Non-essential hover/focus transforms are removed outright (lifts,
+     presses, scale). Essential transforms — layout centering, sticky banners
+     that use translateX(-50%) — are exempt via .motion-keep-transform, which
+     is NOT a :hover/:focus state so it is never matched here anyway. */
+  html *:not(.motion-keep-transform):is(:hover, :focus-visible, :active) {
+    transform: none !important;
+  }
+}
+
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-delay: 0ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  transition-delay: 0ms !important;
+  scroll-behavior: auto !important;
+}
+html.reduce-motion
+  *:not(.motion-keep-transform):is(:hover, :focus-visible, :active) {
+  transform: none !important;
+}
+
+/* ---- 2. Scroll-reveal restraint (F-018) -------------------------------- */
+/* The sanctioned reveal: a quiet opacity + small rise, used on SECTION
+   BOUNDARIES only (a band, a card grid, a heading group) — never on running
+   prose. JS (FadeIn / editorial reveal) may still drive timing; this is the
+   CSS-first progressive baseline that keeps content visible if JS never
+   fires. */
+.reveal-boundary {
+  opacity: 1; /* visible by default — reveal is an enhancement, not a gate */
+}
+.reveal-boundary.is-prepared {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-boundary.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+/* Guard: body copy must never jitter. Any reveal class accidentally placed
+   on prose is hard-stopped so paragraphs/list items/Scripture stay static. */
+.reveal-boundary p,
+.reveal-boundary li,
+.reveal-boundary blockquote,
+.editorial-reveal-target p,
+.editorial-reveal-target li {
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* ---- 3. Shared micro-interaction affordance system (F-016) ------------- */
+/* .affordance — the one hover/focus micro-interaction. A 1px lift on
+   hover/focus-visible, press settles to baseline. Touch-target safe (no
+   sizing changes). Use on links, buttons, and cards that should read as
+   interactive. .affordance-underline adds the gold left-to-right underline
+   sweep for inline text links. Both honour reduced motion via the resets
+   above (transition collapses; lift is removed). */
+.affordance {
+  transition:
+    transform var(--duration-base, 200ms) var(--ease-out, ease),
+    color var(--duration-base, 200ms) var(--ease-out, ease),
+    border-color var(--duration-base, 200ms) var(--ease-out, ease),
+    background var(--duration-base, 200ms) var(--ease-out, ease);
+}
+.affordance:is(:hover, :focus-visible) {
+  transform: translateY(-1px);
+}
+.affordance:active {
+  transform: translateY(0);
+}
+
+.affordance-underline {
+  position: relative;
+  display: inline-block;
+}
+.affordance-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.12em;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--duration-moderate, 300ms) var(--ease-out, ease);
+}
+.affordance-underline:is(:hover, :focus-visible)::after {
+  transform: scaleX(1);
+}

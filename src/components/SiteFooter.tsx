@@ -48,9 +48,12 @@ function FooterColumn({
   title: string
   links: Array<{ href: string; label: string }>
 }) {
+  const headingId = `footer-col-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
   return (
-    <section>
-      <h2 className="text-label">{title}</h2>
+    <nav aria-labelledby={headingId}>
+      <h2 id={headingId} className="text-label">
+        {title}
+      </h2>
       <ul>
         {links.map((link) => (
           <li key={link.href}>
@@ -60,13 +63,13 @@ function FooterColumn({
           </li>
         ))}
       </ul>
-    </section>
+    </nav>
   )
 }
 
 export default function SiteFooter() {
   return (
-    <footer className="mock-site-footer">
+    <footer className="mock-site-footer" aria-label="Site footer">
       <div className="mock-site-footer-mission">
         <p className="vw-small text-secondary type-prose">
           The product is shaped by the conviction that the gospel does its own

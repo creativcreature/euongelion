@@ -61,6 +61,8 @@ export default function PlanDayRail({
                 key={`rail-day-${day.day}`}
                 type="button"
                 className="border px-3 py-2 text-left"
+                aria-current={isSelected ? 'true' : undefined}
+                aria-label={`Day ${day.day}${day.locked ? ', locked' : ''}: ${day.title}`}
                 style={{
                   borderColor: isSelected
                     ? 'var(--color-border-strong)'
