@@ -369,6 +369,13 @@ deno_version = 2
 enabled = true
 verify_jwt = true
 
+# Web push daily sender (Phase 2.2, F-040). Same double-gate: Supabase JWT
+# verification ON (pg_cron sends a service-role bearer) AND the function checks
+# the shared X-Internal-Secret header. Fired once/day by pg_cron.
+[functions.send-daily-push]
+enabled = true
+verify_jwt = true
+
 # [edge_runtime.secrets]
 # secret_key = "env(SECRET_VALUE)"
 

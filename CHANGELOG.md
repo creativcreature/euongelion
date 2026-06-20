@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Web push SENDING: send-daily-push edge fn (E2) (2026-06-13)
+
+Completes Phase 2.2 web push (SA-013 / F-040). Subscribing was already live; this
+adds the sender. New self-contained Supabase edge function
+`supabase/functions/send-daily-push/index.ts`: queries `push_subscriptions`, signs
+each with the VAPID keypair (`npm:web-push`), POSTs one calm "Today's Edition is
+ready" notification linking to `/today`, and prunes dead endpoints (404/410).
+Double-gated (Supabase `verify_jwt` + `X-Internal-Secret`); intended to be fired
+once per day by Supabase `pg_cron`.
+
+Deployed + verified live on project `ovivwbopjfruikehrlgm`: 401 (no auth), 403 (bad
+secret), and `{"ok":true,"total":0,"sent":0,...}` on the correct gate — proving the
+web-push lib loads in Deno, VAPID setup succeeds, and the query + send loop run.
+**Two honest limits:** (1) actual delivery to a device is NOT verified here (needs a
+real browser subscription); (2) the recurring `pg_cron` schedule is the founder's
+switch to arm — until armed, opt-ins persist but no notification fires. VAPID
+secrets (`VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT`) set on the
+Supabase project; `supabase/config.toml` registers the function.
+
+---
+
 ## ELEVATION v3.0 — Durable devotional SSR self-fetch (2026-06-13)
 
 `fetchTodayDevotional` (`src/lib/today-devotional.ts`) Strategy 2 (the Cloudflare
