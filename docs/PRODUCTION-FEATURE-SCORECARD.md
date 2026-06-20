@@ -1,8 +1,31 @@
 # Production Feature Scorecard
 
-Last Updated: 2026-02-20
+Last Updated: 2026-06-13
 Owner: Product + Engineering
 Scoring Rule: Founder scoring authority is capped at **5/10** baseline until founder elevation. Engineering implementation scores may exceed 5 with evidence. Every row includes a path to verified 10/10.
+
+## Production Deploy Status (2026-06-13)
+
+The "Elevation v3.0 — Core + web push" work is **live and verified on
+euangelion.app** (`origin/main` @ `249a25b7`, Cloudflare worker `5dda47e1`). The
+following moved from "built" to "live + verified in production" this pass; granular
+score deltas are recorded in each feature's `docs/feature-prds/F-xxx.md` outcomes log:
+
+- **F-026 / F-038 (Soul Audit grounded engine + cost rails):** grounded bespoke
+  generation verified live (6 corpus chunks, not canned); migrations 014+015 live;
+  ledger ~$0.03/day, budget + rate-limit counters carrying real data.
+- **F-040 (Reliability / SSR / offline / web push):** devotional reading SSR live
+  with full body in initial HTML (durable code guard); `/today`, `/sunday`,
+  `/offline`, `/clippings` live; web push subscribe live and `send-daily-push`
+  verified end-to-end (real FCM subscription → `sent:1`).
+- **F-007 (Homepage primary CTA):** single action ladder + nav 6→5 live.
+- **F-034 (WordNote / citation visibility):** inline lexicon-grounded WordNote live.
+- **F-030 (Library / reader):** audio + clippings live.
+
+Remaining to 10/10 (see `docs/PRODUCTION-10-10-PLAN.md` 2026-06-13 pass): founder
+arms the recurring `pg_cron` push schedule; on-device push render check; wire
+`<WordNote>` markers + voice bank into the live weave; Lighthouse mobile + live
+offline/PWA QA.
 
 ## PRD Linkage
 

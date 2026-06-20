@@ -286,3 +286,44 @@ npm run build
 3. Score deltas in `docs/PRODUCTION-FEATURE-SCORECARD.md`.
 4. Continuity snapshot in `docs/PRODUCTION-COMPACTION-HANDOFF.md`.
 5. Changelog entry with outcomes and blockers.
+
+## Execution Update (2026-06-13 Elevation Deploy Pass)
+
+The full "Elevation v3.0 — Core + web push" branch is **shipped to production and
+verified live** (Cloudflare worker `5dda47e1`, `origin/main` @ `249a25b7`; Supabase
+edge fns `generate-plan-day` + `send-daily-push`). Decision ids: SA-004, SA-013,
+SA-020, SA-021, SA-023. Feature ids: F-007, F-026, F-030, F-034, F-038, F-040.
+
+Completed in this pass:
+
+1. New routes live (200) on euangelion.app: `/today`, `/sunday`, `/how-we-write`,
+   `/clippings`, `/offline`; homepage action ladder; nav 6→5.
+2. Migrations **014** (cost ledger + daily counters) and **015** (push
+   subscriptions) applied. Cost rails verified live with real data: a grounded
+   Day 1 wrote a ledger row (`claude-sonnet-4-6`, ~$0.03/day), `global_spend`
+   accumulates, `submit`/`plan` rate-limit counters increment.
+3. Grounded Soul Audit verified end-to-end on prod: bespoke options (Haiku/worker)
+   → grounded Day 1 (Sonnet/edge fn, 6 corpus chunks, `used_chunk_ids`>0 = real
+   closed-RAG, not canned) → Day-1-first redirect → 7-day background self-chain
+   completed.
+4. Devotional reading SSR live — full body in initial HTML, no "Preparing" — and
+   made **durable** via a code guard so an inlined `localhost` base can never reach
+   production (removes the env-less-rebuild regression risk).
+5. Fixed two pre-existing schema-drift prerender crashes that blocked **every**
+   production build of the branch (`weeklyChallenge` object, `forDeeperStudy`
+   string in 4 devotionals); content preserved; `typographer` hardened.
+6. Web push: subscribing is live (VAPID configured, table created). Sending —
+   `send-daily-push` edge fn — deployed and verified end-to-end live (real FCM
+   browser subscription → `{sent:1}`, FCM accepted the signed notification).
+
+Still required for 10/10:
+
+1. **Arm the recurring `pg_cron` daily-send schedule** (founder switch) — until
+   armed, push opt-ins persist but no notification fires.
+2. **On-device push delivery verification** (real phone) — FCM-accept is proven;
+   OS-render is a ~30-second founder check after opting in on-device.
+3. VAPID public-key build durability — currently inlined at the deploy build only
+   (the SSR self-fetch base is already durable in code).
+4. Residual F-026/F-040 gaps: Lighthouse mobile re-measure on prod; live-device
+   offline/PWA-install QA; wire `<WordNote>` markers + the voice bank into the live
+   weave; share-card visual QA on real devices.

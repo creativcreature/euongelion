@@ -95,6 +95,17 @@ npm run build
 
 ## Current Snapshot
 
+### Continuity Snapshot (2026-06-13 — Elevation deploy live)
+
+- Scope completed: Shipped the full "Elevation v3.0 — Core + web push" branch to production and verified it live. New routes (`/today`, `/sunday`, `/how-we-write`, `/clippings`, `/offline`) serve 200; grounded Soul Audit verified end-to-end on prod (bespoke options → grounded Day 1, 6 corpus chunks, → 7-day self-chain); cost rails live (migrations 014+015 applied — ledger ~$0.03/day, budget + rate-limit counters with real data); devotional SSR live + made durable (code guard vs inlined localhost base); web push subscribe live and send (`send-daily-push` edge fn) verified end-to-end (real FCM subscription → `sent:1`). Fixed two pre-existing schema-drift prerender crashes (`weeklyChallenge` object, `forDeeperStudy` string) that had blocked every production build.
+- Decision ids touched: SA-004, SA-013, SA-020, SA-021, SA-023.
+- Feature ids touched: F-007, F-026, F-030, F-034, F-038, F-040.
+- Verification run: `type-check`; full `npm run preview`/`npm run deploy` Workers build (1263/1263 pages, 0 prerender errors); live curl of all new routes (200); live grounded Soul Audit + ledger row; live `send-daily-push` end-to-end (`{ok:true,total:1,sent:1}`); pre-commit governance gates on each commit (`verify:*`).
+- Commits: `0b873c86`, `990e6cf6`, `249a25b7` (on `origin/main`); Cloudflare worker version `5dda47e1`.
+- Score changes: Devotional SSR/reliability (F-040), grounded engine + cost rails (F-026/F-038), homepage ladder (F-007), WordNote (F-034) advanced per their PRD outcomes logs; production deploy moved from "built, never shipped" to "live + verified."
+- Blockers: None blocking the live product. Push notifications will not FIRE until the founder arms the recurring `pg_cron` schedule (their switch); on-device push render unverified (FCM-accept proven); future deploys must inline the VAPID public key (+ `NEXT_PUBLIC_APP_URL`, now belt-and-suspenders) on the build.
+- Next steps: (1) Founder arms `pg_cron` daily-send; (2) on-device push check; (3) wire `<WordNote>` markers + voice bank into the live weave; (4) Lighthouse mobile re-measure + live-device offline/PWA QA.
+
 ### Continuity Snapshot (2026-02-18 15:40 local)
 
 - Scope completed: Added governance-alignment gate for feature-index parity, scorecard policy consistency, and non-Wake-Up shell wrapper parity; integrated into pre-commit/CI/tracking.
