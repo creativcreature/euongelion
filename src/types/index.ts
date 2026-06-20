@@ -180,18 +180,26 @@ export interface Module {
   // Resource
   resources?: Array<{ title: string; url?: string; description?: string }>
   relatedScriptures?: Array<{ reference: string; text: string }>
-  forDeeperStudy?: Array<{
-    type: string
-    title: string
-    url?: string
-    note?: string
-  }>
+  forDeeperStudy?:
+    | Array<{
+        type: string
+        title: string
+        url?: string
+        note?: string
+      }>
+    | string
   greekVocabulary?: Array<{
     word: string
     transliteration: string
     meaning: string
   }>
-  weeklyChallenge?: string
+  weeklyChallenge?:
+    | string
+    | {
+        title?: string
+        description?: string
+        reminders?: Array<{ time?: string; prompt?: string }>
+      }
 
   // Chronology
   events?: Array<{

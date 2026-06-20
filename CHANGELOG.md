@@ -5,6 +5,31 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Production-build fix: devotional reading SSR (2026-06-13)
+
+Deploy-runbook Step B (first real Workers production build of the elevation branch)
+surfaced two pre-existing schema-drift bugs that aborted **every** prerender of the
+reading route — the branch was unit-test/type-check green but had never been
+production-built. Both fixed, all content preserved (SA-004 / F-040):
+
+- **`weeklyChallenge` as an object** (`too-busy-for-god-day-6`): `ResourceModule`
+  passed it to `typographer` as if a string → `b.replace is not a function` → build
+  abort. Now renders the structured challenge (title / description / reminders) as
+  well as the plain-string form.
+- **`forDeeperStudy` as a string** (3 `what-is-christianity` days): `ResourceModule`
+  `.map`'d it as an array → `.map is not a function`. Now renders the prose blurb
+  when it is a string and the item list when it is an array.
+- **Types widened** (`Module.weeklyChallenge`, `Module.forDeeperStudy`) to unions;
+  **`typographer` hardened** to no-op on a non-string so no single stray field can
+  abort a production build again.
+
+Verified: `type-check` clean; full `npm run preview` Workers build → **1263/1263
+pages, 0 prerender errors**; all new elevation routes curl **200**; the build-time
+prerendered devotional HTML carries the full reading body (no "Preparing"
+placeholder) with both fixes' content present.
+
+---
+
 ## ELEVATION v3.0 — Edge bundle rebuilt with cost rails (2026-06-13)
 
 Regenerated `supabase/functions/generate-plan-day/index.ts` (esbuild) so the deployed

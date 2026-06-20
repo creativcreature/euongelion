@@ -10,6 +10,11 @@
  */
 
 export function typographer(text: string): string {
+  // Defensive: only strings carry the String methods used below. A non-string
+  // value reaching here (e.g. a structured field rendered as if it were prose)
+  // must never throw `.replace is not a function` and abort a production
+  // prerender — coerce it away instead of crashing the whole build.
+  if (typeof text !== 'string') return ''
   if (!text) return text
 
   let result = text

@@ -5,11 +5,21 @@ export default function ResourceModule({ module }: { module: Module }) {
   const hasResources = module.resources && module.resources.length > 0
   const hasRelatedScriptures =
     module.relatedScriptures && module.relatedScriptures.length > 0
+  // forDeeperStudy is either a list of study items or a single prose blurb.
+  // Narrow once so the JSX never calls .map() on a string.
+  const forDeeperStudy = module.forDeeperStudy
+  const deeperStudyList = Array.isArray(forDeeperStudy) ? forDeeperStudy : null
+  const deeperStudyText =
+    typeof forDeeperStudy === 'string' ? forDeeperStudy.trim() : ''
   const hasDeeperStudy =
-    module.forDeeperStudy && module.forDeeperStudy.length > 0
+    (deeperStudyList?.length ?? 0) > 0 || deeperStudyText.length > 0
   const hasGreekVocab =
     module.greekVocabulary && module.greekVocabulary.length > 0
   const hasWeeklyChallenge = !!module.weeklyChallenge
+  // weeklyChallenge is either plain prose (a string) or a structured challenge
+  // ({ title, description, reminders[] }). Narrow once so the JSX can render
+  // each shape without passing an object into the typographer.
+  const weeklyChallenge = module.weeklyChallenge
 
   if (
     !hasResources &&
@@ -75,38 +85,44 @@ export default function ResourceModule({ module }: { module: Module }) {
       {hasDeeperStudy && (
         <div className="mt-10">
           <p className="module-sublabel mb-4">FOR DEEPER STUDY</p>
-          <div className="space-y-3">
-            {module.forDeeperStudy!.map((item, i) => (
-              <div
-                key={i}
-                className="py-3"
-                style={{ borderBottom: '1px solid var(--color-border)' }}
-              >
-                <div className="flex items-baseline gap-3">
-                  <span className="vw-small text-muted uppercase">
-                    {item.type}
-                  </span>
-                  {item.url ? (
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="vw-body hover:text-gold transition-colors duration-300"
-                    >
-                      {item.title} &rarr;
-                    </a>
-                  ) : (
-                    <span className="vw-body">{item.title}</span>
+          {deeperStudyList ? (
+            <div className="space-y-3">
+              {deeperStudyList.map((item, i) => (
+                <div
+                  key={i}
+                  className="py-3"
+                  style={{ borderBottom: '1px solid var(--color-border)' }}
+                >
+                  <div className="flex items-baseline gap-3">
+                    <span className="vw-small text-muted uppercase">
+                      {item.type}
+                    </span>
+                    {item.url ? (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="vw-body hover:text-gold transition-colors duration-300"
+                      >
+                        {item.title} &rarr;
+                      </a>
+                    ) : (
+                      <span className="vw-body">{item.title}</span>
+                    )}
+                  </div>
+                  {item.note && (
+                    <p className="vw-small mt-1 text-secondary">
+                      {typographer(item.note)}
+                    </p>
                   )}
                 </div>
-                {item.note && (
-                  <p className="vw-small mt-1 text-secondary">
-                    {typographer(item.note)}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <p className="vw-body leading-relaxed text-secondary">
+              {typographer(deeperStudyText)}
+            </p>
+          )}
         </div>
       )}
 
@@ -139,9 +155,40 @@ export default function ResourceModule({ module }: { module: Module }) {
           >
             WEEKLY CHALLENGE
           </p>
-          <p className="vw-body leading-relaxed">
-            {typographer(module.weeklyChallenge || '')}
-          </p>
+          {typeof weeklyChallenge === 'string' ? (
+            <p className="vw-body leading-relaxed">
+              {typographer(weeklyChallenge)}
+            </p>
+          ) : weeklyChallenge ? (
+            <div className="space-y-3">
+              {weeklyChallenge.title && (
+                <p className="vw-body leading-relaxed font-semibold">
+                  {typographer(weeklyChallenge.title)}
+                </p>
+              )}
+              {weeklyChallenge.description && (
+                <p className="vw-body leading-relaxed">
+                  {typographer(weeklyChallenge.description)}
+                </p>
+              )}
+              {weeklyChallenge.reminders &&
+                weeklyChallenge.reminders.length > 0 && (
+                  <ul className="mt-2 space-y-2">
+                    {weeklyChallenge.reminders.map((r, i) => (
+                      <li key={i} className="vw-small text-secondary">
+                        {r.time && (
+                          <span className="text-muted uppercase">
+                            {r.time}
+                            {r.prompt ? ' — ' : ''}
+                          </span>
+                        )}
+                        {r.prompt ? typographer(r.prompt) : ''}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+            </div>
+          ) : null}
         </div>
       )}
     </div>
