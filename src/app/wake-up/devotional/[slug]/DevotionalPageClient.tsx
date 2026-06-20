@@ -621,31 +621,52 @@ export default function DevotionalPageClient({
                   style={{ borderColor: 'var(--color-border)' }}
                 >
                   <p className="text-label vw-small mb-3 text-gold">LIBRARY</p>
-                  {/* Only links that resolve to real, distinct surfaces. The
-                      previous Notes/Highlights/Chat-History/?tab= items all
-                      silently landed on the default Daily Bread view — removed
-                      until those views exist (see DevotionalLibraryRail). */}
+                  {/* F-030: every item now resolves to a real, deep-linked
+                      section of the unified retrieval rail (`/library?tab=`).
+                      No more dead `?tab=` links that silently landed on the
+                      default view — these target the live tablist. */}
                   <div className="grid gap-2">
                     <Link
                       href="/daily-bread"
-                      className="block border px-3 py-2 text-secondary"
+                      className="block border px-3 py-2 text-secondary affordance"
                       style={{ borderColor: 'var(--color-border)' }}
                     >
                       Today’s Reading
                     </Link>
                     <Link
-                      href="/library"
-                      className="block border px-3 py-2 text-secondary"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Your Library
-                    </Link>
-                    <Link
-                      href="/saved"
-                      className="block border px-3 py-2 text-secondary"
+                      href="/library?tab=bookmarks"
+                      className="block border px-3 py-2 text-secondary affordance"
                       style={{ borderColor: 'var(--color-border)' }}
                     >
                       Bookmarks
+                    </Link>
+                    <Link
+                      href="/library?tab=highlights"
+                      className="block border px-3 py-2 text-secondary affordance"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      Highlights
+                    </Link>
+                    <Link
+                      href="/library?tab=notes"
+                      className="block border px-3 py-2 text-secondary affordance"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      Notes
+                    </Link>
+                    <Link
+                      href="/library?tab=archive"
+                      className="block border px-3 py-2 text-secondary affordance"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      Archive
+                    </Link>
+                    <Link
+                      href="/library"
+                      className="block border px-3 py-2 text-secondary affordance"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      Full Library
                     </Link>
                   </div>
                 </div>

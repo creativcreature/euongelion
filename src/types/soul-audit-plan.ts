@@ -15,6 +15,22 @@ export interface Endnote {
   id: number
   source: string
   note: string
+  /**
+   * Structured classification of the grounded source this endnote attributes,
+   * added for the grounded weave (F-027). Optional so legacy/curated producers
+   * that emit plain `{id, source, note}` endnotes stay valid.
+   *
+   * - `scripture`  the verbatim anchor passage (ref + translation)
+   * - `voice`      an attributed historic-voice quote actually woven into the body
+   * - `lexicon`    a Hebrew/Greek word study grounded in a real lexicon entry
+   */
+  kind?: 'scripture' | 'voice' | 'lexicon'
+  /**
+   * Where in the day this source is used, e.g. a Scripture reference, a word's
+   * Strong's number, or the attribution. Free-form, always derived from real
+   * grounded material — never an invented citation.
+   */
+  reference?: string
 }
 
 export interface CrossReference {

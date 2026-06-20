@@ -191,12 +191,14 @@ export async function runGenerationDay(
       dayNumber,
     })
 
-    // Grounding gate — never save a day that smuggled in an ungrounded
-    // citation; reject so the chain re-rolls it.
+    // Grounding + depth gate — never save a day that smuggled in an ungrounded
+    // citation OR came back thin/incomplete; reject so the chain re-rolls it.
+    // Both checks live in weave.verification (F-027 grounding + F-028 depth).
     if (!weave.verification.ok) {
+      const issues = weave.verification.issues.join('; ')
       console.error(
-        `[generation-runner] Day ${dayNumber} failed grounding verification:`,
-        weave.verification.issues.join('; '),
+        `[generation-runner] Day ${dayNumber} failed verification (grounding/depth):`,
+        issues,
       )
       emitSoulAuditTelemetry('generation_fail', {
         mode: 'reading',
@@ -208,19 +210,23 @@ export async function runGenerationDay(
         inputTokens: weave.meta.inputTokens,
         outputTokens: weave.meta.outputTokens,
         durationMs: Date.now() - startedAt,
-        reason: 'grounding_verification_failed',
+        reason: `verification_failed: ${issues}`,
       })
       await updateJob(jobId, {
         status: 'error',
-        error: `Day ${dayNumber} failed grounding verification.`,
+        error: `Day ${dayNumber} failed verification: ${issues}`,
         generating_since: null,
       })
-      return { ok: false, status: 500, error: 'grounding verification failed' }
+      return {
+        ok: false,
+        status: 500,
+        error: `verification failed: ${issues}`,
+      }
     }
 
     const parsed: DayContent = weave.content
     console.info(
-      `[generation-runner] Day ${dayNumber} grounded: ${weave.meta.words}w · ${weave.meta.sourceCount} sources · ${weave.meta.wordStudyCount} word studies · ${weave.meta.model} · verified`,
+      `[generation-runner] Day ${dayNumber} grounded: ${weave.meta.words}w · ${weave.meta.sourceCount} sources · ${weave.meta.wordStudyCount} word studies · ${weave.meta.endnoteCount} endnotes · ${weave.meta.model} · verified`,
     )
 
     const supabase = createAdminClient()
@@ -497,9 +503,10 @@ export async function runDeepDive(job: DeepDiveJob): Promise<DeepDiveResult> {
   })
 
   if (!weave.verification.ok) {
+    const issues = weave.verification.issues.join('; ')
     console.error(
-      `[generation-runner] Deep dive day ${job.dayNumber} failed grounding verification:`,
-      weave.verification.issues.join('; '),
+      `[generation-runner] Deep dive day ${job.dayNumber} failed verification (grounding/depth):`,
+      issues,
     )
     emitSoulAuditTelemetry('generation_fail', {
       mode: 'deepdive',
@@ -509,9 +516,9 @@ export async function runDeepDive(job: DeepDiveJob): Promise<DeepDiveResult> {
       inputTokens: weave.meta.inputTokens,
       outputTokens: weave.meta.outputTokens,
       durationMs: Date.now() - startedAt,
-      reason: 'grounding_verification_failed',
+      reason: `verification_failed: ${issues}`,
     })
-    return { ok: false, status: 500, error: 'grounding verification failed' }
+    return { ok: false, status: 500, error: `verification failed: ${issues}` }
   }
 
   const tier3: Tier3Extended = {

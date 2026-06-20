@@ -8613,6 +8613,153 @@ body:not(.rhythm-enabled) .rhythm-block-image {
 }
 
 /* ============================================================================
+   PERFORMANCE LOCKDOWN — containment guards (F-041 / F-042)
+   ============================================================================
+   Single, near-last-in-file block of structural guards that kill horizontal
+   overflow (F-041) and reserve space for media to stop layout shift (F-042),
+   WITHOUT clipping the newspaper shells. The shells (.newspaper-home /
+   .newspaper-reading / .mock-home / .mock-paper, html, body) intentionally
+   keep `overflow-x: visible` so `position: sticky` nav keeps working — an
+   `overflow: hidden|clip` on any sticky ancestor silently disables sticky.
+   The layout-overflow contract test pins that `visible` on purpose. So instead
+   of clipping, we make the OFFENDERS unable to exceed the viewport:
+
+     1. Media never wider than its box (raw <img>, svg, video, canvas, picture).
+     2. Long unbreakable strings (Greek/Hebrew/transliteration, scripture refs,
+        URLs, source labels, code) wrap instead of pushing the column wide.
+     3. Known flex/grid scroll rails carry `min-width: 0` so a long child can
+        shrink instead of forcing the row past its container (classic flexbox
+        overflow cause).
+     4. Markdown-emitted pre/code/table get scroll containment + a width cap so
+        an authored fenced block or wide table never opens a page scrollbar.
+     5. Late-loading raster banners reserve vertical space (aspect-ratio /
+        min-height) so the reader header image doesn't shift content on load.
+
+   No new colors, no new fonts, no font-family on heading element selectors
+   (Tailwind v4 layer gotcha). Tokens only.
+   ============================================================================ */
+
+/* ---- 1. Media containment (F-041) -------------------------------------- */
+/* Safety net: no raster/vector/embed can ever be wider than its container, so
+   a stray <img> without `w-full` (or any future one) can't open a page
+   scrollbar. `height: auto` keeps raw <img> aspect intact. next/image with
+   `fill` is position:absolute inside an aspect-ratio'd box and is unaffected. */
+img,
+svg,
+video,
+canvas,
+picture,
+iframe,
+embed,
+object {
+  max-width: 100%;
+}
+img:not([width]):not([height]) {
+  height: auto;
+}
+
+/* ---- 2. Long-string wrapping (F-041) ----------------------------------- */
+/* Foreign-script + reference + URL + source surfaces that can carry a single
+   long unbreakable token. `overflow-wrap: anywhere` only breaks when there is
+   no other break opportunity, so normal copy is unaffected. Greek/Hebrew
+   word-study headwords (VocabModule), original-language Scripture lines
+   (ScriptureModule), inline WordNote words, and chat citation/source URLs all
+   route through one of these classes/elements. */
+.vocab-headword,
+.scripture-original,
+.wordnote-word,
+.wordnote-source,
+.chat-source-url,
+.series-card-scripture-reference,
+.bible365-day-num,
+.text-serif-italic,
+code,
+kbd,
+samp {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+/* Meta / caption atoms that frequently carry transliterations, pronunciations,
+   source URLs, and reference tokens. `break-word` only acts as a last resort. */
+.vw-small,
+.module-sublabel {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+/* Reading prose: allow hyphenation + anywhere-wrap so a long URL or compound
+   transliteration inside a paragraph wraps rather than overflowing the column.
+   `pretty`/`balance` text-wrap (set elsewhere) is preserved — this only adds a
+   last-resort break point. */
+.type-prose,
+.vw-body,
+.devotional-prose p,
+.prose p,
+.reading-flow p,
+.reading-flow li {
+  overflow-wrap: break-word;
+}
+
+/* ---- 3. Flex/grid shrink guards (F-041) -------------------------------- */
+/* Flex children default to `min-width: auto` (= content width) and so refuse
+   to shrink below their content, forcing the row wider than its parent. Pin
+   the known horizontal scroll/flex rails to `min-width: 0` so they shrink and
+   scroll internally instead of leaking. These are all self-contained scroll
+   rails (overflow-x: auto on themselves), so the guard only prevents them
+   pushing an ancestor wide. */
+.mock-mobile-nav-inline,
+.mock-mobile-nav-main-links,
+.print-rail-viewport,
+.browse-rail-viewport,
+.home-meta-nav {
+  min-width: 0;
+}
+
+/* ---- 4. Markdown pre/code/table containment (F-041) -------------------- */
+/* ReactMarkdown emits raw <pre>/<table> for fenced code + GFM tables with no
+   width constraint. Without this, an authored code block or wide table opens a
+   horizontal page scrollbar on the daily-bread / devotional reader. Contain
+   the scroll to the block itself. */
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+}
+pre code {
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+.type-prose table,
+.reading-flow table,
+.devotional-prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---- 5. Late-loading media space reservation (F-042 / CLS) ------------- */
+/* The substack source banner on the devotional reader is a raw <img
+   class="w-full h-auto"> with no intrinsic dimensions known at render time, so
+   its height is 0 until the bitmap loads → content jumps down on load. Reserve
+   a sensible editorial banner ratio so layout is stable; the image still scales
+   to its true ratio once decoded (object-fit cover inside the reserved box).
+   16/9 is the common substack cover ratio; min-height caps the reserved space
+   on narrow phones. */
+.devotional-substack-banner {
+  margin: 0;
+}
+.devotional-substack-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--color-surface, rgba(0, 0, 0, 0.04));
+}
+
+/* ============================================================================
    MOTION LOCKDOWN — canonical contract (F-016 / F-017 / F-018)
    ============================================================================
    Single, last-in-file block so it reliably outranks the scattered

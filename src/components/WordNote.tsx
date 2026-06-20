@@ -108,7 +108,7 @@ export default function WordNote({
             {note.term}
           </span>
           <span
-            className="text-serif-italic mt-1 block"
+            className="wordnote-word text-serif-italic mt-1 block"
             style={{ fontSize: '1.35rem', lineHeight: 1.15 }}
           >
             {note.word}
@@ -119,7 +119,9 @@ export default function WordNote({
           <span className="vw-body mt-2 block leading-relaxed text-secondary">
             {note.gloss}
           </span>
-          <span className="vw-small mt-3 block text-muted">{note.source}</span>
+          <span className="wordnote-source vw-small mt-3 block text-muted">
+            {note.source}
+          </span>
         </span>
       )}
     </span>

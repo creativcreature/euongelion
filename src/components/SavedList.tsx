@@ -123,6 +123,17 @@ export default function SavedList() {
       <header className="mb-6">
         <p className="text-label vw-small mb-1 text-gold">SAVED</p>
         <h1 className="vw-heading-md">Your saved devotionals</h1>
+        {/* One predictable retrieval pattern (F-030): bookmarks also live in
+            the unified library rail alongside highlights, notes, and the plan
+            archive. Point there so the two surfaces converge. */}
+        <p className="vw-small mt-2 text-muted">
+          <Link
+            href="/library?tab=bookmarks"
+            className="link-highlight text-label"
+          >
+            VIEW IN YOUR FULL LIBRARY →
+          </Link>
+        </p>
       </header>
 
       {error && (

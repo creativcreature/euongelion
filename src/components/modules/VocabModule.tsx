@@ -27,6 +27,7 @@ export default function VocabModule({ module }: { module: Module }) {
       {/* Scale + Font Pairing — massive word in Instrument Serif */}
       <div className="relative">
         <p
+          className="vocab-headword"
           style={{
             fontFamily: 'var(--font-family-serif)',
             fontSize: 'clamp(3rem, 8vw, 6rem)',
@@ -68,19 +69,24 @@ export default function VocabModule({ module }: { module: Module }) {
             {module.wordByWord.map((entry, i) => (
               <div
                 key={i}
-                className="flex items-baseline gap-4 py-2"
+                className="flex flex-wrap items-baseline gap-4 py-2"
                 style={{ borderBottom: '1px solid var(--color-border)' }}
               >
                 <span
                   className="text-serif-italic"
-                  style={{ minWidth: '5rem' }}
+                  style={{ minWidth: 0, flex: '0 1 auto' }}
                 >
                   {entry.word}
                 </span>
-                <span className="vw-small text-muted">
+                <span className="vw-small text-muted" style={{ minWidth: 0 }}>
                   {entry.transliteration}
                 </span>
-                <span className="vw-small text-secondary">{entry.meaning}</span>
+                <span
+                  className="vw-small text-secondary"
+                  style={{ minWidth: 0 }}
+                >
+                  {entry.meaning}
+                </span>
               </div>
             ))}
           </div>

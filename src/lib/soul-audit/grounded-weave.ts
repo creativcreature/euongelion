@@ -93,6 +93,9 @@ export interface GroundedDayResult {
     /** How many inline `{{wn:id|surface}}` markers were emitted into the body. */
     wordNoteCount: number
     sourceCount: number
+    /** How many structured endnotes were recorded (scripture + woven voices +
+     *  lexicon studies). Used for observability — every entry is grounded. */
+    endnoteCount: number
     /**
      * Real provider-reported token usage for THIS weave call, surfaced so the
      * generation runner can write the cost ledger. These come from the actual
@@ -283,6 +286,140 @@ export function injectWordNoteMarkers(
   return { body: lines.join('\n'), emittedIds }
 }
 
+// ── depth / length / coherence gate (F-028) ─────────────────────────
+//
+// A generation that comes back thin (truncated, a near-empty body, or one that
+// silently dropped a required woven element) must NOT ship. The product's
+// promise is a substantial, fully-woven grounded reading — so depth shortfalls
+// FAIL the verification gate (the runner re-rolls), exactly like an ungrounded
+// citation. There is no canned/padded fallback: depth comes only from a real,
+// complete weave of the grounded corpus.
+
+/** Per-mode minimum bar. The reading prompt asks for ~950–1,150 words and the
+ *  deep dive for ~3,000–3,800; we floor well under the ask so only a genuinely
+ *  thin/truncated result trips, never a slightly-short-but-complete one. */
+const DEPTH_FLOOR = {
+  reading: {
+    minWords: 600,
+    // A complete reading must quote the anchor Scripture as a blockquote and
+    // close with a prayer (both are required elements of the woven format).
+    requireScriptureQuote: true,
+    requirePrayer: true,
+    minHeadings: 0,
+  },
+  deepdive: {
+    minWords: 1800,
+    requireScriptureQuote: false, // deep dive may reference more than it quotes
+    requirePrayer: false,
+    minHeadings: 3, // the deep-dive prompt asks for ## section headings
+  },
+} as const
+
+function countWords(s: string): number {
+  return s.split(/\s+/).filter(Boolean).length
+}
+
+/** Does the body carry a verbatim Scripture blockquote whose text overlaps the
+ *  provided verse? We check for a markdown blockquote AND that it shares a real
+ *  run of the anchor text — so an empty/decorative `>` line doesn't satisfy it. */
+function hasScriptureBlockquote(body: string, scriptureText: string): boolean {
+  const quoteLines = body
+    .split('\n')
+    .filter((l) => l.trimStart().startsWith('>'))
+    .map((l) => l.replace(/^\s*>+\s?/, '').trim())
+    .filter(Boolean)
+  if (quoteLines.length === 0) return false
+  // The anchor's first several significant words should appear in some quote
+  // line (verbatim Scripture is injected, so this is an overlap check, not a
+  // similarity guess).
+  const anchorWords = scriptureText
+    .toLowerCase()
+    .replace(/[^a-z\s]/g, ' ')
+    .split(/\s+/)
+    .filter((w) => w.length > 2)
+  if (anchorWords.length === 0) return quoteLines.length > 0
+  // Require the anchor's first three significant words to appear, in order, in
+  // some quote line. We compare significant-word sequences (dropping ≤2-char
+  // filler the same way on both sides) so intervening short words don't break a
+  // genuine match. Three words is strict enough to reject an empty/decorative
+  // `>` line or an unrelated quote, while tolerating a quote that stops short of
+  // the verse's tail clause (the model may quote only the relevant portion).
+  const probe = anchorWords.slice(0, 3).join(' ')
+  const quoteWords = quoteLines
+    .join(' ')
+    .toLowerCase()
+    .replace(/[^a-z\s]/g, ' ')
+    .split(/\s+/)
+    .filter((w) => w.length > 2)
+    .join(' ')
+  return quoteWords.includes(probe)
+}
+
+/**
+ * Length/depth + basic narrative-coherence checks. Returns the issues found
+ * (empty array = passes). Coherence here is structural, not semantic: a real
+ * woven day has multiple paragraphs and the required elements present — a
+ * single-block stub or one missing its Scripture/prayer is incoherent for our
+ * format and is rejected rather than shipped thin.
+ */
+export function checkDepth(params: {
+  body: string
+  prayer: string
+  mode: WeaveMode
+  scriptureText: string
+}): string[] {
+  const issues: string[] = []
+  const floor = DEPTH_FLOOR[params.mode]
+  const words = countWords(params.body)
+
+  if (words < floor.minWords) {
+    issues.push(
+      `thin generation: body has ${words} words, below the ${floor.minWords}-word ${params.mode} floor`,
+    )
+  }
+
+  // Narrative coherence (structural): a complete reading is multi-paragraph
+  // prose, not a one-line stub. Count blank-line-separated blocks of real prose
+  // (blockquotes excluded so a lone quote doesn't count as a paragraph).
+  const proseParagraphs = params.body
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter(
+      (p) => p && !p.split('\n').every((l) => l.trimStart().startsWith('>')),
+    )
+  if (proseParagraphs.length < 2) {
+    issues.push(
+      `incoherent structure: only ${proseParagraphs.length} prose paragraph(s) — expected multi-paragraph woven prose`,
+    )
+  }
+
+  if (
+    floor.requireScriptureQuote &&
+    !hasScriptureBlockquote(params.body, params.scriptureText)
+  ) {
+    issues.push(
+      'missing required element: anchor Scripture is not quoted verbatim as a blockquote',
+    )
+  }
+
+  if (floor.requirePrayer && countWords(params.prayer) < 8) {
+    issues.push(
+      'missing required element: closing prayer is absent or too short',
+    )
+  }
+
+  if (floor.minHeadings > 0) {
+    const headingCount = (params.body.match(/^#{1,6}\s+\S/gm) ?? []).length
+    if (headingCount < floor.minHeadings) {
+      issues.push(
+        `thin deep dive: ${headingCount} section heading(s), below the ${floor.minHeadings} expected for long-form structure`,
+      )
+    }
+  }
+
+  return issues
+}
+
 // ── verification ─────────────────────────────────────────────────────
 
 function verify(params: {
@@ -347,6 +484,101 @@ function verify(params: {
   }
 
   return { ok: issues.length === 0, issues: [...new Set(issues)] }
+}
+
+// ── structured endnotes (F-027) ──────────────────────────────────────
+//
+// Every grounded day records WHERE its real sources are used as structured
+// endnotes. The anti-fabrication guarantee mirrors the rest of the file:
+//   - The ONLY endnoted sources are (1) the verbatim anchor Scripture,
+//     (2) the historic-voice quotes ACTUALLY woven into the body, and
+//     (3) the real lexicon word studies for this verse. Nothing is invented.
+//   - A retrieved-but-unused voice is NOT endnoted: we only attribute a source
+//     if its author name actually appears in the generated prose. This prevents
+//     a "citation" the reader never sees, and is the same closed-system rule
+//     the verification pass enforces in the other direction.
+//   - The `note` text is descriptive only ("Quoted in this day's reading…");
+//     the load-bearing attribution (`source`) and `reference` come from real
+//     retrieval/lexicon metadata, never from the model.
+
+interface EndnoteSource {
+  source: string // attribution string (author, work) from attributionFromChunk
+  content: string // the verbatim retrieved excerpt
+}
+
+/**
+ * Build the structured endnote list for a generated day. Detects which
+ * retrieved voices were genuinely woven into `body` (by author-name presence)
+ * so we never attribute an unused source, then records Scripture + used voices
+ * + lexicon studies as classified endnotes.
+ */
+export function buildStructuredEndnotes(params: {
+  body: string
+  scriptureReference: string
+  translation: string
+  sources: EndnoteSource[]
+  studies: WordStudy[]
+}): Endnote[] {
+  const endnotes: Endnote[] = []
+  let id = 1
+  const low = params.body.toLowerCase()
+
+  // [1] The anchor Scripture — always present (injected verbatim from corpus).
+  endnotes.push({
+    id: id++,
+    kind: 'scripture',
+    source: `${params.scriptureReference} (${params.translation})`,
+    reference: params.scriptureReference,
+    note: 'Anchor Scripture, quoted verbatim from the Euangelion corpus.',
+  })
+
+  // [2..] Historic voices — ONLY those actually woven into the body. We treat a
+  // source as used when its author surname (the first attribution token) appears
+  // in the prose. This refuses to attribute a retrieved-but-unquoted source.
+  for (const s of params.sources) {
+    const attribution = (s.source || '').trim()
+    if (!attribution) continue
+    // attribution looks like "Thomas à Kempis, Imitation Of Christ" → author
+    // segment is everything before the first comma.
+    const authorSegment = attribution.split(',')[0]?.trim() ?? ''
+    if (!authorSegment) continue
+    // Use the most distinctive author token (longest word ≥ 4 chars, e.g.
+    // "Kempis", "Pascal", "Augustine") so a common word doesn't false-positive.
+    const distinctive = authorSegment
+      .split(/\s+/)
+      .map((w) => w.replace(/[^\p{L}]/gu, ''))
+      .filter((w) => w.length >= 4)
+      .sort((a, b) => b.length - a.length)[0]
+    if (!distinctive) continue
+    if (!low.includes(distinctive.toLowerCase())) continue // not woven in → skip
+    // De-dupe: a single source may have multiple chunks; attribute it once.
+    if (endnotes.some((e) => e.kind === 'voice' && e.source === attribution)) {
+      continue
+    }
+    const excerpt = s.content.replace(/\s+/g, ' ').trim().slice(0, 240)
+    endnotes.push({
+      id: id++,
+      kind: 'voice',
+      source: attribution,
+      reference: attribution,
+      note: excerpt
+        ? `Quoted in this day's reading from the Euangelion reference library: "${excerpt}${s.content.length > 240 ? '…' : ''}"`
+        : "Quoted in this day's reading from the Euangelion reference library.",
+    })
+  }
+
+  // [..] Lexicon word studies — every real study grounding this verse.
+  for (const w of params.studies) {
+    endnotes.push({
+      id: id++,
+      kind: 'lexicon',
+      source: w.source, // e.g. "Brown-Driver-Briggs (Strong's H7965)"
+      reference: w.strong,
+      note: `Word study of ${w.word} (${w.xlit}, ${w.strong}): ${w.gloss}.`,
+    })
+  }
+
+  return endnotes
 }
 
 // ── prompts ──────────────────────────────────────────────────────────
@@ -564,6 +796,20 @@ export async function generateGroundedDay(
     groundingText,
   })
 
+  // Length / depth / narrative-coherence gate (F-028). A thin or structurally
+  // incomplete day FAILS verification so the runner re-rolls it — we never ship
+  // truncated content and never pad it with anything ungrounded.
+  const depthIssues = checkDepth({
+    body,
+    prayer: (parsed.prayer ?? '').trim(),
+    mode,
+    scriptureText: verse.text,
+  })
+  if (depthIssues.length > 0) {
+    verification.issues.push(...depthIssues)
+    verification.ok = false
+  }
+
   // 6b) Inject inline WordNote markers AFTER verification ran on the clean
   //     prose. Markers reference ONLY real bank ids (resolved by Strong's
   //     number from this verse's grounded lexicon studies) and only wrap a
@@ -575,11 +821,18 @@ export async function generateGroundedDay(
   )
 
   // 7) map to DayContent (loosened: woven body + structurally-grounded metadata)
-  const endnotes: Endnote[] = sources.map((s, i) => ({
-    id: i + 1,
-    source: s.attribution,
-    note: 'Quoted from the Euangelion reference library.',
-  }))
+  //
+  // Structured endnotes (F-027): every endnote is tied to a REAL grounded source
+  // and classified by kind. Voices are attributed only when actually woven into
+  // the body — a retrieved-but-unused source is never falsely cited. We endnote
+  // the original (clean) body so a WordNote marker can't mask an author name.
+  const endnotes: Endnote[] = buildStructuredEndnotes({
+    body,
+    scriptureReference: verse.canonical,
+    translation,
+    sources,
+    studies,
+  })
   const primaryStudy = studies[0] ? wordStudyToHebrewGreek(studies[0]) : null
 
   let tier3Extended: Tier3Extended | null = null
@@ -638,6 +891,7 @@ export async function generateGroundedDay(
       wordStudyCount: studies.length,
       wordNoteCount: wordNoteIds.length,
       sourceCount: sources.length,
+      endnoteCount: endnotes.length,
       // Real provider usage from this call (the brain router / edge shim both
       // populate these from the Anthropic response). The runner ledgers them.
       inputTokens: result.inputTokens,

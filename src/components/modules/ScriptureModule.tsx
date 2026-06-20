@@ -84,7 +84,7 @@ export default function ScriptureModule({ module }: { module: Module }) {
           the original appears, per the project rule: Hebrew/Greek must
           never appear without transliteration alongside it. */}
       {module.greekOriginal && (
-        <p className="mt-6 text-serif-italic vw-small text-muted">
+        <p className="scripture-original mt-6 text-serif-italic vw-small text-muted">
           {module.greekOriginal}
         </p>
       )}
@@ -98,7 +98,7 @@ export default function ScriptureModule({ module }: { module: Module }) {
       )}
       {module.hebrewOriginal && (
         <p
-          className="mt-4 vw-small text-muted"
+          className="scripture-original mt-4 vw-small text-muted"
           style={{ fontFamily: 'var(--font-hebrew, serif)' }}
         >
           {module.hebrewOriginal}

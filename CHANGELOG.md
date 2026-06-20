@@ -5,6 +5,37 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Finish-line Wave 2: performance + reading-IA + engine depth (2026-06-13)
+
+Second finish-line wave — three disjoint streams, integrated + verified together:
+`type-check` clean, `lint` 0 errors, 102 files / 1419 tests pass, Workers build clean.
+
+- **Performance — no horizontal overflow + CLS/LCP (F-041/F-042/F-043):** global
+  containment guards (media `max-width:100%`, long-string `overflow-wrap:anywhere` on
+  foreign-script/reference/URL surfaces, `min-width:0` flex/grid shrink guards on
+  scroll rails, `overflow-x:auto` on markdown `pre`/tables); CLS reservation for the
+  late-loading substack banner (`aspect-ratio`); existing `content-visibility` LCP fix
+  preserved. Verified via Playwright at 375/390/768/1280/1440 both themes — **0
+  document horizontal overflow**, including an injected 120-char unbreakable token.
+  Pinned by new `layout-overflow-contract` + `lcp-cls-contract` tests. Did NOT clip
+  the newspaper shell (would break sticky nav) — offenders are constrained instead.
+- **Reading IA — left rail + day-progression chips (F-030/F-031):** mounted the
+  previously-orphaned `DevotionalLibraryRail` on `/library` as one unified retrieval
+  surface (today/bookmarks/highlights/notes/chat-history/archive/trash) with shareable
+  `?tab=` deep-links (SSR-safe Suspense wrapper, alias normalization so no URL is a
+  dead end) + a mobile drawer; converged `/saved` + the reader LIBRARY menu onto it.
+  Rebuilt the day selector into explicit PAST/NOW/NEXT/OPEN/LOCKED/REST/START chips +
+  a legend, with a `planCurrentDay` "where am I" computation. Gating honored via
+  `isUnlocked` (locked stays disabled; sabbath→REST; onboarding→START).
+- **Engine depth — structured endnotes + length/depth gate (F-027/F-028):** the
+  grounded weave now emits structured endnotes (scripture / voice / lexicon `kind` +
+  `reference`) **only for sources actually woven into the body** (no over-claiming, no
+  fabrication); a depth gate (≥600 words reading / ≥1800 deep-dive + coherence +
+  verbatim-anchor checks) **fails closed** — a thin generation re-rolls rather than
+  shipping, surfaced in telemetry, never a canned fallback.
+
+---
+
 ## ELEVATION v3.0 — Finish-line Wave 1: craft + a11y + reliability + WordNote/onboarding (2026-06-13)
 
 First wave of the push from ~60% toward the engineering finish line — four parallel

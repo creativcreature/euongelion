@@ -1,6 +1,7 @@
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import LibraryView from './LibraryView'
+import LibraryRailDeepLink from '@/components/LibraryRailDeepLink'
 import type { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
@@ -40,6 +41,27 @@ export default function LibraryPage() {
               </p>
             </header>
             <LibraryView />
+
+            {/* F-030: the unified retrieval rail. Series lifecycle (active /
+                saved / paused / completed) lives above; everything you can
+                retrieve — bookmarks, highlights, notes, chat history, plan
+                archive, trash — lives in this one deep-linkable, tabbed,
+                keyboard- and mobile-accessible surface (`?tab=<section>`). */}
+            <section
+              className="mt-12 border-t pt-10"
+              style={{ borderColor: 'var(--color-border)' }}
+              aria-labelledby="library-retrieval-heading"
+            >
+              <header className="mb-6">
+                <p className="text-label vw-small text-gold mb-2">
+                  RETRIEVE ANYTHING
+                </p>
+                <h2 id="library-retrieval-heading" className="vw-heading-md">
+                  Bookmarks, highlights, notes, and everything you have kept.
+                </h2>
+              </header>
+              <LibraryRailDeepLink />
+            </section>
           </div>
         </section>
         <SiteFooter />

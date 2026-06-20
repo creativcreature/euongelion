@@ -60,34 +60,114 @@ function getDayRecord(
 
 // ─── Sub-Components ─────────────────────────────────────────────────
 
+// F-031: a day's status relative to where the reader actually is in the plan
+// (`planCurrentDay`), so the chip always answers "where am I?" — past, now,
+// next, locked, rest, or the onboarding start. This is independent of which
+// day is being *viewed* (the viewed day gets a ring; the status comes from
+// real unlock + completion state, never bypassing gating).
+type DayChipStatus =
+  | 'start'
+  | 'past'
+  | 'now'
+  | 'next'
+  | 'upcoming'
+  | 'locked'
+  | 'rest'
+
+function chipStatusLabel(status: DayChipStatus): string {
+  switch (status) {
+    case 'start':
+      return 'START'
+    case 'past':
+      return 'DONE'
+    case 'now':
+      return 'NOW'
+    case 'next':
+      return 'NEXT'
+    case 'upcoming':
+      return 'OPEN'
+    case 'locked':
+      return 'LOCKED'
+    case 'rest':
+      return 'REST'
+  }
+}
+
+// Tone is expressed with the existing gold / border / muted tokens only —
+// no new colors. Gold marks the live "now"/"start"; completed reads gold-dim;
+// locked is muted + dashed; the rest sit quiet.
+function chipStyle(status: DayChipStatus, isViewing: boolean) {
+  const isLive = status === 'now' || status === 'start'
+  return {
+    borderColor: isViewing
+      ? 'var(--color-gold)'
+      : isLive
+        ? 'var(--color-gold)'
+        : 'var(--color-border)',
+    borderStyle: status === 'locked' ? ('dashed' as const) : ('solid' as const),
+    background: isViewing ? 'var(--color-active)' : 'transparent',
+    opacity: status === 'locked' ? 0.55 : 1,
+    cursor:
+      status === 'locked' ? ('not-allowed' as const) : ('pointer' as const),
+  }
+}
+
+function chipLabelColor(status: DayChipStatus): string {
+  if (status === 'now' || status === 'start' || status === 'next') {
+    return 'var(--color-gold)'
+  }
+  if (status === 'past') return 'var(--color-text-secondary)'
+  return 'var(--color-muted)'
+}
+
 function DaySelector({
   schedule,
   selectedDay,
+  planCurrentDay,
   plan,
   onSelect,
 }: {
   schedule: DayScheduleEntry[]
   selectedDay: number
+  planCurrentDay: number
   plan: PlanWithDays
   onSelect: (day: number) => void
 }) {
+  // The first unlocked, non-sabbath, not-yet-completed day AFTER the current
+  // day is the explicit "next" step — the one we nudge toward.
+  const nextDay = schedule
+    .filter((e) => {
+      if (e.status === 'sabbath' || !isUnlocked(e)) return false
+      if (e.day <= planCurrentDay) return false
+      const record = getDayRecord(plan, e.day)
+      return !record?.completed_at
+    })
+    .map((e) => e.day)
+    .sort((a, b) => a - b)[0]
+
+  function resolveStatus(entry: DayScheduleEntry): DayChipStatus {
+    const unlocked = isUnlocked(entry)
+    const completed = !!getDayRecord(plan, entry.day)?.completed_at
+    if (entry.status === 'sabbath') return 'rest'
+    if (entry.day === 0) return completed ? 'past' : 'start'
+    if (!unlocked) return 'locked'
+    if (entry.day === planCurrentDay) return 'now'
+    if (completed) return 'past'
+    if (entry.day === nextDay) return 'next'
+    return 'upcoming'
+  }
+
   return (
-    <nav className="mb-8 flex flex-wrap gap-2" aria-label="Day navigation">
+    <nav
+      className="mb-3 flex flex-wrap gap-2"
+      aria-label="Plan day progression"
+    >
       {schedule.map((entry) => {
         const unlocked = isUnlocked(entry)
-        const record = getDayRecord(plan, entry.day)
-        const completed = !!record?.completed_at
-        const isSabbath = entry.status === 'sabbath'
-        // Day 0 is the Wed-Sun onboarding primer (served before the Monday
-        // cycle). Label it as a start, not a bare "0".
-        const isOnboarding = entry.day === 0
-        const isActive = entry.day === selectedDay
-
-        let stateLabel = ''
-        if (isOnboarding) stateLabel = completed ? 'DONE' : 'START'
-        else if (isSabbath) stateLabel = 'REST'
-        else if (completed) stateLabel = 'DONE'
-        else if (!unlocked) stateLabel = 'LOCKED'
+        const status = resolveStatus(entry)
+        const isViewing = entry.day === selectedDay
+        const stateLabel = chipStatusLabel(status)
+        const dayLabel = entry.day === 0 ? 'Onboarding' : `Day ${entry.day}`
 
         return (
           <button
@@ -95,35 +175,54 @@ function DaySelector({
             type="button"
             disabled={!unlocked}
             onClick={() => onSelect(entry.day)}
-            className="relative min-w-[3rem] border px-3 py-2 text-center transition-colors"
-            style={{
-              borderColor: isActive
-                ? 'var(--color-gold)'
-                : 'var(--color-border)',
-              background: isActive ? 'var(--color-active)' : 'transparent',
-              opacity: unlocked ? 1 : 0.5,
-              cursor: unlocked ? 'pointer' : 'not-allowed',
-            }}
-            aria-current={isActive ? 'step' : undefined}
+            className="relative min-w-[3rem] border px-3 py-2 text-center transition-colors affordance"
+            style={{ ...chipStyle(status, isViewing), minHeight: '44px' }}
+            aria-current={isViewing ? 'step' : undefined}
             aria-disabled={!unlocked}
+            aria-label={`${dayLabel} — ${stateLabel}${
+              isViewing ? ' — now viewing' : ''
+            }`}
           >
             <span className="text-label block text-xs">
-              {isOnboarding ? '0' : entry.day}
+              {entry.day === 0 ? '0' : entry.day}
             </span>
-            {stateLabel && (
-              <span
-                className="block text-[0.6rem] uppercase"
-                style={{
-                  color: completed ? 'var(--color-gold)' : 'var(--color-muted)',
-                }}
-              >
-                {stateLabel}
-              </span>
-            )}
+            <span
+              className="block text-[0.6rem] uppercase"
+              style={{ color: chipLabelColor(status) }}
+            >
+              {stateLabel}
+            </span>
           </button>
         )
       })}
     </nav>
+  )
+}
+
+// A compact legend so the chip vocabulary (NOW / NEXT / DONE / LOCKED / REST)
+// is self-explanatory — the user never has to guess what a state means.
+function ProgressionLegend() {
+  const items: Array<[string, string]> = [
+    ['NOW', 'where you are'],
+    ['NEXT', 'your next step'],
+    ['DONE', 'completed'],
+    ['LOCKED', 'unlocks 7am'],
+    ['REST', 'sabbath'],
+  ]
+  return (
+    <ul
+      className="mb-8 flex flex-wrap gap-x-4 gap-y-1 list-none"
+      aria-label="What the day labels mean"
+    >
+      {items.map(([key, meaning]) => (
+        <li key={key} className="flex items-baseline gap-1">
+          <span className="text-label text-[0.6rem] uppercase text-gold">
+            {key}
+          </span>
+          <span className="vw-small text-muted">{meaning}</span>
+        </li>
+      ))}
+    </ul>
   )
 }
 
@@ -775,6 +874,27 @@ export default function DailyBreadView({
     [schedule, selectedDay],
   )
 
+  // F-031: the reader's true position in the plan — the earliest unlocked,
+  // non-sabbath day that has not been completed (session-local completions
+  // counted so the chip advances immediately on "Mark complete"). Falls back
+  // to the server-provided currentDay, then the first unlocked day. This drives
+  // the NOW / NEXT / PAST chip semantics; it never overrides real gating.
+  const planCurrentDay = useMemo(() => {
+    const unlockedDays = schedule
+      .filter((e) => e.status !== 'sabbath' && isUnlocked(e))
+      .map((e) => e.day)
+      .sort((a, b) => a - b)
+    const firstIncomplete = unlockedDays.find((day) => {
+      const record = getDayRecord(plan, day)
+      return !record?.completed_at && !localCompleted.has(day)
+    })
+    if (firstIncomplete !== undefined) return firstIncomplete
+    if (unlockedDays.includes(currentDay)) return currentDay
+    return unlockedDays.length > 0
+      ? unlockedDays[unlockedDays.length - 1]
+      : currentDay
+  }, [schedule, plan, currentDay, localCompleted])
+
   const dayRecord = useMemo(
     () => getDayRecord(plan, selectedDay),
     [plan, selectedDay],
@@ -878,13 +998,15 @@ export default function DailyBreadView({
         )}
       </header>
 
-      {/* Day selector */}
+      {/* Day selector — explicit past/now/next/locked/rest progression chips */}
       <DaySelector
         schedule={schedule}
         selectedDay={selectedDay}
+        planCurrentDay={planCurrentDay}
         plan={plan}
         onSelect={setSelectedDay}
       />
+      <ProgressionLegend />
 
       {/* Locked state */}
       {!isCurrentDayUnlocked && selectedEntry && (

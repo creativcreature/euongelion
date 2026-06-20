@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 import { useProgressStore } from '@/stores/progressStore'
@@ -13,6 +13,18 @@ type LibraryMenuKey =
   | 'chat-history'
   | 'archive'
   | 'trash'
+
+// Canonical tab order — the single source of truth used for rendering,
+// keyboard roving navigation, and URL deep-link resolution.
+const LIBRARY_TAB_ORDER: LibraryMenuKey[] = [
+  'today',
+  'bookmarks',
+  'highlights',
+  'notes',
+  'chat-history',
+  'archive',
+  'trash',
+]
 
 type BookmarkRow = {
   id: string
@@ -225,7 +237,9 @@ function mergeHighlightStyle(
   }
 }
 
-function normalizeInitialTab(value: string | undefined): LibraryMenuKey {
+export function normalizeLibraryTab(
+  value: string | null | undefined,
+): LibraryMenuKey {
   if (
     value === 'today' ||
     value === 'bookmarks' ||
@@ -238,7 +252,10 @@ function normalizeInitialTab(value: string | undefined): LibraryMenuKey {
     return value
   }
 
-  if (value === 'favorite-verses') return 'highlights'
+  // Aliases — keep every historical / human-friendly deep link resolving to a
+  // real tab so no URL is ever a dead end.
+  if (value === 'favorites' || value === 'favorite-verses') return 'highlights'
+  if (value === 'saved') return 'bookmarks'
   if (value === 'chat-notes') return 'chat-history'
   return 'today'
 }
@@ -246,12 +263,67 @@ function normalizeInitialTab(value: string | undefined): LibraryMenuKey {
 export default function DevotionalLibraryRail({
   className = '',
   initialTab = 'today',
+  onTabChange,
 }: {
   className?: string
   initialTab?: string
+  /**
+   * Notified whenever the active tab changes (button click or keyboard).
+   * The parent uses this to keep the page URL (`?tab=`) in sync so every
+   * section is deep-linkable. Optional — the rail is fully usable standalone.
+   */
+  onTabChange?: (tab: LibraryMenuKey) => void
 }) {
-  const [active, setActive] = useState<LibraryMenuKey>(
-    normalizeInitialTab(initialTab),
+  const [active, setActiveState] = useState<LibraryMenuKey>(
+    normalizeLibraryTab(initialTab),
+  )
+  // Mobile drawer: the section picker collapses behind a trigger on small
+  // screens so the rail is reachable without scrolling past every panel.
+  const [drawerOpen, setDrawerOpen] = useState(false)
+  const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({})
+
+  const selectTab = useCallback(
+    (key: LibraryMenuKey, opts?: { focus?: boolean }) => {
+      setActiveState(key)
+      setDrawerOpen(false)
+      onTabChange?.(key)
+      if (opts?.focus) {
+        // Defer so the ref points at the (re-rendered) selected tab.
+        requestAnimationFrame(() => tabRefs.current[key]?.focus())
+      }
+    },
+    [onTabChange],
+  )
+
+  // ARIA roving-tabindex keyboard model: Left/Right (and Up/Down for the
+  // stacked layout) move between tabs, Home/End jump to the ends.
+  const onTabKeyDown = useCallback(
+    (event: React.KeyboardEvent, key: LibraryMenuKey) => {
+      const index = LIBRARY_TAB_ORDER.indexOf(key)
+      let nextIndex: number | null = null
+      switch (event.key) {
+        case 'ArrowRight':
+        case 'ArrowDown':
+          nextIndex = (index + 1) % LIBRARY_TAB_ORDER.length
+          break
+        case 'ArrowLeft':
+        case 'ArrowUp':
+          nextIndex =
+            (index - 1 + LIBRARY_TAB_ORDER.length) % LIBRARY_TAB_ORDER.length
+          break
+        case 'Home':
+          nextIndex = 0
+          break
+        case 'End':
+          nextIndex = LIBRARY_TAB_ORDER.length - 1
+          break
+        default:
+          return
+      }
+      event.preventDefault()
+      selectTab(LIBRARY_TAB_ORDER[nextIndex], { focus: true })
+    },
+    [selectTab],
   )
   const [activeDays, setActiveDays] = useState<ActiveDayRow[]>([])
   const [activePlanToken, setActivePlanToken] = useState<string | null>(null)
@@ -408,8 +480,11 @@ export default function DevotionalLibraryRail({
     void loadLibrary()
   }, [])
 
+  // Keep the active tab in sync when the parent updates `initialTab` from the
+  // URL (deep link, browser back/forward). This is a one-way mirror — we do
+  // NOT fire onTabChange here, or back/forward would re-push the same entry.
   useEffect(() => {
-    setActive(normalizeInitialTab(initialTab))
+    setActiveState(normalizeLibraryTab(initialTab))
   }, [initialTab])
 
   useEffect(() => {
@@ -637,15 +712,16 @@ export default function DevotionalLibraryRail({
       archivePlans.length + completionRows.length + archivedArtifacts.length,
     trash: trashedArtifacts.length,
   } as const
-  const libraryTabs: Array<[LibraryMenuKey, string]> = [
-    ['today', 'Today + 7 Days'],
-    ['bookmarks', 'Bookmarks'],
-    ['highlights', 'Highlights'],
-    ['notes', 'Notes'],
-    ['chat-history', 'Chat History'],
-    ['archive', 'Archive'],
-    ['trash', 'Trash'],
-  ]
+  const TAB_LABELS: Record<LibraryMenuKey, string> = {
+    today: 'Today + 7 Days',
+    bookmarks: 'Bookmarks',
+    highlights: 'Highlights',
+    notes: 'Notes',
+    'chat-history': 'Chat History',
+    archive: 'Archive',
+    trash: 'Trash',
+  }
+  const activeLabel = TAB_LABELS[active]
 
   return (
     <section
@@ -656,28 +732,65 @@ export default function DevotionalLibraryRail({
         aria-label="Devotional library menu"
       >
         <p className="text-label vw-small mb-4 text-gold">LIBRARY</p>
+
+        {/* Mobile drawer trigger — the tablist is verbose on a phone, so it
+            collapses behind one tap. Hidden on desktop (md:hidden) where the
+            full list always shows. Touch target >= 44px. */}
+        <button
+          type="button"
+          className="text-label vw-small flex w-full items-center justify-between border px-3 py-3 text-left md:hidden affordance"
+          style={{
+            borderColor: 'var(--color-border)',
+            minHeight: '44px',
+            color: 'var(--color-text-primary)',
+          }}
+          aria-expanded={drawerOpen}
+          aria-controls="library-section-tablist"
+          onClick={() => setDrawerOpen((open) => !open)}
+        >
+          <span>
+            {activeLabel}
+            <span className="oldstyle-nums text-muted">
+              {' '}
+              · {counts[active]}
+            </span>
+          </span>
+          <span aria-hidden="true">{drawerOpen ? '✕' : '☰'}</span>
+        </button>
+
         <nav
-          className="grid gap-2"
+          id="library-section-tablist"
+          className={`gap-2 ${drawerOpen ? 'mt-2 grid' : 'hidden'} md:mt-0 md:grid`}
           role="tablist"
+          aria-orientation="vertical"
           aria-label="Daily Bread library sections"
         >
-          {libraryTabs.map(([key, label]) => (
+          {LIBRARY_TAB_ORDER.map((key) => (
             <button
               key={key}
               type="button"
-              onClick={() => setActive(key)}
+              ref={(node) => {
+                tabRefs.current[key] = node
+              }}
+              onClick={() => selectTab(key)}
+              onKeyDown={(event) => onTabKeyDown(event, key)}
               role="tab"
               id={`library-tab-${key}`}
               aria-selected={active === key}
               aria-controls={`library-panel-${key}`}
-              className={`text-label vw-small flex items-center justify-between border px-3 py-2 text-left ${
+              tabIndex={active === key ? 0 : -1}
+              className={`text-label vw-small flex items-center justify-between border px-3 py-2 text-left affordance ${
                 active === key
                   ? 'bg-surface-raised text-[var(--color-text-primary)]'
                   : 'text-muted'
               }`}
-              style={{ borderColor: 'var(--color-border)' }}
+              style={{
+                borderColor:
+                  active === key ? 'var(--color-gold)' : 'var(--color-border)',
+                minHeight: '44px',
+              }}
             >
-              <span>{label}</span>
+              <span>{TAB_LABELS[key]}</span>
               <span className="oldstyle-nums">{counts[key]}</span>
             </button>
           ))}

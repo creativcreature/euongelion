@@ -83,7 +83,7 @@ export default function ChatMessage({
           className={`vw-small leading-relaxed ${
             isUser ? '' : 'text-serif-italic'
           } text-secondary`}
-          style={{ whiteSpace: 'pre-wrap' }}
+          style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}
         >
           {typographer(message.content)}
         </p>
@@ -152,7 +152,7 @@ export default function ChatMessage({
                     {typographer(card.snippet)}
                   </p>
                   {(card.url || card.publisher || card.date) && (
-                    <p className="vw-small text-muted mt-1">
+                    <p className="chat-source-url vw-small text-muted mt-1">
                       {[card.publisher, card.date, card.url]
                         .filter(Boolean)
                         .join(' · ')}
