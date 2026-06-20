@@ -114,10 +114,18 @@ export async function fetchTodayDevotional(
     // Workers runtime — fs is not available; fall through to self-fetch.
   }
 
-  // Strategy 2: self-fetch via NEXT_PUBLIC_APP_URL (Cloudflare Workers)
-  const baseUrl = (
+  // Strategy 2: self-fetch via NEXT_PUBLIC_APP_URL (Cloudflare Workers).
+  // NEXT_PUBLIC_* is inlined at BUILD time, so a dev build can bake in
+  // http://localhost:3333 here. Strategy 2 only runs on Workers (where fs
+  // failed), and a localhost base is never reachable there — so treat any
+  // localhost/127.0.0.1 base as unset and fall back to the production origin.
+  // This makes the live self-fetch robust regardless of what the build inlined.
+  let baseUrl = (
     process.env.NEXT_PUBLIC_APP_URL || 'https://euangelion.app'
   ).replace(/\/$/, '')
+  if (/localhost|127\.0\.0\.1/.test(baseUrl)) {
+    baseUrl = 'https://euangelion.app'
+  }
 
   const url = `${baseUrl}/devotionals/${slug}.json`
 

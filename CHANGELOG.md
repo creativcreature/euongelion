@@ -5,6 +5,20 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Durable devotional SSR self-fetch (2026-06-13)
+
+`fetchTodayDevotional` (`src/lib/today-devotional.ts`) Strategy 2 (the Cloudflare
+Workers self-fetch) now ignores a `localhost`/`127.0.0.1` base and falls back to
+the production origin. `NEXT_PUBLIC_*` is inlined at **build** time, so a dev build
+can bake `http://localhost:3333` into the server bundle — which made the live
+self-fetch unreachable and degraded devotional / `/today` SSR to the "Preparing"
+loading state after ISR revalidation. The guard makes live SSR robust regardless
+of what the build inlined, removing the standing risk that an env-less rebuild
+(e.g. a stray GitHub→Cloudflare auto-deploy from `main`) regresses the reading
+routes. Strategy 1 (`fs.readFile`, used in dev/build) is unaffected. SA-004 / F-040.
+
+---
+
 ## ELEVATION v3.0 — Production-build fix: devotional reading SSR (2026-06-13)
 
 Deploy-runbook Step B (first real Workers production build of the elevation branch)
