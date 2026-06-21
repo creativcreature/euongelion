@@ -111,4 +111,19 @@ describe('injectWordNoteMarkers (grounded weave emission)', () => {
       emittedIds: [],
     })
   })
+
+  it('falls back to a homograph-safe bank term in the prose when verse studies miss the bank', () => {
+    const body = 'Even here, grace meets you before you could ever earn it.'
+    const { body: out, emittedIds } = injectWordNoteMarkers(body, [
+      unbankedStudy,
+    ])
+    expect(emittedIds).toContain('charis')
+    expect(out).toContain('{{wn:charis|grace}}')
+  })
+
+  it('does NOT fall back on generic homographs like "word" or "light"', () => {
+    const body = 'In a single word, light fell across the open page.'
+    const { emittedIds } = injectWordNoteMarkers(body, [unbankedStudy])
+    expect(emittedIds).toEqual([])
+  })
 })

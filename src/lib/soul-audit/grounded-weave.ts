@@ -205,6 +205,32 @@ const BANK_BY_STRONG: Map<string, (typeof WORDNOTE_BANK)[number]> = new Map(
   WORDNOTE_BANK.map((e) => [e.strong.toUpperCase(), e]),
 )
 
+// Bank ids eligible for the PROSE-anchored fallback: distinctly-theological
+// terms whose English→lexicon mapping is reliably meaningful wherever the word
+// appears in devotional prose. Generic homographs (word, light, know, hear,
+// wait, fear, create, return, truth, soul, spirit…) are deliberately excluded
+// from the fallback — they are too common/ambiguous in plain English to mark
+// confidently — but remain fully eligible via the precise verse-anchored path.
+const FALLBACK_ELIGIBLE_IDS = new Set<string>([
+  'shalom',
+  'eirene',
+  'chesed',
+  'agape',
+  'charis',
+  'pistis',
+  'elpis',
+  'berit',
+  'metanoia',
+  'soteria',
+  'chara',
+  'dikaiosyne',
+  'tsedeq',
+  'kavod',
+  'emunah',
+  'nacham',
+  'hamartia',
+])
+
 /** Escape a literal string for safe use inside a RegExp. */
 function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
@@ -221,24 +247,47 @@ export function injectWordNoteMarkers(
   body: string,
   studies: WordStudy[],
 ): { body: string; emittedIds: string[] } {
-  if (!body || studies.length === 0) return { body, emittedIds: [] }
+  if (!body) return { body, emittedIds: [] }
 
-  // Resolve each study's Strong's number to a real bank entry. De-dupe by id so
-  // we never emit the same note twice, and keep verse order (rarer words first).
+  // At most a few notes per reading — enough to enrich, never enough to clutter.
+  const MAX_MARKERS = 3
+
+  // PRIMARY: words of the anchor verse whose Strong's number is in the bank —
+  // the most precise word-studies (the gloss is the verse's own word). De-dupe
+  // by id so the same note never appears twice.
   const seenIds = new Set<string>()
-  const candidates: Array<{ id: string; term: string }> = []
+  const primary: Array<{ id: string; term: string }> = []
   for (const study of studies) {
     const entry = BANK_BY_STRONG.get((study.strong || '').toUpperCase())
-    if (!entry) continue // no bank entry for this Strong's number → no marker
+    if (!entry) continue // no bank entry for this Strong's number
     if (seenIds.has(entry.id)) continue
-    // Defensive re-check: the bank is the source of truth for the gloss; only a
-    // present, non-empty term is wrappable as surface text.
     const term = (entry.term || '').trim()
     if (!term) continue
     seenIds.add(entry.id)
-    candidates.push({ id: entry.id, term })
+    primary.push({ id: entry.id, term })
   }
-  if (candidates.length === 0) return { body, emittedIds: [] }
+
+  // FALLBACK: standard term→lexicon word-studies (faith→pistis, peace→shalom)
+  // for any bank entry whose English term actually appears in the exposition.
+  // These are well-known mappings whose glosses are verbatim public-domain
+  // lexicon (BDB / Strong's / Abbott-Smith); they surface a few studies when the
+  // anchor verse's own words don't overlap the small bank. Verse-anchored
+  // studies are always preferred; the fallback only fills up to MAX_MARKERS, and
+  // (like the primary path) it never touches the verbatim Scripture blockquote.
+  const fallback: Array<{ id: string; term: string }> = []
+  const bodyLower = body.toLowerCase()
+  for (const entry of WORDNOTE_BANK) {
+    if (seenIds.has(entry.id)) continue
+    if (!FALLBACK_ELIGIBLE_IDS.has(entry.id)) continue // homograph-safe terms only
+    const term = (entry.term || '').trim()
+    if (!term || !bodyLower.includes(term.toLowerCase())) continue
+    seenIds.add(entry.id)
+    fallback.push({ id: entry.id, term })
+  }
+
+  if (primary.length === 0 && fallback.length === 0) {
+    return { body, emittedIds: [] }
+  }
 
   // Mask the verbatim Scripture blockquote(s) so a marker never lands inside
   // quoted Scripture. Markdown blockquote lines start with ">". We only search
@@ -246,11 +295,13 @@ export function injectWordNoteMarkers(
   const lines = body.split('\n')
   const emittedIds: string[] = []
 
-  // Longer terms first so a multi-word term ("steadfast love") wins over a
-  // single word it contains.
-  candidates.sort((a, b) => b.term.length - a.term.length)
+  // Longer terms first within each group ("steadfast love" beats "love").
+  primary.sort((a, b) => b.term.length - a.term.length)
+  fallback.sort((a, b) => b.term.length - a.term.length)
+  const candidates = [...primary, ...fallback]
 
   for (const { id, term } of candidates) {
+    if (emittedIds.length >= MAX_MARKERS) break
     // Whole-word, case-insensitive, first occurrence in a NON-blockquote line
     // that is not already inside a marker.
     const re = new RegExp(`\\b(${escapeRegExp(term)})\\b`, 'i')

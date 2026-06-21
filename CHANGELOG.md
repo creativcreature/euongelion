@@ -5,6 +5,31 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Onboarding day rewritten + WordNote markers now emit (2026-06-13)
+
+The two things a stranger actually reads from a Wed–Sun start, fixed:
+
+- **Onboarding day is now a real, full-length, Scripture-grounded orientation
+  (F-032).** It was a thin stub with broken templated copy (`The season of
+${themes}…` interpolating internal machinery) and empty rich fields → flat
+  typography. `buildOnboardingDay` now composes a substantial, warm, pastoral
+  "Before You Begin" body grounded in the path's verbatim anchor Scripture; the
+  reader renders it through the same prose treatment as cycle days. (It remains a
+  composed orientation/bridge, not an LLM weave — the 7-day cycle is the bespoke
+  grounded result; swapping the bridge to a live LLM call was deliberately NOT done
+  the night before launch to avoid destabilizing the generation chain.)
+- **WordNote inline word-studies now actually appear in generated days (F-034).**
+  They emitted 0 because the 43-term bank rarely overlaps a given anchor verse's
+  studies. Added a **prose-anchored fallback** in `injectWordNoteMarkers`: when the
+  verse's own studies don't match the bank, surface up to 3 notes for
+  distinctly-theological bank terms that appear in the exposition (grace→*charis*,
+  peace→*shalom*, faith→*pistis*…), with verbatim public-domain glosses. Generic
+  homographs (word, light, know, hear…) are allowlisted OUT to stay accurate, and
+  the verbatim Scripture blockquote is never touched. Verse-anchored studies are
+  still preferred; fallback only fills the gap. 9 marker tests + 22 total pass.
+
+---
+
 ## ELEVATION v3.0 — HOTFIX: Soul Audit build 500 (missing onboarding columns) (2026-06-13)
 
 Live grounded-audit verification (rule #10) caught a regression shipped in Wave 1: the

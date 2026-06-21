@@ -571,17 +571,20 @@ export function buildOnboardingDay(params: {
       ? `Read this onboarding day now, then return daily for your ${params.onboardingDays}-day rhythm primer. Full cycle unlock begins Monday at 7:00 AM local time.`
       : 'Read this onboarding day now. Full cycle unlock begins Monday at 7:00 AM local time.'
 
-  const themes = focusPhrase(params.userResponse)
-  const thematicOpener = themes
-    ? `The season of ${themes} brought you here. `
-    : ''
-
   return {
     day: 0,
-    title: `Onboarding: ${variantLabel}`,
+    title: 'Before You Begin',
     scriptureReference: params.firstDay.scriptureReference,
     scriptureText: params.firstDay.scriptureText,
-    reflection: `${thematicOpener}${intro}\n\nYour full 5-day curated path is already prepared. Start with this orientation and move into Day 1 with honesty.\n\nYour first day is "${firstDayTitle}".`,
+    reflection: [
+      "You've done something quietly brave — you put words to what you're carrying and let it lead you somewhere. That is where every honest walk with God begins: not with having it all figured out, but with showing up.",
+      `Today is not the first day of the work — it is the day before, a threshold to cross slowly. ${intro}`,
+      '**Sit with the verse above.**',
+      "Read it more than once, unhurried. Don't rush to apply it; let it be a doorway rather than a task. You do not have to feel anything in particular. You only have to be here, and honest about why you came.",
+      '**What the week ahead will be**',
+      'Beginning Monday morning, a new page unlocks each day — seven readings composed for the very thing you named, grounded in real Scripture and in the voices of the church across the centuries. It is not content to consume; it is a rhythm to keep: one reading, one verse, one prayer, at the same quiet hour. The consistency is the gift. God tends to meet the people who keep coming back.',
+      `Your first day will be *“${firstDayTitle}.”* Hold it lightly for now. Today's only work is to lower the noise, settle your pace, and carry this verse with you — into the walk, the wait, the quiet before sleep. Let it interrupt you once or twice. That is how a word moves off the page and into a life.`,
+    ].join('\n\n'),
     prayer:
       'Lord Jesus, steady my pace as I begin this path. Give me courage to be honest and faithful in each next step.',
     nextStep: `${nextStep} Keep this same daily reading window to build consistency.`,
@@ -596,7 +599,7 @@ export function buildOnboardingDay(params: {
       {
         id: 2,
         source: 'Scheduling Policy',
-        note: `${params.variant} onboarding before Monday cycle.`,
+        note: `${variantLabel} — full cycle begins Monday at 7:00 AM local time.`,
       },
       {
         id: 3,
