@@ -3424,9 +3424,10 @@ function escapeRegExp(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 function injectWordNoteMarkers(body, studies) {
-  if (!body || studies.length === 0) return { body, emittedIds: [] };
+  if (!body) return { body, emittedIds: [] };
+  const MAX_MARKERS = 3;
   const seenIds = /* @__PURE__ */ new Set();
-  const candidates = [];
+  const primary = [];
   for (const study of studies) {
     const entry = BANK_BY_STRONG.get((study.strong || "").toUpperCase());
     if (!entry) continue;
@@ -3434,13 +3435,28 @@ function injectWordNoteMarkers(body, studies) {
     const term = (entry.term || "").trim();
     if (!term) continue;
     seenIds.add(entry.id);
-    candidates.push({ id: entry.id, term });
+    primary.push({ id: entry.id, term });
   }
-  if (candidates.length === 0) return { body, emittedIds: [] };
+  const fallback = [];
+  const bodyLower = body.toLowerCase();
+  for (const entry of WORDNOTE_BANK) {
+    if (seenIds.has(entry.id)) continue;
+    if (!FALLBACK_ELIGIBLE_IDS.has(entry.id)) continue;
+    const term = (entry.term || "").trim();
+    if (!term || !bodyLower.includes(term.toLowerCase())) continue;
+    seenIds.add(entry.id);
+    fallback.push({ id: entry.id, term });
+  }
+  if (primary.length === 0 && fallback.length === 0) {
+    return { body, emittedIds: [] };
+  }
   const lines = body.split("\n");
   const emittedIds = [];
-  candidates.sort((a, b) => b.term.length - a.term.length);
+  primary.sort((a, b) => b.term.length - a.term.length);
+  fallback.sort((a, b) => b.term.length - a.term.length);
+  const candidates = [...primary, ...fallback];
   for (const { id, term } of candidates) {
+    if (emittedIds.length >= MAX_MARKERS) break;
     const re = new RegExp(`\\b(${escapeRegExp(term)})\\b`, "i");
     let marked = false;
     for (let i = 0; i < lines.length && !marked; i++) {
@@ -3840,7 +3856,7 @@ async function generateGroundedDay(input) {
     }
   };
 }
-var SONNET, KNOWN_AUTHORS, BANK_BY_STRONG, DEPTH_FLOOR;
+var SONNET, KNOWN_AUTHORS, BANK_BY_STRONG, FALLBACK_ELIGIBLE_IDS, DEPTH_FLOOR;
 var init_grounded_weave = __esm({
   "src/lib/soul-audit/grounded-weave.ts"() {
     "use strict";
@@ -3883,6 +3899,25 @@ var init_grounded_weave = __esm({
     BANK_BY_STRONG = new Map(
       WORDNOTE_BANK.map((e) => [e.strong.toUpperCase(), e])
     );
+    FALLBACK_ELIGIBLE_IDS = /* @__PURE__ */ new Set([
+      "shalom",
+      "eirene",
+      "chesed",
+      "agape",
+      "charis",
+      "pistis",
+      "elpis",
+      "berit",
+      "metanoia",
+      "soteria",
+      "chara",
+      "dikaiosyne",
+      "tsedeq",
+      "kavod",
+      "emunah",
+      "nacham",
+      "hamartia"
+    ]);
     DEPTH_FLOOR = {
       reading: {
         minWords: 600,

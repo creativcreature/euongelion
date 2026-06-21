@@ -5,6 +5,15 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Edge bundle rebuilt for WordNote marker fallback (2026-06-13)
+
+Regenerated + redeployed the `generate-plan-day` edge bundle so prod off-request
+generation runs the WordNote prose-anchored fallback (the marker change lives in
+`grounded-weave.ts`, which the edge fn bundles). Verified: 0 cross-project imports;
+edge fn boots clean on prod (JSON 404 on a fake-plan deep-dive = full graph loads).
+
+---
+
 ## ELEVATION v3.0 — Onboarding day rewritten + WordNote markers now emit (2026-06-13)
 
 The two things a stranger actually reads from a Wed–Sun start, fixed:
