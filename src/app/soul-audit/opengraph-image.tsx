@@ -9,14 +9,13 @@
 import { makeOgImageResponse, OG_SIZES } from '@/lib/og-card'
 
 export const runtime = 'nodejs'
-export const alt =
-  'Euangelion Soul Audit — What would you like to explore today?'
+export const alt = 'Euangelion Soul Audit — What are you wrestling with today?'
 export const size = OG_SIZES.landscape
 export const contentType = 'image/png'
 
 export default function SoulAuditOgImage() {
   return makeOgImageResponse({
-    title: 'What would you like to explore today?',
+    title: 'What are you wrestling with today?',
     kicker: 'SOUL AUDIT · EUANGELION',
     verse:
       'Search me, O God, and know my heart; test me and know my anxious thoughts.',

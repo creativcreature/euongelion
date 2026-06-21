@@ -1,6 +1,6 @@
 # Production Source of Truth
 
-Last Updated: 2026-02-18
+Last Updated: 2026-06-20
 Owner: Product + Engineering
 Status: Authoritative
 
@@ -39,6 +39,37 @@ Euangelion Soul Audit and Devotional Engine are curated-first and selection-firs
 21. Tuesday start: Monday is readable archived content.
 22. Wednesday-Sunday start: onboarding devotional first, full cycle begins Monday.
 23. Daily unlock remains 7:00 AM local-time cadence.
+
+## Reconciliation Notes (2026-06-20)
+
+A live audit surfaced doc-vs-reality gaps. Recorded here so this file stays
+truthful. Items marked **(founder-ratify)** would change a LOCKED decision and need
+founder sign-off to formally amend the decision text — they are documented, not
+unilaterally rewritten.
+
+1. **Soul Audit options = 3 grounded paths, not "3 + 2 prefab."** Locked Decisions
+   #21–25 (SA-002) describe 3 AI + 2 curated-prefab options routing to a series
+   overview. The shipped grounded model (SA-020) deliberately removed the prefab
+   path — pre-existing series are a browsing experience, never the Soul Audit's
+   _output_. Live behavior: 3 grounded options → a bespoke generated plan. Help Hub
+   copy corrected to match (2026-06-20). **(founder-ratify: amend SA-002.)**
+2. **`POST /api/soul-audit/consent` is folded into `/api/soul-audit/select`.** The
+   separate consent route below does not exist as its own endpoint; essential
+   consent is carried inline on select (`consentToken` / `essentialAccepted`).
+   Either amend the contract list or split the route. **(founder-ratify.)**
+3. **Stale flow docs.** `docs/UX-FLOW-MAPS.md` and `docs/MVP-SCOPE.md` still describe
+   a single-match result, an email gate _before_ starting, a user-chosen Sabbath,
+   the 12-module render model, and `wokegod.world`. The live product is anonymous,
+   options-first, grounded, and fixed-schedule on euangelion.app. These need a
+   rewrite pass (tracked, not yet done).
+4. **Active-plan reader.** All active-plan entry points (header badge, homepage
+   "Continue" CTA, resume link) route to `/daily-bread` (the working reader); the
+   `/soul-audit/plan/[token]` reader has an unresolved client bug and nothing routes
+   users into it (tracked follow-up).
+5. **Contract-verifier blind spots.** `scripts/check-production-contracts.mjs` does
+   not enforce several declared keys (`policy_split`, `scorecard_required_tokens`,
+   `non_wakeup_shell_*`), so drift like #1 and a forbidden `newspaper-home` CSS token
+   pass CI green. The verifier should consume these keys.
 
 ## Required API Contracts
 

@@ -381,7 +381,7 @@ export default async function TodayPage() {
           {devotional === null && (
             <div className="today-fallback">
               <p className="mock-subcopy">
-                {`Today's reading is loading. `}
+                {`Today's reading didn't load. `}
                 <Link href={`/devotional/${slug}`} className="link-highlight">
                   Read it here
                 </Link>

@@ -397,7 +397,10 @@ export default function EuangelionShellHeader({
   return (
     <div className={`mock-shell-frame ${tone === 'wake' ? 'wake-shell' : ''}`}>
       <header className="mock-shell-header">
-        <div className="mock-topbar text-label">
+        <div
+          className="mock-topbar text-label"
+          data-nav-docked={navDocked || undefined}
+        >
           <div className="mock-topbar-desktop-row">
             <time
               className="mock-topbar-date"
@@ -423,97 +426,28 @@ export default function EuangelionShellHeader({
             </div>
             <div className="mock-topbar-actions">
               <ActivePlanBadge variant="header" />
-              <button
-                type="button"
-                className="mock-mode-toggle text-label"
-                onClick={toggleTheme}
-                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-              >
-                {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
-              </button>
-              {authLoading ? (
-                <span className="mock-auth-loading">...</span>
-              ) : authenticated ? (
-                <div className="mock-account-wrap" ref={accountMenuRef}>
-                  <button
-                    type="button"
-                    className="mock-account-trigger text-label"
-                    ref={accountTriggerRef}
-                    aria-haspopup="menu"
-                    aria-expanded={accountMenuOpen}
-                    onClick={() => setAccountMenuOpen((current) => !current)}
-                  >
-                    {userInitial}
-                  </button>
-                  {accountMenuOpen && (
-                    <div
-                      className="mock-account-menu"
-                      role="menu"
-                      aria-label="Account menu"
-                    >
-                      <Link
-                        href="/daily-bread"
-                        role="menuitem"
-                        className="mock-account-item"
-                        onClick={() => setAccountMenuOpen(false)}
-                      >
-                        Daily Bread
-                      </Link>
-                      <Link
-                        href="/library"
-                        role="menuitem"
-                        className="mock-account-item"
-                        onClick={() => setAccountMenuOpen(false)}
-                      >
-                        Library
-                      </Link>
-                      <Link
-                        href="/settings"
-                        role="menuitem"
-                        className="mock-account-item"
-                        onClick={() => setAccountMenuOpen(false)}
-                      >
-                        Settings
-                      </Link>
-                      <Link
-                        href="/help"
-                        role="menuitem"
-                        className="mock-account-item"
-                        onClick={() => setAccountMenuOpen(false)}
-                      >
-                        Help
-                      </Link>
-                      <button
-                        type="button"
-                        role="menuitem"
-                        className="mock-account-item"
-                        onClick={() => void handleSignOut()}
-                      >
-                        Sign Out
-                      </button>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                /* Audit Manus §1 (HOMEPAGE-AUDIT-2026-05-11): the audit
-                   flagged inline SIGN IN / SIGN UP links as competing
-                   with the masthead. Demoted to a single user-icon
-                   button matching the authenticated avatar-menu
-                   pattern. Click opens a quiet popover with both
-                   links. */
-                <div className="mock-account-wrap" ref={accountMenuRef}>
-                  <button
-                    type="button"
-                    className="mock-account-trigger"
-                    ref={accountTriggerRef}
-                    aria-haspopup="menu"
-                    aria-expanded={accountMenuOpen}
-                    aria-label="Sign in or sign up"
-                    onClick={() => setAccountMenuOpen((current) => !current)}
-                  >
+              {/* Utility controls (theme + account) are grouped and
+                  visually separated from the resume pill so ambient
+                  metadata, the primary returning-user action, and site
+                  utilities read as three distinct tiers. The divider is
+                  hidden when no resume pill precedes it. */}
+              <span
+                className="mock-topbar-divider"
+                aria-hidden="true"
+                data-divider="true"
+              />
+              <div className="mock-topbar-utilities">
+                <button
+                  type="button"
+                  className="mock-icon-control mock-mode-toggle"
+                  onClick={toggleTheme}
+                  aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                  title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                >
+                  {theme === 'dark' ? (
                     <svg
-                      width="14"
-                      height="14"
+                      width="15"
+                      height="15"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -522,36 +456,147 @@ export default function EuangelionShellHeader({
                       strokeLinejoin="round"
                       aria-hidden="true"
                     >
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                      <circle cx="12" cy="7" r="4" />
+                      <circle cx="12" cy="12" r="4.2" />
+                      <path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7" />
                     </svg>
-                  </button>
-                  {accountMenuOpen && (
-                    <div
-                      className="mock-account-menu"
-                      role="menu"
-                      aria-label="Account"
+                  ) : (
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
                     >
-                      <Link
-                        href={`/auth/sign-in?redirect=${redirectPath}`}
-                        role="menuitem"
-                        className="mock-account-item"
-                        onClick={() => setAccountMenuOpen(false)}
-                      >
-                        Sign in
-                      </Link>
-                      <Link
-                        href={`/auth/sign-up?redirect=${redirectPath}`}
-                        role="menuitem"
-                        className="mock-account-item"
-                        onClick={() => setAccountMenuOpen(false)}
-                      >
-                        Sign up
-                      </Link>
-                    </div>
+                      <path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a6.6 6.6 0 0 0 10.8 10.8Z" />
+                    </svg>
                   )}
-                </div>
-              )}
+                </button>
+                {authLoading ? (
+                  <span className="mock-auth-loading" aria-hidden="true" />
+                ) : authenticated ? (
+                  <div className="mock-account-wrap" ref={accountMenuRef}>
+                    <button
+                      type="button"
+                      className="mock-account-trigger text-label"
+                      ref={accountTriggerRef}
+                      aria-haspopup="menu"
+                      aria-expanded={accountMenuOpen}
+                      onClick={() => setAccountMenuOpen((current) => !current)}
+                    >
+                      {userInitial}
+                    </button>
+                    {accountMenuOpen && (
+                      <div
+                        className="mock-account-menu"
+                        role="menu"
+                        aria-label="Account menu"
+                      >
+                        <Link
+                          href="/daily-bread"
+                          role="menuitem"
+                          className="mock-account-item"
+                          onClick={() => setAccountMenuOpen(false)}
+                        >
+                          Daily Bread
+                        </Link>
+                        <Link
+                          href="/library"
+                          role="menuitem"
+                          className="mock-account-item"
+                          onClick={() => setAccountMenuOpen(false)}
+                        >
+                          Library
+                        </Link>
+                        <Link
+                          href="/settings"
+                          role="menuitem"
+                          className="mock-account-item"
+                          onClick={() => setAccountMenuOpen(false)}
+                        >
+                          Settings
+                        </Link>
+                        <Link
+                          href="/help"
+                          role="menuitem"
+                          className="mock-account-item"
+                          onClick={() => setAccountMenuOpen(false)}
+                        >
+                          Help
+                        </Link>
+                        <button
+                          type="button"
+                          role="menuitem"
+                          className="mock-account-item"
+                          onClick={() => void handleSignOut()}
+                        >
+                          Sign Out
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  /* Audit Manus §1 (HOMEPAGE-AUDIT-2026-05-11): the audit
+                   flagged inline SIGN IN / SIGN UP links as competing
+                   with the masthead. Demoted to a single user-icon
+                   button matching the authenticated avatar-menu
+                   pattern. Click opens a quiet popover with both
+                   links. */
+                  <div className="mock-account-wrap" ref={accountMenuRef}>
+                    <button
+                      type="button"
+                      className="mock-account-trigger"
+                      ref={accountTriggerRef}
+                      aria-haspopup="menu"
+                      aria-expanded={accountMenuOpen}
+                      aria-label="Sign in or sign up"
+                      onClick={() => setAccountMenuOpen((current) => !current)}
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                      </svg>
+                    </button>
+                    {accountMenuOpen && (
+                      <div
+                        className="mock-account-menu"
+                        role="menu"
+                        aria-label="Account"
+                      >
+                        <Link
+                          href={`/auth/sign-in?redirect=${redirectPath}`}
+                          role="menuitem"
+                          className="mock-account-item"
+                          onClick={() => setAccountMenuOpen(false)}
+                        >
+                          Sign in
+                        </Link>
+                        <Link
+                          href={`/auth/sign-up?redirect=${redirectPath}`}
+                          role="menuitem"
+                          className="mock-account-item"
+                          onClick={() => setAccountMenuOpen(false)}
+                        >
+                          Sign up
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 

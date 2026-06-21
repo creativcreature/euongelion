@@ -1,4 +1,4 @@
-import { redirect } from 'next/navigation'
+import { permanentRedirect } from 'next/navigation'
 
 type SearchParamValue = string | string[] | undefined
 
@@ -23,5 +23,5 @@ export default async function LegacyMyDevotionalPage({
   }
 
   const queryString = query.toString()
-  redirect(`/daily-bread${queryString ? `?${queryString}` : ''}`)
+  permanentRedirect(`/daily-bread${queryString ? `?${queryString}` : ''}`)
 }

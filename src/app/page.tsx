@@ -303,27 +303,6 @@ export default function Home() {
         </h1>
         <EuangelionShellHeader />
 
-        {/* TODAY hero — Bible-365 daily devotional surface (per founder
-            redesign 2026-05-08 + BrandBrain "homepage daily devotional"
-            spec). Active-plan resume banner takes precedence when present. */}
-        {resumeRoute && (
-          <section
-            className="homepage-resume-banner"
-            aria-label="Your active devotional plan"
-          >
-            <p className="text-label mock-kicker">YOUR PLAN</p>
-            <p className="mock-body">
-              You have a devotional waiting. Pick up where you left off.
-            </p>
-            <Link
-              href={resumeRoute}
-              className="mock-btn mock-btn-inline text-label"
-            >
-              CONTINUE MY DEVOTIONAL
-            </Link>
-          </section>
-        )}
-
         {/* Founder direction 2026-05-13: split the prior single hero
             into three blocks — full-bleed banner image, a "What is
             this place?" intro section, then the featured devotional
@@ -342,6 +321,27 @@ export default function Home() {
             />
           </div>
         </section>
+
+        {/* Active-plan resume banner — sits BELOW the hero image (founder
+            direction 2026-06-20): a returning reader's "continue" prompt
+            comes after the header image, not above it. */}
+        {resumeRoute && (
+          <section
+            className="homepage-resume-banner"
+            aria-label="Your active devotional plan"
+          >
+            <p className="text-label mock-kicker">YOUR PLAN</p>
+            <p className="mock-body">
+              You have a devotional waiting. Pick up where you left off.
+            </p>
+            <Link
+              href={resumeRoute}
+              className="mock-btn mock-btn-inline text-label"
+            >
+              CONTINUE MY DEVOTIONAL
+            </Link>
+          </section>
+        )}
 
         <section
           className="homepage-what-is-this"
@@ -519,12 +519,12 @@ export default function Home() {
               setAuditText(e.target.value)
               setError(null)
             }}
-            placeholder="What are you wrestling with?"
+            placeholder="Lately, I've been..."
             rows={3}
             maxLength={2000}
             disabled={isSubmitting}
             className="mock-textarea"
-            aria-label="What are you wrestling with?"
+            aria-label="What are you wrestling with today?"
           />
 
           {/* Sample prompt pills — only shown while the field is empty, so a

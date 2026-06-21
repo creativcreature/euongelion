@@ -21,9 +21,9 @@ const FAQ_ITEMS: HelpFaq[] = [
   },
   {
     category: 'Soul Audit',
-    question: 'Why do I see five options first?',
+    question: 'Why do I see three options first?',
     answer:
-      'The flow is selection-first: 3 AI-curated options and 2 curated prefab options. The full plan is only built after selection.',
+      'The flow is selection-first. The Soul Audit reads what you wrote and offers three reading paths — each grounded in Scripture and the historic voices of the church, with a short preview of why it fits. Your full devotional plan is composed only after you choose one.',
   },
   {
     category: 'Soul Audit',

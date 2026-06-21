@@ -108,7 +108,7 @@ Still required for 10/10:
 
 ## Operating Rules
 
-1. Highest current score is capped at 5/10 per founder baseline.
+1. The 5/10 baseline score cap was **lifted by the founder on 2026-06-13**; current scores reflect honest, evidence-backed quality and are no longer capped. (Assigning a final **10/10** remains founder-only — see the category-elevation rule below.)
 2. Each phase must map behavior to a real-world reference pattern.
 3. No category can graduate to 10/10 without automated and manual verification.
 4. `CHANGELOG.md`, scorecard, plan, and compaction handoff must be updated together.

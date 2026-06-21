@@ -122,9 +122,7 @@ describe('GET /api/soul-audit/current', () => {
 
     expect(payload.hasCurrent).toBe(true)
     expect(payload.selectionType).toBe('ai_primary')
-    expect(payload.route).toBe(
-      '/soul-audit/plan/new-plan-token?day=0',
-    )
+    expect(payload.route).toBe('/daily-bread')
   })
 
   it('returns hasCurrent false when candidates have no resolvable content', async () => {

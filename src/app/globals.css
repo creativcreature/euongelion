@@ -4107,19 +4107,35 @@ html.reduce-motion *::after {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.25rem;
   min-height: var(--mock-h-topbar, 42px);
   padding: 0.28rem var(--mock-pad-x, 0.95rem);
 }
 
+/* Ambient tier: the date stamp and the tagline are masthead furniture,
+   not navigation. They sit a half-step quieter than the action cluster
+   so the eye reads "controls" first and "context" second. */
 .mock-topbar-date {
   justify-self: start;
+  font-size: 0.78em;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  color: var(--color-text-muted, var(--mock-muted));
+  white-space: nowrap;
 }
 
 .mock-topbar-center-copy {
   justify-self: center;
+  margin: 0;
   font-family: var(--font-family-serif);
+  font-size: 0.95em;
+  letter-spacing: 0.01em;
   text-transform: none;
+  color: var(--color-text-secondary, var(--mock-muted));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .mock-topbar-center-nav {
@@ -4150,20 +4166,112 @@ html.reduce-motion *::after {
   opacity: 0.66;
 }
 
-.mock-mode-toggle {
-  border: 0;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  font-size: inherit;
-}
-
+/* Action cluster — right side of the desktop topbar. Two tiers grouped
+   with a hairline divider: the resume pill (primary returning-user
+   action) and the site utilities (theme + account). Every control shares
+   one height and one affordance language so the cluster reads as a single
+   intentional toolbar instead of three mismatched widgets. */
 .mock-topbar-actions {
   justify-self: end;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.7rem;
   position: relative;
+  min-width: 0;
+}
+
+.mock-topbar-utilities {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Hairline separating the resume pill from the utility controls. The
+   pill renders nothing when there is no active plan, so the divider
+   collapses when it is the first action-cluster child. */
+.mock-topbar-divider {
+  flex: 0 0 auto;
+  width: var(--mock-stroke, 1px);
+  height: 1.15rem;
+  background: var(--mock-line, var(--color-border));
+  opacity: 0.55;
+}
+.mock-topbar-actions > .mock-topbar-divider:first-child {
+  display: none;
+}
+
+/* Shared icon-button affordance for the theme toggle and the account
+   trigger so they are pixel-identical: same box, same border, same
+   centering. 32px keeps the visual weight tidy in the topbar while
+   inner padding plus the row's min-height preserve a >=44px hit area. */
+.mock-icon-control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: var(--mock-stroke, 1px) solid var(--mock-line, var(--color-border));
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  line-height: 0;
+  touch-action: manipulation;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.mock-mode-toggle {
+  font-size: inherit;
+}
+
+/* The icon controls and account trigger render as tidy 32px boxes but
+   carry a transparent, centered hit area so the tappable region clears
+   the 44px minimum without inflating the visual box or the 42px topbar. */
+.mock-icon-control::after,
+.mock-account-trigger::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
+
+/* When the primary nav docks into the topbar it takes center stage, so
+   the resume pill (a top-of-page "welcome back" affordance) and its
+   divider step aside. This guarantees the docked nav can never collide
+   with the action cluster at any width — only the two compact icon
+   utilities remain on the right, which always fit. */
+.mock-topbar[data-nav-docked] .mock-active-plan-badge,
+.mock-topbar[data-nav-docked] .mock-topbar-divider {
+  display: none;
+}
+
+/* Narrow-desktop band (just above the 900px mobile breakpoint): the
+   centered tagline is the lowest-priority ambient element, so it yields
+   first to keep the action cluster from crowding the masthead furniture.
+   Nav docking still uses the center slot, so only the tagline copy is
+   hidden — the docked nav is untouched. */
+@media (min-width: 901px) and (max-width: 1180px) {
+  .mock-topbar-center-copy {
+    display: none;
+  }
+}
+
+/* Tighter still: the date stamp is the next ambient element to yield,
+   leaving the full action cluster room without ever wrapping. The
+   3-column grid is preserved (the center column still hosts the docked
+   nav); the left column just empties out. */
+@media (min-width: 901px) and (max-width: 1040px) {
+  .mock-topbar-date {
+    visibility: hidden;
+  }
 }
 
 .mock-auth-links {
@@ -4369,32 +4477,50 @@ html.reduce-motion *::after {
   .mock-btn-inline,
   .cta-major,
   .homepage-prompt-pill,
-  .devotional-shell-sidebar a[class*='border'] {
+  .devotional-shell-sidebar a[class*='border'],
+  .mock-icon-control,
+  .mock-account-trigger,
+  .mock-topbar-actions .mock-active-plan-badge {
     animation: none !important;
     transition: none !important;
   }
 }
 
+/* Reserve the account-control footprint while the session resolves so
+   the cluster does not shift when the trigger swaps in (CLS guard). */
 .mock-auth-loading {
-  color: var(--color-text-muted);
-  min-width: 1rem;
-  text-align: center;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
 }
 
 .mock-account-wrap {
   position: relative;
+  display: inline-flex;
 }
 
 .mock-account-trigger {
-  border: var(--mock-stroke, 1px) solid var(--mock-line, var(--color-border));
-  background: transparent;
-  color: inherit;
-  min-width: 1.85rem;
-  min-height: 1.85rem;
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: var(--mock-stroke, 1px) solid var(--mock-line, var(--color-border));
+  background: transparent;
+  color: inherit;
+  font-size: 0.82em;
+  font-weight: 600;
+  line-height: 1;
   cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .mock-account-menu {
@@ -5479,9 +5605,66 @@ html.reduce-motion *::after {
 .mock-account-item:is(:hover, :focus-visible),
 .mock-carousel-btn:is(:hover, :focus-visible),
 .mock-reset-btn:is(:hover, :focus-visible),
+.mock-icon-control:is(:hover, :focus-visible),
+.mock-account-trigger:is(:hover, :focus-visible),
 .mock-mobile-menu-toggle:is(:hover, :focus-visible) {
   background: var(--mock-blue);
   color: var(--mock-paper);
+  border-color: var(--mock-blue);
+}
+
+/* Dark mode flips the fill to gold-on-blue for the topbar icon controls,
+   matching the mobile-menu toggle's dark treatment below. */
+.mock-home.is-dark .mock-icon-control:is(:hover, :focus-visible),
+.dark .mock-home .mock-icon-control:is(:hover, :focus-visible),
+.mock-home.is-dark .mock-account-trigger:is(:hover, :focus-visible),
+.dark .mock-home .mock-account-trigger:is(:hover, :focus-visible) {
+  background: var(--color-gold);
+  color: var(--mock-blue);
+  border-color: var(--color-gold);
+}
+
+/* Base resume-badge link (layout only). Display lives here, not as an
+   inline style, so the docked-state `display: none` rule can win. Used
+   in two places: the desktop topbar action cluster (gets pill chrome
+   below) and the mobile slide-out menu (stays a plain inline link). */
+.mock-active-plan-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+.mock-active-plan-badge .text-gold {
+  letter-spacing: 0.05em;
+}
+
+/* Resume pill — the one promoted action in the desktop cluster. A quiet
+   bordered pill makes "clickable" unmistakable without competing with
+   the masthead. DAY N stays in the accent color; the title sits in ink.
+   Scoped to the topbar so the mobile-menu instance is unaffected. */
+.mock-topbar-actions .mock-active-plan-badge {
+  flex: 0 1 auto;
+  height: 2rem;
+  padding: 0 0.75rem;
+  border: var(--mock-stroke, 1px) solid var(--mock-line, var(--color-border));
+  border-radius: 999px;
+  font-size: 0.8em;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+.mock-topbar-actions .mock-active-plan-badge .mock-active-plan-badge-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 14ch;
+}
+.mock-topbar-actions .mock-active-plan-badge:is(:hover, :focus-visible) {
+  border-color: var(--color-border-strong, var(--mock-line));
+  background: var(--color-surface-raised, transparent);
 }
 
 /* Audit T9: auth-link hover stays editorial — opacity reveal + underline

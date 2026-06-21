@@ -7,7 +7,9 @@ import AudioPlayer from '@/components/AudioPlayer'
 import ClipButton from '@/components/ClipButton'
 import PushOptIn from '@/components/PushOptIn'
 import MarkdownWithWordNotes from '@/components/daily-bread/MarkdownWithWordNotes'
+import ModuleRenderer from '@/components/ModuleRenderer'
 import { buildDayContentSegments } from '@/lib/audio/segments'
+import { onboardingDayContentToModules } from '@/lib/soul-audit/onboarding-day-to-reader'
 import { isUnlocked } from '@/lib/soul-audit/plan-utils'
 import type {
   PlanWithDays,
@@ -851,6 +853,46 @@ function DeepDive({
   )
 }
 
+// ─── Onboarding (day 0) — full editorial module layout ──────────────
+
+// Day 0 is the "Before You Begin" orientation. It is NOT a tiered teaching
+// (no chiastic Go-Deeper / on-demand Deep Dive), so instead of the flat
+// DayContent prose path we render its grounded content through the same
+// ModuleRenderer pipeline the catalog reader uses — drop-cap Scripture,
+// editorial teaching sections, reflection, and prayer. Cycle days 1+ are
+// untouched and keep the tier prose path exactly as before.
+function OnboardingEditorial({ content }: { content: DayContent }) {
+  const modules = useMemo(
+    () => onboardingDayContentToModules(content),
+    [content],
+  )
+
+  if (modules.length === 0) {
+    // No grounded content to shape — fall back to the flat reader rather than
+    // render an empty editorial shell.
+    return <DailyBreadTier content={content} />
+  }
+
+  return (
+    <div className="devotional-shell">
+      {modules.map((module, index) => (
+        <article
+          key={index}
+          className="devotional-shell-panel border px-6 py-6"
+          style={{ borderColor: 'var(--color-border)' }}
+        >
+          {/* DevotionalModule's nested `content` object is flattened by
+              ModuleRenderer.normalizeModule — same cast the AI-plan reader
+              (PlanDayContent.tsx) uses to feed the dispatch. */}
+          <ModuleRenderer
+            module={module as unknown as Record<string, unknown>}
+          />
+        </article>
+      ))}
+    </div>
+  )
+}
+
 // ─── Main Component ─────────────────────────────────────────────────
 
 export default function DailyBreadView({
@@ -1042,19 +1084,29 @@ export default function DailyBreadView({
           {/* Tier selector */}
           <TierSelector activeTier={activeTier} onSelect={setActiveTier} />
 
-          {/* Tier content */}
+          {/* Tier content. Day 0 (onboarding) renders through the editorial
+              module layout — the same ModuleRenderer pipeline as the catalog
+              reader — regardless of tier; it is a single grounded orientation,
+              not a tiered teaching. Cycle days 1+ keep the tier prose path
+              exactly as before. */}
           <article className="mb-8">
-            {activeTier === 'daily-bread' && (
-              <DailyBreadTier content={content} />
-            )}
-            {activeTier === 'go-deeper' && <GoDeeper content={content} />}
-            {activeTier === 'deep-dive' && (
-              <DeepDive
-                content={content}
-                planToken={plan.plan_token}
-                dayNumber={selectedDay}
-                onDeepDiveReady={handleDeepDiveReady}
-              />
+            {selectedDay === 0 ? (
+              <OnboardingEditorial content={content} />
+            ) : (
+              <>
+                {activeTier === 'daily-bread' && (
+                  <DailyBreadTier content={content} />
+                )}
+                {activeTier === 'go-deeper' && <GoDeeper content={content} />}
+                {activeTier === 'deep-dive' && (
+                  <DeepDive
+                    content={content}
+                    planToken={plan.plan_token}
+                    dayNumber={selectedDay}
+                    onDeepDiveReady={handleDeepDiveReady}
+                  />
+                )}
+              </>
             )}
           </article>
 

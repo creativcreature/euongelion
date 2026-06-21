@@ -23,7 +23,7 @@ describe('buildOnboardingDay variant copy', () => {
       onboardingDays: 3,
     })
 
-    expect(day.title).toBe('Onboarding: Wednesday 3-Day Primer')
+    expect(day.title).toBe('Before You Begin')
     expect(day.nextStep).toContain('3-day rhythm primer')
     expect(day.nextStep).toContain('build consistency')
   })
@@ -36,7 +36,7 @@ describe('buildOnboardingDay variant copy', () => {
       onboardingDays: 2,
     })
 
-    expect(day.title).toBe('Onboarding: Thursday 2-Day Primer')
+    expect(day.title).toBe('Before You Begin')
     expect(day.nextStep).toContain('2-day rhythm primer')
   })
 
@@ -48,7 +48,7 @@ describe('buildOnboardingDay variant copy', () => {
       onboardingDays: 1,
     })
 
-    expect(day.title).toBe('Onboarding: Friday 1-Day Primer')
+    expect(day.title).toBe('Before You Begin')
     expect(day.nextStep).toContain('Full cycle unlock begins Monday')
   })
 })

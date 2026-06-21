@@ -5,6 +5,56 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Onboarding editorial layout + nav redesign + site consistency pass (2026-06-13)
+
+A polish round driven by two parallel redesign agents + two read-only audits
+(visual + logical), all integrated and verified together (full suite: 104 files /
+1434 passing, type-check + lint + governance verifiers green).
+
+**Onboarding day → catalog editorial layout (F-032).** Day-0 now renders through the
+same `ModuleRenderer` pipeline as the catalog reader (`/devotional/[slug]`): a
+Scripture module, drop-cap teaching sections (split on the orientation prose's own
+`**subheads**`), a reflection, and a prayer. New pure adapter
+`onboarding-day-to-reader.ts` derives the modules verbatim from the persisted
+`DayContent` (invents nothing; emits no fabricated art). Cycle days 1–7 render
+byte-identically (the day-0 branch is isolated). Fixed a duplicate-heading bug found
+in review: the page title, lead teaching heading, and reflection heading were all
+"Before You Begin" (3×) — the lead now flows under the title with no heading and the
+reflection is labelled "REFLECT".
+
+**Desktop sticky nav redesign (F-007).** The crowded right cluster is restructured
+into three deliberate tiers — ambient (date/tagline, demoted), primary action (the
+resume pill, now a real bordered pill), and grouped utilities (a hairline divider +
+two pixel-identical 32px icon buttons; "DARK MODE" text → a moon/sun icon). Typography
+normalized to the Industry/Instrument system; responsive at 1440/1024/768/375 with a
+CLS guard and 44px touch targets; docked-nav collision fixed. 54/54 nav tests pass.
+
+**Homepage:** the "YOUR PLAN / You have a devotional waiting" resume banner now sits
+**below** the hero header image (was above) (F-030).
+
+**Logical-consistency pass (from the site-wide audit):**
+
+- Soul Audit prompt is now consistently **"What are you wrestling with today?"** across
+  the homepage, the `/soul-audit` page, and the OG card (the page was the lone outlier
+  asking "What would you like to explore today?"). Homepage placeholder aligned to the
+  approved "Lately, I've been…".
+- `/today` no longer mislabels a content-fetch failure as "loading" (honest error copy).
+- `/soul-audit` error page now includes the site footer (matched the error-page family).
+- `/my-devotional` → `/daily-bread` uses a permanent (308) redirect (was 307).
+- `/admin/*` UI pages are now auth-gated by a server `admin/layout.tsx` that fails closed
+  (404 for anonymous / non-allowlisted / empty-allowlist) — the mutating APIs were
+  already gated; now the UI is too.
+- Help Hub "Why do I see five options? … 3 AI + 2 prefab" corrected to the accurate
+  three-grounded-paths description.
+- Docs: fixed the stale "capped at 5/10" line (cap lifted 2026-06-13) and added a
+  SOURCE-OF-TRUTH "Reconciliation Notes" section documenting the 3-grounded-options vs
+  documented "3+2", the consent route folded into select, the stale flow docs, and the
+  contract-verifier blind spots (locked-decision changes marked founder-ratify).
+- Reconciled two stale tests to the shipped behavior (active-plan route → `/daily-bread`;
+  onboarding title → "Before You Begin").
+
+---
+
 ## ELEVATION v3.0 — Fix active-plan dead-end: resume into /daily-bread (2026-06-13)
 
 A live audit found a release-blocking dead-end: a returning visitor with an active

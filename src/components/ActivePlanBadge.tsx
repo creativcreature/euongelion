@@ -69,16 +69,12 @@ export default function ActivePlanBadge({
       className={`mock-active-plan-badge text-label ${className ?? ''}`}
       aria-label={`Resume ${titleLabel} at ${dayLabel}`}
       data-testid="active-plan-badge"
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '0.5em',
-        textDecoration: 'none',
-      }}
     >
       <span className="text-gold">{dayLabel}</span>
-      <span className="text-muted">·</span>
-      <span>{titleLabel}</span>
+      <span className="text-muted" aria-hidden="true">
+        ·
+      </span>
+      <span className="mock-active-plan-badge-title">{titleLabel}</span>
     </Link>
   )
 }
