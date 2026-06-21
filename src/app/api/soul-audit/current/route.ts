@@ -16,6 +16,9 @@ const CURRENT_ROUTE_MAX_AGE = 30 * 24 * 60 * 60
 function normalizeCurrentRoute(value: string | undefined): string | null {
   if (!value) return null
 
+  // The canonical reader for an active AI plan (serves the current unlocked day,
+  // incl. the onboarding day-0). Active-plan resume routes here.
+  if (value === '/daily-bread') return value
   if (/^\/soul-audit\/plan\/[a-f0-9-]+(\?day=\d+)?$/i.test(value)) {
     return value
   }
@@ -59,10 +62,14 @@ function getInitialPlanDayNumber(
   return dayNumbers.includes(0) ? 0 : dayNumbers[0]
 }
 
-function aiRoute(planToken: string, planDays: Array<{ day_number: number }>) {
-  return `/soul-audit/plan/${planToken}?day=${getInitialPlanDayNumber(
-    planDays,
-  )}`
+// AI plans resume into /daily-bread — the canonical reader that correctly serves
+// the current unlocked day (including the onboarding day-0). The dedicated
+// /soul-audit/plan/[token] reader does not render the onboarding / locked-cycle
+// state (empty timeline + perpetual lock message), so ALL active-plan entry points
+// (header badge, homepage "Continue" CTA, resume link) route here instead.
+// dayNumber is still surfaced separately for the badge label.
+function aiRoute(): string {
+  return '/daily-bread'
 }
 
 export async function GET() {
@@ -83,7 +90,7 @@ export async function GET() {
     const planDays = await getAllPlanDaysWithFallback(latestPlan.plan_token)
     if (planDays.length > 0) {
       candidates.push({
-        route: aiRoute(latestPlan.plan_token, planDays),
+        route: aiRoute(),
         createdAt: latestPlan.created_at,
         selectionType: 'ai_primary',
         planToken: latestPlan.plan_token,
@@ -117,7 +124,7 @@ export async function GET() {
       : []
     if (plan && planDays.length > 0) {
       candidates.push({
-        route: aiRoute(latestSelection.plan_token, planDays),
+        route: aiRoute(),
         createdAt: latestSelection.created_at,
         selectionType: latestSelection.option_kind,
         planToken: latestSelection.plan_token,

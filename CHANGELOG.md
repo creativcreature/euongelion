@@ -5,6 +5,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Fix active-plan dead-end: resume into /daily-bread (2026-06-13)
+
+A live audit found a release-blocking dead-end: a returning visitor with an active
+plan could not reach their devotional. All three active-plan entry points — the
+header **active-plan badge**, the homepage **"Continue my devotional" CTA**, and the
+**resume link** — routed to `/soul-audit/plan/[token]?day=N`, whose reader renders an
+empty timeline + a perpetual "This day isn't ready yet" lock message for the
+onboarding day-0 / locked-cycle state (a client bug in that reader). Meanwhile
+`/daily-bread` — the canonical reader — correctly serves the current unlocked day
+(verified live).
+
+Fix: `aiRoute()` in `/api/soul-audit/current` now returns **`/daily-bread`** for AI
+plans (and `normalizeCurrentRoute` accepts it), so all three entry points resume into
+the working reader. Day-gating is unchanged (still correct per SOURCE-OF-TRUTH
+#19-23 — the onboarding day-0 is the readable one; cycle days unlock Monday). The
+underlying `/soul-audit/plan/[token]` reader bug is tracked as a follow-up; nothing
+routes users into it anymore.
+
+---
+
 ## ELEVATION v3.0 — Edge bundle rebuilt for WordNote marker fallback (2026-06-13)
 
 Regenerated + redeployed the `generate-plan-day` edge bundle so prod off-request
