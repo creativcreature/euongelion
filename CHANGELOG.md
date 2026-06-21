@@ -5,6 +5,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — HOTFIX: Soul Audit build 500 (missing onboarding columns) (2026-06-13)
+
+Live grounded-audit verification (rule #10) caught a regression shipped in Wave 1: the
+Soul Audit plan build returned **HTTP 500 on prod** for every new plan. Root cause:
+Wave-1D's select route persists `onboarding_variant` + `onboarding_days` to
+`devotional_plan_instances`, but prod's table was created from an earlier migration 009
+and is **missing those two columns** (`start_policy`/`cycle_start_at` exist) — the
+insert returned an error, the route treated it as fatal → 500. (Routes-200 verification
+didn't catch it; a real build test did. Existing plans were unaffected.)
+
+Two-part fix:
+
+- **`database/migrations/016_add_onboarding_columns.sql`** — additive, idempotent
+  `ADD COLUMN IF NOT EXISTS` for the two columns (the correct fix; apply on prod).
+- **Resilience in `select/route.ts`** — the plan-instance insert now retries WITHOUT
+  the onboarding columns if they're missing, so a schema gap can never break the
+  flagship build again; it auto-uses the columns once migration 016 is applied. The
+  onboarding day-0 row + schedule still drive behavior; the day route reads
+  `onboarding_variant` with a `?? 'none'` fallback.
+
+---
+
 ## ELEVATION v3.0 — Edge bundle rebuilt for Wave 1/2 engine changes (2026-06-13)
 
 Regenerated + redeployed the `generate-plan-day` Supabase edge bundle so prod

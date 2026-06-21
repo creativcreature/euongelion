@@ -174,36 +174,66 @@ async function insertPlanInstance(params: {
   if (!supabase) return false
 
   try {
+    const fullRow = {
+      id: params.id,
+      plan_token: params.planToken,
+      audit_run_id: params.auditRunId,
+      session_token: params.sessionToken,
+      series_slug: params.seriesSlug,
+      timezone: params.timezone,
+      timezone_offset_minutes: params.timezoneOffsetMinutes,
+      start_policy: params.startPolicy,
+      onboarding_variant: params.onboardingVariant,
+      onboarding_days: params.onboardingDays,
+      started_at: params.startedAt,
+      cycle_start_at: params.cycleStartAt,
+      theme: params.theme,
+      scripture_anchor: params.scriptureAnchor,
+      schedule: params.schedule,
+      status: params.status,
+      created_at: new Date().toISOString(),
+    }
+
     const { error } = await supabase
       .from('devotional_plan_instances' as any)
-      .insert({
-        id: params.id,
-        plan_token: params.planToken,
-        audit_run_id: params.auditRunId,
-        session_token: params.sessionToken,
-        series_slug: params.seriesSlug,
-        timezone: params.timezone,
-        timezone_offset_minutes: params.timezoneOffsetMinutes,
-        start_policy: params.startPolicy,
-        onboarding_variant: params.onboardingVariant,
-        onboarding_days: params.onboardingDays,
-        started_at: params.startedAt,
-        cycle_start_at: params.cycleStartAt,
-        theme: params.theme,
-        scripture_anchor: params.scriptureAnchor,
-        schedule: params.schedule,
-        status: params.status,
-        created_at: new Date().toISOString(),
-      } as any)
+      .insert(fullRow as any)
 
-    if (error) {
+    if (!error) return true
+
+    // Resilience: prod may be missing onboarding_variant / onboarding_days
+    // (migration 016). A schema gap must NEVER break the flagship build — retry
+    // without them. The onboarding day-0 row + schedule still drive behavior, and
+    // the day route reads onboarding_variant with a `?? 'none'` fallback. Once
+    // migration 016 lands, the full row (incl. onboarding columns) writes normally.
+    const msg = error.message ?? ''
+    const missingOnboardingCol =
+      /onboarding_(variant|days)/.test(msg) &&
+      /(does not exist|could not find|schema cache|column)/i.test(msg)
+    if (missingOnboardingCol) {
+      const rest = { ...fullRow }
+      delete (rest as { onboarding_variant?: unknown }).onboarding_variant
+      delete (rest as { onboarding_days?: unknown }).onboarding_days
+      const retry = await supabase
+        .from('devotional_plan_instances' as any)
+        .insert(rest as any)
+      if (!retry.error) {
+        console.warn(
+          '[soul-audit:select] inserted plan instance WITHOUT onboarding columns; apply migration 016 to persist them',
+        )
+        return true
+      }
       console.error(
-        '[soul-audit:select] Plan instance insert failed:',
-        error.message,
+        '[soul-audit:select] Plan instance retry insert failed:',
+        retry.error.message,
       )
       return false
     }
-    return true
+
+    console.error(
+      '[soul-audit:select] Plan instance insert failed:',
+      error.message,
+    )
+    return false
   } catch (err) {
     console.error(
       '[soul-audit:select] Plan instance insert threw:',
