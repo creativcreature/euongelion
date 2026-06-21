@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Bible-365 pilot: days 7–14 rewritten to the modules standard (2026-06-13)
+
+Founder-directed Bible-in-a-Year pilot. The existing days 1–7 were INCORRECT — they
+used a flat "panels" structure, but the documented standard (`content-structure.md`,
+exemplified by "Too Busy for God") is the typed-MODULES format, which the catalog
+reader prefers (panels are only its fallback).
+
+Rewrote **days 7–14** (Genesis 3–12 arc) to that standard: each is now **12 flat typed
+modules** (scripture / vocab / teaching / story / insight / bridge / reflection /
+prayer / takeaway / comprehension / resource / profile), chiastic A-B-C-B'-A' + PaRDeS
+woven, ~1,200–1,900 narrative words at "Too Busy for God" depth, **BSB Scripture
+verbatim** (verified against the Westminster Leningrad Codex + BSB), a real
+Christ-connection per passage, `panels:[]`. Written by per-day `DEVOTIONAL-WRITER`
+agents, then a `DEVOTIONAL-EDITOR` pass (restored one clipped Heb 11:4 quote, normalized
+em-dashes, rescoped an overstated lexical claim, removed a fabricated Augustine citation
+from the old version). Field-shapes normalized; the teaser/title index regenerated.
+
+PILOT for founder review (live). The full ~358-day run (incl. rewriting the incorrect
+days 1–6) stays GATED on founder approval + a budget ceiling — not run yet.
+
+Founder-review flags (not silently changed): a penal-substitution atonement lean in the
+imagery (creedal, conscious choice); `validate-devotional.mjs` is keyed to an older
+schema and can't gate these; days 13+14 both cover Gen 12:1-9 from complementary angles.
+
+---
+
 ## ELEVATION v3.0 — Site-wide reading-layout consistency (2026-06-13)
 
 Founder-directed: the pinned-left / empty-void / inconsistent reading-measure

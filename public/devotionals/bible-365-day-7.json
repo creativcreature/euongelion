@@ -1,64 +1,186 @@
 {
   "day": 7,
   "title": "Cast out, but covered",
-  "teaser": "Day 7 of Bible 365 — God seeks Adam first, then clothes him. Mercy precedes the expulsion.",
-  "framework": "Genesis 3:8-9, 21 — God still clothes us. The first sacrifice in Scripture covers shame.",
+  "teaser": "Before the gate closes behind Adam, God kills to clothe him. The first death in Scripture is God's, for our shame.",
+  "framework": "Genesis 3:8-9, 21",
   "scriptureReference": "Genesis 3:8-9, 21",
   "chiastic_position": "sabbath",
   "pardesLevel": "remez",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 7 · SABBATH",
-      "wordCount": 7
+      "type": "scripture",
+      "reference": "Genesis 3:8-9, 21",
+      "translation": "BSB",
+      "emphasis": [
+        "Where are you?",
+        "garments of skin",
+        "He clothed them"
+      ],
+      "hebrewOriginal": "וַיַּעַשׂ יְהוָה אֱלֹהִים לְאָדָם וּלְאִשְׁתּוֹ כָּתְנוֹת עוֹר וַיַּלְבִּשֵׁם",
+      "passage": "Then the man and his wife heard the voice of the LORD God walking in the garden in the breeze of the day, and they hid themselves from the presence of the LORD God among the trees of the garden. But the LORD God called out to the man, \"Where are you?\" ... And the LORD God made garments of skin for Adam and his wife, and He clothed them."
     },
     {
-      "number": 2,
-      "heading": "OPENING — A QUIET WALK",
-      "type": "text",
-      "content": "It is the seventh day. The week's reading slows here.\n\nGenesis 3 ends in the cool of an evening. Two people are hiding in a garden they were given. The fruit has been eaten. Shame has shown up for the first time. And then, in the breeze of the day, footsteps.\n\nNot the footsteps of judgment. The footsteps of God.\n\nSit with that for a moment before you read further. The first thing the Lord does after the fall is walk.",
-      "wordCount": 81
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "כָּתְנוֹת עוֹר",
+      "transliteration": "kotnot or",
+      "pronunciation": "kot-NOTE ohr",
+      "meaning": "tunics of skin, garments of hide",
+      "rootMeaning": "Kuttonet is a long tunic worn against the body. Or means skin or hide - the covering of a living animal. Together: a garment made from a creature that had to die.",
+      "usageNote": "The same word kuttonet later names the robe Jacob gives Joseph (Genesis 37:3) and the priestly tunics Moses makes for Aaron's sons (Exodus 28:40). The first kuttonet in Scripture is sewn by God Himself, in a garden, over shame.",
+      "wordByWord": [
+        {
+          "word": "וַיַּעַשׂ",
+          "transliteration": "vayya'as",
+          "meaning": "and He made, He fashioned"
+        },
+        {
+          "word": "יְהוָה אֱלֹהִים",
+          "transliteration": "YHWH Elohim",
+          "meaning": "the LORD God - the covenant name joined to the Creator name"
+        },
+        {
+          "word": "כָּתְנוֹת",
+          "transliteration": "kotnot",
+          "meaning": "tunics, long garments"
+        },
+        {
+          "word": "עוֹר",
+          "transliteration": "or",
+          "meaning": "skin, hide"
+        },
+        {
+          "word": "וַיַּלְבִּשֵׁם",
+          "transliteration": "vayyalbishem",
+          "meaning": "and He clothed them - He dressed them Himself"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "עוֹר / אוֹר",
+          "reference": "Or (skin) sounds almost identical to or (light). A rabbinic reading notes that Adam was first clothed in light, then, after the fall, in skin - the same sound, a different glory."
+        }
+      ],
+      "strongsNumber": "H3801",
+      "definition": "a tunic; a long shirt-like garment worn next to the skin",
+      "usage": "The verb vayyalbishem is tender and deliberate: God does not hand them the garments and walk away. He clothes them, the way a parent dresses a child who cannot yet dress themselves."
     },
     {
-      "number": 3,
-      "heading": "TEACHING — WHERE ARE YOU",
-      "type": "text",
-      "content": "Genesis 3:8-9 (BSB):\n\n**\"Then the man and his wife heard the voice of the LORD God walking in the garden in the breeze of the day, and they hid themselves from the presence of the LORD God among the trees of the garden. So the LORD God called out to the man, 'Where are you?'\"**\n\nThe question is not for information. God knows where Adam is. The question is for Adam.\n\nNotice the order. Before judgment, a walk. Before sentencing, a search. Before the garments of skin, a voice that comes looking. Mercy moves first.\n\nThe rabbis read the Hebrew here as God walking already in the cool of the day, as if this were habit, as if Adam had walked with God in the evenings before and was missing tonight. The first thing the fall steals is the evening walk. The first thing God does is take the walk anyway, and call.\n\nMatthew Henry put it this way: God came not as a judge with a warrant, but as a friend looking for one who had wandered.",
-      "wordCount": 178
+      "type": "teaching",
+      "heading": "The First Word After the Fall Is a Question",
+      "body": "Genesis 3 ends in the cool of an evening. The fruit has been eaten, the eyes have been opened, and for the first time two people are ashamed of being seen. So they hide among the trees of the garden they were given. And then, in the breeze of the day, footsteps.\n\nNotice what God does first. He does not arrive with a sentence drawn up. He walks, the way one walks when looking for someone, and He calls: \"Where are you?\" The question is not for God's information; He knows exactly where Adam is crouching. The question is for Adam. It hands the hiding man a chance to come out and speak.\n\nThe Hebrew suggests this was not a new sound. The LORD God is described walking in the garden in the breeze of the day, as though evening walks with God had been the rhythm of the place before shame broke it. The first thing the fall steals is the walk. The first thing God does is take the walk anyway, and go looking.",
+      "keyInsight": "Before the verdict, before the garments, before the gate closes - mercy moves first. The opening move of God toward fallen people is not a sentence but a search.",
+      "content": "Genesis 3 ends in the cool of an evening. The fruit has been eaten, the eyes have been opened, and for the first time two people are ashamed of being seen. So they hide among the trees of the garden they were given. And then, in the breeze of the day, footsteps.\n\nNotice what God does first. He does not arrive with a sentence drawn up. He walks, the way one walks when looking for someone, and He calls: \"Where are you?\" The question is not for God's information; He knows exactly where Adam is crouching. The question is for Adam. It hands the hiding man a chance to come out and speak.\n\nThe Hebrew suggests this was not a new sound. The LORD God is described walking in the garden in the breeze of the day, as though evening walks with God had been the rhythm of the place before shame broke it. The first thing the fall steals is the walk. The first thing God does is take the walk anyway, and go looking."
     },
     {
-      "number": 4,
-      "heading": "CENTER — GARMENTS OF SKIN",
-      "type": "text",
-      "content": "Then comes verse 21:\n\n**\"And the LORD God made garments of skin for Adam and his wife, and He clothed them.\"**\n\nThe Hebrew is **כֻּתֳּנוֹת עוֹר**, *kuttonot or*, tunics of skin. Adam and Eve had sewn fig leaves. God replaces the leaves with something only a death can give. An animal dies in the garden so that two who hid can be covered. This is the first sacrifice in Scripture, and God Himself performs it.\n\nThe leaves were what shame could make. The skins were what only God could make. One came from creature; the other came at the cost of one.",
-      "wordCount": 102
+      "type": "story",
+      "heading": "The Coats in the Hall Closet",
+      "body": "When my grandfather was dying he asked, more than once, where his children were. He knew the answer. Two of them were standing at the foot of the bed. He asked anyway, because asking was how he reached for them when words were getting hard to hold.\n\nThere is a kind of question that is not really a request for facts. A parent stands in a quiet house and calls a child's name up the stairs, not because the location is a mystery, but because love wants the other person to turn around and answer.\n\n\"Where are you?\" lands on Adam like that. God is not auditing the garden. He is reaching for the man who has gone quiet, giving him the dignity of stepping out of the bushes on his own feet and speaking for himself - before anything else is said, before any consequence is named.",
+      "connectionToTheme": "God's first question after the fall is the voice of a Father reaching for a child who has hidden, not a judge demanding an account.",
+      "content": "When my grandfather was dying he asked, more than once, where his children were. He knew the answer. Two of them were standing at the foot of the bed. He asked anyway, because asking was how he reached for them when words were getting hard to hold.\n\nThere is a kind of question that is not really a request for facts. A parent stands in a quiet house and calls a child's name up the stairs, not because the location is a mystery, but because love wants the other person to turn around and answer.\n\n\"Where are you?\" lands on Adam like that. God is not auditing the garden. He is reaching for the man who has gone quiet, giving him the dignity of stepping out of the bushes on his own feet and speaking for himself - before anything else is said, before any consequence is named."
     },
     {
-      "number": 5,
-      "heading": "RESPONSE — STAY HERE",
-      "type": "text",
-      "content": "There is no to-do list today.\n\nThis is the sabbath. Stop reading after this panel. Set the phone face down. Sit for five minutes (actual minutes) and let one phrase from above hold you.\n\nMaybe it is *Where are you*. Maybe it is *He clothed them*. Maybe it is the picture of a God who walks in the cool of the evening looking for the ones who hid.\n\nYou do not have to do anything with it. Just let it sit on you, the way the skins sat on Adam.",
-      "wordCount": 90
+      "type": "insight",
+      "heading": "Leaves They Sewed, Skins He Made",
+      "body": "Read verse 7 against verse 21 and the whole chapter turns on the difference. In verse 7 the man and woman sew fig leaves into coverings for themselves. In verse 21 the LORD God makes garments of skin and clothes them.\n\nThe leaves were what shame could manage on its own: green, quick, and dead by morning. The skins were what only God could give, and they cost something He had to take. An animal that had done nothing wrong dies in the garden so that two who hid can be covered. This is the first death recorded in Scripture, and it is not a punishment falling on the guilty - it is a covering provided for them. Their hands made leaves. His hands made a sacrifice.\n\nThis sits at the very front of the Bible on purpose. The whole rest of the story will work out what this one gesture means: that the covering we cannot make for ourselves, God makes at the price of a life.",
+      "historicalContext": "Genesis stands at the head of the Torah, the foundation Israel read everything else against. By the time these chapters were written down, Israel already knew an altar where animals died so that a sinful people could draw near. Genesis 3:21 lets the reader feel that whole sacrificial world flowing backward to its source: the first death was God covering shame in a garden.",
+      "fascinatingFact": "Verse 21 is the hinge of the chapter. Verses 22 through 24 record the expulsion - the man is sent out, cherubim and a flaming sword guard the way back. But God clothes them before He drives them out. They walk into the wilderness already wearing what He gave. The exile is real; so is the covering they carry into it.",
+      "content": "Read verse 7 against verse 21 and the whole chapter turns on the difference. In verse 7 the man and woman sew fig leaves into coverings for themselves. In verse 21 the LORD God makes garments of skin and clothes them.\n\nThe leaves were what shame could manage on its own: green, quick, and dead by morning. The skins were what only God could give, and they cost something He had to take. An animal that had done nothing wrong dies in the garden so that two who hid can be covered. This is the first death recorded in Scripture, and it is not a punishment falling on the guilty - it is a covering provided for them. Their hands made leaves. His hands made a sacrifice.\n\nThis sits at the very front of the Bible on purpose. The whole rest of the story will work out what this one gesture means: that the covering we cannot make for ourselves, God makes at the price of a life."
     },
     {
-      "number": 6,
-      "heading": "CLOSING — THE LONG ECHO",
-      "type": "text",
-      "content": "What began with skins ends with a robe.\n\nIsaiah will sing of being clothed with garments of salvation, wrapped in a robe of righteousness (Isaiah 61:10). Paul will tell the Galatians that all who were baptized into Christ have **put on Christ** (Galatians 3:27). John will see a great multitude in robes washed white in the blood of the Lamb (Revelation 7:14).\n\nThe story of Scripture is, in part, a story of clothing. The garden gave the first thread.",
-      "wordCount": 79
+      "type": "bridge",
+      "ancientTruth": "God Himself kills an animal in the garden and clothes the shame of Adam and Eve with garments of skin - a covering they could not make, given at the cost of a life.",
+      "modernApplication": "We are still in the fig-leaf business: the curated image, the kept-up appearance, the careful version of ourselves we let people see. Like leaves, our coverings are real work and they do not last. The covering that holds is the one we receive, not the one we sew.",
+      "connectionPoint": "What begins with skins in Genesis runs as a thread through the whole of Scripture. Isaiah sings of being clothed with garments of salvation and wrapped in a robe of righteousness (Isaiah 61:10). Paul tells the Galatians that all who were baptized into Christ have clothed themselves with Christ (Galatians 3:27). John sees a great multitude whose robes have been washed white in the blood of the Lamb (Revelation 7:14). The garden gave the first thread; the cross is where the garment was finally woven.",
+      "newTestamentEcho": "What the garden hinted, Christ fulfilled. The death that covered Adam was an animal's; the death that covers us is the Lamb of God's, who takes away the sin of the world (John 1:29). At the cross the innocent dies so the guilty may be clothed - the garden's covering, made whole."
     },
     {
-      "number": 7,
-      "heading": "A PRAYER FOR THE EVENING",
+      "type": "reflection",
+      "prompt": "Where are you hiding right now - and what fig leaves have you been sewing to keep from being seen?",
+      "additionalQuestions": [
+        "When you imagine God walking toward you in the cool of the evening, do you hear a sentence coming, or a search? Why?",
+        "What in your life are you still trying to cover by your own effort that God is offering to clothe?",
+        "What would it mean to step out from the trees and answer the question \"Where are you?\" honestly today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
       "type": "prayer",
-      "content": "Lord,\n\nThank You for walking still.\nThank You that the first word after the fall was a question, not a sentence.\nThank You for the skins. Thank You for the robe.\n\nWhere I have hidden today, find me.\nWhere I have sewn fig leaves, undress me gently.\nClothe me again in what only You can give.\n\nLet this be enough for tonight.\n\nAmen.",
-      "wordCount": 63
+      "posture": "honest-confession",
+      "prayerText": "Lord, thank You for walking still. Thank You that the first word after the fall was a question and not a sentence. Where I have hidden today, find me. Where I have sewn fig leaves, undress me gently. Clothe me again in what only You can give - not the covering I make, but the covering You provided at the cost of the Lamb. Let this be enough for tonight. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, this is a sabbath day - there is no task to complete. Sit for five quiet minutes and let one phrase hold you: \"Where are you,\" or \"He clothed them.\" Bring God the one thing you have been covering on your own, and ask Him to clothe it.",
+      "leavingAtCross": [
+        "The fig leaves - the image I keep sewing so no one sees what I am ashamed of",
+        "The instinct to hide among the trees when I hear God coming",
+        "The fear that God walks toward me only to sentence me"
+      ],
+      "receivingFromCross": [
+        "A covering I did not make and could not earn, given at the cost of a life",
+        "The freedom to be found and still be loved",
+        "The promise that even when I am sent into the wilderness, I go wearing what God gave"
+      ],
+      "content": "Today, this is a sabbath day - there is no task to complete. Sit for five quiet minutes and let one phrase hold you: \"Where are you,\" or \"He clothed them.\" Bring God the one thing you have been covering on your own, and ask Him to clothe it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between the fig leaves of verse 7 and the garments of skin of verse 21 - in who makes them, what they cost, and how long they last?",
+        "Why does God ask \"Where are you?\" if He already knows where Adam is?",
+        "How does the first death in Scripture, in the garden, point forward to the cross?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one fig leaf you have been sewing lately - one way you cover so others won't see the real thing.",
+        "Talk about what it feels like to be 'found' by God rather than to hide - is it threat, relief, or both?",
+        "Ask each other: where is God offering to clothe you in something you have been trying to cover on your own?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 3:7",
+          "text": "And the eyes of both of them were opened, and they knew that they were naked; so they sewed together fig leaves and made coverings for themselves."
+        },
+        {
+          "reference": "Isaiah 61:10",
+          "text": "...for He has clothed me with garments of salvation and wrapped me in a robe of righteousness, as a bridegroom wears a priestly headdress, as a bride adorns herself with her jewels."
+        },
+        {
+          "reference": "Galatians 3:27",
+          "text": "For all of you who were baptized into Christ have clothed yourselves with Christ."
+        },
+        {
+          "reference": "Revelation 7:14",
+          "text": "These are the ones who have come out of the great tribulation; they have washed their robes and made them white in the blood of the Lamb."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 3",
+          "note": "Read the whole chapter slowly, watching the movement from hiding (v. 8) to question (v. 9) to covering (v. 21) to exile (vv. 22-24)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Adam",
+      "title": "The First Man, Clothed by God",
+      "description": "The first human, formed from the ground and given the garden to keep. After eating the forbidden fruit, Adam hid from God in shame - and was sought, questioned, covered, and only then sent out. He is the head of the human story Scripture says Christ came to redeem: where Adam brought sin and death, the second Adam brings righteousness and life (Romans 5:18-19).",
+      "keyQuote": "I heard Your voice in the garden, and I was afraid because I was naked; so I hid myself.",
+      "lessonForUs": "Adam's instinct was ours: hide, sew leaves, fear the footsteps. But the God who walked toward him is the God who walks toward us - and the covering He provides still costs Him, and still holds.",
+      "heading": "The First Man, Clothed by God"
     }
   ],
-  "totalWords": 593,
+  "panels": [],
+  "totalWords": 1881,
   "scriptureReference_full": "Genesis 3:8-9, 21",
   "sources": [
-    "Matthew Henry, Commentary on the Whole Bible, Vol. 1 (Genesis), on Genesis 3:8-9 — paraphrased."
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (kotnot or, kuttonet H3801) reflects standard lexical sources; the or/aor resonance is noted in classical rabbinic commentary (e.g., Bereshit Rabbah)."
   ]
 }

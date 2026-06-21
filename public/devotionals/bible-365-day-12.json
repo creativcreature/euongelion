@@ -1,38 +1,191 @@
 {
-  "day": 12,
-  "title": "When language breaks",
-  "teaser": "Day 12 of Bible 365 — Genesis 11 (recap)",
-  "framework": "Genesis 11 (recap) — Communion fractured",
-  "scriptureReference": "Genesis 11 (recap)",
-  "chiastic_position": "resolution",
-  "pardesLevel": "peshat",
-  "panels": [
+ "day": 12,
+ "title": "When language breaks",
+ "teaser": "Eleven chapters in, the human story keeps reaching for heaven and coming apart. Babel is where the reaching finally breaks into noise - and where the canon starts leaning toward the One who will come down to gather what was scattered.",
+ "framework": "Genesis 11 (recap of Genesis 1-11)",
+ "scriptureReference": "Genesis 11:1-9 (recap)",
+ "chiastic_position": "recap",
+ "pardesLevel": "remez",
+ "modules": [
+  {
+   "type": "scripture",
+   "reference": "Genesis 11:1-9",
+   "translation": "BSB",
+   "emphasis": [
+    "let us make a name for ourselves",
+    "the LORD came down",
+    "let Us go down",
+    "the LORD scattered them"
+   ],
+   "hebrewOriginal": "כִּי־שָׁם בָּלַל יְהוָה שְׂפַת כָּל־הָאָרֶץ",
+   "passage": "Now the whole world had one language and a common form of speech. And as people journeyed eastward, they found a plain in the land of Shinar and settled there. And they said to one another, \"Come, let us make bricks and bake them thoroughly.\" So they used brick instead of stone, and tar instead of mortar. \"Come,\" they said, \"let us build for ourselves a city with a tower that reaches to the heavens, that we may make a name for ourselves and not be scattered over the face of all the earth.\" Then the LORD came down to see the city and the tower that the sons of men were building. And the LORD said, \"If they have begun to do this as one people speaking the same language, then nothing they devise will be beyond them. Come, let Us go down and confuse their language, so that they will not understand one another's speech.\" So the LORD scattered them from there over the face of all the earth, and they stopped building the city. That is why it is called Babel, for there the LORD confused the language of the whole world, and from that place the LORD scattered them over the face of all the earth."
+  },
+  {
+   "type": "vocab",
+   "language": "hebrew",
+   "word": "בָּלַל / בָּבֶל",
+   "transliteration": "balal / Babel",
+   "pronunciation": "bah-LAHL / bah-VEL",
+   "meaning": "to confuse, to mix, to confound - and the place-name Babel",
+   "rootMeaning": "Balal means to mingle or confuse, the way oil is mixed into flour or speech is jumbled into noise. The builders set out to make a shem - a name. What they got was a name built on balal: Babel, the place of confusion. The story turns on a pun the Hebrew reader cannot miss - they reached for a name, and the name they earned means 'jumble.'",
+   "usageNote": "Babel is the Hebrew name for Babylon, the empire that would one day carry Judah into exile. Genesis 11 plants that whole later story here at its root: the proud city that gathers itself against heaven is the same city Scripture will watch fall. The narrator is not neutral - he is letting the first reader hear the future in a place-name.",
+   "wordByWord": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 12"
+     "word": "כִּי־שָׁם",
+     "transliteration": "ki-sham",
+     "meaning": "for there - the place is marked by what happened in it"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 11 (recap)**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 11 (recap) and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+     "word": "בָּלַל",
+     "transliteration": "balal",
+     "meaning": "He confused, mixed, confounded"
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Communion fractured. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the new humanity (Eph 2:14).",
-      "wordCount": 45
+     "word": "יְהוָה",
+     "transliteration": "YHWH",
+     "meaning": "the LORD - the covenant name of God"
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+     "word": "שְׂפַת",
+     "transliteration": "sephat",
+     "meaning": "the lip, language, speech"
+    },
+    {
+     "word": "כָּל־הָאָרֶץ",
+     "transliteration": "kol-ha'aretz",
+     "meaning": "of all the earth - the whole world's one speech"
     }
-  ],
-  "isPlaceholder": true
+   ],
+   "relatedWords": [
+    {
+     "word": "שֵׁם",
+     "reference": "Shem means 'name.' The builders wanted to make a shem for themselves (11:4). One chapter later, God promises Abram, 'I will make your name great' (12:2). The same gift they tried to seize, God simply gives - to a man who left the city and went where he was told."
+    }
+   ],
+   "strongsNumber": "H1101",
+   "definition": "balal: to mingle, mix, confuse, confound",
+   "usage": "The verb is almost onomatopoeic - balal sounds like babble. The builders' speech, once a single clear lip, becomes a mouthful of mixed sounds. Judgment here is not fire from heaven; it is the sudden inability to understand the person standing next to you."
+  },
+  {
+   "type": "teaching",
+   "heading": "Eleven Chapters of Reaching",
+   "body": "We have read eleven chapters together, and a shape has surfaced. It begins in light. \"In the beginning God created the heavens and the earth.\" He makes humanity in His own image, blesses them, calls it all very good, and walks with them in a garden.\n\nThen the reaching begins. The serpent's offer in Genesis 3 is not crude; it is precise: \"you will be like God, knowing good and evil.\" Take the standing that was given as a gift and seize it instead. Adam and Eve eat, hide, and are sent out - clothed by God, but east of Eden. In the next chapter Cain, told that sin is crouching at his door, will not master it; he rises up against his brother in a field, and the ground that once received Abel's body now holds his blood, which \"cries out\" to God. By Genesis 6 the line has run its course: \"every inclination of the thoughts of his heart was altogether evil all the time,\" and \"the earth was corrupt in the sight of God, and full of violence.\" A flood comes; a remnant of grace, Noah, who \"found favor in the eyes of the LORD,\" comes through.\n\nAnd here at Babel the pattern reaches its loudest point. \"Let us build for ourselves a city with a tower that reaches to the heavens, that we may make a name for ourselves.\" It is Eden's temptation again, scaled up to a civilization: not given a name by God but making one, not blessed to fill the earth but refusing to be scattered, climbing toward heaven on baked brick and tar. The reach is the same. Only the address has changed.",
+   "keyInsight": "Genesis 1-11 is not a string of separate disasters. It is one motion repeated - the human reach for a standing God meant to give, not for us to seize - and each time, the reaching ends in distance.",
+   "content": "We have read eleven chapters together, and a shape has surfaced. It begins in light. \"In the beginning God created the heavens and the earth.\" He makes humanity in His own image, blesses them, calls it all very good, and walks with them in a garden.\n\nThen the reaching begins. The serpent's offer in Genesis 3 is not crude; it is precise: \"you will be like God, knowing good and evil.\" Take the standing that was given as a gift and seize it instead. Adam and Eve eat, hide, and are sent out - clothed by God, but east of Eden. In the next chapter Cain, told that sin is crouching at his door, will not master it; he rises up against his brother in a field, and the ground that once received Abel's body now holds his blood, which \"cries out\" to God. By Genesis 6 the line has run its course: \"every inclination of the thoughts of his heart was altogether evil all the time,\" and \"the earth was corrupt in the sight of God, and full of violence.\" A flood comes; a remnant of grace, Noah, who \"found favor in the eyes of the LORD,\" comes through.\n\nAnd here at Babel the pattern reaches its loudest point. \"Let us build for ourselves a city with a tower that reaches to the heavens, that we may make a name for ourselves.\" It is Eden's temptation again, scaled up to a civilization: not given a name by God but making one, not blessed to fill the earth but refusing to be scattered, climbing toward heaven on baked brick and tar. The reach is the same. Only the address has changed."
+  },
+  {
+   "type": "story",
+   "heading": "The Group Project That Stopped Talking",
+   "body": "A friend of mine led a team that was, for about a year, unstoppable. They finished each other's sentences. A plan could go from a whiteboard to a working thing in days because everyone already knew what everyone else meant. They were proud of it, and they should have been. It is a rare thing when a group of people speaks one language.\n\nThen something small went wrong - a decision made over someone's head, a credit not shared. Nobody blew up. What happened was quieter and worse. The same words started meaning different things. \"Soon\" meant Friday to one person and next month to another. \"We agreed\" became a sentence people said in two incompatible ways. The team did not fight. It just slowly stopped understanding itself, and within a few months the thing they were building sat unfinished, and they drifted to other floors of the same building.\n\nNobody planned the breakdown. That is what made it feel like a judgment. When a shared language goes, you do not get an argument; you get a half-built tower and people who used to be one team standing around not knowing what the other one means.",
+   "connectionToTheme": "Babel's judgment lands the way real fracture usually does - not as a thunderclap but as the slow, baffling loss of being understood by the person right next to you. The builders kept their bricks and lost their shared lip, and that was enough to scatter them.",
+   "content": "A friend of mine led a team that was, for about a year, unstoppable. They finished each other's sentences. A plan could go from a whiteboard to a working thing in days because everyone already knew what everyone else meant. They were proud of it, and they should have been. It is a rare thing when a group of people speaks one language.\n\nThen something small went wrong - a decision made over someone's head, a credit not shared. Nobody blew up. What happened was quieter and worse. The same words started meaning different things. \"Soon\" meant Friday to one person and next month to another. \"We agreed\" became a sentence people said in two incompatible ways. The team did not fight. It just slowly stopped understanding itself, and within a few months the thing they were building sat unfinished, and they drifted to other floors of the same building.\n\nNobody planned the breakdown. That is what made it feel like a judgment. When a shared language goes, you do not get an argument; you get a half-built tower and people who used to be one team standing around not knowing what the other one means."
+  },
+  {
+   "type": "insight",
+   "heading": "He Came Down to the Tower That Reached the Sky",
+   "body": "Read Genesis 11 slowly and one detail almost smiles at you. The builders raise a tower \"that reaches to the heavens.\" And then: \"the LORD came down to see the city and the tower.\" The structure meant to scale the sky is so far beneath heaven that God has to descend just to look at it. The whole proud project, from the height it was built to reach, registers as something He stoops to find.\n\nThis is the quiet center of the primeval story. Every reach upward in Genesis 1-11 - toward God's knowledge, toward a name, toward heaven on a brick stairway - falls short by an infinite distance. The gap between earth and heaven is not a gap a tower can close. It is not a height problem. It is a holiness problem, and no amount of baked brick fixes it.\n\nWhich means the only way the gap ever closes is from the top down. The builders said, \"Come, let us go up.\" God said, \"Come, let Us go down.\" That descent - God coming down to a humanity that cannot climb - is the motion the whole rest of the Bible is about. Babel is where human ascent finally, definitively fails, so that divine descent can become the only hope left standing.",
+   "historicalContext": "Towers like the one in Genesis 11 were almost certainly ziggurats - stepped temple-mountains of the Mesopotamian plain, built of sun-baked mud-brick sealed with bitumen, exactly the 'brick instead of stone, tar instead of mortar' the text describes. A ziggurat's purpose was to be a stairway for a god to descend to the city. Genesis quietly inverts the boast: the structure built to bring heaven down to bless the city becomes the structure God comes down to scatter.",
+   "fascinatingFact": "The builders' stated fear is the hinge of the irony. They build the tower so that they will 'not be scattered over the face of all the earth' (11:4). The chapter ends, twice, with the LORD scattering them 'over the face of all the earth' (11:8-9). The very thing they built a city to prevent is the thing the city brings down on them. Self-protection, gripped too tightly, becomes the exact shape of the loss.",
+   "content": "Read Genesis 11 slowly and one detail almost smiles at you. The builders raise a tower \"that reaches to the heavens.\" And then: \"the LORD came down to see the city and the tower.\" The structure meant to scale the sky is so far beneath heaven that God has to descend just to look at it. The whole proud project, from the height it was built to reach, registers as something He stoops to find.\n\nThis is the quiet center of the primeval story. Every reach upward in Genesis 1-11 - toward God's knowledge, toward a name, toward heaven on a brick stairway - falls short by an infinite distance. The gap between earth and heaven is not a gap a tower can close. It is not a height problem. It is a holiness problem, and no amount of baked brick fixes it.\n\nWhich means the only way the gap ever closes is from the top down. The builders said, \"Come, let us go up.\" God said, \"Come, let Us go down.\" That descent - God coming down to a humanity that cannot climb - is the motion the whole rest of the Bible is about. Babel is where human ascent finally, definitively fails, so that divine descent can become the only hope left standing."
+  },
+  {
+   "type": "bridge",
+   "ancientTruth": "At Babel, humanity's one language - the last thing holding the reach together - is confused by God, and the people are scattered over the face of all the earth. The primeval story of Genesis 1-11 ends in fracture: a unity built without God collapses into a world that cannot understand itself.",
+   "modernApplication": "We are still on the plain of Shinar. We still gather to make a name - the platform, the brand, the legacy, the unassailable reputation - and we still discover that what we build to keep us from being scattered is the very thing that scatters us. The reach for a name we secure ourselves ends, as it always has, in a kind of loneliness no tower can wall out.",
+   "connectionPoint": "But Genesis 11 is not the end of the sentence; it is the comma before the promise. The next thing God does is find one man, Abram, and say, 'I will make your name great' (Genesis 12:2) - the gift Babel grabbed for, given freely - 'and all the families of the earth will be blessed through you' (12:3). Where Babel scattered the nations, the blessing to Abram is aimed straight back at them. Paul says this promise was the gospel preached ahead of time, and that its true heir is not a crowd but one person: 'The promises were spoken to Abraham and to his seed... meaning One, who is Christ' (Galatians 3:16). The single Seed first promised in the garden - 'He will crush your head' (Genesis 3:15) - is the thread running under the whole broken arc, pulling it toward Bethlehem.",
+   "newTestamentEcho": "John opens his Gospel exactly where Genesis opens: 'In the beginning was the Word, and the Word was with God, and the Word was God... Through Him all things were made.' At Babel the word - the one shared language - was confused, and the world fell apart. Then 'the Word became flesh and made His dwelling among us' (John 1:14): the Word that scattering broke came down in person to gather. At Pentecost the curse runs backward - the Spirit fills the disciples and 'each one heard them speaking his own language,' people 'from every nation under heaven' understanding the wonders of God (Acts 2:5-6, 11). Babel scattered into many tongues; the gospel reaches every tongue. And the arc closes with John seeing 'a multitude too large to count, from every nation and tribe and people and tongue, standing before the throne and before the Lamb' (Revelation 7:9) - the scattered nations not erased into one bland speech, but gathered, each tongue intact, around one Name."
+  },
+  {
+   "type": "reflection",
+   "prompt": "Where are you building a tower right now - some name or security you are stacking, brick by brick, to make sure you can never be scattered?",
+   "additionalQuestions": [
+    "Looking back over the whole story so far - garden, Cain, flood, Babel - which moment of reaching feels most like your own instinct? Where do you most want to seize what God means to give?",
+    "The builders feared being scattered above almost everything. What is the scattering you are most afraid of, and what are you building to keep it away?",
+    "If the only way the gap closes is God coming down, where in your life are you still trying to climb up to Him on your own bricks?"
+   ],
+   "invitationType": "honest-examination"
+  },
+  {
+   "type": "prayer",
+   "posture": "honest-confession",
+   "prayerText": "Father, I have read eleven chapters and recognized myself in every one. I reach for the standing You wanted to give me. I make my own name and call it survival. I build to keep from being scattered, and the building scatters me. Thank You that You did not leave the world on the plain of Shinar. Thank You that You came down - first to look, then, in Your Son, to dwell. Confuse the proud speech in me that says I can climb to You. Give me instead the one Word who came all the way down. Make my name small and Your Name great. Gather what my reaching has scattered. Through Christ, in whom every tongue will one day confess that He is Lord. Amen.",
+   "prayerType": "personal"
+  },
+  {
+   "type": "takeaway",
+   "commitment": "This is the week's looking-back day. Read Genesis 1-11 in one sitting if you can, or at least skim the chapter headings, and watch the single motion run through it - light, reach, fracture, grace, reach, fracture. Then name one tower you are building for your own name, and lay down one brick of it on purpose this week: a credit you let someone else take, a reputation you stop defending, a control you release.",
+   "leavingAtCross": [
+    "The name I keep trying to make for myself, brick by anxious brick",
+    "The conviction that if I build high enough or hold tight enough, I will never be scattered",
+    "The instinct, as old as Eden, to seize the standing God wants to hand me as a gift"
+   ],
+   "receivingFromCross": [
+    "A name I did not make - given, not seized - by the God who told Abram, 'I will make your name great'",
+    "A God who does not wait at the top of the tower but comes all the way down to where I actually am",
+    "A place in the gathered multitude from every tongue, where the scattering of Babel is finally, fully undone"
+   ],
+   "content": "This is the week's looking-back day. Read Genesis 1-11 in one sitting if you can, or at least skim the chapter headings, and watch the single motion run through it - light, reach, fracture, grace, reach, fracture. Then name one tower you are building for your own name, and lay down one brick of it on purpose this week: a credit you let someone else take, a reputation you stop defending, a control you release."
+  },
+  {
+   "type": "comprehension",
+   "forReflection": [
+    "Trace the single repeated motion through Genesis 1-11: how is the serpent's offer in Eden ('you will be like God'), Cain's refusal to master sin, the violence before the flood, and the tower at Babel all versions of the same reach?",
+    "Why does it matter that the builders wanted to 'make a name' for themselves, and that God then gives Abram a great name as a gift? What does the contrast teach about how a name is meant to come to us?",
+    "How does the scattering of tongues at Babel get answered at Pentecost (Acts 2) and completed in Revelation 7:9 - and why does the gospel gather the nations without erasing their many tongues?"
+   ],
+   "forAccountabilityPartners": [
+    "Name one 'tower' each of you is building - a name, security, or reputation you are stacking up so you can't be scattered. Be specific about the bricks.",
+    "Talk honestly about the fear of being scattered - of being left out, forgotten, or unknown. Where does that fear drive what you build?",
+    "Ask each other: where am I still trying to climb up to God on my own effort, when the whole story says the only way the gap closes is God coming down?"
+   ]
+  },
+  {
+   "type": "resource",
+   "relatedScriptures": [
+    {
+     "reference": "Genesis 3:15",
+     "text": "And I will put enmity between you and the woman, and between your seed and her seed. He will crush your head, and you will strike his heel."
+    },
+    {
+     "reference": "Genesis 12:2-3",
+     "text": "I will make you into a great nation, and I will bless you; I will make your name great, so that you will be a blessing... and all the families of the earth will be blessed through you."
+    },
+    {
+     "reference": "John 1:14",
+     "text": "The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
+    },
+    {
+     "reference": "Acts 2:6",
+     "text": "And when this sound rang out, a crowd came together in bewilderment, because each one heard them speaking his own language."
+    },
+    {
+     "reference": "Revelation 7:9",
+     "text": "After this I looked and saw a multitude too large to count, from every nation and tribe and people and tongue, standing before the throne and before the Lamb."
+    }
+   ],
+   "forDeeperStudy": [
+    {
+     "type": "book",
+     "title": "Genesis 1-11",
+     "note": "Read the whole primeval history in one sitting and watch the repeated motion: creation and blessing, the reach for autonomy, fracture and scattering, and a thread of grace (Genesis 3:15, Noah, the line of Shem) running under it all - the thread that surfaces as a promise in Genesis 12 and a Person in the Gospels."
+    }
+   ]
+  },
+  {
+   "type": "profile",
+   "name": "The Builders of Babel",
+   "title": "The City That Reached for a Name",
+   "description": "Not one person but a people - 'the sons of men' on the plain of Shinar, the whole world speaking one language. They are the human race at its most united and most self-reliant: organized, capable, ambitious, and convinced that with one lip and enough brick they could secure themselves a name and a place no scattering could reach. They are the last figures of the primeval history, and they stand for all of us in Genesis 1-11 - the reach for heaven from below, the refusal to receive what could only be given.",
+   "keyQuote": "Come, let us build for ourselves a city with a tower that reaches to the heavens, that we may make a name for ourselves and not be scattered over the face of all the earth.",
+   "lessonForUs": "The builders teach us by their failure what no tower can do. The distance between us and God was never a height we could climb; it was a holiness only God could cross. So He crossed it. The name the builders grabbed for, He gives - to Abram, and finally in the Son, the name above all names at which every tongue will confess that Jesus Christ is Lord. Stop building. Look down the plain. The God you were climbing toward has already come down to find you.",
+   "heading": "The City That Reached for a Name"
+  }
+ ],
+ "panels": [],
+ "totalWords": 2500,
+ "scriptureReference_full": "Genesis 11:1-9 (recap of Genesis 1-11)",
+ "sources": [
+  "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+  "Hebrew word study (balal H1101; the balal/Babel and shem wordplay) reflects standard lexical observation; the identification of the Babel tower with a Mesopotamian ziggurat of baked brick and bitumen reflects standard scholarly consensus on Genesis 11."
+ ]
 }

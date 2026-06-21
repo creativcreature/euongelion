@@ -1,38 +1,191 @@
 {
   "day": 11,
-  "title": "Babel’s reach",
-  "teaser": "Day 11 of Bible 365 — Genesis 11:1-9",
-  "framework": "Genesis 11:1-9 — Pride scattered",
+  "title": "The name they could not build",
+  "teaser": "On a plain in Shinar, humanity stacks bricks toward heaven to make a name for itself. God comes down, confuses the tongues, and scatters the builders. The name they grasped for is the one God later gives away for free.",
+  "framework": "Genesis 11:1-9 - Pride scattered, the name reversed at Pentecost",
   "scriptureReference": "Genesis 11:1-9",
   "chiastic_position": "application",
-  "pardesLevel": "peshat",
-  "panels": [
+  "pardesLevel": "derash",
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 11"
+      "type": "scripture",
+      "reference": "Genesis 11:1-9",
+      "translation": "BSB",
+      "emphasis": [
+        "make a name for ourselves",
+        "let Us go down and confuse their language",
+        "the LORD scattered them"
+      ],
+      "hebrewOriginal": "וְנַעֲשֶׂה־לָּנוּ שֵׁם פֶּן־נָפוּץ עַל־פְּנֵי כָל־הָאָרֶץ",
+      "passage": "Now the whole world had one language and a common form of speech. And as people journeyed eastward, they found a plain in the land of Shinar and settled there. And they said to one another, \"Come, let us make bricks and bake them thoroughly.\" So they used brick instead of stone, and tar instead of mortar. \"Come,\" they said, \"let us build for ourselves a city with a tower that reaches to the heavens, that we may make a name for ourselves and not be scattered over the face of all the earth.\" Then the LORD came down to see the city and the tower that the sons of men were building. And the LORD said, \"If they have begun to do this as one people speaking the same language, then nothing they devise will be beyond them. Come, let Us go down and confuse their language, so that they will not understand one another's speech.\" So the LORD scattered them from there over the face of all the earth, and they stopped building the city. That is why it is called Babel, for there the LORD confused the language of the whole world, and from that place the LORD scattered them over the face of all the earth."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 11:1-9**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 11:1-9 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בָּבֶל / בָּלַל",
+      "transliteration": "Bavel / balal",
+      "pronunciation": "bah-VEL / bah-LAL",
+      "meaning": "Babel (the place); to confuse, to mix, to confound",
+      "rootMeaning": "The builders meant their city to be Bavel - which in Babylonian means 'gate of god,' bab-ilu, a name of grandeur. The Hebrew text refuses the compliment. It hears in Bavel the sound of balal, the verb 'to confuse, to jumble.' So the proud name 'gate of god' becomes, on the narrator's tongue, 'confusion.' The tower's name turns into a pun against the tower.",
+      "usageNote": "Verse 9 makes the wordplay explicit: \"That is why it is called Babel, for there the LORD confused [balal] the language of the whole world.\" The same root surfaces again in the prophets, where Babylon is the empire that gathers the nations to itself and is finally scattered. Scripture lets the name carry its own verdict.",
+      "wordByWord": [
+        {
+          "word": "וְנַעֲשֶׂה",
+          "transliteration": "vena'aseh",
+          "meaning": "and let us make - the builders' urgent, self-directed verb"
+        },
+        {
+          "word": "לָּנוּ",
+          "transliteration": "lanu",
+          "meaning": "for ourselves - the whole project bends inward, toward us"
+        },
+        {
+          "word": "שֵׁם",
+          "transliteration": "shem",
+          "meaning": "a name, renown, reputation"
+        },
+        {
+          "word": "פֶּן־נָפוּץ",
+          "transliteration": "pen-nafutz",
+          "meaning": "lest we be scattered - the very fear they build to escape"
+        },
+        {
+          "word": "בָּלַל",
+          "transliteration": "balal",
+          "meaning": "He confused, He mixed, He confounded - the LORD's answer to their name"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שֵׁם / Shem",
+          "reference": "The same word shem ('name') the builders grasp for in verse 4 is what God freely promises Abram one chapter later: \"I will make your name great\" (Genesis 12:2). What human pride could not seize, divine grace gives away."
+        }
+      ],
+      "strongsNumber": "H894",
+      "definition": "Babel/Babylon; by wordplay, confusion - from the root balal (H1101), to mingle or confound",
+      "usage": "The narrator's pun is the whole sermon in a single word: the place built to make a name becomes the place where names, words, and speech all dissolve into noise."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Pride scattered. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Pentecost gathers the scattered (Acts 2).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Tower Built Against a Fear",
+      "body": "Read verse 4 slowly and you will hear two motives braided together. \"Let us build for ourselves a city with a tower that reaches to the heavens, that we may make a name for ourselves and not be scattered over the face of all the earth.\" One motive looks up - reach the heavens, make a name. One motive looks over the shoulder - not be scattered. The builders are reaching and afraid at the same time. The tower is an answer to a dread.\n\nThis is the first thing to notice: the project is not really about architecture. It is about identity and security. A name means we will be remembered, we will matter, we will not vanish. Staying gathered in one place means we will not be lost, blown apart, forgotten. So they bake bricks, pour tar, and stack their certainty into the sky. The materials are humble - mud and pitch - but the ambition is total. Heaven is the address. \"For ourselves\" is the deed.\n\nThen comes one of the quietest, most devastating lines in Genesis. \"Then the LORD came down to see the city and the tower.\" The builders aimed at the heavens; the LORD has to come down to find their tower at all. That gap is the sermon. From the ground the tower scrapes the clouds. From above it is a smudge on a plain, and God stoops to look.",
+      "keyInsight": "Babel is not condemned for building. It is exposed for the reason it builds: to make a name and outrun the fear of being scattered. The two things humans grasp for hardest - significance and security - are exactly the two things God means to give as gifts, not let us seize as loot.",
+      "content": "Read verse 4 slowly and you will hear two motives braided together. \"Let us build for ourselves a city with a tower that reaches to the heavens, that we may make a name for ourselves and not be scattered over the face of all the earth.\" One motive looks up - reach the heavens, make a name. One motive looks over the shoulder - not be scattered. The builders are reaching and afraid at the same time. The tower is an answer to a dread.\n\nThis is the first thing to notice: the project is not really about architecture. It is about identity and security. A name means we will be remembered, we will matter, we will not vanish. Staying gathered in one place means we will not be lost, blown apart, forgotten. So they bake bricks, pour tar, and stack their certainty into the sky. The materials are humble - mud and pitch - but the ambition is total. Heaven is the address. \"For ourselves\" is the deed.\n\nThen comes one of the quietest, most devastating lines in Genesis. \"Then the LORD came down to see the city and the tower.\" The builders aimed at the heavens; the LORD has to come down to find their tower at all. That gap is the sermon. From the ground the tower scrapes the clouds. From above it is a smudge on a plain, and God stoops to look."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Wall of Names",
+      "body": "There is a long marble wall I keep thinking about, in a building downtown, engraved with the names of donors. The largest gifts are cut largest, near the top. A man I knew gave heavily, partly so his name would sit near the top of that wall. He told me once, half-joking, that it was the closest thing to immortality he could buy.\n\nHe died, and within a few years the building was renovated. The wall came down. Nobody I asked could tell me where the marble went. The name that was supposed to outlast him outlasted him by about a decade, into a storage room or a dumpster.\n\nI do not say this to be cruel. I say it because I do the same thing in smaller bricks. The polished profile, the title I want people to use, the quiet hope that what I make will keep my name in the air after I am gone. We are all on the plain of Shinar with a trowel in our hand, stacking something we hope will reach high enough to make us matter and stay put. The tower is never really mud and tar. It is the fear that without our own construction, we will be scattered and forgotten.",
+      "connectionToTheme": "Babel is not an ancient story about other people. It is the blueprint of every name we try to build for ourselves against the fear of being forgotten.",
+      "content": "There is a long marble wall I keep thinking about, in a building downtown, engraved with the names of donors. The largest gifts are cut largest, near the top. A man I knew gave heavily, partly so his name would sit near the top of that wall. He told me once, half-joking, that it was the closest thing to immortality he could buy.\n\nHe died, and within a few years the building was renovated. The wall came down. Nobody I asked could tell me where the marble went. The name that was supposed to outlast him outlasted him by about a decade, into a storage room or a dumpster.\n\nI do not say this to be cruel. I say it because I do the same thing in smaller bricks. The polished profile, the title I want people to use, the quiet hope that what I make will keep my name in the air after I am gone. We are all on the plain of Shinar with a trowel in our hand, stacking something we hope will reach high enough to make us matter and stay put. The tower is never really mud and tar. It is the fear that without our own construction, we will be scattered and forgotten."
+    },
+    {
+      "type": "insight",
+      "heading": "The Mercy Hidden in the Scattering",
+      "body": "It is easy to read the scattering as pure judgment. It is judgment - but watch what kind. In verse 6 the LORD says, \"If they have begun to do this as one people speaking the same language, then nothing they devise will be beyond them.\" That is a warning, not flattery. A united humanity with limitless reach and a heart bent inward toward its own name is not a paradise; it is a tyranny waiting to be poured in concrete.\n\nSo the confusion of tongues is a strange kindness. By breaking the one language, God breaks the one project, scattering the builders before the tower can finish becoming what towers like that always become. The judgment is also a rescue. Genesis has done this before: the man and woman are sent from the garden, but only after God clothes them, and only so they will not live forever in their fallen state. Exile, in Genesis, keeps doubling as protection.\n\nAnd notice the precise shape of it. The builders feared one thing above all: \"lest we be scattered.\" That is exactly what God does - He scatters them. The judgment is their own fear handed back to them. The thing they built the whole tower to avoid is the thing the tower brings down on their heads.",
+      "historicalContext": "Genesis 1-11 forms a single movement - creation, fall, flood, then Babel - tracing how sin spreads from one couple to the whole human family. Babel is the last scene of that movement and the hinge into the rest of the book. Immediately after the nations are scattered in chapter 11, chapter 12 opens with God calling one scattered man, Abram, and beginning to gather a people back to Himself. The scattering is not the end of the story; it is the problem the rest of the Bible answers.",
+      "fascinatingFact": "The builders say \"Come, let us\" twice - \"let us make bricks,\" \"let us build.\" Then in verse 7 God answers with the same grammar turned back on them: \"Come, let Us go down.\" Their human council is met, and overruled, by a divine one. Heaven has the last \"let us.\"",
+      "content": "It is easy to read the scattering as pure judgment. It is judgment - but watch what kind. In verse 6 the LORD says, \"If they have begun to do this as one people speaking the same language, then nothing they devise will be beyond them.\" That is a warning, not flattery. A united humanity with limitless reach and a heart bent inward toward its own name is not a paradise; it is a tyranny waiting to be poured in concrete.\n\nSo the confusion of tongues is a strange kindness. By breaking the one language, God breaks the one project, scattering the builders before the tower can finish becoming what towers like that always become. The judgment is also a rescue. Genesis has done this before: the man and woman are sent from the garden, but only after God clothes them, and only so they will not live forever in their fallen state. Exile, in Genesis, keeps doubling as protection.\n\nAnd notice the precise shape of it. The builders feared one thing above all: \"lest we be scattered.\" That is exactly what God does - He scatters them. The judgment is their own fear handed back to them. The thing they built the whole tower to avoid is the thing the tower brings down on their heads."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "At Babel, one humanity tries to climb to heaven and make a name for itself; God comes down, confuses the single language into many, and scatters the builders across the earth. Pride reaching up is met by mercy bending down.",
+      "modernApplication": "We still build for ourselves: the personal brand, the legacy, the curated name we hope will keep us from being forgotten. And we still find that the very things we stack up to feel secure - achievement, image, control - end up scattering us, leaving us more isolated and less understood than when we began. Babel is the loneliness underneath the ambition.",
+      "connectionPoint": "Babel is not the last word on languages and nations - it is the first half of a story Scripture finishes much later. What was broken on the plain of Shinar is healed in an upper room in Jerusalem. The same God who once came down to confuse one language comes down again as the Spirit and gives many languages back, this time understood. The scattering is answered by a gathering.",
+      "newTestamentEcho": "At Pentecost the Holy Spirit fills the disciples and they \"began to speak in other tongues,\" and the gathered crowd is amazed because \"each one heard them speaking his own language\" (Acts 2:4, 6). At Babel one tongue became many and no one could understand; at Pentecost many tongues are spoken and everyone understands \"the wonders of God\" (Acts 2:11). And the name the builders could not make, God has now made and given away: \"God exalted Him to the highest place and gave Him the name above all names, that at the name of Jesus every knee should bow... and every tongue confess that Jesus Christ is Lord\" (Philippians 2:9-11). The scattered nations are gathered at last not around a tower but around the Lamb - \"a multitude too large to count, from every nation and tribe and people and tongue\" (Revelation 7:9). Babel reversed: not one language forced on all, but every tongue kept, and all of them singing the one name."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What are you building for yourself right now - and which fear is it really an answer to?",
+      "additionalQuestions": [
+        "Where do you most feel the pressure to 'make a name for yourself'? What would it cost you to let that name be given rather than seized?",
+        "Babel's builders feared being scattered. What scattering - of relationships, plans, or reputation - are you working hardest to prevent, and what would it mean to entrust that to God instead?",
+        "Pentecost gathered people without erasing their languages. Where might God be calling you to be gathered into something larger than your own project without losing who you are?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I am a builder. I stack my name brick by brick and call it security, and underneath it all is the fear that without my own tower I will be scattered and forgotten. Come down and look at what I am building. Where it has become a monument to me, take it apart gently. Quiet my reaching hands. Teach me that the name I cannot make for myself, You have already made and given freely in Jesus. Gather me, with all the scattered nations, around Him - the name above every name. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one 'tower' you are building - a reputation, a project, an image - and ask honestly which fear it is answering. Then take one small step that loosens your grip on it: tell someone the truth, leave a thing unfinished, or pray over it before you touch it again. Trade the name you are trying to make for the name you have already been given.",
+      "leavingAtCross": [
+        "The drive to make a name for myself so I will not be forgotten",
+        "The fear of being scattered that makes me grasp for control",
+        "The quiet belief that what I build is what makes me matter"
+      ],
+      "receivingFromCross": [
+        "A name I did not earn, given freely in Christ, the name above every name",
+        "A place gathered among the nations around the Lamb, not around a tower",
+        "The freedom to build for others instead of for myself, with open hands"
+      ],
+      "content": "Today, name one 'tower' you are building - a reputation, a project, an image - and ask honestly which fear it is answering. Then take one small step that loosens your grip on it: tell someone the truth, leave a thing unfinished, or pray over it before you touch it again. Trade the name you are trying to make for the name you have already been given."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What two motives are joined together in the builders' words in verse 4, and how are they connected to the same fear?",
+        "Why does the text say the LORD 'came down' to see a tower meant to reach the heavens - and what does that small phrase reveal about the distance between human ambition and reality?",
+        "How does Pentecost (Acts 2) reverse exactly what happened at Babel, and what does that reversal say about how God gathers the nations?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'tower' you have been building lately to make a name for yourself, and the fear underneath it.",
+        "Talk about a time your own striving for security ended up scattering you - isolating you from people instead of holding you together.",
+        "Ask each other: where is God inviting you to receive a name rather than build one, and to be gathered into something bigger than your own project?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 12:2",
+          "text": "I will make you into a great nation, and I will bless you; I will make your name great, so that you will be a blessing."
+        },
+        {
+          "reference": "Acts 2:6",
+          "text": "And when this sound rang out, a crowd came together in bewilderment, because each one heard them speaking his own language."
+        },
+        {
+          "reference": "Philippians 2:9",
+          "text": "Therefore God exalted Him to the highest place and gave Him the name above all names,"
+        },
+        {
+          "reference": "Revelation 7:9",
+          "text": "After this I looked and saw a multitude too large to count, from every nation and tribe and people and tongue, standing before the throne and before the Lamb. They were wearing white robes and holding palm branches in their hands."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 11:1-9 with Genesis 12:1-3",
+          "note": "Read the two passages back to back. Notice how the scattering of the nations who try to make their own name (11) flows straight into God's promise to make Abram's name great and bless all nations through him (12). One movement, two halves."
+        },
+        {
+          "type": "book",
+          "title": "Acts 2:1-11",
+          "note": "Read Pentecost as the deliberate undoing of Babel - many tongues, all understood, the nations gathered rather than scattered."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Builders of Babel",
+      "title": "The Unnamed Who Tried to Name Themselves",
+      "description": "Genesis gives the builders of Babel no individual names - a quiet irony in a story about people desperate to make a name for themselves. They are 'the sons of men,' one people with one language, gathered on the plain of Shinar. They represent all of humanity after the flood, united not by worship but by ambition and a shared fear of being scattered. Their tower is the high-water mark of the story that began in Eden: the creature reaching up to secure itself apart from its Creator.",
+      "keyQuote": "Come, let us build for ourselves a city with a tower that reaches to the heavens, that we may make a name for ourselves.",
+      "lessonForUs": "The builders teach us by their failure. The name you cannot construct, God offers to give - and the security you cannot stack into the sky is found not in a tower but in being gathered around Christ. What Babel grasped for and lost, the gospel hands over freely.",
+      "heading": "The Unnamed Who Tried to Name Themselves"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2499,
+  "scriptureReference_full": "Genesis 11:1-9",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain (CC0 1.0).",
+    "Hebrew word study (Bavel/balal, shem) reflects standard lexical sources; the Bavel/balal wordplay is made explicit by the narrator in Genesis 11:9 and is widely noted in Old Testament scholarship."
+  ]
 }

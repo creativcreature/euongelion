@@ -24,7 +24,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'anointed-day-5': "Anointing is not to keep — it's to give. You are sent.",
   'bible-365-day-1':
     'A year-long walk through Scripture begins with four words that change everything: in the beginning, God.',
-  'bible-365-day-10': 'Day 10 of Bible 365 — Genesis 8:20-9:17',
+  'bible-365-day-10':
+    'Day 10 of Bible 365 - Genesis 8:20-9:17. A pleasing aroma rises, and God hangs His war-bow in the clouds, aimed away.',
   'bible-365-day-100': 'Day 100 of Bible 365 — 1 Kings 11',
   'bible-365-day-101': 'Day 101 of Bible 365 — 1 Kings 11',
   'bible-365-day-102': 'Day 102 of Bible 365 — 1 Kings 11',
@@ -35,7 +36,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-107': 'Day 107 of Bible 365 — 1 Kings 12-16',
   'bible-365-day-108': 'Day 108 of Bible 365 — 1 Kings 12-16',
   'bible-365-day-109': 'Day 109 of Bible 365 — 1 Kings 12-16',
-  'bible-365-day-11': 'Day 11 of Bible 365 — Genesis 11:1-9',
+  'bible-365-day-11':
+    'On a plain in Shinar, humanity stacks bricks toward heaven to make a name for itself. God comes down, confuses the tongues, and scatters the builders. The name they grasped for is the one God later gives away for free.',
   'bible-365-day-110': 'Day 110 of Bible 365 — 1 Kings 12-16',
   'bible-365-day-111': 'Day 111 of Bible 365 — 1 Kings 12-16',
   'bible-365-day-112': 'Day 112 of Bible 365 — 1 Kings 12-16',
@@ -46,7 +48,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-117': 'Day 117 of Bible 365 — 1 Kings 17-19, 2 Kings 2',
   'bible-365-day-118': 'Day 118 of Bible 365 — 1 Kings 17-19, 2 Kings 2',
   'bible-365-day-119': 'Day 119 of Bible 365 — 1 Kings 17-19, 2 Kings 2',
-  'bible-365-day-12': 'Day 12 of Bible 365 — Genesis 11 (recap)',
+  'bible-365-day-12':
+    'Eleven chapters in, the human story keeps reaching for heaven and coming apart. Babel is where the reaching finally breaks into noise - and where the canon starts leaning toward the One who will come down to gather what was scattered.',
   'bible-365-day-120': 'Day 120 of Bible 365 — 2 Kings 4-13',
   'bible-365-day-121': 'Day 121 of Bible 365 — 2 Kings 4-13',
   'bible-365-day-122': 'Day 122 of Bible 365 — 2 Kings 4-13',
@@ -57,7 +60,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-127': 'Day 127 of Bible 365 — Amos, Hosea, Micah',
   'bible-365-day-128': 'Day 128 of Bible 365 — Amos, Hosea, Micah',
   'bible-365-day-129': 'Day 129 of Bible 365 — Amos, Hosea, Micah',
-  'bible-365-day-13': 'Day 13 of Bible 365 — Genesis 12:1-3',
+  'bible-365-day-13':
+    "God's first word to Abram is a command to leave everything for a land He won't name. The whole gospel is hidden in that one word: Go.",
   'bible-365-day-130': 'Day 130 of Bible 365 — Amos, Hosea, Micah',
   'bible-365-day-131': 'Day 131 of Bible 365 — Amos, Hosea, Micah',
   'bible-365-day-132': 'Day 132 of Bible 365 — Amos, Hosea, Micah',
@@ -68,7 +72,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-137': 'Day 137 of Bible 365 — 2 Kings 18-20',
   'bible-365-day-138': 'Day 138 of Bible 365 — 2 Kings 18-20',
   'bible-365-day-139': 'Day 139 of Bible 365 — 2 Kings 18-20',
-  'bible-365-day-14': 'Day 14 of Bible 365 — Genesis 12 (sabbath)',
+  'bible-365-day-14':
+    'The call to Abram begins with a leaving. Before the land, the name, the blessing, there is a door to walk out of - and a Voice worth trusting on the other side.',
   'bible-365-day-140': 'Day 140 of Bible 365 — 2 Kings 18-20',
   'bible-365-day-141': 'Day 141 of Bible 365 — 2 Kings 22-23',
   'bible-365-day-142': 'Day 142 of Bible 365 — 2 Kings 22-23',
@@ -368,7 +373,7 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-68': 'Day 68 of Bible 365 — Joshua 7',
   'bible-365-day-69': 'Day 69 of Bible 365 — Joshua 24',
   'bible-365-day-7':
-    'Day 7 of Bible 365 — God seeks Adam first, then clothes him. Mercy precedes the expulsion.',
+    "Before the gate closes behind Adam, God kills to clothe him. The first death in Scripture is God's, for our shame.",
   'bible-365-day-70': 'Day 70 of Bible 365 — Sabbath',
   'bible-365-day-71': 'Day 71 of Bible 365 — Judges 2:6-23',
   'bible-365-day-72': 'Day 72 of Bible 365 — Judges 6',
@@ -379,7 +384,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-77': 'Day 77 of Bible 365 — Sabbath',
   'bible-365-day-78': 'Day 78 of Bible 365 — 1 Samuel 1',
   'bible-365-day-79': 'Day 79 of Bible 365 — 1 Samuel 3',
-  'bible-365-day-8': 'Day 8 of Bible 365 — Genesis 4:1-16',
+  'bible-365-day-8':
+    'Day 8 of Bible 365 - Genesis 4:1-16. The first death in the Bible is not from the curse outside Eden but from the anger inside a brother. God warns Cain before he strikes: sin is crouching, and it can be mastered.',
   'bible-365-day-80': 'Day 80 of Bible 365 — 1 Samuel 8',
   'bible-365-day-81': 'Day 81 of Bible 365 — 1 Samuel 15',
   'bible-365-day-82': 'Day 82 of Bible 365 — 1 Samuel 16',
@@ -390,7 +396,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-87': 'Day 87 of Bible 365 — 2 Samuel 11-12',
   'bible-365-day-88': 'Day 88 of Bible 365 — Psalm 51',
   'bible-365-day-89': 'Day 89 of Bible 365 — Psalm 23',
-  'bible-365-day-9': 'Day 9 of Bible 365 — Genesis 6:5-8',
+  'bible-365-day-9':
+    'When God looked at a world bent only toward evil, one man caught His eye. Genesis 6 holds the first time grace is named in all of Scripture.',
   'bible-365-day-90': 'Day 90 of Bible 365 — Psalm 22',
   'bible-365-day-91': 'Day 91 of Bible 365 — Sabbath',
   'bible-365-day-92': 'Day 92 of Bible 365 — 1 Kings 3-8',
@@ -733,7 +740,7 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'bible-365-day-107': 'Divided Kingdom — Day 2 — Building',
   'bible-365-day-108': 'Divided Kingdom — Day 3 — Pivot',
   'bible-365-day-109': 'Divided Kingdom — Day 4 — Application',
-  'bible-365-day-11': 'Babel’s reach',
+  'bible-365-day-11': 'The name they could not build',
   'bible-365-day-110': 'Divided Kingdom — Day 5 — Resolution',
   'bible-365-day-111': 'Divided Kingdom — Day 6 — Deeper Dive',
   'bible-365-day-112': 'Divided Kingdom — Day 7 — Sabbath',

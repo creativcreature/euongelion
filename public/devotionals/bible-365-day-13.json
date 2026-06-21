@@ -1,38 +1,196 @@
 {
-  "day": 13,
-  "title": "Go from your country",
-  "teaser": "Day 13 of Bible 365 — Genesis 12:1-3",
-  "framework": "Genesis 12:1-3 — Faith answers a call",
-  "scriptureReference": "Genesis 12:1-3",
-  "chiastic_position": "deeper",
-  "pardesLevel": "peshat",
-  "panels": [
+ "day": 13,
+ "title": "Go from your country",
+ "teaser": "God's first word to Abram is a command to leave everything for a land He won't name. The whole gospel is hidden in that one word: Go.",
+ "framework": "Genesis 12:1-3 - Faith answers a call",
+ "scriptureReference": "Genesis 12:1-3",
+ "chiastic_position": "deeper",
+ "pardesLevel": "peshat",
+ "modules": [
+  {
+   "type": "scripture",
+   "reference": "Genesis 12:1-3",
+   "translation": "BSB",
+   "emphasis": [
+    "Leave your country",
+    "the land I will show you",
+    "all the families of the earth will be blessed through you"
+   ],
+   "hebrewOriginal": "וַיֹּאמֶר יְהוָה אֶל־אַבְרָם לֶךְ־לְךָ מֵאַרְצְךָ וּמִמּוֹלַדְתְּךָ וּמִבֵּית אָבִיךָ אֶל־הָאָרֶץ אֲשֶׁר אַרְאֶךָּ",
+   "passage": "Then the LORD said to Abram, \"Leave your country, your kindred, and your father's household, and go to the land I will show you. I will make you into a great nation, and I will bless you; I will make your name great, so that you will be a blessing. I will bless those who bless you and curse those who curse you; and all the families of the earth will be blessed through you.\""
+  },
+  {
+   "type": "vocab",
+   "language": "hebrew",
+   "word": "לֶךְ־לְךָ",
+   "transliteration": "lekh-lekha",
+   "pronunciation": "lekh leh-KHA",
+   "meaning": "Go! - go for yourself, go to yourself",
+   "rootMeaning": "Lekh is the command form of halak, the ordinary Hebrew verb for walking or going. Lekha is a small word added on - literally \"to you\" or \"for you.\" Hebrew uses this little dative for emphasis, the way English presses a word: not just \"go,\" but \"you - go.\"",
+   "usageNote": "God speaks this exact command, lekh-lekha, to one person in all of Scripture - Abraham - and He says it twice: here in Genesis 12, sending him from his homeland, and again in Genesis 22, sending him up Mount Moriah to offer Isaac. The first asks him to leave his past; the second, to surrender his future. The call to go bookends his life.",
+   "wordByWord": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 13"
+     "word": "וַיֹּאמֶר",
+     "transliteration": "vayyomer",
+     "meaning": "and He said - the word that opens the whole story; God speaks first"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 12:1-3**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 12:1-3 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+     "word": "יְהוָה",
+     "transliteration": "YHWH",
+     "meaning": "the LORD - the covenant name of God, the One who keeps promises"
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Faith answers a call. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: All nations blessed in Him (Gal 3:8).",
-      "wordCount": 45
+     "word": "לֶךְ",
+     "transliteration": "lekh",
+     "meaning": "go! walk! - a command, not a suggestion"
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+     "word": "לְךָ",
+     "transliteration": "lekha",
+     "meaning": "for yourself, to yourself - the emphasizing word that turns the command personal"
+    },
+    {
+     "word": "מֵאַרְצְךָ",
+     "transliteration": "me'artzekha",
+     "meaning": "from your country, your land - the first thing he must leave"
+    },
+    {
+     "word": "אֲשֶׁר אַרְאֶךָּ",
+     "transliteration": "asher ar'ekka",
+     "meaning": "which I will show you - the destination God withholds; faith walks before it sees"
     }
-  ],
-  "isPlaceholder": true
+   ],
+   "relatedWords": [
+    {
+     "word": "הָלַךְ / הִתְהַלֵּךְ",
+     "reference": "Halak (to walk) is also how Genesis describes walking with God - Enoch \"walked with God\" (Genesis 5:24), and Noah \"walked with God\" (Genesis 6:9). When God says lekh to Abram, He is not only sending him on a road; He is calling him into a walk."
+    }
+   ],
+   "strongsNumber": "H1980",
+   "definition": "halak: to walk, to go, to come; a primitive root used of literal travel and of the whole conduct of a life lived before God",
+   "usage": "The command is bare and almost abrupt: Go. God names what Abram must leave - country, kindred, father's house, the three circles of belonging tightening toward the heart - but He does not name where Abram is going. The destination is held back until the going has already begun."
+  },
+  {
+   "type": "teaching",
+   "heading": "The Word That Starts the Whole Story",
+   "body": "For eleven chapters Genesis has been telling the story of the whole human race - creation, the garden, the flood, the scattering at Babel. Then, with no warning, the camera narrows to one man in one city, and God speaks. \"Leave your country, your kindred, and your father's household, and go to the land I will show you.\"\n\nNotice everything packed into that first sentence. God names three things Abram must leave, and they are arranged like circles drawn ever tighter: your country, the widest belonging; your kindred, the clan; your father's household, the family table where you ate as a child. Each is harder to leave than the last. And against all three, God sets a single destination He refuses to name - \"the land I will show you.\" Not the land I am giving you. The land I will show you, later, once you are already walking.\n\nThis is the shape of faith laid down at the front of the Bible. Abram is asked to let go of everything certain in exchange for a promise from a God he is only beginning to know. He is seventy-five years old. He has no children, and his wife is barren. There is, on paper, no reason this should end in a great nation. And yet the next verse simply says, \"So Abram departed, as the LORD had directed him.\" The command was \"Go.\" The obedience was \"He went.\" Between them lies the whole life of faith.",
+   "keyInsight": "God's first word to Abram is not a doctrine to believe but a road to walk. Faith here is not certainty about the destination; it is trust in the One who calls, strong enough to start moving before the map arrives.",
+   "content": "For eleven chapters Genesis has been telling the story of the whole human race - creation, the garden, the flood, the scattering at Babel. Then, with no warning, the camera narrows to one man in one city, and God speaks. \"Leave your country, your kindred, and your father's household, and go to the land I will show you.\"\n\nNotice everything packed into that first sentence. God names three things Abram must leave, and they are arranged like circles drawn ever tighter: your country, the widest belonging; your kindred, the clan; your father's household, the family table where you ate as a child. Each is harder to leave than the last. And against all three, God sets a single destination He refuses to name - \"the land I will show you.\" Not the land I am giving you. The land I will show you, later, once you are already walking.\n\nThis is the shape of faith laid down at the front of the Bible. Abram is asked to let go of everything certain in exchange for a promise from a God he is only beginning to know. He is seventy-five years old. He has no children, and his wife is barren. There is, on paper, no reason this should end in a great nation. And yet the next verse simply says, \"So Abram departed, as the LORD had directed him.\" The command was \"Go.\" The obedience was \"He went.\" Between them lies the whole life of faith."
+  },
+  {
+   "type": "story",
+   "heading": "The Boxes by the Door",
+   "body": "A friend told me about the night before her family moved across the country for a job that was, at that point, only a verbal offer in an email. The truck came in the morning. That evening the whole house sat in boxes by the door, the rooms stripped down to the marks on the wall where pictures used to hang. Her daughter asked, standing in the empty living room, whether their new house would have a window in her bedroom.\n\nShe didn't know. She hadn't seen it. She could only say what she actually believed: that the people taking them there could be trusted, and that the window would have to be found out by going.\n\nThat is the strange honesty of any real beginning. You leave what you can see for what you cannot, and the only thing you carry across the gap is whether you trust the one who called you out. Abram's whole household stood in boxes by the door. Behind him: the city, the graves of his ancestors, the gods of his fathers. Ahead of him: a sentence. \"The land I will show you.\" He picked up the boxes anyway.",
+   "connectionToTheme": "Faith does not wait until it can see the destination. It trusts the One who calls and starts walking, learning the way only by going.",
+   "content": "A friend told me about the night before her family moved across the country for a job that was, at that point, only a verbal offer in an email. The truck came in the morning. That evening the whole house sat in boxes by the door, the rooms stripped down to the marks on the wall where pictures used to hang. Her daughter asked, standing in the empty living room, whether their new house would have a window in her bedroom.\n\nShe didn't know. She hadn't seen it. She could only say what she actually believed: that the people taking them there could be trusted, and that the window would have to be found out by going.\n\nThat is the strange honesty of any real beginning. You leave what you can see for what you cannot, and the only thing you carry across the gap is whether you trust the one who called you out. Abram's whole household stood in boxes by the door. Behind him: the city, the graves of his ancestors, the gods of his fathers. Ahead of him: a sentence. \"The land I will show you.\" He picked up the boxes anyway."
+  },
+  {
+   "type": "insight",
+   "heading": "A Blessing That Was Never Meant to Stop With Him",
+   "body": "Read the promise slowly and watch where it is aimed. \"I will make you into a great nation, and I will bless you; I will make your name great, so that you will be a blessing.\" Five times in three verses God says some form of bless. But the blessing is not a reservoir for Abram to sit inside. It is a river meant to run through him: \"so that you will be a blessing.\"\n\nThen comes the line that breaks the story wide open. \"And all the families of the earth will be blessed through you.\" Look back at chapter 11. The last thing that happened to the families of the earth was Babel - scattered, divided, their one language broken into many. Now God answers that scattering. The very families that were divided at Babel will be gathered back into blessing, and the gathering will run through one childless old man walking out of Ur.\n\nThis is why the call of Abram is not a footnote about ancient migration. It is the moment God begins His rescue of the whole human race, and He begins it by choosing one. The narrowing in chapter 12 - from all nations down to a single man - is not God losing interest in the world. It is God taking aim. He pulls the bow back to one point so the arrow can reach everyone.",
+   "historicalContext": "Joshua 24:2 remembers that Abram's ancestors \"worshiped other gods\" beyond the Euphrates. When God calls Abram out of his father's household, He is calling him from a world of many gods toward the worship of one - and entrusting a single, childless household with a blessing meant for nations that did not yet know its God.",
+   "fascinatingFact": "The phrase \"all the families of the earth\" echoes the table of nations in Genesis 10 and the scattering at Babel in Genesis 11. Genesis 12:3 is God's first move to answer Babel - not by undoing the scattering, but by sending a blessing out to find the scattered. The thread is not finished until Revelation 7, where a multitude \"from every nation and tribe and people and tongue\" stands before the throne.",
+   "content": "Read the promise slowly and watch where it is aimed. \"I will make you into a great nation, and I will bless you; I will make your name great, so that you will be a blessing.\" Five times in three verses God says some form of bless. But the blessing is not a reservoir for Abram to sit inside. It is a river meant to run through him: \"so that you will be a blessing.\"\n\nThen comes the line that breaks the story wide open. \"And all the families of the earth will be blessed through you.\" Look back at chapter 11. The last thing that happened to the families of the earth was Babel - scattered, divided, their one language broken into many. Now God answers that scattering. The very families that were divided at Babel will be gathered back into blessing, and the gathering will run through one childless old man walking out of Ur.\n\nThis is why the call of Abram is not a footnote about ancient migration. It is the moment God begins His rescue of the whole human race, and He begins it by choosing one. The narrowing in chapter 12 - from all nations down to a single man - is not God losing interest in the world. It is God taking aim. He pulls the bow back to one point so the arrow can reach everyone."
+  },
+  {
+   "type": "bridge",
+   "ancientTruth": "God calls one man out of everything familiar with a bare command - Go - and a promise too large for him to fulfill: that through him all the families of the earth will be blessed.",
+   "modernApplication": "We are still asked to go before we are shown. The promise we are given is rarely a detailed map; it is the trustworthiness of the One who calls. To follow Christ is to leave a country we can see for a kingdom we cannot yet see, carrying nothing across the gap but trust in His word.",
+   "connectionPoint": "Paul reads Genesis 12 as the first preaching of the gospel. \"The Scripture foresaw that God would justify the Gentiles by faith, and foretold the gospel to Abraham: 'All nations will be blessed through you'\" (Galatians 3:8). The promise to Abram was never only about land or lineage. Hidden inside \"all the families of the earth will be blessed through you\" was the good news that the nations would one day be brought home to God by faith - the same faith with which Abram first answered, Go.",
+   "newTestamentEcho": "Paul names exactly how the promise comes true. \"The promises were spoken to Abraham and to his seed... 'and to your seed,' meaning One, who is Christ\" (Galatians 3:16). The single offspring through whom the blessing reaches every family is Jesus. And the door is open to everyone who shares Abram's faith: \"If you belong to Christ, then you are Abraham's seed and heirs according to the promise\" (Galatians 3:29)."
+  },
+  {
+   "type": "reflection",
+   "prompt": "What is God asking you to leave behind before He will show you where He is taking you?",
+   "additionalQuestions": [
+    "Abram had to release three circles - country, kindred, father's house. Which of these is hardest for you to let go: the wide world's approval, the people closest to you, or the inherited shape of the family you came from?",
+    "Where in your life have you been waiting to see the whole road before you take the first step? What would it look like to go on the strength of the One who calls, instead?",
+    "God blessed Abram so that he would be a blessing. Where is your blessing meant to flow through you to someone else, rather than collect in you?"
+   ],
+   "invitationType": "honest-examination"
+  },
+  {
+   "type": "prayer",
+   "posture": "trusting-surrender",
+   "prayerText": "Lord, You spoke one word to Abram - Go - and the whole story of rescue began with his single, trembling yes. I confess how tightly I hold the country I can see. Loosen my grip. Where You are calling me to leave what is familiar for a land You have not yet shown me, give me the faith that walks before it sees. Thank You that the blessing You promised Abram has reached even me, through Jesus, his true Seed, in whom all the families of the earth are gathered home. Let me be, in my small place, a blessing through You. Amen.",
+   "prayerType": "personal"
+  },
+  {
+   "type": "takeaway",
+   "commitment": "Today, name one thing you have been gripping that God may be asking you to release in order to follow Him. Write it down. Then take one concrete step of going - one act of obedience you can do today before you can see where it leads.",
+   "leavingAtCross": [
+    "The need to see the whole road before I am willing to take the first step",
+    "The belonging - country, people, inheritance - that I have turned into a reason not to follow",
+    "The fear that obedience will cost me more than the One who calls me can be trusted to repay"
+   ],
+   "receivingFromCross": [
+    "The faith to go on the strength of God's word, before the destination is shown",
+    "A place among Abraham's children, made heirs of the promise through Christ",
+    "A blessing that was never meant to stop with me, but to run through me to others"
+   ],
+   "content": "Today, name one thing you have been gripping that God may be asking you to release in order to follow Him. Write it down. Then take one concrete step of going - one act of obedience you can do today before you can see where it leads."
+  },
+  {
+   "type": "comprehension",
+   "forReflection": [
+    "What three things does God ask Abram to leave, and why does the order - country, then kindred, then father's household - matter?",
+    "God names what Abram must leave but not where he is going - only \"the land I will show you.\" What does that withholding teach about the nature of faith?",
+    "How does Genesis 12:3 answer the scattering of the nations at Babel in Genesis 11, and how does Paul say that answer finally arrives (Galatians 3:8, 16)?"
+   ],
+   "forAccountabilityPartners": [
+    "Name one 'country' you are being asked to leave right now - a comfort, a security, an old belonging - and talk about what makes it hard to step away from.",
+    "Share a time you obeyed God before you could see the outcome. What did you learn about Him in the going that you could not have learned standing still?",
+    "Ask each other: who is one person your blessing is meant to flow to this week, and what would 'being a blessing' to them concretely look like?"
+   ]
+  },
+  {
+   "type": "resource",
+   "relatedScriptures": [
+    {
+     "reference": "Genesis 12:4",
+     "text": "So Abram departed, as the LORD had directed him, and Lot went with him. Abram was seventy-five years old when he left Haran."
+    },
+    {
+     "reference": "Genesis 15:6",
+     "text": "Abram believed the LORD, and it was credited to him as righteousness."
+    },
+    {
+     "reference": "Galatians 3:8",
+     "text": "The Scripture foresaw that God would justify the Gentiles by faith, and foretold the gospel to Abraham: \"All nations will be blessed through you.\""
+    },
+    {
+     "reference": "Galatians 3:16",
+     "text": "The promises were spoken to Abraham and to his seed. The Scripture does not say, \"and to seeds,\" meaning many, but \"and to your seed,\" meaning One, who is Christ."
+    },
+    {
+     "reference": "Hebrews 11:8",
+     "text": "By faith Abraham, when called to go to a place he would later receive as his inheritance, obeyed and went, without knowing where he was going."
+    }
+   ],
+   "forDeeperStudy": [
+    {
+     "type": "book",
+     "title": "Genesis 12 and Galatians 3",
+     "note": "Read Genesis 12:1-9 alongside Galatians 3:6-29. Watch how Paul reaches back into the call of Abram and finds the gospel already preached there - the nations blessed by faith, through the one Seed who is Christ."
+    }
+   ]
+  },
+  {
+   "type": "profile",
+   "name": "Abram (Abraham)",
+   "title": "The Man Who Went",
+   "description": "A seventy-five-year-old man from Ur of the Chaldeans, married to the barren Sarai, called out of a land of many gods to follow the One God toward an unnamed country. He had no children and no guarantee, only a promise. Yet \"Abram believed the LORD, and it was credited to him as righteousness\" (Genesis 15:6). The New Testament holds him up as the pattern of faith for everyone who follows: not the founder of one nation only, but the father of all who trust God's word and go.",
+   "keyQuote": "By faith Abraham, when called to go to a place he would later receive as his inheritance, obeyed and went, without knowing where he was going.",
+   "lessonForUs": "Abram's faith was not a feeling but a road. He picked up his life and walked toward a promise he could not see, trusting only the One who spoke. The same call comes to us in Christ, Abram's true Seed - and the same blessing, meant for all the families of the earth, reaches us when we answer it the way he did: by going.",
+   "heading": "The Man Who Went"
+  }
+ ],
+ "panels": [],
+ "totalWords": 2400,
+ "scriptureReference_full": "Genesis 12:1-3",
+ "sources": [
+  "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+  "Hebrew word study (lekh-lekha, halak H1980) reflects standard lexical sources; Westminster Leningrad Codex consonantal text. The observation that God addresses this command (lekh-lekha) to Abraham only in Genesis 12:1 and 22:2 is verifiable in the Masoretic text.",
+  "Galatians 3:8 and 3:16 are cited as the New Testament's own reading of the Abrahamic promise as fulfilled in Christ."
+ ]
 }

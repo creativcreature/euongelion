@@ -1,38 +1,187 @@
 {
-  "day": 14,
-  "title": "What you leave to follow",
-  "teaser": "Day 14 of Bible 365 — Genesis 12 (sabbath)",
-  "framework": "Genesis 12 (sabbath) — Sabbath: rest in unseen promise",
-  "scriptureReference": "Genesis 12 (sabbath)",
-  "chiastic_position": "sabbath",
-  "pardesLevel": "peshat",
-  "panels": [
+ "day": 14,
+ "title": "What you leave to follow",
+ "teaser": "The call to Abram begins with a leaving. Before the land, the name, the blessing, there is a door to walk out of - and a Voice worth trusting on the other side.",
+ "framework": "Genesis 12:1-9",
+ "scriptureReference": "Genesis 12:1-9",
+ "chiastic_position": "sabbath",
+ "pardesLevel": "remez",
+ "modules": [
+  {
+   "type": "scripture",
+   "reference": "Genesis 12:1-4",
+   "translation": "BSB",
+   "emphasis": [
+    "Leave your country",
+    "go to the land I will show you",
+    "all the families of the earth will be blessed through you",
+    "So Abram departed"
+   ],
+   "hebrewOriginal": "וַיֹּאמֶר יְהוָה אֶל־אַבְרָם לֶךְ־לְךָ מֵאַרְצְךָ וּמִמּוֹלַדְתְּךָ וּמִבֵּית אָבִיךָ אֶל־הָאָרֶץ אֲשֶׁר אַרְאֶךָּ",
+   "passage": "Then the LORD said to Abram, \"Leave your country, your kindred, and your father's household, and go to the land I will show you. I will make you into a great nation, and I will bless you; I will make your name great, so that you will be a blessing. I will bless those who bless you and curse those who curse you; and all the families of the earth will be blessed through you.\" So Abram departed, as the LORD had directed him, and Lot went with him. Abram was seventy-five years old when he left Haran."
+  },
+  {
+   "type": "vocab",
+   "language": "hebrew",
+   "word": "לֶךְ־לְךָ",
+   "transliteration": "lekh-lekha",
+   "pronunciation": "lekh le-KHA",
+   "meaning": "go - for yourself, go to yourself, get yourself going",
+   "rootMeaning": "Lekh is the simple command \"go.\" Lekha is the little word \"to you, for you.\" Hebrew does not need the second word to make the sentence work. \"Go\" would have been enough. The extra word turns the command inward: this leaving is not only travel, it is a journey toward who Abram is meant to become.",
+   "usageNote": "This same doubled phrase, lekh-lekha, returns only once more in Abram's life - in Genesis 22:2, when God says \"take your son... and go\" to Moriah to offer Isaac. The first lekh-lekha leaves a father's house behind; the second walks toward a son's altar. The two great leavings of Abraham's life are spoken with the same words, and the second is where the gospel begins to come into focus.",
+   "wordByWord": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 14"
+     "word": "וַיֹּאמֶר יְהוָה",
+     "transliteration": "vayyomer YHWH",
+     "meaning": "and the LORD said - the covenant God speaks first; the journey starts as a word, not an idea"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 12 (sabbath)**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 12 (sabbath) and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+     "word": "לֶךְ",
+     "transliteration": "lekh",
+     "meaning": "go, walk, set out"
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Sabbath: rest in unseen promise. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ’s invitation (Matt 4:19).",
-      "wordCount": 45
+     "word": "לְךָ",
+     "transliteration": "lekha",
+     "meaning": "for yourself, to yourself - the leaving is also an arriving"
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+     "word": "מֵאַרְצְךָ",
+     "transliteration": "me'artzekha",
+     "meaning": "from your country - the widest circle of belonging"
+    },
+    {
+     "word": "וּמִבֵּית אָבִיךָ",
+     "transliteration": "umibeit avikha",
+     "meaning": "and from your father's house - the closest, costliest circle of all"
     }
-  ],
-  "isPlaceholder": true
+   ],
+   "relatedWords": [
+    {
+     "word": "בְּרָכָה",
+     "reference": "Berakhah, blessing, sounds across the passage five times in verses 2 and 3. The word God uses most over Abram is not command but blessing - and the blessing is not for Abram to keep. It runs through him to all the families of the earth."
+    }
+   ],
+   "strongsNumber": "H1980",
+   "definition": "to go, walk, depart, set out on a way",
+   "usage": "The command opens with motion, but the comfort hides in the order of the three things Abram must leave: country, then kindred, then father's house. Hebrew often saves the heaviest weight for last. God names the hardest loss - the father's house - at the very end, the way a doctor lowers the voice before the part that will hurt."
+  },
+  {
+   "type": "teaching",
+   "heading": "The Call Begins With a Subtraction",
+   "body": "We tend to remember Genesis 12 for what God promises - a great nation, a great name, a blessing that spills over the whole earth. But the promise is not the first word. The first word is a leaving. \"Leave your country, your kindred, and your father's household.\" Before God gives Abram anything, He asks him to let go of nearly everything that has told him who he is.\n\nNotice the order. Country first - the widest belonging, the map you were born onto. Then kindred - your people, your clan, the faces that recognize you. Then, last and heaviest, your father's household - the roof you grew up under, the name you carry, the place a person goes when there is nowhere else. Each circle is closer in than the one before. God does not start with the painful part. He works toward it, the way the truth usually reaches us, from the edges in.\n\nAnd notice what God does not give: a map. \"Go to the land I will show you.\" Not the land I am showing you. The showing comes later, on the road, after the door has already closed behind him. Abram is asked to obey a sentence that does not finish itself - to walk out of the known on the strength of a Voice and a promise, with the destination still a blank the speaker is holding. The letter to the Hebrews catches exactly this when it says Abram \"obeyed and went, without knowing where he was going\" (Hebrews 11:8). Faith here is not certainty about the future. It is trust in the One who has the future and will show it in time.",
+   "keyInsight": "God's call to Abram opens not with a gift but with a goodbye. The promise is real, but it sits on the far side of a leaving - and the destination stays hidden until the leaving is already done.",
+   "content": "We tend to remember Genesis 12 for what God promises - a great nation, a great name, a blessing that spills over the whole earth. But the promise is not the first word. The first word is a leaving. \"Leave your country, your kindred, and your father's household.\" Before God gives Abram anything, He asks him to let go of nearly everything that has told him who he is.\n\nNotice the order. Country first - the widest belonging, the map you were born onto. Then kindred - your people, your clan, the faces that recognize you. Then, last and heaviest, your father's household - the roof you grew up under, the name you carry, the place a person goes when there is nowhere else. Each circle is closer in than the one before. God does not start with the painful part. He works toward it, the way the truth usually reaches us, from the edges in.\n\nAnd notice what God does not give: a map. \"Go to the land I will show you.\" Not the land I am showing you. The showing comes later, on the road, after the door has already closed behind him. Abram is asked to obey a sentence that does not finish itself - to walk out of the known on the strength of a Voice and a promise, with the destination still a blank the speaker is holding. The letter to the Hebrews catches exactly this when it says Abram \"obeyed and went, without knowing where he was going\" (Hebrews 11:8). Faith here is not certainty about the future. It is trust in the One who has the future and will show it in time."
+  },
+  {
+   "type": "story",
+   "heading": "The Things That Did Not Fit in the Truck",
+   "body": "A friend told me about the week her family moved across the country for her husband's first call to a small church. The hard part, she said, was not the boxes. It was the last morning, standing in a stripped-bare kitchen, when her mother came by to say goodbye and neither of them could finish a sentence.\n\nWhat she remembers is the table. It had been her grandmother's, too big for the truck and too heavy to ship, and so it stayed. For weeks afterward she would reach in her mind for that table - the place where the family gathered, the surface that had held every holiday she could remember - and find only the empty space where it used to be. She had not just left a house. She had left the room where she knew who she was.\n\nThat is closer to what Genesis 12 is asking than we usually let ourselves feel. Abram was seventy-five. He had a settled life in Haran, a name among his people, a father's house with a table in it. \"So Abram departed.\" Three words for a thing that does not happen in three words. Somewhere behind that sentence is a last morning, a stripped room, and a table that did not fit in the truck.",
+   "connectionToTheme": "Following a call is rarely felt first as gain. It is felt as the specific, furniture-sized weight of what gets left behind - and Scripture tells the cost in three plain words so we will not skip past it.",
+   "content": "A friend told me about the week her family moved across the country for her husband's first call to a small church. The hard part, she said, was not the boxes. It was the last morning, standing in a stripped-bare kitchen, when her mother came by to say goodbye and neither of them could finish a sentence.\n\nWhat she remembers is the table. It had been her grandmother's, too big for the truck and too heavy to ship, and so it stayed. For weeks afterward she would reach in her mind for that table - the place where the family gathered, the surface that had held every holiday she could remember - and find only the empty space where it used to be. She had not just left a house. She had left the room where she knew who she was.\n\nThat is closer to what Genesis 12 is asking than we usually let ourselves feel. Abram was seventy-five. He had a settled life in Haran, a name among his people, a father's house with a table in it. \"So Abram departed.\" Three words for a thing that does not happen in three words. Somewhere behind that sentence is a last morning, a stripped room, and a table that did not fit in the truck."
+  },
+  {
+   "type": "insight",
+   "heading": "He Left Haran Because He Stopped in Haran",
+   "body": "Read the end of Genesis 11 next to the start of Genesis 12 and a quiet detail comes into focus. The journey toward Canaan did not begin with Abram. It began with his father. \"Terah took his son Abram... and they set out from Ur of the Chaldeans for the land of Canaan. But when they arrived in Haran, they settled there\" (Genesis 11:31). Terah aimed at the promised land and stopped halfway. He settled in Haran, and there he died.\n\nHaran was not a bad place. It was a comfortable place - far enough from Ur to feel like progress, close enough to the old life to feel like home. It was the place the family meant to pass through and stayed. And the word of God in Genesis 12 comes to a man living in his father's unfinished journey, saying in effect: the part your father could not finish, I am calling you to walk.\n\nThis is the thing the chapter wants us to sit with on a day of rest. Most of us are not standing in Ur, refusing to start. We are settled in Haran - somewhere reasonable, somewhere short of the thing God actually called us toward, telling ourselves we have arrived. The call \"leave\" is not always a call out of sin. Sometimes it is a call out of a comfortable stopping place that has quietly become permanent.",
+   "historicalContext": "Ur and Haran were both major centers of moon-god worship in the ancient Near East, which makes Abram's call a turning away from inherited religion as well as inherited home. Genesis sets his story at the head of the whole Abrahamic line that Israel, and later the Church, would trace its faith back to. When God says \"all the families of the earth will be blessed through you,\" the narrative is already looking far beyond one man's tent toward a worldwide blessing it will spend the rest of the Bible unfolding.",
+   "fascinatingFact": "Abram's name is not changed to Abraham until Genesis 17, after years of waiting. In chapter 12 he is still Abram - \"exalted father\" - a name that means father while he is, as yet, childless. He walks out of his father's house under a name that promises children he does not have, toward a land he cannot see, on the word of a God whose face he has not seen. Everything he has at the start of the journey is the promise itself.",
+   "content": "Read the end of Genesis 11 next to the start of Genesis 12 and a quiet detail comes into focus. The journey toward Canaan did not begin with Abram. It began with his father. \"Terah took his son Abram... and they set out from Ur of the Chaldeans for the land of Canaan. But when they arrived in Haran, they settled there\" (Genesis 11:31). Terah aimed at the promised land and stopped halfway. He settled in Haran, and there he died.\n\nHaran was not a bad place. It was a comfortable place - far enough from Ur to feel like progress, close enough to the old life to feel like home. It was the place the family meant to pass through and stayed. And the word of God in Genesis 12 comes to a man living in his father's unfinished journey, saying in effect: the part your father could not finish, I am calling you to walk.\n\nThis is the thing the chapter wants us to sit with on a day of rest. Most of us are not standing in Ur, refusing to start. We are settled in Haran - somewhere reasonable, somewhere short of the thing God actually called us toward, telling ourselves we have arrived. The call \"leave\" is not always a call out of sin. Sometimes it is a call out of a comfortable stopping place that has quietly become permanent."
+  },
+  {
+   "type": "bridge",
+   "ancientTruth": "God called Abram to leave his country, his kindred, and his father's house and walk toward a land he could not see, on nothing but a Voice and a promise. The leaving came first; the showing came later, on the road.",
+   "modernApplication": "We are not usually asked to load a truck. But the same call sounds wherever something good has become the thing we will not let go of to follow God - the settled comfort, the family expectation, the version of life we have decided is far enough. The call to follow always begins where Abram's did: with an open hand and a door we have to walk out of.",
+   "connectionPoint": "What begins with one man leaving Haran runs straight through Scripture to a hillside in Galilee, where Jesus calls fishermen with a single word - \"Follow Me\" - and they leave their nets, their boats, their father in the boat, and go. The shape of discipleship was set in Genesis 12: it starts with a leaving, it walks toward a promise not yet seen, and it trusts the One who calls more than the place being left.",
+   "newTestamentEcho": "Jesus made the cost explicit and the reward unmistakable. \"Any one of you who does not give up everything he has cannot be My disciple\" (Luke 14:33). And to Peter, who said, \"we have left everything and followed You,\" He answered that no one who has left home or family or fields for His sake and the gospel \"will fail to receive a hundredfold in the present age... and in the age to come, eternal life\" (Mark 10:28-30). Abram left a father's house for a promise. In Christ the promise has a name, and the leaving has a homecoming."
+  },
+  {
+   "type": "reflection",
+   "prompt": "Where in your life are you living in Haran - settled in a comfortable stopping place that is short of where you sense God has actually called you?",
+   "additionalQuestions": [
+    "What is your \"father's house\" - the belonging, the name, the security that most tells you who you are? What would it mean to hold it with an open hand?",
+    "Abram had to leave before he was shown the land. Where is God asking you to obey a sentence that does not yet finish itself - to step before you can see?",
+    "The blessing given to Abram was meant to flow through him to others. If you followed the call you have been avoiding, who else might be blessed on the far side of your obedience?"
+   ],
+   "invitationType": "honest-examination"
+  },
+  {
+   "type": "prayer",
+   "posture": "honest-confession",
+   "prayerText": "Lord, You spoke to Abram before You showed him anything, and he went. I confess how tightly I hold the country, the kindred, the father's house of my own life - the comforts that tell me who I am. On this day of rest, loosen my grip without my striving. Where I have settled in Haran and called it home, give me ears for Your \"go.\" And give me Abram's strange courage: to trust the One who calls more than the place I am leaving, because the One who calls is the same Lord who, in Christ, left heaven to come and find me. I will rest in that today. Amen.",
+   "prayerType": "personal"
+  },
+  {
+   "type": "takeaway",
+   "commitment": "Today is a sabbath day - there is no task to finish, only a Voice to sit with. Take five quiet minutes and let one phrase hold you: \"Go to the land I will show you,\" or simply, \"So Abram departed.\" Name, silently, the one thing you sense God is asking you to hold with an open hand - and then rest, trusting that the showing comes on the road, in His time, not yours.",
+   "leavingAtCross": [
+    "The grip I keep on the comfortable life that has become short of where God called me",
+    "The need to see the whole land before I will take the first step",
+    "The fear that what I leave to follow God is a loss with nothing on the other side"
+   ],
+   "receivingFromCross": [
+    "A Caller worth trusting more than any country, kindred, or father's house",
+    "The promise of a hundredfold homecoming for everything laid down for His sake",
+    "The rest of a man who walks by a Voice he trusts, even before he sees the land"
+   ],
+   "content": "Today is a sabbath day - there is no task to finish, only a Voice to sit with. Take five quiet minutes and let one phrase hold you: \"Go to the land I will show you,\" or simply, \"So Abram departed.\" Name, silently, the one thing you sense God is asking you to hold with an open hand - and then rest, trusting that the showing comes on the road, in His time, not yours."
+  },
+  {
+   "type": "comprehension",
+   "forReflection": [
+    "In what order does God ask Abram to leave - country, kindred, father's house - and why might Scripture save the closest, costliest loss for last?",
+    "What does Abram have at the start of his journey, given that God says \"the land I will show you\" rather than naming a destination? How does Hebrews 11:8 describe this kind of faith?",
+    "How does Abram's leaving in Genesis 12 set the pattern for Jesus' call to \"follow Me\" and His promise of a hundredfold in Mark 10:28-30?"
+   ],
+   "forAccountabilityPartners": [
+    "Name your \"Haran\" - one comfortable stopping place where you have settled short of where you sense God is leading.",
+    "Talk honestly about what you would find hardest to leave to follow a clear call from God, and why it has such a grip on you.",
+    "Ask each other: where is God asking you to take a step before the whole path is visible, and what would help you trust the Voice more than the unknown?"
+   ]
+  },
+  {
+   "type": "resource",
+   "relatedScriptures": [
+    {
+     "reference": "Genesis 11:31-32",
+     "text": "And Terah took his son Abram, his grandson Lot son of Haran, and his daughter-in-law Sarai the wife of Abram, and they set out from Ur of the Chaldeans for the land of Canaan. But when they arrived in Haran, they settled there. Terah lived 205 years, and he died in Haran."
+    },
+    {
+     "reference": "Hebrews 11:8",
+     "text": "By faith Abraham, when called to go to a place he would later receive as his inheritance, obeyed and went, without knowing where he was going."
+    },
+    {
+     "reference": "Mark 10:29-30",
+     "text": "\"Truly I tell you,\" Jesus replied, \"no one who has left home or brothers or sisters or mother or father or children or fields for My sake and for the gospel will fail to receive a hundredfold in the present age - houses and brothers and sisters and mothers and children and fields, along with persecutions - and in the age to come, eternal life.\""
+    },
+    {
+     "reference": "Matthew 11:28",
+     "text": "Come to Me, all you who are weary and burdened, and I will give you rest."
+    }
+   ],
+   "forDeeperStudy": [
+    {
+     "type": "book",
+     "title": "Genesis 12",
+     "note": "Read the whole chapter slowly, watching the movement from the call and promise (vv. 1-3) to the obedient departure (vv. 4-5) to the altars Abram builds along the way (vv. 7-8). On a sabbath, linger on the altars: even mid-journey, with no land yet in hand, Abram stops to worship."
+    }
+   ]
+  },
+  {
+   "type": "profile",
+   "name": "Abram",
+   "title": "The One Who Left on a Promise",
+   "description": "A settled man of seventy-five in Haran, son of Terah, when the LORD called him to leave country, kindred, and father's house for a land not yet shown. He went - taking Sarai and Lot - and along the way built altars to the God who had appeared to him. Childless and still named \"Abram\" (exalted father), he carried only the promise that he would become a great nation through whom all the families of the earth would be blessed. The New Testament holds him up as the father of all who walk by faith, and traces the world's blessing through his line to Christ.",
+   "keyQuote": "So Abram departed, as the LORD had directed him.",
+   "lessonForUs": "Abram had no map and no proof - only a Voice and a promise - and he went. The life of faith still begins where his did: not with seeing the whole road, but with trusting the One who calls enough to leave Haran and take the first step.",
+   "heading": "The One Who Left on a Promise"
+  }
+ ],
+ "panels": [],
+ "totalWords": 2502,
+ "scriptureReference_full": "Genesis 12:1-9",
+ "sources": [
+  "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+  "Hebrew word study (lekh-lekha; the recurrence in Genesis 22:2) reflects standard lexical observation of the text; the historical note on Ur and Haran as centers of moon-god worship reflects general ancient Near Eastern scholarship."
+ ]
 }

@@ -1,38 +1,190 @@
 {
   "day": 8,
   "title": "Sin crouches at the door",
-  "teaser": "Day 8 of Bible 365 — Genesis 4:1-16",
-  "framework": "Genesis 4:1-16 — Mastering vs. yielding",
+  "teaser": "Day 8 of Bible 365 - Genesis 4:1-16. The first death in the Bible is not from the curse outside Eden but from the anger inside a brother. God warns Cain before he strikes: sin is crouching, and it can be mastered.",
+  "framework": "Genesis 4:1-16 - Mastering vs. yielding",
   "scriptureReference": "Genesis 4:1-16",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 8"
+      "type": "scripture",
+      "reference": "Genesis 4:6-7, 10",
+      "translation": "BSB",
+      "emphasis": [
+        "sin is crouching at your door",
+        "it desires you, but you must master it",
+        "The voice of your brother's blood cries out to Me"
+      ],
+      "hebrewOriginal": "לַפֶּתַח חַטָּאת רֹבֵץ וְאֵלֶיךָ תְּשׁוּקָתוֹ וְאַתָּה תִּמְשָׁל־בּוֹ",
+      "passage": "“Why are you angry,” said the LORD to Cain, “and why has your countenance fallen? If you do what is right, will you not be accepted? But if you refuse to do what is right, sin is crouching at your door; it desires you, but you must master it.” ... “What have you done?” replied the LORD. “The voice of your brother’s blood cries out to Me from the ground.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 4:1-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 4:1-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "רֹבֵץ",
+      "transliteration": "rovetz",
+      "pronunciation": "roh-VAYTS",
+      "meaning": "crouching, lying in wait, lurking",
+      "rootMeaning": "From the root rabats, used of an animal lying down or stretching out. The same word describes flocks resting and beasts couching in their lairs. Here it is not a stain or a thought but a creature at the threshold, gathered low and ready to spring.",
+      "usageNote": "Rovetz is grammatically odd in the verse: the noun for sin (chattat) is feminine, but the participle crouching is masculine, as if the text is straining to show us not an abstraction but a living predator. Some scholars hear behind it an Akkadian word for a demon that lurks at doorways. Either way, sin is pictured as something alive, patient, and waiting at the door of a man whose face has already fallen.",
+      "wordByWord": [
+        {
+          "word": "לַפֶּתַח",
+          "transliteration": "lappetach",
+          "meaning": "at the door, at the opening, at the threshold"
+        },
+        {
+          "word": "חַטָּאת",
+          "transliteration": "chattat",
+          "meaning": "sin, or a sin-offering - the same word names both the failure and its remedy"
+        },
+        {
+          "word": "רֹבֵץ",
+          "transliteration": "rovetz",
+          "meaning": "crouching, lying low, ready to spring"
+        },
+        {
+          "word": "תְּשׁוּקָתוֹ",
+          "transliteration": "teshuqato",
+          "meaning": "its desire, its longing - it desires you"
+        },
+        {
+          "word": "תִּמְשָׁל־בּוֹ",
+          "transliteration": "timshol-bo",
+          "meaning": "you shall rule over it, you must master it"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תְּשוּקָה / מָשַל",
+          "reference": "Teshuqah (desire) and mashal (rule) appear together only here and one chapter earlier, in Genesis 3:16: 'your desire will be for your husband, and he will rule over you.' The two words from Eve's curse return to Cain, exactly reversed - now sin desires the man, and the man is told to rule it."
+        }
+      ],
+      "strongsNumber": "H7257",
+      "definition": "to lie down, to crouch, to stretch oneself out, of a beast lying in wait",
+      "usage": "The verb carries no judgment by itself - flocks rovetz in green pastures. What makes it terrible here is the subject: it is sin that lies down at the door, in the posture of an animal that has chosen its spot and is waiting for the door to open."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Mastering vs. yielding. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: The blood that speaks better (Heb 12:24).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Eden Is Behind Them, and the First Family Learns to Worship",
+      "body": "The gate has closed. The flaming sword is set, and Adam and Eve are raising children east of the garden they lost. Genesis 4 opens with relief: Eve gives birth and says, “With the help of the LORD I have brought forth a man.” Life is going on. The curse has not had the last word.\n\nThen the brothers grow up, and they bring offerings. Cain works the ground his father was sentenced to till; he brings some of its fruit. Abel keeps the flock; he brings the best portions of the firstborn. The LORD looks with favor on Abel and his offering, but for Cain and his offering He has no regard. Genesis does not pause to explain why. It moves straight to Cain's face: “Cain became very angry, and his countenance fell.”\n\nWatch how slowly the violence comes. The face falls in verse 5. The hand does not rise until verse 8. In the gap between them - a real, hinge-of-history gap - God speaks. He does not strike. He does not lecture. He asks two questions and gives one warning, and everything in the chapter turns on what Cain does with that pause.",
+      "keyInsight": "God names Cain's anger before Cain has done anything with it. A fallen face is not yet a sin - it is a fork in the road, and God meets Cain at the fork.",
+      "content": "The gate has closed. The flaming sword is set, and Adam and Eve are raising children east of the garden they lost. Genesis 4 opens with relief: Eve gives birth and says, “With the help of the LORD I have brought forth a man.” Life is going on. The curse has not had the last word.\n\nThen the brothers grow up, and they bring offerings. Cain works the ground his father was sentenced to till; he brings some of its fruit. Abel keeps the flock; he brings the best portions of the firstborn. The LORD looks with favor on Abel and his offering, but for Cain and his offering He has no regard. Genesis does not pause to explain why. It moves straight to Cain's face: “Cain became very angry, and his countenance fell.”\n\nWatch how slowly the violence comes. The face falls in verse 5. The hand does not rise until verse 8. In the gap between them - a real, hinge-of-history gap - God speaks. He does not strike. He does not lecture. He asks two questions and gives one warning, and everything in the chapter turns on what Cain does with that pause."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Text Message I Did Not Send",
+      "body": "I once sat in a parked car for twenty minutes with my thumb over the send button. A friend had been given the thing I had asked God for and not received - the same news, the same week, his joy landing on my disappointment. I had typed something true and cruel, a sentence built to take a little of his gladness away. It was accurate. It was also a knife.\n\nWhat I remember is not the anger. It was the pause. I knew, the way you know in your body, that there was still a door I had not yet opened. I could feel the thing crouching behind my own hurt, patient, waiting for me to press the screen. The feeling was already there - God names Cain's anger without pretending it is nothing. The question was only what the feeling was reaching for, and whether I would hand it the door.\n\nI deleted the message. Not by willpower; I am not that strong. I deleted it because somewhere underneath the hurt I half-remembered that I had been forgiven worse, and the memory loosened my grip on the screen. That is the gap Genesis 4 is describing. Most of us have sat in it. Some of us pressed send.",
+      "connectionToTheme": "The crouching is not metaphor. There is a felt moment between the fallen face and the risen hand - a threshold where the door is not yet open and mercy can still get a word in.",
+      "content": "I once sat in a parked car for twenty minutes with my thumb over the send button. A friend had been given the thing I had asked God for and not received - the same news, the same week, his joy landing on my disappointment. I had typed something true and cruel, a sentence built to take a little of his gladness away. It was accurate. It was also a knife.\n\nWhat I remember is not the anger. It was the pause. I knew, the way you know in your body, that there was still a door I had not yet opened. I could feel the thing crouching behind my own hurt, patient, waiting for me to press the screen. The feeling was already there - God names Cain's anger without pretending it is nothing. The question was only what the feeling was reaching for, and whether I would hand it the door.\n\nI deleted the message. Not by willpower; I am not that strong. I deleted it because somewhere underneath the hurt I half-remembered that I had been forgiven worse, and the memory loosened my grip on the screen. That is the gap Genesis 4 is describing. Most of us have sat in it. Some of us pressed send."
+    },
+    {
+      "type": "insight",
+      "heading": "The Curse, Reversed: Desire and Rule Come Back",
+      "body": "Read God's warning beside the verse one chapter earlier and the whole passage opens. In Genesis 3:16, God told Eve, “your desire will be for your husband, and he will rule over you.” In Genesis 4:7, He tells Cain that sin “desires you, but you must master it.” The two rare words - desire (teshuqah) and rule (mashal) - return together, exactly reversed. What crouches at the door wants to possess Cain the way a craving possesses a person. And God says: it does not have to. You can rule it.\n\nThis is the quiet bombshell of the chapter. God does not tell Cain he is doomed. He tells him he is responsible. The Hebrew word for crouching, rovetz, is the posture of a predator lying low at the threshold, gathered and ready. But a beast at the door is not yet a beast in the house. The door has not opened. Whether sin gets in is, astonishingly, laid at the feet of the man standing in front of it.\n\nThe line between Cain and Abel did not run between two families. It ran through one heart, at one door, in one unguarded moment - and it runs through ours.",
+      "historicalContext": "Genesis stands at the head of the Torah, the foundation Israel read everything else against. The verbal echo between Genesis 3:16 and 4:7 is not accidental: the same hand shaped both verses, drawing a deliberate line from the curse on the woman to the warning to her son, so the reader hears the fall still working itself out in the next generation.",
+      "fascinatingFact": "Genesis 4:7 contains one of the hardest sentences in the Hebrew Bible to translate cleanly - the grammar genders sin as masculine where the noun is feminine, and ancient readers from the rabbis to the early church wrestled with whether sin here is a force, a demon at the door, or the man's own desire. What every reading agrees on is the verse's last word: timshol, you shall rule it.",
+      "content": "Read God's warning beside the verse one chapter earlier and the whole passage opens. In Genesis 3:16, God told Eve, “your desire will be for your husband, and he will rule over you.” In Genesis 4:7, He tells Cain that sin “desires you, but you must master it.” The two rare words - desire (teshuqah) and rule (mashal) - return together, exactly reversed. What crouches at the door wants to possess Cain the way a craving possesses a person. And God says: it does not have to. You can rule it.\n\nThis is the quiet bombshell of the chapter. God does not tell Cain he is doomed. He tells him he is responsible. The Hebrew word for crouching, rovetz, is the posture of a predator lying low at the threshold, gathered and ready. But a beast at the door is not yet a beast in the house. The door has not opened. Whether sin gets in is, astonishingly, laid at the feet of the man standing in front of it.\n\nThe line between Cain and Abel did not run between two families. It ran through one heart, at one door, in one unguarded moment - and it runs through ours."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Cain does not master the beast. He opens the door, lures his brother to the field, and kills him. And God says something no one had ever said over the ground before: “The voice of your brother's blood cries out to Me.” Blood has a voice, and Abel's voice cries for justice, for the wrong to be named and answered.",
+      "modernApplication": "We are still standing at that door. The fallen face, the justified resentment, the message we draft to wound - the beast still crouches, and Genesis 4 is the long, honest admission that human beings cannot reliably master it by willpower. Cain could not, and he had God speaking out loud to him. From Cain to the cross, the story keeps showing us opening the door we were told to hold.",
+      "connectionPoint": "Far down the canon, the letter to the Hebrews sets us at the foot of a different sacrifice and names this exact scene. We have come, it says, “to Jesus the mediator of a new covenant, and to the sprinkled blood that speaks a better word than the blood of Abel” (Hebrews 12:24). Two innocents, two voices rising from the ground. Abel's blood cries avenge; the blood of Christ cries forgive. One exposes the murderer; the other covers him.",
+      "newTestamentEcho": "Hebrews also tells us that “by faith Abel offered God a better sacrifice than Cain did” (Hebrews 11:4) - the offering was accepted not for its contents but for the faith behind it. The thread runs straight to Christ: where Cain's works are rejected and Abel's are accepted by faith, the Son of God steps into the field where brothers are murdered, lets the beast have Him, and turns His own innocent blood into a word of mercy spoken over the guilty."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where is the beast crouching at your door right now - whose blessing, whose acceptance, whose ease are you angry that you were not given?",
+      "additionalQuestions": [
+        "Cain's face fell before his hand rose. When you feel your own countenance fall, what do you usually do in the gap before you act?",
+        "God named Cain's anger without condemning the feeling, then warned what the feeling was reaching for. What is your anger reaching for today?",
+        "If sin desires you but you are told you must master it, where do you actually find the strength to do that - willpower, or something given to you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You see what is crouching at my door. You see the anger I have justified, the resentment I have fed, the fallen face I carry into rooms full of people I am meant to love. I have opened the door more times than I can count. Thank You that there is a blood that speaks a better word than Abel's - that Jesus stepped into the field and let the beast have Him, so that mercy, not vengeance, would have the last word over me. Master what I cannot master. Shut the door I keep leaving open. And make me, at last, my brother's keeper. In the name of Jesus, whose blood still speaks. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Before you act on today's resentment, name the gap out loud: “The beast is at the door, and I do not have to open it.” Then bring that one crouching thing - the message, the cold silence, the score you are keeping - to the One whose blood already speaks mercy over you, and ask Him to shut the door you cannot hold.",
+      "leavingAtCross": [
+        "The fallen face I carry like evidence that I have been wronged",
+        "The belief that I can master the beast by gritting my teeth and trying harder",
+        "The accusing voice that wants someone's blood to answer for my disappointment"
+      ],
+      "receivingFromCross": [
+        "A blood that speaks a better word than Abel's - mercy where I deserved an accounting",
+        "The freedom to feel anger without handing it the door",
+        "A keeper's heart toward the brother I was tempted to resent"
+      ],
+      "content": "Before you act on today's resentment, name the gap out loud: “The beast is at the door, and I do not have to open it.” Then bring that one crouching thing - the message, the cold silence, the score you are keeping - to the One whose blood already speaks mercy over you, and ask Him to shut the door you cannot hold."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Trace the order of Genesis 4:5-8: where does the face fall, where does God speak, and where does the hand finally rise? What does the gap between them tell you about when sin can still be mastered?",
+        "How do the words 'desire' and 'rule' in Genesis 4:7 echo and reverse Genesis 3:16, and what does that echo say about the fall working itself out in Cain?",
+        "Abel's blood cries for justice; Hebrews 12:24 says Christ's blood speaks a better word. What is the difference between what the two voices ask of God?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place you feel passed over - accepted less than someone beside you - and what your anger is quietly reaching for.",
+        "Talk honestly about a time you 'opened the door' after the gap, and a time you held it shut. What was different?",
+        "Ask each other: where do you need someone to be your brother's keeper this week, and where are you being asked to be one?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 3:16",
+          "text": "To the woman He said: “I will sharply increase your pain in childbirth; in pain you will bring forth children. Your desire will be for your husband, and he will rule over you.”"
+        },
+        {
+          "reference": "Hebrews 11:4",
+          "text": "By faith Abel offered God a better sacrifice than Cain did. By faith he was commended as righteous when God gave approval to his gifts. And by faith he still speaks, even though he is dead."
+        },
+        {
+          "reference": "Hebrews 12:24",
+          "text": "to Jesus the mediator of a new covenant, and to the sprinkled blood that speaks a better word than the blood of Abel."
+        },
+        {
+          "reference": "1 John 3:12",
+          "text": "Do not be like Cain, who belonged to the evil one and murdered his brother. And why did Cain slay him? Because his own deeds were evil, while those of his brother were righteous."
+        },
+        {
+          "reference": "Romans 6:14",
+          "text": "For sin shall not be your master, because you are not under law, but under grace."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 4:1-16",
+          "note": "Read the whole scene slowly, tracking the movement from offering (vv. 3-5) to warning (vv. 6-7) to murder (v. 8) to the blood that cries (v. 10). Then read it against Hebrews 11:4 and 12:24 to hear the better blood answer."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Abel",
+      "title": "The First to Worship by Faith, the First to Die",
+      "description": "The second son of Adam and Eve, a keeper of sheep who brought God the best portions of the firstborn of his flock. Hebrews says his offering was accepted not for its contents but for the faith behind it - 'by faith Abel offered God a better sacrifice than Cain did.' He is the first worshiper, the first martyr, and the first whose blood speaks. Scripture sets him at the head of a long line of the righteous slain, and points past his cry for justice to a better blood that speaks mercy (Hebrews 12:24).",
+      "keyQuote": "By faith he still speaks, even though he is dead. (Hebrews 11:4)",
+      "lessonForUs": "Abel's offering was accepted by faith, not by effort - the same way our acceptance comes. His blood cried for justice and was heard; the blood of Christ cries louder, and what it asks for us is mercy. The worshiper killed at the door is answered by the Worshiper who walked through it.",
+      "heading": "The First to Worship by Faith, the First to Die"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2405,
+  "scriptureReference_full": "Genesis 4:1-16; Genesis 3:16; Hebrews 11:4; Hebrews 12:24",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (rovetz, H7257; the teshuqah/mashal echo between Genesis 3:16 and 4:7) reflects standard lexical and grammatical sources; the difficulty of Genesis 4:7's gendered syntax is widely noted in the commentary tradition."
+  ]
 }

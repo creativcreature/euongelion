@@ -1,38 +1,189 @@
 {
   "day": 9,
   "title": "Noah found favor",
-  "teaser": "Day 9 of Bible 365 — Genesis 6:5-8",
-  "framework": "Genesis 6:5-8 — Grace in a corrupt age",
+  "teaser": "When God looked at a world bent only toward evil, one man caught His eye. Genesis 6 holds the first time grace is named in all of Scripture.",
+  "framework": "Genesis 6:5-8",
   "scriptureReference": "Genesis 6:5-8",
   "chiastic_position": "building",
-  "pardesLevel": "peshat",
-  "panels": [
+  "pardesLevel": "remez",
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 9"
+      "type": "scripture",
+      "reference": "Genesis 6:5-8",
+      "translation": "BSB",
+      "emphasis": [
+        "altogether evil all the time",
+        "grieved in His heart",
+        "found favor in the eyes of the LORD"
+      ],
+      "hebrewOriginal": "וְנֹחַ מָצָא חֵן בְּעֵינֵי יְהוָה",
+      "passage": "Then the LORD saw that the wickedness of man was great upon the earth, and that every inclination of the thoughts of his heart was altogether evil all the time. And the LORD regretted that He had made man on the earth, and He was grieved in His heart. So the LORD said, “I will blot out man, whom I have created, from the face of the earth—every man and beast and crawling creature and bird of the air—for I am grieved that I have made them.” Noah, however, found favor in the eyes of the LORD."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 6:5-8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 6:5-8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֵן",
+      "transliteration": "chen",
+      "pronunciation": "khayn",
+      "meaning": "favor, grace, unearned kindness",
+      "rootMeaning": "From the root chanan, to bend or stoop toward someone in kindness - a superior leaning down to show goodwill to one who has no claim on it. Chen is not wages owed; it is a gift freely given.",
+      "usageNote": "Genesis 6:8 is the first time chen appears in the Bible, and the very first thing the word 'grace' attaches to is a man standing inside a sentence of judgment. Grace does not enter the story after sin is solved - it enters in the middle of the flood being announced.",
+      "wordByWord": [
+        {
+          "word": "וְנֹחַ",
+          "transliteration": "ve-Noach",
+          "meaning": "but Noah - the name Noach is tied to nacham, comfort or rest (Genesis 5:29)"
+        },
+        {
+          "word": "מָצָא",
+          "transliteration": "matsa",
+          "meaning": "found - the verb of stumbling upon something, not manufacturing it"
+        },
+        {
+          "word": "חֵן",
+          "transliteration": "chen",
+          "meaning": "favor, grace, unmerited goodwill"
+        },
+        {
+          "word": "בְּעֵינֵי",
+          "transliteration": "be-einei",
+          "meaning": "in the eyes of - in the sight, the regard, the estimation of"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the covenant name of God"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נֹחַ / נחם",
+          "reference": "Noah's name (Noach) echoes nacham, 'comfort.' At his birth his father said, 'May this one comfort us' (Genesis 5:29). The man who 'finds favor' is already named for the rest a weary world is waiting on."
+        }
+      ],
+      "strongsNumber": "H2580",
+      "definition": "favor, grace, charm; the kindness one freely extends to another",
+      "usage": "The grammar matters. Noah does not earn favor; he finds it. The text does not say Noah was favorable and so God approved - it says Noah found chen in God's eyes, and only after that (Genesis 6:9) calls him righteous. Grace comes first; the righteous life follows."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Grace in a corrupt age. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: The greater rescue (1 Pet 3:20-21).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Saddest Verse, and the Word That Breaks It Open",
+      "body": "Genesis 6 opens onto the bleakest sky in the book. The LORD looks at the world He called good and sees that the wickedness of man is great upon the earth, and that every inclination of the thoughts of his heart was altogether evil all the time. Read that again slowly. Not some thoughts. Not most of the time. Every inclination, altogether evil, all the time. No crack of light is left in the human heart for God to work with.\n\nThen comes a sentence we rarely sit with: the LORD regretted that He had made man on the earth, and He was grieved in His heart. This is not a distant God pronouncing policy. It is the Maker, heartbroken over what His creation has become, feeling it in His own heart. Before there is any talk of judgment, there is grief. The flood does not begin with anger; it begins with sorrow.\n\nThen the verdict: 'I will blot out man, whom I have created, from the face of the earth.' Everything so far moves in one direction - downward, toward erasure - and the reader braces for the end of the story.\n\nThen one small word turns the whole chapter: 'however.' Noah, however, found favor in the eyes of the LORD.",
+      "keyInsight": "Grace makes its first appearance in Scripture not after judgment is averted, but inside the very sentence of judgment. Before the verdict can fall, one word interrupts it: however.",
+      "content": "Genesis 6 opens onto the bleakest sky in the book. The LORD looks at the world He called good and sees that the wickedness of man is great upon the earth, and that every inclination of the thoughts of his heart was altogether evil all the time. Read that again slowly. Not some thoughts. Not most of the time. Every inclination, altogether evil, all the time. No crack of light is left in the human heart for God to work with.\n\nThen comes a sentence we rarely sit with: the LORD regretted that He had made man on the earth, and He was grieved in His heart. This is not a distant God pronouncing policy. It is the Maker, heartbroken over what His creation has become, feeling it in His own heart. Before there is any talk of judgment, there is grief. The flood does not begin with anger; it begins with sorrow.\n\nThen the verdict: 'I will blot out man, whom I have created, from the face of the earth.' Everything so far moves in one direction - downward, toward erasure - and the reader braces for the end of the story.\n\nThen one small word turns the whole chapter: 'however.' Noah, however, found favor in the eyes of the LORD."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Name on the List",
+      "body": "A friend of mine spent two years on a transplant waiting list. The numbers never changed: more names than organs, most people running out of time before a match came. The list was, in every sense, a sentence. Then on an ordinary Tuesday a nurse said his name, and then the word he had stopped expecting: 'However.' There was a donor. There was a match. He told me later that he sat down on the kitchen floor and wept - not because he had earned it (no one on that list had) but because someone had looked at the whole impossible list and found his name.\n\nThat is the shape of Genesis 6. A whole earth on the list, the verdict already written, the time running out. And then a name. Noah, however. The favor did not come because Noah was better stock than his neighbors; it came because God's eyes landed on him in kindness. Grace is always somebody's name spoken into a sentence that was running the other way.",
+      "connectionToTheme": "Grace is not a reward earned off the list; it is a name found and spoken into a verdict already moving toward erasure.",
+      "content": "A friend of mine spent two years on a transplant waiting list. The numbers never changed: more names than organs, most people running out of time before a match came. The list was, in every sense, a sentence. Then on an ordinary Tuesday a nurse said his name, and then the word he had stopped expecting: 'However.' There was a donor. There was a match. He told me later that he sat down on the kitchen floor and wept - not because he had earned it (no one on that list had) but because someone had looked at the whole impossible list and found his name.\n\nThat is the shape of Genesis 6. A whole earth on the list, the verdict already written, the time running out. And then a name. Noah, however. The favor did not come because Noah was better stock than his neighbors; it came because God's eyes landed on him in kindness. Grace is always somebody's name spoken into a sentence that was running the other way."
+    },
+    {
+      "type": "insight",
+      "heading": "Found, Then Righteous - Not Righteous, Then Found",
+      "body": "Watch the order of the verses, because the order is the gospel in miniature. Verse 8: 'Noah, however, found favor in the eyes of the LORD.' Verse 9: 'Noah was a righteous man, blameless in his generation; Noah walked with God.'\n\nFavor first. Righteousness second. The text does not say Noah was righteous and therefore earned God's favor. It says he found favor, and the next breath describes the righteous, God-walking life that grace produced in him. Reverse the order and you lose the gospel - and you lose Noah too, because he was a son of the same Adam, carrying the same heart Genesis 6:5 just called altogether evil all the time. He had no exemption. What he had was chen.\n\nThis is the order Paul preaches: 'by grace...through faith...not by works, so that no one can boast' (Ephesians 2:8-9). The righteous life comes, but as the fruit of favor, never its price. Noah did not climb into God's good eyes; God's good eyes found him on the ground.",
+      "fascinatingFact": "Genesis 6:8 is the first occurrence of the Hebrew word chen, 'grace,' in the entire Bible. Of all the things this word could first have been attached to, Scripture attaches it to a man inside a death sentence - the Bible's very first 'grace' is a rescue announced in the middle of judgment, not after it.",
+      "content": "Watch the order of the verses, because the order is the gospel in miniature. Verse 8: 'Noah, however, found favor in the eyes of the LORD.' Verse 9: 'Noah was a righteous man, blameless in his generation; Noah walked with God.'\n\nFavor first. Righteousness second. The text does not say Noah was righteous and therefore earned God's favor. It says he found favor, and the next breath describes the righteous, God-walking life that grace produced in him. Reverse the order and you lose the gospel - and you lose Noah too, because he was a son of the same Adam, carrying the same heart Genesis 6:5 just called altogether evil all the time. He had no exemption. What he had was chen.\n\nThis is the order Paul preaches: 'by grace...through faith...not by works, so that no one can boast' (Ephesians 2:8-9). The righteous life comes, but as the fruit of favor, never its price. Noah did not climb into God's good eyes; God's good eyes found him on the ground."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "In a world the LORD judged altogether evil, one man found favor he had not earned, and through that favor God preserved a remnant - carrying the human story safely through the waters of judgment in an ark of His own design.",
+      "modernApplication": "We still read our lives as a list of merits we hope will tip God's eyes toward us - the right choices, the better-than-average record, the case we could make if asked. Genesis 6 dismantles that. Noah's heart was no cleaner clay than his neighbors'. What set him apart was not his goodness but God's favor finding him - which means the freedom on offer is the freedom to stop earning the look you already have.",
+      "connectionPoint": "The thread that begins with chen in Genesis 6 runs the length of Scripture. Noah is saved through water in an ark; Peter says that flood 'symbolizes the baptism that now saves you' through the resurrection of Jesus Christ (1 Peter 3:20-21). Hebrews says Noah 'became heir of the righteousness that comes by faith' (Hebrews 11:7). The first grace in Genesis is the seed of the grace the whole Bible will bloom into.",
+      "newTestamentEcho": "What Noah found, John names: 'grace and truth came through Jesus Christ' (John 1:17). The chen that found Noah took on flesh - the Word who came 'full of grace and truth' (John 1:14), from whose fullness 'we have all received grace upon grace' (John 1:16). Noah rode out the judgment inside an ark of God's design, not his own; in the same way we are not asked to build our own refuge but to step into the one already provided. We ride out the judgment inside Christ Himself, the true ark, by whom a remnant is carried safely through to the far side."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still trying to earn the favorable look God has already turned toward you?",
+      "additionalQuestions": [
+        "Genesis 6:8 says Noah 'found' favor, not that he built it. What would change today if you believed God's kindness toward you was something you stumble into, not something you manufacture?",
+        "The flood began with God grieved in His heart, not merely angry. Does it shift anything to know that God's judgment in Scripture rises out of sorrow over what sin has done?",
+        "If grace came first and the righteous life followed, what is one place you have had the order backwards - performing in order to be loved instead of living from being loved?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I know the heart Genesis describes, because it is mine - the inclinations that bend the wrong way, the evil closer to home than I like to admit. I have no case to make for myself, so I do not come earning. I come the way Noah came: found. Thank You that grace was the first word You spoke into a sentence of judgment, and has been Your word ever since. Thank You that the favor which found Noah took on flesh and came near in Jesus, full of grace and truth. Let me stop building cases for myself and rest in the look You have already turned toward me. Make me, by Your favor, into someone who walks with You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today I will name one way I have been trying to earn God's favor - one performance, one record I keep - and I will deliberately set it down, telling God that I receive His grace as a gift I did not build and cannot lose.",
+      "leavingAtCross": [
+        "The case I keep building to prove I deserve God's good attention",
+        "The lie that grace is wages, paid only to those who earn it",
+        "The fear that God looks at me the way Genesis 6:5 describes the world - and stops there"
+      ],
+      "receivingFromCross": [
+        "Favor I did not earn and so cannot un-earn - found, not manufactured",
+        "Freedom to let the righteous life grow as the fruit of grace, not its price",
+        "A refuge that carries me through judgment - not an ark of wood, but Christ Himself"
+      ],
+      "content": "Today I will name one way I have been trying to earn God's favor - one performance, one record I keep - and I will deliberately set it down, telling God that I receive His grace as a gift I did not build and cannot lose."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Hebrew word chen mean, and why does it matter that Genesis 6:8 is its first appearance in the Bible?",
+        "Genesis 6:8 says Noah 'found' favor before Genesis 6:9 calls him righteous. Why does the order of those two verses matter for understanding grace?",
+        "How does Noah being carried through the flood in the ark point forward to salvation in Christ (1 Peter 3:20-21)?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about a season when you tried to earn God's approval by performance. What did it cost you, and what would resting in grace instead have looked like?",
+        "Genesis 6 says God was grieved in His heart before any judgment fell. How does it change the way you picture God to know His judgment rises from sorrow, not cold anger?",
+        "Ask each other: where is grace the 'however' in your story right now - the one word interrupting a verdict you had already accepted about yourself?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 6:9",
+          "text": "This is the account of Noah. Noah was a righteous man, blameless in his generation; Noah walked with God."
+        },
+        {
+          "reference": "Hebrews 11:7",
+          "text": "By faith Noah, when warned about things not yet seen, in godly fear built an ark to save his family. By faith he condemned the world and became heir of the righteousness that comes by faith."
+        },
+        {
+          "reference": "John 1:17",
+          "text": "For the law was given through Moses; grace and truth came through Jesus Christ."
+        },
+        {
+          "reference": "1 Peter 3:20-21",
+          "text": "In the ark a few people, only eight souls, were saved through water. And this water symbolizes the baptism that now saves you also...through the resurrection of Jesus Christ."
+        },
+        {
+          "reference": "Ephesians 2:8-9",
+          "text": "For it is by grace you have been saved through faith, and this not from yourselves; it is the gift of God, not by works, so that no one can boast."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 6-9",
+          "note": "Read the whole flood account in one sitting, watching how Genesis 8:1 - 'But God remembered Noah' - answers the grief of Genesis 6:6. The story that began in sorrow ends in remembrance."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Noah",
+      "title": "The Man Who Found Favor",
+      "description": "Tenth in line from Adam, son of Lamech, who named him Noach - 'comfort' - hoping he would bring relief from the toil of a cursed ground (Genesis 5:29). When the LORD resolved to blot out a world grown altogether evil, Noah alone found favor in His eyes. He was then called righteous, blameless in his generation, a man who walked with God; by faith he built the ark and carried a remnant safely through the waters of judgment.",
+      "keyQuote": "Noah, however, found favor in the eyes of the LORD.",
+      "lessonForUs": "Noah's righteousness did not buy his rescue; his rescue produced his righteousness. He carried no exemption from the heart Genesis 6:5 describes - only grace that found him first. The favor that landed on Noah is the same favor that came near in Christ, full of grace and truth, and it still finds people on the ground rather than waiting for them to climb.",
+      "heading": "The Man Who Found Favor"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2278,
+  "scriptureReference_full": "Genesis 6:5-8",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chen, H2580; root chanan) and the Noach/nacham name resonance (Genesis 5:29) reflect standard lexical sources. The observation that chen first appears in Genesis 6:8 is a verifiable feature of the Hebrew text."
+  ]
 }

@@ -1,38 +1,190 @@
 {
   "day": 10,
   "title": "The covenant rainbow",
-  "teaser": "Day 10 of Bible 365 — Genesis 8:20-9:17",
-  "framework": "Genesis 8:20-9:17 — God binds Himself by promise",
+  "teaser": "Day 10 of Bible 365 - Genesis 8:20-9:17. A pleasing aroma rises, and God hangs His war-bow in the clouds, aimed away.",
+  "framework": "Genesis 8:20-9:17 - God binds Himself by promise",
   "scriptureReference": "Genesis 8:20-9:17",
   "chiastic_position": "pivot",
-  "pardesLevel": "peshat",
-  "panels": [
+  "pardesLevel": "derash",
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 10"
+      "type": "scripture",
+      "reference": "Genesis 8:20-22; 9:12-13",
+      "translation": "BSB",
+      "emphasis": [
+        "pleasing aroma",
+        "Never again",
+        "My rainbow in the clouds"
+      ],
+      "hebrewOriginal": "אֶת־קַשְׁתִּי נָתַתִּי בֶּעָנָן וְהָיְתָה לְאוֹת בְּרִית בֵּינִי וּבֵין הָאָרֶץ",
+      "passage": "Then Noah built an altar to the LORD. And taking from every kind of clean animal and clean bird, he offered burnt offerings on the altar. When the LORD smelled the pleasing aroma, He said in His heart, \"Never again will I curse the ground because of man, even though every inclination of his heart is evil from his youth. And never again will I destroy all living creatures as I have done. As long as the earth endures, seedtime and harvest, cold and heat, summer and winter, day and night shall never cease.\" ... And God said, \"This is the sign of the covenant I am making between Me and you and every living creature with you, a covenant for all generations to come: I have set My rainbow in the clouds, and it will be a sign of the covenant between Me and the earth.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 8:20-9:17**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 8:20-9:17 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קֶשֶׁת",
+      "transliteration": "qeshet",
+      "pronunciation": "keh-SHET",
+      "meaning": "bow - the rainbow, and also the weapon: a war-bow",
+      "rootMeaning": "Qeshet is the ordinary Hebrew word for the archer's bow, the weapon drawn in battle. Everywhere else in the Hebrew Bible it means exactly that. Here it is hung in the clouds, and English translations soften it to rainbow - but the word carries the curve of a drawn weapon.",
+      "usageNote": "When the same word appears in 1 Samuel 18:4, it is the bow Jonathan gives David; in Psalm 7:12 it is the bow God bends against the wicked. In Genesis 9 the warrior's bow is set down in the sky, its arc turned upward, the string toward heaven - a weapon aimed away from the earth it once threatened.",
+      "wordByWord": [
+        {
+          "word": "אֶת־קַשְׁתִּי",
+          "transliteration": "et-qashti",
+          "meaning": "My bow - God calls it His own weapon"
+        },
+        {
+          "word": "נָתַתִּי",
+          "transliteration": "natatti",
+          "meaning": "I have set, I have placed, I have given"
+        },
+        {
+          "word": "בֶּעָנָן",
+          "transliteration": "be'anan",
+          "meaning": "in the cloud - the very clouds that carried the flood"
+        },
+        {
+          "word": "לְאוֹת",
+          "transliteration": "le'ot",
+          "meaning": "for a sign, a token, a pledge"
+        },
+        {
+          "word": "בְּרִית",
+          "transliteration": "berit",
+          "meaning": "covenant - a binding promise sealed between parties"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רֵיחַ הַנִּיחֹחַ",
+          "reference": "Reach hannichoach, the pleasing aroma of Genesis 8:21, is the same phrase that names every accepted sacrifice in Leviticus (1:9, 2:2, 3:5). What rises from Noah's altar is what will rise from the tabernacle: the smoke of a death offered in place of the worshiper."
+        }
+      ],
+      "strongsNumber": "H7198",
+      "definition": "a bow, whether for hunting and war or the bow of cloud (rainbow)",
+      "usage": "That God calls it qashti, My bow, is the heart of it. The instrument of judgment is taken up by God Himself and laid down, its arc bent away from the world."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: God binds Himself by promise. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: The new covenant in His blood (Luke 22).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The First Thing Noah Does Is Build an Altar",
+      "body": "The waters have gone down. The dove has not come back. Noah steps out onto ground that has been scrubbed bare and silent, the only family left alive, and the first thing he does is not plant a field or pitch a tent. He builds an altar, takes from every clean animal and bird, and burns them as an offering to the LORD.\n\nIt is worth sitting with how costly that is. The clean animals were the ones taken aboard in sevens precisely so there would be enough to eat and to breed in a stripped world. Noah takes the surplus God provided for survival and gives it back, in smoke, before he has eaten or rested. Worship comes first, before the practical, in a world where the practical could not be more pressing.\n\nThen comes one of the most tender lines in all of Genesis: \"When the LORD smelled the pleasing aroma, He said in His heart...\" God does not announce His decision to Noah. He says it in His heart, the way you speak to yourself when something has moved you. And what He resolves is staggering. He knows the flood changed nothing in the human heart - \"every inclination of his heart is evil from his youth\" is the same diagnosis that brought the flood in the first place (Genesis 6:5). Judgment did not cure the disease. So God promises, against that very knowledge, never to send such judgment again. Mercy is not God pretending we are better than we are. Mercy is God deciding to bear with us as we actually are.",
+      "keyInsight": "God smells the offering and resolves never to curse the ground again - not because humanity has improved, but because He has chosen to bear with us as we are. Mercy is not denial of the diagnosis. It is patience with the patient.",
+      "content": "The waters have gone down. The dove has not come back. Noah steps out onto ground that has been scrubbed bare and silent, the only family left alive, and the first thing he does is not plant a field or pitch a tent. He builds an altar, takes from every clean animal and bird, and burns them as an offering to the LORD.\n\nIt is worth sitting with how costly that is. The clean animals were the ones taken aboard in sevens precisely so there would be enough to eat and to breed in a stripped world. Noah takes the surplus God provided for survival and gives it back, in smoke, before he has eaten or rested. Worship comes first, before the practical, in a world where the practical could not be more pressing.\n\nThen comes one of the most tender lines in all of Genesis: \"When the LORD smelled the pleasing aroma, He said in His heart...\" God does not announce His decision to Noah. He says it in His heart, the way you speak to yourself when something has moved you. And what He resolves is staggering. He knows the flood changed nothing in the human heart - \"every inclination of his heart is evil from his youth\" is the same diagnosis that brought the flood in the first place (Genesis 6:5). Judgment did not cure the disease. So God promises, against that very knowledge, never to send such judgment again. Mercy is not God pretending we are better than we are. Mercy is God deciding to bear with us as we actually are."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Watch That Was Never Sold",
+      "body": "A man I knew kept his father's watch in a drawer, though it had not run for years. After the funeral one of his brothers wanted to sell it; the movement was rare, a dealer would pay well. He refused. The watch was not worth keeping for what it could do. It was worth keeping for what it said: that his father had once stood in a shop and chosen it, had worn it to work and to weddings, had handed it down. Stopped, useless, it still bound a son to a father.\n\nA covenant sign works like that. The rainbow does no work. It does not hold back rain or part clouds. It is not a machine. It is a token, the way a ring is a token, the way a stopped watch in a drawer is a token. God says He sets it in the clouds so that \"whenever the rainbow appears... I will remember My covenant.\" The sign is not for God's failing memory; God does not forget. It is set where we can see it, so that on the next dark afternoon when the clouds pile up the way they did before the flood, we look up and the weapon is hanging there, unstrung, aimed away.",
+      "connectionToTheme": "A covenant sign does no work - it carries a promise. The rainbow holds back no rain; it holds a pledge before our eyes, so that in the next storm we remember the bow is laid down.",
+      "content": "A man I knew kept his father's watch in a drawer, though it had not run for years. After the funeral one of his brothers wanted to sell it; the movement was rare, a dealer would pay well. He refused. The watch was not worth keeping for what it could do. It was worth keeping for what it said: that his father had once stood in a shop and chosen it, had worn it to work and to weddings, had handed it down. Stopped, useless, it still bound a son to a father.\n\nA covenant sign works like that. The rainbow does no work. It does not hold back rain or part clouds. It is not a machine. It is a token, the way a ring is a token, the way a stopped watch in a drawer is a token. God says He sets it in the clouds so that \"whenever the rainbow appears... I will remember My covenant.\" The sign is not for God's failing memory; God does not forget. It is set where we can see it, so that on the next dark afternoon when the clouds pile up the way they did before the flood, we look up and the weapon is hanging there, unstrung, aimed away."
+    },
+    {
+      "type": "insight",
+      "heading": "A Weapon Hung in the Sky, Pointing Up",
+      "body": "Read the Hebrew and the picture sharpens. The word God uses for the rainbow is qeshet - the war-bow, the archer's weapon. It is the same word for the bow that kills in battle. God says, \"I have set My bow in the clouds.\" The clouds are the very thing that carried the flood; the bow is the very thing that carries death. And the arc of a rainbow runs the opposite way a bow is drawn: the curve faces down toward earth, the string-line toward heaven. A drawn bow points its arrow at the target. This bow's arc is turned away from the world, its line of fire aimed at the heavens, at God Himself.\n\nThat is what a covenant of grace looks like before the cross even arrives. The instrument of judgment is taken up by the Judge and laid down, pointed away from the guilty and back toward Himself. If the bow must ever be fired again, the arrow's path runs toward the One who hung it there. Centuries later, on a hill outside Jerusalem, it was.\n\nAnd notice who keeps the covenant. God names no condition for Noah - no \"if you obey.\" Five times in nine verses God says \"I establish,\" \"I set,\" \"I will remember.\" The whole weight of the promise rests on the one who made it. This is the kind of covenant God will make again with Abraham, and again, finally, in the blood of His Son: a promise God keeps from both sides, because the other side cannot.",
+      "historicalContext": "In the ancient Near East, treaties were sealed with signs and oaths, and the stronger king often imposed conditions on the weaker vassal. What stuns in Genesis 9 is the absence of conditions. The neighboring flood stories - the Babylonian Atrahasis and Gilgamesh epics - end with capricious gods quarreling over the survivors. Genesis ends with one God binding Himself by oath to a world He knows is still bent. Israel read this at the head of its Scriptures as the pattern for every covenant to come.",
+      "fascinatingFact": "The rainbow appears again at the far end of the Bible. John sees the throne of God in heaven \"and a rainbow that gleamed like an emerald encircled the throne\" (Revelation 4:3). The same bow that was hung in the storm clouds over Noah now arcs unbroken around the throne itself - the covenant sign no longer waiting on a passing storm, but standing permanently before the face of God.",
+      "content": "Read the Hebrew and the picture sharpens. The word God uses for the rainbow is qeshet - the war-bow, the archer's weapon. It is the same word for the bow that kills in battle. God says, \"I have set My bow in the clouds.\" The clouds are the very thing that carried the flood; the bow is the very thing that carries death. And the arc of a rainbow runs the opposite way a bow is drawn: the curve faces down toward earth, the string-line toward heaven. A drawn bow points its arrow at the target. This bow's arc is turned away from the world, its line of fire aimed at the heavens, at God Himself.\n\nThat is what a covenant of grace looks like before the cross even arrives. The instrument of judgment is taken up by the Judge and laid down, pointed away from the guilty and back toward Himself. If the bow must ever be fired again, the arrow's path runs toward the One who hung it there. Centuries later, on a hill outside Jerusalem, it was.\n\nAnd notice who keeps the covenant. God names no condition for Noah - no \"if you obey.\" Five times in nine verses God says \"I establish,\" \"I set,\" \"I will remember.\" The whole weight of the promise rests on the one who made it. This is the kind of covenant God will make again with Abraham, and again, finally, in the blood of His Son: a promise God keeps from both sides, because the other side cannot."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Noah's offering rises as a pleasing aroma, and God binds Himself by unconditional promise: He hangs His war-bow in the clouds, aimed away from the world, and swears never again to destroy all flesh by flood.",
+      "modernApplication": "We still live under skies that turn dark. The promise was never that storms would stop - seedtime and harvest, cold and heat, the going-on of an unfinished world were guaranteed in the same breath. The promise is that the storm is no longer the judgment. When the sky bruises over and the old fear rises, the covenant says: look up. The bow is unstrung. You are held by a promise you did not make and cannot break.",
+      "connectionPoint": "What begins at Noah's altar runs as a single thread through the whole of Scripture. The pleasing aroma of a death offered in place of the worshiper rises again from the tabernacle, then from the temple, and finally from a cross. The unconditional covenant, kept by God alone, reappears with Abraham, with David, and is sealed at last in blood. The garden gave the first death that covered shame; the altar after the flood gives the first promise that judgment is bound; the cross is where the aroma and the promise meet.",
+      "newTestamentEcho": "Paul tells the Ephesians to walk in love, \"just as Christ loved us and gave Himself up for us as a fragrant sacrificial offering to God\" (Ephesians 5:2) - the same pleasing aroma, now the Son Himself on the altar. And on the night He was betrayed Jesus lifted the cup and said, \"This cup is the new covenant in My blood, which is poured out for you\" (Luke 22:20). The bow that was aimed away at Noah's altar is finally drawn at Calvary - and the arrow lands on the One who hung it there."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What dark sky in your life have you been reading as judgment - and what would change if you read it instead as weather under a promise?",
+      "additionalQuestions": [
+        "Noah worshiped before he rested, in a world where rest was overdue. What in you wants to put off worship until life is settled - and what would it mean to build the altar first?",
+        "God resolved to bear with humanity knowing the heart had not changed. Where are you waiting to feel better, or be better, before you believe you are loved?",
+        "When you next see a rainbow, or a hard sky, what promise do you want it to call to your mind?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You smelled the smoke of an altar and bound Yourself to a world You knew was still bent. Thank You that You did not wait for me to be better before You made Your promise. When the sky turns dark and the old fear rises, lift my eyes to the bow You laid down - the weapon turned away, the arrow fallen on Your Son. Let the aroma of His offering be the one that covers me. Hold me by the covenant I cannot break. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, find one sky - a window, a walk, a glance up between meetings - and read it as covenant, not threat. Name one fear you have been carrying as if it were a verdict, and set it down under the bow that is aimed away.",
+      "leavingAtCross": [
+        "The fear that every dark season is God's judgment coming for me",
+        "The instinct to earn the promise, to be good enough before I trust I am kept",
+        "The belief that I must hold the covenant together from my side"
+      ],
+      "receivingFromCross": [
+        "A promise kept entirely by God, unconditional, that I did not make and cannot break",
+        "The pleasing aroma of Christ's offering rising in my place",
+        "The freedom to look up at a hard sky and remember the bow is laid down"
+      ],
+      "content": "Today, find one sky - a window, a walk, a glance up between meetings - and read it as covenant, not threat. Name one fear you have been carrying as if it were a verdict, and set it down under the bow that is aimed away."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that God resolved to spare the world while still knowing 'every inclination of his heart is evil from his youth'? What does that say about the nature of mercy?",
+        "The Hebrew word for the rainbow, qeshet, is the word for a war-bow. How does that change the picture of God 'setting His bow in the clouds'?",
+        "God names no conditions for Noah to keep. Who holds this covenant together, and how does that point forward to the new covenant in Christ's blood?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about a 'dark sky' season each of you has walked through. Did it feel like judgment at the time? Does it now?",
+        "Noah built the altar before he did anything practical. Where in your week does worship come last instead of first - and what is one way to reorder it?",
+        "Ask each other: where are you still trying to keep your side of a covenant God has already promised to keep from both sides?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 6:5",
+          "text": "Then the LORD saw that the wickedness of man was great upon the earth, and that every inclination of the thoughts of his heart was altogether evil all the time."
+        },
+        {
+          "reference": "Isaiah 54:9",
+          "text": "\"For to Me this is like the days of Noah, when I swore that the waters of Noah would never again cover the earth. So I have sworn that I will not be angry with you or rebuke you.\""
+        },
+        {
+          "reference": "Ephesians 5:2",
+          "text": "and walk in love, just as Christ loved us and gave Himself up for us as a fragrant sacrificial offering to God."
+        },
+        {
+          "reference": "Hebrews 9:22",
+          "text": "According to the law, in fact, nearly everything must be purified with blood, and without the shedding of blood there is no forgiveness."
+        },
+        {
+          "reference": "Revelation 4:3",
+          "text": "The One seated there looked like jasper and carnelian, and a rainbow that gleamed like an emerald encircled the throne."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 8-9",
+          "note": "Read from the receding of the waters through the covenant, watching the movement from altar (8:20) to promise in God's heart (8:21) to the sign in the clouds (9:13). Count how many times God says 'I' establish, set, and remember."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Noah",
+      "title": "The Man Who Built the First Altar After the Flood",
+      "description": "The son of Lamech, called righteous in his generation, who walked with God and was carried with his family through the flood in the ark. When the waters receded, his first recorded act on the cleansed earth was worship: an altar, an offering, a pleasing aroma rising to heaven. To Noah and his sons God spoke the first covenant named in Scripture, sealed by the bow in the clouds. Centuries later Jesus would point back to 'the days of Noah' as a picture of judgment and rescue (Matthew 24:37), and Peter would read the ark and its waters as a foreshadowing of baptism into Christ (1 Peter 3:20-21).",
+      "keyQuote": "Then Noah built an altar to the LORD... and he offered burnt offerings on the altar.",
+      "lessonForUs": "Noah stepped onto an emptied earth and worshiped before he rebuilt. The first move of a saved life is not to secure the future but to give thanks to the One who secured it - and to trust the promise God keeps from His side, not ours.",
+      "heading": "The Man Who Built the First Altar After the Flood"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2524,
+  "scriptureReference_full": "Genesis 8:20-9:17",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (qeshet H7198 as both war-bow and rainbow; reach hannichoach as the standard sacrificial 'pleasing aroma' formula of Leviticus 1-3) reflects standard lexical sources."
+  ]
 }
