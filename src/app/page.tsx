@@ -314,7 +314,7 @@ export default function Home() {
           <div className="homepage-hero-banner-art">
             <Image
               src={pickHomepageHero()}
-              alt={`Illustration accompanying ${HOMEPAGE_TODAY.title}`}
+              alt=""
               fill
               sizes="100vw"
               priority

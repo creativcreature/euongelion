@@ -174,9 +174,10 @@ export default function SettingsPage() {
   const billingDisabledReason = useMemo(() => {
     if (billingConfig) {
       if (billingEnabled) return null
-      return billingPlatform === 'ios'
-        ? 'App Store IAP is not configured yet in this environment.'
-        : 'Stripe checkout is not configured yet in this environment.'
+      // Checkout is intentionally closed until billing is launch-ready (see the
+      // BILLING_CHECKOUT_LIVE master switch). Present it as "coming soon", not a
+      // misconfiguration — and the Subscribe buttons stay disabled below.
+      return 'Premium plans are coming soon — checkout isn’t open yet.'
     }
     return 'Billing configuration is loading.'
   }, [billingConfig, billingEnabled, billingPlatform])

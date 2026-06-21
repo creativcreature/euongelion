@@ -4128,6 +4128,9 @@ html.reduce-motion *::after {
   justify-self: center;
   margin: 0;
   font-family: var(--font-family-serif);
+  /* Instrument Serif ships 400-only; pin the weight so an inherited 600 (the nav
+     labels) doesn't synthesize a muddy faux-bold. */
+  font-weight: 400;
   font-size: 0.95em;
   letter-spacing: 0.01em;
   text-transform: none;

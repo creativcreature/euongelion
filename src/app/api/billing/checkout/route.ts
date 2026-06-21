@@ -65,6 +65,19 @@ function jsonWithRequestId(
 
 export async function POST(request: NextRequest) {
   const requestId = randomUUID()
+
+  // Master switch: checkout is OFF until billing is launch-ready
+  // (BILLING_CHECKOUT_LIVE=true). This blocks ALL checkout initiation regardless
+  // of Stripe / IAP configuration, so enabling the Stripe env alone cannot turn
+  // on payments prematurely. The config route mirrors this so the UI never
+  // offers a "Subscribe" CTA while it is off.
+  if (process.env.BILLING_CHECKOUT_LIVE !== 'true') {
+    return jsonWithRequestId(
+      { ok: false, error: 'Checkout is not available yet.' },
+      { status: 503, requestId },
+    )
+  }
+
   const key = getClientKey(request)
   const limit = await takeRateLimit({
     namespace: 'billing-checkout',

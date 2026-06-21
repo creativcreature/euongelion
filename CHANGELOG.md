@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Checkout locked off (not ready) + typography fixes (2026-06-13)
+
+**Checkout is hard-disabled until billing is launch-ready (founder direction).** Added
+a master `BILLING_CHECKOUT_LIVE` switch (default OFF): the checkout route now 503s on
+ALL checkout initiation regardless of Stripe/IAP config (so enabling the Stripe env
+alone can't turn payments on prematurely), and the config route mirrors it so the
+Settings UI never offers a "Subscribe" CTA. The disabled-reason copy now reads
+"Premium plans are coming soon — checkout isn't open yet" (was a dev-looking "Stripe
+not configured" leak). Verified live: no functional checkout path exists.
+
+From the typographic/image audit (code fixes only — image swaps left for founder per
+"no image creation"): the masthead tagline no longer faux-bolds (Instrument Serif is
+400-only; pinned to 400 so an inherited 600 stops synthesizing a muddy bold); the
+generic homepage hero banner image is now `alt=""` (decorative) instead of sharing the
+featured devotional's alt (a11y duplicate fixed).
+
+Clipped Soul Audit results headings (prior commit) verified live — all 3 cards render
+their full path headings, unclamped. Full suite 104 files / 1434 pass.
+
+---
+
 ## ELEVATION v3.0 — Honest-audit fixes: silent fallback, grounding, gating, clipped headings (2026-06-13)
 
 From a brutally-honest, doc-vs-reality audit (4 read-only agents: contracts, UX,
