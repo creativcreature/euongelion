@@ -5,6 +5,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Audio Edition: most-naturalistic free voice selection (2026-06-13)
+
+The Audio Edition uses the browser Web Speech API (`speechSynthesis`) — free,
+on-device, and the only free option that also reads the _dynamically generated_
+Soul Audit plans. Quality is dominated by which voice gets picked, and the old
+selector just grabbed a "female/samantha" or the first English voice — so on
+Chrome / Android / Windows it frequently landed on a robotic default instead of
+the high-quality neural voice the platform actually offers.
+
+Rewrote `resolveVoice()` to RANK voices by naturalism and pick the best free one
+available: "Natural"/"Neural" engines (Microsoft Online Natural, Google neural)
+first, then "Enhanced"/"Premium" hi-fi OS voices (iOS/macOS), then known-good
+named voices (Samantha, Ava, Siri, Google US English, Microsoft Aria/Jenny…),
+en-US preferred, with robotic compact/eSpeak/Eloquence voices penalised. Still
+100% free, no keys, no network cost; honest fallback to any English / first voice
+where nothing scores. (Voice quality is platform-dependent and best confirmed by
+ear on-device.)
+
+---
+
 ## ELEVATION v3.0 — Visual consistency round 2 (FOUC, titles, settings polish) (2026-06-13)
 
 From the site-wide visual audit (which cleared the spine: 0 critical, no broken

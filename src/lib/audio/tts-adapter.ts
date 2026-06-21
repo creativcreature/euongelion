@@ -115,20 +115,63 @@ export class WebSpeechTtsAdapter implements TtsAdapter {
   }
 
   /**
-   * Pick a calm English voice when one is available. Voices load async in
-   * some browsers, so this is best-effort and re-resolved on each speak().
+   * Pick the MOST NATURALISTIC English voice the runtime offers — free only
+   * (Web Speech surfaces the OS / browser neural voices at no cost). Quality
+   * varies wildly by platform, so we rank rather than grab-first:
+   *   - "Natural"/"Neural"  → the modern neural engines (e.g. Microsoft Online
+   *     Natural, Google neural) — by far the most lifelike.
+   *   - "Enhanced"/"Premium" → the downloadable hi-fi OS voices (iOS/macOS).
+   *   - known-good named voices (Samantha, Ava, Siri, Google US English,
+   *     Microsoft Aria/Jenny…) → the good defaults shipped per platform.
+   *   - en-US slightly preferred over en-GB over any English.
+   *   - "compact"/eSpeak/Eloquence robotic fallbacks → penalised.
+   * Voices load async, so this is re-resolved on each speak(); on the rare
+   * runtime where nothing scores we fall back to any English / the first voice.
    */
   private resolveVoice(): SpeechSynthesisVoice | null {
     if (!this.isSupported()) return null
     const voices = window.speechSynthesis.getVoices()
     if (!voices.length) return null
-    const preferred =
-      voices.find(
-        (v) => /en[-_]US/i.test(v.lang) && /female|samantha/i.test(v.name),
-      ) ||
-      voices.find((v) => /^en/i.test(v.lang)) ||
-      voices[0]
-    return preferred ?? null
+
+    const score = (v: SpeechSynthesisVoice): number => {
+      const name = (v.name || '').toLowerCase()
+      const lang = (v.lang || '').toLowerCase()
+      if (!/^en/.test(lang)) return -1 // English content → English voice
+      let s = 0
+      if (/natural|neural/.test(name)) s += 100
+      if (/enhanced|premium/.test(name)) s += 80
+      if (
+        /\b(ava|samantha|siri|allison|serena|zoe|evan|nathan|joelle|nicky|tom|alex)\b/.test(
+          name,
+        )
+      )
+        s += 60
+      if (/google (us|uk) english/.test(name)) s += 55
+      if (
+        /microsoft (aria|jenny|guy|michelle|ana|natasha|libby|sonia|ryan)/.test(
+          name,
+        )
+      )
+        s += 55
+      if (/en[-_]us/.test(lang)) s += 10
+      else if (/en[-_]gb/.test(lang)) s += 6
+      if (/compact|eloquence|espeak|pico|robot/.test(name)) s -= 40
+      return s
+    }
+
+    let best: SpeechSynthesisVoice | null = null
+    let bestScore = -Infinity
+    for (const v of voices) {
+      const sc = score(v)
+      if (sc > bestScore) {
+        bestScore = sc
+        best = v
+      }
+    }
+    if (!best || bestScore < 0) {
+      best = voices.find((v) => /^en/i.test(v.lang)) || voices[0] || null
+    }
+    return best ?? null
   }
 
   speak(segments: TtsSegment[], startIndex = 0): void {
