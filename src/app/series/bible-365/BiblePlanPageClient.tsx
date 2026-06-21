@@ -24,6 +24,15 @@ const MONTH_NAMES = [
   'December',
 ]
 
+// Quarter arc per docs/bible-365-content-calendar-2026.md. Months are
+// 0-indexed; each quarter owns three calendar months.
+const QUARTERS = [
+  { label: 'Q1', focus: 'Foundations', months: [0, 1, 2] },
+  { label: 'Q2', focus: 'Kingdom', months: [3, 4, 5] },
+  { label: 'Q3', focus: 'Promise', months: [6, 7, 8] },
+  { label: 'Q4', focus: 'Fulfillment', months: [9, 10, 11] },
+]
+
 // Day-of-year → month + day-of-month for 2026 (non-leap year).
 // Days 1-31 = January, 32-59 = February (28 days), etc.
 const MONTH_LENGTHS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -70,6 +79,36 @@ export default function BiblePlanPageClient({
     }
     return grouped
   }, [series.days])
+
+  // The month of "today" — opened by default so the page lands short
+  // (a single month visible), not as a 365-row wall. Any month containing
+  // at least one day stays collapsed until the reader taps it or jumps.
+  const currentMonthIdx = useMemo(
+    () => dayToMonthAndDate(todayDoy).month,
+    [todayDoy],
+  )
+  const [openMonths, setOpenMonths] = useState<Set<number>>(
+    () => new Set([currentMonthIdx]),
+  )
+
+  const toggleMonth = (monthIdx: number) => {
+    setOpenMonths((prev) => {
+      const next = new Set(prev)
+      if (next.has(monthIdx)) next.delete(monthIdx)
+      else next.add(monthIdx)
+      return next
+    })
+  }
+
+  // Jump-bar: open the target month, then scroll it into view.
+  const jumpToMonth = (monthIdx: number) => {
+    setOpenMonths((prev) => new Set(prev).add(monthIdx))
+    requestAnimationFrame(() => {
+      document
+        .getElementById(`b365browse-month-${monthIdx}`)
+        ?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    })
+  }
 
   // Filter when searching
   const filteredDays = useMemo(() => {
@@ -187,28 +226,185 @@ export default function BiblePlanPageClient({
             id="calendar"
             className="bible365-calendar shell-content-pad"
           >
-            {daysByMonth.map((monthDays, monthIdx) => (
-              <div key={monthIdx} className="bible365-month-block">
-                <h2 className="bible365-month-heading">
-                  <span className="text-label">
-                    MONTH {String(monthIdx + 1).padStart(2, '0')}
+            {/* Scoped styles for the jump-bar + accordion chrome. The
+                existing bible365-* classes (in globals.css) are reused
+                untouched; only b365browse-* is added here so this surface
+                owns its new CSS without editing globals. */}
+            <style>{`
+              .b365browse-jumpbar {
+                position: sticky;
+                top: 0;
+                z-index: 5;
+                margin: 0 0 1.6rem;
+                padding: 0.75rem 0 0.6rem;
+                background: var(--mock-paper, inherit);
+                border-bottom: 1.5px solid var(--mock-line, currentColor);
+              }
+              .b365browse-quarter {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: baseline;
+                gap: 0.5rem;
+                margin-bottom: 0.5rem;
+              }
+              .b365browse-quarter:last-child { margin-bottom: 0; }
+              .b365browse-q-label {
+                letter-spacing: 0.08em;
+                min-width: 6.5rem;
+                color: var(--mock-blue, currentColor);
+              }
+              .b365browse-q-months {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.4rem;
+              }
+              .b365browse-month-chip {
+                min-height: 44px;
+                padding: 0 0.85rem;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+                border: 1.5px solid var(--mock-line, currentColor);
+                background: transparent;
+                color: inherit;
+                font: inherit;
+                letter-spacing: 0.04em;
+                cursor: pointer;
+                white-space: nowrap;
+              }
+              .b365browse-month-chip:hover {
+                background: color-mix(
+                  in srgb,
+                  var(--mock-blue, #1f2a8d) 8%,
+                  var(--mock-paper, white) 92%
+                );
+              }
+              .b365browse-month-chip:focus-visible {
+                outline: 2px solid var(--mock-blue, currentColor);
+                outline-offset: 1px;
+              }
+              .b365browse-month-chip[data-current='true'] {
+                border-color: var(--mock-blue, currentColor);
+                font-weight: 600;
+              }
+              .b365browse-month-chip .b365browse-chip-count { opacity: 0.6; }
+              .b365browse-month-toggle {
+                display: flex;
+                align-items: baseline;
+                gap: 1rem;
+                width: 100%;
+                min-height: 44px;
+                border: none;
+                border-bottom: 1.5px solid var(--mock-line, currentColor);
+                padding-bottom: 0.4rem;
+                margin: 0 0 0.9rem;
+                background: transparent;
+                color: inherit;
+                font: inherit;
+                text-align: left;
+                cursor: pointer;
+              }
+              .b365browse-month-toggle:focus-visible {
+                outline: 2px solid var(--mock-blue, currentColor);
+                outline-offset: 2px;
+              }
+              .b365browse-toggle-caret {
+                margin-left: auto;
+                font-size: 1rem;
+                opacity: 0.7;
+              }
+              @media (prefers-reduced-motion: reduce) {
+                .bible365-day-cell, .b365browse-month-chip {
+                  transition: none;
+                }
+              }
+            `}</style>
+
+            {/* Sticky quarter -> month jump-bar: any month reachable in one
+                tap, grouped by the year's four quarters. */}
+            <nav className="b365browse-jumpbar" aria-label="Jump to a month">
+              {QUARTERS.map((q) => (
+                <div key={q.label} className="b365browse-quarter">
+                  <span className="text-label b365browse-q-label">
+                    {q.label} · {q.focus.toUpperCase()}
                   </span>
-                  <span className="bible365-month-name">
-                    {MONTH_NAMES[monthIdx]}
+                  <span className="b365browse-q-months">
+                    {q.months.map((monthIdx) => {
+                      const count = daysByMonth[monthIdx].length
+                      if (count === 0) return null
+                      return (
+                        <button
+                          key={monthIdx}
+                          type="button"
+                          className="text-label b365browse-month-chip"
+                          data-current={
+                            monthIdx === currentMonthIdx ? 'true' : undefined
+                          }
+                          onClick={() => jumpToMonth(monthIdx)}
+                        >
+                          {MONTH_NAMES[monthIdx].slice(0, 3).toUpperCase()}
+                          <span className="b365browse-chip-count">{count}</span>
+                        </button>
+                      )
+                    })}
                   </span>
-                </h2>
-                <ul className="bible365-day-grid">
-                  {monthDays.map((day) => (
-                    <DayCard
-                      key={day.slug}
-                      day={day}
-                      todayDoy={todayDoy}
-                      isRead={isRead}
-                    />
-                  ))}
-                </ul>
-              </div>
-            ))}
+                </div>
+              ))}
+            </nav>
+
+            {daysByMonth.map((monthDays, monthIdx) => {
+              if (monthDays.length === 0) return null
+              const isOpen = openMonths.has(monthIdx)
+              const isCurrent = monthIdx === currentMonthIdx
+              return (
+                <div
+                  key={monthIdx}
+                  id={`b365browse-month-${monthIdx}`}
+                  className="bible365-month-block"
+                  style={{ scrollMarginTop: '7rem' }}
+                >
+                  <button
+                    type="button"
+                    className="b365browse-month-toggle"
+                    aria-expanded={isOpen}
+                    aria-controls={`b365browse-panel-${monthIdx}`}
+                    onClick={() => toggleMonth(monthIdx)}
+                  >
+                    <span className="text-label">
+                      MONTH {String(monthIdx + 1).padStart(2, '0')}
+                    </span>
+                    <span className="bible365-month-name">
+                      {MONTH_NAMES[monthIdx]}
+                    </span>
+                    <span className="text-label">
+                      {monthDays.length} DAYS
+                      {isCurrent ? ' · NOW' : ''}
+                    </span>
+                    <span
+                      className="b365browse-toggle-caret"
+                      aria-hidden="true"
+                    >
+                      {isOpen ? '▴' : '▾'}
+                    </span>
+                  </button>
+                  {isOpen && (
+                    <ul
+                      id={`b365browse-panel-${monthIdx}`}
+                      className="bible365-day-grid"
+                    >
+                      {monthDays.map((day) => (
+                        <DayCard
+                          key={day.slug}
+                          day={day}
+                          todayDoy={todayDoy}
+                          isRead={isRead}
+                        />
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )
+            })}
           </section>
         )}
       </main>

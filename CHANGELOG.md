@@ -5,6 +5,38 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Mobile polish: header overlap, Bible-365 grouped nav, homepage audit loading (2026-06-13)
+
+Three founder-reported mobile/UX fixes:
+
+1. **Mobile header overlap** — the cross-fading topbar ticker (date/tagline) was
+   `position: absolute` against the whole row, so it spanned full-width and sat
+   _under_ the hamburger (which had a ~319px hit-track over the masthead text).
+   Rebuilt as a 3-column grid (`spacer · bounded ticker · 44×44 menu button`); the
+   ticker is clipped to its own cell, type clamped so the full tagline fits at
+   ≥375px and ellipsizes cleanly at 320px. Zero overlap at 320/375/414px; desktop
+   untouched; the prior nav fix (HOME left-anchored) preserved.
+
+2. **Bible-365 grouped navigation** — the 365-day plan forced scrolling through ~4
+   months. Added a sticky quarter→month jump-bar (Q1 Foundations · Q2 Kingdom · Q3
+   Promise · Q4 Fulfillment) + collapsible month accordion on `/series/bible-365`,
+   and a "JUMP TO" month selector + accordion in the reader's "IN THIS SERIES" list
+   — gated behind >31 days so short series stay byte-for-byte unchanged. Day-locking
+   preserved; tap targets ≥44px; component-scoped CSS.
+
+3. **Homepage audit loading** — the homepage Soul Audit widget skipped the
+   "Building your paths…" loader the standalone page shows. Extracted that phase into
+   a shared `ComposingPaths` component (gather-dots + live region + reduced-motion
+   guard) and gated the homepage widget behind it, so submit now matches the
+   standalone end-to-end (Phase B / `GenerationProgress` was already shared).
+
+Also cleared today's Soul-Audit submit/plan daily counters (a testing IP counter had
+tripped the per-day limit; the global budget rail was preserved).
+
+(Deployed together with the in-flight Bible-365 full run, via a brief workflow pause.)
+
+---
+
 ## ELEVATION v3.0 — Fix mobile nav: HOME cropped off the left edge (2026-06-13)
 
 The mobile nav (`.mock-mobile-nav-inline`) is a horizontal `overflow-x: auto` row but

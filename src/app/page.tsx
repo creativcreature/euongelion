@@ -8,6 +8,7 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import SeriesRailSection from '@/components/SeriesRailSection'
 import CrisisInterstitial from '@/components/soul-audit/CrisisInterstitial'
+import ComposingPaths from '@/components/soul-audit/ComposingPaths'
 import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
 import { CRISIS_RESOURCES } from '@/lib/soul-audit/crisis-gate'
 import { typographer } from '@/lib/typographer'
@@ -513,96 +514,105 @@ export default function Home() {
             )}
           </p>
 
-          <textarea
-            value={auditText}
-            onChange={(e) => {
-              setAuditText(e.target.value)
-              setError(null)
-            }}
-            placeholder="Lately, I've been..."
-            rows={3}
-            maxLength={2000}
-            disabled={isSubmitting}
-            className="mock-textarea"
-            aria-label="What are you wrestling with today?"
-          />
+          {/* While the options compose is in flight, swap the input cluster
+              for the SAME Phase A "Building your paths..." gather-dots loader
+              the standalone /soul-audit page shows — so submitting here is no
+              longer an abrupt button-label change. The kicker/title/subcopy
+              above stay put; only the interactive body swaps, which keeps the
+              section height stable (no layout shift). After this completes the
+              flow routes to /soul-audit/results, where Phase B ("SETTING YOUR
+              EDITION") is already identical for both entry points. */}
+          {isSubmitting ? (
+            <ComposingPaths />
+          ) : (
+            <>
+              <textarea
+                value={auditText}
+                onChange={(e) => {
+                  setAuditText(e.target.value)
+                  setError(null)
+                }}
+                placeholder="Lately, I've been..."
+                rows={3}
+                maxLength={2000}
+                disabled={isSubmitting}
+                className="mock-textarea"
+                aria-label="What are you wrestling with today?"
+              />
 
-          {/* Sample prompt pills — only shown while the field is empty, so a
-              tap can never overwrite what someone has already written. */}
-          {!auditText.trim() && (
-            <div className="homepage-prompt-pills">
-              {[
-                'I feel anxious about my future',
-                'I\u2019m doubting everything I thought I believed',
-                'I keep falling into the same sin',
-                'I don\u2019t know what I believe',
-              ].map((pill) => (
-                <button
-                  key={pill}
-                  type="button"
-                  className="homepage-prompt-pill text-label"
-                  onClick={() => {
-                    setAuditText(pill)
-                    setError(null)
-                  }}
-                  disabled={isSubmitting}
-                >
-                  {pill}
-                </button>
-              ))}
-            </div>
-          )}
+              {/* Sample prompt pills — only shown while the field is empty, so a
+                  tap can never overwrite what someone has already written. */}
+              {!auditText.trim() && (
+                <div className="homepage-prompt-pills">
+                  {[
+                    'I feel anxious about my future',
+                    'I\u2019m doubting everything I thought I believed',
+                    'I keep falling into the same sin',
+                    'I don\u2019t know what I believe',
+                  ].map((pill) => (
+                    <button
+                      key={pill}
+                      type="button"
+                      className="homepage-prompt-pill text-label"
+                      onClick={() => {
+                        setAuditText(pill)
+                        setError(null)
+                      }}
+                      disabled={isSubmitting}
+                    >
+                      {pill}
+                    </button>
+                  ))}
+                </div>
+              )}
 
-          {showLowContextHint && (
-            <p className="mock-footnote">
-              Say a little more. Even one sentence helps.
-            </p>
-          )}
+              {showLowContextHint && (
+                <p className="mock-footnote">
+                  Say a little more. Even one sentence helps.
+                </p>
+              )}
 
-          <button
-            type="button"
-            className="mock-btn mock-btn-inline text-label"
-            onClick={() => void submitAudit(auditText)}
-            disabled={isSubmitting}
-            aria-busy={isSubmitting}
-          >
-            {isSubmitting ? 'FINDING YOUR PATHS…' : 'GET MATCHED'}
-          </button>
-          <p role="status" aria-live="polite" className="sr-only">
-            {isSubmitting
-              ? 'Reading what you wrote and matching three reading paths…'
-              : ''}
-          </p>
-          <p className="mock-footnote">
-            Read once to compose your edition — never stored, never shared,
-            never used to train AI. No account required.
-          </p>
-          {/* No proactive "X of N" counter — it reads as a metered trial.
+              <button
+                type="button"
+                className="mock-btn mock-btn-inline text-label"
+                onClick={() => void submitAudit(auditText)}
+                disabled={isSubmitting}
+                aria-busy={isSubmitting}
+              >
+                GET MATCHED
+              </button>
+              <p className="mock-footnote">
+                Read once to compose your edition — never stored, never shared,
+                never used to train AI. No account required.
+              </p>
+              {/* No proactive "X of N" counter — it reads as a metered trial.
               The cap still applies; we only surface it once it's reached. */}
-          {hydrated && limitReached && (
-            <p className="mock-footnote">
-              You’ve explored a few directions already — start a fresh audit
-              whenever you’re ready.
-            </p>
-          )}
-          {hydrated && auditCount > 0 && (
-            <button
-              type="button"
-              className="mock-reset-btn text-label"
-              onClick={() => void handleResetAudit()}
-            >
-              Start a new audit
-            </button>
-          )}
-          {error && <p className="mock-error">{error}</p>}
-          {lastFailedSubmission && !isSubmitting && (
-            <button
-              type="button"
-              className="mock-reset-btn text-label"
-              onClick={() => void submitAudit(lastFailedSubmission)}
-            >
-              Retry Last Submit
-            </button>
+              {hydrated && limitReached && (
+                <p className="mock-footnote">
+                  You’ve explored a few directions already — start a fresh audit
+                  whenever you’re ready.
+                </p>
+              )}
+              {hydrated && auditCount > 0 && (
+                <button
+                  type="button"
+                  className="mock-reset-btn text-label"
+                  onClick={() => void handleResetAudit()}
+                >
+                  Start a new audit
+                </button>
+              )}
+              {error && <p className="mock-error">{error}</p>}
+              {lastFailedSubmission && !isSubmitting && (
+                <button
+                  type="button"
+                  className="mock-reset-btn text-label"
+                  onClick={() => void submitAudit(lastFailedSubmission)}
+                >
+                  Retry Last Submit
+                </button>
+              )}
+            </>
           )}
         </section>
 

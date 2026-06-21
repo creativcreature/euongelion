@@ -600,20 +600,31 @@ export default function EuangelionShellHeader({
             </div>
           </div>
 
-          <div
-            className="mock-topbar-mobile-row"
-            role="status"
-            aria-live="polite"
-          >
-            {mobileTickerItems.map((item, index) => (
-              <span
-                key={`${item}-${index}`}
-                className={`mock-topbar-mobile-item ${mobileTopbarIndex === index ? 'is-active' : ''}`}
-                aria-hidden={mobileTopbarIndex !== index}
-              >
-                {item}
-              </span>
-            ))}
+          <div className="mock-topbar-mobile-row">
+            {/* Left spacer mirrors the menu button's track so the centered
+                ambient ticker stays optically centered between two equal
+                gutters instead of drifting under the action on the right. */}
+            <span className="mock-topbar-mobile-spacer" aria-hidden="true" />
+            {/* Ambient masthead furniture: the rolling date + tagline. The
+                cross-fade stage is its own positioning context (min-width:0,
+                bounded grid cell) so the absolutely-stacked ticker items can
+                never bleed under the menu button \u2014 they are clipped to this
+                track, not the whole row. */}
+            <div
+              className="mock-topbar-mobile-ticker"
+              role="status"
+              aria-live="polite"
+            >
+              {mobileTickerItems.map((item, index) => (
+                <span
+                  key={`${item}-${index}`}
+                  className={`mock-topbar-mobile-item ${mobileTopbarIndex === index ? 'is-active' : ''}`}
+                  aria-hidden={mobileTopbarIndex !== index}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
             <button
               type="button"
               ref={mobileToggleRef}
@@ -622,6 +633,7 @@ export default function EuangelionShellHeader({
               aria-controls={
                 mobileMenuOpen ? 'shell-mobile-secondary-nav' : undefined
               }
+              aria-expanded={mobileMenuOpen}
               onClick={() => setMobileMenuOpen((current) => !current)}
             >
               {mobileMenuOpen ? '\u2715' : '\u2630'}

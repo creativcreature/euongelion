@@ -5930,14 +5930,29 @@ html.reduce-motion *::after {
   display: none;
 }
 
+/* Cross-fade stage for the ambient ticker. It is the positioning context for
+   the absolutely-stacked items, so they are bounded by this track (a single
+   grid cell) and can never overlap the menu button beside it. */
+.mock-topbar-mobile-ticker {
+  position: relative;
+  min-width: 0;
+  min-height: 1.6rem;
+}
+
 .mock-topbar-mobile-item {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  /* Vertically center via line-height matched to the track height (block
+     context keeps text-overflow working, which a flex container defeats). */
+  line-height: var(--mock-h-topbar, 42px);
   text-align: center;
   opacity: 0;
+  /* Clip overflow within the bounded ticker track; long copy ellipsizes
+     instead of spilling toward the button. */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: opacity 1500ms cubic-bezier(0.22, 1, 0.36, 1);
   pointer-events: none;
 }
@@ -6488,14 +6503,61 @@ html.reduce-motion *::after {
     display: none;
   }
 
+  /* Mobile topbar: three explicit columns — a left spacer that mirrors the
+     menu button's track, the ambient ticker (the only flexible track), and
+     the menu button. The ticker is the single 1fr column with min-width:0,
+     so it can shrink but never push into or sit under the button. The
+     matching spacer keeps the centered ticker optically centered between two
+     equal gutters. This replaces the prior `1fr auto` grid whose absolutely
+     positioned ticker (inset:0 over the whole row) bled under the button and
+     let the button's hit-track stretch across the entire row. */
   .mock-topbar-mobile-row {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
+    column-gap: 0.4rem;
     position: relative;
     min-height: var(--mock-h-topbar);
     padding: 0.28rem var(--mock-pad-x);
   }
+
+  /* Invisible counterweight: same nominal width as the menu button so the
+     centered ticker reads as centered, not shoved left. It carries no hit
+     area and collapses to nothing if space is tight (min-width:0). */
+  .mock-topbar-mobile-spacer {
+    justify-self: start;
+    min-width: 0;
+    /* Narrower than the button so the centered ticker gains room for the
+       full tagline; the short date stays comfortably centered and the
+       masthead wordmark below carries the true optical center. */
+    width: 22px;
+    height: 1px;
+    pointer-events: none;
+  }
+
+  .mock-topbar-mobile-ticker {
+    justify-self: stretch;
+    min-height: var(--mock-h-topbar);
+    /* Ambient furniture reads a half-step quieter than the masthead below;
+       the slightly smaller type also lets the full tagline fit the bounded
+       track on common phones (>=375px) and ellipsize gracefully on the
+       narrowest (320px). The absolute items fill only this column. */
+    font-size: clamp(0.72rem, 3.4vw, 0.86rem);
+    letter-spacing: 0.01em;
+  }
+
+  .mock-mobile-menu-toggle {
+    justify-self: end;
+    /* >=44px tappable target (WCAG 2.5.5 / Apple HIG) in a tidy box. */
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.12rem 0.55rem;
+  }
+
+  /* Narrowest phones: the date stamp alone carries the ambient role and the
+     tagline is dropped from the rotation so nothing is ever cramped. The
+     tagline still lives in the masthead context below; this only trims the
+     topbar ticker. */
 
   .mock-nav {
     position: -webkit-sticky;

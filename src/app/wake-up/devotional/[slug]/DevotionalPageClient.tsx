@@ -57,6 +57,39 @@ function getDayIndexFromSlug(slug: string): number {
   return match ? Number.parseInt(match[1], 10) - 1 : 0
 }
 
+// A series long enough that a flat day list becomes an unscrollable
+// wall (Bible-365 is 365 days). Above this threshold the reader's
+// "IN THIS SERIES" index switches to a grouped, jump-able accordion.
+// Normal 5-7 day series (and anything <= 31) keep the flat list.
+const LONG_SERIES_DAY_THRESHOLD = 31
+
+// Day-of-year -> calendar month index (0-11) for a 365-day plan keyed
+// to a non-leap year (2026). Mirrors the math on the /series/bible-365
+// browse page so the two surfaces group identically.
+const SERIES_MONTH_NAMES = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+]
+const SERIES_MONTH_LENGTHS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+function dayOfYearToMonthIndex(dayOfYear: number): number {
+  let remaining = dayOfYear
+  for (let m = 0; m < 12; m++) {
+    if (remaining <= SERIES_MONTH_LENGTHS[m]) return m
+    remaining -= SERIES_MONTH_LENGTHS[m]
+  }
+  return 11
+}
+
 export default function DevotionalPageClient({
   slug,
   silo = 'wake',
@@ -545,56 +578,69 @@ export default function DevotionalPageClient({
                     <p className="text-label vw-small mb-3 text-gold">
                       IN THIS SERIES
                     </p>
-                    <div className="mb-5 grid gap-2">
-                      {seriesDays.map((day) => {
-                        const check = canRead(day.slug)
-                        const isLocked = !check.canRead && day.slug !== slug
-                        const isCurrent = day.slug === slug
+                    {seriesDays.length > LONG_SERIES_DAY_THRESHOLD ? (
+                      // Long plan (e.g. Bible-365): a flat list would be a
+                      // 365-item wall. Render a grouped, jump-able month
+                      // accordion instead. Locking behavior is preserved
+                      // per-day inside the component.
+                      <LongSeriesDayIndex
+                        days={seriesDays}
+                        currentSlug={slug}
+                        routePrefix={devotionalRoutePrefix}
+                        canRead={canRead}
+                      />
+                    ) : (
+                      <div className="mb-5 grid gap-2">
+                        {seriesDays.map((day) => {
+                          const check = canRead(day.slug)
+                          const isLocked = !check.canRead && day.slug !== slug
+                          const isCurrent = day.slug === slug
 
-                        if (isLocked) {
+                          if (isLocked) {
+                            return (
+                              <div
+                                key={day.slug}
+                                className="border px-3 py-2"
+                                style={{
+                                  borderColor: 'var(--color-border)',
+                                  opacity: 0.58,
+                                }}
+                              >
+                                <p className="text-label vw-small text-gold">
+                                  DAY {day.day} • LOCKED
+                                </p>
+                                <p className="vw-small text-secondary">
+                                  {day.title}
+                                </p>
+                              </div>
+                            )
+                          }
+
                           return (
-                            <div
+                            <Link
                               key={day.slug}
-                              className="border px-3 py-2"
+                              href={`${devotionalRoutePrefix}/${day.slug}`}
+                              className="block border px-3 py-2"
                               style={{
-                                borderColor: 'var(--color-border)',
-                                opacity: 0.58,
+                                borderColor: isCurrent
+                                  ? 'var(--color-border-strong)'
+                                  : 'var(--color-border)',
+                                background: isCurrent
+                                  ? 'var(--color-active)'
+                                  : 'transparent',
                               }}
                             >
                               <p className="text-label vw-small text-gold">
-                                DAY {day.day} • LOCKED
+                                DAY {day.day}
                               </p>
                               <p className="vw-small text-secondary">
                                 {day.title}
                               </p>
-                            </div>
+                            </Link>
                           )
-                        }
-
-                        return (
-                          <Link
-                            key={day.slug}
-                            href={`${devotionalRoutePrefix}/${day.slug}`}
-                            className="block border px-3 py-2"
-                            style={{
-                              borderColor: isCurrent
-                                ? 'var(--color-border-strong)'
-                                : 'var(--color-border)',
-                              background: isCurrent
-                                ? 'var(--color-active)'
-                                : 'transparent',
-                            }}
-                          >
-                            <p className="text-label vw-small text-gold">
-                              DAY {day.day}
-                            </p>
-                            <p className="vw-small text-secondary">
-                              {day.title}
-                            </p>
-                          </Link>
-                        )
-                      })}
-                    </div>
+                        })}
+                      </div>
+                    )}
                   </>
                 )}
 
@@ -981,5 +1027,253 @@ function PanelComponent({ panel }: { panel: Panel }) {
         )
       })}
     </article>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// Long-series ("IN THIS SERIES") grouped day index.
+//
+// A flat 365-item list is unusable inside the reader's slide-out drawer.
+// This renders a month accordion plus a "jump to day" control: a returning
+// reader reaches any day in a tap or two, mobile-first (375px), with every
+// interactive target >= 44px. Day-locking is preserved exactly — each day
+// is run through `canRead` and locked days render as non-interactive rows,
+// identical in semantics to the flat short-series list.
+// ---------------------------------------------------------------------------
+function LongSeriesDayIndex({
+  days,
+  currentSlug,
+  routePrefix,
+  canRead,
+}: {
+  days: Array<{ day: number; title: string; slug: string }>
+  currentSlug: string
+  routePrefix: string
+  canRead: (slug: string) => { canRead: boolean }
+}) {
+  // Group days into the 12 calendar months by day-of-year.
+  const months = useMemo(() => {
+    const buckets: Array<{
+      idx: number
+      name: string
+      days: Array<{ day: number; title: string; slug: string }>
+    }> = SERIES_MONTH_NAMES.map((name, idx) => ({ idx, name, days: [] }))
+    for (const d of days) {
+      buckets[dayOfYearToMonthIndex(d.day)].days.push(d)
+    }
+    return buckets.filter((m) => m.days.length > 0)
+  }, [days])
+
+  // The month containing the day the reader is currently on — expanded by
+  // default so the drawer opens *short* (on the current month), never as a
+  // 365-row wall.
+  const currentMonthIdx = useMemo(() => {
+    const cur = days.find((d) => d.slug === currentSlug)
+    return cur ? dayOfYearToMonthIndex(cur.day) : (months[0]?.idx ?? 0)
+  }, [days, currentSlug, months])
+
+  const [openMonth, setOpenMonth] = useState<number>(currentMonthIdx)
+
+  const handleJump = (value: string) => {
+    if (!value) return
+    const monthIdx = Number.parseInt(value, 10)
+    if (Number.isNaN(monthIdx)) return
+    setOpenMonth(monthIdx)
+    // Defer scroll until the accordion has expanded the target month.
+    requestAnimationFrame(() => {
+      document
+        .getElementById(`b365idx-month-${monthIdx}`)
+        ?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    })
+  }
+
+  return (
+    <div className="b365idx mb-5">
+      <style>{`
+        .b365idx { font-size: 0.85rem; }
+        .b365idx-jump-row {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 0.75rem;
+        }
+        .b365idx-jump-label {
+          letter-spacing: 0.08em;
+          white-space: nowrap;
+        }
+        .b365idx-jump-select {
+          flex: 1 1 auto;
+          min-height: 44px;
+          padding: 0 0.6rem;
+          border: 1.5px solid var(--color-border, currentColor);
+          background: var(--color-surface-raised, transparent);
+          color: inherit;
+          font: inherit;
+          border-radius: 0;
+        }
+        .b365idx-jump-select:focus-visible {
+          outline: 2px solid var(--color-border-strong, currentColor);
+          outline-offset: 1px;
+        }
+        .b365idx-month { margin-bottom: 0.4rem; }
+        .b365idx-month-toggle {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 0.75rem;
+          width: 100%;
+          min-height: 44px;
+          padding: 0.5rem 0.75rem;
+          border: 1.5px solid var(--color-border, currentColor);
+          background: transparent;
+          color: inherit;
+          text-align: left;
+          cursor: pointer;
+        }
+        .b365idx-month-toggle:focus-visible {
+          outline: 2px solid var(--color-border-strong, currentColor);
+          outline-offset: 1px;
+        }
+        .b365idx-month-toggle[aria-expanded='true'] {
+          background: var(--color-active, transparent);
+          border-color: var(--color-border-strong, currentColor);
+        }
+        .b365idx-month-name {
+          font-family: var(--font-family-serif);
+          font-size: 1.05rem;
+          line-height: 1.1;
+        }
+        .b365idx-month-meta {
+          letter-spacing: 0.08em;
+          opacity: 0.7;
+          white-space: nowrap;
+        }
+        .b365idx-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+          gap: 0.35rem;
+          padding: 0.5rem 0;
+        }
+        .b365idx-day {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 44px;
+          min-width: 44px;
+          padding: 0.25rem;
+          border: 1.5px solid var(--color-border, currentColor);
+          color: inherit;
+          text-decoration: none;
+          font-variant-numeric: tabular-nums;
+          font-size: 0.8rem;
+          letter-spacing: 0.02em;
+        }
+        .b365idx-day:focus-visible {
+          outline: 2px solid var(--color-border-strong, currentColor);
+          outline-offset: 1px;
+        }
+        .b365idx-day[data-current='true'] {
+          background: var(--color-active, currentColor);
+          border-color: var(--color-border-strong, currentColor);
+          font-weight: 600;
+        }
+        .b365idx-day[data-locked='true'] {
+          opacity: 0.45;
+          cursor: not-allowed;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .b365idx-day, .b365idx-month-toggle { transition: none; }
+        }
+      `}</style>
+
+      <div className="b365idx-jump-row">
+        <label
+          htmlFor="b365idx-jump"
+          className="text-label vw-small b365idx-jump-label"
+        >
+          JUMP TO
+        </label>
+        <select
+          id="b365idx-jump"
+          className="b365idx-jump-select vw-small"
+          value={openMonth}
+          onChange={(e) => handleJump(e.target.value)}
+          aria-label="Jump to a month in this plan"
+        >
+          {months.map((m) => (
+            <option key={m.idx} value={m.idx}>
+              {m.name} — Day {m.days[0].day}
+              {m.days.length > 1 ? `–${m.days[m.days.length - 1].day}` : ''}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {months.map((m) => {
+        const isOpen = openMonth === m.idx
+        const hasCurrent = m.days.some((d) => d.slug === currentSlug)
+        return (
+          <div
+            key={m.idx}
+            id={`b365idx-month-${m.idx}`}
+            className="b365idx-month"
+          >
+            <button
+              type="button"
+              className="b365idx-month-toggle"
+              aria-expanded={isOpen}
+              aria-controls={`b365idx-panel-${m.idx}`}
+              onClick={() => setOpenMonth(isOpen ? -1 : m.idx)}
+            >
+              <span className="b365idx-month-name">
+                {m.name}
+                {hasCurrent ? (
+                  <span className="text-label vw-small text-gold">
+                    {' '}
+                    · YOU’RE HERE
+                  </span>
+                ) : null}
+              </span>
+              <span className="text-label vw-small b365idx-month-meta">
+                {m.days.length} {isOpen ? '▴' : '▾'}
+              </span>
+            </button>
+            {isOpen && (
+              <div id={`b365idx-panel-${m.idx}`} className="b365idx-grid">
+                {m.days.map((day) => {
+                  const isCurrent = day.slug === currentSlug
+                  const isLocked = !canRead(day.slug).canRead && !isCurrent
+                  if (isLocked) {
+                    return (
+                      <span
+                        key={day.slug}
+                        className="b365idx-day"
+                        data-locked="true"
+                        aria-disabled="true"
+                        title={`Day ${day.day} (locked): ${day.title}`}
+                      >
+                        {day.day}
+                      </span>
+                    )
+                  }
+                  return (
+                    <Link
+                      key={day.slug}
+                      href={`${routePrefix}/${day.slug}`}
+                      className="b365idx-day"
+                      data-current={isCurrent ? 'true' : undefined}
+                      aria-current={isCurrent ? 'true' : undefined}
+                      title={`Day ${day.day}: ${day.title}`}
+                    >
+                      {day.day}
+                    </Link>
+                  )
+                })}
+              </div>
+            )}
+          </div>
+        )
+      })}
+    </div>
   )
 }
