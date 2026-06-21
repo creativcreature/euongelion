@@ -27,6 +27,7 @@ import {
   withOnboardingDayZero,
 } from '@/lib/soul-audit/schedule'
 import { buildOnboardingDay } from '@/lib/soul-audit/curated-builder'
+import { getVerse } from '@/lib/bible/getVerse'
 import type { CustomPlanDay } from '@/types/soul-audit'
 import type { DayContent, DayScheduleEntry } from '@/types/soul-audit-plan'
 import {
@@ -748,11 +749,23 @@ export async function POST(request: NextRequest) {
     // option's verbatim Scripture (grounded — never canned catalog content).
     // The full cycle (days 1-5) still generates and stays gated to Monday.
     if (isOnboarding) {
+      // Resolve VERBATIM Scripture for the day-0 anchor — the first content a
+      // Wed-Sun visitor reads must be the real verse text (grounded), not the
+      // model-authored options preview, and never the bare reference string.
+      // Falls back to the preview verse only if the reference can't be resolved;
+      // cycle days 1-5 re-derive verbatim Scripture independently.
+      let anchorVerseText = option.preview?.verseText?.trim() || ''
+      try {
+        const resolved = await getVerse(scriptureAnchor, 'BSB')
+        if (resolved.text?.trim()) anchorVerseText = resolved.text.trim()
+      } catch {
+        // keep the model-authored preview; cycle days re-derive verbatim
+      }
       const anchorDay: CustomPlanDay = {
         day: 1,
         title: theme,
         scriptureReference: scriptureAnchor,
-        scriptureText: option.preview?.verseText?.trim() || scriptureAnchor,
+        scriptureText: anchorVerseText || scriptureAnchor,
         reflection: '',
         prayer: '',
         nextStep: '',

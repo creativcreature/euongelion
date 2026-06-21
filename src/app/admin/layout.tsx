@@ -1,6 +1,12 @@
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 
+// Force per-request rendering so the auth gate runs on EVERY request. Without
+// this, the admin pages can be statically prerendered and an unauthenticated
+// shell serves to anonymous users — the gate must short-circuit at request
+// time, not bake into static HTML at build.
+export const dynamic = 'force-dynamic'
+
 /** Parse the comma-separated admin email allowlist (same source the admin APIs
  *  use). Empty/unset → no admins → everything fails closed below. */
 function adminAllowlist(): string[] {

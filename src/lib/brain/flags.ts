@@ -25,7 +25,10 @@ export const brainFlags = {
 
   brainRouterEnabled: toBool(process.env.BRAIN_ROUTER_ENABLED, true),
   brainSwitchUiEnabled: toBool(process.env.BRAIN_SWITCH_UI_ENABLED, true),
-  openWebModeEnabled: toBool(process.env.OPEN_WEB_MODE_ENABLED, true),
+  // Default OFF to honor the locked "chat = local corpus + devotional context
+  // only" decision (SA-008). Open-web remains an explicit env opt-in
+  // (OPEN_WEB_MODE_ENABLED=true) rather than a default-on capability.
+  openWebModeEnabled: toBool(process.env.OPEN_WEB_MODE_ENABLED, false),
   chatStudySidebarEnabled: toBool(
     process.env.CHAT_STUDY_SIDEBAR_V2_ENABLED,
     true,

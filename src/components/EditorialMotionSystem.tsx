@@ -92,7 +92,15 @@ export default function EditorialMotionSystem() {
     const pendingRoots = new Set<Element>()
     let frame = 0
 
-    const observer = shouldAnimate
+    // Reveal-on-scroll needs BOTH motion-allowed AND a working
+    // IntersectionObserver. If IO is unavailable (very old browsers), we must NOT
+    // hide content — it would never reveal. Treat it like reduced-motion and show
+    // everything immediately. (No-JS already stays visible: the hide is a
+    // JS-added class, so without JS nothing is ever hidden.)
+    const canObserve =
+      shouldAnimate && typeof IntersectionObserver !== 'undefined'
+
+    const observer = canObserve
       ? new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {

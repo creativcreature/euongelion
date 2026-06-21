@@ -269,16 +269,6 @@ function isProductionStrictMode(): boolean {
   return process.env.SOUL_AUDIT_STRICT_OPTIONS !== 'off'
 }
 
-function isComposerTransientFailure(error: unknown): boolean {
-  const code = error instanceof Error ? error.message : String(error || '')
-  return (
-    code === 'OPTION_COMPOSER_UNAVAILABLE' ||
-    code === 'OPTION_COMPOSER_EMPTY_OUTPUT' ||
-    code === 'OPTION_COMPOSER_PARSE_FAILED' ||
-    code.includes('All brain providers failed quality/call checks.')
-  )
-}
-
 function rankScriptureCandidates(params: {
   responseText: string
   intent: ParsedAuditIntent
@@ -686,15 +676,12 @@ export async function selectIngredients(
         signal: options.signal,
       })
     } catch (error) {
-      if (!isComposerTransientFailure(error)) {
-        throw error
-      }
-      rawPaths = deterministicPathsForTests({
-        responseText,
-        userKeywords,
-        baseChunks: baseRetrieval.chunks,
-        scriptureCandidates,
-      })
+      // STRICT (production): a composer failure surfaces an HONEST error — we
+      // NEVER ship templated placeholder cards here (NO SILENT FALLBACKS,
+      // CLAUDE.md rule #1; the composer's own prompt forbids canned templates).
+      // The submit route retries once, then returns an honest 503/504 "try again".
+      // deterministicPathsForTests stays the explicit TEST-only branch below.
+      throw error
     }
   } else {
     rawPaths = deterministicPathsForTests({

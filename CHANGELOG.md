@@ -5,6 +5,42 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Honest-audit fixes: silent fallback, grounding, gating, clipped headings (2026-06-13)
+
+From a brutally-honest, doc-vs-reality audit (4 read-only agents: contracts, UX,
+feature-PRDs, architecture/AI). The headline was reassuring — the day-generation
+engine is genuinely closed-RAG grounded and honors the non-negotiables — but it
+surfaced real violations now fixed:
+
+- **CRITICAL (NO SILENT FALLBACKS): the options step shipped templated placeholder
+  cards on a transient composer failure.** In production-strict mode,
+  `ingredient-selector` fell back to `deterministicPathsForTests` ("This pathway
+  gives a focused study of ${theme}…" / "Scripture focus for this pathway: …") — a
+  placeholder fallback disguised as a test helper, violating CLAUDE.md rule #1.
+  Now it re-throws; the submit route already retries once then returns an honest
+  503/504. No more placeholder cards. (removed the now-dead transient-classifier.)
+- **CRITICAL (UX): Soul Audit results headings clipped mid-word.** The full-sentence
+  path headings reused the homepage `mock-featured-card` 2-line clamp and sliced
+  ("…and receive t") on the audit's payoff screen. Option cards now expand the
+  heading fully (scoped `.audit-option-card`); homepage short titles keep the clamp.
+- **Grounding: onboarding day-0 Scripture now resolves verbatim via `getVerse`** (was
+  the model-authored options preview, or the bare reference). The first content a
+  Wed-Sun visitor reads is now real verse text.
+- **Locked decision SA-008 enforced: open-web chat is now OFF by default**
+  (`OPEN_WEB_MODE_ENABLED` defaults false) — chat is local-corpus + devotional
+  context only unless explicitly env-enabled.
+- **Admin gate now actually fires:** added `force-dynamic` to `admin/layout.tsx` so
+  the auth check runs per-request (the static shell was serving to anonymous users
+  despite the `notFound()` gate).
+- **Reveal-on-scroll: IO-unsupported fallback** — content no longer risks staying
+  hidden if `IntersectionObserver` is unavailable.
+
+Full suite green throughout (104 files / 1434 tests); type-check + lint clean.
+Remaining honest-audit findings (governance-doc honesty + founder decisions) are
+tracked in the SOURCE-OF-TRUTH Reconciliation Notes and surfaced to the founder.
+
+---
+
 ## ELEVATION v3.0 — Audio Edition: most-naturalistic free voice selection (2026-06-13)
 
 The Audio Edition uses the browser Web Speech API (`speechSynthesis`) — free,

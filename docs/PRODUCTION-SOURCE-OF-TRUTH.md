@@ -71,6 +71,41 @@ unilaterally rewritten.
    `non_wakeup_shell_*`), so drift like #1 and a forbidden `newspaper-home` CSS token
    pass CI green. The verifier should consume these keys.
 
+### Honest-audit follow-up (2026-06-21)
+
+A 5-agent doc-vs-reality audit ran. **Fixed in code:** (a) the options step's
+production silent-fallback to templated placeholder cards is removed — composer
+failures now surface an honest 503/504 (CLAUDE.md rule #1); (b) onboarding day-0
+Scripture now resolves verbatim via `getVerse`; (c) **open-web chat is now OFF by
+default**, honoring locked SA-008 (was default-on); (d) `/admin/*` is now
+`force-dynamic` so the auth gate fires per-request (the static shell previously
+served to anonymous users); (e) the Soul Audit results headings no longer clip
+mid-word.
+
+**Still open for FOUNDER decision / governance (documented, not yet changed):**
+
+6. **SA-005 "generation = assistive polishing only" is false.** The shipped grounded
+   engine (SA-020) writes full multi-thousand-word grounded readings. SA-005's
+   "polish only" text is superseded; amend it. **(founder-ratify.)**
+7. **Scorecard "3 AI + 2 prefab split = 7/10" scores a removed feature** (0 prefab
+   ships). Correct the row to the grounded 3-option model.
+8. **SA-017 App Store gate is a structure check, not readiness** (`check-appstore-gate`
+   verifies headings exist, zero `[x]` completed); the 7/10 iOS score is aspirational
+   — no device/App Store Connect evidence. Don't read it as submission-ready.
+9. **SA-011 version drift:** the semver gate is satisfied by a stale CHANGELOG marker
+   while ELEVATION v3.0 scope shipped past it; bump or reconcile.
+10. **Sabbath control conflict:** Settings still offers a user-chosen Sabbath
+    (Sat/Sun), contradicting Note #3's "fixed-schedule" claim — confirm whether it's
+    functional (fix the note) or vestigial (remove the control).
+11. **`/wake-up` uses an uncited "43% more anxious" fear stat** — off the AUDIENCE/
+    PHILOSOPHY "no fear-motivation, no wild claims" guidance; cite or soften (content).
+12. **Several feature PRDs are stale/superseded** (F-052 artwork-manifest empty;
+    F-053/F-054/F-056–F-059 describe the deleted pre-F-060 generative pipeline); mark
+    them `superseded`. INDEX/REGISTRY omit F-051 + F-056–F-062 (parity vs the gate).
+13. **`[x] Manual QA evidence recorded` is checked across ~all "done" PRDs without
+    evidence** — recommend distinct engineering-complete / QA-verified / founder-
+    accepted statuses.
+
 ## Required API Contracts
 
 1. `POST /api/soul-audit/submit`

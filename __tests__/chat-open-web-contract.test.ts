@@ -1,4 +1,16 @@
-import { afterEach, describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
+
+// Open-web is OFF by default now (SA-008 — chat = local corpus + devotional
+// context only). This contract covers the acknowledgement gate that applies
+// ONLY when open-web is enabled, so it forces the capability flag on.
+vi.mock('@/lib/brain/flags', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@/lib/brain/flags')>()
+  return {
+    ...actual,
+    brainFlags: { ...actual.brainFlags, openWebModeEnabled: true },
+  }
+})
+
 import { POST as chatHandler } from '@/app/api/chat/route'
 
 describe('Chat open-web acknowledgement contract', () => {

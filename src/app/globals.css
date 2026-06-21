@@ -5407,6 +5407,21 @@ html.reduce-motion *::after {
   overflow: hidden;
 }
 
+/* Soul Audit OPTION cards reuse the featured-card shell, but their headings are
+   full-sentence reading-path statements (not short series titles) — the fixed
+   2-line clamp above sliced them mid-word on the audit's payoff screen. Let the
+   option heading expand fully with a readable multi-line leading. (Homepage and
+   series short titles keep the aligned 2-line clamp.) */
+.mock-featured-card.audit-option-card h3 {
+  min-height: 0;
+  max-height: none;
+  display: block;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: initial;
+  line-height: 1.08;
+  overflow: visible;
+}
+
 .mock-featured-card p {
   margin: 0;
   font-family: var(--font-family-serif);

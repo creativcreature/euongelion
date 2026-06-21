@@ -43,7 +43,7 @@ export default function OptionCard({
         type="button"
         disabled={disabled}
         onClick={() => onSelect(option.id)}
-        className={`mock-featured-card w-full text-left ${disabled ? 'is-disabled' : 'cursor-pointer'}`}
+        className={`mock-featured-card audit-option-card w-full text-left ${disabled ? 'is-disabled' : 'cursor-pointer'}`}
         data-variant="large"
         aria-disabled={disabled}
         aria-label={`Build this reading path: ${option.title}`}

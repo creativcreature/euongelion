@@ -114,3 +114,9 @@ design-sources/
 # Founder marketing/strategy scratch (not app assets; kept local)
 marketing/
 social-plan/
+
+# Audit/Playwright screenshot byproducts (repo root)
+/*.png
+/*.jpeg
+/*.jpg
+.playwright-mcp/
