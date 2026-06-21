@@ -6537,10 +6537,15 @@ html.reduce-motion *::after {
   .mock-mobile-nav-inline {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* Left-align so HOME is always fully visible on load; the row scrolls right
+       for the rest of the menu. (Was `center`, which on narrow screens centered
+       the over-wide row and pushed HOME off the left edge — cropped on refresh.) */
+    justify-content: flex-start;
     gap: 0.35rem;
     flex-wrap: nowrap;
     overflow-x: auto;
+    /* Keep a little breathing room so HOME isn't flush against the viewport edge. */
+    scroll-padding-left: 0.55rem;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }

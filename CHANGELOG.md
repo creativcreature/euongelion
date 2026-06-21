@@ -5,6 +5,18 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Fix mobile nav: HOME cropped off the left edge (2026-06-13)
+
+The mobile nav (`.mock-mobile-nav-inline`) is a horizontal `overflow-x: auto` row but
+was `justify-content: center` — so on narrow screens the over-wide link row centered
+and pushed the first item (HOME) off the **left** edge (measured `left: -45px`),
+cropping it on refresh. Changed to `justify-content: flex-start` (+ `scroll-padding-left`)
+so HOME is always fully visible on load and the rest scrolls in from the right.
+
+(Deployed together with the Bible-365 full run to avoid racing the in-flight writers.)
+
+---
+
 ## ELEVATION v3.0 — Bible-365 pilot: days 7–14 rewritten to the modules standard (2026-06-13)
 
 Founder-directed Bible-in-a-Year pilot. The existing days 1–7 were INCORRECT — they
