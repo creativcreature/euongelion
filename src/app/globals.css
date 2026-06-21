@@ -7654,6 +7654,9 @@ body:not(.rhythm-enabled) .rhythm-block-image {
   display: grid;
   gap: 0.45rem;
   max-width: 72ch;
+  /* Center the reading column so the article isn't pinned hard-left with a large
+     empty void on wide screens (the edition band + rule stay full-width). */
+  margin-inline: auto;
 }
 
 .today-scripture-overline {
@@ -7679,12 +7682,16 @@ body:not(.rhythm-enabled) .rhythm-block-image {
 }
 
 .today-rule {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 72ch;
 }
 
 .today-reading-body {
   padding: 0 var(--mock-pad-x, 0.95rem);
   max-width: 68ch;
+  /* Center the reading column (matches the header) so the article sits centered,
+     not pinned hard-left, on wide screens. */
+  margin-inline: auto;
   /* Baseline grid: 8px line rhythm */
   line-height: 1.58;
 }
@@ -7945,6 +7952,10 @@ body:not(.rhythm-enabled) .rhythm-block-image {
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
   display: grid;
   gap: 1.4rem;
+  /* Constrain + center the reading column (was full-width ~106ch, pinned left).
+     Keeps a consistent ~72ch measure with the rest of the site's reading copy. */
+  max-width: 72ch;
+  margin-inline: auto;
 }
 
 .how-we-section-head {

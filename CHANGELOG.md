@@ -5,6 +5,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Site-wide reading-layout consistency (2026-06-13)
+
+Founder-directed: the pinned-left / empty-void / inconsistent reading-measure
+pattern, hunted down site-wide via live per-page + per-paragraph measurement and
+fixed for consistency:
+
+- **`/today`** reading column was 68ch but **pinned hard-left** (883px empty void on
+  desktop). Now centered (`margin-inline:auto` on header/rule/body; the edition band
+  - rule stay full-width). Mobile unchanged.
+- **`/how-we-write`** ran ~106ch wide and left-pinned → constrained + centered to a
+  72ch reading column.
+- **`StaticInfoPage`** (/about, /support, /cookie-policy, /community-guidelines,
+  /donation-disclosure, /content-disclaimer) ran `max-w-4xl` (~100ch) → `max-w-3xl`
+  (~85ch), matching the legal pages for one consistent measure.
+
+Live measurement confirmed the rest (`/`, `/series`, `/library`, `/soul-audit`,
+`/wake-up`, /sunday inner, legal pages) were already centered/bounded. Net: a
+consistent, centered reading measure across the site (devotional reading 68–72ch,
+info/legal ~85ch), no lopsided voids.
+
+---
+
 ## ELEVATION v3.0 — Checkout locked off (not ready) + typography fixes (2026-06-13)
 
 **Checkout is hard-disabled until billing is launch-ready (founder direction).** Added

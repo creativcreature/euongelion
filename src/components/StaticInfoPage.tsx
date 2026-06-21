@@ -22,7 +22,9 @@ export default function StaticInfoPage({
     <div className="mock-home">
       <main id="main-content" className="mock-paper">
         <EuangelionShellHeader />
-        <div className="shell-content-pad mx-auto max-w-4xl">
+        {/* max-w-3xl (~85ch) matches the legal pages for a consistent, readable
+            measure across all info/static pages (was max-w-4xl ~100ch — too wide). */}
+        <div className="shell-content-pad mx-auto max-w-3xl">
           <Breadcrumbs
             className="mb-7"
             items={[{ label: 'HOME', href: '/' }, { label: breadcrumb }]}
