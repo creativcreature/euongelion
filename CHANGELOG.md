@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Visual consistency round 2 (FOUC, titles, settings polish) (2026-06-13)
+
+From the site-wide visual audit (which cleared the spine: 0 critical, no broken
+images/lorem/overflow). Fixed the items that made the site feel unpolished:
+
+- **Theme flash (FOUC) eliminated.** Added a blocking anti-FOUC script to the `<head>`
+  that resolves the theme from `localStorage`/`prefers-color-scheme` and toggles
+  `html.dark` BEFORE first paint (mirrors `getInitialTheme()`). Light-preference
+  visitors no longer see a dark→light flash on every navigation.
+- **Doubled browser-tab titles fixed** on 8 pages (about, help, support, credits,
+  terms, privacy, how-we-write, clippings) — they hardcoded `"X | Euangelion"` while
+  the root template appends `" | Euangelion"`, yielding `"X | Euangelion | Euangelion"`.
+  Now each sets just `"X"` (OG titles preserved).
+- **Missing tab titles added:** `/settings` (new `layout.tsx` → "Settings") and
+  `/wake-up` ("Wake-Up Magazine") were falling back to the bare "Euangelion".
+- **"TESTING TOGGLES" reworked into "READING PACE."** The day-locking control was
+  labelled as a QA/dev section ("disabled during QA … re-enable before launch") and
+  exposed to end users — it now reads as the user preference it is (daily-unlock rhythm
+  vs read-at-your-own-pace). Same control, intentional framing.
+
+Deferred (flagged, lower-visibility / needs care): anonymous `/api/devotionals/*` 401
+console noise (possible SA-018 anonymous-save gap — backend follow-up), reveal-on-scroll
+no-JS fallback, password-field-in-form a11y warning, and the "Too Busy for God"
+front-door scripture-framing question (content-team call).
+
+---
+
 ## ELEVATION v3.0 — Onboarding editorial layout + nav redesign + site consistency pass (2026-06-13)
 
 A polish round driven by two parallel redesign agents + two read-only audits

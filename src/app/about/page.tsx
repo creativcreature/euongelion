@@ -1,7 +1,7 @@
 import StaticInfoPage from '@/components/StaticInfoPage'
 
 export const metadata = {
-  title: 'About | Euangelion',
+  title: 'About',
   description:
     'Daily devotionals for the cluttered, hungry soul. Ancient depth, modern clarity. Built on 30+ historic Christian voices.',
   alternates: { canonical: '/about' },

@@ -14,7 +14,7 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 
 export const metadata: Metadata = {
-  title: 'How We Write | Euangelion',
+  title: 'How We Write',
   description:
     'How Euangelion devotionals are composed: AI as arranger, Scripture as authority, thirty-plus historic voices, creedal grounding, and plain-language Soul Audit transparency.',
   alternates: { canonical: '/how-we-write' },

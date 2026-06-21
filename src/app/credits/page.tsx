@@ -5,7 +5,7 @@ import SiteFooter from '@/components/SiteFooter'
 import { BIBLE_TRANSLATION_CODES, BIBLE_TRANSLATIONS } from '@/lib/bible'
 
 export const metadata = {
-  title: 'Credits & Translations | Euangelion',
+  title: 'Credits & Translations',
   description:
     'Bible translations, attributions, and licensing notes for the texts used on Euangelion.',
 }

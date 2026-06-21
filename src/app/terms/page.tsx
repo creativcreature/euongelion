@@ -5,7 +5,7 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 
 export const metadata = {
-  title: 'Terms of Service | Euangelion',
+  title: 'Terms of Service',
   description: 'Terms of service for using the Euangelion platform.',
 }
 

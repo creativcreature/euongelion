@@ -6,7 +6,7 @@ import SiteFooter from '@/components/SiteFooter'
 import { retentionClarityRows } from '@/lib/privacy/retention'
 
 export const metadata = {
-  title: 'Privacy Policy | Euangelion',
+  title: 'Privacy Policy',
   description: 'How Euangelion collects, uses, and protects your information.',
 }
 

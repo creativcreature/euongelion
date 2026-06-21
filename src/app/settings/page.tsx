@@ -1539,17 +1539,16 @@ export default function SettingsPage() {
             )}
           </div>
 
-          {/* Testing / Release toggles */}
+          {/* Reading pace — daily-unlock cadence preference */}
           <div
             className="mb-8 pb-8"
             style={{ borderBottom: '1px solid var(--color-border)' }}
           >
-            <h2 className="text-label vw-small mb-4 text-gold">
-              TESTING TOGGLES
-            </h2>
+            <h2 className="text-label vw-small mb-4 text-gold">READING PACE</h2>
             <p className="vw-small mb-6 text-secondary">
-              Day locking can be disabled during QA so all days render
-              immediately. Re-enable before launch if you want cadence gating.
+              By default, a new day of your reading plan unlocks each morning —
+              a steady daily rhythm. Prefer to move at your own pace? Turn this
+              off to open every available day at once.
             </p>
             <button
               type="button"
@@ -1571,7 +1570,7 @@ export default function SettingsPage() {
                 }`,
               }}
             >
-              Day Locking: {dayLockingEnabled ? 'ON' : 'OFF'}
+              Daily rhythm: {dayLockingEnabled ? 'On' : 'Off'}
             </button>
           </div>
 

@@ -1,7 +1,7 @@
 import StaticInfoPage from '@/components/StaticInfoPage'
 
 export const metadata = {
-  title: 'Contact & Support | Euangelion',
+  title: 'Contact & Support',
   description: 'Support channels and contact information for Euangelion.',
 }
 

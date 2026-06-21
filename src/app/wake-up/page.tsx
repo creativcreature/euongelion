@@ -11,6 +11,9 @@ import { WAKEUP_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 // Browsers and RSS clients pick up `<link rel="alternate"
 // type="application/rss+xml">` from the head when loading the page.
 export const metadata: Metadata = {
+  title: 'Wake-Up Magazine',
+  description:
+    'The Wake-Up Magazine — daily devotional readings for the cluttered, hungry soul.',
   alternates: {
     canonical: '/wake-up',
     types: {

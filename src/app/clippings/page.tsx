@@ -5,7 +5,7 @@ import ClippingsList from '@/components/ClippingsList'
 export const dynamic = 'force-dynamic'
 
 export const metadata = {
-  title: 'Clippings · Euangelion',
+  title: 'Clippings',
   description:
     'Passages you have clipped while reading. Kept entirely on your device.',
 }
