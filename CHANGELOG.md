@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## LAUNCH-READINESS — Sprint A tranche 1: copy truth, orphan purge, cookie fix (2026-07-10)
+
+Mobbin-audit P0 items #4 (partial), #7, #9 (`docs/audits/MOBBIN-POLISH-AUDIT-2026-07-10.md`):
+
+1. **Copy truth pass** — the site claimed three different catalog sizes at once
+   ("32 plans" on the homepage, "32 series" on /how-we-write, "65+ series,
+   175+ devotionals" on /about, "65 curated series" twice on /pricing). All now
+   render computed `SERIES_COUNT` / `DEVOTIONAL_COUNT` from `SERIES_DATA`
+   (currently 33 series / 540 devotionals) — one source of truth, can't drift.
+   /how-we-write step 02 no longer claims the model "searches the catalog...
+   and returns three plans" (it composes paths); the Soul Audit subcopy no
+   longer promises paths "from our library"; the standalone Soul Audit CTA is
+   now GET MATCHED, matching the homepage (one verb, one true promise).
+2. **Orphan purge** — five 0-import components deleted (verified by grep):
+   WalkthroughModal, SeriesSearchPanel, MixedHeadline, NetworkStatusBanner (+
+   its test), SeriesHero. GuestSignupGate and DevotionalMilestoneReveal are
+   deliberately retained — the audit schedules them for onboarding (Sprint C)
+   and the completion beat (Sprint D).
+3. **Session cookie misspelling fixed** — `euongelion_session` →
+   `euangelion_session` with a zero-loss migration: reads fall back to the
+   legacy name until those cookies age out (30-day TTL); writes use only the
+   corrected name and delete the legacy cookie when present.
+
+Verified: type-check clean; session test suites 33/33 green.
+
+---
+
 ## ELEVATION v3.0 — Bible-365 full-run rewrite committed to baseline (2026-07-10)
 
 The completed Bible-365 full run (in flight during the 2026-06-13 deploy) is now

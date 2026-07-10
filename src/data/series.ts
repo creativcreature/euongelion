@@ -1031,6 +1031,14 @@ export const ALL_SERIES_ORDER = [
 // Backward compat: SERIES_ORDER = original 7
 export const SERIES_ORDER = ALL_SERIES_ORDER
 
+// Single source of truth for catalog-size copy sitewide — hardcoded counts
+// drift (audit 2026-07-10 found "32", "65", and "175+" all live at once).
+export const SERIES_COUNT = Object.keys(SERIES_DATA).length
+export const DEVOTIONAL_COUNT = Object.values(SERIES_DATA).reduce(
+  (total, series) => total + series.days.length,
+  0,
+)
+
 // Landing page compatible format (original 7)
 export const DEVOTIONAL_SERIES = WAKEUP_SERIES_ORDER.map((slug, i) => ({
   number: String(i + 1).padStart(2, '0'),

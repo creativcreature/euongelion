@@ -2,7 +2,11 @@ import { cookies } from 'next/headers'
 import { createAdminClient } from './supabase/admin'
 import type { UserSession, UserSessionInsert } from '@/types/database'
 
-const SESSION_COOKIE_NAME = 'euongelion_session'
+const SESSION_COOKIE_NAME = 'euangelion_session'
+// The cookie shipped misspelled for months — live sessions still ride on it.
+// Reads fall back to the legacy name until those cookies age out (30-day TTL);
+// writes only ever use the corrected name.
+const LEGACY_SESSION_COOKIE_NAME = 'euongelion_session'
 const SESSION_MAX_AGE = 30 * 24 * 60 * 60 // 30 days in seconds
 const LAST_ACTIVE_WRITE_INTERVAL_MS = 60_000
 
@@ -22,7 +26,11 @@ function generateToken(): string {
  */
 export async function getSessionToken(): Promise<string | null> {
   const cookieStore = await cookies()
-  return cookieStore.get(SESSION_COOKIE_NAME)?.value ?? null
+  return (
+    cookieStore.get(SESSION_COOKIE_NAME)?.value ??
+    cookieStore.get(LEGACY_SESSION_COOKIE_NAME)?.value ??
+    null
+  )
 }
 
 /**
@@ -37,6 +45,9 @@ export async function setSessionCookie(token: string): Promise<void> {
     maxAge: SESSION_MAX_AGE,
     path: '/',
   })
+  if (cookieStore.get(LEGACY_SESSION_COOKIE_NAME)) {
+    cookieStore.delete(LEGACY_SESSION_COOKIE_NAME)
+  }
 }
 
 /**
@@ -45,6 +56,7 @@ export async function setSessionCookie(token: string): Promise<void> {
 export async function clearSessionCookie(): Promise<void> {
   const cookieStore = await cookies()
   cookieStore.delete(SESSION_COOKIE_NAME)
+  cookieStore.delete(LEGACY_SESSION_COOKIE_NAME)
 }
 
 /**

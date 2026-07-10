@@ -12,6 +12,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
+import { SERIES_COUNT } from '@/data/series'
 
 export const metadata: Metadata = {
   title: 'How We Write',
@@ -365,8 +366,8 @@ export default function HowWeWritePage() {
                   </p>
                   <p className="how-we-audit-step-body">
                     Your reflection is sent to the model as a single input. It
-                    searches the catalog of 32 series and returns three plans
-                    matched to what you described — from Scripture, not from
+                    composes three reading paths matched to what you described —
+                    grounded in real Scripture and the reference library, not
                     platitudes. The reflection itself is not stored, indexed, or
                     retained after this single composition request completes.
                   </p>
@@ -475,7 +476,7 @@ export default function HowWeWritePage() {
               START THE SOUL AUDIT
             </Link>
             <Link href="/series" className="text-label how-we-browse-link">
-              Browse all 32 series &rarr;
+              Browse all {SERIES_COUNT} series &rarr;
             </Link>
           </div>
         </section>

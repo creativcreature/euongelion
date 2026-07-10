@@ -12,7 +12,7 @@ import ComposingPaths from '@/components/soul-audit/ComposingPaths'
 import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
 import { CRISIS_RESOURCES } from '@/lib/soul-audit/crisis-gate'
 import { typographer } from '@/lib/typographer'
-import { ALL_SERIES_ORDER, FEATURED_SERIES } from '@/data/series'
+import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_COUNT } from '@/data/series'
 
 /**
  * Homepage featured SERIES content. Founder direction 2026-05-13: the
@@ -407,7 +407,9 @@ export default function Home() {
             </Link>
             <Link href="/series" className="homepage-action-card">
               <p className="text-label vw-small">BROWSE THE LIBRARY</p>
-              <p className="vw-body">32 plans through what people carry.</p>
+              <p className="vw-body">
+                {SERIES_COUNT} plans through what people carry.
+              </p>
               <p className="vw-small text-secondary">
                 Anxiety · doubt · grief · the daily grind · the question of
                 Jesus.

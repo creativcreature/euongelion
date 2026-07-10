@@ -9,6 +9,7 @@ import {
   getFoundingMemberCount,
 } from '@/lib/billing/founding-member'
 import type { BillingPlan, FoundingMemberCount } from '@/types/billing'
+import { DEVOTIONAL_COUNT, SERIES_COUNT } from '@/data/series'
 
 /**
  * /pricing — built per docs/copy-specs/pricing-page-spec.md against
@@ -82,7 +83,7 @@ const DONATION_TIERS = [
 ] as const
 
 const FREE_TIER_FEATURES = [
-  'All 65 curated devotional series (175+ devotionals)',
+  `All ${SERIES_COUNT} curated devotional series (${DEVOTIONAL_COUNT} devotionals)`,
   'Wake-Up Magazine (7 series, 35 devotionals)',
   'Soul Audit submission',
   '3 curated match recommendations with AI-written rationales',
@@ -223,8 +224,9 @@ export default async function PricingPage() {
                 What does that actually mean? →
               </summary>
               <p className="vw-small mt-3 text-secondary">
-                The Bible is free. The library of 65 curated devotional series
-                is free. The Soul Audit and three matched paths are free.{' '}
+                The Bible is free. The library of {SERIES_COUNT} curated
+                devotional series is free. The Soul Audit and three matched
+                paths are free.{' '}
                 <strong className="text-gold">
                   You only pay if you want a custom devotional plan written for
                   your specific words.

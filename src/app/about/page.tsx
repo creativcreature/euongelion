@@ -1,4 +1,5 @@
 import StaticInfoPage from '@/components/StaticInfoPage'
+import { DEVOTIONAL_COUNT, SERIES_COUNT } from '@/data/series'
 
 export const metadata = {
   title: 'About',
@@ -57,7 +58,7 @@ export default function AboutPage() {
         {
           title: 'What it costs',
           body: [
-            'Free. The full curated catalog — 65+ series, 175+ devotionals, the Soul Audit, three matched recommendations — is free for everyone, always. No "lite" version.',
+            `Free. The full curated catalog — ${SERIES_COUNT} series, ${DEVOTIONAL_COUNT} devotionals, the Soul Audit, three matched recommendations — is free for everyone, always. No "lite" version.`,
             'Optional support unlocks AI-composed personal devotional plans written for a specific reflection. Pricing is published at /pricing once it ships publicly.',
           ],
         },
