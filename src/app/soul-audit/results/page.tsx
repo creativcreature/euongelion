@@ -68,9 +68,11 @@ export default function SoulAuditResultsPage() {
   >(null)
 
   // --- Guided reveal state ---
-  // Start showing only the recommended path (index 0).
-  // User can progressively reveal more.
-  const [revealedCount, setRevealedCount] = useState(3)
+  // Start showing ONLY the recommended path (index 0) with its reasoning
+  // expanded. Each tap of "Explore another direction" reveals one more
+  // alternative (Calm/Yazio-style guided reveal — the reveal is a room,
+  // not a list).
+  const [revealedCount, setRevealedCount] = useState(1)
 
   // --- Reroll state ---
   const [rerollUsed, setRerollUsed] = useState(false)
@@ -156,11 +158,21 @@ export default function SoulAuditResultsPage() {
 
   const displayOptions = useMemo(() => {
     if (!submitResult) return []
+    // Matched keywords ride in the submit payload's option evidence (keyed by
+    // optionId) — real matches between the reflection and each direction, used
+    // by OptionCard as keyword chips. Never fabricated client-side.
+    const matchedKeywordsByOptionId = new Map(
+      (submitResult.diagnostics?.optionEvidence ?? []).map((evidence) => [
+        evidence.optionId,
+        evidence.matchedKeywords,
+      ]),
+    )
     return submitResult.options.map((option) => ({
       ...option,
       title: sanitizeLegacyDisplayText(option.title),
       question: sanitizeLegacyDisplayText(option.question),
       reasoning: sanitizeLegacyDisplayText(option.reasoning),
+      matchedKeywords: matchedKeywordsByOptionId.get(option.id) ?? [],
       preview: option.preview
         ? {
             ...option.preview,
@@ -330,7 +342,7 @@ export default function SoulAuditResultsPage() {
       setCrisisAcknowledged(false)
       setExpandedReasoningOptionId(null)
       setRerollUsed(true)
-      setRevealedCount(3)
+      setRevealedCount(1)
 
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
       sessionStorage.removeItem('soul-audit-selection-v2')
@@ -386,7 +398,7 @@ export default function SoulAuditResultsPage() {
       setCrisisAcknowledged(false)
       setExpandedReasoningOptionId(null)
       setRerollUsed(false)
-      setRevealedCount(3)
+      setRevealedCount(1)
       sessionStorage.setItem('soul-audit-submit-v2', JSON.stringify(payload))
       sessionStorage.removeItem('soul-audit-selection-v2')
       sessionStorage.removeItem(REROLL_USED_SESSION_KEY)
@@ -665,26 +677,7 @@ export default function SoulAuditResultsPage() {
               </FadeIn>
             )}
 
-            {/* "Explore another direction" button */}
-            {hasMoreToReveal && (
-              <FadeIn>
-                <div className="mb-8 text-center">
-                  <button
-                    type="button"
-                    className="text-label vw-small link-highlight border border-[var(--color-border)] px-6 py-3"
-                    onClick={() =>
-                      setRevealedCount((count) =>
-                        Math.min(count + 1, directions.length),
-                      )
-                    }
-                  >
-                    Explore another direction
-                  </button>
-                </div>
-              </FadeIn>
-            )}
-
-            {/* Alternative paths (revealed progressively) */}
+            {/* Alternative paths (revealed progressively, one per tap) */}
             {alternatives.slice(0, revealedCount - 1).map((option, index) => (
               <FadeIn key={option.id}>
                 <section
@@ -713,6 +706,26 @@ export default function SoulAuditResultsPage() {
                 </section>
               </FadeIn>
             ))}
+
+            {/* "Explore another direction" — sits below the revealed paths so
+                each newly revealed alternative appears above it */}
+            {hasMoreToReveal && (
+              <FadeIn>
+                <div className="mb-8 text-center">
+                  <button
+                    type="button"
+                    className="text-label vw-small link-highlight border border-[var(--color-border)] px-6 py-3"
+                    onClick={() =>
+                      setRevealedCount((count) =>
+                        Math.min(count + 1, directions.length),
+                      )
+                    }
+                  >
+                    Explore another direction
+                  </button>
+                </div>
+              </FadeIn>
+            )}
 
             {/* Saved paths */}
             {savedOptions.length > 0 && (

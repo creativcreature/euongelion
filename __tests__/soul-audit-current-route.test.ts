@@ -5,6 +5,7 @@ let latestPlan: {
   plan_token: string
   series_slug: string
   created_at: string
+  theme?: string | null
 } | null = null
 let latestSelection: {
   option_kind: 'ai_primary' | 'curated_prefab'
@@ -123,6 +124,48 @@ describe('GET /api/soul-audit/current', () => {
     expect(payload.hasCurrent).toBe(true)
     expect(payload.selectionType).toBe('ai_primary')
     expect(payload.route).toBe('/daily-bread')
+  })
+
+  it('resolves the resume title from the stored theme for AI plans', async () => {
+    // AI plans store a slugified AI direction title in series_slug — it is
+    // NOT a curated series slug, so SERIES_DATA can never resolve it. The
+    // human title lives in the plan instance's theme column.
+    latestPlan = {
+      plan_token: 'ai-plan-token',
+      series_slug: 'when-anxiety-steals-your-rest',
+      created_at: '2026-02-20T10:00:00.000Z',
+      theme: 'When anxiety steals your rest.',
+    }
+    planDaysByToken['ai-plan-token'] = [{ day_number: 0 }, { day_number: 1 }]
+
+    const response = await currentRouteHandler()
+    const payload = (await response.json()) as {
+      hasCurrent: boolean
+      seriesTitle: string
+    }
+
+    expect(payload.hasCurrent).toBe(true)
+    expect(payload.seriesTitle).toBe('When anxiety steals your rest.')
+  })
+
+  it('returns an explicit fallback title when an AI plan has no stored theme', async () => {
+    latestPlan = {
+      plan_token: 'legacy-plan-token',
+      series_slug: 'some-legacy-ai-slug',
+      created_at: '2026-02-20T10:00:00.000Z',
+      theme: null,
+    }
+    planDaysByToken['legacy-plan-token'] = [{ day_number: 1 }]
+
+    const response = await currentRouteHandler()
+    const payload = (await response.json()) as {
+      hasCurrent: boolean
+      seriesTitle: string
+    }
+
+    expect(payload.hasCurrent).toBe(true)
+    // Never a silent empty title — the API resolves an explicit label.
+    expect(payload.seriesTitle).toBe('Your devotional plan')
   })
 
   it('returns hasCurrent false when candidates have no resolvable content', async () => {

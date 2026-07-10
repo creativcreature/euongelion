@@ -5,6 +5,45 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## LAUNCH-READINESS — Sprint A tranche 2: Soul Audit reveal + canonical reader + routing truth (2026-07-10)
+
+Mobbin-audit P0 items #1, #2, #3, #5, #6 (+ #4 completion):
+
+1. **Guided reveal revived** (was dead code) — results now open with ONLY the
+   recommended path, reasoning expanded; each "Explore another direction" tap
+   reveals one alternative (Calm Sleep / Yazio model). Reroll/recover reset to
+   the single-card state.
+2. **Result cards text-first and complete** — dead `getSeriesHero`/`SERIES_DATA`
+   lookups removed (they always resolved undefined for AI slugs); cards now show
+   real matched-keyword chips from the submit payload's option evidence and the
+   true 7-day count from the shared `TOTAL_PLAN_DAYS` constant. No fabricated
+   data, no arbitrary hero image.
+3. **Results skeleton layout-accurate** — stacked single-card column matching
+   real first paint (was a 3-up grid).
+4. **Resume badge never nameless** — `/api/soul-audit/current` resolves the plan
+   title: curated series title → plan's stored theme (the option title) →
+   explicit fallback. `seriesTitle` is now a required string.
+5. **Two-reader ambiguity resolved** — `/soul-audit/plan/[planToken]` retired to
+   a server redirect → `/daily-bread` (deep links preserved); its private
+   components deleted (DayContent, PlanDayContent, PlanDayRail); archive/manage
+   API routes now return `/daily-bread`. `/daily-bread` is the one canonical
+   reader.
+6. **`/saved` silo routing fixed** — plan-day bookmarks → `/daily-bread`;
+   devotional bookmarks → canonical `/devotional/<slug>` (was `/wake-up/...`).
+7. **Canonical-URL truth** — sitemap no longer lists the 175 non-canonical
+   `/wake-up/devotional/*` URLs (cross-canonical metadata was already correct);
+   stale "decision pending" comment fixed.
+8. **Orphan purge completed** — AuditOptionCard (0-import sibling) deleted.
+9. **Teaser index regenerated** — ~212 Bible-365 teasers/titles in
+   `devotional-teasers.ts` were stale placeholder-era strings; now matches the
+   final rewritten JSONs.
+
+New tests: guided-reveal regression, current-route title resolution, plan-route
+redirect guard, SavedList routing (3). Updated: archive-route, active-plan-badge,
+selection-ui, flow.
+
+---
+
 ## LAUNCH-READINESS — Sprint A tranche 1: copy truth, orphan purge, cookie fix (2026-07-10)
 
 Mobbin-audit P0 items #4 (partial), #7, #9 (`docs/audits/MOBBIN-POLISH-AUDIT-2026-07-10.md`):

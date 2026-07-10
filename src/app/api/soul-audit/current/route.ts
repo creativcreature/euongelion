@@ -37,10 +37,54 @@ type CurrentCandidate = {
   selectionType: 'ai_primary' | 'ai_generative' | 'curated_prefab'
   planToken?: string
   seriesSlug?: string
-  /** Series title resolved from SERIES_DATA when seriesSlug is curated. */
-  seriesTitle?: string
+  /**
+   * Human-readable plan title — always resolved, never silently empty.
+   * Curated selections resolve from SERIES_DATA; AI plans resolve from the
+   * plan instance's stored theme (the selected option's display title).
+   */
+  seriesTitle: string
   /** Active day number (parsed from plan day rows for AI plans). */
   dayNumber?: number
+}
+
+/**
+ * Plan-instance rows carry a `theme` column (written by
+ * /api/soul-audit/select's insertPlanInstance with the selected option's
+ * display title). The repository's DevotionalPlanInstanceRecord type predates
+ * that column, so it is read here structurally.
+ */
+type PlanThemeCarrier = { theme?: string | null }
+
+function planTheme(row: unknown): string | null {
+  if (!row || typeof row !== 'object') return null
+  const theme = (row as PlanThemeCarrier).theme
+  if (typeof theme !== 'string') return null
+  const trimmed = theme.trim()
+  return trimmed.length > 0 ? trimmed : null
+}
+
+// Explicit last-resort label so the resume badge never renders a silent
+// empty title. AI plans virtually always resolve their stored theme; this
+// only surfaces if a legacy plan row predates theme persistence.
+const FALLBACK_PLAN_TITLE = 'Your devotional plan'
+
+/**
+ * Resolve a real human title for the resume badge. `seriesSlug` on AI plans
+ * is a slugified AI direction title (NOT a curated series slug), so
+ * SERIES_DATA resolves only for curated selections — AI plans resolve from
+ * the stored theme instead.
+ */
+function resolveSeriesTitle(params: {
+  seriesSlug: string | null | undefined
+  theme?: string | null
+}): string {
+  const curatedTitle = params.seriesSlug
+    ? SERIES_DATA[params.seriesSlug]?.title?.trim()
+    : undefined
+  if (curatedTitle) return curatedTitle
+  const theme = params.theme?.trim()
+  if (theme) return theme
+  return FALLBACK_PLAN_TITLE
 }
 
 function curatedSelectionRoute(seriesSlug: string): string {
@@ -95,7 +139,10 @@ export async function GET() {
         selectionType: 'ai_primary',
         planToken: latestPlan.plan_token,
         seriesSlug: latestPlan.series_slug,
-        seriesTitle: SERIES_DATA[latestPlan.series_slug]?.title,
+        seriesTitle: resolveSeriesTitle({
+          seriesSlug: latestPlan.series_slug,
+          theme: planTheme(latestPlan),
+        }),
         dayNumber: getInitialPlanDayNumber(planDays),
       })
     }
@@ -129,7 +176,10 @@ export async function GET() {
         selectionType: latestSelection.option_kind,
         planToken: latestSelection.plan_token,
         seriesSlug: latestSelection.series_slug,
-        seriesTitle: SERIES_DATA[latestSelection.series_slug]?.title,
+        seriesTitle: resolveSeriesTitle({
+          seriesSlug: latestSelection.series_slug,
+          theme: planTheme(plan),
+        }),
         dayNumber: getInitialPlanDayNumber(planDays),
       })
     }

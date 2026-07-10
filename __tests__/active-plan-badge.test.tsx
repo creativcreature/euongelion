@@ -39,10 +39,13 @@ describe('ActivePlanBadge', () => {
   })
 
   it('renders Day N · series title when an active plan exists (header variant)', async () => {
+    // /api/soul-audit/current returns /daily-bread for AI plans (the
+    // dedicated /soul-audit/plan reader is retired); dayNumber is
+    // surfaced separately for the badge label.
     mockFetchOnce({
       ok: true,
       hasCurrent: true,
-      route: '/soul-audit/plan/abc-123?day=3',
+      route: '/daily-bread',
       selectionType: 'ai_primary',
       planToken: 'abc-123',
       seriesSlug: 'identity',
@@ -57,7 +60,7 @@ describe('ActivePlanBadge', () => {
     })
 
     const badge = screen.getByTestId('active-plan-badge')
-    expect(badge.getAttribute('href')).toBe('/soul-audit/plan/abc-123?day=3')
+    expect(badge.getAttribute('href')).toBe('/daily-bread')
     expect(badge.textContent).toContain('DAY 3')
     expect(badge.textContent).toContain('Identity Crisis')
   })

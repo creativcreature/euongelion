@@ -400,12 +400,14 @@ describe('Soul Audit staged flow', () => {
     expect(selectionPayload.ok).toBe(true)
     expect(selectionPayload.selectionType).toBe('ai_primary')
     expect(selectionPayload.planToken).toBeTruthy()
-    expect(selectionPayload.route).toMatch(
-      /\/soul-audit\/plan\/[^/?]+\?day=\d+/,
-    )
+    // AI plans route to the canonical /daily-bread reader (the dedicated
+    // /soul-audit/plan reader is retired).
+    expect(selectionPayload.route).toBe('/daily-bread')
     expect(Array.isArray(selectionPayload.planDays)).toBe(true)
     const planDayNumbers = (selectionPayload.planDays ?? []).map((d) => d.day)
-    expect(planDayNumbers).toEqual(expect.arrayContaining([1, 2, 3, 4, 5, 6, 7]))
+    expect(planDayNumbers).toEqual(
+      expect.arrayContaining([1, 2, 3, 4, 5, 6, 7]),
+    )
   })
 
   // SKIPPED 2026-05-07: see note above on the new async /select flow.
@@ -437,16 +439,11 @@ describe('Soul Audit staged flow', () => {
     expect(typeof selectionPayload.planToken).toBe('string')
     expect(typeof selectionPayload.route).toBe('string')
 
-    const route = new URL(
-      selectionPayload.route ?? '/soul-audit/plan/unknown?day=1',
-      'http://localhost',
-    )
-    const dayNumber = Number.parseInt(route.searchParams.get('day') || '1', 10)
-    expect(Number.isFinite(dayNumber)).toBe(true)
-    const tokenFromRoute =
-      route.pathname.split('/').filter(Boolean).at(-1) ??
-      selectionPayload.planToken ??
-      'unknown'
+    // /select routes to the canonical /daily-bread reader (the dedicated
+    // /soul-audit/plan reader is retired), so the plan token comes from
+    // the payload itself rather than the route.
+    const dayNumber = 1
+    const tokenFromRoute = selectionPayload.planToken ?? 'unknown'
 
     const dayResponse = await planDayHandler(
       {
@@ -458,7 +455,10 @@ describe('Soul Audit staged flow', () => {
         },
       } as never,
       {
-        params: Promise.resolve({ token: tokenFromRoute, n: String(dayNumber) }),
+        params: Promise.resolve({
+          token: tokenFromRoute,
+          n: String(dayNumber),
+        }),
       } as never,
     )
 
@@ -471,9 +471,7 @@ describe('Soul Audit staged flow', () => {
     expect(typeof dayPayload.day?.title).toBe('string')
     expect(dayPayload.day?.title?.trim().length).toBeGreaterThan(0)
     expect(typeof dayPayload.day?.scriptureReference).toBe('string')
-    expect(dayPayload.day?.scriptureReference?.trim().length).toBeGreaterThan(
-      0,
-    )
+    expect(dayPayload.day?.scriptureReference?.trim().length).toBeGreaterThan(0)
   })
 
   // SKIPPED 2026-05-07: depends on synchronous /select returning a planToken.

@@ -5,6 +5,8 @@ import {
   getDevotionalTeaser,
   getDevotionalTitle,
 } from '@/data/devotional-teasers'
+import { fetchTodayDevotional } from '@/lib/today-devotional'
+import type { Devotional } from '@/types'
 
 // Audit T2 (HOMEPAGE-AUDIT-2026-05-11): read teasers from the build-
 // time generated index. Earlier `fs.readFile(public/devotionals/...)`
@@ -52,11 +54,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description =
     dayTeaser ?? `${meta.series.title} — ${meta.series.question}`
 
-  // Self-canonical. The same content is also reachable via
-  // /wake-up/devotional/[slug]; until the founder picks one canonical
-  // surface (see docs/overnight-followups.md Phase 10.6 — canonical
-  // URL audit), each route declares itself canonical so Google does
-  // not pick something weird (e.g., a tracking URL parameter).
+  // /devotional/[slug] IS the canonical devotional surface (founder
+  // direction 2026-05-07). The same content is also reachable via
+  // /wake-up/devotional/[slug], but that route cross-canonicals here
+  // (see its generateMetadata) so SEO ranking accrues on this URL.
+  // This route stays self-canonical.
   return {
     title: dayTitle,
     description,
@@ -86,6 +88,18 @@ export function generateStaticParams() {
 export default async function DevotionalPage({ params }: Props) {
   const { slug } = await params
   const meta = findDevotionalMeta(slug)
+
+  // Mobbin P0 #8 (2026-07-10): server-render the devotional body so the
+  // initial HTML carries the full reading — no client-side LOADING flash.
+  // Same pattern as /wake-up/devotional/[slug] (Phase 1.1) and /today:
+  // fetchTodayDevotional reads from fs at build/dev time and self-fetches
+  // the static JSON asset on Cloudflare Workers (990e6cf6). The original
+  // blocker — a "b.replace is not a function" prerender crash on
+  // too-busy-for-god-day-6 — was root-caused to ResourceModule calling
+  // typographer() on structured (non-string) fields and fixed at the
+  // renderer layer in 0b873c86, so this route can now SSR safely.
+  // On 404/error we pass null and the client falls back to its own fetch.
+  const initialDevotional: Devotional | null = await fetchTodayDevotional(slug)
 
   const dayHeadline = meta
     ? /^day\s+\d+$/i.test(meta.day.title.trim())
@@ -187,13 +201,13 @@ export default async function DevotionalPage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
         ))}
-      {/* NOTE: initialDevotional intentionally NOT passed. Audit C1 is
-          deferred — passing the JSON through the server/client boundary
-          broke prerendering on too-busy-for-god-day-6 with a runtime
-          "b.replace is not a function" error. Needs paired investigation
-          to pin down which deeply-nested object field the renderer
-          dereferences as a string. */}
-      <DevotionalPageClient slug={slug} silo="euangelion" />
+      {/* Mobbin P0 #8: pass the server-fetched devotional so the body is
+          in the initial HTML (loading=false from first paint). */}
+      <DevotionalPageClient
+        slug={slug}
+        silo="euangelion"
+        initialDevotional={initialDevotional}
+      />
     </>
   )
 }

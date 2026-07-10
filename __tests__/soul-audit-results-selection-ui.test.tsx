@@ -127,7 +127,9 @@ describe('Soul Audit results selection consent UX', () => {
             ok: true,
             auditRunId: 'run_test',
             selectionType: 'ai_primary',
-            route: '/soul-audit/plan/plan-token-1?day=1',
+            // /select routes AI plans to the canonical /daily-bread reader
+            // (the dedicated /soul-audit/plan reader is retired).
+            route: '/daily-bread',
             planToken: 'plan-token-1',
             planDays: [],
           }),
@@ -146,9 +148,7 @@ describe('Soul Audit results selection consent UX', () => {
     )
 
     await waitFor(() => {
-      expect(pushMock).toHaveBeenCalledWith(
-        '/soul-audit/plan/plan-token-1?day=1',
-      )
+      expect(pushMock).toHaveBeenCalledWith('/daily-bread')
     })
 
     // No cookie-consent error should appear
@@ -162,5 +162,135 @@ describe('Soul Audit results selection consent UX', () => {
     const calledRoutes = fetchMock.mock.calls.map(([url]) => String(url))
     expect(calledRoutes).toContain('/api/soul-audit/select')
     expect(calledRoutes).not.toContain('/api/soul-audit/consent')
+  })
+})
+
+const makeOption = (
+  index: number,
+  name: string,
+): SoulAuditSubmitResponseV2['options'][number] => ({
+  id: `ai-option-${index}`,
+  kind: 'ai_primary',
+  rank: index,
+  slug: `path-${name.toLowerCase()}`,
+  title: `Path ${name}`,
+  question: `Question for path ${name}?`,
+  confidence: 0.9,
+  reasoning: `Reasoning for path ${name}.`,
+  preview: {
+    verse: `Psalm ${index}:1`,
+    verseText: `Verse text for path ${name}.`,
+    paragraph: `Teaching excerpt for path ${name}.`,
+  },
+})
+
+const threeOptionPayload: SoulAuditSubmitResponseV2 = {
+  ...submitPayload,
+  options: [
+    makeOption(1, 'Alpha'),
+    makeOption(2, 'Beta'),
+    makeOption(3, 'Gamma'),
+  ],
+  diagnostics: {
+    retrievalStrategy: 'contextual-hybrid-bm25-rrf',
+    optionEvidence: [
+      {
+        optionId: 'ai-option-1',
+        scriptureAnchor: 'Psalm 1:1',
+        matchedKeywords: ['clarity', 'direction', 'trust'],
+        sourceHints: [],
+      },
+      {
+        optionId: 'ai-option-2',
+        scriptureAnchor: 'Psalm 2:1',
+        matchedKeywords: ['rest'],
+        sourceHints: [],
+      },
+      {
+        optionId: 'ai-option-3',
+        scriptureAnchor: 'Psalm 3:1',
+        matchedKeywords: ['hope'],
+        sourceHints: [],
+      },
+    ],
+  },
+}
+
+describe('Soul Audit results guided reveal', () => {
+  beforeEach(() => {
+    window.sessionStorage.setItem(
+      'soul-audit-submit-v2',
+      JSON.stringify(threeOptionPayload),
+    )
+  })
+
+  afterEach(() => {
+    cleanup()
+    vi.restoreAllMocks()
+    vi.unstubAllGlobals()
+  })
+
+  it('starts with only the recommended path and reveals alternatives one per tap', async () => {
+    const user = userEvent.setup()
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({ ok: true, json: async () => ({}) })),
+    )
+
+    render(<SoulAuditResultsPage />)
+
+    // First paint: ONLY the recommended card, with its reasoning expanded.
+    expect(screen.getByText('RECOMMENDED')).toBeTruthy()
+    expect(
+      screen.getByRole('button', {
+        name: /Build this reading path: Path Alpha/i,
+      }),
+    ).toBeTruthy()
+    expect(
+      screen.queryByRole('button', {
+        name: /Build this reading path: Path Beta/i,
+      }),
+    ).toBeNull()
+    expect(
+      screen.queryByRole('button', {
+        name: /Build this reading path: Path Gamma/i,
+      }),
+    ).toBeNull()
+    expect(screen.getByText('Reasoning for path Alpha.')).toBeTruthy()
+
+    // Text-first card content: matched-keyword chips + real plan length.
+    expect(screen.getByText('clarity')).toBeTruthy()
+    expect(screen.getByText('direction')).toBeTruthy()
+    expect(screen.getAllByText('7 DAYS')).toHaveLength(1)
+
+    // Tap 1: first alternative appears.
+    await user.click(
+      screen.getByRole('button', { name: /Explore another direction/i }),
+    )
+    expect(
+      screen.getByRole('button', {
+        name: /Build this reading path: Path Beta/i,
+      }),
+    ).toBeTruthy()
+    expect(screen.getByText('ALTERNATIVE')).toBeTruthy()
+    expect(
+      screen.queryByRole('button', {
+        name: /Build this reading path: Path Gamma/i,
+      }),
+    ).toBeNull()
+
+    // Tap 2: second alternative appears and the reveal button retires.
+    await user.click(
+      screen.getByRole('button', { name: /Explore another direction/i }),
+    )
+    expect(
+      screen.getByRole('button', {
+        name: /Build this reading path: Path Gamma/i,
+      }),
+    ).toBeTruthy()
+    expect(screen.getByText('ANOTHER DIRECTION')).toBeTruthy()
+    expect(
+      screen.queryByRole('button', { name: /Explore another direction/i }),
+    ).toBeNull()
   })
 })

@@ -10,7 +10,33 @@ interface BookmarkItem {
   created_at: string
 }
 
+// Bookmarks store only `devotional_slug` (see /api/bookmarks) — no silo
+// column — so the destination is derived from the slug shape, which is
+// unambiguous across every save site:
+//
+//  - Soul-Audit plan-day bookmarks are always written as
+//    `plan-<uuid>-day-<n>` (tokens come from randomUUID(), so the hex/dash
+//    pattern below cannot collide with an authored devotional slug). Plan
+//    reading canonically lives at /daily-bread — the dedicated
+//    /soul-audit/plan reader is retired and redirects there.
+//
+//  - Every other bookmark was saved from a devotional reader page.
+//    /devotional/[slug] is the canonical devotional surface (founder
+//    direction 2026-05-07); /wake-up/devotional/[slug] serves the exact
+//    same content and cross-canonicals to /devotional, so any slug that
+//    resolved under the old /wake-up href resolves here too — this cannot
+//    introduce a 404 that did not already exist.
+const PLAN_DAY_SLUG_PATTERN = /^plan-([a-f0-9-]+)-day-(\d+)$/i
+
+function hrefFromSlug(slug: string): string {
+  return PLAN_DAY_SLUG_PATTERN.test(slug)
+    ? '/daily-bread'
+    : `/devotional/${slug}`
+}
+
 function titleFromSlug(slug: string): string {
+  const planMatch = slug.match(PLAN_DAY_SLUG_PATTERN)
+  if (planMatch) return `Soul Audit Plan — Day ${planMatch[2]}`
   return slug
     .replace(/-day-(\d+)$/i, ' — Day $1')
     .replace(/-/g, ' ')
@@ -150,7 +176,7 @@ export default function SavedList() {
             style={{ borderColor: 'var(--color-border)' }}
           >
             <Link
-              href={`/wake-up/devotional/${b.devotional_slug}`}
+              href={hrefFromSlug(b.devotional_slug)}
               className="link-highlight flex-1"
             >
               <span className="vw-body block">

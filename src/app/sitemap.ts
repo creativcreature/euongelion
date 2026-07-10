@@ -145,22 +145,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ],
   )
 
+  // Only the canonical devotional surface is listed. The same content is
+  // also reachable at /wake-up/devotional/[slug], but that route
+  // cross-canonicals to /devotional/[slug] (founder direction 2026-05-07),
+  // and sitemaps must list canonical URLs only — advertising the
+  // non-canonical twin invites duplicate-content indexing.
   const devotionalPages: MetadataRoute.Sitemap = ALL_SERIES_ORDER.flatMap(
     (seriesSlug) =>
-      (SERIES_DATA[seriesSlug]?.days || []).flatMap((day) => [
-        {
-          url: `${baseUrl}/devotional/${day.slug}`,
-          lastModified: now,
-          changeFrequency: 'yearly' as const,
-          priority: 0.7,
-        },
-        {
-          url: `${baseUrl}/wake-up/devotional/${day.slug}`,
-          lastModified: now,
-          changeFrequency: 'yearly' as const,
-          priority: 0.5,
-        },
-      ]),
+      (SERIES_DATA[seriesSlug]?.days || []).map((day) => ({
+        url: `${baseUrl}/devotional/${day.slug}`,
+        lastModified: now,
+        changeFrequency: 'yearly' as const,
+        priority: 0.7,
+      })),
   )
 
   return [...staticPages, ...seriesPages, ...devotionalPages]

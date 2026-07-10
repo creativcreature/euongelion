@@ -1,9 +1,7 @@
 'use client'
 
-import Image from 'next/image'
 import { typographer } from '@/lib/typographer'
-import { SERIES_DATA } from '@/data/series'
-import { getSeriesHero } from '@/lib/series-hero'
+import { TOTAL_PLAN_DAYS } from '@/lib/soul-audit/constants'
 import type { AuditOptionPreview } from '@/types/soul-audit'
 
 interface OptionCardProps {
@@ -11,6 +9,12 @@ interface OptionCardProps {
     title: string
     question: string
     reasoning: string
+    /**
+     * Keywords the audit matched between the user's reflection and this
+     * direction (from the submit payload's option evidence). Real matches
+     * only — never fabricated client-side.
+     */
+    matchedKeywords?: string[]
     preview?: { verse: string; verseText?: string; paragraph: string } | null
   }
   isSelecting: boolean
@@ -21,6 +25,16 @@ interface OptionCardProps {
   onToggleReasoning: (optionId: string) => void
 }
 
+/**
+ * Text-first result card for an AI-composed reading path.
+ *
+ * These options are composed per-audit (option.slug is a slugified AI title,
+ * NOT a series slug), so there is no curated series record — and therefore no
+ * series hero image — to resolve. The card leads with the words instead:
+ * title, question, matched keywords, and the weekly Scripture focus. The day
+ * count is the real plan length (TOTAL_PLAN_DAYS drives the schedule that
+ * /api/soul-audit/select builds).
+ */
 export default function OptionCard({
   option,
   isSelecting,
@@ -30,10 +44,10 @@ export default function OptionCard({
   onSave,
   onToggleReasoning,
 }: OptionCardProps) {
-  const hero = getSeriesHero(option.slug)
-  const series = SERIES_DATA[option.slug]
-  const keywords = (series?.keywords ?? []).slice(0, 3)
-  const dayCount = series?.days.length ?? 0
+  const keywords = (option.matchedKeywords ?? [])
+    .map((keyword) => keyword.trim())
+    .filter(Boolean)
+    .slice(0, 3)
   const scriptureReference = option.preview?.verse?.trim() || 'Scripture'
   const scriptureSnippet = option.preview?.verseText?.trim() || ''
 
@@ -51,20 +65,13 @@ export default function OptionCard({
         <h3>{option.title}</h3>
         <p className="audit-option-question">{typographer(option.question)}</p>
         {keywords.length > 0 && (
-          <p className="series-card-keywords">{keywords.join(' \u2022 ')}</p>
-        )}
-        {hero && (
-          <div className="series-card-thumbnail" aria-hidden="true">
-            <Image
-              src={hero.rawSrc}
-              alt=""
-              width={600}
-              height={450}
-              className="series-card-thumbnail-img"
-              loading="lazy"
-              sizes="(max-width: 767px) 84vw, 33vw"
-            />
-          </div>
+          <span className="audit-option-keywords">
+            {keywords.map((keyword) => (
+              <span key={keyword} className="audit-option-keyword">
+                {keyword}
+              </span>
+            ))}
+          </span>
         )}
         <div className="mock-scripture-lead">
           <p className="audit-option-support text-secondary">
@@ -87,16 +94,14 @@ export default function OptionCard({
         <div className="mock-featured-actions">
           <span className="mock-series-start text-label">
             {isSelecting
-              ? 'BUILDING\u2026'
+              ? 'BUILDING…'
               : disabled
                 ? 'PLEASE WAIT'
                 : 'BUILD THIS PATH'}
           </span>
-          {dayCount > 0 && (
-            <span className="mock-featured-days text-label">
-              {dayCount} {dayCount === 1 ? 'DAY' : 'DAYS'}
-            </span>
-          )}
+          <span className="mock-featured-days text-label">
+            {TOTAL_PLAN_DAYS} DAYS
+          </span>
         </div>
       </button>
       <div
